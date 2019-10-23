@@ -15,24 +15,23 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
-	
-	public DeleteImageRequest() {
-		super("vod", "2017-03-21", "DeleteImage", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String imageURLs;
 
 	private String imageType;
 
 	private String resourceOwnerAccount;
-
-	private String imageURLs;
 
 	private String videoId;
 
@@ -41,6 +40,14 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 	private String deleteImageType;
 
 	private String imageIds;
+	public DeleteImageRequest() {
+		super("vod", "2017-03-21", "DeleteImage", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,6 +57,17 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getImageURLs() {
+		return this.imageURLs;
+	}
+
+	public void setImageURLs(String imageURLs) {
+		this.imageURLs = imageURLs;
+		if(imageURLs != null){
+			putQueryParameter("ImageURLs", imageURLs);
 		}
 	}
 
@@ -72,17 +90,6 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getImageURLs() {
-		return this.imageURLs;
-	}
-
-	public void setImageURLs(String imageURLs) {
-		this.imageURLs = imageURLs;
-		if(imageURLs != null){
-			putQueryParameter("ImageURLs", imageURLs);
 		}
 	}
 

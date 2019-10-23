@@ -22,24 +22,22 @@ import com.aliyuncs.vod.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateAppInfoRequest extends RpcAcsRequest<UpdateAppInfoResponse> {
+public class SubmitDynamicImageJobRequest extends RpcAcsRequest<SubmitDynamicImageJobResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String description;
-
-	private String appName;
+	private String dynamicImageTemplateId;
 
 	private String resourceOwnerAccount;
 
+	private String videoId;
+
+	private String overrideParams;
+
 	private Long ownerId;
-
-	private String appId;
-
-	private String status;
-	public UpdateAppInfoRequest() {
-		super("vod", "2017-03-21", "UpdateAppInfo", "vod");
+	public SubmitDynamicImageJobRequest() {
+		super("vod", "2017-03-21", "SubmitDynamicImageJob", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,25 +56,14 @@ public class UpdateAppInfoRequest extends RpcAcsRequest<UpdateAppInfoResponse> {
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getDynamicImageTemplateId() {
+		return this.dynamicImageTemplateId;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setDynamicImageTemplateId(String dynamicImageTemplateId) {
+		this.dynamicImageTemplateId = dynamicImageTemplateId;
+		if(dynamicImageTemplateId != null){
+			putQueryParameter("DynamicImageTemplateId", dynamicImageTemplateId);
 		}
 	}
 
@@ -91,6 +78,28 @@ public class UpdateAppInfoRequest extends RpcAcsRequest<UpdateAppInfoResponse> {
 		}
 	}
 
+	public String getVideoId() {
+		return this.videoId;
+	}
+
+	public void setVideoId(String videoId) {
+		this.videoId = videoId;
+		if(videoId != null){
+			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public String getOverrideParams() {
+		return this.overrideParams;
+	}
+
+	public void setOverrideParams(String overrideParams) {
+		this.overrideParams = overrideParams;
+		if(overrideParams != null){
+			putQueryParameter("OverrideParams", overrideParams);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -102,31 +111,9 @@ public class UpdateAppInfoRequest extends RpcAcsRequest<UpdateAppInfoResponse> {
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
-		}
-	}
-
 	@Override
-	public Class<UpdateAppInfoResponse> getResponseClass() {
-		return UpdateAppInfoResponse.class;
+	public Class<SubmitDynamicImageJobResponse> getResponseClass() {
+		return SubmitDynamicImageJobResponse.class;
 	}
 
 }

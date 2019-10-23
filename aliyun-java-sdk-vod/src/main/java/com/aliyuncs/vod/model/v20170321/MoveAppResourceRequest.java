@@ -15,40 +15,34 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class MoveAppResourceRequest extends RpcAcsRequest<MoveAppResourceResponse> {
-	
-	public MoveAppResourceRequest() {
-		super("vod", "2017-03-21", "MoveAppResource", "vod");
-	}
-
-	private String targetAppId;
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private String targetAppId;
 
-	private Long resourceRealOwnerId;
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
 	private String resourceType;
 
 	private String resourceIds;
-
-	public String getTargetAppId() {
-		return this.targetAppId;
-	}
-
-	public void setTargetAppId(String targetAppId) {
-		this.targetAppId = targetAppId;
-		if(targetAppId != null){
-			putQueryParameter("TargetAppId", targetAppId);
-		}
+	public MoveAppResourceRequest() {
+		super("vod", "2017-03-21", "MoveAppResource", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -62,6 +56,17 @@ public class MoveAppResourceRequest extends RpcAcsRequest<MoveAppResourceRespons
 		}
 	}
 
+	public String getTargetAppId() {
+		return this.targetAppId;
+	}
+
+	public void setTargetAppId(String targetAppId) {
+		this.targetAppId = targetAppId;
+		if(targetAppId != null){
+			putQueryParameter("TargetAppId", targetAppId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -70,17 +75,6 @@ public class MoveAppResourceRequest extends RpcAcsRequest<MoveAppResourceRespons
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
-	}
-
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
 		}
 	}
 

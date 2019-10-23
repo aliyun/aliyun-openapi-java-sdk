@@ -15,18 +15,19 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitAIMediaAuditJobRequest extends RpcAcsRequest<SubmitAIMediaAuditJobResponse> {
-	
-	public SubmitAIMediaAuditJobRequest() {
-		super("vod", "2017-03-21", "SubmitAIMediaAuditJob", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String userData;
 
 	private String resourceOwnerAccount;
 
@@ -36,6 +37,16 @@ public class SubmitAIMediaAuditJobRequest extends RpcAcsRequest<SubmitAIMediaAud
 
 	private String templateId;
 
+	private String mediaType;
+	public SubmitAIMediaAuditJobRequest() {
+		super("vod", "2017-03-21", "SubmitAIMediaAuditJob", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -44,6 +55,17 @@ public class SubmitAIMediaAuditJobRequest extends RpcAcsRequest<SubmitAIMediaAud
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
 		}
 	}
 
@@ -88,6 +110,17 @@ public class SubmitAIMediaAuditJobRequest extends RpcAcsRequest<SubmitAIMediaAud
 		this.templateId = templateId;
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId);
+		}
+	}
+
+	public String getMediaType() {
+		return this.mediaType;
+	}
+
+	public void setMediaType(String mediaType) {
+		this.mediaType = mediaType;
+		if(mediaType != null){
+			putQueryParameter("MediaType", mediaType);
 		}
 	}
 

@@ -15,38 +15,34 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListAppPoliciesForIdentityRequest extends RpcAcsRequest<ListAppPoliciesForIdentityResponse> {
-	
-	public ListAppPoliciesForIdentityRequest() {
-		super("vod", "2017-03-21", "ListAppPoliciesForIdentity", "vod");
-	}
-
-	private String identityName;
+	   
 
 	private Long resourceOwnerId;
+
+	private String identityName;
 
 	private String identityType;
 
 	private String resourceOwnerAccount;
 
-	private String appId;
-
 	private Long ownerId;
 
-	public String getIdentityName() {
-		return this.identityName;
-	}
-
-	public void setIdentityName(String identityName) {
-		this.identityName = identityName;
-		if(identityName != null){
-			putQueryParameter("IdentityName", identityName);
-		}
+	private String appId;
+	public ListAppPoliciesForIdentityRequest() {
+		super("vod", "2017-03-21", "ListAppPoliciesForIdentity", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -57,6 +53,17 @@ public class ListAppPoliciesForIdentityRequest extends RpcAcsRequest<ListAppPoli
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getIdentityName() {
+		return this.identityName;
+	}
+
+	public void setIdentityName(String identityName) {
+		this.identityName = identityName;
+		if(identityName != null){
+			putQueryParameter("IdentityName", identityName);
 		}
 	}
 
@@ -82,17 +89,6 @@ public class ListAppPoliciesForIdentityRequest extends RpcAcsRequest<ListAppPoli
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -101,6 +97,17 @@ public class ListAppPoliciesForIdentityRequest extends RpcAcsRequest<ListAppPoli
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

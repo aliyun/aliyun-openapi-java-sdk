@@ -15,30 +15,37 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetAttachedMediaInfoRequest extends RpcAcsRequest<GetAttachedMediaInfoResponse> {
-	
-	public GetAttachedMediaInfoRequest() {
-		super("vod", "2017-03-21", "GetAttachedMediaInfo", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private Long resourceRealOwnerId;
 
 	private String outputType;
 
 	private String mediaIds;
 
-	private Long resourceRealOwnerId;
+	private Long authTimeout;
+
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
-
-	private Long authTimeout;
+	public GetAttachedMediaInfoRequest() {
+		super("vod", "2017-03-21", "GetAttachedMediaInfo", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -51,14 +58,14 @@ public class GetAttachedMediaInfoRequest extends RpcAcsRequest<GetAttachedMediaI
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public Long getResourceRealOwnerId() {
+		return this.resourceRealOwnerId;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
+		this.resourceRealOwnerId = resourceRealOwnerId;
+		if(resourceRealOwnerId != null){
+			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
 		}
 	}
 
@@ -84,14 +91,25 @@ public class GetAttachedMediaInfoRequest extends RpcAcsRequest<GetAttachedMediaI
 		}
 	}
 
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
+	public Long getAuthTimeout() {
+		return this.authTimeout;
 	}
 
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
+	public void setAuthTimeout(Long authTimeout) {
+		this.authTimeout = authTimeout;
+		if(authTimeout != null){
+			putQueryParameter("AuthTimeout", authTimeout.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -103,17 +121,6 @@ public class GetAttachedMediaInfoRequest extends RpcAcsRequest<GetAttachedMediaI
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Long getAuthTimeout() {
-		return this.authTimeout;
-	}
-
-	public void setAuthTimeout(Long authTimeout) {
-		this.authTimeout = authTimeout;
-		if(authTimeout != null){
-			putQueryParameter("AuthTimeout", authTimeout.toString());
 		}
 	}
 

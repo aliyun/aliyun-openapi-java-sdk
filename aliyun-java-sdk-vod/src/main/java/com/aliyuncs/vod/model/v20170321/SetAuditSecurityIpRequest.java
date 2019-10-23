@@ -15,32 +15,28 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetAuditSecurityIpRequest extends RpcAcsRequest<SetAuditSecurityIpResponse> {
-	
-	public SetAuditSecurityIpRequest() {
-		super("vod", "2017-03-21", "SetAuditSecurityIp", "vod");
-	}
-
-	private String operateMode;
+	   
 
 	private String securityGroupName;
 
+	private String operateMode;
+
 	private String ips;
-
-	public String getOperateMode() {
-		return this.operateMode;
-	}
-
-	public void setOperateMode(String operateMode) {
-		this.operateMode = operateMode;
-		if(operateMode != null){
-			putQueryParameter("OperateMode", operateMode);
-		}
+	public SetAuditSecurityIpRequest() {
+		super("vod", "2017-03-21", "SetAuditSecurityIp", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSecurityGroupName() {
@@ -51,6 +47,17 @@ public class SetAuditSecurityIpRequest extends RpcAcsRequest<SetAuditSecurityIpR
 		this.securityGroupName = securityGroupName;
 		if(securityGroupName != null){
 			putQueryParameter("SecurityGroupName", securityGroupName);
+		}
+	}
+
+	public String getOperateMode() {
+		return this.operateMode;
+	}
+
+	public void setOperateMode(String operateMode) {
+		this.operateMode = operateMode;
+		if(operateMode != null){
+			putQueryParameter("OperateMode", operateMode);
 		}
 	}
 

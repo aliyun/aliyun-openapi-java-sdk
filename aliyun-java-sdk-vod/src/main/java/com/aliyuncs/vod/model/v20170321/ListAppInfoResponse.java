@@ -27,6 +27,8 @@ public class ListAppInfoResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer total;
+
 	private List<AppInfo> appInfoList;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class ListAppInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<AppInfo> getAppInfoList() {

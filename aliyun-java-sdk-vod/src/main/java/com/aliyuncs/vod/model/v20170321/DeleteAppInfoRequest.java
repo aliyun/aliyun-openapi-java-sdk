@@ -15,26 +15,31 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteAppInfoRequest extends RpcAcsRequest<DeleteAppInfoResponse> {
-	
-	public DeleteAppInfoRequest() {
-		super("vod", "2017-03-21", "DeleteAppInfo", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String appId;
-
-	private Long resourceRealOwnerId;
-
 	private Long ownerId;
+
+	private String appId;
+	public DeleteAppInfoRequest() {
+		super("vod", "2017-03-21", "DeleteAppInfo", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,28 +63,6 @@ public class DeleteAppInfoRequest extends RpcAcsRequest<DeleteAppInfoResponse> {
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
-	}
-
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -88,6 +71,17 @@ public class DeleteAppInfoRequest extends RpcAcsRequest<DeleteAppInfoResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

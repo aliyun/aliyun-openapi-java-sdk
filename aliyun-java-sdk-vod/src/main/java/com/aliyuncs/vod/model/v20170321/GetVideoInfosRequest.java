@@ -15,26 +15,33 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetVideoInfosRequest extends RpcAcsRequest<GetVideoInfosResponse> {
-	
-	public GetVideoInfosRequest() {
-		super("vod", "2017-03-21", "GetVideoInfos", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String additionType;
-
 	private Long ownerId;
 
+	private String additionType;
+
 	private String videoIds;
+	public GetVideoInfosRequest() {
+		super("vod", "2017-03-21", "GetVideoInfos", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,17 +65,6 @@ public class GetVideoInfosRequest extends RpcAcsRequest<GetVideoInfosResponse> {
 		}
 	}
 
-	public String getAdditionType() {
-		return this.additionType;
-	}
-
-	public void setAdditionType(String additionType) {
-		this.additionType = additionType;
-		if(additionType != null){
-			putQueryParameter("AdditionType", additionType);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -77,6 +73,17 @@ public class GetVideoInfosRequest extends RpcAcsRequest<GetVideoInfosResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAdditionType() {
+		return this.additionType;
+	}
+
+	public void setAdditionType(String additionType) {
+		this.additionType = additionType;
+		if(additionType != null){
+			putQueryParameter("AdditionType", additionType);
 		}
 	}
 

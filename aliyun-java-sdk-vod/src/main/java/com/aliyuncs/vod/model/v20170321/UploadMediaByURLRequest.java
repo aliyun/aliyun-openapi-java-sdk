@@ -15,30 +15,31 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLResponse> {
-	
-	public UploadMediaByURLRequest() {
-		super("vod", "2017-03-21", "UploadMediaByURL", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String messageCallback;
-
-	private Long ownerId;
-
-	private String priority;
 
 	private String storageLocation;
 
 	private String userData;
+
+	private String workflowId;
+
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
+
+	private String priority;
 
 	private String templateGroupId;
 
@@ -47,8 +48,14 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 	private String uploadURLs;
 
 	private String appId;
-
-	private String workflowId;
+	public UploadMediaByURLRequest() {
+		super("vod", "2017-03-21", "UploadMediaByURL", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -61,17 +68,6 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getMessageCallback() {
 		return this.messageCallback;
 	}
@@ -80,28 +76,6 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 		this.messageCallback = messageCallback;
 		if(messageCallback != null){
 			putQueryParameter("MessageCallback", messageCallback);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getPriority() {
-		return this.priority;
-	}
-
-	public void setPriority(String priority) {
-		this.priority = priority;
-		if(priority != null){
-			putQueryParameter("Priority", priority);
 		}
 	}
 
@@ -124,6 +98,50 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getWorkflowId() {
+		return this.workflowId;
+	}
+
+	public void setWorkflowId(String workflowId) {
+		this.workflowId = workflowId;
+		if(workflowId != null){
+			putQueryParameter("WorkflowId", workflowId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(String priority) {
+		this.priority = priority;
+		if(priority != null){
+			putQueryParameter("Priority", priority);
 		}
 	}
 
@@ -168,17 +186,6 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getWorkflowId() {
-		return this.workflowId;
-	}
-
-	public void setWorkflowId(String workflowId) {
-		this.workflowId = workflowId;
-		if(workflowId != null){
-			putQueryParameter("WorkflowId", workflowId);
 		}
 	}
 

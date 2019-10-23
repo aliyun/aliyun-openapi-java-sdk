@@ -235,26 +235,10 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 					this.type = type;
 				}
 
-				public String getBizUrl() {
-					return this.url;
-				}
-
-				public void setBizUrl(String url) {
-					this.url = url;
-				}
-
-				/**
-				 * @deprecated use getBizUrl instead of this.
-				 */
-				@Deprecated
 				public String getUrl() {
 					return this.url;
 				}
 
-				/**
-				 * @deprecated use setBizUrl instead of this.
-				 */
-				@Deprecated
 				public void setUrl(String url) {
 					this.url = url;
 				}
@@ -384,6 +368,12 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 				private PornResult pornResult;
 
+				private AdResult adResult;
+
+				private LiveResult liveResult;
+
+				private LogoResult logoResult;
+
 				public String getSuggestion() {
 					return this.suggestion;
 				}
@@ -414,6 +404,30 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 				public void setPornResult(PornResult pornResult) {
 					this.pornResult = pornResult;
+				}
+
+				public AdResult getAdResult() {
+					return this.adResult;
+				}
+
+				public void setAdResult(AdResult adResult) {
+					this.adResult = adResult;
+				}
+
+				public LiveResult getLiveResult() {
+					return this.liveResult;
+				}
+
+				public void setLiveResult(LiveResult liveResult) {
+					this.liveResult = liveResult;
+				}
+
+				public LogoResult getLogoResult() {
+					return this.logoResult;
+				}
+
+				public void setLogoResult(LogoResult logoResult) {
+					this.logoResult = logoResult;
 				}
 
 				public static class TerrorismResult {
@@ -535,26 +549,10 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 							this.timestamp = timestamp;
 						}
 
-						public String getBizUrl() {
-							return this.url;
-						}
-
-						public void setBizUrl(String url) {
-							this.url = url;
-						}
-
-						/**
-						 * @deprecated use getBizUrl instead of this.
-						 */
-						@Deprecated
 						public String getUrl() {
 							return this.url;
 						}
 
-						/**
-						 * @deprecated use setBizUrl instead of this.
-						 */
-						@Deprecated
 						public void setUrl(String url) {
 							this.url = url;
 						}
@@ -680,26 +678,397 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 							this.timestamp = timestamp;
 						}
 
-						public String getBizUrl() {
-							return this.url;
-						}
-
-						public void setBizUrl(String url) {
-							this.url = url;
-						}
-
-						/**
-						 * @deprecated use getBizUrl instead of this.
-						 */
-						@Deprecated
 						public String getUrl() {
 							return this.url;
 						}
 
-						/**
-						 * @deprecated use setBizUrl instead of this.
-						 */
-						@Deprecated
+						public void setUrl(String url) {
+							this.url = url;
+						}
+					}
+				}
+
+				public static class AdResult {
+
+					private String suggestion;
+
+					private String label;
+
+					private String maxScore;
+
+					private String averageScore;
+
+					private List<CounterListItem7> counterList5;
+
+					private List<TopListItem8> topList6;
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getLabel() {
+						return this.label;
+					}
+
+					public void setLabel(String label) {
+						this.label = label;
+					}
+
+					public String getMaxScore() {
+						return this.maxScore;
+					}
+
+					public void setMaxScore(String maxScore) {
+						this.maxScore = maxScore;
+					}
+
+					public String getAverageScore() {
+						return this.averageScore;
+					}
+
+					public void setAverageScore(String averageScore) {
+						this.averageScore = averageScore;
+					}
+
+					public List<CounterListItem7> getCounterList5() {
+						return this.counterList5;
+					}
+
+					public void setCounterList5(List<CounterListItem7> counterList5) {
+						this.counterList5 = counterList5;
+					}
+
+					public List<TopListItem8> getTopList6() {
+						return this.topList6;
+					}
+
+					public void setTopList6(List<TopListItem8> topList6) {
+						this.topList6 = topList6;
+					}
+
+					public static class CounterListItem7 {
+
+						private String label;
+
+						private Integer count;
+
+						public String getLabel() {
+							return this.label;
+						}
+
+						public void setLabel(String label) {
+							this.label = label;
+						}
+
+						public Integer getCount() {
+							return this.count;
+						}
+
+						public void setCount(Integer count) {
+							this.count = count;
+						}
+					}
+
+					public static class TopListItem8 {
+
+						private String label;
+
+						private String score;
+
+						private String timestamp;
+
+						private String url;
+
+						public String getLabel() {
+							return this.label;
+						}
+
+						public void setLabel(String label) {
+							this.label = label;
+						}
+
+						public String getScore() {
+							return this.score;
+						}
+
+						public void setScore(String score) {
+							this.score = score;
+						}
+
+						public String getTimestamp() {
+							return this.timestamp;
+						}
+
+						public void setTimestamp(String timestamp) {
+							this.timestamp = timestamp;
+						}
+
+						public String getUrl() {
+							return this.url;
+						}
+
+						public void setUrl(String url) {
+							this.url = url;
+						}
+					}
+				}
+
+				public static class LiveResult {
+
+					private String suggestion;
+
+					private String label;
+
+					private String maxScore;
+
+					private String averageScore;
+
+					private List<CounterListItem11> counterList9;
+
+					private List<TopListItem12> topList10;
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getLabel() {
+						return this.label;
+					}
+
+					public void setLabel(String label) {
+						this.label = label;
+					}
+
+					public String getMaxScore() {
+						return this.maxScore;
+					}
+
+					public void setMaxScore(String maxScore) {
+						this.maxScore = maxScore;
+					}
+
+					public String getAverageScore() {
+						return this.averageScore;
+					}
+
+					public void setAverageScore(String averageScore) {
+						this.averageScore = averageScore;
+					}
+
+					public List<CounterListItem11> getCounterList9() {
+						return this.counterList9;
+					}
+
+					public void setCounterList9(List<CounterListItem11> counterList9) {
+						this.counterList9 = counterList9;
+					}
+
+					public List<TopListItem12> getTopList10() {
+						return this.topList10;
+					}
+
+					public void setTopList10(List<TopListItem12> topList10) {
+						this.topList10 = topList10;
+					}
+
+					public static class CounterListItem11 {
+
+						private String label;
+
+						private Integer count;
+
+						public String getLabel() {
+							return this.label;
+						}
+
+						public void setLabel(String label) {
+							this.label = label;
+						}
+
+						public Integer getCount() {
+							return this.count;
+						}
+
+						public void setCount(Integer count) {
+							this.count = count;
+						}
+					}
+
+					public static class TopListItem12 {
+
+						private String label;
+
+						private String score;
+
+						private String timestamp;
+
+						private String url;
+
+						public String getLabel() {
+							return this.label;
+						}
+
+						public void setLabel(String label) {
+							this.label = label;
+						}
+
+						public String getScore() {
+							return this.score;
+						}
+
+						public void setScore(String score) {
+							this.score = score;
+						}
+
+						public String getTimestamp() {
+							return this.timestamp;
+						}
+
+						public void setTimestamp(String timestamp) {
+							this.timestamp = timestamp;
+						}
+
+						public String getUrl() {
+							return this.url;
+						}
+
+						public void setUrl(String url) {
+							this.url = url;
+						}
+					}
+				}
+
+				public static class LogoResult {
+
+					private String suggestion;
+
+					private String label;
+
+					private String maxScore;
+
+					private String averageScore;
+
+					private List<CounterListItem15> counterList13;
+
+					private List<TopListItem16> topList14;
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getLabel() {
+						return this.label;
+					}
+
+					public void setLabel(String label) {
+						this.label = label;
+					}
+
+					public String getMaxScore() {
+						return this.maxScore;
+					}
+
+					public void setMaxScore(String maxScore) {
+						this.maxScore = maxScore;
+					}
+
+					public String getAverageScore() {
+						return this.averageScore;
+					}
+
+					public void setAverageScore(String averageScore) {
+						this.averageScore = averageScore;
+					}
+
+					public List<CounterListItem15> getCounterList13() {
+						return this.counterList13;
+					}
+
+					public void setCounterList13(List<CounterListItem15> counterList13) {
+						this.counterList13 = counterList13;
+					}
+
+					public List<TopListItem16> getTopList14() {
+						return this.topList14;
+					}
+
+					public void setTopList14(List<TopListItem16> topList14) {
+						this.topList14 = topList14;
+					}
+
+					public static class CounterListItem15 {
+
+						private String label;
+
+						private Integer count;
+
+						public String getLabel() {
+							return this.label;
+						}
+
+						public void setLabel(String label) {
+							this.label = label;
+						}
+
+						public Integer getCount() {
+							return this.count;
+						}
+
+						public void setCount(Integer count) {
+							this.count = count;
+						}
+					}
+
+					public static class TopListItem16 {
+
+						private String label;
+
+						private String score;
+
+						private String timestamp;
+
+						private String url;
+
+						public String getLabel() {
+							return this.label;
+						}
+
+						public void setLabel(String label) {
+							this.label = label;
+						}
+
+						public String getScore() {
+							return this.score;
+						}
+
+						public void setScore(String score) {
+							this.score = score;
+						}
+
+						public String getTimestamp() {
+							return this.timestamp;
+						}
+
+						public void setTimestamp(String timestamp) {
+							this.timestamp = timestamp;
+						}
+
+						public String getUrl() {
+							return this.url;
+						}
+
 						public void setUrl(String url) {
 							this.url = url;
 						}

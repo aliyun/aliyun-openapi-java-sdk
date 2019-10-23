@@ -15,32 +15,39 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddWatermarkRequest extends RpcAcsRequest<AddWatermarkResponse> {
-	
-	public AddWatermarkRequest() {
-		super("vod", "2017-03-21", "AddWatermark", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
+	private String type;
+
 	private String resourceOwnerAccount;
+
+	private Long ownerId;
+
+	private String watermarkConfig;
 
 	private String appId;
 
 	private String name;
 
 	private String fileUrl;
-
-	private Long ownerId;
-
-	private String type;
-
-	private String watermarkConfig;
+	public AddWatermarkRequest() {
+		super("vod", "2017-03-21", "AddWatermark", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,6 +60,17 @@ public class AddWatermarkRequest extends RpcAcsRequest<AddWatermarkResponse> {
 		}
 	}
 
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -61,6 +79,28 @@ public class AddWatermarkRequest extends RpcAcsRequest<AddWatermarkResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getWatermarkConfig() {
+		return this.watermarkConfig;
+	}
+
+	public void setWatermarkConfig(String watermarkConfig) {
+		this.watermarkConfig = watermarkConfig;
+		if(watermarkConfig != null){
+			putQueryParameter("WatermarkConfig", watermarkConfig);
 		}
 	}
 
@@ -94,39 +134,6 @@ public class AddWatermarkRequest extends RpcAcsRequest<AddWatermarkResponse> {
 		this.fileUrl = fileUrl;
 		if(fileUrl != null){
 			putQueryParameter("FileUrl", fileUrl);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getWatermarkConfig() {
-		return this.watermarkConfig;
-	}
-
-	public void setWatermarkConfig(String watermarkConfig) {
-		this.watermarkConfig = watermarkConfig;
-		if(watermarkConfig != null){
-			putQueryParameter("WatermarkConfig", watermarkConfig);
 		}
 	}
 

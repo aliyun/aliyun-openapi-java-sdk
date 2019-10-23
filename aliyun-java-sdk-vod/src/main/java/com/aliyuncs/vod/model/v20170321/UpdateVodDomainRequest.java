@@ -15,26 +15,33 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateVodDomainRequest extends RpcAcsRequest<UpdateVodDomainResponse> {
-	
-	public UpdateVodDomainRequest() {
-		super("vod", "2017-03-21", "UpdateVodDomain", "vod");
-	}
+	   
 
 	private String topLevelDomain;
 
 	private String sources;
 
-	private String securityToken;
-
 	private String domainName;
 
 	private Long ownerId;
+
+	private String securityToken;
+	public UpdateVodDomainRequest() {
+		super("vod", "2017-03-21", "UpdateVodDomain", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTopLevelDomain() {
 		return this.topLevelDomain;
@@ -58,36 +65,6 @@ public class UpdateVodDomainRequest extends RpcAcsRequest<UpdateVodDomainRespons
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -107,6 +84,17 @@ public class UpdateVodDomainRequest extends RpcAcsRequest<UpdateVodDomainRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

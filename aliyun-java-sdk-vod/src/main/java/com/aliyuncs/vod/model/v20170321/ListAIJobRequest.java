@@ -15,16 +15,15 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListAIJobRequest extends RpcAcsRequest<ListAIJobResponse> {
-	
-	public ListAIJobRequest() {
-		super("vod", "2017-03-21", "ListAIJob", "vod");
-	}
+	   
 
 	private String resourceOwnerId;
 
@@ -32,9 +31,17 @@ public class ListAIJobRequest extends RpcAcsRequest<ListAIJobResponse> {
 
 	private String ownerAccount;
 
-	private String jobIds;
-
 	private String ownerId;
+
+	private String jobIds;
+	public ListAIJobRequest() {
+		super("vod", "2017-03-21", "ListAIJob", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -69,17 +76,6 @@ public class ListAIJobRequest extends RpcAcsRequest<ListAIJobResponse> {
 		}
 	}
 
-	public String getJobIds() {
-		return this.jobIds;
-	}
-
-	public void setJobIds(String jobIds) {
-		this.jobIds = jobIds;
-		if(jobIds != null){
-			putQueryParameter("JobIds", jobIds);
-		}
-	}
-
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -88,6 +84,17 @@ public class ListAIJobRequest extends RpcAcsRequest<ListAIJobResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getJobIds() {
+		return this.jobIds;
+	}
+
+	public void setJobIds(String jobIds) {
+		this.jobIds = jobIds;
+		if(jobIds != null){
+			putQueryParameter("JobIds", jobIds);
 		}
 	}
 

@@ -15,16 +15,15 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateImageInfosRequest extends RpcAcsRequest<UpdateImageInfosResponse> {
-	
-	public UpdateImageInfosRequest() {
-		super("vod", "2017-03-21", "UpdateImageInfos", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -35,6 +34,14 @@ public class UpdateImageInfosRequest extends RpcAcsRequest<UpdateImageInfosRespo
 	private Long resourceRealOwnerId;
 
 	private Long ownerId;
+	public UpdateImageInfosRequest() {
+		super("vod", "2017-03-21", "UpdateImageInfos", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

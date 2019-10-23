@@ -15,38 +15,34 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateWatermarkRequest extends RpcAcsRequest<UpdateWatermarkResponse> {
-	
-	public UpdateWatermarkRequest() {
-		super("vod", "2017-03-21", "UpdateWatermark", "vod");
-	}
-
-	private String watermarkId;
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String name;
-
 	private Long ownerId;
 
 	private String watermarkConfig;
 
-	public String getWatermarkId() {
-		return this.watermarkId;
-	}
+	private String watermarkId;
 
-	public void setWatermarkId(String watermarkId) {
-		this.watermarkId = watermarkId;
-		if(watermarkId != null){
-			putQueryParameter("WatermarkId", watermarkId);
-		}
+	private String name;
+	public UpdateWatermarkRequest() {
+		super("vod", "2017-03-21", "UpdateWatermark", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -71,17 +67,6 @@ public class UpdateWatermarkRequest extends RpcAcsRequest<UpdateWatermarkRespons
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -101,6 +86,28 @@ public class UpdateWatermarkRequest extends RpcAcsRequest<UpdateWatermarkRespons
 		this.watermarkConfig = watermarkConfig;
 		if(watermarkConfig != null){
 			putQueryParameter("WatermarkConfig", watermarkConfig);
+		}
+	}
+
+	public String getWatermarkId() {
+		return this.watermarkId;
+	}
+
+	public void setWatermarkId(String watermarkId) {
+		this.watermarkId = watermarkId;
+		if(watermarkId != null){
+			putQueryParameter("WatermarkId", watermarkId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

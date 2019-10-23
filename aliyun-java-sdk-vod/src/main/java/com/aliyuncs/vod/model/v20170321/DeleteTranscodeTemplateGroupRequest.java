@@ -15,28 +15,35 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteTranscodeTemplateGroupRequest extends RpcAcsRequest<DeleteTranscodeTemplateGroupResponse> {
-	
-	public DeleteTranscodeTemplateGroupRequest() {
-		super("vod", "2017-03-21", "DeleteTranscodeTemplateGroup", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String transcodeTemplateIds;
+
+	private String forceDelGroup;
+
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
 	private String transcodeTemplateGroupId;
-
-	private String forceDelGroup;
+	public DeleteTranscodeTemplateGroupRequest() {
+		super("vod", "2017-03-21", "DeleteTranscodeTemplateGroup", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,17 +56,6 @@ public class DeleteTranscodeTemplateGroupRequest extends RpcAcsRequest<DeleteTra
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getTranscodeTemplateIds() {
 		return this.transcodeTemplateIds;
 	}
@@ -68,6 +64,28 @@ public class DeleteTranscodeTemplateGroupRequest extends RpcAcsRequest<DeleteTra
 		this.transcodeTemplateIds = transcodeTemplateIds;
 		if(transcodeTemplateIds != null){
 			putQueryParameter("TranscodeTemplateIds", transcodeTemplateIds);
+		}
+	}
+
+	public String getForceDelGroup() {
+		return this.forceDelGroup;
+	}
+
+	public void setForceDelGroup(String forceDelGroup) {
+		this.forceDelGroup = forceDelGroup;
+		if(forceDelGroup != null){
+			putQueryParameter("ForceDelGroup", forceDelGroup);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -90,17 +108,6 @@ public class DeleteTranscodeTemplateGroupRequest extends RpcAcsRequest<DeleteTra
 		this.transcodeTemplateGroupId = transcodeTemplateGroupId;
 		if(transcodeTemplateGroupId != null){
 			putQueryParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
-		}
-	}
-
-	public String getForceDelGroup() {
-		return this.forceDelGroup;
-	}
-
-	public void setForceDelGroup(String forceDelGroup) {
-		this.forceDelGroup = forceDelGroup;
-		if(forceDelGroup != null){
-			putQueryParameter("ForceDelGroup", forceDelGroup);
 		}
 	}
 

@@ -15,24 +15,31 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListAITemplateRequest extends RpcAcsRequest<ListAITemplateResponse> {
-	
-	public ListAITemplateRequest() {
-		super("vod", "2017-03-21", "ListAITemplate", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String templateType;
-
 	private Long ownerId;
+
+	private String templateType;
+	public ListAITemplateRequest() {
+		super("vod", "2017-03-21", "ListAITemplate", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,17 +63,6 @@ public class ListAITemplateRequest extends RpcAcsRequest<ListAITemplateResponse>
 		}
 	}
 
-	public String getTemplateType() {
-		return this.templateType;
-	}
-
-	public void setTemplateType(String templateType) {
-		this.templateType = templateType;
-		if(templateType != null){
-			putQueryParameter("TemplateType", templateType);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -75,6 +71,17 @@ public class ListAITemplateRequest extends RpcAcsRequest<ListAITemplateResponse>
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTemplateType() {
+		return this.templateType;
+	}
+
+	public void setTemplateType(String templateType) {
+		this.templateType = templateType;
+		if(templateType != null){
+			putQueryParameter("TemplateType", templateType);
 		}
 	}
 

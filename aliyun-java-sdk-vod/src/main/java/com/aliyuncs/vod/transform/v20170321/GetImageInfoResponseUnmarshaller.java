@@ -40,6 +40,7 @@ public class GetImageInfoResponseUnmarshaller {
 		imageInfo.setStatus(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Status"));
 		imageInfo.setAppId(_ctx.stringValue("GetImageInfoResponse.ImageInfo.AppId"));
 		imageInfo.setRegionId(_ctx.stringValue("GetImageInfoResponse.ImageInfo.RegionId"));
+		imageInfo.setAuditStatus(_ctx.stringValue("GetImageInfoResponse.ImageInfo.AuditStatus"));
 
 		Mezzanine mezzanine = new Mezzanine();
 		mezzanine.setOriginalFileName(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Mezzanine.OriginalFileName"));

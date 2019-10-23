@@ -15,16 +15,15 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetEditingProjectRequest extends RpcAcsRequest<GetEditingProjectResponse> {
-	
-	public GetEditingProjectRequest() {
-		super("vod", "2017-03-21", "GetEditingProject", "vod");
-	}
+	   
 
 	private String resourceOwnerId;
 
@@ -35,6 +34,14 @@ public class GetEditingProjectRequest extends RpcAcsRequest<GetEditingProjectRes
 	private String ownerId;
 
 	private String projectId;
+	public GetEditingProjectRequest() {
+		super("vod", "2017-03-21", "GetEditingProject", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;

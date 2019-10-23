@@ -15,30 +15,37 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetEditingProjectMaterialsRequest extends RpcAcsRequest<GetEditingProjectMaterialsResponse> {
-	
-	public GetEditingProjectMaterialsRequest() {
-		super("vod", "2017-03-21", "GetEditingProjectMaterials", "vod");
-	}
+	   
 
 	private String resourceOwnerId;
 
+	private String type;
+
 	private String materialType;
+
+	private String projectId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private String ownerId;
-
-	private String type;
-
-	private String projectId;
+	public GetEditingProjectMaterialsRequest() {
+		super("vod", "2017-03-21", "GetEditingProjectMaterials", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -51,6 +58,17 @@ public class GetEditingProjectMaterialsRequest extends RpcAcsRequest<GetEditingP
 		}
 	}
 
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
 	public String getMaterialType() {
 		return this.materialType;
 	}
@@ -59,6 +77,17 @@ public class GetEditingProjectMaterialsRequest extends RpcAcsRequest<GetEditingP
 		this.materialType = materialType;
 		if(materialType != null){
 			putQueryParameter("MaterialType", materialType);
+		}
+	}
+
+	public String getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putQueryParameter("ProjectId", projectId);
 		}
 	}
 
@@ -92,28 +121,6 @@ public class GetEditingProjectMaterialsRequest extends RpcAcsRequest<GetEditingP
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(String projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putQueryParameter("ProjectId", projectId);
 		}
 	}
 

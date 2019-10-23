@@ -15,30 +15,37 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteMultipartUploadRequest extends RpcAcsRequest<DeleteMultipartUploadResponse> {
-	
-	public DeleteMultipartUploadRequest() {
-		super("vod", "2017-03-21", "DeleteMultipartUpload", "vod");
-	}
+	   
 
 	private String resourceOwnerId;
+
+	private Long resourceRealOwnerId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private Long resourceRealOwnerId;
 
 	private String ownerId;
 
 	private String mediaId;
 
 	private String mediaType;
+	public DeleteMultipartUploadRequest() {
+		super("vod", "2017-03-21", "DeleteMultipartUpload", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,6 +55,17 @@ public class DeleteMultipartUploadRequest extends RpcAcsRequest<DeleteMultipartU
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
+	}
+
+	public Long getResourceRealOwnerId() {
+		return this.resourceRealOwnerId;
+	}
+
+	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
+		this.resourceRealOwnerId = resourceRealOwnerId;
+		if(resourceRealOwnerId != null){
+			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
 		}
 	}
 
@@ -70,17 +88,6 @@ public class DeleteMultipartUploadRequest extends RpcAcsRequest<DeleteMultipartU
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
-	}
-
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
 		}
 	}
 

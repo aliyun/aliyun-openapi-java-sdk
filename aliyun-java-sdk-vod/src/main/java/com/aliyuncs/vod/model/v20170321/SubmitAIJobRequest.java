@@ -15,22 +15,19 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitAIJobRequest extends RpcAcsRequest<SubmitAIJobResponse> {
-	
-	public SubmitAIJobRequest() {
-		super("vod", "2017-03-21", "SubmitAIJob", "vod");
-	}
-
-	private String userData;
-
-	private String input;
+	   
 
 	private String resourceOwnerId;
+
+	private String userData;
 
 	private String types;
 
@@ -42,28 +39,16 @@ public class SubmitAIJobRequest extends RpcAcsRequest<SubmitAIJobResponse> {
 
 	private String mediaId;
 
+	private String input;
+
 	private String config;
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
-	}
-
-	public String getInput() {
-		return this.input;
-	}
-
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
-		}
+	public SubmitAIJobRequest() {
+		super("vod", "2017-03-21", "SubmitAIJob", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getResourceOwnerId() {
@@ -74,6 +59,17 @@ public class SubmitAIJobRequest extends RpcAcsRequest<SubmitAIJobResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
 		}
 	}
 
@@ -129,6 +125,17 @@ public class SubmitAIJobRequest extends RpcAcsRequest<SubmitAIJobResponse> {
 		this.mediaId = mediaId;
 		if(mediaId != null){
 			putQueryParameter("MediaId", mediaId);
+		}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
 		}
 	}
 

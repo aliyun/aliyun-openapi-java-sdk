@@ -15,18 +15,27 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListLiveRecordVideoRequest extends RpcAcsRequest<ListLiveRecordVideoResponse> {
-	
-	public ListLiveRecordVideoRequest() {
-		super("vod", "2017-03-21", "ListLiveRecordVideo", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String startTime;
+
+	private String appName;
+
+	private Integer pageSize;
+
+	private String streamName;
+
+	private String queryType;
 
 	private String resourceOwnerAccount;
 
@@ -34,21 +43,19 @@ public class ListLiveRecordVideoRequest extends RpcAcsRequest<ListLiveRecordVide
 
 	private String endTime;
 
-	private String startTime;
-
 	private Long ownerId;
-
-	private String appName;
 
 	private Integer pageNo;
 
-	private Integer pageSize;
-
 	private String sortBy;
-
-	private String streamName;
-
-	private String queryType;
+	public ListLiveRecordVideoRequest() {
+		super("vod", "2017-03-21", "ListLiveRecordVideo", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,6 +65,61 @@ public class ListLiveRecordVideoRequest extends RpcAcsRequest<ListLiveRecordVide
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
+
+	public String getQueryType() {
+		return this.queryType;
+	}
+
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+		if(queryType != null){
+			putQueryParameter("QueryType", queryType);
 		}
 	}
 
@@ -94,17 +156,6 @@ public class ListLiveRecordVideoRequest extends RpcAcsRequest<ListLiveRecordVide
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -113,17 +164,6 @@ public class ListLiveRecordVideoRequest extends RpcAcsRequest<ListLiveRecordVide
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
 		}
 	}
 
@@ -138,17 +178,6 @@ public class ListLiveRecordVideoRequest extends RpcAcsRequest<ListLiveRecordVide
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getSortBy() {
 		return this.sortBy;
 	}
@@ -157,28 +186,6 @@ public class ListLiveRecordVideoRequest extends RpcAcsRequest<ListLiveRecordVide
 		this.sortBy = sortBy;
 		if(sortBy != null){
 			putQueryParameter("SortBy", sortBy);
-		}
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
-		}
-	}
-
-	public String getQueryType() {
-		return this.queryType;
-	}
-
-	public void setQueryType(String queryType) {
-		this.queryType = queryType;
-		if(queryType != null){
-			putQueryParameter("QueryType", queryType);
 		}
 	}
 

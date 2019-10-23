@@ -15,40 +15,36 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DetachAppPolicyFromIdentityRequest extends RpcAcsRequest<DetachAppPolicyFromIdentityResponse> {
-	
-	public DetachAppPolicyFromIdentityRequest() {
-		super("vod", "2017-03-21", "DetachAppPolicyFromIdentity", "vod");
-	}
-
-	private String identityName;
+	   
 
 	private Long resourceOwnerId;
+
+	private String policyNames;
+
+	private String identityName;
 
 	private String identityType;
 
 	private String resourceOwnerAccount;
 
-	private String appId;
-
-	private String policyNames;
-
 	private Long ownerId;
 
-	public String getIdentityName() {
-		return this.identityName;
-	}
-
-	public void setIdentityName(String identityName) {
-		this.identityName = identityName;
-		if(identityName != null){
-			putQueryParameter("IdentityName", identityName);
-		}
+	private String appId;
+	public DetachAppPolicyFromIdentityRequest() {
+		super("vod", "2017-03-21", "DetachAppPolicyFromIdentity", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -59,6 +55,28 @@ public class DetachAppPolicyFromIdentityRequest extends RpcAcsRequest<DetachAppP
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPolicyNames() {
+		return this.policyNames;
+	}
+
+	public void setPolicyNames(String policyNames) {
+		this.policyNames = policyNames;
+		if(policyNames != null){
+			putQueryParameter("PolicyNames", policyNames);
+		}
+	}
+
+	public String getIdentityName() {
+		return this.identityName;
+	}
+
+	public void setIdentityName(String identityName) {
+		this.identityName = identityName;
+		if(identityName != null){
+			putQueryParameter("IdentityName", identityName);
 		}
 	}
 
@@ -84,28 +102,6 @@ public class DetachAppPolicyFromIdentityRequest extends RpcAcsRequest<DetachAppP
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getPolicyNames() {
-		return this.policyNames;
-	}
-
-	public void setPolicyNames(String policyNames) {
-		this.policyNames = policyNames;
-		if(policyNames != null){
-			putQueryParameter("PolicyNames", policyNames);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,6 +110,17 @@ public class DetachAppPolicyFromIdentityRequest extends RpcAcsRequest<DetachAppP
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

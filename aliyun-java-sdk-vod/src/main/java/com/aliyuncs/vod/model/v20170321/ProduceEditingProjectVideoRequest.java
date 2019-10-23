@@ -15,26 +15,19 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ProduceEditingProjectVideoRequest extends RpcAcsRequest<ProduceEditingProjectVideoResponse> {
-	
-	public ProduceEditingProjectVideoRequest() {
-		super("vod", "2017-03-21", "ProduceEditingProjectVideo", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String mediaMetadata;
-
-	private String resourceOwnerAccount;
-
 	private String description;
-
-	private Long ownerId;
 
 	private String title;
 
@@ -42,11 +35,25 @@ public class ProduceEditingProjectVideoRequest extends RpcAcsRequest<ProduceEdit
 
 	private String userData;
 
-	private String timeline;
-
 	private String produceConfig;
 
 	private String projectId;
+
+	private String mediaMetadata;
+
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
+
+	private String timeline;
+	public ProduceEditingProjectVideoRequest() {
+		super("vod", "2017-03-21", "ProduceEditingProjectVideo", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -59,28 +66,6 @@ public class ProduceEditingProjectVideoRequest extends RpcAcsRequest<ProduceEdit
 		}
 	}
 
-	public String getMediaMetadata() {
-		return this.mediaMetadata;
-	}
-
-	public void setMediaMetadata(String mediaMetadata) {
-		this.mediaMetadata = mediaMetadata;
-		if(mediaMetadata != null){
-			putQueryParameter("MediaMetadata", mediaMetadata);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -89,17 +74,6 @@ public class ProduceEditingProjectVideoRequest extends RpcAcsRequest<ProduceEdit
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -136,17 +110,6 @@ public class ProduceEditingProjectVideoRequest extends RpcAcsRequest<ProduceEdit
 		}
 	}
 
-	public String getTimeline() {
-		return this.timeline;
-	}
-
-	public void setTimeline(String timeline) {
-		this.timeline = timeline;
-		if(timeline != null){
-			putQueryParameter("Timeline", timeline);
-		}
-	}
-
 	public String getProduceConfig() {
 		return this.produceConfig;
 	}
@@ -166,6 +129,50 @@ public class ProduceEditingProjectVideoRequest extends RpcAcsRequest<ProduceEdit
 		this.projectId = projectId;
 		if(projectId != null){
 			putQueryParameter("ProjectId", projectId);
+		}
+	}
+
+	public String getMediaMetadata() {
+		return this.mediaMetadata;
+	}
+
+	public void setMediaMetadata(String mediaMetadata) {
+		this.mediaMetadata = mediaMetadata;
+		if(mediaMetadata != null){
+			putQueryParameter("MediaMetadata", mediaMetadata);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTimeline() {
+		return this.timeline;
+	}
+
+	public void setTimeline(String timeline) {
+		this.timeline = timeline;
+		if(timeline != null){
+			putQueryParameter("Timeline", timeline);
 		}
 	}
 

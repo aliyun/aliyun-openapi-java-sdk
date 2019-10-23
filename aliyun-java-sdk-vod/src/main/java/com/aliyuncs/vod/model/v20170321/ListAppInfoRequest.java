@@ -15,30 +15,35 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListAppInfoRequest extends RpcAcsRequest<ListAppInfoResponse> {
-	
-	public ListAppInfoRequest() {
-		super("vod", "2017-03-21", "ListAppInfo", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private Integer pageNo;
-
 	private Integer pageSize;
 
-	private Long resourceRealOwnerId;
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
+	private Integer pageNo;
+
 	private String status;
+	public ListAppInfoRequest() {
+		super("vod", "2017-03-21", "ListAppInfo", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,28 +53,6 @@ public class ListAppInfoRequest extends RpcAcsRequest<ListAppInfoResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Integer getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 
@@ -84,14 +67,14 @@ public class ListAppInfoRequest extends RpcAcsRequest<ListAppInfoResponse> {
 		}
 	}
 
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -103,6 +86,17 @@ public class ListAppInfoRequest extends RpcAcsRequest<ListAppInfoResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 

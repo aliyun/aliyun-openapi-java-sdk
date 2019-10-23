@@ -45,7 +45,7 @@ public class GetAttachedMediaInfoResponseUnmarshaller {
 			attachedMedia.setURL(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].URL"));
 			attachedMedia.setDescription(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Description"));
 			attachedMedia.setFileSize(_ctx.longValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].FileSize"));
-			attachedMedia.setStorageLocation(_ctx.longValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].StorageLocation"));
+			attachedMedia.setStorageLocation(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].StorageLocation"));
 			attachedMedia.setCreationTime(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].CreationTime"));
 			attachedMedia.setModificationTime(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].ModificationTime"));
 			attachedMedia.setAppId(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].AppId"));

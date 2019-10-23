@@ -15,40 +15,36 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class RegisterMediaRequest extends RpcAcsRequest<RegisterMediaResponse> {
-	
-	public RegisterMediaRequest() {
-		super("vod", "2017-03-21", "RegisterMedia", "vod");
-	}
-
-	private String userData;
+	   
 
 	private Long resourceOwnerId;
 
-	private String templateGroupId;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
+	private String userData;
 
 	private String registerMetadatas;
 
 	private String workflowId;
 
-	public String getUserData() {
-		return this.userData;
-	}
+	private String resourceOwnerAccount;
 
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
+	private Long ownerId;
+
+	private String templateGroupId;
+	public RegisterMediaRequest() {
+		super("vod", "2017-03-21", "RegisterMedia", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -62,14 +58,36 @@ public class RegisterMediaRequest extends RpcAcsRequest<RegisterMediaResponse> {
 		}
 	}
 
-	public String getTemplateGroupId() {
-		return this.templateGroupId;
+	public String getUserData() {
+		return this.userData;
 	}
 
-	public void setTemplateGroupId(String templateGroupId) {
-		this.templateGroupId = templateGroupId;
-		if(templateGroupId != null){
-			putQueryParameter("TemplateGroupId", templateGroupId);
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getRegisterMetadatas() {
+		return this.registerMetadatas;
+	}
+
+	public void setRegisterMetadatas(String registerMetadatas) {
+		this.registerMetadatas = registerMetadatas;
+		if(registerMetadatas != null){
+			putQueryParameter("RegisterMetadatas", registerMetadatas);
+		}
+	}
+
+	public String getWorkflowId() {
+		return this.workflowId;
+	}
+
+	public void setWorkflowId(String workflowId) {
+		this.workflowId = workflowId;
+		if(workflowId != null){
+			putQueryParameter("WorkflowId", workflowId);
 		}
 	}
 
@@ -95,25 +113,14 @@ public class RegisterMediaRequest extends RpcAcsRequest<RegisterMediaResponse> {
 		}
 	}
 
-	public String getRegisterMetadatas() {
-		return this.registerMetadatas;
+	public String getTemplateGroupId() {
+		return this.templateGroupId;
 	}
 
-	public void setRegisterMetadatas(String registerMetadatas) {
-		this.registerMetadatas = registerMetadatas;
-		if(registerMetadatas != null){
-			putQueryParameter("RegisterMetadatas", registerMetadatas);
-		}
-	}
-
-	public String getWorkflowId() {
-		return this.workflowId;
-	}
-
-	public void setWorkflowId(String workflowId) {
-		this.workflowId = workflowId;
-		if(workflowId != null){
-			putQueryParameter("WorkflowId", workflowId);
+	public void setTemplateGroupId(String templateGroupId) {
+		this.templateGroupId = templateGroupId;
+		if(templateGroupId != null){
+			putQueryParameter("TemplateGroupId", templateGroupId);
 		}
 	}
 

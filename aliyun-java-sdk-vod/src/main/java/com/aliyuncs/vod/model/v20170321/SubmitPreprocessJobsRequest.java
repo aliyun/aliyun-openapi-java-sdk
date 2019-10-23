@@ -15,16 +15,15 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitPreprocessJobsRequest extends RpcAcsRequest<SubmitPreprocessJobsResponse> {
-	
-	public SubmitPreprocessJobsRequest() {
-		super("vod", "2017-03-21", "SubmitPreprocessJobs", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -35,6 +34,14 @@ public class SubmitPreprocessJobsRequest extends RpcAcsRequest<SubmitPreprocessJ
 	private Long ownerId;
 
 	private String preprocessType;
+	public SubmitPreprocessJobsRequest() {
+		super("vod", "2017-03-21", "SubmitPreprocessJobs", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

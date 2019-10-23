@@ -15,30 +15,37 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateTranscodeTemplateGroupRequest extends RpcAcsRequest<UpdateTranscodeTemplateGroupResponse> {
-	
-	public UpdateTranscodeTemplateGroupRequest() {
-		super("vod", "2017-03-21", "UpdateTranscodeTemplateGroup", "vod");
-	}
+	   
 
 	private String transcodeTemplateList;
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private String locked;
 
-	private String name;
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	private String locked;
-
 	private String transcodeTemplateGroupId;
+
+	private String name;
+	public UpdateTranscodeTemplateGroupRequest() {
+		super("vod", "2017-03-21", "UpdateTranscodeTemplateGroup", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTranscodeTemplateList() {
 		return this.transcodeTemplateList;
@@ -62,6 +69,17 @@ public class UpdateTranscodeTemplateGroupRequest extends RpcAcsRequest<UpdateTra
 		}
 	}
 
+	public String getLocked() {
+		return this.locked;
+	}
+
+	public void setLocked(String locked) {
+		this.locked = locked;
+		if(locked != null){
+			putQueryParameter("Locked", locked);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -70,17 +88,6 @@ public class UpdateTranscodeTemplateGroupRequest extends RpcAcsRequest<UpdateTra
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
 		}
 	}
 
@@ -95,17 +102,6 @@ public class UpdateTranscodeTemplateGroupRequest extends RpcAcsRequest<UpdateTra
 		}
 	}
 
-	public String getLocked() {
-		return this.locked;
-	}
-
-	public void setLocked(String locked) {
-		this.locked = locked;
-		if(locked != null){
-			putQueryParameter("Locked", locked);
-		}
-	}
-
 	public String getTranscodeTemplateGroupId() {
 		return this.transcodeTemplateGroupId;
 	}
@@ -114,6 +110,17 @@ public class UpdateTranscodeTemplateGroupRequest extends RpcAcsRequest<UpdateTra
 		this.transcodeTemplateGroupId = transcodeTemplateGroupId;
 		if(transcodeTemplateGroupId != null){
 			putQueryParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

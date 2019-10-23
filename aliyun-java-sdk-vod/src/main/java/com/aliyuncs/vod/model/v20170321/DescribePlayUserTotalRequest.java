@@ -15,22 +15,29 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribePlayUserTotalRequest extends RpcAcsRequest<DescribePlayUserTotalResponse> {
-	
-	public DescribePlayUserTotalRequest() {
-		super("vod", "2017-03-21", "DescribePlayUserTotal", "vod");
-	}
+	   
 
 	private String startTime;
 
 	private String endTime;
 
 	private Long ownerId;
+	public DescribePlayUserTotalRequest() {
+		super("vod", "2017-03-21", "DescribePlayUserTotal", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStartTime() {
 		return this.startTime;

@@ -15,28 +15,35 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteMessageCallbackRequest extends RpcAcsRequest<DeleteMessageCallbackResponse> {
-	
-	public DeleteMessageCallbackRequest() {
-		super("vod", "2017-03-21", "DeleteMessageCallback", "vod");
-	}
+	   
 
 	private String resourceOwnerId;
+
+	private Long resourceRealOwnerId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String appId;
-
-	private Long resourceRealOwnerId;
-
 	private String ownerId;
+
+	private String appId;
+	public DeleteMessageCallbackRequest() {
+		super("vod", "2017-03-21", "DeleteMessageCallback", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,6 +53,17 @@ public class DeleteMessageCallbackRequest extends RpcAcsRequest<DeleteMessageCal
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
+	}
+
+	public Long getResourceRealOwnerId() {
+		return this.resourceRealOwnerId;
+	}
+
+	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
+		this.resourceRealOwnerId = resourceRealOwnerId;
+		if(resourceRealOwnerId != null){
+			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
 		}
 	}
 
@@ -71,28 +89,6 @@ public class DeleteMessageCallbackRequest extends RpcAcsRequest<DeleteMessageCal
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
-	}
-
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
-		}
-	}
-
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -101,6 +97,17 @@ public class DeleteMessageCallbackRequest extends RpcAcsRequest<DeleteMessageCal
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

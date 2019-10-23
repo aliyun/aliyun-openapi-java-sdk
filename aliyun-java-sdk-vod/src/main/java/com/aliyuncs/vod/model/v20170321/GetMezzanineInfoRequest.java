@@ -15,32 +15,39 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoResponse> {
-	
-	public GetMezzanineInfoRequest() {
-		super("vod", "2017-03-21", "GetMezzanineInfo", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String outputType;
+
+	private Long authTimeout;
 
 	private String resourceOwnerAccount;
 
 	private String videoId;
 
-	private Boolean previewSegment;
-
-	private String outputType;
-
-	private String additionType;
-
 	private Long ownerId;
 
-	private Long authTimeout;
+	private Boolean previewSegment;
+
+	private String additionType;
+	public GetMezzanineInfoRequest() {
+		super("vod", "2017-03-21", "GetMezzanineInfo", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,6 +57,28 @@ public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOutputType() {
+		return this.outputType;
+	}
+
+	public void setOutputType(String outputType) {
+		this.outputType = outputType;
+		if(outputType != null){
+			putQueryParameter("OutputType", outputType);
+		}
+	}
+
+	public Long getAuthTimeout() {
+		return this.authTimeout;
+	}
+
+	public void setAuthTimeout(Long authTimeout) {
+		this.authTimeout = authTimeout;
+		if(authTimeout != null){
+			putQueryParameter("AuthTimeout", authTimeout.toString());
 		}
 	}
 
@@ -75,39 +104,6 @@ public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoRespo
 		}
 	}
 
-	public Boolean getPreviewSegment() {
-		return this.previewSegment;
-	}
-
-	public void setPreviewSegment(Boolean previewSegment) {
-		this.previewSegment = previewSegment;
-		if(previewSegment != null){
-			putQueryParameter("PreviewSegment", previewSegment.toString());
-		}
-	}
-
-	public String getOutputType() {
-		return this.outputType;
-	}
-
-	public void setOutputType(String outputType) {
-		this.outputType = outputType;
-		if(outputType != null){
-			putQueryParameter("OutputType", outputType);
-		}
-	}
-
-	public String getAdditionType() {
-		return this.additionType;
-	}
-
-	public void setAdditionType(String additionType) {
-		this.additionType = additionType;
-		if(additionType != null){
-			putQueryParameter("AdditionType", additionType);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -119,14 +115,25 @@ public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoRespo
 		}
 	}
 
-	public Long getAuthTimeout() {
-		return this.authTimeout;
+	public Boolean getPreviewSegment() {
+		return this.previewSegment;
 	}
 
-	public void setAuthTimeout(Long authTimeout) {
-		this.authTimeout = authTimeout;
-		if(authTimeout != null){
-			putQueryParameter("AuthTimeout", authTimeout.toString());
+	public void setPreviewSegment(Boolean previewSegment) {
+		this.previewSegment = previewSegment;
+		if(previewSegment != null){
+			putQueryParameter("PreviewSegment", previewSegment.toString());
+		}
+	}
+
+	public String getAdditionType() {
+		return this.additionType;
+	}
+
+	public void setAdditionType(String additionType) {
+		this.additionType = additionType;
+		if(additionType != null){
+			putQueryParameter("AdditionType", additionType);
 		}
 	}
 

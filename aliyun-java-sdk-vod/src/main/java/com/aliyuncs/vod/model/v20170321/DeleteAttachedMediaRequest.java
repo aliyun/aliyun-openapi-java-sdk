@@ -15,24 +15,31 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteAttachedMediaRequest extends RpcAcsRequest<DeleteAttachedMediaResponse> {
-	
-	public DeleteAttachedMediaRequest() {
-		super("vod", "2017-03-21", "DeleteAttachedMedia", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String mediaIds;
-
 	private Long ownerId;
+
+	private String mediaIds;
+	public DeleteAttachedMediaRequest() {
+		super("vod", "2017-03-21", "DeleteAttachedMedia", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,17 +63,6 @@ public class DeleteAttachedMediaRequest extends RpcAcsRequest<DeleteAttachedMedi
 		}
 	}
 
-	public String getMediaIds() {
-		return this.mediaIds;
-	}
-
-	public void setMediaIds(String mediaIds) {
-		this.mediaIds = mediaIds;
-		if(mediaIds != null){
-			putQueryParameter("MediaIds", mediaIds);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -75,6 +71,17 @@ public class DeleteAttachedMediaRequest extends RpcAcsRequest<DeleteAttachedMedi
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getMediaIds() {
+		return this.mediaIds;
+	}
+
+	public void setMediaIds(String mediaIds) {
+		this.mediaIds = mediaIds;
+		if(mediaIds != null){
+			putQueryParameter("MediaIds", mediaIds);
 		}
 	}
 

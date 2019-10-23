@@ -15,24 +15,31 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetTranscodeTaskRequest extends RpcAcsRequest<GetTranscodeTaskResponse> {
-	
-	public GetTranscodeTaskRequest() {
-		super("vod", "2017-03-21", "GetTranscodeTask", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String transcodeTaskId;
-
 	private Long ownerId;
+
+	private String transcodeTaskId;
+	public GetTranscodeTaskRequest() {
+		super("vod", "2017-03-21", "GetTranscodeTask", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,17 +63,6 @@ public class GetTranscodeTaskRequest extends RpcAcsRequest<GetTranscodeTaskRespo
 		}
 	}
 
-	public String getTranscodeTaskId() {
-		return this.transcodeTaskId;
-	}
-
-	public void setTranscodeTaskId(String transcodeTaskId) {
-		this.transcodeTaskId = transcodeTaskId;
-		if(transcodeTaskId != null){
-			putQueryParameter("TranscodeTaskId", transcodeTaskId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -75,6 +71,17 @@ public class GetTranscodeTaskRequest extends RpcAcsRequest<GetTranscodeTaskRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTranscodeTaskId() {
+		return this.transcodeTaskId;
+	}
+
+	public void setTranscodeTaskId(String transcodeTaskId) {
+		this.transcodeTaskId = transcodeTaskId;
+		if(transcodeTaskId != null){
+			putQueryParameter("TranscodeTaskId", transcodeTaskId);
 		}
 	}
 

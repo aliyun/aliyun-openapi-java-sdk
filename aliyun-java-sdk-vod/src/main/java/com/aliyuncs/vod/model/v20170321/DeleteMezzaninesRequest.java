@@ -15,26 +15,33 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteMezzaninesRequest extends RpcAcsRequest<DeleteMezzaninesResponse> {
-	
-	public DeleteMezzaninesRequest() {
-		super("vod", "2017-03-21", "DeleteMezzanines", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Boolean force;
-
 	private Long ownerId;
 
+	private Boolean force;
+
 	private String videoIds;
+	public DeleteMezzaninesRequest() {
+		super("vod", "2017-03-21", "DeleteMezzanines", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,17 +65,6 @@ public class DeleteMezzaninesRequest extends RpcAcsRequest<DeleteMezzaninesRespo
 		}
 	}
 
-	public Boolean getForce() {
-		return this.force;
-	}
-
-	public void setForce(Boolean force) {
-		this.force = force;
-		if(force != null){
-			putQueryParameter("Force", force.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -77,6 +73,17 @@ public class DeleteMezzaninesRequest extends RpcAcsRequest<DeleteMezzaninesRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 

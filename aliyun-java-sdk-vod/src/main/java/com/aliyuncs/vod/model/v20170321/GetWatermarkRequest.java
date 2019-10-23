@@ -15,18 +15,15 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetWatermarkRequest extends RpcAcsRequest<GetWatermarkResponse> {
-	
-	public GetWatermarkRequest() {
-		super("vod", "2017-03-21", "GetWatermark", "vod");
-	}
-
-	private String watermarkId;
+	   
 
 	private Long resourceOwnerId;
 
@@ -34,15 +31,14 @@ public class GetWatermarkRequest extends RpcAcsRequest<GetWatermarkResponse> {
 
 	private Long ownerId;
 
-	public String getWatermarkId() {
-		return this.watermarkId;
-	}
-
-	public void setWatermarkId(String watermarkId) {
-		this.watermarkId = watermarkId;
-		if(watermarkId != null){
-			putQueryParameter("WatermarkId", watermarkId);
-		}
+	private String watermarkId;
+	public GetWatermarkRequest() {
+		super("vod", "2017-03-21", "GetWatermark", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -75,6 +71,17 @@ public class GetWatermarkRequest extends RpcAcsRequest<GetWatermarkResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getWatermarkId() {
+		return this.watermarkId;
+	}
+
+	public void setWatermarkId(String watermarkId) {
+		this.watermarkId = watermarkId;
+		if(watermarkId != null){
+			putQueryParameter("WatermarkId", watermarkId);
 		}
 	}
 

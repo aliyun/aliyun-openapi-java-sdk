@@ -27,6 +27,7 @@ public class ListAppInfoResponseUnmarshaller {
 	public static ListAppInfoResponse unmarshall(ListAppInfoResponse listAppInfoResponse, UnmarshallerContext _ctx) {
 		
 		listAppInfoResponse.setRequestId(_ctx.stringValue("ListAppInfoResponse.RequestId"));
+		listAppInfoResponse.setTotal(_ctx.integerValue("ListAppInfoResponse.Total"));
 
 		List<AppInfo> appInfoList = new ArrayList<AppInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListAppInfoResponse.AppInfoList.Length"); i++) {

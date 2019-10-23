@@ -15,24 +15,31 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetVodTemplateRequest extends RpcAcsRequest<GetVodTemplateResponse> {
-	
-	public GetVodTemplateRequest() {
-		super("vod", "2017-03-21", "GetVodTemplate", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String vodTemplateId;
-
 	private Long ownerId;
+
+	private String vodTemplateId;
+	public GetVodTemplateRequest() {
+		super("vod", "2017-03-21", "GetVodTemplate", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,17 +63,6 @@ public class GetVodTemplateRequest extends RpcAcsRequest<GetVodTemplateResponse>
 		}
 	}
 
-	public String getVodTemplateId() {
-		return this.vodTemplateId;
-	}
-
-	public void setVodTemplateId(String vodTemplateId) {
-		this.vodTemplateId = vodTemplateId;
-		if(vodTemplateId != null){
-			putQueryParameter("VodTemplateId", vodTemplateId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -75,6 +71,17 @@ public class GetVodTemplateRequest extends RpcAcsRequest<GetVodTemplateResponse>
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVodTemplateId() {
+		return this.vodTemplateId;
+	}
+
+	public void setVodTemplateId(String vodTemplateId) {
+		this.vodTemplateId = vodTemplateId;
+		if(vodTemplateId != null){
+			putQueryParameter("VodTemplateId", vodTemplateId);
 		}
 	}
 

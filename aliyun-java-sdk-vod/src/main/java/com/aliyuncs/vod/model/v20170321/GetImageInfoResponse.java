@@ -72,6 +72,8 @@ public class GetImageInfoResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String auditStatus;
+
 		private Mezzanine mezzanine;
 
 		public String getImageId() {
@@ -170,28 +172,20 @@ public class GetImageInfoResponse extends AcsResponse {
 			this.appId = appId;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getAuditStatus() {
+			return this.auditStatus;
+		}
+
+		public void setAuditStatus(String auditStatus) {
+			this.auditStatus = auditStatus;
 		}
 
 		public Mezzanine getMezzanine() {

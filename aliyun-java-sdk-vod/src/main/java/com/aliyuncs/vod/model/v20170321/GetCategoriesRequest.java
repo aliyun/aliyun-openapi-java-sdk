@@ -15,32 +15,39 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
-	
-	public GetCategoriesRequest() {
-		super("vod", "2017-03-21", "GetCategories", "vod");
-	}
+	   
 
 	private String resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private String type;
 
 	private Long cateId;
 
-	private Long pageNo;
-
 	private Long pageSize;
 
-	private String sortBy;
+	private String resourceOwnerAccount;
 
 	private String ownerId;
 
-	private String type;
+	private Long pageNo;
+
+	private String sortBy;
+	public GetCategoriesRequest() {
+		super("vod", "2017-03-21", "GetCategories", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,14 +60,14 @@ public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
@@ -75,17 +82,6 @@ public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
 		}
 	}
 
-	public Long getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(Long pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo.toString());
-		}
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
@@ -97,14 +93,14 @@ public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
 		}
 	}
 
-	public String getSortBy() {
-		return this.sortBy;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setSortBy(String sortBy) {
-		this.sortBy = sortBy;
-		if(sortBy != null){
-			putQueryParameter("SortBy", sortBy);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -119,14 +115,25 @@ public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public Long getPageNo() {
+		return this.pageNo;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setPageNo(Long pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
+		}
+	}
+
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+		if(sortBy != null){
+			putQueryParameter("SortBy", sortBy);
 		}
 	}
 

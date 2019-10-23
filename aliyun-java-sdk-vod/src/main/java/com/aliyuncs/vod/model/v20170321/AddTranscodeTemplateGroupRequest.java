@@ -15,16 +15,15 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddTranscodeTemplateGroupRequest extends RpcAcsRequest<AddTranscodeTemplateGroupResponse> {
-	
-	public AddTranscodeTemplateGroupRequest() {
-		super("vod", "2017-03-21", "AddTranscodeTemplateGroup", "vod");
-	}
+	   
 
 	private String transcodeTemplateList;
 
@@ -32,13 +31,21 @@ public class AddTranscodeTemplateGroupRequest extends RpcAcsRequest<AddTranscode
 
 	private String resourceOwnerAccount;
 
-	private String appId;
-
-	private String name;
-
 	private Long ownerId;
 
 	private String transcodeTemplateGroupId;
+
+	private String appId;
+
+	private String name;
+	public AddTranscodeTemplateGroupRequest() {
+		super("vod", "2017-03-21", "AddTranscodeTemplateGroup", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTranscodeTemplateList() {
 		return this.transcodeTemplateList;
@@ -73,28 +80,6 @@ public class AddTranscodeTemplateGroupRequest extends RpcAcsRequest<AddTranscode
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,6 +99,28 @@ public class AddTranscodeTemplateGroupRequest extends RpcAcsRequest<AddTranscode
 		this.transcodeTemplateGroupId = transcodeTemplateGroupId;
 		if(transcodeTemplateGroupId != null){
 			putQueryParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

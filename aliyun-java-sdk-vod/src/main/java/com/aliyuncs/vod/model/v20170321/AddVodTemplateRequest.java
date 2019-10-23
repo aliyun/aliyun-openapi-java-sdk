@@ -15,32 +15,39 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddVodTemplateRequest extends RpcAcsRequest<AddVodTemplateResponse> {
-	
-	public AddVodTemplateRequest() {
-		super("vod", "2017-03-21", "AddVodTemplate", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private String subTemplateType;
 
 	private String templateConfig;
 
 	private String templateType;
 
-	private String appId;
-
-	private String name;
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	private String subTemplateType;
+	private String appId;
+
+	private String name;
+	public AddVodTemplateRequest() {
+		super("vod", "2017-03-21", "AddVodTemplate", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,14 +60,14 @@ public class AddVodTemplateRequest extends RpcAcsRequest<AddVodTemplateResponse>
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getSubTemplateType() {
+		return this.subTemplateType;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setSubTemplateType(String subTemplateType) {
+		this.subTemplateType = subTemplateType;
+		if(subTemplateType != null){
+			putQueryParameter("SubTemplateType", subTemplateType);
 		}
 	}
 
@@ -86,6 +93,28 @@ public class AddVodTemplateRequest extends RpcAcsRequest<AddVodTemplateResponse>
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
 	public String getAppId() {
 		return this.appId;
 	}
@@ -105,28 +134,6 @@ public class AddVodTemplateRequest extends RpcAcsRequest<AddVodTemplateResponse>
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSubTemplateType() {
-		return this.subTemplateType;
-	}
-
-	public void setSubTemplateType(String subTemplateType) {
-		this.subTemplateType = subTemplateType;
-		if(subTemplateType != null){
-			putQueryParameter("SubTemplateType", subTemplateType);
 		}
 	}
 

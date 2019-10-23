@@ -15,36 +15,43 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoResponse> {
-	
-	public UpdateVideoInfoRequest() {
-		super("vod", "2017-03-21", "UpdateVideoInfo", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String description;
 
-	private String videoId;
-
-	private Long ownerId;
-
 	private String title;
-
-	private String tags;
 
 	private String coverURL;
 
 	private Long cateId;
 
 	private String customMediaInfo;
+
+	private String resourceOwnerAccount;
+
+	private String videoId;
+
+	private Long ownerId;
+
+	private String tags;
+	public UpdateVideoInfoRequest() {
+		super("vod", "2017-03-21", "UpdateVideoInfo", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,17 +61,6 @@ public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -79,28 +75,6 @@ public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoRespons
 		}
 	}
 
-	public String getVideoId() {
-		return this.videoId;
-	}
-
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
-		if(videoId != null){
-			putQueryParameter("VideoId", videoId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getTitle() {
 		return this.title;
 	}
@@ -109,17 +83,6 @@ public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoRespons
 		this.title = title;
 		if(title != null){
 			putQueryParameter("Title", title);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 
@@ -153,6 +116,50 @@ public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoRespons
 		this.customMediaInfo = customMediaInfo;
 		if(customMediaInfo != null){
 			putQueryParameter("CustomMediaInfo", customMediaInfo);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getVideoId() {
+		return this.videoId;
+	}
+
+	public void setVideoId(String videoId) {
+		this.videoId = videoId;
+		if(videoId != null){
+			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 

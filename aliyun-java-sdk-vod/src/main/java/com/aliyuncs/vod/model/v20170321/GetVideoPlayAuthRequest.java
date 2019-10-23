@@ -15,28 +15,35 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetVideoPlayAuthRequest extends RpcAcsRequest<GetVideoPlayAuthResponse> {
-	
-	public GetVideoPlayAuthRequest() {
-		super("vod", "2017-03-21", "GetVideoPlayAuth", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String playConfig;
 
-	private Long authInfoTimeout;
+	private String resourceOwnerAccount;
 
 	private String videoId;
 
 	private Long ownerId;
+
+	private Long authInfoTimeout;
+	public GetVideoPlayAuthRequest() {
+		super("vod", "2017-03-21", "GetVideoPlayAuth", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,17 +53,6 @@ public class GetVideoPlayAuthRequest extends RpcAcsRequest<GetVideoPlayAuthRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -71,14 +67,14 @@ public class GetVideoPlayAuthRequest extends RpcAcsRequest<GetVideoPlayAuthRespo
 		}
 	}
 
-	public Long getAuthInfoTimeout() {
-		return this.authInfoTimeout;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setAuthInfoTimeout(Long authInfoTimeout) {
-		this.authInfoTimeout = authInfoTimeout;
-		if(authInfoTimeout != null){
-			putQueryParameter("AuthInfoTimeout", authInfoTimeout.toString());
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -101,6 +97,17 @@ public class GetVideoPlayAuthRequest extends RpcAcsRequest<GetVideoPlayAuthRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getAuthInfoTimeout() {
+		return this.authInfoTimeout;
+	}
+
+	public void setAuthInfoTimeout(Long authInfoTimeout) {
+		this.authInfoTimeout = authInfoTimeout;
+		if(authInfoTimeout != null){
+			putQueryParameter("AuthInfoTimeout", authInfoTimeout.toString());
 		}
 	}
 

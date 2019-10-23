@@ -15,32 +15,39 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListSnapshotsRequest extends RpcAcsRequest<ListSnapshotsResponse> {
-	
-	public ListSnapshotsRequest() {
-		super("vod", "2017-03-21", "ListSnapshots", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private String snapshotType;
-
-	private String pageNo;
-
 	private String pageSize;
+
+	private String authTimeout;
+
+	private String resourceOwnerAccount;
 
 	private String videoId;
 
 	private Long ownerId;
 
-	private String authTimeout;
+	private String snapshotType;
+
+	private String pageNo;
+	public ListSnapshotsRequest() {
+		super("vod", "2017-03-21", "ListSnapshots", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,39 +60,6 @@ public class ListSnapshotsRequest extends RpcAcsRequest<ListSnapshotsResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getSnapshotType() {
-		return this.snapshotType;
-	}
-
-	public void setSnapshotType(String snapshotType) {
-		this.snapshotType = snapshotType;
-		if(snapshotType != null){
-			putQueryParameter("SnapshotType", snapshotType);
-		}
-	}
-
-	public String getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(String pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo);
-		}
-	}
-
 	public String getPageSize() {
 		return this.pageSize;
 	}
@@ -94,6 +68,28 @@ public class ListSnapshotsRequest extends RpcAcsRequest<ListSnapshotsResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getAuthTimeout() {
+		return this.authTimeout;
+	}
+
+	public void setAuthTimeout(String authTimeout) {
+		this.authTimeout = authTimeout;
+		if(authTimeout != null){
+			putQueryParameter("AuthTimeout", authTimeout);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -119,14 +115,25 @@ public class ListSnapshotsRequest extends RpcAcsRequest<ListSnapshotsResponse> {
 		}
 	}
 
-	public String getAuthTimeout() {
-		return this.authTimeout;
+	public String getSnapshotType() {
+		return this.snapshotType;
 	}
 
-	public void setAuthTimeout(String authTimeout) {
-		this.authTimeout = authTimeout;
-		if(authTimeout != null){
-			putQueryParameter("AuthTimeout", authTimeout);
+	public void setSnapshotType(String snapshotType) {
+		this.snapshotType = snapshotType;
+		if(snapshotType != null){
+			putQueryParameter("SnapshotType", snapshotType);
+		}
+	}
+
+	public String getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(String pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo);
 		}
 	}
 

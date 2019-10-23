@@ -71,7 +71,7 @@ public class GetAttachedMediaInfoResponse extends AcsResponse {
 
 		private Long fileSize;
 
-		private Long storageLocation;
+		private String storageLocation;
 
 		private String creationTime;
 
@@ -145,11 +145,11 @@ public class GetAttachedMediaInfoResponse extends AcsResponse {
 			this.fileSize = fileSize;
 		}
 
-		public Long getStorageLocation() {
+		public String getStorageLocation() {
 			return this.storageLocation;
 		}
 
-		public void setStorageLocation(Long storageLocation) {
+		public void setStorageLocation(String storageLocation) {
 			this.storageLocation = storageLocation;
 		}
 
@@ -201,26 +201,10 @@ public class GetAttachedMediaInfoResponse extends AcsResponse {
 			this.icon = icon;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}

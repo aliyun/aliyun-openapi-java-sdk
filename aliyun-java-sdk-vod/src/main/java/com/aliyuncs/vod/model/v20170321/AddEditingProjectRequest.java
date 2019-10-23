@@ -15,34 +15,74 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddEditingProjectRequest extends RpcAcsRequest<AddEditingProjectResponse> {
-	
-	public AddEditingProjectRequest() {
-		super("vod", "2017-03-21", "AddEditingProject", "vod");
-	}
+	   
+
+	private String resourceOwnerId;
+
+	private String description;
+
+	private String title;
 
 	private String coverURL;
 
 	private String division;
 
-	private String resourceOwnerId;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String description;
-
-	private String timeline;
-
 	private String ownerId;
 
-	private String title;
+	private String timeline;
+	public AddEditingProjectRequest() {
+		super("vod", "2017-03-21", "AddEditingProject", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(String resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
+		}
+	}
 
 	public String getCoverURL() {
 		return this.coverURL;
@@ -63,17 +103,6 @@ public class AddEditingProjectRequest extends RpcAcsRequest<AddEditingProjectRes
 		this.division = division;
 		if(division != null){
 			putQueryParameter("Division", division);
-		}
-	}
-
-	public String getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(String resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId);
 		}
 	}
 
@@ -99,28 +128,6 @@ public class AddEditingProjectRequest extends RpcAcsRequest<AddEditingProjectRes
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getTimeline() {
-		return this.timeline;
-	}
-
-	public void setTimeline(String timeline) {
-		this.timeline = timeline;
-		if(timeline != null){
-			putQueryParameter("Timeline", timeline);
-		}
-	}
-
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -132,14 +139,14 @@ public class AddEditingProjectRequest extends RpcAcsRequest<AddEditingProjectRes
 		}
 	}
 
-	public String getTitle() {
-		return this.title;
+	public String getTimeline() {
+		return this.timeline;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
-		if(title != null){
-			putQueryParameter("Title", title);
+	public void setTimeline(String timeline) {
+		this.timeline = timeline;
+		if(timeline != null){
+			putQueryParameter("Timeline", timeline);
 		}
 	}
 

@@ -15,26 +15,33 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListVodTemplateRequest extends RpcAcsRequest<ListVodTemplateResponse> {
-	
-	public ListVodTemplateRequest() {
-		super("vod", "2017-03-21", "ListVodTemplate", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
+	private Long ownerId;
+
 	private String templateType;
 
 	private String appId;
-
-	private Long ownerId;
+	public ListVodTemplateRequest() {
+		super("vod", "2017-03-21", "ListVodTemplate", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,6 +65,17 @@ public class ListVodTemplateRequest extends RpcAcsRequest<ListVodTemplateRespons
 		}
 	}
 
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
 	public String getTemplateType() {
 		return this.templateType;
 	}
@@ -77,17 +95,6 @@ public class ListVodTemplateRequest extends RpcAcsRequest<ListVodTemplateRespons
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

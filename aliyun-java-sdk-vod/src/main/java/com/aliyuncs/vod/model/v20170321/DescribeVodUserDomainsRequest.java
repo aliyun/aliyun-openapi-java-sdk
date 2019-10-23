@@ -15,18 +15,17 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeVodUserDomainsRequest extends RpcAcsRequest<DescribeVodUserDomainsResponse> {
-	
-	public DescribeVodUserDomainsRequest() {
-		super("vod", "2017-03-21", "DescribeVodUserDomains", "vod");
-	}
+	   
 
-	private String funcFilter;
+	private Integer pageNumber;
 
 	private Boolean checkDomainShow;
 
@@ -36,26 +35,34 @@ public class DescribeVodUserDomainsRequest extends RpcAcsRequest<DescribeVodUser
 
 	private Integer pageSize;
 
+	private String funcFilter;
+
 	private String domainName;
 
 	private Long ownerId;
 
 	private String funcId;
 
-	private Integer pageNumber;
-
 	private String domainStatus;
 
 	private String domainSearchType;
-
-	public String getFuncFilter() {
-		return this.funcFilter;
+	public DescribeVodUserDomainsRequest() {
+		super("vod", "2017-03-21", "DescribeVodUserDomains", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setFuncFilter(String funcFilter) {
-		this.funcFilter = funcFilter;
-		if(funcFilter != null){
-			putQueryParameter("FuncFilter", funcFilter);
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -70,29 +77,10 @@ public class DescribeVodUserDomainsRequest extends RpcAcsRequest<DescribeVodUser
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -119,6 +107,17 @@ public class DescribeVodUserDomainsRequest extends RpcAcsRequest<DescribeVodUser
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getFuncFilter() {
+		return this.funcFilter;
+	}
+
+	public void setFuncFilter(String funcFilter) {
+		this.funcFilter = funcFilter;
+		if(funcFilter != null){
+			putQueryParameter("FuncFilter", funcFilter);
 		}
 	}
 
@@ -152,17 +151,6 @@ public class DescribeVodUserDomainsRequest extends RpcAcsRequest<DescribeVodUser
 		this.funcId = funcId;
 		if(funcId != null){
 			putQueryParameter("FuncId", funcId);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

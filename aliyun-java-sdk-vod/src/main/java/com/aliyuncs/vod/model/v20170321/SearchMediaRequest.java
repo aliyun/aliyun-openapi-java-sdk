@@ -15,38 +15,45 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
-	
-	public SearchMediaRequest() {
-		super("vod", "2017-03-21", "SearchMedia", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private String match;
-
 	private String sessionId;
 
-	private Long ownerId;
-
 	private String scrollToken;
-
-	private Integer pageNo;
 
 	private String searchType;
 
 	private Integer pageSize;
 
+	private String resourceOwnerAccount;
+
+	private String match;
+
+	private Long ownerId;
+
+	private Integer pageNo;
+
 	private String sortBy;
 
 	private String fields;
+	public SearchMediaRequest() {
+		super("vod", "2017-03-21", "SearchMedia", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,6 +63,50 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSessionId() {
+		return this.sessionId;
+	}
+
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
+		if(sessionId != null){
+			putQueryParameter("SessionId", sessionId);
+		}
+	}
+
+	public String getScrollToken() {
+		return this.scrollToken;
+	}
+
+	public void setScrollToken(String scrollToken) {
+		this.scrollToken = scrollToken;
+		if(scrollToken != null){
+			putQueryParameter("ScrollToken", scrollToken);
+		}
+	}
+
+	public String getSearchType() {
+		return this.searchType;
+	}
+
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
+		if(searchType != null){
+			putQueryParameter("SearchType", searchType);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -81,17 +132,6 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		}
 	}
 
-	public String getSessionId() {
-		return this.sessionId;
-	}
-
-	public void setSessionId(String sessionId) {
-		this.sessionId = sessionId;
-		if(sessionId != null){
-			putQueryParameter("SessionId", sessionId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -103,17 +143,6 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		}
 	}
 
-	public String getScrollToken() {
-		return this.scrollToken;
-	}
-
-	public void setScrollToken(String scrollToken) {
-		this.scrollToken = scrollToken;
-		if(scrollToken != null){
-			putQueryParameter("ScrollToken", scrollToken);
-		}
-	}
-
 	public Integer getPageNo() {
 		return this.pageNo;
 	}
@@ -122,28 +151,6 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		this.pageNo = pageNo;
 		if(pageNo != null){
 			putQueryParameter("PageNo", pageNo.toString());
-		}
-	}
-
-	public String getSearchType() {
-		return this.searchType;
-	}
-
-	public void setSearchType(String searchType) {
-		this.searchType = searchType;
-		if(searchType != null){
-			putQueryParameter("SearchType", searchType);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

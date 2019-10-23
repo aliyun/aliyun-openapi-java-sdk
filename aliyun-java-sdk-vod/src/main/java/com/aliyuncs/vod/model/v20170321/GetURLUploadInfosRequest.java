@@ -15,26 +15,33 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetURLUploadInfosRequest extends RpcAcsRequest<GetURLUploadInfosResponse> {
-	
-	public GetURLUploadInfosRequest() {
-		super("vod", "2017-03-21", "GetURLUploadInfos", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
+	private Long ownerId;
+
 	private String jobIds;
 
 	private String uploadURLs;
-
-	private Long ownerId;
+	public GetURLUploadInfosRequest() {
+		super("vod", "2017-03-21", "GetURLUploadInfos", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,6 +65,17 @@ public class GetURLUploadInfosRequest extends RpcAcsRequest<GetURLUploadInfosRes
 		}
 	}
 
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
 	public String getJobIds() {
 		return this.jobIds;
 	}
@@ -77,17 +95,6 @@ public class GetURLUploadInfosRequest extends RpcAcsRequest<GetURLUploadInfosRes
 		this.uploadURLs = uploadURLs;
 		if(uploadURLs != null){
 			putQueryParameter("UploadURLs", uploadURLs);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

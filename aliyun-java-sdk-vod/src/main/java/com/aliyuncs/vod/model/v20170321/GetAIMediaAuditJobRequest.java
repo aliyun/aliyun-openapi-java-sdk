@@ -15,18 +15,15 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetAIMediaAuditJobRequest extends RpcAcsRequest<GetAIMediaAuditJobResponse> {
-	
-	public GetAIMediaAuditJobRequest() {
-		super("vod", "2017-03-21", "GetAIMediaAuditJob", "vod");
-	}
-
-	private String jobId;
+	   
 
 	private Long resourceOwnerId;
 
@@ -34,15 +31,14 @@ public class GetAIMediaAuditJobRequest extends RpcAcsRequest<GetAIMediaAuditJobR
 
 	private String ownerId;
 
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
-		}
+	private String jobId;
+	public GetAIMediaAuditJobRequest() {
+		super("vod", "2017-03-21", "GetAIMediaAuditJob", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -75,6 +71,17 @@ public class GetAIMediaAuditJobRequest extends RpcAcsRequest<GetAIMediaAuditJobR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
 		}
 	}
 

@@ -15,26 +15,31 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetAppInfosRequest extends RpcAcsRequest<GetAppInfosResponse> {
-	
-	public GetAppInfosRequest() {
-		super("vod", "2017-03-21", "GetAppInfos", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String appIds;
-
 	private String resourceOwnerAccount;
 
-	private Long resourceRealOwnerId;
-
 	private Long ownerId;
+
+	private String appIds;
+	public GetAppInfosRequest() {
+		super("vod", "2017-03-21", "GetAppInfos", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -44,17 +49,6 @@ public class GetAppInfosRequest extends RpcAcsRequest<GetAppInfosResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getAppIds() {
-		return this.appIds;
-	}
-
-	public void setAppIds(String appIds) {
-		this.appIds = appIds;
-		if(appIds != null){
-			putQueryParameter("AppIds", appIds);
 		}
 	}
 
@@ -69,17 +63,6 @@ public class GetAppInfosRequest extends RpcAcsRequest<GetAppInfosResponse> {
 		}
 	}
 
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
-	}
-
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -88,6 +71,17 @@ public class GetAppInfosRequest extends RpcAcsRequest<GetAppInfosResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAppIds() {
+		return this.appIds;
+	}
+
+	public void setAppIds(String appIds) {
+		this.appIds = appIds;
+		if(appIds != null){
+			putQueryParameter("AppIds", appIds);
 		}
 	}
 

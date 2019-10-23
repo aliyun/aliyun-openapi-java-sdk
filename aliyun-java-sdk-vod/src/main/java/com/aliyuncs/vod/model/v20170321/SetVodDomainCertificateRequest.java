@@ -15,56 +15,55 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetVodDomainCertificateRequest extends RpcAcsRequest<SetVodDomainCertificateResponse> {
-	
-	public SetVodDomainCertificateRequest() {
-		super("vod", "2017-03-21", "SetVodDomainCertificate", "vod");
-	}
+	   
+
+	private String sSLProtocol;
 
 	private String securityToken;
 
-	private String sSLPub;
+	private String sSLPri;
 
 	private String certName;
-
-	private String sSLProtocol;
 
 	private String domainName;
 
 	private Long ownerId;
 
+	private String sSLPub;
+
 	private String region;
-
-	private String sSLPri;
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
+	public SetVodDomainCertificateRequest() {
+		super("vod", "2017-03-21", "SetVodDomainCertificate", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public String getSSLProtocol() {
+		return this.sSLProtocol;
+	}
+
+	public void setSSLProtocol(String sSLProtocol) {
+		this.sSLProtocol = sSLProtocol;
+		if(sSLProtocol != null){
+			putQueryParameter("SSLProtocol", sSLProtocol);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -72,14 +71,14 @@ public class SetVodDomainCertificateRequest extends RpcAcsRequest<SetVodDomainCe
 		}
 	}
 
-	public String getSSLPub() {
-		return this.sSLPub;
+	public String getSSLPri() {
+		return this.sSLPri;
 	}
 
-	public void setSSLPub(String sSLPub) {
-		this.sSLPub = sSLPub;
-		if(sSLPub != null){
-			putQueryParameter("SSLPub", sSLPub);
+	public void setSSLPri(String sSLPri) {
+		this.sSLPri = sSLPri;
+		if(sSLPri != null){
+			putQueryParameter("SSLPri", sSLPri);
 		}
 	}
 
@@ -91,17 +90,6 @@ public class SetVodDomainCertificateRequest extends RpcAcsRequest<SetVodDomainCe
 		this.certName = certName;
 		if(certName != null){
 			putQueryParameter("CertName", certName);
-		}
-	}
-
-	public String getSSLProtocol() {
-		return this.sSLProtocol;
-	}
-
-	public void setSSLProtocol(String sSLProtocol) {
-		this.sSLProtocol = sSLProtocol;
-		if(sSLProtocol != null){
-			putQueryParameter("SSLProtocol", sSLProtocol);
 		}
 	}
 
@@ -127,6 +115,17 @@ public class SetVodDomainCertificateRequest extends RpcAcsRequest<SetVodDomainCe
 		}
 	}
 
+	public String getSSLPub() {
+		return this.sSLPub;
+	}
+
+	public void setSSLPub(String sSLPub) {
+		this.sSLPub = sSLPub;
+		if(sSLPub != null){
+			putQueryParameter("SSLPub", sSLPub);
+		}
+	}
+
 	public String getRegion() {
 		return this.region;
 	}
@@ -135,17 +134,6 @@ public class SetVodDomainCertificateRequest extends RpcAcsRequest<SetVodDomainCe
 		this.region = region;
 		if(region != null){
 			putQueryParameter("Region", region);
-		}
-	}
-
-	public String getSSLPri() {
-		return this.sSLPri;
-	}
-
-	public void setSSLPri(String sSLPri) {
-		this.sSLPri = sSLPri;
-		if(sSLPri != null){
-			putQueryParameter("SSLPri", sSLPri);
 		}
 	}
 

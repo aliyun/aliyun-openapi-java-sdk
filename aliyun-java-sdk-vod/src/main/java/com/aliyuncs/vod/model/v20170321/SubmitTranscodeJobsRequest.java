@@ -15,22 +15,19 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJobsResponse> {
-	
-	public SubmitTranscodeJobsRequest() {
-		super("vod", "2017-03-21", "SubmitTranscodeJobs", "vod");
-	}
-
-	private String userData;
+	   
 
 	private Long resourceOwnerId;
 
-	private String templateGroupId;
+	private String userData;
 
 	private String resourceOwnerAccount;
 
@@ -42,19 +39,20 @@ public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJob
 
 	private String priority;
 
-	private String encryptConfig;
-
 	private String pipelineId;
 
-	public String getUserData() {
-		return this.userData;
-	}
+	private String templateGroupId;
 
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
+	private String fileUrl;
+
+	private String encryptConfig;
+	public SubmitTranscodeJobsRequest() {
+		super("vod", "2017-03-21", "SubmitTranscodeJobs", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -68,14 +66,14 @@ public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJob
 		}
 	}
 
-	public String getTemplateGroupId() {
-		return this.templateGroupId;
+	public String getUserData() {
+		return this.userData;
 	}
 
-	public void setTemplateGroupId(String templateGroupId) {
-		this.templateGroupId = templateGroupId;
-		if(templateGroupId != null){
-			putQueryParameter("TemplateGroupId", templateGroupId);
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
 		}
 	}
 
@@ -134,17 +132,6 @@ public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJob
 		}
 	}
 
-	public String getEncryptConfig() {
-		return this.encryptConfig;
-	}
-
-	public void setEncryptConfig(String encryptConfig) {
-		this.encryptConfig = encryptConfig;
-		if(encryptConfig != null){
-			putQueryParameter("EncryptConfig", encryptConfig);
-		}
-	}
-
 	public String getPipelineId() {
 		return this.pipelineId;
 	}
@@ -153,6 +140,39 @@ public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJob
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getTemplateGroupId() {
+		return this.templateGroupId;
+	}
+
+	public void setTemplateGroupId(String templateGroupId) {
+		this.templateGroupId = templateGroupId;
+		if(templateGroupId != null){
+			putQueryParameter("TemplateGroupId", templateGroupId);
+		}
+	}
+
+	public String getFileUrl() {
+		return this.fileUrl;
+	}
+
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
+		if(fileUrl != null){
+			putQueryParameter("FileUrl", fileUrl);
+		}
+	}
+
+	public String getEncryptConfig() {
+		return this.encryptConfig;
+	}
+
+	public void setEncryptConfig(String encryptConfig) {
+		this.encryptConfig = encryptConfig;
+		if(encryptConfig != null){
+			putQueryParameter("EncryptConfig", encryptConfig);
 		}
 	}
 

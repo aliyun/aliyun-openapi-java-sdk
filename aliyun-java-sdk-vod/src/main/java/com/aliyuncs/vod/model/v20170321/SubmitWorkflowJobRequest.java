@@ -22,24 +22,22 @@ import com.aliyuncs.vod.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateAppInfoRequest extends RpcAcsRequest<UpdateAppInfoResponse> {
+public class SubmitWorkflowJobRequest extends RpcAcsRequest<SubmitWorkflowJobResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String description;
-
-	private String appName;
+	private String workflowId;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	private String appId;
+	private String mediaId;
 
-	private String status;
-	public UpdateAppInfoRequest() {
-		super("vod", "2017-03-21", "UpdateAppInfo", "vod");
+	private String fileUrl;
+	public SubmitWorkflowJobRequest() {
+		super("vod", "2017-03-21", "SubmitWorkflowJob", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,25 +56,14 @@ public class UpdateAppInfoRequest extends RpcAcsRequest<UpdateAppInfoResponse> {
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getWorkflowId() {
+		return this.workflowId;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setWorkflowId(String workflowId) {
+		this.workflowId = workflowId;
+		if(workflowId != null){
+			putQueryParameter("WorkflowId", workflowId);
 		}
 	}
 
@@ -102,31 +89,31 @@ public class UpdateAppInfoRequest extends RpcAcsRequest<UpdateAppInfoResponse> {
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
+	public String getMediaId() {
+		return this.mediaId;
 	}
 
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
+	public void setMediaId(String mediaId) {
+		this.mediaId = mediaId;
+		if(mediaId != null){
+			putQueryParameter("MediaId", mediaId);
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getFileUrl() {
+		return this.fileUrl;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
+		if(fileUrl != null){
+			putQueryParameter("FileUrl", fileUrl);
 		}
 	}
 
 	@Override
-	public Class<UpdateAppInfoResponse> getResponseClass() {
-		return UpdateAppInfoResponse.class;
+	public Class<SubmitWorkflowJobResponse> getResponseClass() {
+		return SubmitWorkflowJobResponse.class;
 	}
 
 }

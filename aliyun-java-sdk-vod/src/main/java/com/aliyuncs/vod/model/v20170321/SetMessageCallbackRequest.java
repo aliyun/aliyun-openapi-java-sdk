@@ -15,20 +15,23 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackResponse> {
-	
-	public SetMessageCallbackRequest() {
-		super("vod", "2017-03-21", "SetMessageCallback", "vod");
-	}
+	   
 
 	private String authKey;
 
 	private String resourceOwnerId;
+
+	private Long resourceRealOwnerId;
+
+	private String callbackType;
 
 	private String resourceOwnerAccount;
 
@@ -38,11 +41,7 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 
 	private String mnsQueueName;
 
-	private Long resourceRealOwnerId;
-
 	private String ownerId;
-
-	private String callbackType;
 
 	private String mnsEndpoint;
 
@@ -51,6 +50,14 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 	private String authSwitch;
 
 	private String callbackURL;
+	public SetMessageCallbackRequest() {
+		super("vod", "2017-03-21", "SetMessageCallback", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAuthKey() {
 		return this.authKey;
@@ -71,6 +78,28 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
+	}
+
+	public Long getResourceRealOwnerId() {
+		return this.resourceRealOwnerId;
+	}
+
+	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
+		this.resourceRealOwnerId = resourceRealOwnerId;
+		if(resourceRealOwnerId != null){
+			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
+		}
+	}
+
+	public String getCallbackType() {
+		return this.callbackType;
+	}
+
+	public void setCallbackType(String callbackType) {
+		this.callbackType = callbackType;
+		if(callbackType != null){
+			putQueryParameter("CallbackType", callbackType);
 		}
 	}
 
@@ -118,17 +147,6 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 		}
 	}
 
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
-	}
-
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
-		}
-	}
-
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -137,17 +155,6 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
-	public String getCallbackType() {
-		return this.callbackType;
-	}
-
-	public void setCallbackType(String callbackType) {
-		this.callbackType = callbackType;
-		if(callbackType != null){
-			putQueryParameter("CallbackType", callbackType);
 		}
 	}
 

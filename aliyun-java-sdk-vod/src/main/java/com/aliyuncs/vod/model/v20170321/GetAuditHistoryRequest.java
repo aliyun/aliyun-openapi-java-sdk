@@ -15,34 +15,30 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetAuditHistoryRequest extends RpcAcsRequest<GetAuditHistoryResponse> {
-	
-	public GetAuditHistoryRequest() {
-		super("vod", "2017-03-21", "GetAuditHistory", "vod");
-	}
-
-	private Long pageNo;
+	   
 
 	private Long pageSize;
 
 	private String videoId;
 
+	private Long pageNo;
+
 	private String sortBy;
-
-	public Long getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(Long pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo.toString());
-		}
+	public GetAuditHistoryRequest() {
+		super("vod", "2017-03-21", "GetAuditHistory", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getPageSize() {
@@ -64,6 +60,17 @@ public class GetAuditHistoryRequest extends RpcAcsRequest<GetAuditHistoryRespons
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public Long getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Long pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 

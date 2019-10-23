@@ -15,36 +15,19 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
-	
-	public GetPlayInfoRequest() {
-		super("vod", "2017-03-21", "GetPlayInfo", "vod");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String streamType;
-
 	private String formats;
-
-	private String resourceOwnerAccount;
-
-	private String channel;
-
-	private String videoId;
-
-	private String playerVersion;
-
-	private Long ownerId;
-
-	private String resultType;
-
-	private String rand;
 
 	private String reAuthInfo;
 
@@ -56,7 +39,23 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 
 	private Long authTimeout;
 
-	private String authInfo;
+	private String streamType;
+
+	private String resourceOwnerAccount;
+
+	private String videoId;
+
+	private Long ownerId;
+
+	private String resultType;
+	public GetPlayInfoRequest() {
+		super("vod", "2017-03-21", "GetPlayInfo", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -69,17 +68,6 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		}
 	}
 
-	public String getStreamType() {
-		return this.streamType;
-	}
-
-	public void setStreamType(String streamType) {
-		this.streamType = streamType;
-		if(streamType != null){
-			putQueryParameter("StreamType", streamType);
-		}
-	}
-
 	public String getFormats() {
 		return this.formats;
 	}
@@ -88,83 +76,6 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		this.formats = formats;
 		if(formats != null){
 			putQueryParameter("Formats", formats);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getChannel() {
-		return this.channel;
-	}
-
-	public void setChannel(String channel) {
-		this.channel = channel;
-		if(channel != null){
-			putQueryParameter("Channel", channel);
-		}
-	}
-
-	public String getVideoId() {
-		return this.videoId;
-	}
-
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
-		if(videoId != null){
-			putQueryParameter("VideoId", videoId);
-		}
-	}
-
-	public String getPlayerVersion() {
-		return this.playerVersion;
-	}
-
-	public void setPlayerVersion(String playerVersion) {
-		this.playerVersion = playerVersion;
-		if(playerVersion != null){
-			putQueryParameter("PlayerVersion", playerVersion);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getResultType() {
-		return this.resultType;
-	}
-
-	public void setResultType(String resultType) {
-		this.resultType = resultType;
-		if(resultType != null){
-			putQueryParameter("ResultType", resultType);
-		}
-	}
-
-	public String getRand() {
-		return this.rand;
-	}
-
-	public void setRand(String rand) {
-		this.rand = rand;
-		if(rand != null){
-			putQueryParameter("Rand", rand);
 		}
 	}
 
@@ -223,14 +134,58 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		}
 	}
 
-	public String getAuthInfo() {
-		return this.authInfo;
+	public String getStreamType() {
+		return this.streamType;
 	}
 
-	public void setAuthInfo(String authInfo) {
-		this.authInfo = authInfo;
-		if(authInfo != null){
-			putQueryParameter("AuthInfo", authInfo);
+	public void setStreamType(String streamType) {
+		this.streamType = streamType;
+		if(streamType != null){
+			putQueryParameter("StreamType", streamType);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getVideoId() {
+		return this.videoId;
+	}
+
+	public void setVideoId(String videoId) {
+		this.videoId = videoId;
+		if(videoId != null){
+			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResultType() {
+		return this.resultType;
+	}
+
+	public void setResultType(String resultType) {
+		this.resultType = resultType;
+		if(resultType != null){
+			putQueryParameter("ResultType", resultType);
 		}
 	}
 

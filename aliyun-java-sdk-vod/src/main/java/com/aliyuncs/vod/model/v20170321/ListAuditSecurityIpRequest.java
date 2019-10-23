@@ -15,18 +15,25 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vod.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListAuditSecurityIpRequest extends RpcAcsRequest<ListAuditSecurityIpResponse> {
-	
-	public ListAuditSecurityIpRequest() {
-		super("vod", "2017-03-21", "ListAuditSecurityIp", "vod");
-	}
+	   
 
 	private String securityGroupName;
+	public ListAuditSecurityIpRequest() {
+		super("vod", "2017-03-21", "ListAuditSecurityIp", "vod");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getSecurityGroupName() {
 		return this.securityGroupName;
