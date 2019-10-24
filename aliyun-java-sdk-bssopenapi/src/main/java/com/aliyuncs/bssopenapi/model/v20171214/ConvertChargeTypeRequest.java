@@ -23,15 +23,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class ConvertChargeTypeRequest extends RpcAcsRequest<ConvertChargeTypeResponse> {
-	
-	public ConvertChargeTypeRequest() {
-		super("BssOpenApi", "2017-12-14", "ConvertChargeType", "bssopenapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer period;
 
@@ -44,6 +36,14 @@ public class ConvertChargeTypeRequest extends RpcAcsRequest<ConvertChargeTypeRes
 	private String productType;
 
 	private String instanceId;
+	public ConvertChargeTypeRequest() {
+		super("BssOpenApi", "2017-12-14", "ConvertChargeType", "bssopenapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getPeriod() {
 		return this.period;

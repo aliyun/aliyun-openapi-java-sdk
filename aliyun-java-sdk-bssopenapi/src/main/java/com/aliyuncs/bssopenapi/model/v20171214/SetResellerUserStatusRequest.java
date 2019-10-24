@@ -23,21 +23,21 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class SetResellerUserStatusRequest extends RpcAcsRequest<SetResellerUserStatusResponse> {
-	
-	public SetResellerUserStatusRequest() {
-		super("BssOpenApi", "2017-12-14", "SetResellerUserStatus", "bssopenapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String ownerId;
 
 	private String businessType;
 
 	private String status;
+	public SetResellerUserStatusRequest() {
+		super("BssOpenApi", "2017-12-14", "SetResellerUserStatus", "bssopenapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getOwnerId() {
 		return this.ownerId;

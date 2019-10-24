@@ -23,10 +23,10 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class GetCustomerListRequest extends RpcAcsRequest<GetCustomerListResponse> {
-	
+	   
 	public GetCustomerListRequest() {
 		super("BssOpenApi", "2017-12-14", "GetCustomerList", "bssopenapi");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

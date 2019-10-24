@@ -23,17 +23,17 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class GetCustomerAccountInfoRequest extends RpcAcsRequest<GetCustomerAccountInfoResponse> {
-	
+	   
+
+	private Long ownerId;
 	public GetCustomerAccountInfoRequest() {
 		super("BssOpenApi", "2017-12-14", "GetCustomerAccountInfo", "bssopenapi");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long ownerId;
 
 	public Long getOwnerId() {
 		return this.ownerId;

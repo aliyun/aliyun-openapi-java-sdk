@@ -23,19 +23,19 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class EnableBillGenerationRequest extends RpcAcsRequest<EnableBillGenerationResponse> {
-	
+	   
+
+	private String productCode;
+
+	private Long ownerId;
 	public EnableBillGenerationRequest() {
 		super("BssOpenApi", "2017-12-14", "EnableBillGeneration", "bssopenapi");
-		setSysMethod(MethodType.PUT);
+		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String productCode;
-
-	private Long ownerId;
 
 	public String getProductCode() {
 		return this.productCode;

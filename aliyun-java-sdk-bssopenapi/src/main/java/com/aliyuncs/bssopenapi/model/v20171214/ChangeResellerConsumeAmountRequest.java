@@ -23,15 +23,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class ChangeResellerConsumeAmountRequest extends RpcAcsRequest<ChangeResellerConsumeAmountResponse> {
-	
-	public ChangeResellerConsumeAmountRequest() {
-		super("BssOpenApi", "2017-12-14", "ChangeResellerConsumeAmount", "bssopenapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String amount;
 
@@ -48,6 +40,14 @@ public class ChangeResellerConsumeAmountRequest extends RpcAcsRequest<ChangeRese
 	private String extendMap;
 
 	private String currency;
+	public ChangeResellerConsumeAmountRequest() {
+		super("BssOpenApi", "2017-12-14", "ChangeResellerConsumeAmount", "bssopenapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAmount() {
 		return this.amount;

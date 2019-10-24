@@ -22,10 +22,14 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryAccountBalanceRequest extends RpcAcsRequest<QueryAccountBalanceResponse> {
+public class DeleteCostUnitRequest extends RpcAcsRequest<DeleteCostUnitResponse> {
 	   
-	public QueryAccountBalanceRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryAccountBalance", "bssopenapi");
+
+	private Long unitId;
+
+	private Long ownerUid;
+	public DeleteCostUnitRequest() {
+		super("BssOpenApi", "2017-12-14", "DeleteCostUnit", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -33,9 +37,31 @@ public class QueryAccountBalanceRequest extends RpcAcsRequest<QueryAccountBalanc
 		} catch (Exception e) {}
 	}
 
+	public Long getUnitId() {
+		return this.unitId;
+	}
+
+	public void setUnitId(Long unitId) {
+		this.unitId = unitId;
+		if(unitId != null){
+			putQueryParameter("UnitId", unitId.toString());
+		}
+	}
+
+	public Long getOwnerUid() {
+		return this.ownerUid;
+	}
+
+	public void setOwnerUid(Long ownerUid) {
+		this.ownerUid = ownerUid;
+		if(ownerUid != null){
+			putQueryParameter("OwnerUid", ownerUid.toString());
+		}
+	}
+
 	@Override
-	public Class<QueryAccountBalanceResponse> getResponseClass() {
-		return QueryAccountBalanceResponse.class;
+	public Class<DeleteCostUnitResponse> getResponseClass() {
+		return DeleteCostUnitResponse.class;
 	}
 
 }

@@ -23,15 +23,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class SubscribeBillToOSSRequest extends RpcAcsRequest<SubscribeBillToOSSResponse> {
-	
-	public SubscribeBillToOSSRequest() {
-		super("BssOpenApi", "2017-12-14", "SubscribeBillToOSS", "bssopenapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long bucketOwnerId;
 
@@ -40,6 +32,14 @@ public class SubscribeBillToOSSRequest extends RpcAcsRequest<SubscribeBillToOSSR
 	private String subscribeBucket;
 
 	private String multAccountRelSubscribe;
+	public SubscribeBillToOSSRequest() {
+		super("BssOpenApi", "2017-12-14", "SubscribeBillToOSS", "bssopenapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getBucketOwnerId() {
 		return this.bucketOwnerId;

@@ -24,15 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class ModifyInstanceRequest extends RpcAcsRequest<ModifyInstanceResponse> {
-	
-	public ModifyInstanceRequest() {
-		super("BssOpenApi", "2017-12-14", "ModifyInstance", "bssopenapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String productCode;
 
@@ -49,6 +41,14 @@ public class ModifyInstanceRequest extends RpcAcsRequest<ModifyInstanceResponse>
 	private String modifyType;
 
 	private List<Parameter> parameters;
+	public ModifyInstanceRequest() {
+		super("BssOpenApi", "2017-12-14", "ModifyInstance", "bssopenapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProductCode() {
 		return this.productCode;
@@ -125,9 +125,7 @@ public class ModifyInstanceRequest extends RpcAcsRequest<ModifyInstanceResponse>
 		if(modifyType != null){
 			putQueryParameter("ModifyType", modifyType);
 		}
-	}
-
-	public List<Parameter> getParameters() {
+	}	public List<Parameter> getParameters() {
 		return this.parameters;
 	}
 
@@ -140,6 +138,8 @@ public class ModifyInstanceRequest extends RpcAcsRequest<ModifyInstanceResponse>
 			}
 		}	
 	}
+
+
 
 	public static class Parameter {
 

@@ -24,16 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class CreateAgAccountRequest extends RpcAcsRequest<CreateAgAccountResponse> {
-	
-	public CreateAgAccountRequest() {
-		super("BssOpenApi", "2017-12-14", "CreateAgAccount", "bssopenapi");
-		setSysProtocol(ProtocolType.HTTPS);
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String firstName;
 
@@ -52,6 +43,15 @@ public class CreateAgAccountRequest extends RpcAcsRequest<CreateAgAccountRespons
 	private String provinceName;
 
 	private String accountAttr;
+	public CreateAgAccountRequest() {
+		super("BssOpenApi", "2017-12-14", "CreateAgAccount", "bssopenapi");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getFirstName() {
 		return this.firstName;

@@ -23,15 +23,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class QueryUserOmsDataRequest extends RpcAcsRequest<QueryUserOmsDataResponse> {
-	
-	public QueryUserOmsDataRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryUserOmsData", "bssopenapi");
-		setSysMethod(MethodType.GET);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String endTime;
 
@@ -46,6 +38,14 @@ public class QueryUserOmsDataRequest extends RpcAcsRequest<QueryUserOmsDataRespo
 	private Integer pageSize;
 
 	private String table;
+	public QueryUserOmsDataRequest() {
+		super("BssOpenApi", "2017-12-14", "QueryUserOmsData", "bssopenapi");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getEndTime() {
 		return this.endTime;

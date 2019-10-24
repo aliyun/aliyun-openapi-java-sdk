@@ -23,15 +23,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class GetResourcePackagePriceRequest extends RpcAcsRequest<GetResourcePackagePriceResponse> {
-	
-	public GetResourcePackagePriceRequest() {
-		super("BssOpenApi", "2017-12-14", "GetResourcePackagePrice", "bssopenapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String productCode;
 
@@ -50,6 +42,14 @@ public class GetResourcePackagePriceRequest extends RpcAcsRequest<GetResourcePac
 	private String pricingCycle;
 
 	private String orderType;
+	public GetResourcePackagePriceRequest() {
+		super("BssOpenApi", "2017-12-14", "GetResourcePackagePrice", "bssopenapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProductCode() {
 		return this.productCode;

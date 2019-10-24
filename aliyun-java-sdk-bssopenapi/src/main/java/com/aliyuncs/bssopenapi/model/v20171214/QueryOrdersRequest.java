@@ -23,15 +23,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class QueryOrdersRequest extends RpcAcsRequest<QueryOrdersResponse> {
-	
-	public QueryOrdersRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryOrders", "bssopenapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String productCode;
 
@@ -52,6 +44,14 @@ public class QueryOrdersRequest extends RpcAcsRequest<QueryOrdersResponse> {
 	private String createTimeStart;
 
 	private String orderType;
+	public QueryOrdersRequest() {
+		super("BssOpenApi", "2017-12-14", "QueryOrders", "bssopenapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProductCode() {
 		return this.productCode;

@@ -24,15 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
-	
-	public ApplyInvoiceRequest() {
-		super("BssOpenApi", "2017-12-14", "ApplyInvoice", "bssopenapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer invoicingType;
 
@@ -55,6 +47,14 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 	private List<Long> selectedIdss;
 
 	private Long callerUid;
+	public ApplyInvoiceRequest() {
+		super("BssOpenApi", "2017-12-14", "ApplyInvoice", "bssopenapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getInvoicingType() {
 		return this.invoicingType;
@@ -153,9 +153,7 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 		if(customerId != null){
 			putQueryParameter("CustomerId", customerId.toString());
 		}
-	}
-
-	public List<Long> getSelectedIdss() {
+	}	public List<Long> getSelectedIdss() {
 		return this.selectedIdss;
 	}
 
@@ -167,6 +165,8 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 			}
 		}	
 	}
+
+
 
 	public Long getCallerUid() {
 		return this.callerUid;

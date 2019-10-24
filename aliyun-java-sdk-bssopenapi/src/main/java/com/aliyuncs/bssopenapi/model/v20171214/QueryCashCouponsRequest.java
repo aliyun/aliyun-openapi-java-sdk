@@ -23,21 +23,21 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class QueryCashCouponsRequest extends RpcAcsRequest<QueryCashCouponsResponse> {
-	
-	public QueryCashCouponsRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryCashCoupons", "bssopenapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String expiryTimeEnd;
 
 	private String expiryTimeStart;
 
 	private Boolean effectiveOrNot;
+	public QueryCashCouponsRequest() {
+		super("BssOpenApi", "2017-12-14", "QueryCashCoupons", "bssopenapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getExpiryTimeEnd() {
 		return this.expiryTimeEnd;

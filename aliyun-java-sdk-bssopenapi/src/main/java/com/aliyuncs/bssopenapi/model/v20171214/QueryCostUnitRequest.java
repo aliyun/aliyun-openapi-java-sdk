@@ -22,22 +22,18 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryResourcePackageInstancesRequest extends RpcAcsRequest<QueryResourcePackageInstancesResponse> {
+public class QueryCostUnitRequest extends RpcAcsRequest<QueryCostUnitResponse> {
 	   
 
-	private String expiryTimeEnd;
-
-	private String productCode;
-
-	private Long ownerId;
-
-	private String expiryTimeStart;
+	private Long parentUnitId;
 
 	private Integer pageNum;
 
 	private Integer pageSize;
-	public QueryResourcePackageInstancesRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryResourcePackageInstances", "bssopenapi");
+
+	private Long ownerUid;
+	public QueryCostUnitRequest() {
+		super("BssOpenApi", "2017-12-14", "QueryCostUnit", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,47 +41,14 @@ public class QueryResourcePackageInstancesRequest extends RpcAcsRequest<QueryRes
 		} catch (Exception e) {}
 	}
 
-	public String getExpiryTimeEnd() {
-		return this.expiryTimeEnd;
+	public Long getParentUnitId() {
+		return this.parentUnitId;
 	}
 
-	public void setExpiryTimeEnd(String expiryTimeEnd) {
-		this.expiryTimeEnd = expiryTimeEnd;
-		if(expiryTimeEnd != null){
-			putQueryParameter("ExpiryTimeEnd", expiryTimeEnd);
-		}
-	}
-
-	public String getProductCode() {
-		return this.productCode;
-	}
-
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-		if(productCode != null){
-			putQueryParameter("ProductCode", productCode);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getExpiryTimeStart() {
-		return this.expiryTimeStart;
-	}
-
-	public void setExpiryTimeStart(String expiryTimeStart) {
-		this.expiryTimeStart = expiryTimeStart;
-		if(expiryTimeStart != null){
-			putQueryParameter("ExpiryTimeStart", expiryTimeStart);
+	public void setParentUnitId(Long parentUnitId) {
+		this.parentUnitId = parentUnitId;
+		if(parentUnitId != null){
+			putQueryParameter("ParentUnitId", parentUnitId.toString());
 		}
 	}
 
@@ -111,9 +74,20 @@ public class QueryResourcePackageInstancesRequest extends RpcAcsRequest<QueryRes
 		}
 	}
 
+	public Long getOwnerUid() {
+		return this.ownerUid;
+	}
+
+	public void setOwnerUid(Long ownerUid) {
+		this.ownerUid = ownerUid;
+		if(ownerUid != null){
+			putQueryParameter("OwnerUid", ownerUid.toString());
+		}
+	}
+
 	@Override
-	public Class<QueryResourcePackageInstancesResponse> getResponseClass() {
-		return QueryResourcePackageInstancesResponse.class;
+	public Class<QueryCostUnitResponse> getResponseClass() {
+		return QueryCostUnitResponse.class;
 	}
 
 }

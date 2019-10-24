@@ -24,15 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class GetPayAsYouGoPriceRequest extends RpcAcsRequest<GetPayAsYouGoPriceResponse> {
-	
-	public GetPayAsYouGoPriceRequest() {
-		super("BssOpenApi", "2017-12-14", "GetPayAsYouGoPrice", "bssopenapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String productCode;
 
@@ -45,6 +37,14 @@ public class GetPayAsYouGoPriceRequest extends RpcAcsRequest<GetPayAsYouGoPriceR
 	private String productType;
 
 	private String region;
+	public GetPayAsYouGoPriceRequest() {
+		super("BssOpenApi", "2017-12-14", "GetPayAsYouGoPrice", "bssopenapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProductCode() {
 		return this.productCode;
@@ -66,9 +66,7 @@ public class GetPayAsYouGoPriceRequest extends RpcAcsRequest<GetPayAsYouGoPriceR
 		if(subscriptionType != null){
 			putQueryParameter("SubscriptionType", subscriptionType);
 		}
-	}
-
-	public List<ModuleList> getModuleLists() {
+	}	public List<ModuleList> getModuleLists() {
 		return this.moduleLists;
 	}
 
@@ -82,6 +80,8 @@ public class GetPayAsYouGoPriceRequest extends RpcAcsRequest<GetPayAsYouGoPriceR
 			}
 		}	
 	}
+
+
 
 	public Long getOwnerId() {
 		return this.ownerId;

@@ -23,15 +23,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class SetRenewalRequest extends RpcAcsRequest<SetRenewalResponse> {
-	
-	public SetRenewalRequest() {
-		super("BssOpenApi", "2017-12-14", "SetRenewal", "bssopenapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String productCode;
 
@@ -48,6 +40,14 @@ public class SetRenewalRequest extends RpcAcsRequest<SetRenewalResponse> {
 	private String renewalStatus;
 
 	private String renewalPeriodUnit;
+	public SetRenewalRequest() {
+		super("BssOpenApi", "2017-12-14", "SetRenewal", "bssopenapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProductCode() {
 		return this.productCode;

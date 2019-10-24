@@ -23,19 +23,19 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class CancelOrderRequest extends RpcAcsRequest<CancelOrderResponse> {
-	
+	   
+
+	private String orderId;
+
+	private Long ownerId;
 	public CancelOrderRequest() {
 		super("BssOpenApi", "2017-12-14", "CancelOrder", "bssopenapi");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String orderId;
-
-	private Long ownerId;
 
 	public String getOrderId() {
 		return this.orderId;

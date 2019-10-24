@@ -24,15 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
-	
-	public CreateInstanceRequest() {
-		super("BssOpenApi", "2017-12-14", "CreateInstance", "bssopenapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String productCode;
 
@@ -51,6 +43,14 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private List<Parameter> parameters;
 
 	private String renewalStatus;
+	public CreateInstanceRequest() {
+		super("BssOpenApi", "2017-12-14", "CreateInstance", "bssopenapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProductCode() {
 		return this.productCode;
@@ -127,9 +127,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		if(renewPeriod != null){
 			putQueryParameter("RenewPeriod", renewPeriod.toString());
 		}
-	}
-
-	public List<Parameter> getParameters() {
+	}	public List<Parameter> getParameters() {
 		return this.parameters;
 	}
 
@@ -142,6 +140,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 			}
 		}	
 	}
+
+
 
 	public String getRenewalStatus() {
 		return this.renewalStatus;

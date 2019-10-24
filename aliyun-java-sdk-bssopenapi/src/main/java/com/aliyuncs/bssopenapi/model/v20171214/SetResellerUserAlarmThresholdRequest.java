@@ -23,21 +23,21 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class SetResellerUserAlarmThresholdRequest extends RpcAcsRequest<SetResellerUserAlarmThresholdResponse> {
-	
-	public SetResellerUserAlarmThresholdRequest() {
-		super("BssOpenApi", "2017-12-14", "SetResellerUserAlarmThreshold", "bssopenapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String alarmType;
 
 	private String alarmThresholds;
 
 	private Long ownerId;
+	public SetResellerUserAlarmThresholdRequest() {
+		super("BssOpenApi", "2017-12-14", "SetResellerUserAlarmThreshold", "bssopenapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAlarmType() {
 		return this.alarmType;

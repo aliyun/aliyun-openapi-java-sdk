@@ -23,17 +23,17 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class QueryMonthlyBillRequest extends RpcAcsRequest<QueryMonthlyBillResponse> {
-	
+	   
+
+	private String billingCycle;
 	public QueryMonthlyBillRequest() {
 		super("BssOpenApi", "2017-12-14", "QueryMonthlyBill", "bssopenapi");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String billingCycle;
 
 	public String getBillingCycle() {
 		return this.billingCycle;

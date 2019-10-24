@@ -22,16 +22,18 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryProductListRequest extends RpcAcsRequest<QueryProductListResponse> {
+public class QueryCostUnitResourceRequest extends RpcAcsRequest<QueryCostUnitResourceResponse> {
 	   
 
 	private Integer pageNum;
 
-	private Boolean queryTotalCount;
-
 	private Integer pageSize;
-	public QueryProductListRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryProductList", "bssopenapi");
+
+	private Long unitId;
+
+	private Long ownerUid;
+	public QueryCostUnitResourceRequest() {
+		super("BssOpenApi", "2017-12-14", "QueryCostUnitResource", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,17 +52,6 @@ public class QueryProductListRequest extends RpcAcsRequest<QueryProductListRespo
 		}
 	}
 
-	public Boolean getQueryTotalCount() {
-		return this.queryTotalCount;
-	}
-
-	public void setQueryTotalCount(Boolean queryTotalCount) {
-		this.queryTotalCount = queryTotalCount;
-		if(queryTotalCount != null){
-			putQueryParameter("QueryTotalCount", queryTotalCount.toString());
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -72,9 +63,31 @@ public class QueryProductListRequest extends RpcAcsRequest<QueryProductListRespo
 		}
 	}
 
+	public Long getUnitId() {
+		return this.unitId;
+	}
+
+	public void setUnitId(Long unitId) {
+		this.unitId = unitId;
+		if(unitId != null){
+			putQueryParameter("UnitId", unitId.toString());
+		}
+	}
+
+	public Long getOwnerUid() {
+		return this.ownerUid;
+	}
+
+	public void setOwnerUid(Long ownerUid) {
+		this.ownerUid = ownerUid;
+		if(ownerUid != null){
+			putQueryParameter("OwnerUid", ownerUid.toString());
+		}
+	}
+
 	@Override
-	public Class<QueryProductListResponse> getResponseClass() {
-		return QueryProductListResponse.class;
+	public Class<QueryCostUnitResourceResponse> getResponseClass() {
+		return QueryCostUnitResourceResponse.class;
 	}
 
 }

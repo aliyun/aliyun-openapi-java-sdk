@@ -23,15 +23,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class UpgradeResourcePackageRequest extends RpcAcsRequest<UpgradeResourcePackageResponse> {
-	
-	public UpgradeResourcePackageRequest() {
-		super("BssOpenApi", "2017-12-14", "UpgradeResourcePackage", "bssopenapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String specification;
 
@@ -40,6 +32,14 @@ public class UpgradeResourcePackageRequest extends RpcAcsRequest<UpgradeResource
 	private String effectiveDate;
 
 	private String instanceId;
+	public UpgradeResourcePackageRequest() {
+		super("BssOpenApi", "2017-12-14", "UpgradeResourcePackage", "bssopenapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getSpecification() {
 		return this.specification;

@@ -23,15 +23,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class SetResellerUserQuotaRequest extends RpcAcsRequest<SetResellerUserQuotaResponse> {
-	
-	public SetResellerUserQuotaRequest() {
-		super("BssOpenApi", "2017-12-14", "SetResellerUserQuota", "bssopenapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String amount;
 
@@ -40,6 +32,14 @@ public class SetResellerUserQuotaRequest extends RpcAcsRequest<SetResellerUserQu
 	private Long ownerId;
 
 	private String currency;
+	public SetResellerUserQuotaRequest() {
+		super("BssOpenApi", "2017-12-14", "SetResellerUserQuota", "bssopenapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAmount() {
 		return this.amount;

@@ -23,15 +23,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class QueryRedeemRequest extends RpcAcsRequest<QueryRedeemResponse> {
-	
-	public QueryRedeemRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryRedeem", "bssopenapi");
-		setSysMethod(MethodType.GET);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String expiryTimeEnd;
 
@@ -42,6 +34,14 @@ public class QueryRedeemRequest extends RpcAcsRequest<QueryRedeemResponse> {
 	private Boolean effectiveOrNot;
 
 	private Integer pageSize;
+	public QueryRedeemRequest() {
+		super("BssOpenApi", "2017-12-14", "QueryRedeem", "bssopenapi");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getExpiryTimeEnd() {
 		return this.expiryTimeEnd;

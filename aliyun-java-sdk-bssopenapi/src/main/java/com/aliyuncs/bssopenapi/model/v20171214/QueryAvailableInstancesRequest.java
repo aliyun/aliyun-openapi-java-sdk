@@ -23,15 +23,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @version 
  */
 public class QueryAvailableInstancesRequest extends RpcAcsRequest<QueryAvailableInstancesResponse> {
-	
-	public QueryAvailableInstancesRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryAvailableInstances", "bssopenapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String productCode;
 
@@ -58,6 +50,14 @@ public class QueryAvailableInstancesRequest extends RpcAcsRequest<QueryAvailable
 	private String createTimeStart;
 
 	private String region;
+	public QueryAvailableInstancesRequest() {
+		super("BssOpenApi", "2017-12-14", "QueryAvailableInstances", "bssopenapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProductCode() {
 		return this.productCode;
