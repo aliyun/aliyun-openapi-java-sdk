@@ -1,6 +1,9 @@
 2019-10-24 Version: 1.4.3
 - Generated 2017-12-14 for `BssOpenApi`.
 
+2019-10-24 Version: 1.4.3
+- Generated 2017-12-14 for `BssOpenApi`.
+
 2019-09-05 Version: 1.4.2
 - Generated 2017-12-14 for `BssOpenApi`.
 
