@@ -23,15 +23,7 @@ import com.aliyuncs.polardb.Endpoint;
  * @version 
  */
 public class ModifyDBEndpointAddressRequest extends RpcAcsRequest<ModifyDBEndpointAddressResponse> {
-	
-	public ModifyDBEndpointAddressRequest() {
-		super("polardb", "2017-08-01", "ModifyDBEndpointAddress", "polardb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -48,6 +40,14 @@ public class ModifyDBEndpointAddressRequest extends RpcAcsRequest<ModifyDBEndpoi
 	private Long ownerId;
 
 	private String netType;
+	public ModifyDBEndpointAddressRequest() {
+		super("polardb", "2017-08-01", "ModifyDBEndpointAddress", "polardb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

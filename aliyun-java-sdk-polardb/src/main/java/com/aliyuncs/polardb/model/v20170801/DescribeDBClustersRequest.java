@@ -24,15 +24,7 @@ import com.aliyuncs.polardb.Endpoint;
  * @version 
  */
 public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersResponse> {
-	
-	public DescribeDBClustersRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClusters", "polardb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -55,6 +47,14 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 	private String dBType;
 
 	private String dBClusterIds;
+	public DescribeDBClustersRequest() {
+		super("polardb", "2017-08-01", "DescribeDBClusters", "polardb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -109,9 +109,7 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
-	}
-
-	public List<Tag> getTags() {
+	}	public List<Tag> getTags() {
 		return this.tags;
 	}
 
@@ -124,6 +122,8 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 			}
 		}	
 	}
+
+
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;

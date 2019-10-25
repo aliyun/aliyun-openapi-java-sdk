@@ -23,15 +23,7 @@ import com.aliyuncs.polardb.Endpoint;
  * @version 
  */
 public class DeleteBackupRequest extends RpcAcsRequest<DeleteBackupResponse> {
-	
-	public DeleteBackupRequest() {
-		super("polardb", "2017-08-01", "DeleteBackup", "polardb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -44,6 +36,14 @@ public class DeleteBackupRequest extends RpcAcsRequest<DeleteBackupResponse> {
 	private String backupId;
 
 	private Long ownerId;
+	public DeleteBackupRequest() {
+		super("polardb", "2017-08-01", "DeleteBackup", "polardb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

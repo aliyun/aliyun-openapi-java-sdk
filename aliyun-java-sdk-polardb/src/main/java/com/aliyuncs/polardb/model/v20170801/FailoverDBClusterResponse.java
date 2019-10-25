@@ -15,14 +15,14 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.ContinueDBClusterMigrationResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.FailoverDBClusterResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ContinueDBClusterMigrationResponse extends AcsResponse {
+public class FailoverDBClusterResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,12 +35,7 @@ public class ContinueDBClusterMigrationResponse extends AcsResponse {
 	}
 
 	@Override
-	public ContinueDBClusterMigrationResponse getInstance(UnmarshallerContext context) {
-		return	ContinueDBClusterMigrationResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public FailoverDBClusterResponse getInstance(UnmarshallerContext context) {
+		return	FailoverDBClusterResponseUnmarshaller.unmarshall(this, context);
 	}
 }

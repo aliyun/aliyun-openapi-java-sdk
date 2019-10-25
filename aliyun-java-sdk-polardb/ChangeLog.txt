@@ -1,3 +1,6 @@
+2019-10-25 Version: 1.6.4
+- Add DescribeDBClusterPerformance, DescribeDBNodePerformance for performance.
+
 2019-09-05 Version: 1.6.3
 - Generated 2017-08-01 for `polardb`.
 

@@ -24,15 +24,7 @@ import com.aliyuncs.polardb.Endpoint;
  * @version 
  */
 public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
-	
-	public DeleteDBNodesRequest() {
-		super("polardb", "2017-08-01", "DeleteDBNodes", "polardb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -47,6 +39,14 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 	private String ownerAccount;
 
 	private Long ownerId;
+	public DeleteDBNodesRequest() {
+		super("polardb", "2017-08-01", "DeleteDBNodes", "polardb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -57,9 +57,7 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
-	}
-
-	public List<String> getDBNodeIds() {
+	}	public List<String> getDBNodeIds() {
 		return this.dBNodeIds;
 	}
 
@@ -71,6 +69,8 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 			}
 		}	
 	}
+
+
 
 	public String getClientToken() {
 		return this.clientToken;

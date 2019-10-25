@@ -23,15 +23,7 @@ import com.aliyuncs.polardb.Endpoint;
  * @version 
  */
 public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse> {
-	
-	public CreateDatabaseRequest() {
-		super("polardb", "2017-08-01", "CreateDatabase", "polardb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -49,9 +41,21 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 
 	private Long ownerId;
 
+	private String collate;
+
 	private String dBName;
 
+	private String ctype;
+
 	private String characterSetName;
+	public CreateDatabaseRequest() {
+		super("polardb", "2017-08-01", "CreateDatabase", "polardb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -141,6 +145,17 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 		}
 	}
 
+	public String getCollate() {
+		return this.collate;
+	}
+
+	public void setCollate(String collate) {
+		this.collate = collate;
+		if(collate != null){
+			putQueryParameter("Collate", collate);
+		}
+	}
+
 	public String getDBName() {
 		return this.dBName;
 	}
@@ -149,6 +164,17 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 		this.dBName = dBName;
 		if(dBName != null){
 			putQueryParameter("DBName", dBName);
+		}
+	}
+
+	public String getCtype() {
+		return this.ctype;
+	}
+
+	public void setCtype(String ctype) {
+		this.ctype = ctype;
+		if(ctype != null){
+			putQueryParameter("Ctype", ctype);
 		}
 	}
 

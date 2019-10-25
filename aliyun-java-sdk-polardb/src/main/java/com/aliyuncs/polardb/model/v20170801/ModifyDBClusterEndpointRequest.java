@@ -23,15 +23,7 @@ import com.aliyuncs.polardb.Endpoint;
  * @version 
  */
 public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBClusterEndpointResponse> {
-	
-	public ModifyDBClusterEndpointRequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterEndpoint", "polardb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String autoAddNewNodes;
 
@@ -52,6 +44,14 @@ public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBCluste
 	private Long ownerId;
 
 	private String nodes;
+	public ModifyDBClusterEndpointRequest() {
+		super("polardb", "2017-08-01", "ModifyDBClusterEndpoint", "polardb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAutoAddNewNodes() {
 		return this.autoAddNewNodes;

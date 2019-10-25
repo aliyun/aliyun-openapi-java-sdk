@@ -23,15 +23,7 @@ import com.aliyuncs.polardb.Endpoint;
  * @version 
  */
 public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsResponse> {
-	
-	public DescribeBackupsRequest() {
-		super("polardb", "2017-08-01", "DescribeBackups", "polardb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -56,6 +48,14 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 	private String backupStatus;
 
 	private String backupMode;
+	public DescribeBackupsRequest() {
+		super("polardb", "2017-08-01", "DescribeBackups", "polardb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

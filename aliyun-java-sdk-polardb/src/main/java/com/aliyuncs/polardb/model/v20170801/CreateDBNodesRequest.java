@@ -24,15 +24,7 @@ import com.aliyuncs.polardb.Endpoint;
  * @version 
  */
 public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
-	
-	public CreateDBNodesRequest() {
-		super("polardb", "2017-08-01", "CreateDBNodes", "polardb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -47,6 +39,14 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 	private Long ownerId;
 
 	private List<DBNode> dBNodes;
+	public CreateDBNodesRequest() {
+		super("polardb", "2017-08-01", "CreateDBNodes", "polardb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -112,9 +112,7 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
-	}
-
-	public List<DBNode> getDBNodes() {
+	}	public List<DBNode> getDBNodes() {
 		return this.dBNodes;
 	}
 
@@ -127,6 +125,8 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 			}
 		}	
 	}
+
+
 
 	public static class DBNode {
 

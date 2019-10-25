@@ -23,15 +23,7 @@ import com.aliyuncs.polardb.Endpoint;
  * @version 
  */
 public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBClusterEndpointResponse> {
-	
-	public CreateDBClusterEndpointRequest() {
-		super("polardb", "2017-08-01", "CreateDBClusterEndpoint", "polardb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String autoAddNewNodes;
 
@@ -54,6 +46,14 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 	private Long ownerId;
 
 	private String nodes;
+	public CreateDBClusterEndpointRequest() {
+		super("polardb", "2017-08-01", "CreateDBClusterEndpoint", "polardb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAutoAddNewNodes() {
 		return this.autoAddNewNodes;
@@ -99,29 +99,10 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 		}
 	}
 
-	public String getBizEndpointType() {
-		return this.endpointType;
-	}
-
-	public void setBizEndpointType(String endpointType) {
-		this.endpointType = endpointType;
-		if(endpointType != null){
-			putQueryParameter("EndpointType", endpointType);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizEndpointType instead of this.
-	 */
-	@Deprecated
 	public String getEndpointType() {
 		return this.endpointType;
 	}
 
-	/**
-	 * @deprecated use setBizEndpointType instead of this.
-	 */
-	@Deprecated
 	public void setEndpointType(String endpointType) {
 		this.endpointType = endpointType;
 		if(endpointType != null){

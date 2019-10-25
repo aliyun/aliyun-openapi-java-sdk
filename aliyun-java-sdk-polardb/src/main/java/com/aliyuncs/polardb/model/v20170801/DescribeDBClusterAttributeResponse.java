@@ -83,26 +83,10 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getBizRegionId() {
-		return this.regionId;
-	}
-
-	public void setBizRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	/**
-	 * @deprecated use getBizRegionId instead of this.
-	 */
-	@Deprecated
 	public String getRegionId() {
 		return this.regionId;
 	}
 
-	/**
-	 * @deprecated use setBizRegionId instead of this.
-	 */
-	@Deprecated
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
 	}
@@ -332,6 +316,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private Integer maxConnections;
 
+		private Integer failoverPriority;
+
 		public String getDBNodeId() {
 			return this.dBNodeId;
 		}
@@ -394,6 +380,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setMaxConnections(Integer maxConnections) {
 			this.maxConnections = maxConnections;
+		}
+
+		public Integer getFailoverPriority() {
+			return this.failoverPriority;
+		}
+
+		public void setFailoverPriority(Integer failoverPriority) {
+			this.failoverPriority = failoverPriority;
 		}
 	}
 

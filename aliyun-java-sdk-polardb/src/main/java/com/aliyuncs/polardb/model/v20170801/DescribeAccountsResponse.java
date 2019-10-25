@@ -55,6 +55,8 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		private String accountType;
 
+		private String accountLockState;
+
 		private String privilegeExceeded;
 
 		private List<DatabasePrivilege> databasePrivileges;
@@ -89,6 +91,14 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public void setAccountType(String accountType) {
 			this.accountType = accountType;
+		}
+
+		public String getAccountLockState() {
+			return this.accountLockState;
+		}
+
+		public void setAccountLockState(String accountLockState) {
+			this.accountLockState = accountLockState;
 		}
 
 		public String getPrivilegeExceeded() {

@@ -22,18 +22,12 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class UnlockDBClusterDeletionRequest extends RpcAcsRequest<UnlockDBClusterDeletionResponse> {
-	
-	public UnlockDBClusterDeletionRequest() {
-		super("polardb", "2017-08-01", "UnlockDBClusterDeletion", "polardb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+public class FailoverDBClusterRequest extends RpcAcsRequest<FailoverDBClusterResponse> {
+	   
 
 	private Long resourceOwnerId;
+
+	private String clientToken;
 
 	private String resourceOwnerAccount;
 
@@ -43,6 +37,16 @@ public class UnlockDBClusterDeletionRequest extends RpcAcsRequest<UnlockDBCluste
 
 	private Long ownerId;
 
+	private String targetDBNodeId;
+	public FailoverDBClusterRequest() {
+		super("polardb", "2017-08-01", "FailoverDBCluster", "polardb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -51,6 +55,17 @@ public class UnlockDBClusterDeletionRequest extends RpcAcsRequest<UnlockDBCluste
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -98,9 +113,20 @@ public class UnlockDBClusterDeletionRequest extends RpcAcsRequest<UnlockDBCluste
 		}
 	}
 
+	public String getTargetDBNodeId() {
+		return this.targetDBNodeId;
+	}
+
+	public void setTargetDBNodeId(String targetDBNodeId) {
+		this.targetDBNodeId = targetDBNodeId;
+		if(targetDBNodeId != null){
+			putQueryParameter("TargetDBNodeId", targetDBNodeId);
+		}
+	}
+
 	@Override
-	public Class<UnlockDBClusterDeletionResponse> getResponseClass() {
-		return UnlockDBClusterDeletionResponse.class;
+	public Class<FailoverDBClusterResponse> getResponseClass() {
+		return FailoverDBClusterResponse.class;
 	}
 
 }

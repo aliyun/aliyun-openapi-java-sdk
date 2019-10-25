@@ -69,26 +69,10 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 			this.dBEndpointId = dBEndpointId;
 		}
 
-		public String getBizEndpointType() {
-			return this.endpointType;
-		}
-
-		public void setBizEndpointType(String endpointType) {
-			this.endpointType = endpointType;
-		}
-
-		/**
-		 * @deprecated use getBizEndpointType instead of this.
-		 */
-		@Deprecated
 		public String getEndpointType() {
 			return this.endpointType;
 		}
 
-		/**
-		 * @deprecated use setBizEndpointType instead of this.
-		 */
-		@Deprecated
 		public void setEndpointType(String endpointType) {
 			this.endpointType = endpointType;
 		}

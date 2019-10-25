@@ -23,19 +23,9 @@ import com.aliyuncs.polardb.Endpoint;
  * @version 
  */
 public class DescribeDBClusterMigrationRequest extends RpcAcsRequest<DescribeDBClusterMigrationResponse> {
-	
-	public DescribeDBClusterMigrationRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClusterMigration", "polardb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
-
-	private String securityToken;
 
 	private String resourceOwnerAccount;
 
@@ -44,6 +34,14 @@ public class DescribeDBClusterMigrationRequest extends RpcAcsRequest<DescribeDBC
 	private String ownerAccount;
 
 	private Long ownerId;
+	public DescribeDBClusterMigrationRequest() {
+		super("polardb", "2017-08-01", "DescribeDBClusterMigration", "polardb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,36 +51,6 @@ public class DescribeDBClusterMigrationRequest extends RpcAcsRequest<DescribeDBC
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

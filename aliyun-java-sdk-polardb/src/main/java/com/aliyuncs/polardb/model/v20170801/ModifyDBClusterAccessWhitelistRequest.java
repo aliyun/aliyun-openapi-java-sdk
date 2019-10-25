@@ -23,15 +23,7 @@ import com.aliyuncs.polardb.Endpoint;
  * @version 
  */
 public class ModifyDBClusterAccessWhitelistRequest extends RpcAcsRequest<ModifyDBClusterAccessWhitelistResponse> {
-	
-	public ModifyDBClusterAccessWhitelistRequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterAccessWhitelist", "polardb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -48,6 +40,14 @@ public class ModifyDBClusterAccessWhitelistRequest extends RpcAcsRequest<ModifyD
 	private Long ownerId;
 
 	private String dBClusterIPArrayName;
+	public ModifyDBClusterAccessWhitelistRequest() {
+		super("polardb", "2017-08-01", "ModifyDBClusterAccessWhitelist", "polardb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

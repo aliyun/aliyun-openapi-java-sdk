@@ -14,16 +14,16 @@
 
 package com.aliyuncs.polardb.transform.v20170801;
 
-import com.aliyuncs.polardb.model.v20170801.AbortDBClusterMigrationResponse;
+import com.aliyuncs.polardb.model.v20170801.FailoverDBClusterResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class AbortDBClusterMigrationResponseUnmarshaller {
+public class FailoverDBClusterResponseUnmarshaller {
 
-	public static AbortDBClusterMigrationResponse unmarshall(AbortDBClusterMigrationResponse abortDBClusterMigrationResponse, UnmarshallerContext _ctx) {
+	public static FailoverDBClusterResponse unmarshall(FailoverDBClusterResponse failoverDBClusterResponse, UnmarshallerContext _ctx) {
 		
-		abortDBClusterMigrationResponse.setRequestId(_ctx.stringValue("AbortDBClusterMigrationResponse.RequestId"));
+		failoverDBClusterResponse.setRequestId(_ctx.stringValue("FailoverDBClusterResponse.RequestId"));
 	 
-	 	return abortDBClusterMigrationResponse;
+	 	return failoverDBClusterResponse;
 	}
 }

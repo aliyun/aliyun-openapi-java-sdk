@@ -23,15 +23,7 @@ import com.aliyuncs.polardb.Endpoint;
  * @version 
  */
 public class ModifyDBClusterMaintainTimeRequest extends RpcAcsRequest<ModifyDBClusterMaintainTimeResponse> {
-	
-	public ModifyDBClusterMaintainTimeRequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterMaintainTime", "polardb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -44,6 +36,14 @@ public class ModifyDBClusterMaintainTimeRequest extends RpcAcsRequest<ModifyDBCl
 	private String ownerAccount;
 
 	private Long ownerId;
+	public ModifyDBClusterMaintainTimeRequest() {
+		super("polardb", "2017-08-01", "ModifyDBClusterMaintainTime", "polardb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

@@ -24,15 +24,7 @@ import com.aliyuncs.polardb.Endpoint;
  * @version 
  */
 public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
-	
-	public UntagResourcesRequest() {
-		super("polardb", "2017-08-01", "UntagResources", "polardb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -49,6 +41,14 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 	private String resourceType;
 
 	private List<String> tagKeys;
+	public UntagResourcesRequest() {
+		super("polardb", "2017-08-01", "UntagResources", "polardb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -70,9 +70,7 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		if(all != null){
 			putQueryParameter("All", all.toString());
 		}
-	}
-
-	public List<String> getResourceIds() {
+	}	public List<String> getResourceIds() {
 		return this.resourceIds;
 	}
 
@@ -84,6 +82,8 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 			}
 		}	
 	}
+
+
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -127,9 +127,7 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
 		}
-	}
-
-	public List<String> getTagKeys() {
+	}	public List<String> getTagKeys() {
 		return this.tagKeys;
 	}
 
@@ -141,6 +139,8 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 			}
 		}	
 	}
+
+
 
 	@Override
 	public Class<UntagResourcesResponse> getResponseClass() {
