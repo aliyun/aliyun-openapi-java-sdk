@@ -71,6 +71,10 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String jDK;
 
+	private Boolean useBodyEncoding;
+
+	private String uriEncoding;
+
 	private String appId;
 
 	private String postStart;
@@ -334,6 +338,28 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.jDK = jDK;
 		if(jDK != null){
 			putQueryParameter("JDK", jDK);
+		}
+	}
+
+	public Boolean getUseBodyEncoding() {
+		return this.useBodyEncoding;
+	}
+
+	public void setUseBodyEncoding(Boolean useBodyEncoding) {
+		this.useBodyEncoding = useBodyEncoding;
+		if(useBodyEncoding != null){
+			putQueryParameter("UseBodyEncoding", useBodyEncoding.toString());
+		}
+	}
+
+	public String getUriEncoding() {
+		return this.uriEncoding;
+	}
+
+	public void setUriEncoding(String uriEncoding) {
+		this.uriEncoding = uriEncoding;
+		if(uriEncoding != null){
+			putQueryParameter("UriEncoding", uriEncoding);
 		}
 	}
 
