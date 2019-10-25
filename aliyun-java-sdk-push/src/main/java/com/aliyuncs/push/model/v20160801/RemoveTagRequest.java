@@ -29,7 +29,7 @@ public class RemoveTagRequest extends RpcAcsRequest<RemoveTagResponse> {
 
 	private Long appKey;
 	public RemoveTagRequest() {
-		super("Push", "2016-08-01", "RemoveTag");
+		super("Push", "2016-08-01", "RemoveTag", "cps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

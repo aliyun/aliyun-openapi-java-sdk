@@ -29,7 +29,7 @@ public class QueryDevicesByAccountRequest extends RpcAcsRequest<QueryDevicesByAc
 
 	private String account;
 	public QueryDevicesByAccountRequest() {
-		super("Push", "2016-08-01", "QueryDevicesByAccount");
+		super("Push", "2016-08-01", "QueryDevicesByAccount", "cps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

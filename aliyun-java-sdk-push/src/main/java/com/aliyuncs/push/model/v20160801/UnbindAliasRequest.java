@@ -33,7 +33,7 @@ public class UnbindAliasRequest extends RpcAcsRequest<UnbindAliasResponse> {
 
 	private Boolean unbindAll;
 	public UnbindAliasRequest() {
-		super("Push", "2016-08-01", "UnbindAlias");
+		super("Push", "2016-08-01", "UnbindAlias", "cps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

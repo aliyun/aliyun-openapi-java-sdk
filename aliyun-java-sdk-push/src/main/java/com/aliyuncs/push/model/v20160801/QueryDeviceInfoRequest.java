@@ -29,7 +29,7 @@ public class QueryDeviceInfoRequest extends RpcAcsRequest<QueryDeviceInfoRespons
 
 	private Long appKey;
 	public QueryDeviceInfoRequest() {
-		super("Push", "2016-08-01", "QueryDeviceInfo");
+		super("Push", "2016-08-01", "QueryDeviceInfo", "cps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

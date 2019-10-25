@@ -30,15 +30,13 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 	private Long appKey;
 	public MassPushRequest() {
-		super("Push", "2016-08-01", "MassPush");
+		super("Push", "2016-08-01", "MassPush", "cps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<PushTask> getPushTasks() {
+	}	public List<PushTask> getPushTasks() {
 		return this.pushTasks;
 	}
 
@@ -87,6 +85,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			}
 		}	
 	}
+
+
 
 	public Long getAppKey() {
 		return this.appKey;

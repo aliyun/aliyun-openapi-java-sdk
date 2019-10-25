@@ -22,38 +22,33 @@ import com.aliyuncs.push.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListPushRecordsRequest extends RpcAcsRequest<ListPushRecordsResponse> {
+public class QueryPushRecordsRequest extends RpcAcsRequest<QueryPushRecordsResponse> {
 	   
-
-	private String endTime;
 
 	private String startTime;
 
+	private String source;
+
+	private String nextToken;
+
 	private Integer pageSize;
+
+	private String keyword;
+
+	private String endTime;
+
+	private String target;
 
 	private Long appKey;
 
-	private Integer page;
-
 	private String pushType;
-	public ListPushRecordsRequest() {
-		super("Push", "2016-08-01", "ListPushRecords", "cps");
+	public QueryPushRecordsRequest() {
+		super("Push", "2016-08-01", "QueryPushRecords", "cps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
 	}
 
 	public String getStartTime() {
@@ -64,6 +59,28 @@ public class ListPushRecordsRequest extends RpcAcsRequest<ListPushRecordsRespons
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -78,6 +95,39 @@ public class ListPushRecordsRequest extends RpcAcsRequest<ListPushRecordsRespons
 		}
 	}
 
+	public String getKeyword() {
+		return this.keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putQueryParameter("Keyword", keyword);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getTarget() {
+		return this.target;
+	}
+
+	public void setTarget(String target) {
+		this.target = target;
+		if(target != null){
+			putQueryParameter("Target", target);
+		}
+	}
+
 	public Long getAppKey() {
 		return this.appKey;
 	}
@@ -86,17 +136,6 @@ public class ListPushRecordsRequest extends RpcAcsRequest<ListPushRecordsRespons
 		this.appKey = appKey;
 		if(appKey != null){
 			putQueryParameter("AppKey", appKey.toString());
-		}
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-		if(page != null){
-			putQueryParameter("Page", page.toString());
 		}
 	}
 
@@ -112,8 +151,8 @@ public class ListPushRecordsRequest extends RpcAcsRequest<ListPushRecordsRespons
 	}
 
 	@Override
-	public Class<ListPushRecordsResponse> getResponseClass() {
-		return ListPushRecordsResponse.class;
+	public Class<QueryPushRecordsResponse> getResponseClass() {
+		return QueryPushRecordsResponse.class;
 	}
 
 }

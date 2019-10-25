@@ -37,7 +37,7 @@ public class QueryPushListRequest extends RpcAcsRequest<QueryPushListResponse> {
 
 	private String pushType;
 	public QueryPushListRequest() {
-		super("Push", "2016-08-01", "QueryPushList");
+		super("Push", "2016-08-01", "QueryPushList", "cps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

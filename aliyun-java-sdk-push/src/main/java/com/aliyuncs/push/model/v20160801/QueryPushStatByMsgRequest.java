@@ -29,7 +29,7 @@ public class QueryPushStatByMsgRequest extends RpcAcsRequest<QueryPushStatByMsgR
 
 	private Long appKey;
 	public QueryPushStatByMsgRequest() {
-		super("Push", "2016-08-01", "QueryPushStatByMsg");
+		super("Push", "2016-08-01", "QueryPushStatByMsg", "cps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

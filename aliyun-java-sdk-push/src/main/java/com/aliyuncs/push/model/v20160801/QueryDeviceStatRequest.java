@@ -35,7 +35,7 @@ public class QueryDeviceStatRequest extends RpcAcsRequest<QueryDeviceStatRespons
 
 	private String queryType;
 	public QueryDeviceStatRequest() {
-		super("Push", "2016-08-01", "QueryDeviceStat");
+		super("Push", "2016-08-01", "QueryDeviceStat", "cps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

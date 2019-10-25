@@ -29,7 +29,7 @@ public class CheckDevicesRequest extends RpcAcsRequest<CheckDevicesResponse> {
 
 	private Long appKey;
 	public CheckDevicesRequest() {
-		super("Push", "2016-08-01", "CheckDevices");
+		super("Push", "2016-08-01", "CheckDevices", "cps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
