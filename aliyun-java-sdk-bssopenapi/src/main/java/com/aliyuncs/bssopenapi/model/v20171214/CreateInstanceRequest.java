@@ -44,7 +44,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String renewalStatus;
 	public CreateInstanceRequest() {
-		super("BssOpenApi", "2017-12-14", "CreateInstance", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "CreateInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -127,7 +127,9 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		if(renewPeriod != null){
 			putQueryParameter("RenewPeriod", renewPeriod.toString());
 		}
-	}	public List<Parameter> getParameters() {
+	}
+
+	public List<Parameter> getParameters() {
 		return this.parameters;
 	}
 
@@ -140,8 +142,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 			}
 		}	
 	}
-
-
 
 	public String getRenewalStatus() {
 		return this.renewalStatus;

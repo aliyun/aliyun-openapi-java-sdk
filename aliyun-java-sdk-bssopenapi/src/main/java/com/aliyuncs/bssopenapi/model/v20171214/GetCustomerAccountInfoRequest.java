@@ -27,7 +27,7 @@ public class GetCustomerAccountInfoRequest extends RpcAcsRequest<GetCustomerAcco
 
 	private Long ownerId;
 	public GetCustomerAccountInfoRequest() {
-		super("BssOpenApi", "2017-12-14", "GetCustomerAccountInfo", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "GetCustomerAccountInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

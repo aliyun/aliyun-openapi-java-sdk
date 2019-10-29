@@ -22,21 +22,34 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryProductListRequest extends RpcAcsRequest<QueryProductListResponse> {
+public class QueryAccountBillRequest extends RpcAcsRequest<QueryAccountBillResponse> {
 	   
+
+	private String billingCycle;
 
 	private Integer pageNum;
 
-	private Boolean queryTotalCount;
+	private Long ownerID;
 
 	private Integer pageSize;
-	public QueryProductListRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryProductList");
+	public QueryAccountBillRequest() {
+		super("BssOpenApi", "2017-12-14", "QueryAccountBill");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBillingCycle() {
+		return this.billingCycle;
+	}
+
+	public void setBillingCycle(String billingCycle) {
+		this.billingCycle = billingCycle;
+		if(billingCycle != null){
+			putQueryParameter("BillingCycle", billingCycle);
+		}
 	}
 
 	public Integer getPageNum() {
@@ -50,14 +63,14 @@ public class QueryProductListRequest extends RpcAcsRequest<QueryProductListRespo
 		}
 	}
 
-	public Boolean getQueryTotalCount() {
-		return this.queryTotalCount;
+	public Long getOwnerID() {
+		return this.ownerID;
 	}
 
-	public void setQueryTotalCount(Boolean queryTotalCount) {
-		this.queryTotalCount = queryTotalCount;
-		if(queryTotalCount != null){
-			putQueryParameter("QueryTotalCount", queryTotalCount.toString());
+	public void setOwnerID(Long ownerID) {
+		this.ownerID = ownerID;
+		if(ownerID != null){
+			putQueryParameter("OwnerID", ownerID.toString());
 		}
 	}
 
@@ -73,8 +86,8 @@ public class QueryProductListRequest extends RpcAcsRequest<QueryProductListRespo
 	}
 
 	@Override
-	public Class<QueryProductListResponse> getResponseClass() {
-		return QueryProductListResponse.class;
+	public Class<QueryAccountBillResponse> getResponseClass() {
+		return QueryAccountBillResponse.class;
 	}
 
 }

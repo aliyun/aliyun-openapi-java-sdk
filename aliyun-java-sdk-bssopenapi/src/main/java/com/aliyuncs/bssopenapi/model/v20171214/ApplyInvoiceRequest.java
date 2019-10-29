@@ -48,7 +48,7 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 
 	private Long callerUid;
 	public ApplyInvoiceRequest() {
-		super("BssOpenApi", "2017-12-14", "ApplyInvoice", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "ApplyInvoice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -153,7 +153,9 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 		if(customerId != null){
 			putQueryParameter("CustomerId", customerId.toString());
 		}
-	}	public List<Long> getSelectedIdss() {
+	}
+
+	public List<Long> getSelectedIdss() {
 		return this.selectedIdss;
 	}
 
@@ -165,8 +167,6 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 			}
 		}	
 	}
-
-
 
 	public Long getCallerUid() {
 		return this.callerUid;

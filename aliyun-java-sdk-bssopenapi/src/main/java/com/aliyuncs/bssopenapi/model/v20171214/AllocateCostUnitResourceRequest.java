@@ -36,13 +36,15 @@ public class AllocateCostUnitResourceRequest extends RpcAcsRequest<AllocateCostU
 
 	private Long toUnitUserId;
 	public AllocateCostUnitResourceRequest() {
-		super("BssOpenApi", "2017-12-14", "AllocateCostUnitResource", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "AllocateCostUnitResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}	public List<ResourceInstanceList> getResourceInstanceLists() {
+	}
+
+	public List<ResourceInstanceList> getResourceInstanceLists() {
 		return this.resourceInstanceLists;
 	}
 
@@ -56,8 +58,6 @@ public class AllocateCostUnitResourceRequest extends RpcAcsRequest<AllocateCostU
 			}
 		}	
 	}
-
-
 
 	public Long getFromUnitId() {
 		return this.fromUnitId;

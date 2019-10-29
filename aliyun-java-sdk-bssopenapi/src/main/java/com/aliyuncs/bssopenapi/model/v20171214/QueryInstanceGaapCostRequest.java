@@ -37,7 +37,7 @@ public class QueryInstanceGaapCostRequest extends RpcAcsRequest<QueryInstanceGaa
 
 	private Integer pageSize;
 	public QueryInstanceGaapCostRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryInstanceGaapCost", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QueryInstanceGaapCost");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

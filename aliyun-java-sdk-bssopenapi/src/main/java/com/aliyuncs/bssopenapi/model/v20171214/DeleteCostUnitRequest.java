@@ -29,7 +29,7 @@ public class DeleteCostUnitRequest extends RpcAcsRequest<DeleteCostUnitResponse>
 
 	private Long ownerUid;
 	public DeleteCostUnitRequest() {
-		super("BssOpenApi", "2017-12-14", "DeleteCostUnit", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "DeleteCostUnit");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

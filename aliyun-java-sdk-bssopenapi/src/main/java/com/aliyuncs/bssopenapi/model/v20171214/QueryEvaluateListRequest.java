@@ -54,7 +54,7 @@ public class QueryEvaluateListRequest extends RpcAcsRequest<QueryEvaluateListRes
 
 	private String startBizTime;
 	public QueryEvaluateListRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryEvaluateList", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QueryEvaluateList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -148,7 +148,9 @@ public class QueryEvaluateListRequest extends RpcAcsRequest<QueryEvaluateListRes
 		if(billCycle != null){
 			putQueryParameter("BillCycle", billCycle);
 		}
-	}	public List<String> getBizTypeLists() {
+	}
+
+	public List<String> getBizTypeLists() {
 		return this.bizTypeLists;
 	}
 
@@ -160,8 +162,6 @@ public class QueryEvaluateListRequest extends RpcAcsRequest<QueryEvaluateListRes
 			}
 		}	
 	}
-
-
 
 	public Long getOwnerId() {
 		return this.ownerId;

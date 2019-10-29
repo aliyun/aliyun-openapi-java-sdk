@@ -48,7 +48,7 @@ public class GetSubscriptionPriceRequest extends RpcAcsRequest<GetSubscriptionPr
 
 	private String orderType;
 	public GetSubscriptionPriceRequest() {
-		super("BssOpenApi", "2017-12-14", "GetSubscriptionPrice", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "GetSubscriptionPrice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -87,7 +87,9 @@ public class GetSubscriptionPriceRequest extends RpcAcsRequest<GetSubscriptionPr
 		if(subscriptionType != null){
 			putQueryParameter("SubscriptionType", subscriptionType);
 		}
-	}	public List<ModuleList> getModuleLists() {
+	}
+
+	public List<ModuleList> getModuleLists() {
 		return this.moduleLists;
 	}
 
@@ -102,8 +104,6 @@ public class GetSubscriptionPriceRequest extends RpcAcsRequest<GetSubscriptionPr
 			}
 		}	
 	}
-
-
 
 	public Long getOwnerId() {
 		return this.ownerId;

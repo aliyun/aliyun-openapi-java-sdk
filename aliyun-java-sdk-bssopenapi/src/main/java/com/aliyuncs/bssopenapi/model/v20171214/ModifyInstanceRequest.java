@@ -42,7 +42,7 @@ public class ModifyInstanceRequest extends RpcAcsRequest<ModifyInstanceResponse>
 
 	private List<Parameter> parameters;
 	public ModifyInstanceRequest() {
-		super("BssOpenApi", "2017-12-14", "ModifyInstance", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "ModifyInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -125,7 +125,9 @@ public class ModifyInstanceRequest extends RpcAcsRequest<ModifyInstanceResponse>
 		if(modifyType != null){
 			putQueryParameter("ModifyType", modifyType);
 		}
-	}	public List<Parameter> getParameters() {
+	}
+
+	public List<Parameter> getParameters() {
 		return this.parameters;
 	}
 
@@ -138,8 +140,6 @@ public class ModifyInstanceRequest extends RpcAcsRequest<ModifyInstanceResponse>
 			}
 		}	
 	}
-
-
 
 	public static class Parameter {
 

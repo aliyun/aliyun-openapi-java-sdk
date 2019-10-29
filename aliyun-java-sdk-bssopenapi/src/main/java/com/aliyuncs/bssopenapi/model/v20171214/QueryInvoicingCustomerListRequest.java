@@ -27,7 +27,7 @@ public class QueryInvoicingCustomerListRequest extends RpcAcsRequest<QueryInvoic
 
 	private Long ownerId;
 	public QueryInvoicingCustomerListRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryInvoicingCustomerList", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QueryInvoicingCustomerList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

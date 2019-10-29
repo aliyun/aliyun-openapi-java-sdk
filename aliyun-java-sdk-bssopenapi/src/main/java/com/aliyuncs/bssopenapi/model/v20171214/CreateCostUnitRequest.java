@@ -28,13 +28,15 @@ public class CreateCostUnitRequest extends RpcAcsRequest<CreateCostUnitResponse>
 
 	private List<UnitEntityList> unitEntityLists;
 	public CreateCostUnitRequest() {
-		super("BssOpenApi", "2017-12-14", "CreateCostUnit", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "CreateCostUnit");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}	public List<UnitEntityList> getUnitEntityLists() {
+	}
+
+	public List<UnitEntityList> getUnitEntityLists() {
 		return this.unitEntityLists;
 	}
 
@@ -48,8 +50,6 @@ public class CreateCostUnitRequest extends RpcAcsRequest<CreateCostUnitResponse>
 			}
 		}	
 	}
-
-
 
 	public static class UnitEntityList {
 

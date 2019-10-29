@@ -33,7 +33,7 @@ public class UpgradeResourcePackageRequest extends RpcAcsRequest<UpgradeResource
 
 	private String instanceId;
 	public UpgradeResourcePackageRequest() {
-		super("BssOpenApi", "2017-12-14", "UpgradeResourcePackage", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "UpgradeResourcePackage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

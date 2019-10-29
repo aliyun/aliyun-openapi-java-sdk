@@ -45,7 +45,7 @@ public class QueryOrdersRequest extends RpcAcsRequest<QueryOrdersResponse> {
 
 	private String orderType;
 	public QueryOrdersRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryOrders", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QueryOrders");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

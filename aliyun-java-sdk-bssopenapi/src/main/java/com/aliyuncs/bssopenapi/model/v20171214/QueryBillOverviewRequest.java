@@ -33,7 +33,7 @@ public class QueryBillOverviewRequest extends RpcAcsRequest<QueryBillOverviewRes
 
 	private String productType;
 	public QueryBillOverviewRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryBillOverview", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QueryBillOverview");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
