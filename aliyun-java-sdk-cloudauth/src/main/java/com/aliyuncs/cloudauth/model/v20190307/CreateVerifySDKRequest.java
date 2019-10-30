@@ -15,39 +15,25 @@
 package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.cloudauth.Endpoint;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateVerifySDKRequest extends RpcAcsRequest<CreateVerifySDKResponse> {
-	
-	public CreateVerifySDKRequest() {
-		super("Cloudauth", "2019-03-07", "CreateVerifySDK", "cloudauth");
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String sourceIp;
+	   
 
 	private String appUrl;
 
-	private String lang;
-
 	private String platform;
 
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
+	private String sourceIp;
 
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
+	private String lang;
+	public CreateVerifySDKRequest() {
+		super("Cloudauth", "2019-03-07", "CreateVerifySDK", "cloudauth");
+		setMethod(MethodType.POST);
 	}
 
 	public String getAppUrl() {
@@ -61,17 +47,6 @@ public class CreateVerifySDKRequest extends RpcAcsRequest<CreateVerifySDKRespons
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
 	public String getPlatform() {
 		return this.platform;
 	}
@@ -80,6 +55,28 @@ public class CreateVerifySDKRequest extends RpcAcsRequest<CreateVerifySDKRespons
 		this.platform = platform;
 		if(platform != null){
 			putQueryParameter("Platform", platform);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

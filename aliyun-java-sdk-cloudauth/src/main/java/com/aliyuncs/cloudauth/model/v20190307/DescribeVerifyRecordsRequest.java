@@ -15,41 +15,104 @@
 package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.cloudauth.Endpoint;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeVerifyRecordsRequest extends RpcAcsRequest<DescribeVerifyRecordsResponse> {
-	
-	public DescribeVerifyRecordsRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeVerifyRecords", "cloudauth");
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private String statusList;
+
+	private String startDate;
+
+	private Integer pageSize;
+
+	private Integer totalCount;
+
+	private Integer currentPage;
+
+	private String queryId;
 
 	private String bizType;
 
 	private String idCardNum;
 
-	private Integer totalCount;
-
 	private String endDate;
 
-	private String statusList;
-
-	private Integer pageSize;
-
 	private String bizId;
+	public DescribeVerifyRecordsRequest() {
+		super("Cloudauth", "2019-03-07", "DescribeVerifyRecords", "cloudauth");
+		setMethod(MethodType.POST);
+	}
 
-	private Integer currentPage;
+	public String getStatusList() {
+		return this.statusList;
+	}
 
-	private String startDate;
+	public void setStatusList(String statusList) {
+		this.statusList = statusList;
+		if(statusList != null){
+			putQueryParameter("StatusList", statusList);
+		}
+	}
 
-	private String queryId;
+	public String getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+		if(startDate != null){
+			putQueryParameter("StartDate", startDate);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+		if(totalCount != null){
+			putQueryParameter("TotalCount", totalCount.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getQueryId() {
+		return this.queryId;
+	}
+
+	public void setQueryId(String queryId) {
+		this.queryId = queryId;
+		if(queryId != null){
+			putQueryParameter("QueryId", queryId);
+		}
+	}
 
 	public String getBizType() {
 		return this.bizType;
@@ -73,17 +136,6 @@ public class DescribeVerifyRecordsRequest extends RpcAcsRequest<DescribeVerifyRe
 		}
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-		if(totalCount != null){
-			putQueryParameter("TotalCount", totalCount.toString());
-		}
-	}
-
 	public String getEndDate() {
 		return this.endDate;
 	}
@@ -95,28 +147,6 @@ public class DescribeVerifyRecordsRequest extends RpcAcsRequest<DescribeVerifyRe
 		}
 	}
 
-	public String getStatusList() {
-		return this.statusList;
-	}
-
-	public void setStatusList(String statusList) {
-		this.statusList = statusList;
-		if(statusList != null){
-			putQueryParameter("StatusList", statusList);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getBizId() {
 		return this.bizId;
 	}
@@ -125,39 +155,6 @@ public class DescribeVerifyRecordsRequest extends RpcAcsRequest<DescribeVerifyRe
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public String getStartDate() {
-		return this.startDate;
-	}
-
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-		if(startDate != null){
-			putQueryParameter("StartDate", startDate);
-		}
-	}
-
-	public String getQueryId() {
-		return this.queryId;
-	}
-
-	public void setQueryId(String queryId) {
-		this.queryId = queryId;
-		if(queryId != null){
-			putQueryParameter("QueryId", queryId);
 		}
 	}
 

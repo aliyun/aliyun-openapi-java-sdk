@@ -14,6 +14,7 @@
 
 package com.aliyuncs.cloudauth.model.v20190307;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cloudauth.transform.v20190307.DescribeVerifyResultResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -72,6 +73,8 @@ public class DescribeVerifyResultResponse extends AcsResponse {
 
 		private String idCardNumber;
 
+		private List<String> videoUrls;
+
 		private IdCardInfo idCardInfo;
 
 		public String getFaceImageUrl() {
@@ -96,6 +99,14 @@ public class DescribeVerifyResultResponse extends AcsResponse {
 
 		public void setIdCardNumber(String idCardNumber) {
 			this.idCardNumber = idCardNumber;
+		}
+
+		public List<String> getVideoUrls() {
+			return this.videoUrls;
+		}
+
+		public void setVideoUrls(List<String> videoUrls) {
+			this.videoUrls = videoUrls;
 		}
 
 		public IdCardInfo getIdCardInfo() {

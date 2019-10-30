@@ -15,68 +15,41 @@
 package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.cloudauth.Endpoint;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeVerifyTokenRequest extends RpcAcsRequest<DescribeVerifyTokenResponse> {
-	
-	public DescribeVerifyTokenRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeVerifyToken", "cloudauth");
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String idCardNumber;
-
-	private String idCardFrontImageUrl;
+	   
 
 	private String faceRetainedImageUrl;
 
 	private String userId;
 
+	private String callbackSeed;
+
+	private String idCardBackImageUrl;
+
+	private String idCardNumber;
+
+	private String idCardFrontImageUrl;
+
 	private String bizType;
 
-	private String idImageUrl;
-
 	private String passedRedirectUrl;
-
-	private String callbackSeed;
 
 	private String bizId;
 
 	private String name;
 
-	private String idCardBackImageUrl;
-
 	private String callbackUrl;
 
 	private String failedRedirectUrl;
-
-	public String getIdCardNumber() {
-		return this.idCardNumber;
-	}
-
-	public void setIdCardNumber(String idCardNumber) {
-		this.idCardNumber = idCardNumber;
-		if(idCardNumber != null){
-			putQueryParameter("IdCardNumber", idCardNumber);
-		}
-	}
-
-	public String getIdCardFrontImageUrl() {
-		return this.idCardFrontImageUrl;
-	}
-
-	public void setIdCardFrontImageUrl(String idCardFrontImageUrl) {
-		this.idCardFrontImageUrl = idCardFrontImageUrl;
-		if(idCardFrontImageUrl != null){
-			putQueryParameter("IdCardFrontImageUrl", idCardFrontImageUrl);
-		}
+	public DescribeVerifyTokenRequest() {
+		super("Cloudauth", "2019-03-07", "DescribeVerifyToken", "cloudauth");
+		setMethod(MethodType.POST);
 	}
 
 	public String getFaceRetainedImageUrl() {
@@ -101,6 +74,50 @@ public class DescribeVerifyTokenRequest extends RpcAcsRequest<DescribeVerifyToke
 		}
 	}
 
+	public String getCallbackSeed() {
+		return this.callbackSeed;
+	}
+
+	public void setCallbackSeed(String callbackSeed) {
+		this.callbackSeed = callbackSeed;
+		if(callbackSeed != null){
+			putQueryParameter("CallbackSeed", callbackSeed);
+		}
+	}
+
+	public String getIdCardBackImageUrl() {
+		return this.idCardBackImageUrl;
+	}
+
+	public void setIdCardBackImageUrl(String idCardBackImageUrl) {
+		this.idCardBackImageUrl = idCardBackImageUrl;
+		if(idCardBackImageUrl != null){
+			putQueryParameter("IdCardBackImageUrl", idCardBackImageUrl);
+		}
+	}
+
+	public String getIdCardNumber() {
+		return this.idCardNumber;
+	}
+
+	public void setIdCardNumber(String idCardNumber) {
+		this.idCardNumber = idCardNumber;
+		if(idCardNumber != null){
+			putQueryParameter("IdCardNumber", idCardNumber);
+		}
+	}
+
+	public String getIdCardFrontImageUrl() {
+		return this.idCardFrontImageUrl;
+	}
+
+	public void setIdCardFrontImageUrl(String idCardFrontImageUrl) {
+		this.idCardFrontImageUrl = idCardFrontImageUrl;
+		if(idCardFrontImageUrl != null){
+			putQueryParameter("IdCardFrontImageUrl", idCardFrontImageUrl);
+		}
+	}
+
 	public String getBizType() {
 		return this.bizType;
 	}
@@ -112,17 +129,6 @@ public class DescribeVerifyTokenRequest extends RpcAcsRequest<DescribeVerifyToke
 		}
 	}
 
-	public String getIdImageUrl() {
-		return this.idImageUrl;
-	}
-
-	public void setIdImageUrl(String idImageUrl) {
-		this.idImageUrl = idImageUrl;
-		if(idImageUrl != null){
-			putQueryParameter("IdImageUrl", idImageUrl);
-		}
-	}
-
 	public String getPassedRedirectUrl() {
 		return this.passedRedirectUrl;
 	}
@@ -131,17 +137,6 @@ public class DescribeVerifyTokenRequest extends RpcAcsRequest<DescribeVerifyToke
 		this.passedRedirectUrl = passedRedirectUrl;
 		if(passedRedirectUrl != null){
 			putQueryParameter("PassedRedirectUrl", passedRedirectUrl);
-		}
-	}
-
-	public String getCallbackSeed() {
-		return this.callbackSeed;
-	}
-
-	public void setCallbackSeed(String callbackSeed) {
-		this.callbackSeed = callbackSeed;
-		if(callbackSeed != null){
-			putQueryParameter("CallbackSeed", callbackSeed);
 		}
 	}
 
@@ -164,17 +159,6 @@ public class DescribeVerifyTokenRequest extends RpcAcsRequest<DescribeVerifyToke
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getIdCardBackImageUrl() {
-		return this.idCardBackImageUrl;
-	}
-
-	public void setIdCardBackImageUrl(String idCardBackImageUrl) {
-		this.idCardBackImageUrl = idCardBackImageUrl;
-		if(idCardBackImageUrl != null){
-			putQueryParameter("IdCardBackImageUrl", idCardBackImageUrl);
 		}
 	}
 

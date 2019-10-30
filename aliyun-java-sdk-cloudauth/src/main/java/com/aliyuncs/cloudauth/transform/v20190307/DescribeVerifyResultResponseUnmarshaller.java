@@ -14,6 +14,9 @@
 
 package com.aliyuncs.cloudauth.transform.v20190307;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.cloudauth.model.v20190307.DescribeVerifyResultResponse;
 import com.aliyuncs.cloudauth.model.v20190307.DescribeVerifyResultResponse.Material;
 import com.aliyuncs.cloudauth.model.v20190307.DescribeVerifyResultResponse.Material.IdCardInfo;
@@ -32,6 +35,12 @@ public class DescribeVerifyResultResponseUnmarshaller {
 		material.setFaceImageUrl(_ctx.stringValue("DescribeVerifyResultResponse.Material.FaceImageUrl"));
 		material.setIdCardName(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardName"));
 		material.setIdCardNumber(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardNumber"));
+
+		List<String> videoUrls = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeVerifyResultResponse.Material.VideoUrls.Length"); i++) {
+			videoUrls.add(_ctx.stringValue("DescribeVerifyResultResponse.Material.VideoUrls["+ i +"]"));
+		}
+		material.setVideoUrls(videoUrls);
 
 		IdCardInfo idCardInfo = new IdCardInfo();
 		idCardInfo.setNumber(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.Number"));

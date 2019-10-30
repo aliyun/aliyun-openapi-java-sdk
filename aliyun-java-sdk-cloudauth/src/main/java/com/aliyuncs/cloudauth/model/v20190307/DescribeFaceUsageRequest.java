@@ -15,35 +15,21 @@
 package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.cloudauth.Endpoint;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeFaceUsageRequest extends RpcAcsRequest<DescribeFaceUsageResponse> {
-	
-	public DescribeFaceUsageRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeFaceUsage", "cloudauth");
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String endDate;
+	   
 
 	private String startDate;
 
-	public String getEndDate() {
-		return this.endDate;
-	}
-
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putQueryParameter("EndDate", endDate);
-		}
+	private String endDate;
+	public DescribeFaceUsageRequest() {
+		super("Cloudauth", "2019-03-07", "DescribeFaceUsage", "cloudauth");
+		setMethod(MethodType.POST);
 	}
 
 	public String getStartDate() {
@@ -54,6 +40,17 @@ public class DescribeFaceUsageRequest extends RpcAcsRequest<DescribeFaceUsageRes
 		this.startDate = startDate;
 		if(startDate != null){
 			putQueryParameter("StartDate", startDate);
+		}
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putQueryParameter("EndDate", endDate);
 		}
 	}
 

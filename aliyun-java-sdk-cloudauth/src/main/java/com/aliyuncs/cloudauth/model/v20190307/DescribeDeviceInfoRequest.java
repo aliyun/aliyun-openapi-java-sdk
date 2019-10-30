@@ -15,51 +15,37 @@
 package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.cloudauth.Endpoint;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDeviceInfoRequest extends RpcAcsRequest<DescribeDeviceInfoResponse> {
-	
-	public DescribeDeviceInfoRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeDeviceInfo", "cloudauth");
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String bizType;
+	   
 
 	private String userDeviceId;
-
-	private Integer totalCount;
 
 	private String sourceIp;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private String lang;
-
-	private String expiredEndDay;
-
-	private String deviceId;
 
 	private String expiredStartDay;
 
-	public String getBizType() {
-		return this.bizType;
-	}
+	private Integer totalCount;
 
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
-		}
+	private Integer currentPage;
+
+	private String deviceId;
+
+	private String bizType;
+
+	private String expiredEndDay;
+	public DescribeDeviceInfoRequest() {
+		super("Cloudauth", "2019-03-07", "DescribeDeviceInfo", "cloudauth");
+		setMethod(MethodType.POST);
 	}
 
 	public String getUserDeviceId() {
@@ -70,17 +56,6 @@ public class DescribeDeviceInfoRequest extends RpcAcsRequest<DescribeDeviceInfoR
 		this.userDeviceId = userDeviceId;
 		if(userDeviceId != null){
 			putQueryParameter("UserDeviceId", userDeviceId);
-		}
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-		if(totalCount != null){
-			putQueryParameter("TotalCount", totalCount.toString());
 		}
 	}
 
@@ -106,17 +81,6 @@ public class DescribeDeviceInfoRequest extends RpcAcsRequest<DescribeDeviceInfoR
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -128,14 +92,36 @@ public class DescribeDeviceInfoRequest extends RpcAcsRequest<DescribeDeviceInfoR
 		}
 	}
 
-	public String getExpiredEndDay() {
-		return this.expiredEndDay;
+	public String getExpiredStartDay() {
+		return this.expiredStartDay;
 	}
 
-	public void setExpiredEndDay(String expiredEndDay) {
-		this.expiredEndDay = expiredEndDay;
-		if(expiredEndDay != null){
-			putQueryParameter("ExpiredEndDay", expiredEndDay);
+	public void setExpiredStartDay(String expiredStartDay) {
+		this.expiredStartDay = expiredStartDay;
+		if(expiredStartDay != null){
+			putQueryParameter("ExpiredStartDay", expiredStartDay);
+		}
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+		if(totalCount != null){
+			putQueryParameter("TotalCount", totalCount.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -150,14 +136,25 @@ public class DescribeDeviceInfoRequest extends RpcAcsRequest<DescribeDeviceInfoR
 		}
 	}
 
-	public String getExpiredStartDay() {
-		return this.expiredStartDay;
+	public String getBizType() {
+		return this.bizType;
 	}
 
-	public void setExpiredStartDay(String expiredStartDay) {
-		this.expiredStartDay = expiredStartDay;
-		if(expiredStartDay != null){
-			putQueryParameter("ExpiredStartDay", expiredStartDay);
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
+		}
+	}
+
+	public String getExpiredEndDay() {
+		return this.expiredEndDay;
+	}
+
+	public void setExpiredEndDay(String expiredEndDay) {
+		this.expiredEndDay = expiredEndDay;
+		if(expiredEndDay != null){
+			putQueryParameter("ExpiredEndDay", expiredEndDay);
 		}
 	}
 

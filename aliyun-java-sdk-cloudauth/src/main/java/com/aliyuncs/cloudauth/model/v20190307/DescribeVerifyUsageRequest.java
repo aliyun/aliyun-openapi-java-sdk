@@ -15,27 +15,35 @@
 package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.cloudauth.Endpoint;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeVerifyUsageRequest extends RpcAcsRequest<DescribeVerifyUsageResponse> {
-	
-	public DescribeVerifyUsageRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeVerifyUsage", "cloudauth");
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private String startDate;
 
 	private String bizType;
 
 	private String endDate;
+	public DescribeVerifyUsageRequest() {
+		super("Cloudauth", "2019-03-07", "DescribeVerifyUsage", "cloudauth");
+		setMethod(MethodType.POST);
+	}
 
-	private String startDate;
+	public String getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+		if(startDate != null){
+			putQueryParameter("StartDate", startDate);
+		}
+	}
 
 	public String getBizType() {
 		return this.bizType;
@@ -56,17 +64,6 @@ public class DescribeVerifyUsageRequest extends RpcAcsRequest<DescribeVerifyUsag
 		this.endDate = endDate;
 		if(endDate != null){
 			putQueryParameter("EndDate", endDate);
-		}
-	}
-
-	public String getStartDate() {
-		return this.startDate;
-	}
-
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-		if(startDate != null){
-			putQueryParameter("StartDate", startDate);
 		}
 	}
 

@@ -15,27 +15,24 @@
 package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.cloudauth.Endpoint;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeVerifySDKRequest extends RpcAcsRequest<DescribeVerifySDKResponse> {
-	
-	public DescribeVerifySDKRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeVerifySDK", "cloudauth");
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String sourceIp;
 
 	private String lang;
 
 	private String taskId;
+	public DescribeVerifySDKRequest() {
+		super("Cloudauth", "2019-03-07", "DescribeVerifySDK", "cloudauth");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSourceIp() {
 		return this.sourceIp;

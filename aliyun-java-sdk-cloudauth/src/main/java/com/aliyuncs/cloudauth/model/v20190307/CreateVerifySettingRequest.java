@@ -15,42 +15,39 @@
 package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.cloudauth.Endpoint;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateVerifySettingRequest extends RpcAcsRequest<CreateVerifySettingResponse> {
-	
-	public CreateVerifySettingRequest() {
-		super("Cloudauth", "2019-03-07", "CreateVerifySetting", "cloudauth");
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String bizType;
-
-	private Boolean resultStep;
+	   
 
 	private Boolean guideStep;
 
-	private String bizName;
+	private Boolean resultStep;
 
 	private String solution;
 
-	private Boolean privacyStep;
+	private String bizName;
 
-	public String getBizType() {
-		return this.bizType;
+	private String bizType;
+
+	private Boolean privacyStep;
+	public CreateVerifySettingRequest() {
+		super("Cloudauth", "2019-03-07", "CreateVerifySetting", "cloudauth");
+		setMethod(MethodType.POST);
 	}
 
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
+	public Boolean getGuideStep() {
+		return this.guideStep;
+	}
+
+	public void setGuideStep(Boolean guideStep) {
+		this.guideStep = guideStep;
+		if(guideStep != null){
+			putQueryParameter("GuideStep", guideStep.toString());
 		}
 	}
 
@@ -65,14 +62,14 @@ public class CreateVerifySettingRequest extends RpcAcsRequest<CreateVerifySettin
 		}
 	}
 
-	public Boolean getGuideStep() {
-		return this.guideStep;
+	public String getSolution() {
+		return this.solution;
 	}
 
-	public void setGuideStep(Boolean guideStep) {
-		this.guideStep = guideStep;
-		if(guideStep != null){
-			putQueryParameter("GuideStep", guideStep.toString());
+	public void setSolution(String solution) {
+		this.solution = solution;
+		if(solution != null){
+			putQueryParameter("Solution", solution);
 		}
 	}
 
@@ -87,14 +84,14 @@ public class CreateVerifySettingRequest extends RpcAcsRequest<CreateVerifySettin
 		}
 	}
 
-	public String getSolution() {
-		return this.solution;
+	public String getBizType() {
+		return this.bizType;
 	}
 
-	public void setSolution(String solution) {
-		this.solution = solution;
-		if(solution != null){
-			putQueryParameter("Solution", solution);
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
 		}
 	}
 

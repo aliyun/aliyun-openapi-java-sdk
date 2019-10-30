@@ -15,43 +15,29 @@
 package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.cloudauth.Endpoint;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateAuthKeyRequest extends RpcAcsRequest<CreateAuthKeyResponse> {
-	
-	public CreateAuthKeyRequest() {
-		super("Cloudauth", "2019-03-07", "CreateAuthKey", "cloudauth");
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String bizType;
+	   
 
 	private String userDeviceId;
 
-	private String sourceIp;
-
 	private Boolean test;
+
+	private String bizType;
+
+	private String sourceIp;
 
 	private Integer authYears;
 
 	private String lang;
-
-	public String getBizType() {
-		return this.bizType;
-	}
-
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
-		}
+	public CreateAuthKeyRequest() {
+		super("Cloudauth", "2019-03-07", "CreateAuthKey", "cloudauth");
+		setMethod(MethodType.POST);
 	}
 
 	public String getUserDeviceId() {
@@ -65,17 +51,6 @@ public class CreateAuthKeyRequest extends RpcAcsRequest<CreateAuthKeyResponse> {
 		}
 	}
 
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
 	public Boolean getTest() {
 		return this.test;
 	}
@@ -84,6 +59,28 @@ public class CreateAuthKeyRequest extends RpcAcsRequest<CreateAuthKeyResponse> {
 		this.test = test;
 		if(test != null){
 			putQueryParameter("Test", test.toString());
+		}
+	}
+
+	public String getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 

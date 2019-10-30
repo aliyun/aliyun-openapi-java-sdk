@@ -17,23 +17,13 @@ package com.aliyuncs.cloudauth.model.v20190307;
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.cloudauth.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttributesResponse> {
-	
-	public DetectFaceAttributesRequest() {
-		super("Cloudauth", "2019-03-07", "DetectFaceAttributes", "cloudauth");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer maxNumPhotosPerCategory;
 
@@ -41,15 +31,20 @@ public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttribu
 
 	private Long resourceOwnerId;
 
-	private String sourceIp;
-
 	private String retAttributes;
+
+	private String clientTag;
+
+	private String sourceIp;
 
 	private String materialValue;
 
 	private Boolean dontSaveDB;
-
-	private String clientTag;
+	public DetectFaceAttributesRequest() {
+		super("Cloudauth", "2019-03-07", "DetectFaceAttributes", "cloudauth");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getMaxNumPhotosPerCategory() {
 		return this.maxNumPhotosPerCategory;
@@ -84,17 +79,6 @@ public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttribu
 		}
 	}
 
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
 	public String getRetAttributes() {
 		return this.retAttributes;
 	}
@@ -103,6 +87,28 @@ public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttribu
 		this.retAttributes = retAttributes;
 		if(retAttributes != null){
 			putBodyParameter("RetAttributes", retAttributes);
+		}
+	}
+
+	public String getClientTag() {
+		return this.clientTag;
+	}
+
+	public void setClientTag(String clientTag) {
+		this.clientTag = clientTag;
+		if(clientTag != null){
+			putBodyParameter("ClientTag", clientTag);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 
@@ -125,17 +131,6 @@ public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttribu
 		this.dontSaveDB = dontSaveDB;
 		if(dontSaveDB != null){
 			putBodyParameter("DontSaveDB", dontSaveDB.toString());
-		}
-	}
-
-	public String getClientTag() {
-		return this.clientTag;
-	}
-
-	public void setClientTag(String clientTag) {
-		this.clientTag = clientTag;
-		if(clientTag != null){
-			putBodyParameter("ClientTag", clientTag);
 		}
 	}
 

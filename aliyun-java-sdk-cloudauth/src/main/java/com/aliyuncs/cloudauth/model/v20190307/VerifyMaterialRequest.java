@@ -15,46 +15,65 @@
 package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.cloudauth.Endpoint;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class VerifyMaterialRequest extends RpcAcsRequest<VerifyMaterialResponse> {
-	
-	public VerifyMaterialRequest() {
-		super("Cloudauth", "2019-03-07", "VerifyMaterial", "cloudauth");
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String bizType;
-
-	private String idCardNumber;
-
-	private String bizId;
-
-	private String name;
-
-	private String idCardFrontImageUrl;
-
-	private String idCardBackImageUrl;
+	   
 
 	private String faceImageUrl;
 
 	private String userId;
 
-	public String getBizType() {
-		return this.bizType;
+	private String idCardBackImageUrl;
+
+	private String idCardNumber;
+
+	private String idCardFrontImageUrl;
+
+	private String bizType;
+
+	private String bizId;
+
+	private String name;
+	public VerifyMaterialRequest() {
+		super("Cloudauth", "2019-03-07", "VerifyMaterial", "cloudauth");
+		setMethod(MethodType.POST);
 	}
 
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
+	public String getFaceImageUrl() {
+		return this.faceImageUrl;
+	}
+
+	public void setFaceImageUrl(String faceImageUrl) {
+		this.faceImageUrl = faceImageUrl;
+		if(faceImageUrl != null){
+			putQueryParameter("FaceImageUrl", faceImageUrl);
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public String getIdCardBackImageUrl() {
+		return this.idCardBackImageUrl;
+	}
+
+	public void setIdCardBackImageUrl(String idCardBackImageUrl) {
+		this.idCardBackImageUrl = idCardBackImageUrl;
+		if(idCardBackImageUrl != null){
+			putQueryParameter("IdCardBackImageUrl", idCardBackImageUrl);
 		}
 	}
 
@@ -66,6 +85,28 @@ public class VerifyMaterialRequest extends RpcAcsRequest<VerifyMaterialResponse>
 		this.idCardNumber = idCardNumber;
 		if(idCardNumber != null){
 			putQueryParameter("IdCardNumber", idCardNumber);
+		}
+	}
+
+	public String getIdCardFrontImageUrl() {
+		return this.idCardFrontImageUrl;
+	}
+
+	public void setIdCardFrontImageUrl(String idCardFrontImageUrl) {
+		this.idCardFrontImageUrl = idCardFrontImageUrl;
+		if(idCardFrontImageUrl != null){
+			putQueryParameter("IdCardFrontImageUrl", idCardFrontImageUrl);
+		}
+	}
+
+	public String getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
 		}
 	}
 
@@ -88,50 +129,6 @@ public class VerifyMaterialRequest extends RpcAcsRequest<VerifyMaterialResponse>
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getIdCardFrontImageUrl() {
-		return this.idCardFrontImageUrl;
-	}
-
-	public void setIdCardFrontImageUrl(String idCardFrontImageUrl) {
-		this.idCardFrontImageUrl = idCardFrontImageUrl;
-		if(idCardFrontImageUrl != null){
-			putQueryParameter("IdCardFrontImageUrl", idCardFrontImageUrl);
-		}
-	}
-
-	public String getIdCardBackImageUrl() {
-		return this.idCardBackImageUrl;
-	}
-
-	public void setIdCardBackImageUrl(String idCardBackImageUrl) {
-		this.idCardBackImageUrl = idCardBackImageUrl;
-		if(idCardBackImageUrl != null){
-			putQueryParameter("IdCardBackImageUrl", idCardBackImageUrl);
-		}
-	}
-
-	public String getFaceImageUrl() {
-		return this.faceImageUrl;
-	}
-
-	public void setFaceImageUrl(String faceImageUrl) {
-		this.faceImageUrl = faceImageUrl;
-		if(faceImageUrl != null){
-			putQueryParameter("FaceImageUrl", faceImageUrl);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
 		}
 	}
 

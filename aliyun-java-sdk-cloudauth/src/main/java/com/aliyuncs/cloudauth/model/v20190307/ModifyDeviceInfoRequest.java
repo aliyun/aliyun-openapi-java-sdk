@@ -15,25 +15,16 @@
 package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.cloudauth.Endpoint;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyDeviceInfoRequest extends RpcAcsRequest<ModifyDeviceInfoResponse> {
-	
-	public ModifyDeviceInfoRequest() {
-		super("Cloudauth", "2019-03-07", "ModifyDeviceInfo", "cloudauth");
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String userDeviceId;
-
-	private String bizType;
 
 	private String duration;
 
@@ -45,6 +36,12 @@ public class ModifyDeviceInfoRequest extends RpcAcsRequest<ModifyDeviceInfoRespo
 
 	private String deviceId;
 
+	private String bizType;
+	public ModifyDeviceInfoRequest() {
+		super("Cloudauth", "2019-03-07", "ModifyDeviceInfo", "cloudauth");
+		setMethod(MethodType.POST);
+	}
+
 	public String getUserDeviceId() {
 		return this.userDeviceId;
 	}
@@ -53,17 +50,6 @@ public class ModifyDeviceInfoRequest extends RpcAcsRequest<ModifyDeviceInfoRespo
 		this.userDeviceId = userDeviceId;
 		if(userDeviceId != null){
 			putQueryParameter("UserDeviceId", userDeviceId);
-		}
-	}
-
-	public String getBizType() {
-		return this.bizType;
-	}
-
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
 		}
 	}
 
@@ -119,6 +105,17 @@ public class ModifyDeviceInfoRequest extends RpcAcsRequest<ModifyDeviceInfoRespo
 		this.deviceId = deviceId;
 		if(deviceId != null){
 			putQueryParameter("DeviceId", deviceId);
+		}
+	}
+
+	public String getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
 		}
 	}
 
