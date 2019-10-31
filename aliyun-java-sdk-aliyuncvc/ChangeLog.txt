@@ -5,6 +5,13 @@
 - Supported ConsoleController for Interface.
 - Supported AccountController for Interface.
 
+2019-10-31 Version: 1.0.1
+- Initial construction.
+- Public beta version.
+- Supported AliyunController for Interface.
+- Supported ConsoleController for Interface.
+- Supported AccountController for Interface.
+
 2019-10-31 Version: 1.0.0
 - Initial construction.
 - Public beta version.
