@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.linkwan.model.v20190301.ListNotificationsResponse;
 import com.aliyuncs.linkwan.model.v20190301.ListNotificationsResponse.Data;
 import com.aliyuncs.linkwan.model.v20190301.ListNotificationsResponse.Data.Notification;
+import com.aliyuncs.linkwan.model.v20190301.ListNotificationsResponse.Data.Notification.GatewayDataflowLimit;
 import com.aliyuncs.linkwan.model.v20190301.ListNotificationsResponse.Data.Notification.GatewayOfflineInfo;
 import com.aliyuncs.linkwan.model.v20190301.ListNotificationsResponse.Data.Notification.JoinPermissionAuthInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -62,6 +63,12 @@ public class ListNotificationsResponseUnmarshaller {
 			joinPermissionAuthInfo.setJoinEui(_ctx.stringValue("ListNotificationsResponse.Data.List["+ i +"].JoinPermissionAuthInfo.JoinEui"));
 			joinPermissionAuthInfo.setJoinPermissionName(_ctx.stringValue("ListNotificationsResponse.Data.List["+ i +"].JoinPermissionAuthInfo.JoinPermissionName"));
 			notification.setJoinPermissionAuthInfo(joinPermissionAuthInfo);
+
+			GatewayDataflowLimit gatewayDataflowLimit = new GatewayDataflowLimit();
+			gatewayDataflowLimit.setDataflowLimitMillis(_ctx.longValue("ListNotificationsResponse.Data.List["+ i +"].GatewayDataflowLimit.DataflowLimitMillis"));
+			gatewayDataflowLimit.setAlarmDetail(_ctx.stringValue("ListNotificationsResponse.Data.List["+ i +"].GatewayDataflowLimit.AlarmDetail"));
+			gatewayDataflowLimit.setGwEui(_ctx.stringValue("ListNotificationsResponse.Data.List["+ i +"].GatewayDataflowLimit.GwEui"));
+			notification.setGatewayDataflowLimit(gatewayDataflowLimit);
 
 			list.add(notification);
 		}

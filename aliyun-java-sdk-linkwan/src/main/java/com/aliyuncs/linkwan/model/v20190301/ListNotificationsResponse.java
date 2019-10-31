@@ -93,6 +93,8 @@ public class ListNotificationsResponse extends AcsResponse {
 
 			private JoinPermissionAuthInfo joinPermissionAuthInfo;
 
+			private GatewayDataflowLimit gatewayDataflowLimit;
+
 			public String getNotificationId() {
 				return this.notificationId;
 			}
@@ -147,6 +149,14 @@ public class ListNotificationsResponse extends AcsResponse {
 
 			public void setJoinPermissionAuthInfo(JoinPermissionAuthInfo joinPermissionAuthInfo) {
 				this.joinPermissionAuthInfo = joinPermissionAuthInfo;
+			}
+
+			public GatewayDataflowLimit getGatewayDataflowLimit() {
+				return this.gatewayDataflowLimit;
+			}
+
+			public void setGatewayDataflowLimit(GatewayDataflowLimit gatewayDataflowLimit) {
+				this.gatewayDataflowLimit = gatewayDataflowLimit;
 			}
 
 			public static class GatewayOfflineInfo {
@@ -282,6 +292,39 @@ public class ListNotificationsResponse extends AcsResponse {
 
 				public void setJoinPermissionName(String joinPermissionName) {
 					this.joinPermissionName = joinPermissionName;
+				}
+			}
+
+			public static class GatewayDataflowLimit {
+
+				private Long dataflowLimitMillis;
+
+				private String alarmDetail;
+
+				private String gwEui;
+
+				public Long getDataflowLimitMillis() {
+					return this.dataflowLimitMillis;
+				}
+
+				public void setDataflowLimitMillis(Long dataflowLimitMillis) {
+					this.dataflowLimitMillis = dataflowLimitMillis;
+				}
+
+				public String getAlarmDetail() {
+					return this.alarmDetail;
+				}
+
+				public void setAlarmDetail(String alarmDetail) {
+					this.alarmDetail = alarmDetail;
+				}
+
+				public String getGwEui() {
+					return this.gwEui;
+				}
+
+				public void setGwEui(String gwEui) {
+					this.gwEui = gwEui;
 				}
 			}
 		}

@@ -16,20 +16,20 @@ package com.aliyuncs.linkwan.model.v20190301;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkwan.transform.v20190301.DescribeRegionsResponseUnmarshaller;
+import com.aliyuncs.linkwan.transform.v20190301.ListGatewaysPacketStatResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRegionsResponse extends AcsResponse {
+public class ListGatewaysPacketStatResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private List<Region> data;
+	private List<GatewayPacketStat> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,40 +47,50 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<Region> getData() {
+	public List<GatewayPacketStat> getData() {
 		return this.data;
 	}
 
-	public void setData(List<Region> data) {
+	public void setData(List<GatewayPacketStat> data) {
 		this.data = data;
 	}
 
-	public static class Region {
+	public static class GatewayPacketStat {
 
-		private String regionId;
+		private String gwEui;
 
-		private String localName;
+		private Integer uplinkCount;
 
-		public String getRegionId() {
-			return this.regionId;
+		private Integer downlinkCount;
+
+		public String getGwEui() {
+			return this.gwEui;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setGwEui(String gwEui) {
+			this.gwEui = gwEui;
 		}
 
-		public String getLocalName() {
-			return this.localName;
+		public Integer getUplinkCount() {
+			return this.uplinkCount;
 		}
 
-		public void setLocalName(String localName) {
-			this.localName = localName;
+		public void setUplinkCount(Integer uplinkCount) {
+			this.uplinkCount = uplinkCount;
+		}
+
+		public Integer getDownlinkCount() {
+			return this.downlinkCount;
+		}
+
+		public void setDownlinkCount(Integer downlinkCount) {
+			this.downlinkCount = downlinkCount;
 		}
 	}
 
 	@Override
-	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
+	public ListGatewaysPacketStatResponse getInstance(UnmarshallerContext context) {
+		return	ListGatewaysPacketStatResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

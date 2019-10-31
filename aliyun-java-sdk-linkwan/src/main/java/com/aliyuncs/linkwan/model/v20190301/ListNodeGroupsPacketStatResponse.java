@@ -16,20 +16,20 @@ package com.aliyuncs.linkwan.model.v20190301;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkwan.transform.v20190301.DescribeRegionsResponseUnmarshaller;
+import com.aliyuncs.linkwan.transform.v20190301.ListNodeGroupsPacketStatResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRegionsResponse extends AcsResponse {
+public class ListNodeGroupsPacketStatResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private List<Region> data;
+	private List<NodeGroupPacketStat> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,40 +47,50 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<Region> getData() {
+	public List<NodeGroupPacketStat> getData() {
 		return this.data;
 	}
 
-	public void setData(List<Region> data) {
+	public void setData(List<NodeGroupPacketStat> data) {
 		this.data = data;
 	}
 
-	public static class Region {
+	public static class NodeGroupPacketStat {
 
-		private String regionId;
+		private String nodeGroupId;
 
-		private String localName;
+		private Integer uplinkCount;
 
-		public String getRegionId() {
-			return this.regionId;
+		private Integer downlinkCount;
+
+		public String getNodeGroupId() {
+			return this.nodeGroupId;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setNodeGroupId(String nodeGroupId) {
+			this.nodeGroupId = nodeGroupId;
 		}
 
-		public String getLocalName() {
-			return this.localName;
+		public Integer getUplinkCount() {
+			return this.uplinkCount;
 		}
 
-		public void setLocalName(String localName) {
-			this.localName = localName;
+		public void setUplinkCount(Integer uplinkCount) {
+			this.uplinkCount = uplinkCount;
+		}
+
+		public Integer getDownlinkCount() {
+			return this.downlinkCount;
+		}
+
+		public void setDownlinkCount(Integer downlinkCount) {
+			this.downlinkCount = downlinkCount;
 		}
 	}
 
 	@Override
-	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
+	public ListNodeGroupsPacketStatResponse getInstance(UnmarshallerContext context) {
+		return	ListNodeGroupsPacketStatResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

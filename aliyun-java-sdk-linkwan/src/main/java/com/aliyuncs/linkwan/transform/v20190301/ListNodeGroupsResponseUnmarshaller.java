@@ -64,6 +64,7 @@ public class ListNodeGroupsResponseUnmarshaller {
 			iotProduct.setProductName(_ctx.stringValue("ListNodeGroupsResponse.Data.List["+ i +"].DataDispatchConfig.IotProduct.ProductName"));
 			iotProduct.setProductKey(_ctx.stringValue("ListNodeGroupsResponse.Data.List["+ i +"].DataDispatchConfig.IotProduct.ProductKey"));
 			iotProduct.setProductType(_ctx.stringValue("ListNodeGroupsResponse.Data.List["+ i +"].DataDispatchConfig.IotProduct.ProductType"));
+			iotProduct.setDebugSwitch(_ctx.booleanValue("ListNodeGroupsResponse.Data.List["+ i +"].DataDispatchConfig.IotProduct.DebugSwitch"));
 			dataDispatchConfig.setIotProduct(iotProduct);
 
 			OnsTopics onsTopics = new OnsTopics();

@@ -120,6 +120,14 @@ public class GetUserLicenseResponse extends AcsResponse {
 
 		private Long gatewayTupleStandardCount;
 
+		private Long gatewayDingTalkCount;
+
+		private Long gatewayDingTalkLimit;
+
+		private Long gatewayProfessionalCount;
+
+		private Long gatewayProfessionalLimit;
+
 		public String getOui() {
 			return this.oui;
 		}
@@ -374,6 +382,38 @@ public class GetUserLicenseResponse extends AcsResponse {
 
 		public void setGatewayTupleStandardCount(Long gatewayTupleStandardCount) {
 			this.gatewayTupleStandardCount = gatewayTupleStandardCount;
+		}
+
+		public Long getGatewayDingTalkCount() {
+			return this.gatewayDingTalkCount;
+		}
+
+		public void setGatewayDingTalkCount(Long gatewayDingTalkCount) {
+			this.gatewayDingTalkCount = gatewayDingTalkCount;
+		}
+
+		public Long getGatewayDingTalkLimit() {
+			return this.gatewayDingTalkLimit;
+		}
+
+		public void setGatewayDingTalkLimit(Long gatewayDingTalkLimit) {
+			this.gatewayDingTalkLimit = gatewayDingTalkLimit;
+		}
+
+		public Long getGatewayProfessionalCount() {
+			return this.gatewayProfessionalCount;
+		}
+
+		public void setGatewayProfessionalCount(Long gatewayProfessionalCount) {
+			this.gatewayProfessionalCount = gatewayProfessionalCount;
+		}
+
+		public Long getGatewayProfessionalLimit() {
+			return this.gatewayProfessionalLimit;
+		}
+
+		public void setGatewayProfessionalLimit(Long gatewayProfessionalLimit) {
+			this.gatewayProfessionalLimit = gatewayProfessionalLimit;
 		}
 	}
 

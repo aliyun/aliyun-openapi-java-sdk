@@ -14,22 +14,19 @@
 
 package com.aliyuncs.linkwan.model.v20190301;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkwan.transform.v20190301.DescribeRegionsResponseUnmarshaller;
+import com.aliyuncs.linkwan.transform.v20190301.UpdateGatewaySshCtrlResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRegionsResponse extends AcsResponse {
+public class UpdateGatewaySshCtrlResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
-
-	private List<Region> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,40 +44,9 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<Region> getData() {
-		return this.data;
-	}
-
-	public void setData(List<Region> data) {
-		this.data = data;
-	}
-
-	public static class Region {
-
-		private String regionId;
-
-		private String localName;
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getLocalName() {
-			return this.localName;
-		}
-
-		public void setLocalName(String localName) {
-			this.localName = localName;
-		}
-	}
-
 	@Override
-	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
+	public UpdateGatewaySshCtrlResponse getInstance(UnmarshallerContext context) {
+		return	UpdateGatewaySshCtrlResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

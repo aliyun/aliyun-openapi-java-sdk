@@ -342,6 +342,8 @@ public class ListNodeGroupsResponse extends AcsResponse {
 
 					private String productType;
 
+					private Boolean debugSwitch;
+
 					public String getProductName() {
 						return this.productName;
 					}
@@ -364,6 +366,14 @@ public class ListNodeGroupsResponse extends AcsResponse {
 
 					public void setProductType(String productType) {
 						this.productType = productType;
+					}
+
+					public Boolean getDebugSwitch() {
+						return this.debugSwitch;
+					}
+
+					public void setDebugSwitch(Boolean debugSwitch) {
+						this.debugSwitch = debugSwitch;
 					}
 				}
 

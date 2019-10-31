@@ -15,7 +15,6 @@
 package com.aliyuncs.linkwan.model.v20190301;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.linkwan.Endpoint;
 
@@ -23,13 +22,14 @@ import com.aliyuncs.linkwan.Endpoint;
  * @author auto create
  * @version 
  */
-public class CheckCloudProductOpenStatusRequest extends RpcAcsRequest<CheckCloudProductOpenStatusResponse> {
+public class UpdateGatewaySshCtrlRequest extends RpcAcsRequest<UpdateGatewaySshCtrlResponse> {
 	   
 
-	private String serviceCode;
-	public CheckCloudProductOpenStatusRequest() {
-		super("LinkWAN", "2019-03-01", "CheckCloudProductOpenStatus", "linkwan");
-		setProtocol(ProtocolType.HTTPS);
+	private String gwEui;
+
+	private Boolean enabled;
+	public UpdateGatewaySshCtrlRequest() {
+		super("LinkWAN", "2019-03-01", "UpdateGatewaySshCtrl", "linkwan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,20 +37,31 @@ public class CheckCloudProductOpenStatusRequest extends RpcAcsRequest<CheckCloud
 		} catch (Exception e) {}
 	}
 
-	public String getServiceCode() {
-		return this.serviceCode;
+	public String getGwEui() {
+		return this.gwEui;
 	}
 
-	public void setServiceCode(String serviceCode) {
-		this.serviceCode = serviceCode;
-		if(serviceCode != null){
-			putQueryParameter("ServiceCode", serviceCode);
+	public void setGwEui(String gwEui) {
+		this.gwEui = gwEui;
+		if(gwEui != null){
+			putQueryParameter("GwEui", gwEui);
+		}
+	}
+
+	public Boolean getEnabled() {
+		return this.enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+		if(enabled != null){
+			putQueryParameter("Enabled", enabled.toString());
 		}
 	}
 
 	@Override
-	public Class<CheckCloudProductOpenStatusResponse> getResponseClass() {
-		return CheckCloudProductOpenStatusResponse.class;
+	public Class<UpdateGatewaySshCtrlResponse> getResponseClass() {
+		return UpdateGatewaySshCtrlResponse.class;
 	}
 
 }

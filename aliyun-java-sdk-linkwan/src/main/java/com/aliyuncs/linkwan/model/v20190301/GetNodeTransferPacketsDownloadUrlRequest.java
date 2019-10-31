@@ -15,7 +15,7 @@
 package com.aliyuncs.linkwan.model.v20190301;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.linkwan.Endpoint;
 
@@ -23,20 +23,25 @@ import com.aliyuncs.linkwan.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListGatewayTupleOrdersRequest extends RpcAcsRequest<ListGatewayTupleOrdersResponse> {
+public class GetNodeTransferPacketsDownloadUrlRequest extends RpcAcsRequest<GetNodeTransferPacketsDownloadUrlResponse> {
 	   
 
-	private Long offset;
+	private String gwEui;
 
-	private Long limit;
+	private Long endMillis;
 
-	private List<String> states;
+	private String devEui;
+
+	private String category;
+
+	private Long beginMillis;
 
 	private String sortingField;
 
 	private Boolean ascending;
-	public ListGatewayTupleOrdersRequest() {
-		super("LinkWAN", "2019-03-01", "ListGatewayTupleOrders", "linkwan");
+	public GetNodeTransferPacketsDownloadUrlRequest() {
+		super("LinkWAN", "2019-03-01", "GetNodeTransferPacketsDownloadUrl", "linkwan");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -44,39 +49,59 @@ public class ListGatewayTupleOrdersRequest extends RpcAcsRequest<ListGatewayTupl
 		} catch (Exception e) {}
 	}
 
-	public Long getOffset() {
-		return this.offset;
+	public String getGwEui() {
+		return this.gwEui;
 	}
 
-	public void setOffset(Long offset) {
-		this.offset = offset;
-		if(offset != null){
-			putQueryParameter("Offset", offset.toString());
+	public void setGwEui(String gwEui) {
+		this.gwEui = gwEui;
+		if(gwEui != null){
+			putQueryParameter("GwEui", gwEui);
 		}
 	}
 
-	public Long getLimit() {
-		return this.limit;
+	public Long getEndMillis() {
+		return this.endMillis;
 	}
 
-	public void setLimit(Long limit) {
-		this.limit = limit;
-		if(limit != null){
-			putQueryParameter("Limit", limit.toString());
+	public void setEndMillis(Long endMillis) {
+		this.endMillis = endMillis;
+		if(endMillis != null){
+			putQueryParameter("EndMillis", endMillis.toString());
 		}
 	}
 
-	public List<String> getStates() {
-		return this.states;
+	public String getDevEui() {
+		return this.devEui;
 	}
 
-	public void setStates(List<String> states) {
-		this.states = states;	
-		if (states != null) {
-			for (int i = 0; i < states.size(); i++) {
-				putQueryParameter("State." + (i + 1) , states.get(i));
-			}
-		}	
+	public void setDevEui(String devEui) {
+		this.devEui = devEui;
+		if(devEui != null){
+			putQueryParameter("DevEui", devEui);
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
+		}
+	}
+
+	public Long getBeginMillis() {
+		return this.beginMillis;
+	}
+
+	public void setBeginMillis(Long beginMillis) {
+		this.beginMillis = beginMillis;
+		if(beginMillis != null){
+			putQueryParameter("BeginMillis", beginMillis.toString());
+		}
 	}
 
 	public String getSortingField() {
@@ -102,8 +127,8 @@ public class ListGatewayTupleOrdersRequest extends RpcAcsRequest<ListGatewayTupl
 	}
 
 	@Override
-	public Class<ListGatewayTupleOrdersResponse> getResponseClass() {
-		return ListGatewayTupleOrdersResponse.class;
+	public Class<GetNodeTransferPacketsDownloadUrlResponse> getResponseClass() {
+		return GetNodeTransferPacketsDownloadUrlResponse.class;
 	}
 
 }

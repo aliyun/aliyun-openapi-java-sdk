@@ -59,6 +59,10 @@ public class GetUserLicenseResponseUnmarshaller {
 		data.setGatewayTupleSingleChannelCount(_ctx.longValue("GetUserLicenseResponse.Data.GatewayTupleSingleChannelCount"));
 		data.setGatewayTupleStandardLimit(_ctx.longValue("GetUserLicenseResponse.Data.GatewayTupleStandardLimit"));
 		data.setGatewayTupleStandardCount(_ctx.longValue("GetUserLicenseResponse.Data.GatewayTupleStandardCount"));
+		data.setGatewayDingTalkCount(_ctx.longValue("GetUserLicenseResponse.Data.GatewayDingTalkCount"));
+		data.setGatewayDingTalkLimit(_ctx.longValue("GetUserLicenseResponse.Data.GatewayDingTalkLimit"));
+		data.setGatewayProfessionalCount(_ctx.longValue("GetUserLicenseResponse.Data.GatewayProfessionalCount"));
+		data.setGatewayProfessionalLimit(_ctx.longValue("GetUserLicenseResponse.Data.GatewayProfessionalLimit"));
 		getUserLicenseResponse.setData(data);
 	 
 	 	return getUserLicenseResponse;

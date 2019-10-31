@@ -30,6 +30,8 @@ public class UpdateDataDispatchConfigRequest extends RpcAcsRequest<UpdateDataDis
 
 	private String productKey;
 
+	private Boolean debugSwitch;
+
 	private String productType;
 
 	private String productName;
@@ -68,6 +70,17 @@ public class UpdateDataDispatchConfigRequest extends RpcAcsRequest<UpdateDataDis
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public Boolean getDebugSwitch() {
+		return this.debugSwitch;
+	}
+
+	public void setDebugSwitch(Boolean debugSwitch) {
+		this.debugSwitch = debugSwitch;
+		if(debugSwitch != null){
+			putQueryParameter("DebugSwitch", debugSwitch.toString());
 		}
 	}
 
