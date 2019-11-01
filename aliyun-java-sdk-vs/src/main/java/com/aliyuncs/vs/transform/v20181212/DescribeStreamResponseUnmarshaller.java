@@ -28,7 +28,7 @@ public class DescribeStreamResponseUnmarshaller {
 		describeStreamResponse.setPushDomain(_ctx.stringValue("DescribeStreamResponse.PushDomain"));
 		describeStreamResponse.setPlayDomain(_ctx.stringValue("DescribeStreamResponse.PlayDomain"));
 		describeStreamResponse.setApp(_ctx.stringValue("DescribeStreamResponse.App"));
-		describeStreamResponse.setProtocol(_ctx.stringValue("DescribeStreamResponse.Protocol"));
+		describeStreamResponse.setBizProtocol(_ctx.stringValue("DescribeStreamResponse.Protocol"));
 		describeStreamResponse.setGroupId(_ctx.stringValue("DescribeStreamResponse.GroupId"));
 		describeStreamResponse.setDeviceId(_ctx.stringValue("DescribeStreamResponse.DeviceId"));
 		describeStreamResponse.setEnabled(_ctx.booleanValue("DescribeStreamResponse.Enabled"));

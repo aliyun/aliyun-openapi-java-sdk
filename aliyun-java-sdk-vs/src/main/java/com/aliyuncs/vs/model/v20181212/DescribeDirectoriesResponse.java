@@ -16,14 +16,14 @@ package com.aliyuncs.vs.model.v20181212;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vs.transform.v20181212.DescribeStreamsResponseUnmarshaller;
+import com.aliyuncs.vs.transform.v20181212.DescribeDirectoriesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeStreamsResponse extends AcsResponse {
+public class DescribeDirectoriesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class DescribeStreamsResponse extends AcsResponse {
 
 	private Long totalCount;
 
-	private List<Stream> streams;
+	private List<Directory> directories;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -77,35 +77,25 @@ public class DescribeStreamsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public List<Stream> getStreams() {
-		return this.streams;
+	public List<Directory> getDirectories() {
+		return this.directories;
 	}
 
-	public void setStreams(List<Stream> streams) {
-		this.streams = streams;
+	public void setDirectories(List<Directory> directories) {
+		this.directories = directories;
 	}
 
-	public static class Stream {
+	public static class Directory {
 
 		private String id;
 
 		private String name;
 
-		private String pushDomain;
-
-		private String playDomain;
-
-		private String app;
-
-		private String protocol;
+		private String description;
 
 		private String groupId;
 
-		private String deviceId;
-
-		private Boolean enabled;
-
-		private String status;
+		private String parentId;
 
 		private String createdTime;
 
@@ -125,36 +115,12 @@ public class DescribeStreamsResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getPushDomain() {
-			return this.pushDomain;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setPushDomain(String pushDomain) {
-			this.pushDomain = pushDomain;
-		}
-
-		public String getPlayDomain() {
-			return this.playDomain;
-		}
-
-		public void setPlayDomain(String playDomain) {
-			this.playDomain = playDomain;
-		}
-
-		public String getApp() {
-			return this.app;
-		}
-
-		public void setApp(String app) {
-			this.app = app;
-		}
-
-		public String getBizProtocol() {
-			return this.protocol;
-		}
-
-		public void setBizProtocol(String protocol) {
-			this.protocol = protocol;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getGroupId() {
@@ -165,28 +131,12 @@ public class DescribeStreamsResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public String getDeviceId() {
-			return this.deviceId;
+		public String getParentId() {
+			return this.parentId;
 		}
 
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
-
-		public Boolean getEnabled() {
-			return this.enabled;
-		}
-
-		public void setEnabled(Boolean enabled) {
-			this.enabled = enabled;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setParentId(String parentId) {
+			this.parentId = parentId;
 		}
 
 		public String getCreatedTime() {
@@ -199,8 +149,8 @@ public class DescribeStreamsResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeStreamsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeStreamsResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDirectoriesResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDirectoriesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

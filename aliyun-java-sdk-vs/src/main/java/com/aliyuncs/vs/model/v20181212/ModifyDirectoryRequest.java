@@ -22,19 +22,45 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVsUserResourcePackageRequest extends RpcAcsRequest<DescribeVsUserResourcePackageResponse> {
+public class ModifyDirectoryRequest extends RpcAcsRequest<ModifyDirectoryResponse> {
 	   
+
+	private String description;
+
+	private String id;
 
 	private Long ownerId;
 
-	private String securityToken;
-	public DescribeVsUserResourcePackageRequest() {
-		super("vs", "2018-12-12", "DescribeVsUserResourcePackage", "vs");
+	private String name;
+	public ModifyDirectoryRequest() {
+		super("vs", "2018-12-12", "ModifyDirectory", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
+		}
 	}
 
 	public Long getOwnerId() {
@@ -48,20 +74,20 @@ public class DescribeVsUserResourcePackageRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
 	@Override
-	public Class<DescribeVsUserResourcePackageResponse> getResponseClass() {
-		return DescribeVsUserResourcePackageResponse.class;
+	public Class<ModifyDirectoryResponse> getResponseClass() {
+		return ModifyDirectoryResponse.class;
 	}
 
 }

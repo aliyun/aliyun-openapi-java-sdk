@@ -15,6 +15,7 @@
 package com.aliyuncs.vs.transform.v20181212;
 
 import com.aliyuncs.vs.model.v20181212.DescribeDeviceResponse;
+import com.aliyuncs.vs.model.v20181212.DescribeDeviceResponse.Directory;
 import com.aliyuncs.vs.model.v20181212.DescribeDeviceResponse.Stats;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -29,10 +30,11 @@ public class DescribeDeviceResponseUnmarshaller {
 		describeDeviceResponse.setDescription(_ctx.stringValue("DescribeDeviceResponse.Description"));
 		describeDeviceResponse.setGroupId(_ctx.stringValue("DescribeDeviceResponse.GroupId"));
 		describeDeviceResponse.setParentId(_ctx.stringValue("DescribeDeviceResponse.ParentId"));
+		describeDeviceResponse.setDirectoryId(_ctx.stringValue("DescribeDeviceResponse.DirectoryId"));
 		describeDeviceResponse.setType(_ctx.stringValue("DescribeDeviceResponse.Type"));
 		describeDeviceResponse.setAutoStart(_ctx.booleanValue("DescribeDeviceResponse.AutoStart"));
 		describeDeviceResponse.setEnabled(_ctx.booleanValue("DescribeDeviceResponse.Enabled"));
-		describeDeviceResponse.setProtocol(_ctx.stringValue("DescribeDeviceResponse.Protocol"));
+		describeDeviceResponse.setBizProtocol(_ctx.stringValue("DescribeDeviceResponse.Protocol"));
 		describeDeviceResponse.setStatus(_ctx.stringValue("DescribeDeviceResponse.Status"));
 		describeDeviceResponse.setGbId(_ctx.stringValue("DescribeDeviceResponse.GbId"));
 		describeDeviceResponse.setIp(_ctx.stringValue("DescribeDeviceResponse.Ip"));
@@ -52,6 +54,15 @@ public class DescribeDeviceResponseUnmarshaller {
 		stats.setOfflineNum(_ctx.longValue("DescribeDeviceResponse.Stats.OfflineNum"));
 		stats.setFailedNum(_ctx.longValue("DescribeDeviceResponse.Stats.FailedNum"));
 		describeDeviceResponse.setStats(stats);
+
+		Directory directory = new Directory();
+		directory.setId(_ctx.stringValue("DescribeDeviceResponse.Directory.Id"));
+		directory.setName(_ctx.stringValue("DescribeDeviceResponse.Directory.Name"));
+		directory.setDescription(_ctx.stringValue("DescribeDeviceResponse.Directory.Description"));
+		directory.setGroupId(_ctx.stringValue("DescribeDeviceResponse.Directory.GroupId"));
+		directory.setParentId(_ctx.stringValue("DescribeDeviceResponse.Directory.ParentId"));
+		directory.setCreatedTime(_ctx.stringValue("DescribeDeviceResponse.Directory.CreatedTime"));
+		describeDeviceResponse.setDirectory(directory);
 	 
 	 	return describeDeviceResponse;
 	}

@@ -39,6 +39,8 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 
 	private String vendor;
 
+	private String directoryId;
+
 	private String groupId;
 
 	private String ip;
@@ -138,6 +140,17 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		}
 	}
 
+	public String getDirectoryId() {
+		return this.directoryId;
+	}
+
+	public void setDirectoryId(String directoryId) {
+		this.directoryId = directoryId;
+		if(directoryId != null){
+			putQueryParameter("DirectoryId", directoryId);
+		}
+	}
+
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -171,29 +184,10 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		}
 	}
 
-	public String getBizUrl() {
-		return this.url;
-	}
-
-	public void setBizUrl(String url) {
-		this.url = url;
-		if(url != null){
-			putQueryParameter("Url", url);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizUrl instead of this.
-	 */
-	@Deprecated
 	public String getUrl() {
 		return this.url;
 	}
 
-	/**
-	 * @deprecated use setBizUrl instead of this.
-	 */
-	@Deprecated
 	public void setUrl(String url) {
 		this.url = url;
 		if(url != null){

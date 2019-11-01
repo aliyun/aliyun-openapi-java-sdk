@@ -15,14 +15,14 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vs.transform.v20181212.DescribeStreamResponseUnmarshaller;
+import com.aliyuncs.vs.transform.v20181212.DescribeDirectoryResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeStreamResponse extends AcsResponse {
+public class DescribeDirectoryResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -30,21 +30,11 @@ public class DescribeStreamResponse extends AcsResponse {
 
 	private String name;
 
-	private String pushDomain;
-
-	private String playDomain;
-
-	private String app;
-
-	private String protocol;
+	private String description;
 
 	private String groupId;
 
-	private String deviceId;
-
-	private Boolean enabled;
-
-	private String status;
+	private String parentId;
 
 	private String createdTime;
 
@@ -72,36 +62,12 @@ public class DescribeStreamResponse extends AcsResponse {
 		this.name = name;
 	}
 
-	public String getPushDomain() {
-		return this.pushDomain;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setPushDomain(String pushDomain) {
-		this.pushDomain = pushDomain;
-	}
-
-	public String getPlayDomain() {
-		return this.playDomain;
-	}
-
-	public void setPlayDomain(String playDomain) {
-		this.playDomain = playDomain;
-	}
-
-	public String getApp() {
-		return this.app;
-	}
-
-	public void setApp(String app) {
-		this.app = app;
-	}
-
-	public String getBizProtocol() {
-		return this.protocol;
-	}
-
-	public void setBizProtocol(String protocol) {
-		this.protocol = protocol;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getGroupId() {
@@ -112,28 +78,12 @@ public class DescribeStreamResponse extends AcsResponse {
 		this.groupId = groupId;
 	}
 
-	public String getDeviceId() {
-		return this.deviceId;
+	public String getParentId() {
+		return this.parentId;
 	}
 
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-	}
-
-	public Boolean getEnabled() {
-		return this.enabled;
-	}
-
-	public void setEnabled(Boolean enabled) {
-		this.enabled = enabled;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
+	public void setParentId(String parentId) {
+		this.parentId = parentId;
 	}
 
 	public String getCreatedTime() {
@@ -145,7 +95,12 @@ public class DescribeStreamResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeStreamResponse getInstance(UnmarshallerContext context) {
-		return	DescribeStreamResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDirectoryResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDirectoryResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

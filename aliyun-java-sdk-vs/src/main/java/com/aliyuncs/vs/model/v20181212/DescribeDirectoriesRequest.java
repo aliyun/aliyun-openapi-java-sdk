@@ -22,42 +22,26 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesResponse> {
+public class DescribeDirectoriesRequest extends RpcAcsRequest<DescribeDirectoriesResponse> {
 	   
 
 	private String sortDirection;
 
-	private Boolean includeDirectory;
-
-	private String gbId;
-
-	private String type;
-
 	private Long pageNum;
+
+	private Boolean noPagination;
 
 	private String parentId;
 
-	private Boolean includeStats;
-
-	private String vendor;
-
 	private Long pageSize;
-
-	private String directoryId;
-
-	private String id;
 
 	private String groupId;
 
 	private Long ownerId;
 
-	private String name;
-
 	private String sortBy;
-
-	private String status;
-	public DescribeDevicesRequest() {
-		super("vs", "2018-12-12", "DescribeDevices", "vs");
+	public DescribeDirectoriesRequest() {
+		super("vs", "2018-12-12", "DescribeDirectories", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -76,39 +60,6 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 		}
 	}
 
-	public Boolean getIncludeDirectory() {
-		return this.includeDirectory;
-	}
-
-	public void setIncludeDirectory(Boolean includeDirectory) {
-		this.includeDirectory = includeDirectory;
-		if(includeDirectory != null){
-			putQueryParameter("IncludeDirectory", includeDirectory.toString());
-		}
-	}
-
-	public String getGbId() {
-		return this.gbId;
-	}
-
-	public void setGbId(String gbId) {
-		this.gbId = gbId;
-		if(gbId != null){
-			putQueryParameter("GbId", gbId);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
 	public Long getPageNum() {
 		return this.pageNum;
 	}
@@ -117,6 +68,17 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Boolean getNoPagination() {
+		return this.noPagination;
+	}
+
+	public void setNoPagination(Boolean noPagination) {
+		this.noPagination = noPagination;
+		if(noPagination != null){
+			putQueryParameter("NoPagination", noPagination.toString());
 		}
 	}
 
@@ -131,28 +93,6 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 		}
 	}
 
-	public Boolean getIncludeStats() {
-		return this.includeStats;
-	}
-
-	public void setIncludeStats(Boolean includeStats) {
-		this.includeStats = includeStats;
-		if(includeStats != null){
-			putQueryParameter("IncludeStats", includeStats.toString());
-		}
-	}
-
-	public String getVendor() {
-		return this.vendor;
-	}
-
-	public void setVendor(String vendor) {
-		this.vendor = vendor;
-		if(vendor != null){
-			putQueryParameter("Vendor", vendor);
-		}
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
@@ -161,28 +101,6 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getDirectoryId() {
-		return this.directoryId;
-	}
-
-	public void setDirectoryId(String directoryId) {
-		this.directoryId = directoryId;
-		if(directoryId != null){
-			putQueryParameter("DirectoryId", directoryId);
-		}
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
 		}
 	}
 
@@ -208,17 +126,6 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getSortBy() {
 		return this.sortBy;
 	}
@@ -230,20 +137,9 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
-		}
-	}
-
 	@Override
-	public Class<DescribeDevicesResponse> getResponseClass() {
-		return DescribeDevicesResponse.class;
+	public Class<DescribeDirectoriesResponse> getResponseClass() {
+		return DescribeDirectoriesResponse.class;
 	}
 
 }

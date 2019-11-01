@@ -22,19 +22,43 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVsUserResourcePackageRequest extends RpcAcsRequest<DescribeVsUserResourcePackageResponse> {
+public class GotoPresetRequest extends RpcAcsRequest<GotoPresetResponse> {
 	   
 
-	private Long ownerId;
+	private String id;
 
-	private String securityToken;
-	public DescribeVsUserResourcePackageRequest() {
-		super("vs", "2018-12-12", "DescribeVsUserResourcePackage", "vs");
+	private String presetId;
+
+	private Long ownerId;
+	public GotoPresetRequest() {
+		super("vs", "2018-12-12", "GotoPreset", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
+		}
+	}
+
+	public String getPresetId() {
+		return this.presetId;
+	}
+
+	public void setPresetId(String presetId) {
+		this.presetId = presetId;
+		if(presetId != null){
+			putQueryParameter("PresetId", presetId);
+		}
 	}
 
 	public Long getOwnerId() {
@@ -48,20 +72,9 @@ public class DescribeVsUserResourcePackageRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
 	@Override
-	public Class<DescribeVsUserResourcePackageResponse> getResponseClass() {
-		return DescribeVsUserResourcePackageResponse.class;
+	public Class<GotoPresetResponse> getResponseClass() {
+		return GotoPresetResponse.class;
 	}
 
 }

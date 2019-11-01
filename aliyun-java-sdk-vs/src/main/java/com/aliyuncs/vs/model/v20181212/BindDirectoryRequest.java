@@ -22,19 +22,32 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVsUserResourcePackageRequest extends RpcAcsRequest<DescribeVsUserResourcePackageResponse> {
+public class BindDirectoryRequest extends RpcAcsRequest<BindDirectoryResponse> {
 	   
+
+	private String directoryId;
 
 	private Long ownerId;
 
-	private String securityToken;
-	public DescribeVsUserResourcePackageRequest() {
-		super("vs", "2018-12-12", "DescribeVsUserResourcePackage", "vs");
+	private String deviceId;
+	public BindDirectoryRequest() {
+		super("vs", "2018-12-12", "BindDirectory", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDirectoryId() {
+		return this.directoryId;
+	}
+
+	public void setDirectoryId(String directoryId) {
+		this.directoryId = directoryId;
+		if(directoryId != null){
+			putQueryParameter("DirectoryId", directoryId);
+		}
 	}
 
 	public Long getOwnerId() {
@@ -48,20 +61,20 @@ public class DescribeVsUserResourcePackageRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getDeviceId() {
+		return this.deviceId;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+		if(deviceId != null){
+			putQueryParameter("DeviceId", deviceId);
 		}
 	}
 
 	@Override
-	public Class<DescribeVsUserResourcePackageResponse> getResponseClass() {
-		return DescribeVsUserResourcePackageResponse.class;
+	public Class<BindDirectoryResponse> getResponseClass() {
+		return BindDirectoryResponse.class;
 	}
 
 }

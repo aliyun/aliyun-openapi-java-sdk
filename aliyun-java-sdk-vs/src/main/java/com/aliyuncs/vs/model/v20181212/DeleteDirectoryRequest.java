@@ -22,19 +22,30 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVsUserResourcePackageRequest extends RpcAcsRequest<DescribeVsUserResourcePackageResponse> {
+public class DeleteDirectoryRequest extends RpcAcsRequest<DeleteDirectoryResponse> {
 	   
 
-	private Long ownerId;
+	private String id;
 
-	private String securityToken;
-	public DescribeVsUserResourcePackageRequest() {
-		super("vs", "2018-12-12", "DescribeVsUserResourcePackage", "vs");
+	private Long ownerId;
+	public DeleteDirectoryRequest() {
+		super("vs", "2018-12-12", "DeleteDirectory", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
+		}
 	}
 
 	public Long getOwnerId() {
@@ -48,20 +59,9 @@ public class DescribeVsUserResourcePackageRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
 	@Override
-	public Class<DescribeVsUserResourcePackageResponse> getResponseClass() {
-		return DescribeVsUserResourcePackageResponse.class;
+	public Class<DeleteDirectoryResponse> getResponseClass() {
+		return DeleteDirectoryResponse.class;
 	}
 
 }

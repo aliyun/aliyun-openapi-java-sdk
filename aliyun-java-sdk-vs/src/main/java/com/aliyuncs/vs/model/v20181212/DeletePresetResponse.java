@@ -15,24 +15,18 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vs.transform.v20181212.DescribeVodStreamURLResponseUnmarshaller;
+import com.aliyuncs.vs.transform.v20181212.DeletePresetResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeVodStreamURLResponse extends AcsResponse {
+public class DeletePresetResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String url;
-
-	private String outProtocol;
-
-	private Long port;
-
-	private String txId;
+	private String id;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,40 +36,16 @@ public class DescribeVodStreamURLResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getUrl() {
-		return this.url;
+	public String getId() {
+		return this.id;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	public String getOutProtocol() {
-		return this.outProtocol;
-	}
-
-	public void setOutProtocol(String outProtocol) {
-		this.outProtocol = outProtocol;
-	}
-
-	public Long getPort() {
-		return this.port;
-	}
-
-	public void setPort(Long port) {
-		this.port = port;
-	}
-
-	public String getTxId() {
-		return this.txId;
-	}
-
-	public void setTxId(String txId) {
-		this.txId = txId;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	@Override
-	public DescribeVodStreamURLResponse getInstance(UnmarshallerContext context) {
-		return	DescribeVodStreamURLResponseUnmarshaller.unmarshall(this, context);
+	public DeletePresetResponse getInstance(UnmarshallerContext context) {
+		return	DeletePresetResponseUnmarshaller.unmarshall(this, context);
 	}
 }

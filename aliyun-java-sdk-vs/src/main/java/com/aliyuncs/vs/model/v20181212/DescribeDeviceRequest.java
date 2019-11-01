@@ -25,6 +25,8 @@ import com.aliyuncs.vs.Endpoint;
 public class DescribeDeviceRequest extends RpcAcsRequest<DescribeDeviceResponse> {
 	   
 
+	private Boolean includeDirectory;
+
 	private Boolean includeStats;
 
 	private String id;
@@ -37,6 +39,17 @@ public class DescribeDeviceRequest extends RpcAcsRequest<DescribeDeviceResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getIncludeDirectory() {
+		return this.includeDirectory;
+	}
+
+	public void setIncludeDirectory(Boolean includeDirectory) {
+		this.includeDirectory = includeDirectory;
+		if(includeDirectory != null){
+			putQueryParameter("IncludeDirectory", includeDirectory.toString());
+		}
 	}
 
 	public Boolean getIncludeStats() {

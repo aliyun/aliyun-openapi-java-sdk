@@ -36,6 +36,8 @@ public class DescribeDeviceResponse extends AcsResponse {
 
 	private String parentId;
 
+	private String directoryId;
+
 	private String type;
 
 	private Boolean autoStart;
@@ -67,6 +69,8 @@ public class DescribeDeviceResponse extends AcsResponse {
 	private String channelSyncTime;
 
 	private Stats stats;
+
+	private Directory directory;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -116,6 +120,14 @@ public class DescribeDeviceResponse extends AcsResponse {
 		this.parentId = parentId;
 	}
 
+	public String getDirectoryId() {
+		return this.directoryId;
+	}
+
+	public void setDirectoryId(String directoryId) {
+		this.directoryId = directoryId;
+	}
+
 	public String getType() {
 		return this.type;
 	}
@@ -145,22 +157,6 @@ public class DescribeDeviceResponse extends AcsResponse {
 	}
 
 	public void setBizProtocol(String protocol) {
-		this.protocol = protocol;
-	}
-
-	/**
-	 * @deprecated use getBizProtocol instead of this.
-	 */
-	@Deprecated
-	public String getProtocol() {
-		return this.protocol;
-	}
-
-	/**
-	 * @deprecated use setBizProtocol instead of this.
-	 */
-	@Deprecated
-	public void setProtocol(String protocol) {
 		this.protocol = protocol;
 	}
 
@@ -196,26 +192,10 @@ public class DescribeDeviceResponse extends AcsResponse {
 		this.port = port;
 	}
 
-	public String getBizUrl() {
-		return this.url;
-	}
-
-	public void setBizUrl(String url) {
-		this.url = url;
-	}
-
-	/**
-	 * @deprecated use getBizUrl instead of this.
-	 */
-	@Deprecated
 	public String getUrl() {
 		return this.url;
 	}
 
-	/**
-	 * @deprecated use setBizUrl instead of this.
-	 */
-	@Deprecated
 	public void setUrl(String url) {
 		this.url = url;
 	}
@@ -276,6 +256,14 @@ public class DescribeDeviceResponse extends AcsResponse {
 		this.stats = stats;
 	}
 
+	public Directory getDirectory() {
+		return this.directory;
+	}
+
+	public void setDirectory(Directory directory) {
+		this.directory = directory;
+	}
+
 	public static class Stats {
 
 		private Long channelNum;
@@ -326,6 +314,69 @@ public class DescribeDeviceResponse extends AcsResponse {
 
 		public void setFailedNum(Long failedNum) {
 			this.failedNum = failedNum;
+		}
+	}
+
+	public static class Directory {
+
+		private String id;
+
+		private String name;
+
+		private String description;
+
+		private String groupId;
+
+		private String parentId;
+
+		private String createdTime;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getParentId() {
+			return this.parentId;
+		}
+
+		public void setParentId(String parentId) {
+			this.parentId = parentId;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
 		}
 	}
 

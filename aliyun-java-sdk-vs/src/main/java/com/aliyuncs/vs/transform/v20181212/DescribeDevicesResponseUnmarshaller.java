@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vs.model.v20181212.DescribeDevicesResponse;
 import com.aliyuncs.vs.model.v20181212.DescribeDevicesResponse.Device;
+import com.aliyuncs.vs.model.v20181212.DescribeDevicesResponse.Device.Directory;
 import com.aliyuncs.vs.model.v20181212.DescribeDevicesResponse.Device.Stats;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -41,10 +42,11 @@ public class DescribeDevicesResponseUnmarshaller {
 			device.setDescription(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Description"));
 			device.setGroupId(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].GroupId"));
 			device.setParentId(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].ParentId"));
+			device.setDirectoryId(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].DirectoryId"));
 			device.setType(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Type"));
 			device.setAutoStart(_ctx.booleanValue("DescribeDevicesResponse.Devices["+ i +"].AutoStart"));
 			device.setEnabled(_ctx.booleanValue("DescribeDevicesResponse.Devices["+ i +"].Enabled"));
-			device.setProtocol(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Protocol"));
+			device.setBizProtocol(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Protocol"));
 			device.setStatus(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Status"));
 			device.setGbId(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].GbId"));
 			device.setIp(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Ip"));
@@ -64,6 +66,15 @@ public class DescribeDevicesResponseUnmarshaller {
 			stats.setOfflineNum(_ctx.longValue("DescribeDevicesResponse.Devices["+ i +"].Stats.OfflineNum"));
 			stats.setFailedNum(_ctx.longValue("DescribeDevicesResponse.Devices["+ i +"].Stats.FailedNum"));
 			device.setStats(stats);
+
+			Directory directory = new Directory();
+			directory.setId(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Directory.Id"));
+			directory.setName(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Directory.Name"));
+			directory.setDescription(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Directory.Description"));
+			directory.setGroupId(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Directory.GroupId"));
+			directory.setParentId(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Directory.ParentId"));
+			directory.setCreatedTime(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Directory.CreatedTime"));
+			device.setDirectory(directory);
 
 			devices.add(device);
 		}
