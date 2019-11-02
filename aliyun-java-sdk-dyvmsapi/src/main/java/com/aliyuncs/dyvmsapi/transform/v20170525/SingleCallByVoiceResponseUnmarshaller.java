@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SingleCallByVoiceResponseUnmarshaller {
 
-	public static SingleCallByVoiceResponse unmarshall(SingleCallByVoiceResponse singleCallByVoiceResponse, UnmarshallerContext context) {
+	public static SingleCallByVoiceResponse unmarshall(SingleCallByVoiceResponse singleCallByVoiceResponse, UnmarshallerContext _ctx) {
 		
-		singleCallByVoiceResponse.setRequestId(context.stringValue("SingleCallByVoiceResponse.RequestId"));
-		singleCallByVoiceResponse.setCallId(context.stringValue("SingleCallByVoiceResponse.CallId"));
-		singleCallByVoiceResponse.setCode(context.stringValue("SingleCallByVoiceResponse.Code"));
-		singleCallByVoiceResponse.setMessage(context.stringValue("SingleCallByVoiceResponse.Message"));
+		singleCallByVoiceResponse.setRequestId(_ctx.stringValue("SingleCallByVoiceResponse.RequestId"));
+		singleCallByVoiceResponse.setCallId(_ctx.stringValue("SingleCallByVoiceResponse.CallId"));
+		singleCallByVoiceResponse.setCode(_ctx.stringValue("SingleCallByVoiceResponse.Code"));
+		singleCallByVoiceResponse.setMessage(_ctx.stringValue("SingleCallByVoiceResponse.Message"));
 	 
 	 	return singleCallByVoiceResponse;
 	}

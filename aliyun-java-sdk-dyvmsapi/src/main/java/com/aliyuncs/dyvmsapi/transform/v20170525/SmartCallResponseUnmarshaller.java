@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SmartCallResponseUnmarshaller {
 
-	public static SmartCallResponse unmarshall(SmartCallResponse smartCallResponse, UnmarshallerContext context) {
+	public static SmartCallResponse unmarshall(SmartCallResponse smartCallResponse, UnmarshallerContext _ctx) {
 		
-		smartCallResponse.setRequestId(context.stringValue("SmartCallResponse.RequestId"));
-		smartCallResponse.setCallId(context.stringValue("SmartCallResponse.CallId"));
-		smartCallResponse.setCode(context.stringValue("SmartCallResponse.Code"));
-		smartCallResponse.setMessage(context.stringValue("SmartCallResponse.Message"));
+		smartCallResponse.setRequestId(_ctx.stringValue("SmartCallResponse.RequestId"));
+		smartCallResponse.setCallId(_ctx.stringValue("SmartCallResponse.CallId"));
+		smartCallResponse.setCode(_ctx.stringValue("SmartCallResponse.Code"));
+		smartCallResponse.setMessage(_ctx.stringValue("SmartCallResponse.Message"));
 	 
 	 	return smartCallResponse;
 	}

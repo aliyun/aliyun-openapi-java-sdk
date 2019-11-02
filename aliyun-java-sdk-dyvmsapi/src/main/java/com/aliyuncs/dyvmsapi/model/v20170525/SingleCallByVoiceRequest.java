@@ -15,22 +15,18 @@
 package com.aliyuncs.dyvmsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SingleCallByVoiceRequest extends RpcAcsRequest<SingleCallByVoiceResponse> {
-	
-	public SingleCallByVoiceRequest() {
-		super("Dyvmsapi", "2017-05-25", "SingleCallByVoice");
-	}
-
-	private Integer volume;
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private Integer speed;
 
 	private String calledNumber;
 
@@ -38,23 +34,18 @@ public class SingleCallByVoiceRequest extends RpcAcsRequest<SingleCallByVoiceRes
 
 	private String calledShowNumber;
 
-	private Integer playTimes;
+	private String resourceOwnerAccount;
 
-	private String outId;
+	private Integer playTimes;
 
 	private Long ownerId;
 
-	private Integer speed;
+	private Integer volume;
 
-	public Integer getVolume() {
-		return this.volume;
-	}
-
-	public void setVolume(Integer volume) {
-		this.volume = volume;
-		if(volume != null){
-			putQueryParameter("Volume", volume.toString());
-		}
+	private String outId;
+	public SingleCallByVoiceRequest() {
+		super("Dyvmsapi", "2017-05-25", "SingleCallByVoice");
+		setMethod(MethodType.POST);
 	}
 
 	public Long getResourceOwnerId() {
@@ -68,14 +59,14 @@ public class SingleCallByVoiceRequest extends RpcAcsRequest<SingleCallByVoiceRes
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public Integer getSpeed() {
+		return this.speed;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setSpeed(Integer speed) {
+		this.speed = speed;
+		if(speed != null){
+			putQueryParameter("Speed", speed.toString());
 		}
 	}
 
@@ -112,6 +103,17 @@ public class SingleCallByVoiceRequest extends RpcAcsRequest<SingleCallByVoiceRes
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public Integer getPlayTimes() {
 		return this.playTimes;
 	}
@@ -120,17 +122,6 @@ public class SingleCallByVoiceRequest extends RpcAcsRequest<SingleCallByVoiceRes
 		this.playTimes = playTimes;
 		if(playTimes != null){
 			putQueryParameter("PlayTimes", playTimes.toString());
-		}
-	}
-
-	public String getOutId() {
-		return this.outId;
-	}
-
-	public void setOutId(String outId) {
-		this.outId = outId;
-		if(outId != null){
-			putQueryParameter("OutId", outId);
 		}
 	}
 
@@ -145,14 +136,25 @@ public class SingleCallByVoiceRequest extends RpcAcsRequest<SingleCallByVoiceRes
 		}
 	}
 
-	public Integer getSpeed() {
-		return this.speed;
+	public Integer getVolume() {
+		return this.volume;
 	}
 
-	public void setSpeed(Integer speed) {
-		this.speed = speed;
-		if(speed != null){
-			putQueryParameter("Speed", speed.toString());
+	public void setVolume(Integer volume) {
+		this.volume = volume;
+		if(volume != null){
+			putQueryParameter("Volume", volume.toString());
+		}
+	}
+
+	public String getOutId() {
+		return this.outId;
+	}
+
+	public void setOutId(String outId) {
+		this.outId = outId;
+		if(outId != null){
+			putQueryParameter("OutId", outId);
 		}
 	}
 

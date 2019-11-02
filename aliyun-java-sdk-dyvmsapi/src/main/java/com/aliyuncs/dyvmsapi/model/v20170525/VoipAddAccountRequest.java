@@ -15,16 +15,14 @@
 package com.aliyuncs.dyvmsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class VoipAddAccountRequest extends RpcAcsRequest<VoipAddAccountResponse> {
-	
-	public VoipAddAccountRequest() {
-		super("Dyvmsapi", "2017-05-25", "VoipAddAccount");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -33,6 +31,10 @@ public class VoipAddAccountRequest extends RpcAcsRequest<VoipAddAccountResponse>
 	private Long ownerId;
 
 	private String deviceId;
+	public VoipAddAccountRequest() {
+		super("Dyvmsapi", "2017-05-25", "VoipAddAccount");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

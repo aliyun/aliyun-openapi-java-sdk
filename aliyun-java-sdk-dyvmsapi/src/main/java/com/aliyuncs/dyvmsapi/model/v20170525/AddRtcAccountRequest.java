@@ -15,16 +15,14 @@
 package com.aliyuncs.dyvmsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddRtcAccountRequest extends RpcAcsRequest<AddRtcAccountResponse> {
-	
-	public AddRtcAccountRequest() {
-		super("Dyvmsapi", "2017-05-25", "AddRtcAccount");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -33,6 +31,10 @@ public class AddRtcAccountRequest extends RpcAcsRequest<AddRtcAccountResponse> {
 	private Long ownerId;
 
 	private String deviceId;
+	public AddRtcAccountRequest() {
+		super("Dyvmsapi", "2017-05-25", "AddRtcAccount");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

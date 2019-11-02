@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryRobotInfoListResponseUnmarshaller {
 
-	public static QueryRobotInfoListResponse unmarshall(QueryRobotInfoListResponse queryRobotInfoListResponse, UnmarshallerContext context) {
+	public static QueryRobotInfoListResponse unmarshall(QueryRobotInfoListResponse queryRobotInfoListResponse, UnmarshallerContext _ctx) {
 		
-		queryRobotInfoListResponse.setRequestId(context.stringValue("QueryRobotInfoListResponse.RequestId"));
-		queryRobotInfoListResponse.setData(context.stringValue("QueryRobotInfoListResponse.Data"));
-		queryRobotInfoListResponse.setCode(context.stringValue("QueryRobotInfoListResponse.Code"));
-		queryRobotInfoListResponse.setMessage(context.stringValue("QueryRobotInfoListResponse.Message"));
+		queryRobotInfoListResponse.setRequestId(_ctx.stringValue("QueryRobotInfoListResponse.RequestId"));
+		queryRobotInfoListResponse.setData(_ctx.stringValue("QueryRobotInfoListResponse.Data"));
+		queryRobotInfoListResponse.setCode(_ctx.stringValue("QueryRobotInfoListResponse.Code"));
+		queryRobotInfoListResponse.setMessage(_ctx.stringValue("QueryRobotInfoListResponse.Message"));
 	 
 	 	return queryRobotInfoListResponse;
 	}

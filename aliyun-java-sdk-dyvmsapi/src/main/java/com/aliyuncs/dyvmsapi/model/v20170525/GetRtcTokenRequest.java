@@ -15,28 +15,30 @@
 package com.aliyuncs.dyvmsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetRtcTokenRequest extends RpcAcsRequest<GetRtcTokenResponse> {
-	
-	public GetRtcTokenRequest() {
-		super("Dyvmsapi", "2017-05-25", "GetRtcToken");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String userId;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	private String userId;
-
 	private String deviceId;
 
 	private Boolean isCustomAccount;
+	public GetRtcTokenRequest() {
+		super("Dyvmsapi", "2017-05-25", "GetRtcToken");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,6 +48,17 @@ public class GetRtcTokenRequest extends RpcAcsRequest<GetRtcTokenResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 
@@ -68,17 +81,6 @@ public class GetRtcTokenRequest extends RpcAcsRequest<GetRtcTokenResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
 		}
 	}
 

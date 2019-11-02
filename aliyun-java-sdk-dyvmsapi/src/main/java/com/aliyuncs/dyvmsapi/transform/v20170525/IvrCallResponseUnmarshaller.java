@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class IvrCallResponseUnmarshaller {
 
-	public static IvrCallResponse unmarshall(IvrCallResponse ivrCallResponse, UnmarshallerContext context) {
+	public static IvrCallResponse unmarshall(IvrCallResponse ivrCallResponse, UnmarshallerContext _ctx) {
 		
-		ivrCallResponse.setRequestId(context.stringValue("IvrCallResponse.RequestId"));
-		ivrCallResponse.setCallId(context.stringValue("IvrCallResponse.CallId"));
-		ivrCallResponse.setCode(context.stringValue("IvrCallResponse.Code"));
-		ivrCallResponse.setMessage(context.stringValue("IvrCallResponse.Message"));
+		ivrCallResponse.setRequestId(_ctx.stringValue("IvrCallResponse.RequestId"));
+		ivrCallResponse.setCallId(_ctx.stringValue("IvrCallResponse.CallId"));
+		ivrCallResponse.setCode(_ctx.stringValue("IvrCallResponse.Code"));
+		ivrCallResponse.setMessage(_ctx.stringValue("IvrCallResponse.Message"));
 	 
 	 	return ivrCallResponse;
 	}

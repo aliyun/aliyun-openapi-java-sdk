@@ -15,16 +15,14 @@
 package com.aliyuncs.dyvmsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryRobotInfoListRequest extends RpcAcsRequest<QueryRobotInfoListResponse> {
-	
-	public QueryRobotInfoListRequest() {
-		super("Dyvmsapi", "2017-05-25", "QueryRobotInfoList");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -33,6 +31,10 @@ public class QueryRobotInfoListRequest extends RpcAcsRequest<QueryRobotInfoListR
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
+	public QueryRobotInfoListRequest() {
+		super("Dyvmsapi", "2017-05-25", "QueryRobotInfoList");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

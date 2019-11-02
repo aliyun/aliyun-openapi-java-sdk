@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddRtcAccountResponseUnmarshaller {
 
-	public static AddRtcAccountResponse unmarshall(AddRtcAccountResponse addRtcAccountResponse, UnmarshallerContext context) {
+	public static AddRtcAccountResponse unmarshall(AddRtcAccountResponse addRtcAccountResponse, UnmarshallerContext _ctx) {
 		
-		addRtcAccountResponse.setRequestId(context.stringValue("AddRtcAccountResponse.RequestId"));
-		addRtcAccountResponse.setModule(context.stringValue("AddRtcAccountResponse.Module"));
-		addRtcAccountResponse.setCode(context.stringValue("AddRtcAccountResponse.Code"));
-		addRtcAccountResponse.setMessage(context.stringValue("AddRtcAccountResponse.Message"));
+		addRtcAccountResponse.setRequestId(_ctx.stringValue("AddRtcAccountResponse.RequestId"));
+		addRtcAccountResponse.setModule(_ctx.stringValue("AddRtcAccountResponse.Module"));
+		addRtcAccountResponse.setCode(_ctx.stringValue("AddRtcAccountResponse.Code"));
+		addRtcAccountResponse.setMessage(_ctx.stringValue("AddRtcAccountResponse.Message"));
 	 
 	 	return addRtcAccountResponse;
 	}

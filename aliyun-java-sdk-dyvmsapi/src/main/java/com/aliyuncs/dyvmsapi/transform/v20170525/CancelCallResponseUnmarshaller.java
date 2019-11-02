@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CancelCallResponseUnmarshaller {
 
-	public static CancelCallResponse unmarshall(CancelCallResponse cancelCallResponse, UnmarshallerContext context) {
+	public static CancelCallResponse unmarshall(CancelCallResponse cancelCallResponse, UnmarshallerContext _ctx) {
 		
-		cancelCallResponse.setRequestId(context.stringValue("CancelCallResponse.RequestId"));
-		cancelCallResponse.setStatus(context.booleanValue("CancelCallResponse.Status"));
-		cancelCallResponse.setCode(context.stringValue("CancelCallResponse.Code"));
-		cancelCallResponse.setMessage(context.stringValue("CancelCallResponse.Message"));
+		cancelCallResponse.setRequestId(_ctx.stringValue("CancelCallResponse.RequestId"));
+		cancelCallResponse.setStatus(_ctx.booleanValue("CancelCallResponse.Status"));
+		cancelCallResponse.setCode(_ctx.stringValue("CancelCallResponse.Code"));
+		cancelCallResponse.setMessage(_ctx.stringValue("CancelCallResponse.Message"));
 	 
 	 	return cancelCallResponse;
 	}

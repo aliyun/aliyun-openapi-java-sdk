@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class VoipGetTokenResponseUnmarshaller {
 
-	public static VoipGetTokenResponse unmarshall(VoipGetTokenResponse voipGetTokenResponse, UnmarshallerContext context) {
+	public static VoipGetTokenResponse unmarshall(VoipGetTokenResponse voipGetTokenResponse, UnmarshallerContext _ctx) {
 		
-		voipGetTokenResponse.setRequestId(context.stringValue("VoipGetTokenResponse.RequestId"));
-		voipGetTokenResponse.setModule(context.stringValue("VoipGetTokenResponse.Module"));
-		voipGetTokenResponse.setCode(context.stringValue("VoipGetTokenResponse.Code"));
-		voipGetTokenResponse.setMessage(context.stringValue("VoipGetTokenResponse.Message"));
+		voipGetTokenResponse.setRequestId(_ctx.stringValue("VoipGetTokenResponse.RequestId"));
+		voipGetTokenResponse.setModule(_ctx.stringValue("VoipGetTokenResponse.Module"));
+		voipGetTokenResponse.setCode(_ctx.stringValue("VoipGetTokenResponse.Code"));
+		voipGetTokenResponse.setMessage(_ctx.stringValue("VoipGetTokenResponse.Message"));
 	 
 	 	return voipGetTokenResponse;
 	}

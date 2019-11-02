@@ -15,22 +15,18 @@
 package com.aliyuncs.dyvmsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class BatchRobotSmartCallRequest extends RpcAcsRequest<BatchRobotSmartCallResponse> {
-	
-	public BatchRobotSmartCallRequest() {
-		super("Dyvmsapi", "2017-05-25", "BatchRobotSmartCall");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private Boolean earlyMediaAsr;
-
-	private String resourceOwnerAccount;
 
 	private String ttsParamHead;
 
@@ -38,19 +34,27 @@ public class BatchRobotSmartCallRequest extends RpcAcsRequest<BatchRobotSmartCal
 
 	private String ttsParam;
 
+	private String calledNumber;
+
+	private String calledShowNumber;
+
+	private Boolean isSelfLine;
+
+	private String resourceOwnerAccount;
+
 	private Long ownerId;
 
 	private String dialogId;
 
-	private String calledNumber;
-
 	private Long scheduleTime;
-
-	private String calledShowNumber;
 
 	private String corpName;
 
 	private Boolean scheduleCall;
+	public BatchRobotSmartCallRequest() {
+		super("Dyvmsapi", "2017-05-25", "BatchRobotSmartCall");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -71,17 +75,6 @@ public class BatchRobotSmartCallRequest extends RpcAcsRequest<BatchRobotSmartCal
 		this.earlyMediaAsr = earlyMediaAsr;
 		if(earlyMediaAsr != null){
 			putQueryParameter("EarlyMediaAsr", earlyMediaAsr.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -118,6 +111,50 @@ public class BatchRobotSmartCallRequest extends RpcAcsRequest<BatchRobotSmartCal
 		}
 	}
 
+	public String getCalledNumber() {
+		return this.calledNumber;
+	}
+
+	public void setCalledNumber(String calledNumber) {
+		this.calledNumber = calledNumber;
+		if(calledNumber != null){
+			putQueryParameter("CalledNumber", calledNumber);
+		}
+	}
+
+	public String getCalledShowNumber() {
+		return this.calledShowNumber;
+	}
+
+	public void setCalledShowNumber(String calledShowNumber) {
+		this.calledShowNumber = calledShowNumber;
+		if(calledShowNumber != null){
+			putQueryParameter("CalledShowNumber", calledShowNumber);
+		}
+	}
+
+	public Boolean getIsSelfLine() {
+		return this.isSelfLine;
+	}
+
+	public void setIsSelfLine(Boolean isSelfLine) {
+		this.isSelfLine = isSelfLine;
+		if(isSelfLine != null){
+			putQueryParameter("IsSelfLine", isSelfLine.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -140,17 +177,6 @@ public class BatchRobotSmartCallRequest extends RpcAcsRequest<BatchRobotSmartCal
 		}
 	}
 
-	public String getCalledNumber() {
-		return this.calledNumber;
-	}
-
-	public void setCalledNumber(String calledNumber) {
-		this.calledNumber = calledNumber;
-		if(calledNumber != null){
-			putQueryParameter("CalledNumber", calledNumber);
-		}
-	}
-
 	public Long getScheduleTime() {
 		return this.scheduleTime;
 	}
@@ -159,17 +185,6 @@ public class BatchRobotSmartCallRequest extends RpcAcsRequest<BatchRobotSmartCal
 		this.scheduleTime = scheduleTime;
 		if(scheduleTime != null){
 			putQueryParameter("ScheduleTime", scheduleTime.toString());
-		}
-	}
-
-	public String getCalledShowNumber() {
-		return this.calledShowNumber;
-	}
-
-	public void setCalledShowNumber(String calledShowNumber) {
-		this.calledShowNumber = calledShowNumber;
-		if(calledShowNumber != null){
-			putQueryParameter("CalledShowNumber", calledShowNumber);
 		}
 	}
 

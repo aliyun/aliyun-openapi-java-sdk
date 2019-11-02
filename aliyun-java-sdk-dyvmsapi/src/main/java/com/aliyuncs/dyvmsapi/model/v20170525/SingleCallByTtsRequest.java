@@ -15,18 +15,24 @@
 package com.aliyuncs.dyvmsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SingleCallByTtsRequest extends RpcAcsRequest<SingleCallByTtsResponse> {
-	
-	public SingleCallByTtsRequest() {
-		super("Dyvmsapi", "2017-05-25", "SingleCallByTts");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String ttsParam;
+
+	private Integer speed;
+
+	private String calledNumber;
+
+	private String calledShowNumber;
 
 	private String resourceOwnerAccount;
 
@@ -34,19 +40,15 @@ public class SingleCallByTtsRequest extends RpcAcsRequest<SingleCallByTtsRespons
 
 	private Integer playTimes;
 
-	private String ttsParam;
-
 	private Long ownerId;
-
-	private Integer speed;
 
 	private Integer volume;
 
-	private String calledNumber;
-
-	private String calledShowNumber;
-
 	private String outId;
+	public SingleCallByTtsRequest() {
+		super("Dyvmsapi", "2017-05-25", "SingleCallByTts");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,6 +58,50 @@ public class SingleCallByTtsRequest extends RpcAcsRequest<SingleCallByTtsRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getTtsParam() {
+		return this.ttsParam;
+	}
+
+	public void setTtsParam(String ttsParam) {
+		this.ttsParam = ttsParam;
+		if(ttsParam != null){
+			putQueryParameter("TtsParam", ttsParam);
+		}
+	}
+
+	public Integer getSpeed() {
+		return this.speed;
+	}
+
+	public void setSpeed(Integer speed) {
+		this.speed = speed;
+		if(speed != null){
+			putQueryParameter("Speed", speed.toString());
+		}
+	}
+
+	public String getCalledNumber() {
+		return this.calledNumber;
+	}
+
+	public void setCalledNumber(String calledNumber) {
+		this.calledNumber = calledNumber;
+		if(calledNumber != null){
+			putQueryParameter("CalledNumber", calledNumber);
+		}
+	}
+
+	public String getCalledShowNumber() {
+		return this.calledShowNumber;
+	}
+
+	public void setCalledShowNumber(String calledShowNumber) {
+		this.calledShowNumber = calledShowNumber;
+		if(calledShowNumber != null){
+			putQueryParameter("CalledShowNumber", calledShowNumber);
 		}
 	}
 
@@ -92,17 +138,6 @@ public class SingleCallByTtsRequest extends RpcAcsRequest<SingleCallByTtsRespons
 		}
 	}
 
-	public String getTtsParam() {
-		return this.ttsParam;
-	}
-
-	public void setTtsParam(String ttsParam) {
-		this.ttsParam = ttsParam;
-		if(ttsParam != null){
-			putQueryParameter("TtsParam", ttsParam);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,17 +149,6 @@ public class SingleCallByTtsRequest extends RpcAcsRequest<SingleCallByTtsRespons
 		}
 	}
 
-	public Integer getSpeed() {
-		return this.speed;
-	}
-
-	public void setSpeed(Integer speed) {
-		this.speed = speed;
-		if(speed != null){
-			putQueryParameter("Speed", speed.toString());
-		}
-	}
-
 	public Integer getVolume() {
 		return this.volume;
 	}
@@ -133,28 +157,6 @@ public class SingleCallByTtsRequest extends RpcAcsRequest<SingleCallByTtsRespons
 		this.volume = volume;
 		if(volume != null){
 			putQueryParameter("Volume", volume.toString());
-		}
-	}
-
-	public String getCalledNumber() {
-		return this.calledNumber;
-	}
-
-	public void setCalledNumber(String calledNumber) {
-		this.calledNumber = calledNumber;
-		if(calledNumber != null){
-			putQueryParameter("CalledNumber", calledNumber);
-		}
-	}
-
-	public String getCalledShowNumber() {
-		return this.calledShowNumber;
-	}
-
-	public void setCalledShowNumber(String calledShowNumber) {
-		this.calledShowNumber = calledShowNumber;
-		if(calledShowNumber != null){
-			putQueryParameter("CalledShowNumber", calledShowNumber);
 		}
 	}
 

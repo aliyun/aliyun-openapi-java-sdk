@@ -15,28 +15,30 @@
 package com.aliyuncs.dyvmsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryCallDetailByTaskIdRequest extends RpcAcsRequest<QueryCallDetailByTaskIdResponse> {
-	
-	public QueryCallDetailByTaskIdRequest() {
-		super("Dyvmsapi", "2017-05-25", "QueryCallDetailByTaskId");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String callee;
+
+	private String taskId;
 
 	private Long queryDate;
 
 	private String resourceOwnerAccount;
 
-	private String callee;
-
 	private Long ownerId;
-
-	private String taskId;
+	public QueryCallDetailByTaskIdRequest() {
+		super("Dyvmsapi", "2017-05-25", "QueryCallDetailByTaskId");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,6 +48,28 @@ public class QueryCallDetailByTaskIdRequest extends RpcAcsRequest<QueryCallDetai
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCallee() {
+		return this.callee;
+	}
+
+	public void setCallee(String callee) {
+		this.callee = callee;
+		if(callee != null){
+			putQueryParameter("Callee", callee);
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
@@ -71,17 +95,6 @@ public class QueryCallDetailByTaskIdRequest extends RpcAcsRequest<QueryCallDetai
 		}
 	}
 
-	public String getCallee() {
-		return this.callee;
-	}
-
-	public void setCallee(String callee) {
-		this.callee = callee;
-		if(callee != null){
-			putQueryParameter("Callee", callee);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -90,17 +103,6 @@ public class QueryCallDetailByTaskIdRequest extends RpcAcsRequest<QueryCallDetai
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
 		}
 	}
 

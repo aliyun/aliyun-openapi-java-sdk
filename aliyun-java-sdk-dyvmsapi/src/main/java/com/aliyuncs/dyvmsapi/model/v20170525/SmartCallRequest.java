@@ -15,16 +15,14 @@
 package com.aliyuncs.dyvmsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
-	
-	public SmartCallRequest() {
-		super("Dyvmsapi", "2017-05-25", "SmartCall");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -33,6 +31,8 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 	private Boolean earlyMediaAsr;
 
 	private Integer speed;
+
+	private String asrBaseId;
 
 	private Integer sessionTimeout;
 
@@ -71,6 +71,10 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 	private Integer pauseTime;
 
 	private String ttsStyle;
+	public SmartCallRequest() {
+		super("Dyvmsapi", "2017-05-25", "SmartCall");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -113,6 +117,17 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 		this.speed = speed;
 		if(speed != null){
 			putQueryParameter("Speed", speed.toString());
+		}
+	}
+
+	public String getAsrBaseId() {
+		return this.asrBaseId;
+	}
+
+	public void setAsrBaseId(String asrBaseId) {
+		this.asrBaseId = asrBaseId;
+		if(asrBaseId != null){
+			putQueryParameter("AsrBaseId", asrBaseId);
 		}
 	}
 

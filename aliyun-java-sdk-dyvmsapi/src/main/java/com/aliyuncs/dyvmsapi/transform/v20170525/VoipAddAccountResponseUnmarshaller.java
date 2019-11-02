@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class VoipAddAccountResponseUnmarshaller {
 
-	public static VoipAddAccountResponse unmarshall(VoipAddAccountResponse voipAddAccountResponse, UnmarshallerContext context) {
+	public static VoipAddAccountResponse unmarshall(VoipAddAccountResponse voipAddAccountResponse, UnmarshallerContext _ctx) {
 		
-		voipAddAccountResponse.setRequestId(context.stringValue("VoipAddAccountResponse.RequestId"));
-		voipAddAccountResponse.setModule(context.stringValue("VoipAddAccountResponse.Module"));
-		voipAddAccountResponse.setCode(context.stringValue("VoipAddAccountResponse.Code"));
-		voipAddAccountResponse.setMessage(context.stringValue("VoipAddAccountResponse.Message"));
+		voipAddAccountResponse.setRequestId(_ctx.stringValue("VoipAddAccountResponse.RequestId"));
+		voipAddAccountResponse.setModule(_ctx.stringValue("VoipAddAccountResponse.Module"));
+		voipAddAccountResponse.setCode(_ctx.stringValue("VoipAddAccountResponse.Code"));
+		voipAddAccountResponse.setMessage(_ctx.stringValue("VoipAddAccountResponse.Message"));
 	 
 	 	return voipAddAccountResponse;
 	}

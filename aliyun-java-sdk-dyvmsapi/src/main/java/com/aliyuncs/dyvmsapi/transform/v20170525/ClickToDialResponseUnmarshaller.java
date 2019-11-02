@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ClickToDialResponseUnmarshaller {
 
-	public static ClickToDialResponse unmarshall(ClickToDialResponse clickToDialResponse, UnmarshallerContext context) {
+	public static ClickToDialResponse unmarshall(ClickToDialResponse clickToDialResponse, UnmarshallerContext _ctx) {
 		
-		clickToDialResponse.setRequestId(context.stringValue("ClickToDialResponse.RequestId"));
-		clickToDialResponse.setCallId(context.stringValue("ClickToDialResponse.CallId"));
-		clickToDialResponse.setCode(context.stringValue("ClickToDialResponse.Code"));
-		clickToDialResponse.setMessage(context.stringValue("ClickToDialResponse.Message"));
+		clickToDialResponse.setRequestId(_ctx.stringValue("ClickToDialResponse.RequestId"));
+		clickToDialResponse.setCallId(_ctx.stringValue("ClickToDialResponse.CallId"));
+		clickToDialResponse.setCode(_ctx.stringValue("ClickToDialResponse.Code"));
+		clickToDialResponse.setMessage(_ctx.stringValue("ClickToDialResponse.Message"));
 	 
 	 	return clickToDialResponse;
 	}

@@ -15,16 +15,14 @@
 package com.aliyuncs.dyvmsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CancelCallRequest extends RpcAcsRequest<CancelCallResponse> {
-	
-	public CancelCallRequest() {
-		super("Dyvmsapi", "2017-05-25", "CancelCall");
-	}
+	   
 
 	private String callId;
 
@@ -33,6 +31,10 @@ public class CancelCallRequest extends RpcAcsRequest<CancelCallResponse> {
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
+	public CancelCallRequest() {
+		super("Dyvmsapi", "2017-05-25", "CancelCall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getCallId() {
 		return this.callId;

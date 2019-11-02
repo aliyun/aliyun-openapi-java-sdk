@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryCallDetailByTaskIdResponseUnmarshaller {
 
-	public static QueryCallDetailByTaskIdResponse unmarshall(QueryCallDetailByTaskIdResponse queryCallDetailByTaskIdResponse, UnmarshallerContext context) {
+	public static QueryCallDetailByTaskIdResponse unmarshall(QueryCallDetailByTaskIdResponse queryCallDetailByTaskIdResponse, UnmarshallerContext _ctx) {
 		
-		queryCallDetailByTaskIdResponse.setRequestId(context.stringValue("QueryCallDetailByTaskIdResponse.RequestId"));
-		queryCallDetailByTaskIdResponse.setData(context.stringValue("QueryCallDetailByTaskIdResponse.Data"));
-		queryCallDetailByTaskIdResponse.setCode(context.stringValue("QueryCallDetailByTaskIdResponse.Code"));
-		queryCallDetailByTaskIdResponse.setMessage(context.stringValue("QueryCallDetailByTaskIdResponse.Message"));
+		queryCallDetailByTaskIdResponse.setRequestId(_ctx.stringValue("QueryCallDetailByTaskIdResponse.RequestId"));
+		queryCallDetailByTaskIdResponse.setData(_ctx.stringValue("QueryCallDetailByTaskIdResponse.Data"));
+		queryCallDetailByTaskIdResponse.setCode(_ctx.stringValue("QueryCallDetailByTaskIdResponse.Code"));
+		queryCallDetailByTaskIdResponse.setMessage(_ctx.stringValue("QueryCallDetailByTaskIdResponse.Message"));
 	 
 	 	return queryCallDetailByTaskIdResponse;
 	}

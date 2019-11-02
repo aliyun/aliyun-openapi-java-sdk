@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BatchRobotSmartCallResponseUnmarshaller {
 
-	public static BatchRobotSmartCallResponse unmarshall(BatchRobotSmartCallResponse batchRobotSmartCallResponse, UnmarshallerContext context) {
+	public static BatchRobotSmartCallResponse unmarshall(BatchRobotSmartCallResponse batchRobotSmartCallResponse, UnmarshallerContext _ctx) {
 		
-		batchRobotSmartCallResponse.setRequestId(context.stringValue("BatchRobotSmartCallResponse.RequestId"));
-		batchRobotSmartCallResponse.setTaskId(context.stringValue("BatchRobotSmartCallResponse.TaskId"));
-		batchRobotSmartCallResponse.setCode(context.stringValue("BatchRobotSmartCallResponse.Code"));
-		batchRobotSmartCallResponse.setMessage(context.stringValue("BatchRobotSmartCallResponse.Message"));
+		batchRobotSmartCallResponse.setRequestId(_ctx.stringValue("BatchRobotSmartCallResponse.RequestId"));
+		batchRobotSmartCallResponse.setTaskId(_ctx.stringValue("BatchRobotSmartCallResponse.TaskId"));
+		batchRobotSmartCallResponse.setCode(_ctx.stringValue("BatchRobotSmartCallResponse.Code"));
+		batchRobotSmartCallResponse.setMessage(_ctx.stringValue("BatchRobotSmartCallResponse.Message"));
 	 
 	 	return batchRobotSmartCallResponse;
 	}

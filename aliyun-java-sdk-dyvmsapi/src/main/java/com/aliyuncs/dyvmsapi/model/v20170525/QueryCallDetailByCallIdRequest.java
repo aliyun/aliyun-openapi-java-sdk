@@ -15,16 +15,14 @@
 package com.aliyuncs.dyvmsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryCallDetailByCallIdRequest extends RpcAcsRequest<QueryCallDetailByCallIdResponse> {
-	
-	public QueryCallDetailByCallIdRequest() {
-		super("Dyvmsapi", "2017-05-25", "QueryCallDetailByCallId");
-	}
+	   
 
 	private String callId;
 
@@ -37,6 +35,10 @@ public class QueryCallDetailByCallIdRequest extends RpcAcsRequest<QueryCallDetai
 	private Long prodId;
 
 	private Long ownerId;
+	public QueryCallDetailByCallIdRequest() {
+		super("Dyvmsapi", "2017-05-25", "QueryCallDetailByCallId");
+		setMethod(MethodType.POST);
+	}
 
 	public String getCallId() {
 		return this.callId;

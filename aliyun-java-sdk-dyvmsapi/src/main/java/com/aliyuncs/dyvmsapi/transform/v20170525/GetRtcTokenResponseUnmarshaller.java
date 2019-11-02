@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetRtcTokenResponseUnmarshaller {
 
-	public static GetRtcTokenResponse unmarshall(GetRtcTokenResponse getRtcTokenResponse, UnmarshallerContext context) {
+	public static GetRtcTokenResponse unmarshall(GetRtcTokenResponse getRtcTokenResponse, UnmarshallerContext _ctx) {
 		
-		getRtcTokenResponse.setRequestId(context.stringValue("GetRtcTokenResponse.RequestId"));
-		getRtcTokenResponse.setModule(context.stringValue("GetRtcTokenResponse.Module"));
-		getRtcTokenResponse.setCode(context.stringValue("GetRtcTokenResponse.Code"));
-		getRtcTokenResponse.setMessage(context.stringValue("GetRtcTokenResponse.Message"));
+		getRtcTokenResponse.setRequestId(_ctx.stringValue("GetRtcTokenResponse.RequestId"));
+		getRtcTokenResponse.setModule(_ctx.stringValue("GetRtcTokenResponse.Module"));
+		getRtcTokenResponse.setCode(_ctx.stringValue("GetRtcTokenResponse.Code"));
+		getRtcTokenResponse.setMessage(_ctx.stringValue("GetRtcTokenResponse.Message"));
 	 
 	 	return getRtcTokenResponse;
 	}

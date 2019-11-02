@@ -15,24 +15,16 @@
 package com.aliyuncs.dyvmsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ClickToDialRequest extends RpcAcsRequest<ClickToDialResponse> {
-	
-	public ClickToDialRequest() {
-		super("Dyvmsapi", "2017-05-25", "ClickToDial");
-	}
+	   
 
 	private Long resourceOwnerId;
-
-	private String resourceOwnerAccount;
-
-	private Boolean recordFlag;
-
-	private Long ownerId;
 
 	private String callerShowNumber;
 
@@ -42,13 +34,23 @@ public class ClickToDialRequest extends RpcAcsRequest<ClickToDialResponse> {
 
 	private String calledShowNumber;
 
-	private String outId;
-
 	private Boolean asrFlag;
+
+	private String resourceOwnerAccount;
+
+	private Boolean recordFlag;
+
+	private Long ownerId;
+
+	private String outId;
 
 	private String asrModelId;
 
 	private String callerNumber;
+	public ClickToDialRequest() {
+		super("Dyvmsapi", "2017-05-25", "ClickToDial");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,39 +60,6 @@ public class ClickToDialRequest extends RpcAcsRequest<ClickToDialResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Boolean getRecordFlag() {
-		return this.recordFlag;
-	}
-
-	public void setRecordFlag(Boolean recordFlag) {
-		this.recordFlag = recordFlag;
-		if(recordFlag != null){
-			putQueryParameter("RecordFlag", recordFlag.toString());
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -138,17 +107,6 @@ public class ClickToDialRequest extends RpcAcsRequest<ClickToDialResponse> {
 		}
 	}
 
-	public String getOutId() {
-		return this.outId;
-	}
-
-	public void setOutId(String outId) {
-		this.outId = outId;
-		if(outId != null){
-			putQueryParameter("OutId", outId);
-		}
-	}
-
 	public Boolean getAsrFlag() {
 		return this.asrFlag;
 	}
@@ -157,6 +115,50 @@ public class ClickToDialRequest extends RpcAcsRequest<ClickToDialResponse> {
 		this.asrFlag = asrFlag;
 		if(asrFlag != null){
 			putQueryParameter("AsrFlag", asrFlag.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Boolean getRecordFlag() {
+		return this.recordFlag;
+	}
+
+	public void setRecordFlag(Boolean recordFlag) {
+		this.recordFlag = recordFlag;
+		if(recordFlag != null){
+			putQueryParameter("RecordFlag", recordFlag.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getOutId() {
+		return this.outId;
+	}
+
+	public void setOutId(String outId) {
+		this.outId = outId;
+		if(outId != null){
+			putQueryParameter("OutId", outId);
 		}
 	}
 
