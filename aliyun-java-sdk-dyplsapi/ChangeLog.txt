@@ -1,3 +1,6 @@
+2019-11-05 Version: 1.2.1
+- Add OperateBlackNo.
+
 2019-09-26 Version: 1.2.0
 - Supported RingConfig for BindAxb,BindAxn,BindAxg,BindAxnExtension.
 - Add QuerySubsId.
