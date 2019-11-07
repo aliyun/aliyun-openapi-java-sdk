@@ -77,18 +77,14 @@ public class FlattenMapUtilTest {
     @Test
     public void toListMap() {
         Map<String, String> flattenMap = new HashMap<String, String>();
-        List<Map<Object, Object>> listMap = FlattenMapUtil.toListMap(flattenMap, "TestResponse.Array");
-        Assert.assertNull(listMap);
-        flattenMap.put("Other", "Value0AA");
-        flattenMap.put("AnyPrefix[0].Length", "1");
-        Assert.assertNull(FlattenMapUtil.toListMap(flattenMap, "AnyPrefix"));
-
-        flattenMap.put("AnyPrefix[0].Key", "value");
-        flattenMap.put("AnyPrefix.Length", "1");
-        List<Map<Object, Object>> list = (List<Map<Object, Object>>) FlattenMapUtil.toListMap(flattenMap, "AnyPrefix");
-        Assert.assertEquals(1, list.size());
-        Map<Object, Object> item = list.get(0);
-        Assert.assertEquals("value", item.get("Key"));
+        flattenMap.put("DescribeAntChainNodesResponse.Result.Length", "4");
+        flattenMap.put("DescribeAntChainNodesResponse.Result[1].nodeType", "test");
+        flattenMap.put("DescribeAntChainNodesResponse.Result[3].nodeType", "test");
+        flattenMap.put("DescribeAntChainNodesResponse.Result[0].nodeId", "test");
+        flattenMap.put("DescribeAntChainNodesResponse.Result[0].endpoints[0].ip", "test");
+        List<Map<Object, Object>> listMap = FlattenMapUtil.toListMap(flattenMap, "DescribeAntChainNodesResponse.Result");
+        Assert.assertEquals("test", listMap.get(0).get("nodeId"));
+        Assert.assertTrue(listMap.get(0).get("endpoints") instanceof List);
     }
 
     @Test
