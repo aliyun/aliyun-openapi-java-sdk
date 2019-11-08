@@ -90,10 +90,6 @@ public abstract class HttpMessage {
     @Deprecated
     public void setMethod(MethodType method) {
         this.method = method;
-        //This is the pop rule and the put method accepts only json data
-        if (MethodType.PUT == method) {
-            setHttpContentType(FormatType.JSON);
-        }
     }
 
     public FormatType getHttpContentType() {
@@ -248,10 +244,6 @@ public abstract class HttpMessage {
 
     public void setSysMethod(MethodType method) {
         this.method = method;
-        //This is the pop rule and the put method accepts only json data
-        if (MethodType.PUT == method) {
-            setHttpContentType(FormatType.JSON);
-        }
     }
 
     public String getSysEncoding() {

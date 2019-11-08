@@ -75,21 +75,6 @@ public class APIEncapsulateTest extends BaseTest {
     }
 
     @Test
-    public void JsonPutTypeTest() {
-        UpdateStackRequest request = new UpdateStackRequest();
-        request.setStackName("test");
-        request.setStackId("test");
-        request.putBodyParameter("ContentMD5NotMatched", "test");
-        try {
-            this.client.getAcsResponse(request);
-            Assert.fail();
-        } catch (ClientException e) {
-            Assert.assertEquals("HTTPBadRequest", e.getErrCode());
-            Assert.assertEquals("No template specified", e.getErrMsg());
-        }
-    }
-
-    @Test
     @Ignore
     public void XmlPutTypeTest() throws ClientException {
         // TODO：xml mode is not supported by the server

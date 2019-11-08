@@ -18,7 +18,6 @@ public class HttpMessageTest {
 
         request.setMethod(MethodType.PUT);
         Assert.assertTrue(MethodType.PUT == request.getMethod());
-        Assert.assertTrue(FormatType.JSON == request.getHttpContentType());
 
         request.setEncoding("encodingTest");
         Assert.assertEquals("encodingTest", request.getEncoding());
@@ -53,7 +52,6 @@ public class HttpMessageTest {
         HttpRequest request = new HttpRequest("test");
         request.setSysMethod(MethodType.PUT);
         Assert.assertTrue(MethodType.PUT == request.getSysMethod());
-        Assert.assertTrue(FormatType.JSON == request.getHttpContentType());
 
         request.setSysEncoding("encodingTest");
         Assert.assertEquals("encodingTest", request.getEncoding());
