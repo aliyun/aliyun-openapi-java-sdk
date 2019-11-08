@@ -15,28 +15,30 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeBackupPlanListRequest extends RpcAcsRequest<DescribeBackupPlanListResponse> {
-	
-	public DescribeBackupPlanListRequest() {
-		super("Dbs", "2019-03-06", "DescribeBackupPlanList", "cbs");
-	}
+	   
 
 	private String clientToken;
 
-	private Integer pageSize;
-
 	private String backupPlanId;
-
-	private String region;
 
 	private Integer pageNum;
 
 	private String ownerId;
+
+	private Integer pageSize;
+
+	private String region;
+	public DescribeBackupPlanListRequest() {
+		super("Dbs", "2019-03-06", "DescribeBackupPlanList", "cbs");
+		setMethod(MethodType.POST);
+	}
 
 	public String getClientToken() {
 		return this.clientToken;
@@ -49,17 +51,6 @@ public class DescribeBackupPlanListRequest extends RpcAcsRequest<DescribeBackupP
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getBackupPlanId() {
 		return this.backupPlanId;
 	}
@@ -68,17 +59,6 @@ public class DescribeBackupPlanListRequest extends RpcAcsRequest<DescribeBackupP
 		this.backupPlanId = backupPlanId;
 		if(backupPlanId != null){
 			putQueryParameter("BackupPlanId", backupPlanId);
-		}
-	}
-
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
 		}
 	}
 
@@ -101,6 +81,28 @@ public class DescribeBackupPlanListRequest extends RpcAcsRequest<DescribeBackupP
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 

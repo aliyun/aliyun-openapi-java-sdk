@@ -15,42 +15,44 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanResponse> {
-	
-	public CreateBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "CreateBackupPlan", "cbs");
-	}
+	   
 
 	private String databaseType;
 
-	private String period;
-
 	private String clientToken;
-
-	private String ownerId;
-
-	private Integer usedTime;
 
 	private String instanceClass;
 
 	private String storageType;
 
-	private String backupMethod;
-
 	private String databaseRegion;
 
-	private String storageRegion;
-
 	private String instanceType;
+
+	private String period;
+
+	private String ownerId;
+
+	private Integer usedTime;
+
+	private String backupMethod;
+
+	private String storageRegion;
 
 	private String region;
 
 	private String payType;
+	public CreateBackupPlanRequest() {
+		super("Dbs", "2019-03-06", "CreateBackupPlan", "cbs");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDatabaseType() {
 		return this.databaseType;
@@ -63,17 +65,6 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		}
 	}
 
-	public String getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(String period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -82,28 +73,6 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
-	public Integer getUsedTime() {
-		return this.usedTime;
-	}
-
-	public void setUsedTime(Integer usedTime) {
-		this.usedTime = usedTime;
-		if(usedTime != null){
-			putQueryParameter("UsedTime", usedTime.toString());
 		}
 	}
 
@@ -129,17 +98,6 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		}
 	}
 
-	public String getBackupMethod() {
-		return this.backupMethod;
-	}
-
-	public void setBackupMethod(String backupMethod) {
-		this.backupMethod = backupMethod;
-		if(backupMethod != null){
-			putQueryParameter("BackupMethod", backupMethod);
-		}
-	}
-
 	public String getDatabaseRegion() {
 		return this.databaseRegion;
 	}
@@ -151,17 +109,6 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		}
 	}
 
-	public String getStorageRegion() {
-		return this.storageRegion;
-	}
-
-	public void setStorageRegion(String storageRegion) {
-		this.storageRegion = storageRegion;
-		if(storageRegion != null){
-			putQueryParameter("StorageRegion", storageRegion);
-		}
-	}
-
 	public String getInstanceType() {
 		return this.instanceType;
 	}
@@ -170,6 +117,61 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(String period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public Integer getUsedTime() {
+		return this.usedTime;
+	}
+
+	public void setUsedTime(Integer usedTime) {
+		this.usedTime = usedTime;
+		if(usedTime != null){
+			putQueryParameter("UsedTime", usedTime.toString());
+		}
+	}
+
+	public String getBackupMethod() {
+		return this.backupMethod;
+	}
+
+	public void setBackupMethod(String backupMethod) {
+		this.backupMethod = backupMethod;
+		if(backupMethod != null){
+			putQueryParameter("BackupMethod", backupMethod);
+		}
+	}
+
+	public String getStorageRegion() {
+		return this.storageRegion;
+	}
+
+	public void setStorageRegion(String storageRegion) {
+		this.storageRegion = storageRegion;
+		if(storageRegion != null){
+			putQueryParameter("StorageRegion", storageRegion);
 		}
 	}
 

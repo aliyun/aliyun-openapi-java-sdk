@@ -15,16 +15,14 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpgradeBackupPlanRequest extends RpcAcsRequest<UpgradeBackupPlanResponse> {
-	
-	public UpgradeBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "UpgradeBackupPlan", "cbs");
-	}
+	   
 
 	private String clientToken;
 
@@ -33,6 +31,10 @@ public class UpgradeBackupPlanRequest extends RpcAcsRequest<UpgradeBackupPlanRes
 	private String ownerId;
 
 	private String instanceClass;
+	public UpgradeBackupPlanRequest() {
+		super("Dbs", "2019-03-06", "UpgradeBackupPlan", "cbs");
+		setMethod(MethodType.POST);
+	}
 
 	public String getClientToken() {
 		return this.clientToken;

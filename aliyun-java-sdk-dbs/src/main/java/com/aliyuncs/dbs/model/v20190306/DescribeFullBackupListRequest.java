@@ -15,26 +15,28 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeFullBackupListRequest extends RpcAcsRequest<DescribeFullBackupListResponse> {
-	
-	public DescribeFullBackupListRequest() {
-		super("Dbs", "2019-03-06", "DescribeFullBackupList", "cbs");
-	}
+	   
 
 	private String clientToken;
-
-	private Integer pageSize;
 
 	private String backupPlanId;
 
 	private Integer pageNum;
 
 	private String ownerId;
+
+	private Integer pageSize;
+	public DescribeFullBackupListRequest() {
+		super("Dbs", "2019-03-06", "DescribeFullBackupList", "cbs");
+		setMethod(MethodType.POST);
+	}
 
 	public String getClientToken() {
 		return this.clientToken;
@@ -44,17 +46,6 @@ public class DescribeFullBackupListRequest extends RpcAcsRequest<DescribeFullBac
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -88,6 +79,17 @@ public class DescribeFullBackupListRequest extends RpcAcsRequest<DescribeFullBac
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

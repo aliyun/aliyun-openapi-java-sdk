@@ -15,28 +15,30 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeBackupGatewayListRequest extends RpcAcsRequest<DescribeBackupGatewayListResponse> {
-	
-	public DescribeBackupGatewayListRequest() {
-		super("Dbs", "2019-03-06", "DescribeBackupGatewayList", "cbs");
-	}
+	   
 
 	private String identifier;
 
 	private String clientToken;
 
-	private Integer pageSize;
-
-	private String region;
-
 	private Integer pageNum;
 
 	private String ownerId;
+
+	private Integer pageSize;
+
+	private String region;
+	public DescribeBackupGatewayListRequest() {
+		super("Dbs", "2019-03-06", "DescribeBackupGatewayList", "cbs");
+		setMethod(MethodType.POST);
+	}
 
 	public String getIdentifier() {
 		return this.identifier;
@@ -60,28 +62,6 @@ public class DescribeBackupGatewayListRequest extends RpcAcsRequest<DescribeBack
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
-		}
-	}
-
 	public Integer getPageNum() {
 		return this.pageNum;
 	}
@@ -101,6 +81,28 @@ public class DescribeBackupGatewayListRequest extends RpcAcsRequest<DescribeBack
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 

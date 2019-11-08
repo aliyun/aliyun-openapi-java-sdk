@@ -15,16 +15,14 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyBackupObjectsRequest extends RpcAcsRequest<ModifyBackupObjectsResponse> {
-	
-	public ModifyBackupObjectsRequest() {
-		super("Dbs", "2019-03-06", "ModifyBackupObjects", "cbs");
-	}
+	   
 
 	private String clientToken;
 
@@ -33,6 +31,10 @@ public class ModifyBackupObjectsRequest extends RpcAcsRequest<ModifyBackupObject
 	private String backupObjects;
 
 	private String ownerId;
+	public ModifyBackupObjectsRequest() {
+		super("Dbs", "2019-03-06", "ModifyBackupObjects", "cbs");
+		setMethod(MethodType.POST);
+	}
 
 	public String getClientToken() {
 		return this.clientToken;

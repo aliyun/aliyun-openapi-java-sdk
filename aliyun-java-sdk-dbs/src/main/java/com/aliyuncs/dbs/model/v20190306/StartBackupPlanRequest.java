@@ -15,22 +15,24 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class StartBackupPlanRequest extends RpcAcsRequest<StartBackupPlanResponse> {
-	
-	public StartBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "StartBackupPlan", "cbs");
-	}
+	   
 
 	private String clientToken;
 
 	private String backupPlanId;
 
 	private String ownerId;
+	public StartBackupPlanRequest() {
+		super("Dbs", "2019-03-06", "StartBackupPlan", "cbs");
+		setMethod(MethodType.POST);
+	}
 
 	public String getClientToken() {
 		return this.clientToken;

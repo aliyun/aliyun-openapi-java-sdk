@@ -15,22 +15,24 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class StartRestoreTaskRequest extends RpcAcsRequest<StartRestoreTaskResponse> {
-	
-	public StartRestoreTaskRequest() {
-		super("Dbs", "2019-03-06", "StartRestoreTask", "cbs");
-	}
+	   
 
 	private String clientToken;
 
-	private String restoreTaskId;
-
 	private String ownerId;
+
+	private String restoreTaskId;
+	public StartRestoreTaskRequest() {
+		super("Dbs", "2019-03-06", "StartRestoreTask", "cbs");
+		setMethod(MethodType.POST);
+	}
 
 	public String getClientToken() {
 		return this.clientToken;
@@ -43,17 +45,6 @@ public class StartRestoreTaskRequest extends RpcAcsRequest<StartRestoreTaskRespo
 		}
 	}
 
-	public String getRestoreTaskId() {
-		return this.restoreTaskId;
-	}
-
-	public void setRestoreTaskId(String restoreTaskId) {
-		this.restoreTaskId = restoreTaskId;
-		if(restoreTaskId != null){
-			putQueryParameter("RestoreTaskId", restoreTaskId);
-		}
-	}
-
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -62,6 +53,17 @@ public class StartRestoreTaskRequest extends RpcAcsRequest<StartRestoreTaskRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getRestoreTaskId() {
+		return this.restoreTaskId;
+	}
+
+	public void setRestoreTaskId(String restoreTaskId) {
+		this.restoreTaskId = restoreTaskId;
+		if(restoreTaskId != null){
+			putQueryParameter("RestoreTaskId", restoreTaskId);
 		}
 	}
 

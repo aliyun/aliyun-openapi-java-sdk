@@ -15,22 +15,24 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeNodeCidrListRequest extends RpcAcsRequest<DescribeNodeCidrListResponse> {
-	
-	public DescribeNodeCidrListRequest() {
-		super("Dbs", "2019-03-06", "DescribeNodeCidrList", "cbs");
-	}
+	   
 
 	private String clientToken;
 
-	private String region;
-
 	private String ownerId;
+
+	private String region;
+	public DescribeNodeCidrListRequest() {
+		super("Dbs", "2019-03-06", "DescribeNodeCidrList", "cbs");
+		setMethod(MethodType.POST);
+	}
 
 	public String getClientToken() {
 		return this.clientToken;
@@ -43,17 +45,6 @@ public class DescribeNodeCidrListRequest extends RpcAcsRequest<DescribeNodeCidrL
 		}
 	}
 
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
-		}
-	}
-
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -62,6 +53,17 @@ public class DescribeNodeCidrListRequest extends RpcAcsRequest<DescribeNodeCidrL
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 

@@ -1,3 +1,6 @@
+2019-11-08 Version: 1.0.15
+- Add DescribeJobErrorCode.
+
 2019-08-29 Version: 1.0.14
 - For publish.
 

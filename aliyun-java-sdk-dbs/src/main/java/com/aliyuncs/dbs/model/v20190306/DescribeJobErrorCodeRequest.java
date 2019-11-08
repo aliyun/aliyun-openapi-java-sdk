@@ -21,20 +21,18 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ModifyBackupStrategyRequest extends RpcAcsRequest<ModifyBackupStrategyResponse> {
+public class DescribeJobErrorCodeRequest extends RpcAcsRequest<DescribeJobErrorCodeResponse> {
 	   
 
 	private String clientToken;
 
-	private String backupPlanId;
+	private String language;
 
 	private String ownerId;
 
-	private String backupPeriod;
-
-	private String backupStartTime;
-	public ModifyBackupStrategyRequest() {
-		super("Dbs", "2019-03-06", "ModifyBackupStrategy", "cbs");
+	private String taskId;
+	public DescribeJobErrorCodeRequest() {
+		super("Dbs", "2019-03-06", "DescribeJobErrorCode", "cbs");
 		setMethod(MethodType.POST);
 	}
 
@@ -49,14 +47,14 @@ public class ModifyBackupStrategyRequest extends RpcAcsRequest<ModifyBackupStrat
 		}
 	}
 
-	public String getBackupPlanId() {
-		return this.backupPlanId;
+	public String getLanguage() {
+		return this.language;
 	}
 
-	public void setBackupPlanId(String backupPlanId) {
-		this.backupPlanId = backupPlanId;
-		if(backupPlanId != null){
-			putQueryParameter("BackupPlanId", backupPlanId);
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
 		}
 	}
 
@@ -71,31 +69,20 @@ public class ModifyBackupStrategyRequest extends RpcAcsRequest<ModifyBackupStrat
 		}
 	}
 
-	public String getBackupPeriod() {
-		return this.backupPeriod;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setBackupPeriod(String backupPeriod) {
-		this.backupPeriod = backupPeriod;
-		if(backupPeriod != null){
-			putQueryParameter("BackupPeriod", backupPeriod);
-		}
-	}
-
-	public String getBackupStartTime() {
-		return this.backupStartTime;
-	}
-
-	public void setBackupStartTime(String backupStartTime) {
-		this.backupStartTime = backupStartTime;
-		if(backupStartTime != null){
-			putQueryParameter("BackupStartTime", backupStartTime);
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<ModifyBackupStrategyResponse> getResponseClass() {
-		return ModifyBackupStrategyResponse.class;
+	public Class<DescribeJobErrorCodeResponse> getResponseClass() {
+		return DescribeJobErrorCodeResponse.class;
 	}
 
 }

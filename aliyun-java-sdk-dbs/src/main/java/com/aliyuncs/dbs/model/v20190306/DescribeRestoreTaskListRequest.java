@@ -15,28 +15,30 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeRestoreTaskListRequest extends RpcAcsRequest<DescribeRestoreTaskListResponse> {
-	
-	public DescribeRestoreTaskListRequest() {
-		super("Dbs", "2019-03-06", "DescribeRestoreTaskList", "cbs");
-	}
+	   
 
 	private String clientToken;
-
-	private String restoreTaskId;
-
-	private Integer pageSize;
 
 	private String backupPlanId;
 
 	private Integer pageNum;
 
 	private String ownerId;
+
+	private String restoreTaskId;
+
+	private Integer pageSize;
+	public DescribeRestoreTaskListRequest() {
+		super("Dbs", "2019-03-06", "DescribeRestoreTaskList", "cbs");
+		setMethod(MethodType.POST);
+	}
 
 	public String getClientToken() {
 		return this.clientToken;
@@ -46,28 +48,6 @@ public class DescribeRestoreTaskListRequest extends RpcAcsRequest<DescribeRestor
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getRestoreTaskId() {
-		return this.restoreTaskId;
-	}
-
-	public void setRestoreTaskId(String restoreTaskId) {
-		this.restoreTaskId = restoreTaskId;
-		if(restoreTaskId != null){
-			putQueryParameter("RestoreTaskId", restoreTaskId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -101,6 +81,28 @@ public class DescribeRestoreTaskListRequest extends RpcAcsRequest<DescribeRestor
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getRestoreTaskId() {
+		return this.restoreTaskId;
+	}
+
+	public void setRestoreTaskId(String restoreTaskId) {
+		this.restoreTaskId = restoreTaskId;
+		if(restoreTaskId != null){
+			putQueryParameter("RestoreTaskId", restoreTaskId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

@@ -15,16 +15,14 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyBackupSourceEndpointRequest extends RpcAcsRequest<ModifyBackupSourceEndpointResponse> {
-	
-	public ModifyBackupSourceEndpointRequest() {
-		super("Dbs", "2019-03-06", "ModifyBackupSourceEndpoint", "cbs");
-	}
+	   
 
 	private String sourceEndpointRegion;
 
@@ -36,9 +34,13 @@ public class ModifyBackupSourceEndpointRequest extends RpcAcsRequest<ModifyBacku
 
 	private String clientToken;
 
-	private String sourceEndpointPassword;
-
 	private String backupPlanId;
+
+	private String sourceEndpointDatabaseName;
+
+	private String sourceEndpointIP;
+
+	private String sourceEndpointPassword;
 
 	private String backupObjects;
 
@@ -46,13 +48,13 @@ public class ModifyBackupSourceEndpointRequest extends RpcAcsRequest<ModifyBacku
 
 	private Integer sourceEndpointPort;
 
-	private String sourceEndpointDatabaseName;
-
 	private String sourceEndpointInstanceType;
 
-	private String sourceEndpointIP;
-
 	private String sourceEndpointOracleSID;
+	public ModifyBackupSourceEndpointRequest() {
+		super("Dbs", "2019-03-06", "ModifyBackupSourceEndpoint", "cbs");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSourceEndpointRegion() {
 		return this.sourceEndpointRegion;
@@ -109,17 +111,6 @@ public class ModifyBackupSourceEndpointRequest extends RpcAcsRequest<ModifyBacku
 		}
 	}
 
-	public String getSourceEndpointPassword() {
-		return this.sourceEndpointPassword;
-	}
-
-	public void setSourceEndpointPassword(String sourceEndpointPassword) {
-		this.sourceEndpointPassword = sourceEndpointPassword;
-		if(sourceEndpointPassword != null){
-			putQueryParameter("SourceEndpointPassword", sourceEndpointPassword);
-		}
-	}
-
 	public String getBackupPlanId() {
 		return this.backupPlanId;
 	}
@@ -128,6 +119,39 @@ public class ModifyBackupSourceEndpointRequest extends RpcAcsRequest<ModifyBacku
 		this.backupPlanId = backupPlanId;
 		if(backupPlanId != null){
 			putQueryParameter("BackupPlanId", backupPlanId);
+		}
+	}
+
+	public String getSourceEndpointDatabaseName() {
+		return this.sourceEndpointDatabaseName;
+	}
+
+	public void setSourceEndpointDatabaseName(String sourceEndpointDatabaseName) {
+		this.sourceEndpointDatabaseName = sourceEndpointDatabaseName;
+		if(sourceEndpointDatabaseName != null){
+			putQueryParameter("SourceEndpointDatabaseName", sourceEndpointDatabaseName);
+		}
+	}
+
+	public String getSourceEndpointIP() {
+		return this.sourceEndpointIP;
+	}
+
+	public void setSourceEndpointIP(String sourceEndpointIP) {
+		this.sourceEndpointIP = sourceEndpointIP;
+		if(sourceEndpointIP != null){
+			putQueryParameter("SourceEndpointIP", sourceEndpointIP);
+		}
+	}
+
+	public String getSourceEndpointPassword() {
+		return this.sourceEndpointPassword;
+	}
+
+	public void setSourceEndpointPassword(String sourceEndpointPassword) {
+		this.sourceEndpointPassword = sourceEndpointPassword;
+		if(sourceEndpointPassword != null){
+			putQueryParameter("SourceEndpointPassword", sourceEndpointPassword);
 		}
 	}
 
@@ -164,17 +188,6 @@ public class ModifyBackupSourceEndpointRequest extends RpcAcsRequest<ModifyBacku
 		}
 	}
 
-	public String getSourceEndpointDatabaseName() {
-		return this.sourceEndpointDatabaseName;
-	}
-
-	public void setSourceEndpointDatabaseName(String sourceEndpointDatabaseName) {
-		this.sourceEndpointDatabaseName = sourceEndpointDatabaseName;
-		if(sourceEndpointDatabaseName != null){
-			putQueryParameter("SourceEndpointDatabaseName", sourceEndpointDatabaseName);
-		}
-	}
-
 	public String getSourceEndpointInstanceType() {
 		return this.sourceEndpointInstanceType;
 	}
@@ -183,17 +196,6 @@ public class ModifyBackupSourceEndpointRequest extends RpcAcsRequest<ModifyBacku
 		this.sourceEndpointInstanceType = sourceEndpointInstanceType;
 		if(sourceEndpointInstanceType != null){
 			putQueryParameter("SourceEndpointInstanceType", sourceEndpointInstanceType);
-		}
-	}
-
-	public String getSourceEndpointIP() {
-		return this.sourceEndpointIP;
-	}
-
-	public void setSourceEndpointIP(String sourceEndpointIP) {
-		this.sourceEndpointIP = sourceEndpointIP;
-		if(sourceEndpointIP != null){
-			putQueryParameter("SourceEndpointIP", sourceEndpointIP);
 		}
 	}
 

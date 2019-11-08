@@ -15,18 +15,14 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyBackupPlanNameRequest extends RpcAcsRequest<ModifyBackupPlanNameResponse> {
-	
-	public ModifyBackupPlanNameRequest() {
-		super("Dbs", "2019-03-06", "ModifyBackupPlanName", "cbs");
-	}
-
-	private String backupPlanName;
+	   
 
 	private String clientToken;
 
@@ -34,15 +30,10 @@ public class ModifyBackupPlanNameRequest extends RpcAcsRequest<ModifyBackupPlanN
 
 	private String ownerId;
 
-	public String getBackupPlanName() {
-		return this.backupPlanName;
-	}
-
-	public void setBackupPlanName(String backupPlanName) {
-		this.backupPlanName = backupPlanName;
-		if(backupPlanName != null){
-			putQueryParameter("BackupPlanName", backupPlanName);
-		}
+	private String backupPlanName;
+	public ModifyBackupPlanNameRequest() {
+		super("Dbs", "2019-03-06", "ModifyBackupPlanName", "cbs");
+		setMethod(MethodType.POST);
 	}
 
 	public String getClientToken() {
@@ -75,6 +66,17 @@ public class ModifyBackupPlanNameRequest extends RpcAcsRequest<ModifyBackupPlanN
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getBackupPlanName() {
+		return this.backupPlanName;
+	}
+
+	public void setBackupPlanName(String backupPlanName) {
+		this.backupPlanName = backupPlanName;
+		if(backupPlanName != null){
+			putQueryParameter("BackupPlanName", backupPlanName);
 		}
 	}
 

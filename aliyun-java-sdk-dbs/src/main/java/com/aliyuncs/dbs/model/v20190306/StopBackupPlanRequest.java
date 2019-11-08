@@ -15,16 +15,14 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class StopBackupPlanRequest extends RpcAcsRequest<StopBackupPlanResponse> {
-	
-	public StopBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "StopBackupPlan", "cbs");
-	}
+	   
 
 	private String stopMethod;
 
@@ -33,6 +31,10 @@ public class StopBackupPlanRequest extends RpcAcsRequest<StopBackupPlanResponse>
 	private String backupPlanId;
 
 	private String ownerId;
+	public StopBackupPlanRequest() {
+		super("Dbs", "2019-03-06", "StopBackupPlan", "cbs");
+		setMethod(MethodType.POST);
+	}
 
 	public String getStopMethod() {
 		return this.stopMethod;

@@ -15,20 +15,16 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPlanResponse> {
-	
-	public ConfigureBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "ConfigureBackupPlan", "cbs");
-	}
+	   
 
 	private String sourceEndpointRegion;
-
-	private Integer duplicationArchivePeriod;
 
 	private Long backupGatewayId;
 
@@ -38,9 +34,21 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 
 	private String clientToken;
 
-	private String sourceEndpointPassword;
-
 	private String backupPlanId;
+
+	private String sourceEndpointDatabaseName;
+
+	private Integer duplicationInfrequentAccessPeriod;
+
+	private String backupStartTime;
+
+	private String sourceEndpointIP;
+
+	private Boolean enableBackupLog;
+
+	private Integer duplicationArchivePeriod;
+
+	private String sourceEndpointPassword;
 
 	private String backupObjects;
 
@@ -48,27 +56,21 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 
 	private Integer sourceEndpointPort;
 
-	private String sourceEndpointDatabaseName;
-
 	private Integer backupRetentionPeriod;
-
-	private Integer duplicationInfrequentAccessPeriod;
 
 	private String backupPeriod;
 
-	private String backupStartTime;
-
 	private String sourceEndpointInstanceType;
-
-	private String sourceEndpointIP;
 
 	private String backupPlanName;
 
 	private String sourceEndpointOracleSID;
 
 	private String oSSBucketName;
-
-	private Boolean enableBackupLog;
+	public ConfigureBackupPlanRequest() {
+		super("Dbs", "2019-03-06", "ConfigureBackupPlan", "cbs");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSourceEndpointRegion() {
 		return this.sourceEndpointRegion;
@@ -78,17 +80,6 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		this.sourceEndpointRegion = sourceEndpointRegion;
 		if(sourceEndpointRegion != null){
 			putQueryParameter("SourceEndpointRegion", sourceEndpointRegion);
-		}
-	}
-
-	public Integer getDuplicationArchivePeriod() {
-		return this.duplicationArchivePeriod;
-	}
-
-	public void setDuplicationArchivePeriod(Integer duplicationArchivePeriod) {
-		this.duplicationArchivePeriod = duplicationArchivePeriod;
-		if(duplicationArchivePeriod != null){
-			putQueryParameter("DuplicationArchivePeriod", duplicationArchivePeriod.toString());
 		}
 	}
 
@@ -136,17 +127,6 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		}
 	}
 
-	public String getSourceEndpointPassword() {
-		return this.sourceEndpointPassword;
-	}
-
-	public void setSourceEndpointPassword(String sourceEndpointPassword) {
-		this.sourceEndpointPassword = sourceEndpointPassword;
-		if(sourceEndpointPassword != null){
-			putQueryParameter("SourceEndpointPassword", sourceEndpointPassword);
-		}
-	}
-
 	public String getBackupPlanId() {
 		return this.backupPlanId;
 	}
@@ -155,6 +135,83 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		this.backupPlanId = backupPlanId;
 		if(backupPlanId != null){
 			putQueryParameter("BackupPlanId", backupPlanId);
+		}
+	}
+
+	public String getSourceEndpointDatabaseName() {
+		return this.sourceEndpointDatabaseName;
+	}
+
+	public void setSourceEndpointDatabaseName(String sourceEndpointDatabaseName) {
+		this.sourceEndpointDatabaseName = sourceEndpointDatabaseName;
+		if(sourceEndpointDatabaseName != null){
+			putQueryParameter("SourceEndpointDatabaseName", sourceEndpointDatabaseName);
+		}
+	}
+
+	public Integer getDuplicationInfrequentAccessPeriod() {
+		return this.duplicationInfrequentAccessPeriod;
+	}
+
+	public void setDuplicationInfrequentAccessPeriod(Integer duplicationInfrequentAccessPeriod) {
+		this.duplicationInfrequentAccessPeriod = duplicationInfrequentAccessPeriod;
+		if(duplicationInfrequentAccessPeriod != null){
+			putQueryParameter("DuplicationInfrequentAccessPeriod", duplicationInfrequentAccessPeriod.toString());
+		}
+	}
+
+	public String getBackupStartTime() {
+		return this.backupStartTime;
+	}
+
+	public void setBackupStartTime(String backupStartTime) {
+		this.backupStartTime = backupStartTime;
+		if(backupStartTime != null){
+			putQueryParameter("BackupStartTime", backupStartTime);
+		}
+	}
+
+	public String getSourceEndpointIP() {
+		return this.sourceEndpointIP;
+	}
+
+	public void setSourceEndpointIP(String sourceEndpointIP) {
+		this.sourceEndpointIP = sourceEndpointIP;
+		if(sourceEndpointIP != null){
+			putQueryParameter("SourceEndpointIP", sourceEndpointIP);
+		}
+	}
+
+	public Boolean getEnableBackupLog() {
+		return this.enableBackupLog;
+	}
+
+	public void setEnableBackupLog(Boolean enableBackupLog) {
+		this.enableBackupLog = enableBackupLog;
+		if(enableBackupLog != null){
+			putQueryParameter("EnableBackupLog", enableBackupLog.toString());
+		}
+	}
+
+	public Integer getDuplicationArchivePeriod() {
+		return this.duplicationArchivePeriod;
+	}
+
+	public void setDuplicationArchivePeriod(Integer duplicationArchivePeriod) {
+		this.duplicationArchivePeriod = duplicationArchivePeriod;
+		if(duplicationArchivePeriod != null){
+			putQueryParameter("DuplicationArchivePeriod", duplicationArchivePeriod.toString());
+		}
+	}
+
+	public String getSourceEndpointPassword() {
+		return this.sourceEndpointPassword;
+	}
+
+	public void setSourceEndpointPassword(String sourceEndpointPassword) {
+		this.sourceEndpointPassword = sourceEndpointPassword;
+		if(sourceEndpointPassword != null){
+			putQueryParameter("SourceEndpointPassword", sourceEndpointPassword);
 		}
 	}
 
@@ -191,17 +248,6 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		}
 	}
 
-	public String getSourceEndpointDatabaseName() {
-		return this.sourceEndpointDatabaseName;
-	}
-
-	public void setSourceEndpointDatabaseName(String sourceEndpointDatabaseName) {
-		this.sourceEndpointDatabaseName = sourceEndpointDatabaseName;
-		if(sourceEndpointDatabaseName != null){
-			putQueryParameter("SourceEndpointDatabaseName", sourceEndpointDatabaseName);
-		}
-	}
-
 	public Integer getBackupRetentionPeriod() {
 		return this.backupRetentionPeriod;
 	}
@@ -210,17 +256,6 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		this.backupRetentionPeriod = backupRetentionPeriod;
 		if(backupRetentionPeriod != null){
 			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod.toString());
-		}
-	}
-
-	public Integer getDuplicationInfrequentAccessPeriod() {
-		return this.duplicationInfrequentAccessPeriod;
-	}
-
-	public void setDuplicationInfrequentAccessPeriod(Integer duplicationInfrequentAccessPeriod) {
-		this.duplicationInfrequentAccessPeriod = duplicationInfrequentAccessPeriod;
-		if(duplicationInfrequentAccessPeriod != null){
-			putQueryParameter("DuplicationInfrequentAccessPeriod", duplicationInfrequentAccessPeriod.toString());
 		}
 	}
 
@@ -235,17 +270,6 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		}
 	}
 
-	public String getBackupStartTime() {
-		return this.backupStartTime;
-	}
-
-	public void setBackupStartTime(String backupStartTime) {
-		this.backupStartTime = backupStartTime;
-		if(backupStartTime != null){
-			putQueryParameter("BackupStartTime", backupStartTime);
-		}
-	}
-
 	public String getSourceEndpointInstanceType() {
 		return this.sourceEndpointInstanceType;
 	}
@@ -254,17 +278,6 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		this.sourceEndpointInstanceType = sourceEndpointInstanceType;
 		if(sourceEndpointInstanceType != null){
 			putQueryParameter("SourceEndpointInstanceType", sourceEndpointInstanceType);
-		}
-	}
-
-	public String getSourceEndpointIP() {
-		return this.sourceEndpointIP;
-	}
-
-	public void setSourceEndpointIP(String sourceEndpointIP) {
-		this.sourceEndpointIP = sourceEndpointIP;
-		if(sourceEndpointIP != null){
-			putQueryParameter("SourceEndpointIP", sourceEndpointIP);
 		}
 	}
 
@@ -298,17 +311,6 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		this.oSSBucketName = oSSBucketName;
 		if(oSSBucketName != null){
 			putQueryParameter("OSSBucketName", oSSBucketName);
-		}
-	}
-
-	public Boolean getEnableBackupLog() {
-		return this.enableBackupLog;
-	}
-
-	public void setEnableBackupLog(Boolean enableBackupLog) {
-		this.enableBackupLog = enableBackupLog;
-		if(enableBackupLog != null){
-			putQueryParameter("EnableBackupLog", enableBackupLog.toString());
 		}
 	}
 

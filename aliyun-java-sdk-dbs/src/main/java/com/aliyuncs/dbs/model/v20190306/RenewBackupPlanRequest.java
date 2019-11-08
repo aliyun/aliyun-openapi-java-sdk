@@ -15,16 +15,14 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class RenewBackupPlanRequest extends RpcAcsRequest<RenewBackupPlanResponse> {
-	
-	public RenewBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "RenewBackupPlan", "cbs");
-	}
+	   
 
 	private String period;
 
@@ -35,6 +33,10 @@ public class RenewBackupPlanRequest extends RpcAcsRequest<RenewBackupPlanRespons
 	private String ownerId;
 
 	private Integer usedTime;
+	public RenewBackupPlanRequest() {
+		super("Dbs", "2019-03-06", "RenewBackupPlan", "cbs");
+		setMethod(MethodType.POST);
+	}
 
 	public String getPeriod() {
 		return this.period;
