@@ -41,7 +41,7 @@ public class LogUtils {
     public final static String TIME = "{time}";
     public final static String ERROR = "{error}";
     public final static String DEFAULT_LOG_FORMAT =
-            "{method} {uri} HTTP/{version} {code} {cost} {hostname} {pid} {error}";
+            "{method} {uri} HTTP/{version} {code} {hostname} {pid} {error} {cost}";
     public final static Pattern REQ_HEADER_PATTERN = Pattern.compile("\\{req_header_(.*?)\\}");
     public final static Pattern RES_HEADER_PATTERN = Pattern.compile("\\{res_header_(.*?)\\}");
 

@@ -19,6 +19,7 @@ import com.aliyuncs.unmarshaller.Unmarshaller;
 import com.aliyuncs.unmarshaller.UnmarshallerFactory;
 import com.aliyuncs.utils.IOUtils;
 import com.aliyuncs.utils.LogUtils;
+import com.aliyuncs.utils.ProfilingHelper;
 import org.slf4j.Logger;
 
 import javax.xml.bind.annotation.XmlRootElement;
@@ -26,7 +27,6 @@ import java.io.IOException;
 import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -41,6 +41,7 @@ public class DefaultAcsClient implements IAcsClient {
     private IClientProfile clientProfile = null;
     private AlibabaCloudCredentialsProvider credentialsProvider;
     private DefaultCredentialsProvider defaultCredentialsProvider;
+    private ProfilingHelper profiling = new ProfilingHelper();
 
     private IHttpClient httpClient;
     private EndpointResolver endpointResolver;
@@ -172,7 +173,8 @@ public class DefaultAcsClient implements IAcsClient {
 
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryCounts,
-            IClientProfile profile) throws ClientException, ServerException {
+                                                         IClientProfile profile) throws ClientException, ServerException {
+        profiling.setStartRequest(System.currentTimeMillis());
         if (null == profile) {
             throw new ClientException("SDK.InvalidProfile", "No active profile found.");
         }
@@ -274,8 +276,9 @@ public class DefaultAcsClient implements IAcsClient {
             if (null != requestFormatType) {
                 format = requestFormatType;
             }
-
+            profiling.setStartEndpoint(System.currentTimeMillis());
             ProductDomain domain = getDomain(request, regionId);
+            profiling.setEndEndpoint(System.currentTimeMillis());
 
             if (request.getSysProtocol() == null) {
                 request.setSysProtocol(this.clientProfile.getHttpClientConfig().getProtocolType());
@@ -285,11 +288,9 @@ public class DefaultAcsClient implements IAcsClient {
             try {
                 HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
                 HttpUtil.debugHttpRequest(request);
-                startTime = LogUtils.localeNow();
-                long start = System.nanoTime();
+                profiling.setStartNetwork(System.currentTimeMillis());
                 response = this.httpClient.syncInvoke(httpRequest);
-                long end = System.nanoTime();
-                timeCost = TimeUnit.NANOSECONDS.toMillis(end - start) + "ms";
+                profiling.setEndNetwork(System.currentTimeMillis());
                 HttpUtil.debugHttpResponse(response);
                 return response;
             } catch (SocketTimeoutException exp) {
@@ -313,7 +314,8 @@ public class DefaultAcsClient implements IAcsClient {
                 try {
                     LogUtils.LogUnit logUnit = LogUtils.createLogUnit(request, response);
                     logUnit.setStartTime(startTime);
-                    logUnit.setCost(timeCost);
+                    profiling.setEndRequest(System.currentTimeMillis());
+                    logUnit.setCost(profiling.toString());
                     logUnit.setError(errorMessage);
                     String logContent = LogUtils.fillContent(clientProfile.getLogFormat(), logUnit);
                     logger.info(logContent);

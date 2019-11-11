@@ -11,7 +11,7 @@ import java.util.*;
 
 public class ParameterHelper {
 
-    private final static String TIME_ZONE = "GMT";
+    public final static String TIME_ZONE = "GMT";
     private final static String FORMAT_ISO8601 = "yyyy-MM-dd'T'HH:mm:ss'Z'";
     private final static String FORMAT_RFC2616 = "EEE, dd MMM yyyy HH:mm:ss zzz";
 

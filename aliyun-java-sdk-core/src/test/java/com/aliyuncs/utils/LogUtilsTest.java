@@ -300,8 +300,8 @@ public class LogUtilsTest {
         when(logUnit.getResBody()).thenReturn("res body");
         when(logUnit.getStartTime()).thenReturn("start time");
         when(logUnit.getTime()).thenReturn("time");
-        Assert.assertEquals("POST https://www.aliyun.com/path#ref HTTP/1.1 200 100ms host name pid testError" +
-                " req_header_exist {req_header_nonExist} res_header_exist {res_header_nonExist}",
+        Assert.assertEquals("POST https://www.aliyun.com/path#ref HTTP/1.1 200 host name pid testError 100ms" +
+                        " req_header_exist {req_header_nonExist} res_header_exist {res_header_nonExist}",
                 LogUtils.fillContent(format, logUnit));
     }
 

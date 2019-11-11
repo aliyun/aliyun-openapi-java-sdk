@@ -17,7 +17,7 @@ client.getAcsResponse(request);
 ```
 ## Log format
 ### Default format
-`{method} {uri} HTTP/{version} {code} {cost} {hostname} {pid}`
+`{method} {uri} HTTP/{version} {code} {hostname} {pid} {cost}`
 ### Configure format
 ```java
 profile.setLogFormat(format)

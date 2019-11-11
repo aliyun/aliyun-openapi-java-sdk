@@ -18,7 +18,7 @@ client.getAcsResponse(request);
 ```
 ## 日志格式化
 ### 默认格式
-`{method} {uri} HTTP/{version} {code} {cost} {hostname} {pid}`
+`{method} {uri} HTTP/{version} {cost} {hostname} {pid} {cost}`
 ### 设置格式
 ```java
 profile.setLogFormat(format)
