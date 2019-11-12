@@ -1,5 +1,9 @@
-﻿2019-09-30 Version: 4.4.6
-1, change setParameter: Add null check
+﻿2019-11-12 Version: 4.4.7
+1, Support list and map loop nesting
+2, Change put mode default type to form
+
+2019-09-30 Version: 4.4.6
+1, Change setParameter: Add null check
 
 2019-09-16 Version: 4.4.5
 1, Modify getEndpoint logic
@@ -16,8 +20,8 @@
 1, keep compatible with old gson version
 
 2019-04-19 Version: 4.4.1
-1, add http debug info.
-2, change logger.
+1, Add http debug info.
+2, Change logger.
 
 
 2019-04-04 Version: 4.4.0
