@@ -32,7 +32,6 @@ public class DescribeGtmMonitorConfigResponseUnmarshaller {
 		describeGtmMonitorConfigResponse.setCreateTimestamp(_ctx.longValue("DescribeGtmMonitorConfigResponse.CreateTimestamp"));
 		describeGtmMonitorConfigResponse.setUpdateTime(_ctx.stringValue("DescribeGtmMonitorConfigResponse.UpdateTime"));
 		describeGtmMonitorConfigResponse.setUpdateTimestamp(_ctx.longValue("DescribeGtmMonitorConfigResponse.UpdateTimestamp"));
-		describeGtmMonitorConfigResponse.setName(_ctx.stringValue("DescribeGtmMonitorConfigResponse.Name"));
 		describeGtmMonitorConfigResponse.setProtocolType(_ctx.stringValue("DescribeGtmMonitorConfigResponse.ProtocolType"));
 		describeGtmMonitorConfigResponse.setInterval(_ctx.integerValue("DescribeGtmMonitorConfigResponse.Interval"));
 		describeGtmMonitorConfigResponse.setEvaluationCount(_ctx.integerValue("DescribeGtmMonitorConfigResponse.EvaluationCount"));
@@ -46,6 +45,8 @@ public class DescribeGtmMonitorConfigResponseUnmarshaller {
 			ispCityNode.setCountryCode(_ctx.stringValue("DescribeGtmMonitorConfigResponse.IspCityNodes["+ i +"].CountryCode"));
 			ispCityNode.setCityName(_ctx.stringValue("DescribeGtmMonitorConfigResponse.IspCityNodes["+ i +"].CityName"));
 			ispCityNode.setCityCode(_ctx.stringValue("DescribeGtmMonitorConfigResponse.IspCityNodes["+ i +"].CityCode"));
+			ispCityNode.setIspCode(_ctx.stringValue("DescribeGtmMonitorConfigResponse.IspCityNodes["+ i +"].IspCode"));
+			ispCityNode.setIspName(_ctx.stringValue("DescribeGtmMonitorConfigResponse.IspCityNodes["+ i +"].IspName"));
 
 			ispCityNodes.add(ispCityNode);
 		}

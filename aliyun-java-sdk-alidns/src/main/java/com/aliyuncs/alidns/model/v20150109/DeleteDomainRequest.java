@@ -15,20 +15,27 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteDomainRequest extends RpcAcsRequest<DeleteDomainResponse> {
-	
-	public DeleteDomainRequest() {
-		super("Alidns", "2015-01-09", "DeleteDomain", "Alidns");
-	}
+	   
 
 	private String domainName;
 
 	private String lang;
+	public DeleteDomainRequest() {
+		super("Alidns", "2015-01-09", "DeleteDomain", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getDomainName() {
 		return this.domainName;

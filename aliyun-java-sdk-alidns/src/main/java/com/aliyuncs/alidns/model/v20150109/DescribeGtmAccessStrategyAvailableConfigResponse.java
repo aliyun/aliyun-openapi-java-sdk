@@ -90,6 +90,8 @@ public class DescribeGtmAccessStrategyAvailableConfigResponse extends AcsRespons
 
 		private String status;
 
+		private String fatherCode;
+
 		public String getLineCode() {
 			return this.lineCode;
 		}
@@ -128,6 +130,14 @@ public class DescribeGtmAccessStrategyAvailableConfigResponse extends AcsRespons
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getFatherCode() {
+			return this.fatherCode;
+		}
+
+		public void setFatherCode(String fatherCode) {
+			this.fatherCode = fatherCode;
 		}
 	}
 

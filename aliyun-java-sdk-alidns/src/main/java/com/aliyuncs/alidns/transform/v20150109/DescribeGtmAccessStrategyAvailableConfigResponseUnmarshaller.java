@@ -47,6 +47,7 @@ public class DescribeGtmAccessStrategyAvailableConfigResponseUnmarshaller {
 			line.setGroupCode(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].GroupCode"));
 			line.setGroupName(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].GroupName"));
 			line.setStatus(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].Status"));
+			line.setFatherCode(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].FatherCode"));
 
 			lines.add(line);
 		}

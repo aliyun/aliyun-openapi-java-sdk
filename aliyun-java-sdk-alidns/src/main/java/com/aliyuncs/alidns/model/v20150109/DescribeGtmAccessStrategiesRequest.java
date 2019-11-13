@@ -15,24 +15,42 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeGtmAccessStrategiesRequest extends RpcAcsRequest<DescribeGtmAccessStrategiesResponse> {
-	
-	public DescribeGtmAccessStrategiesRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmAccessStrategies", "Alidns");
-	}
+	   
+
+	private Integer pageNumber;
 
 	private String instanceId;
 
 	private Integer pageSize;
 
 	private String lang;
+	public DescribeGtmAccessStrategiesRequest() {
+		super("Alidns", "2015-01-09", "DescribeGtmAccessStrategies", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private Integer pageNumber;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -64,17 +82,6 @@ public class DescribeGtmAccessStrategiesRequest extends RpcAcsRequest<DescribeGt
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

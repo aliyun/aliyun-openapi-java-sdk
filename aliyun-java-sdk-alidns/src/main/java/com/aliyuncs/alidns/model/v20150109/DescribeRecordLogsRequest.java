@@ -15,32 +15,72 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeRecordLogsRequest extends RpcAcsRequest<DescribeRecordLogsResponse> {
-	
-	public DescribeRecordLogsRequest() {
-		super("Alidns", "2015-01-09", "DescribeRecordLogs", "Alidns");
-	}
+	   
+
+	private String domainName;
+
+	private String startDate;
+
+	private Long pageNumber;
 
 	private String endDate;
 
 	private String userClientIp;
-
-	private String domainName;
 
 	private Long pageSize;
 
 	private String lang;
 
 	private String keyWord;
+	public DescribeRecordLogsRequest() {
+		super("Alidns", "2015-01-09", "DescribeRecordLogs", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private String startDate;
+	public String getDomainName() {
+		return this.domainName;
+	}
 
-	private Long pageNumber;
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+		if(startDate != null){
+			putQueryParameter("StartDate", startDate);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getEndDate() {
 		return this.endDate;
@@ -61,17 +101,6 @@ public class DescribeRecordLogsRequest extends RpcAcsRequest<DescribeRecordLogsR
 		this.userClientIp = userClientIp;
 		if(userClientIp != null){
 			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -105,28 +134,6 @@ public class DescribeRecordLogsRequest extends RpcAcsRequest<DescribeRecordLogsR
 		this.keyWord = keyWord;
 		if(keyWord != null){
 			putQueryParameter("KeyWord", keyWord);
-		}
-	}
-
-	public String getStartDate() {
-		return this.startDate;
-	}
-
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-		if(startDate != null){
-			putQueryParameter("StartDate", startDate);
-		}
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

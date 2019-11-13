@@ -15,22 +15,29 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetGtmMonitorStatusRequest extends RpcAcsRequest<SetGtmMonitorStatusResponse> {
-	
-	public SetGtmMonitorStatusRequest() {
-		super("Alidns", "2015-01-09", "SetGtmMonitorStatus", "Alidns");
-	}
+	   
 
 	private String monitorConfigId;
 
 	private String lang;
 
 	private String status;
+	public SetGtmMonitorStatusRequest() {
+		super("Alidns", "2015-01-09", "SetGtmMonitorStatus", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getMonitorConfigId() {
 		return this.monitorConfigId;

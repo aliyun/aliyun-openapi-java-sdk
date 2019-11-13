@@ -23,8 +23,10 @@ public class DescribeGtmInstanceStatusResponseUnmarshaller {
 	public static DescribeGtmInstanceStatusResponse unmarshall(DescribeGtmInstanceStatusResponse describeGtmInstanceStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeGtmInstanceStatusResponse.setRequestId(_ctx.stringValue("DescribeGtmInstanceStatusResponse.RequestId"));
-		describeGtmInstanceStatusResponse.setAccessStatus(_ctx.stringValue("DescribeGtmInstanceStatusResponse.AccessStatus"));
-		describeGtmInstanceStatusResponse.setAlertStatus(_ctx.stringValue("DescribeGtmInstanceStatusResponse.AlertStatus"));
+		describeGtmInstanceStatusResponse.setAddrNotAvailableNum(_ctx.integerValue("DescribeGtmInstanceStatusResponse.AddrNotAvailableNum"));
+		describeGtmInstanceStatusResponse.setAddrPoolNotAvailableNum(_ctx.integerValue("DescribeGtmInstanceStatusResponse.AddrPoolNotAvailableNum"));
+		describeGtmInstanceStatusResponse.setSwitchToFailoverStrategyNum(_ctx.integerValue("DescribeGtmInstanceStatusResponse.SwitchToFailoverStrategyNum"));
+		describeGtmInstanceStatusResponse.setStrategyNotAvailableNum(_ctx.integerValue("DescribeGtmInstanceStatusResponse.StrategyNotAvailableNum"));
 	 
 	 	return describeGtmInstanceStatusResponse;
 	}

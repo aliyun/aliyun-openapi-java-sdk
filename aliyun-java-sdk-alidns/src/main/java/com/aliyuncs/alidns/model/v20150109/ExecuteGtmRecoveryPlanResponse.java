@@ -15,20 +15,16 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alidns.transform.v20150109.CreateInstanceResponseUnmarshaller;
+import com.aliyuncs.alidns.transform.v20150109.ExecuteGtmRecoveryPlanResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateInstanceResponse extends AcsResponse {
+public class ExecuteGtmRecoveryPlanResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String orderId;
-
-	private String instanceId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +34,8 @@ public class CreateInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
 	@Override
-	public CreateInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateInstanceResponseUnmarshaller.unmarshall(this, context);
+	public ExecuteGtmRecoveryPlanResponse getInstance(UnmarshallerContext context) {
+		return	ExecuteGtmRecoveryPlanResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -15,38 +15,34 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateGtmAccessStrategyRequest extends RpcAcsRequest<UpdateGtmAccessStrategyResponse> {
-	
-	public UpdateGtmAccessStrategyRequest() {
-		super("Alidns", "2015-01-09", "UpdateGtmAccessStrategy", "Alidns");
-	}
-
-	private String strategyName;
+	   
 
 	private String defaultAddrPoolId;
 
-	private String accessLines;
-
 	private String failoverAddrPoolId;
+
+	private String strategyName;
+
+	private String accessLines;
 
 	private String strategyId;
 
 	private String lang;
-
-	public String getStrategyName() {
-		return this.strategyName;
-	}
-
-	public void setStrategyName(String strategyName) {
-		this.strategyName = strategyName;
-		if(strategyName != null){
-			putQueryParameter("StrategyName", strategyName);
-		}
+	public UpdateGtmAccessStrategyRequest() {
+		super("Alidns", "2015-01-09", "UpdateGtmAccessStrategy", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDefaultAddrPoolId() {
@@ -60,17 +56,6 @@ public class UpdateGtmAccessStrategyRequest extends RpcAcsRequest<UpdateGtmAcces
 		}
 	}
 
-	public String getAccessLines() {
-		return this.accessLines;
-	}
-
-	public void setAccessLines(String accessLines) {
-		this.accessLines = accessLines;
-		if(accessLines != null){
-			putQueryParameter("AccessLines", accessLines);
-		}
-	}
-
 	public String getFailoverAddrPoolId() {
 		return this.failoverAddrPoolId;
 	}
@@ -79,6 +64,28 @@ public class UpdateGtmAccessStrategyRequest extends RpcAcsRequest<UpdateGtmAcces
 		this.failoverAddrPoolId = failoverAddrPoolId;
 		if(failoverAddrPoolId != null){
 			putQueryParameter("FailoverAddrPoolId", failoverAddrPoolId);
+		}
+	}
+
+	public String getStrategyName() {
+		return this.strategyName;
+	}
+
+	public void setStrategyName(String strategyName) {
+		this.strategyName = strategyName;
+		if(strategyName != null){
+			putQueryParameter("StrategyName", strategyName);
+		}
+	}
+
+	public String getAccessLines() {
+		return this.accessLines;
+	}
+
+	public void setAccessLines(String accessLines) {
+		this.accessLines = accessLines;
+		if(accessLines != null){
+			putQueryParameter("AccessLines", accessLines);
 		}
 	}
 

@@ -15,36 +15,32 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDNSSLBSubDomainsRequest extends RpcAcsRequest<DescribeDNSSLBSubDomainsResponse> {
-	
-	public DescribeDNSSLBSubDomainsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDNSSLBSubDomains", "Alidns");
-	}
-
-	private String userClientIp;
+	   
 
 	private String domainName;
+
+	private Long pageNumber;
+
+	private String userClientIp;
 
 	private Long pageSize;
 
 	private String lang;
-
-	private Long pageNumber;
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
+	public DescribeDNSSLBSubDomainsRequest() {
+		super("Alidns", "2015-01-09", "DescribeDNSSLBSubDomains", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDomainName() {
@@ -55,6 +51,28 @@ public class DescribeDNSSLBSubDomainsRequest extends RpcAcsRequest<DescribeDNSSL
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 
@@ -77,17 +95,6 @@ public class DescribeDNSSLBSubDomainsRequest extends RpcAcsRequest<DescribeDNSSL
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

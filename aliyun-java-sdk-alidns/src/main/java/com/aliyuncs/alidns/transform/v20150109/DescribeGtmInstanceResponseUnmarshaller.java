@@ -36,6 +36,8 @@ public class DescribeGtmInstanceResponseUnmarshaller {
 		describeGtmInstanceResponse.setCreateTimestamp(_ctx.longValue("DescribeGtmInstanceResponse.CreateTimestamp"));
 		describeGtmInstanceResponse.setAlertGroup(_ctx.stringValue("DescribeGtmInstanceResponse.AlertGroup"));
 		describeGtmInstanceResponse.setCnameMode(_ctx.stringValue("DescribeGtmInstanceResponse.CnameMode"));
+		describeGtmInstanceResponse.setAccessStrategyNum(_ctx.integerValue("DescribeGtmInstanceResponse.AccessStrategyNum"));
+		describeGtmInstanceResponse.setAddressPoolNum(_ctx.integerValue("DescribeGtmInstanceResponse.AddressPoolNum"));
 	 
 	 	return describeGtmInstanceResponse;
 	}

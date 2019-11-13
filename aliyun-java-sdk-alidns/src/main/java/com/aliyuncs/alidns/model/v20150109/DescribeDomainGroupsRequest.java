@@ -15,24 +15,42 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDomainGroupsRequest extends RpcAcsRequest<DescribeDomainGroupsResponse> {
-	
-	public DescribeDomainGroupsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomainGroups", "Alidns");
-	}
+	   
+
+	private Long pageNumber;
 
 	private Long pageSize;
 
 	private String lang;
 
 	private String keyWord;
+	public DescribeDomainGroupsRequest() {
+		super("Alidns", "2015-01-09", "DescribeDomainGroups", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private Long pageNumber;
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public Long getPageSize() {
 		return this.pageSize;
@@ -64,17 +82,6 @@ public class DescribeDomainGroupsRequest extends RpcAcsRequest<DescribeDomainGro
 		this.keyWord = keyWord;
 		if(keyWord != null){
 			putQueryParameter("KeyWord", keyWord);
-		}
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

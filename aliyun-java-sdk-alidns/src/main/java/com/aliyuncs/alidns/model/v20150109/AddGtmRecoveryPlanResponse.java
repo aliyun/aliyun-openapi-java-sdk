@@ -15,18 +15,18 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alidns.transform.v20150109.CheckDomainRecordResponseUnmarshaller;
+import com.aliyuncs.alidns.transform.v20150109.AddGtmRecoveryPlanResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CheckDomainRecordResponse extends AcsResponse {
+public class AddGtmRecoveryPlanResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean isExist;
+	private String recoveryPlanId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +36,16 @@ public class CheckDomainRecordResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getIsExist() {
-		return this.isExist;
+	public String getRecoveryPlanId() {
+		return this.recoveryPlanId;
 	}
 
-	public void setIsExist(Boolean isExist) {
-		this.isExist = isExist;
+	public void setRecoveryPlanId(String recoveryPlanId) {
+		this.recoveryPlanId = recoveryPlanId;
 	}
 
 	@Override
-	public CheckDomainRecordResponse getInstance(UnmarshallerContext context) {
-		return	CheckDomainRecordResponseUnmarshaller.unmarshall(this, context);
+	public AddGtmRecoveryPlanResponse getInstance(UnmarshallerContext context) {
+		return	AddGtmRecoveryPlanResponseUnmarshaller.unmarshall(this, context);
 	}
 }

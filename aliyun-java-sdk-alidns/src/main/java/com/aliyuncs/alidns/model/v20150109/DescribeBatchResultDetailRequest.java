@@ -15,18 +15,19 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeBatchResultDetailRequest extends RpcAcsRequest<DescribeBatchResultDetailResponse> {
-	
-	public DescribeBatchResultDetailRequest() {
-		super("Alidns", "2015-01-09", "DescribeBatchResultDetail", "Alidns");
-	}
+	   
 
 	private String batchType;
+
+	private Integer pageNumber;
 
 	private String userClientIp;
 
@@ -34,9 +35,15 @@ public class DescribeBatchResultDetailRequest extends RpcAcsRequest<DescribeBatc
 
 	private String lang;
 
-	private Integer pageNumber;
-
 	private Long taskId;
+	public DescribeBatchResultDetailRequest() {
+		super("Alidns", "2015-01-09", "DescribeBatchResultDetail", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getBatchType() {
 		return this.batchType;
@@ -46,6 +53,17 @@ public class DescribeBatchResultDetailRequest extends RpcAcsRequest<DescribeBatc
 		this.batchType = batchType;
 		if(batchType != null){
 			putQueryParameter("BatchType", batchType);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -79,17 +97,6 @@ public class DescribeBatchResultDetailRequest extends RpcAcsRequest<DescribeBatc
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

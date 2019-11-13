@@ -26,9 +26,13 @@ public class DescribeGtmInstanceStatusResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String accessStatus;
+	private Integer addrNotAvailableNum;
 
-	private String alertStatus;
+	private Integer addrPoolNotAvailableNum;
+
+	private Integer switchToFailoverStrategyNum;
+
+	private Integer strategyNotAvailableNum;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +42,36 @@ public class DescribeGtmInstanceStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getAccessStatus() {
-		return this.accessStatus;
+	public Integer getAddrNotAvailableNum() {
+		return this.addrNotAvailableNum;
 	}
 
-	public void setAccessStatus(String accessStatus) {
-		this.accessStatus = accessStatus;
+	public void setAddrNotAvailableNum(Integer addrNotAvailableNum) {
+		this.addrNotAvailableNum = addrNotAvailableNum;
 	}
 
-	public String getAlertStatus() {
-		return this.alertStatus;
+	public Integer getAddrPoolNotAvailableNum() {
+		return this.addrPoolNotAvailableNum;
 	}
 
-	public void setAlertStatus(String alertStatus) {
-		this.alertStatus = alertStatus;
+	public void setAddrPoolNotAvailableNum(Integer addrPoolNotAvailableNum) {
+		this.addrPoolNotAvailableNum = addrPoolNotAvailableNum;
+	}
+
+	public Integer getSwitchToFailoverStrategyNum() {
+		return this.switchToFailoverStrategyNum;
+	}
+
+	public void setSwitchToFailoverStrategyNum(Integer switchToFailoverStrategyNum) {
+		this.switchToFailoverStrategyNum = switchToFailoverStrategyNum;
+	}
+
+	public Integer getStrategyNotAvailableNum() {
+		return this.strategyNotAvailableNum;
+	}
+
+	public void setStrategyNotAvailableNum(Integer strategyNotAvailableNum) {
+		this.strategyNotAvailableNum = strategyNotAvailableNum;
 	}
 
 	@Override

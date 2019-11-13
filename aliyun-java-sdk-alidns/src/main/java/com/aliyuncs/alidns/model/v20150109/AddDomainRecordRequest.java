@@ -15,34 +15,41 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddDomainRecordRequest extends RpcAcsRequest<AddDomainRecordResponse> {
-	
-	public AddDomainRecordRequest() {
-		super("Alidns", "2015-01-09", "AddDomainRecord", "Alidns");
-	}
+	   
 
 	private String rR;
 
 	private String line;
 
-	private String userClientIp;
-
-	private String domainName;
+	private String type;
 
 	private String lang;
 
-	private String type;
+	private String value;
+
+	private String domainName;
 
 	private Long priority;
 
-	private String value;
-
 	private Long tTL;
+
+	private String userClientIp;
+	public AddDomainRecordRequest() {
+		super("Alidns", "2015-01-09", "AddDomainRecord", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getRR() {
 		return this.rR;
@@ -66,25 +73,14 @@ public class AddDomainRecordRequest extends RpcAcsRequest<AddDomainRecordRespons
 		}
 	}
 
-	public String getUserClientIp() {
-		return this.userClientIp;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
@@ -99,14 +95,25 @@ public class AddDomainRecordRequest extends RpcAcsRequest<AddDomainRecordRespons
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getValue() {
+		return this.value;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setValue(String value) {
+		this.value = value;
+		if(value != null){
+			putQueryParameter("Value", value);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -121,17 +128,6 @@ public class AddDomainRecordRequest extends RpcAcsRequest<AddDomainRecordRespons
 		}
 	}
 
-	public String getValue() {
-		return this.value;
-	}
-
-	public void setValue(String value) {
-		this.value = value;
-		if(value != null){
-			putQueryParameter("Value", value);
-		}
-	}
-
 	public Long getTTL() {
 		return this.tTL;
 	}
@@ -140,6 +136,17 @@ public class AddDomainRecordRequest extends RpcAcsRequest<AddDomainRecordRespons
 		this.tTL = tTL;
 		if(tTL != null){
 			putQueryParameter("TTL", tTL.toString());
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

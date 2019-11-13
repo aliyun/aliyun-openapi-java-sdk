@@ -14,18 +14,16 @@
 
 package com.aliyuncs.alidns.transform.v20150109;
 
-import com.aliyuncs.alidns.model.v20150109.CreateInstanceResponse;
+import com.aliyuncs.alidns.model.v20150109.UpdateDomainRecordRemarkResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateInstanceResponseUnmarshaller {
+public class UpdateDomainRecordRemarkResponseUnmarshaller {
 
-	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext _ctx) {
+	public static UpdateDomainRecordRemarkResponse unmarshall(UpdateDomainRecordRemarkResponse updateDomainRecordRemarkResponse, UnmarshallerContext _ctx) {
 		
-		createInstanceResponse.setRequestId(_ctx.stringValue("CreateInstanceResponse.RequestId"));
-		createInstanceResponse.setOrderId(_ctx.stringValue("CreateInstanceResponse.OrderId"));
-		createInstanceResponse.setInstanceId(_ctx.stringValue("CreateInstanceResponse.InstanceId"));
+		updateDomainRecordRemarkResponse.setRequestId(_ctx.stringValue("UpdateDomainRecordRemarkResponse.RequestId"));
 	 
-	 	return createInstanceResponse;
+	 	return updateDomainRecordRemarkResponse;
 	}
 }

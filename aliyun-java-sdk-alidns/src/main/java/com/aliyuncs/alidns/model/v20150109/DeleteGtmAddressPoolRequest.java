@@ -15,20 +15,27 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteGtmAddressPoolRequest extends RpcAcsRequest<DeleteGtmAddressPoolResponse> {
-	
-	public DeleteGtmAddressPoolRequest() {
-		super("Alidns", "2015-01-09", "DeleteGtmAddressPool", "Alidns");
-	}
+	   
 
 	private String addrPoolId;
 
 	private String lang;
+	public DeleteGtmAddressPoolRequest() {
+		super("Alidns", "2015-01-09", "DeleteGtmAddressPool", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAddrPoolId() {
 		return this.addrPoolId;

@@ -15,22 +15,29 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ChangeDomainGroupRequest extends RpcAcsRequest<ChangeDomainGroupResponse> {
-	
-	public ChangeDomainGroupRequest() {
-		super("Alidns", "2015-01-09", "ChangeDomainGroup", "Alidns");
-	}
+	   
 
 	private String groupId;
 
 	private String domainName;
 
 	private String lang;
+	public ChangeDomainGroupRequest() {
+		super("Alidns", "2015-01-09", "ChangeDomainGroup", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getGroupId() {
 		return this.groupId;

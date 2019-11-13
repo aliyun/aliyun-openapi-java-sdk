@@ -52,6 +52,10 @@ public class DescribeGtmInstanceResponse extends AcsResponse {
 
 	private String cnameMode;
 
+	private Integer accessStrategyNum;
+
+	private Integer addressPoolNum;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -162,6 +166,22 @@ public class DescribeGtmInstanceResponse extends AcsResponse {
 
 	public void setCnameMode(String cnameMode) {
 		this.cnameMode = cnameMode;
+	}
+
+	public Integer getAccessStrategyNum() {
+		return this.accessStrategyNum;
+	}
+
+	public void setAccessStrategyNum(Integer accessStrategyNum) {
+		this.accessStrategyNum = accessStrategyNum;
+	}
+
+	public Integer getAddressPoolNum() {
+		return this.addressPoolNum;
+	}
+
+	public void setAddressPoolNum(Integer addressPoolNum) {
+		this.addressPoolNum = addressPoolNum;
 	}
 
 	@Override

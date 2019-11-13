@@ -28,6 +28,8 @@ public class AddGtmAddressPoolResponse extends AcsResponse {
 
 	private String addrPoolId;
 
+	private String monitorConfigId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class AddGtmAddressPoolResponse extends AcsResponse {
 
 	public void setAddrPoolId(String addrPoolId) {
 		this.addrPoolId = addrPoolId;
+	}
+
+	public String getMonitorConfigId() {
+		return this.monitorConfigId;
+	}
+
+	public void setMonitorConfigId(String monitorConfigId) {
+		this.monitorConfigId = monitorConfigId;
 	}
 
 	@Override

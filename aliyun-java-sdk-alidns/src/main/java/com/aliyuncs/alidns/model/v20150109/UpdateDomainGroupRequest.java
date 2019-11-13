@@ -15,22 +15,29 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateDomainGroupRequest extends RpcAcsRequest<UpdateDomainGroupResponse> {
-	
-	public UpdateDomainGroupRequest() {
-		super("Alidns", "2015-01-09", "UpdateDomainGroup", "Alidns");
-	}
+	   
 
 	private String groupId;
 
-	private String lang;
-
 	private String groupName;
+
+	private String lang;
+	public UpdateDomainGroupRequest() {
+		super("Alidns", "2015-01-09", "UpdateDomainGroup", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getGroupId() {
 		return this.groupId;
@@ -43,17 +50,6 @@ public class UpdateDomainGroupRequest extends RpcAcsRequest<UpdateDomainGroupRes
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
 	public String getGroupName() {
 		return this.groupName;
 	}
@@ -62,6 +58,17 @@ public class UpdateDomainGroupRequest extends RpcAcsRequest<UpdateDomainGroupRes
 		this.groupName = groupName;
 		if(groupName != null){
 			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

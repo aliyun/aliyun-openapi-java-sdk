@@ -103,26 +103,10 @@ public class DescribeRecordLogsResponse extends AcsResponse {
 			this.actionTimestamp = actionTimestamp;
 		}
 
-		public String getBizAction() {
-			return this.action;
-		}
-
-		public void setBizAction(String action) {
-			this.action = action;
-		}
-
-		/**
-		 * @deprecated use getBizAction instead of this.
-		 */
-		@Deprecated
 		public String getAction() {
 			return this.action;
 		}
 
-		/**
-		 * @deprecated use setBizAction instead of this.
-		 */
-		@Deprecated
 		public void setAction(String action) {
 			this.action = action;
 		}

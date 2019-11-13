@@ -24,6 +24,7 @@ public class AddGtmAddressPoolResponseUnmarshaller {
 		
 		addGtmAddressPoolResponse.setRequestId(_ctx.stringValue("AddGtmAddressPoolResponse.RequestId"));
 		addGtmAddressPoolResponse.setAddrPoolId(_ctx.stringValue("AddGtmAddressPoolResponse.AddrPoolId"));
+		addGtmAddressPoolResponse.setMonitorConfigId(_ctx.stringValue("AddGtmAddressPoolResponse.MonitorConfigId"));
 	 
 	 	return addGtmAddressPoolResponse;
 	}

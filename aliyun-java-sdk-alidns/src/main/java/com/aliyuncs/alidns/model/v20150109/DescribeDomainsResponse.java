@@ -105,6 +105,8 @@ public class DescribeDomainsResponse extends AcsResponse {
 
 		private Boolean instanceExpired;
 
+		private Boolean starmark;
+
 		private List<String> dnsServers;
 
 		public String getDomainId() {
@@ -217,6 +219,14 @@ public class DescribeDomainsResponse extends AcsResponse {
 
 		public void setInstanceExpired(Boolean instanceExpired) {
 			this.instanceExpired = instanceExpired;
+		}
+
+		public Boolean getStarmark() {
+			return this.starmark;
+		}
+
+		public void setStarmark(Boolean starmark) {
+			this.starmark = starmark;
 		}
 
 		public List<String> getDnsServers() {

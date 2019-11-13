@@ -14,17 +14,16 @@
 
 package com.aliyuncs.alidns.transform.v20150109;
 
-import com.aliyuncs.alidns.model.v20150109.CheckDomainRecordResponse;
+import com.aliyuncs.alidns.model.v20150109.RollbackGtmRecoveryPlanResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CheckDomainRecordResponseUnmarshaller {
+public class RollbackGtmRecoveryPlanResponseUnmarshaller {
 
-	public static CheckDomainRecordResponse unmarshall(CheckDomainRecordResponse checkDomainRecordResponse, UnmarshallerContext _ctx) {
+	public static RollbackGtmRecoveryPlanResponse unmarshall(RollbackGtmRecoveryPlanResponse rollbackGtmRecoveryPlanResponse, UnmarshallerContext _ctx) {
 		
-		checkDomainRecordResponse.setRequestId(_ctx.stringValue("CheckDomainRecordResponse.RequestId"));
-		checkDomainRecordResponse.setIsExist(_ctx.booleanValue("CheckDomainRecordResponse.IsExist"));
+		rollbackGtmRecoveryPlanResponse.setRequestId(_ctx.stringValue("RollbackGtmRecoveryPlanResponse.RequestId"));
 	 
-	 	return checkDomainRecordResponse;
+	 	return rollbackGtmRecoveryPlanResponse;
 	}
 }

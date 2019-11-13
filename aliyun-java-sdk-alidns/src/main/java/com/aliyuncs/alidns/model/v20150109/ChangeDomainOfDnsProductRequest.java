@@ -15,16 +15,15 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ChangeDomainOfDnsProductRequest extends RpcAcsRequest<ChangeDomainOfDnsProductResponse> {
-	
-	public ChangeDomainOfDnsProductRequest() {
-		super("Alidns", "2015-01-09", "ChangeDomainOfDnsProduct", "Alidns");
-	}
+	   
 
 	private String instanceId;
 
@@ -35,6 +34,14 @@ public class ChangeDomainOfDnsProductRequest extends RpcAcsRequest<ChangeDomainO
 	private Boolean force;
 
 	private String lang;
+	public ChangeDomainOfDnsProductRequest() {
+		super("Alidns", "2015-01-09", "ChangeDomainOfDnsProduct", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;

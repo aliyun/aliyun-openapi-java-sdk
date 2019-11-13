@@ -15,18 +15,23 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSubDomainRecordsRequest extends RpcAcsRequest<DescribeSubDomainRecordsResponse> {
-	
-	public DescribeSubDomainRecordsRequest() {
-		super("Alidns", "2015-01-09", "DescribeSubDomainRecords", "Alidns");
-	}
+	   
 
 	private String line;
+
+	private String domainName;
+
+	private String type;
+
+	private Long pageNumber;
 
 	private String userClientIp;
 
@@ -35,10 +40,14 @@ public class DescribeSubDomainRecordsRequest extends RpcAcsRequest<DescribeSubDo
 	private String subDomain;
 
 	private String lang;
-
-	private String type;
-
-	private Long pageNumber;
+	public DescribeSubDomainRecordsRequest() {
+		super("Alidns", "2015-01-09", "DescribeSubDomainRecords", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getLine() {
 		return this.line;
@@ -48,6 +57,39 @@ public class DescribeSubDomainRecordsRequest extends RpcAcsRequest<DescribeSubDo
 		this.line = line;
 		if(line != null){
 			putQueryParameter("Line", line);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -92,28 +134,6 @@ public class DescribeSubDomainRecordsRequest extends RpcAcsRequest<DescribeSubDo
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

@@ -16,34 +16,30 @@ package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OperateBatchDomainRequest extends RpcAcsRequest<OperateBatchDomainResponse> {
-	
-	public OperateBatchDomainRequest() {
-		super("Alidns", "2015-01-09", "OperateBatchDomain", "Alidns");
-	}
-
-	private String userClientIp;
+	   
 
 	private List<DomainRecordInfo> domainRecordInfos;
 
-	private String lang;
-
 	private String type;
 
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
+	private String userClientIp;
 
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
+	private String lang;
+	public OperateBatchDomainRequest() {
+		super("Alidns", "2015-01-09", "OperateBatchDomain", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public List<DomainRecordInfo> getDomainRecordInfos() {
@@ -68,17 +64,6 @@ public class OperateBatchDomainRequest extends RpcAcsRequest<OperateBatchDomainR
 		}	
 	}
 
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
 	public String getType() {
 		return this.type;
 	}
@@ -87,6 +72,28 @@ public class OperateBatchDomainRequest extends RpcAcsRequest<OperateBatchDomainR
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
@@ -144,26 +151,10 @@ public class OperateBatchDomainRequest extends RpcAcsRequest<OperateBatchDomainR
 			this.line = line;
 		}
 
-		public String getBizDomain() {
-			return this.domain;
-		}
-
-		public void setBizDomain(String domain) {
-			this.domain = domain;
-		}
-
-		/**
-		 * @deprecated use getBizDomain instead of this.
-		 */
-		@Deprecated
 		public String getDomain() {
 			return this.domain;
 		}
 
-		/**
-		 * @deprecated use setBizDomain instead of this.
-		 */
-		@Deprecated
 		public void setDomain(String domain) {
 			this.domain = domain;
 		}

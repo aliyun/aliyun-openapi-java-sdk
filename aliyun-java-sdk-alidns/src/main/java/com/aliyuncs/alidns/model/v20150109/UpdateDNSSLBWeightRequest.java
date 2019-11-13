@@ -15,24 +15,42 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateDNSSLBWeightRequest extends RpcAcsRequest<UpdateDNSSLBWeightResponse> {
-	
-	public UpdateDNSSLBWeightRequest() {
-		super("Alidns", "2015-01-09", "UpdateDNSSLBWeight", "Alidns");
-	}
+	   
+
+	private Integer weight;
 
 	private String recordId;
 
 	private String userClientIp;
 
-	private Integer weight;
-
 	private String lang;
+	public UpdateDNSSLBWeightRequest() {
+		super("Alidns", "2015-01-09", "UpdateDNSSLBWeight", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Integer getWeight() {
+		return this.weight;
+	}
+
+	public void setWeight(Integer weight) {
+		this.weight = weight;
+		if(weight != null){
+			putQueryParameter("Weight", weight.toString());
+		}
+	}
 
 	public String getRecordId() {
 		return this.recordId;
@@ -53,17 +71,6 @@ public class UpdateDNSSLBWeightRequest extends RpcAcsRequest<UpdateDNSSLBWeightR
 		this.userClientIp = userClientIp;
 		if(userClientIp != null){
 			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public Integer getWeight() {
-		return this.weight;
-	}
-
-	public void setWeight(Integer weight) {
-		this.weight = weight;
-		if(weight != null){
-			putQueryParameter("Weight", weight.toString());
 		}
 	}
 

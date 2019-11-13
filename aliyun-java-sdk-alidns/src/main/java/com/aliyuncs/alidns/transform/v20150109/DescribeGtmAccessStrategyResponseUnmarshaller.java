@@ -37,6 +37,10 @@ public class DescribeGtmAccessStrategyResponseUnmarshaller {
 		describeGtmAccessStrategyResponse.setAccessMode(_ctx.stringValue("DescribeGtmAccessStrategyResponse.AccessMode"));
 		describeGtmAccessStrategyResponse.setAccessStatus(_ctx.stringValue("DescribeGtmAccessStrategyResponse.AccessStatus"));
 		describeGtmAccessStrategyResponse.setInstanceId(_ctx.stringValue("DescribeGtmAccessStrategyResponse.InstanceId"));
+		describeGtmAccessStrategyResponse.setDefaultAddrPoolStatus(_ctx.stringValue("DescribeGtmAccessStrategyResponse.DefaultAddrPoolStatus"));
+		describeGtmAccessStrategyResponse.setFailoverAddrPoolStatus(_ctx.stringValue("DescribeGtmAccessStrategyResponse.FailoverAddrPoolStatus"));
+		describeGtmAccessStrategyResponse.setDefaultAddrPoolMonitorStatus(_ctx.stringValue("DescribeGtmAccessStrategyResponse.DefaultAddrPoolMonitorStatus"));
+		describeGtmAccessStrategyResponse.setFailoverAddrPoolMonitorStatus(_ctx.stringValue("DescribeGtmAccessStrategyResponse.FailoverAddrPoolMonitorStatus"));
 
 		List<Line> lines = new ArrayList<Line>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGtmAccessStrategyResponse.Lines.Length"); i++) {

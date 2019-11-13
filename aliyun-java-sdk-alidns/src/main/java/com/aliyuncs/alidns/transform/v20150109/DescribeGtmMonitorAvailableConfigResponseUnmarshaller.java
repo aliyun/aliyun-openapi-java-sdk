@@ -37,6 +37,8 @@ public class DescribeGtmMonitorAvailableConfigResponseUnmarshaller {
 			ispCityNode.setCityCode(_ctx.stringValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].CityCode"));
 			ispCityNode.setDefaultSelected(_ctx.booleanValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].DefaultSelected"));
 			ispCityNode.setMainland(_ctx.booleanValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].Mainland"));
+			ispCityNode.setGroupType(_ctx.stringValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].GroupType"));
+			ispCityNode.setGroupName(_ctx.stringValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].GroupName"));
 
 			ispCityNodes.add(ispCityNode);
 		}

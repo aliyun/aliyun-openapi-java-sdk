@@ -111,6 +111,14 @@ public class DescribeGtmAccessStrategiesResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String defaultAddrPoolStatus;
+
+		private String failoverAddrPoolStatus;
+
+		private String defaultAddrPoolMonitorStatus;
+
+		private String failoverAddrPoolMonitorStatus;
+
 		private List<Line> lines;
 
 		public String getStrategyId() {
@@ -207,6 +215,38 @@ public class DescribeGtmAccessStrategiesResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getDefaultAddrPoolStatus() {
+			return this.defaultAddrPoolStatus;
+		}
+
+		public void setDefaultAddrPoolStatus(String defaultAddrPoolStatus) {
+			this.defaultAddrPoolStatus = defaultAddrPoolStatus;
+		}
+
+		public String getFailoverAddrPoolStatus() {
+			return this.failoverAddrPoolStatus;
+		}
+
+		public void setFailoverAddrPoolStatus(String failoverAddrPoolStatus) {
+			this.failoverAddrPoolStatus = failoverAddrPoolStatus;
+		}
+
+		public String getDefaultAddrPoolMonitorStatus() {
+			return this.defaultAddrPoolMonitorStatus;
+		}
+
+		public void setDefaultAddrPoolMonitorStatus(String defaultAddrPoolMonitorStatus) {
+			this.defaultAddrPoolMonitorStatus = defaultAddrPoolMonitorStatus;
+		}
+
+		public String getFailoverAddrPoolMonitorStatus() {
+			return this.failoverAddrPoolMonitorStatus;
+		}
+
+		public void setFailoverAddrPoolMonitorStatus(String failoverAddrPoolMonitorStatus) {
+			this.failoverAddrPoolMonitorStatus = failoverAddrPoolMonitorStatus;
 		}
 
 		public List<Line> getLines() {

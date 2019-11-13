@@ -15,16 +15,15 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeBatchResultCountRequest extends RpcAcsRequest<DescribeBatchResultCountResponse> {
-	
-	public DescribeBatchResultCountRequest() {
-		super("Alidns", "2015-01-09", "DescribeBatchResultCount", "Alidns");
-	}
+	   
 
 	private String batchType;
 
@@ -33,6 +32,14 @@ public class DescribeBatchResultCountRequest extends RpcAcsRequest<DescribeBatch
 	private String lang;
 
 	private Long taskId;
+	public DescribeBatchResultCountRequest() {
+		super("Alidns", "2015-01-09", "DescribeBatchResultCount", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getBatchType() {
 		return this.batchType;

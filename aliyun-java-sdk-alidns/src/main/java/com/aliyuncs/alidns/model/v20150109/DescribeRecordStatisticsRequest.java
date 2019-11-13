@@ -15,26 +15,33 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeRecordStatisticsRequest extends RpcAcsRequest<DescribeRecordStatisticsResponse> {
-	
-	public DescribeRecordStatisticsRequest() {
-		super("Alidns", "2015-01-09", "DescribeRecordStatistics", "Alidns");
-	}
+	   
 
 	private String rr;
 
-	private String endDate;
-
 	private String domainName;
 
-	private String lang;
-
 	private String startDate;
+
+	private String endDate;
+
+	private String lang;
+	public DescribeRecordStatisticsRequest() {
+		super("Alidns", "2015-01-09", "DescribeRecordStatistics", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getRr() {
 		return this.rr;
@@ -44,17 +51,6 @@ public class DescribeRecordStatisticsRequest extends RpcAcsRequest<DescribeRecor
 		this.rr = rr;
 		if(rr != null){
 			putQueryParameter("Rr", rr);
-		}
-	}
-
-	public String getEndDate() {
-		return this.endDate;
-	}
-
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putQueryParameter("EndDate", endDate);
 		}
 	}
 
@@ -69,17 +65,6 @@ public class DescribeRecordStatisticsRequest extends RpcAcsRequest<DescribeRecor
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
 	public String getStartDate() {
 		return this.startDate;
 	}
@@ -88,6 +73,28 @@ public class DescribeRecordStatisticsRequest extends RpcAcsRequest<DescribeRecor
 		this.startDate = startDate;
 		if(startDate != null){
 			putQueryParameter("StartDate", startDate);
+		}
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putQueryParameter("EndDate", endDate);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

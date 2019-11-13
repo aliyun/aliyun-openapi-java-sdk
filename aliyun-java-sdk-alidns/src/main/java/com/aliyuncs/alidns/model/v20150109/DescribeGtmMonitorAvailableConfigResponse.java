@@ -59,6 +59,10 @@ public class DescribeGtmMonitorAvailableConfigResponse extends AcsResponse {
 
 		private Boolean mainland;
 
+		private String groupType;
+
+		private String groupName;
+
 		public String getIspName() {
 			return this.ispName;
 		}
@@ -105,6 +109,22 @@ public class DescribeGtmMonitorAvailableConfigResponse extends AcsResponse {
 
 		public void setMainland(Boolean mainland) {
 			this.mainland = mainland;
+		}
+
+		public String getGroupType() {
+			return this.groupType;
+		}
+
+		public void setGroupType(String groupType) {
+			this.groupType = groupType;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 	}
 

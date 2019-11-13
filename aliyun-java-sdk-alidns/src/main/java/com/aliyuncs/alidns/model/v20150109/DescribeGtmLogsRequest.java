@@ -15,16 +15,21 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeGtmLogsRequest extends RpcAcsRequest<DescribeGtmLogsResponse> {
-	
-	public DescribeGtmLogsRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmLogs", "Alidns");
-	}
+	   
+
+	private Long startTimestamp;
+
+	private Integer pageNumber;
+
+	private Long endTimestamp;
 
 	private String instanceId;
 
@@ -33,12 +38,47 @@ public class DescribeGtmLogsRequest extends RpcAcsRequest<DescribeGtmLogsRespons
 	private String lang;
 
 	private String keyword;
+	public DescribeGtmLogsRequest() {
+		super("Alidns", "2015-01-09", "DescribeGtmLogs", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private Long startTimestamp;
+	public Long getStartTimestamp() {
+		return this.startTimestamp;
+	}
 
-	private Integer pageNumber;
+	public void setStartTimestamp(Long startTimestamp) {
+		this.startTimestamp = startTimestamp;
+		if(startTimestamp != null){
+			putQueryParameter("StartTimestamp", startTimestamp.toString());
+		}
+	}
 
-	private Long endTimestamp;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getEndTimestamp() {
+		return this.endTimestamp;
+	}
+
+	public void setEndTimestamp(Long endTimestamp) {
+		this.endTimestamp = endTimestamp;
+		if(endTimestamp != null){
+			putQueryParameter("EndTimestamp", endTimestamp.toString());
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -81,39 +121,6 @@ public class DescribeGtmLogsRequest extends RpcAcsRequest<DescribeGtmLogsRespons
 		this.keyword = keyword;
 		if(keyword != null){
 			putQueryParameter("Keyword", keyword);
-		}
-	}
-
-	public Long getStartTimestamp() {
-		return this.startTimestamp;
-	}
-
-	public void setStartTimestamp(Long startTimestamp) {
-		this.startTimestamp = startTimestamp;
-		if(startTimestamp != null){
-			putQueryParameter("StartTimestamp", startTimestamp.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Long getEndTimestamp() {
-		return this.endTimestamp;
-	}
-
-	public void setEndTimestamp(Long endTimestamp) {
-		this.endTimestamp = endTimestamp;
-		if(endTimestamp != null){
-			putQueryParameter("EndTimestamp", endTimestamp.toString());
 		}
 	}
 

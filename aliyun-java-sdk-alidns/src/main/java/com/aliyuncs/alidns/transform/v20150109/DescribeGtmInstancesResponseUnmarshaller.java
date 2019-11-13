@@ -48,6 +48,8 @@ public class DescribeGtmInstancesResponseUnmarshaller {
 			gtmInstance.setExpireTimestamp(_ctx.longValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].ExpireTimestamp"));
 			gtmInstance.setAlertGroup(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].AlertGroup"));
 			gtmInstance.setCnameMode(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].CnameMode"));
+			gtmInstance.setAccessStrategyNum(_ctx.integerValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].AccessStrategyNum"));
+			gtmInstance.setAddressPoolNum(_ctx.integerValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].AddressPoolNum"));
 
 			gtmInstances.add(gtmInstance);
 		}

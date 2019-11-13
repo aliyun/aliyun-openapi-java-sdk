@@ -15,26 +15,19 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDomainRecordsRequest extends RpcAcsRequest<DescribeDomainRecordsResponse> {
-	
-	public DescribeDomainRecordsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomainRecords", "Alidns");
-	}
+	   
 
 	private String valueKeyWord;
 
 	private String line;
-
-	private Long groupId;
-
-	private String domainName;
-
-	private String orderBy;
 
 	private String type;
 
@@ -42,19 +35,33 @@ public class DescribeDomainRecordsRequest extends RpcAcsRequest<DescribeDomainRe
 
 	private Long pageSize;
 
-	private String searchMode;
-
 	private String lang;
 
 	private String keyWord;
-
-	private String typeKeyWord;
 
 	private String rRKeyWord;
 
 	private String direction;
 
+	private Long groupId;
+
+	private String domainName;
+
+	private String orderBy;
+
+	private String searchMode;
+
+	private String typeKeyWord;
+
 	private String status;
+	public DescribeDomainRecordsRequest() {
+		super("Alidns", "2015-01-09", "DescribeDomainRecords", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getValueKeyWord() {
 		return this.valueKeyWord;
@@ -75,39 +82,6 @@ public class DescribeDomainRecordsRequest extends RpcAcsRequest<DescribeDomainRe
 		this.line = line;
 		if(line != null){
 			putQueryParameter("Line", line);
-		}
-	}
-
-	public Long getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(Long groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId.toString());
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getOrderBy() {
-		return this.orderBy;
-	}
-
-	public void setOrderBy(String orderBy) {
-		this.orderBy = orderBy;
-		if(orderBy != null){
-			putQueryParameter("OrderBy", orderBy);
 		}
 	}
 
@@ -144,17 +118,6 @@ public class DescribeDomainRecordsRequest extends RpcAcsRequest<DescribeDomainRe
 		}
 	}
 
-	public String getSearchMode() {
-		return this.searchMode;
-	}
-
-	public void setSearchMode(String searchMode) {
-		this.searchMode = searchMode;
-		if(searchMode != null){
-			putQueryParameter("SearchMode", searchMode);
-		}
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -177,17 +140,6 @@ public class DescribeDomainRecordsRequest extends RpcAcsRequest<DescribeDomainRe
 		}
 	}
 
-	public String getTypeKeyWord() {
-		return this.typeKeyWord;
-	}
-
-	public void setTypeKeyWord(String typeKeyWord) {
-		this.typeKeyWord = typeKeyWord;
-		if(typeKeyWord != null){
-			putQueryParameter("TypeKeyWord", typeKeyWord);
-		}
-	}
-
 	public String getRRKeyWord() {
 		return this.rRKeyWord;
 	}
@@ -207,6 +159,61 @@ public class DescribeDomainRecordsRequest extends RpcAcsRequest<DescribeDomainRe
 		this.direction = direction;
 		if(direction != null){
 			putQueryParameter("Direction", direction);
+		}
+	}
+
+	public Long getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(Long groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId.toString());
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putQueryParameter("OrderBy", orderBy);
+		}
+	}
+
+	public String getSearchMode() {
+		return this.searchMode;
+	}
+
+	public void setSearchMode(String searchMode) {
+		this.searchMode = searchMode;
+		if(searchMode != null){
+			putQueryParameter("SearchMode", searchMode);
+		}
+	}
+
+	public String getTypeKeyWord() {
+		return this.typeKeyWord;
+	}
+
+	public void setTypeKeyWord(String typeKeyWord) {
+		this.typeKeyWord = typeKeyWord;
+		if(typeKeyWord != null){
+			putQueryParameter("TypeKeyWord", typeKeyWord);
 		}
 	}
 

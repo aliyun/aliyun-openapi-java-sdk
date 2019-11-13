@@ -15,38 +15,34 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddGtmAccessStrategyRequest extends RpcAcsRequest<AddGtmAccessStrategyResponse> {
-	
-	public AddGtmAccessStrategyRequest() {
-		super("Alidns", "2015-01-09", "AddGtmAccessStrategy", "Alidns");
-	}
-
-	private String strategyName;
+	   
 
 	private String defaultAddrPoolId;
+
+	private String failoverAddrPoolId;
+
+	private String strategyName;
 
 	private String accessLines;
 
 	private String instanceId;
 
-	private String failoverAddrPoolId;
-
 	private String lang;
-
-	public String getStrategyName() {
-		return this.strategyName;
-	}
-
-	public void setStrategyName(String strategyName) {
-		this.strategyName = strategyName;
-		if(strategyName != null){
-			putQueryParameter("StrategyName", strategyName);
-		}
+	public AddGtmAccessStrategyRequest() {
+		super("Alidns", "2015-01-09", "AddGtmAccessStrategy", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDefaultAddrPoolId() {
@@ -57,6 +53,28 @@ public class AddGtmAccessStrategyRequest extends RpcAcsRequest<AddGtmAccessStrat
 		this.defaultAddrPoolId = defaultAddrPoolId;
 		if(defaultAddrPoolId != null){
 			putQueryParameter("DefaultAddrPoolId", defaultAddrPoolId);
+		}
+	}
+
+	public String getFailoverAddrPoolId() {
+		return this.failoverAddrPoolId;
+	}
+
+	public void setFailoverAddrPoolId(String failoverAddrPoolId) {
+		this.failoverAddrPoolId = failoverAddrPoolId;
+		if(failoverAddrPoolId != null){
+			putQueryParameter("FailoverAddrPoolId", failoverAddrPoolId);
+		}
+	}
+
+	public String getStrategyName() {
+		return this.strategyName;
+	}
+
+	public void setStrategyName(String strategyName) {
+		this.strategyName = strategyName;
+		if(strategyName != null){
+			putQueryParameter("StrategyName", strategyName);
 		}
 	}
 
@@ -79,17 +97,6 @@ public class AddGtmAccessStrategyRequest extends RpcAcsRequest<AddGtmAccessStrat
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getFailoverAddrPoolId() {
-		return this.failoverAddrPoolId;
-	}
-
-	public void setFailoverAddrPoolId(String failoverAddrPoolId) {
-		this.failoverAddrPoolId = failoverAddrPoolId;
-		if(failoverAddrPoolId != null){
-			putQueryParameter("FailoverAddrPoolId", failoverAddrPoolId);
 		}
 	}
 

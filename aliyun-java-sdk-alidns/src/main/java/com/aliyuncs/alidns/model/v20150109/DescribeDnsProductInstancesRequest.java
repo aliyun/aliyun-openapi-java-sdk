@@ -15,16 +15,17 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDnsProductInstancesRequest extends RpcAcsRequest<DescribeDnsProductInstancesResponse> {
-	
-	public DescribeDnsProductInstancesRequest() {
-		super("Alidns", "2015-01-09", "DescribeDnsProductInstances", "Alidns");
-	}
+	   
+
+	private Long pageNumber;
 
 	private String userClientIp;
 
@@ -33,8 +34,25 @@ public class DescribeDnsProductInstancesRequest extends RpcAcsRequest<DescribeDn
 	private String lang;
 
 	private String versionCode;
+	public DescribeDnsProductInstancesRequest() {
+		super("Alidns", "2015-01-09", "DescribeDnsProductInstances", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private Long pageNumber;
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;
@@ -77,17 +95,6 @@ public class DescribeDnsProductInstancesRequest extends RpcAcsRequest<DescribeDn
 		this.versionCode = versionCode;
 		if(versionCode != null){
 			putQueryParameter("VersionCode", versionCode);
-		}
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

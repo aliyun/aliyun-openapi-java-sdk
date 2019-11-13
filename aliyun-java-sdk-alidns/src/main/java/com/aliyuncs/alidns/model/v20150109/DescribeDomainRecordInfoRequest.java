@@ -15,22 +15,29 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDomainRecordInfoRequest extends RpcAcsRequest<DescribeDomainRecordInfoResponse> {
-	
-	public DescribeDomainRecordInfoRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomainRecordInfo", "Alidns");
-	}
+	   
 
 	private String recordId;
 
 	private String userClientIp;
 
 	private String lang;
+	public DescribeDomainRecordInfoRequest() {
+		super("Alidns", "2015-01-09", "DescribeDomainRecordInfo", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getRecordId() {
 		return this.recordId;

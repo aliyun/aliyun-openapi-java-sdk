@@ -15,64 +15,38 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDomainStatisticsSummaryRequest extends RpcAcsRequest<DescribeDomainStatisticsSummaryResponse> {
-	
-	public DescribeDomainStatisticsSummaryRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomainStatisticsSummary", "Alidns");
-	}
-
-	private String endDate;
-
-	private Long pageSize;
-
-	private String searchMode;
+	   
 
 	private Long threshold;
 
-	private String lang;
-
 	private String startDate;
-
-	private String keyword;
 
 	private Long pageNumber;
 
-	public String getEndDate() {
-		return this.endDate;
-	}
+	private Long pageSize;
 
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putQueryParameter("EndDate", endDate);
-		}
-	}
+	private String lang;
 
-	public Long getPageSize() {
-		return this.pageSize;
-	}
+	private String keyword;
 
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
+	private String endDate;
 
-	public String getSearchMode() {
-		return this.searchMode;
-	}
-
-	public void setSearchMode(String searchMode) {
-		this.searchMode = searchMode;
-		if(searchMode != null){
-			putQueryParameter("SearchMode", searchMode);
-		}
+	private String searchMode;
+	public DescribeDomainStatisticsSummaryRequest() {
+		super("Alidns", "2015-01-09", "DescribeDomainStatisticsSummary", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getThreshold() {
@@ -83,17 +57,6 @@ public class DescribeDomainStatisticsSummaryRequest extends RpcAcsRequest<Descri
 		this.threshold = threshold;
 		if(threshold != null){
 			putQueryParameter("Threshold", threshold.toString());
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
 		}
 	}
 
@@ -108,6 +71,39 @@ public class DescribeDomainStatisticsSummaryRequest extends RpcAcsRequest<Descri
 		}
 	}
 
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
 	public String getKeyword() {
 		return this.keyword;
 	}
@@ -119,14 +115,25 @@ public class DescribeDomainStatisticsSummaryRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
+	public String getEndDate() {
+		return this.endDate;
 	}
 
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putQueryParameter("EndDate", endDate);
+		}
+	}
+
+	public String getSearchMode() {
+		return this.searchMode;
+	}
+
+	public void setSearchMode(String searchMode) {
+		this.searchMode = searchMode;
+		if(searchMode != null){
+			putQueryParameter("SearchMode", searchMode);
 		}
 	}
 

@@ -37,8 +37,6 @@ public class DescribeGtmMonitorConfigResponse extends AcsResponse {
 
 	private Long updateTimestamp;
 
-	private String name;
-
 	private String protocolType;
 
 	private Integer interval;
@@ -99,14 +97,6 @@ public class DescribeGtmMonitorConfigResponse extends AcsResponse {
 		this.updateTimestamp = updateTimestamp;
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getProtocolType() {
 		return this.protocolType;
 	}
@@ -165,6 +155,10 @@ public class DescribeGtmMonitorConfigResponse extends AcsResponse {
 
 		private String cityCode;
 
+		private String ispCode;
+
+		private String ispName;
+
 		public String getCountryName() {
 			return this.countryName;
 		}
@@ -195,6 +189,22 @@ public class DescribeGtmMonitorConfigResponse extends AcsResponse {
 
 		public void setCityCode(String cityCode) {
 			this.cityCode = cityCode;
+		}
+
+		public String getIspCode() {
+			return this.ispCode;
+		}
+
+		public void setIspCode(String ispCode) {
+			this.ispCode = ispCode;
+		}
+
+		public String getIspName() {
+			return this.ispName;
+		}
+
+		public void setIspName(String ispName) {
+			this.ispName = ispName;
 		}
 	}
 

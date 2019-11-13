@@ -15,30 +15,50 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDomainsRequest extends RpcAcsRequest<DescribeDomainsResponse> {
-	
-	public DescribeDomainsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomains", "Alidns");
-	}
+	   
+
+	private Long pageNumber;
 
 	private String resourceGroupId;
 
-	private String groupId;
-
 	private Long pageSize;
-
-	private String searchMode;
 
 	private String lang;
 
 	private String keyWord;
 
-	private Long pageNumber;
+	private Boolean starmark;
+
+	private String groupId;
+
+	private String searchMode;
+	public DescribeDomainsRequest() {
+		super("Alidns", "2015-01-09", "DescribeDomains", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
@@ -51,17 +71,6 @@ public class DescribeDomainsRequest extends RpcAcsRequest<DescribeDomainsRespons
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
@@ -70,17 +79,6 @@ public class DescribeDomainsRequest extends RpcAcsRequest<DescribeDomainsRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getSearchMode() {
-		return this.searchMode;
-	}
-
-	public void setSearchMode(String searchMode) {
-		this.searchMode = searchMode;
-		if(searchMode != null){
-			putQueryParameter("SearchMode", searchMode);
 		}
 	}
 
@@ -106,14 +104,36 @@ public class DescribeDomainsRequest extends RpcAcsRequest<DescribeDomainsRespons
 		}
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
+	public Boolean getStarmark() {
+		return this.starmark;
 	}
 
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setStarmark(Boolean starmark) {
+		this.starmark = starmark;
+		if(starmark != null){
+			putQueryParameter("Starmark", starmark.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getSearchMode() {
+		return this.searchMode;
+	}
+
+	public void setSearchMode(String searchMode) {
+		this.searchMode = searchMode;
+		if(searchMode != null){
+			putQueryParameter("SearchMode", searchMode);
 		}
 	}
 

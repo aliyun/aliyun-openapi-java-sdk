@@ -15,18 +15,25 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateGtmInstanceGlobalConfigRequest extends RpcAcsRequest<UpdateGtmInstanceGlobalConfigResponse> {
-	
-	public UpdateGtmInstanceGlobalConfigRequest() {
-		super("Alidns", "2015-01-09", "UpdateGtmInstanceGlobalConfig", "Alidns");
-	}
+	   
 
 	private String alertGroup;
+
+	private String cnameMode;
+
+	private String lbaStrategy;
+
+	private Integer ttl;
+
+	private String cnameCustomDomainName;
 
 	private String instanceId;
 
@@ -34,15 +41,15 @@ public class UpdateGtmInstanceGlobalConfigRequest extends RpcAcsRequest<UpdateGt
 
 	private String userDomainName;
 
-	private String cnameMode;
-
-	private String lbaStrategy;
-
 	private String lang;
-
-	private Integer ttl;
-
-	private String cnameCustomDomainName;
+	public UpdateGtmInstanceGlobalConfigRequest() {
+		super("Alidns", "2015-01-09", "UpdateGtmInstanceGlobalConfig", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAlertGroup() {
 		return this.alertGroup;
@@ -52,6 +59,50 @@ public class UpdateGtmInstanceGlobalConfigRequest extends RpcAcsRequest<UpdateGt
 		this.alertGroup = alertGroup;
 		if(alertGroup != null){
 			putQueryParameter("AlertGroup", alertGroup);
+		}
+	}
+
+	public String getCnameMode() {
+		return this.cnameMode;
+	}
+
+	public void setCnameMode(String cnameMode) {
+		this.cnameMode = cnameMode;
+		if(cnameMode != null){
+			putQueryParameter("CnameMode", cnameMode);
+		}
+	}
+
+	public String getLbaStrategy() {
+		return this.lbaStrategy;
+	}
+
+	public void setLbaStrategy(String lbaStrategy) {
+		this.lbaStrategy = lbaStrategy;
+		if(lbaStrategy != null){
+			putQueryParameter("LbaStrategy", lbaStrategy);
+		}
+	}
+
+	public Integer getTtl() {
+		return this.ttl;
+	}
+
+	public void setTtl(Integer ttl) {
+		this.ttl = ttl;
+		if(ttl != null){
+			putQueryParameter("Ttl", ttl.toString());
+		}
+	}
+
+	public String getCnameCustomDomainName() {
+		return this.cnameCustomDomainName;
+	}
+
+	public void setCnameCustomDomainName(String cnameCustomDomainName) {
+		this.cnameCustomDomainName = cnameCustomDomainName;
+		if(cnameCustomDomainName != null){
+			putQueryParameter("CnameCustomDomainName", cnameCustomDomainName);
 		}
 	}
 
@@ -88,28 +139,6 @@ public class UpdateGtmInstanceGlobalConfigRequest extends RpcAcsRequest<UpdateGt
 		}
 	}
 
-	public String getCnameMode() {
-		return this.cnameMode;
-	}
-
-	public void setCnameMode(String cnameMode) {
-		this.cnameMode = cnameMode;
-		if(cnameMode != null){
-			putQueryParameter("CnameMode", cnameMode);
-		}
-	}
-
-	public String getLbaStrategy() {
-		return this.lbaStrategy;
-	}
-
-	public void setLbaStrategy(String lbaStrategy) {
-		this.lbaStrategy = lbaStrategy;
-		if(lbaStrategy != null){
-			putQueryParameter("LbaStrategy", lbaStrategy);
-		}
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -118,28 +147,6 @@ public class UpdateGtmInstanceGlobalConfigRequest extends RpcAcsRequest<UpdateGt
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Integer getTtl() {
-		return this.ttl;
-	}
-
-	public void setTtl(Integer ttl) {
-		this.ttl = ttl;
-		if(ttl != null){
-			putQueryParameter("Ttl", ttl.toString());
-		}
-	}
-
-	public String getCnameCustomDomainName() {
-		return this.cnameCustomDomainName;
-	}
-
-	public void setCnameCustomDomainName(String cnameCustomDomainName) {
-		this.cnameCustomDomainName = cnameCustomDomainName;
-		if(cnameCustomDomainName != null){
-			putQueryParameter("CnameCustomDomainName", cnameCustomDomainName);
 		}
 	}
 

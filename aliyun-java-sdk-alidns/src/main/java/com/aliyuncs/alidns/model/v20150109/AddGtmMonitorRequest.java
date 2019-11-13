@@ -16,22 +16,21 @@ package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddGtmMonitorRequest extends RpcAcsRequest<AddGtmMonitorResponse> {
-	
-	public AddGtmMonitorRequest() {
-		super("Alidns", "2015-01-09", "AddGtmMonitor", "Alidns");
-	}
+	   
 
 	private String monitorExtendInfo;
 
-	private String addrPoolId;
+	private Integer timeout;
 
-	private String name;
+	private String addrPoolId;
 
 	private Integer evaluationCount;
 
@@ -41,9 +40,15 @@ public class AddGtmMonitorRequest extends RpcAcsRequest<AddGtmMonitorResponse> {
 
 	private String lang;
 
-	private Integer timeout;
-
 	private List<IspCityNode> ispCityNodes;
+	public AddGtmMonitorRequest() {
+		super("Alidns", "2015-01-09", "AddGtmMonitor", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getMonitorExtendInfo() {
 		return this.monitorExtendInfo;
@@ -56,6 +61,17 @@ public class AddGtmMonitorRequest extends RpcAcsRequest<AddGtmMonitorResponse> {
 		}
 	}
 
+	public Integer getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(Integer timeout) {
+		this.timeout = timeout;
+		if(timeout != null){
+			putQueryParameter("Timeout", timeout.toString());
+		}
+	}
+
 	public String getAddrPoolId() {
 		return this.addrPoolId;
 	}
@@ -64,17 +80,6 @@ public class AddGtmMonitorRequest extends RpcAcsRequest<AddGtmMonitorResponse> {
 		this.addrPoolId = addrPoolId;
 		if(addrPoolId != null){
 			putQueryParameter("AddrPoolId", addrPoolId);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
 		}
 	}
 
@@ -119,17 +124,6 @@ public class AddGtmMonitorRequest extends RpcAcsRequest<AddGtmMonitorResponse> {
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Integer getTimeout() {
-		return this.timeout;
-	}
-
-	public void setTimeout(Integer timeout) {
-		this.timeout = timeout;
-		if(timeout != null){
-			putQueryParameter("Timeout", timeout.toString());
 		}
 	}
 

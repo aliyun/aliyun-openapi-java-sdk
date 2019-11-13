@@ -16,28 +16,141 @@ package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddGtmAddressPoolRequest extends RpcAcsRequest<AddGtmAddressPoolResponse> {
-	
-	public AddGtmAddressPoolRequest() {
-		super("Alidns", "2015-01-09", "AddGtmAddressPool", "Alidns");
-	}
+	   
+
+	private String monitorExtendInfo;
+
+	private String type;
+
+	private Integer timeout;
+
+	private Integer minAvailableAddrNum;
+
+	private Integer evaluationCount;
+
+	private String lang;
+
+	private List<Addr> addrs;
+
+	private String monitorStatus;
 
 	private String instanceId;
 
 	private String name;
 
-	private String lang;
+	private String protocolType;
 
-	private String type;
+	private Integer interval;
 
-	private List<Addr> addrs;
+	private List<IspCityNode> ispCityNodes;
+	public AddGtmAddressPoolRequest() {
+		super("Alidns", "2015-01-09", "AddGtmAddressPool", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private Integer minAvailableAddrNum;
+	public String getMonitorExtendInfo() {
+		return this.monitorExtendInfo;
+	}
+
+	public void setMonitorExtendInfo(String monitorExtendInfo) {
+		this.monitorExtendInfo = monitorExtendInfo;
+		if(monitorExtendInfo != null){
+			putQueryParameter("MonitorExtendInfo", monitorExtendInfo);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public Integer getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(Integer timeout) {
+		this.timeout = timeout;
+		if(timeout != null){
+			putQueryParameter("Timeout", timeout.toString());
+		}
+	}
+
+	public Integer getMinAvailableAddrNum() {
+		return this.minAvailableAddrNum;
+	}
+
+	public void setMinAvailableAddrNum(Integer minAvailableAddrNum) {
+		this.minAvailableAddrNum = minAvailableAddrNum;
+		if(minAvailableAddrNum != null){
+			putQueryParameter("MinAvailableAddrNum", minAvailableAddrNum.toString());
+		}
+	}
+
+	public Integer getEvaluationCount() {
+		return this.evaluationCount;
+	}
+
+	public void setEvaluationCount(Integer evaluationCount) {
+		this.evaluationCount = evaluationCount;
+		if(evaluationCount != null){
+			putQueryParameter("EvaluationCount", evaluationCount.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public List<Addr> getAddrs() {
+		return this.addrs;
+	}
+
+	public void setAddrs(List<Addr> addrs) {
+		this.addrs = addrs;	
+		if (addrs != null) {
+			for (int depth1 = 0; depth1 < addrs.size(); depth1++) {
+				putQueryParameter("Addr." + (depth1 + 1) + ".Mode" , addrs.get(depth1).getMode());
+				putQueryParameter("Addr." + (depth1 + 1) + ".LbaWeight" , addrs.get(depth1).getLbaWeight());
+				putQueryParameter("Addr." + (depth1 + 1) + ".Value" , addrs.get(depth1).getValue());
+			}
+		}	
+	}
+
+	public String getMonitorStatus() {
+		return this.monitorStatus;
+	}
+
+	public void setMonitorStatus(String monitorStatus) {
+		this.monitorStatus = monitorStatus;
+		if(monitorStatus != null){
+			putQueryParameter("MonitorStatus", monitorStatus);
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -61,52 +174,40 @@ public class AddGtmAddressPoolRequest extends RpcAcsRequest<AddGtmAddressPoolRes
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
+	public String getProtocolType() {
+		return this.protocolType;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
+	public void setProtocolType(String protocolType) {
+		this.protocolType = protocolType;
+		if(protocolType != null){
+			putQueryParameter("ProtocolType", protocolType);
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public Integer getInterval() {
+		return this.interval;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setInterval(Integer interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval.toString());
 		}
 	}
 
-	public List<Addr> getAddrs() {
-		return this.addrs;
+	public List<IspCityNode> getIspCityNodes() {
+		return this.ispCityNodes;
 	}
 
-	public void setAddrs(List<Addr> addrs) {
-		this.addrs = addrs;	
-		if (addrs != null) {
-			for (int depth1 = 0; depth1 < addrs.size(); depth1++) {
-				putQueryParameter("Addr." + (depth1 + 1) + ".Mode" , addrs.get(depth1).getMode());
-				putQueryParameter("Addr." + (depth1 + 1) + ".LbaWeight" , addrs.get(depth1).getLbaWeight());
-				putQueryParameter("Addr." + (depth1 + 1) + ".Value" , addrs.get(depth1).getValue());
+	public void setIspCityNodes(List<IspCityNode> ispCityNodes) {
+		this.ispCityNodes = ispCityNodes;	
+		if (ispCityNodes != null) {
+			for (int depth1 = 0; depth1 < ispCityNodes.size(); depth1++) {
+				putQueryParameter("IspCityNode." + (depth1 + 1) + ".CityCode" , ispCityNodes.get(depth1).getCityCode());
+				putQueryParameter("IspCityNode." + (depth1 + 1) + ".IspCode" , ispCityNodes.get(depth1).getIspCode());
 			}
 		}	
-	}
-
-	public Integer getMinAvailableAddrNum() {
-		return this.minAvailableAddrNum;
-	}
-
-	public void setMinAvailableAddrNum(Integer minAvailableAddrNum) {
-		this.minAvailableAddrNum = minAvailableAddrNum;
-		if(minAvailableAddrNum != null){
-			putQueryParameter("MinAvailableAddrNum", minAvailableAddrNum.toString());
-		}
 	}
 
 	public static class Addr {
@@ -139,6 +240,29 @@ public class AddGtmAddressPoolRequest extends RpcAcsRequest<AddGtmAddressPoolRes
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+	}
+
+	public static class IspCityNode {
+
+		private String cityCode;
+
+		private String ispCode;
+
+		public String getCityCode() {
+			return this.cityCode;
+		}
+
+		public void setCityCode(String cityCode) {
+			this.cityCode = cityCode;
+		}
+
+		public String getIspCode() {
+			return this.ispCode;
+		}
+
+		public void setIspCode(String ispCode) {
+			this.ispCode = ispCode;
 		}
 	}
 

@@ -15,34 +15,30 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDomainStatisticsRequest extends RpcAcsRequest<DescribeDomainStatisticsResponse> {
-	
-	public DescribeDomainStatisticsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomainStatistics", "Alidns");
-	}
-
-	private String endDate;
+	   
 
 	private String domainName;
 
-	private String lang;
-
 	private String startDate;
 
-	public String getEndDate() {
-		return this.endDate;
-	}
+	private String endDate;
 
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putQueryParameter("EndDate", endDate);
-		}
+	private String lang;
+	public DescribeDomainStatisticsRequest() {
+		super("Alidns", "2015-01-09", "DescribeDomainStatistics", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDomainName() {
@@ -56,17 +52,6 @@ public class DescribeDomainStatisticsRequest extends RpcAcsRequest<DescribeDomai
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
 	public String getStartDate() {
 		return this.startDate;
 	}
@@ -75,6 +60,28 @@ public class DescribeDomainStatisticsRequest extends RpcAcsRequest<DescribeDomai
 		this.startDate = startDate;
 		if(startDate != null){
 			putQueryParameter("StartDate", startDate);
+		}
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putQueryParameter("EndDate", endDate);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

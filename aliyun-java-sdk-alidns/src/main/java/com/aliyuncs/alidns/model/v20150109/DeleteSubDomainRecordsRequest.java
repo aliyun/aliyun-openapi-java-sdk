@@ -15,26 +15,33 @@
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteSubDomainRecordsRequest extends RpcAcsRequest<DeleteSubDomainRecordsResponse> {
-	
-	public DeleteSubDomainRecordsRequest() {
-		super("Alidns", "2015-01-09", "DeleteSubDomainRecords", "Alidns");
-	}
+	   
 
 	private String rR;
 
-	private String userClientIp;
-
 	private String domainName;
 
-	private String lang;
-
 	private String type;
+
+	private String userClientIp;
+
+	private String lang;
+	public DeleteSubDomainRecordsRequest() {
+		super("Alidns", "2015-01-09", "DeleteSubDomainRecords", "alidns");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getRR() {
 		return this.rR;
@@ -44,17 +51,6 @@ public class DeleteSubDomainRecordsRequest extends RpcAcsRequest<DeleteSubDomain
 		this.rR = rR;
 		if(rR != null){
 			putQueryParameter("RR", rR);
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 
@@ -69,17 +65,6 @@ public class DeleteSubDomainRecordsRequest extends RpcAcsRequest<DeleteSubDomain
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
 	public String getType() {
 		return this.type;
 	}
@@ -88,6 +73,28 @@ public class DeleteSubDomainRecordsRequest extends RpcAcsRequest<DeleteSubDomain
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

@@ -1,3 +1,8 @@
+2019-11-13 Version: 2.0.11
+- Supported API UpdateDomainRemark for Update Domain Remark.
+- Supported API UpdateDomainRecordRemark for Update Record Remark.
+- Unsupported API CheckDomainRecord.
+
 2019-07-04 Version: 2.0.10
 - Supported API DescribeRecordStatisticsy for Query Volume.
 - Supported API DescribeDomainStatistics for Query Volume.
