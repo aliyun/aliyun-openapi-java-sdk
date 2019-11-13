@@ -141,7 +141,7 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 
 			private Long resourceUserId;
 
-			private Long resourceId;
+			private String resourceId;
 
 			private String commodityCode;
 
@@ -173,11 +173,11 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 				this.resourceUserId = resourceUserId;
 			}
 
-			public Long getResourceId() {
+			public String getResourceId() {
 				return this.resourceId;
 			}
 
-			public void setResourceId(Long resourceId) {
+			public void setResourceId(String resourceId) {
 				this.resourceId = resourceId;
 			}
 

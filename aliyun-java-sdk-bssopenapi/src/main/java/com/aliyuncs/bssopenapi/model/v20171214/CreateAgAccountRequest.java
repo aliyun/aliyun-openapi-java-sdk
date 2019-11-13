@@ -44,7 +44,7 @@ public class CreateAgAccountRequest extends RpcAcsRequest<CreateAgAccountRespons
 
 	private String accountAttr;
 	public CreateAgAccountRequest() {
-		super("BssOpenApi", "2017-12-14", "CreateAgAccount");
+		super("BssOpenApi", "2017-12-14", "CreateAgAccount", "BssOpenApi");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

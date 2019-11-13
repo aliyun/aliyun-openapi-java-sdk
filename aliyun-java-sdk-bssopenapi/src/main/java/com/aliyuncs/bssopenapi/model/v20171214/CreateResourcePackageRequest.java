@@ -39,7 +39,7 @@ public class CreateResourcePackageRequest extends RpcAcsRequest<CreateResourcePa
 
 	private String pricingCycle;
 	public CreateResourcePackageRequest() {
-		super("BssOpenApi", "2017-12-14", "CreateResourcePackage");
+		super("BssOpenApi", "2017-12-14", "CreateResourcePackage", "BssOpenApi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

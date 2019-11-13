@@ -29,7 +29,7 @@ public class UnsubscribeBillToOSSRequest extends RpcAcsRequest<UnsubscribeBillTo
 
 	private String multAccountRelSubscribe;
 	public UnsubscribeBillToOSSRequest() {
-		super("BssOpenApi", "2017-12-14", "UnsubscribeBillToOSS");
+		super("BssOpenApi", "2017-12-14", "UnsubscribeBillToOSS", "BssOpenApi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

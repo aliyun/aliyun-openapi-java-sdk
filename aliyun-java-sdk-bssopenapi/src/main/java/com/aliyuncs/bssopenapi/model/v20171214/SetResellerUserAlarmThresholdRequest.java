@@ -31,7 +31,7 @@ public class SetResellerUserAlarmThresholdRequest extends RpcAcsRequest<SetResel
 
 	private Long ownerId;
 	public SetResellerUserAlarmThresholdRequest() {
-		super("BssOpenApi", "2017-12-14", "SetResellerUserAlarmThreshold");
+		super("BssOpenApi", "2017-12-14", "SetResellerUserAlarmThreshold", "BssOpenApi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

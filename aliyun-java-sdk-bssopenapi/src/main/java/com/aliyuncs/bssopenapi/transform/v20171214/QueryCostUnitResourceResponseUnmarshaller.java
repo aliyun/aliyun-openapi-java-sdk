@@ -60,7 +60,7 @@ public class QueryCostUnitResourceResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList.Length"); i++) {
 			ResourceInstanceList resourceInstanceList = new ResourceInstanceList();
 			resourceInstanceList.setResourceUserId(_ctx.longValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceUserId"));
-			resourceInstanceList.setResourceId(_ctx.longValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceId"));
+			resourceInstanceList.setResourceId(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceId"));
 			resourceInstanceList.setCommodityCode(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].CommodityCode"));
 			resourceInstanceList.setResourceUserName(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceUserName"));
 			resourceInstanceList.setCommodityName(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].CommodityName"));

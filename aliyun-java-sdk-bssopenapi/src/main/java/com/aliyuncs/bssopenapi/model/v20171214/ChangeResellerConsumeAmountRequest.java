@@ -41,7 +41,7 @@ public class ChangeResellerConsumeAmountRequest extends RpcAcsRequest<ChangeRese
 
 	private String currency;
 	public ChangeResellerConsumeAmountRequest() {
-		super("BssOpenApi", "2017-12-14", "ChangeResellerConsumeAmount");
+		super("BssOpenApi", "2017-12-14", "ChangeResellerConsumeAmount", "BssOpenApi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

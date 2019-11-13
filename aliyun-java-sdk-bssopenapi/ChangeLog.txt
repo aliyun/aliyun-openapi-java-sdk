@@ -1,4 +1,7 @@
 2019-11-13 Version: 1.5.1
+- Fix ResourceId type from Long to String on QueryCostUnitResource.
+
+2019-11-13 Version: 1.5.1
 - Add new API QueryBillToOSSSubscription.
 
 2019-10-29 Version: 1.5.0

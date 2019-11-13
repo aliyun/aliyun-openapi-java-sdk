@@ -31,7 +31,7 @@ public class QueryCashCouponsRequest extends RpcAcsRequest<QueryCashCouponsRespo
 
 	private Boolean effectiveOrNot;
 	public QueryCashCouponsRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryCashCoupons");
+		super("BssOpenApi", "2017-12-14", "QueryCashCoupons", "BssOpenApi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

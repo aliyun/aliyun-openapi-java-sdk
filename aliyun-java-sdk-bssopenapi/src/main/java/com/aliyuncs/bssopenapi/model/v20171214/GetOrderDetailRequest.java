@@ -29,7 +29,7 @@ public class GetOrderDetailRequest extends RpcAcsRequest<GetOrderDetailResponse>
 
 	private Long ownerId;
 	public GetOrderDetailRequest() {
-		super("BssOpenApi", "2017-12-14", "GetOrderDetail");
+		super("BssOpenApi", "2017-12-14", "GetOrderDetail", "BssOpenApi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

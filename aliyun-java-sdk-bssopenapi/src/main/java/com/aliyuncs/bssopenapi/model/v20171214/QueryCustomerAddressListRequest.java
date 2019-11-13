@@ -31,7 +31,7 @@ public class QueryCustomerAddressListRequest extends RpcAcsRequest<QueryCustomer
 
 	private Long callerUid;
 	public QueryCustomerAddressListRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryCustomerAddressList");
+		super("BssOpenApi", "2017-12-14", "QueryCustomerAddressList", "BssOpenApi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

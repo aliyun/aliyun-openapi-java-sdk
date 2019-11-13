@@ -37,7 +37,7 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 
 	private Integer renewPeriod;
 	public RenewInstanceRequest() {
-		super("BssOpenApi", "2017-12-14", "RenewInstance");
+		super("BssOpenApi", "2017-12-14", "RenewInstance", "BssOpenApi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
