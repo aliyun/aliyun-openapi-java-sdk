@@ -15,6 +15,7 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.adb.Endpoint;
 
 /**
@@ -22,16 +23,11 @@ import com.aliyuncs.adb.Endpoint;
  * @version 
  */
 public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccountDescriptionResponse> {
-	
-	public ModifyAccountDescriptionRequest() {
-		super("adb", "2019-03-15", "ModifyAccountDescription", "ads");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String accountDescription;
 
 	private String accountName;
 
@@ -42,8 +38,14 @@ public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccount
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String accountDescription;
+	public ModifyAccountDescriptionRequest() {
+		super("adb", "2019-03-15", "ModifyAccountDescription", "ads");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,6 +55,17 @@ public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccount
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAccountDescription() {
+		return this.accountDescription;
+	}
+
+	public void setAccountDescription(String accountDescription) {
+		this.accountDescription = accountDescription;
+		if(accountDescription != null){
+			putQueryParameter("AccountDescription", accountDescription);
 		}
 	}
 
@@ -108,17 +121,6 @@ public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccount
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getAccountDescription() {
-		return this.accountDescription;
-	}
-
-	public void setAccountDescription(String accountDescription) {
-		this.accountDescription = accountDescription;
-		if(accountDescription != null){
-			putQueryParameter("AccountDescription", accountDescription);
 		}
 	}
 

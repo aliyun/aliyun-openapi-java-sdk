@@ -15,16 +15,20 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.adb.transform.v20190315.TagResourcesResponseUnmarshaller;
+import com.aliyuncs.adb.transform.v20190315.CreateDBClusterResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class TagResourcesResponse extends AcsResponse {
+public class CreateDBClusterResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String dBClusterId;
+
+	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +38,24 @@ public class TagResourcesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
+
 	@Override
-	public TagResourcesResponse getInstance(UnmarshallerContext context) {
-		return	TagResourcesResponseUnmarshaller.unmarshall(this, context);
+	public CreateDBClusterResponse getInstance(UnmarshallerContext context) {
+		return	CreateDBClusterResponseUnmarshaller.unmarshall(this, context);
 	}
 }

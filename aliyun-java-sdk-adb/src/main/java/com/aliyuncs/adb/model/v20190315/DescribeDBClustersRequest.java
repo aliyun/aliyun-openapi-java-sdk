@@ -16,6 +16,7 @@ package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.adb.Endpoint;
 
 /**
@@ -23,14 +24,7 @@ import com.aliyuncs.adb.Endpoint;
  * @version 
  */
 public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersResponse> {
-	
-	public DescribeDBClustersRequest() {
-		super("adb", "2019-03-15", "DescribeDBClusters", "ads");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -38,19 +32,27 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 
 	private String dBClusterStatus;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
-	private Long ownerId;
-
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private List<Tag> tags;
 
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
 	private String dBClusterIds;
+	public DescribeDBClustersRequest() {
+		super("adb", "2019-03-15", "DescribeDBClusters", "ads");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -82,39 +84,6 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		this.dBClusterStatus = dBClusterStatus;
 		if(dBClusterStatus != null){
 			putQueryParameter("DBClusterStatus", dBClusterStatus);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -152,6 +121,39 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getDBClusterIds() {

@@ -15,6 +15,7 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.adb.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.adb.Endpoint;
  * @version 
  */
 public class GrantOperatorPermissionRequest extends RpcAcsRequest<GrantOperatorPermissionResponse> {
-	
-	public GrantOperatorPermissionRequest() {
-		super("adb", "2019-03-15", "GrantOperatorPermission", "ads");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String privileges;
 
@@ -41,9 +35,17 @@ public class GrantOperatorPermissionRequest extends RpcAcsRequest<GrantOperatorP
 
 	private String ownerAccount;
 
-	private String expiredTime;
-
 	private Long ownerId;
+
+	private String expiredTime;
+	public GrantOperatorPermissionRequest() {
+		super("adb", "2019-03-15", "GrantOperatorPermission", "ads");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getPrivileges() {
 		return this.privileges;
@@ -100,17 +102,6 @@ public class GrantOperatorPermissionRequest extends RpcAcsRequest<GrantOperatorP
 		}
 	}
 
-	public String getExpiredTime() {
-		return this.expiredTime;
-	}
-
-	public void setExpiredTime(String expiredTime) {
-		this.expiredTime = expiredTime;
-		if(expiredTime != null){
-			putQueryParameter("ExpiredTime", expiredTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -119,6 +110,17 @@ public class GrantOperatorPermissionRequest extends RpcAcsRequest<GrantOperatorP
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getExpiredTime() {
+		return this.expiredTime;
+	}
+
+	public void setExpiredTime(String expiredTime) {
+		this.expiredTime = expiredTime;
+		if(expiredTime != null){
+			putQueryParameter("ExpiredTime", expiredTime);
 		}
 	}
 

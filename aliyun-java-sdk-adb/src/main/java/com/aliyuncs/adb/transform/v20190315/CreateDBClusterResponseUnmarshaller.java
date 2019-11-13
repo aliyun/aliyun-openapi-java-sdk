@@ -14,16 +14,18 @@
 
 package com.aliyuncs.adb.transform.v20190315;
 
-import com.aliyuncs.adb.model.v20190315.ModifyLogBackupPolicyResponse;
+import com.aliyuncs.adb.model.v20190315.CreateDBClusterResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyLogBackupPolicyResponseUnmarshaller {
+public class CreateDBClusterResponseUnmarshaller {
 
-	public static ModifyLogBackupPolicyResponse unmarshall(ModifyLogBackupPolicyResponse modifyLogBackupPolicyResponse, UnmarshallerContext _ctx) {
+	public static CreateDBClusterResponse unmarshall(CreateDBClusterResponse createDBClusterResponse, UnmarshallerContext _ctx) {
 		
-		modifyLogBackupPolicyResponse.setRequestId(_ctx.stringValue("ModifyLogBackupPolicyResponse.RequestId"));
+		createDBClusterResponse.setRequestId(_ctx.stringValue("CreateDBClusterResponse.RequestId"));
+		createDBClusterResponse.setDBClusterId(_ctx.stringValue("CreateDBClusterResponse.DBClusterId"));
+		createDBClusterResponse.setOrderId(_ctx.stringValue("CreateDBClusterResponse.OrderId"));
 	 
-	 	return modifyLogBackupPolicyResponse;
+	 	return createDBClusterResponse;
 	}
 }

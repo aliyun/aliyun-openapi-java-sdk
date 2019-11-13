@@ -15,6 +15,7 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.adb.Endpoint;
 
 /**
@@ -22,16 +23,13 @@ import com.aliyuncs.adb.Endpoint;
  * @version 
  */
 public class ModifyDBClusterAccessWhiteListRequest extends RpcAcsRequest<ModifyDBClusterAccessWhiteListResponse> {
-	
-	public ModifyDBClusterAccessWhiteListRequest() {
-		super("adb", "2019-03-15", "ModifyDBClusterAccessWhiteList", "ads");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String securityIps;
+
+	private String dBClusterIPArrayAttribute;
 
 	private String modifyMode;
 
@@ -41,13 +39,17 @@ public class ModifyDBClusterAccessWhiteListRequest extends RpcAcsRequest<ModifyD
 
 	private String ownerAccount;
 
-	private String securityIps;
-
-	private String dBClusterIPArrayName;
-
 	private Long ownerId;
 
-	private String dBClusterIPArrayAttribute;
+	private String dBClusterIPArrayName;
+	public ModifyDBClusterAccessWhiteListRequest() {
+		super("adb", "2019-03-15", "ModifyDBClusterAccessWhiteList", "ads");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -57,6 +59,28 @@ public class ModifyDBClusterAccessWhiteListRequest extends RpcAcsRequest<ModifyD
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSecurityIps() {
+		return this.securityIps;
+	}
+
+	public void setSecurityIps(String securityIps) {
+		this.securityIps = securityIps;
+		if(securityIps != null){
+			putQueryParameter("SecurityIps", securityIps);
+		}
+	}
+
+	public String getDBClusterIPArrayAttribute() {
+		return this.dBClusterIPArrayAttribute;
+	}
+
+	public void setDBClusterIPArrayAttribute(String dBClusterIPArrayAttribute) {
+		this.dBClusterIPArrayAttribute = dBClusterIPArrayAttribute;
+		if(dBClusterIPArrayAttribute != null){
+			putQueryParameter("DBClusterIPArrayAttribute", dBClusterIPArrayAttribute);
 		}
 	}
 
@@ -104,28 +128,6 @@ public class ModifyDBClusterAccessWhiteListRequest extends RpcAcsRequest<ModifyD
 		}
 	}
 
-	public String getSecurityIps() {
-		return this.securityIps;
-	}
-
-	public void setSecurityIps(String securityIps) {
-		this.securityIps = securityIps;
-		if(securityIps != null){
-			putQueryParameter("SecurityIps", securityIps);
-		}
-	}
-
-	public String getDBClusterIPArrayName() {
-		return this.dBClusterIPArrayName;
-	}
-
-	public void setDBClusterIPArrayName(String dBClusterIPArrayName) {
-		this.dBClusterIPArrayName = dBClusterIPArrayName;
-		if(dBClusterIPArrayName != null){
-			putQueryParameter("DBClusterIPArrayName", dBClusterIPArrayName);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -137,14 +139,14 @@ public class ModifyDBClusterAccessWhiteListRequest extends RpcAcsRequest<ModifyD
 		}
 	}
 
-	public String getDBClusterIPArrayAttribute() {
-		return this.dBClusterIPArrayAttribute;
+	public String getDBClusterIPArrayName() {
+		return this.dBClusterIPArrayName;
 	}
 
-	public void setDBClusterIPArrayAttribute(String dBClusterIPArrayAttribute) {
-		this.dBClusterIPArrayAttribute = dBClusterIPArrayAttribute;
-		if(dBClusterIPArrayAttribute != null){
-			putQueryParameter("DBClusterIPArrayAttribute", dBClusterIPArrayAttribute);
+	public void setDBClusterIPArrayName(String dBClusterIPArrayName) {
+		this.dBClusterIPArrayName = dBClusterIPArrayName;
+		if(dBClusterIPArrayName != null){
+			putQueryParameter("DBClusterIPArrayName", dBClusterIPArrayName);
 		}
 	}
 

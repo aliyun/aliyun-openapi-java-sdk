@@ -15,6 +15,7 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.adb.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.adb.Endpoint;
  * @version 
  */
 public class ReleaseClusterPublicConnectionRequest extends RpcAcsRequest<ReleaseClusterPublicConnectionResponse> {
-	
-	public ReleaseClusterPublicConnectionRequest() {
-		super("adb", "2019-03-15", "ReleaseClusterPublicConnection", "ads");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -40,6 +34,14 @@ public class ReleaseClusterPublicConnectionRequest extends RpcAcsRequest<Release
 	private String ownerAccount;
 
 	private Long ownerId;
+	public ReleaseClusterPublicConnectionRequest() {
+		super("adb", "2019-03-15", "ReleaseClusterPublicConnection", "ads");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

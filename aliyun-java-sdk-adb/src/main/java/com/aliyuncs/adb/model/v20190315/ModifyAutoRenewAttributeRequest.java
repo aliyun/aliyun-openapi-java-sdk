@@ -15,6 +15,7 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.adb.Endpoint;
 
 /**
@@ -22,20 +23,13 @@ import com.aliyuncs.adb.Endpoint;
  * @version 
  */
 public class ModifyAutoRenewAttributeRequest extends RpcAcsRequest<ModifyAutoRenewAttributeResponse> {
-	
-	public ModifyAutoRenewAttributeRequest() {
-		super("adb", "2019-03-15", "ModifyAutoRenewAttribute", "ads");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String duration;
+	   
 
 	private Long resourceOwnerId;
 
-	private String periodUnit;
+	private String duration;
+
+	private String renewalStatus;
 
 	private String resourceOwnerAccount;
 
@@ -43,19 +37,16 @@ public class ModifyAutoRenewAttributeRequest extends RpcAcsRequest<ModifyAutoRen
 
 	private String ownerAccount;
 
-	private String renewalStatus;
-
 	private Long ownerId;
 
-	public String getDuration() {
-		return this.duration;
-	}
-
-	public void setDuration(String duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration);
-		}
+	private String periodUnit;
+	public ModifyAutoRenewAttributeRequest() {
+		super("adb", "2019-03-15", "ModifyAutoRenewAttribute", "ads");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -69,14 +60,25 @@ public class ModifyAutoRenewAttributeRequest extends RpcAcsRequest<ModifyAutoRen
 		}
 	}
 
-	public String getPeriodUnit() {
-		return this.periodUnit;
+	public String getDuration() {
+		return this.duration;
 	}
 
-	public void setPeriodUnit(String periodUnit) {
-		this.periodUnit = periodUnit;
-		if(periodUnit != null){
-			putQueryParameter("PeriodUnit", periodUnit);
+	public void setDuration(String duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration);
+		}
+	}
+
+	public String getRenewalStatus() {
+		return this.renewalStatus;
+	}
+
+	public void setRenewalStatus(String renewalStatus) {
+		this.renewalStatus = renewalStatus;
+		if(renewalStatus != null){
+			putQueryParameter("RenewalStatus", renewalStatus);
 		}
 	}
 
@@ -113,17 +115,6 @@ public class ModifyAutoRenewAttributeRequest extends RpcAcsRequest<ModifyAutoRen
 		}
 	}
 
-	public String getRenewalStatus() {
-		return this.renewalStatus;
-	}
-
-	public void setRenewalStatus(String renewalStatus) {
-		this.renewalStatus = renewalStatus;
-		if(renewalStatus != null){
-			putQueryParameter("RenewalStatus", renewalStatus);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -132,6 +123,17 @@ public class ModifyAutoRenewAttributeRequest extends RpcAcsRequest<ModifyAutoRen
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
 		}
 	}
 

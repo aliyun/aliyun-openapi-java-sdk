@@ -15,6 +15,7 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.adb.Endpoint;
 
 /**
@@ -22,18 +23,11 @@ import com.aliyuncs.adb.Endpoint;
  * @version 
  */
 public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
-	
-	public CreateAccountRequest() {
-		super("adb", "2019-03-15", "CreateAccount", "ads");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String accountPassword;
+	private String accountDescription;
 
 	private String accountName;
 
@@ -45,7 +39,15 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	private Long ownerId;
 
-	private String accountDescription;
+	private String accountPassword;
+	public CreateAccountRequest() {
+		super("adb", "2019-03-15", "CreateAccount", "ads");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,14 +60,14 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getAccountPassword() {
-		return this.accountPassword;
+	public String getAccountDescription() {
+		return this.accountDescription;
 	}
 
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
+	public void setAccountDescription(String accountDescription) {
+		this.accountDescription = accountDescription;
+		if(accountDescription != null){
+			putQueryParameter("AccountDescription", accountDescription);
 		}
 	}
 
@@ -124,14 +126,14 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getAccountDescription() {
-		return this.accountDescription;
+	public String getAccountPassword() {
+		return this.accountPassword;
 	}
 
-	public void setAccountDescription(String accountDescription) {
-		this.accountDescription = accountDescription;
-		if(accountDescription != null){
-			putQueryParameter("AccountDescription", accountDescription);
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+		if(accountPassword != null){
+			putQueryParameter("AccountPassword", accountPassword);
 		}
 	}
 

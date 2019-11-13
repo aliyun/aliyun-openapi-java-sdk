@@ -15,6 +15,7 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.adb.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.adb.Endpoint;
  * @version 
  */
 public class DescribeDBClusterAccessWhiteListRequest extends RpcAcsRequest<DescribeDBClusterAccessWhiteListResponse> {
-	
-	public DescribeDBClusterAccessWhiteListRequest() {
-		super("adb", "2019-03-15", "DescribeDBClusterAccessWhiteList", "ads");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -40,6 +34,14 @@ public class DescribeDBClusterAccessWhiteListRequest extends RpcAcsRequest<Descr
 	private String ownerAccount;
 
 	private Long ownerId;
+	public DescribeDBClusterAccessWhiteListRequest() {
+		super("adb", "2019-03-15", "DescribeDBClusterAccessWhiteList", "ads");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

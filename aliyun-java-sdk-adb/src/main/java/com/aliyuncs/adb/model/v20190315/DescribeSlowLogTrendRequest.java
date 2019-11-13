@@ -15,6 +15,7 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.adb.Endpoint;
 
 /**
@@ -22,18 +23,11 @@ import com.aliyuncs.adb.Endpoint;
  * @version 
  */
 public class DescribeSlowLogTrendRequest extends RpcAcsRequest<DescribeSlowLogTrendResponse> {
-	
-	public DescribeSlowLogTrendRequest() {
-		super("adb", "2019-03-15", "DescribeSlowLogTrend", "ads");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String dBName;
+	private String startTime;
 
 	private String resourceOwnerAccount;
 
@@ -43,9 +37,17 @@ public class DescribeSlowLogTrendRequest extends RpcAcsRequest<DescribeSlowLogTr
 
 	private String endTime;
 
-	private String startTime;
-
 	private Long ownerId;
+
+	private String dBName;
+	public DescribeSlowLogTrendRequest() {
+		super("adb", "2019-03-15", "DescribeSlowLogTrend", "ads");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,14 +60,14 @@ public class DescribeSlowLogTrendRequest extends RpcAcsRequest<DescribeSlowLogTr
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -113,17 +115,6 @@ public class DescribeSlowLogTrendRequest extends RpcAcsRequest<DescribeSlowLogTr
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -132,6 +123,17 @@ public class DescribeSlowLogTrendRequest extends RpcAcsRequest<DescribeSlowLogTr
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
 		}
 	}
 

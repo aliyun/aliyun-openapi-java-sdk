@@ -15,6 +15,7 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.adb.Endpoint;
 
 /**
@@ -22,18 +23,15 @@ import com.aliyuncs.adb.Endpoint;
  * @version 
  */
 public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLogRecordsResponse> {
-	
-	public DescribeSlowLogRecordsRequest() {
-		super("adb", "2019-03-15", "DescribeSlowLogRecords", "ads");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String dBName;
+	private String startTime;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
@@ -41,15 +39,19 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 
 	private String ownerAccount;
 
-	private Integer pageSize;
-
 	private String endTime;
-
-	private String startTime;
 
 	private Long ownerId;
 
-	private Integer pageNumber;
+	private String dBName;
+	public DescribeSlowLogRecordsRequest() {
+		super("adb", "2019-03-15", "DescribeSlowLogRecords", "ads");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -62,14 +64,36 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -106,17 +130,6 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -125,17 +138,6 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -150,14 +152,14 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getDBName() {
+		return this.dBName;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
 		}
 	}
 
