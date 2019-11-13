@@ -24,16 +24,7 @@ import com.aliyuncs.csb.Endpoint;
  * @version 
  */
 public class DeleteCasServiceRequest extends RpcAcsRequest<DeleteCasServiceResponse> {
-	
-	public DeleteCasServiceRequest() {
-		super("CSB", "2017-11-18", "DeleteCasService");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Boolean leafOnly;
 
@@ -42,6 +33,15 @@ public class DeleteCasServiceRequest extends RpcAcsRequest<DeleteCasServiceRespo
 	private String srcUserId;
 
 	private String casServiceId;
+	public DeleteCasServiceRequest() {
+		super("CSB", "2017-11-18", "DeleteCasService", "csb");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getLeafOnly() {
 		return this.leafOnly;

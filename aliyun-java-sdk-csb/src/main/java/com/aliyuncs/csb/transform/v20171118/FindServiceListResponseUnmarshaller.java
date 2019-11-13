@@ -60,6 +60,7 @@ public class FindServiceListResponseUnmarshaller {
 			service.setStatus(_ctx.integerValue("FindServiceListResponse.Data.ServiceList["+ i +"].Status"));
 			service.setUserId(_ctx.stringValue("FindServiceListResponse.Data.ServiceList["+ i +"].UserId"));
 			service.setCasTargets(_ctx.stringValue("FindServiceListResponse.Data.ServiceList["+ i +"].CasTargets"));
+			service.setRouteConfJson(_ctx.stringValue("FindServiceListResponse.Data.ServiceList["+ i +"].RouteConfJson"));
 
 			serviceList.add(service);
 		}

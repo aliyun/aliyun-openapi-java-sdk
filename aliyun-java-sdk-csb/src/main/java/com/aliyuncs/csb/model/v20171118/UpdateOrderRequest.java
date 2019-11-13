@@ -24,20 +24,20 @@ import com.aliyuncs.csb.Endpoint;
  * @version 
  */
 public class UpdateOrderRequest extends RpcAcsRequest<UpdateOrderResponse> {
-	
-	public UpdateOrderRequest() {
-		super("CSB", "2017-11-18", "UpdateOrder");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String data;
 
 	private Long csbId;
+	public UpdateOrderRequest() {
+		super("CSB", "2017-11-18", "UpdateOrder", "csb");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getData() {
 		return this.data;

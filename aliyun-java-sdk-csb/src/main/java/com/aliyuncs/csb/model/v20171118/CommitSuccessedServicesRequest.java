@@ -24,20 +24,20 @@ import com.aliyuncs.csb.Endpoint;
  * @version 
  */
 public class CommitSuccessedServicesRequest extends RpcAcsRequest<CommitSuccessedServicesResponse> {
-	
-	public CommitSuccessedServicesRequest() {
-		super("CSB", "2017-11-18", "CommitSuccessedServices");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String csbName;
 
 	private String services;
+	public CommitSuccessedServicesRequest() {
+		super("CSB", "2017-11-18", "CommitSuccessedServices", "csb");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCsbName() {
 		return this.csbName;

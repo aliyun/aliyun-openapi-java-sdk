@@ -24,20 +24,20 @@ import com.aliyuncs.csb.Endpoint;
  * @version 
  */
 public class ImportCredentialsRequest extends RpcAcsRequest<ImportCredentialsResponse> {
-	
-	public ImportCredentialsRequest() {
-		super("CSB", "2017-11-18", "ImportCredentials");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String data;
 
 	private Long csbId;
+	public ImportCredentialsRequest() {
+		super("CSB", "2017-11-18", "ImportCredentials", "csb");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getData() {
 		return this.data;

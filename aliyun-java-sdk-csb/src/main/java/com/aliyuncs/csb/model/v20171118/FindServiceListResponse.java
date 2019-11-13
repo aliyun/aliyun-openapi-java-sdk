@@ -151,6 +151,8 @@ public class FindServiceListResponse extends AcsResponse {
 
 			private String casTargets;
 
+			private String routeConfJson;
+
 			public String getAlias() {
 				return this.alias;
 			}
@@ -317,6 +319,14 @@ public class FindServiceListResponse extends AcsResponse {
 
 			public void setCasTargets(String casTargets) {
 				this.casTargets = casTargets;
+			}
+
+			public String getRouteConfJson() {
+				return this.routeConfJson;
+			}
+
+			public void setRouteConfJson(String routeConfJson) {
+				this.routeConfJson = routeConfJson;
 			}
 		}
 	}

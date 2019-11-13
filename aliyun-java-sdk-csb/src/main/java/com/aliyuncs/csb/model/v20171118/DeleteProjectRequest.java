@@ -24,20 +24,20 @@ import com.aliyuncs.csb.Endpoint;
  * @version 
  */
 public class DeleteProjectRequest extends RpcAcsRequest<DeleteProjectResponse> {
-	
-	public DeleteProjectRequest() {
-		super("CSB", "2017-11-18", "DeleteProject");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long csbId;
 
 	private Long projectId;
+	public DeleteProjectRequest() {
+		super("CSB", "2017-11-18", "DeleteProject", "csb");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getCsbId() {
 		return this.csbId;

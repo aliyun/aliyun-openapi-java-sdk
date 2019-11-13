@@ -24,20 +24,20 @@ import com.aliyuncs.csb.Endpoint;
  * @version 
  */
 public class DeleteServiceRequest extends RpcAcsRequest<DeleteServiceResponse> {
-	
-	public DeleteServiceRequest() {
-		super("CSB", "2017-11-18", "DeleteService");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String serviceName;
 
 	private Long serviceId;
+	public DeleteServiceRequest() {
+		super("CSB", "2017-11-18", "DeleteService", "csb");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getServiceName() {
 		return this.serviceName;

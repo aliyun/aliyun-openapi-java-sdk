@@ -16,6 +16,7 @@ package com.aliyuncs.csb.model.v20171118;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.csb.Endpoint;
 
 /**
@@ -23,19 +24,20 @@ import com.aliyuncs.csb.Endpoint;
  * @version 
  */
 public class GetOrderRequest extends RpcAcsRequest<GetOrderResponse> {
-	
-	public GetOrderRequest() {
-		super("CSB", "2017-11-18", "GetOrder");
-		setProtocol(ProtocolType.HTTPS);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long orderId;
 
 	private String serviceName;
+	public GetOrderRequest() {
+		super("CSB", "2017-11-18", "GetOrder", "csb");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getOrderId() {
 		return this.orderId;

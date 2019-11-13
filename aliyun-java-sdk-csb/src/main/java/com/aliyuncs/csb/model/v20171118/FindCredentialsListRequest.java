@@ -16,6 +16,7 @@ package com.aliyuncs.csb.model.v20171118;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.csb.Endpoint;
 
 /**
@@ -23,21 +24,22 @@ import com.aliyuncs.csb.Endpoint;
  * @version 
  */
 public class FindCredentialsListRequest extends RpcAcsRequest<FindCredentialsListResponse> {
-	
-	public FindCredentialsListRequest() {
-		super("CSB", "2017-11-18", "FindCredentialsList");
-		setProtocol(ProtocolType.HTTPS);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long csbId;
 
 	private Integer pageNum;
 
 	private String groupName;
+	public FindCredentialsListRequest() {
+		super("CSB", "2017-11-18", "FindCredentialsList", "csb");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getCsbId() {
 		return this.csbId;

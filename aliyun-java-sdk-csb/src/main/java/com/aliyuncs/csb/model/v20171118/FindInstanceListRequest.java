@@ -15,6 +15,7 @@
 package com.aliyuncs.csb.model.v20171118;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.csb.Endpoint;
 
 /**
@@ -22,32 +23,22 @@ import com.aliyuncs.csb.Endpoint;
  * @version 
  */
 public class FindInstanceListRequest extends RpcAcsRequest<FindInstanceListResponse> {
-	
-	public FindInstanceListRequest() {
-		super("CSB", "2017-11-18", "FindInstanceList");
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String searchTxt;
+	   
 
 	private Long csbId;
 
 	private Integer pageNum;
 
+	private String searchTxt;
+
 	private Integer status;
-
-	public String getSearchTxt() {
-		return this.searchTxt;
-	}
-
-	public void setSearchTxt(String searchTxt) {
-		this.searchTxt = searchTxt;
-		if(searchTxt != null){
-			putQueryParameter("SearchTxt", searchTxt);
-		}
+	public FindInstanceListRequest() {
+		super("CSB", "2017-11-18", "FindInstanceList", "csb");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getCsbId() {
@@ -69,6 +60,17 @@ public class FindInstanceListRequest extends RpcAcsRequest<FindInstanceListRespo
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getSearchTxt() {
+		return this.searchTxt;
+	}
+
+	public void setSearchTxt(String searchTxt) {
+		this.searchTxt = searchTxt;
+		if(searchTxt != null){
+			putQueryParameter("SearchTxt", searchTxt);
 		}
 	}
 

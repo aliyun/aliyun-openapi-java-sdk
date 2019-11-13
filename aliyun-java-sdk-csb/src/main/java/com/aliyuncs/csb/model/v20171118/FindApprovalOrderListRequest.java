@@ -16,6 +16,7 @@ package com.aliyuncs.csb.model.v20171118;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.csb.Endpoint;
 
 /**
@@ -23,19 +24,13 @@ import com.aliyuncs.csb.Endpoint;
  * @version 
  */
 public class FindApprovalOrderListRequest extends RpcAcsRequest<FindApprovalOrderListResponse> {
-	
-	public FindApprovalOrderListRequest() {
-		super("CSB", "2017-11-18", "FindApprovalOrderList");
-		setProtocol(ProtocolType.HTTPS);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String projectName;
 
 	private Long csbId;
+
+	private Integer pageNum;
 
 	private String alias;
 
@@ -43,9 +38,16 @@ public class FindApprovalOrderListRequest extends RpcAcsRequest<FindApprovalOrde
 
 	private Long serviceId;
 
-	private Integer pageNum;
-
 	private Boolean onlyPending;
+	public FindApprovalOrderListRequest() {
+		super("CSB", "2017-11-18", "FindApprovalOrderList", "csb");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProjectName() {
 		return this.projectName;
@@ -66,6 +68,17 @@ public class FindApprovalOrderListRequest extends RpcAcsRequest<FindApprovalOrde
 		this.csbId = csbId;
 		if(csbId != null){
 			putQueryParameter("CsbId", csbId.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
@@ -99,17 +112,6 @@ public class FindApprovalOrderListRequest extends RpcAcsRequest<FindApprovalOrde
 		this.serviceId = serviceId;
 		if(serviceId != null){
 			putQueryParameter("ServiceId", serviceId.toString());
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
