@@ -15,34 +15,33 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyDBClusterAccessWhiteListRequest extends RpcAcsRequest<ModifyDBClusterAccessWhiteListResponse> {
+public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String securityIps;
+	private String nextToken;
 
-	private String dBClusterIPArrayAttribute;
+	private List<Tag> tags;
 
-	private String modifyMode;
+	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
-
-	private String dBClusterId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String dBClusterIPArrayName;
-	public ModifyDBClusterAccessWhiteListRequest() {
-		super("adb", "2019-03-15", "ModifyDBClusterAccessWhiteList", "ads");
+	private String resourceType;
+	public ListTagResourcesRequest() {
+		super("adb", "2019-03-15", "ListTagResources", "ads");
 		setMethod(MethodType.POST);
 	}
 
@@ -57,37 +56,42 @@ public class ModifyDBClusterAccessWhiteListRequest extends RpcAcsRequest<ModifyD
 		}
 	}
 
-	public String getSecurityIps() {
-		return this.securityIps;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setSecurityIps(String securityIps) {
-		this.securityIps = securityIps;
-		if(securityIps != null){
-			putQueryParameter("SecurityIps", securityIps);
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
-	public String getDBClusterIPArrayAttribute() {
-		return this.dBClusterIPArrayAttribute;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setDBClusterIPArrayAttribute(String dBClusterIPArrayAttribute) {
-		this.dBClusterIPArrayAttribute = dBClusterIPArrayAttribute;
-		if(dBClusterIPArrayAttribute != null){
-			putQueryParameter("DBClusterIPArrayAttribute", dBClusterIPArrayAttribute);
-		}
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
-	public String getModifyMode() {
-		return this.modifyMode;
+	public List<String> getResourceIds() {
+		return this.resourceIds;
 	}
 
-	public void setModifyMode(String modifyMode) {
-		this.modifyMode = modifyMode;
-		if(modifyMode != null){
-			putQueryParameter("ModifyMode", modifyMode);
-		}
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -98,17 +102,6 @@ public class ModifyDBClusterAccessWhiteListRequest extends RpcAcsRequest<ModifyD
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -134,20 +127,43 @@ public class ModifyDBClusterAccessWhiteListRequest extends RpcAcsRequest<ModifyD
 		}
 	}
 
-	public String getDBClusterIPArrayName() {
-		return this.dBClusterIPArrayName;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setDBClusterIPArrayName(String dBClusterIPArrayName) {
-		this.dBClusterIPArrayName = dBClusterIPArrayName;
-		if(dBClusterIPArrayName != null){
-			putQueryParameter("DBClusterIPArrayName", dBClusterIPArrayName);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
 	@Override
-	public Class<ModifyDBClusterAccessWhiteListResponse> getResponseClass() {
-		return ModifyDBClusterAccessWhiteListResponse.class;
+	public Class<ListTagResourcesResponse> getResponseClass() {
+		return ListTagResourcesResponse.class;
 	}
 
 }

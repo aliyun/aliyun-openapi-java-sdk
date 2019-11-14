@@ -15,32 +15,33 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeSlowLogTrendRequest extends RpcAcsRequest<DescribeSlowLogTrendResponse> {
+public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String startTime;
+	private Boolean all;
+
+	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
 
-	private String dBClusterId;
-
 	private String ownerAccount;
-
-	private String endTime;
 
 	private Long ownerId;
 
-	private String dBName;
-	public DescribeSlowLogTrendRequest() {
-		super("adb", "2019-03-15", "DescribeSlowLogTrend", "ads");
+	private String resourceType;
+
+	private List<String> tagKeys;
+	public UntagResourcesRequest() {
+		super("adb", "2019-03-15", "UntagResources", "ads");
 		setMethod(MethodType.POST);
 	}
 
@@ -55,15 +56,28 @@ public class DescribeSlowLogTrendRequest extends RpcAcsRequest<DescribeSlowLogTr
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public Boolean getAll() {
+		return this.all;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setAll(Boolean all) {
+		this.all = all;
+		if(all != null){
+			putQueryParameter("All", all.toString());
 		}
+	}
+
+	public List<String> getResourceIds() {
+		return this.resourceIds;
+	}
+
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -74,17 +88,6 @@ public class DescribeSlowLogTrendRequest extends RpcAcsRequest<DescribeSlowLogTr
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -99,17 +102,6 @@ public class DescribeSlowLogTrendRequest extends RpcAcsRequest<DescribeSlowLogTr
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -121,20 +113,33 @@ public class DescribeSlowLogTrendRequest extends RpcAcsRequest<DescribeSlowLogTr
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
+	public List<String> getTagKeys() {
+		return this.tagKeys;
+	}
+
+	public void setTagKeys(List<String> tagKeys) {
+		this.tagKeys = tagKeys;	
+		if (tagKeys != null) {
+			for (int i = 0; i < tagKeys.size(); i++) {
+				putQueryParameter("TagKey." + (i + 1) , tagKeys.get(i));
+			}
+		}	
+	}
+
 	@Override
-	public Class<DescribeSlowLogTrendResponse> getResponseClass() {
-		return DescribeSlowLogTrendResponse.class;
+	public Class<UntagResourcesResponse> getResponseClass() {
+		return UntagResourcesResponse.class;
 	}
 
 }
