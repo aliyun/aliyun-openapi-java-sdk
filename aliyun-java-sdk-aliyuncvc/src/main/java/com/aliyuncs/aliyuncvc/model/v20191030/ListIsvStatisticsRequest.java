@@ -22,14 +22,14 @@ import com.aliyuncs.aliyuncvc.Endpoint;
  * @author auto create
  * @version 
  */
-public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
+public class ListIsvStatisticsRequest extends RpcAcsRequest<ListIsvStatisticsResponse> {
 	   
 
-	private String userId;
+	private Long endTime;
 
-	private String meetingCode;
-	public JoinMeetingRequest() {
-		super("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc");
+	private Long startTime;
+	public ListIsvStatisticsRequest() {
+		super("aliyuncvc", "2019-10-30", "ListIsvStatistics", "aliyuncvc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public Long getEndTime() {
+		return this.endTime;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
-	public String getMeetingCode() {
-		return this.meetingCode;
+	public Long getStartTime() {
+		return this.startTime;
 	}
 
-	public void setMeetingCode(String meetingCode) {
-		this.meetingCode = meetingCode;
-		if(meetingCode != null){
-			putBodyParameter("MeetingCode", meetingCode);
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 
 	@Override
-	public Class<JoinMeetingResponse> getResponseClass() {
-		return JoinMeetingResponse.class;
+	public Class<ListIsvStatisticsResponse> getResponseClass() {
+		return ListIsvStatisticsResponse.class;
 	}
 
 }

@@ -40,6 +40,7 @@ public class GetUserResponseUnmarshaller {
 		userInfo.setUserAvatarUrl(_ctx.stringValue("GetUserResponse.UserInfo.UserAvatarUrl"));
 		userInfo.setDepartId(_ctx.stringValue("GetUserResponse.UserInfo.DepartId"));
 		userInfo.setDepartName(_ctx.stringValue("GetUserResponse.UserInfo.DepartName"));
+		userInfo.setJobName(_ctx.stringValue("GetUserResponse.UserInfo.JobName"));
 		getUserResponse.setUserInfo(userInfo);
 	 
 	 	return getUserResponse;

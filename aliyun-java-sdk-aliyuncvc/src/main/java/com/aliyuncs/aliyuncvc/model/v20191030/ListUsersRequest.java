@@ -25,9 +25,9 @@ import com.aliyuncs.aliyuncvc.Endpoint;
 public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 	   
 
-	private Integer pageSize;
-
 	private Integer pageNumber;
+
+	private Integer pageSize;
 	public ListUsersRequest() {
 		super("aliyuncvc", "2019-10-30", "ListUsers", "aliyuncvc");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public Integer getPageNumber() {
@@ -56,6 +45,17 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

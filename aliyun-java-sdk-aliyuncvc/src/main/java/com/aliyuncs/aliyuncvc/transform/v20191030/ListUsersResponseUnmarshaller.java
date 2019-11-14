@@ -50,6 +50,7 @@ public class ListUsersResponseUnmarshaller {
 			userInfo.setUserTel(_ctx.stringValue("ListUsersResponse.Data.UserInfos["+ i +"].UserTel"));
 			userInfo.setUserMobile(_ctx.stringValue("ListUsersResponse.Data.UserInfos["+ i +"].UserMobile"));
 			userInfo.setUserAvatarUrl(_ctx.stringValue("ListUsersResponse.Data.UserInfos["+ i +"].UserAvatarUrl"));
+			userInfo.setJobName(_ctx.stringValue("ListUsersResponse.Data.UserInfos["+ i +"].JobName"));
 
 			userInfos.add(userInfo);
 		}

@@ -98,6 +98,8 @@ public class GetUserResponse extends AcsResponse {
 
 		private String departName;
 
+		private String jobName;
+
 		public String getUserName() {
 			return this.userName;
 		}
@@ -184,6 +186,14 @@ public class GetUserResponse extends AcsResponse {
 
 		public void setDepartName(String departName) {
 			this.departName = departName;
+		}
+
+		public String getJobName() {
+			return this.jobName;
+		}
+
+		public void setJobName(String jobName) {
+			this.jobName = jobName;
 		}
 	}
 

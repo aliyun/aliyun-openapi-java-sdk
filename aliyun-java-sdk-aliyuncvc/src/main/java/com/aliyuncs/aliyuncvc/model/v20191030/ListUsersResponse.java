@@ -139,6 +139,8 @@ public class ListUsersResponse extends AcsResponse {
 
 			private String userAvatarUrl;
 
+			private String jobName;
+
 			public Long getCreateTime() {
 				return this.createTime;
 			}
@@ -217,6 +219,14 @@ public class ListUsersResponse extends AcsResponse {
 
 			public void setUserAvatarUrl(String userAvatarUrl) {
 				this.userAvatarUrl = userAvatarUrl;
+			}
+
+			public String getJobName() {
+				return this.jobName;
+			}
+
+			public void setJobName(String jobName) {
+				this.jobName = jobName;
 			}
 		}
 	}
