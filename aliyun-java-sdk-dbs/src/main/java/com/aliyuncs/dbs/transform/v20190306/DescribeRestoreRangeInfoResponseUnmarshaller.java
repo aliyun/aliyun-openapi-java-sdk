@@ -38,16 +38,16 @@ public class DescribeRestoreRangeInfoResponseUnmarshaller {
 			DBSRecoverRange dBSRecoverRange = new DBSRecoverRange();
 			dBSRecoverRange.setSourceEndpointInstanceType(_ctx.stringValue("DescribeRestoreRangeInfoResponse.Items["+ i +"].SourceEndpointInstanceType"));
 			dBSRecoverRange.setSourceEndpointInstanceID(_ctx.stringValue("DescribeRestoreRangeInfoResponse.Items["+ i +"].SourceEndpointInstanceID"));
-			dBSRecoverRange.setBeginTimestampForRestore(_ctx.stringValue("DescribeRestoreRangeInfoResponse.Items["+ i +"].BeginTimestampForRestore"));
-			dBSRecoverRange.setEndTimestampForRestore(_ctx.stringValue("DescribeRestoreRangeInfoResponse.Items["+ i +"].EndTimestampForRestore"));
+			dBSRecoverRange.setBeginTimestampForRestore(_ctx.longValue("DescribeRestoreRangeInfoResponse.Items["+ i +"].BeginTimestampForRestore"));
+			dBSRecoverRange.setEndTimestampForRestore(_ctx.longValue("DescribeRestoreRangeInfoResponse.Items["+ i +"].EndTimestampForRestore"));
 			dBSRecoverRange.setRangeType(_ctx.stringValue("DescribeRestoreRangeInfoResponse.Items["+ i +"].RangeType"));
 
 			List<FullBackupDetail> fullBackupList = new ArrayList<FullBackupDetail>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRestoreRangeInfoResponse.Items["+ i +"].FullBackupList.Length"); j++) {
 				FullBackupDetail fullBackupDetail = new FullBackupDetail();
 				fullBackupDetail.setBackupSetId(_ctx.stringValue("DescribeRestoreRangeInfoResponse.Items["+ i +"].FullBackupList["+ j +"].BackupSetId"));
-				fullBackupDetail.setStartTime(_ctx.stringValue("DescribeRestoreRangeInfoResponse.Items["+ i +"].FullBackupList["+ j +"].StartTime"));
-				fullBackupDetail.setEndTime(_ctx.stringValue("DescribeRestoreRangeInfoResponse.Items["+ i +"].FullBackupList["+ j +"].EndTime"));
+				fullBackupDetail.setStartTime(_ctx.longValue("DescribeRestoreRangeInfoResponse.Items["+ i +"].FullBackupList["+ j +"].StartTime"));
+				fullBackupDetail.setEndTime(_ctx.longValue("DescribeRestoreRangeInfoResponse.Items["+ i +"].FullBackupList["+ j +"].EndTime"));
 
 				fullBackupList.add(fullBackupDetail);
 			}

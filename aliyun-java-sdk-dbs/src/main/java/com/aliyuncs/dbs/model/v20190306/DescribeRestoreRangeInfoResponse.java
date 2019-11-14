@@ -91,9 +91,9 @@ public class DescribeRestoreRangeInfoResponse extends AcsResponse {
 
 		private String sourceEndpointInstanceID;
 
-		private String beginTimestampForRestore;
+		private Long beginTimestampForRestore;
 
-		private String endTimestampForRestore;
+		private Long endTimestampForRestore;
 
 		private String rangeType;
 
@@ -115,19 +115,19 @@ public class DescribeRestoreRangeInfoResponse extends AcsResponse {
 			this.sourceEndpointInstanceID = sourceEndpointInstanceID;
 		}
 
-		public String getBeginTimestampForRestore() {
+		public Long getBeginTimestampForRestore() {
 			return this.beginTimestampForRestore;
 		}
 
-		public void setBeginTimestampForRestore(String beginTimestampForRestore) {
+		public void setBeginTimestampForRestore(Long beginTimestampForRestore) {
 			this.beginTimestampForRestore = beginTimestampForRestore;
 		}
 
-		public String getEndTimestampForRestore() {
+		public Long getEndTimestampForRestore() {
 			return this.endTimestampForRestore;
 		}
 
-		public void setEndTimestampForRestore(String endTimestampForRestore) {
+		public void setEndTimestampForRestore(Long endTimestampForRestore) {
 			this.endTimestampForRestore = endTimestampForRestore;
 		}
 
@@ -151,9 +151,9 @@ public class DescribeRestoreRangeInfoResponse extends AcsResponse {
 
 			private String backupSetId;
 
-			private String startTime;
+			private Long startTime;
 
-			private String endTime;
+			private Long endTime;
 
 			public String getBackupSetId() {
 				return this.backupSetId;
@@ -163,19 +163,19 @@ public class DescribeRestoreRangeInfoResponse extends AcsResponse {
 				this.backupSetId = backupSetId;
 			}
 
-			public String getStartTime() {
+			public Long getStartTime() {
 				return this.startTime;
 			}
 
-			public void setStartTime(String startTime) {
+			public void setStartTime(Long startTime) {
 				this.startTime = startTime;
 			}
 
-			public String getEndTime() {
+			public Long getEndTime() {
 				return this.endTime;
 			}
 
-			public void setEndTime(String endTime) {
+			public void setEndTime(Long endTime) {
 				this.endTime = endTime;
 			}
 		}
