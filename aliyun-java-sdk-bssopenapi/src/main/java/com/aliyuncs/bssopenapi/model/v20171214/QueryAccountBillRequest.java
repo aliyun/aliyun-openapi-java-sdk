@@ -16,7 +16,6 @@ package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
  * @author auto create
@@ -25,20 +24,31 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class QueryAccountBillRequest extends RpcAcsRequest<QueryAccountBillResponse> {
 	   
 
+	private String productCode;
+
 	private String billingCycle;
 
 	private Integer pageNum;
 
 	private Long ownerID;
 
+	private Boolean isGroupByProduct;
+
 	private Integer pageSize;
 	public QueryAccountBillRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryAccountBill", "BssOpenApi");
+		super("BssOpenApi", "2017-12-14", "QueryAccountBill");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
+	}
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+		if(productCode != null){
+			putQueryParameter("ProductCode", productCode);
+		}
 	}
 
 	public String getBillingCycle() {
@@ -71,6 +81,17 @@ public class QueryAccountBillRequest extends RpcAcsRequest<QueryAccountBillRespo
 		this.ownerID = ownerID;
 		if(ownerID != null){
 			putQueryParameter("OwnerID", ownerID.toString());
+		}
+	}
+
+	public Boolean getIsGroupByProduct() {
+		return this.isGroupByProduct;
+	}
+
+	public void setIsGroupByProduct(Boolean isGroupByProduct) {
+		this.isGroupByProduct = isGroupByProduct;
+		if(isGroupByProduct != null){
+			putQueryParameter("IsGroupByProduct", isGroupByProduct.toString());
 		}
 	}
 

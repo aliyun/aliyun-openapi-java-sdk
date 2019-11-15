@@ -17,7 +17,6 @@ package com.aliyuncs.bssopenapi.model.v20171214;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
  * @author auto create
@@ -28,12 +27,8 @@ public class ModifyCostUnitRequest extends RpcAcsRequest<ModifyCostUnitResponse>
 
 	private List<UnitEntityList> unitEntityLists;
 	public ModifyCostUnitRequest() {
-		super("BssOpenApi", "2017-12-14", "ModifyCostUnit", "BssOpenApi");
+		super("BssOpenApi", "2017-12-14", "ModifyCostUnit");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public List<UnitEntityList> getUnitEntityLists() {

@@ -16,7 +16,6 @@ package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
  * @author auto create
@@ -29,12 +28,8 @@ public class EnableBillGenerationRequest extends RpcAcsRequest<EnableBillGenerat
 
 	private Long ownerId;
 	public EnableBillGenerationRequest() {
-		super("BssOpenApi", "2017-12-14", "EnableBillGeneration", "BssOpenApi");
+		super("BssOpenApi", "2017-12-14", "EnableBillGeneration");
 		setMethod(MethodType.PUT);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getProductCode() {

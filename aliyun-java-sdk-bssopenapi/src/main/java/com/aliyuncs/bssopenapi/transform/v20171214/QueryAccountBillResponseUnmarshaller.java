@@ -55,6 +55,9 @@ public class QueryAccountBillResponseUnmarshaller {
 			item.setOutstandingAmount(_ctx.floatValue("QueryAccountBillResponse.Data.Items["+ i +"].OutstandingAmount"));
 			item.setCurrency(_ctx.stringValue("QueryAccountBillResponse.Data.Items["+ i +"].Currency"));
 			item.setOwnerName(_ctx.stringValue("QueryAccountBillResponse.Data.Items["+ i +"].OwnerName"));
+			item.setProductCode(_ctx.stringValue("QueryAccountBillResponse.Data.Items["+ i +"].ProductCode"));
+			item.setProductName(_ctx.stringValue("QueryAccountBillResponse.Data.Items["+ i +"].ProductName"));
+			item.setSubscriptionType(_ctx.stringValue("QueryAccountBillResponse.Data.Items["+ i +"].SubscriptionType"));
 
 			items.add(item);
 		}

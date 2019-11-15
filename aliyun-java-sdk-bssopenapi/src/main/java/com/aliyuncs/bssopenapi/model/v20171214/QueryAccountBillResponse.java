@@ -173,6 +173,12 @@ public class QueryAccountBillResponse extends AcsResponse {
 
 			private String ownerName;
 
+			private String productCode;
+
+			private String productName;
+
+			private String subscriptionType;
+
 			public String getCostUnit() {
 				return this.costUnit;
 			}
@@ -267,6 +273,30 @@ public class QueryAccountBillResponse extends AcsResponse {
 
 			public void setOwnerName(String ownerName) {
 				this.ownerName = ownerName;
+			}
+
+			public String getProductCode() {
+				return this.productCode;
+			}
+
+			public void setProductCode(String productCode) {
+				this.productCode = productCode;
+			}
+
+			public String getProductName() {
+				return this.productName;
+			}
+
+			public void setProductName(String productName) {
+				this.productName = productName;
+			}
+
+			public String getSubscriptionType() {
+				return this.subscriptionType;
+			}
+
+			public void setSubscriptionType(String subscriptionType) {
+				this.subscriptionType = subscriptionType;
 			}
 		}
 	}
