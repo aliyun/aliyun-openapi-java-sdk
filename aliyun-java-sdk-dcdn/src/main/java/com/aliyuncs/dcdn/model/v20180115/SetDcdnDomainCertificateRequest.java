@@ -15,71 +15,59 @@
 package com.aliyuncs.dcdn.model.v20180115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dcdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetDcdnDomainCertificateRequest extends RpcAcsRequest<SetDcdnDomainCertificateResponse> {
-	
-	public SetDcdnDomainCertificateRequest() {
-		super("dcdn", "2018-01-15", "SetDcdnDomainCertificate");
-	}
+	   
 
-	private String forceSet;
+	private String sSLProtocol;
 
 	private String securityToken;
 
 	private String certType;
 
-	private String sSLPub;
+	private String sSLPri;
+
+	private String forceSet;
 
 	private String certName;
-
-	private String sSLProtocol;
 
 	private String domainName;
 
 	private Long ownerId;
 
+	private String sSLPub;
+
 	private String region;
-
-	private String sSLPri;
-
-	public String getForceSet() {
-		return this.forceSet;
+	public SetDcdnDomainCertificateRequest() {
+		super("dcdn", "2018-01-15", "SetDcdnDomainCertificate");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setForceSet(String forceSet) {
-		this.forceSet = forceSet;
-		if(forceSet != null){
-			putQueryParameter("ForceSet", forceSet);
+	public String getSSLProtocol() {
+		return this.sSLProtocol;
+	}
+
+	public void setSSLProtocol(String sSLProtocol) {
+		this.sSLProtocol = sSLProtocol;
+		if(sSLProtocol != null){
+			putQueryParameter("SSLProtocol", sSLProtocol);
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -98,14 +86,25 @@ public class SetDcdnDomainCertificateRequest extends RpcAcsRequest<SetDcdnDomain
 		}
 	}
 
-	public String getSSLPub() {
-		return this.sSLPub;
+	public String getSSLPri() {
+		return this.sSLPri;
 	}
 
-	public void setSSLPub(String sSLPub) {
-		this.sSLPub = sSLPub;
-		if(sSLPub != null){
-			putQueryParameter("SSLPub", sSLPub);
+	public void setSSLPri(String sSLPri) {
+		this.sSLPri = sSLPri;
+		if(sSLPri != null){
+			putQueryParameter("SSLPri", sSLPri);
+		}
+	}
+
+	public String getForceSet() {
+		return this.forceSet;
+	}
+
+	public void setForceSet(String forceSet) {
+		this.forceSet = forceSet;
+		if(forceSet != null){
+			putQueryParameter("ForceSet", forceSet);
 		}
 	}
 
@@ -117,17 +116,6 @@ public class SetDcdnDomainCertificateRequest extends RpcAcsRequest<SetDcdnDomain
 		this.certName = certName;
 		if(certName != null){
 			putQueryParameter("CertName", certName);
-		}
-	}
-
-	public String getSSLProtocol() {
-		return this.sSLProtocol;
-	}
-
-	public void setSSLProtocol(String sSLProtocol) {
-		this.sSLProtocol = sSLProtocol;
-		if(sSLProtocol != null){
-			putQueryParameter("SSLProtocol", sSLProtocol);
 		}
 	}
 
@@ -153,6 +141,17 @@ public class SetDcdnDomainCertificateRequest extends RpcAcsRequest<SetDcdnDomain
 		}
 	}
 
+	public String getSSLPub() {
+		return this.sSLPub;
+	}
+
+	public void setSSLPub(String sSLPub) {
+		this.sSLPub = sSLPub;
+		if(sSLPub != null){
+			putQueryParameter("SSLPub", sSLPub);
+		}
+	}
+
 	public String getRegion() {
 		return this.region;
 	}
@@ -161,17 +160,6 @@ public class SetDcdnDomainCertificateRequest extends RpcAcsRequest<SetDcdnDomain
 		this.region = region;
 		if(region != null){
 			putQueryParameter("Region", region);
-		}
-	}
-
-	public String getSSLPri() {
-		return this.sSLPri;
-	}
-
-	public void setSSLPri(String sSLPri) {
-		this.sSLPri = sSLPri;
-		if(sSLPri != null){
-			putQueryParameter("SSLPri", sSLPri);
 		}
 	}
 

@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDcdnDomainRealTimeReqHitRateDataResponseUnmarshaller {
 
-	public static DescribeDcdnDomainRealTimeReqHitRateDataResponse unmarshall(DescribeDcdnDomainRealTimeReqHitRateDataResponse describeDcdnDomainRealTimeReqHitRateDataResponse, UnmarshallerContext context) {
+	public static DescribeDcdnDomainRealTimeReqHitRateDataResponse unmarshall(DescribeDcdnDomainRealTimeReqHitRateDataResponse describeDcdnDomainRealTimeReqHitRateDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDcdnDomainRealTimeReqHitRateDataResponse.setRequestId(context.stringValue("DescribeDcdnDomainRealTimeReqHitRateDataResponse.RequestId"));
+		describeDcdnDomainRealTimeReqHitRateDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainRealTimeReqHitRateDataResponse.RequestId"));
 
 		List<ReqHitRateDataModel> data = new ArrayList<ReqHitRateDataModel>();
-		for (int i = 0; i < context.lengthValue("DescribeDcdnDomainRealTimeReqHitRateDataResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainRealTimeReqHitRateDataResponse.Data.Length"); i++) {
 			ReqHitRateDataModel reqHitRateDataModel = new ReqHitRateDataModel();
-			reqHitRateDataModel.setReqHitRate(context.floatValue("DescribeDcdnDomainRealTimeReqHitRateDataResponse.Data["+ i +"].ReqHitRate"));
-			reqHitRateDataModel.setTimeStamp(context.stringValue("DescribeDcdnDomainRealTimeReqHitRateDataResponse.Data["+ i +"].TimeStamp"));
+			reqHitRateDataModel.setReqHitRate(_ctx.floatValue("DescribeDcdnDomainRealTimeReqHitRateDataResponse.Data["+ i +"].ReqHitRate"));
+			reqHitRateDataModel.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainRealTimeReqHitRateDataResponse.Data["+ i +"].TimeStamp"));
 
 			data.add(reqHitRateDataModel);
 		}

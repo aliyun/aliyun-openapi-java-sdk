@@ -15,20 +15,27 @@
 package com.aliyuncs.dcdn.model.v20180115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dcdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDcdnDomainCertificateInfoRequest extends RpcAcsRequest<DescribeDcdnDomainCertificateInfoResponse> {
-	
-	public DescribeDcdnDomainCertificateInfoRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnDomainCertificateInfo");
-	}
+	   
 
 	private String domainName;
 
 	private Long ownerId;
+	public DescribeDcdnDomainCertificateInfoRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnDomainCertificateInfo");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getDomainName() {
 		return this.domainName;

@@ -1,3 +1,6 @@
+2019-11-15 Version: 2.0.0
+- Sync cdn APIs.
+
 2019-03-05 Version: 1.2.4
 1, Update the SDK version to 1.2.4
 

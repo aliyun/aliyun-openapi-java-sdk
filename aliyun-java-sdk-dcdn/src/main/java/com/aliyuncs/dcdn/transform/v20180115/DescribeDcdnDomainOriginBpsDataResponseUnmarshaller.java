@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDcdnDomainOriginBpsDataResponseUnmarshaller {
 
-	public static DescribeDcdnDomainOriginBpsDataResponse unmarshall(DescribeDcdnDomainOriginBpsDataResponse describeDcdnDomainOriginBpsDataResponse, UnmarshallerContext context) {
+	public static DescribeDcdnDomainOriginBpsDataResponse unmarshall(DescribeDcdnDomainOriginBpsDataResponse describeDcdnDomainOriginBpsDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDcdnDomainOriginBpsDataResponse.setRequestId(context.stringValue("DescribeDcdnDomainOriginBpsDataResponse.RequestId"));
-		describeDcdnDomainOriginBpsDataResponse.setDomainName(context.stringValue("DescribeDcdnDomainOriginBpsDataResponse.DomainName"));
-		describeDcdnDomainOriginBpsDataResponse.setStartTime(context.stringValue("DescribeDcdnDomainOriginBpsDataResponse.StartTime"));
-		describeDcdnDomainOriginBpsDataResponse.setEndTime(context.stringValue("DescribeDcdnDomainOriginBpsDataResponse.EndTime"));
-		describeDcdnDomainOriginBpsDataResponse.setDataInterval(context.stringValue("DescribeDcdnDomainOriginBpsDataResponse.DataInterval"));
+		describeDcdnDomainOriginBpsDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainOriginBpsDataResponse.RequestId"));
+		describeDcdnDomainOriginBpsDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainOriginBpsDataResponse.DomainName"));
+		describeDcdnDomainOriginBpsDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainOriginBpsDataResponse.StartTime"));
+		describeDcdnDomainOriginBpsDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainOriginBpsDataResponse.EndTime"));
+		describeDcdnDomainOriginBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainOriginBpsDataResponse.DataInterval"));
 
 		List<DataModule> originBpsDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setOriginBps(context.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].OriginBps"));
-			dataModule.setDynamicHttpOriginBps(context.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].DynamicHttpOriginBps"));
-			dataModule.setDynamicHttpsOriginBps(context.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].DynamicHttpsOriginBps"));
-			dataModule.setStaticHttpOriginBps(context.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].StaticHttpOriginBps"));
-			dataModule.setStaticHttpsOriginBps(context.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].StaticHttpsOriginBps"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setOriginBps(_ctx.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].OriginBps"));
+			dataModule.setDynamicHttpOriginBps(_ctx.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].DynamicHttpOriginBps"));
+			dataModule.setDynamicHttpsOriginBps(_ctx.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].DynamicHttpsOriginBps"));
+			dataModule.setStaticHttpOriginBps(_ctx.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].StaticHttpOriginBps"));
+			dataModule.setStaticHttpsOriginBps(_ctx.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].StaticHttpsOriginBps"));
 
 			originBpsDataPerInterval.add(dataModule);
 		}

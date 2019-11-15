@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDcdnUserResourcePackageResponseUnmarshaller {
 
-	public static DescribeDcdnUserResourcePackageResponse unmarshall(DescribeDcdnUserResourcePackageResponse describeDcdnUserResourcePackageResponse, UnmarshallerContext context) {
+	public static DescribeDcdnUserResourcePackageResponse unmarshall(DescribeDcdnUserResourcePackageResponse describeDcdnUserResourcePackageResponse, UnmarshallerContext _ctx) {
 		
-		describeDcdnUserResourcePackageResponse.setRequestId(context.stringValue("DescribeDcdnUserResourcePackageResponse.RequestId"));
+		describeDcdnUserResourcePackageResponse.setRequestId(_ctx.stringValue("DescribeDcdnUserResourcePackageResponse.RequestId"));
 
 		List<ResourcePackageInfo> resourcePackageInfos = new ArrayList<ResourcePackageInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos.Length"); i++) {
 			ResourcePackageInfo resourcePackageInfo = new ResourcePackageInfo();
-			resourcePackageInfo.setCurrCapacity(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].CurrCapacity"));
-			resourcePackageInfo.setInitCapacity(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].InitCapacity"));
-			resourcePackageInfo.setCommodityCode(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].CommodityCode"));
-			resourcePackageInfo.setDisplayName(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].DisplayName"));
-			resourcePackageInfo.setTemplateName(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].TemplateName"));
-			resourcePackageInfo.setInstanceId(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].InstanceId"));
-			resourcePackageInfo.setStatus(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].Status"));
-			resourcePackageInfo.setStartTime(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].StartTime"));
-			resourcePackageInfo.setEndTime(context.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].EndTime"));
+			resourcePackageInfo.setCurrCapacity(_ctx.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].CurrCapacity"));
+			resourcePackageInfo.setInitCapacity(_ctx.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].InitCapacity"));
+			resourcePackageInfo.setCommodityCode(_ctx.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].CommodityCode"));
+			resourcePackageInfo.setDisplayName(_ctx.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].DisplayName"));
+			resourcePackageInfo.setTemplateName(_ctx.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].TemplateName"));
+			resourcePackageInfo.setInstanceId(_ctx.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].InstanceId"));
+			resourcePackageInfo.setStatus(_ctx.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].Status"));
+			resourcePackageInfo.setStartTime(_ctx.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].StartTime"));
+			resourcePackageInfo.setEndTime(_ctx.stringValue("DescribeDcdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].EndTime"));
 
 			resourcePackageInfos.add(resourcePackageInfo);
 		}

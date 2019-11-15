@@ -25,25 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDcdnDomainRealTimeHttpCodeDataResponseUnmarshaller {
 
-	public static DescribeDcdnDomainRealTimeHttpCodeDataResponse unmarshall(DescribeDcdnDomainRealTimeHttpCodeDataResponse describeDcdnDomainRealTimeHttpCodeDataResponse, UnmarshallerContext context) {
+	public static DescribeDcdnDomainRealTimeHttpCodeDataResponse unmarshall(DescribeDcdnDomainRealTimeHttpCodeDataResponse describeDcdnDomainRealTimeHttpCodeDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDcdnDomainRealTimeHttpCodeDataResponse.setRequestId(context.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.RequestId"));
-		describeDcdnDomainRealTimeHttpCodeDataResponse.setDomainName(context.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.DomainName"));
-		describeDcdnDomainRealTimeHttpCodeDataResponse.setStartTime(context.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.StartTime"));
-		describeDcdnDomainRealTimeHttpCodeDataResponse.setEndTime(context.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.EndTime"));
-		describeDcdnDomainRealTimeHttpCodeDataResponse.setDataInterval(context.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.DataInterval"));
+		describeDcdnDomainRealTimeHttpCodeDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.RequestId"));
+		describeDcdnDomainRealTimeHttpCodeDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.DomainName"));
+		describeDcdnDomainRealTimeHttpCodeDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.StartTime"));
+		describeDcdnDomainRealTimeHttpCodeDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.EndTime"));
+		describeDcdnDomainRealTimeHttpCodeDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.DataInterval"));
 
 		List<UsageData> realTimeHttpCodeData = new ArrayList<UsageData>();
-		for (int i = 0; i < context.lengthValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData.Length"); i++) {
 			UsageData usageData = new UsageData();
-			usageData.setTimeStamp(context.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].TimeStamp"));
+			usageData.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].TimeStamp"));
 
 			List<RealTimeCodeProportionData> value = new ArrayList<RealTimeCodeProportionData>();
-			for (int j = 0; j < context.lengthValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].Value.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].Value.Length"); j++) {
 				RealTimeCodeProportionData realTimeCodeProportionData = new RealTimeCodeProportionData();
-				realTimeCodeProportionData.setCode(context.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Code"));
-				realTimeCodeProportionData.setProportion(context.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Proportion"));
-				realTimeCodeProportionData.setCount(context.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Count"));
+				realTimeCodeProportionData.setCode(_ctx.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Code"));
+				realTimeCodeProportionData.setProportion(_ctx.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Proportion"));
+				realTimeCodeProportionData.setCount(_ctx.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Count"));
 
 				value.add(realTimeCodeProportionData);
 			}

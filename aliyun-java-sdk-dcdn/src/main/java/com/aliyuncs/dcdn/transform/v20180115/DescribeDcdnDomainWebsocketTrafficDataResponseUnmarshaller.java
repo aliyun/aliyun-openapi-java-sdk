@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDcdnDomainWebsocketTrafficDataResponseUnmarshaller {
 
-	public static DescribeDcdnDomainWebsocketTrafficDataResponse unmarshall(DescribeDcdnDomainWebsocketTrafficDataResponse describeDcdnDomainWebsocketTrafficDataResponse, UnmarshallerContext context) {
+	public static DescribeDcdnDomainWebsocketTrafficDataResponse unmarshall(DescribeDcdnDomainWebsocketTrafficDataResponse describeDcdnDomainWebsocketTrafficDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDcdnDomainWebsocketTrafficDataResponse.setRequestId(context.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.RequestId"));
-		describeDcdnDomainWebsocketTrafficDataResponse.setDomainName(context.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.DomainName"));
-		describeDcdnDomainWebsocketTrafficDataResponse.setStartTime(context.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.StartTime"));
-		describeDcdnDomainWebsocketTrafficDataResponse.setEndTime(context.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.EndTime"));
-		describeDcdnDomainWebsocketTrafficDataResponse.setDataInterval(context.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.DataInterval"));
+		describeDcdnDomainWebsocketTrafficDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.RequestId"));
+		describeDcdnDomainWebsocketTrafficDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.DomainName"));
+		describeDcdnDomainWebsocketTrafficDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.StartTime"));
+		describeDcdnDomainWebsocketTrafficDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.EndTime"));
+		describeDcdnDomainWebsocketTrafficDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.DataInterval"));
 
 		List<DataModule> trafficDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDcdnDomainWebsocketTrafficDataResponse.TrafficDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainWebsocketTrafficDataResponse.TrafficDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.TrafficDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setWebsocketTraffic(context.floatValue("DescribeDcdnDomainWebsocketTrafficDataResponse.TrafficDataPerInterval["+ i +"].WebsocketTraffic"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.TrafficDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setWebsocketTraffic(_ctx.floatValue("DescribeDcdnDomainWebsocketTrafficDataResponse.TrafficDataPerInterval["+ i +"].WebsocketTraffic"));
 
 			trafficDataPerInterval.add(dataModule);
 		}

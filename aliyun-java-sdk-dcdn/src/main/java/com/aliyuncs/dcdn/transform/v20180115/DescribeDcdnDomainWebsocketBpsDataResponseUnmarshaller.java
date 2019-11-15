@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDcdnDomainWebsocketBpsDataResponseUnmarshaller {
 
-	public static DescribeDcdnDomainWebsocketBpsDataResponse unmarshall(DescribeDcdnDomainWebsocketBpsDataResponse describeDcdnDomainWebsocketBpsDataResponse, UnmarshallerContext context) {
+	public static DescribeDcdnDomainWebsocketBpsDataResponse unmarshall(DescribeDcdnDomainWebsocketBpsDataResponse describeDcdnDomainWebsocketBpsDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDcdnDomainWebsocketBpsDataResponse.setRequestId(context.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.RequestId"));
-		describeDcdnDomainWebsocketBpsDataResponse.setDomainName(context.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.DomainName"));
-		describeDcdnDomainWebsocketBpsDataResponse.setStartTime(context.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.StartTime"));
-		describeDcdnDomainWebsocketBpsDataResponse.setEndTime(context.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.EndTime"));
-		describeDcdnDomainWebsocketBpsDataResponse.setDataInterval(context.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.DataInterval"));
+		describeDcdnDomainWebsocketBpsDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.RequestId"));
+		describeDcdnDomainWebsocketBpsDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.DomainName"));
+		describeDcdnDomainWebsocketBpsDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.StartTime"));
+		describeDcdnDomainWebsocketBpsDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.EndTime"));
+		describeDcdnDomainWebsocketBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.DataInterval"));
 
 		List<DataModule> bpsDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDcdnDomainWebsocketBpsDataResponse.BpsDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainWebsocketBpsDataResponse.BpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setWebsocketBps(context.floatValue("DescribeDcdnDomainWebsocketBpsDataResponse.BpsDataPerInterval["+ i +"].WebsocketBps"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setWebsocketBps(_ctx.floatValue("DescribeDcdnDomainWebsocketBpsDataResponse.BpsDataPerInterval["+ i +"].WebsocketBps"));
 
 			bpsDataPerInterval.add(dataModule);
 		}

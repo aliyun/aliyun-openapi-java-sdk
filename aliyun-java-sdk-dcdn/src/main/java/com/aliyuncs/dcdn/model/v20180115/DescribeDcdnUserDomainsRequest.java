@@ -15,18 +15,17 @@
 package com.aliyuncs.dcdn.model.v20180115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dcdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDcdnUserDomainsRequest extends RpcAcsRequest<DescribeDcdnUserDomainsResponse> {
-	
-	public DescribeDcdnUserDomainsRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnUserDomains");
-	}
+	   
 
-	private String funcFilter;
+	private Integer pageNumber;
 
 	private Boolean checkDomainShow;
 
@@ -34,7 +33,11 @@ public class DescribeDcdnUserDomainsRequest extends RpcAcsRequest<DescribeDcdnUs
 
 	private String securityToken;
 
+	private String changeEndTime;
+
 	private Integer pageSize;
+
+	private String funcFilter;
 
 	private String domainName;
 
@@ -42,20 +45,28 @@ public class DescribeDcdnUserDomainsRequest extends RpcAcsRequest<DescribeDcdnUs
 
 	private String funcId;
 
-	private Integer pageNumber;
-
 	private String domainStatus;
 
 	private String domainSearchType;
 
-	public String getFuncFilter() {
-		return this.funcFilter;
+	private String changeStartTime;
+	public DescribeDcdnUserDomainsRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnUserDomains");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setFuncFilter(String funcFilter) {
-		this.funcFilter = funcFilter;
-		if(funcFilter != null){
-			putQueryParameter("FuncFilter", funcFilter);
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -81,33 +92,25 @@ public class DescribeDcdnUserDomainsRequest extends RpcAcsRequest<DescribeDcdnUs
 		}
 	}
 
-	public String getBizSecurityToken() {
+	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
+	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getChangeEndTime() {
+		return this.changeEndTime;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setChangeEndTime(String changeEndTime) {
+		this.changeEndTime = changeEndTime;
+		if(changeEndTime != null){
+			putQueryParameter("ChangeEndTime", changeEndTime);
 		}
 	}
 
@@ -119,6 +122,17 @@ public class DescribeDcdnUserDomainsRequest extends RpcAcsRequest<DescribeDcdnUs
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getFuncFilter() {
+		return this.funcFilter;
+	}
+
+	public void setFuncFilter(String funcFilter) {
+		this.funcFilter = funcFilter;
+		if(funcFilter != null){
+			putQueryParameter("FuncFilter", funcFilter);
 		}
 	}
 
@@ -155,17 +169,6 @@ public class DescribeDcdnUserDomainsRequest extends RpcAcsRequest<DescribeDcdnUs
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getDomainStatus() {
 		return this.domainStatus;
 	}
@@ -185,6 +188,17 @@ public class DescribeDcdnUserDomainsRequest extends RpcAcsRequest<DescribeDcdnUs
 		this.domainSearchType = domainSearchType;
 		if(domainSearchType != null){
 			putQueryParameter("DomainSearchType", domainSearchType);
+		}
+	}
+
+	public String getChangeStartTime() {
+		return this.changeStartTime;
+	}
+
+	public void setChangeStartTime(String changeStartTime) {
+		this.changeStartTime = changeStartTime;
+		if(changeStartTime != null){
+			putQueryParameter("ChangeStartTime", changeStartTime);
 		}
 	}
 

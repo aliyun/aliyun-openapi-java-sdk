@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDcdnDomainPvDataResponseUnmarshaller {
 
-	public static DescribeDcdnDomainPvDataResponse unmarshall(DescribeDcdnDomainPvDataResponse describeDcdnDomainPvDataResponse, UnmarshallerContext context) {
+	public static DescribeDcdnDomainPvDataResponse unmarshall(DescribeDcdnDomainPvDataResponse describeDcdnDomainPvDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDcdnDomainPvDataResponse.setRequestId(context.stringValue("DescribeDcdnDomainPvDataResponse.RequestId"));
-		describeDcdnDomainPvDataResponse.setDomainName(context.stringValue("DescribeDcdnDomainPvDataResponse.DomainName"));
-		describeDcdnDomainPvDataResponse.setDataInterval(context.stringValue("DescribeDcdnDomainPvDataResponse.DataInterval"));
-		describeDcdnDomainPvDataResponse.setStartTime(context.stringValue("DescribeDcdnDomainPvDataResponse.StartTime"));
-		describeDcdnDomainPvDataResponse.setEndTime(context.stringValue("DescribeDcdnDomainPvDataResponse.EndTime"));
+		describeDcdnDomainPvDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.RequestId"));
+		describeDcdnDomainPvDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.DomainName"));
+		describeDcdnDomainPvDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.DataInterval"));
+		describeDcdnDomainPvDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.StartTime"));
+		describeDcdnDomainPvDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.EndTime"));
 
 		List<UsageData> pvDataInterval = new ArrayList<UsageData>();
-		for (int i = 0; i < context.lengthValue("DescribeDcdnDomainPvDataResponse.PvDataInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainPvDataResponse.PvDataInterval.Length"); i++) {
 			UsageData usageData = new UsageData();
-			usageData.setTimeStamp(context.stringValue("DescribeDcdnDomainPvDataResponse.PvDataInterval["+ i +"].TimeStamp"));
-			usageData.setValue(context.stringValue("DescribeDcdnDomainPvDataResponse.PvDataInterval["+ i +"].Value"));
+			usageData.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.PvDataInterval["+ i +"].TimeStamp"));
+			usageData.setValue(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.PvDataInterval["+ i +"].Value"));
 
 			pvDataInterval.add(usageData);
 		}

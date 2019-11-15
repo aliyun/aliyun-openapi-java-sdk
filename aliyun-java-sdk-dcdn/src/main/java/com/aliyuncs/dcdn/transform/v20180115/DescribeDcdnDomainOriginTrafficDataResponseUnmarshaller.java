@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDcdnDomainOriginTrafficDataResponseUnmarshaller {
 
-	public static DescribeDcdnDomainOriginTrafficDataResponse unmarshall(DescribeDcdnDomainOriginTrafficDataResponse describeDcdnDomainOriginTrafficDataResponse, UnmarshallerContext context) {
+	public static DescribeDcdnDomainOriginTrafficDataResponse unmarshall(DescribeDcdnDomainOriginTrafficDataResponse describeDcdnDomainOriginTrafficDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDcdnDomainOriginTrafficDataResponse.setRequestId(context.stringValue("DescribeDcdnDomainOriginTrafficDataResponse.RequestId"));
-		describeDcdnDomainOriginTrafficDataResponse.setDomainName(context.stringValue("DescribeDcdnDomainOriginTrafficDataResponse.DomainName"));
-		describeDcdnDomainOriginTrafficDataResponse.setStartTime(context.stringValue("DescribeDcdnDomainOriginTrafficDataResponse.StartTime"));
-		describeDcdnDomainOriginTrafficDataResponse.setEndTime(context.stringValue("DescribeDcdnDomainOriginTrafficDataResponse.EndTime"));
-		describeDcdnDomainOriginTrafficDataResponse.setDataInterval(context.stringValue("DescribeDcdnDomainOriginTrafficDataResponse.DataInterval"));
+		describeDcdnDomainOriginTrafficDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainOriginTrafficDataResponse.RequestId"));
+		describeDcdnDomainOriginTrafficDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainOriginTrafficDataResponse.DomainName"));
+		describeDcdnDomainOriginTrafficDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainOriginTrafficDataResponse.StartTime"));
+		describeDcdnDomainOriginTrafficDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainOriginTrafficDataResponse.EndTime"));
+		describeDcdnDomainOriginTrafficDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainOriginTrafficDataResponse.DataInterval"));
 
 		List<DataModule> originTrafficDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDcdnDomainOriginTrafficDataResponse.OriginTrafficDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainOriginTrafficDataResponse.OriginTrafficDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDcdnDomainOriginTrafficDataResponse.OriginTrafficDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setOriginTraffic(context.floatValue("DescribeDcdnDomainOriginTrafficDataResponse.OriginTrafficDataPerInterval["+ i +"].OriginTraffic"));
-			dataModule.setDynamicHttpOriginTraffic(context.floatValue("DescribeDcdnDomainOriginTrafficDataResponse.OriginTrafficDataPerInterval["+ i +"].DynamicHttpOriginTraffic"));
-			dataModule.setDynamicHttpsOriginTraffic(context.floatValue("DescribeDcdnDomainOriginTrafficDataResponse.OriginTrafficDataPerInterval["+ i +"].DynamicHttpsOriginTraffic"));
-			dataModule.setStaticHttpOriginTraffic(context.floatValue("DescribeDcdnDomainOriginTrafficDataResponse.OriginTrafficDataPerInterval["+ i +"].StaticHttpOriginTraffic"));
-			dataModule.setStaticHttpsOriginTraffic(context.floatValue("DescribeDcdnDomainOriginTrafficDataResponse.OriginTrafficDataPerInterval["+ i +"].StaticHttpsOriginTraffic"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainOriginTrafficDataResponse.OriginTrafficDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setOriginTraffic(_ctx.floatValue("DescribeDcdnDomainOriginTrafficDataResponse.OriginTrafficDataPerInterval["+ i +"].OriginTraffic"));
+			dataModule.setDynamicHttpOriginTraffic(_ctx.floatValue("DescribeDcdnDomainOriginTrafficDataResponse.OriginTrafficDataPerInterval["+ i +"].DynamicHttpOriginTraffic"));
+			dataModule.setDynamicHttpsOriginTraffic(_ctx.floatValue("DescribeDcdnDomainOriginTrafficDataResponse.OriginTrafficDataPerInterval["+ i +"].DynamicHttpsOriginTraffic"));
+			dataModule.setStaticHttpOriginTraffic(_ctx.floatValue("DescribeDcdnDomainOriginTrafficDataResponse.OriginTrafficDataPerInterval["+ i +"].StaticHttpOriginTraffic"));
+			dataModule.setStaticHttpsOriginTraffic(_ctx.floatValue("DescribeDcdnDomainOriginTrafficDataResponse.OriginTrafficDataPerInterval["+ i +"].StaticHttpsOriginTraffic"));
 
 			originTrafficDataPerInterval.add(dataModule);
 		}

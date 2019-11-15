@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDcdnDomainHitRateDataResponseUnmarshaller {
 
-	public static DescribeDcdnDomainHitRateDataResponse unmarshall(DescribeDcdnDomainHitRateDataResponse describeDcdnDomainHitRateDataResponse, UnmarshallerContext context) {
+	public static DescribeDcdnDomainHitRateDataResponse unmarshall(DescribeDcdnDomainHitRateDataResponse describeDcdnDomainHitRateDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDcdnDomainHitRateDataResponse.setRequestId(context.stringValue("DescribeDcdnDomainHitRateDataResponse.RequestId"));
-		describeDcdnDomainHitRateDataResponse.setDomainName(context.stringValue("DescribeDcdnDomainHitRateDataResponse.DomainName"));
-		describeDcdnDomainHitRateDataResponse.setStartTime(context.stringValue("DescribeDcdnDomainHitRateDataResponse.StartTime"));
-		describeDcdnDomainHitRateDataResponse.setEndTime(context.stringValue("DescribeDcdnDomainHitRateDataResponse.EndTime"));
-		describeDcdnDomainHitRateDataResponse.setDataInterval(context.stringValue("DescribeDcdnDomainHitRateDataResponse.DataInterval"));
+		describeDcdnDomainHitRateDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainHitRateDataResponse.RequestId"));
+		describeDcdnDomainHitRateDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainHitRateDataResponse.DomainName"));
+		describeDcdnDomainHitRateDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainHitRateDataResponse.StartTime"));
+		describeDcdnDomainHitRateDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainHitRateDataResponse.EndTime"));
+		describeDcdnDomainHitRateDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainHitRateDataResponse.DataInterval"));
 
 		List<DataModule> hitRatePerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDcdnDomainHitRateDataResponse.HitRatePerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainHitRateDataResponse.HitRatePerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDcdnDomainHitRateDataResponse.HitRatePerInterval["+ i +"].TimeStamp"));
-			dataModule.setReqHitRate(context.floatValue("DescribeDcdnDomainHitRateDataResponse.HitRatePerInterval["+ i +"].ReqHitRate"));
-			dataModule.setByteHitRate(context.floatValue("DescribeDcdnDomainHitRateDataResponse.HitRatePerInterval["+ i +"].ByteHitRate"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainHitRateDataResponse.HitRatePerInterval["+ i +"].TimeStamp"));
+			dataModule.setReqHitRate(_ctx.floatValue("DescribeDcdnDomainHitRateDataResponse.HitRatePerInterval["+ i +"].ReqHitRate"));
+			dataModule.setByteHitRate(_ctx.floatValue("DescribeDcdnDomainHitRateDataResponse.HitRatePerInterval["+ i +"].ByteHitRate"));
 
 			hitRatePerInterval.add(dataModule);
 		}

@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDcdnDomainBpsDataResponseUnmarshaller {
 
-	public static DescribeDcdnDomainBpsDataResponse unmarshall(DescribeDcdnDomainBpsDataResponse describeDcdnDomainBpsDataResponse, UnmarshallerContext context) {
+	public static DescribeDcdnDomainBpsDataResponse unmarshall(DescribeDcdnDomainBpsDataResponse describeDcdnDomainBpsDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDcdnDomainBpsDataResponse.setRequestId(context.stringValue("DescribeDcdnDomainBpsDataResponse.RequestId"));
-		describeDcdnDomainBpsDataResponse.setDomainName(context.stringValue("DescribeDcdnDomainBpsDataResponse.DomainName"));
-		describeDcdnDomainBpsDataResponse.setStartTime(context.stringValue("DescribeDcdnDomainBpsDataResponse.StartTime"));
-		describeDcdnDomainBpsDataResponse.setEndTime(context.stringValue("DescribeDcdnDomainBpsDataResponse.EndTime"));
-		describeDcdnDomainBpsDataResponse.setDataInterval(context.stringValue("DescribeDcdnDomainBpsDataResponse.DataInterval"));
+		describeDcdnDomainBpsDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainBpsDataResponse.RequestId"));
+		describeDcdnDomainBpsDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainBpsDataResponse.DomainName"));
+		describeDcdnDomainBpsDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainBpsDataResponse.StartTime"));
+		describeDcdnDomainBpsDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainBpsDataResponse.EndTime"));
+		describeDcdnDomainBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainBpsDataResponse.DataInterval"));
 
 		List<DataModule> bpsDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setBps(context.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].Bps"));
-			dataModule.setDynamicHttpBps(context.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DynamicHttpBps"));
-			dataModule.setDynamicHttpsBps(context.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DynamicHttpsBps"));
-			dataModule.setStaticHttpBps(context.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].StaticHttpBps"));
-			dataModule.setStaticHttpsBps(context.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].StaticHttpsBps"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setBps(_ctx.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].Bps"));
+			dataModule.setDynamicHttpBps(_ctx.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DynamicHttpBps"));
+			dataModule.setDynamicHttpsBps(_ctx.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DynamicHttpsBps"));
+			dataModule.setStaticHttpBps(_ctx.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].StaticHttpBps"));
+			dataModule.setStaticHttpsBps(_ctx.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].StaticHttpsBps"));
 
 			bpsDataPerInterval.add(dataModule);
 		}

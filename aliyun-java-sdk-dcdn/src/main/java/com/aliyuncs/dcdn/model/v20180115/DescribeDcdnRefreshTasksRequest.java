@@ -15,26 +15,19 @@
 package com.aliyuncs.dcdn.model.v20180115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dcdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDcdnRefreshTasksRequest extends RpcAcsRequest<DescribeDcdnRefreshTasksResponse> {
-	
-	public DescribeDcdnRefreshTasksRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnRefreshTasks");
-	}
+	   
 
 	private String objectPath;
 
-	private String domainName;
-
-	private String endTime;
-
 	private String startTime;
-
-	private Long ownerId;
 
 	private Integer pageNumber;
 
@@ -48,7 +41,21 @@ public class DescribeDcdnRefreshTasksRequest extends RpcAcsRequest<DescribeDcdnR
 
 	private String taskId;
 
+	private String domainName;
+
+	private String endTime;
+
+	private Long ownerId;
+
 	private String status;
+	public DescribeDcdnRefreshTasksRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnRefreshTasks");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getObjectPath() {
 		return this.objectPath;
@@ -61,28 +68,6 @@ public class DescribeDcdnRefreshTasksRequest extends RpcAcsRequest<DescribeDcdnR
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -91,17 +76,6 @@ public class DescribeDcdnRefreshTasksRequest extends RpcAcsRequest<DescribeDcdnR
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -127,29 +101,10 @@ public class DescribeDcdnRefreshTasksRequest extends RpcAcsRequest<DescribeDcdnR
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -187,6 +142,39 @@ public class DescribeDcdnRefreshTasksRequest extends RpcAcsRequest<DescribeDcdnR
 		this.taskId = taskId;
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

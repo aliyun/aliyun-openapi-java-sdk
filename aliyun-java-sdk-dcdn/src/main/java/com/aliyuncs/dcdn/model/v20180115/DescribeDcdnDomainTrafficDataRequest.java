@@ -15,26 +15,21 @@
 package com.aliyuncs.dcdn.model.v20180115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dcdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDcdnDomainTrafficDataRequest extends RpcAcsRequest<DescribeDcdnDomainTrafficDataResponse> {
-	
-	public DescribeDcdnDomainTrafficDataRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnDomainTrafficData");
-	}
+	   
 
 	private String locationNameEn;
 
 	private String startTime;
 
 	private String ispNameEn;
-
-	private String fixTimeGap;
-
-	private String timeMerge;
 
 	private String domainName;
 
@@ -43,6 +38,14 @@ public class DescribeDcdnDomainTrafficDataRequest extends RpcAcsRequest<Describe
 	private Long ownerId;
 
 	private String interval;
+	public DescribeDcdnDomainTrafficDataRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnDomainTrafficData");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getLocationNameEn() {
 		return this.locationNameEn;
@@ -74,28 +77,6 @@ public class DescribeDcdnDomainTrafficDataRequest extends RpcAcsRequest<Describe
 		this.ispNameEn = ispNameEn;
 		if(ispNameEn != null){
 			putQueryParameter("IspNameEn", ispNameEn);
-		}
-	}
-
-	public String getFixTimeGap() {
-		return this.fixTimeGap;
-	}
-
-	public void setFixTimeGap(String fixTimeGap) {
-		this.fixTimeGap = fixTimeGap;
-		if(fixTimeGap != null){
-			putQueryParameter("FixTimeGap", fixTimeGap);
-		}
-	}
-
-	public String getTimeMerge() {
-		return this.timeMerge;
-	}
-
-	public void setTimeMerge(String timeMerge) {
-		this.timeMerge = timeMerge;
-		if(timeMerge != null){
-			putQueryParameter("TimeMerge", timeMerge);
 		}
 	}
 

@@ -26,30 +26,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDcdnDomainLogResponseUnmarshaller {
 
-	public static DescribeDcdnDomainLogResponse unmarshall(DescribeDcdnDomainLogResponse describeDcdnDomainLogResponse, UnmarshallerContext context) {
+	public static DescribeDcdnDomainLogResponse unmarshall(DescribeDcdnDomainLogResponse describeDcdnDomainLogResponse, UnmarshallerContext _ctx) {
 		
-		describeDcdnDomainLogResponse.setRequestId(context.stringValue("DescribeDcdnDomainLogResponse.RequestId"));
-		describeDcdnDomainLogResponse.setDomainName(context.stringValue("DescribeDcdnDomainLogResponse.DomainName"));
+		describeDcdnDomainLogResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainLogResponse.RequestId"));
+		describeDcdnDomainLogResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainLogResponse.DomainName"));
 
 		List<DomainLogDetail> domainLogDetails = new ArrayList<DomainLogDetail>();
-		for (int i = 0; i < context.lengthValue("DescribeDcdnDomainLogResponse.DomainLogDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainLogResponse.DomainLogDetails.Length"); i++) {
 			DomainLogDetail domainLogDetail = new DomainLogDetail();
-			domainLogDetail.setLogCount(context.longValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].LogCount"));
+			domainLogDetail.setLogCount(_ctx.longValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].LogCount"));
 
 			PageInfos pageInfos = new PageInfos();
-			pageInfos.setPageIndex(context.longValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.PageIndex"));
-			pageInfos.setPageSize(context.longValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.PageSize"));
-			pageInfos.setTotal(context.longValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.Total"));
+			pageInfos.setPageIndex(_ctx.longValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.PageIndex"));
+			pageInfos.setPageSize(_ctx.longValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.PageSize"));
+			pageInfos.setTotal(_ctx.longValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.Total"));
 			domainLogDetail.setPageInfos(pageInfos);
 
 			List<LogInfoDetail> logInfos = new ArrayList<LogInfoDetail>();
-			for (int j = 0; j < context.lengthValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {
 				LogInfoDetail logInfoDetail = new LogInfoDetail();
-				logInfoDetail.setLogName(context.stringValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName"));
-				logInfoDetail.setLogPath(context.stringValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath"));
-				logInfoDetail.setLogSize(context.longValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize"));
-				logInfoDetail.setStartTime(context.stringValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime"));
-				logInfoDetail.setEndTime(context.stringValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime"));
+				logInfoDetail.setLogName(_ctx.stringValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName"));
+				logInfoDetail.setLogPath(_ctx.stringValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath"));
+				logInfoDetail.setLogSize(_ctx.longValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize"));
+				logInfoDetail.setStartTime(_ctx.stringValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime"));
+				logInfoDetail.setEndTime(_ctx.stringValue("DescribeDcdnDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime"));
 
 				logInfos.add(logInfoDetail);
 			}

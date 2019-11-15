@@ -25,25 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDcdnDomainHttpCodeDataResponseUnmarshaller {
 
-	public static DescribeDcdnDomainHttpCodeDataResponse unmarshall(DescribeDcdnDomainHttpCodeDataResponse describeDcdnDomainHttpCodeDataResponse, UnmarshallerContext context) {
+	public static DescribeDcdnDomainHttpCodeDataResponse unmarshall(DescribeDcdnDomainHttpCodeDataResponse describeDcdnDomainHttpCodeDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDcdnDomainHttpCodeDataResponse.setRequestId(context.stringValue("DescribeDcdnDomainHttpCodeDataResponse.RequestId"));
-		describeDcdnDomainHttpCodeDataResponse.setDomainName(context.stringValue("DescribeDcdnDomainHttpCodeDataResponse.DomainName"));
-		describeDcdnDomainHttpCodeDataResponse.setStartTime(context.stringValue("DescribeDcdnDomainHttpCodeDataResponse.StartTime"));
-		describeDcdnDomainHttpCodeDataResponse.setEndTime(context.stringValue("DescribeDcdnDomainHttpCodeDataResponse.EndTime"));
-		describeDcdnDomainHttpCodeDataResponse.setDataInterval(context.stringValue("DescribeDcdnDomainHttpCodeDataResponse.DataInterval"));
+		describeDcdnDomainHttpCodeDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainHttpCodeDataResponse.RequestId"));
+		describeDcdnDomainHttpCodeDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainHttpCodeDataResponse.DomainName"));
+		describeDcdnDomainHttpCodeDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainHttpCodeDataResponse.StartTime"));
+		describeDcdnDomainHttpCodeDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainHttpCodeDataResponse.EndTime"));
+		describeDcdnDomainHttpCodeDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainHttpCodeDataResponse.DataInterval"));
 
 		List<DataModule> dataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDcdnDomainHttpCodeDataResponse.DataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainHttpCodeDataResponse.DataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDcdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].TimeStamp"));
 
 			List<HttpCodeDataModule> httpCodeDataPerInterval = new ArrayList<HttpCodeDataModule>();
-			for (int j = 0; j < context.lengthValue("DescribeDcdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].HttpCodeDataPerInterval.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeDcdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].HttpCodeDataPerInterval.Length"); j++) {
 				HttpCodeDataModule httpCodeDataModule = new HttpCodeDataModule();
-				httpCodeDataModule.setCode(context.integerValue("DescribeDcdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Code"));
-				httpCodeDataModule.setProportion(context.floatValue("DescribeDcdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Proportion"));
-				httpCodeDataModule.setCount(context.floatValue("DescribeDcdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Count"));
+				httpCodeDataModule.setCode(_ctx.integerValue("DescribeDcdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Code"));
+				httpCodeDataModule.setProportion(_ctx.floatValue("DescribeDcdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Proportion"));
+				httpCodeDataModule.setCount(_ctx.floatValue("DescribeDcdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Count"));
 
 				httpCodeDataPerInterval.add(httpCodeDataModule);
 			}

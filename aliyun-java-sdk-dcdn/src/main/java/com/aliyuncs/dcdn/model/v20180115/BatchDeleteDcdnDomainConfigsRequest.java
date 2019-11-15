@@ -15,26 +15,33 @@
 package com.aliyuncs.dcdn.model.v20180115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dcdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class BatchDeleteDcdnDomainConfigsRequest extends RpcAcsRequest<BatchDeleteDcdnDomainConfigsResponse> {
-	
-	public BatchDeleteDcdnDomainConfigsRequest() {
-		super("dcdn", "2018-01-15", "BatchDeleteDcdnDomainConfigs");
-	}
+	   
 
 	private String functionNames;
-
-	private String securityToken;
 
 	private String domainNames;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String securityToken;
+	public BatchDeleteDcdnDomainConfigsRequest() {
+		super("dcdn", "2018-01-15", "BatchDeleteDcdnDomainConfigs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getFunctionNames() {
 		return this.functionNames;
@@ -44,36 +51,6 @@ public class BatchDeleteDcdnDomainConfigsRequest extends RpcAcsRequest<BatchDele
 		this.functionNames = functionNames;
 		if(functionNames != null){
 			putQueryParameter("FunctionNames", functionNames);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -107,6 +84,17 @@ public class BatchDeleteDcdnDomainConfigsRequest extends RpcAcsRequest<BatchDele
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

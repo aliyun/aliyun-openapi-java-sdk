@@ -25,25 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDcdnDomainWebsocketHttpCodeDataResponseUnmarshaller {
 
-	public static DescribeDcdnDomainWebsocketHttpCodeDataResponse unmarshall(DescribeDcdnDomainWebsocketHttpCodeDataResponse describeDcdnDomainWebsocketHttpCodeDataResponse, UnmarshallerContext context) {
+	public static DescribeDcdnDomainWebsocketHttpCodeDataResponse unmarshall(DescribeDcdnDomainWebsocketHttpCodeDataResponse describeDcdnDomainWebsocketHttpCodeDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDcdnDomainWebsocketHttpCodeDataResponse.setRequestId(context.stringValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.RequestId"));
-		describeDcdnDomainWebsocketHttpCodeDataResponse.setDomainName(context.stringValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DomainName"));
-		describeDcdnDomainWebsocketHttpCodeDataResponse.setStartTime(context.stringValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.StartTime"));
-		describeDcdnDomainWebsocketHttpCodeDataResponse.setEndTime(context.stringValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.EndTime"));
-		describeDcdnDomainWebsocketHttpCodeDataResponse.setDataInterval(context.stringValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataInterval"));
+		describeDcdnDomainWebsocketHttpCodeDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.RequestId"));
+		describeDcdnDomainWebsocketHttpCodeDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DomainName"));
+		describeDcdnDomainWebsocketHttpCodeDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.StartTime"));
+		describeDcdnDomainWebsocketHttpCodeDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.EndTime"));
+		describeDcdnDomainWebsocketHttpCodeDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataInterval"));
 
 		List<DataModule> dataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval["+ i +"].TimeStamp"));
 
 			List<HttpCodeDataModule> websocketHttpCodeDataPerInterval = new ArrayList<HttpCodeDataModule>();
-			for (int j = 0; j < context.lengthValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval.Length"); j++) {
 				HttpCodeDataModule httpCodeDataModule = new HttpCodeDataModule();
-				httpCodeDataModule.setCode(context.integerValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Code"));
-				httpCodeDataModule.setProportion(context.floatValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Proportion"));
-				httpCodeDataModule.setCount(context.floatValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Count"));
+				httpCodeDataModule.setCode(_ctx.integerValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Code"));
+				httpCodeDataModule.setProportion(_ctx.floatValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Proportion"));
+				httpCodeDataModule.setCount(_ctx.floatValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Count"));
 
 				websocketHttpCodeDataPerInterval.add(httpCodeDataModule);
 			}

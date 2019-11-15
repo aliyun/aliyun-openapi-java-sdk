@@ -15,16 +15,15 @@
 package com.aliyuncs.dcdn.model.v20180115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dcdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDcdnDomainRegionDataRequest extends RpcAcsRequest<DescribeDcdnDomainRegionDataResponse> {
-	
-	public DescribeDcdnDomainRegionDataRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnDomainRegionData");
-	}
+	   
 
 	private String startTime;
 
@@ -33,6 +32,14 @@ public class DescribeDcdnDomainRegionDataRequest extends RpcAcsRequest<DescribeD
 	private String endTime;
 
 	private Long ownerId;
+	public DescribeDcdnDomainRegionDataRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnDomainRegionData");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStartTime() {
 		return this.startTime;

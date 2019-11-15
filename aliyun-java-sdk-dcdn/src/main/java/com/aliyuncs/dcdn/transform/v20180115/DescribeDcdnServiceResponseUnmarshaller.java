@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDcdnServiceResponseUnmarshaller {
 
-	public static DescribeDcdnServiceResponse unmarshall(DescribeDcdnServiceResponse describeDcdnServiceResponse, UnmarshallerContext context) {
+	public static DescribeDcdnServiceResponse unmarshall(DescribeDcdnServiceResponse describeDcdnServiceResponse, UnmarshallerContext _ctx) {
 		
-		describeDcdnServiceResponse.setRequestId(context.stringValue("DescribeDcdnServiceResponse.RequestId"));
-		describeDcdnServiceResponse.setInstanceId(context.stringValue("DescribeDcdnServiceResponse.InstanceId"));
-		describeDcdnServiceResponse.setInternetChargeType(context.stringValue("DescribeDcdnServiceResponse.InternetChargeType"));
-		describeDcdnServiceResponse.setOpeningTime(context.stringValue("DescribeDcdnServiceResponse.OpeningTime"));
-		describeDcdnServiceResponse.setChangingChargeType(context.stringValue("DescribeDcdnServiceResponse.ChangingChargeType"));
-		describeDcdnServiceResponse.setChangingAffectTime(context.stringValue("DescribeDcdnServiceResponse.ChangingAffectTime"));
-		describeDcdnServiceResponse.setWebsocketChangingType(context.stringValue("DescribeDcdnServiceResponse.WebsocketChangingType"));
-		describeDcdnServiceResponse.setWebsocketType(context.stringValue("DescribeDcdnServiceResponse.WebsocketType"));
-		describeDcdnServiceResponse.setWebsocketChangingTime(context.stringValue("DescribeDcdnServiceResponse.WebsocketChangingTime"));
+		describeDcdnServiceResponse.setRequestId(_ctx.stringValue("DescribeDcdnServiceResponse.RequestId"));
+		describeDcdnServiceResponse.setInstanceId(_ctx.stringValue("DescribeDcdnServiceResponse.InstanceId"));
+		describeDcdnServiceResponse.setInternetChargeType(_ctx.stringValue("DescribeDcdnServiceResponse.InternetChargeType"));
+		describeDcdnServiceResponse.setOpeningTime(_ctx.stringValue("DescribeDcdnServiceResponse.OpeningTime"));
+		describeDcdnServiceResponse.setChangingChargeType(_ctx.stringValue("DescribeDcdnServiceResponse.ChangingChargeType"));
+		describeDcdnServiceResponse.setChangingAffectTime(_ctx.stringValue("DescribeDcdnServiceResponse.ChangingAffectTime"));
+		describeDcdnServiceResponse.setWebsocketChangingType(_ctx.stringValue("DescribeDcdnServiceResponse.WebsocketChangingType"));
+		describeDcdnServiceResponse.setWebsocketType(_ctx.stringValue("DescribeDcdnServiceResponse.WebsocketType"));
+		describeDcdnServiceResponse.setWebsocketChangingTime(_ctx.stringValue("DescribeDcdnServiceResponse.WebsocketChangingTime"));
 
 		List<LockReason> operationLocks = new ArrayList<LockReason>();
-		for (int i = 0; i < context.lengthValue("DescribeDcdnServiceResponse.OperationLocks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnServiceResponse.OperationLocks.Length"); i++) {
 			LockReason lockReason = new LockReason();
-			lockReason.setLockReason(context.stringValue("DescribeDcdnServiceResponse.OperationLocks["+ i +"].LockReason"));
+			lockReason.setLockReason(_ctx.stringValue("DescribeDcdnServiceResponse.OperationLocks["+ i +"].LockReason"));
 
 			operationLocks.add(lockReason);
 		}

@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDcdnDomainQpsDataResponseUnmarshaller {
 
-	public static DescribeDcdnDomainQpsDataResponse unmarshall(DescribeDcdnDomainQpsDataResponse describeDcdnDomainQpsDataResponse, UnmarshallerContext context) {
+	public static DescribeDcdnDomainQpsDataResponse unmarshall(DescribeDcdnDomainQpsDataResponse describeDcdnDomainQpsDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDcdnDomainQpsDataResponse.setRequestId(context.stringValue("DescribeDcdnDomainQpsDataResponse.RequestId"));
-		describeDcdnDomainQpsDataResponse.setDomainName(context.stringValue("DescribeDcdnDomainQpsDataResponse.DomainName"));
-		describeDcdnDomainQpsDataResponse.setStartTime(context.stringValue("DescribeDcdnDomainQpsDataResponse.StartTime"));
-		describeDcdnDomainQpsDataResponse.setEndTime(context.stringValue("DescribeDcdnDomainQpsDataResponse.EndTime"));
-		describeDcdnDomainQpsDataResponse.setDataInterval(context.stringValue("DescribeDcdnDomainQpsDataResponse.DataInterval"));
+		describeDcdnDomainQpsDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainQpsDataResponse.RequestId"));
+		describeDcdnDomainQpsDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainQpsDataResponse.DomainName"));
+		describeDcdnDomainQpsDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainQpsDataResponse.StartTime"));
+		describeDcdnDomainQpsDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainQpsDataResponse.EndTime"));
+		describeDcdnDomainQpsDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainQpsDataResponse.DataInterval"));
 
 		List<DataModule> qpsDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setQps(context.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].Qps"));
-			dataModule.setDynamicHttpQps(context.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].DynamicHttpQps"));
-			dataModule.setDynamicHttpsQps(context.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].DynamicHttpsQps"));
-			dataModule.setStaticHttpQps(context.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].StaticHttpQps"));
-			dataModule.setStaticHttpsQps(context.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].StaticHttpsQps"));
-			dataModule.setAcc(context.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].Acc"));
-			dataModule.setDynamicHttpAcc(context.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].DynamicHttpAcc"));
-			dataModule.setDynamicHttpsAcc(context.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].DynamicHttpsAcc"));
-			dataModule.setStaticHttpAcc(context.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].StaticHttpAcc"));
-			dataModule.setStaticHttpsAcc(context.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].StaticHttpsAcc"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setQps(_ctx.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].Qps"));
+			dataModule.setDynamicHttpQps(_ctx.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].DynamicHttpQps"));
+			dataModule.setDynamicHttpsQps(_ctx.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].DynamicHttpsQps"));
+			dataModule.setStaticHttpQps(_ctx.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].StaticHttpQps"));
+			dataModule.setStaticHttpsQps(_ctx.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].StaticHttpsQps"));
+			dataModule.setAcc(_ctx.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].Acc"));
+			dataModule.setDynamicHttpAcc(_ctx.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].DynamicHttpAcc"));
+			dataModule.setDynamicHttpsAcc(_ctx.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].DynamicHttpsAcc"));
+			dataModule.setStaticHttpAcc(_ctx.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].StaticHttpAcc"));
+			dataModule.setStaticHttpsAcc(_ctx.floatValue("DescribeDcdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].StaticHttpsAcc"));
 
 			qpsDataPerInterval.add(dataModule);
 		}

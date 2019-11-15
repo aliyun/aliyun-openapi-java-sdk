@@ -15,16 +15,15 @@
 package com.aliyuncs.dcdn.model.v20180115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dcdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDcdnDomainWebsocketHttpCodeDataRequest extends RpcAcsRequest<DescribeDcdnDomainWebsocketHttpCodeDataResponse> {
-	
-	public DescribeDcdnDomainWebsocketHttpCodeDataRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnDomainWebsocketHttpCodeData");
-	}
+	   
 
 	private String locationNameEn;
 
@@ -39,6 +38,14 @@ public class DescribeDcdnDomainWebsocketHttpCodeDataRequest extends RpcAcsReques
 	private Long ownerId;
 
 	private String interval;
+	public DescribeDcdnDomainWebsocketHttpCodeDataRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnDomainWebsocketHttpCodeData");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getLocationNameEn() {
 		return this.locationNameEn;

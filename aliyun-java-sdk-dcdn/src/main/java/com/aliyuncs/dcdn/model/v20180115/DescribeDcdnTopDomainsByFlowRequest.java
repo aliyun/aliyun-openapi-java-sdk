@@ -15,26 +15,31 @@
 package com.aliyuncs.dcdn.model.v20180115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dcdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDcdnTopDomainsByFlowRequest extends RpcAcsRequest<DescribeDcdnTopDomainsByFlowResponse> {
-	
-	public DescribeDcdnTopDomainsByFlowRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnTopDomainsByFlow");
-	}
+	   
 
 	private String startTime;
 
 	private Long limit;
 
-	private String product;
-
 	private String endTime;
 
 	private Long ownerId;
+	public DescribeDcdnTopDomainsByFlowRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnTopDomainsByFlow");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStartTime() {
 		return this.startTime;
@@ -55,36 +60,6 @@ public class DescribeDcdnTopDomainsByFlowRequest extends RpcAcsRequest<DescribeD
 		this.limit = limit;
 		if(limit != null){
 			putQueryParameter("Limit", limit.toString());
-		}
-	}
-
-	public String getBizProduct() {
-		return this.product;
-	}
-
-	public void setBizProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizProduct instead of this.
-	 */
-	@Deprecated
-	public String getProduct() {
-		return this.product;
-	}
-
-	/**
-	 * @deprecated use setBizProduct instead of this.
-	 */
-	@Deprecated
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
 		}
 	}
 

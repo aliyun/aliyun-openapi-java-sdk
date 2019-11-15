@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUserDcdnStatusResponseUnmarshaller {
 
-	public static DescribeUserDcdnStatusResponse unmarshall(DescribeUserDcdnStatusResponse describeUserDcdnStatusResponse, UnmarshallerContext context) {
+	public static DescribeUserDcdnStatusResponse unmarshall(DescribeUserDcdnStatusResponse describeUserDcdnStatusResponse, UnmarshallerContext _ctx) {
 		
-		describeUserDcdnStatusResponse.setRequestId(context.stringValue("DescribeUserDcdnStatusResponse.RequestId"));
-		describeUserDcdnStatusResponse.setEnabled(context.booleanValue("DescribeUserDcdnStatusResponse.Enabled"));
-		describeUserDcdnStatusResponse.setOnService(context.booleanValue("DescribeUserDcdnStatusResponse.OnService"));
-		describeUserDcdnStatusResponse.setInDebt(context.booleanValue("DescribeUserDcdnStatusResponse.InDebt"));
-		describeUserDcdnStatusResponse.setInDebtOverdue(context.booleanValue("DescribeUserDcdnStatusResponse.InDebtOverdue"));
+		describeUserDcdnStatusResponse.setRequestId(_ctx.stringValue("DescribeUserDcdnStatusResponse.RequestId"));
+		describeUserDcdnStatusResponse.setEnabled(_ctx.booleanValue("DescribeUserDcdnStatusResponse.Enabled"));
+		describeUserDcdnStatusResponse.setOnService(_ctx.booleanValue("DescribeUserDcdnStatusResponse.OnService"));
+		describeUserDcdnStatusResponse.setInDebt(_ctx.booleanValue("DescribeUserDcdnStatusResponse.InDebt"));
+		describeUserDcdnStatusResponse.setInDebtOverdue(_ctx.booleanValue("DescribeUserDcdnStatusResponse.InDebtOverdue"));
 	 
 	 	return describeUserDcdnStatusResponse;
 	}
