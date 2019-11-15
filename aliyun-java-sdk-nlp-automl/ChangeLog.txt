@@ -1,3 +1,6 @@
 2019-11-15 Version: 0.0.1
 - Nlp Automl SDK.
 
+2019-11-15 Version: 0.0.1
+- Nlp Automl SDK.
+

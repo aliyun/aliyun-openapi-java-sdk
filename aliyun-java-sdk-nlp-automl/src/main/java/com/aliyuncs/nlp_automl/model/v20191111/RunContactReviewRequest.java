@@ -16,6 +16,7 @@ package com.aliyuncs.nlp_automl.model.v20191111;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.nlp_automl.Endpoint;
 
 /**
  * @author auto create
@@ -30,6 +31,10 @@ public class RunContactReviewRequest extends RpcAcsRequest<RunContactReviewRespo
 	public RunContactReviewRequest() {
 		super("nlp-automl", "2019-11-11", "RunContactReview", "nlpautoml");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getContactScene() {
