@@ -15,35 +15,40 @@
 package com.aliyuncs.scdn.model.v20171115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.scdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeScdnDomainUvDataRequest extends RpcAcsRequest<DescribeScdnDomainUvDataResponse> {
-	
-	public DescribeScdnDomainUvDataRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainUvData", "scdn");
-	}
+	   
 
-	private String securityToken;
+	private String startTime;
 
 	private String domainName;
 
 	private String endTime;
 
-	private String startTime;
-
 	private Long ownerId;
-
-	public String getSecurityToken() {
-		return this.securityToken;
+	public DescribeScdnDomainUvDataRequest() {
+		super("scdn", "2017-11-15", "DescribeScdnDomainUvData");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -66,17 +71,6 @@ public class DescribeScdnDomainUvDataRequest extends RpcAcsRequest<DescribeScdnD
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 

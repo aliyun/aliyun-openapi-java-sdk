@@ -19,29 +19,28 @@ import java.util.List;
 
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnRefreshTasksResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnRefreshTasksResponse.Task;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeScdnRefreshTasksResponseUnmarshaller {
 
-	public static DescribeScdnRefreshTasksResponse unmarshall(DescribeScdnRefreshTasksResponse describeScdnRefreshTasksResponse, UnmarshallerContext context) {
+	public static DescribeScdnRefreshTasksResponse unmarshall(DescribeScdnRefreshTasksResponse describeScdnRefreshTasksResponse, UnmarshallerContext _ctx) {
 		
-		describeScdnRefreshTasksResponse.setRequestId(context.stringValue("DescribeScdnRefreshTasksResponse.RequestId"));
-		describeScdnRefreshTasksResponse.setPageNumber(context.longValue("DescribeScdnRefreshTasksResponse.PageNumber"));
-		describeScdnRefreshTasksResponse.setPageSize(context.longValue("DescribeScdnRefreshTasksResponse.PageSize"));
-		describeScdnRefreshTasksResponse.setTotalCount(context.longValue("DescribeScdnRefreshTasksResponse.TotalCount"));
+		describeScdnRefreshTasksResponse.setRequestId(_ctx.stringValue("DescribeScdnRefreshTasksResponse.RequestId"));
+		describeScdnRefreshTasksResponse.setPageNumber(_ctx.longValue("DescribeScdnRefreshTasksResponse.PageNumber"));
+		describeScdnRefreshTasksResponse.setPageSize(_ctx.longValue("DescribeScdnRefreshTasksResponse.PageSize"));
+		describeScdnRefreshTasksResponse.setTotalCount(_ctx.longValue("DescribeScdnRefreshTasksResponse.TotalCount"));
 
 		List<Task> tasks = new ArrayList<Task>();
-		for (int i = 0; i < context.lengthValue("DescribeScdnRefreshTasksResponse.Tasks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnRefreshTasksResponse.Tasks.Length"); i++) {
 			Task task = new Task();
-			task.setTaskId(context.stringValue("DescribeScdnRefreshTasksResponse.Tasks["+ i +"].TaskId"));
-			task.setObjectPath(context.stringValue("DescribeScdnRefreshTasksResponse.Tasks["+ i +"].ObjectPath"));
-			task.setProcess(context.stringValue("DescribeScdnRefreshTasksResponse.Tasks["+ i +"].Process"));
-			task.setStatus(context.stringValue("DescribeScdnRefreshTasksResponse.Tasks["+ i +"].Status"));
-			task.setCreationTime(context.stringValue("DescribeScdnRefreshTasksResponse.Tasks["+ i +"].CreationTime"));
-			task.setDescription(context.stringValue("DescribeScdnRefreshTasksResponse.Tasks["+ i +"].Description"));
-			task.setObjectType(context.stringValue("DescribeScdnRefreshTasksResponse.Tasks["+ i +"].ObjectType"));
+			task.setTaskId(_ctx.stringValue("DescribeScdnRefreshTasksResponse.Tasks["+ i +"].TaskId"));
+			task.setObjectPath(_ctx.stringValue("DescribeScdnRefreshTasksResponse.Tasks["+ i +"].ObjectPath"));
+			task.setProcess(_ctx.stringValue("DescribeScdnRefreshTasksResponse.Tasks["+ i +"].Process"));
+			task.setStatus(_ctx.stringValue("DescribeScdnRefreshTasksResponse.Tasks["+ i +"].Status"));
+			task.setCreationTime(_ctx.stringValue("DescribeScdnRefreshTasksResponse.Tasks["+ i +"].CreationTime"));
+			task.setDescription(_ctx.stringValue("DescribeScdnRefreshTasksResponse.Tasks["+ i +"].Description"));
+			task.setObjectType(_ctx.stringValue("DescribeScdnRefreshTasksResponse.Tasks["+ i +"].ObjectType"));
 
 			tasks.add(task);
 		}

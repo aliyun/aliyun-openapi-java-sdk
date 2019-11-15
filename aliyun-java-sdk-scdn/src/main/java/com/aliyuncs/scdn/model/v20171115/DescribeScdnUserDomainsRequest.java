@@ -15,16 +15,27 @@
 package com.aliyuncs.scdn.model.v20171115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.scdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeScdnUserDomainsRequest extends RpcAcsRequest<DescribeScdnUserDomainsResponse> {
-	
-	public DescribeScdnUserDomainsRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnUserDomains", "scdn");
-	}
+	   
+
+	private Integer pageNumber;
+
+	private Boolean checkDomainShow;
+
+	private String resourceGroupId;
+
+	private String securityToken;
+
+	private String changeEndTime;
+
+	private Integer pageSize;
 
 	private String funcFilter;
 
@@ -34,19 +45,85 @@ public class DescribeScdnUserDomainsRequest extends RpcAcsRequest<DescribeScdnUs
 
 	private String funcId;
 
-	private Integer pageNumber;
-
 	private String domainStatus;
 
 	private String domainSearchType;
 
-	private Boolean checkDomainShow;
+	private String changeStartTime;
+	public DescribeScdnUserDomainsRequest() {
+		super("scdn", "2017-11-15", "DescribeScdnUserDomains");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private String resourceGroupId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
 
-	private String securityToken;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
-	private Integer pageSize;
+	public Boolean getCheckDomainShow() {
+		return this.checkDomainShow;
+	}
+
+	public void setCheckDomainShow(Boolean checkDomainShow) {
+		this.checkDomainShow = checkDomainShow;
+		if(checkDomainShow != null){
+			putQueryParameter("CheckDomainShow", checkDomainShow.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getChangeEndTime() {
+		return this.changeEndTime;
+	}
+
+	public void setChangeEndTime(String changeEndTime) {
+		this.changeEndTime = changeEndTime;
+		if(changeEndTime != null){
+			putQueryParameter("ChangeEndTime", changeEndTime);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
 
 	public String getFuncFilter() {
 		return this.funcFilter;
@@ -92,17 +169,6 @@ public class DescribeScdnUserDomainsRequest extends RpcAcsRequest<DescribeScdnUs
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getDomainStatus() {
 		return this.domainStatus;
 	}
@@ -125,47 +191,14 @@ public class DescribeScdnUserDomainsRequest extends RpcAcsRequest<DescribeScdnUs
 		}
 	}
 
-	public Boolean getCheckDomainShow() {
-		return this.checkDomainShow;
+	public String getChangeStartTime() {
+		return this.changeStartTime;
 	}
 
-	public void setCheckDomainShow(Boolean checkDomainShow) {
-		this.checkDomainShow = checkDomainShow;
-		if(checkDomainShow != null){
-			putQueryParameter("CheckDomainShow", checkDomainShow.toString());
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setChangeStartTime(String changeStartTime) {
+		this.changeStartTime = changeStartTime;
+		if(changeStartTime != null){
+			putQueryParameter("ChangeStartTime", changeStartTime);
 		}
 	}
 

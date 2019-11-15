@@ -15,24 +15,31 @@
 package com.aliyuncs.scdn.model.v20171115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.scdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeScdnDomainConfigsRequest extends RpcAcsRequest<DescribeScdnDomainConfigsResponse> {
-	
-	public DescribeScdnDomainConfigsRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainConfigs", "scdn");
-	}
+	   
 
 	private String functionNames;
-
-	private String securityToken;
 
 	private String domainName;
 
 	private Long ownerId;
+
+	private String securityToken;
+	public DescribeScdnDomainConfigsRequest() {
+		super("scdn", "2017-11-15", "DescribeScdnDomainConfigs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getFunctionNames() {
 		return this.functionNames;
@@ -42,17 +49,6 @@ public class DescribeScdnDomainConfigsRequest extends RpcAcsRequest<DescribeScdn
 		this.functionNames = functionNames;
 		if(functionNames != null){
 			putQueryParameter("FunctionNames", functionNames);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -75,6 +71,17 @@ public class DescribeScdnDomainConfigsRequest extends RpcAcsRequest<DescribeScdn
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

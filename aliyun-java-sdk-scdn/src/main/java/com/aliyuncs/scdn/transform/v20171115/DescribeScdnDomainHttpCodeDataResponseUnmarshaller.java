@@ -20,31 +20,30 @@ import java.util.List;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainHttpCodeDataResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainHttpCodeDataResponse.DataModule;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainHttpCodeDataResponse.DataModule.HttpCodeDataModule;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeScdnDomainHttpCodeDataResponseUnmarshaller {
 
-	public static DescribeScdnDomainHttpCodeDataResponse unmarshall(DescribeScdnDomainHttpCodeDataResponse describeScdnDomainHttpCodeDataResponse, UnmarshallerContext context) {
+	public static DescribeScdnDomainHttpCodeDataResponse unmarshall(DescribeScdnDomainHttpCodeDataResponse describeScdnDomainHttpCodeDataResponse, UnmarshallerContext _ctx) {
 		
-		describeScdnDomainHttpCodeDataResponse.setRequestId(context.stringValue("DescribeScdnDomainHttpCodeDataResponse.RequestId"));
-		describeScdnDomainHttpCodeDataResponse.setDomainName(context.stringValue("DescribeScdnDomainHttpCodeDataResponse.DomainName"));
-		describeScdnDomainHttpCodeDataResponse.setStartTime(context.stringValue("DescribeScdnDomainHttpCodeDataResponse.StartTime"));
-		describeScdnDomainHttpCodeDataResponse.setEndTime(context.stringValue("DescribeScdnDomainHttpCodeDataResponse.EndTime"));
-		describeScdnDomainHttpCodeDataResponse.setDataInterval(context.stringValue("DescribeScdnDomainHttpCodeDataResponse.DataInterval"));
+		describeScdnDomainHttpCodeDataResponse.setRequestId(_ctx.stringValue("DescribeScdnDomainHttpCodeDataResponse.RequestId"));
+		describeScdnDomainHttpCodeDataResponse.setDomainName(_ctx.stringValue("DescribeScdnDomainHttpCodeDataResponse.DomainName"));
+		describeScdnDomainHttpCodeDataResponse.setStartTime(_ctx.stringValue("DescribeScdnDomainHttpCodeDataResponse.StartTime"));
+		describeScdnDomainHttpCodeDataResponse.setEndTime(_ctx.stringValue("DescribeScdnDomainHttpCodeDataResponse.EndTime"));
+		describeScdnDomainHttpCodeDataResponse.setDataInterval(_ctx.stringValue("DescribeScdnDomainHttpCodeDataResponse.DataInterval"));
 
 		List<DataModule> dataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeScdnDomainHttpCodeDataResponse.DataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDomainHttpCodeDataResponse.DataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeScdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeScdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].TimeStamp"));
 
 			List<HttpCodeDataModule> httpCodeDataPerInterval = new ArrayList<HttpCodeDataModule>();
-			for (int j = 0; j < context.lengthValue("DescribeScdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].HttpCodeDataPerInterval.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeScdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].HttpCodeDataPerInterval.Length"); j++) {
 				HttpCodeDataModule httpCodeDataModule = new HttpCodeDataModule();
-				httpCodeDataModule.setCode(context.stringValue("DescribeScdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Code"));
-				httpCodeDataModule.setProportion(context.stringValue("DescribeScdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Proportion"));
-				httpCodeDataModule.setCount(context.stringValue("DescribeScdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Count"));
+				httpCodeDataModule.setCode(_ctx.stringValue("DescribeScdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Code"));
+				httpCodeDataModule.setProportion(_ctx.stringValue("DescribeScdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Proportion"));
+				httpCodeDataModule.setCount(_ctx.stringValue("DescribeScdnDomainHttpCodeDataResponse.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Count"));
 
 				httpCodeDataPerInterval.add(httpCodeDataModule);
 			}

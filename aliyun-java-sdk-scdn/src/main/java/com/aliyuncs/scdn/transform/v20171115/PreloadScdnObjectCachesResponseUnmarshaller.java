@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PreloadScdnObjectCachesResponseUnmarshaller {
 
-	public static PreloadScdnObjectCachesResponse unmarshall(PreloadScdnObjectCachesResponse preloadScdnObjectCachesResponse, UnmarshallerContext context) {
+	public static PreloadScdnObjectCachesResponse unmarshall(PreloadScdnObjectCachesResponse preloadScdnObjectCachesResponse, UnmarshallerContext _ctx) {
 		
-		preloadScdnObjectCachesResponse.setRequestId(context.stringValue("PreloadScdnObjectCachesResponse.RequestId"));
-		preloadScdnObjectCachesResponse.setPreloadTaskId(context.stringValue("PreloadScdnObjectCachesResponse.PreloadTaskId"));
+		preloadScdnObjectCachesResponse.setRequestId(_ctx.stringValue("PreloadScdnObjectCachesResponse.RequestId"));
+		preloadScdnObjectCachesResponse.setPreloadTaskId(_ctx.stringValue("PreloadScdnObjectCachesResponse.PreloadTaskId"));
 	 
 	 	return preloadScdnObjectCachesResponse;
 	}

@@ -15,20 +15,27 @@
 package com.aliyuncs.scdn.model.v20171115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.scdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeScdnDomainCnameRequest extends RpcAcsRequest<DescribeScdnDomainCnameResponse> {
-	
-	public DescribeScdnDomainCnameRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainCname", "scdn");
-	}
+	   
 
 	private String domainName;
 
 	private Long ownerId;
+	public DescribeScdnDomainCnameRequest() {
+		super("scdn", "2017-11-15", "DescribeScdnDomainCname");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getDomainName() {
 		return this.domainName;

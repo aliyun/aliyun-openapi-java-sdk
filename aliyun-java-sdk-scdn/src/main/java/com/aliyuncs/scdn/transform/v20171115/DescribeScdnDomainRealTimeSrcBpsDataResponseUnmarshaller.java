@@ -19,25 +19,24 @@ import java.util.List;
 
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainRealTimeSrcBpsDataResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainRealTimeSrcBpsDataResponse.DataModule;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeScdnDomainRealTimeSrcBpsDataResponseUnmarshaller {
 
-	public static DescribeScdnDomainRealTimeSrcBpsDataResponse unmarshall(DescribeScdnDomainRealTimeSrcBpsDataResponse describeScdnDomainRealTimeSrcBpsDataResponse, UnmarshallerContext context) {
+	public static DescribeScdnDomainRealTimeSrcBpsDataResponse unmarshall(DescribeScdnDomainRealTimeSrcBpsDataResponse describeScdnDomainRealTimeSrcBpsDataResponse, UnmarshallerContext _ctx) {
 		
-		describeScdnDomainRealTimeSrcBpsDataResponse.setRequestId(context.stringValue("DescribeScdnDomainRealTimeSrcBpsDataResponse.RequestId"));
-		describeScdnDomainRealTimeSrcBpsDataResponse.setDomainName(context.stringValue("DescribeScdnDomainRealTimeSrcBpsDataResponse.DomainName"));
-		describeScdnDomainRealTimeSrcBpsDataResponse.setStartTime(context.stringValue("DescribeScdnDomainRealTimeSrcBpsDataResponse.StartTime"));
-		describeScdnDomainRealTimeSrcBpsDataResponse.setEndTime(context.stringValue("DescribeScdnDomainRealTimeSrcBpsDataResponse.EndTime"));
-		describeScdnDomainRealTimeSrcBpsDataResponse.setDataInterval(context.stringValue("DescribeScdnDomainRealTimeSrcBpsDataResponse.DataInterval"));
+		describeScdnDomainRealTimeSrcBpsDataResponse.setRequestId(_ctx.stringValue("DescribeScdnDomainRealTimeSrcBpsDataResponse.RequestId"));
+		describeScdnDomainRealTimeSrcBpsDataResponse.setDomainName(_ctx.stringValue("DescribeScdnDomainRealTimeSrcBpsDataResponse.DomainName"));
+		describeScdnDomainRealTimeSrcBpsDataResponse.setStartTime(_ctx.stringValue("DescribeScdnDomainRealTimeSrcBpsDataResponse.StartTime"));
+		describeScdnDomainRealTimeSrcBpsDataResponse.setEndTime(_ctx.stringValue("DescribeScdnDomainRealTimeSrcBpsDataResponse.EndTime"));
+		describeScdnDomainRealTimeSrcBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeScdnDomainRealTimeSrcBpsDataResponse.DataInterval"));
 
 		List<DataModule> realTimeSrcBpsDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeScdnDomainRealTimeSrcBpsDataResponse.RealTimeSrcBpsDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDomainRealTimeSrcBpsDataResponse.RealTimeSrcBpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeScdnDomainRealTimeSrcBpsDataResponse.RealTimeSrcBpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setValue(context.stringValue("DescribeScdnDomainRealTimeSrcBpsDataResponse.RealTimeSrcBpsDataPerInterval["+ i +"].Value"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeScdnDomainRealTimeSrcBpsDataResponse.RealTimeSrcBpsDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setValue(_ctx.stringValue("DescribeScdnDomainRealTimeSrcBpsDataResponse.RealTimeSrcBpsDataPerInterval["+ i +"].Value"));
 
 			realTimeSrcBpsDataPerInterval.add(dataModule);
 		}

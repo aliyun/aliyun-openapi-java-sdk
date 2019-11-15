@@ -15,7 +15,6 @@
 package com.aliyuncs.scdn.model.v20171115;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.scdn.transform.v20171115.DescribeScdnDomainPvDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -30,11 +29,7 @@ public class DescribeScdnDomainPvDataResponse extends AcsResponse {
 
 	private String domainName;
 
-	private String dataInterval;
-
 	private String startTime;
-
-	private String endTime;
 
 	private List<UsageData> pvDataInterval;
 
@@ -54,28 +49,12 @@ public class DescribeScdnDomainPvDataResponse extends AcsResponse {
 		this.domainName = domainName;
 	}
 
-	public String getDataInterval() {
-		return this.dataInterval;
-	}
-
-	public void setDataInterval(String dataInterval) {
-		this.dataInterval = dataInterval;
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public List<UsageData> getPvDataInterval() {
@@ -88,17 +67,9 @@ public class DescribeScdnDomainPvDataResponse extends AcsResponse {
 
 	public static class UsageData {
 
-		private String timeStamp;
-
 		private String value;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
+		private String timeStamp;
 
 		public String getValue() {
 			return this.value;
@@ -106,6 +77,14 @@ public class DescribeScdnDomainPvDataResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 	}
 

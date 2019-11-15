@@ -19,21 +19,20 @@ import java.util.List;
 
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainRealTimeReqHitRateDataResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainRealTimeReqHitRateDataResponse.ReqHitRateDataModel;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeScdnDomainRealTimeReqHitRateDataResponseUnmarshaller {
 
-	public static DescribeScdnDomainRealTimeReqHitRateDataResponse unmarshall(DescribeScdnDomainRealTimeReqHitRateDataResponse describeScdnDomainRealTimeReqHitRateDataResponse, UnmarshallerContext context) {
+	public static DescribeScdnDomainRealTimeReqHitRateDataResponse unmarshall(DescribeScdnDomainRealTimeReqHitRateDataResponse describeScdnDomainRealTimeReqHitRateDataResponse, UnmarshallerContext _ctx) {
 		
-		describeScdnDomainRealTimeReqHitRateDataResponse.setRequestId(context.stringValue("DescribeScdnDomainRealTimeReqHitRateDataResponse.RequestId"));
+		describeScdnDomainRealTimeReqHitRateDataResponse.setRequestId(_ctx.stringValue("DescribeScdnDomainRealTimeReqHitRateDataResponse.RequestId"));
 
 		List<ReqHitRateDataModel> data = new ArrayList<ReqHitRateDataModel>();
-		for (int i = 0; i < context.lengthValue("DescribeScdnDomainRealTimeReqHitRateDataResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDomainRealTimeReqHitRateDataResponse.Data.Length"); i++) {
 			ReqHitRateDataModel reqHitRateDataModel = new ReqHitRateDataModel();
-			reqHitRateDataModel.setReqHitRate(context.floatValue("DescribeScdnDomainRealTimeReqHitRateDataResponse.Data["+ i +"].ReqHitRate"));
-			reqHitRateDataModel.setTimeStamp(context.stringValue("DescribeScdnDomainRealTimeReqHitRateDataResponse.Data["+ i +"].TimeStamp"));
+			reqHitRateDataModel.setReqHitRate(_ctx.floatValue("DescribeScdnDomainRealTimeReqHitRateDataResponse.Data["+ i +"].ReqHitRate"));
+			reqHitRateDataModel.setTimeStamp(_ctx.stringValue("DescribeScdnDomainRealTimeReqHitRateDataResponse.Data["+ i +"].TimeStamp"));
 
 			data.add(reqHitRateDataModel);
 		}

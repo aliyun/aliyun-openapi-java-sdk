@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BatchDeleteScdnDomainConfigsResponseUnmarshaller {
 
-	public static BatchDeleteScdnDomainConfigsResponse unmarshall(BatchDeleteScdnDomainConfigsResponse batchDeleteScdnDomainConfigsResponse, UnmarshallerContext context) {
+	public static BatchDeleteScdnDomainConfigsResponse unmarshall(BatchDeleteScdnDomainConfigsResponse batchDeleteScdnDomainConfigsResponse, UnmarshallerContext _ctx) {
 		
-		batchDeleteScdnDomainConfigsResponse.setRequestId(context.stringValue("BatchDeleteScdnDomainConfigsResponse.RequestId"));
+		batchDeleteScdnDomainConfigsResponse.setRequestId(_ctx.stringValue("BatchDeleteScdnDomainConfigsResponse.RequestId"));
 	 
 	 	return batchDeleteScdnDomainConfigsResponse;
 	}

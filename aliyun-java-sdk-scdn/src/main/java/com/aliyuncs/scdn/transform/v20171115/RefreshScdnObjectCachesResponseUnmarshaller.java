@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RefreshScdnObjectCachesResponseUnmarshaller {
 
-	public static RefreshScdnObjectCachesResponse unmarshall(RefreshScdnObjectCachesResponse refreshScdnObjectCachesResponse, UnmarshallerContext context) {
+	public static RefreshScdnObjectCachesResponse unmarshall(RefreshScdnObjectCachesResponse refreshScdnObjectCachesResponse, UnmarshallerContext _ctx) {
 		
-		refreshScdnObjectCachesResponse.setRequestId(context.stringValue("RefreshScdnObjectCachesResponse.RequestId"));
-		refreshScdnObjectCachesResponse.setRefreshTaskId(context.stringValue("RefreshScdnObjectCachesResponse.RefreshTaskId"));
+		refreshScdnObjectCachesResponse.setRequestId(_ctx.stringValue("RefreshScdnObjectCachesResponse.RequestId"));
+		refreshScdnObjectCachesResponse.setRefreshTaskId(_ctx.stringValue("RefreshScdnObjectCachesResponse.RefreshTaskId"));
 	 
 	 	return refreshScdnObjectCachesResponse;
 	}

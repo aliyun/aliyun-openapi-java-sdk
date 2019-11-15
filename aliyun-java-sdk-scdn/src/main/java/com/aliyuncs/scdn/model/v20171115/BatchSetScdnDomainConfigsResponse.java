@@ -14,20 +14,17 @@
 
 package com.aliyuncs.scdn.model.v20171115;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.scdn.transform.v20171115.DescribeScdnDomainRealTimeBpsDataResponseUnmarshaller;
+import com.aliyuncs.scdn.transform.v20171115.BatchSetScdnDomainConfigsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeScdnDomainRealTimeBpsDataResponse extends AcsResponse {
+public class BatchSetScdnDomainConfigsResponse extends AcsResponse {
 
 	private String requestId;
-
-	private List<BpsModel> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,39 +34,8 @@ public class DescribeScdnDomainRealTimeBpsDataResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<BpsModel> getData() {
-		return this.data;
-	}
-
-	public void setData(List<BpsModel> data) {
-		this.data = data;
-	}
-
-	public static class BpsModel {
-
-		private Float bps;
-
-		private String timeStamp;
-
-		public Float getBps() {
-			return this.bps;
-		}
-
-		public void setBps(Float bps) {
-			this.bps = bps;
-		}
-
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
-	}
-
 	@Override
-	public DescribeScdnDomainRealTimeBpsDataResponse getInstance(UnmarshallerContext context) {
-		return	DescribeScdnDomainRealTimeBpsDataResponseUnmarshaller.unmarshall(this, context);
+	public BatchSetScdnDomainConfigsResponse getInstance(UnmarshallerContext context) {
+		return	BatchSetScdnDomainConfigsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

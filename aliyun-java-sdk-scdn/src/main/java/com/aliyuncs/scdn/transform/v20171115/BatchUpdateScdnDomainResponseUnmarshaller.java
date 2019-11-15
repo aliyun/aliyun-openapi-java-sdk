@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BatchUpdateScdnDomainResponseUnmarshaller {
 
-	public static BatchUpdateScdnDomainResponse unmarshall(BatchUpdateScdnDomainResponse batchUpdateScdnDomainResponse, UnmarshallerContext context) {
+	public static BatchUpdateScdnDomainResponse unmarshall(BatchUpdateScdnDomainResponse batchUpdateScdnDomainResponse, UnmarshallerContext _ctx) {
 		
-		batchUpdateScdnDomainResponse.setRequestId(context.stringValue("BatchUpdateScdnDomainResponse.RequestId"));
+		batchUpdateScdnDomainResponse.setRequestId(_ctx.stringValue("BatchUpdateScdnDomainResponse.RequestId"));
 	 
 	 	return batchUpdateScdnDomainResponse;
 	}

@@ -20,39 +20,38 @@ import java.util.List;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnUserDomainsResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnUserDomainsResponse.PageData;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnUserDomainsResponse.PageData.Source;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeScdnUserDomainsResponseUnmarshaller {
 
-	public static DescribeScdnUserDomainsResponse unmarshall(DescribeScdnUserDomainsResponse describeScdnUserDomainsResponse, UnmarshallerContext context) {
+	public static DescribeScdnUserDomainsResponse unmarshall(DescribeScdnUserDomainsResponse describeScdnUserDomainsResponse, UnmarshallerContext _ctx) {
 		
-		describeScdnUserDomainsResponse.setRequestId(context.stringValue("DescribeScdnUserDomainsResponse.RequestId"));
-		describeScdnUserDomainsResponse.setPageNumber(context.longValue("DescribeScdnUserDomainsResponse.PageNumber"));
-		describeScdnUserDomainsResponse.setPageSize(context.longValue("DescribeScdnUserDomainsResponse.PageSize"));
-		describeScdnUserDomainsResponse.setTotalCount(context.longValue("DescribeScdnUserDomainsResponse.TotalCount"));
+		describeScdnUserDomainsResponse.setRequestId(_ctx.stringValue("DescribeScdnUserDomainsResponse.RequestId"));
+		describeScdnUserDomainsResponse.setPageNumber(_ctx.longValue("DescribeScdnUserDomainsResponse.PageNumber"));
+		describeScdnUserDomainsResponse.setPageSize(_ctx.longValue("DescribeScdnUserDomainsResponse.PageSize"));
+		describeScdnUserDomainsResponse.setTotalCount(_ctx.longValue("DescribeScdnUserDomainsResponse.TotalCount"));
 
 		List<PageData> domains = new ArrayList<PageData>();
-		for (int i = 0; i < context.lengthValue("DescribeScdnUserDomainsResponse.Domains.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnUserDomainsResponse.Domains.Length"); i++) {
 			PageData pageData = new PageData();
-			pageData.setDomainName(context.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].DomainName"));
-			pageData.setCname(context.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].Cname"));
-			pageData.setDomainStatus(context.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].DomainStatus"));
-			pageData.setGmtCreated(context.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].GmtCreated"));
-			pageData.setGmtModified(context.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].GmtModified"));
-			pageData.setDescription(context.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].Description"));
-			pageData.setSSLProtocol(context.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].SSLProtocol"));
-			pageData.setResourceGroupId(context.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].ResourceGroupId"));
-			pageData.setSandbox(context.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].Sandbox"));
+			pageData.setDomainName(_ctx.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].DomainName"));
+			pageData.setCname(_ctx.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].Cname"));
+			pageData.setDomainStatus(_ctx.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].DomainStatus"));
+			pageData.setGmtCreated(_ctx.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].GmtCreated"));
+			pageData.setGmtModified(_ctx.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].GmtModified"));
+			pageData.setDescription(_ctx.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].Description"));
+			pageData.setSSLProtocol(_ctx.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].SSLProtocol"));
+			pageData.setResourceGroupId(_ctx.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].ResourceGroupId"));
+			pageData.setSandbox(_ctx.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].Sandbox"));
 
 			List<Source> sources = new ArrayList<Source>();
-			for (int j = 0; j < context.lengthValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].Sources.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].Sources.Length"); j++) {
 				Source source = new Source();
-				source.setType(context.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Type"));
-				source.setContent(context.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Content"));
-				source.setPort(context.integerValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Port"));
-				source.setPriority(context.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Priority"));
+				source.setType(_ctx.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Type"));
+				source.setContent(_ctx.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Content"));
+				source.setPort(_ctx.integerValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Port"));
+				source.setPriority(_ctx.stringValue("DescribeScdnUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Priority"));
 
 				sources.add(source);
 			}

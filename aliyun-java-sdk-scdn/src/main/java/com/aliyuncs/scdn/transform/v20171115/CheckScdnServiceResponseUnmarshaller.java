@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckScdnServiceResponseUnmarshaller {
 
-	public static CheckScdnServiceResponse unmarshall(CheckScdnServiceResponse checkScdnServiceResponse, UnmarshallerContext context) {
+	public static CheckScdnServiceResponse unmarshall(CheckScdnServiceResponse checkScdnServiceResponse, UnmarshallerContext _ctx) {
 		
-		checkScdnServiceResponse.setRequestId(context.stringValue("CheckScdnServiceResponse.RequestId"));
-		checkScdnServiceResponse.setEnabled(context.booleanValue("CheckScdnServiceResponse.Enabled"));
-		checkScdnServiceResponse.setOnService(context.booleanValue("CheckScdnServiceResponse.OnService"));
-		checkScdnServiceResponse.setInDebt(context.booleanValue("CheckScdnServiceResponse.InDebt"));
-		checkScdnServiceResponse.setInDebtOverdue(context.booleanValue("CheckScdnServiceResponse.InDebtOverdue"));
+		checkScdnServiceResponse.setRequestId(_ctx.stringValue("CheckScdnServiceResponse.RequestId"));
+		checkScdnServiceResponse.setEnabled(_ctx.booleanValue("CheckScdnServiceResponse.Enabled"));
+		checkScdnServiceResponse.setOnService(_ctx.booleanValue("CheckScdnServiceResponse.OnService"));
+		checkScdnServiceResponse.setInDebt(_ctx.booleanValue("CheckScdnServiceResponse.InDebt"));
+		checkScdnServiceResponse.setInDebtOverdue(_ctx.booleanValue("CheckScdnServiceResponse.InDebtOverdue"));
 	 
 	 	return checkScdnServiceResponse;
 	}

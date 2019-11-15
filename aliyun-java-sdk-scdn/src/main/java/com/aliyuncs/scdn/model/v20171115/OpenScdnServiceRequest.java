@@ -15,20 +15,25 @@
 package com.aliyuncs.scdn.model.v20171115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.scdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OpenScdnServiceRequest extends RpcAcsRequest<OpenScdnServiceResponse> {
-	
-	public OpenScdnServiceRequest() {
-		super("scdn", "2017-11-15", "OpenScdnService", "scdn");
-	}
+	   
 
-	private String endDate;
+	private String startDate;
+
+	private Integer ccProtection;
 
 	private String securityToken;
+
+	private String protectType;
+
+	private Integer dDoSBasic;
 
 	private Integer bandwidth;
 
@@ -36,24 +41,37 @@ public class OpenScdnServiceRequest extends RpcAcsRequest<OpenScdnServiceRespons
 
 	private Long ownerId;
 
-	private String protectType;
-
-	private String startDate;
+	private String endDate;
 
 	private Integer elasticProtection;
-
-	private Integer dDoSBasic;
-
-	private Integer ccProtection;
-
-	public String getEndDate() {
-		return this.endDate;
+	public OpenScdnServiceRequest() {
+		super("scdn", "2017-11-15", "OpenScdnService");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putQueryParameter("EndDate", endDate);
+	public String getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+		if(startDate != null){
+			putQueryParameter("StartDate", startDate);
+		}
+	}
+
+	public Integer getCcProtection() {
+		return this.ccProtection;
+	}
+
+	public void setCcProtection(Integer ccProtection) {
+		this.ccProtection = ccProtection;
+		if(ccProtection != null){
+			putQueryParameter("CcProtection", ccProtection.toString());
 		}
 	}
 
@@ -65,6 +83,28 @@ public class OpenScdnServiceRequest extends RpcAcsRequest<OpenScdnServiceRespons
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getProtectType() {
+		return this.protectType;
+	}
+
+	public void setProtectType(String protectType) {
+		this.protectType = protectType;
+		if(protectType != null){
+			putQueryParameter("ProtectType", protectType);
+		}
+	}
+
+	public Integer getDDoSBasic() {
+		return this.dDoSBasic;
+	}
+
+	public void setDDoSBasic(Integer dDoSBasic) {
+		this.dDoSBasic = dDoSBasic;
+		if(dDoSBasic != null){
+			putQueryParameter("DDoSBasic", dDoSBasic.toString());
 		}
 	}
 
@@ -101,25 +141,14 @@ public class OpenScdnServiceRequest extends RpcAcsRequest<OpenScdnServiceRespons
 		}
 	}
 
-	public String getProtectType() {
-		return this.protectType;
+	public String getEndDate() {
+		return this.endDate;
 	}
 
-	public void setProtectType(String protectType) {
-		this.protectType = protectType;
-		if(protectType != null){
-			putQueryParameter("ProtectType", protectType);
-		}
-	}
-
-	public String getStartDate() {
-		return this.startDate;
-	}
-
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-		if(startDate != null){
-			putQueryParameter("StartDate", startDate);
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putQueryParameter("EndDate", endDate);
 		}
 	}
 
@@ -131,28 +160,6 @@ public class OpenScdnServiceRequest extends RpcAcsRequest<OpenScdnServiceRespons
 		this.elasticProtection = elasticProtection;
 		if(elasticProtection != null){
 			putQueryParameter("ElasticProtection", elasticProtection.toString());
-		}
-	}
-
-	public Integer getDDoSBasic() {
-		return this.dDoSBasic;
-	}
-
-	public void setDDoSBasic(Integer dDoSBasic) {
-		this.dDoSBasic = dDoSBasic;
-		if(dDoSBasic != null){
-			putQueryParameter("DDoSBasic", dDoSBasic.toString());
-		}
-	}
-
-	public Integer getCcProtection() {
-		return this.ccProtection;
-	}
-
-	public void setCcProtection(Integer ccProtection) {
-		this.ccProtection = ccProtection;
-		if(ccProtection != null){
-			putQueryParameter("CcProtection", ccProtection.toString());
 		}
 	}
 

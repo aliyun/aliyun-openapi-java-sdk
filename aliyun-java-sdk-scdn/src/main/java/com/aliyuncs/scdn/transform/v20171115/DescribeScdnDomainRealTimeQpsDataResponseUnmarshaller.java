@@ -19,21 +19,20 @@ import java.util.List;
 
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainRealTimeQpsDataResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainRealTimeQpsDataResponse.QpsModel;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeScdnDomainRealTimeQpsDataResponseUnmarshaller {
 
-	public static DescribeScdnDomainRealTimeQpsDataResponse unmarshall(DescribeScdnDomainRealTimeQpsDataResponse describeScdnDomainRealTimeQpsDataResponse, UnmarshallerContext context) {
+	public static DescribeScdnDomainRealTimeQpsDataResponse unmarshall(DescribeScdnDomainRealTimeQpsDataResponse describeScdnDomainRealTimeQpsDataResponse, UnmarshallerContext _ctx) {
 		
-		describeScdnDomainRealTimeQpsDataResponse.setRequestId(context.stringValue("DescribeScdnDomainRealTimeQpsDataResponse.RequestId"));
+		describeScdnDomainRealTimeQpsDataResponse.setRequestId(_ctx.stringValue("DescribeScdnDomainRealTimeQpsDataResponse.RequestId"));
 
 		List<QpsModel> data = new ArrayList<QpsModel>();
-		for (int i = 0; i < context.lengthValue("DescribeScdnDomainRealTimeQpsDataResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDomainRealTimeQpsDataResponse.Data.Length"); i++) {
 			QpsModel qpsModel = new QpsModel();
-			qpsModel.setQps(context.floatValue("DescribeScdnDomainRealTimeQpsDataResponse.Data["+ i +"].Qps"));
-			qpsModel.setTimeStamp(context.stringValue("DescribeScdnDomainRealTimeQpsDataResponse.Data["+ i +"].TimeStamp"));
+			qpsModel.setQps(_ctx.floatValue("DescribeScdnDomainRealTimeQpsDataResponse.Data["+ i +"].Qps"));
+			qpsModel.setTimeStamp(_ctx.stringValue("DescribeScdnDomainRealTimeQpsDataResponse.Data["+ i +"].TimeStamp"));
 
 			data.add(qpsModel);
 		}

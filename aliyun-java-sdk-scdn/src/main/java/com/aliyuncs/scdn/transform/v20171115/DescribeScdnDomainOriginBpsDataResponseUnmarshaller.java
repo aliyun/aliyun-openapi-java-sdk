@@ -19,27 +19,26 @@ import java.util.List;
 
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainOriginBpsDataResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainOriginBpsDataResponse.DataModule;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeScdnDomainOriginBpsDataResponseUnmarshaller {
 
-	public static DescribeScdnDomainOriginBpsDataResponse unmarshall(DescribeScdnDomainOriginBpsDataResponse describeScdnDomainOriginBpsDataResponse, UnmarshallerContext context) {
+	public static DescribeScdnDomainOriginBpsDataResponse unmarshall(DescribeScdnDomainOriginBpsDataResponse describeScdnDomainOriginBpsDataResponse, UnmarshallerContext _ctx) {
 		
-		describeScdnDomainOriginBpsDataResponse.setRequestId(context.stringValue("DescribeScdnDomainOriginBpsDataResponse.RequestId"));
-		describeScdnDomainOriginBpsDataResponse.setDomainName(context.stringValue("DescribeScdnDomainOriginBpsDataResponse.DomainName"));
-		describeScdnDomainOriginBpsDataResponse.setStartTime(context.stringValue("DescribeScdnDomainOriginBpsDataResponse.StartTime"));
-		describeScdnDomainOriginBpsDataResponse.setEndTime(context.stringValue("DescribeScdnDomainOriginBpsDataResponse.EndTime"));
-		describeScdnDomainOriginBpsDataResponse.setDataInterval(context.stringValue("DescribeScdnDomainOriginBpsDataResponse.DataInterval"));
+		describeScdnDomainOriginBpsDataResponse.setRequestId(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.RequestId"));
+		describeScdnDomainOriginBpsDataResponse.setDomainName(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.DomainName"));
+		describeScdnDomainOriginBpsDataResponse.setStartTime(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.StartTime"));
+		describeScdnDomainOriginBpsDataResponse.setEndTime(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.EndTime"));
+		describeScdnDomainOriginBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.DataInterval"));
 
 		List<DataModule> originBpsDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setOriginBpsValue(context.stringValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].OriginBpsValue"));
-			dataModule.setHttpOriginBpsValue(context.stringValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].HttpOriginBpsValue"));
-			dataModule.setHttpsOriginBpsValue(context.stringValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].HttpsOriginBpsValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setOriginBpsValue(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].OriginBpsValue"));
+			dataModule.setHttpOriginBpsValue(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].HttpOriginBpsValue"));
+			dataModule.setHttpsOriginBpsValue(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].HttpsOriginBpsValue"));
 
 			originBpsDataPerInterval.add(dataModule);
 		}

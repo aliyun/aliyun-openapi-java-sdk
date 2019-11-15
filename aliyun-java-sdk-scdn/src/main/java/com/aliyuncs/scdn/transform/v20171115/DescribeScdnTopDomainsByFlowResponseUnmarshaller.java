@@ -19,30 +19,29 @@ import java.util.List;
 
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnTopDomainsByFlowResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnTopDomainsByFlowResponse.TopDomain;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeScdnTopDomainsByFlowResponseUnmarshaller {
 
-	public static DescribeScdnTopDomainsByFlowResponse unmarshall(DescribeScdnTopDomainsByFlowResponse describeScdnTopDomainsByFlowResponse, UnmarshallerContext context) {
+	public static DescribeScdnTopDomainsByFlowResponse unmarshall(DescribeScdnTopDomainsByFlowResponse describeScdnTopDomainsByFlowResponse, UnmarshallerContext _ctx) {
 		
-		describeScdnTopDomainsByFlowResponse.setRequestId(context.stringValue("DescribeScdnTopDomainsByFlowResponse.RequestId"));
-		describeScdnTopDomainsByFlowResponse.setStartTime(context.stringValue("DescribeScdnTopDomainsByFlowResponse.StartTime"));
-		describeScdnTopDomainsByFlowResponse.setEndTime(context.stringValue("DescribeScdnTopDomainsByFlowResponse.EndTime"));
-		describeScdnTopDomainsByFlowResponse.setDomainCount(context.longValue("DescribeScdnTopDomainsByFlowResponse.DomainCount"));
-		describeScdnTopDomainsByFlowResponse.setDomainOnlineCount(context.longValue("DescribeScdnTopDomainsByFlowResponse.DomainOnlineCount"));
+		describeScdnTopDomainsByFlowResponse.setRequestId(_ctx.stringValue("DescribeScdnTopDomainsByFlowResponse.RequestId"));
+		describeScdnTopDomainsByFlowResponse.setStartTime(_ctx.stringValue("DescribeScdnTopDomainsByFlowResponse.StartTime"));
+		describeScdnTopDomainsByFlowResponse.setEndTime(_ctx.stringValue("DescribeScdnTopDomainsByFlowResponse.EndTime"));
+		describeScdnTopDomainsByFlowResponse.setDomainCount(_ctx.longValue("DescribeScdnTopDomainsByFlowResponse.DomainCount"));
+		describeScdnTopDomainsByFlowResponse.setDomainOnlineCount(_ctx.longValue("DescribeScdnTopDomainsByFlowResponse.DomainOnlineCount"));
 
 		List<TopDomain> topDomains = new ArrayList<TopDomain>();
-		for (int i = 0; i < context.lengthValue("DescribeScdnTopDomainsByFlowResponse.TopDomains.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnTopDomainsByFlowResponse.TopDomains.Length"); i++) {
 			TopDomain topDomain = new TopDomain();
-			topDomain.setDomainName(context.stringValue("DescribeScdnTopDomainsByFlowResponse.TopDomains["+ i +"].DomainName"));
-			topDomain.setRank(context.longValue("DescribeScdnTopDomainsByFlowResponse.TopDomains["+ i +"].Rank"));
-			topDomain.setTotalTraffic(context.stringValue("DescribeScdnTopDomainsByFlowResponse.TopDomains["+ i +"].TotalTraffic"));
-			topDomain.setTrafficPercent(context.stringValue("DescribeScdnTopDomainsByFlowResponse.TopDomains["+ i +"].TrafficPercent"));
-			topDomain.setMaxBps(context.longValue("DescribeScdnTopDomainsByFlowResponse.TopDomains["+ i +"].MaxBps"));
-			topDomain.setMaxBpsTime(context.stringValue("DescribeScdnTopDomainsByFlowResponse.TopDomains["+ i +"].MaxBpsTime"));
-			topDomain.setTotalAccess(context.longValue("DescribeScdnTopDomainsByFlowResponse.TopDomains["+ i +"].TotalAccess"));
+			topDomain.setDomainName(_ctx.stringValue("DescribeScdnTopDomainsByFlowResponse.TopDomains["+ i +"].DomainName"));
+			topDomain.setRank(_ctx.longValue("DescribeScdnTopDomainsByFlowResponse.TopDomains["+ i +"].Rank"));
+			topDomain.setTotalTraffic(_ctx.stringValue("DescribeScdnTopDomainsByFlowResponse.TopDomains["+ i +"].TotalTraffic"));
+			topDomain.setTrafficPercent(_ctx.stringValue("DescribeScdnTopDomainsByFlowResponse.TopDomains["+ i +"].TrafficPercent"));
+			topDomain.setMaxBps(_ctx.longValue("DescribeScdnTopDomainsByFlowResponse.TopDomains["+ i +"].MaxBps"));
+			topDomain.setMaxBpsTime(_ctx.stringValue("DescribeScdnTopDomainsByFlowResponse.TopDomains["+ i +"].MaxBpsTime"));
+			topDomain.setTotalAccess(_ctx.longValue("DescribeScdnTopDomainsByFlowResponse.TopDomains["+ i +"].TotalAccess"));
 
 			topDomains.add(topDomain);
 		}

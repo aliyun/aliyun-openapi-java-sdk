@@ -15,42 +15,38 @@
 package com.aliyuncs.scdn.model.v20171115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.scdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddScdnDomainRequest extends RpcAcsRequest<AddScdnDomainResponse> {
-	
-	public AddScdnDomainRequest() {
-		super("scdn", "2017-11-15", "AddScdnDomain", "scdn");
-	}
-
-	private String resourceGroupId;
+	   
 
 	private String sources;
 
+	private String resourceGroupId;
+
 	private String securityToken;
 
-	private String ownerAccount;
-
 	private String scope;
+
+	private String ownerAccount;
 
 	private String domainName;
 
 	private Long ownerId;
 
 	private String checkUrl;
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
+	public AddScdnDomainRequest() {
+		super("scdn", "2017-11-15", "AddScdnDomain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSources() {
@@ -61,6 +57,17 @@ public class AddScdnDomainRequest extends RpcAcsRequest<AddScdnDomainResponse> {
 		this.sources = sources;
 		if(sources != null){
 			putQueryParameter("Sources", sources);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -75,17 +82,6 @@ public class AddScdnDomainRequest extends RpcAcsRequest<AddScdnDomainResponse> {
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getScope() {
 		return this.scope;
 	}
@@ -94,6 +90,17 @@ public class AddScdnDomainRequest extends RpcAcsRequest<AddScdnDomainResponse> {
 		this.scope = scope;
 		if(scope != null){
 			putQueryParameter("Scope", scope);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

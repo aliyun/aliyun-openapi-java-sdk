@@ -20,28 +20,27 @@ import java.util.List;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnCertificateListResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnCertificateListResponse.CertificateListModel;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnCertificateListResponse.CertificateListModel.Cert;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeScdnCertificateListResponseUnmarshaller {
 
-	public static DescribeScdnCertificateListResponse unmarshall(DescribeScdnCertificateListResponse describeScdnCertificateListResponse, UnmarshallerContext context) {
+	public static DescribeScdnCertificateListResponse unmarshall(DescribeScdnCertificateListResponse describeScdnCertificateListResponse, UnmarshallerContext _ctx) {
 		
-		describeScdnCertificateListResponse.setRequestId(context.stringValue("DescribeScdnCertificateListResponse.RequestId"));
+		describeScdnCertificateListResponse.setRequestId(_ctx.stringValue("DescribeScdnCertificateListResponse.RequestId"));
 
 		CertificateListModel certificateListModel = new CertificateListModel();
-		certificateListModel.setCount(context.integerValue("DescribeScdnCertificateListResponse.CertificateListModel.Count"));
+		certificateListModel.setCount(_ctx.integerValue("DescribeScdnCertificateListResponse.CertificateListModel.Count"));
 
 		List<Cert> certList = new ArrayList<Cert>();
-		for (int i = 0; i < context.lengthValue("DescribeScdnCertificateListResponse.CertificateListModel.CertList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnCertificateListResponse.CertificateListModel.CertList.Length"); i++) {
 			Cert cert = new Cert();
-			cert.setCertName(context.stringValue("DescribeScdnCertificateListResponse.CertificateListModel.CertList["+ i +"].CertName"));
-			cert.setCertId(context.longValue("DescribeScdnCertificateListResponse.CertificateListModel.CertList["+ i +"].CertId"));
-			cert.setFingerprint(context.stringValue("DescribeScdnCertificateListResponse.CertificateListModel.CertList["+ i +"].Fingerprint"));
-			cert.setCommon(context.stringValue("DescribeScdnCertificateListResponse.CertificateListModel.CertList["+ i +"].Common"));
-			cert.setIssuer(context.stringValue("DescribeScdnCertificateListResponse.CertificateListModel.CertList["+ i +"].Issuer"));
-			cert.setLastTime(context.longValue("DescribeScdnCertificateListResponse.CertificateListModel.CertList["+ i +"].LastTime"));
+			cert.setCertName(_ctx.stringValue("DescribeScdnCertificateListResponse.CertificateListModel.CertList["+ i +"].CertName"));
+			cert.setCertId(_ctx.longValue("DescribeScdnCertificateListResponse.CertificateListModel.CertList["+ i +"].CertId"));
+			cert.setFingerprint(_ctx.stringValue("DescribeScdnCertificateListResponse.CertificateListModel.CertList["+ i +"].Fingerprint"));
+			cert.setCommon(_ctx.stringValue("DescribeScdnCertificateListResponse.CertificateListModel.CertList["+ i +"].Common"));
+			cert.setIssuer(_ctx.stringValue("DescribeScdnCertificateListResponse.CertificateListModel.CertList["+ i +"].Issuer"));
+			cert.setLastTime(_ctx.longValue("DescribeScdnCertificateListResponse.CertificateListModel.CertList["+ i +"].LastTime"));
 
 			certList.add(cert);
 		}

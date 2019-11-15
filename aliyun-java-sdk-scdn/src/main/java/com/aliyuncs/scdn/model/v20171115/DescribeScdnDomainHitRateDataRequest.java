@@ -15,16 +15,15 @@
 package com.aliyuncs.scdn.model.v20171115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.scdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeScdnDomainHitRateDataRequest extends RpcAcsRequest<DescribeScdnDomainHitRateDataResponse> {
-	
-	public DescribeScdnDomainHitRateDataRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainHitRateData", "scdn");
-	}
+	   
 
 	private String startTime;
 
@@ -35,6 +34,14 @@ public class DescribeScdnDomainHitRateDataRequest extends RpcAcsRequest<Describe
 	private Long ownerId;
 
 	private String interval;
+	public DescribeScdnDomainHitRateDataRequest() {
+		super("scdn", "2017-11-15", "DescribeScdnDomainHitRateData");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStartTime() {
 		return this.startTime;

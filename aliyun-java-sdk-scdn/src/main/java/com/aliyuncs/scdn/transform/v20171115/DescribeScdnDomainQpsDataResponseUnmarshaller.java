@@ -19,30 +19,29 @@ import java.util.List;
 
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainQpsDataResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainQpsDataResponse.DataModule;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeScdnDomainQpsDataResponseUnmarshaller {
 
-	public static DescribeScdnDomainQpsDataResponse unmarshall(DescribeScdnDomainQpsDataResponse describeScdnDomainQpsDataResponse, UnmarshallerContext context) {
+	public static DescribeScdnDomainQpsDataResponse unmarshall(DescribeScdnDomainQpsDataResponse describeScdnDomainQpsDataResponse, UnmarshallerContext _ctx) {
 		
-		describeScdnDomainQpsDataResponse.setRequestId(context.stringValue("DescribeScdnDomainQpsDataResponse.RequestId"));
-		describeScdnDomainQpsDataResponse.setDomainName(context.stringValue("DescribeScdnDomainQpsDataResponse.DomainName"));
-		describeScdnDomainQpsDataResponse.setStartTime(context.stringValue("DescribeScdnDomainQpsDataResponse.StartTime"));
-		describeScdnDomainQpsDataResponse.setEndTime(context.stringValue("DescribeScdnDomainQpsDataResponse.EndTime"));
-		describeScdnDomainQpsDataResponse.setDataInterval(context.stringValue("DescribeScdnDomainQpsDataResponse.DataInterval"));
+		describeScdnDomainQpsDataResponse.setRequestId(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.RequestId"));
+		describeScdnDomainQpsDataResponse.setDomainName(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.DomainName"));
+		describeScdnDomainQpsDataResponse.setStartTime(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.StartTime"));
+		describeScdnDomainQpsDataResponse.setEndTime(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.EndTime"));
+		describeScdnDomainQpsDataResponse.setDataInterval(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.DataInterval"));
 
 		List<DataModule> qpsDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setQpsValue(context.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].QpsValue"));
-			dataModule.setHttpQpsValue(context.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].HttpQpsValue"));
-			dataModule.setHttpsQpsValue(context.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].HttpsQpsValue"));
-			dataModule.setAccValue(context.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].AccValue"));
-			dataModule.setHttpAccValue(context.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].HttpAccValue"));
-			dataModule.setHttpsAccValue(context.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].HttpsAccValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setQpsValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].QpsValue"));
+			dataModule.setHttpQpsValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].HttpQpsValue"));
+			dataModule.setHttpsQpsValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].HttpsQpsValue"));
+			dataModule.setAccValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].AccValue"));
+			dataModule.setHttpAccValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].HttpAccValue"));
+			dataModule.setHttpsAccValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].HttpsAccValue"));
 
 			qpsDataPerInterval.add(dataModule);
 		}

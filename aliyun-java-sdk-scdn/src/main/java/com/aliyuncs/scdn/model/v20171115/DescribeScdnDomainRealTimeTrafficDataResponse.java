@@ -15,7 +15,6 @@
 package com.aliyuncs.scdn.model.v20171115;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.scdn.transform.v20171115.DescribeScdnDomainRealTimeTrafficDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

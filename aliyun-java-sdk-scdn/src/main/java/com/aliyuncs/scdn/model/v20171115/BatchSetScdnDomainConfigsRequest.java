@@ -22,10 +22,10 @@ import com.aliyuncs.scdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class BatchDeleteScdnDomainConfigsRequest extends RpcAcsRequest<BatchDeleteScdnDomainConfigsResponse> {
+public class BatchSetScdnDomainConfigsRequest extends RpcAcsRequest<BatchSetScdnDomainConfigsResponse> {
 	   
 
-	private String functionNames;
+	private String functions;
 
 	private String domainNames;
 
@@ -34,8 +34,8 @@ public class BatchDeleteScdnDomainConfigsRequest extends RpcAcsRequest<BatchDele
 	private Long ownerId;
 
 	private String securityToken;
-	public BatchDeleteScdnDomainConfigsRequest() {
-		super("scdn", "2017-11-15", "BatchDeleteScdnDomainConfigs");
+	public BatchSetScdnDomainConfigsRequest() {
+		super("scdn", "2017-11-15", "BatchSetScdnDomainConfigs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,14 +43,14 @@ public class BatchDeleteScdnDomainConfigsRequest extends RpcAcsRequest<BatchDele
 		} catch (Exception e) {}
 	}
 
-	public String getFunctionNames() {
-		return this.functionNames;
+	public String getFunctions() {
+		return this.functions;
 	}
 
-	public void setFunctionNames(String functionNames) {
-		this.functionNames = functionNames;
-		if(functionNames != null){
-			putQueryParameter("FunctionNames", functionNames);
+	public void setFunctions(String functions) {
+		this.functions = functions;
+		if(functions != null){
+			putQueryParameter("Functions", functions);
 		}
 	}
 
@@ -99,8 +99,8 @@ public class BatchDeleteScdnDomainConfigsRequest extends RpcAcsRequest<BatchDele
 	}
 
 	@Override
-	public Class<BatchDeleteScdnDomainConfigsResponse> getResponseClass() {
-		return BatchDeleteScdnDomainConfigsResponse.class;
+	public Class<BatchSetScdnDomainConfigsResponse> getResponseClass() {
+		return BatchSetScdnDomainConfigsResponse.class;
 	}
 
 }

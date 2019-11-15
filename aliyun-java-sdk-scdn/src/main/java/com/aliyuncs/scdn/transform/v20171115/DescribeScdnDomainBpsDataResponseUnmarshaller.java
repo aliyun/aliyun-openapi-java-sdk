@@ -19,27 +19,26 @@ import java.util.List;
 
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainBpsDataResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainBpsDataResponse.DataModule;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeScdnDomainBpsDataResponseUnmarshaller {
 
-	public static DescribeScdnDomainBpsDataResponse unmarshall(DescribeScdnDomainBpsDataResponse describeScdnDomainBpsDataResponse, UnmarshallerContext context) {
+	public static DescribeScdnDomainBpsDataResponse unmarshall(DescribeScdnDomainBpsDataResponse describeScdnDomainBpsDataResponse, UnmarshallerContext _ctx) {
 		
-		describeScdnDomainBpsDataResponse.setRequestId(context.stringValue("DescribeScdnDomainBpsDataResponse.RequestId"));
-		describeScdnDomainBpsDataResponse.setDomainName(context.stringValue("DescribeScdnDomainBpsDataResponse.DomainName"));
-		describeScdnDomainBpsDataResponse.setStartTime(context.stringValue("DescribeScdnDomainBpsDataResponse.StartTime"));
-		describeScdnDomainBpsDataResponse.setEndTime(context.stringValue("DescribeScdnDomainBpsDataResponse.EndTime"));
-		describeScdnDomainBpsDataResponse.setDataInterval(context.stringValue("DescribeScdnDomainBpsDataResponse.DataInterval"));
+		describeScdnDomainBpsDataResponse.setRequestId(_ctx.stringValue("DescribeScdnDomainBpsDataResponse.RequestId"));
+		describeScdnDomainBpsDataResponse.setDomainName(_ctx.stringValue("DescribeScdnDomainBpsDataResponse.DomainName"));
+		describeScdnDomainBpsDataResponse.setStartTime(_ctx.stringValue("DescribeScdnDomainBpsDataResponse.StartTime"));
+		describeScdnDomainBpsDataResponse.setEndTime(_ctx.stringValue("DescribeScdnDomainBpsDataResponse.EndTime"));
+		describeScdnDomainBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeScdnDomainBpsDataResponse.DataInterval"));
 
 		List<DataModule> bpsDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeScdnDomainBpsDataResponse.BpsDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDomainBpsDataResponse.BpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeScdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setBpsValue(context.stringValue("DescribeScdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].BpsValue"));
-			dataModule.setHttpBpsValue(context.stringValue("DescribeScdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpBpsValue"));
-			dataModule.setHttpsBpsValue(context.stringValue("DescribeScdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpsBpsValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeScdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setBpsValue(_ctx.stringValue("DescribeScdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].BpsValue"));
+			dataModule.setHttpBpsValue(_ctx.stringValue("DescribeScdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpBpsValue"));
+			dataModule.setHttpsBpsValue(_ctx.stringValue("DescribeScdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpsBpsValue"));
 
 			bpsDataPerInterval.add(dataModule);
 		}

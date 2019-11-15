@@ -15,24 +15,31 @@
 package com.aliyuncs.scdn.model.v20171115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.scdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class PreloadScdnObjectCachesRequest extends RpcAcsRequest<PreloadScdnObjectCachesResponse> {
-	
-	public PreloadScdnObjectCachesRequest() {
-		super("scdn", "2017-11-15", "PreloadScdnObjectCaches", "scdn");
-	}
+	   
 
 	private String area;
-
-	private String securityToken;
 
 	private String objectPath;
 
 	private Long ownerId;
+
+	private String securityToken;
+	public PreloadScdnObjectCachesRequest() {
+		super("scdn", "2017-11-15", "PreloadScdnObjectCaches");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getArea() {
 		return this.area;
@@ -42,17 +49,6 @@ public class PreloadScdnObjectCachesRequest extends RpcAcsRequest<PreloadScdnObj
 		this.area = area;
 		if(area != null){
 			putQueryParameter("Area", area);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -75,6 +71,17 @@ public class PreloadScdnObjectCachesRequest extends RpcAcsRequest<PreloadScdnObj
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

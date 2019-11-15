@@ -20,28 +20,27 @@ import java.util.List;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainConfigsResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainConfigsResponse.DomainConfig;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainConfigsResponse.DomainConfig.FunctionArg;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeScdnDomainConfigsResponseUnmarshaller {
 
-	public static DescribeScdnDomainConfigsResponse unmarshall(DescribeScdnDomainConfigsResponse describeScdnDomainConfigsResponse, UnmarshallerContext context) {
+	public static DescribeScdnDomainConfigsResponse unmarshall(DescribeScdnDomainConfigsResponse describeScdnDomainConfigsResponse, UnmarshallerContext _ctx) {
 		
-		describeScdnDomainConfigsResponse.setRequestId(context.stringValue("DescribeScdnDomainConfigsResponse.RequestId"));
+		describeScdnDomainConfigsResponse.setRequestId(_ctx.stringValue("DescribeScdnDomainConfigsResponse.RequestId"));
 
 		List<DomainConfig> domainConfigs = new ArrayList<DomainConfig>();
-		for (int i = 0; i < context.lengthValue("DescribeScdnDomainConfigsResponse.DomainConfigs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDomainConfigsResponse.DomainConfigs.Length"); i++) {
 			DomainConfig domainConfig = new DomainConfig();
-			domainConfig.setFunctionName(context.stringValue("DescribeScdnDomainConfigsResponse.DomainConfigs["+ i +"].FunctionName"));
-			domainConfig.setConfigId(context.stringValue("DescribeScdnDomainConfigsResponse.DomainConfigs["+ i +"].ConfigId"));
-			domainConfig.setStatus(context.stringValue("DescribeScdnDomainConfigsResponse.DomainConfigs["+ i +"].Status"));
+			domainConfig.setFunctionName(_ctx.stringValue("DescribeScdnDomainConfigsResponse.DomainConfigs["+ i +"].FunctionName"));
+			domainConfig.setConfigId(_ctx.stringValue("DescribeScdnDomainConfigsResponse.DomainConfigs["+ i +"].ConfigId"));
+			domainConfig.setStatus(_ctx.stringValue("DescribeScdnDomainConfigsResponse.DomainConfigs["+ i +"].Status"));
 
 			List<FunctionArg> functionArgs = new ArrayList<FunctionArg>();
-			for (int j = 0; j < context.lengthValue("DescribeScdnDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeScdnDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs.Length"); j++) {
 				FunctionArg functionArg = new FunctionArg();
-				functionArg.setArgName(context.stringValue("DescribeScdnDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs["+ j +"].ArgName"));
-				functionArg.setArgValue(context.stringValue("DescribeScdnDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs["+ j +"].ArgValue"));
+				functionArg.setArgName(_ctx.stringValue("DescribeScdnDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs["+ j +"].ArgName"));
+				functionArg.setArgValue(_ctx.stringValue("DescribeScdnDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs["+ j +"].ArgValue"));
 
 				functionArgs.add(functionArg);
 			}

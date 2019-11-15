@@ -15,7 +15,6 @@
 package com.aliyuncs.scdn.model.v20171115;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.scdn.transform.v20171115.DescribeScdnServiceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,6 +26,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 public class DescribeScdnServiceResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String changingAffectTime;
+
+	private String internetChargeType;
+
+	private String changingChargeType;
 
 	private String instanceId;
 
@@ -58,9 +63,35 @@ public class DescribeScdnServiceResponse extends AcsResponse {
 
 	private String elasticProtectionValue;
 
+	private String currentProtectType;
+
+	private String currentProtectTypeValue;
+
+	private String currentBandwidth;
+
+	private String currentCcProtection;
+
+	private String currentDDoSBasic;
+
+	private String currentDomainCount;
+
+	private String currentElasticProtection;
+
+	private String currentBandwidthValue;
+
+	private String currentCcProtectionValue;
+
+	private String currentDDoSBasicValue;
+
+	private String currentDomainCountValue;
+
+	private String currentElasticProtectionValue;
+
 	private String priceType;
 
 	private String pricingCycle;
+
+	private String changingChargeType1;
 
 	private List<LockReason> operationLocks;
 
@@ -70,6 +101,30 @@ public class DescribeScdnServiceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getChangingAffectTime() {
+		return this.changingAffectTime;
+	}
+
+	public void setChangingAffectTime(String changingAffectTime) {
+		this.changingAffectTime = changingAffectTime;
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+	}
+
+	public String getChangingChargeType() {
+		return this.changingChargeType;
+	}
+
+	public void setChangingChargeType(String changingChargeType) {
+		this.changingChargeType = changingChargeType;
 	}
 
 	public String getInstanceId() {
@@ -192,6 +247,102 @@ public class DescribeScdnServiceResponse extends AcsResponse {
 		this.elasticProtectionValue = elasticProtectionValue;
 	}
 
+	public String getCurrentProtectType() {
+		return this.currentProtectType;
+	}
+
+	public void setCurrentProtectType(String currentProtectType) {
+		this.currentProtectType = currentProtectType;
+	}
+
+	public String getCurrentProtectTypeValue() {
+		return this.currentProtectTypeValue;
+	}
+
+	public void setCurrentProtectTypeValue(String currentProtectTypeValue) {
+		this.currentProtectTypeValue = currentProtectTypeValue;
+	}
+
+	public String getCurrentBandwidth() {
+		return this.currentBandwidth;
+	}
+
+	public void setCurrentBandwidth(String currentBandwidth) {
+		this.currentBandwidth = currentBandwidth;
+	}
+
+	public String getCurrentCcProtection() {
+		return this.currentCcProtection;
+	}
+
+	public void setCurrentCcProtection(String currentCcProtection) {
+		this.currentCcProtection = currentCcProtection;
+	}
+
+	public String getCurrentDDoSBasic() {
+		return this.currentDDoSBasic;
+	}
+
+	public void setCurrentDDoSBasic(String currentDDoSBasic) {
+		this.currentDDoSBasic = currentDDoSBasic;
+	}
+
+	public String getCurrentDomainCount() {
+		return this.currentDomainCount;
+	}
+
+	public void setCurrentDomainCount(String currentDomainCount) {
+		this.currentDomainCount = currentDomainCount;
+	}
+
+	public String getCurrentElasticProtection() {
+		return this.currentElasticProtection;
+	}
+
+	public void setCurrentElasticProtection(String currentElasticProtection) {
+		this.currentElasticProtection = currentElasticProtection;
+	}
+
+	public String getCurrentBandwidthValue() {
+		return this.currentBandwidthValue;
+	}
+
+	public void setCurrentBandwidthValue(String currentBandwidthValue) {
+		this.currentBandwidthValue = currentBandwidthValue;
+	}
+
+	public String getCurrentCcProtectionValue() {
+		return this.currentCcProtectionValue;
+	}
+
+	public void setCurrentCcProtectionValue(String currentCcProtectionValue) {
+		this.currentCcProtectionValue = currentCcProtectionValue;
+	}
+
+	public String getCurrentDDoSBasicValue() {
+		return this.currentDDoSBasicValue;
+	}
+
+	public void setCurrentDDoSBasicValue(String currentDDoSBasicValue) {
+		this.currentDDoSBasicValue = currentDDoSBasicValue;
+	}
+
+	public String getCurrentDomainCountValue() {
+		return this.currentDomainCountValue;
+	}
+
+	public void setCurrentDomainCountValue(String currentDomainCountValue) {
+		this.currentDomainCountValue = currentDomainCountValue;
+	}
+
+	public String getCurrentElasticProtectionValue() {
+		return this.currentElasticProtectionValue;
+	}
+
+	public void setCurrentElasticProtectionValue(String currentElasticProtectionValue) {
+		this.currentElasticProtectionValue = currentElasticProtectionValue;
+	}
+
 	public String getPriceType() {
 		return this.priceType;
 	}
@@ -206,6 +357,14 @@ public class DescribeScdnServiceResponse extends AcsResponse {
 
 	public void setPricingCycle(String pricingCycle) {
 		this.pricingCycle = pricingCycle;
+	}
+
+	public String getChangingChargeType1() {
+		return this.changingChargeType1;
+	}
+
+	public void setChangingChargeType1(String changingChargeType1) {
+		this.changingChargeType1 = changingChargeType1;
 	}
 
 	public List<LockReason> getOperationLocks() {

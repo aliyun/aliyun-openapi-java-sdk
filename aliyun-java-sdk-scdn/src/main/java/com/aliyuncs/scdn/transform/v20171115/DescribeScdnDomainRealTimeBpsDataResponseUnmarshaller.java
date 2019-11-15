@@ -19,21 +19,20 @@ import java.util.List;
 
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainRealTimeBpsDataResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainRealTimeBpsDataResponse.BpsModel;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeScdnDomainRealTimeBpsDataResponseUnmarshaller {
 
-	public static DescribeScdnDomainRealTimeBpsDataResponse unmarshall(DescribeScdnDomainRealTimeBpsDataResponse describeScdnDomainRealTimeBpsDataResponse, UnmarshallerContext context) {
+	public static DescribeScdnDomainRealTimeBpsDataResponse unmarshall(DescribeScdnDomainRealTimeBpsDataResponse describeScdnDomainRealTimeBpsDataResponse, UnmarshallerContext _ctx) {
 		
-		describeScdnDomainRealTimeBpsDataResponse.setRequestId(context.stringValue("DescribeScdnDomainRealTimeBpsDataResponse.RequestId"));
+		describeScdnDomainRealTimeBpsDataResponse.setRequestId(_ctx.stringValue("DescribeScdnDomainRealTimeBpsDataResponse.RequestId"));
 
 		List<BpsModel> data = new ArrayList<BpsModel>();
-		for (int i = 0; i < context.lengthValue("DescribeScdnDomainRealTimeBpsDataResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDomainRealTimeBpsDataResponse.Data.Length"); i++) {
 			BpsModel bpsModel = new BpsModel();
-			bpsModel.setBps(context.floatValue("DescribeScdnDomainRealTimeBpsDataResponse.Data["+ i +"].Bps"));
-			bpsModel.setTimeStamp(context.stringValue("DescribeScdnDomainRealTimeBpsDataResponse.Data["+ i +"].TimeStamp"));
+			bpsModel.setBps(_ctx.floatValue("DescribeScdnDomainRealTimeBpsDataResponse.Data["+ i +"].Bps"));
+			bpsModel.setTimeStamp(_ctx.stringValue("DescribeScdnDomainRealTimeBpsDataResponse.Data["+ i +"].TimeStamp"));
 
 			data.add(bpsModel);
 		}

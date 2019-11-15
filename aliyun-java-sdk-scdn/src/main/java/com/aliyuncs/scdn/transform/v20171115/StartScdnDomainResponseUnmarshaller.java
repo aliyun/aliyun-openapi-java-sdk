@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StartScdnDomainResponseUnmarshaller {
 
-	public static StartScdnDomainResponse unmarshall(StartScdnDomainResponse startScdnDomainResponse, UnmarshallerContext context) {
+	public static StartScdnDomainResponse unmarshall(StartScdnDomainResponse startScdnDomainResponse, UnmarshallerContext _ctx) {
 		
-		startScdnDomainResponse.setRequestId(context.stringValue("StartScdnDomainResponse.RequestId"));
+		startScdnDomainResponse.setRequestId(_ctx.stringValue("StartScdnDomainResponse.RequestId"));
 	 
 	 	return startScdnDomainResponse;
 	}

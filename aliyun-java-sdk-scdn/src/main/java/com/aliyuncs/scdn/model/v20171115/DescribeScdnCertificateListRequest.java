@@ -15,32 +15,28 @@
 package com.aliyuncs.scdn.model.v20171115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.scdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeScdnCertificateListRequest extends RpcAcsRequest<DescribeScdnCertificateListResponse> {
-	
-	public DescribeScdnCertificateListRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnCertificateList", "scdn");
-	}
-
-	private String securityToken;
+	   
 
 	private String domainName;
 
 	private Long ownerId;
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
+	private String securityToken;
+	public DescribeScdnCertificateListRequest() {
+		super("scdn", "2017-11-15", "DescribeScdnCertificateList");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDomainName() {
@@ -62,6 +58,17 @@ public class DescribeScdnCertificateListRequest extends RpcAcsRequest<DescribeSc
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

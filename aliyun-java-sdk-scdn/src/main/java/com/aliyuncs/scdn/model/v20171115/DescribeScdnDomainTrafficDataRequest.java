@@ -15,16 +15,15 @@
 package com.aliyuncs.scdn.model.v20171115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.scdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeScdnDomainTrafficDataRequest extends RpcAcsRequest<DescribeScdnDomainTrafficDataResponse> {
-	
-	public DescribeScdnDomainTrafficDataRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainTrafficData", "scdn");
-	}
+	   
 
 	private String locationNameEn;
 
@@ -39,6 +38,14 @@ public class DescribeScdnDomainTrafficDataRequest extends RpcAcsRequest<Describe
 	private Long ownerId;
 
 	private String interval;
+	public DescribeScdnDomainTrafficDataRequest() {
+		super("scdn", "2017-11-15", "DescribeScdnDomainTrafficData");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getLocationNameEn() {
 		return this.locationNameEn;

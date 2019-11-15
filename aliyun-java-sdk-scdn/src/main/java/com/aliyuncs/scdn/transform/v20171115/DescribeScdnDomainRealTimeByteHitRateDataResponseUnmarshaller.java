@@ -19,21 +19,20 @@ import java.util.List;
 
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainRealTimeByteHitRateDataResponse;
 import com.aliyuncs.scdn.model.v20171115.DescribeScdnDomainRealTimeByteHitRateDataResponse.ByteHitRateDataModel;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeScdnDomainRealTimeByteHitRateDataResponseUnmarshaller {
 
-	public static DescribeScdnDomainRealTimeByteHitRateDataResponse unmarshall(DescribeScdnDomainRealTimeByteHitRateDataResponse describeScdnDomainRealTimeByteHitRateDataResponse, UnmarshallerContext context) {
+	public static DescribeScdnDomainRealTimeByteHitRateDataResponse unmarshall(DescribeScdnDomainRealTimeByteHitRateDataResponse describeScdnDomainRealTimeByteHitRateDataResponse, UnmarshallerContext _ctx) {
 		
-		describeScdnDomainRealTimeByteHitRateDataResponse.setRequestId(context.stringValue("DescribeScdnDomainRealTimeByteHitRateDataResponse.RequestId"));
+		describeScdnDomainRealTimeByteHitRateDataResponse.setRequestId(_ctx.stringValue("DescribeScdnDomainRealTimeByteHitRateDataResponse.RequestId"));
 
 		List<ByteHitRateDataModel> data = new ArrayList<ByteHitRateDataModel>();
-		for (int i = 0; i < context.lengthValue("DescribeScdnDomainRealTimeByteHitRateDataResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDomainRealTimeByteHitRateDataResponse.Data.Length"); i++) {
 			ByteHitRateDataModel byteHitRateDataModel = new ByteHitRateDataModel();
-			byteHitRateDataModel.setByteHitRate(context.floatValue("DescribeScdnDomainRealTimeByteHitRateDataResponse.Data["+ i +"].ByteHitRate"));
-			byteHitRateDataModel.setTimeStamp(context.stringValue("DescribeScdnDomainRealTimeByteHitRateDataResponse.Data["+ i +"].TimeStamp"));
+			byteHitRateDataModel.setByteHitRate(_ctx.floatValue("DescribeScdnDomainRealTimeByteHitRateDataResponse.Data["+ i +"].ByteHitRate"));
+			byteHitRateDataModel.setTimeStamp(_ctx.stringValue("DescribeScdnDomainRealTimeByteHitRateDataResponse.Data["+ i +"].TimeStamp"));
 
 			data.add(byteHitRateDataModel);
 		}

@@ -15,45 +15,52 @@
 package com.aliyuncs.scdn.model.v20171115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.scdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetScdnDomainCertificateRequest extends RpcAcsRequest<SetScdnDomainCertificateResponse> {
-	
-	public SetScdnDomainCertificateRequest() {
-		super("scdn", "2017-11-15", "SetScdnDomainCertificate", "scdn");
-	}
+	   
 
-	private String forceSet;
+	private String sSLProtocol;
 
 	private String securityToken;
 
 	private String certType;
 
-	private String sSLPub;
+	private String sSLPri;
+
+	private String forceSet;
 
 	private String certName;
-
-	private String sSLProtocol;
 
 	private String domainName;
 
 	private Long ownerId;
 
+	private String sSLPub;
+
 	private String region;
-
-	private String sSLPri;
-
-	public String getForceSet() {
-		return this.forceSet;
+	public SetScdnDomainCertificateRequest() {
+		super("scdn", "2017-11-15", "SetScdnDomainCertificate");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setForceSet(String forceSet) {
-		this.forceSet = forceSet;
-		if(forceSet != null){
-			putQueryParameter("ForceSet", forceSet);
+	public String getSSLProtocol() {
+		return this.sSLProtocol;
+	}
+
+	public void setSSLProtocol(String sSLProtocol) {
+		this.sSLProtocol = sSLProtocol;
+		if(sSLProtocol != null){
+			putQueryParameter("SSLProtocol", sSLProtocol);
 		}
 	}
 
@@ -79,14 +86,25 @@ public class SetScdnDomainCertificateRequest extends RpcAcsRequest<SetScdnDomain
 		}
 	}
 
-	public String getSSLPub() {
-		return this.sSLPub;
+	public String getSSLPri() {
+		return this.sSLPri;
 	}
 
-	public void setSSLPub(String sSLPub) {
-		this.sSLPub = sSLPub;
-		if(sSLPub != null){
-			putQueryParameter("SSLPub", sSLPub);
+	public void setSSLPri(String sSLPri) {
+		this.sSLPri = sSLPri;
+		if(sSLPri != null){
+			putQueryParameter("SSLPri", sSLPri);
+		}
+	}
+
+	public String getForceSet() {
+		return this.forceSet;
+	}
+
+	public void setForceSet(String forceSet) {
+		this.forceSet = forceSet;
+		if(forceSet != null){
+			putQueryParameter("ForceSet", forceSet);
 		}
 	}
 
@@ -98,17 +116,6 @@ public class SetScdnDomainCertificateRequest extends RpcAcsRequest<SetScdnDomain
 		this.certName = certName;
 		if(certName != null){
 			putQueryParameter("CertName", certName);
-		}
-	}
-
-	public String getSSLProtocol() {
-		return this.sSLProtocol;
-	}
-
-	public void setSSLProtocol(String sSLProtocol) {
-		this.sSLProtocol = sSLProtocol;
-		if(sSLProtocol != null){
-			putQueryParameter("SSLProtocol", sSLProtocol);
 		}
 	}
 
@@ -134,6 +141,17 @@ public class SetScdnDomainCertificateRequest extends RpcAcsRequest<SetScdnDomain
 		}
 	}
 
+	public String getSSLPub() {
+		return this.sSLPub;
+	}
+
+	public void setSSLPub(String sSLPub) {
+		this.sSLPub = sSLPub;
+		if(sSLPub != null){
+			putQueryParameter("SSLPub", sSLPub);
+		}
+	}
+
 	public String getRegion() {
 		return this.region;
 	}
@@ -142,17 +160,6 @@ public class SetScdnDomainCertificateRequest extends RpcAcsRequest<SetScdnDomain
 		this.region = region;
 		if(region != null){
 			putQueryParameter("Region", region);
-		}
-	}
-
-	public String getSSLPri() {
-		return this.sSLPri;
-	}
-
-	public void setSSLPri(String sSLPri) {
-		this.sSLPri = sSLPri;
-		if(sSLPri != null){
-			putQueryParameter("SSLPri", sSLPri);
 		}
 	}
 

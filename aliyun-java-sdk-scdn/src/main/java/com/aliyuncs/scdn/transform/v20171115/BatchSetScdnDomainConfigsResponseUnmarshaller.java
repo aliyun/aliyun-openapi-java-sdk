@@ -14,16 +14,16 @@
 
 package com.aliyuncs.scdn.transform.v20171115;
 
-import com.aliyuncs.scdn.model.v20171115.UpdateScdnDomainResponse;
+import com.aliyuncs.scdn.model.v20171115.BatchSetScdnDomainConfigsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UpdateScdnDomainResponseUnmarshaller {
+public class BatchSetScdnDomainConfigsResponseUnmarshaller {
 
-	public static UpdateScdnDomainResponse unmarshall(UpdateScdnDomainResponse updateScdnDomainResponse, UnmarshallerContext _ctx) {
+	public static BatchSetScdnDomainConfigsResponse unmarshall(BatchSetScdnDomainConfigsResponse batchSetScdnDomainConfigsResponse, UnmarshallerContext _ctx) {
 		
-		updateScdnDomainResponse.setRequestId(_ctx.stringValue("UpdateScdnDomainResponse.RequestId"));
+		batchSetScdnDomainConfigsResponse.setRequestId(_ctx.stringValue("BatchSetScdnDomainConfigsResponse.RequestId"));
 	 
-	 	return updateScdnDomainResponse;
+	 	return batchSetScdnDomainConfigsResponse;
 	}
 }
