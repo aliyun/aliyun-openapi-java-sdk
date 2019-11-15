@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,18 +23,7 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class ResumeLiveStreamRequest extends RpcAcsRequest<ResumeLiveStreamResponse> {
-	
-	public ResumeLiveStreamRequest() {
-		super("Cdn", "2014-11-11", "ResumeLiveStream", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String appName;
-
-	private String securityToken;
+	   
 
 	private String liveStreamType;
 
@@ -41,47 +31,18 @@ public class ResumeLiveStreamRequest extends RpcAcsRequest<ResumeLiveStreamRespo
 
 	private Long ownerId;
 
+	private String appName;
+
+	private String securityToken;
+
 	private String streamName;
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
+	public ResumeLiveStreamRequest() {
+		super("Cdn", "2014-11-11", "ResumeLiveStream");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getLiveStreamType() {
@@ -114,6 +75,28 @@ public class ResumeLiveStreamRequest extends RpcAcsRequest<ResumeLiveStreamRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

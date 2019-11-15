@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class CreateRealTimeLogDeliveryRequest extends RpcAcsRequest<CreateRealTimeLogDeliveryResponse> {
-	
-	public CreateRealTimeLogDeliveryRequest() {
-		super("Cdn", "2018-05-10", "CreateRealTimeLogDelivery", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String project;
 
@@ -40,6 +34,14 @@ public class CreateRealTimeLogDeliveryRequest extends RpcAcsRequest<CreateRealTi
 	private String region;
 
 	private String logstore;
+	public CreateRealTimeLogDeliveryRequest() {
+		super("Cdn", "2018-05-10", "CreateRealTimeLogDelivery");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProject() {
 		return this.project;
@@ -63,29 +65,10 @@ public class CreateRealTimeLogDeliveryRequest extends RpcAcsRequest<CreateRealTi
 		}
 	}
 
-	public String getBizDomain() {
-		return this.domain;
-	}
-
-	public void setBizDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizDomain instead of this.
-	 */
-	@Deprecated
 	public String getDomain() {
 		return this.domain;
 	}
 
-	/**
-	 * @deprecated use setBizDomain instead of this.
-	 */
-	@Deprecated
 	public void setDomain(String domain) {
 		this.domain = domain;
 		if(domain != null){

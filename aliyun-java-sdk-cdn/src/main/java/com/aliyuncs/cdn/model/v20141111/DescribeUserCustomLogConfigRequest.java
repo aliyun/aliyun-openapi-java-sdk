@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,16 +23,17 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeUserCustomLogConfigRequest extends RpcAcsRequest<DescribeUserCustomLogConfigResponse> {
-	
+	   
+
+	private Long ownerId;
 	public DescribeUserCustomLogConfigRequest() {
-		super("Cdn", "2014-11-11", "DescribeUserCustomLogConfig", "cdn");
+		super("Cdn", "2014-11-11", "DescribeUserCustomLogConfig");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long ownerId;
 
 	public Long getOwnerId() {
 		return this.ownerId;

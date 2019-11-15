@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,18 +23,19 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeDomainRealtimeLogDeliveryRequest extends RpcAcsRequest<DescribeDomainRealtimeLogDeliveryResponse> {
-	
+	   
+
+	private Long ownerId;
+
+	private String domain;
 	public DescribeDomainRealtimeLogDeliveryRequest() {
-		super("Cdn", "2018-05-10", "DescribeDomainRealtimeLogDelivery", "cdn");
+		super("Cdn", "2018-05-10", "DescribeDomainRealtimeLogDelivery");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long ownerId;
-
-	private String domain;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -46,29 +48,10 @@ public class DescribeDomainRealtimeLogDeliveryRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getBizDomain() {
-		return this.domain;
-	}
-
-	public void setBizDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizDomain instead of this.
-	 */
-	@Deprecated
 	public String getDomain() {
 		return this.domain;
 	}
 
-	/**
-	 * @deprecated use setBizDomain instead of this.
-	 */
-	@Deprecated
 	public void setDomain(String domain) {
 		this.domain = domain;
 		if(domain != null){

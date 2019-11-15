@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class SetRemoveQueryStringConfigRequest extends RpcAcsRequest<SetRemoveQueryStringConfigResponse> {
-	
-	public SetRemoveQueryStringConfigRequest() {
-		super("Cdn", "2018-05-10", "SetRemoveQueryStringConfig", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String aliRemoveArgs;
 
@@ -40,6 +34,14 @@ public class SetRemoveQueryStringConfigRequest extends RpcAcsRequest<SetRemoveQu
 	private Long ownerId;
 
 	private Long configId;
+	public SetRemoveQueryStringConfigRequest() {
+		super("Cdn", "2018-05-10", "SetRemoveQueryStringConfig");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAliRemoveArgs() {
 		return this.aliRemoveArgs;

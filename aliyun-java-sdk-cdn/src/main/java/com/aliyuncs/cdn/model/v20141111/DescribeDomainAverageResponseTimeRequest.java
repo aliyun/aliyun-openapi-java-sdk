@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeDomainAverageResponseTimeRequest extends RpcAcsRequest<DescribeDomainAverageResponseTimeResponse> {
-	
-	public DescribeDomainAverageResponseTimeRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainAverageResponseTime", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String locationNameEn;
 
@@ -50,6 +44,14 @@ public class DescribeDomainAverageResponseTimeRequest extends RpcAcsRequest<Desc
 	private Long ownerId;
 
 	private String interval;
+	public DescribeDomainAverageResponseTimeRequest() {
+		super("Cdn", "2014-11-11", "DescribeDomainAverageResponseTime");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getLocationNameEn() {
 		return this.locationNameEn;

@@ -16,6 +16,7 @@ package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -23,14 +24,7 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
-	
-	public UntagResourcesRequest() {
-		super("Cdn", "2018-05-10", "UntagResources", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<String> resourceIds;
 
@@ -39,6 +33,14 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 	private String resourceType;
 
 	private List<String> tagKeys;
+	public UntagResourcesRequest() {
+		super("Cdn", "2018-05-10", "UntagResources");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<String> getResourceIds() {
 		return this.resourceIds;

@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,16 +23,17 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class ListRealtimeLogDeliveryInfosRequest extends RpcAcsRequest<ListRealtimeLogDeliveryInfosResponse> {
-	
+	   
+
+	private Long ownerId;
 	public ListRealtimeLogDeliveryInfosRequest() {
-		super("Cdn", "2018-05-10", "ListRealtimeLogDeliveryInfos", "cdn");
+		super("Cdn", "2018-05-10", "ListRealtimeLogDeliveryInfos");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long ownerId;
 
 	public Long getOwnerId() {
 		return this.ownerId;

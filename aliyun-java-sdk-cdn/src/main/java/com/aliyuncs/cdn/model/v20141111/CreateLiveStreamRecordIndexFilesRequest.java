@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,96 +23,34 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<CreateLiveStreamRecordIndexFilesResponse> {
-	
-	public CreateLiveStreamRecordIndexFilesRequest() {
-		super("Cdn", "2014-11-11", "CreateLiveStreamRecordIndexFiles", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
-	private String ossBucket;
+	private String ossEndpoint;
+
+	private String startTime;
+
+	private String ossObject;
 
 	private String appName;
 
 	private String securityToken;
 
-	private String domainName;
+	private String streamName;
 
-	private String ossEndpoint;
+	private String ossBucket;
+
+	private String domainName;
 
 	private String endTime;
 
-	private String startTime;
-
 	private Long ownerId;
-
-	private String streamName;
-
-	private String ossObject;
-
-	public String getOssBucket() {
-		return this.ossBucket;
-	}
-
-	public void setOssBucket(String ossBucket) {
-		this.ossBucket = ossBucket;
-		if(ossBucket != null){
-			putQueryParameter("OssBucket", ossBucket);
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
+	public CreateLiveStreamRecordIndexFilesRequest() {
+		super("Cdn", "2014-11-11", "CreateLiveStreamRecordIndexFiles");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getOssEndpoint() {
@@ -122,17 +61,6 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 		this.ossEndpoint = ossEndpoint;
 		if(ossEndpoint != null){
 			putQueryParameter("OssEndpoint", ossEndpoint);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -147,14 +75,36 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getOssObject() {
+		return this.ossObject;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setOssObject(String ossObject) {
+		this.ossObject = ossObject;
+		if(ossObject != null){
+			putQueryParameter("OssObject", ossObject);
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -169,14 +119,47 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 		}
 	}
 
-	public String getOssObject() {
-		return this.ossObject;
+	public String getOssBucket() {
+		return this.ossBucket;
 	}
 
-	public void setOssObject(String ossObject) {
-		this.ossObject = ossObject;
-		if(ossObject != null){
-			putQueryParameter("OssObject", ossObject);
+	public void setOssBucket(String ossBucket) {
+		this.ossBucket = ossBucket;
+		if(ossBucket != null){
+			putQueryParameter("OssBucket", ossBucket);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,20 +23,9 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamResponse> {
-	
-	public ForbidLiveStreamRequest() {
-		super("Cdn", "2014-11-11", "ForbidLiveStream", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String resumeTime;
-
-	private String appName;
-
-	private String securityToken;
 
 	private String liveStreamType;
 
@@ -43,7 +33,19 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 
 	private Long ownerId;
 
+	private String appName;
+
+	private String securityToken;
+
 	private String streamName;
+	public ForbidLiveStreamRequest() {
+		super("Cdn", "2014-11-11", "ForbidLiveStream");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getResumeTime() {
 		return this.resumeTime;
@@ -53,47 +55,6 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 		this.resumeTime = resumeTime;
 		if(resumeTime != null){
 			putQueryParameter("ResumeTime", resumeTime);
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -127,6 +88,28 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeDomainTopReferVisitRequest extends RpcAcsRequest<DescribeDomainTopReferVisitResponse> {
-	
-	public DescribeDomainTopReferVisitRequest() {
-		super("Cdn", "2018-05-10", "DescribeDomainTopReferVisit", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String startTime;
 
@@ -37,9 +31,19 @@ public class DescribeDomainTopReferVisitRequest extends RpcAcsRequest<DescribeDo
 
 	private String domainName;
 
+	private String endTime;
+
 	private Long ownerId;
 
 	private String sortBy;
+	public DescribeDomainTopReferVisitRequest() {
+		super("Cdn", "2018-05-10", "DescribeDomainTopReferVisit");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStartTime() {
 		return this.startTime;
@@ -71,6 +75,17 @@ public class DescribeDomainTopReferVisitRequest extends RpcAcsRequest<DescribeDo
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 

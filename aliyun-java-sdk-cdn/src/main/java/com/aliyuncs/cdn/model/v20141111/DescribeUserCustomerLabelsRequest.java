@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,20 +23,32 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeUserCustomerLabelsRequest extends RpcAcsRequest<DescribeUserCustomerLabelsResponse> {
-	
+	   
+
+	private Long ownerId;
+
+	private Long uid;
+
+	private String securityToken;
 	public DescribeUserCustomerLabelsRequest() {
-		super("Cdn", "2014-11-11", "DescribeUserCustomerLabels", "cdn");
+		super("Cdn", "2014-11-11", "DescribeUserCustomerLabels");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private Long uid;
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
 
-	private String securityToken;
-
-	private Long ownerId;
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
 
 	public Long getUid() {
 		return this.uid;
@@ -48,44 +61,14 @@ public class DescribeUserCustomerLabelsRequest extends RpcAcsRequest<DescribeUse
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class SetForwardSchemeConfigRequest extends RpcAcsRequest<SetForwardSchemeConfigResponse> {
-	
-	public SetForwardSchemeConfigRequest() {
-		super("Cdn", "2018-05-10", "SetForwardSchemeConfig", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String schemeOriginPort;
 
@@ -42,6 +36,14 @@ public class SetForwardSchemeConfigRequest extends RpcAcsRequest<SetForwardSchem
 	private Long ownerId;
 
 	private Long configId;
+	public SetForwardSchemeConfigRequest() {
+		super("Cdn", "2018-05-10", "SetForwardSchemeConfig");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getSchemeOriginPort() {
 		return this.schemeOriginPort;

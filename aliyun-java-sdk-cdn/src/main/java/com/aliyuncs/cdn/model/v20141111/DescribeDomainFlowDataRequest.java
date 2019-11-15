@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainFlowDataResponse> {
-	
-	public DescribeDomainFlowDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainFlowData", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String locationNameEn;
 
@@ -48,6 +42,14 @@ public class DescribeDomainFlowDataRequest extends RpcAcsRequest<DescribeDomainF
 	private Long ownerId;
 
 	private String interval;
+	public DescribeDomainFlowDataRequest() {
+		super("Cdn", "2014-11-11", "DescribeDomainFlowData");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getLocationNameEn() {
 		return this.locationNameEn;

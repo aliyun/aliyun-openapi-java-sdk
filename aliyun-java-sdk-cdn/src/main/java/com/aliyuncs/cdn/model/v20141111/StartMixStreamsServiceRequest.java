@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,22 +23,19 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class StartMixStreamsServiceRequest extends RpcAcsRequest<StartMixStreamsServiceResponse> {
-	
-	public StartMixStreamsServiceRequest() {
-		super("Cdn", "2014-11-11", "StartMixStreamsService", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private String mixStreamName;
+
+	private String mixAppName;
+
+	private String mainStreamName;
 
 	private String mixType;
 
 	private String securityToken;
 
 	private String mainDomainName;
-
-	private String mixStreamName;
 
 	private String mixTemplate;
 
@@ -46,10 +44,47 @@ public class StartMixStreamsServiceRequest extends RpcAcsRequest<StartMixStreams
 	private Long ownerId;
 
 	private String mainAppName;
+	public StartMixStreamsServiceRequest() {
+		super("Cdn", "2014-11-11", "StartMixStreamsService");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private String mixAppName;
+	public String getMixStreamName() {
+		return this.mixStreamName;
+	}
 
-	private String mainStreamName;
+	public void setMixStreamName(String mixStreamName) {
+		this.mixStreamName = mixStreamName;
+		if(mixStreamName != null){
+			putQueryParameter("MixStreamName", mixStreamName);
+		}
+	}
+
+	public String getMixAppName() {
+		return this.mixAppName;
+	}
+
+	public void setMixAppName(String mixAppName) {
+		this.mixAppName = mixAppName;
+		if(mixAppName != null){
+			putQueryParameter("MixAppName", mixAppName);
+		}
+	}
+
+	public String getMainStreamName() {
+		return this.mainStreamName;
+	}
+
+	public void setMainStreamName(String mainStreamName) {
+		this.mainStreamName = mainStreamName;
+		if(mainStreamName != null){
+			putQueryParameter("MainStreamName", mainStreamName);
+		}
+	}
 
 	public String getMixType() {
 		return this.mixType;
@@ -62,29 +97,10 @@ public class StartMixStreamsServiceRequest extends RpcAcsRequest<StartMixStreams
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -100,17 +116,6 @@ public class StartMixStreamsServiceRequest extends RpcAcsRequest<StartMixStreams
 		this.mainDomainName = mainDomainName;
 		if(mainDomainName != null){
 			putQueryParameter("MainDomainName", mainDomainName);
-		}
-	}
-
-	public String getMixStreamName() {
-		return this.mixStreamName;
-	}
-
-	public void setMixStreamName(String mixStreamName) {
-		this.mixStreamName = mixStreamName;
-		if(mixStreamName != null){
-			putQueryParameter("MixStreamName", mixStreamName);
 		}
 	}
 
@@ -155,28 +160,6 @@ public class StartMixStreamsServiceRequest extends RpcAcsRequest<StartMixStreams
 		this.mainAppName = mainAppName;
 		if(mainAppName != null){
 			putQueryParameter("MainAppName", mainAppName);
-		}
-	}
-
-	public String getMixAppName() {
-		return this.mixAppName;
-	}
-
-	public void setMixAppName(String mixAppName) {
-		this.mixAppName = mixAppName;
-		if(mixAppName != null){
-			putQueryParameter("MixAppName", mixAppName);
-		}
-	}
-
-	public String getMainStreamName() {
-		return this.mainStreamName;
-	}
-
-	public void setMainStreamName(String mainStreamName) {
-		this.mainStreamName = mainStreamName;
-		if(mainStreamName != null){
-			putQueryParameter("MainStreamName", mainStreamName);
 		}
 	}
 

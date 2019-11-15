@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,30 +23,42 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiveSnapshotConfigResponse> {
-	
+	   
+
+	private Integer pageNum;
+
+	private String appName;
+
+	private String securityToken;
+
+	private Integer pageSize;
+
+	private String streamName;
+
+	private String order;
+
+	private String domainName;
+
+	private Long ownerId;
 	public DescribeLiveSnapshotConfigRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveSnapshotConfig", "cdn");
+		super("Cdn", "2014-11-11", "DescribeLiveSnapshotConfig");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String appName;
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
 
-	private String securityToken;
-
-	private String domainName;
-
-	private Integer pageSize;
-
-	private Long ownerId;
-
-	private Integer pageNum;
-
-	private String streamName;
-
-	private String order;
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
 
 	public String getAppName() {
 		return this.appName;
@@ -58,44 +71,14 @@ public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiv
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -107,28 +90,6 @@ public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiv
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
@@ -151,6 +112,28 @@ public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiv
 		this.order = order;
 		if(order != null){
 			putQueryParameter("Order", order);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

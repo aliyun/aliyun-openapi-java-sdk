@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,30 +23,31 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTranscodeResponse> {
-	
+	   
+
+	private String template;
+
+	private String securityToken;
+
+	private String record;
+
+	private String app;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String domain;
+
+	private String snapshot;
 	public AddLiveStreamTranscodeRequest() {
-		super("Cdn", "2014-11-11", "AddLiveStreamTranscode", "cdn");
+		super("Cdn", "2014-11-11", "AddLiveStreamTranscode");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String template;
-
-	private String app;
-
-	private String securityToken;
-
-	private String ownerAccount;
-
-	private String domain;
-
-	private String record;
-
-	private Long ownerId;
-
-	private String snapshot;
 
 	public String getTemplate() {
 		return this.template;
@@ -58,85 +60,14 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 		}
 	}
 
-	public String getApp() {
-		return this.app;
-	}
-
-	public void setApp(String app) {
-		this.app = app;
-		if(app != null){
-			putQueryParameter("App", app);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getBizDomain() {
-		return this.domain;
-	}
-
-	public void setBizDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizDomain instead of this.
-	 */
-	@Deprecated
-	public String getDomain() {
-		return this.domain;
-	}
-
-	/**
-	 * @deprecated use setBizDomain instead of this.
-	 */
-	@Deprecated
-	public void setDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
 		}
 	}
 
@@ -151,6 +82,28 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 		}
 	}
 
+	public String getApp() {
+		return this.app;
+	}
+
+	public void setApp(String app) {
+		this.app = app;
+		if(app != null){
+			putQueryParameter("App", app);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -159,6 +112,17 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
 		}
 	}
 

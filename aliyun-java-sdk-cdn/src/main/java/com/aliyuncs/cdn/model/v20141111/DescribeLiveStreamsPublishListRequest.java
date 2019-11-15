@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,32 +23,55 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<DescribeLiveStreamsPublishListResponse> {
-	
+	   
+
+	private String startTime;
+
+	private Long pageNumber;
+
+	private String appName;
+
+	private String securityToken;
+
+	private Long pageSize;
+
+	private String streamName;
+
+	private String domainName;
+
+	private String endTime;
+
+	private Long ownerId;
 	public DescribeLiveStreamsPublishListRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamsPublishList", "cdn");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamsPublishList");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String appName;
+	public String getStartTime() {
+		return this.startTime;
+	}
 
-	private String securityToken;
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
 
-	private String domainName;
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
 
-	private Long pageSize;
-
-	private String endTime;
-
-	private String startTime;
-
-	private Long ownerId;
-
-	private String streamName;
-
-	private Long pageNumber;
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getAppName() {
 		return this.appName;
@@ -60,44 +84,14 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -112,39 +106,6 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getStreamName() {
 		return this.streamName;
 	}
@@ -156,14 +117,36 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -1,3 +1,6 @@
+2019-11-15 Version: 3.1.0
+- Fixed bugs.
+
 2019-08-27 Version: 3.0.10
 - Fixed endpoint data init.
 

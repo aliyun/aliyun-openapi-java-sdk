@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,54 +23,69 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class StopMixStreamsServiceRequest extends RpcAcsRequest<StopMixStreamsServiceResponse> {
-	
-	public StopMixStreamsServiceRequest() {
-		super("Cdn", "2014-11-11", "StopMixStreamsService", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private String mixStreamName;
+
+	private String mixAppName;
+
+	private String mainStreamName;
 
 	private String securityToken;
 
 	private String mainDomainName;
-
-	private String mixStreamName;
 
 	private String mixDomainName;
 
 	private Long ownerId;
 
 	private String mainAppName;
-
-	private String mixAppName;
-
-	private String mainStreamName;
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
+	public StopMixStreamsServiceRequest() {
+		super("Cdn", "2014-11-11", "StopMixStreamsService");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public String getMixStreamName() {
+		return this.mixStreamName;
+	}
+
+	public void setMixStreamName(String mixStreamName) {
+		this.mixStreamName = mixStreamName;
+		if(mixStreamName != null){
+			putQueryParameter("MixStreamName", mixStreamName);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
+	public String getMixAppName() {
+		return this.mixAppName;
+	}
+
+	public void setMixAppName(String mixAppName) {
+		this.mixAppName = mixAppName;
+		if(mixAppName != null){
+			putQueryParameter("MixAppName", mixAppName);
+		}
+	}
+
+	public String getMainStreamName() {
+		return this.mainStreamName;
+	}
+
+	public void setMainStreamName(String mainStreamName) {
+		this.mainStreamName = mainStreamName;
+		if(mainStreamName != null){
+			putQueryParameter("MainStreamName", mainStreamName);
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -85,17 +101,6 @@ public class StopMixStreamsServiceRequest extends RpcAcsRequest<StopMixStreamsSe
 		this.mainDomainName = mainDomainName;
 		if(mainDomainName != null){
 			putQueryParameter("MainDomainName", mainDomainName);
-		}
-	}
-
-	public String getMixStreamName() {
-		return this.mixStreamName;
-	}
-
-	public void setMixStreamName(String mixStreamName) {
-		this.mixStreamName = mixStreamName;
-		if(mixStreamName != null){
-			putQueryParameter("MixStreamName", mixStreamName);
 		}
 	}
 
@@ -129,28 +134,6 @@ public class StopMixStreamsServiceRequest extends RpcAcsRequest<StopMixStreamsSe
 		this.mainAppName = mainAppName;
 		if(mainAppName != null){
 			putQueryParameter("MainAppName", mainAppName);
-		}
-	}
-
-	public String getMixAppName() {
-		return this.mixAppName;
-	}
-
-	public void setMixAppName(String mixAppName) {
-		this.mixAppName = mixAppName;
-		if(mixAppName != null){
-			putQueryParameter("MixAppName", mixAppName);
-		}
-	}
-
-	public String getMainStreamName() {
-		return this.mainStreamName;
-	}
-
-	public void setMainStreamName(String mainStreamName) {
-		this.mainStreamName = mainStreamName;
-		if(mainStreamName != null){
-			putQueryParameter("MainStreamName", mainStreamName);
 		}
 	}
 

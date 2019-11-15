@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,28 +23,29 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecordConfigResponse> {
-	
-	public AddLiveAppRecordConfigRequest() {
-		super("Cdn", "2014-11-11", "AddLiveAppRecordConfig", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String ossBucket;
-
-	private String appName;
-
-	private String securityToken;
 
 	private String domainName;
 
 	private String ossEndpoint;
 
-	private String ossObjectPrefix;
-
 	private Long ownerId;
+
+	private String appName;
+
+	private String securityToken;
+
+	private String ossObjectPrefix;
+	public AddLiveAppRecordConfigRequest() {
+		super("Cdn", "2014-11-11", "AddLiveAppRecordConfig");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getOssBucket() {
 		return this.ossBucket;
@@ -53,47 +55,6 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 		this.ossBucket = ossBucket;
 		if(ossBucket != null){
 			putQueryParameter("OssBucket", ossBucket);
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -119,17 +80,6 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 		}
 	}
 
-	public String getOssObjectPrefix() {
-		return this.ossObjectPrefix;
-	}
-
-	public void setOssObjectPrefix(String ossObjectPrefix) {
-		this.ossObjectPrefix = ossObjectPrefix;
-		if(ossObjectPrefix != null){
-			putQueryParameter("OssObjectPrefix", ossObjectPrefix);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -138,6 +88,39 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getOssObjectPrefix() {
+		return this.ossObjectPrefix;
+	}
+
+	public void setOssObjectPrefix(String ossObjectPrefix) {
+		this.ossObjectPrefix = ossObjectPrefix;
+		if(ossObjectPrefix != null){
+			putQueryParameter("OssObjectPrefix", ossObjectPrefix);
 		}
 	}
 

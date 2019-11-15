@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class SetWaitingRoomConfigRequest extends RpcAcsRequest<SetWaitingRoomConfigResponse> {
-	
-	public SetWaitingRoomConfigRequest() {
-		super("Cdn", "2018-05-10", "SetWaitingRoomConfig", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String waitUrl;
 
@@ -44,6 +38,14 @@ public class SetWaitingRoomConfigRequest extends RpcAcsRequest<SetWaitingRoomCon
 	private Integer gapTime;
 
 	private Long ownerId;
+	public SetWaitingRoomConfigRequest() {
+		super("Cdn", "2018-05-10", "SetWaitingRoomConfig");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getWaitUrl() {
 		return this.waitUrl;

@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,22 +23,23 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeCdnDomainConfigsRequest extends RpcAcsRequest<DescribeCdnDomainConfigsResponse> {
-	
+	   
+
+	private String functionNames;
+
+	private String domainName;
+
+	private Long ownerId;
+
+	private String securityToken;
 	public DescribeCdnDomainConfigsRequest() {
-		super("Cdn", "2014-11-11", "DescribeCdnDomainConfigs", "cdn");
+		super("Cdn", "2014-11-11", "DescribeCdnDomainConfigs");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String functionNames;
-
-	private String securityToken;
-
-	private String domainName;
-
-	private Long ownerId;
 
 	public String getFunctionNames() {
 		return this.functionNames;
@@ -47,36 +49,6 @@ public class DescribeCdnDomainConfigsRequest extends RpcAcsRequest<DescribeCdnDo
 		this.functionNames = functionNames;
 		if(functionNames != null){
 			putQueryParameter("FunctionNames", functionNames);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -99,6 +71,17 @@ public class DescribeCdnDomainConfigsRequest extends RpcAcsRequest<DescribeCdnDo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

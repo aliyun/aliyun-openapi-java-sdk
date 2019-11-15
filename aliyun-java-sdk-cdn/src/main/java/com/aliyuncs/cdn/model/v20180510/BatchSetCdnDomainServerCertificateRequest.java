@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,69 +23,51 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class BatchSetCdnDomainServerCertificateRequest extends RpcAcsRequest<BatchSetCdnDomainServerCertificateResponse> {
-	
+	   
+
+	private String sSLProtocol;
+
+	private String securityToken;
+
+	private String certType;
+
+	private String sSLPri;
+
+	private String forceSet;
+
+	private String certName;
+
+	private String domainName;
+
+	private Long ownerId;
+
+	private String sSLPub;
+
+	private String region;
 	public BatchSetCdnDomainServerCertificateRequest() {
-		super("Cdn", "2018-05-10", "BatchSetCdnDomainServerCertificate", "cdn");
+		super("Cdn", "2018-05-10", "BatchSetCdnDomainServerCertificate");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String forceSet;
-
-	private String securityToken;
-
-	private String certType;
-
-	private String sSLPub;
-
-	private String certName;
-
-	private String sSLProtocol;
-
-	private String domainName;
-
-	private Long ownerId;
-
-	private String region;
-
-	private String sSLPri;
-
-	public String getForceSet() {
-		return this.forceSet;
+	public String getSSLProtocol() {
+		return this.sSLProtocol;
 	}
 
-	public void setForceSet(String forceSet) {
-		this.forceSet = forceSet;
-		if(forceSet != null){
-			putQueryParameter("ForceSet", forceSet);
+	public void setSSLProtocol(String sSLProtocol) {
+		this.sSLProtocol = sSLProtocol;
+		if(sSLProtocol != null){
+			putQueryParameter("SSLProtocol", sSLProtocol);
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -103,14 +86,25 @@ public class BatchSetCdnDomainServerCertificateRequest extends RpcAcsRequest<Bat
 		}
 	}
 
-	public String getSSLPub() {
-		return this.sSLPub;
+	public String getSSLPri() {
+		return this.sSLPri;
 	}
 
-	public void setSSLPub(String sSLPub) {
-		this.sSLPub = sSLPub;
-		if(sSLPub != null){
-			putQueryParameter("SSLPub", sSLPub);
+	public void setSSLPri(String sSLPri) {
+		this.sSLPri = sSLPri;
+		if(sSLPri != null){
+			putQueryParameter("SSLPri", sSLPri);
+		}
+	}
+
+	public String getForceSet() {
+		return this.forceSet;
+	}
+
+	public void setForceSet(String forceSet) {
+		this.forceSet = forceSet;
+		if(forceSet != null){
+			putQueryParameter("ForceSet", forceSet);
 		}
 	}
 
@@ -122,17 +116,6 @@ public class BatchSetCdnDomainServerCertificateRequest extends RpcAcsRequest<Bat
 		this.certName = certName;
 		if(certName != null){
 			putQueryParameter("CertName", certName);
-		}
-	}
-
-	public String getSSLProtocol() {
-		return this.sSLProtocol;
-	}
-
-	public void setSSLProtocol(String sSLProtocol) {
-		this.sSLProtocol = sSLProtocol;
-		if(sSLProtocol != null){
-			putQueryParameter("SSLProtocol", sSLProtocol);
 		}
 	}
 
@@ -158,6 +141,17 @@ public class BatchSetCdnDomainServerCertificateRequest extends RpcAcsRequest<Bat
 		}
 	}
 
+	public String getSSLPub() {
+		return this.sSLPub;
+	}
+
+	public void setSSLPub(String sSLPub) {
+		this.sSLPub = sSLPub;
+		if(sSLPub != null){
+			putQueryParameter("SSLPub", sSLPub);
+		}
+	}
+
 	public String getRegion() {
 		return this.region;
 	}
@@ -166,17 +160,6 @@ public class BatchSetCdnDomainServerCertificateRequest extends RpcAcsRequest<Bat
 		this.region = region;
 		if(region != null){
 			putQueryParameter("Region", region);
-		}
-	}
-
-	public String getSSLPri() {
-		return this.sSLPri;
-	}
-
-	public void setSSLPri(String sSLPri) {
-		this.sSLPri = sSLPri;
-		if(sSLPri != null){
-			putQueryParameter("SSLPri", sSLPri);
 		}
 	}
 

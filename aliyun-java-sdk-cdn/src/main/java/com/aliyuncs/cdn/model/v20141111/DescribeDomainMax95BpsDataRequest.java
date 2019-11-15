@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeDomainMax95BpsDataRequest extends RpcAcsRequest<DescribeDomainMax95BpsDataResponse> {
-	
-	public DescribeDomainMax95BpsDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainMax95BpsData", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String startTime;
 
@@ -38,6 +32,14 @@ public class DescribeDomainMax95BpsDataRequest extends RpcAcsRequest<DescribeDom
 	private String endTime;
 
 	private Long ownerId;
+	public DescribeDomainMax95BpsDataRequest() {
+		super("Cdn", "2014-11-11", "DescribeDomainMax95BpsData");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStartTime() {
 		return this.startTime;

@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,32 +23,33 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class UpdateLiveAppSnapshotConfigRequest extends RpcAcsRequest<UpdateLiveAppSnapshotConfigResponse> {
-	
-	public UpdateLiveAppSnapshotConfigRequest() {
-		super("Cdn", "2014-11-11", "UpdateLiveAppSnapshotConfig", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer timeInterval;
 
-	private String ossBucket;
+	private String ossEndpoint;
 
 	private String appName;
 
 	private String securityToken;
 
-	private String domainName;
+	private String overwriteOssObject;
 
-	private String ossEndpoint;
+	private String ossBucket;
+
+	private String domainName;
 
 	private String sequenceOssObject;
 
-	private String overwriteOssObject;
-
 	private Long ownerId;
+	public UpdateLiveAppSnapshotConfigRequest() {
+		super("Cdn", "2014-11-11", "UpdateLiveAppSnapshotConfig");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getTimeInterval() {
 		return this.timeInterval;
@@ -57,69 +59,6 @@ public class UpdateLiveAppSnapshotConfigRequest extends RpcAcsRequest<UpdateLive
 		this.timeInterval = timeInterval;
 		if(timeInterval != null){
 			putQueryParameter("TimeInterval", timeInterval.toString());
-		}
-	}
-
-	public String getOssBucket() {
-		return this.ossBucket;
-	}
-
-	public void setOssBucket(String ossBucket) {
-		this.ossBucket = ossBucket;
-		if(ossBucket != null){
-			putQueryParameter("OssBucket", ossBucket);
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -134,14 +73,25 @@ public class UpdateLiveAppSnapshotConfigRequest extends RpcAcsRequest<UpdateLive
 		}
 	}
 
-	public String getSequenceOssObject() {
-		return this.sequenceOssObject;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setSequenceOssObject(String sequenceOssObject) {
-		this.sequenceOssObject = sequenceOssObject;
-		if(sequenceOssObject != null){
-			putQueryParameter("SequenceOssObject", sequenceOssObject);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -153,6 +103,39 @@ public class UpdateLiveAppSnapshotConfigRequest extends RpcAcsRequest<UpdateLive
 		this.overwriteOssObject = overwriteOssObject;
 		if(overwriteOssObject != null){
 			putQueryParameter("OverwriteOssObject", overwriteOssObject);
+		}
+	}
+
+	public String getOssBucket() {
+		return this.ossBucket;
+	}
+
+	public void setOssBucket(String ossBucket) {
+		this.ossBucket = ossBucket;
+		if(ossBucket != null){
+			putQueryParameter("OssBucket", ossBucket);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getSequenceOssObject() {
+		return this.sequenceOssObject;
+	}
+
+	public void setSequenceOssObject(String sequenceOssObject) {
+		this.sequenceOssObject = sequenceOssObject;
+		if(sequenceOssObject != null){
+			putQueryParameter("SequenceOssObject", sequenceOssObject);
 		}
 	}
 

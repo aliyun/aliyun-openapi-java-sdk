@@ -15,20 +15,18 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20180510.DescribeUserCertificateExpireCountResponseUnmarshaller;
+import com.aliyuncs.cdn.transform.v20180510.DescribeDomainRealTimeDetailDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeUserCertificateExpireCountResponse extends AcsResponse {
+public class DescribeDomainRealTimeDetailDataResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer expireWithin30DaysCount;
-
-	private Integer expiredCount;
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +36,16 @@ public class DescribeUserCertificateExpireCountResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getExpireWithin30DaysCount() {
-		return this.expireWithin30DaysCount;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setExpireWithin30DaysCount(Integer expireWithin30DaysCount) {
-		this.expireWithin30DaysCount = expireWithin30DaysCount;
-	}
-
-	public Integer getExpiredCount() {
-		return this.expiredCount;
-	}
-
-	public void setExpiredCount(Integer expiredCount) {
-		this.expiredCount = expiredCount;
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override
-	public DescribeUserCertificateExpireCountResponse getInstance(UnmarshallerContext context) {
-		return	DescribeUserCertificateExpireCountResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDomainRealTimeDetailDataResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDomainRealTimeDetailDataResponseUnmarshaller.unmarshall(this, context);
 	}
 }

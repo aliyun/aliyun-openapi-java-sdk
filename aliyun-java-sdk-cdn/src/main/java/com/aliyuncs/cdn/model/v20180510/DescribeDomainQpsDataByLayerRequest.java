@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeDomainQpsDataByLayerRequest extends RpcAcsRequest<DescribeDomainQpsDataByLayerResponse> {
-	
-	public DescribeDomainQpsDataByLayerRequest() {
-		super("Cdn", "2018-05-10", "DescribeDomainQpsDataByLayer", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String locationNameEn;
 
@@ -46,6 +40,14 @@ public class DescribeDomainQpsDataByLayerRequest extends RpcAcsRequest<DescribeD
 	private Long ownerId;
 
 	private String interval;
+	public DescribeDomainQpsDataByLayerRequest() {
+		super("Cdn", "2018-05-10", "DescribeDomainQpsDataByLayer");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getLocationNameEn() {
 		return this.locationNameEn;

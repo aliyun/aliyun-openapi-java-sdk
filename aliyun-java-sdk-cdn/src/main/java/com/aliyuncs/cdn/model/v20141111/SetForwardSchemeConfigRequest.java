@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,26 +23,27 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class SetForwardSchemeConfigRequest extends RpcAcsRequest<SetForwardSchemeConfigResponse> {
-	
-	public SetForwardSchemeConfigRequest() {
-		super("Cdn", "2014-11-11", "SetForwardSchemeConfig", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String schemeOrigin;
 
 	private String schemeOriginPort;
 
-	private String securityToken;
-
-	private String enable;
-
 	private String domainName;
 
 	private Long ownerId;
+
+	private String securityToken;
+
+	private String enable;
+	public SetForwardSchemeConfigRequest() {
+		super("Cdn", "2014-11-11", "SetForwardSchemeConfig");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getSchemeOrigin() {
 		return this.schemeOrigin;
@@ -65,47 +67,6 @@ public class SetForwardSchemeConfigRequest extends RpcAcsRequest<SetForwardSchem
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getEnable() {
-		return this.enable;
-	}
-
-	public void setEnable(String enable) {
-		this.enable = enable;
-		if(enable != null){
-			putQueryParameter("Enable", enable);
-		}
-	}
-
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -125,6 +86,28 @@ public class SetForwardSchemeConfigRequest extends RpcAcsRequest<SetForwardSchem
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getEnable() {
+		return this.enable;
+	}
+
+	public void setEnable(String enable) {
+		this.enable = enable;
+		if(enable != null){
+			putQueryParameter("Enable", enable);
 		}
 	}
 

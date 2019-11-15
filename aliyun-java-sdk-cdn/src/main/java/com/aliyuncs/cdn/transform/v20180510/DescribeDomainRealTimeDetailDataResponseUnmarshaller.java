@@ -14,16 +14,17 @@
 
 package com.aliyuncs.cdn.transform.v20180510;
 
-import com.aliyuncs.cdn.model.v20180510.DeleteSpecificStagingConfigResponse;
+import com.aliyuncs.cdn.model.v20180510.DescribeDomainRealTimeDetailDataResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteSpecificStagingConfigResponseUnmarshaller {
+public class DescribeDomainRealTimeDetailDataResponseUnmarshaller {
 
-	public static DeleteSpecificStagingConfigResponse unmarshall(DeleteSpecificStagingConfigResponse deleteSpecificStagingConfigResponse, UnmarshallerContext _ctx) {
+	public static DescribeDomainRealTimeDetailDataResponse unmarshall(DescribeDomainRealTimeDetailDataResponse describeDomainRealTimeDetailDataResponse, UnmarshallerContext _ctx) {
 		
-		deleteSpecificStagingConfigResponse.setRequestId(_ctx.stringValue("DeleteSpecificStagingConfigResponse.RequestId"));
+		describeDomainRealTimeDetailDataResponse.setRequestId(_ctx.stringValue("DescribeDomainRealTimeDetailDataResponse.RequestId"));
+		describeDomainRealTimeDetailDataResponse.setData(_ctx.stringValue("DescribeDomainRealTimeDetailDataResponse.Data"));
 	 
-	 	return deleteSpecificStagingConfigResponse;
+	 	return describeDomainRealTimeDetailDataResponse;
 	}
 }

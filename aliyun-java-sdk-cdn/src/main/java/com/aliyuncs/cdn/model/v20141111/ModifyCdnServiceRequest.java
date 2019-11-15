@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,44 +23,37 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class ModifyCdnServiceRequest extends RpcAcsRequest<ModifyCdnServiceResponse> {
-	
+	   
+
+	private Long ownerId;
+
+	private String securityToken;
+
+	private String internetChargeType;
 	public ModifyCdnServiceRequest() {
-		super("Cdn", "2014-11-11", "ModifyCdnService", "cdn");
+		super("Cdn", "2014-11-11", "ModifyCdnService");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String securityToken;
-
-	private String internetChargeType;
-
-	private Long ownerId;
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -75,17 +69,6 @@ public class ModifyCdnServiceRequest extends RpcAcsRequest<ModifyCdnServiceRespo
 		this.internetChargeType = internetChargeType;
 		if(internetChargeType != null){
 			putQueryParameter("InternetChargeType", internetChargeType);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

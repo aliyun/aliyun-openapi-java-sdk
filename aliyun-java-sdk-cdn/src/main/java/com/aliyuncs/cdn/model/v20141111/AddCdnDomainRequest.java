@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,24 +23,9 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class AddCdnDomainRequest extends RpcAcsRequest<AddCdnDomainResponse> {
-	
-	public AddCdnDomainRequest() {
-		super("Cdn", "2014-11-11", "AddCdnDomain", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String topLevelDomain;
+	   
 
 	private String sources;
-
-	private String ownerAccount;
-
-	private String domainName;
-
-	private Long ownerId;
 
 	private String resourceGroupId;
 
@@ -55,19 +41,24 @@ public class AddCdnDomainRequest extends RpcAcsRequest<AddCdnDomainResponse> {
 
 	private String sourceType;
 
+	private String topLevelDomain;
+
+	private String ownerAccount;
+
+	private String domainName;
+
+	private Long ownerId;
+
 	private String checkUrl;
 
 	private String region;
-
-	public String getTopLevelDomain() {
-		return this.topLevelDomain;
-	}
-
-	public void setTopLevelDomain(String topLevelDomain) {
-		this.topLevelDomain = topLevelDomain;
-		if(topLevelDomain != null){
-			putQueryParameter("TopLevelDomain", topLevelDomain);
-		}
+	public AddCdnDomainRequest() {
+		super("Cdn", "2014-11-11", "AddCdnDomain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSources() {
@@ -78,39 +69,6 @@ public class AddCdnDomainRequest extends RpcAcsRequest<AddCdnDomainResponse> {
 		this.sources = sources;
 		if(sources != null){
 			putQueryParameter("Sources", sources);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -147,29 +105,10 @@ public class AddCdnDomainRequest extends RpcAcsRequest<AddCdnDomainResponse> {
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -207,6 +146,50 @@ public class AddCdnDomainRequest extends RpcAcsRequest<AddCdnDomainResponse> {
 		this.sourceType = sourceType;
 		if(sourceType != null){
 			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public String getTopLevelDomain() {
+		return this.topLevelDomain;
+	}
+
+	public void setTopLevelDomain(String topLevelDomain) {
+		this.topLevelDomain = topLevelDomain;
+		if(topLevelDomain != null){
+			putQueryParameter("TopLevelDomain", topLevelDomain);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

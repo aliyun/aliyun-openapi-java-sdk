@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,24 +23,25 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class SetRemoveQueryStringConfigRequest extends RpcAcsRequest<SetRemoveQueryStringConfigResponse> {
-	
+	   
+
+	private String keepOssArgs;
+
+	private String domainName;
+
+	private Long ownerId;
+
+	private String securityToken;
+
+	private String aliRemoveArgs;
 	public SetRemoveQueryStringConfigRequest() {
-		super("Cdn", "2014-11-11", "SetRemoveQueryStringConfig", "cdn");
+		super("Cdn", "2014-11-11", "SetRemoveQueryStringConfig");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String keepOssArgs;
-
-	private String securityToken;
-
-	private String domainName;
-
-	private String aliRemoveArgs;
-
-	private Long ownerId;
 
 	public String getKeepOssArgs() {
 		return this.keepOssArgs;
@@ -49,36 +51,6 @@ public class SetRemoveQueryStringConfigRequest extends RpcAcsRequest<SetRemoveQu
 		this.keepOssArgs = keepOssArgs;
 		if(keepOssArgs != null){
 			putQueryParameter("KeepOssArgs", keepOssArgs);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -93,17 +65,6 @@ public class SetRemoveQueryStringConfigRequest extends RpcAcsRequest<SetRemoveQu
 		}
 	}
 
-	public String getAliRemoveArgs() {
-		return this.aliRemoveArgs;
-	}
-
-	public void setAliRemoveArgs(String aliRemoveArgs) {
-		this.aliRemoveArgs = aliRemoveArgs;
-		if(aliRemoveArgs != null){
-			putQueryParameter("AliRemoveArgs", aliRemoveArgs);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -112,6 +73,28 @@ public class SetRemoveQueryStringConfigRequest extends RpcAcsRequest<SetRemoveQu
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getAliRemoveArgs() {
+		return this.aliRemoveArgs;
+	}
+
+	public void setAliRemoveArgs(String aliRemoveArgs) {
+		this.aliRemoveArgs = aliRemoveArgs;
+		if(aliRemoveArgs != null){
+			putQueryParameter("AliRemoveArgs", aliRemoveArgs);
 		}
 	}
 

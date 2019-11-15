@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,66 +23,26 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class SetReqHeaderConfigRequest extends RpcAcsRequest<SetReqHeaderConfigResponse> {
-	
-	public SetReqHeaderConfigRequest() {
-		super("Cdn", "2014-11-11", "SetReqHeaderConfig", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String securityToken;
-
-	private Long configId;
+	   
 
 	private String domainName;
 
 	private Long ownerId;
 
+	private String securityToken;
+
+	private Long configId;
+
 	private String value;
 
 	private String key;
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Long getConfigId() {
-		return this.configId;
-	}
-
-	public void setConfigId(Long configId) {
-		this.configId = configId;
-		if(configId != null){
-			putQueryParameter("ConfigId", configId.toString());
-		}
+	public SetReqHeaderConfigRequest() {
+		super("Cdn", "2014-11-11", "SetReqHeaderConfig");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDomainName() {
@@ -103,6 +64,28 @@ public class SetReqHeaderConfigRequest extends RpcAcsRequest<SetReqHeaderConfigR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Long getConfigId() {
+		return this.configId;
+	}
+
+	public void setConfigId(Long configId) {
+		this.configId = configId;
+		if(configId != null){
+			putQueryParameter("ConfigId", configId.toString());
 		}
 	}
 

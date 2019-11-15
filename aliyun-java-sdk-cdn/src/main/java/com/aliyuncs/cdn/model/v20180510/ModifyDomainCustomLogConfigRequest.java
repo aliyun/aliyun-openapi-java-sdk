@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,20 +23,21 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class ModifyDomainCustomLogConfigRequest extends RpcAcsRequest<ModifyDomainCustomLogConfigResponse> {
-	
-	public ModifyDomainCustomLogConfigRequest() {
-		super("Cdn", "2018-05-10", "ModifyDomainCustomLogConfig", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String domainName;
 
 	private Long ownerId;
 
 	private String configId;
+	public ModifyDomainCustomLogConfigRequest() {
+		super("Cdn", "2018-05-10", "ModifyDomainCustomLogConfig");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getDomainName() {
 		return this.domainName;

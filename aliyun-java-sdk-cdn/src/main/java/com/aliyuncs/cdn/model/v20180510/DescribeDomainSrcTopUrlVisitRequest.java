@@ -15,29 +15,44 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetL2OssKeyConfigRequest extends RpcAcsRequest<SetL2OssKeyConfigResponse> {
-	
-	public SetL2OssKeyConfigRequest() {
-		super("Cdn", "2018-05-10", "SetL2OssKeyConfig", "cdn");
+public class DescribeDomainSrcTopUrlVisitRequest extends RpcAcsRequest<DescribeDomainSrcTopUrlVisitResponse> {
+	   
+
+	private String startTime;
+
+	private String domainName;
+
+	private String endTime;
+
+	private Long ownerId;
+
+	private String sortBy;
+	public DescribeDomainSrcTopUrlVisitRequest() {
+		super("Cdn", "2018-05-10", "DescribeDomainSrcTopUrlVisit");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String domainName;
+	public String getStartTime() {
+		return this.startTime;
+	}
 
-	private Long ownerId;
-
-	private Long configId;
-
-	private String privateOssAuth;
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
 
 	public String getDomainName() {
 		return this.domainName;
@@ -47,6 +62,17 @@ public class SetL2OssKeyConfigRequest extends RpcAcsRequest<SetL2OssKeyConfigRes
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -61,31 +87,20 @@ public class SetL2OssKeyConfigRequest extends RpcAcsRequest<SetL2OssKeyConfigRes
 		}
 	}
 
-	public Long getConfigId() {
-		return this.configId;
+	public String getSortBy() {
+		return this.sortBy;
 	}
 
-	public void setConfigId(Long configId) {
-		this.configId = configId;
-		if(configId != null){
-			putQueryParameter("ConfigId", configId.toString());
-		}
-	}
-
-	public String getPrivateOssAuth() {
-		return this.privateOssAuth;
-	}
-
-	public void setPrivateOssAuth(String privateOssAuth) {
-		this.privateOssAuth = privateOssAuth;
-		if(privateOssAuth != null){
-			putQueryParameter("PrivateOssAuth", privateOssAuth);
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+		if(sortBy != null){
+			putQueryParameter("SortBy", sortBy);
 		}
 	}
 
 	@Override
-	public Class<SetL2OssKeyConfigResponse> getResponseClass() {
-		return SetL2OssKeyConfigResponse.class;
+	public Class<DescribeDomainSrcTopUrlVisitResponse> getResponseClass() {
+		return DescribeDomainSrcTopUrlVisitResponse.class;
 	}
 
 }

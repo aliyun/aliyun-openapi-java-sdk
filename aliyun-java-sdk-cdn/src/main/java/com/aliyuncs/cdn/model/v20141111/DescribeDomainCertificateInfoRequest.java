@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,18 +23,19 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeDomainCertificateInfoRequest extends RpcAcsRequest<DescribeDomainCertificateInfoResponse> {
-	
+	   
+
+	private String domainName;
+
+	private Long ownerId;
 	public DescribeDomainCertificateInfoRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainCertificateInfo", "cdn");
+		super("Cdn", "2014-11-11", "DescribeDomainCertificateInfo");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String domainName;
-
-	private Long ownerId;
 
 	public String getDomainName() {
 		return this.domainName;

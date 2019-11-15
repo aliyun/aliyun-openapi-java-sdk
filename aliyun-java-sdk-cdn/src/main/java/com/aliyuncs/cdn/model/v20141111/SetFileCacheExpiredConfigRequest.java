@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,16 +23,7 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class SetFileCacheExpiredConfigRequest extends RpcAcsRequest<SetFileCacheExpiredConfigResponse> {
-	
-	public SetFileCacheExpiredConfigRequest() {
-		super("Cdn", "2014-11-11", "SetFileCacheExpiredConfig", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String securityToken;
+	   
 
 	private String domainName;
 
@@ -43,34 +35,14 @@ public class SetFileCacheExpiredConfigRequest extends RpcAcsRequest<SetFileCache
 
 	private String tTL;
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
+	private String securityToken;
+	public SetFileCacheExpiredConfigRequest() {
+		super("Cdn", "2014-11-11", "SetFileCacheExpiredConfig");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDomainName() {
@@ -125,6 +97,17 @@ public class SetFileCacheExpiredConfigRequest extends RpcAcsRequest<SetFileCache
 		this.tTL = tTL;
 		if(tTL != null){
 			putQueryParameter("TTL", tTL);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

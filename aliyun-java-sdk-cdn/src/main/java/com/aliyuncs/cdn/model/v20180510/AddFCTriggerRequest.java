@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class AddFCTriggerRequest extends RpcAcsRequest<AddFCTriggerResponse> {
-	
-	public AddFCTriggerRequest() {
-		super("Cdn", "2018-05-10", "AddFCTrigger", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String notes;
 
@@ -46,6 +40,14 @@ public class AddFCTriggerRequest extends RpcAcsRequest<AddFCTriggerResponse> {
 	private String eventMetaName;
 
 	private String functionARN;
+	public AddFCTriggerRequest() {
+		super("Cdn", "2018-05-10", "AddFCTrigger");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getNotes() {
 		return this.notes;

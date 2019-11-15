@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,18 +23,19 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeCdnDomainByCertificateRequest extends RpcAcsRequest<DescribeCdnDomainByCertificateResponse> {
-	
+	   
+
+	private Long ownerId;
+
+	private String sSLPub;
 	public DescribeCdnDomainByCertificateRequest() {
-		super("Cdn", "2018-05-10", "DescribeCdnDomainByCertificate", "cdn");
+		super("Cdn", "2018-05-10", "DescribeCdnDomainByCertificate");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long ownerId;
-
-	private String sSLPub;
 
 	public Long getOwnerId() {
 		return this.ownerId;

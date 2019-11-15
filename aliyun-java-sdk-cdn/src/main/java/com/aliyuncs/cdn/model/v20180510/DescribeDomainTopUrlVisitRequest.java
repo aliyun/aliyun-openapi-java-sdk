@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,18 +23,9 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeDomainTopUrlVisitRequest extends RpcAcsRequest<DescribeDomainTopUrlVisitResponse> {
-	
-	public DescribeDomainTopUrlVisitRequest() {
-		super("Cdn", "2018-05-10", "DescribeDomainTopUrlVisit", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String startTime;
-
-	private String percent;
 
 	private String domainName;
 
@@ -42,6 +34,14 @@ public class DescribeDomainTopUrlVisitRequest extends RpcAcsRequest<DescribeDoma
 	private Long ownerId;
 
 	private String sortBy;
+	public DescribeDomainTopUrlVisitRequest() {
+		super("Cdn", "2018-05-10", "DescribeDomainTopUrlVisit");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStartTime() {
 		return this.startTime;
@@ -51,17 +51,6 @@ public class DescribeDomainTopUrlVisitRequest extends RpcAcsRequest<DescribeDoma
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getPercent() {
-		return this.percent;
-	}
-
-	public void setPercent(String percent) {
-		this.percent = percent;
-		if(percent != null){
-			putQueryParameter("Percent", percent);
 		}
 	}
 

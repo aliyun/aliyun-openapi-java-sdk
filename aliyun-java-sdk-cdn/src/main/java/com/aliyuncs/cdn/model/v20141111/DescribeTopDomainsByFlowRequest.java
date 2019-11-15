@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeTopDomainsByFlowRequest extends RpcAcsRequest<DescribeTopDomainsByFlowResponse> {
-	
-	public DescribeTopDomainsByFlowRequest() {
-		super("Cdn", "2014-11-11", "DescribeTopDomainsByFlow", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String startTime;
 
@@ -40,6 +34,14 @@ public class DescribeTopDomainsByFlowRequest extends RpcAcsRequest<DescribeTopDo
 	private String endTime;
 
 	private Long ownerId;
+	public DescribeTopDomainsByFlowRequest() {
+		super("Cdn", "2014-11-11", "DescribeTopDomainsByFlow");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStartTime() {
 		return this.startTime;
@@ -63,29 +65,10 @@ public class DescribeTopDomainsByFlowRequest extends RpcAcsRequest<DescribeTopDo
 		}
 	}
 
-	public String getBizProduct() {
-		return this.product;
-	}
-
-	public void setBizProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizProduct instead of this.
-	 */
-	@Deprecated
 	public String getProduct() {
 		return this.product;
 	}
 
-	/**
-	 * @deprecated use setBizProduct instead of this.
-	 */
-	@Deprecated
 	public void setProduct(String product) {
 		this.product = product;
 		if(product != null){

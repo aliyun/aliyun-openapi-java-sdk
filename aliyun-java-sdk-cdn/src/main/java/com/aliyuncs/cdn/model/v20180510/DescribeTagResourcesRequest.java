@@ -16,6 +16,7 @@ package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -23,14 +24,7 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeTagResourcesRequest extends RpcAcsRequest<DescribeTagResourcesResponse> {
-	
-	public DescribeTagResourcesRequest() {
-		super("Cdn", "2018-05-10", "DescribeTagResources", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<Tag> tags;
 
@@ -39,6 +33,14 @@ public class DescribeTagResourcesRequest extends RpcAcsRequest<DescribeTagResour
 	private Long ownerId;
 
 	private String resourceType;
+	public DescribeTagResourcesRequest() {
+		super("Cdn", "2018-05-10", "DescribeTagResources");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<Tag> getTags() {
 		return this.tags;

@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,28 +23,40 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends RpcAcsRequest<DescribeLiveStreamsFrameRateAndBitRateDataResponse> {
-	
+	   
+
+	private String startTime;
+
+	private String appName;
+
+	private String securityToken;
+
+	private String streamName;
+
+	private String domainName;
+
+	private String endTime;
+
+	private Long ownerId;
 	public DescribeLiveStreamsFrameRateAndBitRateDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeLiveStreamsFrameRateAndBitRateData", "cdn");
+		super("Cdn", "2014-11-11", "DescribeLiveStreamsFrameRateAndBitRateData");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String appName;
+	public String getStartTime() {
+		return this.startTime;
+	}
 
-	private String securityToken;
-
-	private String domainName;
-
-	private String endTime;
-
-	private String startTime;
-
-	private Long ownerId;
-
-	private String streamName;
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
 
 	public String getAppName() {
 		return this.appName;
@@ -56,33 +69,25 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends RpcAcsReq
 		}
 	}
 
-	public String getBizSecurityToken() {
+	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
+	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getStreamName() {
+		return this.streamName;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
 		}
 	}
 
@@ -108,17 +113,6 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends RpcAcsReq
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -127,17 +121,6 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends RpcAcsReq
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
 		}
 	}
 

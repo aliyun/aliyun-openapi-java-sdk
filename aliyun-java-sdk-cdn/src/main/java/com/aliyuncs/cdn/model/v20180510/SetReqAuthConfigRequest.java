@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,18 +23,15 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class SetReqAuthConfigRequest extends RpcAcsRequest<SetReqAuthConfigResponse> {
-	
-	public SetReqAuthConfigRequest() {
-		super("Cdn", "2018-05-10", "SetReqAuthConfig", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String key1;
 
 	private String key2;
+
+	private String timeOut;
+
+	private String authType;
 
 	private String authRemoteDesc;
 
@@ -42,10 +40,14 @@ public class SetReqAuthConfigRequest extends RpcAcsRequest<SetReqAuthConfigRespo
 	private String domainName;
 
 	private Long ownerId;
-
-	private String timeOut;
-
-	private String authType;
+	public SetReqAuthConfigRequest() {
+		super("Cdn", "2018-05-10", "SetReqAuthConfig");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getKey1() {
 		return this.key1;
@@ -69,6 +71,28 @@ public class SetReqAuthConfigRequest extends RpcAcsRequest<SetReqAuthConfigRespo
 		}
 	}
 
+	public String getTimeOut() {
+		return this.timeOut;
+	}
+
+	public void setTimeOut(String timeOut) {
+		this.timeOut = timeOut;
+		if(timeOut != null){
+			putQueryParameter("TimeOut", timeOut);
+		}
+	}
+
+	public String getAuthType() {
+		return this.authType;
+	}
+
+	public void setAuthType(String authType) {
+		this.authType = authType;
+		if(authType != null){
+			putQueryParameter("AuthType", authType);
+		}
+	}
+
 	public String getAuthRemoteDesc() {
 		return this.authRemoteDesc;
 	}
@@ -80,29 +104,10 @@ public class SetReqAuthConfigRequest extends RpcAcsRequest<SetReqAuthConfigRespo
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -129,28 +134,6 @@ public class SetReqAuthConfigRequest extends RpcAcsRequest<SetReqAuthConfigRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTimeOut() {
-		return this.timeOut;
-	}
-
-	public void setTimeOut(String timeOut) {
-		this.timeOut = timeOut;
-		if(timeOut != null){
-			putQueryParameter("TimeOut", timeOut);
-		}
-	}
-
-	public String getAuthType() {
-		return this.authType;
-	}
-
-	public void setAuthType(String authType) {
-		this.authType = authType;
-		if(authType != null){
-			putQueryParameter("AuthType", authType);
 		}
 	}
 

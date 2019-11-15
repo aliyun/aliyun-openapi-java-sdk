@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,28 +23,29 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class SetRefererConfigRequest extends RpcAcsRequest<SetRefererConfigResponse> {
-	
-	public SetRefererConfigRequest() {
-		super("Cdn", "2018-05-10", "SetRefererConfig", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String referList;
 
-	private String securityToken;
-
 	private String domainName;
+
+	private Long ownerId;
+
+	private String securityToken;
 
 	private String referType;
 
 	private String disableAst;
 
-	private Long ownerId;
-
 	private String allowEmpty;
+	public SetRefererConfigRequest() {
+		super("Cdn", "2018-05-10", "SetRefererConfig");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getReferList() {
 		return this.referList;
@@ -56,36 +58,6 @@ public class SetRefererConfigRequest extends RpcAcsRequest<SetRefererConfigRespo
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -94,6 +66,28 @@ public class SetRefererConfigRequest extends RpcAcsRequest<SetRefererConfigRespo
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -116,17 +110,6 @@ public class SetRefererConfigRequest extends RpcAcsRequest<SetRefererConfigRespo
 		this.disableAst = disableAst;
 		if(disableAst != null){
 			putQueryParameter("DisableAst", disableAst);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

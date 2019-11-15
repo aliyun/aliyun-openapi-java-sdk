@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,30 +23,11 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomainsResponse> {
-	
-	public DescribeUserDomainsRequest() {
-		super("Cdn", "2014-11-11", "DescribeUserDomains", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String funcFilter;
+	   
 
 	private String sources;
 
-	private String domainName;
-
-	private Long ownerId;
-
-	private String funcId;
-
 	private Integer pageNumber;
-
-	private String domainStatus;
-
-	private String domainSearchType;
 
 	private Boolean checkDomainShow;
 
@@ -57,15 +39,24 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 
 	private Integer pageSize;
 
-	public String getFuncFilter() {
-		return this.funcFilter;
-	}
+	private String funcFilter;
 
-	public void setFuncFilter(String funcFilter) {
-		this.funcFilter = funcFilter;
-		if(funcFilter != null){
-			putQueryParameter("FuncFilter", funcFilter);
-		}
+	private String domainName;
+
+	private Long ownerId;
+
+	private String funcId;
+
+	private String domainStatus;
+
+	private String domainSearchType;
+	public DescribeUserDomainsRequest() {
+		super("Cdn", "2014-11-11", "DescribeUserDomains");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSources() {
@@ -76,6 +67,83 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 		this.sources = sources;
 		if(sources != null){
 			putQueryParameter("Sources", sources);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Boolean getCheckDomainShow() {
+		return this.checkDomainShow;
+	}
+
+	public void setCheckDomainShow(Boolean checkDomainShow) {
+		this.checkDomainShow = checkDomainShow;
+		if(checkDomainShow != null){
+			putQueryParameter("CheckDomainShow", checkDomainShow.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getCdnType() {
+		return this.cdnType;
+	}
+
+	public void setCdnType(String cdnType) {
+		this.cdnType = cdnType;
+		if(cdnType != null){
+			putQueryParameter("CdnType", cdnType);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getFuncFilter() {
+		return this.funcFilter;
+	}
+
+	public void setFuncFilter(String funcFilter) {
+		this.funcFilter = funcFilter;
+		if(funcFilter != null){
+			putQueryParameter("FuncFilter", funcFilter);
 		}
 	}
 
@@ -112,17 +180,6 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getDomainStatus() {
 		return this.domainStatus;
 	}
@@ -142,80 +199,6 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 		this.domainSearchType = domainSearchType;
 		if(domainSearchType != null){
 			putQueryParameter("DomainSearchType", domainSearchType);
-		}
-	}
-
-	public Boolean getCheckDomainShow() {
-		return this.checkDomainShow;
-	}
-
-	public void setCheckDomainShow(Boolean checkDomainShow) {
-		this.checkDomainShow = checkDomainShow;
-		if(checkDomainShow != null){
-			putQueryParameter("CheckDomainShow", checkDomainShow.toString());
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getCdnType() {
-		return this.cdnType;
-	}
-
-	public void setCdnType(String cdnType) {
-		this.cdnType = cdnType;
-		if(cdnType != null){
-			putQueryParameter("CdnType", cdnType);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

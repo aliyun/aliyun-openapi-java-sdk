@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,16 +23,17 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class DescribeUserTagsRequest extends RpcAcsRequest<DescribeUserTagsResponse> {
-	
+	   
+
+	private Long ownerId;
 	public DescribeUserTagsRequest() {
-		super("Cdn", "2018-05-10", "DescribeUserTags", "cdn");
+		super("Cdn", "2018-05-10", "DescribeUserTags");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long ownerId;
 
 	public Long getOwnerId() {
 		return this.ownerId;

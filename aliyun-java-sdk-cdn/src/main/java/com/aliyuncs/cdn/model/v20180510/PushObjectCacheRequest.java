@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,22 +23,23 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheResponse> {
-	
+	   
+
+	private String area;
+
+	private String objectPath;
+
+	private Long ownerId;
+
+	private String securityToken;
 	public PushObjectCacheRequest() {
-		super("Cdn", "2018-05-10", "PushObjectCache", "cdn");
+		super("Cdn", "2018-05-10", "PushObjectCache");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String area;
-
-	private String securityToken;
-
-	private String objectPath;
-
-	private Long ownerId;
 
 	public String getArea() {
 		return this.area;
@@ -47,36 +49,6 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 		this.area = area;
 		if(area != null){
 			putQueryParameter("Area", area);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -99,6 +71,17 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

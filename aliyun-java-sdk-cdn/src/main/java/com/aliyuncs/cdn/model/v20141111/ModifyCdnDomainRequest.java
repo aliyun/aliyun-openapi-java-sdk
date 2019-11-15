@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cdn.Endpoint;
 
 /**
@@ -22,16 +23,9 @@ import com.aliyuncs.cdn.Endpoint;
  * @version 
  */
 public class ModifyCdnDomainRequest extends RpcAcsRequest<ModifyCdnDomainResponse> {
-	
-	public ModifyCdnDomainRequest() {
-		super("Cdn", "2014-11-11", "ModifyCdnDomain", "cdn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
-	private String topLevelDomain;
+	private String sources;
 
 	private Integer sourcePort;
 
@@ -39,24 +33,32 @@ public class ModifyCdnDomainRequest extends RpcAcsRequest<ModifyCdnDomainRespons
 
 	private String priorities;
 
-	private String sources;
-
 	private String securityToken;
-
-	private String domainName;
 
 	private String sourceType;
 
-	private Long ownerId;
+	private String topLevelDomain;
 
-	public String getTopLevelDomain() {
-		return this.topLevelDomain;
+	private String domainName;
+
+	private Long ownerId;
+	public ModifyCdnDomainRequest() {
+		super("Cdn", "2014-11-11", "ModifyCdnDomain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setTopLevelDomain(String topLevelDomain) {
-		this.topLevelDomain = topLevelDomain;
-		if(topLevelDomain != null){
-			putQueryParameter("TopLevelDomain", topLevelDomain);
+	public String getSources() {
+		return this.sources;
+	}
+
+	public void setSources(String sources) {
+		this.sources = sources;
+		if(sources != null){
+			putQueryParameter("Sources", sources);
 		}
 	}
 
@@ -93,55 +95,14 @@ public class ModifyCdnDomainRequest extends RpcAcsRequest<ModifyCdnDomainRespons
 		}
 	}
 
-	public String getSources() {
-		return this.sources;
-	}
-
-	public void setSources(String sources) {
-		this.sources = sources;
-		if(sources != null){
-			putQueryParameter("Sources", sources);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -153,6 +114,28 @@ public class ModifyCdnDomainRequest extends RpcAcsRequest<ModifyCdnDomainRespons
 		this.sourceType = sourceType;
 		if(sourceType != null){
 			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public String getTopLevelDomain() {
+		return this.topLevelDomain;
+	}
+
+	public void setTopLevelDomain(String topLevelDomain) {
+		this.topLevelDomain = topLevelDomain;
+		if(topLevelDomain != null){
+			putQueryParameter("TopLevelDomain", topLevelDomain);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
