@@ -26,7 +26,7 @@ public class ChangePreferredLanguageResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer code;
+	private String code;
 
 	private String message;
 
@@ -40,11 +40,11 @@ public class ChangePreferredLanguageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getCode() {
+	public String getCode() {
 		return this.code;
 	}
 
-	public void setCode(Integer code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 

@@ -23,7 +23,7 @@ public class ChangePreferredLanguageResponseUnmarshaller {
 	public static ChangePreferredLanguageResponse unmarshall(ChangePreferredLanguageResponse changePreferredLanguageResponse, UnmarshallerContext _ctx) {
 		
 		changePreferredLanguageResponse.setRequestId(_ctx.stringValue("ChangePreferredLanguageResponse.RequestId"));
-		changePreferredLanguageResponse.setCode(_ctx.integerValue("ChangePreferredLanguageResponse.Code"));
+		changePreferredLanguageResponse.setCode(_ctx.stringValue("ChangePreferredLanguageResponse.Code"));
 		changePreferredLanguageResponse.setMessage(_ctx.stringValue("ChangePreferredLanguageResponse.Message"));
 		changePreferredLanguageResponse.setSuccess(_ctx.booleanValue("ChangePreferredLanguageResponse.Success"));
 	 
