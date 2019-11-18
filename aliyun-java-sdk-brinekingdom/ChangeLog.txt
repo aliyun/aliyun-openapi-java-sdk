@@ -1,3 +1,6 @@
+2019-11-18 Version: 1.0.5
+- Generated 2019-06-27 for `brinekingdom`.
+
 2019-07-30 Version: 1.0.4
 - Generated 2019-06-27 for `brinekingdom`.
 

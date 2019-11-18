@@ -17,7 +17,34 @@ package com.aliyuncs.brinekingdom;
 import java.util.HashMap;
 
 public class Endpoint {
-    public static HashMap<String, String> endpointMap = new HashMap<String, String>() {};
+    public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
+        {
+            put("cn-shenzhen", "brinekingdom.aliyuncs.com");
+            put("cn-beijing", "brinekingdom.aliyuncs.com");
+            put("ap-south-1", "brinekingdom.aliyuncs.com");
+            put("eu-west-1", "brinekingdom.aliyuncs.com");
+            put("ap-northeast-1", "brinekingdom.aliyuncs.com");
+            put("cn-shenzhen-finance-1", "brinekingdom.aliyuncs.com");
+            put("me-east-1", "brinekingdom.aliyuncs.com");
+            put("cn-chengdu", "brinekingdom.aliyuncs.com");
+            put("cn-north-2-gov-1", "brinekingdom.aliyuncs.com");
+            put("cn-qingdao", "brinekingdom.aliyuncs.com");
+            put("cn-shanghai", "brinekingdom.aliyuncs.com");
+            put("cn-shanghai-finance-1", "brinekingdom.aliyuncs.com");
+            put("cn-hongkong", "brinekingdom.aliyuncs.com");
+            put("cn-hangzhou-finance", "brinekingdom.aliyuncs.com");
+            put("ap-southeast-1", "brinekingdom.aliyuncs.com");
+            put("ap-southeast-2", "brinekingdom.aliyuncs.com");
+            put("ap-southeast-3", "brinekingdom.aliyuncs.com");
+            put("eu-central-1", "brinekingdom.aliyuncs.com");
+            put("cn-huhehaote", "brinekingdom.aliyuncs.com");
+            put("ap-southeast-5", "brinekingdom.aliyuncs.com");
+            put("us-east-1", "brinekingdom.aliyuncs.com");
+            put("cn-zhangjiakou", "brinekingdom.aliyuncs.com");
+            put("us-west-1", "brinekingdom.aliyuncs.com");
+            put("cn-hangzhou", "brinekingdom.aliyuncs.com");
+        }
+    };
 
     public static String endpointRegionalType = "regional";
 }

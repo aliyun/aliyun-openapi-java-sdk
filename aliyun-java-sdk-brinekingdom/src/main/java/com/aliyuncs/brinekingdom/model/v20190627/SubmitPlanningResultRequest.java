@@ -17,6 +17,7 @@ package com.aliyuncs.brinekingdom.model.v20190627;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.brinekingdom.Endpoint;
 
 /**
@@ -24,23 +25,39 @@ import com.aliyuncs.brinekingdom.Endpoint;
  * @version 
  */
 public class SubmitPlanningResultRequest extends RpcAcsRequest<SubmitPlanningResultResponse> {
-	
-	public SubmitPlanningResultRequest() {
-		super("brinekingdom", "2019-06-27", "SubmitPlanningResult");
-		setProtocol(ProtocolType.HTTPS);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private Integer requireCnt;
 
 	private Long demandId;
 
 	private Long subDemandId;
 
+	private Integer bufferCnt;
+
 	private Integer demandCount;
 
 	private List<ResourceMethod> resourceMethods;
+	public SubmitPlanningResultRequest() {
+		super("brinekingdom", "2019-06-27", "SubmitPlanningResult");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Integer getRequireCnt() {
+		return this.requireCnt;
+	}
+
+	public void setRequireCnt(Integer requireCnt) {
+		this.requireCnt = requireCnt;
+		if(requireCnt != null){
+			putQueryParameter("RequireCnt", requireCnt.toString());
+		}
+	}
 
 	public Long getDemandId() {
 		return this.demandId;
@@ -61,6 +78,17 @@ public class SubmitPlanningResultRequest extends RpcAcsRequest<SubmitPlanningRes
 		this.subDemandId = subDemandId;
 		if(subDemandId != null){
 			putQueryParameter("SubDemandId", subDemandId.toString());
+		}
+	}
+
+	public Integer getBufferCnt() {
+		return this.bufferCnt;
+	}
+
+	public void setBufferCnt(Integer bufferCnt) {
+		this.bufferCnt = bufferCnt;
+		if(bufferCnt != null){
+			putQueryParameter("BufferCnt", bufferCnt.toString());
 		}
 	}
 
