@@ -108,6 +108,8 @@ public class QueryRefundApplicationDetailResponse extends AcsResponse {
 
 		private String refunderZipCode;
 
+		private String sellerRefuseReason;
+
 		private MaxRefundFeeData maxRefundFeeData;
 
 		private ApplyReasonText applyReasonText;
@@ -278,6 +280,14 @@ public class QueryRefundApplicationDetailResponse extends AcsResponse {
 
 		public void setRefunderZipCode(String refunderZipCode) {
 			this.refunderZipCode = refunderZipCode;
+		}
+
+		public String getSellerRefuseReason() {
+			return this.sellerRefuseReason;
+		}
+
+		public void setSellerRefuseReason(String sellerRefuseReason) {
+			this.sellerRefuseReason = sellerRefuseReason;
 		}
 
 		public MaxRefundFeeData getMaxRefundFeeData() {

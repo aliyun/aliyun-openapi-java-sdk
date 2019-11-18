@@ -51,6 +51,7 @@ public class QueryRefundApplicationDetailResponseUnmarshaller {
 		refundApplicationDetail.setRefunderName(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefunderName"));
 		refundApplicationDetail.setRefunderTel(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefunderTel"));
 		refundApplicationDetail.setRefunderZipCode(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefunderZipCode"));
+		refundApplicationDetail.setSellerRefuseReason(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.SellerRefuseReason"));
 
 		MaxRefundFeeData maxRefundFeeData = new MaxRefundFeeData();
 		maxRefundFeeData.setMaxRefundFee(_ctx.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.MaxRefundFeeData.MaxRefundFee"));
