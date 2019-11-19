@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vs.model.v20181212.DescribeTemplatesResponse;
 import com.aliyuncs.vs.model.v20181212.DescribeTemplatesResponse.Template;
+import com.aliyuncs.vs.model.v20181212.DescribeTemplatesResponse.Template.TransConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,15 +47,33 @@ public class DescribeTemplatesResponseUnmarshaller {
 			template.setStartTime(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].StartTime"));
 			template.setEndTime(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].EndTime"));
 			template.setInterval(_ctx.longValue("DescribeTemplatesResponse.Templates["+ i +"].Interval"));
+			template.setRetention(_ctx.longValue("DescribeTemplatesResponse.Templates["+ i +"].Retention"));
 			template.setFileFormat(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].FileFormat"));
 			template.setJpgOverwrite(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].JpgOverwrite"));
 			template.setJpgSequence(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].JpgSequence"));
+			template.setJpgOnDemand(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].JpgOnDemand"));
 			template.setMp4(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].Mp4"));
 			template.setFlv(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].Flv"));
 			template.setHlsM3u8(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].HlsM3u8"));
 			template.setHlsTs(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].HlsTs"));
 			template.setCallback(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].Callback"));
 			template.setCreatedTime(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].CreatedTime"));
+
+			List<TransConfig> transConfigs = new ArrayList<TransConfig>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeTemplatesResponse.Templates["+ i +"].TransConfigs.Length"); j++) {
+				TransConfig transConfig = new TransConfig();
+				transConfig.setId(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].TransConfigs["+ j +"].id"));
+				transConfig.setName(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].TransConfigs["+ j +"].Name"));
+				transConfig.setVideoCodec(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].TransConfigs["+ j +"].VideoCodec"));
+				transConfig.setVideoBitrate(_ctx.longValue("DescribeTemplatesResponse.Templates["+ i +"].TransConfigs["+ j +"].VideoBitrate"));
+				transConfig.setFps(_ctx.longValue("DescribeTemplatesResponse.Templates["+ i +"].TransConfigs["+ j +"].Fps"));
+				transConfig.setGop(_ctx.longValue("DescribeTemplatesResponse.Templates["+ i +"].TransConfigs["+ j +"].Gop"));
+				transConfig.setHeight(_ctx.longValue("DescribeTemplatesResponse.Templates["+ i +"].TransConfigs["+ j +"].Height"));
+				transConfig.setWidth(_ctx.longValue("DescribeTemplatesResponse.Templates["+ i +"].TransConfigs["+ j +"].Width"));
+
+				transConfigs.add(transConfig);
+			}
+			template.setTransConfigs(transConfigs);
 
 			templates.add(template);
 		}

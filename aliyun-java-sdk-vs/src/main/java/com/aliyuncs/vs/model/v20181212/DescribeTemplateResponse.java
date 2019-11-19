@@ -14,6 +14,7 @@
 
 package com.aliyuncs.vs.model.v20181212;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vs.transform.v20181212.DescribeTemplateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -48,11 +49,15 @@ public class DescribeTemplateResponse extends AcsResponse {
 
 	private Long interval;
 
+	private Long retention;
+
 	private String fileFormat;
 
 	private String jpgOverwrite;
 
 	private String jpgSequence;
+
+	private String jpgOnDemand;
 
 	private String mp4;
 
@@ -65,6 +70,8 @@ public class DescribeTemplateResponse extends AcsResponse {
 	private String callback;
 
 	private String createdTime;
+
+	private List<TransConfig> transConfigs;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -162,6 +169,14 @@ public class DescribeTemplateResponse extends AcsResponse {
 		this.interval = interval;
 	}
 
+	public Long getRetention() {
+		return this.retention;
+	}
+
+	public void setRetention(Long retention) {
+		this.retention = retention;
+	}
+
 	public String getFileFormat() {
 		return this.fileFormat;
 	}
@@ -184,6 +199,14 @@ public class DescribeTemplateResponse extends AcsResponse {
 
 	public void setJpgSequence(String jpgSequence) {
 		this.jpgSequence = jpgSequence;
+	}
+
+	public String getJpgOnDemand() {
+		return this.jpgOnDemand;
+	}
+
+	public void setJpgOnDemand(String jpgOnDemand) {
+		this.jpgOnDemand = jpgOnDemand;
 	}
 
 	public String getMp4() {
@@ -234,8 +257,104 @@ public class DescribeTemplateResponse extends AcsResponse {
 		this.createdTime = createdTime;
 	}
 
+	public List<TransConfig> getTransConfigs() {
+		return this.transConfigs;
+	}
+
+	public void setTransConfigs(List<TransConfig> transConfigs) {
+		this.transConfigs = transConfigs;
+	}
+
+	public static class TransConfig {
+
+		private String id;
+
+		private String name;
+
+		private String videoCodec;
+
+		private Long videoBitrate;
+
+		private Long fps;
+
+		private Long gop;
+
+		private Long height;
+
+		private Long width;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getVideoCodec() {
+			return this.videoCodec;
+		}
+
+		public void setVideoCodec(String videoCodec) {
+			this.videoCodec = videoCodec;
+		}
+
+		public Long getVideoBitrate() {
+			return this.videoBitrate;
+		}
+
+		public void setVideoBitrate(Long videoBitrate) {
+			this.videoBitrate = videoBitrate;
+		}
+
+		public Long getFps() {
+			return this.fps;
+		}
+
+		public void setFps(Long fps) {
+			this.fps = fps;
+		}
+
+		public Long getGop() {
+			return this.gop;
+		}
+
+		public void setGop(Long gop) {
+			this.gop = gop;
+		}
+
+		public Long getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(Long height) {
+			this.height = height;
+		}
+
+		public Long getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Long width) {
+			this.width = width;
+		}
+	}
+
 	@Override
 	public DescribeTemplateResponse getInstance(UnmarshallerContext context) {
 		return	DescribeTemplateResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

@@ -41,6 +41,8 @@ public class DescribeDeviceChannelsResponseUnmarshaller {
 			channel.setStreamStatus(_ctx.stringValue("DescribeDeviceChannelsResponse.Channels["+ i +"].StreamStatus"));
 			channel.setDeviceId(_ctx.stringValue("DescribeDeviceChannelsResponse.Channels["+ i +"].DeviceId"));
 			channel.setDeviceStatus(_ctx.stringValue("DescribeDeviceChannelsResponse.Channels["+ i +"].DeviceStatus"));
+			channel.setChannelId(_ctx.longValue("DescribeDeviceChannelsResponse.Channels["+ i +"].ChannelId"));
+			channel.setParams(_ctx.stringValue("DescribeDeviceChannelsResponse.Channels["+ i +"].Params"));
 
 			channels.add(channel);
 		}

@@ -14,7 +14,11 @@
 
 package com.aliyuncs.vs.transform.v20181212;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.vs.model.v20181212.DescribeTemplateResponse;
+import com.aliyuncs.vs.model.v20181212.DescribeTemplateResponse.TransConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,15 +38,33 @@ public class DescribeTemplateResponseUnmarshaller {
 		describeTemplateResponse.setStartTime(_ctx.stringValue("DescribeTemplateResponse.StartTime"));
 		describeTemplateResponse.setEndTime(_ctx.stringValue("DescribeTemplateResponse.EndTime"));
 		describeTemplateResponse.setInterval(_ctx.longValue("DescribeTemplateResponse.Interval"));
+		describeTemplateResponse.setRetention(_ctx.longValue("DescribeTemplateResponse.Retention"));
 		describeTemplateResponse.setFileFormat(_ctx.stringValue("DescribeTemplateResponse.FileFormat"));
 		describeTemplateResponse.setJpgOverwrite(_ctx.stringValue("DescribeTemplateResponse.JpgOverwrite"));
 		describeTemplateResponse.setJpgSequence(_ctx.stringValue("DescribeTemplateResponse.JpgSequence"));
+		describeTemplateResponse.setJpgOnDemand(_ctx.stringValue("DescribeTemplateResponse.JpgOnDemand"));
 		describeTemplateResponse.setMp4(_ctx.stringValue("DescribeTemplateResponse.Mp4"));
 		describeTemplateResponse.setFlv(_ctx.stringValue("DescribeTemplateResponse.Flv"));
 		describeTemplateResponse.setHlsM3u8(_ctx.stringValue("DescribeTemplateResponse.HlsM3u8"));
 		describeTemplateResponse.setHlsTs(_ctx.stringValue("DescribeTemplateResponse.HlsTs"));
 		describeTemplateResponse.setCallback(_ctx.stringValue("DescribeTemplateResponse.Callback"));
 		describeTemplateResponse.setCreatedTime(_ctx.stringValue("DescribeTemplateResponse.CreatedTime"));
+
+		List<TransConfig> transConfigs = new ArrayList<TransConfig>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeTemplateResponse.TransConfigs.Length"); i++) {
+			TransConfig transConfig = new TransConfig();
+			transConfig.setId(_ctx.stringValue("DescribeTemplateResponse.TransConfigs["+ i +"].Id"));
+			transConfig.setName(_ctx.stringValue("DescribeTemplateResponse.TransConfigs["+ i +"].Name"));
+			transConfig.setVideoCodec(_ctx.stringValue("DescribeTemplateResponse.TransConfigs["+ i +"].VideoCodec"));
+			transConfig.setVideoBitrate(_ctx.longValue("DescribeTemplateResponse.TransConfigs["+ i +"].VideoBitrate"));
+			transConfig.setFps(_ctx.longValue("DescribeTemplateResponse.TransConfigs["+ i +"].Fps"));
+			transConfig.setGop(_ctx.longValue("DescribeTemplateResponse.TransConfigs["+ i +"].Gop"));
+			transConfig.setHeight(_ctx.longValue("DescribeTemplateResponse.TransConfigs["+ i +"].Height"));
+			transConfig.setWidth(_ctx.longValue("DescribeTemplateResponse.TransConfigs["+ i +"].Width"));
+
+			transConfigs.add(transConfig);
+		}
+		describeTemplateResponse.setTransConfigs(transConfigs);
 	 
 	 	return describeTemplateResponse;
 	}

@@ -99,6 +99,10 @@ public class DescribeDeviceChannelsResponse extends AcsResponse {
 
 		private String deviceStatus;
 
+		private Long channelId;
+
+		private String params;
+
 		public String getName() {
 			return this.name;
 		}
@@ -145,6 +149,22 @@ public class DescribeDeviceChannelsResponse extends AcsResponse {
 
 		public void setDeviceStatus(String deviceStatus) {
 			this.deviceStatus = deviceStatus;
+		}
+
+		public Long getChannelId() {
+			return this.channelId;
+		}
+
+		public void setChannelId(Long channelId) {
+			this.channelId = channelId;
+		}
+
+		public String getParams() {
+			return this.params;
+		}
+
+		public void setParams(String params) {
+			this.params = params;
 		}
 	}
 

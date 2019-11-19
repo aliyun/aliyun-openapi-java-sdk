@@ -37,6 +37,8 @@ public class DescribeStreamURLRequest extends RpcAcsRequest<DescribeStreamURLRes
 
 	private String outProtocol;
 
+	private String transcode;
+
 	private Long endTime;
 
 	private Long ownerId;
@@ -116,6 +118,17 @@ public class DescribeStreamURLRequest extends RpcAcsRequest<DescribeStreamURLRes
 		this.outProtocol = outProtocol;
 		if(outProtocol != null){
 			putQueryParameter("OutProtocol", outProtocol);
+		}
+	}
+
+	public String getTranscode() {
+		return this.transcode;
+	}
+
+	public void setTranscode(String transcode) {
+		this.transcode = transcode;
+		if(transcode != null){
+			putQueryParameter("Transcode", transcode);
 		}
 	}
 

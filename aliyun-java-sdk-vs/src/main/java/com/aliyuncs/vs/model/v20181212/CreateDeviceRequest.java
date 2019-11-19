@@ -53,6 +53,8 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 
 	private String name;
 
+	private String dsn;
+
 	private String username;
 	public CreateDeviceRequest() {
 		super("vs", "2018-12-12", "CreateDevice", "vs");
@@ -214,6 +216,17 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getDsn() {
+		return this.dsn;
+	}
+
+	public void setDsn(String dsn) {
+		this.dsn = dsn;
+		if(dsn != null){
+			putQueryParameter("Dsn", dsn);
 		}
 	}
 

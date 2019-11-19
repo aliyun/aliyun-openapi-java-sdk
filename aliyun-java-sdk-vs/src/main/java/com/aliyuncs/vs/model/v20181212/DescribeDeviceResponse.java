@@ -62,6 +62,8 @@ public class DescribeDeviceResponse extends AcsResponse {
 
 	private String vendor;
 
+	private String dsn;
+
 	private String createdTime;
 
 	private String registeredTime;
@@ -222,6 +224,14 @@ public class DescribeDeviceResponse extends AcsResponse {
 
 	public void setVendor(String vendor) {
 		this.vendor = vendor;
+	}
+
+	public String getDsn() {
+		return this.dsn;
+	}
+
+	public void setDsn(String dsn) {
+		this.dsn = dsn;
 	}
 
 	public String getCreatedTime() {

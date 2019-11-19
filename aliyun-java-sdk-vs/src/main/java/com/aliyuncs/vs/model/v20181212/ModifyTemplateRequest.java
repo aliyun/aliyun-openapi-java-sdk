@@ -37,6 +37,8 @@ public class ModifyTemplateRequest extends RpcAcsRequest<ModifyTemplateResponse>
 
 	private String startTime;
 
+	private String jpgOnDemand;
+
 	private String id;
 
 	private Long retention;
@@ -44,6 +46,8 @@ public class ModifyTemplateRequest extends RpcAcsRequest<ModifyTemplateResponse>
 	private String hlsM3u8;
 
 	private String ossBucket;
+
+	private String transConfigsJSON;
 
 	private String endTime;
 
@@ -139,6 +143,17 @@ public class ModifyTemplateRequest extends RpcAcsRequest<ModifyTemplateResponse>
 		}
 	}
 
+	public String getJpgOnDemand() {
+		return this.jpgOnDemand;
+	}
+
+	public void setJpgOnDemand(String jpgOnDemand) {
+		this.jpgOnDemand = jpgOnDemand;
+		if(jpgOnDemand != null){
+			putQueryParameter("JpgOnDemand", jpgOnDemand);
+		}
+	}
+
 	public String getId() {
 		return this.id;
 	}
@@ -180,6 +195,17 @@ public class ModifyTemplateRequest extends RpcAcsRequest<ModifyTemplateResponse>
 		this.ossBucket = ossBucket;
 		if(ossBucket != null){
 			putQueryParameter("OssBucket", ossBucket);
+		}
+	}
+
+	public String getTransConfigsJSON() {
+		return this.transConfigsJSON;
+	}
+
+	public void setTransConfigsJSON(String transConfigsJSON) {
+		this.transConfigsJSON = transConfigsJSON;
+		if(transConfigsJSON != null){
+			putQueryParameter("TransConfigsJSON", transConfigsJSON);
 		}
 	}
 
