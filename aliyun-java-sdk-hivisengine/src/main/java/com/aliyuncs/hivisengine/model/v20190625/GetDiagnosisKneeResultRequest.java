@@ -23,7 +23,9 @@ import com.aliyuncs.hivisengine.Endpoint;
  * @version 
  */
 public class GetDiagnosisKneeResultRequest extends RpcAcsRequest<GetDiagnosisKneeResultResponse> {
-	
+	   
+
+	private String taskId;
 	public GetDiagnosisKneeResultRequest() {
 		super("hivisengine", "2019-06-25", "GetDiagnosisKneeResult", "hivisengine");
 		setMethod(MethodType.POST);
@@ -32,8 +34,6 @@ public class GetDiagnosisKneeResultRequest extends RpcAcsRequest<GetDiagnosisKne
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String taskId;
 
 	public String getTaskId() {
 		return this.taskId;

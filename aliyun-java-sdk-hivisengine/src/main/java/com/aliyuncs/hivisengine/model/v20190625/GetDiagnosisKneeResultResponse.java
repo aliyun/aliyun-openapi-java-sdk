@@ -159,6 +159,8 @@ public class GetDiagnosisKneeResultResponse extends AcsResponse {
 
 						private Float confidence;
 
+						private String side;
+
 						private List<String> box;
 
 						public Float getClassLabel() {
@@ -175,6 +177,14 @@ public class GetDiagnosisKneeResultResponse extends AcsResponse {
 
 						public void setConfidence(Float confidence) {
 							this.confidence = confidence;
+						}
+
+						public String getSide() {
+							return this.side;
+						}
+
+						public void setSide(String side) {
+							this.side = side;
 						}
 
 						public List<String> getBox() {

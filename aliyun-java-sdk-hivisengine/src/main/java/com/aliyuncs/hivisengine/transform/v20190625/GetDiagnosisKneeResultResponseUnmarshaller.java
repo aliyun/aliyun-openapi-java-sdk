@@ -57,6 +57,7 @@ public class GetDiagnosisKneeResultResponseUnmarshaller {
 						InstanceResult instanceResult = new InstanceResult();
 						instanceResult.setClassLabel(_ctx.floatValue("GetDiagnosisKneeResultResponse.Data.FuncResults["+ i +"].StudyResults["+ j +"].SeriesResults["+ k +"].InstanceResults["+ l +"].ClassLabel"));
 						instanceResult.setConfidence(_ctx.floatValue("GetDiagnosisKneeResultResponse.Data.FuncResults["+ i +"].StudyResults["+ j +"].SeriesResults["+ k +"].InstanceResults["+ l +"].Confidence"));
+						instanceResult.setSide(_ctx.stringValue("GetDiagnosisKneeResultResponse.Data.FuncResults["+ i +"].StudyResults["+ j +"].SeriesResults["+ k +"].InstanceResults["+ l +"].Side"));
 
 						List<String> box = new ArrayList<String>();
 						for (int m = 0; m < _ctx.lengthValue("GetDiagnosisKneeResultResponse.Data.FuncResults["+ i +"].StudyResults["+ j +"].SeriesResults["+ k +"].InstanceResults["+ l +"].Box.Length"); m++) {

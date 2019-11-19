@@ -1,3 +1,6 @@
+2019-11-19 Version: 0.0.2
+- Support for knee-kl side output.
+
 2019-09-06 Version: 0.0.1
 - Generated 2019-06-25 for `hivisengine`.
 
