@@ -143,6 +143,8 @@ public class QueryItemDetailResponse extends AcsResponse {
 
 		private String lmItemCategory;
 
+		private Boolean centerInventory;
+
 		private List<Sku> skus;
 
 		private List<String> itemImages;
@@ -331,6 +333,14 @@ public class QueryItemDetailResponse extends AcsResponse {
 			this.lmItemCategory = lmItemCategory;
 		}
 
+		public Boolean getCenterInventory() {
+			return this.centerInventory;
+		}
+
+		public void setCenterInventory(Boolean centerInventory) {
+			this.centerInventory = centerInventory;
+		}
+
 		public List<Sku> getSkus() {
 			return this.skus;
 		}
@@ -372,6 +382,10 @@ public class QueryItemDetailResponse extends AcsResponse {
 			private Long pointPrice;
 
 			private String skuPropertiesJson;
+
+			private Long reservePrice;
+
+			private Boolean canSell;
 
 			public String getExtJson() {
 				return this.extJson;
@@ -467,6 +481,22 @@ public class QueryItemDetailResponse extends AcsResponse {
 
 			public void setSkuPropertiesJson(String skuPropertiesJson) {
 				this.skuPropertiesJson = skuPropertiesJson;
+			}
+
+			public Long getReservePrice() {
+				return this.reservePrice;
+			}
+
+			public void setReservePrice(Long reservePrice) {
+				this.reservePrice = reservePrice;
+			}
+
+			public Boolean getCanSell() {
+				return this.canSell;
+			}
+
+			public void setCanSell(Boolean canSell) {
+				this.canSell = canSell;
 			}
 		}
 	}
