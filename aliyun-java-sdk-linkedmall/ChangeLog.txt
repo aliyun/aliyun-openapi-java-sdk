@@ -2,6 +2,10 @@
 - Sku cansell.
 - Support center inventory.
 
+2019-11-19 Version: 2.8.2
+- Sku cansell.
+- Support center inventory.
+
 2019-11-18 Version: 2.8.2
 - Add seller refuse reason for queryRefundDetail.
 
