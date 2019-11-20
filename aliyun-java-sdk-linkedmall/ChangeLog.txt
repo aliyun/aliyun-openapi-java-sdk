@@ -1,3 +1,6 @@
+2019-11-20 Version: 2.8.4
+- Support anonymous account for enableOrder.
+
 2019-11-20 Version: 2.8.3
 - Support anonymous account for enableOrder.
 
