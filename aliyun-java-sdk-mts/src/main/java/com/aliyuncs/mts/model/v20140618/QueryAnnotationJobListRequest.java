@@ -15,16 +15,15 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryAnnotationJobListRequest extends RpcAcsRequest<QueryAnnotationJobListResponse> {
-	
-	public QueryAnnotationJobListRequest() {
-		super("Mts", "2014-06-18", "QueryAnnotationJobList", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -35,6 +34,14 @@ public class QueryAnnotationJobListRequest extends RpcAcsRequest<QueryAnnotation
 	private Long ownerId;
 
 	private String annotationJobIds;
+	public QueryAnnotationJobListRequest() {
+		super("Mts", "2014-06-18", "QueryAnnotationJobList", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

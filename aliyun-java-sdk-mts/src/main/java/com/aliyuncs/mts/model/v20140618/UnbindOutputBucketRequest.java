@@ -15,18 +15,15 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UnbindOutputBucketRequest extends RpcAcsRequest<UnbindOutputBucketResponse> {
-	
-	public UnbindOutputBucketRequest() {
-		super("Mts", "2014-06-18", "UnbindOutputBucket", "mts");
-	}
-
-	private String bucket;
+	   
 
 	private Long resourceOwnerId;
 
@@ -36,15 +33,14 @@ public class UnbindOutputBucketRequest extends RpcAcsRequest<UnbindOutputBucketR
 
 	private Long ownerId;
 
-	public String getBucket() {
-		return this.bucket;
-	}
-
-	public void setBucket(String bucket) {
-		this.bucket = bucket;
-		if(bucket != null){
-			putQueryParameter("Bucket", bucket);
-		}
+	private String bucket;
+	public UnbindOutputBucketRequest() {
+		super("Mts", "2014-06-18", "UnbindOutputBucket", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -88,6 +84,17 @@ public class UnbindOutputBucketRequest extends RpcAcsRequest<UnbindOutputBucketR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getBucket() {
+		return this.bucket;
+	}
+
+	public void setBucket(String bucket) {
+		this.bucket = bucket;
+		if(bucket != null){
+			putQueryParameter("Bucket", bucket);
 		}
 	}
 

@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListTerrorismPipelineResponseUnmarshaller {
 
-	public static ListTerrorismPipelineResponse unmarshall(ListTerrorismPipelineResponse listTerrorismPipelineResponse, UnmarshallerContext context) {
+	public static ListTerrorismPipelineResponse unmarshall(ListTerrorismPipelineResponse listTerrorismPipelineResponse, UnmarshallerContext _ctx) {
 		
-		listTerrorismPipelineResponse.setRequestId(context.stringValue("ListTerrorismPipelineResponse.RequestId"));
-		listTerrorismPipelineResponse.setTotalCount(context.longValue("ListTerrorismPipelineResponse.TotalCount"));
-		listTerrorismPipelineResponse.setPageNumber(context.longValue("ListTerrorismPipelineResponse.PageNumber"));
-		listTerrorismPipelineResponse.setPageSize(context.longValue("ListTerrorismPipelineResponse.PageSize"));
+		listTerrorismPipelineResponse.setRequestId(_ctx.stringValue("ListTerrorismPipelineResponse.RequestId"));
+		listTerrorismPipelineResponse.setTotalCount(_ctx.longValue("ListTerrorismPipelineResponse.TotalCount"));
+		listTerrorismPipelineResponse.setPageNumber(_ctx.longValue("ListTerrorismPipelineResponse.PageNumber"));
+		listTerrorismPipelineResponse.setPageSize(_ctx.longValue("ListTerrorismPipelineResponse.PageSize"));
 
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
-		for (int i = 0; i < context.lengthValue("ListTerrorismPipelineResponse.PipelineList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListTerrorismPipelineResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setId(context.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].Id"));
-			pipeline.setName(context.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].Name"));
-			pipeline.setState(context.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].State"));
-			pipeline.setPriority(context.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].Priority"));
+			pipeline.setId(_ctx.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].Id"));
+			pipeline.setName(_ctx.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].Name"));
+			pipeline.setState(_ctx.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].State"));
+			pipeline.setPriority(_ctx.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].Priority"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
-			notifyConfig.setTopic(context.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
-			notifyConfig.setQueue(context.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].NotifyConfig.Queue"));
+			notifyConfig.setTopic(_ctx.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
+			notifyConfig.setQueue(_ctx.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].NotifyConfig.Queue"));
 			pipeline.setNotifyConfig(notifyConfig);
 
 			pipelineList.add(pipeline);

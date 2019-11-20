@@ -23,19 +23,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteMcuJobResponseUnmarshaller {
 
-	public static DeleteMcuJobResponse unmarshall(DeleteMcuJobResponse deleteMcuJobResponse, UnmarshallerContext context) {
+	public static DeleteMcuJobResponse unmarshall(DeleteMcuJobResponse deleteMcuJobResponse, UnmarshallerContext _ctx) {
 		
-		deleteMcuJobResponse.setRequestId(context.stringValue("DeleteMcuJobResponse.RequestId"));
+		deleteMcuJobResponse.setRequestId(_ctx.stringValue("DeleteMcuJobResponse.RequestId"));
 
 		List<String> nonExistJobIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DeleteMcuJobResponse.NonExistJobIds.Length"); i++) {
-			nonExistJobIds.add(context.stringValue("DeleteMcuJobResponse.NonExistJobIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DeleteMcuJobResponse.NonExistJobIds.Length"); i++) {
+			nonExistJobIds.add(_ctx.stringValue("DeleteMcuJobResponse.NonExistJobIds["+ i +"]"));
 		}
 		deleteMcuJobResponse.setNonExistJobIds(nonExistJobIds);
 
 		List<String> deletedJobIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DeleteMcuJobResponse.DeletedJobIds.Length"); i++) {
-			deletedJobIds.add(context.stringValue("DeleteMcuJobResponse.DeletedJobIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DeleteMcuJobResponse.DeletedJobIds.Length"); i++) {
+			deletedJobIds.add(_ctx.stringValue("DeleteMcuJobResponse.DeletedJobIds["+ i +"]"));
 		}
 		deleteMcuJobResponse.setDeletedJobIds(deletedJobIds);
 	 

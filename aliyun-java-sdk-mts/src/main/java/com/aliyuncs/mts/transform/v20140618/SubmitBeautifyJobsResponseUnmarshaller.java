@@ -28,42 +28,42 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitBeautifyJobsResponseUnmarshaller {
 
-	public static SubmitBeautifyJobsResponse unmarshall(SubmitBeautifyJobsResponse submitBeautifyJobsResponse, UnmarshallerContext context) {
+	public static SubmitBeautifyJobsResponse unmarshall(SubmitBeautifyJobsResponse submitBeautifyJobsResponse, UnmarshallerContext _ctx) {
 		
-		submitBeautifyJobsResponse.setRequestId(context.stringValue("SubmitBeautifyJobsResponse.RequestId"));
+		submitBeautifyJobsResponse.setRequestId(_ctx.stringValue("SubmitBeautifyJobsResponse.RequestId"));
 
 		List<Job> jobList = new ArrayList<Job>();
-		for (int i = 0; i < context.lengthValue("SubmitBeautifyJobsResponse.JobList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("SubmitBeautifyJobsResponse.JobList.Length"); i++) {
 			Job job = new Job();
-			job.setId(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Id"));
-			job.setUserData(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].UserData"));
-			job.setPipelineId(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].PipelineId"));
-			job.setState(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].State"));
-			job.setCode(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Code"));
-			job.setMessage(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Message"));
-			job.setCreationTime(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].CreationTime"));
+			job.setId(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Id"));
+			job.setUserData(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].UserData"));
+			job.setPipelineId(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].PipelineId"));
+			job.setState(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].State"));
+			job.setCode(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Code"));
+			job.setMessage(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Message"));
+			job.setCreationTime(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].CreationTime"));
 
 			Input input = new Input();
-			input.setBucket(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Input.Bucket"));
-			input.setLocation(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Input.Location"));
-			input.setObject(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Input.Object"));
-			input.setRoleArn(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Input.RoleArn"));
+			input.setBucket(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Input.Bucket"));
+			input.setLocation(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Input.Location"));
+			input.setObject(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Input.Object"));
+			input.setRoleArn(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Input.RoleArn"));
 			job.setInput(input);
 
 			BeautifyConfig beautifyConfig = new BeautifyConfig();
 
 			OutputFile outputFile = new OutputFile();
-			outputFile.setBucket(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].BeautifyConfig.OutputFile.Bucket"));
-			outputFile.setLocation(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].BeautifyConfig.OutputFile.Location"));
-			outputFile.setObject(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].BeautifyConfig.OutputFile.Object"));
-			outputFile.setRoleArn(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].BeautifyConfig.OutputFile.RoleArn"));
+			outputFile.setBucket(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].BeautifyConfig.OutputFile.Bucket"));
+			outputFile.setLocation(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].BeautifyConfig.OutputFile.Location"));
+			outputFile.setObject(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].BeautifyConfig.OutputFile.Object"));
+			outputFile.setRoleArn(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].BeautifyConfig.OutputFile.RoleArn"));
 			beautifyConfig.setOutputFile(outputFile);
 			job.setBeautifyConfig(beautifyConfig);
 
 			MNSMessageResult mNSMessageResult = new MNSMessageResult();
-			mNSMessageResult.setMessageId(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].MNSMessageResult.MessageId"));
-			mNSMessageResult.setErrorMessage(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].MNSMessageResult.ErrorMessage"));
-			mNSMessageResult.setErrorCode(context.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].MNSMessageResult.ErrorCode"));
+			mNSMessageResult.setMessageId(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].MNSMessageResult.MessageId"));
+			mNSMessageResult.setErrorMessage(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].MNSMessageResult.ErrorMessage"));
+			mNSMessageResult.setErrorCode(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].MNSMessageResult.ErrorCode"));
 			job.setMNSMessageResult(mNSMessageResult);
 
 			jobList.add(job);

@@ -15,24 +15,19 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitMediaDetailJobRequest extends RpcAcsRequest<SubmitMediaDetailJobResponse> {
-	
-	public SubmitMediaDetailJobRequest() {
-		super("Mts", "2014-06-18", "SubmitMediaDetailJob", "mts");
-	}
-
-	private String input;
-
-	private String userData;
+	   
 
 	private Long resourceOwnerId;
 
-	private String mediaDetailConfig;
+	private String userData;
 
 	private String resourceOwnerAccount;
 
@@ -42,26 +37,16 @@ public class SubmitMediaDetailJobRequest extends RpcAcsRequest<SubmitMediaDetail
 
 	private String pipelineId;
 
-	public String getInput() {
-		return this.input;
-	}
+	private String input;
 
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
-		}
-	}
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
+	private String mediaDetailConfig;
+	public SubmitMediaDetailJobRequest() {
+		super("Mts", "2014-06-18", "SubmitMediaDetailJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -75,14 +60,14 @@ public class SubmitMediaDetailJobRequest extends RpcAcsRequest<SubmitMediaDetail
 		}
 	}
 
-	public String getMediaDetailConfig() {
-		return this.mediaDetailConfig;
+	public String getUserData() {
+		return this.userData;
 	}
 
-	public void setMediaDetailConfig(String mediaDetailConfig) {
-		this.mediaDetailConfig = mediaDetailConfig;
-		if(mediaDetailConfig != null){
-			putQueryParameter("MediaDetailConfig", mediaDetailConfig);
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
 		}
 	}
 
@@ -127,6 +112,28 @@ public class SubmitMediaDetailJobRequest extends RpcAcsRequest<SubmitMediaDetail
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
+		}
+	}
+
+	public String getMediaDetailConfig() {
+		return this.mediaDetailConfig;
+	}
+
+	public void setMediaDetailConfig(String mediaDetailConfig) {
+		this.mediaDetailConfig = mediaDetailConfig;
+		if(mediaDetailConfig != null){
+			putQueryParameter("MediaDetailConfig", mediaDetailConfig);
 		}
 	}
 

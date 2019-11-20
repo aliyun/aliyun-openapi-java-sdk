@@ -33,76 +33,76 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMediaInfoJobListResponseUnmarshaller {
 
-	public static QueryMediaInfoJobListResponse unmarshall(QueryMediaInfoJobListResponse queryMediaInfoJobListResponse, UnmarshallerContext context) {
+	public static QueryMediaInfoJobListResponse unmarshall(QueryMediaInfoJobListResponse queryMediaInfoJobListResponse, UnmarshallerContext _ctx) {
 		
-		queryMediaInfoJobListResponse.setRequestId(context.stringValue("QueryMediaInfoJobListResponse.RequestId"));
+		queryMediaInfoJobListResponse.setRequestId(_ctx.stringValue("QueryMediaInfoJobListResponse.RequestId"));
 
 		List<String> nonExistMediaInfoJobIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryMediaInfoJobListResponse.NonExistMediaInfoJobIds.Length"); i++) {
-			nonExistMediaInfoJobIds.add(context.stringValue("QueryMediaInfoJobListResponse.NonExistMediaInfoJobIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryMediaInfoJobListResponse.NonExistMediaInfoJobIds.Length"); i++) {
+			nonExistMediaInfoJobIds.add(_ctx.stringValue("QueryMediaInfoJobListResponse.NonExistMediaInfoJobIds["+ i +"]"));
 		}
 		queryMediaInfoJobListResponse.setNonExistMediaInfoJobIds(nonExistMediaInfoJobIds);
 
 		List<MediaInfoJob> mediaInfoJobList = new ArrayList<MediaInfoJob>();
-		for (int i = 0; i < context.lengthValue("QueryMediaInfoJobListResponse.MediaInfoJobList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMediaInfoJobListResponse.MediaInfoJobList.Length"); i++) {
 			MediaInfoJob mediaInfoJob = new MediaInfoJob();
-			mediaInfoJob.setJobId(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].JobId"));
-			mediaInfoJob.setUserData(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].UserData"));
-			mediaInfoJob.setPipelineId(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].PipelineId"));
-			mediaInfoJob.setAsync(context.booleanValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Async"));
-			mediaInfoJob.setState(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].State"));
-			mediaInfoJob.setCode(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Code"));
-			mediaInfoJob.setMessage(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Message"));
-			mediaInfoJob.setCreationTime(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].CreationTime"));
+			mediaInfoJob.setJobId(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].JobId"));
+			mediaInfoJob.setUserData(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].UserData"));
+			mediaInfoJob.setPipelineId(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].PipelineId"));
+			mediaInfoJob.setAsync(_ctx.booleanValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Async"));
+			mediaInfoJob.setState(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].State"));
+			mediaInfoJob.setCode(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Code"));
+			mediaInfoJob.setMessage(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Message"));
+			mediaInfoJob.setCreationTime(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].CreationTime"));
 
 			Input input = new Input();
-			input.setBucket(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Input.Bucket"));
-			input.setLocation(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Input.Location"));
-			input.setObject(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Input.Object"));
+			input.setBucket(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Input.Bucket"));
+			input.setLocation(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Input.Location"));
+			input.setObject(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Input.Object"));
 			mediaInfoJob.setInput(input);
 
 			Properties properties = new Properties();
-			properties.setWidth(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Width"));
-			properties.setHeight(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Height"));
-			properties.setBitrate(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Bitrate"));
-			properties.setDuration(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Duration"));
-			properties.setFps(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Fps"));
-			properties.setFileSize(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.FileSize"));
-			properties.setFileFormat(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.FileFormat"));
+			properties.setWidth(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Width"));
+			properties.setHeight(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Height"));
+			properties.setBitrate(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Bitrate"));
+			properties.setDuration(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Duration"));
+			properties.setFps(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Fps"));
+			properties.setFileSize(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.FileSize"));
+			properties.setFileFormat(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.FileFormat"));
 
 			Streams streams = new Streams();
 
 			List<VideoStream> videoStreamList = new ArrayList<VideoStream>();
-			for (int j = 0; j < context.lengthValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList.Length"); j++) {
 				VideoStream videoStream = new VideoStream();
-				videoStream.setIndex(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Index"));
-				videoStream.setCodecName(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].CodecName"));
-				videoStream.setCodecLongName(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].CodecLongName"));
-				videoStream.setProfile(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Profile"));
-				videoStream.setCodecTimeBase(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].CodecTimeBase"));
-				videoStream.setCodecTagString(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].CodecTagString"));
-				videoStream.setCodecTag(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].CodecTag"));
-				videoStream.setWidth(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Width"));
-				videoStream.setHeight(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Height"));
-				videoStream.setHasBFrames(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].HasBFrames"));
-				videoStream.setSar(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Sar"));
-				videoStream.setDar(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Dar"));
-				videoStream.setPixFmt(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].PixFmt"));
-				videoStream.setLevel(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Level"));
-				videoStream.setFps(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Fps"));
-				videoStream.setAvgFPS(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].AvgFPS"));
-				videoStream.setTimebase(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Timebase"));
-				videoStream.setStartTime(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].StartTime"));
-				videoStream.setDuration(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Duration"));
-				videoStream.setBitrate(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Bitrate"));
-				videoStream.setNumFrames(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NumFrames"));
-				videoStream.setLang(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Lang"));
-				videoStream.setRotate(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Rotate"));
+				videoStream.setIndex(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Index"));
+				videoStream.setCodecName(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].CodecName"));
+				videoStream.setCodecLongName(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].CodecLongName"));
+				videoStream.setProfile(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Profile"));
+				videoStream.setCodecTimeBase(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].CodecTimeBase"));
+				videoStream.setCodecTagString(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].CodecTagString"));
+				videoStream.setCodecTag(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].CodecTag"));
+				videoStream.setWidth(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Width"));
+				videoStream.setHeight(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Height"));
+				videoStream.setHasBFrames(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].HasBFrames"));
+				videoStream.setSar(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Sar"));
+				videoStream.setDar(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Dar"));
+				videoStream.setPixFmt(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].PixFmt"));
+				videoStream.setLevel(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Level"));
+				videoStream.setFps(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Fps"));
+				videoStream.setAvgFPS(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].AvgFPS"));
+				videoStream.setTimebase(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Timebase"));
+				videoStream.setStartTime(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].StartTime"));
+				videoStream.setDuration(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Duration"));
+				videoStream.setBitrate(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Bitrate"));
+				videoStream.setNumFrames(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NumFrames"));
+				videoStream.setLang(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Lang"));
+				videoStream.setRotate(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Rotate"));
 
 				NetworkCost networkCost = new NetworkCost();
-				networkCost.setPreloadTime(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NetworkCost.PreloadTime"));
-				networkCost.setCostBandwidth(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NetworkCost.CostBandwidth"));
-				networkCost.setAvgBitrate(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NetworkCost.AvgBitrate"));
+				networkCost.setPreloadTime(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NetworkCost.PreloadTime"));
+				networkCost.setCostBandwidth(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NetworkCost.CostBandwidth"));
+				networkCost.setAvgBitrate(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NetworkCost.AvgBitrate"));
 				videoStream.setNetworkCost(networkCost);
 
 				videoStreamList.add(videoStream);
@@ -110,42 +110,42 @@ public class QueryMediaInfoJobListResponseUnmarshaller {
 			streams.setVideoStreamList(videoStreamList);
 
 			List<AudioStream> audioStreamList = new ArrayList<AudioStream>();
-			for (int j = 0; j < context.lengthValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList.Length"); j++) {
 				AudioStream audioStream = new AudioStream();
-				audioStream.setIndex(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Index"));
-				audioStream.setCodecName(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].CodecName"));
-				audioStream.setCodecTimeBase(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].CodecTimeBase"));
-				audioStream.setCodecLongName(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].CodecLongName"));
-				audioStream.setCodecTagString(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].CodecTagString"));
-				audioStream.setCodecTag(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].CodecTag"));
-				audioStream.setSampleFmt(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].SampleFmt"));
-				audioStream.setSamplerate(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Samplerate"));
-				audioStream.setChannels(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Channels"));
-				audioStream.setChannelLayout(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].ChannelLayout"));
-				audioStream.setTimebase(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Timebase"));
-				audioStream.setStartTime(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].StartTime"));
-				audioStream.setDuration(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Duration"));
-				audioStream.setBitrate(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Bitrate"));
-				audioStream.setNumFrames(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].NumFrames"));
-				audioStream.setLang(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Lang"));
+				audioStream.setIndex(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Index"));
+				audioStream.setCodecName(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].CodecName"));
+				audioStream.setCodecTimeBase(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].CodecTimeBase"));
+				audioStream.setCodecLongName(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].CodecLongName"));
+				audioStream.setCodecTagString(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].CodecTagString"));
+				audioStream.setCodecTag(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].CodecTag"));
+				audioStream.setSampleFmt(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].SampleFmt"));
+				audioStream.setSamplerate(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Samplerate"));
+				audioStream.setChannels(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Channels"));
+				audioStream.setChannelLayout(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].ChannelLayout"));
+				audioStream.setTimebase(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Timebase"));
+				audioStream.setStartTime(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].StartTime"));
+				audioStream.setDuration(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Duration"));
+				audioStream.setBitrate(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Bitrate"));
+				audioStream.setNumFrames(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].NumFrames"));
+				audioStream.setLang(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Lang"));
 
 				audioStreamList.add(audioStream);
 			}
 			streams.setAudioStreamList(audioStreamList);
 
 			List<SubtitleStream> subtitleStreamList = new ArrayList<SubtitleStream>();
-			for (int j = 0; j < context.lengthValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList.Length"); j++) {
 				SubtitleStream subtitleStream = new SubtitleStream();
-				subtitleStream.setIndex(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].Index"));
-				subtitleStream.setCodecName(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].CodecName"));
-				subtitleStream.setCodecTimeBase(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].CodecTimeBase"));
-				subtitleStream.setCodecLongName(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].CodecLongName"));
-				subtitleStream.setCodecTagString(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].CodecTagString"));
-				subtitleStream.setCodecTag(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].CodecTag"));
-				subtitleStream.setTimebase(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].Timebase"));
-				subtitleStream.setStartTime(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].StartTime"));
-				subtitleStream.setDuration(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].Duration"));
-				subtitleStream.setLang(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].Lang"));
+				subtitleStream.setIndex(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].Index"));
+				subtitleStream.setCodecName(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].CodecName"));
+				subtitleStream.setCodecTimeBase(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].CodecTimeBase"));
+				subtitleStream.setCodecLongName(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].CodecLongName"));
+				subtitleStream.setCodecTagString(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].CodecTagString"));
+				subtitleStream.setCodecTag(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].CodecTag"));
+				subtitleStream.setTimebase(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].Timebase"));
+				subtitleStream.setStartTime(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].StartTime"));
+				subtitleStream.setDuration(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].Duration"));
+				subtitleStream.setLang(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].Lang"));
 
 				subtitleStreamList.add(subtitleStream);
 			}
@@ -153,21 +153,21 @@ public class QueryMediaInfoJobListResponseUnmarshaller {
 			properties.setStreams(streams);
 
 			Format format = new Format();
-			format.setNumStreams(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.NumStreams"));
-			format.setNumPrograms(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.NumPrograms"));
-			format.setFormatName(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.FormatName"));
-			format.setFormatLongName(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.FormatLongName"));
-			format.setStartTime(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.StartTime"));
-			format.setDuration(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.Duration"));
-			format.setSize(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.Size"));
-			format.setBitrate(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.Bitrate"));
+			format.setNumStreams(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.NumStreams"));
+			format.setNumPrograms(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.NumPrograms"));
+			format.setFormatName(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.FormatName"));
+			format.setFormatLongName(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.FormatLongName"));
+			format.setStartTime(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.StartTime"));
+			format.setDuration(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.Duration"));
+			format.setSize(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.Size"));
+			format.setBitrate(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.Bitrate"));
 			properties.setFormat(format);
 			mediaInfoJob.setProperties(properties);
 
 			MNSMessageResult mNSMessageResult = new MNSMessageResult();
-			mNSMessageResult.setMessageId(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].MNSMessageResult.MessageId"));
-			mNSMessageResult.setErrorMessage(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].MNSMessageResult.ErrorMessage"));
-			mNSMessageResult.setErrorCode(context.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].MNSMessageResult.ErrorCode"));
+			mNSMessageResult.setMessageId(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].MNSMessageResult.MessageId"));
+			mNSMessageResult.setErrorMessage(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].MNSMessageResult.ErrorMessage"));
+			mNSMessageResult.setErrorCode(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].MNSMessageResult.ErrorCode"));
 			mediaInfoJob.setMNSMessageResult(mNSMessageResult);
 
 			mediaInfoJobList.add(mediaInfoJob);

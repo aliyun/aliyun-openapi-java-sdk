@@ -15,28 +15,46 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DecryptKeyRequest extends RpcAcsRequest<DecryptKeyResponse> {
-	
-	public DecryptKeyRequest() {
-		super("Mts", "2014-06-18", "DecryptKey", "mts");
-	}
+	   
+
+	private String resourceOwnerId;
 
 	private String rand;
 
-	private String resourceOwnerId;
+	private String ciphertextBlob;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private String ownerId;
+	public DecryptKeyRequest() {
+		super("Mts", "2014-06-18", "DecryptKey", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private String ciphertextBlob;
+	public String getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(String resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
+	}
 
 	public String getRand() {
 		return this.rand;
@@ -49,14 +67,14 @@ public class DecryptKeyRequest extends RpcAcsRequest<DecryptKeyResponse> {
 		}
 	}
 
-	public String getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getCiphertextBlob() {
+		return this.ciphertextBlob;
 	}
 
-	public void setResourceOwnerId(String resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+	public void setCiphertextBlob(String ciphertextBlob) {
+		this.ciphertextBlob = ciphertextBlob;
+		if(ciphertextBlob != null){
+			putQueryParameter("CiphertextBlob", ciphertextBlob);
 		}
 	}
 
@@ -90,17 +108,6 @@ public class DecryptKeyRequest extends RpcAcsRequest<DecryptKeyResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
-	public String getCiphertextBlob() {
-		return this.ciphertextBlob;
-	}
-
-	public void setCiphertextBlob(String ciphertextBlob) {
-		this.ciphertextBlob = ciphertextBlob;
-		if(ciphertextBlob != null){
-			putQueryParameter("CiphertextBlob", ciphertextBlob);
 		}
 	}
 

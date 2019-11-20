@@ -15,24 +15,21 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitBeautifyJobsRequest extends RpcAcsRequest<SubmitBeautifyJobsResponse> {
-	
-	public SubmitBeautifyJobsRequest() {
-		super("Mts", "2014-06-18", "SubmitBeautifyJobs", "mts");
-	}
+	   
+
+	private Long resourceOwnerId;
 
 	private String beautifyConfig;
 
 	private String userData;
-
-	private Boolean async;
-
-	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
@@ -41,6 +38,27 @@ public class SubmitBeautifyJobsRequest extends RpcAcsRequest<SubmitBeautifyJobsR
 	private Long ownerId;
 
 	private String pipelineId;
+
+	private Boolean async;
+	public SubmitBeautifyJobsRequest() {
+		super("Mts", "2014-06-18", "SubmitBeautifyJobs", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
 
 	public String getBeautifyConfig() {
 		return this.beautifyConfig;
@@ -61,28 +79,6 @@ public class SubmitBeautifyJobsRequest extends RpcAcsRequest<SubmitBeautifyJobsR
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
-		}
-	}
-
-	public Boolean getAsync() {
-		return this.async;
-	}
-
-	public void setAsync(Boolean async) {
-		this.async = async;
-		if(async != null){
-			putQueryParameter("Async", async.toString());
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -127,6 +123,17 @@ public class SubmitBeautifyJobsRequest extends RpcAcsRequest<SubmitBeautifyJobsR
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+		if(async != null){
+			putQueryParameter("Async", async.toString());
 		}
 	}
 

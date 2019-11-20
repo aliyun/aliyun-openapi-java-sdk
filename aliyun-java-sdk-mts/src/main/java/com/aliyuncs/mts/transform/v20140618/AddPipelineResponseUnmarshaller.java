@@ -22,24 +22,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddPipelineResponseUnmarshaller {
 
-	public static AddPipelineResponse unmarshall(AddPipelineResponse addPipelineResponse, UnmarshallerContext context) {
+	public static AddPipelineResponse unmarshall(AddPipelineResponse addPipelineResponse, UnmarshallerContext _ctx) {
 		
-		addPipelineResponse.setRequestId(context.stringValue("AddPipelineResponse.RequestId"));
+		addPipelineResponse.setRequestId(_ctx.stringValue("AddPipelineResponse.RequestId"));
 
 		Pipeline pipeline = new Pipeline();
-		pipeline.setId(context.stringValue("AddPipelineResponse.Pipeline.Id"));
-		pipeline.setName(context.stringValue("AddPipelineResponse.Pipeline.Name"));
-		pipeline.setState(context.stringValue("AddPipelineResponse.Pipeline.State"));
-		pipeline.setSpeed(context.stringValue("AddPipelineResponse.Pipeline.Speed"));
-		pipeline.setSpeedLevel(context.longValue("AddPipelineResponse.Pipeline.SpeedLevel"));
-		pipeline.setQuotaAllocate(context.longValue("AddPipelineResponse.Pipeline.QuotaAllocate"));
-		pipeline.setRole(context.stringValue("AddPipelineResponse.Pipeline.Role"));
+		pipeline.setId(_ctx.stringValue("AddPipelineResponse.Pipeline.Id"));
+		pipeline.setName(_ctx.stringValue("AddPipelineResponse.Pipeline.Name"));
+		pipeline.setState(_ctx.stringValue("AddPipelineResponse.Pipeline.State"));
+		pipeline.setSpeed(_ctx.stringValue("AddPipelineResponse.Pipeline.Speed"));
+		pipeline.setSpeedLevel(_ctx.longValue("AddPipelineResponse.Pipeline.SpeedLevel"));
+		pipeline.setQuotaAllocate(_ctx.longValue("AddPipelineResponse.Pipeline.QuotaAllocate"));
+		pipeline.setRole(_ctx.stringValue("AddPipelineResponse.Pipeline.Role"));
 
 		NotifyConfig notifyConfig = new NotifyConfig();
-		notifyConfig.setTopic(context.stringValue("AddPipelineResponse.Pipeline.NotifyConfig.Topic"));
-		notifyConfig.setQueueName(context.stringValue("AddPipelineResponse.Pipeline.NotifyConfig.QueueName"));
-		notifyConfig.setMqTopic(context.stringValue("AddPipelineResponse.Pipeline.NotifyConfig.MqTopic"));
-		notifyConfig.setMqTag(context.stringValue("AddPipelineResponse.Pipeline.NotifyConfig.MqTag"));
+		notifyConfig.setTopic(_ctx.stringValue("AddPipelineResponse.Pipeline.NotifyConfig.Topic"));
+		notifyConfig.setQueueName(_ctx.stringValue("AddPipelineResponse.Pipeline.NotifyConfig.QueueName"));
+		notifyConfig.setMqTopic(_ctx.stringValue("AddPipelineResponse.Pipeline.NotifyConfig.MqTopic"));
+		notifyConfig.setMqTag(_ctx.stringValue("AddPipelineResponse.Pipeline.NotifyConfig.MqTag"));
 		pipeline.setNotifyConfig(notifyConfig);
 		addPipelineResponse.setPipeline(pipeline);
 	 

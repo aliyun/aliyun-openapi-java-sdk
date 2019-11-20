@@ -28,52 +28,52 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMediaWorkflowExecutionListResponseUnmarshaller {
 
-	public static QueryMediaWorkflowExecutionListResponse unmarshall(QueryMediaWorkflowExecutionListResponse queryMediaWorkflowExecutionListResponse, UnmarshallerContext context) {
+	public static QueryMediaWorkflowExecutionListResponse unmarshall(QueryMediaWorkflowExecutionListResponse queryMediaWorkflowExecutionListResponse, UnmarshallerContext _ctx) {
 		
-		queryMediaWorkflowExecutionListResponse.setRequestId(context.stringValue("QueryMediaWorkflowExecutionListResponse.RequestId"));
+		queryMediaWorkflowExecutionListResponse.setRequestId(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.RequestId"));
 
 		List<String> nonExistRunIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryMediaWorkflowExecutionListResponse.NonExistRunIds.Length"); i++) {
-			nonExistRunIds.add(context.stringValue("QueryMediaWorkflowExecutionListResponse.NonExistRunIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryMediaWorkflowExecutionListResponse.NonExistRunIds.Length"); i++) {
+			nonExistRunIds.add(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.NonExistRunIds["+ i +"]"));
 		}
 		queryMediaWorkflowExecutionListResponse.setNonExistRunIds(nonExistRunIds);
 
 		List<MediaWorkflowExecution> mediaWorkflowExecutionList = new ArrayList<MediaWorkflowExecution>();
-		for (int i = 0; i < context.lengthValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList.Length"); i++) {
 			MediaWorkflowExecution mediaWorkflowExecution = new MediaWorkflowExecution();
-			mediaWorkflowExecution.setRunId(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].RunId"));
-			mediaWorkflowExecution.setMediaWorkflowId(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].MediaWorkflowId"));
-			mediaWorkflowExecution.setName(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].Name"));
-			mediaWorkflowExecution.setState(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].State"));
-			mediaWorkflowExecution.setMediaId(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].MediaId"));
-			mediaWorkflowExecution.setCreationTime(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].CreationTime"));
+			mediaWorkflowExecution.setRunId(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].RunId"));
+			mediaWorkflowExecution.setMediaWorkflowId(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].MediaWorkflowId"));
+			mediaWorkflowExecution.setName(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].Name"));
+			mediaWorkflowExecution.setState(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].State"));
+			mediaWorkflowExecution.setMediaId(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].MediaId"));
+			mediaWorkflowExecution.setCreationTime(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].CreationTime"));
 
 			Input input = new Input();
-			input.setUserData(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].Input.UserData"));
+			input.setUserData(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].Input.UserData"));
 
 			InputFile inputFile = new InputFile();
-			inputFile.setBucket(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].Input.InputFile.Bucket"));
-			inputFile.setLocation(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].Input.InputFile.Location"));
-			inputFile.setObject(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].Input.InputFile.Object"));
+			inputFile.setBucket(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].Input.InputFile.Bucket"));
+			inputFile.setLocation(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].Input.InputFile.Location"));
+			inputFile.setObject(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].Input.InputFile.Object"));
 			input.setInputFile(inputFile);
 			mediaWorkflowExecution.setInput(input);
 
 			List<Activity> activityList = new ArrayList<Activity>();
-			for (int j = 0; j < context.lengthValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList.Length"); j++) {
 				Activity activity = new Activity();
-				activity.setName(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].Name"));
-				activity.setType(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].Type"));
-				activity.setJobId(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].JobId"));
-				activity.setState(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].State"));
-				activity.setCode(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].Code"));
-				activity.setMessage(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].Message"));
-				activity.setStartTime(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].StartTime"));
-				activity.setEndTime(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].EndTime"));
+				activity.setName(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].Name"));
+				activity.setType(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].Type"));
+				activity.setJobId(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].JobId"));
+				activity.setState(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].State"));
+				activity.setCode(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].Code"));
+				activity.setMessage(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].Message"));
+				activity.setStartTime(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].StartTime"));
+				activity.setEndTime(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].EndTime"));
 
 				MNSMessageResult mNSMessageResult = new MNSMessageResult();
-				mNSMessageResult.setMessageId(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].MNSMessageResult.MessageId"));
-				mNSMessageResult.setErrorMessage(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].MNSMessageResult.ErrorMessage"));
-				mNSMessageResult.setErrorCode(context.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].MNSMessageResult.ErrorCode"));
+				mNSMessageResult.setMessageId(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].MNSMessageResult.MessageId"));
+				mNSMessageResult.setErrorMessage(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].MNSMessageResult.ErrorMessage"));
+				mNSMessageResult.setErrorCode(_ctx.stringValue("QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].MNSMessageResult.ErrorCode"));
 				activity.setMNSMessageResult(mNSMessageResult);
 
 				activityList.add(activity);

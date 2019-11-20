@@ -30,84 +30,84 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateTemplateResponseUnmarshaller {
 
-	public static UpdateTemplateResponse unmarshall(UpdateTemplateResponse updateTemplateResponse, UnmarshallerContext context) {
+	public static UpdateTemplateResponse unmarshall(UpdateTemplateResponse updateTemplateResponse, UnmarshallerContext _ctx) {
 		
-		updateTemplateResponse.setRequestId(context.stringValue("UpdateTemplateResponse.RequestId"));
+		updateTemplateResponse.setRequestId(_ctx.stringValue("UpdateTemplateResponse.RequestId"));
 
 		Template template = new Template();
-		template.setId(context.stringValue("UpdateTemplateResponse.Template.Id"));
-		template.setName(context.stringValue("UpdateTemplateResponse.Template.Name"));
-		template.setState(context.stringValue("UpdateTemplateResponse.Template.State"));
+		template.setId(_ctx.stringValue("UpdateTemplateResponse.Template.Id"));
+		template.setName(_ctx.stringValue("UpdateTemplateResponse.Template.Name"));
+		template.setState(_ctx.stringValue("UpdateTemplateResponse.Template.State"));
 
 		Container container = new Container();
-		container.setFormat(context.stringValue("UpdateTemplateResponse.Template.Container.Format"));
+		container.setFormat(_ctx.stringValue("UpdateTemplateResponse.Template.Container.Format"));
 		template.setContainer(container);
 
 		Video video = new Video();
-		video.setCodec(context.stringValue("UpdateTemplateResponse.Template.Video.Codec"));
-		video.setProfile(context.stringValue("UpdateTemplateResponse.Template.Video.Profile"));
-		video.setBitrate(context.stringValue("UpdateTemplateResponse.Template.Video.Bitrate"));
-		video.setCrf(context.stringValue("UpdateTemplateResponse.Template.Video.Crf"));
-		video.setWidth(context.stringValue("UpdateTemplateResponse.Template.Video.Width"));
-		video.setHeight(context.stringValue("UpdateTemplateResponse.Template.Video.Height"));
-		video.setLongShortMode(context.stringValue("UpdateTemplateResponse.Template.Video.LongShortMode"));
-		video.setFps(context.stringValue("UpdateTemplateResponse.Template.Video.Fps"));
-		video.setGop(context.stringValue("UpdateTemplateResponse.Template.Video.Gop"));
-		video.setPreset(context.stringValue("UpdateTemplateResponse.Template.Video.Preset"));
-		video.setScanMode(context.stringValue("UpdateTemplateResponse.Template.Video.ScanMode"));
-		video.setBufsize(context.stringValue("UpdateTemplateResponse.Template.Video.Bufsize"));
-		video.setMaxrate(context.stringValue("UpdateTemplateResponse.Template.Video.Maxrate"));
-		video.setPixFmt(context.stringValue("UpdateTemplateResponse.Template.Video.PixFmt"));
-		video.setDegrain(context.stringValue("UpdateTemplateResponse.Template.Video.Degrain"));
-		video.setQscale(context.stringValue("UpdateTemplateResponse.Template.Video.Qscale"));
-		video.setRemove(context.stringValue("UpdateTemplateResponse.Template.Video.Remove"));
-		video.setCrop(context.stringValue("UpdateTemplateResponse.Template.Video.Crop"));
-		video.setPad(context.stringValue("UpdateTemplateResponse.Template.Video.Pad"));
-		video.setMaxFps(context.stringValue("UpdateTemplateResponse.Template.Video.MaxFps"));
-		video.setResoPriority(context.stringValue("UpdateTemplateResponse.Template.Video.ResoPriority"));
+		video.setCodec(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Codec"));
+		video.setProfile(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Profile"));
+		video.setBitrate(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Bitrate"));
+		video.setCrf(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Crf"));
+		video.setWidth(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Width"));
+		video.setHeight(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Height"));
+		video.setLongShortMode(_ctx.stringValue("UpdateTemplateResponse.Template.Video.LongShortMode"));
+		video.setFps(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Fps"));
+		video.setGop(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Gop"));
+		video.setPreset(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Preset"));
+		video.setScanMode(_ctx.stringValue("UpdateTemplateResponse.Template.Video.ScanMode"));
+		video.setBufsize(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Bufsize"));
+		video.setMaxrate(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Maxrate"));
+		video.setPixFmt(_ctx.stringValue("UpdateTemplateResponse.Template.Video.PixFmt"));
+		video.setDegrain(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Degrain"));
+		video.setQscale(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Qscale"));
+		video.setRemove(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Remove"));
+		video.setCrop(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Crop"));
+		video.setPad(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Pad"));
+		video.setMaxFps(_ctx.stringValue("UpdateTemplateResponse.Template.Video.MaxFps"));
+		video.setResoPriority(_ctx.stringValue("UpdateTemplateResponse.Template.Video.ResoPriority"));
 
 		BitrateBnd bitrateBnd = new BitrateBnd();
-		bitrateBnd.setMax(context.stringValue("UpdateTemplateResponse.Template.Video.BitrateBnd.Max"));
-		bitrateBnd.setMin(context.stringValue("UpdateTemplateResponse.Template.Video.BitrateBnd.Min"));
+		bitrateBnd.setMax(_ctx.stringValue("UpdateTemplateResponse.Template.Video.BitrateBnd.Max"));
+		bitrateBnd.setMin(_ctx.stringValue("UpdateTemplateResponse.Template.Video.BitrateBnd.Min"));
 		video.setBitrateBnd(bitrateBnd);
 		template.setVideo(video);
 
 		Audio audio = new Audio();
-		audio.setCodec(context.stringValue("UpdateTemplateResponse.Template.Audio.Codec"));
-		audio.setProfile(context.stringValue("UpdateTemplateResponse.Template.Audio.Profile"));
-		audio.setSamplerate(context.stringValue("UpdateTemplateResponse.Template.Audio.Samplerate"));
-		audio.setBitrate(context.stringValue("UpdateTemplateResponse.Template.Audio.Bitrate"));
-		audio.setChannels(context.stringValue("UpdateTemplateResponse.Template.Audio.Channels"));
-		audio.setQscale(context.stringValue("UpdateTemplateResponse.Template.Audio.Qscale"));
-		audio.setRemove(context.stringValue("UpdateTemplateResponse.Template.Audio.Remove"));
+		audio.setCodec(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Codec"));
+		audio.setProfile(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Profile"));
+		audio.setSamplerate(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Samplerate"));
+		audio.setBitrate(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Bitrate"));
+		audio.setChannels(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Channels"));
+		audio.setQscale(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Qscale"));
+		audio.setRemove(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Remove"));
 		template.setAudio(audio);
 
 		TransConfig transConfig = new TransConfig();
-		transConfig.setTransMode(context.stringValue("UpdateTemplateResponse.Template.TransConfig.TransMode"));
-		transConfig.setIsCheckReso(context.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckReso"));
-		transConfig.setIsCheckResoFail(context.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckResoFail"));
-		transConfig.setIsCheckVideoBitrate(context.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckVideoBitrate"));
-		transConfig.setIsCheckAudioBitrate(context.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckAudioBitrate"));
-		transConfig.setAdjDarMethod(context.stringValue("UpdateTemplateResponse.Template.TransConfig.AdjDarMethod"));
-		transConfig.setIsCheckVideoBitrateFail(context.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckVideoBitrateFail"));
-		transConfig.setIsCheckAudioBitrateFail(context.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckAudioBitrateFail"));
+		transConfig.setTransMode(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.TransMode"));
+		transConfig.setIsCheckReso(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckReso"));
+		transConfig.setIsCheckResoFail(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckResoFail"));
+		transConfig.setIsCheckVideoBitrate(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckVideoBitrate"));
+		transConfig.setIsCheckAudioBitrate(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckAudioBitrate"));
+		transConfig.setAdjDarMethod(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.AdjDarMethod"));
+		transConfig.setIsCheckVideoBitrateFail(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckVideoBitrateFail"));
+		transConfig.setIsCheckAudioBitrateFail(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckAudioBitrateFail"));
 		template.setTransConfig(transConfig);
 
 		MuxConfig muxConfig = new MuxConfig();
 
 		Segment segment = new Segment();
-		segment.setDuration(context.stringValue("UpdateTemplateResponse.Template.MuxConfig.Segment.Duration"));
+		segment.setDuration(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Segment.Duration"));
 		muxConfig.setSegment(segment);
 
 		Gif gif = new Gif();
-		gif.setLoop(context.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.Loop"));
-		gif.setFinalDelay(context.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.FinalDelay"));
-		gif.setIsCustomPalette(context.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.IsCustomPalette"));
-		gif.setDitherMode(context.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.DitherMode"));
+		gif.setLoop(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.Loop"));
+		gif.setFinalDelay(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.FinalDelay"));
+		gif.setIsCustomPalette(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.IsCustomPalette"));
+		gif.setDitherMode(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.DitherMode"));
 		muxConfig.setGif(gif);
 
 		Webp webp = new Webp();
-		webp.setLoop(context.stringValue("UpdateTemplateResponse.Template.MuxConfig.Webp.Loop"));
+		webp.setLoop(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Webp.Loop"));
 		muxConfig.setWebp(webp);
 		template.setMuxConfig(muxConfig);
 		updateTemplateResponse.setTemplate(template);

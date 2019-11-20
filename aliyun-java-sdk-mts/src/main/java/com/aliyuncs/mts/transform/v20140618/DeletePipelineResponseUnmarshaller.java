@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeletePipelineResponseUnmarshaller {
 
-	public static DeletePipelineResponse unmarshall(DeletePipelineResponse deletePipelineResponse, UnmarshallerContext context) {
+	public static DeletePipelineResponse unmarshall(DeletePipelineResponse deletePipelineResponse, UnmarshallerContext _ctx) {
 		
-		deletePipelineResponse.setRequestId(context.stringValue("DeletePipelineResponse.RequestId"));
-		deletePipelineResponse.setPipelineId(context.stringValue("DeletePipelineResponse.PipelineId"));
+		deletePipelineResponse.setRequestId(_ctx.stringValue("DeletePipelineResponse.RequestId"));
+		deletePipelineResponse.setPipelineId(_ctx.stringValue("DeletePipelineResponse.PipelineId"));
 	 
 	 	return deletePipelineResponse;
 	}

@@ -15,30 +15,37 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateSessionRequest extends RpcAcsRequest<CreateSessionResponse> {
-	
-	public CreateSessionRequest() {
-		super("Mts", "2014-06-18", "CreateSession", "mts");
-	}
+	   
 
 	private String resourceOwnerId;
 
 	private Integer sessionTime;
 
+	private String endUserId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String endUserId;
-
 	private String ownerId;
 
 	private String mediaId;
+	public CreateSessionRequest() {
+		super("Mts", "2014-06-18", "CreateSession", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -62,6 +69,17 @@ public class CreateSessionRequest extends RpcAcsRequest<CreateSessionResponse> {
 		}
 	}
 
+	public String getEndUserId() {
+		return this.endUserId;
+	}
+
+	public void setEndUserId(String endUserId) {
+		this.endUserId = endUserId;
+		if(endUserId != null){
+			putQueryParameter("EndUserId", endUserId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -81,17 +99,6 @@ public class CreateSessionRequest extends RpcAcsRequest<CreateSessionResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getEndUserId() {
-		return this.endUserId;
-	}
-
-	public void setEndUserId(String endUserId) {
-		this.endUserId = endUserId;
-		if(endUserId != null){
-			putQueryParameter("EndUserId", endUserId);
 		}
 	}
 

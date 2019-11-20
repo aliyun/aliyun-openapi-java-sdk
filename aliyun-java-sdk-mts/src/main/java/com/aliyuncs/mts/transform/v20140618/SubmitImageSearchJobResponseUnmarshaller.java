@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitImageSearchJobResponseUnmarshaller {
 
-	public static SubmitImageSearchJobResponse unmarshall(SubmitImageSearchJobResponse submitImageSearchJobResponse, UnmarshallerContext context) {
+	public static SubmitImageSearchJobResponse unmarshall(SubmitImageSearchJobResponse submitImageSearchJobResponse, UnmarshallerContext _ctx) {
 		
-		submitImageSearchJobResponse.setRequestId(context.stringValue("SubmitImageSearchJobResponse.RequestId"));
-		submitImageSearchJobResponse.setJobId(context.stringValue("SubmitImageSearchJobResponse.JobId"));
+		submitImageSearchJobResponse.setRequestId(_ctx.stringValue("SubmitImageSearchJobResponse.RequestId"));
+		submitImageSearchJobResponse.setJobId(_ctx.stringValue("SubmitImageSearchJobResponse.JobId"));
 	 
 	 	return submitImageSearchJobResponse;
 	}

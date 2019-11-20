@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteMcuTemplateResponseUnmarshaller {
 
-	public static DeleteMcuTemplateResponse unmarshall(DeleteMcuTemplateResponse deleteMcuTemplateResponse, UnmarshallerContext context) {
+	public static DeleteMcuTemplateResponse unmarshall(DeleteMcuTemplateResponse deleteMcuTemplateResponse, UnmarshallerContext _ctx) {
 		
-		deleteMcuTemplateResponse.setRequestId(context.stringValue("DeleteMcuTemplateResponse.RequestId"));
-		deleteMcuTemplateResponse.setTemplateId(context.stringValue("DeleteMcuTemplateResponse.TemplateId"));
+		deleteMcuTemplateResponse.setRequestId(_ctx.stringValue("DeleteMcuTemplateResponse.RequestId"));
+		deleteMcuTemplateResponse.setTemplateId(_ctx.stringValue("DeleteMcuTemplateResponse.TemplateId"));
 	 
 	 	return deleteMcuTemplateResponse;
 	}

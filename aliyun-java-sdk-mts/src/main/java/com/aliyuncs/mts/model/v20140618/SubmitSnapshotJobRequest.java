@@ -15,22 +15,21 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobResponse> {
-	
-	public SubmitSnapshotJobRequest() {
-		super("Mts", "2014-06-18", "SubmitSnapshotJob", "mts");
-	}
-
-	private String input;
-
-	private String userData;
+	   
 
 	private Long resourceOwnerId;
+
+	private String snapshotConfig;
+
+	private String userData;
 
 	private String resourceOwnerAccount;
 
@@ -38,18 +37,37 @@ public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobRes
 
 	private Long ownerId;
 
-	private String snapshotConfig;
-
 	private String pipelineId;
 
-	public String getInput() {
-		return this.input;
+	private String input;
+	public SubmitSnapshotJobRequest() {
+		super("Mts", "2014-06-18", "SubmitSnapshotJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSnapshotConfig() {
+		return this.snapshotConfig;
+	}
+
+	public void setSnapshotConfig(String snapshotConfig) {
+		this.snapshotConfig = snapshotConfig;
+		if(snapshotConfig != null){
+			putQueryParameter("SnapshotConfig", snapshotConfig);
 		}
 	}
 
@@ -61,17 +79,6 @@ public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobRes
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -108,17 +115,6 @@ public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobRes
 		}
 	}
 
-	public String getSnapshotConfig() {
-		return this.snapshotConfig;
-	}
-
-	public void setSnapshotConfig(String snapshotConfig) {
-		this.snapshotConfig = snapshotConfig;
-		if(snapshotConfig != null){
-			putQueryParameter("SnapshotConfig", snapshotConfig);
-		}
-	}
-
 	public String getPipelineId() {
 		return this.pipelineId;
 	}
@@ -127,6 +123,17 @@ public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobRes
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
 		}
 	}
 

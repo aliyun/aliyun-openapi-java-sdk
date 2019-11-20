@@ -15,18 +15,21 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class RegisterMediaDetailPersonRequest extends RpcAcsRequest<RegisterMediaDetailPersonResponse> {
-	
-	public RegisterMediaDetailPersonRequest() {
-		super("Mts", "2014-06-18", "RegisterMediaDetailPerson", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String personLib;
+
+	private String personName;
 
 	private String images;
 
@@ -34,13 +37,17 @@ public class RegisterMediaDetailPersonRequest extends RpcAcsRequest<RegisterMedi
 
 	private String ownerAccount;
 
-	private String personLib;
-
 	private Long ownerId;
 
 	private String category;
-
-	private String personName;
+	public RegisterMediaDetailPersonRequest() {
+		super("Mts", "2014-06-18", "RegisterMediaDetailPerson", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,6 +57,28 @@ public class RegisterMediaDetailPersonRequest extends RpcAcsRequest<RegisterMedi
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPersonLib() {
+		return this.personLib;
+	}
+
+	public void setPersonLib(String personLib) {
+		this.personLib = personLib;
+		if(personLib != null){
+			putQueryParameter("PersonLib", personLib);
+		}
+	}
+
+	public String getPersonName() {
+		return this.personName;
+	}
+
+	public void setPersonName(String personName) {
+		this.personName = personName;
+		if(personName != null){
+			putQueryParameter("PersonName", personName);
 		}
 	}
 
@@ -86,17 +115,6 @@ public class RegisterMediaDetailPersonRequest extends RpcAcsRequest<RegisterMedi
 		}
 	}
 
-	public String getPersonLib() {
-		return this.personLib;
-	}
-
-	public void setPersonLib(String personLib) {
-		this.personLib = personLib;
-		if(personLib != null){
-			putQueryParameter("PersonLib", personLib);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -116,17 +134,6 @@ public class RegisterMediaDetailPersonRequest extends RpcAcsRequest<RegisterMedi
 		this.category = category;
 		if(category != null){
 			putQueryParameter("Category", category);
-		}
-	}
-
-	public String getPersonName() {
-		return this.personName;
-	}
-
-	public void setPersonName(String personName) {
-		this.personName = personName;
-		if(personName != null){
-			putQueryParameter("PersonName", personName);
 		}
 	}
 

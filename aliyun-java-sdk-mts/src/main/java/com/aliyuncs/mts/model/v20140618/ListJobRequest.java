@@ -15,36 +15,43 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListJobRequest extends RpcAcsRequest<ListJobResponse> {
-	
-	public ListJobRequest() {
-		super("Mts", "2014-06-18", "ListJob", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
-
-	private String resourceOwnerAccount;
 
 	private String nextPageToken;
 
 	private String startOfJobCreatedTimeRange;
 
+	private String state;
+
+	private String endOfJobCreatedTimeRange;
+
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
 
 	private Long maximumPageSize;
 
-	private String state;
-
 	private Long ownerId;
 
-	private String endOfJobCreatedTimeRange;
-
 	private String pipelineId;
+	public ListJobRequest() {
+		super("Mts", "2014-06-18", "ListJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,17 +61,6 @@ public class ListJobRequest extends RpcAcsRequest<ListJobResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -90,6 +86,39 @@ public class ListJobRequest extends RpcAcsRequest<ListJobResponse> {
 		}
 	}
 
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
+	public String getEndOfJobCreatedTimeRange() {
+		return this.endOfJobCreatedTimeRange;
+	}
+
+	public void setEndOfJobCreatedTimeRange(String endOfJobCreatedTimeRange) {
+		this.endOfJobCreatedTimeRange = endOfJobCreatedTimeRange;
+		if(endOfJobCreatedTimeRange != null){
+			putQueryParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -112,17 +141,6 @@ public class ListJobRequest extends RpcAcsRequest<ListJobResponse> {
 		}
 	}
 
-	public String getState() {
-		return this.state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-		if(state != null){
-			putQueryParameter("State", state);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -131,17 +149,6 @@ public class ListJobRequest extends RpcAcsRequest<ListJobResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getEndOfJobCreatedTimeRange() {
-		return this.endOfJobCreatedTimeRange;
-	}
-
-	public void setEndOfJobCreatedTimeRange(String endOfJobCreatedTimeRange) {
-		this.endOfJobCreatedTimeRange = endOfJobCreatedTimeRange;
-		if(endOfJobCreatedTimeRange != null){
-			putQueryParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
 		}
 	}
 

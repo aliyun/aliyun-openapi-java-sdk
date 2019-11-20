@@ -25,29 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QuerySubtitleJobListResponseUnmarshaller {
 
-	public static QuerySubtitleJobListResponse unmarshall(QuerySubtitleJobListResponse querySubtitleJobListResponse, UnmarshallerContext context) {
+	public static QuerySubtitleJobListResponse unmarshall(QuerySubtitleJobListResponse querySubtitleJobListResponse, UnmarshallerContext _ctx) {
 		
-		querySubtitleJobListResponse.setRequestId(context.stringValue("QuerySubtitleJobListResponse.RequestId"));
+		querySubtitleJobListResponse.setRequestId(_ctx.stringValue("QuerySubtitleJobListResponse.RequestId"));
 
 		List<String> nonExistJobIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QuerySubtitleJobListResponse.NonExistJobIds.Length"); i++) {
-			nonExistJobIds.add(context.stringValue("QuerySubtitleJobListResponse.NonExistJobIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QuerySubtitleJobListResponse.NonExistJobIds.Length"); i++) {
+			nonExistJobIds.add(_ctx.stringValue("QuerySubtitleJobListResponse.NonExistJobIds["+ i +"]"));
 		}
 		querySubtitleJobListResponse.setNonExistJobIds(nonExistJobIds);
 
 		List<Job> jobList = new ArrayList<Job>();
-		for (int i = 0; i < context.lengthValue("QuerySubtitleJobListResponse.JobList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QuerySubtitleJobListResponse.JobList.Length"); i++) {
 			Job job = new Job();
-			job.setJobId(context.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].JobId"));
-			job.setInputConfig(context.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].InputConfig"));
-			job.setOutputConfig(context.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].OutputConfig"));
-			job.setUserData(context.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].UserData"));
-			job.setState(context.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].State"));
+			job.setJobId(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].JobId"));
+			job.setInputConfig(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].InputConfig"));
+			job.setOutputConfig(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].OutputConfig"));
+			job.setUserData(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].UserData"));
+			job.setState(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].State"));
 
 			MNSMessageResult mNSMessageResult = new MNSMessageResult();
-			mNSMessageResult.setMessageId(context.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].MNSMessageResult.MessageId"));
-			mNSMessageResult.setErrorMessage(context.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].MNSMessageResult.ErrorMessage"));
-			mNSMessageResult.setErrorCode(context.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].MNSMessageResult.ErrorCode"));
+			mNSMessageResult.setMessageId(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].MNSMessageResult.MessageId"));
+			mNSMessageResult.setErrorMessage(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].MNSMessageResult.ErrorMessage"));
+			mNSMessageResult.setErrorCode(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].MNSMessageResult.ErrorCode"));
 			job.setMNSMessageResult(mNSMessageResult);
 
 			jobList.add(job);

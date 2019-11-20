@@ -15,24 +15,29 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryCoverJobListRequest extends RpcAcsRequest<QueryCoverJobListResponse> {
-	
-	public QueryCoverJobListRequest() {
-		super("Mts", "2014-06-18", "QueryCoverJobList", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
-
-	private String resourceOwnerAccount;
 
 	private String nextPageToken;
 
 	private String startOfJobCreatedTimeRange;
+
+	private String coverJobIds;
+
+	private String state;
+
+	private String endOfJobCreatedTimeRange;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
@@ -40,13 +45,15 @@ public class QueryCoverJobListRequest extends RpcAcsRequest<QueryCoverJobListRes
 
 	private Long ownerId;
 
-	private String coverJobIds;
-
 	private String pipelineId;
-
-	private String state;
-
-	private String endOfJobCreatedTimeRange;
+	public QueryCoverJobListRequest() {
+		super("Mts", "2014-06-18", "QueryCoverJobList", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,17 +63,6 @@ public class QueryCoverJobListRequest extends RpcAcsRequest<QueryCoverJobListRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -89,6 +85,50 @@ public class QueryCoverJobListRequest extends RpcAcsRequest<QueryCoverJobListRes
 		this.startOfJobCreatedTimeRange = startOfJobCreatedTimeRange;
 		if(startOfJobCreatedTimeRange != null){
 			putQueryParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
+		}
+	}
+
+	public String getCoverJobIds() {
+		return this.coverJobIds;
+	}
+
+	public void setCoverJobIds(String coverJobIds) {
+		this.coverJobIds = coverJobIds;
+		if(coverJobIds != null){
+			putQueryParameter("CoverJobIds", coverJobIds);
+		}
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
+	public String getEndOfJobCreatedTimeRange() {
+		return this.endOfJobCreatedTimeRange;
+	}
+
+	public void setEndOfJobCreatedTimeRange(String endOfJobCreatedTimeRange) {
+		this.endOfJobCreatedTimeRange = endOfJobCreatedTimeRange;
+		if(endOfJobCreatedTimeRange != null){
+			putQueryParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -125,17 +165,6 @@ public class QueryCoverJobListRequest extends RpcAcsRequest<QueryCoverJobListRes
 		}
 	}
 
-	public String getCoverJobIds() {
-		return this.coverJobIds;
-	}
-
-	public void setCoverJobIds(String coverJobIds) {
-		this.coverJobIds = coverJobIds;
-		if(coverJobIds != null){
-			putQueryParameter("CoverJobIds", coverJobIds);
-		}
-	}
-
 	public String getPipelineId() {
 		return this.pipelineId;
 	}
@@ -144,28 +173,6 @@ public class QueryCoverJobListRequest extends RpcAcsRequest<QueryCoverJobListRes
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
-		}
-	}
-
-	public String getState() {
-		return this.state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-		if(state != null){
-			putQueryParameter("State", state);
-		}
-	}
-
-	public String getEndOfJobCreatedTimeRange() {
-		return this.endOfJobCreatedTimeRange;
-	}
-
-	public void setEndOfJobCreatedTimeRange(String endOfJobCreatedTimeRange) {
-		this.endOfJobCreatedTimeRange = endOfJobCreatedTimeRange;
-		if(endOfJobCreatedTimeRange != null){
-			putQueryParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
 		}
 	}
 

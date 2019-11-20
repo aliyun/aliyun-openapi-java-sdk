@@ -15,34 +15,41 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListMediaWorkflowExecutionsRequest extends RpcAcsRequest<ListMediaWorkflowExecutionsResponse> {
-	
-	public ListMediaWorkflowExecutionsRequest() {
-		super("Mts", "2014-06-18", "ListMediaWorkflowExecutions", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private String inputFileURL;
-
 	private String nextPageToken;
+
+	private String mediaWorkflowId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long maximumPageSize;
 
-	private String mediaWorkflowId;
-
 	private Long ownerId;
 
 	private String mediaWorkflowName;
+
+	private String inputFileURL;
+	public ListMediaWorkflowExecutionsRequest() {
+		super("Mts", "2014-06-18", "ListMediaWorkflowExecutions", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,28 +62,6 @@ public class ListMediaWorkflowExecutionsRequest extends RpcAcsRequest<ListMediaW
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getInputFileURL() {
-		return this.inputFileURL;
-	}
-
-	public void setInputFileURL(String inputFileURL) {
-		this.inputFileURL = inputFileURL;
-		if(inputFileURL != null){
-			putQueryParameter("InputFileURL", inputFileURL);
-		}
-	}
-
 	public String getNextPageToken() {
 		return this.nextPageToken;
 	}
@@ -85,6 +70,28 @@ public class ListMediaWorkflowExecutionsRequest extends RpcAcsRequest<ListMediaW
 		this.nextPageToken = nextPageToken;
 		if(nextPageToken != null){
 			putQueryParameter("NextPageToken", nextPageToken);
+		}
+	}
+
+	public String getMediaWorkflowId() {
+		return this.mediaWorkflowId;
+	}
+
+	public void setMediaWorkflowId(String mediaWorkflowId) {
+		this.mediaWorkflowId = mediaWorkflowId;
+		if(mediaWorkflowId != null){
+			putQueryParameter("MediaWorkflowId", mediaWorkflowId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -110,17 +117,6 @@ public class ListMediaWorkflowExecutionsRequest extends RpcAcsRequest<ListMediaW
 		}
 	}
 
-	public String getMediaWorkflowId() {
-		return this.mediaWorkflowId;
-	}
-
-	public void setMediaWorkflowId(String mediaWorkflowId) {
-		this.mediaWorkflowId = mediaWorkflowId;
-		if(mediaWorkflowId != null){
-			putQueryParameter("MediaWorkflowId", mediaWorkflowId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -140,6 +136,17 @@ public class ListMediaWorkflowExecutionsRequest extends RpcAcsRequest<ListMediaW
 		this.mediaWorkflowName = mediaWorkflowName;
 		if(mediaWorkflowName != null){
 			putQueryParameter("MediaWorkflowName", mediaWorkflowName);
+		}
+	}
+
+	public String getInputFileURL() {
+		return this.inputFileURL;
+	}
+
+	public void setInputFileURL(String inputFileURL) {
+		this.inputFileURL = inputFileURL;
+		if(inputFileURL != null){
+			putQueryParameter("InputFileURL", inputFileURL);
 		}
 	}
 

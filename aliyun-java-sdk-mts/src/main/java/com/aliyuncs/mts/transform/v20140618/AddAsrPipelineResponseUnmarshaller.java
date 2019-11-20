@@ -22,19 +22,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddAsrPipelineResponseUnmarshaller {
 
-	public static AddAsrPipelineResponse unmarshall(AddAsrPipelineResponse addAsrPipelineResponse, UnmarshallerContext context) {
+	public static AddAsrPipelineResponse unmarshall(AddAsrPipelineResponse addAsrPipelineResponse, UnmarshallerContext _ctx) {
 		
-		addAsrPipelineResponse.setRequestId(context.stringValue("AddAsrPipelineResponse.RequestId"));
+		addAsrPipelineResponse.setRequestId(_ctx.stringValue("AddAsrPipelineResponse.RequestId"));
 
 		Pipeline pipeline = new Pipeline();
-		pipeline.setId(context.stringValue("AddAsrPipelineResponse.Pipeline.Id"));
-		pipeline.setName(context.stringValue("AddAsrPipelineResponse.Pipeline.Name"));
-		pipeline.setPriority(context.integerValue("AddAsrPipelineResponse.Pipeline.Priority"));
-		pipeline.setState(context.stringValue("AddAsrPipelineResponse.Pipeline.State"));
+		pipeline.setId(_ctx.stringValue("AddAsrPipelineResponse.Pipeline.Id"));
+		pipeline.setName(_ctx.stringValue("AddAsrPipelineResponse.Pipeline.Name"));
+		pipeline.setPriority(_ctx.integerValue("AddAsrPipelineResponse.Pipeline.Priority"));
+		pipeline.setState(_ctx.stringValue("AddAsrPipelineResponse.Pipeline.State"));
 
 		NotifyConfig notifyConfig = new NotifyConfig();
-		notifyConfig.setTopic(context.stringValue("AddAsrPipelineResponse.Pipeline.NotifyConfig.Topic"));
-		notifyConfig.setQueue(context.stringValue("AddAsrPipelineResponse.Pipeline.NotifyConfig.Queue"));
+		notifyConfig.setTopic(_ctx.stringValue("AddAsrPipelineResponse.Pipeline.NotifyConfig.Topic"));
+		notifyConfig.setQueue(_ctx.stringValue("AddAsrPipelineResponse.Pipeline.NotifyConfig.Queue"));
 		pipeline.setNotifyConfig(notifyConfig);
 		addAsrPipelineResponse.setPipeline(pipeline);
 	 

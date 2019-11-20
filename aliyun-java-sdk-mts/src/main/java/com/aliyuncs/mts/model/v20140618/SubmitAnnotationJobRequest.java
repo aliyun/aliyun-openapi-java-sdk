@@ -15,41 +15,59 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitAnnotationJobRequest extends RpcAcsRequest<SubmitAnnotationJobResponse> {
-	
-	public SubmitAnnotationJobRequest() {
-		super("Mts", "2014-06-18", "SubmitAnnotationJob", "mts");
-	}
-
-	private String input;
-
-	private String userData;
+	   
 
 	private Long resourceOwnerId;
+
+	private String annotationConfig;
+
+	private String userData;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String annotationConfig;
-
 	private Long ownerId;
 
 	private String pipelineId;
 
-	public String getInput() {
-		return this.input;
+	private String input;
+	public SubmitAnnotationJobRequest() {
+		super("Mts", "2014-06-18", "SubmitAnnotationJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAnnotationConfig() {
+		return this.annotationConfig;
+	}
+
+	public void setAnnotationConfig(String annotationConfig) {
+		this.annotationConfig = annotationConfig;
+		if(annotationConfig != null){
+			putQueryParameter("AnnotationConfig", annotationConfig);
 		}
 	}
 
@@ -61,17 +79,6 @@ public class SubmitAnnotationJobRequest extends RpcAcsRequest<SubmitAnnotationJo
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -97,17 +104,6 @@ public class SubmitAnnotationJobRequest extends RpcAcsRequest<SubmitAnnotationJo
 		}
 	}
 
-	public String getAnnotationConfig() {
-		return this.annotationConfig;
-	}
-
-	public void setAnnotationConfig(String annotationConfig) {
-		this.annotationConfig = annotationConfig;
-		if(annotationConfig != null){
-			putQueryParameter("AnnotationConfig", annotationConfig);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -127,6 +123,17 @@ public class SubmitAnnotationJobRequest extends RpcAcsRequest<SubmitAnnotationJo
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
 		}
 	}
 

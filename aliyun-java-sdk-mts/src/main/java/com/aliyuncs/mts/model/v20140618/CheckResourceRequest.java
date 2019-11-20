@@ -15,16 +15,15 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CheckResourceRequest extends RpcAcsRequest<CheckResourceResponse> {
-	
-	public CheckResourceRequest() {
-		super("Mts", "2014-06-18", "CheckResource", "mts");
-	}
+	   
 
 	private String country;
 
@@ -53,6 +52,14 @@ public class CheckResourceRequest extends RpcAcsRequest<CheckResourceResponse> {
 	private String taskExtraData;
 
 	private String taskIdentifier;
+	public CheckResourceRequest() {
+		super("Mts", "2014-06-18", "CheckResource", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCountry() {
 		return this.country;
@@ -109,29 +116,10 @@ public class CheckResourceRequest extends RpcAcsRequest<CheckResourceResponse> {
 		}
 	}
 
-	public String getBizUrl() {
-		return this.url;
-	}
-
-	public void setBizUrl(String url) {
-		this.url = url;
-		if(url != null){
-			putQueryParameter("Url", url);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizUrl instead of this.
-	 */
-	@Deprecated
 	public String getUrl() {
 		return this.url;
 	}
 
-	/**
-	 * @deprecated use setBizUrl instead of this.
-	 */
-	@Deprecated
 	public void setUrl(String url) {
 		this.url = url;
 		if(url != null){

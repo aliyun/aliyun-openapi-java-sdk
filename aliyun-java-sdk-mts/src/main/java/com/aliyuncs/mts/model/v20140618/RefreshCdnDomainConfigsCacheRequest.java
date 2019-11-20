@@ -15,16 +15,15 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class RefreshCdnDomainConfigsCacheRequest extends RpcAcsRequest<RefreshCdnDomainConfigsCacheResponse> {
-	
-	public RefreshCdnDomainConfigsCacheRequest() {
-		super("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache", "mts");
-	}
+	   
 
 	private String resourceOwnerId;
 
@@ -35,6 +34,14 @@ public class RefreshCdnDomainConfigsCacheRequest extends RpcAcsRequest<RefreshCd
 	private String domains;
 
 	private String ownerId;
+	public RefreshCdnDomainConfigsCacheRequest() {
+		super("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;

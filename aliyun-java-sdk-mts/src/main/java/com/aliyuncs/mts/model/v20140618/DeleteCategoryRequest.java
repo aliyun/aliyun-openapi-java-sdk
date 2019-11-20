@@ -15,26 +15,33 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteCategoryRequest extends RpcAcsRequest<DeleteCategoryResponse> {
-	
-	public DeleteCategoryRequest() {
-		super("Mts", "2014-06-18", "DeleteCategory", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Long cateId;
-
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Long cateId;
+	public DeleteCategoryRequest() {
+		super("Mts", "2014-06-18", "DeleteCategory", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,17 +65,6 @@ public class DeleteCategoryRequest extends RpcAcsRequest<DeleteCategoryResponse>
 		}
 	}
 
-	public Long getCateId() {
-		return this.cateId;
-	}
-
-	public void setCateId(Long cateId) {
-		this.cateId = cateId;
-		if(cateId != null){
-			putQueryParameter("CateId", cateId.toString());
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -88,6 +84,17 @@ public class DeleteCategoryRequest extends RpcAcsRequest<DeleteCategoryResponse>
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getCateId() {
+		return this.cateId;
+	}
+
+	public void setCateId(Long cateId) {
+		this.cateId = cateId;
+		if(cateId != null){
+			putQueryParameter("CateId", cateId.toString());
 		}
 	}
 

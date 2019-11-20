@@ -28,46 +28,46 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryVideoSummaryJobListResponseUnmarshaller {
 
-	public static QueryVideoSummaryJobListResponse unmarshall(QueryVideoSummaryJobListResponse queryVideoSummaryJobListResponse, UnmarshallerContext context) {
+	public static QueryVideoSummaryJobListResponse unmarshall(QueryVideoSummaryJobListResponse queryVideoSummaryJobListResponse, UnmarshallerContext _ctx) {
 		
-		queryVideoSummaryJobListResponse.setRequestId(context.stringValue("QueryVideoSummaryJobListResponse.RequestId"));
+		queryVideoSummaryJobListResponse.setRequestId(_ctx.stringValue("QueryVideoSummaryJobListResponse.RequestId"));
 
 		List<String> nonExistIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryVideoSummaryJobListResponse.NonExistIds.Length"); i++) {
-			nonExistIds.add(context.stringValue("QueryVideoSummaryJobListResponse.NonExistIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryVideoSummaryJobListResponse.NonExistIds.Length"); i++) {
+			nonExistIds.add(_ctx.stringValue("QueryVideoSummaryJobListResponse.NonExistIds["+ i +"]"));
 		}
 		queryVideoSummaryJobListResponse.setNonExistIds(nonExistIds);
 
 		List<Job> jobList = new ArrayList<Job>();
-		for (int i = 0; i < context.lengthValue("QueryVideoSummaryJobListResponse.JobList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryVideoSummaryJobListResponse.JobList.Length"); i++) {
 			Job job = new Job();
-			job.setId(context.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Id"));
-			job.setUserData(context.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].UserData"));
-			job.setPipelineId(context.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].PipelineId"));
-			job.setState(context.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].State"));
-			job.setCode(context.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Code"));
-			job.setMessage(context.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Message"));
-			job.setCreationTime(context.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].CreationTime"));
+			job.setId(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Id"));
+			job.setUserData(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].UserData"));
+			job.setPipelineId(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].PipelineId"));
+			job.setState(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].State"));
+			job.setCode(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Code"));
+			job.setMessage(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Message"));
+			job.setCreationTime(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].CreationTime"));
 
 			Input input = new Input();
-			input.setBucket(context.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Input.Bucket"));
-			input.setLocation(context.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Input.Location"));
-			input.setObject(context.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Input.Object"));
+			input.setBucket(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Input.Bucket"));
+			input.setLocation(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Input.Location"));
+			input.setObject(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Input.Object"));
 			job.setInput(input);
 
 			VideoSummaryResult videoSummaryResult = new VideoSummaryResult();
 
 			OutputFile outputFile = new OutputFile();
-			outputFile.setBucket(context.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.OutputFile.Bucket"));
-			outputFile.setLocation(context.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.OutputFile.Location"));
-			outputFile.setObject(context.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.OutputFile.Object"));
+			outputFile.setBucket(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.OutputFile.Bucket"));
+			outputFile.setLocation(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.OutputFile.Location"));
+			outputFile.setObject(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.OutputFile.Object"));
 			videoSummaryResult.setOutputFile(outputFile);
 
 			List<VideoSummary> videoSummaryList = new ArrayList<VideoSummary>();
-			for (int j = 0; j < context.lengthValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.VideoSummaryList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.VideoSummaryList.Length"); j++) {
 				VideoSummary videoSummary = new VideoSummary();
-				videoSummary.setStartTime(context.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.VideoSummaryList["+ j +"].StartTime"));
-				videoSummary.setEndTime(context.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.VideoSummaryList["+ j +"].EndTime"));
+				videoSummary.setStartTime(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.VideoSummaryList["+ j +"].StartTime"));
+				videoSummary.setEndTime(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.VideoSummaryList["+ j +"].EndTime"));
 
 				videoSummaryList.add(videoSummary);
 			}

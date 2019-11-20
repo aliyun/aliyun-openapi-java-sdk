@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddCategoryResponseUnmarshaller {
 
-	public static AddCategoryResponse unmarshall(AddCategoryResponse addCategoryResponse, UnmarshallerContext context) {
+	public static AddCategoryResponse unmarshall(AddCategoryResponse addCategoryResponse, UnmarshallerContext _ctx) {
 		
-		addCategoryResponse.setRequestId(context.stringValue("AddCategoryResponse.RequestId"));
+		addCategoryResponse.setRequestId(_ctx.stringValue("AddCategoryResponse.RequestId"));
 
 		Category category = new Category();
-		category.setCateId(context.stringValue("AddCategoryResponse.Category.CateId"));
-		category.setCateName(context.stringValue("AddCategoryResponse.Category.CateName"));
-		category.setParentId(context.stringValue("AddCategoryResponse.Category.ParentId"));
-		category.setLevel(context.stringValue("AddCategoryResponse.Category.Level"));
+		category.setCateId(_ctx.stringValue("AddCategoryResponse.Category.CateId"));
+		category.setCateName(_ctx.stringValue("AddCategoryResponse.Category.CateName"));
+		category.setParentId(_ctx.stringValue("AddCategoryResponse.Category.ParentId"));
+		category.setLevel(_ctx.stringValue("AddCategoryResponse.Category.Level"));
 		addCategoryResponse.setCategory(category);
 	 
 	 	return addCategoryResponse;

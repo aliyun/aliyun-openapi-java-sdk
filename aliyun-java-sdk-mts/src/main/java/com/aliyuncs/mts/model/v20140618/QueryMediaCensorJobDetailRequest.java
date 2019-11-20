@@ -15,40 +15,36 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryMediaCensorJobDetailRequest extends RpcAcsRequest<QueryMediaCensorJobDetailResponse> {
-	
-	public QueryMediaCensorJobDetailRequest() {
-		super("Mts", "2014-06-18", "QueryMediaCensorJobDetail", "mts");
-	}
-
-	private String jobId;
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String nextPageToken;
+
+	private String jobId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long maximumPageSize;
 
 	private Long ownerId;
-
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
-		}
+	public QueryMediaCensorJobDetailRequest() {
+		super("Mts", "2014-06-18", "QueryMediaCensorJobDetail", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -62,17 +58,6 @@ public class QueryMediaCensorJobDetailRequest extends RpcAcsRequest<QueryMediaCe
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getNextPageToken() {
 		return this.nextPageToken;
 	}
@@ -81,6 +66,28 @@ public class QueryMediaCensorJobDetailRequest extends RpcAcsRequest<QueryMediaCe
 		this.nextPageToken = nextPageToken;
 		if(nextPageToken != null){
 			putQueryParameter("NextPageToken", nextPageToken);
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

@@ -15,28 +15,35 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddMediaTagRequest extends RpcAcsRequest<AddMediaTagResponse> {
-	
-	public AddMediaTagRequest() {
-		super("Mts", "2014-06-18", "AddMediaTag", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String tag;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String tag;
-
 	private Long ownerId;
 
 	private String mediaId;
+	public AddMediaTagRequest() {
+		super("Mts", "2014-06-18", "AddMediaTag", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,6 +53,17 @@ public class AddMediaTagRequest extends RpcAcsRequest<AddMediaTagResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 
@@ -68,17 +86,6 @@ public class AddMediaTagRequest extends RpcAcsRequest<AddMediaTagResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getTag() {
-		return this.tag;
-	}
-
-	public void setTag(String tag) {
-		this.tag = tag;
-		if(tag != null){
-			putQueryParameter("Tag", tag);
 		}
 	}
 

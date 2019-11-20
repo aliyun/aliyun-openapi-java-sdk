@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ActivateMediaWorkflowResponseUnmarshaller {
 
-	public static ActivateMediaWorkflowResponse unmarshall(ActivateMediaWorkflowResponse activateMediaWorkflowResponse, UnmarshallerContext context) {
+	public static ActivateMediaWorkflowResponse unmarshall(ActivateMediaWorkflowResponse activateMediaWorkflowResponse, UnmarshallerContext _ctx) {
 		
-		activateMediaWorkflowResponse.setRequestId(context.stringValue("ActivateMediaWorkflowResponse.RequestId"));
+		activateMediaWorkflowResponse.setRequestId(_ctx.stringValue("ActivateMediaWorkflowResponse.RequestId"));
 
 		MediaWorkflow mediaWorkflow = new MediaWorkflow();
-		mediaWorkflow.setMediaWorkflowId(context.stringValue("ActivateMediaWorkflowResponse.MediaWorkflow.MediaWorkflowId"));
-		mediaWorkflow.setName(context.stringValue("ActivateMediaWorkflowResponse.MediaWorkflow.Name"));
-		mediaWorkflow.setTopology(context.stringValue("ActivateMediaWorkflowResponse.MediaWorkflow.Topology"));
-		mediaWorkflow.setState(context.stringValue("ActivateMediaWorkflowResponse.MediaWorkflow.State"));
-		mediaWorkflow.setCreationTime(context.stringValue("ActivateMediaWorkflowResponse.MediaWorkflow.CreationTime"));
+		mediaWorkflow.setMediaWorkflowId(_ctx.stringValue("ActivateMediaWorkflowResponse.MediaWorkflow.MediaWorkflowId"));
+		mediaWorkflow.setName(_ctx.stringValue("ActivateMediaWorkflowResponse.MediaWorkflow.Name"));
+		mediaWorkflow.setTopology(_ctx.stringValue("ActivateMediaWorkflowResponse.MediaWorkflow.Topology"));
+		mediaWorkflow.setState(_ctx.stringValue("ActivateMediaWorkflowResponse.MediaWorkflow.State"));
+		mediaWorkflow.setCreationTime(_ctx.stringValue("ActivateMediaWorkflowResponse.MediaWorkflow.CreationTime"));
 		activateMediaWorkflowResponse.setMediaWorkflow(mediaWorkflow);
 	 
 	 	return activateMediaWorkflowResponse;

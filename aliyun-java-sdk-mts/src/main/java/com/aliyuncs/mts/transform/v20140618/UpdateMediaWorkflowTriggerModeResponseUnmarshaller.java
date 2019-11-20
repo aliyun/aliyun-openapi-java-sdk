@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateMediaWorkflowTriggerModeResponseUnmarshaller {
 
-	public static UpdateMediaWorkflowTriggerModeResponse unmarshall(UpdateMediaWorkflowTriggerModeResponse updateMediaWorkflowTriggerModeResponse, UnmarshallerContext context) {
+	public static UpdateMediaWorkflowTriggerModeResponse unmarshall(UpdateMediaWorkflowTriggerModeResponse updateMediaWorkflowTriggerModeResponse, UnmarshallerContext _ctx) {
 		
-		updateMediaWorkflowTriggerModeResponse.setRequestId(context.stringValue("UpdateMediaWorkflowTriggerModeResponse.RequestId"));
+		updateMediaWorkflowTriggerModeResponse.setRequestId(_ctx.stringValue("UpdateMediaWorkflowTriggerModeResponse.RequestId"));
 
 		MediaWorkflow mediaWorkflow = new MediaWorkflow();
-		mediaWorkflow.setMediaWorkflowId(context.stringValue("UpdateMediaWorkflowTriggerModeResponse.MediaWorkflow.MediaWorkflowId"));
-		mediaWorkflow.setName(context.stringValue("UpdateMediaWorkflowTriggerModeResponse.MediaWorkflow.Name"));
-		mediaWorkflow.setTopology(context.stringValue("UpdateMediaWorkflowTriggerModeResponse.MediaWorkflow.Topology"));
-		mediaWorkflow.setTriggerMode(context.stringValue("UpdateMediaWorkflowTriggerModeResponse.MediaWorkflow.TriggerMode"));
-		mediaWorkflow.setState(context.stringValue("UpdateMediaWorkflowTriggerModeResponse.MediaWorkflow.State"));
-		mediaWorkflow.setCreationTime(context.stringValue("UpdateMediaWorkflowTriggerModeResponse.MediaWorkflow.CreationTime"));
+		mediaWorkflow.setMediaWorkflowId(_ctx.stringValue("UpdateMediaWorkflowTriggerModeResponse.MediaWorkflow.MediaWorkflowId"));
+		mediaWorkflow.setName(_ctx.stringValue("UpdateMediaWorkflowTriggerModeResponse.MediaWorkflow.Name"));
+		mediaWorkflow.setTopology(_ctx.stringValue("UpdateMediaWorkflowTriggerModeResponse.MediaWorkflow.Topology"));
+		mediaWorkflow.setTriggerMode(_ctx.stringValue("UpdateMediaWorkflowTriggerModeResponse.MediaWorkflow.TriggerMode"));
+		mediaWorkflow.setState(_ctx.stringValue("UpdateMediaWorkflowTriggerModeResponse.MediaWorkflow.State"));
+		mediaWorkflow.setCreationTime(_ctx.stringValue("UpdateMediaWorkflowTriggerModeResponse.MediaWorkflow.CreationTime"));
 		updateMediaWorkflowTriggerModeResponse.setMediaWorkflow(mediaWorkflow);
 	 
 	 	return updateMediaWorkflowTriggerModeResponse;

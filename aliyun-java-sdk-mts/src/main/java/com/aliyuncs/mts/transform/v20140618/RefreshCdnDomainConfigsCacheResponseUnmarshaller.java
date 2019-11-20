@@ -23,19 +23,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RefreshCdnDomainConfigsCacheResponseUnmarshaller {
 
-	public static RefreshCdnDomainConfigsCacheResponse unmarshall(RefreshCdnDomainConfigsCacheResponse refreshCdnDomainConfigsCacheResponse, UnmarshallerContext context) {
+	public static RefreshCdnDomainConfigsCacheResponse unmarshall(RefreshCdnDomainConfigsCacheResponse refreshCdnDomainConfigsCacheResponse, UnmarshallerContext _ctx) {
 		
-		refreshCdnDomainConfigsCacheResponse.setRequestId(context.stringValue("RefreshCdnDomainConfigsCacheResponse.RequestId"));
+		refreshCdnDomainConfigsCacheResponse.setRequestId(_ctx.stringValue("RefreshCdnDomainConfigsCacheResponse.RequestId"));
 
 		List<String> sucessDomains = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("RefreshCdnDomainConfigsCacheResponse.SucessDomains.Length"); i++) {
-			sucessDomains.add(context.stringValue("RefreshCdnDomainConfigsCacheResponse.SucessDomains["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("RefreshCdnDomainConfigsCacheResponse.SucessDomains.Length"); i++) {
+			sucessDomains.add(_ctx.stringValue("RefreshCdnDomainConfigsCacheResponse.SucessDomains["+ i +"]"));
 		}
 		refreshCdnDomainConfigsCacheResponse.setSucessDomains(sucessDomains);
 
 		List<String> failedDomains = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("RefreshCdnDomainConfigsCacheResponse.FailedDomains.Length"); i++) {
-			failedDomains.add(context.stringValue("RefreshCdnDomainConfigsCacheResponse.FailedDomains["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("RefreshCdnDomainConfigsCacheResponse.FailedDomains.Length"); i++) {
+			failedDomains.add(_ctx.stringValue("RefreshCdnDomainConfigsCacheResponse.FailedDomains["+ i +"]"));
 		}
 		refreshCdnDomainConfigsCacheResponse.setFailedDomains(failedDomains);
 	 

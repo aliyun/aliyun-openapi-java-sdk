@@ -15,16 +15,15 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateMcuTemplateRequest extends RpcAcsRequest<CreateMcuTemplateResponse> {
-	
-	public CreateMcuTemplateRequest() {
-		super("Mts", "2014-06-18", "CreateMcuTemplate", "mts");
-	}
+	   
 
 	private String template;
 
@@ -35,6 +34,14 @@ public class CreateMcuTemplateRequest extends RpcAcsRequest<CreateMcuTemplateRes
 	private String ownerAccount;
 
 	private Long ownerId;
+	public CreateMcuTemplateRequest() {
+		super("Mts", "2014-06-18", "CreateMcuTemplate", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTemplate() {
 		return this.template;

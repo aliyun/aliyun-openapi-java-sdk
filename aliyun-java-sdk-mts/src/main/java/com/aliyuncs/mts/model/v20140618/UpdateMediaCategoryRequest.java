@@ -15,28 +15,35 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateMediaCategoryRequest extends RpcAcsRequest<UpdateMediaCategoryResponse> {
-	
-	public UpdateMediaCategoryRequest() {
-		super("Mts", "2014-06-18", "UpdateMediaCategory", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private Long cateId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
 	private String mediaId;
+	public UpdateMediaCategoryRequest() {
+		super("Mts", "2014-06-18", "UpdateMediaCategory", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,17 +56,6 @@ public class UpdateMediaCategoryRequest extends RpcAcsRequest<UpdateMediaCategor
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public Long getCateId() {
 		return this.cateId;
 	}
@@ -68,6 +64,17 @@ public class UpdateMediaCategoryRequest extends RpcAcsRequest<UpdateMediaCategor
 		this.cateId = cateId;
 		if(cateId != null){
 			putQueryParameter("CateId", cateId.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

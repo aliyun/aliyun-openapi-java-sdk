@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddMediaTagResponseUnmarshaller {
 
-	public static AddMediaTagResponse unmarshall(AddMediaTagResponse addMediaTagResponse, UnmarshallerContext context) {
+	public static AddMediaTagResponse unmarshall(AddMediaTagResponse addMediaTagResponse, UnmarshallerContext _ctx) {
 		
-		addMediaTagResponse.setRequestId(context.stringValue("AddMediaTagResponse.RequestId"));
+		addMediaTagResponse.setRequestId(_ctx.stringValue("AddMediaTagResponse.RequestId"));
 	 
 	 	return addMediaTagResponse;
 	}

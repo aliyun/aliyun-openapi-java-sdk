@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CancelJobResponseUnmarshaller {
 
-	public static CancelJobResponse unmarshall(CancelJobResponse cancelJobResponse, UnmarshallerContext context) {
+	public static CancelJobResponse unmarshall(CancelJobResponse cancelJobResponse, UnmarshallerContext _ctx) {
 		
-		cancelJobResponse.setRequestId(context.stringValue("CancelJobResponse.RequestId"));
-		cancelJobResponse.setJobId(context.stringValue("CancelJobResponse.JobId"));
+		cancelJobResponse.setRequestId(_ctx.stringValue("CancelJobResponse.RequestId"));
+		cancelJobResponse.setJobId(_ctx.stringValue("CancelJobResponse.JobId"));
 	 
 	 	return cancelJobResponse;
 	}

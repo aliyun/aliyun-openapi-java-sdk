@@ -15,32 +15,39 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryFpImportResultRequest extends RpcAcsRequest<QueryFpImportResultResponse> {
-	
-	public QueryFpImportResultRequest() {
-		super("Mts", "2014-06-18", "QueryFpImportResult", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private Long startTime;
+
+	private Long pageSize;
+
+	private Long pageIndex;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Long pageSize;
-
 	private Long endTime;
 
-	private Long pageIndex;
-
-	private Long startTime;
-
 	private Long ownerId;
+	public QueryFpImportResultRequest() {
+		super("Mts", "2014-06-18", "QueryFpImportResult", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,6 +57,39 @@ public class QueryFpImportResultRequest extends RpcAcsRequest<QueryFpImportResul
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getPageIndex() {
+		return this.pageIndex;
+	}
+
+	public void setPageIndex(Long pageIndex) {
+		this.pageIndex = pageIndex;
+		if(pageIndex != null){
+			putQueryParameter("PageIndex", pageIndex.toString());
 		}
 	}
 
@@ -75,17 +115,6 @@ public class QueryFpImportResultRequest extends RpcAcsRequest<QueryFpImportResul
 		}
 	}
 
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Long getEndTime() {
 		return this.endTime;
 	}
@@ -94,28 +123,6 @@ public class QueryFpImportResultRequest extends RpcAcsRequest<QueryFpImportResul
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime.toString());
-		}
-	}
-
-	public Long getPageIndex() {
-		return this.pageIndex;
-	}
-
-	public void setPageIndex(Long pageIndex) {
-		this.pageIndex = pageIndex;
-		if(pageIndex != null){
-			putQueryParameter("PageIndex", pageIndex.toString());
-		}
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 

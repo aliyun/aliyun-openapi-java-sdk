@@ -15,28 +15,35 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateMediaPublishStateRequest extends RpcAcsRequest<UpdateMediaPublishStateResponse> {
-	
-	public UpdateMediaPublishStateRequest() {
-		super("Mts", "2014-06-18", "UpdateMediaPublishState", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
-
-	private Boolean publish;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
 	private String mediaId;
+
+	private Boolean publish;
+	public UpdateMediaPublishStateRequest() {
+		super("Mts", "2014-06-18", "UpdateMediaPublishState", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -57,17 +64,6 @@ public class UpdateMediaPublishStateRequest extends RpcAcsRequest<UpdateMediaPub
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Boolean getPublish() {
-		return this.publish;
-	}
-
-	public void setPublish(Boolean publish) {
-		this.publish = publish;
-		if(publish != null){
-			putQueryParameter("Publish", publish.toString());
 		}
 	}
 
@@ -101,6 +97,17 @@ public class UpdateMediaPublishStateRequest extends RpcAcsRequest<UpdateMediaPub
 		this.mediaId = mediaId;
 		if(mediaId != null){
 			putQueryParameter("MediaId", mediaId);
+		}
+	}
+
+	public Boolean getPublish() {
+		return this.publish;
+	}
+
+	public void setPublish(Boolean publish) {
+		this.publish = publish;
+		if(publish != null){
+			putQueryParameter("Publish", publish.toString());
 		}
 	}
 

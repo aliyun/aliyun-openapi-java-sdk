@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitCoverJobResponseUnmarshaller {
 
-	public static SubmitCoverJobResponse unmarshall(SubmitCoverJobResponse submitCoverJobResponse, UnmarshallerContext context) {
+	public static SubmitCoverJobResponse unmarshall(SubmitCoverJobResponse submitCoverJobResponse, UnmarshallerContext _ctx) {
 		
-		submitCoverJobResponse.setRequestId(context.stringValue("SubmitCoverJobResponse.RequestId"));
-		submitCoverJobResponse.setJobId(context.stringValue("SubmitCoverJobResponse.JobId"));
+		submitCoverJobResponse.setRequestId(_ctx.stringValue("SubmitCoverJobResponse.RequestId"));
+		submitCoverJobResponse.setJobId(_ctx.stringValue("SubmitCoverJobResponse.JobId"));
 	 
 	 	return submitCoverJobResponse;
 	}

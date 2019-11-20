@@ -15,57 +15,42 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitImageSearchJobRequest extends RpcAcsRequest<SubmitImageSearchJobResponse> {
-	
-	public SubmitImageSearchJobRequest() {
-		super("Mts", "2014-06-18", "SubmitImageSearchJob", "mts");
-	}
-
-	private String inputImage;
-
-	private String userData;
+	   
 
 	private Long resourceOwnerId;
 
 	private String fpDBId;
 
-	private String resourceOwnerAccount;
+	private String userData;
 
 	private String inputVideo;
+
+	private String inputImage;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String config;
-
 	private String pipelineId;
 
-	public String getInputImage() {
-		return this.inputImage;
-	}
-
-	public void setInputImage(String inputImage) {
-		this.inputImage = inputImage;
-		if(inputImage != null){
-			putQueryParameter("InputImage", inputImage);
-		}
-	}
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
+	private String config;
+	public SubmitImageSearchJobRequest() {
+		super("Mts", "2014-06-18", "SubmitImageSearchJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -90,14 +75,14 @@ public class SubmitImageSearchJobRequest extends RpcAcsRequest<SubmitImageSearch
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getUserData() {
+		return this.userData;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
 		}
 	}
 
@@ -109,6 +94,28 @@ public class SubmitImageSearchJobRequest extends RpcAcsRequest<SubmitImageSearch
 		this.inputVideo = inputVideo;
 		if(inputVideo != null){
 			putQueryParameter("InputVideo", inputVideo);
+		}
+	}
+
+	public String getInputImage() {
+		return this.inputImage;
+	}
+
+	public void setInputImage(String inputImage) {
+		this.inputImage = inputImage;
+		if(inputImage != null){
+			putQueryParameter("InputImage", inputImage);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -134,17 +141,6 @@ public class SubmitImageSearchJobRequest extends RpcAcsRequest<SubmitImageSearch
 		}
 	}
 
-	public String getConfig() {
-		return this.config;
-	}
-
-	public void setConfig(String config) {
-		this.config = config;
-		if(config != null){
-			putQueryParameter("Config", config);
-		}
-	}
-
 	public String getPipelineId() {
 		return this.pipelineId;
 	}
@@ -153,6 +149,17 @@ public class SubmitImageSearchJobRequest extends RpcAcsRequest<SubmitImageSearch
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getConfig() {
+		return this.config;
+	}
+
+	public void setConfig(String config) {
+		this.config = config;
+		if(config != null){
+			putQueryParameter("Config", config);
 		}
 	}
 

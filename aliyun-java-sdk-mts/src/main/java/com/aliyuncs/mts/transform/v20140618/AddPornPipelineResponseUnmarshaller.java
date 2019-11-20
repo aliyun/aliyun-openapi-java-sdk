@@ -22,19 +22,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddPornPipelineResponseUnmarshaller {
 
-	public static AddPornPipelineResponse unmarshall(AddPornPipelineResponse addPornPipelineResponse, UnmarshallerContext context) {
+	public static AddPornPipelineResponse unmarshall(AddPornPipelineResponse addPornPipelineResponse, UnmarshallerContext _ctx) {
 		
-		addPornPipelineResponse.setRequestId(context.stringValue("AddPornPipelineResponse.RequestId"));
+		addPornPipelineResponse.setRequestId(_ctx.stringValue("AddPornPipelineResponse.RequestId"));
 
 		Pipeline pipeline = new Pipeline();
-		pipeline.setId(context.stringValue("AddPornPipelineResponse.Pipeline.Id"));
-		pipeline.setName(context.stringValue("AddPornPipelineResponse.Pipeline.Name"));
-		pipeline.setPriority(context.integerValue("AddPornPipelineResponse.Pipeline.Priority"));
-		pipeline.setState(context.stringValue("AddPornPipelineResponse.Pipeline.State"));
+		pipeline.setId(_ctx.stringValue("AddPornPipelineResponse.Pipeline.Id"));
+		pipeline.setName(_ctx.stringValue("AddPornPipelineResponse.Pipeline.Name"));
+		pipeline.setPriority(_ctx.integerValue("AddPornPipelineResponse.Pipeline.Priority"));
+		pipeline.setState(_ctx.stringValue("AddPornPipelineResponse.Pipeline.State"));
 
 		NotifyConfig notifyConfig = new NotifyConfig();
-		notifyConfig.setTopic(context.stringValue("AddPornPipelineResponse.Pipeline.NotifyConfig.Topic"));
-		notifyConfig.setQueue(context.stringValue("AddPornPipelineResponse.Pipeline.NotifyConfig.Queue"));
+		notifyConfig.setTopic(_ctx.stringValue("AddPornPipelineResponse.Pipeline.NotifyConfig.Topic"));
+		notifyConfig.setQueue(_ctx.stringValue("AddPornPipelineResponse.Pipeline.NotifyConfig.Queue"));
 		pipeline.setNotifyConfig(notifyConfig);
 		addPornPipelineResponse.setPipeline(pipeline);
 	 

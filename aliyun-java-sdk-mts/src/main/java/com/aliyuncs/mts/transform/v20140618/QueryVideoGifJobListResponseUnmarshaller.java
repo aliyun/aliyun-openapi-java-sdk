@@ -27,39 +27,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryVideoGifJobListResponseUnmarshaller {
 
-	public static QueryVideoGifJobListResponse unmarshall(QueryVideoGifJobListResponse queryVideoGifJobListResponse, UnmarshallerContext context) {
+	public static QueryVideoGifJobListResponse unmarshall(QueryVideoGifJobListResponse queryVideoGifJobListResponse, UnmarshallerContext _ctx) {
 		
-		queryVideoGifJobListResponse.setRequestId(context.stringValue("QueryVideoGifJobListResponse.RequestId"));
+		queryVideoGifJobListResponse.setRequestId(_ctx.stringValue("QueryVideoGifJobListResponse.RequestId"));
 
 		List<String> nonExistIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryVideoGifJobListResponse.NonExistIds.Length"); i++) {
-			nonExistIds.add(context.stringValue("QueryVideoGifJobListResponse.NonExistIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryVideoGifJobListResponse.NonExistIds.Length"); i++) {
+			nonExistIds.add(_ctx.stringValue("QueryVideoGifJobListResponse.NonExistIds["+ i +"]"));
 		}
 		queryVideoGifJobListResponse.setNonExistIds(nonExistIds);
 
 		List<Job> jobList = new ArrayList<Job>();
-		for (int i = 0; i < context.lengthValue("QueryVideoGifJobListResponse.JobList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryVideoGifJobListResponse.JobList.Length"); i++) {
 			Job job = new Job();
-			job.setId(context.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Id"));
-			job.setUserData(context.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].UserData"));
-			job.setPipelineId(context.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].PipelineId"));
-			job.setState(context.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].State"));
-			job.setCode(context.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Code"));
-			job.setMessage(context.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Message"));
-			job.setCreationTime(context.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].CreationTime"));
+			job.setId(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Id"));
+			job.setUserData(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].UserData"));
+			job.setPipelineId(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].PipelineId"));
+			job.setState(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].State"));
+			job.setCode(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Code"));
+			job.setMessage(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Message"));
+			job.setCreationTime(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].CreationTime"));
 
 			Input input = new Input();
-			input.setBucket(context.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Input.Bucket"));
-			input.setLocation(context.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Input.Location"));
-			input.setObject(context.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Input.Object"));
+			input.setBucket(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Input.Bucket"));
+			input.setLocation(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Input.Location"));
+			input.setObject(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Input.Object"));
 			job.setInput(input);
 
 			VideoGifResult videoGifResult = new VideoGifResult();
 
 			OutputFile outputFile = new OutputFile();
-			outputFile.setBucket(context.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].VideoGifResult.OutputFile.Bucket"));
-			outputFile.setLocation(context.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].VideoGifResult.OutputFile.Location"));
-			outputFile.setObject(context.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].VideoGifResult.OutputFile.Object"));
+			outputFile.setBucket(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].VideoGifResult.OutputFile.Bucket"));
+			outputFile.setLocation(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].VideoGifResult.OutputFile.Location"));
+			outputFile.setObject(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].VideoGifResult.OutputFile.Object"));
 			videoGifResult.setOutputFile(outputFile);
 			job.setVideoGifResult(videoGifResult);
 

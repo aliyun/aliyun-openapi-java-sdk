@@ -30,68 +30,68 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryPornJobListResponseUnmarshaller {
 
-	public static QueryPornJobListResponse unmarshall(QueryPornJobListResponse queryPornJobListResponse, UnmarshallerContext context) {
+	public static QueryPornJobListResponse unmarshall(QueryPornJobListResponse queryPornJobListResponse, UnmarshallerContext _ctx) {
 		
-		queryPornJobListResponse.setRequestId(context.stringValue("QueryPornJobListResponse.RequestId"));
+		queryPornJobListResponse.setRequestId(_ctx.stringValue("QueryPornJobListResponse.RequestId"));
 
 		List<String> nonExistIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryPornJobListResponse.NonExistIds.Length"); i++) {
-			nonExistIds.add(context.stringValue("QueryPornJobListResponse.NonExistIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryPornJobListResponse.NonExistIds.Length"); i++) {
+			nonExistIds.add(_ctx.stringValue("QueryPornJobListResponse.NonExistIds["+ i +"]"));
 		}
 		queryPornJobListResponse.setNonExistIds(nonExistIds);
 
 		List<PornJob> pornJobList = new ArrayList<PornJob>();
-		for (int i = 0; i < context.lengthValue("QueryPornJobListResponse.PornJobList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryPornJobListResponse.PornJobList.Length"); i++) {
 			PornJob pornJob = new PornJob();
-			pornJob.setId(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].Id"));
-			pornJob.setUserData(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].UserData"));
-			pornJob.setPipelineId(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].PipelineId"));
-			pornJob.setState(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].State"));
-			pornJob.setCode(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].Code"));
-			pornJob.setMessage(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].Message"));
-			pornJob.setCreationTime(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CreationTime"));
+			pornJob.setId(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].Id"));
+			pornJob.setUserData(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].UserData"));
+			pornJob.setPipelineId(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].PipelineId"));
+			pornJob.setState(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].State"));
+			pornJob.setCode(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].Code"));
+			pornJob.setMessage(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].Message"));
+			pornJob.setCreationTime(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CreationTime"));
 
 			Input input = new Input();
-			input.setBucket(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].Input.Bucket"));
-			input.setLocation(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].Input.Location"));
-			input.setObject(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].Input.Object"));
+			input.setBucket(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].Input.Bucket"));
+			input.setLocation(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].Input.Location"));
+			input.setObject(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].Input.Object"));
 			pornJob.setInput(input);
 
 			PornConfig pornConfig = new PornConfig();
-			pornConfig.setInterval(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].PornConfig.Interval"));
-			pornConfig.setBizType(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].PornConfig.BizType"));
+			pornConfig.setInterval(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].PornConfig.Interval"));
+			pornConfig.setBizType(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].PornConfig.BizType"));
 
 			OutputFile outputFile = new OutputFile();
-			outputFile.setBucket(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].PornConfig.OutputFile.Bucket"));
-			outputFile.setLocation(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].PornConfig.OutputFile.Location"));
-			outputFile.setObject(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].PornConfig.OutputFile.Object"));
+			outputFile.setBucket(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].PornConfig.OutputFile.Bucket"));
+			outputFile.setLocation(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].PornConfig.OutputFile.Location"));
+			outputFile.setObject(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].PornConfig.OutputFile.Object"));
 			pornConfig.setOutputFile(outputFile);
 			pornJob.setPornConfig(pornConfig);
 
 			CensorPornResult censorPornResult = new CensorPornResult();
-			censorPornResult.setLabel(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.Label"));
-			censorPornResult.setSuggestion(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.Suggestion"));
-			censorPornResult.setMaxScore(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.MaxScore"));
-			censorPornResult.setAverageScore(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.AverageScore"));
+			censorPornResult.setLabel(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.Label"));
+			censorPornResult.setSuggestion(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.Suggestion"));
+			censorPornResult.setMaxScore(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.MaxScore"));
+			censorPornResult.setAverageScore(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.AverageScore"));
 
 			List<Counter> pornCounterList = new ArrayList<Counter>();
-			for (int j = 0; j < context.lengthValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornCounterList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornCounterList.Length"); j++) {
 				Counter counter = new Counter();
-				counter.setCount(context.integerValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornCounterList["+ j +"].Count"));
-				counter.setLabel(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornCounterList["+ j +"].Label"));
+				counter.setCount(_ctx.integerValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornCounterList["+ j +"].Count"));
+				counter.setLabel(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornCounterList["+ j +"].Label"));
 
 				pornCounterList.add(counter);
 			}
 			censorPornResult.setPornCounterList(pornCounterList);
 
 			List<Top> pornTopList = new ArrayList<Top>();
-			for (int j = 0; j < context.lengthValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornTopList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornTopList.Length"); j++) {
 				Top top = new Top();
-				top.setLabel(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornTopList["+ j +"].Label"));
-				top.setScore(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornTopList["+ j +"].Score"));
-				top.setTimestamp(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornTopList["+ j +"].Timestamp"));
-				top.setIndex(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornTopList["+ j +"].Index"));
-				top.setObject(context.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornTopList["+ j +"].Object"));
+				top.setLabel(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornTopList["+ j +"].Label"));
+				top.setScore(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornTopList["+ j +"].Score"));
+				top.setTimestamp(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornTopList["+ j +"].Timestamp"));
+				top.setIndex(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornTopList["+ j +"].Index"));
+				top.setObject(_ctx.stringValue("QueryPornJobListResponse.PornJobList["+ i +"].CensorPornResult.PornTopList["+ j +"].Object"));
 
 				pornTopList.add(top);
 			}

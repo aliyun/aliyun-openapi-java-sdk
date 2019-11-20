@@ -25,27 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryTerrorismPipelineListResponseUnmarshaller {
 
-	public static QueryTerrorismPipelineListResponse unmarshall(QueryTerrorismPipelineListResponse queryTerrorismPipelineListResponse, UnmarshallerContext context) {
+	public static QueryTerrorismPipelineListResponse unmarshall(QueryTerrorismPipelineListResponse queryTerrorismPipelineListResponse, UnmarshallerContext _ctx) {
 		
-		queryTerrorismPipelineListResponse.setRequestId(context.stringValue("QueryTerrorismPipelineListResponse.RequestId"));
+		queryTerrorismPipelineListResponse.setRequestId(_ctx.stringValue("QueryTerrorismPipelineListResponse.RequestId"));
 
 		List<String> nonExistIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryTerrorismPipelineListResponse.NonExistIds.Length"); i++) {
-			nonExistIds.add(context.stringValue("QueryTerrorismPipelineListResponse.NonExistIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryTerrorismPipelineListResponse.NonExistIds.Length"); i++) {
+			nonExistIds.add(_ctx.stringValue("QueryTerrorismPipelineListResponse.NonExistIds["+ i +"]"));
 		}
 		queryTerrorismPipelineListResponse.setNonExistIds(nonExistIds);
 
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
-		for (int i = 0; i < context.lengthValue("QueryTerrorismPipelineListResponse.PipelineList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryTerrorismPipelineListResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setId(context.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].Id"));
-			pipeline.setName(context.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].Name"));
-			pipeline.setState(context.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].State"));
-			pipeline.setPriority(context.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].Priority"));
+			pipeline.setId(_ctx.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].Id"));
+			pipeline.setName(_ctx.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].Name"));
+			pipeline.setState(_ctx.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].State"));
+			pipeline.setPriority(_ctx.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].Priority"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
-			notifyConfig.setTopic(context.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
-			notifyConfig.setQueue(context.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Queue"));
+			notifyConfig.setTopic(_ctx.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
+			notifyConfig.setQueue(_ctx.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Queue"));
 			pipeline.setNotifyConfig(notifyConfig);
 
 			pipelineList.add(pipeline);

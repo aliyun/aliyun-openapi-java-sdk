@@ -15,24 +15,23 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitSubtitleJobRequest extends RpcAcsRequest<SubmitSubtitleJobResponse> {
-	
-	public SubmitSubtitleJobRequest() {
-		super("Mts", "2014-06-18", "SubmitSubtitleJob", "mts");
-	}
-
-	private String userData;
+	   
 
 	private Long resourceOwnerId;
 
 	private String outputConfig;
 
 	private String inputConfig;
+
+	private String userData;
 
 	private String resourceOwnerAccount;
 
@@ -41,16 +40,13 @@ public class SubmitSubtitleJobRequest extends RpcAcsRequest<SubmitSubtitleJobRes
 	private Long ownerId;
 
 	private String pipelineId;
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
+	public SubmitSubtitleJobRequest() {
+		super("Mts", "2014-06-18", "SubmitSubtitleJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -83,6 +79,17 @@ public class SubmitSubtitleJobRequest extends RpcAcsRequest<SubmitSubtitleJobRes
 		this.inputConfig = inputConfig;
 		if(inputConfig != null){
 			putQueryParameter("InputConfig", inputConfig);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
 		}
 	}
 

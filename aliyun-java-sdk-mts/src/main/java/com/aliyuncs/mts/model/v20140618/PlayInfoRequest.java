@@ -15,22 +15,25 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class PlayInfoRequest extends RpcAcsRequest<PlayInfoResponse> {
-	
-	public PlayInfoRequest() {
-		super("Mts", "2014-06-18", "PlayInfo", "mts");
-	}
-
-	private String playDomain;
+	   
 
 	private String resourceOwnerId;
 
 	private String formats;
+
+	private String rand;
+
+	private Long authTimeout;
+
+	private String playDomain;
 
 	private String resourceOwnerAccount;
 
@@ -44,21 +47,14 @@ public class PlayInfoRequest extends RpcAcsRequest<PlayInfoResponse> {
 
 	private String mediaId;
 
-	private String rand;
-
-	private Long authTimeout;
-
 	private String authInfo;
-
-	public String getPlayDomain() {
-		return this.playDomain;
-	}
-
-	public void setPlayDomain(String playDomain) {
-		this.playDomain = playDomain;
-		if(playDomain != null){
-			putQueryParameter("PlayDomain", playDomain);
-		}
+	public PlayInfoRequest() {
+		super("Mts", "2014-06-18", "PlayInfo", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getResourceOwnerId() {
@@ -80,6 +76,39 @@ public class PlayInfoRequest extends RpcAcsRequest<PlayInfoResponse> {
 		this.formats = formats;
 		if(formats != null){
 			putQueryParameter("Formats", formats);
+		}
+	}
+
+	public String getRand() {
+		return this.rand;
+	}
+
+	public void setRand(String rand) {
+		this.rand = rand;
+		if(rand != null){
+			putQueryParameter("Rand", rand);
+		}
+	}
+
+	public Long getAuthTimeout() {
+		return this.authTimeout;
+	}
+
+	public void setAuthTimeout(Long authTimeout) {
+		this.authTimeout = authTimeout;
+		if(authTimeout != null){
+			putQueryParameter("AuthTimeout", authTimeout.toString());
+		}
+	}
+
+	public String getPlayDomain() {
+		return this.playDomain;
+	}
+
+	public void setPlayDomain(String playDomain) {
+		this.playDomain = playDomain;
+		if(playDomain != null){
+			putQueryParameter("PlayDomain", playDomain);
 		}
 	}
 
@@ -146,28 +175,6 @@ public class PlayInfoRequest extends RpcAcsRequest<PlayInfoResponse> {
 		this.mediaId = mediaId;
 		if(mediaId != null){
 			putQueryParameter("MediaId", mediaId);
-		}
-	}
-
-	public String getRand() {
-		return this.rand;
-	}
-
-	public void setRand(String rand) {
-		this.rand = rand;
-		if(rand != null){
-			putQueryParameter("Rand", rand);
-		}
-	}
-
-	public Long getAuthTimeout() {
-		return this.authTimeout;
-	}
-
-	public void setAuthTimeout(Long authTimeout) {
-		this.authTimeout = authTimeout;
-		if(authTimeout != null){
-			putQueryParameter("AuthTimeout", authTimeout.toString());
 		}
 	}
 

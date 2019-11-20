@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListPornPipelineResponseUnmarshaller {
 
-	public static ListPornPipelineResponse unmarshall(ListPornPipelineResponse listPornPipelineResponse, UnmarshallerContext context) {
+	public static ListPornPipelineResponse unmarshall(ListPornPipelineResponse listPornPipelineResponse, UnmarshallerContext _ctx) {
 		
-		listPornPipelineResponse.setRequestId(context.stringValue("ListPornPipelineResponse.RequestId"));
-		listPornPipelineResponse.setTotalCount(context.longValue("ListPornPipelineResponse.TotalCount"));
-		listPornPipelineResponse.setPageNumber(context.longValue("ListPornPipelineResponse.PageNumber"));
-		listPornPipelineResponse.setPageSize(context.longValue("ListPornPipelineResponse.PageSize"));
+		listPornPipelineResponse.setRequestId(_ctx.stringValue("ListPornPipelineResponse.RequestId"));
+		listPornPipelineResponse.setTotalCount(_ctx.longValue("ListPornPipelineResponse.TotalCount"));
+		listPornPipelineResponse.setPageNumber(_ctx.longValue("ListPornPipelineResponse.PageNumber"));
+		listPornPipelineResponse.setPageSize(_ctx.longValue("ListPornPipelineResponse.PageSize"));
 
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
-		for (int i = 0; i < context.lengthValue("ListPornPipelineResponse.PipelineList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListPornPipelineResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setId(context.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].Id"));
-			pipeline.setName(context.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].Name"));
-			pipeline.setState(context.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].State"));
-			pipeline.setPriority(context.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].Priority"));
+			pipeline.setId(_ctx.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].Id"));
+			pipeline.setName(_ctx.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].Name"));
+			pipeline.setState(_ctx.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].State"));
+			pipeline.setPriority(_ctx.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].Priority"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
-			notifyConfig.setTopic(context.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
-			notifyConfig.setQueue(context.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].NotifyConfig.Queue"));
+			notifyConfig.setTopic(_ctx.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
+			notifyConfig.setQueue(_ctx.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].NotifyConfig.Queue"));
 			pipeline.setNotifyConfig(notifyConfig);
 
 			pipelineList.add(pipeline);

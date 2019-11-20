@@ -15,30 +15,27 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitFpCompareJobRequest extends RpcAcsRequest<SubmitFpCompareJobResponse> {
-	
-	public SubmitFpCompareJobRequest() {
-		super("Mts", "2014-06-18", "SubmitFpCompareJob", "mts");
-	}
-
-	private String matchedFrameStorage;
-
-	private String userData;
+	   
 
 	private Long resourceOwnerId;
 
-	private String queryMedia;
-
 	private String fpDBId;
 
-	private String resourceOwnerAccount;
-
 	private String masterMedia;
+
+	private String userData;
+
+	private String queryMedia;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
@@ -46,26 +43,14 @@ public class SubmitFpCompareJobRequest extends RpcAcsRequest<SubmitFpCompareJobR
 
 	private String pipelineId;
 
-	public String getMatchedFrameStorage() {
-		return this.matchedFrameStorage;
-	}
-
-	public void setMatchedFrameStorage(String matchedFrameStorage) {
-		this.matchedFrameStorage = matchedFrameStorage;
-		if(matchedFrameStorage != null){
-			putQueryParameter("MatchedFrameStorage", matchedFrameStorage);
-		}
-	}
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
+	private String matchedFrameStorage;
+	public SubmitFpCompareJobRequest() {
+		super("Mts", "2014-06-18", "SubmitFpCompareJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -76,17 +61,6 @@ public class SubmitFpCompareJobRequest extends RpcAcsRequest<SubmitFpCompareJobR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getQueryMedia() {
-		return this.queryMedia;
-	}
-
-	public void setQueryMedia(String queryMedia) {
-		this.queryMedia = queryMedia;
-		if(queryMedia != null){
-			putQueryParameter("QueryMedia", queryMedia);
 		}
 	}
 
@@ -101,17 +75,6 @@ public class SubmitFpCompareJobRequest extends RpcAcsRequest<SubmitFpCompareJobR
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getMasterMedia() {
 		return this.masterMedia;
 	}
@@ -120,6 +83,39 @@ public class SubmitFpCompareJobRequest extends RpcAcsRequest<SubmitFpCompareJobR
 		this.masterMedia = masterMedia;
 		if(masterMedia != null){
 			putQueryParameter("MasterMedia", masterMedia);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getQueryMedia() {
+		return this.queryMedia;
+	}
+
+	public void setQueryMedia(String queryMedia) {
+		this.queryMedia = queryMedia;
+		if(queryMedia != null){
+			putQueryParameter("QueryMedia", queryMedia);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -153,6 +149,17 @@ public class SubmitFpCompareJobRequest extends RpcAcsRequest<SubmitFpCompareJobR
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getMatchedFrameStorage() {
+		return this.matchedFrameStorage;
+	}
+
+	public void setMatchedFrameStorage(String matchedFrameStorage) {
+		this.matchedFrameStorage = matchedFrameStorage;
+		if(matchedFrameStorage != null){
+			putQueryParameter("MatchedFrameStorage", matchedFrameStorage);
 		}
 	}
 

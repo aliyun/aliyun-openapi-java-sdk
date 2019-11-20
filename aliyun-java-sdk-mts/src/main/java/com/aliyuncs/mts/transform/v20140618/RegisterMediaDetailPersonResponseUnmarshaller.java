@@ -27,24 +27,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RegisterMediaDetailPersonResponseUnmarshaller {
 
-	public static RegisterMediaDetailPersonResponse unmarshall(RegisterMediaDetailPersonResponse registerMediaDetailPersonResponse, UnmarshallerContext context) {
+	public static RegisterMediaDetailPersonResponse unmarshall(RegisterMediaDetailPersonResponse registerMediaDetailPersonResponse, UnmarshallerContext _ctx) {
 		
-		registerMediaDetailPersonResponse.setRequestId(context.stringValue("RegisterMediaDetailPersonResponse.RequestId"));
+		registerMediaDetailPersonResponse.setRequestId(_ctx.stringValue("RegisterMediaDetailPersonResponse.RequestId"));
 
 		List<RegisteredPersonage> registeredPersonages = new ArrayList<RegisteredPersonage>();
-		for (int i = 0; i < context.lengthValue("RegisterMediaDetailPersonResponse.RegisteredPersonages.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("RegisterMediaDetailPersonResponse.RegisteredPersonages.Length"); i++) {
 			RegisteredPersonage registeredPersonage = new RegisteredPersonage();
-			registeredPersonage.setPersonName(context.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].PersonName"));
-			registeredPersonage.setFaceId(context.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].FaceId"));
-			registeredPersonage.setTarget(context.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].Target"));
-			registeredPersonage.setQuality(context.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].Quality"));
-			registeredPersonage.setGender(context.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].Gender"));
-			registeredPersonage.setImageId(context.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].ImageId"));
+			registeredPersonage.setPersonName(_ctx.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].PersonName"));
+			registeredPersonage.setFaceId(_ctx.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].FaceId"));
+			registeredPersonage.setTarget(_ctx.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].Target"));
+			registeredPersonage.setQuality(_ctx.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].Quality"));
+			registeredPersonage.setGender(_ctx.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].Gender"));
+			registeredPersonage.setImageId(_ctx.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].ImageId"));
 
 			ImageFile imageFile = new ImageFile();
-			imageFile.setBucket(context.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].ImageFile.Bucket"));
-			imageFile.setLocation(context.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].ImageFile.Location"));
-			imageFile.setObject(context.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].ImageFile.Object"));
+			imageFile.setBucket(_ctx.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].ImageFile.Bucket"));
+			imageFile.setLocation(_ctx.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].ImageFile.Location"));
+			imageFile.setObject(_ctx.stringValue("RegisterMediaDetailPersonResponse.RegisteredPersonages["+ i +"].ImageFile.Object"));
 			registeredPersonage.setImageFile(imageFile);
 
 			registeredPersonages.add(registeredPersonage);
@@ -52,15 +52,15 @@ public class RegisterMediaDetailPersonResponseUnmarshaller {
 		registerMediaDetailPersonResponse.setRegisteredPersonages(registeredPersonages);
 
 		List<FailedImage> failedImages = new ArrayList<FailedImage>();
-		for (int i = 0; i < context.lengthValue("RegisterMediaDetailPersonResponse.FailedImages.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("RegisterMediaDetailPersonResponse.FailedImages.Length"); i++) {
 			FailedImage failedImage = new FailedImage();
-			failedImage.setCode(context.stringValue("RegisterMediaDetailPersonResponse.FailedImages["+ i +"].Code"));
-			failedImage.setSuccess(context.stringValue("RegisterMediaDetailPersonResponse.FailedImages["+ i +"].Success"));
+			failedImage.setCode(_ctx.stringValue("RegisterMediaDetailPersonResponse.FailedImages["+ i +"].Code"));
+			failedImage.setSuccess(_ctx.stringValue("RegisterMediaDetailPersonResponse.FailedImages["+ i +"].Success"));
 
 			ImageFile1 imageFile1 = new ImageFile1();
-			imageFile1.setBucket(context.stringValue("RegisterMediaDetailPersonResponse.FailedImages["+ i +"].ImageFile.Bucket"));
-			imageFile1.setLocation(context.stringValue("RegisterMediaDetailPersonResponse.FailedImages["+ i +"].ImageFile.Location"));
-			imageFile1.setObject(context.stringValue("RegisterMediaDetailPersonResponse.FailedImages["+ i +"].ImageFile.Object"));
+			imageFile1.setBucket(_ctx.stringValue("RegisterMediaDetailPersonResponse.FailedImages["+ i +"].ImageFile.Bucket"));
+			imageFile1.setLocation(_ctx.stringValue("RegisterMediaDetailPersonResponse.FailedImages["+ i +"].ImageFile.Location"));
+			imageFile1.setObject(_ctx.stringValue("RegisterMediaDetailPersonResponse.FailedImages["+ i +"].ImageFile.Object"));
 			failedImage.setImageFile1(imageFile1);
 
 			failedImages.add(failedImage);

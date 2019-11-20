@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMediaFpDeleteJobListResponseUnmarshaller {
 
-	public static QueryMediaFpDeleteJobListResponse unmarshall(QueryMediaFpDeleteJobListResponse queryMediaFpDeleteJobListResponse, UnmarshallerContext context) {
+	public static QueryMediaFpDeleteJobListResponse unmarshall(QueryMediaFpDeleteJobListResponse queryMediaFpDeleteJobListResponse, UnmarshallerContext _ctx) {
 		
-		queryMediaFpDeleteJobListResponse.setRequestId(context.stringValue("QueryMediaFpDeleteJobListResponse.RequestId"));
+		queryMediaFpDeleteJobListResponse.setRequestId(_ctx.stringValue("QueryMediaFpDeleteJobListResponse.RequestId"));
 
 		List<String> nonExistIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryMediaFpDeleteJobListResponse.NonExistIds.Length"); i++) {
-			nonExistIds.add(context.stringValue("QueryMediaFpDeleteJobListResponse.NonExistIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryMediaFpDeleteJobListResponse.NonExistIds.Length"); i++) {
+			nonExistIds.add(_ctx.stringValue("QueryMediaFpDeleteJobListResponse.NonExistIds["+ i +"]"));
 		}
 		queryMediaFpDeleteJobListResponse.setNonExistIds(nonExistIds);
 
 		List<MediaFpDeleteJob> mediaFpDeleteJobList = new ArrayList<MediaFpDeleteJob>();
-		for (int i = 0; i < context.lengthValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList.Length"); i++) {
 			MediaFpDeleteJob mediaFpDeleteJob = new MediaFpDeleteJob();
-			mediaFpDeleteJob.setId(context.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].Id"));
-			mediaFpDeleteJob.setUserData(context.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].UserData"));
-			mediaFpDeleteJob.setPipelineId(context.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].PipelineId"));
-			mediaFpDeleteJob.setState(context.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].State"));
-			mediaFpDeleteJob.setCode(context.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].Code"));
-			mediaFpDeleteJob.setMessage(context.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].Message"));
-			mediaFpDeleteJob.setCreationTime(context.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].CreationTime"));
-			mediaFpDeleteJob.setFinishTime(context.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].FinishTime"));
-			mediaFpDeleteJob.setPrimaryKey(context.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].PrimaryKey"));
-			mediaFpDeleteJob.setFpDBId(context.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].FpDBId"));
+			mediaFpDeleteJob.setId(_ctx.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].Id"));
+			mediaFpDeleteJob.setUserData(_ctx.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].UserData"));
+			mediaFpDeleteJob.setPipelineId(_ctx.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].PipelineId"));
+			mediaFpDeleteJob.setState(_ctx.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].State"));
+			mediaFpDeleteJob.setCode(_ctx.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].Code"));
+			mediaFpDeleteJob.setMessage(_ctx.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].Message"));
+			mediaFpDeleteJob.setCreationTime(_ctx.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].CreationTime"));
+			mediaFpDeleteJob.setFinishTime(_ctx.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].FinishTime"));
+			mediaFpDeleteJob.setPrimaryKey(_ctx.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].PrimaryKey"));
+			mediaFpDeleteJob.setFpDBId(_ctx.stringValue("QueryMediaFpDeleteJobListResponse.MediaFpDeleteJobList["+ i +"].FpDBId"));
 
 			mediaFpDeleteJobList.add(mediaFpDeleteJob);
 		}

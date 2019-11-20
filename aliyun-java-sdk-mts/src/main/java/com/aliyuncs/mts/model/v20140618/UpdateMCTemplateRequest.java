@@ -15,30 +15,37 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateMCTemplateRequest extends RpcAcsRequest<UpdateMCTemplateResponse> {
-	
-	public UpdateMCTemplateRequest() {
-		super("Mts", "2014-06-18", "UpdateMCTemplate", "mts");
-	}
+	   
 
 	private String politics;
 
 	private Long resourceOwnerId;
 
+	private String abuse;
+
+	private String qrcode;
+
+	private String porn;
+
+	private String terrorism;
+
+	private String logo;
+
+	private String live;
+
 	private String contraband;
 
 	private String ad;
 
-	private String abuse;
-
 	private String resourceOwnerAccount;
-
-	private String qrcode;
 
 	private String ownerAccount;
 
@@ -46,17 +53,17 @@ public class UpdateMCTemplateRequest extends RpcAcsRequest<UpdateMCTemplateRespo
 
 	private String templateId;
 
-	private String porn;
-
-	private String terrorism;
-
 	private String name;
 
-	private String logo;
-
 	private String spam;
-
-	private String live;
+	public UpdateMCTemplateRequest() {
+		super("Mts", "2014-06-18", "UpdateMCTemplate", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getPolitics() {
 		return this.politics;
@@ -77,6 +84,72 @@ public class UpdateMCTemplateRequest extends RpcAcsRequest<UpdateMCTemplateRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAbuse() {
+		return this.abuse;
+	}
+
+	public void setAbuse(String abuse) {
+		this.abuse = abuse;
+		if(abuse != null){
+			putQueryParameter("Abuse", abuse);
+		}
+	}
+
+	public String getQrcode() {
+		return this.qrcode;
+	}
+
+	public void setQrcode(String qrcode) {
+		this.qrcode = qrcode;
+		if(qrcode != null){
+			putQueryParameter("Qrcode", qrcode);
+		}
+	}
+
+	public String getPorn() {
+		return this.porn;
+	}
+
+	public void setPorn(String porn) {
+		this.porn = porn;
+		if(porn != null){
+			putQueryParameter("Porn", porn);
+		}
+	}
+
+	public String getTerrorism() {
+		return this.terrorism;
+	}
+
+	public void setTerrorism(String terrorism) {
+		this.terrorism = terrorism;
+		if(terrorism != null){
+			putQueryParameter("Terrorism", terrorism);
+		}
+	}
+
+	public String getLogo() {
+		return this.logo;
+	}
+
+	public void setLogo(String logo) {
+		this.logo = logo;
+		if(logo != null){
+			putQueryParameter("Logo", logo);
+		}
+	}
+
+	public String getLive() {
+		return this.live;
+	}
+
+	public void setLive(String live) {
+		this.live = live;
+		if(live != null){
+			putQueryParameter("Live", live);
 		}
 	}
 
@@ -102,17 +175,6 @@ public class UpdateMCTemplateRequest extends RpcAcsRequest<UpdateMCTemplateRespo
 		}
 	}
 
-	public String getAbuse() {
-		return this.abuse;
-	}
-
-	public void setAbuse(String abuse) {
-		this.abuse = abuse;
-		if(abuse != null){
-			putQueryParameter("Abuse", abuse);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -121,17 +183,6 @@ public class UpdateMCTemplateRequest extends RpcAcsRequest<UpdateMCTemplateRespo
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getQrcode() {
-		return this.qrcode;
-	}
-
-	public void setQrcode(String qrcode) {
-		this.qrcode = qrcode;
-		if(qrcode != null){
-			putQueryParameter("Qrcode", qrcode);
 		}
 	}
 
@@ -168,28 +219,6 @@ public class UpdateMCTemplateRequest extends RpcAcsRequest<UpdateMCTemplateRespo
 		}
 	}
 
-	public String getPorn() {
-		return this.porn;
-	}
-
-	public void setPorn(String porn) {
-		this.porn = porn;
-		if(porn != null){
-			putQueryParameter("Porn", porn);
-		}
-	}
-
-	public String getTerrorism() {
-		return this.terrorism;
-	}
-
-	public void setTerrorism(String terrorism) {
-		this.terrorism = terrorism;
-		if(terrorism != null){
-			putQueryParameter("Terrorism", terrorism);
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -201,17 +230,6 @@ public class UpdateMCTemplateRequest extends RpcAcsRequest<UpdateMCTemplateRespo
 		}
 	}
 
-	public String getLogo() {
-		return this.logo;
-	}
-
-	public void setLogo(String logo) {
-		this.logo = logo;
-		if(logo != null){
-			putQueryParameter("Logo", logo);
-		}
-	}
-
 	public String getSpam() {
 		return this.spam;
 	}
@@ -220,17 +238,6 @@ public class UpdateMCTemplateRequest extends RpcAcsRequest<UpdateMCTemplateRespo
 		this.spam = spam;
 		if(spam != null){
 			putQueryParameter("spam", spam);
-		}
-	}
-
-	public String getLive() {
-		return this.live;
-	}
-
-	public void setLive(String live) {
-		this.live = live;
-		if(live != null){
-			putQueryParameter("Live", live);
 		}
 	}
 

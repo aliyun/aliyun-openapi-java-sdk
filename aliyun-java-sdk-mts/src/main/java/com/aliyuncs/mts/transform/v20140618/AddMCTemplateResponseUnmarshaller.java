@@ -21,23 +21,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddMCTemplateResponseUnmarshaller {
 
-	public static AddMCTemplateResponse unmarshall(AddMCTemplateResponse addMCTemplateResponse, UnmarshallerContext context) {
+	public static AddMCTemplateResponse unmarshall(AddMCTemplateResponse addMCTemplateResponse, UnmarshallerContext _ctx) {
 		
-		addMCTemplateResponse.setRequestId(context.stringValue("AddMCTemplateResponse.RequestId"));
+		addMCTemplateResponse.setRequestId(_ctx.stringValue("AddMCTemplateResponse.RequestId"));
 
 		Template template = new Template();
-		template.setTemplateId(context.stringValue("AddMCTemplateResponse.Template.TemplateId"));
-		template.setName(context.stringValue("AddMCTemplateResponse.Template.Name"));
-		template.setPorn(context.stringValue("AddMCTemplateResponse.Template.Porn"));
-		template.setTerrorism(context.stringValue("AddMCTemplateResponse.Template.Terrorism"));
-		template.setPolitics(context.stringValue("AddMCTemplateResponse.Template.Politics"));
-		template.setAd(context.stringValue("AddMCTemplateResponse.Template.Ad"));
-		template.setQrcode(context.stringValue("AddMCTemplateResponse.Template.Qrcode"));
-		template.setLive(context.stringValue("AddMCTemplateResponse.Template.Live"));
-		template.setLogo(context.stringValue("AddMCTemplateResponse.Template.Logo"));
-		template.setAbuse(context.stringValue("AddMCTemplateResponse.Template.Abuse"));
-		template.setContraband(context.stringValue("AddMCTemplateResponse.Template.Contraband"));
-		template.setSpam(context.stringValue("AddMCTemplateResponse.Template.Spam"));
+		template.setTemplateId(_ctx.stringValue("AddMCTemplateResponse.Template.TemplateId"));
+		template.setName(_ctx.stringValue("AddMCTemplateResponse.Template.Name"));
+		template.setPorn(_ctx.stringValue("AddMCTemplateResponse.Template.Porn"));
+		template.setTerrorism(_ctx.stringValue("AddMCTemplateResponse.Template.Terrorism"));
+		template.setPolitics(_ctx.stringValue("AddMCTemplateResponse.Template.Politics"));
+		template.setAd(_ctx.stringValue("AddMCTemplateResponse.Template.Ad"));
+		template.setQrcode(_ctx.stringValue("AddMCTemplateResponse.Template.Qrcode"));
+		template.setLive(_ctx.stringValue("AddMCTemplateResponse.Template.Live"));
+		template.setLogo(_ctx.stringValue("AddMCTemplateResponse.Template.Logo"));
+		template.setAbuse(_ctx.stringValue("AddMCTemplateResponse.Template.Abuse"));
+		template.setContraband(_ctx.stringValue("AddMCTemplateResponse.Template.Contraband"));
+		template.setSpam(_ctx.stringValue("AddMCTemplateResponse.Template.Spam"));
 		addMCTemplateResponse.setTemplate(template);
 	 
 	 	return addMCTemplateResponse;

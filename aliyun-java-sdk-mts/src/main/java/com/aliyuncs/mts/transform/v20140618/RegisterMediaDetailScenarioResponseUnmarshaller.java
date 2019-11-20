@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RegisterMediaDetailScenarioResponseUnmarshaller {
 
-	public static RegisterMediaDetailScenarioResponse unmarshall(RegisterMediaDetailScenarioResponse registerMediaDetailScenarioResponse, UnmarshallerContext context) {
+	public static RegisterMediaDetailScenarioResponse unmarshall(RegisterMediaDetailScenarioResponse registerMediaDetailScenarioResponse, UnmarshallerContext _ctx) {
 		
-		registerMediaDetailScenarioResponse.setRequestId(context.stringValue("RegisterMediaDetailScenarioResponse.RequestId"));
-		registerMediaDetailScenarioResponse.setScenarioId(context.stringValue("RegisterMediaDetailScenarioResponse.ScenarioId"));
+		registerMediaDetailScenarioResponse.setRequestId(_ctx.stringValue("RegisterMediaDetailScenarioResponse.RequestId"));
+		registerMediaDetailScenarioResponse.setScenarioId(_ctx.stringValue("RegisterMediaDetailScenarioResponse.ScenarioId"));
 	 
 	 	return registerMediaDetailScenarioResponse;
 	}

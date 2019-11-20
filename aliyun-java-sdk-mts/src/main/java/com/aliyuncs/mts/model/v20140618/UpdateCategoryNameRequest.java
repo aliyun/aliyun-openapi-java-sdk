@@ -15,28 +15,35 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateCategoryNameRequest extends RpcAcsRequest<UpdateCategoryNameResponse> {
-	
-	public UpdateCategoryNameRequest() {
-		super("Mts", "2014-06-18", "UpdateCategoryName", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String cateId;
+
+	private String cateName;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String cateName;
+	public UpdateCategoryNameRequest() {
+		super("Mts", "2014-06-18", "UpdateCategoryName", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,17 +56,6 @@ public class UpdateCategoryNameRequest extends RpcAcsRequest<UpdateCategoryNameR
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getCateId() {
 		return this.cateId;
 	}
@@ -68,6 +64,28 @@ public class UpdateCategoryNameRequest extends RpcAcsRequest<UpdateCategoryNameR
 		this.cateId = cateId;
 		if(cateId != null){
 			putQueryParameter("CateId", cateId);
+		}
+	}
+
+	public String getCateName() {
+		return this.cateName;
+	}
+
+	public void setCateName(String cateName) {
+		this.cateName = cateName;
+		if(cateName != null){
+			putQueryParameter("CateName", cateName);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -90,17 +108,6 @@ public class UpdateCategoryNameRequest extends RpcAcsRequest<UpdateCategoryNameR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getCateName() {
-		return this.cateName;
-	}
-
-	public void setCateName(String cateName) {
-		this.cateName = cateName;
-		if(cateName != null){
-			putQueryParameter("CateName", cateName);
 		}
 	}
 

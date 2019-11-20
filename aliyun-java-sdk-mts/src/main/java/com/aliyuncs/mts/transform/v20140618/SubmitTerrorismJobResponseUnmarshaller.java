@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitTerrorismJobResponseUnmarshaller {
 
-	public static SubmitTerrorismJobResponse unmarshall(SubmitTerrorismJobResponse submitTerrorismJobResponse, UnmarshallerContext context) {
+	public static SubmitTerrorismJobResponse unmarshall(SubmitTerrorismJobResponse submitTerrorismJobResponse, UnmarshallerContext _ctx) {
 		
-		submitTerrorismJobResponse.setRequestId(context.stringValue("SubmitTerrorismJobResponse.RequestId"));
-		submitTerrorismJobResponse.setJobId(context.stringValue("SubmitTerrorismJobResponse.JobId"));
+		submitTerrorismJobResponse.setRequestId(_ctx.stringValue("SubmitTerrorismJobResponse.RequestId"));
+		submitTerrorismJobResponse.setJobId(_ctx.stringValue("SubmitTerrorismJobResponse.JobId"));
 	 
 	 	return submitTerrorismJobResponse;
 	}

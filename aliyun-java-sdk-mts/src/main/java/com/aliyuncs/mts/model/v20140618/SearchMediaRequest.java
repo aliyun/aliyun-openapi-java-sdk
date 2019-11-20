@@ -15,26 +15,19 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
-	
-	public SearchMediaRequest() {
-		super("Mts", "2014-06-18", "SearchMedia", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
 	private String description;
-
-	private Long ownerId;
 
 	private String title;
 
@@ -46,13 +39,27 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 
 	private String from;
 
-	private String sortBy;
-
-	private String to;
-
 	private String tag;
 
 	private String keyWord;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String sortBy;
+
+	private String to;
+	public SearchMediaRequest() {
+		super("Mts", "2014-06-18", "SearchMedia", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -65,28 +72,6 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -95,17 +80,6 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -164,28 +138,6 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		}
 	}
 
-	public String getSortBy() {
-		return this.sortBy;
-	}
-
-	public void setSortBy(String sortBy) {
-		this.sortBy = sortBy;
-		if(sortBy != null){
-			putQueryParameter("SortBy", sortBy);
-		}
-	}
-
-	public String getTo() {
-		return this.to;
-	}
-
-	public void setTo(String to) {
-		this.to = to;
-		if(to != null){
-			putQueryParameter("To", to);
-		}
-	}
-
 	public String getTag() {
 		return this.tag;
 	}
@@ -205,6 +157,61 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		this.keyWord = keyWord;
 		if(keyWord != null){
 			putQueryParameter("KeyWord", keyWord);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+		if(sortBy != null){
+			putQueryParameter("SortBy", sortBy);
+		}
+	}
+
+	public String getTo() {
+		return this.to;
+	}
+
+	public void setTo(String to) {
+		this.to = to;
+		if(to != null){
+			putQueryParameter("To", to);
 		}
 	}
 

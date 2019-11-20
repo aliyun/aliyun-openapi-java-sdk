@@ -24,32 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMCTemplateListResponseUnmarshaller {
 
-	public static QueryMCTemplateListResponse unmarshall(QueryMCTemplateListResponse queryMCTemplateListResponse, UnmarshallerContext context) {
+	public static QueryMCTemplateListResponse unmarshall(QueryMCTemplateListResponse queryMCTemplateListResponse, UnmarshallerContext _ctx) {
 		
-		queryMCTemplateListResponse.setRequestId(context.stringValue("QueryMCTemplateListResponse.RequestId"));
+		queryMCTemplateListResponse.setRequestId(_ctx.stringValue("QueryMCTemplateListResponse.RequestId"));
 
 		List<String> nonExistTids = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryMCTemplateListResponse.NonExistTids.Length"); i++) {
-			nonExistTids.add(context.stringValue("QueryMCTemplateListResponse.NonExistTids["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryMCTemplateListResponse.NonExistTids.Length"); i++) {
+			nonExistTids.add(_ctx.stringValue("QueryMCTemplateListResponse.NonExistTids["+ i +"]"));
 		}
 		queryMCTemplateListResponse.setNonExistTids(nonExistTids);
 
 		List<Template> templateList = new ArrayList<Template>();
-		for (int i = 0; i < context.lengthValue("QueryMCTemplateListResponse.TemplateList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMCTemplateListResponse.TemplateList.Length"); i++) {
 			Template template = new Template();
-			template.setTemplateId(context.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].TemplateId"));
-			template.setName(context.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Name"));
-			template.setState(context.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].State"));
-			template.setPorn(context.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Porn"));
-			template.setTerrorism(context.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Terrorism"));
-			template.setPolitics(context.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Politics"));
-			template.setAd(context.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Ad"));
-			template.setQrcode(context.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Qrcode"));
-			template.setLive(context.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Live"));
-			template.setLogo(context.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Logo"));
-			template.setAbuse(context.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Abuse"));
-			template.setContraband(context.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Contraband"));
-			template.setSpam(context.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Spam"));
+			template.setTemplateId(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].TemplateId"));
+			template.setName(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Name"));
+			template.setState(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].State"));
+			template.setPorn(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Porn"));
+			template.setTerrorism(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Terrorism"));
+			template.setPolitics(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Politics"));
+			template.setAd(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Ad"));
+			template.setQrcode(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Qrcode"));
+			template.setLive(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Live"));
+			template.setLogo(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Logo"));
+			template.setAbuse(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Abuse"));
+			template.setContraband(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Contraband"));
+			template.setSpam(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Spam"));
 
 			templateList.add(template);
 		}

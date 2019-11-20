@@ -2015,22 +2015,6 @@ public class QueryJobListResponse extends AcsResponse {
 					public void setBizMethod(String method) {
 						this.method = method;
 					}
-
-					/**
-					 * @deprecated use getBizMethod instead of this.
-					 */
-					@Deprecated
-					public String getMethod() {
-						return this.method;
-					}
-
-					/**
-					 * @deprecated use setBizMethod instead of this.
-					 */
-					@Deprecated
-					public void setMethod(String method) {
-						this.method = method;
-					}
 				}
 			}
 

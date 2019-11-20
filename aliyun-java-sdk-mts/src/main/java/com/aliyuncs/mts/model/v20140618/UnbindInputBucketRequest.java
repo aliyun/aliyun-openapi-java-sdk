@@ -15,38 +15,34 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UnbindInputBucketRequest extends RpcAcsRequest<UnbindInputBucketResponse> {
-	
-	public UnbindInputBucketRequest() {
-		super("Mts", "2014-06-18", "UnbindInputBucket", "mts");
-	}
-
-	private String bucket;
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String roleArn;
-
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	public String getBucket() {
-		return this.bucket;
-	}
+	private String bucket;
 
-	public void setBucket(String bucket) {
-		this.bucket = bucket;
-		if(bucket != null){
-			putQueryParameter("Bucket", bucket);
-		}
+	private String roleArn;
+	public UnbindInputBucketRequest() {
+		super("Mts", "2014-06-18", "UnbindInputBucket", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -71,17 +67,6 @@ public class UnbindInputBucketRequest extends RpcAcsRequest<UnbindInputBucketRes
 		}
 	}
 
-	public String getRoleArn() {
-		return this.roleArn;
-	}
-
-	public void setRoleArn(String roleArn) {
-		this.roleArn = roleArn;
-		if(roleArn != null){
-			putQueryParameter("RoleArn", roleArn);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -101,6 +86,28 @@ public class UnbindInputBucketRequest extends RpcAcsRequest<UnbindInputBucketRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getBucket() {
+		return this.bucket;
+	}
+
+	public void setBucket(String bucket) {
+		this.bucket = bucket;
+		if(bucket != null){
+			putQueryParameter("Bucket", bucket);
+		}
+	}
+
+	public String getRoleArn() {
+		return this.roleArn;
+	}
+
+	public void setRoleArn(String roleArn) {
+		this.roleArn = roleArn;
+		if(roleArn != null){
+			putQueryParameter("RoleArn", roleArn);
 		}
 	}
 

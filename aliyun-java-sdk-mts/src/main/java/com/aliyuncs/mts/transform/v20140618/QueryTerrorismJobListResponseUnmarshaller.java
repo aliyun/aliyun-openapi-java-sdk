@@ -30,68 +30,68 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryTerrorismJobListResponseUnmarshaller {
 
-	public static QueryTerrorismJobListResponse unmarshall(QueryTerrorismJobListResponse queryTerrorismJobListResponse, UnmarshallerContext context) {
+	public static QueryTerrorismJobListResponse unmarshall(QueryTerrorismJobListResponse queryTerrorismJobListResponse, UnmarshallerContext _ctx) {
 		
-		queryTerrorismJobListResponse.setRequestId(context.stringValue("QueryTerrorismJobListResponse.RequestId"));
+		queryTerrorismJobListResponse.setRequestId(_ctx.stringValue("QueryTerrorismJobListResponse.RequestId"));
 
 		List<String> nonExistIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryTerrorismJobListResponse.NonExistIds.Length"); i++) {
-			nonExistIds.add(context.stringValue("QueryTerrorismJobListResponse.NonExistIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryTerrorismJobListResponse.NonExistIds.Length"); i++) {
+			nonExistIds.add(_ctx.stringValue("QueryTerrorismJobListResponse.NonExistIds["+ i +"]"));
 		}
 		queryTerrorismJobListResponse.setNonExistIds(nonExistIds);
 
 		List<TerrorismJob> terrorismJobList = new ArrayList<TerrorismJob>();
-		for (int i = 0; i < context.lengthValue("QueryTerrorismJobListResponse.TerrorismJobList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryTerrorismJobListResponse.TerrorismJobList.Length"); i++) {
 			TerrorismJob terrorismJob = new TerrorismJob();
-			terrorismJob.setId(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].Id"));
-			terrorismJob.setUserData(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].UserData"));
-			terrorismJob.setPipelineId(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].PipelineId"));
-			terrorismJob.setState(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].State"));
-			terrorismJob.setCode(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].Code"));
-			terrorismJob.setMessage(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].Message"));
-			terrorismJob.setCreationTime(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CreationTime"));
+			terrorismJob.setId(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].Id"));
+			terrorismJob.setUserData(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].UserData"));
+			terrorismJob.setPipelineId(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].PipelineId"));
+			terrorismJob.setState(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].State"));
+			terrorismJob.setCode(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].Code"));
+			terrorismJob.setMessage(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].Message"));
+			terrorismJob.setCreationTime(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CreationTime"));
 
 			Input input = new Input();
-			input.setBucket(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].Input.Bucket"));
-			input.setLocation(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].Input.Location"));
-			input.setObject(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].Input.Object"));
+			input.setBucket(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].Input.Bucket"));
+			input.setLocation(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].Input.Location"));
+			input.setObject(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].Input.Object"));
 			terrorismJob.setInput(input);
 
 			TerrorismConfig terrorismConfig = new TerrorismConfig();
-			terrorismConfig.setInterval(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].TerrorismConfig.Interval"));
-			terrorismConfig.setBizType(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].TerrorismConfig.BizType"));
+			terrorismConfig.setInterval(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].TerrorismConfig.Interval"));
+			terrorismConfig.setBizType(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].TerrorismConfig.BizType"));
 
 			OutputFile outputFile = new OutputFile();
-			outputFile.setBucket(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].TerrorismConfig.OutputFile.Bucket"));
-			outputFile.setLocation(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].TerrorismConfig.OutputFile.Location"));
-			outputFile.setObject(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].TerrorismConfig.OutputFile.Object"));
+			outputFile.setBucket(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].TerrorismConfig.OutputFile.Bucket"));
+			outputFile.setLocation(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].TerrorismConfig.OutputFile.Location"));
+			outputFile.setObject(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].TerrorismConfig.OutputFile.Object"));
 			terrorismConfig.setOutputFile(outputFile);
 			terrorismJob.setTerrorismConfig(terrorismConfig);
 
 			CensorTerrorismResult censorTerrorismResult = new CensorTerrorismResult();
-			censorTerrorismResult.setLabel(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.Label"));
-			censorTerrorismResult.setSuggestion(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.Suggestion"));
-			censorTerrorismResult.setMaxScore(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.MaxScore"));
-			censorTerrorismResult.setAverageScore(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.AverageScore"));
+			censorTerrorismResult.setLabel(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.Label"));
+			censorTerrorismResult.setSuggestion(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.Suggestion"));
+			censorTerrorismResult.setMaxScore(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.MaxScore"));
+			censorTerrorismResult.setAverageScore(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.AverageScore"));
 
 			List<Counter> terrorismCounterList = new ArrayList<Counter>();
-			for (int j = 0; j < context.lengthValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismCounterList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismCounterList.Length"); j++) {
 				Counter counter = new Counter();
-				counter.setCount(context.integerValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismCounterList["+ j +"].Count"));
-				counter.setLabel(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismCounterList["+ j +"].Label"));
+				counter.setCount(_ctx.integerValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismCounterList["+ j +"].Count"));
+				counter.setLabel(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismCounterList["+ j +"].Label"));
 
 				terrorismCounterList.add(counter);
 			}
 			censorTerrorismResult.setTerrorismCounterList(terrorismCounterList);
 
 			List<Top> terrorismTopList = new ArrayList<Top>();
-			for (int j = 0; j < context.lengthValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismTopList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismTopList.Length"); j++) {
 				Top top = new Top();
-				top.setLabel(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismTopList["+ j +"].Label"));
-				top.setScore(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismTopList["+ j +"].Score"));
-				top.setTimestamp(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismTopList["+ j +"].Timestamp"));
-				top.setIndex(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismTopList["+ j +"].Index"));
-				top.setObject(context.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismTopList["+ j +"].Object"));
+				top.setLabel(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismTopList["+ j +"].Label"));
+				top.setScore(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismTopList["+ j +"].Score"));
+				top.setTimestamp(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismTopList["+ j +"].Timestamp"));
+				top.setIndex(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismTopList["+ j +"].Index"));
+				top.setObject(_ctx.stringValue("QueryTerrorismJobListResponse.TerrorismJobList["+ i +"].CensorTerrorismResult.TerrorismTopList["+ j +"].Object"));
 
 				terrorismTopList.add(top);
 			}

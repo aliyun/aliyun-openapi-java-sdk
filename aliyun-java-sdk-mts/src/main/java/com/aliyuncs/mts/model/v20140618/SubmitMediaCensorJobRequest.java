@@ -15,18 +15,25 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitMediaCensorJobRequest extends RpcAcsRequest<SubmitMediaCensorJobResponse> {
-	
-	public SubmitMediaCensorJobRequest() {
-		super("Mts", "2014-06-18", "SubmitMediaCensorJob", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String description;
+
+	private String title;
+
+	private String videoCensorConfig;
+
+	private String userData;
 
 	private String coverImages;
 
@@ -34,21 +41,21 @@ public class SubmitMediaCensorJobRequest extends RpcAcsRequest<SubmitMediaCensor
 
 	private String ownerAccount;
 
-	private String description;
-
 	private Long ownerId;
-
-	private String title;
 
 	private String pipelineId;
 
-	private String videoCensorConfig;
-
 	private String input;
 
-	private String userData;
-
 	private String barrages;
+	public SubmitMediaCensorJobRequest() {
+		super("Mts", "2014-06-18", "SubmitMediaCensorJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,6 +65,50 @@ public class SubmitMediaCensorJobRequest extends RpcAcsRequest<SubmitMediaCensor
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
+		}
+	}
+
+	public String getVideoCensorConfig() {
+		return this.videoCensorConfig;
+	}
+
+	public void setVideoCensorConfig(String videoCensorConfig) {
+		this.videoCensorConfig = videoCensorConfig;
+		if(videoCensorConfig != null){
+			putQueryParameter("VideoCensorConfig", videoCensorConfig);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
 		}
 	}
 
@@ -94,17 +145,6 @@ public class SubmitMediaCensorJobRequest extends RpcAcsRequest<SubmitMediaCensor
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -113,17 +153,6 @@ public class SubmitMediaCensorJobRequest extends RpcAcsRequest<SubmitMediaCensor
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-		if(title != null){
-			putQueryParameter("Title", title);
 		}
 	}
 
@@ -138,17 +167,6 @@ public class SubmitMediaCensorJobRequest extends RpcAcsRequest<SubmitMediaCensor
 		}
 	}
 
-	public String getVideoCensorConfig() {
-		return this.videoCensorConfig;
-	}
-
-	public void setVideoCensorConfig(String videoCensorConfig) {
-		this.videoCensorConfig = videoCensorConfig;
-		if(videoCensorConfig != null){
-			putQueryParameter("VideoCensorConfig", videoCensorConfig);
-		}
-	}
-
 	public String getInput() {
 		return this.input;
 	}
@@ -157,17 +175,6 @@ public class SubmitMediaCensorJobRequest extends RpcAcsRequest<SubmitMediaCensor
 		this.input = input;
 		if(input != null){
 			putQueryParameter("Input", input);
-		}
-	}
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
 		}
 	}
 

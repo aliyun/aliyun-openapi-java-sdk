@@ -15,20 +15,19 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateMediaCoverRequest extends RpcAcsRequest<UpdateMediaCoverResponse> {
-	
-	public UpdateMediaCoverRequest() {
-		super("Mts", "2014-06-18", "UpdateMediaCover", "mts");
-	}
-
-	private String coverURL;
+	   
 
 	private Long resourceOwnerId;
+
+	private String coverURL;
 
 	private String resourceOwnerAccount;
 
@@ -37,16 +36,13 @@ public class UpdateMediaCoverRequest extends RpcAcsRequest<UpdateMediaCoverRespo
 	private Long ownerId;
 
 	private String mediaId;
-
-	public String getCoverURL() {
-		return this.coverURL;
-	}
-
-	public void setCoverURL(String coverURL) {
-		this.coverURL = coverURL;
-		if(coverURL != null){
-			putQueryParameter("CoverURL", coverURL);
-		}
+	public UpdateMediaCoverRequest() {
+		super("Mts", "2014-06-18", "UpdateMediaCover", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -57,6 +53,17 @@ public class UpdateMediaCoverRequest extends RpcAcsRequest<UpdateMediaCoverRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCoverURL() {
+		return this.coverURL;
+	}
+
+	public void setCoverURL(String coverURL) {
+		this.coverURL = coverURL;
+		if(coverURL != null){
+			putQueryParameter("CoverURL", coverURL);
 		}
 	}
 

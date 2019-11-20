@@ -22,19 +22,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateCensorPipelineResponseUnmarshaller {
 
-	public static UpdateCensorPipelineResponse unmarshall(UpdateCensorPipelineResponse updateCensorPipelineResponse, UnmarshallerContext context) {
+	public static UpdateCensorPipelineResponse unmarshall(UpdateCensorPipelineResponse updateCensorPipelineResponse, UnmarshallerContext _ctx) {
 		
-		updateCensorPipelineResponse.setRequestId(context.stringValue("UpdateCensorPipelineResponse.RequestId"));
+		updateCensorPipelineResponse.setRequestId(_ctx.stringValue("UpdateCensorPipelineResponse.RequestId"));
 
 		Pipeline pipeline = new Pipeline();
-		pipeline.setId(context.stringValue("UpdateCensorPipelineResponse.Pipeline.Id"));
-		pipeline.setName(context.stringValue("UpdateCensorPipelineResponse.Pipeline.Name"));
-		pipeline.setState(context.stringValue("UpdateCensorPipelineResponse.Pipeline.State"));
-		pipeline.setPriority(context.integerValue("UpdateCensorPipelineResponse.Pipeline.Priority"));
+		pipeline.setId(_ctx.stringValue("UpdateCensorPipelineResponse.Pipeline.Id"));
+		pipeline.setName(_ctx.stringValue("UpdateCensorPipelineResponse.Pipeline.Name"));
+		pipeline.setState(_ctx.stringValue("UpdateCensorPipelineResponse.Pipeline.State"));
+		pipeline.setPriority(_ctx.integerValue("UpdateCensorPipelineResponse.Pipeline.Priority"));
 
 		NotifyConfig notifyConfig = new NotifyConfig();
-		notifyConfig.setTopic(context.stringValue("UpdateCensorPipelineResponse.Pipeline.NotifyConfig.Topic"));
-		notifyConfig.setQueue(context.stringValue("UpdateCensorPipelineResponse.Pipeline.NotifyConfig.Queue"));
+		notifyConfig.setTopic(_ctx.stringValue("UpdateCensorPipelineResponse.Pipeline.NotifyConfig.Topic"));
+		notifyConfig.setQueue(_ctx.stringValue("UpdateCensorPipelineResponse.Pipeline.NotifyConfig.Queue"));
 		pipeline.setNotifyConfig(notifyConfig);
 		updateCensorPipelineResponse.setPipeline(pipeline);
 	 

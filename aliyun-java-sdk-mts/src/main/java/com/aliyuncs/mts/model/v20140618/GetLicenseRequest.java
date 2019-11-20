@@ -15,34 +15,41 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetLicenseRequest extends RpcAcsRequest<GetLicenseResponse> {
-	
-	public GetLicenseRequest() {
-		super("Mts", "2014-06-18", "GetLicense", "mts");
-	}
+	   
 
 	private String resourceOwnerId;
 
 	private String data;
 
+	private String type;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String header;
 
 	private String ownerId;
 
 	private String mediaId;
 
-	private String type;
+	private String header;
 
 	private String licenseUrl;
+	public GetLicenseRequest() {
+		super("Mts", "2014-06-18", "GetLicense", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -63,6 +70,17 @@ public class GetLicenseRequest extends RpcAcsRequest<GetLicenseResponse> {
 		this.data = data;
 		if(data != null){
 			putQueryParameter("Data", data);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
@@ -88,17 +106,6 @@ public class GetLicenseRequest extends RpcAcsRequest<GetLicenseResponse> {
 		}
 	}
 
-	public String getHeader() {
-		return this.header;
-	}
-
-	public void setHeader(String header) {
-		this.header = header;
-		if(header != null){
-			putQueryParameter("Header", header);
-		}
-	}
-
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -121,14 +128,14 @@ public class GetLicenseRequest extends RpcAcsRequest<GetLicenseResponse> {
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getHeader() {
+		return this.header;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setHeader(String header) {
+		this.header = header;
+		if(header != null){
+			putQueryParameter("Header", header);
 		}
 	}
 

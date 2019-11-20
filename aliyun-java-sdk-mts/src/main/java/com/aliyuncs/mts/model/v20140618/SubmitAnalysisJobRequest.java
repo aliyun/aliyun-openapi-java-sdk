@@ -15,24 +15,21 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitAnalysisJobRequest extends RpcAcsRequest<SubmitAnalysisJobResponse> {
-	
-	public SubmitAnalysisJobRequest() {
-		super("Mts", "2014-06-18", "SubmitAnalysisJob", "mts");
-	}
-
-	private String input;
-
-	private String userData;
+	   
 
 	private Long resourceOwnerId;
 
 	private String analysisConfig;
+
+	private String userData;
 
 	private String resourceOwnerAccount;
 
@@ -44,26 +41,14 @@ public class SubmitAnalysisJobRequest extends RpcAcsRequest<SubmitAnalysisJobRes
 
 	private String pipelineId;
 
-	public String getInput() {
-		return this.input;
-	}
-
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
-		}
-	}
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
+	private String input;
+	public SubmitAnalysisJobRequest() {
+		super("Mts", "2014-06-18", "SubmitAnalysisJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -85,6 +70,17 @@ public class SubmitAnalysisJobRequest extends RpcAcsRequest<SubmitAnalysisJobRes
 		this.analysisConfig = analysisConfig;
 		if(analysisConfig != null){
 			putQueryParameter("AnalysisConfig", analysisConfig);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
 		}
 	}
 
@@ -140,6 +136,17 @@ public class SubmitAnalysisJobRequest extends RpcAcsRequest<SubmitAnalysisJobRes
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
 		}
 	}
 

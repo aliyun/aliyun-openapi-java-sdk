@@ -27,67 +27,67 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitSnapshotJobResponseUnmarshaller {
 
-	public static SubmitSnapshotJobResponse unmarshall(SubmitSnapshotJobResponse submitSnapshotJobResponse, UnmarshallerContext context) {
+	public static SubmitSnapshotJobResponse unmarshall(SubmitSnapshotJobResponse submitSnapshotJobResponse, UnmarshallerContext _ctx) {
 		
-		submitSnapshotJobResponse.setRequestId(context.stringValue("SubmitSnapshotJobResponse.RequestId"));
+		submitSnapshotJobResponse.setRequestId(_ctx.stringValue("SubmitSnapshotJobResponse.RequestId"));
 
 		SnapshotJob snapshotJob = new SnapshotJob();
-		snapshotJob.setId(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Id"));
-		snapshotJob.setUserData(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.UserData"));
-		snapshotJob.setPipelineId(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.PipelineId"));
-		snapshotJob.setState(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.State"));
-		snapshotJob.setCode(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Code"));
-		snapshotJob.setCount(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Count"));
-		snapshotJob.setTileCount(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.TileCount"));
-		snapshotJob.setMessage(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Message"));
-		snapshotJob.setCreationTime(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.CreationTime"));
+		snapshotJob.setId(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Id"));
+		snapshotJob.setUserData(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.UserData"));
+		snapshotJob.setPipelineId(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.PipelineId"));
+		snapshotJob.setState(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.State"));
+		snapshotJob.setCode(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Code"));
+		snapshotJob.setCount(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Count"));
+		snapshotJob.setTileCount(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.TileCount"));
+		snapshotJob.setMessage(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Message"));
+		snapshotJob.setCreationTime(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.CreationTime"));
 
 		Input input = new Input();
-		input.setBucket(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Input.Bucket"));
-		input.setLocation(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Input.Location"));
-		input.setObject(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Input.Object"));
-		input.setRoleArn(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Input.RoleArn"));
+		input.setBucket(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Input.Bucket"));
+		input.setLocation(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Input.Location"));
+		input.setObject(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Input.Object"));
+		input.setRoleArn(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.Input.RoleArn"));
 		snapshotJob.setInput(input);
 
 		SnapshotConfig snapshotConfig = new SnapshotConfig();
-		snapshotConfig.setTime(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Time"));
-		snapshotConfig.setInterval(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Interval"));
-		snapshotConfig.setNum(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Num"));
-		snapshotConfig.setWidth(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Width"));
-		snapshotConfig.setHeight(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Height"));
-		snapshotConfig.setFrameType(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.FrameType"));
+		snapshotConfig.setTime(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Time"));
+		snapshotConfig.setInterval(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Interval"));
+		snapshotConfig.setNum(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Num"));
+		snapshotConfig.setWidth(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Width"));
+		snapshotConfig.setHeight(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Height"));
+		snapshotConfig.setFrameType(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.FrameType"));
 
 		OutputFile outputFile = new OutputFile();
-		outputFile.setBucket(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile.Bucket"));
-		outputFile.setLocation(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile.Location"));
-		outputFile.setObject(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile.Object"));
-		outputFile.setRoleArn(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile.RoleArn"));
+		outputFile.setBucket(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile.Bucket"));
+		outputFile.setLocation(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile.Location"));
+		outputFile.setObject(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile.Object"));
+		outputFile.setRoleArn(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.OutputFile.RoleArn"));
 		snapshotConfig.setOutputFile(outputFile);
 
 		TileOutputFile tileOutputFile = new TileOutputFile();
-		tileOutputFile.setBucket(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOutputFile.Bucket"));
-		tileOutputFile.setLocation(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOutputFile.Location"));
-		tileOutputFile.setObject(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOutputFile.Object"));
-		tileOutputFile.setRoleArn(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOutputFile.RoleArn"));
+		tileOutputFile.setBucket(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOutputFile.Bucket"));
+		tileOutputFile.setLocation(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOutputFile.Location"));
+		tileOutputFile.setObject(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOutputFile.Object"));
+		tileOutputFile.setRoleArn(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOutputFile.RoleArn"));
 		snapshotConfig.setTileOutputFile(tileOutputFile);
 
 		TileOut tileOut = new TileOut();
-		tileOut.setLines(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.Lines"));
-		tileOut.setColumns(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.Columns"));
-		tileOut.setCellWidth(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.CellWidth"));
-		tileOut.setCellHeight(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.CellHeight"));
-		tileOut.setMargin(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.Margin"));
-		tileOut.setPadding(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.Padding"));
-		tileOut.setColor(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.Color"));
-		tileOut.setIsKeepCellPic(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.IsKeepCellPic"));
-		tileOut.setCellSelStep(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.CellSelStep"));
+		tileOut.setLines(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.Lines"));
+		tileOut.setColumns(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.Columns"));
+		tileOut.setCellWidth(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.CellWidth"));
+		tileOut.setCellHeight(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.CellHeight"));
+		tileOut.setMargin(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.Margin"));
+		tileOut.setPadding(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.Padding"));
+		tileOut.setColor(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.Color"));
+		tileOut.setIsKeepCellPic(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.IsKeepCellPic"));
+		tileOut.setCellSelStep(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.CellSelStep"));
 		snapshotConfig.setTileOut(tileOut);
 		snapshotJob.setSnapshotConfig(snapshotConfig);
 
 		MNSMessageResult mNSMessageResult = new MNSMessageResult();
-		mNSMessageResult.setMessageId(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.MNSMessageResult.MessageId"));
-		mNSMessageResult.setErrorMessage(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.MNSMessageResult.ErrorMessage"));
-		mNSMessageResult.setErrorCode(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.MNSMessageResult.ErrorCode"));
+		mNSMessageResult.setMessageId(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.MNSMessageResult.MessageId"));
+		mNSMessageResult.setErrorMessage(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.MNSMessageResult.ErrorMessage"));
+		mNSMessageResult.setErrorCode(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.MNSMessageResult.ErrorCode"));
 		snapshotJob.setMNSMessageResult(mNSMessageResult);
 		submitSnapshotJobResponse.setSnapshotJob(snapshotJob);
 	 

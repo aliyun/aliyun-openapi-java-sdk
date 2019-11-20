@@ -15,24 +15,21 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitMcuJobRequest extends RpcAcsRequest<SubmitMcuJobResponse> {
-	
-	public SubmitMcuJobRequest() {
-		super("Mts", "2014-06-18", "SubmitMcuJob", "mts");
-	}
+	   
 
 	private String template;
 
-	private String input;
+	private Long resourceOwnerId;
 
 	private String userData;
-
-	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
@@ -43,6 +40,16 @@ public class SubmitMcuJobRequest extends RpcAcsRequest<SubmitMcuJobResponse> {
 	private String templateId;
 
 	private String pipelineId;
+
+	private String input;
+	public SubmitMcuJobRequest() {
+		super("Mts", "2014-06-18", "SubmitMcuJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTemplate() {
 		return this.template;
@@ -55,14 +62,14 @@ public class SubmitMcuJobRequest extends RpcAcsRequest<SubmitMcuJobResponse> {
 		}
 	}
 
-	public String getInput() {
-		return this.input;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -74,17 +81,6 @@ public class SubmitMcuJobRequest extends RpcAcsRequest<SubmitMcuJobResponse> {
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -140,6 +136,17 @@ public class SubmitMcuJobRequest extends RpcAcsRequest<SubmitMcuJobResponse> {
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
 		}
 	}
 

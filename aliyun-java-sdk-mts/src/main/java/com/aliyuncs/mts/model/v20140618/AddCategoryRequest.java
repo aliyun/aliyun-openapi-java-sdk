@@ -15,28 +15,35 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
-	
-	public AddCategoryRequest() {
-		super("Mts", "2014-06-18", "AddCategory", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private Long parentId;
+
+	private String cateName;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private Long parentId;
-
-	private String cateName;
+	public AddCategoryRequest() {
+		super("Mts", "2014-06-18", "AddCategory", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,6 +53,28 @@ public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Long getParentId() {
+		return this.parentId;
+	}
+
+	public void setParentId(Long parentId) {
+		this.parentId = parentId;
+		if(parentId != null){
+			putQueryParameter("ParentId", parentId.toString());
+		}
+	}
+
+	public String getCateName() {
+		return this.cateName;
+	}
+
+	public void setCateName(String cateName) {
+		this.cateName = cateName;
+		if(cateName != null){
+			putQueryParameter("CateName", cateName);
 		}
 	}
 
@@ -79,28 +108,6 @@ public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Long getParentId() {
-		return this.parentId;
-	}
-
-	public void setParentId(Long parentId) {
-		this.parentId = parentId;
-		if(parentId != null){
-			putQueryParameter("ParentId", parentId.toString());
-		}
-	}
-
-	public String getCateName() {
-		return this.cateName;
-	}
-
-	public void setCateName(String cateName) {
-		this.cateName = cateName;
-		if(cateName != null){
-			putQueryParameter("CateName", cateName);
 		}
 	}
 

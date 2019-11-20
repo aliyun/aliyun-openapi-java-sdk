@@ -15,16 +15,15 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteMediaWorkflowRequest extends RpcAcsRequest<DeleteMediaWorkflowResponse> {
-	
-	public DeleteMediaWorkflowRequest() {
-		super("Mts", "2014-06-18", "DeleteMediaWorkflow", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -32,9 +31,17 @@ public class DeleteMediaWorkflowRequest extends RpcAcsRequest<DeleteMediaWorkflo
 
 	private String ownerAccount;
 
-	private String mediaWorkflowId;
-
 	private Long ownerId;
+
+	private String mediaWorkflowId;
+	public DeleteMediaWorkflowRequest() {
+		super("Mts", "2014-06-18", "DeleteMediaWorkflow", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -69,17 +76,6 @@ public class DeleteMediaWorkflowRequest extends RpcAcsRequest<DeleteMediaWorkflo
 		}
 	}
 
-	public String getMediaWorkflowId() {
-		return this.mediaWorkflowId;
-	}
-
-	public void setMediaWorkflowId(String mediaWorkflowId) {
-		this.mediaWorkflowId = mediaWorkflowId;
-		if(mediaWorkflowId != null){
-			putQueryParameter("MediaWorkflowId", mediaWorkflowId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -88,6 +84,17 @@ public class DeleteMediaWorkflowRequest extends RpcAcsRequest<DeleteMediaWorkflo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getMediaWorkflowId() {
+		return this.mediaWorkflowId;
+	}
+
+	public void setMediaWorkflowId(String mediaWorkflowId) {
+		this.mediaWorkflowId = mediaWorkflowId;
+		if(mediaWorkflowId != null){
+			putQueryParameter("MediaWorkflowId", mediaWorkflowId);
 		}
 	}
 

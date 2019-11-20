@@ -15,46 +15,53 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddMCTemplateRequest extends RpcAcsRequest<AddMCTemplateResponse> {
-	
-	public AddMCTemplateRequest() {
-		super("Mts", "2014-06-18", "AddMCTemplate", "mts");
-	}
+	   
 
 	private String politics;
 
 	private Long resourceOwnerId;
 
-	private String contraband;
-
-	private String ad;
-
 	private String abuse;
 
-	private String resourceOwnerAccount;
-
 	private String qrcode;
-
-	private String ownerAccount;
-
-	private Long ownerId;
 
 	private String porn;
 
 	private String terrorism;
 
-	private String name;
-
 	private String logo;
 
-	private String spam;
-
 	private String live;
+
+	private String contraband;
+
+	private String ad;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String name;
+
+	private String spam;
+	public AddMCTemplateRequest() {
+		super("Mts", "2014-06-18", "AddMCTemplate", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getPolitics() {
 		return this.politics;
@@ -78,28 +85,6 @@ public class AddMCTemplateRequest extends RpcAcsRequest<AddMCTemplateResponse> {
 		}
 	}
 
-	public String getContraband() {
-		return this.contraband;
-	}
-
-	public void setContraband(String contraband) {
-		this.contraband = contraband;
-		if(contraband != null){
-			putQueryParameter("Contraband", contraband);
-		}
-	}
-
-	public String getAd() {
-		return this.ad;
-	}
-
-	public void setAd(String ad) {
-		this.ad = ad;
-		if(ad != null){
-			putQueryParameter("Ad", ad);
-		}
-	}
-
 	public String getAbuse() {
 		return this.abuse;
 	}
@@ -111,17 +96,6 @@ public class AddMCTemplateRequest extends RpcAcsRequest<AddMCTemplateResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getQrcode() {
 		return this.qrcode;
 	}
@@ -130,28 +104,6 @@ public class AddMCTemplateRequest extends RpcAcsRequest<AddMCTemplateResponse> {
 		this.qrcode = qrcode;
 		if(qrcode != null){
 			putQueryParameter("Qrcode", qrcode);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -177,17 +129,6 @@ public class AddMCTemplateRequest extends RpcAcsRequest<AddMCTemplateResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getLogo() {
 		return this.logo;
 	}
@@ -199,17 +140,6 @@ public class AddMCTemplateRequest extends RpcAcsRequest<AddMCTemplateResponse> {
 		}
 	}
 
-	public String getSpam() {
-		return this.spam;
-	}
-
-	public void setSpam(String spam) {
-		this.spam = spam;
-		if(spam != null){
-			putQueryParameter("spam", spam);
-		}
-	}
-
 	public String getLive() {
 		return this.live;
 	}
@@ -218,6 +148,83 @@ public class AddMCTemplateRequest extends RpcAcsRequest<AddMCTemplateResponse> {
 		this.live = live;
 		if(live != null){
 			putQueryParameter("Live", live);
+		}
+	}
+
+	public String getContraband() {
+		return this.contraband;
+	}
+
+	public void setContraband(String contraband) {
+		this.contraband = contraband;
+		if(contraband != null){
+			putQueryParameter("Contraband", contraband);
+		}
+	}
+
+	public String getAd() {
+		return this.ad;
+	}
+
+	public void setAd(String ad) {
+		this.ad = ad;
+		if(ad != null){
+			putQueryParameter("Ad", ad);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getSpam() {
+		return this.spam;
+	}
+
+	public void setSpam(String spam) {
+		this.spam = spam;
+		if(spam != null){
+			putQueryParameter("spam", spam);
 		}
 	}
 

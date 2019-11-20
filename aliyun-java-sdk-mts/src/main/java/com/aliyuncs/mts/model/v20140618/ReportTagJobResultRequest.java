@@ -15,30 +15,48 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ReportTagJobResultRequest extends RpcAcsRequest<ReportTagJobResultResponse> {
-	
-	public ReportTagJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportTagJobResult", "mts");
-	}
+	   
+
+	private Long resourceOwnerId;
 
 	private String result;
 
 	private String jobId;
 
-	private Long resourceOwnerId;
+	private String tag;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String tag;
-
 	private Long ownerId;
+	public ReportTagJobResultRequest() {
+		super("Mts", "2014-06-18", "ReportTagJobResult", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
 
 	public String getResult() {
 		return this.result;
@@ -62,14 +80,14 @@ public class ReportTagJobResultRequest extends RpcAcsRequest<ReportTagJobResultR
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getTag() {
+		return this.tag;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 
@@ -92,17 +110,6 @@ public class ReportTagJobResultRequest extends RpcAcsRequest<ReportTagJobResultR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getTag() {
-		return this.tag;
-	}
-
-	public void setTag(String tag) {
-		this.tag = tag;
-		if(tag != null){
-			putQueryParameter("Tag", tag);
 		}
 	}
 

@@ -25,27 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryCensorPipelineListResponseUnmarshaller {
 
-	public static QueryCensorPipelineListResponse unmarshall(QueryCensorPipelineListResponse queryCensorPipelineListResponse, UnmarshallerContext context) {
+	public static QueryCensorPipelineListResponse unmarshall(QueryCensorPipelineListResponse queryCensorPipelineListResponse, UnmarshallerContext _ctx) {
 		
-		queryCensorPipelineListResponse.setRequestId(context.stringValue("QueryCensorPipelineListResponse.RequestId"));
+		queryCensorPipelineListResponse.setRequestId(_ctx.stringValue("QueryCensorPipelineListResponse.RequestId"));
 
 		List<String> nonExistIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryCensorPipelineListResponse.NonExistIds.Length"); i++) {
-			nonExistIds.add(context.stringValue("QueryCensorPipelineListResponse.NonExistIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryCensorPipelineListResponse.NonExistIds.Length"); i++) {
+			nonExistIds.add(_ctx.stringValue("QueryCensorPipelineListResponse.NonExistIds["+ i +"]"));
 		}
 		queryCensorPipelineListResponse.setNonExistIds(nonExistIds);
 
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
-		for (int i = 0; i < context.lengthValue("QueryCensorPipelineListResponse.PipelineList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryCensorPipelineListResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setId(context.stringValue("QueryCensorPipelineListResponse.PipelineList["+ i +"].Id"));
-			pipeline.setName(context.stringValue("QueryCensorPipelineListResponse.PipelineList["+ i +"].Name"));
-			pipeline.setState(context.stringValue("QueryCensorPipelineListResponse.PipelineList["+ i +"].State"));
-			pipeline.setPriority(context.stringValue("QueryCensorPipelineListResponse.PipelineList["+ i +"].Priority"));
+			pipeline.setId(_ctx.stringValue("QueryCensorPipelineListResponse.PipelineList["+ i +"].Id"));
+			pipeline.setName(_ctx.stringValue("QueryCensorPipelineListResponse.PipelineList["+ i +"].Name"));
+			pipeline.setState(_ctx.stringValue("QueryCensorPipelineListResponse.PipelineList["+ i +"].State"));
+			pipeline.setPriority(_ctx.stringValue("QueryCensorPipelineListResponse.PipelineList["+ i +"].Priority"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
-			notifyConfig.setTopic(context.stringValue("QueryCensorPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
-			notifyConfig.setQueue(context.stringValue("QueryCensorPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Queue"));
+			notifyConfig.setTopic(_ctx.stringValue("QueryCensorPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
+			notifyConfig.setQueue(_ctx.stringValue("QueryCensorPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Queue"));
 			pipeline.setNotifyConfig(notifyConfig);
 
 			pipelineList.add(pipeline);

@@ -15,16 +15,15 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListAllCategoryRequest extends RpcAcsRequest<ListAllCategoryResponse> {
-	
-	public ListAllCategoryRequest() {
-		super("Mts", "2014-06-18", "ListAllCategory", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -33,6 +32,14 @@ public class ListAllCategoryRequest extends RpcAcsRequest<ListAllCategoryRespons
 	private String ownerAccount;
 
 	private Long ownerId;
+	public ListAllCategoryRequest() {
+		super("Mts", "2014-06-18", "ListAllCategory", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

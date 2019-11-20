@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateSessionResponseUnmarshaller {
 
-	public static CreateSessionResponse unmarshall(CreateSessionResponse createSessionResponse, UnmarshallerContext context) {
+	public static CreateSessionResponse unmarshall(CreateSessionResponse createSessionResponse, UnmarshallerContext _ctx) {
 		
-		createSessionResponse.setRequestId(context.stringValue("CreateSessionResponse.RequestId"));
-		createSessionResponse.setSessionId(context.stringValue("CreateSessionResponse.SessionId"));
-		createSessionResponse.setTicket(context.stringValue("CreateSessionResponse.Ticket"));
+		createSessionResponse.setRequestId(_ctx.stringValue("CreateSessionResponse.RequestId"));
+		createSessionResponse.setSessionId(_ctx.stringValue("CreateSessionResponse.SessionId"));
+		createSessionResponse.setTicket(_ctx.stringValue("CreateSessionResponse.Ticket"));
 	 
 	 	return createSessionResponse;
 	}

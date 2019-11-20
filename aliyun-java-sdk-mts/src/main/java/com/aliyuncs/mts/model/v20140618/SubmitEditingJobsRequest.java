@@ -15,20 +15,21 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitEditingJobsRequest extends RpcAcsRequest<SubmitEditingJobsResponse> {
-	
-	public SubmitEditingJobsRequest() {
-		super("Mts", "2014-06-18", "SubmitEditingJobs", "mts");
-	}
-
-	private String outputBucket;
+	   
 
 	private Long resourceOwnerId;
+
+	private String outputLocation;
+
+	private String editingInputs;
 
 	private String editingJobOutputs;
 
@@ -36,23 +37,18 @@ public class SubmitEditingJobsRequest extends RpcAcsRequest<SubmitEditingJobsRes
 
 	private String ownerAccount;
 
-	private String outputLocation;
-
 	private Long ownerId;
-
-	private String editingInputs;
 
 	private String pipelineId;
 
-	public String getOutputBucket() {
-		return this.outputBucket;
-	}
-
-	public void setOutputBucket(String outputBucket) {
-		this.outputBucket = outputBucket;
-		if(outputBucket != null){
-			putQueryParameter("OutputBucket", outputBucket);
-		}
+	private String outputBucket;
+	public SubmitEditingJobsRequest() {
+		super("Mts", "2014-06-18", "SubmitEditingJobs", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -63,6 +59,28 @@ public class SubmitEditingJobsRequest extends RpcAcsRequest<SubmitEditingJobsRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOutputLocation() {
+		return this.outputLocation;
+	}
+
+	public void setOutputLocation(String outputLocation) {
+		this.outputLocation = outputLocation;
+		if(outputLocation != null){
+			putQueryParameter("OutputLocation", outputLocation);
+		}
+	}
+
+	public String getEditingInputs() {
+		return this.editingInputs;
+	}
+
+	public void setEditingInputs(String editingInputs) {
+		this.editingInputs = editingInputs;
+		if(editingInputs != null){
+			putQueryParameter("EditingInputs", editingInputs);
 		}
 	}
 
@@ -99,17 +117,6 @@ public class SubmitEditingJobsRequest extends RpcAcsRequest<SubmitEditingJobsRes
 		}
 	}
 
-	public String getOutputLocation() {
-		return this.outputLocation;
-	}
-
-	public void setOutputLocation(String outputLocation) {
-		this.outputLocation = outputLocation;
-		if(outputLocation != null){
-			putQueryParameter("OutputLocation", outputLocation);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -121,17 +128,6 @@ public class SubmitEditingJobsRequest extends RpcAcsRequest<SubmitEditingJobsRes
 		}
 	}
 
-	public String getEditingInputs() {
-		return this.editingInputs;
-	}
-
-	public void setEditingInputs(String editingInputs) {
-		this.editingInputs = editingInputs;
-		if(editingInputs != null){
-			putQueryParameter("EditingInputs", editingInputs);
-		}
-	}
-
 	public String getPipelineId() {
 		return this.pipelineId;
 	}
@@ -140,6 +136,17 @@ public class SubmitEditingJobsRequest extends RpcAcsRequest<SubmitEditingJobsRes
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getOutputBucket() {
+		return this.outputBucket;
+	}
+
+	public void setOutputBucket(String outputBucket) {
+		this.outputBucket = outputBucket;
+		if(outputBucket != null){
+			putQueryParameter("OutputBucket", outputBucket);
 		}
 	}
 

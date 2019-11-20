@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateMediaWorkflowResponseUnmarshaller {
 
-	public static UpdateMediaWorkflowResponse unmarshall(UpdateMediaWorkflowResponse updateMediaWorkflowResponse, UnmarshallerContext context) {
+	public static UpdateMediaWorkflowResponse unmarshall(UpdateMediaWorkflowResponse updateMediaWorkflowResponse, UnmarshallerContext _ctx) {
 		
-		updateMediaWorkflowResponse.setRequestId(context.stringValue("UpdateMediaWorkflowResponse.RequestId"));
+		updateMediaWorkflowResponse.setRequestId(_ctx.stringValue("UpdateMediaWorkflowResponse.RequestId"));
 
 		MediaWorkflow mediaWorkflow = new MediaWorkflow();
-		mediaWorkflow.setMediaWorkflowId(context.stringValue("UpdateMediaWorkflowResponse.MediaWorkflow.MediaWorkflowId"));
-		mediaWorkflow.setName(context.stringValue("UpdateMediaWorkflowResponse.MediaWorkflow.Name"));
-		mediaWorkflow.setTopology(context.stringValue("UpdateMediaWorkflowResponse.MediaWorkflow.Topology"));
-		mediaWorkflow.setTriggerMode(context.stringValue("UpdateMediaWorkflowResponse.MediaWorkflow.TriggerMode"));
-		mediaWorkflow.setState(context.stringValue("UpdateMediaWorkflowResponse.MediaWorkflow.State"));
-		mediaWorkflow.setCreationTime(context.stringValue("UpdateMediaWorkflowResponse.MediaWorkflow.CreationTime"));
+		mediaWorkflow.setMediaWorkflowId(_ctx.stringValue("UpdateMediaWorkflowResponse.MediaWorkflow.MediaWorkflowId"));
+		mediaWorkflow.setName(_ctx.stringValue("UpdateMediaWorkflowResponse.MediaWorkflow.Name"));
+		mediaWorkflow.setTopology(_ctx.stringValue("UpdateMediaWorkflowResponse.MediaWorkflow.Topology"));
+		mediaWorkflow.setTriggerMode(_ctx.stringValue("UpdateMediaWorkflowResponse.MediaWorkflow.TriggerMode"));
+		mediaWorkflow.setState(_ctx.stringValue("UpdateMediaWorkflowResponse.MediaWorkflow.State"));
+		mediaWorkflow.setCreationTime(_ctx.stringValue("UpdateMediaWorkflowResponse.MediaWorkflow.CreationTime"));
 		updateMediaWorkflowResponse.setMediaWorkflow(mediaWorkflow);
 	 
 	 	return updateMediaWorkflowResponse;

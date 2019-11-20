@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateMediaCategoryResponseUnmarshaller {
 
-	public static UpdateMediaCategoryResponse unmarshall(UpdateMediaCategoryResponse updateMediaCategoryResponse, UnmarshallerContext context) {
+	public static UpdateMediaCategoryResponse unmarshall(UpdateMediaCategoryResponse updateMediaCategoryResponse, UnmarshallerContext _ctx) {
 		
-		updateMediaCategoryResponse.setRequestId(context.stringValue("UpdateMediaCategoryResponse.RequestId"));
+		updateMediaCategoryResponse.setRequestId(_ctx.stringValue("UpdateMediaCategoryResponse.RequestId"));
 	 
 	 	return updateMediaCategoryResponse;
 	}

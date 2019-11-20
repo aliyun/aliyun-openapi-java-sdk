@@ -15,39 +15,46 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ReportAnnotationJobResultRequest extends RpcAcsRequest<ReportAnnotationJobResultResponse> {
-	
-	public ReportAnnotationJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportAnnotationJobResult", "mts");
-	}
+	   
 
-	private String annotation;
+	private Long resourceOwnerId;
 
 	private String jobId;
 
-	private Long resourceOwnerId;
+	private String details;
+
+	private String annotation;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String details;
-
 	private Long ownerId;
-
-	public String getAnnotation() {
-		return this.annotation;
+	public ReportAnnotationJobResultRequest() {
+		super("Mts", "2014-06-18", "ReportAnnotationJobResult", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setAnnotation(String annotation) {
-		this.annotation = annotation;
-		if(annotation != null){
-			putQueryParameter("Annotation", annotation);
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -62,14 +69,25 @@ public class ReportAnnotationJobResultRequest extends RpcAcsRequest<ReportAnnota
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getDetails() {
+		return this.details;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setDetails(String details) {
+		this.details = details;
+		if(details != null){
+			putQueryParameter("Details", details);
+		}
+	}
+
+	public String getAnnotation() {
+		return this.annotation;
+	}
+
+	public void setAnnotation(String annotation) {
+		this.annotation = annotation;
+		if(annotation != null){
+			putQueryParameter("Annotation", annotation);
 		}
 	}
 
@@ -92,17 +110,6 @@ public class ReportAnnotationJobResultRequest extends RpcAcsRequest<ReportAnnota
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDetails() {
-		return this.details;
-	}
-
-	public void setDetails(String details) {
-		this.details = details;
-		if(details != null){
-			putQueryParameter("Details", details);
 		}
 	}
 

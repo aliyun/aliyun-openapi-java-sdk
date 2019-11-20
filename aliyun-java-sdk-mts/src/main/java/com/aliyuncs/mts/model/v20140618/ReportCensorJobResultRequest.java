@@ -15,20 +15,19 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ReportCensorJobResultRequest extends RpcAcsRequest<ReportCensorJobResultResponse> {
-	
-	public ReportCensorJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportCensorJobResult", "mts");
-	}
-
-	private String jobId;
+	   
 
 	private Long resourceOwnerId;
+
+	private String jobId;
 
 	private String resourceOwnerAccount;
 
@@ -36,19 +35,16 @@ public class ReportCensorJobResultRequest extends RpcAcsRequest<ReportCensorJobR
 
 	private String label;
 
-	private String detail;
-
 	private Long ownerId;
 
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
-		}
+	private String detail;
+	public ReportCensorJobResultRequest() {
+		super("Mts", "2014-06-18", "ReportCensorJobResult", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -59,6 +55,17 @@ public class ReportCensorJobResultRequest extends RpcAcsRequest<ReportCensorJobR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
 		}
 	}
 
@@ -95,17 +102,6 @@ public class ReportCensorJobResultRequest extends RpcAcsRequest<ReportCensorJobR
 		}
 	}
 
-	public String getDetail() {
-		return this.detail;
-	}
-
-	public void setDetail(String detail) {
-		this.detail = detail;
-		if(detail != null){
-			putQueryParameter("Detail", detail);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,6 +110,17 @@ public class ReportCensorJobResultRequest extends RpcAcsRequest<ReportCensorJobR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDetail() {
+		return this.detail;
+	}
+
+	public void setDetail(String detail) {
+		this.detail = detail;
+		if(detail != null){
+			putQueryParameter("Detail", detail);
 		}
 	}
 

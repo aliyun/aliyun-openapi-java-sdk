@@ -15,26 +15,33 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryMediaInfoJobListRequest extends RpcAcsRequest<QueryMediaInfoJobListResponse> {
-	
-	public QueryMediaInfoJobListRequest() {
-		super("Mts", "2014-06-18", "QueryMediaInfoJobList", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
-
-	private String mediaInfoJobIds;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String mediaInfoJobIds;
+	public QueryMediaInfoJobListRequest() {
+		super("Mts", "2014-06-18", "QueryMediaInfoJobList", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -44,17 +51,6 @@ public class QueryMediaInfoJobListRequest extends RpcAcsRequest<QueryMediaInfoJo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getMediaInfoJobIds() {
-		return this.mediaInfoJobIds;
-	}
-
-	public void setMediaInfoJobIds(String mediaInfoJobIds) {
-		this.mediaInfoJobIds = mediaInfoJobIds;
-		if(mediaInfoJobIds != null){
-			putQueryParameter("MediaInfoJobIds", mediaInfoJobIds);
 		}
 	}
 
@@ -88,6 +84,17 @@ public class QueryMediaInfoJobListRequest extends RpcAcsRequest<QueryMediaInfoJo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getMediaInfoJobIds() {
+		return this.mediaInfoJobIds;
+	}
+
+	public void setMediaInfoJobIds(String mediaInfoJobIds) {
+		this.mediaInfoJobIds = mediaInfoJobIds;
+		if(mediaInfoJobIds != null){
+			putQueryParameter("MediaInfoJobIds", mediaInfoJobIds);
 		}
 	}
 

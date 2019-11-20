@@ -15,16 +15,15 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddCoverPipelineRequest extends RpcAcsRequest<AddCoverPipelineResponse> {
-	
-	public AddCoverPipelineRequest() {
-		super("Mts", "2014-06-18", "AddCoverPipeline", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -34,13 +33,21 @@ public class AddCoverPipelineRequest extends RpcAcsRequest<AddCoverPipelineRespo
 
 	private String ownerAccount;
 
-	private String name;
-
 	private String notifyConfig;
 
 	private Long ownerId;
 
 	private String priority;
+
+	private String name;
+	public AddCoverPipelineRequest() {
+		super("Mts", "2014-06-18", "AddCoverPipeline", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -86,17 +93,6 @@ public class AddCoverPipelineRequest extends RpcAcsRequest<AddCoverPipelineRespo
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getNotifyConfig() {
 		return this.notifyConfig;
 	}
@@ -127,6 +123,17 @@ public class AddCoverPipelineRequest extends RpcAcsRequest<AddCoverPipelineRespo
 		this.priority = priority;
 		if(priority != null){
 			putQueryParameter("Priority", priority);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

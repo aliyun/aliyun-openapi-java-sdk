@@ -15,34 +15,41 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryMediaListByURLRequest extends RpcAcsRequest<QueryMediaListByURLResponse> {
-	
-	public QueryMediaListByURLRequest() {
-		super("Mts", "2014-06-18", "QueryMediaListByURL", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private Boolean includeSummaryList;
 
+	private String fileURLs;
+
+	private Boolean includePlayList;
+
 	private String resourceOwnerAccount;
 
 	private Boolean includeSnapshotList;
-
-	private String fileURLs;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private Boolean includePlayList;
-
 	private Boolean includeMediaInfo;
+	public QueryMediaListByURLRequest() {
+		super("Mts", "2014-06-18", "QueryMediaListByURL", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -63,6 +70,28 @@ public class QueryMediaListByURLRequest extends RpcAcsRequest<QueryMediaListByUR
 		this.includeSummaryList = includeSummaryList;
 		if(includeSummaryList != null){
 			putQueryParameter("IncludeSummaryList", includeSummaryList.toString());
+		}
+	}
+
+	public String getFileURLs() {
+		return this.fileURLs;
+	}
+
+	public void setFileURLs(String fileURLs) {
+		this.fileURLs = fileURLs;
+		if(fileURLs != null){
+			putQueryParameter("FileURLs", fileURLs);
+		}
+	}
+
+	public Boolean getIncludePlayList() {
+		return this.includePlayList;
+	}
+
+	public void setIncludePlayList(Boolean includePlayList) {
+		this.includePlayList = includePlayList;
+		if(includePlayList != null){
+			putQueryParameter("IncludePlayList", includePlayList.toString());
 		}
 	}
 
@@ -88,17 +117,6 @@ public class QueryMediaListByURLRequest extends RpcAcsRequest<QueryMediaListByUR
 		}
 	}
 
-	public String getFileURLs() {
-		return this.fileURLs;
-	}
-
-	public void setFileURLs(String fileURLs) {
-		this.fileURLs = fileURLs;
-		if(fileURLs != null){
-			putQueryParameter("FileURLs", fileURLs);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -118,17 +136,6 @@ public class QueryMediaListByURLRequest extends RpcAcsRequest<QueryMediaListByUR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Boolean getIncludePlayList() {
-		return this.includePlayList;
-	}
-
-	public void setIncludePlayList(Boolean includePlayList) {
-		this.includePlayList = includePlayList;
-		if(includePlayList != null){
-			putQueryParameter("IncludePlayList", includePlayList.toString());
 		}
 	}
 

@@ -24,35 +24,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PlayInfoResponseUnmarshaller {
 
-	public static PlayInfoResponse unmarshall(PlayInfoResponse playInfoResponse, UnmarshallerContext context) {
+	public static PlayInfoResponse unmarshall(PlayInfoResponse playInfoResponse, UnmarshallerContext _ctx) {
 		
-		playInfoResponse.setRequestId(context.stringValue("PlayInfoResponse.RequestId"));
+		playInfoResponse.setRequestId(_ctx.stringValue("PlayInfoResponse.RequestId"));
 
 		List<String> notFoundCDNDomain = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("PlayInfoResponse.NotFoundCDNDomain.Length"); i++) {
-			notFoundCDNDomain.add(context.stringValue("PlayInfoResponse.NotFoundCDNDomain["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("PlayInfoResponse.NotFoundCDNDomain.Length"); i++) {
+			notFoundCDNDomain.add(_ctx.stringValue("PlayInfoResponse.NotFoundCDNDomain["+ i +"]"));
 		}
 		playInfoResponse.setNotFoundCDNDomain(notFoundCDNDomain);
 
 		List<PlayInfo> playInfoList = new ArrayList<PlayInfo>();
-		for (int i = 0; i < context.lengthValue("PlayInfoResponse.PlayInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("PlayInfoResponse.PlayInfoList.Length"); i++) {
 			PlayInfo playInfo = new PlayInfo();
-			playInfo.setUrl(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].Url"));
-			playInfo.setDuration(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].duration"));
-			playInfo.setSize(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].size"));
-			playInfo.setWidth(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].width"));
-			playInfo.setHeight(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].height"));
-			playInfo.setBitrate(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].bitrate"));
-			playInfo.setFps(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].fps"));
-			playInfo.setFormat(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].format"));
-			playInfo.setDefinition(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].definition"));
-			playInfo.setEncryption(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].encryption"));
-			playInfo.setRand(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].rand"));
-			playInfo.setPlaintext(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].plaintext"));
-			playInfo.setComplexity(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].complexity"));
-			playInfo.setActivityName(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].activityName"));
-			playInfo.setEncryptionType(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].encryptionType"));
-			playInfo.setDownloadType(context.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].downloadType"));
+			playInfo.setUrl(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].Url"));
+			playInfo.setDuration(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].duration"));
+			playInfo.setSize(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].size"));
+			playInfo.setWidth(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].width"));
+			playInfo.setHeight(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].height"));
+			playInfo.setBitrate(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].bitrate"));
+			playInfo.setFps(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].fps"));
+			playInfo.setFormat(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].format"));
+			playInfo.setDefinition(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].definition"));
+			playInfo.setEncryption(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].encryption"));
+			playInfo.setRand(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].rand"));
+			playInfo.setPlaintext(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].plaintext"));
+			playInfo.setComplexity(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].complexity"));
+			playInfo.setActivityName(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].activityName"));
+			playInfo.setEncryptionType(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].encryptionType"));
+			playInfo.setDownloadType(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].downloadType"));
 
 			playInfoList.add(playInfo);
 		}

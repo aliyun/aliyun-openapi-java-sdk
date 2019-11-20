@@ -15,16 +15,15 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryMediaWorkflowListRequest extends RpcAcsRequest<QueryMediaWorkflowListResponse> {
-	
-	public QueryMediaWorkflowListRequest() {
-		super("Mts", "2014-06-18", "QueryMediaWorkflowList", "mts");
-	}
+	   
 
 	private String mediaWorkflowIds;
 
@@ -35,6 +34,14 @@ public class QueryMediaWorkflowListRequest extends RpcAcsRequest<QueryMediaWorkf
 	private String ownerAccount;
 
 	private Long ownerId;
+	public QueryMediaWorkflowListRequest() {
+		super("Mts", "2014-06-18", "QueryMediaWorkflowList", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getMediaWorkflowIds() {
 		return this.mediaWorkflowIds;

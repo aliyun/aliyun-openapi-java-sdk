@@ -15,30 +15,48 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ReportMediaDetailJobResultRequest extends RpcAcsRequest<ReportMediaDetailJobResultResponse> {
-	
-	public ReportMediaDetailJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportMediaDetailJobResult", "mts");
-	}
+	   
+
+	private Long resourceOwnerId;
 
 	private String jobId;
 
-	private Long resourceOwnerId;
+	private String tag;
+
+	private String results;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String tag;
-
 	private Long ownerId;
+	public ReportMediaDetailJobResultRequest() {
+		super("Mts", "2014-06-18", "ReportMediaDetailJobResult", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private String results;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
 
 	public String getJobId() {
 		return this.jobId;
@@ -51,14 +69,25 @@ public class ReportMediaDetailJobResultRequest extends RpcAcsRequest<ReportMedia
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getTag() {
+		return this.tag;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
+		}
+	}
+
+	public String getResults() {
+		return this.results;
+	}
+
+	public void setResults(String results) {
+		this.results = results;
+		if(results != null){
+			putQueryParameter("Results", results);
 		}
 	}
 
@@ -84,17 +113,6 @@ public class ReportMediaDetailJobResultRequest extends RpcAcsRequest<ReportMedia
 		}
 	}
 
-	public String getTag() {
-		return this.tag;
-	}
-
-	public void setTag(String tag) {
-		this.tag = tag;
-		if(tag != null){
-			putQueryParameter("Tag", tag);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -103,17 +121,6 @@ public class ReportMediaDetailJobResultRequest extends RpcAcsRequest<ReportMedia
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getResults() {
-		return this.results;
-	}
-
-	public void setResults(String results) {
-		this.results = results;
-		if(results != null){
-			putQueryParameter("Results", results);
 		}
 	}
 

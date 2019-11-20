@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitSubtitleJobResponseUnmarshaller {
 
-	public static SubmitSubtitleJobResponse unmarshall(SubmitSubtitleJobResponse submitSubtitleJobResponse, UnmarshallerContext context) {
+	public static SubmitSubtitleJobResponse unmarshall(SubmitSubtitleJobResponse submitSubtitleJobResponse, UnmarshallerContext _ctx) {
 		
-		submitSubtitleJobResponse.setRequestId(context.stringValue("SubmitSubtitleJobResponse.RequestId"));
+		submitSubtitleJobResponse.setRequestId(_ctx.stringValue("SubmitSubtitleJobResponse.RequestId"));
 
 		SubtitleJob subtitleJob = new SubtitleJob();
-		subtitleJob.setJobId(context.stringValue("SubmitSubtitleJobResponse.SubtitleJob.JobId"));
-		subtitleJob.setInputConfig(context.stringValue("SubmitSubtitleJobResponse.SubtitleJob.InputConfig"));
-		subtitleJob.setInputConfig1(context.stringValue("SubmitSubtitleJobResponse.SubtitleJob.InputConfig"));
-		subtitleJob.setUserData(context.stringValue("SubmitSubtitleJobResponse.SubtitleJob.UserData"));
-		subtitleJob.setState(context.stringValue("SubmitSubtitleJobResponse.SubtitleJob.State"));
+		subtitleJob.setJobId(_ctx.stringValue("SubmitSubtitleJobResponse.SubtitleJob.JobId"));
+		subtitleJob.setInputConfig(_ctx.stringValue("SubmitSubtitleJobResponse.SubtitleJob.InputConfig"));
+		subtitleJob.setInputConfig1(_ctx.stringValue("SubmitSubtitleJobResponse.SubtitleJob.InputConfig"));
+		subtitleJob.setUserData(_ctx.stringValue("SubmitSubtitleJobResponse.SubtitleJob.UserData"));
+		subtitleJob.setState(_ctx.stringValue("SubmitSubtitleJobResponse.SubtitleJob.State"));
 		submitSubtitleJobResponse.setSubtitleJob(subtitleJob);
 	 
 	 	return submitSubtitleJobResponse;

@@ -71,6 +71,8 @@ public class QueryMcuJobResponse extends AcsResponse {
 
 		private List<Face> faceResult;
 
+		private List<SubTask> subTaskInfo;
+
 		private Input input;
 
 		private AsrResult asrResult;
@@ -131,6 +133,14 @@ public class QueryMcuJobResponse extends AcsResponse {
 
 		public void setFaceResult(List<Face> faceResult) {
 			this.faceResult = faceResult;
+		}
+
+		public List<SubTask> getSubTaskInfo() {
+			return this.subTaskInfo;
+		}
+
+		public void setSubTaskInfo(List<SubTask> subTaskInfo) {
+			this.subTaskInfo = subTaskInfo;
 		}
 
 		public Input getInput() {
@@ -349,6 +359,39 @@ public class QueryMcuJobResponse extends AcsResponse {
 				public void setTarget(String target) {
 					this.target = target;
 				}
+			}
+		}
+
+		public static class SubTask {
+
+			private String type;
+
+			private String code;
+
+			private String message;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getCode() {
+				return this.code;
+			}
+
+			public void setCode(String code) {
+				this.code = code;
+			}
+
+			public String getMessage() {
+				return this.message;
+			}
+
+			public void setMessage(String message) {
+				this.message = message;
 			}
 		}
 

@@ -15,38 +15,45 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryMediaCensorJobListRequest extends RpcAcsRequest<QueryMediaCensorJobListResponse> {
-	
-	public QueryMediaCensorJobListRequest() {
-		super("Mts", "2014-06-18", "QueryMediaCensorJobList", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String nextPageToken;
 
-	private String ownerAccount;
-
 	private String startOfJobCreatedTimeRange;
-
-	private Long maximumPageSize;
-
-	private Long ownerId;
-
-	private String pipelineId;
 
 	private String jobId;
 
 	private String state;
 
 	private String endOfJobCreatedTimeRange;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long maximumPageSize;
+
+	private Long ownerId;
+
+	private String pipelineId;
+	public QueryMediaCensorJobListRequest() {
+		super("Mts", "2014-06-18", "QueryMediaCensorJobList", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,17 +63,6 @@ public class QueryMediaCensorJobListRequest extends RpcAcsRequest<QueryMediaCens
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -81,17 +77,6 @@ public class QueryMediaCensorJobListRequest extends RpcAcsRequest<QueryMediaCens
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getStartOfJobCreatedTimeRange() {
 		return this.startOfJobCreatedTimeRange;
 	}
@@ -100,39 +85,6 @@ public class QueryMediaCensorJobListRequest extends RpcAcsRequest<QueryMediaCens
 		this.startOfJobCreatedTimeRange = startOfJobCreatedTimeRange;
 		if(startOfJobCreatedTimeRange != null){
 			putQueryParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
-		}
-	}
-
-	public Long getMaximumPageSize() {
-		return this.maximumPageSize;
-	}
-
-	public void setMaximumPageSize(Long maximumPageSize) {
-		this.maximumPageSize = maximumPageSize;
-		if(maximumPageSize != null){
-			putQueryParameter("MaximumPageSize", maximumPageSize.toString());
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getPipelineId() {
-		return this.pipelineId;
-	}
-
-	public void setPipelineId(String pipelineId) {
-		this.pipelineId = pipelineId;
-		if(pipelineId != null){
-			putQueryParameter("PipelineId", pipelineId);
 		}
 	}
 
@@ -166,6 +118,61 @@ public class QueryMediaCensorJobListRequest extends RpcAcsRequest<QueryMediaCens
 		this.endOfJobCreatedTimeRange = endOfJobCreatedTimeRange;
 		if(endOfJobCreatedTimeRange != null){
 			putQueryParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getMaximumPageSize() {
+		return this.maximumPageSize;
+	}
+
+	public void setMaximumPageSize(Long maximumPageSize) {
+		this.maximumPageSize = maximumPageSize;
+		if(maximumPageSize != null){
+			putQueryParameter("MaximumPageSize", maximumPageSize.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPipelineId() {
+		return this.pipelineId;
+	}
+
+	public void setPipelineId(String pipelineId) {
+		this.pipelineId = pipelineId;
+		if(pipelineId != null){
+			putQueryParameter("PipelineId", pipelineId);
 		}
 	}
 

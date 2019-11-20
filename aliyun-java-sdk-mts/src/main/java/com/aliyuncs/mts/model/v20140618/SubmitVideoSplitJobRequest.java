@@ -15,24 +15,21 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitVideoSplitJobRequest extends RpcAcsRequest<SubmitVideoSplitJobResponse> {
-	
-	public SubmitVideoSplitJobRequest() {
-		super("Mts", "2014-06-18", "SubmitVideoSplitJob", "mts");
-	}
-
-	private String input;
+	   
 
 	private String videoSplitConfig;
 
-	private String userData;
-
 	private Long resourceOwnerId;
+
+	private String userData;
 
 	private String resourceOwnerAccount;
 
@@ -42,15 +39,14 @@ public class SubmitVideoSplitJobRequest extends RpcAcsRequest<SubmitVideoSplitJo
 
 	private String pipelineId;
 
-	public String getInput() {
-		return this.input;
-	}
-
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
-		}
+	private String input;
+	public SubmitVideoSplitJobRequest() {
+		super("Mts", "2014-06-18", "SubmitVideoSplitJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getVideoSplitConfig() {
@@ -64,17 +60,6 @@ public class SubmitVideoSplitJobRequest extends RpcAcsRequest<SubmitVideoSplitJo
 		}
 	}
 
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -83,6 +68,17 @@ public class SubmitVideoSplitJobRequest extends RpcAcsRequest<SubmitVideoSplitJo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
 		}
 	}
 
@@ -127,6 +123,17 @@ public class SubmitVideoSplitJobRequest extends RpcAcsRequest<SubmitVideoSplitJo
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
 		}
 	}
 

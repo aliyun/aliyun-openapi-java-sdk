@@ -15,22 +15,21 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitTerrorismJobRequest extends RpcAcsRequest<SubmitTerrorismJobResponse> {
-	
-	public SubmitTerrorismJobRequest() {
-		super("Mts", "2014-06-18", "SubmitTerrorismJob", "mts");
-	}
-
-	private String input;
-
-	private String userData;
+	   
 
 	private Long resourceOwnerId;
+
+	private String terrorismConfig;
+
+	private String userData;
 
 	private String resourceOwnerAccount;
 
@@ -40,16 +39,35 @@ public class SubmitTerrorismJobRequest extends RpcAcsRequest<SubmitTerrorismJobR
 
 	private String pipelineId;
 
-	private String terrorismConfig;
-
-	public String getInput() {
-		return this.input;
+	private String input;
+	public SubmitTerrorismJobRequest() {
+		super("Mts", "2014-06-18", "SubmitTerrorismJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getTerrorismConfig() {
+		return this.terrorismConfig;
+	}
+
+	public void setTerrorismConfig(String terrorismConfig) {
+		this.terrorismConfig = terrorismConfig;
+		if(terrorismConfig != null){
+			putQueryParameter("TerrorismConfig", terrorismConfig);
 		}
 	}
 
@@ -61,17 +79,6 @@ public class SubmitTerrorismJobRequest extends RpcAcsRequest<SubmitTerrorismJobR
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -119,14 +126,14 @@ public class SubmitTerrorismJobRequest extends RpcAcsRequest<SubmitTerrorismJobR
 		}
 	}
 
-	public String getTerrorismConfig() {
-		return this.terrorismConfig;
+	public String getInput() {
+		return this.input;
 	}
 
-	public void setTerrorismConfig(String terrorismConfig) {
-		this.terrorismConfig = terrorismConfig;
-		if(terrorismConfig != null){
-			putQueryParameter("TerrorismConfig", terrorismConfig);
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
 		}
 	}
 

@@ -25,29 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SearchPipelineResponseUnmarshaller {
 
-	public static SearchPipelineResponse unmarshall(SearchPipelineResponse searchPipelineResponse, UnmarshallerContext context) {
+	public static SearchPipelineResponse unmarshall(SearchPipelineResponse searchPipelineResponse, UnmarshallerContext _ctx) {
 		
-		searchPipelineResponse.setRequestId(context.stringValue("SearchPipelineResponse.RequestId"));
-		searchPipelineResponse.setTotalCount(context.longValue("SearchPipelineResponse.TotalCount"));
-		searchPipelineResponse.setPageNumber(context.longValue("SearchPipelineResponse.PageNumber"));
-		searchPipelineResponse.setPageSize(context.longValue("SearchPipelineResponse.PageSize"));
+		searchPipelineResponse.setRequestId(_ctx.stringValue("SearchPipelineResponse.RequestId"));
+		searchPipelineResponse.setTotalCount(_ctx.longValue("SearchPipelineResponse.TotalCount"));
+		searchPipelineResponse.setPageNumber(_ctx.longValue("SearchPipelineResponse.PageNumber"));
+		searchPipelineResponse.setPageSize(_ctx.longValue("SearchPipelineResponse.PageSize"));
 
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
-		for (int i = 0; i < context.lengthValue("SearchPipelineResponse.PipelineList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("SearchPipelineResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setId(context.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Id"));
-			pipeline.setName(context.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Name"));
-			pipeline.setState(context.stringValue("SearchPipelineResponse.PipelineList["+ i +"].State"));
-			pipeline.setSpeed(context.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Speed"));
-			pipeline.setSpeedLevel(context.longValue("SearchPipelineResponse.PipelineList["+ i +"].SpeedLevel"));
-			pipeline.setQuotaAllocate(context.longValue("SearchPipelineResponse.PipelineList["+ i +"].QuotaAllocate"));
-			pipeline.setRole(context.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Role"));
+			pipeline.setId(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Id"));
+			pipeline.setName(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Name"));
+			pipeline.setState(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].State"));
+			pipeline.setSpeed(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Speed"));
+			pipeline.setSpeedLevel(_ctx.longValue("SearchPipelineResponse.PipelineList["+ i +"].SpeedLevel"));
+			pipeline.setQuotaAllocate(_ctx.longValue("SearchPipelineResponse.PipelineList["+ i +"].QuotaAllocate"));
+			pipeline.setRole(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Role"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
-			notifyConfig.setTopic(context.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
-			notifyConfig.setQueueName(context.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.QueueName"));
-			notifyConfig.setMqTopic(context.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.MqTopic"));
-			notifyConfig.setMqTag(context.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.MqTag"));
+			notifyConfig.setTopic(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
+			notifyConfig.setQueueName(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.QueueName"));
+			notifyConfig.setMqTopic(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.MqTopic"));
+			notifyConfig.setMqTag(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.MqTag"));
 			pipeline.setNotifyConfig(notifyConfig);
 
 			pipelineList.add(pipeline);

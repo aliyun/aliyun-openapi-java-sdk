@@ -15,18 +15,19 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateMediaWorkflowRequest extends RpcAcsRequest<UpdateMediaWorkflowResponse> {
-	
-	public UpdateMediaWorkflowRequest() {
-		super("Mts", "2014-06-18", "UpdateMediaWorkflow", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String mediaWorkflowId;
 
 	private String resourceOwnerAccount;
 
@@ -34,9 +35,15 @@ public class UpdateMediaWorkflowRequest extends RpcAcsRequest<UpdateMediaWorkflo
 
 	private String ownerAccount;
 
-	private String mediaWorkflowId;
-
 	private Long ownerId;
+	public UpdateMediaWorkflowRequest() {
+		super("Mts", "2014-06-18", "UpdateMediaWorkflow", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,6 +53,17 @@ public class UpdateMediaWorkflowRequest extends RpcAcsRequest<UpdateMediaWorkflo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getMediaWorkflowId() {
+		return this.mediaWorkflowId;
+	}
+
+	public void setMediaWorkflowId(String mediaWorkflowId) {
+		this.mediaWorkflowId = mediaWorkflowId;
+		if(mediaWorkflowId != null){
+			putQueryParameter("MediaWorkflowId", mediaWorkflowId);
 		}
 	}
 
@@ -79,17 +97,6 @@ public class UpdateMediaWorkflowRequest extends RpcAcsRequest<UpdateMediaWorkflo
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getMediaWorkflowId() {
-		return this.mediaWorkflowId;
-	}
-
-	public void setMediaWorkflowId(String mediaWorkflowId) {
-		this.mediaWorkflowId = mediaWorkflowId;
-		if(mediaWorkflowId != null){
-			putQueryParameter("MediaWorkflowId", mediaWorkflowId);
 		}
 	}
 

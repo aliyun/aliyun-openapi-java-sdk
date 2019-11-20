@@ -15,46 +15,42 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateMediaRequest extends RpcAcsRequest<UpdateMediaResponse> {
-	
-	public UpdateMediaRequest() {
-		super("Mts", "2014-06-18", "UpdateMedia", "mts");
-	}
-
-	private String coverURL;
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private String description;
+
+	private String title;
+
+	private String coverURL;
 
 	private Long cateId;
 
-	private String ownerAccount;
+	private String resourceOwnerAccount;
 
-	private String description;
+	private String ownerAccount;
 
 	private Long ownerId;
 
 	private String mediaId;
 
-	private String title;
-
 	private String tags;
-
-	public String getCoverURL() {
-		return this.coverURL;
-	}
-
-	public void setCoverURL(String coverURL) {
-		this.coverURL = coverURL;
-		if(coverURL != null){
-			putQueryParameter("CoverURL", coverURL);
-		}
+	public UpdateMediaRequest() {
+		super("Mts", "2014-06-18", "UpdateMedia", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -68,14 +64,36 @@ public class UpdateMediaRequest extends RpcAcsRequest<UpdateMediaResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
+		}
+	}
+
+	public String getCoverURL() {
+		return this.coverURL;
+	}
+
+	public void setCoverURL(String coverURL) {
+		this.coverURL = coverURL;
+		if(coverURL != null){
+			putQueryParameter("CoverURL", coverURL);
 		}
 	}
 
@@ -90,6 +108,17 @@ public class UpdateMediaRequest extends RpcAcsRequest<UpdateMediaResponse> {
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -98,17 +127,6 @@ public class UpdateMediaRequest extends RpcAcsRequest<UpdateMediaResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 
@@ -131,17 +149,6 @@ public class UpdateMediaRequest extends RpcAcsRequest<UpdateMediaResponse> {
 		this.mediaId = mediaId;
 		if(mediaId != null){
 			putQueryParameter("MediaId", mediaId);
-		}
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-		if(title != null){
-			putQueryParameter("Title", title);
 		}
 	}
 

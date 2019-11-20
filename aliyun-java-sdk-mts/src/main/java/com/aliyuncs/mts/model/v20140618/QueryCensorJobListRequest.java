@@ -15,26 +15,33 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryCensorJobListRequest extends RpcAcsRequest<QueryCensorJobListResponse> {
-	
-	public QueryCensorJobListRequest() {
-		super("Mts", "2014-06-18", "QueryCensorJobList", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String jobIds;
-
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String jobIds;
+	public QueryCensorJobListRequest() {
+		super("Mts", "2014-06-18", "QueryCensorJobList", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,17 +65,6 @@ public class QueryCensorJobListRequest extends RpcAcsRequest<QueryCensorJobListR
 		}
 	}
 
-	public String getJobIds() {
-		return this.jobIds;
-	}
-
-	public void setJobIds(String jobIds) {
-		this.jobIds = jobIds;
-		if(jobIds != null){
-			putQueryParameter("JobIds", jobIds);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -88,6 +84,17 @@ public class QueryCensorJobListRequest extends RpcAcsRequest<QueryCensorJobListR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getJobIds() {
+		return this.jobIds;
+	}
+
+	public void setJobIds(String jobIds) {
+		this.jobIds = jobIds;
+		if(jobIds != null){
+			putQueryParameter("JobIds", jobIds);
 		}
 	}
 

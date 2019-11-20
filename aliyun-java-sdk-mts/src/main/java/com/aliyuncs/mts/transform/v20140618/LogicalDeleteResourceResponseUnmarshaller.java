@@ -20,19 +20,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class LogicalDeleteResourceResponseUnmarshaller {
 
-	public static LogicalDeleteResourceResponse unmarshall(LogicalDeleteResourceResponse logicalDeleteResourceResponse, UnmarshallerContext context) {
+	public static LogicalDeleteResourceResponse unmarshall(LogicalDeleteResourceResponse logicalDeleteResourceResponse, UnmarshallerContext _ctx) {
 		
-		logicalDeleteResourceResponse.setInterrupt(context.booleanValue("LogicalDeleteResourceResponse.Interrupt"));
-		logicalDeleteResourceResponse.setInvoker(context.stringValue("LogicalDeleteResourceResponse.Invoker"));
-		logicalDeleteResourceResponse.setPk(context.stringValue("LogicalDeleteResourceResponse.Pk"));
-		logicalDeleteResourceResponse.setBid(context.stringValue("LogicalDeleteResourceResponse.Bid"));
-		logicalDeleteResourceResponse.setHid(context.longValue("LogicalDeleteResourceResponse.Hid"));
-		logicalDeleteResourceResponse.setCountry(context.stringValue("LogicalDeleteResourceResponse.Country"));
-		logicalDeleteResourceResponse.setTaskIdentifier(context.stringValue("LogicalDeleteResourceResponse.TaskIdentifier"));
-		logicalDeleteResourceResponse.setTaskExtraData(context.stringValue("LogicalDeleteResourceResponse.TaskExtraData"));
-		logicalDeleteResourceResponse.setGmtWakeup(context.stringValue("LogicalDeleteResourceResponse.GmtWakeup"));
-		logicalDeleteResourceResponse.setSuccess(context.booleanValue("LogicalDeleteResourceResponse.Success"));
-		logicalDeleteResourceResponse.setMessage(context.stringValue("LogicalDeleteResourceResponse.Message"));
+		logicalDeleteResourceResponse.setInterrupt(_ctx.booleanValue("LogicalDeleteResourceResponse.Interrupt"));
+		logicalDeleteResourceResponse.setInvoker(_ctx.stringValue("LogicalDeleteResourceResponse.Invoker"));
+		logicalDeleteResourceResponse.setPk(_ctx.stringValue("LogicalDeleteResourceResponse.Pk"));
+		logicalDeleteResourceResponse.setBid(_ctx.stringValue("LogicalDeleteResourceResponse.Bid"));
+		logicalDeleteResourceResponse.setHid(_ctx.longValue("LogicalDeleteResourceResponse.Hid"));
+		logicalDeleteResourceResponse.setCountry(_ctx.stringValue("LogicalDeleteResourceResponse.Country"));
+		logicalDeleteResourceResponse.setTaskIdentifier(_ctx.stringValue("LogicalDeleteResourceResponse.TaskIdentifier"));
+		logicalDeleteResourceResponse.setTaskExtraData(_ctx.stringValue("LogicalDeleteResourceResponse.TaskExtraData"));
+		logicalDeleteResourceResponse.setGmtWakeup(_ctx.stringValue("LogicalDeleteResourceResponse.GmtWakeup"));
+		logicalDeleteResourceResponse.setSuccess(_ctx.booleanValue("LogicalDeleteResourceResponse.Success"));
+		logicalDeleteResourceResponse.setMessage(_ctx.stringValue("LogicalDeleteResourceResponse.Message"));
 	 
 	 	return logicalDeleteResourceResponse;
 	}

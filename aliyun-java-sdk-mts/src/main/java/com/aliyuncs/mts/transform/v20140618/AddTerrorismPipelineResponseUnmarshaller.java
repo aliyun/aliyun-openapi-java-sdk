@@ -22,19 +22,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddTerrorismPipelineResponseUnmarshaller {
 
-	public static AddTerrorismPipelineResponse unmarshall(AddTerrorismPipelineResponse addTerrorismPipelineResponse, UnmarshallerContext context) {
+	public static AddTerrorismPipelineResponse unmarshall(AddTerrorismPipelineResponse addTerrorismPipelineResponse, UnmarshallerContext _ctx) {
 		
-		addTerrorismPipelineResponse.setRequestId(context.stringValue("AddTerrorismPipelineResponse.RequestId"));
+		addTerrorismPipelineResponse.setRequestId(_ctx.stringValue("AddTerrorismPipelineResponse.RequestId"));
 
 		Pipeline pipeline = new Pipeline();
-		pipeline.setId(context.stringValue("AddTerrorismPipelineResponse.Pipeline.Id"));
-		pipeline.setName(context.stringValue("AddTerrorismPipelineResponse.Pipeline.Name"));
-		pipeline.setPriority(context.integerValue("AddTerrorismPipelineResponse.Pipeline.Priority"));
-		pipeline.setState(context.stringValue("AddTerrorismPipelineResponse.Pipeline.State"));
+		pipeline.setId(_ctx.stringValue("AddTerrorismPipelineResponse.Pipeline.Id"));
+		pipeline.setName(_ctx.stringValue("AddTerrorismPipelineResponse.Pipeline.Name"));
+		pipeline.setPriority(_ctx.integerValue("AddTerrorismPipelineResponse.Pipeline.Priority"));
+		pipeline.setState(_ctx.stringValue("AddTerrorismPipelineResponse.Pipeline.State"));
 
 		NotifyConfig notifyConfig = new NotifyConfig();
-		notifyConfig.setTopic(context.stringValue("AddTerrorismPipelineResponse.Pipeline.NotifyConfig.Topic"));
-		notifyConfig.setQueue(context.stringValue("AddTerrorismPipelineResponse.Pipeline.NotifyConfig.Queue"));
+		notifyConfig.setTopic(_ctx.stringValue("AddTerrorismPipelineResponse.Pipeline.NotifyConfig.Topic"));
+		notifyConfig.setQueue(_ctx.stringValue("AddTerrorismPipelineResponse.Pipeline.NotifyConfig.Queue"));
 		pipeline.setNotifyConfig(notifyConfig);
 		addTerrorismPipelineResponse.setPipeline(pipeline);
 	 

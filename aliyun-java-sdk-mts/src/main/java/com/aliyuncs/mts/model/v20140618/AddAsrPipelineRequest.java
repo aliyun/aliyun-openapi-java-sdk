@@ -15,16 +15,15 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddAsrPipelineRequest extends RpcAcsRequest<AddAsrPipelineResponse> {
-	
-	public AddAsrPipelineRequest() {
-		super("Mts", "2014-06-18", "AddAsrPipeline", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -32,13 +31,21 @@ public class AddAsrPipelineRequest extends RpcAcsRequest<AddAsrPipelineResponse>
 
 	private String ownerAccount;
 
-	private String name;
-
 	private String notifyConfig;
 
 	private Long ownerId;
 
 	private Integer priority;
+
+	private String name;
+	public AddAsrPipelineRequest() {
+		super("Mts", "2014-06-18", "AddAsrPipeline", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -73,17 +80,6 @@ public class AddAsrPipelineRequest extends RpcAcsRequest<AddAsrPipelineResponse>
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getNotifyConfig() {
 		return this.notifyConfig;
 	}
@@ -114,6 +110,17 @@ public class AddAsrPipelineRequest extends RpcAcsRequest<AddAsrPipelineResponse>
 		this.priority = priority;
 		if(priority != null){
 			putQueryParameter("Priority", priority.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

@@ -15,20 +15,25 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateTemplateRequest extends RpcAcsRequest<UpdateTemplateResponse> {
-	
-	public UpdateTemplateRequest() {
-		super("Mts", "2014-06-18", "UpdateTemplate", "mts");
-	}
+	   
 
 	private String container;
 
 	private Long resourceOwnerId;
+
+	private String video;
+
+	private String transConfig;
+
+	private String audio;
 
 	private String resourceOwnerAccount;
 
@@ -36,17 +41,19 @@ public class UpdateTemplateRequest extends RpcAcsRequest<UpdateTemplateResponse>
 
 	private String muxConfig;
 
-	private String video;
-
 	private Long ownerId;
 
 	private String templateId;
 
 	private String name;
-
-	private String transConfig;
-
-	private String audio;
+	public UpdateTemplateRequest() {
+		super("Mts", "2014-06-18", "UpdateTemplate", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getContainer() {
 		return this.container;
@@ -67,6 +74,39 @@ public class UpdateTemplateRequest extends RpcAcsRequest<UpdateTemplateResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getVideo() {
+		return this.video;
+	}
+
+	public void setVideo(String video) {
+		this.video = video;
+		if(video != null){
+			putQueryParameter("Video", video);
+		}
+	}
+
+	public String getTransConfig() {
+		return this.transConfig;
+	}
+
+	public void setTransConfig(String transConfig) {
+		this.transConfig = transConfig;
+		if(transConfig != null){
+			putQueryParameter("TransConfig", transConfig);
+		}
+	}
+
+	public String getAudio() {
+		return this.audio;
+	}
+
+	public void setAudio(String audio) {
+		this.audio = audio;
+		if(audio != null){
+			putQueryParameter("Audio", audio);
 		}
 	}
 
@@ -103,17 +143,6 @@ public class UpdateTemplateRequest extends RpcAcsRequest<UpdateTemplateResponse>
 		}
 	}
 
-	public String getVideo() {
-		return this.video;
-	}
-
-	public void setVideo(String video) {
-		this.video = video;
-		if(video != null){
-			putQueryParameter("Video", video);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -144,28 +173,6 @@ public class UpdateTemplateRequest extends RpcAcsRequest<UpdateTemplateResponse>
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getTransConfig() {
-		return this.transConfig;
-	}
-
-	public void setTransConfig(String transConfig) {
-		this.transConfig = transConfig;
-		if(transConfig != null){
-			putQueryParameter("TransConfig", transConfig);
-		}
-	}
-
-	public String getAudio() {
-		return this.audio;
-	}
-
-	public void setAudio(String audio) {
-		this.audio = audio;
-		if(audio != null){
-			putQueryParameter("Audio", audio);
 		}
 	}
 

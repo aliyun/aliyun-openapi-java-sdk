@@ -15,16 +15,15 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryAuthConfigRequest extends RpcAcsRequest<QueryAuthConfigResponse> {
-	
-	public QueryAuthConfigRequest() {
-		super("Mts", "2014-06-18", "QueryAuthConfig", "mts");
-	}
+	   
 
 	private String resourceOwnerId;
 
@@ -33,6 +32,14 @@ public class QueryAuthConfigRequest extends RpcAcsRequest<QueryAuthConfigRespons
 	private String ownerAccount;
 
 	private String ownerId;
+	public QueryAuthConfigRequest() {
+		super("Mts", "2014-06-18", "QueryAuthConfig", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;

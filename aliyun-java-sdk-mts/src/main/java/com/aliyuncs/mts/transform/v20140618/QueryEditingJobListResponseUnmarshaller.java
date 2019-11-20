@@ -72,106 +72,106 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryEditingJobListResponseUnmarshaller {
 
-	public static QueryEditingJobListResponse unmarshall(QueryEditingJobListResponse queryEditingJobListResponse, UnmarshallerContext context) {
+	public static QueryEditingJobListResponse unmarshall(QueryEditingJobListResponse queryEditingJobListResponse, UnmarshallerContext _ctx) {
 		
-		queryEditingJobListResponse.setRequestId(context.stringValue("QueryEditingJobListResponse.RequestId"));
+		queryEditingJobListResponse.setRequestId(_ctx.stringValue("QueryEditingJobListResponse.RequestId"));
 
 		List<String> nonExistJobIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryEditingJobListResponse.NonExistJobIds.Length"); i++) {
-			nonExistJobIds.add(context.stringValue("QueryEditingJobListResponse.NonExistJobIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryEditingJobListResponse.NonExistJobIds.Length"); i++) {
+			nonExistJobIds.add(_ctx.stringValue("QueryEditingJobListResponse.NonExistJobIds["+ i +"]"));
 		}
 		queryEditingJobListResponse.setNonExistJobIds(nonExistJobIds);
 
 		List<Job> jobList = new ArrayList<Job>();
-		for (int i = 0; i < context.lengthValue("QueryEditingJobListResponse.JobList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryEditingJobListResponse.JobList.Length"); i++) {
 			Job job = new Job();
-			job.setJobId(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].JobId"));
-			job.setState(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].State"));
-			job.setCode(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].Code"));
-			job.setMessage(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].Message"));
-			job.setPercent(context.longValue("QueryEditingJobListResponse.JobList["+ i +"].Percent"));
-			job.setPipelineId(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].PipelineId"));
-			job.setCreationTime(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].CreationTime"));
-			job.setFinishTime(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].FinishTime"));
+			job.setJobId(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].JobId"));
+			job.setState(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].State"));
+			job.setCode(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].Code"));
+			job.setMessage(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].Message"));
+			job.setPercent(_ctx.longValue("QueryEditingJobListResponse.JobList["+ i +"].Percent"));
+			job.setPipelineId(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].PipelineId"));
+			job.setCreationTime(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].CreationTime"));
+			job.setFinishTime(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].FinishTime"));
 
 			EditingConfig editingConfig = new EditingConfig();
-			editingConfig.setTemplateId(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TemplateId"));
-			editingConfig.setUserData(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.UserData"));
-			editingConfig.setRotate(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Rotate"));
-			editingConfig.setVideoStreamMap(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.VideoStreamMap"));
-			editingConfig.setAudioStreamMap(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.AudioStreamMap"));
-			editingConfig.setDeWatermark(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.DeWatermark"));
-			editingConfig.setPriority(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Priority"));
-			editingConfig.setWaterMarkConfigUrl(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkConfigUrl"));
-			editingConfig.setMergeConfigUrl(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MergeConfigUrl"));
+			editingConfig.setTemplateId(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TemplateId"));
+			editingConfig.setUserData(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.UserData"));
+			editingConfig.setRotate(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Rotate"));
+			editingConfig.setVideoStreamMap(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.VideoStreamMap"));
+			editingConfig.setAudioStreamMap(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.AudioStreamMap"));
+			editingConfig.setDeWatermark(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.DeWatermark"));
+			editingConfig.setPriority(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Priority"));
+			editingConfig.setWaterMarkConfigUrl(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkConfigUrl"));
+			editingConfig.setMergeConfigUrl(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MergeConfigUrl"));
 
 			DigiWaterMark digiWaterMark = new DigiWaterMark();
-			digiWaterMark.setType(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.DigiWaterMark.Type"));
-			digiWaterMark.setAlpha(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.DigiWaterMark.Alpha"));
+			digiWaterMark.setType(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.DigiWaterMark.Type"));
+			digiWaterMark.setAlpha(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.DigiWaterMark.Alpha"));
 
 			InputFile2 inputFile2 = new InputFile2();
-			inputFile2.setBucket(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.DigiWaterMark.InputFile.Bucket"));
-			inputFile2.setLocation(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.DigiWaterMark.InputFile.Location"));
-			inputFile2.setObject(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.DigiWaterMark.InputFile.Object"));
+			inputFile2.setBucket(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.DigiWaterMark.InputFile.Bucket"));
+			inputFile2.setLocation(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.DigiWaterMark.InputFile.Location"));
+			inputFile2.setObject(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.DigiWaterMark.InputFile.Object"));
 			digiWaterMark.setInputFile2(inputFile2);
 			editingConfig.setDigiWaterMark(digiWaterMark);
 
 			OutputFile outputFile = new OutputFile();
-			outputFile.setBucket(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.OutputFile.Bucket"));
-			outputFile.setLocation(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.OutputFile.Location"));
-			outputFile.setObject(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.OutputFile.Object"));
-			outputFile.setRoleArn(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.OutputFile.RoleArn"));
+			outputFile.setBucket(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.OutputFile.Bucket"));
+			outputFile.setLocation(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.OutputFile.Location"));
+			outputFile.setObject(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.OutputFile.Object"));
+			outputFile.setRoleArn(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.OutputFile.RoleArn"));
 			editingConfig.setOutputFile(outputFile);
 
 			M3U8NonStandardSupport m3U8NonStandardSupport = new M3U8NonStandardSupport();
 
 			TS tS = new TS();
-			tS.setMd5Support(context.booleanValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.M3U8NonStandardSupport.TS.Md5Support"));
-			tS.setSizeSupport(context.booleanValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.M3U8NonStandardSupport.TS.SizeSupport"));
+			tS.setMd5Support(_ctx.booleanValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.M3U8NonStandardSupport.TS.Md5Support"));
+			tS.setSizeSupport(_ctx.booleanValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.M3U8NonStandardSupport.TS.SizeSupport"));
 			m3U8NonStandardSupport.setTS(tS);
 			editingConfig.setM3U8NonStandardSupport(m3U8NonStandardSupport);
 
 			Properties properties = new Properties();
-			properties.setWidth(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Width"));
-			properties.setHeight(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Height"));
-			properties.setBitrate(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Bitrate"));
-			properties.setDuration(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Duration"));
-			properties.setFps(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Fps"));
-			properties.setFileSize(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.FileSize"));
-			properties.setFileFormat(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.FileFormat"));
+			properties.setWidth(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Width"));
+			properties.setHeight(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Height"));
+			properties.setBitrate(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Bitrate"));
+			properties.setDuration(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Duration"));
+			properties.setFps(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Fps"));
+			properties.setFileSize(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.FileSize"));
+			properties.setFileFormat(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.FileFormat"));
 
 			Streams streams = new Streams();
 
 			List<VideoStream> videoStreamList = new ArrayList<VideoStream>();
-			for (int j = 0; j < context.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList.Length"); j++) {
 				VideoStream videoStream = new VideoStream();
-				videoStream.setIndex(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Index"));
-				videoStream.setCodecName(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].CodecName"));
-				videoStream.setCodecLongName(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].CodecLongName"));
-				videoStream.setProfile(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Profile"));
-				videoStream.setCodecTimeBase(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].CodecTimeBase"));
-				videoStream.setCodecTagString(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].CodecTagString"));
-				videoStream.setCodecTag(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].CodecTag"));
-				videoStream.setWidth(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Width"));
-				videoStream.setHeight(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Height"));
-				videoStream.setHasBFrames(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].HasBFrames"));
-				videoStream.setSar(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Sar"));
-				videoStream.setDar(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Dar"));
-				videoStream.setPixFmt(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].PixFmt"));
-				videoStream.setLevel(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Level"));
-				videoStream.setFps(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Fps"));
-				videoStream.setAvgFPS(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].AvgFPS"));
-				videoStream.setTimebase(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Timebase"));
-				videoStream.setStartTime(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].StartTime"));
-				videoStream.setDuration(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Duration"));
-				videoStream.setBitrate(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Bitrate"));
-				videoStream.setNumFrames(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].NumFrames"));
-				videoStream.setLang(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Lang"));
+				videoStream.setIndex(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Index"));
+				videoStream.setCodecName(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].CodecName"));
+				videoStream.setCodecLongName(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].CodecLongName"));
+				videoStream.setProfile(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Profile"));
+				videoStream.setCodecTimeBase(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].CodecTimeBase"));
+				videoStream.setCodecTagString(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].CodecTagString"));
+				videoStream.setCodecTag(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].CodecTag"));
+				videoStream.setWidth(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Width"));
+				videoStream.setHeight(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Height"));
+				videoStream.setHasBFrames(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].HasBFrames"));
+				videoStream.setSar(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Sar"));
+				videoStream.setDar(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Dar"));
+				videoStream.setPixFmt(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].PixFmt"));
+				videoStream.setLevel(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Level"));
+				videoStream.setFps(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Fps"));
+				videoStream.setAvgFPS(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].AvgFPS"));
+				videoStream.setTimebase(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Timebase"));
+				videoStream.setStartTime(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].StartTime"));
+				videoStream.setDuration(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Duration"));
+				videoStream.setBitrate(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Bitrate"));
+				videoStream.setNumFrames(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].NumFrames"));
+				videoStream.setLang(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].Lang"));
 
 				NetworkCost networkCost = new NetworkCost();
-				networkCost.setPreloadTime(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].NetworkCost.PreloadTime"));
-				networkCost.setCostBandwidth(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].NetworkCost.CostBandwidth"));
-				networkCost.setAvgBitrate(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].NetworkCost.AvgBitrate"));
+				networkCost.setPreloadTime(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].NetworkCost.PreloadTime"));
+				networkCost.setCostBandwidth(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].NetworkCost.CostBandwidth"));
+				networkCost.setAvgBitrate(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.VideoStreamList["+ j +"].NetworkCost.AvgBitrate"));
 				videoStream.setNetworkCost(networkCost);
 
 				videoStreamList.add(videoStream);
@@ -179,34 +179,34 @@ public class QueryEditingJobListResponseUnmarshaller {
 			streams.setVideoStreamList(videoStreamList);
 
 			List<AudioStream> audioStreamList = new ArrayList<AudioStream>();
-			for (int j = 0; j < context.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList.Length"); j++) {
 				AudioStream audioStream = new AudioStream();
-				audioStream.setIndex(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].Index"));
-				audioStream.setCodecName(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].CodecName"));
-				audioStream.setCodecTimeBase(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].CodecTimeBase"));
-				audioStream.setCodecLongName(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].CodecLongName"));
-				audioStream.setCodecTagString(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].CodecTagString"));
-				audioStream.setCodecTag(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].CodecTag"));
-				audioStream.setSampleFmt(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].SampleFmt"));
-				audioStream.setSamplerate(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].Samplerate"));
-				audioStream.setChannels(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].Channels"));
-				audioStream.setChannelLayout(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].ChannelLayout"));
-				audioStream.setTimebase(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].Timebase"));
-				audioStream.setStartTime(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].StartTime"));
-				audioStream.setDuration(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].Duration"));
-				audioStream.setBitrate(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].Bitrate"));
-				audioStream.setNumFrames(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].NumFrames"));
-				audioStream.setLang(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].Lang"));
+				audioStream.setIndex(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].Index"));
+				audioStream.setCodecName(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].CodecName"));
+				audioStream.setCodecTimeBase(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].CodecTimeBase"));
+				audioStream.setCodecLongName(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].CodecLongName"));
+				audioStream.setCodecTagString(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].CodecTagString"));
+				audioStream.setCodecTag(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].CodecTag"));
+				audioStream.setSampleFmt(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].SampleFmt"));
+				audioStream.setSamplerate(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].Samplerate"));
+				audioStream.setChannels(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].Channels"));
+				audioStream.setChannelLayout(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].ChannelLayout"));
+				audioStream.setTimebase(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].Timebase"));
+				audioStream.setStartTime(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].StartTime"));
+				audioStream.setDuration(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].Duration"));
+				audioStream.setBitrate(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].Bitrate"));
+				audioStream.setNumFrames(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].NumFrames"));
+				audioStream.setLang(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.AudioStreamList["+ j +"].Lang"));
 
 				audioStreamList.add(audioStream);
 			}
 			streams.setAudioStreamList(audioStreamList);
 
 			List<SubtitleStream> subtitleStreamList = new ArrayList<SubtitleStream>();
-			for (int j = 0; j < context.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.SubtitleStreamList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.SubtitleStreamList.Length"); j++) {
 				SubtitleStream subtitleStream = new SubtitleStream();
-				subtitleStream.setIndex(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.SubtitleStreamList["+ j +"].Index"));
-				subtitleStream.setLang(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.SubtitleStreamList["+ j +"].Lang"));
+				subtitleStream.setIndex(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.SubtitleStreamList["+ j +"].Index"));
+				subtitleStream.setLang(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Streams.SubtitleStreamList["+ j +"].Lang"));
 
 				subtitleStreamList.add(subtitleStream);
 			}
@@ -214,50 +214,50 @@ public class QueryEditingJobListResponseUnmarshaller {
 			properties.setStreams(streams);
 
 			Format format = new Format();
-			format.setNumStreams(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Format.NumStreams"));
-			format.setNumPrograms(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Format.NumPrograms"));
-			format.setFormatName(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Format.FormatName"));
-			format.setFormatLongName(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Format.FormatLongName"));
-			format.setStartTime(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Format.StartTime"));
-			format.setDuration(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Format.Duration"));
-			format.setSize(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Format.Size"));
-			format.setBitrate(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Format.Bitrate"));
+			format.setNumStreams(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Format.NumStreams"));
+			format.setNumPrograms(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Format.NumPrograms"));
+			format.setFormatName(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Format.FormatName"));
+			format.setFormatLongName(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Format.FormatLongName"));
+			format.setStartTime(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Format.StartTime"));
+			format.setDuration(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Format.Duration"));
+			format.setSize(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Format.Size"));
+			format.setBitrate(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Properties.Format.Bitrate"));
 			properties.setFormat(format);
 			editingConfig.setProperties(properties);
 
 			Clip clip = new Clip();
 
 			TimeSpan timeSpan = new TimeSpan();
-			timeSpan.setSeek(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Clip.TimeSpan.Seek"));
-			timeSpan.setDuration(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Clip.TimeSpan.Duration"));
+			timeSpan.setSeek(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Clip.TimeSpan.Seek"));
+			timeSpan.setDuration(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Clip.TimeSpan.Duration"));
 			clip.setTimeSpan(timeSpan);
 			editingConfig.setClip(clip);
 
 			SuperReso superReso = new SuperReso();
-			superReso.setIsHalfSample(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SuperReso.IsHalfSample"));
+			superReso.setIsHalfSample(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SuperReso.IsHalfSample"));
 			editingConfig.setSuperReso(superReso);
 
 			SubtitleConfig subtitleConfig = new SubtitleConfig();
 
 			List<Subtitle> subtitleList = new ArrayList<Subtitle>();
-			for (int j = 0; j < context.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SubtitleConfig.SubtitleList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SubtitleConfig.SubtitleList.Length"); j++) {
 				Subtitle subtitle = new Subtitle();
-				subtitle.setMap(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SubtitleConfig.SubtitleList["+ j +"].Map"));
+				subtitle.setMap(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SubtitleConfig.SubtitleList["+ j +"].Map"));
 
 				subtitleList.add(subtitle);
 			}
 			subtitleConfig.setSubtitleList(subtitleList);
 
 			List<ExtSubtitle> extSubtitleList = new ArrayList<ExtSubtitle>();
-			for (int j = 0; j < context.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SubtitleConfig.ExtSubtitleList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SubtitleConfig.ExtSubtitleList.Length"); j++) {
 				ExtSubtitle extSubtitle = new ExtSubtitle();
-				extSubtitle.setFontName(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SubtitleConfig.ExtSubtitleList["+ j +"].FontName"));
-				extSubtitle.setCharEnc(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SubtitleConfig.ExtSubtitleList["+ j +"].CharEnc"));
+				extSubtitle.setFontName(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SubtitleConfig.ExtSubtitleList["+ j +"].FontName"));
+				extSubtitle.setCharEnc(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SubtitleConfig.ExtSubtitleList["+ j +"].CharEnc"));
 
 				Input input = new Input();
-				input.setBucket(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Bucket"));
-				input.setLocation(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Location"));
-				input.setObject(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Object"));
+				input.setBucket(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Bucket"));
+				input.setLocation(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Location"));
+				input.setObject(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Object"));
 				extSubtitle.setInput(input);
 
 				extSubtitleList.add(extSubtitle);
@@ -266,82 +266,82 @@ public class QueryEditingJobListResponseUnmarshaller {
 			editingConfig.setSubtitleConfig(subtitleConfig);
 
 			TransConfig transConfig = new TransConfig();
-			transConfig.setTransMode(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.TransMode"));
-			transConfig.setIsCheckReso(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.IsCheckReso"));
-			transConfig.setIsCheckResoFail(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.IsCheckResoFail"));
-			transConfig.setIsCheckVideoBitrate(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.IsCheckVideoBitrate"));
-			transConfig.setIsCheckAudioBitrate(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.IsCheckAudioBitrate"));
-			transConfig.setAdjDarMethod(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.AdjDarMethod"));
-			transConfig.setIsCheckVideoBitrateFail(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.IsCheckVideoBitrateFail"));
-			transConfig.setIsCheckAudioBitrateFail(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.IsCheckAudioBitrateFail"));
-			transConfig.setDuration(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.Duration"));
+			transConfig.setTransMode(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.TransMode"));
+			transConfig.setIsCheckReso(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.IsCheckReso"));
+			transConfig.setIsCheckResoFail(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.IsCheckResoFail"));
+			transConfig.setIsCheckVideoBitrate(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.IsCheckVideoBitrate"));
+			transConfig.setIsCheckAudioBitrate(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.IsCheckAudioBitrate"));
+			transConfig.setAdjDarMethod(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.AdjDarMethod"));
+			transConfig.setIsCheckVideoBitrateFail(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.IsCheckVideoBitrateFail"));
+			transConfig.setIsCheckAudioBitrateFail(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.IsCheckAudioBitrateFail"));
+			transConfig.setDuration(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.TransConfig.Duration"));
 			editingConfig.setTransConfig(transConfig);
 
 			MuxConfig muxConfig = new MuxConfig();
 
 			Segment segment = new Segment();
-			segment.setDuration(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MuxConfig.Segment.Duration"));
+			segment.setDuration(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MuxConfig.Segment.Duration"));
 			muxConfig.setSegment(segment);
 
 			Gif gif = new Gif();
-			gif.setLoop(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MuxConfig.Gif.Loop"));
-			gif.setFinalDelay(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MuxConfig.Gif.FinalDelay"));
-			gif.setIsCustomPalette(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MuxConfig.Gif.IsCustomPalette"));
-			gif.setDitherMode(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MuxConfig.Gif.DitherMode"));
+			gif.setLoop(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MuxConfig.Gif.Loop"));
+			gif.setFinalDelay(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MuxConfig.Gif.FinalDelay"));
+			gif.setIsCustomPalette(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MuxConfig.Gif.IsCustomPalette"));
+			gif.setDitherMode(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MuxConfig.Gif.DitherMode"));
 			muxConfig.setGif(gif);
 			editingConfig.setMuxConfig(muxConfig);
 
 			Audio audio = new Audio();
-			audio.setCodec(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Audio.Codec"));
-			audio.setProfile(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Audio.Profile"));
-			audio.setSamplerate(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Audio.Samplerate"));
-			audio.setBitrate(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Audio.Bitrate"));
-			audio.setChannels(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Audio.Channels"));
-			audio.setQscale(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Audio.Qscale"));
+			audio.setCodec(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Audio.Codec"));
+			audio.setProfile(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Audio.Profile"));
+			audio.setSamplerate(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Audio.Samplerate"));
+			audio.setBitrate(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Audio.Bitrate"));
+			audio.setChannels(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Audio.Channels"));
+			audio.setQscale(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Audio.Qscale"));
 
 			Volume volume = new Volume();
-			volume.setLevel(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Audio.Volume.Level"));
-			volume.setMethod(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Audio.Volume.Method"));
+			volume.setLevel(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Audio.Volume.Level"));
+			volume.setBizMethod(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Audio.Volume.Method"));
 			audio.setVolume(volume);
 			editingConfig.setAudio(audio);
 
 			Video video = new Video();
-			video.setCodec(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Codec"));
-			video.setProfile(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Profile"));
-			video.setBitrate(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Bitrate"));
-			video.setCrf(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Crf"));
-			video.setWidth(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Width"));
-			video.setHeight(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Height"));
-			video.setFps(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Fps"));
-			video.setGop(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Gop"));
-			video.setPreset(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Preset"));
-			video.setScanMode(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.ScanMode"));
-			video.setBufsize(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Bufsize"));
-			video.setMaxrate(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Maxrate"));
-			video.setPixFmt(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.PixFmt"));
-			video.setDegrain(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Degrain"));
-			video.setQscale(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Qscale"));
-			video.setCrop(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Crop"));
-			video.setPad(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Pad"));
-			video.setMaxFps(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.MaxFps"));
+			video.setCodec(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Codec"));
+			video.setProfile(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Profile"));
+			video.setBitrate(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Bitrate"));
+			video.setCrf(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Crf"));
+			video.setWidth(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Width"));
+			video.setHeight(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Height"));
+			video.setFps(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Fps"));
+			video.setGop(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Gop"));
+			video.setPreset(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Preset"));
+			video.setScanMode(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.ScanMode"));
+			video.setBufsize(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Bufsize"));
+			video.setMaxrate(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Maxrate"));
+			video.setPixFmt(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.PixFmt"));
+			video.setDegrain(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Degrain"));
+			video.setQscale(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Qscale"));
+			video.setCrop(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Crop"));
+			video.setPad(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.Pad"));
+			video.setMaxFps(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.MaxFps"));
 
 			BitrateBnd bitrateBnd = new BitrateBnd();
-			bitrateBnd.setMax(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.BitrateBnd.Max"));
-			bitrateBnd.setMin(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.BitrateBnd.Min"));
+			bitrateBnd.setMax(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.BitrateBnd.Max"));
+			bitrateBnd.setMin(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Video.BitrateBnd.Min"));
 			video.setBitrateBnd(bitrateBnd);
 			editingConfig.setVideo(video);
 
 			Container container = new Container();
-			container.setFormat(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Container.Format"));
+			container.setFormat(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Container.Format"));
 			editingConfig.setContainer(container);
 
 			Encryption encryption = new Encryption();
-			encryption.setType(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Encryption.Type"));
-			encryption.setId(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Encryption.Id"));
-			encryption.setKey(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Encryption.Key"));
-			encryption.setKeyUri(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Encryption.KeyUri"));
-			encryption.setKeyType(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Encryption.KeyType"));
-			encryption.setSkipCnt(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Encryption.SkipCnt"));
+			encryption.setType(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Encryption.Type"));
+			encryption.setId(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Encryption.Id"));
+			encryption.setKey(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Encryption.Key"));
+			encryption.setKeyUri(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Encryption.KeyUri"));
+			encryption.setKeyType(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Encryption.KeyType"));
+			encryption.setSkipCnt(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Encryption.SkipCnt"));
 			editingConfig.setEncryption(encryption);
 
 			Editing editing = new Editing();
@@ -351,42 +351,42 @@ public class QueryEditingJobListResponseUnmarshaller {
 			TimelineConfig timelineConfig = new TimelineConfig();
 
 			TimelineConfigVideo timelineConfigVideo = new TimelineConfigVideo();
-			timelineConfigVideo.setWidth(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.Width"));
-			timelineConfigVideo.setHeight(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.Height"));
-			timelineConfigVideo.setBgColor(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.BgColor"));
-			timelineConfigVideo.setFps(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.Fps"));
-			timelineConfigVideo.setRenderRatio(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.RenderRatio"));
-			timelineConfigVideo.setReclosePrec(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.ReclosePrec"));
-			timelineConfigVideo.setIsGpuData(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.IsGpuData"));
-			timelineConfigVideo.setIsOneTrackData(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.IsOneTrackData"));
+			timelineConfigVideo.setWidth(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.Width"));
+			timelineConfigVideo.setHeight(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.Height"));
+			timelineConfigVideo.setBgColor(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.BgColor"));
+			timelineConfigVideo.setFps(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.Fps"));
+			timelineConfigVideo.setRenderRatio(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.RenderRatio"));
+			timelineConfigVideo.setReclosePrec(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.ReclosePrec"));
+			timelineConfigVideo.setIsGpuData(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.IsGpuData"));
+			timelineConfigVideo.setIsOneTrackData(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.IsOneTrackData"));
 			timelineConfig.setTimelineConfigVideo(timelineConfigVideo);
 
 			TimelineConfigAudio timelineConfigAudio = new TimelineConfigAudio();
-			timelineConfigAudio.setSamplerate(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigAudio.Samplerate"));
-			timelineConfigAudio.setChannelLayout(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigAudio.ChannelLayout"));
-			timelineConfigAudio.setChannels(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigAudio.Channels"));
+			timelineConfigAudio.setSamplerate(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigAudio.Samplerate"));
+			timelineConfigAudio.setChannelLayout(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigAudio.ChannelLayout"));
+			timelineConfigAudio.setChannels(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigAudio.Channels"));
 			timelineConfig.setTimelineConfigAudio(timelineConfigAudio);
 			timeline.setTimelineConfig(timelineConfig);
 
 			List<Track> trackList = new ArrayList<Track>();
-			for (int j = 0; j < context.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList.Length"); j++) {
 				Track track = new Track();
-				track.setId(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Id"));
-				track.setType(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Type"));
-				track.setOrder(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Order"));
+				track.setId(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Id"));
+				track.setType(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Type"));
+				track.setOrder(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Order"));
 
 				List<Clip4> clips = new ArrayList<Clip4>();
-				for (int k = 0; k < context.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Clips.Length"); k++) {
+				for (int k = 0; k < _ctx.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Clips.Length"); k++) {
 					Clip4 clip4 = new Clip4();
-					clip4.setClipID(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Clips["+ k +"].clipID"));
-					clip4.setIn(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Clips["+ k +"].In"));
-					clip4.setOut(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Clips["+ k +"].Out"));
+					clip4.setClipID(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Clips["+ k +"].clipID"));
+					clip4.setIn(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Clips["+ k +"].In"));
+					clip4.setOut(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Clips["+ k +"].Out"));
 
 					ClipsConfig clipsConfig = new ClipsConfig();
 
 					ClipsConfigVideo clipsConfigVideo = new ClipsConfigVideo();
-					clipsConfigVideo.setL(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Clips["+ k +"].ClipsConfig.ClipsConfigVideo.L"));
-					clipsConfigVideo.setT(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Clips["+ k +"].ClipsConfig.ClipsConfigVideo.T"));
+					clipsConfigVideo.setL(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Clips["+ k +"].ClipsConfig.ClipsConfigVideo.L"));
+					clipsConfigVideo.setT(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.Timeline.TrackList["+ j +"].Clips["+ k +"].ClipsConfig.ClipsConfigVideo.T"));
 					clipsConfig.setClipsConfigVideo(clipsConfigVideo);
 					clip4.setClipsConfig(clipsConfig);
 
@@ -400,21 +400,21 @@ public class QueryEditingJobListResponseUnmarshaller {
 			editing.setTimeline(timeline);
 
 			List<Clip3> clipList = new ArrayList<Clip3>();
-			for (int j = 0; j < context.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList.Length"); j++) {
 				Clip3 clip3 = new Clip3();
-				clip3.setId(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].Id"));
-				clip3.setType(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].Type"));
-				clip3.setSourceType(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].SourceType"));
-				clip3.setSourceID(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].SourceID"));
-				clip3.setSourceStrmMap(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].SourceStrmMap"));
-				clip3.setIn(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].In"));
-				clip3.setOut(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].Out"));
+				clip3.setId(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].Id"));
+				clip3.setType(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].Type"));
+				clip3.setSourceType(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].SourceType"));
+				clip3.setSourceID(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].SourceID"));
+				clip3.setSourceStrmMap(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].SourceStrmMap"));
+				clip3.setIn(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].In"));
+				clip3.setOut(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].Out"));
 
 				List<Effect> effects = new ArrayList<Effect>();
-				for (int k = 0; k < context.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].Effects.Length"); k++) {
+				for (int k = 0; k < _ctx.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].Effects.Length"); k++) {
 					Effect effect = new Effect();
-					effect.setEffect(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].Effects["+ k +"].Effect"));
-					effect.setEffectConfig(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].Effects["+ k +"].EffectConfig"));
+					effect.setEffect(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].Effects["+ k +"].Effect"));
+					effect.setEffectConfig(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.Editing.ClipList["+ j +"].Effects["+ k +"].EffectConfig"));
 
 					effects.add(effect);
 				}
@@ -426,20 +426,20 @@ public class QueryEditingJobListResponseUnmarshaller {
 			editingConfig.setEditing(editing);
 
 			List<WaterMark> waterMarkList = new ArrayList<WaterMark>();
-			for (int j = 0; j < context.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList.Length"); j++) {
 				WaterMark waterMark = new WaterMark();
-				waterMark.setWaterMarkTemplateId(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].WaterMarkTemplateId"));
-				waterMark.setWidth(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].Width"));
-				waterMark.setHeight(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].Height"));
-				waterMark.setDx(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].Dx"));
-				waterMark.setDy(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].Dy"));
-				waterMark.setReferPos(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].ReferPos"));
-				waterMark.setType(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].Type"));
+				waterMark.setWaterMarkTemplateId(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].WaterMarkTemplateId"));
+				waterMark.setWidth(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].Width"));
+				waterMark.setHeight(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].Height"));
+				waterMark.setDx(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].Dx"));
+				waterMark.setDy(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].Dy"));
+				waterMark.setReferPos(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].ReferPos"));
+				waterMark.setType(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].Type"));
 
 				InputFile1 inputFile1 = new InputFile1();
-				inputFile1.setBucket(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].InputFile.Bucket"));
-				inputFile1.setLocation(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].InputFile.Location"));
-				inputFile1.setObject(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].InputFile.Object"));
+				inputFile1.setBucket(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].InputFile.Bucket"));
+				inputFile1.setLocation(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].InputFile.Location"));
+				inputFile1.setObject(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.WaterMarkList["+ j +"].InputFile.Object"));
 				waterMark.setInputFile1(inputFile1);
 
 				waterMarkList.add(waterMark);
@@ -447,12 +447,12 @@ public class QueryEditingJobListResponseUnmarshaller {
 			editingConfig.setWaterMarkList(waterMarkList);
 
 			List<Merge> mergeList = new ArrayList<Merge>();
-			for (int j = 0; j < context.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MergeList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MergeList.Length"); j++) {
 				Merge merge = new Merge();
-				merge.setMergeURL(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MergeList["+ j +"].MergeURL"));
-				merge.setStart(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MergeList["+ j +"].Start"));
-				merge.setDuration(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MergeList["+ j +"].Duration"));
-				merge.setRoleArn(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MergeList["+ j +"].RoleArn"));
+				merge.setMergeURL(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MergeList["+ j +"].MergeURL"));
+				merge.setStart(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MergeList["+ j +"].Start"));
+				merge.setDuration(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MergeList["+ j +"].Duration"));
+				merge.setRoleArn(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingConfig.MergeList["+ j +"].RoleArn"));
 
 				mergeList.add(merge);
 			}
@@ -460,25 +460,25 @@ public class QueryEditingJobListResponseUnmarshaller {
 			job.setEditingConfig(editingConfig);
 
 			MNSMessageResult mNSMessageResult = new MNSMessageResult();
-			mNSMessageResult.setMessageId(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].MNSMessageResult.MessageId"));
-			mNSMessageResult.setErrorMessage(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].MNSMessageResult.ErrorMessage"));
-			mNSMessageResult.setErrorCode(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].MNSMessageResult.ErrorCode"));
+			mNSMessageResult.setMessageId(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].MNSMessageResult.MessageId"));
+			mNSMessageResult.setErrorMessage(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].MNSMessageResult.ErrorMessage"));
+			mNSMessageResult.setErrorCode(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].MNSMessageResult.ErrorCode"));
 			job.setMNSMessageResult(mNSMessageResult);
 
 			List<EditingInput> editingInputs = new ArrayList<EditingInput>();
-			for (int j = 0; j < context.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingInputs.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryEditingJobListResponse.JobList["+ i +"].EditingInputs.Length"); j++) {
 				EditingInput editingInput = new EditingInput();
-				editingInput.setId(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingInputs["+ j +"].Id"));
+				editingInput.setId(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingInputs["+ j +"].Id"));
 
 				InputFile inputFile = new InputFile();
-				inputFile.setBucket(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingInputs["+ j +"].InputFile.Bucket"));
-				inputFile.setLocation(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingInputs["+ j +"].InputFile.Location"));
-				inputFile.setObject(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingInputs["+ j +"].InputFile.Object"));
+				inputFile.setBucket(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingInputs["+ j +"].InputFile.Bucket"));
+				inputFile.setLocation(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingInputs["+ j +"].InputFile.Location"));
+				inputFile.setObject(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingInputs["+ j +"].InputFile.Object"));
 				editingInput.setInputFile(inputFile);
 
 				InputConfig inputConfig = new InputConfig();
-				inputConfig.setDeinterlaceMethod(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingInputs["+ j +"].InputConfig.DeinterlaceMethod"));
-				inputConfig.setIsNormalSar(context.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingInputs["+ j +"].InputConfig.IsNormalSar"));
+				inputConfig.setDeinterlaceMethod(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingInputs["+ j +"].InputConfig.DeinterlaceMethod"));
+				inputConfig.setIsNormalSar(_ctx.stringValue("QueryEditingJobListResponse.JobList["+ i +"].EditingInputs["+ j +"].InputConfig.IsNormalSar"));
 				editingInput.setInputConfig(inputConfig);
 
 				editingInputs.add(editingInput);

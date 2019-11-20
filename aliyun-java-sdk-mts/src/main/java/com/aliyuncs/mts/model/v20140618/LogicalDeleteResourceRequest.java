@@ -15,20 +15,23 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class LogicalDeleteResourceRequest extends RpcAcsRequest<LogicalDeleteResourceResponse> {
-	
-	public LogicalDeleteResourceRequest() {
-		super("Mts", "2014-06-18", "LogicalDeleteResource", "mts");
-	}
+	   
 
 	private String country;
 
 	private Long hid;
+
+	private String invoker;
+
+	private String message;
 
 	private Boolean success;
 
@@ -38,15 +41,19 @@ public class LogicalDeleteResourceRequest extends RpcAcsRequest<LogicalDeleteRes
 
 	private String pk;
 
-	private String invoker;
-
 	private String bid;
-
-	private String message;
 
 	private String taskExtraData;
 
 	private String taskIdentifier;
+	public LogicalDeleteResourceRequest() {
+		super("Mts", "2014-06-18", "LogicalDeleteResource", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCountry() {
 		return this.country;
@@ -67,6 +74,28 @@ public class LogicalDeleteResourceRequest extends RpcAcsRequest<LogicalDeleteRes
 		this.hid = hid;
 		if(hid != null){
 			putQueryParameter("Hid", hid.toString());
+		}
+	}
+
+	public String getInvoker() {
+		return this.invoker;
+	}
+
+	public void setInvoker(String invoker) {
+		this.invoker = invoker;
+		if(invoker != null){
+			putQueryParameter("Invoker", invoker);
+		}
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+		if(message != null){
+			putQueryParameter("Message", message);
 		}
 	}
 
@@ -114,17 +143,6 @@ public class LogicalDeleteResourceRequest extends RpcAcsRequest<LogicalDeleteRes
 		}
 	}
 
-	public String getInvoker() {
-		return this.invoker;
-	}
-
-	public void setInvoker(String invoker) {
-		this.invoker = invoker;
-		if(invoker != null){
-			putQueryParameter("Invoker", invoker);
-		}
-	}
-
 	public String getBid() {
 		return this.bid;
 	}
@@ -133,17 +151,6 @@ public class LogicalDeleteResourceRequest extends RpcAcsRequest<LogicalDeleteRes
 		this.bid = bid;
 		if(bid != null){
 			putQueryParameter("Bid", bid);
-		}
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-		if(message != null){
-			putQueryParameter("Message", message);
 		}
 	}
 

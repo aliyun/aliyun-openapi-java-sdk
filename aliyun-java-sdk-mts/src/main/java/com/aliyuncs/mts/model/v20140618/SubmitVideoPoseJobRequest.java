@@ -15,24 +15,21 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitVideoPoseJobRequest extends RpcAcsRequest<SubmitVideoPoseJobResponse> {
-	
-	public SubmitVideoPoseJobRequest() {
-		super("Mts", "2014-06-18", "SubmitVideoPoseJob", "mts");
-	}
-
-	private String input;
-
-	private String userData;
+	   
 
 	private Long resourceOwnerId;
 
 	private String outputConfig;
+
+	private String userData;
 
 	private String resourceOwnerAccount;
 
@@ -42,26 +39,14 @@ public class SubmitVideoPoseJobRequest extends RpcAcsRequest<SubmitVideoPoseJobR
 
 	private String pipelineId;
 
-	public String getInput() {
-		return this.input;
-	}
-
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
-		}
-	}
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
+	private String input;
+	public SubmitVideoPoseJobRequest() {
+		super("Mts", "2014-06-18", "SubmitVideoPoseJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -83,6 +68,17 @@ public class SubmitVideoPoseJobRequest extends RpcAcsRequest<SubmitVideoPoseJobR
 		this.outputConfig = outputConfig;
 		if(outputConfig != null){
 			putQueryParameter("OutputConfig", outputConfig);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
 		}
 	}
 
@@ -127,6 +123,17 @@ public class SubmitVideoPoseJobRequest extends RpcAcsRequest<SubmitVideoPoseJobR
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
 		}
 	}
 

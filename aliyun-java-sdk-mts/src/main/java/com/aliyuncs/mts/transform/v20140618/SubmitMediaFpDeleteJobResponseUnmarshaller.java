@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitMediaFpDeleteJobResponseUnmarshaller {
 
-	public static SubmitMediaFpDeleteJobResponse unmarshall(SubmitMediaFpDeleteJobResponse submitMediaFpDeleteJobResponse, UnmarshallerContext context) {
+	public static SubmitMediaFpDeleteJobResponse unmarshall(SubmitMediaFpDeleteJobResponse submitMediaFpDeleteJobResponse, UnmarshallerContext _ctx) {
 		
-		submitMediaFpDeleteJobResponse.setRequestId(context.stringValue("SubmitMediaFpDeleteJobResponse.RequestId"));
-		submitMediaFpDeleteJobResponse.setJobId(context.stringValue("SubmitMediaFpDeleteJobResponse.JobId"));
+		submitMediaFpDeleteJobResponse.setRequestId(_ctx.stringValue("SubmitMediaFpDeleteJobResponse.RequestId"));
+		submitMediaFpDeleteJobResponse.setJobId(_ctx.stringValue("SubmitMediaFpDeleteJobResponse.JobId"));
 	 
 	 	return submitMediaFpDeleteJobResponse;
 	}

@@ -15,30 +15,27 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitMCJobRequest extends RpcAcsRequest<SubmitMCJobResponse> {
-	
-	public SubmitMCJobRequest() {
-		super("Mts", "2014-06-18", "SubmitMCJob", "mts");
-	}
-
-	private String userData;
+	   
 
 	private Long resourceOwnerId;
 
-	private String images;
+	private String video;
 
-	private String texts;
+	private String userData;
+
+	private String images;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String video;
 
 	private Long ownerId;
 
@@ -46,15 +43,14 @@ public class SubmitMCJobRequest extends RpcAcsRequest<SubmitMCJobResponse> {
 
 	private String pipelineId;
 
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
+	private String texts;
+	public SubmitMCJobRequest() {
+		super("Mts", "2014-06-18", "SubmitMCJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -68,6 +64,28 @@ public class SubmitMCJobRequest extends RpcAcsRequest<SubmitMCJobResponse> {
 		}
 	}
 
+	public String getVideo() {
+		return this.video;
+	}
+
+	public void setVideo(String video) {
+		this.video = video;
+		if(video != null){
+			putQueryParameter("Video", video);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
 	public String getImages() {
 		return this.images;
 	}
@@ -76,17 +94,6 @@ public class SubmitMCJobRequest extends RpcAcsRequest<SubmitMCJobResponse> {
 		this.images = images;
 		if(images != null){
 			putQueryParameter("Images", images);
-		}
-	}
-
-	public String getTexts() {
-		return this.texts;
-	}
-
-	public void setTexts(String texts) {
-		this.texts = texts;
-		if(texts != null){
-			putQueryParameter("Texts", texts);
 		}
 	}
 
@@ -109,17 +116,6 @@ public class SubmitMCJobRequest extends RpcAcsRequest<SubmitMCJobResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getVideo() {
-		return this.video;
-	}
-
-	public void setVideo(String video) {
-		this.video = video;
-		if(video != null){
-			putQueryParameter("Video", video);
 		}
 	}
 
@@ -153,6 +149,17 @@ public class SubmitMCJobRequest extends RpcAcsRequest<SubmitMCJobResponse> {
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getTexts() {
+		return this.texts;
+	}
+
+	public void setTexts(String texts) {
+		this.texts = texts;
+		if(texts != null){
+			putQueryParameter("Texts", texts);
 		}
 	}
 

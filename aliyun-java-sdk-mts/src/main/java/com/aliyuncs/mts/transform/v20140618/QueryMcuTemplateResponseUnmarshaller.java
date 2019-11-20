@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMcuTemplateResponseUnmarshaller {
 
-	public static QueryMcuTemplateResponse unmarshall(QueryMcuTemplateResponse queryMcuTemplateResponse, UnmarshallerContext context) {
+	public static QueryMcuTemplateResponse unmarshall(QueryMcuTemplateResponse queryMcuTemplateResponse, UnmarshallerContext _ctx) {
 		
-		queryMcuTemplateResponse.setRequestId(context.stringValue("QueryMcuTemplateResponse.RequestId"));
+		queryMcuTemplateResponse.setRequestId(_ctx.stringValue("QueryMcuTemplateResponse.RequestId"));
 
 		List<Job> templates = new ArrayList<Job>();
-		for (int i = 0; i < context.lengthValue("QueryMcuTemplateResponse.Templates.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMcuTemplateResponse.Templates.Length"); i++) {
 			Job job = new Job();
-			job.setTemplateId(context.stringValue("QueryMcuTemplateResponse.Templates["+ i +"].TemplateId"));
-			job.setTemplate(context.stringValue("QueryMcuTemplateResponse.Templates["+ i +"].Template"));
+			job.setTemplateId(_ctx.stringValue("QueryMcuTemplateResponse.Templates["+ i +"].TemplateId"));
+			job.setTemplate(_ctx.stringValue("QueryMcuTemplateResponse.Templates["+ i +"].Template"));
 
 			templates.add(job);
 		}

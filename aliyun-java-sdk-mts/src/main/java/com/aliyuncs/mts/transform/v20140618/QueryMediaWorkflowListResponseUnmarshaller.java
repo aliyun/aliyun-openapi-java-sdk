@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMediaWorkflowListResponseUnmarshaller {
 
-	public static QueryMediaWorkflowListResponse unmarshall(QueryMediaWorkflowListResponse queryMediaWorkflowListResponse, UnmarshallerContext context) {
+	public static QueryMediaWorkflowListResponse unmarshall(QueryMediaWorkflowListResponse queryMediaWorkflowListResponse, UnmarshallerContext _ctx) {
 		
-		queryMediaWorkflowListResponse.setRequestId(context.stringValue("QueryMediaWorkflowListResponse.RequestId"));
+		queryMediaWorkflowListResponse.setRequestId(_ctx.stringValue("QueryMediaWorkflowListResponse.RequestId"));
 
 		List<String> nonExistMediaWorkflowIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryMediaWorkflowListResponse.NonExistMediaWorkflowIds.Length"); i++) {
-			nonExistMediaWorkflowIds.add(context.stringValue("QueryMediaWorkflowListResponse.NonExistMediaWorkflowIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryMediaWorkflowListResponse.NonExistMediaWorkflowIds.Length"); i++) {
+			nonExistMediaWorkflowIds.add(_ctx.stringValue("QueryMediaWorkflowListResponse.NonExistMediaWorkflowIds["+ i +"]"));
 		}
 		queryMediaWorkflowListResponse.setNonExistMediaWorkflowIds(nonExistMediaWorkflowIds);
 
 		List<MediaWorkflow> mediaWorkflowList = new ArrayList<MediaWorkflow>();
-		for (int i = 0; i < context.lengthValue("QueryMediaWorkflowListResponse.MediaWorkflowList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMediaWorkflowListResponse.MediaWorkflowList.Length"); i++) {
 			MediaWorkflow mediaWorkflow = new MediaWorkflow();
-			mediaWorkflow.setMediaWorkflowId(context.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].MediaWorkflowId"));
-			mediaWorkflow.setName(context.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].Name"));
-			mediaWorkflow.setTopology(context.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].Topology"));
-			mediaWorkflow.setTriggerMode(context.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].TriggerMode"));
-			mediaWorkflow.setState(context.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].State"));
-			mediaWorkflow.setCreationTime(context.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].CreationTime"));
+			mediaWorkflow.setMediaWorkflowId(_ctx.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].MediaWorkflowId"));
+			mediaWorkflow.setName(_ctx.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].Name"));
+			mediaWorkflow.setTopology(_ctx.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].Topology"));
+			mediaWorkflow.setTriggerMode(_ctx.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].TriggerMode"));
+			mediaWorkflow.setState(_ctx.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].State"));
+			mediaWorkflow.setCreationTime(_ctx.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].CreationTime"));
 
 			mediaWorkflowList.add(mediaWorkflow);
 		}

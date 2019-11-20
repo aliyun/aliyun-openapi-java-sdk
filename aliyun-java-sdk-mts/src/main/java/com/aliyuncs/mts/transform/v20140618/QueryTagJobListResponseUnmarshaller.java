@@ -29,57 +29,57 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryTagJobListResponseUnmarshaller {
 
-	public static QueryTagJobListResponse unmarshall(QueryTagJobListResponse queryTagJobListResponse, UnmarshallerContext context) {
+	public static QueryTagJobListResponse unmarshall(QueryTagJobListResponse queryTagJobListResponse, UnmarshallerContext _ctx) {
 		
-		queryTagJobListResponse.setRequestId(context.stringValue("QueryTagJobListResponse.RequestId"));
+		queryTagJobListResponse.setRequestId(_ctx.stringValue("QueryTagJobListResponse.RequestId"));
 
 		List<String> nonExistIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryTagJobListResponse.NonExistIds.Length"); i++) {
-			nonExistIds.add(context.stringValue("QueryTagJobListResponse.NonExistIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryTagJobListResponse.NonExistIds.Length"); i++) {
+			nonExistIds.add(_ctx.stringValue("QueryTagJobListResponse.NonExistIds["+ i +"]"));
 		}
 		queryTagJobListResponse.setNonExistIds(nonExistIds);
 
 		List<TagJob> tagJobList = new ArrayList<TagJob>();
-		for (int i = 0; i < context.lengthValue("QueryTagJobListResponse.TagJobList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryTagJobListResponse.TagJobList.Length"); i++) {
 			TagJob tagJob = new TagJob();
-			tagJob.setId(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Id"));
-			tagJob.setUserData(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].UserData"));
-			tagJob.setPipelineId(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].PipelineId"));
-			tagJob.setState(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].State"));
-			tagJob.setCode(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Code"));
-			tagJob.setMessage(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Message"));
-			tagJob.setCreationTime(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].CreationTime"));
+			tagJob.setId(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Id"));
+			tagJob.setUserData(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].UserData"));
+			tagJob.setPipelineId(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].PipelineId"));
+			tagJob.setState(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].State"));
+			tagJob.setCode(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Code"));
+			tagJob.setMessage(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Message"));
+			tagJob.setCreationTime(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].CreationTime"));
 
 			Input input = new Input();
-			input.setBucket(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Input.Bucket"));
-			input.setLocation(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Input.Location"));
-			input.setObject(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Input.Object"));
+			input.setBucket(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Input.Bucket"));
+			input.setLocation(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Input.Location"));
+			input.setObject(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Input.Object"));
 			tagJob.setInput(input);
 
 			VideoTagResult videoTagResult = new VideoTagResult();
-			videoTagResult.setDetails(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.Details"));
+			videoTagResult.setDetails(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.Details"));
 
 			List<TagAnResult> tagAnResults = new ArrayList<TagAnResult>();
-			for (int j = 0; j < context.lengthValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagAnResults.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagAnResults.Length"); j++) {
 				TagAnResult tagAnResult = new TagAnResult();
-				tagAnResult.setLabel(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagAnResults["+ j +"].Label"));
-				tagAnResult.setScore(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagAnResults["+ j +"].Score"));
+				tagAnResult.setLabel(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagAnResults["+ j +"].Label"));
+				tagAnResult.setScore(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagAnResults["+ j +"].Score"));
 
 				tagAnResults.add(tagAnResult);
 			}
 			videoTagResult.setTagAnResults(tagAnResults);
 
 			List<TagFrResult> tagFrResults = new ArrayList<TagFrResult>();
-			for (int j = 0; j < context.lengthValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults.Length"); j++) {
 				TagFrResult tagFrResult = new TagFrResult();
-				tagFrResult.setTime(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults["+ j +"].Time"));
+				tagFrResult.setTime(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults["+ j +"].Time"));
 
 				List<TagFace> tagFaces = new ArrayList<TagFace>();
-				for (int k = 0; k < context.lengthValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults["+ j +"].TagFaces.Length"); k++) {
+				for (int k = 0; k < _ctx.lengthValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults["+ j +"].TagFaces.Length"); k++) {
 					TagFace tagFace = new TagFace();
-					tagFace.setName(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults["+ j +"].TagFaces["+ k +"].Name"));
-					tagFace.setScore(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults["+ j +"].TagFaces["+ k +"].Score"));
-					tagFace.setTarget(context.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults["+ j +"].TagFaces["+ k +"].Target"));
+					tagFace.setName(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults["+ j +"].TagFaces["+ k +"].Name"));
+					tagFace.setScore(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults["+ j +"].TagFaces["+ k +"].Score"));
+					tagFace.setTarget(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults["+ j +"].TagFaces["+ k +"].Target"));
 
 					tagFaces.add(tagFace);
 				}

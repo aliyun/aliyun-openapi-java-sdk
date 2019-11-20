@@ -15,30 +15,37 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateWaterMarkTemplateRequest extends RpcAcsRequest<UpdateWaterMarkTemplateResponse> {
-	
-	public UpdateWaterMarkTemplateRequest() {
-		super("Mts", "2014-06-18", "UpdateWaterMarkTemplate", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String waterMarkTemplateId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String name;
-
 	private Long ownerId;
 
-	private String waterMarkTemplateId;
+	private String name;
 
 	private String config;
+	public UpdateWaterMarkTemplateRequest() {
+		super("Mts", "2014-06-18", "UpdateWaterMarkTemplate", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,6 +55,17 @@ public class UpdateWaterMarkTemplateRequest extends RpcAcsRequest<UpdateWaterMar
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getWaterMarkTemplateId() {
+		return this.waterMarkTemplateId;
+	}
+
+	public void setWaterMarkTemplateId(String waterMarkTemplateId) {
+		this.waterMarkTemplateId = waterMarkTemplateId;
+		if(waterMarkTemplateId != null){
+			putQueryParameter("WaterMarkTemplateId", waterMarkTemplateId);
 		}
 	}
 
@@ -73,17 +91,6 @@ public class UpdateWaterMarkTemplateRequest extends RpcAcsRequest<UpdateWaterMar
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -95,14 +102,14 @@ public class UpdateWaterMarkTemplateRequest extends RpcAcsRequest<UpdateWaterMar
 		}
 	}
 
-	public String getWaterMarkTemplateId() {
-		return this.waterMarkTemplateId;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setWaterMarkTemplateId(String waterMarkTemplateId) {
-		this.waterMarkTemplateId = waterMarkTemplateId;
-		if(waterMarkTemplateId != null){
-			putQueryParameter("WaterMarkTemplateId", waterMarkTemplateId);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

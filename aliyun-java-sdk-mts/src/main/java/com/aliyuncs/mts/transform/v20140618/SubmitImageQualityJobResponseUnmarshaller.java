@@ -23,28 +23,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitImageQualityJobResponseUnmarshaller {
 
-	public static SubmitImageQualityJobResponse unmarshall(SubmitImageQualityJobResponse submitImageQualityJobResponse, UnmarshallerContext context) {
+	public static SubmitImageQualityJobResponse unmarshall(SubmitImageQualityJobResponse submitImageQualityJobResponse, UnmarshallerContext _ctx) {
 		
-		submitImageQualityJobResponse.setRequestId(context.stringValue("SubmitImageQualityJobResponse.RequestId"));
+		submitImageQualityJobResponse.setRequestId(_ctx.stringValue("SubmitImageQualityJobResponse.RequestId"));
 
 		ImageQualityJob imageQualityJob = new ImageQualityJob();
-		imageQualityJob.setJobId(context.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.JobId"));
-		imageQualityJob.setUserData(context.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.UserData"));
-		imageQualityJob.setPipelineId(context.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.PipelineId"));
-		imageQualityJob.setState(context.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.State"));
-		imageQualityJob.setCreationTime(context.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.CreationTime"));
+		imageQualityJob.setJobId(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.JobId"));
+		imageQualityJob.setUserData(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.UserData"));
+		imageQualityJob.setPipelineId(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.PipelineId"));
+		imageQualityJob.setState(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.State"));
+		imageQualityJob.setCreationTime(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.CreationTime"));
 
 		Input input = new Input();
-		input.setBucket(context.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Input.Bucket"));
-		input.setLocation(context.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Input.Location"));
-		input.setObject(context.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Input.Object"));
-		input.setUrl(context.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Input.Url"));
+		input.setBucket(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Input.Bucket"));
+		input.setLocation(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Input.Location"));
+		input.setObject(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Input.Object"));
+		input.setUrl(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Input.Url"));
 		imageQualityJob.setInput(input);
 
 		Result result = new Result();
-		result.setCode(context.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Result.Code"));
-		result.setMessage(context.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Result.Message"));
-		result.setScore(context.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Result.Score"));
+		result.setCode(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Result.Code"));
+		result.setMessage(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Result.Message"));
+		result.setScore(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Result.Score"));
 		imageQualityJob.setResult(result);
 		submitImageQualityJobResponse.setImageQualityJob(imageQualityJob);
 	 

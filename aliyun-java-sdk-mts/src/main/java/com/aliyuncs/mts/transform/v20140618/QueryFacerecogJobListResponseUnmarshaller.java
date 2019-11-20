@@ -28,46 +28,46 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryFacerecogJobListResponseUnmarshaller {
 
-	public static QueryFacerecogJobListResponse unmarshall(QueryFacerecogJobListResponse queryFacerecogJobListResponse, UnmarshallerContext context) {
+	public static QueryFacerecogJobListResponse unmarshall(QueryFacerecogJobListResponse queryFacerecogJobListResponse, UnmarshallerContext _ctx) {
 		
-		queryFacerecogJobListResponse.setRequestId(context.stringValue("QueryFacerecogJobListResponse.RequestId"));
+		queryFacerecogJobListResponse.setRequestId(_ctx.stringValue("QueryFacerecogJobListResponse.RequestId"));
 
 		List<String> nonExistIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryFacerecogJobListResponse.NonExistIds.Length"); i++) {
-			nonExistIds.add(context.stringValue("QueryFacerecogJobListResponse.NonExistIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryFacerecogJobListResponse.NonExistIds.Length"); i++) {
+			nonExistIds.add(_ctx.stringValue("QueryFacerecogJobListResponse.NonExistIds["+ i +"]"));
 		}
 		queryFacerecogJobListResponse.setNonExistIds(nonExistIds);
 
 		List<FacerecogJob> facerecogJobList = new ArrayList<FacerecogJob>();
-		for (int i = 0; i < context.lengthValue("QueryFacerecogJobListResponse.FacerecogJobList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryFacerecogJobListResponse.FacerecogJobList.Length"); i++) {
 			FacerecogJob facerecogJob = new FacerecogJob();
-			facerecogJob.setId(context.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Id"));
-			facerecogJob.setUserData(context.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].UserData"));
-			facerecogJob.setPipelineId(context.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].PipelineId"));
-			facerecogJob.setState(context.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].State"));
-			facerecogJob.setCode(context.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Code"));
-			facerecogJob.setMessage(context.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Message"));
-			facerecogJob.setCreationTime(context.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].CreationTime"));
+			facerecogJob.setId(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Id"));
+			facerecogJob.setUserData(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].UserData"));
+			facerecogJob.setPipelineId(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].PipelineId"));
+			facerecogJob.setState(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].State"));
+			facerecogJob.setCode(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Code"));
+			facerecogJob.setMessage(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Message"));
+			facerecogJob.setCreationTime(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].CreationTime"));
 
 			Input input = new Input();
-			input.setBucket(context.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Input.Bucket"));
-			input.setLocation(context.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Input.Location"));
-			input.setObject(context.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Input.Object"));
+			input.setBucket(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Input.Bucket"));
+			input.setLocation(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Input.Location"));
+			input.setObject(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Input.Object"));
 			facerecogJob.setInput(input);
 
 			VideoFacerecogResult videoFacerecogResult = new VideoFacerecogResult();
 
 			List<Facerecog> facerecogs = new ArrayList<Facerecog>();
-			for (int j = 0; j < context.lengthValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs.Length"); j++) {
 				Facerecog facerecog = new Facerecog();
-				facerecog.setTime(context.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs["+ j +"].Time"));
+				facerecog.setTime(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs["+ j +"].Time"));
 
 				List<Face> faces = new ArrayList<Face>();
-				for (int k = 0; k < context.lengthValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs["+ j +"].Faces.Length"); k++) {
+				for (int k = 0; k < _ctx.lengthValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs["+ j +"].Faces.Length"); k++) {
 					Face face = new Face();
-					face.setName(context.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs["+ j +"].Faces["+ k +"].Name"));
-					face.setScore(context.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs["+ j +"].Faces["+ k +"].Score"));
-					face.setTarget(context.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs["+ j +"].Faces["+ k +"].Target"));
+					face.setName(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs["+ j +"].Faces["+ k +"].Name"));
+					face.setScore(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs["+ j +"].Faces["+ k +"].Score"));
+					face.setTarget(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs["+ j +"].Faces["+ k +"].Target"));
 
 					faces.add(face);
 				}

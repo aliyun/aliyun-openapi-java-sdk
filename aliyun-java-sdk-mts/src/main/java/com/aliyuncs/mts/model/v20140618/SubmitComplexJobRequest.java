@@ -15,28 +15,29 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitComplexJobRequest extends RpcAcsRequest<SubmitComplexJobResponse> {
-	
-	public SubmitComplexJobRequest() {
-		super("Mts", "2014-06-18", "SubmitComplexJob", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String transcodeOutput;
 
-	private String resourceOwnerAccount;
-
 	private String inputs;
 
-	private String ownerAccount;
-
 	private String outputLocation;
+
+	private String userData;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private Long ownerId;
 
@@ -44,9 +45,15 @@ public class SubmitComplexJobRequest extends RpcAcsRequest<SubmitComplexJobRespo
 
 	private String outputBucket;
 
-	private String userData;
-
 	private String complexConfigs;
+	public SubmitComplexJobRequest() {
+		super("Mts", "2014-06-18", "SubmitComplexJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -70,17 +77,6 @@ public class SubmitComplexJobRequest extends RpcAcsRequest<SubmitComplexJobRespo
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getInputs() {
 		return this.inputs;
 	}
@@ -92,17 +88,6 @@ public class SubmitComplexJobRequest extends RpcAcsRequest<SubmitComplexJobRespo
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getOutputLocation() {
 		return this.outputLocation;
 	}
@@ -111,6 +96,39 @@ public class SubmitComplexJobRequest extends RpcAcsRequest<SubmitComplexJobRespo
 		this.outputLocation = outputLocation;
 		if(outputLocation != null){
 			putQueryParameter("OutputLocation", outputLocation);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -144,17 +162,6 @@ public class SubmitComplexJobRequest extends RpcAcsRequest<SubmitComplexJobRespo
 		this.outputBucket = outputBucket;
 		if(outputBucket != null){
 			putQueryParameter("OutputBucket", outputBucket);
-		}
-	}
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
 		}
 	}
 

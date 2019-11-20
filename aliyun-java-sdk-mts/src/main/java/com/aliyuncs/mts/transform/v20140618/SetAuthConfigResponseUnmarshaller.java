@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetAuthConfigResponseUnmarshaller {
 
-	public static SetAuthConfigResponse unmarshall(SetAuthConfigResponse setAuthConfigResponse, UnmarshallerContext context) {
+	public static SetAuthConfigResponse unmarshall(SetAuthConfigResponse setAuthConfigResponse, UnmarshallerContext _ctx) {
 		
-		setAuthConfigResponse.setRequestId(context.stringValue("SetAuthConfigResponse.RequestId"));
-		setAuthConfigResponse.setKey1(context.stringValue("SetAuthConfigResponse.Key1"));
-		setAuthConfigResponse.setKey2(context.stringValue("SetAuthConfigResponse.Key2"));
+		setAuthConfigResponse.setRequestId(_ctx.stringValue("SetAuthConfigResponse.RequestId"));
+		setAuthConfigResponse.setKey1(_ctx.stringValue("SetAuthConfigResponse.Key1"));
+		setAuthConfigResponse.setKey2(_ctx.stringValue("SetAuthConfigResponse.Key2"));
 	 
 	 	return setAuthConfigResponse;
 	}

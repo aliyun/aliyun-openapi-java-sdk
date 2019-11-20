@@ -15,41 +15,59 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitCoverJobRequest extends RpcAcsRequest<SubmitCoverJobResponse> {
-	
-	public SubmitCoverJobRequest() {
-		super("Mts", "2014-06-18", "SubmitCoverJob", "mts");
-	}
-
-	private String input;
-
-	private String userData;
+	   
 
 	private Long resourceOwnerId;
+
+	private String coverConfig;
+
+	private String userData;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String coverConfig;
-
 	private Long ownerId;
 
 	private String pipelineId;
 
-	public String getInput() {
-		return this.input;
+	private String input;
+	public SubmitCoverJobRequest() {
+		super("Mts", "2014-06-18", "SubmitCoverJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCoverConfig() {
+		return this.coverConfig;
+	}
+
+	public void setCoverConfig(String coverConfig) {
+		this.coverConfig = coverConfig;
+		if(coverConfig != null){
+			putQueryParameter("CoverConfig", coverConfig);
 		}
 	}
 
@@ -61,17 +79,6 @@ public class SubmitCoverJobRequest extends RpcAcsRequest<SubmitCoverJobResponse>
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -97,17 +104,6 @@ public class SubmitCoverJobRequest extends RpcAcsRequest<SubmitCoverJobResponse>
 		}
 	}
 
-	public String getCoverConfig() {
-		return this.coverConfig;
-	}
-
-	public void setCoverConfig(String coverConfig) {
-		this.coverConfig = coverConfig;
-		if(coverConfig != null){
-			putQueryParameter("CoverConfig", coverConfig);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -127,6 +123,17 @@ public class SubmitCoverJobRequest extends RpcAcsRequest<SubmitCoverJobResponse>
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
 		}
 	}
 

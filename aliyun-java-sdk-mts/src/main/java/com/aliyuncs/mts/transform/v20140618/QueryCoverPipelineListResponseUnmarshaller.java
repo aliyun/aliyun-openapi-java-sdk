@@ -25,28 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryCoverPipelineListResponseUnmarshaller {
 
-	public static QueryCoverPipelineListResponse unmarshall(QueryCoverPipelineListResponse queryCoverPipelineListResponse, UnmarshallerContext context) {
+	public static QueryCoverPipelineListResponse unmarshall(QueryCoverPipelineListResponse queryCoverPipelineListResponse, UnmarshallerContext _ctx) {
 		
-		queryCoverPipelineListResponse.setRequestId(context.stringValue("QueryCoverPipelineListResponse.RequestId"));
+		queryCoverPipelineListResponse.setRequestId(_ctx.stringValue("QueryCoverPipelineListResponse.RequestId"));
 
 		List<String> nonExistIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryCoverPipelineListResponse.NonExistIds.Length"); i++) {
-			nonExistIds.add(context.stringValue("QueryCoverPipelineListResponse.NonExistIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryCoverPipelineListResponse.NonExistIds.Length"); i++) {
+			nonExistIds.add(_ctx.stringValue("QueryCoverPipelineListResponse.NonExistIds["+ i +"]"));
 		}
 		queryCoverPipelineListResponse.setNonExistIds(nonExistIds);
 
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
-		for (int i = 0; i < context.lengthValue("QueryCoverPipelineListResponse.PipelineList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryCoverPipelineListResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setId(context.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].Id"));
-			pipeline.setName(context.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].Name"));
-			pipeline.setState(context.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].State"));
-			pipeline.setPriority(context.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].Priority"));
-			pipeline.setRole(context.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].Role"));
+			pipeline.setId(_ctx.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].Id"));
+			pipeline.setName(_ctx.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].Name"));
+			pipeline.setState(_ctx.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].State"));
+			pipeline.setPriority(_ctx.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].Priority"));
+			pipeline.setRole(_ctx.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].Role"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
-			notifyConfig.setTopic(context.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
-			notifyConfig.setQueue(context.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Queue"));
+			notifyConfig.setTopic(_ctx.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
+			notifyConfig.setQueue(_ctx.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Queue"));
 			pipeline.setNotifyConfig(notifyConfig);
 
 			pipelineList.add(pipeline);

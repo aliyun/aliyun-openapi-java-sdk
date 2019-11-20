@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateMcuTemplateResponseUnmarshaller {
 
-	public static CreateMcuTemplateResponse unmarshall(CreateMcuTemplateResponse createMcuTemplateResponse, UnmarshallerContext context) {
+	public static CreateMcuTemplateResponse unmarshall(CreateMcuTemplateResponse createMcuTemplateResponse, UnmarshallerContext _ctx) {
 		
-		createMcuTemplateResponse.setRequestId(context.stringValue("CreateMcuTemplateResponse.RequestId"));
-		createMcuTemplateResponse.setTemplateId(context.stringValue("CreateMcuTemplateResponse.TemplateId"));
+		createMcuTemplateResponse.setRequestId(_ctx.stringValue("CreateMcuTemplateResponse.RequestId"));
+		createMcuTemplateResponse.setTemplateId(_ctx.stringValue("CreateMcuTemplateResponse.TemplateId"));
 	 
 	 	return createMcuTemplateResponse;
 	}

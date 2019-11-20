@@ -15,32 +15,39 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListMediaRequest extends RpcAcsRequest<ListMediaResponse> {
-	
-	public ListMediaRequest() {
-		super("Mts", "2014-06-18", "ListMedia", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String nextPageToken;
+
+	private String from;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long maximumPageSize;
 
-	private String from;
+	private Long ownerId;
 
 	private String to;
-
-	private Long ownerId;
+	public ListMediaRequest() {
+		super("Mts", "2014-06-18", "ListMedia", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,17 +60,6 @@ public class ListMediaRequest extends RpcAcsRequest<ListMediaResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getNextPageToken() {
 		return this.nextPageToken;
 	}
@@ -72,6 +68,28 @@ public class ListMediaRequest extends RpcAcsRequest<ListMediaResponse> {
 		this.nextPageToken = nextPageToken;
 		if(nextPageToken != null){
 			putQueryParameter("NextPageToken", nextPageToken);
+		}
+	}
+
+	public String getFrom() {
+		return this.from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+		if(from != null){
+			putQueryParameter("From", from);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -97,14 +115,14 @@ public class ListMediaRequest extends RpcAcsRequest<ListMediaResponse> {
 		}
 	}
 
-	public String getFrom() {
-		return this.from;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setFrom(String from) {
-		this.from = from;
-		if(from != null){
-			putQueryParameter("From", from);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -116,17 +134,6 @@ public class ListMediaRequest extends RpcAcsRequest<ListMediaResponse> {
 		this.to = to;
 		if(to != null){
 			putQueryParameter("To", to);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

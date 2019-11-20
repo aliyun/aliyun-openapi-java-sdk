@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetLicenseResponseUnmarshaller {
 
-	public static GetLicenseResponse unmarshall(GetLicenseResponse getLicenseResponse, UnmarshallerContext context) {
+	public static GetLicenseResponse unmarshall(GetLicenseResponse getLicenseResponse, UnmarshallerContext _ctx) {
 		
-		getLicenseResponse.setRequestId(context.stringValue("GetLicenseResponse.RequestId"));
-		getLicenseResponse.setLicense(context.stringValue("GetLicenseResponse.License"));
+		getLicenseResponse.setRequestId(_ctx.stringValue("GetLicenseResponse.RequestId"));
+		getLicenseResponse.setLicense(_ctx.stringValue("GetLicenseResponse.License"));
 	 
 	 	return getLicenseResponse;
 	}

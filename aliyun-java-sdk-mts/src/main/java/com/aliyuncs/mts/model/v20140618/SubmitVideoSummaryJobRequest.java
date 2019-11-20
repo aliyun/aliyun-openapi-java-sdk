@@ -15,41 +15,48 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitVideoSummaryJobRequest extends RpcAcsRequest<SubmitVideoSummaryJobResponse> {
-	
-	public SubmitVideoSummaryJobRequest() {
-		super("Mts", "2014-06-18", "SubmitVideoSummaryJob", "mts");
-	}
+	   
 
-	private String input;
+	private Long resourceOwnerId;
 
 	private String userData;
 
-	private Long resourceOwnerId;
+	private String videoSummaryConfig;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String videoSummaryConfig;
-
 	private Long ownerId;
 
 	private String pipelineId;
 
-	public String getInput() {
-		return this.input;
+	private String input;
+	public SubmitVideoSummaryJobRequest() {
+		super("Mts", "2014-06-18", "SubmitVideoSummaryJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -64,14 +71,14 @@ public class SubmitVideoSummaryJobRequest extends RpcAcsRequest<SubmitVideoSumma
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getVideoSummaryConfig() {
+		return this.videoSummaryConfig;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setVideoSummaryConfig(String videoSummaryConfig) {
+		this.videoSummaryConfig = videoSummaryConfig;
+		if(videoSummaryConfig != null){
+			putQueryParameter("VideoSummaryConfig", videoSummaryConfig);
 		}
 	}
 
@@ -97,17 +104,6 @@ public class SubmitVideoSummaryJobRequest extends RpcAcsRequest<SubmitVideoSumma
 		}
 	}
 
-	public String getVideoSummaryConfig() {
-		return this.videoSummaryConfig;
-	}
-
-	public void setVideoSummaryConfig(String videoSummaryConfig) {
-		this.videoSummaryConfig = videoSummaryConfig;
-		if(videoSummaryConfig != null){
-			putQueryParameter("VideoSummaryConfig", videoSummaryConfig);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -127,6 +123,17 @@ public class SubmitVideoSummaryJobRequest extends RpcAcsRequest<SubmitVideoSumma
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
 		}
 	}
 

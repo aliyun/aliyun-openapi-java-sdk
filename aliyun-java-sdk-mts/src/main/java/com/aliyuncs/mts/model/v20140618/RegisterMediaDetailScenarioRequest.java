@@ -15,40 +15,36 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class RegisterMediaDetailScenarioRequest extends RpcAcsRequest<RegisterMediaDetailScenarioResponse> {
-	
-	public RegisterMediaDetailScenarioRequest() {
-		super("Mts", "2014-06-18", "RegisterMediaDetailScenario", "mts");
-	}
-
-	private String jobId;
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private String description;
+
+	private String jobId;
 
 	private String scenario;
 
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
 
-	private String description;
-
 	private Long ownerId;
-
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
-		}
+	public RegisterMediaDetailScenarioRequest() {
+		super("Mts", "2014-06-18", "RegisterMediaDetailScenario", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -62,14 +58,25 @@ public class RegisterMediaDetailScenarioRequest extends RpcAcsRequest<RegisterMe
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
 		}
 	}
 
@@ -84,6 +91,17 @@ public class RegisterMediaDetailScenarioRequest extends RpcAcsRequest<RegisterMe
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -92,17 +110,6 @@ public class RegisterMediaDetailScenarioRequest extends RpcAcsRequest<RegisterMe
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 

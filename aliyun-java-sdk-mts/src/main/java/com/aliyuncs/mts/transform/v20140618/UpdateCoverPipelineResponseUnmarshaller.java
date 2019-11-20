@@ -22,20 +22,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateCoverPipelineResponseUnmarshaller {
 
-	public static UpdateCoverPipelineResponse unmarshall(UpdateCoverPipelineResponse updateCoverPipelineResponse, UnmarshallerContext context) {
+	public static UpdateCoverPipelineResponse unmarshall(UpdateCoverPipelineResponse updateCoverPipelineResponse, UnmarshallerContext _ctx) {
 		
-		updateCoverPipelineResponse.setRequestId(context.stringValue("UpdateCoverPipelineResponse.RequestId"));
+		updateCoverPipelineResponse.setRequestId(_ctx.stringValue("UpdateCoverPipelineResponse.RequestId"));
 
 		Pipeline pipeline = new Pipeline();
-		pipeline.setId(context.stringValue("UpdateCoverPipelineResponse.Pipeline.Id"));
-		pipeline.setName(context.stringValue("UpdateCoverPipelineResponse.Pipeline.Name"));
-		pipeline.setState(context.stringValue("UpdateCoverPipelineResponse.Pipeline.State"));
-		pipeline.setPriority(context.integerValue("UpdateCoverPipelineResponse.Pipeline.Priority"));
-		pipeline.setRole(context.stringValue("UpdateCoverPipelineResponse.Pipeline.Role"));
+		pipeline.setId(_ctx.stringValue("UpdateCoverPipelineResponse.Pipeline.Id"));
+		pipeline.setName(_ctx.stringValue("UpdateCoverPipelineResponse.Pipeline.Name"));
+		pipeline.setState(_ctx.stringValue("UpdateCoverPipelineResponse.Pipeline.State"));
+		pipeline.setPriority(_ctx.integerValue("UpdateCoverPipelineResponse.Pipeline.Priority"));
+		pipeline.setRole(_ctx.stringValue("UpdateCoverPipelineResponse.Pipeline.Role"));
 
 		NotifyConfig notifyConfig = new NotifyConfig();
-		notifyConfig.setTopic(context.stringValue("UpdateCoverPipelineResponse.Pipeline.NotifyConfig.Topic"));
-		notifyConfig.setQueue(context.stringValue("UpdateCoverPipelineResponse.Pipeline.NotifyConfig.Queue"));
+		notifyConfig.setTopic(_ctx.stringValue("UpdateCoverPipelineResponse.Pipeline.NotifyConfig.Topic"));
+		notifyConfig.setQueue(_ctx.stringValue("UpdateCoverPipelineResponse.Pipeline.NotifyConfig.Queue"));
 		pipeline.setNotifyConfig(notifyConfig);
 		updateCoverPipelineResponse.setPipeline(pipeline);
 	 

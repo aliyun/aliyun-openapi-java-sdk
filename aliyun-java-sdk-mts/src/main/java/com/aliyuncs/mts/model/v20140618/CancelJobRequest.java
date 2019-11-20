@@ -15,18 +15,15 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CancelJobRequest extends RpcAcsRequest<CancelJobResponse> {
-	
-	public CancelJobRequest() {
-		super("Mts", "2014-06-18", "CancelJob", "mts");
-	}
-
-	private String jobId;
+	   
 
 	private Long resourceOwnerId;
 
@@ -36,15 +33,14 @@ public class CancelJobRequest extends RpcAcsRequest<CancelJobResponse> {
 
 	private Long ownerId;
 
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
-		}
+	private String jobId;
+	public CancelJobRequest() {
+		super("Mts", "2014-06-18", "CancelJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -88,6 +84,17 @@ public class CancelJobRequest extends RpcAcsRequest<CancelJobResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
 		}
 	}
 

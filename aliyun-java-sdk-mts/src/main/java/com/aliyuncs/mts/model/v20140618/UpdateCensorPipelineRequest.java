@@ -15,26 +15,23 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateCensorPipelineRequest extends RpcAcsRequest<UpdateCensorPipelineResponse> {
-	
-	public UpdateCensorPipelineRequest() {
-		super("Mts", "2014-06-18", "UpdateCensorPipeline", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String state;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String name;
-
-	private String state;
 
 	private String notifyConfig;
 
@@ -44,6 +41,16 @@ public class UpdateCensorPipelineRequest extends RpcAcsRequest<UpdateCensorPipel
 
 	private String pipelineId;
 
+	private String name;
+	public UpdateCensorPipelineRequest() {
+		super("Mts", "2014-06-18", "UpdateCensorPipeline", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -52,6 +59,17 @@ public class UpdateCensorPipelineRequest extends RpcAcsRequest<UpdateCensorPipel
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
 		}
 	}
 
@@ -74,28 +92,6 @@ public class UpdateCensorPipelineRequest extends RpcAcsRequest<UpdateCensorPipel
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getState() {
-		return this.state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-		if(state != null){
-			putQueryParameter("State", state);
 		}
 	}
 
@@ -140,6 +136,17 @@ public class UpdateCensorPipelineRequest extends RpcAcsRequest<UpdateCensorPipel
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

@@ -36,87 +36,87 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMediaCensorJobDetailResponseUnmarshaller {
 
-	public static QueryMediaCensorJobDetailResponse unmarshall(QueryMediaCensorJobDetailResponse queryMediaCensorJobDetailResponse, UnmarshallerContext context) {
+	public static QueryMediaCensorJobDetailResponse unmarshall(QueryMediaCensorJobDetailResponse queryMediaCensorJobDetailResponse, UnmarshallerContext _ctx) {
 		
-		queryMediaCensorJobDetailResponse.setRequestId(context.stringValue("QueryMediaCensorJobDetailResponse.RequestId"));
+		queryMediaCensorJobDetailResponse.setRequestId(_ctx.stringValue("QueryMediaCensorJobDetailResponse.RequestId"));
 
 		MediaCensorJobDetail mediaCensorJobDetail = new MediaCensorJobDetail();
-		mediaCensorJobDetail.setJobId(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.JobId"));
-		mediaCensorJobDetail.setUserData(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.UserData"));
-		mediaCensorJobDetail.setPipelineId(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.PipelineId"));
-		mediaCensorJobDetail.setState(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.State"));
-		mediaCensorJobDetail.setCode(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.Code"));
-		mediaCensorJobDetail.setSuggestion(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.Suggestion"));
-		mediaCensorJobDetail.setMessage(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.Message"));
-		mediaCensorJobDetail.setCreationTime(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CreationTime"));
-		mediaCensorJobDetail.setFinishTime(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.FinishTime"));
+		mediaCensorJobDetail.setJobId(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.JobId"));
+		mediaCensorJobDetail.setUserData(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.UserData"));
+		mediaCensorJobDetail.setPipelineId(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.PipelineId"));
+		mediaCensorJobDetail.setState(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.State"));
+		mediaCensorJobDetail.setCode(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.Code"));
+		mediaCensorJobDetail.setSuggestion(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.Suggestion"));
+		mediaCensorJobDetail.setMessage(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.Message"));
+		mediaCensorJobDetail.setCreationTime(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CreationTime"));
+		mediaCensorJobDetail.setFinishTime(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.FinishTime"));
 
 		TitleCensorResult titleCensorResult = new TitleCensorResult();
-		titleCensorResult.setRate(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.TitleCensorResult.Rate"));
-		titleCensorResult.setScene(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.TitleCensorResult.Scene"));
-		titleCensorResult.setLabel(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.TitleCensorResult.Label"));
-		titleCensorResult.setSuggestion(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.TitleCensorResult.Suggestion"));
+		titleCensorResult.setRate(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.TitleCensorResult.Rate"));
+		titleCensorResult.setScene(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.TitleCensorResult.Scene"));
+		titleCensorResult.setLabel(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.TitleCensorResult.Label"));
+		titleCensorResult.setSuggestion(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.TitleCensorResult.Suggestion"));
 		mediaCensorJobDetail.setTitleCensorResult(titleCensorResult);
 
 		DescCensorResult descCensorResult = new DescCensorResult();
-		descCensorResult.setRate(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.DescCensorResult.Rate"));
-		descCensorResult.setScene(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.DescCensorResult.Scene"));
-		descCensorResult.setLabel(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.DescCensorResult.Label"));
-		descCensorResult.setSuggestion(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.DescCensorResult.Suggestion"));
+		descCensorResult.setRate(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.DescCensorResult.Rate"));
+		descCensorResult.setScene(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.DescCensorResult.Scene"));
+		descCensorResult.setLabel(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.DescCensorResult.Label"));
+		descCensorResult.setSuggestion(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.DescCensorResult.Suggestion"));
 		mediaCensorJobDetail.setDescCensorResult(descCensorResult);
 
 		BarrageCensorResult barrageCensorResult = new BarrageCensorResult();
-		barrageCensorResult.setRate(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.BarrageCensorResult.Rate"));
-		barrageCensorResult.setScene(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.BarrageCensorResult.Scene"));
-		barrageCensorResult.setLabel(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.BarrageCensorResult.Label"));
-		barrageCensorResult.setSuggestion(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.BarrageCensorResult.Suggestion"));
+		barrageCensorResult.setRate(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.BarrageCensorResult.Rate"));
+		barrageCensorResult.setScene(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.BarrageCensorResult.Scene"));
+		barrageCensorResult.setLabel(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.BarrageCensorResult.Label"));
+		barrageCensorResult.setSuggestion(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.BarrageCensorResult.Suggestion"));
 		mediaCensorJobDetail.setBarrageCensorResult(barrageCensorResult);
 
 		Input input = new Input();
-		input.setBucket(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.Input.Bucket"));
-		input.setLocation(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.Input.Location"));
-		input.setObject(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.Input.Object"));
+		input.setBucket(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.Input.Bucket"));
+		input.setLocation(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.Input.Location"));
+		input.setObject(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.Input.Object"));
 		mediaCensorJobDetail.setInput(input);
 
 		VideoCensorConfig videoCensorConfig = new VideoCensorConfig();
-		videoCensorConfig.setBizType(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VideoCensorConfig.BizType"));
-		videoCensorConfig.setVideoCensor(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VideoCensorConfig.VideoCensor"));
+		videoCensorConfig.setBizType(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VideoCensorConfig.BizType"));
+		videoCensorConfig.setVideoCensor(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VideoCensorConfig.VideoCensor"));
 
 		OutputFile outputFile = new OutputFile();
-		outputFile.setBucket(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VideoCensorConfig.OutputFile.Bucket"));
-		outputFile.setLocation(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VideoCensorConfig.OutputFile.Location"));
-		outputFile.setObject(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VideoCensorConfig.OutputFile.Object"));
+		outputFile.setBucket(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VideoCensorConfig.OutputFile.Bucket"));
+		outputFile.setLocation(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VideoCensorConfig.OutputFile.Location"));
+		outputFile.setObject(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VideoCensorConfig.OutputFile.Object"));
 		videoCensorConfig.setOutputFile(outputFile);
 		mediaCensorJobDetail.setVideoCensorConfig(videoCensorConfig);
 
 		VensorCensorResult vensorCensorResult = new VensorCensorResult();
-		vensorCensorResult.setNextPageToken(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.NextPageToken"));
+		vensorCensorResult.setNextPageToken(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.NextPageToken"));
 
 		List<CensorResult> censorResults = new ArrayList<CensorResult>();
-		for (int i = 0; i < context.lengthValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.CensorResults.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.CensorResults.Length"); i++) {
 			CensorResult censorResult = new CensorResult();
-			censorResult.setRate(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.CensorResults["+ i +"].Rate"));
-			censorResult.setScene(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.CensorResults["+ i +"].Scene"));
-			censorResult.setLabel(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.CensorResults["+ i +"].Label"));
-			censorResult.setSuggestion(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.CensorResults["+ i +"].Suggestion"));
+			censorResult.setRate(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.CensorResults["+ i +"].Rate"));
+			censorResult.setScene(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.CensorResults["+ i +"].Scene"));
+			censorResult.setLabel(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.CensorResults["+ i +"].Label"));
+			censorResult.setSuggestion(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.CensorResults["+ i +"].Suggestion"));
 
 			censorResults.add(censorResult);
 		}
 		vensorCensorResult.setCensorResults(censorResults);
 
 		List<VideoTimeline> videoTimelines = new ArrayList<VideoTimeline>();
-		for (int i = 0; i < context.lengthValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.VideoTimelines.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.VideoTimelines.Length"); i++) {
 			VideoTimeline videoTimeline = new VideoTimeline();
-			videoTimeline.setObject(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.VideoTimelines["+ i +"].Object"));
-			videoTimeline.setTimestamp(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.VideoTimelines["+ i +"].Timestamp"));
+			videoTimeline.setObject(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.VideoTimelines["+ i +"].Object"));
+			videoTimeline.setTimestamp(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.VideoTimelines["+ i +"].Timestamp"));
 
 			List<CensorResult2> censorResults1 = new ArrayList<CensorResult2>();
-			for (int j = 0; j < context.lengthValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.VideoTimelines["+ i +"].CensorResults.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.VideoTimelines["+ i +"].CensorResults.Length"); j++) {
 				CensorResult2 censorResult2 = new CensorResult2();
-				censorResult2.setRate(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.VideoTimelines["+ i +"].CensorResults["+ j +"].Rate"));
-				censorResult2.setScene(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.VideoTimelines["+ i +"].CensorResults["+ j +"].Scene"));
-				censorResult2.setLabel(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.VideoTimelines["+ i +"].CensorResults["+ j +"].Label"));
-				censorResult2.setSuggestion(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.VideoTimelines["+ i +"].CensorResults["+ j +"].Suggestion"));
+				censorResult2.setRate(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.VideoTimelines["+ i +"].CensorResults["+ j +"].Rate"));
+				censorResult2.setScene(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.VideoTimelines["+ i +"].CensorResults["+ j +"].Scene"));
+				censorResult2.setLabel(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.VideoTimelines["+ i +"].CensorResults["+ j +"].Label"));
+				censorResult2.setSuggestion(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.VensorCensorResult.VideoTimelines["+ i +"].CensorResults["+ j +"].Suggestion"));
 
 				censorResults1.add(censorResult2);
 			}
@@ -128,19 +128,19 @@ public class QueryMediaCensorJobDetailResponseUnmarshaller {
 		mediaCensorJobDetail.setVensorCensorResult(vensorCensorResult);
 
 		List<CoverImageCensorResult> coverImageCensorResults = new ArrayList<CoverImageCensorResult>();
-		for (int i = 0; i < context.lengthValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults.Length"); i++) {
 			CoverImageCensorResult coverImageCensorResult = new CoverImageCensorResult();
-			coverImageCensorResult.setLocation(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults["+ i +"].Location"));
-			coverImageCensorResult.setBucket(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults["+ i +"].Bucket"));
-			coverImageCensorResult.setObject(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults["+ i +"].Object"));
+			coverImageCensorResult.setLocation(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults["+ i +"].Location"));
+			coverImageCensorResult.setBucket(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults["+ i +"].Bucket"));
+			coverImageCensorResult.setObject(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults["+ i +"].Object"));
 
 			List<Result> results = new ArrayList<Result>();
-			for (int j = 0; j < context.lengthValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults["+ i +"].Results.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults["+ i +"].Results.Length"); j++) {
 				Result result = new Result();
-				result.setRate(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults["+ i +"].Results["+ j +"].Rate"));
-				result.setScene(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults["+ i +"].Results["+ j +"].Scene"));
-				result.setLabel(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults["+ i +"].Results["+ j +"].Label"));
-				result.setSuggestion(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults["+ i +"].Results["+ j +"].Suggestion"));
+				result.setRate(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults["+ i +"].Results["+ j +"].Rate"));
+				result.setScene(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults["+ i +"].Results["+ j +"].Scene"));
+				result.setLabel(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults["+ i +"].Results["+ j +"].Label"));
+				result.setSuggestion(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults["+ i +"].Results["+ j +"].Suggestion"));
 
 				results.add(result);
 			}

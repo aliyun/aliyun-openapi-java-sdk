@@ -21,24 +21,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateMCTemplateResponseUnmarshaller {
 
-	public static UpdateMCTemplateResponse unmarshall(UpdateMCTemplateResponse updateMCTemplateResponse, UnmarshallerContext context) {
+	public static UpdateMCTemplateResponse unmarshall(UpdateMCTemplateResponse updateMCTemplateResponse, UnmarshallerContext _ctx) {
 		
-		updateMCTemplateResponse.setRequestId(context.stringValue("UpdateMCTemplateResponse.RequestId"));
+		updateMCTemplateResponse.setRequestId(_ctx.stringValue("UpdateMCTemplateResponse.RequestId"));
 
 		Template template = new Template();
-		template.setTemplateId(context.stringValue("UpdateMCTemplateResponse.Template.TemplateId"));
-		template.setName(context.stringValue("UpdateMCTemplateResponse.Template.Name"));
-		template.setState(context.stringValue("UpdateMCTemplateResponse.Template.State"));
-		template.setPorn(context.stringValue("UpdateMCTemplateResponse.Template.Porn"));
-		template.setTerrorism(context.stringValue("UpdateMCTemplateResponse.Template.Terrorism"));
-		template.setPolitics(context.stringValue("UpdateMCTemplateResponse.Template.Politics"));
-		template.setAd(context.stringValue("UpdateMCTemplateResponse.Template.Ad"));
-		template.setQrcode(context.stringValue("UpdateMCTemplateResponse.Template.Qrcode"));
-		template.setLive(context.stringValue("UpdateMCTemplateResponse.Template.Live"));
-		template.setLogo(context.stringValue("UpdateMCTemplateResponse.Template.Logo"));
-		template.setAbuse(context.stringValue("UpdateMCTemplateResponse.Template.Abuse"));
-		template.setContraband(context.stringValue("UpdateMCTemplateResponse.Template.Contraband"));
-		template.setSpam(context.stringValue("UpdateMCTemplateResponse.Template.Spam"));
+		template.setTemplateId(_ctx.stringValue("UpdateMCTemplateResponse.Template.TemplateId"));
+		template.setName(_ctx.stringValue("UpdateMCTemplateResponse.Template.Name"));
+		template.setState(_ctx.stringValue("UpdateMCTemplateResponse.Template.State"));
+		template.setPorn(_ctx.stringValue("UpdateMCTemplateResponse.Template.Porn"));
+		template.setTerrorism(_ctx.stringValue("UpdateMCTemplateResponse.Template.Terrorism"));
+		template.setPolitics(_ctx.stringValue("UpdateMCTemplateResponse.Template.Politics"));
+		template.setAd(_ctx.stringValue("UpdateMCTemplateResponse.Template.Ad"));
+		template.setQrcode(_ctx.stringValue("UpdateMCTemplateResponse.Template.Qrcode"));
+		template.setLive(_ctx.stringValue("UpdateMCTemplateResponse.Template.Live"));
+		template.setLogo(_ctx.stringValue("UpdateMCTemplateResponse.Template.Logo"));
+		template.setAbuse(_ctx.stringValue("UpdateMCTemplateResponse.Template.Abuse"));
+		template.setContraband(_ctx.stringValue("UpdateMCTemplateResponse.Template.Contraband"));
+		template.setSpam(_ctx.stringValue("UpdateMCTemplateResponse.Template.Spam"));
 		updateMCTemplateResponse.setTemplate(template);
 	 
 	 	return updateMCTemplateResponse;

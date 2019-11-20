@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteMediaResponseUnmarshaller {
 
-	public static DeleteMediaResponse unmarshall(DeleteMediaResponse deleteMediaResponse, UnmarshallerContext context) {
+	public static DeleteMediaResponse unmarshall(DeleteMediaResponse deleteMediaResponse, UnmarshallerContext _ctx) {
 		
-		deleteMediaResponse.setRequestId(context.stringValue("DeleteMediaResponse.RequestId"));
+		deleteMediaResponse.setRequestId(_ctx.stringValue("DeleteMediaResponse.RequestId"));
 	 
 	 	return deleteMediaResponse;
 	}

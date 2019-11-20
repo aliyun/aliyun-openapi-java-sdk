@@ -15,30 +15,48 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ReportFpShotJobResultRequest extends RpcAcsRequest<ReportFpShotJobResultResponse> {
-	
-	public ReportFpShotJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportFpShotJobResult", "mts");
-	}
+	   
+
+	private Long resourceOwnerId;
 
 	private String result;
 
 	private String jobId;
 
-	private Long resourceOwnerId;
+	private String details;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String details;
-
 	private Long ownerId;
+	public ReportFpShotJobResultRequest() {
+		super("Mts", "2014-06-18", "ReportFpShotJobResult", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
 
 	public String getResult() {
 		return this.result;
@@ -62,14 +80,14 @@ public class ReportFpShotJobResultRequest extends RpcAcsRequest<ReportFpShotJobR
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getDetails() {
+		return this.details;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setDetails(String details) {
+		this.details = details;
+		if(details != null){
+			putQueryParameter("Details", details);
 		}
 	}
 
@@ -92,17 +110,6 @@ public class ReportFpShotJobResultRequest extends RpcAcsRequest<ReportFpShotJobR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDetails() {
-		return this.details;
-	}
-
-	public void setDetails(String details) {
-		this.details = details;
-		if(details != null){
-			putQueryParameter("Details", details);
 		}
 	}
 

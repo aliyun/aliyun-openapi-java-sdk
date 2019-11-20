@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetPackageResponseUnmarshaller {
 
-	public static GetPackageResponse unmarshall(GetPackageResponse getPackageResponse, UnmarshallerContext context) {
+	public static GetPackageResponse unmarshall(GetPackageResponse getPackageResponse, UnmarshallerContext _ctx) {
 		
-		getPackageResponse.setRequestId(context.stringValue("GetPackageResponse.RequestId"));
-		getPackageResponse.setCertPackage(context.stringValue("GetPackageResponse.CertPackage"));
+		getPackageResponse.setRequestId(_ctx.stringValue("GetPackageResponse.RequestId"));
+		getPackageResponse.setCertPackage(_ctx.stringValue("GetPackageResponse.CertPackage"));
 	 
 	 	return getPackageResponse;
 	}

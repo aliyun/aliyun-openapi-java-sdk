@@ -15,28 +15,25 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateCoverPipelineRequest extends RpcAcsRequest<UpdateCoverPipelineResponse> {
-	
-	public UpdateCoverPipelineRequest() {
-		super("Mts", "2014-06-18", "UpdateCoverPipeline", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String role;
 
+	private String state;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String name;
-
-	private String state;
 
 	private String notifyConfig;
 
@@ -45,6 +42,16 @@ public class UpdateCoverPipelineRequest extends RpcAcsRequest<UpdateCoverPipelin
 	private Integer priority;
 
 	private String pipelineId;
+
+	private String name;
+	public UpdateCoverPipelineRequest() {
+		super("Mts", "2014-06-18", "UpdateCoverPipeline", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -68,6 +75,17 @@ public class UpdateCoverPipelineRequest extends RpcAcsRequest<UpdateCoverPipelin
 		}
 	}
 
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -87,28 +105,6 @@ public class UpdateCoverPipelineRequest extends RpcAcsRequest<UpdateCoverPipelin
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getState() {
-		return this.state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-		if(state != null){
-			putQueryParameter("State", state);
 		}
 	}
 
@@ -153,6 +149,17 @@ public class UpdateCoverPipelineRequest extends RpcAcsRequest<UpdateCoverPipelin
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CategoryTreeResponseUnmarshaller {
 
-	public static CategoryTreeResponse unmarshall(CategoryTreeResponse categoryTreeResponse, UnmarshallerContext context) {
+	public static CategoryTreeResponse unmarshall(CategoryTreeResponse categoryTreeResponse, UnmarshallerContext _ctx) {
 		
-		categoryTreeResponse.setRequestId(context.stringValue("CategoryTreeResponse.RequestId"));
-		categoryTreeResponse.setCategoryTree(context.stringValue("CategoryTreeResponse.CategoryTree"));
+		categoryTreeResponse.setRequestId(_ctx.stringValue("CategoryTreeResponse.RequestId"));
+		categoryTreeResponse.setCategoryTree(_ctx.stringValue("CategoryTreeResponse.CategoryTree"));
 	 
 	 	return categoryTreeResponse;
 	}

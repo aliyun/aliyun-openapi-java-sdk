@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitMediaCensorJobResponseUnmarshaller {
 
-	public static SubmitMediaCensorJobResponse unmarshall(SubmitMediaCensorJobResponse submitMediaCensorJobResponse, UnmarshallerContext context) {
+	public static SubmitMediaCensorJobResponse unmarshall(SubmitMediaCensorJobResponse submitMediaCensorJobResponse, UnmarshallerContext _ctx) {
 		
-		submitMediaCensorJobResponse.setRequestId(context.stringValue("SubmitMediaCensorJobResponse.RequestId"));
-		submitMediaCensorJobResponse.setJobId(context.stringValue("SubmitMediaCensorJobResponse.JobId"));
+		submitMediaCensorJobResponse.setRequestId(_ctx.stringValue("SubmitMediaCensorJobResponse.RequestId"));
+		submitMediaCensorJobResponse.setJobId(_ctx.stringValue("SubmitMediaCensorJobResponse.JobId"));
 	 
 	 	return submitMediaCensorJobResponse;
 	}

@@ -15,28 +15,46 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ReportCoverJobResultRequest extends RpcAcsRequest<ReportCoverJobResultResponse> {
-	
-	public ReportCoverJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportCoverJobResult", "mts");
-	}
+	   
+
+	private Long resourceOwnerId;
 
 	private String result;
 
 	private String jobId;
-
-	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+	public ReportCoverJobResultRequest() {
+		super("Mts", "2014-06-18", "ReportCoverJobResult", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
 
 	public String getResult() {
 		return this.result;
@@ -57,17 +75,6 @@ public class ReportCoverJobResultRequest extends RpcAcsRequest<ReportCoverJobRes
 		this.jobId = jobId;
 		if(jobId != null){
 			putQueryParameter("JobId", jobId);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 

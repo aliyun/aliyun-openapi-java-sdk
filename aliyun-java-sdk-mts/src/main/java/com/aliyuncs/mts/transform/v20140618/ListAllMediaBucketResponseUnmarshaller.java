@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAllMediaBucketResponseUnmarshaller {
 
-	public static ListAllMediaBucketResponse unmarshall(ListAllMediaBucketResponse listAllMediaBucketResponse, UnmarshallerContext context) {
+	public static ListAllMediaBucketResponse unmarshall(ListAllMediaBucketResponse listAllMediaBucketResponse, UnmarshallerContext _ctx) {
 		
-		listAllMediaBucketResponse.setRequestId(context.stringValue("ListAllMediaBucketResponse.RequestId"));
-		listAllMediaBucketResponse.setNextPageToken(context.stringValue("ListAllMediaBucketResponse.NextPageToken"));
+		listAllMediaBucketResponse.setRequestId(_ctx.stringValue("ListAllMediaBucketResponse.RequestId"));
+		listAllMediaBucketResponse.setNextPageToken(_ctx.stringValue("ListAllMediaBucketResponse.NextPageToken"));
 
 		List<MediaBucket> mediaBucketList = new ArrayList<MediaBucket>();
-		for (int i = 0; i < context.lengthValue("ListAllMediaBucketResponse.MediaBucketList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAllMediaBucketResponse.MediaBucketList.Length"); i++) {
 			MediaBucket mediaBucket = new MediaBucket();
-			mediaBucket.setBucket(context.stringValue("ListAllMediaBucketResponse.MediaBucketList["+ i +"].Bucket"));
-			mediaBucket.setType(context.stringValue("ListAllMediaBucketResponse.MediaBucketList["+ i +"].Type"));
+			mediaBucket.setBucket(_ctx.stringValue("ListAllMediaBucketResponse.MediaBucketList["+ i +"].Bucket"));
+			mediaBucket.setType(_ctx.stringValue("ListAllMediaBucketResponse.MediaBucketList["+ i +"].Type"));
 
 			mediaBucketList.add(mediaBucket);
 		}

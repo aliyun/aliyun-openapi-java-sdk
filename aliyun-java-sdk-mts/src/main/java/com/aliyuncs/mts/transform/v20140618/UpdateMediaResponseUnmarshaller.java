@@ -25,42 +25,42 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateMediaResponseUnmarshaller {
 
-	public static UpdateMediaResponse unmarshall(UpdateMediaResponse updateMediaResponse, UnmarshallerContext context) {
+	public static UpdateMediaResponse unmarshall(UpdateMediaResponse updateMediaResponse, UnmarshallerContext _ctx) {
 		
-		updateMediaResponse.setRequestId(context.stringValue("UpdateMediaResponse.RequestId"));
+		updateMediaResponse.setRequestId(_ctx.stringValue("UpdateMediaResponse.RequestId"));
 
 		Media media = new Media();
-		media.setMediaId(context.stringValue("UpdateMediaResponse.Media.MediaId"));
-		media.setTitle(context.stringValue("UpdateMediaResponse.Media.Title"));
-		media.setDescription(context.stringValue("UpdateMediaResponse.Media.Description"));
-		media.setCoverURL(context.stringValue("UpdateMediaResponse.Media.CoverURL"));
-		media.setCateId(context.longValue("UpdateMediaResponse.Media.CateId"));
-		media.setDuration(context.stringValue("UpdateMediaResponse.Media.Duration"));
-		media.setFormat(context.stringValue("UpdateMediaResponse.Media.Format"));
-		media.setSize(context.stringValue("UpdateMediaResponse.Media.Size"));
-		media.setBitrate(context.stringValue("UpdateMediaResponse.Media.Bitrate"));
-		media.setWidth(context.stringValue("UpdateMediaResponse.Media.Width"));
-		media.setHeight(context.stringValue("UpdateMediaResponse.Media.Height"));
-		media.setFps(context.stringValue("UpdateMediaResponse.Media.Fps"));
-		media.setPublishState(context.stringValue("UpdateMediaResponse.Media.PublishState"));
-		media.setCensorState(context.stringValue("UpdateMediaResponse.Media.CensorState"));
-		media.setCreationTime(context.stringValue("UpdateMediaResponse.Media.CreationTime"));
+		media.setMediaId(_ctx.stringValue("UpdateMediaResponse.Media.MediaId"));
+		media.setTitle(_ctx.stringValue("UpdateMediaResponse.Media.Title"));
+		media.setDescription(_ctx.stringValue("UpdateMediaResponse.Media.Description"));
+		media.setCoverURL(_ctx.stringValue("UpdateMediaResponse.Media.CoverURL"));
+		media.setCateId(_ctx.longValue("UpdateMediaResponse.Media.CateId"));
+		media.setDuration(_ctx.stringValue("UpdateMediaResponse.Media.Duration"));
+		media.setFormat(_ctx.stringValue("UpdateMediaResponse.Media.Format"));
+		media.setSize(_ctx.stringValue("UpdateMediaResponse.Media.Size"));
+		media.setBitrate(_ctx.stringValue("UpdateMediaResponse.Media.Bitrate"));
+		media.setWidth(_ctx.stringValue("UpdateMediaResponse.Media.Width"));
+		media.setHeight(_ctx.stringValue("UpdateMediaResponse.Media.Height"));
+		media.setFps(_ctx.stringValue("UpdateMediaResponse.Media.Fps"));
+		media.setPublishState(_ctx.stringValue("UpdateMediaResponse.Media.PublishState"));
+		media.setCensorState(_ctx.stringValue("UpdateMediaResponse.Media.CensorState"));
+		media.setCreationTime(_ctx.stringValue("UpdateMediaResponse.Media.CreationTime"));
 
 		List<String> tags = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("UpdateMediaResponse.Media.Tags.Length"); i++) {
-			tags.add(context.stringValue("UpdateMediaResponse.Media.Tags["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("UpdateMediaResponse.Media.Tags.Length"); i++) {
+			tags.add(_ctx.stringValue("UpdateMediaResponse.Media.Tags["+ i +"]"));
 		}
 		media.setTags(tags);
 
 		List<String> runIdList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("UpdateMediaResponse.Media.RunIdList.Length"); i++) {
-			runIdList.add(context.stringValue("UpdateMediaResponse.Media.RunIdList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("UpdateMediaResponse.Media.RunIdList.Length"); i++) {
+			runIdList.add(_ctx.stringValue("UpdateMediaResponse.Media.RunIdList["+ i +"]"));
 		}
 		media.setRunIdList(runIdList);
 
 		File file = new File();
-		file.setURL(context.stringValue("UpdateMediaResponse.Media.File.URL"));
-		file.setState(context.stringValue("UpdateMediaResponse.Media.File.State"));
+		file.setURL(_ctx.stringValue("UpdateMediaResponse.Media.File.URL"));
+		file.setState(_ctx.stringValue("UpdateMediaResponse.Media.File.State"));
 		media.setFile(file);
 		updateMediaResponse.setMedia(media);
 	 

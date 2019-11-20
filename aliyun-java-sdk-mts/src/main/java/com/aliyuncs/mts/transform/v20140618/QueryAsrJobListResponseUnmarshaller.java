@@ -28,48 +28,48 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryAsrJobListResponseUnmarshaller {
 
-	public static QueryAsrJobListResponse unmarshall(QueryAsrJobListResponse queryAsrJobListResponse, UnmarshallerContext context) {
+	public static QueryAsrJobListResponse unmarshall(QueryAsrJobListResponse queryAsrJobListResponse, UnmarshallerContext _ctx) {
 		
-		queryAsrJobListResponse.setRequestId(context.stringValue("QueryAsrJobListResponse.RequestId"));
+		queryAsrJobListResponse.setRequestId(_ctx.stringValue("QueryAsrJobListResponse.RequestId"));
 
 		List<String> nonExistIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryAsrJobListResponse.NonExistIds.Length"); i++) {
-			nonExistIds.add(context.stringValue("QueryAsrJobListResponse.NonExistIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryAsrJobListResponse.NonExistIds.Length"); i++) {
+			nonExistIds.add(_ctx.stringValue("QueryAsrJobListResponse.NonExistIds["+ i +"]"));
 		}
 		queryAsrJobListResponse.setNonExistIds(nonExistIds);
 
 		List<Job> jobList = new ArrayList<Job>();
-		for (int i = 0; i < context.lengthValue("QueryAsrJobListResponse.JobList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryAsrJobListResponse.JobList.Length"); i++) {
 			Job job = new Job();
-			job.setId(context.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Id"));
-			job.setUserData(context.stringValue("QueryAsrJobListResponse.JobList["+ i +"].UserData"));
-			job.setPipelineId(context.stringValue("QueryAsrJobListResponse.JobList["+ i +"].PipelineId"));
-			job.setState(context.stringValue("QueryAsrJobListResponse.JobList["+ i +"].State"));
-			job.setCode(context.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Code"));
-			job.setMessage(context.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Message"));
-			job.setCreationTime(context.stringValue("QueryAsrJobListResponse.JobList["+ i +"].CreationTime"));
+			job.setId(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Id"));
+			job.setUserData(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].UserData"));
+			job.setPipelineId(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].PipelineId"));
+			job.setState(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].State"));
+			job.setCode(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Code"));
+			job.setMessage(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Message"));
+			job.setCreationTime(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].CreationTime"));
 
 			Input input = new Input();
-			input.setBucket(context.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Input.Bucket"));
-			input.setLocation(context.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Input.Location"));
-			input.setObject(context.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Input.Object"));
+			input.setBucket(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Input.Bucket"));
+			input.setLocation(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Input.Location"));
+			input.setObject(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Input.Object"));
 			job.setInput(input);
 
 			AsrConfig asrConfig = new AsrConfig();
-			asrConfig.setScene(context.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrConfig.Scene"));
+			asrConfig.setScene(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrConfig.Scene"));
 			job.setAsrConfig(asrConfig);
 
 			AsrResult asrResult = new AsrResult();
-			asrResult.setDuration(context.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.Duration"));
+			asrResult.setDuration(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.Duration"));
 
 			List<AsrText> asrTextList = new ArrayList<AsrText>();
-			for (int j = 0; j < context.lengthValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList.Length"); j++) {
 				AsrText asrText = new AsrText();
-				asrText.setStartTime(context.integerValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].StartTime"));
-				asrText.setEndTime(context.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].EndTime"));
-				asrText.setChannelId(context.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].ChannelId"));
-				asrText.setSpeechRate(context.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].SpeechRate"));
-				asrText.setText(context.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].Text"));
+				asrText.setStartTime(_ctx.integerValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].StartTime"));
+				asrText.setEndTime(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].EndTime"));
+				asrText.setChannelId(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].ChannelId"));
+				asrText.setSpeechRate(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].SpeechRate"));
+				asrText.setText(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].Text"));
 
 				asrTextList.add(asrText);
 			}

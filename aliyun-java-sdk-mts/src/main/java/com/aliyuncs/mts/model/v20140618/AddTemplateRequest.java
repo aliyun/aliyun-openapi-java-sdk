@@ -15,36 +15,43 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddTemplateRequest extends RpcAcsRequest<AddTemplateResponse> {
-	
-	public AddTemplateRequest() {
-		super("Mts", "2014-06-18", "AddTemplate", "mts");
-	}
+	   
 
 	private String container;
 
 	private Long resourceOwnerId;
 
+	private String video;
+
+	private String transConfig;
+
+	private String audio;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String name;
-
-	private String transConfig;
-
 	private String muxConfig;
 
-	private String video;
-
-	private String audio;
-
 	private Long ownerId;
+
+	private String name;
+	public AddTemplateRequest() {
+		super("Mts", "2014-06-18", "AddTemplate", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getContainer() {
 		return this.container;
@@ -65,6 +72,39 @@ public class AddTemplateRequest extends RpcAcsRequest<AddTemplateResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getVideo() {
+		return this.video;
+	}
+
+	public void setVideo(String video) {
+		this.video = video;
+		if(video != null){
+			putQueryParameter("Video", video);
+		}
+	}
+
+	public String getTransConfig() {
+		return this.transConfig;
+	}
+
+	public void setTransConfig(String transConfig) {
+		this.transConfig = transConfig;
+		if(transConfig != null){
+			putQueryParameter("TransConfig", transConfig);
+		}
+	}
+
+	public String getAudio() {
+		return this.audio;
+	}
+
+	public void setAudio(String audio) {
+		this.audio = audio;
+		if(audio != null){
+			putQueryParameter("Audio", audio);
 		}
 	}
 
@@ -90,28 +130,6 @@ public class AddTemplateRequest extends RpcAcsRequest<AddTemplateResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getTransConfig() {
-		return this.transConfig;
-	}
-
-	public void setTransConfig(String transConfig) {
-		this.transConfig = transConfig;
-		if(transConfig != null){
-			putQueryParameter("TransConfig", transConfig);
-		}
-	}
-
 	public String getMuxConfig() {
 		return this.muxConfig;
 	}
@@ -123,28 +141,6 @@ public class AddTemplateRequest extends RpcAcsRequest<AddTemplateResponse> {
 		}
 	}
 
-	public String getVideo() {
-		return this.video;
-	}
-
-	public void setVideo(String video) {
-		this.video = video;
-		if(video != null){
-			putQueryParameter("Video", video);
-		}
-	}
-
-	public String getAudio() {
-		return this.audio;
-	}
-
-	public void setAudio(String audio) {
-		this.audio = audio;
-		if(audio != null){
-			putQueryParameter("Audio", audio);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -153,6 +149,17 @@ public class AddTemplateRequest extends RpcAcsRequest<AddTemplateResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

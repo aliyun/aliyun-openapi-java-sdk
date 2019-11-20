@@ -15,24 +15,27 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryFpShotJobListRequest extends RpcAcsRequest<QueryFpShotJobListResponse> {
-	
-	public QueryFpShotJobListRequest() {
-		super("Mts", "2014-06-18", "QueryFpShotJobList", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
-
-	private String resourceOwnerAccount;
 
 	private String nextPageToken;
 
 	private String startOfJobCreatedTimeRange;
+
+	private String state;
+
+	private String endOfJobCreatedTimeRange;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
@@ -45,10 +48,14 @@ public class QueryFpShotJobListRequest extends RpcAcsRequest<QueryFpShotJobListR
 	private String primaryKeyList;
 
 	private String jobIds;
-
-	private String state;
-
-	private String endOfJobCreatedTimeRange;
+	public QueryFpShotJobListRequest() {
+		super("Mts", "2014-06-18", "QueryFpShotJobList", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,17 +65,6 @@ public class QueryFpShotJobListRequest extends RpcAcsRequest<QueryFpShotJobListR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -91,6 +87,39 @@ public class QueryFpShotJobListRequest extends RpcAcsRequest<QueryFpShotJobListR
 		this.startOfJobCreatedTimeRange = startOfJobCreatedTimeRange;
 		if(startOfJobCreatedTimeRange != null){
 			putQueryParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
+		}
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
+	public String getEndOfJobCreatedTimeRange() {
+		return this.endOfJobCreatedTimeRange;
+	}
+
+	public void setEndOfJobCreatedTimeRange(String endOfJobCreatedTimeRange) {
+		this.endOfJobCreatedTimeRange = endOfJobCreatedTimeRange;
+		if(endOfJobCreatedTimeRange != null){
+			putQueryParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -157,28 +186,6 @@ public class QueryFpShotJobListRequest extends RpcAcsRequest<QueryFpShotJobListR
 		this.jobIds = jobIds;
 		if(jobIds != null){
 			putQueryParameter("JobIds", jobIds);
-		}
-	}
-
-	public String getState() {
-		return this.state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-		if(state != null){
-			putQueryParameter("State", state);
-		}
-	}
-
-	public String getEndOfJobCreatedTimeRange() {
-		return this.endOfJobCreatedTimeRange;
-	}
-
-	public void setEndOfJobCreatedTimeRange(String endOfJobCreatedTimeRange) {
-		this.endOfJobCreatedTimeRange = endOfJobCreatedTimeRange;
-		if(endOfJobCreatedTimeRange != null){
-			putQueryParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
 		}
 	}
 

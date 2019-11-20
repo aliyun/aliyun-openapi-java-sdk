@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ReportFpShotJobResultResponseUnmarshaller {
 
-	public static ReportFpShotJobResultResponse unmarshall(ReportFpShotJobResultResponse reportFpShotJobResultResponse, UnmarshallerContext context) {
+	public static ReportFpShotJobResultResponse unmarshall(ReportFpShotJobResultResponse reportFpShotJobResultResponse, UnmarshallerContext _ctx) {
 		
-		reportFpShotJobResultResponse.setRequestId(context.stringValue("ReportFpShotJobResultResponse.RequestId"));
-		reportFpShotJobResultResponse.setJobId(context.stringValue("ReportFpShotJobResultResponse.JobId"));
+		reportFpShotJobResultResponse.setRequestId(_ctx.stringValue("ReportFpShotJobResultResponse.RequestId"));
+		reportFpShotJobResultResponse.setJobId(_ctx.stringValue("ReportFpShotJobResultResponse.JobId"));
 	 
 	 	return reportFpShotJobResultResponse;
 	}

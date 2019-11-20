@@ -27,41 +27,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryAnnotationJobListResponseUnmarshaller {
 
-	public static QueryAnnotationJobListResponse unmarshall(QueryAnnotationJobListResponse queryAnnotationJobListResponse, UnmarshallerContext context) {
+	public static QueryAnnotationJobListResponse unmarshall(QueryAnnotationJobListResponse queryAnnotationJobListResponse, UnmarshallerContext _ctx) {
 		
-		queryAnnotationJobListResponse.setRequestId(context.stringValue("QueryAnnotationJobListResponse.RequestId"));
+		queryAnnotationJobListResponse.setRequestId(_ctx.stringValue("QueryAnnotationJobListResponse.RequestId"));
 
 		List<String> nonExistIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryAnnotationJobListResponse.NonExistIds.Length"); i++) {
-			nonExistIds.add(context.stringValue("QueryAnnotationJobListResponse.NonExistIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryAnnotationJobListResponse.NonExistIds.Length"); i++) {
+			nonExistIds.add(_ctx.stringValue("QueryAnnotationJobListResponse.NonExistIds["+ i +"]"));
 		}
 		queryAnnotationJobListResponse.setNonExistIds(nonExistIds);
 
 		List<AnnotationJob> annotationJobList = new ArrayList<AnnotationJob>();
-		for (int i = 0; i < context.lengthValue("QueryAnnotationJobListResponse.AnnotationJobList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryAnnotationJobListResponse.AnnotationJobList.Length"); i++) {
 			AnnotationJob annotationJob = new AnnotationJob();
-			annotationJob.setId(context.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].Id"));
-			annotationJob.setUserData(context.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].UserData"));
-			annotationJob.setPipelineId(context.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].PipelineId"));
-			annotationJob.setState(context.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].State"));
-			annotationJob.setCode(context.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].Code"));
-			annotationJob.setMessage(context.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].Message"));
-			annotationJob.setCreationTime(context.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].CreationTime"));
+			annotationJob.setId(_ctx.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].Id"));
+			annotationJob.setUserData(_ctx.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].UserData"));
+			annotationJob.setPipelineId(_ctx.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].PipelineId"));
+			annotationJob.setState(_ctx.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].State"));
+			annotationJob.setCode(_ctx.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].Code"));
+			annotationJob.setMessage(_ctx.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].Message"));
+			annotationJob.setCreationTime(_ctx.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].CreationTime"));
 
 			Input input = new Input();
-			input.setBucket(context.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].Input.Bucket"));
-			input.setLocation(context.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].Input.Location"));
-			input.setObject(context.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].Input.Object"));
+			input.setBucket(_ctx.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].Input.Bucket"));
+			input.setLocation(_ctx.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].Input.Location"));
+			input.setObject(_ctx.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].Input.Object"));
 			annotationJob.setInput(input);
 
 			VideoAnnotationResult videoAnnotationResult = new VideoAnnotationResult();
-			videoAnnotationResult.setDetails(context.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].VideoAnnotationResult.Details"));
+			videoAnnotationResult.setDetails(_ctx.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].VideoAnnotationResult.Details"));
 
 			List<Annotation> annotations = new ArrayList<Annotation>();
-			for (int j = 0; j < context.lengthValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].VideoAnnotationResult.Annotations.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].VideoAnnotationResult.Annotations.Length"); j++) {
 				Annotation annotation = new Annotation();
-				annotation.setLabel(context.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].VideoAnnotationResult.Annotations["+ j +"].Label"));
-				annotation.setScore(context.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].VideoAnnotationResult.Annotations["+ j +"].Score"));
+				annotation.setLabel(_ctx.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].VideoAnnotationResult.Annotations["+ j +"].Label"));
+				annotation.setScore(_ctx.stringValue("QueryAnnotationJobListResponse.AnnotationJobList["+ i +"].VideoAnnotationResult.Annotations["+ j +"].Score"));
 
 				annotations.add(annotation);
 			}

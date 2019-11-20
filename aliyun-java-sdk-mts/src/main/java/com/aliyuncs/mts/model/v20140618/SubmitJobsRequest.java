@@ -15,34 +15,41 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitJobsRequest extends RpcAcsRequest<SubmitJobsResponse> {
-	
-	public SubmitJobsRequest() {
-		super("Mts", "2014-06-18", "SubmitJobs", "mts");
-	}
+	   
 
 	private String outputs;
 
-	private String input;
-
-	private String outputBucket;
-
 	private Long resourceOwnerId;
+
+	private String outputLocation;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String outputLocation;
-
 	private Long ownerId;
 
 	private String pipelineId;
+
+	private String input;
+
+	private String outputBucket;
+	public SubmitJobsRequest() {
+		super("Mts", "2014-06-18", "SubmitJobs", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getOutputs() {
 		return this.outputs;
@@ -55,28 +62,6 @@ public class SubmitJobsRequest extends RpcAcsRequest<SubmitJobsResponse> {
 		}
 	}
 
-	public String getInput() {
-		return this.input;
-	}
-
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
-		}
-	}
-
-	public String getOutputBucket() {
-		return this.outputBucket;
-	}
-
-	public void setOutputBucket(String outputBucket) {
-		this.outputBucket = outputBucket;
-		if(outputBucket != null){
-			putQueryParameter("OutputBucket", outputBucket);
-		}
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -85,6 +70,17 @@ public class SubmitJobsRequest extends RpcAcsRequest<SubmitJobsResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getOutputLocation() {
+		return this.outputLocation;
+	}
+
+	public void setOutputLocation(String outputLocation) {
+		this.outputLocation = outputLocation;
+		if(outputLocation != null){
+			putQueryParameter("OutputLocation", outputLocation);
 		}
 	}
 
@@ -110,17 +106,6 @@ public class SubmitJobsRequest extends RpcAcsRequest<SubmitJobsResponse> {
 		}
 	}
 
-	public String getOutputLocation() {
-		return this.outputLocation;
-	}
-
-	public void setOutputLocation(String outputLocation) {
-		this.outputLocation = outputLocation;
-		if(outputLocation != null){
-			putQueryParameter("OutputLocation", outputLocation);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -140,6 +125,28 @@ public class SubmitJobsRequest extends RpcAcsRequest<SubmitJobsResponse> {
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
+		}
+	}
+
+	public String getOutputBucket() {
+		return this.outputBucket;
+	}
+
+	public void setOutputBucket(String outputBucket) {
+		this.outputBucket = outputBucket;
+		if(outputBucket != null){
+			putQueryParameter("OutputBucket", outputBucket);
 		}
 	}
 

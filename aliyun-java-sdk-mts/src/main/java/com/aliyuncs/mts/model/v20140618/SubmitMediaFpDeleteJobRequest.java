@@ -15,22 +15,23 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitMediaFpDeleteJobRequest extends RpcAcsRequest<SubmitMediaFpDeleteJobResponse> {
-	
-	public SubmitMediaFpDeleteJobRequest() {
-		super("Mts", "2014-06-18", "SubmitMediaFpDeleteJob", "mts");
-	}
-
-	private String userData;
+	   
 
 	private Long resourceOwnerId;
 
 	private String fpDBId;
+
+	private String userData;
+
+	private String primaryKey;
 
 	private String resourceOwnerAccount;
 
@@ -39,18 +40,13 @@ public class SubmitMediaFpDeleteJobRequest extends RpcAcsRequest<SubmitMediaFpDe
 	private Long ownerId;
 
 	private String pipelineId;
-
-	private String primaryKey;
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
+	public SubmitMediaFpDeleteJobRequest() {
+		super("Mts", "2014-06-18", "SubmitMediaFpDeleteJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -72,6 +68,28 @@ public class SubmitMediaFpDeleteJobRequest extends RpcAcsRequest<SubmitMediaFpDe
 		this.fpDBId = fpDBId;
 		if(fpDBId != null){
 			putQueryParameter("FpDBId", fpDBId);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getPrimaryKey() {
+		return this.primaryKey;
+	}
+
+	public void setPrimaryKey(String primaryKey) {
+		this.primaryKey = primaryKey;
+		if(primaryKey != null){
+			putQueryParameter("PrimaryKey", primaryKey);
 		}
 	}
 
@@ -116,17 +134,6 @@ public class SubmitMediaFpDeleteJobRequest extends RpcAcsRequest<SubmitMediaFpDe
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
-		}
-	}
-
-	public String getPrimaryKey() {
-		return this.primaryKey;
-	}
-
-	public void setPrimaryKey(String primaryKey) {
-		this.primaryKey = primaryKey;
-		if(primaryKey != null){
-			putQueryParameter("PrimaryKey", primaryKey);
 		}
 	}
 

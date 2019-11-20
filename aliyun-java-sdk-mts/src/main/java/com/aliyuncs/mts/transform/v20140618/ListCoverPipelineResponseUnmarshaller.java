@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListCoverPipelineResponseUnmarshaller {
 
-	public static ListCoverPipelineResponse unmarshall(ListCoverPipelineResponse listCoverPipelineResponse, UnmarshallerContext context) {
+	public static ListCoverPipelineResponse unmarshall(ListCoverPipelineResponse listCoverPipelineResponse, UnmarshallerContext _ctx) {
 		
-		listCoverPipelineResponse.setRequestId(context.stringValue("ListCoverPipelineResponse.RequestId"));
-		listCoverPipelineResponse.setTotalCount(context.longValue("ListCoverPipelineResponse.TotalCount"));
-		listCoverPipelineResponse.setPageNumber(context.longValue("ListCoverPipelineResponse.PageNumber"));
-		listCoverPipelineResponse.setPageSize(context.longValue("ListCoverPipelineResponse.PageSize"));
+		listCoverPipelineResponse.setRequestId(_ctx.stringValue("ListCoverPipelineResponse.RequestId"));
+		listCoverPipelineResponse.setTotalCount(_ctx.longValue("ListCoverPipelineResponse.TotalCount"));
+		listCoverPipelineResponse.setPageNumber(_ctx.longValue("ListCoverPipelineResponse.PageNumber"));
+		listCoverPipelineResponse.setPageSize(_ctx.longValue("ListCoverPipelineResponse.PageSize"));
 
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
-		for (int i = 0; i < context.lengthValue("ListCoverPipelineResponse.PipelineList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListCoverPipelineResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setUserId(context.longValue("ListCoverPipelineResponse.PipelineList["+ i +"].UserId"));
-			pipeline.setPipelineId(context.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].PipelineId"));
-			pipeline.setName(context.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].Name"));
-			pipeline.setState(context.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].State"));
-			pipeline.setPriority(context.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].Priority"));
-			pipeline.setQuotaNum(context.integerValue("ListCoverPipelineResponse.PipelineList["+ i +"].quotaNum"));
-			pipeline.setQuotaUsed(context.integerValue("ListCoverPipelineResponse.PipelineList["+ i +"].quotaUsed"));
-			pipeline.setNotifyConfig(context.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].NotifyConfig"));
-			pipeline.setRole(context.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].Role"));
-			pipeline.setExtendConfig(context.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].ExtendConfig"));
+			pipeline.setUserId(_ctx.longValue("ListCoverPipelineResponse.PipelineList["+ i +"].UserId"));
+			pipeline.setPipelineId(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].PipelineId"));
+			pipeline.setName(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].Name"));
+			pipeline.setState(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].State"));
+			pipeline.setPriority(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].Priority"));
+			pipeline.setQuotaNum(_ctx.integerValue("ListCoverPipelineResponse.PipelineList["+ i +"].quotaNum"));
+			pipeline.setQuotaUsed(_ctx.integerValue("ListCoverPipelineResponse.PipelineList["+ i +"].quotaUsed"));
+			pipeline.setNotifyConfig(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].NotifyConfig"));
+			pipeline.setRole(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].Role"));
+			pipeline.setExtendConfig(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].ExtendConfig"));
 
 			pipelineList.add(pipeline);
 		}

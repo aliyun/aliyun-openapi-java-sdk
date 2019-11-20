@@ -25,45 +25,45 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListMediaResponseUnmarshaller {
 
-	public static ListMediaResponse unmarshall(ListMediaResponse listMediaResponse, UnmarshallerContext context) {
+	public static ListMediaResponse unmarshall(ListMediaResponse listMediaResponse, UnmarshallerContext _ctx) {
 		
-		listMediaResponse.setRequestId(context.stringValue("ListMediaResponse.RequestId"));
-		listMediaResponse.setNextPageToken(context.stringValue("ListMediaResponse.NextPageToken"));
+		listMediaResponse.setRequestId(_ctx.stringValue("ListMediaResponse.RequestId"));
+		listMediaResponse.setNextPageToken(_ctx.stringValue("ListMediaResponse.NextPageToken"));
 
 		List<Media> mediaList = new ArrayList<Media>();
-		for (int i = 0; i < context.lengthValue("ListMediaResponse.MediaList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListMediaResponse.MediaList.Length"); i++) {
 			Media media = new Media();
-			media.setMediaId(context.stringValue("ListMediaResponse.MediaList["+ i +"].MediaId"));
-			media.setTitle(context.stringValue("ListMediaResponse.MediaList["+ i +"].Title"));
-			media.setDescription(context.stringValue("ListMediaResponse.MediaList["+ i +"].Description"));
-			media.setCoverURL(context.stringValue("ListMediaResponse.MediaList["+ i +"].CoverURL"));
-			media.setCateId(context.longValue("ListMediaResponse.MediaList["+ i +"].CateId"));
-			media.setDuration(context.stringValue("ListMediaResponse.MediaList["+ i +"].Duration"));
-			media.setFormat(context.stringValue("ListMediaResponse.MediaList["+ i +"].Format"));
-			media.setSize(context.stringValue("ListMediaResponse.MediaList["+ i +"].Size"));
-			media.setBitrate(context.stringValue("ListMediaResponse.MediaList["+ i +"].Bitrate"));
-			media.setWidth(context.stringValue("ListMediaResponse.MediaList["+ i +"].Width"));
-			media.setHeight(context.stringValue("ListMediaResponse.MediaList["+ i +"].Height"));
-			media.setFps(context.stringValue("ListMediaResponse.MediaList["+ i +"].Fps"));
-			media.setPublishState(context.stringValue("ListMediaResponse.MediaList["+ i +"].PublishState"));
-			media.setCensorState(context.stringValue("ListMediaResponse.MediaList["+ i +"].CensorState"));
-			media.setCreationTime(context.stringValue("ListMediaResponse.MediaList["+ i +"].CreationTime"));
+			media.setMediaId(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].MediaId"));
+			media.setTitle(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Title"));
+			media.setDescription(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Description"));
+			media.setCoverURL(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].CoverURL"));
+			media.setCateId(_ctx.longValue("ListMediaResponse.MediaList["+ i +"].CateId"));
+			media.setDuration(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Duration"));
+			media.setFormat(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Format"));
+			media.setSize(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Size"));
+			media.setBitrate(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Bitrate"));
+			media.setWidth(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Width"));
+			media.setHeight(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Height"));
+			media.setFps(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Fps"));
+			media.setPublishState(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].PublishState"));
+			media.setCensorState(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].CensorState"));
+			media.setCreationTime(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].CreationTime"));
 
 			List<String> tags = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListMediaResponse.MediaList["+ i +"].Tags.Length"); j++) {
-				tags.add(context.stringValue("ListMediaResponse.MediaList["+ i +"].Tags["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListMediaResponse.MediaList["+ i +"].Tags.Length"); j++) {
+				tags.add(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Tags["+ j +"]"));
 			}
 			media.setTags(tags);
 
 			List<String> runIdList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListMediaResponse.MediaList["+ i +"].RunIdList.Length"); j++) {
-				runIdList.add(context.stringValue("ListMediaResponse.MediaList["+ i +"].RunIdList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListMediaResponse.MediaList["+ i +"].RunIdList.Length"); j++) {
+				runIdList.add(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].RunIdList["+ j +"]"));
 			}
 			media.setRunIdList(runIdList);
 
 			File file = new File();
-			file.setURL(context.stringValue("ListMediaResponse.MediaList["+ i +"].File.URL"));
-			file.setState(context.stringValue("ListMediaResponse.MediaList["+ i +"].File.State"));
+			file.setURL(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].File.URL"));
+			file.setState(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].File.State"));
 			media.setFile(file);
 
 			mediaList.add(media);

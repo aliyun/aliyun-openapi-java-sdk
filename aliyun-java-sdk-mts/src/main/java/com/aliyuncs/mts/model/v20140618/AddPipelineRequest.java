@@ -15,34 +15,41 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddPipelineRequest extends RpcAcsRequest<AddPipelineResponse> {
-	
-	public AddPipelineRequest() {
-		super("Mts", "2014-06-18", "AddPipeline", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String role;
 
+	private String speed;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String name;
 
 	private String notifyConfig;
 
 	private Long ownerId;
 
-	private Long speedLevel;
+	private String name;
 
-	private String speed;
+	private Long speedLevel;
+	public AddPipelineRequest() {
+		super("Mts", "2014-06-18", "AddPipeline", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -63,6 +70,17 @@ public class AddPipelineRequest extends RpcAcsRequest<AddPipelineResponse> {
 		this.role = role;
 		if(role != null){
 			putQueryParameter("Role", role);
+		}
+	}
+
+	public String getSpeed() {
+		return this.speed;
+	}
+
+	public void setSpeed(String speed) {
+		this.speed = speed;
+		if(speed != null){
+			putQueryParameter("Speed", speed);
 		}
 	}
 
@@ -88,17 +106,6 @@ public class AddPipelineRequest extends RpcAcsRequest<AddPipelineResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getNotifyConfig() {
 		return this.notifyConfig;
 	}
@@ -121,6 +128,17 @@ public class AddPipelineRequest extends RpcAcsRequest<AddPipelineResponse> {
 		}
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
 	public Long getSpeedLevel() {
 		return this.speedLevel;
 	}
@@ -129,17 +147,6 @@ public class AddPipelineRequest extends RpcAcsRequest<AddPipelineResponse> {
 		this.speedLevel = speedLevel;
 		if(speedLevel != null){
 			putQueryParameter("SpeedLevel", speedLevel.toString());
-		}
-	}
-
-	public String getSpeed() {
-		return this.speed;
-	}
-
-	public void setSpeed(String speed) {
-		this.speed = speed;
-		if(speed != null){
-			putQueryParameter("Speed", speed);
 		}
 	}
 

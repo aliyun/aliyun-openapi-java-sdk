@@ -15,26 +15,33 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryTagJobListRequest extends RpcAcsRequest<QueryTagJobListResponse> {
-	
-	public QueryTagJobListRequest() {
-		super("Mts", "2014-06-18", "QueryTagJobList", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String tagJobIds;
-
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String tagJobIds;
+	public QueryTagJobListRequest() {
+		super("Mts", "2014-06-18", "QueryTagJobList", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,17 +65,6 @@ public class QueryTagJobListRequest extends RpcAcsRequest<QueryTagJobListRespons
 		}
 	}
 
-	public String getTagJobIds() {
-		return this.tagJobIds;
-	}
-
-	public void setTagJobIds(String tagJobIds) {
-		this.tagJobIds = tagJobIds;
-		if(tagJobIds != null){
-			putQueryParameter("TagJobIds", tagJobIds);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -88,6 +84,17 @@ public class QueryTagJobListRequest extends RpcAcsRequest<QueryTagJobListRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTagJobIds() {
+		return this.tagJobIds;
+	}
+
+	public void setTagJobIds(String tagJobIds) {
+		this.tagJobIds = tagJobIds;
+		if(tagJobIds != null){
+			putQueryParameter("TagJobIds", tagJobIds);
 		}
 	}
 

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitVideoSplitJobResponseUnmarshaller {
 
-	public static SubmitVideoSplitJobResponse unmarshall(SubmitVideoSplitJobResponse submitVideoSplitJobResponse, UnmarshallerContext context) {
+	public static SubmitVideoSplitJobResponse unmarshall(SubmitVideoSplitJobResponse submitVideoSplitJobResponse, UnmarshallerContext _ctx) {
 		
-		submitVideoSplitJobResponse.setRequestId(context.stringValue("SubmitVideoSplitJobResponse.RequestId"));
-		submitVideoSplitJobResponse.setJobId(context.stringValue("SubmitVideoSplitJobResponse.JobId"));
+		submitVideoSplitJobResponse.setRequestId(_ctx.stringValue("SubmitVideoSplitJobResponse.RequestId"));
+		submitVideoSplitJobResponse.setJobId(_ctx.stringValue("SubmitVideoSplitJobResponse.JobId"));
 	 
 	 	return submitVideoSplitJobResponse;
 	}

@@ -22,20 +22,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddCoverPipelineResponseUnmarshaller {
 
-	public static AddCoverPipelineResponse unmarshall(AddCoverPipelineResponse addCoverPipelineResponse, UnmarshallerContext context) {
+	public static AddCoverPipelineResponse unmarshall(AddCoverPipelineResponse addCoverPipelineResponse, UnmarshallerContext _ctx) {
 		
-		addCoverPipelineResponse.setRequestId(context.stringValue("AddCoverPipelineResponse.RequestId"));
+		addCoverPipelineResponse.setRequestId(_ctx.stringValue("AddCoverPipelineResponse.RequestId"));
 
 		Pipeline pipeline = new Pipeline();
-		pipeline.setId(context.stringValue("AddCoverPipelineResponse.Pipeline.Id"));
-		pipeline.setName(context.stringValue("AddCoverPipelineResponse.Pipeline.Name"));
-		pipeline.setPriority(context.stringValue("AddCoverPipelineResponse.Pipeline.Priority"));
-		pipeline.setState(context.stringValue("AddCoverPipelineResponse.Pipeline.State"));
-		pipeline.setRole(context.stringValue("AddCoverPipelineResponse.Pipeline.Role"));
+		pipeline.setId(_ctx.stringValue("AddCoverPipelineResponse.Pipeline.Id"));
+		pipeline.setName(_ctx.stringValue("AddCoverPipelineResponse.Pipeline.Name"));
+		pipeline.setPriority(_ctx.stringValue("AddCoverPipelineResponse.Pipeline.Priority"));
+		pipeline.setState(_ctx.stringValue("AddCoverPipelineResponse.Pipeline.State"));
+		pipeline.setRole(_ctx.stringValue("AddCoverPipelineResponse.Pipeline.Role"));
 
 		NotifyConfig notifyConfig = new NotifyConfig();
-		notifyConfig.setTopic(context.stringValue("AddCoverPipelineResponse.Pipeline.NotifyConfig.Topic"));
-		notifyConfig.setQueue(context.stringValue("AddCoverPipelineResponse.Pipeline.NotifyConfig.Queue"));
+		notifyConfig.setTopic(_ctx.stringValue("AddCoverPipelineResponse.Pipeline.NotifyConfig.Topic"));
+		notifyConfig.setQueue(_ctx.stringValue("AddCoverPipelineResponse.Pipeline.NotifyConfig.Queue"));
 		pipeline.setNotifyConfig(notifyConfig);
 		addCoverPipelineResponse.setPipeline(pipeline);
 	 

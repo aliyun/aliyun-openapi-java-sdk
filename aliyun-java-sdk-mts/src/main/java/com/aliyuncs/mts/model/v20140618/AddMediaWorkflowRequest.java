@@ -15,16 +15,15 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddMediaWorkflowRequest extends RpcAcsRequest<AddMediaWorkflowResponse> {
-	
-	public AddMediaWorkflowRequest() {
-		super("Mts", "2014-06-18", "AddMediaWorkflow", "mts");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -34,11 +33,19 @@ public class AddMediaWorkflowRequest extends RpcAcsRequest<AddMediaWorkflowRespo
 
 	private String ownerAccount;
 
-	private String name;
-
 	private Long ownerId;
 
 	private String triggerMode;
+
+	private String name;
+	public AddMediaWorkflowRequest() {
+		super("Mts", "2014-06-18", "AddMediaWorkflow", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -84,17 +91,6 @@ public class AddMediaWorkflowRequest extends RpcAcsRequest<AddMediaWorkflowRespo
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,6 +110,17 @@ public class AddMediaWorkflowRequest extends RpcAcsRequest<AddMediaWorkflowRespo
 		this.triggerMode = triggerMode;
 		if(triggerMode != null){
 			putQueryParameter("TriggerMode", triggerMode);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

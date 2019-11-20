@@ -25,32 +25,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryPipelineListResponseUnmarshaller {
 
-	public static QueryPipelineListResponse unmarshall(QueryPipelineListResponse queryPipelineListResponse, UnmarshallerContext context) {
+	public static QueryPipelineListResponse unmarshall(QueryPipelineListResponse queryPipelineListResponse, UnmarshallerContext _ctx) {
 		
-		queryPipelineListResponse.setRequestId(context.stringValue("QueryPipelineListResponse.RequestId"));
+		queryPipelineListResponse.setRequestId(_ctx.stringValue("QueryPipelineListResponse.RequestId"));
 
 		List<String> nonExistPids = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryPipelineListResponse.NonExistPids.Length"); i++) {
-			nonExistPids.add(context.stringValue("QueryPipelineListResponse.NonExistPids["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryPipelineListResponse.NonExistPids.Length"); i++) {
+			nonExistPids.add(_ctx.stringValue("QueryPipelineListResponse.NonExistPids["+ i +"]"));
 		}
 		queryPipelineListResponse.setNonExistPids(nonExistPids);
 
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
-		for (int i = 0; i < context.lengthValue("QueryPipelineListResponse.PipelineList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryPipelineListResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setId(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].Id"));
-			pipeline.setName(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].Name"));
-			pipeline.setState(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].State"));
-			pipeline.setSpeed(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].Speed"));
-			pipeline.setSpeedLevel(context.longValue("QueryPipelineListResponse.PipelineList["+ i +"].SpeedLevel"));
-			pipeline.setQuotaAllocate(context.longValue("QueryPipelineListResponse.PipelineList["+ i +"].QuotaAllocate"));
-			pipeline.setRole(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].Role"));
+			pipeline.setId(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].Id"));
+			pipeline.setName(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].Name"));
+			pipeline.setState(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].State"));
+			pipeline.setSpeed(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].Speed"));
+			pipeline.setSpeedLevel(_ctx.longValue("QueryPipelineListResponse.PipelineList["+ i +"].SpeedLevel"));
+			pipeline.setQuotaAllocate(_ctx.longValue("QueryPipelineListResponse.PipelineList["+ i +"].QuotaAllocate"));
+			pipeline.setRole(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].Role"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
-			notifyConfig.setTopic(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
-			notifyConfig.setQueueName(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.QueueName"));
-			notifyConfig.setMqTopic(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.MqTopic"));
-			notifyConfig.setMqTag(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.MqTag"));
+			notifyConfig.setTopic(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
+			notifyConfig.setQueueName(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.QueueName"));
+			notifyConfig.setMqTopic(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.MqTopic"));
+			notifyConfig.setMqTag(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.MqTag"));
 			pipeline.setNotifyConfig(notifyConfig);
 
 			pipelineList.add(pipeline);

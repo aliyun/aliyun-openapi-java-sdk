@@ -15,41 +15,48 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mts.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitAsrJobRequest extends RpcAcsRequest<SubmitAsrJobResponse> {
-	
-	public SubmitAsrJobRequest() {
-		super("Mts", "2014-06-18", "SubmitAsrJob", "mts");
-	}
+	   
 
-	private String input;
+	private Long resourceOwnerId;
 
 	private String userData;
 
-	private Long resourceOwnerId;
+	private String asrConfig;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String asrConfig;
-
 	private Long ownerId;
 
 	private String pipelineId;
 
-	public String getInput() {
-		return this.input;
+	private String input;
+	public SubmitAsrJobRequest() {
+		super("Mts", "2014-06-18", "SubmitAsrJob", "mts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -64,14 +71,14 @@ public class SubmitAsrJobRequest extends RpcAcsRequest<SubmitAsrJobResponse> {
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getAsrConfig() {
+		return this.asrConfig;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setAsrConfig(String asrConfig) {
+		this.asrConfig = asrConfig;
+		if(asrConfig != null){
+			putQueryParameter("AsrConfig", asrConfig);
 		}
 	}
 
@@ -97,17 +104,6 @@ public class SubmitAsrJobRequest extends RpcAcsRequest<SubmitAsrJobResponse> {
 		}
 	}
 
-	public String getAsrConfig() {
-		return this.asrConfig;
-	}
-
-	public void setAsrConfig(String asrConfig) {
-		this.asrConfig = asrConfig;
-		if(asrConfig != null){
-			putQueryParameter("AsrConfig", asrConfig);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -127,6 +123,17 @@ public class SubmitAsrJobRequest extends RpcAcsRequest<SubmitAsrJobResponse> {
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
 		}
 	}
 
