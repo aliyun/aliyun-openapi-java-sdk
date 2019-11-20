@@ -21,12 +21,16 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsResponse> {
+public class ConvertInstanceRequest extends RpcAcsRequest<ConvertInstanceResponse> {
 	   
 
 	private String clusterId;
-	public DescribeEndpointsRequest() {
-		super("HBase", "2019-01-01", "DescribeEndpoints", "hbase");
+
+	private Integer duration;
+
+	private String pricingCycle;
+	public ConvertInstanceRequest() {
+		super("HBase", "2019-01-01", "ConvertInstance", "hbase");
 		setMethod(MethodType.POST);
 	}
 
@@ -41,9 +45,31 @@ public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsRes
 		}
 	}
 
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getPricingCycle() {
+		return this.pricingCycle;
+	}
+
+	public void setPricingCycle(String pricingCycle) {
+		this.pricingCycle = pricingCycle;
+		if(pricingCycle != null){
+			putQueryParameter("PricingCycle", pricingCycle);
+		}
+	}
+
 	@Override
-	public Class<DescribeEndpointsResponse> getResponseClass() {
-		return DescribeEndpointsResponse.class;
+	public Class<ConvertInstanceResponse> getResponseClass() {
+		return ConvertInstanceResponse.class;
 	}
 
 }

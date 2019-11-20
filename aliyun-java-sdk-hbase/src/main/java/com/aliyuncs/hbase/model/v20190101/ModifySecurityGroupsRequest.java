@@ -21,12 +21,14 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsResponse> {
+public class ModifySecurityGroupsRequest extends RpcAcsRequest<ModifySecurityGroupsResponse> {
 	   
 
 	private String clusterId;
-	public DescribeEndpointsRequest() {
-		super("HBase", "2019-01-01", "DescribeEndpoints", "hbase");
+
+	private String securityGroupIds;
+	public ModifySecurityGroupsRequest() {
+		super("HBase", "2019-01-01", "ModifySecurityGroups", "hbase");
 		setMethod(MethodType.POST);
 	}
 
@@ -41,9 +43,20 @@ public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsRes
 		}
 	}
 
+	public String getSecurityGroupIds() {
+		return this.securityGroupIds;
+	}
+
+	public void setSecurityGroupIds(String securityGroupIds) {
+		this.securityGroupIds = securityGroupIds;
+		if(securityGroupIds != null){
+			putQueryParameter("SecurityGroupIds", securityGroupIds);
+		}
+	}
+
 	@Override
-	public Class<DescribeEndpointsResponse> getResponseClass() {
-		return DescribeEndpointsResponse.class;
+	public Class<ModifySecurityGroupsResponse> getResponseClass() {
+		return ModifySecurityGroupsResponse.class;
 	}
 
 }

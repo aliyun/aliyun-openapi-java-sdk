@@ -21,29 +21,42 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
+public class ResizeNodeCountRequest extends RpcAcsRequest<ResizeNodeCountResponse> {
 	   
 
-	private String acceptLanguage;
-	public DescribeRegionsRequest() {
-		super("HBase", "2019-01-01", "DescribeRegions", "hbase");
+	private String clusterId;
+
+	private Integer nodeCount;
+	public ResizeNodeCountRequest() {
+		super("HBase", "2019-01-01", "ResizeNodeCount", "hbase");
 		setMethod(MethodType.POST);
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Integer getNodeCount() {
+		return this.nodeCount;
+	}
+
+	public void setNodeCount(Integer nodeCount) {
+		this.nodeCount = nodeCount;
+		if(nodeCount != null){
+			putQueryParameter("NodeCount", nodeCount.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<ResizeNodeCountResponse> getResponseClass() {
+		return ResizeNodeCountResponse.class;
 	}
 
 }

@@ -21,12 +21,14 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsResponse> {
+public class DeleteUserHdfsInfoRequest extends RpcAcsRequest<DeleteUserHdfsInfoResponse> {
 	   
 
 	private String clusterId;
-	public DescribeEndpointsRequest() {
-		super("HBase", "2019-01-01", "DescribeEndpoints", "hbase");
+
+	private String nameService;
+	public DeleteUserHdfsInfoRequest() {
+		super("HBase", "2019-01-01", "DeleteUserHdfsInfo", "hbase");
 		setMethod(MethodType.POST);
 	}
 
@@ -41,9 +43,20 @@ public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsRes
 		}
 	}
 
+	public String getNameService() {
+		return this.nameService;
+	}
+
+	public void setNameService(String nameService) {
+		this.nameService = nameService;
+		if(nameService != null){
+			putQueryParameter("NameService", nameService);
+		}
+	}
+
 	@Override
-	public Class<DescribeEndpointsResponse> getResponseClass() {
-		return DescribeEndpointsResponse.class;
+	public Class<DeleteUserHdfsInfoResponse> getResponseClass() {
+		return DeleteUserHdfsInfoResponse.class;
 	}
 
 }

@@ -21,29 +21,42 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
+public class RestartInstanceRequest extends RpcAcsRequest<RestartInstanceResponse> {
 	   
 
-	private String acceptLanguage;
-	public DescribeRegionsRequest() {
-		super("HBase", "2019-01-01", "DescribeRegions", "hbase");
+	private String components;
+
+	private String clusterId;
+	public RestartInstanceRequest() {
+		super("HBase", "2019-01-01", "RestartInstance", "hbase");
 		setMethod(MethodType.POST);
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
+	public String getComponents() {
+		return this.components;
 	}
 
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
+	public void setComponents(String components) {
+		this.components = components;
+		if(components != null){
+			putQueryParameter("Components", components);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<RestartInstanceResponse> getResponseClass() {
+		return RestartInstanceResponse.class;
 	}
 
 }

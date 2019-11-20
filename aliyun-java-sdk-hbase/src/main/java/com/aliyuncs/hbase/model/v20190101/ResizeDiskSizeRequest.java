@@ -21,13 +21,26 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsResponse> {
+public class ResizeDiskSizeRequest extends RpcAcsRequest<ResizeDiskSizeResponse> {
 	   
 
+	private Integer nodeDiskSize;
+
 	private String clusterId;
-	public DescribeEndpointsRequest() {
-		super("HBase", "2019-01-01", "DescribeEndpoints", "hbase");
+	public ResizeDiskSizeRequest() {
+		super("HBase", "2019-01-01", "ResizeDiskSize", "hbase");
 		setMethod(MethodType.POST);
+	}
+
+	public Integer getNodeDiskSize() {
+		return this.nodeDiskSize;
+	}
+
+	public void setNodeDiskSize(Integer nodeDiskSize) {
+		this.nodeDiskSize = nodeDiskSize;
+		if(nodeDiskSize != null){
+			putQueryParameter("NodeDiskSize", nodeDiskSize.toString());
+		}
 	}
 
 	public String getClusterId() {
@@ -42,8 +55,8 @@ public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsRes
 	}
 
 	@Override
-	public Class<DescribeEndpointsResponse> getResponseClass() {
-		return DescribeEndpointsResponse.class;
+	public Class<ResizeDiskSizeResponse> getResponseClass() {
+		return ResizeDiskSizeResponse.class;
 	}
 
 }

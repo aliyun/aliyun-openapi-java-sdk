@@ -14,36 +14,28 @@
 
 package com.aliyuncs.hbase.model.v20190101;
 
-import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.MethodType;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.hbase.transform.v20190101.AddUserHdfsInfoResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsResponse> {
-	   
+public class AddUserHdfsInfoResponse extends AcsResponse {
 
-	private String clusterId;
-	public DescribeEndpointsRequest() {
-		super("HBase", "2019-01-01", "DescribeEndpoints", "hbase");
-		setMethod(MethodType.POST);
+	private String requestId;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
-	public Class<DescribeEndpointsResponse> getResponseClass() {
-		return DescribeEndpointsResponse.class;
+	public AddUserHdfsInfoResponse getInstance(UnmarshallerContext context) {
+		return	AddUserHdfsInfoResponseUnmarshaller.unmarshall(this, context);
 	}
-
 }

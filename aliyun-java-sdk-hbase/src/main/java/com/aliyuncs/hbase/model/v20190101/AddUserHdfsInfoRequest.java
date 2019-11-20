@@ -21,29 +21,42 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
+public class AddUserHdfsInfoRequest extends RpcAcsRequest<AddUserHdfsInfoResponse> {
 	   
 
-	private String acceptLanguage;
-	public DescribeRegionsRequest() {
-		super("HBase", "2019-01-01", "DescribeRegions", "hbase");
+	private String extInfo;
+
+	private String clusterId;
+	public AddUserHdfsInfoRequest() {
+		super("HBase", "2019-01-01", "AddUserHdfsInfo", "hbase");
 		setMethod(MethodType.POST);
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
+	public String getExtInfo() {
+		return this.extInfo;
 	}
 
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
+	public void setExtInfo(String extInfo) {
+		this.extInfo = extInfo;
+		if(extInfo != null){
+			putQueryParameter("ExtInfo", extInfo);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<AddUserHdfsInfoResponse> getResponseClass() {
+		return AddUserHdfsInfoResponse.class;
 	}
 
 }

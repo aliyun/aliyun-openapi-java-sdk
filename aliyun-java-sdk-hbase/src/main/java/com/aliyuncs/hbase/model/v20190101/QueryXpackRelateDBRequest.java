@@ -21,12 +21,14 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsResponse> {
+public class QueryXpackRelateDBRequest extends RpcAcsRequest<QueryXpackRelateDBResponse> {
 	   
 
 	private String clusterId;
-	public DescribeEndpointsRequest() {
-		super("HBase", "2019-01-01", "DescribeEndpoints", "hbase");
+
+	private String relateDbType;
+	public QueryXpackRelateDBRequest() {
+		super("HBase", "2019-01-01", "QueryXpackRelateDB", "hbase");
 		setMethod(MethodType.POST);
 	}
 
@@ -41,9 +43,20 @@ public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsRes
 		}
 	}
 
+	public String getRelateDbType() {
+		return this.relateDbType;
+	}
+
+	public void setRelateDbType(String relateDbType) {
+		this.relateDbType = relateDbType;
+		if(relateDbType != null){
+			putQueryParameter("RelateDbType", relateDbType);
+		}
+	}
+
 	@Override
-	public Class<DescribeEndpointsResponse> getResponseClass() {
-		return DescribeEndpointsResponse.class;
+	public Class<QueryXpackRelateDBResponse> getResponseClass() {
+		return QueryXpackRelateDBResponse.class;
 	}
 
 }

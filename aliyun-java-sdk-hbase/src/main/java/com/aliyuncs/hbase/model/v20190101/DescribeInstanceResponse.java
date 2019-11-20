@@ -14,6 +14,7 @@
 
 package com.aliyuncs.hbase.model.v20190101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.hbase.transform.v20190101.DescribeInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -75,6 +76,10 @@ public class DescribeInstanceResponse extends AcsResponse {
 	private String coldStorageStatus;
 
 	private String backupStatus;
+
+	private String coreDiskCount;
+
+	private List<Tag> tags;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -282,6 +287,45 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public void setBackupStatus(String backupStatus) {
 		this.backupStatus = backupStatus;
+	}
+
+	public String getCoreDiskCount() {
+		return this.coreDiskCount;
+	}
+
+	public void setCoreDiskCount(String coreDiskCount) {
+		this.coreDiskCount = coreDiskCount;
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 	}
 
 	@Override

@@ -14,7 +14,11 @@
 
 package com.aliyuncs.hbase.transform.v20190101;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.hbase.model.v20190101.DescribeInstanceResponse;
+import com.aliyuncs.hbase.model.v20190101.DescribeInstanceResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -48,6 +52,17 @@ public class DescribeInstanceResponseUnmarshaller {
 		describeInstanceResponse.setZoneId(_ctx.stringValue("DescribeInstanceResponse.ZoneId"));
 		describeInstanceResponse.setColdStorageStatus(_ctx.stringValue("DescribeInstanceResponse.ColdStorageStatus"));
 		describeInstanceResponse.setBackupStatus(_ctx.stringValue("DescribeInstanceResponse.BackupStatus"));
+		describeInstanceResponse.setCoreDiskCount(_ctx.stringValue("DescribeInstanceResponse.CoreDiskCount"));
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("DescribeInstanceResponse.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("DescribeInstanceResponse.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		describeInstanceResponse.setTags(tags);
 	 
 	 	return describeInstanceResponse;
 	}

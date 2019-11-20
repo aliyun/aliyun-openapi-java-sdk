@@ -14,20 +14,28 @@
 
 package com.aliyuncs.hbase.model.v20190101;
 
-import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.MethodType;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.hbase.transform.v20190101.CreateInstanceResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsResponse> {
-	   
+public class CreateInstanceResponse extends AcsResponse {
+
+	private String requestId;
 
 	private String clusterId;
-	public DescribeEndpointsRequest() {
-		super("HBase", "2019-01-01", "DescribeEndpoints", "hbase");
-		setMethod(MethodType.POST);
+
+	private String orderId;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getClusterId() {
@@ -36,14 +44,18 @@ public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsRes
 
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override
-	public Class<DescribeEndpointsResponse> getResponseClass() {
-		return DescribeEndpointsResponse.class;
+	public CreateInstanceResponse getInstance(UnmarshallerContext context) {
+		return	CreateInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
-
 }

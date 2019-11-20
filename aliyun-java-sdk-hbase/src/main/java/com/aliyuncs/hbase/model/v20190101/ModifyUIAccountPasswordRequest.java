@@ -21,12 +21,16 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsResponse> {
+public class ModifyUIAccountPasswordRequest extends RpcAcsRequest<ModifyUIAccountPasswordResponse> {
 	   
 
 	private String clusterId;
-	public DescribeEndpointsRequest() {
-		super("HBase", "2019-01-01", "DescribeEndpoints", "hbase");
+
+	private String accountPassword;
+
+	private String accountName;
+	public ModifyUIAccountPasswordRequest() {
+		super("HBase", "2019-01-01", "ModifyUIAccountPassword", "hbase");
 		setMethod(MethodType.POST);
 	}
 
@@ -41,9 +45,31 @@ public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsRes
 		}
 	}
 
+	public String getAccountPassword() {
+		return this.accountPassword;
+	}
+
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+		if(accountPassword != null){
+			putQueryParameter("AccountPassword", accountPassword);
+		}
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
+		}
+	}
+
 	@Override
-	public Class<DescribeEndpointsResponse> getResponseClass() {
-		return DescribeEndpointsResponse.class;
+	public Class<ModifyUIAccountPasswordResponse> getResponseClass() {
+		return ModifyUIAccountPasswordResponse.class;
 	}
 
 }

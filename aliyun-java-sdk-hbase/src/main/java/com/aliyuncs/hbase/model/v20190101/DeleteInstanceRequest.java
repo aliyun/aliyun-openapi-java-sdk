@@ -21,29 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
+public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse> {
 	   
 
-	private String acceptLanguage;
-	public DescribeRegionsRequest() {
-		super("HBase", "2019-01-01", "DescribeRegions", "hbase");
+	private String clusterId;
+	public DeleteInstanceRequest() {
+		super("HBase", "2019-01-01", "DeleteInstance", "hbase");
 		setMethod(MethodType.POST);
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<DeleteInstanceResponse> getResponseClass() {
+		return DeleteInstanceResponse.class;
 	}
 
 }
