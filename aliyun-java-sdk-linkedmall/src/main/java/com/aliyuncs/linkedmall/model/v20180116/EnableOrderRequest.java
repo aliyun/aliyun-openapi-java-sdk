@@ -30,6 +30,10 @@ public class EnableOrderRequest extends RpcAcsRequest<EnableOrderResponse> {
 
 	private String extJson;
 
+	private Boolean useAnonymousTbAccount;
+
+	private String thirdPartyUserId;
+
 	private String bizId;
 
 	private String outTradeId;
@@ -68,6 +72,28 @@ public class EnableOrderRequest extends RpcAcsRequest<EnableOrderResponse> {
 		this.extJson = extJson;
 		if(extJson != null){
 			putQueryParameter("ExtJson", extJson);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
+		}
+	}
+
+	public String getThirdPartyUserId() {
+		return this.thirdPartyUserId;
+	}
+
+	public void setThirdPartyUserId(String thirdPartyUserId) {
+		this.thirdPartyUserId = thirdPartyUserId;
+		if(thirdPartyUserId != null){
+			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
 		}
 	}
 
