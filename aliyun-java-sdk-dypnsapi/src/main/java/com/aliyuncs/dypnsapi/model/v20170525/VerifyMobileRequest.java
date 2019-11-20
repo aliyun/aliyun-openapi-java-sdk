@@ -24,16 +24,7 @@ import com.aliyuncs.dypnsapi.Endpoint;
  * @version 
  */
 public class VerifyMobileRequest extends RpcAcsRequest<VerifyMobileResponse> {
-	
-	public VerifyMobileRequest() {
-		super("Dypnsapi", "2017-05-25", "VerifyMobile", "dypnsapi");
-		setSysProtocol(ProtocolType.HTTPS);
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -46,6 +37,15 @@ public class VerifyMobileRequest extends RpcAcsRequest<VerifyMobileResponse> {
 	private Long ownerId;
 
 	private String outId;
+	public VerifyMobileRequest() {
+		super("Dypnsapi", "2017-05-25", "VerifyMobile", "dypnsapi");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

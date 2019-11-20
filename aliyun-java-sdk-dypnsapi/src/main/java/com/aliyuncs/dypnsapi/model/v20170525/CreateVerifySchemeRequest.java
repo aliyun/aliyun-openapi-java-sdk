@@ -23,15 +23,7 @@ import com.aliyuncs.dypnsapi.Endpoint;
  * @version 
  */
 public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeResponse> {
-	
-	public CreateVerifySchemeRequest() {
-		super("Dypnsapi", "2017-05-25", "CreateVerifyScheme", "dypnsapi");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -50,6 +42,14 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 	private Long ownerId;
 
 	private String schemeName;
+	public CreateVerifySchemeRequest() {
+		super("Dypnsapi", "2017-05-25", "CreateVerifyScheme", "dypnsapi");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

@@ -15,7 +15,6 @@
 package com.aliyuncs.dypnsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dypnsapi.Endpoint;
 
@@ -23,21 +22,20 @@ import com.aliyuncs.dypnsapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetMobileRequest extends RpcAcsRequest<GetMobileResponse> {
+public class DescribeVerifySchemeRequest extends RpcAcsRequest<DescribeVerifySchemeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String accessToken;
-
 	private Long ownerId;
 
-	private String outId;
-	public GetMobileRequest() {
-		super("Dypnsapi", "2017-05-25", "GetMobile", "dypnsapi");
-		setProtocol(ProtocolType.HTTPS);
+	private String schemeCode;
+
+	private Long customerId;
+	public DescribeVerifySchemeRequest() {
+		super("Dypnsapi", "2017-05-25", "DescribeVerifyScheme", "dypnsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -67,17 +65,6 @@ public class GetMobileRequest extends RpcAcsRequest<GetMobileResponse> {
 		}
 	}
 
-	public String getAccessToken() {
-		return this.accessToken;
-	}
-
-	public void setAccessToken(String accessToken) {
-		this.accessToken = accessToken;
-		if(accessToken != null){
-			putQueryParameter("AccessToken", accessToken);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -89,20 +76,31 @@ public class GetMobileRequest extends RpcAcsRequest<GetMobileResponse> {
 		}
 	}
 
-	public String getOutId() {
-		return this.outId;
+	public String getSchemeCode() {
+		return this.schemeCode;
 	}
 
-	public void setOutId(String outId) {
-		this.outId = outId;
-		if(outId != null){
-			putQueryParameter("OutId", outId);
+	public void setSchemeCode(String schemeCode) {
+		this.schemeCode = schemeCode;
+		if(schemeCode != null){
+			putQueryParameter("SchemeCode", schemeCode);
+		}
+	}
+
+	public Long getCustomerId() {
+		return this.customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+		if(customerId != null){
+			putQueryParameter("CustomerId", customerId.toString());
 		}
 	}
 
 	@Override
-	public Class<GetMobileResponse> getResponseClass() {
-		return GetMobileResponse.class;
+	public Class<DescribeVerifySchemeResponse> getResponseClass() {
+		return DescribeVerifySchemeResponse.class;
 	}
 
 }
