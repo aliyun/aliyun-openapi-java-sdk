@@ -69,26 +69,10 @@ public class DescribeDemandsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getBizRegionId() {
-		return this.regionId;
-	}
-
-	public void setBizRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	/**
-	 * @deprecated use getBizRegionId instead of this.
-	 */
-	@Deprecated
 	public String getRegionId() {
 		return this.regionId;
 	}
 
-	/**
-	 * @deprecated use setBizRegionId instead of this.
-	 */
-	@Deprecated
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
 	}
@@ -108,6 +92,12 @@ public class DescribeDemandsResponse extends AcsResponse {
 		private String demandTime;
 
 		private String instanceTypeFamily;
+
+		private String demandId;
+
+		private String demandName;
+
+		private String demandDescription;
 
 		private String instanceType;
 
@@ -155,6 +145,30 @@ public class DescribeDemandsResponse extends AcsResponse {
 
 		public void setInstanceTypeFamily(String instanceTypeFamily) {
 			this.instanceTypeFamily = instanceTypeFamily;
+		}
+
+		public String getDemandId() {
+			return this.demandId;
+		}
+
+		public void setDemandId(String demandId) {
+			this.demandId = demandId;
+		}
+
+		public String getDemandName() {
+			return this.demandName;
+		}
+
+		public void setDemandName(String demandName) {
+			this.demandName = demandName;
+		}
+
+		public String getDemandDescription() {
+			return this.demandDescription;
+		}
+
+		public void setDemandDescription(String demandDescription) {
+			this.demandDescription = demandDescription;
 		}
 
 		public String getInstanceType() {

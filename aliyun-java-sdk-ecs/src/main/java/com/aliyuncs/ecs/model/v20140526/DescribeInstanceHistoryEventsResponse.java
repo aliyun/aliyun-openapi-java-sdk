@@ -87,6 +87,8 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 		private String eventFinishTime;
 
+		private String reason;
+
 		private EventType eventType;
 
 		private EventCycleStatus eventCycleStatus;
@@ -131,6 +133,14 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 		public void setEventFinishTime(String eventFinishTime) {
 			this.eventFinishTime = eventFinishTime;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 
 		public EventType getEventType() {

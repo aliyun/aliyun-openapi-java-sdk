@@ -58,6 +58,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Integer autoRenewPeriod;
 
+	private Integer cpuOptionsCore;
+
 	private Integer period;
 
 	private Boolean dryRun;
@@ -65,6 +67,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private String launchTemplateId;
 
 	private Integer ipv6AddressCount;
+
+	private String cpuOptionsNuma;
 
 	private Long ownerId;
 
@@ -103,6 +107,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private Integer internetMaxBandwidthOut;
 
 	private String description;
+
+	private Integer cpuOptionsThreadsPerCore;
 
 	private String systemDiskCategory;
 
@@ -339,6 +345,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public Integer getCpuOptionsCore() {
+		return this.cpuOptionsCore;
+	}
+
+	public void setCpuOptionsCore(Integer cpuOptionsCore) {
+		this.cpuOptionsCore = cpuOptionsCore;
+		if(cpuOptionsCore != null){
+			putQueryParameter("CpuOptions.Core", cpuOptionsCore.toString());
+		}
+	}
+
 	public Integer getPeriod() {
 		return this.period;
 	}
@@ -380,6 +397,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.ipv6AddressCount = ipv6AddressCount;
 		if(ipv6AddressCount != null){
 			putQueryParameter("Ipv6AddressCount", ipv6AddressCount.toString());
+		}
+	}
+
+	public String getCpuOptionsNuma() {
+		return this.cpuOptionsNuma;
+	}
+
+	public void setCpuOptionsNuma(String cpuOptionsNuma) {
+		this.cpuOptionsNuma = cpuOptionsNuma;
+		if(cpuOptionsNuma != null){
+			putQueryParameter("CpuOptions.Numa", cpuOptionsNuma);
 		}
 	}
 
@@ -591,6 +619,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public Integer getCpuOptionsThreadsPerCore() {
+		return this.cpuOptionsThreadsPerCore;
+	}
+
+	public void setCpuOptionsThreadsPerCore(Integer cpuOptionsThreadsPerCore) {
+		this.cpuOptionsThreadsPerCore = cpuOptionsThreadsPerCore;
+		if(cpuOptionsThreadsPerCore != null){
+			putQueryParameter("CpuOptions.ThreadsPerCore", cpuOptionsThreadsPerCore.toString());
 		}
 	}
 

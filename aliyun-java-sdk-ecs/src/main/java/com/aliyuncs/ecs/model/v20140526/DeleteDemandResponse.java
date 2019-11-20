@@ -15,22 +15,16 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.DescribeUserDataResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.DeleteDemandResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeUserDataResponse extends AcsResponse {
+public class DeleteDemandResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String regionId;
-
-	private String instanceId;
-
-	private String userData;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,32 +34,8 @@ public class DescribeUserDataResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-	}
-
 	@Override
-	public DescribeUserDataResponse getInstance(UnmarshallerContext context) {
-		return	DescribeUserDataResponseUnmarshaller.unmarshall(this, context);
+	public DeleteDemandResponse getInstance(UnmarshallerContext context) {
+		return	DeleteDemandResponseUnmarshaller.unmarshall(this, context);
 	}
 }

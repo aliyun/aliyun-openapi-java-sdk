@@ -15,7 +15,6 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -23,40 +22,40 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDemandsRequest extends RpcAcsRequest<DescribeDemandsResponse> {
+public class CreateDemandRequest extends RpcAcsRequest<CreateDemandResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Integer pageNumber;
+	private String clientToken;
 
-	private Integer pageSize;
+	private String startTime;
+
+	private String demandDescription;
 
 	private String instanceType;
 
-	private List<Tag> tags;
-
 	private String instanceChargeType;
 
-	private Boolean dryRun;
+	private String demandName;
+
+	private Integer amount;
+
+	private Integer period;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String instanceTypeFamily;
+	private String endTime;
 
 	private Long ownerId;
 
-	private List<String> demandStatuss;
-
-	private String demandId;
+	private String periodUnit;
 
 	private String zoneId;
-
-	private String demandType;
-	public DescribeDemandsRequest() {
-		super("Ecs", "2014-05-26", "DescribeDemands", "ecs");
+	public CreateDemandRequest() {
+		super("Ecs", "2014-05-26", "CreateDemand", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -75,25 +74,36 @@ public class DescribeDemandsRequest extends RpcAcsRequest<DescribeDemandsRespons
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getDemandDescription() {
+		return this.demandDescription;
+	}
+
+	public void setDemandDescription(String demandDescription) {
+		this.demandDescription = demandDescription;
+		if(demandDescription != null){
+			putQueryParameter("DemandDescription", demandDescription);
 		}
 	}
 
@@ -108,20 +118,6 @@ public class DescribeDemandsRequest extends RpcAcsRequest<DescribeDemandsRespons
 		}
 	}
 
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-			}
-		}	
-	}
-
 	public String getInstanceChargeType() {
 		return this.instanceChargeType;
 	}
@@ -133,14 +129,36 @@ public class DescribeDemandsRequest extends RpcAcsRequest<DescribeDemandsRespons
 		}
 	}
 
-	public Boolean getDryRun() {
-		return this.dryRun;
+	public String getDemandName() {
+		return this.demandName;
 	}
 
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
+	public void setDemandName(String demandName) {
+		this.demandName = demandName;
+		if(demandName != null){
+			putQueryParameter("DemandName", demandName);
+		}
+	}
+
+	public Integer getAmount() {
+		return this.amount;
+	}
+
+	public void setAmount(Integer amount) {
+		this.amount = amount;
+		if(amount != null){
+			putQueryParameter("Amount", amount.toString());
+		}
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
 		}
 	}
 
@@ -166,14 +184,14 @@ public class DescribeDemandsRequest extends RpcAcsRequest<DescribeDemandsRespons
 		}
 	}
 
-	public String getInstanceTypeFamily() {
-		return this.instanceTypeFamily;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setInstanceTypeFamily(String instanceTypeFamily) {
-		this.instanceTypeFamily = instanceTypeFamily;
-		if(instanceTypeFamily != null){
-			putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -188,27 +206,14 @@ public class DescribeDemandsRequest extends RpcAcsRequest<DescribeDemandsRespons
 		}
 	}
 
-	public List<String> getDemandStatuss() {
-		return this.demandStatuss;
+	public String getPeriodUnit() {
+		return this.periodUnit;
 	}
 
-	public void setDemandStatuss(List<String> demandStatuss) {
-		this.demandStatuss = demandStatuss;	
-		if (demandStatuss != null) {
-			for (int i = 0; i < demandStatuss.size(); i++) {
-				putQueryParameter("DemandStatus." + (i + 1) , demandStatuss.get(i));
-			}
-		}	
-	}
-
-	public String getDemandId() {
-		return this.demandId;
-	}
-
-	public void setDemandId(String demandId) {
-		this.demandId = demandId;
-		if(demandId != null){
-			putQueryParameter("DemandId", demandId);
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
 		}
 	}
 
@@ -223,43 +228,9 @@ public class DescribeDemandsRequest extends RpcAcsRequest<DescribeDemandsRespons
 		}
 	}
 
-	public String getDemandType() {
-		return this.demandType;
-	}
-
-	public void setDemandType(String demandType) {
-		this.demandType = demandType;
-		if(demandType != null){
-			putQueryParameter("DemandType", demandType);
-		}
-	}
-
-	public static class Tag {
-
-		private String key;
-
-		private String value;
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-	}
-
 	@Override
-	public Class<DescribeDemandsResponse> getResponseClass() {
-		return DescribeDemandsResponse.class;
+	public Class<CreateDemandResponse> getResponseClass() {
+		return CreateDemandResponse.class;
 	}
 
 }

@@ -22,37 +22,40 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSetResponse> {
+public class DeleteDemandRequest extends RpcAcsRequest<DeleteDemandResponse> {
 	   
+
+	private String reason;
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private String description;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String deploymentSetName;
-
 	private Long ownerId;
 
-	private String onUnableToRedeployFailedInstance;
-
-	private String granularity;
-
-	private String domain;
-
-	private String strategy;
-	public CreateDeploymentSetRequest() {
-		super("Ecs", "2014-05-26", "CreateDeploymentSet", "ecs");
+	private String demandId;
+	public DeleteDemandRequest() {
+		super("Ecs", "2014-05-26", "DeleteDemand", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getReason() {
+		return this.reason;
+	}
+
+	public void setReason(String reason) {
+		this.reason = reason;
+		if(reason != null){
+			putQueryParameter("Reason", reason);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -74,17 +77,6 @@ public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSe
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 
@@ -110,17 +102,6 @@ public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSe
 		}
 	}
 
-	public String getDeploymentSetName() {
-		return this.deploymentSetName;
-	}
-
-	public void setDeploymentSetName(String deploymentSetName) {
-		this.deploymentSetName = deploymentSetName;
-		if(deploymentSetName != null){
-			putQueryParameter("DeploymentSetName", deploymentSetName);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -132,53 +113,20 @@ public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSe
 		}
 	}
 
-	public String getOnUnableToRedeployFailedInstance() {
-		return this.onUnableToRedeployFailedInstance;
+	public String getDemandId() {
+		return this.demandId;
 	}
 
-	public void setOnUnableToRedeployFailedInstance(String onUnableToRedeployFailedInstance) {
-		this.onUnableToRedeployFailedInstance = onUnableToRedeployFailedInstance;
-		if(onUnableToRedeployFailedInstance != null){
-			putQueryParameter("OnUnableToRedeployFailedInstance", onUnableToRedeployFailedInstance);
-		}
-	}
-
-	public String getGranularity() {
-		return this.granularity;
-	}
-
-	public void setGranularity(String granularity) {
-		this.granularity = granularity;
-		if(granularity != null){
-			putQueryParameter("Granularity", granularity);
-		}
-	}
-
-	public String getDomain() {
-		return this.domain;
-	}
-
-	public void setDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
-		}
-	}
-
-	public String getStrategy() {
-		return this.strategy;
-	}
-
-	public void setStrategy(String strategy) {
-		this.strategy = strategy;
-		if(strategy != null){
-			putQueryParameter("Strategy", strategy);
+	public void setDemandId(String demandId) {
+		this.demandId = demandId;
+		if(demandId != null){
+			putQueryParameter("DemandId", demandId);
 		}
 	}
 
 	@Override
-	public Class<CreateDeploymentSetResponse> getResponseClass() {
-		return CreateDeploymentSetResponse.class;
+	public Class<DeleteDemandResponse> getResponseClass() {
+		return DeleteDemandResponse.class;
 	}
 
 }

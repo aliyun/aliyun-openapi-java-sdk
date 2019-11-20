@@ -189,6 +189,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private DedicatedInstanceAttribute dedicatedInstanceAttribute;
 
+		private CpuOptions cpuOptions;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -245,26 +247,10 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.oSType = oSType;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -653,6 +639,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.dedicatedInstanceAttribute = dedicatedInstanceAttribute;
 		}
 
+		public CpuOptions getCpuOptions() {
+			return this.cpuOptions;
+		}
+
+		public void setCpuOptions(CpuOptions cpuOptions) {
+			this.cpuOptions = cpuOptions;
+		}
+
 		public static class NetworkInterface {
 
 			private String networkInterfaceId;
@@ -894,6 +888,39 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setAffinity(String affinity) {
 				this.affinity = affinity;
+			}
+		}
+
+		public static class CpuOptions {
+
+			private Integer coreCount;
+
+			private Integer threadsPerCore;
+
+			private String numa;
+
+			public Integer getCoreCount() {
+				return this.coreCount;
+			}
+
+			public void setCoreCount(Integer coreCount) {
+				this.coreCount = coreCount;
+			}
+
+			public Integer getThreadsPerCore() {
+				return this.threadsPerCore;
+			}
+
+			public void setThreadsPerCore(Integer threadsPerCore) {
+				this.threadsPerCore = threadsPerCore;
+			}
+
+			public String getNuma() {
+				return this.numa;
+			}
+
+			public void setNuma(String numa) {
+				this.numa = numa;
 			}
 		}
 	}

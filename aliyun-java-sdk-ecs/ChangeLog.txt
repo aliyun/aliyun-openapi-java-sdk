@@ -1,3 +1,7 @@
+2019-11-20 Version: 4.17.7
+- Supported ecsDemand CreateDemand, ModifyDemand, DeleteDemand API.
+- Modify ecsDemand DescribesDemands API.
+
 2019-10-22 Version: 4.17.6
 - RunInstances support AutoSnapshotPolicyId.
 

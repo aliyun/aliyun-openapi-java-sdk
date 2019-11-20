@@ -58,6 +58,8 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 
 	private String priorityStrategy;
 
+	private String instanceFamilyLevel;
+
 	private String zoneId;
 	public DescribeRecommendInstanceTypeRequest() {
 		super("Ecs", "2014-05-26", "DescribeRecommendInstanceType", "ecs");
@@ -243,6 +245,17 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 		this.priorityStrategy = priorityStrategy;
 		if(priorityStrategy != null){
 			putQueryParameter("PriorityStrategy", priorityStrategy);
+		}
+	}
+
+	public String getInstanceFamilyLevel() {
+		return this.instanceFamilyLevel;
+	}
+
+	public void setInstanceFamilyLevel(String instanceFamilyLevel) {
+		this.instanceFamilyLevel = instanceFamilyLevel;
+		if(instanceFamilyLevel != null){
+			putQueryParameter("InstanceFamilyLevel", instanceFamilyLevel);
 		}
 	}
 

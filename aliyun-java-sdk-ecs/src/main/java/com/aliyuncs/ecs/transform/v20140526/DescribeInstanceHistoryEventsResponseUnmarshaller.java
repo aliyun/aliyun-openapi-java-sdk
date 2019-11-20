@@ -42,6 +42,7 @@ public class DescribeInstanceHistoryEventsResponseUnmarshaller {
 			instanceSystemEventType.setEventPublishTime(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventPublishTime"));
 			instanceSystemEventType.setNotBefore(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].NotBefore"));
 			instanceSystemEventType.setEventFinishTime(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventFinishTime"));
+			instanceSystemEventType.setReason(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].Reason"));
 
 			EventType eventType = new EventType();
 			eventType.setCode(_ctx.integerValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventType.Code"));

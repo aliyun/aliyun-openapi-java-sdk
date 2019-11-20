@@ -58,6 +58,7 @@ public class DescribeInstancesFullStatusResponseUnmarshaller {
 				scheduledSystemEventType.setEventId(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventId"));
 				scheduledSystemEventType.setEventPublishTime(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventPublishTime"));
 				scheduledSystemEventType.setNotBefore(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].NotBefore"));
+				scheduledSystemEventType.setReason(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].Reason"));
 
 				EventCycleStatus eventCycleStatus = new EventCycleStatus();
 				eventCycleStatus.setCode(_ctx.integerValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventCycleStatus.Code"));

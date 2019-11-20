@@ -125,6 +125,8 @@ public class DescribeInstancesFullStatusResponse extends AcsResponse {
 
 			private String notBefore;
 
+			private String reason;
+
 			private EventCycleStatus eventCycleStatus;
 
 			private EventType eventType;
@@ -153,6 +155,14 @@ public class DescribeInstancesFullStatusResponse extends AcsResponse {
 
 			public void setNotBefore(String notBefore) {
 				this.notBefore = notBefore;
+			}
+
+			public String getReason() {
+				return this.reason;
+			}
+
+			public void setReason(String reason) {
+				this.reason = reason;
 			}
 
 			public EventCycleStatus getEventCycleStatus() {

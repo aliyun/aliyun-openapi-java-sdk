@@ -40,6 +40,8 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 
 	private Long ownerId;
 
+	private List<TagFilter> tagFilters;
+
 	private String resourceType;
 	public ListTagResourcesRequest() {
 		super("Ecs", "2014-05-26", "ListTagResources", "ecs");
@@ -132,6 +134,24 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 		}
 	}
 
+	public List<TagFilter> getTagFilters() {
+		return this.tagFilters;
+	}
+
+	public void setTagFilters(List<TagFilter> tagFilters) {
+		this.tagFilters = tagFilters;	
+		if (tagFilters != null) {
+			for (int depth1 = 0; depth1 < tagFilters.size(); depth1++) {
+				putQueryParameter("TagFilter." + (depth1 + 1) + ".TagKey" , tagFilters.get(depth1).getTagKey());
+				if (tagFilters.get(depth1).getTagValuess() != null) {
+					for (int i = 0; i < tagFilters.get(depth1).getTagValuess().size(); i++) {
+						putQueryParameter("TagFilter." + (depth1 + 1) + ".TagValues." + (i + 1) , tagFilters.get(depth1).getTagValuess().get(i));
+					}
+				}
+			}
+		}	
+	}
+
 	public String getResourceType() {
 		return this.resourceType;
 	}
@@ -163,6 +183,29 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+	}
+
+	public static class TagFilter {
+
+		private String tagKey;
+
+		private List<String> tagValuess;
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+
+		public List<String> getTagValuess() {
+			return this.tagValuess;
+		}
+
+		public void setTagValuess(List<String> tagValuess) {
+			this.tagValuess = tagValuess;
 		}
 	}
 

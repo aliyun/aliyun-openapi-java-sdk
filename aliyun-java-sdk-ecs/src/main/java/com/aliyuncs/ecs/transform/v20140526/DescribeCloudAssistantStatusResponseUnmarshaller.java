@@ -33,6 +33,7 @@ public class DescribeCloudAssistantStatusResponseUnmarshaller {
 			InstanceCloudAssistantStatus instanceCloudAssistantStatus = new InstanceCloudAssistantStatus();
 			instanceCloudAssistantStatus.setInstanceId(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].InstanceId"));
 			instanceCloudAssistantStatus.setCloudAssistantStatus(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].CloudAssistantStatus"));
+			instanceCloudAssistantStatus.setCloudAssistantVersion(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].CloudAssistantVersion"));
 
 			instanceCloudAssistantStatusSet.add(instanceCloudAssistantStatus);
 		}

@@ -51,6 +51,8 @@ public class DescribeCloudAssistantStatusResponse extends AcsResponse {
 
 		private String cloudAssistantStatus;
 
+		private String cloudAssistantVersion;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -65,6 +67,14 @@ public class DescribeCloudAssistantStatusResponse extends AcsResponse {
 
 		public void setCloudAssistantStatus(String cloudAssistantStatus) {
 			this.cloudAssistantStatus = cloudAssistantStatus;
+		}
+
+		public String getCloudAssistantVersion() {
+			return this.cloudAssistantVersion;
+		}
+
+		public void setCloudAssistantVersion(String cloudAssistantVersion) {
+			this.cloudAssistantVersion = cloudAssistantVersion;
 		}
 	}
 

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.CpuOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.DedicatedHostAttribute;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.DedicatedInstanceAttribute;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.EcsCapacityReservationAttr;
@@ -145,6 +146,12 @@ public class DescribeInstancesResponseUnmarshaller {
 			dedicatedInstanceAttribute.setTenancy(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DedicatedInstanceAttribute.Tenancy"));
 			dedicatedInstanceAttribute.setAffinity(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DedicatedInstanceAttribute.Affinity"));
 			instance.setDedicatedInstanceAttribute(dedicatedInstanceAttribute);
+
+			CpuOptions cpuOptions = new CpuOptions();
+			cpuOptions.setCoreCount(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].CpuOptions.CoreCount"));
+			cpuOptions.setThreadsPerCore(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].CpuOptions.ThreadsPerCore"));
+			cpuOptions.setNuma(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CpuOptions.Numa"));
+			instance.setCpuOptions(cpuOptions);
 
 			List<NetworkInterface> networkInterfaces = new ArrayList<NetworkInterface>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces.Length"); j++) {

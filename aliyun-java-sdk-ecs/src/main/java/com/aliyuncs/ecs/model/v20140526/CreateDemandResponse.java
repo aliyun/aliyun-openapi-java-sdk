@@ -15,22 +15,18 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.DescribeUserDataResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.CreateDemandResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeUserDataResponse extends AcsResponse {
+public class CreateDemandResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String regionId;
-
-	private String instanceId;
-
-	private String userData;
+	private String demandId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,32 +36,16 @@ public class DescribeUserDataResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRegionId() {
-		return this.regionId;
+	public String getDemandId() {
+		return this.demandId;
 	}
 
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
+	public void setDemandId(String demandId) {
+		this.demandId = demandId;
 	}
 
 	@Override
-	public DescribeUserDataResponse getInstance(UnmarshallerContext context) {
-		return	DescribeUserDataResponseUnmarshaller.unmarshall(this, context);
+	public CreateDemandResponse getInstance(UnmarshallerContext context) {
+		return	CreateDemandResponseUnmarshaller.unmarshall(this, context);
 	}
 }
