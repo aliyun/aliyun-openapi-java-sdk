@@ -34,7 +34,7 @@ public class BindNumberAndVoipIdRequest extends RpcAcsRequest<BindNumberAndVoipI
 
 	private String voipId;
 	public BindNumberAndVoipIdRequest() {
-		super("Dyvmsapi", "2017-05-25", "BindNumberAndVoipId");
+		super("Dyvmsapi", "2017-05-25", "BindNumberAndVoipId", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

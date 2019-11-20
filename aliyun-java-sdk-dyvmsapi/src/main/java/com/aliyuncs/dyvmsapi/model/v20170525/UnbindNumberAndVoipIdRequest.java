@@ -34,7 +34,7 @@ public class UnbindNumberAndVoipIdRequest extends RpcAcsRequest<UnbindNumberAndV
 
 	private String voipId;
 	public UnbindNumberAndVoipIdRequest() {
-		super("Dyvmsapi", "2017-05-25", "UnbindNumberAndVoipId");
+		super("Dyvmsapi", "2017-05-25", "UnbindNumberAndVoipId", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

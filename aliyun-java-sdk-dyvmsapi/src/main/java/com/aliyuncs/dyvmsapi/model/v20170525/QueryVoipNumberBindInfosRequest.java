@@ -21,20 +21,20 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class StartRobotTaskRequest extends RpcAcsRequest<StartRobotTaskResponse> {
+public class QueryVoipNumberBindInfosRequest extends RpcAcsRequest<QueryVoipNumberBindInfosResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
+	private String phoneNumber;
+
 	private Long ownerId;
 
-	private String scheduleTime;
-
-	private Long taskId;
-	public StartRobotTaskRequest() {
-		super("Dyvmsapi", "2017-05-25", "StartRobotTask", "dyvms");
+	private String voipId;
+	public QueryVoipNumberBindInfosRequest() {
+		super("Dyvmsapi", "2017-05-25", "QueryVoipNumberBindInfos", "dyvms");
 		setMethod(MethodType.POST);
 	}
 
@@ -60,6 +60,17 @@ public class StartRobotTaskRequest extends RpcAcsRequest<StartRobotTaskResponse>
 		}
 	}
 
+	public String getPhoneNumber() {
+		return this.phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+		if(phoneNumber != null){
+			putQueryParameter("PhoneNumber", phoneNumber);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -71,31 +82,20 @@ public class StartRobotTaskRequest extends RpcAcsRequest<StartRobotTaskResponse>
 		}
 	}
 
-	public String getScheduleTime() {
-		return this.scheduleTime;
+	public String getVoipId() {
+		return this.voipId;
 	}
 
-	public void setScheduleTime(String scheduleTime) {
-		this.scheduleTime = scheduleTime;
-		if(scheduleTime != null){
-			putQueryParameter("ScheduleTime", scheduleTime);
-		}
-	}
-
-	public Long getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(Long taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId.toString());
+	public void setVoipId(String voipId) {
+		this.voipId = voipId;
+		if(voipId != null){
+			putQueryParameter("VoipId", voipId);
 		}
 	}
 
 	@Override
-	public Class<StartRobotTaskResponse> getResponseClass() {
-		return StartRobotTaskResponse.class;
+	public Class<QueryVoipNumberBindInfosResponse> getResponseClass() {
+		return QueryVoipNumberBindInfosResponse.class;
 	}
 
 }

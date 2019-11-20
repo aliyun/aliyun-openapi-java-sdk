@@ -32,7 +32,7 @@ public class CancelCallRequest extends RpcAcsRequest<CancelCallResponse> {
 
 	private Long ownerId;
 	public CancelCallRequest() {
-		super("Dyvmsapi", "2017-05-25", "CancelCall");
+		super("Dyvmsapi", "2017-05-25", "CancelCall", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

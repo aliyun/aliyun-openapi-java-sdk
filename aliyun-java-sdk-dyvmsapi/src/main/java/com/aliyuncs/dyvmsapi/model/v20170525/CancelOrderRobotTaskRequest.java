@@ -32,7 +32,7 @@ public class CancelOrderRobotTaskRequest extends RpcAcsRequest<CancelOrderRobotT
 
 	private Long taskId;
 	public CancelOrderRobotTaskRequest() {
-		super("Dyvmsapi", "2017-05-25", "CancelOrderRobotTask");
+		super("Dyvmsapi", "2017-05-25", "CancelOrderRobotTask", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

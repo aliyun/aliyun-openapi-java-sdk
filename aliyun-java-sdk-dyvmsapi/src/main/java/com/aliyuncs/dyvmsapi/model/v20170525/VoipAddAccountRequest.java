@@ -32,7 +32,7 @@ public class VoipAddAccountRequest extends RpcAcsRequest<VoipAddAccountResponse>
 
 	private String deviceId;
 	public VoipAddAccountRequest() {
-		super("Dyvmsapi", "2017-05-25", "VoipAddAccount");
+		super("Dyvmsapi", "2017-05-25", "VoipAddAccount", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

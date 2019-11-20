@@ -48,7 +48,7 @@ public class ClickToDialRequest extends RpcAcsRequest<ClickToDialResponse> {
 
 	private String callerNumber;
 	public ClickToDialRequest() {
-		super("Dyvmsapi", "2017-05-25", "ClickToDial");
+		super("Dyvmsapi", "2017-05-25", "ClickToDial", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

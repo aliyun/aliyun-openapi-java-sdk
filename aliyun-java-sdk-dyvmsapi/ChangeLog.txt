@@ -1,3 +1,7 @@
+2019-11-20 Version: 3.0.2
+- Add API ReportVoipProblems.
+- Add API QueryVoipNumberBindINfos.
+
 2019-11-02 Version: 3.0.1
 - Generated 2017-05-25 for `Dyvmsapi`.
 

@@ -46,7 +46,7 @@ public class SingleCallByTtsRequest extends RpcAcsRequest<SingleCallByTtsRespons
 
 	private String outId;
 	public SingleCallByTtsRequest() {
-		super("Dyvmsapi", "2017-05-25", "SingleCallByTts");
+		super("Dyvmsapi", "2017-05-25", "SingleCallByTts", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

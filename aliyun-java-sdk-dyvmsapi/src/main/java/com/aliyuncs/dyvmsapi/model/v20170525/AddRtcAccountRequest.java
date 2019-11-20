@@ -32,7 +32,7 @@ public class AddRtcAccountRequest extends RpcAcsRequest<AddRtcAccountResponse> {
 
 	private String deviceId;
 	public AddRtcAccountRequest() {
-		super("Dyvmsapi", "2017-05-25", "AddRtcAccount");
+		super("Dyvmsapi", "2017-05-25", "AddRtcAccount", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

@@ -32,7 +32,7 @@ public class StopRobotTaskRequest extends RpcAcsRequest<StopRobotTaskResponse> {
 
 	private Long taskId;
 	public StopRobotTaskRequest() {
-		super("Dyvmsapi", "2017-05-25", "StopRobotTask");
+		super("Dyvmsapi", "2017-05-25", "StopRobotTask", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

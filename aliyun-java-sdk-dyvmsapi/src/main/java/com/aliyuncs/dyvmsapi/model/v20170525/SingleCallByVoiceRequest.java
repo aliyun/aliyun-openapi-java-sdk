@@ -44,7 +44,7 @@ public class SingleCallByVoiceRequest extends RpcAcsRequest<SingleCallByVoiceRes
 
 	private String outId;
 	public SingleCallByVoiceRequest() {
-		super("Dyvmsapi", "2017-05-25", "SingleCallByVoice");
+		super("Dyvmsapi", "2017-05-25", "SingleCallByVoice", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

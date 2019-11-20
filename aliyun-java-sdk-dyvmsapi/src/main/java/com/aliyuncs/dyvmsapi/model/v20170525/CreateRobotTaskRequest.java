@@ -50,7 +50,7 @@ public class CreateRobotTaskRequest extends RpcAcsRequest<CreateRobotTaskRespons
 
 	private Integer recallInterval;
 	public CreateRobotTaskRequest() {
-		super("Dyvmsapi", "2017-05-25", "CreateRobotTask");
+		super("Dyvmsapi", "2017-05-25", "CreateRobotTask", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

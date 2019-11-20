@@ -72,7 +72,7 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 
 	private String ttsStyle;
 	public SmartCallRequest() {
-		super("Dyvmsapi", "2017-05-25", "SmartCall");
+		super("Dyvmsapi", "2017-05-25", "SmartCall", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

@@ -36,7 +36,7 @@ public class VoipGetTokenRequest extends RpcAcsRequest<VoipGetTokenResponse> {
 
 	private Boolean isCustomAccount;
 	public VoipGetTokenRequest() {
-		super("Dyvmsapi", "2017-05-25", "VoipGetToken");
+		super("Dyvmsapi", "2017-05-25", "VoipGetToken", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

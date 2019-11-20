@@ -51,7 +51,7 @@ public class IvrCallRequest extends RpcAcsRequest<IvrCallResponse> {
 
 	private String byeTtsParams;
 	public IvrCallRequest() {
-		super("Dyvmsapi", "2017-05-25", "IvrCall");
+		super("Dyvmsapi", "2017-05-25", "IvrCall", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

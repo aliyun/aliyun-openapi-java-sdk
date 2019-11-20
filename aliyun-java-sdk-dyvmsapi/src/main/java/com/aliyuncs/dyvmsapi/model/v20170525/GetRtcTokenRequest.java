@@ -36,7 +36,7 @@ public class GetRtcTokenRequest extends RpcAcsRequest<GetRtcTokenResponse> {
 
 	private Boolean isCustomAccount;
 	public GetRtcTokenRequest() {
-		super("Dyvmsapi", "2017-05-25", "GetRtcToken");
+		super("Dyvmsapi", "2017-05-25", "GetRtcToken", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

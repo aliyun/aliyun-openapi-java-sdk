@@ -32,7 +32,7 @@ public class DeleteRobotTaskRequest extends RpcAcsRequest<DeleteRobotTaskRespons
 
 	private Long taskId;
 	public DeleteRobotTaskRequest() {
-		super("Dyvmsapi", "2017-05-25", "DeleteRobotTask");
+		super("Dyvmsapi", "2017-05-25", "DeleteRobotTask", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

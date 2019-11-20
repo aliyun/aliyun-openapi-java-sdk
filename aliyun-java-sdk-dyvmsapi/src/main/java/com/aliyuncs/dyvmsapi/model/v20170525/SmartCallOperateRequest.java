@@ -36,7 +36,7 @@ public class SmartCallOperateRequest extends RpcAcsRequest<SmartCallOperateRespo
 
 	private String command;
 	public SmartCallOperateRequest() {
-		super("Dyvmsapi", "2017-05-25", "SmartCallOperate");
+		super("Dyvmsapi", "2017-05-25", "SmartCallOperate", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

@@ -52,7 +52,7 @@ public class BatchRobotSmartCallRequest extends RpcAcsRequest<BatchRobotSmartCal
 
 	private Boolean scheduleCall;
 	public BatchRobotSmartCallRequest() {
-		super("Dyvmsapi", "2017-05-25", "BatchRobotSmartCall");
+		super("Dyvmsapi", "2017-05-25", "BatchRobotSmartCall", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

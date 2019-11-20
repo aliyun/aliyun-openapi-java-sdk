@@ -21,20 +21,24 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class StartRobotTaskRequest extends RpcAcsRequest<StartRobotTaskResponse> {
+public class ReportVoipProblemsRequest extends RpcAcsRequest<ReportVoipProblemsResponse> {
 	   
 
 	private Long resourceOwnerId;
+
+	private String title;
+
+	private String voipId;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	private String scheduleTime;
+	private String channelId;
 
-	private Long taskId;
-	public StartRobotTaskRequest() {
-		super("Dyvmsapi", "2017-05-25", "StartRobotTask", "dyvms");
+	private String desc;
+	public ReportVoipProblemsRequest() {
+		super("Dyvmsapi", "2017-05-25", "ReportVoipProblems", "dyvms");
 		setMethod(MethodType.POST);
 	}
 
@@ -46,6 +50,28 @@ public class StartRobotTaskRequest extends RpcAcsRequest<StartRobotTaskResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
+		}
+	}
+
+	public String getVoipId() {
+		return this.voipId;
+	}
+
+	public void setVoipId(String voipId) {
+		this.voipId = voipId;
+		if(voipId != null){
+			putQueryParameter("VoipId", voipId);
 		}
 	}
 
@@ -71,31 +97,31 @@ public class StartRobotTaskRequest extends RpcAcsRequest<StartRobotTaskResponse>
 		}
 	}
 
-	public String getScheduleTime() {
-		return this.scheduleTime;
+	public String getChannelId() {
+		return this.channelId;
 	}
 
-	public void setScheduleTime(String scheduleTime) {
-		this.scheduleTime = scheduleTime;
-		if(scheduleTime != null){
-			putQueryParameter("ScheduleTime", scheduleTime);
+	public void setChannelId(String channelId) {
+		this.channelId = channelId;
+		if(channelId != null){
+			putQueryParameter("ChannelId", channelId);
 		}
 	}
 
-	public Long getTaskId() {
-		return this.taskId;
+	public String getDesc() {
+		return this.desc;
 	}
 
-	public void setTaskId(Long taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId.toString());
+	public void setDesc(String desc) {
+		this.desc = desc;
+		if(desc != null){
+			putQueryParameter("Desc", desc);
 		}
 	}
 
 	@Override
-	public Class<StartRobotTaskResponse> getResponseClass() {
-		return StartRobotTaskResponse.class;
+	public Class<ReportVoipProblemsResponse> getResponseClass() {
+		return ReportVoipProblemsResponse.class;
 	}
 
 }

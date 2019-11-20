@@ -30,7 +30,7 @@ public class QueryRobotv2AllListRequest extends RpcAcsRequest<QueryRobotv2AllLis
 
 	private Long ownerId;
 	public QueryRobotv2AllListRequest() {
-		super("Dyvmsapi", "2017-05-25", "QueryRobotv2AllList");
+		super("Dyvmsapi", "2017-05-25", "QueryRobotv2AllList", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

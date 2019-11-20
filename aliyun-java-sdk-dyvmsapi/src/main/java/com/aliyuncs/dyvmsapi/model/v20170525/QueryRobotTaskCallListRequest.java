@@ -50,7 +50,7 @@ public class QueryRobotTaskCallListRequest extends RpcAcsRequest<QueryRobotTaskC
 
 	private String callResult;
 	public QueryRobotTaskCallListRequest() {
-		super("Dyvmsapi", "2017-05-25", "QueryRobotTaskCallList");
+		super("Dyvmsapi", "2017-05-25", "QueryRobotTaskCallList", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

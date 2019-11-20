@@ -36,7 +36,7 @@ public class QueryRobotTaskCallDetailRequest extends RpcAcsRequest<QueryRobotTas
 
 	private Long ownerId;
 	public QueryRobotTaskCallDetailRequest() {
-		super("Dyvmsapi", "2017-05-25", "QueryRobotTaskCallDetail");
+		super("Dyvmsapi", "2017-05-25", "QueryRobotTaskCallDetail", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

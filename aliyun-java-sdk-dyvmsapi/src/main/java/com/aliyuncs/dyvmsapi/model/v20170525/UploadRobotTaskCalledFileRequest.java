@@ -38,7 +38,7 @@ public class UploadRobotTaskCalledFileRequest extends RpcAcsRequest<UploadRobotT
 
 	private Long ownerId;
 	public UploadRobotTaskCalledFileRequest() {
-		super("Dyvmsapi", "2017-05-25", "UploadRobotTaskCalledFile");
+		super("Dyvmsapi", "2017-05-25", "UploadRobotTaskCalledFile", "dyvms");
 		setMethod(MethodType.POST);
 	}
 

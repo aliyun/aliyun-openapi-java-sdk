@@ -36,7 +36,7 @@ public class QueryCallDetailByCallIdRequest extends RpcAcsRequest<QueryCallDetai
 
 	private Long ownerId;
 	public QueryCallDetailByCallIdRequest() {
-		super("Dyvmsapi", "2017-05-25", "QueryCallDetailByCallId");
+		super("Dyvmsapi", "2017-05-25", "QueryCallDetailByCallId", "dyvms");
 		setMethod(MethodType.POST);
 	}
 
