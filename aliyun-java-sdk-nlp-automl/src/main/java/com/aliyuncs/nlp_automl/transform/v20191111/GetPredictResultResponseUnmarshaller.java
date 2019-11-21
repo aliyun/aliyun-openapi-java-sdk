@@ -24,9 +24,6 @@ public class GetPredictResultResponseUnmarshaller {
 		
 		getPredictResultResponse.setRequestId(_ctx.stringValue("GetPredictResultResponse.RequestId"));
 		getPredictResultResponse.setContent(_ctx.stringValue("GetPredictResultResponse.Content"));
-		getPredictResultResponse.setCode(_ctx.integerValue("GetPredictResultResponse.Code"));
-		getPredictResultResponse.setMessage(_ctx.stringValue("GetPredictResultResponse.Message"));
-		getPredictResultResponse.setSuccess(_ctx.booleanValue("GetPredictResultResponse.Success"));
 	 
 	 	return getPredictResultResponse;
 	}
