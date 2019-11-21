@@ -22,21 +22,21 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreateConsumerGroupRequest extends RpcAcsRequest<CreateConsumerGroupResponse> {
-	
-	public CreateConsumerGroupRequest() {
-		super("Dts", "2018-08-01", "CreateConsumerGroup", "dts");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String consumerGroupName;
-
-	private String consumerGroupUserName;
 
 	private String subscriptionInstanceId;
 
 	private String ownerId;
 
 	private String consumerGroupPassword;
+
+	private String consumerGroupUserName;
+	public CreateConsumerGroupRequest() {
+		super("Dts", "2018-08-01", "CreateConsumerGroup", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getConsumerGroupName() {
 		return this.consumerGroupName;
@@ -46,17 +46,6 @@ public class CreateConsumerGroupRequest extends RpcAcsRequest<CreateConsumerGrou
 		this.consumerGroupName = consumerGroupName;
 		if(consumerGroupName != null){
 			putQueryParameter("ConsumerGroupName", consumerGroupName);
-		}
-	}
-
-	public String getConsumerGroupUserName() {
-		return this.consumerGroupUserName;
-	}
-
-	public void setConsumerGroupUserName(String consumerGroupUserName) {
-		this.consumerGroupUserName = consumerGroupUserName;
-		if(consumerGroupUserName != null){
-			putQueryParameter("ConsumerGroupUserName", consumerGroupUserName);
 		}
 	}
 
@@ -90,6 +79,17 @@ public class CreateConsumerGroupRequest extends RpcAcsRequest<CreateConsumerGrou
 		this.consumerGroupPassword = consumerGroupPassword;
 		if(consumerGroupPassword != null){
 			putQueryParameter("ConsumerGroupPassword", consumerGroupPassword);
+		}
+	}
+
+	public String getConsumerGroupUserName() {
+		return this.consumerGroupUserName;
+	}
+
+	public void setConsumerGroupUserName(String consumerGroupUserName) {
+		this.consumerGroupUserName = consumerGroupUserName;
+		if(consumerGroupUserName != null){
+			putQueryParameter("ConsumerGroupUserName", consumerGroupUserName);
 		}
 	}
 

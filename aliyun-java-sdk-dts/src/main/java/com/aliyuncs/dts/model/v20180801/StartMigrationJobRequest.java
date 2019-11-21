@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class StartMigrationJobRequest extends RpcAcsRequest<StartMigrationJobResponse> {
-	
-	public StartMigrationJobRequest() {
-		super("Dts", "2018-08-01", "StartMigrationJob", "dts");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String migrationJobId;
 
 	private String ownerId;
+	public StartMigrationJobRequest() {
+		super("Dts", "2018-08-01", "StartMigrationJob", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getMigrationJobId() {
 		return this.migrationJobId;

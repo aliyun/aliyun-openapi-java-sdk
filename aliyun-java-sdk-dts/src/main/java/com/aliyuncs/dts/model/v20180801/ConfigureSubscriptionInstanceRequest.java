@@ -22,27 +22,33 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<ConfigureSubscriptionInstanceResponse> {
-	
-	public ConfigureSubscriptionInstanceRequest() {
-		super("Dts", "2018-08-01", "ConfigureSubscriptionInstance", "dts");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String sourceEndpointInstanceID;
 
-	private String sourceEndpointPort;
-
 	private String sourceEndpointOracleSID;
 
-	private String sourceEndpointOwnerID;
-
 	private String sourceEndpointIP;
+
+	private Boolean subscriptionDataTypeDML;
+
+	private String sourceEndpointInstanceType;
+
+	private String subscriptionObject;
+
+	private String subscriptionInstanceVSwitchId;
+
+	private String sourceEndpointUserName;
+
+	private String sourceEndpointDatabaseName;
+
+	private String sourceEndpointPort;
+
+	private String sourceEndpointOwnerID;
 
 	private String subscriptionInstanceVPCId;
 
 	private String subscriptionInstanceNetworkType;
-
-	private Boolean subscriptionDataTypeDML;
 
 	private String subscriptionInstanceId;
 
@@ -50,21 +56,15 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 
 	private String ownerId;
 
-	private String sourceEndpointInstanceType;
-
 	private Boolean subscriptionDataTypeDDL;
 
 	private String sourceEndpointPassword;
 
-	private String subscriptionObject;
-
-	private String subscriptionInstanceVSwitchId;
-
 	private String subscriptionInstanceName;
-
-	private String sourceEndpointUserName;
-
-	private String sourceEndpointDatabaseName;
+	public ConfigureSubscriptionInstanceRequest() {
+		super("Dts", "2018-08-01", "ConfigureSubscriptionInstance", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSourceEndpointInstanceID() {
 		return this.sourceEndpointInstanceID;
@@ -74,17 +74,6 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 		this.sourceEndpointInstanceID = sourceEndpointInstanceID;
 		if(sourceEndpointInstanceID != null){
 			putQueryParameter("SourceEndpoint.InstanceID", sourceEndpointInstanceID);
-		}
-	}
-
-	public String getSourceEndpointPort() {
-		return this.sourceEndpointPort;
-	}
-
-	public void setSourceEndpointPort(String sourceEndpointPort) {
-		this.sourceEndpointPort = sourceEndpointPort;
-		if(sourceEndpointPort != null){
-			putQueryParameter("SourceEndpoint.Port", sourceEndpointPort);
 		}
 	}
 
@@ -99,17 +88,6 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 		}
 	}
 
-	public String getSourceEndpointOwnerID() {
-		return this.sourceEndpointOwnerID;
-	}
-
-	public void setSourceEndpointOwnerID(String sourceEndpointOwnerID) {
-		this.sourceEndpointOwnerID = sourceEndpointOwnerID;
-		if(sourceEndpointOwnerID != null){
-			putQueryParameter("SourceEndpoint.OwnerID", sourceEndpointOwnerID);
-		}
-	}
-
 	public String getSourceEndpointIP() {
 		return this.sourceEndpointIP;
 	}
@@ -118,6 +96,94 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 		this.sourceEndpointIP = sourceEndpointIP;
 		if(sourceEndpointIP != null){
 			putQueryParameter("SourceEndpoint.IP", sourceEndpointIP);
+		}
+	}
+
+	public Boolean getSubscriptionDataTypeDML() {
+		return this.subscriptionDataTypeDML;
+	}
+
+	public void setSubscriptionDataTypeDML(Boolean subscriptionDataTypeDML) {
+		this.subscriptionDataTypeDML = subscriptionDataTypeDML;
+		if(subscriptionDataTypeDML != null){
+			putQueryParameter("SubscriptionDataType.DML", subscriptionDataTypeDML.toString());
+		}
+	}
+
+	public String getSourceEndpointInstanceType() {
+		return this.sourceEndpointInstanceType;
+	}
+
+	public void setSourceEndpointInstanceType(String sourceEndpointInstanceType) {
+		this.sourceEndpointInstanceType = sourceEndpointInstanceType;
+		if(sourceEndpointInstanceType != null){
+			putQueryParameter("SourceEndpoint.InstanceType", sourceEndpointInstanceType);
+		}
+	}
+
+	public String getSubscriptionObject() {
+		return this.subscriptionObject;
+	}
+
+	public void setSubscriptionObject(String subscriptionObject) {
+		this.subscriptionObject = subscriptionObject;
+		if(subscriptionObject != null){
+			putQueryParameter("SubscriptionObject", subscriptionObject);
+		}
+	}
+
+	public String getSubscriptionInstanceVSwitchId() {
+		return this.subscriptionInstanceVSwitchId;
+	}
+
+	public void setSubscriptionInstanceVSwitchId(String subscriptionInstanceVSwitchId) {
+		this.subscriptionInstanceVSwitchId = subscriptionInstanceVSwitchId;
+		if(subscriptionInstanceVSwitchId != null){
+			putQueryParameter("SubscriptionInstance.VSwitchId", subscriptionInstanceVSwitchId);
+		}
+	}
+
+	public String getSourceEndpointUserName() {
+		return this.sourceEndpointUserName;
+	}
+
+	public void setSourceEndpointUserName(String sourceEndpointUserName) {
+		this.sourceEndpointUserName = sourceEndpointUserName;
+		if(sourceEndpointUserName != null){
+			putQueryParameter("SourceEndpoint.UserName", sourceEndpointUserName);
+		}
+	}
+
+	public String getSourceEndpointDatabaseName() {
+		return this.sourceEndpointDatabaseName;
+	}
+
+	public void setSourceEndpointDatabaseName(String sourceEndpointDatabaseName) {
+		this.sourceEndpointDatabaseName = sourceEndpointDatabaseName;
+		if(sourceEndpointDatabaseName != null){
+			putQueryParameter("SourceEndpoint.DatabaseName", sourceEndpointDatabaseName);
+		}
+	}
+
+	public String getSourceEndpointPort() {
+		return this.sourceEndpointPort;
+	}
+
+	public void setSourceEndpointPort(String sourceEndpointPort) {
+		this.sourceEndpointPort = sourceEndpointPort;
+		if(sourceEndpointPort != null){
+			putQueryParameter("SourceEndpoint.Port", sourceEndpointPort);
+		}
+	}
+
+	public String getSourceEndpointOwnerID() {
+		return this.sourceEndpointOwnerID;
+	}
+
+	public void setSourceEndpointOwnerID(String sourceEndpointOwnerID) {
+		this.sourceEndpointOwnerID = sourceEndpointOwnerID;
+		if(sourceEndpointOwnerID != null){
+			putQueryParameter("SourceEndpoint.OwnerID", sourceEndpointOwnerID);
 		}
 	}
 
@@ -140,17 +206,6 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 		this.subscriptionInstanceNetworkType = subscriptionInstanceNetworkType;
 		if(subscriptionInstanceNetworkType != null){
 			putQueryParameter("SubscriptionInstanceNetworkType", subscriptionInstanceNetworkType);
-		}
-	}
-
-	public Boolean getSubscriptionDataTypeDML() {
-		return this.subscriptionDataTypeDML;
-	}
-
-	public void setSubscriptionDataTypeDML(Boolean subscriptionDataTypeDML) {
-		this.subscriptionDataTypeDML = subscriptionDataTypeDML;
-		if(subscriptionDataTypeDML != null){
-			putQueryParameter("SubscriptionDataType.DML", subscriptionDataTypeDML.toString());
 		}
 	}
 
@@ -187,17 +242,6 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 		}
 	}
 
-	public String getSourceEndpointInstanceType() {
-		return this.sourceEndpointInstanceType;
-	}
-
-	public void setSourceEndpointInstanceType(String sourceEndpointInstanceType) {
-		this.sourceEndpointInstanceType = sourceEndpointInstanceType;
-		if(sourceEndpointInstanceType != null){
-			putQueryParameter("SourceEndpoint.InstanceType", sourceEndpointInstanceType);
-		}
-	}
-
 	public Boolean getSubscriptionDataTypeDDL() {
 		return this.subscriptionDataTypeDDL;
 	}
@@ -220,28 +264,6 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 		}
 	}
 
-	public String getSubscriptionObject() {
-		return this.subscriptionObject;
-	}
-
-	public void setSubscriptionObject(String subscriptionObject) {
-		this.subscriptionObject = subscriptionObject;
-		if(subscriptionObject != null){
-			putQueryParameter("SubscriptionObject", subscriptionObject);
-		}
-	}
-
-	public String getSubscriptionInstanceVSwitchId() {
-		return this.subscriptionInstanceVSwitchId;
-	}
-
-	public void setSubscriptionInstanceVSwitchId(String subscriptionInstanceVSwitchId) {
-		this.subscriptionInstanceVSwitchId = subscriptionInstanceVSwitchId;
-		if(subscriptionInstanceVSwitchId != null){
-			putQueryParameter("SubscriptionInstance.VSwitchId", subscriptionInstanceVSwitchId);
-		}
-	}
-
 	public String getSubscriptionInstanceName() {
 		return this.subscriptionInstanceName;
 	}
@@ -250,28 +272,6 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 		this.subscriptionInstanceName = subscriptionInstanceName;
 		if(subscriptionInstanceName != null){
 			putQueryParameter("SubscriptionInstanceName", subscriptionInstanceName);
-		}
-	}
-
-	public String getSourceEndpointUserName() {
-		return this.sourceEndpointUserName;
-	}
-
-	public void setSourceEndpointUserName(String sourceEndpointUserName) {
-		this.sourceEndpointUserName = sourceEndpointUserName;
-		if(sourceEndpointUserName != null){
-			putQueryParameter("SourceEndpoint.UserName", sourceEndpointUserName);
-		}
-	}
-
-	public String getSourceEndpointDatabaseName() {
-		return this.sourceEndpointDatabaseName;
-	}
-
-	public void setSourceEndpointDatabaseName(String sourceEndpointDatabaseName) {
-		this.sourceEndpointDatabaseName = sourceEndpointDatabaseName;
-		if(sourceEndpointDatabaseName != null){
-			putQueryParameter("SourceEndpoint.DatabaseName", sourceEndpointDatabaseName);
 		}
 	}
 

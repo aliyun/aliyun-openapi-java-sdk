@@ -15,22 +15,24 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ResetSynchronizationJobRequest extends RpcAcsRequest<ResetSynchronizationJobResponse> {
-	
-	public ResetSynchronizationJobRequest() {
-		super("Dts", "2018-08-01", "ResetSynchronizationJob", "dts");
-	}
+	   
 
 	private String synchronizationJobId;
 
 	private String ownerId;
 
 	private String synchronizationDirection;
+	public ResetSynchronizationJobRequest() {
+		super("Dts", "2018-08-01", "ResetSynchronizationJob", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSynchronizationJobId() {
 		return this.synchronizationJobId;

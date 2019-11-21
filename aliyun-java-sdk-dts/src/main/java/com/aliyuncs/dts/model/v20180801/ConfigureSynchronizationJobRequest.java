@@ -15,16 +15,14 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ConfigureSynchronizationJobRequest extends RpcAcsRequest<ConfigureSynchronizationJobResponse> {
-	
-	public ConfigureSynchronizationJobRequest() {
-		super("Dts", "2018-08-01", "ConfigureSynchronizationJob", "dts");
-	}
+	   
 
 	private String sourceEndpointInstanceId;
 
@@ -81,6 +79,10 @@ public class ConfigureSynchronizationJobRequest extends RpcAcsRequest<ConfigureS
 	private String destinationEndpointInstanceType;
 
 	private String synchronizationDirection;
+	public ConfigureSynchronizationJobRequest() {
+		super("Dts", "2018-08-01", "ConfigureSynchronizationJob", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSourceEndpointInstanceId() {
 		return this.sourceEndpointInstanceId;

@@ -15,45 +15,25 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMigrationJobsRequest extends RpcAcsRequest<DescribeMigrationJobsResponse> {
-	
-	public DescribeMigrationJobsRequest() {
-		super("Dts", "2018-08-01", "DescribeMigrationJobs", "dts");
-	}
-
-	private Integer pageSize;
-
-	private String migrationJobName;
+	   
 
 	private Integer pageNum;
 
 	private String ownerId;
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
+	private Integer pageSize;
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getMigrationJobName() {
-		return this.migrationJobName;
-	}
-
-	public void setMigrationJobName(String migrationJobName) {
-		this.migrationJobName = migrationJobName;
-		if(migrationJobName != null){
-			putQueryParameter("MigrationJobName", migrationJobName);
-		}
+	private String migrationJobName;
+	public DescribeMigrationJobsRequest() {
+		super("Dts", "2018-08-01", "DescribeMigrationJobs", "dts");
+		setMethod(MethodType.POST);
 	}
 
 	public Integer getPageNum() {
@@ -75,6 +55,28 @@ public class DescribeMigrationJobsRequest extends RpcAcsRequest<DescribeMigratio
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getMigrationJobName() {
+		return this.migrationJobName;
+	}
+
+	public void setMigrationJobName(String migrationJobName) {
+		this.migrationJobName = migrationJobName;
+		if(migrationJobName != null){
+			putQueryParameter("MigrationJobName", migrationJobName);
 		}
 	}
 

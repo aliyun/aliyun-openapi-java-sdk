@@ -15,22 +15,24 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMigrationJobAlertRequest extends RpcAcsRequest<DescribeMigrationJobAlertResponse> {
-	
-	public DescribeMigrationJobAlertRequest() {
-		super("Dts", "2018-08-01", "DescribeMigrationJobAlert", "dts");
-	}
+	   
 
 	private String clientToken;
 
 	private String migrationJobId;
 
 	private String ownerId;
+	public DescribeMigrationJobAlertRequest() {
+		super("Dts", "2018-08-01", "DescribeMigrationJobAlert", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getClientToken() {
 		return this.clientToken;

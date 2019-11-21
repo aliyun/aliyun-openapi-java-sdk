@@ -15,20 +15,14 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ConfigureMigrationJobAlertRequest extends RpcAcsRequest<ConfigureMigrationJobAlertResponse> {
-	
-	public ConfigureMigrationJobAlertRequest() {
-		super("Dts", "2018-08-01", "ConfigureMigrationJobAlert", "dts");
-	}
-
-	private String errorAlertPhone;
-
-	private String delayAlertPhone;
+	   
 
 	private String delayOverSeconds;
 
@@ -36,30 +30,16 @@ public class ConfigureMigrationJobAlertRequest extends RpcAcsRequest<ConfigureMi
 
 	private String migrationJobId;
 
-	private String errorAlertStatus;
-
 	private String ownerId;
 
-	public String getErrorAlertPhone() {
-		return this.errorAlertPhone;
-	}
+	private String errorAlertPhone;
 
-	public void setErrorAlertPhone(String errorAlertPhone) {
-		this.errorAlertPhone = errorAlertPhone;
-		if(errorAlertPhone != null){
-			putQueryParameter("ErrorAlertPhone", errorAlertPhone);
-		}
-	}
+	private String delayAlertPhone;
 
-	public String getDelayAlertPhone() {
-		return this.delayAlertPhone;
-	}
-
-	public void setDelayAlertPhone(String delayAlertPhone) {
-		this.delayAlertPhone = delayAlertPhone;
-		if(delayAlertPhone != null){
-			putQueryParameter("DelayAlertPhone", delayAlertPhone);
-		}
+	private String errorAlertStatus;
+	public ConfigureMigrationJobAlertRequest() {
+		super("Dts", "2018-08-01", "ConfigureMigrationJobAlert", "dts");
+		setMethod(MethodType.POST);
 	}
 
 	public String getDelayOverSeconds() {
@@ -95,17 +75,6 @@ public class ConfigureMigrationJobAlertRequest extends RpcAcsRequest<ConfigureMi
 		}
 	}
 
-	public String getErrorAlertStatus() {
-		return this.errorAlertStatus;
-	}
-
-	public void setErrorAlertStatus(String errorAlertStatus) {
-		this.errorAlertStatus = errorAlertStatus;
-		if(errorAlertStatus != null){
-			putQueryParameter("ErrorAlertStatus", errorAlertStatus);
-		}
-	}
-
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,6 +83,39 @@ public class ConfigureMigrationJobAlertRequest extends RpcAcsRequest<ConfigureMi
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getErrorAlertPhone() {
+		return this.errorAlertPhone;
+	}
+
+	public void setErrorAlertPhone(String errorAlertPhone) {
+		this.errorAlertPhone = errorAlertPhone;
+		if(errorAlertPhone != null){
+			putQueryParameter("ErrorAlertPhone", errorAlertPhone);
+		}
+	}
+
+	public String getDelayAlertPhone() {
+		return this.delayAlertPhone;
+	}
+
+	public void setDelayAlertPhone(String delayAlertPhone) {
+		this.delayAlertPhone = delayAlertPhone;
+		if(delayAlertPhone != null){
+			putQueryParameter("DelayAlertPhone", delayAlertPhone);
+		}
+	}
+
+	public String getErrorAlertStatus() {
+		return this.errorAlertStatus;
+	}
+
+	public void setErrorAlertStatus(String errorAlertStatus) {
+		this.errorAlertStatus = errorAlertStatus;
+		if(errorAlertStatus != null){
+			putQueryParameter("ErrorAlertStatus", errorAlertStatus);
 		}
 	}
 

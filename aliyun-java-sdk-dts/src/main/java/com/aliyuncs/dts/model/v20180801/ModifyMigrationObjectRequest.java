@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ModifyMigrationObjectRequest extends RpcAcsRequest<ModifyMigrationObjectResponse> {
-	
-	public ModifyMigrationObjectRequest() {
-		super("Dts", "2018-08-01", "ModifyMigrationObject", "dts");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String migrationObject;
 
@@ -35,6 +31,10 @@ public class ModifyMigrationObjectRequest extends RpcAcsRequest<ModifyMigrationO
 	private String migrationJobId;
 
 	private String ownerId;
+	public ModifyMigrationObjectRequest() {
+		super("Dts", "2018-08-01", "ModifyMigrationObject", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getMigrationObject() {
 		return this.migrationObject;

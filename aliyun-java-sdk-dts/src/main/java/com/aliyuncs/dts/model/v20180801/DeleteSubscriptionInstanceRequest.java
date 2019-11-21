@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteSubscriptionInstanceRequest extends RpcAcsRequest<DeleteSubscriptionInstanceResponse> {
-	
-	public DeleteSubscriptionInstanceRequest() {
-		super("Dts", "2018-08-01", "DeleteSubscriptionInstance", "dts");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String subscriptionInstanceId;
 
 	private String ownerId;
+	public DeleteSubscriptionInstanceRequest() {
+		super("Dts", "2018-08-01", "DeleteSubscriptionInstance", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSubscriptionInstanceId() {
 		return this.subscriptionInstanceId;

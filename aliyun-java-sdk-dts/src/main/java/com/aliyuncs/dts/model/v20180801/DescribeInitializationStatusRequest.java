@@ -15,45 +15,25 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeInitializationStatusRequest extends RpcAcsRequest<DescribeInitializationStatusResponse> {
-	
-	public DescribeInitializationStatusRequest() {
-		super("Dts", "2018-08-01", "DescribeInitializationStatus", "dts");
-	}
-
-	private String synchronizationJobId;
-
-	private Integer pageSize;
+	   
 
 	private Integer pageNum;
 
 	private String ownerId;
 
-	public String getSynchronizationJobId() {
-		return this.synchronizationJobId;
-	}
+	private String synchronizationJobId;
 
-	public void setSynchronizationJobId(String synchronizationJobId) {
-		this.synchronizationJobId = synchronizationJobId;
-		if(synchronizationJobId != null){
-			putQueryParameter("SynchronizationJobId", synchronizationJobId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+	private Integer pageSize;
+	public DescribeInitializationStatusRequest() {
+		super("Dts", "2018-08-01", "DescribeInitializationStatus", "dts");
+		setMethod(MethodType.POST);
 	}
 
 	public Integer getPageNum() {
@@ -75,6 +55,28 @@ public class DescribeInitializationStatusRequest extends RpcAcsRequest<DescribeI
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getSynchronizationJobId() {
+		return this.synchronizationJobId;
+	}
+
+	public void setSynchronizationJobId(String synchronizationJobId) {
+		this.synchronizationJobId = synchronizationJobId;
+		if(synchronizationJobId != null){
+			putQueryParameter("SynchronizationJobId", synchronizationJobId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

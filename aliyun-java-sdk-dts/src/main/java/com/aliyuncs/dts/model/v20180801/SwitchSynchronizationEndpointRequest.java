@@ -15,72 +15,37 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SwitchSynchronizationEndpointRequest extends RpcAcsRequest<SwitchSynchronizationEndpointResponse> {
-	
-	public SwitchSynchronizationEndpointRequest() {
-		super("Dts", "2018-08-01", "SwitchSynchronizationEndpoint", "dts");
-	}
-
-	private String synchronizationJobId;
-
-	private String endpointType;
+	   
 
 	private String endpointInstanceType;
 
-	private String endpointPort;
+	private String sourceEndpointOwnerID;
 
-	private String endpointInstanceId;
+	private String sourceEndpointRole;
 
 	private String endpointIP;
 
 	private String ownerId;
 
+	private String synchronizationJobId;
+
+	private String endpointType;
+
+	private String endpointPort;
+
+	private String endpointInstanceId;
+
 	private String synchronizationDirection;
-
-	public String getSynchronizationJobId() {
-		return this.synchronizationJobId;
-	}
-
-	public void setSynchronizationJobId(String synchronizationJobId) {
-		this.synchronizationJobId = synchronizationJobId;
-		if(synchronizationJobId != null){
-			putQueryParameter("SynchronizationJobId", synchronizationJobId);
-		}
-	}
-
-	public String getBizEndpointType() {
-		return this.endpointType;
-	}
-
-	public void setBizEndpointType(String endpointType) {
-		this.endpointType = endpointType;
-		if(endpointType != null){
-			putQueryParameter("Endpoint.Type", endpointType);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizEndpointType instead of this.
-	 */
-	@Deprecated
-	public String getEndpointType() {
-		return this.endpointType;
-	}
-
-	/**
-	 * @deprecated use setBizEndpointType instead of this.
-	 */
-	@Deprecated
-	public void setEndpointType(String endpointType) {
-		this.endpointType = endpointType;
-		if(endpointType != null){
-			putQueryParameter("Endpoint.Type", endpointType);
-		}
+	public SwitchSynchronizationEndpointRequest() {
+		super("Dts", "2018-08-01", "SwitchSynchronizationEndpoint", "dts");
+		setMethod(MethodType.POST);
 	}
 
 	public String getEndpointInstanceType() {
@@ -94,25 +59,25 @@ public class SwitchSynchronizationEndpointRequest extends RpcAcsRequest<SwitchSy
 		}
 	}
 
-	public String getEndpointPort() {
-		return this.endpointPort;
+	public String getSourceEndpointOwnerID() {
+		return this.sourceEndpointOwnerID;
 	}
 
-	public void setEndpointPort(String endpointPort) {
-		this.endpointPort = endpointPort;
-		if(endpointPort != null){
-			putQueryParameter("Endpoint.Port", endpointPort);
+	public void setSourceEndpointOwnerID(String sourceEndpointOwnerID) {
+		this.sourceEndpointOwnerID = sourceEndpointOwnerID;
+		if(sourceEndpointOwnerID != null){
+			putQueryParameter("SourceEndpoint.OwnerID", sourceEndpointOwnerID);
 		}
 	}
 
-	public String getEndpointInstanceId() {
-		return this.endpointInstanceId;
+	public String getSourceEndpointRole() {
+		return this.sourceEndpointRole;
 	}
 
-	public void setEndpointInstanceId(String endpointInstanceId) {
-		this.endpointInstanceId = endpointInstanceId;
-		if(endpointInstanceId != null){
-			putQueryParameter("Endpoint.InstanceId", endpointInstanceId);
+	public void setSourceEndpointRole(String sourceEndpointRole) {
+		this.sourceEndpointRole = sourceEndpointRole;
+		if(sourceEndpointRole != null){
+			putQueryParameter("SourceEndpoint.Role", sourceEndpointRole);
 		}
 	}
 
@@ -135,6 +100,50 @@ public class SwitchSynchronizationEndpointRequest extends RpcAcsRequest<SwitchSy
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getSynchronizationJobId() {
+		return this.synchronizationJobId;
+	}
+
+	public void setSynchronizationJobId(String synchronizationJobId) {
+		this.synchronizationJobId = synchronizationJobId;
+		if(synchronizationJobId != null){
+			putQueryParameter("SynchronizationJobId", synchronizationJobId);
+		}
+	}
+
+	public String getEndpointType() {
+		return this.endpointType;
+	}
+
+	public void setEndpointType(String endpointType) {
+		this.endpointType = endpointType;
+		if(endpointType != null){
+			putQueryParameter("Endpoint.Type", endpointType);
+		}
+	}
+
+	public String getEndpointPort() {
+		return this.endpointPort;
+	}
+
+	public void setEndpointPort(String endpointPort) {
+		this.endpointPort = endpointPort;
+		if(endpointPort != null){
+			putQueryParameter("Endpoint.Port", endpointPort);
+		}
+	}
+
+	public String getEndpointInstanceId() {
+		return this.endpointInstanceId;
+	}
+
+	public void setEndpointInstanceId(String endpointInstanceId) {
+		this.endpointInstanceId = endpointInstanceId;
+		if(endpointInstanceId != null){
+			putQueryParameter("Endpoint.InstanceId", endpointInstanceId);
 		}
 	}
 

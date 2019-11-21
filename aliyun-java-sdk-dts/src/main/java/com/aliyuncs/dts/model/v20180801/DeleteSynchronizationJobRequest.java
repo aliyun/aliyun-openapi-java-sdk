@@ -15,30 +15,21 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteSynchronizationJobRequest extends RpcAcsRequest<DeleteSynchronizationJobResponse> {
-	
-	public DeleteSynchronizationJobRequest() {
-		super("Dts", "2018-08-01", "DeleteSynchronizationJob", "dts");
-	}
-
-	private String synchronizationJobId;
+	   
 
 	private String ownerId;
 
-	public String getSynchronizationJobId() {
-		return this.synchronizationJobId;
-	}
-
-	public void setSynchronizationJobId(String synchronizationJobId) {
-		this.synchronizationJobId = synchronizationJobId;
-		if(synchronizationJobId != null){
-			putQueryParameter("SynchronizationJobId", synchronizationJobId);
-		}
+	private String synchronizationJobId;
+	public DeleteSynchronizationJobRequest() {
+		super("Dts", "2018-08-01", "DeleteSynchronizationJob", "dts");
+		setMethod(MethodType.POST);
 	}
 
 	public String getOwnerId() {
@@ -49,6 +40,17 @@ public class DeleteSynchronizationJobRequest extends RpcAcsRequest<DeleteSynchro
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getSynchronizationJobId() {
+		return this.synchronizationJobId;
+	}
+
+	public void setSynchronizationJobId(String synchronizationJobId) {
+		this.synchronizationJobId = synchronizationJobId;
+		if(synchronizationJobId != null){
+			putQueryParameter("SynchronizationJobId", synchronizationJobId);
 		}
 	}
 

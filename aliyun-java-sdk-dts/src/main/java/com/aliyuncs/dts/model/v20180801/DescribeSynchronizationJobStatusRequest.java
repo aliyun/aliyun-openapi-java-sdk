@@ -15,34 +15,25 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSynchronizationJobStatusRequest extends RpcAcsRequest<DescribeSynchronizationJobStatusResponse> {
-	
-	public DescribeSynchronizationJobStatusRequest() {
-		super("Dts", "2018-08-01", "DescribeSynchronizationJobStatus", "dts");
-	}
-
-	private String synchronizationJobId;
+	   
 
 	private String clientToken;
 
 	private String ownerId;
 
+	private String synchronizationJobId;
+
 	private String synchronizationDirection;
-
-	public String getSynchronizationJobId() {
-		return this.synchronizationJobId;
-	}
-
-	public void setSynchronizationJobId(String synchronizationJobId) {
-		this.synchronizationJobId = synchronizationJobId;
-		if(synchronizationJobId != null){
-			putQueryParameter("SynchronizationJobId", synchronizationJobId);
-		}
+	public DescribeSynchronizationJobStatusRequest() {
+		super("Dts", "2018-08-01", "DescribeSynchronizationJobStatus", "dts");
+		setMethod(MethodType.POST);
 	}
 
 	public String getClientToken() {
@@ -64,6 +55,17 @@ public class DescribeSynchronizationJobStatusRequest extends RpcAcsRequest<Descr
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getSynchronizationJobId() {
+		return this.synchronizationJobId;
+	}
+
+	public void setSynchronizationJobId(String synchronizationJobId) {
+		this.synchronizationJobId = synchronizationJobId;
+		if(synchronizationJobId != null){
+			putQueryParameter("SynchronizationJobId", synchronizationJobId);
 		}
 	}
 

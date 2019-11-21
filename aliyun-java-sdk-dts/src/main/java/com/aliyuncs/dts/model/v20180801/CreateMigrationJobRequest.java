@@ -15,24 +15,26 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateMigrationJobRequest extends RpcAcsRequest<CreateMigrationJobResponse> {
-	
-	public CreateMigrationJobRequest() {
-		super("Dts", "2018-08-01", "CreateMigrationJob", "dts");
-	}
+	   
 
 	private String clientToken;
+
+	private String ownerId;
 
 	private String region;
 
 	private String migrationJobClass;
-
-	private String ownerId;
+	public CreateMigrationJobRequest() {
+		super("Dts", "2018-08-01", "CreateMigrationJob", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getClientToken() {
 		return this.clientToken;
@@ -42,6 +44,17 @@ public class CreateMigrationJobRequest extends RpcAcsRequest<CreateMigrationJobR
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 
@@ -64,17 +77,6 @@ public class CreateMigrationJobRequest extends RpcAcsRequest<CreateMigrationJobR
 		this.migrationJobClass = migrationJobClass;
 		if(migrationJobClass != null){
 			putQueryParameter("MigrationJobClass", migrationJobClass);
-		}
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

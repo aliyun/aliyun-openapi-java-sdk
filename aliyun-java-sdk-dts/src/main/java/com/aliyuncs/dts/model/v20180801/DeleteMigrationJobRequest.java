@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteMigrationJobRequest extends RpcAcsRequest<DeleteMigrationJobResponse> {
-	
-	public DeleteMigrationJobRequest() {
-		super("Dts", "2018-08-01", "DeleteMigrationJob", "dts");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String migrationJobId;
 
 	private String ownerId;
+	public DeleteMigrationJobRequest() {
+		super("Dts", "2018-08-01", "DeleteMigrationJob", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getMigrationJobId() {
 		return this.migrationJobId;

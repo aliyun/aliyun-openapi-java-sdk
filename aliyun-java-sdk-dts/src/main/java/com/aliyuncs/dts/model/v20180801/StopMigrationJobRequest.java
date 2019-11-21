@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class StopMigrationJobRequest extends RpcAcsRequest<StopMigrationJobResponse> {
-	
-	public StopMigrationJobRequest() {
-		super("Dts", "2018-08-01", "StopMigrationJob", "dts");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String clientToken;
 
 	private String migrationJobId;
 
 	private String ownerId;
+	public StopMigrationJobRequest() {
+		super("Dts", "2018-08-01", "StopMigrationJob", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getClientToken() {
 		return this.clientToken;

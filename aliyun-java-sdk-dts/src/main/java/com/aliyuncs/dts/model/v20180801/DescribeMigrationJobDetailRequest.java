@@ -15,24 +15,18 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMigrationJobDetailRequest extends RpcAcsRequest<DescribeMigrationJobDetailResponse> {
-	
-	public DescribeMigrationJobDetailRequest() {
-		super("Dts", "2018-08-01", "DescribeMigrationJobDetail", "dts");
-	}
-
-	private Boolean migrationModeDataSynchronization;
+	   
 
 	private String clientToken;
 
 	private Boolean migrationModeDataInitialization;
-
-	private Integer pageSize;
 
 	private String migrationJobId;
 
@@ -42,15 +36,12 @@ public class DescribeMigrationJobDetailRequest extends RpcAcsRequest<DescribeMig
 
 	private Boolean migrationModeStructureInitialization;
 
-	public Boolean getMigrationModeDataSynchronization() {
-		return this.migrationModeDataSynchronization;
-	}
+	private Boolean migrationModeDataSynchronization;
 
-	public void setMigrationModeDataSynchronization(Boolean migrationModeDataSynchronization) {
-		this.migrationModeDataSynchronization = migrationModeDataSynchronization;
-		if(migrationModeDataSynchronization != null){
-			putQueryParameter("MigrationMode.DataSynchronization", migrationModeDataSynchronization.toString());
-		}
+	private Integer pageSize;
+	public DescribeMigrationJobDetailRequest() {
+		super("Dts", "2018-08-01", "DescribeMigrationJobDetail", "dts");
+		setMethod(MethodType.POST);
 	}
 
 	public String getClientToken() {
@@ -72,17 +63,6 @@ public class DescribeMigrationJobDetailRequest extends RpcAcsRequest<DescribeMig
 		this.migrationModeDataInitialization = migrationModeDataInitialization;
 		if(migrationModeDataInitialization != null){
 			putQueryParameter("MigrationMode.DataInitialization", migrationModeDataInitialization.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -127,6 +107,28 @@ public class DescribeMigrationJobDetailRequest extends RpcAcsRequest<DescribeMig
 		this.migrationModeStructureInitialization = migrationModeStructureInitialization;
 		if(migrationModeStructureInitialization != null){
 			putQueryParameter("MigrationMode.StructureInitialization", migrationModeStructureInitialization.toString());
+		}
+	}
+
+	public Boolean getMigrationModeDataSynchronization() {
+		return this.migrationModeDataSynchronization;
+	}
+
+	public void setMigrationModeDataSynchronization(Boolean migrationModeDataSynchronization) {
+		this.migrationModeDataSynchronization = migrationModeDataSynchronization;
+		if(migrationModeDataSynchronization != null){
+			putQueryParameter("MigrationMode.DataSynchronization", migrationModeDataSynchronization.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

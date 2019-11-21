@@ -15,16 +15,14 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ConfigureMigrationJobRequest extends RpcAcsRequest<ConfigureMigrationJobResponse> {
-	
-	public ConfigureMigrationJobRequest() {
-		super("Dts", "2018-08-01", "ConfigureMigrationJob", "dts");
-	}
+	   
 
 	private String sourceEndpointInstanceID;
 
@@ -85,6 +83,10 @@ public class ConfigureMigrationJobRequest extends RpcAcsRequest<ConfigureMigrati
 	private String migrationJobName;
 
 	private String destinationEndpointInstanceType;
+	public ConfigureMigrationJobRequest() {
+		super("Dts", "2018-08-01", "ConfigureMigrationJob", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSourceEndpointInstanceID() {
 		return this.sourceEndpointInstanceID;

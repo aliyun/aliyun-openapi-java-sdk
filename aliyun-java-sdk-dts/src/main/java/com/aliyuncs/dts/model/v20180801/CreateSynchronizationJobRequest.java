@@ -15,16 +15,14 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateSynchronizationJobRequest extends RpcAcsRequest<CreateSynchronizationJobResponse> {
-	
-	public CreateSynchronizationJobRequest() {
-		super("Dts", "2018-08-01", "CreateSynchronizationJob", "dts");
-	}
+	   
 
 	private String period;
 
@@ -34,21 +32,25 @@ public class CreateSynchronizationJobRequest extends RpcAcsRequest<CreateSynchro
 
 	private String topology;
 
-	private String synchronizationJobClass;
-
 	private String networkType;
 
 	private String ownerId;
-
-	private String sourceRegion;
-
-	private String payType;
 
 	private Integer usedTime;
 
 	private String sourceEndpointInstanceType;
 
+	private String synchronizationJobClass;
+
+	private String sourceRegion;
+
+	private String payType;
+
 	private String destinationEndpointInstanceType;
+	public CreateSynchronizationJobRequest() {
+		super("Dts", "2018-08-01", "CreateSynchronizationJob", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getPeriod() {
 		return this.period;
@@ -94,17 +96,6 @@ public class CreateSynchronizationJobRequest extends RpcAcsRequest<CreateSynchro
 		}
 	}
 
-	public String getSynchronizationJobClass() {
-		return this.synchronizationJobClass;
-	}
-
-	public void setSynchronizationJobClass(String synchronizationJobClass) {
-		this.synchronizationJobClass = synchronizationJobClass;
-		if(synchronizationJobClass != null){
-			putQueryParameter("SynchronizationJobClass", synchronizationJobClass);
-		}
-	}
-
 	public String getNetworkType() {
 		return this.networkType;
 	}
@@ -127,28 +118,6 @@ public class CreateSynchronizationJobRequest extends RpcAcsRequest<CreateSynchro
 		}
 	}
 
-	public String getSourceRegion() {
-		return this.sourceRegion;
-	}
-
-	public void setSourceRegion(String sourceRegion) {
-		this.sourceRegion = sourceRegion;
-		if(sourceRegion != null){
-			putQueryParameter("SourceRegion", sourceRegion);
-		}
-	}
-
-	public String getPayType() {
-		return this.payType;
-	}
-
-	public void setPayType(String payType) {
-		this.payType = payType;
-		if(payType != null){
-			putQueryParameter("PayType", payType);
-		}
-	}
-
 	public Integer getUsedTime() {
 		return this.usedTime;
 	}
@@ -168,6 +137,39 @@ public class CreateSynchronizationJobRequest extends RpcAcsRequest<CreateSynchro
 		this.sourceEndpointInstanceType = sourceEndpointInstanceType;
 		if(sourceEndpointInstanceType != null){
 			putQueryParameter("SourceEndpoint.InstanceType", sourceEndpointInstanceType);
+		}
+	}
+
+	public String getSynchronizationJobClass() {
+		return this.synchronizationJobClass;
+	}
+
+	public void setSynchronizationJobClass(String synchronizationJobClass) {
+		this.synchronizationJobClass = synchronizationJobClass;
+		if(synchronizationJobClass != null){
+			putQueryParameter("SynchronizationJobClass", synchronizationJobClass);
+		}
+	}
+
+	public String getSourceRegion() {
+		return this.sourceRegion;
+	}
+
+	public void setSourceRegion(String sourceRegion) {
+		this.sourceRegion = sourceRegion;
+		if(sourceRegion != null){
+			putQueryParameter("SourceRegion", sourceRegion);
+		}
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
 		}
 	}
 

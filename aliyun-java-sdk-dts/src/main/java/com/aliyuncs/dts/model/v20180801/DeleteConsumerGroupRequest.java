@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteConsumerGroupRequest extends RpcAcsRequest<DeleteConsumerGroupResponse> {
-	
-	public DeleteConsumerGroupRequest() {
-		super("Dts", "2018-08-01", "DeleteConsumerGroup", "dts");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String consumerGroupID;
 
 	private String subscriptionInstanceId;
 
 	private String ownerId;
+	public DeleteConsumerGroupRequest() {
+		super("Dts", "2018-08-01", "DeleteConsumerGroup", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getConsumerGroupID() {
 		return this.consumerGroupID;

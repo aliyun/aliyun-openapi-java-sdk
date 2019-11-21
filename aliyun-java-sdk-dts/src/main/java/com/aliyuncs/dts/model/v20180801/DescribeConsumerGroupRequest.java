@@ -15,18 +15,14 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeConsumerGroupRequest extends RpcAcsRequest<DescribeConsumerGroupResponse> {
-	
-	public DescribeConsumerGroupRequest() {
-		super("Dts", "2018-08-01", "DescribeConsumerGroup", "dts");
-	}
-
-	private Integer pageSize;
+	   
 
 	private String subscriptionInstanceId;
 
@@ -34,15 +30,10 @@ public class DescribeConsumerGroupRequest extends RpcAcsRequest<DescribeConsumer
 
 	private String ownerId;
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+	private Integer pageSize;
+	public DescribeConsumerGroupRequest() {
+		super("Dts", "2018-08-01", "DescribeConsumerGroup", "dts");
+		setMethod(MethodType.POST);
 	}
 
 	public String getSubscriptionInstanceId() {
@@ -75,6 +66,17 @@ public class DescribeConsumerGroupRequest extends RpcAcsRequest<DescribeConsumer
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

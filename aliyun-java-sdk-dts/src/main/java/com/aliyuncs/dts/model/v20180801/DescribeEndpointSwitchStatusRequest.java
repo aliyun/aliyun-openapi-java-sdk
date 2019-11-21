@@ -15,22 +15,24 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeEndpointSwitchStatusRequest extends RpcAcsRequest<DescribeEndpointSwitchStatusResponse> {
-	
-	public DescribeEndpointSwitchStatusRequest() {
-		super("Dts", "2018-08-01", "DescribeEndpointSwitchStatus", "dts");
-	}
+	   
 
 	private String clientToken;
 
 	private String ownerId;
 
 	private String taskId;
+	public DescribeEndpointSwitchStatusRequest() {
+		super("Dts", "2018-08-01", "DescribeEndpointSwitchStatus", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getClientToken() {
 		return this.clientToken;

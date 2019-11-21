@@ -22,25 +22,25 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreateSubscriptionInstanceRequest extends RpcAcsRequest<CreateSubscriptionInstanceResponse> {
-	
-	public CreateSubscriptionInstanceRequest() {
-		super("Dts", "2018-08-01", "CreateSubscriptionInstance", "dts");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String period;
 
 	private String clientToken;
 
-	private String region;
-
 	private String ownerId;
-
-	private String payType;
 
 	private Integer usedTime;
 
 	private String sourceEndpointInstanceType;
+
+	private String region;
+
+	private String payType;
+	public CreateSubscriptionInstanceRequest() {
+		super("Dts", "2018-08-01", "CreateSubscriptionInstance", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getPeriod() {
 		return this.period;
@@ -64,17 +64,6 @@ public class CreateSubscriptionInstanceRequest extends RpcAcsRequest<CreateSubsc
 		}
 	}
 
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
-		}
-	}
-
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -83,17 +72,6 @@ public class CreateSubscriptionInstanceRequest extends RpcAcsRequest<CreateSubsc
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
-	public String getPayType() {
-		return this.payType;
-	}
-
-	public void setPayType(String payType) {
-		this.payType = payType;
-		if(payType != null){
-			putQueryParameter("PayType", payType);
 		}
 	}
 
@@ -116,6 +94,28 @@ public class CreateSubscriptionInstanceRequest extends RpcAcsRequest<CreateSubsc
 		this.sourceEndpointInstanceType = sourceEndpointInstanceType;
 		if(sourceEndpointInstanceType != null){
 			putQueryParameter("SourceEndpoint.InstanceType", sourceEndpointInstanceType);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
 		}
 	}
 

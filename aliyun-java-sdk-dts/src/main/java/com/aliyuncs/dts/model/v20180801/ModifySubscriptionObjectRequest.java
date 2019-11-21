@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ModifySubscriptionObjectRequest extends RpcAcsRequest<ModifySubscriptionObjectResponse> {
-	
-	public ModifySubscriptionObjectRequest() {
-		super("Dts", "2018-08-01", "ModifySubscriptionObject", "dts");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String subscriptionObject;
 
 	private String subscriptionInstanceId;
 
 	private String ownerId;
+	public ModifySubscriptionObjectRequest() {
+		super("Dts", "2018-08-01", "ModifySubscriptionObject", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSubscriptionObject() {
 		return this.subscriptionObject;

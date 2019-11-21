@@ -15,36 +15,27 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSynchronizationJobsRequest extends RpcAcsRequest<DescribeSynchronizationJobsResponse> {
-	
-	public DescribeSynchronizationJobsRequest() {
-		super("Dts", "2018-08-01", "DescribeSynchronizationJobs", "dts");
-	}
-
-	private String synchronizationJobName;
+	   
 
 	private String clientToken;
-
-	private Integer pageSize;
 
 	private Integer pageNum;
 
 	private String ownerId;
 
-	public String getSynchronizationJobName() {
-		return this.synchronizationJobName;
-	}
+	private String synchronizationJobName;
 
-	public void setSynchronizationJobName(String synchronizationJobName) {
-		this.synchronizationJobName = synchronizationJobName;
-		if(synchronizationJobName != null){
-			putQueryParameter("SynchronizationJobName", synchronizationJobName);
-		}
+	private Integer pageSize;
+	public DescribeSynchronizationJobsRequest() {
+		super("Dts", "2018-08-01", "DescribeSynchronizationJobs", "dts");
+		setMethod(MethodType.POST);
 	}
 
 	public String getClientToken() {
@@ -55,17 +46,6 @@ public class DescribeSynchronizationJobsRequest extends RpcAcsRequest<DescribeSy
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -88,6 +68,28 @@ public class DescribeSynchronizationJobsRequest extends RpcAcsRequest<DescribeSy
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getSynchronizationJobName() {
+		return this.synchronizationJobName;
+	}
+
+	public void setSynchronizationJobName(String synchronizationJobName) {
+		this.synchronizationJobName = synchronizationJobName;
+		if(synchronizationJobName != null){
+			putQueryParameter("SynchronizationJobName", synchronizationJobName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

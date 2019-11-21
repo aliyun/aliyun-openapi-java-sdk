@@ -15,20 +15,22 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSubscriptionInstanceStatusRequest extends RpcAcsRequest<DescribeSubscriptionInstanceStatusResponse> {
-	
-	public DescribeSubscriptionInstanceStatusRequest() {
-		super("Dts", "2018-08-01", "DescribeSubscriptionInstanceStatus", "dts");
-	}
+	   
 
 	private String subscriptionInstanceId;
 
 	private String ownerId;
+	public DescribeSubscriptionInstanceStatusRequest() {
+		super("Dts", "2018-08-01", "DescribeSubscriptionInstanceStatus", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSubscriptionInstanceId() {
 		return this.subscriptionInstanceId;

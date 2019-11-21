@@ -15,26 +15,28 @@
 package com.aliyuncs.dts.model.v20180801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSubscriptionInstancesRequest extends RpcAcsRequest<DescribeSubscriptionInstancesResponse> {
-	
-	public DescribeSubscriptionInstancesRequest() {
-		super("Dts", "2018-08-01", "DescribeSubscriptionInstances", "dts");
-	}
+	   
 
 	private String clientToken;
-
-	private Integer pageSize;
-
-	private String subscriptionInstanceName;
 
 	private Integer pageNum;
 
 	private String ownerId;
+
+	private Integer pageSize;
+
+	private String subscriptionInstanceName;
+	public DescribeSubscriptionInstancesRequest() {
+		super("Dts", "2018-08-01", "DescribeSubscriptionInstances", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getClientToken() {
 		return this.clientToken;
@@ -44,28 +46,6 @@ public class DescribeSubscriptionInstancesRequest extends RpcAcsRequest<Describe
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getSubscriptionInstanceName() {
-		return this.subscriptionInstanceName;
-	}
-
-	public void setSubscriptionInstanceName(String subscriptionInstanceName) {
-		this.subscriptionInstanceName = subscriptionInstanceName;
-		if(subscriptionInstanceName != null){
-			putQueryParameter("SubscriptionInstanceName", subscriptionInstanceName);
 		}
 	}
 
@@ -88,6 +68,28 @@ public class DescribeSubscriptionInstancesRequest extends RpcAcsRequest<Describe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSubscriptionInstanceName() {
+		return this.subscriptionInstanceName;
+	}
+
+	public void setSubscriptionInstanceName(String subscriptionInstanceName) {
+		this.subscriptionInstanceName = subscriptionInstanceName;
+		if(subscriptionInstanceName != null){
+			putQueryParameter("SubscriptionInstanceName", subscriptionInstanceName);
 		}
 	}
 

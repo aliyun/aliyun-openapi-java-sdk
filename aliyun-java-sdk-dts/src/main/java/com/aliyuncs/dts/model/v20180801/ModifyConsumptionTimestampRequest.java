@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ModifyConsumptionTimestampRequest extends RpcAcsRequest<ModifyConsumptionTimestampResponse> {
-	
-	public ModifyConsumptionTimestampRequest() {
-		super("Dts", "2018-08-01", "ModifyConsumptionTimestamp", "dts");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String subscriptionInstanceId;
 
 	private String consumptionTimestamp;
 
 	private String ownerId;
+	public ModifyConsumptionTimestampRequest() {
+		super("Dts", "2018-08-01", "ModifyConsumptionTimestamp", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSubscriptionInstanceId() {
 		return this.subscriptionInstanceId;

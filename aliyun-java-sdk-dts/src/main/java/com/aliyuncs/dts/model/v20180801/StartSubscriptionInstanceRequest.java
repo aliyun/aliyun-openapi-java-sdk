@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class StartSubscriptionInstanceRequest extends RpcAcsRequest<StartSubscriptionInstanceResponse> {
-	
-	public StartSubscriptionInstanceRequest() {
-		super("Dts", "2018-08-01", "StartSubscriptionInstance", "dts");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String subscriptionInstanceId;
 
 	private String ownerId;
+	public StartSubscriptionInstanceRequest() {
+		super("Dts", "2018-08-01", "StartSubscriptionInstance", "dts");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSubscriptionInstanceId() {
 		return this.subscriptionInstanceId;
