@@ -15,18 +15,20 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeConcernNecessityRequest extends RpcAcsRequest<DescribeConcernNecessityResponse> {
-	
-	public DescribeConcernNecessityRequest() {
-		super("Sas", "2018-12-03", "DescribeConcernNecessity", "sas");
-	}
+	   
 
 	private String lang;
+	public DescribeConcernNecessityRequest() {
+		super("Sas", "2018-12-03", "DescribeConcernNecessity", "sas");
+		setMethod(MethodType.POST);
+	}
 
 	public String getLang() {
 		return this.lang;

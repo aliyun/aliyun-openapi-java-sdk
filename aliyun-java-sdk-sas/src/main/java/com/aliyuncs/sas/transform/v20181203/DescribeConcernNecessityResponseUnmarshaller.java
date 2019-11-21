@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeConcernNecessityResponseUnmarshaller {
 
-	public static DescribeConcernNecessityResponse unmarshall(DescribeConcernNecessityResponse describeConcernNecessityResponse, UnmarshallerContext context) {
+	public static DescribeConcernNecessityResponse unmarshall(DescribeConcernNecessityResponse describeConcernNecessityResponse, UnmarshallerContext _ctx) {
 		
-		describeConcernNecessityResponse.setRequestId(context.stringValue("DescribeConcernNecessityResponse.RequestId"));
+		describeConcernNecessityResponse.setRequestId(_ctx.stringValue("DescribeConcernNecessityResponse.RequestId"));
 
 		List<String> concernNecessity = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeConcernNecessityResponse.ConcernNecessity.Length"); i++) {
-			concernNecessity.add(context.stringValue("DescribeConcernNecessityResponse.ConcernNecessity["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeConcernNecessityResponse.ConcernNecessity.Length"); i++) {
+			concernNecessity.add(_ctx.stringValue("DescribeConcernNecessityResponse.ConcernNecessity["+ i +"]"));
 		}
 		describeConcernNecessityResponse.setConcernNecessity(concernNecessity);
 	 

@@ -91,6 +91,20 @@ public class DescribeAlarmEventListResponse extends AcsResponse {
 
 		private Boolean canCancelFault;
 
+		private Boolean dealed;
+
+		private Long gmtModified;
+
+		private Boolean hasTraceInfo;
+
+		private String securityEventIds;
+
+		private String operateErrorCode;
+
+		private String alarmEventNameOriginal;
+
+		private String instanceId;
+
 		public String getAlarmUniqueInfo() {
 			return this.alarmUniqueInfo;
 		}
@@ -225,6 +239,62 @@ public class DescribeAlarmEventListResponse extends AcsResponse {
 
 		public void setCanCancelFault(Boolean canCancelFault) {
 			this.canCancelFault = canCancelFault;
+		}
+
+		public Boolean getDealed() {
+			return this.dealed;
+		}
+
+		public void setDealed(Boolean dealed) {
+			this.dealed = dealed;
+		}
+
+		public Long getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public Boolean getHasTraceInfo() {
+			return this.hasTraceInfo;
+		}
+
+		public void setHasTraceInfo(Boolean hasTraceInfo) {
+			this.hasTraceInfo = hasTraceInfo;
+		}
+
+		public String getSecurityEventIds() {
+			return this.securityEventIds;
+		}
+
+		public void setSecurityEventIds(String securityEventIds) {
+			this.securityEventIds = securityEventIds;
+		}
+
+		public String getOperateErrorCode() {
+			return this.operateErrorCode;
+		}
+
+		public void setOperateErrorCode(String operateErrorCode) {
+			this.operateErrorCode = operateErrorCode;
+		}
+
+		public String getAlarmEventNameOriginal() {
+			return this.alarmEventNameOriginal;
+		}
+
+		public void setAlarmEventNameOriginal(String alarmEventNameOriginal) {
+			this.alarmEventNameOriginal = alarmEventNameOriginal;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

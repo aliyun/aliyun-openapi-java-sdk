@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyCreateVulWhitelistResponseUnmarshaller {
 
-	public static ModifyCreateVulWhitelistResponse unmarshall(ModifyCreateVulWhitelistResponse modifyCreateVulWhitelistResponse, UnmarshallerContext context) {
+	public static ModifyCreateVulWhitelistResponse unmarshall(ModifyCreateVulWhitelistResponse modifyCreateVulWhitelistResponse, UnmarshallerContext _ctx) {
 		
-		modifyCreateVulWhitelistResponse.setRequestId(context.stringValue("ModifyCreateVulWhitelistResponse.RequestId"));
+		modifyCreateVulWhitelistResponse.setRequestId(_ctx.stringValue("ModifyCreateVulWhitelistResponse.RequestId"));
 	 
 	 	return modifyCreateVulWhitelistResponse;
 	}

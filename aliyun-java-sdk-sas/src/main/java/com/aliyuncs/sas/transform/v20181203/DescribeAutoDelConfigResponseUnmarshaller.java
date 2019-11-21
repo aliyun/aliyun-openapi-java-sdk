@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAutoDelConfigResponseUnmarshaller {
 
-	public static DescribeAutoDelConfigResponse unmarshall(DescribeAutoDelConfigResponse describeAutoDelConfigResponse, UnmarshallerContext context) {
+	public static DescribeAutoDelConfigResponse unmarshall(DescribeAutoDelConfigResponse describeAutoDelConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeAutoDelConfigResponse.setRequestId(context.stringValue("DescribeAutoDelConfigResponse.RequestId"));
-		describeAutoDelConfigResponse.setDays(context.integerValue("DescribeAutoDelConfigResponse.Days"));
+		describeAutoDelConfigResponse.setRequestId(_ctx.stringValue("DescribeAutoDelConfigResponse.RequestId"));
+		describeAutoDelConfigResponse.setDays(_ctx.integerValue("DescribeAutoDelConfigResponse.Days"));
 	 
 	 	return describeAutoDelConfigResponse;
 	}

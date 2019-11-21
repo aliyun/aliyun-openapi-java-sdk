@@ -15,20 +15,22 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeStrategyExecDetailRequest extends RpcAcsRequest<DescribeStrategyExecDetailResponse> {
-	
-	public DescribeStrategyExecDetailRequest() {
-		super("Sas", "2018-12-03", "DescribeStrategyExecDetail", "sas");
-	}
+	   
 
 	private String sourceIp;
 
 	private Integer strategyId;
+	public DescribeStrategyExecDetailRequest() {
+		super("Sas", "2018-12-03", "DescribeStrategyExecDetail", "sas");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSourceIp() {
 		return this.sourceIp;

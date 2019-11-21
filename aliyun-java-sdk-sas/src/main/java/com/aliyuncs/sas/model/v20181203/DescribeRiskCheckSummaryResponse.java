@@ -59,6 +59,10 @@ public class DescribeRiskCheckSummaryResponse extends AcsResponse {
 
 		private Long previousTime;
 
+		private Integer enabledRiskCount;
+
+		private Integer disabledRiskCount;
+
 		private List<LevelCount> riskLevelCount;
 
 		private List<Group> groups;
@@ -109,6 +113,22 @@ public class DescribeRiskCheckSummaryResponse extends AcsResponse {
 
 		public void setPreviousTime(Long previousTime) {
 			this.previousTime = previousTime;
+		}
+
+		public Integer getEnabledRiskCount() {
+			return this.enabledRiskCount;
+		}
+
+		public void setEnabledRiskCount(Integer enabledRiskCount) {
+			this.enabledRiskCount = enabledRiskCount;
+		}
+
+		public Integer getDisabledRiskCount() {
+			return this.disabledRiskCount;
+		}
+
+		public void setDisabledRiskCount(Integer disabledRiskCount) {
+			this.disabledRiskCount = disabledRiskCount;
 		}
 
 		public List<LevelCount> getRiskLevelCount() {

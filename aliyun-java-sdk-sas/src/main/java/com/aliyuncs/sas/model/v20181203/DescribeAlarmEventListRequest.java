@@ -15,16 +15,19 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEventListResponse> {
-	
-	public DescribeAlarmEventListRequest() {
-		super("Sas", "2018-12-03", "DescribeAlarmEventList", "sas");
-	}
+	   
+
+	private String alarmEventType;
+
+	private String remark;
 
 	private String alarmEventName;
 
@@ -32,19 +35,45 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 
 	private String pageSize;
 
-	private String alarmEventType;
-
-	private String dealed;
-
 	private String from;
-
-	private String remark;
-
-	private Integer currentPage;
 
 	private String lang;
 
+	private String groupId;
+
+	private String dealed;
+
+	private Integer currentPage;
+
+	private List<String> operateErrorCodeLists;
+
 	private String levels;
+	public DescribeAlarmEventListRequest() {
+		super("Sas", "2018-12-03", "DescribeAlarmEventList", "sas");
+		setMethod(MethodType.POST);
+	}
+
+	public String getAlarmEventType() {
+		return this.alarmEventType;
+	}
+
+	public void setAlarmEventType(String alarmEventType) {
+		this.alarmEventType = alarmEventType;
+		if(alarmEventType != null){
+			putQueryParameter("AlarmEventType", alarmEventType);
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
+		}
+	}
 
 	public String getAlarmEventName() {
 		return this.alarmEventName;
@@ -79,14 +108,36 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 		}
 	}
 
-	public String getAlarmEventType() {
-		return this.alarmEventType;
+	public String getFrom() {
+		return this.from;
 	}
 
-	public void setAlarmEventType(String alarmEventType) {
-		this.alarmEventType = alarmEventType;
-		if(alarmEventType != null){
-			putQueryParameter("AlarmEventType", alarmEventType);
+	public void setFrom(String from) {
+		this.from = from;
+		if(from != null){
+			putQueryParameter("From", from);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
@@ -101,28 +152,6 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 		}
 	}
 
-	public String getFrom() {
-		return this.from;
-	}
-
-	public void setFrom(String from) {
-		this.from = from;
-		if(from != null){
-			putQueryParameter("From", from);
-		}
-	}
-
-	public String getRemark() {
-		return this.remark;
-	}
-
-	public void setRemark(String remark) {
-		this.remark = remark;
-		if(remark != null){
-			putQueryParameter("Remark", remark);
-		}
-	}
-
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -134,15 +163,17 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
+	public List<String> getOperateErrorCodeLists() {
+		return this.operateErrorCodeLists;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
+	public void setOperateErrorCodeLists(List<String> operateErrorCodeLists) {
+		this.operateErrorCodeLists = operateErrorCodeLists;	
+		if (operateErrorCodeLists != null) {
+			for (int i = 0; i < operateErrorCodeLists.size(); i++) {
+				putQueryParameter("OperateErrorCodeList." + (i + 1) , operateErrorCodeLists.get(i));
+			}
+		}	
 	}
 
 	public String getLevels() {

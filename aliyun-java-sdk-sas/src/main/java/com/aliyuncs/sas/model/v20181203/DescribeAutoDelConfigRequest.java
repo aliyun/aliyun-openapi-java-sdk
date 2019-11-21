@@ -15,15 +15,17 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeAutoDelConfigRequest extends RpcAcsRequest<DescribeAutoDelConfigResponse> {
-	
+	   
 	public DescribeAutoDelConfigRequest() {
 		super("Sas", "2018-12-03", "DescribeAutoDelConfig", "sas");
+		setMethod(MethodType.POST);
 	}
 
 	@Override

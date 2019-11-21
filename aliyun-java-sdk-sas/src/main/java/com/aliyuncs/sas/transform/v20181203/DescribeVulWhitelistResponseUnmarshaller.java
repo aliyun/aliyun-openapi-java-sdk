@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeVulWhitelistResponseUnmarshaller {
 
-	public static DescribeVulWhitelistResponse unmarshall(DescribeVulWhitelistResponse describeVulWhitelistResponse, UnmarshallerContext context) {
+	public static DescribeVulWhitelistResponse unmarshall(DescribeVulWhitelistResponse describeVulWhitelistResponse, UnmarshallerContext _ctx) {
 		
-		describeVulWhitelistResponse.setRequestId(context.stringValue("DescribeVulWhitelistResponse.RequestId"));
-		describeVulWhitelistResponse.setPageSize(context.integerValue("DescribeVulWhitelistResponse.PageSize"));
-		describeVulWhitelistResponse.setCurrentPage(context.integerValue("DescribeVulWhitelistResponse.CurrentPage"));
-		describeVulWhitelistResponse.setTotalCount(context.integerValue("DescribeVulWhitelistResponse.TotalCount"));
+		describeVulWhitelistResponse.setRequestId(_ctx.stringValue("DescribeVulWhitelistResponse.RequestId"));
+		describeVulWhitelistResponse.setPageSize(_ctx.integerValue("DescribeVulWhitelistResponse.PageSize"));
+		describeVulWhitelistResponse.setCurrentPage(_ctx.integerValue("DescribeVulWhitelistResponse.CurrentPage"));
+		describeVulWhitelistResponse.setTotalCount(_ctx.integerValue("DescribeVulWhitelistResponse.TotalCount"));
 
 		List<VulWhitelist> vulWhitelists = new ArrayList<VulWhitelist>();
-		for (int i = 0; i < context.lengthValue("DescribeVulWhitelistResponse.VulWhitelists.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeVulWhitelistResponse.VulWhitelists.Length"); i++) {
 			VulWhitelist vulWhitelist = new VulWhitelist();
-			vulWhitelist.setName(context.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].Name"));
-			vulWhitelist.setType(context.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].Type"));
-			vulWhitelist.setAliasName(context.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].AliasName"));
-			vulWhitelist.setReason(context.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].Reason"));
+			vulWhitelist.setName(_ctx.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].Name"));
+			vulWhitelist.setType(_ctx.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].Type"));
+			vulWhitelist.setAliasName(_ctx.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].AliasName"));
+			vulWhitelist.setReason(_ctx.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].Reason"));
 
 			vulWhitelists.add(vulWhitelist);
 		}

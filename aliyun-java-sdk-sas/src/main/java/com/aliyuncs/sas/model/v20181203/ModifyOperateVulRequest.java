@@ -15,24 +15,26 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyOperateVulRequest extends RpcAcsRequest<ModifyOperateVulResponse> {
-	
-	public ModifyOperateVulRequest() {
-		super("Sas", "2018-12-03", "ModifyOperateVul", "sas");
-	}
+	   
 
 	private String reason;
 
-	private String operateType;
-
 	private String type;
 
+	private String operateType;
+
 	private String info;
+	public ModifyOperateVulRequest() {
+		super("Sas", "2018-12-03", "ModifyOperateVul", "sas");
+		setMethod(MethodType.POST);
+	}
 
 	public String getReason() {
 		return this.reason;
@@ -45,17 +47,6 @@ public class ModifyOperateVulRequest extends RpcAcsRequest<ModifyOperateVulRespo
 		}
 	}
 
-	public String getOperateType() {
-		return this.operateType;
-	}
-
-	public void setOperateType(String operateType) {
-		this.operateType = operateType;
-		if(operateType != null){
-			putQueryParameter("OperateType", operateType);
-		}
-	}
-
 	public String getType() {
 		return this.type;
 	}
@@ -64,6 +55,17 @@ public class ModifyOperateVulRequest extends RpcAcsRequest<ModifyOperateVulRespo
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getOperateType() {
+		return this.operateType;
+	}
+
+	public void setOperateType(String operateType) {
+		this.operateType = operateType;
+		if(operateType != null){
+			putQueryParameter("OperateType", operateType);
 		}
 	}
 

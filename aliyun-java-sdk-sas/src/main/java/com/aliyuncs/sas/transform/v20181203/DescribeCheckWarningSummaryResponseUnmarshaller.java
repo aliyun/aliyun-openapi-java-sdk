@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCheckWarningSummaryResponseUnmarshaller {
 
-	public static DescribeCheckWarningSummaryResponse unmarshall(DescribeCheckWarningSummaryResponse describeCheckWarningSummaryResponse, UnmarshallerContext context) {
+	public static DescribeCheckWarningSummaryResponse unmarshall(DescribeCheckWarningSummaryResponse describeCheckWarningSummaryResponse, UnmarshallerContext _ctx) {
 		
-		describeCheckWarningSummaryResponse.setRequestId(context.stringValue("DescribeCheckWarningSummaryResponse.RequestId"));
-		describeCheckWarningSummaryResponse.setCount(context.integerValue("DescribeCheckWarningSummaryResponse.Count"));
-		describeCheckWarningSummaryResponse.setPageSize(context.integerValue("DescribeCheckWarningSummaryResponse.PageSize"));
-		describeCheckWarningSummaryResponse.setTotalCount(context.integerValue("DescribeCheckWarningSummaryResponse.TotalCount"));
-		describeCheckWarningSummaryResponse.setCurrentPage(context.integerValue("DescribeCheckWarningSummaryResponse.CurrentPage"));
+		describeCheckWarningSummaryResponse.setRequestId(_ctx.stringValue("DescribeCheckWarningSummaryResponse.RequestId"));
+		describeCheckWarningSummaryResponse.setCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.Count"));
+		describeCheckWarningSummaryResponse.setPageSize(_ctx.integerValue("DescribeCheckWarningSummaryResponse.PageSize"));
+		describeCheckWarningSummaryResponse.setTotalCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.TotalCount"));
+		describeCheckWarningSummaryResponse.setCurrentPage(_ctx.integerValue("DescribeCheckWarningSummaryResponse.CurrentPage"));
 
 		List<WarningSummary> warningSummarys = new ArrayList<WarningSummary>();
-		for (int i = 0; i < context.lengthValue("DescribeCheckWarningSummaryResponse.WarningSummarys.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCheckWarningSummaryResponse.WarningSummarys.Length"); i++) {
 			WarningSummary warningSummary = new WarningSummary();
-			warningSummary.setRiskId(context.longValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].RiskId"));
-			warningSummary.setRiskName(context.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].RiskName"));
-			warningSummary.setTypeAlias(context.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].TypeAlias"));
-			warningSummary.setSubTypeAlias(context.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].SubTypeAlias"));
-			warningSummary.setLastFoundTime(context.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].LastFoundTime"));
-			warningSummary.setLevel(context.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].Level"));
-			warningSummary.setCheckCount(context.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].CheckCount"));
-			warningSummary.setHighWarningCount(context.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].HighWarningCount"));
-			warningSummary.setMediumWarningCount(context.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].MediumWarningCount"));
-			warningSummary.setLowWarningCount(context.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].LowWarningCount"));
-			warningSummary.setWarningMachineCount(context.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].WarningMachineCount"));
+			warningSummary.setRiskId(_ctx.longValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].RiskId"));
+			warningSummary.setRiskName(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].RiskName"));
+			warningSummary.setTypeAlias(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].TypeAlias"));
+			warningSummary.setSubTypeAlias(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].SubTypeAlias"));
+			warningSummary.setLastFoundTime(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].LastFoundTime"));
+			warningSummary.setLevel(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].Level"));
+			warningSummary.setCheckCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].CheckCount"));
+			warningSummary.setHighWarningCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].HighWarningCount"));
+			warningSummary.setMediumWarningCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].MediumWarningCount"));
+			warningSummary.setLowWarningCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].LowWarningCount"));
+			warningSummary.setWarningMachineCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].WarningMachineCount"));
 
 			warningSummarys.add(warningSummary);
 		}

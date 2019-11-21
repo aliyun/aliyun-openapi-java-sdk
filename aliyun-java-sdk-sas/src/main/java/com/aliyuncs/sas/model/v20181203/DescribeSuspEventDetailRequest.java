@@ -15,16 +15,14 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSuspEventDetailRequest extends RpcAcsRequest<DescribeSuspEventDetailResponse> {
-	
-	public DescribeSuspEventDetailRequest() {
-		super("Sas", "2018-12-03", "DescribeSuspEventDetail", "sas");
-	}
+	   
 
 	private Integer suspiciousEventId;
 
@@ -33,6 +31,10 @@ public class DescribeSuspEventDetailRequest extends RpcAcsRequest<DescribeSuspEv
 	private String from;
 
 	private String lang;
+	public DescribeSuspEventDetailRequest() {
+		super("Sas", "2018-12-03", "DescribeSuspEventDetail", "sas");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getSuspiciousEventId() {
 		return this.suspiciousEventId;

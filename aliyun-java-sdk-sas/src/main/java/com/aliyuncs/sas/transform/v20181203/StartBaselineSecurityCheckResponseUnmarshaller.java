@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StartBaselineSecurityCheckResponseUnmarshaller {
 
-	public static StartBaselineSecurityCheckResponse unmarshall(StartBaselineSecurityCheckResponse startBaselineSecurityCheckResponse, UnmarshallerContext context) {
+	public static StartBaselineSecurityCheckResponse unmarshall(StartBaselineSecurityCheckResponse startBaselineSecurityCheckResponse, UnmarshallerContext _ctx) {
 		
-		startBaselineSecurityCheckResponse.setRequestId(context.stringValue("StartBaselineSecurityCheckResponse.RequestId"));
+		startBaselineSecurityCheckResponse.setRequestId(_ctx.stringValue("StartBaselineSecurityCheckResponse.RequestId"));
 	 
 	 	return startBaselineSecurityCheckResponse;
 	}

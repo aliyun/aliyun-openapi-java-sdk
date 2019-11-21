@@ -15,24 +15,37 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeVulDetailsRequest extends RpcAcsRequest<DescribeVulDetailsResponse> {
-	
-	public DescribeVulDetailsRequest() {
-		super("Sas", "2018-12-03", "DescribeVulDetails", "sas");
-	}
+	   
+
+	private String type;
 
 	private String aliasName;
 
 	private String name;
 
 	private String lang;
+	public DescribeVulDetailsRequest() {
+		super("Sas", "2018-12-03", "DescribeVulDetails", "sas");
+		setMethod(MethodType.POST);
+	}
 
-	private String type;
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
 
 	public String getAliasName() {
 		return this.aliasName;
@@ -64,17 +77,6 @@ public class DescribeVulDetailsRequest extends RpcAcsRequest<DescribeVulDetailsR
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
 		}
 	}
 

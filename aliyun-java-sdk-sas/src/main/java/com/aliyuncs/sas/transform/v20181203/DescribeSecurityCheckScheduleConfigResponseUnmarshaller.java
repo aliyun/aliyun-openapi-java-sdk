@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSecurityCheckScheduleConfigResponseUnmarshaller {
 
-	public static DescribeSecurityCheckScheduleConfigResponse unmarshall(DescribeSecurityCheckScheduleConfigResponse describeSecurityCheckScheduleConfigResponse, UnmarshallerContext context) {
+	public static DescribeSecurityCheckScheduleConfigResponse unmarshall(DescribeSecurityCheckScheduleConfigResponse describeSecurityCheckScheduleConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeSecurityCheckScheduleConfigResponse.setRequestId(context.stringValue("DescribeSecurityCheckScheduleConfigResponse.RequestId"));
+		describeSecurityCheckScheduleConfigResponse.setRequestId(_ctx.stringValue("DescribeSecurityCheckScheduleConfigResponse.RequestId"));
 
 		RiskCheckJobConfig riskCheckJobConfig = new RiskCheckJobConfig();
-		riskCheckJobConfig.setStartTime(context.integerValue("DescribeSecurityCheckScheduleConfigResponse.RiskCheckJobConfig.StartTime"));
-		riskCheckJobConfig.setEndTime(context.integerValue("DescribeSecurityCheckScheduleConfigResponse.RiskCheckJobConfig.EndTime"));
-		riskCheckJobConfig.setDaysOfWeek(context.stringValue("DescribeSecurityCheckScheduleConfigResponse.RiskCheckJobConfig.DaysOfWeek"));
+		riskCheckJobConfig.setStartTime(_ctx.integerValue("DescribeSecurityCheckScheduleConfigResponse.RiskCheckJobConfig.StartTime"));
+		riskCheckJobConfig.setEndTime(_ctx.integerValue("DescribeSecurityCheckScheduleConfigResponse.RiskCheckJobConfig.EndTime"));
+		riskCheckJobConfig.setDaysOfWeek(_ctx.stringValue("DescribeSecurityCheckScheduleConfigResponse.RiskCheckJobConfig.DaysOfWeek"));
 		describeSecurityCheckScheduleConfigResponse.setRiskCheckJobConfig(riskCheckJobConfig);
 	 
 	 	return describeSecurityCheckScheduleConfigResponse;

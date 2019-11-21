@@ -15,22 +15,24 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSecurityCheckScheduleConfigRequest extends RpcAcsRequest<DescribeSecurityCheckScheduleConfigResponse> {
-	
-	public DescribeSecurityCheckScheduleConfigRequest() {
-		super("Sas", "2018-12-03", "DescribeSecurityCheckScheduleConfig", "sas");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String sourceIp;
 
 	private String lang;
+	public DescribeSecurityCheckScheduleConfigRequest() {
+		super("Sas", "2018-12-03", "DescribeSecurityCheckScheduleConfig", "sas");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

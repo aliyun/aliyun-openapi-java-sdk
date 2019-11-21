@@ -24,34 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSuspEventDetailResponseUnmarshaller {
 
-	public static DescribeSuspEventDetailResponse unmarshall(DescribeSuspEventDetailResponse describeSuspEventDetailResponse, UnmarshallerContext context) {
+	public static DescribeSuspEventDetailResponse unmarshall(DescribeSuspEventDetailResponse describeSuspEventDetailResponse, UnmarshallerContext _ctx) {
 		
-		describeSuspEventDetailResponse.setRequestId(context.stringValue("DescribeSuspEventDetailResponse.RequestId"));
-		describeSuspEventDetailResponse.setLastTime(context.stringValue("DescribeSuspEventDetailResponse.LastTime"));
-		describeSuspEventDetailResponse.setId(context.integerValue("DescribeSuspEventDetailResponse.Id"));
-		describeSuspEventDetailResponse.setInstanceName(context.stringValue("DescribeSuspEventDetailResponse.InstanceName"));
-		describeSuspEventDetailResponse.setInternetIp(context.stringValue("DescribeSuspEventDetailResponse.InternetIp"));
-		describeSuspEventDetailResponse.setIntranetIp(context.stringValue("DescribeSuspEventDetailResponse.IntranetIp"));
-		describeSuspEventDetailResponse.setUuid(context.stringValue("DescribeSuspEventDetailResponse.Uuid"));
-		describeSuspEventDetailResponse.setEventDesc(context.stringValue("DescribeSuspEventDetailResponse.EventDesc"));
-		describeSuspEventDetailResponse.setEventTypeDesc(context.stringValue("DescribeSuspEventDetailResponse.EventTypeDesc"));
-		describeSuspEventDetailResponse.setLevel(context.stringValue("DescribeSuspEventDetailResponse.Level"));
-		describeSuspEventDetailResponse.setEventStatus(context.stringValue("DescribeSuspEventDetailResponse.EventStatus"));
-		describeSuspEventDetailResponse.setSaleVersion(context.stringValue("DescribeSuspEventDetailResponse.SaleVersion"));
-		describeSuspEventDetailResponse.setDataSource(context.stringValue("DescribeSuspEventDetailResponse.DataSource"));
-		describeSuspEventDetailResponse.setType(context.stringValue("DescribeSuspEventDetailResponse.Type"));
-		describeSuspEventDetailResponse.setOperateMsg(context.stringValue("DescribeSuspEventDetailResponse.OperateMsg"));
-		describeSuspEventDetailResponse.setSasId(context.stringValue("DescribeSuspEventDetailResponse.SasId"));
-		describeSuspEventDetailResponse.setEventName(context.stringValue("DescribeSuspEventDetailResponse.EventName"));
-		describeSuspEventDetailResponse.setCanBeDealOnLine(context.booleanValue("DescribeSuspEventDetailResponse.CanBeDealOnLine"));
+		describeSuspEventDetailResponse.setRequestId(_ctx.stringValue("DescribeSuspEventDetailResponse.RequestId"));
+		describeSuspEventDetailResponse.setLastTime(_ctx.stringValue("DescribeSuspEventDetailResponse.LastTime"));
+		describeSuspEventDetailResponse.setId(_ctx.integerValue("DescribeSuspEventDetailResponse.Id"));
+		describeSuspEventDetailResponse.setInstanceName(_ctx.stringValue("DescribeSuspEventDetailResponse.InstanceName"));
+		describeSuspEventDetailResponse.setInternetIp(_ctx.stringValue("DescribeSuspEventDetailResponse.InternetIp"));
+		describeSuspEventDetailResponse.setIntranetIp(_ctx.stringValue("DescribeSuspEventDetailResponse.IntranetIp"));
+		describeSuspEventDetailResponse.setUuid(_ctx.stringValue("DescribeSuspEventDetailResponse.Uuid"));
+		describeSuspEventDetailResponse.setEventDesc(_ctx.stringValue("DescribeSuspEventDetailResponse.EventDesc"));
+		describeSuspEventDetailResponse.setEventTypeDesc(_ctx.stringValue("DescribeSuspEventDetailResponse.EventTypeDesc"));
+		describeSuspEventDetailResponse.setLevel(_ctx.stringValue("DescribeSuspEventDetailResponse.Level"));
+		describeSuspEventDetailResponse.setEventStatus(_ctx.stringValue("DescribeSuspEventDetailResponse.EventStatus"));
+		describeSuspEventDetailResponse.setSaleVersion(_ctx.stringValue("DescribeSuspEventDetailResponse.SaleVersion"));
+		describeSuspEventDetailResponse.setDataSource(_ctx.stringValue("DescribeSuspEventDetailResponse.DataSource"));
+		describeSuspEventDetailResponse.setType(_ctx.stringValue("DescribeSuspEventDetailResponse.Type"));
+		describeSuspEventDetailResponse.setOperateMsg(_ctx.stringValue("DescribeSuspEventDetailResponse.OperateMsg"));
+		describeSuspEventDetailResponse.setSasId(_ctx.stringValue("DescribeSuspEventDetailResponse.SasId"));
+		describeSuspEventDetailResponse.setEventName(_ctx.stringValue("DescribeSuspEventDetailResponse.EventName"));
+		describeSuspEventDetailResponse.setCanBeDealOnLine(_ctx.booleanValue("DescribeSuspEventDetailResponse.CanBeDealOnLine"));
 
 		List<QuaraFile> details = new ArrayList<QuaraFile>();
-		for (int i = 0; i < context.lengthValue("DescribeSuspEventDetailResponse.Details.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSuspEventDetailResponse.Details.Length"); i++) {
 			QuaraFile quaraFile = new QuaraFile();
-			quaraFile.setName(context.stringValue("DescribeSuspEventDetailResponse.Details["+ i +"].Name"));
-			quaraFile.setType(context.stringValue("DescribeSuspEventDetailResponse.Details["+ i +"].Type"));
-			quaraFile.setInfoType(context.stringValue("DescribeSuspEventDetailResponse.Details["+ i +"].InfoType"));
-			quaraFile.setValue(context.stringValue("DescribeSuspEventDetailResponse.Details["+ i +"].Value"));
+			quaraFile.setName(_ctx.stringValue("DescribeSuspEventDetailResponse.Details["+ i +"].Name"));
+			quaraFile.setType(_ctx.stringValue("DescribeSuspEventDetailResponse.Details["+ i +"].Type"));
+			quaraFile.setInfoType(_ctx.stringValue("DescribeSuspEventDetailResponse.Details["+ i +"].InfoType"));
+			quaraFile.setValue(_ctx.stringValue("DescribeSuspEventDetailResponse.Details["+ i +"].Value"));
 
 			details.add(quaraFile);
 		}

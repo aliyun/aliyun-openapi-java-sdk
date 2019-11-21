@@ -15,16 +15,14 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeWarningMachinesRequest extends RpcAcsRequest<DescribeWarningMachinesResponse> {
-	
-	public DescribeWarningMachinesRequest() {
-		super("Sas", "2018-12-03", "DescribeWarningMachines", "sas");
-	}
+	   
 
 	private String sourceIp;
 
@@ -32,15 +30,19 @@ public class DescribeWarningMachinesRequest extends RpcAcsRequest<DescribeWarnin
 
 	private String machineName;
 
-	private Long strategyId;
+	private String lang;
 
 	private Integer currentPage;
 
-	private String lang;
-
 	private Long riskId;
 
+	private Long strategyId;
+
 	private String uuids;
+	public DescribeWarningMachinesRequest() {
+		super("Sas", "2018-12-03", "DescribeWarningMachines", "sas");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -75,14 +77,14 @@ public class DescribeWarningMachinesRequest extends RpcAcsRequest<DescribeWarnin
 		}
 	}
 
-	public Long getStrategyId() {
-		return this.strategyId;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setStrategyId(Long strategyId) {
-		this.strategyId = strategyId;
-		if(strategyId != null){
-			putQueryParameter("StrategyId", strategyId.toString());
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
@@ -97,17 +99,6 @@ public class DescribeWarningMachinesRequest extends RpcAcsRequest<DescribeWarnin
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
 	public Long getRiskId() {
 		return this.riskId;
 	}
@@ -116,6 +107,17 @@ public class DescribeWarningMachinesRequest extends RpcAcsRequest<DescribeWarnin
 		this.riskId = riskId;
 		if(riskId != null){
 			putQueryParameter("RiskId", riskId.toString());
+		}
+	}
+
+	public Long getStrategyId() {
+		return this.strategyId;
+	}
+
+	public void setStrategyId(Long strategyId) {
+		this.strategyId = strategyId;
+		if(strategyId != null){
+			putQueryParameter("StrategyId", strategyId.toString());
 		}
 	}
 

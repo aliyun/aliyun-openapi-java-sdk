@@ -93,6 +93,8 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		private Long id;
 
+		private String uniqueInfo;
+
 		private String instanceName;
 
 		private String internetIp;
@@ -147,6 +149,14 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public String getUniqueInfo() {
+			return this.uniqueInfo;
+		}
+
+		public void setUniqueInfo(String uniqueInfo) {
+			this.uniqueInfo = uniqueInfo;
 		}
 
 		public String getInstanceName() {

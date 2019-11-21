@@ -15,22 +15,24 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeRiskItemTypeRequest extends RpcAcsRequest<DescribeRiskItemTypeResponse> {
-	
-	public DescribeRiskItemTypeRequest() {
-		super("Sas", "2018-12-03", "DescribeRiskItemType", "sas");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String sourceIp;
 
 	private String lang;
+	public DescribeRiskItemTypeRequest() {
+		super("Sas", "2018-12-03", "DescribeRiskItemType", "sas");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

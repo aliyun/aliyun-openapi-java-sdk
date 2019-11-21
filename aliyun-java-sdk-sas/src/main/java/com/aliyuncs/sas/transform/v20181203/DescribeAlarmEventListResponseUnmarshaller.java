@@ -25,37 +25,44 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAlarmEventListResponseUnmarshaller {
 
-	public static DescribeAlarmEventListResponse unmarshall(DescribeAlarmEventListResponse describeAlarmEventListResponse, UnmarshallerContext context) {
+	public static DescribeAlarmEventListResponse unmarshall(DescribeAlarmEventListResponse describeAlarmEventListResponse, UnmarshallerContext _ctx) {
 		
-		describeAlarmEventListResponse.setRequestId(context.stringValue("DescribeAlarmEventListResponse.RequestId"));
+		describeAlarmEventListResponse.setRequestId(_ctx.stringValue("DescribeAlarmEventListResponse.RequestId"));
 
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCount(context.integerValue("DescribeAlarmEventListResponse.PageInfo.Count"));
-		pageInfo.setPageSize(context.integerValue("DescribeAlarmEventListResponse.PageInfo.PageSize"));
-		pageInfo.setTotalCount(context.integerValue("DescribeAlarmEventListResponse.PageInfo.TotalCount"));
-		pageInfo.setCurrentPage(context.integerValue("DescribeAlarmEventListResponse.PageInfo.CurrentPage"));
+		pageInfo.setCount(_ctx.integerValue("DescribeAlarmEventListResponse.PageInfo.Count"));
+		pageInfo.setPageSize(_ctx.integerValue("DescribeAlarmEventListResponse.PageInfo.PageSize"));
+		pageInfo.setTotalCount(_ctx.integerValue("DescribeAlarmEventListResponse.PageInfo.TotalCount"));
+		pageInfo.setCurrentPage(_ctx.integerValue("DescribeAlarmEventListResponse.PageInfo.CurrentPage"));
 		describeAlarmEventListResponse.setPageInfo(pageInfo);
 
 		List<SuspEventsItem> suspEvents = new ArrayList<SuspEventsItem>();
-		for (int i = 0; i < context.lengthValue("DescribeAlarmEventListResponse.SuspEvents.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeAlarmEventListResponse.SuspEvents.Length"); i++) {
 			SuspEventsItem suspEventsItem = new SuspEventsItem();
-			suspEventsItem.setAlarmUniqueInfo(context.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].AlarmUniqueInfo"));
-			suspEventsItem.setSolution(context.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].Solution"));
-			suspEventsItem.setLevel(context.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].Level"));
-			suspEventsItem.setCanBeDealOnLine(context.booleanValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].CanBeDealOnLine"));
-			suspEventsItem.setDescription(context.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].Description"));
-			suspEventsItem.setStartTime(context.longValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].StartTime"));
-			suspEventsItem.setEndTime(context.longValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].EndTime"));
-			suspEventsItem.setAlarmEventType(context.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].AlarmEventType"));
-			suspEventsItem.setSuspiciousEventCount(context.integerValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].SuspiciousEventCount"));
-			suspEventsItem.setUuid(context.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].Uuid"));
-			suspEventsItem.setInstanceName(context.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].InstanceName"));
-			suspEventsItem.setInternetIp(context.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].InternetIp"));
-			suspEventsItem.setIntranetIp(context.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].IntranetIp"));
-			suspEventsItem.setAlarmEventName(context.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].AlarmEventName"));
-			suspEventsItem.setSaleVersion(context.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].SaleVersion"));
-			suspEventsItem.setDataSource(context.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].DataSource"));
-			suspEventsItem.setCanCancelFault(context.booleanValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].CanCancelFault"));
+			suspEventsItem.setAlarmUniqueInfo(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].AlarmUniqueInfo"));
+			suspEventsItem.setSolution(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].Solution"));
+			suspEventsItem.setLevel(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].Level"));
+			suspEventsItem.setCanBeDealOnLine(_ctx.booleanValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].CanBeDealOnLine"));
+			suspEventsItem.setDescription(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].Description"));
+			suspEventsItem.setStartTime(_ctx.longValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].StartTime"));
+			suspEventsItem.setEndTime(_ctx.longValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].EndTime"));
+			suspEventsItem.setAlarmEventType(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].AlarmEventType"));
+			suspEventsItem.setSuspiciousEventCount(_ctx.integerValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].SuspiciousEventCount"));
+			suspEventsItem.setUuid(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].Uuid"));
+			suspEventsItem.setInstanceName(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].InstanceName"));
+			suspEventsItem.setInternetIp(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].InternetIp"));
+			suspEventsItem.setIntranetIp(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].IntranetIp"));
+			suspEventsItem.setAlarmEventName(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].AlarmEventName"));
+			suspEventsItem.setSaleVersion(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].SaleVersion"));
+			suspEventsItem.setDataSource(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].DataSource"));
+			suspEventsItem.setCanCancelFault(_ctx.booleanValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].CanCancelFault"));
+			suspEventsItem.setDealed(_ctx.booleanValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].Dealed"));
+			suspEventsItem.setGmtModified(_ctx.longValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].GmtModified"));
+			suspEventsItem.setHasTraceInfo(_ctx.booleanValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].HasTraceInfo"));
+			suspEventsItem.setSecurityEventIds(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].SecurityEventIds"));
+			suspEventsItem.setOperateErrorCode(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].OperateErrorCode"));
+			suspEventsItem.setAlarmEventNameOriginal(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].AlarmEventNameOriginal"));
+			suspEventsItem.setInstanceId(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].InstanceId"));
 
 			suspEvents.add(suspEventsItem);
 		}

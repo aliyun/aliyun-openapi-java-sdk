@@ -16,16 +16,14 @@ package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyRiskSingleResultStatusRequest extends RpcAcsRequest<ModifyRiskSingleResultStatusResponse> {
-	
-	public ModifyRiskSingleResultStatusRequest() {
-		super("Sas", "2018-12-03", "ModifyRiskSingleResultStatus", "sas");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -38,6 +36,10 @@ public class ModifyRiskSingleResultStatusRequest extends RpcAcsRequest<ModifyRis
 	private Long taskId;
 
 	private String status;
+	public ModifyRiskSingleResultStatusRequest() {
+		super("Sas", "2018-12-03", "ModifyRiskSingleResultStatus", "sas");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

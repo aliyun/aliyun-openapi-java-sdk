@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCheckWarningsResponseUnmarshaller {
 
-	public static DescribeCheckWarningsResponse unmarshall(DescribeCheckWarningsResponse describeCheckWarningsResponse, UnmarshallerContext context) {
+	public static DescribeCheckWarningsResponse unmarshall(DescribeCheckWarningsResponse describeCheckWarningsResponse, UnmarshallerContext _ctx) {
 		
-		describeCheckWarningsResponse.setRequestId(context.stringValue("DescribeCheckWarningsResponse.RequestId"));
-		describeCheckWarningsResponse.setCount(context.integerValue("DescribeCheckWarningsResponse.Count"));
-		describeCheckWarningsResponse.setPageSize(context.integerValue("DescribeCheckWarningsResponse.PageSize"));
-		describeCheckWarningsResponse.setTotalCount(context.integerValue("DescribeCheckWarningsResponse.TotalCount"));
-		describeCheckWarningsResponse.setCurrentPage(context.integerValue("DescribeCheckWarningsResponse.CurrentPage"));
+		describeCheckWarningsResponse.setRequestId(_ctx.stringValue("DescribeCheckWarningsResponse.RequestId"));
+		describeCheckWarningsResponse.setCount(_ctx.integerValue("DescribeCheckWarningsResponse.Count"));
+		describeCheckWarningsResponse.setPageSize(_ctx.integerValue("DescribeCheckWarningsResponse.PageSize"));
+		describeCheckWarningsResponse.setTotalCount(_ctx.integerValue("DescribeCheckWarningsResponse.TotalCount"));
+		describeCheckWarningsResponse.setCurrentPage(_ctx.integerValue("DescribeCheckWarningsResponse.CurrentPage"));
 
 		List<CheckWarning> checkWarnings = new ArrayList<CheckWarning>();
-		for (int i = 0; i < context.lengthValue("DescribeCheckWarningsResponse.CheckWarnings.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCheckWarningsResponse.CheckWarnings.Length"); i++) {
 			CheckWarning checkWarning = new CheckWarning();
-			checkWarning.setUuid(context.stringValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].Uuid"));
-			checkWarning.setCheckId(context.longValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].CheckId"));
-			checkWarning.setCheckWarningId(context.longValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].CheckWarningId"));
-			checkWarning.setLevel(context.stringValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].Level"));
-			checkWarning.setItem(context.stringValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].Item"));
-			checkWarning.setType(context.stringValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].Type"));
-			checkWarning.setStatus(context.integerValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].Status"));
+			checkWarning.setUuid(_ctx.stringValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].Uuid"));
+			checkWarning.setCheckId(_ctx.longValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].CheckId"));
+			checkWarning.setCheckWarningId(_ctx.longValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].CheckWarningId"));
+			checkWarning.setLevel(_ctx.stringValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].Level"));
+			checkWarning.setItem(_ctx.stringValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].Item"));
+			checkWarning.setType(_ctx.stringValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].Type"));
+			checkWarning.setStatus(_ctx.integerValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].Status"));
 
 			checkWarnings.add(checkWarning);
 		}

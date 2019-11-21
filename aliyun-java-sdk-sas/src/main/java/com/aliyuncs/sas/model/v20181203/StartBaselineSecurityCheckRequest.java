@@ -16,28 +16,30 @@ package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class StartBaselineSecurityCheckRequest extends RpcAcsRequest<StartBaselineSecurityCheckResponse> {
-	
-	public StartBaselineSecurityCheckRequest() {
-		super("Sas", "2018-12-03", "StartBaselineSecurityCheck", "sas");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private List<Long> itemIdss;
+
+	private String type;
 
 	private List<String> assetss;
 
 	private String sourceIp;
 
-	private List<Long> itemIdss;
-
 	private String lang;
-
-	private String type;
+	public StartBaselineSecurityCheckRequest() {
+		super("Sas", "2018-12-03", "StartBaselineSecurityCheck", "sas");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -47,6 +49,30 @@ public class StartBaselineSecurityCheckRequest extends RpcAcsRequest<StartBaseli
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public List<Long> getItemIdss() {
+		return this.itemIdss;
+	}
+
+	public void setItemIdss(List<Long> itemIdss) {
+		this.itemIdss = itemIdss;	
+		if (itemIdss != null) {
+			for (int i = 0; i < itemIdss.size(); i++) {
+				putQueryParameter("ItemIds." + (i + 1) , itemIdss.get(i));
+			}
+		}	
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
@@ -74,19 +100,6 @@ public class StartBaselineSecurityCheckRequest extends RpcAcsRequest<StartBaseli
 		}
 	}
 
-	public List<Long> getItemIdss() {
-		return this.itemIdss;
-	}
-
-	public void setItemIdss(List<Long> itemIdss) {
-		this.itemIdss = itemIdss;	
-		if (itemIdss != null) {
-			for (int i = 0; i < itemIdss.size(); i++) {
-				putQueryParameter("ItemIds." + (i + 1) , itemIdss.get(i));
-			}
-		}	
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -95,17 +108,6 @@ public class StartBaselineSecurityCheckRequest extends RpcAcsRequest<StartBaseli
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
 		}
 	}
 

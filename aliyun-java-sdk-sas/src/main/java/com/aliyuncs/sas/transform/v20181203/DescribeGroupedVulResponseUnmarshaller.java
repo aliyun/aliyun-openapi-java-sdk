@@ -24,24 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeGroupedVulResponseUnmarshaller {
 
-	public static DescribeGroupedVulResponse unmarshall(DescribeGroupedVulResponse describeGroupedVulResponse, UnmarshallerContext context) {
+	public static DescribeGroupedVulResponse unmarshall(DescribeGroupedVulResponse describeGroupedVulResponse, UnmarshallerContext _ctx) {
 		
-		describeGroupedVulResponse.setRequestId(context.stringValue("DescribeGroupedVulResponse.RequestId"));
-		describeGroupedVulResponse.setPageSize(context.integerValue("DescribeGroupedVulResponse.PageSize"));
-		describeGroupedVulResponse.setCurrentPage(context.integerValue("DescribeGroupedVulResponse.CurrentPage"));
-		describeGroupedVulResponse.setTotalCount(context.integerValue("DescribeGroupedVulResponse.TotalCount"));
+		describeGroupedVulResponse.setRequestId(_ctx.stringValue("DescribeGroupedVulResponse.RequestId"));
+		describeGroupedVulResponse.setPageSize(_ctx.integerValue("DescribeGroupedVulResponse.PageSize"));
+		describeGroupedVulResponse.setCurrentPage(_ctx.integerValue("DescribeGroupedVulResponse.CurrentPage"));
+		describeGroupedVulResponse.setTotalCount(_ctx.integerValue("DescribeGroupedVulResponse.TotalCount"));
 
 		List<GroupedVulItem> groupedVulItems = new ArrayList<GroupedVulItem>();
-		for (int i = 0; i < context.lengthValue("DescribeGroupedVulResponse.GroupedVulItems.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeGroupedVulResponse.GroupedVulItems.Length"); i++) {
 			GroupedVulItem groupedVulItem = new GroupedVulItem();
-			groupedVulItem.setAliasName(context.stringValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].AliasName"));
-			groupedVulItem.setType(context.stringValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].Type"));
-			groupedVulItem.setGmtLast(context.longValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].GmtLast"));
-			groupedVulItem.setAsapCount(context.integerValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].AsapCount"));
-			groupedVulItem.setLaterCount(context.integerValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].LaterCount"));
-			groupedVulItem.setNntfCount(context.integerValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].NntfCount"));
-			groupedVulItem.setHandledCount(context.integerValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].HandledCount"));
-			groupedVulItem.setTags(context.stringValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].Tags"));
+			groupedVulItem.setName(_ctx.stringValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].Name"));
+			groupedVulItem.setAliasName(_ctx.stringValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].AliasName"));
+			groupedVulItem.setType(_ctx.stringValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].Type"));
+			groupedVulItem.setGmtLast(_ctx.longValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].GmtLast"));
+			groupedVulItem.setAsapCount(_ctx.integerValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].AsapCount"));
+			groupedVulItem.setLaterCount(_ctx.integerValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].LaterCount"));
+			groupedVulItem.setNntfCount(_ctx.integerValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].NntfCount"));
+			groupedVulItem.setHandledCount(_ctx.integerValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].HandledCount"));
+			groupedVulItem.setTags(_ctx.stringValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].Tags"));
 
 			groupedVulItems.add(groupedVulItem);
 		}

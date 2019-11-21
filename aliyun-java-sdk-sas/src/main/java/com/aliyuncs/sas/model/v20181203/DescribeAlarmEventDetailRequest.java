@@ -15,16 +15,14 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeAlarmEventDetailRequest extends RpcAcsRequest<DescribeAlarmEventDetailResponse> {
-	
-	public DescribeAlarmEventDetailRequest() {
-		super("Sas", "2018-12-03", "DescribeAlarmEventDetail", "sas");
-	}
+	   
 
 	private String alarmUniqueInfo;
 
@@ -33,6 +31,10 @@ public class DescribeAlarmEventDetailRequest extends RpcAcsRequest<DescribeAlarm
 	private String from;
 
 	private String lang;
+	public DescribeAlarmEventDetailRequest() {
+		super("Sas", "2018-12-03", "DescribeAlarmEventDetail", "sas");
+		setMethod(MethodType.POST);
+	}
 
 	public String getAlarmUniqueInfo() {
 		return this.alarmUniqueInfo;

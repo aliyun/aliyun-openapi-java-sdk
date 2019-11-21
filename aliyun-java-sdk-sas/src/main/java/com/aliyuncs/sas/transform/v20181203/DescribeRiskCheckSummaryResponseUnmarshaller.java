@@ -27,42 +27,44 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRiskCheckSummaryResponseUnmarshaller {
 
-	public static DescribeRiskCheckSummaryResponse unmarshall(DescribeRiskCheckSummaryResponse describeRiskCheckSummaryResponse, UnmarshallerContext context) {
+	public static DescribeRiskCheckSummaryResponse unmarshall(DescribeRiskCheckSummaryResponse describeRiskCheckSummaryResponse, UnmarshallerContext _ctx) {
 		
-		describeRiskCheckSummaryResponse.setRequestId(context.stringValue("DescribeRiskCheckSummaryResponse.RequestId"));
+		describeRiskCheckSummaryResponse.setRequestId(_ctx.stringValue("DescribeRiskCheckSummaryResponse.RequestId"));
 
 		RiskCheckSummary riskCheckSummary = new RiskCheckSummary();
-		riskCheckSummary.setRiskCount(context.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.RiskCount"));
-		riskCheckSummary.setPreviousCount(context.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.PreviousCount"));
-		riskCheckSummary.setItemCount(context.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.ItemCount"));
-		riskCheckSummary.setRiskRate(context.floatValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.RiskRate"));
-		riskCheckSummary.setAffectedAssetCount(context.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.AffectedAssetCount"));
-		riskCheckSummary.setPreviousTime(context.longValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.PreviousTime"));
+		riskCheckSummary.setRiskCount(_ctx.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.RiskCount"));
+		riskCheckSummary.setPreviousCount(_ctx.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.PreviousCount"));
+		riskCheckSummary.setItemCount(_ctx.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.ItemCount"));
+		riskCheckSummary.setRiskRate(_ctx.floatValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.RiskRate"));
+		riskCheckSummary.setAffectedAssetCount(_ctx.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.AffectedAssetCount"));
+		riskCheckSummary.setPreviousTime(_ctx.longValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.PreviousTime"));
+		riskCheckSummary.setEnabledRiskCount(_ctx.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.EnabledRiskCount"));
+		riskCheckSummary.setDisabledRiskCount(_ctx.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.DisabledRiskCount"));
 
 		List<LevelCount> riskLevelCount = new ArrayList<LevelCount>();
-		for (int i = 0; i < context.lengthValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.RiskLevelCount.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.RiskLevelCount.Length"); i++) {
 			LevelCount levelCount = new LevelCount();
-			levelCount.setKey(context.stringValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.RiskLevelCount["+ i +"].Key"));
-			levelCount.setCount(context.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.RiskLevelCount["+ i +"].Count"));
+			levelCount.setKey(_ctx.stringValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.RiskLevelCount["+ i +"].Key"));
+			levelCount.setCount(_ctx.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.RiskLevelCount["+ i +"].Count"));
 
 			riskLevelCount.add(levelCount);
 		}
 		riskCheckSummary.setRiskLevelCount(riskLevelCount);
 
 		List<Group> groups = new ArrayList<Group>();
-		for (int i = 0; i < context.lengthValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups.Length"); i++) {
 			Group group = new Group();
-			group.setId(context.longValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups["+ i +"].Id"));
-			group.setTitle(context.stringValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups["+ i +"].Title"));
-			group.setStatus(context.stringValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups["+ i +"].Status"));
-			group.setRemainingTime(context.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups["+ i +"].RemainingTime"));
-			group.setSort(context.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups["+ i +"].Sort"));
+			group.setId(_ctx.longValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups["+ i +"].Id"));
+			group.setTitle(_ctx.stringValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups["+ i +"].Title"));
+			group.setStatus(_ctx.stringValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups["+ i +"].Status"));
+			group.setRemainingTime(_ctx.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups["+ i +"].RemainingTime"));
+			group.setSort(_ctx.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups["+ i +"].Sort"));
 
 			List<StatusCount> countByStatus = new ArrayList<StatusCount>();
-			for (int j = 0; j < context.lengthValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups["+ i +"].CountByStatus.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups["+ i +"].CountByStatus.Length"); j++) {
 				StatusCount statusCount = new StatusCount();
-				statusCount.setStatus(context.stringValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups["+ i +"].CountByStatus["+ j +"].Status"));
-				statusCount.setCount(context.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups["+ i +"].CountByStatus["+ j +"].Count"));
+				statusCount.setStatus(_ctx.stringValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups["+ i +"].CountByStatus["+ j +"].Status"));
+				statusCount.setCount(_ctx.integerValue("DescribeRiskCheckSummaryResponse.RiskCheckSummary.Groups["+ i +"].CountByStatus["+ j +"].Count"));
 
 				countByStatus.add(statusCount);
 			}

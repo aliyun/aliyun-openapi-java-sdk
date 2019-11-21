@@ -15,22 +15,24 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeCheckWarningDetailRequest extends RpcAcsRequest<DescribeCheckWarningDetailResponse> {
-	
-	public DescribeCheckWarningDetailRequest() {
-		super("Sas", "2018-12-03", "DescribeCheckWarningDetail", "sas");
-	}
+	   
 
 	private String sourceIp;
 
 	private String lang;
 
 	private Long checkWarningId;
+	public DescribeCheckWarningDetailRequest() {
+		super("Sas", "2018-12-03", "DescribeCheckWarningDetail", "sas");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSourceIp() {
 		return this.sourceIp;

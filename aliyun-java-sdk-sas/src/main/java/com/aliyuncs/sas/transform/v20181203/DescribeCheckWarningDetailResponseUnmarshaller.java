@@ -20,16 +20,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCheckWarningDetailResponseUnmarshaller {
 
-	public static DescribeCheckWarningDetailResponse unmarshall(DescribeCheckWarningDetailResponse describeCheckWarningDetailResponse, UnmarshallerContext context) {
+	public static DescribeCheckWarningDetailResponse unmarshall(DescribeCheckWarningDetailResponse describeCheckWarningDetailResponse, UnmarshallerContext _ctx) {
 		
-		describeCheckWarningDetailResponse.setRequestId(context.stringValue("DescribeCheckWarningDetailResponse.RequestId"));
-		describeCheckWarningDetailResponse.setCheckId(context.longValue("DescribeCheckWarningDetailResponse.CheckId"));
-		describeCheckWarningDetailResponse.setLevel(context.stringValue("DescribeCheckWarningDetailResponse.Level"));
-		describeCheckWarningDetailResponse.setItem(context.stringValue("DescribeCheckWarningDetailResponse.Item"));
-		describeCheckWarningDetailResponse.setPrompt(context.stringValue("DescribeCheckWarningDetailResponse.Prompt"));
-		describeCheckWarningDetailResponse.setType(context.stringValue("DescribeCheckWarningDetailResponse.Type"));
-		describeCheckWarningDetailResponse.setAdvice(context.stringValue("DescribeCheckWarningDetailResponse.Advice"));
-		describeCheckWarningDetailResponse.setDescription(context.stringValue("DescribeCheckWarningDetailResponse.Description"));
+		describeCheckWarningDetailResponse.setRequestId(_ctx.stringValue("DescribeCheckWarningDetailResponse.RequestId"));
+		describeCheckWarningDetailResponse.setCheckId(_ctx.longValue("DescribeCheckWarningDetailResponse.CheckId"));
+		describeCheckWarningDetailResponse.setLevel(_ctx.stringValue("DescribeCheckWarningDetailResponse.Level"));
+		describeCheckWarningDetailResponse.setItem(_ctx.stringValue("DescribeCheckWarningDetailResponse.Item"));
+		describeCheckWarningDetailResponse.setPrompt(_ctx.stringValue("DescribeCheckWarningDetailResponse.Prompt"));
+		describeCheckWarningDetailResponse.setType(_ctx.stringValue("DescribeCheckWarningDetailResponse.Type"));
+		describeCheckWarningDetailResponse.setAdvice(_ctx.stringValue("DescribeCheckWarningDetailResponse.Advice"));
+		describeCheckWarningDetailResponse.setDescription(_ctx.stringValue("DescribeCheckWarningDetailResponse.Description"));
 	 
 	 	return describeCheckWarningDetailResponse;
 	}

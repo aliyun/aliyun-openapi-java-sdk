@@ -15,28 +15,63 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeCheckWarningsRequest extends RpcAcsRequest<DescribeCheckWarningsResponse> {
-	
-	public DescribeCheckWarningsRequest() {
-		super("Sas", "2018-12-03", "DescribeCheckWarnings", "sas");
-	}
+	   
+
+	private Integer currentPage;
+
+	private Long riskId;
+
+	private String uuid;
 
 	private String sourceIp;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private String lang;
+	public DescribeCheckWarningsRequest() {
+		super("Sas", "2018-12-03", "DescribeCheckWarnings", "sas");
+		setMethod(MethodType.POST);
+	}
 
-	private Long riskId;
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
 
-	private String uuid;
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public Long getRiskId() {
+		return this.riskId;
+	}
+
+	public void setRiskId(Long riskId) {
+		this.riskId = riskId;
+		if(riskId != null){
+			putQueryParameter("RiskId", riskId.toString());
+		}
+	}
+
+	public String getUuid() {
+		return this.uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+		if(uuid != null){
+			putQueryParameter("Uuid", uuid);
+		}
+	}
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -60,17 +95,6 @@ public class DescribeCheckWarningsRequest extends RpcAcsRequest<DescribeCheckWar
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -79,28 +103,6 @@ public class DescribeCheckWarningsRequest extends RpcAcsRequest<DescribeCheckWar
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Long getRiskId() {
-		return this.riskId;
-	}
-
-	public void setRiskId(Long riskId) {
-		this.riskId = riskId;
-		if(riskId != null){
-			putQueryParameter("RiskId", riskId.toString());
-		}
-	}
-
-	public String getUuid() {
-		return this.uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-		if(uuid != null){
-			putQueryParameter("Uuid", uuid);
 		}
 	}
 

@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeStrategyExecDetailResponseUnmarshaller {
 
-	public static DescribeStrategyExecDetailResponse unmarshall(DescribeStrategyExecDetailResponse describeStrategyExecDetailResponse, UnmarshallerContext context) {
+	public static DescribeStrategyExecDetailResponse unmarshall(DescribeStrategyExecDetailResponse describeStrategyExecDetailResponse, UnmarshallerContext _ctx) {
 		
-		describeStrategyExecDetailResponse.setRequestId(context.stringValue("DescribeStrategyExecDetailResponse.RequestId"));
-		describeStrategyExecDetailResponse.setStartTime(context.stringValue("DescribeStrategyExecDetailResponse.StartTime"));
-		describeStrategyExecDetailResponse.setEndTime(context.stringValue("DescribeStrategyExecDetailResponse.EndTime"));
-		describeStrategyExecDetailResponse.setSource(context.stringValue("DescribeStrategyExecDetailResponse.Source"));
-		describeStrategyExecDetailResponse.setPercent(context.stringValue("DescribeStrategyExecDetailResponse.Percent"));
-		describeStrategyExecDetailResponse.setSuccessCount(context.integerValue("DescribeStrategyExecDetailResponse.SuccessCount"));
-		describeStrategyExecDetailResponse.setFailCount(context.integerValue("DescribeStrategyExecDetailResponse.FailCount"));
-		describeStrategyExecDetailResponse.setInProcessCount(context.integerValue("DescribeStrategyExecDetailResponse.InProcessCount"));
+		describeStrategyExecDetailResponse.setRequestId(_ctx.stringValue("DescribeStrategyExecDetailResponse.RequestId"));
+		describeStrategyExecDetailResponse.setStartTime(_ctx.stringValue("DescribeStrategyExecDetailResponse.StartTime"));
+		describeStrategyExecDetailResponse.setEndTime(_ctx.stringValue("DescribeStrategyExecDetailResponse.EndTime"));
+		describeStrategyExecDetailResponse.setSource(_ctx.stringValue("DescribeStrategyExecDetailResponse.Source"));
+		describeStrategyExecDetailResponse.setPercent(_ctx.stringValue("DescribeStrategyExecDetailResponse.Percent"));
+		describeStrategyExecDetailResponse.setSuccessCount(_ctx.integerValue("DescribeStrategyExecDetailResponse.SuccessCount"));
+		describeStrategyExecDetailResponse.setFailCount(_ctx.integerValue("DescribeStrategyExecDetailResponse.FailCount"));
+		describeStrategyExecDetailResponse.setInProcessCount(_ctx.integerValue("DescribeStrategyExecDetailResponse.InProcessCount"));
 
 		List<FailedEcs> failedEcsList = new ArrayList<FailedEcs>();
-		for (int i = 0; i < context.lengthValue("DescribeStrategyExecDetailResponse.FailedEcsList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeStrategyExecDetailResponse.FailedEcsList.Length"); i++) {
 			FailedEcs failedEcs = new FailedEcs();
-			failedEcs.setReason(context.stringValue("DescribeStrategyExecDetailResponse.FailedEcsList["+ i +"].Reason"));
-			failedEcs.setInstanceName(context.stringValue("DescribeStrategyExecDetailResponse.FailedEcsList["+ i +"].InstanceName"));
-			failedEcs.setIP(context.stringValue("DescribeStrategyExecDetailResponse.FailedEcsList["+ i +"].IP"));
-			failedEcs.setIntranetIp(context.stringValue("DescribeStrategyExecDetailResponse.FailedEcsList["+ i +"].IntranetIp"));
+			failedEcs.setReason(_ctx.stringValue("DescribeStrategyExecDetailResponse.FailedEcsList["+ i +"].Reason"));
+			failedEcs.setInstanceName(_ctx.stringValue("DescribeStrategyExecDetailResponse.FailedEcsList["+ i +"].InstanceName"));
+			failedEcs.setIP(_ctx.stringValue("DescribeStrategyExecDetailResponse.FailedEcsList["+ i +"].IP"));
+			failedEcs.setIntranetIp(_ctx.stringValue("DescribeStrategyExecDetailResponse.FailedEcsList["+ i +"].IntranetIp"));
 
 			failedEcsList.add(failedEcs);
 		}

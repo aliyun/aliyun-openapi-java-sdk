@@ -15,30 +15,21 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeVulWhitelistRequest extends RpcAcsRequest<DescribeVulWhitelistResponse> {
-	
-	public DescribeVulWhitelistRequest() {
-		super("Sas", "2018-12-03", "DescribeVulWhitelist", "sas");
-	}
-
-	private Integer pageSize;
+	   
 
 	private Integer currentPage;
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+	private Integer pageSize;
+	public DescribeVulWhitelistRequest() {
+		super("Sas", "2018-12-03", "DescribeVulWhitelist", "sas");
+		setMethod(MethodType.POST);
 	}
 
 	public Integer getCurrentPage() {
@@ -49,6 +40,17 @@ public class DescribeVulWhitelistRequest extends RpcAcsRequest<DescribeVulWhitel
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

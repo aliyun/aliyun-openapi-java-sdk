@@ -15,36 +15,38 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeCheckWarningSummaryRequest extends RpcAcsRequest<DescribeCheckWarningSummaryResponse> {
-	
-	public DescribeCheckWarningSummaryRequest() {
-		super("Sas", "2018-12-03", "DescribeCheckWarningSummary", "sas");
-	}
+	   
 
 	private String riskName;
 
 	private String sourceIp;
 
-	private Integer riskStatus;
-
 	private Integer pageSize;
 
-	private Long strategyId;
+	private String lang;
 
 	private Integer currentPage;
 
-	private String lang;
+	private Integer riskStatus;
+
+	private Long strategyId;
 
 	private String typeName;
 
 	private String status;
 
 	private String uuids;
+	public DescribeCheckWarningSummaryRequest() {
+		super("Sas", "2018-12-03", "DescribeCheckWarningSummary", "sas");
+		setMethod(MethodType.POST);
+	}
 
 	public String getRiskName() {
 		return this.riskName;
@@ -68,17 +70,6 @@ public class DescribeCheckWarningSummaryRequest extends RpcAcsRequest<DescribeCh
 		}
 	}
 
-	public Integer getRiskStatus() {
-		return this.riskStatus;
-	}
-
-	public void setRiskStatus(Integer riskStatus) {
-		this.riskStatus = riskStatus;
-		if(riskStatus != null){
-			putQueryParameter("RiskStatus", riskStatus.toString());
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -90,14 +81,14 @@ public class DescribeCheckWarningSummaryRequest extends RpcAcsRequest<DescribeCh
 		}
 	}
 
-	public Long getStrategyId() {
-		return this.strategyId;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setStrategyId(Long strategyId) {
-		this.strategyId = strategyId;
-		if(strategyId != null){
-			putQueryParameter("StrategyId", strategyId.toString());
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
@@ -112,14 +103,25 @@ public class DescribeCheckWarningSummaryRequest extends RpcAcsRequest<DescribeCh
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
+	public Integer getRiskStatus() {
+		return this.riskStatus;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
+	public void setRiskStatus(Integer riskStatus) {
+		this.riskStatus = riskStatus;
+		if(riskStatus != null){
+			putQueryParameter("RiskStatus", riskStatus.toString());
+		}
+	}
+
+	public Long getStrategyId() {
+		return this.strategyId;
+	}
+
+	public void setStrategyId(Long strategyId) {
+		this.strategyId = strategyId;
+		if(strategyId != null){
+			putQueryParameter("StrategyId", strategyId.toString());
 		}
 	}
 

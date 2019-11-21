@@ -25,34 +25,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRiskCheckResultResponseUnmarshaller {
 
-	public static DescribeRiskCheckResultResponse unmarshall(DescribeRiskCheckResultResponse describeRiskCheckResultResponse, UnmarshallerContext context) {
+	public static DescribeRiskCheckResultResponse unmarshall(DescribeRiskCheckResultResponse describeRiskCheckResultResponse, UnmarshallerContext _ctx) {
 		
-		describeRiskCheckResultResponse.setRequestId(context.stringValue("DescribeRiskCheckResultResponse.RequestId"));
-		describeRiskCheckResultResponse.setPageCount(context.integerValue("DescribeRiskCheckResultResponse.PageCount"));
-		describeRiskCheckResultResponse.setCount(context.integerValue("DescribeRiskCheckResultResponse.Count"));
-		describeRiskCheckResultResponse.setPageSize(context.integerValue("DescribeRiskCheckResultResponse.PageSize"));
-		describeRiskCheckResultResponse.setTotalCount(context.integerValue("DescribeRiskCheckResultResponse.TotalCount"));
-		describeRiskCheckResultResponse.setCurrentPage(context.integerValue("DescribeRiskCheckResultResponse.CurrentPage"));
+		describeRiskCheckResultResponse.setRequestId(_ctx.stringValue("DescribeRiskCheckResultResponse.RequestId"));
+		describeRiskCheckResultResponse.setPageCount(_ctx.integerValue("DescribeRiskCheckResultResponse.PageCount"));
+		describeRiskCheckResultResponse.setCount(_ctx.integerValue("DescribeRiskCheckResultResponse.Count"));
+		describeRiskCheckResultResponse.setPageSize(_ctx.integerValue("DescribeRiskCheckResultResponse.PageSize"));
+		describeRiskCheckResultResponse.setTotalCount(_ctx.integerValue("DescribeRiskCheckResultResponse.TotalCount"));
+		describeRiskCheckResultResponse.setCurrentPage(_ctx.integerValue("DescribeRiskCheckResultResponse.CurrentPage"));
 
 		List<RiskCheckResultForDisplay> list = new ArrayList<RiskCheckResultForDisplay>();
-		for (int i = 0; i < context.lengthValue("DescribeRiskCheckResultResponse.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRiskCheckResultResponse.List.Length"); i++) {
 			RiskCheckResultForDisplay riskCheckResultForDisplay = new RiskCheckResultForDisplay();
-			riskCheckResultForDisplay.setItemId(context.longValue("DescribeRiskCheckResultResponse.List["+ i +"].ItemId"));
-			riskCheckResultForDisplay.setTaskId(context.longValue("DescribeRiskCheckResultResponse.List["+ i +"].TaskId"));
-			riskCheckResultForDisplay.setTitle(context.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].Title"));
-			riskCheckResultForDisplay.setRiskLevel(context.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].RiskLevel"));
-			riskCheckResultForDisplay.setStatus(context.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].Status"));
-			riskCheckResultForDisplay.setAffectedCount(context.integerValue("DescribeRiskCheckResultResponse.List["+ i +"].AffectedCount"));
-			riskCheckResultForDisplay.setCheckTime(context.longValue("DescribeRiskCheckResultResponse.List["+ i +"].CheckTime"));
-			riskCheckResultForDisplay.setRemainingTime(context.integerValue("DescribeRiskCheckResultResponse.List["+ i +"].RemainingTime"));
-			riskCheckResultForDisplay.setSort(context.integerValue("DescribeRiskCheckResultResponse.List["+ i +"].Sort"));
-			riskCheckResultForDisplay.setType(context.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].Type"));
+			riskCheckResultForDisplay.setItemId(_ctx.longValue("DescribeRiskCheckResultResponse.List["+ i +"].ItemId"));
+			riskCheckResultForDisplay.setTaskId(_ctx.longValue("DescribeRiskCheckResultResponse.List["+ i +"].TaskId"));
+			riskCheckResultForDisplay.setTitle(_ctx.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].Title"));
+			riskCheckResultForDisplay.setRiskLevel(_ctx.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].RiskLevel"));
+			riskCheckResultForDisplay.setStatus(_ctx.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].Status"));
+			riskCheckResultForDisplay.setAffectedCount(_ctx.integerValue("DescribeRiskCheckResultResponse.List["+ i +"].AffectedCount"));
+			riskCheckResultForDisplay.setCheckTime(_ctx.longValue("DescribeRiskCheckResultResponse.List["+ i +"].CheckTime"));
+			riskCheckResultForDisplay.setRemainingTime(_ctx.integerValue("DescribeRiskCheckResultResponse.List["+ i +"].RemainingTime"));
+			riskCheckResultForDisplay.setSort(_ctx.integerValue("DescribeRiskCheckResultResponse.List["+ i +"].Sort"));
+			riskCheckResultForDisplay.setType(_ctx.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].Type"));
+			riskCheckResultForDisplay.setStartStatus(_ctx.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].StartStatus"));
+			riskCheckResultForDisplay.setRiskAssertType(_ctx.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].RiskAssertType"));
 
 			List<RiskItemResource> riskItemResources = new ArrayList<RiskItemResource>();
-			for (int j = 0; j < context.lengthValue("DescribeRiskCheckResultResponse.List["+ i +"].RiskItemResources.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeRiskCheckResultResponse.List["+ i +"].RiskItemResources.Length"); j++) {
 				RiskItemResource riskItemResource = new RiskItemResource();
-				riskItemResource.setResourceName(context.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].RiskItemResources["+ j +"].ResourceName"));
-				riskItemResource.setContentResource(context.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].RiskItemResources["+ j +"].ContentResource"));
+				riskItemResource.setResourceName(_ctx.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].RiskItemResources["+ j +"].ResourceName"));
+				riskItemResource.setContentResource(_ctx.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].RiskItemResources["+ j +"].ContentResource"));
 
 				riskItemResources.add(riskItemResource);
 			}

@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRiskItemTypeResponseUnmarshaller {
 
-	public static DescribeRiskItemTypeResponse unmarshall(DescribeRiskItemTypeResponse describeRiskItemTypeResponse, UnmarshallerContext context) {
+	public static DescribeRiskItemTypeResponse unmarshall(DescribeRiskItemTypeResponse describeRiskItemTypeResponse, UnmarshallerContext _ctx) {
 		
-		describeRiskItemTypeResponse.setRequestId(context.stringValue("DescribeRiskItemTypeResponse.RequestId"));
+		describeRiskItemTypeResponse.setRequestId(_ctx.stringValue("DescribeRiskItemTypeResponse.RequestId"));
 
 		List<ItemType> list = new ArrayList<ItemType>();
-		for (int i = 0; i < context.lengthValue("DescribeRiskItemTypeResponse.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRiskItemTypeResponse.List.Length"); i++) {
 			ItemType itemType = new ItemType();
-			itemType.setId(context.longValue("DescribeRiskItemTypeResponse.List["+ i +"].Id"));
-			itemType.setTitle(context.stringValue("DescribeRiskItemTypeResponse.List["+ i +"].Title"));
+			itemType.setId(_ctx.longValue("DescribeRiskItemTypeResponse.List["+ i +"].Id"));
+			itemType.setTitle(_ctx.stringValue("DescribeRiskItemTypeResponse.List["+ i +"].Title"));
 
 			list.add(itemType);
 		}

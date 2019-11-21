@@ -77,6 +77,8 @@ public class DescribeGroupedVulResponse extends AcsResponse {
 
 	public static class GroupedVulItem {
 
+		private String name;
+
 		private String aliasName;
 
 		private String type;
@@ -92,6 +94,14 @@ public class DescribeGroupedVulResponse extends AcsResponse {
 		private Integer handledCount;
 
 		private String tags;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 
 		public String getAliasName() {
 			return this.aliasName;

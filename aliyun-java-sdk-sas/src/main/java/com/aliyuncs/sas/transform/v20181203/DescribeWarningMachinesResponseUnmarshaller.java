@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeWarningMachinesResponseUnmarshaller {
 
-	public static DescribeWarningMachinesResponse unmarshall(DescribeWarningMachinesResponse describeWarningMachinesResponse, UnmarshallerContext context) {
+	public static DescribeWarningMachinesResponse unmarshall(DescribeWarningMachinesResponse describeWarningMachinesResponse, UnmarshallerContext _ctx) {
 		
-		describeWarningMachinesResponse.setRequestId(context.stringValue("DescribeWarningMachinesResponse.RequestId"));
-		describeWarningMachinesResponse.setCount(context.integerValue("DescribeWarningMachinesResponse.Count"));
-		describeWarningMachinesResponse.setPageSize(context.integerValue("DescribeWarningMachinesResponse.PageSize"));
-		describeWarningMachinesResponse.setTotalCount(context.integerValue("DescribeWarningMachinesResponse.TotalCount"));
-		describeWarningMachinesResponse.setCurrentPage(context.integerValue("DescribeWarningMachinesResponse.CurrentPage"));
+		describeWarningMachinesResponse.setRequestId(_ctx.stringValue("DescribeWarningMachinesResponse.RequestId"));
+		describeWarningMachinesResponse.setCount(_ctx.integerValue("DescribeWarningMachinesResponse.Count"));
+		describeWarningMachinesResponse.setPageSize(_ctx.integerValue("DescribeWarningMachinesResponse.PageSize"));
+		describeWarningMachinesResponse.setTotalCount(_ctx.integerValue("DescribeWarningMachinesResponse.TotalCount"));
+		describeWarningMachinesResponse.setCurrentPage(_ctx.integerValue("DescribeWarningMachinesResponse.CurrentPage"));
 
 		List<WarningMachine> warningMachines = new ArrayList<WarningMachine>();
-		for (int i = 0; i < context.lengthValue("DescribeWarningMachinesResponse.WarningMachines.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeWarningMachinesResponse.WarningMachines.Length"); i++) {
 			WarningMachine warningMachine = new WarningMachine();
-			warningMachine.setUuid(context.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].Uuid"));
-			warningMachine.setMachineName(context.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].MachineName"));
-			warningMachine.setInternetIp(context.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].InternetIp"));
-			warningMachine.setIntranetIp(context.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].IntranetIp"));
-			warningMachine.setPassCount(context.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].PassCount"));
-			warningMachine.setHighWarningCount(context.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].HighWarningCount"));
-			warningMachine.setMediumWarningCount(context.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].MediumWarningCount"));
-			warningMachine.setLowWarningCount(context.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].LowWarningCount"));
-			warningMachine.setStatus(context.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].Status"));
+			warningMachine.setUuid(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].Uuid"));
+			warningMachine.setMachineName(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].MachineName"));
+			warningMachine.setInternetIp(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].InternetIp"));
+			warningMachine.setIntranetIp(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].IntranetIp"));
+			warningMachine.setPassCount(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].PassCount"));
+			warningMachine.setHighWarningCount(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].HighWarningCount"));
+			warningMachine.setMediumWarningCount(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].MediumWarningCount"));
+			warningMachine.setLowWarningCount(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].LowWarningCount"));
+			warningMachine.setStatus(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].Status"));
 
 			warningMachines.add(warningMachine);
 		}

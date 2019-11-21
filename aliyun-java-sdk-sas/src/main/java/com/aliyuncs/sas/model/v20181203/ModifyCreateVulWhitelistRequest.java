@@ -15,20 +15,22 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyCreateVulWhitelistRequest extends RpcAcsRequest<ModifyCreateVulWhitelistResponse> {
-	
-	public ModifyCreateVulWhitelistRequest() {
-		super("Sas", "2018-12-03", "ModifyCreateVulWhitelist", "sas");
-	}
+	   
 
 	private String reason;
 
 	private String whitelist;
+	public ModifyCreateVulWhitelistRequest() {
+		super("Sas", "2018-12-03", "ModifyCreateVulWhitelist", "sas");
+		setMethod(MethodType.POST);
+	}
 
 	public String getReason() {
 		return this.reason;

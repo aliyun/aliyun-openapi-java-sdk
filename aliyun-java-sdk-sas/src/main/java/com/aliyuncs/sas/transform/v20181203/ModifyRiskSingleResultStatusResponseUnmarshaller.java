@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyRiskSingleResultStatusResponseUnmarshaller {
 
-	public static ModifyRiskSingleResultStatusResponse unmarshall(ModifyRiskSingleResultStatusResponse modifyRiskSingleResultStatusResponse, UnmarshallerContext context) {
+	public static ModifyRiskSingleResultStatusResponse unmarshall(ModifyRiskSingleResultStatusResponse modifyRiskSingleResultStatusResponse, UnmarshallerContext _ctx) {
 		
-		modifyRiskSingleResultStatusResponse.setRequestId(context.stringValue("ModifyRiskSingleResultStatusResponse.RequestId"));
+		modifyRiskSingleResultStatusResponse.setRequestId(_ctx.stringValue("ModifyRiskSingleResultStatusResponse.RequestId"));
 	 
 	 	return modifyRiskSingleResultStatusResponse;
 	}

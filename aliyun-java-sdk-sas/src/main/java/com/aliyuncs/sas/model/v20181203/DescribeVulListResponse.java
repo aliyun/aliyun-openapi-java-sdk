@@ -123,7 +123,13 @@ public class DescribeVulListResponse extends AcsResponse {
 
 		private String needReboot;
 
+		private Integer progress;
+
+		private String canFix;
+
 		private ExtendContentJson extendContentJson;
+
+		private ProcessInfo processInfo;
 
 		public Long getPrimaryId() {
 			return this.primaryId;
@@ -309,12 +315,36 @@ public class DescribeVulListResponse extends AcsResponse {
 			this.needReboot = needReboot;
 		}
 
+		public Integer getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Integer progress) {
+			this.progress = progress;
+		}
+
+		public String getCanFix() {
+			return this.canFix;
+		}
+
+		public void setCanFix(String canFix) {
+			this.canFix = canFix;
+		}
+
 		public ExtendContentJson getExtendContentJson() {
 			return this.extendContentJson;
 		}
 
 		public void setExtendContentJson(ExtendContentJson extendContentJson) {
 			this.extendContentJson = extendContentJson;
+		}
+
+		public ProcessInfo getProcessInfo() {
+			return this.processInfo;
+		}
+
+		public void setProcessInfo(ProcessInfo processInfo) {
+			this.processInfo = processInfo;
 		}
 
 		public static class ExtendContentJson {
@@ -334,6 +364,34 @@ public class DescribeVulListResponse extends AcsResponse {
 			private Long primaryId;
 
 			private String absolutePath;
+
+			private String target;
+
+			private String emgProof;
+
+			private String reason;
+
+			private String title;
+
+			private String description;
+
+			private String ip;
+
+			private String owasp;
+
+			private String cwe;
+
+			private String wasc;
+
+			private String vulType;
+
+			private String effect;
+
+			private String solution;
+
+			private String reference;
+
+			private String proof;
 
 			private List<RpmEntity> rpmEntityList;
 
@@ -403,6 +461,118 @@ public class DescribeVulListResponse extends AcsResponse {
 
 			public void setAbsolutePath(String absolutePath) {
 				this.absolutePath = absolutePath;
+			}
+
+			public String getTarget() {
+				return this.target;
+			}
+
+			public void setTarget(String target) {
+				this.target = target;
+			}
+
+			public String getEmgProof() {
+				return this.emgProof;
+			}
+
+			public void setEmgProof(String emgProof) {
+				this.emgProof = emgProof;
+			}
+
+			public String getReason() {
+				return this.reason;
+			}
+
+			public void setReason(String reason) {
+				this.reason = reason;
+			}
+
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getIp() {
+				return this.ip;
+			}
+
+			public void setIp(String ip) {
+				this.ip = ip;
+			}
+
+			public String getOwasp() {
+				return this.owasp;
+			}
+
+			public void setOwasp(String owasp) {
+				this.owasp = owasp;
+			}
+
+			public String getCwe() {
+				return this.cwe;
+			}
+
+			public void setCwe(String cwe) {
+				this.cwe = cwe;
+			}
+
+			public String getWasc() {
+				return this.wasc;
+			}
+
+			public void setWasc(String wasc) {
+				this.wasc = wasc;
+			}
+
+			public String getVulType() {
+				return this.vulType;
+			}
+
+			public void setVulType(String vulType) {
+				this.vulType = vulType;
+			}
+
+			public String getEffect() {
+				return this.effect;
+			}
+
+			public void setEffect(String effect) {
+				this.effect = effect;
+			}
+
+			public String getSolution() {
+				return this.solution;
+			}
+
+			public void setSolution(String solution) {
+				this.solution = solution;
+			}
+
+			public String getReference() {
+				return this.reference;
+			}
+
+			public void setReference(String reference) {
+				this.reference = reference;
+			}
+
+			public String getProof() {
+				return this.proof;
+			}
+
+			public void setProof(String proof) {
+				this.proof = proof;
 			}
 
 			public List<RpmEntity> getRpmEntityList() {
@@ -483,26 +653,10 @@ public class DescribeVulListResponse extends AcsResponse {
 					this.updateCmd = updateCmd;
 				}
 
-				public String getBizVersion() {
-					return this.version;
-				}
-
-				public void setBizVersion(String version) {
-					this.version = version;
-				}
-
-				/**
-				 * @deprecated use getBizVersion instead of this.
-				 */
-				@Deprecated
 				public String getVersion() {
 					return this.version;
 				}
 
-				/**
-				 * @deprecated use setBizVersion instead of this.
-				 */
-				@Deprecated
 				public void setVersion(String version) {
 					this.version = version;
 				}
@@ -588,6 +742,115 @@ public class DescribeVulListResponse extends AcsResponse {
 
 				public void setTime_factor(String time_factor) {
 					this.time_factor = time_factor;
+				}
+			}
+		}
+
+		public static class ProcessInfo {
+
+			private Long gmtLastTs;
+
+			private Integer totalCount;
+
+			private List<Process> processList;
+
+			public Long getGmtLastTs() {
+				return this.gmtLastTs;
+			}
+
+			public void setGmtLastTs(Long gmtLastTs) {
+				this.gmtLastTs = gmtLastTs;
+			}
+
+			public Integer getTotalCount() {
+				return this.totalCount;
+			}
+
+			public void setTotalCount(Integer totalCount) {
+				this.totalCount = totalCount;
+			}
+
+			public List<Process> getProcessList() {
+				return this.processList;
+			}
+
+			public void setProcessList(List<Process> processList) {
+				this.processList = processList;
+			}
+
+			public static class Process {
+
+				private String rpm;
+
+				private String pname;
+
+				private String pid;
+
+				private List<SubProcess> subProcessList;
+
+				public String getRpm() {
+					return this.rpm;
+				}
+
+				public void setRpm(String rpm) {
+					this.rpm = rpm;
+				}
+
+				public String getPname() {
+					return this.pname;
+				}
+
+				public void setPname(String pname) {
+					this.pname = pname;
+				}
+
+				public String getPid() {
+					return this.pid;
+				}
+
+				public void setPid(String pid) {
+					this.pid = pid;
+				}
+
+				public List<SubProcess> getSubProcessList() {
+					return this.subProcessList;
+				}
+
+				public void setSubProcessList(List<SubProcess> subProcessList) {
+					this.subProcessList = subProcessList;
+				}
+
+				public static class SubProcess {
+
+					private String rpm;
+
+					private String pname;
+
+					private String pid;
+
+					public String getRpm() {
+						return this.rpm;
+					}
+
+					public void setRpm(String rpm) {
+						this.rpm = rpm;
+					}
+
+					public String getPname() {
+						return this.pname;
+					}
+
+					public void setPname(String pname) {
+						this.pname = pname;
+					}
+
+					public String getPid() {
+						return this.pid;
+					}
+
+					public void setPid(String pid) {
+						this.pid = pid;
+					}
 				}
 			}
 		}

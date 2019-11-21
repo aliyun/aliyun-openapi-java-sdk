@@ -15,18 +15,20 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeEmgVulGroupRequest extends RpcAcsRequest<DescribeEmgVulGroupResponse> {
-	
-	public DescribeEmgVulGroupRequest() {
-		super("Sas", "2018-12-03", "DescribeEmgVulGroup", "sas");
-	}
+	   
 
 	private String lang;
+	public DescribeEmgVulGroupRequest() {
+		super("Sas", "2018-12-03", "DescribeEmgVulGroup", "sas");
+		setMethod(MethodType.POST);
+	}
 
 	public String getLang() {
 		return this.lang;

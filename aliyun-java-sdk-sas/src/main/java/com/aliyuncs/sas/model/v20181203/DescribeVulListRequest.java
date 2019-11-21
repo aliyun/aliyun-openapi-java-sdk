@@ -15,43 +15,56 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeVulListRequest extends RpcAcsRequest<DescribeVulListResponse> {
-	
-	public DescribeVulListRequest() {
-		super("Sas", "2018-12-03", "DescribeVulList", "sas");
-	}
+	   
 
-	private String aliasName;
+	private String remark;
+
+	private String type;
 
 	private Integer pageSize;
 
-	private String remark;
+	private String lang;
 
 	private String dealed;
 
 	private Integer currentPage;
 
-	private String lang;
-
-	private String type;
+	private String aliasName;
 
 	private String necessity;
 
 	private String uuids;
-
-	public String getAliasName() {
-		return this.aliasName;
+	public DescribeVulListRequest() {
+		super("Sas", "2018-12-03", "DescribeVulList", "sas");
+		setMethod(MethodType.POST);
 	}
 
-	public void setAliasName(String aliasName) {
-		this.aliasName = aliasName;
-		if(aliasName != null){
-			putQueryParameter("AliasName", aliasName);
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
@@ -66,14 +79,14 @@ public class DescribeVulListRequest extends RpcAcsRequest<DescribeVulListRespons
 		}
 	}
 
-	public String getRemark() {
-		return this.remark;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setRemark(String remark) {
-		this.remark = remark;
-		if(remark != null){
-			putQueryParameter("Remark", remark);
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
@@ -99,25 +112,14 @@ public class DescribeVulListRequest extends RpcAcsRequest<DescribeVulListRespons
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
+	public String getAliasName() {
+		return this.aliasName;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setAliasName(String aliasName) {
+		this.aliasName = aliasName;
+		if(aliasName != null){
+			putQueryParameter("AliasName", aliasName);
 		}
 	}
 

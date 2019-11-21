@@ -25,30 +25,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeStratetyResponseUnmarshaller {
 
-	public static DescribeStratetyResponse unmarshall(DescribeStratetyResponse describeStratetyResponse, UnmarshallerContext context) {
+	public static DescribeStratetyResponse unmarshall(DescribeStratetyResponse describeStratetyResponse, UnmarshallerContext _ctx) {
 		
-		describeStratetyResponse.setRequestId(context.stringValue("DescribeStratetyResponse.RequestId"));
+		describeStratetyResponse.setRequestId(_ctx.stringValue("DescribeStratetyResponse.RequestId"));
 
 		List<Strategy> strategies = new ArrayList<Strategy>();
-		for (int i = 0; i < context.lengthValue("DescribeStratetyResponse.Strategies.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeStratetyResponse.Strategies.Length"); i++) {
 			Strategy strategy = new Strategy();
-			strategy.setCycleDays(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].CycleDays"));
-			strategy.setId(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].Id"));
-			strategy.setCycleStartTime(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].CycleStartTime"));
-			strategy.setType(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].Type"));
-			strategy.setName(context.stringValue("DescribeStratetyResponse.Strategies["+ i +"].Name"));
-			strategy.setRiskCount(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].RiskCount"));
-			strategy.setEcsCount(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].EcsCount"));
-			strategy.setExecStatus(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].ExecStatus"));
-			strategy.setProcessRate(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].ProcessRate"));
-			strategy.setPassRate(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].PassRate"));
+			strategy.setCycleDays(_ctx.integerValue("DescribeStratetyResponse.Strategies["+ i +"].CycleDays"));
+			strategy.setId(_ctx.integerValue("DescribeStratetyResponse.Strategies["+ i +"].Id"));
+			strategy.setCycleStartTime(_ctx.integerValue("DescribeStratetyResponse.Strategies["+ i +"].CycleStartTime"));
+			strategy.setType(_ctx.integerValue("DescribeStratetyResponse.Strategies["+ i +"].Type"));
+			strategy.setName(_ctx.stringValue("DescribeStratetyResponse.Strategies["+ i +"].Name"));
+			strategy.setRiskCount(_ctx.integerValue("DescribeStratetyResponse.Strategies["+ i +"].RiskCount"));
+			strategy.setEcsCount(_ctx.integerValue("DescribeStratetyResponse.Strategies["+ i +"].EcsCount"));
+			strategy.setExecStatus(_ctx.integerValue("DescribeStratetyResponse.Strategies["+ i +"].ExecStatus"));
+			strategy.setProcessRate(_ctx.integerValue("DescribeStratetyResponse.Strategies["+ i +"].ProcessRate"));
+			strategy.setPassRate(_ctx.integerValue("DescribeStratetyResponse.Strategies["+ i +"].PassRate"));
 
 			List<ConfigTarget> configTargets = new ArrayList<ConfigTarget>();
-			for (int j = 0; j < context.lengthValue("DescribeStratetyResponse.Strategies["+ i +"].ConfigTargets.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeStratetyResponse.Strategies["+ i +"].ConfigTargets.Length"); j++) {
 				ConfigTarget configTarget = new ConfigTarget();
-				configTarget.setFlag(context.stringValue("DescribeStratetyResponse.Strategies["+ i +"].ConfigTargets["+ j +"].Flag"));
-				configTarget.setTargetType(context.stringValue("DescribeStratetyResponse.Strategies["+ i +"].ConfigTargets["+ j +"].TargetType"));
-				configTarget.setTarget(context.stringValue("DescribeStratetyResponse.Strategies["+ i +"].ConfigTargets["+ j +"].Target"));
+				configTarget.setFlag(_ctx.stringValue("DescribeStratetyResponse.Strategies["+ i +"].ConfigTargets["+ j +"].Flag"));
+				configTarget.setTargetType(_ctx.stringValue("DescribeStratetyResponse.Strategies["+ i +"].ConfigTargets["+ j +"].TargetType"));
+				configTarget.setTarget(_ctx.stringValue("DescribeStratetyResponse.Strategies["+ i +"].ConfigTargets["+ j +"].Target"));
 
 				configTargets.add(configTarget);
 			}

@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeEmgVulGroupResponseUnmarshaller {
 
-	public static DescribeEmgVulGroupResponse unmarshall(DescribeEmgVulGroupResponse describeEmgVulGroupResponse, UnmarshallerContext context) {
+	public static DescribeEmgVulGroupResponse unmarshall(DescribeEmgVulGroupResponse describeEmgVulGroupResponse, UnmarshallerContext _ctx) {
 		
-		describeEmgVulGroupResponse.setRequestId(context.stringValue("DescribeEmgVulGroupResponse.RequestId"));
-		describeEmgVulGroupResponse.setTotalCount(context.integerValue("DescribeEmgVulGroupResponse.TotalCount"));
+		describeEmgVulGroupResponse.setRequestId(_ctx.stringValue("DescribeEmgVulGroupResponse.RequestId"));
+		describeEmgVulGroupResponse.setTotalCount(_ctx.integerValue("DescribeEmgVulGroupResponse.TotalCount"));
 
 		List<EmgVulGroup> emgVulGroupList = new ArrayList<EmgVulGroup>();
-		for (int i = 0; i < context.lengthValue("DescribeEmgVulGroupResponse.EmgVulGroupList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeEmgVulGroupResponse.EmgVulGroupList.Length"); i++) {
 			EmgVulGroup emgVulGroup = new EmgVulGroup();
-			emgVulGroup.setAliasName(context.stringValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].AliasName"));
-			emgVulGroup.setPendingCount(context.integerValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].PendingCount"));
-			emgVulGroup.setName(context.stringValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].Name"));
-			emgVulGroup.setGmtPublish(context.longValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].GmtPublish"));
-			emgVulGroup.setDescription(context.stringValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].Description"));
-			emgVulGroup.setType(context.stringValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].Type"));
+			emgVulGroup.setAliasName(_ctx.stringValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].AliasName"));
+			emgVulGroup.setPendingCount(_ctx.integerValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].PendingCount"));
+			emgVulGroup.setName(_ctx.stringValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].Name"));
+			emgVulGroup.setGmtPublish(_ctx.longValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].GmtPublish"));
+			emgVulGroup.setDescription(_ctx.stringValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].Description"));
+			emgVulGroup.setType(_ctx.stringValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].Type"));
 
 			emgVulGroupList.add(emgVulGroup);
 		}

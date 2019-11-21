@@ -15,47 +15,49 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsResponse> {
-	
-	public DescribeSuspEventsRequest() {
-		super("Sas", "2018-12-03", "DescribeSuspEvents", "sas");
-	}
-
-	private String alarmUniqueInfo;
-
-	private String sourceIp;
-
-	private String name;
-
-	private String pageSize;
-
-	private String dealed;
+	   
 
 	private String remark;
 
-	private String currentPage;
+	private String sourceIp;
+
+	private String pageSize;
 
 	private String from;
 
 	private String lang;
 
+	private String alarmUniqueInfo;
+
+	private String dealed;
+
+	private String currentPage;
+
+	private String name;
+
 	private String levels;
 
 	private String parentEventTypes;
-
-	public String getAlarmUniqueInfo() {
-		return this.alarmUniqueInfo;
+	public DescribeSuspEventsRequest() {
+		super("Sas", "2018-12-03", "DescribeSuspEvents", "sas");
+		setMethod(MethodType.POST);
 	}
 
-	public void setAlarmUniqueInfo(String alarmUniqueInfo) {
-		this.alarmUniqueInfo = alarmUniqueInfo;
-		if(alarmUniqueInfo != null){
-			putQueryParameter("AlarmUniqueInfo", alarmUniqueInfo);
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
 		}
 	}
 
@@ -70,17 +72,6 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getPageSize() {
 		return this.pageSize;
 	}
@@ -89,39 +80,6 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize);
-		}
-	}
-
-	public String getDealed() {
-		return this.dealed;
-	}
-
-	public void setDealed(String dealed) {
-		this.dealed = dealed;
-		if(dealed != null){
-			putQueryParameter("Dealed", dealed);
-		}
-	}
-
-	public String getRemark() {
-		return this.remark;
-	}
-
-	public void setRemark(String remark) {
-		this.remark = remark;
-		if(remark != null){
-			putQueryParameter("Remark", remark);
-		}
-	}
-
-	public String getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(String currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage);
 		}
 	}
 
@@ -144,6 +102,50 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getAlarmUniqueInfo() {
+		return this.alarmUniqueInfo;
+	}
+
+	public void setAlarmUniqueInfo(String alarmUniqueInfo) {
+		this.alarmUniqueInfo = alarmUniqueInfo;
+		if(alarmUniqueInfo != null){
+			putQueryParameter("AlarmUniqueInfo", alarmUniqueInfo);
+		}
+	}
+
+	public String getDealed() {
+		return this.dealed;
+	}
+
+	public void setDealed(String dealed) {
+		this.dealed = dealed;
+		if(dealed != null){
+			putQueryParameter("Dealed", dealed);
+		}
+	}
+
+	public String getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(String currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

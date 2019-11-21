@@ -15,32 +15,41 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeRiskCheckResultRequest extends RpcAcsRequest<DescribeRiskCheckResultResponse> {
-	
-	public DescribeRiskCheckResultRequest() {
-		super("Sas", "2018-12-03", "DescribeRiskCheckResult", "sas");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String sourceIp;
 
-	private Long groupId;
-
-	private String name;
-
 	private Integer pageSize;
-
-	private Integer currentPage;
 
 	private String lang;
 
+	private String assetType;
+
+	private Long groupId;
+
+	private List<String> itemIdss;
+
+	private Integer currentPage;
+
 	private String riskLevel;
+
+	private String name;
+
+	private String status;
+	public DescribeRiskCheckResultRequest() {
+		super("Sas", "2018-12-03", "DescribeRiskCheckResult", "sas");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -64,28 +73,6 @@ public class DescribeRiskCheckResultRequest extends RpcAcsRequest<DescribeRiskCh
 		}
 	}
 
-	public Long getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(Long groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -94,17 +81,6 @@ public class DescribeRiskCheckResultRequest extends RpcAcsRequest<DescribeRiskCh
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -119,6 +95,52 @@ public class DescribeRiskCheckResultRequest extends RpcAcsRequest<DescribeRiskCh
 		}
 	}
 
+	public String getAssetType() {
+		return this.assetType;
+	}
+
+	public void setAssetType(String assetType) {
+		this.assetType = assetType;
+		if(assetType != null){
+			putQueryParameter("AssetType", assetType);
+		}
+	}
+
+	public Long getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(Long groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId.toString());
+		}
+	}
+
+	public List<String> getItemIdss() {
+		return this.itemIdss;
+	}
+
+	public void setItemIdss(List<String> itemIdss) {
+		this.itemIdss = itemIdss;	
+		if (itemIdss != null) {
+			for (int i = 0; i < itemIdss.size(); i++) {
+				putQueryParameter("ItemIds." + (i + 1) , itemIdss.get(i));
+			}
+		}	
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
 	public String getRiskLevel() {
 		return this.riskLevel;
 	}
@@ -127,6 +149,28 @@ public class DescribeRiskCheckResultRequest extends RpcAcsRequest<DescribeRiskCh
 		this.riskLevel = riskLevel;
 		if(riskLevel != null){
 			putQueryParameter("RiskLevel", riskLevel);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

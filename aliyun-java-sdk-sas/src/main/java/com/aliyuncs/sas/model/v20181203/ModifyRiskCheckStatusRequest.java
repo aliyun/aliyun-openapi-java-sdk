@@ -15,20 +15,18 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyRiskCheckStatusRequest extends RpcAcsRequest<ModifyRiskCheckStatusResponse> {
-	
-	public ModifyRiskCheckStatusRequest() {
-		super("Sas", "2018-12-03", "ModifyRiskCheckStatus", "sas");
-	}
-
-	private Long itemId;
+	   
 
 	private Long resourceOwnerId;
+
+	private Long itemId;
 
 	private String sourceIp;
 
@@ -37,16 +35,9 @@ public class ModifyRiskCheckStatusRequest extends RpcAcsRequest<ModifyRiskCheckS
 	private Long taskId;
 
 	private String status;
-
-	public Long getItemId() {
-		return this.itemId;
-	}
-
-	public void setItemId(Long itemId) {
-		this.itemId = itemId;
-		if(itemId != null){
-			putQueryParameter("ItemId", itemId.toString());
-		}
+	public ModifyRiskCheckStatusRequest() {
+		super("Sas", "2018-12-03", "ModifyRiskCheckStatus", "sas");
+		setMethod(MethodType.POST);
 	}
 
 	public Long getResourceOwnerId() {
@@ -57,6 +48,17 @@ public class ModifyRiskCheckStatusRequest extends RpcAcsRequest<ModifyRiskCheckS
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Long getItemId() {
+		return this.itemId;
+	}
+
+	public void setItemId(Long itemId) {
+		this.itemId = itemId;
+		if(itemId != null){
+			putQueryParameter("ItemId", itemId.toString());
 		}
 	}
 

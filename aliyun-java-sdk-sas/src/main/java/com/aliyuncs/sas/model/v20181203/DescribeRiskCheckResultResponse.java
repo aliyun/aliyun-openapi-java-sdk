@@ -117,6 +117,10 @@ public class DescribeRiskCheckResultResponse extends AcsResponse {
 
 		private String type;
 
+		private String startStatus;
+
+		private String riskAssertType;
+
 		private List<RiskItemResource> riskItemResources;
 
 		public Long getItemId() {
@@ -197,6 +201,22 @@ public class DescribeRiskCheckResultResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getStartStatus() {
+			return this.startStatus;
+		}
+
+		public void setStartStatus(String startStatus) {
+			this.startStatus = startStatus;
+		}
+
+		public String getRiskAssertType() {
+			return this.riskAssertType;
+		}
+
+		public void setRiskAssertType(String riskAssertType) {
+			this.riskAssertType = riskAssertType;
 		}
 
 		public List<RiskItemResource> getRiskItemResources() {

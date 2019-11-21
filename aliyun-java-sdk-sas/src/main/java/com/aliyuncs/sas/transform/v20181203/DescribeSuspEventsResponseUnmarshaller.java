@@ -24,36 +24,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSuspEventsResponseUnmarshaller {
 
-	public static DescribeSuspEventsResponse unmarshall(DescribeSuspEventsResponse describeSuspEventsResponse, UnmarshallerContext context) {
+	public static DescribeSuspEventsResponse unmarshall(DescribeSuspEventsResponse describeSuspEventsResponse, UnmarshallerContext _ctx) {
 		
-		describeSuspEventsResponse.setRequestId(context.stringValue("DescribeSuspEventsResponse.RequestId"));
-		describeSuspEventsResponse.setCount(context.integerValue("DescribeSuspEventsResponse.Count"));
-		describeSuspEventsResponse.setPageSize(context.integerValue("DescribeSuspEventsResponse.PageSize"));
-		describeSuspEventsResponse.setTotalCount(context.integerValue("DescribeSuspEventsResponse.TotalCount"));
-		describeSuspEventsResponse.setCurrentPage(context.integerValue("DescribeSuspEventsResponse.CurrentPage"));
+		describeSuspEventsResponse.setRequestId(_ctx.stringValue("DescribeSuspEventsResponse.RequestId"));
+		describeSuspEventsResponse.setCount(_ctx.integerValue("DescribeSuspEventsResponse.Count"));
+		describeSuspEventsResponse.setPageSize(_ctx.integerValue("DescribeSuspEventsResponse.PageSize"));
+		describeSuspEventsResponse.setTotalCount(_ctx.integerValue("DescribeSuspEventsResponse.TotalCount"));
+		describeSuspEventsResponse.setCurrentPage(_ctx.integerValue("DescribeSuspEventsResponse.CurrentPage"));
 
 		List<WarningSummary> suspEvents = new ArrayList<WarningSummary>();
-		for (int i = 0; i < context.lengthValue("DescribeSuspEventsResponse.SuspEvents.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSuspEventsResponse.SuspEvents.Length"); i++) {
 			WarningSummary warningSummary = new WarningSummary();
-			warningSummary.setLastTime(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].LastTime"));
-			warningSummary.setOccurrenceTime(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].OccurrenceTime"));
-			warningSummary.setId(context.longValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Id"));
-			warningSummary.setInstanceName(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].InstanceName"));
-			warningSummary.setInternetIp(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].InternetIp"));
-			warningSummary.setIntranetIp(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].IntranetIp"));
-			warningSummary.setUuid(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Uuid"));
-			warningSummary.setName(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Name"));
-			warningSummary.setEventSubType(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].EventSubType"));
-			warningSummary.setLevel(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Level"));
-			warningSummary.setEventStatus(context.integerValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].EventStatus"));
-			warningSummary.setDesc(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Desc"));
-			warningSummary.setOperateMsg(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].OperateMsg"));
-			warningSummary.setDataSource(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].DataSource"));
-			warningSummary.setCanBeDealOnLine(context.booleanValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].CanBeDealOnLine"));
-			warningSummary.setSaleVersion(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].SaleVersion"));
-			warningSummary.setAlarmEventType(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AlarmEventType"));
-			warningSummary.setAlarmEventName(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AlarmEventName"));
-			warningSummary.setAlarmUniqueInfo(context.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AlarmUniqueInfo"));
+			warningSummary.setLastTime(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].LastTime"));
+			warningSummary.setOccurrenceTime(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].OccurrenceTime"));
+			warningSummary.setId(_ctx.longValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Id"));
+			warningSummary.setUniqueInfo(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].UniqueInfo"));
+			warningSummary.setInstanceName(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].InstanceName"));
+			warningSummary.setInternetIp(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].InternetIp"));
+			warningSummary.setIntranetIp(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].IntranetIp"));
+			warningSummary.setUuid(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Uuid"));
+			warningSummary.setName(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Name"));
+			warningSummary.setEventSubType(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].EventSubType"));
+			warningSummary.setLevel(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Level"));
+			warningSummary.setEventStatus(_ctx.integerValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].EventStatus"));
+			warningSummary.setDesc(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Desc"));
+			warningSummary.setOperateMsg(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].OperateMsg"));
+			warningSummary.setDataSource(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].DataSource"));
+			warningSummary.setCanBeDealOnLine(_ctx.booleanValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].CanBeDealOnLine"));
+			warningSummary.setSaleVersion(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].SaleVersion"));
+			warningSummary.setAlarmEventType(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AlarmEventType"));
+			warningSummary.setAlarmEventName(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AlarmEventName"));
+			warningSummary.setAlarmUniqueInfo(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AlarmUniqueInfo"));
 
 			suspEvents.add(warningSummary);
 		}
