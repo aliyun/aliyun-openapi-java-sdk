@@ -23,9 +23,11 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class CreateProjectRequest extends RoaAcsRequest<CreateProjectResponse> {
-	
+	   
+
+	private String clientToken;
 	public CreateProjectRequest() {
-		super("elasticsearch", "2017-06-13", "CreateProject");
+		super("elasticsearch", "2017-06-13", "CreateProject", "elasticsearch");
 		setUriPattern("/openapi/projects");
 		setMethod(MethodType.POST);
 		try {
@@ -33,8 +35,6 @@ public class CreateProjectRequest extends RoaAcsRequest<CreateProjectResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clientToken;
 
 	public String getClientToken() {
 		return this.clientToken;

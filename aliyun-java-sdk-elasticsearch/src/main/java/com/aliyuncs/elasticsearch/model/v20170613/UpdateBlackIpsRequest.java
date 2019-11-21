@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class UpdateBlackIpsRequest extends RoaAcsRequest<UpdateBlackIpsResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public UpdateBlackIpsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateBlackIps");
+		super("elasticsearch", "2017-06-13", "UpdateBlackIps", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/black-ips");
 		setMethod(MethodType.POST);
 		try {
@@ -33,10 +37,6 @@ public class UpdateBlackIpsRequest extends RoaAcsRequest<UpdateBlackIpsResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

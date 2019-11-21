@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class UninstallKibanaPluginRequest extends RoaAcsRequest<UninstallKibanaPluginResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public UninstallKibanaPluginRequest() {
-		super("elasticsearch", "2017-06-13", "UninstallKibanaPlugin");
+		super("elasticsearch", "2017-06-13", "UninstallKibanaPlugin", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/kibana-plugins/actions/uninstall");
 		setMethod(MethodType.POST);
 		try {
@@ -33,10 +37,6 @@ public class UninstallKibanaPluginRequest extends RoaAcsRequest<UninstallKibanaP
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

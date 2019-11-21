@@ -1,3 +1,7 @@
+2019-11-21 Version: 3.0.10
+- Add ConvertPayType.
+- Add ConvertLogstashPayType.
+
 2019-09-11 Version: 3.0.9
 - Fixed setUriPattern method not exist.
 

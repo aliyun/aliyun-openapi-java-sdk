@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class UpdateWhiteIpsRequest extends RoaAcsRequest<UpdateWhiteIpsResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public UpdateWhiteIpsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateWhiteIps");
+		super("elasticsearch", "2017-06-13", "UpdateWhiteIps", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/white-ips");
 		setMethod(MethodType.POST);
 		try {
@@ -33,10 +37,6 @@ public class UpdateWhiteIpsRequest extends RoaAcsRequest<UpdateWhiteIpsResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

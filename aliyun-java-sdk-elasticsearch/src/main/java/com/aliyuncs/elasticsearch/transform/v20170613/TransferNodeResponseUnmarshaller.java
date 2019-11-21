@@ -23,8 +23,6 @@ public class TransferNodeResponseUnmarshaller {
 	public static TransferNodeResponse unmarshall(TransferNodeResponse transferNodeResponse, UnmarshallerContext _ctx) {
 		
 		transferNodeResponse.setRequestId(_ctx.stringValue("TransferNodeResponse.RequestId"));
-		transferNodeResponse.setCode(_ctx.stringValue("TransferNodeResponse.Code"));
-		transferNodeResponse.setMessage(_ctx.stringValue("TransferNodeResponse.Message"));
 		transferNodeResponse.setResult(_ctx.booleanValue("TransferNodeResponse.Result"));
 	 
 	 	return transferNodeResponse;

@@ -23,8 +23,6 @@ public class ValidateShrinkNodesResponseUnmarshaller {
 	public static ValidateShrinkNodesResponse unmarshall(ValidateShrinkNodesResponse validateShrinkNodesResponse, UnmarshallerContext _ctx) {
 		
 		validateShrinkNodesResponse.setRequestId(_ctx.stringValue("ValidateShrinkNodesResponse.RequestId"));
-		validateShrinkNodesResponse.setCode(_ctx.stringValue("ValidateShrinkNodesResponse.Code"));
-		validateShrinkNodesResponse.setMessage(_ctx.stringValue("ValidateShrinkNodesResponse.Message"));
 		validateShrinkNodesResponse.setResult(_ctx.booleanValue("ValidateShrinkNodesResponse.Result"));
 	 
 	 	return validateShrinkNodesResponse;

@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class ActivateZonesRequest extends RoaAcsRequest<ActivateZonesResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public ActivateZonesRequest() {
-		super("elasticsearch", "2017-06-13", "ActivateZones");
+		super("elasticsearch", "2017-06-13", "ActivateZones", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/recover-zones");
 		setMethod(MethodType.POST);
 		try {
@@ -33,10 +37,6 @@ public class ActivateZonesRequest extends RoaAcsRequest<ActivateZonesResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

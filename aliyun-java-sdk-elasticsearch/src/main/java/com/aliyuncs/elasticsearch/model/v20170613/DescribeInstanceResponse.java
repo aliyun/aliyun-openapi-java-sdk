@@ -104,6 +104,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private List<ZoneInfo> zoneInfos;
 
+		private List<Dict> aliwsDicts;
+
 		private List<String> esIPWhitelist;
 
 		private List<String> esIPBlacklist;
@@ -126,6 +128,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private WarmNodeConfiguration warmNodeConfiguration;
 
+		private AdvancedSetting advancedSetting;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -134,26 +138,10 @@ public class DescribeInstanceResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getBizDomain() {
-			return this.domain;
-		}
-
-		public void setBizDomain(String domain) {
-			this.domain = domain;
-		}
-
-		/**
-		 * @deprecated use getBizDomain instead of this.
-		 */
-		@Deprecated
 		public String getDomain() {
 			return this.domain;
 		}
 
-		/**
-		 * @deprecated use setBizDomain instead of this.
-		 */
-		@Deprecated
 		public void setDomain(String domain) {
 			this.domain = domain;
 		}
@@ -326,22 +314,6 @@ public class DescribeInstanceResponse extends AcsResponse {
 			this.protocol = protocol;
 		}
 
-		/**
-		 * @deprecated use getBizProtocol instead of this.
-		 */
-		@Deprecated
-		public String getProtocol() {
-			return this.protocol;
-		}
-
-		/**
-		 * @deprecated use setBizProtocol instead of this.
-		 */
-		@Deprecated
-		public void setProtocol(String protocol) {
-			this.protocol = protocol;
-		}
-
 		public Boolean getEnableKibanaPublicNetwork() {
 			return this.enableKibanaPublicNetwork;
 		}
@@ -380,6 +352,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setZoneInfos(List<ZoneInfo> zoneInfos) {
 			this.zoneInfos = zoneInfos;
+		}
+
+		public List<Dict> getAliwsDicts() {
+			return this.aliwsDicts;
+		}
+
+		public void setAliwsDicts(List<Dict> aliwsDicts) {
+			this.aliwsDicts = aliwsDicts;
 		}
 
 		public List<String> getEsIPWhitelist() {
@@ -468,6 +448,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setWarmNodeConfiguration(WarmNodeConfiguration warmNodeConfiguration) {
 			this.warmNodeConfiguration = warmNodeConfiguration;
+		}
+
+		public AdvancedSetting getAdvancedSetting() {
+			return this.advancedSetting;
+		}
+
+		public void setAdvancedSetting(AdvancedSetting advancedSetting) {
+			this.advancedSetting = advancedSetting;
 		}
 
 		public static class DictListItem {
@@ -579,6 +567,49 @@ public class DescribeInstanceResponse extends AcsResponse {
 			}
 		}
 
+		public static class Dict {
+
+			private String name;
+
+			private Long fileSize;
+
+			private String type;
+
+			private String sourceType;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Long getFileSize() {
+				return this.fileSize;
+			}
+
+			public void setFileSize(Long fileSize) {
+				this.fileSize = fileSize;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getSourceType() {
+				return this.sourceType;
+			}
+
+			public void setSourceType(String sourceType) {
+				this.sourceType = sourceType;
+			}
+		}
+
 		public static class NodeSpec {
 
 			private String spec;
@@ -586,6 +617,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 			private Integer disk;
 
 			private String diskType;
+
+			private Boolean diskEncryption;
 
 			public String getSpec() {
 				return this.spec;
@@ -609,6 +642,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
+			}
+
+			public Boolean getDiskEncryption() {
+				return this.diskEncryption;
+			}
+
+			public void setDiskEncryption(Boolean diskEncryption) {
+				this.diskEncryption = diskEncryption;
 			}
 		}
 
@@ -794,6 +835,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			private Integer disk;
 
+			private Boolean diskEncryption;
+
 			public String getSpec() {
 				return this.spec;
 			}
@@ -824,6 +867,27 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setDisk(Integer disk) {
 				this.disk = disk;
+			}
+
+			public Boolean getDiskEncryption() {
+				return this.diskEncryption;
+			}
+
+			public void setDiskEncryption(Boolean diskEncryption) {
+				this.diskEncryption = diskEncryption;
+			}
+		}
+
+		public static class AdvancedSetting {
+
+			private String gcName;
+
+			public String getGcName() {
+				return this.gcName;
+			}
+
+			public void setGcName(String gcName) {
+				this.gcName = gcName;
 			}
 		}
 	}

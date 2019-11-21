@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class UpdateHotIkDictsRequest extends RoaAcsRequest<UpdateHotIkDictsResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public UpdateHotIkDictsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateHotIkDicts");
+		super("elasticsearch", "2017-06-13", "UpdateHotIkDicts", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/ik-hot-dict");
 		setMethod(MethodType.PUT);
 		try {
@@ -33,10 +37,6 @@ public class UpdateHotIkDictsRequest extends RoaAcsRequest<UpdateHotIkDictsRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

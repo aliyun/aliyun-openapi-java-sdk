@@ -23,9 +23,11 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class CreateInstanceRequest extends RoaAcsRequest<CreateInstanceResponse> {
-	
+	   
+
+	private String clientToken;
 	public CreateInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "CreateInstance");
+		super("elasticsearch", "2017-06-13", "CreateInstance", "elasticsearch");
 		setUriPattern("/openapi/instances");
 		setMethod(MethodType.POST);
 		try {
@@ -33,8 +35,6 @@ public class CreateInstanceRequest extends RoaAcsRequest<CreateInstanceResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clientToken;
 
 	public String getClientToken() {
 		return this.clientToken;

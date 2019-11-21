@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class UpdateSynonymsDictsRequest extends RoaAcsRequest<UpdateSynonymsDictsResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public UpdateSynonymsDictsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateSynonymsDicts");
+		super("elasticsearch", "2017-06-13", "UpdateSynonymsDicts", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/synonymsDict");
 		setMethod(MethodType.PUT);
 		try {
@@ -33,10 +37,6 @@ public class UpdateSynonymsDictsRequest extends RoaAcsRequest<UpdateSynonymsDict
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

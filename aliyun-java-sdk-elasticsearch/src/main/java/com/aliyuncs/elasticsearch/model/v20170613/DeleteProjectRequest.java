@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class DeleteProjectRequest extends RoaAcsRequest<DeleteProjectResponse> {
-	
+	   
+
+	private String clientToken;
+
+	private String id;
 	public DeleteProjectRequest() {
-		super("elasticsearch", "2017-06-13", "DeleteProject");
+		super("elasticsearch", "2017-06-13", "DeleteProject", "elasticsearch");
 		setUriPattern("/openapi/projects/[Id]");
 		setMethod(MethodType.DELETE);
 		try {
@@ -33,10 +37,6 @@ public class DeleteProjectRequest extends RoaAcsRequest<DeleteProjectResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clientToken;
-
-	private String id;
 
 	public String getClientToken() {
 		return this.clientToken;

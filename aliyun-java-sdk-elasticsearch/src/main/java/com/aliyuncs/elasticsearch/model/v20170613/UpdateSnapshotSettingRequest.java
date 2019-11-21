@@ -23,9 +23,11 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class UpdateSnapshotSettingRequest extends RoaAcsRequest<UpdateSnapshotSettingResponse> {
-	
+	   
+
+	private String instanceId;
 	public UpdateSnapshotSettingRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateSnapshotSetting");
+		super("elasticsearch", "2017-06-13", "UpdateSnapshotSetting", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/snapshot-setting");
 		setMethod(MethodType.PUT);
 		try {
@@ -33,8 +35,6 @@ public class UpdateSnapshotSettingRequest extends RoaAcsRequest<UpdateSnapshotSe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
 
 	public String getInstanceId() {
 		return this.instanceId;

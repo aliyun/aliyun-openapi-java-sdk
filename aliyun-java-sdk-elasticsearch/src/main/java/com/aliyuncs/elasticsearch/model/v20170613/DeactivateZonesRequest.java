@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class DeactivateZonesRequest extends RoaAcsRequest<DeactivateZonesResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public DeactivateZonesRequest() {
-		super("elasticsearch", "2017-06-13", "DeactivateZones");
+		super("elasticsearch", "2017-06-13", "DeactivateZones", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/down-zones");
 		setMethod(MethodType.POST);
 		try {
@@ -33,10 +37,6 @@ public class DeactivateZonesRequest extends RoaAcsRequest<DeactivateZonesRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

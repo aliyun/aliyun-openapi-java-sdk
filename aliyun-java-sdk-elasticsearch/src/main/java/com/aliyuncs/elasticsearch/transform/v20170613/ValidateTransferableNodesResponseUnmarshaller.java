@@ -23,8 +23,6 @@ public class ValidateTransferableNodesResponseUnmarshaller {
 	public static ValidateTransferableNodesResponse unmarshall(ValidateTransferableNodesResponse validateTransferableNodesResponse, UnmarshallerContext _ctx) {
 		
 		validateTransferableNodesResponse.setRequestId(_ctx.stringValue("ValidateTransferableNodesResponse.RequestId"));
-		validateTransferableNodesResponse.setCode(_ctx.stringValue("ValidateTransferableNodesResponse.Code"));
-		validateTransferableNodesResponse.setMessage(_ctx.stringValue("ValidateTransferableNodesResponse.Message"));
 		validateTransferableNodesResponse.setResult(_ctx.booleanValue("ValidateTransferableNodesResponse.Result"));
 	 
 	 	return validateTransferableNodesResponse;

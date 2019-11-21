@@ -23,16 +23,7 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
-	
-	public ListInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "ListInstance");
-		setUriPattern("/openapi/instances");
-		setMethod(MethodType.GET);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String resourceGroupId;
 
@@ -47,6 +38,15 @@ public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
 	private Integer page;
 
 	private String ownerId;
+	public ListInstanceRequest() {
+		super("elasticsearch", "2017-06-13", "ListInstance", "elasticsearch");
+		setUriPattern("/openapi/instances");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getResourceGroupId() {
 		return this.resourceGroupId;

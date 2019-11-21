@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class MoveResourceGroupRequest extends RoaAcsRequest<MoveResourceGroupResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public MoveResourceGroupRequest() {
-		super("elasticsearch", "2017-06-13", "MoveResourceGroup");
+		super("elasticsearch", "2017-06-13", "MoveResourceGroup", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/resourcegroup");
 		setMethod(MethodType.PUT);
 		try {
@@ -33,10 +37,6 @@ public class MoveResourceGroupRequest extends RoaAcsRequest<MoveResourceGroupRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

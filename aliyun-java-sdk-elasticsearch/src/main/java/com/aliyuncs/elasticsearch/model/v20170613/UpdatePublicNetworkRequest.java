@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class UpdatePublicNetworkRequest extends RoaAcsRequest<UpdatePublicNetworkResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public UpdatePublicNetworkRequest() {
-		super("elasticsearch", "2017-06-13", "UpdatePublicNetwork");
+		super("elasticsearch", "2017-06-13", "UpdatePublicNetwork", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/public-network");
 		setMethod(MethodType.POST);
 		try {
@@ -33,10 +37,6 @@ public class UpdatePublicNetworkRequest extends RoaAcsRequest<UpdatePublicNetwor
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

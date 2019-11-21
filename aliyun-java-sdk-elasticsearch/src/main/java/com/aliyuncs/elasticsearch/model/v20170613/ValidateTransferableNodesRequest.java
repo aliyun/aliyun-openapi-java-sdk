@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class ValidateTransferableNodesRequest extends RoaAcsRequest<ValidateTransferableNodesResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String nodeType;
 	public ValidateTransferableNodesRequest() {
-		super("elasticsearch", "2017-06-13", "ValidateTransferableNodes");
+		super("elasticsearch", "2017-06-13", "ValidateTransferableNodes", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/validate-transfer-nodes");
 		setMethod(MethodType.POST);
 		try {
@@ -33,10 +37,6 @@ public class ValidateTransferableNodesRequest extends RoaAcsRequest<ValidateTran
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String nodeType;
 
 	public String getInstanceId() {
 		return this.instanceId;

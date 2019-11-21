@@ -23,9 +23,15 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class ListKibanaPluginsRequest extends RoaAcsRequest<ListKibanaPluginsResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private Integer size;
+
+	private String page;
 	public ListKibanaPluginsRequest() {
-		super("elasticsearch", "2017-06-13", "ListKibanaPlugins");
+		super("elasticsearch", "2017-06-13", "ListKibanaPlugins", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/kibana-plugins");
 		setMethod(MethodType.GET);
 		try {
@@ -33,12 +39,6 @@ public class ListKibanaPluginsRequest extends RoaAcsRequest<ListKibanaPluginsRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private Integer size;
-
-	private String page;
 
 	public String getInstanceId() {
 		return this.instanceId;

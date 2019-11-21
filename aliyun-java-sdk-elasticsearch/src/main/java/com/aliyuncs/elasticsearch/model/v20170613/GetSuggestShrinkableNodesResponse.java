@@ -27,10 +27,6 @@ public class GetSuggestShrinkableNodesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
-	private String message;
-
 	private List<ResultItem> result;
 
 	public String getRequestId() {
@@ -39,22 +35,6 @@ public class GetSuggestShrinkableNodesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public List<ResultItem> getResult() {

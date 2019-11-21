@@ -23,9 +23,15 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class TransferNodeRequest extends RoaAcsRequest<TransferNodeResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String nodeType;
+
+	private String clientToken;
 	public TransferNodeRequest() {
-		super("elasticsearch", "2017-06-13", "TransferNode");
+		super("elasticsearch", "2017-06-13", "TransferNode", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/transfer");
 		setMethod(MethodType.POST);
 		try {
@@ -33,12 +39,6 @@ public class TransferNodeRequest extends RoaAcsRequest<TransferNodeResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String nodeType;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

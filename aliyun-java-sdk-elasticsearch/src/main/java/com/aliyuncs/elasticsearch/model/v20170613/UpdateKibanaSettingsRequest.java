@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class UpdateKibanaSettingsRequest extends RoaAcsRequest<UpdateKibanaSettingsResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public UpdateKibanaSettingsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateKibanaSettings");
+		super("elasticsearch", "2017-06-13", "UpdateKibanaSettings", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/update-kibana-settings");
 		setMethod(MethodType.POST);
 		try {
@@ -33,10 +37,6 @@ public class UpdateKibanaSettingsRequest extends RoaAcsRequest<UpdateKibanaSetti
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

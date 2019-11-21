@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class DeleteInstanceRequest extends RoaAcsRequest<DeleteInstanceResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public DeleteInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "DeleteInstance");
+		super("elasticsearch", "2017-06-13", "DeleteInstance", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]");
 		setMethod(MethodType.DELETE);
 		try {
@@ -33,10 +37,6 @@ public class DeleteInstanceRequest extends RoaAcsRequest<DeleteInstanceResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

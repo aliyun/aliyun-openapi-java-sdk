@@ -23,9 +23,15 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class RestartInstanceRequest extends RoaAcsRequest<RestartInstanceResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
+
+	private Boolean force;
 	public RestartInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "RestartInstance");
+		super("elasticsearch", "2017-06-13", "RestartInstance", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/restart");
 		setMethod(MethodType.POST);
 		try {
@@ -33,12 +39,6 @@ public class RestartInstanceRequest extends RoaAcsRequest<RestartInstanceRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
-
-	private Boolean force;
 
 	public String getInstanceId() {
 		return this.instanceId;

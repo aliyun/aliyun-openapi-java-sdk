@@ -23,9 +23,15 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class ShrinkNodeRequest extends RoaAcsRequest<ShrinkNodeResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String nodeType;
+
+	private String clientToken;
 	public ShrinkNodeRequest() {
-		super("elasticsearch", "2017-06-13", "ShrinkNode");
+		super("elasticsearch", "2017-06-13", "ShrinkNode", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/shrink");
 		setMethod(MethodType.POST);
 		try {
@@ -33,12 +39,6 @@ public class ShrinkNodeRequest extends RoaAcsRequest<ShrinkNodeResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String nodeType;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

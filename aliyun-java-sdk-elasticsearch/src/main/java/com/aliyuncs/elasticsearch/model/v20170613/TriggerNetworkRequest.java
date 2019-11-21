@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class TriggerNetworkRequest extends RoaAcsRequest<TriggerNetworkResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public TriggerNetworkRequest() {
-		super("elasticsearch", "2017-06-13", "TriggerNetwork");
+		super("elasticsearch", "2017-06-13", "TriggerNetwork", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/network-trigger");
 		setMethod(MethodType.POST);
 		try {
@@ -33,10 +37,6 @@ public class TriggerNetworkRequest extends RoaAcsRequest<TriggerNetworkResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

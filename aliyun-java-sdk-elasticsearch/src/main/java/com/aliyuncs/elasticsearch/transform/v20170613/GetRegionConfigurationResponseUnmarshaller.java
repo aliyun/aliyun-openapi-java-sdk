@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse;
 import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse.Result;
+import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse.Result.CategoryEntity;
+import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse.Result.CategoryEntity.VersionEntity;
 import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse.Result.ClientNodeAmountRange;
 import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse.Result.DataDiskListItem;
 import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse.Result.Disk;
@@ -207,6 +209,25 @@ public class GetRegionConfigurationResponseUnmarshaller {
 			masterDiskList.add(disk_);
 		}
 		result.setMasterDiskList(masterDiskList);
+
+		List<CategoryEntity> supportVersions = new ArrayList<CategoryEntity>();
+		for (int i = 0; i < _ctx.lengthValue("GetRegionConfigurationResponse.Result.supportVersions.Length"); i++) {
+			CategoryEntity categoryEntity = new CategoryEntity();
+			categoryEntity.setInstanceCategory(_ctx.stringValue("GetRegionConfigurationResponse.Result.supportVersions["+ i +"].instanceCategory"));
+
+			List<VersionEntity> supportVersionList = new ArrayList<VersionEntity>();
+			for (int j = 0; j < _ctx.lengthValue("GetRegionConfigurationResponse.Result.supportVersions["+ i +"].supportVersionList.Length"); j++) {
+				VersionEntity versionEntity = new VersionEntity();
+				versionEntity.setKey(_ctx.stringValue("GetRegionConfigurationResponse.Result.supportVersions["+ i +"].supportVersionList["+ j +"].key"));
+				versionEntity.setValue(_ctx.stringValue("GetRegionConfigurationResponse.Result.supportVersions["+ i +"].supportVersionList["+ j +"].value"));
+
+				supportVersionList.add(versionEntity);
+			}
+			categoryEntity.setSupportVersionList(supportVersionList);
+
+			supportVersions.add(categoryEntity);
+		}
+		result.setSupportVersions(supportVersions);
 		getRegionConfigurationResponse.setResult(result);
 	 
 	 	return getRegionConfigurationResponse;

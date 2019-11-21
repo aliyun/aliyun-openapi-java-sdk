@@ -19,7 +19,9 @@ import java.util.List;
 
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result;
+import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.AdvancedSetting;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.ClientNodeConfiguration;
+import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.Dict;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.DictListItem;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.KibanaConfiguration;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.MasterConfiguration;
@@ -61,7 +63,7 @@ public class DescribeInstanceResponseUnmarshaller {
 		result.setZoneCount(_ctx.integerValue("DescribeInstanceResponse.Result.zoneCount"));
 		result.setHaveClientNode(_ctx.booleanValue("DescribeInstanceResponse.Result.haveClientNode"));
 		result.setWarmNode(_ctx.booleanValue("DescribeInstanceResponse.Result.warmNode"));
-		result.setProtocol(_ctx.stringValue("DescribeInstanceResponse.Result.protocol"));
+		result.setBizProtocol(_ctx.stringValue("DescribeInstanceResponse.Result.protocol"));
 		result.setEnableKibanaPublicNetwork(_ctx.booleanValue("DescribeInstanceResponse.Result.enableKibanaPublicNetwork"));
 		result.setHaveKibana(_ctx.booleanValue("DescribeInstanceResponse.Result.haveKibana"));
 
@@ -99,6 +101,7 @@ public class DescribeInstanceResponseUnmarshaller {
 		nodeSpec.setSpec(_ctx.stringValue("DescribeInstanceResponse.Result.nodeSpec.spec"));
 		nodeSpec.setDisk(_ctx.integerValue("DescribeInstanceResponse.Result.nodeSpec.disk"));
 		nodeSpec.setDiskType(_ctx.stringValue("DescribeInstanceResponse.Result.nodeSpec.diskType"));
+		nodeSpec.setDiskEncryption(_ctx.booleanValue("DescribeInstanceResponse.Result.nodeSpec.diskEncryption"));
 		result.setNodeSpec(nodeSpec);
 
 		NetworkConfig networkConfig = new NetworkConfig();
@@ -134,7 +137,12 @@ public class DescribeInstanceResponseUnmarshaller {
 		warmNodeConfiguration.setAmount(_ctx.integerValue("DescribeInstanceResponse.Result.warmNodeConfiguration.amount"));
 		warmNodeConfiguration.setDiskType(_ctx.stringValue("DescribeInstanceResponse.Result.warmNodeConfiguration.diskType"));
 		warmNodeConfiguration.setDisk(_ctx.integerValue("DescribeInstanceResponse.Result.warmNodeConfiguration.disk"));
+		warmNodeConfiguration.setDiskEncryption(_ctx.booleanValue("DescribeInstanceResponse.Result.warmNodeConfiguration.diskEncryption"));
 		result.setWarmNodeConfiguration(warmNodeConfiguration);
+
+		AdvancedSetting advancedSetting = new AdvancedSetting();
+		advancedSetting.setGcName(_ctx.stringValue("DescribeInstanceResponse.Result.advancedSetting.gcName"));
+		result.setAdvancedSetting(advancedSetting);
 
 		List<DictListItem> dictList = new ArrayList<DictListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.dictList.Length"); i++) {
@@ -169,6 +177,18 @@ public class DescribeInstanceResponseUnmarshaller {
 			zoneInfos.add(zoneInfo);
 		}
 		result.setZoneInfos(zoneInfos);
+
+		List<Dict> aliwsDicts = new ArrayList<Dict>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.aliwsDicts.Length"); i++) {
+			Dict dict = new Dict();
+			dict.setName(_ctx.stringValue("DescribeInstanceResponse.Result.aliwsDicts["+ i +"].name"));
+			dict.setFileSize(_ctx.longValue("DescribeInstanceResponse.Result.aliwsDicts["+ i +"].fileSize"));
+			dict.setType(_ctx.stringValue("DescribeInstanceResponse.Result.aliwsDicts["+ i +"].type"));
+			dict.setSourceType(_ctx.stringValue("DescribeInstanceResponse.Result.aliwsDicts["+ i +"].sourceType"));
+
+			aliwsDicts.add(dict);
+		}
+		result.setAliwsDicts(aliwsDicts);
 		describeInstanceResponse.setResult(result);
 	 
 	 	return describeInstanceResponse;

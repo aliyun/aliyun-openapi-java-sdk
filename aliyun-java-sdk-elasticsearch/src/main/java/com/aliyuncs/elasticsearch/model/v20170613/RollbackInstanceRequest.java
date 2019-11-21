@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class RollbackInstanceRequest extends RoaAcsRequest<RollbackInstanceResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public RollbackInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "RollbackInstance");
+		super("elasticsearch", "2017-06-13", "RollbackInstance", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/rollback");
 		setMethod(MethodType.POST);
 		try {
@@ -33,10 +37,6 @@ public class RollbackInstanceRequest extends RoaAcsRequest<RollbackInstanceRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

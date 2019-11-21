@@ -23,9 +23,11 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class DescribeInstanceRequest extends RoaAcsRequest<DescribeInstanceResponse> {
-	
+	   
+
+	private String instanceId;
 	public DescribeInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "DescribeInstance");
+		super("elasticsearch", "2017-06-13", "DescribeInstance", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]");
 		setMethod(MethodType.GET);
 		try {
@@ -33,8 +35,6 @@ public class DescribeInstanceRequest extends RoaAcsRequest<DescribeInstanceRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
 
 	public String getInstanceId() {
 		return this.instanceId;

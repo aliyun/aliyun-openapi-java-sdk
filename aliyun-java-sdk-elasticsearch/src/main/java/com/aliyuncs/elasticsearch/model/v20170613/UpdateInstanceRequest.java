@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class UpdateInstanceRequest extends RoaAcsRequest<UpdateInstanceResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public UpdateInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateInstance");
+		super("elasticsearch", "2017-06-13", "UpdateInstance", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]");
 		setMethod(MethodType.PUT);
 		try {
@@ -33,10 +37,6 @@ public class UpdateInstanceRequest extends RoaAcsRequest<UpdateInstanceResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

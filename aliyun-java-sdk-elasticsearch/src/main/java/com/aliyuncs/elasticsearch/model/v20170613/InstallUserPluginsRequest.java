@@ -23,9 +23,11 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class InstallUserPluginsRequest extends RoaAcsRequest<InstallUserPluginsResponse> {
-	
+	   
+
+	private String instanceId;
 	public InstallUserPluginsRequest() {
-		super("elasticsearch", "2017-06-13", "InstallUserPlugins");
+		super("elasticsearch", "2017-06-13", "InstallUserPlugins", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/plugins/user/actions/install");
 		setMethod(MethodType.POST);
 		try {
@@ -33,8 +35,6 @@ public class InstallUserPluginsRequest extends RoaAcsRequest<InstallUserPluginsR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
 
 	public String getInstanceId() {
 		return this.instanceId;

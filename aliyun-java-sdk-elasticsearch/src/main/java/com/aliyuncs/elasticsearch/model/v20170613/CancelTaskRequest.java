@@ -23,9 +23,15 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class CancelTaskRequest extends RoaAcsRequest<CancelTaskResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String taskType;
+
+	private String clientToken;
 	public CancelTaskRequest() {
-		super("elasticsearch", "2017-06-13", "CancelTask");
+		super("elasticsearch", "2017-06-13", "CancelTask", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/cancel-task");
 		setMethod(MethodType.POST);
 		try {
@@ -33,12 +39,6 @@ public class CancelTaskRequest extends RoaAcsRequest<CancelTaskResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String taskType;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

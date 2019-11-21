@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class UpdateKibanaWhiteIpsRequest extends RoaAcsRequest<UpdateKibanaWhiteIpsResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public UpdateKibanaWhiteIpsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateKibanaWhiteIps");
+		super("elasticsearch", "2017-06-13", "UpdateKibanaWhiteIps", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/kibana-white-ips");
 		setMethod(MethodType.POST);
 		try {
@@ -33,10 +37,6 @@ public class UpdateKibanaWhiteIpsRequest extends RoaAcsRequest<UpdateKibanaWhite
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

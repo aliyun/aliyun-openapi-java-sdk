@@ -23,8 +23,6 @@ public class ShrinkNodeResponseUnmarshaller {
 	public static ShrinkNodeResponse unmarshall(ShrinkNodeResponse shrinkNodeResponse, UnmarshallerContext _ctx) {
 		
 		shrinkNodeResponse.setRequestId(_ctx.stringValue("ShrinkNodeResponse.RequestId"));
-		shrinkNodeResponse.setCode(_ctx.stringValue("ShrinkNodeResponse.Code"));
-		shrinkNodeResponse.setMessage(_ctx.stringValue("ShrinkNodeResponse.Message"));
 		shrinkNodeResponse.setResult(_ctx.booleanValue("ShrinkNodeResponse.Result"));
 	 
 	 	return shrinkNodeResponse;

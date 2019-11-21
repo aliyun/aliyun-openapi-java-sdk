@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class InstallSystemPluginRequest extends RoaAcsRequest<InstallSystemPluginResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public InstallSystemPluginRequest() {
-		super("elasticsearch", "2017-06-13", "InstallSystemPlugin");
+		super("elasticsearch", "2017-06-13", "InstallSystemPlugin", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/plugins/system/actions/install");
 		setMethod(MethodType.POST);
 		try {
@@ -33,10 +37,6 @@ public class InstallSystemPluginRequest extends RoaAcsRequest<InstallSystemPlugi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

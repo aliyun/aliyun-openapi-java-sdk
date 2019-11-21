@@ -23,16 +23,7 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class ListPluginsRequest extends RoaAcsRequest<ListPluginsResponse> {
-	
-	public ListPluginsRequest() {
-		super("elasticsearch", "2017-06-13", "ListPlugins");
-		setUriPattern("/openapi/instances/[InstanceId]/plugins");
-		setMethod(MethodType.GET);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String instanceId;
 
@@ -43,6 +34,15 @@ public class ListPluginsRequest extends RoaAcsRequest<ListPluginsResponse> {
 	private String page;
 
 	private String source;
+	public ListPluginsRequest() {
+		super("elasticsearch", "2017-06-13", "ListPlugins", "elasticsearch");
+		setUriPattern("/openapi/instances/[InstanceId]/plugins");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;

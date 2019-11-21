@@ -23,8 +23,6 @@ public class CancelTaskResponseUnmarshaller {
 	public static CancelTaskResponse unmarshall(CancelTaskResponse cancelTaskResponse, UnmarshallerContext _ctx) {
 		
 		cancelTaskResponse.setRequestId(_ctx.stringValue("CancelTaskResponse.RequestId"));
-		cancelTaskResponse.setCode(_ctx.stringValue("CancelTaskResponse.Code"));
-		cancelTaskResponse.setMessage(_ctx.stringValue("CancelTaskResponse.Message"));
 		cancelTaskResponse.setResult(_ctx.booleanValue("CancelTaskResponse.Result"));
 	 
 	 	return cancelTaskResponse;

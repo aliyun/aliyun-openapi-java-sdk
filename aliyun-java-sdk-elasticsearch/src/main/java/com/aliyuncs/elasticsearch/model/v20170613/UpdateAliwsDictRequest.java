@@ -23,9 +23,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class UpdateAliwsDictRequest extends RoaAcsRequest<UpdateAliwsDictResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String clientToken;
 	public UpdateAliwsDictRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateAliwsDict");
+		super("elasticsearch", "2017-06-13", "UpdateAliwsDict", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/aliws-dict");
 		setMethod(MethodType.PUT);
 		try {
@@ -33,10 +37,6 @@ public class UpdateAliwsDictRequest extends RoaAcsRequest<UpdateAliwsDictRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientToken;
 
 	public String getInstanceId() {
 		return this.instanceId;

@@ -27,8 +27,6 @@ public class GetTransferableNodesResponseUnmarshaller {
 	public static GetTransferableNodesResponse unmarshall(GetTransferableNodesResponse getTransferableNodesResponse, UnmarshallerContext _ctx) {
 		
 		getTransferableNodesResponse.setRequestId(_ctx.stringValue("GetTransferableNodesResponse.RequestId"));
-		getTransferableNodesResponse.setCode(_ctx.stringValue("GetTransferableNodesResponse.Code"));
-		getTransferableNodesResponse.setMessage(_ctx.stringValue("GetTransferableNodesResponse.Message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetTransferableNodesResponse.Result.Length"); i++) {

@@ -63,6 +63,8 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 
 		private List<Disk> masterDiskList;
 
+		private List<CategoryEntity> supportVersions;
+
 		private List<String> zones;
 
 		private List<String> esVersions;
@@ -89,26 +91,10 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 			this.env = env;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -159,6 +145,14 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 
 		public void setMasterDiskList(List<Disk> masterDiskList) {
 			this.masterDiskList = masterDiskList;
+		}
+
+		public List<CategoryEntity> getSupportVersions() {
+			return this.supportVersions;
+		}
+
+		public void setSupportVersions(List<CategoryEntity> supportVersions) {
+			this.supportVersions = supportVersions;
 		}
 
 		public List<String> getZones() {
@@ -422,6 +416,52 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 
 			public void setScaleLimit(Integer scaleLimit) {
 				this.scaleLimit = scaleLimit;
+			}
+		}
+
+		public static class CategoryEntity {
+
+			private String instanceCategory;
+
+			private List<VersionEntity> supportVersionList;
+
+			public String getInstanceCategory() {
+				return this.instanceCategory;
+			}
+
+			public void setInstanceCategory(String instanceCategory) {
+				this.instanceCategory = instanceCategory;
+			}
+
+			public List<VersionEntity> getSupportVersionList() {
+				return this.supportVersionList;
+			}
+
+			public void setSupportVersionList(List<VersionEntity> supportVersionList) {
+				this.supportVersionList = supportVersionList;
+			}
+
+			public static class VersionEntity {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
 			}
 		}
 

@@ -27,8 +27,6 @@ public class ListAllNodeResponseUnmarshaller {
 	public static ListAllNodeResponse unmarshall(ListAllNodeResponse listAllNodeResponse, UnmarshallerContext _ctx) {
 		
 		listAllNodeResponse.setRequestId(_ctx.stringValue("ListAllNodeResponse.RequestId"));
-		listAllNodeResponse.setCode(_ctx.stringValue("ListAllNodeResponse.Code"));
-		listAllNodeResponse.setMessage(_ctx.stringValue("ListAllNodeResponse.Message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListAllNodeResponse.Result.Length"); i++) {

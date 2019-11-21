@@ -47,26 +47,10 @@ public class ListInstanceResponse extends AcsResponse {
 		this.result = result;
 	}
 
-	public Headers getBizHeaders() {
-		return this.headers;
-	}
-
-	public void setBizHeaders(Headers headers) {
-		this.headers = headers;
-	}
-
-	/**
-	 * @deprecated use getBizHeaders instead of this.
-	 */
-	@Deprecated
 	public Headers getHeaders() {
 		return this.headers;
 	}
 
-	/**
-	 * @deprecated use setBizHeaders instead of this.
-	 */
-	@Deprecated
 	public void setHeaders(Headers headers) {
 		this.headers = headers;
 	}

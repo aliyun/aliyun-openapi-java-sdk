@@ -23,9 +23,9 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class GetRegionConfigurationRequest extends RoaAcsRequest<GetRegionConfigurationResponse> {
-	
+	   
 	public GetRegionConfigurationRequest() {
-		super("elasticsearch", "2017-06-13", "GetRegionConfiguration");
+		super("elasticsearch", "2017-06-13", "GetRegionConfiguration", "elasticsearch");
 		setUriPattern("/openapi/region");
 		setMethod(MethodType.GET);
 		try {

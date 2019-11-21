@@ -23,9 +23,15 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @version 
  */
 public class GetTransferableNodesRequest extends RoaAcsRequest<GetTransferableNodesResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String nodeType;
+
+	private Integer count;
 	public GetTransferableNodesRequest() {
-		super("elasticsearch", "2017-06-13", "GetTransferableNodes");
+		super("elasticsearch", "2017-06-13", "GetTransferableNodes", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/transferable-nodes");
 		setMethod(MethodType.GET);
 		try {
@@ -33,12 +39,6 @@ public class GetTransferableNodesRequest extends RoaAcsRequest<GetTransferableNo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String nodeType;
-
-	private Integer count;
 
 	public String getInstanceId() {
 		return this.instanceId;

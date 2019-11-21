@@ -27,8 +27,6 @@ public class GetSuggestShrinkableNodesResponseUnmarshaller {
 	public static GetSuggestShrinkableNodesResponse unmarshall(GetSuggestShrinkableNodesResponse getSuggestShrinkableNodesResponse, UnmarshallerContext _ctx) {
 		
 		getSuggestShrinkableNodesResponse.setRequestId(_ctx.stringValue("GetSuggestShrinkableNodesResponse.RequestId"));
-		getSuggestShrinkableNodesResponse.setCode(_ctx.stringValue("GetSuggestShrinkableNodesResponse.Code"));
-		getSuggestShrinkableNodesResponse.setMessage(_ctx.stringValue("GetSuggestShrinkableNodesResponse.Message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetSuggestShrinkableNodesResponse.Result.Length"); i++) {
