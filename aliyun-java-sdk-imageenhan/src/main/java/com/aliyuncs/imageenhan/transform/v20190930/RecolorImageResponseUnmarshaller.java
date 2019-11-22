@@ -27,8 +27,6 @@ public class RecolorImageResponseUnmarshaller {
 	public static RecolorImageResponse unmarshall(RecolorImageResponse recolorImageResponse, UnmarshallerContext _ctx) {
 		
 		recolorImageResponse.setRequestId(_ctx.stringValue("RecolorImageResponse.RequestId"));
-		recolorImageResponse.setCode(_ctx.stringValue("RecolorImageResponse.Code"));
-		recolorImageResponse.setMessage(_ctx.stringValue("RecolorImageResponse.Message"));
 
 		Data data = new Data();
 

@@ -36,7 +36,7 @@ public class RecolorImageRequest extends RpcAcsRequest<RecolorImageResponse> {
 
 	private String refUrl;
 	public RecolorImageRequest() {
-		super("imageenhan", "2019-09-30", "RecolorImage");
+		super("imageenhan", "2019-09-30", "RecolorImage", "imageenhan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -1,3 +1,6 @@
+2019-11-22 Version: 1.0.0
+- First version.
+
 2019-11-21 Version: 1.0.0
 - First version.
 

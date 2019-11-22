@@ -24,8 +24,6 @@ public class ChangeImageSizeResponseUnmarshaller {
 	public static ChangeImageSizeResponse unmarshall(ChangeImageSizeResponse changeImageSizeResponse, UnmarshallerContext _ctx) {
 		
 		changeImageSizeResponse.setRequestId(_ctx.stringValue("ChangeImageSizeResponse.RequestId"));
-		changeImageSizeResponse.setCode(_ctx.stringValue("ChangeImageSizeResponse.Code"));
-		changeImageSizeResponse.setMessage(_ctx.stringValue("ChangeImageSizeResponse.Message"));
 
 		Data data = new Data();
 		data.setUrl(_ctx.stringValue("ChangeImageSizeResponse.Data.Url"));

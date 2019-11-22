@@ -24,8 +24,6 @@ public class SegmentImageResponseUnmarshaller {
 	public static SegmentImageResponse unmarshall(SegmentImageResponse segmentImageResponse, UnmarshallerContext _ctx) {
 		
 		segmentImageResponse.setRequestId(_ctx.stringValue("SegmentImageResponse.RequestId"));
-		segmentImageResponse.setCode(_ctx.stringValue("SegmentImageResponse.Code"));
-		segmentImageResponse.setMessage(_ctx.stringValue("SegmentImageResponse.Message"));
 
 		Data data = new Data();
 		data.setUrl(_ctx.stringValue("SegmentImageResponse.Data.Url"));

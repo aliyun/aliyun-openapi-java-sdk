@@ -24,8 +24,6 @@ public class MakeSuperResolutionImageResponseUnmarshaller {
 	public static MakeSuperResolutionImageResponse unmarshall(MakeSuperResolutionImageResponse makeSuperResolutionImageResponse, UnmarshallerContext _ctx) {
 		
 		makeSuperResolutionImageResponse.setRequestId(_ctx.stringValue("MakeSuperResolutionImageResponse.RequestId"));
-		makeSuperResolutionImageResponse.setCode(_ctx.stringValue("MakeSuperResolutionImageResponse.Code"));
-		makeSuperResolutionImageResponse.setMessage(_ctx.stringValue("MakeSuperResolutionImageResponse.Message"));
 
 		Data data = new Data();
 		data.setUrl(_ctx.stringValue("MakeSuperResolutionImageResponse.Data.Url"));

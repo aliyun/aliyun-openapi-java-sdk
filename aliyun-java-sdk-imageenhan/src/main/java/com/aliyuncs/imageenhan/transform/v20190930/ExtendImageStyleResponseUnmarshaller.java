@@ -24,8 +24,6 @@ public class ExtendImageStyleResponseUnmarshaller {
 	public static ExtendImageStyleResponse unmarshall(ExtendImageStyleResponse extendImageStyleResponse, UnmarshallerContext _ctx) {
 		
 		extendImageStyleResponse.setRequestId(_ctx.stringValue("ExtendImageStyleResponse.RequestId"));
-		extendImageStyleResponse.setCode(_ctx.stringValue("ExtendImageStyleResponse.Code"));
-		extendImageStyleResponse.setMessage(_ctx.stringValue("ExtendImageStyleResponse.Message"));
 
 		Data data = new Data();
 		data.setUrl(_ctx.stringValue("ExtendImageStyleResponse.Data.Url"));
