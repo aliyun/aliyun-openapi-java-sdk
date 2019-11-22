@@ -1,3 +1,6 @@
+2019-11-22 Version: 1.0.1
+- Update Api Request And Response structure.
+
 2019-11-22 Version: 1.0.0
 - First version.
 
