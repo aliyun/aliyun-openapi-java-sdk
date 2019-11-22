@@ -154,8 +154,7 @@ public class UnmarshallerContextTest {
         responseMap.put("TestResponse.ObjectA", "Value0AA");
         unmarshallerContext.setResponseMap(responseMap);
         Map<Object, Object> map = unmarshallerContext.mapValue("TestResponse");
-        Map<?, ?> item = (Map<?, ?>) map.get("TestResponse");
-        Assert.assertEquals("Value0AA", item.get("ObjectA"));
+        Assert.assertEquals("Value0AA", map.get("ObjectA"));
     }
 
 }

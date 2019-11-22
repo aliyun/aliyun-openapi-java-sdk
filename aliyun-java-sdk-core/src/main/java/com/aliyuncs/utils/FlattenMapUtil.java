@@ -26,7 +26,19 @@ public class FlattenMapUtil {
             object = putForMap(flattenMap, object, subKeys, subPrefixes.length - 1);
         }
 
-        return (Map<Object, Object>) object;
+        return filtrateMap((Map<Object, Object>) object, subPrefixes[subPrefixes.length - 1]);
+    }
+
+    private static Map<Object, Object> filtrateMap(Map<Object, Object> objectMap, String key) {
+        Object resultMap = null;
+        if (objectMap != null && !StringUtils.isEmpty(key)) {
+            resultMap = objectMap.get(key);
+        }
+        if (null != resultMap && Map.class.isAssignableFrom(resultMap.getClass())) {
+            return (Map<Object, Object>) resultMap;
+        } else {
+            return objectMap;
+        }
     }
 
     public static Object put(Map<String, String> flattenMap, Object object, String[] subKeys, int subKeysIndex) {
