@@ -24,15 +24,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class UnmuteAudioRequest extends RpcAcsRequest<UnmuteAudioResponse> {
-	
-	public UnmuteAudioRequest() {
-		super("rtc", "2018-01-11", "UnmuteAudio", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<String> participantIdss;
 
@@ -41,6 +33,14 @@ public class UnmuteAudioRequest extends RpcAcsRequest<UnmuteAudioResponse> {
 	private Long ownerId;
 
 	private String appId;
+	public UnmuteAudioRequest() {
+		super("rtc", "2018-01-11", "UnmuteAudio");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<String> getParticipantIdss() {
 		return this.participantIdss;

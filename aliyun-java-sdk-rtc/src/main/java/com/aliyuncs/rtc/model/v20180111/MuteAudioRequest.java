@@ -24,15 +24,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class MuteAudioRequest extends RpcAcsRequest<MuteAudioResponse> {
-	
-	public MuteAudioRequest() {
-		super("rtc", "2018-01-11", "MuteAudio", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<String> participantIdss;
 
@@ -41,6 +33,14 @@ public class MuteAudioRequest extends RpcAcsRequest<MuteAudioResponse> {
 	private Long ownerId;
 
 	private String appId;
+	public MuteAudioRequest() {
+		super("rtc", "2018-01-11", "MuteAudio");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<String> getParticipantIdss() {
 		return this.participantIdss;

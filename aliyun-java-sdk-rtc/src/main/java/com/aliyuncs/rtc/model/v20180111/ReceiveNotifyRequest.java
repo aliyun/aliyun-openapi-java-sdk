@@ -23,15 +23,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class ReceiveNotifyRequest extends RpcAcsRequest<ReceiveNotifyResponse> {
-	
-	public ReceiveNotifyRequest() {
-		super("rtc", "2018-01-11", "ReceiveNotify", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String traceId;
 
@@ -44,6 +36,14 @@ public class ReceiveNotifyRequest extends RpcAcsRequest<ReceiveNotifyResponse> {
 	private String contentType;
 
 	private String bizId;
+	public ReceiveNotifyRequest() {
+		super("rtc", "2018-01-11", "ReceiveNotify");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTraceId() {
 		return this.traceId;

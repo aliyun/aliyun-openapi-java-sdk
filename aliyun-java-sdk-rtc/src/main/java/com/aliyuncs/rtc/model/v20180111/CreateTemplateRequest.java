@@ -24,15 +24,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse> {
-	
-	public CreateTemplateRequest() {
-		super("rtc", "2018-01-11", "CreateTemplate", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer serviceMode;
 
@@ -53,6 +45,14 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 	private String callBack;
 
 	private Integer mixMode;
+	public CreateTemplateRequest() {
+		super("rtc", "2018-01-11", "CreateTemplate");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getServiceMode() {
 		return this.serviceMode;

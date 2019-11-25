@@ -24,15 +24,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
-	
-	public StartMPUTaskRequest() {
-		super("rtc", "2018-01-11", "StartMPUTask", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<UserPanes> userPaness;
 
@@ -50,11 +42,21 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 
 	private Long ownerId;
 
+	private List<String> subSpecUserss;
+
 	private String appId;
 
 	private Integer mediaEncode;
 
 	private String channelId;
+	public StartMPUTaskRequest() {
+		super("rtc", "2018-01-11", "StartMPUTask");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<UserPanes> getUserPaness() {
 		return this.userPaness;
@@ -148,6 +150,19 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<String> getSubSpecUserss() {
+		return this.subSpecUserss;
+	}
+
+	public void setSubSpecUserss(List<String> subSpecUserss) {
+		this.subSpecUserss = subSpecUserss;	
+		if (subSpecUserss != null) {
+			for (int i = 0; i < subSpecUserss.size(); i++) {
+				putQueryParameter("SubSpecUsers." + (i + 1) , subSpecUserss.get(i));
+			}
+		}	
 	}
 
 	public String getAppId() {

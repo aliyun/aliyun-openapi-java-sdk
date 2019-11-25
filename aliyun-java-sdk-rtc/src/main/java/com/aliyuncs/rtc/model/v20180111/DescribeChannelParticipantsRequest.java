@@ -23,15 +23,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class DescribeChannelParticipantsRequest extends RpcAcsRequest<DescribeChannelParticipantsResponse> {
-	
-	public DescribeChannelParticipantsRequest() {
-		super("rtc", "2018-01-11", "DescribeChannelParticipants", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer pageNum;
 
@@ -44,6 +36,14 @@ public class DescribeChannelParticipantsRequest extends RpcAcsRequest<DescribeCh
 	private String appId;
 
 	private String channelId;
+	public DescribeChannelParticipantsRequest() {
+		super("rtc", "2018-01-11", "DescribeChannelParticipants");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getPageNum() {
 		return this.pageNum;

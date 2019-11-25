@@ -23,15 +23,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class DescribeRtcChannelListRequest extends RpcAcsRequest<DescribeRtcChannelListResponse> {
-	
-	public DescribeRtcChannelListRequest() {
-		super("rtc", "2018-01-11", "DescribeRtcChannelList", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String sortType;
 
@@ -50,6 +42,14 @@ public class DescribeRtcChannelListRequest extends RpcAcsRequest<DescribeRtcChan
 	private String channelId;
 
 	private String timePoint;
+	public DescribeRtcChannelListRequest() {
+		super("rtc", "2018-01-11", "DescribeRtcChannelList");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getSortType() {
 		return this.sortType;

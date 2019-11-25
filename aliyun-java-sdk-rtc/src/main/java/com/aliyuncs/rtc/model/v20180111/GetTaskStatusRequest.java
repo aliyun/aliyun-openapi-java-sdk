@@ -23,15 +23,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class GetTaskStatusRequest extends RpcAcsRequest<GetTaskStatusResponse> {
-	
-	public GetTaskStatusRequest() {
-		super("rtc", "2018-01-11", "GetTaskStatus", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long ownerId;
 
@@ -40,6 +32,14 @@ public class GetTaskStatusRequest extends RpcAcsRequest<GetTaskStatusResponse> {
 	private String channelId;
 
 	private Long taskId;
+	public GetTaskStatusRequest() {
+		super("rtc", "2018-01-11", "GetTaskStatus");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getOwnerId() {
 		return this.ownerId;

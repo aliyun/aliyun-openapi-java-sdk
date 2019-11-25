@@ -23,21 +23,21 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class CreateChannelRequest extends RpcAcsRequest<CreateChannelResponse> {
-	
-	public CreateChannelRequest() {
-		super("rtc", "2018-01-11", "CreateChannel", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long ownerId;
 
 	private String appId;
 
 	private String channelId;
+	public CreateChannelRequest() {
+		super("rtc", "2018-01-11", "CreateChannel");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getOwnerId() {
 		return this.ownerId;

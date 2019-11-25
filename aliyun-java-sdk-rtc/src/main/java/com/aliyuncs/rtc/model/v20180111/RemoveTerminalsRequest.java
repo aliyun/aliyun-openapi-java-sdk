@@ -24,15 +24,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class RemoveTerminalsRequest extends RpcAcsRequest<RemoveTerminalsResponse> {
-	
-	public RemoveTerminalsRequest() {
-		super("rtc", "2018-01-11", "RemoveTerminals", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<String> terminalIdss;
 
@@ -41,6 +33,14 @@ public class RemoveTerminalsRequest extends RpcAcsRequest<RemoveTerminalsRespons
 	private String appId;
 
 	private String channelId;
+	public RemoveTerminalsRequest() {
+		super("rtc", "2018-01-11", "RemoveTerminals");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<String> getTerminalIdss() {
 		return this.terminalIdss;

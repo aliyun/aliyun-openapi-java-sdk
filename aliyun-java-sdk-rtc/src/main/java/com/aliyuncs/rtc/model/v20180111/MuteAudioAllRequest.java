@@ -23,15 +23,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class MuteAudioAllRequest extends RpcAcsRequest<MuteAudioAllResponse> {
-	
-	public MuteAudioAllRequest() {
-		super("rtc", "2018-01-11", "MuteAudioAll", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String conferenceId;
 
@@ -40,6 +32,14 @@ public class MuteAudioAllRequest extends RpcAcsRequest<MuteAudioAllResponse> {
 	private String participantId;
 
 	private String appId;
+	public MuteAudioAllRequest() {
+		super("rtc", "2018-01-11", "MuteAudioAll");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getConferenceId() {
 		return this.conferenceId;

@@ -24,15 +24,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class StartTaskRequest extends RpcAcsRequest<StartTaskResponse> {
-	
-	public StartTaskRequest() {
-		super("rtc", "2018-01-11", "StartTask", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<MixPanes> mixPaness;
 
@@ -45,6 +37,14 @@ public class StartTaskRequest extends RpcAcsRequest<StartTaskResponse> {
 	private String appId;
 
 	private String channelId;
+	public StartTaskRequest() {
+		super("rtc", "2018-01-11", "StartTask");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<MixPanes> getMixPaness() {
 		return this.mixPaness;

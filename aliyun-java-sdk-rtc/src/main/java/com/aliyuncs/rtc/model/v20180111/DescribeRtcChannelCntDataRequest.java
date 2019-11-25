@@ -23,15 +23,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class DescribeRtcChannelCntDataRequest extends RpcAcsRequest<DescribeRtcChannelCntDataResponse> {
-	
-	public DescribeRtcChannelCntDataRequest() {
-		super("rtc", "2018-01-11", "DescribeRtcChannelCntData", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String startTime;
 
@@ -44,6 +36,14 @@ public class DescribeRtcChannelCntDataRequest extends RpcAcsRequest<DescribeRtcC
 	private String appId;
 
 	private String interval;
+	public DescribeRtcChannelCntDataRequest() {
+		super("rtc", "2018-01-11", "DescribeRtcChannelCntData");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStartTime() {
 		return this.startTime;

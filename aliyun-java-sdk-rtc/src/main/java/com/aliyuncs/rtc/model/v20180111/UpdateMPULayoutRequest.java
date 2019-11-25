@@ -24,15 +24,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class UpdateMPULayoutRequest extends RpcAcsRequest<UpdateMPULayoutResponse> {
-	
-	public UpdateMPULayoutRequest() {
-		super("rtc", "2018-01-11", "UpdateMPULayout", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<UserPanes> userPaness;
 
@@ -47,6 +39,14 @@ public class UpdateMPULayoutRequest extends RpcAcsRequest<UpdateMPULayoutRespons
 	private Long ownerId;
 
 	private String appId;
+	public UpdateMPULayoutRequest() {
+		super("rtc", "2018-01-11", "UpdateMPULayout");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<UserPanes> getUserPaness() {
 		return this.userPaness;

@@ -23,21 +23,21 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class DeleteTemplateRequest extends RpcAcsRequest<DeleteTemplateResponse> {
-	
-	public DeleteTemplateRequest() {
-		super("rtc", "2018-01-11", "DeleteTemplate", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long ownerId;
 
 	private Long templateId;
 
 	private String appId;
+	public DeleteTemplateRequest() {
+		super("rtc", "2018-01-11", "DeleteTemplate");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getOwnerId() {
 		return this.ownerId;

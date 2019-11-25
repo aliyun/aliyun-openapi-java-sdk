@@ -23,21 +23,21 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class DeleteConferenceRequest extends RpcAcsRequest<DeleteConferenceResponse> {
-	
-	public DeleteConferenceRequest() {
-		super("rtc", "2018-01-11", "DeleteConference", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String conferenceId;
 
 	private Long ownerId;
 
 	private String appId;
+	public DeleteConferenceRequest() {
+		super("rtc", "2018-01-11", "DeleteConference");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getConferenceId() {
 		return this.conferenceId;

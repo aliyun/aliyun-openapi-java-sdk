@@ -23,15 +23,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @version 
  */
 public class DescribeRtcChannelMetricRequest extends RpcAcsRequest<DescribeRtcChannelMetricResponse> {
-	
-	public DescribeRtcChannelMetricRequest() {
-		super("rtc", "2018-01-11", "DescribeRtcChannelMetric", "rtc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long ownerId;
 
@@ -40,6 +32,14 @@ public class DescribeRtcChannelMetricRequest extends RpcAcsRequest<DescribeRtcCh
 	private String channelId;
 
 	private String timePoint;
+	public DescribeRtcChannelMetricRequest() {
+		super("rtc", "2018-01-11", "DescribeRtcChannelMetric");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getOwnerId() {
 		return this.ownerId;
