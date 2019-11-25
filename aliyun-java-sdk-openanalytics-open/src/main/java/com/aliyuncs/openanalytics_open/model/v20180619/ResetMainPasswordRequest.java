@@ -25,11 +25,17 @@ import com.aliyuncs.openanalytics_open.Endpoint;
 public class ResetMainPasswordRequest extends RpcAcsRequest<ResetMainPasswordResponse> {
 	   
 
+	private String externalUid;
+
 	private String initPassword;
+
+	private String externalAliyunUid;
 
 	private Boolean useRandomPassword;
 
 	private Boolean enableKMS;
+
+	private String externalBizAliyunUid;
 	public ResetMainPasswordRequest() {
 		super("openanalytics-open", "2018-06-19", "ResetMainPassword", "openanalytics");
 		setMethod(MethodType.POST);
@@ -37,6 +43,17 @@ public class ResetMainPasswordRequest extends RpcAcsRequest<ResetMainPasswordRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getExternalUid() {
+		return this.externalUid;
+	}
+
+	public void setExternalUid(String externalUid) {
+		this.externalUid = externalUid;
+		if(externalUid != null){
+			putBodyParameter("ExternalUid", externalUid);
+		}
 	}
 
 	public String getInitPassword() {
@@ -47,6 +64,17 @@ public class ResetMainPasswordRequest extends RpcAcsRequest<ResetMainPasswordRes
 		this.initPassword = initPassword;
 		if(initPassword != null){
 			putBodyParameter("InitPassword", initPassword);
+		}
+	}
+
+	public String getExternalAliyunUid() {
+		return this.externalAliyunUid;
+	}
+
+	public void setExternalAliyunUid(String externalAliyunUid) {
+		this.externalAliyunUid = externalAliyunUid;
+		if(externalAliyunUid != null){
+			putBodyParameter("ExternalAliyunUid", externalAliyunUid);
 		}
 	}
 
@@ -69,6 +97,17 @@ public class ResetMainPasswordRequest extends RpcAcsRequest<ResetMainPasswordRes
 		this.enableKMS = enableKMS;
 		if(enableKMS != null){
 			putBodyParameter("EnableKMS", enableKMS.toString());
+		}
+	}
+
+	public String getExternalBizAliyunUid() {
+		return this.externalBizAliyunUid;
+	}
+
+	public void setExternalBizAliyunUid(String externalBizAliyunUid) {
+		this.externalBizAliyunUid = externalBizAliyunUid;
+		if(externalBizAliyunUid != null){
+			putBodyParameter("ExternalBizAliyunUid", externalBizAliyunUid);
 		}
 	}
 

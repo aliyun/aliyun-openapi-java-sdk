@@ -24,6 +24,12 @@ import com.aliyuncs.openanalytics_open.Endpoint;
  */
 public class GetRegionStatusRequest extends RpcAcsRequest<GetRegionStatusResponse> {
 	   
+
+	private String externalUid;
+
+	private String externalAliyunUid;
+
+	private String externalBizAliyunUid;
 	public GetRegionStatusRequest() {
 		super("openanalytics-open", "2018-06-19", "GetRegionStatus", "openanalytics");
 		setMethod(MethodType.POST);
@@ -31,6 +37,39 @@ public class GetRegionStatusRequest extends RpcAcsRequest<GetRegionStatusRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getExternalUid() {
+		return this.externalUid;
+	}
+
+	public void setExternalUid(String externalUid) {
+		this.externalUid = externalUid;
+		if(externalUid != null){
+			putBodyParameter("ExternalUid", externalUid);
+		}
+	}
+
+	public String getExternalAliyunUid() {
+		return this.externalAliyunUid;
+	}
+
+	public void setExternalAliyunUid(String externalAliyunUid) {
+		this.externalAliyunUid = externalAliyunUid;
+		if(externalAliyunUid != null){
+			putBodyParameter("ExternalAliyunUid", externalAliyunUid);
+		}
+	}
+
+	public String getExternalBizAliyunUid() {
+		return this.externalBizAliyunUid;
+	}
+
+	public void setExternalBizAliyunUid(String externalBizAliyunUid) {
+		this.externalBizAliyunUid = externalBizAliyunUid;
+		if(externalBizAliyunUid != null){
+			putBodyParameter("ExternalBizAliyunUid", externalBizAliyunUid);
+		}
 	}
 
 	@Override
