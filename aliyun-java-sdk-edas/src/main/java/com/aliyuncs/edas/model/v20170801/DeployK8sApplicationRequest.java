@@ -67,6 +67,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String command;
 
+	private String updateStrategy;
+
 	private String args;
 
 	private String jDK;
@@ -76,6 +78,10 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 	private String uriEncoding;
 
 	private String appId;
+
+	private Integer mCpuRequest;
+
+	private Integer mCpuLimit;
 
 	private String postStart;
 	public DeployK8sApplicationRequest() {
@@ -319,6 +325,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
+	public String getUpdateStrategy() {
+		return this.updateStrategy;
+	}
+
+	public void setUpdateStrategy(String updateStrategy) {
+		this.updateStrategy = updateStrategy;
+		if(updateStrategy != null){
+			putQueryParameter("UpdateStrategy", updateStrategy);
+		}
+	}
+
 	public String getArgs() {
 		return this.args;
 	}
@@ -371,6 +388,28 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public Integer getMCpuRequest() {
+		return this.mCpuRequest;
+	}
+
+	public void setMCpuRequest(Integer mCpuRequest) {
+		this.mCpuRequest = mCpuRequest;
+		if(mCpuRequest != null){
+			putQueryParameter("MCpuRequest", mCpuRequest.toString());
+		}
+	}
+
+	public Integer getMCpuLimit() {
+		return this.mCpuLimit;
+	}
+
+	public void setMCpuLimit(Integer mCpuLimit) {
+		this.mCpuLimit = mCpuLimit;
+		if(mCpuLimit != null){
+			putQueryParameter("MCpuLimit", mCpuLimit.toString());
 		}
 	}
 
