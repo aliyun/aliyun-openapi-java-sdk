@@ -11,7 +11,7 @@
 <a href="https://travis-ci.org/aliyun/aliyun-openapi-java-sdk"><img src="https://travis-ci.org/aliyun/aliyun-openapi-java-sdk.svg?branch=master"/></a>
 <a href="https://codecov.io/gh/aliyun/aliyun-openapi-java-sdk"><img src="https://codecov.io/gh/aliyun/aliyun-openapi-java-sdk/branch/master/graph/badge.svg"/></a>
 <a href="https://www.codacy.com/app/aliyun/aliyun-openapi-java-sdk?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aliyun/aliyun-openapi-java-sdk&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/aef3826e57ca444fb217bab8edaed195"/></a>
-<a href="https://ci.appveyor.com/project/aliyun/aliyun-openapi-java-sdk"><img src="https://ci.appveyor.com/api/projects/status/bymi868y6443gwdp?svg=true"/></a>
+<a href="https://ci.appveyor.com/project/aliyun/aliyun-openapi-java-sdk"><img src="https://ci.appveyor.com/api/projects/status/levg38kb55k0pn1v/branch/master?svg=true"/></a>
 </p>
 
 欢迎使用 Alibaba Cloud SDK for Java 。Alibaba Cloud SDK for Java 让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。
