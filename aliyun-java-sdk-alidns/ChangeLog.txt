@@ -1,3 +1,12 @@
+2019-11-26 Version: 2.0.12
+- Supported API BindInstanceDomains.
+- Supported API UnbindInstanceDomains.
+- Supported API AddCustomLine.
+- Supported API UpdateCustomLine.
+- Supported API DeleteCustomLines.
+- Supported API DescribeCustomLine.
+- Supported API DescribeCustomLines.
+
 2019-11-13 Version: 2.0.11
 - Supported API UpdateDomainRemark for Update Domain Remark.
 - Supported API UpdateDomainRecordRemark for Update Record Remark.

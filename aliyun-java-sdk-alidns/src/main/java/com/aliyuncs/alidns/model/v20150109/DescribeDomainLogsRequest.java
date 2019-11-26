@@ -35,8 +35,6 @@ public class DescribeDomainLogsRequest extends RpcAcsRequest<DescribeDomainLogsR
 
 	private String endDate;
 
-	private String userClientIp;
-
 	private Long pageSize;
 
 	private String lang;
@@ -103,17 +101,6 @@ public class DescribeDomainLogsRequest extends RpcAcsRequest<DescribeDomainLogsR
 		this.endDate = endDate;
 		if(endDate != null){
 			putQueryParameter("endDate", endDate);
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

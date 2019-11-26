@@ -22,24 +22,18 @@ import com.aliyuncs.alidns.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeBatchResultDetailRequest extends RpcAcsRequest<DescribeBatchResultDetailResponse> {
+public class DescribeTransferDomainsRequest extends RpcAcsRequest<DescribeTransferDomainsResponse> {
 	   
 
-	private String batchType;
+	private Long pageNumber;
 
-	private Integer pageNumber;
+	private String transferType;
 
-	private String userClientIp;
-
-	private Integer pageSize;
+	private Long pageSize;
 
 	private String lang;
-
-	private Long taskId;
-
-	private String status;
-	public DescribeBatchResultDetailRequest() {
-		super("Alidns", "2015-01-09", "DescribeBatchResultDetail", "alidns");
+	public DescribeTransferDomainsRequest() {
+		super("Alidns", "2015-01-09", "DescribeTransferDomains", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,44 +41,33 @@ public class DescribeBatchResultDetailRequest extends RpcAcsRequest<DescribeBatc
 		} catch (Exception e) {}
 	}
 
-	public String getBatchType() {
-		return this.batchType;
-	}
-
-	public void setBatchType(String batchType) {
-		this.batchType = batchType;
-		if(batchType != null){
-			putQueryParameter("BatchType", batchType);
-		}
-	}
-
-	public Integer getPageNumber() {
+	public Long getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
+	public void setPageNumber(Long pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getUserClientIp() {
-		return this.userClientIp;
+	public String getTransferType() {
+		return this.transferType;
 	}
 
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
+	public void setTransferType(String transferType) {
+		this.transferType = transferType;
+		if(transferType != null){
+			putQueryParameter("TransferType", transferType);
 		}
 	}
 
-	public Integer getPageSize() {
+	public Long getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(Integer pageSize) {
+	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
@@ -102,31 +85,9 @@ public class DescribeBatchResultDetailRequest extends RpcAcsRequest<DescribeBatc
 		}
 	}
 
-	public Long getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(Long taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId.toString());
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
-		}
-	}
-
 	@Override
-	public Class<DescribeBatchResultDetailResponse> getResponseClass() {
-		return DescribeBatchResultDetailResponse.class;
+	public Class<DescribeTransferDomainsResponse> getResponseClass() {
+		return DescribeTransferDomainsResponse.class;
 	}
 
 }
