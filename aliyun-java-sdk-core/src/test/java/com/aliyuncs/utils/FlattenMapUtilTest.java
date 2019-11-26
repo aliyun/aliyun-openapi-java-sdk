@@ -3,7 +3,6 @@ package com.aliyuncs.utils;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.reflect.Method;
 import java.util.*;
 
 public class FlattenMapUtilTest {
@@ -226,30 +225,6 @@ public class FlattenMapUtilTest {
         Map<?, ?> map2B = (Map<?, ?>) item2.get("ObjectB");
         Assert.assertEquals("Value2BA", map2B.get("MemberA"));
         Assert.assertEquals("Value2BB", map2B.get("MemberB"));
-    }
-
-    @Test
-    public void filtrateMapTest() throws Exception {
-        FlattenMapUtil flattenMapUtil = new FlattenMapUtil();
-        Class clazz = flattenMapUtil.getClass();
-        Method filtrateMap = clazz.getDeclaredMethod("filtrateMap", Map.class, String.class);
-        filtrateMap.setAccessible(true);
-        Map<Object, Object> objectMap = null;
-        Map<Object, Object> result = (Map<Object, Object>) filtrateMap.invoke(flattenMapUtil, objectMap, "");
-        Assert.assertTrue(objectMap == result);
-
-        objectMap = new HashMap<Object, Object>();
-        result = (Map<Object, Object>) filtrateMap.invoke(flattenMapUtil, objectMap, "");
-        Assert.assertTrue(objectMap == result);
-
-        Map<Object, Object> subMap = new HashMap<Object, Object>();
-        objectMap.put("test", subMap);
-        result = (Map<Object, Object>) filtrateMap.invoke(flattenMapUtil, objectMap, "test");
-        Assert.assertTrue(subMap == result);
-
-        objectMap.put("test", "test");
-        result = (Map<Object, Object>) filtrateMap.invoke(flattenMapUtil, objectMap, "test");
-        Assert.assertEquals("test", result.get("test"));
     }
 
     @Test
