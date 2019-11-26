@@ -23,7 +23,6 @@ public class AddSfaceFaceResponseUnmarshaller {
 	public static AddSfaceFaceResponse unmarshall(AddSfaceFaceResponse addSfaceFaceResponse, UnmarshallerContext _ctx) {
 		
 		addSfaceFaceResponse.setRequestId(_ctx.stringValue("AddSfaceFaceResponse.RequestId"));
-		addSfaceFaceResponse.setDataId(_ctx.stringValue("AddSfaceFaceResponse.DataId"));
 	 
 	 	return addSfaceFaceResponse;
 	}
