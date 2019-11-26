@@ -70,6 +70,7 @@ public class QueryBillResponseUnmarshaller {
 			item.setPaymentCurrency(_ctx.stringValue("QueryBillResponse.Data.Items["+ i +"].PaymentCurrency"));
 			item.setPaymentTransactionID(_ctx.stringValue("QueryBillResponse.Data.Items["+ i +"].PaymentTransactionID"));
 			item.setRoundDownDiscount(_ctx.stringValue("QueryBillResponse.Data.Items["+ i +"].RoundDownDiscount"));
+			item.setSubOrderId(_ctx.stringValue("QueryBillResponse.Data.Items["+ i +"].SubOrderId"));
 
 			items.add(item);
 		}

@@ -1,3 +1,6 @@
+2019-11-26 Version: 1.5.4
+- Modify QueryBill, add SubOrderId in item of response.
+
 2019-11-15 Version: 1.5.3
 - Modify QueryAccountBill, support group by product.
 
