@@ -26,7 +26,7 @@ import com.aliyuncs.aligreen_console.Endpoint;
 public class ListSfaceAuditTasksRequest extends RpcAcsRequest<ListSfaceAuditTasksResponse> {
 	   
 
-	private List<String> dataIdss;
+	private List<String> dataIds;
 	public ListSfaceAuditTasksRequest() {
 		super("aligreen-console", "2019-11-15", "ListSfaceAuditTasks");
 		setMethod(MethodType.GET);
@@ -36,15 +36,15 @@ public class ListSfaceAuditTasksRequest extends RpcAcsRequest<ListSfaceAuditTask
 		} catch (Exception e) {}
 	}
 
-	public List<String> getDataIdss() {
-		return this.dataIdss;
+	public List<String> getDataIds() {
+		return this.dataIds;
 	}
 
-	public void setDataIdss(List<String> dataIdss) {
-		this.dataIdss = dataIdss;	
-		if (dataIdss != null) {
-			for (int i = 0; i < dataIdss.size(); i++) {
-				putQueryParameter("DataIds." + (i + 1) , dataIdss.get(i));
+	public void setDataIds(List<String> dataIds) {
+		this.dataIds = dataIds;	
+		if (dataIds != null) {
+			for (int i = 0; i < dataIds.size(); i++) {
+				putQueryParameter("DataId." + (i + 1) , dataIds.get(i));
 			}
 		}	
 	}
