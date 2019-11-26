@@ -25,6 +25,21 @@ public class MapUtils {
         return list;
     }
 
+    public Map<Object, Object> convertMapToMap(Map<String, String> flattenMap, String prefix) {
+        Map<Object, Object> map = new HashMap<Object, Object>();
+        for (Map.Entry<String, String> entry : flattenMap.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            if (key.contains(prefix)) {
+                String[] keys = key.replace(prefix, "").split("\\.");
+                String pre = prefix + keys[0];
+                String mapKey = key.replace(pre + ".", "");
+                map = setMap(map, mapKey, value);
+            }
+        }
+        return map;
+    }
+
     private List<Map<Object, Object>> setList(List<Map<Object, Object>> targetList, int index, String key,
             String value) {
         List<Map<Object, Object>> list = targetList;
