@@ -1,4 +1,7 @@
-﻿2019-11-25 Version: 4.4.8
+﻿2019-11-26 Version: 4.4.9
+1, Improve toMap method
+
+2019-11-25 Version: 4.4.8
 1, Improve filtrateMap method
 
 2019-11-12 Version: 4.4.7
