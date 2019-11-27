@@ -1,3 +1,6 @@
+2019-11-27 Version: 1.0.4
+- Supported create channel user.
+
 2019-11-26 Version: 1.0.3
 - Add DelFace API.
 - Fix API Attribute.
