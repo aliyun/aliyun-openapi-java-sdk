@@ -23,7 +23,11 @@ import com.aliyuncs.alikafka.Endpoint;
  * @version 
  */
 public class CreateConsumerGroupRequest extends RpcAcsRequest<CreateConsumerGroupResponse> {
-	
+	   
+
+	private String consumerId;
+
+	private String instanceId;
 	public CreateConsumerGroupRequest() {
 		super("alikafka", "2019-09-16", "CreateConsumerGroup", "alikafka");
 		setMethod(MethodType.POST);
@@ -32,10 +36,6 @@ public class CreateConsumerGroupRequest extends RpcAcsRequest<CreateConsumerGrou
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String consumerId;
-
-	private String instanceId;
 
 	public String getConsumerId() {
 		return this.consumerId;

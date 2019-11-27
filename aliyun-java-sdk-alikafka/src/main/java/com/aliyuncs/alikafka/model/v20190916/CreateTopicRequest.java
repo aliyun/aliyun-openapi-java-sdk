@@ -23,7 +23,13 @@ import com.aliyuncs.alikafka.Endpoint;
  * @version 
  */
 public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
-	
+	   
+
+	private String remark;
+
+	private String instanceId;
+
+	private String topic;
 	public CreateTopicRequest() {
 		super("alikafka", "2019-09-16", "CreateTopic", "alikafka");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String remark;
-
-	private String instanceId;
-
-	private String topic;
 
 	public String getRemark() {
 		return this.remark;

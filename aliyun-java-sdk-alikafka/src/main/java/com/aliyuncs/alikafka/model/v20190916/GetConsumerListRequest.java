@@ -23,7 +23,9 @@ import com.aliyuncs.alikafka.Endpoint;
  * @version 
  */
 public class GetConsumerListRequest extends RpcAcsRequest<GetConsumerListResponse> {
-	
+	   
+
+	private String instanceId;
 	public GetConsumerListRequest() {
 		super("alikafka", "2019-09-16", "GetConsumerList", "alikafka");
 		setMethod(MethodType.POST);
@@ -32,8 +34,6 @@ public class GetConsumerListRequest extends RpcAcsRequest<GetConsumerListRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
 
 	public String getInstanceId() {
 		return this.instanceId;

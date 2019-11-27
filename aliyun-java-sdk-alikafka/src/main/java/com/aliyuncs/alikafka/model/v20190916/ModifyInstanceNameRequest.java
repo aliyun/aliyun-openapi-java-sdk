@@ -22,10 +22,14 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetAllInstanceIdListRequest extends RpcAcsRequest<GetAllInstanceIdListResponse> {
-	
-	public GetAllInstanceIdListRequest() {
-		super("alikafka", "2019-09-16", "GetAllInstanceIdList", "alikafka");
+public class ModifyInstanceNameRequest extends RpcAcsRequest<ModifyInstanceNameResponse> {
+	   
+
+	private String instanceId;
+
+	private String instanceName;
+	public ModifyInstanceNameRequest() {
+		super("alikafka", "2019-09-16", "ModifyInstanceName", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -33,9 +37,31 @@ public class GetAllInstanceIdListRequest extends RpcAcsRequest<GetAllInstanceIdL
 		} catch (Exception e) {}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
 	@Override
-	public Class<GetAllInstanceIdListResponse> getResponseClass() {
-		return GetAllInstanceIdListResponse.class;
+	public Class<ModifyInstanceNameResponse> getResponseClass() {
+		return ModifyInstanceNameResponse.class;
 	}
 
 }

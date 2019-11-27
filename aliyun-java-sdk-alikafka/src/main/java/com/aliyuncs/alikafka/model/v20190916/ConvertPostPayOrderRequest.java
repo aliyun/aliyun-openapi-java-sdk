@@ -22,12 +22,14 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListResponse> {
+public class ConvertPostPayOrderRequest extends RpcAcsRequest<ConvertPostPayOrderResponse> {
 	   
 
-	private String orderId;
-	public GetInstanceListRequest() {
-		super("alikafka", "2019-09-16", "GetInstanceList", "alikafka");
+	private Integer duration;
+
+	private String instanceId;
+	public ConvertPostPayOrderRequest() {
+		super("alikafka", "2019-09-16", "ConvertPostPayOrder", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListRespons
 		} catch (Exception e) {}
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public Integer getDuration() {
+		return this.duration;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
 	@Override
-	public Class<GetInstanceListResponse> getResponseClass() {
-		return GetInstanceListResponse.class;
+	public Class<ConvertPostPayOrderResponse> getResponseClass() {
+		return ConvertPostPayOrderResponse.class;
 	}
 
 }

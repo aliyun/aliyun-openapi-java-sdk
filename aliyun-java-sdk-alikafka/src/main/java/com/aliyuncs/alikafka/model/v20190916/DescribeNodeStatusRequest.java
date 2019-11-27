@@ -22,12 +22,12 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListResponse> {
+public class DescribeNodeStatusRequest extends RpcAcsRequest<DescribeNodeStatusResponse> {
 	   
 
-	private String orderId;
-	public GetInstanceListRequest() {
-		super("alikafka", "2019-09-16", "GetInstanceList", "alikafka");
+	private String instanceId;
+	public DescribeNodeStatusRequest() {
+		super("alikafka", "2019-09-16", "DescribeNodeStatus", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListRespons
 		} catch (Exception e) {}
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
 	@Override
-	public Class<GetInstanceListResponse> getResponseClass() {
-		return GetInstanceListResponse.class;
+	public Class<DescribeNodeStatusResponse> getResponseClass() {
+		return DescribeNodeStatusResponse.class;
 	}
 
 }

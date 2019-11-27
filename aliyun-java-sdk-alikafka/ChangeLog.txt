@@ -1,3 +1,7 @@
+2019-11-27 Version: 1.2.0
+- Support region router.
+- Add some new APIs.
+
 2019-09-18 Version: 1.1.0
 - Optimize error code.
 

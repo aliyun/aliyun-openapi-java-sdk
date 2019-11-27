@@ -23,7 +23,11 @@ import com.aliyuncs.alikafka.Endpoint;
  * @version 
  */
 public class DeleteTopicRequest extends RpcAcsRequest<DeleteTopicResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String topic;
 	public DeleteTopicRequest() {
 		super("alikafka", "2019-09-16", "DeleteTopic", "alikafka");
 		setMethod(MethodType.POST);
@@ -32,10 +36,6 @@ public class DeleteTopicRequest extends RpcAcsRequest<DeleteTopicResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String topic;
 
 	public String getInstanceId() {
 		return this.instanceId;

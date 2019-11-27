@@ -127,6 +127,8 @@ public class GetTopicListResponse extends AcsResponse {
 
 		private Integer partitionNum;
 
+		private List<TagVO> tags;
+
 		public String getTopic() {
 			return this.topic;
 		}
@@ -167,26 +169,10 @@ public class GetTopicListResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -221,6 +207,37 @@ public class GetTopicListResponse extends AcsResponse {
 
 		public void setPartitionNum(Integer partitionNum) {
 			this.partitionNum = partitionNum;
+		}
+
+		public List<TagVO> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagVO> tags) {
+			this.tags = tags;
+		}
+
+		public static class TagVO {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

@@ -23,7 +23,11 @@ import com.aliyuncs.alikafka.Endpoint;
  * @version 
  */
 public class GetTopicStatusRequest extends RpcAcsRequest<GetTopicStatusResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String topic;
 	public GetTopicStatusRequest() {
 		super("alikafka", "2019-09-16", "GetTopicStatus", "alikafka");
 		setMethod(MethodType.POST);
@@ -32,10 +36,6 @@ public class GetTopicStatusRequest extends RpcAcsRequest<GetTopicStatusResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String topic;
 
 	public String getInstanceId() {
 		return this.instanceId;

@@ -99,7 +99,27 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		private String name;
 
+		private Integer ioMax;
+
+		private Integer eipMax;
+
+		private Integer diskType;
+
+		private Integer diskSize;
+
+		private Integer msgRetain;
+
+		private Integer topicNumLimit;
+
+		private String zoneId;
+
+		private Integer paidType;
+
+		private String specType;
+
 		private List<UpgradeServiceDetailInfoVO> upgradeServiceDetailInfo;
+
+		private List<TagVO> tags;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -109,26 +129,10 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -205,12 +209,92 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.name = name;
 		}
 
+		public Integer getIoMax() {
+			return this.ioMax;
+		}
+
+		public void setIoMax(Integer ioMax) {
+			this.ioMax = ioMax;
+		}
+
+		public Integer getEipMax() {
+			return this.eipMax;
+		}
+
+		public void setEipMax(Integer eipMax) {
+			this.eipMax = eipMax;
+		}
+
+		public Integer getDiskType() {
+			return this.diskType;
+		}
+
+		public void setDiskType(Integer diskType) {
+			this.diskType = diskType;
+		}
+
+		public Integer getDiskSize() {
+			return this.diskSize;
+		}
+
+		public void setDiskSize(Integer diskSize) {
+			this.diskSize = diskSize;
+		}
+
+		public Integer getMsgRetain() {
+			return this.msgRetain;
+		}
+
+		public void setMsgRetain(Integer msgRetain) {
+			this.msgRetain = msgRetain;
+		}
+
+		public Integer getTopicNumLimit() {
+			return this.topicNumLimit;
+		}
+
+		public void setTopicNumLimit(Integer topicNumLimit) {
+			this.topicNumLimit = topicNumLimit;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public Integer getPaidType() {
+			return this.paidType;
+		}
+
+		public void setPaidType(Integer paidType) {
+			this.paidType = paidType;
+		}
+
+		public String getSpecType() {
+			return this.specType;
+		}
+
+		public void setSpecType(String specType) {
+			this.specType = specType;
+		}
+
 		public List<UpgradeServiceDetailInfoVO> getUpgradeServiceDetailInfo() {
 			return this.upgradeServiceDetailInfo;
 		}
 
 		public void setUpgradeServiceDetailInfo(List<UpgradeServiceDetailInfoVO> upgradeServiceDetailInfo) {
 			this.upgradeServiceDetailInfo = upgradeServiceDetailInfo;
+		}
+
+		public List<TagVO> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagVO> tags) {
+			this.tags = tags;
 		}
 
 		public static class UpgradeServiceDetailInfoVO {
@@ -223,6 +307,29 @@ public class GetInstanceListResponse extends AcsResponse {
 
 			public void setCurrent2OpenSourceVersion(String current2OpenSourceVersion) {
 				this.current2OpenSourceVersion = current2OpenSourceVersion;
+			}
+		}
+
+		public static class TagVO {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

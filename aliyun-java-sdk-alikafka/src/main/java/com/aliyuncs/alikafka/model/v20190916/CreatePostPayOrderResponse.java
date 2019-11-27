@@ -14,34 +14,25 @@
 
 package com.aliyuncs.alikafka.model.v20190916;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alikafka.transform.v20190916.GetAllInstanceIdListResponseUnmarshaller;
+import com.aliyuncs.alikafka.transform.v20190916.CreatePostPayOrderResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetAllInstanceIdListResponse extends AcsResponse {
-
-	private Boolean success;
+public class CreatePostPayOrderResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Boolean success;
 
 	private Integer code;
 
 	private String message;
 
-	private Map<Object,Object> instanceIds;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,6 +40,14 @@ public class GetAllInstanceIdListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Integer getCode() {
@@ -67,16 +66,16 @@ public class GetAllInstanceIdListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Map<Object,Object> getInstanceIds() {
-		return this.instanceIds;
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setInstanceIds(Map<Object,Object> instanceIds) {
-		this.instanceIds = instanceIds;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override
-	public GetAllInstanceIdListResponse getInstance(UnmarshallerContext context) {
-		return	GetAllInstanceIdListResponseUnmarshaller.unmarshall(this, context);
+	public CreatePostPayOrderResponse getInstance(UnmarshallerContext context) {
+		return	CreatePostPayOrderResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.alikafka.model.v20190916.GetInstanceListResponse;
 import com.aliyuncs.alikafka.model.v20190916.GetInstanceListResponse.InstanceVO;
+import com.aliyuncs.alikafka.model.v20190916.GetInstanceListResponse.InstanceVO.TagVO;
 import com.aliyuncs.alikafka.model.v20190916.GetInstanceListResponse.InstanceVO.UpgradeServiceDetailInfoVO;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -46,6 +47,15 @@ public class GetInstanceListResponseUnmarshaller {
 			instanceVO.setDeployType(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].DeployType"));
 			instanceVO.setSslEndPoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SslEndPoint"));
 			instanceVO.setName(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].Name"));
+			instanceVO.setIoMax(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].IoMax"));
+			instanceVO.setEipMax(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].EipMax"));
+			instanceVO.setDiskType(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].DiskType"));
+			instanceVO.setDiskSize(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].DiskSize"));
+			instanceVO.setMsgRetain(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].MsgRetain"));
+			instanceVO.setTopicNumLimit(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].TopicNumLimit"));
+			instanceVO.setZoneId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].ZoneId"));
+			instanceVO.setPaidType(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].PaidType"));
+			instanceVO.setSpecType(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SpecType"));
 
 			List<UpgradeServiceDetailInfoVO> upgradeServiceDetailInfo = new ArrayList<UpgradeServiceDetailInfoVO>();
 			for (int j = 0; j < _ctx.lengthValue("GetInstanceListResponse.InstanceList["+ i +"].UpgradeServiceDetailInfo.Length"); j++) {
@@ -55,6 +65,16 @@ public class GetInstanceListResponseUnmarshaller {
 				upgradeServiceDetailInfo.add(upgradeServiceDetailInfoVO);
 			}
 			instanceVO.setUpgradeServiceDetailInfo(upgradeServiceDetailInfo);
+
+			List<TagVO> tags = new ArrayList<TagVO>();
+			for (int j = 0; j < _ctx.lengthValue("GetInstanceListResponse.InstanceList["+ i +"].Tags.Length"); j++) {
+				TagVO tagVO = new TagVO();
+				tagVO.setKey(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].Tags["+ j +"].Key"));
+				tagVO.setValue(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagVO);
+			}
+			instanceVO.setTags(tags);
 
 			instanceList.add(instanceVO);
 		}

@@ -22,16 +22,16 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTopicListRequest extends RpcAcsRequest<GetTopicListResponse> {
+public class ReleaseInstanceRequest extends RpcAcsRequest<ReleaseInstanceResponse> {
 	   
 
-	private String currentPage;
+	private Boolean forceDeleteInstance;
 
 	private String instanceId;
 
-	private String pageSize;
-	public GetTopicListRequest() {
-		super("alikafka", "2019-09-16", "GetTopicList", "alikafka");
+	private Boolean releaseIgnoreTime;
+	public ReleaseInstanceRequest() {
+		super("alikafka", "2019-09-16", "ReleaseInstance", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +39,14 @@ public class GetTopicListRequest extends RpcAcsRequest<GetTopicListResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getCurrentPage() {
-		return this.currentPage;
+	public Boolean getForceDeleteInstance() {
+		return this.forceDeleteInstance;
 	}
 
-	public void setCurrentPage(String currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage);
+	public void setForceDeleteInstance(Boolean forceDeleteInstance) {
+		this.forceDeleteInstance = forceDeleteInstance;
+		if(forceDeleteInstance != null){
+			putQueryParameter("ForceDeleteInstance", forceDeleteInstance.toString());
 		}
 	}
 
@@ -61,20 +61,20 @@ public class GetTopicListRequest extends RpcAcsRequest<GetTopicListResponse> {
 		}
 	}
 
-	public String getPageSize() {
-		return this.pageSize;
+	public Boolean getReleaseIgnoreTime() {
+		return this.releaseIgnoreTime;
 	}
 
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
+	public void setReleaseIgnoreTime(Boolean releaseIgnoreTime) {
+		this.releaseIgnoreTime = releaseIgnoreTime;
+		if(releaseIgnoreTime != null){
+			putQueryParameter("ReleaseIgnoreTime", releaseIgnoreTime.toString());
 		}
 	}
 
 	@Override
-	public Class<GetTopicListResponse> getResponseClass() {
-		return GetTopicListResponse.class;
+	public Class<ReleaseInstanceResponse> getResponseClass() {
+		return ReleaseInstanceResponse.class;
 	}
 
 }

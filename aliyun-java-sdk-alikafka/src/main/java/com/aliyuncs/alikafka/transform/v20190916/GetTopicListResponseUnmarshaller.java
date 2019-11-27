@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.alikafka.model.v20190916.GetTopicListResponse;
 import com.aliyuncs.alikafka.model.v20190916.GetTopicListResponse.TopicVO;
+import com.aliyuncs.alikafka.model.v20190916.GetTopicListResponse.TopicVO.TagVO;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +48,16 @@ public class GetTopicListResponseUnmarshaller {
 			topicVO.setCompactTopic(_ctx.booleanValue("GetTopicListResponse.TopicList["+ i +"].CompactTopic"));
 			topicVO.setLocalTopic(_ctx.booleanValue("GetTopicListResponse.TopicList["+ i +"].LocalTopic"));
 			topicVO.setPartitionNum(_ctx.integerValue("GetTopicListResponse.TopicList["+ i +"].PartitionNum"));
+
+			List<TagVO> tags = new ArrayList<TagVO>();
+			for (int j = 0; j < _ctx.lengthValue("GetTopicListResponse.TopicList["+ i +"].Tags.Length"); j++) {
+				TagVO tagVO = new TagVO();
+				tagVO.setKey(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].Tags["+ j +"].Key"));
+				tagVO.setValue(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagVO);
+			}
+			topicVO.setTags(tags);
 
 			topicList.add(topicVO);
 		}

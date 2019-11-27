@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.alikafka.model.v20190916.GetConsumerListResponse;
 import com.aliyuncs.alikafka.model.v20190916.GetConsumerListResponse.ConsumerVO;
+import com.aliyuncs.alikafka.model.v20190916.GetConsumerListResponse.ConsumerVO.TagVO;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,6 +38,16 @@ public class GetConsumerListResponseUnmarshaller {
 			consumerVO.setRegionId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].RegionId"));
 			consumerVO.setInstanceId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].InstanceId"));
 			consumerVO.setConsumerId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].ConsumerId"));
+
+			List<TagVO> tags = new ArrayList<TagVO>();
+			for (int j = 0; j < _ctx.lengthValue("GetConsumerListResponse.ConsumerList["+ i +"].Tags.Length"); j++) {
+				TagVO tagVO = new TagVO();
+				tagVO.setKey(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].Tags["+ j +"].Key"));
+				tagVO.setValue(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagVO);
+			}
+			consumerVO.setTags(tags);
 
 			consumerList.add(consumerVO);
 		}
