@@ -15,46 +15,37 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetBackupPolicyRequest extends RpcAcsRequest<SetBackupPolicyResponse> {
-	
-	public SetBackupPolicyRequest() {
-		super("Drds", "2019-01-23", "SetBackupPolicy", "drds");
-	}
-
-	private String preferredBackupPeriod;
+	   
 
 	private String backupDbNames;
 
-	private String dataBackupRetentionPeriod;
-
-	private String preferredBackupStartTime;
+	private String backupLog;
 
 	private String preferredBackupEndTime;
 
-	private String backupMode;
+	private String preferredBackupPeriod;
 
-	private String backupLog;
+	private String preferredBackupStartTime;
 
 	private String backupLevel;
 
 	private String drdsInstanceId;
 
+	private String dataBackupRetentionPeriod;
+
+	private String backupMode;
+
 	private String logBackupRetentionPeriod;
-
-	public String getPreferredBackupPeriod() {
-		return this.preferredBackupPeriod;
-	}
-
-	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
-		this.preferredBackupPeriod = preferredBackupPeriod;
-		if(preferredBackupPeriod != null){
-			putQueryParameter("PreferredBackupPeriod", preferredBackupPeriod);
-		}
+	public SetBackupPolicyRequest() {
+		super("Drds", "2019-01-23", "SetBackupPolicy", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public String getBackupDbNames() {
@@ -68,25 +59,14 @@ public class SetBackupPolicyRequest extends RpcAcsRequest<SetBackupPolicyRespons
 		}
 	}
 
-	public String getDataBackupRetentionPeriod() {
-		return this.dataBackupRetentionPeriod;
+	public String getBackupLog() {
+		return this.backupLog;
 	}
 
-	public void setDataBackupRetentionPeriod(String dataBackupRetentionPeriod) {
-		this.dataBackupRetentionPeriod = dataBackupRetentionPeriod;
-		if(dataBackupRetentionPeriod != null){
-			putQueryParameter("DataBackupRetentionPeriod", dataBackupRetentionPeriod);
-		}
-	}
-
-	public String getPreferredBackupStartTime() {
-		return this.preferredBackupStartTime;
-	}
-
-	public void setPreferredBackupStartTime(String preferredBackupStartTime) {
-		this.preferredBackupStartTime = preferredBackupStartTime;
-		if(preferredBackupStartTime != null){
-			putQueryParameter("PreferredBackupStartTime", preferredBackupStartTime);
+	public void setBackupLog(String backupLog) {
+		this.backupLog = backupLog;
+		if(backupLog != null){
+			putQueryParameter("BackupLog", backupLog);
 		}
 	}
 
@@ -101,25 +81,25 @@ public class SetBackupPolicyRequest extends RpcAcsRequest<SetBackupPolicyRespons
 		}
 	}
 
-	public String getBackupMode() {
-		return this.backupMode;
+	public String getPreferredBackupPeriod() {
+		return this.preferredBackupPeriod;
 	}
 
-	public void setBackupMode(String backupMode) {
-		this.backupMode = backupMode;
-		if(backupMode != null){
-			putQueryParameter("BackupMode", backupMode);
+	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
+		this.preferredBackupPeriod = preferredBackupPeriod;
+		if(preferredBackupPeriod != null){
+			putQueryParameter("PreferredBackupPeriod", preferredBackupPeriod);
 		}
 	}
 
-	public String getBackupLog() {
-		return this.backupLog;
+	public String getPreferredBackupStartTime() {
+		return this.preferredBackupStartTime;
 	}
 
-	public void setBackupLog(String backupLog) {
-		this.backupLog = backupLog;
-		if(backupLog != null){
-			putQueryParameter("BackupLog", backupLog);
+	public void setPreferredBackupStartTime(String preferredBackupStartTime) {
+		this.preferredBackupStartTime = preferredBackupStartTime;
+		if(preferredBackupStartTime != null){
+			putQueryParameter("PreferredBackupStartTime", preferredBackupStartTime);
 		}
 	}
 
@@ -142,6 +122,28 @@ public class SetBackupPolicyRequest extends RpcAcsRequest<SetBackupPolicyRespons
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getDataBackupRetentionPeriod() {
+		return this.dataBackupRetentionPeriod;
+	}
+
+	public void setDataBackupRetentionPeriod(String dataBackupRetentionPeriod) {
+		this.dataBackupRetentionPeriod = dataBackupRetentionPeriod;
+		if(dataBackupRetentionPeriod != null){
+			putQueryParameter("DataBackupRetentionPeriod", dataBackupRetentionPeriod);
+		}
+	}
+
+	public String getBackupMode() {
+		return this.backupMode;
+	}
+
+	public void setBackupMode(String backupMode) {
+		this.backupMode = backupMode;
+		if(backupMode != null){
+			putQueryParameter("BackupMode", backupMode);
 		}
 	}
 

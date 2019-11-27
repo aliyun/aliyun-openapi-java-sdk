@@ -15,24 +15,26 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class PutStartBackupRequest extends RpcAcsRequest<PutStartBackupResponse> {
-	
-	public PutStartBackupRequest() {
-		super("Drds", "2019-01-23", "PutStartBackup", "drds");
-	}
+	   
 
 	private String backupDbNames;
-
-	private String backupMode;
 
 	private String backupLevel;
 
 	private String drdsInstanceId;
+
+	private String backupMode;
+	public PutStartBackupRequest() {
+		super("Drds", "2019-01-23", "PutStartBackup", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBackupDbNames() {
 		return this.backupDbNames;
@@ -42,17 +44,6 @@ public class PutStartBackupRequest extends RpcAcsRequest<PutStartBackupResponse>
 		this.backupDbNames = backupDbNames;
 		if(backupDbNames != null){
 			putQueryParameter("BackupDbNames", backupDbNames);
-		}
-	}
-
-	public String getBackupMode() {
-		return this.backupMode;
-	}
-
-	public void setBackupMode(String backupMode) {
-		this.backupMode = backupMode;
-		if(backupMode != null){
-			putQueryParameter("BackupMode", backupMode);
 		}
 	}
 
@@ -75,6 +66,17 @@ public class PutStartBackupRequest extends RpcAcsRequest<PutStartBackupResponse>
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getBackupMode() {
+		return this.backupMode;
+	}
+
+	public void setBackupMode(String backupMode) {
+		this.backupMode = backupMode;
+		if(backupMode != null){
+			putQueryParameter("BackupMode", backupMode);
 		}
 	}
 

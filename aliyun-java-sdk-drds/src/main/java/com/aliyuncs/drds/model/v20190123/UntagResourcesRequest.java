@@ -16,24 +16,26 @@ package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
-	
-	public UntagResourcesRequest() {
-		super("Drds", "2019-01-23", "UntagResources", "drds");
-	}
+	   
 
 	private Boolean all;
 
 	private List<String> resourceIds;
 
-	private List<String> tagKeys;
-
 	private String resourceType;
+
+	private List<String> tagKeys;
+	public UntagResourcesRequest() {
+		super("Drds", "2019-01-23", "UntagResources", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public Boolean getAll() {
 		return this.all;
@@ -59,6 +61,17 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		}	
 	}
 
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
 	public List<String> getTagKeys() {
 		return this.tagKeys;
 	}
@@ -70,17 +83,6 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 				putQueryParameter("TagKey." + (i + 1) , tagKeys.get(i));
 			}
 		}	
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
 	}
 
 	@Override

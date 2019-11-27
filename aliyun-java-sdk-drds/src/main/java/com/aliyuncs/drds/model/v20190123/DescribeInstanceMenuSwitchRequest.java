@@ -15,18 +15,20 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeInstanceMenuSwitchRequest extends RpcAcsRequest<DescribeInstanceMenuSwitchResponse> {
-	
-	public DescribeInstanceMenuSwitchRequest() {
-		super("Drds", "2019-01-23", "DescribeInstanceMenuSwitch", "drds");
-	}
+	   
 
 	private String drdsInstanceId;
+	public DescribeInstanceMenuSwitchRequest() {
+		super("Drds", "2019-01-23", "DescribeInstanceMenuSwitch", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;

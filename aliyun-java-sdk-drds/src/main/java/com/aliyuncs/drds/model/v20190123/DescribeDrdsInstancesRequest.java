@@ -16,28 +16,63 @@ package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDrdsInstancesRequest extends RpcAcsRequest<DescribeDrdsInstancesResponse> {
-	
-	public DescribeDrdsInstancesRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsInstances", "drds");
-	}
+	   
+
+	private String description;
+
+	private String type;
+
+	private Integer pageNumber;
 
 	private Boolean expired;
 
 	private Integer pageSize;
 
-	private String description;
-
 	private List<Tag> tags;
+	public DescribeDrdsInstancesRequest() {
+		super("Drds", "2019-01-23", "DescribeDrdsInstances", "Drds");
+		setMethod(MethodType.POST);
+	}
 
-	private String type;
+	public String getDescription() {
+		return this.description;
+	}
 
-	private Integer pageNumber;
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public Boolean getExpired() {
 		return this.expired;
@@ -61,17 +96,6 @@ public class DescribeDrdsInstancesRequest extends RpcAcsRequest<DescribeDrdsInst
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -84,28 +108,6 @@ public class DescribeDrdsInstancesRequest extends RpcAcsRequest<DescribeDrdsInst
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
 	}
 
 	public static class Tag {

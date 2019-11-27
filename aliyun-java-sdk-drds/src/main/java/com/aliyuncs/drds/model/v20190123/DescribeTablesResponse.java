@@ -101,6 +101,8 @@ public class DescribeTablesResponse extends AcsResponse {
 
 		private Boolean allowFullTableScan;
 
+		private Integer status;
+
 		public String getTable() {
 			return this.table;
 		}
@@ -155,6 +157,14 @@ public class DescribeTablesResponse extends AcsResponse {
 
 		public void setAllowFullTableScan(Boolean allowFullTableScan) {
 			this.allowFullTableScan = allowFullTableScan;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 	}
 

@@ -15,22 +15,35 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class FlashbackRecycleBinTableRequest extends RpcAcsRequest<FlashbackRecycleBinTableResponse> {
-	
-	public FlashbackRecycleBinTableRequest() {
-		super("Drds", "2019-01-23", "FlashbackRecycleBinTable", "drds");
-	}
+	   
+
+	private String drdsInstanceId;
 
 	private String dbName;
 
 	private String tableName;
+	public FlashbackRecycleBinTableRequest() {
+		super("Drds", "2019-01-23", "FlashbackRecycleBinTable", "Drds");
+		setMethod(MethodType.POST);
+	}
 
-	private String drdsInstanceId;
+	public String getDrdsInstanceId() {
+		return this.drdsInstanceId;
+	}
+
+	public void setDrdsInstanceId(String drdsInstanceId) {
+		this.drdsInstanceId = drdsInstanceId;
+		if(drdsInstanceId != null){
+			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
 
 	public String getDbName() {
 		return this.dbName;
@@ -51,17 +64,6 @@ public class FlashbackRecycleBinTableRequest extends RpcAcsRequest<FlashbackRecy
 		this.tableName = tableName;
 		if(tableName != null){
 			putQueryParameter("TableName", tableName);
-		}
-	}
-
-	public String getDrdsInstanceId() {
-		return this.drdsInstanceId;
-	}
-
-	public void setDrdsInstanceId(String drdsInstanceId) {
-		this.drdsInstanceId = drdsInstanceId;
-		if(drdsInstanceId != null){
-			putQueryParameter("DrdsInstanceId", drdsInstanceId);
 		}
 	}
 

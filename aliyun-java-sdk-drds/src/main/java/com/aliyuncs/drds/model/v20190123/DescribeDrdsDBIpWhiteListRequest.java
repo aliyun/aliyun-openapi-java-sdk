@@ -15,32 +15,23 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDrdsDBIpWhiteListRequest extends RpcAcsRequest<DescribeDrdsDBIpWhiteListResponse> {
-	
-	public DescribeDrdsDBIpWhiteListRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsDBIpWhiteList", "drds");
-	}
-
-	private String dbName;
+	   
 
 	private String drdsInstanceId;
 
 	private String groupName;
 
-	public String getDbName() {
-		return this.dbName;
-	}
-
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
-		}
+	private String dbName;
+	public DescribeDrdsDBIpWhiteListRequest() {
+		super("Drds", "2019-01-23", "DescribeDrdsDBIpWhiteList", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public String getDrdsInstanceId() {
@@ -62,6 +53,17 @@ public class DescribeDrdsDBIpWhiteListRequest extends RpcAcsRequest<DescribeDrds
 		this.groupName = groupName;
 		if(groupName != null){
 			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
 		}
 	}
 

@@ -15,24 +15,26 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetBackupLocalRequest extends RpcAcsRequest<SetBackupLocalResponse> {
-	
-	public SetBackupLocalRequest() {
-		super("Drds", "2019-01-23", "SetBackupLocal", "drds");
-	}
+	   
 
 	private String localLogRetentionHours;
-
-	private String highSpaceUsageProtection;
 
 	private String localLogRetentionSpace;
 
 	private String drdsInstanceId;
+
+	private String highSpaceUsageProtection;
+	public SetBackupLocalRequest() {
+		super("Drds", "2019-01-23", "SetBackupLocal", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getLocalLogRetentionHours() {
 		return this.localLogRetentionHours;
@@ -42,17 +44,6 @@ public class SetBackupLocalRequest extends RpcAcsRequest<SetBackupLocalResponse>
 		this.localLogRetentionHours = localLogRetentionHours;
 		if(localLogRetentionHours != null){
 			putQueryParameter("LocalLogRetentionHours", localLogRetentionHours);
-		}
-	}
-
-	public String getHighSpaceUsageProtection() {
-		return this.highSpaceUsageProtection;
-	}
-
-	public void setHighSpaceUsageProtection(String highSpaceUsageProtection) {
-		this.highSpaceUsageProtection = highSpaceUsageProtection;
-		if(highSpaceUsageProtection != null){
-			putQueryParameter("HighSpaceUsageProtection", highSpaceUsageProtection);
 		}
 	}
 
@@ -75,6 +66,17 @@ public class SetBackupLocalRequest extends RpcAcsRequest<SetBackupLocalResponse>
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getHighSpaceUsageProtection() {
+		return this.highSpaceUsageProtection;
+	}
+
+	public void setHighSpaceUsageProtection(String highSpaceUsageProtection) {
+		this.highSpaceUsageProtection = highSpaceUsageProtection;
+		if(highSpaceUsageProtection != null){
+			putQueryParameter("HighSpaceUsageProtection", highSpaceUsageProtection);
 		}
 	}
 

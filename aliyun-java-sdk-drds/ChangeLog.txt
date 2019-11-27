@@ -1,3 +1,6 @@
+2019-11-27 Version: 4.4.1
+- Supported DescribeDrdsComponents.
+
 2019-09-03 Version: 4.4.0
 - Support get DRDS user info and instance info.
 

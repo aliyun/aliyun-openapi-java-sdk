@@ -15,20 +15,22 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribePreCheckResultRequest extends RpcAcsRequest<DescribePreCheckResultResponse> {
-	
-	public DescribePreCheckResultRequest() {
-		super("Drds", "2019-01-23", "DescribePreCheckResult", "drds");
-	}
+	   
 
 	private String drdsInstanceId;
 
 	private String taskId;
+	public DescribePreCheckResultRequest() {
+		super("Drds", "2019-01-23", "DescribePreCheckResult", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;

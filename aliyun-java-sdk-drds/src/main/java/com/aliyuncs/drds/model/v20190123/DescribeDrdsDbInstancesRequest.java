@@ -15,45 +15,25 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDrdsDbInstancesRequest extends RpcAcsRequest<DescribeDrdsDbInstancesResponse> {
-	
-	public DescribeDrdsDbInstancesRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsDbInstances", "drds");
-	}
-
-	private String dbName;
-
-	private Integer pageSize;
+	   
 
 	private String drdsInstanceId;
 
 	private Integer pageNumber;
 
-	public String getDbName() {
-		return this.dbName;
-	}
+	private String dbName;
 
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+	private Integer pageSize;
+	public DescribeDrdsDbInstancesRequest() {
+		super("Drds", "2019-01-23", "DescribeDrdsDbInstances", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public String getDrdsInstanceId() {
@@ -75,6 +55,28 @@ public class DescribeDrdsDbInstancesRequest extends RpcAcsRequest<DescribeDrdsDb
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

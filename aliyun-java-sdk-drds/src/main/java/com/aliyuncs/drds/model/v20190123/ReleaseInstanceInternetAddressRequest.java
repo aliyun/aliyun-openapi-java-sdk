@@ -15,18 +15,20 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ReleaseInstanceInternetAddressRequest extends RpcAcsRequest<ReleaseInstanceInternetAddressResponse> {
-	
-	public ReleaseInstanceInternetAddressRequest() {
-		super("Drds", "2019-01-23", "ReleaseInstanceInternetAddress", "drds");
-	}
+	   
 
 	private String drdsInstanceId;
+	public ReleaseInstanceInternetAddressRequest() {
+		super("Drds", "2019-01-23", "ReleaseInstanceInternetAddress", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;

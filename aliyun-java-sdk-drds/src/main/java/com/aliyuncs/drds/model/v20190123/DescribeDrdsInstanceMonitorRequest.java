@@ -15,16 +15,14 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDrdsInstanceMonitorRequest extends RpcAcsRequest<DescribeDrdsInstanceMonitorResponse> {
-	
-	public DescribeDrdsInstanceMonitorRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsInstanceMonitor", "drds");
-	}
+	   
 
 	private Long endTime;
 
@@ -35,6 +33,10 @@ public class DescribeDrdsInstanceMonitorRequest extends RpcAcsRequest<DescribeDr
 	private String key;
 
 	private Integer periodMultiple;
+	public DescribeDrdsInstanceMonitorRequest() {
+		super("Drds", "2019-01-23", "DescribeDrdsInstanceMonitor", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getEndTime() {
 		return this.endTime;

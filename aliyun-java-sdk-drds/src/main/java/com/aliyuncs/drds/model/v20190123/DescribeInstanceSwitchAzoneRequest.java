@@ -15,18 +15,20 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeInstanceSwitchAzoneRequest extends RpcAcsRequest<DescribeInstanceSwitchAzoneResponse> {
-	
-	public DescribeInstanceSwitchAzoneRequest() {
-		super("Drds", "2019-01-23", "DescribeInstanceSwitchAzone", "drds");
-	}
+	   
 
 	private String drdsInstanceId;
+	public DescribeInstanceSwitchAzoneRequest() {
+		super("Drds", "2019-01-23", "DescribeInstanceSwitchAzone", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;

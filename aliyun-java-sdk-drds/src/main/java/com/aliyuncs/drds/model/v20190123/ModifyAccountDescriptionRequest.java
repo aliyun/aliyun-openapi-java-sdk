@@ -15,32 +15,23 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccountDescriptionResponse> {
-	
-	public ModifyAccountDescriptionRequest() {
-		super("Drds", "2019-01-23", "ModifyAccountDescription", "drds");
-	}
-
-	private String accountName;
+	   
 
 	private String description;
 
 	private String drdsInstanceId;
 
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
-		}
+	private String accountName;
+	public ModifyAccountDescriptionRequest() {
+		super("Drds", "2019-01-23", "ModifyAccountDescription", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public String getDescription() {
@@ -62,6 +53,17 @@ public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccount
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
 		}
 	}
 

@@ -16,24 +16,37 @@ package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateInstanceAccountRequest extends RpcAcsRequest<CreateInstanceAccountResponse> {
-	
-	public CreateInstanceAccountRequest() {
-		super("Drds", "2019-01-23", "CreateInstanceAccount", "drds");
-	}
+	   
+
+	private String drdsInstanceId;
 
 	private String password;
 
 	private String accountName;
 
-	private String drdsInstanceId;
-
 	private List<DbPrivilege> dbPrivileges;
+	public CreateInstanceAccountRequest() {
+		super("Drds", "2019-01-23", "CreateInstanceAccount", "Drds");
+		setMethod(MethodType.POST);
+	}
+
+	public String getDrdsInstanceId() {
+		return this.drdsInstanceId;
+	}
+
+	public void setDrdsInstanceId(String drdsInstanceId) {
+		this.drdsInstanceId = drdsInstanceId;
+		if(drdsInstanceId != null){
+			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
 
 	public String getPassword() {
 		return this.password;
@@ -54,17 +67,6 @@ public class CreateInstanceAccountRequest extends RpcAcsRequest<CreateInstanceAc
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
-		}
-	}
-
-	public String getDrdsInstanceId() {
-		return this.drdsInstanceId;
-	}
-
-	public void setDrdsInstanceId(String drdsInstanceId) {
-		this.drdsInstanceId = drdsInstanceId;
-		if(drdsInstanceId != null){
-			putQueryParameter("DrdsInstanceId", drdsInstanceId);
 		}
 	}
 

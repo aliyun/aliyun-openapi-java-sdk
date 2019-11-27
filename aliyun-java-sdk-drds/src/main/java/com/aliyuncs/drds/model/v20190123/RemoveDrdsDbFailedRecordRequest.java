@@ -15,30 +15,21 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class RemoveDrdsDbFailedRecordRequest extends RpcAcsRequest<RemoveDrdsDbFailedRecordResponse> {
-	
-	public RemoveDrdsDbFailedRecordRequest() {
-		super("Drds", "2019-01-23", "RemoveDrdsDbFailedRecord", "drds");
-	}
-
-	private String dbName;
+	   
 
 	private String drdsInstanceId;
 
-	public String getDbName() {
-		return this.dbName;
-	}
-
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
-		}
+	private String dbName;
+	public RemoveDrdsDbFailedRecordRequest() {
+		super("Drds", "2019-01-23", "RemoveDrdsDbFailedRecord", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public String getDrdsInstanceId() {
@@ -49,6 +40,17 @@ public class RemoveDrdsDbFailedRecordRequest extends RpcAcsRequest<RemoveDrdsDbF
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
 		}
 	}
 

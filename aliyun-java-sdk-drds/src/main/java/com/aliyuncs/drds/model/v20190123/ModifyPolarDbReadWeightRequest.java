@@ -15,20 +15,14 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyPolarDbReadWeightRequest extends RpcAcsRequest<ModifyPolarDbReadWeightResponse> {
-	
-	public ModifyPolarDbReadWeightRequest() {
-		super("Drds", "2019-01-23", "ModifyPolarDbReadWeight", "drds");
-	}
-
-	private String dbName;
-
-	private String dbInstanceId;
+	   
 
 	private String weights;
 
@@ -36,26 +30,12 @@ public class ModifyPolarDbReadWeightRequest extends RpcAcsRequest<ModifyPolarDbR
 
 	private String dbNodeIds;
 
-	public String getDbName() {
-		return this.dbName;
-	}
+	private String dbName;
 
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
-		}
-	}
-
-	public String getDbInstanceId() {
-		return this.dbInstanceId;
-	}
-
-	public void setDbInstanceId(String dbInstanceId) {
-		this.dbInstanceId = dbInstanceId;
-		if(dbInstanceId != null){
-			putQueryParameter("DbInstanceId", dbInstanceId);
-		}
+	private String dbInstanceId;
+	public ModifyPolarDbReadWeightRequest() {
+		super("Drds", "2019-01-23", "ModifyPolarDbReadWeight", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public String getWeights() {
@@ -88,6 +68,28 @@ public class ModifyPolarDbReadWeightRequest extends RpcAcsRequest<ModifyPolarDbR
 		this.dbNodeIds = dbNodeIds;
 		if(dbNodeIds != null){
 			putQueryParameter("DbNodeIds", dbNodeIds);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public String getDbInstanceId() {
+		return this.dbInstanceId;
+	}
+
+	public void setDbInstanceId(String dbInstanceId) {
+		this.dbInstanceId = dbInstanceId;
+		if(dbInstanceId != null){
+			putQueryParameter("DbInstanceId", dbInstanceId);
 		}
 	}
 

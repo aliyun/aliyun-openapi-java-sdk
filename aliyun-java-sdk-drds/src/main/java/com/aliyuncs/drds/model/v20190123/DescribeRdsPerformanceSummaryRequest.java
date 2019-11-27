@@ -16,20 +16,22 @@ package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeRdsPerformanceSummaryRequest extends RpcAcsRequest<DescribeRdsPerformanceSummaryResponse> {
-	
-	public DescribeRdsPerformanceSummaryRequest() {
-		super("Drds", "2019-01-23", "DescribeRdsPerformanceSummary", "drds");
-	}
+	   
 
 	private List<String> rdsInstanceIds;
 
 	private String drdsInstanceId;
+	public DescribeRdsPerformanceSummaryRequest() {
+		super("Drds", "2019-01-23", "DescribeRdsPerformanceSummary", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public List<String> getRdsInstanceIds() {
 		return this.rdsInstanceIds;

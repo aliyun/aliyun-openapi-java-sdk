@@ -15,26 +15,50 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDbInstancesRequest extends RpcAcsRequest<DescribeDbInstancesResponse> {
-	
-	public DescribeDbInstancesRequest() {
-		super("Drds", "2019-01-23", "DescribeDbInstances", "drds");
-	}
+	   
+
+	private String drdsInstanceId;
+
+	private Integer pageNumber;
 
 	private String search;
 
 	private Integer pageSize;
 
 	private String dbInstType;
+	public DescribeDbInstancesRequest() {
+		super("Drds", "2019-01-23", "DescribeDbInstances", "Drds");
+		setMethod(MethodType.POST);
+	}
 
-	private String drdsInstanceId;
+	public String getDrdsInstanceId() {
+		return this.drdsInstanceId;
+	}
 
-	private Integer pageNumber;
+	public void setDrdsInstanceId(String drdsInstanceId) {
+		this.drdsInstanceId = drdsInstanceId;
+		if(drdsInstanceId != null){
+			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getSearch() {
 		return this.search;
@@ -66,28 +90,6 @@ public class DescribeDbInstancesRequest extends RpcAcsRequest<DescribeDbInstance
 		this.dbInstType = dbInstType;
 		if(dbInstType != null){
 			putQueryParameter("DbInstType", dbInstType);
-		}
-	}
-
-	public String getDrdsInstanceId() {
-		return this.drdsInstanceId;
-	}
-
-	public void setDrdsInstanceId(String drdsInstanceId) {
-		this.drdsInstanceId = drdsInstanceId;
-		if(drdsInstanceId != null){
-			putQueryParameter("DrdsInstanceId", drdsInstanceId);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

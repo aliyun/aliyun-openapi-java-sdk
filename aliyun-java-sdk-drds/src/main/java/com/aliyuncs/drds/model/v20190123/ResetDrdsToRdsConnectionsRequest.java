@@ -15,30 +15,21 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ResetDrdsToRdsConnectionsRequest extends RpcAcsRequest<ResetDrdsToRdsConnectionsResponse> {
-	
-	public ResetDrdsToRdsConnectionsRequest() {
-		super("Drds", "2019-01-23", "ResetDrdsToRdsConnections", "drds");
-	}
-
-	private String dbName;
+	   
 
 	private String drdsInstanceId;
 
-	public String getDbName() {
-		return this.dbName;
-	}
-
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
-		}
+	private String dbName;
+	public ResetDrdsToRdsConnectionsRequest() {
+		super("Drds", "2019-01-23", "ResetDrdsToRdsConnections", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public String getDrdsInstanceId() {
@@ -49,6 +40,17 @@ public class ResetDrdsToRdsConnectionsRequest extends RpcAcsRequest<ResetDrdsToR
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
 		}
 	}
 

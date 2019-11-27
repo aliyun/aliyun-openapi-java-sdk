@@ -15,45 +15,25 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeShardTaskInfoRequest extends RpcAcsRequest<DescribeShardTaskInfoResponse> {
-	
-	public DescribeShardTaskInfoRequest() {
-		super("Drds", "2019-01-23", "DescribeShardTaskInfo", "drds");
-	}
-
-	private String dbName;
-
-	private String sourceTableName;
+	   
 
 	private String targetTableName;
 
 	private String drdsInstanceId;
 
-	public String getDbName() {
-		return this.dbName;
-	}
+	private String dbName;
 
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
-		}
-	}
-
-	public String getSourceTableName() {
-		return this.sourceTableName;
-	}
-
-	public void setSourceTableName(String sourceTableName) {
-		this.sourceTableName = sourceTableName;
-		if(sourceTableName != null){
-			putQueryParameter("SourceTableName", sourceTableName);
-		}
+	private String sourceTableName;
+	public DescribeShardTaskInfoRequest() {
+		super("Drds", "2019-01-23", "DescribeShardTaskInfo", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public String getTargetTableName() {
@@ -75,6 +55,28 @@ public class DescribeShardTaskInfoRequest extends RpcAcsRequest<DescribeShardTas
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public String getSourceTableName() {
+		return this.sourceTableName;
+	}
+
+	public void setSourceTableName(String sourceTableName) {
+		this.sourceTableName = sourceTableName;
+		if(sourceTableName != null){
+			putQueryParameter("SourceTableName", sourceTableName);
 		}
 	}
 

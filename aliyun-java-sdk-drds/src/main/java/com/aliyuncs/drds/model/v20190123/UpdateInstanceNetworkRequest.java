@@ -15,24 +15,37 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateInstanceNetworkRequest extends RpcAcsRequest<UpdateInstanceNetworkResponse> {
-	
-	public UpdateInstanceNetworkRequest() {
-		super("Drds", "2019-01-23", "UpdateInstanceNetwork", "drds");
-	}
+	   
+
+	private String drdsInstanceId;
 
 	private Boolean retainClassic;
 
 	private Integer classicExpiredDays;
 
 	private String srcInstanceNetworkType;
+	public UpdateInstanceNetworkRequest() {
+		super("Drds", "2019-01-23", "UpdateInstanceNetwork", "Drds");
+		setMethod(MethodType.POST);
+	}
 
-	private String drdsInstanceId;
+	public String getDrdsInstanceId() {
+		return this.drdsInstanceId;
+	}
+
+	public void setDrdsInstanceId(String drdsInstanceId) {
+		this.drdsInstanceId = drdsInstanceId;
+		if(drdsInstanceId != null){
+			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
 
 	public Boolean getRetainClassic() {
 		return this.retainClassic;
@@ -64,17 +77,6 @@ public class UpdateInstanceNetworkRequest extends RpcAcsRequest<UpdateInstanceNe
 		this.srcInstanceNetworkType = srcInstanceNetworkType;
 		if(srcInstanceNetworkType != null){
 			putQueryParameter("SrcInstanceNetworkType", srcInstanceNetworkType);
-		}
-	}
-
-	public String getDrdsInstanceId() {
-		return this.drdsInstanceId;
-	}
-
-	public void setDrdsInstanceId(String drdsInstanceId) {
-		this.drdsInstanceId = drdsInstanceId;
-		if(drdsInstanceId != null){
-			putQueryParameter("DrdsInstanceId", drdsInstanceId);
 		}
 	}
 

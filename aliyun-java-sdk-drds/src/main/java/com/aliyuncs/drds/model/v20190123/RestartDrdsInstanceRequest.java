@@ -15,18 +15,20 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class RestartDrdsInstanceRequest extends RpcAcsRequest<RestartDrdsInstanceResponse> {
-	
-	public RestartDrdsInstanceRequest() {
-		super("Drds", "2019-01-23", "RestartDrdsInstance", "drds");
-	}
+	   
 
 	private String drdsInstanceId;
+	public RestartDrdsInstanceRequest() {
+		super("Drds", "2019-01-23", "RestartDrdsInstance", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;

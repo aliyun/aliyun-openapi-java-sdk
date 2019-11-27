@@ -15,18 +15,20 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class RollbackInstanceVersionRequest extends RpcAcsRequest<RollbackInstanceVersionResponse> {
-	
-	public RollbackInstanceVersionRequest() {
-		super("Drds", "2019-01-23", "RollbackInstanceVersion", "drds");
-	}
+	   
 
 	private String drdsInstanceId;
+	public RollbackInstanceVersionRequest() {
+		super("Drds", "2019-01-23", "RollbackInstanceVersion", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;

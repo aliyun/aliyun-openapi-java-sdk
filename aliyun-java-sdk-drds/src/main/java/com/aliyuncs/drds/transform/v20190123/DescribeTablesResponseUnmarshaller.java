@@ -42,6 +42,7 @@ public class DescribeTablesResponseUnmarshaller {
 			listItem.setDbInstType(_ctx.integerValue("DescribeTablesResponse.List["+ i +"].DbInstType"));
 			listItem.setBroadcast(_ctx.booleanValue("DescribeTablesResponse.List["+ i +"].Broadcast"));
 			listItem.setAllowFullTableScan(_ctx.booleanValue("DescribeTablesResponse.List["+ i +"].AllowFullTableScan"));
+			listItem.setStatus(_ctx.integerValue("DescribeTablesResponse.List["+ i +"].Status"));
 
 			list.add(listItem);
 		}

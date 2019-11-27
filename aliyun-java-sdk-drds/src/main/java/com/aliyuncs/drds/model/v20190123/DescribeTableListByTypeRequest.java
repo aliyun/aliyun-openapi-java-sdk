@@ -15,28 +15,30 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeTableListByTypeRequest extends RpcAcsRequest<DescribeTableListByTypeResponse> {
-	
-	public DescribeTableListByTypeRequest() {
-		super("Drds", "2019-01-23", "DescribeTableListByType", "drds");
-	}
+	   
 
 	private String tableType;
 
-	private String dbName;
-
 	private String query;
-
-	private Integer pageSize;
 
 	private Integer currentPage;
 
 	private String drdsInstanceId;
+
+	private String dbName;
+
+	private Integer pageSize;
+	public DescribeTableListByTypeRequest() {
+		super("Drds", "2019-01-23", "DescribeTableListByType", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getTableType() {
 		return this.tableType;
@@ -49,17 +51,6 @@ public class DescribeTableListByTypeRequest extends RpcAcsRequest<DescribeTableL
 		}
 	}
 
-	public String getDbName() {
-		return this.dbName;
-	}
-
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
-		}
-	}
-
 	public String getQuery() {
 		return this.query;
 	}
@@ -68,17 +59,6 @@ public class DescribeTableListByTypeRequest extends RpcAcsRequest<DescribeTableL
 		this.query = query;
 		if(query != null){
 			putQueryParameter("Query", query);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -101,6 +81,28 @@ public class DescribeTableListByTypeRequest extends RpcAcsRequest<DescribeTableL
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

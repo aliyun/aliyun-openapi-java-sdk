@@ -16,34 +16,25 @@ package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetupBroadcastTablesRequest extends RpcAcsRequest<SetupBroadcastTablesResponse> {
-	
-	public SetupBroadcastTablesRequest() {
-		super("Drds", "2019-01-23", "SetupBroadcastTables", "drds");
-	}
-
-	private String dbName;
+	   
 
 	private Boolean active;
 
-	private List<String> tableNames;
-
 	private String drdsInstanceId;
 
-	public String getDbName() {
-		return this.dbName;
-	}
+	private String dbName;
 
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
-		}
+	private List<String> tableNames;
+	public SetupBroadcastTablesRequest() {
+		super("Drds", "2019-01-23", "SetupBroadcastTables", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public Boolean getActive() {
@@ -54,6 +45,28 @@ public class SetupBroadcastTablesRequest extends RpcAcsRequest<SetupBroadcastTab
 		this.active = active;
 		if(active != null){
 			putQueryParameter("Active", active.toString());
+		}
+	}
+
+	public String getDrdsInstanceId() {
+		return this.drdsInstanceId;
+	}
+
+	public void setDrdsInstanceId(String drdsInstanceId) {
+		this.drdsInstanceId = drdsInstanceId;
+		if(drdsInstanceId != null){
+			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
 		}
 	}
 
@@ -68,17 +81,6 @@ public class SetupBroadcastTablesRequest extends RpcAcsRequest<SetupBroadcastTab
 				putQueryParameter("TableName." + (i + 1) , tableNames.get(i));
 			}
 		}	
-	}
-
-	public String getDrdsInstanceId() {
-		return this.drdsInstanceId;
-	}
-
-	public void setDrdsInstanceId(String drdsInstanceId) {
-		this.drdsInstanceId = drdsInstanceId;
-		if(drdsInstanceId != null){
-			putQueryParameter("DrdsInstanceId", drdsInstanceId);
-		}
 	}
 
 	@Override

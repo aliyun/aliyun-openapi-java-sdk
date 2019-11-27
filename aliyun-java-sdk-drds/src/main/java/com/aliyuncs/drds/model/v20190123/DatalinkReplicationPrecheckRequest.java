@@ -15,34 +15,25 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DatalinkReplicationPrecheckRequest extends RpcAcsRequest<DatalinkReplicationPrecheckResponse> {
-	
-	public DatalinkReplicationPrecheckRequest() {
-		super("Drds", "2019-01-23", "DatalinkReplicationPrecheck", "drds");
-	}
-
-	private String dbName;
+	   
 
 	private String srcTableName;
 
-	private String dstTableName;
-
 	private String drdsInstanceId;
 
-	public String getDbName() {
-		return this.dbName;
-	}
+	private String dbName;
 
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
-		}
+	private String dstTableName;
+	public DatalinkReplicationPrecheckRequest() {
+		super("Drds", "2019-01-23", "DatalinkReplicationPrecheck", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public String getSrcTableName() {
@@ -56,17 +47,6 @@ public class DatalinkReplicationPrecheckRequest extends RpcAcsRequest<DatalinkRe
 		}
 	}
 
-	public String getDstTableName() {
-		return this.dstTableName;
-	}
-
-	public void setDstTableName(String dstTableName) {
-		this.dstTableName = dstTableName;
-		if(dstTableName != null){
-			putQueryParameter("DstTableName", dstTableName);
-		}
-	}
-
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;
 	}
@@ -75,6 +55,28 @@ public class DatalinkReplicationPrecheckRequest extends RpcAcsRequest<DatalinkRe
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public String getDstTableName() {
+		return this.dstTableName;
+	}
+
+	public void setDstTableName(String dstTableName) {
+		this.dstTableName = dstTableName;
+		if(dstTableName != null){
+			putQueryParameter("DstTableName", dstTableName);
 		}
 	}
 

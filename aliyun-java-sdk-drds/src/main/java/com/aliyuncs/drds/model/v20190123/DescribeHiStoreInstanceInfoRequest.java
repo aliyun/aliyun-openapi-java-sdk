@@ -15,20 +15,22 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeHiStoreInstanceInfoRequest extends RpcAcsRequest<DescribeHiStoreInstanceInfoResponse> {
-	
-	public DescribeHiStoreInstanceInfoRequest() {
-		super("Drds", "2019-01-23", "DescribeHiStoreInstanceInfo", "drds");
-	}
+	   
 
 	private String historeInstanceId;
 
 	private String drdsInstanceId;
+	public DescribeHiStoreInstanceInfoRequest() {
+		super("Drds", "2019-01-23", "DescribeHiStoreInstanceInfo", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getHistoreInstanceId() {
 		return this.historeInstanceId;

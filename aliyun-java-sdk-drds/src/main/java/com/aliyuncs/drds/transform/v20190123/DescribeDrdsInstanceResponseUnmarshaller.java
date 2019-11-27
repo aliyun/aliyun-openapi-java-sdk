@@ -51,6 +51,7 @@ public class DescribeDrdsInstanceResponseUnmarshaller {
 		data.setMasterInstanceId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.MasterInstanceId"));
 		data.setMachineType(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.MachineType"));
 		data.setOrderInstanceId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.OrderInstanceId"));
+		data.setMysqlVersion(_ctx.integerValue("DescribeDrdsInstanceResponse.Data.MysqlVersion"));
 
 		List<String> readOnlyDBInstanceIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsInstanceResponse.Data.ReadOnlyDBInstanceIds.Length"); i++) {

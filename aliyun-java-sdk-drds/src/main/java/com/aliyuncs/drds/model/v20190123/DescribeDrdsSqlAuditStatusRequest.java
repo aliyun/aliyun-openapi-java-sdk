@@ -15,18 +15,20 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDrdsSqlAuditStatusRequest extends RpcAcsRequest<DescribeDrdsSqlAuditStatusResponse> {
-	
-	public DescribeDrdsSqlAuditStatusRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsSqlAuditStatus", "drds");
-	}
+	   
 
 	private String drdsInstanceId;
+	public DescribeDrdsSqlAuditStatusRequest() {
+		super("Drds", "2019-01-23", "DescribeDrdsSqlAuditStatus", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;

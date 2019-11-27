@@ -15,22 +15,35 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitSmoothExpandPreCheckRequest extends RpcAcsRequest<SubmitSmoothExpandPreCheckResponse> {
-	
-	public SubmitSmoothExpandPreCheckRequest() {
-		super("Drds", "2019-01-23", "SubmitSmoothExpandPreCheck", "drds");
-	}
+	   
+
+	private String drdsInstanceId;
 
 	private String dbName;
 
 	private String dbInstType;
+	public SubmitSmoothExpandPreCheckRequest() {
+		super("Drds", "2019-01-23", "SubmitSmoothExpandPreCheck", "Drds");
+		setMethod(MethodType.POST);
+	}
 
-	private String drdsInstanceId;
+	public String getDrdsInstanceId() {
+		return this.drdsInstanceId;
+	}
+
+	public void setDrdsInstanceId(String drdsInstanceId) {
+		this.drdsInstanceId = drdsInstanceId;
+		if(drdsInstanceId != null){
+			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
 
 	public String getDbName() {
 		return this.dbName;
@@ -51,17 +64,6 @@ public class SubmitSmoothExpandPreCheckRequest extends RpcAcsRequest<SubmitSmoot
 		this.dbInstType = dbInstType;
 		if(dbInstType != null){
 			putQueryParameter("DbInstType", dbInstType);
-		}
-	}
-
-	public String getDrdsInstanceId() {
-		return this.drdsInstanceId;
-	}
-
-	public void setDrdsInstanceId(String drdsInstanceId) {
-		this.drdsInstanceId = drdsInstanceId;
-		if(drdsInstanceId != null){
-			putQueryParameter("DrdsInstanceId", drdsInstanceId);
 		}
 	}
 

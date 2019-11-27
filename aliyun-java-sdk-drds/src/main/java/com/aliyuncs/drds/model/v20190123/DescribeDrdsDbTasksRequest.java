@@ -15,22 +15,24 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDrdsDbTasksRequest extends RpcAcsRequest<DescribeDrdsDbTasksResponse> {
-	
-	public DescribeDrdsDbTasksRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsDbTasks", "drds");
-	}
+	   
 
 	private String taskType;
 
-	private String dbName;
-
 	private String drdsInstanceId;
+
+	private String dbName;
+	public DescribeDrdsDbTasksRequest() {
+		super("Drds", "2019-01-23", "DescribeDrdsDbTasks", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getTaskType() {
 		return this.taskType;
@@ -43,17 +45,6 @@ public class DescribeDrdsDbTasksRequest extends RpcAcsRequest<DescribeDrdsDbTask
 		}
 	}
 
-	public String getDbName() {
-		return this.dbName;
-	}
-
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
-		}
-	}
-
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;
 	}
@@ -62,6 +53,17 @@ public class DescribeDrdsDbTasksRequest extends RpcAcsRequest<DescribeDrdsDbTask
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
 		}
 	}
 

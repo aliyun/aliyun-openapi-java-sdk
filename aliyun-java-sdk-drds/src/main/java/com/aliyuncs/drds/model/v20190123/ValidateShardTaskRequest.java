@@ -15,26 +15,28 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ValidateShardTaskRequest extends RpcAcsRequest<ValidateShardTaskResponse> {
-	
-	public ValidateShardTaskRequest() {
-		super("Drds", "2019-01-23", "ValidateShardTask", "drds");
-	}
+	   
 
 	private String taskType;
-
-	private String dbName;
-
-	private String sourceTableName;
 
 	private String targetTableName;
 
 	private String drdsInstanceId;
+
+	private String dbName;
+
+	private String sourceTableName;
+	public ValidateShardTaskRequest() {
+		super("Drds", "2019-01-23", "ValidateShardTask", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getTaskType() {
 		return this.taskType;
@@ -44,28 +46,6 @@ public class ValidateShardTaskRequest extends RpcAcsRequest<ValidateShardTaskRes
 		this.taskType = taskType;
 		if(taskType != null){
 			putQueryParameter("TaskType", taskType);
-		}
-	}
-
-	public String getDbName() {
-		return this.dbName;
-	}
-
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
-		}
-	}
-
-	public String getSourceTableName() {
-		return this.sourceTableName;
-	}
-
-	public void setSourceTableName(String sourceTableName) {
-		this.sourceTableName = sourceTableName;
-		if(sourceTableName != null){
-			putQueryParameter("SourceTableName", sourceTableName);
 		}
 	}
 
@@ -88,6 +68,28 @@ public class ValidateShardTaskRequest extends RpcAcsRequest<ValidateShardTaskRes
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public String getSourceTableName() {
+		return this.sourceTableName;
+	}
+
+	public void setSourceTableName(String sourceTableName) {
+		this.sourceTableName = sourceTableName;
+		if(sourceTableName != null){
+			putQueryParameter("SourceTableName", sourceTableName);
 		}
 	}
 

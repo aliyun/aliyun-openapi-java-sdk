@@ -15,22 +15,24 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeRdsCommodityRequest extends RpcAcsRequest<DescribeRdsCommodityResponse> {
-	
-	public DescribeRdsCommodityRequest() {
-		super("Drds", "2019-01-23", "DescribeRdsCommodity", "drds");
-	}
+	   
 
 	private String commodityCode;
 
 	private String drdsInstanceId;
 
 	private String orderType;
+	public DescribeRdsCommodityRequest() {
+		super("Drds", "2019-01-23", "DescribeRdsCommodity", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getCommodityCode() {
 		return this.commodityCode;

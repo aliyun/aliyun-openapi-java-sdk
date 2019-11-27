@@ -45,6 +45,9 @@ public class DescribeDrdsDbTasksResponseUnmarshaller {
 			task.setExpandType(_ctx.stringValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].ExpandType"));
 			task.setTargetId(_ctx.longValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].TargetId"));
 			task.setLabel(_ctx.stringValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].Label"));
+			task.setDetailTaskId(_ctx.stringValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].DetailTaskId"));
+			task.setTbComputeLength(_ctx.integerValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].TbComputeLength"));
+			task.setDbComputeLength(_ctx.integerValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].DbComputeLength"));
 
 			tasks.add(task);
 		}

@@ -15,18 +15,22 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpgradeInstanceVersionRequest extends RpcAcsRequest<UpgradeInstanceVersionResponse> {
-	
-	public UpgradeInstanceVersionRequest() {
-		super("Drds", "2019-01-23", "UpgradeInstanceVersion", "drds");
-	}
+	   
 
 	private String drdsInstanceId;
+
+	private String rpm;
+	public UpgradeInstanceVersionRequest() {
+		super("Drds", "2019-01-23", "UpgradeInstanceVersion", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;
@@ -36,6 +40,17 @@ public class UpgradeInstanceVersionRequest extends RpcAcsRequest<UpgradeInstance
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getRpm() {
+		return this.rpm;
+	}
+
+	public void setRpm(String rpm) {
+		this.rpm = rpm;
+		if(rpm != null){
+			putQueryParameter("Rpm", rpm);
 		}
 	}
 

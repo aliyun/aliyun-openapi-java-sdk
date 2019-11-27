@@ -15,22 +15,24 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetupRecycleBinStatusRequest extends RpcAcsRequest<SetupRecycleBinStatusResponse> {
-	
-	public SetupRecycleBinStatusRequest() {
-		super("Drds", "2019-01-23", "SetupRecycleBinStatus", "drds");
-	}
+	   
 
 	private String statusAction;
 
-	private String dbName;
-
 	private String drdsInstanceId;
+
+	private String dbName;
+	public SetupRecycleBinStatusRequest() {
+		super("Drds", "2019-01-23", "SetupRecycleBinStatus", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getStatusAction() {
 		return this.statusAction;
@@ -43,17 +45,6 @@ public class SetupRecycleBinStatusRequest extends RpcAcsRequest<SetupRecycleBinS
 		}
 	}
 
-	public String getDbName() {
-		return this.dbName;
-	}
-
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
-		}
-	}
-
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;
 	}
@@ -62,6 +53,17 @@ public class SetupRecycleBinStatusRequest extends RpcAcsRequest<SetupRecycleBinS
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
 		}
 	}
 

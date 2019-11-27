@@ -15,22 +15,24 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeBackupSetsRequest extends RpcAcsRequest<DescribeBackupSetsResponse> {
-	
-	public DescribeBackupSetsRequest() {
-		super("Drds", "2019-01-23", "DescribeBackupSets", "drds");
-	}
+	   
 
 	private String endTime;
 
 	private String startTime;
 
 	private String drdsInstanceId;
+	public DescribeBackupSetsRequest() {
+		super("Drds", "2019-01-23", "DescribeBackupSets", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getEndTime() {
 		return this.endTime;

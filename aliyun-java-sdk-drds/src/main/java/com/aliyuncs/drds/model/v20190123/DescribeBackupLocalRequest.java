@@ -15,18 +15,20 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeBackupLocalRequest extends RpcAcsRequest<DescribeBackupLocalResponse> {
-	
-	public DescribeBackupLocalRequest() {
-		super("Drds", "2019-01-23", "DescribeBackupLocal", "drds");
-	}
+	   
 
 	private String drdsInstanceId;
+	public DescribeBackupLocalRequest() {
+		super("Drds", "2019-01-23", "DescribeBackupLocal", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;

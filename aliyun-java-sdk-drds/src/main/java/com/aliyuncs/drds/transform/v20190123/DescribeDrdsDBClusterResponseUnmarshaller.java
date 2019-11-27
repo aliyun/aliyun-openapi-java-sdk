@@ -43,6 +43,7 @@ public class DescribeDrdsDBClusterResponseUnmarshaller {
 		dbInstance.setExpireTime(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.ExpireTime"));
 		dbInstance.setRemainDays(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.RemainDays"));
 		dbInstance.setNetworkType(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.NetworkType"));
+		dbInstance.setReadMode(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.ReadMode"));
 
 		List<Endpoint> endpoints = new ArrayList<Endpoint>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsDBClusterResponse.DbInstance.Endpoints.Length"); i++) {

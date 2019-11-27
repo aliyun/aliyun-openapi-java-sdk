@@ -16,32 +16,23 @@ package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyAccountPrivilegeRequest extends RpcAcsRequest<ModifyAccountPrivilegeResponse> {
-	
-	public ModifyAccountPrivilegeRequest() {
-		super("Drds", "2019-01-23", "ModifyAccountPrivilege", "drds");
-	}
-
-	private String accountName;
+	   
 
 	private String drdsInstanceId;
 
+	private String accountName;
+
 	private List<DbPrivilege> dbPrivileges;
-
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
-		}
+	public ModifyAccountPrivilegeRequest() {
+		super("Drds", "2019-01-23", "ModifyAccountPrivilege", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public String getDrdsInstanceId() {
@@ -52,6 +43,17 @@ public class ModifyAccountPrivilegeRequest extends RpcAcsRequest<ModifyAccountPr
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
 		}
 	}
 

@@ -15,26 +15,28 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class EnableSqlAuditRequest extends RpcAcsRequest<EnableSqlAuditResponse> {
-	
-	public EnableSqlAuditRequest() {
-		super("Drds", "2019-01-23", "EnableSqlAudit", "drds");
-	}
+	   
 
 	private String recallStartTimestamp;
+
+	private String drdsInstanceId;
 
 	private String dbName;
 
 	private Boolean isRecall;
 
-	private String drdsInstanceId;
-
 	private String recallEndTimestamp;
+	public EnableSqlAuditRequest() {
+		super("Drds", "2019-01-23", "EnableSqlAudit", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getRecallStartTimestamp() {
 		return this.recallStartTimestamp;
@@ -44,6 +46,17 @@ public class EnableSqlAuditRequest extends RpcAcsRequest<EnableSqlAuditResponse>
 		this.recallStartTimestamp = recallStartTimestamp;
 		if(recallStartTimestamp != null){
 			putQueryParameter("RecallStartTimestamp", recallStartTimestamp);
+		}
+	}
+
+	public String getDrdsInstanceId() {
+		return this.drdsInstanceId;
+	}
+
+	public void setDrdsInstanceId(String drdsInstanceId) {
+		this.drdsInstanceId = drdsInstanceId;
+		if(drdsInstanceId != null){
+			putQueryParameter("DrdsInstanceId", drdsInstanceId);
 		}
 	}
 
@@ -66,17 +79,6 @@ public class EnableSqlAuditRequest extends RpcAcsRequest<EnableSqlAuditResponse>
 		this.isRecall = isRecall;
 		if(isRecall != null){
 			putQueryParameter("IsRecall", isRecall.toString());
-		}
-	}
-
-	public String getDrdsInstanceId() {
-		return this.drdsInstanceId;
-	}
-
-	public void setDrdsInstanceId(String drdsInstanceId) {
-		this.drdsInstanceId = drdsInstanceId;
-		if(drdsInstanceId != null){
-			putQueryParameter("DrdsInstanceId", drdsInstanceId);
 		}
 	}
 

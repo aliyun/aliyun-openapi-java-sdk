@@ -15,16 +15,14 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeRDSPerformanceRequest extends RpcAcsRequest<DescribeRDSPerformanceResponse> {
-	
-	public DescribeRDSPerformanceRequest() {
-		super("Drds", "2019-01-23", "DescribeRDSPerformance", "drds");
-	}
+	   
 
 	private String keys;
 
@@ -34,9 +32,13 @@ public class DescribeRDSPerformanceRequest extends RpcAcsRequest<DescribeRDSPerf
 
 	private String rdsInstanceId;
 
-	private String dbInstType;
-
 	private String drdsInstanceId;
+
+	private String dbInstType;
+	public DescribeRDSPerformanceRequest() {
+		super("Drds", "2019-01-23", "DescribeRDSPerformance", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getKeys() {
 		return this.keys;
@@ -82,17 +84,6 @@ public class DescribeRDSPerformanceRequest extends RpcAcsRequest<DescribeRDSPerf
 		}
 	}
 
-	public String getDbInstType() {
-		return this.dbInstType;
-	}
-
-	public void setDbInstType(String dbInstType) {
-		this.dbInstType = dbInstType;
-		if(dbInstType != null){
-			putQueryParameter("DbInstType", dbInstType);
-		}
-	}
-
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;
 	}
@@ -101,6 +92,17 @@ public class DescribeRDSPerformanceRequest extends RpcAcsRequest<DescribeRDSPerf
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getDbInstType() {
+		return this.dbInstType;
+	}
+
+	public void setDbInstType(String dbInstType) {
+		this.dbInstType = dbInstType;
+		if(dbInstType != null){
+			putQueryParameter("DbInstType", dbInstType);
 		}
 	}
 

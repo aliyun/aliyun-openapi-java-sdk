@@ -16,38 +16,40 @@ package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateDrdsDBRequest extends RpcAcsRequest<CreateDrdsDBResponse> {
-	
-	public CreateDrdsDBRequest() {
-		super("Drds", "2019-01-23", "CreateDrdsDB", "drds");
-	}
+	   
 
 	private String encode;
-
-	private List<InstDbName> instDbNames;
-
-	private String password;
-
-	private List<RdsSuperAccount> rdsSuperAccounts;
-
-	private String dbName;
-
-	private String accountName;
 
 	private List<String> rdsInstances;
 
 	private String type;
 
-	private String dbInstType;
+	private String password;
+
+	private List<RdsSuperAccount> rdsSuperAccounts;
+
+	private String accountName;
 
 	private String drdsInstanceId;
 
 	private Boolean dbInstanceIsCreating;
+
+	private List<InstDbName> instDbNames;
+
+	private String dbName;
+
+	private String dbInstType;
+	public CreateDrdsDBRequest() {
+		super("Drds", "2019-01-23", "CreateDrdsDB", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getEncode() {
 		return this.encode;
@@ -60,22 +62,28 @@ public class CreateDrdsDBRequest extends RpcAcsRequest<CreateDrdsDBResponse> {
 		}
 	}
 
-	public List<InstDbName> getInstDbNames() {
-		return this.instDbNames;
+	public List<String> getRdsInstances() {
+		return this.rdsInstances;
 	}
 
-	public void setInstDbNames(List<InstDbName> instDbNames) {
-		this.instDbNames = instDbNames;	
-		if (instDbNames != null) {
-			for (int depth1 = 0; depth1 < instDbNames.size(); depth1++) {
-				if (instDbNames.get(depth1).getShardDbNames() != null) {
-					for (int i = 0; i < instDbNames.get(depth1).getShardDbNames().size(); i++) {
-						putQueryParameter("InstDbName." + (depth1 + 1) + ".ShardDbName." + (i + 1) , instDbNames.get(depth1).getShardDbNames().get(i));
-					}
-				}
-				putQueryParameter("InstDbName." + (depth1 + 1) + ".DbInstanceId" , instDbNames.get(depth1).getDbInstanceId());
+	public void setRdsInstances(List<String> rdsInstances) {
+		this.rdsInstances = rdsInstances;	
+		if (rdsInstances != null) {
+			for (int i = 0; i < rdsInstances.size(); i++) {
+				putQueryParameter("RdsInstance." + (i + 1) , rdsInstances.get(i));
 			}
 		}	
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
 	}
 
 	public String getPassword() {
@@ -104,17 +112,6 @@ public class CreateDrdsDBRequest extends RpcAcsRequest<CreateDrdsDBResponse> {
 		}	
 	}
 
-	public String getDbName() {
-		return this.dbName;
-	}
-
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
-		}
-	}
-
 	public String getAccountName() {
 		return this.accountName;
 	}
@@ -123,41 +120,6 @@ public class CreateDrdsDBRequest extends RpcAcsRequest<CreateDrdsDBResponse> {
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
-		}
-	}
-
-	public List<String> getRdsInstances() {
-		return this.rdsInstances;
-	}
-
-	public void setRdsInstances(List<String> rdsInstances) {
-		this.rdsInstances = rdsInstances;	
-		if (rdsInstances != null) {
-			for (int i = 0; i < rdsInstances.size(); i++) {
-				putQueryParameter("RdsInstance." + (i + 1) , rdsInstances.get(i));
-			}
-		}	
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getDbInstType() {
-		return this.dbInstType;
-	}
-
-	public void setDbInstType(String dbInstType) {
-		this.dbInstType = dbInstType;
-		if(dbInstType != null){
-			putQueryParameter("DbInstType", dbInstType);
 		}
 	}
 
@@ -183,26 +145,43 @@ public class CreateDrdsDBRequest extends RpcAcsRequest<CreateDrdsDBResponse> {
 		}
 	}
 
-	public static class InstDbName {
+	public List<InstDbName> getInstDbNames() {
+		return this.instDbNames;
+	}
 
-		private List<String> shardDbNames;
+	public void setInstDbNames(List<InstDbName> instDbNames) {
+		this.instDbNames = instDbNames;	
+		if (instDbNames != null) {
+			for (int depth1 = 0; depth1 < instDbNames.size(); depth1++) {
+				if (instDbNames.get(depth1).getShardDbNames() != null) {
+					for (int i = 0; i < instDbNames.get(depth1).getShardDbNames().size(); i++) {
+						putQueryParameter("InstDbName." + (depth1 + 1) + ".ShardDbName." + (i + 1) , instDbNames.get(depth1).getShardDbNames().get(i));
+					}
+				}
+				putQueryParameter("InstDbName." + (depth1 + 1) + ".DbInstanceId" , instDbNames.get(depth1).getDbInstanceId());
+			}
+		}	
+	}
 
-		private String dbInstanceId;
+	public String getDbName() {
+		return this.dbName;
+	}
 
-		public List<String> getShardDbNames() {
-			return this.shardDbNames;
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
 		}
+	}
 
-		public void setShardDbNames(List<String> shardDbNames) {
-			this.shardDbNames = shardDbNames;
-		}
+	public String getDbInstType() {
+		return this.dbInstType;
+	}
 
-		public String getDbInstanceId() {
-			return this.dbInstanceId;
-		}
-
-		public void setDbInstanceId(String dbInstanceId) {
-			this.dbInstanceId = dbInstanceId;
+	public void setDbInstType(String dbInstType) {
+		this.dbInstType = dbInstType;
+		if(dbInstType != null){
+			putQueryParameter("DbInstType", dbInstType);
 		}
 	}
 
@@ -228,6 +207,29 @@ public class CreateDrdsDBRequest extends RpcAcsRequest<CreateDrdsDBResponse> {
 
 		public void setAccountName(String accountName) {
 			this.accountName = accountName;
+		}
+
+		public String getDbInstanceId() {
+			return this.dbInstanceId;
+		}
+
+		public void setDbInstanceId(String dbInstanceId) {
+			this.dbInstanceId = dbInstanceId;
+		}
+	}
+
+	public static class InstDbName {
+
+		private List<String> shardDbNames;
+
+		private String dbInstanceId;
+
+		public List<String> getShardDbNames() {
+			return this.shardDbNames;
+		}
+
+		public void setShardDbNames(List<String> shardDbNames) {
+			this.shardDbNames = shardDbNames;
 		}
 
 		public String getDbInstanceId() {

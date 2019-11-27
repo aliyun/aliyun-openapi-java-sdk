@@ -15,32 +15,23 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDrdsDBsRequest extends RpcAcsRequest<DescribeDrdsDBsResponse> {
-	
-	public DescribeDrdsDBsRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsDBs", "drds");
-	}
-
-	private Integer pageSize;
+	   
 
 	private String drdsInstanceId;
 
 	private Integer pageNumber;
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+	private Integer pageSize;
+	public DescribeDrdsDBsRequest() {
+		super("Drds", "2019-01-23", "DescribeDrdsDBs", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public String getDrdsInstanceId() {
@@ -62,6 +53,17 @@ public class DescribeDrdsDBsRequest extends RpcAcsRequest<DescribeDrdsDBsRespons
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

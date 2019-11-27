@@ -16,26 +16,50 @@ package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitSmoothExpandTaskRequest extends RpcAcsRequest<SubmitSmoothExpandTaskResponse> {
-	
-	public SubmitSmoothExpandTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitSmoothExpandTask", "drds");
-	}
+	   
+
+	private String drdsInstanceId;
+
+	private Boolean dbInstanceIsCreating;
 
 	private List<RdsSuperInstances> rdsSuperInstancess;
 
 	private String dbName;
 
 	private List<TransferTaskInfos> transferTaskInfoss;
+	public SubmitSmoothExpandTaskRequest() {
+		super("Drds", "2019-01-23", "SubmitSmoothExpandTask", "Drds");
+		setMethod(MethodType.POST);
+	}
 
-	private String drdsInstanceId;
+	public String getDrdsInstanceId() {
+		return this.drdsInstanceId;
+	}
 
-	private Boolean dbInstanceIsCreating;
+	public void setDrdsInstanceId(String drdsInstanceId) {
+		this.drdsInstanceId = drdsInstanceId;
+		if(drdsInstanceId != null){
+			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public Boolean getDbInstanceIsCreating() {
+		return this.dbInstanceIsCreating;
+	}
+
+	public void setDbInstanceIsCreating(Boolean dbInstanceIsCreating) {
+		this.dbInstanceIsCreating = dbInstanceIsCreating;
+		if(dbInstanceIsCreating != null){
+			putQueryParameter("DbInstanceIsCreating", dbInstanceIsCreating.toString());
+		}
+	}
 
 	public List<RdsSuperInstances> getRdsSuperInstancess() {
 		return this.rdsSuperInstancess;
@@ -77,28 +101,6 @@ public class SubmitSmoothExpandTaskRequest extends RpcAcsRequest<SubmitSmoothExp
 				putQueryParameter("TransferTaskInfos." + (depth1 + 1) + ".DstInstanceName" , transferTaskInfoss.get(depth1).getDstInstanceName());
 			}
 		}	
-	}
-
-	public String getDrdsInstanceId() {
-		return this.drdsInstanceId;
-	}
-
-	public void setDrdsInstanceId(String drdsInstanceId) {
-		this.drdsInstanceId = drdsInstanceId;
-		if(drdsInstanceId != null){
-			putQueryParameter("DrdsInstanceId", drdsInstanceId);
-		}
-	}
-
-	public Boolean getDbInstanceIsCreating() {
-		return this.dbInstanceIsCreating;
-	}
-
-	public void setDbInstanceIsCreating(Boolean dbInstanceIsCreating) {
-		this.dbInstanceIsCreating = dbInstanceIsCreating;
-		if(dbInstanceIsCreating != null){
-			putQueryParameter("DbInstanceIsCreating", dbInstanceIsCreating.toString());
-		}
 	}
 
 	public static class RdsSuperInstances {

@@ -35,6 +35,7 @@ public class DescribeDrdsInstanceLevelTasksResponseUnmarshaller {
 			task.setTaskName(_ctx.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskName"));
 			task.setGmtCreate(_ctx.longValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].GmtCreate"));
 			task.setTaskType(_ctx.integerValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskType"));
+			task.setTargetId(_ctx.longValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TargetId"));
 			task.setTaskStatus(_ctx.integerValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskStatus"));
 			task.setProgress(_ctx.integerValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].Progress"));
 			task.setProgressDescription(_ctx.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].ProgressDescription"));

@@ -15,30 +15,21 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class RemoveInstanceAccountRequest extends RpcAcsRequest<RemoveInstanceAccountResponse> {
-	
-	public RemoveInstanceAccountRequest() {
-		super("Drds", "2019-01-23", "RemoveInstanceAccount", "drds");
-	}
-
-	private String accountName;
+	   
 
 	private String drdsInstanceId;
 
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
-		}
+	private String accountName;
+	public RemoveInstanceAccountRequest() {
+		super("Drds", "2019-01-23", "RemoveInstanceAccount", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public String getDrdsInstanceId() {
@@ -49,6 +40,17 @@ public class RemoveInstanceAccountRequest extends RpcAcsRequest<RemoveInstanceAc
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
 		}
 	}
 

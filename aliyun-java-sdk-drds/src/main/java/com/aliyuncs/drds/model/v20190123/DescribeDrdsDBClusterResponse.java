@@ -79,6 +79,8 @@ public class DescribeDrdsDBClusterResponse extends AcsResponse {
 
 		private String networkType;
 
+		private String readMode;
+
 		private List<Endpoint> endpoints;
 
 		private List<DBNode> dBNodes;
@@ -169,6 +171,14 @@ public class DescribeDrdsDBClusterResponse extends AcsResponse {
 
 		public void setNetworkType(String networkType) {
 			this.networkType = networkType;
+		}
+
+		public String getReadMode() {
+			return this.readMode;
+		}
+
+		public void setReadMode(String readMode) {
+			this.readMode = readMode;
 		}
 
 		public List<Endpoint> getEndpoints() {

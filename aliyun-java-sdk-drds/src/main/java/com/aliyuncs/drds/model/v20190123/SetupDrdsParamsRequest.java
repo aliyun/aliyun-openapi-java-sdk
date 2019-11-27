@@ -16,22 +16,24 @@ package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetupDrdsParamsRequest extends RpcAcsRequest<SetupDrdsParamsResponse> {
-	
-	public SetupDrdsParamsRequest() {
-		super("Drds", "2019-01-23", "SetupDrdsParams", "drds");
-	}
+	   
 
 	private String paramLevel;
 
 	private List<Data> datas;
 
 	private String drdsInstanceId;
+	public SetupDrdsParamsRequest() {
+		super("Drds", "2019-01-23", "SetupDrdsParams", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getParamLevel() {
 		return this.paramLevel;

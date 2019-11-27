@@ -15,22 +15,35 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDrdsDbInstanceRequest extends RpcAcsRequest<DescribeDrdsDbInstanceResponse> {
-	
-	public DescribeDrdsDbInstanceRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsDbInstance", "drds");
-	}
+	   
+
+	private String drdsInstanceId;
 
 	private String dbName;
 
 	private String dbInstanceId;
+	public DescribeDrdsDbInstanceRequest() {
+		super("Drds", "2019-01-23", "DescribeDrdsDbInstance", "Drds");
+		setMethod(MethodType.POST);
+	}
 
-	private String drdsInstanceId;
+	public String getDrdsInstanceId() {
+		return this.drdsInstanceId;
+	}
+
+	public void setDrdsInstanceId(String drdsInstanceId) {
+		this.drdsInstanceId = drdsInstanceId;
+		if(drdsInstanceId != null){
+			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
 
 	public String getDbName() {
 		return this.dbName;
@@ -51,17 +64,6 @@ public class DescribeDrdsDbInstanceRequest extends RpcAcsRequest<DescribeDrdsDbI
 		this.dbInstanceId = dbInstanceId;
 		if(dbInstanceId != null){
 			putQueryParameter("DbInstanceId", dbInstanceId);
-		}
-	}
-
-	public String getDrdsInstanceId() {
-		return this.drdsInstanceId;
-	}
-
-	public void setDrdsInstanceId(String drdsInstanceId) {
-		this.drdsInstanceId = drdsInstanceId;
-		if(drdsInstanceId != null){
-			putQueryParameter("DrdsInstanceId", drdsInstanceId);
 		}
 	}
 

@@ -97,6 +97,8 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 
 		private String orderInstanceId;
 
+		private Integer mysqlVersion;
+
 		private List<Vip> vips;
 
 		private List<String> readOnlyDBInstanceIds;
@@ -117,26 +119,10 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -181,26 +167,10 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getBizVersion() {
-			return this.version;
-		}
-
-		public void setBizVersion(Long version) {
-			this.version = version;
-		}
-
-		/**
-		 * @deprecated use getBizVersion instead of this.
-		 */
-		@Deprecated
 		public Long getVersion() {
 			return this.version;
 		}
 
-		/**
-		 * @deprecated use setBizVersion instead of this.
-		 */
-		@Deprecated
 		public void setVersion(Long version) {
 			this.version = version;
 		}
@@ -291,6 +261,14 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 
 		public void setOrderInstanceId(String orderInstanceId) {
 			this.orderInstanceId = orderInstanceId;
+		}
+
+		public Integer getMysqlVersion() {
+			return this.mysqlVersion;
+		}
+
+		public void setMysqlVersion(Integer mysqlVersion) {
+			this.mysqlVersion = mysqlVersion;
 		}
 
 		public List<Vip> getVips() {

@@ -16,24 +16,18 @@ package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTaskResponse> {
-	
-	public SubmitHotExpandTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitHotExpandTask", "drds");
-	}
-
-	private List<InstanceDbMapping> instanceDbMappings;
+	   
 
 	private List<Mapping> mappings;
 
 	private String taskDesc;
-
-	private String dbName;
 
 	private List<SupperAccountMapping> supperAccountMappings;
 
@@ -43,18 +37,12 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 
 	private String drdsInstanceId;
 
-	public List<InstanceDbMapping> getInstanceDbMappings() {
-		return this.instanceDbMappings;
-	}
+	private List<InstanceDbMapping> instanceDbMappings;
 
-	public void setInstanceDbMappings(List<InstanceDbMapping> instanceDbMappings) {
-		this.instanceDbMappings = instanceDbMappings;	
-		if (instanceDbMappings != null) {
-			for (int depth1 = 0; depth1 < instanceDbMappings.size(); depth1++) {
-				putQueryParameter("InstanceDbMapping." + (depth1 + 1) + ".DbList" , instanceDbMappings.get(depth1).getDbList());
-				putQueryParameter("InstanceDbMapping." + (depth1 + 1) + ".InstanceName" , instanceDbMappings.get(depth1).getInstanceName());
-			}
-		}	
+	private String dbName;
+	public SubmitHotExpandTaskRequest() {
+		super("Drds", "2019-01-23", "SubmitHotExpandTask", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public List<Mapping> getMappings() {
@@ -84,17 +72,6 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 		this.taskDesc = taskDesc;
 		if(taskDesc != null){
 			putQueryParameter("TaskDesc", taskDesc);
-		}
-	}
-
-	public String getDbName() {
-		return this.dbName;
-	}
-
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
 		}
 	}
 
@@ -149,26 +126,28 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 		}
 	}
 
-	public static class InstanceDbMapping {
+	public List<InstanceDbMapping> getInstanceDbMappings() {
+		return this.instanceDbMappings;
+	}
 
-		private String dbList;
+	public void setInstanceDbMappings(List<InstanceDbMapping> instanceDbMappings) {
+		this.instanceDbMappings = instanceDbMappings;	
+		if (instanceDbMappings != null) {
+			for (int depth1 = 0; depth1 < instanceDbMappings.size(); depth1++) {
+				putQueryParameter("InstanceDbMapping." + (depth1 + 1) + ".DbList" , instanceDbMappings.get(depth1).getDbList());
+				putQueryParameter("InstanceDbMapping." + (depth1 + 1) + ".InstanceName" , instanceDbMappings.get(depth1).getInstanceName());
+			}
+		}	
+	}
 
-		private String instanceName;
+	public String getDbName() {
+		return this.dbName;
+	}
 
-		public String getDbList() {
-			return this.dbList;
-		}
-
-		public void setDbList(String dbList) {
-			this.dbList = dbList;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
 		}
 	}
 
@@ -298,6 +277,29 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 
 		public void setSrcDb(String srcDb) {
 			this.srcDb = srcDb;
+		}
+	}
+
+	public static class InstanceDbMapping {
+
+		private String dbList;
+
+		private String instanceName;
+
+		public String getDbList() {
+			return this.dbList;
+		}
+
+		public void setDbList(String dbList) {
+			this.dbList = dbList;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 	}
 

@@ -15,36 +15,38 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitSqlFlashbackTaskRequest extends RpcAcsRequest<SubmitSqlFlashbackTaskResponse> {
-	
-	public SubmitSqlFlashbackTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitSqlFlashbackTask", "drds");
-	}
+	   
 
 	private String traceId;
 
-	private String sqlType;
-
 	private String sqlPk;
 
+	private String startTime;
+
 	private Integer recallRestoreType;
+
+	private String tableName;
+
+	private String sqlType;
+
+	private String endTime;
+
+	private String drdsInstanceId;
 
 	private Integer recallType;
 
 	private String dbName;
-
-	private String endTime;
-
-	private String startTime;
-
-	private String tableName;
-
-	private String drdsInstanceId;
+	public SubmitSqlFlashbackTaskRequest() {
+		super("Drds", "2019-01-23", "SubmitSqlFlashbackTask", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getTraceId() {
 		return this.traceId;
@@ -54,17 +56,6 @@ public class SubmitSqlFlashbackTaskRequest extends RpcAcsRequest<SubmitSqlFlashb
 		this.traceId = traceId;
 		if(traceId != null){
 			putQueryParameter("TraceId", traceId);
-		}
-	}
-
-	public String getSqlType() {
-		return this.sqlType;
-	}
-
-	public void setSqlType(String sqlType) {
-		this.sqlType = sqlType;
-		if(sqlType != null){
-			putQueryParameter("SqlType", sqlType);
 		}
 	}
 
@@ -79,6 +70,17 @@ public class SubmitSqlFlashbackTaskRequest extends RpcAcsRequest<SubmitSqlFlashb
 		}
 	}
 
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
 	public Integer getRecallRestoreType() {
 		return this.recallRestoreType;
 	}
@@ -87,6 +89,50 @@ public class SubmitSqlFlashbackTaskRequest extends RpcAcsRequest<SubmitSqlFlashb
 		this.recallRestoreType = recallRestoreType;
 		if(recallRestoreType != null){
 			putQueryParameter("RecallRestoreType", recallRestoreType.toString());
+		}
+	}
+
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
+		}
+	}
+
+	public String getSqlType() {
+		return this.sqlType;
+	}
+
+	public void setSqlType(String sqlType) {
+		this.sqlType = sqlType;
+		if(sqlType != null){
+			putQueryParameter("SqlType", sqlType);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getDrdsInstanceId() {
+		return this.drdsInstanceId;
+	}
+
+	public void setDrdsInstanceId(String drdsInstanceId) {
+		this.drdsInstanceId = drdsInstanceId;
+		if(drdsInstanceId != null){
+			putQueryParameter("DrdsInstanceId", drdsInstanceId);
 		}
 	}
 
@@ -109,50 +155,6 @@ public class SubmitSqlFlashbackTaskRequest extends RpcAcsRequest<SubmitSqlFlashb
 		this.dbName = dbName;
 		if(dbName != null){
 			putQueryParameter("DbName", dbName);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getTableName() {
-		return this.tableName;
-	}
-
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
-		if(tableName != null){
-			putQueryParameter("TableName", tableName);
-		}
-	}
-
-	public String getDrdsInstanceId() {
-		return this.drdsInstanceId;
-	}
-
-	public void setDrdsInstanceId(String drdsInstanceId) {
-		this.drdsInstanceId = drdsInstanceId;
-		if(drdsInstanceId != null){
-			putQueryParameter("DrdsInstanceId", drdsInstanceId);
 		}
 	}
 

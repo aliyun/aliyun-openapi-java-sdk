@@ -15,20 +15,22 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyDrdsInstanceDescriptionRequest extends RpcAcsRequest<ModifyDrdsInstanceDescriptionResponse> {
-	
-	public ModifyDrdsInstanceDescriptionRequest() {
-		super("Drds", "2019-01-23", "ModifyDrdsInstanceDescription", "drds");
-	}
+	   
 
 	private String description;
 
 	private String drdsInstanceId;
+	public ModifyDrdsInstanceDescriptionRequest() {
+		super("Drds", "2019-01-23", "ModifyDrdsInstanceDescription", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDescription() {
 		return this.description;

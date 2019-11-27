@@ -16,24 +16,26 @@ package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
-	
-	public ListTagResourcesRequest() {
-		super("Drds", "2019-01-23", "ListTagResources", "drds");
-	}
+	   
 
 	private List<String> resourceIds;
+
+	private String resourceType;
 
 	private String nextToken;
 
 	private List<Tag> tags;
-
-	private String resourceType;
+	public ListTagResourcesRequest() {
+		super("Drds", "2019-01-23", "ListTagResources", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public List<String> getResourceIds() {
 		return this.resourceIds;
@@ -46,6 +48,17 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
 			}
 		}	
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
 	}
 
 	public String getNextToken() {
@@ -71,17 +84,6 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
 	}
 
 	public static class Tag {

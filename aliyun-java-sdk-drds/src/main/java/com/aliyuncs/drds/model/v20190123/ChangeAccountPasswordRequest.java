@@ -15,22 +15,35 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ChangeAccountPasswordRequest extends RpcAcsRequest<ChangeAccountPasswordResponse> {
-	
-	public ChangeAccountPasswordRequest() {
-		super("Drds", "2019-01-23", "ChangeAccountPassword", "drds");
-	}
+	   
+
+	private String drdsInstanceId;
 
 	private String password;
 
 	private String accountName;
+	public ChangeAccountPasswordRequest() {
+		super("Drds", "2019-01-23", "ChangeAccountPassword", "Drds");
+		setMethod(MethodType.POST);
+	}
 
-	private String drdsInstanceId;
+	public String getDrdsInstanceId() {
+		return this.drdsInstanceId;
+	}
+
+	public void setDrdsInstanceId(String drdsInstanceId) {
+		this.drdsInstanceId = drdsInstanceId;
+		if(drdsInstanceId != null){
+			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
 
 	public String getPassword() {
 		return this.password;
@@ -51,17 +64,6 @@ public class ChangeAccountPasswordRequest extends RpcAcsRequest<ChangeAccountPas
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
-		}
-	}
-
-	public String getDrdsInstanceId() {
-		return this.drdsInstanceId;
-	}
-
-	public void setDrdsInstanceId(String drdsInstanceId) {
-		this.drdsInstanceId = drdsInstanceId;
-		if(drdsInstanceId != null){
-			putQueryParameter("DrdsInstanceId", drdsInstanceId);
 		}
 	}
 

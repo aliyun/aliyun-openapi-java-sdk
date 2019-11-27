@@ -16,22 +16,35 @@ package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteShardTasksRequest extends RpcAcsRequest<DeleteShardTasksResponse> {
-	
-	public DeleteShardTasksRequest() {
-		super("Drds", "2019-01-23", "DeleteShardTasks", "drds");
-	}
+	   
+
+	private String drdsInstanceId;
 
 	private String dbName;
 
 	private List<TableName> tableNames;
+	public DeleteShardTasksRequest() {
+		super("Drds", "2019-01-23", "DeleteShardTasks", "Drds");
+		setMethod(MethodType.POST);
+	}
 
-	private String drdsInstanceId;
+	public String getDrdsInstanceId() {
+		return this.drdsInstanceId;
+	}
+
+	public void setDrdsInstanceId(String drdsInstanceId) {
+		this.drdsInstanceId = drdsInstanceId;
+		if(drdsInstanceId != null){
+			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
 
 	public String getDbName() {
 		return this.dbName;
@@ -56,17 +69,6 @@ public class DeleteShardTasksRequest extends RpcAcsRequest<DeleteShardTasksRespo
 				putQueryParameter("TableName." + (depth1 + 1) + ".TargetTableName" , tableNames.get(depth1).getTargetTableName());
 			}
 		}	
-	}
-
-	public String getDrdsInstanceId() {
-		return this.drdsInstanceId;
-	}
-
-	public void setDrdsInstanceId(String drdsInstanceId) {
-		this.drdsInstanceId = drdsInstanceId;
-		if(drdsInstanceId != null){
-			putQueryParameter("DrdsInstanceId", drdsInstanceId);
-		}
 	}
 
 	public static class TableName {

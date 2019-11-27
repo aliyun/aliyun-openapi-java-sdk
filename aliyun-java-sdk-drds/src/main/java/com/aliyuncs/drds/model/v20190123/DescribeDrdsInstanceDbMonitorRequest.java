@@ -15,18 +15,14 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDrdsInstanceDbMonitorRequest extends RpcAcsRequest<DescribeDrdsInstanceDbMonitorResponse> {
-	
-	public DescribeDrdsInstanceDbMonitorRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsInstanceDbMonitor", "drds");
-	}
-
-	private String dbName;
+	   
 
 	private Long endTime;
 
@@ -34,17 +30,12 @@ public class DescribeDrdsInstanceDbMonitorRequest extends RpcAcsRequest<Describe
 
 	private String drdsInstanceId;
 
+	private String dbName;
+
 	private String key;
-
-	public String getDbName() {
-		return this.dbName;
-	}
-
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
-		}
+	public DescribeDrdsInstanceDbMonitorRequest() {
+		super("Drds", "2019-01-23", "DescribeDrdsInstanceDbMonitor", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public Long getEndTime() {
@@ -77,6 +68,17 @@ public class DescribeDrdsInstanceDbMonitorRequest extends RpcAcsRequest<Describe
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
 		}
 	}
 

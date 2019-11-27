@@ -15,18 +15,20 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class RemoveDrdsInstanceRequest extends RpcAcsRequest<RemoveDrdsInstanceResponse> {
-	
-	public RemoveDrdsInstanceRequest() {
-		super("Drds", "2019-01-23", "RemoveDrdsInstance", "drds");
-	}
+	   
 
 	private String drdsInstanceId;
+	public RemoveDrdsInstanceRequest() {
+		super("Drds", "2019-01-23", "RemoveDrdsInstance", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;

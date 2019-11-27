@@ -16,34 +16,25 @@ package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitHotExpandPreCheckTaskRequest extends RpcAcsRequest<SubmitHotExpandPreCheckTaskResponse> {
-	
-	public SubmitHotExpandPreCheckTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitHotExpandPreCheckTask", "drds");
-	}
-
-	private String dbName;
+	   
 
 	private List<String> tableLists;
 
-	private String dbInstType;
-
 	private String drdsInstanceId;
 
-	public String getDbName() {
-		return this.dbName;
-	}
+	private String dbName;
 
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
-		}
+	private String dbInstType;
+	public SubmitHotExpandPreCheckTaskRequest() {
+		super("Drds", "2019-01-23", "SubmitHotExpandPreCheckTask", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public List<String> getTableLists() {
@@ -59,17 +50,6 @@ public class SubmitHotExpandPreCheckTaskRequest extends RpcAcsRequest<SubmitHotE
 		}	
 	}
 
-	public String getDbInstType() {
-		return this.dbInstType;
-	}
-
-	public void setDbInstType(String dbInstType) {
-		this.dbInstType = dbInstType;
-		if(dbInstType != null){
-			putQueryParameter("DbInstType", dbInstType);
-		}
-	}
-
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;
 	}
@@ -78,6 +58,28 @@ public class SubmitHotExpandPreCheckTaskRequest extends RpcAcsRequest<SubmitHotE
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public String getDbInstType() {
+		return this.dbInstType;
+	}
+
+	public void setDbInstType(String dbInstType) {
+		this.dbInstType = dbInstType;
+		if(dbInstType != null){
+			putQueryParameter("DbInstType", dbInstType);
 		}
 	}
 

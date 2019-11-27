@@ -63,6 +63,8 @@ public class DescribeDrdsInstanceLevelTasksResponse extends AcsResponse {
 
 		private Integer taskType;
 
+		private Long targetId;
+
 		private Integer taskStatus;
 
 		private Integer progress;
@@ -99,6 +101,14 @@ public class DescribeDrdsInstanceLevelTasksResponse extends AcsResponse {
 
 		public void setTaskType(Integer taskType) {
 			this.taskType = taskType;
+		}
+
+		public Long getTargetId() {
+			return this.targetId;
+		}
+
+		public void setTargetId(Long targetId) {
+			this.targetId = targetId;
 		}
 
 		public Integer getTaskStatus() {

@@ -15,26 +15,50 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitRollbackTaskRequest extends RpcAcsRequest<SubmitRollbackTaskResponse> {
-	
-	public SubmitRollbackTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitRollbackTask", "drds");
-	}
+	   
+
+	private String drdsInstanceId;
+
+	private String expandType;
 
 	private String jobId;
 
 	private String dbName;
 
 	private String parentJobId;
+	public SubmitRollbackTaskRequest() {
+		super("Drds", "2019-01-23", "SubmitRollbackTask", "Drds");
+		setMethod(MethodType.POST);
+	}
 
-	private String drdsInstanceId;
+	public String getDrdsInstanceId() {
+		return this.drdsInstanceId;
+	}
 
-	private String expandType;
+	public void setDrdsInstanceId(String drdsInstanceId) {
+		this.drdsInstanceId = drdsInstanceId;
+		if(drdsInstanceId != null){
+			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getExpandType() {
+		return this.expandType;
+	}
+
+	public void setExpandType(String expandType) {
+		this.expandType = expandType;
+		if(expandType != null){
+			putQueryParameter("ExpandType", expandType);
+		}
+	}
 
 	public String getJobId() {
 		return this.jobId;
@@ -66,28 +90,6 @@ public class SubmitRollbackTaskRequest extends RpcAcsRequest<SubmitRollbackTaskR
 		this.parentJobId = parentJobId;
 		if(parentJobId != null){
 			putQueryParameter("ParentJobId", parentJobId);
-		}
-	}
-
-	public String getDrdsInstanceId() {
-		return this.drdsInstanceId;
-	}
-
-	public void setDrdsInstanceId(String drdsInstanceId) {
-		this.drdsInstanceId = drdsInstanceId;
-		if(drdsInstanceId != null){
-			putQueryParameter("DrdsInstanceId", drdsInstanceId);
-		}
-	}
-
-	public String getExpandType() {
-		return this.expandType;
-	}
-
-	public void setExpandType(String expandType) {
-		this.expandType = expandType;
-		if(expandType != null){
-			putQueryParameter("ExpandType", expandType);
 		}
 	}
 

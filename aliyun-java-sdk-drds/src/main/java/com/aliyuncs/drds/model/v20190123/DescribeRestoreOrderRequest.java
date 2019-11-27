@@ -15,38 +15,29 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeRestoreOrderRequest extends RpcAcsRequest<DescribeRestoreOrderResponse> {
-	
-	public DescribeRestoreOrderRequest() {
-		super("Drds", "2019-01-23", "DescribeRestoreOrder", "drds");
-	}
-
-	private String preferredBackupTime;
+	   
 
 	private String backupDbNames;
 
 	private String backupId;
 
-	private String backupMode;
-
 	private String backupLevel;
 
 	private String drdsInstanceId;
 
-	public String getPreferredBackupTime() {
-		return this.preferredBackupTime;
-	}
+	private String preferredBackupTime;
 
-	public void setPreferredBackupTime(String preferredBackupTime) {
-		this.preferredBackupTime = preferredBackupTime;
-		if(preferredBackupTime != null){
-			putQueryParameter("PreferredBackupTime", preferredBackupTime);
-		}
+	private String backupMode;
+	public DescribeRestoreOrderRequest() {
+		super("Drds", "2019-01-23", "DescribeRestoreOrder", "Drds");
+		setMethod(MethodType.POST);
 	}
 
 	public String getBackupDbNames() {
@@ -71,17 +62,6 @@ public class DescribeRestoreOrderRequest extends RpcAcsRequest<DescribeRestoreOr
 		}
 	}
 
-	public String getBackupMode() {
-		return this.backupMode;
-	}
-
-	public void setBackupMode(String backupMode) {
-		this.backupMode = backupMode;
-		if(backupMode != null){
-			putQueryParameter("BackupMode", backupMode);
-		}
-	}
-
 	public String getBackupLevel() {
 		return this.backupLevel;
 	}
@@ -101,6 +81,28 @@ public class DescribeRestoreOrderRequest extends RpcAcsRequest<DescribeRestoreOr
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public String getPreferredBackupTime() {
+		return this.preferredBackupTime;
+	}
+
+	public void setPreferredBackupTime(String preferredBackupTime) {
+		this.preferredBackupTime = preferredBackupTime;
+		if(preferredBackupTime != null){
+			putQueryParameter("PreferredBackupTime", preferredBackupTime);
+		}
+	}
+
+	public String getBackupMode() {
+		return this.backupMode;
+	}
+
+	public void setBackupMode(String backupMode) {
+		this.backupMode = backupMode;
+		if(backupMode != null){
+			putQueryParameter("BackupMode", backupMode);
 		}
 	}
 

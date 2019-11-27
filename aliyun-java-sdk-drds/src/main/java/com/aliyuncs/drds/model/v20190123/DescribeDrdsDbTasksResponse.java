@@ -83,6 +83,12 @@ public class DescribeDrdsDbTasksResponse extends AcsResponse {
 
 		private String label;
 
+		private String detailTaskId;
+
+		private Integer tbComputeLength;
+
+		private Integer dbComputeLength;
+
 		public String getTaskName() {
 			return this.taskName;
 		}
@@ -185,6 +191,30 @@ public class DescribeDrdsDbTasksResponse extends AcsResponse {
 
 		public void setLabel(String label) {
 			this.label = label;
+		}
+
+		public String getDetailTaskId() {
+			return this.detailTaskId;
+		}
+
+		public void setDetailTaskId(String detailTaskId) {
+			this.detailTaskId = detailTaskId;
+		}
+
+		public Integer getTbComputeLength() {
+			return this.tbComputeLength;
+		}
+
+		public void setTbComputeLength(Integer tbComputeLength) {
+			this.tbComputeLength = tbComputeLength;
+		}
+
+		public Integer getDbComputeLength() {
+			return this.dbComputeLength;
+		}
+
+		public void setDbComputeLength(Integer dbComputeLength) {
+			this.dbComputeLength = dbComputeLength;
 		}
 	}
 

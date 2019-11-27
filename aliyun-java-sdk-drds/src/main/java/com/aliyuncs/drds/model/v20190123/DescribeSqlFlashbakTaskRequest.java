@@ -15,18 +15,20 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSqlFlashbakTaskRequest extends RpcAcsRequest<DescribeSqlFlashbakTaskResponse> {
-	
-	public DescribeSqlFlashbakTaskRequest() {
-		super("Drds", "2019-01-23", "DescribeSqlFlashbakTask", "drds");
-	}
+	   
 
 	private String drdsInstanceId;
+	public DescribeSqlFlashbakTaskRequest() {
+		super("Drds", "2019-01-23", "DescribeSqlFlashbakTask", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDrdsInstanceId() {
 		return this.drdsInstanceId;

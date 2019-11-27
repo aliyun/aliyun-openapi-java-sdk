@@ -15,18 +15,20 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateOrderForRdsRequest extends RpcAcsRequest<CreateOrderForRdsResponse> {
-	
-	public CreateOrderForRdsRequest() {
-		super("Drds", "2019-01-23", "CreateOrderForRds", "drds");
-	}
+	   
 
 	private String params;
+	public CreateOrderForRdsRequest() {
+		super("Drds", "2019-01-23", "CreateOrderForRds", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getParams() {
 		return this.params;

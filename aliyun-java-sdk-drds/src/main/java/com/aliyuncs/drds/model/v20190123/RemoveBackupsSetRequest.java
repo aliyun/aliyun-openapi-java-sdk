@@ -15,20 +15,22 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class RemoveBackupsSetRequest extends RpcAcsRequest<RemoveBackupsSetResponse> {
-	
-	public RemoveBackupsSetRequest() {
-		super("Drds", "2019-01-23", "RemoveBackupsSet", "drds");
-	}
+	   
 
 	private String backupId;
 
 	private String drdsInstanceId;
+	public RemoveBackupsSetRequest() {
+		super("Drds", "2019-01-23", "RemoveBackupsSet", "Drds");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBackupId() {
 		return this.backupId;
