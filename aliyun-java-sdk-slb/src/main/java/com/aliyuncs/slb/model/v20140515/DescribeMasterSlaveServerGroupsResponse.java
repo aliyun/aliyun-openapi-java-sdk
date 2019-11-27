@@ -103,22 +103,6 @@ public class DescribeMasterSlaveServerGroupsResponse extends AcsResponse {
 					this.protocol = protocol;
 				}
 
-				/**
-				 * @deprecated use getBizProtocol instead of this.
-				 */
-				@Deprecated
-				public String getProtocol() {
-					return this.protocol;
-				}
-
-				/**
-				 * @deprecated use setBizProtocol instead of this.
-				 */
-				@Deprecated
-				public void setProtocol(String protocol) {
-					this.protocol = protocol;
-				}
-
 				public Integer getPort() {
 					return this.port;
 				}

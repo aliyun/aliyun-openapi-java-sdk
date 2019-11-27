@@ -37,7 +37,7 @@ public class DescribeHealthStatusResponseUnmarshaller {
 			backendServer.setServerHealthStatus(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerHealthStatus"));
 			backendServer.setServerIp(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerIp"));
 			backendServer.setEniHost(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].EniHost"));
-			backendServer.setProtocol(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Protocol"));
+			backendServer.setBizProtocol(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Protocol"));
 			backendServer.setType(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Type"));
 
 			backendServers.add(backendServer);

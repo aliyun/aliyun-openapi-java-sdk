@@ -49,7 +49,7 @@ public class DescribeAccessControlListAttributeResponseUnmarshaller {
 			relatedListener.setLoadBalancerId(_ctx.stringValue("DescribeAccessControlListAttributeResponse.RelatedListeners["+ i +"].LoadBalancerId"));
 			relatedListener.setListenerPort(_ctx.integerValue("DescribeAccessControlListAttributeResponse.RelatedListeners["+ i +"].ListenerPort"));
 			relatedListener.setAclType(_ctx.stringValue("DescribeAccessControlListAttributeResponse.RelatedListeners["+ i +"].AclType"));
-			relatedListener.setProtocol(_ctx.stringValue("DescribeAccessControlListAttributeResponse.RelatedListeners["+ i +"].Protocol"));
+			relatedListener.setBizProtocol(_ctx.stringValue("DescribeAccessControlListAttributeResponse.RelatedListeners["+ i +"].Protocol"));
 
 			relatedListeners.add(relatedListener);
 		}

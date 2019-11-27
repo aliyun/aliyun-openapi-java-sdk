@@ -40,6 +40,8 @@ public class DescribeVServerGroupAttributeResponseUnmarshaller {
 			backendServer.setType(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].Type"));
 			backendServer.setServerIp(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].ServerIp"));
 			backendServer.setVpcId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].VpcId"));
+			backendServer.setVbrId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].VbrId"));
+			backendServer.setServerRegionId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].ServerRegionId"));
 			backendServer.setDescription(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].Description"));
 
 			backendServers.add(backendServer);

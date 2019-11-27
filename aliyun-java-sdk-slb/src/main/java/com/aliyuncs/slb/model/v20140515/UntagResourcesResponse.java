@@ -15,14 +15,14 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.slb.transform.v20140515.DeleteMasterSlaveVServerGroupResponseUnmarshaller;
+import com.aliyuncs.slb.transform.v20140515.UntagResourcesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteMasterSlaveVServerGroupResponse extends AcsResponse {
+public class UntagResourcesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class DeleteMasterSlaveVServerGroupResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteMasterSlaveVServerGroupResponse getInstance(UnmarshallerContext context) {
-		return	DeleteMasterSlaveVServerGroupResponseUnmarshaller.unmarshall(this, context);
+	public UntagResourcesResponse getInstance(UnmarshallerContext context) {
+		return	UntagResourcesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

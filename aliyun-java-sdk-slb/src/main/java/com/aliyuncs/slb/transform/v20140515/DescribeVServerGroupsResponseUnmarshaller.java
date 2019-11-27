@@ -42,7 +42,7 @@ public class DescribeVServerGroupsResponseUnmarshaller {
 			List<Listener> listeners = new ArrayList<Listener>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners.Length"); j++) {
 				Listener listener = new Listener();
-				listener.setProtocol(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Protocol"));
+				listener.setBizProtocol(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Protocol"));
 				listener.setPort(_ctx.integerValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Port"));
 
 				listeners.add(listener);

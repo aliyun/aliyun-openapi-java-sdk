@@ -159,22 +159,6 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 		public void setBizProtocol(String protocol) {
 			this.protocol = protocol;
 		}
-
-		/**
-		 * @deprecated use getBizProtocol instead of this.
-		 */
-		@Deprecated
-		public String getProtocol() {
-			return this.protocol;
-		}
-
-		/**
-		 * @deprecated use setBizProtocol instead of this.
-		 */
-		@Deprecated
-		public void setProtocol(String protocol) {
-			this.protocol = protocol;
-		}
 	}
 
 	@Override

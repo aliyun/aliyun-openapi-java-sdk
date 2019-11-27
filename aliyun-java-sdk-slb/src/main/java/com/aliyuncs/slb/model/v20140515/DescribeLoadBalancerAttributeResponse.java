@@ -93,6 +93,10 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String deleteProtection;
 
+	private String associatedCenId;
+
+	private String associatedCenStatus;
+
 	private String cloudInstanceType;
 
 	private String cloudInstanceId;
@@ -100,6 +104,8 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 	private String tunnelType;
 
 	private Long cloudInstanceUid;
+
+	private Boolean supportPrivateLink;
 
 	private List<ListenerPortAndProtocal> listenerPortsAndProtocal;
 
@@ -149,26 +155,10 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 		this.loadBalancerStatus = loadBalancerStatus;
 	}
 
-	public String getBizRegionId() {
-		return this.regionId;
-	}
-
-	public void setBizRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	/**
-	 * @deprecated use getBizRegionId instead of this.
-	 */
-	@Deprecated
 	public String getRegionId() {
 		return this.regionId;
 	}
 
-	/**
-	 * @deprecated use setBizRegionId instead of this.
-	 */
-	@Deprecated
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
 	}
@@ -397,6 +387,22 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 		this.deleteProtection = deleteProtection;
 	}
 
+	public String getAssociatedCenId() {
+		return this.associatedCenId;
+	}
+
+	public void setAssociatedCenId(String associatedCenId) {
+		this.associatedCenId = associatedCenId;
+	}
+
+	public String getAssociatedCenStatus() {
+		return this.associatedCenStatus;
+	}
+
+	public void setAssociatedCenStatus(String associatedCenStatus) {
+		this.associatedCenStatus = associatedCenStatus;
+	}
+
 	public String getCloudInstanceType() {
 		return this.cloudInstanceType;
 	}
@@ -427,6 +433,14 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setCloudInstanceUid(Long cloudInstanceUid) {
 		this.cloudInstanceUid = cloudInstanceUid;
+	}
+
+	public Boolean getSupportPrivateLink() {
+		return this.supportPrivateLink;
+	}
+
+	public void setSupportPrivateLink(Boolean supportPrivateLink) {
+		this.supportPrivateLink = supportPrivateLink;
 	}
 
 	public List<ListenerPortAndProtocal> getListenerPortsAndProtocal() {

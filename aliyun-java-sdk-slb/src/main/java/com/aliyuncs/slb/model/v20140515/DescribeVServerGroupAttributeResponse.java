@@ -89,6 +89,10 @@ public class DescribeVServerGroupAttributeResponse extends AcsResponse {
 
 		private String vpcId;
 
+		private String vbrId;
+
+		private String serverRegionId;
+
 		private String description;
 
 		public String getServerId() {
@@ -137,6 +141,22 @@ public class DescribeVServerGroupAttributeResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getVbrId() {
+			return this.vbrId;
+		}
+
+		public void setVbrId(String vbrId) {
+			this.vbrId = vbrId;
+		}
+
+		public String getServerRegionId() {
+			return this.serverRegionId;
+		}
+
+		public void setServerRegionId(String serverRegionId) {
+			this.serverRegionId = serverRegionId;
 		}
 
 		public String getDescription() {

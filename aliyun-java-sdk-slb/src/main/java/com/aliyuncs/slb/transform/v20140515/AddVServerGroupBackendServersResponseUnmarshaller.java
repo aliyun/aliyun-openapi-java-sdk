@@ -38,6 +38,8 @@ public class AddVServerGroupBackendServersResponseUnmarshaller {
 			backendServer.setType(_ctx.stringValue("AddVServerGroupBackendServersResponse.BackendServers["+ i +"].Type"));
 			backendServer.setServerIp(_ctx.stringValue("AddVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerIp"));
 			backendServer.setVpcId(_ctx.stringValue("AddVServerGroupBackendServersResponse.BackendServers["+ i +"].VpcId"));
+			backendServer.setVbrId(_ctx.stringValue("AddVServerGroupBackendServersResponse.BackendServers["+ i +"].VbrId"));
+			backendServer.setServerRegionId(_ctx.stringValue("AddVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerRegionId"));
 			backendServer.setDescription(_ctx.stringValue("AddVServerGroupBackendServersResponse.BackendServers["+ i +"].Description"));
 
 			backendServers.add(backendServer);

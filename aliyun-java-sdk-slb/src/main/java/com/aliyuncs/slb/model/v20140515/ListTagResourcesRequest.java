@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
@@ -22,38 +23,31 @@ import com.aliyuncs.slb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteMasterSlaveVServerGroupRequest extends RpcAcsRequest<DeleteMasterSlaveVServerGroupResponse> {
+public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
 	   
-
-	private String access_key_id;
 
 	private Long resourceOwnerId;
 
-	private String masterSlaveVServerGroupId;
+	private String nextToken;
+
+	private List<Tag> tags;
+
+	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DeleteMasterSlaveVServerGroupRequest() {
-		super("Slb", "2014-05-15", "DeleteMasterSlaveVServerGroup", "slb");
+
+	private String resourceType;
+	public ListTagResourcesRequest() {
+		super("Slb", "2014-05-15", "ListTagResources", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -67,15 +61,42 @@ public class DeleteMasterSlaveVServerGroupRequest extends RpcAcsRequest<DeleteMa
 		}
 	}
 
-	public String getMasterSlaveVServerGroupId() {
-		return this.masterSlaveVServerGroupId;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setMasterSlaveVServerGroupId(String masterSlaveVServerGroupId) {
-		this.masterSlaveVServerGroupId = masterSlaveVServerGroupId;
-		if(masterSlaveVServerGroupId != null){
-			putQueryParameter("MasterSlaveVServerGroupId", masterSlaveVServerGroupId);
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public List<String> getResourceIds() {
+		return this.resourceIds;
+	}
+
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -111,9 +132,43 @@ public class DeleteMasterSlaveVServerGroupRequest extends RpcAcsRequest<DeleteMa
 		}
 	}
 
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
 	@Override
-	public Class<DeleteMasterSlaveVServerGroupResponse> getResponseClass() {
-		return DeleteMasterSlaveVServerGroupResponse.class;
+	public Class<ListTagResourcesResponse> getResponseClass() {
+		return ListTagResourcesResponse.class;
 	}
 
 }

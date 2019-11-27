@@ -14,16 +14,16 @@
 
 package com.aliyuncs.slb.transform.v20140515;
 
-import com.aliyuncs.slb.model.v20140515.DeleteMasterSlaveVServerGroupResponse;
+import com.aliyuncs.slb.model.v20140515.TagResourcesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteMasterSlaveVServerGroupResponseUnmarshaller {
+public class TagResourcesResponseUnmarshaller {
 
-	public static DeleteMasterSlaveVServerGroupResponse unmarshall(DeleteMasterSlaveVServerGroupResponse deleteMasterSlaveVServerGroupResponse, UnmarshallerContext _ctx) {
+	public static TagResourcesResponse unmarshall(TagResourcesResponse tagResourcesResponse, UnmarshallerContext _ctx) {
 		
-		deleteMasterSlaveVServerGroupResponse.setRequestId(_ctx.stringValue("DeleteMasterSlaveVServerGroupResponse.RequestId"));
+		tagResourcesResponse.setRequestId(_ctx.stringValue("TagResourcesResponse.RequestId"));
 	 
-	 	return deleteMasterSlaveVServerGroupResponse;
+	 	return tagResourcesResponse;
 	}
 }

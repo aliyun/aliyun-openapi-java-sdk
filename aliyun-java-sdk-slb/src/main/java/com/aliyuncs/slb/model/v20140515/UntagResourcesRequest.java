@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
@@ -22,42 +23,31 @@ import com.aliyuncs.slb.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateMasterSlaveVServerGroupRequest extends RpcAcsRequest<CreateMasterSlaveVServerGroupResponse> {
+public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
 	   
-
-	private String access_key_id;
 
 	private Long resourceOwnerId;
 
-	private String masterSlaveBackendServers;
+	private Boolean all;
+
+	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String masterSlaveVServerGroupName;
-
 	private Long ownerId;
 
-	private String loadBalancerId;
-	public CreateMasterSlaveVServerGroupRequest() {
-		super("Slb", "2014-05-15", "CreateMasterSlaveVServerGroup", "slb");
+	private String resourceType;
+
+	private List<String> tagKeys;
+	public UntagResourcesRequest() {
+		super("Slb", "2014-05-15", "UntagResources", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -71,15 +61,28 @@ public class CreateMasterSlaveVServerGroupRequest extends RpcAcsRequest<CreateMa
 		}
 	}
 
-	public String getMasterSlaveBackendServers() {
-		return this.masterSlaveBackendServers;
+	public Boolean getAll() {
+		return this.all;
 	}
 
-	public void setMasterSlaveBackendServers(String masterSlaveBackendServers) {
-		this.masterSlaveBackendServers = masterSlaveBackendServers;
-		if(masterSlaveBackendServers != null){
-			putQueryParameter("MasterSlaveBackendServers", masterSlaveBackendServers);
+	public void setAll(Boolean all) {
+		this.all = all;
+		if(all != null){
+			putQueryParameter("All", all.toString());
 		}
+	}
+
+	public List<String> getResourceIds() {
+		return this.resourceIds;
+	}
+
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -104,17 +107,6 @@ public class CreateMasterSlaveVServerGroupRequest extends RpcAcsRequest<CreateMa
 		}
 	}
 
-	public String getMasterSlaveVServerGroupName() {
-		return this.masterSlaveVServerGroupName;
-	}
-
-	public void setMasterSlaveVServerGroupName(String masterSlaveVServerGroupName) {
-		this.masterSlaveVServerGroupName = masterSlaveVServerGroupName;
-		if(masterSlaveVServerGroupName != null){
-			putQueryParameter("MasterSlaveVServerGroupName", masterSlaveVServerGroupName);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -126,20 +118,33 @@ public class CreateMasterSlaveVServerGroupRequest extends RpcAcsRequest<CreateMa
 		}
 	}
 
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
+	public List<String> getTagKeys() {
+		return this.tagKeys;
+	}
+
+	public void setTagKeys(List<String> tagKeys) {
+		this.tagKeys = tagKeys;	
+		if (tagKeys != null) {
+			for (int i = 0; i < tagKeys.size(); i++) {
+				putQueryParameter("TagKey." + (i + 1) , tagKeys.get(i));
+			}
+		}	
+	}
+
 	@Override
-	public Class<CreateMasterSlaveVServerGroupResponse> getResponseClass() {
-		return CreateMasterSlaveVServerGroupResponse.class;
+	public Class<UntagResourcesResponse> getResponseClass() {
+		return UntagResourcesResponse.class;
 	}
 
 }
