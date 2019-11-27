@@ -133,6 +133,8 @@ public class DescribeReplicationJobsResponse extends AcsResponse {
 
 		private Integer maxNumberOfImageToKeep;
 
+		private String instanceType;
+
 		private List<DataDisk> dataDisks;
 
 		private List<ReplicationJobRun> replicationJobRuns;
@@ -169,26 +171,10 @@ public class DescribeReplicationJobsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -375,6 +361,14 @@ public class DescribeReplicationJobsResponse extends AcsResponse {
 
 		public void setMaxNumberOfImageToKeep(Integer maxNumberOfImageToKeep) {
 			this.maxNumberOfImageToKeep = maxNumberOfImageToKeep;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public List<DataDisk> getDataDisks() {

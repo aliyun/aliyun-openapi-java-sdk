@@ -64,6 +64,7 @@ public class DescribeReplicationJobsResponseUnmarshaller {
 			replicationJob.setRunOnce(_ctx.booleanValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].RunOnce"));
 			replicationJob.setFrequency(_ctx.integerValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].Frequency"));
 			replicationJob.setMaxNumberOfImageToKeep(_ctx.integerValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].MaxNumberOfImageToKeep"));
+			replicationJob.setInstanceType(_ctx.stringValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].InstanceType"));
 
 			List<DataDisk> dataDisks = new ArrayList<DataDisk>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].DataDisks.Length"); j++) {

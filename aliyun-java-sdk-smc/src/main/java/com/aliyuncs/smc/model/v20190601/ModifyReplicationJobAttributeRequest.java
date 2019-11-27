@@ -38,6 +38,8 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 
 	private Integer systemDiskSize;
 
+	private String instanceType;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
@@ -123,6 +125,17 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 		this.systemDiskSize = systemDiskSize;
 		if(systemDiskSize != null){
 			putQueryParameter("SystemDiskSize", systemDiskSize.toString());
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 

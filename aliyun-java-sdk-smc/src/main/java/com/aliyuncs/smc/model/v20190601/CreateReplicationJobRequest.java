@@ -40,6 +40,8 @@ public class CreateReplicationJobRequest extends RpcAcsRequest<CreateReplication
 
 	private Integer systemDiskSize;
 
+	private String instanceType;
+
 	private List<Tag> tags;
 
 	private Integer netMode;
@@ -150,6 +152,17 @@ public class CreateReplicationJobRequest extends RpcAcsRequest<CreateReplication
 		this.systemDiskSize = systemDiskSize;
 		if(systemDiskSize != null){
 			putQueryParameter("SystemDiskSize", systemDiskSize.toString());
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 
