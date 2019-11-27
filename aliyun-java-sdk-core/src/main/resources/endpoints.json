@@ -572,9 +572,6 @@
       "cn-hangzhou": "ddospro.cn-hangzhou.aliyuncs.com",
       "cn-hongkong": "ddospro.cn-hongkong.aliyuncs.com"
     },
-    "sas": {
-      "cn-hangzhou": "sas.aliyuncs.com"
-    },
     "odpsmayi": {
       "cn-shanghai": "bsb.cloud.alipay.com",
       "ap-southeast-1": "bsb.cloud.alipay.com"
