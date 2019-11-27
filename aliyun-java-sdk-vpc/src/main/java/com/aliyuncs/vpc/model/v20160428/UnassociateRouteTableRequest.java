@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class UnassociateRouteTableRequest extends RpcAcsRequest<UnassociateRouteTableResponse> {
-	
-	public UnassociateRouteTableRequest() {
-		super("Vpc", "2016-04-28", "UnassociateRouteTable", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -46,6 +38,14 @@ public class UnassociateRouteTableRequest extends RpcAcsRequest<UnassociateRoute
 	private Long ownerId;
 
 	private String vSwitchId;
+	public UnassociateRouteTableRequest() {
+		super("Vpc", "2016-04-28", "UnassociateRouteTable", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

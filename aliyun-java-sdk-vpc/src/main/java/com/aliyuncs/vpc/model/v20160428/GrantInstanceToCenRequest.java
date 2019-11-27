@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class GrantInstanceToCenRequest extends RpcAcsRequest<GrantInstanceToCenResponse> {
-	
-	public GrantInstanceToCenRequest() {
-		super("Vpc", "2016-04-28", "GrantInstanceToCen", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -50,6 +42,14 @@ public class GrantInstanceToCenRequest extends RpcAcsRequest<GrantInstanceToCenR
 	private Long ownerId;
 
 	private String instanceId;
+	public GrantInstanceToCenRequest() {
+		super("Vpc", "2016-04-28", "GrantInstanceToCen", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

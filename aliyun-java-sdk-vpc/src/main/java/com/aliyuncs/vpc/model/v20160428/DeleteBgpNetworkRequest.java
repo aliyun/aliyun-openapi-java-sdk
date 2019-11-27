@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DeleteBgpNetworkRequest extends RpcAcsRequest<DeleteBgpNetworkResponse> {
-	
-	public DeleteBgpNetworkRequest() {
-		super("Vpc", "2016-04-28", "DeleteBgpNetwork", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -46,6 +38,14 @@ public class DeleteBgpNetworkRequest extends RpcAcsRequest<DeleteBgpNetworkRespo
 	private String routerId;
 
 	private String dstCidrBlock;
+	public DeleteBgpNetworkRequest() {
+		super("Vpc", "2016-04-28", "DeleteBgpNetwork", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

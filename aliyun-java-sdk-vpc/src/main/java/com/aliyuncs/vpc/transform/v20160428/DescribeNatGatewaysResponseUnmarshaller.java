@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse.NatGateway;
 import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse.NatGateway.IpList;
+import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse.NatGateway.NatGatewayPrivateInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +48,9 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 			natGateway.setBusinessStatus(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].BusinessStatus"));
 			natGateway.setCreationTime(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].CreationTime"));
 			natGateway.setStatus(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Status"));
+			natGateway.setNatType(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatType"));
+			natGateway.setInternetChargeType(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].InternetChargeType"));
+			natGateway.setResourceGroupId(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].ResourceGroupId"));
 			natGateway.setDeletionProtection(_ctx.booleanValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].DeletionProtection"));
 
 			List<String> forwardTableIds = new ArrayList<String>();
@@ -66,6 +70,14 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 				bandwidthPackageIds.add(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].BandwidthPackageIds["+ j +"]"));
 			}
 			natGateway.setBandwidthPackageIds(bandwidthPackageIds);
+
+			NatGatewayPrivateInfo natGatewayPrivateInfo = new NatGatewayPrivateInfo();
+			natGatewayPrivateInfo.setEniInstanceId(_ctx.integerValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.EniInstanceId"));
+			natGatewayPrivateInfo.setPrivateIpAddress(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.PrivateIpAddress"));
+			natGatewayPrivateInfo.setVswitchId(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.VswitchId"));
+			natGatewayPrivateInfo.setIzNo(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.IzNo"));
+			natGatewayPrivateInfo.setMaxBandwidth(_ctx.integerValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.MaxBandwidth"));
+			natGateway.setNatGatewayPrivateInfo(natGatewayPrivateInfo);
 
 			List<IpList> ipLists = new ArrayList<IpList>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpLists.Length"); j++) {

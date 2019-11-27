@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DescribeCustomerGatewayRequest extends RpcAcsRequest<DescribeCustomerGatewayResponse> {
-	
-	public DescribeCustomerGatewayRequest() {
-		super("Vpc", "2016-04-28", "DescribeCustomerGateway", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -42,6 +34,14 @@ public class DescribeCustomerGatewayRequest extends RpcAcsRequest<DescribeCustom
 	private String ownerAccount;
 
 	private Long ownerId;
+	public DescribeCustomerGatewayRequest() {
+		super("Vpc", "2016-04-28", "DescribeCustomerGateway", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

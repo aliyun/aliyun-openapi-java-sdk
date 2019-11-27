@@ -61,11 +61,16 @@ public class DescribeExpressCloudConnectionsResponseUnmarshaller {
 			expressCloudConnectionType.setApplicationId(_ctx.stringValue("DescribeExpressCloudConnectionsResponse.ExpressCloudConnectionSet["+ i +"].ApplicationId"));
 			expressCloudConnectionType.setApplicationStatus(_ctx.stringValue("DescribeExpressCloudConnectionsResponse.ExpressCloudConnectionSet["+ i +"].ApplicationStatus"));
 			expressCloudConnectionType.setApplicationBandwidth(_ctx.stringValue("DescribeExpressCloudConnectionsResponse.ExpressCloudConnectionSet["+ i +"].ApplicationBandwidth"));
+			expressCloudConnectionType.setEndTime(_ctx.stringValue("DescribeExpressCloudConnectionsResponse.ExpressCloudConnectionSet["+ i +"].EndTime"));
+			expressCloudConnectionType.setChargeType(_ctx.stringValue("DescribeExpressCloudConnectionsResponse.ExpressCloudConnectionSet["+ i +"].ChargeType"));
 			expressCloudConnectionType.setContactTel(_ctx.stringValue("DescribeExpressCloudConnectionsResponse.ExpressCloudConnectionSet["+ i +"].ContactTel"));
 			expressCloudConnectionType.setContactMail(_ctx.stringValue("DescribeExpressCloudConnectionsResponse.ExpressCloudConnectionSet["+ i +"].ContactMail"));
 			expressCloudConnectionType.setIDCardNo(_ctx.stringValue("DescribeExpressCloudConnectionsResponse.ExpressCloudConnectionSet["+ i +"].IDCardNo"));
-			expressCloudConnectionType.setEndTime(_ctx.stringValue("DescribeExpressCloudConnectionsResponse.ExpressCloudConnectionSet["+ i +"].EndTime"));
-			expressCloudConnectionType.setChargeType(_ctx.stringValue("DescribeExpressCloudConnectionsResponse.ExpressCloudConnectionSet["+ i +"].ChargeType"));
+			expressCloudConnectionType.setEstimatedTime(_ctx.stringValue("DescribeExpressCloudConnectionsResponse.ExpressCloudConnectionSet["+ i +"].EstimatedTime"));
+			expressCloudConnectionType.setBgpAs(_ctx.stringValue("DescribeExpressCloudConnectionsResponse.ExpressCloudConnectionSet["+ i +"].BgpAs"));
+			expressCloudConnectionType.setPeIp(_ctx.stringValue("DescribeExpressCloudConnectionsResponse.ExpressCloudConnectionSet["+ i +"].PeIp"));
+			expressCloudConnectionType.setCeIp(_ctx.stringValue("DescribeExpressCloudConnectionsResponse.ExpressCloudConnectionSet["+ i +"].CeIp"));
+			expressCloudConnectionType.setConstructionPeriod(_ctx.stringValue("DescribeExpressCloudConnectionsResponse.ExpressCloudConnectionSet["+ i +"].ConstructionPeriod"));
 
 			List<VirtualBorderRouterModel> virtualBorderRouterModels = new ArrayList<VirtualBorderRouterModel>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeExpressCloudConnectionsResponse.ExpressCloudConnectionSet["+ i +"].VirtualBorderRouterModels.Length"); j++) {

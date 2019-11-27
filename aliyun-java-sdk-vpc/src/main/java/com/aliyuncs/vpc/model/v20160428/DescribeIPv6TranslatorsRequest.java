@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DescribeIPv6TranslatorsRequest extends RpcAcsRequest<DescribeIPv6TranslatorsResponse> {
-	
-	public DescribeIPv6TranslatorsRequest() {
-		super("Vpc", "2016-04-28", "DescribeIPv6Translators", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -60,6 +52,14 @@ public class DescribeIPv6TranslatorsRequest extends RpcAcsRequest<DescribeIPv6Tr
 	private String payType;
 
 	private String status;
+	public DescribeIPv6TranslatorsRequest() {
+		super("Vpc", "2016-04-28", "DescribeIPv6Translators", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

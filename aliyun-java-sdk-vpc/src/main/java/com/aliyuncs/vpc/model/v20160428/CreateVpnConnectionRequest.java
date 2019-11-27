@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectionResponse> {
-	
-	public CreateVpnConnectionRequest() {
-		super("Vpc", "2016-04-28", "CreateVpnConnection", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String ikeConfig;
 
@@ -62,6 +54,14 @@ public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectio
 	private Long ownerId;
 
 	private String name;
+	public CreateVpnConnectionRequest() {
+		super("Vpc", "2016-04-28", "CreateVpnConnection", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getIkeConfig() {
 		return this.ikeConfig;

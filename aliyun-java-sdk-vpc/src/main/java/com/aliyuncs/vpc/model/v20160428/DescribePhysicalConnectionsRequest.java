@@ -24,15 +24,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DescribePhysicalConnectionsRequest extends RpcAcsRequest<DescribePhysicalConnectionsResponse> {
-	
-	public DescribePhysicalConnectionsRequest() {
-		super("Vpc", "2016-04-28", "DescribePhysicalConnections", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -51,6 +43,14 @@ public class DescribePhysicalConnectionsRequest extends RpcAcsRequest<DescribePh
 	private Long ownerId;
 
 	private List<Filter> filters;
+	public DescribePhysicalConnectionsRequest() {
+		super("Vpc", "2016-04-28", "DescribePhysicalConnections", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

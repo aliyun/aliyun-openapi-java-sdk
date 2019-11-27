@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DescribeVpnConnectionsRequest extends RpcAcsRequest<DescribeVpnConnectionsResponse> {
-	
-	public DescribeVpnConnectionsRequest() {
-		super("Vpc", "2016-04-28", "DescribeVpnConnections", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -50,6 +42,14 @@ public class DescribeVpnConnectionsRequest extends RpcAcsRequest<DescribeVpnConn
 	private Long ownerId;
 
 	private String vpnConnectionId;
+	public DescribeVpnConnectionsRequest() {
+		super("Vpc", "2016-04-28", "DescribeVpnConnections", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

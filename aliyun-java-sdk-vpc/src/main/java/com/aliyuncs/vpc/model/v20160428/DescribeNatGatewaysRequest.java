@@ -23,21 +23,17 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGatewaysResponse> {
-	
-	public DescribeNatGatewaysRequest() {
-		super("Vpc", "2016-04-28", "DescribeNatGateways", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String spec;
 
 	private Integer pageNumber;
+
+	private String resourceGroupId;
+
+	private String natType;
 
 	private Integer pageSize;
 
@@ -54,6 +50,14 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 	private String vpcId;
 
 	private String name;
+	public DescribeNatGatewaysRequest() {
+		super("Vpc", "2016-04-28", "DescribeNatGateways", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -85,6 +89,28 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getNatType() {
+		return this.natType;
+	}
+
+	public void setNatType(String natType) {
+		this.natType = natType;
+		if(natType != null){
+			putQueryParameter("NatType", natType);
 		}
 	}
 

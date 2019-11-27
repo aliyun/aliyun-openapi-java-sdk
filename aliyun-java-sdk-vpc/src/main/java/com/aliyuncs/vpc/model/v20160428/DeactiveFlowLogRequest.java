@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DeactiveFlowLogRequest extends RpcAcsRequest<DeactiveFlowLogResponse> {
-	
-	public DeactiveFlowLogRequest() {
-		super("Vpc", "2016-04-28", "DeactiveFlowLog", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -42,6 +34,14 @@ public class DeactiveFlowLogRequest extends RpcAcsRequest<DeactiveFlowLogRespons
 	private Long ownerId;
 
 	private String flowLogId;
+	public DeactiveFlowLogRequest() {
+		super("Vpc", "2016-04-28", "DeactiveFlowLog", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

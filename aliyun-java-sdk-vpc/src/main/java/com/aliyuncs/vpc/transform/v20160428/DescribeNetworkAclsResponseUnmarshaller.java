@@ -50,7 +50,7 @@ public class DescribeNetworkAclsResponseUnmarshaller {
 				IngressAclEntry ingressAclEntry = new IngressAclEntry();
 				ingressAclEntry.setNetworkAclEntryId(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].IngressAclEntries["+ j +"].NetworkAclEntryId"));
 				ingressAclEntry.setPolicy(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].IngressAclEntries["+ j +"].Policy"));
-				ingressAclEntry.setProtocol(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].IngressAclEntries["+ j +"].Protocol"));
+				ingressAclEntry.setBizProtocol(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].IngressAclEntries["+ j +"].Protocol"));
 				ingressAclEntry.setSourceCidrIp(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].IngressAclEntries["+ j +"].SourceCidrIp"));
 				ingressAclEntry.setPort(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].IngressAclEntries["+ j +"].Port"));
 				ingressAclEntry.setEntryType(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].IngressAclEntries["+ j +"].EntryType"));
@@ -66,7 +66,7 @@ public class DescribeNetworkAclsResponseUnmarshaller {
 				EgressAclEntry egressAclEntry = new EgressAclEntry();
 				egressAclEntry.setNetworkAclEntryId(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].EgressAclEntries["+ j +"].NetworkAclEntryId"));
 				egressAclEntry.setPolicy(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].EgressAclEntries["+ j +"].Policy"));
-				egressAclEntry.setProtocol(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].EgressAclEntries["+ j +"].Protocol"));
+				egressAclEntry.setBizProtocol(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].EgressAclEntries["+ j +"].Protocol"));
 				egressAclEntry.setDestinationCidrIp(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].EgressAclEntries["+ j +"].DestinationCidrIp"));
 				egressAclEntry.setPort(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].EgressAclEntries["+ j +"].Port"));
 				egressAclEntry.setEntryType(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].EgressAclEntries["+ j +"].EntryType"));

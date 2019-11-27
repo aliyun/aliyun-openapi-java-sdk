@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DeactivateRouterInterfaceRequest extends RpcAcsRequest<DeactivateRouterInterfaceResponse> {
-	
-	public DeactivateRouterInterfaceRequest() {
-		super("Vpc", "2016-04-28", "DeactivateRouterInterface", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -40,6 +32,14 @@ public class DeactivateRouterInterfaceRequest extends RpcAcsRequest<DeactivateRo
 	private Long ownerId;
 
 	private String routerInterfaceId;
+	public DeactivateRouterInterfaceRequest() {
+		super("Vpc", "2016-04-28", "DeactivateRouterInterface", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

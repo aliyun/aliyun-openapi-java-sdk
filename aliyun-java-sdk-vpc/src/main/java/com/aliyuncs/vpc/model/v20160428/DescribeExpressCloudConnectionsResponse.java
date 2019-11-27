@@ -129,15 +129,25 @@ public class DescribeExpressCloudConnectionsResponse extends AcsResponse {
 
 		private String applicationBandwidth;
 
+		private String endTime;
+
+		private String chargeType;
+
 		private String contactTel;
 
 		private String contactMail;
 
 		private String iDCardNo;
 
-		private String endTime;
+		private String estimatedTime;
 
-		private String chargeType;
+		private String bgpAs;
+
+		private String peIp;
+
+		private String ceIp;
+
+		private String constructionPeriod;
 
 		private List<VirtualBorderRouterModel> virtualBorderRouterModels;
 
@@ -349,6 +359,22 @@ public class DescribeExpressCloudConnectionsResponse extends AcsResponse {
 			this.applicationBandwidth = applicationBandwidth;
 		}
 
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
 		public String getContactTel() {
 			return this.contactTel;
 		}
@@ -373,20 +399,44 @@ public class DescribeExpressCloudConnectionsResponse extends AcsResponse {
 			this.iDCardNo = iDCardNo;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
+		public String getEstimatedTime() {
+			return this.estimatedTime;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setEstimatedTime(String estimatedTime) {
+			this.estimatedTime = estimatedTime;
 		}
 
-		public String getChargeType() {
-			return this.chargeType;
+		public String getBgpAs() {
+			return this.bgpAs;
 		}
 
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
+		public void setBgpAs(String bgpAs) {
+			this.bgpAs = bgpAs;
+		}
+
+		public String getPeIp() {
+			return this.peIp;
+		}
+
+		public void setPeIp(String peIp) {
+			this.peIp = peIp;
+		}
+
+		public String getCeIp() {
+			return this.ceIp;
+		}
+
+		public void setCeIp(String ceIp) {
+			this.ceIp = ceIp;
+		}
+
+		public String getConstructionPeriod() {
+			return this.constructionPeriod;
+		}
+
+		public void setConstructionPeriod(String constructionPeriod) {
+			this.constructionPeriod = constructionPeriod;
 		}
 
 		public List<VirtualBorderRouterModel> getVirtualBorderRouterModels() {

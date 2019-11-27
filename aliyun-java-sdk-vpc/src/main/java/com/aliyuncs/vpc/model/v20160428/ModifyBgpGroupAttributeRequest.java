@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class ModifyBgpGroupAttributeRequest extends RpcAcsRequest<ModifyBgpGroupAttributeResponse> {
-	
-	public ModifyBgpGroupAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyBgpGroupAttribute", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String authKey;
 
@@ -56,6 +48,14 @@ public class ModifyBgpGroupAttributeRequest extends RpcAcsRequest<ModifyBgpGroup
 	private String name;
 
 	private Long localAsn;
+	public ModifyBgpGroupAttributeRequest() {
+		super("Vpc", "2016-04-28", "ModifyBgpGroupAttribute", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAuthKey() {
 		return this.authKey;

@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DeleteIPv6TranslatorAclListRequest extends RpcAcsRequest<DeleteIPv6TranslatorAclListResponse> {
-	
-	public DeleteIPv6TranslatorAclListRequest() {
-		super("Vpc", "2016-04-28", "DeleteIPv6TranslatorAclList", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -44,6 +36,14 @@ public class DeleteIPv6TranslatorAclListRequest extends RpcAcsRequest<DeleteIPv6
 	private String ownerAccount;
 
 	private Long ownerId;
+	public DeleteIPv6TranslatorAclListRequest() {
+		super("Vpc", "2016-04-28", "DeleteIPv6TranslatorAclList", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

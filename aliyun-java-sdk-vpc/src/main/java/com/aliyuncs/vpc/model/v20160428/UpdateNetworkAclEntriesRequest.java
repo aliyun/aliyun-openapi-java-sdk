@@ -24,15 +24,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkAclEntriesResponse> {
-	
-	public UpdateNetworkAclEntriesRequest() {
-		super("Vpc", "2016-04-28", "UpdateNetworkAclEntries", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -51,6 +43,14 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 	private Long ownerId;
 
 	private List<IngressAclEntries> ingressAclEntriess;
+	public UpdateNetworkAclEntriesRequest() {
+		super("Vpc", "2016-04-28", "UpdateNetworkAclEntries", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -74,7 +74,7 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".NetworkAclEntryName" , egressAclEntriess.get(depth1).getNetworkAclEntryName());
 				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".NetworkAclEntryId" , egressAclEntriess.get(depth1).getNetworkAclEntryId());
 				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".Policy" , egressAclEntriess.get(depth1).getPolicy());
-				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".Protocol" , egressAclEntriess.get(depth1).getProtocol());
+				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".Protocol" , egressAclEntriess.get(depth1).getBizProtocol());
 				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".DestinationCidrIp" , egressAclEntriess.get(depth1).getDestinationCidrIp());
 				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".Port" , egressAclEntriess.get(depth1).getPort());
 				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".EntryType" , egressAclEntriess.get(depth1).getEntryType());
@@ -160,7 +160,7 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".NetworkAclEntryName" , ingressAclEntriess.get(depth1).getNetworkAclEntryName());
 				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".NetworkAclEntryId" , ingressAclEntriess.get(depth1).getNetworkAclEntryId());
 				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".Policy" , ingressAclEntriess.get(depth1).getPolicy());
-				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".Protocol" , ingressAclEntriess.get(depth1).getProtocol());
+				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".Protocol" , ingressAclEntriess.get(depth1).getBizProtocol());
 				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".SourceCidrIp" , ingressAclEntriess.get(depth1).getSourceCidrIp());
 				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".Port" , ingressAclEntriess.get(depth1).getPort());
 				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".EntryType" , ingressAclEntriess.get(depth1).getEntryType());
@@ -216,22 +216,6 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 		}
 
 		public void setBizProtocol(String protocol) {
-			this.protocol = protocol;
-		}
-
-		/**
-		 * @deprecated use getBizProtocol instead of this.
-		 */
-		@Deprecated
-		public String getProtocol() {
-			return this.protocol;
-		}
-
-		/**
-		 * @deprecated use setBizProtocol instead of this.
-		 */
-		@Deprecated
-		public void setProtocol(String protocol) {
 			this.protocol = protocol;
 		}
 
@@ -315,22 +299,6 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 		}
 
 		public void setBizProtocol(String protocol) {
-			this.protocol = protocol;
-		}
-
-		/**
-		 * @deprecated use getBizProtocol instead of this.
-		 */
-		@Deprecated
-		public String getProtocol() {
-			return this.protocol;
-		}
-
-		/**
-		 * @deprecated use setBizProtocol instead of this.
-		 */
-		@Deprecated
-		public void setProtocol(String protocol) {
 			this.protocol = protocol;
 		}
 

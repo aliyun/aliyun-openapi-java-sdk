@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class ModifyVpnPbrRouteEntryWeightRequest extends RpcAcsRequest<ModifyVpnPbrRouteEntryWeightResponse> {
-	
-	public ModifyVpnPbrRouteEntryWeightRequest() {
-		super("Vpc", "2016-04-28", "ModifyVpnPbrRouteEntryWeight", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String routeSource;
 
@@ -56,6 +48,14 @@ public class ModifyVpnPbrRouteEntryWeightRequest extends RpcAcsRequest<ModifyVpn
 	private String nextHop;
 
 	private String overlayMode;
+	public ModifyVpnPbrRouteEntryWeightRequest() {
+		super("Vpc", "2016-04-28", "ModifyVpnPbrRouteEntryWeight", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getRouteSource() {
 		return this.routeSource;

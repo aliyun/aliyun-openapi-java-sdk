@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class UnassociateHaVipRequest extends RpcAcsRequest<UnassociateHaVipResponse> {
-	
-	public UnassociateHaVipRequest() {
-		super("Vpc", "2016-04-28", "UnassociateHaVip", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -48,6 +40,14 @@ public class UnassociateHaVipRequest extends RpcAcsRequest<UnassociateHaVipRespo
 	private String instanceId;
 
 	private String force;
+	public UnassociateHaVipRequest() {
+		super("Vpc", "2016-04-28", "UnassociateHaVip", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

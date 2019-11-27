@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class TerminateVirtualBorderRouterRequest extends RpcAcsRequest<TerminateVirtualBorderRouterResponse> {
-	
-	public TerminateVirtualBorderRouterRequest() {
-		super("Vpc", "2016-04-28", "TerminateVirtualBorderRouter", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -44,6 +36,14 @@ public class TerminateVirtualBorderRouterRequest extends RpcAcsRequest<Terminate
 	private String ownerAccount;
 
 	private Long ownerId;
+	public TerminateVirtualBorderRouterRequest() {
+		super("Vpc", "2016-04-28", "TerminateVirtualBorderRouter", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

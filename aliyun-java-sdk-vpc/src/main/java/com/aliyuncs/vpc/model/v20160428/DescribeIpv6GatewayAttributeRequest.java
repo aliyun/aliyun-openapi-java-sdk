@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DescribeIpv6GatewayAttributeRequest extends RpcAcsRequest<DescribeIpv6GatewayAttributeResponse> {
-	
-	public DescribeIpv6GatewayAttributeRequest() {
-		super("Vpc", "2016-04-28", "DescribeIpv6GatewayAttribute", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -42,6 +34,14 @@ public class DescribeIpv6GatewayAttributeRequest extends RpcAcsRequest<DescribeI
 	private Long ownerId;
 
 	private String ipv6GatewayId;
+	public DescribeIpv6GatewayAttributeRequest() {
+		super("Vpc", "2016-04-28", "DescribeIpv6GatewayAttribute", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

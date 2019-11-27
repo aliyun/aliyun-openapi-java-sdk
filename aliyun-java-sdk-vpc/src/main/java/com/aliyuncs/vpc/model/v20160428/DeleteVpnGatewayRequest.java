@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DeleteVpnGatewayRequest extends RpcAcsRequest<DeleteVpnGatewayResponse> {
-	
-	public DeleteVpnGatewayRequest() {
-		super("Vpc", "2016-04-28", "DeleteVpnGateway", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -44,6 +36,14 @@ public class DeleteVpnGatewayRequest extends RpcAcsRequest<DeleteVpnGatewayRespo
 	private String vpnGatewayId;
 
 	private Long ownerId;
+	public DeleteVpnGatewayRequest() {
+		super("Vpc", "2016-04-28", "DeleteVpnGateway", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

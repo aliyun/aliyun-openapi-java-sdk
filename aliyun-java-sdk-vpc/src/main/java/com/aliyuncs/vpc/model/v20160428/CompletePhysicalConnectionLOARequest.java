@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class CompletePhysicalConnectionLOARequest extends RpcAcsRequest<CompletePhysicalConnectionLOAResponse> {
-	
-	public CompletePhysicalConnectionLOARequest() {
-		super("Vpc", "2016-04-28", "CompletePhysicalConnectionLOA", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String lineCode;
 
@@ -48,6 +40,14 @@ public class CompletePhysicalConnectionLOARequest extends RpcAcsRequest<Complete
 	private Long ownerId;
 
 	private String instanceId;
+	public CompletePhysicalConnectionLOARequest() {
+		super("Vpc", "2016-04-28", "CompletePhysicalConnectionLOA", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getLineCode() {
 		return this.lineCode;

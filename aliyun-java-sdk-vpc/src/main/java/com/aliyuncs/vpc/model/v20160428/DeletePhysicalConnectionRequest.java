@@ -23,21 +23,11 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DeletePhysicalConnectionRequest extends RpcAcsRequest<DeletePhysicalConnectionResponse> {
-	
-	public DeletePhysicalConnectionRequest() {
-		super("Vpc", "2016-04-28", "DeletePhysicalConnection", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
-
-	private String userCidr;
 
 	private String resourceOwnerAccount;
 
@@ -46,6 +36,14 @@ public class DeletePhysicalConnectionRequest extends RpcAcsRequest<DeletePhysica
 	private Long ownerId;
 
 	private String physicalConnectionId;
+	public DeletePhysicalConnectionRequest() {
+		super("Vpc", "2016-04-28", "DeletePhysicalConnection", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -66,17 +64,6 @@ public class DeletePhysicalConnectionRequest extends RpcAcsRequest<DeletePhysica
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getUserCidr() {
-		return this.userCidr;
-	}
-
-	public void setUserCidr(String userCidr) {
-		this.userCidr = userCidr;
-		if(userCidr != null){
-			putQueryParameter("UserCidr", userCidr);
 		}
 	}
 

@@ -105,6 +105,14 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 
 		private String peeringSubnetMask;
 
+		private String pConnVbrChargeType;
+
+		private String pConnVbrExpireTime;
+
+		private String pConnVbrBussinessStatus;
+
+		private String bandwidth;
+
 		public String getVbrId() {
 			return this.vbrId;
 		}
@@ -215,6 +223,38 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 
 		public void setPeeringSubnetMask(String peeringSubnetMask) {
 			this.peeringSubnetMask = peeringSubnetMask;
+		}
+
+		public String getPConnVbrChargeType() {
+			return this.pConnVbrChargeType;
+		}
+
+		public void setPConnVbrChargeType(String pConnVbrChargeType) {
+			this.pConnVbrChargeType = pConnVbrChargeType;
+		}
+
+		public String getPConnVbrExpireTime() {
+			return this.pConnVbrExpireTime;
+		}
+
+		public void setPConnVbrExpireTime(String pConnVbrExpireTime) {
+			this.pConnVbrExpireTime = pConnVbrExpireTime;
+		}
+
+		public String getPConnVbrBussinessStatus() {
+			return this.pConnVbrBussinessStatus;
+		}
+
+		public void setPConnVbrBussinessStatus(String pConnVbrBussinessStatus) {
+			this.pConnVbrBussinessStatus = pConnVbrBussinessStatus;
+		}
+
+		public String getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(String bandwidth) {
+			this.bandwidth = bandwidth;
 		}
 	}
 

@@ -24,15 +24,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DescribeVirtualBorderRoutersRequest extends RpcAcsRequest<DescribeVirtualBorderRoutersResponse> {
-	
-	public DescribeVirtualBorderRoutersRequest() {
-		super("Vpc", "2016-04-28", "DescribeVirtualBorderRouters", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -45,6 +37,14 @@ public class DescribeVirtualBorderRoutersRequest extends RpcAcsRequest<DescribeV
 	private Long ownerId;
 
 	private List<Filter> filters;
+	public DescribeVirtualBorderRoutersRequest() {
+		super("Vpc", "2016-04-28", "DescribeVirtualBorderRouters", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class CreateSslVpnClientCertRequest extends RpcAcsRequest<CreateSslVpnClientCertResponse> {
-	
-	public CreateSslVpnClientCertRequest() {
-		super("Vpc", "2016-04-28", "CreateSslVpnClientCert", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -46,6 +38,14 @@ public class CreateSslVpnClientCertRequest extends RpcAcsRequest<CreateSslVpnCli
 	private Long ownerId;
 
 	private String name;
+	public CreateSslVpnClientCertRequest() {
+		super("Vpc", "2016-04-28", "CreateSslVpnClientCert", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

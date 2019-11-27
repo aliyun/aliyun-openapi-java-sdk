@@ -101,6 +101,12 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		private String status;
 
+		private String natType;
+
+		private String internetChargeType;
+
+		private String resourceGroupId;
+
 		private Boolean deletionProtection;
 
 		private List<IpList> ipLists;
@@ -111,6 +117,8 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		private List<String> bandwidthPackageIds;
 
+		private NatGatewayPrivateInfo natGatewayPrivateInfo;
+
 		public String getNatGatewayId() {
 			return this.natGatewayId;
 		}
@@ -119,26 +127,10 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 			this.natGatewayId = natGatewayId;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -223,6 +215,30 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getNatType() {
+			return this.natType;
+		}
+
+		public void setNatType(String natType) {
+			this.natType = natType;
+		}
+
+		public String getInternetChargeType() {
+			return this.internetChargeType;
+		}
+
+		public void setInternetChargeType(String internetChargeType) {
+			this.internetChargeType = internetChargeType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public Boolean getDeletionProtection() {
 			return this.deletionProtection;
 		}
@@ -261,6 +277,14 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		public void setBandwidthPackageIds(List<String> bandwidthPackageIds) {
 			this.bandwidthPackageIds = bandwidthPackageIds;
+		}
+
+		public NatGatewayPrivateInfo getNatGatewayPrivateInfo() {
+			return this.natGatewayPrivateInfo;
+		}
+
+		public void setNatGatewayPrivateInfo(NatGatewayPrivateInfo natGatewayPrivateInfo) {
+			this.natGatewayPrivateInfo = natGatewayPrivateInfo;
 		}
 
 		public static class IpList {
@@ -303,6 +327,59 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 			public void setApAccessEnabled(Boolean apAccessEnabled) {
 				this.apAccessEnabled = apAccessEnabled;
+			}
+		}
+
+		public static class NatGatewayPrivateInfo {
+
+			private Integer eniInstanceId;
+
+			private String privateIpAddress;
+
+			private String vswitchId;
+
+			private String izNo;
+
+			private Integer maxBandwidth;
+
+			public Integer getEniInstanceId() {
+				return this.eniInstanceId;
+			}
+
+			public void setEniInstanceId(Integer eniInstanceId) {
+				this.eniInstanceId = eniInstanceId;
+			}
+
+			public String getPrivateIpAddress() {
+				return this.privateIpAddress;
+			}
+
+			public void setPrivateIpAddress(String privateIpAddress) {
+				this.privateIpAddress = privateIpAddress;
+			}
+
+			public String getVswitchId() {
+				return this.vswitchId;
+			}
+
+			public void setVswitchId(String vswitchId) {
+				this.vswitchId = vswitchId;
+			}
+
+			public String getIzNo() {
+				return this.izNo;
+			}
+
+			public void setIzNo(String izNo) {
+				this.izNo = izNo;
+			}
+
+			public Integer getMaxBandwidth() {
+				return this.maxBandwidth;
+			}
+
+			public void setMaxBandwidth(Integer maxBandwidth) {
+				this.maxBandwidth = maxBandwidth;
 			}
 		}
 	}

@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class ModifyIPv6TranslatorBandwidthRequest extends RpcAcsRequest<ModifyIPv6TranslatorBandwidthResponse> {
-	
-	public ModifyIPv6TranslatorBandwidthRequest() {
-		super("Vpc", "2016-04-28", "ModifyIPv6TranslatorBandwidth", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -48,6 +40,14 @@ public class ModifyIPv6TranslatorBandwidthRequest extends RpcAcsRequest<ModifyIP
 	private Long ownerId;
 
 	private String ipv6TranslatorId;
+	public ModifyIPv6TranslatorBandwidthRequest() {
+		super("Vpc", "2016-04-28", "ModifyIPv6TranslatorBandwidth", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

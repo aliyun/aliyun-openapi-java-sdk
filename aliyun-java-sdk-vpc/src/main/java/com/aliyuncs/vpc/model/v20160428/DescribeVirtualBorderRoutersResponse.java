@@ -117,6 +117,8 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 		private String description;
 
+		private String pConnVbrExpireTime;
+
 		private String eccId;
 
 		private String type;
@@ -289,6 +291,14 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getPConnVbrExpireTime() {
+			return this.pConnVbrExpireTime;
+		}
+
+		public void setPConnVbrExpireTime(String pConnVbrExpireTime) {
+			this.pConnVbrExpireTime = pConnVbrExpireTime;
 		}
 
 		public String getEccId() {

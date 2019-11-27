@@ -105,26 +105,10 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 			this.networkAclId = networkAclId;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -235,22 +219,6 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 				this.protocol = protocol;
 			}
 
-			/**
-			 * @deprecated use getBizProtocol instead of this.
-			 */
-			@Deprecated
-			public String getProtocol() {
-				return this.protocol;
-			}
-
-			/**
-			 * @deprecated use setBizProtocol instead of this.
-			 */
-			@Deprecated
-			public void setProtocol(String protocol) {
-				this.protocol = protocol;
-			}
-
 			public String getSourceCidrIp() {
 				return this.sourceCidrIp;
 			}
@@ -331,22 +299,6 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 			}
 
 			public void setBizProtocol(String protocol) {
-				this.protocol = protocol;
-			}
-
-			/**
-			 * @deprecated use getBizProtocol instead of this.
-			 */
-			@Deprecated
-			public String getProtocol() {
-				return this.protocol;
-			}
-
-			/**
-			 * @deprecated use setBizProtocol instead of this.
-			 */
-			@Deprecated
-			public void setProtocol(String protocol) {
 				this.protocol = protocol;
 			}
 

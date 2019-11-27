@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantRulesToCenResponse> {
-	
-	public DescribeGrantRulesToCenRequest() {
-		super("Vpc", "2016-04-28", "DescribeGrantRulesToCen", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -48,6 +40,14 @@ public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantR
 	private Long ownerId;
 
 	private String instanceId;
+	public DescribeGrantRulesToCenRequest() {
+		super("Vpc", "2016-04-28", "DescribeGrantRulesToCen", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

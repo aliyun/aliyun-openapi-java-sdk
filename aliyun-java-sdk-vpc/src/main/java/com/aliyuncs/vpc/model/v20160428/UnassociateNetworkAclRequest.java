@@ -24,15 +24,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class UnassociateNetworkAclRequest extends RpcAcsRequest<UnassociateNetworkAclResponse> {
-	
-	public UnassociateNetworkAclRequest() {
-		super("Vpc", "2016-04-28", "UnassociateNetworkAcl", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -45,6 +37,14 @@ public class UnassociateNetworkAclRequest extends RpcAcsRequest<UnassociateNetwo
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
+	public UnassociateNetworkAclRequest() {
+		super("Vpc", "2016-04-28", "UnassociateNetworkAcl", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

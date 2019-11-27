@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DeleteSslVpnClientCertRequest extends RpcAcsRequest<DeleteSslVpnClientCertResponse> {
-	
-	public DeleteSslVpnClientCertRequest() {
-		super("Vpc", "2016-04-28", "DeleteSslVpnClientCert", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -44,6 +36,14 @@ public class DeleteSslVpnClientCertRequest extends RpcAcsRequest<DeleteSslVpnCli
 	private String ownerAccount;
 
 	private Long ownerId;
+	public DeleteSslVpnClientCertRequest() {
+		super("Vpc", "2016-04-28", "DeleteSslVpnClientCert", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

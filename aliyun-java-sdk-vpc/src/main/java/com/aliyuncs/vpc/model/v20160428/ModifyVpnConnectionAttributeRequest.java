@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpnConnectionAttributeResponse> {
-	
-	public ModifyVpnConnectionAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyVpnConnectionAttribute", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String ikeConfig;
 
@@ -60,6 +52,14 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 	private String vpnConnectionId;
 
 	private String name;
+	public ModifyVpnConnectionAttributeRequest() {
+		super("Vpc", "2016-04-28", "ModifyVpnConnectionAttribute", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getIkeConfig() {
 		return this.ikeConfig;

@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DescribeEipGatewayInfoRequest extends RpcAcsRequest<DescribeEipGatewayInfoResponse> {
-	
-	public DescribeEipGatewayInfoRequest() {
-		super("Vpc", "2016-04-28", "DescribeEipGatewayInfo", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -42,6 +34,14 @@ public class DescribeEipGatewayInfoRequest extends RpcAcsRequest<DescribeEipGate
 	private Long ownerId;
 
 	private String instanceId;
+	public DescribeEipGatewayInfoRequest() {
+		super("Vpc", "2016-04-28", "DescribeEipGatewayInfo", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

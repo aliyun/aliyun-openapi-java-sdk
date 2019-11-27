@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DescribeAccessPointsRequest extends RpcAcsRequest<DescribeAccessPointsResponse> {
-	
-	public DescribeAccessPointsRequest() {
-		super("Vpc", "2016-04-28", "DescribeAccessPoints", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -42,6 +34,14 @@ public class DescribeAccessPointsRequest extends RpcAcsRequest<DescribeAccessPoi
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
+	public DescribeAccessPointsRequest() {
+		super("Vpc", "2016-04-28", "DescribeAccessPoints", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

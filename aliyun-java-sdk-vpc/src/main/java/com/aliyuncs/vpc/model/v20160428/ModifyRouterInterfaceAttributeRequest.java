@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyRouterInterfaceAttributeResponse> {
-	
-	public ModifyRouterInterfaceAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyRouterInterfaceAttribute", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String oppositeRouterId;
 
@@ -62,6 +54,14 @@ public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyR
 	private String oppositeRouterType;
 
 	private Integer hcRate;
+	public ModifyRouterInterfaceAttributeRequest() {
+		super("Vpc", "2016-04-28", "ModifyRouterInterfaceAttribute", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getOppositeRouterId() {
 		return this.oppositeRouterId;

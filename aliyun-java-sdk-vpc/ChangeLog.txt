@@ -1,3 +1,6 @@
+2019-11-27 Version: 3.0.7
+- Add a new API supports query route entry list.
+
 2019-09-06 Version: 3.0.5
 - Generated 2016-04-28 for `Vpc`.
 

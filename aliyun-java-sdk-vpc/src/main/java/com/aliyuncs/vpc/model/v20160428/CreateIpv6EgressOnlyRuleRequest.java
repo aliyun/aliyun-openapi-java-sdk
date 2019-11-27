@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class CreateIpv6EgressOnlyRuleRequest extends RpcAcsRequest<CreateIpv6EgressOnlyRuleResponse> {
-	
-	public CreateIpv6EgressOnlyRuleRequest() {
-		super("Vpc", "2016-04-28", "CreateIpv6EgressOnlyRule", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -52,6 +44,14 @@ public class CreateIpv6EgressOnlyRuleRequest extends RpcAcsRequest<CreateIpv6Egr
 	private String ipv6GatewayId;
 
 	private String name;
+	public CreateIpv6EgressOnlyRuleRequest() {
+		super("Vpc", "2016-04-28", "CreateIpv6EgressOnlyRule", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

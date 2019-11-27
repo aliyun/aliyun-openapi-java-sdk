@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class CreateGlobalAccelerationInstanceRequest extends RpcAcsRequest<CreateGlobalAccelerationInstanceResponse> {
-	
-	public CreateGlobalAccelerationInstanceRequest() {
-		super("Vpc", "2016-04-28", "CreateGlobalAccelerationInstance", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -52,6 +44,14 @@ public class CreateGlobalAccelerationInstanceRequest extends RpcAcsRequest<Creat
 	private Long ownerId;
 
 	private String name;
+	public CreateGlobalAccelerationInstanceRequest() {
+		super("Vpc", "2016-04-28", "CreateGlobalAccelerationInstance", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

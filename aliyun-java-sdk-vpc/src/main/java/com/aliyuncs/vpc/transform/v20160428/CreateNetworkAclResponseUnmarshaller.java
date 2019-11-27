@@ -46,7 +46,7 @@ public class CreateNetworkAclResponseUnmarshaller {
 			IngressAclEntry ingressAclEntry = new IngressAclEntry();
 			ingressAclEntry.setNetworkAclEntryId(_ctx.stringValue("CreateNetworkAclResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].NetworkAclEntryId"));
 			ingressAclEntry.setPolicy(_ctx.stringValue("CreateNetworkAclResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].Policy"));
-			ingressAclEntry.setProtocol(_ctx.stringValue("CreateNetworkAclResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].Protocol"));
+			ingressAclEntry.setBizProtocol(_ctx.stringValue("CreateNetworkAclResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].Protocol"));
 			ingressAclEntry.setSourceCidrIp(_ctx.stringValue("CreateNetworkAclResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].SourceCidrIp"));
 			ingressAclEntry.setPort(_ctx.stringValue("CreateNetworkAclResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].Port"));
 			ingressAclEntry.setEntryType(_ctx.stringValue("CreateNetworkAclResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].EntryType"));
@@ -62,7 +62,7 @@ public class CreateNetworkAclResponseUnmarshaller {
 			EgressAclEntry egressAclEntry = new EgressAclEntry();
 			egressAclEntry.setNetworkAclEntryId(_ctx.stringValue("CreateNetworkAclResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].NetworkAclEntryId"));
 			egressAclEntry.setPolicy(_ctx.stringValue("CreateNetworkAclResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].Policy"));
-			egressAclEntry.setProtocol(_ctx.stringValue("CreateNetworkAclResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].Protocol"));
+			egressAclEntry.setBizProtocol(_ctx.stringValue("CreateNetworkAclResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].Protocol"));
 			egressAclEntry.setDestinationCidrIp(_ctx.stringValue("CreateNetworkAclResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].DestinationCidrIp"));
 			egressAclEntry.setPort(_ctx.stringValue("CreateNetworkAclResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].Port"));
 			egressAclEntry.setEntryType(_ctx.stringValue("CreateNetworkAclResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].EntryType"));

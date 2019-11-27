@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class MoveResourceGroupRequest extends RpcAcsRequest<MoveResourceGroupResponse> {
-	
-	public MoveResourceGroupRequest() {
-		super("Vpc", "2016-04-28", "MoveResourceGroup", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -46,6 +38,14 @@ public class MoveResourceGroupRequest extends RpcAcsRequest<MoveResourceGroupRes
 	private String resourceType;
 
 	private String newResourceGroupId;
+	public MoveResourceGroupRequest() {
+		super("Vpc", "2016-04-28", "MoveResourceGroup", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

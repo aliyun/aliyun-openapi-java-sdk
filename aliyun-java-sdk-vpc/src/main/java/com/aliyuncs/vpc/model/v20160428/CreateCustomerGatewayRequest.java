@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class CreateCustomerGatewayRequest extends RpcAcsRequest<CreateCustomerGatewayResponse> {
-	
-	public CreateCustomerGatewayRequest() {
-		super("Vpc", "2016-04-28", "CreateCustomerGateway", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String ipAddress;
 
@@ -48,6 +40,14 @@ public class CreateCustomerGatewayRequest extends RpcAcsRequest<CreateCustomerGa
 	private Long ownerId;
 
 	private String name;
+	public CreateCustomerGatewayRequest() {
+		super("Vpc", "2016-04-28", "CreateCustomerGateway", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getIpAddress() {
 		return this.ipAddress;

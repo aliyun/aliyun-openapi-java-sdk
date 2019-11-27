@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class ActiveFlowLogRequest extends RpcAcsRequest<ActiveFlowLogResponse> {
-	
-	public ActiveFlowLogRequest() {
-		super("Vpc", "2016-04-28", "ActiveFlowLog", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -42,6 +34,14 @@ public class ActiveFlowLogRequest extends RpcAcsRequest<ActiveFlowLogResponse> {
 	private Long ownerId;
 
 	private String flowLogId;
+	public ActiveFlowLogRequest() {
+		super("Vpc", "2016-04-28", "ActiveFlowLog", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

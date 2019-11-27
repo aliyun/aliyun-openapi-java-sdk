@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class ModifyIPv6TranslatorEntryRequest extends RpcAcsRequest<ModifyIPv6TranslatorEntryResponse> {
-	
-	public ModifyIPv6TranslatorEntryRequest() {
-		super("Vpc", "2016-04-28", "ModifyIPv6TranslatorEntry", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer backendIpv4Port;
 
@@ -62,6 +54,14 @@ public class ModifyIPv6TranslatorEntryRequest extends RpcAcsRequest<ModifyIPv6Tr
 	private Long ownerId;
 
 	private String transProtocol;
+	public ModifyIPv6TranslatorEntryRequest() {
+		super("Vpc", "2016-04-28", "ModifyIPv6TranslatorEntry", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getBackendIpv4Port() {
 		return this.backendIpv4Port;

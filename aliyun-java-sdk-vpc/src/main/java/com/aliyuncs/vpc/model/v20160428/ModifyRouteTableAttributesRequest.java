@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class ModifyRouteTableAttributesRequest extends RpcAcsRequest<ModifyRouteTableAttributesResponse> {
-	
-	public ModifyRouteTableAttributesRequest() {
-		super("Vpc", "2016-04-28", "ModifyRouteTableAttributes", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -46,6 +38,14 @@ public class ModifyRouteTableAttributesRequest extends RpcAcsRequest<ModifyRoute
 	private String ownerAccount;
 
 	private Long ownerId;
+	public ModifyRouteTableAttributesRequest() {
+		super("Vpc", "2016-04-28", "ModifyRouteTableAttributes", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

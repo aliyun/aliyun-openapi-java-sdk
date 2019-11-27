@@ -24,15 +24,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class DescribeRouterInterfacesRequest extends RpcAcsRequest<DescribeRouterInterfacesResponse> {
-	
-	public DescribeRouterInterfacesRequest() {
-		super("Vpc", "2016-04-28", "DescribeRouterInterfaces", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -47,6 +39,14 @@ public class DescribeRouterInterfacesRequest extends RpcAcsRequest<DescribeRoute
 	private Long ownerId;
 
 	private List<Filter> filters;
+	public DescribeRouterInterfacesRequest() {
+		super("Vpc", "2016-04-28", "DescribeRouterInterfaces", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

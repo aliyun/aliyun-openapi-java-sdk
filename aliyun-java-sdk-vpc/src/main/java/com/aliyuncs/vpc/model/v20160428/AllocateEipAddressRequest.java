@@ -23,15 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @version 
  */
 public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressResponse> {
-	
-	public AllocateEipAddressRequest() {
-		super("Vpc", "2016-04-28", "AllocateEipAddress", "vpc");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -62,6 +54,14 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 	private String internetChargeType;
 
 	private String pricingCycle;
+	public AllocateEipAddressRequest() {
+		super("Vpc", "2016-04-28", "AllocateEipAddress", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
