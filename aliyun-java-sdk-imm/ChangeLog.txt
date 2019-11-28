@@ -1,3 +1,6 @@
+2019-11-28 Version: 1.15.3
+- Supported dash for compress.
+
 2019-11-13 Version: 1.15.2
 - Supported Stream analyse.
 

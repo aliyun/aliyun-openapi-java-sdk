@@ -28,6 +28,8 @@ public class CreateVideoCompressTaskRequest extends RpcAcsRequest<CreateVideoCom
 
 	private String notifyEndpoint;
 
+	private String targetContainer;
+
 	private String customMessage;
 
 	private String notifyTopicName;
@@ -59,6 +61,17 @@ public class CreateVideoCompressTaskRequest extends RpcAcsRequest<CreateVideoCom
 		this.notifyEndpoint = notifyEndpoint;
 		if(notifyEndpoint != null){
 			putQueryParameter("NotifyEndpoint", notifyEndpoint);
+		}
+	}
+
+	public String getTargetContainer() {
+		return this.targetContainer;
+	}
+
+	public void setTargetContainer(String targetContainer) {
+		this.targetContainer = targetContainer;
+		if(targetContainer != null){
+			putQueryParameter("TargetContainer", targetContainer);
 		}
 	}
 
