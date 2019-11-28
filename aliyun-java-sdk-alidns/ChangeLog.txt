@@ -1,3 +1,7 @@
+2019-11-28 Version: 2.0.13
+- Supported API GetTxtRecordForVerify.
+- Supported API RetrieveDomain.
+
 2019-11-26 Version: 2.0.12
 - Supported API BindInstanceDomains.
 - Supported API UnbindInstanceDomains.
