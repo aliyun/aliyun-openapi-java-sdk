@@ -16,6 +16,7 @@ package com.aliyuncs.cloudwifi_pop.model.v20191118;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cloudwifi_pop.Endpoint;
 
 /**
  * @author auto create
@@ -32,8 +33,12 @@ public class GetApAddressByMacRequest extends RpcAcsRequest<GetApAddressByMacRes
 
 	private String mac;
 	public GetApAddressByMacRequest() {
-		super("cloudwifi-pop", "2019-11-18", "GetApAddressByMac", "cloudap");
+		super("cloudwifi-pop", "2019-11-18", "GetApAddressByMac");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getAppName() {

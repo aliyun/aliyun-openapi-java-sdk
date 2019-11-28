@@ -16,6 +16,7 @@ package com.aliyuncs.cloudwifi_pop.model.v20191118;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cloudwifi_pop.Endpoint;
 
 /**
  * @author auto create
@@ -34,8 +35,12 @@ public class GetStaStatusListByApRequest extends RpcAcsRequest<GetStaStatusListB
 
 	private String apMac;
 	public GetStaStatusListByApRequest() {
-		super("cloudwifi-pop", "2019-11-18", "GetStaStatusListByAp", "cloudap");
+		super("cloudwifi-pop", "2019-11-18", "GetStaStatusListByAp");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getCursor() {

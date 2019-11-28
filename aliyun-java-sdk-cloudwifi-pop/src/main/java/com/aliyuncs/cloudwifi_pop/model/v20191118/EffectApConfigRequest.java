@@ -16,6 +16,7 @@ package com.aliyuncs.cloudwifi_pop.model.v20191118;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cloudwifi_pop.Endpoint;
 
 /**
  * @author auto create
@@ -30,8 +31,12 @@ public class EffectApConfigRequest extends RpcAcsRequest<EffectApConfigResponse>
 
 	private String apMac;
 	public EffectApConfigRequest() {
-		super("cloudwifi-pop", "2019-11-18", "EffectApConfig", "cloudap");
+		super("cloudwifi-pop", "2019-11-18", "EffectApConfig");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getAppName() {
