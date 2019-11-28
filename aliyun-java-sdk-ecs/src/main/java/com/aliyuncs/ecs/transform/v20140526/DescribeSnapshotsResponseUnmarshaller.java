@@ -36,6 +36,7 @@ public class DescribeSnapshotsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeSnapshotsResponse.Snapshots.Length"); i++) {
 			Snapshot snapshot = new Snapshot();
 			snapshot.setSnapshotId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotId"));
+			snapshot.setSnapshotSN(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotSN"));
 			snapshot.setSnapshotName(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotName"));
 			snapshot.setProgress(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Progress"));
 			snapshot.setProductCode(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].ProductCode"));

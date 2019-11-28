@@ -41,6 +41,7 @@ public class DescribeDemandsResponseUnmarshaller {
 			demand.setInstanceTypeFamily(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].InstanceTypeFamily"));
 			demand.setDemandId(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].DemandId"));
 			demand.setDemandName(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].DemandName"));
+			demand.setComment(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].Comment"));
 			demand.setDemandDescription(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].DemandDescription"));
 			demand.setInstanceType(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].InstanceType"));
 			demand.setInstanceChargeType(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].InstanceChargeType"));

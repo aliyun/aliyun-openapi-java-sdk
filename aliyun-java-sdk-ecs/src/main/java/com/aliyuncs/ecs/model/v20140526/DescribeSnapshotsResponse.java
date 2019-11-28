@@ -79,6 +79,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String snapshotId;
 
+		private String snapshotSN;
+
 		private String snapshotName;
 
 		private String progress;
@@ -121,6 +123,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setSnapshotId(String snapshotId) {
 			this.snapshotId = snapshotId;
+		}
+
+		public String getSnapshotSN() {
+			return this.snapshotSN;
+		}
+
+		public void setSnapshotSN(String snapshotSN) {
+			this.snapshotSN = snapshotSN;
 		}
 
 		public String getSnapshotName() {

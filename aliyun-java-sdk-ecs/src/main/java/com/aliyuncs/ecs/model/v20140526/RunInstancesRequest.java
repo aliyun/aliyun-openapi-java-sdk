@@ -710,6 +710,11 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".PrimaryIpAddress" , networkInterfaces.get(depth1).getPrimaryIpAddress());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".VSwitchId" , networkInterfaces.get(depth1).getVSwitchId());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecurityGroupId" , networkInterfaces.get(depth1).getSecurityGroupId());
+				if (networkInterfaces.get(depth1).getSecurityGroupIdss() != null) {
+					for (int i = 0; i < networkInterfaces.get(depth1).getSecurityGroupIdss().size(); i++) {
+						putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecurityGroupIds." + (i + 1) , networkInterfaces.get(depth1).getSecurityGroupIdss().get(i));
+					}
+				}
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceName" , networkInterfaces.get(depth1).getNetworkInterfaceName());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".Description" , networkInterfaces.get(depth1).getDescription());
 			}
@@ -948,6 +953,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		private String securityGroupId;
 
+		private List<String> securityGroupIdss;
+
 		private String networkInterfaceName;
 
 		private String description;
@@ -974,6 +981,14 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setSecurityGroupId(String securityGroupId) {
 			this.securityGroupId = securityGroupId;
+		}
+
+		public List<String> getSecurityGroupIdss() {
+			return this.securityGroupIdss;
+		}
+
+		public void setSecurityGroupIdss(List<String> securityGroupIdss) {
+			this.securityGroupIdss = securityGroupIdss;
 		}
 
 		public String getNetworkInterfaceName() {

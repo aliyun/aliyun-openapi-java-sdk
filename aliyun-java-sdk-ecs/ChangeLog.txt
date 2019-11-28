@@ -1,3 +1,6 @@
+2019-11-28 Version: 4.17.8
+- Eni Supports Multi-SecurityGroup.
+
 2019-11-20 Version: 4.17.7
 - Supported ecsDemand CreateDemand, ModifyDemand, DeleteDemand API.
 - Modify ecsDemand DescribesDemands API.

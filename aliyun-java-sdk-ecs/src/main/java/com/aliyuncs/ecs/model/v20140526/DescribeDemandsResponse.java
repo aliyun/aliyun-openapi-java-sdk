@@ -97,6 +97,8 @@ public class DescribeDemandsResponse extends AcsResponse {
 
 		private String demandName;
 
+		private String comment;
+
 		private String demandDescription;
 
 		private String instanceType;
@@ -161,6 +163,14 @@ public class DescribeDemandsResponse extends AcsResponse {
 
 		public void setDemandName(String demandName) {
 			this.demandName = demandName;
+		}
+
+		public String getComment() {
+			return this.comment;
+		}
+
+		public void setComment(String comment) {
+			this.comment = comment;
 		}
 
 		public String getDemandDescription() {

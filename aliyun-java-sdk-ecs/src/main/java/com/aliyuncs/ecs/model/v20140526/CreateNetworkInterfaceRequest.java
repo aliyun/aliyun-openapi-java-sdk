@@ -50,6 +50,8 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private Long ownerId;
 
+	private List<String> securityGroupIdss;
+
 	private String vSwitchId;
 
 	private String primaryIpAddress;
@@ -195,6 +197,19 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<String> getSecurityGroupIdss() {
+		return this.securityGroupIdss;
+	}
+
+	public void setSecurityGroupIdss(List<String> securityGroupIdss) {
+		this.securityGroupIdss = securityGroupIdss;	
+		if (securityGroupIdss != null) {
+			for (int i = 0; i < securityGroupIdss.size(); i++) {
+				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIdss.get(i));
+			}
+		}	
 	}
 
 	public String getVSwitchId() {
