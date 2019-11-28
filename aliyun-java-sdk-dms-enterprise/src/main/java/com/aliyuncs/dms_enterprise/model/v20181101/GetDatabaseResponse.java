@@ -149,26 +149,10 @@ public class GetDatabaseResponse extends AcsResponse {
 			this.catalogName = catalogName;
 		}
 
-		public String getBizEncoding() {
-			return this.encoding;
-		}
-
-		public void setBizEncoding(String encoding) {
-			this.encoding = encoding;
-		}
-
-		/**
-		 * @deprecated use getBizEncoding instead of this.
-		 */
-		@Deprecated
 		public String getEncoding() {
 			return this.encoding;
 		}
 
-		/**
-		 * @deprecated use setBizEncoding instead of this.
-		 */
-		@Deprecated
 		public void setEncoding(String encoding) {
 			this.encoding = encoding;
 		}
