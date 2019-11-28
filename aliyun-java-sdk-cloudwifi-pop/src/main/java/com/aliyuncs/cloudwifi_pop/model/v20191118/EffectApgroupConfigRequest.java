@@ -31,7 +31,7 @@ public class EffectApgroupConfigRequest extends RpcAcsRequest<EffectApgroupConfi
 
 	private String apGroupUUId;
 	public EffectApgroupConfigRequest() {
-		super("cloudwifi-pop", "2019-11-18", "EffectApgroupConfig");
+		super("cloudwifi-pop", "2019-11-18", "EffectApgroupConfig", "cloudap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

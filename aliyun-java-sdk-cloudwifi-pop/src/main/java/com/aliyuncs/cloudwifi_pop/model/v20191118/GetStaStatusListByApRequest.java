@@ -35,7 +35,7 @@ public class GetStaStatusListByApRequest extends RpcAcsRequest<GetStaStatusListB
 
 	private String apMac;
 	public GetStaStatusListByApRequest() {
-		super("cloudwifi-pop", "2019-11-18", "GetStaStatusListByAp");
+		super("cloudwifi-pop", "2019-11-18", "GetStaStatusListByAp", "cloudap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

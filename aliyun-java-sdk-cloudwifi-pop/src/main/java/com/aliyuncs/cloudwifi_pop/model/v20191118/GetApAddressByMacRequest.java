@@ -33,7 +33,7 @@ public class GetApAddressByMacRequest extends RpcAcsRequest<GetApAddressByMacRes
 
 	private String mac;
 	public GetApAddressByMacRequest() {
-		super("cloudwifi-pop", "2019-11-18", "GetApAddressByMac");
+		super("cloudwifi-pop", "2019-11-18", "GetApAddressByMac", "cloudap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

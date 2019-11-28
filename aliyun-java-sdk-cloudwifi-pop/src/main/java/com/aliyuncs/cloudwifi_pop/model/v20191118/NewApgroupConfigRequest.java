@@ -33,7 +33,7 @@ public class NewApgroupConfigRequest extends RpcAcsRequest<NewApgroupConfigRespo
 
 	private String appCode;
 	public NewApgroupConfigRequest() {
-		super("cloudwifi-pop", "2019-11-18", "NewApgroupConfig");
+		super("cloudwifi-pop", "2019-11-18", "NewApgroupConfig", "cloudap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

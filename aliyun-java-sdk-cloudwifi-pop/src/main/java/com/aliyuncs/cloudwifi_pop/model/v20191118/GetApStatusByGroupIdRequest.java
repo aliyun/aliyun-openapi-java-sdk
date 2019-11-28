@@ -35,7 +35,7 @@ public class GetApStatusByGroupIdRequest extends RpcAcsRequest<GetApStatusByGrou
 
 	private String appCode;
 	public GetApStatusByGroupIdRequest() {
-		super("cloudwifi-pop", "2019-11-18", "GetApStatusByGroupId");
+		super("cloudwifi-pop", "2019-11-18", "GetApStatusByGroupId", "cloudap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

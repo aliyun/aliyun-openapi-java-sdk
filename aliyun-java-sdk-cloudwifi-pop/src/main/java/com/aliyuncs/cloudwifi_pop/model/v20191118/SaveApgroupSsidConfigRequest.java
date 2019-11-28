@@ -119,7 +119,7 @@ public class SaveApgroupSsidConfigRequest extends RpcAcsRequest<SaveApgroupSsidC
 
 	private String ownip;
 	public SaveApgroupSsidConfigRequest() {
-		super("cloudwifi-pop", "2019-11-18", "SaveApgroupSsidConfig");
+		super("cloudwifi-pop", "2019-11-18", "SaveApgroupSsidConfig", "cloudap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

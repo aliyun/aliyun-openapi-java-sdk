@@ -61,7 +61,7 @@ public class SetApAddressRequest extends RpcAcsRequest<SetApAddressResponse> {
 
 	private String direction;
 	public SetApAddressRequest() {
-		super("cloudwifi-pop", "2019-11-18", "SetApAddress");
+		super("cloudwifi-pop", "2019-11-18", "SetApAddress", "cloudap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

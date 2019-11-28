@@ -35,7 +35,7 @@ public class GetApDetailStatusRequest extends RpcAcsRequest<GetApDetailStatusRes
 
 	private String mac;
 	public GetApDetailStatusRequest() {
-		super("cloudwifi-pop", "2019-11-18", "GetApDetailStatus");
+		super("cloudwifi-pop", "2019-11-18", "GetApDetailStatus", "cloudap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

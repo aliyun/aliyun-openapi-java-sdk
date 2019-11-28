@@ -31,7 +31,7 @@ public class GetApgroupSsidConfigRequest extends RpcAcsRequest<GetApgroupSsidCon
 
 	private String apGroupUUId;
 	public GetApgroupSsidConfigRequest() {
-		super("cloudwifi-pop", "2019-11-18", "GetApgroupSsidConfig");
+		super("cloudwifi-pop", "2019-11-18", "GetApgroupSsidConfig", "cloudap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

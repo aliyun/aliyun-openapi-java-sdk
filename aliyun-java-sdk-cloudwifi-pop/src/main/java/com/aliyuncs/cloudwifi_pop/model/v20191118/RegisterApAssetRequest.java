@@ -37,7 +37,7 @@ public class RegisterApAssetRequest extends RpcAcsRequest<RegisterApAssetRespons
 
 	private String serialNo;
 	public RegisterApAssetRequest() {
-		super("cloudwifi-pop", "2019-11-18", "RegisterApAsset");
+		super("cloudwifi-pop", "2019-11-18", "RegisterApAsset", "cloudap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DeleteApSsidConfigRequest extends RpcAcsRequest<DeleteApSsidConfigR
 
 	private String ssid;
 	public DeleteApSsidConfigRequest() {
-		super("cloudwifi-pop", "2019-11-18", "DeleteApSsidConfig");
+		super("cloudwifi-pop", "2019-11-18", "DeleteApSsidConfig", "cloudap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

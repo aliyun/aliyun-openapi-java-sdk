@@ -31,7 +31,7 @@ public class DeleteApgroupConfigRequest extends RpcAcsRequest<DeleteApgroupConfi
 
 	private Long apGroupId;
 	public DeleteApgroupConfigRequest() {
-		super("cloudwifi-pop", "2019-11-18", "DeleteApgroupConfig");
+		super("cloudwifi-pop", "2019-11-18", "DeleteApgroupConfig", "cloudap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

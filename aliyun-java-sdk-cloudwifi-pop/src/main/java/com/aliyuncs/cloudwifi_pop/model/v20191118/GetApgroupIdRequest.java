@@ -31,7 +31,7 @@ public class GetApgroupIdRequest extends RpcAcsRequest<GetApgroupIdResponse> {
 
 	private String apMac;
 	public GetApgroupIdRequest() {
-		super("cloudwifi-pop", "2019-11-18", "GetApgroupId");
+		super("cloudwifi-pop", "2019-11-18", "GetApgroupId", "cloudap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

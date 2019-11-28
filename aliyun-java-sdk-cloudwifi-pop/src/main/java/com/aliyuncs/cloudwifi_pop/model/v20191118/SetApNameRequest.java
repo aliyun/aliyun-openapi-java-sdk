@@ -33,7 +33,7 @@ public class SetApNameRequest extends RpcAcsRequest<SetApNameResponse> {
 
 	private String apMac;
 	public SetApNameRequest() {
-		super("cloudwifi-pop", "2019-11-18", "SetApName");
+		super("cloudwifi-pop", "2019-11-18", "SetApName", "cloudap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
