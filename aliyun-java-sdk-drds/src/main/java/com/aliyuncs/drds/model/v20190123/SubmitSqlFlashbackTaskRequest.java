@@ -44,7 +44,7 @@ public class SubmitSqlFlashbackTaskRequest extends RpcAcsRequest<SubmitSqlFlashb
 
 	private String dbName;
 	public SubmitSqlFlashbackTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitSqlFlashbackTask", "Drds");
+		super("Drds", "2019-01-23", "SubmitSqlFlashbackTask", "drds");
 		setMethod(MethodType.POST);
 	}
 

@@ -26,7 +26,7 @@ public class DescribeSqlFlashbakTaskRequest extends RpcAcsRequest<DescribeSqlFla
 
 	private String drdsInstanceId;
 	public DescribeSqlFlashbakTaskRequest() {
-		super("Drds", "2019-01-23", "DescribeSqlFlashbakTask", "Drds");
+		super("Drds", "2019-01-23", "DescribeSqlFlashbakTask", "drds");
 		setMethod(MethodType.POST);
 	}
 

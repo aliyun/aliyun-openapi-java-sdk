@@ -32,7 +32,7 @@ public class UpdateInstanceNetworkRequest extends RpcAcsRequest<UpdateInstanceNe
 
 	private String srcInstanceNetworkType;
 	public UpdateInstanceNetworkRequest() {
-		super("Drds", "2019-01-23", "UpdateInstanceNetwork", "Drds");
+		super("Drds", "2019-01-23", "UpdateInstanceNetwork", "drds");
 		setMethod(MethodType.POST);
 	}
 

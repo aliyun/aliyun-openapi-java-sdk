@@ -34,7 +34,7 @@ public class SubmitSwitchTaskRequest extends RpcAcsRequest<SubmitSwitchTaskRespo
 
 	private String parentJobId;
 	public SubmitSwitchTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitSwitchTask", "Drds");
+		super("Drds", "2019-01-23", "SubmitSwitchTask", "drds");
 		setMethod(MethodType.POST);
 	}
 

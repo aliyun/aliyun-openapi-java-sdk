@@ -52,7 +52,7 @@ public class SubmitTableShardingKeyModifyRequest extends RpcAcsRequest<SubmitTab
 
 	private String tbShardingColumnList;
 	public SubmitTableShardingKeyModifyRequest() {
-		super("Drds", "2019-01-23", "SubmitTableShardingKeyModify", "Drds");
+		super("Drds", "2019-01-23", "SubmitTableShardingKeyModify", "drds");
 		setMethod(MethodType.POST);
 	}
 

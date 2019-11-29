@@ -28,7 +28,7 @@ public class RemoveBackupsSetRequest extends RpcAcsRequest<RemoveBackupsSetRespo
 
 	private String drdsInstanceId;
 	public RemoveBackupsSetRequest() {
-		super("Drds", "2019-01-23", "RemoveBackupsSet", "Drds");
+		super("Drds", "2019-01-23", "RemoveBackupsSet", "drds");
 		setMethod(MethodType.POST);
 	}
 

@@ -30,7 +30,7 @@ public class DescribeDrdsDBIpWhiteListRequest extends RpcAcsRequest<DescribeDrds
 
 	private String dbName;
 	public DescribeDrdsDBIpWhiteListRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsDBIpWhiteList", "Drds");
+		super("Drds", "2019-01-23", "DescribeDrdsDBIpWhiteList", "drds");
 		setMethod(MethodType.POST);
 	}
 

@@ -28,7 +28,7 @@ public class RemoveDrdsDbFailedRecordRequest extends RpcAcsRequest<RemoveDrdsDbF
 
 	private String dbName;
 	public RemoveDrdsDbFailedRecordRequest() {
-		super("Drds", "2019-01-23", "RemoveDrdsDbFailedRecord", "Drds");
+		super("Drds", "2019-01-23", "RemoveDrdsDbFailedRecord", "drds");
 		setMethod(MethodType.POST);
 	}
 

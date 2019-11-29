@@ -30,7 +30,7 @@ public class ChangeAccountPasswordRequest extends RpcAcsRequest<ChangeAccountPas
 
 	private String accountName;
 	public ChangeAccountPasswordRequest() {
-		super("Drds", "2019-01-23", "ChangeAccountPassword", "Drds");
+		super("Drds", "2019-01-23", "ChangeAccountPassword", "drds");
 		setMethod(MethodType.POST);
 	}
 

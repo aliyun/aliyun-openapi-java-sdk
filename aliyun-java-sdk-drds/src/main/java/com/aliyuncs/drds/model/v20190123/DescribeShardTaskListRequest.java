@@ -36,7 +36,7 @@ public class DescribeShardTaskListRequest extends RpcAcsRequest<DescribeShardTas
 
 	private Integer pageSize;
 	public DescribeShardTaskListRequest() {
-		super("Drds", "2019-01-23", "DescribeShardTaskList", "Drds");
+		super("Drds", "2019-01-23", "DescribeShardTaskList", "drds");
 		setMethod(MethodType.POST);
 	}
 

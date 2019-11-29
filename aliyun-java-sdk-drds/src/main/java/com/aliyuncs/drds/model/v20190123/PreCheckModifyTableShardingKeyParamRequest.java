@@ -52,7 +52,7 @@ public class PreCheckModifyTableShardingKeyParamRequest extends RpcAcsRequest<Pr
 
 	private String tbShardingColumnList;
 	public PreCheckModifyTableShardingKeyParamRequest() {
-		super("Drds", "2019-01-23", "PreCheckModifyTableShardingKeyParam", "Drds");
+		super("Drds", "2019-01-23", "PreCheckModifyTableShardingKeyParam", "drds");
 		setMethod(MethodType.POST);
 	}
 

@@ -26,7 +26,7 @@ public class GetBatchEvaluateTaskReportRequest extends RpcAcsRequest<GetBatchEva
 
 	private Long batchEvaluateTaskId;
 	public GetBatchEvaluateTaskReportRequest() {
-		super("Drds", "2019-01-23", "GetBatchEvaluateTaskReport", "Drds");
+		super("Drds", "2019-01-23", "GetBatchEvaluateTaskReport", "drds");
 		setMethod(MethodType.POST);
 	}
 

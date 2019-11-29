@@ -28,7 +28,7 @@ public class UpgradeInstanceVersionRequest extends RpcAcsRequest<UpgradeInstance
 
 	private String rpm;
 	public UpgradeInstanceVersionRequest() {
-		super("Drds", "2019-01-23", "UpgradeInstanceVersion", "Drds");
+		super("Drds", "2019-01-23", "UpgradeInstanceVersion", "drds");
 		setMethod(MethodType.POST);
 	}
 

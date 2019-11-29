@@ -31,7 +31,7 @@ public class DescribeRdsSuperAccountInstancesRequest extends RpcAcsRequest<Descr
 
 	private String dbInstType;
 	public DescribeRdsSuperAccountInstancesRequest() {
-		super("Drds", "2019-01-23", "DescribeRdsSuperAccountInstances", "Drds");
+		super("Drds", "2019-01-23", "DescribeRdsSuperAccountInstances", "drds");
 		setMethod(MethodType.POST);
 	}
 

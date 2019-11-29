@@ -30,7 +30,7 @@ public class SetupRecycleBinStatusRequest extends RpcAcsRequest<SetupRecycleBinS
 
 	private String dbName;
 	public SetupRecycleBinStatusRequest() {
-		super("Drds", "2019-01-23", "SetupRecycleBinStatus", "Drds");
+		super("Drds", "2019-01-23", "SetupRecycleBinStatus", "drds");
 		setMethod(MethodType.POST);
 	}
 

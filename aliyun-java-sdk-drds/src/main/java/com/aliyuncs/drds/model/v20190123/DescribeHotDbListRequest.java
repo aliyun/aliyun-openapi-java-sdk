@@ -28,7 +28,7 @@ public class DescribeHotDbListRequest extends RpcAcsRequest<DescribeHotDbListRes
 
 	private String dbName;
 	public DescribeHotDbListRequest() {
-		super("Drds", "2019-01-23", "DescribeHotDbList", "Drds");
+		super("Drds", "2019-01-23", "DescribeHotDbList", "drds");
 		setMethod(MethodType.POST);
 	}
 

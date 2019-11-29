@@ -34,7 +34,7 @@ public class DescribeDrdsInstanceDbMonitorRequest extends RpcAcsRequest<Describe
 
 	private String key;
 	public DescribeDrdsInstanceDbMonitorRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsInstanceDbMonitor", "Drds");
+		super("Drds", "2019-01-23", "DescribeDrdsInstanceDbMonitor", "drds");
 		setMethod(MethodType.POST);
 	}
 

@@ -30,7 +30,7 @@ public class RemoveRecycleBinTableRequest extends RpcAcsRequest<RemoveRecycleBin
 
 	private String tableName;
 	public RemoveRecycleBinTableRequest() {
-		super("Drds", "2019-01-23", "RemoveRecycleBinTable", "Drds");
+		super("Drds", "2019-01-23", "RemoveRecycleBinTable", "drds");
 		setMethod(MethodType.POST);
 	}
 

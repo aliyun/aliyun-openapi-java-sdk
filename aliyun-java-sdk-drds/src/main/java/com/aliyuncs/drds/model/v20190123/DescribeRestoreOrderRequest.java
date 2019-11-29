@@ -36,7 +36,7 @@ public class DescribeRestoreOrderRequest extends RpcAcsRequest<DescribeRestoreOr
 
 	private String backupMode;
 	public DescribeRestoreOrderRequest() {
-		super("Drds", "2019-01-23", "DescribeRestoreOrder", "Drds");
+		super("Drds", "2019-01-23", "DescribeRestoreOrder", "drds");
 		setMethod(MethodType.POST);
 	}
 

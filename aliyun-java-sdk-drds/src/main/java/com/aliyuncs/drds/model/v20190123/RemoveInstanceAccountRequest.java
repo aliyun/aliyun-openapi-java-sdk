@@ -28,7 +28,7 @@ public class RemoveInstanceAccountRequest extends RpcAcsRequest<RemoveInstanceAc
 
 	private String accountName;
 	public RemoveInstanceAccountRequest() {
-		super("Drds", "2019-01-23", "RemoveInstanceAccount", "Drds");
+		super("Drds", "2019-01-23", "RemoveInstanceAccount", "drds");
 		setMethod(MethodType.POST);
 	}
 

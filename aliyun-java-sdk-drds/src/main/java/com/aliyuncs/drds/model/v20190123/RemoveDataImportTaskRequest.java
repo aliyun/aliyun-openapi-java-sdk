@@ -26,7 +26,7 @@ public class RemoveDataImportTaskRequest extends RpcAcsRequest<RemoveDataImportT
 
 	private Integer taskId;
 	public RemoveDataImportTaskRequest() {
-		super("Drds", "2019-01-23", "RemoveDataImportTask", "Drds");
+		super("Drds", "2019-01-23", "RemoveDataImportTask", "drds");
 		setMethod(MethodType.POST);
 	}
 

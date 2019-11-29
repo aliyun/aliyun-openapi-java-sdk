@@ -36,7 +36,7 @@ public class StartRestoreRequest extends RpcAcsRequest<StartRestoreResponse> {
 
 	private String backupMode;
 	public StartRestoreRequest() {
-		super("Drds", "2019-01-23", "StartRestore", "Drds");
+		super("Drds", "2019-01-23", "StartRestore", "drds");
 		setMethod(MethodType.POST);
 	}
 

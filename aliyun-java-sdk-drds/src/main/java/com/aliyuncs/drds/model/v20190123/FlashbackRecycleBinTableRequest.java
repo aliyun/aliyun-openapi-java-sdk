@@ -30,7 +30,7 @@ public class FlashbackRecycleBinTableRequest extends RpcAcsRequest<FlashbackRecy
 
 	private String tableName;
 	public FlashbackRecycleBinTableRequest() {
-		super("Drds", "2019-01-23", "FlashbackRecycleBinTable", "Drds");
+		super("Drds", "2019-01-23", "FlashbackRecycleBinTable", "drds");
 		setMethod(MethodType.POST);
 	}
 

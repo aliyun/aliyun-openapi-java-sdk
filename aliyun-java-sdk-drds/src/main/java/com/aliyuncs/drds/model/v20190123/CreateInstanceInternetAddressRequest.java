@@ -26,7 +26,7 @@ public class CreateInstanceInternetAddressRequest extends RpcAcsRequest<CreateIn
 
 	private String drdsInstanceId;
 	public CreateInstanceInternetAddressRequest() {
-		super("Drds", "2019-01-23", "CreateInstanceInternetAddress", "Drds");
+		super("Drds", "2019-01-23", "CreateInstanceInternetAddress", "drds");
 		setMethod(MethodType.POST);
 	}
 

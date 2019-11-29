@@ -30,7 +30,7 @@ public class DescribeDrdsDBsRequest extends RpcAcsRequest<DescribeDrdsDBsRespons
 
 	private Integer pageSize;
 	public DescribeDrdsDBsRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsDBs", "Drds");
+		super("Drds", "2019-01-23", "DescribeDrdsDBs", "drds");
 		setMethod(MethodType.POST);
 	}
 

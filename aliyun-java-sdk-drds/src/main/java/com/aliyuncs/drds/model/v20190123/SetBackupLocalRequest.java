@@ -32,7 +32,7 @@ public class SetBackupLocalRequest extends RpcAcsRequest<SetBackupLocalResponse>
 
 	private String highSpaceUsageProtection;
 	public SetBackupLocalRequest() {
-		super("Drds", "2019-01-23", "SetBackupLocal", "Drds");
+		super("Drds", "2019-01-23", "SetBackupLocal", "drds");
 		setMethod(MethodType.POST);
 	}
 

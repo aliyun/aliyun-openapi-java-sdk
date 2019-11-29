@@ -26,7 +26,7 @@ public class DescribeBackupLocalRequest extends RpcAcsRequest<DescribeBackupLoca
 
 	private String drdsInstanceId;
 	public DescribeBackupLocalRequest() {
-		super("Drds", "2019-01-23", "DescribeBackupLocal", "Drds");
+		super("Drds", "2019-01-23", "DescribeBackupLocal", "drds");
 		setMethod(MethodType.POST);
 	}
 

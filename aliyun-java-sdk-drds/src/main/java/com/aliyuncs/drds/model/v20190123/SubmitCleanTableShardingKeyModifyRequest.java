@@ -30,7 +30,7 @@ public class SubmitCleanTableShardingKeyModifyRequest extends RpcAcsRequest<Subm
 
 	private String taskId;
 	public SubmitCleanTableShardingKeyModifyRequest() {
-		super("Drds", "2019-01-23", "SubmitCleanTableShardingKeyModify", "Drds");
+		super("Drds", "2019-01-23", "SubmitCleanTableShardingKeyModify", "drds");
 		setMethod(MethodType.POST);
 	}
 

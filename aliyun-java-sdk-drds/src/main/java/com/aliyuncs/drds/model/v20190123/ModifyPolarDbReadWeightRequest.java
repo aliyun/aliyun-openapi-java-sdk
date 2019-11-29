@@ -34,7 +34,7 @@ public class ModifyPolarDbReadWeightRequest extends RpcAcsRequest<ModifyPolarDbR
 
 	private String dbInstanceId;
 	public ModifyPolarDbReadWeightRequest() {
-		super("Drds", "2019-01-23", "ModifyPolarDbReadWeight", "Drds");
+		super("Drds", "2019-01-23", "ModifyPolarDbReadWeight", "drds");
 		setMethod(MethodType.POST);
 	}
 

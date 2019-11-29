@@ -26,7 +26,7 @@ public class ReleaseInstanceInternetAddressRequest extends RpcAcsRequest<Release
 
 	private String drdsInstanceId;
 	public ReleaseInstanceInternetAddressRequest() {
-		super("Drds", "2019-01-23", "ReleaseInstanceInternetAddress", "Drds");
+		super("Drds", "2019-01-23", "ReleaseInstanceInternetAddress", "drds");
 		setMethod(MethodType.POST);
 	}
 

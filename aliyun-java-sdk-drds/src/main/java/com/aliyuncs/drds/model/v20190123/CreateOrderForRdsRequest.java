@@ -26,7 +26,7 @@ public class CreateOrderForRdsRequest extends RpcAcsRequest<CreateOrderForRdsRes
 
 	private String params;
 	public CreateOrderForRdsRequest() {
-		super("Drds", "2019-01-23", "CreateOrderForRds", "Drds");
+		super("Drds", "2019-01-23", "CreateOrderForRds", "drds");
 		setMethod(MethodType.POST);
 	}
 

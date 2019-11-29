@@ -28,7 +28,7 @@ public class CheckSqlAuditEnableStatusRequest extends RpcAcsRequest<CheckSqlAudi
 
 	private String dbName;
 	public CheckSqlAuditEnableStatusRequest() {
-		super("Drds", "2019-01-23", "CheckSqlAuditEnableStatus", "Drds");
+		super("Drds", "2019-01-23", "CheckSqlAuditEnableStatus", "drds");
 		setMethod(MethodType.POST);
 	}
 

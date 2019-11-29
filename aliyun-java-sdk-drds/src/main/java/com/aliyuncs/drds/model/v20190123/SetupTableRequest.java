@@ -33,7 +33,7 @@ public class SetupTableRequest extends RpcAcsRequest<SetupTableResponse> {
 
 	private List<String> tableNames;
 	public SetupTableRequest() {
-		super("Drds", "2019-01-23", "SetupTable", "Drds");
+		super("Drds", "2019-01-23", "SetupTable", "drds");
 		setMethod(MethodType.POST);
 	}
 

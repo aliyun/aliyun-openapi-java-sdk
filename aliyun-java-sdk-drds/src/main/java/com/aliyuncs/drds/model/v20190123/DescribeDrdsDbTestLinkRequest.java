@@ -28,7 +28,7 @@ public class DescribeDrdsDbTestLinkRequest extends RpcAcsRequest<DescribeDrdsDbT
 
 	private String dbName;
 	public DescribeDrdsDbTestLinkRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsDbTestLink", "Drds");
+		super("Drds", "2019-01-23", "DescribeDrdsDbTestLink", "drds");
 		setMethod(MethodType.POST);
 	}
 

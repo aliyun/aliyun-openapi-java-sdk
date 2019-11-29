@@ -28,7 +28,7 @@ public class DescribeGlobalBroadcastTypeRequest extends RpcAcsRequest<DescribeGl
 
 	private String dbName;
 	public DescribeGlobalBroadcastTypeRequest() {
-		super("Drds", "2019-01-23", "DescribeGlobalBroadcastType", "Drds");
+		super("Drds", "2019-01-23", "DescribeGlobalBroadcastType", "drds");
 		setMethod(MethodType.POST);
 	}
 

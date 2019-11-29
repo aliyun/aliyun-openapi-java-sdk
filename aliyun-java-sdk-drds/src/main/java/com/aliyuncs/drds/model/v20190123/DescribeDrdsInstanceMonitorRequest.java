@@ -34,7 +34,7 @@ public class DescribeDrdsInstanceMonitorRequest extends RpcAcsRequest<DescribeDr
 
 	private Integer periodMultiple;
 	public DescribeDrdsInstanceMonitorRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsInstanceMonitor", "Drds");
+		super("Drds", "2019-01-23", "DescribeDrdsInstanceMonitor", "drds");
 		setMethod(MethodType.POST);
 	}
 

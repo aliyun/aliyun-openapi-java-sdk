@@ -30,7 +30,7 @@ public class DescribeRdsCommodityRequest extends RpcAcsRequest<DescribeRdsCommod
 
 	private String orderType;
 	public DescribeRdsCommodityRequest() {
-		super("Drds", "2019-01-23", "DescribeRdsCommodity", "Drds");
+		super("Drds", "2019-01-23", "DescribeRdsCommodity", "drds");
 		setMethod(MethodType.POST);
 	}
 

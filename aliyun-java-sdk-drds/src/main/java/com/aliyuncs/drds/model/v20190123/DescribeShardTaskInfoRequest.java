@@ -32,7 +32,7 @@ public class DescribeShardTaskInfoRequest extends RpcAcsRequest<DescribeShardTas
 
 	private String sourceTableName;
 	public DescribeShardTaskInfoRequest() {
-		super("Drds", "2019-01-23", "DescribeShardTaskInfo", "Drds");
+		super("Drds", "2019-01-23", "DescribeShardTaskInfo", "drds");
 		setMethod(MethodType.POST);
 	}
 

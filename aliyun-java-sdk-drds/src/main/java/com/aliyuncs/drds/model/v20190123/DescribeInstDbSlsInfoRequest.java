@@ -28,7 +28,7 @@ public class DescribeInstDbSlsInfoRequest extends RpcAcsRequest<DescribeInstDbSl
 
 	private String dbName;
 	public DescribeInstDbSlsInfoRequest() {
-		super("Drds", "2019-01-23", "DescribeInstDbSlsInfo", "Drds");
+		super("Drds", "2019-01-23", "DescribeInstDbSlsInfo", "drds");
 		setMethod(MethodType.POST);
 	}
 

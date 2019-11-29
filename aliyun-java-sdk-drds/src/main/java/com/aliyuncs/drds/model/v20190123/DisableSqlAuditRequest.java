@@ -28,7 +28,7 @@ public class DisableSqlAuditRequest extends RpcAcsRequest<DisableSqlAuditRespons
 
 	private String dbName;
 	public DisableSqlAuditRequest() {
-		super("Drds", "2019-01-23", "DisableSqlAudit", "Drds");
+		super("Drds", "2019-01-23", "DisableSqlAudit", "drds");
 		setMethod(MethodType.POST);
 	}
 

@@ -26,7 +26,7 @@ public class DescribeDrdsComponentsRequest extends RpcAcsRequest<DescribeDrdsCom
 
 	private String commodityCode;
 	public DescribeDrdsComponentsRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsComponents", "Drds");
+		super("Drds", "2019-01-23", "DescribeDrdsComponents", "drds");
 		setMethod(MethodType.POST);
 	}
 

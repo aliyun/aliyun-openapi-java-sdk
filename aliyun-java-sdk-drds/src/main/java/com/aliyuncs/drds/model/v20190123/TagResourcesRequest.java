@@ -31,7 +31,7 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 
 	private List<Tag> tags;
 	public TagResourcesRequest() {
-		super("Drds", "2019-01-23", "TagResources", "Drds");
+		super("Drds", "2019-01-23", "TagResources", "drds");
 		setMethod(MethodType.POST);
 	}
 

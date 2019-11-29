@@ -30,7 +30,7 @@ public class DescribeTableRequest extends RpcAcsRequest<DescribeTableResponse> {
 
 	private String tableName;
 	public DescribeTableRequest() {
-		super("Drds", "2019-01-23", "DescribeTable", "Drds");
+		super("Drds", "2019-01-23", "DescribeTable", "drds");
 		setMethod(MethodType.POST);
 	}
 

@@ -31,7 +31,7 @@ public class SetupDrdsParamsRequest extends RpcAcsRequest<SetupDrdsParamsRespons
 
 	private String drdsInstanceId;
 	public SetupDrdsParamsRequest() {
-		super("Drds", "2019-01-23", "SetupDrdsParams", "Drds");
+		super("Drds", "2019-01-23", "SetupDrdsParams", "drds");
 		setMethod(MethodType.POST);
 	}
 

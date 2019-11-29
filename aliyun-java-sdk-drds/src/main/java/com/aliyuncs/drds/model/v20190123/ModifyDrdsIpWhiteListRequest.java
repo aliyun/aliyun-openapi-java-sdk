@@ -36,7 +36,7 @@ public class ModifyDrdsIpWhiteListRequest extends RpcAcsRequest<ModifyDrdsIpWhit
 
 	private String ipWhiteList;
 	public ModifyDrdsIpWhiteListRequest() {
-		super("Drds", "2019-01-23", "ModifyDrdsIpWhiteList", "Drds");
+		super("Drds", "2019-01-23", "ModifyDrdsIpWhiteList", "drds");
 		setMethod(MethodType.POST);
 	}
 

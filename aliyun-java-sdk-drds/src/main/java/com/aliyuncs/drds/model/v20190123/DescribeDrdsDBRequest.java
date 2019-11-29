@@ -28,7 +28,7 @@ public class DescribeDrdsDBRequest extends RpcAcsRequest<DescribeDrdsDBResponse>
 
 	private String dbName;
 	public DescribeDrdsDBRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsDB", "Drds");
+		super("Drds", "2019-01-23", "DescribeDrdsDB", "drds");
 		setMethod(MethodType.POST);
 	}
 

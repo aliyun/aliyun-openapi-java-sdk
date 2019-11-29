@@ -28,7 +28,7 @@ public class DescribeHiStoreInstanceInfoRequest extends RpcAcsRequest<DescribeHi
 
 	private String drdsInstanceId;
 	public DescribeHiStoreInstanceInfoRequest() {
-		super("Drds", "2019-01-23", "DescribeHiStoreInstanceInfo", "Drds");
+		super("Drds", "2019-01-23", "DescribeHiStoreInstanceInfo", "drds");
 		setMethod(MethodType.POST);
 	}
 

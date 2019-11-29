@@ -28,7 +28,7 @@ public class RefreshDrdsAtomUrlRequest extends RpcAcsRequest<RefreshDrdsAtomUrlR
 
 	private String dbName;
 	public RefreshDrdsAtomUrlRequest() {
-		super("Drds", "2019-01-23", "RefreshDrdsAtomUrl", "Drds");
+		super("Drds", "2019-01-23", "RefreshDrdsAtomUrl", "drds");
 		setMethod(MethodType.POST);
 	}
 

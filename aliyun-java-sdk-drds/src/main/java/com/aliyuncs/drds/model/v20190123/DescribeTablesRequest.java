@@ -34,7 +34,7 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 
 	private Integer pageSize;
 	public DescribeTablesRequest() {
-		super("Drds", "2019-01-23", "DescribeTables", "Drds");
+		super("Drds", "2019-01-23", "DescribeTables", "drds");
 		setMethod(MethodType.POST);
 	}
 

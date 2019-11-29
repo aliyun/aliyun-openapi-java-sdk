@@ -26,7 +26,7 @@ public class RestartDrdsInstanceRequest extends RpcAcsRequest<RestartDrdsInstanc
 
 	private String drdsInstanceId;
 	public RestartDrdsInstanceRequest() {
-		super("Drds", "2019-01-23", "RestartDrdsInstance", "Drds");
+		super("Drds", "2019-01-23", "RestartDrdsInstance", "drds");
 		setMethod(MethodType.POST);
 	}
 

@@ -30,7 +30,7 @@ public class CheckNewTableNameValidRequest extends RpcAcsRequest<CheckNewTableNa
 
 	private String tableName;
 	public CheckNewTableNameValidRequest() {
-		super("Drds", "2019-01-23", "CheckNewTableNameValid", "Drds");
+		super("Drds", "2019-01-23", "CheckNewTableNameValid", "drds");
 		setMethod(MethodType.POST);
 	}
 

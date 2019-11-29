@@ -26,7 +26,7 @@ public class DescribeInstanceSwitchNetworkRequest extends RpcAcsRequest<Describe
 
 	private String drdsInstanceId;
 	public DescribeInstanceSwitchNetworkRequest() {
-		super("Drds", "2019-01-23", "DescribeInstanceSwitchNetwork", "Drds");
+		super("Drds", "2019-01-23", "DescribeInstanceSwitchNetwork", "drds");
 		setMethod(MethodType.POST);
 	}
 

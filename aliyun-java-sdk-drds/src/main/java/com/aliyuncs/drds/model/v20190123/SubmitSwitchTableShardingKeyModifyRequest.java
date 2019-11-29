@@ -30,7 +30,7 @@ public class SubmitSwitchTableShardingKeyModifyRequest extends RpcAcsRequest<Sub
 
 	private String taskId;
 	public SubmitSwitchTableShardingKeyModifyRequest() {
-		super("Drds", "2019-01-23", "SubmitSwitchTableShardingKeyModify", "Drds");
+		super("Drds", "2019-01-23", "SubmitSwitchTableShardingKeyModify", "drds");
 		setMethod(MethodType.POST);
 	}
 

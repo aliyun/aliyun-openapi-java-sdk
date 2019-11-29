@@ -34,7 +34,7 @@ public class DescribeBroadcastTablesRequest extends RpcAcsRequest<DescribeBroadc
 
 	private Integer pageSize;
 	public DescribeBroadcastTablesRequest() {
-		super("Drds", "2019-01-23", "DescribeBroadcastTables", "Drds");
+		super("Drds", "2019-01-23", "DescribeBroadcastTables", "drds");
 		setMethod(MethodType.POST);
 	}
 

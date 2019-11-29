@@ -31,7 +31,7 @@ public class DeleteShardTasksRequest extends RpcAcsRequest<DeleteShardTasksRespo
 
 	private List<TableName> tableNames;
 	public DeleteShardTasksRequest() {
-		super("Drds", "2019-01-23", "DeleteShardTasks", "Drds");
+		super("Drds", "2019-01-23", "DeleteShardTasks", "drds");
 		setMethod(MethodType.POST);
 	}
 

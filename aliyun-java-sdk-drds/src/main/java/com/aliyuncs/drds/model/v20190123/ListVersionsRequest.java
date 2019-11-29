@@ -28,7 +28,7 @@ public class ListVersionsRequest extends RpcAcsRequest<ListVersionsResponse> {
 
 	private String drdsInstanceId;
 	public ListVersionsRequest() {
-		super("Drds", "2019-01-23", "ListVersions", "Drds");
+		super("Drds", "2019-01-23", "ListVersions", "drds");
 		setMethod(MethodType.POST);
 	}
 

@@ -30,7 +30,7 @@ public class DescribeDrdsShardingDbsRequest extends RpcAcsRequest<DescribeDrdsSh
 
 	private String dbNamePattern;
 	public DescribeDrdsShardingDbsRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsShardingDbs", "Drds");
+		super("Drds", "2019-01-23", "DescribeDrdsShardingDbs", "drds");
 		setMethod(MethodType.POST);
 	}
 

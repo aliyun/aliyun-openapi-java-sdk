@@ -30,7 +30,7 @@ public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccount
 
 	private String accountName;
 	public ModifyAccountDescriptionRequest() {
-		super("Drds", "2019-01-23", "ModifyAccountDescription", "Drds");
+		super("Drds", "2019-01-23", "ModifyAccountDescription", "drds");
 		setMethod(MethodType.POST);
 	}
 

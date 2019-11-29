@@ -30,7 +30,7 @@ public class DescribeBackupDbsRequest extends RpcAcsRequest<DescribeBackupDbsRes
 
 	private String drdsInstanceId;
 	public DescribeBackupDbsRequest() {
-		super("Drds", "2019-01-23", "DescribeBackupDbs", "Drds");
+		super("Drds", "2019-01-23", "DescribeBackupDbs", "drds");
 		setMethod(MethodType.POST);
 	}
 

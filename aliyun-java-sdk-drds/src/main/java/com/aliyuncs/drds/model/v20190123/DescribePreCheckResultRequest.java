@@ -28,7 +28,7 @@ public class DescribePreCheckResultRequest extends RpcAcsRequest<DescribePreChec
 
 	private String taskId;
 	public DescribePreCheckResultRequest() {
-		super("Drds", "2019-01-23", "DescribePreCheckResult", "Drds");
+		super("Drds", "2019-01-23", "DescribePreCheckResult", "drds");
 		setMethod(MethodType.POST);
 	}
 

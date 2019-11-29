@@ -34,7 +34,7 @@ public class DescribeDbInstanceDbsRequest extends RpcAcsRequest<DescribeDbInstan
 
 	private String dbInstType;
 	public DescribeDbInstanceDbsRequest() {
-		super("Drds", "2019-01-23", "DescribeDbInstanceDbs", "Drds");
+		super("Drds", "2019-01-23", "DescribeDbInstanceDbs", "drds");
 		setMethod(MethodType.POST);
 	}
 

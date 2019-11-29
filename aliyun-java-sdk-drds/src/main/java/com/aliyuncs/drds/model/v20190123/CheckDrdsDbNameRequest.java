@@ -28,7 +28,7 @@ public class CheckDrdsDbNameRequest extends RpcAcsRequest<CheckDrdsDbNameRespons
 
 	private String dbName;
 	public CheckDrdsDbNameRequest() {
-		super("Drds", "2019-01-23", "CheckDrdsDbName", "Drds");
+		super("Drds", "2019-01-23", "CheckDrdsDbName", "drds");
 		setMethod(MethodType.POST);
 	}
 

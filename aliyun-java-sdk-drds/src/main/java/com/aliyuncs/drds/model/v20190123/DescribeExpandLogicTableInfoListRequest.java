@@ -28,7 +28,7 @@ public class DescribeExpandLogicTableInfoListRequest extends RpcAcsRequest<Descr
 
 	private String dbName;
 	public DescribeExpandLogicTableInfoListRequest() {
-		super("Drds", "2019-01-23", "DescribeExpandLogicTableInfoList", "Drds");
+		super("Drds", "2019-01-23", "DescribeExpandLogicTableInfoList", "drds");
 		setMethod(MethodType.POST);
 	}
 

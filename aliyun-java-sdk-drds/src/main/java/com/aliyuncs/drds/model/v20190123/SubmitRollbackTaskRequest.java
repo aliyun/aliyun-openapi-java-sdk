@@ -34,7 +34,7 @@ public class SubmitRollbackTaskRequest extends RpcAcsRequest<SubmitRollbackTaskR
 
 	private String parentJobId;
 	public SubmitRollbackTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitRollbackTask", "Drds");
+		super("Drds", "2019-01-23", "SubmitRollbackTask", "drds");
 		setMethod(MethodType.POST);
 	}
 

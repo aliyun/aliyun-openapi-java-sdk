@@ -36,7 +36,7 @@ public class DescribeRDSPerformanceRequest extends RpcAcsRequest<DescribeRDSPerf
 
 	private String dbInstType;
 	public DescribeRDSPerformanceRequest() {
-		super("Drds", "2019-01-23", "DescribeRDSPerformance", "Drds");
+		super("Drds", "2019-01-23", "DescribeRDSPerformance", "drds");
 		setMethod(MethodType.POST);
 	}
 

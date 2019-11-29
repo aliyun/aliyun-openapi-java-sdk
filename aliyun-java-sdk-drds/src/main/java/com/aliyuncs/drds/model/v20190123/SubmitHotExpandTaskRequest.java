@@ -41,7 +41,7 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 
 	private String dbName;
 	public SubmitHotExpandTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitHotExpandTask", "Drds");
+		super("Drds", "2019-01-23", "SubmitHotExpandTask", "drds");
 		setMethod(MethodType.POST);
 	}
 

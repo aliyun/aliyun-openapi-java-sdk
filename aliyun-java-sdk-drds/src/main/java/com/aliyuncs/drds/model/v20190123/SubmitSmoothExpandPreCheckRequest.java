@@ -30,7 +30,7 @@ public class SubmitSmoothExpandPreCheckRequest extends RpcAcsRequest<SubmitSmoot
 
 	private String dbInstType;
 	public SubmitSmoothExpandPreCheckRequest() {
-		super("Drds", "2019-01-23", "SubmitSmoothExpandPreCheck", "Drds");
+		super("Drds", "2019-01-23", "SubmitSmoothExpandPreCheck", "drds");
 		setMethod(MethodType.POST);
 	}
 

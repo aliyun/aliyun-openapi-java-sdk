@@ -33,7 +33,7 @@ public class CreateInstanceAccountRequest extends RpcAcsRequest<CreateInstanceAc
 
 	private List<DbPrivilege> dbPrivileges;
 	public CreateInstanceAccountRequest() {
-		super("Drds", "2019-01-23", "CreateInstanceAccount", "Drds");
+		super("Drds", "2019-01-23", "CreateInstanceAccount", "drds");
 		setMethod(MethodType.POST);
 	}
 

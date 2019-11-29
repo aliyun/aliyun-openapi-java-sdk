@@ -28,7 +28,7 @@ public class ListUserReportsRequest extends RpcAcsRequest<ListUserReportsRespons
 
 	private String drdsInstanceId;
 	public ListUserReportsRequest() {
-		super("Drds", "2019-01-23", "ListUserReports", "Drds");
+		super("Drds", "2019-01-23", "ListUserReports", "drds");
 		setMethod(MethodType.POST);
 	}
 

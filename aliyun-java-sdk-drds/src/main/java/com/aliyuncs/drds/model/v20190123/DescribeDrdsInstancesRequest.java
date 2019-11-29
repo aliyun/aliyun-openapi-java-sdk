@@ -37,7 +37,7 @@ public class DescribeDrdsInstancesRequest extends RpcAcsRequest<DescribeDrdsInst
 
 	private List<Tag> tags;
 	public DescribeDrdsInstancesRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsInstances", "Drds");
+		super("Drds", "2019-01-23", "DescribeDrdsInstances", "drds");
 		setMethod(MethodType.POST);
 	}
 

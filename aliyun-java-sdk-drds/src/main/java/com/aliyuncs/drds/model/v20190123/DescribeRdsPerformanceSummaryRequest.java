@@ -29,7 +29,7 @@ public class DescribeRdsPerformanceSummaryRequest extends RpcAcsRequest<Describe
 
 	private String drdsInstanceId;
 	public DescribeRdsPerformanceSummaryRequest() {
-		super("Drds", "2019-01-23", "DescribeRdsPerformanceSummary", "Drds");
+		super("Drds", "2019-01-23", "DescribeRdsPerformanceSummary", "drds");
 		setMethod(MethodType.POST);
 	}
 

@@ -28,7 +28,7 @@ public class UpgradeHiStoreInstanceRequest extends RpcAcsRequest<UpgradeHiStoreI
 
 	private String drdsInstanceId;
 	public UpgradeHiStoreInstanceRequest() {
-		super("Drds", "2019-01-23", "UpgradeHiStoreInstance", "Drds");
+		super("Drds", "2019-01-23", "UpgradeHiStoreInstance", "drds");
 		setMethod(MethodType.POST);
 	}
 

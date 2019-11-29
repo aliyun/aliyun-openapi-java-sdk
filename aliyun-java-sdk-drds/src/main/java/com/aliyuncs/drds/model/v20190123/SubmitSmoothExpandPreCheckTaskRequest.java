@@ -28,7 +28,7 @@ public class SubmitSmoothExpandPreCheckTaskRequest extends RpcAcsRequest<SubmitS
 
 	private String dbName;
 	public SubmitSmoothExpandPreCheckTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitSmoothExpandPreCheckTask", "Drds");
+		super("Drds", "2019-01-23", "SubmitSmoothExpandPreCheckTask", "drds");
 		setMethod(MethodType.POST);
 	}
 

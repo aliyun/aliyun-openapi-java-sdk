@@ -34,7 +34,7 @@ public class CreateShardTaskRequest extends RpcAcsRequest<CreateShardTaskRespons
 
 	private String sourceTableName;
 	public CreateShardTaskRequest() {
-		super("Drds", "2019-01-23", "CreateShardTask", "Drds");
+		super("Drds", "2019-01-23", "CreateShardTask", "drds");
 		setMethod(MethodType.POST);
 	}
 

@@ -26,7 +26,7 @@ public class DescribeInstanceMenuSwitchRequest extends RpcAcsRequest<DescribeIns
 
 	private String drdsInstanceId;
 	public DescribeInstanceMenuSwitchRequest() {
-		super("Drds", "2019-01-23", "DescribeInstanceMenuSwitch", "Drds");
+		super("Drds", "2019-01-23", "DescribeInstanceMenuSwitch", "drds");
 		setMethod(MethodType.POST);
 	}
 

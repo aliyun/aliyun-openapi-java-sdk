@@ -28,7 +28,7 @@ public class ReleaseHiStoreInstanceRequest extends RpcAcsRequest<ReleaseHiStoreI
 
 	private String drdsInstanceId;
 	public ReleaseHiStoreInstanceRequest() {
-		super("Drds", "2019-01-23", "ReleaseHiStoreInstance", "Drds");
+		super("Drds", "2019-01-23", "ReleaseHiStoreInstance", "drds");
 		setMethod(MethodType.POST);
 	}
 

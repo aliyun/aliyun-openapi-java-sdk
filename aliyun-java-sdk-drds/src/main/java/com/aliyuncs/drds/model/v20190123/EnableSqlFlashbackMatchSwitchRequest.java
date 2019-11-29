@@ -28,7 +28,7 @@ public class EnableSqlFlashbackMatchSwitchRequest extends RpcAcsRequest<EnableSq
 
 	private String dbName;
 	public EnableSqlFlashbackMatchSwitchRequest() {
-		super("Drds", "2019-01-23", "EnableSqlFlashbackMatchSwitch", "Drds");
+		super("Drds", "2019-01-23", "EnableSqlFlashbackMatchSwitch", "drds");
 		setMethod(MethodType.POST);
 	}
 

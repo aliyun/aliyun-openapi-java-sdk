@@ -38,7 +38,7 @@ public class DescribeDrdsSlowSqlsRequest extends RpcAcsRequest<DescribeDrdsSlowS
 
 	private Long exeTime;
 	public DescribeDrdsSlowSqlsRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsSlowSqls", "Drds");
+		super("Drds", "2019-01-23", "DescribeDrdsSlowSqls", "drds");
 		setMethod(MethodType.POST);
 	}
 

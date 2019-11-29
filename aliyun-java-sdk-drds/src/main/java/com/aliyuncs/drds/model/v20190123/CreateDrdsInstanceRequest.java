@@ -52,7 +52,7 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 
 	private String pricingCycle;
 	public CreateDrdsInstanceRequest() {
-		super("Drds", "2019-01-23", "CreateDrdsInstance", "Drds");
+		super("Drds", "2019-01-23", "CreateDrdsInstance", "drds");
 		setMethod(MethodType.POST);
 	}
 

@@ -30,7 +30,7 @@ public class DescribeTableShardingInfoRequest extends RpcAcsRequest<DescribeTabl
 
 	private String tableName;
 	public DescribeTableShardingInfoRequest() {
-		super("Drds", "2019-01-23", "DescribeTableShardingInfo", "Drds");
+		super("Drds", "2019-01-23", "DescribeTableShardingInfo", "drds");
 		setMethod(MethodType.POST);
 	}
 

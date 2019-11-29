@@ -28,7 +28,7 @@ public class ResetDrdsToRdsConnectionsRequest extends RpcAcsRequest<ResetDrdsToR
 
 	private String dbName;
 	public ResetDrdsToRdsConnectionsRequest() {
-		super("Drds", "2019-01-23", "ResetDrdsToRdsConnections", "Drds");
+		super("Drds", "2019-01-23", "ResetDrdsToRdsConnections", "drds");
 		setMethod(MethodType.POST);
 	}
 

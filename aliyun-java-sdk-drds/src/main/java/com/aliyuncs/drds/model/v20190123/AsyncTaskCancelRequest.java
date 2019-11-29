@@ -28,7 +28,7 @@ public class AsyncTaskCancelRequest extends RpcAcsRequest<AsyncTaskCancelRespons
 
 	private Long taskId;
 	public AsyncTaskCancelRequest() {
-		super("Drds", "2019-01-23", "AsyncTaskCancel", "Drds");
+		super("Drds", "2019-01-23", "AsyncTaskCancel", "drds");
 		setMethod(MethodType.POST);
 	}
 

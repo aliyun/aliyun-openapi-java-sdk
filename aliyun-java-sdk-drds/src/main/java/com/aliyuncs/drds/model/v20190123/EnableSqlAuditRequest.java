@@ -34,7 +34,7 @@ public class EnableSqlAuditRequest extends RpcAcsRequest<EnableSqlAuditResponse>
 
 	private String recallEndTimestamp;
 	public EnableSqlAuditRequest() {
-		super("Drds", "2019-01-23", "EnableSqlAudit", "Drds");
+		super("Drds", "2019-01-23", "EnableSqlAudit", "drds");
 		setMethod(MethodType.POST);
 	}
 
