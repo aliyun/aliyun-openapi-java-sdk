@@ -14,17 +14,17 @@
 
 package com.aliyuncs.elasticsearch.transform.v20170613;
 
-import com.aliyuncs.elasticsearch.model.v20170613.ConvertPayTypeResponse;
+import com.aliyuncs.elasticsearch.model.v20170613.RenewLogstashResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ConvertPayTypeResponseUnmarshaller {
+public class RenewLogstashResponseUnmarshaller {
 
-	public static ConvertPayTypeResponse unmarshall(ConvertPayTypeResponse convertPayTypeResponse, UnmarshallerContext _ctx) {
+	public static RenewLogstashResponse unmarshall(RenewLogstashResponse renewLogstashResponse, UnmarshallerContext _ctx) {
 		
-		convertPayTypeResponse.setRequestId(_ctx.stringValue("ConvertPayTypeResponse.RequestId"));
-		convertPayTypeResponse.setResult(_ctx.booleanValue("ConvertPayTypeResponse.Result"));
+		renewLogstashResponse.setRequestId(_ctx.stringValue("RenewLogstashResponse.RequestId"));
+		renewLogstashResponse.setResult(_ctx.booleanValue("RenewLogstashResponse.Result"));
 	 
-	 	return convertPayTypeResponse;
+	 	return renewLogstashResponse;
 	}
 }

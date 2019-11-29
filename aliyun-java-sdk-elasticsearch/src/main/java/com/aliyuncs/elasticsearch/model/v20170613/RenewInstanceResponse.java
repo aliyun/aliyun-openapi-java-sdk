@@ -15,14 +15,14 @@
 package com.aliyuncs.elasticsearch.model.v20170613;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.elasticsearch.transform.v20170613.ConvertLogstashPayTypeResponseUnmarshaller;
+import com.aliyuncs.elasticsearch.transform.v20170613.RenewInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ConvertLogstashPayTypeResponse extends AcsResponse {
+public class RenewInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -45,8 +45,8 @@ public class ConvertLogstashPayTypeResponse extends AcsResponse {
 	}
 
 	@Override
-	public ConvertLogstashPayTypeResponse getInstance(UnmarshallerContext context) {
-		return	ConvertLogstashPayTypeResponseUnmarshaller.unmarshall(this, context);
+	public RenewInstanceResponse getInstance(UnmarshallerContext context) {
+		return	RenewInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

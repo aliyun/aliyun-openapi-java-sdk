@@ -22,15 +22,15 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ConvertPayTypeRequest extends RoaAcsRequest<ConvertPayTypeResponse> {
+public class RenewLogstashRequest extends RoaAcsRequest<RenewLogstashResponse> {
 	   
 
 	private String instanceId;
 
 	private String clientToken;
-	public ConvertPayTypeRequest() {
-		super("elasticsearch", "2017-06-13", "ConvertPayType", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/convert-pay-type");
+	public RenewLogstashRequest() {
+		super("elasticsearch", "2017-06-13", "RenewLogstash", "elasticsearch");
+		setUriPattern("/openapi/logstashes/[InstanceId]/actions/renew");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,8 +61,8 @@ public class ConvertPayTypeRequest extends RoaAcsRequest<ConvertPayTypeResponse>
 	}
 
 	@Override
-	public Class<ConvertPayTypeResponse> getResponseClass() {
-		return ConvertPayTypeResponse.class;
+	public Class<RenewLogstashResponse> getResponseClass() {
+		return RenewLogstashResponse.class;
 	}
 
 }

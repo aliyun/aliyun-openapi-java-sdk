@@ -1,3 +1,9 @@
+2019-11-29 Version: 3.0.11
+- Add RenewInstance.
+- Add RenewLogstash.
+- Add UpdateInstanceChargeType.
+- Add UpdateLogstashChargeType.
+
 2019-11-21 Version: 3.0.10
 - Add ConvertPayType.
 - Add ConvertLogstashPayType.
