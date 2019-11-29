@@ -12,36 +12,34 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.pts.model.v20181111;
+package com.aliyuncs.pts.model.v20190810;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.pts.transform.v20181111.GetReportResponseUnmarshaller;
+import com.aliyuncs.pts.transform.v20190810.AdjustRelationSpeedResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetReportResponse extends AcsResponse {
-
-	private String requestId;
-
-	private String code;
+public class AdjustRelationSpeedResponse extends AcsResponse {
 
 	private String message;
 
+	private String code;
+
 	private Boolean success;
 
-	private String snapshot;
+	private String requestId;
 
-	private String summary;
+	private Integer httpStatusCode;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -52,14 +50,6 @@ public class GetReportResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -68,25 +58,25 @@ public class GetReportResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getSnapshot() {
-		return this.snapshot;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSnapshot(String snapshot) {
-		this.snapshot = snapshot;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public String getSummary() {
-		return this.summary;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setSummary(String summary) {
-		this.summary = summary;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	@Override
-	public GetReportResponse getInstance(UnmarshallerContext context) {
-		return	GetReportResponseUnmarshaller.unmarshall(this, context);
+	public AdjustRelationSpeedResponse getInstance(UnmarshallerContext context) {
+		return	AdjustRelationSpeedResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

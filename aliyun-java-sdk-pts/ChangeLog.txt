@@ -1,3 +1,19 @@
+2019-11-29 Version: 2.0.0
+- Support DescribeScene.
+- Support ListScenes.
+- Support StartScene.
+- Support StopScene.
+- Support RemoveScenes.
+- Support AdjustSceneSpeed.
+- Support AdjustRelationSpeed.
+- Support DescribeSceneRunningStatus.
+- Support ListReports.
+- Support DescribeReport.
+- Support DescribeReportChainSummary.
+- Support DescribeReportChainDetail.
+- Support RemoveReports.
+- Support DescribeSamplingLog.
+
 2019-10-21 Version: 1.9.20
 - Supported For ListRunnableScens.
 - Supported For StopScene.

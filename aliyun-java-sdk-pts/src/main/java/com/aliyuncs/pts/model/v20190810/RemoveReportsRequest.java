@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.pts.model.v20181111;
+package com.aliyuncs.pts.model.v20190810;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,46 +22,33 @@ import com.aliyuncs.pts.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListRunnableScenesRequest extends RpcAcsRequest<ListRunnableScenesResponse> {
+public class RemoveReportsRequest extends RpcAcsRequest<RemoveReportsResponse> {
 	   
 
-	private Integer pageSize;
-
-	private Integer pageNumber;
-	public ListRunnableScenesRequest() {
-		super("PTS", "2018-11-11", "ListRunnableScenes");
-		setMethod(MethodType.POST);
+	private String reportIds;
+	public RemoveReportsRequest() {
+		super("PTS", "2019-08-10", "RemoveReports", "1.0.0");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getReportIds() {
+		return this.reportIds;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setReportIds(String reportIds) {
+		this.reportIds = reportIds;
+		if(reportIds != null){
+			putQueryParameter("ReportIds", reportIds);
 		}
 	}
 
 	@Override
-	public Class<ListRunnableScenesResponse> getResponseClass() {
-		return ListRunnableScenesResponse.class;
+	public Class<RemoveReportsResponse> getResponseClass() {
+		return RemoveReportsResponse.class;
 	}
 
 }

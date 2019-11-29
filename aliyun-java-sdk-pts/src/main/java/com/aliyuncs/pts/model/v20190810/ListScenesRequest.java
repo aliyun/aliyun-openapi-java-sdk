@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.pts.model.v20181111;
+package com.aliyuncs.pts.model.v20190810;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,12 +22,16 @@ import com.aliyuncs.pts.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetReportRequest extends RpcAcsRequest<GetReportResponse> {
+public class ListScenesRequest extends RpcAcsRequest<ListScenesResponse> {
 	   
 
-	private Long reportId;
-	public GetReportRequest() {
-		super("PTS", "2018-11-11", "GetReport");
+	private Integer pageSize;
+
+	private String keyword;
+
+	private Integer pageNumber;
+	public ListScenesRequest() {
+		super("PTS", "2019-08-10", "ListScenes", "1.0.0");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +39,42 @@ public class GetReportRequest extends RpcAcsRequest<GetReportResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getReportId() {
-		return this.reportId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setReportId(Long reportId) {
-		this.reportId = reportId;
-		if(reportId != null){
-			putQueryParameter("ReportId", reportId.toString());
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getKeyword() {
+		return this.keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putQueryParameter("Keyword", keyword);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
 	@Override
-	public Class<GetReportResponse> getResponseClass() {
-		return GetReportResponse.class;
+	public Class<ListScenesResponse> getResponseClass() {
+		return ListScenesResponse.class;
 	}
 
 }

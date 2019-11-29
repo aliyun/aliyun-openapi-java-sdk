@@ -12,32 +12,34 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.pts.model.v20181111;
+package com.aliyuncs.pts.model.v20190810;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.pts.transform.v20181111.StopSceneResponseUnmarshaller;
+import com.aliyuncs.pts.transform.v20190810.RemoveReportsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StopSceneResponse extends AcsResponse {
-
-	private String requestId;
-
-	private String code;
+public class RemoveReportsResponse extends AcsResponse {
 
 	private String message;
 
+	private String code;
+
 	private Boolean success;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String requestId;
+
+	private Integer httpStatusCode;
+
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -48,14 +50,6 @@ public class StopSceneResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -64,8 +58,29 @@ public class StopSceneResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
 	@Override
-	public StopSceneResponse getInstance(UnmarshallerContext context) {
-		return	StopSceneResponseUnmarshaller.unmarshall(this, context);
+	public RemoveReportsResponse getInstance(UnmarshallerContext context) {
+		return	RemoveReportsResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

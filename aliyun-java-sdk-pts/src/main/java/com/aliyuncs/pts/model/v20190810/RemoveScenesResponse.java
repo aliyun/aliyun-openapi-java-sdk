@@ -12,27 +12,27 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.pts.model.v20181111;
+package com.aliyuncs.pts.model.v20190810;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.pts.transform.v20181111.StartSceneResponseUnmarshaller;
+import com.aliyuncs.pts.transform.v20190810.RemoveScenesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StartSceneResponse extends AcsResponse {
+public class RemoveScenesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
+
+	private String code;
 
 	private Boolean success;
 
-	private Long reportId;
+	private Integer httpStatusCode;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,14 +40,6 @@ public class StartSceneResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -58,6 +50,14 @@ public class StartSceneResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -66,16 +66,21 @@ public class StartSceneResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Long getReportId() {
-		return this.reportId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setReportId(Long reportId) {
-		this.reportId = reportId;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	@Override
-	public StartSceneResponse getInstance(UnmarshallerContext context) {
-		return	StartSceneResponseUnmarshaller.unmarshall(this, context);
+	public RemoveScenesResponse getInstance(UnmarshallerContext context) {
+		return	RemoveScenesResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.pts.model.v20181111;
+package com.aliyuncs.pts.model.v20190810;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,12 +22,14 @@ import com.aliyuncs.pts.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopSceneRequest extends RpcAcsRequest<StopSceneResponse> {
+public class AdjustSceneSpeedRequest extends RpcAcsRequest<AdjustSceneSpeedResponse> {
 	   
 
-	private Long sceneId;
-	public StopSceneRequest() {
-		super("PTS", "2018-11-11", "StopScene");
+	private String sceneId;
+
+	private Integer speed;
+	public AdjustSceneSpeedRequest() {
+		super("PTS", "2019-08-10", "AdjustSceneSpeed", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class StopSceneRequest extends RpcAcsRequest<StopSceneResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getSceneId() {
+	public String getSceneId() {
 		return this.sceneId;
 	}
 
-	public void setSceneId(Long sceneId) {
+	public void setSceneId(String sceneId) {
 		this.sceneId = sceneId;
 		if(sceneId != null){
-			putQueryParameter("SceneId", sceneId.toString());
+			putQueryParameter("SceneId", sceneId);
+		}
+	}
+
+	public Integer getSpeed() {
+		return this.speed;
+	}
+
+	public void setSpeed(Integer speed) {
+		this.speed = speed;
+		if(speed != null){
+			putQueryParameter("Speed", speed.toString());
 		}
 	}
 
 	@Override
-	public Class<StopSceneResponse> getResponseClass() {
-		return StopSceneResponse.class;
+	public Class<AdjustSceneSpeedResponse> getResponseClass() {
+		return AdjustSceneSpeedResponse.class;
 	}
 
 }

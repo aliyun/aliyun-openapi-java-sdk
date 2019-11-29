@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.pts.model.v20181111;
+package com.aliyuncs.pts.model.v20190810;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,46 +22,33 @@ import com.aliyuncs.pts.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryPlanStatusRequest extends RpcAcsRequest<QueryPlanStatusResponse> {
+public class DescribeSceneRequest extends RpcAcsRequest<DescribeSceneResponse> {
 	   
 
-	private Long reportId;
-
-	private Long sceneId;
-	public QueryPlanStatusRequest() {
-		super("PTS", "2018-11-11", "QueryPlanStatus");
-		setMethod(MethodType.POST);
+	private String sceneId;
+	public DescribeSceneRequest() {
+		super("PTS", "2019-08-10", "DescribeScene", "1.0.0");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public Long getReportId() {
-		return this.reportId;
-	}
-
-	public void setReportId(Long reportId) {
-		this.reportId = reportId;
-		if(reportId != null){
-			putQueryParameter("ReportId", reportId.toString());
-		}
-	}
-
-	public Long getSceneId() {
+	public String getSceneId() {
 		return this.sceneId;
 	}
 
-	public void setSceneId(Long sceneId) {
+	public void setSceneId(String sceneId) {
 		this.sceneId = sceneId;
 		if(sceneId != null){
-			putQueryParameter("SceneId", sceneId.toString());
+			putQueryParameter("SceneId", sceneId);
 		}
 	}
 
 	@Override
-	public Class<QueryPlanStatusResponse> getResponseClass() {
-		return QueryPlanStatusResponse.class;
+	public Class<DescribeSceneResponse> getResponseClass() {
+		return DescribeSceneResponse.class;
 	}
 
 }

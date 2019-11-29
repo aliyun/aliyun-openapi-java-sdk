@@ -12,18 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.pts.model.v20181111;
+package com.aliyuncs.pts.model.v20190810;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.pts.transform.v20181111.ListRunnableScenesResponseUnmarshaller;
+import com.aliyuncs.pts.transform.v20190810.ListScenesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListRunnableScenesResponse extends AcsResponse {
+public class ListScenesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -107,7 +107,7 @@ public class ListRunnableScenesResponse extends AcsResponse {
 
 	public static class Scene {
 
-		private Long sceneId;
+		private String sceneId;
 
 		private String sceneName;
 
@@ -115,11 +115,17 @@ public class ListRunnableScenesResponse extends AcsResponse {
 
 		private Long modifiedTime;
 
-		public Long getSceneId() {
+		private String sceneType;
+
+		private Boolean cronable;
+
+		private String status;
+
+		public String getSceneId() {
 			return this.sceneId;
 		}
 
-		public void setSceneId(Long sceneId) {
+		public void setSceneId(String sceneId) {
 			this.sceneId = sceneId;
 		}
 
@@ -146,10 +152,39 @@ public class ListRunnableScenesResponse extends AcsResponse {
 		public void setModifiedTime(Long modifiedTime) {
 			this.modifiedTime = modifiedTime;
 		}
+
+		public String getSceneType() {
+			return this.sceneType;
+		}
+
+		public void setSceneType(String sceneType) {
+			this.sceneType = sceneType;
+		}
+
+		public Boolean getCronable() {
+			return this.cronable;
+		}
+
+		public void setCronable(Boolean cronable) {
+			this.cronable = cronable;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 	}
 
 	@Override
-	public ListRunnableScenesResponse getInstance(UnmarshallerContext context) {
-		return	ListRunnableScenesResponseUnmarshaller.unmarshall(this, context);
+	public ListScenesResponse getInstance(UnmarshallerContext context) {
+		return	ListScenesResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

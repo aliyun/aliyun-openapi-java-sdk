@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.pts.model.v20181111;
+package com.aliyuncs.pts.model.v20190810;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,33 +22,33 @@ import com.aliyuncs.pts.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartSceneRequest extends RpcAcsRequest<StartSceneResponse> {
+public class RemoveScenesRequest extends RpcAcsRequest<RemoveScenesResponse> {
 	   
 
-	private Long sceneId;
-	public StartSceneRequest() {
-		super("PTS", "2018-11-11", "StartScene");
-		setMethod(MethodType.POST);
+	private String sceneIds;
+	public RemoveScenesRequest() {
+		super("PTS", "2019-08-10", "RemoveScenes", "1.0.0");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public Long getSceneId() {
-		return this.sceneId;
+	public String getSceneIds() {
+		return this.sceneIds;
 	}
 
-	public void setSceneId(Long sceneId) {
-		this.sceneId = sceneId;
-		if(sceneId != null){
-			putQueryParameter("SceneId", sceneId.toString());
+	public void setSceneIds(String sceneIds) {
+		this.sceneIds = sceneIds;
+		if(sceneIds != null){
+			putQueryParameter("SceneIds", sceneIds);
 		}
 	}
 
 	@Override
-	public Class<StartSceneResponse> getResponseClass() {
-		return StartSceneResponse.class;
+	public Class<RemoveScenesResponse> getResponseClass() {
+		return RemoveScenesResponse.class;
 	}
 
 }
