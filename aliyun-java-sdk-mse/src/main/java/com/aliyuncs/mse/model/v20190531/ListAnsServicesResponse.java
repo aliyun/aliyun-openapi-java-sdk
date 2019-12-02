@@ -16,14 +16,14 @@ package com.aliyuncs.mse.model.v20190531;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mse.transform.v20190531.ListClustersResponseUnmarshaller;
+import com.aliyuncs.mse.transform.v20190531.ListAnsServicesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListClustersResponse extends AcsResponse {
+public class ListAnsServicesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -41,7 +41,7 @@ public class ListClustersResponse extends AcsResponse {
 
 	private String httpCode;
 
-	private List<ClusterForListModel> data;
+	private List<SimpleNacosAnsService> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -107,110 +107,70 @@ public class ListClustersResponse extends AcsResponse {
 		this.httpCode = httpCode;
 	}
 
-	public List<ClusterForListModel> getData() {
+	public List<SimpleNacosAnsService> getData() {
 		return this.data;
 	}
 
-	public void setData(List<ClusterForListModel> data) {
+	public void setData(List<SimpleNacosAnsService> data) {
 		this.data = data;
 	}
 
-	public static class ClusterForListModel {
+	public static class SimpleNacosAnsService {
 
-		private String clusterId;
+		private String name;
 
-		private String clusterAliasName;
+		private String groupName;
 
-		private String initStatus;
+		private Integer clusterCount;
 
-		private String intranetDomain;
+		private Integer ipCount;
 
-		private String createTime;
+		private Integer healthyInstanceCount;
 
-		private String internetAddress;
-
-		private String intranetAddress;
-
-		private String internetDomain;
-
-		private String clusterType;
-
-		public String getClusterId() {
-			return this.clusterId;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getClusterAliasName() {
-			return this.clusterAliasName;
+		public String getGroupName() {
+			return this.groupName;
 		}
 
-		public void setClusterAliasName(String clusterAliasName) {
-			this.clusterAliasName = clusterAliasName;
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 
-		public String getInitStatus() {
-			return this.initStatus;
+		public Integer getClusterCount() {
+			return this.clusterCount;
 		}
 
-		public void setInitStatus(String initStatus) {
-			this.initStatus = initStatus;
+		public void setClusterCount(Integer clusterCount) {
+			this.clusterCount = clusterCount;
 		}
 
-		public String getIntranetDomain() {
-			return this.intranetDomain;
+		public Integer getIpCount() {
+			return this.ipCount;
 		}
 
-		public void setIntranetDomain(String intranetDomain) {
-			this.intranetDomain = intranetDomain;
+		public void setIpCount(Integer ipCount) {
+			this.ipCount = ipCount;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public Integer getHealthyInstanceCount() {
+			return this.healthyInstanceCount;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getInternetAddress() {
-			return this.internetAddress;
-		}
-
-		public void setInternetAddress(String internetAddress) {
-			this.internetAddress = internetAddress;
-		}
-
-		public String getIntranetAddress() {
-			return this.intranetAddress;
-		}
-
-		public void setIntranetAddress(String intranetAddress) {
-			this.intranetAddress = intranetAddress;
-		}
-
-		public String getInternetDomain() {
-			return this.internetDomain;
-		}
-
-		public void setInternetDomain(String internetDomain) {
-			this.internetDomain = internetDomain;
-		}
-
-		public String getClusterType() {
-			return this.clusterType;
-		}
-
-		public void setClusterType(String clusterType) {
-			this.clusterType = clusterType;
+		public void setHealthyInstanceCount(Integer healthyInstanceCount) {
+			this.healthyInstanceCount = healthyInstanceCount;
 		}
 	}
 
 	@Override
-	public ListClustersResponse getInstance(UnmarshallerContext context) {
-		return	ListClustersResponseUnmarshaller.unmarshall(this, context);
+	public ListAnsServicesResponse getInstance(UnmarshallerContext context) {
+		return	ListAnsServicesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

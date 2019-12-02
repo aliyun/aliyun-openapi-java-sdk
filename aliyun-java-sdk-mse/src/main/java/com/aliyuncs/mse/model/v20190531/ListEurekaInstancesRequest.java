@@ -22,49 +22,25 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
+public class ListEurekaInstancesRequest extends RpcAcsRequest<ListEurekaInstancesResponse> {
 	   
-
-	private String monitorType;
-
-	private String endTime;
 
 	private String clusterId;
 
-	private String startTime;
+	private Integer pageNum;
 
 	private String requestPars;
 
-	private String step;
-	public QueryMonitorRequest() {
-		super("mse", "2019-05-31", "QueryMonitor", "mse");
+	private Integer pageSize;
+
+	private String serviceName;
+	public ListEurekaInstancesRequest() {
+		super("mse", "2019-05-31", "ListEurekaInstances", "mse");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMonitorType() {
-		return this.monitorType;
-	}
-
-	public void setMonitorType(String monitorType) {
-		this.monitorType = monitorType;
-		if(monitorType != null){
-			putQueryParameter("MonitorType", monitorType);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
 	}
 
 	public String getClusterId() {
@@ -78,14 +54,14 @@ public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public Integer getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
@@ -96,24 +72,35 @@ public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 	public void setRequestPars(String requestPars) {
 		this.requestPars = requestPars;
 		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
+			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 
-	public String getStep() {
-		return this.step;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setStep(String step) {
-		this.step = step;
-		if(step != null){
-			putQueryParameter("Step", step);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 
 	@Override
-	public Class<QueryMonitorResponse> getResponseClass() {
-		return QueryMonitorResponse.class;
+	public Class<ListEurekaInstancesResponse> getResponseClass() {
+		return ListEurekaInstancesResponse.class;
 	}
 
 }

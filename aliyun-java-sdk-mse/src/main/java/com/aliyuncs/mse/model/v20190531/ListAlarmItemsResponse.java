@@ -16,14 +16,14 @@ package com.aliyuncs.mse.model.v20190531;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mse.transform.v20190531.ListClustersResponseUnmarshaller;
+import com.aliyuncs.mse.transform.v20190531.ListAlarmItemsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListClustersResponse extends AcsResponse {
+public class ListAlarmItemsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -41,7 +41,7 @@ public class ListClustersResponse extends AcsResponse {
 
 	private String httpCode;
 
-	private List<ClusterForListModel> data;
+	private List<AlarmItem> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -107,96 +107,36 @@ public class ListClustersResponse extends AcsResponse {
 		this.httpCode = httpCode;
 	}
 
-	public List<ClusterForListModel> getData() {
+	public List<AlarmItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<ClusterForListModel> data) {
+	public void setData(List<AlarmItem> data) {
 		this.data = data;
 	}
 
-	public static class ClusterForListModel {
+	public static class AlarmItem {
 
-		private String clusterId;
+		private String alarmCode;
 
-		private String clusterAliasName;
-
-		private String initStatus;
-
-		private String intranetDomain;
-
-		private String createTime;
-
-		private String internetAddress;
-
-		private String intranetAddress;
-
-		private String internetDomain;
+		private String alarmDesc;
 
 		private String clusterType;
 
-		public String getClusterId() {
-			return this.clusterId;
+		public String getAlarmCode() {
+			return this.alarmCode;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
+		public void setAlarmCode(String alarmCode) {
+			this.alarmCode = alarmCode;
 		}
 
-		public String getClusterAliasName() {
-			return this.clusterAliasName;
+		public String getAlarmDesc() {
+			return this.alarmDesc;
 		}
 
-		public void setClusterAliasName(String clusterAliasName) {
-			this.clusterAliasName = clusterAliasName;
-		}
-
-		public String getInitStatus() {
-			return this.initStatus;
-		}
-
-		public void setInitStatus(String initStatus) {
-			this.initStatus = initStatus;
-		}
-
-		public String getIntranetDomain() {
-			return this.intranetDomain;
-		}
-
-		public void setIntranetDomain(String intranetDomain) {
-			this.intranetDomain = intranetDomain;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getInternetAddress() {
-			return this.internetAddress;
-		}
-
-		public void setInternetAddress(String internetAddress) {
-			this.internetAddress = internetAddress;
-		}
-
-		public String getIntranetAddress() {
-			return this.intranetAddress;
-		}
-
-		public void setIntranetAddress(String intranetAddress) {
-			this.intranetAddress = intranetAddress;
-		}
-
-		public String getInternetDomain() {
-			return this.internetDomain;
-		}
-
-		public void setInternetDomain(String internetDomain) {
-			this.internetDomain = internetDomain;
+		public void setAlarmDesc(String alarmDesc) {
+			this.alarmDesc = alarmDesc;
 		}
 
 		public String getClusterType() {
@@ -209,8 +149,8 @@ public class ListClustersResponse extends AcsResponse {
 	}
 
 	@Override
-	public ListClustersResponse getInstance(UnmarshallerContext context) {
-		return	ListClustersResponseUnmarshaller.unmarshall(this, context);
+	public ListAlarmItemsResponse getInstance(UnmarshallerContext context) {
+		return	ListAlarmItemsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -23,15 +23,7 @@ import com.aliyuncs.mse.Endpoint;
  * @version 
  */
 public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
-	
-	public UpdateConfigRequest() {
-		super("mse", "2019-05-31", "UpdateConfig", "mse");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String openSuperAcl;
 
@@ -58,6 +50,14 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	private String initLimit;
 
 	private String userName;
+	public UpdateConfigRequest() {
+		super("mse", "2019-05-31", "UpdateConfig", "mse");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getOpenSuperAcl() {
 		return this.openSuperAcl;

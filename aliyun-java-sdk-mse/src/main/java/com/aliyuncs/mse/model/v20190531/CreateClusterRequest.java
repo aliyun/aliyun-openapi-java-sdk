@@ -23,15 +23,7 @@ import com.aliyuncs.mse.Endpoint;
  * @version 
  */
 public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
-	
-	public CreateClusterRequest() {
-		super("mse", "2019-05-31", "CreateCluster", "mse");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String clusterSpecification;
 
@@ -58,6 +50,14 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	private String vpcId;
 
 	private String netType;
+	public CreateClusterRequest() {
+		super("mse", "2019-05-31", "CreateCluster", "mse");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getClusterSpecification() {
 		return this.clusterSpecification;

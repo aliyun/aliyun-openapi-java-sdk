@@ -23,7 +23,13 @@ import com.aliyuncs.mse.Endpoint;
  * @version 
  */
 public class CreateZnodeRequest extends RpcAcsRequest<CreateZnodeResponse> {
-	
+	   
+
+	private String data;
+
+	private String clusterId;
+
+	private String path;
 	public CreateZnodeRequest() {
 		super("mse", "2019-05-31", "CreateZnode", "mse");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class CreateZnodeRequest extends RpcAcsRequest<CreateZnodeResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String data;
-
-	private String clusterId;
-
-	private String path;
 
 	public String getData() {
 		return this.data;

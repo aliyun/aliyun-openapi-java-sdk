@@ -23,7 +23,9 @@ import com.aliyuncs.mse.Endpoint;
  * @version 
  */
 public class DeleteClusterRequest extends RpcAcsRequest<DeleteClusterResponse> {
-	
+	   
+
+	private String clusterId;
 	public DeleteClusterRequest() {
 		super("mse", "2019-05-31", "DeleteCluster", "mse");
 		setMethod(MethodType.POST);
@@ -32,8 +34,6 @@ public class DeleteClusterRequest extends RpcAcsRequest<DeleteClusterResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clusterId;
 
 	public String getClusterId() {
 		return this.clusterId;

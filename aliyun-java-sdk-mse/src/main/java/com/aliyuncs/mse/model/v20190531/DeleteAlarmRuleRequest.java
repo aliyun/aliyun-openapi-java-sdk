@@ -22,18 +22,14 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
+public class DeleteAlarmRuleRequest extends RpcAcsRequest<DeleteAlarmRuleResponse> {
 	   
 
-	private String data;
-
-	private String clusterId;
-
-	private String path;
+	private String alarmRuleId;
 
 	private String requestPars;
-	public UpdateZnodeRequest() {
-		super("mse", "2019-05-31", "UpdateZnode", "mse");
+	public DeleteAlarmRuleRequest() {
+		super("mse", "2019-05-31", "DeleteAlarmRule", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +37,14 @@ public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getData() {
-		return this.data;
+	public String getAlarmRuleId() {
+		return this.alarmRuleId;
 	}
 
-	public void setData(String data) {
-		this.data = data;
-		if(data != null){
-			putBodyParameter("Data", data);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getPath() {
-		return this.path;
-	}
-
-	public void setPath(String path) {
-		this.path = path;
-		if(path != null){
-			putBodyParameter("Path", path);
+	public void setAlarmRuleId(String alarmRuleId) {
+		this.alarmRuleId = alarmRuleId;
+		if(alarmRuleId != null){
+			putBodyParameter("AlarmRuleId", alarmRuleId);
 		}
 	}
 
@@ -86,8 +60,8 @@ public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
 	}
 
 	@Override
-	public Class<UpdateZnodeResponse> getResponseClass() {
-		return UpdateZnodeResponse.class;
+	public Class<DeleteAlarmRuleResponse> getResponseClass() {
+		return DeleteAlarmRuleResponse.class;
 	}
 
 }

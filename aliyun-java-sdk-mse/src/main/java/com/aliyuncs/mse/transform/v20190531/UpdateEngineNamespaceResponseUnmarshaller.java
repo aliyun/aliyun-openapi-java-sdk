@@ -1,0 +1,42 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.mse.transform.v20190531;
+
+import com.aliyuncs.mse.model.v20190531.UpdateEngineNamespaceResponse;
+import com.aliyuncs.mse.model.v20190531.UpdateEngineNamespaceResponse.Data;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+
+public class UpdateEngineNamespaceResponseUnmarshaller {
+
+	public static UpdateEngineNamespaceResponse unmarshall(UpdateEngineNamespaceResponse updateEngineNamespaceResponse, UnmarshallerContext _ctx) {
+		
+		updateEngineNamespaceResponse.setRequestId(_ctx.stringValue("UpdateEngineNamespaceResponse.RequestId"));
+		updateEngineNamespaceResponse.setSuccess(_ctx.booleanValue("UpdateEngineNamespaceResponse.Success"));
+		updateEngineNamespaceResponse.setMessage(_ctx.stringValue("UpdateEngineNamespaceResponse.Message"));
+		updateEngineNamespaceResponse.setErrorCode(_ctx.stringValue("UpdateEngineNamespaceResponse.ErrorCode"));
+
+		Data data = new Data();
+		data.setNamespace(_ctx.stringValue("UpdateEngineNamespaceResponse.Data.Namespace"));
+		data.setNamespaceShowName(_ctx.stringValue("UpdateEngineNamespaceResponse.Data.NamespaceShowName"));
+		data.setNamespaceDesc(_ctx.stringValue("UpdateEngineNamespaceResponse.Data.NamespaceDesc"));
+		data.setQuota(_ctx.integerValue("UpdateEngineNamespaceResponse.Data.Quota"));
+		data.setConfigCount(_ctx.integerValue("UpdateEngineNamespaceResponse.Data.ConfigCount"));
+		data.setType(_ctx.integerValue("UpdateEngineNamespaceResponse.Data.Type"));
+		updateEngineNamespaceResponse.setData(data);
+	 
+	 	return updateEngineNamespaceResponse;
+	}
+}

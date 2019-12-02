@@ -23,7 +23,11 @@ import com.aliyuncs.mse.Endpoint;
  * @version 
  */
 public class UpdateAclRequest extends RpcAcsRequest<UpdateAclResponse> {
-	
+	   
+
+	private String clusterId;
+
+	private String aclEntryList;
 	public UpdateAclRequest() {
 		super("mse", "2019-05-31", "UpdateAcl", "mse");
 		setMethod(MethodType.POST);
@@ -32,10 +36,6 @@ public class UpdateAclRequest extends RpcAcsRequest<UpdateAclResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clusterId;
-
-	private String aclEntryList;
 
 	public String getClusterId() {
 		return this.clusterId;

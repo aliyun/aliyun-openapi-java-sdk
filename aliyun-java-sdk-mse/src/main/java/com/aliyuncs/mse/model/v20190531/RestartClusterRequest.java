@@ -23,7 +23,11 @@ import com.aliyuncs.mse.Endpoint;
  * @version 
  */
 public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse> {
-	
+	   
+
+	private String clusterId;
+
+	private String requestPars;
 	public RestartClusterRequest() {
 		super("mse", "2019-05-31", "RestartCluster", "mse");
 		setMethod(MethodType.POST);
@@ -32,10 +36,6 @@ public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clusterId;
-
-	private String requestPars;
 
 	public String getClusterId() {
 		return this.clusterId;

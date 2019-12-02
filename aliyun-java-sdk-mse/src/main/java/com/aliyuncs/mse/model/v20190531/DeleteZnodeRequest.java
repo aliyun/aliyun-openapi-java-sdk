@@ -23,7 +23,13 @@ import com.aliyuncs.mse.Endpoint;
  * @version 
  */
 public class DeleteZnodeRequest extends RpcAcsRequest<DeleteZnodeResponse> {
-	
+	   
+
+	private String clusterId;
+
+	private String path;
+
+	private String requestPars;
 	public DeleteZnodeRequest() {
 		super("mse", "2019-05-31", "DeleteZnode", "mse");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class DeleteZnodeRequest extends RpcAcsRequest<DeleteZnodeResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clusterId;
-
-	private String path;
-
-	private String requestPars;
 
 	public String getClusterId() {
 		return this.clusterId;

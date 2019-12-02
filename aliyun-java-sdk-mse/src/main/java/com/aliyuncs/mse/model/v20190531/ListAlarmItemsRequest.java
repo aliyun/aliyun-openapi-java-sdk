@@ -22,56 +22,17 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
+public class ListAlarmItemsRequest extends RpcAcsRequest<ListAlarmItemsResponse> {
 	   
 
-	private String data;
-
-	private String clusterId;
-
-	private String path;
-
 	private String requestPars;
-	public UpdateZnodeRequest() {
-		super("mse", "2019-05-31", "UpdateZnode", "mse");
-		setMethod(MethodType.POST);
+	public ListAlarmItemsRequest() {
+		super("mse", "2019-05-31", "ListAlarmItems", "mse");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-		if(data != null){
-			putBodyParameter("Data", data);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getPath() {
-		return this.path;
-	}
-
-	public void setPath(String path) {
-		this.path = path;
-		if(path != null){
-			putBodyParameter("Path", path);
-		}
 	}
 
 	public String getRequestPars() {
@@ -81,13 +42,13 @@ public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
 	public void setRequestPars(String requestPars) {
 		this.requestPars = requestPars;
 		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
+			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 
 	@Override
-	public Class<UpdateZnodeResponse> getResponseClass() {
-		return UpdateZnodeResponse.class;
+	public Class<ListAlarmItemsResponse> getResponseClass() {
+		return ListAlarmItemsResponse.class;
 	}
 
 }

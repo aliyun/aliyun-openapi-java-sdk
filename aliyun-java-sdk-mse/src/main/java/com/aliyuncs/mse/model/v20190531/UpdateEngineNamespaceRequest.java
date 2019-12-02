@@ -22,34 +22,25 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
+public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineNamespaceResponse> {
 	   
-
-	private String data;
 
 	private String clusterId;
 
-	private String path;
+	private Integer serviceCount;
 
-	private String requestPars;
-	public UpdateZnodeRequest() {
-		super("mse", "2019-05-31", "UpdateZnode", "mse");
+	private String name;
+
+	private String id;
+
+	private String desc;
+	public UpdateEngineNamespaceRequest() {
+		super("mse", "2019-05-31", "UpdateEngineNamespace", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-		if(data != null){
-			putBodyParameter("Data", data);
-		}
 	}
 
 	public String getClusterId() {
@@ -63,31 +54,53 @@ public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
 		}
 	}
 
-	public String getPath() {
-		return this.path;
+	public Integer getServiceCount() {
+		return this.serviceCount;
 	}
 
-	public void setPath(String path) {
-		this.path = path;
-		if(path != null){
-			putBodyParameter("Path", path);
+	public void setServiceCount(Integer serviceCount) {
+		this.serviceCount = serviceCount;
+		if(serviceCount != null){
+			putBodyParameter("ServiceCount", serviceCount.toString());
 		}
 	}
 
-	public String getRequestPars() {
-		return this.requestPars;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putBodyParameter("Name", name);
+		}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putBodyParameter("Id", id);
+		}
+	}
+
+	public String getDesc() {
+		return this.desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+		if(desc != null){
+			putBodyParameter("Desc", desc);
 		}
 	}
 
 	@Override
-	public Class<UpdateZnodeResponse> getResponseClass() {
-		return UpdateZnodeResponse.class;
+	public Class<UpdateEngineNamespaceResponse> getResponseClass() {
+		return UpdateEngineNamespaceResponse.class;
 	}
 
 }

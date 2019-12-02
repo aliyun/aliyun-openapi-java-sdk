@@ -22,34 +22,21 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
+public class ListEngineNamespacesRequest extends RpcAcsRequest<ListEngineNamespacesResponse> {
 	   
-
-	private String data;
 
 	private String clusterId;
 
-	private String path;
+	private Integer pageNum;
 
-	private String requestPars;
-	public UpdateZnodeRequest() {
-		super("mse", "2019-05-31", "UpdateZnode", "mse");
-		setMethod(MethodType.POST);
+	private Integer pageSize;
+	public ListEngineNamespacesRequest() {
+		super("mse", "2019-05-31", "ListEngineNamespaces", "mse");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-		if(data != null){
-			putBodyParameter("Data", data);
-		}
 	}
 
 	public String getClusterId() {
@@ -59,35 +46,35 @@ public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
 		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
-	public String getPath() {
-		return this.path;
+	public Integer getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setPath(String path) {
-		this.path = path;
-		if(path != null){
-			putBodyParameter("Path", path);
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
-	public String getRequestPars() {
-		return this.requestPars;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<UpdateZnodeResponse> getResponseClass() {
-		return UpdateZnodeResponse.class;
+	public Class<ListEngineNamespacesResponse> getResponseClass() {
+		return ListEngineNamespacesResponse.class;
 	}
 
 }

@@ -23,7 +23,11 @@ import com.aliyuncs.mse.Endpoint;
  * @version 
  */
 public class ListZnodeChildrenRequest extends RpcAcsRequest<ListZnodeChildrenResponse> {
-	
+	   
+
+	private String clusterId;
+
+	private String path;
 	public ListZnodeChildrenRequest() {
 		super("mse", "2019-05-31", "ListZnodeChildren", "mse");
 		setMethod(MethodType.GET);
@@ -32,10 +36,6 @@ public class ListZnodeChildrenRequest extends RpcAcsRequest<ListZnodeChildrenRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clusterId;
-
-	private String path;
 
 	public String getClusterId() {
 		return this.clusterId;

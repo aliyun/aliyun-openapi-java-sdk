@@ -23,7 +23,13 @@ import com.aliyuncs.mse.Endpoint;
  * @version 
  */
 public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
-	
+	   
+
+	private String configType;
+
+	private String clusterId;
+
+	private String requestPars;
 	public QueryConfigRequest() {
 		super("mse", "2019-05-31", "QueryConfig", "mse");
 		setMethod(MethodType.GET);
@@ -32,12 +38,6 @@ public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String configType;
-
-	private String clusterId;
-
-	private String requestPars;
 
 	public String getConfigType() {
 		return this.configType;

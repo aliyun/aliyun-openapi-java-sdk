@@ -23,7 +23,7 @@ import com.aliyuncs.mse.Endpoint;
  * @version 
  */
 public class QueryBusinessLocationsRequest extends RpcAcsRequest<QueryBusinessLocationsResponse> {
-	
+	   
 	public QueryBusinessLocationsRequest() {
 		super("mse", "2019-05-31", "QueryBusinessLocations", "mse");
 		setMethod(MethodType.GET);

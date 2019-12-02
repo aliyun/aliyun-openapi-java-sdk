@@ -23,7 +23,13 @@ import com.aliyuncs.mse.Endpoint;
  * @version 
  */
 public class UpdateClusterRequest extends RpcAcsRequest<UpdateClusterResponse> {
-	
+	   
+
+	private String clusterAliasName;
+
+	private String clusterId;
+
+	private String requestPars;
 	public UpdateClusterRequest() {
 		super("mse", "2019-05-31", "UpdateCluster", "mse");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class UpdateClusterRequest extends RpcAcsRequest<UpdateClusterResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clusterAliasName;
-
-	private String clusterId;
-
-	private String requestPars;
 
 	public String getClusterAliasName() {
 		return this.clusterAliasName;

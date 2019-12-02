@@ -23,15 +23,7 @@ import com.aliyuncs.mse.Endpoint;
  * @version 
  */
 public class ScalingClusterRequest extends RpcAcsRequest<ScalingClusterResponse> {
-	
-	public ScalingClusterRequest() {
-		super("mse", "2019-05-31", "ScalingCluster", "mse");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String clusterSpecification;
 
@@ -42,6 +34,14 @@ public class ScalingClusterRequest extends RpcAcsRequest<ScalingClusterResponse>
 	private Long memoryCapacity;
 
 	private Integer instanceCount;
+	public ScalingClusterRequest() {
+		super("mse", "2019-05-31", "ScalingCluster", "mse");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getClusterSpecification() {
 		return this.clusterSpecification;

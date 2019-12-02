@@ -23,7 +23,9 @@ import com.aliyuncs.mse.Endpoint;
  * @version 
  */
 public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailResponse> {
-	
+	   
+
+	private String clusterId;
 	public QueryClusterDetailRequest() {
 		super("mse", "2019-05-31", "QueryClusterDetail", "mse");
 		setMethod(MethodType.POST);
@@ -32,8 +34,6 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clusterId;
 
 	public String getClusterId() {
 		return this.clusterId;

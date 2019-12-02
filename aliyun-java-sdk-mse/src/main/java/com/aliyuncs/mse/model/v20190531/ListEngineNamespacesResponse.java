@@ -16,14 +16,14 @@ package com.aliyuncs.mse.model.v20190531;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mse.transform.v20190531.ListClustersResponseUnmarshaller;
+import com.aliyuncs.mse.transform.v20190531.ListEngineNamespacesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListClustersResponse extends AcsResponse {
+public class ListEngineNamespacesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -41,7 +41,7 @@ public class ListClustersResponse extends AcsResponse {
 
 	private String httpCode;
 
-	private List<ClusterForListModel> data;
+	private List<Namespace> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -107,110 +107,80 @@ public class ListClustersResponse extends AcsResponse {
 		this.httpCode = httpCode;
 	}
 
-	public List<ClusterForListModel> getData() {
+	public List<Namespace> getData() {
 		return this.data;
 	}
 
-	public void setData(List<ClusterForListModel> data) {
+	public void setData(List<Namespace> data) {
 		this.data = data;
 	}
 
-	public static class ClusterForListModel {
+	public static class Namespace {
 
-		private String clusterId;
+		private String namespace;
 
-		private String clusterAliasName;
+		private String namespaceShowName;
 
-		private String initStatus;
+		private String namespaceDesc;
 
-		private String intranetDomain;
+		private Integer quota;
 
-		private String createTime;
+		private Integer configCount;
 
-		private String internetAddress;
+		private Integer type;
 
-		private String intranetAddress;
-
-		private String internetDomain;
-
-		private String clusterType;
-
-		public String getClusterId() {
-			return this.clusterId;
+		public String getNamespace() {
+			return this.namespace;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
 		}
 
-		public String getClusterAliasName() {
-			return this.clusterAliasName;
+		public String getNamespaceShowName() {
+			return this.namespaceShowName;
 		}
 
-		public void setClusterAliasName(String clusterAliasName) {
-			this.clusterAliasName = clusterAliasName;
+		public void setNamespaceShowName(String namespaceShowName) {
+			this.namespaceShowName = namespaceShowName;
 		}
 
-		public String getInitStatus() {
-			return this.initStatus;
+		public String getNamespaceDesc() {
+			return this.namespaceDesc;
 		}
 
-		public void setInitStatus(String initStatus) {
-			this.initStatus = initStatus;
+		public void setNamespaceDesc(String namespaceDesc) {
+			this.namespaceDesc = namespaceDesc;
 		}
 
-		public String getIntranetDomain() {
-			return this.intranetDomain;
+		public Integer getQuota() {
+			return this.quota;
 		}
 
-		public void setIntranetDomain(String intranetDomain) {
-			this.intranetDomain = intranetDomain;
+		public void setQuota(Integer quota) {
+			this.quota = quota;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public Integer getConfigCount() {
+			return this.configCount;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setConfigCount(Integer configCount) {
+			this.configCount = configCount;
 		}
 
-		public String getInternetAddress() {
-			return this.internetAddress;
+		public Integer getType() {
+			return this.type;
 		}
 
-		public void setInternetAddress(String internetAddress) {
-			this.internetAddress = internetAddress;
-		}
-
-		public String getIntranetAddress() {
-			return this.intranetAddress;
-		}
-
-		public void setIntranetAddress(String intranetAddress) {
-			this.intranetAddress = intranetAddress;
-		}
-
-		public String getInternetDomain() {
-			return this.internetDomain;
-		}
-
-		public void setInternetDomain(String internetDomain) {
-			this.internetDomain = internetDomain;
-		}
-
-		public String getClusterType() {
-			return this.clusterType;
-		}
-
-		public void setClusterType(String clusterType) {
-			this.clusterType = clusterType;
+		public void setType(Integer type) {
+			this.type = type;
 		}
 	}
 
 	@Override
-	public ListClustersResponse getInstance(UnmarshallerContext context) {
-		return	ListClustersResponseUnmarshaller.unmarshall(this, context);
+	public ListEngineNamespacesResponse getInstance(UnmarshallerContext context) {
+		return	ListEngineNamespacesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

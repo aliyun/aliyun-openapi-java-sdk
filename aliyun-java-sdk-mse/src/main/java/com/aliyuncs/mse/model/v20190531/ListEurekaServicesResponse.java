@@ -16,14 +16,14 @@ package com.aliyuncs.mse.model.v20190531;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mse.transform.v20190531.ListClustersResponseUnmarshaller;
+import com.aliyuncs.mse.transform.v20190531.ListEurekaServicesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListClustersResponse extends AcsResponse {
+public class ListEurekaServicesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -41,7 +41,7 @@ public class ListClustersResponse extends AcsResponse {
 
 	private String httpCode;
 
-	private List<ClusterForListModel> data;
+	private List<SimpleService> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -107,110 +107,50 @@ public class ListClustersResponse extends AcsResponse {
 		this.httpCode = httpCode;
 	}
 
-	public List<ClusterForListModel> getData() {
+	public List<SimpleService> getData() {
 		return this.data;
 	}
 
-	public void setData(List<ClusterForListModel> data) {
+	public void setData(List<SimpleService> data) {
 		this.data = data;
 	}
 
-	public static class ClusterForListModel {
+	public static class SimpleService {
 
-		private String clusterId;
+		private String name;
 
-		private String clusterAliasName;
+		private String upStatus;
 
-		private String initStatus;
+		private List<String> instancesId;
 
-		private String intranetDomain;
-
-		private String createTime;
-
-		private String internetAddress;
-
-		private String intranetAddress;
-
-		private String internetDomain;
-
-		private String clusterType;
-
-		public String getClusterId() {
-			return this.clusterId;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getClusterAliasName() {
-			return this.clusterAliasName;
+		public String getUpStatus() {
+			return this.upStatus;
 		}
 
-		public void setClusterAliasName(String clusterAliasName) {
-			this.clusterAliasName = clusterAliasName;
+		public void setUpStatus(String upStatus) {
+			this.upStatus = upStatus;
 		}
 
-		public String getInitStatus() {
-			return this.initStatus;
+		public List<String> getInstancesId() {
+			return this.instancesId;
 		}
 
-		public void setInitStatus(String initStatus) {
-			this.initStatus = initStatus;
-		}
-
-		public String getIntranetDomain() {
-			return this.intranetDomain;
-		}
-
-		public void setIntranetDomain(String intranetDomain) {
-			this.intranetDomain = intranetDomain;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getInternetAddress() {
-			return this.internetAddress;
-		}
-
-		public void setInternetAddress(String internetAddress) {
-			this.internetAddress = internetAddress;
-		}
-
-		public String getIntranetAddress() {
-			return this.intranetAddress;
-		}
-
-		public void setIntranetAddress(String intranetAddress) {
-			this.intranetAddress = intranetAddress;
-		}
-
-		public String getInternetDomain() {
-			return this.internetDomain;
-		}
-
-		public void setInternetDomain(String internetDomain) {
-			this.internetDomain = internetDomain;
-		}
-
-		public String getClusterType() {
-			return this.clusterType;
-		}
-
-		public void setClusterType(String clusterType) {
-			this.clusterType = clusterType;
+		public void setInstancesId(List<String> instancesId) {
+			this.instancesId = instancesId;
 		}
 	}
 
 	@Override
-	public ListClustersResponse getInstance(UnmarshallerContext context) {
-		return	ListClustersResponseUnmarshaller.unmarshall(this, context);
+	public ListEurekaServicesResponse getInstance(UnmarshallerContext context) {
+		return	ListEurekaServicesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

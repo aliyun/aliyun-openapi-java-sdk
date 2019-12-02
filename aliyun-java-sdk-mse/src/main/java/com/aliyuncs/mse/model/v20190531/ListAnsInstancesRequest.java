@@ -22,18 +22,26 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
+public class ListAnsInstancesRequest extends RpcAcsRequest<ListAnsInstancesResponse> {
 	   
 
-	private String clusterAliasName;
+	private String clusterName;
+
+	private String clusterId;
 
 	private Integer pageNum;
+
+	private String groupName;
+
+	private String namespaceId;
 
 	private String requestPars;
 
 	private Integer pageSize;
-	public ListClustersRequest() {
-		super("mse", "2019-05-31", "ListClusters", "mse");
+
+	private String serviceName;
+	public ListAnsInstancesRequest() {
+		super("mse", "2019-05-31", "ListAnsInstances", "mse");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +49,25 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getClusterAliasName() {
-		return this.clusterAliasName;
+	public String getClusterName() {
+		return this.clusterName;
 	}
 
-	public void setClusterAliasName(String clusterAliasName) {
-		this.clusterAliasName = clusterAliasName;
-		if(clusterAliasName != null){
-			putQueryParameter("ClusterAliasName", clusterAliasName);
+	public void setClusterName(String clusterName) {
+		this.clusterName = clusterName;
+		if(clusterName != null){
+			putQueryParameter("ClusterName", clusterName);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -60,6 +79,28 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
 		}
 	}
 
@@ -85,9 +126,20 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 		}
 	}
 
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
+		}
+	}
+
 	@Override
-	public Class<ListClustersResponse> getResponseClass() {
-		return ListClustersResponse.class;
+	public Class<ListAnsInstancesResponse> getResponseClass() {
+		return ListAnsInstancesResponse.class;
 	}
 
 }

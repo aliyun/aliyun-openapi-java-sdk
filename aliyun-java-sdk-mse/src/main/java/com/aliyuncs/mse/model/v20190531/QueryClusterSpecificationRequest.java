@@ -23,7 +23,7 @@ import com.aliyuncs.mse.Endpoint;
  * @version 
  */
 public class QueryClusterSpecificationRequest extends RpcAcsRequest<QueryClusterSpecificationResponse> {
-	
+	   
 	public QueryClusterSpecificationRequest() {
 		super("mse", "2019-05-31", "QueryClusterSpecification", "mse");
 		setMethod(MethodType.POST);

@@ -22,55 +22,31 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
+public class ListAlarmContactGroupsRequest extends RpcAcsRequest<ListAlarmContactGroupsResponse> {
 	   
 
-	private String data;
-
-	private String clusterId;
-
-	private String path;
+	private Integer pageNum;
 
 	private String requestPars;
-	public UpdateZnodeRequest() {
-		super("mse", "2019-05-31", "UpdateZnode", "mse");
-		setMethod(MethodType.POST);
+
+	private Integer pageSize;
+	public ListAlarmContactGroupsRequest() {
+		super("mse", "2019-05-31", "ListAlarmContactGroups", "mse");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getData() {
-		return this.data;
+	public Integer getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setData(String data) {
-		this.data = data;
-		if(data != null){
-			putBodyParameter("Data", data);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getPath() {
-		return this.path;
-	}
-
-	public void setPath(String path) {
-		this.path = path;
-		if(path != null){
-			putBodyParameter("Path", path);
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
@@ -81,13 +57,24 @@ public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
 	public void setRequestPars(String requestPars) {
 		this.requestPars = requestPars;
 		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
+			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<UpdateZnodeResponse> getResponseClass() {
-		return UpdateZnodeResponse.class;
+	public Class<ListAlarmContactGroupsResponse> getResponseClass() {
+		return ListAlarmContactGroupsResponse.class;
 	}
 
 }
