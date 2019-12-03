@@ -16,6 +16,7 @@ package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.drds.Endpoint;
 
 /**
  * @author auto create
@@ -36,6 +37,10 @@ public class DescribeDrdsInstanceMonitorRequest extends RpcAcsRequest<DescribeDr
 	public DescribeDrdsInstanceMonitorRequest() {
 		super("Drds", "2019-01-23", "DescribeDrdsInstanceMonitor", "drds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getEndTime() {

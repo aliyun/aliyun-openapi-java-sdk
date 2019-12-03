@@ -16,6 +16,7 @@ package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.drds.Endpoint;
 
 /**
  * @author auto create
@@ -30,6 +31,10 @@ public class AsyncTaskCancelRequest extends RpcAcsRequest<AsyncTaskCancelRespons
 	public AsyncTaskCancelRequest() {
 		super("Drds", "2019-01-23", "AsyncTaskCancel", "drds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDrdsInstanceId() {

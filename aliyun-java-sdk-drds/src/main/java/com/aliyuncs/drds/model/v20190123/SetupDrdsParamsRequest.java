@@ -17,6 +17,7 @@ package com.aliyuncs.drds.model.v20190123;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.drds.Endpoint;
 
 /**
  * @author auto create
@@ -33,6 +34,10 @@ public class SetupDrdsParamsRequest extends RpcAcsRequest<SetupDrdsParamsRespons
 	public SetupDrdsParamsRequest() {
 		super("Drds", "2019-01-23", "SetupDrdsParams", "drds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getParamLevel() {
