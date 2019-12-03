@@ -29,11 +29,13 @@ public class ListRuleRequest extends RpcAcsRequest<ListRuleResponse> {
 
 	private Integer currentPage;
 
+	private String resourceGroupId;
+
 	private String iotInstanceId;
 
 	private Integer pageSize;
 	public ListRuleRequest() {
-		super("Iot", "2018-01-20", "ListRule", "iot");
+		super("Iot", "2018-01-20", "ListRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,6 +62,17 @@ public class ListRuleRequest extends RpcAcsRequest<ListRuleResponse> {
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

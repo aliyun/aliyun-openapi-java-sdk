@@ -125,6 +125,8 @@ public class QueryEdgeInstanceResponse extends AcsResponse {
 
 			private String tags;
 
+			private Integer type;
+
 			private String gmtCreate;
 
 			private String gmtModified;
@@ -165,6 +167,14 @@ public class QueryEdgeInstanceResponse extends AcsResponse {
 
 			public void setTags(String tags) {
 				this.tags = tags;
+			}
+
+			public Integer getType() {
+				return this.type;
+			}
+
+			public void setType(Integer type) {
+				this.type = type;
 			}
 
 			public String getGmtCreate() {

@@ -32,6 +32,7 @@ public class GetEdgeInstanceResponseUnmarshaller {
 		data.setInstanceId(_ctx.stringValue("GetEdgeInstanceResponse.Data.InstanceId"));
 		data.setName(_ctx.stringValue("GetEdgeInstanceResponse.Data.Name"));
 		data.setTags(_ctx.stringValue("GetEdgeInstanceResponse.Data.Tags"));
+		data.setType(_ctx.stringValue("GetEdgeInstanceResponse.Data.Type"));
 		data.setSpec(_ctx.integerValue("GetEdgeInstanceResponse.Data.Spec"));
 		data.setBizEnable(_ctx.booleanValue("GetEdgeInstanceResponse.Data.BizEnable"));
 		data.setGmtCreate(_ctx.stringValue("GetEdgeInstanceResponse.Data.GmtCreate"));

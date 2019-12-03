@@ -33,11 +33,11 @@ public class ListRuleResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private Integer pageSize;
-
 	private Integer page;
 
 	private Integer total;
+
+	private Integer pageSize;
 
 	private List<RuleInfo> data;
 
@@ -73,14 +73,6 @@ public class ListRuleResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public Integer getPage() {
 		return this.page;
 	}
@@ -95,6 +87,14 @@ public class ListRuleResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public List<RuleInfo> getData() {

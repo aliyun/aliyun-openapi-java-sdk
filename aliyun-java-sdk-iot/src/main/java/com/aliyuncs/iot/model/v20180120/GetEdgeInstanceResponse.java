@@ -82,6 +82,8 @@ public class GetEdgeInstanceResponse extends AcsResponse {
 
 		private String tags;
 
+		private String type;
+
 		private Integer spec;
 
 		private Boolean bizEnable;
@@ -122,6 +124,14 @@ public class GetEdgeInstanceResponse extends AcsResponse {
 
 		public void setTags(String tags) {
 			this.tags = tags;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public Integer getSpec() {

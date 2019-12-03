@@ -33,7 +33,7 @@ public class BindDriverToEdgeInstanceRequest extends RpcAcsRequest<BindDriverToE
 
 	private String iotInstanceId;
 	public BindDriverToEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "BindDriverToEdgeInstance", "iot");
+		super("Iot", "2018-01-20", "BindDriverToEdgeInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

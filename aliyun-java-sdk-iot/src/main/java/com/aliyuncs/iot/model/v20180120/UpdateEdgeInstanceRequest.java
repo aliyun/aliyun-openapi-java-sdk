@@ -37,7 +37,7 @@ public class UpdateEdgeInstanceRequest extends RpcAcsRequest<UpdateEdgeInstanceR
 
 	private String name;
 	public UpdateEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "UpdateEdgeInstance", "iot");
+		super("Iot", "2018-01-20", "UpdateEdgeInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

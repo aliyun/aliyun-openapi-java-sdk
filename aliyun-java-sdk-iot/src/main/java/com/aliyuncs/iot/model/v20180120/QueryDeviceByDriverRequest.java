@@ -35,7 +35,7 @@ public class QueryDeviceByDriverRequest extends RpcAcsRequest<QueryDeviceByDrive
 
 	private Integer pageSize;
 	public QueryDeviceByDriverRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceByDriver", "iot");
+		super("Iot", "2018-01-20", "QueryDeviceByDriver");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

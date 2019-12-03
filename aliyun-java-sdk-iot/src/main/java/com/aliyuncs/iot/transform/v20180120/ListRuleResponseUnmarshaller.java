@@ -30,9 +30,9 @@ public class ListRuleResponseUnmarshaller {
 		listRuleResponse.setSuccess(_ctx.booleanValue("ListRuleResponse.Success"));
 		listRuleResponse.setCode(_ctx.stringValue("ListRuleResponse.Code"));
 		listRuleResponse.setErrorMessage(_ctx.stringValue("ListRuleResponse.ErrorMessage"));
-		listRuleResponse.setPageSize(_ctx.integerValue("ListRuleResponse.PageSize"));
 		listRuleResponse.setPage(_ctx.integerValue("ListRuleResponse.Page"));
 		listRuleResponse.setTotal(_ctx.integerValue("ListRuleResponse.Total"));
+		listRuleResponse.setPageSize(_ctx.integerValue("ListRuleResponse.PageSize"));
 
 		List<RuleInfo> data = new ArrayList<RuleInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListRuleResponse.Data.Length"); i++) {

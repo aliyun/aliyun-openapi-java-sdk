@@ -29,21 +29,23 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 	private String ruleDesc;
 
-	private String productKey;
-
 	private String shortTopic;
+
+	private String resourceGroupId;
 
 	private String dataType;
 
 	private String iotInstanceId;
 
-	private String name;
-
 	private String where;
 
 	private Integer topicType;
+
+	private String productKey;
+
+	private String name;
 	public CreateRuleRequest() {
-		super("Iot", "2018-01-20", "CreateRule", "iot");
+		super("Iot", "2018-01-20", "CreateRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -73,17 +75,6 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
 	public String getShortTopic() {
 		return this.shortTopic;
 	}
@@ -92,6 +83,17 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		this.shortTopic = shortTopic;
 		if(shortTopic != null){
 			putQueryParameter("ShortTopic", shortTopic);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -117,17 +119,6 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getWhere() {
 		return this.where;
 	}
@@ -147,6 +138,28 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		this.topicType = topicType;
 		if(topicType != null){
 			putQueryParameter("TopicType", topicType.toString());
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

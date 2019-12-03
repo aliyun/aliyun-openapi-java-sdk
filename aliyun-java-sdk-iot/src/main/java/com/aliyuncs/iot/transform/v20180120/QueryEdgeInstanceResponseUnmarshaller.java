@@ -43,6 +43,7 @@ public class QueryEdgeInstanceResponseUnmarshaller {
 			instance.setInstanceId(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].InstanceId"));
 			instance.setName(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].Name"));
 			instance.setTags(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].Tags"));
+			instance.setType(_ctx.integerValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].Type"));
 			instance.setGmtCreate(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].GmtCreate"));
 			instance.setGmtModified(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].GmtModified"));
 			instance.setRoleArn(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].RoleArn"));

@@ -29,7 +29,7 @@ public class DeleteEdgeInstanceRequest extends RpcAcsRequest<DeleteEdgeInstanceR
 
 	private String iotInstanceId;
 	public DeleteEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "DeleteEdgeInstance", "iot");
+		super("Iot", "2018-01-20", "DeleteEdgeInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

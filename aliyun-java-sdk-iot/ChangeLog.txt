@@ -1,3 +1,6 @@
+2019-12-03 Version: 1.8
+- Generated 2018-01-20 for `Iot`.
+
 2019-10-17 Version: 7.1.0
 - Add X509 API, including queryDeviceCert, queryCertUrlByApplyId, createDeviceCert.
 - Add authType parameter of APIs, including createProduct, queryProduct, queryProductList, CreateProductPop, QueryProductAllInfo, QueryProductListPop, ListProductConsole, QueryAllProductListPop, QueryDeviceBatchList.

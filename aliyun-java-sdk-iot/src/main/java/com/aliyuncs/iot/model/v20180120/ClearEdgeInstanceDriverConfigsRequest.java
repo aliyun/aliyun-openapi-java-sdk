@@ -31,7 +31,7 @@ public class ClearEdgeInstanceDriverConfigsRequest extends RpcAcsRequest<ClearEd
 
 	private String iotInstanceId;
 	public ClearEdgeInstanceDriverConfigsRequest() {
-		super("Iot", "2018-01-20", "ClearEdgeInstanceDriverConfigs", "iot");
+		super("Iot", "2018-01-20", "ClearEdgeInstanceDriverConfigs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
