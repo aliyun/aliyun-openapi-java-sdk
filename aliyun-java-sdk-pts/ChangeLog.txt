@@ -1,3 +1,7 @@
+2019-12-03 Version: 2.0.1
+- Support StartTesting.
+- Support StopTesting.
+
 2019-12-02 Version: 2.0.0
 - Support DescribeScene.
 - Support ListScenes.
