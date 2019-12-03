@@ -23,7 +23,9 @@ import com.aliyuncs.multimediaai.Endpoint;
  * @version 
  */
 public class GetTaskResultRequest extends RpcAcsRequest<GetTaskResultResponse> {
-	
+	   
+
+	private Long taskId;
 	public GetTaskResultRequest() {
 		super("multimediaai", "2019-08-10", "GetTaskResult", "multimediaai");
 		setMethod(MethodType.POST);
@@ -32,8 +34,6 @@ public class GetTaskResultRequest extends RpcAcsRequest<GetTaskResultResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long taskId;
 
 	public Long getTaskId() {
 		return this.taskId;

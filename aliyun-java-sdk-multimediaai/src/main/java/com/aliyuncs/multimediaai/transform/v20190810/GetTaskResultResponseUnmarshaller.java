@@ -31,6 +31,7 @@ public class GetTaskResultResponseUnmarshaller {
 		result.setVideoName(_ctx.stringValue("GetTaskResultResponse.Result.VideoName"));
 		result.setProcessResultUrl(_ctx.stringValue("GetTaskResultResponse.Result.ProcessResultUrl"));
 		result.setAnalysisUseTime(_ctx.longValue("GetTaskResultResponse.Result.AnalysisUseTime"));
+		result.setVideoUrl(_ctx.stringValue("GetTaskResultResponse.Result.VideoUrl"));
 		getTaskResultResponse.setResult(result);
 	 
 	 	return getTaskResultResponse;

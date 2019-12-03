@@ -22,12 +22,14 @@ import com.aliyuncs.multimediaai.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTaskStatusRequest extends RpcAcsRequest<GetTaskStatusResponse> {
+public class CreateFaceGroupRequest extends RpcAcsRequest<CreateFaceGroupResponse> {
 	   
 
-	private Long taskId;
-	public GetTaskStatusRequest() {
-		super("multimediaai", "2019-08-10", "GetTaskStatus", "multimediaai");
+	private String description;
+
+	private String faceGroupName;
+	public CreateFaceGroupRequest() {
+		super("multimediaai", "2019-08-10", "CreateFaceGroup", "multimediaai");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class GetTaskStatusRequest extends RpcAcsRequest<GetTaskStatusResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getTaskId() {
-		return this.taskId;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setTaskId(Long taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId.toString());
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getFaceGroupName() {
+		return this.faceGroupName;
+	}
+
+	public void setFaceGroupName(String faceGroupName) {
+		this.faceGroupName = faceGroupName;
+		if(faceGroupName != null){
+			putQueryParameter("FaceGroupName", faceGroupName);
 		}
 	}
 
 	@Override
-	public Class<GetTaskStatusResponse> getResponseClass() {
-		return GetTaskStatusResponse.class;
+	public Class<CreateFaceGroupResponse> getResponseClass() {
+		return CreateFaceGroupResponse.class;
 	}
 
 }

@@ -64,6 +64,8 @@ public class GetTaskResultResponse extends AcsResponse {
 
 		private Long analysisUseTime;
 
+		private String videoUrl;
+
 		public String getApplicationId() {
 			return this.applicationId;
 		}
@@ -94,6 +96,14 @@ public class GetTaskResultResponse extends AcsResponse {
 
 		public void setAnalysisUseTime(Long analysisUseTime) {
 			this.analysisUseTime = analysisUseTime;
+		}
+
+		public String getVideoUrl() {
+			return this.videoUrl;
+		}
+
+		public void setVideoUrl(String videoUrl) {
+			this.videoUrl = videoUrl;
 		}
 	}
 

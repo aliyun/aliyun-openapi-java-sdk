@@ -22,12 +22,16 @@ import com.aliyuncs.multimediaai.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTaskStatusRequest extends RpcAcsRequest<GetTaskStatusResponse> {
+public class RegisterFaceImageRequest extends RpcAcsRequest<RegisterFaceImageResponse> {
 	   
 
-	private Long taskId;
-	public GetTaskStatusRequest() {
-		super("multimediaai", "2019-08-10", "GetTaskStatus", "multimediaai");
+	private Long faceGroupId;
+
+	private Long facePersonId;
+
+	private String imageUrl;
+	public RegisterFaceImageRequest() {
+		super("multimediaai", "2019-08-10", "RegisterFaceImage", "multimediaai");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +39,42 @@ public class GetTaskStatusRequest extends RpcAcsRequest<GetTaskStatusResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getTaskId() {
-		return this.taskId;
+	public Long getFaceGroupId() {
+		return this.faceGroupId;
 	}
 
-	public void setTaskId(Long taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId.toString());
+	public void setFaceGroupId(Long faceGroupId) {
+		this.faceGroupId = faceGroupId;
+		if(faceGroupId != null){
+			putQueryParameter("FaceGroupId", faceGroupId.toString());
+		}
+	}
+
+	public Long getFacePersonId() {
+		return this.facePersonId;
+	}
+
+	public void setFacePersonId(Long facePersonId) {
+		this.facePersonId = facePersonId;
+		if(facePersonId != null){
+			putQueryParameter("FacePersonId", facePersonId.toString());
+		}
+	}
+
+	public String getImageUrl() {
+		return this.imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+		if(imageUrl != null){
+			putQueryParameter("ImageUrl", imageUrl);
 		}
 	}
 
 	@Override
-	public Class<GetTaskStatusResponse> getResponseClass() {
-		return GetTaskStatusResponse.class;
+	public Class<RegisterFaceImageResponse> getResponseClass() {
+		return RegisterFaceImageResponse.class;
 	}
 
 }

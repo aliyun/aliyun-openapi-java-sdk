@@ -22,12 +22,14 @@ import com.aliyuncs.multimediaai.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTaskStatusRequest extends RpcAcsRequest<GetTaskStatusResponse> {
+public class ListFaceGroupsRequest extends RpcAcsRequest<ListFaceGroupsResponse> {
 	   
 
-	private Long taskId;
-	public GetTaskStatusRequest() {
-		super("multimediaai", "2019-08-10", "GetTaskStatus", "multimediaai");
+	private Integer pageNumber;
+
+	private Integer pageSize;
+	public ListFaceGroupsRequest() {
+		super("multimediaai", "2019-08-10", "ListFaceGroups", "multimediaai");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class GetTaskStatusRequest extends RpcAcsRequest<GetTaskStatusResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getTaskId() {
-		return this.taskId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTaskId(Long taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId.toString());
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<GetTaskStatusResponse> getResponseClass() {
-		return GetTaskStatusResponse.class;
+	public Class<ListFaceGroupsResponse> getResponseClass() {
+		return ListFaceGroupsResponse.class;
 	}
 
 }

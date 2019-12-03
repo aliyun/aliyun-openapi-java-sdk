@@ -23,7 +23,17 @@ import com.aliyuncs.multimediaai.Endpoint;
  * @version 
  */
 public class CreateLabelTaskRequest extends RpcAcsRequest<CreateLabelTaskResponse> {
-	
+	   
+
+	private Long templateId;
+
+	private String videoUrl;
+
+	private String videoName;
+
+	private String callbackUrl;
+
+	private String applicationId;
 	public CreateLabelTaskRequest() {
 		super("multimediaai", "2019-08-10", "CreateLabelTask", "multimediaai");
 		setMethod(MethodType.POST);
@@ -33,11 +43,16 @@ public class CreateLabelTaskRequest extends RpcAcsRequest<CreateLabelTaskRespons
 		} catch (Exception e) {}
 	}
 
-	private String videoUrl;
+	public Long getTemplateId() {
+		return this.templateId;
+	}
 
-	private String videoName;
-
-	private String applicationId;
+	public void setTemplateId(Long templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId.toString());
+		}
+	}
 
 	public String getVideoUrl() {
 		return this.videoUrl;
@@ -58,6 +73,17 @@ public class CreateLabelTaskRequest extends RpcAcsRequest<CreateLabelTaskRespons
 		this.videoName = videoName;
 		if(videoName != null){
 			putQueryParameter("VideoName", videoName);
+		}
+	}
+
+	public String getCallbackUrl() {
+		return this.callbackUrl;
+	}
+
+	public void setCallbackUrl(String callbackUrl) {
+		this.callbackUrl = callbackUrl;
+		if(callbackUrl != null){
+			putQueryParameter("CallbackUrl", callbackUrl);
 		}
 	}
 

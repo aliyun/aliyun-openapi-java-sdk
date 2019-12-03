@@ -23,7 +23,17 @@ import com.aliyuncs.multimediaai.Endpoint;
  * @version 
  */
 public class CreateCoverTaskRequest extends RpcAcsRequest<CreateCoverTaskResponse> {
-	
+	   
+
+	private Long templateId;
+
+	private String videoUrl;
+
+	private String videoName;
+
+	private String callbackUrl;
+
+	private String applicationId;
 	public CreateCoverTaskRequest() {
 		super("multimediaai", "2019-08-10", "CreateCoverTask", "multimediaai");
 		setMethod(MethodType.POST);
@@ -33,11 +43,16 @@ public class CreateCoverTaskRequest extends RpcAcsRequest<CreateCoverTaskRespons
 		} catch (Exception e) {}
 	}
 
-	private String videoUrl;
+	public Long getTemplateId() {
+		return this.templateId;
+	}
 
-	private String videoName;
-
-	private String applicationId;
+	public void setTemplateId(Long templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId.toString());
+		}
+	}
 
 	public String getVideoUrl() {
 		return this.videoUrl;
@@ -58,6 +73,17 @@ public class CreateCoverTaskRequest extends RpcAcsRequest<CreateCoverTaskRespons
 		this.videoName = videoName;
 		if(videoName != null){
 			putQueryParameter("VideoName", videoName);
+		}
+	}
+
+	public String getCallbackUrl() {
+		return this.callbackUrl;
+	}
+
+	public void setCallbackUrl(String callbackUrl) {
+		this.callbackUrl = callbackUrl;
+		if(callbackUrl != null){
+			putQueryParameter("CallbackUrl", callbackUrl);
 		}
 	}
 

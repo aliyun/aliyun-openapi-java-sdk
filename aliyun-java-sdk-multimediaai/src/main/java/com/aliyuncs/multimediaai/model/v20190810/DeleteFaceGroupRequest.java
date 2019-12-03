@@ -22,12 +22,12 @@ import com.aliyuncs.multimediaai.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTaskStatusRequest extends RpcAcsRequest<GetTaskStatusResponse> {
+public class DeleteFaceGroupRequest extends RpcAcsRequest<DeleteFaceGroupResponse> {
 	   
 
-	private Long taskId;
-	public GetTaskStatusRequest() {
-		super("multimediaai", "2019-08-10", "GetTaskStatus", "multimediaai");
+	private Long faceGroupId;
+	public DeleteFaceGroupRequest() {
+		super("multimediaai", "2019-08-10", "DeleteFaceGroup", "multimediaai");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class GetTaskStatusRequest extends RpcAcsRequest<GetTaskStatusResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getTaskId() {
-		return this.taskId;
+	public Long getFaceGroupId() {
+		return this.faceGroupId;
 	}
 
-	public void setTaskId(Long taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId.toString());
+	public void setFaceGroupId(Long faceGroupId) {
+		this.faceGroupId = faceGroupId;
+		if(faceGroupId != null){
+			putQueryParameter("FaceGroupId", faceGroupId.toString());
 		}
 	}
 
 	@Override
-	public Class<GetTaskStatusResponse> getResponseClass() {
-		return GetTaskStatusResponse.class;
+	public Class<DeleteFaceGroupResponse> getResponseClass() {
+		return DeleteFaceGroupResponse.class;
 	}
 
 }
