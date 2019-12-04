@@ -104,6 +104,8 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setAutoUpgradeMinorVersion(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AutoUpgradeMinorVersion"));
 			dBInstanceAttribute.setProxyType(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ProxyType"));
 			dBInstanceAttribute.setConsoleVersion(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ConsoleVersion"));
+			dBInstanceAttribute.setMultipleTempUpgrade(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MultipleTempUpgrade"));
+			dBInstanceAttribute.setOriginConfiguration(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].OriginConfiguration"));
 
 			Extra extra = new Extra();
 			extra.setReplicaGroupID(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ReplicaGroupID"));

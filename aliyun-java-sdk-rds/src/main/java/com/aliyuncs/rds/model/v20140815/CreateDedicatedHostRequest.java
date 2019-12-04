@@ -31,8 +31,6 @@ public class CreateDedicatedHostRequest extends RpcAcsRequest<CreateDedicatedHos
 
 	private String hostName;
 
-	private Integer hostCount;
-
 	private String dedicatedHostGroupId;
 
 	private String period;
@@ -91,17 +89,6 @@ public class CreateDedicatedHostRequest extends RpcAcsRequest<CreateDedicatedHos
 		this.hostName = hostName;
 		if(hostName != null){
 			putQueryParameter("HostName", hostName);
-		}
-	}
-
-	public Integer getHostCount() {
-		return this.hostCount;
-	}
-
-	public void setHostCount(Integer hostCount) {
-		this.hostCount = hostCount;
-		if(hostCount != null){
-			putQueryParameter("HostCount", hostCount.toString());
 		}
 	}
 

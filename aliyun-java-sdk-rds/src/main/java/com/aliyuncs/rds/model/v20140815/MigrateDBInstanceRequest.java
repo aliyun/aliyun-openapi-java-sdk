@@ -31,13 +31,7 @@ public class MigrateDBInstanceRequest extends RpcAcsRequest<MigrateDBInstanceRes
 
 	private String targetDedicatedHostIdForSlave;
 
-	private String engineVersion;
-
-	private Integer storage;
-
 	private String effectiveTime;
-
-	private Integer dBInstanceTransType;
 
 	private String targetDedicatedHostIdForMaster;
 
@@ -48,14 +42,6 @@ public class MigrateDBInstanceRequest extends RpcAcsRequest<MigrateDBInstanceRes
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
-
-	private String targetDBInstanceClass;
-
-	private String vSwitchId;
-
-	private String targetDedicatedHostIdForLog;
-
-	private String zoneId;
 	public MigrateDBInstanceRequest() {
 		super("Rds", "2014-08-15", "MigrateDBInstance", "rds");
 		setMethod(MethodType.POST);
@@ -98,28 +84,6 @@ public class MigrateDBInstanceRequest extends RpcAcsRequest<MigrateDBInstanceRes
 		}
 	}
 
-	public String getEngineVersion() {
-		return this.engineVersion;
-	}
-
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
-		if(engineVersion != null){
-			putQueryParameter("EngineVersion", engineVersion);
-		}
-	}
-
-	public Integer getStorage() {
-		return this.storage;
-	}
-
-	public void setStorage(Integer storage) {
-		this.storage = storage;
-		if(storage != null){
-			putQueryParameter("Storage", storage.toString());
-		}
-	}
-
 	public String getEffectiveTime() {
 		return this.effectiveTime;
 	}
@@ -128,17 +92,6 @@ public class MigrateDBInstanceRequest extends RpcAcsRequest<MigrateDBInstanceRes
 		this.effectiveTime = effectiveTime;
 		if(effectiveTime != null){
 			putQueryParameter("EffectiveTime", effectiveTime);
-		}
-	}
-
-	public Integer getDBInstanceTransType() {
-		return this.dBInstanceTransType;
-	}
-
-	public void setDBInstanceTransType(Integer dBInstanceTransType) {
-		this.dBInstanceTransType = dBInstanceTransType;
-		if(dBInstanceTransType != null){
-			putQueryParameter("DBInstanceTransType", dBInstanceTransType.toString());
 		}
 	}
 
@@ -194,50 +147,6 @@ public class MigrateDBInstanceRequest extends RpcAcsRequest<MigrateDBInstanceRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTargetDBInstanceClass() {
-		return this.targetDBInstanceClass;
-	}
-
-	public void setTargetDBInstanceClass(String targetDBInstanceClass) {
-		this.targetDBInstanceClass = targetDBInstanceClass;
-		if(targetDBInstanceClass != null){
-			putQueryParameter("TargetDBInstanceClass", targetDBInstanceClass);
-		}
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
-	public String getTargetDedicatedHostIdForLog() {
-		return this.targetDedicatedHostIdForLog;
-	}
-
-	public void setTargetDedicatedHostIdForLog(String targetDedicatedHostIdForLog) {
-		this.targetDedicatedHostIdForLog = targetDedicatedHostIdForLog;
-		if(targetDedicatedHostIdForLog != null){
-			putQueryParameter("TargetDedicatedHostIdForLog", targetDedicatedHostIdForLog);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

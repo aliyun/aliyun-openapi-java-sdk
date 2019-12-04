@@ -27,19 +27,19 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 
 	private Long resourceOwnerId;
 
+	private String effectiveTime;
+
+	private String dBInstanceId;
+
+	private String nodeId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String effectiveTime;
-
-	private String dBInstanceId;
-
 	private String force;
-
-	private String nodeId;
 	public SwitchDBInstanceHARequest() {
 		super("Rds", "2014-08-15", "SwitchDBInstanceHA", "rds");
 		setMethod(MethodType.POST);
@@ -57,6 +57,39 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getEffectiveTime() {
+		return this.effectiveTime;
+	}
+
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId);
 		}
 	}
 
@@ -93,28 +126,6 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 		}
 	}
 
-	public String getEffectiveTime() {
-		return this.effectiveTime;
-	}
-
-	public void setEffectiveTime(String effectiveTime) {
-		this.effectiveTime = effectiveTime;
-		if(effectiveTime != null){
-			putQueryParameter("EffectiveTime", effectiveTime);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
 	public String getForce() {
 		return this.force;
 	}
@@ -123,17 +134,6 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 		this.force = force;
 		if(force != null){
 			putQueryParameter("Force", force);
-		}
-	}
-
-	public String getNodeId() {
-		return this.nodeId;
-	}
-
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-		if(nodeId != null){
-			putQueryParameter("NodeId", nodeId);
 		}
 	}
 

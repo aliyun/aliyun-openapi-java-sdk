@@ -61,7 +61,7 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 
 		private String engineVersion;
 
-		private Integer parameterGroupId;
+		private String parameterGroupId;
 
 		private String createTime;
 
@@ -125,11 +125,11 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 			this.engineVersion = engineVersion;
 		}
 
-		public Integer getParameterGroupId() {
+		public String getParameterGroupId() {
 			return this.parameterGroupId;
 		}
 
-		public void setParameterGroupId(Integer parameterGroupId) {
+		public void setParameterGroupId(String parameterGroupId) {
 			this.parameterGroupId = parameterGroupId;
 		}
 

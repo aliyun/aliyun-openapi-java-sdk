@@ -43,6 +43,7 @@ public class DescribeDedicatedHostGroupsResponseUnmarshaller {
 			dedicatedHostGroupsItem.setHostNumber(_ctx.integerValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].HostNumber"));
 			dedicatedHostGroupsItem.setInstanceNumber(_ctx.integerValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].InstanceNumber"));
 			dedicatedHostGroupsItem.setEngine(_ctx.stringValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].Engine"));
+			dedicatedHostGroupsItem.setText(_ctx.stringValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].Text"));
 
 			dedicatedHostGroups.add(dedicatedHostGroupsItem);
 		}

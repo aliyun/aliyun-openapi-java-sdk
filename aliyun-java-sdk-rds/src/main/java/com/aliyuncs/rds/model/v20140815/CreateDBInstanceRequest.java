@@ -41,6 +41,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String period;
 
+	private String encryptionKey;
+
 	private String dBInstanceClass;
 
 	private String securityIPList;
@@ -52,6 +54,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String targetDedicatedHostIdForLog;
 
 	private String autoRenew;
+
+	private String roleARN;
 
 	private String zoneId;
 
@@ -175,6 +179,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getEncryptionKey() {
+		return this.encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+		if(encryptionKey != null){
+			putQueryParameter("EncryptionKey", encryptionKey);
+		}
+	}
+
 	public String getDBInstanceClass() {
 		return this.dBInstanceClass;
 	}
@@ -238,6 +253,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.autoRenew = autoRenew;
 		if(autoRenew != null){
 			putQueryParameter("AutoRenew", autoRenew);
+		}
+	}
+
+	public String getRoleARN() {
+		return this.roleARN;
+	}
+
+	public void setRoleARN(String roleARN) {
+		this.roleARN = roleARN;
+		if(roleARN != null){
+			putQueryParameter("RoleARN", roleARN);
 		}
 	}
 

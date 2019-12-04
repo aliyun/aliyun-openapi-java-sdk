@@ -99,6 +99,14 @@ public class DescribeTasksResponse extends AcsResponse {
 
 		private String taskErrorMessage;
 
+		private String stepsInfo;
+
+		private Integer remain;
+
+		private String stepProgressInfo;
+
+		private String currentStepName;
+
 		public String getDBName() {
 			return this.dBName;
 		}
@@ -185,6 +193,38 @@ public class DescribeTasksResponse extends AcsResponse {
 
 		public void setTaskErrorMessage(String taskErrorMessage) {
 			this.taskErrorMessage = taskErrorMessage;
+		}
+
+		public String getStepsInfo() {
+			return this.stepsInfo;
+		}
+
+		public void setStepsInfo(String stepsInfo) {
+			this.stepsInfo = stepsInfo;
+		}
+
+		public Integer getRemain() {
+			return this.remain;
+		}
+
+		public void setRemain(Integer remain) {
+			this.remain = remain;
+		}
+
+		public String getStepProgressInfo() {
+			return this.stepProgressInfo;
+		}
+
+		public void setStepProgressInfo(String stepProgressInfo) {
+			this.stepProgressInfo = stepProgressInfo;
+		}
+
+		public String getCurrentStepName() {
+			return this.currentStepName;
+		}
+
+		public void setCurrentStepName(String currentStepName) {
+			this.currentStepName = currentStepName;
 		}
 	}
 

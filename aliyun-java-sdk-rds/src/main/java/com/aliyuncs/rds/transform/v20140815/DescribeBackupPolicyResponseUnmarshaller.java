@@ -39,6 +39,10 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 		describeBackupPolicyResponse.setHighSpaceUsageProtection(_ctx.stringValue("DescribeBackupPolicyResponse.HighSpaceUsageProtection"));
 		describeBackupPolicyResponse.setLogBackupFrequency(_ctx.stringValue("DescribeBackupPolicyResponse.LogBackupFrequency"));
 		describeBackupPolicyResponse.setCompressType(_ctx.stringValue("DescribeBackupPolicyResponse.CompressType"));
+		describeBackupPolicyResponse.setArchiveBackupRetentionPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.ArchiveBackupRetentionPeriod"));
+		describeBackupPolicyResponse.setArchiveBackupKeepPolicy(_ctx.stringValue("DescribeBackupPolicyResponse.ArchiveBackupKeepPolicy"));
+		describeBackupPolicyResponse.setArchiveBackupKeepCount(_ctx.stringValue("DescribeBackupPolicyResponse.ArchiveBackupKeepCount"));
+		describeBackupPolicyResponse.setReleasedKeepPolicy(_ctx.stringValue("DescribeBackupPolicyResponse.ReleasedKeepPolicy"));
 
 		DuplicationLocation duplicationLocation = new DuplicationLocation();
 		duplicationLocation.setSotrage(_ctx.stringValue("DescribeBackupPolicyResponse.DuplicationLocation.Sotrage"));

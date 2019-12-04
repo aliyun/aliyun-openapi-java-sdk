@@ -71,6 +71,8 @@ public class DescribeDedicatedHostGroupsResponse extends AcsResponse {
 
 		private String engine;
 
+		private String text;
+
 		public String getDedicatedHostGroupId() {
 			return this.dedicatedHostGroupId;
 		}
@@ -165,6 +167,14 @@ public class DescribeDedicatedHostGroupsResponse extends AcsResponse {
 
 		public void setEngine(String engine) {
 			this.engine = engine;
+		}
+
+		public String getText() {
+			return this.text;
+		}
+
+		public void setText(String text) {
+			this.text = text;
 		}
 	}
 

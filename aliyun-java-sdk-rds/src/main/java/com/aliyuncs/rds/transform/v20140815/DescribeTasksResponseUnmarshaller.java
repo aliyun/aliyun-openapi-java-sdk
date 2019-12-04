@@ -45,6 +45,10 @@ public class DescribeTasksResponseUnmarshaller {
 			taskProgressInfo.setStatus(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].Status"));
 			taskProgressInfo.setTaskErrorCode(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskErrorCode"));
 			taskProgressInfo.setTaskErrorMessage(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskErrorMessage"));
+			taskProgressInfo.setStepsInfo(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].StepsInfo"));
+			taskProgressInfo.setRemain(_ctx.integerValue("DescribeTasksResponse.Items["+ i +"].Remain"));
+			taskProgressInfo.setStepProgressInfo(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].StepProgressInfo"));
+			taskProgressInfo.setCurrentStepName(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].CurrentStepName"));
 
 			items.add(taskProgressInfo);
 		}

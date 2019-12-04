@@ -187,6 +187,10 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String consoleVersion;
 
+		private Boolean multipleTempUpgrade;
+
+		private String originConfiguration;
+
 		private List<SlaveZone> slaveZones;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -329,26 +333,10 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.dBInstanceType = dBInstanceType;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -767,6 +755,22 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setConsoleVersion(String consoleVersion) {
 			this.consoleVersion = consoleVersion;
+		}
+
+		public Boolean getMultipleTempUpgrade() {
+			return this.multipleTempUpgrade;
+		}
+
+		public void setMultipleTempUpgrade(Boolean multipleTempUpgrade) {
+			this.multipleTempUpgrade = multipleTempUpgrade;
+		}
+
+		public String getOriginConfiguration() {
+			return this.originConfiguration;
+		}
+
+		public void setOriginConfiguration(String originConfiguration) {
+			this.originConfiguration = originConfiguration;
 		}
 
 		public List<SlaveZone> getSlaveZones() {

@@ -41,6 +41,8 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	private String dBInstanceStorageType;
 
+	private String dedicatedHostGroupId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -156,6 +158,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		this.dBInstanceStorageType = dBInstanceStorageType;
 		if(dBInstanceStorageType != null){
 			putQueryParameter("DBInstanceStorageType", dBInstanceStorageType);
+		}
+	}
+
+	public String getDedicatedHostGroupId() {
+		return this.dedicatedHostGroupId;
+	}
+
+	public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
+		this.dedicatedHostGroupId = dedicatedHostGroupId;
+		if(dedicatedHostGroupId != null){
+			putQueryParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 		}
 	}
 

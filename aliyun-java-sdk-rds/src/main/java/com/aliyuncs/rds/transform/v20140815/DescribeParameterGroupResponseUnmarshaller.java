@@ -39,7 +39,7 @@ public class DescribeParameterGroupResponseUnmarshaller {
 			parameterGroup.setForceRestart(_ctx.integerValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ForceRestart"));
 			parameterGroup.setEngine(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].Engine"));
 			parameterGroup.setEngineVersion(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].EngineVersion"));
-			parameterGroup.setParameterGroupId(_ctx.integerValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParameterGroupId"));
+			parameterGroup.setParameterGroupId(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParameterGroupId"));
 			parameterGroup.setCreateTime(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].CreateTime"));
 			parameterGroup.setUpdateTime(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].UpdateTime"));
 

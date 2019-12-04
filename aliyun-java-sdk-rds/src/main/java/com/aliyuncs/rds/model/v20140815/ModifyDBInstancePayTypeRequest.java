@@ -32,6 +32,8 @@ public class ModifyDBInstancePayTypeRequest extends RpcAcsRequest<ModifyDBInstan
 	private String period;
 
 	private Integer usedTime;
+
+	private String payType;
 	public ModifyDBInstancePayTypeRequest() {
 		super("Rds", "2014-08-15", "ModifyDBInstancePayType", "rds");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class ModifyDBInstancePayTypeRequest extends RpcAcsRequest<ModifyDBInstan
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime.toString());
+		}
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
 		}
 	}
 

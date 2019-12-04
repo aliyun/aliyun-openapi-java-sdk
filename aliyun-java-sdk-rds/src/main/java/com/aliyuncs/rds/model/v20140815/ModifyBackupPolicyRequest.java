@@ -35,8 +35,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String backupLog;
 
-	private String duplicationContent;
-
 	private String highSpaceUsageProtection;
 
 	private String dBInstanceId;
@@ -46,6 +44,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 	private String backupPolicyMode;
 
 	private String preferredBackupPeriod;
+
+	private String releasedKeepPolicy;
 
 	private String resourceOwnerAccount;
 
@@ -59,13 +59,9 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String archiveBackupKeepPolicy;
 
-	private String duplication;
-
 	private String preferredBackupTime;
 
 	private String backupRetentionPeriod;
-
-	private String duplicationLocation;
 
 	private String archiveBackupRetentionPeriod;
 
@@ -134,17 +130,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
-	public String getDuplicationContent() {
-		return this.duplicationContent;
-	}
-
-	public void setDuplicationContent(String duplicationContent) {
-		this.duplicationContent = duplicationContent;
-		if(duplicationContent != null){
-			putQueryParameter("DuplicationContent", duplicationContent);
-		}
-	}
-
 	public String getHighSpaceUsageProtection() {
 		return this.highSpaceUsageProtection;
 	}
@@ -197,6 +182,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.preferredBackupPeriod = preferredBackupPeriod;
 		if(preferredBackupPeriod != null){
 			putQueryParameter("PreferredBackupPeriod", preferredBackupPeriod);
+		}
+	}
+
+	public String getReleasedKeepPolicy() {
+		return this.releasedKeepPolicy;
+	}
+
+	public void setReleasedKeepPolicy(String releasedKeepPolicy) {
+		this.releasedKeepPolicy = releasedKeepPolicy;
+		if(releasedKeepPolicy != null){
+			putQueryParameter("ReleasedKeepPolicy", releasedKeepPolicy);
 		}
 	}
 
@@ -266,17 +262,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
-	public String getDuplication() {
-		return this.duplication;
-	}
-
-	public void setDuplication(String duplication) {
-		this.duplication = duplication;
-		if(duplication != null){
-			putQueryParameter("Duplication", duplication);
-		}
-	}
-
 	public String getPreferredBackupTime() {
 		return this.preferredBackupTime;
 	}
@@ -296,17 +281,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.backupRetentionPeriod = backupRetentionPeriod;
 		if(backupRetentionPeriod != null){
 			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod);
-		}
-	}
-
-	public String getDuplicationLocation() {
-		return this.duplicationLocation;
-	}
-
-	public void setDuplicationLocation(String duplicationLocation) {
-		this.duplicationLocation = duplicationLocation;
-		if(duplicationLocation != null){
-			putQueryParameter("DuplicationLocation", duplicationLocation);
 		}
 	}
 

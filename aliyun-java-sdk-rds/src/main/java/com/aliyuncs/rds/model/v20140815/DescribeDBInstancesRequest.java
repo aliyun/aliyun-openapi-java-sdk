@@ -85,6 +85,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String ownerAccount;
 
+	private String dedicatedHostId;
+
 	private String tag5value;
 
 	private String tag1key;
@@ -430,6 +432,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDedicatedHostId() {
+		return this.dedicatedHostId;
+	}
+
+	public void setDedicatedHostId(String dedicatedHostId) {
+		this.dedicatedHostId = dedicatedHostId;
+		if(dedicatedHostId != null){
+			putQueryParameter("DedicatedHostId", dedicatedHostId);
 		}
 	}
 

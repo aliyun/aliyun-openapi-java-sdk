@@ -35,6 +35,8 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 
 	private String dBInstanceStorageType;
 
+	private String dedicatedHostGroupId;
+
 	private String restoreTime;
 
 	private String period;
@@ -123,6 +125,17 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		this.dBInstanceStorageType = dBInstanceStorageType;
 		if(dBInstanceStorageType != null){
 			putQueryParameter("DBInstanceStorageType", dBInstanceStorageType);
+		}
+	}
+
+	public String getDedicatedHostGroupId() {
+		return this.dedicatedHostGroupId;
+	}
+
+	public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
+		this.dedicatedHostGroupId = dedicatedHostGroupId;
+		if(dedicatedHostGroupId != null){
+			putQueryParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 		}
 	}
 
