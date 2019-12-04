@@ -22,12 +22,16 @@ import com.aliyuncs.hbase.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsResponse> {
+public class DeleteHbaseHaSlbRequest extends RpcAcsRequest<DeleteHbaseHaSlbResponse> {
 	   
 
-	private String clusterId;
-	public DescribeEndpointsRequest() {
-		super("HBase", "2019-01-01", "DescribeEndpoints", "hbase");
+	private String haId;
+
+	private String haTypes;
+
+	private String bdsId;
+	public DeleteHbaseHaSlbRequest() {
+		super("HBase", "2019-01-01", "DeleteHbaseHaSlb", "hbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +39,42 @@ public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsRes
 		} catch (Exception e) {}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getHaId() {
+		return this.haId;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setHaId(String haId) {
+		this.haId = haId;
+		if(haId != null){
+			putQueryParameter("HaId", haId);
+		}
+	}
+
+	public String getHaTypes() {
+		return this.haTypes;
+	}
+
+	public void setHaTypes(String haTypes) {
+		this.haTypes = haTypes;
+		if(haTypes != null){
+			putQueryParameter("HaTypes", haTypes);
+		}
+	}
+
+	public String getBdsId() {
+		return this.bdsId;
+	}
+
+	public void setBdsId(String bdsId) {
+		this.bdsId = bdsId;
+		if(bdsId != null){
+			putQueryParameter("BdsId", bdsId);
 		}
 	}
 
 	@Override
-	public Class<DescribeEndpointsResponse> getResponseClass() {
-		return DescribeEndpointsResponse.class;
+	public Class<DeleteHbaseHaSlbResponse> getResponseClass() {
+		return DeleteHbaseHaSlbResponse.class;
 	}
 
 }

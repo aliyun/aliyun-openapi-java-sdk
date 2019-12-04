@@ -79,6 +79,10 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private String coreDiskCount;
 
+	private String maintainStartTime;
+
+	private String maintainEndTime;
+
 	private List<Tag> tags;
 
 	public String getRequestId() {
@@ -295,6 +299,22 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public void setCoreDiskCount(String coreDiskCount) {
 		this.coreDiskCount = coreDiskCount;
+	}
+
+	public String getMaintainStartTime() {
+		return this.maintainStartTime;
+	}
+
+	public void setMaintainStartTime(String maintainStartTime) {
+		this.maintainStartTime = maintainStartTime;
+	}
+
+	public String getMaintainEndTime() {
+		return this.maintainEndTime;
+	}
+
+	public void setMaintainEndTime(String maintainEndTime) {
+		this.maintainEndTime = maintainEndTime;
 	}
 
 	public List<Tag> getTags() {

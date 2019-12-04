@@ -22,12 +22,16 @@ import com.aliyuncs.hbase.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsResponse> {
+public class ModifyInstanceMaintainTimeRequest extends RpcAcsRequest<ModifyInstanceMaintainTimeResponse> {
 	   
 
 	private String clusterId;
-	public DescribeEndpointsRequest() {
-		super("HBase", "2019-01-01", "DescribeEndpoints", "hbase");
+
+	private String maintainEndTime;
+
+	private String maintainStartTime;
+	public ModifyInstanceMaintainTimeRequest() {
+		super("HBase", "2019-01-01", "ModifyInstanceMaintainTime", "hbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -46,9 +50,31 @@ public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsRes
 		}
 	}
 
+	public String getMaintainEndTime() {
+		return this.maintainEndTime;
+	}
+
+	public void setMaintainEndTime(String maintainEndTime) {
+		this.maintainEndTime = maintainEndTime;
+		if(maintainEndTime != null){
+			putQueryParameter("MaintainEndTime", maintainEndTime);
+		}
+	}
+
+	public String getMaintainStartTime() {
+		return this.maintainStartTime;
+	}
+
+	public void setMaintainStartTime(String maintainStartTime) {
+		this.maintainStartTime = maintainStartTime;
+		if(maintainStartTime != null){
+			putQueryParameter("MaintainStartTime", maintainStartTime);
+		}
+	}
+
 	@Override
-	public Class<DescribeEndpointsResponse> getResponseClass() {
-		return DescribeEndpointsResponse.class;
+	public Class<ModifyInstanceMaintainTimeResponse> getResponseClass() {
+		return ModifyInstanceMaintainTimeResponse.class;
 	}
 
 }

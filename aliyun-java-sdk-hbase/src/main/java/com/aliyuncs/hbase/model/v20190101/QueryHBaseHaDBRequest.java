@@ -22,12 +22,12 @@ import com.aliyuncs.hbase.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsResponse> {
+public class QueryHBaseHaDBRequest extends RpcAcsRequest<QueryHBaseHaDBResponse> {
 	   
 
-	private String clusterId;
-	public DescribeEndpointsRequest() {
-		super("HBase", "2019-01-01", "DescribeEndpoints", "hbase");
+	private String bdsId;
+	public QueryHBaseHaDBRequest() {
+		super("HBase", "2019-01-01", "QueryHBaseHaDB", "hbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsRes
 		} catch (Exception e) {}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getBdsId() {
+		return this.bdsId;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setBdsId(String bdsId) {
+		this.bdsId = bdsId;
+		if(bdsId != null){
+			putQueryParameter("BdsId", bdsId);
 		}
 	}
 
 	@Override
-	public Class<DescribeEndpointsResponse> getResponseClass() {
-		return DescribeEndpointsResponse.class;
+	public Class<QueryHBaseHaDBResponse> getResponseClass() {
+		return QueryHBaseHaDBResponse.class;
 	}
 
 }

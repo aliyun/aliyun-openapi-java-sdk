@@ -16,6 +16,7 @@ package com.aliyuncs.hbase.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.hbase.Endpoint;
 
 /**
  * @author auto create
@@ -34,6 +35,10 @@ public class ModifyIpWhitelistRequest extends RpcAcsRequest<ModifyIpWhitelistRes
 	public ModifyIpWhitelistRequest() {
 		super("HBase", "2019-01-01", "ModifyIpWhitelist", "hbase");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getIpList() {

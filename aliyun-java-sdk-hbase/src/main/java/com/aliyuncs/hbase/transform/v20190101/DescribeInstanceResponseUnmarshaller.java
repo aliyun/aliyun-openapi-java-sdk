@@ -53,6 +53,8 @@ public class DescribeInstanceResponseUnmarshaller {
 		describeInstanceResponse.setColdStorageStatus(_ctx.stringValue("DescribeInstanceResponse.ColdStorageStatus"));
 		describeInstanceResponse.setBackupStatus(_ctx.stringValue("DescribeInstanceResponse.BackupStatus"));
 		describeInstanceResponse.setCoreDiskCount(_ctx.stringValue("DescribeInstanceResponse.CoreDiskCount"));
+		describeInstanceResponse.setMaintainStartTime(_ctx.stringValue("DescribeInstanceResponse.MaintainStartTime"));
+		describeInstanceResponse.setMaintainEndTime(_ctx.stringValue("DescribeInstanceResponse.MaintainEndTime"));
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Tags.Length"); i++) {

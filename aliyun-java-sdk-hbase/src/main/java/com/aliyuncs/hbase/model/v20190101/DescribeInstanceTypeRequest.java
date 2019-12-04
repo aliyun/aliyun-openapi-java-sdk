@@ -22,12 +22,12 @@ import com.aliyuncs.hbase.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsResponse> {
+public class DescribeInstanceTypeRequest extends RpcAcsRequest<DescribeInstanceTypeResponse> {
 	   
 
-	private String clusterId;
-	public DescribeEndpointsRequest() {
-		super("HBase", "2019-01-01", "DescribeEndpoints", "hbase");
+	private String instanceType;
+	public DescribeInstanceTypeRequest() {
+		super("HBase", "2019-01-01", "DescribeInstanceType", "hbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class DescribeEndpointsRequest extends RpcAcsRequest<DescribeEndpointsRes
 		} catch (Exception e) {}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getInstanceType() {
+		return this.instanceType;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 
 	@Override
-	public Class<DescribeEndpointsResponse> getResponseClass() {
-		return DescribeEndpointsResponse.class;
+	public Class<DescribeInstanceTypeResponse> getResponseClass() {
+		return DescribeInstanceTypeResponse.class;
 	}
 
 }
