@@ -22,16 +22,16 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DescribeClusterUserKubeconfigRequest extends RoaAcsRequest<DescribeClusterUserKubeconfigResponse> {
-	
+	   
+
+	private Boolean privateIpAddress;
+
+	private String clusterId;
 	public DescribeClusterUserKubeconfigRequest() {
 		super("CS", "2015-12-15", "DescribeClusterUserKubeconfig");
 		setUriPattern("/k8s/[ClusterId]/user_config");
 		setMethod(MethodType.GET);
 	}
-
-	private Boolean privateIpAddress;
-
-	private String clusterId;
 
 	public Boolean getPrivateIpAddress() {
 		return this.privateIpAddress;

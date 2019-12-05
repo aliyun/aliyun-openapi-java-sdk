@@ -22,14 +22,14 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ScaleClusterRequest extends RoaAcsRequest<ScaleClusterResponse> {
-	
+	   
+
+	private String clusterId;
 	public ScaleClusterRequest() {
 		super("CS", "2015-12-15", "ScaleCluster");
 		setUriPattern("/clusters/[ClusterId]");
 		setMethod(MethodType.PUT);
 	}
-
-	private String clusterId;
 
 	public String getClusterId() {
 		return this.clusterId;

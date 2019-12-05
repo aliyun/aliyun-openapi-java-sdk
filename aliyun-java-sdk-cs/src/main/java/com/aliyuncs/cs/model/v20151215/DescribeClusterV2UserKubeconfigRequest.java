@@ -21,15 +21,28 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ScaleOutClusterRequest extends RoaAcsRequest<ScaleOutClusterResponse> {
-	
-	public ScaleOutClusterRequest() {
-		super("CS", "2015-12-15", "ScaleOutCluster");
-		setUriPattern("/api/v2/clusters/[ClusterId]");
-		setMethod(MethodType.POST);
-	}
+public class DescribeClusterV2UserKubeconfigRequest extends RoaAcsRequest<DescribeClusterV2UserKubeconfigResponse> {
+	   
+
+	private Boolean privateIpAddress;
 
 	private String clusterId;
+	public DescribeClusterV2UserKubeconfigRequest() {
+		super("CS", "2015-12-15", "DescribeClusterV2UserKubeconfig");
+		setUriPattern("/api/v2/k8s/[ClusterId]/user_config");
+		setMethod(MethodType.GET);
+	}
+
+	public Boolean getPrivateIpAddress() {
+		return this.privateIpAddress;
+	}
+
+	public void setPrivateIpAddress(Boolean privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
+		if(privateIpAddress != null){
+			putQueryParameter("PrivateIpAddress", privateIpAddress.toString());
+		}
+	}
 
 	public String getClusterId() {
 		return this.clusterId;
@@ -43,8 +56,8 @@ public class ScaleOutClusterRequest extends RoaAcsRequest<ScaleOutClusterRespons
 	}
 
 	@Override
-	public Class<ScaleOutClusterResponse> getResponseClass() {
-		return ScaleOutClusterResponse.class;
+	public Class<DescribeClusterV2UserKubeconfigResponse> getResponseClass() {
+		return DescribeClusterV2UserKubeconfigResponse.class;
 	}
 
 }

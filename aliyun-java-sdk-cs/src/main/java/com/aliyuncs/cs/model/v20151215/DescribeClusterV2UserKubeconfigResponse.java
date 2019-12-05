@@ -15,17 +15,27 @@
 package com.aliyuncs.cs.model.v20151215;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cs.transform.v20151215.DownloadClusterNodeCertsResponseUnmarshaller;
+import com.aliyuncs.cs.transform.v20151215.DescribeClusterV2UserKubeconfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DownloadClusterNodeCertsResponse extends AcsResponse {
+public class DescribeClusterV2UserKubeconfigResponse extends AcsResponse {
+
+	private String requestId;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	@Override
-	public DownloadClusterNodeCertsResponse getInstance(UnmarshallerContext context) {
-		return	DownloadClusterNodeCertsResponseUnmarshaller.unmarshall(this, context);
+	public DescribeClusterV2UserKubeconfigResponse getInstance(UnmarshallerContext context) {
+		return	DescribeClusterV2UserKubeconfigResponseUnmarshaller.unmarshall(this, context);
 	}
 }

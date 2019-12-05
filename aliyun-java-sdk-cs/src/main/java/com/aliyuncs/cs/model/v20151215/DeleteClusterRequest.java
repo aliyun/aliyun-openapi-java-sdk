@@ -22,14 +22,14 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteClusterRequest extends RoaAcsRequest<DeleteClusterResponse> {
-	
+	   
+
+	private String clusterId;
 	public DeleteClusterRequest() {
 		super("CS", "2015-12-15", "DeleteCluster");
 		setUriPattern("/clusters/[ClusterId]");
 		setMethod(MethodType.DELETE);
 	}
-
-	private String clusterId;
 
 	public String getClusterId() {
 		return this.clusterId;

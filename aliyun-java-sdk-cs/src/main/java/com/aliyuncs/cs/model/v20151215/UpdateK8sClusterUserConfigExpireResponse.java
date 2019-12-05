@@ -15,27 +15,17 @@
 package com.aliyuncs.cs.model.v20151215;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cs.transform.v20151215.CreateClusterByResourcesGroupResponseUnmarshaller;
+import com.aliyuncs.cs.transform.v20151215.UpdateK8sClusterUserConfigExpireResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateClusterByResourcesGroupResponse extends AcsResponse {
-
-	private String requestId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+public class UpdateK8sClusterUserConfigExpireResponse extends AcsResponse {
 
 	@Override
-	public CreateClusterByResourcesGroupResponse getInstance(UnmarshallerContext context) {
-		return	CreateClusterByResourcesGroupResponseUnmarshaller.unmarshall(this, context);
+	public UpdateK8sClusterUserConfigExpireResponse getInstance(UnmarshallerContext context) {
+		return	UpdateK8sClusterUserConfigExpireResponseUnmarshaller.unmarshall(this, context);
 	}
 }

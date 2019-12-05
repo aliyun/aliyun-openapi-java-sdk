@@ -14,15 +14,16 @@
 
 package com.aliyuncs.cs.transform.v20151215;
 
-import com.aliyuncs.cs.model.v20151215.DescribeClusterDetailResponse;
+import com.aliyuncs.cs.model.v20151215.DescribeClusterV2UserKubeconfigResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DescribeClusterDetailResponseUnmarshaller {
+public class DescribeClusterV2UserKubeconfigResponseUnmarshaller {
 
-	public static DescribeClusterDetailResponse unmarshall(DescribeClusterDetailResponse describeClusterDetailResponse, UnmarshallerContext context) {
+	public static DescribeClusterV2UserKubeconfigResponse unmarshall(DescribeClusterV2UserKubeconfigResponse describeClusterV2UserKubeconfigResponse, UnmarshallerContext _ctx) {
 		
+		describeClusterV2UserKubeconfigResponse.setRequestId(_ctx.stringValue("DescribeClusterV2UserKubeconfigResponse.RequestId"));
 	 
-	 	return describeClusterDetailResponse;
+	 	return describeClusterV2UserKubeconfigResponse;
 	}
 }

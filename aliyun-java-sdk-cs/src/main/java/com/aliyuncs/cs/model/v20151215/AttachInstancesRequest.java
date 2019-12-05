@@ -22,14 +22,14 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesResponse> {
-	
+	   
+
+	private String clusterId;
 	public AttachInstancesRequest() {
 		super("CS", "2015-12-15", "AttachInstances");
 		setUriPattern("/clusters/[ClusterId]/attach");
 		setMethod(MethodType.POST);
 	}
-
-	private String clusterId;
 
 	public String getClusterId() {
 		return this.clusterId;

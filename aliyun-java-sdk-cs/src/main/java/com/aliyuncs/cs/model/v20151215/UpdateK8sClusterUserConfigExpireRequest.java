@@ -21,17 +21,15 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeEdgeClusterAttachScriptsRequest extends RoaAcsRequest<DescribeEdgeClusterAttachScriptsResponse> {
-	
-	public DescribeEdgeClusterAttachScriptsRequest() {
-		super("CS", "2015-12-15", "DescribeEdgeClusterAttachScripts");
-		setUriPattern("/clusters/[ClusterId]/attachscript");
-		setMethod(MethodType.GET);
-	}
+public class UpdateK8sClusterUserConfigExpireRequest extends RoaAcsRequest<UpdateK8sClusterUserConfigExpireResponse> {
+	   
 
 	private String clusterId;
-
-	private String namePrefix;
+	public UpdateK8sClusterUserConfigExpireRequest() {
+		super("CS", "2015-12-15", "UpdateK8sClusterUserConfigExpire");
+		setUriPattern("/k8s/[ClusterId]/user_config/expire");
+		setMethod(MethodType.POST);
+	}
 
 	public String getClusterId() {
 		return this.clusterId;
@@ -44,20 +42,9 @@ public class DescribeEdgeClusterAttachScriptsRequest extends RoaAcsRequest<Descr
 		}
 	}
 
-	public String getNamePrefix() {
-		return this.namePrefix;
-	}
-
-	public void setNamePrefix(String namePrefix) {
-		this.namePrefix = namePrefix;
-		if(namePrefix != null){
-			putQueryParameter("NamePrefix", namePrefix);
-		}
-	}
-
 	@Override
-	public Class<DescribeEdgeClusterAttachScriptsResponse> getResponseClass() {
-		return DescribeEdgeClusterAttachScriptsResponse.class;
+	public Class<UpdateK8sClusterUserConfigExpireResponse> getResponseClass() {
+		return UpdateK8sClusterUserConfigExpireResponse.class;
 	}
 
 }

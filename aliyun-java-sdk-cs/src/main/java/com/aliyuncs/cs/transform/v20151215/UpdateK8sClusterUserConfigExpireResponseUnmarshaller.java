@@ -12,20 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cs.model.v20151215;
+package com.aliyuncs.cs.transform.v20151215;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cs.transform.v20151215.DescribeClusterLogsResponseUnmarshaller;
+import com.aliyuncs.cs.model.v20151215.UpdateK8sClusterUserConfigExpireResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class DescribeClusterLogsResponse extends AcsResponse {
 
-	@Override
-	public DescribeClusterLogsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeClusterLogsResponseUnmarshaller.unmarshall(this, context);
+public class UpdateK8sClusterUserConfigExpireResponseUnmarshaller {
+
+	public static UpdateK8sClusterUserConfigExpireResponse unmarshall(UpdateK8sClusterUserConfigExpireResponse updateK8sClusterUserConfigExpireResponse, UnmarshallerContext _ctx) {
+		
+	 
+	 	return updateK8sClusterUserConfigExpireResponse;
 	}
 }

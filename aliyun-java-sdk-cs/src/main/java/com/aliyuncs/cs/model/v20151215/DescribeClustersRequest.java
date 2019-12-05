@@ -22,16 +22,16 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DescribeClustersRequest extends RoaAcsRequest<DescribeClustersResponse> {
-	
+	   
+
+	private String clusterType;
+
+	private String name;
 	public DescribeClustersRequest() {
 		super("CS", "2015-12-15", "DescribeClusters");
 		setUriPattern("/clusters");
 		setMethod(MethodType.GET);
 	}
-
-	private String clusterType;
-
-	private String name;
 
 	public String getClusterType() {
 		return this.clusterType;
