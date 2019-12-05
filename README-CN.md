@@ -32,7 +32,7 @@
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
-    <version>[4.3.2,5.0.0)</version>
+    <version>[4.4.9,5.0.0)</version>
 </dependency>
 <dependency>
     <groupId>com.aliyun</groupId>
