@@ -40,6 +40,8 @@ public class ExecContainerCommandRequest extends RpcAcsRequest<ExecContainerComm
 
 	private String command;
 
+	private Boolean tty;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -114,6 +116,17 @@ public class ExecContainerCommandRequest extends RpcAcsRequest<ExecContainerComm
 		this.command = command;
 		if(command != null){
 			putQueryParameter("Command", command);
+		}
+	}
+
+	public Boolean getTTY() {
+		return this.tty;
+	}
+
+	public void setTTY(Boolean tty) {
+		this.tty = tty;
+		if(tty != null){
+			putQueryParameter("TTY", tty);
 		}
 	}
 
