@@ -27,6 +27,7 @@ public class DescribeParameterGroupsResponseUnmarshaller {
 	public static DescribeParameterGroupsResponse unmarshall(DescribeParameterGroupsResponse describeParameterGroupsResponse, UnmarshallerContext _ctx) {
 		
 		describeParameterGroupsResponse.setRequestId(_ctx.stringValue("DescribeParameterGroupsResponse.RequestId"));
+		describeParameterGroupsResponse.setSignalForOptimizeParams(_ctx.booleanValue("DescribeParameterGroupsResponse.SignalForOptimizeParams"));
 
 		List<ParameterGroup> parameterGroups = new ArrayList<ParameterGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParameterGroupsResponse.ParameterGroups.Length"); i++) {

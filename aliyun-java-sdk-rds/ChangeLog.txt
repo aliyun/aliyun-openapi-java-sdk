@@ -1,3 +1,6 @@
+2019-12-05 Version: 2.1.1
+- Generated 2014-08-15 for `Rds`.
+
 2019-12-04 Version: 2.3.11
 - Supported ModifyDBInstanceSpec for Direction param.
 

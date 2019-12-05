@@ -27,6 +27,8 @@ public class DescribeParameterGroupsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean signalForOptimizeParams;
+
 	private List<ParameterGroup> parameterGroups;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class DescribeParameterGroupsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSignalForOptimizeParams() {
+		return this.signalForOptimizeParams;
+	}
+
+	public void setSignalForOptimizeParams(Boolean signalForOptimizeParams) {
+		this.signalForOptimizeParams = signalForOptimizeParams;
 	}
 
 	public List<ParameterGroup> getParameterGroups() {
