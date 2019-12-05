@@ -38,7 +38,7 @@ public class QueryDiscountListResponseUnmarshaller {
 			dataItem.setPlanID(_ctx.stringValue("QueryDiscountListResponse.Data["+ i +"].PlanID"));
 			dataItem.setGmtCreate(_ctx.stringValue("QueryDiscountListResponse.Data["+ i +"].GmtCreate"));
 			dataItem.setGmtCreateValue(_ctx.longValue("QueryDiscountListResponse.Data["+ i +"].GmtCreateValue"));
-			dataItem.setDiscountType(_ctx.integerValue("QueryDiscountListResponse.Data["+ i +"].DiscountType"));
+			dataItem.setDiscountType(_ctx.stringValue("QueryDiscountListResponse.Data["+ i +"].DiscountType"));
 			dataItem.setDiscountConfig(_ctx.stringValue("QueryDiscountListResponse.Data["+ i +"].DiscountConfig"));
 			dataItem.setPayType(_ctx.integerValue("QueryDiscountListResponse.Data["+ i +"].PayType"));
 			dataItem.setPayAmount(_ctx.stringValue("QueryDiscountListResponse.Data["+ i +"].PayAmount"));

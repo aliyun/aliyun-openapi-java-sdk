@@ -93,7 +93,7 @@ public class QueryDiscountListResponse extends AcsResponse {
 
 		private Long gmtCreateValue;
 
-		private Integer discountType;
+		private String discountType;
 
 		private String discountConfig;
 
@@ -141,11 +141,11 @@ public class QueryDiscountListResponse extends AcsResponse {
 			this.gmtCreateValue = gmtCreateValue;
 		}
 
-		public Integer getDiscountType() {
+		public String getDiscountType() {
 			return this.discountType;
 		}
 
-		public void setDiscountType(Integer discountType) {
+		public void setDiscountType(String discountType) {
 			this.discountType = discountType;
 		}
 

@@ -1,3 +1,6 @@
+2019-12-05 Version: 1.0.4
+- Generated 2018-06-19 for `openanalytics-open`.
+
 2019-12-04 Version: 1.0.3
 - Generated 2018-06-19 for `openanalytics-open`.
 
