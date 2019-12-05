@@ -15,8 +15,13 @@
 package com.aliyuncs.eci.model.v20180808;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.eci.model.v20180808.CreateContainerGroupRequest.Container;
+import com.aliyuncs.eci.model.v20180808.CreateContainerGroupRequest.DnsConfig;
+import com.aliyuncs.eci.model.v20180808.CreateContainerGroupRequest.ImageRegistryCredential;
+import com.aliyuncs.eci.model.v20180808.CreateContainerGroupRequest.Tag;
+import com.aliyuncs.eci.model.v20180808.CreateContainerGroupRequest.Volume;
+
 import java.util.List;
-import com.aliyuncs.eci.model.v20180808.CreateContainerGroupRequest.*;
 
 /**
  * @author lm
@@ -66,6 +71,10 @@ public class UpdateContainerGroupRequest extends RpcAcsRequest<UpdateContainerGr
 				putQueryParameter("Container." + (depth1 + 1) + ".Memory" , containers.get(depth1).getMemory());
 				putQueryParameter("Container." + (depth1 + 1) + ".WorkingDir" , containers.get(depth1).getWorkingDir());
 				putQueryParameter("Container." + (depth1 + 1) + ".ImagePullPolicy" , containers.get(depth1).getImagePullPolicy());
+				putQueryParameter("Container." + (depth1 + 1) + ".Stdin", containers.get(depth1).getStdin());
+				putQueryParameter("Container." + (depth1 + 1) + ".StdinOnce" , containers.get(depth1).getStdinOnce());
+				putQueryParameter("Container." + (depth1 + 1) + ".Tty" , containers.get(depth1).getTty());
+				putQueryParameter("Container." + (depth1 + 1) + ".Gpu" , containers.get(depth1).getGpu());
 
 				if (containers.get(depth1).getCommands() != null) {
 					for (int i = 0; i < containers.get(depth1).getCommands().size(); i++) {

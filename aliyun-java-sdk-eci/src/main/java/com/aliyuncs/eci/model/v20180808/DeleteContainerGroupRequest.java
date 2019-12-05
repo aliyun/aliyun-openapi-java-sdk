@@ -36,6 +36,8 @@ public class DeleteContainerGroupRequest extends RpcAcsRequest<DeleteContainerGr
 
 	private Long ownerId;
 
+	private String clientToken;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -88,6 +90,17 @@ public class DeleteContainerGroupRequest extends RpcAcsRequest<DeleteContainerGr
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getClientToken() { 
+		return this.clientToken; 
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

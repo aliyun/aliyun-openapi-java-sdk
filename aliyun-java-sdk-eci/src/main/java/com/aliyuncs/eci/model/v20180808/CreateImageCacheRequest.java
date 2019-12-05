@@ -15,15 +15,15 @@
 package com.aliyuncs.eci.model.v20180808;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
+
+import java.util.List;
 
 /**
  * @author auto create
- * @version 
  */
 public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheResponse> {
-	   
+
 
 	private Long resourceOwnerId;
 
@@ -36,6 +36,8 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 	private String resourceGroupId;
 
 	private Integer imageCacheSize;
+
+	private Integer retentionDays;
 
 	private List<ImageRegistryCredential> imageRegistryCredentials;
 
@@ -64,7 +66,7 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
+		if (resourceOwnerId != null) {
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
@@ -75,7 +77,7 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
-		if(clientToken != null){
+		if (clientToken != null) {
 			putQueryParameter("ClientToken", clientToken);
 		}
 	}
@@ -86,7 +88,7 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 
 	public void setSecurityGroupId(String securityGroupId) {
 		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
+		if (securityGroupId != null) {
 			putQueryParameter("SecurityGroupId", securityGroupId);
 		}
 	}
@@ -97,7 +99,7 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 
 	public void setImageCacheName(String imageCacheName) {
 		this.imageCacheName = imageCacheName;
-		if(imageCacheName != null){
+		if (imageCacheName != null) {
 			putQueryParameter("ImageCacheName", imageCacheName);
 		}
 	}
@@ -108,8 +110,19 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 
 	public void setResourceGroupId(String resourceGroupId) {
 		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
+		if (resourceGroupId != null) {
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Integer getRetentionDays() {
+		return this.retentionDays;
+	}
+
+	public void setRetentionDays(Integer retentionDays) {
+		this.retentionDays = retentionDays;
+		if (retentionDays != null) {
+			putQueryParameter("RetentionDays", retentionDays.toString());
 		}
 	}
 
@@ -119,24 +132,25 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 
 	public void setImageCacheSize(Integer imageCacheSize) {
 		this.imageCacheSize = imageCacheSize;
-		if(imageCacheSize != null){
+		if (imageCacheSize != null) {
 			putQueryParameter("ImageCacheSize", imageCacheSize.toString());
 		}
-	}	public List<ImageRegistryCredential> getImageRegistryCredentials() {
+	}
+
+	public List<ImageRegistryCredential> getImageRegistryCredentials() {
 		return this.imageRegistryCredentials;
 	}
 
 	public void setImageRegistryCredentials(List<ImageRegistryCredential> imageRegistryCredentials) {
-		this.imageRegistryCredentials = imageRegistryCredentials;	
+		this.imageRegistryCredentials = imageRegistryCredentials;
 		if (imageRegistryCredentials != null) {
 			for (int depth1 = 0; depth1 < imageRegistryCredentials.size(); depth1++) {
-				putQueryParameter("ImageRegistryCredential." + (depth1 + 1) + ".Server" , imageRegistryCredentials.get(depth1).getServer());
-				putQueryParameter("ImageRegistryCredential." + (depth1 + 1) + ".UserName" , imageRegistryCredentials.get(depth1).getUserName());
-				putQueryParameter("ImageRegistryCredential." + (depth1 + 1) + ".Password" , imageRegistryCredentials.get(depth1).getPassword());
+				putQueryParameter("ImageRegistryCredential." + (depth1 + 1) + ".Server", imageRegistryCredentials.get(depth1).getServer());
+				putQueryParameter("ImageRegistryCredential." + (depth1 + 1) + ".UserName", imageRegistryCredentials.get(depth1).getUserName());
+				putQueryParameter("ImageRegistryCredential." + (depth1 + 1) + ".Password", imageRegistryCredentials.get(depth1).getPassword());
 			}
-		}	
+		}
 	}
-
 
 
 	public String getEipInstanceId() {
@@ -145,22 +159,23 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 
 	public void setEipInstanceId(String eipInstanceId) {
 		this.eipInstanceId = eipInstanceId;
-		if(eipInstanceId != null){
+		if (eipInstanceId != null) {
 			putQueryParameter("EipInstanceId", eipInstanceId);
 		}
-	}	public List<String> getImages() {
+	}
+
+	public List<String> getImages() {
 		return this.images;
 	}
 
 	public void setImages(List<String> images) {
-		this.images = images;	
+		this.images = images;
 		if (images != null) {
 			for (int i = 0; i < images.size(); i++) {
-				putQueryParameter("Image." + (i + 1) , images.get(i));
+				putQueryParameter("Image." + (i + 1), images.get(i));
 			}
-		}	
+		}
 	}
-
 
 
 	public String getResourceOwnerAccount() {
@@ -169,7 +184,7 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
+		if (resourceOwnerAccount != null) {
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
@@ -180,7 +195,7 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
+		if (ownerAccount != null) {
 			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
@@ -191,7 +206,7 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		if(ownerId != null){
+		if (ownerId != null) {
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
@@ -202,7 +217,7 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 
 	public void setVSwitchId(String vSwitchId) {
 		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
+		if (vSwitchId != null) {
 			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
@@ -213,7 +228,7 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 
 	public void setZoneId(String zoneId) {
 		this.zoneId = zoneId;
-		if(zoneId != null){
+		if (zoneId != null) {
 			putQueryParameter("ZoneId", zoneId);
 		}
 	}

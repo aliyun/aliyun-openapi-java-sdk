@@ -15,11 +15,12 @@
 package com.aliyuncs.eci.model.v20180808;
 
 import com.aliyuncs.RpcAcsRequest;
+
 import java.util.List;
 
 /**
  * @author liumi
- * @version 1.0.10
+ * @version 1.0.8
  */
 public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGroupResponse> {
 
@@ -75,6 +76,18 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	private Boolean autoMatchImageCache;
 
+	private String resourceGroupId;
+
+	private String instanceType;
+
+	private List<SecurityContextSysctl> securityContextSysctls;
+
+	private String ramRoleName;
+
+	private List<String> ntpServers;
+
+	private Long terminationGracePeriodSeconds;
+
 
 	public Float getCpu() {
 		return cpu;
@@ -104,105 +117,171 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 	}
 
 	public void setContainers(List<Container> containers) {
-        this.containers = containers;
+		this.containers = containers;
 		if (containers != null) {
 			for (int depth1 = 0; depth1 < containers.size(); depth1++) {
-				putQueryParameter("Container." + (depth1 + 1) + ".Image" , containers.get(depth1).getImage());
-				putQueryParameter("Container." + (depth1 + 1) + ".Name" , containers.get(depth1).getName());
-				putQueryParameter("Container." + (depth1 + 1) + ".Cpu" , containers.get(depth1).getCpu());
-				putQueryParameter("Container." + (depth1 + 1) + ".Memory" , containers.get(depth1).getMemory());
-				putQueryParameter("Container." + (depth1 + 1) + ".WorkingDir" , containers.get(depth1).getWorkingDir());
-				putQueryParameter("Container." + (depth1 + 1) + ".ImagePullPolicy" , containers.get(depth1).getImagePullPolicy());
+				putQueryParameter("Container." + (depth1 + 1) + ".Image", containers.get(depth1).getImage());
+				putQueryParameter("Container." + (depth1 + 1) + ".Name", containers.get(depth1).getName());
+				putQueryParameter("Container." + (depth1 + 1) + ".Cpu", containers.get(depth1).getCpu());
+				putQueryParameter("Container." + (depth1 + 1) + ".Memory", containers.get(depth1).getMemory());
+				putQueryParameter("Container." + (depth1 + 1) + ".WorkingDir", containers.get(depth1).getWorkingDir());
+				putQueryParameter("Container." + (depth1 + 1) + ".ImagePullPolicy", containers.get(depth1).getImagePullPolicy());
+				putQueryParameter("Container." + (depth1 + 1) + ".Stdin", containers.get(depth1).getStdin());
+				putQueryParameter("Container." + (depth1 + 1) + ".StdinOnce", containers.get(depth1).getStdinOnce());
+				putQueryParameter("Container." + (depth1 + 1) + ".Tty", containers.get(depth1).getTty());
+				putQueryParameter("Container." + (depth1 + 1) + ".Gpu", containers.get(depth1).getGpu());
 
 				if (containers.get(depth1).getCommands() != null) {
 					for (int i = 0; i < containers.get(depth1).getCommands().size(); i++) {
-						putQueryParameter("Container." + (depth1 + 1) + ".Command." + (i + 1) , containers.get(depth1).getCommands().get(i));
+						putQueryParameter("Container." + (depth1 + 1) + ".Command." + (i + 1), containers.get(depth1).getCommands().get(i));
 					}
 				}
 				if (containers.get(depth1).getArgs() != null) {
 					for (int i = 0; i < containers.get(depth1).getArgs().size(); i++) {
-						putQueryParameter("Container." + (depth1 + 1) + ".Arg." + (i + 1) , containers.get(depth1).getArgs().get(i));
+						putQueryParameter("Container." + (depth1 + 1) + ".Arg." + (i + 1), containers.get(depth1).getArgs().get(i));
 					}
 				}
 				if (containers.get(depth1).getVolumeMounts() != null) {
 					for (int depth2 = 0; depth2 < containers.get(depth1).getVolumeMounts().size(); depth2++) {
-						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".MountPath" , containers.get(depth1).getVolumeMounts().get(depth2).getMountPath());
-						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".ReadOnly" , containers.get(depth1).getVolumeMounts().get(depth2).getReadOnly());
-						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".Name" , containers.get(depth1).getVolumeMounts().get(depth2).getName());
+						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".MountPath", containers.get(depth1).getVolumeMounts().get(depth2).getMountPath());
+						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".ReadOnly", containers.get(depth1).getVolumeMounts().get(depth2).getReadOnly());
+						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".Name", containers.get(depth1).getVolumeMounts().get(depth2).getName());
 					}
 				}
 				if (containers.get(depth1).getPorts() != null) {
 					for (int depth2 = 0; depth2 < containers.get(depth1).getPorts().size(); depth2++) {
-						putQueryParameter("Container." + (depth1 + 1) + ".Port." + (depth2 + 1) + ".Protocol" , containers.get(depth1).getPorts().get(depth2).getProtocol());
-						putQueryParameter("Container." + (depth1 + 1) + ".Port." + (depth2 + 1) + ".Port" , containers.get(depth1).getPorts().get(depth2).getPort());
+						putQueryParameter("Container." + (depth1 + 1) + ".Port." + (depth2 + 1) + ".Protocol", containers.get(depth1).getPorts().get(depth2).getProtocol());
+						putQueryParameter("Container." + (depth1 + 1) + ".Port." + (depth2 + 1) + ".Port", containers.get(depth1).getPorts().get(depth2).getPort());
 					}
 				}
 				if (containers.get(depth1).getEnvironmentVars() != null) {
 					for (int depth2 = 0; depth2 < containers.get(depth1).getEnvironmentVars().size(); depth2++) {
-						putQueryParameter("Container." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".Key" , containers.get(depth1).getEnvironmentVars().get(depth2).getKey());
-						putQueryParameter("Container." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".Value" , containers.get(depth1).getEnvironmentVars().get(depth2).getValue());
-						putQueryParameter("Container." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".FieldRef.FieldPath" , containers.get(depth1).getEnvironmentVars().get(depth2).getFieldRefFieldPath());
+						putQueryParameter("Container." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".Key", containers.get(depth1).getEnvironmentVars().get(depth2).getKey());
+						putQueryParameter("Container." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".Value", containers.get(depth1).getEnvironmentVars().get(depth2).getValue());
+						putQueryParameter("Container." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".FieldRef.FieldPath", containers.get(depth1).getEnvironmentVars().get(depth2).getFieldRefFieldPath());
 					}
 				}
 
-				if(containers.get(depth1).getReadinessProbe() != null){
-					if(containers.get(depth1).getReadinessProbe().getExec() != null){
+				if (containers.get(depth1).getReadinessProbe() != null) {
+					if (containers.get(depth1).getReadinessProbe().getExec() != null) {
 						for (int i = 0; i < containers.get(depth1).getReadinessProbe().getExec().size(); i++) {
-							putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.Exec.Command." + (i + 1) , containers.get(depth1).getReadinessProbe().getExec().get(i));
+							putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.Exec.Command." + (i + 1), containers.get(depth1).getReadinessProbe().getExec().get(i));
 						}
 					}
-					if(containers.get(depth1).getReadinessProbe().getHttpGet() != null){
-						putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.HttpGet.Path" , containers.get(depth1).getReadinessProbe().getHttpGet().getPath());
-						putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.HttpGet.Port" , containers.get(depth1).getReadinessProbe().getHttpGet().getPort());
-						putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.HttpGet.Scheme" , containers.get(depth1).getReadinessProbe().getHttpGet().getScheme());
+					if (containers.get(depth1).getReadinessProbe().getHttpGet() != null) {
+						putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.HttpGet.Path", containers.get(depth1).getReadinessProbe().getHttpGet().getPath());
+						putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.HttpGet.Port", containers.get(depth1).getReadinessProbe().getHttpGet().getPort());
+						putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.HttpGet.Scheme", containers.get(depth1).getReadinessProbe().getHttpGet().getScheme());
 					}
-					if(containers.get(depth1).getReadinessProbe().getTcpSocketPort() != null){
-						putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.TcpSocket.Port" , containers.get(depth1).getReadinessProbe().getTcpSocketPort());
+					if (containers.get(depth1).getReadinessProbe().getTcpSocketPort() != null) {
+						putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.TcpSocket.Port", containers.get(depth1).getReadinessProbe().getTcpSocketPort());
 					}
 
-					putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.InitialDelaySeconds" , containers.get(depth1).getReadinessProbe().getInitialDelaySeconds());
-					putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.PeriodSeconds" , containers.get(depth1).getReadinessProbe().getPeriodSeconds());
-					putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.SuccessThreshold" , containers.get(depth1).getReadinessProbe().getSuccessThreshold());
-					putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.FailureThreshold" , containers.get(depth1).getReadinessProbe().getFailureThreshold());
-					putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.TimeoutSeconds" , containers.get(depth1).getReadinessProbe().getTimeoutSeconds());
+					putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.InitialDelaySeconds", containers.get(depth1).getReadinessProbe().getInitialDelaySeconds());
+					putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.PeriodSeconds", containers.get(depth1).getReadinessProbe().getPeriodSeconds());
+					putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.SuccessThreshold", containers.get(depth1).getReadinessProbe().getSuccessThreshold());
+					putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.FailureThreshold", containers.get(depth1).getReadinessProbe().getFailureThreshold());
+					putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.TimeoutSeconds", containers.get(depth1).getReadinessProbe().getTimeoutSeconds());
 				}
 
-				if(containers.get(depth1).getLivenessProbe() != null){
-					if(containers.get(depth1).getLivenessProbe().getExec() != null){
+				if (containers.get(depth1).getLivenessProbe() != null) {
+					if (containers.get(depth1).getLivenessProbe().getExec() != null) {
 						for (int i = 0; i < containers.get(depth1).getLivenessProbe().getExec().size(); i++) {
-							putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.Exec.Command." + (i + 1) , containers.get(depth1).getLivenessProbe().getExec().get(i));
+							putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.Exec.Command." + (i + 1), containers.get(depth1).getLivenessProbe().getExec().get(i));
 						}
 					}
-					if(containers.get(depth1).getLivenessProbe().getHttpGet() != null){
-						putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.HttpGet.Path" , containers.get(depth1).getLivenessProbe().getHttpGet().getPath());
-						putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.HttpGet.Port" , containers.get(depth1).getLivenessProbe().getHttpGet().getPort());
-						putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.HttpGet.Scheme" , containers.get(depth1).getLivenessProbe().getHttpGet().getScheme());
+					if (containers.get(depth1).getLivenessProbe().getHttpGet() != null) {
+						putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.HttpGet.Path", containers.get(depth1).getLivenessProbe().getHttpGet().getPath());
+						putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.HttpGet.Port", containers.get(depth1).getLivenessProbe().getHttpGet().getPort());
+						putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.HttpGet.Scheme", containers.get(depth1).getLivenessProbe().getHttpGet().getScheme());
 					}
-					if(containers.get(depth1).getLivenessProbe().getTcpSocketPort() != null){
-						putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.TcpSocket.Port" , containers.get(depth1).getLivenessProbe().getTcpSocketPort());
+					if (containers.get(depth1).getLivenessProbe().getTcpSocketPort() != null) {
+						putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.TcpSocket.Port", containers.get(depth1).getLivenessProbe().getTcpSocketPort());
 					}
 
-					putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.InitialDelaySeconds" , containers.get(depth1).getLivenessProbe().getInitialDelaySeconds());
-					putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.PeriodSeconds" , containers.get(depth1).getLivenessProbe().getPeriodSeconds());
-					putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.SuccessThreshold" , containers.get(depth1).getLivenessProbe().getSuccessThreshold());
-					putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.FailureThreshold" , containers.get(depth1).getLivenessProbe().getFailureThreshold());
-					putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.TimeoutSeconds" , containers.get(depth1).getLivenessProbe().getTimeoutSeconds());
+					putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.InitialDelaySeconds", containers.get(depth1).getLivenessProbe().getInitialDelaySeconds());
+					putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.PeriodSeconds", containers.get(depth1).getLivenessProbe().getPeriodSeconds());
+					putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.SuccessThreshold", containers.get(depth1).getLivenessProbe().getSuccessThreshold());
+					putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.FailureThreshold", containers.get(depth1).getLivenessProbe().getFailureThreshold());
+					putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.TimeoutSeconds", containers.get(depth1).getLivenessProbe().getTimeoutSeconds());
 				}
 
-				if(containers.get(depth1).getSecurityContext() != null){
+				if (containers.get(depth1).getSecurityContext() != null) {
 					if (containers.get(depth1).getSecurityContext().getCapability() != null) {
-						if(containers.get(depth1).getSecurityContext().getCapability().getAdds() != null){
+						if (containers.get(depth1).getSecurityContext().getCapability().getAdds() != null) {
 							for (int i = 0; i < containers.get(depth1).getSecurityContext().getCapability().getAdds().size(); i++) {
-								putQueryParameter("Container." + (depth1 + 1) + ".SecurityContext.Capability.Add." + (i + 1) , containers.get(depth1).getSecurityContext().getCapability().getAdds().get(i));
+								putQueryParameter("Container." + (depth1 + 1) + ".SecurityContext.Capability.Add." + (i + 1), containers.get(depth1).getSecurityContext().getCapability().getAdds().get(i));
 							}
 						}
 
 					}
-					putQueryParameter("Container." + (depth1 + 1) + ".SecurityContext.ReadOnlyRootFilesystem" , containers.get(depth1).getSecurityContext().getReadOnlyRootFilesystem());
-					putQueryParameter("Container." + (depth1 + 1) + ".SecurityContext.RunAsUser" , containers.get(depth1).getSecurityContext().getRunAsUser());
+					putQueryParameter("Container." + (depth1 + 1) + ".SecurityContext.ReadOnlyRootFilesystem", containers.get(depth1).getSecurityContext().getReadOnlyRootFilesystem());
+					putQueryParameter("Container." + (depth1 + 1) + ".SecurityContext.RunAsUser", containers.get(depth1).getSecurityContext().getRunAsUser());
+				}
+
+
+				if (containers.get(depth1).getLifecyclePostStartHandlerHttpGetHost() != null) {
+					putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePostStartHandlerHttpGetHost", containers.get(depth1).getLifecyclePostStartHandlerHttpGetHost());
+				}
+				if (containers.get(depth1).getLifecyclePostStartHandlerHttpGetPort() != null) {
+					putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePostStartHandlerHttpGetPort", containers.get(depth1).getLifecyclePostStartHandlerHttpGetPort());
+				}
+				if (containers.get(depth1).getLifecyclePostStartHandlerHttpGetPath() != null) {
+					putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePostStartHandlerHttpGetPath", containers.get(depth1).getLifecyclePostStartHandlerHttpGetPath());
+				}
+				if (containers.get(depth1).getLifecyclePostStartHandlerHttpGetScheme() != null) {
+					putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePostStartHandlerHttpGetScheme", containers.get(depth1).getLifecyclePostStartHandlerHttpGetScheme());
+				}
+				if (containers.get(depth1).getLifecyclePostStartHandlerTcpSocketHost() != null) {
+					putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePostStartHandlerTcpSocketHost", containers.get(depth1).getLifecyclePostStartHandlerTcpSocketHost());
+				}
+				if (containers.get(depth1).getLifecyclePostStartHandlerTcpSocketPort() != null) {
+					putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePostStartHandlerTcpSocketPort", containers.get(depth1).getLifecyclePostStartHandlerTcpSocketPort());
+				}
+				if (containers.get(depth1).getLifecyclePreStopHandlerHttpGetHost() != null) {
+					putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePreStopHandlerHttpGetHost", containers.get(depth1).getLifecyclePreStopHandlerHttpGetHost());
+				}
+				if (containers.get(depth1).getLifecyclePreStopHandlerHttpGetPort() != null) {
+					putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePreStopHandlerHttpGetPort", containers.get(depth1).getLifecyclePreStopHandlerHttpGetPort());
+				}
+				if (containers.get(depth1).getLifecyclePreStopHandlerHttpGetPath() != null) {
+					putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePreStopHandlerHttpGetPath", containers.get(depth1).getLifecyclePreStopHandlerHttpGetPath());
+				}
+				if (containers.get(depth1).getLifecyclePreStopHandlerHttpGetScheme() != null) {
+					putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePreStopHandlerHttpGetScheme", containers.get(depth1).getLifecyclePreStopHandlerHttpGetScheme());
+				}
+				if (containers.get(depth1).getLifecyclePreStopHandlerTcpSocketHost() != null) {
+					putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePreStopHandlerTcpSocketHost", containers.get(depth1).getLifecyclePreStopHandlerTcpSocketHost());
+				}
+				if (containers.get(depth1).getLifecyclePreStopHandlerTcpSocketPort() != null) {
+					putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePreStopHandlerTcpSocketPort", containers.get(depth1).getLifecyclePreStopHandlerTcpSocketPort());
+				}
+				if (containers.get(depth1).getLifecyclePreStopHandlerExecs() != null) {
+					for (int i = 0; i < containers.get(depth1).getLifecyclePreStopHandlerExecs().size(); i++) {
+						putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePreStopHandlerExec." + (i + 1), containers.get(depth1).getLifecyclePreStopHandlerExecs().get(i));
+					}
+				}
+				if (containers.get(depth1).getLifecyclePostStartHandlerExecs() != null) {
+					for (int i = 0; i < containers.get(depth1).getLifecyclePostStartHandlerExecs().size(); i++) {
+						putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePostStartHandlerExec." + (i + 1), containers.get(depth1).getLifecyclePostStartHandlerExecs().get(i));
+					}
+					if (containers.get(depth1).getLifecyclePostStartHandlerHttpGetHttpHeaders() != null) {
+						for (int i = 0; i < containers.get(depth1).getLifecyclePostStartHandlerHttpGetHttpHeaders().size(); i++) {
+							putQueryParameter("Container." + (depth1 + 1) + ".LifecyclepostStartHandlerHttpGetHttpHead." + (i + 1) + ".Name", containers.get(depth1).getLifecyclePostStartHandlerHttpGetHttpHeaders().get(i).getName());
+							putQueryParameter("Container." + (depth1 + 1) + ".LifecyclepostStartHandlerHttpGetHttpHead." + (i + 1) + ".Value", containers.get(depth1).getLifecyclePostStartHandlerHttpGetHttpHeaders().get(i).getValue());
+
+						}
+					}
+					if (containers.get(depth1).getLifecyclePreStopHandlerHttpGetHttpHeaders() != null) {
+						for (int i = 0; i < containers.get(depth1).getLifecyclePreStopHandlerHttpGetHttpHeaders().size(); i++) {
+							putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePreStopHandlerHttpGetHttpHeader." + (i + 1) + ".Name", containers.get(depth1).getLifecyclePreStopHandlerHttpGetHttpHeaders().get(i).getName());
+							putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePreStopHandlerHttpGetHttpHeader." + (i + 1) + ".Value", containers.get(depth1).getLifecyclePreStopHandlerHttpGetHttpHeaders().get(i).getValue());
+
+						}
+					}
 				}
 			}
-		}	
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -211,7 +290,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
+		if (resourceOwnerId != null) {
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
@@ -222,8 +301,52 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	public void setSecurityGroupId(String securityGroupId) {
 		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
+		if (securityGroupId != null) {
 			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if (resourceGroupId != null) {
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getRamRoleName() {
+		return ramRoleName;
+	}
+
+	public void setRamRoleName(String ramRoleName) {
+		this.ramRoleName = ramRoleName;
+		if (ramRoleName != null) {
+			putQueryParameter("ramRoleName", ramRoleName);
+		}
+	}
+
+	public String getInstanceType() {
+		return instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if (instanceType != null) {
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public Long getTerminationGracePeriodSeconds() {
+		return terminationGracePeriodSeconds;
+	}
+
+	public void setTerminationGracePeriodSeconds(Long terminationGracePeriodSeconds) {
+		this.terminationGracePeriodSeconds = terminationGracePeriodSeconds;
+		if (terminationGracePeriodSeconds != null) {
+			putQueryParameter("TerminationGracePeriodSeconds", terminationGracePeriodSeconds.toString());
 		}
 	}
 
@@ -232,59 +355,59 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 	}
 
 	public void setInitContainers(List<Container> initContainers) {
-		this.initContainers = initContainers;	
+		this.initContainers = initContainers;
 		if (initContainers != null) {
 			for (int depth1 = 0; depth1 < initContainers.size(); depth1++) {
-				putQueryParameter("InitContainer." + (depth1 + 1) + ".Name" , initContainers.get(depth1).getName());
-				putQueryParameter("InitContainer." + (depth1 + 1) + ".Image" , initContainers.get(depth1).getImage());
-				putQueryParameter("InitContainer." + (depth1 + 1) + ".Cpu" , initContainers.get(depth1).getCpu());
-				putQueryParameter("InitContainer." + (depth1 + 1) + ".Memory" , initContainers.get(depth1).getMemory());
-				putQueryParameter("InitContainer." + (depth1 + 1) + ".WorkingDir" , initContainers.get(depth1).getWorkingDir());
-				putQueryParameter("InitContainer." + (depth1 + 1) + ".ImagePullPolicy" , initContainers.get(depth1).getImagePullPolicy());
+				putQueryParameter("InitContainer." + (depth1 + 1) + ".Name", initContainers.get(depth1).getName());
+				putQueryParameter("InitContainer." + (depth1 + 1) + ".Image", initContainers.get(depth1).getImage());
+				putQueryParameter("InitContainer." + (depth1 + 1) + ".Cpu", initContainers.get(depth1).getCpu());
+				putQueryParameter("InitContainer." + (depth1 + 1) + ".Memory", initContainers.get(depth1).getMemory());
+				putQueryParameter("InitContainer." + (depth1 + 1) + ".WorkingDir", initContainers.get(depth1).getWorkingDir());
+				putQueryParameter("InitContainer." + (depth1 + 1) + ".ImagePullPolicy", initContainers.get(depth1).getImagePullPolicy());
 				if (initContainers.get(depth1).getCommands() != null) {
 					for (int i = 0; i < initContainers.get(depth1).getCommands().size(); i++) {
-						putQueryParameter("InitContainer." + (depth1 + 1) + ".Command." + (i + 1) , initContainers.get(depth1).getCommands().get(i));
+						putQueryParameter("InitContainer." + (depth1 + 1) + ".Command." + (i + 1), initContainers.get(depth1).getCommands().get(i));
 					}
 				}
 				if (initContainers.get(depth1).getArgs() != null) {
 					for (int i = 0; i < initContainers.get(depth1).getArgs().size(); i++) {
-						putQueryParameter("InitContainer." + (depth1 + 1) + ".Arg." + (i + 1) , initContainers.get(depth1).getArgs().get(i));
+						putQueryParameter("InitContainer." + (depth1 + 1) + ".Arg." + (i + 1), initContainers.get(depth1).getArgs().get(i));
 					}
 				}
 				if (initContainers.get(depth1).getVolumeMounts() != null) {
 					for (int depth2 = 0; depth2 < initContainers.get(depth1).getVolumeMounts().size(); depth2++) {
-						putQueryParameter("InitContainer." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".MountPath" , initContainers.get(depth1).getVolumeMounts().get(depth2).getMountPath());
-						putQueryParameter("InitContainer." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".ReadOnly" , initContainers.get(depth1).getVolumeMounts().get(depth2).getReadOnly());
-						putQueryParameter("InitContainer." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".Name" , initContainers.get(depth1).getVolumeMounts().get(depth2).getName());
+						putQueryParameter("InitContainer." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".MountPath", initContainers.get(depth1).getVolumeMounts().get(depth2).getMountPath());
+						putQueryParameter("InitContainer." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".ReadOnly", initContainers.get(depth1).getVolumeMounts().get(depth2).getReadOnly());
+						putQueryParameter("InitContainer." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".Name", initContainers.get(depth1).getVolumeMounts().get(depth2).getName());
 					}
 				}
 				if (initContainers.get(depth1).getPorts() != null) {
 					for (int depth2 = 0; depth2 < initContainers.get(depth1).getPorts().size(); depth2++) {
-						putQueryParameter("InitContainer." + (depth1 + 1) + ".Port." + (depth2 + 1) + ".Protocol" , initContainers.get(depth1).getPorts().get(depth2).getProtocol());
-						putQueryParameter("InitContainer." + (depth1 + 1) + ".Port." + (depth2 + 1) + ".Port" , initContainers.get(depth1).getPorts().get(depth2).getPort());
+						putQueryParameter("InitContainer." + (depth1 + 1) + ".Port." + (depth2 + 1) + ".Protocol", initContainers.get(depth1).getPorts().get(depth2).getProtocol());
+						putQueryParameter("InitContainer." + (depth1 + 1) + ".Port." + (depth2 + 1) + ".Port", initContainers.get(depth1).getPorts().get(depth2).getPort());
 					}
 				}
 				if (initContainers.get(depth1).getEnvironmentVars() != null) {
 					for (int depth2 = 0; depth2 < initContainers.get(depth1).getEnvironmentVars().size(); depth2++) {
-						putQueryParameter("InitContainer." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".Key" , initContainers.get(depth1).getEnvironmentVars().get(depth2).getKey());
-						putQueryParameter("InitContainer." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".Value" , initContainers.get(depth1).getEnvironmentVars().get(depth2).getValue());
+						putQueryParameter("InitContainer." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".Key", initContainers.get(depth1).getEnvironmentVars().get(depth2).getKey());
+						putQueryParameter("InitContainer." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".Value", initContainers.get(depth1).getEnvironmentVars().get(depth2).getValue());
 					}
 				}
 
-				if(initContainers.get(depth1).getSecurityContext() != null){
+				if (initContainers.get(depth1).getSecurityContext() != null) {
 					if (initContainers.get(depth1).getSecurityContext().getCapability() != null) {
-						if(initContainers.get(depth1).getSecurityContext().getCapability().getAdds() != null){
+						if (initContainers.get(depth1).getSecurityContext().getCapability().getAdds() != null) {
 							for (int i = 0; i < initContainers.get(depth1).getSecurityContext().getCapability().getAdds().size(); i++) {
-								putQueryParameter("InitContainer." + (depth1 + 1) + ".SecurityContext.Capability.Add." + (i + 1) , initContainers.get(depth1).getSecurityContext().getCapability().getAdds().get(i));
+								putQueryParameter("InitContainer." + (depth1 + 1) + ".SecurityContext.Capability.Add." + (i + 1), initContainers.get(depth1).getSecurityContext().getCapability().getAdds().get(i));
 							}
 						}
 
 					}
-					putQueryParameter("InitContainer." + (depth1 + 1) + ".SecurityContext.ReadOnlyRootFilesystem" , initContainers.get(depth1).getSecurityContext().getReadOnlyRootFilesystem());
-					putQueryParameter("InitContainer." + (depth1 + 1) + ".SecurityContext.RunAsUser" , initContainers.get(depth1).getSecurityContext().getRunAsUser());
+					putQueryParameter("InitContainer." + (depth1 + 1) + ".SecurityContext.ReadOnlyRootFilesystem", initContainers.get(depth1).getSecurityContext().getReadOnlyRootFilesystem());
+					putQueryParameter("InitContainer." + (depth1 + 1) + ".SecurityContext.RunAsUser", initContainers.get(depth1).getSecurityContext().getRunAsUser());
 				}
 			}
-		}	
+		}
 	}
 
 	public List<ImageRegistryCredential> getImageRegistryCredentials() {
@@ -292,14 +415,41 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 	}
 
 	public void setImageRegistryCredentials(List<ImageRegistryCredential> imageRegistryCredentials) {
-		this.imageRegistryCredentials = imageRegistryCredentials;	
+		this.imageRegistryCredentials = imageRegistryCredentials;
 		if (imageRegistryCredentials != null) {
 			for (int depth1 = 0; depth1 < imageRegistryCredentials.size(); depth1++) {
-				putQueryParameter("ImageRegistryCredential." + (depth1 + 1) + ".Server" , imageRegistryCredentials.get(depth1).getServer());
-				putQueryParameter("ImageRegistryCredential." + (depth1 + 1) + ".UserName" , imageRegistryCredentials.get(depth1).getUserName());
-				putQueryParameter("ImageRegistryCredential." + (depth1 + 1) + ".Password" , imageRegistryCredentials.get(depth1).getPassword());
+				putQueryParameter("ImageRegistryCredential." + (depth1 + 1) + ".Server", imageRegistryCredentials.get(depth1).getServer());
+				putQueryParameter("ImageRegistryCredential." + (depth1 + 1) + ".UserName", imageRegistryCredentials.get(depth1).getUserName());
+				putQueryParameter("ImageRegistryCredential." + (depth1 + 1) + ".Password", imageRegistryCredentials.get(depth1).getPassword());
 			}
-		}	
+		}
+	}
+
+	public List<SecurityContextSysctl> getSecurityContextSysctls() {
+		return securityContextSysctls;
+	}
+
+	public void setSecurityContextSysctls(List<SecurityContextSysctl> securityContextSysctls) {
+		this.securityContextSysctls = securityContextSysctls;
+		if (securityContextSysctls != null) {
+			for (int depth1 = 0; depth1 < securityContextSysctls.size(); depth1++) {
+				putQueryParameter("SecurityContext.Sysctl." + (depth1 + 1) + ".Key", tags.get(depth1).getKey());
+				putQueryParameter("SecurityContext.Sysctl." + (depth1 + 1) + ".Value", tags.get(depth1).getValue());
+			}
+		}
+	}
+
+	public List<String> getNtpServers() {
+		return ntpServers;
+	}
+
+	public void setNtpServers(List<String> ntpServers) {
+		this.ntpServers = ntpServers;
+		if (ntpServers != null) {
+			for (int i = 0; i < ntpServers.size(); i++) {
+				putQueryParameter("NtpServer." + (i + 1), ntpServers.get(i));
+			}
+		}
 	}
 
 	public List<Tag> getTags() {
@@ -307,13 +457,13 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 	}
 
 	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
+		this.tags = tags;
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key", tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value", tags.get(depth1).getValue());
 			}
-		}	
+		}
 	}
 
 	public String getEipInstanceId() {
@@ -322,7 +472,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	public void setEipInstanceId(String eipInstanceId) {
 		this.eipInstanceId = eipInstanceId;
-		if(eipInstanceId != null){
+		if (eipInstanceId != null) {
 			putQueryParameter("EipInstanceId", eipInstanceId);
 		}
 	}
@@ -333,7 +483,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
+		if (resourceOwnerAccount != null) {
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
@@ -344,7 +494,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	public void setRestartPolicy(String restartPolicy) {
 		this.restartPolicy = restartPolicy;
-		if(restartPolicy != null){
+		if (restartPolicy != null) {
 			putQueryParameter("RestartPolicy", restartPolicy);
 		}
 	}
@@ -355,7 +505,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
+		if (ownerAccount != null) {
 			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
@@ -366,7 +516,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-		if(ownerId != null){
+		if (ownerId != null) {
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
@@ -377,7 +527,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	public void setVSwitchId(String vSwitchId) {
 		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
+		if (vSwitchId != null) {
 			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
@@ -387,27 +537,30 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 	}
 
 	public void setVolumes(List<Volume> volumes) {
-		this.volumes = volumes;	
+		this.volumes = volumes;
 		if (volumes != null) {
 			for (int depth1 = 0; depth1 < volumes.size(); depth1++) {
-				putQueryParameter("Volume." + (depth1 + 1) + ".Name" , volumes.get(depth1).getName());
-				putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.Server" , volumes.get(depth1).getNFSVolumeServer());
-				putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.Path" , volumes.get(depth1).getNFSVolumePath());
-				putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.ReadOnly" , volumes.get(depth1).getNFSVolumeReadOnly());
+				putQueryParameter("Volume." + (depth1 + 1) + ".Name", volumes.get(depth1).getName());
+				putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.Server", volumes.get(depth1).getNFSVolumeServer());
+				putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.Path", volumes.get(depth1).getNFSVolumePath());
+				putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.ReadOnly", volumes.get(depth1).getNFSVolumeReadOnly());
 
-				putQueryParameter("Volume." + (depth1 + 1) + ".EmptyDirVolume.Medium" , volumes.get(depth1).getEmptyDirVolumeMedium());
+				putQueryParameter("Volume." + (depth1 + 1) + ".EmptyDirVolume.Medium", volumes.get(depth1).getEmptyDirVolumeMedium());
 
 				if (volumes.get(depth1).getConfigFileVolumeConfigFileToPaths() != null) {
 					for (int depth2 = 0; depth2 < volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().size(); depth2++) {
-						putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.ConfigFileToPath." + (depth2 + 1) + ".Content" , volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().get(depth2).getContent());
-						putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.ConfigFileToPath." + (depth2 + 1) + ".Path" , volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().get(depth2).getPath());
-						putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.ConfigFileToPath." + (depth2 + 1) + ".Mode" , volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().get(depth2).getMode());
+						putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.ConfigFileToPath." + (depth2 + 1) + ".Content", volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().get(depth2).getContent());
+						putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.ConfigFileToPath." + (depth2 + 1) + ".Path", volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().get(depth2).getPath());
+						putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.ConfigFileToPath." + (depth2 + 1) + ".Mode", volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().get(depth2).getMode());
 					}
 				}
-				putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.DefaultModel" , volumes.get(depth1).getConfigFileVolumeDefaultModel());
-				putQueryParameter("Volume." + (depth1 + 1) + ".Type" , volumes.get(depth1).getType());
+				putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.DefaultModel", volumes.get(depth1).getConfigFileVolumeDefaultModel());
+				putQueryParameter("Volume." + (depth1 + 1) + ".Type", volumes.get(depth1).getType());
+				putQueryParameter("Volume." + (depth1 + 1) + ".DiskVolume.DiskId", volumes.get(depth1).getDiskVolumeDiskId());
+				putQueryParameter("Volume." + (depth1 + 1) + ".DiskVolume.FsType", volumes.get(depth1).getDiskVolumeFsType());
+				putQueryParameter("Volume." + (depth1 + 1) + ".DiskVolume.DiskSize", volumes.get(depth1).getDiskVolumeDiskSize());
 			}
-		}	
+		}
 	}
 
 	public String getContainerGroupName() {
@@ -416,7 +569,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	public void setContainerGroupName(String containerGroupName) {
 		this.containerGroupName = containerGroupName;
-		if(containerGroupName != null){
+		if (containerGroupName != null) {
 			putQueryParameter("ContainerGroupName", containerGroupName);
 		}
 	}
@@ -427,31 +580,31 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	public void setZoneId(String zoneId) {
 		this.zoneId = zoneId;
-		if(zoneId != null){
+		if (zoneId != null) {
 			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
-	public DnsConfig getDnsConfig(){
+	public DnsConfig getDnsConfig() {
 		return this.dnsConfig;
 	}
 
 	public void setDnsConfig(DnsConfig dnsConfig) {
 		this.dnsConfig = dnsConfig;
-		if(dnsConfig.getSearches() != null){
+		if (dnsConfig.getSearches() != null) {
 			for (int i = 0; i < dnsConfig.getSearches().size(); i++) {
-				putQueryParameter("DnsConfig.Search." + (i + 1) , dnsConfig.getSearches().get(i));
+				putQueryParameter("DnsConfig.Search." + (i + 1), dnsConfig.getSearches().get(i));
 			}
 		}
-		if(dnsConfig.getNameServers() != null){
+		if (dnsConfig.getNameServers() != null) {
 			for (int i = 0; i < dnsConfig.getNameServers().size(); i++) {
-				putQueryParameter("DnsConfig.NameServer." + (i + 1) , dnsConfig.getNameServers().get(i));
+				putQueryParameter("DnsConfig.NameServer." + (i + 1), dnsConfig.getNameServers().get(i));
 			}
 		}
 		if (dnsConfig.getOptions() != null) {
 			for (int depth1 = 0; depth1 < dnsConfig.getOptions().size(); depth1++) {
-				putQueryParameter("DnsConfig.Option." + (depth1 + 1) + ".Name" , dnsConfig.getOptions().get(depth1).getName());
-				putQueryParameter("DnsConfig.Option." + (depth1 + 1) + ".Value" , dnsConfig.getOptions().get(depth1).getValue());
+				putQueryParameter("DnsConfig.Option." + (depth1 + 1) + ".Name", dnsConfig.getOptions().get(depth1).getName());
+				putQueryParameter("DnsConfig.Option." + (depth1 + 1) + ".Value", dnsConfig.getOptions().get(depth1).getValue());
 			}
 		}
 	}
@@ -462,7 +615,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
-		if(clientToken != null){
+		if (clientToken != null) {
 			putQueryParameter("ClientToken", clientToken);
 		}
 	}
@@ -475,10 +628,10 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		this.hostAliases = hostAliases;
 		if (hostAliases != null) {
 			for (int depth1 = 0; depth1 < hostAliases.size(); depth1++) {
-				putQueryParameter("HostAliase." + (depth1 + 1) + ".Ip" , hostAliases.get(depth1).getIp());
+				putQueryParameter("HostAliase." + (depth1 + 1) + ".Ip", hostAliases.get(depth1).getIp());
 				if (hostAliases.get(depth1).getHostnames() != null) {
 					for (int i = 0; i < hostAliases.get(depth1).getHostnames().size(); i++) {
-						putQueryParameter("HostAliase." + (depth1 + 1) + ".Hostname." + (i + 1) , hostAliases.get(depth1).getHostnames().get(i));
+						putQueryParameter("HostAliase." + (depth1 + 1) + ".Hostname." + (i + 1), hostAliases.get(depth1).getHostnames().get(i));
 					}
 				}
 			}
@@ -544,6 +697,14 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		private String imagePullPolicy;
 
+		private Boolean stdin;
+
+		private Boolean stdinOnce;
+
+		private Boolean tty;
+
+		private Integer gpu;
+
 		private List<String> commands;
 
 		private List<String> args;
@@ -559,6 +720,38 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		private ContainerProbe livenessProbe;
 
 		private SecurityContext securityContext;
+
+		private String lifecyclePostStartHandlerHttpGetHost;
+
+		private Integer lifecyclePostStartHandlerHttpGetPort;
+
+		private String lifecyclePostStartHandlerHttpGetPath;
+
+		private String lifecyclePostStartHandlerHttpGetScheme;
+
+		private List<LifecyclePostStartHandlerHttpGetHttpHeader> lifecyclePostStartHandlerHttpGetHttpHeaders;
+
+		private List<String> lifecyclePostStartHandlerExecs;
+
+		private String lifecyclePostStartHandlerTcpSocketHost;
+
+		private Integer lifecyclePostStartHandlerTcpSocketPort;
+
+		private String lifecyclePreStopHandlerHttpGetHost;
+
+		private Integer lifecyclePreStopHandlerHttpGetPort;
+
+		private String lifecyclePreStopHandlerHttpGetPath;
+
+		private String lifecyclePreStopHandlerHttpGetScheme;
+
+		private List<LifecyclePreStopHandlerHttpGetHttpHeader> lifecyclePreStopHandlerHttpGetHttpHeaders;
+
+		private List<String> lifecyclePreStopHandlerExecs;
+
+		private String lifecyclePreStopHandlerTcpSocketHost;
+
+		private Integer lifecyclePreStopHandlerTcpSocketPort;
 
 		public String getImage() {
 			return this.image;
@@ -606,6 +799,38 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		public void setImagePullPolicy(String imagePullPolicy) {
 			this.imagePullPolicy = imagePullPolicy;
+		}
+
+		public Boolean getStdin() {
+			return stdin;
+		}
+
+		public void setStdin(Boolean stdin) {
+			this.stdin = stdin;
+		}
+
+		public Boolean getStdinOnce() {
+			return stdinOnce;
+		}
+
+		public void setStdinOnce(Boolean stdinOnce) {
+			this.stdinOnce = stdinOnce;
+		}
+
+		public Boolean getTty() {
+			return tty;
+		}
+
+		public void setTty(Boolean tty) {
+			this.tty = tty;
+		}
+
+		public Integer getGpu() {
+			return gpu;
+		}
+
+		public void setGpu(Integer gpu) {
+			this.gpu = gpu;
 		}
 
 		public List<String> getCommands() {
@@ -670,6 +895,180 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		public void setLivenessProbe(ContainerProbe livenessProbe) {
 			this.livenessProbe = livenessProbe;
+		}
+
+		public String getLifecyclePostStartHandlerHttpGetHost() {
+			return lifecyclePostStartHandlerHttpGetHost;
+		}
+
+		public void setLifecyclePostStartHandlerHttpGetHost(String lifecyclePostStartHandlerHttpGetHost) {
+			this.lifecyclePostStartHandlerHttpGetHost = lifecyclePostStartHandlerHttpGetHost;
+		}
+
+		public Integer getLifecyclePostStartHandlerHttpGetPort() {
+			return lifecyclePostStartHandlerHttpGetPort;
+		}
+
+		public void setLifecyclePostStartHandlerHttpGetPort(Integer lifecyclePostStartHandlerHttpGetPort) {
+			this.lifecyclePostStartHandlerHttpGetPort = lifecyclePostStartHandlerHttpGetPort;
+		}
+
+		public String getLifecyclePostStartHandlerHttpGetPath() {
+			return lifecyclePostStartHandlerHttpGetPath;
+		}
+
+		public void setLifecyclePostStartHandlerHttpGetPath(String lifecyclePostStartHandlerHttpGetPath) {
+			this.lifecyclePostStartHandlerHttpGetPath = lifecyclePostStartHandlerHttpGetPath;
+		}
+
+		public String getLifecyclePostStartHandlerHttpGetScheme() {
+			return lifecyclePostStartHandlerHttpGetScheme;
+		}
+
+		public void setLifecyclePostStartHandlerHttpGetScheme(String lifecyclePostStartHandlerHttpGetScheme) {
+			this.lifecyclePostStartHandlerHttpGetScheme = lifecyclePostStartHandlerHttpGetScheme;
+		}
+
+		public Integer getLifecyclePostStartHandlerTcpSocketPort() {
+			return lifecyclePostStartHandlerTcpSocketPort;
+		}
+
+		public void setLifecyclePostStartHandlerTcpSocketPort(Integer lifecyclePostStartHandlerTcpSocketPort) {
+			this.lifecyclePostStartHandlerTcpSocketPort = lifecyclePostStartHandlerTcpSocketPort;
+		}
+
+		public String getLifecyclePostStartHandlerTcpSocketHost() {
+			return lifecyclePostStartHandlerTcpSocketHost;
+		}
+
+		public void setLifecyclePostStartHandlerTcpSocketHost(String lifecyclePostStartHandlerTcpSocketHost) {
+			this.lifecyclePostStartHandlerTcpSocketHost = lifecyclePostStartHandlerTcpSocketHost;
+		}
+
+		public String getLifecyclePreStopHandlerHttpGetHost() {
+			return lifecyclePreStopHandlerHttpGetHost;
+		}
+
+		public void setLifecyclePreStopHandlerHttpGetHost(String lifecyclePreStopHandlerHttpGetHost) {
+			this.lifecyclePreStopHandlerHttpGetHost = lifecyclePreStopHandlerHttpGetHost;
+		}
+
+		public Integer getLifecyclePreStopHandlerHttpGetPort() {
+			return lifecyclePreStopHandlerHttpGetPort;
+		}
+
+		public void setLifecyclePreStopHandlerHttpGetPort(Integer lifecyclePreStopHandlerHttpGetPort) {
+			this.lifecyclePreStopHandlerHttpGetPort = lifecyclePreStopHandlerHttpGetPort;
+		}
+
+		public Integer getLifecyclePreStopHandlerTcpSocketPort() {
+			return lifecyclePreStopHandlerTcpSocketPort;
+		}
+
+		public void setLifecyclePreStopHandlerTcpSocketPort(Integer lifecyclePreStopHandlerTcpSocketPort) {
+			this.lifecyclePreStopHandlerTcpSocketPort = lifecyclePreStopHandlerTcpSocketPort;
+		}
+
+		public String getLifecyclePreStopHandlerHttpGetPath() {
+			return lifecyclePreStopHandlerHttpGetPath;
+		}
+
+		public void setLifecyclePreStopHandlerHttpGetPath(String lifecyclePreStopHandlerHttpGetPath) {
+			this.lifecyclePreStopHandlerHttpGetPath = lifecyclePreStopHandlerHttpGetPath;
+		}
+
+		public String getLifecyclePreStopHandlerHttpGetScheme() {
+			return lifecyclePreStopHandlerHttpGetScheme;
+		}
+
+		public void setLifecyclePreStopHandlerHttpGetScheme(String lifecyclePreStopHandlerHttpGetScheme) {
+			this.lifecyclePreStopHandlerHttpGetScheme = lifecyclePreStopHandlerHttpGetScheme;
+		}
+
+		public String getLifecyclePreStopHandlerTcpSocketHost() {
+			return lifecyclePreStopHandlerTcpSocketHost;
+		}
+
+		public void setLifecyclePreStopHandlerTcpSocketHost(String lifecyclePreStopHandlerTcpSocketHost) {
+			this.lifecyclePreStopHandlerTcpSocketHost = lifecyclePreStopHandlerTcpSocketHost;
+		}
+
+		public List<String> getLifecyclePostStartHandlerExecs() {
+			return lifecyclePostStartHandlerExecs;
+		}
+
+		public void setLifecyclePostStartHandlerExecs(List<String> lifecyclePostStartHandlerExecs) {
+			this.lifecyclePostStartHandlerExecs = lifecyclePostStartHandlerExecs;
+		}
+
+		public List<LifecyclePostStartHandlerHttpGetHttpHeader> getLifecyclePostStartHandlerHttpGetHttpHeaders() {
+			return lifecyclePostStartHandlerHttpGetHttpHeaders;
+		}
+
+		public void setLifecyclePostStartHandlerHttpGetHttpHeaders(List<LifecyclePostStartHandlerHttpGetHttpHeader> lifecyclePostStartHandlerHttpGetHttpHeaders) {
+			this.lifecyclePostStartHandlerHttpGetHttpHeaders = lifecyclePostStartHandlerHttpGetHttpHeaders;
+		}
+
+		public List<String> getLifecyclePreStopHandlerExecs() {
+			return lifecyclePreStopHandlerExecs;
+		}
+
+		public void setLifecyclePreStopHandlerExecs(List<String> lifecyclePreStopHandlerExecs) {
+			this.lifecyclePreStopHandlerExecs = lifecyclePreStopHandlerExecs;
+		}
+
+		public List<LifecyclePreStopHandlerHttpGetHttpHeader> getLifecyclePreStopHandlerHttpGetHttpHeaders() {
+			return lifecyclePreStopHandlerHttpGetHttpHeaders;
+		}
+
+		public void setLifecyclePreStopHandlerHttpGetHttpHeaders(List<LifecyclePreStopHandlerHttpGetHttpHeader> lifecyclePreStopHandlerHttpGetHttpHeaders) {
+			this.lifecyclePreStopHandlerHttpGetHttpHeaders = lifecyclePreStopHandlerHttpGetHttpHeaders;
+		}
+
+		public static class LifecyclePostStartHandlerHttpGetHttpHeader {
+
+			private String name;
+
+			private String value;
+
+			public String getName() {
+				return name;
+			}
+
+			public void setName(String key) {
+				this.name = name;
+			}
+
+			public String getValue() {
+				return value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
+		public static class LifecyclePreStopHandlerHttpGetHttpHeader {
+
+			private String name;
+
+			private String value;
+
+			public String getName() {
+				return name;
+			}
+
+			public void setName(String key) {
+				this.name = name;
+			}
+
+			public String getValue() {
+				return value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 
 		public static class VolumeMount {
@@ -855,7 +1254,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 			}
 		}
 
-		public static class ContainerHttpGet{
+		public static class ContainerHttpGet {
 
 			private String path;
 
@@ -1007,6 +1406,12 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		private String emptyDirVolumeMedium;
 
+		private String diskVolumeDiskId;
+
+		private String diskVolumeFsType;
+
+		private Integer diskVolumeDiskSize;
+
 		private String type;
 
 		public String getName() {
@@ -1047,6 +1452,30 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		public void setEmptyDirVolumeMedium(String emptyDirVolumeMedium) {
 			this.emptyDirVolumeMedium = emptyDirVolumeMedium;
+		}
+
+		public String getDiskVolumeDiskId() {
+			return diskVolumeDiskId;
+		}
+
+		public void setDiskVolumeDiskId(String diskVolumeDiskId) {
+			this.diskVolumeDiskId = diskVolumeDiskId;
+		}
+
+		public String getDiskVolumeFsType() {
+			return diskVolumeFsType;
+		}
+
+		public void setDiskVolumeFsType(String diskVolumeFsType) {
+			this.diskVolumeFsType = diskVolumeFsType;
+		}
+
+		public Integer getDiskVolumeDiskSize() {
+			return diskVolumeDiskSize;
+		}
+
+		public void setDiskVolumeDiskSize(Integer diskVolumeDiskSize) {
+			this.diskVolumeDiskSize = diskVolumeDiskSize;
 		}
 
 		public List<ConfigFileVolumeConfigFileToPath> getConfigFileVolumeConfigFileToPaths() {
@@ -1157,6 +1586,62 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 			public void setValue(String value) {
 				this.value = value;
 			}
+		}
+	}
+
+	public static class SecurityContextSysctl {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+	}
+
+	public static class Arn {
+
+		private String roleArn;
+
+		private String roleType;
+
+		private String assumeRoleFor;
+
+		public String getRoleArn() {
+			return this.roleArn;
+		}
+
+		public void setRoleArn(String roleArn) {
+			this.roleArn = roleArn;
+		}
+
+		public String getRoleType() {
+			return this.roleType;
+		}
+
+		public void setRoleType(String roleType) {
+			this.roleType = roleType;
+		}
+
+		public String getAssumeRoleFor() {
+			return this.assumeRoleFor;
+		}
+
+		public void setAssumeRoleFor(String assumeRoleFor) {
+			this.assumeRoleFor = assumeRoleFor;
 		}
 	}
 

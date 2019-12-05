@@ -14,10 +14,11 @@
 
 package com.aliyuncs.eci.model.v20180808;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.eci.transform.v20180808.DescribeImageCachesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
+
+import java.util.List;
 
 /**
  * @author auto create
@@ -62,6 +63,16 @@ public class DescribeImageCachesResponse extends AcsResponse {
 		private List<Event> events;
 
 		private List<String> images;
+
+		private String expireDateTime;
+
+		public String getExpireDateTime() {
+			return expireDateTime;
+		}
+
+		public void setExpireDateTime(String expireDateTime) {
+			this.expireDateTime = expireDateTime;
+		}
 
 		public String getContainerGroupId() {
 			return this.containerGroupId;
