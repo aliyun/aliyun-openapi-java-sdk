@@ -1,3 +1,10 @@
+2019-12-05 Version: 1.0.2
+- Supported image scan.
+- Supported video scan.
+- Supported text scan.
+- Supported voice scan.
+- Supported file scan.
+
 2019-12-03 Version: 1.0.2
 - Supported image scan.
 - Supported video scan.
