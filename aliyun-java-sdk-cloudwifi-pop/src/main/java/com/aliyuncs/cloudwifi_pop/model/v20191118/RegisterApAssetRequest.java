@@ -27,7 +27,7 @@ public class RegisterApAssetRequest extends RpcAcsRequest<RegisterApAssetRespons
 
 	private String appName;
 
-	private Long assetApgroupId;
+	private String apGroupUUId;
 
 	private String appCode;
 
@@ -56,14 +56,14 @@ public class RegisterApAssetRequest extends RpcAcsRequest<RegisterApAssetRespons
 		}
 	}
 
-	public Long getAssetApgroupId() {
-		return this.assetApgroupId;
+	public String getApGroupUUId() {
+		return this.apGroupUUId;
 	}
 
-	public void setAssetApgroupId(Long assetApgroupId) {
-		this.assetApgroupId = assetApgroupId;
-		if(assetApgroupId != null){
-			putQueryParameter("AssetApgroupId", assetApgroupId.toString());
+	public void setApGroupUUId(String apGroupUUId) {
+		this.apGroupUUId = apGroupUUId;
+		if(apGroupUUId != null){
+			putQueryParameter("ApGroupUUId", apGroupUUId);
 		}
 	}
 

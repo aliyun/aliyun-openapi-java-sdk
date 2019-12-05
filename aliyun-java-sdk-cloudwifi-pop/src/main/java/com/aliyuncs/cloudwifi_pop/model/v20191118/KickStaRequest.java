@@ -22,16 +22,16 @@ import com.aliyuncs.cloudwifi_pop.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteApgroupConfigRequest extends RpcAcsRequest<DeleteApgroupConfigResponse> {
+public class KickStaRequest extends RpcAcsRequest<KickStaResponse> {
 	   
 
 	private String appName;
 
 	private String appCode;
 
-	private String apGroupUUId;
-	public DeleteApgroupConfigRequest() {
-		super("cloudwifi-pop", "2019-11-18", "DeleteApgroupConfig", "cloudap");
+	private String staMac;
+	public KickStaRequest() {
+		super("cloudwifi-pop", "2019-11-18", "KickSta", "cloudap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,20 +61,20 @@ public class DeleteApgroupConfigRequest extends RpcAcsRequest<DeleteApgroupConfi
 		}
 	}
 
-	public String getApGroupUUId() {
-		return this.apGroupUUId;
+	public String getStaMac() {
+		return this.staMac;
 	}
 
-	public void setApGroupUUId(String apGroupUUId) {
-		this.apGroupUUId = apGroupUUId;
-		if(apGroupUUId != null){
-			putQueryParameter("ApGroupUUId", apGroupUUId);
+	public void setStaMac(String staMac) {
+		this.staMac = staMac;
+		if(staMac != null){
+			putQueryParameter("StaMac", staMac);
 		}
 	}
 
 	@Override
-	public Class<DeleteApgroupConfigResponse> getResponseClass() {
-		return DeleteApgroupConfigResponse.class;
+	public Class<KickStaResponse> getResponseClass() {
+		return KickStaResponse.class;
 	}
 
 }

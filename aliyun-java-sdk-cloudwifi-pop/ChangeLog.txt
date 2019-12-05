@@ -1,3 +1,6 @@
+2019-12-05 Version: 1.8.2
+- Add kickSta.
+
 2019-11-28 Version: 1.8.1
 - Change api response.
 
