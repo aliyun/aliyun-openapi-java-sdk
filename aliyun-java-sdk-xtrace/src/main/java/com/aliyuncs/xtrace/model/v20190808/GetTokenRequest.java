@@ -15,6 +15,7 @@
 package com.aliyuncs.xtrace.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.xtrace.Endpoint;
 
 /**
@@ -22,16 +23,17 @@ import com.aliyuncs.xtrace.Endpoint;
  * @version 
  */
 public class GetTokenRequest extends RpcAcsRequest<GetTokenResponse> {
-	
+	   
+
+	private String appType;
 	public GetTokenRequest() {
 		super("xtrace", "2019-08-08", "GetToken", "xtrace");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appType;
 
 	public String getAppType() {
 		return this.appType;

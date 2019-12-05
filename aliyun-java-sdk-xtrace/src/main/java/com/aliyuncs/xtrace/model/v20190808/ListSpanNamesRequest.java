@@ -15,6 +15,7 @@
 package com.aliyuncs.xtrace.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.xtrace.Endpoint;
 
 /**
@@ -22,20 +23,21 @@ import com.aliyuncs.xtrace.Endpoint;
  * @version 
  */
 public class ListSpanNamesRequest extends RpcAcsRequest<ListSpanNamesResponse> {
-	
-	public ListSpanNamesRequest() {
-		super("xtrace", "2019-08-08", "ListSpanNames", "xtrace");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long endTime;
 
 	private String serviceName;
 
 	private Long startTime;
+	public ListSpanNamesRequest() {
+		super("xtrace", "2019-08-08", "ListSpanNames", "xtrace");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getEndTime() {
 		return this.endTime;

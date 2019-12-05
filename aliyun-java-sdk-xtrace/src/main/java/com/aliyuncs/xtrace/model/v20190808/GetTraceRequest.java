@@ -15,6 +15,7 @@
 package com.aliyuncs.xtrace.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.xtrace.Endpoint;
 
 /**
@@ -22,18 +23,19 @@ import com.aliyuncs.xtrace.Endpoint;
  * @version 
  */
 public class GetTraceRequest extends RpcAcsRequest<GetTraceResponse> {
-	
+	   
+
+	private String traceID;
+
+	private String appType;
 	public GetTraceRequest() {
 		super("xtrace", "2019-08-08", "GetTrace", "xtrace");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String traceID;
-
-	private String appType;
 
 	public String getTraceID() {
 		return this.traceID;

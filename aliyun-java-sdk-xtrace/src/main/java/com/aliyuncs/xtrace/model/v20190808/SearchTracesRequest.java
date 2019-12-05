@@ -16,6 +16,7 @@ package com.aliyuncs.xtrace.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.xtrace.Endpoint;
 
 /**
@@ -23,30 +24,13 @@ import com.aliyuncs.xtrace.Endpoint;
  * @version 
  */
 public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
-	
-	public SearchTracesRequest() {
-		super("xtrace", "2019-08-08", "SearchTraces", "xtrace");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String serviceIp;
-
-	private String operationName;
+	   
 
 	private String appType;
 
-	private Integer pageSize;
-
 	private Long endTime;
 
-	private String serviceName;
-
 	private Long startTime;
-
-	private List<Tag> tags;
 
 	private Boolean reverse;
 
@@ -54,26 +38,22 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 
 	private Integer pageNumber;
 
-	public String getServiceIp() {
-		return this.serviceIp;
-	}
+	private String serviceIp;
 
-	public void setServiceIp(String serviceIp) {
-		this.serviceIp = serviceIp;
-		if(serviceIp != null){
-			putQueryParameter("ServiceIp", serviceIp);
-		}
-	}
+	private String operationName;
 
-	public String getOperationName() {
-		return this.operationName;
-	}
+	private Integer pageSize;
 
-	public void setOperationName(String operationName) {
-		this.operationName = operationName;
-		if(operationName != null){
-			putQueryParameter("OperationName", operationName);
-		}
+	private String serviceName;
+
+	private List<Tag> tags;
+	public SearchTracesRequest() {
+		super("xtrace", "2019-08-08", "SearchTraces", "xtrace");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getAppType() {
@@ -84,17 +64,6 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 		this.appType = appType;
 		if(appType != null){
 			putQueryParameter("AppType", appType);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -109,17 +78,6 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 		}
 	}
 
-	public String getServiceName() {
-		return this.serviceName;
-	}
-
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
-		}
-	}
-
 	public Long getStartTime() {
 		return this.startTime;
 	}
@@ -129,20 +87,6 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime.toString());
 		}
-	}
-
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
 	}
 
 	public Boolean getReverse() {
@@ -176,6 +120,64 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
 		}
+	}
+
+	public String getServiceIp() {
+		return this.serviceIp;
+	}
+
+	public void setServiceIp(String serviceIp) {
+		this.serviceIp = serviceIp;
+		if(serviceIp != null){
+			putQueryParameter("ServiceIp", serviceIp);
+		}
+	}
+
+	public String getOperationName() {
+		return this.operationName;
+	}
+
+	public void setOperationName(String operationName) {
+		this.operationName = operationName;
+		if(operationName != null){
+			putQueryParameter("OperationName", operationName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public static class Tag {
