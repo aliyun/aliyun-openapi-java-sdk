@@ -39,14 +39,14 @@ public class DescribeStatisticsDataResponseUnmarshaller {
 		List<BaseStatisticsData> baseStatisticsDatas = new ArrayList<BaseStatisticsData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStatisticsDataResponse.BaseStatisticsDatas.Length"); i++) {
 			BaseStatisticsData baseStatisticsData = new BaseStatisticsData();
-			baseStatisticsData.setDay(_ctx.stringValue("DescribeStatisticsDataResponse.BaseStatisticsDatas["+ i +"].Day"));
 			baseStatisticsData.setStoreId(_ctx.longValue("DescribeStatisticsDataResponse.BaseStatisticsDatas["+ i +"].StoreId"));
+			baseStatisticsData.setTime(_ctx.stringValue("DescribeStatisticsDataResponse.BaseStatisticsDatas["+ i +"].Time"));
 			baseStatisticsData.setMaleUvCount(_ctx.integerValue("DescribeStatisticsDataResponse.BaseStatisticsDatas["+ i +"].MaleUvCount"));
 			baseStatisticsData.setUvCount(_ctx.integerValue("DescribeStatisticsDataResponse.BaseStatisticsDatas["+ i +"].UvCount"));
 			baseStatisticsData.setOnlyBodyUvCount(_ctx.integerValue("DescribeStatisticsDataResponse.BaseStatisticsDatas["+ i +"].OnlyBodyUvCount"));
 			baseStatisticsData.setLocationId(_ctx.longValue("DescribeStatisticsDataResponse.BaseStatisticsDatas["+ i +"].LocationId"));
+			baseStatisticsData.setSummaryType(_ctx.stringValue("DescribeStatisticsDataResponse.BaseStatisticsDatas["+ i +"].SummaryType"));
 			baseStatisticsData.setStayPeriod(_ctx.longValue("DescribeStatisticsDataResponse.BaseStatisticsDatas["+ i +"].StayPeriod"));
-			baseStatisticsData.setHour(_ctx.stringValue("DescribeStatisticsDataResponse.BaseStatisticsDatas["+ i +"].Hour"));
 			baseStatisticsData.setFemaleUvCount(_ctx.integerValue("DescribeStatisticsDataResponse.BaseStatisticsDatas["+ i +"].FemaleUvCount"));
 			baseStatisticsData.setOldCount(_ctx.integerValue("DescribeStatisticsDataResponse.BaseStatisticsDatas["+ i +"].OldCount"));
 			baseStatisticsData.setNewCount(_ctx.integerValue("DescribeStatisticsDataResponse.BaseStatisticsDatas["+ i +"].NewCount"));

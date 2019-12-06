@@ -22,21 +22,32 @@ import com.aliyuncs.reid.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeStatisticsDataRequest extends RpcAcsRequest<DescribeStatisticsDataResponse> {
+public class DescribeHeatMapRequest extends RpcAcsRequest<DescribeHeatMapResponse> {
 	   
+
+	private Long date;
 
 	private Long storeId;
 
-	private String summaryType;
-
-	private String time;
-	public DescribeStatisticsDataRequest() {
-		super("reid", "2019-09-28", "DescribeStatisticsData", "1.0.0");
+	private Long emapId;
+	public DescribeHeatMapRequest() {
+		super("reid", "2019-09-28", "DescribeHeatMap", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getDate() {
+		return this.date;
+	}
+
+	public void setDate(Long date) {
+		this.date = date;
+		if(date != null){
+			putBodyParameter("Date", date.toString());
+		}
 	}
 
 	public Long getStoreId() {
@@ -50,31 +61,20 @@ public class DescribeStatisticsDataRequest extends RpcAcsRequest<DescribeStatist
 		}
 	}
 
-	public String getSummaryType() {
-		return this.summaryType;
+	public Long getEmapId() {
+		return this.emapId;
 	}
 
-	public void setSummaryType(String summaryType) {
-		this.summaryType = summaryType;
-		if(summaryType != null){
-			putBodyParameter("SummaryType", summaryType);
-		}
-	}
-
-	public String getTime() {
-		return this.time;
-	}
-
-	public void setTime(String time) {
-		this.time = time;
-		if(time != null){
-			putBodyParameter("Time", time);
+	public void setEmapId(Long emapId) {
+		this.emapId = emapId;
+		if(emapId != null){
+			putBodyParameter("EmapId", emapId.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeStatisticsDataResponse> getResponseClass() {
-		return DescribeStatisticsDataResponse.class;
+	public Class<DescribeHeatMapResponse> getResponseClass() {
+		return DescribeHeatMapResponse.class;
 	}
 
 }

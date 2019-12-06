@@ -16,18 +16,18 @@ package com.aliyuncs.reid.model.v20190928;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.reid.transform.v20190928.DescribeStatisticsDataResponseUnmarshaller;
+import com.aliyuncs.reid.transform.v20190928.DescribeBaseStatisticsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeStatisticsDataResponse extends AcsResponse {
-
-	private String cursorTime;
+public class DescribeBaseStatisticsResponse extends AcsResponse {
 
 	private String errorCode;
+
+	private String cursorTime;
 
 	private String errorMessage;
 
@@ -43,15 +43,7 @@ public class DescribeStatisticsDataResponse extends AcsResponse {
 
 	private String dynamicMessage;
 
-	private List<BaseStatisticsData> baseStatisticsDatas;
-
-	public String getCursorTime() {
-		return this.cursorTime;
-	}
-
-	public void setCursorTime(String cursorTime) {
-		this.cursorTime = cursorTime;
-	}
+	private List<BaseStatisticsItem> baseStatistics;
 
 	public String getErrorCode() {
 		return this.errorCode;
@@ -59,6 +51,14 @@ public class DescribeStatisticsDataResponse extends AcsResponse {
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
+	}
+
+	public String getCursorTime() {
+		return this.cursorTime;
+	}
+
+	public void setCursorTime(String cursorTime) {
+		this.cursorTime = cursorTime;
 	}
 
 	public String getErrorMessage() {
@@ -117,31 +117,21 @@ public class DescribeStatisticsDataResponse extends AcsResponse {
 		this.dynamicMessage = dynamicMessage;
 	}
 
-	public List<BaseStatisticsData> getBaseStatisticsDatas() {
-		return this.baseStatisticsDatas;
+	public List<BaseStatisticsItem> getBaseStatistics() {
+		return this.baseStatistics;
 	}
 
-	public void setBaseStatisticsDatas(List<BaseStatisticsData> baseStatisticsDatas) {
-		this.baseStatisticsDatas = baseStatisticsDatas;
+	public void setBaseStatistics(List<BaseStatisticsItem> baseStatistics) {
+		this.baseStatistics = baseStatistics;
 	}
 
-	public static class BaseStatisticsData {
-
-		private Long storeId;
-
-		private String time;
+	public static class BaseStatisticsItem {
 
 		private Integer maleUvCount;
 
-		private Integer uvCount;
+		private String time;
 
-		private Integer onlyBodyUvCount;
-
-		private Long locationId;
-
-		private String summaryType;
-
-		private Long stayPeriod;
+		private Long storeId;
 
 		private Integer femaleUvCount;
 
@@ -149,12 +139,22 @@ public class DescribeStatisticsDataResponse extends AcsResponse {
 
 		private Integer newCount;
 
-		public Long getStoreId() {
-			return this.storeId;
+		private Long locationId;
+
+		private String summaryType;
+
+		private Long stayPeriod;
+
+		private Integer uvCount;
+
+		private Integer onlyBodyUvCount;
+
+		public Integer getMaleUvCount() {
+			return this.maleUvCount;
 		}
 
-		public void setStoreId(Long storeId) {
-			this.storeId = storeId;
+		public void setMaleUvCount(Integer maleUvCount) {
+			this.maleUvCount = maleUvCount;
 		}
 
 		public String getTime() {
@@ -165,28 +165,36 @@ public class DescribeStatisticsDataResponse extends AcsResponse {
 			this.time = time;
 		}
 
-		public Integer getMaleUvCount() {
-			return this.maleUvCount;
+		public Long getStoreId() {
+			return this.storeId;
 		}
 
-		public void setMaleUvCount(Integer maleUvCount) {
-			this.maleUvCount = maleUvCount;
+		public void setStoreId(Long storeId) {
+			this.storeId = storeId;
 		}
 
-		public Integer getUvCount() {
-			return this.uvCount;
+		public Integer getFemaleUvCount() {
+			return this.femaleUvCount;
 		}
 
-		public void setUvCount(Integer uvCount) {
-			this.uvCount = uvCount;
+		public void setFemaleUvCount(Integer femaleUvCount) {
+			this.femaleUvCount = femaleUvCount;
 		}
 
-		public Integer getOnlyBodyUvCount() {
-			return this.onlyBodyUvCount;
+		public Integer getOldCount() {
+			return this.oldCount;
 		}
 
-		public void setOnlyBodyUvCount(Integer onlyBodyUvCount) {
-			this.onlyBodyUvCount = onlyBodyUvCount;
+		public void setOldCount(Integer oldCount) {
+			this.oldCount = oldCount;
+		}
+
+		public Integer getNewCount() {
+			return this.newCount;
+		}
+
+		public void setNewCount(Integer newCount) {
+			this.newCount = newCount;
 		}
 
 		public Long getLocationId() {
@@ -213,33 +221,25 @@ public class DescribeStatisticsDataResponse extends AcsResponse {
 			this.stayPeriod = stayPeriod;
 		}
 
-		public Integer getFemaleUvCount() {
-			return this.femaleUvCount;
+		public Integer getUvCount() {
+			return this.uvCount;
 		}
 
-		public void setFemaleUvCount(Integer femaleUvCount) {
-			this.femaleUvCount = femaleUvCount;
+		public void setUvCount(Integer uvCount) {
+			this.uvCount = uvCount;
 		}
 
-		public Integer getOldCount() {
-			return this.oldCount;
+		public Integer getOnlyBodyUvCount() {
+			return this.onlyBodyUvCount;
 		}
 
-		public void setOldCount(Integer oldCount) {
-			this.oldCount = oldCount;
-		}
-
-		public Integer getNewCount() {
-			return this.newCount;
-		}
-
-		public void setNewCount(Integer newCount) {
-			this.newCount = newCount;
+		public void setOnlyBodyUvCount(Integer onlyBodyUvCount) {
+			this.onlyBodyUvCount = onlyBodyUvCount;
 		}
 	}
 
 	@Override
-	public DescribeStatisticsDataResponse getInstance(UnmarshallerContext context) {
-		return	DescribeStatisticsDataResponseUnmarshaller.unmarshall(this, context);
+	public DescribeBaseStatisticsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeBaseStatisticsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -31,9 +31,9 @@ public class DescribeBaseAgeDataResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String dynamicMessage;
-
 	private Long storeId;
+
+	private String dynamicMessage;
 
 	private String errorCode;
 
@@ -43,13 +43,11 @@ public class DescribeBaseAgeDataResponse extends AcsResponse {
 
 	private String message;
 
-	private String hour;
+	private String time;
 
 	private String code;
 
 	private String dynamicCode;
-
-	private String day;
 
 	private List<AgeItem> maleAgeItems;
 
@@ -81,20 +79,20 @@ public class DescribeBaseAgeDataResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
-	}
-
 	public Long getStoreId() {
 		return this.storeId;
 	}
 
 	public void setStoreId(Long storeId) {
 		this.storeId = storeId;
+	}
+
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
 	}
 
 	public String getErrorCode() {
@@ -129,12 +127,12 @@ public class DescribeBaseAgeDataResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getHour() {
-		return this.hour;
+	public String getTime() {
+		return this.time;
 	}
 
-	public void setHour(String hour) {
-		this.hour = hour;
+	public void setTime(String time) {
+		this.time = time;
 	}
 
 	public String getCode() {
@@ -151,14 +149,6 @@ public class DescribeBaseAgeDataResponse extends AcsResponse {
 
 	public void setDynamicCode(String dynamicCode) {
 		this.dynamicCode = dynamicCode;
-	}
-
-	public String getDay() {
-		return this.day;
-	}
-
-	public void setDay(String day) {
-		this.day = day;
 	}
 
 	public List<AgeItem> getMaleAgeItems() {

@@ -22,16 +22,14 @@ import com.aliyuncs.reid.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeStatisticsDataRequest extends RpcAcsRequest<DescribeStatisticsDataResponse> {
+public class DescribeOverviewDataRequest extends RpcAcsRequest<DescribeOverviewDataResponse> {
 	   
 
-	private Long storeId;
+	private Long date;
 
-	private String summaryType;
-
-	private String time;
-	public DescribeStatisticsDataRequest() {
-		super("reid", "2019-09-28", "DescribeStatisticsData", "1.0.0");
+	private String storeIds;
+	public DescribeOverviewDataRequest() {
+		super("reid", "2019-09-28", "DescribeOverviewData", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class DescribeStatisticsDataRequest extends RpcAcsRequest<DescribeStatist
 		} catch (Exception e) {}
 	}
 
-	public Long getStoreId() {
-		return this.storeId;
+	public Long getDate() {
+		return this.date;
 	}
 
-	public void setStoreId(Long storeId) {
-		this.storeId = storeId;
-		if(storeId != null){
-			putBodyParameter("StoreId", storeId.toString());
+	public void setDate(Long date) {
+		this.date = date;
+		if(date != null){
+			putBodyParameter("Date", date.toString());
 		}
 	}
 
-	public String getSummaryType() {
-		return this.summaryType;
+	public String getStoreIds() {
+		return this.storeIds;
 	}
 
-	public void setSummaryType(String summaryType) {
-		this.summaryType = summaryType;
-		if(summaryType != null){
-			putBodyParameter("SummaryType", summaryType);
-		}
-	}
-
-	public String getTime() {
-		return this.time;
-	}
-
-	public void setTime(String time) {
-		this.time = time;
-		if(time != null){
-			putBodyParameter("Time", time);
+	public void setStoreIds(String storeIds) {
+		this.storeIds = storeIds;
+		if(storeIds != null){
+			putBodyParameter("StoreIds", storeIds);
 		}
 	}
 
 	@Override
-	public Class<DescribeStatisticsDataResponse> getResponseClass() {
-		return DescribeStatisticsDataResponse.class;
+	public Class<DescribeOverviewDataResponse> getResponseClass() {
+		return DescribeOverviewDataResponse.class;
 	}
 
 }

@@ -25,6 +25,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListActionDataResponse extends AcsResponse {
 
+	private String requestId;
+
+	private Boolean success;
+
+	private String dynamicMessage;
+
+	private Long cursorTime;
+
 	private String errorCode;
 
 	private String errorMessage;
@@ -41,13 +49,39 @@ public class ListActionDataResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String dynamicMessage;
-
 	private List<Action> actions;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
+	}
+
+	public Long getCursorTime() {
+		return this.cursorTime;
+	}
+
+	public void setCursorTime(Long cursorTime) {
+		this.cursorTime = cursorTime;
+	}
 
 	public String getErrorCode() {
 		return this.errorCode;
@@ -113,30 +147,6 @@ public class ListActionDataResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
-	}
-
 	public List<Action> getActions() {
 		return this.actions;
 	}
@@ -151,6 +161,8 @@ public class ListActionDataResponse extends AcsResponse {
 
 		private Long gmtCreate;
 
+		private Long leaveTimestamp;
+
 		private String locationLayerType;
 
 		private Boolean stayValid;
@@ -159,23 +171,25 @@ public class ListActionDataResponse extends AcsResponse {
 
 		private Long ukId;
 
-		private Long arriveTimeStamp;
+		private Long arriveTimestamp;
 
 		private Long gmtModified;
 
 		private String imageType;
 
+		private Long inStay;
+
 		private Integer status;
 
 		private Integer age;
+
+		private Long id;
 
 		private String imageUrl;
 
 		private Long locationId;
 
 		private Integer stayPeriod;
-
-		private Long leaveTimeStamp;
 
 		private Float score;
 
@@ -201,6 +215,14 @@ public class ListActionDataResponse extends AcsResponse {
 
 		public void setGmtCreate(Long gmtCreate) {
 			this.gmtCreate = gmtCreate;
+		}
+
+		public Long getLeaveTimestamp() {
+			return this.leaveTimestamp;
+		}
+
+		public void setLeaveTimestamp(Long leaveTimestamp) {
+			this.leaveTimestamp = leaveTimestamp;
 		}
 
 		public String getLocationLayerType() {
@@ -235,12 +257,12 @@ public class ListActionDataResponse extends AcsResponse {
 			this.ukId = ukId;
 		}
 
-		public Long getArriveTimeStamp() {
-			return this.arriveTimeStamp;
+		public Long getArriveTimestamp() {
+			return this.arriveTimestamp;
 		}
 
-		public void setArriveTimeStamp(Long arriveTimeStamp) {
-			this.arriveTimeStamp = arriveTimeStamp;
+		public void setArriveTimestamp(Long arriveTimestamp) {
+			this.arriveTimestamp = arriveTimestamp;
 		}
 
 		public Long getGmtModified() {
@@ -259,6 +281,14 @@ public class ListActionDataResponse extends AcsResponse {
 			this.imageType = imageType;
 		}
 
+		public Long getInStay() {
+			return this.inStay;
+		}
+
+		public void setInStay(Long inStay) {
+			this.inStay = inStay;
+		}
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -273,6 +303,14 @@ public class ListActionDataResponse extends AcsResponse {
 
 		public void setAge(Integer age) {
 			this.age = age;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public String getImageUrl() {
@@ -297,14 +335,6 @@ public class ListActionDataResponse extends AcsResponse {
 
 		public void setStayPeriod(Integer stayPeriod) {
 			this.stayPeriod = stayPeriod;
-		}
-
-		public Long getLeaveTimeStamp() {
-			return this.leaveTimeStamp;
-		}
-
-		public void setLeaveTimeStamp(Long leaveTimeStamp) {
-			this.leaveTimeStamp = leaveTimeStamp;
 		}
 
 		public Float getScore() {

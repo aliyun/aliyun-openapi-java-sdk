@@ -22,7 +22,7 @@ import com.aliyuncs.reid.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeStatisticsDataRequest extends RpcAcsRequest<DescribeStatisticsDataResponse> {
+public class DescribeBaseStatisticsRequest extends RpcAcsRequest<DescribeBaseStatisticsResponse> {
 	   
 
 	private Long storeId;
@@ -30,8 +30,8 @@ public class DescribeStatisticsDataRequest extends RpcAcsRequest<DescribeStatist
 	private String summaryType;
 
 	private String time;
-	public DescribeStatisticsDataRequest() {
-		super("reid", "2019-09-28", "DescribeStatisticsData", "1.0.0");
+	public DescribeBaseStatisticsRequest() {
+		super("reid", "2019-09-28", "DescribeBaseStatistics", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -73,8 +73,8 @@ public class DescribeStatisticsDataRequest extends RpcAcsRequest<DescribeStatist
 	}
 
 	@Override
-	public Class<DescribeStatisticsDataResponse> getResponseClass() {
-		return DescribeStatisticsDataResponse.class;
+	public Class<DescribeBaseStatisticsResponse> getResponseClass() {
+		return DescribeBaseStatisticsResponse.class;
 	}
 
 }

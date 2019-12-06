@@ -22,21 +22,32 @@ import com.aliyuncs.reid.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeStatisticsDataRequest extends RpcAcsRequest<DescribeStatisticsDataResponse> {
+public class DescribeImageUrlsRequest extends RpcAcsRequest<DescribeImageUrlsResponse> {
 	   
+
+	private String originUrls;
 
 	private Long storeId;
 
-	private String summaryType;
-
-	private String time;
-	public DescribeStatisticsDataRequest() {
-		super("reid", "2019-09-28", "DescribeStatisticsData", "1.0.0");
+	private String objectKeys;
+	public DescribeImageUrlsRequest() {
+		super("reid", "2019-09-28", "DescribeImageUrls", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOriginUrls() {
+		return this.originUrls;
+	}
+
+	public void setOriginUrls(String originUrls) {
+		this.originUrls = originUrls;
+		if(originUrls != null){
+			putBodyParameter("OriginUrls", originUrls);
+		}
 	}
 
 	public Long getStoreId() {
@@ -50,31 +61,20 @@ public class DescribeStatisticsDataRequest extends RpcAcsRequest<DescribeStatist
 		}
 	}
 
-	public String getSummaryType() {
-		return this.summaryType;
+	public String getObjectKeys() {
+		return this.objectKeys;
 	}
 
-	public void setSummaryType(String summaryType) {
-		this.summaryType = summaryType;
-		if(summaryType != null){
-			putBodyParameter("SummaryType", summaryType);
-		}
-	}
-
-	public String getTime() {
-		return this.time;
-	}
-
-	public void setTime(String time) {
-		this.time = time;
-		if(time != null){
-			putBodyParameter("Time", time);
+	public void setObjectKeys(String objectKeys) {
+		this.objectKeys = objectKeys;
+		if(objectKeys != null){
+			putBodyParameter("ObjectKeys", objectKeys);
 		}
 	}
 
 	@Override
-	public Class<DescribeStatisticsDataResponse> getResponseClass() {
-		return DescribeStatisticsDataResponse.class;
+	public Class<DescribeImageUrlsResponse> getResponseClass() {
+		return DescribeImageUrlsResponse.class;
 	}
 
 }

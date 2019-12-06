@@ -25,17 +25,19 @@ import com.aliyuncs.reid.Endpoint;
 public class ImportSpecialPersonnelRequest extends RpcAcsRequest<ImportSpecialPersonnelResponse> {
 	   
 
+	private Long ukId;
+
 	private String description;
 
 	private String externalId;
 
 	private String personType;
 
-	private String storeIds;
-
 	private String urls;
 
 	private String personName;
+
+	private String storeIds;
 
 	private String status;
 	public ImportSpecialPersonnelRequest() {
@@ -45,6 +47,17 @@ public class ImportSpecialPersonnelRequest extends RpcAcsRequest<ImportSpecialPe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getUkId() {
+		return this.ukId;
+	}
+
+	public void setUkId(Long ukId) {
+		this.ukId = ukId;
+		if(ukId != null){
+			putBodyParameter("UkId", ukId.toString());
+		}
 	}
 
 	public String getDescription() {
@@ -80,17 +93,6 @@ public class ImportSpecialPersonnelRequest extends RpcAcsRequest<ImportSpecialPe
 		}
 	}
 
-	public String getStoreIds() {
-		return this.storeIds;
-	}
-
-	public void setStoreIds(String storeIds) {
-		this.storeIds = storeIds;
-		if(storeIds != null){
-			putBodyParameter("StoreIds", storeIds);
-		}
-	}
-
 	public String getUrls() {
 		return this.urls;
 	}
@@ -110,6 +112,17 @@ public class ImportSpecialPersonnelRequest extends RpcAcsRequest<ImportSpecialPe
 		this.personName = personName;
 		if(personName != null){
 			putBodyParameter("PersonName", personName);
+		}
+	}
+
+	public String getStoreIds() {
+		return this.storeIds;
+	}
+
+	public void setStoreIds(String storeIds) {
+		this.storeIds = storeIds;
+		if(storeIds != null){
+			putBodyParameter("StoreIds", storeIds);
 		}
 	}
 

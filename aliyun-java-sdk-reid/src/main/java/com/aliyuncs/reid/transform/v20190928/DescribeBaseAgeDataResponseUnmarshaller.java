@@ -29,16 +29,15 @@ public class DescribeBaseAgeDataResponseUnmarshaller {
 		describeBaseAgeDataResponse.setRequestId(_ctx.stringValue("DescribeBaseAgeDataResponse.RequestId"));
 		describeBaseAgeDataResponse.setSummaryType(_ctx.stringValue("DescribeBaseAgeDataResponse.SummaryType"));
 		describeBaseAgeDataResponse.setSuccess(_ctx.booleanValue("DescribeBaseAgeDataResponse.Success"));
-		describeBaseAgeDataResponse.setDynamicMessage(_ctx.stringValue("DescribeBaseAgeDataResponse.DynamicMessage"));
 		describeBaseAgeDataResponse.setStoreId(_ctx.longValue("DescribeBaseAgeDataResponse.StoreId"));
+		describeBaseAgeDataResponse.setDynamicMessage(_ctx.stringValue("DescribeBaseAgeDataResponse.DynamicMessage"));
 		describeBaseAgeDataResponse.setErrorCode(_ctx.stringValue("DescribeBaseAgeDataResponse.ErrorCode"));
 		describeBaseAgeDataResponse.setErrorMessage(_ctx.stringValue("DescribeBaseAgeDataResponse.ErrorMessage"));
 		describeBaseAgeDataResponse.setLocationId(_ctx.longValue("DescribeBaseAgeDataResponse.LocationId"));
 		describeBaseAgeDataResponse.setMessage(_ctx.stringValue("DescribeBaseAgeDataResponse.Message"));
-		describeBaseAgeDataResponse.setHour(_ctx.stringValue("DescribeBaseAgeDataResponse.Hour"));
+		describeBaseAgeDataResponse.setTime(_ctx.stringValue("DescribeBaseAgeDataResponse.Time"));
 		describeBaseAgeDataResponse.setCode(_ctx.stringValue("DescribeBaseAgeDataResponse.Code"));
 		describeBaseAgeDataResponse.setDynamicCode(_ctx.stringValue("DescribeBaseAgeDataResponse.DynamicCode"));
-		describeBaseAgeDataResponse.setDay(_ctx.stringValue("DescribeBaseAgeDataResponse.Day"));
 
 		List<AgeItem> maleAgeItems = new ArrayList<AgeItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBaseAgeDataResponse.MaleAgeItems.Length"); i++) {

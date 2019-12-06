@@ -27,13 +27,11 @@ public class DescribeBaseAgeDataRequest extends RpcAcsRequest<DescribeBaseAgeDat
 
 	private Long storeId;
 
-	private String hour;
-
 	private String summaryType;
 
 	private Long locationId;
 
-	private String day;
+	private String time;
 	public DescribeBaseAgeDataRequest() {
 		super("reid", "2019-09-28", "DescribeBaseAgeData", "1.0.0");
 		setMethod(MethodType.POST);
@@ -51,17 +49,6 @@ public class DescribeBaseAgeDataRequest extends RpcAcsRequest<DescribeBaseAgeDat
 		this.storeId = storeId;
 		if(storeId != null){
 			putBodyParameter("StoreId", storeId.toString());
-		}
-	}
-
-	public String getHour() {
-		return this.hour;
-	}
-
-	public void setHour(String hour) {
-		this.hour = hour;
-		if(hour != null){
-			putBodyParameter("Hour", hour);
 		}
 	}
 
@@ -87,14 +74,14 @@ public class DescribeBaseAgeDataRequest extends RpcAcsRequest<DescribeBaseAgeDat
 		}
 	}
 
-	public String getDay() {
-		return this.day;
+	public String getTime() {
+		return this.time;
 	}
 
-	public void setDay(String day) {
-		this.day = day;
-		if(day != null){
-			putBodyParameter("Day", day);
+	public void setTime(String time) {
+		this.time = time;
+		if(time != null){
+			putBodyParameter("Time", time);
 		}
 	}
 
