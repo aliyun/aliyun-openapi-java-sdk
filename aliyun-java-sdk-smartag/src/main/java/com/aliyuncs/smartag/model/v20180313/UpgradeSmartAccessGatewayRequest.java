@@ -15,34 +15,37 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpgradeSmartAccessGatewayRequest extends RpcAcsRequest<UpgradeSmartAccessGatewayResponse> {
-	
-	public UpgradeSmartAccessGatewayRequest() {
-		super("Smartag", "2018-03-13", "UpgradeSmartAccessGateway", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private Boolean autoPay;
-
 	private Long bandWidthSpec;
+
+	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Integer userCount;
-
-	private String smartAGId;
-
 	private Long ownerId;
 
-	private Long dataPlan;
+	private String smartAGId;
+	public UpgradeSmartAccessGatewayRequest() {
+		super("Smartag", "2018-03-13", "UpgradeSmartAccessGateway", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,17 +58,6 @@ public class UpgradeSmartAccessGatewayRequest extends RpcAcsRequest<UpgradeSmart
 		}
 	}
 
-	public Boolean getAutoPay() {
-		return this.autoPay;
-	}
-
-	public void setAutoPay(Boolean autoPay) {
-		this.autoPay = autoPay;
-		if(autoPay != null){
-			putQueryParameter("AutoPay", autoPay.toString());
-		}
-	}
-
 	public Long getBandWidthSpec() {
 		return this.bandWidthSpec;
 	}
@@ -74,6 +66,17 @@ public class UpgradeSmartAccessGatewayRequest extends RpcAcsRequest<UpgradeSmart
 		this.bandWidthSpec = bandWidthSpec;
 		if(bandWidthSpec != null){
 			putQueryParameter("BandWidthSpec", bandWidthSpec.toString());
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 
@@ -99,28 +102,6 @@ public class UpgradeSmartAccessGatewayRequest extends RpcAcsRequest<UpgradeSmart
 		}
 	}
 
-	public Integer getUserCount() {
-		return this.userCount;
-	}
-
-	public void setUserCount(Integer userCount) {
-		this.userCount = userCount;
-		if(userCount != null){
-			putQueryParameter("UserCount", userCount.toString());
-		}
-	}
-
-	public String getSmartAGId() {
-		return this.smartAGId;
-	}
-
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-		if(smartAGId != null){
-			putQueryParameter("SmartAGId", smartAGId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -132,14 +113,14 @@ public class UpgradeSmartAccessGatewayRequest extends RpcAcsRequest<UpgradeSmart
 		}
 	}
 
-	public Long getDataPlan() {
-		return this.dataPlan;
+	public String getSmartAGId() {
+		return this.smartAGId;
 	}
 
-	public void setDataPlan(Long dataPlan) {
-		this.dataPlan = dataPlan;
-		if(dataPlan != null){
-			putQueryParameter("DataPlan", dataPlan.toString());
+	public void setSmartAGId(String smartAGId) {
+		this.smartAGId = smartAGId;
+		if(smartAGId != null){
+			putQueryParameter("SmartAGId", smartAGId);
 		}
 	}
 

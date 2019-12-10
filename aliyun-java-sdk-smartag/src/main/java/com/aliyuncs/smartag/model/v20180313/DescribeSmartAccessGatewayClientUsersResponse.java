@@ -29,7 +29,7 @@ public class DescribeSmartAccessGatewayClientUsersResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private Integer pageNo;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
@@ -51,12 +51,12 @@ public class DescribeSmartAccessGatewayClientUsersResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNo() {
-		return this.pageNo;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -84,6 +84,8 @@ public class DescribeSmartAccessGatewayClientUsersResponse extends AcsResponse {
 		private String userName;
 
 		private Integer bandwidth;
+
+		private Integer state;
 
 		public String getClientIp() {
 			return this.clientIp;
@@ -115,6 +117,14 @@ public class DescribeSmartAccessGatewayClientUsersResponse extends AcsResponse {
 
 		public void setBandwidth(Integer bandwidth) {
 			this.bandwidth = bandwidth;
+		}
+
+		public Integer getState() {
+			return this.state;
+		}
+
+		public void setState(Integer state) {
+			this.state = state;
 		}
 	}
 

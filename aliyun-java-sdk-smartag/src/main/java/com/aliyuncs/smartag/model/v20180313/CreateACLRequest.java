@@ -15,16 +15,15 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateACLRequest extends RpcAcsRequest<CreateACLResponse> {
-	
-	public CreateACLRequest() {
-		super("Smartag", "2018-03-13", "CreateACL", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -32,9 +31,17 @@ public class CreateACLRequest extends RpcAcsRequest<CreateACLResponse> {
 
 	private String ownerAccount;
 
-	private String name;
-
 	private Long ownerId;
+
+	private String name;
+	public CreateACLRequest() {
+		super("Smartag", "2018-03-13", "CreateACL", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -69,17 +76,6 @@ public class CreateACLRequest extends RpcAcsRequest<CreateACLResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -88,6 +84,17 @@ public class CreateACLRequest extends RpcAcsRequest<CreateACLResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

@@ -15,24 +15,39 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSmartAccessGatewaysResponse> {
-	
-	public DescribeSmartAccessGatewaysRequest() {
-		super("Smartag", "2018-03-13", "DescribeSmartAccessGateways", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String aclIds;
+
+	private Boolean canAssociateQos;
+
+	private String softwareVersion;
+
+	private String unboundAclIds;
+
+	private Integer pageNumber;
+
+	private String versionComparator;
+
+	private Integer pageSize;
+
+	private String instanceType;
+
+	private String hardwareType;
 
 	private String serialNumber;
 
 	private String resourceOwnerAccount;
-
-	private String aclIds;
 
 	private String ownerAccount;
 
@@ -40,19 +55,19 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 
 	private Long ownerId;
 
-	private String unboundAclIds;
-
-	private String pageNumber;
-
 	private String name;
-
-	private String pageSize;
 
 	private String smartAGId;
 
-	private String instanceType;
-
 	private String status;
+	public DescribeSmartAccessGatewaysRequest() {
+		super("Smartag", "2018-03-13", "DescribeSmartAccessGateways", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -62,6 +77,105 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAclIds() {
+		return this.aclIds;
+	}
+
+	public void setAclIds(String aclIds) {
+		this.aclIds = aclIds;
+		if(aclIds != null){
+			putQueryParameter("AclIds", aclIds);
+		}
+	}
+
+	public Boolean getCanAssociateQos() {
+		return this.canAssociateQos;
+	}
+
+	public void setCanAssociateQos(Boolean canAssociateQos) {
+		this.canAssociateQos = canAssociateQos;
+		if(canAssociateQos != null){
+			putQueryParameter("CanAssociateQos", canAssociateQos.toString());
+		}
+	}
+
+	public String getSoftwareVersion() {
+		return this.softwareVersion;
+	}
+
+	public void setSoftwareVersion(String softwareVersion) {
+		this.softwareVersion = softwareVersion;
+		if(softwareVersion != null){
+			putQueryParameter("SoftwareVersion", softwareVersion);
+		}
+	}
+
+	public String getUnboundAclIds() {
+		return this.unboundAclIds;
+	}
+
+	public void setUnboundAclIds(String unboundAclIds) {
+		this.unboundAclIds = unboundAclIds;
+		if(unboundAclIds != null){
+			putQueryParameter("UnboundAclIds", unboundAclIds);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getVersionComparator() {
+		return this.versionComparator;
+	}
+
+	public void setVersionComparator(String versionComparator) {
+		this.versionComparator = versionComparator;
+		if(versionComparator != null){
+			putQueryParameter("VersionComparator", versionComparator);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getHardwareType() {
+		return this.hardwareType;
+	}
+
+	public void setHardwareType(String hardwareType) {
+		this.hardwareType = hardwareType;
+		if(hardwareType != null){
+			putQueryParameter("HardwareType", hardwareType);
 		}
 	}
 
@@ -84,17 +198,6 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getAclIds() {
-		return this.aclIds;
-	}
-
-	public void setAclIds(String aclIds) {
-		this.aclIds = aclIds;
-		if(aclIds != null){
-			putQueryParameter("AclIds", aclIds);
 		}
 	}
 
@@ -131,28 +234,6 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 		}
 	}
 
-	public String getUnboundAclIds() {
-		return this.unboundAclIds;
-	}
-
-	public void setUnboundAclIds(String unboundAclIds) {
-		this.unboundAclIds = unboundAclIds;
-		if(unboundAclIds != null){
-			putQueryParameter("UnboundAclIds", unboundAclIds);
-		}
-	}
-
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -164,17 +245,6 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 		}
 	}
 
-	public String getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
-		}
-	}
-
 	public String getSmartAGId() {
 		return this.smartAGId;
 	}
@@ -183,17 +253,6 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 		this.smartAGId = smartAGId;
 		if(smartAGId != null){
 			putQueryParameter("SmartAGId", smartAGId);
-		}
-	}
-
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 

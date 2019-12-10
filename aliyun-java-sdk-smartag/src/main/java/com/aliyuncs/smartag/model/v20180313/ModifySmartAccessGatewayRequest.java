@@ -15,50 +15,42 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifySmartAccessGatewayRequest extends RpcAcsRequest<ModifySmartAccessGatewayResponse> {
-	
-	public ModifySmartAccessGatewayRequest() {
-		super("Smartag", "2018-03-13", "ModifySmartAccessGateway", "smartag");
-	}
-
-	private List<SnatEntries> snatEntriess;
+	   
 
 	private Long resourceOwnerId;
+
+	private String description;
+
+	private Integer securityLockThreshold;
+
+	private String routingStrategy;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String description;
-
 	private Long ownerId;
-
-	private Integer securityLockThreshold;
 
 	private String name;
 
 	private String cidrBlock;
 
 	private String smartAGId;
-
-	public List<SnatEntries> getSnatEntriess() {
-		return this.snatEntriess;
-	}
-
-	public void setSnatEntriess(List<SnatEntries> snatEntriess) {
-		this.snatEntriess = snatEntriess;	
-		if (snatEntriess != null) {
-			for (int depth1 = 0; depth1 < snatEntriess.size(); depth1++) {
-				putQueryParameter("SnatEntries." + (depth1 + 1) + ".CidrBlock" , snatEntriess.get(depth1).getCidrBlock());
-				putQueryParameter("SnatEntries." + (depth1 + 1) + ".SnatIp" , snatEntriess.get(depth1).getSnatIp());
-			}
-		}	
+	public ModifySmartAccessGatewayRequest() {
+		super("Smartag", "2018-03-13", "ModifySmartAccessGateway", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -69,6 +61,39 @@ public class ModifySmartAccessGatewayRequest extends RpcAcsRequest<ModifySmartAc
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Integer getSecurityLockThreshold() {
+		return this.securityLockThreshold;
+	}
+
+	public void setSecurityLockThreshold(Integer securityLockThreshold) {
+		this.securityLockThreshold = securityLockThreshold;
+		if(securityLockThreshold != null){
+			putQueryParameter("SecurityLockThreshold", securityLockThreshold.toString());
+		}
+	}
+
+	public String getRoutingStrategy() {
+		return this.routingStrategy;
+	}
+
+	public void setRoutingStrategy(String routingStrategy) {
+		this.routingStrategy = routingStrategy;
+		if(routingStrategy != null){
+			putQueryParameter("RoutingStrategy", routingStrategy);
 		}
 	}
 
@@ -94,17 +119,6 @@ public class ModifySmartAccessGatewayRequest extends RpcAcsRequest<ModifySmartAc
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -113,17 +127,6 @@ public class ModifySmartAccessGatewayRequest extends RpcAcsRequest<ModifySmartAc
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getSecurityLockThreshold() {
-		return this.securityLockThreshold;
-	}
-
-	public void setSecurityLockThreshold(Integer securityLockThreshold) {
-		this.securityLockThreshold = securityLockThreshold;
-		if(securityLockThreshold != null){
-			putQueryParameter("SecurityLockThreshold", securityLockThreshold.toString());
 		}
 	}
 
@@ -157,29 +160,6 @@ public class ModifySmartAccessGatewayRequest extends RpcAcsRequest<ModifySmartAc
 		this.smartAGId = smartAGId;
 		if(smartAGId != null){
 			putQueryParameter("SmartAGId", smartAGId);
-		}
-	}
-
-	public static class SnatEntries {
-
-		private String cidrBlock;
-
-		private String snatIp;
-
-		public String getCidrBlock() {
-			return this.cidrBlock;
-		}
-
-		public void setCidrBlock(String cidrBlock) {
-			this.cidrBlock = cidrBlock;
-		}
-
-		public String getSnatIp() {
-			return this.snatIp;
-		}
-
-		public void setSnatIp(String snatIp) {
-			this.snatIp = snatIp;
 		}
 	}
 

@@ -15,44 +15,42 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeACLAttributeRequest extends RpcAcsRequest<DescribeACLAttributeResponse> {
-	
-	public DescribeACLAttributeRequest() {
-		super("Smartag", "2018-03-13", "DescribeACLAttribute", "smartag");
-	}
-
-	private String aclId;
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
+	private Integer pageNumber;
 
 	private Integer pageSize;
-
-	private Long ownerId;
-
-	private Integer pageNumber;
 
 	private String direction;
 
 	private String order;
 
-	public String getAclId() {
-		return this.aclId;
-	}
+	private String aclId;
 
-	public void setAclId(String aclId) {
-		this.aclId = aclId;
-		if(aclId != null){
-			putQueryParameter("AclId", aclId);
-		}
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String name;
+	public DescribeACLAttributeRequest() {
+		super("Smartag", "2018-03-13", "DescribeACLAttribute", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -63,6 +61,61 @@ public class DescribeACLAttributeRequest extends RpcAcsRequest<DescribeACLAttrib
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getDirection() {
+		return this.direction;
+	}
+
+	public void setDirection(String direction) {
+		this.direction = direction;
+		if(direction != null){
+			putQueryParameter("Direction", direction);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
+		}
+	}
+
+	public String getAclId() {
+		return this.aclId;
+	}
+
+	public void setAclId(String aclId) {
+		this.aclId = aclId;
+		if(aclId != null){
+			putQueryParameter("AclId", aclId);
 		}
 	}
 
@@ -88,17 +141,6 @@ public class DescribeACLAttributeRequest extends RpcAcsRequest<DescribeACLAttrib
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -110,36 +152,14 @@ public class DescribeACLAttributeRequest extends RpcAcsRequest<DescribeACLAttrib
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getDirection() {
-		return this.direction;
-	}
-
-	public void setDirection(String direction) {
-		this.direction = direction;
-		if(direction != null){
-			putQueryParameter("Direction", direction);
-		}
-	}
-
-	public String getOrder() {
-		return this.order;
-	}
-
-	public void setOrder(String order) {
-		this.order = order;
-		if(order != null){
-			putQueryParameter("Order", order);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

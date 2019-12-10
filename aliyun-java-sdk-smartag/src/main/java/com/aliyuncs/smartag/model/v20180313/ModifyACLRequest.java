@@ -15,38 +15,34 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyACLRequest extends RpcAcsRequest<ModifyACLResponse> {
-	
-	public ModifyACLRequest() {
-		super("Smartag", "2018-03-13", "ModifyACL", "smartag");
-	}
-
-	private String aclId;
+	   
 
 	private Long resourceOwnerId;
+
+	private String aclId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String name;
-
 	private Long ownerId;
 
-	public String getAclId() {
-		return this.aclId;
-	}
-
-	public void setAclId(String aclId) {
-		this.aclId = aclId;
-		if(aclId != null){
-			putQueryParameter("AclId", aclId);
-		}
+	private String name;
+	public ModifyACLRequest() {
+		super("Smartag", "2018-03-13", "ModifyACL", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -57,6 +53,17 @@ public class ModifyACLRequest extends RpcAcsRequest<ModifyACLResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAclId() {
+		return this.aclId;
+	}
+
+	public void setAclId(String aclId) {
+		this.aclId = aclId;
+		if(aclId != null){
+			putQueryParameter("AclId", aclId);
 		}
 	}
 
@@ -82,17 +89,6 @@ public class ModifyACLRequest extends RpcAcsRequest<ModifyACLResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -101,6 +97,17 @@ public class ModifyACLRequest extends RpcAcsRequest<ModifyACLResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

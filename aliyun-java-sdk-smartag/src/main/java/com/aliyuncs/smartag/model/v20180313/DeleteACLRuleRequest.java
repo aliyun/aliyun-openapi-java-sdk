@@ -15,20 +15,19 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteACLRuleRequest extends RpcAcsRequest<DeleteACLRuleResponse> {
-	
-	public DeleteACLRuleRequest() {
-		super("Smartag", "2018-03-13", "DeleteACLRule", "smartag");
-	}
-
-	private String aclId;
+	   
 
 	private Long resourceOwnerId;
+
+	private String aclId;
 
 	private String resourceOwnerAccount;
 
@@ -37,16 +36,13 @@ public class DeleteACLRuleRequest extends RpcAcsRequest<DeleteACLRuleResponse> {
 	private Long ownerId;
 
 	private String acrId;
-
-	public String getAclId() {
-		return this.aclId;
-	}
-
-	public void setAclId(String aclId) {
-		this.aclId = aclId;
-		if(aclId != null){
-			putQueryParameter("AclId", aclId);
-		}
+	public DeleteACLRuleRequest() {
+		super("Smartag", "2018-03-13", "DeleteACLRule", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -57,6 +53,17 @@ public class DeleteACLRuleRequest extends RpcAcsRequest<DeleteACLRuleResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAclId() {
+		return this.aclId;
+	}
+
+	public void setAclId(String aclId) {
+		this.aclId = aclId;
+		if(aclId != null){
+			putQueryParameter("AclId", aclId);
 		}
 	}
 

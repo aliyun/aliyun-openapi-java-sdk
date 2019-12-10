@@ -19,50 +19,63 @@ import java.util.List;
 
 import com.aliyuncs.smartag.model.v20180313.DescribeSmartAccessGatewaysResponse;
 import com.aliyuncs.smartag.model.v20180313.DescribeSmartAccessGatewaysResponse.SmartAccessGateway;
-import com.aliyuncs.smartag.model.v20180313.DescribeSmartAccessGatewaysResponse.SmartAccessGateway.SnatEntry;
+import com.aliyuncs.smartag.model.v20180313.DescribeSmartAccessGatewaysResponse.SmartAccessGateway.Link;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeSmartAccessGatewaysResponseUnmarshaller {
 
-	public static DescribeSmartAccessGatewaysResponse unmarshall(DescribeSmartAccessGatewaysResponse describeSmartAccessGatewaysResponse, UnmarshallerContext context) {
+	public static DescribeSmartAccessGatewaysResponse unmarshall(DescribeSmartAccessGatewaysResponse describeSmartAccessGatewaysResponse, UnmarshallerContext _ctx) {
 		
-		describeSmartAccessGatewaysResponse.setRequestId(context.stringValue("DescribeSmartAccessGatewaysResponse.RequestId"));
-		describeSmartAccessGatewaysResponse.setTotalCount(context.integerValue("DescribeSmartAccessGatewaysResponse.TotalCount"));
-		describeSmartAccessGatewaysResponse.setPageNumber(context.integerValue("DescribeSmartAccessGatewaysResponse.PageNumber"));
-		describeSmartAccessGatewaysResponse.setPageSize(context.integerValue("DescribeSmartAccessGatewaysResponse.PageSize"));
+		describeSmartAccessGatewaysResponse.setRequestId(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.RequestId"));
+		describeSmartAccessGatewaysResponse.setTotalCount(_ctx.integerValue("DescribeSmartAccessGatewaysResponse.TotalCount"));
+		describeSmartAccessGatewaysResponse.setPageNumber(_ctx.integerValue("DescribeSmartAccessGatewaysResponse.PageNumber"));
+		describeSmartAccessGatewaysResponse.setPageSize(_ctx.integerValue("DescribeSmartAccessGatewaysResponse.PageSize"));
 
 		List<SmartAccessGateway> smartAccessGateways = new ArrayList<SmartAccessGateway>();
-		for (int i = 0; i < context.lengthValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways.Length"); i++) {
 			SmartAccessGateway smartAccessGateway = new SmartAccessGateway();
-			smartAccessGateway.setSmartAGId(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SmartAGId"));
-			smartAccessGateway.setName(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Name"));
-			smartAccessGateway.setCity(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].City"));
-			smartAccessGateway.setMaxBandwidth(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].MaxBandwidth"));
-			smartAccessGateway.setStatus(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Status"));
-			smartAccessGateway.setCidrBlock(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].CidrBlock"));
-			smartAccessGateway.setAssociatedCcnId(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].AssociatedCcnId"));
-			smartAccessGateway.setAssociatedCcnName(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].AssociatedCcnName"));
-			smartAccessGateway.setDescription(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Description"));
-			smartAccessGateway.setCreateTime(context.longValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].CreateTime"));
-			smartAccessGateway.setEndTime(context.longValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].EndTime"));
-			smartAccessGateway.setSoftwareVersion(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SoftwareVersion"));
-			smartAccessGateway.setHardwareVersion(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].HardwareVersion"));
-			smartAccessGateway.setSerialNumber(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SerialNumber"));
-			smartAccessGateway.setSecurityLockThreshold(context.integerValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SecurityLockThreshold"));
-			smartAccessGateway.setAclIds(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].AclIds"));
-			smartAccessGateway.setDataPlan(context.longValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].DataPlan"));
-			smartAccessGateway.setUserCount(context.integerValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].UserCount"));
+			smartAccessGateway.setSmartAGId(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SmartAGId"));
+			smartAccessGateway.setName(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Name"));
+			smartAccessGateway.setCity(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].City"));
+			smartAccessGateway.setMaxBandwidth(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].MaxBandwidth"));
+			smartAccessGateway.setStatus(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Status"));
+			smartAccessGateway.setCidrBlock(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].CidrBlock"));
+			smartAccessGateway.setAssociatedCcnId(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].AssociatedCcnId"));
+			smartAccessGateway.setAssociatedCcnName(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].AssociatedCcnName"));
+			smartAccessGateway.setDescription(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Description"));
+			smartAccessGateway.setCreateTime(_ctx.longValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].CreateTime"));
+			smartAccessGateway.setEndTime(_ctx.longValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].EndTime"));
+			smartAccessGateway.setSoftwareVersion(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SoftwareVersion"));
+			smartAccessGateway.setHardwareVersion(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].HardwareVersion"));
+			smartAccessGateway.setSerialNumber(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SerialNumber"));
+			smartAccessGateway.setSecurityLockThreshold(_ctx.integerValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SecurityLockThreshold"));
+			smartAccessGateway.setAclIds(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].AclIds"));
+			smartAccessGateway.setDataPlan(_ctx.longValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].DataPlan"));
+			smartAccessGateway.setUserCount(_ctx.integerValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].UserCount"));
+			smartAccessGateway.setRoutingStrategy(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].RoutingStrategy"));
+			smartAccessGateway.setUpBandwidthWan(_ctx.integerValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].UpBandwidthWan"));
+			smartAccessGateway.setUpBandwidth4G(_ctx.integerValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].UpBandwidth4G"));
+			smartAccessGateway.setQosIds(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].QosIds"));
+			smartAccessGateway.setBackupSoftwareVersion(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].BackupSoftwareVersion"));
+			smartAccessGateway.setSmartAGUid(_ctx.longValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SmartAGUid"));
+			smartAccessGateway.setBackupStatus(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].BackupStatus"));
 
-			List<SnatEntry> snatEntries = new ArrayList<SnatEntry>();
-			for (int j = 0; j < context.lengthValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SnatEntries.Length"); j++) {
-				SnatEntry snatEntry = new SnatEntry();
-				snatEntry.setCidrBlock(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SnatEntries["+ j +"].CidrBlock"));
-				snatEntry.setSnatIp(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SnatEntries["+ j +"].SnatIp"));
+			List<Link> links = new ArrayList<Link>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Links.Length"); j++) {
+				Link link = new Link();
+				link.setInstanceId(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Links["+ j +"].InstanceId"));
+				link.setType(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Links["+ j +"].Type"));
+				link.setStatus(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Links["+ j +"].Status"));
+				link.setEndTime(_ctx.longValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Links["+ j +"].EndTime"));
+				link.setBandwidth(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Links["+ j +"].Bandwidth"));
+				link.setRelateInstanceId(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Links["+ j +"].RelateInstanceId"));
+				link.setRelateInstanceRegionId(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Links["+ j +"].RelateInstanceRegionId"));
+				link.setCommodityType(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Links["+ j +"].CommodityType"));
 
-				snatEntries.add(snatEntry);
+				links.add(link);
 			}
-			smartAccessGateway.setSnatEntries(snatEntries);
+			smartAccessGateway.setLinks(links);
 
 			smartAccessGateways.add(smartAccessGateway);
 		}

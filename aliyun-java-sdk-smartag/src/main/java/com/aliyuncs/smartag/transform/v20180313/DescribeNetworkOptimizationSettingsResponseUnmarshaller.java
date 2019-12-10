@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeNetworkOptimizationSettingsResponseUnmarshaller {
 
-	public static DescribeNetworkOptimizationSettingsResponse unmarshall(DescribeNetworkOptimizationSettingsResponse describeNetworkOptimizationSettingsResponse, UnmarshallerContext context) {
+	public static DescribeNetworkOptimizationSettingsResponse unmarshall(DescribeNetworkOptimizationSettingsResponse describeNetworkOptimizationSettingsResponse, UnmarshallerContext _ctx) {
 		
-		describeNetworkOptimizationSettingsResponse.setRequestId(context.stringValue("DescribeNetworkOptimizationSettingsResponse.RequestId"));
-		describeNetworkOptimizationSettingsResponse.setTotalCount(context.integerValue("DescribeNetworkOptimizationSettingsResponse.TotalCount"));
-		describeNetworkOptimizationSettingsResponse.setPageNo(context.integerValue("DescribeNetworkOptimizationSettingsResponse.PageNo"));
-		describeNetworkOptimizationSettingsResponse.setPageSize(context.integerValue("DescribeNetworkOptimizationSettingsResponse.PageSize"));
+		describeNetworkOptimizationSettingsResponse.setRequestId(_ctx.stringValue("DescribeNetworkOptimizationSettingsResponse.RequestId"));
+		describeNetworkOptimizationSettingsResponse.setTotalCount(_ctx.integerValue("DescribeNetworkOptimizationSettingsResponse.TotalCount"));
+		describeNetworkOptimizationSettingsResponse.setPageNumber(_ctx.integerValue("DescribeNetworkOptimizationSettingsResponse.PageNumber"));
+		describeNetworkOptimizationSettingsResponse.setPageSize(_ctx.integerValue("DescribeNetworkOptimizationSettingsResponse.PageSize"));
 
 		List<Setting> settings = new ArrayList<Setting>();
-		for (int i = 0; i < context.lengthValue("DescribeNetworkOptimizationSettingsResponse.Settings.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkOptimizationSettingsResponse.Settings.Length"); i++) {
 			Setting setting = new Setting();
-			setting.setDomain(context.stringValue("DescribeNetworkOptimizationSettingsResponse.Settings["+ i +"].Domain"));
-			setting.setType(context.stringValue("DescribeNetworkOptimizationSettingsResponse.Settings["+ i +"].Type"));
+			setting.setDomain(_ctx.stringValue("DescribeNetworkOptimizationSettingsResponse.Settings["+ i +"].Domain"));
+			setting.setType(_ctx.stringValue("DescribeNetworkOptimizationSettingsResponse.Settings["+ i +"].Type"));
 
 			settings.add(setting);
 		}

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UnicomOrderConfirmResponseUnmarshaller {
 
-	public static UnicomOrderConfirmResponse unmarshall(UnicomOrderConfirmResponse unicomOrderConfirmResponse, UnmarshallerContext context) {
+	public static UnicomOrderConfirmResponse unmarshall(UnicomOrderConfirmResponse unicomOrderConfirmResponse, UnmarshallerContext _ctx) {
 		
-		unicomOrderConfirmResponse.setRequestId(context.stringValue("UnicomOrderConfirmResponse.RequestId"));
-		unicomOrderConfirmResponse.setCode(context.stringValue("UnicomOrderConfirmResponse.Code"));
-		unicomOrderConfirmResponse.setMessage(context.stringValue("UnicomOrderConfirmResponse.Message"));
-		unicomOrderConfirmResponse.setSuccess(context.booleanValue("UnicomOrderConfirmResponse.Success"));
+		unicomOrderConfirmResponse.setRequestId(_ctx.stringValue("UnicomOrderConfirmResponse.RequestId"));
+		unicomOrderConfirmResponse.setCode(_ctx.stringValue("UnicomOrderConfirmResponse.Code"));
+		unicomOrderConfirmResponse.setMessage(_ctx.stringValue("UnicomOrderConfirmResponse.Message"));
+		unicomOrderConfirmResponse.setSuccess(_ctx.booleanValue("UnicomOrderConfirmResponse.Success"));
 	 
 	 	return unicomOrderConfirmResponse;
 	}

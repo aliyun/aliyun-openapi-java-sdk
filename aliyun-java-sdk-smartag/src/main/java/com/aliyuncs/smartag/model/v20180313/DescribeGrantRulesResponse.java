@@ -81,7 +81,7 @@ public class DescribeGrantRulesResponse extends AcsResponse {
 
 		private Long cenUid;
 
-		private Long ccnId;
+		private Long ccnUid;
 
 		private String cenInstanceId;
 
@@ -109,12 +109,12 @@ public class DescribeGrantRulesResponse extends AcsResponse {
 			this.cenUid = cenUid;
 		}
 
-		public Long getCcnId() {
-			return this.ccnId;
+		public Long getCcnUid() {
+			return this.ccnUid;
 		}
 
-		public void setCcnId(Long ccnId) {
-			this.ccnId = ccnId;
+		public void setCcnUid(Long ccnUid) {
+			this.ccnUid = ccnUid;
 		}
 
 		public String getCenInstanceId() {
@@ -149,26 +149,10 @@ public class DescribeGrantRulesResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}

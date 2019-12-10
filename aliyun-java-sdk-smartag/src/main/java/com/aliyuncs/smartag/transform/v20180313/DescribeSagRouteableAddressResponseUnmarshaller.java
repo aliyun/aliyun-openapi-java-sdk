@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSagRouteableAddressResponseUnmarshaller {
 
-	public static DescribeSagRouteableAddressResponse unmarshall(DescribeSagRouteableAddressResponse describeSagRouteableAddressResponse, UnmarshallerContext context) {
+	public static DescribeSagRouteableAddressResponse unmarshall(DescribeSagRouteableAddressResponse describeSagRouteableAddressResponse, UnmarshallerContext _ctx) {
 		
-		describeSagRouteableAddressResponse.setRequestId(context.stringValue("DescribeSagRouteableAddressResponse.RequestId"));
-		describeSagRouteableAddressResponse.setRouteableAddress(context.stringValue("DescribeSagRouteableAddressResponse.RouteableAddress"));
-		describeSagRouteableAddressResponse.setOrigin(context.stringValue("DescribeSagRouteableAddressResponse.Origin"));
+		describeSagRouteableAddressResponse.setRequestId(_ctx.stringValue("DescribeSagRouteableAddressResponse.RequestId"));
+		describeSagRouteableAddressResponse.setRouteableAddress(_ctx.stringValue("DescribeSagRouteableAddressResponse.RouteableAddress"));
+		describeSagRouteableAddressResponse.setOrigin(_ctx.stringValue("DescribeSagRouteableAddressResponse.Origin"));
 	 
 	 	return describeSagRouteableAddressResponse;
 	}

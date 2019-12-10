@@ -15,16 +15,15 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifySmartAccessGatewayClientUserRequest extends RpcAcsRequest<ModifySmartAccessGatewayClientUserResponse> {
-	
-	public ModifySmartAccessGatewayClientUserRequest() {
-		super("Smartag", "2018-03-13", "ModifySmartAccessGatewayClientUser", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -34,11 +33,19 @@ public class ModifySmartAccessGatewayClientUserRequest extends RpcAcsRequest<Mod
 
 	private String ownerAccount;
 
-	private String smartAGId;
-
 	private Long ownerId;
 
+	private String smartAGId;
+
 	private String userName;
+	public ModifySmartAccessGatewayClientUserRequest() {
+		super("Smartag", "2018-03-13", "ModifySmartAccessGatewayClientUser", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -84,17 +91,6 @@ public class ModifySmartAccessGatewayClientUserRequest extends RpcAcsRequest<Mod
 		}
 	}
 
-	public String getSmartAGId() {
-		return this.smartAGId;
-	}
-
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-		if(smartAGId != null){
-			putQueryParameter("SmartAGId", smartAGId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -103,6 +99,17 @@ public class ModifySmartAccessGatewayClientUserRequest extends RpcAcsRequest<Mod
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSmartAGId() {
+		return this.smartAGId;
+	}
+
+	public void setSmartAGId(String smartAGId) {
+		this.smartAGId = smartAGId;
+		if(smartAGId != null){
+			putQueryParameter("SmartAGId", smartAGId);
 		}
 	}
 

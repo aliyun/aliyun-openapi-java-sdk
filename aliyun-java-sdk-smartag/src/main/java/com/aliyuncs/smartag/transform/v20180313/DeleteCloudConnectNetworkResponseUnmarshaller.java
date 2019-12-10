@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteCloudConnectNetworkResponseUnmarshaller {
 
-	public static DeleteCloudConnectNetworkResponse unmarshall(DeleteCloudConnectNetworkResponse deleteCloudConnectNetworkResponse, UnmarshallerContext context) {
+	public static DeleteCloudConnectNetworkResponse unmarshall(DeleteCloudConnectNetworkResponse deleteCloudConnectNetworkResponse, UnmarshallerContext _ctx) {
 		
-		deleteCloudConnectNetworkResponse.setRequestId(context.stringValue("DeleteCloudConnectNetworkResponse.RequestId"));
+		deleteCloudConnectNetworkResponse.setRequestId(_ctx.stringValue("DeleteCloudConnectNetworkResponse.RequestId"));
 	 
 	 	return deleteCloudConnectNetworkResponse;
 	}

@@ -15,16 +15,15 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetCloudConnectNetworkUseLimitRequest extends RpcAcsRequest<GetCloudConnectNetworkUseLimitResponse> {
-	
-	public GetCloudConnectNetworkUseLimitRequest() {
-		super("Smartag", "2018-03-13", "GetCloudConnectNetworkUseLimit", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -33,6 +32,14 @@ public class GetCloudConnectNetworkUseLimitRequest extends RpcAcsRequest<GetClou
 	private String ownerAccount;
 
 	private Long ownerId;
+	public GetCloudConnectNetworkUseLimitRequest() {
+		super("Smartag", "2018-03-13", "GetCloudConnectNetworkUseLimit", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

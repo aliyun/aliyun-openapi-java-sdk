@@ -16,30 +16,37 @@ package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeUserFlowStatisticsRequest extends RpcAcsRequest<DescribeUserFlowStatisticsResponse> {
-	
-	public DescribeUserFlowStatisticsRequest() {
-		super("Smartag", "2018-03-13", "DescribeUserFlowStatistics", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private List<String> userNamess;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String smartAGId;
-
 	private String statisticsDate;
 
-	private List<String> userNamess;
-
 	private Long ownerId;
+
+	private String smartAGId;
+	public DescribeUserFlowStatisticsRequest() {
+		super("Smartag", "2018-03-13", "DescribeUserFlowStatistics", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,6 +57,19 @@ public class DescribeUserFlowStatisticsRequest extends RpcAcsRequest<DescribeUse
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
+	}
+
+	public List<String> getUserNamess() {
+		return this.userNamess;
+	}
+
+	public void setUserNamess(List<String> userNamess) {
+		this.userNamess = userNamess;	
+		if (userNamess != null) {
+			for (int i = 0; i < userNamess.size(); i++) {
+				putQueryParameter("UserNames." + (i + 1) , userNamess.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -74,17 +94,6 @@ public class DescribeUserFlowStatisticsRequest extends RpcAcsRequest<DescribeUse
 		}
 	}
 
-	public String getSmartAGId() {
-		return this.smartAGId;
-	}
-
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-		if(smartAGId != null){
-			putQueryParameter("SmartAGId", smartAGId);
-		}
-	}
-
 	public String getStatisticsDate() {
 		return this.statisticsDate;
 	}
@@ -96,19 +105,6 @@ public class DescribeUserFlowStatisticsRequest extends RpcAcsRequest<DescribeUse
 		}
 	}
 
-	public List<String> getUserNamess() {
-		return this.userNamess;
-	}
-
-	public void setUserNamess(List<String> userNamess) {
-		this.userNamess = userNamess;	
-		if (userNamess != null) {
-			for (int i = 0; i < userNamess.size(); i++) {
-				putQueryParameter("UserNames." + (i + 1) , userNamess.get(i));
-			}
-		}	
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -117,6 +113,17 @@ public class DescribeUserFlowStatisticsRequest extends RpcAcsRequest<DescribeUse
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSmartAGId() {
+		return this.smartAGId;
+	}
+
+	public void setSmartAGId(String smartAGId) {
+		this.smartAGId = smartAGId;
+		if(smartAGId != null){
+			putQueryParameter("SmartAGId", smartAGId);
 		}
 	}
 

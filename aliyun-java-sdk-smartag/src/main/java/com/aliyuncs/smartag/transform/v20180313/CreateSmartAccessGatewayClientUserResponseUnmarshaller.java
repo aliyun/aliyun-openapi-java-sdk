@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateSmartAccessGatewayClientUserResponseUnmarshaller {
 
-	public static CreateSmartAccessGatewayClientUserResponse unmarshall(CreateSmartAccessGatewayClientUserResponse createSmartAccessGatewayClientUserResponse, UnmarshallerContext context) {
+	public static CreateSmartAccessGatewayClientUserResponse unmarshall(CreateSmartAccessGatewayClientUserResponse createSmartAccessGatewayClientUserResponse, UnmarshallerContext _ctx) {
 		
-		createSmartAccessGatewayClientUserResponse.setRequestId(context.stringValue("CreateSmartAccessGatewayClientUserResponse.RequestId"));
-		createSmartAccessGatewayClientUserResponse.setClientIp(context.stringValue("CreateSmartAccessGatewayClientUserResponse.ClientIp"));
-		createSmartAccessGatewayClientUserResponse.setUserMail(context.stringValue("CreateSmartAccessGatewayClientUserResponse.UserMail"));
-		createSmartAccessGatewayClientUserResponse.setUserName(context.stringValue("CreateSmartAccessGatewayClientUserResponse.UserName"));
-		createSmartAccessGatewayClientUserResponse.setBandwidth(context.integerValue("CreateSmartAccessGatewayClientUserResponse.Bandwidth"));
+		createSmartAccessGatewayClientUserResponse.setRequestId(_ctx.stringValue("CreateSmartAccessGatewayClientUserResponse.RequestId"));
+		createSmartAccessGatewayClientUserResponse.setClientIp(_ctx.stringValue("CreateSmartAccessGatewayClientUserResponse.ClientIp"));
+		createSmartAccessGatewayClientUserResponse.setUserMail(_ctx.stringValue("CreateSmartAccessGatewayClientUserResponse.UserMail"));
+		createSmartAccessGatewayClientUserResponse.setUserName(_ctx.stringValue("CreateSmartAccessGatewayClientUserResponse.UserName"));
+		createSmartAccessGatewayClientUserResponse.setBandwidth(_ctx.integerValue("CreateSmartAccessGatewayClientUserResponse.Bandwidth"));
 	 
 	 	return createSmartAccessGatewayClientUserResponse;
 	}

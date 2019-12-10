@@ -99,6 +99,8 @@ public class DescribeCloudConnectNetworksResponse extends AcsResponse {
 
 		private String snatCidrBlock;
 
+		private String interworkingStatus;
+
 		private List<Tag> tags;
 
 		public String getCcnId() {
@@ -187,6 +189,14 @@ public class DescribeCloudConnectNetworksResponse extends AcsResponse {
 
 		public void setSnatCidrBlock(String snatCidrBlock) {
 			this.snatCidrBlock = snatCidrBlock;
+		}
+
+		public String getInterworkingStatus() {
+			return this.interworkingStatus;
+		}
+
+		public void setInterworkingStatus(String interworkingStatus) {
+			this.interworkingStatus = interworkingStatus;
 		}
 
 		public List<Tag> getTags() {

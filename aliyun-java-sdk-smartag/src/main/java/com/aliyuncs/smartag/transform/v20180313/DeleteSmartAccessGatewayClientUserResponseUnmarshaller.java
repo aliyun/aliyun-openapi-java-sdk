@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteSmartAccessGatewayClientUserResponseUnmarshaller {
 
-	public static DeleteSmartAccessGatewayClientUserResponse unmarshall(DeleteSmartAccessGatewayClientUserResponse deleteSmartAccessGatewayClientUserResponse, UnmarshallerContext context) {
+	public static DeleteSmartAccessGatewayClientUserResponse unmarshall(DeleteSmartAccessGatewayClientUserResponse deleteSmartAccessGatewayClientUserResponse, UnmarshallerContext _ctx) {
 		
-		deleteSmartAccessGatewayClientUserResponse.setRequestId(context.stringValue("DeleteSmartAccessGatewayClientUserResponse.RequestId"));
+		deleteSmartAccessGatewayClientUserResponse.setRequestId(_ctx.stringValue("DeleteSmartAccessGatewayClientUserResponse.RequestId"));
 	 
 	 	return deleteSmartAccessGatewayClientUserResponse;
 	}

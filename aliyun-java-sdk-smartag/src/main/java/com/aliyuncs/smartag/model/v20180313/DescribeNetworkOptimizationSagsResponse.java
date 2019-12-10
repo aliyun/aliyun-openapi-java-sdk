@@ -29,7 +29,7 @@ public class DescribeNetworkOptimizationSagsResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private Integer pageNo;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
@@ -51,12 +51,12 @@ public class DescribeNetworkOptimizationSagsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNo() {
-		return this.pageNo;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {

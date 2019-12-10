@@ -15,38 +15,34 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AssociateACLRequest extends RpcAcsRequest<AssociateACLResponse> {
-	
-	public AssociateACLRequest() {
-		super("Smartag", "2018-03-13", "AssociateACL", "smartag");
-	}
-
-	private String aclId;
+	   
 
 	private Long resourceOwnerId;
+
+	private String aclId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String smartAGId;
-
 	private Long ownerId;
 
-	public String getAclId() {
-		return this.aclId;
-	}
-
-	public void setAclId(String aclId) {
-		this.aclId = aclId;
-		if(aclId != null){
-			putQueryParameter("AclId", aclId);
-		}
+	private String smartAGId;
+	public AssociateACLRequest() {
+		super("Smartag", "2018-03-13", "AssociateACL", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -57,6 +53,17 @@ public class AssociateACLRequest extends RpcAcsRequest<AssociateACLResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAclId() {
+		return this.aclId;
+	}
+
+	public void setAclId(String aclId) {
+		this.aclId = aclId;
+		if(aclId != null){
+			putQueryParameter("AclId", aclId);
 		}
 	}
 
@@ -82,17 +89,6 @@ public class AssociateACLRequest extends RpcAcsRequest<AssociateACLResponse> {
 		}
 	}
 
-	public String getSmartAGId() {
-		return this.smartAGId;
-	}
-
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-		if(smartAGId != null){
-			putQueryParameter("SmartAGId", smartAGId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -101,6 +97,17 @@ public class AssociateACLRequest extends RpcAcsRequest<AssociateACLResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSmartAGId() {
+		return this.smartAGId;
+	}
+
+	public void setSmartAGId(String smartAGId) {
+		this.smartAGId = smartAGId;
+		if(smartAGId != null){
+			putQueryParameter("SmartAGId", smartAGId);
 		}
 	}
 

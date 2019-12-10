@@ -113,7 +113,21 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 
 		private Integer userCount;
 
-		private List<SnatEntry> snatEntries;
+		private String routingStrategy;
+
+		private Integer upBandwidthWan;
+
+		private Integer upBandwidth4G;
+
+		private String qosIds;
+
+		private String backupSoftwareVersion;
+
+		private Long smartAGUid;
+
+		private String backupStatus;
+
+		private List<Link> links;
 
 		public String getSmartAGId() {
 			return this.smartAGId;
@@ -259,34 +273,150 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 			this.userCount = userCount;
 		}
 
-		public List<SnatEntry> getSnatEntries() {
-			return this.snatEntries;
+		public String getRoutingStrategy() {
+			return this.routingStrategy;
 		}
 
-		public void setSnatEntries(List<SnatEntry> snatEntries) {
-			this.snatEntries = snatEntries;
+		public void setRoutingStrategy(String routingStrategy) {
+			this.routingStrategy = routingStrategy;
 		}
 
-		public static class SnatEntry {
+		public Integer getUpBandwidthWan() {
+			return this.upBandwidthWan;
+		}
 
-			private String cidrBlock;
+		public void setUpBandwidthWan(Integer upBandwidthWan) {
+			this.upBandwidthWan = upBandwidthWan;
+		}
 
-			private String snatIp;
+		public Integer getUpBandwidth4G() {
+			return this.upBandwidth4G;
+		}
 
-			public String getCidrBlock() {
-				return this.cidrBlock;
+		public void setUpBandwidth4G(Integer upBandwidth4G) {
+			this.upBandwidth4G = upBandwidth4G;
+		}
+
+		public String getQosIds() {
+			return this.qosIds;
+		}
+
+		public void setQosIds(String qosIds) {
+			this.qosIds = qosIds;
+		}
+
+		public String getBackupSoftwareVersion() {
+			return this.backupSoftwareVersion;
+		}
+
+		public void setBackupSoftwareVersion(String backupSoftwareVersion) {
+			this.backupSoftwareVersion = backupSoftwareVersion;
+		}
+
+		public Long getSmartAGUid() {
+			return this.smartAGUid;
+		}
+
+		public void setSmartAGUid(Long smartAGUid) {
+			this.smartAGUid = smartAGUid;
+		}
+
+		public String getBackupStatus() {
+			return this.backupStatus;
+		}
+
+		public void setBackupStatus(String backupStatus) {
+			this.backupStatus = backupStatus;
+		}
+
+		public List<Link> getLinks() {
+			return this.links;
+		}
+
+		public void setLinks(List<Link> links) {
+			this.links = links;
+		}
+
+		public static class Link {
+
+			private String instanceId;
+
+			private String type;
+
+			private String status;
+
+			private Long endTime;
+
+			private String bandwidth;
+
+			private String relateInstanceId;
+
+			private String relateInstanceRegionId;
+
+			private String commodityType;
+
+			public String getInstanceId() {
+				return this.instanceId;
 			}
 
-			public void setCidrBlock(String cidrBlock) {
-				this.cidrBlock = cidrBlock;
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
-			public String getSnatIp() {
-				return this.snatIp;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setSnatIp(String snatIp) {
-				this.snatIp = snatIp;
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Long getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(Long endTime) {
+				this.endTime = endTime;
+			}
+
+			public String getBandwidth() {
+				return this.bandwidth;
+			}
+
+			public void setBandwidth(String bandwidth) {
+				this.bandwidth = bandwidth;
+			}
+
+			public String getRelateInstanceId() {
+				return this.relateInstanceId;
+			}
+
+			public void setRelateInstanceId(String relateInstanceId) {
+				this.relateInstanceId = relateInstanceId;
+			}
+
+			public String getRelateInstanceRegionId() {
+				return this.relateInstanceRegionId;
+			}
+
+			public void setRelateInstanceRegionId(String relateInstanceRegionId) {
+				this.relateInstanceRegionId = relateInstanceRegionId;
+			}
+
+			public String getCommodityType() {
+				return this.commodityType;
+			}
+
+			public void setCommodityType(String commodityType) {
+				this.commodityType = commodityType;
 			}
 		}
 	}

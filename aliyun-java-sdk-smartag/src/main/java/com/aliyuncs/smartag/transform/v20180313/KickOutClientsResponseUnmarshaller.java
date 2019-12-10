@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class KickOutClientsResponseUnmarshaller {
 
-	public static KickOutClientsResponse unmarshall(KickOutClientsResponse kickOutClientsResponse, UnmarshallerContext context) {
+	public static KickOutClientsResponse unmarshall(KickOutClientsResponse kickOutClientsResponse, UnmarshallerContext _ctx) {
 		
-		kickOutClientsResponse.setRequestId(context.stringValue("KickOutClientsResponse.RequestId"));
+		kickOutClientsResponse.setRequestId(_ctx.stringValue("KickOutClientsResponse.RequestId"));
 	 
 	 	return kickOutClientsResponse;
 	}

@@ -53,6 +53,8 @@ public class DescribeSmartAccessGatewayVersionsResponse extends AcsResponse {
 
 		private Long createTime;
 
+		private String type;
+
 		public String getVersionCode() {
 			return this.versionCode;
 		}
@@ -75,6 +77,14 @@ public class DescribeSmartAccessGatewayVersionsResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

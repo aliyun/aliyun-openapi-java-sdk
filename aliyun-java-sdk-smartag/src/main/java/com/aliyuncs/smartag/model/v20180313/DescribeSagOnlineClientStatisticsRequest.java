@@ -16,26 +16,33 @@ package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSagOnlineClientStatisticsRequest extends RpcAcsRequest<DescribeSagOnlineClientStatisticsResponse> {
-	
-	public DescribeSagOnlineClientStatisticsRequest() {
-		super("Smartag", "2018-03-13", "DescribeSagOnlineClientStatistics", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private List<String> smartAGIdss;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private List<String> smartAGIdss;
-
 	private Long ownerId;
+	public DescribeSagOnlineClientStatisticsRequest() {
+		super("Smartag", "2018-03-13", "DescribeSagOnlineClientStatistics", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,6 +53,19 @@ public class DescribeSagOnlineClientStatisticsRequest extends RpcAcsRequest<Desc
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
+	}
+
+	public List<String> getSmartAGIdss() {
+		return this.smartAGIdss;
+	}
+
+	public void setSmartAGIdss(List<String> smartAGIdss) {
+		this.smartAGIdss = smartAGIdss;	
+		if (smartAGIdss != null) {
+			for (int i = 0; i < smartAGIdss.size(); i++) {
+				putQueryParameter("SmartAGIds." + (i + 1) , smartAGIdss.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -68,19 +88,6 @@ public class DescribeSagOnlineClientStatisticsRequest extends RpcAcsRequest<Desc
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
 		}
-	}
-
-	public List<String> getSmartAGIdss() {
-		return this.smartAGIdss;
-	}
-
-	public void setSmartAGIdss(List<String> smartAGIdss) {
-		this.smartAGIdss = smartAGIdss;	
-		if (smartAGIdss != null) {
-			for (int i = 0; i < smartAGIdss.size(); i++) {
-				putQueryParameter("SmartAGIds." + (i + 1) , smartAGIdss.get(i));
-			}
-		}	
 	}
 
 	public Long getOwnerId() {

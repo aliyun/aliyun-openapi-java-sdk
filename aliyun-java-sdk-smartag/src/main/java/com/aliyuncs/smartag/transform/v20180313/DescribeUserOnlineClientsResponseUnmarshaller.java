@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUserOnlineClientsResponseUnmarshaller {
 
-	public static DescribeUserOnlineClientsResponse unmarshall(DescribeUserOnlineClientsResponse describeUserOnlineClientsResponse, UnmarshallerContext context) {
+	public static DescribeUserOnlineClientsResponse unmarshall(DescribeUserOnlineClientsResponse describeUserOnlineClientsResponse, UnmarshallerContext _ctx) {
 		
-		describeUserOnlineClientsResponse.setRequestId(context.stringValue("DescribeUserOnlineClientsResponse.RequestId"));
+		describeUserOnlineClientsResponse.setRequestId(_ctx.stringValue("DescribeUserOnlineClientsResponse.RequestId"));
 
 		List<User> users = new ArrayList<User>();
-		for (int i = 0; i < context.lengthValue("DescribeUserOnlineClientsResponse.Users.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeUserOnlineClientsResponse.Users.Length"); i++) {
 			User user = new User();
-			user.setClientIp(context.stringValue("DescribeUserOnlineClientsResponse.Users["+ i +"].ClientIp"));
-			user.setOnlineTime(context.stringValue("DescribeUserOnlineClientsResponse.Users["+ i +"].OnlineTime"));
+			user.setClientIp(_ctx.stringValue("DescribeUserOnlineClientsResponse.Users["+ i +"].ClientIp"));
+			user.setOnlineTime(_ctx.stringValue("DescribeUserOnlineClientsResponse.Users["+ i +"].OnlineTime"));
 
 			users.add(user);
 		}

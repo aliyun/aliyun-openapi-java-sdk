@@ -15,16 +15,15 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSmartAccessGatewayHaRequest extends RpcAcsRequest<DescribeSmartAccessGatewayHaResponse> {
-	
-	public DescribeSmartAccessGatewayHaRequest() {
-		super("Smartag", "2018-03-13", "DescribeSmartAccessGatewayHa", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -32,9 +31,17 @@ public class DescribeSmartAccessGatewayHaRequest extends RpcAcsRequest<DescribeS
 
 	private String ownerAccount;
 
-	private String smartAGId;
-
 	private Long ownerId;
+
+	private String smartAGId;
+	public DescribeSmartAccessGatewayHaRequest() {
+		super("Smartag", "2018-03-13", "DescribeSmartAccessGatewayHa", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -69,17 +76,6 @@ public class DescribeSmartAccessGatewayHaRequest extends RpcAcsRequest<DescribeS
 		}
 	}
 
-	public String getSmartAGId() {
-		return this.smartAGId;
-	}
-
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-		if(smartAGId != null){
-			putQueryParameter("SmartAGId", smartAGId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -88,6 +84,17 @@ public class DescribeSmartAccessGatewayHaRequest extends RpcAcsRequest<DescribeS
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSmartAGId() {
+		return this.smartAGId;
+	}
+
+	public void setSmartAGId(String smartAGId) {
+		this.smartAGId = smartAGId;
+		if(smartAGId != null){
+			putQueryParameter("SmartAGId", smartAGId);
 		}
 	}
 

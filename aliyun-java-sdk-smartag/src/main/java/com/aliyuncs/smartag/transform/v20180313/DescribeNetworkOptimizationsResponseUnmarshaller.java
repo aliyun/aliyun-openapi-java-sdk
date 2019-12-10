@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeNetworkOptimizationsResponseUnmarshaller {
 
-	public static DescribeNetworkOptimizationsResponse unmarshall(DescribeNetworkOptimizationsResponse describeNetworkOptimizationsResponse, UnmarshallerContext context) {
+	public static DescribeNetworkOptimizationsResponse unmarshall(DescribeNetworkOptimizationsResponse describeNetworkOptimizationsResponse, UnmarshallerContext _ctx) {
 		
-		describeNetworkOptimizationsResponse.setRequestId(context.stringValue("DescribeNetworkOptimizationsResponse.RequestId"));
-		describeNetworkOptimizationsResponse.setTotalCount(context.integerValue("DescribeNetworkOptimizationsResponse.TotalCount"));
-		describeNetworkOptimizationsResponse.setPageNo(context.integerValue("DescribeNetworkOptimizationsResponse.PageNo"));
-		describeNetworkOptimizationsResponse.setPageSize(context.integerValue("DescribeNetworkOptimizationsResponse.PageSize"));
+		describeNetworkOptimizationsResponse.setRequestId(_ctx.stringValue("DescribeNetworkOptimizationsResponse.RequestId"));
+		describeNetworkOptimizationsResponse.setTotalCount(_ctx.integerValue("DescribeNetworkOptimizationsResponse.TotalCount"));
+		describeNetworkOptimizationsResponse.setPageNumber(_ctx.integerValue("DescribeNetworkOptimizationsResponse.PageNumber"));
+		describeNetworkOptimizationsResponse.setPageSize(_ctx.integerValue("DescribeNetworkOptimizationsResponse.PageSize"));
 
 		List<NetworkOptimization> networkOptimizations = new ArrayList<NetworkOptimization>();
-		for (int i = 0; i < context.lengthValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations.Length"); i++) {
 			NetworkOptimization networkOptimization = new NetworkOptimization();
-			networkOptimization.setInstanceId(context.stringValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].InstanceId"));
-			networkOptimization.setName(context.stringValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].Name"));
-			networkOptimization.setState(context.stringValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].State"));
-			networkOptimization.setCreateTime(context.longValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].CreateTime"));
-			networkOptimization.setSagCount(context.integerValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].SagCount"));
-			networkOptimization.setCcnId(context.stringValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].CcnId"));
+			networkOptimization.setInstanceId(_ctx.stringValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].InstanceId"));
+			networkOptimization.setName(_ctx.stringValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].Name"));
+			networkOptimization.setState(_ctx.stringValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].State"));
+			networkOptimization.setCreateTime(_ctx.longValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].CreateTime"));
+			networkOptimization.setSagCount(_ctx.integerValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].SagCount"));
+			networkOptimization.setCcnId(_ctx.stringValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].CcnId"));
 
 			networkOptimizations.add(networkOptimization);
 		}

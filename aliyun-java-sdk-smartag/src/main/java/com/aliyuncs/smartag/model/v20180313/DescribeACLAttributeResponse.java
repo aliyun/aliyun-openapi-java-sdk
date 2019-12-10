@@ -101,6 +101,10 @@ public class DescribeACLAttributeResponse extends AcsResponse {
 
 		private String aclId;
 
+		private String type;
+
+		private String name;
+
 		public String getAcrId() {
 			return this.acrId;
 		}
@@ -195,6 +199,22 @@ public class DescribeACLAttributeResponse extends AcsResponse {
 
 		public void setAclId(String aclId) {
 			this.aclId = aclId;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

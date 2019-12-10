@@ -15,16 +15,15 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ResetSmartAccessGatewayClientUserPasswordRequest extends RpcAcsRequest<ResetSmartAccessGatewayClientUserPasswordResponse> {
-	
-	public ResetSmartAccessGatewayClientUserPasswordRequest() {
-		super("Smartag", "2018-03-13", "ResetSmartAccessGatewayClientUserPassword", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -32,11 +31,19 @@ public class ResetSmartAccessGatewayClientUserPasswordRequest extends RpcAcsRequ
 
 	private String ownerAccount;
 
-	private String smartAGId;
-
 	private Long ownerId;
 
+	private String smartAGId;
+
 	private String userName;
+	public ResetSmartAccessGatewayClientUserPasswordRequest() {
+		super("Smartag", "2018-03-13", "ResetSmartAccessGatewayClientUserPassword", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -71,17 +78,6 @@ public class ResetSmartAccessGatewayClientUserPasswordRequest extends RpcAcsRequ
 		}
 	}
 
-	public String getSmartAGId() {
-		return this.smartAGId;
-	}
-
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-		if(smartAGId != null){
-			putQueryParameter("SmartAGId", smartAGId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -90,6 +86,17 @@ public class ResetSmartAccessGatewayClientUserPasswordRequest extends RpcAcsRequ
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSmartAGId() {
+		return this.smartAGId;
+	}
+
+	public void setSmartAGId(String smartAGId) {
+		this.smartAGId = smartAGId;
+		if(smartAGId != null){
+			putQueryParameter("SmartAGId", smartAGId);
 		}
 	}
 

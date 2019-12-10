@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeNetworkOptimizationSagsResponseUnmarshaller {
 
-	public static DescribeNetworkOptimizationSagsResponse unmarshall(DescribeNetworkOptimizationSagsResponse describeNetworkOptimizationSagsResponse, UnmarshallerContext context) {
+	public static DescribeNetworkOptimizationSagsResponse unmarshall(DescribeNetworkOptimizationSagsResponse describeNetworkOptimizationSagsResponse, UnmarshallerContext _ctx) {
 		
-		describeNetworkOptimizationSagsResponse.setRequestId(context.stringValue("DescribeNetworkOptimizationSagsResponse.RequestId"));
-		describeNetworkOptimizationSagsResponse.setTotalCount(context.integerValue("DescribeNetworkOptimizationSagsResponse.TotalCount"));
-		describeNetworkOptimizationSagsResponse.setPageNo(context.integerValue("DescribeNetworkOptimizationSagsResponse.PageNo"));
-		describeNetworkOptimizationSagsResponse.setPageSize(context.integerValue("DescribeNetworkOptimizationSagsResponse.PageSize"));
+		describeNetworkOptimizationSagsResponse.setRequestId(_ctx.stringValue("DescribeNetworkOptimizationSagsResponse.RequestId"));
+		describeNetworkOptimizationSagsResponse.setTotalCount(_ctx.integerValue("DescribeNetworkOptimizationSagsResponse.TotalCount"));
+		describeNetworkOptimizationSagsResponse.setPageNumber(_ctx.integerValue("DescribeNetworkOptimizationSagsResponse.PageNumber"));
+		describeNetworkOptimizationSagsResponse.setPageSize(_ctx.integerValue("DescribeNetworkOptimizationSagsResponse.PageSize"));
 
 		List<SmartAccessGateway> smartAccessGateways = new ArrayList<SmartAccessGateway>();
-		for (int i = 0; i < context.lengthValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways.Length"); i++) {
 			SmartAccessGateway smartAccessGateway = new SmartAccessGateway();
-			smartAccessGateway.setInstanceId(context.stringValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].InstanceId"));
-			smartAccessGateway.setName(context.stringValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].Name"));
-			smartAccessGateway.setState(context.stringValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].State"));
-			smartAccessGateway.setCreateTime(context.longValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].CreateTime"));
-			smartAccessGateway.setEndTime(context.longValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].EndTime"));
-			smartAccessGateway.setMaxBandwidth(context.stringValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].MaxBandwidth"));
+			smartAccessGateway.setInstanceId(_ctx.stringValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].InstanceId"));
+			smartAccessGateway.setName(_ctx.stringValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].Name"));
+			smartAccessGateway.setState(_ctx.stringValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].State"));
+			smartAccessGateway.setCreateTime(_ctx.longValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].CreateTime"));
+			smartAccessGateway.setEndTime(_ctx.longValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].EndTime"));
+			smartAccessGateway.setMaxBandwidth(_ctx.stringValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].MaxBandwidth"));
 
 			smartAccessGateways.add(smartAccessGateway);
 		}

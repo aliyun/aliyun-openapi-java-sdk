@@ -15,28 +15,35 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetSagRouteableAddressRequest extends RpcAcsRequest<SetSagRouteableAddressResponse> {
-	
-	public SetSagRouteableAddressRequest() {
-		super("Smartag", "2018-03-13", "SetSagRouteableAddress", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private String routeableAddress;
 
-	private String sagId;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String routeableAddress;
+	private String sagId;
+	public SetSagRouteableAddressRequest() {
+		super("Smartag", "2018-03-13", "SetSagRouteableAddress", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,6 +56,17 @@ public class SetSagRouteableAddressRequest extends RpcAcsRequest<SetSagRouteable
 		}
 	}
 
+	public String getRouteableAddress() {
+		return this.routeableAddress;
+	}
+
+	public void setRouteableAddress(String routeableAddress) {
+		this.routeableAddress = routeableAddress;
+		if(routeableAddress != null){
+			putQueryParameter("RouteableAddress", routeableAddress);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -57,17 +75,6 @@ public class SetSagRouteableAddressRequest extends RpcAcsRequest<SetSagRouteable
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getSagId() {
-		return this.sagId;
-	}
-
-	public void setSagId(String sagId) {
-		this.sagId = sagId;
-		if(sagId != null){
-			putQueryParameter("SagId", sagId);
 		}
 	}
 
@@ -93,14 +100,14 @@ public class SetSagRouteableAddressRequest extends RpcAcsRequest<SetSagRouteable
 		}
 	}
 
-	public String getRouteableAddress() {
-		return this.routeableAddress;
+	public String getSagId() {
+		return this.sagId;
 	}
 
-	public void setRouteableAddress(String routeableAddress) {
-		this.routeableAddress = routeableAddress;
-		if(routeableAddress != null){
-			putQueryParameter("RouteableAddress", routeableAddress);
+	public void setSagId(String sagId) {
+		this.sagId = sagId;
+		if(sagId != null){
+			putQueryParameter("SagId", sagId);
 		}
 	}
 

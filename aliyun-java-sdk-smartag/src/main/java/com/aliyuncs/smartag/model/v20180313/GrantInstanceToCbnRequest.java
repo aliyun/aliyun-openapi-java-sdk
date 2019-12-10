@@ -15,30 +15,37 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GrantInstanceToCbnRequest extends RpcAcsRequest<GrantInstanceToCbnResponse> {
-	
-	public GrantInstanceToCbnRequest() {
-		super("Smartag", "2018-03-13", "GrantInstanceToCbn", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
 
+	private String ccnInstanceId;
+
 	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
 
 	private String cenUid;
 
 	private String cenInstanceId;
-
-	private String ownerAccount;
-
-	private String ccnInstanceId;
-
-	private Long ownerId;
+	public GrantInstanceToCbnRequest() {
+		super("Smartag", "2018-03-13", "GrantInstanceToCbn", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -51,6 +58,17 @@ public class GrantInstanceToCbnRequest extends RpcAcsRequest<GrantInstanceToCbnR
 		}
 	}
 
+	public String getCcnInstanceId() {
+		return this.ccnInstanceId;
+	}
+
+	public void setCcnInstanceId(String ccnInstanceId) {
+		this.ccnInstanceId = ccnInstanceId;
+		if(ccnInstanceId != null){
+			putQueryParameter("CcnInstanceId", ccnInstanceId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -59,6 +77,28 @@ public class GrantInstanceToCbnRequest extends RpcAcsRequest<GrantInstanceToCbnR
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -81,39 +121,6 @@ public class GrantInstanceToCbnRequest extends RpcAcsRequest<GrantInstanceToCbnR
 		this.cenInstanceId = cenInstanceId;
 		if(cenInstanceId != null){
 			putQueryParameter("CenInstanceId", cenInstanceId);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getCcnInstanceId() {
-		return this.ccnInstanceId;
-	}
-
-	public void setCcnInstanceId(String ccnInstanceId) {
-		this.ccnInstanceId = ccnInstanceId;
-		if(ccnInstanceId != null){
-			putQueryParameter("CcnInstanceId", ccnInstanceId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

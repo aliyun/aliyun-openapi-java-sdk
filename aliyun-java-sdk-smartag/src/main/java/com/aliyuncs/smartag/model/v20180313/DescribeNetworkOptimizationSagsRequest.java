@@ -15,30 +15,37 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeNetworkOptimizationSagsRequest extends RpcAcsRequest<DescribeNetworkOptimizationSagsResponse> {
-	
-	public DescribeNetworkOptimizationSagsRequest() {
-		super("Smartag", "2018-03-13", "DescribeNetworkOptimizationSags", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private Integer pageNumber;
 
 	private String networkOptId;
 
-	private Integer pageNo;
+	private Integer pageSize;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Integer pageSize;
-
 	private Long ownerId;
+	public DescribeNetworkOptimizationSagsRequest() {
+		super("Smartag", "2018-03-13", "DescribeNetworkOptimizationSags", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -51,14 +58,14 @@ public class DescribeNetworkOptimizationSagsRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -73,14 +80,25 @@ public class DescribeNetworkOptimizationSagsRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public Integer getPageNo() {
-		return this.pageNo;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo.toString());
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -92,17 +110,6 @@ public class DescribeNetworkOptimizationSagsRequest extends RpcAcsRequest<Descri
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

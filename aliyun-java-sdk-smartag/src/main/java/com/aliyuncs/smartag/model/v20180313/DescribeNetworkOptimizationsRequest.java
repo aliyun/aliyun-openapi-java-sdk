@@ -15,34 +15,41 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeNetworkOptimizationsRequest extends RpcAcsRequest<DescribeNetworkOptimizationsResponse> {
-	
-	public DescribeNetworkOptimizationsRequest() {
-		super("Smartag", "2018-03-13", "DescribeNetworkOptimizations", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private String ccnId;
+
+	private Integer pageNumber;
 
 	private String networkOptId;
 
-	private Integer pageNo;
+	private Integer pageSize;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String ccnId;
+	private Long ownerId;
 
 	private String name;
-
-	private Integer pageSize;
-
-	private Long ownerId;
+	public DescribeNetworkOptimizationsRequest() {
+		super("Smartag", "2018-03-13", "DescribeNetworkOptimizations", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -52,50 +59,6 @@ public class DescribeNetworkOptimizationsRequest extends RpcAcsRequest<DescribeN
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getNetworkOptId() {
-		return this.networkOptId;
-	}
-
-	public void setNetworkOptId(String networkOptId) {
-		this.networkOptId = networkOptId;
-		if(networkOptId != null){
-			putQueryParameter("NetworkOptId", networkOptId);
-		}
-	}
-
-	public Integer getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo.toString());
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -110,14 +73,25 @@ public class DescribeNetworkOptimizationsRequest extends RpcAcsRequest<DescribeN
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getNetworkOptId() {
+		return this.networkOptId;
+	}
+
+	public void setNetworkOptId(String networkOptId) {
+		this.networkOptId = networkOptId;
+		if(networkOptId != null){
+			putQueryParameter("NetworkOptId", networkOptId);
 		}
 	}
 
@@ -132,6 +106,28 @@ public class DescribeNetworkOptimizationsRequest extends RpcAcsRequest<DescribeN
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -140,6 +136,17 @@ public class DescribeNetworkOptimizationsRequest extends RpcAcsRequest<DescribeN
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

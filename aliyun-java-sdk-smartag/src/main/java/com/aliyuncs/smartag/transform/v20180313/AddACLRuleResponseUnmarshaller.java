@@ -20,21 +20,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddACLRuleResponseUnmarshaller {
 
-	public static AddACLRuleResponse unmarshall(AddACLRuleResponse addACLRuleResponse, UnmarshallerContext context) {
+	public static AddACLRuleResponse unmarshall(AddACLRuleResponse addACLRuleResponse, UnmarshallerContext _ctx) {
 		
-		addACLRuleResponse.setRequestId(context.stringValue("AddACLRuleResponse.RequestId"));
-		addACLRuleResponse.setAcrId(context.stringValue("AddACLRuleResponse.AcrId"));
-		addACLRuleResponse.setAclId(context.stringValue("AddACLRuleResponse.AclId"));
-		addACLRuleResponse.setDescription(context.stringValue("AddACLRuleResponse.Description"));
-		addACLRuleResponse.setDirection(context.stringValue("AddACLRuleResponse.Direction"));
-		addACLRuleResponse.setSourceCidr(context.stringValue("AddACLRuleResponse.SourceCidr"));
-		addACLRuleResponse.setDestCidr(context.stringValue("AddACLRuleResponse.DestCidr"));
-		addACLRuleResponse.setIpProtocol(context.stringValue("AddACLRuleResponse.IpProtocol"));
-		addACLRuleResponse.setSourcePortRange(context.stringValue("AddACLRuleResponse.SourcePortRange"));
-		addACLRuleResponse.setDestPortRange(context.stringValue("AddACLRuleResponse.DestPortRange"));
-		addACLRuleResponse.setPolicy(context.stringValue("AddACLRuleResponse.Policy"));
-		addACLRuleResponse.setPriority(context.integerValue("AddACLRuleResponse.Priority"));
-		addACLRuleResponse.setGmtCreate(context.longValue("AddACLRuleResponse.GmtCreate"));
+		addACLRuleResponse.setRequestId(_ctx.stringValue("AddACLRuleResponse.RequestId"));
+		addACLRuleResponse.setAcrId(_ctx.stringValue("AddACLRuleResponse.AcrId"));
+		addACLRuleResponse.setAclId(_ctx.stringValue("AddACLRuleResponse.AclId"));
+		addACLRuleResponse.setDescription(_ctx.stringValue("AddACLRuleResponse.Description"));
+		addACLRuleResponse.setDirection(_ctx.stringValue("AddACLRuleResponse.Direction"));
+		addACLRuleResponse.setSourceCidr(_ctx.stringValue("AddACLRuleResponse.SourceCidr"));
+		addACLRuleResponse.setDestCidr(_ctx.stringValue("AddACLRuleResponse.DestCidr"));
+		addACLRuleResponse.setIpProtocol(_ctx.stringValue("AddACLRuleResponse.IpProtocol"));
+		addACLRuleResponse.setSourcePortRange(_ctx.stringValue("AddACLRuleResponse.SourcePortRange"));
+		addACLRuleResponse.setDestPortRange(_ctx.stringValue("AddACLRuleResponse.DestPortRange"));
+		addACLRuleResponse.setPolicy(_ctx.stringValue("AddACLRuleResponse.Policy"));
+		addACLRuleResponse.setPriority(_ctx.integerValue("AddACLRuleResponse.Priority"));
+		addACLRuleResponse.setGmtCreate(_ctx.longValue("AddACLRuleResponse.GmtCreate"));
+		addACLRuleResponse.setType(_ctx.stringValue("AddACLRuleResponse.Type"));
+		addACLRuleResponse.setName(_ctx.stringValue("AddACLRuleResponse.Name"));
 	 
 	 	return addACLRuleResponse;
 	}

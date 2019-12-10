@@ -15,28 +15,35 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateNetworkOptimizationRequest extends RpcAcsRequest<CreateNetworkOptimizationResponse> {
-	
-	public CreateNetworkOptimizationRequest() {
-		super("Smartag", "2018-03-13", "CreateNetworkOptimization", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String ccnId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String name;
-
-	private String ccnId;
-
 	private Long ownerId;
+
+	private String name;
+	public CreateNetworkOptimizationRequest() {
+		super("Smartag", "2018-03-13", "CreateNetworkOptimization", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,6 +53,17 @@ public class CreateNetworkOptimizationRequest extends RpcAcsRequest<CreateNetwor
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCcnId() {
+		return this.ccnId;
+	}
+
+	public void setCcnId(String ccnId) {
+		this.ccnId = ccnId;
+		if(ccnId != null){
+			putQueryParameter("CcnId", ccnId);
 		}
 	}
 
@@ -71,28 +89,6 @@ public class CreateNetworkOptimizationRequest extends RpcAcsRequest<CreateNetwor
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getCcnId() {
-		return this.ccnId;
-	}
-
-	public void setCcnId(String ccnId) {
-		this.ccnId = ccnId;
-		if(ccnId != null){
-			putQueryParameter("CcnId", ccnId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -101,6 +97,17 @@ public class CreateNetworkOptimizationRequest extends RpcAcsRequest<CreateNetwor
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

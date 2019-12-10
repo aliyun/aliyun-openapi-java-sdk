@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyCloudConnectNetworkResponseUnmarshaller {
 
-	public static ModifyCloudConnectNetworkResponse unmarshall(ModifyCloudConnectNetworkResponse modifyCloudConnectNetworkResponse, UnmarshallerContext context) {
+	public static ModifyCloudConnectNetworkResponse unmarshall(ModifyCloudConnectNetworkResponse modifyCloudConnectNetworkResponse, UnmarshallerContext _ctx) {
 		
-		modifyCloudConnectNetworkResponse.setRequestId(context.stringValue("ModifyCloudConnectNetworkResponse.RequestId"));
+		modifyCloudConnectNetworkResponse.setRequestId(_ctx.stringValue("ModifyCloudConnectNetworkResponse.RequestId"));
 	 
 	 	return modifyCloudConnectNetworkResponse;
 	}

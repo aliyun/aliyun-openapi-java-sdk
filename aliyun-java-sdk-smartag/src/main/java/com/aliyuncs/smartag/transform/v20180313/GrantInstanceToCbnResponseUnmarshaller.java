@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GrantInstanceToCbnResponseUnmarshaller {
 
-	public static GrantInstanceToCbnResponse unmarshall(GrantInstanceToCbnResponse grantInstanceToCbnResponse, UnmarshallerContext context) {
+	public static GrantInstanceToCbnResponse unmarshall(GrantInstanceToCbnResponse grantInstanceToCbnResponse, UnmarshallerContext _ctx) {
 		
-		grantInstanceToCbnResponse.setRequestId(context.stringValue("GrantInstanceToCbnResponse.RequestId"));
+		grantInstanceToCbnResponse.setRequestId(_ctx.stringValue("GrantInstanceToCbnResponse.RequestId"));
 	 
 	 	return grantInstanceToCbnResponse;
 	}

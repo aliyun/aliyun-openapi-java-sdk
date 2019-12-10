@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSagOnlineClientStatisticsResponseUnmarshaller {
 
-	public static DescribeSagOnlineClientStatisticsResponse unmarshall(DescribeSagOnlineClientStatisticsResponse describeSagOnlineClientStatisticsResponse, UnmarshallerContext context) {
+	public static DescribeSagOnlineClientStatisticsResponse unmarshall(DescribeSagOnlineClientStatisticsResponse describeSagOnlineClientStatisticsResponse, UnmarshallerContext _ctx) {
 		
-		describeSagOnlineClientStatisticsResponse.setRequestId(context.stringValue("DescribeSagOnlineClientStatisticsResponse.RequestId"));
+		describeSagOnlineClientStatisticsResponse.setRequestId(_ctx.stringValue("DescribeSagOnlineClientStatisticsResponse.RequestId"));
 
 		List<Statistics> sagStatistics = new ArrayList<Statistics>();
-		for (int i = 0; i < context.lengthValue("DescribeSagOnlineClientStatisticsResponse.SagStatistics.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSagOnlineClientStatisticsResponse.SagStatistics.Length"); i++) {
 			Statistics statistics = new Statistics();
-			statistics.setSmartAGId(context.stringValue("DescribeSagOnlineClientStatisticsResponse.SagStatistics["+ i +"].SmartAGId"));
-			statistics.setOnlineCount(context.stringValue("DescribeSagOnlineClientStatisticsResponse.SagStatistics["+ i +"].OnlineCount"));
+			statistics.setSmartAGId(_ctx.stringValue("DescribeSagOnlineClientStatisticsResponse.SagStatistics["+ i +"].SmartAGId"));
+			statistics.setOnlineCount(_ctx.stringValue("DescribeSagOnlineClientStatisticsResponse.SagStatistics["+ i +"].OnlineCount"));
 
 			sagStatistics.add(statistics);
 		}

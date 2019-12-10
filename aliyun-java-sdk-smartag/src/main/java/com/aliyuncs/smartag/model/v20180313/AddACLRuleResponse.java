@@ -50,6 +50,10 @@ public class AddACLRuleResponse extends AcsResponse {
 
 	private Long gmtCreate;
 
+	private String type;
+
+	private String name;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -152,6 +156,22 @@ public class AddACLRuleResponse extends AcsResponse {
 
 	public void setGmtCreate(Long gmtCreate) {
 		this.gmtCreate = gmtCreate;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override

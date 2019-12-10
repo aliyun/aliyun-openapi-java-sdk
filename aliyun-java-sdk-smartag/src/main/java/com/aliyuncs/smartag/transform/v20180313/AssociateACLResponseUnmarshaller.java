@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AssociateACLResponseUnmarshaller {
 
-	public static AssociateACLResponse unmarshall(AssociateACLResponse associateACLResponse, UnmarshallerContext context) {
+	public static AssociateACLResponse unmarshall(AssociateACLResponse associateACLResponse, UnmarshallerContext _ctx) {
 		
-		associateACLResponse.setRequestId(context.stringValue("AssociateACLResponse.RequestId"));
+		associateACLResponse.setRequestId(_ctx.stringValue("AssociateACLResponse.RequestId"));
 	 
 	 	return associateACLResponse;
 	}

@@ -15,26 +15,33 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSagRouteableAddressRequest extends RpcAcsRequest<DescribeSagRouteableAddressResponse> {
-	
-	public DescribeSagRouteableAddressRequest() {
-		super("Smartag", "2018-03-13", "DescribeSagRouteableAddress", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String sagId;
-
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String sagId;
+	public DescribeSagRouteableAddressRequest() {
+		super("Smartag", "2018-03-13", "DescribeSagRouteableAddress", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,17 +65,6 @@ public class DescribeSagRouteableAddressRequest extends RpcAcsRequest<DescribeSa
 		}
 	}
 
-	public String getSagId() {
-		return this.sagId;
-	}
-
-	public void setSagId(String sagId) {
-		this.sagId = sagId;
-		if(sagId != null){
-			putQueryParameter("SagId", sagId);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -88,6 +84,17 @@ public class DescribeSagRouteableAddressRequest extends RpcAcsRequest<DescribeSa
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSagId() {
+		return this.sagId;
+	}
+
+	public void setSagId(String sagId) {
+		this.sagId = sagId;
+		if(sagId != null){
+			putQueryParameter("SagId", sagId);
 		}
 	}
 

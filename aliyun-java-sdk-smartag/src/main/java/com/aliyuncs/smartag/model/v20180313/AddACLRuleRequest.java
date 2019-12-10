@@ -15,22 +15,33 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddACLRuleRequest extends RpcAcsRequest<AddACLRuleResponse> {
-	
-	public AddACLRuleRequest() {
-		super("Smartag", "2018-03-13", "AddACLRule", "smartag");
-	}
-
-	private String aclId;
+	   
 
 	private Long resourceOwnerId;
 
 	private String sourcePortRange;
+
+	private String sourceCidr;
+
+	private String description;
+
+	private String type;
+
+	private String destCidr;
+
+	private String direction;
+
+	private String policy;
+
+	private String aclId;
 
 	private String resourceOwnerAccount;
 
@@ -38,31 +49,20 @@ public class AddACLRuleRequest extends RpcAcsRequest<AddACLRuleResponse> {
 
 	private String ownerAccount;
 
-	private String sourceCidr;
-
-	private String description;
-
 	private Long ownerId;
 
 	private Integer priority;
 
-	private String destCidr;
-
 	private String destPortRange;
 
-	private String direction;
-
-	private String policy;
-
-	public String getAclId() {
-		return this.aclId;
-	}
-
-	public void setAclId(String aclId) {
-		this.aclId = aclId;
-		if(aclId != null){
-			putQueryParameter("AclId", aclId);
-		}
+	private String name;
+	public AddACLRuleRequest() {
+		super("Smartag", "2018-03-13", "AddACLRule", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -84,6 +84,83 @@ public class AddACLRuleRequest extends RpcAcsRequest<AddACLRuleResponse> {
 		this.sourcePortRange = sourcePortRange;
 		if(sourcePortRange != null){
 			putQueryParameter("SourcePortRange", sourcePortRange);
+		}
+	}
+
+	public String getSourceCidr() {
+		return this.sourceCidr;
+	}
+
+	public void setSourceCidr(String sourceCidr) {
+		this.sourceCidr = sourceCidr;
+		if(sourceCidr != null){
+			putQueryParameter("SourceCidr", sourceCidr);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getDestCidr() {
+		return this.destCidr;
+	}
+
+	public void setDestCidr(String destCidr) {
+		this.destCidr = destCidr;
+		if(destCidr != null){
+			putQueryParameter("DestCidr", destCidr);
+		}
+	}
+
+	public String getDirection() {
+		return this.direction;
+	}
+
+	public void setDirection(String direction) {
+		this.direction = direction;
+		if(direction != null){
+			putQueryParameter("Direction", direction);
+		}
+	}
+
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
+		}
+	}
+
+	public String getAclId() {
+		return this.aclId;
+	}
+
+	public void setAclId(String aclId) {
+		this.aclId = aclId;
+		if(aclId != null){
+			putQueryParameter("AclId", aclId);
 		}
 	}
 
@@ -120,28 +197,6 @@ public class AddACLRuleRequest extends RpcAcsRequest<AddACLRuleResponse> {
 		}
 	}
 
-	public String getSourceCidr() {
-		return this.sourceCidr;
-	}
-
-	public void setSourceCidr(String sourceCidr) {
-		this.sourceCidr = sourceCidr;
-		if(sourceCidr != null){
-			putQueryParameter("SourceCidr", sourceCidr);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -164,17 +219,6 @@ public class AddACLRuleRequest extends RpcAcsRequest<AddACLRuleResponse> {
 		}
 	}
 
-	public String getDestCidr() {
-		return this.destCidr;
-	}
-
-	public void setDestCidr(String destCidr) {
-		this.destCidr = destCidr;
-		if(destCidr != null){
-			putQueryParameter("DestCidr", destCidr);
-		}
-	}
-
 	public String getDestPortRange() {
 		return this.destPortRange;
 	}
@@ -186,25 +230,14 @@ public class AddACLRuleRequest extends RpcAcsRequest<AddACLRuleResponse> {
 		}
 	}
 
-	public String getDirection() {
-		return this.direction;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setDirection(String direction) {
-		this.direction = direction;
-		if(direction != null){
-			putQueryParameter("Direction", direction);
-		}
-	}
-
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-		if(policy != null){
-			putQueryParameter("Policy", policy);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

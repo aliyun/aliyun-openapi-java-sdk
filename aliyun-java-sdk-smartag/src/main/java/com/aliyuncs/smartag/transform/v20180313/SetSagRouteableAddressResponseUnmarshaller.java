@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetSagRouteableAddressResponseUnmarshaller {
 
-	public static SetSagRouteableAddressResponse unmarshall(SetSagRouteableAddressResponse setSagRouteableAddressResponse, UnmarshallerContext context) {
+	public static SetSagRouteableAddressResponse unmarshall(SetSagRouteableAddressResponse setSagRouteableAddressResponse, UnmarshallerContext _ctx) {
 		
-		setSagRouteableAddressResponse.setRequestId(context.stringValue("SetSagRouteableAddressResponse.RequestId"));
+		setSagRouteableAddressResponse.setRequestId(_ctx.stringValue("SetSagRouteableAddressResponse.RequestId"));
 	 
 	 	return setSagRouteableAddressResponse;
 	}

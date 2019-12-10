@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetSmartAccessGatewayUseLimitResponseUnmarshaller {
 
-	public static GetSmartAccessGatewayUseLimitResponse unmarshall(GetSmartAccessGatewayUseLimitResponse getSmartAccessGatewayUseLimitResponse, UnmarshallerContext context) {
+	public static GetSmartAccessGatewayUseLimitResponse unmarshall(GetSmartAccessGatewayUseLimitResponse getSmartAccessGatewayUseLimitResponse, UnmarshallerContext _ctx) {
 		
-		getSmartAccessGatewayUseLimitResponse.setRequestId(context.stringValue("GetSmartAccessGatewayUseLimitResponse.RequestId"));
-		getSmartAccessGatewayUseLimitResponse.setTotalAmount(context.integerValue("GetSmartAccessGatewayUseLimitResponse.TotalAmount"));
-		getSmartAccessGatewayUseLimitResponse.setUsedAmount(context.integerValue("GetSmartAccessGatewayUseLimitResponse.UsedAmount"));
+		getSmartAccessGatewayUseLimitResponse.setRequestId(_ctx.stringValue("GetSmartAccessGatewayUseLimitResponse.RequestId"));
+		getSmartAccessGatewayUseLimitResponse.setTotalAmount(_ctx.integerValue("GetSmartAccessGatewayUseLimitResponse.TotalAmount"));
+		getSmartAccessGatewayUseLimitResponse.setUsedAmount(_ctx.integerValue("GetSmartAccessGatewayUseLimitResponse.UsedAmount"));
 	 
 	 	return getSmartAccessGatewayUseLimitResponse;
 	}

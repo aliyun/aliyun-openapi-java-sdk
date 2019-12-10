@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ActivateSmartAccessGatewayResponseUnmarshaller {
 
-	public static ActivateSmartAccessGatewayResponse unmarshall(ActivateSmartAccessGatewayResponse activateSmartAccessGatewayResponse, UnmarshallerContext context) {
+	public static ActivateSmartAccessGatewayResponse unmarshall(ActivateSmartAccessGatewayResponse activateSmartAccessGatewayResponse, UnmarshallerContext _ctx) {
 		
-		activateSmartAccessGatewayResponse.setRequestId(context.stringValue("ActivateSmartAccessGatewayResponse.RequestId"));
+		activateSmartAccessGatewayResponse.setRequestId(_ctx.stringValue("ActivateSmartAccessGatewayResponse.RequestId"));
 	 
 	 	return activateSmartAccessGatewayResponse;
 	}

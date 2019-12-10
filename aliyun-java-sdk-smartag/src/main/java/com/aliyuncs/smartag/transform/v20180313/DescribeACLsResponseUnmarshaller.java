@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeACLsResponseUnmarshaller {
 
-	public static DescribeACLsResponse unmarshall(DescribeACLsResponse describeACLsResponse, UnmarshallerContext context) {
+	public static DescribeACLsResponse unmarshall(DescribeACLsResponse describeACLsResponse, UnmarshallerContext _ctx) {
 		
-		describeACLsResponse.setRequestId(context.stringValue("DescribeACLsResponse.RequestId"));
-		describeACLsResponse.setTotalCount(context.integerValue("DescribeACLsResponse.TotalCount"));
-		describeACLsResponse.setPageNumber(context.integerValue("DescribeACLsResponse.PageNumber"));
-		describeACLsResponse.setPageSize(context.integerValue("DescribeACLsResponse.PageSize"));
+		describeACLsResponse.setRequestId(_ctx.stringValue("DescribeACLsResponse.RequestId"));
+		describeACLsResponse.setTotalCount(_ctx.integerValue("DescribeACLsResponse.TotalCount"));
+		describeACLsResponse.setPageNumber(_ctx.integerValue("DescribeACLsResponse.PageNumber"));
+		describeACLsResponse.setPageSize(_ctx.integerValue("DescribeACLsResponse.PageSize"));
 
 		List<Acl> acls = new ArrayList<Acl>();
-		for (int i = 0; i < context.lengthValue("DescribeACLsResponse.Acls.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeACLsResponse.Acls.Length"); i++) {
 			Acl acl = new Acl();
-			acl.setAclId(context.stringValue("DescribeACLsResponse.Acls["+ i +"].AclId"));
-			acl.setName(context.stringValue("DescribeACLsResponse.Acls["+ i +"].Name"));
-			acl.setSagCount(context.stringValue("DescribeACLsResponse.Acls["+ i +"].SagCount"));
+			acl.setAclId(_ctx.stringValue("DescribeACLsResponse.Acls["+ i +"].AclId"));
+			acl.setName(_ctx.stringValue("DescribeACLsResponse.Acls["+ i +"].Name"));
+			acl.setSagCount(_ctx.stringValue("DescribeACLsResponse.Acls["+ i +"].SagCount"));
 
 			acls.add(acl);
 		}

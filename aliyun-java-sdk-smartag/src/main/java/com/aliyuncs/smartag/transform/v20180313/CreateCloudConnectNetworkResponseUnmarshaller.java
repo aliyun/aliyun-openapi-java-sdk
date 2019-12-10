@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateCloudConnectNetworkResponseUnmarshaller {
 
-	public static CreateCloudConnectNetworkResponse unmarshall(CreateCloudConnectNetworkResponse createCloudConnectNetworkResponse, UnmarshallerContext context) {
+	public static CreateCloudConnectNetworkResponse unmarshall(CreateCloudConnectNetworkResponse createCloudConnectNetworkResponse, UnmarshallerContext _ctx) {
 		
-		createCloudConnectNetworkResponse.setRequestId(context.stringValue("CreateCloudConnectNetworkResponse.RequestId"));
-		createCloudConnectNetworkResponse.setCcnId(context.stringValue("CreateCloudConnectNetworkResponse.CcnId"));
-		createCloudConnectNetworkResponse.setName(context.stringValue("CreateCloudConnectNetworkResponse.Name"));
-		createCloudConnectNetworkResponse.setStatus(context.stringValue("CreateCloudConnectNetworkResponse.Status"));
-		createCloudConnectNetworkResponse.setDescription(context.stringValue("CreateCloudConnectNetworkResponse.Description"));
-		createCloudConnectNetworkResponse.setSnatCidrBlock(context.stringValue("CreateCloudConnectNetworkResponse.SnatCidrBlock"));
-		createCloudConnectNetworkResponse.setCidrBlock(context.stringValue("CreateCloudConnectNetworkResponse.CidrBlock"));
+		createCloudConnectNetworkResponse.setRequestId(_ctx.stringValue("CreateCloudConnectNetworkResponse.RequestId"));
+		createCloudConnectNetworkResponse.setCcnId(_ctx.stringValue("CreateCloudConnectNetworkResponse.CcnId"));
+		createCloudConnectNetworkResponse.setName(_ctx.stringValue("CreateCloudConnectNetworkResponse.Name"));
+		createCloudConnectNetworkResponse.setStatus(_ctx.stringValue("CreateCloudConnectNetworkResponse.Status"));
+		createCloudConnectNetworkResponse.setDescription(_ctx.stringValue("CreateCloudConnectNetworkResponse.Description"));
+		createCloudConnectNetworkResponse.setSnatCidrBlock(_ctx.stringValue("CreateCloudConnectNetworkResponse.SnatCidrBlock"));
+		createCloudConnectNetworkResponse.setCidrBlock(_ctx.stringValue("CreateCloudConnectNetworkResponse.CidrBlock"));
 	 
 	 	return createCloudConnectNetworkResponse;
 	}

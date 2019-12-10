@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpgradeSmartAccessGatewayResponseUnmarshaller {
 
-	public static UpgradeSmartAccessGatewayResponse unmarshall(UpgradeSmartAccessGatewayResponse upgradeSmartAccessGatewayResponse, UnmarshallerContext context) {
+	public static UpgradeSmartAccessGatewayResponse unmarshall(UpgradeSmartAccessGatewayResponse upgradeSmartAccessGatewayResponse, UnmarshallerContext _ctx) {
 		
-		upgradeSmartAccessGatewayResponse.setRequestId(context.stringValue("UpgradeSmartAccessGatewayResponse.RequestId"));
-		upgradeSmartAccessGatewayResponse.setOrderId(context.stringValue("UpgradeSmartAccessGatewayResponse.OrderId"));
+		upgradeSmartAccessGatewayResponse.setRequestId(_ctx.stringValue("UpgradeSmartAccessGatewayResponse.RequestId"));
+		upgradeSmartAccessGatewayResponse.setOrderId(_ctx.stringValue("UpgradeSmartAccessGatewayResponse.OrderId"));
 	 
 	 	return upgradeSmartAccessGatewayResponse;
 	}

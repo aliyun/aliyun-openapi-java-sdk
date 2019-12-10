@@ -16,22 +16,25 @@ package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UnicomOrderConfirmRequest extends RpcAcsRequest<UnicomOrderConfirmResponse> {
-	
-	public UnicomOrderConfirmRequest() {
-		super("Smartag", "2018-03-13", "UnicomOrderConfirm", "smartag");
-	}
-
-	private String tmsCode;
+	   
 
 	private Long resourceOwnerId;
 
+	private String tmsCode;
+
 	private List<OrderItem> orderItems;
+
+	private Long orderPostFee;
+
+	private String tradeId;
 
 	private String ownerUserId;
 
@@ -39,23 +42,16 @@ public class UnicomOrderConfirmRequest extends RpcAcsRequest<UnicomOrderConfirmR
 
 	private String ownerAccount;
 
-	private Long orderPostFee;
-
 	private Long ownerId;
 
 	private String tmsOrderCode;
-
-	private String tradeId;
-
-	public String getTmsCode() {
-		return this.tmsCode;
-	}
-
-	public void setTmsCode(String tmsCode) {
-		this.tmsCode = tmsCode;
-		if(tmsCode != null){
-			putQueryParameter("TmsCode", tmsCode);
-		}
+	public UnicomOrderConfirmRequest() {
+		super("Smartag", "2018-03-13", "UnicomOrderConfirm", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -66,6 +62,17 @@ public class UnicomOrderConfirmRequest extends RpcAcsRequest<UnicomOrderConfirmR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getTmsCode() {
+		return this.tmsCode;
+	}
+
+	public void setTmsCode(String tmsCode) {
+		this.tmsCode = tmsCode;
+		if(tmsCode != null){
+			putQueryParameter("TmsCode", tmsCode);
 		}
 	}
 
@@ -91,6 +98,28 @@ public class UnicomOrderConfirmRequest extends RpcAcsRequest<UnicomOrderConfirmR
 				putQueryParameter("OrderItem." + (depth1 + 1) + ".TradeItemId" , orderItems.get(depth1).getTradeItemId());
 			}
 		}	
+	}
+
+	public Long getOrderPostFee() {
+		return this.orderPostFee;
+	}
+
+	public void setOrderPostFee(Long orderPostFee) {
+		this.orderPostFee = orderPostFee;
+		if(orderPostFee != null){
+			putQueryParameter("OrderPostFee", orderPostFee.toString());
+		}
+	}
+
+	public String getTradeId() {
+		return this.tradeId;
+	}
+
+	public void setTradeId(String tradeId) {
+		this.tradeId = tradeId;
+		if(tradeId != null){
+			putQueryParameter("TradeId", tradeId);
+		}
 	}
 
 	public String getOwnerUserId() {
@@ -126,17 +155,6 @@ public class UnicomOrderConfirmRequest extends RpcAcsRequest<UnicomOrderConfirmR
 		}
 	}
 
-	public Long getOrderPostFee() {
-		return this.orderPostFee;
-	}
-
-	public void setOrderPostFee(Long orderPostFee) {
-		this.orderPostFee = orderPostFee;
-		if(orderPostFee != null){
-			putQueryParameter("OrderPostFee", orderPostFee.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -156,17 +174,6 @@ public class UnicomOrderConfirmRequest extends RpcAcsRequest<UnicomOrderConfirmR
 		this.tmsOrderCode = tmsOrderCode;
 		if(tmsOrderCode != null){
 			putQueryParameter("TmsOrderCode", tmsOrderCode);
-		}
-	}
-
-	public String getTradeId() {
-		return this.tradeId;
-	}
-
-	public void setTradeId(String tradeId) {
-		this.tradeId = tradeId;
-		if(tradeId != null){
-			putQueryParameter("TradeId", tradeId);
 		}
 	}
 

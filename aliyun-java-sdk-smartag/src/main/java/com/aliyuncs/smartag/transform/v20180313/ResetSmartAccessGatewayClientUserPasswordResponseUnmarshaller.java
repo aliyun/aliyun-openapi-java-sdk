@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ResetSmartAccessGatewayClientUserPasswordResponseUnmarshaller {
 
-	public static ResetSmartAccessGatewayClientUserPasswordResponse unmarshall(ResetSmartAccessGatewayClientUserPasswordResponse resetSmartAccessGatewayClientUserPasswordResponse, UnmarshallerContext context) {
+	public static ResetSmartAccessGatewayClientUserPasswordResponse unmarshall(ResetSmartAccessGatewayClientUserPasswordResponse resetSmartAccessGatewayClientUserPasswordResponse, UnmarshallerContext _ctx) {
 		
-		resetSmartAccessGatewayClientUserPasswordResponse.setRequestId(context.stringValue("ResetSmartAccessGatewayClientUserPasswordResponse.RequestId"));
+		resetSmartAccessGatewayClientUserPasswordResponse.setRequestId(_ctx.stringValue("ResetSmartAccessGatewayClientUserPasswordResponse.RequestId"));
 	 
 	 	return resetSmartAccessGatewayClientUserPasswordResponse;
 	}

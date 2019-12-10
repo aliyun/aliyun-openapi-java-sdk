@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateACLResponseUnmarshaller {
 
-	public static CreateACLResponse unmarshall(CreateACLResponse createACLResponse, UnmarshallerContext context) {
+	public static CreateACLResponse unmarshall(CreateACLResponse createACLResponse, UnmarshallerContext _ctx) {
 		
-		createACLResponse.setRequestId(context.stringValue("CreateACLResponse.RequestId"));
-		createACLResponse.setAclId(context.stringValue("CreateACLResponse.AclId"));
+		createACLResponse.setRequestId(_ctx.stringValue("CreateACLResponse.RequestId"));
+		createACLResponse.setAclId(_ctx.stringValue("CreateACLResponse.AclId"));
 	 
 	 	return createACLResponse;
 	}

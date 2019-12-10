@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeGrantRulesResponseUnmarshaller {
 
-	public static DescribeGrantRulesResponse unmarshall(DescribeGrantRulesResponse describeGrantRulesResponse, UnmarshallerContext context) {
+	public static DescribeGrantRulesResponse unmarshall(DescribeGrantRulesResponse describeGrantRulesResponse, UnmarshallerContext _ctx) {
 		
-		describeGrantRulesResponse.setRequestId(context.stringValue("DescribeGrantRulesResponse.RequestId"));
-		describeGrantRulesResponse.setTotalCount(context.integerValue("DescribeGrantRulesResponse.TotalCount"));
-		describeGrantRulesResponse.setPageNumber(context.integerValue("DescribeGrantRulesResponse.PageNumber"));
-		describeGrantRulesResponse.setPageSize(context.integerValue("DescribeGrantRulesResponse.PageSize"));
+		describeGrantRulesResponse.setRequestId(_ctx.stringValue("DescribeGrantRulesResponse.RequestId"));
+		describeGrantRulesResponse.setTotalCount(_ctx.integerValue("DescribeGrantRulesResponse.TotalCount"));
+		describeGrantRulesResponse.setPageNumber(_ctx.integerValue("DescribeGrantRulesResponse.PageNumber"));
+		describeGrantRulesResponse.setPageSize(_ctx.integerValue("DescribeGrantRulesResponse.PageSize"));
 
 		List<GrantRule> grantRules = new ArrayList<GrantRule>();
-		for (int i = 0; i < context.lengthValue("DescribeGrantRulesResponse.GrantRules.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeGrantRulesResponse.GrantRules.Length"); i++) {
 			GrantRule grantRule = new GrantRule();
-			grantRule.setGrantRuleId(context.stringValue("DescribeGrantRulesResponse.GrantRules["+ i +"].GrantRuleId"));
-			grantRule.setCenUid(context.longValue("DescribeGrantRulesResponse.GrantRules["+ i +"].CenUid"));
-			grantRule.setCcnId(context.longValue("DescribeGrantRulesResponse.GrantRules["+ i +"].CcnId"));
-			grantRule.setCenInstanceId(context.stringValue("DescribeGrantRulesResponse.GrantRules["+ i +"].CenInstanceId"));
-			grantRule.setCcnInstanceId(context.stringValue("DescribeGrantRulesResponse.GrantRules["+ i +"].CcnInstanceId"));
-			grantRule.setGmtCreate(context.longValue("DescribeGrantRulesResponse.GrantRules["+ i +"].GmtCreate"));
-			grantRule.setGmtModified(context.longValue("DescribeGrantRulesResponse.GrantRules["+ i +"].GmtModified"));
-			grantRule.setRegionId(context.stringValue("DescribeGrantRulesResponse.GrantRules["+ i +"].RegionId"));
+			grantRule.setGrantRuleId(_ctx.stringValue("DescribeGrantRulesResponse.GrantRules["+ i +"].GrantRuleId"));
+			grantRule.setCenUid(_ctx.longValue("DescribeGrantRulesResponse.GrantRules["+ i +"].CenUid"));
+			grantRule.setCcnUid(_ctx.longValue("DescribeGrantRulesResponse.GrantRules["+ i +"].CcnUid"));
+			grantRule.setCenInstanceId(_ctx.stringValue("DescribeGrantRulesResponse.GrantRules["+ i +"].CenInstanceId"));
+			grantRule.setCcnInstanceId(_ctx.stringValue("DescribeGrantRulesResponse.GrantRules["+ i +"].CcnInstanceId"));
+			grantRule.setGmtCreate(_ctx.longValue("DescribeGrantRulesResponse.GrantRules["+ i +"].GmtCreate"));
+			grantRule.setGmtModified(_ctx.longValue("DescribeGrantRulesResponse.GrantRules["+ i +"].GmtModified"));
+			grantRule.setRegionId(_ctx.stringValue("DescribeGrantRulesResponse.GrantRules["+ i +"].RegionId"));
 
 			grantRules.add(grantRule);
 		}

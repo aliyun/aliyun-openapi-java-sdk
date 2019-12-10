@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateSmartAccessGatewaySoftwareResponseUnmarshaller {
 
-	public static CreateSmartAccessGatewaySoftwareResponse unmarshall(CreateSmartAccessGatewaySoftwareResponse createSmartAccessGatewaySoftwareResponse, UnmarshallerContext context) {
+	public static CreateSmartAccessGatewaySoftwareResponse unmarshall(CreateSmartAccessGatewaySoftwareResponse createSmartAccessGatewaySoftwareResponse, UnmarshallerContext _ctx) {
 		
-		createSmartAccessGatewaySoftwareResponse.setRequestId(context.stringValue("CreateSmartAccessGatewaySoftwareResponse.RequestId"));
-		createSmartAccessGatewaySoftwareResponse.setSmartAGId(context.stringValue("CreateSmartAccessGatewaySoftwareResponse.SmartAGId"));
-		createSmartAccessGatewaySoftwareResponse.setOrderId(context.stringValue("CreateSmartAccessGatewaySoftwareResponse.OrderId"));
+		createSmartAccessGatewaySoftwareResponse.setRequestId(_ctx.stringValue("CreateSmartAccessGatewaySoftwareResponse.RequestId"));
+		createSmartAccessGatewaySoftwareResponse.setSmartAGId(_ctx.stringValue("CreateSmartAccessGatewaySoftwareResponse.SmartAGId"));
+		createSmartAccessGatewaySoftwareResponse.setOrderId(_ctx.stringValue("CreateSmartAccessGatewaySoftwareResponse.OrderId"));
 	 
 	 	return createSmartAccessGatewaySoftwareResponse;
 	}

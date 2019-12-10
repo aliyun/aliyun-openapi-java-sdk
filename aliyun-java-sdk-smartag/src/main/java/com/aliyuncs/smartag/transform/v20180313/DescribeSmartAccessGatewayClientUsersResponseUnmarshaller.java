@@ -24,20 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSmartAccessGatewayClientUsersResponseUnmarshaller {
 
-	public static DescribeSmartAccessGatewayClientUsersResponse unmarshall(DescribeSmartAccessGatewayClientUsersResponse describeSmartAccessGatewayClientUsersResponse, UnmarshallerContext context) {
+	public static DescribeSmartAccessGatewayClientUsersResponse unmarshall(DescribeSmartAccessGatewayClientUsersResponse describeSmartAccessGatewayClientUsersResponse, UnmarshallerContext _ctx) {
 		
-		describeSmartAccessGatewayClientUsersResponse.setRequestId(context.stringValue("DescribeSmartAccessGatewayClientUsersResponse.RequestId"));
-		describeSmartAccessGatewayClientUsersResponse.setTotalCount(context.integerValue("DescribeSmartAccessGatewayClientUsersResponse.TotalCount"));
-		describeSmartAccessGatewayClientUsersResponse.setPageNo(context.integerValue("DescribeSmartAccessGatewayClientUsersResponse.PageNo"));
-		describeSmartAccessGatewayClientUsersResponse.setPageSize(context.integerValue("DescribeSmartAccessGatewayClientUsersResponse.PageSize"));
+		describeSmartAccessGatewayClientUsersResponse.setRequestId(_ctx.stringValue("DescribeSmartAccessGatewayClientUsersResponse.RequestId"));
+		describeSmartAccessGatewayClientUsersResponse.setTotalCount(_ctx.integerValue("DescribeSmartAccessGatewayClientUsersResponse.TotalCount"));
+		describeSmartAccessGatewayClientUsersResponse.setPageNumber(_ctx.integerValue("DescribeSmartAccessGatewayClientUsersResponse.PageNumber"));
+		describeSmartAccessGatewayClientUsersResponse.setPageSize(_ctx.integerValue("DescribeSmartAccessGatewayClientUsersResponse.PageSize"));
 
 		List<User> users = new ArrayList<User>();
-		for (int i = 0; i < context.lengthValue("DescribeSmartAccessGatewayClientUsersResponse.Users.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSmartAccessGatewayClientUsersResponse.Users.Length"); i++) {
 			User user = new User();
-			user.setClientIp(context.stringValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].ClientIp"));
-			user.setUserMail(context.stringValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].UserMail"));
-			user.setUserName(context.stringValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].UserName"));
-			user.setBandwidth(context.integerValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].Bandwidth"));
+			user.setClientIp(_ctx.stringValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].ClientIp"));
+			user.setUserMail(_ctx.stringValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].UserMail"));
+			user.setUserName(_ctx.stringValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].UserName"));
+			user.setBandwidth(_ctx.integerValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].Bandwidth"));
+			user.setState(_ctx.integerValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].State"));
 
 			users.add(user);
 		}

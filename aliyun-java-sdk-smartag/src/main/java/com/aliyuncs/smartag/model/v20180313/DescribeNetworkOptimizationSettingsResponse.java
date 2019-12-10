@@ -29,7 +29,7 @@ public class DescribeNetworkOptimizationSettingsResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private Integer pageNo;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
@@ -51,12 +51,12 @@ public class DescribeNetworkOptimizationSettingsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNo() {
-		return this.pageNo;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -81,26 +81,10 @@ public class DescribeNetworkOptimizationSettingsResponse extends AcsResponse {
 
 		private String type;
 
-		public String getBizDomain() {
-			return this.domain;
-		}
-
-		public void setBizDomain(String domain) {
-			this.domain = domain;
-		}
-
-		/**
-		 * @deprecated use getBizDomain instead of this.
-		 */
-		@Deprecated
 		public String getDomain() {
 			return this.domain;
 		}
 
-		/**
-		 * @deprecated use setBizDomain instead of this.
-		 */
-		@Deprecated
 		public void setDomain(String domain) {
 			this.domain = domain;
 		}

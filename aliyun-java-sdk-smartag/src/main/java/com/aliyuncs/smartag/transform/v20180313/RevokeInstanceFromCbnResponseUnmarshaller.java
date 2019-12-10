@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RevokeInstanceFromCbnResponseUnmarshaller {
 
-	public static RevokeInstanceFromCbnResponse unmarshall(RevokeInstanceFromCbnResponse revokeInstanceFromCbnResponse, UnmarshallerContext context) {
+	public static RevokeInstanceFromCbnResponse unmarshall(RevokeInstanceFromCbnResponse revokeInstanceFromCbnResponse, UnmarshallerContext _ctx) {
 		
-		revokeInstanceFromCbnResponse.setRequestId(context.stringValue("RevokeInstanceFromCbnResponse.RequestId"));
+		revokeInstanceFromCbnResponse.setRequestId(_ctx.stringValue("RevokeInstanceFromCbnResponse.RequestId"));
 	 
 	 	return revokeInstanceFromCbnResponse;
 	}

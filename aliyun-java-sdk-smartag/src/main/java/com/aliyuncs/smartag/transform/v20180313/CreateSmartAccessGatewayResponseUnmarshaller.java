@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateSmartAccessGatewayResponseUnmarshaller {
 
-	public static CreateSmartAccessGatewayResponse unmarshall(CreateSmartAccessGatewayResponse createSmartAccessGatewayResponse, UnmarshallerContext context) {
+	public static CreateSmartAccessGatewayResponse unmarshall(CreateSmartAccessGatewayResponse createSmartAccessGatewayResponse, UnmarshallerContext _ctx) {
 		
-		createSmartAccessGatewayResponse.setRequestId(context.stringValue("CreateSmartAccessGatewayResponse.RequestId"));
-		createSmartAccessGatewayResponse.setSmartAGId(context.stringValue("CreateSmartAccessGatewayResponse.SmartAGId"));
-		createSmartAccessGatewayResponse.setName(context.stringValue("CreateSmartAccessGatewayResponse.Name"));
-		createSmartAccessGatewayResponse.setOrderId(context.stringValue("CreateSmartAccessGatewayResponse.OrderId"));
-		createSmartAccessGatewayResponse.setDescription(context.stringValue("CreateSmartAccessGatewayResponse.Description"));
+		createSmartAccessGatewayResponse.setRequestId(_ctx.stringValue("CreateSmartAccessGatewayResponse.RequestId"));
+		createSmartAccessGatewayResponse.setSmartAGId(_ctx.stringValue("CreateSmartAccessGatewayResponse.SmartAGId"));
+		createSmartAccessGatewayResponse.setName(_ctx.stringValue("CreateSmartAccessGatewayResponse.Name"));
+		createSmartAccessGatewayResponse.setOrderId(_ctx.stringValue("CreateSmartAccessGatewayResponse.OrderId"));
+		createSmartAccessGatewayResponse.setDescription(_ctx.stringValue("CreateSmartAccessGatewayResponse.Description"));
 	 
 	 	return createSmartAccessGatewayResponse;
 	}

@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifySmartAccessGatewayClientUserResponseUnmarshaller {
 
-	public static ModifySmartAccessGatewayClientUserResponse unmarshall(ModifySmartAccessGatewayClientUserResponse modifySmartAccessGatewayClientUserResponse, UnmarshallerContext context) {
+	public static ModifySmartAccessGatewayClientUserResponse unmarshall(ModifySmartAccessGatewayClientUserResponse modifySmartAccessGatewayClientUserResponse, UnmarshallerContext _ctx) {
 		
-		modifySmartAccessGatewayClientUserResponse.setRequestId(context.stringValue("ModifySmartAccessGatewayClientUserResponse.RequestId"));
-		modifySmartAccessGatewayClientUserResponse.setClientIp(context.stringValue("ModifySmartAccessGatewayClientUserResponse.ClientIp"));
-		modifySmartAccessGatewayClientUserResponse.setUserMail(context.stringValue("ModifySmartAccessGatewayClientUserResponse.UserMail"));
-		modifySmartAccessGatewayClientUserResponse.setUserName(context.stringValue("ModifySmartAccessGatewayClientUserResponse.UserName"));
-		modifySmartAccessGatewayClientUserResponse.setBandwidth(context.integerValue("ModifySmartAccessGatewayClientUserResponse.Bandwidth"));
+		modifySmartAccessGatewayClientUserResponse.setRequestId(_ctx.stringValue("ModifySmartAccessGatewayClientUserResponse.RequestId"));
+		modifySmartAccessGatewayClientUserResponse.setClientIp(_ctx.stringValue("ModifySmartAccessGatewayClientUserResponse.ClientIp"));
+		modifySmartAccessGatewayClientUserResponse.setUserMail(_ctx.stringValue("ModifySmartAccessGatewayClientUserResponse.UserMail"));
+		modifySmartAccessGatewayClientUserResponse.setUserName(_ctx.stringValue("ModifySmartAccessGatewayClientUserResponse.UserName"));
+		modifySmartAccessGatewayClientUserResponse.setBandwidth(_ctx.integerValue("ModifySmartAccessGatewayClientUserResponse.Bandwidth"));
 	 
 	 	return modifySmartAccessGatewayClientUserResponse;
 	}

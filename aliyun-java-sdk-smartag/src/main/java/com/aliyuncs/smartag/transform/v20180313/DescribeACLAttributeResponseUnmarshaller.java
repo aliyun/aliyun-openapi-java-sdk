@@ -24,28 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeACLAttributeResponseUnmarshaller {
 
-	public static DescribeACLAttributeResponse unmarshall(DescribeACLAttributeResponse describeACLAttributeResponse, UnmarshallerContext context) {
+	public static DescribeACLAttributeResponse unmarshall(DescribeACLAttributeResponse describeACLAttributeResponse, UnmarshallerContext _ctx) {
 		
-		describeACLAttributeResponse.setRequestId(context.stringValue("DescribeACLAttributeResponse.RequestId"));
-		describeACLAttributeResponse.setTotalCount(context.integerValue("DescribeACLAttributeResponse.TotalCount"));
-		describeACLAttributeResponse.setPageNumber(context.integerValue("DescribeACLAttributeResponse.PageNumber"));
-		describeACLAttributeResponse.setPageSize(context.integerValue("DescribeACLAttributeResponse.PageSize"));
+		describeACLAttributeResponse.setRequestId(_ctx.stringValue("DescribeACLAttributeResponse.RequestId"));
+		describeACLAttributeResponse.setTotalCount(_ctx.integerValue("DescribeACLAttributeResponse.TotalCount"));
+		describeACLAttributeResponse.setPageNumber(_ctx.integerValue("DescribeACLAttributeResponse.PageNumber"));
+		describeACLAttributeResponse.setPageSize(_ctx.integerValue("DescribeACLAttributeResponse.PageSize"));
 
 		List<Acr> acrs = new ArrayList<Acr>();
-		for (int i = 0; i < context.lengthValue("DescribeACLAttributeResponse.Acrs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeACLAttributeResponse.Acrs.Length"); i++) {
 			Acr acr = new Acr();
-			acr.setAcrId(context.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].AcrId"));
-			acr.setDescription(context.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Description"));
-			acr.setDirection(context.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Direction"));
-			acr.setSourceCidr(context.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].SourceCidr"));
-			acr.setDestCidr(context.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].DestCidr"));
-			acr.setIpProtocol(context.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].IpProtocol"));
-			acr.setSourcePortRange(context.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].SourcePortRange"));
-			acr.setDestPortRange(context.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].DestPortRange"));
-			acr.setPolicy(context.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Policy"));
-			acr.setPriority(context.integerValue("DescribeACLAttributeResponse.Acrs["+ i +"].Priority"));
-			acr.setGmtCreate(context.longValue("DescribeACLAttributeResponse.Acrs["+ i +"].GmtCreate"));
-			acr.setAclId(context.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].AclId"));
+			acr.setAcrId(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].AcrId"));
+			acr.setDescription(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Description"));
+			acr.setDirection(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Direction"));
+			acr.setSourceCidr(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].SourceCidr"));
+			acr.setDestCidr(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].DestCidr"));
+			acr.setIpProtocol(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].IpProtocol"));
+			acr.setSourcePortRange(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].SourcePortRange"));
+			acr.setDestPortRange(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].DestPortRange"));
+			acr.setPolicy(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Policy"));
+			acr.setPriority(_ctx.integerValue("DescribeACLAttributeResponse.Acrs["+ i +"].Priority"));
+			acr.setGmtCreate(_ctx.longValue("DescribeACLAttributeResponse.Acrs["+ i +"].GmtCreate"));
+			acr.setAclId(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].AclId"));
+			acr.setType(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Type"));
+			acr.setName(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Name"));
 
 			acrs.add(acr);
 		}

@@ -50,6 +50,8 @@ public class ModifyACLRuleResponse extends AcsResponse {
 
 	private Long gmtCreate;
 
+	private String name;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -152,6 +154,14 @@ public class ModifyACLRuleResponse extends AcsResponse {
 
 	public void setGmtCreate(Long gmtCreate) {
 		this.gmtCreate = gmtCreate;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override

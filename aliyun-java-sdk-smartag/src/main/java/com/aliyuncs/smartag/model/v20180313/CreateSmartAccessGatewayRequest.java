@@ -15,16 +15,15 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAccessGatewayResponse> {
-	
-	public CreateSmartAccessGatewayRequest() {
-		super("Smartag", "2018-03-13", "CreateSmartAccessGateway", "smartag");
-	}
+	   
 
 	private Integer maxBandWidth;
 
@@ -36,11 +35,7 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 
 	private String receiverDistrict;
 
-	private Integer userCount;
-
 	private String receiverAddress;
-
-	private String instanceType;
 
 	private String buyerMessage;
 
@@ -76,9 +71,15 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 
 	private String chargeType;
 
-	private Long dataPlan;
-
 	private String receiverZip;
+	public CreateSmartAccessGatewayRequest() {
+		super("Smartag", "2018-03-13", "CreateSmartAccessGateway", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getMaxBandWidth() {
 		return this.maxBandWidth;
@@ -135,17 +136,6 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		}
 	}
 
-	public Integer getUserCount() {
-		return this.userCount;
-	}
-
-	public void setUserCount(Integer userCount) {
-		this.userCount = userCount;
-		if(userCount != null){
-			putQueryParameter("UserCount", userCount.toString());
-		}
-	}
-
 	public String getReceiverAddress() {
 		return this.receiverAddress;
 	}
@@ -154,17 +144,6 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		this.receiverAddress = receiverAddress;
 		if(receiverAddress != null){
 			putQueryParameter("ReceiverAddress", receiverAddress);
-		}
-	}
-
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 
@@ -352,17 +331,6 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
-		}
-	}
-
-	public Long getDataPlan() {
-		return this.dataPlan;
-	}
-
-	public void setDataPlan(Long dataPlan) {
-		this.dataPlan = dataPlan;
-		if(dataPlan != null){
-			putQueryParameter("DataPlan", dataPlan.toString());
 		}
 	}
 

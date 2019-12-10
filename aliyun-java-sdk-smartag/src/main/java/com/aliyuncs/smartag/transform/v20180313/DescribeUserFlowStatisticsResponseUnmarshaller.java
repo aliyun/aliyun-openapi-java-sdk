@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUserFlowStatisticsResponseUnmarshaller {
 
-	public static DescribeUserFlowStatisticsResponse unmarshall(DescribeUserFlowStatisticsResponse describeUserFlowStatisticsResponse, UnmarshallerContext context) {
+	public static DescribeUserFlowStatisticsResponse unmarshall(DescribeUserFlowStatisticsResponse describeUserFlowStatisticsResponse, UnmarshallerContext _ctx) {
 		
-		describeUserFlowStatisticsResponse.setRequestId(context.stringValue("DescribeUserFlowStatisticsResponse.RequestId"));
+		describeUserFlowStatisticsResponse.setRequestId(_ctx.stringValue("DescribeUserFlowStatisticsResponse.RequestId"));
 
 		List<Statistics> sagStatistics = new ArrayList<Statistics>();
-		for (int i = 0; i < context.lengthValue("DescribeUserFlowStatisticsResponse.SagStatistics.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeUserFlowStatisticsResponse.SagStatistics.Length"); i++) {
 			Statistics statistics = new Statistics();
-			statistics.setUserName(context.stringValue("DescribeUserFlowStatisticsResponse.SagStatistics["+ i +"].UserName"));
-			statistics.setTotalBytes(context.stringValue("DescribeUserFlowStatisticsResponse.SagStatistics["+ i +"].TotalBytes"));
+			statistics.setUserName(_ctx.stringValue("DescribeUserFlowStatisticsResponse.SagStatistics["+ i +"].UserName"));
+			statistics.setTotalBytes(_ctx.stringValue("DescribeUserFlowStatisticsResponse.SagStatistics["+ i +"].TotalBytes"));
 
 			sagStatistics.add(statistics);
 		}

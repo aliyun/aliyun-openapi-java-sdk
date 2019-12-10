@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyNetworkOptimizationResponseUnmarshaller {
 
-	public static ModifyNetworkOptimizationResponse unmarshall(ModifyNetworkOptimizationResponse modifyNetworkOptimizationResponse, UnmarshallerContext context) {
+	public static ModifyNetworkOptimizationResponse unmarshall(ModifyNetworkOptimizationResponse modifyNetworkOptimizationResponse, UnmarshallerContext _ctx) {
 		
-		modifyNetworkOptimizationResponse.setRequestId(context.stringValue("ModifyNetworkOptimizationResponse.RequestId"));
+		modifyNetworkOptimizationResponse.setRequestId(_ctx.stringValue("ModifyNetworkOptimizationResponse.RequestId"));
 	 
 	 	return modifyNetworkOptimizationResponse;
 	}

@@ -15,26 +15,33 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteCloudConnectNetworkRequest extends RpcAcsRequest<DeleteCloudConnectNetworkResponse> {
-	
-	public DeleteCloudConnectNetworkRequest() {
-		super("Smartag", "2018-03-13", "DeleteCloudConnectNetwork", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String ccnId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String ccnId;
-
 	private Long ownerId;
+	public DeleteCloudConnectNetworkRequest() {
+		super("Smartag", "2018-03-13", "DeleteCloudConnectNetwork", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -44,6 +51,17 @@ public class DeleteCloudConnectNetworkRequest extends RpcAcsRequest<DeleteCloudC
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCcnId() {
+		return this.ccnId;
+	}
+
+	public void setCcnId(String ccnId) {
+		this.ccnId = ccnId;
+		if(ccnId != null){
+			putQueryParameter("CcnId", ccnId);
 		}
 	}
 
@@ -66,17 +84,6 @@ public class DeleteCloudConnectNetworkRequest extends RpcAcsRequest<DeleteCloudC
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getCcnId() {
-		return this.ccnId;
-	}
-
-	public void setCcnId(String ccnId) {
-		this.ccnId = ccnId;
-		if(ccnId != null){
-			putQueryParameter("CcnId", ccnId);
 		}
 	}
 

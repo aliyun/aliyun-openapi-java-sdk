@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UnicomSignConfirmResponseUnmarshaller {
 
-	public static UnicomSignConfirmResponse unmarshall(UnicomSignConfirmResponse unicomSignConfirmResponse, UnmarshallerContext context) {
+	public static UnicomSignConfirmResponse unmarshall(UnicomSignConfirmResponse unicomSignConfirmResponse, UnmarshallerContext _ctx) {
 		
-		unicomSignConfirmResponse.setRequestId(context.stringValue("UnicomSignConfirmResponse.RequestId"));
-		unicomSignConfirmResponse.setCode(context.stringValue("UnicomSignConfirmResponse.Code"));
-		unicomSignConfirmResponse.setMessage(context.stringValue("UnicomSignConfirmResponse.Message"));
-		unicomSignConfirmResponse.setSuccess(context.booleanValue("UnicomSignConfirmResponse.Success"));
+		unicomSignConfirmResponse.setRequestId(_ctx.stringValue("UnicomSignConfirmResponse.RequestId"));
+		unicomSignConfirmResponse.setCode(_ctx.stringValue("UnicomSignConfirmResponse.Code"));
+		unicomSignConfirmResponse.setMessage(_ctx.stringValue("UnicomSignConfirmResponse.Message"));
+		unicomSignConfirmResponse.setSuccess(_ctx.booleanValue("UnicomSignConfirmResponse.Success"));
 	 
 	 	return unicomSignConfirmResponse;
 	}

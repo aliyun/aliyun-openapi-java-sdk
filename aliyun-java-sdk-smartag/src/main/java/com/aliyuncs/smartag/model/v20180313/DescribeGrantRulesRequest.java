@@ -15,30 +15,37 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.smartag.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeGrantRulesRequest extends RpcAcsRequest<DescribeGrantRulesResponse> {
-	
-	public DescribeGrantRulesRequest() {
-		super("Smartag", "2018-03-13", "DescribeGrantRules", "smartag");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String pageSize;
-
 	private String associatedCcnId;
 
 	private Long ownerId;
-
-	private String pageNumber;
+	public DescribeGrantRulesRequest() {
+		super("Smartag", "2018-03-13", "DescribeGrantRules", "smartag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,6 +55,28 @@ public class DescribeGrantRulesRequest extends RpcAcsRequest<DescribeGrantRulesR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -73,17 +102,6 @@ public class DescribeGrantRulesRequest extends RpcAcsRequest<DescribeGrantRulesR
 		}
 	}
 
-	public String getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
-		}
-	}
-
 	public String getAssociatedCcnId() {
 		return this.associatedCcnId;
 	}
@@ -103,17 +121,6 @@ public class DescribeGrantRulesRequest extends RpcAcsRequest<DescribeGrantRulesR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
 		}
 	}
 

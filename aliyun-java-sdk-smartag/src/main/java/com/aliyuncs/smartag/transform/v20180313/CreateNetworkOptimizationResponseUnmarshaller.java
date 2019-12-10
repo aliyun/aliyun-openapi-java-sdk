@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateNetworkOptimizationResponseUnmarshaller {
 
-	public static CreateNetworkOptimizationResponse unmarshall(CreateNetworkOptimizationResponse createNetworkOptimizationResponse, UnmarshallerContext context) {
+	public static CreateNetworkOptimizationResponse unmarshall(CreateNetworkOptimizationResponse createNetworkOptimizationResponse, UnmarshallerContext _ctx) {
 		
-		createNetworkOptimizationResponse.setRequestId(context.stringValue("CreateNetworkOptimizationResponse.RequestId"));
-		createNetworkOptimizationResponse.setNetworkOptId(context.stringValue("CreateNetworkOptimizationResponse.NetworkOptId"));
-		createNetworkOptimizationResponse.setName(context.stringValue("CreateNetworkOptimizationResponse.Name"));
-		createNetworkOptimizationResponse.setState(context.stringValue("CreateNetworkOptimizationResponse.State"));
+		createNetworkOptimizationResponse.setRequestId(_ctx.stringValue("CreateNetworkOptimizationResponse.RequestId"));
+		createNetworkOptimizationResponse.setNetworkOptId(_ctx.stringValue("CreateNetworkOptimizationResponse.NetworkOptId"));
+		createNetworkOptimizationResponse.setName(_ctx.stringValue("CreateNetworkOptimizationResponse.Name"));
+		createNetworkOptimizationResponse.setState(_ctx.stringValue("CreateNetworkOptimizationResponse.State"));
 	 
 	 	return createNetworkOptimizationResponse;
 	}

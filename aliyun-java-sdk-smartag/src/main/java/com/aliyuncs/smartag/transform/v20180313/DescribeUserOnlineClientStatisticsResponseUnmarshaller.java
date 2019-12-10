@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUserOnlineClientStatisticsResponseUnmarshaller {
 
-	public static DescribeUserOnlineClientStatisticsResponse unmarshall(DescribeUserOnlineClientStatisticsResponse describeUserOnlineClientStatisticsResponse, UnmarshallerContext context) {
+	public static DescribeUserOnlineClientStatisticsResponse unmarshall(DescribeUserOnlineClientStatisticsResponse describeUserOnlineClientStatisticsResponse, UnmarshallerContext _ctx) {
 		
-		describeUserOnlineClientStatisticsResponse.setRequestId(context.stringValue("DescribeUserOnlineClientStatisticsResponse.RequestId"));
+		describeUserOnlineClientStatisticsResponse.setRequestId(_ctx.stringValue("DescribeUserOnlineClientStatisticsResponse.RequestId"));
 
 		List<Statistics> userStatistics = new ArrayList<Statistics>();
-		for (int i = 0; i < context.lengthValue("DescribeUserOnlineClientStatisticsResponse.UserStatistics.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeUserOnlineClientStatisticsResponse.UserStatistics.Length"); i++) {
 			Statistics statistics = new Statistics();
-			statistics.setUserName(context.stringValue("DescribeUserOnlineClientStatisticsResponse.UserStatistics["+ i +"].UserName"));
-			statistics.setOnlineCount(context.stringValue("DescribeUserOnlineClientStatisticsResponse.UserStatistics["+ i +"].OnlineCount"));
+			statistics.setUserName(_ctx.stringValue("DescribeUserOnlineClientStatisticsResponse.UserStatistics["+ i +"].UserName"));
+			statistics.setOnlineCount(_ctx.stringValue("DescribeUserOnlineClientStatisticsResponse.UserStatistics["+ i +"].OnlineCount"));
 
 			userStatistics.add(statistics);
 		}

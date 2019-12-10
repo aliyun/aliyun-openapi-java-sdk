@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetCloudConnectNetworkUseLimitResponseUnmarshaller {
 
-	public static GetCloudConnectNetworkUseLimitResponse unmarshall(GetCloudConnectNetworkUseLimitResponse getCloudConnectNetworkUseLimitResponse, UnmarshallerContext context) {
+	public static GetCloudConnectNetworkUseLimitResponse unmarshall(GetCloudConnectNetworkUseLimitResponse getCloudConnectNetworkUseLimitResponse, UnmarshallerContext _ctx) {
 		
-		getCloudConnectNetworkUseLimitResponse.setRequestId(context.stringValue("GetCloudConnectNetworkUseLimitResponse.RequestId"));
-		getCloudConnectNetworkUseLimitResponse.setTotalAmount(context.integerValue("GetCloudConnectNetworkUseLimitResponse.TotalAmount"));
-		getCloudConnectNetworkUseLimitResponse.setUsedAmount(context.integerValue("GetCloudConnectNetworkUseLimitResponse.UsedAmount"));
+		getCloudConnectNetworkUseLimitResponse.setRequestId(_ctx.stringValue("GetCloudConnectNetworkUseLimitResponse.RequestId"));
+		getCloudConnectNetworkUseLimitResponse.setTotalAmount(_ctx.integerValue("GetCloudConnectNetworkUseLimitResponse.TotalAmount"));
+		getCloudConnectNetworkUseLimitResponse.setUsedAmount(_ctx.integerValue("GetCloudConnectNetworkUseLimitResponse.UsedAmount"));
 	 
 	 	return getCloudConnectNetworkUseLimitResponse;
 	}
