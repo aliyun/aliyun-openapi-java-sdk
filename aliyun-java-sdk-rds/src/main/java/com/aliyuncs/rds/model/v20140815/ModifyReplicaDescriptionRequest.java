@@ -39,7 +39,7 @@ public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplica
 
 	private Long ownerId;
 	public ModifyReplicaDescriptionRequest() {
-		super("Rds", "2014-08-15", "ModifyReplicaDescription", "rds");
+		super("Rds", "2014-08-15", "ModifyReplicaDescription");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

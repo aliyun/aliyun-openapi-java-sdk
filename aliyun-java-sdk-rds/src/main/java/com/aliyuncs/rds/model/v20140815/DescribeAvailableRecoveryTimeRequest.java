@@ -33,7 +33,7 @@ public class DescribeAvailableRecoveryTimeRequest extends RpcAcsRequest<Describe
 
 	private Integer crossBackupId;
 	public DescribeAvailableRecoveryTimeRequest() {
-		super("Rds", "2014-08-15", "DescribeAvailableRecoveryTime", "rds");
+		super("Rds", "2014-08-15", "DescribeAvailableRecoveryTime");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

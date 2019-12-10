@@ -41,7 +41,7 @@ public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 
 	private String tags;
 	public DescribeTagsRequest() {
-		super("Rds", "2014-08-15", "DescribeTags", "rds");
+		super("Rds", "2014-08-15", "DescribeTags");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

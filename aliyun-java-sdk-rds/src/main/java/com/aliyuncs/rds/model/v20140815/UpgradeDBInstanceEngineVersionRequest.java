@@ -41,7 +41,7 @@ public class UpgradeDBInstanceEngineVersionRequest extends RpcAcsRequest<Upgrade
 
 	private Long ownerId;
 	public UpgradeDBInstanceEngineVersionRequest() {
-		super("Rds", "2014-08-15", "UpgradeDBInstanceEngineVersion", "rds");
+		super("Rds", "2014-08-15", "UpgradeDBInstanceEngineVersion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

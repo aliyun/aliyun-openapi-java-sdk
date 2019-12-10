@@ -51,7 +51,7 @@ public class CreateDedicatedHostRequest extends RpcAcsRequest<CreateDedicatedHos
 
 	private String payType;
 	public CreateDedicatedHostRequest() {
-		super("Rds", "2014-08-15", "CreateDedicatedHost", "rds");
+		super("Rds", "2014-08-15", "CreateDedicatedHost");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

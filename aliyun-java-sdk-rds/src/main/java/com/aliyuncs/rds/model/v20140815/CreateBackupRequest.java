@@ -37,7 +37,7 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 
 	private String dBName;
 	public CreateBackupRequest() {
-		super("Rds", "2014-08-15", "CreateBackup", "rds");
+		super("Rds", "2014-08-15", "CreateBackup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

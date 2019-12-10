@@ -37,7 +37,7 @@ public class RebuildDBInstanceRequest extends RpcAcsRequest<RebuildDBInstanceRes
 
 	private Long ownerId;
 	public RebuildDBInstanceRequest() {
-		super("Rds", "2014-08-15", "RebuildDBInstance", "rds");
+		super("Rds", "2014-08-15", "RebuildDBInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

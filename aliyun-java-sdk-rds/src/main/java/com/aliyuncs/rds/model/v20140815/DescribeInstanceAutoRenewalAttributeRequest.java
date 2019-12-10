@@ -43,7 +43,7 @@ public class DescribeInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<D
 
 	private Long ownerId;
 	public DescribeInstanceAutoRenewalAttributeRequest() {
-		super("Rds", "2014-08-15", "DescribeInstanceAutoRenewalAttribute", "rds");
+		super("Rds", "2014-08-15", "DescribeInstanceAutoRenewalAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

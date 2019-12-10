@@ -43,7 +43,7 @@ public class ModifyDBInstanceTDERequest extends RpcAcsRequest<ModifyDBInstanceTD
 
 	private String tDEStatus;
 	public ModifyDBInstanceTDERequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceTDE", "rds");
+		super("Rds", "2014-08-15", "ModifyDBInstanceTDE");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

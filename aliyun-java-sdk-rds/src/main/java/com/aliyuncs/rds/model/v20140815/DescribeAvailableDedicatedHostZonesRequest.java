@@ -31,7 +31,7 @@ public class DescribeAvailableDedicatedHostZonesRequest extends RpcAcsRequest<De
 
 	private Long ownerId;
 	public DescribeAvailableDedicatedHostZonesRequest() {
-		super("Rds", "2014-08-15", "DescribeAvailableDedicatedHostZones", "rds");
+		super("Rds", "2014-08-15", "DescribeAvailableDedicatedHostZones");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

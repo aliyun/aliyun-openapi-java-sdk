@@ -41,7 +41,7 @@ public class ModifyDTCSecurityIpHostsForSQLServerRequest extends RpcAcsRequest<M
 
 	private Long ownerId;
 	public ModifyDTCSecurityIpHostsForSQLServerRequest() {
-		super("Rds", "2014-08-15", "ModifyDTCSecurityIpHostsForSQLServer", "rds");
+		super("Rds", "2014-08-15", "ModifyDTCSecurityIpHostsForSQLServer");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

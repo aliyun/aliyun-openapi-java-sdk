@@ -43,7 +43,7 @@ public class DescribeBinlogFilesRequest extends RpcAcsRequest<DescribeBinlogFile
 
 	private Long ownerId;
 	public DescribeBinlogFilesRequest() {
-		super("Rds", "2014-08-15", "DescribeBinlogFiles", "rds");
+		super("Rds", "2014-08-15", "DescribeBinlogFiles");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

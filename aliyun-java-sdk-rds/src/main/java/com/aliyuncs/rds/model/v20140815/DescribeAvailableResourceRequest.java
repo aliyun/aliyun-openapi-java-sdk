@@ -41,7 +41,7 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private String orderType;
 	public DescribeAvailableResourceRequest() {
-		super("Rds", "2014-08-15", "DescribeAvailableResource", "rds");
+		super("Rds", "2014-08-15", "DescribeAvailableResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

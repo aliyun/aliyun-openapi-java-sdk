@@ -41,7 +41,7 @@ public class DescribeMigrateTasksRequest extends RpcAcsRequest<DescribeMigrateTa
 
 	private Long ownerId;
 	public DescribeMigrateTasksRequest() {
-		super("Rds", "2014-08-15", "DescribeMigrateTasks", "rds");
+		super("Rds", "2014-08-15", "DescribeMigrateTasks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

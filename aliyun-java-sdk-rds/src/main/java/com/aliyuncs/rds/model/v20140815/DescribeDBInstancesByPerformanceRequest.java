@@ -69,7 +69,7 @@ public class DescribeDBInstancesByPerformanceRequest extends RpcAcsRequest<Descr
 
 	private String tag4key;
 	public DescribeDBInstancesByPerformanceRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "rds");
+		super("Rds", "2014-08-15", "DescribeDBInstancesByPerformance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

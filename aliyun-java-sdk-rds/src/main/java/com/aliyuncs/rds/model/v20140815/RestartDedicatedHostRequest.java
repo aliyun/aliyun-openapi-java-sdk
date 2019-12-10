@@ -35,7 +35,7 @@ public class RestartDedicatedHostRequest extends RpcAcsRequest<RestartDedicatedH
 
 	private String failoverMode;
 	public RestartDedicatedHostRequest() {
-		super("Rds", "2014-08-15", "RestartDedicatedHost", "rds");
+		super("Rds", "2014-08-15", "RestartDedicatedHost");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

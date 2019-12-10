@@ -55,7 +55,7 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 
 	private String orderType;
 	public DescribeRenewalPriceRequest() {
-		super("Rds", "2014-08-15", "DescribeRenewalPrice", "rds");
+		super("Rds", "2014-08-15", "DescribeRenewalPrice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

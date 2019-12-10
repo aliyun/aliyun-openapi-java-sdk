@@ -31,7 +31,7 @@ public class CopyDatabaseRequest extends RpcAcsRequest<CopyDatabaseResponse> {
 
 	private Long ownerId;
 	public CopyDatabaseRequest() {
-		super("Rds", "2014-08-15", "CopyDatabase", "rds");
+		super("Rds", "2014-08-15", "CopyDatabase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class LockAccountRequest extends RpcAcsRequest<LockAccountResponse> {
 
 	private String dBInstanceId;
 	public LockAccountRequest() {
-		super("Rds", "2014-08-15", "LockAccount", "rds");
+		super("Rds", "2014-08-15", "LockAccount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

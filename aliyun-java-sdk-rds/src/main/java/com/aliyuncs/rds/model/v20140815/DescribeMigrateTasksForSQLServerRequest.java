@@ -41,7 +41,7 @@ public class DescribeMigrateTasksForSQLServerRequest extends RpcAcsRequest<Descr
 
 	private Long ownerId;
 	public DescribeMigrateTasksForSQLServerRequest() {
-		super("Rds", "2014-08-15", "DescribeMigrateTasksForSQLServer", "rds");
+		super("Rds", "2014-08-15", "DescribeMigrateTasksForSQLServer");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

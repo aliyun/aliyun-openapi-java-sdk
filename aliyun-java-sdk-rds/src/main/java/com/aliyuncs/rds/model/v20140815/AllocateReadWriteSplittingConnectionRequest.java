@@ -47,7 +47,7 @@ public class AllocateReadWriteSplittingConnectionRequest extends RpcAcsRequest<A
 
 	private String maxDelayTime;
 	public AllocateReadWriteSplittingConnectionRequest() {
-		super("Rds", "2014-08-15", "AllocateReadWriteSplittingConnection", "rds");
+		super("Rds", "2014-08-15", "AllocateReadWriteSplittingConnection");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

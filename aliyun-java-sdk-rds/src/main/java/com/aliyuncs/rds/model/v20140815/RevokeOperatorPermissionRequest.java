@@ -35,7 +35,7 @@ public class RevokeOperatorPermissionRequest extends RpcAcsRequest<RevokeOperato
 
 	private String dBInstanceId;
 	public RevokeOperatorPermissionRequest() {
-		super("Rds", "2014-08-15", "RevokeOperatorPermission", "rds");
+		super("Rds", "2014-08-15", "RevokeOperatorPermission");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

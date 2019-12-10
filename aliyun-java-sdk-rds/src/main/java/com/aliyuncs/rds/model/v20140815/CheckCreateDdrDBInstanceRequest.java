@@ -49,7 +49,7 @@ public class CheckCreateDdrDBInstanceRequest extends RpcAcsRequest<CheckCreateDd
 
 	private String sourceRegion;
 	public CheckCreateDdrDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CheckCreateDdrDBInstance", "rds");
+		super("Rds", "2014-08-15", "CheckCreateDdrDBInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

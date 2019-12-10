@@ -43,7 +43,7 @@ public class DescribeSQLReportsRequest extends RpcAcsRequest<DescribeSQLReportsR
 
 	private Long ownerId;
 	public DescribeSQLReportsRequest() {
-		super("Rds", "2014-08-15", "DescribeSQLReports", "rds");
+		super("Rds", "2014-08-15", "DescribeSQLReports");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

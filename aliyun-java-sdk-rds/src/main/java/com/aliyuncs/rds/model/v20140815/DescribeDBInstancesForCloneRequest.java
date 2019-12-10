@@ -71,7 +71,7 @@ public class DescribeDBInstancesForCloneRequest extends RpcAcsRequest<DescribeDB
 
 	private String instanceNetworkType;
 	public DescribeDBInstancesForCloneRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstancesForClone", "rds");
+		super("Rds", "2014-08-15", "DescribeDBInstancesForClone");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

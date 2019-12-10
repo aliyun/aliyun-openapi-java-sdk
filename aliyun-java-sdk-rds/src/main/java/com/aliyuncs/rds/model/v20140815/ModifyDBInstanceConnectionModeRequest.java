@@ -37,7 +37,7 @@ public class ModifyDBInstanceConnectionModeRequest extends RpcAcsRequest<ModifyD
 
 	private String dBInstanceId;
 	public ModifyDBInstanceConnectionModeRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceConnectionMode", "rds");
+		super("Rds", "2014-08-15", "ModifyDBInstanceConnectionMode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

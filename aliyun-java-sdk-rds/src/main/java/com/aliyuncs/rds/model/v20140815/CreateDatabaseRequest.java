@@ -41,7 +41,7 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 
 	private String characterSetName;
 	public CreateDatabaseRequest() {
-		super("Rds", "2014-08-15", "CreateDatabase", "rds");
+		super("Rds", "2014-08-15", "CreateDatabase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

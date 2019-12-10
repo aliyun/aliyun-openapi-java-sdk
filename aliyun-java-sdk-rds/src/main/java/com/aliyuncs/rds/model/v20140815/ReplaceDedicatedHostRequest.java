@@ -35,7 +35,7 @@ public class ReplaceDedicatedHostRequest extends RpcAcsRequest<ReplaceDedicatedH
 
 	private String failoverMode;
 	public ReplaceDedicatedHostRequest() {
-		super("Rds", "2014-08-15", "ReplaceDedicatedHost", "rds");
+		super("Rds", "2014-08-15", "ReplaceDedicatedHost");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
