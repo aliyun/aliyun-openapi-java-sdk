@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUnhealthyHostAvailabilityResponseUnmarshaller {
 
-	public static DescribeUnhealthyHostAvailabilityResponse unmarshall(DescribeUnhealthyHostAvailabilityResponse describeUnhealthyHostAvailabilityResponse, UnmarshallerContext context) {
+	public static DescribeUnhealthyHostAvailabilityResponse unmarshall(DescribeUnhealthyHostAvailabilityResponse describeUnhealthyHostAvailabilityResponse, UnmarshallerContext _ctx) {
 		
-		describeUnhealthyHostAvailabilityResponse.setRequestId(context.stringValue("DescribeUnhealthyHostAvailabilityResponse.RequestId"));
-		describeUnhealthyHostAvailabilityResponse.setCode(context.stringValue("DescribeUnhealthyHostAvailabilityResponse.Code"));
-		describeUnhealthyHostAvailabilityResponse.setMessage(context.stringValue("DescribeUnhealthyHostAvailabilityResponse.Message"));
-		describeUnhealthyHostAvailabilityResponse.setSuccess(context.booleanValue("DescribeUnhealthyHostAvailabilityResponse.Success"));
+		describeUnhealthyHostAvailabilityResponse.setRequestId(_ctx.stringValue("DescribeUnhealthyHostAvailabilityResponse.RequestId"));
+		describeUnhealthyHostAvailabilityResponse.setCode(_ctx.stringValue("DescribeUnhealthyHostAvailabilityResponse.Code"));
+		describeUnhealthyHostAvailabilityResponse.setMessage(_ctx.stringValue("DescribeUnhealthyHostAvailabilityResponse.Message"));
+		describeUnhealthyHostAvailabilityResponse.setSuccess(_ctx.booleanValue("DescribeUnhealthyHostAvailabilityResponse.Success"));
 
 		List<NodeTaskInstance> unhealthyList = new ArrayList<NodeTaskInstance>();
-		for (int i = 0; i < context.lengthValue("DescribeUnhealthyHostAvailabilityResponse.UnhealthyList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeUnhealthyHostAvailabilityResponse.UnhealthyList.Length"); i++) {
 			NodeTaskInstance nodeTaskInstance = new NodeTaskInstance();
-			nodeTaskInstance.setId(context.longValue("DescribeUnhealthyHostAvailabilityResponse.UnhealthyList["+ i +"].Id"));
+			nodeTaskInstance.setId(_ctx.longValue("DescribeUnhealthyHostAvailabilityResponse.UnhealthyList["+ i +"].Id"));
 
 			List<String> instanceList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeUnhealthyHostAvailabilityResponse.UnhealthyList["+ i +"].InstanceList.Length"); j++) {
-				instanceList.add(context.stringValue("DescribeUnhealthyHostAvailabilityResponse.UnhealthyList["+ i +"].InstanceList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeUnhealthyHostAvailabilityResponse.UnhealthyList["+ i +"].InstanceList.Length"); j++) {
+				instanceList.add(_ctx.stringValue("DescribeUnhealthyHostAvailabilityResponse.UnhealthyList["+ i +"].InstanceList["+ j +"]"));
 			}
 			nodeTaskInstance.setInstanceList(instanceList);
 

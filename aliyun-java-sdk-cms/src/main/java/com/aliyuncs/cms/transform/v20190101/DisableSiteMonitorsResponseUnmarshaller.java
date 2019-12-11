@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DisableSiteMonitorsResponseUnmarshaller {
 
-	public static DisableSiteMonitorsResponse unmarshall(DisableSiteMonitorsResponse disableSiteMonitorsResponse, UnmarshallerContext context) {
+	public static DisableSiteMonitorsResponse unmarshall(DisableSiteMonitorsResponse disableSiteMonitorsResponse, UnmarshallerContext _ctx) {
 		
-		disableSiteMonitorsResponse.setRequestId(context.stringValue("DisableSiteMonitorsResponse.RequestId"));
-		disableSiteMonitorsResponse.setCode(context.stringValue("DisableSiteMonitorsResponse.Code"));
-		disableSiteMonitorsResponse.setMessage(context.stringValue("DisableSiteMonitorsResponse.Message"));
-		disableSiteMonitorsResponse.setSuccess(context.stringValue("DisableSiteMonitorsResponse.Success"));
-		disableSiteMonitorsResponse.setData(context.stringValue("DisableSiteMonitorsResponse.Data"));
+		disableSiteMonitorsResponse.setRequestId(_ctx.stringValue("DisableSiteMonitorsResponse.RequestId"));
+		disableSiteMonitorsResponse.setCode(_ctx.stringValue("DisableSiteMonitorsResponse.Code"));
+		disableSiteMonitorsResponse.setMessage(_ctx.stringValue("DisableSiteMonitorsResponse.Message"));
+		disableSiteMonitorsResponse.setSuccess(_ctx.stringValue("DisableSiteMonitorsResponse.Success"));
+		disableSiteMonitorsResponse.setData(_ctx.stringValue("DisableSiteMonitorsResponse.Data"));
 	 
 	 	return disableSiteMonitorsResponse;
 	}

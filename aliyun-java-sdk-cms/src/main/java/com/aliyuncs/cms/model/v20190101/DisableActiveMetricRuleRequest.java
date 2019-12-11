@@ -15,42 +15,25 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DisableActiveMetricRuleRequest extends RpcAcsRequest<DisableActiveMetricRuleResponse> {
-	
-	public DisableActiveMetricRuleRequest() {
-		super("Cms", "2019-01-01", "DisableActiveMetricRule", "cms");
-	}
+	   
 
 	private String product;
-
-	public String getBizProduct() {
-		return this.product;
+	public DisableActiveMetricRuleRequest() {
+		super("Cms", "2019-01-01", "DisableActiveMetricRule", "cms");
+		setMethod(MethodType.POST);
 	}
 
-	public void setBizProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizProduct instead of this.
-	 */
-	@Deprecated
 	public String getProduct() {
 		return this.product;
 	}
 
-	/**
-	 * @deprecated use setBizProduct instead of this.
-	 */
-	@Deprecated
 	public void setProduct(String product) {
 		this.product = product;
 		if(product != null){

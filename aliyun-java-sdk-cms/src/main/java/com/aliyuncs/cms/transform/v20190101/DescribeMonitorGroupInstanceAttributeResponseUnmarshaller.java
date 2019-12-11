@@ -27,41 +27,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMonitorGroupInstanceAttributeResponseUnmarshaller {
 
-	public static DescribeMonitorGroupInstanceAttributeResponse unmarshall(DescribeMonitorGroupInstanceAttributeResponse describeMonitorGroupInstanceAttributeResponse, UnmarshallerContext context) {
+	public static DescribeMonitorGroupInstanceAttributeResponse unmarshall(DescribeMonitorGroupInstanceAttributeResponse describeMonitorGroupInstanceAttributeResponse, UnmarshallerContext _ctx) {
 		
-		describeMonitorGroupInstanceAttributeResponse.setRequestId(context.stringValue("DescribeMonitorGroupInstanceAttributeResponse.RequestId"));
-		describeMonitorGroupInstanceAttributeResponse.setSuccess(context.booleanValue("DescribeMonitorGroupInstanceAttributeResponse.Success"));
-		describeMonitorGroupInstanceAttributeResponse.setCode(context.integerValue("DescribeMonitorGroupInstanceAttributeResponse.Code"));
-		describeMonitorGroupInstanceAttributeResponse.setMessage(context.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Message"));
-		describeMonitorGroupInstanceAttributeResponse.setPageNumber(context.integerValue("DescribeMonitorGroupInstanceAttributeResponse.PageNumber"));
-		describeMonitorGroupInstanceAttributeResponse.setPageSize(context.integerValue("DescribeMonitorGroupInstanceAttributeResponse.PageSize"));
-		describeMonitorGroupInstanceAttributeResponse.setTotal(context.integerValue("DescribeMonitorGroupInstanceAttributeResponse.Total"));
+		describeMonitorGroupInstanceAttributeResponse.setRequestId(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.RequestId"));
+		describeMonitorGroupInstanceAttributeResponse.setSuccess(_ctx.booleanValue("DescribeMonitorGroupInstanceAttributeResponse.Success"));
+		describeMonitorGroupInstanceAttributeResponse.setCode(_ctx.integerValue("DescribeMonitorGroupInstanceAttributeResponse.Code"));
+		describeMonitorGroupInstanceAttributeResponse.setMessage(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Message"));
+		describeMonitorGroupInstanceAttributeResponse.setPageNumber(_ctx.integerValue("DescribeMonitorGroupInstanceAttributeResponse.PageNumber"));
+		describeMonitorGroupInstanceAttributeResponse.setPageSize(_ctx.integerValue("DescribeMonitorGroupInstanceAttributeResponse.PageSize"));
+		describeMonitorGroupInstanceAttributeResponse.setTotal(_ctx.integerValue("DescribeMonitorGroupInstanceAttributeResponse.Total"));
 
 		List<Resource> resources = new ArrayList<Resource>();
-		for (int i = 0; i < context.lengthValue("DescribeMonitorGroupInstanceAttributeResponse.Resources.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMonitorGroupInstanceAttributeResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setInstanceName(context.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].InstanceName"));
-			resource.setInstanceId(context.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].InstanceId"));
-			resource.setDesc(context.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Desc"));
-			resource.setNetworkType(context.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].NetworkType"));
-			resource.setCategory(context.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Category"));
-			resource.setDimension(context.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Dimension"));
+			resource.setInstanceName(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].InstanceName"));
+			resource.setInstanceId(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].InstanceId"));
+			resource.setDesc(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Desc"));
+			resource.setNetworkType(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].NetworkType"));
+			resource.setCategory(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Category"));
+			resource.setDimension(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Dimension"));
 
 			Region region = new Region();
-			region.setRegionId(context.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Region.RegionId"));
-			region.setAvailabilityZone(context.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Region.AvailabilityZone"));
+			region.setRegionId(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Region.RegionId"));
+			region.setAvailabilityZone(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Region.AvailabilityZone"));
 			resource.setRegion(region);
 
 			Vpc vpc = new Vpc();
-			vpc.setVpcInstanceId(context.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Vpc.VpcInstanceId"));
-			vpc.setVswitchInstanceId(context.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Vpc.VswitchInstanceId"));
+			vpc.setVpcInstanceId(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Vpc.VpcInstanceId"));
+			vpc.setVswitchInstanceId(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Vpc.VswitchInstanceId"));
 			resource.setVpc(vpc);
 
 			List<Tag> tags = new ArrayList<Tag>();
-			for (int j = 0; j < context.lengthValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Tags.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setKey(context.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Tags["+ j +"].Key"));
-				tag.setValue(context.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Tags["+ j +"].Value"));
+				tag.setKey(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Tags["+ j +"].Value"));
 
 				tags.add(tag);
 			}

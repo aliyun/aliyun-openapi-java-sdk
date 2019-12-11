@@ -15,20 +15,22 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateMonitorGroupRequest extends RpcAcsRequest<CreateMonitorGroupResponse> {
-	
-	public CreateMonitorGroupRequest() {
-		super("Cms", "2019-01-01", "CreateMonitorGroup", "cms");
-	}
+	   
 
 	private String contactGroups;
 
 	private String groupName;
+	public CreateMonitorGroupRequest() {
+		super("Cms", "2019-01-01", "CreateMonitorGroup", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getContactGroups() {
 		return this.contactGroups;

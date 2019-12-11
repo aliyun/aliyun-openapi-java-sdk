@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SendDryRunSystemEventResponseUnmarshaller {
 
-	public static SendDryRunSystemEventResponse unmarshall(SendDryRunSystemEventResponse sendDryRunSystemEventResponse, UnmarshallerContext context) {
+	public static SendDryRunSystemEventResponse unmarshall(SendDryRunSystemEventResponse sendDryRunSystemEventResponse, UnmarshallerContext _ctx) {
 		
-		sendDryRunSystemEventResponse.setRequestId(context.stringValue("SendDryRunSystemEventResponse.RequestId"));
-		sendDryRunSystemEventResponse.setCode(context.stringValue("SendDryRunSystemEventResponse.Code"));
-		sendDryRunSystemEventResponse.setMessage(context.stringValue("SendDryRunSystemEventResponse.Message"));
-		sendDryRunSystemEventResponse.setSuccess(context.stringValue("SendDryRunSystemEventResponse.Success"));
+		sendDryRunSystemEventResponse.setRequestId(_ctx.stringValue("SendDryRunSystemEventResponse.RequestId"));
+		sendDryRunSystemEventResponse.setCode(_ctx.stringValue("SendDryRunSystemEventResponse.Code"));
+		sendDryRunSystemEventResponse.setMessage(_ctx.stringValue("SendDryRunSystemEventResponse.Message"));
+		sendDryRunSystemEventResponse.setSuccess(_ctx.stringValue("SendDryRunSystemEventResponse.Success"));
 	 
 	 	return sendDryRunSystemEventResponse;
 	}

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PutContactGroupResponseUnmarshaller {
 
-	public static PutContactGroupResponse unmarshall(PutContactGroupResponse putContactGroupResponse, UnmarshallerContext context) {
+	public static PutContactGroupResponse unmarshall(PutContactGroupResponse putContactGroupResponse, UnmarshallerContext _ctx) {
 		
-		putContactGroupResponse.setRequestId(context.stringValue("PutContactGroupResponse.RequestId"));
-		putContactGroupResponse.setSuccess(context.booleanValue("PutContactGroupResponse.Success"));
-		putContactGroupResponse.setCode(context.stringValue("PutContactGroupResponse.Code"));
-		putContactGroupResponse.setMessage(context.stringValue("PutContactGroupResponse.Message"));
+		putContactGroupResponse.setRequestId(_ctx.stringValue("PutContactGroupResponse.RequestId"));
+		putContactGroupResponse.setSuccess(_ctx.booleanValue("PutContactGroupResponse.Success"));
+		putContactGroupResponse.setCode(_ctx.stringValue("PutContactGroupResponse.Code"));
+		putContactGroupResponse.setMessage(_ctx.stringValue("PutContactGroupResponse.Message"));
 	 
 	 	return putContactGroupResponse;
 	}

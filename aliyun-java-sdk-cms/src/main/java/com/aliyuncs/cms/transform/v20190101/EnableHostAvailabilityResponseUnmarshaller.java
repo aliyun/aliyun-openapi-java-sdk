@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class EnableHostAvailabilityResponseUnmarshaller {
 
-	public static EnableHostAvailabilityResponse unmarshall(EnableHostAvailabilityResponse enableHostAvailabilityResponse, UnmarshallerContext context) {
+	public static EnableHostAvailabilityResponse unmarshall(EnableHostAvailabilityResponse enableHostAvailabilityResponse, UnmarshallerContext _ctx) {
 		
-		enableHostAvailabilityResponse.setRequestId(context.stringValue("EnableHostAvailabilityResponse.RequestId"));
-		enableHostAvailabilityResponse.setCode(context.stringValue("EnableHostAvailabilityResponse.Code"));
-		enableHostAvailabilityResponse.setMessage(context.stringValue("EnableHostAvailabilityResponse.Message"));
-		enableHostAvailabilityResponse.setSuccess(context.booleanValue("EnableHostAvailabilityResponse.Success"));
+		enableHostAvailabilityResponse.setRequestId(_ctx.stringValue("EnableHostAvailabilityResponse.RequestId"));
+		enableHostAvailabilityResponse.setCode(_ctx.stringValue("EnableHostAvailabilityResponse.Code"));
+		enableHostAvailabilityResponse.setMessage(_ctx.stringValue("EnableHostAvailabilityResponse.Message"));
+		enableHostAvailabilityResponse.setSuccess(_ctx.booleanValue("EnableHostAvailabilityResponse.Success"));
 	 
 	 	return enableHostAvailabilityResponse;
 	}

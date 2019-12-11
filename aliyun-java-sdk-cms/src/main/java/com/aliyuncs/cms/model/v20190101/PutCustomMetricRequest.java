@@ -16,18 +16,20 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class PutCustomMetricRequest extends RpcAcsRequest<PutCustomMetricResponse> {
-	
-	public PutCustomMetricRequest() {
-		super("Cms", "2019-01-01", "PutCustomMetric", "cms");
-	}
+	   
 
 	private List<MetricList> metricLists;
+	public PutCustomMetricRequest() {
+		super("Cms", "2019-01-01", "PutCustomMetric", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public List<MetricList> getMetricLists() {
 		return this.metricLists;

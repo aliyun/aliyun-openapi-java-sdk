@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteSiteMonitorsResponseUnmarshaller {
 
-	public static DeleteSiteMonitorsResponse unmarshall(DeleteSiteMonitorsResponse deleteSiteMonitorsResponse, UnmarshallerContext context) {
+	public static DeleteSiteMonitorsResponse unmarshall(DeleteSiteMonitorsResponse deleteSiteMonitorsResponse, UnmarshallerContext _ctx) {
 		
-		deleteSiteMonitorsResponse.setRequestId(context.stringValue("DeleteSiteMonitorsResponse.RequestId"));
-		deleteSiteMonitorsResponse.setCode(context.stringValue("DeleteSiteMonitorsResponse.Code"));
-		deleteSiteMonitorsResponse.setMessage(context.stringValue("DeleteSiteMonitorsResponse.Message"));
-		deleteSiteMonitorsResponse.setSuccess(context.stringValue("DeleteSiteMonitorsResponse.Success"));
-		deleteSiteMonitorsResponse.setData(context.stringValue("DeleteSiteMonitorsResponse.Data"));
+		deleteSiteMonitorsResponse.setRequestId(_ctx.stringValue("DeleteSiteMonitorsResponse.RequestId"));
+		deleteSiteMonitorsResponse.setCode(_ctx.stringValue("DeleteSiteMonitorsResponse.Code"));
+		deleteSiteMonitorsResponse.setMessage(_ctx.stringValue("DeleteSiteMonitorsResponse.Message"));
+		deleteSiteMonitorsResponse.setSuccess(_ctx.stringValue("DeleteSiteMonitorsResponse.Success"));
+		deleteSiteMonitorsResponse.setData(_ctx.stringValue("DeleteSiteMonitorsResponse.Data"));
 	 
 	 	return deleteSiteMonitorsResponse;
 	}

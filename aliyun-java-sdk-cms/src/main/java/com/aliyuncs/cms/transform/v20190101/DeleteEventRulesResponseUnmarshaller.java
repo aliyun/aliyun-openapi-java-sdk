@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteEventRulesResponseUnmarshaller {
 
-	public static DeleteEventRulesResponse unmarshall(DeleteEventRulesResponse deleteEventRulesResponse, UnmarshallerContext context) {
+	public static DeleteEventRulesResponse unmarshall(DeleteEventRulesResponse deleteEventRulesResponse, UnmarshallerContext _ctx) {
 		
-		deleteEventRulesResponse.setRequestId(context.stringValue("DeleteEventRulesResponse.RequestId"));
-		deleteEventRulesResponse.setSuccess(context.booleanValue("DeleteEventRulesResponse.Success"));
-		deleteEventRulesResponse.setCode(context.stringValue("DeleteEventRulesResponse.Code"));
-		deleteEventRulesResponse.setMessage(context.stringValue("DeleteEventRulesResponse.Message"));
+		deleteEventRulesResponse.setRequestId(_ctx.stringValue("DeleteEventRulesResponse.RequestId"));
+		deleteEventRulesResponse.setSuccess(_ctx.booleanValue("DeleteEventRulesResponse.Success"));
+		deleteEventRulesResponse.setCode(_ctx.stringValue("DeleteEventRulesResponse.Code"));
+		deleteEventRulesResponse.setMessage(_ctx.stringValue("DeleteEventRulesResponse.Message"));
 	 
 	 	return deleteEventRulesResponse;
 	}

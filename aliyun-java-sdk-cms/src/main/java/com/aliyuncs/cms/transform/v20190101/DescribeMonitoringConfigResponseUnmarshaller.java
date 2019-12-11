@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMonitoringConfigResponseUnmarshaller {
 
-	public static DescribeMonitoringConfigResponse unmarshall(DescribeMonitoringConfigResponse describeMonitoringConfigResponse, UnmarshallerContext context) {
+	public static DescribeMonitoringConfigResponse unmarshall(DescribeMonitoringConfigResponse describeMonitoringConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeMonitoringConfigResponse.setRequestId(context.stringValue("DescribeMonitoringConfigResponse.RequestId"));
-		describeMonitoringConfigResponse.setCode(context.stringValue("DescribeMonitoringConfigResponse.Code"));
-		describeMonitoringConfigResponse.setMessage(context.stringValue("DescribeMonitoringConfigResponse.Message"));
-		describeMonitoringConfigResponse.setSuccess(context.booleanValue("DescribeMonitoringConfigResponse.Success"));
-		describeMonitoringConfigResponse.setAutoInstall(context.booleanValue("DescribeMonitoringConfigResponse.AutoInstall"));
-		describeMonitoringConfigResponse.setEnableInstallAgentNewECS(context.booleanValue("DescribeMonitoringConfigResponse.EnableInstallAgentNewECS"));
+		describeMonitoringConfigResponse.setRequestId(_ctx.stringValue("DescribeMonitoringConfigResponse.RequestId"));
+		describeMonitoringConfigResponse.setCode(_ctx.stringValue("DescribeMonitoringConfigResponse.Code"));
+		describeMonitoringConfigResponse.setMessage(_ctx.stringValue("DescribeMonitoringConfigResponse.Message"));
+		describeMonitoringConfigResponse.setSuccess(_ctx.booleanValue("DescribeMonitoringConfigResponse.Success"));
+		describeMonitoringConfigResponse.setAutoInstall(_ctx.booleanValue("DescribeMonitoringConfigResponse.AutoInstall"));
+		describeMonitoringConfigResponse.setEnableInstallAgentNewECS(_ctx.booleanValue("DescribeMonitoringConfigResponse.EnableInstallAgentNewECS"));
 	 
 	 	return describeMonitoringConfigResponse;
 	}

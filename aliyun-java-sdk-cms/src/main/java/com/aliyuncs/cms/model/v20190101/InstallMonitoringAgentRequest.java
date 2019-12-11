@@ -16,20 +16,22 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class InstallMonitoringAgentRequest extends RpcAcsRequest<InstallMonitoringAgentResponse> {
-	
-	public InstallMonitoringAgentRequest() {
-		super("Cms", "2019-01-01", "InstallMonitoringAgent", "cms");
-	}
+	   
 
 	private List<String> instanceIdss;
 
 	private Boolean force;
+	public InstallMonitoringAgentRequest() {
+		super("Cms", "2019-01-01", "InstallMonitoringAgent", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public List<String> getInstanceIdss() {
 		return this.instanceIdss;

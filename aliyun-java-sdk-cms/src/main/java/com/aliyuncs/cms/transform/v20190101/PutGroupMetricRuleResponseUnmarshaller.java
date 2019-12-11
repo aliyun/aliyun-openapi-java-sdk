@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PutGroupMetricRuleResponseUnmarshaller {
 
-	public static PutGroupMetricRuleResponse unmarshall(PutGroupMetricRuleResponse putGroupMetricRuleResponse, UnmarshallerContext context) {
+	public static PutGroupMetricRuleResponse unmarshall(PutGroupMetricRuleResponse putGroupMetricRuleResponse, UnmarshallerContext _ctx) {
 		
-		putGroupMetricRuleResponse.setRequestId(context.stringValue("PutGroupMetricRuleResponse.RequestId"));
-		putGroupMetricRuleResponse.setSuccess(context.booleanValue("PutGroupMetricRuleResponse.Success"));
-		putGroupMetricRuleResponse.setCode(context.stringValue("PutGroupMetricRuleResponse.Code"));
-		putGroupMetricRuleResponse.setMessage(context.stringValue("PutGroupMetricRuleResponse.Message"));
+		putGroupMetricRuleResponse.setRequestId(_ctx.stringValue("PutGroupMetricRuleResponse.RequestId"));
+		putGroupMetricRuleResponse.setSuccess(_ctx.booleanValue("PutGroupMetricRuleResponse.Success"));
+		putGroupMetricRuleResponse.setCode(_ctx.stringValue("PutGroupMetricRuleResponse.Code"));
+		putGroupMetricRuleResponse.setMessage(_ctx.stringValue("PutGroupMetricRuleResponse.Message"));
 	 
 	 	return putGroupMetricRuleResponse;
 	}

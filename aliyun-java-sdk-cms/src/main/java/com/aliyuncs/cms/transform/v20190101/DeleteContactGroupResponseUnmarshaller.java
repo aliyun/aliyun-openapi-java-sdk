@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteContactGroupResponseUnmarshaller {
 
-	public static DeleteContactGroupResponse unmarshall(DeleteContactGroupResponse deleteContactGroupResponse, UnmarshallerContext context) {
+	public static DeleteContactGroupResponse unmarshall(DeleteContactGroupResponse deleteContactGroupResponse, UnmarshallerContext _ctx) {
 		
-		deleteContactGroupResponse.setRequestId(context.stringValue("DeleteContactGroupResponse.RequestId"));
-		deleteContactGroupResponse.setSuccess(context.booleanValue("DeleteContactGroupResponse.Success"));
-		deleteContactGroupResponse.setCode(context.stringValue("DeleteContactGroupResponse.Code"));
-		deleteContactGroupResponse.setMessage(context.stringValue("DeleteContactGroupResponse.Message"));
+		deleteContactGroupResponse.setRequestId(_ctx.stringValue("DeleteContactGroupResponse.RequestId"));
+		deleteContactGroupResponse.setSuccess(_ctx.booleanValue("DeleteContactGroupResponse.Success"));
+		deleteContactGroupResponse.setCode(_ctx.stringValue("DeleteContactGroupResponse.Code"));
+		deleteContactGroupResponse.setMessage(_ctx.stringValue("DeleteContactGroupResponse.Message"));
 	 
 	 	return deleteContactGroupResponse;
 	}

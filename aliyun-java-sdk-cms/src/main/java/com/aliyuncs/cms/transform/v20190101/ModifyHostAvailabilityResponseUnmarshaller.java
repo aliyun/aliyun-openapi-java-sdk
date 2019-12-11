@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyHostAvailabilityResponseUnmarshaller {
 
-	public static ModifyHostAvailabilityResponse unmarshall(ModifyHostAvailabilityResponse modifyHostAvailabilityResponse, UnmarshallerContext context) {
+	public static ModifyHostAvailabilityResponse unmarshall(ModifyHostAvailabilityResponse modifyHostAvailabilityResponse, UnmarshallerContext _ctx) {
 		
-		modifyHostAvailabilityResponse.setRequestId(context.stringValue("ModifyHostAvailabilityResponse.RequestId"));
-		modifyHostAvailabilityResponse.setCode(context.stringValue("ModifyHostAvailabilityResponse.Code"));
-		modifyHostAvailabilityResponse.setMessage(context.stringValue("ModifyHostAvailabilityResponse.Message"));
-		modifyHostAvailabilityResponse.setSuccess(context.booleanValue("ModifyHostAvailabilityResponse.Success"));
+		modifyHostAvailabilityResponse.setRequestId(_ctx.stringValue("ModifyHostAvailabilityResponse.RequestId"));
+		modifyHostAvailabilityResponse.setCode(_ctx.stringValue("ModifyHostAvailabilityResponse.Code"));
+		modifyHostAvailabilityResponse.setMessage(_ctx.stringValue("ModifyHostAvailabilityResponse.Message"));
+		modifyHostAvailabilityResponse.setSuccess(_ctx.booleanValue("ModifyHostAvailabilityResponse.Success"));
 	 
 	 	return modifyHostAvailabilityResponse;
 	}

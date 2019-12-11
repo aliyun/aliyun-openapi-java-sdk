@@ -15,26 +15,28 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeHostAvailabilityListRequest extends RpcAcsRequest<DescribeHostAvailabilityListResponse> {
-	
-	public DescribeHostAvailabilityListRequest() {
-		super("Cms", "2019-01-01", "DescribeHostAvailabilityList", "cms");
-	}
+	   
 
 	private Long groupId;
 
-	private Integer pageSize;
-
 	private String taskName;
 
-	private Long id;
-
 	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private Long id;
+	public DescribeHostAvailabilityListRequest() {
+		super("Cms", "2019-01-01", "DescribeHostAvailabilityList", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getGroupId() {
 		return this.groupId;
@@ -44,17 +46,6 @@ public class DescribeHostAvailabilityListRequest extends RpcAcsRequest<DescribeH
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -69,17 +60,6 @@ public class DescribeHostAvailabilityListRequest extends RpcAcsRequest<DescribeH
 		}
 	}
 
-	public Long getId() {
-		return this.id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id.toString());
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -88,6 +68,28 @@ public class DescribeHostAvailabilityListRequest extends RpcAcsRequest<DescribeH
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
 		}
 	}
 

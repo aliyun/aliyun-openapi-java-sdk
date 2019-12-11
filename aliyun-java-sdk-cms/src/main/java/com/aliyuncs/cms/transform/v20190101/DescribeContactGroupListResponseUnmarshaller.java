@@ -23,17 +23,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeContactGroupListResponseUnmarshaller {
 
-	public static DescribeContactGroupListResponse unmarshall(DescribeContactGroupListResponse describeContactGroupListResponse, UnmarshallerContext context) {
+	public static DescribeContactGroupListResponse unmarshall(DescribeContactGroupListResponse describeContactGroupListResponse, UnmarshallerContext _ctx) {
 		
-		describeContactGroupListResponse.setRequestId(context.stringValue("DescribeContactGroupListResponse.RequestId"));
-		describeContactGroupListResponse.setSuccess(context.booleanValue("DescribeContactGroupListResponse.Success"));
-		describeContactGroupListResponse.setCode(context.stringValue("DescribeContactGroupListResponse.Code"));
-		describeContactGroupListResponse.setMessage(context.stringValue("DescribeContactGroupListResponse.Message"));
-		describeContactGroupListResponse.setTotal(context.integerValue("DescribeContactGroupListResponse.Total"));
+		describeContactGroupListResponse.setRequestId(_ctx.stringValue("DescribeContactGroupListResponse.RequestId"));
+		describeContactGroupListResponse.setSuccess(_ctx.booleanValue("DescribeContactGroupListResponse.Success"));
+		describeContactGroupListResponse.setCode(_ctx.stringValue("DescribeContactGroupListResponse.Code"));
+		describeContactGroupListResponse.setMessage(_ctx.stringValue("DescribeContactGroupListResponse.Message"));
+		describeContactGroupListResponse.setTotal(_ctx.integerValue("DescribeContactGroupListResponse.Total"));
 
 		List<String> contactGroups = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeContactGroupListResponse.ContactGroups.Length"); i++) {
-			contactGroups.add(context.stringValue("DescribeContactGroupListResponse.ContactGroups["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeContactGroupListResponse.ContactGroups.Length"); i++) {
+			contactGroups.add(_ctx.stringValue("DescribeContactGroupListResponse.ContactGroups["+ i +"]"));
 		}
 		describeContactGroupListResponse.setContactGroups(contactGroups);
 	 

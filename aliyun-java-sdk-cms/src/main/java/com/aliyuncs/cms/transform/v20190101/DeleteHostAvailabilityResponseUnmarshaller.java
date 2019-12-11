@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteHostAvailabilityResponseUnmarshaller {
 
-	public static DeleteHostAvailabilityResponse unmarshall(DeleteHostAvailabilityResponse deleteHostAvailabilityResponse, UnmarshallerContext context) {
+	public static DeleteHostAvailabilityResponse unmarshall(DeleteHostAvailabilityResponse deleteHostAvailabilityResponse, UnmarshallerContext _ctx) {
 		
-		deleteHostAvailabilityResponse.setRequestId(context.stringValue("DeleteHostAvailabilityResponse.RequestId"));
-		deleteHostAvailabilityResponse.setCode(context.stringValue("DeleteHostAvailabilityResponse.Code"));
-		deleteHostAvailabilityResponse.setMessage(context.stringValue("DeleteHostAvailabilityResponse.Message"));
-		deleteHostAvailabilityResponse.setSuccess(context.booleanValue("DeleteHostAvailabilityResponse.Success"));
+		deleteHostAvailabilityResponse.setRequestId(_ctx.stringValue("DeleteHostAvailabilityResponse.RequestId"));
+		deleteHostAvailabilityResponse.setCode(_ctx.stringValue("DeleteHostAvailabilityResponse.Code"));
+		deleteHostAvailabilityResponse.setMessage(_ctx.stringValue("DeleteHostAvailabilityResponse.Message"));
+		deleteHostAvailabilityResponse.setSuccess(_ctx.booleanValue("DeleteHostAvailabilityResponse.Success"));
 	 
 	 	return deleteHostAvailabilityResponse;
 	}

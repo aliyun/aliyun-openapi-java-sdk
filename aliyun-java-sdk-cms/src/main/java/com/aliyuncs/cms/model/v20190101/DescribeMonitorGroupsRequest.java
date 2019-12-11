@@ -15,28 +15,37 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorGroupsResponse> {
-	
-	public DescribeMonitorGroupsRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitorGroups", "cms");
-	}
+	   
 
 	private Boolean selectContactGroups;
+
+	private Boolean includeTemplateHistory;
+
+	private String type;
+
+	private String groupName;
+
+	private Integer pageNumber;
 
 	private String instanceId;
 
 	private Integer pageSize;
 
+	private List<Tag> tags;
+
 	private String keyword;
-
-	private String groupName;
-
-	private Integer pageNumber;
+	public DescribeMonitorGroupsRequest() {
+		super("Cms", "2019-01-01", "DescribeMonitorGroups", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public Boolean getSelectContactGroups() {
 		return this.selectContactGroups;
@@ -46,6 +55,50 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 		this.selectContactGroups = selectContactGroups;
 		if(selectContactGroups != null){
 			putQueryParameter("SelectContactGroups", selectContactGroups.toString());
+		}
+	}
+
+	public Boolean getIncludeTemplateHistory() {
+		return this.includeTemplateHistory;
+	}
+
+	public void setIncludeTemplateHistory(Boolean includeTemplateHistory) {
+		this.includeTemplateHistory = includeTemplateHistory;
+		if(includeTemplateHistory != null){
+			putQueryParameter("IncludeTemplateHistory", includeTemplateHistory.toString());
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -71,6 +124,20 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getKeyword() {
 		return this.keyword;
 	}
@@ -82,25 +149,26 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 		}
 	}
 
-	public String getGroupName() {
-		return this.groupName;
-	}
+	public static class Tag {
 
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putQueryParameter("GroupName", groupName);
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
 		}
-	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+		public void setValue(String value) {
+			this.value = value;
+		}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

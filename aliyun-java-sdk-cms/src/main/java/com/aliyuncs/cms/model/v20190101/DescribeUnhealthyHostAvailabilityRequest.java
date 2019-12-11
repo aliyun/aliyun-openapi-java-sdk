@@ -16,18 +16,20 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeUnhealthyHostAvailabilityRequest extends RpcAcsRequest<DescribeUnhealthyHostAvailabilityResponse> {
-	
-	public DescribeUnhealthyHostAvailabilityRequest() {
-		super("Cms", "2019-01-01", "DescribeUnhealthyHostAvailability", "cms");
-	}
+	   
 
 	private List<Long> ids;
+	public DescribeUnhealthyHostAvailabilityRequest() {
+		super("Cms", "2019-01-01", "DescribeUnhealthyHostAvailability", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public List<Long> getIds() {
 		return this.ids;

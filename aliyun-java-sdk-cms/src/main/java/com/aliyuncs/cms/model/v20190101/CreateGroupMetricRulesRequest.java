@@ -16,20 +16,22 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateGroupMetricRulesRequest extends RpcAcsRequest<CreateGroupMetricRulesResponse> {
-	
-	public CreateGroupMetricRulesRequest() {
-		super("Cms", "2019-01-01", "CreateGroupMetricRules", "cms");
-	}
+	   
 
 	private Long groupId;
 
 	private List<GroupMetricRules> groupMetricRuless;
+	public CreateGroupMetricRulesRequest() {
+		super("Cms", "2019-01-01", "CreateGroupMetricRules", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getGroupId() {
 		return this.groupId;

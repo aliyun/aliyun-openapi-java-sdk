@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InstallMonitoringAgentResponseUnmarshaller {
 
-	public static InstallMonitoringAgentResponse unmarshall(InstallMonitoringAgentResponse installMonitoringAgentResponse, UnmarshallerContext context) {
+	public static InstallMonitoringAgentResponse unmarshall(InstallMonitoringAgentResponse installMonitoringAgentResponse, UnmarshallerContext _ctx) {
 		
-		installMonitoringAgentResponse.setRequestId(context.stringValue("InstallMonitoringAgentResponse.RequestId"));
-		installMonitoringAgentResponse.setCode(context.stringValue("InstallMonitoringAgentResponse.Code"));
-		installMonitoringAgentResponse.setMessage(context.stringValue("InstallMonitoringAgentResponse.Message"));
-		installMonitoringAgentResponse.setSuccess(context.booleanValue("InstallMonitoringAgentResponse.Success"));
+		installMonitoringAgentResponse.setRequestId(_ctx.stringValue("InstallMonitoringAgentResponse.RequestId"));
+		installMonitoringAgentResponse.setCode(_ctx.stringValue("InstallMonitoringAgentResponse.Code"));
+		installMonitoringAgentResponse.setMessage(_ctx.stringValue("InstallMonitoringAgentResponse.Message"));
+		installMonitoringAgentResponse.setSuccess(_ctx.booleanValue("InstallMonitoringAgentResponse.Success"));
 	 
 	 	return installMonitoringAgentResponse;
 	}

@@ -15,50 +15,41 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeAlertHistoryListRequest extends RpcAcsRequest<DescribeAlertHistoryListResponse> {
-	
-	public DescribeAlertHistoryListRequest() {
-		super("Cms", "2019-01-01", "DescribeAlertHistoryList", "cms");
-	}
-
-	private String groupId;
+	   
 
 	private String alertStatus;
 
-	private String namespace;
+	private String ruleName;
+
+	private String startTime;
 
 	private Integer pageSize;
 
-	private String endTime;
-
-	private String ruleName;
-
 	private String state;
 
-	private String startTime;
+	private String metricName;
+
+	private String groupId;
+
+	private String endTime;
+
+	private Boolean ascending;
+
+	private String namespace;
 
 	private Integer page;
 
 	private String ruleId;
-
-	private String metricName;
-
-	private Boolean ascending;
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
+	public DescribeAlertHistoryListRequest() {
+		super("Cms", "2019-01-01", "DescribeAlertHistoryList", "cms");
+		setMethod(MethodType.POST);
 	}
 
 	public String getAlertStatus() {
@@ -69,39 +60,6 @@ public class DescribeAlertHistoryListRequest extends RpcAcsRequest<DescribeAlert
 		this.alertStatus = alertStatus;
 		if(alertStatus != null){
 			putQueryParameter("AlertStatus", alertStatus);
-		}
-	}
-
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -116,6 +74,28 @@ public class DescribeAlertHistoryListRequest extends RpcAcsRequest<DescribeAlert
 		}
 	}
 
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getState() {
 		return this.state;
 	}
@@ -127,14 +107,58 @@ public class DescribeAlertHistoryListRequest extends RpcAcsRequest<DescribeAlert
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getMetricName() {
+		return this.metricName;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setMetricName(String metricName) {
+		this.metricName = metricName;
+		if(metricName != null){
+			putQueryParameter("MetricName", metricName);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public Boolean getAscending() {
+		return this.ascending;
+	}
+
+	public void setAscending(Boolean ascending) {
+		this.ascending = ascending;
+		if(ascending != null){
+			putQueryParameter("Ascending", ascending.toString());
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 
@@ -157,28 +181,6 @@ public class DescribeAlertHistoryListRequest extends RpcAcsRequest<DescribeAlert
 		this.ruleId = ruleId;
 		if(ruleId != null){
 			putQueryParameter("RuleId", ruleId);
-		}
-	}
-
-	public String getMetricName() {
-		return this.metricName;
-	}
-
-	public void setMetricName(String metricName) {
-		this.metricName = metricName;
-		if(metricName != null){
-			putQueryParameter("MetricName", metricName);
-		}
-	}
-
-	public Boolean getAscending() {
-		return this.ascending;
-	}
-
-	public void setAscending(Boolean ascending) {
-		this.ascending = ascending;
-		if(ascending != null){
-			putQueryParameter("Ascending", ascending.toString());
 		}
 	}
 

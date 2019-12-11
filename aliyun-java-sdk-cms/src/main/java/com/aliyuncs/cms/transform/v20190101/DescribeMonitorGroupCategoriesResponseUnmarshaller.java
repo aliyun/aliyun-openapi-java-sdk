@@ -25,21 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMonitorGroupCategoriesResponseUnmarshaller {
 
-	public static DescribeMonitorGroupCategoriesResponse unmarshall(DescribeMonitorGroupCategoriesResponse describeMonitorGroupCategoriesResponse, UnmarshallerContext context) {
+	public static DescribeMonitorGroupCategoriesResponse unmarshall(DescribeMonitorGroupCategoriesResponse describeMonitorGroupCategoriesResponse, UnmarshallerContext _ctx) {
 		
-		describeMonitorGroupCategoriesResponse.setRequestId(context.stringValue("DescribeMonitorGroupCategoriesResponse.RequestId"));
-		describeMonitorGroupCategoriesResponse.setSuccess(context.booleanValue("DescribeMonitorGroupCategoriesResponse.Success"));
-		describeMonitorGroupCategoriesResponse.setCode(context.integerValue("DescribeMonitorGroupCategoriesResponse.Code"));
-		describeMonitorGroupCategoriesResponse.setMessage(context.stringValue("DescribeMonitorGroupCategoriesResponse.Message"));
+		describeMonitorGroupCategoriesResponse.setRequestId(_ctx.stringValue("DescribeMonitorGroupCategoriesResponse.RequestId"));
+		describeMonitorGroupCategoriesResponse.setSuccess(_ctx.booleanValue("DescribeMonitorGroupCategoriesResponse.Success"));
+		describeMonitorGroupCategoriesResponse.setCode(_ctx.integerValue("DescribeMonitorGroupCategoriesResponse.Code"));
+		describeMonitorGroupCategoriesResponse.setMessage(_ctx.stringValue("DescribeMonitorGroupCategoriesResponse.Message"));
 
 		MonitorGroupCategories monitorGroupCategories = new MonitorGroupCategories();
-		monitorGroupCategories.setGroupId(context.longValue("DescribeMonitorGroupCategoriesResponse.MonitorGroupCategories.GroupId"));
+		monitorGroupCategories.setGroupId(_ctx.longValue("DescribeMonitorGroupCategoriesResponse.MonitorGroupCategories.GroupId"));
 
 		List<CategoryItem> monitorGroupCategory = new ArrayList<CategoryItem>();
-		for (int i = 0; i < context.lengthValue("DescribeMonitorGroupCategoriesResponse.MonitorGroupCategories.MonitorGroupCategory.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMonitorGroupCategoriesResponse.MonitorGroupCategories.MonitorGroupCategory.Length"); i++) {
 			CategoryItem categoryItem = new CategoryItem();
-			categoryItem.setCategory(context.stringValue("DescribeMonitorGroupCategoriesResponse.MonitorGroupCategories.MonitorGroupCategory["+ i +"].Category"));
-			categoryItem.setCount(context.integerValue("DescribeMonitorGroupCategoriesResponse.MonitorGroupCategories.MonitorGroupCategory["+ i +"].Count"));
+			categoryItem.setCategory(_ctx.stringValue("DescribeMonitorGroupCategoriesResponse.MonitorGroupCategories.MonitorGroupCategory["+ i +"].Category"));
+			categoryItem.setCount(_ctx.integerValue("DescribeMonitorGroupCategoriesResponse.MonitorGroupCategories.MonitorGroupCategory["+ i +"].Count"));
 
 			monitorGroupCategory.add(categoryItem);
 		}

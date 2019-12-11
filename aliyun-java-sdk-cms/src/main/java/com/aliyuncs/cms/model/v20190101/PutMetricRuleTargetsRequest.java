@@ -16,30 +16,21 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class PutMetricRuleTargetsRequest extends RpcAcsRequest<PutMetricRuleTargetsResponse> {
-	
-	public PutMetricRuleTargetsRequest() {
-		super("Cms", "2019-01-01", "PutMetricRuleTargets", "cms");
-	}
-
-	private String ruleId;
+	   
 
 	private List<Targets> targetss;
 
-	public String getRuleId() {
-		return this.ruleId;
-	}
-
-	public void setRuleId(String ruleId) {
-		this.ruleId = ruleId;
-		if(ruleId != null){
-			putQueryParameter("RuleId", ruleId);
-		}
+	private String ruleId;
+	public PutMetricRuleTargetsRequest() {
+		super("Cms", "2019-01-01", "PutMetricRuleTargets", "cms");
+		setMethod(MethodType.PUT);
 	}
 
 	public List<Targets> getTargetss() {
@@ -55,6 +46,17 @@ public class PutMetricRuleTargetsRequest extends RpcAcsRequest<PutMetricRuleTarg
 				putQueryParameter("Targets." + (depth1 + 1) + ".Arn" , targetss.get(depth1).getArn());
 			}
 		}	
+	}
+
+	public String getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId);
+		}
 	}
 
 	public static class Targets {

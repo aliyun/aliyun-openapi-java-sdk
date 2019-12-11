@@ -15,20 +15,22 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSiteMonitorISPCityListRequest extends RpcAcsRequest<DescribeSiteMonitorISPCityListResponse> {
-	
-	public DescribeSiteMonitorISPCityListRequest() {
-		super("Cms", "2019-01-01", "DescribeSiteMonitorISPCityList", "cms");
-	}
+	   
 
 	private String city;
 
 	private String isp;
+	public DescribeSiteMonitorISPCityListRequest() {
+		super("Cms", "2019-01-01", "DescribeSiteMonitorISPCityList", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getCity() {
 		return this.city;

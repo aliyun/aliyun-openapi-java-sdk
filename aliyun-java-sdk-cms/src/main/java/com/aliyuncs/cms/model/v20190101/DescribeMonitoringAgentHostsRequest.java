@@ -15,16 +15,18 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMonitoringAgentHostsRequest extends RpcAcsRequest<DescribeMonitoringAgentHostsResponse> {
-	
-	public DescribeMonitoringAgentHostsRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitoringAgentHosts", "cms");
-	}
+	   
+
+	private String serialNumbers;
+
+	private Integer pageNumber;
 
 	private String hostName;
 
@@ -35,10 +37,32 @@ public class DescribeMonitoringAgentHostsRequest extends RpcAcsRequest<DescribeM
 	private Integer pageSize;
 
 	private String keyWord;
+	public DescribeMonitoringAgentHostsRequest() {
+		super("Cms", "2019-01-01", "DescribeMonitoringAgentHosts", "cms");
+		setMethod(MethodType.POST);
+	}
 
-	private String serialNumbers;
+	public String getSerialNumbers() {
+		return this.serialNumbers;
+	}
 
-	private Integer pageNumber;
+	public void setSerialNumbers(String serialNumbers) {
+		this.serialNumbers = serialNumbers;
+		if(serialNumbers != null){
+			putQueryParameter("SerialNumbers", serialNumbers);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getHostName() {
 		return this.hostName;
@@ -92,28 +116,6 @@ public class DescribeMonitoringAgentHostsRequest extends RpcAcsRequest<DescribeM
 		this.keyWord = keyWord;
 		if(keyWord != null){
 			putQueryParameter("KeyWord", keyWord);
-		}
-	}
-
-	public String getSerialNumbers() {
-		return this.serialNumbers;
-	}
-
-	public void setSerialNumbers(String serialNumbers) {
-		this.serialNumbers = serialNumbers;
-		if(serialNumbers != null){
-			putQueryParameter("SerialNumbers", serialNumbers);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

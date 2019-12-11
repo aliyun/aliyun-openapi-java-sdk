@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteMetricRuleTemplateResponseUnmarshaller {
 
-	public static DeleteMetricRuleTemplateResponse unmarshall(DeleteMetricRuleTemplateResponse deleteMetricRuleTemplateResponse, UnmarshallerContext context) {
+	public static DeleteMetricRuleTemplateResponse unmarshall(DeleteMetricRuleTemplateResponse deleteMetricRuleTemplateResponse, UnmarshallerContext _ctx) {
 		
-		deleteMetricRuleTemplateResponse.setRequestId(context.stringValue("DeleteMetricRuleTemplateResponse.RequestId"));
-		deleteMetricRuleTemplateResponse.setSuccess(context.booleanValue("DeleteMetricRuleTemplateResponse.Success"));
-		deleteMetricRuleTemplateResponse.setCode(context.integerValue("DeleteMetricRuleTemplateResponse.Code"));
-		deleteMetricRuleTemplateResponse.setMessage(context.stringValue("DeleteMetricRuleTemplateResponse.Message"));
+		deleteMetricRuleTemplateResponse.setRequestId(_ctx.stringValue("DeleteMetricRuleTemplateResponse.RequestId"));
+		deleteMetricRuleTemplateResponse.setSuccess(_ctx.booleanValue("DeleteMetricRuleTemplateResponse.Success"));
+		deleteMetricRuleTemplateResponse.setCode(_ctx.integerValue("DeleteMetricRuleTemplateResponse.Code"));
+		deleteMetricRuleTemplateResponse.setMessage(_ctx.stringValue("DeleteMetricRuleTemplateResponse.Message"));
 
 		Resource resource = new Resource();
-		resource.setTemplateId(context.stringValue("DeleteMetricRuleTemplateResponse.Resource.TemplateId"));
+		resource.setTemplateId(_ctx.stringValue("DeleteMetricRuleTemplateResponse.Resource.TemplateId"));
 		deleteMetricRuleTemplateResponse.setResource(resource);
 	 
 	 	return deleteMetricRuleTemplateResponse;

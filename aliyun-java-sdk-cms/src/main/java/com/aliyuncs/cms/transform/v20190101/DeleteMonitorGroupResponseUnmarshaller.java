@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteMonitorGroupResponseUnmarshaller {
 
-	public static DeleteMonitorGroupResponse unmarshall(DeleteMonitorGroupResponse deleteMonitorGroupResponse, UnmarshallerContext context) {
+	public static DeleteMonitorGroupResponse unmarshall(DeleteMonitorGroupResponse deleteMonitorGroupResponse, UnmarshallerContext _ctx) {
 		
-		deleteMonitorGroupResponse.setRequestId(context.stringValue("DeleteMonitorGroupResponse.RequestId"));
-		deleteMonitorGroupResponse.setSuccess(context.booleanValue("DeleteMonitorGroupResponse.Success"));
-		deleteMonitorGroupResponse.setCode(context.integerValue("DeleteMonitorGroupResponse.Code"));
-		deleteMonitorGroupResponse.setMessage(context.stringValue("DeleteMonitorGroupResponse.Message"));
+		deleteMonitorGroupResponse.setRequestId(_ctx.stringValue("DeleteMonitorGroupResponse.RequestId"));
+		deleteMonitorGroupResponse.setSuccess(_ctx.booleanValue("DeleteMonitorGroupResponse.Success"));
+		deleteMonitorGroupResponse.setCode(_ctx.integerValue("DeleteMonitorGroupResponse.Code"));
+		deleteMonitorGroupResponse.setMessage(_ctx.stringValue("DeleteMonitorGroupResponse.Message"));
 
 		Group group = new Group();
-		group.setGroupName(context.stringValue("DeleteMonitorGroupResponse.Group.GroupName"));
+		group.setGroupName(_ctx.stringValue("DeleteMonitorGroupResponse.Group.GroupName"));
 
 		List<ContactGroup> contactGroups = new ArrayList<ContactGroup>();
-		for (int i = 0; i < context.lengthValue("DeleteMonitorGroupResponse.Group.ContactGroups.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DeleteMonitorGroupResponse.Group.ContactGroups.Length"); i++) {
 			ContactGroup contactGroup = new ContactGroup();
-			contactGroup.setName(context.stringValue("DeleteMonitorGroupResponse.Group.ContactGroups["+ i +"].Name"));
+			contactGroup.setName(_ctx.stringValue("DeleteMonitorGroupResponse.Group.ContactGroups["+ i +"].Name"));
 
 			contactGroups.add(contactGroup);
 		}

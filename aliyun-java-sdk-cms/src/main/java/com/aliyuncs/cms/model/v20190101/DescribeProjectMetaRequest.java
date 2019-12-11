@@ -15,22 +15,24 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeProjectMetaRequest extends RpcAcsRequest<DescribeProjectMetaResponse> {
-	
-	public DescribeProjectMetaRequest() {
-		super("Cms", "2019-01-01", "DescribeProjectMeta", "cms");
-	}
+	   
 
 	private Integer pageSize;
 
 	private Integer pageNumber;
 
 	private String labels;
+	public DescribeProjectMetaRequest() {
+		super("Cms", "2019-01-01", "DescribeProjectMeta", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;

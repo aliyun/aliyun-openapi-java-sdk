@@ -24,32 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMonitoringAgentHostsResponseUnmarshaller {
 
-	public static DescribeMonitoringAgentHostsResponse unmarshall(DescribeMonitoringAgentHostsResponse describeMonitoringAgentHostsResponse, UnmarshallerContext context) {
+	public static DescribeMonitoringAgentHostsResponse unmarshall(DescribeMonitoringAgentHostsResponse describeMonitoringAgentHostsResponse, UnmarshallerContext _ctx) {
 		
-		describeMonitoringAgentHostsResponse.setRequestId(context.stringValue("DescribeMonitoringAgentHostsResponse.RequestId"));
-		describeMonitoringAgentHostsResponse.setCode(context.stringValue("DescribeMonitoringAgentHostsResponse.Code"));
-		describeMonitoringAgentHostsResponse.setMessage(context.stringValue("DescribeMonitoringAgentHostsResponse.Message"));
-		describeMonitoringAgentHostsResponse.setSuccess(context.booleanValue("DescribeMonitoringAgentHostsResponse.Success"));
-		describeMonitoringAgentHostsResponse.setPageTotal(context.integerValue("DescribeMonitoringAgentHostsResponse.PageTotal"));
-		describeMonitoringAgentHostsResponse.setTotal(context.integerValue("DescribeMonitoringAgentHostsResponse.Total"));
+		describeMonitoringAgentHostsResponse.setRequestId(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.RequestId"));
+		describeMonitoringAgentHostsResponse.setCode(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Code"));
+		describeMonitoringAgentHostsResponse.setMessage(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Message"));
+		describeMonitoringAgentHostsResponse.setSuccess(_ctx.booleanValue("DescribeMonitoringAgentHostsResponse.Success"));
+		describeMonitoringAgentHostsResponse.setPageTotal(_ctx.integerValue("DescribeMonitoringAgentHostsResponse.PageTotal"));
+		describeMonitoringAgentHostsResponse.setTotal(_ctx.integerValue("DescribeMonitoringAgentHostsResponse.Total"));
 
 		List<Host> hosts = new ArrayList<Host>();
-		for (int i = 0; i < context.lengthValue("DescribeMonitoringAgentHostsResponse.Hosts.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMonitoringAgentHostsResponse.Hosts.Length"); i++) {
 			Host host = new Host();
-			host.setInstanceId(context.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].InstanceId"));
-			host.setSerialNumber(context.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].SerialNumber"));
-			host.setHostName(context.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].HostName"));
-			host.setAliUid(context.longValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].AliUid"));
-			host.setOperatingSystem(context.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].OperatingSystem"));
-			host.setIpGroup(context.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].IpGroup"));
-			host.setRegion(context.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].Region"));
-			host.setAgentVersion(context.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].AgentVersion"));
-			host.setEipAddress(context.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].EipAddress"));
-			host.setEipId(context.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].EipId"));
-			host.setIsAliyunHost(context.booleanValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].isAliyunHost"));
-			host.setNatIp(context.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].NatIp"));
-			host.setNetworkType(context.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].NetworkType"));
-			host.setInstanceTypeFamily(context.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].InstanceTypeFamily"));
+			host.setInstanceId(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].InstanceId"));
+			host.setSerialNumber(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].SerialNumber"));
+			host.setHostName(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].HostName"));
+			host.setAliUid(_ctx.longValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].AliUid"));
+			host.setOperatingSystem(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].OperatingSystem"));
+			host.setIpGroup(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].IpGroup"));
+			host.setRegion(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].Region"));
+			host.setAgentVersion(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].AgentVersion"));
+			host.setEipAddress(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].EipAddress"));
+			host.setEipId(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].EipId"));
+			host.setIsAliyunHost(_ctx.booleanValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].isAliyunHost"));
+			host.setNatIp(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].NatIp"));
+			host.setNetworkType(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].NetworkType"));
+			host.setInstanceTypeFamily(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].InstanceTypeFamily"));
 
 			hosts.add(host);
 		}

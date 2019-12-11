@@ -16,18 +16,20 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class EnableEventRulesRequest extends RpcAcsRequest<EnableEventRulesResponse> {
-	
-	public EnableEventRulesRequest() {
-		super("Cms", "2019-01-01", "EnableEventRules", "cms");
-	}
+	   
 
 	private List<String> ruleNamess;
+	public EnableEventRulesRequest() {
+		super("Cms", "2019-01-01", "EnableEventRules", "cms");
+		setMethod(MethodType.PUT);
+	}
 
 	public List<String> getRuleNamess() {
 		return this.ruleNamess;

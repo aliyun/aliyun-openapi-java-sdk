@@ -15,30 +15,54 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMonitorGroupInstanceAttributeRequest extends RpcAcsRequest<DescribeMonitorGroupInstanceAttributeResponse> {
-	
-	public DescribeMonitorGroupInstanceAttributeRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitorGroupInstanceAttribute", "cms");
-	}
+	   
+
+	private Long groupId;
+
+	private Integer pageNumber;
 
 	private Boolean total;
 
 	private String instanceIds;
-
-	private Long groupId;
 
 	private Integer pageSize;
 
 	private String category;
 
 	private String keyword;
+	public DescribeMonitorGroupInstanceAttributeRequest() {
+		super("Cms", "2019-01-01", "DescribeMonitorGroupInstanceAttribute", "cms");
+		setMethod(MethodType.POST);
+	}
 
-	private Integer pageNumber;
+	public Long getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(Long groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public Boolean getTotal() {
 		return this.total;
@@ -59,17 +83,6 @@ public class DescribeMonitorGroupInstanceAttributeRequest extends RpcAcsRequest<
 		this.instanceIds = instanceIds;
 		if(instanceIds != null){
 			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
-	public Long getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(Long groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId.toString());
 		}
 	}
 
@@ -103,17 +116,6 @@ public class DescribeMonitorGroupInstanceAttributeRequest extends RpcAcsRequest<
 		this.keyword = keyword;
 		if(keyword != null){
 			putQueryParameter("Keyword", keyword);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

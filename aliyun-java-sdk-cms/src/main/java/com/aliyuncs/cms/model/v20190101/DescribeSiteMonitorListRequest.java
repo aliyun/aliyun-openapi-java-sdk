@@ -15,16 +15,14 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSiteMonitorListRequest extends RpcAcsRequest<DescribeSiteMonitorListResponse> {
-	
-	public DescribeSiteMonitorListRequest() {
-		super("Cms", "2019-01-01", "DescribeSiteMonitorList", "cms");
-	}
+	   
 
 	private String taskType;
 
@@ -35,6 +33,10 @@ public class DescribeSiteMonitorListRequest extends RpcAcsRequest<DescribeSiteMo
 	private String keyword;
 
 	private String taskId;
+	public DescribeSiteMonitorListRequest() {
+		super("Cms", "2019-01-01", "DescribeSiteMonitorList", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getTaskType() {
 		return this.taskType;

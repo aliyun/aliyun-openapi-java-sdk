@@ -93,10 +93,6 @@ public class DescribeSiteMonitorISPCityListResponse extends AcsResponse {
 
 		private String cityNameen;
 
-		private String regionzh_CN1;
-
-		private String countryzh_CN2;
-
 		private String regionen;
 
 		private String countryen;
@@ -163,22 +159,6 @@ public class DescribeSiteMonitorISPCityListResponse extends AcsResponse {
 
 		public void setCityNameen(String cityNameen) {
 			this.cityNameen = cityNameen;
-		}
-
-		public String getRegionzh_CN1() {
-			return this.regionzh_CN1;
-		}
-
-		public void setRegionzh_CN1(String regionzh_CN1) {
-			this.regionzh_CN1 = regionzh_CN1;
-		}
-
-		public String getCountryzh_CN2() {
-			return this.countryzh_CN2;
-		}
-
-		public void setCountryzh_CN2(String countryzh_CN2) {
-			this.countryzh_CN2 = countryzh_CN2;
 		}
 
 		public String getRegionen() {

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteMonitorGroupDynamicRuleResponseUnmarshaller {
 
-	public static DeleteMonitorGroupDynamicRuleResponse unmarshall(DeleteMonitorGroupDynamicRuleResponse deleteMonitorGroupDynamicRuleResponse, UnmarshallerContext context) {
+	public static DeleteMonitorGroupDynamicRuleResponse unmarshall(DeleteMonitorGroupDynamicRuleResponse deleteMonitorGroupDynamicRuleResponse, UnmarshallerContext _ctx) {
 		
-		deleteMonitorGroupDynamicRuleResponse.setRequestId(context.stringValue("DeleteMonitorGroupDynamicRuleResponse.RequestId"));
-		deleteMonitorGroupDynamicRuleResponse.setSuccess(context.booleanValue("DeleteMonitorGroupDynamicRuleResponse.Success"));
-		deleteMonitorGroupDynamicRuleResponse.setCode(context.integerValue("DeleteMonitorGroupDynamicRuleResponse.Code"));
-		deleteMonitorGroupDynamicRuleResponse.setMessage(context.stringValue("DeleteMonitorGroupDynamicRuleResponse.Message"));
+		deleteMonitorGroupDynamicRuleResponse.setRequestId(_ctx.stringValue("DeleteMonitorGroupDynamicRuleResponse.RequestId"));
+		deleteMonitorGroupDynamicRuleResponse.setSuccess(_ctx.booleanValue("DeleteMonitorGroupDynamicRuleResponse.Success"));
+		deleteMonitorGroupDynamicRuleResponse.setCode(_ctx.integerValue("DeleteMonitorGroupDynamicRuleResponse.Code"));
+		deleteMonitorGroupDynamicRuleResponse.setMessage(_ctx.stringValue("DeleteMonitorGroupDynamicRuleResponse.Message"));
 	 
 	 	return deleteMonitorGroupDynamicRuleResponse;
 	}

@@ -15,18 +15,20 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteMetricRuleTemplateRequest extends RpcAcsRequest<DeleteMetricRuleTemplateResponse> {
-	
-	public DeleteMetricRuleTemplateRequest() {
-		super("Cms", "2019-01-01", "DeleteMetricRuleTemplate", "cms");
-	}
+	   
 
 	private String templateId;
+	public DeleteMetricRuleTemplateRequest() {
+		super("Cms", "2019-01-01", "DeleteMetricRuleTemplate", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getTemplateId() {
 		return this.templateId;

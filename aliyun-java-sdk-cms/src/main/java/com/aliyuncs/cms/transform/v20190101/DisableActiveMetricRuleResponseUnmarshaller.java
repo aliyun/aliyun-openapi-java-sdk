@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DisableActiveMetricRuleResponseUnmarshaller {
 
-	public static DisableActiveMetricRuleResponse unmarshall(DisableActiveMetricRuleResponse disableActiveMetricRuleResponse, UnmarshallerContext context) {
+	public static DisableActiveMetricRuleResponse unmarshall(DisableActiveMetricRuleResponse disableActiveMetricRuleResponse, UnmarshallerContext _ctx) {
 		
-		disableActiveMetricRuleResponse.setRequestId(context.stringValue("DisableActiveMetricRuleResponse.RequestId"));
-		disableActiveMetricRuleResponse.setSuccess(context.booleanValue("DisableActiveMetricRuleResponse.Success"));
-		disableActiveMetricRuleResponse.setCode(context.stringValue("DisableActiveMetricRuleResponse.Code"));
-		disableActiveMetricRuleResponse.setMessage(context.stringValue("DisableActiveMetricRuleResponse.Message"));
+		disableActiveMetricRuleResponse.setRequestId(_ctx.stringValue("DisableActiveMetricRuleResponse.RequestId"));
+		disableActiveMetricRuleResponse.setSuccess(_ctx.booleanValue("DisableActiveMetricRuleResponse.Success"));
+		disableActiveMetricRuleResponse.setCode(_ctx.stringValue("DisableActiveMetricRuleResponse.Code"));
+		disableActiveMetricRuleResponse.setMessage(_ctx.stringValue("DisableActiveMetricRuleResponse.Message"));
 	 
 	 	return disableActiveMetricRuleResponse;
 	}

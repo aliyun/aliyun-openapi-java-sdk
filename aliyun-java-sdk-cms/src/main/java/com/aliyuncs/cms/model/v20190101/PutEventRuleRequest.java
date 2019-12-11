@@ -16,18 +16,14 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class PutEventRuleRequest extends RpcAcsRequest<PutEventRuleResponse> {
-	
-	public PutEventRuleRequest() {
-		super("Cms", "2019-01-01", "PutEventRule", "cms");
-	}
-
-	private List<EventPattern> eventPatterns;
+	   
 
 	private String groupId;
 
@@ -35,41 +31,14 @@ public class PutEventRuleRequest extends RpcAcsRequest<PutEventRuleResponse> {
 
 	private String ruleName;
 
+	private List<EventPattern> eventPatterns;
+
 	private String eventType;
 
 	private String state;
-
-	public List<EventPattern> getEventPatterns() {
-		return this.eventPatterns;
-	}
-
-	public void setEventPatterns(List<EventPattern> eventPatterns) {
-		this.eventPatterns = eventPatterns;	
-		if (eventPatterns != null) {
-			for (int depth1 = 0; depth1 < eventPatterns.size(); depth1++) {
-				if (eventPatterns.get(depth1).getLevelLists() != null) {
-					for (int i = 0; i < eventPatterns.get(depth1).getLevelLists().size(); i++) {
-						putQueryParameter("EventPattern." + (depth1 + 1) + ".LevelList." + (i + 1) , eventPatterns.get(depth1).getLevelLists().get(i));
-					}
-				}
-				putQueryParameter("EventPattern." + (depth1 + 1) + ".Product" , eventPatterns.get(depth1).getProduct());
-				if (eventPatterns.get(depth1).getStatusLists() != null) {
-					for (int i = 0; i < eventPatterns.get(depth1).getStatusLists().size(); i++) {
-						putQueryParameter("EventPattern." + (depth1 + 1) + ".StatusList." + (i + 1) , eventPatterns.get(depth1).getStatusLists().get(i));
-					}
-				}
-				if (eventPatterns.get(depth1).getNameLists() != null) {
-					for (int i = 0; i < eventPatterns.get(depth1).getNameLists().size(); i++) {
-						putQueryParameter("EventPattern." + (depth1 + 1) + ".NameList." + (i + 1) , eventPatterns.get(depth1).getNameLists().get(i));
-					}
-				}
-				if (eventPatterns.get(depth1).getEventTypeLists() != null) {
-					for (int i = 0; i < eventPatterns.get(depth1).getEventTypeLists().size(); i++) {
-						putQueryParameter("EventPattern." + (depth1 + 1) + ".EventTypeList." + (i + 1) , eventPatterns.get(depth1).getEventTypeLists().get(i));
-					}
-				}
-			}
-		}	
+	public PutEventRuleRequest() {
+		super("Cms", "2019-01-01", "PutEventRule", "cms");
+		setMethod(MethodType.PUT);
 	}
 
 	public String getGroupId() {
@@ -103,6 +72,39 @@ public class PutEventRuleRequest extends RpcAcsRequest<PutEventRuleResponse> {
 		if(ruleName != null){
 			putQueryParameter("RuleName", ruleName);
 		}
+	}
+
+	public List<EventPattern> getEventPatterns() {
+		return this.eventPatterns;
+	}
+
+	public void setEventPatterns(List<EventPattern> eventPatterns) {
+		this.eventPatterns = eventPatterns;	
+		if (eventPatterns != null) {
+			for (int depth1 = 0; depth1 < eventPatterns.size(); depth1++) {
+				if (eventPatterns.get(depth1).getLevelLists() != null) {
+					for (int i = 0; i < eventPatterns.get(depth1).getLevelLists().size(); i++) {
+						putQueryParameter("EventPattern." + (depth1 + 1) + ".LevelList." + (i + 1) , eventPatterns.get(depth1).getLevelLists().get(i));
+					}
+				}
+				putQueryParameter("EventPattern." + (depth1 + 1) + ".Product" , eventPatterns.get(depth1).getProduct());
+				if (eventPatterns.get(depth1).getStatusLists() != null) {
+					for (int i = 0; i < eventPatterns.get(depth1).getStatusLists().size(); i++) {
+						putQueryParameter("EventPattern." + (depth1 + 1) + ".StatusList." + (i + 1) , eventPatterns.get(depth1).getStatusLists().get(i));
+					}
+				}
+				if (eventPatterns.get(depth1).getNameLists() != null) {
+					for (int i = 0; i < eventPatterns.get(depth1).getNameLists().size(); i++) {
+						putQueryParameter("EventPattern." + (depth1 + 1) + ".NameList." + (i + 1) , eventPatterns.get(depth1).getNameLists().get(i));
+					}
+				}
+				if (eventPatterns.get(depth1).getEventTypeLists() != null) {
+					for (int i = 0; i < eventPatterns.get(depth1).getEventTypeLists().size(); i++) {
+						putQueryParameter("EventPattern." + (depth1 + 1) + ".EventTypeList." + (i + 1) , eventPatterns.get(depth1).getEventTypeLists().get(i));
+					}
+				}
+			}
+		}	
 	}
 
 	public String getEventType() {
@@ -147,26 +149,10 @@ public class PutEventRuleRequest extends RpcAcsRequest<PutEventRuleResponse> {
 			this.levelLists = levelLists;
 		}
 
-		public String getBizProduct() {
-			return this.product;
-		}
-
-		public void setBizProduct(String product) {
-			this.product = product;
-		}
-
-		/**
-		 * @deprecated use getBizProduct instead of this.
-		 */
-		@Deprecated
 		public String getProduct() {
 			return this.product;
 		}
 
-		/**
-		 * @deprecated use setBizProduct instead of this.
-		 */
-		@Deprecated
 		public void setProduct(String product) {
 			this.product = product;
 		}

@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteMonitorGroupNotifyPolicyResponseUnmarshaller {
 
-	public static DeleteMonitorGroupNotifyPolicyResponse unmarshall(DeleteMonitorGroupNotifyPolicyResponse deleteMonitorGroupNotifyPolicyResponse, UnmarshallerContext context) {
+	public static DeleteMonitorGroupNotifyPolicyResponse unmarshall(DeleteMonitorGroupNotifyPolicyResponse deleteMonitorGroupNotifyPolicyResponse, UnmarshallerContext _ctx) {
 		
-		deleteMonitorGroupNotifyPolicyResponse.setRequestId(context.stringValue("DeleteMonitorGroupNotifyPolicyResponse.RequestId"));
-		deleteMonitorGroupNotifyPolicyResponse.setCode(context.stringValue("DeleteMonitorGroupNotifyPolicyResponse.Code"));
-		deleteMonitorGroupNotifyPolicyResponse.setMessage(context.stringValue("DeleteMonitorGroupNotifyPolicyResponse.Message"));
-		deleteMonitorGroupNotifyPolicyResponse.setSuccess(context.stringValue("DeleteMonitorGroupNotifyPolicyResponse.Success"));
-		deleteMonitorGroupNotifyPolicyResponse.setResult(context.integerValue("DeleteMonitorGroupNotifyPolicyResponse.Result"));
+		deleteMonitorGroupNotifyPolicyResponse.setRequestId(_ctx.stringValue("DeleteMonitorGroupNotifyPolicyResponse.RequestId"));
+		deleteMonitorGroupNotifyPolicyResponse.setCode(_ctx.stringValue("DeleteMonitorGroupNotifyPolicyResponse.Code"));
+		deleteMonitorGroupNotifyPolicyResponse.setMessage(_ctx.stringValue("DeleteMonitorGroupNotifyPolicyResponse.Message"));
+		deleteMonitorGroupNotifyPolicyResponse.setSuccess(_ctx.stringValue("DeleteMonitorGroupNotifyPolicyResponse.Success"));
+		deleteMonitorGroupNotifyPolicyResponse.setResult(_ctx.integerValue("DeleteMonitorGroupNotifyPolicyResponse.Result"));
 	 
 	 	return deleteMonitorGroupNotifyPolicyResponse;
 	}

@@ -15,16 +15,14 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleResponse> {
-	
-	public PutGroupMetricRuleRequest() {
-		super("Cms", "2019-01-01", "PutGroupMetricRule", "cms");
-	}
+	   
 
 	private String webhook;
 
@@ -77,6 +75,10 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 	private String escalationsCriticalThreshold;
 
 	private String dimensions;
+	public PutGroupMetricRuleRequest() {
+		super("Cms", "2019-01-01", "PutGroupMetricRule", "cms");
+		setMethod(MethodType.PUT);
+	}
 
 	public String getWebhook() {
 		return this.webhook;

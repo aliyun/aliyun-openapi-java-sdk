@@ -15,24 +15,26 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteCustomMetricRequest extends RpcAcsRequest<DeleteCustomMetricResponse> {
-	
-	public DeleteCustomMetricRequest() {
-		super("Cms", "2019-01-01", "DeleteCustomMetric", "cms");
-	}
+	   
 
 	private String groupId;
 
-	private String metricName;
-
 	private String uUID;
 
+	private String metricName;
+
 	private String md5;
+	public DeleteCustomMetricRequest() {
+		super("Cms", "2019-01-01", "DeleteCustomMetric", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getGroupId() {
 		return this.groupId;
@@ -45,17 +47,6 @@ public class DeleteCustomMetricRequest extends RpcAcsRequest<DeleteCustomMetricR
 		}
 	}
 
-	public String getMetricName() {
-		return this.metricName;
-	}
-
-	public void setMetricName(String metricName) {
-		this.metricName = metricName;
-		if(metricName != null){
-			putQueryParameter("MetricName", metricName);
-		}
-	}
-
 	public String getUUID() {
 		return this.uUID;
 	}
@@ -64,6 +55,17 @@ public class DeleteCustomMetricRequest extends RpcAcsRequest<DeleteCustomMetricR
 		this.uUID = uUID;
 		if(uUID != null){
 			putQueryParameter("UUID", uUID);
+		}
+	}
+
+	public String getMetricName() {
+		return this.metricName;
+	}
+
+	public void setMetricName(String metricName) {
+		this.metricName = metricName;
+		if(metricName != null){
+			putQueryParameter("MetricName", metricName);
 		}
 	}
 

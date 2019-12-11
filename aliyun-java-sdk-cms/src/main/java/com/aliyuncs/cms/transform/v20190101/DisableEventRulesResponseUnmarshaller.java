@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DisableEventRulesResponseUnmarshaller {
 
-	public static DisableEventRulesResponse unmarshall(DisableEventRulesResponse disableEventRulesResponse, UnmarshallerContext context) {
+	public static DisableEventRulesResponse unmarshall(DisableEventRulesResponse disableEventRulesResponse, UnmarshallerContext _ctx) {
 		
-		disableEventRulesResponse.setRequestId(context.stringValue("DisableEventRulesResponse.RequestId"));
-		disableEventRulesResponse.setSuccess(context.booleanValue("DisableEventRulesResponse.Success"));
-		disableEventRulesResponse.setCode(context.stringValue("DisableEventRulesResponse.Code"));
-		disableEventRulesResponse.setMessage(context.stringValue("DisableEventRulesResponse.Message"));
+		disableEventRulesResponse.setRequestId(_ctx.stringValue("DisableEventRulesResponse.RequestId"));
+		disableEventRulesResponse.setSuccess(_ctx.booleanValue("DisableEventRulesResponse.Success"));
+		disableEventRulesResponse.setCode(_ctx.stringValue("DisableEventRulesResponse.Code"));
+		disableEventRulesResponse.setMessage(_ctx.stringValue("DisableEventRulesResponse.Message"));
 	 
 	 	return disableEventRulesResponse;
 	}

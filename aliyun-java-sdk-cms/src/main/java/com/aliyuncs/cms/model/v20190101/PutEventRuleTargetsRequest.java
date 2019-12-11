@@ -16,16 +16,14 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTargetsResponse> {
-	
-	public PutEventRuleTargetsRequest() {
-		super("Cms", "2019-01-01", "PutEventRuleTargets", "cms");
-	}
+	   
 
 	private List<WebhookParameters> webhookParameterss;
 
@@ -33,11 +31,15 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 
 	private List<SlsParameters> slsParameterss;
 
-	private List<FcParameters> fcParameterss;
-
 	private String ruleName;
 
 	private List<MnsParameters> mnsParameterss;
+
+	private List<FcParameters> fcParameterss;
+	public PutEventRuleTargetsRequest() {
+		super("Cms", "2019-01-01", "PutEventRuleTargets", "cms");
+		setMethod(MethodType.PUT);
+	}
 
 	public List<WebhookParameters> getWebhookParameterss() {
 		return this.webhookParameterss;
@@ -47,8 +49,8 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 		this.webhookParameterss = webhookParameterss;	
 		if (webhookParameterss != null) {
 			for (int depth1 = 0; depth1 < webhookParameterss.size(); depth1++) {
-				putQueryParameter("WebhookParameters." + (depth1 + 1) + ".Protocol" , webhookParameterss.get(depth1).getProtocol());
-				putQueryParameter("WebhookParameters." + (depth1 + 1) + ".Method" , webhookParameterss.get(depth1).getMethod());
+				putQueryParameter("WebhookParameters." + (depth1 + 1) + ".Protocol" , webhookParameterss.get(depth1).getBizProtocol());
+				putQueryParameter("WebhookParameters." + (depth1 + 1) + ".Method" , webhookParameterss.get(depth1).getBizMethod());
 				putQueryParameter("WebhookParameters." + (depth1 + 1) + ".Id" , webhookParameterss.get(depth1).getId());
 				putQueryParameter("WebhookParameters." + (depth1 + 1) + ".Url" , webhookParameterss.get(depth1).getUrl());
 			}
@@ -86,22 +88,6 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 		}	
 	}
 
-	public List<FcParameters> getFcParameterss() {
-		return this.fcParameterss;
-	}
-
-	public void setFcParameterss(List<FcParameters> fcParameterss) {
-		this.fcParameterss = fcParameterss;	
-		if (fcParameterss != null) {
-			for (int depth1 = 0; depth1 < fcParameterss.size(); depth1++) {
-				putQueryParameter("FcParameters." + (depth1 + 1) + ".FunctionName" , fcParameterss.get(depth1).getFunctionName());
-				putQueryParameter("FcParameters." + (depth1 + 1) + ".ServiceName" , fcParameterss.get(depth1).getServiceName());
-				putQueryParameter("FcParameters." + (depth1 + 1) + ".Id" , fcParameterss.get(depth1).getId());
-				putQueryParameter("FcParameters." + (depth1 + 1) + ".Region" , fcParameterss.get(depth1).getRegion());
-			}
-		}	
-	}
-
 	public String getRuleName() {
 		return this.ruleName;
 	}
@@ -128,6 +114,22 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 		}	
 	}
 
+	public List<FcParameters> getFcParameterss() {
+		return this.fcParameterss;
+	}
+
+	public void setFcParameterss(List<FcParameters> fcParameterss) {
+		this.fcParameterss = fcParameterss;	
+		if (fcParameterss != null) {
+			for (int depth1 = 0; depth1 < fcParameterss.size(); depth1++) {
+				putQueryParameter("FcParameters." + (depth1 + 1) + ".FunctionName" , fcParameterss.get(depth1).getFunctionName());
+				putQueryParameter("FcParameters." + (depth1 + 1) + ".ServiceName" , fcParameterss.get(depth1).getServiceName());
+				putQueryParameter("FcParameters." + (depth1 + 1) + ".Id" , fcParameterss.get(depth1).getId());
+				putQueryParameter("FcParameters." + (depth1 + 1) + ".Region" , fcParameterss.get(depth1).getRegion());
+			}
+		}	
+	}
+
 	public static class WebhookParameters {
 
 		private String protocol;
@@ -146,43 +148,11 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 			this.protocol = protocol;
 		}
 
-		/**
-		 * @deprecated use getBizProtocol instead of this.
-		 */
-		@Deprecated
-		public String getProtocol() {
-			return this.protocol;
-		}
-
-		/**
-		 * @deprecated use setBizProtocol instead of this.
-		 */
-		@Deprecated
-		public void setProtocol(String protocol) {
-			this.protocol = protocol;
-		}
-
 		public String getBizMethod() {
 			return this.method;
 		}
 
 		public void setBizMethod(String method) {
-			this.method = method;
-		}
-
-		/**
-		 * @deprecated use getBizMethod instead of this.
-		 */
-		@Deprecated
-		public String getMethod() {
-			return this.method;
-		}
-
-		/**
-		 * @deprecated use setBizMethod instead of this.
-		 */
-		@Deprecated
-		public void setMethod(String method) {
 			this.method = method;
 		}
 
@@ -194,26 +164,10 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 			this.id = id;
 		}
 
-		public String getBizUrl() {
-			return this.url;
-		}
-
-		public void setBizUrl(String url) {
-			this.url = url;
-		}
-
-		/**
-		 * @deprecated use getBizUrl instead of this.
-		 */
-		@Deprecated
 		public String getUrl() {
 			return this.url;
 		}
 
-		/**
-		 * @deprecated use setBizUrl instead of this.
-		 */
-		@Deprecated
 		public void setUrl(String url) {
 			this.url = url;
 		}
@@ -295,6 +249,39 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 		}
 	}
 
+	public static class MnsParameters {
+
+		private String id;
+
+		private String region;
+
+		private String queue;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getQueue() {
+			return this.queue;
+		}
+
+		public void setQueue(String queue) {
+			this.queue = queue;
+		}
+	}
+
 	public static class FcParameters {
 
 		private String functionName;
@@ -335,39 +322,6 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 
 		public void setRegion(String region) {
 			this.region = region;
-		}
-	}
-
-	public static class MnsParameters {
-
-		private String id;
-
-		private String region;
-
-		private String queue;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
-		public String getQueue() {
-			return this.queue;
-		}
-
-		public void setQueue(String queue) {
-			this.queue = queue;
 		}
 	}
 

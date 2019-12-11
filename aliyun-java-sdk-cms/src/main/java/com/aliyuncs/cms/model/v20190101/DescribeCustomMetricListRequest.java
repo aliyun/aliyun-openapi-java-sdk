@@ -15,18 +15,18 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeCustomMetricListRequest extends RpcAcsRequest<DescribeCustomMetricListResponse> {
-	
-	public DescribeCustomMetricListRequest() {
-		super("Cms", "2019-01-01", "DescribeCustomMetricList", "cms");
-	}
+	   
 
 	private String groupId;
+
+	private String pageNumber;
 
 	private String pageSize;
 
@@ -34,9 +34,11 @@ public class DescribeCustomMetricListRequest extends RpcAcsRequest<DescribeCusto
 
 	private String dimension;
 
-	private String pageNumber;
-
 	private String md5;
+	public DescribeCustomMetricListRequest() {
+		super("Cms", "2019-01-01", "DescribeCustomMetricList", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getGroupId() {
 		return this.groupId;
@@ -46,6 +48,17 @@ public class DescribeCustomMetricListRequest extends RpcAcsRequest<DescribeCusto
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber);
 		}
 	}
 
@@ -79,17 +92,6 @@ public class DescribeCustomMetricListRequest extends RpcAcsRequest<DescribeCusto
 		this.dimension = dimension;
 		if(dimension != null){
 			putQueryParameter("Dimension", dimension);
-		}
-	}
-
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
 		}
 	}
 

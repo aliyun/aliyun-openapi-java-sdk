@@ -87,6 +87,8 @@ public class DescribeMonitoringAgentProcessesResponse extends AcsResponse {
 
 		private String command;
 
+		private String groupId;
+
 		public Long getProcessId() {
 			return this.processId;
 		}
@@ -125,6 +127,14 @@ public class DescribeMonitoringAgentProcessesResponse extends AcsResponse {
 
 		public void setCommand(String command) {
 			this.command = command;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 	}
 

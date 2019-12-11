@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PutMonitorGroupDynamicRuleResponseUnmarshaller {
 
-	public static PutMonitorGroupDynamicRuleResponse unmarshall(PutMonitorGroupDynamicRuleResponse putMonitorGroupDynamicRuleResponse, UnmarshallerContext context) {
+	public static PutMonitorGroupDynamicRuleResponse unmarshall(PutMonitorGroupDynamicRuleResponse putMonitorGroupDynamicRuleResponse, UnmarshallerContext _ctx) {
 		
-		putMonitorGroupDynamicRuleResponse.setRequestId(context.stringValue("PutMonitorGroupDynamicRuleResponse.RequestId"));
-		putMonitorGroupDynamicRuleResponse.setSuccess(context.booleanValue("PutMonitorGroupDynamicRuleResponse.Success"));
-		putMonitorGroupDynamicRuleResponse.setCode(context.integerValue("PutMonitorGroupDynamicRuleResponse.Code"));
-		putMonitorGroupDynamicRuleResponse.setMessage(context.stringValue("PutMonitorGroupDynamicRuleResponse.Message"));
+		putMonitorGroupDynamicRuleResponse.setRequestId(_ctx.stringValue("PutMonitorGroupDynamicRuleResponse.RequestId"));
+		putMonitorGroupDynamicRuleResponse.setSuccess(_ctx.booleanValue("PutMonitorGroupDynamicRuleResponse.Success"));
+		putMonitorGroupDynamicRuleResponse.setCode(_ctx.integerValue("PutMonitorGroupDynamicRuleResponse.Code"));
+		putMonitorGroupDynamicRuleResponse.setMessage(_ctx.stringValue("PutMonitorGroupDynamicRuleResponse.Message"));
 	 
 	 	return putMonitorGroupDynamicRuleResponse;
 	}

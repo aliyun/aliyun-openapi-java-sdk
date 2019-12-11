@@ -15,16 +15,14 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateMonitorGroupNotifyPolicyRequest extends RpcAcsRequest<CreateMonitorGroupNotifyPolicyResponse> {
-	
-	public CreateMonitorGroupNotifyPolicyRequest() {
-		super("Cms", "2019-01-01", "CreateMonitorGroupNotifyPolicy", "cms");
-	}
+	   
 
 	private String policyType;
 
@@ -33,6 +31,10 @@ public class CreateMonitorGroupNotifyPolicyRequest extends RpcAcsRequest<CreateM
 	private Long endTime;
 
 	private Long startTime;
+	public CreateMonitorGroupNotifyPolicyRequest() {
+		super("Cms", "2019-01-01", "CreateMonitorGroupNotifyPolicy", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getPolicyType() {
 		return this.policyType;

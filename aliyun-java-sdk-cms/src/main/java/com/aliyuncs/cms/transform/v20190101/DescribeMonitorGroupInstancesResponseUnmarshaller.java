@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMonitorGroupInstancesResponseUnmarshaller {
 
-	public static DescribeMonitorGroupInstancesResponse unmarshall(DescribeMonitorGroupInstancesResponse describeMonitorGroupInstancesResponse, UnmarshallerContext context) {
+	public static DescribeMonitorGroupInstancesResponse unmarshall(DescribeMonitorGroupInstancesResponse describeMonitorGroupInstancesResponse, UnmarshallerContext _ctx) {
 		
-		describeMonitorGroupInstancesResponse.setRequestId(context.stringValue("DescribeMonitorGroupInstancesResponse.RequestId"));
-		describeMonitorGroupInstancesResponse.setSuccess(context.booleanValue("DescribeMonitorGroupInstancesResponse.Success"));
-		describeMonitorGroupInstancesResponse.setCode(context.integerValue("DescribeMonitorGroupInstancesResponse.Code"));
-		describeMonitorGroupInstancesResponse.setMessage(context.stringValue("DescribeMonitorGroupInstancesResponse.Message"));
-		describeMonitorGroupInstancesResponse.setPageNumber(context.integerValue("DescribeMonitorGroupInstancesResponse.PageNumber"));
-		describeMonitorGroupInstancesResponse.setPageSize(context.integerValue("DescribeMonitorGroupInstancesResponse.PageSize"));
-		describeMonitorGroupInstancesResponse.setTotal(context.integerValue("DescribeMonitorGroupInstancesResponse.Total"));
+		describeMonitorGroupInstancesResponse.setRequestId(_ctx.stringValue("DescribeMonitorGroupInstancesResponse.RequestId"));
+		describeMonitorGroupInstancesResponse.setSuccess(_ctx.booleanValue("DescribeMonitorGroupInstancesResponse.Success"));
+		describeMonitorGroupInstancesResponse.setCode(_ctx.integerValue("DescribeMonitorGroupInstancesResponse.Code"));
+		describeMonitorGroupInstancesResponse.setMessage(_ctx.stringValue("DescribeMonitorGroupInstancesResponse.Message"));
+		describeMonitorGroupInstancesResponse.setPageNumber(_ctx.integerValue("DescribeMonitorGroupInstancesResponse.PageNumber"));
+		describeMonitorGroupInstancesResponse.setPageSize(_ctx.integerValue("DescribeMonitorGroupInstancesResponse.PageSize"));
+		describeMonitorGroupInstancesResponse.setTotal(_ctx.integerValue("DescribeMonitorGroupInstancesResponse.Total"));
 
 		List<Resource> resources = new ArrayList<Resource>();
-		for (int i = 0; i < context.lengthValue("DescribeMonitorGroupInstancesResponse.Resources.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMonitorGroupInstancesResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setId(context.longValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].Id"));
-			resource.setRegionId(context.stringValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].RegionId"));
-			resource.setInstanceId(context.stringValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].InstanceId"));
-			resource.setCategory(context.stringValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].Category"));
-			resource.setInstanceName(context.stringValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].InstanceName"));
+			resource.setId(_ctx.longValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].Id"));
+			resource.setRegionId(_ctx.stringValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].RegionId"));
+			resource.setInstanceId(_ctx.stringValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].InstanceId"));
+			resource.setCategory(_ctx.stringValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].Category"));
+			resource.setInstanceName(_ctx.stringValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].InstanceName"));
 
 			resources.add(resource);
 		}

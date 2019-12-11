@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyMonitorGroupResponseUnmarshaller {
 
-	public static ModifyMonitorGroupResponse unmarshall(ModifyMonitorGroupResponse modifyMonitorGroupResponse, UnmarshallerContext context) {
+	public static ModifyMonitorGroupResponse unmarshall(ModifyMonitorGroupResponse modifyMonitorGroupResponse, UnmarshallerContext _ctx) {
 		
-		modifyMonitorGroupResponse.setRequestId(context.stringValue("ModifyMonitorGroupResponse.RequestId"));
-		modifyMonitorGroupResponse.setSuccess(context.booleanValue("ModifyMonitorGroupResponse.Success"));
-		modifyMonitorGroupResponse.setCode(context.integerValue("ModifyMonitorGroupResponse.Code"));
-		modifyMonitorGroupResponse.setMessage(context.stringValue("ModifyMonitorGroupResponse.Message"));
+		modifyMonitorGroupResponse.setRequestId(_ctx.stringValue("ModifyMonitorGroupResponse.RequestId"));
+		modifyMonitorGroupResponse.setSuccess(_ctx.booleanValue("ModifyMonitorGroupResponse.Success"));
+		modifyMonitorGroupResponse.setCode(_ctx.integerValue("ModifyMonitorGroupResponse.Code"));
+		modifyMonitorGroupResponse.setMessage(_ctx.stringValue("ModifyMonitorGroupResponse.Message"));
 	 
 	 	return modifyMonitorGroupResponse;
 	}

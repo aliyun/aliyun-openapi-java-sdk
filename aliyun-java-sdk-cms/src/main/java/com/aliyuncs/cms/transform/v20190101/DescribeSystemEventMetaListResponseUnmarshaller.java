@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSystemEventMetaListResponseUnmarshaller {
 
-	public static DescribeSystemEventMetaListResponse unmarshall(DescribeSystemEventMetaListResponse describeSystemEventMetaListResponse, UnmarshallerContext context) {
+	public static DescribeSystemEventMetaListResponse unmarshall(DescribeSystemEventMetaListResponse describeSystemEventMetaListResponse, UnmarshallerContext _ctx) {
 		
-		describeSystemEventMetaListResponse.setRequestId(context.stringValue("DescribeSystemEventMetaListResponse.RequestId"));
-		describeSystemEventMetaListResponse.setSuccess(context.booleanValue("DescribeSystemEventMetaListResponse.Success"));
-		describeSystemEventMetaListResponse.setCode(context.integerValue("DescribeSystemEventMetaListResponse.Code"));
-		describeSystemEventMetaListResponse.setMessage(context.stringValue("DescribeSystemEventMetaListResponse.Message"));
+		describeSystemEventMetaListResponse.setRequestId(_ctx.stringValue("DescribeSystemEventMetaListResponse.RequestId"));
+		describeSystemEventMetaListResponse.setSuccess(_ctx.booleanValue("DescribeSystemEventMetaListResponse.Success"));
+		describeSystemEventMetaListResponse.setCode(_ctx.integerValue("DescribeSystemEventMetaListResponse.Code"));
+		describeSystemEventMetaListResponse.setMessage(_ctx.stringValue("DescribeSystemEventMetaListResponse.Message"));
 
 		List<Resource> data = new ArrayList<Resource>();
-		for (int i = 0; i < context.lengthValue("DescribeSystemEventMetaListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSystemEventMetaListResponse.Data.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setProduct(context.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Product"));
-			resource.setName(context.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Name"));
-			resource.setNameDesc(context.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].NameDesc"));
-			resource.setLevel(context.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Level"));
-			resource.setStatus(context.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Status"));
-			resource.setStatusDesc(context.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].StatusDesc"));
-			resource.setEventType(context.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].EventType"));
+			resource.setProduct(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Product"));
+			resource.setName(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Name"));
+			resource.setNameDesc(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].NameDesc"));
+			resource.setLevel(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Level"));
+			resource.setStatus(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Status"));
+			resource.setStatusDesc(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].StatusDesc"));
+			resource.setEventType(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].EventType"));
 
 			data.add(resource);
 		}

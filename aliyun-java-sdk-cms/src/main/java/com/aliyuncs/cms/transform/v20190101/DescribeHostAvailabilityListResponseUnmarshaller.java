@@ -27,55 +27,55 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeHostAvailabilityListResponseUnmarshaller {
 
-	public static DescribeHostAvailabilityListResponse unmarshall(DescribeHostAvailabilityListResponse describeHostAvailabilityListResponse, UnmarshallerContext context) {
+	public static DescribeHostAvailabilityListResponse unmarshall(DescribeHostAvailabilityListResponse describeHostAvailabilityListResponse, UnmarshallerContext _ctx) {
 		
-		describeHostAvailabilityListResponse.setRequestId(context.stringValue("DescribeHostAvailabilityListResponse.RequestId"));
-		describeHostAvailabilityListResponse.setCode(context.stringValue("DescribeHostAvailabilityListResponse.Code"));
-		describeHostAvailabilityListResponse.setMessage(context.stringValue("DescribeHostAvailabilityListResponse.Message"));
-		describeHostAvailabilityListResponse.setSuccess(context.booleanValue("DescribeHostAvailabilityListResponse.Success"));
-		describeHostAvailabilityListResponse.setTotal(context.integerValue("DescribeHostAvailabilityListResponse.Total"));
+		describeHostAvailabilityListResponse.setRequestId(_ctx.stringValue("DescribeHostAvailabilityListResponse.RequestId"));
+		describeHostAvailabilityListResponse.setCode(_ctx.stringValue("DescribeHostAvailabilityListResponse.Code"));
+		describeHostAvailabilityListResponse.setMessage(_ctx.stringValue("DescribeHostAvailabilityListResponse.Message"));
+		describeHostAvailabilityListResponse.setSuccess(_ctx.booleanValue("DescribeHostAvailabilityListResponse.Success"));
+		describeHostAvailabilityListResponse.setTotal(_ctx.integerValue("DescribeHostAvailabilityListResponse.Total"));
 
 		List<NodeTaskConfig> taskList = new ArrayList<NodeTaskConfig>();
-		for (int i = 0; i < context.lengthValue("DescribeHostAvailabilityListResponse.TaskList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeHostAvailabilityListResponse.TaskList.Length"); i++) {
 			NodeTaskConfig nodeTaskConfig = new NodeTaskConfig();
-			nodeTaskConfig.setId(context.longValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].Id"));
-			nodeTaskConfig.setTaskName(context.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskName"));
-			nodeTaskConfig.setTaskType(context.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskType"));
-			nodeTaskConfig.setTaskScope(context.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskScope"));
-			nodeTaskConfig.setDisabled(context.booleanValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].Disabled"));
-			nodeTaskConfig.setGroupId(context.longValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].GroupId"));
-			nodeTaskConfig.setGroupName(context.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].GroupName"));
+			nodeTaskConfig.setId(_ctx.longValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].Id"));
+			nodeTaskConfig.setTaskName(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskName"));
+			nodeTaskConfig.setTaskType(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskType"));
+			nodeTaskConfig.setTaskScope(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskScope"));
+			nodeTaskConfig.setDisabled(_ctx.booleanValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].Disabled"));
+			nodeTaskConfig.setGroupId(_ctx.longValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].GroupId"));
+			nodeTaskConfig.setGroupName(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].GroupName"));
 
 			List<String> instances = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].Instances.Length"); j++) {
-				instances.add(context.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].Instances["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].Instances.Length"); j++) {
+				instances.add(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].Instances["+ j +"]"));
 			}
 			nodeTaskConfig.setInstances(instances);
 
 			TaskOption taskOption = new TaskOption();
-			taskOption.setHttpURI(context.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpURI"));
-			taskOption.setTelnetOrPingHost(context.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.TelnetOrPingHost"));
-			taskOption.setHttpResponseCharset(context.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpResponseCharset"));
-			taskOption.setHttpKeyword(context.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpKeyword"));
-			taskOption.setHttpMethod(context.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpMethod"));
-			taskOption.setHttpNegative(context.booleanValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpNegative"));
+			taskOption.setHttpURI(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpURI"));
+			taskOption.setTelnetOrPingHost(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.TelnetOrPingHost"));
+			taskOption.setHttpResponseCharset(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpResponseCharset"));
+			taskOption.setHttpKeyword(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpKeyword"));
+			taskOption.setHttpMethod(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpMethod"));
+			taskOption.setHttpNegative(_ctx.booleanValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpNegative"));
 			nodeTaskConfig.setTaskOption(taskOption);
 
 			AlertConfig alertConfig = new AlertConfig();
-			alertConfig.setNotifyType(context.integerValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.NotifyType"));
-			alertConfig.setStartTime(context.integerValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.StartTime"));
-			alertConfig.setEndTime(context.integerValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.EndTime"));
-			alertConfig.setSilenceTime(context.integerValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.SilenceTime"));
-			alertConfig.setWebHook(context.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.WebHook"));
+			alertConfig.setNotifyType(_ctx.integerValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.NotifyType"));
+			alertConfig.setStartTime(_ctx.integerValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.StartTime"));
+			alertConfig.setEndTime(_ctx.integerValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.EndTime"));
+			alertConfig.setSilenceTime(_ctx.integerValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.SilenceTime"));
+			alertConfig.setWebHook(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.WebHook"));
 
 			List<EscalationListItem> escalationList = new ArrayList<EscalationListItem>();
-			for (int j = 0; j < context.lengthValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.EscalationList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.EscalationList.Length"); j++) {
 				EscalationListItem escalationListItem = new EscalationListItem();
-				escalationListItem.setMetricName(context.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.EscalationList["+ j +"].MetricName"));
-				escalationListItem.setAggregate(context.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.EscalationList["+ j +"].Aggregate"));
-				escalationListItem.setOperator(context.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.EscalationList["+ j +"].Operator"));
-				escalationListItem.setValue(context.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.EscalationList["+ j +"].Value"));
-				escalationListItem.setTimes(context.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.EscalationList["+ j +"].Times"));
+				escalationListItem.setMetricName(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.EscalationList["+ j +"].MetricName"));
+				escalationListItem.setAggregate(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.EscalationList["+ j +"].Aggregate"));
+				escalationListItem.setOperator(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.EscalationList["+ j +"].Operator"));
+				escalationListItem.setValue(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.EscalationList["+ j +"].Value"));
+				escalationListItem.setTimes(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].AlertConfig.EscalationList["+ j +"].Times"));
 
 				escalationList.add(escalationListItem);
 			}

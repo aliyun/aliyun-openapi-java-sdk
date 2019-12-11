@@ -16,18 +16,20 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteMetricRulesRequest extends RpcAcsRequest<DeleteMetricRulesResponse> {
-	
-	public DeleteMetricRulesRequest() {
-		super("Cms", "2019-01-01", "DeleteMetricRules", "cms");
-	}
+	   
 
 	private List<String> ids;
+	public DeleteMetricRulesRequest() {
+		super("Cms", "2019-01-01", "DeleteMetricRules", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public List<String> getIds() {
 		return this.ids;

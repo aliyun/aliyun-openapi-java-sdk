@@ -15,18 +15,20 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeEventRuleAttributeRequest extends RpcAcsRequest<DescribeEventRuleAttributeResponse> {
-	
-	public DescribeEventRuleAttributeRequest() {
-		super("Cms", "2019-01-01", "DescribeEventRuleAttribute", "cms");
-	}
+	   
 
 	private String ruleName;
+	public DescribeEventRuleAttributeRequest() {
+		super("Cms", "2019-01-01", "DescribeEventRuleAttribute", "cms");
+		setMethod(MethodType.PUT);
+	}
 
 	public String getRuleName() {
 		return this.ruleName;

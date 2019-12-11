@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCustomMetricListResponseUnmarshaller {
 
-	public static DescribeCustomMetricListResponse unmarshall(DescribeCustomMetricListResponse describeCustomMetricListResponse, UnmarshallerContext context) {
+	public static DescribeCustomMetricListResponse unmarshall(DescribeCustomMetricListResponse describeCustomMetricListResponse, UnmarshallerContext _ctx) {
 		
-		describeCustomMetricListResponse.setRequestId(context.stringValue("DescribeCustomMetricListResponse.RequestId"));
-		describeCustomMetricListResponse.setCode(context.stringValue("DescribeCustomMetricListResponse.Code"));
-		describeCustomMetricListResponse.setMessage(context.stringValue("DescribeCustomMetricListResponse.Message"));
-		describeCustomMetricListResponse.setResult(context.stringValue("DescribeCustomMetricListResponse.Result"));
+		describeCustomMetricListResponse.setRequestId(_ctx.stringValue("DescribeCustomMetricListResponse.RequestId"));
+		describeCustomMetricListResponse.setCode(_ctx.stringValue("DescribeCustomMetricListResponse.Code"));
+		describeCustomMetricListResponse.setMessage(_ctx.stringValue("DescribeCustomMetricListResponse.Message"));
+		describeCustomMetricListResponse.setResult(_ctx.stringValue("DescribeCustomMetricListResponse.Result"));
 	 
 	 	return describeCustomMetricListResponse;
 	}

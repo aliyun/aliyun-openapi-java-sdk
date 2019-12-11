@@ -15,20 +15,16 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSiteMonitorDataRequest extends RpcAcsRequest<DescribeSiteMonitorDataResponse> {
-	
-	public DescribeSiteMonitorDataRequest() {
-		super("Cms", "2019-01-01", "DescribeSiteMonitorData", "cms");
-	}
+	   
 
 	private String period;
-
-	private String nextToken;
 
 	private Integer length;
 
@@ -38,9 +34,15 @@ public class DescribeSiteMonitorDataRequest extends RpcAcsRequest<DescribeSiteMo
 
 	private String type;
 
+	private String nextToken;
+
 	private String metricName;
 
 	private String taskId;
+	public DescribeSiteMonitorDataRequest() {
+		super("Cms", "2019-01-01", "DescribeSiteMonitorData", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getPeriod() {
 		return this.period;
@@ -50,17 +52,6 @@ public class DescribeSiteMonitorDataRequest extends RpcAcsRequest<DescribeSiteMo
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period);
-		}
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -105,6 +96,17 @@ public class DescribeSiteMonitorDataRequest extends RpcAcsRequest<DescribeSiteMo
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 

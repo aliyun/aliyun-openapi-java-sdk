@@ -16,36 +16,27 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyMetricRuleTemplateRequest extends RpcAcsRequest<ModifyMetricRuleTemplateResponse> {
-	
-	public ModifyMetricRuleTemplateRequest() {
-		super("Cms", "2019-01-01", "ModifyMetricRuleTemplate", "cms");
-	}
-
-	private String name;
+	   
 
 	private Long restVersion;
 
 	private String description;
 
-	private List<AlertTemplates> alertTemplatess;
-
 	private Long templateId;
 
-	public String getName() {
-		return this.name;
-	}
+	private String name;
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
+	private List<AlertTemplates> alertTemplatess;
+	public ModifyMetricRuleTemplateRequest() {
+		super("Cms", "2019-01-01", "ModifyMetricRuleTemplate", "cms");
+		setMethod(MethodType.POST);
 	}
 
 	public Long getRestVersion() {
@@ -70,6 +61,28 @@ public class ModifyMetricRuleTemplateRequest extends RpcAcsRequest<ModifyMetricR
 		}
 	}
 
+	public Long getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(Long templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
 	public List<AlertTemplates> getAlertTemplatess() {
 		return this.alertTemplatess;
 	}
@@ -80,6 +93,7 @@ public class ModifyMetricRuleTemplateRequest extends RpcAcsRequest<ModifyMetricR
 			for (int depth1 = 0; depth1 < alertTemplatess.size(); depth1++) {
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Period" , alertTemplatess.get(depth1).getPeriod());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Warn.Threshold" , alertTemplatess.get(depth1).getEscalationsWarnThreshold());
+				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Webhook" , alertTemplatess.get(depth1).getWebhook());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Warn.ComparisonOperator" , alertTemplatess.get(depth1).getEscalationsWarnComparisonOperator());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Critical.Statistics" , alertTemplatess.get(depth1).getEscalationsCriticalStatistics());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Info.Times" , alertTemplatess.get(depth1).getEscalationsInfoTimes());
@@ -100,22 +114,13 @@ public class ModifyMetricRuleTemplateRequest extends RpcAcsRequest<ModifyMetricR
 		}	
 	}
 
-	public Long getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(Long templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putQueryParameter("TemplateId", templateId.toString());
-		}
-	}
-
 	public static class AlertTemplates {
 
 		private Integer period;
 
 		private String escalationsWarnThreshold;
+
+		private String webhook;
 
 		private String escalationsWarnComparisonOperator;
 
@@ -163,6 +168,14 @@ public class ModifyMetricRuleTemplateRequest extends RpcAcsRequest<ModifyMetricR
 
 		public void setEscalationsWarnThreshold(String escalationsWarnThreshold) {
 			this.escalationsWarnThreshold = escalationsWarnThreshold;
+		}
+
+		public String getWebhook() {
+			return this.webhook;
+		}
+
+		public void setWebhook(String webhook) {
+			this.webhook = webhook;
 		}
 
 		public String getEscalationsWarnComparisonOperator() {

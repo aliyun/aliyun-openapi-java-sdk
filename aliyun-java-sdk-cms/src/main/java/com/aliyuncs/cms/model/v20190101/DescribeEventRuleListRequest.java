@@ -15,24 +15,26 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeEventRuleListRequest extends RpcAcsRequest<DescribeEventRuleListResponse> {
-	
-	public DescribeEventRuleListRequest() {
-		super("Cms", "2019-01-01", "DescribeEventRuleList", "cms");
-	}
+	   
 
 	private String groupId;
+
+	private String pageNumber;
 
 	private String pageSize;
 
 	private String namePrefix;
-
-	private String pageNumber;
+	public DescribeEventRuleListRequest() {
+		super("Cms", "2019-01-01", "DescribeEventRuleList", "cms");
+		setMethod(MethodType.PUT);
+	}
 
 	public String getGroupId() {
 		return this.groupId;
@@ -42,6 +44,17 @@ public class DescribeEventRuleListRequest extends RpcAcsRequest<DescribeEventRul
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber);
 		}
 	}
 
@@ -64,17 +77,6 @@ public class DescribeEventRuleListRequest extends RpcAcsRequest<DescribeEventRul
 		this.namePrefix = namePrefix;
 		if(namePrefix != null){
 			putQueryParameter("NamePrefix", namePrefix);
-		}
-	}
-
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
 		}
 	}
 

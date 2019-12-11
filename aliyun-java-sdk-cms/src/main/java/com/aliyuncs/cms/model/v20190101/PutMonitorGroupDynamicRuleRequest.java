@@ -16,20 +16,22 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class PutMonitorGroupDynamicRuleRequest extends RpcAcsRequest<PutMonitorGroupDynamicRuleResponse> {
-	
-	public PutMonitorGroupDynamicRuleRequest() {
-		super("Cms", "2019-01-01", "PutMonitorGroupDynamicRule", "cms");
-	}
+	   
 
 	private List<GroupRules> groupRuless;
 
 	private Long groupId;
+	public PutMonitorGroupDynamicRuleRequest() {
+		super("Cms", "2019-01-01", "PutMonitorGroupDynamicRule", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public List<GroupRules> getGroupRuless() {
 		return this.groupRuless;

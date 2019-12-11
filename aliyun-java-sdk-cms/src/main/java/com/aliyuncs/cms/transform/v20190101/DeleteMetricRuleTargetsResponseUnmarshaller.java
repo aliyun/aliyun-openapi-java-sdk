@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteMetricRuleTargetsResponseUnmarshaller {
 
-	public static DeleteMetricRuleTargetsResponse unmarshall(DeleteMetricRuleTargetsResponse deleteMetricRuleTargetsResponse, UnmarshallerContext context) {
+	public static DeleteMetricRuleTargetsResponse unmarshall(DeleteMetricRuleTargetsResponse deleteMetricRuleTargetsResponse, UnmarshallerContext _ctx) {
 		
-		deleteMetricRuleTargetsResponse.setRequestId(context.stringValue("DeleteMetricRuleTargetsResponse.RequestId"));
-		deleteMetricRuleTargetsResponse.setSuccess(context.booleanValue("DeleteMetricRuleTargetsResponse.Success"));
-		deleteMetricRuleTargetsResponse.setCode(context.stringValue("DeleteMetricRuleTargetsResponse.Code"));
-		deleteMetricRuleTargetsResponse.setMessage(context.stringValue("DeleteMetricRuleTargetsResponse.Message"));
+		deleteMetricRuleTargetsResponse.setRequestId(_ctx.stringValue("DeleteMetricRuleTargetsResponse.RequestId"));
+		deleteMetricRuleTargetsResponse.setSuccess(_ctx.booleanValue("DeleteMetricRuleTargetsResponse.Success"));
+		deleteMetricRuleTargetsResponse.setCode(_ctx.stringValue("DeleteMetricRuleTargetsResponse.Code"));
+		deleteMetricRuleTargetsResponse.setMessage(_ctx.stringValue("DeleteMetricRuleTargetsResponse.Message"));
 
 		FailIds failIds = new FailIds();
 
 		List<String> targetIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DeleteMetricRuleTargetsResponse.FailIds.TargetIds.Length"); i++) {
-			targetIds.add(context.stringValue("DeleteMetricRuleTargetsResponse.FailIds.TargetIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DeleteMetricRuleTargetsResponse.FailIds.TargetIds.Length"); i++) {
+			targetIds.add(_ctx.stringValue("DeleteMetricRuleTargetsResponse.FailIds.TargetIds["+ i +"]"));
 		}
 		failIds.setTargetIds(targetIds);
 		deleteMetricRuleTargetsResponse.setFailIds(failIds);

@@ -16,20 +16,33 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteEventRuleTargetsRequest extends RpcAcsRequest<DeleteEventRuleTargetsResponse> {
-	
-	public DeleteEventRuleTargetsRequest() {
-		super("Cms", "2019-01-01", "DeleteEventRuleTargets", "cms");
-	}
-
-	private List<String> idss;
+	   
 
 	private String ruleName;
+
+	private List<String> idss;
+	public DeleteEventRuleTargetsRequest() {
+		super("Cms", "2019-01-01", "DeleteEventRuleTargets", "cms");
+		setMethod(MethodType.PUT);
+	}
+
+	public String getRuleName() {
+		return this.ruleName;
+	}
+
+	public void setRuleName(String ruleName) {
+		this.ruleName = ruleName;
+		if(ruleName != null){
+			putQueryParameter("RuleName", ruleName);
+		}
+	}
 
 	public List<String> getIdss() {
 		return this.idss;
@@ -42,17 +55,6 @@ public class DeleteEventRuleTargetsRequest extends RpcAcsRequest<DeleteEventRule
 				putQueryParameter("Ids." + (i + 1) , idss.get(i));
 			}
 		}	
-	}
-
-	public String getRuleName() {
-		return this.ruleName;
-	}
-
-	public void setRuleName(String ruleName) {
-		this.ruleName = ruleName;
-		if(ruleName != null){
-			putQueryParameter("RuleName", ruleName);
-		}
 	}
 
 	@Override

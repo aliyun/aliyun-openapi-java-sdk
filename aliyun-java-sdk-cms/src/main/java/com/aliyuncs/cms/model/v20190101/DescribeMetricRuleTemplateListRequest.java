@@ -15,28 +15,63 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMetricRuleTemplateListRequest extends RpcAcsRequest<DescribeMetricRuleTemplateListResponse> {
-	
-	public DescribeMetricRuleTemplateListRequest() {
-		super("Cms", "2019-01-01", "DescribeMetricRuleTemplateList", "cms");
-	}
+	   
+
+	private Boolean history;
+
+	private Long templateId;
+
+	private Long pageNumber;
 
 	private String name;
 
 	private Long pageSize;
 
-	private Boolean history;
-
 	private String keyword;
+	public DescribeMetricRuleTemplateListRequest() {
+		super("Cms", "2019-01-01", "DescribeMetricRuleTemplateList", "cms");
+		setMethod(MethodType.POST);
+	}
 
-	private Long templateId;
+	public Boolean getHistory() {
+		return this.history;
+	}
 
-	private Long pageNumber;
+	public void setHistory(Boolean history) {
+		this.history = history;
+		if(history != null){
+			putQueryParameter("History", history.toString());
+		}
+	}
+
+	public Long getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(Long templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId.toString());
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getName() {
 		return this.name;
@@ -60,17 +95,6 @@ public class DescribeMetricRuleTemplateListRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public Boolean getHistory() {
-		return this.history;
-	}
-
-	public void setHistory(Boolean history) {
-		this.history = history;
-		if(history != null){
-			putQueryParameter("History", history.toString());
-		}
-	}
-
 	public String getKeyword() {
 		return this.keyword;
 	}
@@ -79,28 +103,6 @@ public class DescribeMetricRuleTemplateListRequest extends RpcAcsRequest<Describ
 		this.keyword = keyword;
 		if(keyword != null){
 			putQueryParameter("Keyword", keyword);
-		}
-	}
-
-	public Long getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(Long templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putQueryParameter("TemplateId", templateId.toString());
-		}
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

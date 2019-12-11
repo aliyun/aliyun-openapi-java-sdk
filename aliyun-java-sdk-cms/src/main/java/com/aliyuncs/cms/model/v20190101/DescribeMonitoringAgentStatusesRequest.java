@@ -15,18 +15,20 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMonitoringAgentStatusesRequest extends RpcAcsRequest<DescribeMonitoringAgentStatusesResponse> {
-	
-	public DescribeMonitoringAgentStatusesRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitoringAgentStatuses", "cms");
-	}
+	   
 
 	private String instanceIds;
+	public DescribeMonitoringAgentStatusesRequest() {
+		super("Cms", "2019-01-01", "DescribeMonitoringAgentStatuses", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getInstanceIds() {
 		return this.instanceIds;

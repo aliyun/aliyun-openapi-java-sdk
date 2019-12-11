@@ -15,32 +15,23 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteMonitorGroupInstancesRequest extends RpcAcsRequest<DeleteMonitorGroupInstancesResponse> {
-	
-	public DeleteMonitorGroupInstancesRequest() {
-		super("Cms", "2019-01-01", "DeleteMonitorGroupInstances", "cms");
-	}
-
-	private String instanceIdList;
+	   
 
 	private Long groupId;
 
+	private String instanceIdList;
+
 	private String category;
-
-	public String getInstanceIdList() {
-		return this.instanceIdList;
-	}
-
-	public void setInstanceIdList(String instanceIdList) {
-		this.instanceIdList = instanceIdList;
-		if(instanceIdList != null){
-			putQueryParameter("InstanceIdList", instanceIdList);
-		}
+	public DeleteMonitorGroupInstancesRequest() {
+		super("Cms", "2019-01-01", "DeleteMonitorGroupInstances", "cms");
+		setMethod(MethodType.POST);
 	}
 
 	public Long getGroupId() {
@@ -51,6 +42,17 @@ public class DeleteMonitorGroupInstancesRequest extends RpcAcsRequest<DeleteMoni
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId.toString());
+		}
+	}
+
+	public String getInstanceIdList() {
+		return this.instanceIdList;
+	}
+
+	public void setInstanceIdList(String instanceIdList) {
+		this.instanceIdList = instanceIdList;
+		if(instanceIdList != null){
+			putQueryParameter("InstanceIdList", instanceIdList);
 		}
 	}
 

@@ -1,3 +1,8 @@
+2019-12-11 Version: 7.0.5
+- Add tag API.
+- Add group process monitoring API.
+- Add API for batch setting alarm rules.
+
 2019-05-24 Version: 7.0.4
 1, The list of site monitoring probes adds ISP and city fields in English.
 2, Fixed the capitalization problem of Describe MetricData and Describe Site Monitor Statistics API metricName.

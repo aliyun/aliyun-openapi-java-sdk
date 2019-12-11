@@ -16,26 +16,18 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateHostAvailabilityRequest extends RpcAcsRequest<CreateHostAvailabilityResponse> {
-	
-	public CreateHostAvailabilityRequest() {
-		super("Cms", "2019-01-01", "CreateHostAvailability", "cms");
-	}
-
-	private List<String> instanceLists;
-
-	private String taskType;
+	   
 
 	private String taskOptionHttpMethod;
 
 	private List<AlertConfigEscalationList> alertConfigEscalationLists;
-
-	private Long groupId;
 
 	private String taskName;
 
@@ -43,46 +35,32 @@ public class CreateHostAvailabilityRequest extends RpcAcsRequest<CreateHostAvail
 
 	private String taskOptionHttpResponseCharset;
 
-	private Integer alertConfigEndTime;
-
-	private String taskOptionHttpURI;
-
 	private Boolean taskOptionHttpNegative;
 
-	private String taskScope;
-
 	private Integer alertConfigNotifyType;
-
-	private Integer alertConfigStartTime;
 
 	private String taskOptionTelnetOrPingHost;
 
 	private String taskOptionHttpResponseMatchContent;
 
+	private List<String> instanceLists;
+
+	private String taskType;
+
+	private Long groupId;
+
+	private Integer alertConfigEndTime;
+
+	private String taskOptionHttpURI;
+
+	private String taskScope;
+
+	private Integer alertConfigStartTime;
+
 	private String alertConfigWebHook;
-
-	public List<String> getInstanceLists() {
-		return this.instanceLists;
-	}
-
-	public void setInstanceLists(List<String> instanceLists) {
-		this.instanceLists = instanceLists;	
-		if (instanceLists != null) {
-			for (int i = 0; i < instanceLists.size(); i++) {
-				putQueryParameter("InstanceList." + (i + 1) , instanceLists.get(i));
-			}
-		}	
-	}
-
-	public String getTaskType() {
-		return this.taskType;
-	}
-
-	public void setTaskType(String taskType) {
-		this.taskType = taskType;
-		if(taskType != null){
-			putQueryParameter("TaskType", taskType);
-		}
+	public CreateHostAvailabilityRequest() {
+		super("Cms", "2019-01-01", "CreateHostAvailability", "cms");
+		setMethod(MethodType.POST);
 	}
 
 	public String getTaskOptionHttpMethod() {
@@ -111,17 +89,6 @@ public class CreateHostAvailabilityRequest extends RpcAcsRequest<CreateHostAvail
 				putQueryParameter("AlertConfigEscalationList." + (depth1 + 1) + ".Aggregate" , alertConfigEscalationLists.get(depth1).getAggregate());
 			}
 		}	
-	}
-
-	public Long getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(Long groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId.toString());
-		}
 	}
 
 	public String getTaskName() {
@@ -157,28 +124,6 @@ public class CreateHostAvailabilityRequest extends RpcAcsRequest<CreateHostAvail
 		}
 	}
 
-	public Integer getAlertConfigEndTime() {
-		return this.alertConfigEndTime;
-	}
-
-	public void setAlertConfigEndTime(Integer alertConfigEndTime) {
-		this.alertConfigEndTime = alertConfigEndTime;
-		if(alertConfigEndTime != null){
-			putQueryParameter("AlertConfig.EndTime", alertConfigEndTime.toString());
-		}
-	}
-
-	public String getTaskOptionHttpURI() {
-		return this.taskOptionHttpURI;
-	}
-
-	public void setTaskOptionHttpURI(String taskOptionHttpURI) {
-		this.taskOptionHttpURI = taskOptionHttpURI;
-		if(taskOptionHttpURI != null){
-			putQueryParameter("TaskOption.HttpURI", taskOptionHttpURI);
-		}
-	}
-
 	public Boolean getTaskOptionHttpNegative() {
 		return this.taskOptionHttpNegative;
 	}
@@ -190,17 +135,6 @@ public class CreateHostAvailabilityRequest extends RpcAcsRequest<CreateHostAvail
 		}
 	}
 
-	public String getTaskScope() {
-		return this.taskScope;
-	}
-
-	public void setTaskScope(String taskScope) {
-		this.taskScope = taskScope;
-		if(taskScope != null){
-			putQueryParameter("TaskScope", taskScope);
-		}
-	}
-
 	public Integer getAlertConfigNotifyType() {
 		return this.alertConfigNotifyType;
 	}
@@ -209,17 +143,6 @@ public class CreateHostAvailabilityRequest extends RpcAcsRequest<CreateHostAvail
 		this.alertConfigNotifyType = alertConfigNotifyType;
 		if(alertConfigNotifyType != null){
 			putQueryParameter("AlertConfig.NotifyType", alertConfigNotifyType.toString());
-		}
-	}
-
-	public Integer getAlertConfigStartTime() {
-		return this.alertConfigStartTime;
-	}
-
-	public void setAlertConfigStartTime(Integer alertConfigStartTime) {
-		this.alertConfigStartTime = alertConfigStartTime;
-		if(alertConfigStartTime != null){
-			putQueryParameter("AlertConfig.StartTime", alertConfigStartTime.toString());
 		}
 	}
 
@@ -242,6 +165,85 @@ public class CreateHostAvailabilityRequest extends RpcAcsRequest<CreateHostAvail
 		this.taskOptionHttpResponseMatchContent = taskOptionHttpResponseMatchContent;
 		if(taskOptionHttpResponseMatchContent != null){
 			putQueryParameter("TaskOption.HttpResponseMatchContent", taskOptionHttpResponseMatchContent);
+		}
+	}
+
+	public List<String> getInstanceLists() {
+		return this.instanceLists;
+	}
+
+	public void setInstanceLists(List<String> instanceLists) {
+		this.instanceLists = instanceLists;	
+		if (instanceLists != null) {
+			for (int i = 0; i < instanceLists.size(); i++) {
+				putQueryParameter("InstanceList." + (i + 1) , instanceLists.get(i));
+			}
+		}	
+	}
+
+	public String getTaskType() {
+		return this.taskType;
+	}
+
+	public void setTaskType(String taskType) {
+		this.taskType = taskType;
+		if(taskType != null){
+			putQueryParameter("TaskType", taskType);
+		}
+	}
+
+	public Long getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(Long groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId.toString());
+		}
+	}
+
+	public Integer getAlertConfigEndTime() {
+		return this.alertConfigEndTime;
+	}
+
+	public void setAlertConfigEndTime(Integer alertConfigEndTime) {
+		this.alertConfigEndTime = alertConfigEndTime;
+		if(alertConfigEndTime != null){
+			putQueryParameter("AlertConfig.EndTime", alertConfigEndTime.toString());
+		}
+	}
+
+	public String getTaskOptionHttpURI() {
+		return this.taskOptionHttpURI;
+	}
+
+	public void setTaskOptionHttpURI(String taskOptionHttpURI) {
+		this.taskOptionHttpURI = taskOptionHttpURI;
+		if(taskOptionHttpURI != null){
+			putQueryParameter("TaskOption.HttpURI", taskOptionHttpURI);
+		}
+	}
+
+	public String getTaskScope() {
+		return this.taskScope;
+	}
+
+	public void setTaskScope(String taskScope) {
+		this.taskScope = taskScope;
+		if(taskScope != null){
+			putQueryParameter("TaskScope", taskScope);
+		}
+	}
+
+	public Integer getAlertConfigStartTime() {
+		return this.alertConfigStartTime;
+	}
+
+	public void setAlertConfigStartTime(Integer alertConfigStartTime) {
+		this.alertConfigStartTime = alertConfigStartTime;
+		if(alertConfigStartTime != null){
+			putQueryParameter("AlertConfig.StartTime", alertConfigStartTime.toString());
 		}
 	}
 

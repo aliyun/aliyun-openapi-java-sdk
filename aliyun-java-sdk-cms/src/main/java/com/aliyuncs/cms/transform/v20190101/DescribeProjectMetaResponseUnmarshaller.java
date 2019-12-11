@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeProjectMetaResponseUnmarshaller {
 
-	public static DescribeProjectMetaResponse unmarshall(DescribeProjectMetaResponse describeProjectMetaResponse, UnmarshallerContext context) {
+	public static DescribeProjectMetaResponse unmarshall(DescribeProjectMetaResponse describeProjectMetaResponse, UnmarshallerContext _ctx) {
 		
-		describeProjectMetaResponse.setRequestId(context.stringValue("DescribeProjectMetaResponse.RequestId"));
-		describeProjectMetaResponse.setSuccess(context.booleanValue("DescribeProjectMetaResponse.Success"));
-		describeProjectMetaResponse.setCode(context.stringValue("DescribeProjectMetaResponse.Code"));
-		describeProjectMetaResponse.setMessage(context.stringValue("DescribeProjectMetaResponse.Message"));
-		describeProjectMetaResponse.setTotal(context.stringValue("DescribeProjectMetaResponse.Total"));
-		describeProjectMetaResponse.setPageNumber(context.stringValue("DescribeProjectMetaResponse.PageNumber"));
-		describeProjectMetaResponse.setPageSize(context.stringValue("DescribeProjectMetaResponse.PageSize"));
+		describeProjectMetaResponse.setRequestId(_ctx.stringValue("DescribeProjectMetaResponse.RequestId"));
+		describeProjectMetaResponse.setSuccess(_ctx.booleanValue("DescribeProjectMetaResponse.Success"));
+		describeProjectMetaResponse.setCode(_ctx.stringValue("DescribeProjectMetaResponse.Code"));
+		describeProjectMetaResponse.setMessage(_ctx.stringValue("DescribeProjectMetaResponse.Message"));
+		describeProjectMetaResponse.setTotal(_ctx.stringValue("DescribeProjectMetaResponse.Total"));
+		describeProjectMetaResponse.setPageNumber(_ctx.stringValue("DescribeProjectMetaResponse.PageNumber"));
+		describeProjectMetaResponse.setPageSize(_ctx.stringValue("DescribeProjectMetaResponse.PageSize"));
 
 		List<Resource> resources = new ArrayList<Resource>();
-		for (int i = 0; i < context.lengthValue("DescribeProjectMetaResponse.Resources.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeProjectMetaResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setNamespace(context.stringValue("DescribeProjectMetaResponse.Resources["+ i +"].Namespace"));
-			resource.setDescription(context.stringValue("DescribeProjectMetaResponse.Resources["+ i +"].Description"));
-			resource.setLabels(context.stringValue("DescribeProjectMetaResponse.Resources["+ i +"].Labels"));
+			resource.setNamespace(_ctx.stringValue("DescribeProjectMetaResponse.Resources["+ i +"].Namespace"));
+			resource.setDescription(_ctx.stringValue("DescribeProjectMetaResponse.Resources["+ i +"].Description"));
+			resource.setLabels(_ctx.stringValue("DescribeProjectMetaResponse.Resources["+ i +"].Labels"));
 
 			resources.add(resource);
 		}

@@ -139,6 +139,8 @@ public class DescribeMetricRuleTemplateAttributeResponse extends AcsResponse {
 
 			private String selector;
 
+			private String webhook;
+
 			private Escalations escalations;
 
 			public String getRuleName() {
@@ -179,6 +181,14 @@ public class DescribeMetricRuleTemplateAttributeResponse extends AcsResponse {
 
 			public void setSelector(String selector) {
 				this.selector = selector;
+			}
+
+			public String getWebhook() {
+				return this.webhook;
+			}
+
+			public void setWebhook(String webhook) {
+				this.webhook = webhook;
 			}
 
 			public Escalations getEscalations() {

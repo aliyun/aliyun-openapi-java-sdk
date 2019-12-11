@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCustomEventAttributeResponseUnmarshaller {
 
-	public static DescribeCustomEventAttributeResponse unmarshall(DescribeCustomEventAttributeResponse describeCustomEventAttributeResponse, UnmarshallerContext context) {
+	public static DescribeCustomEventAttributeResponse unmarshall(DescribeCustomEventAttributeResponse describeCustomEventAttributeResponse, UnmarshallerContext _ctx) {
 		
-		describeCustomEventAttributeResponse.setRequestId(context.stringValue("DescribeCustomEventAttributeResponse.RequestId"));
-		describeCustomEventAttributeResponse.setCode(context.stringValue("DescribeCustomEventAttributeResponse.Code"));
-		describeCustomEventAttributeResponse.setMessage(context.stringValue("DescribeCustomEventAttributeResponse.Message"));
-		describeCustomEventAttributeResponse.setSuccess(context.stringValue("DescribeCustomEventAttributeResponse.Success"));
+		describeCustomEventAttributeResponse.setRequestId(_ctx.stringValue("DescribeCustomEventAttributeResponse.RequestId"));
+		describeCustomEventAttributeResponse.setCode(_ctx.stringValue("DescribeCustomEventAttributeResponse.Code"));
+		describeCustomEventAttributeResponse.setMessage(_ctx.stringValue("DescribeCustomEventAttributeResponse.Message"));
+		describeCustomEventAttributeResponse.setSuccess(_ctx.stringValue("DescribeCustomEventAttributeResponse.Success"));
 
 		List<CustomEvent> customEvents = new ArrayList<CustomEvent>();
-		for (int i = 0; i < context.lengthValue("DescribeCustomEventAttributeResponse.CustomEvents.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCustomEventAttributeResponse.CustomEvents.Length"); i++) {
 			CustomEvent customEvent = new CustomEvent();
-			customEvent.setId(context.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].Id"));
-			customEvent.setContent(context.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].Content"));
-			customEvent.setGroupId(context.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].GroupId"));
-			customEvent.setName(context.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].Name"));
-			customEvent.setTime(context.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].Time"));
+			customEvent.setId(_ctx.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].Id"));
+			customEvent.setContent(_ctx.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].Content"));
+			customEvent.setGroupId(_ctx.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].GroupId"));
+			customEvent.setName(_ctx.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].Name"));
+			customEvent.setTime(_ctx.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].Time"));
 
 			customEvents.add(customEvent);
 		}

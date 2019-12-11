@@ -16,20 +16,22 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateMonitorGroupInstancesRequest extends RpcAcsRequest<CreateMonitorGroupInstancesResponse> {
-	
-	public CreateMonitorGroupInstancesRequest() {
-		super("Cms", "2019-01-01", "CreateMonitorGroupInstances", "cms");
-	}
+	   
 
 	private List<Instances> instancess;
 
 	private Long groupId;
+	public CreateMonitorGroupInstancesRequest() {
+		super("Cms", "2019-01-01", "CreateMonitorGroupInstances", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public List<Instances> getInstancess() {
 		return this.instancess;
@@ -84,26 +86,10 @@ public class CreateMonitorGroupInstancesRequest extends RpcAcsRequest<CreateMoni
 			this.instanceName = instanceName;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}

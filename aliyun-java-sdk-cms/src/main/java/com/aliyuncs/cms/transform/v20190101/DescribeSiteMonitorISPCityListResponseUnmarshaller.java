@@ -24,28 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSiteMonitorISPCityListResponseUnmarshaller {
 
-	public static DescribeSiteMonitorISPCityListResponse unmarshall(DescribeSiteMonitorISPCityListResponse describeSiteMonitorISPCityListResponse, UnmarshallerContext context) {
+	public static DescribeSiteMonitorISPCityListResponse unmarshall(DescribeSiteMonitorISPCityListResponse describeSiteMonitorISPCityListResponse, UnmarshallerContext _ctx) {
 		
-		describeSiteMonitorISPCityListResponse.setRequestId(context.stringValue("DescribeSiteMonitorISPCityListResponse.RequestId"));
-		describeSiteMonitorISPCityListResponse.setCode(context.stringValue("DescribeSiteMonitorISPCityListResponse.Code"));
-		describeSiteMonitorISPCityListResponse.setMessage(context.stringValue("DescribeSiteMonitorISPCityListResponse.Message"));
-		describeSiteMonitorISPCityListResponse.setSuccess(context.stringValue("DescribeSiteMonitorISPCityListResponse.Success"));
+		describeSiteMonitorISPCityListResponse.setRequestId(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.RequestId"));
+		describeSiteMonitorISPCityListResponse.setCode(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.Code"));
+		describeSiteMonitorISPCityListResponse.setMessage(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.Message"));
+		describeSiteMonitorISPCityListResponse.setSuccess(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.Success"));
 
 		List<IspCity> ispCityList = new ArrayList<IspCity>();
-		for (int i = 0; i < context.lengthValue("DescribeSiteMonitorISPCityListResponse.IspCityList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSiteMonitorISPCityListResponse.IspCityList.Length"); i++) {
 			IspCity ispCity = new IspCity();
-			ispCity.setIsp(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Isp"));
-			ispCity.setCity(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].City"));
-			ispCity.setIspNamezh_CN(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IspName.zh_CN"));
-			ispCity.setCityNamezh_CN(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].CityName.zh_CN"));
-			ispCity.setRegionzh_CN(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region.zh_CN"));
-			ispCity.setCountryzh_CN(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country.zh_CN"));
-			ispCity.setIspNameen(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IspName.en"));
-			ispCity.setCityNameen(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].CityName.en"));
-			ispCity.setRegionzh_CN1(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region.zh_CN"));
-			ispCity.setCountryzh_CN2(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country.zh_CN"));
-			ispCity.setRegionen(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region.en"));
-			ispCity.setCountryen(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country.en"));
+			ispCity.setIsp(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Isp"));
+			ispCity.setCity(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].City"));
+			ispCity.setIspNamezh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IspName.zh_CN"));
+			ispCity.setCityNamezh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].CityName.zh_CN"));
+			ispCity.setRegionzh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region.zh_CN"));
+			ispCity.setCountryzh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country.zh_CN"));
+			ispCity.setIspNameen(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IspName.en"));
+			ispCity.setCityNameen(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].CityName.en"));
+			ispCity.setRegionen(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region.en"));
+			ispCity.setCountryen(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country.en"));
 
 			ispCityList.add(ispCity);
 		}

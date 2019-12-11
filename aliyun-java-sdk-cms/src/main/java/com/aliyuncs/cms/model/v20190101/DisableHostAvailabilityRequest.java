@@ -16,18 +16,20 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DisableHostAvailabilityRequest extends RpcAcsRequest<DisableHostAvailabilityResponse> {
-	
-	public DisableHostAvailabilityRequest() {
-		super("Cms", "2019-01-01", "DisableHostAvailability", "cms");
-	}
+	   
 
 	private List<Long> ids;
+	public DisableHostAvailabilityRequest() {
+		super("Cms", "2019-01-01", "DisableHostAvailability", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public List<Long> getIds() {
 		return this.ids;

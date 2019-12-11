@@ -15,20 +15,22 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMetricRuleCountRequest extends RpcAcsRequest<DescribeMetricRuleCountResponse> {
-	
-	public DescribeMetricRuleCountRequest() {
-		super("Cms", "2019-01-01", "DescribeMetricRuleCount", "cms");
-	}
+	   
 
 	private String namespace;
 
 	private String metricName;
+	public DescribeMetricRuleCountRequest() {
+		super("Cms", "2019-01-01", "DescribeMetricRuleCount", "cms");
+		setMethod(MethodType.GET);
+	}
 
 	public String getNamespace() {
 		return this.namespace;

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UninstallMonitoringAgentResponseUnmarshaller {
 
-	public static UninstallMonitoringAgentResponse unmarshall(UninstallMonitoringAgentResponse uninstallMonitoringAgentResponse, UnmarshallerContext context) {
+	public static UninstallMonitoringAgentResponse unmarshall(UninstallMonitoringAgentResponse uninstallMonitoringAgentResponse, UnmarshallerContext _ctx) {
 		
-		uninstallMonitoringAgentResponse.setRequestId(context.stringValue("UninstallMonitoringAgentResponse.RequestId"));
-		uninstallMonitoringAgentResponse.setCode(context.stringValue("UninstallMonitoringAgentResponse.Code"));
-		uninstallMonitoringAgentResponse.setMessage(context.stringValue("UninstallMonitoringAgentResponse.Message"));
-		uninstallMonitoringAgentResponse.setSuccess(context.booleanValue("UninstallMonitoringAgentResponse.Success"));
+		uninstallMonitoringAgentResponse.setRequestId(_ctx.stringValue("UninstallMonitoringAgentResponse.RequestId"));
+		uninstallMonitoringAgentResponse.setCode(_ctx.stringValue("UninstallMonitoringAgentResponse.Code"));
+		uninstallMonitoringAgentResponse.setMessage(_ctx.stringValue("UninstallMonitoringAgentResponse.Message"));
+		uninstallMonitoringAgentResponse.setSuccess(_ctx.booleanValue("UninstallMonitoringAgentResponse.Success"));
 	 
 	 	return uninstallMonitoringAgentResponse;
 	}

@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMonitoringAgentConfigResponseUnmarshaller {
 
-	public static DescribeMonitoringAgentConfigResponse unmarshall(DescribeMonitoringAgentConfigResponse describeMonitoringAgentConfigResponse, UnmarshallerContext context) {
+	public static DescribeMonitoringAgentConfigResponse unmarshall(DescribeMonitoringAgentConfigResponse describeMonitoringAgentConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeMonitoringAgentConfigResponse.setRequestId(context.stringValue("DescribeMonitoringAgentConfigResponse.RequestId"));
-		describeMonitoringAgentConfigResponse.setCode(context.stringValue("DescribeMonitoringAgentConfigResponse.Code"));
-		describeMonitoringAgentConfigResponse.setMessage(context.stringValue("DescribeMonitoringAgentConfigResponse.Message"));
-		describeMonitoringAgentConfigResponse.setSuccess(context.booleanValue("DescribeMonitoringAgentConfigResponse.Success"));
-		describeMonitoringAgentConfigResponse.setAutoInstall(context.booleanValue("DescribeMonitoringAgentConfigResponse.AutoInstall"));
-		describeMonitoringAgentConfigResponse.setEnableInstallAgentNewECS(context.booleanValue("DescribeMonitoringAgentConfigResponse.EnableInstallAgentNewECS"));
-		describeMonitoringAgentConfigResponse.setEnableActiveAlert(context.stringValue("DescribeMonitoringAgentConfigResponse.EnableActiveAlert"));
+		describeMonitoringAgentConfigResponse.setRequestId(_ctx.stringValue("DescribeMonitoringAgentConfigResponse.RequestId"));
+		describeMonitoringAgentConfigResponse.setCode(_ctx.stringValue("DescribeMonitoringAgentConfigResponse.Code"));
+		describeMonitoringAgentConfigResponse.setMessage(_ctx.stringValue("DescribeMonitoringAgentConfigResponse.Message"));
+		describeMonitoringAgentConfigResponse.setSuccess(_ctx.booleanValue("DescribeMonitoringAgentConfigResponse.Success"));
+		describeMonitoringAgentConfigResponse.setAutoInstall(_ctx.booleanValue("DescribeMonitoringAgentConfigResponse.AutoInstall"));
+		describeMonitoringAgentConfigResponse.setEnableInstallAgentNewECS(_ctx.booleanValue("DescribeMonitoringAgentConfigResponse.EnableInstallAgentNewECS"));
+		describeMonitoringAgentConfigResponse.setEnableActiveAlert(_ctx.stringValue("DescribeMonitoringAgentConfigResponse.EnableActiveAlert"));
 	 
 	 	return describeMonitoringAgentConfigResponse;
 	}

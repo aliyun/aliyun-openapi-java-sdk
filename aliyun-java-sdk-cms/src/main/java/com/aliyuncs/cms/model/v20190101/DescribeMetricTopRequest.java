@@ -15,26 +15,14 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMetricTopRequest extends RpcAcsRequest<DescribeMetricTopResponse> {
-	
-	public DescribeMetricTopRequest() {
-		super("Cms", "2019-01-01", "DescribeMetricTop", "cms");
-	}
-
-	private String period;
-
-	private String namespace;
-
-	private String length;
-
-	private String endTime;
-
-	private String orderby;
+	   
 
 	private String express;
 
@@ -42,9 +30,56 @@ public class DescribeMetricTopRequest extends RpcAcsRequest<DescribeMetricTopRes
 
 	private String metricName;
 
-	private String dimensions;
+	private String period;
+
+	private String length;
+
+	private String endTime;
+
+	private String orderby;
 
 	private String orderDesc;
+
+	private String namespace;
+
+	private String dimensions;
+	public DescribeMetricTopRequest() {
+		super("Cms", "2019-01-01", "DescribeMetricTop", "cms");
+		setMethod(MethodType.POST);
+	}
+
+	public String getExpress() {
+		return this.express;
+	}
+
+	public void setExpress(String express) {
+		this.express = express;
+		if(express != null){
+			putQueryParameter("Express", express);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getMetricName() {
+		return this.metricName;
+	}
+
+	public void setMetricName(String metricName) {
+		this.metricName = metricName;
+		if(metricName != null){
+			putQueryParameter("MetricName", metricName);
+		}
+	}
 
 	public String getPeriod() {
 		return this.period;
@@ -54,17 +89,6 @@ public class DescribeMetricTopRequest extends RpcAcsRequest<DescribeMetricTopRes
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period);
-		}
-	}
-
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
 		}
 	}
 
@@ -101,36 +125,25 @@ public class DescribeMetricTopRequest extends RpcAcsRequest<DescribeMetricTopRes
 		}
 	}
 
-	public String getExpress() {
-		return this.express;
+	public String getOrderDesc() {
+		return this.orderDesc;
 	}
 
-	public void setExpress(String express) {
-		this.express = express;
-		if(express != null){
-			putQueryParameter("Express", express);
+	public void setOrderDesc(String orderDesc) {
+		this.orderDesc = orderDesc;
+		if(orderDesc != null){
+			putQueryParameter("OrderDesc", orderDesc);
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getNamespace() {
+		return this.namespace;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getMetricName() {
-		return this.metricName;
-	}
-
-	public void setMetricName(String metricName) {
-		this.metricName = metricName;
-		if(metricName != null){
-			putQueryParameter("MetricName", metricName);
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 
@@ -142,17 +155,6 @@ public class DescribeMetricTopRequest extends RpcAcsRequest<DescribeMetricTopRes
 		this.dimensions = dimensions;
 		if(dimensions != null){
 			putQueryParameter("Dimensions", dimensions);
-		}
-	}
-
-	public String getOrderDesc() {
-		return this.orderDesc;
-	}
-
-	public void setOrderDesc(String orderDesc) {
-		this.orderDesc = orderDesc;
-		if(orderDesc != null){
-			putQueryParameter("OrderDesc", orderDesc);
 		}
 	}
 

@@ -15,40 +15,31 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifySiteMonitorRequest extends RpcAcsRequest<ModifySiteMonitorResponse> {
-	
-	public ModifySiteMonitorRequest() {
-		super("Cms", "2019-01-01", "ModifySiteMonitor", "cms");
-	}
-
-	private String optionsJson;
+	   
 
 	private String address;
 
-	private String alertIds;
-
 	private String taskName;
+
+	private String ispCities;
+
+	private String optionsJson;
+
+	private String alertIds;
 
 	private String interval;
 
 	private String taskId;
-
-	private String ispCities;
-
-	public String getOptionsJson() {
-		return this.optionsJson;
-	}
-
-	public void setOptionsJson(String optionsJson) {
-		this.optionsJson = optionsJson;
-		if(optionsJson != null){
-			putQueryParameter("OptionsJson", optionsJson);
-		}
+	public ModifySiteMonitorRequest() {
+		super("Cms", "2019-01-01", "ModifySiteMonitor", "cms");
+		setMethod(MethodType.POST);
 	}
 
 	public String getAddress() {
@@ -62,17 +53,6 @@ public class ModifySiteMonitorRequest extends RpcAcsRequest<ModifySiteMonitorRes
 		}
 	}
 
-	public String getAlertIds() {
-		return this.alertIds;
-	}
-
-	public void setAlertIds(String alertIds) {
-		this.alertIds = alertIds;
-		if(alertIds != null){
-			putQueryParameter("AlertIds", alertIds);
-		}
-	}
-
 	public String getTaskName() {
 		return this.taskName;
 	}
@@ -81,6 +61,39 @@ public class ModifySiteMonitorRequest extends RpcAcsRequest<ModifySiteMonitorRes
 		this.taskName = taskName;
 		if(taskName != null){
 			putQueryParameter("TaskName", taskName);
+		}
+	}
+
+	public String getIspCities() {
+		return this.ispCities;
+	}
+
+	public void setIspCities(String ispCities) {
+		this.ispCities = ispCities;
+		if(ispCities != null){
+			putQueryParameter("IspCities", ispCities);
+		}
+	}
+
+	public String getOptionsJson() {
+		return this.optionsJson;
+	}
+
+	public void setOptionsJson(String optionsJson) {
+		this.optionsJson = optionsJson;
+		if(optionsJson != null){
+			putQueryParameter("OptionsJson", optionsJson);
+		}
+	}
+
+	public String getAlertIds() {
+		return this.alertIds;
+	}
+
+	public void setAlertIds(String alertIds) {
+		this.alertIds = alertIds;
+		if(alertIds != null){
+			putQueryParameter("AlertIds", alertIds);
 		}
 	}
 
@@ -103,17 +116,6 @@ public class ModifySiteMonitorRequest extends RpcAcsRequest<ModifySiteMonitorRes
 		this.taskId = taskId;
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId);
-		}
-	}
-
-	public String getIspCities() {
-		return this.ispCities;
-	}
-
-	public void setIspCities(String ispCities) {
-		this.ispCities = ispCities;
-		if(ispCities != null){
-			putQueryParameter("IspCities", ispCities);
 		}
 	}
 

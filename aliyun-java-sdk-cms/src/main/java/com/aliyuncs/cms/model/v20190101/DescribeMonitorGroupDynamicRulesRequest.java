@@ -15,18 +15,20 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMonitorGroupDynamicRulesRequest extends RpcAcsRequest<DescribeMonitorGroupDynamicRulesResponse> {
-	
-	public DescribeMonitorGroupDynamicRulesRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitorGroupDynamicRules", "cms");
-	}
+	   
 
 	private Long groupId;
+	public DescribeMonitorGroupDynamicRulesRequest() {
+		super("Cms", "2019-01-01", "DescribeMonitorGroupDynamicRules", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getGroupId() {
 		return this.groupId;

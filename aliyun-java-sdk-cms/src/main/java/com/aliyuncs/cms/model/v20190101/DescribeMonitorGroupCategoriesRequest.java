@@ -15,18 +15,20 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMonitorGroupCategoriesRequest extends RpcAcsRequest<DescribeMonitorGroupCategoriesResponse> {
-	
-	public DescribeMonitorGroupCategoriesRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitorGroupCategories", "cms");
-	}
+	   
 
 	private Long groupId;
+	public DescribeMonitorGroupCategoriesRequest() {
+		super("Cms", "2019-01-01", "DescribeMonitorGroupCategories", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getGroupId() {
 		return this.groupId;

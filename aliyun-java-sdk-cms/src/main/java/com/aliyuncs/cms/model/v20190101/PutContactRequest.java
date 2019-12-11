@@ -15,16 +15,16 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class PutContactRequest extends RpcAcsRequest<PutContactResponse> {
-	
-	public PutContactRequest() {
-		super("Cms", "2019-01-01", "PutContact", "cms");
-	}
+	   
+
+	private String channelsDingWebHook;
 
 	private String contactName;
 
@@ -32,11 +32,24 @@ public class PutContactRequest extends RpcAcsRequest<PutContactResponse> {
 
 	private String channelsAliIM;
 
-	private String channelsDingWebHook;
-
 	private String describe;
 
 	private String channelsSMS;
+	public PutContactRequest() {
+		super("Cms", "2019-01-01", "PutContact", "cms");
+		setMethod(MethodType.POST);
+	}
+
+	public String getChannelsDingWebHook() {
+		return this.channelsDingWebHook;
+	}
+
+	public void setChannelsDingWebHook(String channelsDingWebHook) {
+		this.channelsDingWebHook = channelsDingWebHook;
+		if(channelsDingWebHook != null){
+			putQueryParameter("Channels.DingWebHook", channelsDingWebHook);
+		}
+	}
 
 	public String getContactName() {
 		return this.contactName;
@@ -68,17 +81,6 @@ public class PutContactRequest extends RpcAcsRequest<PutContactResponse> {
 		this.channelsAliIM = channelsAliIM;
 		if(channelsAliIM != null){
 			putQueryParameter("Channels.AliIM", channelsAliIM);
-		}
-	}
-
-	public String getChannelsDingWebHook() {
-		return this.channelsDingWebHook;
-	}
-
-	public void setChannelsDingWebHook(String channelsDingWebHook) {
-		this.channelsDingWebHook = channelsDingWebHook;
-		if(channelsDingWebHook != null){
-			putQueryParameter("Channels.DingWebHook", channelsDingWebHook);
 		}
 	}
 

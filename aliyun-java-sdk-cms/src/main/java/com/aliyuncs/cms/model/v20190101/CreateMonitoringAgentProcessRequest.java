@@ -15,32 +15,23 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateMonitoringAgentProcessRequest extends RpcAcsRequest<CreateMonitoringAgentProcessResponse> {
-	
-	public CreateMonitoringAgentProcessRequest() {
-		super("Cms", "2019-01-01", "CreateMonitoringAgentProcess", "cms");
-	}
-
-	private String instanceId;
+	   
 
 	private String processName;
 
+	private String instanceId;
+
 	private String processUser;
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
+	public CreateMonitoringAgentProcessRequest() {
+		super("Cms", "2019-01-01", "CreateMonitoringAgentProcess", "cms");
+		setMethod(MethodType.POST);
 	}
 
 	public String getProcessName() {
@@ -51,6 +42,17 @@ public class CreateMonitoringAgentProcessRequest extends RpcAcsRequest<CreateMon
 		this.processName = processName;
 		if(processName != null){
 			putQueryParameter("ProcessName", processName);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

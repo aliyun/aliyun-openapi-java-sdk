@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyMetricRuleTemplateResponseUnmarshaller {
 
-	public static ModifyMetricRuleTemplateResponse unmarshall(ModifyMetricRuleTemplateResponse modifyMetricRuleTemplateResponse, UnmarshallerContext context) {
+	public static ModifyMetricRuleTemplateResponse unmarshall(ModifyMetricRuleTemplateResponse modifyMetricRuleTemplateResponse, UnmarshallerContext _ctx) {
 		
-		modifyMetricRuleTemplateResponse.setRequestId(context.stringValue("ModifyMetricRuleTemplateResponse.RequestId"));
-		modifyMetricRuleTemplateResponse.setSuccess(context.booleanValue("ModifyMetricRuleTemplateResponse.Success"));
-		modifyMetricRuleTemplateResponse.setCode(context.integerValue("ModifyMetricRuleTemplateResponse.Code"));
-		modifyMetricRuleTemplateResponse.setMessage(context.stringValue("ModifyMetricRuleTemplateResponse.Message"));
+		modifyMetricRuleTemplateResponse.setRequestId(_ctx.stringValue("ModifyMetricRuleTemplateResponse.RequestId"));
+		modifyMetricRuleTemplateResponse.setSuccess(_ctx.booleanValue("ModifyMetricRuleTemplateResponse.Success"));
+		modifyMetricRuleTemplateResponse.setCode(_ctx.integerValue("ModifyMetricRuleTemplateResponse.Code"));
+		modifyMetricRuleTemplateResponse.setMessage(_ctx.stringValue("ModifyMetricRuleTemplateResponse.Message"));
 	 
 	 	return modifyMetricRuleTemplateResponse;
 	}

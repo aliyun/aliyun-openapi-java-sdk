@@ -15,22 +15,35 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeContactListRequest extends RpcAcsRequest<DescribeContactListResponse> {
-	
-	public DescribeContactListRequest() {
-		super("Cms", "2019-01-01", "DescribeContactList", "cms");
-	}
+	   
+
+	private Integer pageNumber;
 
 	private String contactName;
 
 	private Integer pageSize;
+	public DescribeContactListRequest() {
+		super("Cms", "2019-01-01", "DescribeContactList", "cms");
+		setMethod(MethodType.POST);
+	}
 
-	private Integer pageNumber;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getContactName() {
 		return this.contactName;
@@ -51,17 +64,6 @@ public class DescribeContactListRequest extends RpcAcsRequest<DescribeContactLis
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

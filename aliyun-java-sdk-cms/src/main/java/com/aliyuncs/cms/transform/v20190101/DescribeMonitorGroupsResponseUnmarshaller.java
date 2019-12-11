@@ -20,40 +20,57 @@ import java.util.List;
 import com.aliyuncs.cms.model.v20190101.DescribeMonitorGroupsResponse;
 import com.aliyuncs.cms.model.v20190101.DescribeMonitorGroupsResponse.Resource;
 import com.aliyuncs.cms.model.v20190101.DescribeMonitorGroupsResponse.Resource.ContactGroup;
+import com.aliyuncs.cms.model.v20190101.DescribeMonitorGroupsResponse.Resource.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeMonitorGroupsResponseUnmarshaller {
 
-	public static DescribeMonitorGroupsResponse unmarshall(DescribeMonitorGroupsResponse describeMonitorGroupsResponse, UnmarshallerContext context) {
+	public static DescribeMonitorGroupsResponse unmarshall(DescribeMonitorGroupsResponse describeMonitorGroupsResponse, UnmarshallerContext _ctx) {
 		
-		describeMonitorGroupsResponse.setRequestId(context.stringValue("DescribeMonitorGroupsResponse.RequestId"));
-		describeMonitorGroupsResponse.setSuccess(context.booleanValue("DescribeMonitorGroupsResponse.Success"));
-		describeMonitorGroupsResponse.setCode(context.integerValue("DescribeMonitorGroupsResponse.Code"));
-		describeMonitorGroupsResponse.setMessage(context.stringValue("DescribeMonitorGroupsResponse.Message"));
-		describeMonitorGroupsResponse.setPageNumber(context.integerValue("DescribeMonitorGroupsResponse.PageNumber"));
-		describeMonitorGroupsResponse.setPageSize(context.integerValue("DescribeMonitorGroupsResponse.PageSize"));
-		describeMonitorGroupsResponse.setTotal(context.integerValue("DescribeMonitorGroupsResponse.Total"));
+		describeMonitorGroupsResponse.setRequestId(_ctx.stringValue("DescribeMonitorGroupsResponse.RequestId"));
+		describeMonitorGroupsResponse.setSuccess(_ctx.booleanValue("DescribeMonitorGroupsResponse.Success"));
+		describeMonitorGroupsResponse.setCode(_ctx.integerValue("DescribeMonitorGroupsResponse.Code"));
+		describeMonitorGroupsResponse.setMessage(_ctx.stringValue("DescribeMonitorGroupsResponse.Message"));
+		describeMonitorGroupsResponse.setPageNumber(_ctx.integerValue("DescribeMonitorGroupsResponse.PageNumber"));
+		describeMonitorGroupsResponse.setPageSize(_ctx.integerValue("DescribeMonitorGroupsResponse.PageSize"));
+		describeMonitorGroupsResponse.setTotal(_ctx.integerValue("DescribeMonitorGroupsResponse.Total"));
 
 		List<Resource> resources = new ArrayList<Resource>();
-		for (int i = 0; i < context.lengthValue("DescribeMonitorGroupsResponse.Resources.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMonitorGroupsResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setGroupId(context.longValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GroupId"));
-			resource.setGroupName(context.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GroupName"));
-			resource.setServiceId(context.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].ServiceId"));
-			resource.setType(context.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].Type"));
-			resource.setGmtModified(context.longValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GmtModified"));
-			resource.setGmtCreate(context.longValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GmtCreate"));
-			resource.setBindUrl(context.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].BindUrl"));
+			resource.setGroupId(_ctx.longValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GroupId"));
+			resource.setGroupName(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GroupName"));
+			resource.setServiceId(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].ServiceId"));
+			resource.setType(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].Type"));
+			resource.setGmtModified(_ctx.longValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GmtModified"));
+			resource.setGmtCreate(_ctx.longValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GmtCreate"));
+			resource.setBindUrl(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].BindUrl"));
+
+			List<String> templateIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeMonitorGroupsResponse.Resources["+ i +"].TemplateIds.Length"); j++) {
+				templateIds.add(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].TemplateIds["+ j +"]"));
+			}
+			resource.setTemplateIds(templateIds);
 
 			List<ContactGroup> contactGroups = new ArrayList<ContactGroup>();
-			for (int j = 0; j < context.lengthValue("DescribeMonitorGroupsResponse.Resources["+ i +"].ContactGroups.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeMonitorGroupsResponse.Resources["+ i +"].ContactGroups.Length"); j++) {
 				ContactGroup contactGroup = new ContactGroup();
-				contactGroup.setName(context.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].ContactGroups["+ j +"].Name"));
+				contactGroup.setName(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].ContactGroups["+ j +"].Name"));
 
 				contactGroups.add(contactGroup);
 			}
 			resource.setContactGroups(contactGroups);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeMonitorGroupsResponse.Resources["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			resource.setTags(tags);
 
 			resources.add(resource);
 		}

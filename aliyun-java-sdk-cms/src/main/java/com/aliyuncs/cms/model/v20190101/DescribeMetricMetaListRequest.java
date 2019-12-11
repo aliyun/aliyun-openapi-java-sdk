@@ -15,26 +15,50 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMetricMetaListRequest extends RpcAcsRequest<DescribeMetricMetaListResponse> {
-	
-	public DescribeMetricMetaListRequest() {
-		super("Cms", "2019-01-01", "DescribeMetricMetaList", "cms");
-	}
+	   
+
+	private Integer pageNumber;
+
+	private String labels;
 
 	private String namespace;
 
 	private Integer pageSize;
 
 	private String metricName;
+	public DescribeMetricMetaListRequest() {
+		super("Cms", "2019-01-01", "DescribeMetricMetaList", "cms");
+		setMethod(MethodType.POST);
+	}
 
-	private Integer pageNumber;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
 
-	private String labels;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getLabels() {
+		return this.labels;
+	}
+
+	public void setLabels(String labels) {
+		this.labels = labels;
+		if(labels != null){
+			putQueryParameter("Labels", labels);
+		}
+	}
 
 	public String getNamespace() {
 		return this.namespace;
@@ -66,28 +90,6 @@ public class DescribeMetricMetaListRequest extends RpcAcsRequest<DescribeMetricM
 		this.metricName = metricName;
 		if(metricName != null){
 			putQueryParameter("MetricName", metricName);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getLabels() {
-		return this.labels;
-	}
-
-	public void setLabels(String labels) {
-		this.labels = labels;
-		if(labels != null){
-			putQueryParameter("Labels", labels);
 		}
 	}
 

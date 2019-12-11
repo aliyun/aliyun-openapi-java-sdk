@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PutMonitoringConfigResponseUnmarshaller {
 
-	public static PutMonitoringConfigResponse unmarshall(PutMonitoringConfigResponse putMonitoringConfigResponse, UnmarshallerContext context) {
+	public static PutMonitoringConfigResponse unmarshall(PutMonitoringConfigResponse putMonitoringConfigResponse, UnmarshallerContext _ctx) {
 		
-		putMonitoringConfigResponse.setRequestId(context.stringValue("PutMonitoringConfigResponse.RequestId"));
-		putMonitoringConfigResponse.setCode(context.integerValue("PutMonitoringConfigResponse.Code"));
-		putMonitoringConfigResponse.setMessage(context.stringValue("PutMonitoringConfigResponse.Message"));
-		putMonitoringConfigResponse.setSuccess(context.booleanValue("PutMonitoringConfigResponse.Success"));
+		putMonitoringConfigResponse.setRequestId(_ctx.stringValue("PutMonitoringConfigResponse.RequestId"));
+		putMonitoringConfigResponse.setCode(_ctx.integerValue("PutMonitoringConfigResponse.Code"));
+		putMonitoringConfigResponse.setMessage(_ctx.stringValue("PutMonitoringConfigResponse.Message"));
+		putMonitoringConfigResponse.setSuccess(_ctx.booleanValue("PutMonitoringConfigResponse.Success"));
 	 
 	 	return putMonitoringConfigResponse;
 	}

@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteCustomMetricResponseUnmarshaller {
 
-	public static DeleteCustomMetricResponse unmarshall(DeleteCustomMetricResponse deleteCustomMetricResponse, UnmarshallerContext context) {
+	public static DeleteCustomMetricResponse unmarshall(DeleteCustomMetricResponse deleteCustomMetricResponse, UnmarshallerContext _ctx) {
 		
-		deleteCustomMetricResponse.setRequestId(context.stringValue("DeleteCustomMetricResponse.RequestId"));
-		deleteCustomMetricResponse.setCode(context.stringValue("DeleteCustomMetricResponse.Code"));
-		deleteCustomMetricResponse.setMessage(context.stringValue("DeleteCustomMetricResponse.Message"));
+		deleteCustomMetricResponse.setRequestId(_ctx.stringValue("DeleteCustomMetricResponse.RequestId"));
+		deleteCustomMetricResponse.setCode(_ctx.stringValue("DeleteCustomMetricResponse.Code"));
+		deleteCustomMetricResponse.setMessage(_ctx.stringValue("DeleteCustomMetricResponse.Message"));
 	 
 	 	return deleteCustomMetricResponse;
 	}

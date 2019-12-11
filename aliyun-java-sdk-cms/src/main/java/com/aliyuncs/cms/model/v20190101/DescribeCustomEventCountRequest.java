@@ -15,16 +15,14 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeCustomEventCountRequest extends RpcAcsRequest<DescribeCustomEventCountResponse> {
-	
-	public DescribeCustomEventCountRequest() {
-		super("Cms", "2019-01-01", "DescribeCustomEventCount", "cms");
-	}
+	   
 
 	private String eventId;
 
@@ -32,13 +30,17 @@ public class DescribeCustomEventCountRequest extends RpcAcsRequest<DescribeCusto
 
 	private String groupId;
 
-	private String name;
-
 	private String endTime;
 
 	private String startTime;
 
 	private String searchKeywords;
+
+	private String name;
+	public DescribeCustomEventCountRequest() {
+		super("Cms", "2019-01-01", "DescribeCustomEventCount", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getEventId() {
 		return this.eventId;
@@ -73,17 +75,6 @@ public class DescribeCustomEventCountRequest extends RpcAcsRequest<DescribeCusto
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -114,6 +105,17 @@ public class DescribeCustomEventCountRequest extends RpcAcsRequest<DescribeCusto
 		this.searchKeywords = searchKeywords;
 		if(searchKeywords != null){
 			putQueryParameter("SearchKeywords", searchKeywords);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

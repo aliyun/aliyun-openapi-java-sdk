@@ -15,36 +15,38 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMetricRuleListRequest extends RpcAcsRequest<DescribeMetricRuleListResponse> {
-	
-	public DescribeMetricRuleListRequest() {
-		super("Cms", "2019-01-01", "DescribeMetricRuleList", "cms");
-	}
+	   
 
 	private Boolean enableState;
 
-	private String ruleIds;
-
-	private String groupId;
-
-	private String namespace;
+	private String ruleName;
 
 	private String pageSize;
 
-	private String alertState;
+	private String metricName;
 
-	private String ruleName;
+	private String groupId;
+
+	private String ruleIds;
+
+	private String namespace;
+
+	private String alertState;
 
 	private String page;
 
-	private String metricName;
-
 	private String dimensions;
+	public DescribeMetricRuleListRequest() {
+		super("Cms", "2019-01-01", "DescribeMetricRuleList", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public Boolean getEnableState() {
 		return this.enableState;
@@ -54,61 +56,6 @@ public class DescribeMetricRuleListRequest extends RpcAcsRequest<DescribeMetricR
 		this.enableState = enableState;
 		if(enableState != null){
 			putQueryParameter("EnableState", enableState.toString());
-		}
-	}
-
-	public String getRuleIds() {
-		return this.ruleIds;
-	}
-
-	public void setRuleIds(String ruleIds) {
-		this.ruleIds = ruleIds;
-		if(ruleIds != null){
-			putQueryParameter("RuleIds", ruleIds);
-		}
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
-	public String getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
-		}
-	}
-
-	public String getAlertState() {
-		return this.alertState;
-	}
-
-	public void setAlertState(String alertState) {
-		this.alertState = alertState;
-		if(alertState != null){
-			putQueryParameter("AlertState", alertState);
 		}
 	}
 
@@ -123,14 +70,14 @@ public class DescribeMetricRuleListRequest extends RpcAcsRequest<DescribeMetricR
 		}
 	}
 
-	public String getPage() {
-		return this.page;
+	public String getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setPage(String page) {
-		this.page = page;
-		if(page != null){
-			putQueryParameter("Page", page);
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
 		}
 	}
 
@@ -142,6 +89,61 @@ public class DescribeMetricRuleListRequest extends RpcAcsRequest<DescribeMetricR
 		this.metricName = metricName;
 		if(metricName != null){
 			putQueryParameter("MetricName", metricName);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getRuleIds() {
+		return this.ruleIds;
+	}
+
+	public void setRuleIds(String ruleIds) {
+		this.ruleIds = ruleIds;
+		if(ruleIds != null){
+			putQueryParameter("RuleIds", ruleIds);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getAlertState() {
+		return this.alertState;
+	}
+
+	public void setAlertState(String alertState) {
+		this.alertState = alertState;
+		if(alertState != null){
+			putQueryParameter("AlertState", alertState);
+		}
+	}
+
+	public String getPage() {
+		return this.page;
+	}
+
+	public void setPage(String page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page);
 		}
 	}
 

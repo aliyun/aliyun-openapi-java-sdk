@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSiteMonitorDataResponseUnmarshaller {
 
-	public static DescribeSiteMonitorDataResponse unmarshall(DescribeSiteMonitorDataResponse describeSiteMonitorDataResponse, UnmarshallerContext context) {
+	public static DescribeSiteMonitorDataResponse unmarshall(DescribeSiteMonitorDataResponse describeSiteMonitorDataResponse, UnmarshallerContext _ctx) {
 		
-		describeSiteMonitorDataResponse.setRequestId(context.stringValue("DescribeSiteMonitorDataResponse.RequestId"));
-		describeSiteMonitorDataResponse.setCode(context.stringValue("DescribeSiteMonitorDataResponse.Code"));
-		describeSiteMonitorDataResponse.setMessage(context.stringValue("DescribeSiteMonitorDataResponse.Message"));
-		describeSiteMonitorDataResponse.setSuccess(context.stringValue("DescribeSiteMonitorDataResponse.Success"));
-		describeSiteMonitorDataResponse.setData(context.stringValue("DescribeSiteMonitorDataResponse.Data"));
-		describeSiteMonitorDataResponse.setNextToken(context.stringValue("DescribeSiteMonitorDataResponse.NextToken"));
+		describeSiteMonitorDataResponse.setRequestId(_ctx.stringValue("DescribeSiteMonitorDataResponse.RequestId"));
+		describeSiteMonitorDataResponse.setCode(_ctx.stringValue("DescribeSiteMonitorDataResponse.Code"));
+		describeSiteMonitorDataResponse.setMessage(_ctx.stringValue("DescribeSiteMonitorDataResponse.Message"));
+		describeSiteMonitorDataResponse.setSuccess(_ctx.stringValue("DescribeSiteMonitorDataResponse.Success"));
+		describeSiteMonitorDataResponse.setData(_ctx.stringValue("DescribeSiteMonitorDataResponse.Data"));
+		describeSiteMonitorDataResponse.setNextToken(_ctx.stringValue("DescribeSiteMonitorDataResponse.NextToken"));
 	 
 	 	return describeSiteMonitorDataResponse;
 	}

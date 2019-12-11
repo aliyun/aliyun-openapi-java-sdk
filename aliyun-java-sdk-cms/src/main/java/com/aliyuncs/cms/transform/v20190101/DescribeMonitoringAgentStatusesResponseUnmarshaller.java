@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMonitoringAgentStatusesResponseUnmarshaller {
 
-	public static DescribeMonitoringAgentStatusesResponse unmarshall(DescribeMonitoringAgentStatusesResponse describeMonitoringAgentStatusesResponse, UnmarshallerContext context) {
+	public static DescribeMonitoringAgentStatusesResponse unmarshall(DescribeMonitoringAgentStatusesResponse describeMonitoringAgentStatusesResponse, UnmarshallerContext _ctx) {
 		
-		describeMonitoringAgentStatusesResponse.setRequestId(context.stringValue("DescribeMonitoringAgentStatusesResponse.RequestId"));
-		describeMonitoringAgentStatusesResponse.setCode(context.stringValue("DescribeMonitoringAgentStatusesResponse.Code"));
-		describeMonitoringAgentStatusesResponse.setMessage(context.stringValue("DescribeMonitoringAgentStatusesResponse.Message"));
-		describeMonitoringAgentStatusesResponse.setSuccess(context.booleanValue("DescribeMonitoringAgentStatusesResponse.Success"));
+		describeMonitoringAgentStatusesResponse.setRequestId(_ctx.stringValue("DescribeMonitoringAgentStatusesResponse.RequestId"));
+		describeMonitoringAgentStatusesResponse.setCode(_ctx.stringValue("DescribeMonitoringAgentStatusesResponse.Code"));
+		describeMonitoringAgentStatusesResponse.setMessage(_ctx.stringValue("DescribeMonitoringAgentStatusesResponse.Message"));
+		describeMonitoringAgentStatusesResponse.setSuccess(_ctx.booleanValue("DescribeMonitoringAgentStatusesResponse.Success"));
 
 		List<NodeStatus> nodeStatusList = new ArrayList<NodeStatus>();
-		for (int i = 0; i < context.lengthValue("DescribeMonitoringAgentStatusesResponse.NodeStatusList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMonitoringAgentStatusesResponse.NodeStatusList.Length"); i++) {
 			NodeStatus nodeStatus = new NodeStatus();
-			nodeStatus.setInstanceId(context.stringValue("DescribeMonitoringAgentStatusesResponse.NodeStatusList["+ i +"].InstanceId"));
-			nodeStatus.setAutoInstall(context.booleanValue("DescribeMonitoringAgentStatusesResponse.NodeStatusList["+ i +"].AutoInstall"));
-			nodeStatus.setStatus(context.stringValue("DescribeMonitoringAgentStatusesResponse.NodeStatusList["+ i +"].Status"));
+			nodeStatus.setInstanceId(_ctx.stringValue("DescribeMonitoringAgentStatusesResponse.NodeStatusList["+ i +"].InstanceId"));
+			nodeStatus.setAutoInstall(_ctx.booleanValue("DescribeMonitoringAgentStatusesResponse.NodeStatusList["+ i +"].AutoInstall"));
+			nodeStatus.setStatus(_ctx.stringValue("DescribeMonitoringAgentStatusesResponse.NodeStatusList["+ i +"].Status"));
 
 			nodeStatusList.add(nodeStatus);
 		}

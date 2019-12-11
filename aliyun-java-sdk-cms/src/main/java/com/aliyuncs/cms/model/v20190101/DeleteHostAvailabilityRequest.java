@@ -16,18 +16,20 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteHostAvailabilityRequest extends RpcAcsRequest<DeleteHostAvailabilityResponse> {
-	
-	public DeleteHostAvailabilityRequest() {
-		super("Cms", "2019-01-01", "DeleteHostAvailability", "cms");
-	}
+	   
 
 	private List<Long> ids;
+	public DeleteHostAvailabilityRequest() {
+		super("Cms", "2019-01-01", "DeleteHostAvailability", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public List<Long> getIds() {
 		return this.ids;

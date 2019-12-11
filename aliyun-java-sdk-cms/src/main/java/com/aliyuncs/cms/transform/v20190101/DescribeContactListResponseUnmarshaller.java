@@ -25,27 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeContactListResponseUnmarshaller {
 
-	public static DescribeContactListResponse unmarshall(DescribeContactListResponse describeContactListResponse, UnmarshallerContext context) {
+	public static DescribeContactListResponse unmarshall(DescribeContactListResponse describeContactListResponse, UnmarshallerContext _ctx) {
 		
-		describeContactListResponse.setRequestId(context.stringValue("DescribeContactListResponse.RequestId"));
-		describeContactListResponse.setSuccess(context.booleanValue("DescribeContactListResponse.Success"));
-		describeContactListResponse.setCode(context.stringValue("DescribeContactListResponse.Code"));
-		describeContactListResponse.setMessage(context.stringValue("DescribeContactListResponse.Message"));
-		describeContactListResponse.setTotal(context.integerValue("DescribeContactListResponse.Total"));
+		describeContactListResponse.setRequestId(_ctx.stringValue("DescribeContactListResponse.RequestId"));
+		describeContactListResponse.setSuccess(_ctx.booleanValue("DescribeContactListResponse.Success"));
+		describeContactListResponse.setCode(_ctx.stringValue("DescribeContactListResponse.Code"));
+		describeContactListResponse.setMessage(_ctx.stringValue("DescribeContactListResponse.Message"));
+		describeContactListResponse.setTotal(_ctx.integerValue("DescribeContactListResponse.Total"));
 
 		List<Contact> contacts = new ArrayList<Contact>();
-		for (int i = 0; i < context.lengthValue("DescribeContactListResponse.Contacts.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeContactListResponse.Contacts.Length"); i++) {
 			Contact contact = new Contact();
-			contact.setName(context.stringValue("DescribeContactListResponse.Contacts["+ i +"].Name"));
-			contact.setDesc(context.stringValue("DescribeContactListResponse.Contacts["+ i +"].Desc"));
-			contact.setCreateTime(context.longValue("DescribeContactListResponse.Contacts["+ i +"].CreateTime"));
-			contact.setUpdateTime(context.longValue("DescribeContactListResponse.Contacts["+ i +"].UpdateTime"));
+			contact.setName(_ctx.stringValue("DescribeContactListResponse.Contacts["+ i +"].Name"));
+			contact.setDesc(_ctx.stringValue("DescribeContactListResponse.Contacts["+ i +"].Desc"));
+			contact.setCreateTime(_ctx.longValue("DescribeContactListResponse.Contacts["+ i +"].CreateTime"));
+			contact.setUpdateTime(_ctx.longValue("DescribeContactListResponse.Contacts["+ i +"].UpdateTime"));
 
 			Channels channels = new Channels();
-			channels.setSMS(context.stringValue("DescribeContactListResponse.Contacts["+ i +"].Channels.SMS"));
-			channels.setMail(context.stringValue("DescribeContactListResponse.Contacts["+ i +"].Channels.Mail"));
-			channels.setAliIM(context.stringValue("DescribeContactListResponse.Contacts["+ i +"].Channels.AliIM"));
-			channels.setDingWebHook(context.stringValue("DescribeContactListResponse.Contacts["+ i +"].Channels.DingWebHook"));
+			channels.setSMS(_ctx.stringValue("DescribeContactListResponse.Contacts["+ i +"].Channels.SMS"));
+			channels.setMail(_ctx.stringValue("DescribeContactListResponse.Contacts["+ i +"].Channels.Mail"));
+			channels.setAliIM(_ctx.stringValue("DescribeContactListResponse.Contacts["+ i +"].Channels.AliIM"));
+			channels.setDingWebHook(_ctx.stringValue("DescribeContactListResponse.Contacts["+ i +"].Channels.DingWebHook"));
 			contact.setChannels(channels);
 
 			contacts.add(contact);

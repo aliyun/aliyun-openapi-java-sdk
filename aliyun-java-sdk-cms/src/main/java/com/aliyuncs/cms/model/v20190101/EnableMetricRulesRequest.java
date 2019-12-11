@@ -16,18 +16,20 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class EnableMetricRulesRequest extends RpcAcsRequest<EnableMetricRulesResponse> {
-	
-	public EnableMetricRulesRequest() {
-		super("Cms", "2019-01-01", "EnableMetricRules", "cms");
-	}
+	   
 
 	private List<String> ruleIds;
+	public EnableMetricRulesRequest() {
+		super("Cms", "2019-01-01", "EnableMetricRules", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public List<String> getRuleIds() {
 		return this.ruleIds;

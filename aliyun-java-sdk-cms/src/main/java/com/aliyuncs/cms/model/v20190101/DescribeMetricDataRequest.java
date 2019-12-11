@@ -15,20 +15,16 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMetricDataRequest extends RpcAcsRequest<DescribeMetricDataResponse> {
-	
-	public DescribeMetricDataRequest() {
-		super("Cms", "2019-01-01", "DescribeMetricData", "cms");
-	}
+	   
 
 	private String period;
-
-	private String namespace;
 
 	private String length;
 
@@ -38,9 +34,15 @@ public class DescribeMetricDataRequest extends RpcAcsRequest<DescribeMetricDataR
 
 	private String startTime;
 
+	private String namespace;
+
 	private String metricName;
 
 	private String dimensions;
+	public DescribeMetricDataRequest() {
+		super("Cms", "2019-01-01", "DescribeMetricData", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getPeriod() {
 		return this.period;
@@ -50,17 +52,6 @@ public class DescribeMetricDataRequest extends RpcAcsRequest<DescribeMetricDataR
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period);
-		}
-	}
-
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
 		}
 	}
 
@@ -105,6 +96,17 @@ public class DescribeMetricDataRequest extends RpcAcsRequest<DescribeMetricDataR
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

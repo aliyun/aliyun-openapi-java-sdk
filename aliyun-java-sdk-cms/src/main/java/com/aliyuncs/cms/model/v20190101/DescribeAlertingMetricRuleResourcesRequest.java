@@ -15,20 +15,26 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeAlertingMetricRuleResourcesRequest extends RpcAcsRequest<DescribeAlertingMetricRuleResourcesResponse> {
-	
-	public DescribeAlertingMetricRuleResourcesRequest() {
-		super("Cms", "2019-01-01", "DescribeAlertingMetricRuleResources", "cms");
-	}
+	   
 
 	private String groupId;
 
+	private Integer pageSize;
+
+	private Integer page;
+
 	private String ruleId;
+	public DescribeAlertingMetricRuleResourcesRequest() {
+		super("Cms", "2019-01-01", "DescribeAlertingMetricRuleResources", "cms");
+		setMethod(MethodType.GET);
+	}
 
 	public String getGroupId() {
 		return this.groupId;
@@ -38,6 +44,28 @@ public class DescribeAlertingMetricRuleResourcesRequest extends RpcAcsRequest<De
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
 		}
 	}
 

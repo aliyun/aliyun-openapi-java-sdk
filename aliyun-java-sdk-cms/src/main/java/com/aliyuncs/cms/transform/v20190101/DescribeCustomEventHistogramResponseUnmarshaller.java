@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCustomEventHistogramResponseUnmarshaller {
 
-	public static DescribeCustomEventHistogramResponse unmarshall(DescribeCustomEventHistogramResponse describeCustomEventHistogramResponse, UnmarshallerContext context) {
+	public static DescribeCustomEventHistogramResponse unmarshall(DescribeCustomEventHistogramResponse describeCustomEventHistogramResponse, UnmarshallerContext _ctx) {
 		
-		describeCustomEventHistogramResponse.setRequestId(context.stringValue("DescribeCustomEventHistogramResponse.RequestId"));
-		describeCustomEventHistogramResponse.setCode(context.stringValue("DescribeCustomEventHistogramResponse.Code"));
-		describeCustomEventHistogramResponse.setMessage(context.stringValue("DescribeCustomEventHistogramResponse.Message"));
-		describeCustomEventHistogramResponse.setSuccess(context.stringValue("DescribeCustomEventHistogramResponse.Success"));
+		describeCustomEventHistogramResponse.setRequestId(_ctx.stringValue("DescribeCustomEventHistogramResponse.RequestId"));
+		describeCustomEventHistogramResponse.setCode(_ctx.stringValue("DescribeCustomEventHistogramResponse.Code"));
+		describeCustomEventHistogramResponse.setMessage(_ctx.stringValue("DescribeCustomEventHistogramResponse.Message"));
+		describeCustomEventHistogramResponse.setSuccess(_ctx.stringValue("DescribeCustomEventHistogramResponse.Success"));
 
 		List<EventHistogram> eventHistograms = new ArrayList<EventHistogram>();
-		for (int i = 0; i < context.lengthValue("DescribeCustomEventHistogramResponse.EventHistograms.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCustomEventHistogramResponse.EventHistograms.Length"); i++) {
 			EventHistogram eventHistogram = new EventHistogram();
-			eventHistogram.setCount(context.longValue("DescribeCustomEventHistogramResponse.EventHistograms["+ i +"].Count"));
-			eventHistogram.setStartTime(context.longValue("DescribeCustomEventHistogramResponse.EventHistograms["+ i +"].StartTime"));
-			eventHistogram.setEndTime(context.longValue("DescribeCustomEventHistogramResponse.EventHistograms["+ i +"].EndTime"));
+			eventHistogram.setCount(_ctx.longValue("DescribeCustomEventHistogramResponse.EventHistograms["+ i +"].Count"));
+			eventHistogram.setStartTime(_ctx.longValue("DescribeCustomEventHistogramResponse.EventHistograms["+ i +"].StartTime"));
+			eventHistogram.setEndTime(_ctx.longValue("DescribeCustomEventHistogramResponse.EventHistograms["+ i +"].EndTime"));
 
 			eventHistograms.add(eventHistogram);
 		}

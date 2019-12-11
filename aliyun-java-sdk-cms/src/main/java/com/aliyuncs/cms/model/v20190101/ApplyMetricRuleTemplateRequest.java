@@ -15,18 +15,14 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ApplyMetricRuleTemplateRequest extends RpcAcsRequest<ApplyMetricRuleTemplateResponse> {
-	
-	public ApplyMetricRuleTemplateRequest() {
-		super("Cms", "2019-01-01", "ApplyMetricRuleTemplate", "cms");
-	}
-
-	private Long enableStartTime;
+	   
 
 	private String applyMode;
 
@@ -40,17 +36,12 @@ public class ApplyMetricRuleTemplateRequest extends RpcAcsRequest<ApplyMetricRul
 
 	private Long notifyLevel;
 
+	private Long enableStartTime;
+
 	private Long silenceTime;
-
-	public Long getEnableStartTime() {
-		return this.enableStartTime;
-	}
-
-	public void setEnableStartTime(Long enableStartTime) {
-		this.enableStartTime = enableStartTime;
-		if(enableStartTime != null){
-			putQueryParameter("EnableStartTime", enableStartTime.toString());
-		}
+	public ApplyMetricRuleTemplateRequest() {
+		super("Cms", "2019-01-01", "ApplyMetricRuleTemplate", "cms");
+		setMethod(MethodType.POST);
 	}
 
 	public String getApplyMode() {
@@ -116,6 +107,17 @@ public class ApplyMetricRuleTemplateRequest extends RpcAcsRequest<ApplyMetricRul
 		this.notifyLevel = notifyLevel;
 		if(notifyLevel != null){
 			putQueryParameter("NotifyLevel", notifyLevel.toString());
+		}
+	}
+
+	public Long getEnableStartTime() {
+		return this.enableStartTime;
+	}
+
+	public void setEnableStartTime(Long enableStartTime) {
+		this.enableStartTime = enableStartTime;
+		if(enableStartTime != null){
+			putQueryParameter("EnableStartTime", enableStartTime.toString());
 		}
 	}
 

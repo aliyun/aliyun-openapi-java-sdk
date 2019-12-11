@@ -15,20 +15,22 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMetricRuleTemplateAttributeRequest extends RpcAcsRequest<DescribeMetricRuleTemplateAttributeResponse> {
-	
-	public DescribeMetricRuleTemplateAttributeRequest() {
-		super("Cms", "2019-01-01", "DescribeMetricRuleTemplateAttribute", "cms");
-	}
+	   
 
 	private String name;
 
 	private String templateId;
+	public DescribeMetricRuleTemplateAttributeRequest() {
+		super("Cms", "2019-01-01", "DescribeMetricRuleTemplateAttribute", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getName() {
 		return this.name;

@@ -24,21 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMonitoringAgentProcessesResponseUnmarshaller {
 
-	public static DescribeMonitoringAgentProcessesResponse unmarshall(DescribeMonitoringAgentProcessesResponse describeMonitoringAgentProcessesResponse, UnmarshallerContext context) {
+	public static DescribeMonitoringAgentProcessesResponse unmarshall(DescribeMonitoringAgentProcessesResponse describeMonitoringAgentProcessesResponse, UnmarshallerContext _ctx) {
 		
-		describeMonitoringAgentProcessesResponse.setRequestId(context.stringValue("DescribeMonitoringAgentProcessesResponse.RequestId"));
-		describeMonitoringAgentProcessesResponse.setCode(context.stringValue("DescribeMonitoringAgentProcessesResponse.Code"));
-		describeMonitoringAgentProcessesResponse.setMessage(context.stringValue("DescribeMonitoringAgentProcessesResponse.Message"));
-		describeMonitoringAgentProcessesResponse.setSuccess(context.booleanValue("DescribeMonitoringAgentProcessesResponse.Success"));
+		describeMonitoringAgentProcessesResponse.setRequestId(_ctx.stringValue("DescribeMonitoringAgentProcessesResponse.RequestId"));
+		describeMonitoringAgentProcessesResponse.setCode(_ctx.stringValue("DescribeMonitoringAgentProcessesResponse.Code"));
+		describeMonitoringAgentProcessesResponse.setMessage(_ctx.stringValue("DescribeMonitoringAgentProcessesResponse.Message"));
+		describeMonitoringAgentProcessesResponse.setSuccess(_ctx.booleanValue("DescribeMonitoringAgentProcessesResponse.Success"));
 
 		List<NodeProcess> nodeProcesses = new ArrayList<NodeProcess>();
-		for (int i = 0; i < context.lengthValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses.Length"); i++) {
 			NodeProcess nodeProcess = new NodeProcess();
-			nodeProcess.setProcessId(context.longValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].ProcessId"));
-			nodeProcess.setInstanceId(context.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].InstanceId"));
-			nodeProcess.setProcessName(context.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].ProcessName"));
-			nodeProcess.setProcessUser(context.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].ProcessUser"));
-			nodeProcess.setCommand(context.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].Command"));
+			nodeProcess.setProcessId(_ctx.longValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].ProcessId"));
+			nodeProcess.setInstanceId(_ctx.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].InstanceId"));
+			nodeProcess.setProcessName(_ctx.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].ProcessName"));
+			nodeProcess.setProcessUser(_ctx.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].ProcessUser"));
+			nodeProcess.setCommand(_ctx.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].Command"));
+			nodeProcess.setGroupId(_ctx.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].GroupId"));
 
 			nodeProcesses.add(nodeProcess);
 		}

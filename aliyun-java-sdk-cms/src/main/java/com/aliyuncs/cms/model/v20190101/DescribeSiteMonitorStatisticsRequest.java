@@ -15,16 +15,14 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSiteMonitorStatisticsRequest extends RpcAcsRequest<DescribeSiteMonitorStatisticsResponse> {
-	
-	public DescribeSiteMonitorStatisticsRequest() {
-		super("Cms", "2019-01-01", "DescribeSiteMonitorStatistics", "cms");
-	}
+	   
 
 	private String timeRange;
 
@@ -33,6 +31,10 @@ public class DescribeSiteMonitorStatisticsRequest extends RpcAcsRequest<Describe
 	private String metricName;
 
 	private String taskId;
+	public DescribeSiteMonitorStatisticsRequest() {
+		super("Cms", "2019-01-01", "DescribeSiteMonitorStatistics", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getTimeRange() {
 		return this.timeRange;

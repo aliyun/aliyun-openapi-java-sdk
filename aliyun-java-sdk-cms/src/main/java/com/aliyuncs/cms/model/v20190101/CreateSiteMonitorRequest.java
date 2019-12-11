@@ -15,40 +15,31 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateSiteMonitorRequest extends RpcAcsRequest<CreateSiteMonitorResponse> {
-	
-	public CreateSiteMonitorRequest() {
-		super("Cms", "2019-01-01", "CreateSiteMonitor", "cms");
-	}
-
-	private String optionsJson;
+	   
 
 	private String address;
 
 	private String taskType;
 
-	private String alertIds;
-
 	private String taskName;
-
-	private String interval;
 
 	private String ispCities;
 
-	public String getOptionsJson() {
-		return this.optionsJson;
-	}
+	private String optionsJson;
 
-	public void setOptionsJson(String optionsJson) {
-		this.optionsJson = optionsJson;
-		if(optionsJson != null){
-			putQueryParameter("OptionsJson", optionsJson);
-		}
+	private String alertIds;
+
+	private String interval;
+	public CreateSiteMonitorRequest() {
+		super("Cms", "2019-01-01", "CreateSiteMonitor", "cms");
+		setMethod(MethodType.POST);
 	}
 
 	public String getAddress() {
@@ -73,17 +64,6 @@ public class CreateSiteMonitorRequest extends RpcAcsRequest<CreateSiteMonitorRes
 		}
 	}
 
-	public String getAlertIds() {
-		return this.alertIds;
-	}
-
-	public void setAlertIds(String alertIds) {
-		this.alertIds = alertIds;
-		if(alertIds != null){
-			putQueryParameter("AlertIds", alertIds);
-		}
-	}
-
 	public String getTaskName() {
 		return this.taskName;
 	}
@@ -95,17 +75,6 @@ public class CreateSiteMonitorRequest extends RpcAcsRequest<CreateSiteMonitorRes
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
 	public String getIspCities() {
 		return this.ispCities;
 	}
@@ -114,6 +83,39 @@ public class CreateSiteMonitorRequest extends RpcAcsRequest<CreateSiteMonitorRes
 		this.ispCities = ispCities;
 		if(ispCities != null){
 			putQueryParameter("IspCities", ispCities);
+		}
+	}
+
+	public String getOptionsJson() {
+		return this.optionsJson;
+	}
+
+	public void setOptionsJson(String optionsJson) {
+		this.optionsJson = optionsJson;
+		if(optionsJson != null){
+			putQueryParameter("OptionsJson", optionsJson);
+		}
+	}
+
+	public String getAlertIds() {
+		return this.alertIds;
+	}
+
+	public void setAlertIds(String alertIds) {
+		this.alertIds = alertIds;
+		if(alertIds != null){
+			putQueryParameter("AlertIds", alertIds);
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
 		}
 	}
 

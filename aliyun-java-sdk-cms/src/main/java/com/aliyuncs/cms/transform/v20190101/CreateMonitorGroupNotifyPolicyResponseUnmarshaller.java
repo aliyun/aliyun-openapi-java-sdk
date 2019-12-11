@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateMonitorGroupNotifyPolicyResponseUnmarshaller {
 
-	public static CreateMonitorGroupNotifyPolicyResponse unmarshall(CreateMonitorGroupNotifyPolicyResponse createMonitorGroupNotifyPolicyResponse, UnmarshallerContext context) {
+	public static CreateMonitorGroupNotifyPolicyResponse unmarshall(CreateMonitorGroupNotifyPolicyResponse createMonitorGroupNotifyPolicyResponse, UnmarshallerContext _ctx) {
 		
-		createMonitorGroupNotifyPolicyResponse.setRequestId(context.stringValue("CreateMonitorGroupNotifyPolicyResponse.RequestId"));
-		createMonitorGroupNotifyPolicyResponse.setCode(context.stringValue("CreateMonitorGroupNotifyPolicyResponse.Code"));
-		createMonitorGroupNotifyPolicyResponse.setMessage(context.stringValue("CreateMonitorGroupNotifyPolicyResponse.Message"));
-		createMonitorGroupNotifyPolicyResponse.setSuccess(context.stringValue("CreateMonitorGroupNotifyPolicyResponse.Success"));
-		createMonitorGroupNotifyPolicyResponse.setResult(context.integerValue("CreateMonitorGroupNotifyPolicyResponse.Result"));
+		createMonitorGroupNotifyPolicyResponse.setRequestId(_ctx.stringValue("CreateMonitorGroupNotifyPolicyResponse.RequestId"));
+		createMonitorGroupNotifyPolicyResponse.setCode(_ctx.stringValue("CreateMonitorGroupNotifyPolicyResponse.Code"));
+		createMonitorGroupNotifyPolicyResponse.setMessage(_ctx.stringValue("CreateMonitorGroupNotifyPolicyResponse.Message"));
+		createMonitorGroupNotifyPolicyResponse.setSuccess(_ctx.stringValue("CreateMonitorGroupNotifyPolicyResponse.Success"));
+		createMonitorGroupNotifyPolicyResponse.setResult(_ctx.integerValue("CreateMonitorGroupNotifyPolicyResponse.Result"));
 	 
 	 	return createMonitorGroupNotifyPolicyResponse;
 	}

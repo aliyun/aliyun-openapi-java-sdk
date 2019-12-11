@@ -16,18 +16,20 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class PutCustomEventRequest extends RpcAcsRequest<PutCustomEventResponse> {
-	
-	public PutCustomEventRequest() {
-		super("Cms", "2019-01-01", "PutCustomEvent", "cms");
-	}
+	   
 
 	private List<EventInfo> eventInfos;
+	public PutCustomEventRequest() {
+		super("Cms", "2019-01-01", "PutCustomEvent", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public List<EventInfo> getEventInfos() {
 		return this.eventInfos;

@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PutCustomEventResponseUnmarshaller {
 
-	public static PutCustomEventResponse unmarshall(PutCustomEventResponse putCustomEventResponse, UnmarshallerContext context) {
+	public static PutCustomEventResponse unmarshall(PutCustomEventResponse putCustomEventResponse, UnmarshallerContext _ctx) {
 		
-		putCustomEventResponse.setRequestId(context.stringValue("PutCustomEventResponse.RequestId"));
-		putCustomEventResponse.setCode(context.stringValue("PutCustomEventResponse.Code"));
-		putCustomEventResponse.setMessage(context.stringValue("PutCustomEventResponse.Message"));
+		putCustomEventResponse.setRequestId(_ctx.stringValue("PutCustomEventResponse.RequestId"));
+		putCustomEventResponse.setCode(_ctx.stringValue("PutCustomEventResponse.Code"));
+		putCustomEventResponse.setMessage(_ctx.stringValue("PutCustomEventResponse.Message"));
 	 
 	 	return putCustomEventResponse;
 	}

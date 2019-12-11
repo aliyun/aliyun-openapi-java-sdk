@@ -15,22 +15,35 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteMonitoringAgentProcessRequest extends RpcAcsRequest<DeleteMonitoringAgentProcessResponse> {
-	
-	public DeleteMonitoringAgentProcessRequest() {
-		super("Cms", "2019-01-01", "DeleteMonitoringAgentProcess", "cms");
-	}
+	   
+
+	private String processName;
 
 	private String instanceId;
 
 	private String processId;
+	public DeleteMonitoringAgentProcessRequest() {
+		super("Cms", "2019-01-01", "DeleteMonitoringAgentProcess", "cms");
+		setMethod(MethodType.POST);
+	}
 
-	private String processName;
+	public String getProcessName() {
+		return this.processName;
+	}
+
+	public void setProcessName(String processName) {
+		this.processName = processName;
+		if(processName != null){
+			putQueryParameter("ProcessName", processName);
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -51,17 +64,6 @@ public class DeleteMonitoringAgentProcessRequest extends RpcAcsRequest<DeleteMon
 		this.processId = processId;
 		if(processId != null){
 			putQueryParameter("ProcessId", processId);
-		}
-	}
-
-	public String getProcessName() {
-		return this.processName;
-	}
-
-	public void setProcessName(String processName) {
-		this.processName = processName;
-		if(processName != null){
-			putQueryParameter("ProcessName", processName);
 		}
 	}
 

@@ -15,18 +15,20 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteContactGroupRequest extends RpcAcsRequest<DeleteContactGroupResponse> {
-	
-	public DeleteContactGroupRequest() {
-		super("Cms", "2019-01-01", "DeleteContactGroup", "cms");
-	}
+	   
 
 	private String contactGroupName;
+	public DeleteContactGroupRequest() {
+		super("Cms", "2019-01-01", "DeleteContactGroup", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getContactGroupName() {
 		return this.contactGroupName;

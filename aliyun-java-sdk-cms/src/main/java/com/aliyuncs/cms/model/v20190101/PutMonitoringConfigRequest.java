@@ -15,30 +15,21 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class PutMonitoringConfigRequest extends RpcAcsRequest<PutMonitoringConfigResponse> {
-	
-	public PutMonitoringConfigRequest() {
-		super("Cms", "2019-01-01", "PutMonitoringConfig", "cms");
-	}
-
-	private Boolean enableInstallAgentNewECS;
+	   
 
 	private Boolean autoInstall;
 
-	public Boolean getEnableInstallAgentNewECS() {
-		return this.enableInstallAgentNewECS;
-	}
-
-	public void setEnableInstallAgentNewECS(Boolean enableInstallAgentNewECS) {
-		this.enableInstallAgentNewECS = enableInstallAgentNewECS;
-		if(enableInstallAgentNewECS != null){
-			putQueryParameter("EnableInstallAgentNewECS", enableInstallAgentNewECS.toString());
-		}
+	private Boolean enableInstallAgentNewECS;
+	public PutMonitoringConfigRequest() {
+		super("Cms", "2019-01-01", "PutMonitoringConfig", "cms");
+		setMethod(MethodType.POST);
 	}
 
 	public Boolean getAutoInstall() {
@@ -49,6 +40,17 @@ public class PutMonitoringConfigRequest extends RpcAcsRequest<PutMonitoringConfi
 		this.autoInstall = autoInstall;
 		if(autoInstall != null){
 			putQueryParameter("AutoInstall", autoInstall.toString());
+		}
+	}
+
+	public Boolean getEnableInstallAgentNewECS() {
+		return this.enableInstallAgentNewECS;
+	}
+
+	public void setEnableInstallAgentNewECS(Boolean enableInstallAgentNewECS) {
+		this.enableInstallAgentNewECS = enableInstallAgentNewECS;
+		if(enableInstallAgentNewECS != null){
+			putQueryParameter("EnableInstallAgentNewECS", enableInstallAgentNewECS.toString());
 		}
 	}
 

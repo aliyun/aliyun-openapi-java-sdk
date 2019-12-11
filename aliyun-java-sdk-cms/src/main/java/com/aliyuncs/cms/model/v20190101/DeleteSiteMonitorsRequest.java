@@ -15,20 +15,22 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteSiteMonitorsRequest extends RpcAcsRequest<DeleteSiteMonitorsResponse> {
-	
-	public DeleteSiteMonitorsRequest() {
-		super("Cms", "2019-01-01", "DeleteSiteMonitors", "cms");
-	}
+	   
 
 	private Boolean isDeleteAlarms;
 
 	private String taskIds;
+	public DeleteSiteMonitorsRequest() {
+		super("Cms", "2019-01-01", "DeleteSiteMonitors", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public Boolean getIsDeleteAlarms() {
 		return this.isDeleteAlarms;

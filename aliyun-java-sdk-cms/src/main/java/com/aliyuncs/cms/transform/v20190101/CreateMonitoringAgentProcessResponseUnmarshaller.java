@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateMonitoringAgentProcessResponseUnmarshaller {
 
-	public static CreateMonitoringAgentProcessResponse unmarshall(CreateMonitoringAgentProcessResponse createMonitoringAgentProcessResponse, UnmarshallerContext context) {
+	public static CreateMonitoringAgentProcessResponse unmarshall(CreateMonitoringAgentProcessResponse createMonitoringAgentProcessResponse, UnmarshallerContext _ctx) {
 		
-		createMonitoringAgentProcessResponse.setRequestId(context.stringValue("CreateMonitoringAgentProcessResponse.RequestId"));
-		createMonitoringAgentProcessResponse.setCode(context.stringValue("CreateMonitoringAgentProcessResponse.Code"));
-		createMonitoringAgentProcessResponse.setMessage(context.stringValue("CreateMonitoringAgentProcessResponse.Message"));
-		createMonitoringAgentProcessResponse.setSuccess(context.booleanValue("CreateMonitoringAgentProcessResponse.Success"));
-		createMonitoringAgentProcessResponse.setId(context.longValue("CreateMonitoringAgentProcessResponse.Id"));
+		createMonitoringAgentProcessResponse.setRequestId(_ctx.stringValue("CreateMonitoringAgentProcessResponse.RequestId"));
+		createMonitoringAgentProcessResponse.setCode(_ctx.stringValue("CreateMonitoringAgentProcessResponse.Code"));
+		createMonitoringAgentProcessResponse.setMessage(_ctx.stringValue("CreateMonitoringAgentProcessResponse.Message"));
+		createMonitoringAgentProcessResponse.setSuccess(_ctx.booleanValue("CreateMonitoringAgentProcessResponse.Success"));
+		createMonitoringAgentProcessResponse.setId(_ctx.longValue("CreateMonitoringAgentProcessResponse.Id"));
 	 
 	 	return createMonitoringAgentProcessResponse;
 	}

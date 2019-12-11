@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSystemEventHistogramResponseUnmarshaller {
 
-	public static DescribeSystemEventHistogramResponse unmarshall(DescribeSystemEventHistogramResponse describeSystemEventHistogramResponse, UnmarshallerContext context) {
+	public static DescribeSystemEventHistogramResponse unmarshall(DescribeSystemEventHistogramResponse describeSystemEventHistogramResponse, UnmarshallerContext _ctx) {
 		
-		describeSystemEventHistogramResponse.setRequestId(context.stringValue("DescribeSystemEventHistogramResponse.RequestId"));
-		describeSystemEventHistogramResponse.setCode(context.stringValue("DescribeSystemEventHistogramResponse.Code"));
-		describeSystemEventHistogramResponse.setMessage(context.stringValue("DescribeSystemEventHistogramResponse.Message"));
-		describeSystemEventHistogramResponse.setSuccess(context.stringValue("DescribeSystemEventHistogramResponse.Success"));
+		describeSystemEventHistogramResponse.setRequestId(_ctx.stringValue("DescribeSystemEventHistogramResponse.RequestId"));
+		describeSystemEventHistogramResponse.setCode(_ctx.stringValue("DescribeSystemEventHistogramResponse.Code"));
+		describeSystemEventHistogramResponse.setMessage(_ctx.stringValue("DescribeSystemEventHistogramResponse.Message"));
+		describeSystemEventHistogramResponse.setSuccess(_ctx.stringValue("DescribeSystemEventHistogramResponse.Success"));
 
 		List<SystemEventHistogram> systemEventHistograms = new ArrayList<SystemEventHistogram>();
-		for (int i = 0; i < context.lengthValue("DescribeSystemEventHistogramResponse.SystemEventHistograms.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSystemEventHistogramResponse.SystemEventHistograms.Length"); i++) {
 			SystemEventHistogram systemEventHistogram = new SystemEventHistogram();
-			systemEventHistogram.setCount(context.longValue("DescribeSystemEventHistogramResponse.SystemEventHistograms["+ i +"].Count"));
-			systemEventHistogram.setStartTime(context.longValue("DescribeSystemEventHistogramResponse.SystemEventHistograms["+ i +"].StartTime"));
-			systemEventHistogram.setEndTime(context.longValue("DescribeSystemEventHistogramResponse.SystemEventHistograms["+ i +"].EndTime"));
+			systemEventHistogram.setCount(_ctx.longValue("DescribeSystemEventHistogramResponse.SystemEventHistograms["+ i +"].Count"));
+			systemEventHistogram.setStartTime(_ctx.longValue("DescribeSystemEventHistogramResponse.SystemEventHistograms["+ i +"].StartTime"));
+			systemEventHistogram.setEndTime(_ctx.longValue("DescribeSystemEventHistogramResponse.SystemEventHistograms["+ i +"].EndTime"));
 
 			systemEventHistograms.add(systemEventHistogram);
 		}

@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCustomEventCountResponseUnmarshaller {
 
-	public static DescribeCustomEventCountResponse unmarshall(DescribeCustomEventCountResponse describeCustomEventCountResponse, UnmarshallerContext context) {
+	public static DescribeCustomEventCountResponse unmarshall(DescribeCustomEventCountResponse describeCustomEventCountResponse, UnmarshallerContext _ctx) {
 		
-		describeCustomEventCountResponse.setRequestId(context.stringValue("DescribeCustomEventCountResponse.RequestId"));
-		describeCustomEventCountResponse.setCode(context.stringValue("DescribeCustomEventCountResponse.Code"));
-		describeCustomEventCountResponse.setMessage(context.stringValue("DescribeCustomEventCountResponse.Message"));
-		describeCustomEventCountResponse.setSuccess(context.booleanValue("DescribeCustomEventCountResponse.Success"));
+		describeCustomEventCountResponse.setRequestId(_ctx.stringValue("DescribeCustomEventCountResponse.RequestId"));
+		describeCustomEventCountResponse.setCode(_ctx.stringValue("DescribeCustomEventCountResponse.Code"));
+		describeCustomEventCountResponse.setMessage(_ctx.stringValue("DescribeCustomEventCountResponse.Message"));
+		describeCustomEventCountResponse.setSuccess(_ctx.booleanValue("DescribeCustomEventCountResponse.Success"));
 
 		List<CustomEventCount> customEventCounts = new ArrayList<CustomEventCount>();
-		for (int i = 0; i < context.lengthValue("DescribeCustomEventCountResponse.CustomEventCounts.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCustomEventCountResponse.CustomEventCounts.Length"); i++) {
 			CustomEventCount customEventCount = new CustomEventCount();
-			customEventCount.setName(context.stringValue("DescribeCustomEventCountResponse.CustomEventCounts["+ i +"].Name"));
-			customEventCount.setNum(context.integerValue("DescribeCustomEventCountResponse.CustomEventCounts["+ i +"].Num"));
-			customEventCount.setTime(context.longValue("DescribeCustomEventCountResponse.CustomEventCounts["+ i +"].Time"));
+			customEventCount.setName(_ctx.stringValue("DescribeCustomEventCountResponse.CustomEventCounts["+ i +"].Name"));
+			customEventCount.setNum(_ctx.integerValue("DescribeCustomEventCountResponse.CustomEventCounts["+ i +"].Num"));
+			customEventCount.setTime(_ctx.longValue("DescribeCustomEventCountResponse.CustomEventCounts["+ i +"].Time"));
 
 			customEventCounts.add(customEventCount);
 		}

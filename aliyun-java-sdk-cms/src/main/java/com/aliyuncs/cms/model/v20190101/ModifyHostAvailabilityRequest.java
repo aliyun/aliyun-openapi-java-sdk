@@ -16,24 +16,18 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyHostAvailabilityRequest extends RpcAcsRequest<ModifyHostAvailabilityResponse> {
-	
-	public ModifyHostAvailabilityRequest() {
-		super("Cms", "2019-01-01", "ModifyHostAvailability", "cms");
-	}
-
-	private List<String> instanceLists;
+	   
 
 	private String taskOptionHttpMethod;
 
 	private List<AlertConfigEscalationList> alertConfigEscalationLists;
-
-	private Long groupId;
 
 	private String taskName;
 
@@ -41,17 +35,9 @@ public class ModifyHostAvailabilityRequest extends RpcAcsRequest<ModifyHostAvail
 
 	private String taskOptionHttpResponseCharset;
 
-	private Integer alertConfigEndTime;
-
-	private String taskOptionHttpURI;
-
 	private Boolean taskOptionHttpNegative;
 
-	private String taskScope;
-
 	private Integer alertConfigNotifyType;
-
-	private Integer alertConfigStartTime;
 
 	private String taskOptionTelnetOrPingHost;
 
@@ -59,19 +45,22 @@ public class ModifyHostAvailabilityRequest extends RpcAcsRequest<ModifyHostAvail
 
 	private Long id;
 
+	private List<String> instanceLists;
+
+	private Long groupId;
+
+	private Integer alertConfigEndTime;
+
+	private String taskOptionHttpURI;
+
+	private String taskScope;
+
+	private Integer alertConfigStartTime;
+
 	private String alertConfigWebHook;
-
-	public List<String> getInstanceLists() {
-		return this.instanceLists;
-	}
-
-	public void setInstanceLists(List<String> instanceLists) {
-		this.instanceLists = instanceLists;	
-		if (instanceLists != null) {
-			for (int i = 0; i < instanceLists.size(); i++) {
-				putQueryParameter("InstanceList." + (i + 1) , instanceLists.get(i));
-			}
-		}	
+	public ModifyHostAvailabilityRequest() {
+		super("Cms", "2019-01-01", "ModifyHostAvailability", "cms");
+		setMethod(MethodType.POST);
 	}
 
 	public String getTaskOptionHttpMethod() {
@@ -100,17 +89,6 @@ public class ModifyHostAvailabilityRequest extends RpcAcsRequest<ModifyHostAvail
 				putQueryParameter("AlertConfigEscalationList." + (depth1 + 1) + ".Aggregate" , alertConfigEscalationLists.get(depth1).getAggregate());
 			}
 		}	
-	}
-
-	public Long getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(Long groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId.toString());
-		}
 	}
 
 	public String getTaskName() {
@@ -146,28 +124,6 @@ public class ModifyHostAvailabilityRequest extends RpcAcsRequest<ModifyHostAvail
 		}
 	}
 
-	public Integer getAlertConfigEndTime() {
-		return this.alertConfigEndTime;
-	}
-
-	public void setAlertConfigEndTime(Integer alertConfigEndTime) {
-		this.alertConfigEndTime = alertConfigEndTime;
-		if(alertConfigEndTime != null){
-			putQueryParameter("AlertConfig.EndTime", alertConfigEndTime.toString());
-		}
-	}
-
-	public String getTaskOptionHttpURI() {
-		return this.taskOptionHttpURI;
-	}
-
-	public void setTaskOptionHttpURI(String taskOptionHttpURI) {
-		this.taskOptionHttpURI = taskOptionHttpURI;
-		if(taskOptionHttpURI != null){
-			putQueryParameter("TaskOption.HttpURI", taskOptionHttpURI);
-		}
-	}
-
 	public Boolean getTaskOptionHttpNegative() {
 		return this.taskOptionHttpNegative;
 	}
@@ -179,17 +135,6 @@ public class ModifyHostAvailabilityRequest extends RpcAcsRequest<ModifyHostAvail
 		}
 	}
 
-	public String getTaskScope() {
-		return this.taskScope;
-	}
-
-	public void setTaskScope(String taskScope) {
-		this.taskScope = taskScope;
-		if(taskScope != null){
-			putQueryParameter("TaskScope", taskScope);
-		}
-	}
-
 	public Integer getAlertConfigNotifyType() {
 		return this.alertConfigNotifyType;
 	}
@@ -198,17 +143,6 @@ public class ModifyHostAvailabilityRequest extends RpcAcsRequest<ModifyHostAvail
 		this.alertConfigNotifyType = alertConfigNotifyType;
 		if(alertConfigNotifyType != null){
 			putQueryParameter("AlertConfig.NotifyType", alertConfigNotifyType.toString());
-		}
-	}
-
-	public Integer getAlertConfigStartTime() {
-		return this.alertConfigStartTime;
-	}
-
-	public void setAlertConfigStartTime(Integer alertConfigStartTime) {
-		this.alertConfigStartTime = alertConfigStartTime;
-		if(alertConfigStartTime != null){
-			putQueryParameter("AlertConfig.StartTime", alertConfigStartTime.toString());
 		}
 	}
 
@@ -242,6 +176,74 @@ public class ModifyHostAvailabilityRequest extends RpcAcsRequest<ModifyHostAvail
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id.toString());
+		}
+	}
+
+	public List<String> getInstanceLists() {
+		return this.instanceLists;
+	}
+
+	public void setInstanceLists(List<String> instanceLists) {
+		this.instanceLists = instanceLists;	
+		if (instanceLists != null) {
+			for (int i = 0; i < instanceLists.size(); i++) {
+				putQueryParameter("InstanceList." + (i + 1) , instanceLists.get(i));
+			}
+		}	
+	}
+
+	public Long getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(Long groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId.toString());
+		}
+	}
+
+	public Integer getAlertConfigEndTime() {
+		return this.alertConfigEndTime;
+	}
+
+	public void setAlertConfigEndTime(Integer alertConfigEndTime) {
+		this.alertConfigEndTime = alertConfigEndTime;
+		if(alertConfigEndTime != null){
+			putQueryParameter("AlertConfig.EndTime", alertConfigEndTime.toString());
+		}
+	}
+
+	public String getTaskOptionHttpURI() {
+		return this.taskOptionHttpURI;
+	}
+
+	public void setTaskOptionHttpURI(String taskOptionHttpURI) {
+		this.taskOptionHttpURI = taskOptionHttpURI;
+		if(taskOptionHttpURI != null){
+			putQueryParameter("TaskOption.HttpURI", taskOptionHttpURI);
+		}
+	}
+
+	public String getTaskScope() {
+		return this.taskScope;
+	}
+
+	public void setTaskScope(String taskScope) {
+		this.taskScope = taskScope;
+		if(taskScope != null){
+			putQueryParameter("TaskScope", taskScope);
+		}
+	}
+
+	public Integer getAlertConfigStartTime() {
+		return this.alertConfigStartTime;
+	}
+
+	public void setAlertConfigStartTime(Integer alertConfigStartTime) {
+		this.alertConfigStartTime = alertConfigStartTime;
+		if(alertConfigStartTime != null){
+			putQueryParameter("AlertConfig.StartTime", alertConfigStartTime.toString());
 		}
 	}
 

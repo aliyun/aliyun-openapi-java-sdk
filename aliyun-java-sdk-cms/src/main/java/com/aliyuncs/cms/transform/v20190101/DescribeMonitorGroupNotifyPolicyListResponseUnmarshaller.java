@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMonitorGroupNotifyPolicyListResponseUnmarshaller {
 
-	public static DescribeMonitorGroupNotifyPolicyListResponse unmarshall(DescribeMonitorGroupNotifyPolicyListResponse describeMonitorGroupNotifyPolicyListResponse, UnmarshallerContext context) {
+	public static DescribeMonitorGroupNotifyPolicyListResponse unmarshall(DescribeMonitorGroupNotifyPolicyListResponse describeMonitorGroupNotifyPolicyListResponse, UnmarshallerContext _ctx) {
 		
-		describeMonitorGroupNotifyPolicyListResponse.setRequestId(context.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.RequestId"));
-		describeMonitorGroupNotifyPolicyListResponse.setCode(context.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.Code"));
-		describeMonitorGroupNotifyPolicyListResponse.setMessage(context.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.Message"));
-		describeMonitorGroupNotifyPolicyListResponse.setSuccess(context.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.Success"));
-		describeMonitorGroupNotifyPolicyListResponse.setTotal(context.integerValue("DescribeMonitorGroupNotifyPolicyListResponse.Total"));
+		describeMonitorGroupNotifyPolicyListResponse.setRequestId(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.RequestId"));
+		describeMonitorGroupNotifyPolicyListResponse.setCode(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.Code"));
+		describeMonitorGroupNotifyPolicyListResponse.setMessage(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.Message"));
+		describeMonitorGroupNotifyPolicyListResponse.setSuccess(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.Success"));
+		describeMonitorGroupNotifyPolicyListResponse.setTotal(_ctx.integerValue("DescribeMonitorGroupNotifyPolicyListResponse.Total"));
 
 		List<NotifyPolicy> notifyPolicyList = new ArrayList<NotifyPolicy>();
-		for (int i = 0; i < context.lengthValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList.Length"); i++) {
 			NotifyPolicy notifyPolicy = new NotifyPolicy();
-			notifyPolicy.setType(context.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].Type"));
-			notifyPolicy.setId(context.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].Id"));
-			notifyPolicy.setStartTime(context.longValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].StartTime"));
-			notifyPolicy.setEndTime(context.longValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].EndTime"));
-			notifyPolicy.setGroupId(context.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].GroupId"));
+			notifyPolicy.setType(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].Type"));
+			notifyPolicy.setId(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].Id"));
+			notifyPolicy.setStartTime(_ctx.longValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].StartTime"));
+			notifyPolicy.setEndTime(_ctx.longValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].EndTime"));
+			notifyPolicy.setGroupId(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].GroupId"));
 
 			notifyPolicyList.add(notifyPolicy);
 		}

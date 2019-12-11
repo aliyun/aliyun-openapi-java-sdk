@@ -15,18 +15,20 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMetricRuleTargetsRequest extends RpcAcsRequest<DescribeMetricRuleTargetsResponse> {
-	
-	public DescribeMetricRuleTargetsRequest() {
-		super("Cms", "2019-01-01", "DescribeMetricRuleTargets", "cms");
-	}
+	   
 
 	private String ruleId;
+	public DescribeMetricRuleTargetsRequest() {
+		super("Cms", "2019-01-01", "DescribeMetricRuleTargets", "cms");
+		setMethod(MethodType.PUT);
+	}
 
 	public String getRuleId() {
 		return this.ruleId;

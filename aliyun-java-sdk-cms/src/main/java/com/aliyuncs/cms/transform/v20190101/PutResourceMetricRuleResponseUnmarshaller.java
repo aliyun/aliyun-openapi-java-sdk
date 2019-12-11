@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PutResourceMetricRuleResponseUnmarshaller {
 
-	public static PutResourceMetricRuleResponse unmarshall(PutResourceMetricRuleResponse putResourceMetricRuleResponse, UnmarshallerContext context) {
+	public static PutResourceMetricRuleResponse unmarshall(PutResourceMetricRuleResponse putResourceMetricRuleResponse, UnmarshallerContext _ctx) {
 		
-		putResourceMetricRuleResponse.setRequestId(context.stringValue("PutResourceMetricRuleResponse.RequestId"));
-		putResourceMetricRuleResponse.setSuccess(context.booleanValue("PutResourceMetricRuleResponse.Success"));
-		putResourceMetricRuleResponse.setCode(context.stringValue("PutResourceMetricRuleResponse.Code"));
-		putResourceMetricRuleResponse.setMessage(context.stringValue("PutResourceMetricRuleResponse.Message"));
+		putResourceMetricRuleResponse.setRequestId(_ctx.stringValue("PutResourceMetricRuleResponse.RequestId"));
+		putResourceMetricRuleResponse.setSuccess(_ctx.booleanValue("PutResourceMetricRuleResponse.Success"));
+		putResourceMetricRuleResponse.setCode(_ctx.stringValue("PutResourceMetricRuleResponse.Code"));
+		putResourceMetricRuleResponse.setMessage(_ctx.stringValue("PutResourceMetricRuleResponse.Message"));
 	 
 	 	return putResourceMetricRuleResponse;
 	}

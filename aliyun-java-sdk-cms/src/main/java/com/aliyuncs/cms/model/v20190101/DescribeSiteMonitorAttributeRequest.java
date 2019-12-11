@@ -15,20 +15,22 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSiteMonitorAttributeRequest extends RpcAcsRequest<DescribeSiteMonitorAttributeResponse> {
-	
-	public DescribeSiteMonitorAttributeRequest() {
-		super("Cms", "2019-01-01", "DescribeSiteMonitorAttribute", "cms");
-	}
+	   
 
 	private Boolean includeAlert;
 
 	private String taskId;
+	public DescribeSiteMonitorAttributeRequest() {
+		super("Cms", "2019-01-01", "DescribeSiteMonitorAttribute", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public Boolean getIncludeAlert() {
 		return this.includeAlert;

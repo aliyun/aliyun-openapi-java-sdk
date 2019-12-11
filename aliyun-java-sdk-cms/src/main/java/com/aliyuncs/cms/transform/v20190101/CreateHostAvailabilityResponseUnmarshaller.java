@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateHostAvailabilityResponseUnmarshaller {
 
-	public static CreateHostAvailabilityResponse unmarshall(CreateHostAvailabilityResponse createHostAvailabilityResponse, UnmarshallerContext context) {
+	public static CreateHostAvailabilityResponse unmarshall(CreateHostAvailabilityResponse createHostAvailabilityResponse, UnmarshallerContext _ctx) {
 		
-		createHostAvailabilityResponse.setRequestId(context.stringValue("CreateHostAvailabilityResponse.RequestId"));
-		createHostAvailabilityResponse.setCode(context.stringValue("CreateHostAvailabilityResponse.Code"));
-		createHostAvailabilityResponse.setMessage(context.stringValue("CreateHostAvailabilityResponse.Message"));
-		createHostAvailabilityResponse.setSuccess(context.booleanValue("CreateHostAvailabilityResponse.Success"));
-		createHostAvailabilityResponse.setTaskId(context.longValue("CreateHostAvailabilityResponse.TaskId"));
+		createHostAvailabilityResponse.setRequestId(_ctx.stringValue("CreateHostAvailabilityResponse.RequestId"));
+		createHostAvailabilityResponse.setCode(_ctx.stringValue("CreateHostAvailabilityResponse.Code"));
+		createHostAvailabilityResponse.setMessage(_ctx.stringValue("CreateHostAvailabilityResponse.Message"));
+		createHostAvailabilityResponse.setSuccess(_ctx.booleanValue("CreateHostAvailabilityResponse.Success"));
+		createHostAvailabilityResponse.setTaskId(_ctx.longValue("CreateHostAvailabilityResponse.TaskId"));
 	 
 	 	return createHostAvailabilityResponse;
 	}

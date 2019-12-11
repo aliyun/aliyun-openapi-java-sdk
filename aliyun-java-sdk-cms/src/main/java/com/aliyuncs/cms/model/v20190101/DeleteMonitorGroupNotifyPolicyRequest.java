@@ -15,20 +15,22 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteMonitorGroupNotifyPolicyRequest extends RpcAcsRequest<DeleteMonitorGroupNotifyPolicyResponse> {
-	
-	public DeleteMonitorGroupNotifyPolicyRequest() {
-		super("Cms", "2019-01-01", "DeleteMonitorGroupNotifyPolicy", "cms");
-	}
+	   
 
 	private String policyType;
 
 	private String groupId;
+	public DeleteMonitorGroupNotifyPolicyRequest() {
+		super("Cms", "2019-01-01", "DeleteMonitorGroupNotifyPolicy", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getPolicyType() {
 		return this.policyType;

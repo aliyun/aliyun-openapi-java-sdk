@@ -16,32 +16,23 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class PutContactGroupRequest extends RpcAcsRequest<PutContactGroupResponse> {
-	
-	public PutContactGroupRequest() {
-		super("Cms", "2019-01-01", "PutContactGroup", "cms");
-	}
-
-	private String describe;
+	   
 
 	private String contactGroupName;
 
+	private String describe;
+
 	private List<String> contactNamess;
-
-	public String getDescribe() {
-		return this.describe;
-	}
-
-	public void setDescribe(String describe) {
-		this.describe = describe;
-		if(describe != null){
-			putQueryParameter("Describe", describe);
-		}
+	public PutContactGroupRequest() {
+		super("Cms", "2019-01-01", "PutContactGroup", "cms");
+		setMethod(MethodType.POST);
 	}
 
 	public String getContactGroupName() {
@@ -52,6 +43,17 @@ public class PutContactGroupRequest extends RpcAcsRequest<PutContactGroupRespons
 		this.contactGroupName = contactGroupName;
 		if(contactGroupName != null){
 			putQueryParameter("ContactGroupName", contactGroupName);
+		}
+	}
+
+	public String getDescribe() {
+		return this.describe;
+	}
+
+	public void setDescribe(String describe) {
+		this.describe = describe;
+		if(describe != null){
+			putQueryParameter("Describe", describe);
 		}
 	}
 

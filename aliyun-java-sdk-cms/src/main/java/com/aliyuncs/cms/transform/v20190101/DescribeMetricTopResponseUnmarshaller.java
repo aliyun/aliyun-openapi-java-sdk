@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMetricTopResponseUnmarshaller {
 
-	public static DescribeMetricTopResponse unmarshall(DescribeMetricTopResponse describeMetricTopResponse, UnmarshallerContext context) {
+	public static DescribeMetricTopResponse unmarshall(DescribeMetricTopResponse describeMetricTopResponse, UnmarshallerContext _ctx) {
 		
-		describeMetricTopResponse.setRequestId(context.stringValue("DescribeMetricTopResponse.RequestId"));
-		describeMetricTopResponse.setCode(context.stringValue("DescribeMetricTopResponse.Code"));
-		describeMetricTopResponse.setMessage(context.stringValue("DescribeMetricTopResponse.Message"));
-		describeMetricTopResponse.setDatapoints(context.stringValue("DescribeMetricTopResponse.Datapoints"));
-		describeMetricTopResponse.setPeriod(context.stringValue("DescribeMetricTopResponse.Period"));
+		describeMetricTopResponse.setRequestId(_ctx.stringValue("DescribeMetricTopResponse.RequestId"));
+		describeMetricTopResponse.setCode(_ctx.stringValue("DescribeMetricTopResponse.Code"));
+		describeMetricTopResponse.setMessage(_ctx.stringValue("DescribeMetricTopResponse.Message"));
+		describeMetricTopResponse.setDatapoints(_ctx.stringValue("DescribeMetricTopResponse.Datapoints"));
+		describeMetricTopResponse.setPeriod(_ctx.stringValue("DescribeMetricTopResponse.Period"));
 	 
 	 	return describeMetricTopResponse;
 	}

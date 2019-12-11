@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteMonitoringAgentProcessResponseUnmarshaller {
 
-	public static DeleteMonitoringAgentProcessResponse unmarshall(DeleteMonitoringAgentProcessResponse deleteMonitoringAgentProcessResponse, UnmarshallerContext context) {
+	public static DeleteMonitoringAgentProcessResponse unmarshall(DeleteMonitoringAgentProcessResponse deleteMonitoringAgentProcessResponse, UnmarshallerContext _ctx) {
 		
-		deleteMonitoringAgentProcessResponse.setRequestId(context.stringValue("DeleteMonitoringAgentProcessResponse.RequestId"));
-		deleteMonitoringAgentProcessResponse.setCode(context.stringValue("DeleteMonitoringAgentProcessResponse.Code"));
-		deleteMonitoringAgentProcessResponse.setMessage(context.stringValue("DeleteMonitoringAgentProcessResponse.Message"));
-		deleteMonitoringAgentProcessResponse.setSuccess(context.booleanValue("DeleteMonitoringAgentProcessResponse.Success"));
+		deleteMonitoringAgentProcessResponse.setRequestId(_ctx.stringValue("DeleteMonitoringAgentProcessResponse.RequestId"));
+		deleteMonitoringAgentProcessResponse.setCode(_ctx.stringValue("DeleteMonitoringAgentProcessResponse.Code"));
+		deleteMonitoringAgentProcessResponse.setMessage(_ctx.stringValue("DeleteMonitoringAgentProcessResponse.Message"));
+		deleteMonitoringAgentProcessResponse.setSuccess(_ctx.booleanValue("DeleteMonitoringAgentProcessResponse.Success"));
 	 
 	 	return deleteMonitoringAgentProcessResponse;
 	}

@@ -123,6 +123,10 @@ public class DescribeMonitorGroupsResponse extends AcsResponse {
 
 		private List<ContactGroup> contactGroups;
 
+		private List<Tag> tags;
+
+		private List<String> templateIds;
+
 		public Long getGroupId() {
 			return this.groupId;
 		}
@@ -187,6 +191,22 @@ public class DescribeMonitorGroupsResponse extends AcsResponse {
 			this.contactGroups = contactGroups;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public List<String> getTemplateIds() {
+			return this.templateIds;
+		}
+
+		public void setTemplateIds(List<String> templateIds) {
+			this.templateIds = templateIds;
+		}
+
 		public static class ContactGroup {
 
 			private String name;
@@ -197,6 +217,29 @@ public class DescribeMonitorGroupsResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

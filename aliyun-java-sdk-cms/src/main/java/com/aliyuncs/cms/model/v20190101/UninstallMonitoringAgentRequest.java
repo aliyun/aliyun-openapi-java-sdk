@@ -15,18 +15,20 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class UninstallMonitoringAgentRequest extends RpcAcsRequest<UninstallMonitoringAgentResponse> {
-	
-	public UninstallMonitoringAgentRequest() {
-		super("Cms", "2019-01-01", "UninstallMonitoringAgent", "cms");
-	}
+	   
 
 	private String instanceId;
+	public UninstallMonitoringAgentRequest() {
+		super("Cms", "2019-01-01", "UninstallMonitoringAgent", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;

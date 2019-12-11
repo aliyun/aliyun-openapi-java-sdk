@@ -15,15 +15,17 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMonitoringAgentAccessKeyRequest extends RpcAcsRequest<DescribeMonitoringAgentAccessKeyResponse> {
-	
+	   
 	public DescribeMonitoringAgentAccessKeyRequest() {
 		super("Cms", "2019-01-01", "DescribeMonitoringAgentAccessKey", "cms");
+		setMethod(MethodType.POST);
 	}
 
 	@Override

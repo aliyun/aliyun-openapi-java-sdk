@@ -15,24 +15,26 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeMonitorGroupNotifyPolicyListRequest extends RpcAcsRequest<DescribeMonitorGroupNotifyPolicyListResponse> {
-	
-	public DescribeMonitorGroupNotifyPolicyListRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitorGroupNotifyPolicyList", "cms");
-	}
+	   
 
 	private String policyType;
 
 	private String groupId;
 
-	private Integer pageSize;
-
 	private Integer pageNumber;
+
+	private Integer pageSize;
+	public DescribeMonitorGroupNotifyPolicyListRequest() {
+		super("Cms", "2019-01-01", "DescribeMonitorGroupNotifyPolicyList", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getPolicyType() {
 		return this.policyType;
@@ -56,17 +58,6 @@ public class DescribeMonitorGroupNotifyPolicyListRequest extends RpcAcsRequest<D
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -75,6 +66,17 @@ public class DescribeMonitorGroupNotifyPolicyListRequest extends RpcAcsRequest<D
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

@@ -25,38 +25,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeEventRuleAttributeResponseUnmarshaller {
 
-	public static DescribeEventRuleAttributeResponse unmarshall(DescribeEventRuleAttributeResponse describeEventRuleAttributeResponse, UnmarshallerContext context) {
+	public static DescribeEventRuleAttributeResponse unmarshall(DescribeEventRuleAttributeResponse describeEventRuleAttributeResponse, UnmarshallerContext _ctx) {
 		
-		describeEventRuleAttributeResponse.setRequestId(context.stringValue("DescribeEventRuleAttributeResponse.RequestId"));
-		describeEventRuleAttributeResponse.setSuccess(context.booleanValue("DescribeEventRuleAttributeResponse.Success"));
-		describeEventRuleAttributeResponse.setCode(context.stringValue("DescribeEventRuleAttributeResponse.Code"));
-		describeEventRuleAttributeResponse.setMessage(context.stringValue("DescribeEventRuleAttributeResponse.Message"));
+		describeEventRuleAttributeResponse.setRequestId(_ctx.stringValue("DescribeEventRuleAttributeResponse.RequestId"));
+		describeEventRuleAttributeResponse.setSuccess(_ctx.booleanValue("DescribeEventRuleAttributeResponse.Success"));
+		describeEventRuleAttributeResponse.setCode(_ctx.stringValue("DescribeEventRuleAttributeResponse.Code"));
+		describeEventRuleAttributeResponse.setMessage(_ctx.stringValue("DescribeEventRuleAttributeResponse.Message"));
 
 		Result result = new Result();
-		result.setDescription(context.stringValue("DescribeEventRuleAttributeResponse.Result.Description"));
-		result.setName(context.stringValue("DescribeEventRuleAttributeResponse.Result.Name"));
-		result.setEventType(context.stringValue("DescribeEventRuleAttributeResponse.Result.EventType"));
-		result.setGroupId(context.stringValue("DescribeEventRuleAttributeResponse.Result.GroupId"));
-		result.setState(context.stringValue("DescribeEventRuleAttributeResponse.Result.State"));
+		result.setDescription(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.Description"));
+		result.setName(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.Name"));
+		result.setEventType(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.EventType"));
+		result.setGroupId(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.GroupId"));
+		result.setState(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.State"));
 
 		EventPattern eventPattern = new EventPattern();
-		eventPattern.setProduct(context.stringValue("DescribeEventRuleAttributeResponse.Result.EventPattern.Product"));
+		eventPattern.setProduct(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.EventPattern.Product"));
 
 		List<String> nameList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeEventRuleAttributeResponse.Result.EventPattern.NameList.Length"); i++) {
-			nameList.add(context.stringValue("DescribeEventRuleAttributeResponse.Result.EventPattern.NameList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeEventRuleAttributeResponse.Result.EventPattern.NameList.Length"); i++) {
+			nameList.add(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.EventPattern.NameList["+ i +"]"));
 		}
 		eventPattern.setNameList(nameList);
 
 		List<String> statusList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeEventRuleAttributeResponse.Result.EventPattern.StatusList.Length"); i++) {
-			statusList.add(context.stringValue("DescribeEventRuleAttributeResponse.Result.EventPattern.StatusList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeEventRuleAttributeResponse.Result.EventPattern.StatusList.Length"); i++) {
+			statusList.add(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.EventPattern.StatusList["+ i +"]"));
 		}
 		eventPattern.setStatusList(statusList);
 
 		List<String> levelList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeEventRuleAttributeResponse.Result.EventPattern.LevelList.Length"); i++) {
-			levelList.add(context.stringValue("DescribeEventRuleAttributeResponse.Result.EventPattern.LevelList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeEventRuleAttributeResponse.Result.EventPattern.LevelList.Length"); i++) {
+			levelList.add(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.EventPattern.LevelList["+ i +"]"));
 		}
 		eventPattern.setLevelList(levelList);
 		result.setEventPattern(eventPattern);

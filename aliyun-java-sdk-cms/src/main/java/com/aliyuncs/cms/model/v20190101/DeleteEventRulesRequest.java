@@ -16,18 +16,20 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteEventRulesRequest extends RpcAcsRequest<DeleteEventRulesResponse> {
-	
-	public DeleteEventRulesRequest() {
-		super("Cms", "2019-01-01", "DeleteEventRules", "cms");
-	}
+	   
 
 	private List<String> ruleNamess;
+	public DeleteEventRulesRequest() {
+		super("Cms", "2019-01-01", "DeleteEventRules", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public List<String> getRuleNamess() {
 		return this.ruleNamess;

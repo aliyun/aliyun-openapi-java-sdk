@@ -148,6 +148,8 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 
 		private String id;
 
+		private String arn;
+
 		public String getRegion() {
 			return this.region;
 		}
@@ -179,6 +181,14 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 		public void setId(String id) {
 			this.id = id;
 		}
+
+		public String getArn() {
+			return this.arn;
+		}
+
+		public void setArn(String arn) {
+			this.arn = arn;
+		}
 	}
 
 	public static class MnsParameter {
@@ -188,6 +198,8 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 		private String queue;
 
 		private String id;
+
+		private String arn;
 
 		public String getRegion() {
 			return this.region;
@@ -211,6 +223,14 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public String getArn() {
+			return this.arn;
+		}
+
+		public void setArn(String arn) {
+			this.arn = arn;
 		}
 	}
 
@@ -240,22 +260,6 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 			this.protocol = protocol;
 		}
 
-		/**
-		 * @deprecated use getBizProtocol instead of this.
-		 */
-		@Deprecated
-		public String getProtocol() {
-			return this.protocol;
-		}
-
-		/**
-		 * @deprecated use setBizProtocol instead of this.
-		 */
-		@Deprecated
-		public void setProtocol(String protocol) {
-			this.protocol = protocol;
-		}
-
 		public String getBizMethod() {
 			return this.method;
 		}
@@ -264,42 +268,10 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 			this.method = method;
 		}
 
-		/**
-		 * @deprecated use getBizMethod instead of this.
-		 */
-		@Deprecated
-		public String getMethod() {
-			return this.method;
-		}
-
-		/**
-		 * @deprecated use setBizMethod instead of this.
-		 */
-		@Deprecated
-		public void setMethod(String method) {
-			this.method = method;
-		}
-
-		public String getBizUrl() {
-			return this.url;
-		}
-
-		public void setBizUrl(String url) {
-			this.url = url;
-		}
-
-		/**
-		 * @deprecated use getBizUrl instead of this.
-		 */
-		@Deprecated
 		public String getUrl() {
 			return this.url;
 		}
 
-		/**
-		 * @deprecated use setBizUrl instead of this.
-		 */
-		@Deprecated
 		public void setUrl(String url) {
 			this.url = url;
 		}
@@ -314,6 +286,8 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 		private String project;
 
 		private String logStore;
+
+		private String arn;
 
 		public String getId() {
 			return this.id;
@@ -345,6 +319,14 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 
 		public void setLogStore(String logStore) {
 			this.logStore = logStore;
+		}
+
+		public String getArn() {
+			return this.arn;
+		}
+
+		public void setArn(String arn) {
+			this.arn = arn;
 		}
 	}
 

@@ -15,18 +15,20 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class EnableSiteMonitorsRequest extends RpcAcsRequest<EnableSiteMonitorsResponse> {
-	
-	public EnableSiteMonitorsRequest() {
-		super("Cms", "2019-01-01", "EnableSiteMonitors", "cms");
-	}
+	   
 
 	private String taskIds;
+	public EnableSiteMonitorsRequest() {
+		super("Cms", "2019-01-01", "EnableSiteMonitors", "cms");
+		setMethod(MethodType.POST);
+	}
 
 	public String getTaskIds() {
 		return this.taskIds;

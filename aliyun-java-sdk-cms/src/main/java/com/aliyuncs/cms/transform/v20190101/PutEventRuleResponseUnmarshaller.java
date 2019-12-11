@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PutEventRuleResponseUnmarshaller {
 
-	public static PutEventRuleResponse unmarshall(PutEventRuleResponse putEventRuleResponse, UnmarshallerContext context) {
+	public static PutEventRuleResponse unmarshall(PutEventRuleResponse putEventRuleResponse, UnmarshallerContext _ctx) {
 		
-		putEventRuleResponse.setRequestId(context.stringValue("PutEventRuleResponse.RequestId"));
-		putEventRuleResponse.setSuccess(context.booleanValue("PutEventRuleResponse.Success"));
-		putEventRuleResponse.setCode(context.stringValue("PutEventRuleResponse.Code"));
-		putEventRuleResponse.setMessage(context.stringValue("PutEventRuleResponse.Message"));
-		putEventRuleResponse.setData(context.stringValue("PutEventRuleResponse.Data"));
+		putEventRuleResponse.setRequestId(_ctx.stringValue("PutEventRuleResponse.RequestId"));
+		putEventRuleResponse.setSuccess(_ctx.booleanValue("PutEventRuleResponse.Success"));
+		putEventRuleResponse.setCode(_ctx.stringValue("PutEventRuleResponse.Code"));
+		putEventRuleResponse.setMessage(_ctx.stringValue("PutEventRuleResponse.Message"));
+		putEventRuleResponse.setData(_ctx.stringValue("PutEventRuleResponse.Data"));
 	 
 	 	return putEventRuleResponse;
 	}

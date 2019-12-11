@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifySiteMonitorResponseUnmarshaller {
 
-	public static ModifySiteMonitorResponse unmarshall(ModifySiteMonitorResponse modifySiteMonitorResponse, UnmarshallerContext context) {
+	public static ModifySiteMonitorResponse unmarshall(ModifySiteMonitorResponse modifySiteMonitorResponse, UnmarshallerContext _ctx) {
 		
-		modifySiteMonitorResponse.setRequestId(context.stringValue("ModifySiteMonitorResponse.RequestId"));
-		modifySiteMonitorResponse.setCode(context.stringValue("ModifySiteMonitorResponse.Code"));
-		modifySiteMonitorResponse.setMessage(context.stringValue("ModifySiteMonitorResponse.Message"));
-		modifySiteMonitorResponse.setSuccess(context.stringValue("ModifySiteMonitorResponse.Success"));
-		modifySiteMonitorResponse.setData(context.stringValue("ModifySiteMonitorResponse.Data"));
+		modifySiteMonitorResponse.setRequestId(_ctx.stringValue("ModifySiteMonitorResponse.RequestId"));
+		modifySiteMonitorResponse.setCode(_ctx.stringValue("ModifySiteMonitorResponse.Code"));
+		modifySiteMonitorResponse.setMessage(_ctx.stringValue("ModifySiteMonitorResponse.Message"));
+		modifySiteMonitorResponse.setSuccess(_ctx.stringValue("ModifySiteMonitorResponse.Success"));
+		modifySiteMonitorResponse.setData(_ctx.stringValue("ModifySiteMonitorResponse.Data"));
 	 
 	 	return modifySiteMonitorResponse;
 	}

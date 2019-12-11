@@ -15,15 +15,17 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeProductsOfActiveMetricRuleRequest extends RpcAcsRequest<DescribeProductsOfActiveMetricRuleResponse> {
-	
+	   
 	public DescribeProductsOfActiveMetricRuleRequest() {
 		super("Cms", "2019-01-01", "DescribeProductsOfActiveMetricRule", "cms");
+		setMethod(MethodType.POST);
 	}
 
 	@Override

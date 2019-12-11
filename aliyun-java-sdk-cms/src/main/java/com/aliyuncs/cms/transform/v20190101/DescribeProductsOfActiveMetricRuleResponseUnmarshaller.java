@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeProductsOfActiveMetricRuleResponseUnmarshaller {
 
-	public static DescribeProductsOfActiveMetricRuleResponse unmarshall(DescribeProductsOfActiveMetricRuleResponse describeProductsOfActiveMetricRuleResponse, UnmarshallerContext context) {
+	public static DescribeProductsOfActiveMetricRuleResponse unmarshall(DescribeProductsOfActiveMetricRuleResponse describeProductsOfActiveMetricRuleResponse, UnmarshallerContext _ctx) {
 		
-		describeProductsOfActiveMetricRuleResponse.setRequestId(context.stringValue("DescribeProductsOfActiveMetricRuleResponse.RequestId"));
-		describeProductsOfActiveMetricRuleResponse.setSuccess(context.booleanValue("DescribeProductsOfActiveMetricRuleResponse.Success"));
-		describeProductsOfActiveMetricRuleResponse.setCode(context.integerValue("DescribeProductsOfActiveMetricRuleResponse.Code"));
-		describeProductsOfActiveMetricRuleResponse.setMessage(context.stringValue("DescribeProductsOfActiveMetricRuleResponse.Message"));
-		describeProductsOfActiveMetricRuleResponse.setDatapoints(context.stringValue("DescribeProductsOfActiveMetricRuleResponse.Datapoints"));
+		describeProductsOfActiveMetricRuleResponse.setRequestId(_ctx.stringValue("DescribeProductsOfActiveMetricRuleResponse.RequestId"));
+		describeProductsOfActiveMetricRuleResponse.setSuccess(_ctx.booleanValue("DescribeProductsOfActiveMetricRuleResponse.Success"));
+		describeProductsOfActiveMetricRuleResponse.setCode(_ctx.integerValue("DescribeProductsOfActiveMetricRuleResponse.Code"));
+		describeProductsOfActiveMetricRuleResponse.setMessage(_ctx.stringValue("DescribeProductsOfActiveMetricRuleResponse.Message"));
+		describeProductsOfActiveMetricRuleResponse.setDatapoints(_ctx.stringValue("DescribeProductsOfActiveMetricRuleResponse.Datapoints"));
 	 
 	 	return describeProductsOfActiveMetricRuleResponse;
 	}

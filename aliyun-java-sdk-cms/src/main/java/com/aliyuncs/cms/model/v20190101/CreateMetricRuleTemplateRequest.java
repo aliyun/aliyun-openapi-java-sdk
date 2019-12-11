@@ -16,32 +16,23 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateMetricRuleTemplateRequest extends RpcAcsRequest<CreateMetricRuleTemplateResponse> {
-	
-	public CreateMetricRuleTemplateRequest() {
-		super("Cms", "2019-01-01", "CreateMetricRuleTemplate", "cms");
-	}
-
-	private String name;
+	   
 
 	private String description;
 
+	private String name;
+
 	private List<AlertTemplates> alertTemplatess;
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
+	public CreateMetricRuleTemplateRequest() {
+		super("Cms", "2019-01-01", "CreateMetricRuleTemplate", "cms");
+		setMethod(MethodType.POST);
 	}
 
 	public String getDescription() {
@@ -55,6 +46,17 @@ public class CreateMetricRuleTemplateRequest extends RpcAcsRequest<CreateMetricR
 		}
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
 	public List<AlertTemplates> getAlertTemplatess() {
 		return this.alertTemplatess;
 	}
@@ -65,6 +67,7 @@ public class CreateMetricRuleTemplateRequest extends RpcAcsRequest<CreateMetricR
 			for (int depth1 = 0; depth1 < alertTemplatess.size(); depth1++) {
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Period" , alertTemplatess.get(depth1).getPeriod());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Warn.Threshold" , alertTemplatess.get(depth1).getEscalationsWarnThreshold());
+				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Webhook" , alertTemplatess.get(depth1).getWebhook());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Warn.ComparisonOperator" , alertTemplatess.get(depth1).getEscalationsWarnComparisonOperator());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Critical.Statistics" , alertTemplatess.get(depth1).getEscalationsCriticalStatistics());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Info.Times" , alertTemplatess.get(depth1).getEscalationsInfoTimes());
@@ -90,6 +93,8 @@ public class CreateMetricRuleTemplateRequest extends RpcAcsRequest<CreateMetricR
 		private Integer period;
 
 		private String escalationsWarnThreshold;
+
+		private String webhook;
 
 		private String escalationsWarnComparisonOperator;
 
@@ -137,6 +142,14 @@ public class CreateMetricRuleTemplateRequest extends RpcAcsRequest<CreateMetricR
 
 		public void setEscalationsWarnThreshold(String escalationsWarnThreshold) {
 			this.escalationsWarnThreshold = escalationsWarnThreshold;
+		}
+
+		public String getWebhook() {
+			return this.webhook;
+		}
+
+		public void setWebhook(String webhook) {
+			this.webhook = webhook;
 		}
 
 		public String getEscalationsWarnComparisonOperator() {

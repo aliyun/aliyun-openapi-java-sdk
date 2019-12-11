@@ -16,18 +16,20 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DisableEventRulesRequest extends RpcAcsRequest<DisableEventRulesResponse> {
-	
-	public DisableEventRulesRequest() {
-		super("Cms", "2019-01-01", "DisableEventRules", "cms");
-	}
+	   
 
 	private List<String> ruleNamess;
+	public DisableEventRulesRequest() {
+		super("Cms", "2019-01-01", "DisableEventRules", "cms");
+		setMethod(MethodType.PUT);
+	}
 
 	public List<String> getRuleNamess() {
 		return this.ruleNamess;
