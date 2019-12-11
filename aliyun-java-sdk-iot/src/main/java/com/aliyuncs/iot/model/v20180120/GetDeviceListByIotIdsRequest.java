@@ -31,7 +31,7 @@ public class GetDeviceListByIotIdsRequest extends RpcAcsRequest<GetDeviceListByI
 
 	private String iotInstanceId;
 	public GetDeviceListByIotIdsRequest() {
-		super("Iot", "2018-01-20", "GetDeviceListByIotIds");
+		super("Iot", "2018-01-20", "GetDeviceListByIotIds", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

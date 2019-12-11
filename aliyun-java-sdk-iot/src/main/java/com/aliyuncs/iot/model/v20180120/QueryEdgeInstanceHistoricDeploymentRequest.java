@@ -37,7 +37,7 @@ public class QueryEdgeInstanceHistoricDeploymentRequest extends RpcAcsRequest<Qu
 
 	private Integer pageSize;
 	public QueryEdgeInstanceHistoricDeploymentRequest() {
-		super("Iot", "2018-01-20", "QueryEdgeInstanceHistoricDeployment");
+		super("Iot", "2018-01-20", "QueryEdgeInstanceHistoricDeployment", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

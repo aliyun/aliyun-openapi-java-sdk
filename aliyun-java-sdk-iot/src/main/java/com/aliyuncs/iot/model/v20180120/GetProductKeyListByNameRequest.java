@@ -33,7 +33,7 @@ public class GetProductKeyListByNameRequest extends RpcAcsRequest<GetProductKeyL
 
 	private String page;
 	public GetProductKeyListByNameRequest() {
-		super("Iot", "2018-01-20", "GetProductKeyListByName");
+		super("Iot", "2018-01-20", "GetProductKeyListByName", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

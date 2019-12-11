@@ -1,3 +1,9 @@
+2019-12-11 Version: 7.2.0
+- Add api `BatchAddThingTopo`, support add multiple sub-devices for a gateway.
+- Add api `QueryDeviceByStatus`, support query device list by device status.
+- Support grouping products and rules.
+- Support using RAM to authorize resouces, including products, devices, rules, groups and instances, to RAM users.
+
 2019-12-03 Version: 1.8
 - Generated 2018-01-20 for `Iot`.
 

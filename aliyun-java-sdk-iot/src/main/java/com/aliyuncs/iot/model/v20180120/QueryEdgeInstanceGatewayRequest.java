@@ -29,7 +29,7 @@ public class QueryEdgeInstanceGatewayRequest extends RpcAcsRequest<QueryEdgeInst
 
 	private String iotInstanceId;
 	public QueryEdgeInstanceGatewayRequest() {
-		super("Iot", "2018-01-20", "QueryEdgeInstanceGateway");
+		super("Iot", "2018-01-20", "QueryEdgeInstanceGateway", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

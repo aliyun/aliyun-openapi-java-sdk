@@ -31,7 +31,7 @@ public class QueryBatchRegisterDeviceStatusRequest extends RpcAcsRequest<QueryBa
 
 	private String iotInstanceId;
 	public QueryBatchRegisterDeviceStatusRequest() {
-		super("Iot", "2018-01-20", "QueryBatchRegisterDeviceStatus");
+		super("Iot", "2018-01-20", "QueryBatchRegisterDeviceStatus", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

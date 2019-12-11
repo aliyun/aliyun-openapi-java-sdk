@@ -33,7 +33,7 @@ public class QueryEdgeInstanceDriverRequest extends RpcAcsRequest<QueryEdgeInsta
 
 	private Integer pageSize;
 	public QueryEdgeInstanceDriverRequest() {
-		super("Iot", "2018-01-20", "QueryEdgeInstanceDriver");
+		super("Iot", "2018-01-20", "QueryEdgeInstanceDriver", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

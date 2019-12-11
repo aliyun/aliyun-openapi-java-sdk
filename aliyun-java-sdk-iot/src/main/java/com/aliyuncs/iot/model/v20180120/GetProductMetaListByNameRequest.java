@@ -35,7 +35,7 @@ public class GetProductMetaListByNameRequest extends RpcAcsRequest<GetProductMet
 
 	private String page;
 	public GetProductMetaListByNameRequest() {
-		super("Iot", "2018-01-20", "GetProductMetaListByName");
+		super("Iot", "2018-01-20", "GetProductMetaListByName", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

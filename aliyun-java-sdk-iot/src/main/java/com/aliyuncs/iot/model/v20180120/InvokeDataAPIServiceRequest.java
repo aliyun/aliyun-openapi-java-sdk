@@ -30,7 +30,7 @@ public class InvokeDataAPIServiceRequest extends RpcAcsRequest<InvokeDataAPIServ
 
 	private List<Param> params;
 	public InvokeDataAPIServiceRequest() {
-		super("Iot", "2018-01-20", "InvokeDataAPIService");
+		super("Iot", "2018-01-20", "InvokeDataAPIService", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,8 +32,10 @@ public class BindDriverToEdgeInstanceRequest extends RpcAcsRequest<BindDriverToE
 	private String driverId;
 
 	private String iotInstanceId;
+
+	private String driverVersion;
 	public BindDriverToEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "BindDriverToEdgeInstance");
+		super("Iot", "2018-01-20", "BindDriverToEdgeInstance", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,6 +84,17 @@ public class BindDriverToEdgeInstanceRequest extends RpcAcsRequest<BindDriverToE
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getDriverVersion() {
+		return this.driverVersion;
+	}
+
+	public void setDriverVersion(String driverVersion) {
+		this.driverVersion = driverVersion;
+		if(driverVersion != null){
+			putQueryParameter("DriverVersion", driverVersion);
 		}
 	}
 
