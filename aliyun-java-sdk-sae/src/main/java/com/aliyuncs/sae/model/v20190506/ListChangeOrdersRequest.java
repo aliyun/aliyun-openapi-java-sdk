@@ -23,16 +23,7 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class ListChangeOrdersRequest extends RoaAcsRequest<ListChangeOrdersResponse> {
-	
-	public ListChangeOrdersRequest() {
-		super("sae", "2019-05-06", "ListChangeOrders", "serverless");
-		setUriPattern("/pop/v1/sam/changeorder/ListChangeOrders");
-		setMethod(MethodType.GET);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String coType;
 
@@ -45,6 +36,15 @@ public class ListChangeOrdersRequest extends RoaAcsRequest<ListChangeOrdersRespo
 	private String coStatus;
 
 	private String key;
+	public ListChangeOrdersRequest() {
+		super("sae", "2019-05-06", "ListChangeOrders", "serverless");
+		setUriPattern("/pop/v1/sam/changeorder/ListChangeOrders");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCoType() {
 		return this.coType;

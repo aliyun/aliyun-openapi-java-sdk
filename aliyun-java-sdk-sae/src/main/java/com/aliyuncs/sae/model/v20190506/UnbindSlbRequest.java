@@ -23,7 +23,13 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class UnbindSlbRequest extends RoaAcsRequest<UnbindSlbResponse> {
-	
+	   
+
+	private Boolean intranet;
+
+	private String appId;
+
+	private Boolean internet;
 	public UnbindSlbRequest() {
 		super("sae", "2019-05-06", "UnbindSlb", "serverless");
 		setUriPattern("/pop/v1/sam/app/slb");
@@ -33,12 +39,6 @@ public class UnbindSlbRequest extends RoaAcsRequest<UnbindSlbResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Boolean intranet;
-
-	private String appId;
-
-	private Boolean internet;
 
 	public Boolean getIntranet() {
 		return this.intranet;

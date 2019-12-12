@@ -35,13 +35,13 @@ public class QueryResourceStaticsResponseUnmarshaller {
 		Data data = new Data();
 
 		RealTimeRes realTimeRes = new RealTimeRes();
-		realTimeRes.setCpu(_ctx.integerValue("QueryResourceStaticsResponse.Data.RealTimeRes.Cpu"));
-		realTimeRes.setMemory(_ctx.integerValue("QueryResourceStaticsResponse.Data.RealTimeRes.Memory"));
+		realTimeRes.setCpu(_ctx.floatValue("QueryResourceStaticsResponse.Data.RealTimeRes.Cpu"));
+		realTimeRes.setMemory(_ctx.floatValue("QueryResourceStaticsResponse.Data.RealTimeRes.Memory"));
 		data.setRealTimeRes(realTimeRes);
 
 		Summary summary = new Summary();
-		summary.setCpu(_ctx.integerValue("QueryResourceStaticsResponse.Data.Summary.Cpu"));
-		summary.setMemory(_ctx.integerValue("QueryResourceStaticsResponse.Data.Summary.Memory"));
+		summary.setCpu(_ctx.floatValue("QueryResourceStaticsResponse.Data.Summary.Cpu"));
+		summary.setMemory(_ctx.floatValue("QueryResourceStaticsResponse.Data.Summary.Memory"));
 		data.setSummary(summary);
 		queryResourceStaticsResponse.setData(data);
 	 

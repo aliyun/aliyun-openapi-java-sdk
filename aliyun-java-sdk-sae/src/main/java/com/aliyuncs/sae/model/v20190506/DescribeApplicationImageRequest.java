@@ -23,7 +23,11 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class DescribeApplicationImageRequest extends RoaAcsRequest<DescribeApplicationImageResponse> {
-	
+	   
+
+	private String appId;
+
+	private String imageUrl;
 	public DescribeApplicationImageRequest() {
 		super("sae", "2019-05-06", "DescribeApplicationImage", "serverless");
 		setUriPattern("/pop/v1/sam/container/describeApplicationImage");
@@ -33,10 +37,6 @@ public class DescribeApplicationImageRequest extends RoaAcsRequest<DescribeAppli
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
-
-	private String imageUrl;
 
 	public String getAppId() {
 		return this.appId;

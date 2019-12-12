@@ -23,7 +23,9 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class DescribeChangeOrderRequest extends RoaAcsRequest<DescribeChangeOrderResponse> {
-	
+	   
+
+	private String changeOrderId;
 	public DescribeChangeOrderRequest() {
 		super("sae", "2019-05-06", "DescribeChangeOrder", "serverless");
 		setUriPattern("/pop/v1/sam/changeorder/DescribeChangeOrder");
@@ -33,8 +35,6 @@ public class DescribeChangeOrderRequest extends RoaAcsRequest<DescribeChangeOrde
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String changeOrderId;
 
 	public String getChangeOrderId() {
 		return this.changeOrderId;

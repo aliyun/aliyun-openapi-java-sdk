@@ -23,7 +23,11 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class DescribeComponentsRequest extends RoaAcsRequest<DescribeComponentsResponse> {
-	
+	   
+
+	private String appId;
+
+	private String type;
 	public DescribeComponentsRequest() {
 		super("sae", "2019-05-06", "DescribeComponents", "serverless");
 		setUriPattern("/pop/v1/sam/resource/components");
@@ -33,10 +37,6 @@ public class DescribeComponentsRequest extends RoaAcsRequest<DescribeComponentsR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
-
-	private String type;
 
 	public String getAppId() {
 		return this.appId;

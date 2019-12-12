@@ -23,7 +23,9 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class ListConsumedServicesRequest extends RoaAcsRequest<ListConsumedServicesResponse> {
-	
+	   
+
+	private String appId;
 	public ListConsumedServicesRequest() {
 		super("sae", "2019-05-06", "ListConsumedServices", "serverless");
 		setUriPattern("/pop/v1/sam/service/listConsumedServices");
@@ -33,8 +35,6 @@ public class ListConsumedServicesRequest extends RoaAcsRequest<ListConsumedServi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
 
 	public String getAppId() {
 		return this.appId;

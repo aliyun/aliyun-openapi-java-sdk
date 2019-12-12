@@ -23,7 +23,9 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class DescribeApplicationConfigRequest extends RoaAcsRequest<DescribeApplicationConfigResponse> {
-	
+	   
+
+	private String appId;
 	public DescribeApplicationConfigRequest() {
 		super("sae", "2019-05-06", "DescribeApplicationConfig", "serverless");
 		setUriPattern("/pop/v1/sam/app/describeApplicationConfig");
@@ -33,8 +35,6 @@ public class DescribeApplicationConfigRequest extends RoaAcsRequest<DescribeAppl
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
 
 	public String getAppId() {
 		return this.appId;

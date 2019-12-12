@@ -23,7 +23,9 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class StartApplicationRequest extends RoaAcsRequest<StartApplicationResponse> {
-	
+	   
+
+	private String appId;
 	public StartApplicationRequest() {
 		super("sae", "2019-05-06", "StartApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/startApplication");
@@ -33,8 +35,6 @@ public class StartApplicationRequest extends RoaAcsRequest<StartApplicationRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
 
 	public String getAppId() {
 		return this.appId;

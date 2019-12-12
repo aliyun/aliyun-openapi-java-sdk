@@ -23,7 +23,9 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class DescribeNamespaceRequest extends RoaAcsRequest<DescribeNamespaceResponse> {
-	
+	   
+
+	private String namespaceId;
 	public DescribeNamespaceRequest() {
 		super("sae", "2019-05-06", "DescribeNamespace", "serverless");
 		setUriPattern("/pop/v1/paas/namespace");
@@ -33,8 +35,6 @@ public class DescribeNamespaceRequest extends RoaAcsRequest<DescribeNamespaceRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String namespaceId;
 
 	public String getNamespaceId() {
 		return this.namespaceId;

@@ -23,7 +23,9 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class ListPublishedServicesRequest extends RoaAcsRequest<ListPublishedServicesResponse> {
-	
+	   
+
+	private String appId;
 	public ListPublishedServicesRequest() {
 		super("sae", "2019-05-06", "ListPublishedServices", "serverless");
 		setUriPattern("/pop/v1/sam/service/listPublishedServices");
@@ -33,8 +35,6 @@ public class ListPublishedServicesRequest extends RoaAcsRequest<ListPublishedSer
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
 
 	public String getAppId() {
 		return this.appId;

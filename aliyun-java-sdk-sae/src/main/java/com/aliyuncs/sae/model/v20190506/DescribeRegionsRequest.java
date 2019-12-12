@@ -23,7 +23,7 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
-	
+	   
 	public DescribeRegionsRequest() {
 		super("sae", "2019-05-06", "DescribeRegions", "serverless");
 		setUriPattern("/pop/v1/paas/regionConfig");

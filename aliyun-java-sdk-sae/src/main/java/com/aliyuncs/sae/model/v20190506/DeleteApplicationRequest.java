@@ -23,7 +23,9 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class DeleteApplicationRequest extends RoaAcsRequest<DeleteApplicationResponse> {
-	
+	   
+
+	private String appId;
 	public DeleteApplicationRequest() {
 		super("sae", "2019-05-06", "DeleteApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/deleteApplication");
@@ -33,8 +35,6 @@ public class DeleteApplicationRequest extends RoaAcsRequest<DeleteApplicationRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
 
 	public String getAppId() {
 		return this.appId;

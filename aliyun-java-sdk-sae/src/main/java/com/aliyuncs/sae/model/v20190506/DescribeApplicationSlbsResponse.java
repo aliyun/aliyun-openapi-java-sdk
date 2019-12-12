@@ -101,6 +101,10 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 
 		private String intranetIp;
 
+		private String internetSlbId;
+
+		private String intranetSlbId;
+
 		private List<InternetItem> internet;
 
 		private List<IntranetItem> intranet;
@@ -119,6 +123,22 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 
 		public void setIntranetIp(String intranetIp) {
 			this.intranetIp = intranetIp;
+		}
+
+		public String getInternetSlbId() {
+			return this.internetSlbId;
+		}
+
+		public void setInternetSlbId(String internetSlbId) {
+			this.internetSlbId = internetSlbId;
+		}
+
+		public String getIntranetSlbId() {
+			return this.intranetSlbId;
+		}
+
+		public void setIntranetSlbId(String intranetSlbId) {
+			this.intranetSlbId = intranetSlbId;
 		}
 
 		public List<InternetItem> getInternet() {
@@ -145,6 +165,8 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 
 			private Integer targetPort;
 
+			private String httpsCertId;
+
 			public Integer getPort() {
 				return this.port;
 			}
@@ -161,28 +183,20 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 				this.protocol = protocol;
 			}
 
-			/**
-			 * @deprecated use getBizProtocol instead of this.
-			 */
-			@Deprecated
-			public String getProtocol() {
-				return this.protocol;
-			}
-
-			/**
-			 * @deprecated use setBizProtocol instead of this.
-			 */
-			@Deprecated
-			public void setProtocol(String protocol) {
-				this.protocol = protocol;
-			}
-
 			public Integer getTargetPort() {
 				return this.targetPort;
 			}
 
 			public void setTargetPort(Integer targetPort) {
 				this.targetPort = targetPort;
+			}
+
+			public String getHttpsCertId() {
+				return this.httpsCertId;
+			}
+
+			public void setHttpsCertId(String httpsCertId) {
+				this.httpsCertId = httpsCertId;
 			}
 		}
 
@@ -194,6 +208,8 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 
 			private Integer targetPort;
 
+			private String httpsCertId;
+
 			public Integer getPort() {
 				return this.port;
 			}
@@ -210,28 +226,20 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 				this.protocol = protocol;
 			}
 
-			/**
-			 * @deprecated use getBizProtocol instead of this.
-			 */
-			@Deprecated
-			public String getProtocol() {
-				return this.protocol;
-			}
-
-			/**
-			 * @deprecated use setBizProtocol instead of this.
-			 */
-			@Deprecated
-			public void setProtocol(String protocol) {
-				this.protocol = protocol;
-			}
-
 			public Integer getTargetPort() {
 				return this.targetPort;
 			}
 
 			public void setTargetPort(Integer targetPort) {
 				this.targetPort = targetPort;
+			}
+
+			public String getHttpsCertId() {
+				return this.httpsCertId;
+			}
+
+			public void setHttpsCertId(String httpsCertId) {
+				this.httpsCertId = httpsCertId;
 			}
 		}
 	}

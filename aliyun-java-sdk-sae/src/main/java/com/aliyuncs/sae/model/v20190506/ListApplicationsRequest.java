@@ -23,7 +23,15 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class ListApplicationsRequest extends RoaAcsRequest<ListApplicationsResponse> {
-	
+	   
+
+	private String appName;
+
+	private String namespaceId;
+
+	private Integer pageSize;
+
+	private Integer currentPage;
 	public ListApplicationsRequest() {
 		super("sae", "2019-05-06", "ListApplications", "serverless");
 		setUriPattern("/pop/v1/sam/app/listApplications");
@@ -34,12 +42,6 @@ public class ListApplicationsRequest extends RoaAcsRequest<ListApplicationsRespo
 		} catch (Exception e) {}
 	}
 
-	private String appName;
-
-	private Integer pageSize;
-
-	private Integer currentPage;
-
 	public String getAppName() {
 		return this.appName;
 	}
@@ -48,6 +50,17 @@ public class ListApplicationsRequest extends RoaAcsRequest<ListApplicationsRespo
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
 		}
 	}
 

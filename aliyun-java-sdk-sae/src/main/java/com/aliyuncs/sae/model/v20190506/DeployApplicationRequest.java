@@ -23,24 +23,23 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationResponse> {
-	
-	public DeployApplicationRequest() {
-		super("sae", "2019-05-06", "DeployApplication", "serverless");
-		setUriPattern("/pop/v1/sam/app/deployApplication");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private String nasId;
 
 	private String webContainer;
 
 	private String jarStartArgs;
 
+	private String slsConfigs;
+
 	private String commandArgs;
 
 	private String readiness;
+
+	private String timezone;
+
+	private String mountHost;
 
 	private Integer batchWaitTime;
 
@@ -56,6 +55,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String updateStrategy;
 
+	private String mountDesc;
+
 	private String jdk;
 
 	private String jarStartOptions;
@@ -69,6 +70,26 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 	private String appId;
 
 	private String imageUrl;
+	public DeployApplicationRequest() {
+		super("sae", "2019-05-06", "DeployApplication", "serverless");
+		setUriPattern("/pop/v1/sam/app/deployApplication");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getNasId() {
+		return this.nasId;
+	}
+
+	public void setNasId(String nasId) {
+		this.nasId = nasId;
+		if(nasId != null){
+			putPathParameter("NasId", nasId);
+		}
+	}
 
 	public String getWebContainer() {
 		return this.webContainer;
@@ -92,6 +113,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
+	public String getSlsConfigs() {
+		return this.slsConfigs;
+	}
+
+	public void setSlsConfigs(String slsConfigs) {
+		this.slsConfigs = slsConfigs;
+		if(slsConfigs != null){
+			putQueryParameter("SlsConfigs", slsConfigs);
+		}
+	}
+
 	public String getCommandArgs() {
 		return this.commandArgs;
 	}
@@ -111,6 +143,28 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.readiness = readiness;
 		if(readiness != null){
 			putQueryParameter("Readiness", readiness);
+		}
+	}
+
+	public String getTimezone() {
+		return this.timezone;
+	}
+
+	public void setTimezone(String timezone) {
+		this.timezone = timezone;
+		if(timezone != null){
+			putQueryParameter("Timezone", timezone);
+		}
+	}
+
+	public String getMountHost() {
+		return this.mountHost;
+	}
+
+	public void setMountHost(String mountHost) {
+		this.mountHost = mountHost;
+		if(mountHost != null){
+			putPathParameter("MountHost", mountHost);
 		}
 	}
 
@@ -188,6 +242,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.updateStrategy = updateStrategy;
 		if(updateStrategy != null){
 			putQueryParameter("UpdateStrategy", updateStrategy);
+		}
+	}
+
+	public String getMountDesc() {
+		return this.mountDesc;
+	}
+
+	public void setMountDesc(String mountDesc) {
+		this.mountDesc = mountDesc;
+		if(mountDesc != null){
+			putPathParameter("MountDesc", mountDesc);
 		}
 	}
 

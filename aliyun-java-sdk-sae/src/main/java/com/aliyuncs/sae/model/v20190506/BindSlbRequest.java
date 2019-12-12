@@ -23,7 +23,17 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class BindSlbRequest extends RoaAcsRequest<BindSlbResponse> {
-	
+	   
+
+	private String intranet;
+
+	private String intranetSlbId;
+
+	private String internetSlbId;
+
+	private String appId;
+
+	private String internet;
 	public BindSlbRequest() {
 		super("sae", "2019-05-06", "BindSlb", "serverless");
 		setUriPattern("/pop/v1/sam/app/slb");
@@ -34,12 +44,6 @@ public class BindSlbRequest extends RoaAcsRequest<BindSlbResponse> {
 		} catch (Exception e) {}
 	}
 
-	private String intranet;
-
-	private String appId;
-
-	private String internet;
-
 	public String getIntranet() {
 		return this.intranet;
 	}
@@ -48,6 +52,28 @@ public class BindSlbRequest extends RoaAcsRequest<BindSlbResponse> {
 		this.intranet = intranet;
 		if(intranet != null){
 			putQueryParameter("Intranet", intranet);
+		}
+	}
+
+	public String getIntranetSlbId() {
+		return this.intranetSlbId;
+	}
+
+	public void setIntranetSlbId(String intranetSlbId) {
+		this.intranetSlbId = intranetSlbId;
+		if(intranetSlbId != null){
+			putQueryParameter("IntranetSlbId", intranetSlbId);
+		}
+	}
+
+	public String getInternetSlbId() {
+		return this.internetSlbId;
+	}
+
+	public void setInternetSlbId(String internetSlbId) {
+		this.internetSlbId = internetSlbId;
+		if(internetSlbId != null){
+			putQueryParameter("InternetSlbId", internetSlbId);
 		}
 	}
 

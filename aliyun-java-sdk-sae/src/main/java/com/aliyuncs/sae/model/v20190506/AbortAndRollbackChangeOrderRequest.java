@@ -23,7 +23,9 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class AbortAndRollbackChangeOrderRequest extends RoaAcsRequest<AbortAndRollbackChangeOrderResponse> {
-	
+	   
+
+	private String changeOrderId;
 	public AbortAndRollbackChangeOrderRequest() {
 		super("sae", "2019-05-06", "AbortAndRollbackChangeOrder", "serverless");
 		setUriPattern("/pop/v1/sam/changeorder/AbortAndRollbackChangeOrder");
@@ -33,8 +35,6 @@ public class AbortAndRollbackChangeOrderRequest extends RoaAcsRequest<AbortAndRo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String changeOrderId;
 
 	public String getChangeOrderId() {
 		return this.changeOrderId;

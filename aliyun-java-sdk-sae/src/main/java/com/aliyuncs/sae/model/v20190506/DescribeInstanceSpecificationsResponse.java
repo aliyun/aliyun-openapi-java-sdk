@@ -149,26 +149,10 @@ public class DescribeInstanceSpecificationsResponse extends AcsResponse {
 			this.specInfo = specInfo;
 		}
 
-		public Integer getBizVersion() {
-			return this.version;
-		}
-
-		public void setBizVersion(Integer version) {
-			this.version = version;
-		}
-
-		/**
-		 * @deprecated use getBizVersion instead of this.
-		 */
-		@Deprecated
 		public Integer getVersion() {
 			return this.version;
 		}
 
-		/**
-		 * @deprecated use setBizVersion instead of this.
-		 */
-		@Deprecated
 		public void setVersion(Integer version) {
 			this.version = version;
 		}

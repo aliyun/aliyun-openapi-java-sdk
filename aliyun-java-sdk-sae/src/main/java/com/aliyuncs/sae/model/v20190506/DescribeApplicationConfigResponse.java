@@ -14,6 +14,7 @@
 
 package com.aliyuncs.sae.model.v20190506;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.sae.transform.v20190506.DescribeApplicationConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -149,6 +150,16 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 		private String edasContainerVersion;
 
 		private String regionId;
+
+		private String slsConfigs;
+
+		private String timezone;
+
+		private String nasId;
+
+		private String mountHost;
+
+		private List<MountDescItem> mountDesc;
 
 		public String getAppId() {
 			return this.appId;
@@ -358,28 +369,75 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 			this.edasContainerVersion = edasContainerVersion;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getSlsConfigs() {
+			return this.slsConfigs;
+		}
+
+		public void setSlsConfigs(String slsConfigs) {
+			this.slsConfigs = slsConfigs;
+		}
+
+		public String getTimezone() {
+			return this.timezone;
+		}
+
+		public void setTimezone(String timezone) {
+			this.timezone = timezone;
+		}
+
+		public String getNasId() {
+			return this.nasId;
+		}
+
+		public void setNasId(String nasId) {
+			this.nasId = nasId;
+		}
+
+		public String getMountHost() {
+			return this.mountHost;
+		}
+
+		public void setMountHost(String mountHost) {
+			this.mountHost = mountHost;
+		}
+
+		public List<MountDescItem> getMountDesc() {
+			return this.mountDesc;
+		}
+
+		public void setMountDesc(List<MountDescItem> mountDesc) {
+			this.mountDesc = mountDesc;
+		}
+
+		public static class MountDescItem {
+
+			private String nasPath;
+
+			private String mountPath;
+
+			public String getNasPath() {
+				return this.nasPath;
+			}
+
+			public void setNasPath(String nasPath) {
+				this.nasPath = nasPath;
+			}
+
+			public String getMountPath() {
+				return this.mountPath;
+			}
+
+			public void setMountPath(String mountPath) {
+				this.mountPath = mountPath;
+			}
 		}
 	}
 

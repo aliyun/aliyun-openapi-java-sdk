@@ -143,6 +143,10 @@ public class ListApplicationsResponse extends AcsResponse {
 
 			private String namespaceId;
 
+			private String scaleRuleType;
+
+			private Boolean scaleRuleEnabled;
+
 			public Boolean getAppDeletingStatus() {
 				return this.appDeletingStatus;
 			}
@@ -167,26 +171,10 @@ public class ListApplicationsResponse extends AcsResponse {
 				this.appName = appName;
 			}
 
-			public String getBizRegionId() {
-				return this.regionId;
-			}
-
-			public void setBizRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			/**
-			 * @deprecated use getBizRegionId instead of this.
-			 */
-			@Deprecated
 			public String getRegionId() {
 				return this.regionId;
 			}
 
-			/**
-			 * @deprecated use setBizRegionId instead of this.
-			 */
-			@Deprecated
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
 			}
@@ -213,6 +201,22 @@ public class ListApplicationsResponse extends AcsResponse {
 
 			public void setNamespaceId(String namespaceId) {
 				this.namespaceId = namespaceId;
+			}
+
+			public String getScaleRuleType() {
+				return this.scaleRuleType;
+			}
+
+			public void setScaleRuleType(String scaleRuleType) {
+				this.scaleRuleType = scaleRuleType;
+			}
+
+			public Boolean getScaleRuleEnabled() {
+				return this.scaleRuleEnabled;
+			}
+
+			public void setScaleRuleEnabled(Boolean scaleRuleEnabled) {
+				this.scaleRuleEnabled = scaleRuleEnabled;
 			}
 		}
 	}

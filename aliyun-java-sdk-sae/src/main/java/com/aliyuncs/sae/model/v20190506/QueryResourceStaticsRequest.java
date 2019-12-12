@@ -23,7 +23,9 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class QueryResourceStaticsRequest extends RoaAcsRequest<QueryResourceStaticsResponse> {
-	
+	   
+
+	private String appId;
 	public QueryResourceStaticsRequest() {
 		super("sae", "2019-05-06", "QueryResourceStatics", "serverless");
 		setUriPattern("/pop/v1/paas/quota/queryResourceStatics");
@@ -33,8 +35,6 @@ public class QueryResourceStaticsRequest extends RoaAcsRequest<QueryResourceStat
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
 
 	public String getAppId() {
 		return this.appId;

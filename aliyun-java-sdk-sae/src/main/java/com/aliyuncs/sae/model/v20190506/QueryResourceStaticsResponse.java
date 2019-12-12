@@ -118,46 +118,46 @@ public class QueryResourceStaticsResponse extends AcsResponse {
 
 		public static class RealTimeRes {
 
-			private Integer cpu;
+			private Float cpu;
 
-			private Integer memory;
+			private Float memory;
 
-			public Integer getCpu() {
+			public Float getCpu() {
 				return this.cpu;
 			}
 
-			public void setCpu(Integer cpu) {
+			public void setCpu(Float cpu) {
 				this.cpu = cpu;
 			}
 
-			public Integer getMemory() {
+			public Float getMemory() {
 				return this.memory;
 			}
 
-			public void setMemory(Integer memory) {
+			public void setMemory(Float memory) {
 				this.memory = memory;
 			}
 		}
 
 		public static class Summary {
 
-			private Integer cpu;
+			private Float cpu;
 
-			private Integer memory;
+			private Float memory;
 
-			public Integer getCpu() {
+			public Float getCpu() {
 				return this.cpu;
 			}
 
-			public void setCpu(Integer cpu) {
+			public void setCpu(Float cpu) {
 				this.cpu = cpu;
 			}
 
-			public Integer getMemory() {
+			public Float getMemory() {
 				return this.memory;
 			}
 
-			public void setMemory(Integer memory) {
+			public void setMemory(Float memory) {
 				this.memory = memory;
 			}
 		}

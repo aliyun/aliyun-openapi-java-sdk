@@ -23,7 +23,11 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class RestartApplicationRequest extends RoaAcsRequest<RestartApplicationResponse> {
-	
+	   
+
+	private Integer minReadyInstances;
+
+	private String appId;
 	public RestartApplicationRequest() {
 		super("sae", "2019-05-06", "RestartApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/restartApplication");
@@ -33,10 +37,6 @@ public class RestartApplicationRequest extends RoaAcsRequest<RestartApplicationR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Integer minReadyInstances;
-
-	private String appId;
 
 	public Integer getMinReadyInstances() {
 		return this.minReadyInstances;

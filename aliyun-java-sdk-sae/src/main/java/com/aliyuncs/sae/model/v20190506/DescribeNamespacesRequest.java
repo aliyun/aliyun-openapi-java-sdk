@@ -23,7 +23,11 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class DescribeNamespacesRequest extends RoaAcsRequest<DescribeNamespacesResponse> {
-	
+	   
+
+	private Integer pageSize;
+
+	private Integer currentPage;
 	public DescribeNamespacesRequest() {
 		super("sae", "2019-05-06", "DescribeNamespaces", "serverless");
 		setUriPattern("/pop/v1/paas/namespaces");
@@ -33,10 +37,6 @@ public class DescribeNamespacesRequest extends RoaAcsRequest<DescribeNamespacesR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Integer pageSize;
-
-	private Integer currentPage;
 
 	public Integer getPageSize() {
 		return this.pageSize;

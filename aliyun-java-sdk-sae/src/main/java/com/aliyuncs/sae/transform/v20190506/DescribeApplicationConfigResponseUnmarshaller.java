@@ -14,8 +14,12 @@
 
 package com.aliyuncs.sae.transform.v20190506;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse;
 import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data;
+import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data.MountDescItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -58,6 +62,20 @@ public class DescribeApplicationConfigResponseUnmarshaller {
 		data.setBatchWaitTime(_ctx.integerValue("DescribeApplicationConfigResponse.Data.BatchWaitTime"));
 		data.setEdasContainerVersion(_ctx.stringValue("DescribeApplicationConfigResponse.Data.EdasContainerVersion"));
 		data.setRegionId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.RegionId"));
+		data.setSlsConfigs(_ctx.stringValue("DescribeApplicationConfigResponse.Data.SlsConfigs"));
+		data.setTimezone(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Timezone"));
+		data.setNasId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.NasId"));
+		data.setMountHost(_ctx.stringValue("DescribeApplicationConfigResponse.Data.MountHost"));
+
+		List<MountDescItem> mountDesc = new ArrayList<MountDescItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationConfigResponse.Data.MountDesc.Length"); i++) {
+			MountDescItem mountDescItem = new MountDescItem();
+			mountDescItem.setNasPath(_ctx.stringValue("DescribeApplicationConfigResponse.Data.MountDesc["+ i +"].NasPath"));
+			mountDescItem.setMountPath(_ctx.stringValue("DescribeApplicationConfigResponse.Data.MountDesc["+ i +"].MountPath"));
+
+			mountDesc.add(mountDescItem);
+		}
+		data.setMountDesc(mountDesc);
 		describeApplicationConfigResponse.setData(data);
 	 
 	 	return describeApplicationConfigResponse;

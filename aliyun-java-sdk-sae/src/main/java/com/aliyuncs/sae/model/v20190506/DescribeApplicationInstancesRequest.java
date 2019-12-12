@@ -23,7 +23,15 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class DescribeApplicationInstancesRequest extends RoaAcsRequest<DescribeApplicationInstancesResponse> {
-	
+	   
+
+	private String appId;
+
+	private String groupId;
+
+	private Integer pageSize;
+
+	private Integer currentPage;
 	public DescribeApplicationInstancesRequest() {
 		super("sae", "2019-05-06", "DescribeApplicationInstances", "serverless");
 		setUriPattern("/pop/v1/sam/app/describeApplicationInstances");
@@ -33,14 +41,6 @@ public class DescribeApplicationInstancesRequest extends RoaAcsRequest<DescribeA
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
-
-	private String groupId;
-
-	private Integer pageSize;
-
-	private Integer currentPage;
 
 	public String getAppId() {
 		return this.appId;

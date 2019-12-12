@@ -23,7 +23,9 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class StopApplicationRequest extends RoaAcsRequest<StopApplicationResponse> {
-	
+	   
+
+	private String appId;
 	public StopApplicationRequest() {
 		super("sae", "2019-05-06", "StopApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/stopApplication");
@@ -33,8 +35,6 @@ public class StopApplicationRequest extends RoaAcsRequest<StopApplicationRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
 
 	public String getAppId() {
 		return this.appId;

@@ -23,7 +23,11 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class DescribeNamespaceListRequest extends RoaAcsRequest<DescribeNamespaceListResponse> {
-	
+	   
+
+	private Boolean hybridCloudExclude;
+
+	private Boolean containCustom;
 	public DescribeNamespaceListRequest() {
 		super("sae", "2019-05-06", "DescribeNamespaceList", "serverless");
 		setUriPattern("/pop/v1/sam/namespace/describeNamespaceList");
@@ -33,10 +37,6 @@ public class DescribeNamespaceListRequest extends RoaAcsRequest<DescribeNamespac
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Boolean hybridCloudExclude;
-
-	private Boolean containCustom;
 
 	public Boolean getHybridCloudExclude() {
 		return this.hybridCloudExclude;

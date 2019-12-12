@@ -23,7 +23,11 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class ConfirmPipelineBatchRequest extends RoaAcsRequest<ConfirmPipelineBatchResponse> {
-	
+	   
+
+	private Boolean confirm;
+
+	private String pipelineId;
 	public ConfirmPipelineBatchRequest() {
 		super("sae", "2019-05-06", "ConfirmPipelineBatch", "serverless");
 		setUriPattern("/pop/v1/sam/changeorder/ConfirmPipelineBatch");
@@ -33,10 +37,6 @@ public class ConfirmPipelineBatchRequest extends RoaAcsRequest<ConfirmPipelineBa
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Boolean confirm;
-
-	private String pipelineId;
 
 	public Boolean getConfirm() {
 		return this.confirm;

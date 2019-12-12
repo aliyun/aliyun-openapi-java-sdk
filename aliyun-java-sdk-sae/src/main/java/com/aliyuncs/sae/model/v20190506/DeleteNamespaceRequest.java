@@ -23,7 +23,9 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class DeleteNamespaceRequest extends RoaAcsRequest<DeleteNamespaceResponse> {
-	
+	   
+
+	private String namespaceId;
 	public DeleteNamespaceRequest() {
 		super("sae", "2019-05-06", "DeleteNamespace", "serverless");
 		setUriPattern("/pop/v1/paas/namespace");
@@ -33,8 +35,6 @@ public class DeleteNamespaceRequest extends RoaAcsRequest<DeleteNamespaceRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String namespaceId;
 
 	public String getNamespaceId() {
 		return this.namespaceId;

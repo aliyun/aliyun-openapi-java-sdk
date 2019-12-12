@@ -38,13 +38,16 @@ public class DescribeApplicationSlbsResponseUnmarshaller {
 		Data data = new Data();
 		data.setInternetIp(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.InternetIp"));
 		data.setIntranetIp(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.IntranetIp"));
+		data.setInternetSlbId(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.InternetSlbId"));
+		data.setIntranetSlbId(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.IntranetSlbId"));
 
 		List<InternetItem> internet = new ArrayList<InternetItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationSlbsResponse.Data.Internet.Length"); i++) {
 			InternetItem internetItem = new InternetItem();
 			internetItem.setPort(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].Port"));
-			internetItem.setProtocol(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].Protocol"));
+			internetItem.setBizProtocol(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].Protocol"));
 			internetItem.setTargetPort(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].TargetPort"));
+			internetItem.setHttpsCertId(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].HttpsCertId"));
 
 			internet.add(internetItem);
 		}
@@ -54,8 +57,9 @@ public class DescribeApplicationSlbsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationSlbsResponse.Data.Intranet.Length"); i++) {
 			IntranetItem intranetItem = new IntranetItem();
 			intranetItem.setPort(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].Port"));
-			intranetItem.setProtocol(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].Protocol"));
+			intranetItem.setBizProtocol(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].Protocol"));
 			intranetItem.setTargetPort(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].TargetPort"));
+			intranetItem.setHttpsCertId(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].HttpsCertId"));
 
 			intranet.add(intranetItem);
 		}

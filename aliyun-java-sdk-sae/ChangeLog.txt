@@ -1,3 +1,6 @@
+2019-12-12 Version: 1.1.0
+- Supported new features in public cloud.
+
 2019-08-28 Version: 1.0.1
 - Add NamespaceId for listApplication.
 

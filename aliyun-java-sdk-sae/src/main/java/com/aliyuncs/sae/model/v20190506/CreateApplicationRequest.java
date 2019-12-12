@@ -23,16 +23,9 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationResponse> {
-	
-	public CreateApplicationRequest() {
-		super("sae", "2019-05-06", "CreateApplication", "serverless");
-		setUriPattern("/pop/v1/sam/app/createApplication");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private String nasId;
 
 	private String webContainer;
 
@@ -47,6 +40,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 	private String readiness;
 
 	private String timezone;
+
+	private String mountHost;
 
 	private String liveness;
 
@@ -74,6 +69,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String command;
 
+	private String mountDesc;
+
 	private String vSwitchId;
 
 	private String jdk;
@@ -85,6 +82,26 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 	private String imageUrl;
 
 	private String packageType;
+	public CreateApplicationRequest() {
+		super("sae", "2019-05-06", "CreateApplication", "serverless");
+		setUriPattern("/pop/v1/sam/app/createApplication");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getNasId() {
+		return this.nasId;
+	}
+
+	public void setNasId(String nasId) {
+		this.nasId = nasId;
+		if(nasId != null){
+			putQueryParameter("NasId", nasId);
+		}
+	}
 
 	public String getWebContainer() {
 		return this.webContainer;
@@ -160,6 +177,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.timezone = timezone;
 		if(timezone != null){
 			putQueryParameter("Timezone", timezone);
+		}
+	}
+
+	public String getMountHost() {
+		return this.mountHost;
+	}
+
+	public void setMountHost(String mountHost) {
+		this.mountHost = mountHost;
+		if(mountHost != null){
+			putQueryParameter("MountHost", mountHost);
 		}
 	}
 
@@ -303,6 +331,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.command = command;
 		if(command != null){
 			putQueryParameter("Command", command);
+		}
+	}
+
+	public String getMountDesc() {
+		return this.mountDesc;
+	}
+
+	public void setMountDesc(String mountDesc) {
+		this.mountDesc = mountDesc;
+		if(mountDesc != null){
+			putQueryParameter("MountDesc", mountDesc);
 		}
 	}
 

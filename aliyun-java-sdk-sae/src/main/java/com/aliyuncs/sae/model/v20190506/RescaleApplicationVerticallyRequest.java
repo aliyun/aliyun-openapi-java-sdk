@@ -23,7 +23,13 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class RescaleApplicationVerticallyRequest extends RoaAcsRequest<RescaleApplicationVerticallyResponse> {
-	
+	   
+
+	private String memory;
+
+	private String appId;
+
+	private String cpu;
 	public RescaleApplicationVerticallyRequest() {
 		super("sae", "2019-05-06", "RescaleApplicationVertically", "serverless");
 		setUriPattern("/pop/v1/sam/app/rescaleApplicationVertically");
@@ -33,12 +39,6 @@ public class RescaleApplicationVerticallyRequest extends RoaAcsRequest<RescaleAp
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String memory;
-
-	private String appId;
-
-	private String cpu;
 
 	public String getMemory() {
 		return this.memory;

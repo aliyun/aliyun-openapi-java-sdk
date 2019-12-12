@@ -23,7 +23,9 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class DescribeInstanceLogRequest extends RoaAcsRequest<DescribeInstanceLogResponse> {
-	
+	   
+
+	private String instanceId;
 	public DescribeInstanceLogRequest() {
 		super("sae", "2019-05-06", "DescribeInstanceLog", "serverless");
 		setUriPattern("/pop/v1/sam/instance/describeInstanceLog");
@@ -33,8 +35,6 @@ public class DescribeInstanceLogRequest extends RoaAcsRequest<DescribeInstanceLo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
 
 	public String getInstanceId() {
 		return this.instanceId;

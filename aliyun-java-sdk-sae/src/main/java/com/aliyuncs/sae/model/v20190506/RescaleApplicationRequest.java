@@ -23,7 +23,13 @@ import com.aliyuncs.sae.Endpoint;
  * @version 
  */
 public class RescaleApplicationRequest extends RoaAcsRequest<RescaleApplicationResponse> {
-	
+	   
+
+	private Integer minReadyInstances;
+
+	private Integer replicas;
+
+	private String appId;
 	public RescaleApplicationRequest() {
 		super("sae", "2019-05-06", "RescaleApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/rescaleApplication");
@@ -34,9 +40,16 @@ public class RescaleApplicationRequest extends RoaAcsRequest<RescaleApplicationR
 		} catch (Exception e) {}
 	}
 
-	private Integer replicas;
+	public Integer getMinReadyInstances() {
+		return this.minReadyInstances;
+	}
 
-	private String appId;
+	public void setMinReadyInstances(Integer minReadyInstances) {
+		this.minReadyInstances = minReadyInstances;
+		if(minReadyInstances != null){
+			putQueryParameter("MinReadyInstances", minReadyInstances.toString());
+		}
+	}
 
 	public Integer getReplicas() {
 		return this.replicas;
