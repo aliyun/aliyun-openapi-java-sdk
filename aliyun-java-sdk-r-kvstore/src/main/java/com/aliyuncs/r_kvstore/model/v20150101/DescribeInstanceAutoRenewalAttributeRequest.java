@@ -23,15 +23,7 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @version 
  */
 public class DescribeInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<DescribeInstanceAutoRenewalAttributeResponse> {
-	
-	public DescribeInstanceAutoRenewalAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeInstanceAutoRenewalAttribute");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -43,13 +35,19 @@ public class DescribeInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<D
 
 	private String dBInstanceId;
 
-	private String proxyId;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+	public DescribeInstanceAutoRenewalAttributeRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeInstanceAutoRenewalAttribute");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -103,17 +101,6 @@ public class DescribeInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<D
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getProxyId() {
-		return this.proxyId;
-	}
-
-	public void setProxyId(String proxyId) {
-		this.proxyId = proxyId;
-		if(proxyId != null){
-			putQueryParameter("proxyId", proxyId);
 		}
 	}
 

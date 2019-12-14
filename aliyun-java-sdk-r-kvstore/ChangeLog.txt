@@ -1,3 +1,6 @@
+2019-12-14 Version: 2.0.8
+- Update DescribeAvailableResource.
+
 2019-09-23 Version: 2.1.2
 - Generated 2015-01-01 for `R-kvstore`.
 

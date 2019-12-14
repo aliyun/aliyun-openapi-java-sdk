@@ -14,17 +14,18 @@
 
 package com.aliyuncs.r_kvstore.transform.v20150101;
 
-import com.aliyuncs.r_kvstore.model.v20150101.DescribeCertificationResponse;
+import com.aliyuncs.r_kvstore.model.v20150101.FlushExpireKeysResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DescribeCertificationResponseUnmarshaller {
+public class FlushExpireKeysResponseUnmarshaller {
 
-	public static DescribeCertificationResponse unmarshall(DescribeCertificationResponse describeCertificationResponse, UnmarshallerContext _ctx) {
+	public static FlushExpireKeysResponse unmarshall(FlushExpireKeysResponse flushExpireKeysResponse, UnmarshallerContext _ctx) {
 		
-		describeCertificationResponse.setRequestId(_ctx.stringValue("DescribeCertificationResponse.RequestId"));
-		describeCertificationResponse.setNoCertification(_ctx.booleanValue("DescribeCertificationResponse.NoCertification"));
+		flushExpireKeysResponse.setRequestId(_ctx.stringValue("FlushExpireKeysResponse.RequestId"));
+		flushExpireKeysResponse.setInstanceId(_ctx.stringValue("FlushExpireKeysResponse.InstanceId"));
+		flushExpireKeysResponse.setTaskId(_ctx.stringValue("FlushExpireKeysResponse.TaskId"));
 	 
-	 	return describeCertificationResponse;
+	 	return flushExpireKeysResponse;
 	}
 }

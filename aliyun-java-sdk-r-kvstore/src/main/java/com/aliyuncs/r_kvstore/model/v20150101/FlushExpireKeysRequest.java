@@ -22,26 +22,14 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyReplicaModeRequest extends RpcAcsRequest<ModifyReplicaModeResponse> {
-	
-	public ModifyReplicaModeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyReplicaMode");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String domainMode;
+public class FlushExpireKeysRequest extends RpcAcsRequest<FlushExpireKeysResponse> {
+	   
 
 	private Long resourceOwnerId;
 
 	private String securityToken;
 
-	private String replicaId;
-
-	private String primaryInstanceId;
+	private String effectiveTime;
 
 	private String resourceOwnerAccount;
 
@@ -49,17 +37,14 @@ public class ModifyReplicaModeRequest extends RpcAcsRequest<ModifyReplicaModeRes
 
 	private Long ownerId;
 
-	private String replicaMode;
-
-	public String getDomainMode() {
-		return this.domainMode;
-	}
-
-	public void setDomainMode(String domainMode) {
-		this.domainMode = domainMode;
-		if(domainMode != null){
-			putQueryParameter("DomainMode", domainMode);
-		}
+	private String instanceId;
+	public FlushExpireKeysRequest() {
+		super("R-kvstore", "2015-01-01", "FlushExpireKeys");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -73,29 +58,10 @@ public class ModifyReplicaModeRequest extends RpcAcsRequest<ModifyReplicaModeRes
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -103,25 +69,14 @@ public class ModifyReplicaModeRequest extends RpcAcsRequest<ModifyReplicaModeRes
 		}
 	}
 
-	public String getReplicaId() {
-		return this.replicaId;
+	public String getEffectiveTime() {
+		return this.effectiveTime;
 	}
 
-	public void setReplicaId(String replicaId) {
-		this.replicaId = replicaId;
-		if(replicaId != null){
-			putQueryParameter("ReplicaId", replicaId);
-		}
-	}
-
-	public String getPrimaryInstanceId() {
-		return this.primaryInstanceId;
-	}
-
-	public void setPrimaryInstanceId(String primaryInstanceId) {
-		this.primaryInstanceId = primaryInstanceId;
-		if(primaryInstanceId != null){
-			putQueryParameter("PrimaryInstanceId", primaryInstanceId);
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
 		}
 	}
 
@@ -158,20 +113,20 @@ public class ModifyReplicaModeRequest extends RpcAcsRequest<ModifyReplicaModeRes
 		}
 	}
 
-	public String getReplicaMode() {
-		return this.replicaMode;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setReplicaMode(String replicaMode) {
-		this.replicaMode = replicaMode;
-		if(replicaMode != null){
-			putQueryParameter("ReplicaMode", replicaMode);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
 	@Override
-	public Class<ModifyReplicaModeResponse> getResponseClass() {
-		return ModifyReplicaModeResponse.class;
+	public Class<FlushExpireKeysResponse> getResponseClass() {
+		return FlushExpireKeysResponse.class;
 	}
 
 }

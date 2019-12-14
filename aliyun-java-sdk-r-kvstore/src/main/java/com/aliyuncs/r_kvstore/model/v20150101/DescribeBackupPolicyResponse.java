@@ -34,6 +34,8 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private String preferredNextBackupTime;
 
+	private Integer enableBackupLog;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -72,6 +74,14 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setPreferredNextBackupTime(String preferredNextBackupTime) {
 		this.preferredNextBackupTime = preferredNextBackupTime;
+	}
+
+	public Integer getEnableBackupLog() {
+		return this.enableBackupLog;
+	}
+
+	public void setEnableBackupLog(Integer enableBackupLog) {
+		this.enableBackupLog = enableBackupLog;
 	}
 
 	@Override

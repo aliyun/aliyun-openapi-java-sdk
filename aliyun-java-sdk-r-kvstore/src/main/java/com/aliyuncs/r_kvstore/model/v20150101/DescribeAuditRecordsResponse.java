@@ -107,7 +107,7 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 
 	public static class SQL {
 
-		private Integer hostAddress;
+		private String hostAddress;
 
 		private String databaseName;
 
@@ -123,11 +123,11 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 
 		private String accountName;
 
-		public Integer getHostAddress() {
+		public String getHostAddress() {
 			return this.hostAddress;
 		}
 
-		public void setHostAddress(Integer hostAddress) {
+		public void setHostAddress(String hostAddress) {
 			this.hostAddress = hostAddress;
 		}
 

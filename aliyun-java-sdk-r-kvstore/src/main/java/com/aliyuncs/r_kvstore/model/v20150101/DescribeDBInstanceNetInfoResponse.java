@@ -77,6 +77,8 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 		private String upgradeable;
 
+		private Integer directConnection;
+
 		public String getConnectionString() {
 			return this.connectionString;
 		}
@@ -155,6 +157,14 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 		public void setUpgradeable(String upgradeable) {
 			this.upgradeable = upgradeable;
+		}
+
+		public Integer getDirectConnection() {
+			return this.directConnection;
+		}
+
+		public void setDirectConnection(Integer directConnection) {
+			this.directConnection = directConnection;
 		}
 	}
 

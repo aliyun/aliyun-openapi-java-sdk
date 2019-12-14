@@ -15,16 +15,20 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.r_kvstore.transform.v20150101.ModifyGuardDomainModeResponseUnmarshaller;
+import com.aliyuncs.r_kvstore.transform.v20150101.FlushExpireKeysResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyGuardDomainModeResponse extends AcsResponse {
+public class FlushExpireKeysResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String instanceId;
+
+	private String taskId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,13 +38,24 @@ public class ModifyGuardDomainModeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	@Override
-	public ModifyGuardDomainModeResponse getInstance(UnmarshallerContext context) {
-		return	ModifyGuardDomainModeResponseUnmarshaller.unmarshall(this, context);
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public FlushExpireKeysResponse getInstance(UnmarshallerContext context) {
+		return	FlushExpireKeysResponseUnmarshaller.unmarshall(this, context);
 	}
 }

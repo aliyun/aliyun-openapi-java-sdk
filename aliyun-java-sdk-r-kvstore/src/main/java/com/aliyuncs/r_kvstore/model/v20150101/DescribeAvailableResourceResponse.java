@@ -55,28 +55,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 		private String networkTypes;
 
+		private String zoneName;
+
 		private List<SupportedEngine> supportedEngines;
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -105,6 +91,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 			this.networkTypes = networkTypes;
 		}
 
+		public String getZoneName() {
+			return this.zoneName;
+		}
+
+		public void setZoneName(String zoneName) {
+			this.zoneName = zoneName;
+		}
+
 		public List<SupportedEngine> getSupportedEngines() {
 			return this.supportedEngines;
 		}
@@ -117,7 +111,7 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 			private String engine;
 
-			private List<SupportedEngineVersion> supportedEngineVersions;
+			private List<SupportedEditionType> supportedEditionTypes;
 
 			public String getEngine() {
 				return this.engine;
@@ -127,152 +121,136 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 				this.engine = engine;
 			}
 
-			public List<SupportedEngineVersion> getSupportedEngineVersions() {
-				return this.supportedEngineVersions;
+			public List<SupportedEditionType> getSupportedEditionTypes() {
+				return this.supportedEditionTypes;
 			}
 
-			public void setSupportedEngineVersions(List<SupportedEngineVersion> supportedEngineVersions) {
-				this.supportedEngineVersions = supportedEngineVersions;
+			public void setSupportedEditionTypes(List<SupportedEditionType> supportedEditionTypes) {
+				this.supportedEditionTypes = supportedEditionTypes;
 			}
 
-			public static class SupportedEngineVersion {
+			public static class SupportedEditionType {
 
-				private String version;
+				private String editionType;
 
-				private List<SupportedArchitectureType> supportedArchitectureTypes;
+				private List<SupportedSeriesType> supportedSeriesTypes;
 
-				public String getBizVersion() {
-					return this.version;
+				public String getEditionType() {
+					return this.editionType;
 				}
 
-				public void setBizVersion(String version) {
-					this.version = version;
+				public void setEditionType(String editionType) {
+					this.editionType = editionType;
 				}
 
-				/**
-				 * @deprecated use getBizVersion instead of this.
-				 */
-				@Deprecated
-				public String getVersion() {
-					return this.version;
+				public List<SupportedSeriesType> getSupportedSeriesTypes() {
+					return this.supportedSeriesTypes;
 				}
 
-				/**
-				 * @deprecated use setBizVersion instead of this.
-				 */
-				@Deprecated
-				public void setVersion(String version) {
-					this.version = version;
+				public void setSupportedSeriesTypes(List<SupportedSeriesType> supportedSeriesTypes) {
+					this.supportedSeriesTypes = supportedSeriesTypes;
 				}
 
-				public List<SupportedArchitectureType> getSupportedArchitectureTypes() {
-					return this.supportedArchitectureTypes;
-				}
+				public static class SupportedSeriesType {
 
-				public void setSupportedArchitectureTypes(List<SupportedArchitectureType> supportedArchitectureTypes) {
-					this.supportedArchitectureTypes = supportedArchitectureTypes;
-				}
+					private String seriesType;
 
-				public static class SupportedArchitectureType {
+					private List<SupportedEngineVersion> supportedEngineVersions;
 
-					private String architecture;
-
-					private List<SupportedPerformanceType> supportedPerformanceTypes;
-
-					public String getArchitecture() {
-						return this.architecture;
+					public String getSeriesType() {
+						return this.seriesType;
 					}
 
-					public void setArchitecture(String architecture) {
-						this.architecture = architecture;
+					public void setSeriesType(String seriesType) {
+						this.seriesType = seriesType;
 					}
 
-					public List<SupportedPerformanceType> getSupportedPerformanceTypes() {
-						return this.supportedPerformanceTypes;
+					public List<SupportedEngineVersion> getSupportedEngineVersions() {
+						return this.supportedEngineVersions;
 					}
 
-					public void setSupportedPerformanceTypes(List<SupportedPerformanceType> supportedPerformanceTypes) {
-						this.supportedPerformanceTypes = supportedPerformanceTypes;
+					public void setSupportedEngineVersions(List<SupportedEngineVersion> supportedEngineVersions) {
+						this.supportedEngineVersions = supportedEngineVersions;
 					}
 
-					public static class SupportedPerformanceType {
+					public static class SupportedEngineVersion {
 
-						private String performanceType;
+						private String version;
 
-						private List<SupportedStorageType> supportedStorageTypes;
+						private List<SupportedArchitectureType> supportedArchitectureTypes;
 
-						public String getPerformanceType() {
-							return this.performanceType;
+						public String getVersion() {
+							return this.version;
 						}
 
-						public void setPerformanceType(String performanceType) {
-							this.performanceType = performanceType;
+						public void setVersion(String version) {
+							this.version = version;
 						}
 
-						public List<SupportedStorageType> getSupportedStorageTypes() {
-							return this.supportedStorageTypes;
+						public List<SupportedArchitectureType> getSupportedArchitectureTypes() {
+							return this.supportedArchitectureTypes;
 						}
 
-						public void setSupportedStorageTypes(List<SupportedStorageType> supportedStorageTypes) {
-							this.supportedStorageTypes = supportedStorageTypes;
+						public void setSupportedArchitectureTypes(List<SupportedArchitectureType> supportedArchitectureTypes) {
+							this.supportedArchitectureTypes = supportedArchitectureTypes;
 						}
 
-						public static class SupportedStorageType {
+						public static class SupportedArchitectureType {
 
-							private String storageType;
+							private String architecture;
 
-							private List<SupportedNodeType> supportedNodeTypes;
+							private List<SupportedShardNumber> supportedShardNumbers;
 
-							public String getStorageType() {
-								return this.storageType;
+							public String getArchitecture() {
+								return this.architecture;
 							}
 
-							public void setStorageType(String storageType) {
-								this.storageType = storageType;
+							public void setArchitecture(String architecture) {
+								this.architecture = architecture;
 							}
 
-							public List<SupportedNodeType> getSupportedNodeTypes() {
-								return this.supportedNodeTypes;
+							public List<SupportedShardNumber> getSupportedShardNumbers() {
+								return this.supportedShardNumbers;
 							}
 
-							public void setSupportedNodeTypes(List<SupportedNodeType> supportedNodeTypes) {
-								this.supportedNodeTypes = supportedNodeTypes;
+							public void setSupportedShardNumbers(List<SupportedShardNumber> supportedShardNumbers) {
+								this.supportedShardNumbers = supportedShardNumbers;
 							}
 
-							public static class SupportedNodeType {
+							public static class SupportedShardNumber {
 
-								private String nodeType;
+								private String shardNumber;
 
-								private List<SupportedPackageType> supportedPackageTypes;
+								private List<SupportedNodeType> supportedNodeTypes;
 
-								public String getNodeType() {
-									return this.nodeType;
+								public String getShardNumber() {
+									return this.shardNumber;
 								}
 
-								public void setNodeType(String nodeType) {
-									this.nodeType = nodeType;
+								public void setShardNumber(String shardNumber) {
+									this.shardNumber = shardNumber;
 								}
 
-								public List<SupportedPackageType> getSupportedPackageTypes() {
-									return this.supportedPackageTypes;
+								public List<SupportedNodeType> getSupportedNodeTypes() {
+									return this.supportedNodeTypes;
 								}
 
-								public void setSupportedPackageTypes(List<SupportedPackageType> supportedPackageTypes) {
-									this.supportedPackageTypes = supportedPackageTypes;
+								public void setSupportedNodeTypes(List<SupportedNodeType> supportedNodeTypes) {
+									this.supportedNodeTypes = supportedNodeTypes;
 								}
 
-								public static class SupportedPackageType {
+								public static class SupportedNodeType {
 
-									private String packageType;
+									private String supportedNodeType;
 
 									private List<AvailableResource> availableResources;
 
-									public String getPackageType() {
-										return this.packageType;
+									public String getSupportedNodeType() {
+										return this.supportedNodeType;
 									}
 
-									public void setPackageType(String packageType) {
-										this.packageType = packageType;
+									public void setSupportedNodeType(String supportedNodeType) {
+										this.supportedNodeType = supportedNodeType;
 									}
 
 									public List<AvailableResource> getAvailableResources() {

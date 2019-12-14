@@ -37,7 +37,7 @@ public class DescribeAuditRecordsResponseUnmarshaller {
 		List<SQL> items = new ArrayList<SQL>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAuditRecordsResponse.Items.Length"); i++) {
 			SQL sQL = new SQL();
-			sQL.setHostAddress(_ctx.integerValue("DescribeAuditRecordsResponse.Items["+ i +"].HostAddress"));
+			sQL.setHostAddress(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].HostAddress"));
 			sQL.setDatabaseName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].DatabaseName"));
 			sQL.setIPAddress(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].IPAddress"));
 			sQL.setSQLText(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].SQLText"));

@@ -24,15 +24,7 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @version 
  */
 public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesResponse> {
-	
-	public DescribeInstancesRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeInstances");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -45,6 +37,8 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 	private String instanceClass;
 
 	private Integer pageNumber;
+
+	private String resourceGroupId;
 
 	private String expired;
 
@@ -75,6 +69,14 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 	private String zoneId;
 
 	private String chargeType;
+	public DescribeInstancesRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeInstances");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -142,6 +144,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getExpired() {
 		return this.expired;
 	}
@@ -153,29 +166,10 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

@@ -24,15 +24,7 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @version 
  */
 public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
-	
-	public ListTagResourcesRequest() {
-		super("R-kvstore", "2015-01-01", "ListTagResources");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -49,6 +41,14 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 	private Long ownerId;
 
 	private String resourceType;
+	public ListTagResourcesRequest() {
+		super("R-kvstore", "2015-01-01", "ListTagResources");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

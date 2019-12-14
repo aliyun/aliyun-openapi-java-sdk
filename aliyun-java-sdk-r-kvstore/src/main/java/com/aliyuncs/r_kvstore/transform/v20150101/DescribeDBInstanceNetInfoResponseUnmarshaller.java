@@ -42,6 +42,7 @@ public class DescribeDBInstanceNetInfoResponseUnmarshaller {
 			instanceNetInfo.setIPType(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].IPType"));
 			instanceNetInfo.setExpiredTime(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].ExpiredTime"));
 			instanceNetInfo.setUpgradeable(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].Upgradeable"));
+			instanceNetInfo.setDirectConnection(_ctx.integerValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].DirectConnection"));
 
 			netInfoItems.add(instanceNetInfo);
 		}
