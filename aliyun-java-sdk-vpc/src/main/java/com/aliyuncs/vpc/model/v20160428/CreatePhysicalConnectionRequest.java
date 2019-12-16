@@ -55,7 +55,7 @@ public class CreatePhysicalConnectionRequest extends RpcAcsRequest<CreatePhysica
 
 	private String name;
 	public CreatePhysicalConnectionRequest() {
-		super("Vpc", "2016-04-28", "CreatePhysicalConnection", "vpc");
+		super("Vpc", "2016-04-28", "CreatePhysicalConnection", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

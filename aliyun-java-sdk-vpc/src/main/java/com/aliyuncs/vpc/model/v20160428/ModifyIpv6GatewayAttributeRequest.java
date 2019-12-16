@@ -39,7 +39,7 @@ public class ModifyIpv6GatewayAttributeRequest extends RpcAcsRequest<ModifyIpv6G
 
 	private String name;
 	public ModifyIpv6GatewayAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyIpv6GatewayAttribute", "vpc");
+		super("Vpc", "2016-04-28", "ModifyIpv6GatewayAttribute", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

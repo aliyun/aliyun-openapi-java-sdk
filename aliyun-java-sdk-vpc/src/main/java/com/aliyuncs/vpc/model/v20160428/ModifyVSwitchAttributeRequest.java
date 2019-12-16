@@ -41,7 +41,7 @@ public class ModifyVSwitchAttributeRequest extends RpcAcsRequest<ModifyVSwitchAt
 
 	private String vSwitchName;
 	public ModifyVSwitchAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyVSwitchAttribute", "vpc");
+		super("Vpc", "2016-04-28", "ModifyVSwitchAttribute", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class RemoveGlobalAccelerationInstanceIpRequest extends RpcAcsRequest<Rem
 
 	private String ipInstanceId;
 	public RemoveGlobalAccelerationInstanceIpRequest() {
-		super("Vpc", "2016-04-28", "RemoveGlobalAccelerationInstanceIp", "vpc");
+		super("Vpc", "2016-04-28", "RemoveGlobalAccelerationInstanceIp", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

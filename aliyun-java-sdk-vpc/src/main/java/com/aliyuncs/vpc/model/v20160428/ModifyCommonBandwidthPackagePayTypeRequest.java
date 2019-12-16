@@ -51,7 +51,7 @@ public class ModifyCommonBandwidthPackagePayTypeRequest extends RpcAcsRequest<Mo
 
 	private String pricingCycle;
 	public ModifyCommonBandwidthPackagePayTypeRequest() {
-		super("Vpc", "2016-04-28", "ModifyCommonBandwidthPackagePayType", "vpc");
+		super("Vpc", "2016-04-28", "ModifyCommonBandwidthPackagePayType", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -55,7 +55,7 @@ public class CreateExpressCloudConnectionRequest extends RpcAcsRequest<CreateExp
 
 	private String name;
 	public CreateExpressCloudConnectionRequest() {
-		super("Vpc", "2016-04-28", "CreateExpressCloudConnection", "vpc");
+		super("Vpc", "2016-04-28", "CreateExpressCloudConnection", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

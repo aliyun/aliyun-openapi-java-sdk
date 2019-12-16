@@ -41,7 +41,7 @@ public class ModifyIpv6InternetBandwidthRequest extends RpcAcsRequest<ModifyIpv6
 
 	private String ipv6AddressId;
 	public ModifyIpv6InternetBandwidthRequest() {
-		super("Vpc", "2016-04-28", "ModifyIpv6InternetBandwidth", "vpc");
+		super("Vpc", "2016-04-28", "ModifyIpv6InternetBandwidth", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

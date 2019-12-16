@@ -47,7 +47,7 @@ public class DescribeNetworkAclsRequest extends RpcAcsRequest<DescribeNetworkAcl
 
 	private String vpcId;
 	public DescribeNetworkAclsRequest() {
-		super("Vpc", "2016-04-28", "DescribeNetworkAcls", "vpc");
+		super("Vpc", "2016-04-28", "DescribeNetworkAcls", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

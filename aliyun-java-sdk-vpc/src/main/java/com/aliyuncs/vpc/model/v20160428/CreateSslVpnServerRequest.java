@@ -51,7 +51,7 @@ public class CreateSslVpnServerRequest extends RpcAcsRequest<CreateSslVpnServerR
 
 	private String name;
 	public CreateSslVpnServerRequest() {
-		super("Vpc", "2016-04-28", "CreateSslVpnServer", "vpc");
+		super("Vpc", "2016-04-28", "CreateSslVpnServer", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

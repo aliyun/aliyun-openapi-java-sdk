@@ -53,7 +53,7 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 
 	private Long vbrOwnerId;
 	public CreateVirtualBorderRouterRequest() {
-		super("Vpc", "2016-04-28", "CreateVirtualBorderRouter", "vpc");
+		super("Vpc", "2016-04-28", "CreateVirtualBorderRouter", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

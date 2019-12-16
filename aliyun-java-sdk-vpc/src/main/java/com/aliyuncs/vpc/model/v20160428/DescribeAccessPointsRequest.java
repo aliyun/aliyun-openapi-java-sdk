@@ -35,7 +35,7 @@ public class DescribeAccessPointsRequest extends RpcAcsRequest<DescribeAccessPoi
 
 	private Long ownerId;
 	public DescribeAccessPointsRequest() {
-		super("Vpc", "2016-04-28", "DescribeAccessPoints", "vpc");
+		super("Vpc", "2016-04-28", "DescribeAccessPoints", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

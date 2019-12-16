@@ -27,6 +27,8 @@ public class ModifySnatEntryRequest extends RpcAcsRequest<ModifySnatEntryRespons
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String snatIp;
 
 	private String snatEntryId;
@@ -41,7 +43,7 @@ public class ModifySnatEntryRequest extends RpcAcsRequest<ModifySnatEntryRespons
 
 	private String snatEntryName;
 	public ModifySnatEntryRequest() {
-		super("Vpc", "2016-04-28", "ModifySnatEntry", "vpc");
+		super("Vpc", "2016-04-28", "ModifySnatEntry", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,6 +59,17 @@ public class ModifySnatEntryRequest extends RpcAcsRequest<ModifySnatEntryRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

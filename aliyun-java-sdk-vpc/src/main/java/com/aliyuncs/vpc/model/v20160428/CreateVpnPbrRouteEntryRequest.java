@@ -51,7 +51,7 @@ public class CreateVpnPbrRouteEntryRequest extends RpcAcsRequest<CreateVpnPbrRou
 
 	private String overlayMode;
 	public CreateVpnPbrRouteEntryRequest() {
-		super("Vpc", "2016-04-28", "CreateVpnPbrRouteEntry", "vpc");
+		super("Vpc", "2016-04-28", "CreateVpnPbrRouteEntry", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

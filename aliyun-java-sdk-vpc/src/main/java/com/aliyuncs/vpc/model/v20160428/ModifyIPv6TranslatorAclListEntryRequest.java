@@ -39,7 +39,7 @@ public class ModifyIPv6TranslatorAclListEntryRequest extends RpcAcsRequest<Modif
 
 	private String aclEntryId;
 	public ModifyIPv6TranslatorAclListEntryRequest() {
-		super("Vpc", "2016-04-28", "ModifyIPv6TranslatorAclListEntry", "vpc");
+		super("Vpc", "2016-04-28", "ModifyIPv6TranslatorAclListEntry", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

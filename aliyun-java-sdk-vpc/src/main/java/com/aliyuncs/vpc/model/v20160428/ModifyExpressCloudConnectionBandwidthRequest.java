@@ -37,7 +37,7 @@ public class ModifyExpressCloudConnectionBandwidthRequest extends RpcAcsRequest<
 
 	private Long ownerId;
 	public ModifyExpressCloudConnectionBandwidthRequest() {
-		super("Vpc", "2016-04-28", "ModifyExpressCloudConnectionBandwidth", "vpc");
+		super("Vpc", "2016-04-28", "ModifyExpressCloudConnectionBandwidth", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

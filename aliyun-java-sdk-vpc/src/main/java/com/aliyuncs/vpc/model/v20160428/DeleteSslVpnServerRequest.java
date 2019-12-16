@@ -37,7 +37,7 @@ public class DeleteSslVpnServerRequest extends RpcAcsRequest<DeleteSslVpnServerR
 
 	private Long ownerId;
 	public DeleteSslVpnServerRequest() {
-		super("Vpc", "2016-04-28", "DeleteSslVpnServer", "vpc");
+		super("Vpc", "2016-04-28", "DeleteSslVpnServer", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

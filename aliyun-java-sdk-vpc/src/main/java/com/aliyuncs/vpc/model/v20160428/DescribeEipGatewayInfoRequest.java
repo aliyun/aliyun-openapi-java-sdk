@@ -35,7 +35,7 @@ public class DescribeEipGatewayInfoRequest extends RpcAcsRequest<DescribeEipGate
 
 	private String instanceId;
 	public DescribeEipGatewayInfoRequest() {
-		super("Vpc", "2016-04-28", "DescribeEipGatewayInfo", "vpc");
+		super("Vpc", "2016-04-28", "DescribeEipGatewayInfo", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

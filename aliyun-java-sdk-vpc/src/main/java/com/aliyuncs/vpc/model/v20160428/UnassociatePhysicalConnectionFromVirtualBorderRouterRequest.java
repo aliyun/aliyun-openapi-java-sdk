@@ -39,7 +39,7 @@ public class UnassociatePhysicalConnectionFromVirtualBorderRouterRequest extends
 
 	private String physicalConnectionId;
 	public UnassociatePhysicalConnectionFromVirtualBorderRouterRequest() {
-		super("Vpc", "2016-04-28", "UnassociatePhysicalConnectionFromVirtualBorderRouter", "vpc");
+		super("Vpc", "2016-04-28", "UnassociatePhysicalConnectionFromVirtualBorderRouter", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

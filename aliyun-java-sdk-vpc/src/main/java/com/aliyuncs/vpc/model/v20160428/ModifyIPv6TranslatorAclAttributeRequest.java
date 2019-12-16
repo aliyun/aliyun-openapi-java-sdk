@@ -39,7 +39,7 @@ public class ModifyIPv6TranslatorAclAttributeRequest extends RpcAcsRequest<Modif
 
 	private Long ownerId;
 	public ModifyIPv6TranslatorAclAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyIPv6TranslatorAclAttribute", "vpc");
+		super("Vpc", "2016-04-28", "ModifyIPv6TranslatorAclAttribute", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

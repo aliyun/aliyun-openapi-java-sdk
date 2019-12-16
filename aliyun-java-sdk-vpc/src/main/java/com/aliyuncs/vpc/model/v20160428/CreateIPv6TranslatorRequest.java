@@ -49,7 +49,7 @@ public class CreateIPv6TranslatorRequest extends RpcAcsRequest<CreateIPv6Transla
 
 	private String pricingCycle;
 	public CreateIPv6TranslatorRequest() {
-		super("Vpc", "2016-04-28", "CreateIPv6Translator", "vpc");
+		super("Vpc", "2016-04-28", "CreateIPv6Translator", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

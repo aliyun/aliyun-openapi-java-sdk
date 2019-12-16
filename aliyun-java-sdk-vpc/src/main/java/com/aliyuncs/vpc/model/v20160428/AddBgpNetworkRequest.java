@@ -41,7 +41,7 @@ public class AddBgpNetworkRequest extends RpcAcsRequest<AddBgpNetworkResponse> {
 
 	private String dstCidrBlock;
 	public AddBgpNetworkRequest() {
-		super("Vpc", "2016-04-28", "AddBgpNetwork", "vpc");
+		super("Vpc", "2016-04-28", "AddBgpNetwork", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

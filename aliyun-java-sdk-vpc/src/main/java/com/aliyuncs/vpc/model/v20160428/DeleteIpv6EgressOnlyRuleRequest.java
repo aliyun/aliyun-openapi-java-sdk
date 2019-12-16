@@ -37,7 +37,7 @@ public class DeleteIpv6EgressOnlyRuleRequest extends RpcAcsRequest<DeleteIpv6Egr
 
 	private Long ownerId;
 	public DeleteIpv6EgressOnlyRuleRequest() {
-		super("Vpc", "2016-04-28", "DeleteIpv6EgressOnlyRule", "vpc");
+		super("Vpc", "2016-04-28", "DeleteIpv6EgressOnlyRule", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

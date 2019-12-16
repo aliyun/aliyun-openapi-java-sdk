@@ -38,7 +38,7 @@ public class UnassociateNetworkAclRequest extends RpcAcsRequest<UnassociateNetwo
 
 	private Long ownerId;
 	public UnassociateNetworkAclRequest() {
-		super("Vpc", "2016-04-28", "UnassociateNetworkAcl", "vpc");
+		super("Vpc", "2016-04-28", "UnassociateNetworkAcl", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

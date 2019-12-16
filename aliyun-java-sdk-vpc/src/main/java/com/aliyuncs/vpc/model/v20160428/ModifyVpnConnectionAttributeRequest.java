@@ -53,7 +53,7 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 
 	private String name;
 	public ModifyVpnConnectionAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyVpnConnectionAttribute", "vpc");
+		super("Vpc", "2016-04-28", "ModifyVpnConnectionAttribute", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

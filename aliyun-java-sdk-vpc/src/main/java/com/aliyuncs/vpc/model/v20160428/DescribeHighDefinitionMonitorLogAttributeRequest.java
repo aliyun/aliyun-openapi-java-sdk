@@ -37,7 +37,7 @@ public class DescribeHighDefinitionMonitorLogAttributeRequest extends RpcAcsRequ
 
 	private String instanceId;
 	public DescribeHighDefinitionMonitorLogAttributeRequest() {
-		super("Vpc", "2016-04-28", "DescribeHighDefinitionMonitorLogAttribute", "vpc");
+		super("Vpc", "2016-04-28", "DescribeHighDefinitionMonitorLogAttribute", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

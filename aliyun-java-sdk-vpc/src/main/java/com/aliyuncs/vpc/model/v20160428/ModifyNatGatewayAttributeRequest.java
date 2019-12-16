@@ -39,7 +39,7 @@ public class ModifyNatGatewayAttributeRequest extends RpcAcsRequest<ModifyNatGat
 
 	private String name;
 	public ModifyNatGatewayAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyNatGatewayAttribute", "vpc");
+		super("Vpc", "2016-04-28", "ModifyNatGatewayAttribute", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

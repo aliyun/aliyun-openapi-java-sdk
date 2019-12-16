@@ -35,7 +35,7 @@ public class DeleteIpv6GatewayRequest extends RpcAcsRequest<DeleteIpv6GatewayRes
 
 	private String ipv6GatewayId;
 	public DeleteIpv6GatewayRequest() {
-		super("Vpc", "2016-04-28", "DeleteIpv6Gateway", "vpc");
+		super("Vpc", "2016-04-28", "DeleteIpv6Gateway", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

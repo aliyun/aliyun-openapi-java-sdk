@@ -43,7 +43,7 @@ public class CreateIpv6GatewayRequest extends RpcAcsRequest<CreateIpv6GatewayRes
 
 	private String name;
 	public CreateIpv6GatewayRequest() {
-		super("Vpc", "2016-04-28", "CreateIpv6Gateway", "vpc");
+		super("Vpc", "2016-04-28", "CreateIpv6Gateway", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

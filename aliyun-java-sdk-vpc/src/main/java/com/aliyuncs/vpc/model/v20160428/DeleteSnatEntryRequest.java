@@ -27,6 +27,8 @@ public class DeleteSnatEntryRequest extends RpcAcsRequest<DeleteSnatEntryRespons
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String snatEntryId;
 
 	private String resourceOwnerAccount;
@@ -37,7 +39,7 @@ public class DeleteSnatEntryRequest extends RpcAcsRequest<DeleteSnatEntryRespons
 
 	private Long ownerId;
 	public DeleteSnatEntryRequest() {
-		super("Vpc", "2016-04-28", "DeleteSnatEntry", "vpc");
+		super("Vpc", "2016-04-28", "DeleteSnatEntry", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,6 +55,17 @@ public class DeleteSnatEntryRequest extends RpcAcsRequest<DeleteSnatEntryRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

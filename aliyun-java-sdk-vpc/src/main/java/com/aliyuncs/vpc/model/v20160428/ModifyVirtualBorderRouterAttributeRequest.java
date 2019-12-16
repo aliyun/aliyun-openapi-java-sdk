@@ -59,7 +59,7 @@ public class ModifyVirtualBorderRouterAttributeRequest extends RpcAcsRequest<Mod
 
 	private String name;
 	public ModifyVirtualBorderRouterAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyVirtualBorderRouterAttribute", "vpc");
+		super("Vpc", "2016-04-28", "ModifyVirtualBorderRouterAttribute", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -44,7 +44,7 @@ public class DescribePhysicalConnectionsRequest extends RpcAcsRequest<DescribePh
 
 	private List<Filter> filters;
 	public DescribePhysicalConnectionsRequest() {
-		super("Vpc", "2016-04-28", "DescribePhysicalConnections", "vpc");
+		super("Vpc", "2016-04-28", "DescribePhysicalConnections", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

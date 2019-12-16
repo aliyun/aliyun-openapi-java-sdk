@@ -55,7 +55,7 @@ public class DescribeFlowLogsRequest extends RpcAcsRequest<DescribeFlowLogsRespo
 
 	private String status;
 	public DescribeFlowLogsRequest() {
-		super("Vpc", "2016-04-28", "DescribeFlowLogs", "vpc");
+		super("Vpc", "2016-04-28", "DescribeFlowLogs", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

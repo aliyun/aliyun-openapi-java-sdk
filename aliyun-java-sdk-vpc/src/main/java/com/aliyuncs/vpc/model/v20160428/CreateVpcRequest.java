@@ -51,7 +51,7 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 
 	private String cidrBlock;
 	public CreateVpcRequest() {
-		super("Vpc", "2016-04-28", "CreateVpc", "vpc");
+		super("Vpc", "2016-04-28", "CreateVpc", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

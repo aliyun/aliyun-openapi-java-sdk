@@ -1,3 +1,6 @@
+2019-12-16 Version: 3.0.9
+- Supported for SNAT AND DNAT idempotence.
+
 2019-11-27 Version: 3.0.7
 - Add a new API supports query route entry list.
 

@@ -65,7 +65,7 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	private String status;
 	public DescribeEipAddressesRequest() {
-		super("Vpc", "2016-04-28", "DescribeEipAddresses", "vpc");
+		super("Vpc", "2016-04-28", "DescribeEipAddresses", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

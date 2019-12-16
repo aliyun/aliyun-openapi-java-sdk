@@ -49,7 +49,7 @@ public class AssociatePhysicalConnectionToVirtualBorderRouterRequest extends Rpc
 
 	private String physicalConnectionId;
 	public AssociatePhysicalConnectionToVirtualBorderRouterRequest() {
-		super("Vpc", "2016-04-28", "AssociatePhysicalConnectionToVirtualBorderRouter", "vpc");
+		super("Vpc", "2016-04-28", "AssociatePhysicalConnectionToVirtualBorderRouter", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

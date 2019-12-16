@@ -33,7 +33,7 @@ public class DeactivateRouterInterfaceRequest extends RpcAcsRequest<DeactivateRo
 
 	private String routerInterfaceId;
 	public DeactivateRouterInterfaceRequest() {
-		super("Vpc", "2016-04-28", "DeactivateRouterInterface", "vpc");
+		super("Vpc", "2016-04-28", "DeactivateRouterInterface", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

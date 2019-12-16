@@ -44,7 +44,7 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 
 	private List<IngressAclEntries> ingressAclEntriess;
 	public UpdateNetworkAclEntriesRequest() {
-		super("Vpc", "2016-04-28", "UpdateNetworkAclEntries", "vpc");
+		super("Vpc", "2016-04-28", "UpdateNetworkAclEntries", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

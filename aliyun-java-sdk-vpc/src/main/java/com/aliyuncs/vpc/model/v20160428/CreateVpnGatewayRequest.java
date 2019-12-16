@@ -53,7 +53,7 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 
 	private String name;
 	public CreateVpnGatewayRequest() {
-		super("Vpc", "2016-04-28", "CreateVpnGateway", "vpc");
+		super("Vpc", "2016-04-28", "CreateVpnGateway", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -40,7 +40,7 @@ public class DescribeExpressCloudConnectionsRequest extends RpcAcsRequest<Descri
 
 	private List<Filter> filters;
 	public DescribeExpressCloudConnectionsRequest() {
-		super("Vpc", "2016-04-28", "DescribeExpressCloudConnections", "vpc");
+		super("Vpc", "2016-04-28", "DescribeExpressCloudConnections", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class ModifyFlowLogAttributeRequest extends RpcAcsRequest<ModifyFlowLogAt
 
 	private String flowLogName;
 	public ModifyFlowLogAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyFlowLogAttribute", "vpc");
+		super("Vpc", "2016-04-28", "ModifyFlowLogAttribute", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

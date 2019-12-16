@@ -41,7 +41,7 @@ public class AssociateGlobalAccelerationInstanceRequest extends RpcAcsRequest<As
 
 	private String backendServerType;
 	public AssociateGlobalAccelerationInstanceRequest() {
-		super("Vpc", "2016-04-28", "AssociateGlobalAccelerationInstance", "vpc");
+		super("Vpc", "2016-04-28", "AssociateGlobalAccelerationInstance", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

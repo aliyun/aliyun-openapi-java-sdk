@@ -35,7 +35,7 @@ public class DeleteVSwitchRequest extends RpcAcsRequest<DeleteVSwitchResponse> {
 
 	private String vSwitchId;
 	public DeleteVSwitchRequest() {
-		super("Vpc", "2016-04-28", "DeleteVSwitch", "vpc");
+		super("Vpc", "2016-04-28", "DeleteVSwitch", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

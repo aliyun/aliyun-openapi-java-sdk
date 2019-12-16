@@ -45,7 +45,7 @@ public class DescribeVpnGatewaysRequest extends RpcAcsRequest<DescribeVpnGateway
 
 	private String status;
 	public DescribeVpnGatewaysRequest() {
-		super("Vpc", "2016-04-28", "DescribeVpnGateways", "vpc");
+		super("Vpc", "2016-04-28", "DescribeVpnGateways", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

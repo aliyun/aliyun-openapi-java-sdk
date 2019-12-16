@@ -37,7 +37,7 @@ public class UnassociateGlobalAccelerationInstanceRequest extends RpcAcsRequest<
 
 	private Long ownerId;
 	public UnassociateGlobalAccelerationInstanceRequest() {
-		super("Vpc", "2016-04-28", "UnassociateGlobalAccelerationInstance", "vpc");
+		super("Vpc", "2016-04-28", "UnassociateGlobalAccelerationInstance", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

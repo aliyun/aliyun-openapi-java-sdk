@@ -41,7 +41,7 @@ public class ModifyCustomerGatewayAttributeRequest extends RpcAcsRequest<ModifyC
 
 	private String name;
 	public ModifyCustomerGatewayAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyCustomerGatewayAttribute", "vpc");
+		super("Vpc", "2016-04-28", "ModifyCustomerGatewayAttribute", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

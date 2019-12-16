@@ -35,7 +35,7 @@ public class DeleteRouteTableRequest extends RpcAcsRequest<DeleteRouteTableRespo
 
 	private Long ownerId;
 	public DeleteRouteTableRequest() {
-		super("Vpc", "2016-04-28", "DeleteRouteTable", "vpc");
+		super("Vpc", "2016-04-28", "DeleteRouteTable", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class ModifyBandwidthPackageAttributeRequest extends RpcAcsRequest<Modify
 
 	private String name;
 	public ModifyBandwidthPackageAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyBandwidthPackageAttribute", "vpc");
+		super("Vpc", "2016-04-28", "ModifyBandwidthPackageAttribute", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

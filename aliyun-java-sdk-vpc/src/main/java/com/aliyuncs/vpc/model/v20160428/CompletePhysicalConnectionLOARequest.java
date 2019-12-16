@@ -41,7 +41,7 @@ public class CompletePhysicalConnectionLOARequest extends RpcAcsRequest<Complete
 
 	private String instanceId;
 	public CompletePhysicalConnectionLOARequest() {
-		super("Vpc", "2016-04-28", "CompletePhysicalConnectionLOA", "vpc");
+		super("Vpc", "2016-04-28", "CompletePhysicalConnectionLOA", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

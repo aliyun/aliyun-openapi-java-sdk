@@ -39,7 +39,7 @@ public class ModifySslVpnClientCertRequest extends RpcAcsRequest<ModifySslVpnCli
 
 	private String name;
 	public ModifySslVpnClientCertRequest() {
-		super("Vpc", "2016-04-28", "ModifySslVpnClientCert", "vpc");
+		super("Vpc", "2016-04-28", "ModifySslVpnClientCert", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class DeleteIPv6TranslatorAclListRequest extends RpcAcsRequest<DeleteIPv6
 
 	private Long ownerId;
 	public DeleteIPv6TranslatorAclListRequest() {
-		super("Vpc", "2016-04-28", "DeleteIPv6TranslatorAclList", "vpc");
+		super("Vpc", "2016-04-28", "DeleteIPv6TranslatorAclList", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

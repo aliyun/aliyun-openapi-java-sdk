@@ -39,7 +39,7 @@ public class ModifyVRouterAttributeRequest extends RpcAcsRequest<ModifyVRouterAt
 
 	private Long ownerId;
 	public ModifyVRouterAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyVRouterAttribute", "vpc");
+		super("Vpc", "2016-04-28", "ModifyVRouterAttribute", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

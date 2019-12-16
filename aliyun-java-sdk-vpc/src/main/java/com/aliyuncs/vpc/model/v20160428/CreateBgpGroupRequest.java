@@ -49,7 +49,7 @@ public class CreateBgpGroupRequest extends RpcAcsRequest<CreateBgpGroupResponse>
 
 	private Long localAsn;
 	public CreateBgpGroupRequest() {
-		super("Vpc", "2016-04-28", "CreateBgpGroup", "vpc");
+		super("Vpc", "2016-04-28", "CreateBgpGroup", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

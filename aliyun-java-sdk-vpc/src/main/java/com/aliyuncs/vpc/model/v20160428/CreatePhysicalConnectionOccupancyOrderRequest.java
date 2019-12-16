@@ -45,7 +45,7 @@ public class CreatePhysicalConnectionOccupancyOrderRequest extends RpcAcsRequest
 
 	private String pricingCycle;
 	public CreatePhysicalConnectionOccupancyOrderRequest() {
-		super("Vpc", "2016-04-28", "CreatePhysicalConnectionOccupancyOrder", "vpc");
+		super("Vpc", "2016-04-28", "CreatePhysicalConnectionOccupancyOrder", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

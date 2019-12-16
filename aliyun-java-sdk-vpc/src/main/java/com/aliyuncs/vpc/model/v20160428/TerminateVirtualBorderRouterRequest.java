@@ -37,7 +37,7 @@ public class TerminateVirtualBorderRouterRequest extends RpcAcsRequest<Terminate
 
 	private Long ownerId;
 	public TerminateVirtualBorderRouterRequest() {
-		super("Vpc", "2016-04-28", "TerminateVirtualBorderRouter", "vpc");
+		super("Vpc", "2016-04-28", "TerminateVirtualBorderRouter", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

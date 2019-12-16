@@ -35,11 +35,17 @@ public class ModifyExpressCloudConnectionAttributeRequest extends RpcAcsRequest<
 
 	private String ownerAccount;
 
+	private String ceIp;
+
+	private String bgpAs;
+
+	private String peIp;
+
 	private Long ownerId;
 
 	private String name;
 	public ModifyExpressCloudConnectionAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyExpressCloudConnectionAttribute", "vpc");
+		super("Vpc", "2016-04-28", "ModifyExpressCloudConnectionAttribute", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -99,6 +105,39 @@ public class ModifyExpressCloudConnectionAttributeRequest extends RpcAcsRequest<
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getCeIp() {
+		return this.ceIp;
+	}
+
+	public void setCeIp(String ceIp) {
+		this.ceIp = ceIp;
+		if(ceIp != null){
+			putQueryParameter("CeIp", ceIp);
+		}
+	}
+
+	public String getBgpAs() {
+		return this.bgpAs;
+	}
+
+	public void setBgpAs(String bgpAs) {
+		this.bgpAs = bgpAs;
+		if(bgpAs != null){
+			putQueryParameter("BgpAs", bgpAs);
+		}
+	}
+
+	public String getPeIp() {
+		return this.peIp;
+	}
+
+	public void setPeIp(String peIp) {
+		this.peIp = peIp;
+		if(peIp != null){
+			putQueryParameter("PeIp", peIp);
 		}
 	}
 

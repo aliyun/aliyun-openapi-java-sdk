@@ -39,7 +39,7 @@ public class DeleteBgpNetworkRequest extends RpcAcsRequest<DeleteBgpNetworkRespo
 
 	private String dstCidrBlock;
 	public DeleteBgpNetworkRequest() {
-		super("Vpc", "2016-04-28", "DeleteBgpNetwork", "vpc");
+		super("Vpc", "2016-04-28", "DeleteBgpNetwork", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

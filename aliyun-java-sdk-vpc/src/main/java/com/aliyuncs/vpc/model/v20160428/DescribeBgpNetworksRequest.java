@@ -39,7 +39,7 @@ public class DescribeBgpNetworksRequest extends RpcAcsRequest<DescribeBgpNetwork
 
 	private String routerId;
 	public DescribeBgpNetworksRequest() {
-		super("Vpc", "2016-04-28", "DescribeBgpNetworks", "vpc");
+		super("Vpc", "2016-04-28", "DescribeBgpNetworks", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

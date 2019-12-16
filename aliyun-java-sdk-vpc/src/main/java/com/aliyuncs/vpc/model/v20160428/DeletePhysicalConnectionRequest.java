@@ -37,7 +37,7 @@ public class DeletePhysicalConnectionRequest extends RpcAcsRequest<DeletePhysica
 
 	private String physicalConnectionId;
 	public DeletePhysicalConnectionRequest() {
-		super("Vpc", "2016-04-28", "DeletePhysicalConnection", "vpc");
+		super("Vpc", "2016-04-28", "DeletePhysicalConnection", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

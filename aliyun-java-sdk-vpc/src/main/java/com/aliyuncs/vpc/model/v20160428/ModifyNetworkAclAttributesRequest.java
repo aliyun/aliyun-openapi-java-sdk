@@ -39,7 +39,7 @@ public class ModifyNetworkAclAttributesRequest extends RpcAcsRequest<ModifyNetwo
 
 	private Long ownerId;
 	public ModifyNetworkAclAttributesRequest() {
-		super("Vpc", "2016-04-28", "ModifyNetworkAclAttributes", "vpc");
+		super("Vpc", "2016-04-28", "ModifyNetworkAclAttributes", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

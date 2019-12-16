@@ -41,7 +41,7 @@ public class CreateBgpPeerRequest extends RpcAcsRequest<CreateBgpPeerResponse> {
 
 	private Long ownerId;
 	public CreateBgpPeerRequest() {
-		super("Vpc", "2016-04-28", "CreateBgpPeer", "vpc");
+		super("Vpc", "2016-04-28", "CreateBgpPeer", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

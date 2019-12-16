@@ -53,7 +53,7 @@ public class DescribeForwardTableEntriesRequest extends RpcAcsRequest<DescribeFo
 
 	private String externalPort;
 	public DescribeForwardTableEntriesRequest() {
-		super("Vpc", "2016-04-28", "DescribeForwardTableEntries", "vpc");
+		super("Vpc", "2016-04-28", "DescribeForwardTableEntries", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,6 +27,8 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String forwardTableId;
 
 	private String internalIp;
@@ -49,7 +51,7 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 
 	private String externalPort;
 	public ModifyForwardEntryRequest() {
-		super("Vpc", "2016-04-28", "ModifyForwardEntry", "vpc");
+		super("Vpc", "2016-04-28", "ModifyForwardEntry", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -65,6 +67,17 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

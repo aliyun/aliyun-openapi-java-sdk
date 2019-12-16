@@ -38,7 +38,7 @@ public class AssociateNetworkAclRequest extends RpcAcsRequest<AssociateNetworkAc
 
 	private Long ownerId;
 	public AssociateNetworkAclRequest() {
-		super("Vpc", "2016-04-28", "AssociateNetworkAcl", "vpc");
+		super("Vpc", "2016-04-28", "AssociateNetworkAcl", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

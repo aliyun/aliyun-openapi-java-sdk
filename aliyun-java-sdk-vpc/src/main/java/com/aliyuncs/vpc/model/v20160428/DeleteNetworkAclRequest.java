@@ -35,7 +35,7 @@ public class DeleteNetworkAclRequest extends RpcAcsRequest<DeleteNetworkAclRespo
 
 	private Long ownerId;
 	public DeleteNetworkAclRequest() {
-		super("Vpc", "2016-04-28", "DeleteNetworkAcl", "vpc");
+		super("Vpc", "2016-04-28", "DeleteNetworkAcl", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

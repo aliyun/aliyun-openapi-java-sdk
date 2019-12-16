@@ -53,7 +53,7 @@ public class DescribeGlobalAccelerationInstancesRequest extends RpcAcsRequest<De
 
 	private String status;
 	public DescribeGlobalAccelerationInstancesRequest() {
-		super("Vpc", "2016-04-28", "DescribeGlobalAccelerationInstances", "vpc");
+		super("Vpc", "2016-04-28", "DescribeGlobalAccelerationInstances", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

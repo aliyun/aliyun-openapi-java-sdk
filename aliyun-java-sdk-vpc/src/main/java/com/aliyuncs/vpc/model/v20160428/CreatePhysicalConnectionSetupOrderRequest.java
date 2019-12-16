@@ -45,7 +45,7 @@ public class CreatePhysicalConnectionSetupOrderRequest extends RpcAcsRequest<Cre
 
 	private String lineOperator;
 	public CreatePhysicalConnectionSetupOrderRequest() {
-		super("Vpc", "2016-04-28", "CreatePhysicalConnectionSetupOrder", "vpc");
+		super("Vpc", "2016-04-28", "CreatePhysicalConnectionSetupOrder", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

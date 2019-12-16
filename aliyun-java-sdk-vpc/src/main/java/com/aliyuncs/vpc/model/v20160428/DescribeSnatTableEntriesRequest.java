@@ -49,7 +49,7 @@ public class DescribeSnatTableEntriesRequest extends RpcAcsRequest<DescribeSnatT
 
 	private String snatEntryName;
 	public DescribeSnatTableEntriesRequest() {
-		super("Vpc", "2016-04-28", "DescribeSnatTableEntries", "vpc");
+		super("Vpc", "2016-04-28", "DescribeSnatTableEntries", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

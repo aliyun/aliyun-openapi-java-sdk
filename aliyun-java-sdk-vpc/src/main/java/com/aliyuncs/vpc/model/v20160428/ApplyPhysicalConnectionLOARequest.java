@@ -52,7 +52,7 @@ public class ApplyPhysicalConnectionLOARequest extends RpcAcsRequest<ApplyPhysic
 
 	private List<PMInfo> pMInfos;
 	public ApplyPhysicalConnectionLOARequest() {
-		super("Vpc", "2016-04-28", "ApplyPhysicalConnectionLOA", "vpc");
+		super("Vpc", "2016-04-28", "ApplyPhysicalConnectionLOA", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

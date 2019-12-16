@@ -61,7 +61,7 @@ public class DescribeIPv6TranslatorEntriesRequest extends RpcAcsRequest<Describe
 
 	private String ipv6TranslatorId;
 	public DescribeIPv6TranslatorEntriesRequest() {
-		super("Vpc", "2016-04-28", "DescribeIPv6TranslatorEntries", "vpc");
+		super("Vpc", "2016-04-28", "DescribeIPv6TranslatorEntries", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
