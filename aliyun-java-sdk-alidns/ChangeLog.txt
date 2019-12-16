@@ -1,3 +1,6 @@
+2019-12-16 Version: 2.0.14
+- DescribeTransferDomains add query param, TargetUserId, FromUserId, DomainName.
+
 2019-11-28 Version: 2.0.13
 - Supported API GetTxtRecordForVerify.
 - Supported API RetrieveDomain.

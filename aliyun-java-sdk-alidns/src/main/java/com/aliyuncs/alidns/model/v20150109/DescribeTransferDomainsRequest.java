@@ -25,13 +25,19 @@ import com.aliyuncs.alidns.Endpoint;
 public class DescribeTransferDomainsRequest extends RpcAcsRequest<DescribeTransferDomainsResponse> {
 	   
 
+	private Long fromUserId;
+
 	private Long pageNumber;
 
-	private String transferType;
+	private Long targetUserId;
 
 	private Long pageSize;
 
 	private String lang;
+
+	private String domainName;
+
+	private String transferType;
 	public DescribeTransferDomainsRequest() {
 		super("Alidns", "2015-01-09", "DescribeTransferDomains", "alidns");
 		setMethod(MethodType.POST);
@@ -39,6 +45,17 @@ public class DescribeTransferDomainsRequest extends RpcAcsRequest<DescribeTransf
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getFromUserId() {
+		return this.fromUserId;
+	}
+
+	public void setFromUserId(Long fromUserId) {
+		this.fromUserId = fromUserId;
+		if(fromUserId != null){
+			putQueryParameter("FromUserId", fromUserId.toString());
+		}
 	}
 
 	public Long getPageNumber() {
@@ -52,14 +69,14 @@ public class DescribeTransferDomainsRequest extends RpcAcsRequest<DescribeTransf
 		}
 	}
 
-	public String getTransferType() {
-		return this.transferType;
+	public Long getTargetUserId() {
+		return this.targetUserId;
 	}
 
-	public void setTransferType(String transferType) {
-		this.transferType = transferType;
-		if(transferType != null){
-			putQueryParameter("TransferType", transferType);
+	public void setTargetUserId(Long targetUserId) {
+		this.targetUserId = targetUserId;
+		if(targetUserId != null){
+			putQueryParameter("TargetUserId", targetUserId.toString());
 		}
 	}
 
@@ -82,6 +99,28 @@ public class DescribeTransferDomainsRequest extends RpcAcsRequest<DescribeTransf
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getTransferType() {
+		return this.transferType;
+	}
+
+	public void setTransferType(String transferType) {
+		this.transferType = transferType;
+		if(transferType != null){
+			putQueryParameter("TransferType", transferType);
 		}
 	}
 

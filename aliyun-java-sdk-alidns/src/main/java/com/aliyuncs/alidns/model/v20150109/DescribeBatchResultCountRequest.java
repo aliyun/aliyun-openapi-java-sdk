@@ -27,8 +27,6 @@ public class DescribeBatchResultCountRequest extends RpcAcsRequest<DescribeBatch
 
 	private String batchType;
 
-	private String userClientIp;
-
 	private String lang;
 
 	private Long taskId;
@@ -49,17 +47,6 @@ public class DescribeBatchResultCountRequest extends RpcAcsRequest<DescribeBatch
 		this.batchType = batchType;
 		if(batchType != null){
 			putQueryParameter("BatchType", batchType);
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

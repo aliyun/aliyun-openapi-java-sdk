@@ -30,8 +30,6 @@ public class OperateBatchDomainRequest extends RpcAcsRequest<OperateBatchDomainR
 
 	private String type;
 
-	private String userClientIp;
-
 	private String lang;
 	public OperateBatchDomainRequest() {
 		super("Alidns", "2015-01-09", "OperateBatchDomain", "alidns");
@@ -72,17 +70,6 @@ public class OperateBatchDomainRequest extends RpcAcsRequest<OperateBatchDomainR
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

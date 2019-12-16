@@ -29,8 +29,6 @@ public class DescribeBatchResultDetailRequest extends RpcAcsRequest<DescribeBatc
 
 	private Integer pageNumber;
 
-	private String userClientIp;
-
 	private Integer pageSize;
 
 	private String lang;
@@ -66,17 +64,6 @@ public class DescribeBatchResultDetailRequest extends RpcAcsRequest<DescribeBatc
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 
