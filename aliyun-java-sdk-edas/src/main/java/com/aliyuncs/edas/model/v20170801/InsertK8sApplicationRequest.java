@@ -53,6 +53,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private Integer limitMem;
 
+	private Integer limitMCpu;
+
 	private String edasContainerVersion;
 
 	private String appName;
@@ -62,6 +64,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 	private String logicalRegionId;
 
 	private String packageUrl;
+
+	private Integer requestsMCpu;
 
 	private String internetSlbProtocol;
 
@@ -103,7 +107,7 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String postStart;
 	public InsertK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "InsertK8sApplication", "edas");
+		super("Edas", "2017-08-01", "InsertK8sApplication", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/create_k8s_app");
 		setMethod(MethodType.POST);
 		try {
@@ -266,6 +270,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public Integer getLimitMCpu() {
+		return this.limitMCpu;
+	}
+
+	public void setLimitMCpu(Integer limitMCpu) {
+		this.limitMCpu = limitMCpu;
+		if(limitMCpu != null){
+			putQueryParameter("LimitMCpu", limitMCpu.toString());
+		}
+	}
+
 	public String getEdasContainerVersion() {
 		return this.edasContainerVersion;
 	}
@@ -318,6 +333,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.packageUrl = packageUrl;
 		if(packageUrl != null){
 			putQueryParameter("PackageUrl", packageUrl);
+		}
+	}
+
+	public Integer getRequestsMCpu() {
+		return this.requestsMCpu;
+	}
+
+	public void setRequestsMCpu(Integer requestsMCpu) {
+		this.requestsMCpu = requestsMCpu;
+		if(requestsMCpu != null){
+			putQueryParameter("RequestsMCpu", requestsMCpu.toString());
 		}
 	}
 

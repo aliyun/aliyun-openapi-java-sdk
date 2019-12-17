@@ -42,6 +42,21 @@ public class ListDeployGroupResponseUnmarshaller {
 			deployGroup.setClusterId(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].ClusterId"));
 			deployGroup.setCreateTime(_ctx.longValue("ListDeployGroupResponse.DeployGroupList["+ i +"].CreateTime"));
 			deployGroup.setUpdateTime(_ctx.longValue("ListDeployGroupResponse.DeployGroupList["+ i +"].UpdateTime"));
+			deployGroup.setNameSpace(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].NameSpace"));
+			deployGroup.setClusterName(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].ClusterName"));
+			deployGroup.setLastUpdateTime(_ctx.longValue("ListDeployGroupResponse.DeployGroupList["+ i +"].LastUpdateTime"));
+			deployGroup.setPreStop(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].PreStop"));
+			deployGroup.setPostStart(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].PostStart"));
+			deployGroup.setPackageUrl(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].PackageUrl"));
+			deployGroup.setEnv(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].Env"));
+			deployGroup.setLabels(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].Labels"));
+			deployGroup.setSelector(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].Selector"));
+			deployGroup.setStrategy(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].Strategy"));
+			deployGroup.setStatus(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].Status"));
+			deployGroup.setReversion(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].Reversion"));
+			deployGroup.setCsClusterId(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].CsClusterId"));
+			deployGroup.setBaseComponentMetaName(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].BaseComponentMetaName"));
+			deployGroup.setDeploymentName(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].DeploymentName"));
 
 			deployGroupList.add(deployGroup);
 		}

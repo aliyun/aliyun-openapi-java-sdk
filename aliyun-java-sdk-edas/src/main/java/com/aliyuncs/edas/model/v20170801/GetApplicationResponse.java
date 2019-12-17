@@ -116,6 +116,8 @@ public class GetApplicationResponse extends AcsResponse {
 
 		private Long createTime;
 
+		private String nameSpace;
+
 		public String getAppId() {
 			return this.appId;
 		}
@@ -314,6 +316,14 @@ public class GetApplicationResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getNameSpace() {
+			return this.nameSpace;
+		}
+
+		public void setNameSpace(String nameSpace) {
+			this.nameSpace = nameSpace;
 		}
 	}
 

@@ -53,6 +53,7 @@ public class GetApplicationResponseUnmarshaller {
 		applcation.setHealthCheckUrl(_ctx.stringValue("GetApplicationResponse.Applcation.HealthCheckUrl"));
 		applcation.setBuildPackageId(_ctx.longValue("GetApplicationResponse.Applcation.BuildPackageId"));
 		applcation.setCreateTime(_ctx.longValue("GetApplicationResponse.Applcation.CreateTime"));
+		applcation.setNameSpace(_ctx.stringValue("GetApplicationResponse.Applcation.NameSpace"));
 		getApplicationResponse.setApplcation(applcation);
 	 
 	 	return getApplicationResponse;

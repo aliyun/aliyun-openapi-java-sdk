@@ -27,7 +27,7 @@ public class ListClusterRequest extends RoaAcsRequest<ListClusterResponse> {
 
 	private String logicalRegionId;
 	public ListClusterRequest() {
-		super("Edas", "2017-08-01", "ListCluster", "edas");
+		super("Edas", "2017-08-01", "ListCluster", "Edas");
 		setUriPattern("/pop/v5/resource/cluster_list");
 		setMethod(MethodType.POST);
 		try {

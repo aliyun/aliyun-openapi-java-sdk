@@ -31,7 +31,7 @@ public class UpdateApplicationBaseInfoRequest extends RoaAcsRequest<UpdateApplic
 
 	private String desc;
 	public UpdateApplicationBaseInfoRequest() {
-		super("Edas", "2017-08-01", "UpdateApplicationBaseInfo", "edas");
+		super("Edas", "2017-08-01", "UpdateApplicationBaseInfo", "Edas");
 		setUriPattern("/pop/v5/app/update_app_info");
 		setMethod(MethodType.POST);
 		try {

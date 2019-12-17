@@ -29,7 +29,7 @@ public class AuthorizeRoleRequest extends RoaAcsRequest<AuthorizeRoleResponse> {
 
 	private String targetUserId;
 	public AuthorizeRoleRequest() {
-		super("Edas", "2017-08-01", "AuthorizeRole", "edas");
+		super("Edas", "2017-08-01", "AuthorizeRole", "Edas");
 		setUriPattern("/pop/v5/account/authorize_role");
 		setMethod(MethodType.POST);
 		try {

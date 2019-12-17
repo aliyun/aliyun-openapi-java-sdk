@@ -31,7 +31,7 @@ public class DeleteConfigCenterRequest extends RoaAcsRequest<DeleteConfigCenterR
 
 	private String group;
 	public DeleteConfigCenterRequest() {
-		super("Edas", "2017-08-01", "DeleteConfigCenter", "edas");
+		super("Edas", "2017-08-01", "DeleteConfigCenter", "Edas");
 		setUriPattern("/pop/v5/configCenter");
 		setMethod(MethodType.DELETE);
 		try {

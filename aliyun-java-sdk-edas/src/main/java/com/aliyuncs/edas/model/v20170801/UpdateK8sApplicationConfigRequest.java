@@ -32,8 +32,10 @@ public class UpdateK8sApplicationConfigRequest extends RoaAcsRequest<UpdateK8sAp
 	private String clusterId;
 
 	private String cpuLimit;
+
+	private String mCpuLimit;
 	public UpdateK8sApplicationConfigRequest() {
-		super("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "edas");
+		super("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_app_configuration");
 		setMethod(MethodType.PUT);
 		try {
@@ -83,6 +85,17 @@ public class UpdateK8sApplicationConfigRequest extends RoaAcsRequest<UpdateK8sAp
 		this.cpuLimit = cpuLimit;
 		if(cpuLimit != null){
 			putQueryParameter("CpuLimit", cpuLimit);
+		}
+	}
+
+	public String getMCpuLimit() {
+		return this.mCpuLimit;
+	}
+
+	public void setMCpuLimit(String mCpuLimit) {
+		this.mCpuLimit = mCpuLimit;
+		if(mCpuLimit != null){
+			putQueryParameter("MCpuLimit", mCpuLimit);
 		}
 	}
 

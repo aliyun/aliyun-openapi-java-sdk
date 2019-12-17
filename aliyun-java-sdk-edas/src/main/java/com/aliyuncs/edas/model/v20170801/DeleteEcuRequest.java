@@ -27,7 +27,7 @@ public class DeleteEcuRequest extends RoaAcsRequest<DeleteEcuResponse> {
 
 	private String ecuId;
 	public DeleteEcuRequest() {
-		super("Edas", "2017-08-01", "DeleteEcu", "edas");
+		super("Edas", "2017-08-01", "DeleteEcu", "Edas");
 		setUriPattern("/pop/v5/resource/delete_ecu");
 		setMethod(MethodType.POST);
 		try {

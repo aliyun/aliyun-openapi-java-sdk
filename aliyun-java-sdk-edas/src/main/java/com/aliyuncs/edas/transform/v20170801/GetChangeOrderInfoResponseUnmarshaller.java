@@ -45,6 +45,7 @@ public class GetChangeOrderInfoResponseUnmarshaller {
 		changeOrderInfo.setStatus(_ctx.integerValue("GetChangeOrderInfoResponse.changeOrderInfo.Status"));
 		changeOrderInfo.setCoType(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.CoType"));
 		changeOrderInfo.setCreateTime(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.CreateTime"));
+		changeOrderInfo.setSupportRollback(_ctx.booleanValue("GetChangeOrderInfoResponse.changeOrderInfo.SupportRollback"));
 
 		List<PipelineInfo> pipelineInfoList = new ArrayList<PipelineInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList.Length"); i++) {
@@ -52,6 +53,8 @@ public class GetChangeOrderInfoResponseUnmarshaller {
 			pipelineInfo.setPipelineId(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].PipelineId"));
 			pipelineInfo.setPipelineName(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].PipelineName"));
 			pipelineInfo.setPipelineStatus(_ctx.integerValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].PipelineStatus"));
+			pipelineInfo.setStartTime(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StartTime"));
+			pipelineInfo.setUpdateTime(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].UpdateTime"));
 
 			List<StageInfoDTO> stageList = new ArrayList<StageInfoDTO>();
 			for (int j = 0; j < _ctx.lengthValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList.Length"); j++) {
@@ -75,6 +78,7 @@ public class GetChangeOrderInfoResponseUnmarshaller {
 					instanceDTO.setInstanceName(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList["+ j +"].StageResultDTO.InstanceDTOList["+ k +"].InstanceName"));
 					instanceDTO.setInstanceIp(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList["+ j +"].StageResultDTO.InstanceDTOList["+ k +"].InstanceIp"));
 					instanceDTO.setStatus(_ctx.integerValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList["+ j +"].StageResultDTO.InstanceDTOList["+ k +"].Status"));
+					instanceDTO.setPodName(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList["+ j +"].StageResultDTO.InstanceDTOList["+ k +"].PodName"));
 
 					List<InstanceStageDTO> instanceStageDTOList = new ArrayList<InstanceStageDTO>();
 					for (int l = 0; l < _ctx.lengthValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList["+ j +"].StageResultDTO.InstanceDTOList["+ k +"].InstanceStageDTOList.Length"); l++) {
@@ -82,6 +86,9 @@ public class GetChangeOrderInfoResponseUnmarshaller {
 						instanceStageDTO.setStageId(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList["+ j +"].StageResultDTO.InstanceDTOList["+ k +"].InstanceStageDTOList["+ l +"].StageId"));
 						instanceStageDTO.setStageName(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList["+ j +"].StageResultDTO.InstanceDTOList["+ k +"].InstanceStageDTOList["+ l +"].StageName"));
 						instanceStageDTO.setStatus(_ctx.integerValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList["+ j +"].StageResultDTO.InstanceDTOList["+ k +"].InstanceStageDTOList["+ l +"].Status"));
+						instanceStageDTO.setStageMessage(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList["+ j +"].StageResultDTO.InstanceDTOList["+ k +"].InstanceStageDTOList["+ l +"].StageMessage"));
+						instanceStageDTO.setStartTime(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList["+ j +"].StageResultDTO.InstanceDTOList["+ k +"].InstanceStageDTOList["+ l +"].StartTime"));
+						instanceStageDTO.setFinishTime(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList["+ j +"].StageResultDTO.InstanceDTOList["+ k +"].InstanceStageDTOList["+ l +"].FinishTime"));
 
 						instanceStageDTOList.add(instanceStageDTO);
 					}

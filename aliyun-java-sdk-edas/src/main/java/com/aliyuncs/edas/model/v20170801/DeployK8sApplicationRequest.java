@@ -83,9 +83,11 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private Integer mCpuLimit;
 
+	private String volumesStr;
+
 	private String postStart;
 	public DeployK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "DeployK8sApplication", "edas");
+		super("Edas", "2017-08-01", "DeployK8sApplication", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_apps");
 		setMethod(MethodType.POST);
 		try {
@@ -410,6 +412,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.mCpuLimit = mCpuLimit;
 		if(mCpuLimit != null){
 			putQueryParameter("MCpuLimit", mCpuLimit.toString());
+		}
+	}
+
+	public String getVolumesStr() {
+		return this.volumesStr;
+	}
+
+	public void setVolumesStr(String volumesStr) {
+		this.volumesStr = volumesStr;
+		if(volumesStr != null){
+			putQueryParameter("VolumesStr", volumesStr);
 		}
 	}
 

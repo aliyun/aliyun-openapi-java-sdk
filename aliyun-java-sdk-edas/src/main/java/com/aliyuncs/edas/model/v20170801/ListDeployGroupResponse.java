@@ -85,6 +85,36 @@ public class ListDeployGroupResponse extends AcsResponse {
 
 		private Long updateTime;
 
+		private String nameSpace;
+
+		private String clusterName;
+
+		private Long lastUpdateTime;
+
+		private String preStop;
+
+		private String postStart;
+
+		private String packageUrl;
+
+		private String env;
+
+		private String labels;
+
+		private String selector;
+
+		private String strategy;
+
+		private String status;
+
+		private String reversion;
+
+		private String csClusterId;
+
+		private String baseComponentMetaName;
+
+		private String deploymentName;
+
 		public String getGroupId() {
 			return this.groupId;
 		}
@@ -155,6 +185,126 @@ public class ListDeployGroupResponse extends AcsResponse {
 
 		public void setUpdateTime(Long updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getNameSpace() {
+			return this.nameSpace;
+		}
+
+		public void setNameSpace(String nameSpace) {
+			this.nameSpace = nameSpace;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public Long getLastUpdateTime() {
+			return this.lastUpdateTime;
+		}
+
+		public void setLastUpdateTime(Long lastUpdateTime) {
+			this.lastUpdateTime = lastUpdateTime;
+		}
+
+		public String getPreStop() {
+			return this.preStop;
+		}
+
+		public void setPreStop(String preStop) {
+			this.preStop = preStop;
+		}
+
+		public String getPostStart() {
+			return this.postStart;
+		}
+
+		public void setPostStart(String postStart) {
+			this.postStart = postStart;
+		}
+
+		public String getPackageUrl() {
+			return this.packageUrl;
+		}
+
+		public void setPackageUrl(String packageUrl) {
+			this.packageUrl = packageUrl;
+		}
+
+		public String getEnv() {
+			return this.env;
+		}
+
+		public void setEnv(String env) {
+			this.env = env;
+		}
+
+		public String getLabels() {
+			return this.labels;
+		}
+
+		public void setLabels(String labels) {
+			this.labels = labels;
+		}
+
+		public String getSelector() {
+			return this.selector;
+		}
+
+		public void setSelector(String selector) {
+			this.selector = selector;
+		}
+
+		public String getStrategy() {
+			return this.strategy;
+		}
+
+		public void setStrategy(String strategy) {
+			this.strategy = strategy;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getReversion() {
+			return this.reversion;
+		}
+
+		public void setReversion(String reversion) {
+			this.reversion = reversion;
+		}
+
+		public String getCsClusterId() {
+			return this.csClusterId;
+		}
+
+		public void setCsClusterId(String csClusterId) {
+			this.csClusterId = csClusterId;
+		}
+
+		public String getBaseComponentMetaName() {
+			return this.baseComponentMetaName;
+		}
+
+		public void setBaseComponentMetaName(String baseComponentMetaName) {
+			this.baseComponentMetaName = baseComponentMetaName;
+		}
+
+		public String getDeploymentName() {
+			return this.deploymentName;
+		}
+
+		public void setDeploymentName(String deploymentName) {
+			this.deploymentName = deploymentName;
 		}
 	}
 

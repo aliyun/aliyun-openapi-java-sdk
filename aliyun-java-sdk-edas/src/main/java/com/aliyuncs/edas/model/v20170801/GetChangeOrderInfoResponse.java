@@ -83,6 +83,8 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 		private String createTime;
 
+		private Boolean supportRollback;
+
 		private List<PipelineInfo> pipelineInfoList;
 
 		public String getChangeOrderId() {
@@ -149,6 +151,14 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public Boolean getSupportRollback() {
+			return this.supportRollback;
+		}
+
+		public void setSupportRollback(Boolean supportRollback) {
+			this.supportRollback = supportRollback;
+		}
+
 		public List<PipelineInfo> getPipelineInfoList() {
 			return this.pipelineInfoList;
 		}
@@ -164,6 +174,10 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 			private String pipelineName;
 
 			private Integer pipelineStatus;
+
+			private String startTime;
+
+			private String updateTime;
 
 			private List<StageInfoDTO> stageList;
 
@@ -189,6 +203,22 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 			public void setPipelineStatus(Integer pipelineStatus) {
 				this.pipelineStatus = pipelineStatus;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public String getUpdateTime() {
+				return this.updateTime;
+			}
+
+			public void setUpdateTime(String updateTime) {
+				this.updateTime = updateTime;
 			}
 
 			public List<StageInfoDTO> getStageList() {
@@ -271,6 +301,8 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 						private Integer status;
 
+						private String podName;
+
 						private List<InstanceStageDTO> instanceStageDTOList;
 
 						public String getInstanceName() {
@@ -297,6 +329,14 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 							this.status = status;
 						}
 
+						public String getPodName() {
+							return this.podName;
+						}
+
+						public void setPodName(String podName) {
+							this.podName = podName;
+						}
+
 						public List<InstanceStageDTO> getInstanceStageDTOList() {
 							return this.instanceStageDTOList;
 						}
@@ -312,6 +352,12 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 							private String stageName;
 
 							private Integer status;
+
+							private String stageMessage;
+
+							private String startTime;
+
+							private String finishTime;
 
 							public String getStageId() {
 								return this.stageId;
@@ -335,6 +381,30 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 							public void setStatus(Integer status) {
 								this.status = status;
+							}
+
+							public String getStageMessage() {
+								return this.stageMessage;
+							}
+
+							public void setStageMessage(String stageMessage) {
+								this.stageMessage = stageMessage;
+							}
+
+							public String getStartTime() {
+								return this.startTime;
+							}
+
+							public void setStartTime(String startTime) {
+								this.startTime = startTime;
+							}
+
+							public String getFinishTime() {
+								return this.finishTime;
+							}
+
+							public void setFinishTime(String finishTime) {
+								this.finishTime = finishTime;
 							}
 						}
 					}
