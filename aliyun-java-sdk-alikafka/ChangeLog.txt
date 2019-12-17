@@ -1,3 +1,6 @@
+2019-12-17 Version: 1.2.1
+- Support MetadataProductList.
+
 2019-12-11 Version: 1.2.0
 - Support createPostOrder.
 - Support tags.
