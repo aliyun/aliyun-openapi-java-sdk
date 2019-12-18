@@ -4,6 +4,9 @@
 2019-12-18 Version: 1.0.2
 - Third sdk version.
 
+2019-12-18 Version: 1.0.2
+- Third sdk version.
+
 2019-12-18 Version: 1.0.1
 - Second sdk version.
 
