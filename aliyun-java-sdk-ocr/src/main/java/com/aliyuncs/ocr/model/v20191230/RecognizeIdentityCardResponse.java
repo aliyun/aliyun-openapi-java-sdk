@@ -47,19 +47,9 @@ public class RecognizeIdentityCardResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String configuration;
-
 		private FrontResult frontResult;
 
 		private BackResult backResult;
-
-		public String getConfiguration() {
-			return this.configuration;
-		}
-
-		public void setConfiguration(String configuration) {
-			this.configuration = configuration;
-		}
 
 		public FrontResult getFrontResult() {
 			return this.frontResult;

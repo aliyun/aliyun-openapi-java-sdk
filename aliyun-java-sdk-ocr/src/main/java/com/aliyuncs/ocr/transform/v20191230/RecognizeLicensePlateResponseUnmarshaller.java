@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ocr.model.v20191230.RecognizeLicensePlateResponse;
 import com.aliyuncs.ocr.model.v20191230.RecognizeLicensePlateResponse.Data;
 import com.aliyuncs.ocr.model.v20191230.RecognizeLicensePlateResponse.Data.Plate;
-import com.aliyuncs.ocr.model.v20191230.RecognizeLicensePlateResponse.Data.Plate.Detail;
 import com.aliyuncs.ocr.model.v20191230.RecognizeLicensePlateResponse.Data.Plate.Roi;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -47,16 +46,6 @@ public class RecognizeLicensePlateResponseUnmarshaller {
 			roi.setX(_ctx.integerValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].Roi.X"));
 			roi.setY(_ctx.integerValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].Roi.Y"));
 			plate.setRoi(roi);
-
-			List<Detail> details = new ArrayList<Detail>();
-			for (int j = 0; j < _ctx.lengthValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].Details.Length"); j++) {
-				Detail detail = new Detail();
-				detail.setNumber(_ctx.stringValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].Details["+ j +"].Number"));
-				detail.setConfidence(_ctx.floatValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].Details["+ j +"].Confidence"));
-
-				details.add(detail);
-			}
-			plate.setDetails(details);
 
 			plates.add(plate);
 		}

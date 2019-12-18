@@ -36,7 +36,6 @@ public class RecognizeIdentityCardResponseUnmarshaller {
 		recognizeIdentityCardResponse.setRequestId(_ctx.stringValue("RecognizeIdentityCardResponse.RequestId"));
 
 		Data data = new Data();
-		data.setConfiguration(_ctx.stringValue("RecognizeIdentityCardResponse.Data.Configuration"));
 
 		FrontResult frontResult = new FrontResult();
 		frontResult.setAddress(_ctx.stringValue("RecognizeIdentityCardResponse.Data.FrontResult.Address"));

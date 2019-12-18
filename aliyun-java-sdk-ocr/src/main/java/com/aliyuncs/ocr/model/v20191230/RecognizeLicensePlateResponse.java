@@ -67,8 +67,6 @@ public class RecognizeLicensePlateResponse extends AcsResponse {
 
 			private Float plateTypeConfidence;
 
-			private List<Detail> details;
-
 			private Roi roi;
 
 			public Float getConfidence() {
@@ -103,43 +101,12 @@ public class RecognizeLicensePlateResponse extends AcsResponse {
 				this.plateTypeConfidence = plateTypeConfidence;
 			}
 
-			public List<Detail> getDetails() {
-				return this.details;
-			}
-
-			public void setDetails(List<Detail> details) {
-				this.details = details;
-			}
-
 			public Roi getRoi() {
 				return this.roi;
 			}
 
 			public void setRoi(Roi roi) {
 				this.roi = roi;
-			}
-
-			public static class Detail {
-
-				private String number;
-
-				private Float confidence;
-
-				public String getNumber() {
-					return this.number;
-				}
-
-				public void setNumber(String number) {
-					this.number = number;
-				}
-
-				public Float getConfidence() {
-					return this.confidence;
-				}
-
-				public void setConfidence(Float confidence) {
-					this.confidence = confidence;
-				}
 			}
 
 			public static class Roi {
