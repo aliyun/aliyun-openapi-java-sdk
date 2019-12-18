@@ -15,6 +15,7 @@
 package com.aliyuncs.alikafka.transform.v20190916;
 
 import com.aliyuncs.alikafka.model.v20190916.GetMetaProductListResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,7 +27,7 @@ public class GetMetaProductListResponseUnmarshaller {
 		getMetaProductListResponse.setSuccess(_ctx.booleanValue("GetMetaProductListResponse.Success"));
 		getMetaProductListResponse.setCode(_ctx.integerValue("GetMetaProductListResponse.Code"));
 		getMetaProductListResponse.setMessage(_ctx.stringValue("GetMetaProductListResponse.Message"));
-		getMetaProductListResponse.setMetaData(_ctx.stringValue("GetMetaProductListResponse.MetaData"));
+		getMetaProductListResponse.setMetaData(_ctx.mapValue("GetMetaProductListResponse.MetaData"));
 	 
 	 	return getMetaProductListResponse;
 	}

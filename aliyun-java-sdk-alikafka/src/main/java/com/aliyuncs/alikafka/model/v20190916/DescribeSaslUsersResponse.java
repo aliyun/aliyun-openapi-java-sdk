@@ -14,34 +14,26 @@
 
 package com.aliyuncs.alikafka.model.v20190916;
 
-import java.util.Map;
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alikafka.transform.v20190916.GetMetaProductListResponseUnmarshaller;
+import com.aliyuncs.alikafka.transform.v20190916.DescribeSaslUsersResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetMetaProductListResponse extends AcsResponse {
-
-	private Boolean success;
+public class DescribeSaslUsersResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Boolean success;
 
 	private Integer code;
 
 	private String message;
 
-	private Map<Object,Object> metaData;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private List<SaslUserVO> saslUserList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,6 +41,14 @@ public class GetMetaProductListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Integer getCode() {
@@ -67,16 +67,39 @@ public class GetMetaProductListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Map<Object,Object> getMetaData() {
-		return this.metaData;
+	public List<SaslUserVO> getSaslUserList() {
+		return this.saslUserList;
 	}
 
-	public void setMetaData(Map<Object,Object> metaData) {
-		this.metaData = metaData;
+	public void setSaslUserList(List<SaslUserVO> saslUserList) {
+		this.saslUserList = saslUserList;
+	}
+
+	public static class SaslUserVO {
+
+		private String username;
+
+		private String password;
+
+		public String getUsername() {
+			return this.username;
+		}
+
+		public void setUsername(String username) {
+			this.username = username;
+		}
+
+		public String getPassword() {
+			return this.password;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
 	}
 
 	@Override
-	public GetMetaProductListResponse getInstance(UnmarshallerContext context) {
-		return	GetMetaProductListResponseUnmarshaller.unmarshall(this, context);
+	public DescribeSaslUsersResponse getInstance(UnmarshallerContext context) {
+		return	DescribeSaslUsersResponseUnmarshaller.unmarshall(this, context);
 	}
 }

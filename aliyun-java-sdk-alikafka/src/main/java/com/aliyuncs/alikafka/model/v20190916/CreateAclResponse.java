@@ -14,34 +14,23 @@
 
 package com.aliyuncs.alikafka.model.v20190916;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alikafka.transform.v20190916.GetMetaProductListResponseUnmarshaller;
+import com.aliyuncs.alikafka.transform.v20190916.CreateAclResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetMetaProductListResponse extends AcsResponse {
-
-	private Boolean success;
+public class CreateAclResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Boolean success;
 
 	private Integer code;
 
 	private String message;
-
-	private Map<Object,Object> metaData;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,6 +38,14 @@ public class GetMetaProductListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Integer getCode() {
@@ -67,16 +64,8 @@ public class GetMetaProductListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Map<Object,Object> getMetaData() {
-		return this.metaData;
-	}
-
-	public void setMetaData(Map<Object,Object> metaData) {
-		this.metaData = metaData;
-	}
-
 	@Override
-	public GetMetaProductListResponse getInstance(UnmarshallerContext context) {
-		return	GetMetaProductListResponseUnmarshaller.unmarshall(this, context);
+	public CreateAclResponse getInstance(UnmarshallerContext context) {
+		return	CreateAclResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -14,16 +14,15 @@
 
 package com.aliyuncs.alikafka.model.v20190916;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alikafka.transform.v20190916.GetMetaProductListResponseUnmarshaller;
+import com.aliyuncs.alikafka.transform.v20190916.DeleteInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetMetaProductListResponse extends AcsResponse {
+public class DeleteInstanceResponse extends AcsResponse {
 
 	private Boolean success;
 
@@ -32,8 +31,6 @@ public class GetMetaProductListResponse extends AcsResponse {
 	private Integer code;
 
 	private String message;
-
-	private Map<Object,Object> metaData;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -67,16 +64,8 @@ public class GetMetaProductListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Map<Object,Object> getMetaData() {
-		return this.metaData;
-	}
-
-	public void setMetaData(Map<Object,Object> metaData) {
-		this.metaData = metaData;
-	}
-
 	@Override
-	public GetMetaProductListResponse getInstance(UnmarshallerContext context) {
-		return	GetMetaProductListResponseUnmarshaller.unmarshall(this, context);
+	public DeleteInstanceResponse getInstance(UnmarshallerContext context) {
+		return	DeleteInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 }
