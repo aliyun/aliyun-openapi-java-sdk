@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BindMaterialResponseUnmarshaller {
 
-	public static BindMaterialResponse unmarshall(BindMaterialResponse bindMaterialResponse, UnmarshallerContext context) {
+	public static BindMaterialResponse unmarshall(BindMaterialResponse bindMaterialResponse, UnmarshallerContext _ctx) {
 		
-		bindMaterialResponse.setRequestId(context.stringValue("BindMaterialResponse.RequestId"));
+		bindMaterialResponse.setRequestId(_ctx.stringValue("BindMaterialResponse.RequestId"));
 	 
 	 	return bindMaterialResponse;
 	}

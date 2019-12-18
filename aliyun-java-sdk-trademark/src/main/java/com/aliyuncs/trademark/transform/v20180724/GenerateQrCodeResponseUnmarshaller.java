@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GenerateQrCodeResponseUnmarshaller {
 
-	public static GenerateQrCodeResponse unmarshall(GenerateQrCodeResponse generateQrCodeResponse, UnmarshallerContext context) {
+	public static GenerateQrCodeResponse unmarshall(GenerateQrCodeResponse generateQrCodeResponse, UnmarshallerContext _ctx) {
 		
-		generateQrCodeResponse.setRequestId(context.stringValue("GenerateQrCodeResponse.RequestId"));
-		generateQrCodeResponse.setUuid(context.stringValue("GenerateQrCodeResponse.Uuid"));
-		generateQrCodeResponse.setExpireTime(context.longValue("GenerateQrCodeResponse.ExpireTime"));
-		generateQrCodeResponse.setQrcodeUrl(context.stringValue("GenerateQrCodeResponse.QrcodeUrl"));
-		generateQrCodeResponse.setFieldKey(context.stringValue("GenerateQrCodeResponse.FieldKey"));
-		generateQrCodeResponse.setSuccess(context.booleanValue("GenerateQrCodeResponse.Success"));
+		generateQrCodeResponse.setRequestId(_ctx.stringValue("GenerateQrCodeResponse.RequestId"));
+		generateQrCodeResponse.setUuid(_ctx.stringValue("GenerateQrCodeResponse.Uuid"));
+		generateQrCodeResponse.setExpireTime(_ctx.longValue("GenerateQrCodeResponse.ExpireTime"));
+		generateQrCodeResponse.setQrcodeUrl(_ctx.stringValue("GenerateQrCodeResponse.QrcodeUrl"));
+		generateQrCodeResponse.setFieldKey(_ctx.stringValue("GenerateQrCodeResponse.FieldKey"));
+		generateQrCodeResponse.setSuccess(_ctx.booleanValue("GenerateQrCodeResponse.Success"));
 	 
 	 	return generateQrCodeResponse;
 	}

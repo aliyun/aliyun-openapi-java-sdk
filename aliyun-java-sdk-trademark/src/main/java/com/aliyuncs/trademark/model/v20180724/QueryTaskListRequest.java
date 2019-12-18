@@ -15,18 +15,24 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryTaskListRequest extends RpcAcsRequest<QueryTaskListResponse> {
-	
-	public QueryTaskListRequest() {
-		super("Trademark", "2018-07-24", "QueryTaskList", "trademark");
-	}
+	   
 
 	private String bizType;
+
+	private Integer pageSize;
+
+	private Integer pageNum;
+	public QueryTaskListRequest() {
+		super("Trademark", "2018-07-24", "QueryTaskList");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizType() {
 		return this.bizType;
@@ -36,6 +42,28 @@ public class QueryTaskListRequest extends RpcAcsRequest<QueryTaskListResponse> {
 		this.bizType = bizType;
 		if(bizType != null){
 			putQueryParameter("BizType", bizType);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

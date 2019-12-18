@@ -24,30 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryTradeProduceListResponseUnmarshaller {
 
-	public static QueryTradeProduceListResponse unmarshall(QueryTradeProduceListResponse queryTradeProduceListResponse, UnmarshallerContext context) {
+	public static QueryTradeProduceListResponse unmarshall(QueryTradeProduceListResponse queryTradeProduceListResponse, UnmarshallerContext _ctx) {
 		
-		queryTradeProduceListResponse.setRequestId(context.stringValue("QueryTradeProduceListResponse.RequestId"));
-		queryTradeProduceListResponse.setTotalItemNum(context.integerValue("QueryTradeProduceListResponse.TotalItemNum"));
-		queryTradeProduceListResponse.setCurrentPageNum(context.integerValue("QueryTradeProduceListResponse.CurrentPageNum"));
-		queryTradeProduceListResponse.setPageSize(context.integerValue("QueryTradeProduceListResponse.PageSize"));
-		queryTradeProduceListResponse.setTotalPageNum(context.integerValue("QueryTradeProduceListResponse.TotalPageNum"));
+		queryTradeProduceListResponse.setRequestId(_ctx.stringValue("QueryTradeProduceListResponse.RequestId"));
+		queryTradeProduceListResponse.setTotalItemNum(_ctx.integerValue("QueryTradeProduceListResponse.TotalItemNum"));
+		queryTradeProduceListResponse.setCurrentPageNum(_ctx.integerValue("QueryTradeProduceListResponse.CurrentPageNum"));
+		queryTradeProduceListResponse.setPageSize(_ctx.integerValue("QueryTradeProduceListResponse.PageSize"));
+		queryTradeProduceListResponse.setTotalPageNum(_ctx.integerValue("QueryTradeProduceListResponse.TotalPageNum"));
 
 		List<TradeProduces> data = new ArrayList<TradeProduces>();
-		for (int i = 0; i < context.lengthValue("QueryTradeProduceListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryTradeProduceListResponse.Data.Length"); i++) {
 			TradeProduces tradeProduces = new TradeProduces();
-			tradeProduces.setBizId(context.stringValue("QueryTradeProduceListResponse.Data["+ i +"].BizId"));
-			tradeProduces.setPreOrderId(context.stringValue("QueryTradeProduceListResponse.Data["+ i +"].PreOrderId"));
-			tradeProduces.setPreAmount(context.integerValue("QueryTradeProduceListResponse.Data["+ i +"].PreAmount"));
-			tradeProduces.setFinalAmount(context.integerValue("QueryTradeProduceListResponse.Data["+ i +"].FinalAmount"));
-			tradeProduces.setRegisterNumber(context.stringValue("QueryTradeProduceListResponse.Data["+ i +"].RegisterNumber"));
-			tradeProduces.setClassification(context.stringValue("QueryTradeProduceListResponse.Data["+ i +"].Classification"));
-			tradeProduces.setIcon(context.stringValue("QueryTradeProduceListResponse.Data["+ i +"].Icon"));
-			tradeProduces.setOperateNote(context.stringValue("QueryTradeProduceListResponse.Data["+ i +"].OperateNote"));
-			tradeProduces.setBuyerStatus(context.integerValue("QueryTradeProduceListResponse.Data["+ i +"].BuyerStatus"));
-			tradeProduces.setUserId(context.stringValue("QueryTradeProduceListResponse.Data["+ i +"].UserId"));
-			tradeProduces.setCreateTime(context.longValue("QueryTradeProduceListResponse.Data["+ i +"].CreateTime"));
-			tradeProduces.setUpdateTime(context.longValue("QueryTradeProduceListResponse.Data["+ i +"].UpdateTime"));
-			tradeProduces.setAllowCancel(context.booleanValue("QueryTradeProduceListResponse.Data["+ i +"].AllowCancel"));
+			tradeProduces.setBizId(_ctx.stringValue("QueryTradeProduceListResponse.Data["+ i +"].BizId"));
+			tradeProduces.setPreOrderId(_ctx.stringValue("QueryTradeProduceListResponse.Data["+ i +"].PreOrderId"));
+			tradeProduces.setPreAmount(_ctx.integerValue("QueryTradeProduceListResponse.Data["+ i +"].PreAmount"));
+			tradeProduces.setFinalAmount(_ctx.integerValue("QueryTradeProduceListResponse.Data["+ i +"].FinalAmount"));
+			tradeProduces.setRegisterNumber(_ctx.stringValue("QueryTradeProduceListResponse.Data["+ i +"].RegisterNumber"));
+			tradeProduces.setClassification(_ctx.stringValue("QueryTradeProduceListResponse.Data["+ i +"].Classification"));
+			tradeProduces.setIcon(_ctx.stringValue("QueryTradeProduceListResponse.Data["+ i +"].Icon"));
+			tradeProduces.setOperateNote(_ctx.stringValue("QueryTradeProduceListResponse.Data["+ i +"].OperateNote"));
+			tradeProduces.setBuyerStatus(_ctx.integerValue("QueryTradeProduceListResponse.Data["+ i +"].BuyerStatus"));
+			tradeProduces.setUserId(_ctx.stringValue("QueryTradeProduceListResponse.Data["+ i +"].UserId"));
+			tradeProduces.setCreateTime(_ctx.longValue("QueryTradeProduceListResponse.Data["+ i +"].CreateTime"));
+			tradeProduces.setUpdateTime(_ctx.longValue("QueryTradeProduceListResponse.Data["+ i +"].UpdateTime"));
+			tradeProduces.setAllowCancel(_ctx.booleanValue("QueryTradeProduceListResponse.Data["+ i +"].AllowCancel"));
+			tradeProduces.setFailReason(_ctx.integerValue("QueryTradeProduceListResponse.Data["+ i +"].FailReason"));
 
 			data.add(tradeProduces);
 		}

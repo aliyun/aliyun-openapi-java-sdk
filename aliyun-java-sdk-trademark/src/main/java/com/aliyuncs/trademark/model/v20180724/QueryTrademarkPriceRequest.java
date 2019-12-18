@@ -15,26 +15,28 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryTrademarkPriceRequest extends RpcAcsRequest<QueryTrademarkPriceResponse> {
-	
-	public QueryTrademarkPriceRequest() {
-		super("Trademark", "2018-07-24", "QueryTrademarkPrice", "trademark");
-	}
+	   
 
 	private String tmName;
-
-	private String tmIcon;
 
 	private String orderData;
 
 	private Integer type;
 
 	private Long userId;
+
+	private String tmIcon;
+	public QueryTrademarkPriceRequest() {
+		super("Trademark", "2018-07-24", "QueryTrademarkPrice");
+		setMethod(MethodType.POST);
+	}
 
 	public String getTmName() {
 		return this.tmName;
@@ -44,17 +46,6 @@ public class QueryTrademarkPriceRequest extends RpcAcsRequest<QueryTrademarkPric
 		this.tmName = tmName;
 		if(tmName != null){
 			putQueryParameter("TmName", tmName);
-		}
-	}
-
-	public String getTmIcon() {
-		return this.tmIcon;
-	}
-
-	public void setTmIcon(String tmIcon) {
-		this.tmIcon = tmIcon;
-		if(tmIcon != null){
-			putQueryParameter("TmIcon", tmIcon);
 		}
 	}
 
@@ -88,6 +79,17 @@ public class QueryTrademarkPriceRequest extends RpcAcsRequest<QueryTrademarkPric
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId.toString());
+		}
+	}
+
+	public String getTmIcon() {
+		return this.tmIcon;
+	}
+
+	public void setTmIcon(String tmIcon) {
+		this.tmIcon = tmIcon;
+		if(tmIcon != null){
+			putQueryParameter("TmIcon", tmIcon);
 		}
 	}
 

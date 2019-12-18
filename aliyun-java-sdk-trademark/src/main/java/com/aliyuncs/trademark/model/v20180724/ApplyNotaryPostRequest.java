@@ -15,16 +15,14 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ApplyNotaryPostRequest extends RpcAcsRequest<ApplyNotaryPostResponse> {
-	
-	public ApplyNotaryPostRequest() {
-		super("Trademark", "2018-07-24", "ApplyNotaryPost", "trademark");
-	}
+	   
 
 	private String receiverName;
 
@@ -33,6 +31,10 @@ public class ApplyNotaryPostRequest extends RpcAcsRequest<ApplyNotaryPostRespons
 	private Long notaryOrderId;
 
 	private String receiverAddress;
+	public ApplyNotaryPostRequest() {
+		super("Trademark", "2018-07-24", "ApplyNotaryPost");
+		setMethod(MethodType.POST);
+	}
 
 	public String getReceiverName() {
 		return this.receiverName;

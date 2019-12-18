@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryQrCodeUploadStatusResponseUnmarshaller {
 
-	public static QueryQrCodeUploadStatusResponse unmarshall(QueryQrCodeUploadStatusResponse queryQrCodeUploadStatusResponse, UnmarshallerContext context) {
+	public static QueryQrCodeUploadStatusResponse unmarshall(QueryQrCodeUploadStatusResponse queryQrCodeUploadStatusResponse, UnmarshallerContext _ctx) {
 		
-		queryQrCodeUploadStatusResponse.setRequestId(context.stringValue("QueryQrCodeUploadStatusResponse.RequestId"));
-		queryQrCodeUploadStatusResponse.setOssKey(context.stringValue("QueryQrCodeUploadStatusResponse.OssKey"));
-		queryQrCodeUploadStatusResponse.setOssUrl(context.stringValue("QueryQrCodeUploadStatusResponse.OssUrl"));
-		queryQrCodeUploadStatusResponse.setStatus(context.integerValue("QueryQrCodeUploadStatusResponse.Status"));
-		queryQrCodeUploadStatusResponse.setSuccess(context.booleanValue("QueryQrCodeUploadStatusResponse.Success"));
+		queryQrCodeUploadStatusResponse.setRequestId(_ctx.stringValue("QueryQrCodeUploadStatusResponse.RequestId"));
+		queryQrCodeUploadStatusResponse.setOssKey(_ctx.stringValue("QueryQrCodeUploadStatusResponse.OssKey"));
+		queryQrCodeUploadStatusResponse.setOssUrl(_ctx.stringValue("QueryQrCodeUploadStatusResponse.OssUrl"));
+		queryQrCodeUploadStatusResponse.setStatus(_ctx.integerValue("QueryQrCodeUploadStatusResponse.Status"));
+		queryQrCodeUploadStatusResponse.setSuccess(_ctx.booleanValue("QueryQrCodeUploadStatusResponse.Success"));
 	 
 	 	return queryQrCodeUploadStatusResponse;
 	}

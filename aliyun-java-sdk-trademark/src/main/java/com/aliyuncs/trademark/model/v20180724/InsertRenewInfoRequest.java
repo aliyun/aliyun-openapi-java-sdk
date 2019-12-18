@@ -15,16 +15,14 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class InsertRenewInfoRequest extends RpcAcsRequest<InsertRenewInfoResponse> {
-	
-	public InsertRenewInfoRequest() {
-		super("Trademark", "2018-07-24", "InsertRenewInfo", "trademark");
-	}
+	   
 
 	private String engName;
 
@@ -35,6 +33,10 @@ public class InsertRenewInfoRequest extends RpcAcsRequest<InsertRenewInfoRespons
 	private String engAddress;
 
 	private String name;
+	public InsertRenewInfoRequest() {
+		super("Trademark", "2018-07-24", "InsertRenewInfo");
+		setMethod(MethodType.POST);
+	}
 
 	public String getEngName() {
 		return this.engName;

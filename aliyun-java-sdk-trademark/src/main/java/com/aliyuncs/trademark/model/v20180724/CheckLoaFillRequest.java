@@ -15,20 +15,22 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CheckLoaFillRequest extends RpcAcsRequest<CheckLoaFillResponse> {
-	
-	public CheckLoaFillRequest() {
-		super("Trademark", "2018-07-24", "CheckLoaFill", "trademark");
-	}
+	   
 
 	private String ossKey;
 
 	private String type;
+	public CheckLoaFillRequest() {
+		super("Trademark", "2018-07-24", "CheckLoaFill");
+		setMethod(MethodType.POST);
+	}
 
 	public String getOssKey() {
 		return this.ossKey;

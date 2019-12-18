@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ApplyNotaryPostResponseUnmarshaller {
 
-	public static ApplyNotaryPostResponse unmarshall(ApplyNotaryPostResponse applyNotaryPostResponse, UnmarshallerContext context) {
+	public static ApplyNotaryPostResponse unmarshall(ApplyNotaryPostResponse applyNotaryPostResponse, UnmarshallerContext _ctx) {
 		
-		applyNotaryPostResponse.setRequestId(context.stringValue("ApplyNotaryPostResponse.RequestId"));
-		applyNotaryPostResponse.setSuccess(context.booleanValue("ApplyNotaryPostResponse.Success"));
-		applyNotaryPostResponse.setErrorMsg(context.stringValue("ApplyNotaryPostResponse.ErrorMsg"));
-		applyNotaryPostResponse.setErrorCode(context.stringValue("ApplyNotaryPostResponse.ErrorCode"));
+		applyNotaryPostResponse.setRequestId(_ctx.stringValue("ApplyNotaryPostResponse.RequestId"));
+		applyNotaryPostResponse.setSuccess(_ctx.booleanValue("ApplyNotaryPostResponse.Success"));
+		applyNotaryPostResponse.setErrorMsg(_ctx.stringValue("ApplyNotaryPostResponse.ErrorMsg"));
+		applyNotaryPostResponse.setErrorCode(_ctx.stringValue("ApplyNotaryPostResponse.ErrorCode"));
 	 
 	 	return applyNotaryPostResponse;
 	}

@@ -15,22 +15,24 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class BindMaterialRequest extends RpcAcsRequest<BindMaterialResponse> {
-	
-	public BindMaterialRequest() {
-		super("Trademark", "2018-07-24", "BindMaterial", "trademark");
-	}
+	   
 
 	private String bizId;
 
 	private String materialId;
 
 	private String loaOssKey;
+	public BindMaterialRequest() {
+		super("Trademark", "2018-07-24", "BindMaterial");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizId() {
 		return this.bizId;

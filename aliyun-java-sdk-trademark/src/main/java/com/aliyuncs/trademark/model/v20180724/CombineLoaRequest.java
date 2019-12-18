@@ -15,38 +15,29 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CombineLoaRequest extends RpcAcsRequest<CombineLoaResponse> {
-	
-	public CombineLoaRequest() {
-		super("Trademark", "2018-07-24", "CombineLoa", "trademark");
-	}
-
-	private String trademarkName;
+	   
 
 	private String materialName;
 
 	private String address;
 
+	private String materialId;
+
+	private String trademarkName;
+
 	private String nationality;
 
 	private String tmProduceType;
-
-	private String materialId;
-
-	public String getTrademarkName() {
-		return this.trademarkName;
-	}
-
-	public void setTrademarkName(String trademarkName) {
-		this.trademarkName = trademarkName;
-		if(trademarkName != null){
-			putQueryParameter("TrademarkName", trademarkName);
-		}
+	public CombineLoaRequest() {
+		super("Trademark", "2018-07-24", "CombineLoa");
+		setMethod(MethodType.POST);
 	}
 
 	public String getMaterialName() {
@@ -71,6 +62,28 @@ public class CombineLoaRequest extends RpcAcsRequest<CombineLoaResponse> {
 		}
 	}
 
+	public String getMaterialId() {
+		return this.materialId;
+	}
+
+	public void setMaterialId(String materialId) {
+		this.materialId = materialId;
+		if(materialId != null){
+			putQueryParameter("MaterialId", materialId);
+		}
+	}
+
+	public String getTrademarkName() {
+		return this.trademarkName;
+	}
+
+	public void setTrademarkName(String trademarkName) {
+		this.trademarkName = trademarkName;
+		if(trademarkName != null){
+			putQueryParameter("TrademarkName", trademarkName);
+		}
+	}
+
 	public String getNationality() {
 		return this.nationality;
 	}
@@ -90,17 +103,6 @@ public class CombineLoaRequest extends RpcAcsRequest<CombineLoaResponse> {
 		this.tmProduceType = tmProduceType;
 		if(tmProduceType != null){
 			putQueryParameter("TmProduceType", tmProduceType);
-		}
-	}
-
-	public String getMaterialId() {
-		return this.materialId;
-	}
-
-	public void setMaterialId(String materialId) {
-		this.materialId = materialId;
-		if(materialId != null){
-			putQueryParameter("MaterialId", materialId);
 		}
 	}
 

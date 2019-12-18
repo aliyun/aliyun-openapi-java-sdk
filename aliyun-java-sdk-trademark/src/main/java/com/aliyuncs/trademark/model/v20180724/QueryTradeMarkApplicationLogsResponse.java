@@ -57,6 +57,8 @@ public class QueryTradeMarkApplicationLogsResponse extends AcsResponse {
 
 		private Integer bizStatus;
 
+		private String extendContent;
+
 		public String getBizId() {
 			return this.bizId;
 		}
@@ -95,6 +97,14 @@ public class QueryTradeMarkApplicationLogsResponse extends AcsResponse {
 
 		public void setBizStatus(Integer bizStatus) {
 			this.bizStatus = bizStatus;
+		}
+
+		public String getExtendContent() {
+			return this.extendContent;
+		}
+
+		public void setExtendContent(String extendContent) {
+			this.extendContent = extendContent;
 		}
 	}
 

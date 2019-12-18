@@ -24,23 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryTradeIntentionUserListResponseUnmarshaller {
 
-	public static QueryTradeIntentionUserListResponse unmarshall(QueryTradeIntentionUserListResponse queryTradeIntentionUserListResponse, UnmarshallerContext context) {
+	public static QueryTradeIntentionUserListResponse unmarshall(QueryTradeIntentionUserListResponse queryTradeIntentionUserListResponse, UnmarshallerContext _ctx) {
 		
-		queryTradeIntentionUserListResponse.setRequestId(context.stringValue("QueryTradeIntentionUserListResponse.RequestId"));
-		queryTradeIntentionUserListResponse.setTotalItemNum(context.integerValue("QueryTradeIntentionUserListResponse.TotalItemNum"));
-		queryTradeIntentionUserListResponse.setCurrentPageNum(context.integerValue("QueryTradeIntentionUserListResponse.CurrentPageNum"));
-		queryTradeIntentionUserListResponse.setPageSize(context.integerValue("QueryTradeIntentionUserListResponse.PageSize"));
-		queryTradeIntentionUserListResponse.setTotalPageNum(context.integerValue("QueryTradeIntentionUserListResponse.TotalPageNum"));
+		queryTradeIntentionUserListResponse.setRequestId(_ctx.stringValue("QueryTradeIntentionUserListResponse.RequestId"));
+		queryTradeIntentionUserListResponse.setTotalItemNum(_ctx.integerValue("QueryTradeIntentionUserListResponse.TotalItemNum"));
+		queryTradeIntentionUserListResponse.setCurrentPageNum(_ctx.integerValue("QueryTradeIntentionUserListResponse.CurrentPageNum"));
+		queryTradeIntentionUserListResponse.setPageSize(_ctx.integerValue("QueryTradeIntentionUserListResponse.PageSize"));
+		queryTradeIntentionUserListResponse.setTotalPageNum(_ctx.integerValue("QueryTradeIntentionUserListResponse.TotalPageNum"));
 
 		List<Trademark> data = new ArrayList<Trademark>();
-		for (int i = 0; i < context.lengthValue("QueryTradeIntentionUserListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryTradeIntentionUserListResponse.Data.Length"); i++) {
 			Trademark trademark = new Trademark();
-			trademark.setUserId(context.stringValue("QueryTradeIntentionUserListResponse.Data["+ i +"].UserId"));
-			trademark.setRegisterNumber(context.stringValue("QueryTradeIntentionUserListResponse.Data["+ i +"].RegisterNumber"));
-			trademark.setClassification(context.stringValue("QueryTradeIntentionUserListResponse.Data["+ i +"].Classification"));
-			trademark.setMobile(context.integerValue("QueryTradeIntentionUserListResponse.Data["+ i +"].Mobile"));
-			trademark.setId(context.longValue("QueryTradeIntentionUserListResponse.Data["+ i +"].Id"));
-			trademark.setUserName(context.stringValue("QueryTradeIntentionUserListResponse.Data["+ i +"].UserName"));
+			trademark.setRegisterNumber(_ctx.stringValue("QueryTradeIntentionUserListResponse.Data["+ i +"].RegisterNumber"));
+			trademark.setClassification(_ctx.stringValue("QueryTradeIntentionUserListResponse.Data["+ i +"].Classification"));
+			trademark.setMobile(_ctx.stringValue("QueryTradeIntentionUserListResponse.Data["+ i +"].Mobile"));
+			trademark.setUserName(_ctx.stringValue("QueryTradeIntentionUserListResponse.Data["+ i +"].UserName"));
+			trademark.setBizId(_ctx.stringValue("QueryTradeIntentionUserListResponse.Data["+ i +"].BizId"));
+			trademark.setDescription(_ctx.stringValue("QueryTradeIntentionUserListResponse.Data["+ i +"].Description"));
+			trademark.setStatus(_ctx.integerValue("QueryTradeIntentionUserListResponse.Data["+ i +"].Status"));
 
 			data.add(trademark);
 		}

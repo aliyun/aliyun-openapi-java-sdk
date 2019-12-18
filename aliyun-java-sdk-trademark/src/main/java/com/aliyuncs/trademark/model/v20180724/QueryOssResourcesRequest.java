@@ -15,18 +15,20 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryOssResourcesRequest extends RpcAcsRequest<QueryOssResourcesResponse> {
-	
-	public QueryOssResourcesRequest() {
-		super("Trademark", "2018-07-24", "QueryOssResources", "trademark");
-	}
+	   
 
 	private String bizId;
+	public QueryOssResourcesRequest() {
+		super("Trademark", "2018-07-24", "QueryOssResources");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizId() {
 		return this.bizId;

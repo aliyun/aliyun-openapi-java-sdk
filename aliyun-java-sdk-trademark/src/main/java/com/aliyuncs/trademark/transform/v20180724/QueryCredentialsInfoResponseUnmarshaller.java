@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryCredentialsInfoResponseUnmarshaller {
 
-	public static QueryCredentialsInfoResponse unmarshall(QueryCredentialsInfoResponse queryCredentialsInfoResponse, UnmarshallerContext context) {
+	public static QueryCredentialsInfoResponse unmarshall(QueryCredentialsInfoResponse queryCredentialsInfoResponse, UnmarshallerContext _ctx) {
 		
-		queryCredentialsInfoResponse.setRequestId(context.stringValue("QueryCredentialsInfoResponse.RequestId"));
+		queryCredentialsInfoResponse.setRequestId(_ctx.stringValue("QueryCredentialsInfoResponse.RequestId"));
 
 		CredentialsInfo credentialsInfo = new CredentialsInfo();
-		credentialsInfo.setCardNumber(context.stringValue("QueryCredentialsInfoResponse.CredentialsInfo.CardNumber"));
-		credentialsInfo.setAddress(context.stringValue("QueryCredentialsInfoResponse.CredentialsInfo.Address"));
-		credentialsInfo.setCompanyName(context.stringValue("QueryCredentialsInfoResponse.CredentialsInfo.CompanyName"));
-		credentialsInfo.setPersonName(context.stringValue("QueryCredentialsInfoResponse.CredentialsInfo.PersonName"));
-		credentialsInfo.setProvince(context.stringValue("QueryCredentialsInfoResponse.CredentialsInfo.Province"));
+		credentialsInfo.setCardNumber(_ctx.stringValue("QueryCredentialsInfoResponse.CredentialsInfo.CardNumber"));
+		credentialsInfo.setAddress(_ctx.stringValue("QueryCredentialsInfoResponse.CredentialsInfo.Address"));
+		credentialsInfo.setCompanyName(_ctx.stringValue("QueryCredentialsInfoResponse.CredentialsInfo.CompanyName"));
+		credentialsInfo.setPersonName(_ctx.stringValue("QueryCredentialsInfoResponse.CredentialsInfo.PersonName"));
+		credentialsInfo.setProvince(_ctx.stringValue("QueryCredentialsInfoResponse.CredentialsInfo.Province"));
 		queryCredentialsInfoResponse.setCredentialsInfo(credentialsInfo);
 	 
 	 	return queryCredentialsInfoResponse;

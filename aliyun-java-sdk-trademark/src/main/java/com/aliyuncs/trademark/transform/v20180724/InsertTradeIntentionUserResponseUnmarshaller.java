@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InsertTradeIntentionUserResponseUnmarshaller {
 
-	public static InsertTradeIntentionUserResponse unmarshall(InsertTradeIntentionUserResponse insertTradeIntentionUserResponse, UnmarshallerContext context) {
+	public static InsertTradeIntentionUserResponse unmarshall(InsertTradeIntentionUserResponse insertTradeIntentionUserResponse, UnmarshallerContext _ctx) {
 		
-		insertTradeIntentionUserResponse.setRequestId(context.stringValue("InsertTradeIntentionUserResponse.RequestId"));
-		insertTradeIntentionUserResponse.setSuccess(context.booleanValue("InsertTradeIntentionUserResponse.Success"));
-		insertTradeIntentionUserResponse.setErrorMsg(context.stringValue("InsertTradeIntentionUserResponse.ErrorMsg"));
+		insertTradeIntentionUserResponse.setRequestId(_ctx.stringValue("InsertTradeIntentionUserResponse.RequestId"));
+		insertTradeIntentionUserResponse.setSuccess(_ctx.booleanValue("InsertTradeIntentionUserResponse.Success"));
+		insertTradeIntentionUserResponse.setErrorMsg(_ctx.stringValue("InsertTradeIntentionUserResponse.ErrorMsg"));
 	 
 	 	return insertTradeIntentionUserResponse;
 	}

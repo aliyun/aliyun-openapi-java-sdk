@@ -27,6 +27,14 @@ public class QueryTaskListResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer totalItemNum;
+
+	private Integer currentPageNum;
+
+	private Integer pageSize;
+
+	private Integer totalPageNum;
+
 	private List<TaskList> data;
 
 	public String getRequestId() {
@@ -35,6 +43,38 @@ public class QueryTaskListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
+	}
+
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
+	}
+
+	public Integer getCurrentPageNum() {
+		return this.currentPageNum;
+	}
+
+	public void setCurrentPageNum(Integer currentPageNum) {
+		this.currentPageNum = currentPageNum;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
+	}
+
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
 	}
 
 	public List<TaskList> getData() {
@@ -54,6 +94,12 @@ public class QueryTaskListResponse extends AcsResponse {
 		private String errMsg;
 
 		private String result;
+
+		private String fileName;
+
+		private Long createTime;
+
+		private Long completeTime;
 
 		public String getTaskStatus() {
 			return this.taskStatus;
@@ -85,6 +131,30 @@ public class QueryTaskListResponse extends AcsResponse {
 
 		public void setResult(String result) {
 			this.result = result;
+		}
+
+		public String getFileName() {
+			return this.fileName;
+		}
+
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getCompleteTime() {
+			return this.completeTime;
+		}
+
+		public void setCompleteTime(Long completeTime) {
+			this.completeTime = completeTime;
 		}
 	}
 

@@ -15,22 +15,24 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryCredentialsInfoRequest extends RpcAcsRequest<QueryCredentialsInfoResponse> {
-	
-	public QueryCredentialsInfoRequest() {
-		super("Trademark", "2018-07-24", "QueryCredentialsInfo", "trademark");
-	}
+	   
 
 	private String ossKey;
 
 	private String materialType;
 
 	private String companyName;
+	public QueryCredentialsInfoRequest() {
+		super("Trademark", "2018-07-24", "QueryCredentialsInfo");
+		setMethod(MethodType.POST);
+	}
 
 	public String getOssKey() {
 		return this.ossKey;

@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GenerateUploadFilePolicyResponseUnmarshaller {
 
-	public static GenerateUploadFilePolicyResponse unmarshall(GenerateUploadFilePolicyResponse generateUploadFilePolicyResponse, UnmarshallerContext context) {
+	public static GenerateUploadFilePolicyResponse unmarshall(GenerateUploadFilePolicyResponse generateUploadFilePolicyResponse, UnmarshallerContext _ctx) {
 		
-		generateUploadFilePolicyResponse.setRequestId(context.stringValue("GenerateUploadFilePolicyResponse.RequestId"));
-		generateUploadFilePolicyResponse.setEncodedPolicy(context.stringValue("GenerateUploadFilePolicyResponse.EncodedPolicy"));
-		generateUploadFilePolicyResponse.setAccessId(context.stringValue("GenerateUploadFilePolicyResponse.AccessId"));
-		generateUploadFilePolicyResponse.setSignature(context.stringValue("GenerateUploadFilePolicyResponse.Signature"));
-		generateUploadFilePolicyResponse.setFileDir(context.stringValue("GenerateUploadFilePolicyResponse.FileDir"));
-		generateUploadFilePolicyResponse.setHost(context.stringValue("GenerateUploadFilePolicyResponse.Host"));
-		generateUploadFilePolicyResponse.setExpireTime(context.longValue("GenerateUploadFilePolicyResponse.ExpireTime"));
+		generateUploadFilePolicyResponse.setRequestId(_ctx.stringValue("GenerateUploadFilePolicyResponse.RequestId"));
+		generateUploadFilePolicyResponse.setEncodedPolicy(_ctx.stringValue("GenerateUploadFilePolicyResponse.EncodedPolicy"));
+		generateUploadFilePolicyResponse.setAccessId(_ctx.stringValue("GenerateUploadFilePolicyResponse.AccessId"));
+		generateUploadFilePolicyResponse.setSignature(_ctx.stringValue("GenerateUploadFilePolicyResponse.Signature"));
+		generateUploadFilePolicyResponse.setFileDir(_ctx.stringValue("GenerateUploadFilePolicyResponse.FileDir"));
+		generateUploadFilePolicyResponse.setHost(_ctx.stringValue("GenerateUploadFilePolicyResponse.Host"));
+		generateUploadFilePolicyResponse.setExpireTime(_ctx.longValue("GenerateUploadFilePolicyResponse.ExpireTime"));
 	 
 	 	return generateUploadFilePolicyResponse;
 	}

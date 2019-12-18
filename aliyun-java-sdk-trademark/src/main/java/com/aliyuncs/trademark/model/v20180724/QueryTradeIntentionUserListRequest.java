@@ -15,20 +15,63 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryTradeIntentionUserListRequest extends RpcAcsRequest<QueryTradeIntentionUserListResponse> {
-	
-	public QueryTradeIntentionUserListRequest() {
-		super("Trademark", "2018-07-24", "QueryTradeIntentionUserList", "trademark");
-	}
+	   
+
+	private Integer pageNum;
+
+	private Integer pageSize;
+
+	private String bizId;
 
 	private Long end;
 
 	private Long begin;
+
+	private Integer status;
+	public QueryTradeIntentionUserListRequest() {
+		super("Trademark", "2018-07-24", "QueryTradeIntentionUserList");
+		setMethod(MethodType.POST);
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
+		}
+	}
 
 	public Long getEnd() {
 		return this.end;
@@ -49,6 +92,17 @@ public class QueryTradeIntentionUserListRequest extends RpcAcsRequest<QueryTrade
 		this.begin = begin;
 		if(begin != null){
 			putQueryParameter("Begin", begin.toString());
+		}
+	}
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status.toString());
 		}
 	}
 

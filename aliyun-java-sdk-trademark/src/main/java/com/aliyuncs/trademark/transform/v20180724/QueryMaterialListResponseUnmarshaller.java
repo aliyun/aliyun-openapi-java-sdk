@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMaterialListResponseUnmarshaller {
 
-	public static QueryMaterialListResponse unmarshall(QueryMaterialListResponse queryMaterialListResponse, UnmarshallerContext context) {
+	public static QueryMaterialListResponse unmarshall(QueryMaterialListResponse queryMaterialListResponse, UnmarshallerContext _ctx) {
 		
-		queryMaterialListResponse.setRequestId(context.stringValue("QueryMaterialListResponse.RequestId"));
-		queryMaterialListResponse.setTotalItemNum(context.integerValue("QueryMaterialListResponse.TotalItemNum"));
-		queryMaterialListResponse.setCurrentPageNum(context.integerValue("QueryMaterialListResponse.CurrentPageNum"));
-		queryMaterialListResponse.setPageSize(context.integerValue("QueryMaterialListResponse.PageSize"));
-		queryMaterialListResponse.setTotalPageNum(context.integerValue("QueryMaterialListResponse.TotalPageNum"));
+		queryMaterialListResponse.setRequestId(_ctx.stringValue("QueryMaterialListResponse.RequestId"));
+		queryMaterialListResponse.setTotalItemNum(_ctx.integerValue("QueryMaterialListResponse.TotalItemNum"));
+		queryMaterialListResponse.setCurrentPageNum(_ctx.integerValue("QueryMaterialListResponse.CurrentPageNum"));
+		queryMaterialListResponse.setPageSize(_ctx.integerValue("QueryMaterialListResponse.PageSize"));
+		queryMaterialListResponse.setTotalPageNum(_ctx.integerValue("QueryMaterialListResponse.TotalPageNum"));
 
 		List<Trademark> data = new ArrayList<Trademark>();
-		for (int i = 0; i < context.lengthValue("QueryMaterialListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMaterialListResponse.Data.Length"); i++) {
 			Trademark trademark = new Trademark();
-			trademark.setId(context.longValue("QueryMaterialListResponse.Data["+ i +"].Id"));
-			trademark.setName(context.stringValue("QueryMaterialListResponse.Data["+ i +"].Name"));
-			trademark.setType(context.integerValue("QueryMaterialListResponse.Data["+ i +"].Type"));
-			trademark.setRegion(context.integerValue("QueryMaterialListResponse.Data["+ i +"].Region"));
-			trademark.setContactName(context.stringValue("QueryMaterialListResponse.Data["+ i +"].ContactName"));
-			trademark.setStatus(context.integerValue("QueryMaterialListResponse.Data["+ i +"].Status"));
-			trademark.setLoaKey(context.stringValue("QueryMaterialListResponse.Data["+ i +"].LoaKey"));
-			trademark.setLoaStatus(context.integerValue("QueryMaterialListResponse.Data["+ i +"].LoaStatus"));
-			trademark.setCardNumber(context.stringValue("QueryMaterialListResponse.Data["+ i +"].CardNumber"));
+			trademark.setId(_ctx.longValue("QueryMaterialListResponse.Data["+ i +"].Id"));
+			trademark.setName(_ctx.stringValue("QueryMaterialListResponse.Data["+ i +"].Name"));
+			trademark.setType(_ctx.integerValue("QueryMaterialListResponse.Data["+ i +"].Type"));
+			trademark.setRegion(_ctx.integerValue("QueryMaterialListResponse.Data["+ i +"].Region"));
+			trademark.setContactName(_ctx.stringValue("QueryMaterialListResponse.Data["+ i +"].ContactName"));
+			trademark.setStatus(_ctx.integerValue("QueryMaterialListResponse.Data["+ i +"].Status"));
+			trademark.setLoaKey(_ctx.stringValue("QueryMaterialListResponse.Data["+ i +"].LoaKey"));
+			trademark.setLoaStatus(_ctx.integerValue("QueryMaterialListResponse.Data["+ i +"].LoaStatus"));
+			trademark.setCardNumber(_ctx.stringValue("QueryMaterialListResponse.Data["+ i +"].CardNumber"));
 
 			data.add(trademark);
 		}

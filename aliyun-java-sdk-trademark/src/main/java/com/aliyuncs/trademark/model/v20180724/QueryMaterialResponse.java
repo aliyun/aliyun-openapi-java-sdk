@@ -14,6 +14,7 @@
 
 package com.aliyuncs.trademark.model.v20180724;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.trademark.transform.v20180724.QueryMaterialResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -77,6 +78,10 @@ public class QueryMaterialResponse extends AcsResponse {
 	private String note;
 
 	private String country;
+
+	private String reviewApplicationFile;
+
+	private List<String> reviewAdditionalFiles;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -292,6 +297,22 @@ public class QueryMaterialResponse extends AcsResponse {
 
 	public void setCountry(String country) {
 		this.country = country;
+	}
+
+	public String getReviewApplicationFile() {
+		return this.reviewApplicationFile;
+	}
+
+	public void setReviewApplicationFile(String reviewApplicationFile) {
+		this.reviewApplicationFile = reviewApplicationFile;
+	}
+
+	public List<String> getReviewAdditionalFiles() {
+		return this.reviewAdditionalFiles;
+	}
+
+	public void setReviewAdditionalFiles(List<String> reviewAdditionalFiles) {
+		this.reviewAdditionalFiles = reviewAdditionalFiles;
 	}
 
 	@Override

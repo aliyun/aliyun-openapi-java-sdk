@@ -15,26 +15,50 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryTrademarkMonitorRulesRequest extends RpcAcsRequest<QueryTrademarkMonitorRulesResponse> {
-	
-	public QueryTrademarkMonitorRulesRequest() {
-		super("Trademark", "2018-07-24", "QueryTrademarkMonitorRules", "trademark");
-	}
+	   
+
+	private String ruleName;
+
+	private Integer pageNum;
 
 	private Integer notifyUpdate;
 
 	private Integer pageSize;
 
-	private String ruleName;
-
 	private String id;
+	public QueryTrademarkMonitorRulesRequest() {
+		super("Trademark", "2018-07-24", "QueryTrademarkMonitorRules");
+		setMethod(MethodType.POST);
+	}
 
-	private Integer pageNum;
+	public String getRuleName() {
+		return this.ruleName;
+	}
+
+	public void setRuleName(String ruleName) {
+		this.ruleName = ruleName;
+		if(ruleName != null){
+			putQueryParameter("RuleName", ruleName);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
 
 	public Integer getNotifyUpdate() {
 		return this.notifyUpdate;
@@ -58,17 +82,6 @@ public class QueryTrademarkMonitorRulesRequest extends RpcAcsRequest<QueryTradem
 		}
 	}
 
-	public String getRuleName() {
-		return this.ruleName;
-	}
-
-	public void setRuleName(String ruleName) {
-		this.ruleName = ruleName;
-		if(ruleName != null){
-			putQueryParameter("RuleName", ruleName);
-		}
-	}
-
 	public String getId() {
 		return this.id;
 	}
@@ -77,17 +90,6 @@ public class QueryTrademarkMonitorRulesRequest extends RpcAcsRequest<QueryTradem
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

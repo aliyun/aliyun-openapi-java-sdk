@@ -15,36 +15,71 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListNotaryOrdersRequest extends RpcAcsRequest<ListNotaryOrdersResponse> {
-	
-	public ListNotaryOrdersRequest() {
-		super("Trademark", "2018-07-24", "ListNotaryOrders", "trademark");
-	}
+	   
+
+	private Long startOrderDate;
+
+	private Integer notaryType;
+
+	private Integer pageNum;
 
 	private Integer sortKeyType;
 
 	private String sortByType;
 
-	private Long startOrderDate;
-
 	private Integer pageSize;
 
 	private String bizId;
-
-	private Integer notaryType;
 
 	private Long endOrderDate;
 
 	private String aliyunOrderId;
 
-	private Integer pageNum;
-
 	private Integer notaryStatus;
+	public ListNotaryOrdersRequest() {
+		super("Trademark", "2018-07-24", "ListNotaryOrders");
+		setMethod(MethodType.POST);
+	}
+
+	public Long getStartOrderDate() {
+		return this.startOrderDate;
+	}
+
+	public void setStartOrderDate(Long startOrderDate) {
+		this.startOrderDate = startOrderDate;
+		if(startOrderDate != null){
+			putQueryParameter("StartOrderDate", startOrderDate.toString());
+		}
+	}
+
+	public Integer getNotaryType() {
+		return this.notaryType;
+	}
+
+	public void setNotaryType(Integer notaryType) {
+		this.notaryType = notaryType;
+		if(notaryType != null){
+			putQueryParameter("NotaryType", notaryType.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
 
 	public Integer getSortKeyType() {
 		return this.sortKeyType;
@@ -65,17 +100,6 @@ public class ListNotaryOrdersRequest extends RpcAcsRequest<ListNotaryOrdersRespo
 		this.sortByType = sortByType;
 		if(sortByType != null){
 			putQueryParameter("SortByType", sortByType);
-		}
-	}
-
-	public Long getStartOrderDate() {
-		return this.startOrderDate;
-	}
-
-	public void setStartOrderDate(Long startOrderDate) {
-		this.startOrderDate = startOrderDate;
-		if(startOrderDate != null){
-			putQueryParameter("StartOrderDate", startOrderDate.toString());
 		}
 	}
 
@@ -101,17 +125,6 @@ public class ListNotaryOrdersRequest extends RpcAcsRequest<ListNotaryOrdersRespo
 		}
 	}
 
-	public Integer getNotaryType() {
-		return this.notaryType;
-	}
-
-	public void setNotaryType(Integer notaryType) {
-		this.notaryType = notaryType;
-		if(notaryType != null){
-			putQueryParameter("NotaryType", notaryType.toString());
-		}
-	}
-
 	public Long getEndOrderDate() {
 		return this.endOrderDate;
 	}
@@ -131,17 +144,6 @@ public class ListNotaryOrdersRequest extends RpcAcsRequest<ListNotaryOrdersRespo
 		this.aliyunOrderId = aliyunOrderId;
 		if(aliyunOrderId != null){
 			putQueryParameter("AliyunOrderId", aliyunOrderId);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

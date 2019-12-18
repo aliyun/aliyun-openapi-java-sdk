@@ -16,22 +16,24 @@ package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateTmMonitorRuleRequest extends RpcAcsRequest<UpdateTmMonitorRuleResponse> {
-	
-	public UpdateTmMonitorRuleRequest() {
-		super("Trademark", "2018-07-24", "UpdateTmMonitorRule", "trademark");
-	}
+	   
 
 	private List<Integer> notifyStatuss;
 
 	private String ruleName;
 
 	private Long id;
+	public UpdateTmMonitorRuleRequest() {
+		super("Trademark", "2018-07-24", "UpdateTmMonitorRule");
+		setMethod(MethodType.POST);
+	}
 
 	public List<Integer> getNotifyStatuss() {
 		return this.notifyStatuss;

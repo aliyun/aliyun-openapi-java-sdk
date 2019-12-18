@@ -87,25 +87,19 @@ public class QueryTradeIntentionUserListResponse extends AcsResponse {
 
 	public static class Trademark {
 
-		private String userId;
-
 		private String registerNumber;
 
 		private String classification;
 
-		private Integer mobile;
-
-		private Long id;
+		private String mobile;
 
 		private String userName;
 
-		public String getUserId() {
-			return this.userId;
-		}
+		private String bizId;
 
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
+		private String description;
+
+		private Integer status;
 
 		public String getRegisterNumber() {
 			return this.registerNumber;
@@ -123,20 +117,12 @@ public class QueryTradeIntentionUserListResponse extends AcsResponse {
 			this.classification = classification;
 		}
 
-		public Integer getMobile() {
+		public String getMobile() {
 			return this.mobile;
 		}
 
-		public void setMobile(Integer mobile) {
+		public void setMobile(String mobile) {
 			this.mobile = mobile;
-		}
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
 		}
 
 		public String getUserName() {
@@ -145,6 +131,30 @@ public class QueryTradeIntentionUserListResponse extends AcsResponse {
 
 		public void setUserName(String userName) {
 			this.userName = userName;
+		}
+
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 	}
 

@@ -15,20 +15,16 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class StoreMaterialTemporarilyRequest extends RpcAcsRequest<StoreMaterialTemporarilyResponse> {
-	
-	public StoreMaterialTemporarilyRequest() {
-		super("Trademark", "2018-07-24", "StoreMaterialTemporarily", "trademark");
-	}
+	   
 
 	private String contactEmail;
-
-	private String contactAddress;
 
 	private String eAddress;
 
@@ -36,15 +32,9 @@ public class StoreMaterialTemporarilyRequest extends RpcAcsRequest<StoreMaterial
 
 	private String legalNoticeOssKey;
 
-	private String address;
-
-	private String town;
-
 	private String contactNumber;
 
 	private String city;
-
-	private String idCardOssKey;
 
 	private String type;
 
@@ -52,11 +42,21 @@ public class StoreMaterialTemporarilyRequest extends RpcAcsRequest<StoreMaterial
 
 	private String passportOssKey;
 
+	private String province;
+
+	private String loaOssKey;
+
+	private String contactAddress;
+
+	private String address;
+
+	private String town;
+
+	private String idCardOssKey;
+
 	private String contactZipcode;
 
 	private String eName;
-
-	private String province;
 
 	private String businessLicenceOssKey;
 
@@ -65,8 +65,10 @@ public class StoreMaterialTemporarilyRequest extends RpcAcsRequest<StoreMaterial
 	private String cardNumber;
 
 	private String region;
-
-	private String loaOssKey;
+	public StoreMaterialTemporarilyRequest() {
+		super("Trademark", "2018-07-24", "StoreMaterialTemporarily");
+		setMethod(MethodType.POST);
+	}
 
 	public String getContactEmail() {
 		return this.contactEmail;
@@ -76,17 +78,6 @@ public class StoreMaterialTemporarilyRequest extends RpcAcsRequest<StoreMaterial
 		this.contactEmail = contactEmail;
 		if(contactEmail != null){
 			putQueryParameter("ContactEmail", contactEmail);
-		}
-	}
-
-	public String getContactAddress() {
-		return this.contactAddress;
-	}
-
-	public void setContactAddress(String contactAddress) {
-		this.contactAddress = contactAddress;
-		if(contactAddress != null){
-			putQueryParameter("ContactAddress", contactAddress);
 		}
 	}
 
@@ -123,28 +114,6 @@ public class StoreMaterialTemporarilyRequest extends RpcAcsRequest<StoreMaterial
 		}
 	}
 
-	public String getAddress() {
-		return this.address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-		if(address != null){
-			putQueryParameter("Address", address);
-		}
-	}
-
-	public String getTown() {
-		return this.town;
-	}
-
-	public void setTown(String town) {
-		this.town = town;
-		if(town != null){
-			putQueryParameter("Town", town);
-		}
-	}
-
 	public String getContactNumber() {
 		return this.contactNumber;
 	}
@@ -164,17 +133,6 @@ public class StoreMaterialTemporarilyRequest extends RpcAcsRequest<StoreMaterial
 		this.city = city;
 		if(city != null){
 			putQueryParameter("City", city);
-		}
-	}
-
-	public String getIdCardOssKey() {
-		return this.idCardOssKey;
-	}
-
-	public void setIdCardOssKey(String idCardOssKey) {
-		this.idCardOssKey = idCardOssKey;
-		if(idCardOssKey != null){
-			putQueryParameter("IdCardOssKey", idCardOssKey);
 		}
 	}
 
@@ -211,6 +169,72 @@ public class StoreMaterialTemporarilyRequest extends RpcAcsRequest<StoreMaterial
 		}
 	}
 
+	public String getProvince() {
+		return this.province;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
+		if(province != null){
+			putQueryParameter("Province", province);
+		}
+	}
+
+	public String getLoaOssKey() {
+		return this.loaOssKey;
+	}
+
+	public void setLoaOssKey(String loaOssKey) {
+		this.loaOssKey = loaOssKey;
+		if(loaOssKey != null){
+			putQueryParameter("LoaOssKey", loaOssKey);
+		}
+	}
+
+	public String getContactAddress() {
+		return this.contactAddress;
+	}
+
+	public void setContactAddress(String contactAddress) {
+		this.contactAddress = contactAddress;
+		if(contactAddress != null){
+			putQueryParameter("ContactAddress", contactAddress);
+		}
+	}
+
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+		if(address != null){
+			putQueryParameter("Address", address);
+		}
+	}
+
+	public String getTown() {
+		return this.town;
+	}
+
+	public void setTown(String town) {
+		this.town = town;
+		if(town != null){
+			putQueryParameter("Town", town);
+		}
+	}
+
+	public String getIdCardOssKey() {
+		return this.idCardOssKey;
+	}
+
+	public void setIdCardOssKey(String idCardOssKey) {
+		this.idCardOssKey = idCardOssKey;
+		if(idCardOssKey != null){
+			putQueryParameter("IdCardOssKey", idCardOssKey);
+		}
+	}
+
 	public String getContactZipcode() {
 		return this.contactZipcode;
 	}
@@ -230,17 +254,6 @@ public class StoreMaterialTemporarilyRequest extends RpcAcsRequest<StoreMaterial
 		this.eName = eName;
 		if(eName != null){
 			putQueryParameter("EName", eName);
-		}
-	}
-
-	public String getProvince() {
-		return this.province;
-	}
-
-	public void setProvince(String province) {
-		this.province = province;
-		if(province != null){
-			putQueryParameter("Province", province);
 		}
 	}
 
@@ -285,17 +298,6 @@ public class StoreMaterialTemporarilyRequest extends RpcAcsRequest<StoreMaterial
 		this.region = region;
 		if(region != null){
 			putQueryParameter("Region", region);
-		}
-	}
-
-	public String getLoaOssKey() {
-		return this.loaOssKey;
-	}
-
-	public void setLoaOssKey(String loaOssKey) {
-		this.loaOssKey = loaOssKey;
-		if(loaOssKey != null){
-			putQueryParameter("LoaOssKey", loaOssKey);
 		}
 	}
 

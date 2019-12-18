@@ -15,18 +15,20 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteMaterialRequest extends RpcAcsRequest<DeleteMaterialResponse> {
-	
-	public DeleteMaterialRequest() {
-		super("Trademark", "2018-07-24", "DeleteMaterial", "trademark");
-	}
+	   
 
 	private Long id;
+	public DeleteMaterialRequest() {
+		super("Trademark", "2018-07-24", "DeleteMaterial");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getId() {
 		return this.id;

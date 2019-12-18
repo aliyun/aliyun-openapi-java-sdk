@@ -15,18 +15,18 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class InsertTradeIntentionUserRequest extends RpcAcsRequest<InsertTradeIntentionUserResponse> {
-	
-	public InsertTradeIntentionUserRequest() {
-		super("Trademark", "2018-07-24", "InsertTradeIntentionUser", "trademark");
-	}
+	   
 
 	private String mobile;
+
+	private String description;
 
 	private String partnerCode;
 
@@ -34,11 +34,15 @@ public class InsertTradeIntentionUserRequest extends RpcAcsRequest<InsertTradeIn
 
 	private Integer type;
 
-	private String registerNumber;
-
 	private String vcode;
 
+	private String registerNumber;
+
 	private String userName;
+	public InsertTradeIntentionUserRequest() {
+		super("Trademark", "2018-07-24", "InsertTradeIntentionUser");
+		setMethod(MethodType.POST);
+	}
 
 	public String getMobile() {
 		return this.mobile;
@@ -48,6 +52,17 @@ public class InsertTradeIntentionUserRequest extends RpcAcsRequest<InsertTradeIn
 		this.mobile = mobile;
 		if(mobile != null){
 			putQueryParameter("Mobile", mobile);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
@@ -84,17 +99,6 @@ public class InsertTradeIntentionUserRequest extends RpcAcsRequest<InsertTradeIn
 		}
 	}
 
-	public String getRegisterNumber() {
-		return this.registerNumber;
-	}
-
-	public void setRegisterNumber(String registerNumber) {
-		this.registerNumber = registerNumber;
-		if(registerNumber != null){
-			putQueryParameter("RegisterNumber", registerNumber);
-		}
-	}
-
 	public String getVcode() {
 		return this.vcode;
 	}
@@ -103,6 +107,17 @@ public class InsertTradeIntentionUserRequest extends RpcAcsRequest<InsertTradeIn
 		this.vcode = vcode;
 		if(vcode != null){
 			putQueryParameter("Vcode", vcode);
+		}
+	}
+
+	public String getRegisterNumber() {
+		return this.registerNumber;
+	}
+
+	public void setRegisterNumber(String registerNumber) {
+		this.registerNumber = registerNumber;
+		if(registerNumber != null){
+			putQueryParameter("RegisterNumber", registerNumber);
 		}
 	}
 

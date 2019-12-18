@@ -15,22 +15,24 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class UploadNotaryDataRequest extends RpcAcsRequest<UploadNotaryDataResponse> {
-	
-	public UploadNotaryDataRequest() {
-		super("Trademark", "2018-07-24", "UploadNotaryData", "trademark");
-	}
+	   
 
 	private String uploadContext;
 
 	private String bizOrderNo;
 
 	private Integer notaryType;
+	public UploadNotaryDataRequest() {
+		super("Trademark", "2018-07-24", "UploadNotaryData");
+		setMethod(MethodType.POST);
+	}
 
 	public String getUploadContext() {
 		return this.uploadContext;

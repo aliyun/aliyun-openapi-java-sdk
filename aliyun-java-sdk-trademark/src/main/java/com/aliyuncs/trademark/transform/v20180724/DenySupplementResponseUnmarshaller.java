@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DenySupplementResponseUnmarshaller {
 
-	public static DenySupplementResponse unmarshall(DenySupplementResponse denySupplementResponse, UnmarshallerContext context) {
+	public static DenySupplementResponse unmarshall(DenySupplementResponse denySupplementResponse, UnmarshallerContext _ctx) {
 		
-		denySupplementResponse.setRequestId(context.stringValue("DenySupplementResponse.RequestId"));
-		denySupplementResponse.setSuccess(context.booleanValue("DenySupplementResponse.Success"));
-		denySupplementResponse.setErrorMsg(context.stringValue("DenySupplementResponse.ErrorMsg"));
-		denySupplementResponse.setErrorCode(context.stringValue("DenySupplementResponse.ErrorCode"));
+		denySupplementResponse.setRequestId(_ctx.stringValue("DenySupplementResponse.RequestId"));
+		denySupplementResponse.setSuccess(_ctx.booleanValue("DenySupplementResponse.Success"));
+		denySupplementResponse.setErrorMsg(_ctx.stringValue("DenySupplementResponse.ErrorMsg"));
+		denySupplementResponse.setErrorCode(_ctx.stringValue("DenySupplementResponse.ErrorCode"));
 	 
 	 	return denySupplementResponse;
 	}

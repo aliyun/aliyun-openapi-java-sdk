@@ -15,16 +15,18 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryMaterialListRequest extends RpcAcsRequest<QueryMaterialListResponse> {
-	
-	public QueryMaterialListRequest() {
-		super("Trademark", "2018-07-24", "QueryMaterialList", "trademark");
-	}
+	   
+
+	private Integer type;
+
+	private Integer pageNum;
 
 	private String name;
 
@@ -32,13 +34,35 @@ public class QueryMaterialListRequest extends RpcAcsRequest<QueryMaterialListRes
 
 	private String cardNumber;
 
-	private Integer type;
-
 	private Integer region;
 
-	private Integer pageNum;
-
 	private Integer status;
+	public QueryMaterialListRequest() {
+		super("Trademark", "2018-07-24", "QueryMaterialList");
+		setMethod(MethodType.POST);
+	}
+
+	public Integer getType() {
+		return this.type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
 
 	public String getName() {
 		return this.name;
@@ -73,17 +97,6 @@ public class QueryMaterialListRequest extends RpcAcsRequest<QueryMaterialListRes
 		}
 	}
 
-	public Integer getType() {
-		return this.type;
-	}
-
-	public void setType(Integer type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type.toString());
-		}
-	}
-
 	public Integer getRegion() {
 		return this.region;
 	}
@@ -92,17 +105,6 @@ public class QueryMaterialListRequest extends RpcAcsRequest<QueryMaterialListRes
 		this.region = region;
 		if(region != null){
 			putQueryParameter("Region", region.toString());
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

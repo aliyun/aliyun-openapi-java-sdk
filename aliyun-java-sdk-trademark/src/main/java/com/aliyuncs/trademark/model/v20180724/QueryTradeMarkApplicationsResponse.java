@@ -121,6 +121,10 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 
 		private Long supplementId;
 
+		private Float totalPrice;
+
+		private Float servicePrice;
+
 		private List<ThirdClassifications> thirdClassification;
 
 		private List<String> flags;
@@ -263,6 +267,22 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 
 		public void setSupplementId(Long supplementId) {
 			this.supplementId = supplementId;
+		}
+
+		public Float getTotalPrice() {
+			return this.totalPrice;
+		}
+
+		public void setTotalPrice(Float totalPrice) {
+			this.totalPrice = totalPrice;
+		}
+
+		public Float getServicePrice() {
+			return this.servicePrice;
+		}
+
+		public void setServicePrice(Float servicePrice) {
+			this.servicePrice = servicePrice;
 		}
 
 		public List<ThirdClassifications> getThirdClassification() {

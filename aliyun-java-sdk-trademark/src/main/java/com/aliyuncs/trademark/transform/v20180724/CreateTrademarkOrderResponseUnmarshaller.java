@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateTrademarkOrderResponseUnmarshaller {
 
-	public static CreateTrademarkOrderResponse unmarshall(CreateTrademarkOrderResponse createTrademarkOrderResponse, UnmarshallerContext context) {
+	public static CreateTrademarkOrderResponse unmarshall(CreateTrademarkOrderResponse createTrademarkOrderResponse, UnmarshallerContext _ctx) {
 		
-		createTrademarkOrderResponse.setRequestId(context.stringValue("CreateTrademarkOrderResponse.RequestId"));
-		createTrademarkOrderResponse.setOrderId(context.longValue("CreateTrademarkOrderResponse.OrderId"));
-		createTrademarkOrderResponse.setSuccess(context.booleanValue("CreateTrademarkOrderResponse.Success"));
-		createTrademarkOrderResponse.setErrorMsg(context.stringValue("CreateTrademarkOrderResponse.ErrorMsg"));
+		createTrademarkOrderResponse.setRequestId(_ctx.stringValue("CreateTrademarkOrderResponse.RequestId"));
+		createTrademarkOrderResponse.setOrderId(_ctx.longValue("CreateTrademarkOrderResponse.OrderId"));
+		createTrademarkOrderResponse.setSuccess(_ctx.booleanValue("CreateTrademarkOrderResponse.Success"));
+		createTrademarkOrderResponse.setErrorMsg(_ctx.stringValue("CreateTrademarkOrderResponse.ErrorMsg"));
 	 
 	 	return createTrademarkOrderResponse;
 	}

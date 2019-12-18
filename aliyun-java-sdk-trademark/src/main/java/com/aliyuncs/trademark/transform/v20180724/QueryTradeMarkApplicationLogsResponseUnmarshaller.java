@@ -24,18 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryTradeMarkApplicationLogsResponseUnmarshaller {
 
-	public static QueryTradeMarkApplicationLogsResponse unmarshall(QueryTradeMarkApplicationLogsResponse queryTradeMarkApplicationLogsResponse, UnmarshallerContext context) {
+	public static QueryTradeMarkApplicationLogsResponse unmarshall(QueryTradeMarkApplicationLogsResponse queryTradeMarkApplicationLogsResponse, UnmarshallerContext _ctx) {
 		
-		queryTradeMarkApplicationLogsResponse.setRequestId(context.stringValue("QueryTradeMarkApplicationLogsResponse.RequestId"));
+		queryTradeMarkApplicationLogsResponse.setRequestId(_ctx.stringValue("QueryTradeMarkApplicationLogsResponse.RequestId"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
-		for (int i = 0; i < context.lengthValue("QueryTradeMarkApplicationLogsResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryTradeMarkApplicationLogsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setBizId(context.stringValue("QueryTradeMarkApplicationLogsResponse.Data["+ i +"].BizId"));
-			dataItem.setNote(context.stringValue("QueryTradeMarkApplicationLogsResponse.Data["+ i +"].Note"));
-			dataItem.setOperateType(context.integerValue("QueryTradeMarkApplicationLogsResponse.Data["+ i +"].OperateType"));
-			dataItem.setOperateTime(context.longValue("QueryTradeMarkApplicationLogsResponse.Data["+ i +"].OperateTime"));
-			dataItem.setBizStatus(context.integerValue("QueryTradeMarkApplicationLogsResponse.Data["+ i +"].BizStatus"));
+			dataItem.setBizId(_ctx.stringValue("QueryTradeMarkApplicationLogsResponse.Data["+ i +"].BizId"));
+			dataItem.setNote(_ctx.stringValue("QueryTradeMarkApplicationLogsResponse.Data["+ i +"].Note"));
+			dataItem.setOperateType(_ctx.integerValue("QueryTradeMarkApplicationLogsResponse.Data["+ i +"].OperateType"));
+			dataItem.setOperateTime(_ctx.longValue("QueryTradeMarkApplicationLogsResponse.Data["+ i +"].OperateTime"));
+			dataItem.setBizStatus(_ctx.integerValue("QueryTradeMarkApplicationLogsResponse.Data["+ i +"].BizStatus"));
+			dataItem.setExtendContent(_ctx.stringValue("QueryTradeMarkApplicationLogsResponse.Data["+ i +"].ExtendContent"));
 
 			data.add(dataItem);
 		}

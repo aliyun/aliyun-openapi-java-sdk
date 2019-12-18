@@ -15,20 +15,22 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GenerateUploadFilePolicyRequest extends RpcAcsRequest<GenerateUploadFilePolicyResponse> {
-	
-	public GenerateUploadFilePolicyRequest() {
-		super("Trademark", "2018-07-24", "GenerateUploadFilePolicy", "trademark");
-	}
+	   
 
 	private String fileType;
 
 	private String bizId;
+	public GenerateUploadFilePolicyRequest() {
+		super("Trademark", "2018-07-24", "GenerateUploadFilePolicy");
+		setMethod(MethodType.POST);
+	}
 
 	public String getFileType() {
 		return this.fileType;

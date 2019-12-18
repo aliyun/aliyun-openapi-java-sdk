@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryOssResourcesResponseUnmarshaller {
 
-	public static QueryOssResourcesResponse unmarshall(QueryOssResourcesResponse queryOssResourcesResponse, UnmarshallerContext context) {
+	public static QueryOssResourcesResponse unmarshall(QueryOssResourcesResponse queryOssResourcesResponse, UnmarshallerContext _ctx) {
 		
-		queryOssResourcesResponse.setRequestId(context.stringValue("QueryOssResourcesResponse.RequestId"));
+		queryOssResourcesResponse.setRequestId(_ctx.stringValue("QueryOssResourcesResponse.RequestId"));
 
 		List<TaskList> data = new ArrayList<TaskList>();
-		for (int i = 0; i < context.lengthValue("QueryOssResourcesResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryOssResourcesResponse.Data.Length"); i++) {
 			TaskList taskList = new TaskList();
-			taskList.setBizId(context.stringValue("QueryOssResourcesResponse.Data["+ i +"].BizId"));
-			taskList.setName(context.stringValue("QueryOssResourcesResponse.Data["+ i +"].Name"));
-			taskList.setOssUrl(context.stringValue("QueryOssResourcesResponse.Data["+ i +"].OssUrl"));
-			taskList.setUpdateTime(context.longValue("QueryOssResourcesResponse.Data["+ i +"].UpdateTime"));
-			taskList.setCreateTime(context.longValue("QueryOssResourcesResponse.Data["+ i +"].CreateTime"));
+			taskList.setBizId(_ctx.stringValue("QueryOssResourcesResponse.Data["+ i +"].BizId"));
+			taskList.setName(_ctx.stringValue("QueryOssResourcesResponse.Data["+ i +"].Name"));
+			taskList.setOssUrl(_ctx.stringValue("QueryOssResourcesResponse.Data["+ i +"].OssUrl"));
+			taskList.setUpdateTime(_ctx.longValue("QueryOssResourcesResponse.Data["+ i +"].UpdateTime"));
+			taskList.setCreateTime(_ctx.longValue("QueryOssResourcesResponse.Data["+ i +"].CreateTime"));
 
 			data.add(taskList);
 		}

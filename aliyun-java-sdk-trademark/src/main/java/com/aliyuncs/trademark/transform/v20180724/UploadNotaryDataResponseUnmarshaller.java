@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UploadNotaryDataResponseUnmarshaller {
 
-	public static UploadNotaryDataResponse unmarshall(UploadNotaryDataResponse uploadNotaryDataResponse, UnmarshallerContext context) {
+	public static UploadNotaryDataResponse unmarshall(UploadNotaryDataResponse uploadNotaryDataResponse, UnmarshallerContext _ctx) {
 		
-		uploadNotaryDataResponse.setRequestId(context.stringValue("UploadNotaryDataResponse.RequestId"));
-		uploadNotaryDataResponse.setUserAuthUrl(context.stringValue("UploadNotaryDataResponse.UserAuthUrl"));
+		uploadNotaryDataResponse.setRequestId(_ctx.stringValue("UploadNotaryDataResponse.RequestId"));
+		uploadNotaryDataResponse.setUserAuthUrl(_ctx.stringValue("UploadNotaryDataResponse.UserAuthUrl"));
 	 
 	 	return uploadNotaryDataResponse;
 	}

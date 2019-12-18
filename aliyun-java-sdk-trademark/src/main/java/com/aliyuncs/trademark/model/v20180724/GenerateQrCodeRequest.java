@@ -15,22 +15,24 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GenerateQrCodeRequest extends RpcAcsRequest<GenerateQrCodeResponse> {
-	
-	public GenerateQrCodeRequest() {
-		super("Trademark", "2018-07-24", "GenerateQrCode", "trademark");
-	}
+	   
 
 	private String ossKey;
 
 	private String fieldKey;
 
 	private String uuid;
+	public GenerateQrCodeRequest() {
+		super("Trademark", "2018-07-24", "GenerateQrCode");
+		setMethod(MethodType.POST);
+	}
 
 	public String getOssKey() {
 		return this.ossKey;

@@ -15,18 +15,20 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryTradeMarkApplicationLogsRequest extends RpcAcsRequest<QueryTradeMarkApplicationLogsResponse> {
-	
-	public QueryTradeMarkApplicationLogsRequest() {
-		super("Trademark", "2018-07-24", "QueryTradeMarkApplicationLogs", "trademark");
-	}
+	   
 
 	private String bizId;
+	public QueryTradeMarkApplicationLogsRequest() {
+		super("Trademark", "2018-07-24", "QueryTradeMarkApplicationLogs");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizId() {
 		return this.bizId;

@@ -15,16 +15,14 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListNotaryInfosRequest extends RpcAcsRequest<ListNotaryInfosResponse> {
-	
-	public ListNotaryInfosRequest() {
-		super("Trademark", "2018-07-24", "ListNotaryInfos", "trademark");
-	}
+	   
 
 	private String bizOrderNo;
 
@@ -35,6 +33,10 @@ public class ListNotaryInfosRequest extends RpcAcsRequest<ListNotaryInfosRespons
 	private Integer pageNum;
 
 	private String token;
+	public ListNotaryInfosRequest() {
+		super("Trademark", "2018-07-24", "ListNotaryInfos");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizOrderNo() {
 		return this.bizOrderNo;

@@ -113,6 +113,8 @@ public class QueryTradeProduceListResponse extends AcsResponse {
 
 		private Boolean allowCancel;
 
+		private Integer failReason;
+
 		public String getBizId() {
 			return this.bizId;
 		}
@@ -215,6 +217,14 @@ public class QueryTradeProduceListResponse extends AcsResponse {
 
 		public void setAllowCancel(Boolean allowCancel) {
 			this.allowCancel = allowCancel;
+		}
+
+		public Integer getFailReason() {
+			return this.failReason;
+		}
+
+		public void setFailReason(Integer failReason) {
+			this.failReason = failReason;
 		}
 	}
 

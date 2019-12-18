@@ -15,20 +15,24 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryTrademarkMonitorResultsRequest extends RpcAcsRequest<QueryTrademarkMonitorResultsResponse> {
-	
-	public QueryTrademarkMonitorResultsRequest() {
-		super("Trademark", "2018-07-24", "QueryTrademarkMonitorResults", "trademark");
-	}
+	   
 
 	private Integer actionType;
 
 	private String tmName;
+
+	private String classification;
+
+	private Integer pageNum;
+
+	private String registrationNumber;
 
 	private String applyYear;
 
@@ -37,12 +41,10 @@ public class QueryTrademarkMonitorResultsRequest extends RpcAcsRequest<QueryTrad
 	private Integer procedureStatus;
 
 	private Long ruleId;
-
-	private String classification;
-
-	private Integer pageNum;
-
-	private String registrationNumber;
+	public QueryTrademarkMonitorResultsRequest() {
+		super("Trademark", "2018-07-24", "QueryTrademarkMonitorResults");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getActionType() {
 		return this.actionType;
@@ -63,6 +65,39 @@ public class QueryTrademarkMonitorResultsRequest extends RpcAcsRequest<QueryTrad
 		this.tmName = tmName;
 		if(tmName != null){
 			putQueryParameter("TmName", tmName);
+		}
+	}
+
+	public String getClassification() {
+		return this.classification;
+	}
+
+	public void setClassification(String classification) {
+		this.classification = classification;
+		if(classification != null){
+			putQueryParameter("Classification", classification);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getRegistrationNumber() {
+		return this.registrationNumber;
+	}
+
+	public void setRegistrationNumber(String registrationNumber) {
+		this.registrationNumber = registrationNumber;
+		if(registrationNumber != null){
+			putQueryParameter("RegistrationNumber", registrationNumber);
 		}
 	}
 
@@ -107,39 +142,6 @@ public class QueryTrademarkMonitorResultsRequest extends RpcAcsRequest<QueryTrad
 		this.ruleId = ruleId;
 		if(ruleId != null){
 			putQueryParameter("RuleId", ruleId.toString());
-		}
-	}
-
-	public String getClassification() {
-		return this.classification;
-	}
-
-	public void setClassification(String classification) {
-		this.classification = classification;
-		if(classification != null){
-			putQueryParameter("Classification", classification);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getRegistrationNumber() {
-		return this.registrationNumber;
-	}
-
-	public void setRegistrationNumber(String registrationNumber) {
-		this.registrationNumber = registrationNumber;
-		if(registrationNumber != null){
-			putQueryParameter("RegistrationNumber", registrationNumber);
 		}
 	}
 

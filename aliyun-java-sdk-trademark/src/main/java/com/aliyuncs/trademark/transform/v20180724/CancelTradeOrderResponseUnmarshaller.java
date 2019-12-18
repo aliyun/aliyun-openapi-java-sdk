@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CancelTradeOrderResponseUnmarshaller {
 
-	public static CancelTradeOrderResponse unmarshall(CancelTradeOrderResponse cancelTradeOrderResponse, UnmarshallerContext context) {
+	public static CancelTradeOrderResponse unmarshall(CancelTradeOrderResponse cancelTradeOrderResponse, UnmarshallerContext _ctx) {
 		
-		cancelTradeOrderResponse.setRequestId(context.stringValue("CancelTradeOrderResponse.RequestId"));
-		cancelTradeOrderResponse.setSuccess(context.booleanValue("CancelTradeOrderResponse.Success"));
-		cancelTradeOrderResponse.setErrorMsg(context.stringValue("CancelTradeOrderResponse.ErrorMsg"));
-		cancelTradeOrderResponse.setErrorCode(context.stringValue("CancelTradeOrderResponse.ErrorCode"));
+		cancelTradeOrderResponse.setRequestId(_ctx.stringValue("CancelTradeOrderResponse.RequestId"));
+		cancelTradeOrderResponse.setSuccess(_ctx.booleanValue("CancelTradeOrderResponse.Success"));
+		cancelTradeOrderResponse.setErrorMsg(_ctx.stringValue("CancelTradeOrderResponse.ErrorMsg"));
+		cancelTradeOrderResponse.setErrorCode(_ctx.stringValue("CancelTradeOrderResponse.ErrorCode"));
 	 
 	 	return cancelTradeOrderResponse;
 	}

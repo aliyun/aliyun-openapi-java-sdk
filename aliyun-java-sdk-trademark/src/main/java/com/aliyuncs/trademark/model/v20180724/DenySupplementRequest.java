@@ -15,18 +15,20 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DenySupplementRequest extends RpcAcsRequest<DenySupplementResponse> {
-	
-	public DenySupplementRequest() {
-		super("Trademark", "2018-07-24", "DenySupplement", "trademark");
-	}
+	   
 
 	private Long id;
+	public DenySupplementRequest() {
+		super("Trademark", "2018-07-24", "DenySupplement");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getId() {
 		return this.id;

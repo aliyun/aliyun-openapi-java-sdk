@@ -24,38 +24,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryTrademarkMonitorRulesResponseUnmarshaller {
 
-	public static QueryTrademarkMonitorRulesResponse unmarshall(QueryTrademarkMonitorRulesResponse queryTrademarkMonitorRulesResponse, UnmarshallerContext context) {
+	public static QueryTrademarkMonitorRulesResponse unmarshall(QueryTrademarkMonitorRulesResponse queryTrademarkMonitorRulesResponse, UnmarshallerContext _ctx) {
 		
-		queryTrademarkMonitorRulesResponse.setRequestId(context.stringValue("QueryTrademarkMonitorRulesResponse.RequestId"));
-		queryTrademarkMonitorRulesResponse.setTotalItemNum(context.integerValue("QueryTrademarkMonitorRulesResponse.TotalItemNum"));
-		queryTrademarkMonitorRulesResponse.setCurrentPageNum(context.integerValue("QueryTrademarkMonitorRulesResponse.CurrentPageNum"));
-		queryTrademarkMonitorRulesResponse.setPageSize(context.integerValue("QueryTrademarkMonitorRulesResponse.PageSize"));
-		queryTrademarkMonitorRulesResponse.setTotalPageNum(context.integerValue("QueryTrademarkMonitorRulesResponse.TotalPageNum"));
-		queryTrademarkMonitorRulesResponse.setPrePage(context.booleanValue("QueryTrademarkMonitorRulesResponse.PrePage"));
-		queryTrademarkMonitorRulesResponse.setNextPage(context.booleanValue("QueryTrademarkMonitorRulesResponse.NextPage"));
+		queryTrademarkMonitorRulesResponse.setRequestId(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.RequestId"));
+		queryTrademarkMonitorRulesResponse.setTotalItemNum(_ctx.integerValue("QueryTrademarkMonitorRulesResponse.TotalItemNum"));
+		queryTrademarkMonitorRulesResponse.setCurrentPageNum(_ctx.integerValue("QueryTrademarkMonitorRulesResponse.CurrentPageNum"));
+		queryTrademarkMonitorRulesResponse.setPageSize(_ctx.integerValue("QueryTrademarkMonitorRulesResponse.PageSize"));
+		queryTrademarkMonitorRulesResponse.setTotalPageNum(_ctx.integerValue("QueryTrademarkMonitorRulesResponse.TotalPageNum"));
+		queryTrademarkMonitorRulesResponse.setPrePage(_ctx.booleanValue("QueryTrademarkMonitorRulesResponse.PrePage"));
+		queryTrademarkMonitorRulesResponse.setNextPage(_ctx.booleanValue("QueryTrademarkMonitorRulesResponse.NextPage"));
 
 		List<TmMonitorRule> data = new ArrayList<TmMonitorRule>();
-		for (int i = 0; i < context.lengthValue("QueryTrademarkMonitorRulesResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryTrademarkMonitorRulesResponse.Data.Length"); i++) {
 			TmMonitorRule tmMonitorRule = new TmMonitorRule();
-			tmMonitorRule.setId(context.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].Id"));
-			tmMonitorRule.setUserId(context.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].UserId"));
-			tmMonitorRule.setRuleStatus(context.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].RuleStatus"));
-			tmMonitorRule.setRuleSource(context.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].RuleSource"));
-			tmMonitorRule.setRuleName(context.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].RuleName"));
-			tmMonitorRule.setRuleType(context.integerValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].RuleType"));
-			tmMonitorRule.setRuleKeyword(context.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].RuleKeyword"));
-			tmMonitorRule.setRuleDetail(context.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].RuleDetail"));
-			tmMonitorRule.setNotifyUpdate(context.integerValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].NotifyUpdate"));
-			tmMonitorRule.setVersion(context.integerValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].Version"));
-			tmMonitorRule.setStartTime(context.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].StartTime"));
-			tmMonitorRule.setEndTime(context.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].EndTime"));
-			tmMonitorRule.setLastRunTime(context.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].LastRunTime"));
-			tmMonitorRule.setLastFinishTime(context.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].LastFinishTime"));
-			tmMonitorRule.setLastUpdateTime(context.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].LastUpdateTime"));
-			tmMonitorRule.setEnv(context.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].Env"));
-			tmMonitorRule.setRuleExtend(context.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].RuleExtend"));
-			tmMonitorRule.setCreateTime(context.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].CreateTime"));
-			tmMonitorRule.setUpdateTime(context.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].UpdateTime"));
+			tmMonitorRule.setId(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].Id"));
+			tmMonitorRule.setUserId(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].UserId"));
+			tmMonitorRule.setRuleStatus(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].RuleStatus"));
+			tmMonitorRule.setRuleSource(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].RuleSource"));
+			tmMonitorRule.setRuleName(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].RuleName"));
+			tmMonitorRule.setRuleType(_ctx.integerValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].RuleType"));
+			tmMonitorRule.setRuleKeyword(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].RuleKeyword"));
+			tmMonitorRule.setRuleDetail(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].RuleDetail"));
+			tmMonitorRule.setNotifyUpdate(_ctx.integerValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].NotifyUpdate"));
+			tmMonitorRule.setVersion(_ctx.integerValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].Version"));
+			tmMonitorRule.setStartTime(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].StartTime"));
+			tmMonitorRule.setEndTime(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].EndTime"));
+			tmMonitorRule.setLastRunTime(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].LastRunTime"));
+			tmMonitorRule.setLastFinishTime(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].LastFinishTime"));
+			tmMonitorRule.setLastUpdateTime(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].LastUpdateTime"));
+			tmMonitorRule.setEnv(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].Env"));
+			tmMonitorRule.setRuleExtend(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].RuleExtend"));
+			tmMonitorRule.setCreateTime(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].CreateTime"));
+			tmMonitorRule.setUpdateTime(_ctx.stringValue("QueryTrademarkMonitorRulesResponse.Data["+ i +"].UpdateTime"));
 
 			data.add(tmMonitorRule);
 		}

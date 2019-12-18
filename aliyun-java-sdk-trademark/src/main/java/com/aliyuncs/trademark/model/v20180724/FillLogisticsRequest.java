@@ -15,20 +15,22 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class FillLogisticsRequest extends RpcAcsRequest<FillLogisticsResponse> {
-	
-	public FillLogisticsRequest() {
-		super("Trademark", "2018-07-24", "FillLogistics", "trademark");
-	}
+	   
 
 	private String bizId;
 
 	private String logistics;
+	public FillLogisticsRequest() {
+		super("Trademark", "2018-07-24", "FillLogistics");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizId() {
 		return this.bizId;

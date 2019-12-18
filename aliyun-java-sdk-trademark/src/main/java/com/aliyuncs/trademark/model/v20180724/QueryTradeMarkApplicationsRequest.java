@@ -15,22 +15,30 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeMarkApplicationsResponse> {
-	
-	public QueryTradeMarkApplicationsRequest() {
-		super("Trademark", "2018-07-24", "QueryTradeMarkApplications", "trademark");
-	}
+	   
 
 	private String tmName;
 
 	private String materialName;
 
+	private Integer hidden;
+
 	private String orderId;
+
+	private String tmNumber;
+
+	private String intentionBizId;
+
+	private Integer pageNum;
+
+	private String type;
 
 	private Integer supplementStatus;
 
@@ -38,15 +46,13 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 
 	private String bizId;
 
-	private String tmNumber;
-
 	private String sortOrder;
 
-	private Integer pageNum;
-
-	private String type;
-
 	private Integer status;
+	public QueryTradeMarkApplicationsRequest() {
+		super("Trademark", "2018-07-24", "QueryTradeMarkApplications");
+		setMethod(MethodType.POST);
+	}
 
 	public String getTmName() {
 		return this.tmName;
@@ -70,6 +76,17 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 		}
 	}
 
+	public Integer getHidden() {
+		return this.hidden;
+	}
+
+	public void setHidden(Integer hidden) {
+		this.hidden = hidden;
+		if(hidden != null){
+			putQueryParameter("Hidden", hidden.toString());
+		}
+	}
+
 	public String getOrderId() {
 		return this.orderId;
 	}
@@ -78,6 +95,50 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 		this.orderId = orderId;
 		if(orderId != null){
 			putQueryParameter("OrderId", orderId);
+		}
+	}
+
+	public String getTmNumber() {
+		return this.tmNumber;
+	}
+
+	public void setTmNumber(String tmNumber) {
+		this.tmNumber = tmNumber;
+		if(tmNumber != null){
+			putQueryParameter("TmNumber", tmNumber);
+		}
+	}
+
+	public String getIntentionBizId() {
+		return this.intentionBizId;
+	}
+
+	public void setIntentionBizId(String intentionBizId) {
+		this.intentionBizId = intentionBizId;
+		if(intentionBizId != null){
+			putQueryParameter("IntentionBizId", intentionBizId);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
@@ -114,17 +175,6 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 		}
 	}
 
-	public String getTmNumber() {
-		return this.tmNumber;
-	}
-
-	public void setTmNumber(String tmNumber) {
-		this.tmNumber = tmNumber;
-		if(tmNumber != null){
-			putQueryParameter("TmNumber", tmNumber);
-		}
-	}
-
 	public String getSortOrder() {
 		return this.sortOrder;
 	}
@@ -133,28 +183,6 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 		this.sortOrder = sortOrder;
 		if(sortOrder != null){
 			putQueryParameter("SortOrder", sortOrder);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
 		}
 	}
 

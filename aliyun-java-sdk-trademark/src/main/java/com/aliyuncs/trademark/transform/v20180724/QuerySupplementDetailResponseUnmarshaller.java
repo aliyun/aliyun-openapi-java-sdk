@@ -23,25 +23,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QuerySupplementDetailResponseUnmarshaller {
 
-	public static QuerySupplementDetailResponse unmarshall(QuerySupplementDetailResponse querySupplementDetailResponse, UnmarshallerContext context) {
+	public static QuerySupplementDetailResponse unmarshall(QuerySupplementDetailResponse querySupplementDetailResponse, UnmarshallerContext _ctx) {
 		
-		querySupplementDetailResponse.setRequestId(context.stringValue("QuerySupplementDetailResponse.RequestId"));
-		querySupplementDetailResponse.setId(context.longValue("QuerySupplementDetailResponse.Id"));
-		querySupplementDetailResponse.setSerialNumber(context.stringValue("QuerySupplementDetailResponse.SerialNumber"));
-		querySupplementDetailResponse.setType(context.integerValue("QuerySupplementDetailResponse.Type"));
-		querySupplementDetailResponse.setStatus(context.integerValue("QuerySupplementDetailResponse.Status"));
-		querySupplementDetailResponse.setTmNumber(context.stringValue("QuerySupplementDetailResponse.TmNumber"));
-		querySupplementDetailResponse.setSendTime(context.longValue("QuerySupplementDetailResponse.SendTime"));
-		querySupplementDetailResponse.setAcceptTime(context.longValue("QuerySupplementDetailResponse.AcceptTime"));
-		querySupplementDetailResponse.setSbjDeadTime(context.longValue("QuerySupplementDetailResponse.SbjDeadTime"));
-		querySupplementDetailResponse.setAcceptDeadTime(context.longValue("QuerySupplementDetailResponse.AcceptDeadTime"));
-		querySupplementDetailResponse.setOperateTime(context.longValue("QuerySupplementDetailResponse.OperateTime"));
-		querySupplementDetailResponse.setUploadFileTemplateUrl(context.stringValue("QuerySupplementDetailResponse.UploadFileTemplateUrl"));
-		querySupplementDetailResponse.setContent(context.stringValue("QuerySupplementDetailResponse.Content"));
+		querySupplementDetailResponse.setRequestId(_ctx.stringValue("QuerySupplementDetailResponse.RequestId"));
+		querySupplementDetailResponse.setId(_ctx.longValue("QuerySupplementDetailResponse.Id"));
+		querySupplementDetailResponse.setSerialNumber(_ctx.stringValue("QuerySupplementDetailResponse.SerialNumber"));
+		querySupplementDetailResponse.setType(_ctx.integerValue("QuerySupplementDetailResponse.Type"));
+		querySupplementDetailResponse.setStatus(_ctx.integerValue("QuerySupplementDetailResponse.Status"));
+		querySupplementDetailResponse.setTmNumber(_ctx.stringValue("QuerySupplementDetailResponse.TmNumber"));
+		querySupplementDetailResponse.setSendTime(_ctx.longValue("QuerySupplementDetailResponse.SendTime"));
+		querySupplementDetailResponse.setAcceptTime(_ctx.longValue("QuerySupplementDetailResponse.AcceptTime"));
+		querySupplementDetailResponse.setSbjDeadTime(_ctx.longValue("QuerySupplementDetailResponse.SbjDeadTime"));
+		querySupplementDetailResponse.setAcceptDeadTime(_ctx.longValue("QuerySupplementDetailResponse.AcceptDeadTime"));
+		querySupplementDetailResponse.setOperateTime(_ctx.longValue("QuerySupplementDetailResponse.OperateTime"));
+		querySupplementDetailResponse.setUploadFileTemplateUrl(_ctx.stringValue("QuerySupplementDetailResponse.UploadFileTemplateUrl"));
+		querySupplementDetailResponse.setContent(_ctx.stringValue("QuerySupplementDetailResponse.Content"));
 
 		List<String> fileTemplateUrls = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QuerySupplementDetailResponse.FileTemplateUrls.Length"); i++) {
-			fileTemplateUrls.add(context.stringValue("QuerySupplementDetailResponse.FileTemplateUrls["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QuerySupplementDetailResponse.FileTemplateUrls.Length"); i++) {
+			fileTemplateUrls.add(_ctx.stringValue("QuerySupplementDetailResponse.FileTemplateUrls["+ i +"]"));
 		}
 		querySupplementDetailResponse.setFileTemplateUrls(fileTemplateUrls);
 	 

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CombineLoaResponseUnmarshaller {
 
-	public static CombineLoaResponse unmarshall(CombineLoaResponse combineLoaResponse, UnmarshallerContext context) {
+	public static CombineLoaResponse unmarshall(CombineLoaResponse combineLoaResponse, UnmarshallerContext _ctx) {
 		
-		combineLoaResponse.setRequestId(context.stringValue("CombineLoaResponse.RequestId"));
-		combineLoaResponse.setTemplateCombineUrl(context.stringValue("CombineLoaResponse.TemplateCombineUrl"));
+		combineLoaResponse.setRequestId(_ctx.stringValue("CombineLoaResponse.RequestId"));
+		combineLoaResponse.setTemplateCombineUrl(_ctx.stringValue("CombineLoaResponse.TemplateCombineUrl"));
 	 
 	 	return combineLoaResponse;
 	}

@@ -15,28 +15,20 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOrderResponse> {
-	
-	public CreateTrademarkOrderRequest() {
-		super("Trademark", "2018-07-24", "CreateTrademarkOrder", "trademark");
-	}
-
-	private String tmName;
+	   
 
 	private String realUserName;
 
 	private String orderData;
 
 	private String channel;
-
-	private String partnerCode;
-
-	private String phoneNum;
 
 	private Integer type;
 
@@ -46,19 +38,13 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 
 	private String tmComment;
 
-	private String registerName;
-
 	private String tmNameType;
 
 	private String tmIcon;
 
 	private String uid;
 
-	private Boolean isBlackIcon;
-
 	private String renewInfoId;
-
-	private String bizId;
 
 	private String rootCode;
 
@@ -66,15 +52,20 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 
 	private String registerNumber;
 
-	public String getTmName() {
-		return this.tmName;
-	}
+	private String tmName;
 
-	public void setTmName(String tmName) {
-		this.tmName = tmName;
-		if(tmName != null){
-			putQueryParameter("TmName", tmName);
-		}
+	private String partnerCode;
+
+	private String phoneNum;
+
+	private String registerName;
+
+	private Boolean isBlackIcon;
+
+	private String bizId;
+	public CreateTrademarkOrderRequest() {
+		super("Trademark", "2018-07-24", "CreateTrademarkOrder");
+		setMethod(MethodType.POST);
 	}
 
 	public String getRealUserName() {
@@ -107,28 +98,6 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 		this.channel = channel;
 		if(channel != null){
 			putQueryParameter("Channel", channel);
-		}
-	}
-
-	public String getPartnerCode() {
-		return this.partnerCode;
-	}
-
-	public void setPartnerCode(String partnerCode) {
-		this.partnerCode = partnerCode;
-		if(partnerCode != null){
-			putQueryParameter("PartnerCode", partnerCode);
-		}
-	}
-
-	public String getPhoneNum() {
-		return this.phoneNum;
-	}
-
-	public void setPhoneNum(String phoneNum) {
-		this.phoneNum = phoneNum;
-		if(phoneNum != null){
-			putQueryParameter("PhoneNum", phoneNum);
 		}
 	}
 
@@ -176,17 +145,6 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 		}
 	}
 
-	public String getRegisterName() {
-		return this.registerName;
-	}
-
-	public void setRegisterName(String registerName) {
-		this.registerName = registerName;
-		if(registerName != null){
-			putQueryParameter("RegisterName", registerName);
-		}
-	}
-
 	public String getTmNameType() {
 		return this.tmNameType;
 	}
@@ -220,17 +178,6 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 		}
 	}
 
-	public Boolean getIsBlackIcon() {
-		return this.isBlackIcon;
-	}
-
-	public void setIsBlackIcon(Boolean isBlackIcon) {
-		this.isBlackIcon = isBlackIcon;
-		if(isBlackIcon != null){
-			putQueryParameter("IsBlackIcon", isBlackIcon.toString());
-		}
-	}
-
 	public String getRenewInfoId() {
 		return this.renewInfoId;
 	}
@@ -239,17 +186,6 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 		this.renewInfoId = renewInfoId;
 		if(renewInfoId != null){
 			putQueryParameter("RenewInfoId", renewInfoId);
-		}
-	}
-
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
 		}
 	}
 
@@ -283,6 +219,72 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 		this.registerNumber = registerNumber;
 		if(registerNumber != null){
 			putQueryParameter("RegisterNumber", registerNumber);
+		}
+	}
+
+	public String getTmName() {
+		return this.tmName;
+	}
+
+	public void setTmName(String tmName) {
+		this.tmName = tmName;
+		if(tmName != null){
+			putQueryParameter("TmName", tmName);
+		}
+	}
+
+	public String getPartnerCode() {
+		return this.partnerCode;
+	}
+
+	public void setPartnerCode(String partnerCode) {
+		this.partnerCode = partnerCode;
+		if(partnerCode != null){
+			putQueryParameter("PartnerCode", partnerCode);
+		}
+	}
+
+	public String getPhoneNum() {
+		return this.phoneNum;
+	}
+
+	public void setPhoneNum(String phoneNum) {
+		this.phoneNum = phoneNum;
+		if(phoneNum != null){
+			putQueryParameter("PhoneNum", phoneNum);
+		}
+	}
+
+	public String getRegisterName() {
+		return this.registerName;
+	}
+
+	public void setRegisterName(String registerName) {
+		this.registerName = registerName;
+		if(registerName != null){
+			putQueryParameter("RegisterName", registerName);
+		}
+	}
+
+	public Boolean getIsBlackIcon() {
+		return this.isBlackIcon;
+	}
+
+	public void setIsBlackIcon(Boolean isBlackIcon) {
+		this.isBlackIcon = isBlackIcon;
+		if(isBlackIcon != null){
+			putQueryParameter("IsBlackIcon", isBlackIcon.toString());
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 

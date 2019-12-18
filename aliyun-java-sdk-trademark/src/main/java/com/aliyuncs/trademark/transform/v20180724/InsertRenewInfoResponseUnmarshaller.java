@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InsertRenewInfoResponseUnmarshaller {
 
-	public static InsertRenewInfoResponse unmarshall(InsertRenewInfoResponse insertRenewInfoResponse, UnmarshallerContext context) {
+	public static InsertRenewInfoResponse unmarshall(InsertRenewInfoResponse insertRenewInfoResponse, UnmarshallerContext _ctx) {
 		
-		insertRenewInfoResponse.setRequestId(context.stringValue("InsertRenewInfoResponse.RequestId"));
-		insertRenewInfoResponse.setId(context.longValue("InsertRenewInfoResponse.Id"));
-		insertRenewInfoResponse.setSuccess(context.booleanValue("InsertRenewInfoResponse.Success"));
-		insertRenewInfoResponse.setErrorMsg(context.stringValue("InsertRenewInfoResponse.ErrorMsg"));
-		insertRenewInfoResponse.setErrorCode(context.stringValue("InsertRenewInfoResponse.ErrorCode"));
+		insertRenewInfoResponse.setRequestId(_ctx.stringValue("InsertRenewInfoResponse.RequestId"));
+		insertRenewInfoResponse.setId(_ctx.longValue("InsertRenewInfoResponse.Id"));
+		insertRenewInfoResponse.setSuccess(_ctx.booleanValue("InsertRenewInfoResponse.Success"));
+		insertRenewInfoResponse.setErrorMsg(_ctx.stringValue("InsertRenewInfoResponse.ErrorMsg"));
+		insertRenewInfoResponse.setErrorCode(_ctx.stringValue("InsertRenewInfoResponse.ErrorCode"));
 	 
 	 	return insertRenewInfoResponse;
 	}

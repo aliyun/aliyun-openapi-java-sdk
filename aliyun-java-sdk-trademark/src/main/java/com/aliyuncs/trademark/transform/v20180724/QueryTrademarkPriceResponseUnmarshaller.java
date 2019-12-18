@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryTrademarkPriceResponseUnmarshaller {
 
-	public static QueryTrademarkPriceResponse unmarshall(QueryTrademarkPriceResponse queryTrademarkPriceResponse, UnmarshallerContext context) {
+	public static QueryTrademarkPriceResponse unmarshall(QueryTrademarkPriceResponse queryTrademarkPriceResponse, UnmarshallerContext _ctx) {
 		
-		queryTrademarkPriceResponse.setRequestId(context.stringValue("QueryTrademarkPriceResponse.RequestId"));
-		queryTrademarkPriceResponse.setDiscountPrice(context.floatValue("QueryTrademarkPriceResponse.DiscountPrice"));
-		queryTrademarkPriceResponse.setOriginalPrice(context.floatValue("QueryTrademarkPriceResponse.OriginalPrice"));
-		queryTrademarkPriceResponse.setTradePrice(context.floatValue("QueryTrademarkPriceResponse.TradePrice"));
-		queryTrademarkPriceResponse.setCurrency(context.stringValue("QueryTrademarkPriceResponse.Currency"));
+		queryTrademarkPriceResponse.setRequestId(_ctx.stringValue("QueryTrademarkPriceResponse.RequestId"));
+		queryTrademarkPriceResponse.setDiscountPrice(_ctx.floatValue("QueryTrademarkPriceResponse.DiscountPrice"));
+		queryTrademarkPriceResponse.setOriginalPrice(_ctx.floatValue("QueryTrademarkPriceResponse.OriginalPrice"));
+		queryTrademarkPriceResponse.setTradePrice(_ctx.floatValue("QueryTrademarkPriceResponse.TradePrice"));
+		queryTrademarkPriceResponse.setCurrency(_ctx.stringValue("QueryTrademarkPriceResponse.Currency"));
 
 		List<PricesItem> prices = new ArrayList<PricesItem>();
-		for (int i = 0; i < context.lengthValue("QueryTrademarkPriceResponse.Prices.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryTrademarkPriceResponse.Prices.Length"); i++) {
 			PricesItem pricesItem = new PricesItem();
-			pricesItem.setClassificationCode(context.stringValue("QueryTrademarkPriceResponse.Prices["+ i +"].ClassificationCode"));
-			pricesItem.setDiscountPrice(context.floatValue("QueryTrademarkPriceResponse.Prices["+ i +"].DiscountPrice"));
-			pricesItem.setOriginalPrice(context.floatValue("QueryTrademarkPriceResponse.Prices["+ i +"].OriginalPrice"));
-			pricesItem.setTradePrice(context.floatValue("QueryTrademarkPriceResponse.Prices["+ i +"].TradePrice"));
-			pricesItem.setCurrency(context.stringValue("QueryTrademarkPriceResponse.Prices["+ i +"].Currency"));
+			pricesItem.setClassificationCode(_ctx.stringValue("QueryTrademarkPriceResponse.Prices["+ i +"].ClassificationCode"));
+			pricesItem.setDiscountPrice(_ctx.floatValue("QueryTrademarkPriceResponse.Prices["+ i +"].DiscountPrice"));
+			pricesItem.setOriginalPrice(_ctx.floatValue("QueryTrademarkPriceResponse.Prices["+ i +"].OriginalPrice"));
+			pricesItem.setTradePrice(_ctx.floatValue("QueryTrademarkPriceResponse.Prices["+ i +"].TradePrice"));
+			pricesItem.setCurrency(_ctx.stringValue("QueryTrademarkPriceResponse.Prices["+ i +"].Currency"));
 
 			prices.add(pricesItem);
 		}

@@ -32,7 +32,7 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 
 	private String loaUrl;
 
-	private Integer orderPrice;
+	private Float orderPrice;
 
 	private String tmIcon;
 
@@ -68,6 +68,18 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 
 	private Long materialId;
 
+	private Float totalPrice;
+
+	private Float servicePrice;
+
+	private String partnerCode;
+
+	private String partnerMobile;
+
+	private String notAcceptUrl;
+
+	private String partnerName;
+
 	private List<ThirdClassifications> thirdClassification;
 
 	private List<SupplementsItem> supplements;
@@ -76,6 +88,8 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 
 	private List<String> judgeResultUrl;
 
+	private List<Integer> flags;
+
 	private AdminUploads adminUploads;
 
 	private MaterialDetail materialDetail;
@@ -83,6 +97,8 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 	private FirstClassification firstClassification;
 
 	private RenewResponse renewResponse;
+
+	private ReviewOfficialFiles reviewOfficialFiles;
 
 	public Integer getStatus() {
 		return this.status;
@@ -108,11 +124,11 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 		this.loaUrl = loaUrl;
 	}
 
-	public Integer getOrderPrice() {
+	public Float getOrderPrice() {
 		return this.orderPrice;
 	}
 
-	public void setOrderPrice(Integer orderPrice) {
+	public void setOrderPrice(Float orderPrice) {
 		this.orderPrice = orderPrice;
 	}
 
@@ -252,6 +268,54 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 		this.materialId = materialId;
 	}
 
+	public Float getTotalPrice() {
+		return this.totalPrice;
+	}
+
+	public void setTotalPrice(Float totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+	public Float getServicePrice() {
+		return this.servicePrice;
+	}
+
+	public void setServicePrice(Float servicePrice) {
+		this.servicePrice = servicePrice;
+	}
+
+	public String getPartnerCode() {
+		return this.partnerCode;
+	}
+
+	public void setPartnerCode(String partnerCode) {
+		this.partnerCode = partnerCode;
+	}
+
+	public String getPartnerMobile() {
+		return this.partnerMobile;
+	}
+
+	public void setPartnerMobile(String partnerMobile) {
+		this.partnerMobile = partnerMobile;
+	}
+
+	public String getNotAcceptUrl() {
+		return this.notAcceptUrl;
+	}
+
+	public void setNotAcceptUrl(String notAcceptUrl) {
+		this.notAcceptUrl = notAcceptUrl;
+	}
+
+	public String getPartnerName() {
+		return this.partnerName;
+	}
+
+	public void setPartnerName(String partnerName) {
+		this.partnerName = partnerName;
+	}
+
 	public List<ThirdClassifications> getThirdClassification() {
 		return this.thirdClassification;
 	}
@@ -284,6 +348,14 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 		this.judgeResultUrl = judgeResultUrl;
 	}
 
+	public List<Integer> getFlags() {
+		return this.flags;
+	}
+
+	public void setFlags(List<Integer> flags) {
+		this.flags = flags;
+	}
+
 	public AdminUploads getAdminUploads() {
 		return this.adminUploads;
 	}
@@ -314,6 +386,14 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 
 	public void setRenewResponse(RenewResponse renewResponse) {
 		this.renewResponse = renewResponse;
+	}
+
+	public ReviewOfficialFiles getReviewOfficialFiles() {
+		return this.reviewOfficialFiles;
+	}
+
+	public void setReviewOfficialFiles(ReviewOfficialFiles reviewOfficialFiles) {
+		this.reviewOfficialFiles = reviewOfficialFiles;
 	}
 
 	public static class ThirdClassifications {
@@ -563,6 +643,10 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 
 		private String legalNoticeUrl;
 
+		private String reviewApplicationFile;
+
+		private List<String> reviewAdditionalFiles;
+
 		public String getCardNumber() {
 			return this.cardNumber;
 		}
@@ -746,6 +830,22 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 		public void setLegalNoticeUrl(String legalNoticeUrl) {
 			this.legalNoticeUrl = legalNoticeUrl;
 		}
+
+		public String getReviewApplicationFile() {
+			return this.reviewApplicationFile;
+		}
+
+		public void setReviewApplicationFile(String reviewApplicationFile) {
+			this.reviewApplicationFile = reviewApplicationFile;
+		}
+
+		public List<String> getReviewAdditionalFiles() {
+			return this.reviewAdditionalFiles;
+		}
+
+		public void setReviewAdditionalFiles(List<String> reviewAdditionalFiles) {
+			this.reviewAdditionalFiles = reviewAdditionalFiles;
+		}
 	}
 
 	public static class FirstClassification {
@@ -831,6 +931,59 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 
 		public void setSubmitSbjtime(Long submitSbjtime) {
 			this.submitSbjtime = submitSbjtime;
+		}
+	}
+
+	public static class ReviewOfficialFiles {
+
+		private String reviewAudit;
+
+		private String reviewPass;
+
+		private String reviewKeep;
+
+		private String reviewPart;
+
+		private List<String> reviewSupplements;
+
+		public String getReviewAudit() {
+			return this.reviewAudit;
+		}
+
+		public void setReviewAudit(String reviewAudit) {
+			this.reviewAudit = reviewAudit;
+		}
+
+		public String getReviewPass() {
+			return this.reviewPass;
+		}
+
+		public void setReviewPass(String reviewPass) {
+			this.reviewPass = reviewPass;
+		}
+
+		public String getReviewKeep() {
+			return this.reviewKeep;
+		}
+
+		public void setReviewKeep(String reviewKeep) {
+			this.reviewKeep = reviewKeep;
+		}
+
+		public String getReviewPart() {
+			return this.reviewPart;
+		}
+
+		public void setReviewPart(String reviewPart) {
+			this.reviewPart = reviewPart;
+		}
+
+		public List<String> getReviewSupplements() {
+			return this.reviewSupplements;
+		}
+
+		public void setReviewSupplements(List<String> reviewSupplements) {
+			this.reviewSupplements = reviewSupplements;
 		}
 	}
 

@@ -24,17 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryTaskListResponseUnmarshaller {
 
-	public static QueryTaskListResponse unmarshall(QueryTaskListResponse queryTaskListResponse, UnmarshallerContext context) {
+	public static QueryTaskListResponse unmarshall(QueryTaskListResponse queryTaskListResponse, UnmarshallerContext _ctx) {
 		
-		queryTaskListResponse.setRequestId(context.stringValue("QueryTaskListResponse.RequestId"));
+		queryTaskListResponse.setRequestId(_ctx.stringValue("QueryTaskListResponse.RequestId"));
+		queryTaskListResponse.setTotalItemNum(_ctx.integerValue("QueryTaskListResponse.TotalItemNum"));
+		queryTaskListResponse.setCurrentPageNum(_ctx.integerValue("QueryTaskListResponse.CurrentPageNum"));
+		queryTaskListResponse.setPageSize(_ctx.integerValue("QueryTaskListResponse.PageSize"));
+		queryTaskListResponse.setTotalPageNum(_ctx.integerValue("QueryTaskListResponse.TotalPageNum"));
 
 		List<TaskList> data = new ArrayList<TaskList>();
-		for (int i = 0; i < context.lengthValue("QueryTaskListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryTaskListResponse.Data.Length"); i++) {
 			TaskList taskList = new TaskList();
-			taskList.setTaskStatus(context.stringValue("QueryTaskListResponse.Data["+ i +"].TaskStatus"));
-			taskList.setTaskType(context.stringValue("QueryTaskListResponse.Data["+ i +"].TaskType"));
-			taskList.setErrMsg(context.stringValue("QueryTaskListResponse.Data["+ i +"].ErrMsg"));
-			taskList.setResult(context.stringValue("QueryTaskListResponse.Data["+ i +"].Result"));
+			taskList.setTaskStatus(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].TaskStatus"));
+			taskList.setTaskType(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].TaskType"));
+			taskList.setErrMsg(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].ErrMsg"));
+			taskList.setResult(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].Result"));
+			taskList.setFileName(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].FileName"));
+			taskList.setCreateTime(_ctx.longValue("QueryTaskListResponse.Data["+ i +"].CreateTime"));
+			taskList.setCompleteTime(_ctx.longValue("QueryTaskListResponse.Data["+ i +"].CompleteTime"));
 
 			data.add(taskList);
 		}

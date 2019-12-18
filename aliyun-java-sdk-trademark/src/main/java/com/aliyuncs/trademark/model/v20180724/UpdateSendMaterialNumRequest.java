@@ -15,22 +15,24 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateSendMaterialNumRequest extends RpcAcsRequest<UpdateSendMaterialNumResponse> {
-	
-	public UpdateSendMaterialNumRequest() {
-		super("Trademark", "2018-07-24", "UpdateSendMaterialNum", "trademark");
-	}
+	   
 
 	private String num;
 
 	private String bizId;
 
 	private Integer operateType;
+	public UpdateSendMaterialNumRequest() {
+		super("Trademark", "2018-07-24", "UpdateSendMaterialNum");
+		setMethod(MethodType.POST);
+	}
 
 	public String getNum() {
 		return this.num;

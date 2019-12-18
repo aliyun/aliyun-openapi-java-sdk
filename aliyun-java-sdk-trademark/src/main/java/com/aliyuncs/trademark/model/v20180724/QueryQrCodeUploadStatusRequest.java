@@ -15,22 +15,24 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryQrCodeUploadStatusRequest extends RpcAcsRequest<QueryQrCodeUploadStatusResponse> {
-	
-	public QueryQrCodeUploadStatusRequest() {
-		super("Trademark", "2018-07-24", "QueryQrCodeUploadStatus", "trademark");
-	}
+	   
 
 	private String ossKey;
 
 	private String fieldKey;
 
 	private String uuid;
+	public QueryQrCodeUploadStatusRequest() {
+		super("Trademark", "2018-07-24", "QueryQrCodeUploadStatus");
+		setMethod(MethodType.POST);
+	}
 
 	public String getOssKey() {
 		return this.ossKey;

@@ -15,18 +15,20 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetNotaryOrderRequest extends RpcAcsRequest<GetNotaryOrderResponse> {
-	
-	public GetNotaryOrderRequest() {
-		super("Trademark", "2018-07-24", "GetNotaryOrder", "trademark");
-	}
+	   
 
 	private Long notaryOrderId;
+	public GetNotaryOrderRequest() {
+		super("Trademark", "2018-07-24", "GetNotaryOrder");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getNotaryOrderId() {
 		return this.notaryOrderId;

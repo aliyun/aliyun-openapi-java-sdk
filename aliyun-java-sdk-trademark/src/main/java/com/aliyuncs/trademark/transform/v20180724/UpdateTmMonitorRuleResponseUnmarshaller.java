@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateTmMonitorRuleResponseUnmarshaller {
 
-	public static UpdateTmMonitorRuleResponse unmarshall(UpdateTmMonitorRuleResponse updateTmMonitorRuleResponse, UnmarshallerContext context) {
+	public static UpdateTmMonitorRuleResponse unmarshall(UpdateTmMonitorRuleResponse updateTmMonitorRuleResponse, UnmarshallerContext _ctx) {
 		
-		updateTmMonitorRuleResponse.setRequestId(context.stringValue("UpdateTmMonitorRuleResponse.RequestId"));
-		updateTmMonitorRuleResponse.setSuccess(context.booleanValue("UpdateTmMonitorRuleResponse.Success"));
-		updateTmMonitorRuleResponse.setErrorMsg(context.stringValue("UpdateTmMonitorRuleResponse.ErrorMsg"));
-		updateTmMonitorRuleResponse.setErrorCode(context.stringValue("UpdateTmMonitorRuleResponse.ErrorCode"));
+		updateTmMonitorRuleResponse.setRequestId(_ctx.stringValue("UpdateTmMonitorRuleResponse.RequestId"));
+		updateTmMonitorRuleResponse.setSuccess(_ctx.booleanValue("UpdateTmMonitorRuleResponse.Success"));
+		updateTmMonitorRuleResponse.setErrorMsg(_ctx.stringValue("UpdateTmMonitorRuleResponse.ErrorMsg"));
+		updateTmMonitorRuleResponse.setErrorCode(_ctx.stringValue("UpdateTmMonitorRuleResponse.ErrorCode"));
 	 
 	 	return updateTmMonitorRuleResponse;
 	}

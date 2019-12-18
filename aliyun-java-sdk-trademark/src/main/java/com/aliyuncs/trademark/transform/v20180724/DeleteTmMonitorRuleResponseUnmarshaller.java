@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteTmMonitorRuleResponseUnmarshaller {
 
-	public static DeleteTmMonitorRuleResponse unmarshall(DeleteTmMonitorRuleResponse deleteTmMonitorRuleResponse, UnmarshallerContext context) {
+	public static DeleteTmMonitorRuleResponse unmarshall(DeleteTmMonitorRuleResponse deleteTmMonitorRuleResponse, UnmarshallerContext _ctx) {
 		
-		deleteTmMonitorRuleResponse.setRequestId(context.stringValue("DeleteTmMonitorRuleResponse.RequestId"));
-		deleteTmMonitorRuleResponse.setSuccess(context.booleanValue("DeleteTmMonitorRuleResponse.Success"));
-		deleteTmMonitorRuleResponse.setErrorMsg(context.stringValue("DeleteTmMonitorRuleResponse.ErrorMsg"));
-		deleteTmMonitorRuleResponse.setErrorCode(context.stringValue("DeleteTmMonitorRuleResponse.ErrorCode"));
+		deleteTmMonitorRuleResponse.setRequestId(_ctx.stringValue("DeleteTmMonitorRuleResponse.RequestId"));
+		deleteTmMonitorRuleResponse.setSuccess(_ctx.booleanValue("DeleteTmMonitorRuleResponse.Success"));
+		deleteTmMonitorRuleResponse.setErrorMsg(_ctx.stringValue("DeleteTmMonitorRuleResponse.ErrorMsg"));
+		deleteTmMonitorRuleResponse.setErrorCode(_ctx.stringValue("DeleteTmMonitorRuleResponse.ErrorCode"));
 	 
 	 	return deleteTmMonitorRuleResponse;
 	}

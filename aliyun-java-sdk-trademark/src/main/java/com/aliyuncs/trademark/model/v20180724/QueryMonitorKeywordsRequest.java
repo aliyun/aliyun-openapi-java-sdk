@@ -16,20 +16,22 @@ package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryMonitorKeywordsRequest extends RpcAcsRequest<QueryMonitorKeywordsResponse> {
-	
-	public QueryMonitorKeywordsRequest() {
-		super("Trademark", "2018-07-24", "QueryMonitorKeywords", "trademark");
-	}
+	   
 
 	private List<String> keywordss;
 
 	private Integer ruleType;
+	public QueryMonitorKeywordsRequest() {
+		super("Trademark", "2018-07-24", "QueryMonitorKeywords");
+		setMethod(MethodType.POST);
+	}
 
 	public List<String> getKeywordss() {
 		return this.keywordss;

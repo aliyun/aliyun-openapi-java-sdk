@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StoreMaterialTemporarilyResponseUnmarshaller {
 
-	public static StoreMaterialTemporarilyResponse unmarshall(StoreMaterialTemporarilyResponse storeMaterialTemporarilyResponse, UnmarshallerContext context) {
+	public static StoreMaterialTemporarilyResponse unmarshall(StoreMaterialTemporarilyResponse storeMaterialTemporarilyResponse, UnmarshallerContext _ctx) {
 		
-		storeMaterialTemporarilyResponse.setRequestId(context.stringValue("StoreMaterialTemporarilyResponse.RequestId"));
-		storeMaterialTemporarilyResponse.setSuccess(context.booleanValue("StoreMaterialTemporarilyResponse.Success"));
+		storeMaterialTemporarilyResponse.setRequestId(_ctx.stringValue("StoreMaterialTemporarilyResponse.RequestId"));
+		storeMaterialTemporarilyResponse.setSuccess(_ctx.booleanValue("StoreMaterialTemporarilyResponse.Success"));
 	 
 	 	return storeMaterialTemporarilyResponse;
 	}

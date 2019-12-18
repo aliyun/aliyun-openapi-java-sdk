@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListNotaryInfosResponseUnmarshaller {
 
-	public static ListNotaryInfosResponse unmarshall(ListNotaryInfosResponse listNotaryInfosResponse, UnmarshallerContext context) {
+	public static ListNotaryInfosResponse unmarshall(ListNotaryInfosResponse listNotaryInfosResponse, UnmarshallerContext _ctx) {
 		
-		listNotaryInfosResponse.setRequestId(context.stringValue("ListNotaryInfosResponse.RequestId"));
-		listNotaryInfosResponse.setTotalItemNum(context.integerValue("ListNotaryInfosResponse.TotalItemNum"));
-		listNotaryInfosResponse.setCurrentPageNum(context.integerValue("ListNotaryInfosResponse.CurrentPageNum"));
-		listNotaryInfosResponse.setPageSize(context.integerValue("ListNotaryInfosResponse.PageSize"));
-		listNotaryInfosResponse.setTotalPageNum(context.integerValue("ListNotaryInfosResponse.TotalPageNum"));
-		listNotaryInfosResponse.setPrePage(context.booleanValue("ListNotaryInfosResponse.PrePage"));
-		listNotaryInfosResponse.setNextPage(context.booleanValue("ListNotaryInfosResponse.NextPage"));
-		listNotaryInfosResponse.setSuccess(context.booleanValue("ListNotaryInfosResponse.Success"));
-		listNotaryInfosResponse.setErrorMsg(context.stringValue("ListNotaryInfosResponse.ErrorMsg"));
-		listNotaryInfosResponse.setErrorCode(context.stringValue("ListNotaryInfosResponse.ErrorCode"));
+		listNotaryInfosResponse.setRequestId(_ctx.stringValue("ListNotaryInfosResponse.RequestId"));
+		listNotaryInfosResponse.setTotalItemNum(_ctx.integerValue("ListNotaryInfosResponse.TotalItemNum"));
+		listNotaryInfosResponse.setCurrentPageNum(_ctx.integerValue("ListNotaryInfosResponse.CurrentPageNum"));
+		listNotaryInfosResponse.setPageSize(_ctx.integerValue("ListNotaryInfosResponse.PageSize"));
+		listNotaryInfosResponse.setTotalPageNum(_ctx.integerValue("ListNotaryInfosResponse.TotalPageNum"));
+		listNotaryInfosResponse.setPrePage(_ctx.booleanValue("ListNotaryInfosResponse.PrePage"));
+		listNotaryInfosResponse.setNextPage(_ctx.booleanValue("ListNotaryInfosResponse.NextPage"));
+		listNotaryInfosResponse.setSuccess(_ctx.booleanValue("ListNotaryInfosResponse.Success"));
+		listNotaryInfosResponse.setErrorMsg(_ctx.stringValue("ListNotaryInfosResponse.ErrorMsg"));
+		listNotaryInfosResponse.setErrorCode(_ctx.stringValue("ListNotaryInfosResponse.ErrorCode"));
 
 		List<NotaryInfo> data = new ArrayList<NotaryInfo>();
-		for (int i = 0; i < context.lengthValue("ListNotaryInfosResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListNotaryInfosResponse.Data.Length"); i++) {
 			NotaryInfo notaryInfo = new NotaryInfo();
-			notaryInfo.setBizOrderNo(context.stringValue("ListNotaryInfosResponse.Data["+ i +"].BizOrderNo"));
-			notaryInfo.setToken(context.stringValue("ListNotaryInfosResponse.Data["+ i +"].Token"));
-			notaryInfo.setNotaryStatus(context.integerValue("ListNotaryInfosResponse.Data["+ i +"].NotaryStatus"));
-			notaryInfo.setTmRegisterNo(context.stringValue("ListNotaryInfosResponse.Data["+ i +"].TmRegisterNo"));
-			notaryInfo.setTmClassification(context.stringValue("ListNotaryInfosResponse.Data["+ i +"].TmClassification"));
-			notaryInfo.setGmtModified(context.longValue("ListNotaryInfosResponse.Data["+ i +"].GmtModified"));
-			notaryInfo.setNotaryFailedReason(context.stringValue("ListNotaryInfosResponse.Data["+ i +"].NotaryFailedReason"));
+			notaryInfo.setBizOrderNo(_ctx.stringValue("ListNotaryInfosResponse.Data["+ i +"].BizOrderNo"));
+			notaryInfo.setToken(_ctx.stringValue("ListNotaryInfosResponse.Data["+ i +"].Token"));
+			notaryInfo.setNotaryStatus(_ctx.integerValue("ListNotaryInfosResponse.Data["+ i +"].NotaryStatus"));
+			notaryInfo.setTmRegisterNo(_ctx.stringValue("ListNotaryInfosResponse.Data["+ i +"].TmRegisterNo"));
+			notaryInfo.setTmClassification(_ctx.stringValue("ListNotaryInfosResponse.Data["+ i +"].TmClassification"));
+			notaryInfo.setGmtModified(_ctx.longValue("ListNotaryInfosResponse.Data["+ i +"].GmtModified"));
+			notaryInfo.setNotaryFailedReason(_ctx.stringValue("ListNotaryInfosResponse.Data["+ i +"].NotaryFailedReason"));
 
 			data.add(notaryInfo);
 		}

@@ -15,18 +15,20 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ConvertImageToGrayRequest extends RpcAcsRequest<ConvertImageToGrayResponse> {
-	
-	public ConvertImageToGrayRequest() {
-		super("Trademark", "2018-07-24", "ConvertImageToGray", "trademark");
-	}
+	   
 
 	private String ossKey;
+	public ConvertImageToGrayRequest() {
+		super("Trademark", "2018-07-24", "ConvertImageToGray");
+		setMethod(MethodType.POST);
+	}
 
 	public String getOssKey() {
 		return this.ossKey;

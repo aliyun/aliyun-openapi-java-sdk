@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ConvertImageToGrayResponseUnmarshaller {
 
-	public static ConvertImageToGrayResponse unmarshall(ConvertImageToGrayResponse convertImageToGrayResponse, UnmarshallerContext context) {
+	public static ConvertImageToGrayResponse unmarshall(ConvertImageToGrayResponse convertImageToGrayResponse, UnmarshallerContext _ctx) {
 		
-		convertImageToGrayResponse.setRequestId(context.stringValue("ConvertImageToGrayResponse.RequestId"));
-		convertImageToGrayResponse.setSignatureUrl(context.stringValue("ConvertImageToGrayResponse.SignatureUrl"));
+		convertImageToGrayResponse.setRequestId(_ctx.stringValue("ConvertImageToGrayResponse.RequestId"));
+		convertImageToGrayResponse.setSignatureUrl(_ctx.stringValue("ConvertImageToGrayResponse.SignatureUrl"));
 	 
 	 	return convertImageToGrayResponse;
 	}

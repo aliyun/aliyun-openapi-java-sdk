@@ -15,20 +15,16 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class InsertTmMonitorRuleRequest extends RpcAcsRequest<InsertTmMonitorRuleResponse> {
-	
-	public InsertTmMonitorRuleRequest() {
-		super("Trademark", "2018-07-24", "InsertTmMonitorRule", "trademark");
-	}
+	   
 
 	private String startApplyDate;
-
-	private String notifyStatus;
 
 	private Integer ruleType;
 
@@ -36,11 +32,17 @@ public class InsertTmMonitorRuleRequest extends RpcAcsRequest<InsertTmMonitorRul
 
 	private String ruleName;
 
-	private String endApplyDate;
-
 	private String classification;
 
+	private String notifyStatus;
+
+	private String endApplyDate;
+
 	private String ruleKeyword;
+	public InsertTmMonitorRuleRequest() {
+		super("Trademark", "2018-07-24", "InsertTmMonitorRule");
+		setMethod(MethodType.POST);
+	}
 
 	public String getStartApplyDate() {
 		return this.startApplyDate;
@@ -50,17 +52,6 @@ public class InsertTmMonitorRuleRequest extends RpcAcsRequest<InsertTmMonitorRul
 		this.startApplyDate = startApplyDate;
 		if(startApplyDate != null){
 			putQueryParameter("StartApplyDate", startApplyDate);
-		}
-	}
-
-	public String getNotifyStatus() {
-		return this.notifyStatus;
-	}
-
-	public void setNotifyStatus(String notifyStatus) {
-		this.notifyStatus = notifyStatus;
-		if(notifyStatus != null){
-			putQueryParameter("NotifyStatus", notifyStatus);
 		}
 	}
 
@@ -97,17 +88,6 @@ public class InsertTmMonitorRuleRequest extends RpcAcsRequest<InsertTmMonitorRul
 		}
 	}
 
-	public String getEndApplyDate() {
-		return this.endApplyDate;
-	}
-
-	public void setEndApplyDate(String endApplyDate) {
-		this.endApplyDate = endApplyDate;
-		if(endApplyDate != null){
-			putQueryParameter("EndApplyDate", endApplyDate);
-		}
-	}
-
 	public String getClassification() {
 		return this.classification;
 	}
@@ -116,6 +96,28 @@ public class InsertTmMonitorRuleRequest extends RpcAcsRequest<InsertTmMonitorRul
 		this.classification = classification;
 		if(classification != null){
 			putQueryParameter("Classification", classification);
+		}
+	}
+
+	public String getNotifyStatus() {
+		return this.notifyStatus;
+	}
+
+	public void setNotifyStatus(String notifyStatus) {
+		this.notifyStatus = notifyStatus;
+		if(notifyStatus != null){
+			putQueryParameter("NotifyStatus", notifyStatus);
+		}
+	}
+
+	public String getEndApplyDate() {
+		return this.endApplyDate;
+	}
+
+	public void setEndApplyDate(String endApplyDate) {
+		this.endApplyDate = endApplyDate;
+		if(endApplyDate != null){
+			putQueryParameter("EndApplyDate", endApplyDate);
 		}
 	}
 

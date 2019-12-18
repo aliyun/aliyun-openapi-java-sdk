@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RefundProduceResponseUnmarshaller {
 
-	public static RefundProduceResponse unmarshall(RefundProduceResponse refundProduceResponse, UnmarshallerContext context) {
+	public static RefundProduceResponse unmarshall(RefundProduceResponse refundProduceResponse, UnmarshallerContext _ctx) {
 		
-		refundProduceResponse.setRequestId(context.stringValue("RefundProduceResponse.RequestId"));
-		refundProduceResponse.setSuccess(context.booleanValue("RefundProduceResponse.Success"));
-		refundProduceResponse.setErrorMsg(context.stringValue("RefundProduceResponse.ErrorMsg"));
-		refundProduceResponse.setErrorCode(context.stringValue("RefundProduceResponse.ErrorCode"));
+		refundProduceResponse.setRequestId(_ctx.stringValue("RefundProduceResponse.RequestId"));
+		refundProduceResponse.setSuccess(_ctx.booleanValue("RefundProduceResponse.Success"));
+		refundProduceResponse.setErrorMsg(_ctx.stringValue("RefundProduceResponse.ErrorMsg"));
+		refundProduceResponse.setErrorCode(_ctx.stringValue("RefundProduceResponse.ErrorCode"));
 	 
 	 	return refundProduceResponse;
 	}

@@ -15,18 +15,20 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryTradeProduceListRequest extends RpcAcsRequest<QueryTradeProduceListResponse> {
-	
-	public QueryTradeProduceListRequest() {
-		super("Trademark", "2018-07-24", "QueryTradeProduceList", "trademark");
-	}
+	   
 
 	private Integer buyerStatus;
+
+	private Integer pageNum;
+
+	private String sortFiled;
 
 	private Integer pageSize;
 
@@ -36,11 +38,11 @@ public class QueryTradeProduceListRequest extends RpcAcsRequest<QueryTradeProduc
 
 	private String sortOrder;
 
-	private Integer pageNum;
-
-	private String sortFiled;
-
 	private String registerNumber;
+	public QueryTradeProduceListRequest() {
+		super("Trademark", "2018-07-24", "QueryTradeProduceList");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getBuyerStatus() {
 		return this.buyerStatus;
@@ -50,6 +52,28 @@ public class QueryTradeProduceListRequest extends RpcAcsRequest<QueryTradeProduc
 		this.buyerStatus = buyerStatus;
 		if(buyerStatus != null){
 			putQueryParameter("BuyerStatus", buyerStatus.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getSortFiled() {
+		return this.sortFiled;
+	}
+
+	public void setSortFiled(String sortFiled) {
+		this.sortFiled = sortFiled;
+		if(sortFiled != null){
+			putQueryParameter("SortFiled", sortFiled);
 		}
 	}
 
@@ -94,28 +118,6 @@ public class QueryTradeProduceListRequest extends RpcAcsRequest<QueryTradeProduc
 		this.sortOrder = sortOrder;
 		if(sortOrder != null){
 			putQueryParameter("SortOrder", sortOrder);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getSortFiled() {
-		return this.sortFiled;
-	}
-
-	public void setSortFiled(String sortFiled) {
-		this.sortFiled = sortFiled;
-		if(sortFiled != null){
-			putQueryParameter("SortFiled", sortFiled);
 		}
 	}
 

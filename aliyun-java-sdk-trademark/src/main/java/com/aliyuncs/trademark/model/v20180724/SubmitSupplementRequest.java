@@ -15,22 +15,24 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitSupplementRequest extends RpcAcsRequest<SubmitSupplementResponse> {
-	
-	public SubmitSupplementRequest() {
-		super("Trademark", "2018-07-24", "SubmitSupplement", "trademark");
-	}
+	   
 
 	private String uploadOssKeyList;
 
 	private Long id;
 
 	private String content;
+	public SubmitSupplementRequest() {
+		super("Trademark", "2018-07-24", "SubmitSupplement");
+		setMethod(MethodType.POST);
+	}
 
 	public String getUploadOssKeyList() {
 		return this.uploadOssKeyList;

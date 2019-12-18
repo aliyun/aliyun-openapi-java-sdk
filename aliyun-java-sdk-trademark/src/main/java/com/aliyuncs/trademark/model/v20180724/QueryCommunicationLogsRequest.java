@@ -15,18 +15,26 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryCommunicationLogsRequest extends RpcAcsRequest<QueryCommunicationLogsResponse> {
-	
-	public QueryCommunicationLogsRequest() {
-		super("Trademark", "2018-07-24", "QueryCommunicationLogs", "trademark");
-	}
+	   
 
 	private String bizId;
+
+	private Integer pageSize;
+
+	private Integer type;
+
+	private Integer pageNum;
+	public QueryCommunicationLogsRequest() {
+		super("Trademark", "2018-07-24", "QueryCommunicationLogs");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizId() {
 		return this.bizId;
@@ -36,6 +44,39 @@ public class QueryCommunicationLogsRequest extends RpcAcsRequest<QueryCommunicat
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getType() {
+		return this.type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
