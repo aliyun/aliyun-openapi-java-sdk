@@ -26,9 +26,9 @@ import com.aliyuncs.imageaudit.Endpoint;
 public class ScanImageRequest extends RpcAcsRequest<ScanImageResponse> {
 	   
 
-	private List<String> sceness;
+	private List<String> scenes;
 
-	private List<Tasks> taskss;
+	private List<Task> tasks;
 	public ScanImageRequest() {
 		super("imageaudit", "2019-12-30", "ScanImage", "imageaudit");
 		setMethod(MethodType.POST);
@@ -38,37 +38,37 @@ public class ScanImageRequest extends RpcAcsRequest<ScanImageResponse> {
 		} catch (Exception e) {}
 	}
 
-	public List<String> getSceness() {
-		return this.sceness;
+	public List<String> getScenes() {
+		return this.scenes;
 	}
 
-	public void setSceness(List<String> sceness) {
-		this.sceness = sceness;	
-		if (sceness != null) {
-			for (int i = 0; i < sceness.size(); i++) {
-				putBodyParameter("Scenes." + (i + 1) , sceness.get(i));
+	public void setScenes(List<String> scenes) {
+		this.scenes = scenes;	
+		if (scenes != null) {
+			for (int i = 0; i < scenes.size(); i++) {
+				putBodyParameter("Scene." + (i + 1) , scenes.get(i));
 			}
 		}	
 	}
 
-	public List<Tasks> getTaskss() {
-		return this.taskss;
+	public List<Task> getTasks() {
+		return this.tasks;
 	}
 
-	public void setTaskss(List<Tasks> taskss) {
-		this.taskss = taskss;	
-		if (taskss != null) {
-			for (int depth1 = 0; depth1 < taskss.size(); depth1++) {
-				putBodyParameter("Tasks." + (depth1 + 1) + ".DataId" , taskss.get(depth1).getDataId());
-				putBodyParameter("Tasks." + (depth1 + 1) + ".ImageURL" , taskss.get(depth1).getImageURL());
-				putBodyParameter("Tasks." + (depth1 + 1) + ".MaxFrames" , taskss.get(depth1).getMaxFrames());
-				putBodyParameter("Tasks." + (depth1 + 1) + ".Interval" , taskss.get(depth1).getInterval());
-				putBodyParameter("Tasks." + (depth1 + 1) + ".ImageTimeMillisecond" , taskss.get(depth1).getImageTimeMillisecond());
+	public void setTasks(List<Task> tasks) {
+		this.tasks = tasks;	
+		if (tasks != null) {
+			for (int depth1 = 0; depth1 < tasks.size(); depth1++) {
+				putBodyParameter("Task." + (depth1 + 1) + ".DataId" , tasks.get(depth1).getDataId());
+				putBodyParameter("Task." + (depth1 + 1) + ".ImageURL" , tasks.get(depth1).getImageURL());
+				putBodyParameter("Task." + (depth1 + 1) + ".MaxFrames" , tasks.get(depth1).getMaxFrames());
+				putBodyParameter("Task." + (depth1 + 1) + ".Interval" , tasks.get(depth1).getInterval());
+				putBodyParameter("Task." + (depth1 + 1) + ".ImageTimeMillisecond" , tasks.get(depth1).getImageTimeMillisecond());
 			}
 		}	
 	}
 
-	public static class Tasks {
+	public static class Task {
 
 		private String dataId;
 
