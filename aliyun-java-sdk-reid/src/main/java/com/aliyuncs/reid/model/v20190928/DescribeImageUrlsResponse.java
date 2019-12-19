@@ -29,17 +29,9 @@ public class DescribeImageUrlsResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private String message;
-
-	private String code;
-
-	private String dynamicCode;
-
 	private String requestId;
 
 	private Boolean success;
-
-	private String dynamicMessage;
 
 	private List<ImageUrl> urls;
 
@@ -59,30 +51,6 @@ public class DescribeImageUrlsResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getDynamicCode() {
-		return this.dynamicCode;
-	}
-
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -97,14 +65,6 @@ public class DescribeImageUrlsResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
 	}
 
 	public List<ImageUrl> getUrls() {

@@ -26,11 +26,7 @@ public class DescribeOverviewDataResponseUnmarshaller {
 		describeOverviewDataResponse.setRequestId(_ctx.stringValue("DescribeOverviewDataResponse.RequestId"));
 		describeOverviewDataResponse.setErrorCode(_ctx.stringValue("DescribeOverviewDataResponse.ErrorCode"));
 		describeOverviewDataResponse.setErrorMessage(_ctx.stringValue("DescribeOverviewDataResponse.ErrorMessage"));
-		describeOverviewDataResponse.setMessage(_ctx.stringValue("DescribeOverviewDataResponse.Message"));
-		describeOverviewDataResponse.setCode(_ctx.stringValue("DescribeOverviewDataResponse.Code"));
-		describeOverviewDataResponse.setDynamicCode(_ctx.stringValue("DescribeOverviewDataResponse.DynamicCode"));
 		describeOverviewDataResponse.setSuccess(_ctx.booleanValue("DescribeOverviewDataResponse.Success"));
-		describeOverviewDataResponse.setDynamicMessage(_ctx.stringValue("DescribeOverviewDataResponse.DynamicMessage"));
 
 		OverviewDetail overviewDetail = new OverviewDetail();
 		overviewDetail.setStayDeepAvgWOWPercent(_ctx.floatValue("DescribeOverviewDataResponse.OverviewDetail.StayDeepAvgWOWPercent"));

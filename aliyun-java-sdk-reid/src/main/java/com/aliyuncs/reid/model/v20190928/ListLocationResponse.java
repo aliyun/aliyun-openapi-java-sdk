@@ -29,17 +29,9 @@ public class ListLocationResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private String message;
-
-	private String code;
-
-	private String dynamicCode;
-
 	private String requestId;
 
 	private Boolean success;
-
-	private String dynamicMessage;
 
 	private List<LocationInfoItem> locationInfoItems;
 
@@ -59,30 +51,6 @@ public class ListLocationResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getDynamicCode() {
-		return this.dynamicCode;
-	}
-
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -99,14 +67,6 @@ public class ListLocationResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
-	}
-
 	public List<LocationInfoItem> getLocationInfoItems() {
 		return this.locationInfoItems;
 	}
@@ -117,17 +77,11 @@ public class ListLocationResponse extends AcsResponse {
 
 	public static class LocationInfoItem {
 
-		private Integer status;
-
-		private String parentLocationUId;
-
-		private String locationUId;
-
-		private Long locationId;
-
 		private String externalId;
 
 		private String locationType;
+
+		private Integer status;
 
 		private Long storeId;
 
@@ -141,39 +95,9 @@ public class ListLocationResponse extends AcsResponse {
 
 		private String layerType;
 
+		private Long locationId;
+
 		private List<RectRoi> rectRois;
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getParentLocationUId() {
-			return this.parentLocationUId;
-		}
-
-		public void setParentLocationUId(String parentLocationUId) {
-			this.parentLocationUId = parentLocationUId;
-		}
-
-		public String getLocationUId() {
-			return this.locationUId;
-		}
-
-		public void setLocationUId(String locationUId) {
-			this.locationUId = locationUId;
-		}
-
-		public Long getLocationId() {
-			return this.locationId;
-		}
-
-		public void setLocationId(Long locationId) {
-			this.locationId = locationId;
-		}
 
 		public String getExternalId() {
 			return this.externalId;
@@ -189,6 +113,14 @@ public class ListLocationResponse extends AcsResponse {
 
 		public void setLocationType(String locationType) {
 			this.locationType = locationType;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public Long getStoreId() {
@@ -239,6 +171,14 @@ public class ListLocationResponse extends AcsResponse {
 			this.layerType = layerType;
 		}
 
+		public Long getLocationId() {
+			return this.locationId;
+		}
+
+		public void setLocationId(Long locationId) {
+			this.locationId = locationId;
+		}
+
 		public List<RectRoi> getRectRois() {
 			return this.rectRois;
 		}
@@ -251,10 +191,6 @@ public class ListLocationResponse extends AcsResponse {
 
 			private List<Point> points;
 
-			private RightBottom rightBottom;
-
-			private LeftTop leftTop;
-
 			public List<Point> getPoints() {
 				return this.points;
 			}
@@ -263,69 +199,7 @@ public class ListLocationResponse extends AcsResponse {
 				this.points = points;
 			}
 
-			public RightBottom getRightBottom() {
-				return this.rightBottom;
-			}
-
-			public void setRightBottom(RightBottom rightBottom) {
-				this.rightBottom = rightBottom;
-			}
-
-			public LeftTop getLeftTop() {
-				return this.leftTop;
-			}
-
-			public void setLeftTop(LeftTop leftTop) {
-				this.leftTop = leftTop;
-			}
-
 			public static class Point {
-
-				private Float x;
-
-				private Float y;
-
-				public Float getX() {
-					return this.x;
-				}
-
-				public void setX(Float x) {
-					this.x = x;
-				}
-
-				public Float getY() {
-					return this.y;
-				}
-
-				public void setY(Float y) {
-					this.y = y;
-				}
-			}
-
-			public static class RightBottom {
-
-				private Float x;
-
-				private Float y;
-
-				public Float getX() {
-					return this.x;
-				}
-
-				public void setX(Float x) {
-					this.x = x;
-				}
-
-				public Float getY() {
-					return this.y;
-				}
-
-				public void setY(Float y) {
-					this.y = y;
-				}
-			}
-
-			public static class LeftTop {
 
 				private Float x;
 

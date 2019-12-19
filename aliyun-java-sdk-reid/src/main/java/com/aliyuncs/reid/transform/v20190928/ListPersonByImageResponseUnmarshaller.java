@@ -29,18 +29,13 @@ public class ListPersonByImageResponseUnmarshaller {
 		listPersonByImageResponse.setRequestId(_ctx.stringValue("ListPersonByImageResponse.RequestId"));
 		listPersonByImageResponse.setErrorCode(_ctx.stringValue("ListPersonByImageResponse.ErrorCode"));
 		listPersonByImageResponse.setErrorMessage(_ctx.stringValue("ListPersonByImageResponse.ErrorMessage"));
-		listPersonByImageResponse.setMessage(_ctx.stringValue("ListPersonByImageResponse.Message"));
-		listPersonByImageResponse.setCode(_ctx.stringValue("ListPersonByImageResponse.Code"));
-		listPersonByImageResponse.setDynamicCode(_ctx.stringValue("ListPersonByImageResponse.DynamicCode"));
 		listPersonByImageResponse.setSuccess(_ctx.booleanValue("ListPersonByImageResponse.Success"));
-		listPersonByImageResponse.setDynamicMessage(_ctx.stringValue("ListPersonByImageResponse.DynamicMessage"));
 
 		List<PersonSearchResultItem> personSearchResultItems = new ArrayList<PersonSearchResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListPersonByImageResponse.PersonSearchResultItems.Length"); i++) {
 			PersonSearchResultItem personSearchResultItem = new PersonSearchResultItem();
 			personSearchResultItem.setUkId(_ctx.longValue("ListPersonByImageResponse.PersonSearchResultItems["+ i +"].UkId"));
 			personSearchResultItem.setScore(_ctx.floatValue("ListPersonByImageResponse.PersonSearchResultItems["+ i +"].Score"));
-			personSearchResultItem.setFaceId(_ctx.stringValue("ListPersonByImageResponse.PersonSearchResultItems["+ i +"].FaceId"));
 
 			personSearchResultItems.add(personSearchResultItem);
 		}

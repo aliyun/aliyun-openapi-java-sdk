@@ -14,26 +14,25 @@
 
 package com.aliyuncs.reid.model.v20190928;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.reid.transform.v20190928.ListEmapResponseUnmarshaller;
+import com.aliyuncs.reid.transform.v20190928.DescribeCursorResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListEmapResponse extends AcsResponse {
+public class DescribeCursorResponse extends AcsResponse {
 
 	private String errorCode;
 
 	private String errorMessage;
 
+	private String cursor;
+
 	private String requestId;
 
 	private Boolean success;
-
-	private List<OpenEmap> openEmaps;
 
 	public String getErrorCode() {
 		return this.errorCode;
@@ -49,6 +48,14 @@ public class ListEmapResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getCursor() {
+		return this.cursor;
+	}
+
+	public void setCursor(String cursor) {
+		this.cursor = cursor;
 	}
 
 	public String getRequestId() {
@@ -67,59 +74,8 @@ public class ListEmapResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<OpenEmap> getOpenEmaps() {
-		return this.openEmaps;
-	}
-
-	public void setOpenEmaps(List<OpenEmap> openEmaps) {
-		this.openEmaps = openEmaps;
-	}
-
-	public static class OpenEmap {
-
-		private String locationId;
-
-		private String emapId;
-
-		private String name;
-
-		private String emapUrl;
-
-		public String getLocationId() {
-			return this.locationId;
-		}
-
-		public void setLocationId(String locationId) {
-			this.locationId = locationId;
-		}
-
-		public String getEmapId() {
-			return this.emapId;
-		}
-
-		public void setEmapId(String emapId) {
-			this.emapId = emapId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getEmapUrl() {
-			return this.emapUrl;
-		}
-
-		public void setEmapUrl(String emapUrl) {
-			this.emapUrl = emapUrl;
-		}
-	}
-
 	@Override
-	public ListEmapResponse getInstance(UnmarshallerContext context) {
-		return	ListEmapResponseUnmarshaller.unmarshall(this, context);
+	public DescribeCursorResponse getInstance(UnmarshallerContext context) {
+		return	DescribeCursorResponseUnmarshaller.unmarshall(this, context);
 	}
 }

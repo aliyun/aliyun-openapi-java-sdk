@@ -29,17 +29,9 @@ public class ListPersonByImageResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private String message;
-
-	private String code;
-
-	private String dynamicCode;
-
 	private String requestId;
 
 	private Boolean success;
-
-	private String dynamicMessage;
 
 	private List<PersonSearchResultItem> personSearchResultItems;
 
@@ -59,30 +51,6 @@ public class ListPersonByImageResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getDynamicCode() {
-		return this.dynamicCode;
-	}
-
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -99,14 +67,6 @@ public class ListPersonByImageResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
-	}
-
 	public List<PersonSearchResultItem> getPersonSearchResultItems() {
 		return this.personSearchResultItems;
 	}
@@ -120,8 +80,6 @@ public class ListPersonByImageResponse extends AcsResponse {
 		private Long ukId;
 
 		private Float score;
-
-		private String faceId;
 
 		public Long getUkId() {
 			return this.ukId;
@@ -137,14 +95,6 @@ public class ListPersonByImageResponse extends AcsResponse {
 
 		public void setScore(Float score) {
 			this.score = score;
-		}
-
-		public String getFaceId() {
-			return this.faceId;
-		}
-
-		public void setFaceId(String faceId) {
-			this.faceId = faceId;
 		}
 	}
 

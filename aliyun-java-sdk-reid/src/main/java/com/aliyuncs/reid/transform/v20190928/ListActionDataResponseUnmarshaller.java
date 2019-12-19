@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.reid.model.v20190928.ListActionDataResponse;
 import com.aliyuncs.reid.model.v20190928.ListActionDataResponse.Action;
-import com.aliyuncs.reid.model.v20190928.ListActionDataResponse.Action.FacePositionInImage;
+import com.aliyuncs.reid.model.v20190928.ListActionDataResponse.Action.ObjectPositionInImage;
 import com.aliyuncs.reid.model.v20190928.ListActionDataResponse.Action.PointInMap;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -30,15 +30,11 @@ public class ListActionDataResponseUnmarshaller {
 		
 		listActionDataResponse.setRequestId(_ctx.stringValue("ListActionDataResponse.RequestId"));
 		listActionDataResponse.setSuccess(_ctx.booleanValue("ListActionDataResponse.Success"));
-		listActionDataResponse.setDynamicMessage(_ctx.stringValue("ListActionDataResponse.DynamicMessage"));
 		listActionDataResponse.setCursorTime(_ctx.longValue("ListActionDataResponse.CursorTime"));
 		listActionDataResponse.setErrorCode(_ctx.stringValue("ListActionDataResponse.ErrorCode"));
 		listActionDataResponse.setErrorMessage(_ctx.stringValue("ListActionDataResponse.ErrorMessage"));
 		listActionDataResponse.setPageNumber(_ctx.integerValue("ListActionDataResponse.PageNumber"));
-		listActionDataResponse.setMessage(_ctx.stringValue("ListActionDataResponse.Message"));
-		listActionDataResponse.setCode(_ctx.stringValue("ListActionDataResponse.Code"));
 		listActionDataResponse.setTotalCount(_ctx.longValue("ListActionDataResponse.TotalCount"));
-		listActionDataResponse.setDynamicCode(_ctx.stringValue("ListActionDataResponse.DynamicCode"));
 		listActionDataResponse.setPageSize(_ctx.integerValue("ListActionDataResponse.PageSize"));
 
 		List<Action> actions = new ArrayList<Action>();
@@ -64,13 +60,14 @@ public class ListActionDataResponseUnmarshaller {
 			action.setScore(_ctx.floatValue("ListActionDataResponse.Actions["+ i +"].Score"));
 			action.setSpecialType(_ctx.stringValue("ListActionDataResponse.Actions["+ i +"].SpecialType"));
 			action.setImageObjectKey(_ctx.stringValue("ListActionDataResponse.Actions["+ i +"].ImageObjectKey"));
+			action.setFacePointNumber(_ctx.integerValue("ListActionDataResponse.Actions["+ i +"].FacePointNumber"));
 
-			FacePositionInImage facePositionInImage = new FacePositionInImage();
-			facePositionInImage.setBottom(_ctx.floatValue("ListActionDataResponse.Actions["+ i +"].FacePositionInImage.Bottom"));
-			facePositionInImage.setLeft(_ctx.floatValue("ListActionDataResponse.Actions["+ i +"].FacePositionInImage.Left"));
-			facePositionInImage.setTop(_ctx.floatValue("ListActionDataResponse.Actions["+ i +"].FacePositionInImage.Top"));
-			facePositionInImage.setRight(_ctx.floatValue("ListActionDataResponse.Actions["+ i +"].FacePositionInImage.Right"));
-			action.setFacePositionInImage(facePositionInImage);
+			ObjectPositionInImage objectPositionInImage = new ObjectPositionInImage();
+			objectPositionInImage.setBottom(_ctx.floatValue("ListActionDataResponse.Actions["+ i +"].ObjectPositionInImage.Bottom"));
+			objectPositionInImage.setLeft(_ctx.floatValue("ListActionDataResponse.Actions["+ i +"].ObjectPositionInImage.Left"));
+			objectPositionInImage.setTop(_ctx.floatValue("ListActionDataResponse.Actions["+ i +"].ObjectPositionInImage.Top"));
+			objectPositionInImage.setRight(_ctx.floatValue("ListActionDataResponse.Actions["+ i +"].ObjectPositionInImage.Right"));
+			action.setObjectPositionInImage(objectPositionInImage);
 
 			PointInMap pointInMap = new PointInMap();
 			pointInMap.setX(_ctx.floatValue("ListActionDataResponse.Actions["+ i +"].PointInMap.X"));

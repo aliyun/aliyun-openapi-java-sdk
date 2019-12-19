@@ -33,19 +33,11 @@ public class DescribeCustomerFlowByLocationResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String dynamicMessage;
-
 	private String errorCode;
 
 	private String errorMessage;
 
 	private String locationName;
-
-	private String message;
-
-	private String code;
-
-	private String dynamicCode;
 
 	private Float percent;
 
@@ -53,7 +45,7 @@ public class DescribeCustomerFlowByLocationResponse extends AcsResponse {
 
 	private Long count;
 
-	private List<CustomerFlowItem> passengerFlowItems;
+	private List<CustomerFlowItem> customerFlowItems;
 
 	public Long getLocationId() {
 		return this.locationId;
@@ -87,14 +79,6 @@ public class DescribeCustomerFlowByLocationResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
-	}
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
@@ -117,30 +101,6 @@ public class DescribeCustomerFlowByLocationResponse extends AcsResponse {
 
 	public void setLocationName(String locationName) {
 		this.locationName = locationName;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getDynamicCode() {
-		return this.dynamicCode;
-	}
-
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
 	}
 
 	public Float getPercent() {
@@ -167,12 +127,12 @@ public class DescribeCustomerFlowByLocationResponse extends AcsResponse {
 		this.count = count;
 	}
 
-	public List<CustomerFlowItem> getPassengerFlowItems() {
-		return this.passengerFlowItems;
+	public List<CustomerFlowItem> getCustomerFlowItems() {
+		return this.customerFlowItems;
 	}
 
-	public void setPassengerFlowItems(List<CustomerFlowItem> passengerFlowItems) {
-		this.passengerFlowItems = passengerFlowItems;
+	public void setCustomerFlowItems(List<CustomerFlowItem> customerFlowItems) {
+		this.customerFlowItems = customerFlowItems;
 	}
 
 	public static class CustomerFlowItem {

@@ -29,11 +29,7 @@ public class DescribeHeatMapResponseUnmarshaller {
 		describeHeatMapResponse.setRequestId(_ctx.stringValue("DescribeHeatMapResponse.RequestId"));
 		describeHeatMapResponse.setErrorCode(_ctx.stringValue("DescribeHeatMapResponse.ErrorCode"));
 		describeHeatMapResponse.setErrorMessage(_ctx.stringValue("DescribeHeatMapResponse.ErrorMessage"));
-		describeHeatMapResponse.setMessage(_ctx.stringValue("DescribeHeatMapResponse.Message"));
-		describeHeatMapResponse.setCode(_ctx.stringValue("DescribeHeatMapResponse.Code"));
-		describeHeatMapResponse.setDynamicCode(_ctx.stringValue("DescribeHeatMapResponse.DynamicCode"));
 		describeHeatMapResponse.setSuccess(_ctx.booleanValue("DescribeHeatMapResponse.Success"));
-		describeHeatMapResponse.setDynamicMessage(_ctx.stringValue("DescribeHeatMapResponse.DynamicMessage"));
 
 		List<HeatMapPoint> heatMapPoints = new ArrayList<HeatMapPoint>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHeatMapResponse.HeatMapPoints.Length"); i++) {

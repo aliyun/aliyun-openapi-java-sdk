@@ -30,30 +30,26 @@ public class DescribeCustomerFlowByLocationResponseUnmarshaller {
 		describeCustomerFlowByLocationResponse.setLocationId(_ctx.longValue("DescribeCustomerFlowByLocationResponse.LocationId"));
 		describeCustomerFlowByLocationResponse.setParentLocationIds(_ctx.stringValue("DescribeCustomerFlowByLocationResponse.ParentLocationIds"));
 		describeCustomerFlowByLocationResponse.setSuccess(_ctx.booleanValue("DescribeCustomerFlowByLocationResponse.Success"));
-		describeCustomerFlowByLocationResponse.setDynamicMessage(_ctx.stringValue("DescribeCustomerFlowByLocationResponse.DynamicMessage"));
 		describeCustomerFlowByLocationResponse.setErrorCode(_ctx.stringValue("DescribeCustomerFlowByLocationResponse.ErrorCode"));
 		describeCustomerFlowByLocationResponse.setErrorMessage(_ctx.stringValue("DescribeCustomerFlowByLocationResponse.ErrorMessage"));
 		describeCustomerFlowByLocationResponse.setLocationName(_ctx.stringValue("DescribeCustomerFlowByLocationResponse.LocationName"));
-		describeCustomerFlowByLocationResponse.setMessage(_ctx.stringValue("DescribeCustomerFlowByLocationResponse.Message"));
-		describeCustomerFlowByLocationResponse.setCode(_ctx.stringValue("DescribeCustomerFlowByLocationResponse.Code"));
-		describeCustomerFlowByLocationResponse.setDynamicCode(_ctx.stringValue("DescribeCustomerFlowByLocationResponse.DynamicCode"));
 		describeCustomerFlowByLocationResponse.setPercent(_ctx.floatValue("DescribeCustomerFlowByLocationResponse.Percent"));
 		describeCustomerFlowByLocationResponse.setStoreId(_ctx.longValue("DescribeCustomerFlowByLocationResponse.StoreId"));
 		describeCustomerFlowByLocationResponse.setCount(_ctx.longValue("DescribeCustomerFlowByLocationResponse.Count"));
 
-		List<CustomerFlowItem> passengerFlowItems = new ArrayList<CustomerFlowItem>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeCustomerFlowByLocationResponse.PassengerFlowItems.Length"); i++) {
+		List<CustomerFlowItem> customerFlowItems = new ArrayList<CustomerFlowItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeCustomerFlowByLocationResponse.CustomerFlowItems.Length"); i++) {
 			CustomerFlowItem customerFlowItem = new CustomerFlowItem();
-			customerFlowItem.setCount(_ctx.longValue("DescribeCustomerFlowByLocationResponse.PassengerFlowItems["+ i +"].Count"));
-			customerFlowItem.setStoreId(_ctx.longValue("DescribeCustomerFlowByLocationResponse.PassengerFlowItems["+ i +"].StoreId"));
-			customerFlowItem.setPercent(_ctx.floatValue("DescribeCustomerFlowByLocationResponse.PassengerFlowItems["+ i +"].Percent"));
-			customerFlowItem.setLocationName(_ctx.stringValue("DescribeCustomerFlowByLocationResponse.PassengerFlowItems["+ i +"].LocationName"));
-			customerFlowItem.setParentLocationIds(_ctx.stringValue("DescribeCustomerFlowByLocationResponse.PassengerFlowItems["+ i +"].ParentLocationIds"));
-			customerFlowItem.setLocationId(_ctx.longValue("DescribeCustomerFlowByLocationResponse.PassengerFlowItems["+ i +"].LocationId"));
+			customerFlowItem.setCount(_ctx.longValue("DescribeCustomerFlowByLocationResponse.CustomerFlowItems["+ i +"].Count"));
+			customerFlowItem.setStoreId(_ctx.longValue("DescribeCustomerFlowByLocationResponse.CustomerFlowItems["+ i +"].StoreId"));
+			customerFlowItem.setPercent(_ctx.floatValue("DescribeCustomerFlowByLocationResponse.CustomerFlowItems["+ i +"].Percent"));
+			customerFlowItem.setLocationName(_ctx.stringValue("DescribeCustomerFlowByLocationResponse.CustomerFlowItems["+ i +"].LocationName"));
+			customerFlowItem.setParentLocationIds(_ctx.stringValue("DescribeCustomerFlowByLocationResponse.CustomerFlowItems["+ i +"].ParentLocationIds"));
+			customerFlowItem.setLocationId(_ctx.longValue("DescribeCustomerFlowByLocationResponse.CustomerFlowItems["+ i +"].LocationId"));
 
-			passengerFlowItems.add(customerFlowItem);
+			customerFlowItems.add(customerFlowItem);
 		}
-		describeCustomerFlowByLocationResponse.setPassengerFlowItems(passengerFlowItems);
+		describeCustomerFlowByLocationResponse.setCustomerFlowItems(customerFlowItems);
 	 
 	 	return describeCustomerFlowByLocationResponse;
 	}

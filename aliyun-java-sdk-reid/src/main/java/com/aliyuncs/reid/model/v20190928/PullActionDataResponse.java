@@ -16,56 +16,26 @@ package com.aliyuncs.reid.model.v20190928;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.reid.transform.v20190928.ListActionDataResponseUnmarshaller;
+import com.aliyuncs.reid.transform.v20190928.PullActionDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListActionDataResponse extends AcsResponse {
-
-	private String requestId;
-
-	private Boolean success;
-
-	private Long cursorTime;
+public class PullActionDataResponse extends AcsResponse {
 
 	private String errorCode;
 
 	private String errorMessage;
 
-	private Integer pageNumber;
+	private String requestId;
 
-	private Long totalCount;
+	private Boolean success;
 
-	private Integer pageSize;
+	private Long nextMessageId;
 
 	private List<Action> actions;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public Long getCursorTime() {
-		return this.cursorTime;
-	}
-
-	public void setCursorTime(Long cursorTime) {
-		this.cursorTime = cursorTime;
-	}
 
 	public String getErrorCode() {
 		return this.errorCode;
@@ -83,28 +53,28 @@ public class ListActionDataResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Long getNextMessageId() {
+		return this.nextMessageId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setNextMessageId(Long nextMessageId) {
+		this.nextMessageId = nextMessageId;
 	}
 
 	public List<Action> getActions() {
@@ -415,7 +385,7 @@ public class ListActionDataResponse extends AcsResponse {
 	}
 
 	@Override
-	public ListActionDataResponse getInstance(UnmarshallerContext context) {
-		return	ListActionDataResponseUnmarshaller.unmarshall(this, context);
+	public PullActionDataResponse getInstance(UnmarshallerContext context) {
+		return	PullActionDataResponseUnmarshaller.unmarshall(this, context);
 	}
 }

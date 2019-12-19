@@ -29,11 +29,7 @@ public class ListEmapResponseUnmarshaller {
 		listEmapResponse.setRequestId(_ctx.stringValue("ListEmapResponse.RequestId"));
 		listEmapResponse.setErrorCode(_ctx.stringValue("ListEmapResponse.ErrorCode"));
 		listEmapResponse.setErrorMessage(_ctx.stringValue("ListEmapResponse.ErrorMessage"));
-		listEmapResponse.setMessage(_ctx.stringValue("ListEmapResponse.Message"));
-		listEmapResponse.setCode(_ctx.stringValue("ListEmapResponse.Code"));
-		listEmapResponse.setDynamicCode(_ctx.stringValue("ListEmapResponse.DynamicCode"));
 		listEmapResponse.setSuccess(_ctx.booleanValue("ListEmapResponse.Success"));
-		listEmapResponse.setDynamicMessage(_ctx.stringValue("ListEmapResponse.DynamicMessage"));
 
 		List<OpenEmap> openEmaps = new ArrayList<OpenEmap>();
 		for (int i = 0; i < _ctx.lengthValue("ListEmapResponse.OpenEmaps.Length"); i++) {

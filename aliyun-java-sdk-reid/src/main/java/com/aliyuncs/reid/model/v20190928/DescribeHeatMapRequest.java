@@ -25,7 +25,7 @@ import com.aliyuncs.reid.Endpoint;
 public class DescribeHeatMapRequest extends RpcAcsRequest<DescribeHeatMapResponse> {
 	   
 
-	private Long date;
+	private String date;
 
 	private Long storeId;
 
@@ -39,14 +39,14 @@ public class DescribeHeatMapRequest extends RpcAcsRequest<DescribeHeatMapRespons
 		} catch (Exception e) {}
 	}
 
-	public Long getDate() {
+	public String getDate() {
 		return this.date;
 	}
 
-	public void setDate(Long date) {
+	public void setDate(String date) {
 		this.date = date;
 		if(date != null){
-			putBodyParameter("Date", date.toString());
+			putBodyParameter("Date", date);
 		}
 	}
 

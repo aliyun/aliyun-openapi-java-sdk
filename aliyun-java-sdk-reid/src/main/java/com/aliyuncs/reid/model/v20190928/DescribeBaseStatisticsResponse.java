@@ -31,17 +31,9 @@ public class DescribeBaseStatisticsResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private String message;
-
-	private String code;
-
-	private String dynamicCode;
-
 	private String requestId;
 
 	private Boolean success;
-
-	private String dynamicMessage;
 
 	private List<BaseStatisticsItem> baseStatistics;
 
@@ -69,30 +61,6 @@ public class DescribeBaseStatisticsResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getDynamicCode() {
-		return this.dynamicCode;
-	}
-
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -109,14 +77,6 @@ public class DescribeBaseStatisticsResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
-	}
-
 	public List<BaseStatisticsItem> getBaseStatistics() {
 		return this.baseStatistics;
 	}
@@ -127,10 +87,6 @@ public class DescribeBaseStatisticsResponse extends AcsResponse {
 
 	public static class BaseStatisticsItem {
 
-		private Integer maleUvCount;
-
-		private String time;
-
 		private Long storeId;
 
 		private Integer femaleUvCount;
@@ -139,9 +95,13 @@ public class DescribeBaseStatisticsResponse extends AcsResponse {
 
 		private Integer newCount;
 
-		private Long locationId;
-
 		private String summaryType;
+
+		private Integer maleUvCount;
+
+		private String time;
+
+		private Long locationId;
 
 		private Long stayPeriod;
 
@@ -149,21 +109,13 @@ public class DescribeBaseStatisticsResponse extends AcsResponse {
 
 		private Integer onlyBodyUvCount;
 
-		public Integer getMaleUvCount() {
-			return this.maleUvCount;
-		}
+		private List<AgeItem> ageItems;
 
-		public void setMaleUvCount(Integer maleUvCount) {
-			this.maleUvCount = maleUvCount;
-		}
+		private List<StayDistributionItem> stayDistributionItems;
 
-		public String getTime() {
-			return this.time;
-		}
+		private List<AgeItem> maleAgeItems;
 
-		public void setTime(String time) {
-			this.time = time;
-		}
+		private List<AgeItem> femaleAgeItems;
 
 		public Long getStoreId() {
 			return this.storeId;
@@ -197,20 +149,36 @@ public class DescribeBaseStatisticsResponse extends AcsResponse {
 			this.newCount = newCount;
 		}
 
-		public Long getLocationId() {
-			return this.locationId;
-		}
-
-		public void setLocationId(Long locationId) {
-			this.locationId = locationId;
-		}
-
 		public String getSummaryType() {
 			return this.summaryType;
 		}
 
 		public void setSummaryType(String summaryType) {
 			this.summaryType = summaryType;
+		}
+
+		public Integer getMaleUvCount() {
+			return this.maleUvCount;
+		}
+
+		public void setMaleUvCount(Integer maleUvCount) {
+			this.maleUvCount = maleUvCount;
+		}
+
+		public String getTime() {
+			return this.time;
+		}
+
+		public void setTime(String time) {
+			this.time = time;
+		}
+
+		public Long getLocationId() {
+			return this.locationId;
+		}
+
+		public void setLocationId(Long locationId) {
+			this.locationId = locationId;
 		}
 
 		public Long getStayPeriod() {
@@ -235,6 +203,94 @@ public class DescribeBaseStatisticsResponse extends AcsResponse {
 
 		public void setOnlyBodyUvCount(Integer onlyBodyUvCount) {
 			this.onlyBodyUvCount = onlyBodyUvCount;
+		}
+
+		public List<AgeItem> getAgeItems() {
+			return this.ageItems;
+		}
+
+		public void setAgeItems(List<AgeItem> ageItems) {
+			this.ageItems = ageItems;
+		}
+
+		public List<StayDistributionItem> getStayDistributionItems() {
+			return this.stayDistributionItems;
+		}
+
+		public void setStayDistributionItems(List<StayDistributionItem> stayDistributionItems) {
+			this.stayDistributionItems = stayDistributionItems;
+		}
+
+		public List<AgeItem> getMaleAgeItems() {
+			return this.maleAgeItems;
+		}
+
+		public void setMaleAgeItems(List<AgeItem> maleAgeItems) {
+			this.maleAgeItems = maleAgeItems;
+		}
+
+		public List<AgeItem> getFemaleAgeItems() {
+			return this.femaleAgeItems;
+		}
+
+		public void setFemaleAgeItems(List<AgeItem> femaleAgeItems) {
+			this.femaleAgeItems = femaleAgeItems;
+		}
+
+		public static class AgeItem {
+
+			private String name;
+
+			private Integer count;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Integer getCount() {
+				return this.count;
+			}
+
+			public void setCount(Integer count) {
+				this.count = count;
+			}
+		}
+
+		public static class StayDistributionItem {
+
+			private Long startTs;
+
+			private Long endTs;
+
+			private Integer count;
+
+			public Long getStartTs() {
+				return this.startTs;
+			}
+
+			public void setStartTs(Long startTs) {
+				this.startTs = startTs;
+			}
+
+			public Long getEndTs() {
+				return this.endTs;
+			}
+
+			public void setEndTs(Long endTs) {
+				this.endTs = endTs;
+			}
+
+			public Integer getCount() {
+				return this.count;
+			}
+
+			public void setCount(Integer count) {
+				this.count = count;
+			}
 		}
 	}
 

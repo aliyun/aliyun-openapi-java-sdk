@@ -22,32 +22,19 @@ import com.aliyuncs.reid.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetHeatMapRequest extends RpcAcsRequest<GetHeatMapResponse> {
+public class DescribeCursorRequest extends RpcAcsRequest<DescribeCursorResponse> {
 	   
-
-	private Long date;
 
 	private Long storeId;
 
-	private Long emapId;
-	public GetHeatMapRequest() {
-		super("reid", "2019-09-28", "GetHeatMap", "1.0.0");
+	private String time;
+	public DescribeCursorRequest() {
+		super("reid", "2019-09-28", "DescribeCursor", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getDate() {
-		return this.date;
-	}
-
-	public void setDate(Long date) {
-		this.date = date;
-		if(date != null){
-			putBodyParameter("Date", date.toString());
-		}
 	}
 
 	public Long getStoreId() {
@@ -61,20 +48,20 @@ public class GetHeatMapRequest extends RpcAcsRequest<GetHeatMapResponse> {
 		}
 	}
 
-	public Long getEmapId() {
-		return this.emapId;
+	public String getTime() {
+		return this.time;
 	}
 
-	public void setEmapId(Long emapId) {
-		this.emapId = emapId;
-		if(emapId != null){
-			putBodyParameter("EmapId", emapId.toString());
+	public void setTime(String time) {
+		this.time = time;
+		if(time != null){
+			putBodyParameter("Time", time);
 		}
 	}
 
 	@Override
-	public Class<GetHeatMapResponse> getResponseClass() {
-		return GetHeatMapResponse.class;
+	public Class<DescribeCursorResponse> getResponseClass() {
+		return DescribeCursorResponse.class;
 	}
 
 }

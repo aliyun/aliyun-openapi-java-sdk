@@ -25,7 +25,7 @@ import com.aliyuncs.reid.Endpoint;
 public class DescribeOverviewDataRequest extends RpcAcsRequest<DescribeOverviewDataResponse> {
 	   
 
-	private Long date;
+	private String date;
 
 	private String storeIds;
 	public DescribeOverviewDataRequest() {
@@ -37,14 +37,14 @@ public class DescribeOverviewDataRequest extends RpcAcsRequest<DescribeOverviewD
 		} catch (Exception e) {}
 	}
 
-	public Long getDate() {
+	public String getDate() {
 		return this.date;
 	}
 
-	public void setDate(Long date) {
+	public void setDate(String date) {
 		this.date = date;
 		if(date != null){
-			putBodyParameter("Date", date.toString());
+			putBodyParameter("Date", date);
 		}
 	}
 

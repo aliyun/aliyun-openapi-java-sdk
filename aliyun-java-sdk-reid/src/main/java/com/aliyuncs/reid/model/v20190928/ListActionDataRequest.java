@@ -33,8 +33,6 @@ public class ListActionDataRequest extends RpcAcsRequest<ListActionDataResponse>
 
 	private Integer pageNumber;
 
-	private String name;
-
 	private Integer pageSize;
 
 	private Boolean filterInvalidData;
@@ -88,17 +86,6 @@ public class ListActionDataRequest extends RpcAcsRequest<ListActionDataResponse>
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("Name", name);
 		}
 	}
 

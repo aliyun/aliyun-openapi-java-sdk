@@ -14,6 +14,7 @@
 
 package com.aliyuncs.reid.model.v20190928;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.reid.transform.v20190928.ImportSpecialPersonnelResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -28,23 +29,11 @@ public class ImportSpecialPersonnelResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private Integer pageNumber;
-
-	private String message;
-
-	private String code;
-
-	private Long totalCount;
-
-	private String dynamicCode;
-
-	private Integer pageSize;
-
 	private String requestId;
 
 	private Boolean success;
 
-	private String dynamicMessage;
+	private List<SpecialPersonnelMap> specialPersonnelMaps;
 
 	public String getErrorCode() {
 		return this.errorCode;
@@ -60,54 +49,6 @@ public class ImportSpecialPersonnelResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public String getDynamicCode() {
-		return this.dynamicCode;
-	}
-
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public String getRequestId() {
@@ -126,12 +67,35 @@ public class ImportSpecialPersonnelResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
+	public List<SpecialPersonnelMap> getSpecialPersonnelMaps() {
+		return this.specialPersonnelMaps;
 	}
 
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
+	public void setSpecialPersonnelMaps(List<SpecialPersonnelMap> specialPersonnelMaps) {
+		this.specialPersonnelMaps = specialPersonnelMaps;
+	}
+
+	public static class SpecialPersonnelMap {
+
+		private Long ukId;
+
+		private Long storeId;
+
+		public Long getUkId() {
+			return this.ukId;
+		}
+
+		public void setUkId(Long ukId) {
+			this.ukId = ukId;
+		}
+
+		public Long getStoreId() {
+			return this.storeId;
+		}
+
+		public void setStoreId(Long storeId) {
+			this.storeId = storeId;
+		}
 	}
 
 	@Override

@@ -29,11 +29,7 @@ public class ListStoreResponseUnmarshaller {
 		listStoreResponse.setRequestId(_ctx.stringValue("ListStoreResponse.RequestId"));
 		listStoreResponse.setErrorCode(_ctx.stringValue("ListStoreResponse.ErrorCode"));
 		listStoreResponse.setErrorMessage(_ctx.stringValue("ListStoreResponse.ErrorMessage"));
-		listStoreResponse.setMessage(_ctx.stringValue("ListStoreResponse.Message"));
-		listStoreResponse.setCode(_ctx.stringValue("ListStoreResponse.Code"));
-		listStoreResponse.setDynamicCode(_ctx.stringValue("ListStoreResponse.DynamicCode"));
 		listStoreResponse.setSuccess(_ctx.booleanValue("ListStoreResponse.Success"));
-		listStoreResponse.setDynamicMessage(_ctx.stringValue("ListStoreResponse.DynamicMessage"));
 
 		List<OpenStore> stores = new ArrayList<OpenStore>();
 		for (int i = 0; i < _ctx.lengthValue("ListStoreResponse.Stores.Length"); i++) {

@@ -25,15 +25,15 @@ import com.aliyuncs.reid.Endpoint;
 public class DescribeCustomerFlowByLocationRequest extends RpcAcsRequest<DescribeCustomerFlowByLocationResponse> {
 	   
 
-	private Long endUVCount;
-
 	private String startDate;
 
 	private Long storeId;
 
+	private Long minCount;
+
 	private Long parentAmount;
 
-	private Long startUVCount;
+	private Long maxCount;
 
 	private String endDate;
 
@@ -47,17 +47,6 @@ public class DescribeCustomerFlowByLocationRequest extends RpcAcsRequest<Describ
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getEndUVCount() {
-		return this.endUVCount;
-	}
-
-	public void setEndUVCount(Long endUVCount) {
-		this.endUVCount = endUVCount;
-		if(endUVCount != null){
-			putBodyParameter("EndUVCount", endUVCount.toString());
-		}
 	}
 
 	public String getStartDate() {
@@ -82,6 +71,17 @@ public class DescribeCustomerFlowByLocationRequest extends RpcAcsRequest<Describ
 		}
 	}
 
+	public Long getMinCount() {
+		return this.minCount;
+	}
+
+	public void setMinCount(Long minCount) {
+		this.minCount = minCount;
+		if(minCount != null){
+			putBodyParameter("MinCount", minCount.toString());
+		}
+	}
+
 	public Long getParentAmount() {
 		return this.parentAmount;
 	}
@@ -93,14 +93,14 @@ public class DescribeCustomerFlowByLocationRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public Long getStartUVCount() {
-		return this.startUVCount;
+	public Long getMaxCount() {
+		return this.maxCount;
 	}
 
-	public void setStartUVCount(Long startUVCount) {
-		this.startUVCount = startUVCount;
-		if(startUVCount != null){
-			putBodyParameter("StartUVCount", startUVCount.toString());
+	public void setMaxCount(Long maxCount) {
+		this.maxCount = maxCount;
+		if(maxCount != null){
+			putBodyParameter("MaxCount", maxCount.toString());
 		}
 	}
 

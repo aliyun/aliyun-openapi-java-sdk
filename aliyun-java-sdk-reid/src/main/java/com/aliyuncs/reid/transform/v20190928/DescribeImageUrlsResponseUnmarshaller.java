@@ -29,11 +29,7 @@ public class DescribeImageUrlsResponseUnmarshaller {
 		describeImageUrlsResponse.setRequestId(_ctx.stringValue("DescribeImageUrlsResponse.RequestId"));
 		describeImageUrlsResponse.setErrorCode(_ctx.stringValue("DescribeImageUrlsResponse.ErrorCode"));
 		describeImageUrlsResponse.setErrorMessage(_ctx.stringValue("DescribeImageUrlsResponse.ErrorMessage"));
-		describeImageUrlsResponse.setMessage(_ctx.stringValue("DescribeImageUrlsResponse.Message"));
-		describeImageUrlsResponse.setCode(_ctx.stringValue("DescribeImageUrlsResponse.Code"));
-		describeImageUrlsResponse.setDynamicCode(_ctx.stringValue("DescribeImageUrlsResponse.DynamicCode"));
 		describeImageUrlsResponse.setSuccess(_ctx.booleanValue("DescribeImageUrlsResponse.Success"));
-		describeImageUrlsResponse.setDynamicMessage(_ctx.stringValue("DescribeImageUrlsResponse.DynamicMessage"));
 
 		List<ImageUrl> urls = new ArrayList<ImageUrl>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeImageUrlsResponse.Urls.Length"); i++) {

@@ -22,32 +22,23 @@ import com.aliyuncs.reid.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCameraStatisticRequest extends RpcAcsRequest<DescribeCameraStatisticResponse> {
+public class PullActionDataRequest extends RpcAcsRequest<PullActionDataResponse> {
 	   
-
-	private Long startTimestamp;
 
 	private Long storeId;
 
-	private Long endTimestamp;
-	public DescribeCameraStatisticRequest() {
-		super("reid", "2019-09-28", "DescribeCameraStatistic", "1.0.0");
+	private Long endMessageId;
+
+	private Integer limit;
+
+	private Long startMessageId;
+	public PullActionDataRequest() {
+		super("reid", "2019-09-28", "PullActionData", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getStartTimestamp() {
-		return this.startTimestamp;
-	}
-
-	public void setStartTimestamp(Long startTimestamp) {
-		this.startTimestamp = startTimestamp;
-		if(startTimestamp != null){
-			putBodyParameter("StartTimestamp", startTimestamp.toString());
-		}
 	}
 
 	public Long getStoreId() {
@@ -61,20 +52,42 @@ public class DescribeCameraStatisticRequest extends RpcAcsRequest<DescribeCamera
 		}
 	}
 
-	public Long getEndTimestamp() {
-		return this.endTimestamp;
+	public Long getEndMessageId() {
+		return this.endMessageId;
 	}
 
-	public void setEndTimestamp(Long endTimestamp) {
-		this.endTimestamp = endTimestamp;
-		if(endTimestamp != null){
-			putBodyParameter("EndTimestamp", endTimestamp.toString());
+	public void setEndMessageId(Long endMessageId) {
+		this.endMessageId = endMessageId;
+		if(endMessageId != null){
+			putBodyParameter("EndMessageId", endMessageId.toString());
+		}
+	}
+
+	public Integer getLimit() {
+		return this.limit;
+	}
+
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+		if(limit != null){
+			putBodyParameter("Limit", limit.toString());
+		}
+	}
+
+	public Long getStartMessageId() {
+		return this.startMessageId;
+	}
+
+	public void setStartMessageId(Long startMessageId) {
+		this.startMessageId = startMessageId;
+		if(startMessageId != null){
+			putBodyParameter("StartMessageId", startMessageId.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeCameraStatisticResponse> getResponseClass() {
-		return DescribeCameraStatisticResponse.class;
+	public Class<PullActionDataResponse> getResponseClass() {
+		return PullActionDataResponse.class;
 	}
 
 }

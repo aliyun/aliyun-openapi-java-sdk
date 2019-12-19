@@ -25,11 +25,15 @@ import com.aliyuncs.reid.Endpoint;
 public class DescribeBaseStatisticsRequest extends RpcAcsRequest<DescribeBaseStatisticsResponse> {
 	   
 
+	private String date;
+
+	private String extraStatisticTypes;
+
 	private Long storeId;
 
 	private String summaryType;
 
-	private String time;
+	private Long locationId;
 	public DescribeBaseStatisticsRequest() {
 		super("reid", "2019-09-28", "DescribeBaseStatistics", "1.0.0");
 		setMethod(MethodType.POST);
@@ -37,6 +41,28 @@ public class DescribeBaseStatisticsRequest extends RpcAcsRequest<DescribeBaseSta
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDate() {
+		return this.date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+		if(date != null){
+			putBodyParameter("Date", date);
+		}
+	}
+
+	public String getExtraStatisticTypes() {
+		return this.extraStatisticTypes;
+	}
+
+	public void setExtraStatisticTypes(String extraStatisticTypes) {
+		this.extraStatisticTypes = extraStatisticTypes;
+		if(extraStatisticTypes != null){
+			putBodyParameter("ExtraStatisticTypes", extraStatisticTypes);
+		}
 	}
 
 	public Long getStoreId() {
@@ -61,14 +87,14 @@ public class DescribeBaseStatisticsRequest extends RpcAcsRequest<DescribeBaseSta
 		}
 	}
 
-	public String getTime() {
-		return this.time;
+	public Long getLocationId() {
+		return this.locationId;
 	}
 
-	public void setTime(String time) {
-		this.time = time;
-		if(time != null){
-			putBodyParameter("Time", time);
+	public void setLocationId(Long locationId) {
+		this.locationId = locationId;
+		if(locationId != null){
+			putBodyParameter("LocationId", locationId.toString());
 		}
 	}
 
