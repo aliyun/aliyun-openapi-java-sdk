@@ -59,6 +59,8 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		private String privilegeExceeded;
 
+		private String accountPasswordValidTime;
+
 		private List<DatabasePrivilege> databasePrivileges;
 
 		public String getAccountName() {
@@ -107,6 +109,14 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public void setPrivilegeExceeded(String privilegeExceeded) {
 			this.privilegeExceeded = privilegeExceeded;
+		}
+
+		public String getAccountPasswordValidTime() {
+			return this.accountPasswordValidTime;
+		}
+
+		public void setAccountPasswordValidTime(String accountPasswordValidTime) {
+			this.accountPasswordValidTime = accountPasswordValidTime;
 		}
 
 		public List<DatabasePrivilege> getDatabasePrivileges() {

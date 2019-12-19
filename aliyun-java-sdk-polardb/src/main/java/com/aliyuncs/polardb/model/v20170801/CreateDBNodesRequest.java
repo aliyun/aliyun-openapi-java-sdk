@@ -112,7 +112,9 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
-	}	public List<DBNode> getDBNodes() {
+	}
+
+	public List<DBNode> getDBNodes() {
 		return this.dBNodes;
 	}
 
@@ -125,8 +127,6 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 			}
 		}	
 	}
-
-
 
 	public static class DBNode {
 

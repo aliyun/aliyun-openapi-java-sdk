@@ -70,7 +70,9 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		if(all != null){
 			putQueryParameter("All", all.toString());
 		}
-	}	public List<String> getResourceIds() {
+	}
+
+	public List<String> getResourceIds() {
 		return this.resourceIds;
 	}
 
@@ -82,8 +84,6 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 			}
 		}	
 	}
-
-
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
@@ -127,7 +127,9 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
 		}
-	}	public List<String> getTagKeys() {
+	}
+
+	public List<String> getTagKeys() {
 		return this.tagKeys;
 	}
 
@@ -139,8 +141,6 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 			}
 		}	
 	}
-
-
 
 	@Override
 	public Class<UntagResourcesResponse> getResponseClass() {

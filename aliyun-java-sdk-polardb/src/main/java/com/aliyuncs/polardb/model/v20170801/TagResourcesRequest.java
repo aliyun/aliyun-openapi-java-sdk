@@ -57,7 +57,9 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
-	}	public List<Tag> getTags() {
+	}
+
+	public List<Tag> getTags() {
 		return this.tags;
 	}
 
@@ -83,8 +85,6 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 			}
 		}	
 	}
-
-
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;

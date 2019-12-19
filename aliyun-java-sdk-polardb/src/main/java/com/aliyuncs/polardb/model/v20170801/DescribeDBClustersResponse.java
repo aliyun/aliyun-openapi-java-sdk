@@ -115,6 +115,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private Long storageUsed;
 
+		private String resourceGroupId;
+
 		private List<DBNode> dBNodes;
 
 		private List<Tag> tags;
@@ -269,6 +271,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setStorageUsed(Long storageUsed) {
 			this.storageUsed = storageUsed;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<DBNode> getDBNodes() {

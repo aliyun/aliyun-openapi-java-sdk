@@ -33,6 +33,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String clusterNetworkType;
 
+	private String resourceGroupId;
+
 	private String dBNodeClass;
 
 	private String creationOption;
@@ -114,6 +116,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.clusterNetworkType = clusterNetworkType;
 		if(clusterNetworkType != null){
 			putQueryParameter("ClusterNetworkType", clusterNetworkType);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

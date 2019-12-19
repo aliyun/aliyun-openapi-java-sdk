@@ -38,6 +38,7 @@ public class DescribeAccountsResponseUnmarshaller {
 			dBAccount.setAccountType(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountType"));
 			dBAccount.setAccountLockState(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountLockState"));
 			dBAccount.setPrivilegeExceeded(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].PrivilegeExceeded"));
+			dBAccount.setAccountPasswordValidTime(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountPasswordValidTime"));
 
 			List<DatabasePrivilege> databasePrivileges = new ArrayList<DatabasePrivilege>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges.Length"); j++) {

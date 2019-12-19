@@ -29,6 +29,8 @@ public class DescribeDBClusterAccessWhitelistResponse extends AcsResponse {
 
 	private List<DBClusterIPArray> items;
 
+	private List<DBClusterSecurityGroup> dBClusterSecurityGroups;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -43,6 +45,14 @@ public class DescribeDBClusterAccessWhitelistResponse extends AcsResponse {
 
 	public void setItems(List<DBClusterIPArray> items) {
 		this.items = items;
+	}
+
+	public List<DBClusterSecurityGroup> getDBClusterSecurityGroups() {
+		return this.dBClusterSecurityGroups;
+	}
+
+	public void setDBClusterSecurityGroups(List<DBClusterSecurityGroup> dBClusterSecurityGroups) {
+		this.dBClusterSecurityGroups = dBClusterSecurityGroups;
 	}
 
 	public static class DBClusterIPArray {
@@ -75,6 +85,29 @@ public class DescribeDBClusterAccessWhitelistResponse extends AcsResponse {
 
 		public void setSecurityIps(String securityIps) {
 			this.securityIps = securityIps;
+		}
+	}
+
+	public static class DBClusterSecurityGroup {
+
+		private String securityGroupId;
+
+		private String securityGroupName;
+
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
+		}
+
+		public String getSecurityGroupName() {
+			return this.securityGroupName;
+		}
+
+		public void setSecurityGroupName(String securityGroupName) {
+			this.securityGroupName = securityGroupName;
 		}
 	}
 

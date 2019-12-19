@@ -71,6 +71,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private Boolean isLatestVersion;
 
+	private String resourceGroupId;
+
 	private List<Tag> tags;
 
 	private List<DBNode> dBNodes;
@@ -257,6 +259,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setIsLatestVersion(Boolean isLatestVersion) {
 		this.isLatestVersion = isLatestVersion;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public List<Tag> getTags() {

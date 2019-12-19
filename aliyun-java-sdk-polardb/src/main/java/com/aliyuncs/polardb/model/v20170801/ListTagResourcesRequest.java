@@ -23,24 +23,26 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
+public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private List<String> dBNodeIds;
+	private String nextToken;
 
-	private String clientToken;
+	private List<Tag> tags;
+
+	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
-
-	private String dBClusterId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DeleteDBNodesRequest() {
-		super("polardb", "2017-08-01", "DeleteDBNodes", "polardb");
+
+	private String resourceType;
+	public ListTagResourcesRequest() {
+		super("polardb", "2017-08-01", "ListTagResources", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,28 +61,42 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 		}
 	}
 
-	public List<String> getDBNodeIds() {
-		return this.dBNodeIds;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setDBNodeIds(List<String> dBNodeIds) {
-		this.dBNodeIds = dBNodeIds;	
-		if (dBNodeIds != null) {
-			for (int i = 0; i < dBNodeIds.size(); i++) {
-				putQueryParameter("DBNodeId." + (i + 1) , dBNodeIds.get(i));
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public List<String> getResourceIds() {
+		return this.resourceIds;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -91,17 +107,6 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -127,9 +132,43 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 		}
 	}
 
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
 	@Override
-	public Class<DeleteDBNodesResponse> getResponseClass() {
-		return DeleteDBNodesResponse.class;
+	public Class<ListTagResourcesResponse> getResponseClass() {
+		return ListTagResourcesResponse.class;
 	}
 
 }

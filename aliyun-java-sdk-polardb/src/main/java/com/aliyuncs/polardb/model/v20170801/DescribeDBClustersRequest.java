@@ -34,6 +34,8 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
 
 	private List<Tag> tags;
@@ -100,6 +102,17 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -109,7 +122,9 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
-	}	public List<Tag> getTags() {
+	}
+
+	public List<Tag> getTags() {
 		return this.tags;
 	}
 
@@ -122,8 +137,6 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 			}
 		}	
 	}
-
-
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;

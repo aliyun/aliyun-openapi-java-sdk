@@ -37,7 +37,11 @@ public class ModifyDBClusterAccessWhitelistRequest extends RpcAcsRequest<ModifyD
 
 	private String ownerAccount;
 
+	private String whiteListType;
+
 	private Long ownerId;
+
+	private String securityGroupIds;
 
 	private String dBClusterIPArrayName;
 	public ModifyDBClusterAccessWhitelistRequest() {
@@ -115,6 +119,17 @@ public class ModifyDBClusterAccessWhitelistRequest extends RpcAcsRequest<ModifyD
 		}
 	}
 
+	public String getWhiteListType() {
+		return this.whiteListType;
+	}
+
+	public void setWhiteListType(String whiteListType) {
+		this.whiteListType = whiteListType;
+		if(whiteListType != null){
+			putQueryParameter("WhiteListType", whiteListType);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -123,6 +138,17 @@ public class ModifyDBClusterAccessWhitelistRequest extends RpcAcsRequest<ModifyD
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSecurityGroupIds() {
+		return this.securityGroupIds;
+	}
+
+	public void setSecurityGroupIds(String securityGroupIds) {
+		this.securityGroupIds = securityGroupIds;
+		if(securityGroupIds != null){
+			putQueryParameter("SecurityGroupIds", securityGroupIds);
 		}
 	}
 

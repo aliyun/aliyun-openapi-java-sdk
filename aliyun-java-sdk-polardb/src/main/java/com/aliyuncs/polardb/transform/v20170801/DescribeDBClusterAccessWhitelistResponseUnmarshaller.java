@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterAccessWhitelistResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterAccessWhitelistResponse.DBClusterIPArray;
+import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterAccessWhitelistResponse.DBClusterSecurityGroup;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +39,16 @@ public class DescribeDBClusterAccessWhitelistResponseUnmarshaller {
 			items.add(dBClusterIPArray);
 		}
 		describeDBClusterAccessWhitelistResponse.setItems(items);
+
+		List<DBClusterSecurityGroup> dBClusterSecurityGroups = new ArrayList<DBClusterSecurityGroup>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterAccessWhitelistResponse.DBClusterSecurityGroups.Length"); i++) {
+			DBClusterSecurityGroup dBClusterSecurityGroup = new DBClusterSecurityGroup();
+			dBClusterSecurityGroup.setSecurityGroupId(_ctx.stringValue("DescribeDBClusterAccessWhitelistResponse.DBClusterSecurityGroups["+ i +"].SecurityGroupId"));
+			dBClusterSecurityGroup.setSecurityGroupName(_ctx.stringValue("DescribeDBClusterAccessWhitelistResponse.DBClusterSecurityGroups["+ i +"].SecurityGroupName"));
+
+			dBClusterSecurityGroups.add(dBClusterSecurityGroup);
+		}
+		describeDBClusterAccessWhitelistResponse.setDBClusterSecurityGroups(dBClusterSecurityGroups);
 	 
 	 	return describeDBClusterAccessWhitelistResponse;
 	}

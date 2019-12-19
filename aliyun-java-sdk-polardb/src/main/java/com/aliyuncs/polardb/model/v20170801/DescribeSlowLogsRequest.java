@@ -15,7 +15,6 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
@@ -23,14 +22,16 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
+public class DescribeSlowLogsRequest extends RpcAcsRequest<DescribeSlowLogsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private List<String> dBNodeIds;
+	private String startTime;
 
-	private String clientToken;
+	private Integer pageNumber;
+
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
@@ -38,9 +39,13 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 
 	private String ownerAccount;
 
+	private String endTime;
+
 	private Long ownerId;
-	public DeleteDBNodesRequest() {
-		super("polardb", "2017-08-01", "DeleteDBNodes", "polardb");
+
+	private String dBName;
+	public DescribeSlowLogsRequest() {
+		super("polardb", "2017-08-01", "DescribeSlowLogs", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,27 +64,36 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 		}
 	}
 
-	public List<String> getDBNodeIds() {
-		return this.dBNodeIds;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setDBNodeIds(List<String> dBNodeIds) {
-		this.dBNodeIds = dBNodeIds;	
-		if (dBNodeIds != null) {
-			for (int i = 0; i < dBNodeIds.size(); i++) {
-				putQueryParameter("DBNodeId." + (i + 1) , dBNodeIds.get(i));
-			}
-		}	
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -116,6 +130,17 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 		}
 	}
 
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -127,9 +152,20 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 		}
 	}
 
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
+		}
+	}
+
 	@Override
-	public Class<DeleteDBNodesResponse> getResponseClass() {
-		return DeleteDBNodesResponse.class;
+	public Class<DescribeSlowLogsResponse> getResponseClass() {
+		return DescribeSlowLogsResponse.class;
 	}
 
 }
