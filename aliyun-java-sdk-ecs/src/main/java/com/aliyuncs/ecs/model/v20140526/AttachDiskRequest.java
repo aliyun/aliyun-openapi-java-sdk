@@ -27,6 +27,12 @@ public class AttachDiskRequest extends RpcAcsRequest<AttachDiskResponse> {
 
 	private Long resourceOwnerId;
 
+	private String keyPairName;
+
+	private Boolean bootable;
+
+	private String password;
+
 	private String diskId;
 
 	private Boolean deleteWithInstance;
@@ -57,6 +63,39 @@ public class AttachDiskRequest extends RpcAcsRequest<AttachDiskResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getKeyPairName() {
+		return this.keyPairName;
+	}
+
+	public void setKeyPairName(String keyPairName) {
+		this.keyPairName = keyPairName;
+		if(keyPairName != null){
+			putQueryParameter("KeyPairName", keyPairName);
+		}
+	}
+
+	public Boolean getBootable() {
+		return this.bootable;
+	}
+
+	public void setBootable(Boolean bootable) {
+		this.bootable = bootable;
+		if(bootable != null){
+			putQueryParameter("Bootable", bootable.toString());
+		}
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putQueryParameter("Password", password);
 		}
 	}
 

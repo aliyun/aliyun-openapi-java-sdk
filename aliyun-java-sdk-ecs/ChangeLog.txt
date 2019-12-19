@@ -1,3 +1,6 @@
+2019-12-19 Version: 4.17.9
+- DescribeNetworkInterfaces Supports NextToken.
+
 2019-11-28 Version: 4.17.8
 - Eni Supports Multi-SecurityGroup.
 

@@ -38,6 +38,8 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 
 	private String resourceGroupId;
 
+	private String nextToken;
+
 	private Integer pageSize;
 
 	private List<Tag> tags;
@@ -59,6 +61,8 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 	private String vpcId;
 
 	private String primaryIpAddress;
+
+	private Integer maxResults;
 
 	private List<String> networkInterfaceIds;
 	public DescribeNetworkInterfacesRequest() {
@@ -133,6 +137,17 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -259,6 +274,17 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		this.primaryIpAddress = primaryIpAddress;
 		if(primaryIpAddress != null){
 			putQueryParameter("PrimaryIpAddress", primaryIpAddress);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

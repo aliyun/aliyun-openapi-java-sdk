@@ -29,6 +29,8 @@ public class DetachDiskRequest extends RpcAcsRequest<DetachDiskResponse> {
 
 	private String diskId;
 
+	private Boolean deleteWithInstance;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -64,6 +66,17 @@ public class DetachDiskRequest extends RpcAcsRequest<DetachDiskResponse> {
 		this.diskId = diskId;
 		if(diskId != null){
 			putQueryParameter("DiskId", diskId);
+		}
+	}
+
+	public Boolean getDeleteWithInstance() {
+		return this.deleteWithInstance;
+	}
+
+	public void setDeleteWithInstance(Boolean deleteWithInstance) {
+		this.deleteWithInstance = deleteWithInstance;
+		if(deleteWithInstance != null){
+			putQueryParameter("DeleteWithInstance", deleteWithInstance.toString());
 		}
 	}
 

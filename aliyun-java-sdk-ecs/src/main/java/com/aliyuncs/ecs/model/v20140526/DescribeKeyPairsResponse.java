@@ -81,6 +81,8 @@ public class DescribeKeyPairsResponse extends AcsResponse {
 
 		private String keyPairFingerPrint;
 
+		private String creationTime;
+
 		private String resourceGroupId;
 
 		private List<Tag> tags;
@@ -99,6 +101,14 @@ public class DescribeKeyPairsResponse extends AcsResponse {
 
 		public void setKeyPairFingerPrint(String keyPairFingerPrint) {
 			this.keyPairFingerPrint = keyPairFingerPrint;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getResourceGroupId() {
