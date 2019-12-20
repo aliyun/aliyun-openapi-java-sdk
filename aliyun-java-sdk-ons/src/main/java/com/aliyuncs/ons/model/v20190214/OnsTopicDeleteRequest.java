@@ -15,32 +15,26 @@
 package com.aliyuncs.ons.model.v20190214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ons.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OnsTopicDeleteRequest extends RpcAcsRequest<OnsTopicDeleteResponse> {
-	
-	public OnsTopicDeleteRequest() {
-		super("Ons", "2019-02-14", "OnsTopicDelete", "ons");
-	}
-
-	private Long preventCache;
+	   
 
 	private String instanceId;
 
 	private String topic;
-
-	public Long getPreventCache() {
-		return this.preventCache;
-	}
-
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
-		}
+	public OnsTopicDeleteRequest() {
+		super("Ons", "2019-02-14", "OnsTopicDelete", "ons");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getInstanceId() {

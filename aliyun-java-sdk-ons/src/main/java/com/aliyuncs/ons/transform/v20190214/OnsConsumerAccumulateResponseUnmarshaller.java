@@ -25,25 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsConsumerAccumulateResponseUnmarshaller {
 
-	public static OnsConsumerAccumulateResponse unmarshall(OnsConsumerAccumulateResponse onsConsumerAccumulateResponse, UnmarshallerContext context) {
+	public static OnsConsumerAccumulateResponse unmarshall(OnsConsumerAccumulateResponse onsConsumerAccumulateResponse, UnmarshallerContext _ctx) {
 		
-		onsConsumerAccumulateResponse.setRequestId(context.stringValue("OnsConsumerAccumulateResponse.RequestId"));
-		onsConsumerAccumulateResponse.setHelpUrl(context.stringValue("OnsConsumerAccumulateResponse.HelpUrl"));
+		onsConsumerAccumulateResponse.setRequestId(_ctx.stringValue("OnsConsumerAccumulateResponse.RequestId"));
+		onsConsumerAccumulateResponse.setHelpUrl(_ctx.stringValue("OnsConsumerAccumulateResponse.HelpUrl"));
 
 		Data data = new Data();
-		data.setOnline(context.booleanValue("OnsConsumerAccumulateResponse.Data.Online"));
-		data.setTotalDiff(context.longValue("OnsConsumerAccumulateResponse.Data.TotalDiff"));
-		data.setConsumeTps(context.floatValue("OnsConsumerAccumulateResponse.Data.ConsumeTps"));
-		data.setLastTimestamp(context.longValue("OnsConsumerAccumulateResponse.Data.LastTimestamp"));
-		data.setDelayTime(context.longValue("OnsConsumerAccumulateResponse.Data.DelayTime"));
+		data.setOnline(_ctx.booleanValue("OnsConsumerAccumulateResponse.Data.Online"));
+		data.setTotalDiff(_ctx.longValue("OnsConsumerAccumulateResponse.Data.TotalDiff"));
+		data.setConsumeTps(_ctx.floatValue("OnsConsumerAccumulateResponse.Data.ConsumeTps"));
+		data.setLastTimestamp(_ctx.longValue("OnsConsumerAccumulateResponse.Data.LastTimestamp"));
+		data.setDelayTime(_ctx.longValue("OnsConsumerAccumulateResponse.Data.DelayTime"));
 
 		List<DetailInTopicDo> detailInTopicList = new ArrayList<DetailInTopicDo>();
-		for (int i = 0; i < context.lengthValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList.Length"); i++) {
 			DetailInTopicDo detailInTopicDo = new DetailInTopicDo();
-			detailInTopicDo.setTopic(context.stringValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].Topic"));
-			detailInTopicDo.setTotalDiff(context.longValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].TotalDiff"));
-			detailInTopicDo.setLastTimestamp(context.longValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].LastTimestamp"));
-			detailInTopicDo.setDelayTime(context.longValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].DelayTime"));
+			detailInTopicDo.setTopic(_ctx.stringValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].Topic"));
+			detailInTopicDo.setTotalDiff(_ctx.longValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].TotalDiff"));
+			detailInTopicDo.setLastTimestamp(_ctx.longValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].LastTimestamp"));
+			detailInTopicDo.setDelayTime(_ctx.longValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].DelayTime"));
 
 			detailInTopicList.add(detailInTopicDo);
 		}

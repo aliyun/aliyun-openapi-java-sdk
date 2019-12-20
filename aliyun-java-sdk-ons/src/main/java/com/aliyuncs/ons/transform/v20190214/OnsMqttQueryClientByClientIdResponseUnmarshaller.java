@@ -25,23 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsMqttQueryClientByClientIdResponseUnmarshaller {
 
-	public static OnsMqttQueryClientByClientIdResponse unmarshall(OnsMqttQueryClientByClientIdResponse onsMqttQueryClientByClientIdResponse, UnmarshallerContext context) {
+	public static OnsMqttQueryClientByClientIdResponse unmarshall(OnsMqttQueryClientByClientIdResponse onsMqttQueryClientByClientIdResponse, UnmarshallerContext _ctx) {
 		
-		onsMqttQueryClientByClientIdResponse.setRequestId(context.stringValue("OnsMqttQueryClientByClientIdResponse.RequestId"));
-		onsMqttQueryClientByClientIdResponse.setHelpUrl(context.stringValue("OnsMqttQueryClientByClientIdResponse.HelpUrl"));
+		onsMqttQueryClientByClientIdResponse.setRequestId(_ctx.stringValue("OnsMqttQueryClientByClientIdResponse.RequestId"));
+		onsMqttQueryClientByClientIdResponse.setHelpUrl(_ctx.stringValue("OnsMqttQueryClientByClientIdResponse.HelpUrl"));
 
 		MqttClientInfoDo mqttClientInfoDo = new MqttClientInfoDo();
-		mqttClientInfoDo.setOnline(context.booleanValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.Online"));
-		mqttClientInfoDo.setClientId(context.stringValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.ClientId"));
-		mqttClientInfoDo.setSocketChannel(context.stringValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SocketChannel"));
-		mqttClientInfoDo.setLastTouch(context.longValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.LastTouch"));
+		mqttClientInfoDo.setOnline(_ctx.booleanValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.Online"));
+		mqttClientInfoDo.setClientId(_ctx.stringValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.ClientId"));
+		mqttClientInfoDo.setSocketChannel(_ctx.stringValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SocketChannel"));
+		mqttClientInfoDo.setLastTouch(_ctx.longValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.LastTouch"));
 
 		List<SubscriptionDo> subScriptonData = new ArrayList<SubscriptionDo>();
-		for (int i = 0; i < context.lengthValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SubScriptonData.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SubScriptonData.Length"); i++) {
 			SubscriptionDo subscriptionDo = new SubscriptionDo();
-			subscriptionDo.setParentTopic(context.stringValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SubScriptonData["+ i +"].ParentTopic"));
-			subscriptionDo.setSubTopic(context.stringValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SubScriptonData["+ i +"].SubTopic"));
-			subscriptionDo.setQos(context.integerValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SubScriptonData["+ i +"].Qos"));
+			subscriptionDo.setParentTopic(_ctx.stringValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SubScriptonData["+ i +"].ParentTopic"));
+			subscriptionDo.setSubTopic(_ctx.stringValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SubScriptonData["+ i +"].SubTopic"));
+			subscriptionDo.setQos(_ctx.integerValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SubScriptonData["+ i +"].Qos"));
 
 			subScriptonData.add(subscriptionDo);
 		}

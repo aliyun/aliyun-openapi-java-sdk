@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsTopicUpdateResponseUnmarshaller {
 
-	public static OnsTopicUpdateResponse unmarshall(OnsTopicUpdateResponse onsTopicUpdateResponse, UnmarshallerContext context) {
+	public static OnsTopicUpdateResponse unmarshall(OnsTopicUpdateResponse onsTopicUpdateResponse, UnmarshallerContext _ctx) {
 		
-		onsTopicUpdateResponse.setRequestId(context.stringValue("OnsTopicUpdateResponse.RequestId"));
-		onsTopicUpdateResponse.setHelpUrl(context.stringValue("OnsTopicUpdateResponse.HelpUrl"));
+		onsTopicUpdateResponse.setRequestId(_ctx.stringValue("OnsTopicUpdateResponse.RequestId"));
+		onsTopicUpdateResponse.setHelpUrl(_ctx.stringValue("OnsTopicUpdateResponse.HelpUrl"));
 	 
 	 	return onsTopicUpdateResponse;
 	}

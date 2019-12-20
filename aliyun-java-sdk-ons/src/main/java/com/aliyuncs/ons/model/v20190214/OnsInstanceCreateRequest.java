@@ -15,31 +15,36 @@
 package com.aliyuncs.ons.model.v20190214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ons.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OnsInstanceCreateRequest extends RpcAcsRequest<OnsInstanceCreateResponse> {
-	
-	public OnsInstanceCreateRequest() {
-		super("Ons", "2019-02-14", "OnsInstanceCreate", "ons");
-	}
-
-	private Long preventCache;
-
-	private String instanceName;
+	   
 
 	private String remark;
 
-	public Long getPreventCache() {
-		return this.preventCache;
+	private String instanceName;
+	public OnsInstanceCreateRequest() {
+		super("Ons", "2019-02-14", "OnsInstanceCreate", "ons");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
 		}
 	}
 
@@ -51,17 +56,6 @@ public class OnsInstanceCreateRequest extends RpcAcsRequest<OnsInstanceCreateRes
 		this.instanceName = instanceName;
 		if(instanceName != null){
 			putQueryParameter("InstanceName", instanceName);
-		}
-	}
-
-	public String getRemark() {
-		return this.remark;
-	}
-
-	public void setRemark(String remark) {
-		this.remark = remark;
-		if(remark != null){
-			putQueryParameter("Remark", remark);
 		}
 	}
 

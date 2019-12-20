@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsTopicListResponseUnmarshaller {
 
-	public static OnsTopicListResponse unmarshall(OnsTopicListResponse onsTopicListResponse, UnmarshallerContext context) {
+	public static OnsTopicListResponse unmarshall(OnsTopicListResponse onsTopicListResponse, UnmarshallerContext _ctx) {
 		
-		onsTopicListResponse.setRequestId(context.stringValue("OnsTopicListResponse.RequestId"));
-		onsTopicListResponse.setHelpUrl(context.stringValue("OnsTopicListResponse.HelpUrl"));
+		onsTopicListResponse.setRequestId(_ctx.stringValue("OnsTopicListResponse.RequestId"));
+		onsTopicListResponse.setHelpUrl(_ctx.stringValue("OnsTopicListResponse.HelpUrl"));
 
 		List<PublishInfoDo> data = new ArrayList<PublishInfoDo>();
-		for (int i = 0; i < context.lengthValue("OnsTopicListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsTopicListResponse.Data.Length"); i++) {
 			PublishInfoDo publishInfoDo = new PublishInfoDo();
-			publishInfoDo.setTopic(context.stringValue("OnsTopicListResponse.Data["+ i +"].Topic"));
-			publishInfoDo.setOwner(context.stringValue("OnsTopicListResponse.Data["+ i +"].Owner"));
-			publishInfoDo.setRelation(context.integerValue("OnsTopicListResponse.Data["+ i +"].Relation"));
-			publishInfoDo.setRelationName(context.stringValue("OnsTopicListResponse.Data["+ i +"].RelationName"));
-			publishInfoDo.setCreateTime(context.longValue("OnsTopicListResponse.Data["+ i +"].CreateTime"));
-			publishInfoDo.setRemark(context.stringValue("OnsTopicListResponse.Data["+ i +"].Remark"));
-			publishInfoDo.setMessageType(context.integerValue("OnsTopicListResponse.Data["+ i +"].MessageType"));
-			publishInfoDo.setInstanceId(context.stringValue("OnsTopicListResponse.Data["+ i +"].InstanceId"));
-			publishInfoDo.setIndependentNaming(context.booleanValue("OnsTopicListResponse.Data["+ i +"].IndependentNaming"));
+			publishInfoDo.setTopic(_ctx.stringValue("OnsTopicListResponse.Data["+ i +"].Topic"));
+			publishInfoDo.setOwner(_ctx.stringValue("OnsTopicListResponse.Data["+ i +"].Owner"));
+			publishInfoDo.setRelation(_ctx.integerValue("OnsTopicListResponse.Data["+ i +"].Relation"));
+			publishInfoDo.setRelationName(_ctx.stringValue("OnsTopicListResponse.Data["+ i +"].RelationName"));
+			publishInfoDo.setCreateTime(_ctx.longValue("OnsTopicListResponse.Data["+ i +"].CreateTime"));
+			publishInfoDo.setRemark(_ctx.stringValue("OnsTopicListResponse.Data["+ i +"].Remark"));
+			publishInfoDo.setMessageType(_ctx.integerValue("OnsTopicListResponse.Data["+ i +"].MessageType"));
+			publishInfoDo.setInstanceId(_ctx.stringValue("OnsTopicListResponse.Data["+ i +"].InstanceId"));
+			publishInfoDo.setIndependentNaming(_ctx.booleanValue("OnsTopicListResponse.Data["+ i +"].IndependentNaming"));
 
 			data.add(publishInfoDo);
 		}

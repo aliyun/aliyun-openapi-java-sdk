@@ -15,37 +15,53 @@
 package com.aliyuncs.ons.model.v20190214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ons.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OnsTraceQueryByMsgKeyRequest extends RpcAcsRequest<OnsTraceQueryByMsgKeyResponse> {
-	
-	public OnsTraceQueryByMsgKeyRequest() {
-		super("Ons", "2019-02-14", "OnsTraceQueryByMsgKey", "ons");
-	}
-
-	private Long preventCache;
-
-	private String instanceId;
-
-	private String topic;
+	   
 
 	private Long endTime;
 
 	private Long beginTime;
 
-	private String msgKey;
+	private String instanceId;
 
-	public Long getPreventCache() {
-		return this.preventCache;
+	private String topic;
+
+	private String msgKey;
+	public OnsTraceQueryByMsgKeyRequest() {
+		super("Ons", "2019-02-14", "OnsTraceQueryByMsgKey", "ons");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Long getBeginTime() {
+		return this.beginTime;
+	}
+
+	public void setBeginTime(Long beginTime) {
+		this.beginTime = beginTime;
+		if(beginTime != null){
+			putQueryParameter("BeginTime", beginTime.toString());
 		}
 	}
 
@@ -68,28 +84,6 @@ public class OnsTraceQueryByMsgKeyRequest extends RpcAcsRequest<OnsTraceQueryByM
 		this.topic = topic;
 		if(topic != null){
 			putQueryParameter("Topic", topic);
-		}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
-	}
-
-	public Long getBeginTime() {
-		return this.beginTime;
-	}
-
-	public void setBeginTime(Long beginTime) {
-		this.beginTime = beginTime;
-		if(beginTime != null){
-			putQueryParameter("BeginTime", beginTime.toString());
 		}
 	}
 

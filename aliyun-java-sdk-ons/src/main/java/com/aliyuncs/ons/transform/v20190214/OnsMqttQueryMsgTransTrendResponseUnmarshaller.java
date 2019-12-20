@@ -25,21 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsMqttQueryMsgTransTrendResponseUnmarshaller {
 
-	public static OnsMqttQueryMsgTransTrendResponse unmarshall(OnsMqttQueryMsgTransTrendResponse onsMqttQueryMsgTransTrendResponse, UnmarshallerContext context) {
+	public static OnsMqttQueryMsgTransTrendResponse unmarshall(OnsMqttQueryMsgTransTrendResponse onsMqttQueryMsgTransTrendResponse, UnmarshallerContext _ctx) {
 		
-		onsMqttQueryMsgTransTrendResponse.setRequestId(context.stringValue("OnsMqttQueryMsgTransTrendResponse.RequestId"));
-		onsMqttQueryMsgTransTrendResponse.setHelpUrl(context.stringValue("OnsMqttQueryMsgTransTrendResponse.HelpUrl"));
+		onsMqttQueryMsgTransTrendResponse.setRequestId(_ctx.stringValue("OnsMqttQueryMsgTransTrendResponse.RequestId"));
+		onsMqttQueryMsgTransTrendResponse.setHelpUrl(_ctx.stringValue("OnsMqttQueryMsgTransTrendResponse.HelpUrl"));
 
 		Data data = new Data();
-		data.setTitle(context.stringValue("OnsMqttQueryMsgTransTrendResponse.Data.Title"));
-		data.setXUnit(context.stringValue("OnsMqttQueryMsgTransTrendResponse.Data.XUnit"));
-		data.setYUnit(context.stringValue("OnsMqttQueryMsgTransTrendResponse.Data.YUnit"));
+		data.setTitle(_ctx.stringValue("OnsMqttQueryMsgTransTrendResponse.Data.Title"));
+		data.setXUnit(_ctx.stringValue("OnsMqttQueryMsgTransTrendResponse.Data.XUnit"));
+		data.setYUnit(_ctx.stringValue("OnsMqttQueryMsgTransTrendResponse.Data.YUnit"));
 
 		List<StatsDataDo> records = new ArrayList<StatsDataDo>();
-		for (int i = 0; i < context.lengthValue("OnsMqttQueryMsgTransTrendResponse.Data.Records.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsMqttQueryMsgTransTrendResponse.Data.Records.Length"); i++) {
 			StatsDataDo statsDataDo = new StatsDataDo();
-			statsDataDo.setX(context.longValue("OnsMqttQueryMsgTransTrendResponse.Data.Records["+ i +"].X"));
-			statsDataDo.setY(context.floatValue("OnsMqttQueryMsgTransTrendResponse.Data.Records["+ i +"].Y"));
+			statsDataDo.setX(_ctx.longValue("OnsMqttQueryMsgTransTrendResponse.Data.Records["+ i +"].X"));
+			statsDataDo.setY(_ctx.floatValue("OnsMqttQueryMsgTransTrendResponse.Data.Records["+ i +"].Y"));
 
 			records.add(statsDataDo);
 		}

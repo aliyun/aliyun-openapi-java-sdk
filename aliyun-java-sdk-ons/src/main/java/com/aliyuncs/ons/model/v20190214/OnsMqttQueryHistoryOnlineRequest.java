@@ -15,20 +15,15 @@
 package com.aliyuncs.ons.model.v20190214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ons.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OnsMqttQueryHistoryOnlineRequest extends RpcAcsRequest<OnsMqttQueryHistoryOnlineResponse> {
-	
-	public OnsMqttQueryHistoryOnlineRequest() {
-		super("Ons", "2019-02-14", "OnsMqttQueryHistoryOnline", "ons");
-	}
-
-	private Long preventCache;
-
-	private String instanceId;
+	   
 
 	private String groupId;
 
@@ -36,26 +31,14 @@ public class OnsMqttQueryHistoryOnlineRequest extends RpcAcsRequest<OnsMqttQuery
 
 	private Long beginTime;
 
-	public Long getPreventCache() {
-		return this.preventCache;
-	}
-
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
+	private String instanceId;
+	public OnsMqttQueryHistoryOnlineRequest() {
+		super("Ons", "2019-02-14", "OnsMqttQueryHistoryOnline", "ons");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getGroupId() {
@@ -88,6 +71,17 @@ public class OnsMqttQueryHistoryOnlineRequest extends RpcAcsRequest<OnsMqttQuery
 		this.beginTime = beginTime;
 		if(beginTime != null){
 			putQueryParameter("BeginTime", beginTime.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

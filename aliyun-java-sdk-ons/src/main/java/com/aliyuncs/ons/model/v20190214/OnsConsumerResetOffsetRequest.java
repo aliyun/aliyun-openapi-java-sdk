@@ -15,49 +15,32 @@
 package com.aliyuncs.ons.model.v20190214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ons.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OnsConsumerResetOffsetRequest extends RpcAcsRequest<OnsConsumerResetOffsetResponse> {
-	
-	public OnsConsumerResetOffsetRequest() {
-		super("Ons", "2019-02-14", "OnsConsumerResetOffset", "ons");
-	}
-
-	private Long preventCache;
-
-	private String instanceId;
+	   
 
 	private String groupId;
-
-	private String topic;
 
 	private Long resetTimestamp;
 
 	private Integer type;
 
-	public Long getPreventCache() {
-		return this.preventCache;
-	}
+	private String instanceId;
 
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
+	private String topic;
+	public OnsConsumerResetOffsetRequest() {
+		super("Ons", "2019-02-14", "OnsConsumerResetOffset", "ons");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getGroupId() {
@@ -68,17 +51,6 @@ public class OnsConsumerResetOffsetRequest extends RpcAcsRequest<OnsConsumerRese
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public String getTopic() {
-		return this.topic;
-	}
-
-	public void setTopic(String topic) {
-		this.topic = topic;
-		if(topic != null){
-			putQueryParameter("Topic", topic);
 		}
 	}
 
@@ -101,6 +73,28 @@ public class OnsConsumerResetOffsetRequest extends RpcAcsRequest<OnsConsumerRese
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getTopic() {
+		return this.topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+		if(topic != null){
+			putQueryParameter("Topic", topic);
 		}
 	}
 

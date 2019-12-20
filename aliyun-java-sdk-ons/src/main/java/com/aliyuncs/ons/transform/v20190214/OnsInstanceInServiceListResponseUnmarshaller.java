@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsInstanceInServiceListResponseUnmarshaller {
 
-	public static OnsInstanceInServiceListResponse unmarshall(OnsInstanceInServiceListResponse onsInstanceInServiceListResponse, UnmarshallerContext context) {
+	public static OnsInstanceInServiceListResponse unmarshall(OnsInstanceInServiceListResponse onsInstanceInServiceListResponse, UnmarshallerContext _ctx) {
 		
-		onsInstanceInServiceListResponse.setRequestId(context.stringValue("OnsInstanceInServiceListResponse.RequestId"));
-		onsInstanceInServiceListResponse.setHelpUrl(context.stringValue("OnsInstanceInServiceListResponse.HelpUrl"));
+		onsInstanceInServiceListResponse.setRequestId(_ctx.stringValue("OnsInstanceInServiceListResponse.RequestId"));
+		onsInstanceInServiceListResponse.setHelpUrl(_ctx.stringValue("OnsInstanceInServiceListResponse.HelpUrl"));
 
 		List<InstanceVO> data = new ArrayList<InstanceVO>();
-		for (int i = 0; i < context.lengthValue("OnsInstanceInServiceListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsInstanceInServiceListResponse.Data.Length"); i++) {
 			InstanceVO instanceVO = new InstanceVO();
-			instanceVO.setInstanceId(context.stringValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceId"));
-			instanceVO.setInstanceStatus(context.integerValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceStatus"));
-			instanceVO.setReleaseTime(context.longValue("OnsInstanceInServiceListResponse.Data["+ i +"].ReleaseTime"));
-			instanceVO.setInstanceType(context.integerValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceType"));
-			instanceVO.setInstanceName(context.stringValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceName"));
-			instanceVO.setIndependentNaming(context.booleanValue("OnsInstanceInServiceListResponse.Data["+ i +"].IndependentNaming"));
+			instanceVO.setInstanceId(_ctx.stringValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceId"));
+			instanceVO.setInstanceStatus(_ctx.integerValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceStatus"));
+			instanceVO.setReleaseTime(_ctx.longValue("OnsInstanceInServiceListResponse.Data["+ i +"].ReleaseTime"));
+			instanceVO.setInstanceType(_ctx.integerValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceType"));
+			instanceVO.setInstanceName(_ctx.stringValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceName"));
+			instanceVO.setIndependentNaming(_ctx.booleanValue("OnsInstanceInServiceListResponse.Data["+ i +"].IndependentNaming"));
 
 			data.add(instanceVO);
 		}

@@ -15,33 +15,38 @@
 package com.aliyuncs.ons.model.v20190214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ons.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OnsWarnDeleteRequest extends RpcAcsRequest<OnsWarnDeleteResponse> {
-	
-	public OnsWarnDeleteRequest() {
-		super("Ons", "2019-02-14", "OnsWarnDelete", "ons");
-	}
-
-	private Long preventCache;
-
-	private String instanceId;
+	   
 
 	private String groupId;
 
-	private String topic;
+	private String instanceId;
 
-	public Long getPreventCache() {
-		return this.preventCache;
+	private String topic;
+	public OnsWarnDeleteRequest() {
+		super("Ons", "2019-02-14", "OnsWarnDelete", "ons");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
@@ -53,17 +58,6 @@ public class OnsWarnDeleteRequest extends RpcAcsRequest<OnsWarnDeleteResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
 		}
 	}
 

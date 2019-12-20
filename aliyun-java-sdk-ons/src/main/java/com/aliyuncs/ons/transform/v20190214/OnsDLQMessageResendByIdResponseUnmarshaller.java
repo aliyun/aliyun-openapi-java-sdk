@@ -23,14 +23,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsDLQMessageResendByIdResponseUnmarshaller {
 
-	public static OnsDLQMessageResendByIdResponse unmarshall(OnsDLQMessageResendByIdResponse onsDLQMessageResendByIdResponse, UnmarshallerContext context) {
+	public static OnsDLQMessageResendByIdResponse unmarshall(OnsDLQMessageResendByIdResponse onsDLQMessageResendByIdResponse, UnmarshallerContext _ctx) {
 		
-		onsDLQMessageResendByIdResponse.setRequestId(context.stringValue("OnsDLQMessageResendByIdResponse.RequestId"));
-		onsDLQMessageResendByIdResponse.setHelpUrl(context.stringValue("OnsDLQMessageResendByIdResponse.HelpUrl"));
+		onsDLQMessageResendByIdResponse.setRequestId(_ctx.stringValue("OnsDLQMessageResendByIdResponse.RequestId"));
+		onsDLQMessageResendByIdResponse.setHelpUrl(_ctx.stringValue("OnsDLQMessageResendByIdResponse.HelpUrl"));
 
 		List<String> data = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("OnsDLQMessageResendByIdResponse.Data.Length"); i++) {
-			data.add(context.stringValue("OnsDLQMessageResendByIdResponse.Data["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("OnsDLQMessageResendByIdResponse.Data.Length"); i++) {
+			data.add(_ctx.stringValue("OnsDLQMessageResendByIdResponse.Data["+ i +"]"));
 		}
 		onsDLQMessageResendByIdResponse.setData(data);
 	 

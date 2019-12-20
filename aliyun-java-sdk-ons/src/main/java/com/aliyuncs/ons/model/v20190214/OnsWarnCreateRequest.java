@@ -15,22 +15,15 @@
 package com.aliyuncs.ons.model.v20190214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ons.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OnsWarnCreateRequest extends RpcAcsRequest<OnsWarnCreateResponse> {
-	
-	public OnsWarnCreateRequest() {
-		super("Ons", "2019-02-14", "OnsWarnCreate", "ons");
-	}
-
-	private Long preventCache;
-
-	private String instanceId;
-
-	private String blockTime;
+	   
 
 	private String level;
 
@@ -38,45 +31,22 @@ public class OnsWarnCreateRequest extends RpcAcsRequest<OnsWarnCreateResponse> {
 
 	private String delayTime;
 
-	private String topic;
-
 	private String threshold;
 
 	private String alertTime;
 
+	private String instanceId;
+
+	private String topic;
+
 	private String contacts;
-
-	public Long getPreventCache() {
-		return this.preventCache;
-	}
-
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getBlockTime() {
-		return this.blockTime;
-	}
-
-	public void setBlockTime(String blockTime) {
-		this.blockTime = blockTime;
-		if(blockTime != null){
-			putQueryParameter("BlockTime", blockTime);
-		}
+	public OnsWarnCreateRequest() {
+		super("Ons", "2019-02-14", "OnsWarnCreate", "ons");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getLevel() {
@@ -112,17 +82,6 @@ public class OnsWarnCreateRequest extends RpcAcsRequest<OnsWarnCreateResponse> {
 		}
 	}
 
-	public String getTopic() {
-		return this.topic;
-	}
-
-	public void setTopic(String topic) {
-		this.topic = topic;
-		if(topic != null){
-			putQueryParameter("Topic", topic);
-		}
-	}
-
 	public String getThreshold() {
 		return this.threshold;
 	}
@@ -142,6 +101,28 @@ public class OnsWarnCreateRequest extends RpcAcsRequest<OnsWarnCreateResponse> {
 		this.alertTime = alertTime;
 		if(alertTime != null){
 			putQueryParameter("AlertTime", alertTime);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getTopic() {
+		return this.topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+		if(topic != null){
+			putQueryParameter("Topic", topic);
 		}
 	}
 

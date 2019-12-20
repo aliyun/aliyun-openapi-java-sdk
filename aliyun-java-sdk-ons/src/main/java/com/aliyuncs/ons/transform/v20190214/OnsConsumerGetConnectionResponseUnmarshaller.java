@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsConsumerGetConnectionResponseUnmarshaller {
 
-	public static OnsConsumerGetConnectionResponse unmarshall(OnsConsumerGetConnectionResponse onsConsumerGetConnectionResponse, UnmarshallerContext context) {
+	public static OnsConsumerGetConnectionResponse unmarshall(OnsConsumerGetConnectionResponse onsConsumerGetConnectionResponse, UnmarshallerContext _ctx) {
 		
-		onsConsumerGetConnectionResponse.setRequestId(context.stringValue("OnsConsumerGetConnectionResponse.RequestId"));
-		onsConsumerGetConnectionResponse.setHelpUrl(context.stringValue("OnsConsumerGetConnectionResponse.HelpUrl"));
+		onsConsumerGetConnectionResponse.setRequestId(_ctx.stringValue("OnsConsumerGetConnectionResponse.RequestId"));
+		onsConsumerGetConnectionResponse.setHelpUrl(_ctx.stringValue("OnsConsumerGetConnectionResponse.HelpUrl"));
 
 		Data data = new Data();
 
 		List<ConnectionDo> connectionList = new ArrayList<ConnectionDo>();
-		for (int i = 0; i < context.lengthValue("OnsConsumerGetConnectionResponse.Data.ConnectionList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsConsumerGetConnectionResponse.Data.ConnectionList.Length"); i++) {
 			ConnectionDo connectionDo = new ConnectionDo();
-			connectionDo.setClientId(context.stringValue("OnsConsumerGetConnectionResponse.Data.ConnectionList["+ i +"].ClientId"));
-			connectionDo.setClientAddr(context.stringValue("OnsConsumerGetConnectionResponse.Data.ConnectionList["+ i +"].ClientAddr"));
-			connectionDo.setLanguage(context.stringValue("OnsConsumerGetConnectionResponse.Data.ConnectionList["+ i +"].Language"));
-			connectionDo.setVersion(context.stringValue("OnsConsumerGetConnectionResponse.Data.ConnectionList["+ i +"].Version"));
+			connectionDo.setClientId(_ctx.stringValue("OnsConsumerGetConnectionResponse.Data.ConnectionList["+ i +"].ClientId"));
+			connectionDo.setClientAddr(_ctx.stringValue("OnsConsumerGetConnectionResponse.Data.ConnectionList["+ i +"].ClientAddr"));
+			connectionDo.setLanguage(_ctx.stringValue("OnsConsumerGetConnectionResponse.Data.ConnectionList["+ i +"].Language"));
+			connectionDo.setVersion(_ctx.stringValue("OnsConsumerGetConnectionResponse.Data.ConnectionList["+ i +"].Version"));
 
 			connectionList.add(connectionDo);
 		}

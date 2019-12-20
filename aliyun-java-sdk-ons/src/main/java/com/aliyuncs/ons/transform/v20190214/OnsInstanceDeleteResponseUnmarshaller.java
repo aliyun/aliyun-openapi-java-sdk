@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsInstanceDeleteResponseUnmarshaller {
 
-	public static OnsInstanceDeleteResponse unmarshall(OnsInstanceDeleteResponse onsInstanceDeleteResponse, UnmarshallerContext context) {
+	public static OnsInstanceDeleteResponse unmarshall(OnsInstanceDeleteResponse onsInstanceDeleteResponse, UnmarshallerContext _ctx) {
 		
-		onsInstanceDeleteResponse.setRequestId(context.stringValue("OnsInstanceDeleteResponse.RequestId"));
-		onsInstanceDeleteResponse.setHelpUrl(context.stringValue("OnsInstanceDeleteResponse.HelpUrl"));
+		onsInstanceDeleteResponse.setRequestId(_ctx.stringValue("OnsInstanceDeleteResponse.RequestId"));
+		onsInstanceDeleteResponse.setHelpUrl(_ctx.stringValue("OnsInstanceDeleteResponse.HelpUrl"));
 	 
 	 	return onsInstanceDeleteResponse;
 	}

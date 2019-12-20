@@ -15,35 +15,40 @@
 package com.aliyuncs.ons.model.v20190214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ons.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OnsConsumerStatusRequest extends RpcAcsRequest<OnsConsumerStatusResponse> {
-	
-	public OnsConsumerStatusRequest() {
-		super("Ons", "2019-02-14", "OnsConsumerStatus", "ons");
-	}
+	   
 
-	private Long preventCache;
+	private String groupId;
 
 	private String instanceId;
 
 	private Boolean needJstack;
 
-	private String groupId;
-
 	private Boolean detail;
-
-	public Long getPreventCache() {
-		return this.preventCache;
+	public OnsConsumerStatusRequest() {
+		super("Ons", "2019-02-14", "OnsConsumerStatus", "ons");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
@@ -66,17 +71,6 @@ public class OnsConsumerStatusRequest extends RpcAcsRequest<OnsConsumerStatusRes
 		this.needJstack = needJstack;
 		if(needJstack != null){
 			putQueryParameter("NeedJstack", needJstack.toString());
-		}
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
 		}
 	}
 

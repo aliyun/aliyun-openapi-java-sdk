@@ -15,22 +15,15 @@
 package com.aliyuncs.ons.model.v20190214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ons.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OnsTraceQueryByMsgIdRequest extends RpcAcsRequest<OnsTraceQueryByMsgIdResponse> {
-	
-	public OnsTraceQueryByMsgIdRequest() {
-		super("Ons", "2019-02-14", "OnsTraceQueryByMsgId", "ons");
-	}
-
-	private Long preventCache;
-
-	private String instanceId;
-
-	private String topic;
+	   
 
 	private String msgId;
 
@@ -38,37 +31,16 @@ public class OnsTraceQueryByMsgIdRequest extends RpcAcsRequest<OnsTraceQueryByMs
 
 	private Long beginTime;
 
-	public Long getPreventCache() {
-		return this.preventCache;
-	}
+	private String instanceId;
 
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getTopic() {
-		return this.topic;
-	}
-
-	public void setTopic(String topic) {
-		this.topic = topic;
-		if(topic != null){
-			putQueryParameter("Topic", topic);
-		}
+	private String topic;
+	public OnsTraceQueryByMsgIdRequest() {
+		super("Ons", "2019-02-14", "OnsTraceQueryByMsgId", "ons");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getMsgId() {
@@ -101,6 +73,28 @@ public class OnsTraceQueryByMsgIdRequest extends RpcAcsRequest<OnsTraceQueryByMs
 		this.beginTime = beginTime;
 		if(beginTime != null){
 			putQueryParameter("BeginTime", beginTime.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getTopic() {
+		return this.topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+		if(topic != null){
+			putQueryParameter("Topic", topic);
 		}
 	}
 

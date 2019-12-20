@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsInstanceCreateResponseUnmarshaller {
 
-	public static OnsInstanceCreateResponse unmarshall(OnsInstanceCreateResponse onsInstanceCreateResponse, UnmarshallerContext context) {
+	public static OnsInstanceCreateResponse unmarshall(OnsInstanceCreateResponse onsInstanceCreateResponse, UnmarshallerContext _ctx) {
 		
-		onsInstanceCreateResponse.setRequestId(context.stringValue("OnsInstanceCreateResponse.RequestId"));
-		onsInstanceCreateResponse.setHelpUrl(context.stringValue("OnsInstanceCreateResponse.HelpUrl"));
+		onsInstanceCreateResponse.setRequestId(_ctx.stringValue("OnsInstanceCreateResponse.RequestId"));
+		onsInstanceCreateResponse.setHelpUrl(_ctx.stringValue("OnsInstanceCreateResponse.HelpUrl"));
 
 		Data data = new Data();
-		data.setInstanceId(context.stringValue("OnsInstanceCreateResponse.Data.InstanceId"));
-		data.setInstanceType(context.integerValue("OnsInstanceCreateResponse.Data.InstanceType"));
+		data.setInstanceId(_ctx.stringValue("OnsInstanceCreateResponse.Data.InstanceId"));
+		data.setInstanceType(_ctx.integerValue("OnsInstanceCreateResponse.Data.InstanceType"));
 		onsInstanceCreateResponse.setData(data);
 	 
 	 	return onsInstanceCreateResponse;

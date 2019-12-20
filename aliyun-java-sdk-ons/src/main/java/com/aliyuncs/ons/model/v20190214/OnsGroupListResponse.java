@@ -69,6 +69,8 @@ public class OnsGroupListResponse extends AcsResponse {
 
 		private Boolean independentNaming;
 
+		private Long createTime;
+
 		public String getOwner() {
 			return this.owner;
 		}
@@ -115,6 +117,14 @@ public class OnsGroupListResponse extends AcsResponse {
 
 		public void setIndependentNaming(Boolean independentNaming) {
 			this.independentNaming = independentNaming;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 	}
 

@@ -15,22 +15,15 @@
 package com.aliyuncs.ons.model.v20190214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ons.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OnsMqttQueryMsgTransTrendRequest extends RpcAcsRequest<OnsMqttQueryMsgTransTrendResponse> {
-	
-	public OnsMqttQueryMsgTransTrendRequest() {
-		super("Ons", "2019-02-14", "OnsMqttQueryMsgTransTrend", "ons");
-	}
-
-	private Long preventCache;
-
-	private String instanceId;
-
-	private Integer qos;
+	   
 
 	private String transType;
 
@@ -42,41 +35,20 @@ public class OnsMqttQueryMsgTransTrendRequest extends RpcAcsRequest<OnsMqttQuery
 
 	private String parentTopic;
 
+	private String instanceId;
+
+	private Integer qos;
+
 	private String msgType;
 
 	private String subTopic;
-
-	public Long getPreventCache() {
-		return this.preventCache;
-	}
-
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Integer getQos() {
-		return this.qos;
-	}
-
-	public void setQos(Integer qos) {
-		this.qos = qos;
-		if(qos != null){
-			putQueryParameter("Qos", qos.toString());
-		}
+	public OnsMqttQueryMsgTransTrendRequest() {
+		super("Ons", "2019-02-14", "OnsMqttQueryMsgTransTrend", "ons");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getTransType() {
@@ -131,6 +103,28 @@ public class OnsMqttQueryMsgTransTrendRequest extends RpcAcsRequest<OnsMqttQuery
 		this.parentTopic = parentTopic;
 		if(parentTopic != null){
 			putQueryParameter("ParentTopic", parentTopic);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Integer getQos() {
+		return this.qos;
+	}
+
+	public void setQos(Integer qos) {
+		this.qos = qos;
+		if(qos != null){
+			putQueryParameter("Qos", qos.toString());
 		}
 	}
 

@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsTopicStatusResponseUnmarshaller {
 
-	public static OnsTopicStatusResponse unmarshall(OnsTopicStatusResponse onsTopicStatusResponse, UnmarshallerContext context) {
+	public static OnsTopicStatusResponse unmarshall(OnsTopicStatusResponse onsTopicStatusResponse, UnmarshallerContext _ctx) {
 		
-		onsTopicStatusResponse.setRequestId(context.stringValue("OnsTopicStatusResponse.RequestId"));
-		onsTopicStatusResponse.setHelpUrl(context.stringValue("OnsTopicStatusResponse.HelpUrl"));
+		onsTopicStatusResponse.setRequestId(_ctx.stringValue("OnsTopicStatusResponse.RequestId"));
+		onsTopicStatusResponse.setHelpUrl(_ctx.stringValue("OnsTopicStatusResponse.HelpUrl"));
 
 		Data data = new Data();
-		data.setTotalCount(context.longValue("OnsTopicStatusResponse.Data.TotalCount"));
-		data.setLastTimeStamp(context.longValue("OnsTopicStatusResponse.Data.LastTimeStamp"));
-		data.setPerm(context.integerValue("OnsTopicStatusResponse.Data.Perm"));
+		data.setTotalCount(_ctx.longValue("OnsTopicStatusResponse.Data.TotalCount"));
+		data.setLastTimeStamp(_ctx.longValue("OnsTopicStatusResponse.Data.LastTimeStamp"));
+		data.setPerm(_ctx.integerValue("OnsTopicStatusResponse.Data.Perm"));
 		onsTopicStatusResponse.setData(data);
 	 
 	 	return onsTopicStatusResponse;

@@ -15,45 +15,28 @@
 package com.aliyuncs.ons.model.v20190214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ons.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OnsDLQMessageResendByIdRequest extends RpcAcsRequest<OnsDLQMessageResendByIdResponse> {
-	
-	public OnsDLQMessageResendByIdRequest() {
-		super("Ons", "2019-02-14", "OnsDLQMessageResendById", "ons");
-	}
-
-	private Long preventCache;
-
-	private String instanceId;
+	   
 
 	private String groupId;
 
 	private String msgId;
 
-	public Long getPreventCache() {
-		return this.preventCache;
-	}
-
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
+	private String instanceId;
+	public OnsDLQMessageResendByIdRequest() {
+		super("Ons", "2019-02-14", "OnsDLQMessageResendById", "ons");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getGroupId() {
@@ -75,6 +58,17 @@ public class OnsDLQMessageResendByIdRequest extends RpcAcsRequest<OnsDLQMessageR
 		this.msgId = msgId;
 		if(msgId != null){
 			putQueryParameter("MsgId", msgId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

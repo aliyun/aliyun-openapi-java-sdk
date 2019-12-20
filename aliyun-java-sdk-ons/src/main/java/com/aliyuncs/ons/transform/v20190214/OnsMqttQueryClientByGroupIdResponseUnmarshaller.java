@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsMqttQueryClientByGroupIdResponseUnmarshaller {
 
-	public static OnsMqttQueryClientByGroupIdResponse unmarshall(OnsMqttQueryClientByGroupIdResponse onsMqttQueryClientByGroupIdResponse, UnmarshallerContext context) {
+	public static OnsMqttQueryClientByGroupIdResponse unmarshall(OnsMqttQueryClientByGroupIdResponse onsMqttQueryClientByGroupIdResponse, UnmarshallerContext _ctx) {
 		
-		onsMqttQueryClientByGroupIdResponse.setRequestId(context.stringValue("OnsMqttQueryClientByGroupIdResponse.RequestId"));
-		onsMqttQueryClientByGroupIdResponse.setHelpUrl(context.stringValue("OnsMqttQueryClientByGroupIdResponse.HelpUrl"));
+		onsMqttQueryClientByGroupIdResponse.setRequestId(_ctx.stringValue("OnsMqttQueryClientByGroupIdResponse.RequestId"));
+		onsMqttQueryClientByGroupIdResponse.setHelpUrl(_ctx.stringValue("OnsMqttQueryClientByGroupIdResponse.HelpUrl"));
 
 		MqttClientSetDo mqttClientSetDo = new MqttClientSetDo();
-		mqttClientSetDo.setOnlineCount(context.longValue("OnsMqttQueryClientByGroupIdResponse.MqttClientSetDo.OnlineCount"));
-		mqttClientSetDo.setPersistCount(context.longValue("OnsMqttQueryClientByGroupIdResponse.MqttClientSetDo.PersistCount"));
+		mqttClientSetDo.setOnlineCount(_ctx.longValue("OnsMqttQueryClientByGroupIdResponse.MqttClientSetDo.OnlineCount"));
+		mqttClientSetDo.setPersistCount(_ctx.longValue("OnsMqttQueryClientByGroupIdResponse.MqttClientSetDo.PersistCount"));
 		onsMqttQueryClientByGroupIdResponse.setMqttClientSetDo(mqttClientSetDo);
 	 
 	 	return onsMqttQueryClientByGroupIdResponse;

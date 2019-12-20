@@ -15,33 +15,38 @@
 package com.aliyuncs.ons.model.v20190214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ons.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OnsTopicUpdateRequest extends RpcAcsRequest<OnsTopicUpdateResponse> {
-	
-	public OnsTopicUpdateRequest() {
-		super("Ons", "2019-02-14", "OnsTopicUpdate", "ons");
-	}
-
-	private Long preventCache;
-
-	private String instanceId;
+	   
 
 	private Integer perm;
 
-	private String topic;
+	private String instanceId;
 
-	public Long getPreventCache() {
-		return this.preventCache;
+	private String topic;
+	public OnsTopicUpdateRequest() {
+		super("Ons", "2019-02-14", "OnsTopicUpdate", "ons");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
+	public Integer getPerm() {
+		return this.perm;
+	}
+
+	public void setPerm(Integer perm) {
+		this.perm = perm;
+		if(perm != null){
+			putQueryParameter("Perm", perm.toString());
 		}
 	}
 
@@ -53,17 +58,6 @@ public class OnsTopicUpdateRequest extends RpcAcsRequest<OnsTopicUpdateResponse>
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Integer getPerm() {
-		return this.perm;
-	}
-
-	public void setPerm(Integer perm) {
-		this.perm = perm;
-		if(perm != null){
-			putQueryParameter("Perm", perm.toString());
 		}
 	}
 

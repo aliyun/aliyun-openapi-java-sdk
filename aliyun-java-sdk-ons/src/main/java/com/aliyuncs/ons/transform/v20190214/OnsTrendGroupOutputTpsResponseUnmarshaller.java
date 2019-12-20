@@ -25,21 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsTrendGroupOutputTpsResponseUnmarshaller {
 
-	public static OnsTrendGroupOutputTpsResponse unmarshall(OnsTrendGroupOutputTpsResponse onsTrendGroupOutputTpsResponse, UnmarshallerContext context) {
+	public static OnsTrendGroupOutputTpsResponse unmarshall(OnsTrendGroupOutputTpsResponse onsTrendGroupOutputTpsResponse, UnmarshallerContext _ctx) {
 		
-		onsTrendGroupOutputTpsResponse.setRequestId(context.stringValue("OnsTrendGroupOutputTpsResponse.RequestId"));
-		onsTrendGroupOutputTpsResponse.setHelpUrl(context.stringValue("OnsTrendGroupOutputTpsResponse.HelpUrl"));
+		onsTrendGroupOutputTpsResponse.setRequestId(_ctx.stringValue("OnsTrendGroupOutputTpsResponse.RequestId"));
+		onsTrendGroupOutputTpsResponse.setHelpUrl(_ctx.stringValue("OnsTrendGroupOutputTpsResponse.HelpUrl"));
 
 		Data data = new Data();
-		data.setTitle(context.stringValue("OnsTrendGroupOutputTpsResponse.Data.Title"));
-		data.setXUnit(context.stringValue("OnsTrendGroupOutputTpsResponse.Data.XUnit"));
-		data.setYUnit(context.stringValue("OnsTrendGroupOutputTpsResponse.Data.YUnit"));
+		data.setTitle(_ctx.stringValue("OnsTrendGroupOutputTpsResponse.Data.Title"));
+		data.setXUnit(_ctx.stringValue("OnsTrendGroupOutputTpsResponse.Data.XUnit"));
+		data.setYUnit(_ctx.stringValue("OnsTrendGroupOutputTpsResponse.Data.YUnit"));
 
 		List<StatsDataDo> records = new ArrayList<StatsDataDo>();
-		for (int i = 0; i < context.lengthValue("OnsTrendGroupOutputTpsResponse.Data.Records.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsTrendGroupOutputTpsResponse.Data.Records.Length"); i++) {
 			StatsDataDo statsDataDo = new StatsDataDo();
-			statsDataDo.setX(context.longValue("OnsTrendGroupOutputTpsResponse.Data.Records["+ i +"].X"));
-			statsDataDo.setY(context.floatValue("OnsTrendGroupOutputTpsResponse.Data.Records["+ i +"].Y"));
+			statsDataDo.setX(_ctx.longValue("OnsTrendGroupOutputTpsResponse.Data.Records["+ i +"].X"));
+			statsDataDo.setY(_ctx.floatValue("OnsTrendGroupOutputTpsResponse.Data.Records["+ i +"].Y"));
 
 			records.add(statsDataDo);
 		}

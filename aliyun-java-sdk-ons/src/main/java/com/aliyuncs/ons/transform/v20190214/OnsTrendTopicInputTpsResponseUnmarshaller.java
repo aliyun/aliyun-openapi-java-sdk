@@ -25,21 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsTrendTopicInputTpsResponseUnmarshaller {
 
-	public static OnsTrendTopicInputTpsResponse unmarshall(OnsTrendTopicInputTpsResponse onsTrendTopicInputTpsResponse, UnmarshallerContext context) {
+	public static OnsTrendTopicInputTpsResponse unmarshall(OnsTrendTopicInputTpsResponse onsTrendTopicInputTpsResponse, UnmarshallerContext _ctx) {
 		
-		onsTrendTopicInputTpsResponse.setRequestId(context.stringValue("OnsTrendTopicInputTpsResponse.RequestId"));
-		onsTrendTopicInputTpsResponse.setHelpUrl(context.stringValue("OnsTrendTopicInputTpsResponse.HelpUrl"));
+		onsTrendTopicInputTpsResponse.setRequestId(_ctx.stringValue("OnsTrendTopicInputTpsResponse.RequestId"));
+		onsTrendTopicInputTpsResponse.setHelpUrl(_ctx.stringValue("OnsTrendTopicInputTpsResponse.HelpUrl"));
 
 		Data data = new Data();
-		data.setTitle(context.stringValue("OnsTrendTopicInputTpsResponse.Data.Title"));
-		data.setXUnit(context.stringValue("OnsTrendTopicInputTpsResponse.Data.XUnit"));
-		data.setYUnit(context.stringValue("OnsTrendTopicInputTpsResponse.Data.YUnit"));
+		data.setTitle(_ctx.stringValue("OnsTrendTopicInputTpsResponse.Data.Title"));
+		data.setXUnit(_ctx.stringValue("OnsTrendTopicInputTpsResponse.Data.XUnit"));
+		data.setYUnit(_ctx.stringValue("OnsTrendTopicInputTpsResponse.Data.YUnit"));
 
 		List<StatsDataDo> records = new ArrayList<StatsDataDo>();
-		for (int i = 0; i < context.lengthValue("OnsTrendTopicInputTpsResponse.Data.Records.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsTrendTopicInputTpsResponse.Data.Records.Length"); i++) {
 			StatsDataDo statsDataDo = new StatsDataDo();
-			statsDataDo.setX(context.longValue("OnsTrendTopicInputTpsResponse.Data.Records["+ i +"].X"));
-			statsDataDo.setY(context.floatValue("OnsTrendTopicInputTpsResponse.Data.Records["+ i +"].Y"));
+			statsDataDo.setX(_ctx.longValue("OnsTrendTopicInputTpsResponse.Data.Records["+ i +"].X"));
+			statsDataDo.setY(_ctx.floatValue("OnsTrendTopicInputTpsResponse.Data.Records["+ i +"].Y"));
 
 			records.add(statsDataDo);
 		}

@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsMqttGroupIdListResponseUnmarshaller {
 
-	public static OnsMqttGroupIdListResponse unmarshall(OnsMqttGroupIdListResponse onsMqttGroupIdListResponse, UnmarshallerContext context) {
+	public static OnsMqttGroupIdListResponse unmarshall(OnsMqttGroupIdListResponse onsMqttGroupIdListResponse, UnmarshallerContext _ctx) {
 		
-		onsMqttGroupIdListResponse.setRequestId(context.stringValue("OnsMqttGroupIdListResponse.RequestId"));
-		onsMqttGroupIdListResponse.setHelpUrl(context.stringValue("OnsMqttGroupIdListResponse.HelpUrl"));
+		onsMqttGroupIdListResponse.setRequestId(_ctx.stringValue("OnsMqttGroupIdListResponse.RequestId"));
+		onsMqttGroupIdListResponse.setHelpUrl(_ctx.stringValue("OnsMqttGroupIdListResponse.HelpUrl"));
 
 		List<MqttGroupIdDo> data = new ArrayList<MqttGroupIdDo>();
-		for (int i = 0; i < context.lengthValue("OnsMqttGroupIdListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsMqttGroupIdListResponse.Data.Length"); i++) {
 			MqttGroupIdDo mqttGroupIdDo = new MqttGroupIdDo();
-			mqttGroupIdDo.setId(context.longValue("OnsMqttGroupIdListResponse.Data["+ i +"].Id"));
-			mqttGroupIdDo.setChannelId(context.integerValue("OnsMqttGroupIdListResponse.Data["+ i +"].ChannelId"));
-			mqttGroupIdDo.setOwner(context.stringValue("OnsMqttGroupIdListResponse.Data["+ i +"].Owner"));
-			mqttGroupIdDo.setGroupId(context.stringValue("OnsMqttGroupIdListResponse.Data["+ i +"].GroupId"));
-			mqttGroupIdDo.setTopic(context.stringValue("OnsMqttGroupIdListResponse.Data["+ i +"].Topic"));
-			mqttGroupIdDo.setStatus(context.integerValue("OnsMqttGroupIdListResponse.Data["+ i +"].Status"));
-			mqttGroupIdDo.setCreateTime(context.longValue("OnsMqttGroupIdListResponse.Data["+ i +"].CreateTime"));
-			mqttGroupIdDo.setUpdateTime(context.longValue("OnsMqttGroupIdListResponse.Data["+ i +"].UpdateTime"));
-			mqttGroupIdDo.setInstanceId(context.stringValue("OnsMqttGroupIdListResponse.Data["+ i +"].InstanceId"));
-			mqttGroupIdDo.setIndependentNaming(context.booleanValue("OnsMqttGroupIdListResponse.Data["+ i +"].IndependentNaming"));
+			mqttGroupIdDo.setId(_ctx.longValue("OnsMqttGroupIdListResponse.Data["+ i +"].Id"));
+			mqttGroupIdDo.setChannelId(_ctx.integerValue("OnsMqttGroupIdListResponse.Data["+ i +"].ChannelId"));
+			mqttGroupIdDo.setOwner(_ctx.stringValue("OnsMqttGroupIdListResponse.Data["+ i +"].Owner"));
+			mqttGroupIdDo.setGroupId(_ctx.stringValue("OnsMqttGroupIdListResponse.Data["+ i +"].GroupId"));
+			mqttGroupIdDo.setTopic(_ctx.stringValue("OnsMqttGroupIdListResponse.Data["+ i +"].Topic"));
+			mqttGroupIdDo.setStatus(_ctx.integerValue("OnsMqttGroupIdListResponse.Data["+ i +"].Status"));
+			mqttGroupIdDo.setCreateTime(_ctx.longValue("OnsMqttGroupIdListResponse.Data["+ i +"].CreateTime"));
+			mqttGroupIdDo.setUpdateTime(_ctx.longValue("OnsMqttGroupIdListResponse.Data["+ i +"].UpdateTime"));
+			mqttGroupIdDo.setInstanceId(_ctx.stringValue("OnsMqttGroupIdListResponse.Data["+ i +"].InstanceId"));
+			mqttGroupIdDo.setIndependentNaming(_ctx.booleanValue("OnsMqttGroupIdListResponse.Data["+ i +"].IndependentNaming"));
 
 			data.add(mqttGroupIdDo);
 		}

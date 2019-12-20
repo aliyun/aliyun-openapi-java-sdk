@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsMessageTraceResponseUnmarshaller {
 
-	public static OnsMessageTraceResponse unmarshall(OnsMessageTraceResponse onsMessageTraceResponse, UnmarshallerContext context) {
+	public static OnsMessageTraceResponse unmarshall(OnsMessageTraceResponse onsMessageTraceResponse, UnmarshallerContext _ctx) {
 		
-		onsMessageTraceResponse.setRequestId(context.stringValue("OnsMessageTraceResponse.RequestId"));
-		onsMessageTraceResponse.setHelpUrl(context.stringValue("OnsMessageTraceResponse.HelpUrl"));
+		onsMessageTraceResponse.setRequestId(_ctx.stringValue("OnsMessageTraceResponse.RequestId"));
+		onsMessageTraceResponse.setHelpUrl(_ctx.stringValue("OnsMessageTraceResponse.HelpUrl"));
 
 		List<MessageTrack> data = new ArrayList<MessageTrack>();
-		for (int i = 0; i < context.lengthValue("OnsMessageTraceResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsMessageTraceResponse.Data.Length"); i++) {
 			MessageTrack messageTrack = new MessageTrack();
-			messageTrack.setConsumerGroup(context.stringValue("OnsMessageTraceResponse.Data["+ i +"].ConsumerGroup"));
-			messageTrack.setTrackType(context.stringValue("OnsMessageTraceResponse.Data["+ i +"].TrackType"));
-			messageTrack.setExceptionDesc(context.stringValue("OnsMessageTraceResponse.Data["+ i +"].ExceptionDesc"));
-			messageTrack.setInstanceId(context.stringValue("OnsMessageTraceResponse.Data["+ i +"].InstanceId"));
+			messageTrack.setConsumerGroup(_ctx.stringValue("OnsMessageTraceResponse.Data["+ i +"].ConsumerGroup"));
+			messageTrack.setTrackType(_ctx.stringValue("OnsMessageTraceResponse.Data["+ i +"].TrackType"));
+			messageTrack.setExceptionDesc(_ctx.stringValue("OnsMessageTraceResponse.Data["+ i +"].ExceptionDesc"));
+			messageTrack.setInstanceId(_ctx.stringValue("OnsMessageTraceResponse.Data["+ i +"].InstanceId"));
 
 			data.add(messageTrack);
 		}

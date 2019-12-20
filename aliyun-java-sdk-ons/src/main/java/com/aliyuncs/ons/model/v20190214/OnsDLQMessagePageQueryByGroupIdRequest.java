@@ -15,24 +15,17 @@
 package com.aliyuncs.ons.model.v20190214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ons.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OnsDLQMessagePageQueryByGroupIdRequest extends RpcAcsRequest<OnsDLQMessagePageQueryByGroupIdResponse> {
-	
-	public OnsDLQMessagePageQueryByGroupIdRequest() {
-		super("Ons", "2019-02-14", "OnsDLQMessagePageQueryByGroupId", "ons");
-	}
-
-	private Long preventCache;
-
-	private String instanceId;
+	   
 
 	private String groupId;
-
-	private Integer pageSize;
 
 	private Long endTime;
 
@@ -40,28 +33,18 @@ public class OnsDLQMessagePageQueryByGroupIdRequest extends RpcAcsRequest<OnsDLQ
 
 	private Integer currentPage;
 
+	private String instanceId;
+
+	private Integer pageSize;
+
 	private String taskId;
-
-	public Long getPreventCache() {
-		return this.preventCache;
-	}
-
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
+	public OnsDLQMessagePageQueryByGroupIdRequest() {
+		super("Ons", "2019-02-14", "OnsDLQMessagePageQueryByGroupId", "ons");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getGroupId() {
@@ -72,17 +55,6 @@ public class OnsDLQMessagePageQueryByGroupIdRequest extends RpcAcsRequest<OnsDLQ
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -116,6 +88,28 @@ public class OnsDLQMessagePageQueryByGroupIdRequest extends RpcAcsRequest<OnsDLQ
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

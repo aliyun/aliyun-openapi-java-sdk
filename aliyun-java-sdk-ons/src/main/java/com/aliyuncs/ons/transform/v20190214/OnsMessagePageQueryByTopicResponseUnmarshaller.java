@@ -26,38 +26,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsMessagePageQueryByTopicResponseUnmarshaller {
 
-	public static OnsMessagePageQueryByTopicResponse unmarshall(OnsMessagePageQueryByTopicResponse onsMessagePageQueryByTopicResponse, UnmarshallerContext context) {
+	public static OnsMessagePageQueryByTopicResponse unmarshall(OnsMessagePageQueryByTopicResponse onsMessagePageQueryByTopicResponse, UnmarshallerContext _ctx) {
 		
-		onsMessagePageQueryByTopicResponse.setRequestId(context.stringValue("OnsMessagePageQueryByTopicResponse.RequestId"));
-		onsMessagePageQueryByTopicResponse.setHelpUrl(context.stringValue("OnsMessagePageQueryByTopicResponse.HelpUrl"));
+		onsMessagePageQueryByTopicResponse.setRequestId(_ctx.stringValue("OnsMessagePageQueryByTopicResponse.RequestId"));
+		onsMessagePageQueryByTopicResponse.setHelpUrl(_ctx.stringValue("OnsMessagePageQueryByTopicResponse.HelpUrl"));
 
 		MsgFoundDo msgFoundDo = new MsgFoundDo();
-		msgFoundDo.setTaskId(context.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.TaskId"));
-		msgFoundDo.setMaxPageCount(context.longValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MaxPageCount"));
-		msgFoundDo.setCurrentPage(context.longValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.CurrentPage"));
+		msgFoundDo.setTaskId(_ctx.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.TaskId"));
+		msgFoundDo.setMaxPageCount(_ctx.longValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MaxPageCount"));
+		msgFoundDo.setCurrentPage(_ctx.longValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.CurrentPage"));
 
 		List<OnsRestMessageDo> msgFoundList = new ArrayList<OnsRestMessageDo>();
-		for (int i = 0; i < context.lengthValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList.Length"); i++) {
 			OnsRestMessageDo onsRestMessageDo = new OnsRestMessageDo();
-			onsRestMessageDo.setTopic(context.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].Topic"));
-			onsRestMessageDo.setFlag(context.integerValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].Flag"));
-			onsRestMessageDo.setBody(context.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].Body"));
-			onsRestMessageDo.setStoreSize(context.integerValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].StoreSize"));
-			onsRestMessageDo.setBornTimestamp(context.longValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].BornTimestamp"));
-			onsRestMessageDo.setBornHost(context.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].BornHost"));
-			onsRestMessageDo.setStoreTimestamp(context.longValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].StoreTimestamp"));
-			onsRestMessageDo.setStoreHost(context.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].StoreHost"));
-			onsRestMessageDo.setMsgId(context.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].MsgId"));
-			onsRestMessageDo.setOffsetId(context.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].OffsetId"));
-			onsRestMessageDo.setBodyCRC(context.integerValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].BodyCRC"));
-			onsRestMessageDo.setReconsumeTimes(context.integerValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].ReconsumeTimes"));
-			onsRestMessageDo.setInstanceId(context.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].InstanceId"));
+			onsRestMessageDo.setTopic(_ctx.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].Topic"));
+			onsRestMessageDo.setFlag(_ctx.integerValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].Flag"));
+			onsRestMessageDo.setBody(_ctx.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].Body"));
+			onsRestMessageDo.setStoreSize(_ctx.integerValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].StoreSize"));
+			onsRestMessageDo.setBornTimestamp(_ctx.longValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].BornTimestamp"));
+			onsRestMessageDo.setBornHost(_ctx.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].BornHost"));
+			onsRestMessageDo.setStoreTimestamp(_ctx.longValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].StoreTimestamp"));
+			onsRestMessageDo.setStoreHost(_ctx.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].StoreHost"));
+			onsRestMessageDo.setMsgId(_ctx.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].MsgId"));
+			onsRestMessageDo.setOffsetId(_ctx.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].OffsetId"));
+			onsRestMessageDo.setBodyCRC(_ctx.integerValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].BodyCRC"));
+			onsRestMessageDo.setReconsumeTimes(_ctx.integerValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].ReconsumeTimes"));
+			onsRestMessageDo.setInstanceId(_ctx.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].InstanceId"));
 
 			List<MessageProperty> propertyList = new ArrayList<MessageProperty>();
-			for (int j = 0; j < context.lengthValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].PropertyList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].PropertyList.Length"); j++) {
 				MessageProperty messageProperty = new MessageProperty();
-				messageProperty.setName(context.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].PropertyList["+ j +"].Name"));
-				messageProperty.setValue(context.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].PropertyList["+ j +"].Value"));
+				messageProperty.setName(_ctx.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].PropertyList["+ j +"].Name"));
+				messageProperty.setValue(_ctx.stringValue("OnsMessagePageQueryByTopicResponse.MsgFoundDo.MsgFoundList["+ i +"].PropertyList["+ j +"].Value"));
 
 				propertyList.add(messageProperty);
 			}

@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsRegionListResponseUnmarshaller {
 
-	public static OnsRegionListResponse unmarshall(OnsRegionListResponse onsRegionListResponse, UnmarshallerContext context) {
+	public static OnsRegionListResponse unmarshall(OnsRegionListResponse onsRegionListResponse, UnmarshallerContext _ctx) {
 		
-		onsRegionListResponse.setRequestId(context.stringValue("OnsRegionListResponse.RequestId"));
-		onsRegionListResponse.setHelpUrl(context.stringValue("OnsRegionListResponse.HelpUrl"));
+		onsRegionListResponse.setRequestId(_ctx.stringValue("OnsRegionListResponse.RequestId"));
+		onsRegionListResponse.setHelpUrl(_ctx.stringValue("OnsRegionListResponse.HelpUrl"));
 
 		List<RegionDo> data = new ArrayList<RegionDo>();
-		for (int i = 0; i < context.lengthValue("OnsRegionListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsRegionListResponse.Data.Length"); i++) {
 			RegionDo regionDo = new RegionDo();
-			regionDo.setId(context.longValue("OnsRegionListResponse.Data["+ i +"].Id"));
-			regionDo.setOnsRegionId(context.stringValue("OnsRegionListResponse.Data["+ i +"].OnsRegionId"));
-			regionDo.setRegionName(context.stringValue("OnsRegionListResponse.Data["+ i +"].RegionName"));
-			regionDo.setChannelId(context.integerValue("OnsRegionListResponse.Data["+ i +"].ChannelId"));
-			regionDo.setChannelName(context.stringValue("OnsRegionListResponse.Data["+ i +"].ChannelName"));
-			regionDo.setCreateTime(context.longValue("OnsRegionListResponse.Data["+ i +"].CreateTime"));
-			regionDo.setUpdateTime(context.longValue("OnsRegionListResponse.Data["+ i +"].UpdateTime"));
+			regionDo.setId(_ctx.longValue("OnsRegionListResponse.Data["+ i +"].Id"));
+			regionDo.setOnsRegionId(_ctx.stringValue("OnsRegionListResponse.Data["+ i +"].OnsRegionId"));
+			regionDo.setRegionName(_ctx.stringValue("OnsRegionListResponse.Data["+ i +"].RegionName"));
+			regionDo.setChannelId(_ctx.integerValue("OnsRegionListResponse.Data["+ i +"].ChannelId"));
+			regionDo.setChannelName(_ctx.stringValue("OnsRegionListResponse.Data["+ i +"].ChannelName"));
+			regionDo.setCreateTime(_ctx.longValue("OnsRegionListResponse.Data["+ i +"].CreateTime"));
+			regionDo.setUpdateTime(_ctx.longValue("OnsRegionListResponse.Data["+ i +"].UpdateTime"));
 
 			data.add(regionDo);
 		}

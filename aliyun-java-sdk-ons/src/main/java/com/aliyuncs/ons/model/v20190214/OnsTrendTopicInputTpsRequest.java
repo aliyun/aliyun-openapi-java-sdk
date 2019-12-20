@@ -15,24 +15,17 @@
 package com.aliyuncs.ons.model.v20190214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ons.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OnsTrendTopicInputTpsRequest extends RpcAcsRequest<OnsTrendTopicInputTpsResponse> {
-	
-	public OnsTrendTopicInputTpsRequest() {
-		super("Ons", "2019-02-14", "OnsTrendTopicInputTps", "ons");
-	}
-
-	private Long preventCache;
+	   
 
 	private Long period;
-
-	private String instanceId;
-
-	private String topic;
 
 	private Long endTime;
 
@@ -40,15 +33,16 @@ public class OnsTrendTopicInputTpsRequest extends RpcAcsRequest<OnsTrendTopicInp
 
 	private Integer type;
 
-	public Long getPreventCache() {
-		return this.preventCache;
-	}
+	private String instanceId;
 
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
-		}
+	private String topic;
+	public OnsTrendTopicInputTpsRequest() {
+		super("Ons", "2019-02-14", "OnsTrendTopicInputTps", "ons");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getPeriod() {
@@ -59,28 +53,6 @@ public class OnsTrendTopicInputTpsRequest extends RpcAcsRequest<OnsTrendTopicInp
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getTopic() {
-		return this.topic;
-	}
-
-	public void setTopic(String topic) {
-		this.topic = topic;
-		if(topic != null){
-			putQueryParameter("Topic", topic);
 		}
 	}
 
@@ -114,6 +86,28 @@ public class OnsTrendTopicInputTpsRequest extends RpcAcsRequest<OnsTrendTopicInp
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getTopic() {
+		return this.topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+		if(topic != null){
+			putQueryParameter("Topic", topic);
 		}
 	}
 

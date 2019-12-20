@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsConsumerTimeSpanResponseUnmarshaller {
 
-	public static OnsConsumerTimeSpanResponse unmarshall(OnsConsumerTimeSpanResponse onsConsumerTimeSpanResponse, UnmarshallerContext context) {
+	public static OnsConsumerTimeSpanResponse unmarshall(OnsConsumerTimeSpanResponse onsConsumerTimeSpanResponse, UnmarshallerContext _ctx) {
 		
-		onsConsumerTimeSpanResponse.setRequestId(context.stringValue("OnsConsumerTimeSpanResponse.RequestId"));
-		onsConsumerTimeSpanResponse.setHelpUrl(context.stringValue("OnsConsumerTimeSpanResponse.HelpUrl"));
+		onsConsumerTimeSpanResponse.setRequestId(_ctx.stringValue("OnsConsumerTimeSpanResponse.RequestId"));
+		onsConsumerTimeSpanResponse.setHelpUrl(_ctx.stringValue("OnsConsumerTimeSpanResponse.HelpUrl"));
 
 		Data data = new Data();
-		data.setTopic(context.stringValue("OnsConsumerTimeSpanResponse.Data.Topic"));
-		data.setMinTimeStamp(context.longValue("OnsConsumerTimeSpanResponse.Data.MinTimeStamp"));
-		data.setMaxTimeStamp(context.longValue("OnsConsumerTimeSpanResponse.Data.MaxTimeStamp"));
-		data.setConsumeTimeStamp(context.longValue("OnsConsumerTimeSpanResponse.Data.ConsumeTimeStamp"));
-		data.setInstanceId(context.stringValue("OnsConsumerTimeSpanResponse.Data.InstanceId"));
+		data.setTopic(_ctx.stringValue("OnsConsumerTimeSpanResponse.Data.Topic"));
+		data.setMinTimeStamp(_ctx.longValue("OnsConsumerTimeSpanResponse.Data.MinTimeStamp"));
+		data.setMaxTimeStamp(_ctx.longValue("OnsConsumerTimeSpanResponse.Data.MaxTimeStamp"));
+		data.setConsumeTimeStamp(_ctx.longValue("OnsConsumerTimeSpanResponse.Data.ConsumeTimeStamp"));
+		data.setInstanceId(_ctx.stringValue("OnsConsumerTimeSpanResponse.Data.InstanceId"));
 		onsConsumerTimeSpanResponse.setData(data);
 	 
 	 	return onsConsumerTimeSpanResponse;

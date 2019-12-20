@@ -25,19 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsTopicSubDetailResponseUnmarshaller {
 
-	public static OnsTopicSubDetailResponse unmarshall(OnsTopicSubDetailResponse onsTopicSubDetailResponse, UnmarshallerContext context) {
+	public static OnsTopicSubDetailResponse unmarshall(OnsTopicSubDetailResponse onsTopicSubDetailResponse, UnmarshallerContext _ctx) {
 		
-		onsTopicSubDetailResponse.setRequestId(context.stringValue("OnsTopicSubDetailResponse.RequestId"));
+		onsTopicSubDetailResponse.setRequestId(_ctx.stringValue("OnsTopicSubDetailResponse.RequestId"));
 
 		Data data = new Data();
-		data.setTopic(context.stringValue("OnsTopicSubDetailResponse.Data.Topic"));
+		data.setTopic(_ctx.stringValue("OnsTopicSubDetailResponse.Data.Topic"));
 
 		List<SubscriptionDataListItem> subscriptionDataList = new ArrayList<SubscriptionDataListItem>();
-		for (int i = 0; i < context.lengthValue("OnsTopicSubDetailResponse.Data.SubscriptionDataList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsTopicSubDetailResponse.Data.SubscriptionDataList.Length"); i++) {
 			SubscriptionDataListItem subscriptionDataListItem = new SubscriptionDataListItem();
-			subscriptionDataListItem.setGroupId(context.stringValue("OnsTopicSubDetailResponse.Data.SubscriptionDataList["+ i +"].GroupId"));
-			subscriptionDataListItem.setSubString(context.stringValue("OnsTopicSubDetailResponse.Data.SubscriptionDataList["+ i +"].SubString"));
-			subscriptionDataListItem.setMessageModel(context.stringValue("OnsTopicSubDetailResponse.Data.SubscriptionDataList["+ i +"].MessageModel"));
+			subscriptionDataListItem.setGroupId(_ctx.stringValue("OnsTopicSubDetailResponse.Data.SubscriptionDataList["+ i +"].GroupId"));
+			subscriptionDataListItem.setSubString(_ctx.stringValue("OnsTopicSubDetailResponse.Data.SubscriptionDataList["+ i +"].SubString"));
+			subscriptionDataListItem.setMessageModel(_ctx.stringValue("OnsTopicSubDetailResponse.Data.SubscriptionDataList["+ i +"].MessageModel"));
 
 			subscriptionDataList.add(subscriptionDataListItem);
 		}

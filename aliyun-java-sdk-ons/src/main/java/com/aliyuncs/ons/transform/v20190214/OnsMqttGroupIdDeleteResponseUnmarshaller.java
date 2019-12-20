@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsMqttGroupIdDeleteResponseUnmarshaller {
 
-	public static OnsMqttGroupIdDeleteResponse unmarshall(OnsMqttGroupIdDeleteResponse onsMqttGroupIdDeleteResponse, UnmarshallerContext context) {
+	public static OnsMqttGroupIdDeleteResponse unmarshall(OnsMqttGroupIdDeleteResponse onsMqttGroupIdDeleteResponse, UnmarshallerContext _ctx) {
 		
-		onsMqttGroupIdDeleteResponse.setRequestId(context.stringValue("OnsMqttGroupIdDeleteResponse.RequestId"));
-		onsMqttGroupIdDeleteResponse.setHelpUrl(context.stringValue("OnsMqttGroupIdDeleteResponse.HelpUrl"));
+		onsMqttGroupIdDeleteResponse.setRequestId(_ctx.stringValue("OnsMqttGroupIdDeleteResponse.RequestId"));
+		onsMqttGroupIdDeleteResponse.setHelpUrl(_ctx.stringValue("OnsMqttGroupIdDeleteResponse.HelpUrl"));
 	 
 	 	return onsMqttGroupIdDeleteResponse;
 	}

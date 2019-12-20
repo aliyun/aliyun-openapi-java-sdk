@@ -25,21 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsMqttQueryHistoryOnlineResponseUnmarshaller {
 
-	public static OnsMqttQueryHistoryOnlineResponse unmarshall(OnsMqttQueryHistoryOnlineResponse onsMqttQueryHistoryOnlineResponse, UnmarshallerContext context) {
+	public static OnsMqttQueryHistoryOnlineResponse unmarshall(OnsMqttQueryHistoryOnlineResponse onsMqttQueryHistoryOnlineResponse, UnmarshallerContext _ctx) {
 		
-		onsMqttQueryHistoryOnlineResponse.setRequestId(context.stringValue("OnsMqttQueryHistoryOnlineResponse.RequestId"));
-		onsMqttQueryHistoryOnlineResponse.setHelpUrl(context.stringValue("OnsMqttQueryHistoryOnlineResponse.HelpUrl"));
+		onsMqttQueryHistoryOnlineResponse.setRequestId(_ctx.stringValue("OnsMqttQueryHistoryOnlineResponse.RequestId"));
+		onsMqttQueryHistoryOnlineResponse.setHelpUrl(_ctx.stringValue("OnsMqttQueryHistoryOnlineResponse.HelpUrl"));
 
 		Data data = new Data();
-		data.setTitle(context.stringValue("OnsMqttQueryHistoryOnlineResponse.Data.Title"));
-		data.setXUnit(context.stringValue("OnsMqttQueryHistoryOnlineResponse.Data.XUnit"));
-		data.setYUnit(context.stringValue("OnsMqttQueryHistoryOnlineResponse.Data.YUnit"));
+		data.setTitle(_ctx.stringValue("OnsMqttQueryHistoryOnlineResponse.Data.Title"));
+		data.setXUnit(_ctx.stringValue("OnsMqttQueryHistoryOnlineResponse.Data.XUnit"));
+		data.setYUnit(_ctx.stringValue("OnsMqttQueryHistoryOnlineResponse.Data.YUnit"));
 
 		List<StatsDataDo> records = new ArrayList<StatsDataDo>();
-		for (int i = 0; i < context.lengthValue("OnsMqttQueryHistoryOnlineResponse.Data.Records.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsMqttQueryHistoryOnlineResponse.Data.Records.Length"); i++) {
 			StatsDataDo statsDataDo = new StatsDataDo();
-			statsDataDo.setX(context.longValue("OnsMqttQueryHistoryOnlineResponse.Data.Records["+ i +"].X"));
-			statsDataDo.setY(context.floatValue("OnsMqttQueryHistoryOnlineResponse.Data.Records["+ i +"].Y"));
+			statsDataDo.setX(_ctx.longValue("OnsMqttQueryHistoryOnlineResponse.Data.Records["+ i +"].X"));
+			statsDataDo.setY(_ctx.floatValue("OnsMqttQueryHistoryOnlineResponse.Data.Records["+ i +"].Y"));
 
 			records.add(statsDataDo);
 		}

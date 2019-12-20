@@ -68,6 +68,8 @@ public class OnsInstanceBaseInfoResponse extends AcsResponse {
 
 		private Boolean independentNaming;
 
+		private String remark;
+
 		private Endpoints endpoints;
 
 		public String getInstanceId() {
@@ -116,6 +118,14 @@ public class OnsInstanceBaseInfoResponse extends AcsResponse {
 
 		public void setIndependentNaming(Boolean independentNaming) {
 			this.independentNaming = independentNaming;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 
 		public Endpoints getEndpoints() {

@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsTraceQueryByMsgKeyResponseUnmarshaller {
 
-	public static OnsTraceQueryByMsgKeyResponse unmarshall(OnsTraceQueryByMsgKeyResponse onsTraceQueryByMsgKeyResponse, UnmarshallerContext context) {
+	public static OnsTraceQueryByMsgKeyResponse unmarshall(OnsTraceQueryByMsgKeyResponse onsTraceQueryByMsgKeyResponse, UnmarshallerContext _ctx) {
 		
-		onsTraceQueryByMsgKeyResponse.setRequestId(context.stringValue("OnsTraceQueryByMsgKeyResponse.RequestId"));
-		onsTraceQueryByMsgKeyResponse.setHelpUrl(context.stringValue("OnsTraceQueryByMsgKeyResponse.HelpUrl"));
-		onsTraceQueryByMsgKeyResponse.setQueryId(context.stringValue("OnsTraceQueryByMsgKeyResponse.QueryId"));
+		onsTraceQueryByMsgKeyResponse.setRequestId(_ctx.stringValue("OnsTraceQueryByMsgKeyResponse.RequestId"));
+		onsTraceQueryByMsgKeyResponse.setHelpUrl(_ctx.stringValue("OnsTraceQueryByMsgKeyResponse.HelpUrl"));
+		onsTraceQueryByMsgKeyResponse.setQueryId(_ctx.stringValue("OnsTraceQueryByMsgKeyResponse.QueryId"));
 	 
 	 	return onsTraceQueryByMsgKeyResponse;
 	}

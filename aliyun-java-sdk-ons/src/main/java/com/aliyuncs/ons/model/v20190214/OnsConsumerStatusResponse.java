@@ -187,6 +187,8 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 
 			private String version;
 
+			private String remoteIP;
+
 			public String getClientId() {
 				return this.clientId;
 			}
@@ -211,28 +213,20 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 				this.language = language;
 			}
 
-			public String getBizVersion() {
-				return this.version;
-			}
-
-			public void setBizVersion(String version) {
-				this.version = version;
-			}
-
-			/**
-			 * @deprecated use getBizVersion instead of this.
-			 */
-			@Deprecated
 			public String getVersion() {
 				return this.version;
 			}
 
-			/**
-			 * @deprecated use setBizVersion instead of this.
-			 */
-			@Deprecated
 			public void setVersion(String version) {
 				this.version = version;
+			}
+
+			public String getRemoteIP() {
+				return this.remoteIP;
+			}
+
+			public void setRemoteIP(String remoteIP) {
+				this.remoteIP = remoteIP;
 			}
 		}
 
@@ -329,26 +323,10 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 				this.language = language;
 			}
 
-			public String getBizVersion() {
-				return this.version;
-			}
-
-			public void setBizVersion(String version) {
-				this.version = version;
-			}
-
-			/**
-			 * @deprecated use getBizVersion instead of this.
-			 */
-			@Deprecated
 			public String getVersion() {
 				return this.version;
 			}
 
-			/**
-			 * @deprecated use setBizVersion instead of this.
-			 */
-			@Deprecated
 			public void setVersion(String version) {
 				this.version = version;
 			}

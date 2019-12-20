@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsMqttQueryClientByTopicResponseUnmarshaller {
 
-	public static OnsMqttQueryClientByTopicResponse unmarshall(OnsMqttQueryClientByTopicResponse onsMqttQueryClientByTopicResponse, UnmarshallerContext context) {
+	public static OnsMqttQueryClientByTopicResponse unmarshall(OnsMqttQueryClientByTopicResponse onsMqttQueryClientByTopicResponse, UnmarshallerContext _ctx) {
 		
-		onsMqttQueryClientByTopicResponse.setRequestId(context.stringValue("OnsMqttQueryClientByTopicResponse.RequestId"));
-		onsMqttQueryClientByTopicResponse.setHelpUrl(context.stringValue("OnsMqttQueryClientByTopicResponse.HelpUrl"));
+		onsMqttQueryClientByTopicResponse.setRequestId(_ctx.stringValue("OnsMqttQueryClientByTopicResponse.RequestId"));
+		onsMqttQueryClientByTopicResponse.setHelpUrl(_ctx.stringValue("OnsMqttQueryClientByTopicResponse.HelpUrl"));
 
 		MqttClientSetDo mqttClientSetDo = new MqttClientSetDo();
-		mqttClientSetDo.setOnlineCount(context.longValue("OnsMqttQueryClientByTopicResponse.MqttClientSetDo.OnlineCount"));
-		mqttClientSetDo.setPersistCount(context.longValue("OnsMqttQueryClientByTopicResponse.MqttClientSetDo.PersistCount"));
+		mqttClientSetDo.setOnlineCount(_ctx.longValue("OnsMqttQueryClientByTopicResponse.MqttClientSetDo.OnlineCount"));
+		mqttClientSetDo.setPersistCount(_ctx.longValue("OnsMqttQueryClientByTopicResponse.MqttClientSetDo.PersistCount"));
 		onsMqttQueryClientByTopicResponse.setMqttClientSetDo(mqttClientSetDo);
 	 
 	 	return onsMqttQueryClientByTopicResponse;

@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsMessageSendResponseUnmarshaller {
 
-	public static OnsMessageSendResponse unmarshall(OnsMessageSendResponse onsMessageSendResponse, UnmarshallerContext context) {
+	public static OnsMessageSendResponse unmarshall(OnsMessageSendResponse onsMessageSendResponse, UnmarshallerContext _ctx) {
 		
-		onsMessageSendResponse.setRequestId(context.stringValue("OnsMessageSendResponse.RequestId"));
-		onsMessageSendResponse.setHelpUrl(context.stringValue("OnsMessageSendResponse.HelpUrl"));
-		onsMessageSendResponse.setData(context.stringValue("OnsMessageSendResponse.Data"));
+		onsMessageSendResponse.setRequestId(_ctx.stringValue("OnsMessageSendResponse.RequestId"));
+		onsMessageSendResponse.setHelpUrl(_ctx.stringValue("OnsMessageSendResponse.HelpUrl"));
+		onsMessageSendResponse.setData(_ctx.stringValue("OnsMessageSendResponse.Data"));
 	 
 	 	return onsMessageSendResponse;
 	}

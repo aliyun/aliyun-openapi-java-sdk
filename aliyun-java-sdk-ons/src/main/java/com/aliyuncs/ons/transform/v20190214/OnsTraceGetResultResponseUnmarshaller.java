@@ -27,51 +27,51 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsTraceGetResultResponseUnmarshaller {
 
-	public static OnsTraceGetResultResponse unmarshall(OnsTraceGetResultResponse onsTraceGetResultResponse, UnmarshallerContext context) {
+	public static OnsTraceGetResultResponse unmarshall(OnsTraceGetResultResponse onsTraceGetResultResponse, UnmarshallerContext _ctx) {
 		
-		onsTraceGetResultResponse.setRequestId(context.stringValue("OnsTraceGetResultResponse.RequestId"));
-		onsTraceGetResultResponse.setHelpUrl(context.stringValue("OnsTraceGetResultResponse.HelpUrl"));
+		onsTraceGetResultResponse.setRequestId(_ctx.stringValue("OnsTraceGetResultResponse.RequestId"));
+		onsTraceGetResultResponse.setHelpUrl(_ctx.stringValue("OnsTraceGetResultResponse.HelpUrl"));
 
 		TraceData traceData = new TraceData();
-		traceData.setQueryId(context.stringValue("OnsTraceGetResultResponse.TraceData.QueryId"));
-		traceData.setUserId(context.stringValue("OnsTraceGetResultResponse.TraceData.UserId"));
-		traceData.setTopic(context.stringValue("OnsTraceGetResultResponse.TraceData.Topic"));
-		traceData.setMsgId(context.stringValue("OnsTraceGetResultResponse.TraceData.MsgId"));
-		traceData.setMsgKey(context.stringValue("OnsTraceGetResultResponse.TraceData.MsgKey"));
-		traceData.setStatus(context.stringValue("OnsTraceGetResultResponse.TraceData.Status"));
-		traceData.setCreateTime(context.longValue("OnsTraceGetResultResponse.TraceData.CreateTime"));
-		traceData.setUpdateTime(context.longValue("OnsTraceGetResultResponse.TraceData.UpdateTime"));
-		traceData.setInstanceId(context.stringValue("OnsTraceGetResultResponse.TraceData.InstanceId"));
+		traceData.setQueryId(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.QueryId"));
+		traceData.setUserId(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.UserId"));
+		traceData.setTopic(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.Topic"));
+		traceData.setMsgId(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.MsgId"));
+		traceData.setMsgKey(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.MsgKey"));
+		traceData.setStatus(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.Status"));
+		traceData.setCreateTime(_ctx.longValue("OnsTraceGetResultResponse.TraceData.CreateTime"));
+		traceData.setUpdateTime(_ctx.longValue("OnsTraceGetResultResponse.TraceData.UpdateTime"));
+		traceData.setInstanceId(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.InstanceId"));
 
 		List<TraceMapDo> traceList = new ArrayList<TraceMapDo>();
-		for (int i = 0; i < context.lengthValue("OnsTraceGetResultResponse.TraceData.TraceList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsTraceGetResultResponse.TraceData.TraceList.Length"); i++) {
 			TraceMapDo traceMapDo = new TraceMapDo();
-			traceMapDo.setPubTime(context.longValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].PubTime"));
-			traceMapDo.setTopic(context.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].Topic"));
-			traceMapDo.setPubGroupName(context.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].PubGroupName"));
-			traceMapDo.setMsgId(context.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].MsgId"));
-			traceMapDo.setTag(context.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].Tag"));
-			traceMapDo.setMsgKey(context.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].MsgKey"));
-			traceMapDo.setBornHost(context.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].BornHost"));
-			traceMapDo.setCostTime(context.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].CostTime"));
-			traceMapDo.setStatus(context.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].Status"));
+			traceMapDo.setPubTime(_ctx.longValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].PubTime"));
+			traceMapDo.setTopic(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].Topic"));
+			traceMapDo.setPubGroupName(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].PubGroupName"));
+			traceMapDo.setMsgId(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].MsgId"));
+			traceMapDo.setTag(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].Tag"));
+			traceMapDo.setMsgKey(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].MsgKey"));
+			traceMapDo.setBornHost(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].BornHost"));
+			traceMapDo.setCostTime(_ctx.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].CostTime"));
+			traceMapDo.setStatus(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].Status"));
 
 			List<SubMapDo> subList = new ArrayList<SubMapDo>();
-			for (int j = 0; j < context.lengthValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList.Length"); j++) {
 				SubMapDo subMapDo = new SubMapDo();
-				subMapDo.setSubGroupName(context.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].SubGroupName"));
-				subMapDo.setSuccessCount(context.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].SuccessCount"));
-				subMapDo.setFailCount(context.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].FailCount"));
+				subMapDo.setSubGroupName(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].SubGroupName"));
+				subMapDo.setSuccessCount(_ctx.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].SuccessCount"));
+				subMapDo.setFailCount(_ctx.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].FailCount"));
 
 				List<SubClientInfoDo> clientList = new ArrayList<SubClientInfoDo>();
-				for (int k = 0; k < context.lengthValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList.Length"); k++) {
+				for (int k = 0; k < _ctx.lengthValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList.Length"); k++) {
 					SubClientInfoDo subClientInfoDo = new SubClientInfoDo();
-					subClientInfoDo.setSubGroupName(context.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].SubGroupName"));
-					subClientInfoDo.setSubTime(context.longValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].SubTime"));
-					subClientInfoDo.setClientHost(context.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].ClientHost"));
-					subClientInfoDo.setReconsumeTimes(context.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].ReconsumeTimes"));
-					subClientInfoDo.setCostTime(context.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].CostTime"));
-					subClientInfoDo.setStatus(context.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].Status"));
+					subClientInfoDo.setSubGroupName(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].SubGroupName"));
+					subClientInfoDo.setSubTime(_ctx.longValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].SubTime"));
+					subClientInfoDo.setClientHost(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].ClientHost"));
+					subClientInfoDo.setReconsumeTimes(_ctx.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].ReconsumeTimes"));
+					subClientInfoDo.setCostTime(_ctx.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].CostTime"));
+					subClientInfoDo.setStatus(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].Status"));
 
 					clientList.add(subClientInfoDo);
 				}

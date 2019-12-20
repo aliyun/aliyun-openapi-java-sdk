@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsGroupSubDetailResponseUnmarshaller {
 
-	public static OnsGroupSubDetailResponse unmarshall(OnsGroupSubDetailResponse onsGroupSubDetailResponse, UnmarshallerContext context) {
+	public static OnsGroupSubDetailResponse unmarshall(OnsGroupSubDetailResponse onsGroupSubDetailResponse, UnmarshallerContext _ctx) {
 		
-		onsGroupSubDetailResponse.setRequestId(context.stringValue("OnsGroupSubDetailResponse.RequestId"));
+		onsGroupSubDetailResponse.setRequestId(_ctx.stringValue("OnsGroupSubDetailResponse.RequestId"));
 
 		Data data = new Data();
-		data.setGroupId(context.stringValue("OnsGroupSubDetailResponse.Data.GroupId"));
-		data.setOnline(context.booleanValue("OnsGroupSubDetailResponse.Data.Online"));
-		data.setMessageModel(context.stringValue("OnsGroupSubDetailResponse.Data.MessageModel"));
+		data.setGroupId(_ctx.stringValue("OnsGroupSubDetailResponse.Data.GroupId"));
+		data.setOnline(_ctx.booleanValue("OnsGroupSubDetailResponse.Data.Online"));
+		data.setMessageModel(_ctx.stringValue("OnsGroupSubDetailResponse.Data.MessageModel"));
 
 		List<SubscriptionDataListItem> subscriptionDataList = new ArrayList<SubscriptionDataListItem>();
-		for (int i = 0; i < context.lengthValue("OnsGroupSubDetailResponse.Data.SubscriptionDataList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsGroupSubDetailResponse.Data.SubscriptionDataList.Length"); i++) {
 			SubscriptionDataListItem subscriptionDataListItem = new SubscriptionDataListItem();
-			subscriptionDataListItem.setTopic(context.stringValue("OnsGroupSubDetailResponse.Data.SubscriptionDataList["+ i +"].Topic"));
-			subscriptionDataListItem.setSubString(context.stringValue("OnsGroupSubDetailResponse.Data.SubscriptionDataList["+ i +"].SubString"));
+			subscriptionDataListItem.setTopic(_ctx.stringValue("OnsGroupSubDetailResponse.Data.SubscriptionDataList["+ i +"].Topic"));
+			subscriptionDataListItem.setSubString(_ctx.stringValue("OnsGroupSubDetailResponse.Data.SubscriptionDataList["+ i +"].SubString"));
 
 			subscriptionDataList.add(subscriptionDataListItem);
 		}

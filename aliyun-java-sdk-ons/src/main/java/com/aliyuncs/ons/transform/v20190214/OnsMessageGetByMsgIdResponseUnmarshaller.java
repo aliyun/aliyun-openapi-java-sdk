@@ -25,31 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsMessageGetByMsgIdResponseUnmarshaller {
 
-	public static OnsMessageGetByMsgIdResponse unmarshall(OnsMessageGetByMsgIdResponse onsMessageGetByMsgIdResponse, UnmarshallerContext context) {
+	public static OnsMessageGetByMsgIdResponse unmarshall(OnsMessageGetByMsgIdResponse onsMessageGetByMsgIdResponse, UnmarshallerContext _ctx) {
 		
-		onsMessageGetByMsgIdResponse.setRequestId(context.stringValue("OnsMessageGetByMsgIdResponse.RequestId"));
-		onsMessageGetByMsgIdResponse.setHelpUrl(context.stringValue("OnsMessageGetByMsgIdResponse.HelpUrl"));
+		onsMessageGetByMsgIdResponse.setRequestId(_ctx.stringValue("OnsMessageGetByMsgIdResponse.RequestId"));
+		onsMessageGetByMsgIdResponse.setHelpUrl(_ctx.stringValue("OnsMessageGetByMsgIdResponse.HelpUrl"));
 
 		Data data = new Data();
-		data.setTopic(context.stringValue("OnsMessageGetByMsgIdResponse.Data.Topic"));
-		data.setFlag(context.integerValue("OnsMessageGetByMsgIdResponse.Data.Flag"));
-		data.setBody(context.stringValue("OnsMessageGetByMsgIdResponse.Data.Body"));
-		data.setStoreSize(context.integerValue("OnsMessageGetByMsgIdResponse.Data.StoreSize"));
-		data.setBornTimestamp(context.longValue("OnsMessageGetByMsgIdResponse.Data.BornTimestamp"));
-		data.setBornHost(context.stringValue("OnsMessageGetByMsgIdResponse.Data.BornHost"));
-		data.setStoreTimestamp(context.longValue("OnsMessageGetByMsgIdResponse.Data.StoreTimestamp"));
-		data.setStoreHost(context.stringValue("OnsMessageGetByMsgIdResponse.Data.StoreHost"));
-		data.setMsgId(context.stringValue("OnsMessageGetByMsgIdResponse.Data.MsgId"));
-		data.setOffsetId(context.stringValue("OnsMessageGetByMsgIdResponse.Data.OffsetId"));
-		data.setBodyCRC(context.integerValue("OnsMessageGetByMsgIdResponse.Data.BodyCRC"));
-		data.setReconsumeTimes(context.integerValue("OnsMessageGetByMsgIdResponse.Data.ReconsumeTimes"));
-		data.setInstanceId(context.stringValue("OnsMessageGetByMsgIdResponse.Data.InstanceId"));
+		data.setTopic(_ctx.stringValue("OnsMessageGetByMsgIdResponse.Data.Topic"));
+		data.setFlag(_ctx.integerValue("OnsMessageGetByMsgIdResponse.Data.Flag"));
+		data.setBody(_ctx.stringValue("OnsMessageGetByMsgIdResponse.Data.Body"));
+		data.setStoreSize(_ctx.integerValue("OnsMessageGetByMsgIdResponse.Data.StoreSize"));
+		data.setBornTimestamp(_ctx.longValue("OnsMessageGetByMsgIdResponse.Data.BornTimestamp"));
+		data.setBornHost(_ctx.stringValue("OnsMessageGetByMsgIdResponse.Data.BornHost"));
+		data.setStoreTimestamp(_ctx.longValue("OnsMessageGetByMsgIdResponse.Data.StoreTimestamp"));
+		data.setStoreHost(_ctx.stringValue("OnsMessageGetByMsgIdResponse.Data.StoreHost"));
+		data.setMsgId(_ctx.stringValue("OnsMessageGetByMsgIdResponse.Data.MsgId"));
+		data.setOffsetId(_ctx.stringValue("OnsMessageGetByMsgIdResponse.Data.OffsetId"));
+		data.setBodyCRC(_ctx.integerValue("OnsMessageGetByMsgIdResponse.Data.BodyCRC"));
+		data.setReconsumeTimes(_ctx.integerValue("OnsMessageGetByMsgIdResponse.Data.ReconsumeTimes"));
+		data.setInstanceId(_ctx.stringValue("OnsMessageGetByMsgIdResponse.Data.InstanceId"));
 
 		List<MessageProperty> propertyList = new ArrayList<MessageProperty>();
-		for (int i = 0; i < context.lengthValue("OnsMessageGetByMsgIdResponse.Data.PropertyList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsMessageGetByMsgIdResponse.Data.PropertyList.Length"); i++) {
 			MessageProperty messageProperty = new MessageProperty();
-			messageProperty.setName(context.stringValue("OnsMessageGetByMsgIdResponse.Data.PropertyList["+ i +"].Name"));
-			messageProperty.setValue(context.stringValue("OnsMessageGetByMsgIdResponse.Data.PropertyList["+ i +"].Value"));
+			messageProperty.setName(_ctx.stringValue("OnsMessageGetByMsgIdResponse.Data.PropertyList["+ i +"].Name"));
+			messageProperty.setValue(_ctx.stringValue("OnsMessageGetByMsgIdResponse.Data.PropertyList["+ i +"].Value"));
 
 			propertyList.add(messageProperty);
 		}

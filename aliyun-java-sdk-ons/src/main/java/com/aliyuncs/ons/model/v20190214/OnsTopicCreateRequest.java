@@ -15,35 +15,51 @@
 package com.aliyuncs.ons.model.v20190214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ons.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OnsTopicCreateRequest extends RpcAcsRequest<OnsTopicCreateResponse> {
-	
-	public OnsTopicCreateRequest() {
-		super("Ons", "2019-02-14", "OnsTopicCreate", "ons");
-	}
-
-	private Long preventCache;
-
-	private String instanceId;
+	   
 
 	private Integer messageType;
 
-	private String topic;
-
 	private String remark;
 
-	public Long getPreventCache() {
-		return this.preventCache;
+	private String instanceId;
+
+	private String topic;
+	public OnsTopicCreateRequest() {
+		super("Ons", "2019-02-14", "OnsTopicCreate", "ons");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
+	public Integer getMessageType() {
+		return this.messageType;
+	}
+
+	public void setMessageType(Integer messageType) {
+		this.messageType = messageType;
+		if(messageType != null){
+			putQueryParameter("MessageType", messageType.toString());
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
 		}
 	}
 
@@ -58,17 +74,6 @@ public class OnsTopicCreateRequest extends RpcAcsRequest<OnsTopicCreateResponse>
 		}
 	}
 
-	public Integer getMessageType() {
-		return this.messageType;
-	}
-
-	public void setMessageType(Integer messageType) {
-		this.messageType = messageType;
-		if(messageType != null){
-			putQueryParameter("MessageType", messageType.toString());
-		}
-	}
-
 	public String getTopic() {
 		return this.topic;
 	}
@@ -77,17 +82,6 @@ public class OnsTopicCreateRequest extends RpcAcsRequest<OnsTopicCreateResponse>
 		this.topic = topic;
 		if(topic != null){
 			putQueryParameter("Topic", topic);
-		}
-	}
-
-	public String getRemark() {
-		return this.remark;
-	}
-
-	public void setRemark(String remark) {
-		this.remark = remark;
-		if(remark != null){
-			putQueryParameter("Remark", remark);
 		}
 	}
 

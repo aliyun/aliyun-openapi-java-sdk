@@ -25,31 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsDLQMessageGetByIdResponseUnmarshaller {
 
-	public static OnsDLQMessageGetByIdResponse unmarshall(OnsDLQMessageGetByIdResponse onsDLQMessageGetByIdResponse, UnmarshallerContext context) {
+	public static OnsDLQMessageGetByIdResponse unmarshall(OnsDLQMessageGetByIdResponse onsDLQMessageGetByIdResponse, UnmarshallerContext _ctx) {
 		
-		onsDLQMessageGetByIdResponse.setRequestId(context.stringValue("OnsDLQMessageGetByIdResponse.RequestId"));
-		onsDLQMessageGetByIdResponse.setHelpUrl(context.stringValue("OnsDLQMessageGetByIdResponse.HelpUrl"));
+		onsDLQMessageGetByIdResponse.setRequestId(_ctx.stringValue("OnsDLQMessageGetByIdResponse.RequestId"));
+		onsDLQMessageGetByIdResponse.setHelpUrl(_ctx.stringValue("OnsDLQMessageGetByIdResponse.HelpUrl"));
 
 		Data data = new Data();
-		data.setTopic(context.stringValue("OnsDLQMessageGetByIdResponse.Data.Topic"));
-		data.setFlag(context.integerValue("OnsDLQMessageGetByIdResponse.Data.Flag"));
-		data.setBody(context.stringValue("OnsDLQMessageGetByIdResponse.Data.Body"));
-		data.setStoreSize(context.integerValue("OnsDLQMessageGetByIdResponse.Data.StoreSize"));
-		data.setBornTimestamp(context.longValue("OnsDLQMessageGetByIdResponse.Data.BornTimestamp"));
-		data.setBornHost(context.stringValue("OnsDLQMessageGetByIdResponse.Data.BornHost"));
-		data.setStoreTimestamp(context.longValue("OnsDLQMessageGetByIdResponse.Data.StoreTimestamp"));
-		data.setStoreHost(context.stringValue("OnsDLQMessageGetByIdResponse.Data.StoreHost"));
-		data.setMsgId(context.stringValue("OnsDLQMessageGetByIdResponse.Data.MsgId"));
-		data.setOffsetId(context.stringValue("OnsDLQMessageGetByIdResponse.Data.OffsetId"));
-		data.setBodyCRC(context.integerValue("OnsDLQMessageGetByIdResponse.Data.BodyCRC"));
-		data.setReconsumeTimes(context.integerValue("OnsDLQMessageGetByIdResponse.Data.ReconsumeTimes"));
-		data.setInstanceId(context.stringValue("OnsDLQMessageGetByIdResponse.Data.InstanceId"));
+		data.setTopic(_ctx.stringValue("OnsDLQMessageGetByIdResponse.Data.Topic"));
+		data.setFlag(_ctx.integerValue("OnsDLQMessageGetByIdResponse.Data.Flag"));
+		data.setBody(_ctx.stringValue("OnsDLQMessageGetByIdResponse.Data.Body"));
+		data.setStoreSize(_ctx.integerValue("OnsDLQMessageGetByIdResponse.Data.StoreSize"));
+		data.setBornTimestamp(_ctx.longValue("OnsDLQMessageGetByIdResponse.Data.BornTimestamp"));
+		data.setBornHost(_ctx.stringValue("OnsDLQMessageGetByIdResponse.Data.BornHost"));
+		data.setStoreTimestamp(_ctx.longValue("OnsDLQMessageGetByIdResponse.Data.StoreTimestamp"));
+		data.setStoreHost(_ctx.stringValue("OnsDLQMessageGetByIdResponse.Data.StoreHost"));
+		data.setMsgId(_ctx.stringValue("OnsDLQMessageGetByIdResponse.Data.MsgId"));
+		data.setOffsetId(_ctx.stringValue("OnsDLQMessageGetByIdResponse.Data.OffsetId"));
+		data.setBodyCRC(_ctx.integerValue("OnsDLQMessageGetByIdResponse.Data.BodyCRC"));
+		data.setReconsumeTimes(_ctx.integerValue("OnsDLQMessageGetByIdResponse.Data.ReconsumeTimes"));
+		data.setInstanceId(_ctx.stringValue("OnsDLQMessageGetByIdResponse.Data.InstanceId"));
 
 		List<MessageProperty> propertyList = new ArrayList<MessageProperty>();
-		for (int i = 0; i < context.lengthValue("OnsDLQMessageGetByIdResponse.Data.PropertyList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsDLQMessageGetByIdResponse.Data.PropertyList.Length"); i++) {
 			MessageProperty messageProperty = new MessageProperty();
-			messageProperty.setName(context.stringValue("OnsDLQMessageGetByIdResponse.Data.PropertyList["+ i +"].Name"));
-			messageProperty.setValue(context.stringValue("OnsDLQMessageGetByIdResponse.Data.PropertyList["+ i +"].Value"));
+			messageProperty.setName(_ctx.stringValue("OnsDLQMessageGetByIdResponse.Data.PropertyList["+ i +"].Name"));
+			messageProperty.setValue(_ctx.stringValue("OnsDLQMessageGetByIdResponse.Data.PropertyList["+ i +"].Value"));
 
 			propertyList.add(messageProperty);
 		}

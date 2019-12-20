@@ -15,24 +15,15 @@
 package com.aliyuncs.ons.model.v20190214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ons.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OnsMessagePageQueryByTopicRequest extends RpcAcsRequest<OnsMessagePageQueryByTopicResponse> {
-	
-	public OnsMessagePageQueryByTopicRequest() {
-		super("Ons", "2019-02-14", "OnsMessagePageQueryByTopic", "ons");
-	}
-
-	private Long preventCache;
-
-	private String instanceId;
-
-	private Integer pageSize;
-
-	private String topic;
+	   
 
 	private Long endTime;
 
@@ -40,16 +31,52 @@ public class OnsMessagePageQueryByTopicRequest extends RpcAcsRequest<OnsMessageP
 
 	private Integer currentPage;
 
-	private String taskId;
+	private String instanceId;
 
-	public Long getPreventCache() {
-		return this.preventCache;
+	private Integer pageSize;
+
+	private String topic;
+
+	private String taskId;
+	public OnsMessagePageQueryByTopicRequest() {
+		super("Ons", "2019-02-14", "OnsMessagePageQueryByTopic", "ons");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Long getBeginTime() {
+		return this.beginTime;
+	}
+
+	public void setBeginTime(Long beginTime) {
+		this.beginTime = beginTime;
+		if(beginTime != null){
+			putQueryParameter("BeginTime", beginTime.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -83,39 +110,6 @@ public class OnsMessagePageQueryByTopicRequest extends RpcAcsRequest<OnsMessageP
 		this.topic = topic;
 		if(topic != null){
 			putQueryParameter("Topic", topic);
-		}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
-	}
-
-	public Long getBeginTime() {
-		return this.beginTime;
-	}
-
-	public void setBeginTime(Long beginTime) {
-		this.beginTime = beginTime;
-		if(beginTime != null){
-			putQueryParameter("BeginTime", beginTime.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

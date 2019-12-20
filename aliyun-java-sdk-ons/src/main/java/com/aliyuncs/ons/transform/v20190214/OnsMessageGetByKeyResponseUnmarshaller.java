@@ -25,33 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OnsMessageGetByKeyResponseUnmarshaller {
 
-	public static OnsMessageGetByKeyResponse unmarshall(OnsMessageGetByKeyResponse onsMessageGetByKeyResponse, UnmarshallerContext context) {
+	public static OnsMessageGetByKeyResponse unmarshall(OnsMessageGetByKeyResponse onsMessageGetByKeyResponse, UnmarshallerContext _ctx) {
 		
-		onsMessageGetByKeyResponse.setRequestId(context.stringValue("OnsMessageGetByKeyResponse.RequestId"));
-		onsMessageGetByKeyResponse.setHelpUrl(context.stringValue("OnsMessageGetByKeyResponse.HelpUrl"));
+		onsMessageGetByKeyResponse.setRequestId(_ctx.stringValue("OnsMessageGetByKeyResponse.RequestId"));
+		onsMessageGetByKeyResponse.setHelpUrl(_ctx.stringValue("OnsMessageGetByKeyResponse.HelpUrl"));
 
 		List<OnsRestMessageDo> data = new ArrayList<OnsRestMessageDo>();
-		for (int i = 0; i < context.lengthValue("OnsMessageGetByKeyResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("OnsMessageGetByKeyResponse.Data.Length"); i++) {
 			OnsRestMessageDo onsRestMessageDo = new OnsRestMessageDo();
-			onsRestMessageDo.setTopic(context.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].Topic"));
-			onsRestMessageDo.setFlag(context.integerValue("OnsMessageGetByKeyResponse.Data["+ i +"].Flag"));
-			onsRestMessageDo.setBody(context.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].Body"));
-			onsRestMessageDo.setStoreSize(context.integerValue("OnsMessageGetByKeyResponse.Data["+ i +"].StoreSize"));
-			onsRestMessageDo.setBornTimestamp(context.longValue("OnsMessageGetByKeyResponse.Data["+ i +"].BornTimestamp"));
-			onsRestMessageDo.setBornHost(context.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].BornHost"));
-			onsRestMessageDo.setStoreTimestamp(context.longValue("OnsMessageGetByKeyResponse.Data["+ i +"].StoreTimestamp"));
-			onsRestMessageDo.setStoreHost(context.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].StoreHost"));
-			onsRestMessageDo.setMsgId(context.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].MsgId"));
-			onsRestMessageDo.setOffsetId(context.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].OffsetId"));
-			onsRestMessageDo.setBodyCRC(context.integerValue("OnsMessageGetByKeyResponse.Data["+ i +"].BodyCRC"));
-			onsRestMessageDo.setReconsumeTimes(context.integerValue("OnsMessageGetByKeyResponse.Data["+ i +"].ReconsumeTimes"));
-			onsRestMessageDo.setInstanceId(context.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].InstanceId"));
+			onsRestMessageDo.setTopic(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].Topic"));
+			onsRestMessageDo.setFlag(_ctx.integerValue("OnsMessageGetByKeyResponse.Data["+ i +"].Flag"));
+			onsRestMessageDo.setBody(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].Body"));
+			onsRestMessageDo.setStoreSize(_ctx.integerValue("OnsMessageGetByKeyResponse.Data["+ i +"].StoreSize"));
+			onsRestMessageDo.setBornTimestamp(_ctx.longValue("OnsMessageGetByKeyResponse.Data["+ i +"].BornTimestamp"));
+			onsRestMessageDo.setBornHost(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].BornHost"));
+			onsRestMessageDo.setStoreTimestamp(_ctx.longValue("OnsMessageGetByKeyResponse.Data["+ i +"].StoreTimestamp"));
+			onsRestMessageDo.setStoreHost(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].StoreHost"));
+			onsRestMessageDo.setMsgId(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].MsgId"));
+			onsRestMessageDo.setOffsetId(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].OffsetId"));
+			onsRestMessageDo.setBodyCRC(_ctx.integerValue("OnsMessageGetByKeyResponse.Data["+ i +"].BodyCRC"));
+			onsRestMessageDo.setReconsumeTimes(_ctx.integerValue("OnsMessageGetByKeyResponse.Data["+ i +"].ReconsumeTimes"));
+			onsRestMessageDo.setInstanceId(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].InstanceId"));
 
 			List<MessageProperty> propertyList = new ArrayList<MessageProperty>();
-			for (int j = 0; j < context.lengthValue("OnsMessageGetByKeyResponse.Data["+ i +"].PropertyList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("OnsMessageGetByKeyResponse.Data["+ i +"].PropertyList.Length"); j++) {
 				MessageProperty messageProperty = new MessageProperty();
-				messageProperty.setName(context.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].PropertyList["+ j +"].Name"));
-				messageProperty.setValue(context.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].PropertyList["+ j +"].Value"));
+				messageProperty.setName(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].PropertyList["+ j +"].Name"));
+				messageProperty.setValue(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].PropertyList["+ j +"].Value"));
 
 				propertyList.add(messageProperty);
 			}
