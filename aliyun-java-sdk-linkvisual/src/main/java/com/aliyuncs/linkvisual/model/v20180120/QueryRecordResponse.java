@@ -121,6 +121,8 @@ public class QueryRecordResponse extends AcsResponse {
 
 			private Integer fileSize;
 
+			private Integer videoFrameNumber;
+
 			public String getBeginTime() {
 				return this.beginTime;
 			}
@@ -167,6 +169,14 @@ public class QueryRecordResponse extends AcsResponse {
 
 			public void setFileSize(Integer fileSize) {
 				this.fileSize = fileSize;
+			}
+
+			public Integer getVideoFrameNumber() {
+				return this.videoFrameNumber;
+			}
+
+			public void setVideoFrameNumber(Integer videoFrameNumber) {
+				this.videoFrameNumber = videoFrameNumber;
 			}
 		}
 	}
