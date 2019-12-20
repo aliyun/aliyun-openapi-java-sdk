@@ -21,34 +21,21 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfoAfterSaleResponse> {
+public class GetLoginPageRequest extends RpcAcsRequest<GetLoginPageResponse> {
 	   
-
-	private String lmOrderId;
 
 	private String thirdPartyUserId;
 
 	private String bizId;
 
-	private String accountType;
-
 	private Boolean useAnonymousTbAccount;
 
-	private String channelUserId;
-	public QueryOrderInfoAfterSaleRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderInfoAfterSale", "linkedmall");
-		setMethod(MethodType.GET);
-	}
+	private String targetUrl;
 
-	public String getLmOrderId() {
-		return this.lmOrderId;
-	}
-
-	public void setLmOrderId(String lmOrderId) {
-		this.lmOrderId = lmOrderId;
-		if(lmOrderId != null){
-			putQueryParameter("LmOrderId", lmOrderId);
-		}
+	private String failUrl;
+	public GetLoginPageRequest() {
+		super("linkedmall", "2018-01-16", "GetLoginPage", "linkedmall");
+		setMethod(MethodType.POST);
 	}
 
 	public String getThirdPartyUserId() {
@@ -73,17 +60,6 @@ public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfo
 		}
 	}
 
-	public String getAccountType() {
-		return this.accountType;
-	}
-
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-		if(accountType != null){
-			putQueryParameter("AccountType", accountType);
-		}
-	}
-
 	public Boolean getUseAnonymousTbAccount() {
 		return this.useAnonymousTbAccount;
 	}
@@ -95,20 +71,31 @@ public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfo
 		}
 	}
 
-	public String getChannelUserId() {
-		return this.channelUserId;
+	public String getTargetUrl() {
+		return this.targetUrl;
 	}
 
-	public void setChannelUserId(String channelUserId) {
-		this.channelUserId = channelUserId;
-		if(channelUserId != null){
-			putQueryParameter("ChannelUserId", channelUserId);
+	public void setTargetUrl(String targetUrl) {
+		this.targetUrl = targetUrl;
+		if(targetUrl != null){
+			putBodyParameter("TargetUrl", targetUrl);
+		}
+	}
+
+	public String getFailUrl() {
+		return this.failUrl;
+	}
+
+	public void setFailUrl(String failUrl) {
+		this.failUrl = failUrl;
+		if(failUrl != null){
+			putBodyParameter("FailUrl", failUrl);
 		}
 	}
 
 	@Override
-	public Class<QueryOrderInfoAfterSaleResponse> getResponseClass() {
-		return QueryOrderInfoAfterSaleResponse.class;
+	public Class<GetLoginPageResponse> getResponseClass() {
+		return GetLoginPageResponse.class;
 	}
 
 }

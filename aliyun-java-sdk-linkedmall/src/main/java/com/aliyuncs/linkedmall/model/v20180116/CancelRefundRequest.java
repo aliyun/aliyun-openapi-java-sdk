@@ -34,6 +34,8 @@ public class CancelRefundRequest extends RpcAcsRequest<CancelRefundResponse> {
 
 	private String bizId;
 
+	private String accountType;
+
 	private Boolean useAnonymousTbAccount;
 	public CancelRefundRequest() {
 		super("linkedmall", "2018-01-16", "CancelRefund", "linkedmall");
@@ -92,6 +94,17 @@ public class CancelRefundRequest extends RpcAcsRequest<CancelRefundResponse> {
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
 		}
 	}
 

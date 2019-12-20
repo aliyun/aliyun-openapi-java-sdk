@@ -21,27 +21,38 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class QueryOrderListRequest extends RpcAcsRequest<QueryOrderListResponse> {
+public class QueryItemDetailInnerRequest extends RpcAcsRequest<QueryItemDetailInnerResponse> {
 	   
+
+	private String divisionCode;
 
 	private String bizUid;
 
-	private String accountType;
+	private String ip;
 
 	private Boolean useAnonymousTbAccount;
 
-	private Long pageNumber;
+	private String lmItemId;
+
+	private Long itemId;
 
 	private String thirdPartyUserId;
 
-	private String filterOption;
-
 	private String bizId;
-
-	private Long pageSize;
-	public QueryOrderListRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderList", "linkedmall");
+	public QueryItemDetailInnerRequest() {
+		super("linkedmall", "2018-01-16", "QueryItemDetailInner", "linkedmall");
 		setMethod(MethodType.POST);
+	}
+
+	public String getDivisionCode() {
+		return this.divisionCode;
+	}
+
+	public void setDivisionCode(String divisionCode) {
+		this.divisionCode = divisionCode;
+		if(divisionCode != null){
+			putQueryParameter("DivisionCode", divisionCode);
+		}
 	}
 
 	public String getBizUid() {
@@ -55,14 +66,14 @@ public class QueryOrderListRequest extends RpcAcsRequest<QueryOrderListResponse>
 		}
 	}
 
-	public String getAccountType() {
-		return this.accountType;
+	public String getIp() {
+		return this.ip;
 	}
 
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-		if(accountType != null){
-			putQueryParameter("AccountType", accountType);
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putQueryParameter("Ip", ip);
 		}
 	}
 
@@ -77,14 +88,25 @@ public class QueryOrderListRequest extends RpcAcsRequest<QueryOrderListResponse>
 		}
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
+	public String getLmItemId() {
+		return this.lmItemId;
 	}
 
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setLmItemId(String lmItemId) {
+		this.lmItemId = lmItemId;
+		if(lmItemId != null){
+			putQueryParameter("LmItemId", lmItemId);
+		}
+	}
+
+	public Long getItemId() {
+		return this.itemId;
+	}
+
+	public void setItemId(Long itemId) {
+		this.itemId = itemId;
+		if(itemId != null){
+			putQueryParameter("ItemId", itemId.toString());
 		}
 	}
 
@@ -99,17 +121,6 @@ public class QueryOrderListRequest extends RpcAcsRequest<QueryOrderListResponse>
 		}
 	}
 
-	public String getFilterOption() {
-		return this.filterOption;
-	}
-
-	public void setFilterOption(String filterOption) {
-		this.filterOption = filterOption;
-		if(filterOption != null){
-			putQueryParameter("FilterOption", filterOption);
-		}
-	}
-
 	public String getBizId() {
 		return this.bizId;
 	}
@@ -121,20 +132,9 @@ public class QueryOrderListRequest extends RpcAcsRequest<QueryOrderListResponse>
 		}
 	}
 
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	@Override
-	public Class<QueryOrderListResponse> getResponseClass() {
-		return QueryOrderListResponse.class;
+	public Class<QueryItemDetailInnerResponse> getResponseClass() {
+		return QueryItemDetailInnerResponse.class;
 	}
 
 }

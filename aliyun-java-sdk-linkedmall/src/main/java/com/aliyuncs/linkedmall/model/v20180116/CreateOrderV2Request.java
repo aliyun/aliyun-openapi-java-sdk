@@ -31,6 +31,8 @@ public class CreateOrderV2Request extends RpcAcsRequest<CreateOrderV2Response> {
 
 	private String extJson;
 
+	private String accountType;
+
 	private Boolean useAnonymousTbAccount;
 
 	private Long orderExpireTime;
@@ -83,6 +85,17 @@ public class CreateOrderV2Request extends RpcAcsRequest<CreateOrderV2Response> {
 		this.extJson = extJson;
 		if(extJson != null){
 			putQueryParameter("ExtJson", extJson);
+		}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
 		}
 	}
 

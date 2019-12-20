@@ -31,6 +31,8 @@ public class ApplyRefundRequest extends RpcAcsRequest<ApplyRefundResponse> {
 
 	private Long applyReasonTextId;
 
+	private String accountType;
+
 	private Boolean useAnonymousTbAccount;
 
 	private List<LeavePictureList> leavePictureLists;
@@ -83,6 +85,17 @@ public class ApplyRefundRequest extends RpcAcsRequest<ApplyRefundResponse> {
 		this.applyReasonTextId = applyReasonTextId;
 		if(applyReasonTextId != null){
 			putQueryParameter("ApplyReasonTextId", applyReasonTextId.toString());
+		}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
 		}
 	}
 

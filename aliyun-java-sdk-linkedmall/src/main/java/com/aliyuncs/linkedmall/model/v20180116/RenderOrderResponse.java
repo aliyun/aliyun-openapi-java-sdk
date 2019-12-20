@@ -172,6 +172,26 @@ public class RenderOrderResponse extends AcsResponse {
 
 				private String message;
 
+				private String itemName;
+
+				private String skuName;
+
+				private String lmItemId;
+
+				private Long sellerId;
+
+				private String sellerNick;
+
+				private Long cash;
+
+				private Long points;
+
+				private Long actualPrice;
+
+				private String itemPicUrl;
+
+				private String message1;
+
 				public Long getItemId() {
 					return this.itemId;
 				}
@@ -210,6 +230,86 @@ public class RenderOrderResponse extends AcsResponse {
 
 				public void setMessage(String message) {
 					this.message = message;
+				}
+
+				public String getItemName() {
+					return this.itemName;
+				}
+
+				public void setItemName(String itemName) {
+					this.itemName = itemName;
+				}
+
+				public String getSkuName() {
+					return this.skuName;
+				}
+
+				public void setSkuName(String skuName) {
+					this.skuName = skuName;
+				}
+
+				public String getLmItemId() {
+					return this.lmItemId;
+				}
+
+				public void setLmItemId(String lmItemId) {
+					this.lmItemId = lmItemId;
+				}
+
+				public Long getSellerId() {
+					return this.sellerId;
+				}
+
+				public void setSellerId(Long sellerId) {
+					this.sellerId = sellerId;
+				}
+
+				public String getSellerNick() {
+					return this.sellerNick;
+				}
+
+				public void setSellerNick(String sellerNick) {
+					this.sellerNick = sellerNick;
+				}
+
+				public Long getCash() {
+					return this.cash;
+				}
+
+				public void setCash(Long cash) {
+					this.cash = cash;
+				}
+
+				public Long getPoints() {
+					return this.points;
+				}
+
+				public void setPoints(Long points) {
+					this.points = points;
+				}
+
+				public Long getActualPrice() {
+					return this.actualPrice;
+				}
+
+				public void setActualPrice(Long actualPrice) {
+					this.actualPrice = actualPrice;
+				}
+
+				public String getItemPicUrl() {
+					return this.itemPicUrl;
+				}
+
+				public void setItemPicUrl(String itemPicUrl) {
+					this.itemPicUrl = itemPicUrl;
+				}
+
+				public String getMessage1() {
+					return this.message1;
+				}
+
+				public void setMessage1(String message1) {
+					this.message1 = message1;
 				}
 			}
 

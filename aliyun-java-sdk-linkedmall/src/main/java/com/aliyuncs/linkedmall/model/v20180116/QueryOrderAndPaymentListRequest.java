@@ -24,33 +24,24 @@ import com.aliyuncs.http.MethodType;
 public class QueryOrderAndPaymentListRequest extends RpcAcsRequest<QueryOrderAndPaymentListResponse> {
 	   
 
-	private String thirdPartyUserId;
-
 	private String bizUid;
+
+	private String accountType;
+
+	private Boolean useAnonymousTbAccount;
+
+	private Long pageNumber;
+
+	private String thirdPartyUserId;
 
 	private String filterOption;
 
 	private String bizId;
 
 	private Long pageSize;
-
-	private Boolean useAnonymousTbAccount;
-
-	private Long pageNumber;
 	public QueryOrderAndPaymentListRequest() {
 		super("linkedmall", "2018-01-16", "QueryOrderAndPaymentList", "linkedmall");
 		setMethod(MethodType.POST);
-	}
-
-	public String getThirdPartyUserId() {
-		return this.thirdPartyUserId;
-	}
-
-	public void setThirdPartyUserId(String thirdPartyUserId) {
-		this.thirdPartyUserId = thirdPartyUserId;
-		if(thirdPartyUserId != null){
-			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
-		}
 	}
 
 	public String getBizUid() {
@@ -61,6 +52,50 @@ public class QueryOrderAndPaymentListRequest extends RpcAcsRequest<QueryOrderAnd
 		this.bizUid = bizUid;
 		if(bizUid != null){
 			putQueryParameter("BizUid", bizUid);
+		}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getThirdPartyUserId() {
+		return this.thirdPartyUserId;
+	}
+
+	public void setThirdPartyUserId(String thirdPartyUserId) {
+		this.thirdPartyUserId = thirdPartyUserId;
+		if(thirdPartyUserId != null){
+			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
 		}
 	}
 
@@ -94,28 +129,6 @@ public class QueryOrderAndPaymentListRequest extends RpcAcsRequest<QueryOrderAnd
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Boolean getUseAnonymousTbAccount() {
-		return this.useAnonymousTbAccount;
-	}
-
-	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
-		this.useAnonymousTbAccount = useAnonymousTbAccount;
-		if(useAnonymousTbAccount != null){
-			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
-		}
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

@@ -26,9 +26,15 @@ public class CancelOrderRequest extends RpcAcsRequest<CancelOrderResponse> {
 
 	private String lmOrderId;
 
+	private String thirdPartyUserId;
+
 	private String bizUid;
 
 	private String bizId;
+
+	private String accountType;
+
+	private Boolean useAnonymousTbAccount;
 	public CancelOrderRequest() {
 		super("linkedmall", "2018-01-16", "CancelOrder", "linkedmall");
 		setMethod(MethodType.POST);
@@ -42,6 +48,17 @@ public class CancelOrderRequest extends RpcAcsRequest<CancelOrderResponse> {
 		this.lmOrderId = lmOrderId;
 		if(lmOrderId != null){
 			putQueryParameter("LmOrderId", lmOrderId);
+		}
+	}
+
+	public String getThirdPartyUserId() {
+		return this.thirdPartyUserId;
+	}
+
+	public void setThirdPartyUserId(String thirdPartyUserId) {
+		this.thirdPartyUserId = thirdPartyUserId;
+		if(thirdPartyUserId != null){
+			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
 		}
 	}
 
@@ -64,6 +81,28 @@ public class CancelOrderRequest extends RpcAcsRequest<CancelOrderResponse> {
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
 		}
 	}
 

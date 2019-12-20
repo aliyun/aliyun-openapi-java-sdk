@@ -26,6 +26,8 @@ public class SubmitReturnGoodLogisticsRequest extends RpcAcsRequest<SubmitReturn
 
 	private String bizUid;
 
+	private String accountType;
+
 	private Boolean useAnonymousTbAccount;
 
 	private String cpCode;
@@ -52,6 +54,17 @@ public class SubmitReturnGoodLogisticsRequest extends RpcAcsRequest<SubmitReturn
 		this.bizUid = bizUid;
 		if(bizUid != null){
 			putQueryParameter("BizUid", bizUid);
+		}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
 		}
 	}
 

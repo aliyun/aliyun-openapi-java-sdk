@@ -32,6 +32,8 @@ public class QueryOrderLogisticsRequest extends RpcAcsRequest<QueryOrderLogistic
 
 	private String bizId;
 
+	private String accountType;
+
 	private Boolean useAnonymousTbAccount;
 	public QueryOrderLogisticsRequest() {
 		super("linkedmall", "2018-01-16", "QueryOrderLogistics", "linkedmall");
@@ -79,6 +81,17 @@ public class QueryOrderLogisticsRequest extends RpcAcsRequest<QueryOrderLogistic
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
 		}
 	}
 

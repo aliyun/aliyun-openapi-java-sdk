@@ -24,22 +24,68 @@ import com.aliyuncs.http.MethodType;
 public class InitApplyRefundRequest extends RpcAcsRequest<InitApplyRefundResponse> {
 	   
 
+	private String bizUid;
+
+	private Integer bizClaimType;
+
+	private String accountType;
+
+	private Boolean useAnonymousTbAccount;
+
 	private Integer goodsStatus;
 
 	private String subLmOrderId;
 
 	private String thirdPartyUserId;
 
-	private String bizUid;
-
-	private Integer bizClaimType;
-
 	private String bizId;
-
-	private Boolean useAnonymousTbAccount;
 	public InitApplyRefundRequest() {
 		super("linkedmall", "2018-01-16", "InitApplyRefund", "linkedmall");
 		setMethod(MethodType.POST);
+	}
+
+	public String getBizUid() {
+		return this.bizUid;
+	}
+
+	public void setBizUid(String bizUid) {
+		this.bizUid = bizUid;
+		if(bizUid != null){
+			putQueryParameter("BizUid", bizUid);
+		}
+	}
+
+	public Integer getBizClaimType() {
+		return this.bizClaimType;
+	}
+
+	public void setBizClaimType(Integer bizClaimType) {
+		this.bizClaimType = bizClaimType;
+		if(bizClaimType != null){
+			putQueryParameter("BizClaimType", bizClaimType.toString());
+		}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
+		}
 	}
 
 	public Integer getGoodsStatus() {
@@ -75,28 +121,6 @@ public class InitApplyRefundRequest extends RpcAcsRequest<InitApplyRefundRespons
 		}
 	}
 
-	public String getBizUid() {
-		return this.bizUid;
-	}
-
-	public void setBizUid(String bizUid) {
-		this.bizUid = bizUid;
-		if(bizUid != null){
-			putQueryParameter("BizUid", bizUid);
-		}
-	}
-
-	public Integer getBizClaimType() {
-		return this.bizClaimType;
-	}
-
-	public void setBizClaimType(Integer bizClaimType) {
-		this.bizClaimType = bizClaimType;
-		if(bizClaimType != null){
-			putQueryParameter("BizClaimType", bizClaimType.toString());
-		}
-	}
-
 	public String getBizId() {
 		return this.bizId;
 	}
@@ -105,17 +129,6 @@ public class InitApplyRefundRequest extends RpcAcsRequest<InitApplyRefundRespons
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
-		}
-	}
-
-	public Boolean getUseAnonymousTbAccount() {
-		return this.useAnonymousTbAccount;
-	}
-
-	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
-		this.useAnonymousTbAccount = useAnonymousTbAccount;
-		if(useAnonymousTbAccount != null){
-			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
 		}
 	}
 

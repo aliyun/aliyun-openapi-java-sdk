@@ -30,6 +30,8 @@ public class EnableOrderRequest extends RpcAcsRequest<EnableOrderResponse> {
 
 	private String extJson;
 
+	private String accountType;
+
 	private Boolean useAnonymousTbAccount;
 
 	private String thirdPartyUserId;
@@ -72,6 +74,17 @@ public class EnableOrderRequest extends RpcAcsRequest<EnableOrderResponse> {
 		this.extJson = extJson;
 		if(extJson != null){
 			putQueryParameter("ExtJson", extJson);
+		}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
 		}
 	}
 

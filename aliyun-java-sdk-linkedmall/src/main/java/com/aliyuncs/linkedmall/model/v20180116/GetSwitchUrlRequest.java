@@ -21,34 +21,21 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfoAfterSaleResponse> {
+public class GetSwitchUrlRequest extends RpcAcsRequest<GetSwitchUrlResponse> {
 	   
-
-	private String lmOrderId;
 
 	private String thirdPartyUserId;
 
-	private String bizId;
+	private String bizUid;
 
-	private String accountType;
+	private String bizId;
 
 	private Boolean useAnonymousTbAccount;
 
-	private String channelUserId;
-	public QueryOrderInfoAfterSaleRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderInfoAfterSale", "linkedmall");
-		setMethod(MethodType.GET);
-	}
-
-	public String getLmOrderId() {
-		return this.lmOrderId;
-	}
-
-	public void setLmOrderId(String lmOrderId) {
-		this.lmOrderId = lmOrderId;
-		if(lmOrderId != null){
-			putQueryParameter("LmOrderId", lmOrderId);
-		}
+	private String url;
+	public GetSwitchUrlRequest() {
+		super("linkedmall", "2018-01-16", "GetSwitchUrl", "linkedmall");
+		setMethod(MethodType.POST);
 	}
 
 	public String getThirdPartyUserId() {
@@ -59,6 +46,17 @@ public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfo
 		this.thirdPartyUserId = thirdPartyUserId;
 		if(thirdPartyUserId != null){
 			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
+		}
+	}
+
+	public String getBizUid() {
+		return this.bizUid;
+	}
+
+	public void setBizUid(String bizUid) {
+		this.bizUid = bizUid;
+		if(bizUid != null){
+			putQueryParameter("BizUid", bizUid);
 		}
 	}
 
@@ -73,17 +71,6 @@ public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfo
 		}
 	}
 
-	public String getAccountType() {
-		return this.accountType;
-	}
-
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-		if(accountType != null){
-			putQueryParameter("AccountType", accountType);
-		}
-	}
-
 	public Boolean getUseAnonymousTbAccount() {
 		return this.useAnonymousTbAccount;
 	}
@@ -95,20 +82,20 @@ public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfo
 		}
 	}
 
-	public String getChannelUserId() {
-		return this.channelUserId;
+	public String getUrl() {
+		return this.url;
 	}
 
-	public void setChannelUserId(String channelUserId) {
-		this.channelUserId = channelUserId;
-		if(channelUserId != null){
-			putQueryParameter("ChannelUserId", channelUserId);
+	public void setUrl(String url) {
+		this.url = url;
+		if(url != null){
+			putBodyParameter("Url", url);
 		}
 	}
 
 	@Override
-	public Class<QueryOrderInfoAfterSaleResponse> getResponseClass() {
-		return QueryOrderInfoAfterSaleResponse.class;
+	public Class<GetSwitchUrlResponse> getResponseClass() {
+		return GetSwitchUrlResponse.class;
 	}
 
 }

@@ -21,34 +21,17 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfoAfterSaleResponse> {
+public class QueryAddressListRequest extends RpcAcsRequest<QueryAddressListResponse> {
 	   
-
-	private String lmOrderId;
 
 	private String thirdPartyUserId;
 
 	private String bizId;
 
-	private String accountType;
-
 	private Boolean useAnonymousTbAccount;
-
-	private String channelUserId;
-	public QueryOrderInfoAfterSaleRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderInfoAfterSale", "linkedmall");
-		setMethod(MethodType.GET);
-	}
-
-	public String getLmOrderId() {
-		return this.lmOrderId;
-	}
-
-	public void setLmOrderId(String lmOrderId) {
-		this.lmOrderId = lmOrderId;
-		if(lmOrderId != null){
-			putQueryParameter("LmOrderId", lmOrderId);
-		}
+	public QueryAddressListRequest() {
+		super("linkedmall", "2018-01-16", "QueryAddressList", "linkedmall");
+		setMethod(MethodType.POST);
 	}
 
 	public String getThirdPartyUserId() {
@@ -73,17 +56,6 @@ public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfo
 		}
 	}
 
-	public String getAccountType() {
-		return this.accountType;
-	}
-
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-		if(accountType != null){
-			putQueryParameter("AccountType", accountType);
-		}
-	}
-
 	public Boolean getUseAnonymousTbAccount() {
 		return this.useAnonymousTbAccount;
 	}
@@ -95,20 +67,9 @@ public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfo
 		}
 	}
 
-	public String getChannelUserId() {
-		return this.channelUserId;
-	}
-
-	public void setChannelUserId(String channelUserId) {
-		this.channelUserId = channelUserId;
-		if(channelUserId != null){
-			putQueryParameter("ChannelUserId", channelUserId);
-		}
-	}
-
 	@Override
-	public Class<QueryOrderInfoAfterSaleResponse> getResponseClass() {
-		return QueryOrderInfoAfterSaleResponse.class;
+	public Class<QueryAddressListResponse> getResponseClass() {
+		return QueryAddressListResponse.class;
 	}
 
 }

@@ -1,3 +1,7 @@
+2019-12-20 Version: 2.9.0
+- Support miniapp.
+- Support account type.
+
 2019-11-20 Version: 2.8.4
 - Support anonymous account for enableOrder.
 

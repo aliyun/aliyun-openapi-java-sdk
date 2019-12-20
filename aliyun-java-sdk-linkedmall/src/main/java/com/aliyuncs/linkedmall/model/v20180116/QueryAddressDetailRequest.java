@@ -21,33 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfoAfterSaleResponse> {
+public class QueryAddressDetailRequest extends RpcAcsRequest<QueryAddressDetailResponse> {
 	   
 
-	private String lmOrderId;
+	private String addressInfo;
 
 	private String thirdPartyUserId;
 
 	private String bizId;
 
-	private String accountType;
-
 	private Boolean useAnonymousTbAccount;
-
-	private String channelUserId;
-	public QueryOrderInfoAfterSaleRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderInfoAfterSale", "linkedmall");
-		setMethod(MethodType.GET);
+	public QueryAddressDetailRequest() {
+		super("linkedmall", "2018-01-16", "QueryAddressDetail", "linkedmall");
+		setMethod(MethodType.POST);
 	}
 
-	public String getLmOrderId() {
-		return this.lmOrderId;
+	public String getAddressInfo() {
+		return this.addressInfo;
 	}
 
-	public void setLmOrderId(String lmOrderId) {
-		this.lmOrderId = lmOrderId;
-		if(lmOrderId != null){
-			putQueryParameter("LmOrderId", lmOrderId);
+	public void setAddressInfo(String addressInfo) {
+		this.addressInfo = addressInfo;
+		if(addressInfo != null){
+			putQueryParameter("AddressInfo", addressInfo);
 		}
 	}
 
@@ -73,17 +69,6 @@ public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfo
 		}
 	}
 
-	public String getAccountType() {
-		return this.accountType;
-	}
-
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-		if(accountType != null){
-			putQueryParameter("AccountType", accountType);
-		}
-	}
-
 	public Boolean getUseAnonymousTbAccount() {
 		return this.useAnonymousTbAccount;
 	}
@@ -95,20 +80,9 @@ public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfo
 		}
 	}
 
-	public String getChannelUserId() {
-		return this.channelUserId;
-	}
-
-	public void setChannelUserId(String channelUserId) {
-		this.channelUserId = channelUserId;
-		if(channelUserId != null){
-			putQueryParameter("ChannelUserId", channelUserId);
-		}
-	}
-
 	@Override
-	public Class<QueryOrderInfoAfterSaleResponse> getResponseClass() {
-		return QueryOrderInfoAfterSaleResponse.class;
+	public Class<QueryAddressDetailResponse> getResponseClass() {
+		return QueryAddressDetailResponse.class;
 	}
 
 }

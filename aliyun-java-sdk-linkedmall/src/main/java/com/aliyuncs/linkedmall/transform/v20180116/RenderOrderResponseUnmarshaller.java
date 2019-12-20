@@ -54,6 +54,16 @@ public class RenderOrderResponseUnmarshaller {
 				lmItemInfosItem.setQuantity(_ctx.integerValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].Quantity"));
 				lmItemInfosItem.setCanSell(_ctx.booleanValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].CanSell"));
 				lmItemInfosItem.setMessage(_ctx.stringValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].Message"));
+				lmItemInfosItem.setItemName(_ctx.stringValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].ItemName"));
+				lmItemInfosItem.setSkuName(_ctx.stringValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].SkuName"));
+				lmItemInfosItem.setLmItemId(_ctx.stringValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].LmItemId"));
+				lmItemInfosItem.setSellerId(_ctx.longValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].SellerId"));
+				lmItemInfosItem.setSellerNick(_ctx.stringValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].SellerNick"));
+				lmItemInfosItem.setCash(_ctx.longValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].Cash"));
+				lmItemInfosItem.setPoints(_ctx.longValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].points"));
+				lmItemInfosItem.setActualPrice(_ctx.longValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].ActualPrice"));
+				lmItemInfosItem.setItemPicUrl(_ctx.stringValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].ItemPicUrl"));
+				lmItemInfosItem.setMessage1(_ctx.stringValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].Message"));
 
 				lmItemInfos.add(lmItemInfosItem);
 			}
