@@ -18,6 +18,12 @@ import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.regions.ProductDomain;
 import com.aliyuncs.utils.LogUtils;
+import io.opentracing.*;
+import io.opentracing.noop.NoopTracerFactory;
+import io.opentracing.propagation.Format;
+import io.opentracing.propagation.TextMap;
+import io.opentracing.util.GlobalTracer;
+import io.opentracing.util.ThreadLocalScopeManager;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -36,10 +42,13 @@ import java.lang.reflect.Field;
 import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.Iterator;
+import java.util.Map;
 
 import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
 
 @PowerMockIgnore("javax.net.ssl.*")
 @RunWith(PowerMockRunner.class)
@@ -806,6 +815,80 @@ public class DefaultAcsClientTest {
 
         client.doActionWithIgnoreSSL(request, true);
         Assert.assertTrue(request.isIgnoreSSLCerts());
+    }
+
+    @Test
+    public void doUseTrace() throws Exception {
+        DefaultAcsClient client = initDefaultAcsClient();
+        GlobalTracer.registerIfAbsent(initTracer());
+        HttpResponse response = mock(HttpResponse.class);
+        Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
+        Mockito.doReturn("http://test.domain").when(response).getSysUrl();
+        DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
+        client.setEndpointResolver(endpointResolver);
+        Mockito.doReturn("endpoint").when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
+        AcsRequest request = initRequest(TestResponse.class);
+        Assert.assertTrue(client.doAction(request) instanceof HttpResponse);
+        verify(request).putHeaderParameter(eq("test1"), eq("test1"));
+    }
+
+    @Test
+    public void doCloseTrace() throws Exception {
+        DefaultAcsClient client = initDefaultAcsClient();
+        Mockito.doReturn(true).when(client.getProfile()).isCloseTrace();
+        GlobalTracer.registerIfAbsent(initTracer());
+        HttpResponse response = mock(HttpResponse.class);
+        Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
+        Mockito.doReturn("http://test.domain").when(response).getSysUrl();
+        DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
+        client.setEndpointResolver(endpointResolver);
+        Mockito.doReturn("endpoint").when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
+        AcsRequest request = initRequest(TestResponse.class);
+        Assert.assertTrue(client.doAction(request) instanceof HttpResponse);
+        verify(request, times(0)).putHeaderParameter(anyString(), anyString());
+
+    }
+
+    private Tracer initTracer(){
+        Tracer tracer = new Tracer() {
+            ScopeManager scopeManager = new ThreadLocalScopeManager();
+            @Override
+            public ScopeManager scopeManager() {
+                return scopeManager;
+            }
+
+            @Override
+            public Span activeSpan() {
+                return scopeManager.activeSpan();
+            }
+
+            @Override
+            public Scope activateSpan(Span span) {
+                return scopeManager.activate(span);
+            }
+
+            @Override
+            public SpanBuilder buildSpan(String operationName) {
+                return NoopTracerFactory.create().buildSpan(operationName);
+            }
+
+            @Override
+            public <C> void inject(SpanContext spanContext, Format<C> format, C carrier) {
+                TextMap textMap = (TextMap) carrier;
+                textMap.put("test1", "test1");
+            }
+
+            @Override
+            public <C> SpanContext extract(Format<C> format, C carrier) {
+                return null;
+            }
+
+            @Override
+            public void close() {
+
+            }
+        };
+        return tracer;
     }
 
 }

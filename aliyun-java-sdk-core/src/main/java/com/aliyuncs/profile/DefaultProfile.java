@@ -22,6 +22,7 @@ public class DefaultProfile implements IClientProfile {
     private boolean usingVpcEndpoint = false;
     private Logger logger;
     private String logFormat = DEFAULT_LOG_FORMAT;
+    private boolean isCloseTrace = false;
 
     private DefaultProfile() {
     }
@@ -191,5 +192,15 @@ public class DefaultProfile implements IClientProfile {
     @Override
     public void setLogFormat(String logFormat) {
         this.logFormat = logFormat;
+    }
+
+    @Override
+    public boolean isCloseTrace() {
+        return isCloseTrace;
+    }
+
+    @Override
+    public void setCloseTrace(boolean closeTrace) {
+        isCloseTrace = closeTrace;
     }
 }
