@@ -22,20 +22,16 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
+public class SyncDatabaseMetaRequest extends RpcAcsRequest<SyncDatabaseMetaResponse> {
 	   
 
-	private String roleNames;
+	private String dbId;
 
-	private Long uid;
-
-	private String userNick;
-
-	private String mobile;
+	private Boolean logic;
 
 	private Long tid;
-	public RegisterUserRequest() {
-		super("dms-enterprise", "2018-11-01", "RegisterUser", "dmsenterprise");
+	public SyncDatabaseMetaRequest() {
+		super("dms-enterprise", "2018-11-01", "SyncDatabaseMeta", "dmsenterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,47 +39,25 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getRoleNames() {
-		return this.roleNames;
+	public String getDbId() {
+		return this.dbId;
 	}
 
-	public void setRoleNames(String roleNames) {
-		this.roleNames = roleNames;
-		if(roleNames != null){
-			putQueryParameter("RoleNames", roleNames);
+	public void setDbId(String dbId) {
+		this.dbId = dbId;
+		if(dbId != null){
+			putQueryParameter("DbId", dbId);
 		}
 	}
 
-	public Long getUid() {
-		return this.uid;
+	public Boolean getLogic() {
+		return this.logic;
 	}
 
-	public void setUid(Long uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid.toString());
-		}
-	}
-
-	public String getUserNick() {
-		return this.userNick;
-	}
-
-	public void setUserNick(String userNick) {
-		this.userNick = userNick;
-		if(userNick != null){
-			putQueryParameter("UserNick", userNick);
-		}
-	}
-
-	public String getMobile() {
-		return this.mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-		if(mobile != null){
-			putQueryParameter("Mobile", mobile);
+	public void setLogic(Boolean logic) {
+		this.logic = logic;
+		if(logic != null){
+			putQueryParameter("Logic", logic.toString());
 		}
 	}
 
@@ -99,8 +73,8 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 	}
 
 	@Override
-	public Class<RegisterUserResponse> getResponseClass() {
-		return RegisterUserResponse.class;
+	public Class<SyncDatabaseMetaResponse> getResponseClass() {
+		return SyncDatabaseMetaResponse.class;
 	}
 
 }

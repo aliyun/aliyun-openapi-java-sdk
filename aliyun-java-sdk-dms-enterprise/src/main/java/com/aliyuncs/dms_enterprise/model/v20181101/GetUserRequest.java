@@ -22,36 +22,21 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
+public class GetUserRequest extends RpcAcsRequest<GetUserResponse> {
 	   
-
-	private String roleNames;
 
 	private Long uid;
 
-	private String userNick;
-
-	private String mobile;
+	private String userId;
 
 	private Long tid;
-	public RegisterUserRequest() {
-		super("dms-enterprise", "2018-11-01", "RegisterUser", "dmsenterprise");
-		setMethod(MethodType.POST);
+	public GetUserRequest() {
+		super("dms-enterprise", "2018-11-01", "GetUser", "dmsenterprise");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getRoleNames() {
-		return this.roleNames;
-	}
-
-	public void setRoleNames(String roleNames) {
-		this.roleNames = roleNames;
-		if(roleNames != null){
-			putQueryParameter("RoleNames", roleNames);
-		}
 	}
 
 	public Long getUid() {
@@ -65,25 +50,14 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 		}
 	}
 
-	public String getUserNick() {
-		return this.userNick;
+	public String getUserId() {
+		return this.userId;
 	}
 
-	public void setUserNick(String userNick) {
-		this.userNick = userNick;
-		if(userNick != null){
-			putQueryParameter("UserNick", userNick);
-		}
-	}
-
-	public String getMobile() {
-		return this.mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-		if(mobile != null){
-			putQueryParameter("Mobile", mobile);
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 
@@ -99,8 +73,8 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 	}
 
 	@Override
-	public Class<RegisterUserResponse> getResponseClass() {
-		return RegisterUserResponse.class;
+	public Class<GetUserResponse> getResponseClass() {
+		return GetUserResponse.class;
 	}
 
 }

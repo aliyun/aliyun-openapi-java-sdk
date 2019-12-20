@@ -1,3 +1,10 @@
+2019-12-20 Version: 1.5.0
+- Supported Authorization API, includes GrantUserPermission, RevokeUserPermission, ListDatabaseUserPermssions, ListUserPermissions.
+- Supported Database or Table Metadata synchronization API, includes SyncInstanceMeta, SyncDatabaseMeta.
+- Supported Database or Table Owner set up API.
+- Supported GetUser API to get information of one DMS user.
+- Supported set Dingding mobile number with RegisterUser API.
+
 2019-11-28 Version: 1.4.0
 - Support Order Basis API, include CreateOrder, CloseOrder, ListOrders, GetOrderBaseInfo.
 - Support Order Approval API, include SubmitOrderApproval, ApproveOrder, GetApprovalDetail.

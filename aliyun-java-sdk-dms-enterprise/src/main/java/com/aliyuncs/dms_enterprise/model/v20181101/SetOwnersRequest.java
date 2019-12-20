@@ -22,20 +22,18 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
+public class SetOwnersRequest extends RpcAcsRequest<SetOwnersResponse> {
 	   
 
-	private String roleNames;
+	private String resourceId;
 
-	private Long uid;
+	private String ownerIds;
 
-	private String userNick;
-
-	private String mobile;
+	private String ownerType;
 
 	private Long tid;
-	public RegisterUserRequest() {
-		super("dms-enterprise", "2018-11-01", "RegisterUser", "dmsenterprise");
+	public SetOwnersRequest() {
+		super("dms-enterprise", "2018-11-01", "SetOwners", "dmsenterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,47 +41,36 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getRoleNames() {
-		return this.roleNames;
+	public String getResourceId() {
+		return this.resourceId;
 	}
 
-	public void setRoleNames(String roleNames) {
-		this.roleNames = roleNames;
-		if(roleNames != null){
-			putQueryParameter("RoleNames", roleNames);
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
 		}
 	}
 
-	public Long getUid() {
-		return this.uid;
+	public String getOwnerIds() {
+		return this.ownerIds;
 	}
 
-	public void setUid(Long uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid.toString());
+	public void setOwnerIds(String ownerIds) {
+		this.ownerIds = ownerIds;
+		if(ownerIds != null){
+			putQueryParameter("OwnerIds", ownerIds);
 		}
 	}
 
-	public String getUserNick() {
-		return this.userNick;
+	public String getOwnerType() {
+		return this.ownerType;
 	}
 
-	public void setUserNick(String userNick) {
-		this.userNick = userNick;
-		if(userNick != null){
-			putQueryParameter("UserNick", userNick);
-		}
-	}
-
-	public String getMobile() {
-		return this.mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-		if(mobile != null){
-			putQueryParameter("Mobile", mobile);
+	public void setOwnerType(String ownerType) {
+		this.ownerType = ownerType;
+		if(ownerType != null){
+			putQueryParameter("OwnerType", ownerType);
 		}
 	}
 
@@ -99,8 +86,8 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 	}
 
 	@Override
-	public Class<RegisterUserResponse> getResponseClass() {
-		return RegisterUserResponse.class;
+	public Class<SetOwnersResponse> getResponseClass() {
+		return SetOwnersResponse.class;
 	}
 
 }
