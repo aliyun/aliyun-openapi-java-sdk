@@ -31,6 +31,8 @@ public class DescribeStreamPredictsRequest extends RpcAcsRequest<DescribeStreamP
 
 	private Long pageSize;
 
+	private String modelId;
+
 	private Long currentPage;
 
 	private Long ownerId;
@@ -73,6 +75,17 @@ public class DescribeStreamPredictsRequest extends RpcAcsRequest<DescribeStreamP
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getModelId() {
+		return this.modelId;
+	}
+
+	public void setModelId(String modelId) {
+		this.modelId = modelId;
+		if(modelId != null){
+			putQueryParameter("ModelId", modelId);
 		}
 	}
 

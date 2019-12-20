@@ -1,3 +1,6 @@
+2019-12-20 Version: 1.2.0
+- Supported Search stream predict task list use modelId for IVISION.
+
 2019-10-22 Version: 1.1.0
 - Supported Sync predict for Image.
 - Supported Set Frame Frequency for Stream Predict.
