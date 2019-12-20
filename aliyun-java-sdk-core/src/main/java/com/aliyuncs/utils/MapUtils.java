@@ -40,6 +40,18 @@ public class MapUtils {
         return map;
     }
 
+    public static String getMapString(Map<String, String> map) {
+        if (map == null) {
+            return "";
+        }
+        StringBuilder sb = new StringBuilder("{");
+        for (Map.Entry<String,String> entry : map.entrySet()) {
+            sb.append("\"").append(entry.getKey()).append("\":\"").append(entry.getValue()).append("\"");
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
     private List<Map<Object, Object>> setList(List<Map<Object, Object>> targetList, int index, String key,
             String value) {
         List<Map<Object, Object>> list = targetList;

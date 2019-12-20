@@ -75,4 +75,8 @@ public interface IClientProfile {
           String getLogFormat();
 
           void setLogFormat(String logFormat);
+
+         boolean isCloseTrace();
+
+         void setCloseTrace(boolean closeTrace);
 }

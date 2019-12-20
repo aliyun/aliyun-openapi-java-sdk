@@ -142,6 +142,16 @@
             <version>1.7.30</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.opentracing</groupId>
+            <artifactId>opentracing-api</artifactId>
+            <version>0.32.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.opentracing</groupId>
+            <artifactId>opentracing-util</artifactId>
+            <version>0.32.0</version>
+        </dependency>
     </dependencies>
 
     <build>

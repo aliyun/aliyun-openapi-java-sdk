@@ -17,15 +17,24 @@ import com.aliyuncs.regions.ProductDomain;
 import com.aliyuncs.transform.UnmarshallerContext;
 import com.aliyuncs.unmarshaller.Unmarshaller;
 import com.aliyuncs.unmarshaller.UnmarshallerFactory;
-import com.aliyuncs.utils.IOUtils;
-import com.aliyuncs.utils.LogUtils;
+import com.aliyuncs.utils.*;
+import io.opentracing.Span;
+import io.opentracing.Tracer;
+import io.opentracing.propagation.Format;
+import io.opentracing.tag.Tags;
+import io.opentracing.util.GlobalTracer;
 import org.slf4j.Logger;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -256,10 +265,36 @@ public class DefaultAcsClient implements IAcsClient {
 
         return domain;
     }
-
     private <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
+                                                          String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
+            throws ClientException, ServerException {
+
+        Span span = null;
+        Tracer tracer = null;
+        if (GlobalTracer.isRegistered() && !clientProfile.isCloseTrace()) {
+            tracer = GlobalTracer.get();
+            span = tracer.buildSpan(request.getSysUrl())
+                    .withTag(Tags.COMPONENT.getKey(), "aliyunApi")
+                    .withTag("actionName", request.getSysActionName())
+                    .withTag("queryPa", MapUtils.getMapString(request.getQueryParameters()))
+                    .start();
+                tracer.inject(span.context(), Format.Builtin.HTTP_HEADERS, new HttpHeadersInjectAdapter(request));
+        }
+        try {
+            return doRealAction(request, autoRetry, maxRetryNumber, regionId, credentials, signer,format);
+        } catch (ClientException e) {
+            if (span != null) {
+                TraceUtils.onError(e, span);
+            }
+            throw e;
+        }
+
+    }
+
+    private <T extends AcsResponse> HttpResponse doRealAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
             String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
             throws ClientException, ServerException {
+
 
         doActionWithProxy(request.getSysProtocol(), System.getenv("HTTPS_PROXY"), System.getenv("HTTP_PROXY"));
         doActionWithIgnoreSSL(request, X509TrustAll.ignoreSSLCerts);
@@ -282,11 +317,13 @@ public class DefaultAcsClient implements IAcsClient {
             }
             request.putHeaderParameter("User-Agent",
                     UserAgentConfig.resolve(request.getSysUserAgentConfig(), this.userAgentConfig));
+
             try {
                 HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
                 HttpUtil.debugHttpRequest(request);
                 startTime = LogUtils.localeNow();
                 long start = System.nanoTime();
+
                 response = this.httpClient.syncInvoke(httpRequest);
                 long end = System.nanoTime();
                 timeCost = TimeUnit.NANOSECONDS.toMillis(end - start) + "ms";
