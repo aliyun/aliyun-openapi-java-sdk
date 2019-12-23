@@ -28,8 +28,6 @@ public class ReleaseInstanceRequest extends RpcAcsRequest<ReleaseInstanceRespons
 	private Boolean forceDeleteInstance;
 
 	private String instanceId;
-
-	private Boolean releaseIgnoreTime;
 	public ReleaseInstanceRequest() {
 		super("alikafka", "2019-09-16", "ReleaseInstance", "alikafka");
 		setMethod(MethodType.POST);
@@ -58,17 +56,6 @@ public class ReleaseInstanceRequest extends RpcAcsRequest<ReleaseInstanceRespons
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Boolean getReleaseIgnoreTime() {
-		return this.releaseIgnoreTime;
-	}
-
-	public void setReleaseIgnoreTime(Boolean releaseIgnoreTime) {
-		this.releaseIgnoreTime = releaseIgnoreTime;
-		if(releaseIgnoreTime != null){
-			putQueryParameter("ReleaseIgnoreTime", releaseIgnoreTime.toString());
 		}
 	}
 

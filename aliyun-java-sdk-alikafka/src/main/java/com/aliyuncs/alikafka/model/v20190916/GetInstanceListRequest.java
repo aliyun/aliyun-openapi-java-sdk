@@ -15,6 +15,7 @@
 package com.aliyuncs.alikafka.model.v20190916;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.alikafka.Endpoint;
 
@@ -26,6 +27,10 @@ public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListRespons
 	   
 
 	private String orderId;
+
+	private List<String> instanceIds;
+
+	private List<Tag> tags;
 	public GetInstanceListRequest() {
 		super("alikafka", "2019-09-16", "GetInstanceList", "alikafka");
 		setMethod(MethodType.POST);
@@ -43,6 +48,56 @@ public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListRespons
 		this.orderId = orderId;
 		if(orderId != null){
 			putQueryParameter("OrderId", orderId);
+		}
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;	
+		if (instanceIds != null) {
+			for (int i = 0; i < instanceIds.size(); i++) {
+				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
+			}
+		}	
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

@@ -25,8 +25,6 @@ import com.aliyuncs.alikafka.Endpoint;
 public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderResponse> {
 	   
 
-	private Integer paidType;
-
 	private Integer diskSize;
 
 	private Integer ioMax;
@@ -37,8 +35,6 @@ public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderR
 
 	private Integer eipMax;
 
-	private String specType;
-
 	private Integer deployType;
 	public CreatePostPayOrderRequest() {
 		super("alikafka", "2019-09-16", "CreatePostPayOrder", "alikafka");
@@ -47,17 +43,6 @@ public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPaidType() {
-		return this.paidType;
-	}
-
-	public void setPaidType(Integer paidType) {
-		this.paidType = paidType;
-		if(paidType != null){
-			putQueryParameter("PaidType", paidType.toString());
-		}
 	}
 
 	public Integer getDiskSize() {
@@ -112,17 +97,6 @@ public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderR
 		this.eipMax = eipMax;
 		if(eipMax != null){
 			putQueryParameter("EipMax", eipMax.toString());
-		}
-	}
-
-	public String getSpecType() {
-		return this.specType;
-	}
-
-	public void setSpecType(String specType) {
-		this.specType = specType;
-		if(specType != null){
-			putQueryParameter("SpecType", specType);
 		}
 	}
 

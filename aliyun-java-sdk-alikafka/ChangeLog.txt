@@ -1,3 +1,6 @@
+2019-12-23 Version: 1.2.3
+- Support sasl and acl.
+
 2019-12-18 Version: 1.2.2
 - Support MetadataProductList.
 

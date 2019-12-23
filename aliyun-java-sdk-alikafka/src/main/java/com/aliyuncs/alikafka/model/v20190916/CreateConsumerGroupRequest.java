@@ -27,6 +27,8 @@ public class CreateConsumerGroupRequest extends RpcAcsRequest<CreateConsumerGrou
 
 	private String consumerId;
 
+	private String remark;
+
 	private String instanceId;
 	public CreateConsumerGroupRequest() {
 		super("alikafka", "2019-09-16", "CreateConsumerGroup", "alikafka");
@@ -45,6 +47,17 @@ public class CreateConsumerGroupRequest extends RpcAcsRequest<CreateConsumerGrou
 		this.consumerId = consumerId;
 		if(consumerId != null){
 			putQueryParameter("ConsumerId", consumerId);
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
 		}
 	}
 
