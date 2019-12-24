@@ -79,15 +79,15 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String appId;
 
-	private Integer mCpuRequest;
+	private Integer mcpuRequest;
 
-	private Integer mCpuLimit;
+	private Integer mcpuLimit;
 
 	private String volumesStr;
 
 	private String postStart;
 	public DeployK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "DeployK8sApplication", "Edas");
+		super("Edas", "2017-08-01", "DeployK8sApplication", "edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_apps");
 		setMethod(MethodType.POST);
 		try {
@@ -393,25 +393,25 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
-	public Integer getMCpuRequest() {
-		return this.mCpuRequest;
+	public Integer getMcpuRequest() {
+		return this.mcpuRequest;
 	}
 
-	public void setMCpuRequest(Integer mCpuRequest) {
-		this.mCpuRequest = mCpuRequest;
-		if(mCpuRequest != null){
-			putQueryParameter("MCpuRequest", mCpuRequest.toString());
+	public void setMcpuRequest(Integer mcpuRequest) {
+		this.mcpuRequest = mcpuRequest;
+		if(mcpuRequest != null){
+			putQueryParameter("McpuRequest", mcpuRequest.toString());
 		}
 	}
 
-	public Integer getMCpuLimit() {
-		return this.mCpuLimit;
+	public Integer getMcpuLimit() {
+		return this.mcpuLimit;
 	}
 
-	public void setMCpuLimit(Integer mCpuLimit) {
-		this.mCpuLimit = mCpuLimit;
-		if(mCpuLimit != null){
-			putQueryParameter("MCpuLimit", mCpuLimit.toString());
+	public void setMcpuLimit(Integer mcpuLimit) {
+		this.mcpuLimit = mcpuLimit;
+		if(mcpuLimit != null){
+			putQueryParameter("McpuLimit", mcpuLimit.toString());
 		}
 	}
 

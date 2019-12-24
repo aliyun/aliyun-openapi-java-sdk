@@ -31,7 +31,7 @@ public class ScaleInApplicationRequest extends RoaAcsRequest<ScaleInApplicationR
 
 	private String eccInfo;
 	public ScaleInApplicationRequest() {
-		super("Edas", "2017-08-01", "ScaleInApplication", "Edas");
+		super("Edas", "2017-08-01", "ScaleInApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_scale_in");
 		setMethod(MethodType.POST);
 		try {

@@ -53,7 +53,7 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private Integer limitMem;
 
-	private Integer limitMCpu;
+	private Integer limitmCpu;
 
 	private String edasContainerVersion;
 
@@ -65,7 +65,7 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String packageUrl;
 
-	private Integer requestsMCpu;
+	private Integer requestsmCpu;
 
 	private String internetSlbProtocol;
 
@@ -107,7 +107,7 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String postStart;
 	public InsertK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "InsertK8sApplication", "Edas");
+		super("Edas", "2017-08-01", "InsertK8sApplication", "edas");
 		setUriPattern("/pop/v5/k8s/acs/create_k8s_app");
 		setMethod(MethodType.POST);
 		try {
@@ -270,14 +270,14 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
-	public Integer getLimitMCpu() {
-		return this.limitMCpu;
+	public Integer getLimitmCpu() {
+		return this.limitmCpu;
 	}
 
-	public void setLimitMCpu(Integer limitMCpu) {
-		this.limitMCpu = limitMCpu;
-		if(limitMCpu != null){
-			putQueryParameter("LimitMCpu", limitMCpu.toString());
+	public void setLimitmCpu(Integer limitmCpu) {
+		this.limitmCpu = limitmCpu;
+		if(limitmCpu != null){
+			putQueryParameter("LimitmCpu", limitmCpu.toString());
 		}
 	}
 
@@ -336,14 +336,14 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
-	public Integer getRequestsMCpu() {
-		return this.requestsMCpu;
+	public Integer getRequestsmCpu() {
+		return this.requestsmCpu;
 	}
 
-	public void setRequestsMCpu(Integer requestsMCpu) {
-		this.requestsMCpu = requestsMCpu;
-		if(requestsMCpu != null){
-			putQueryParameter("RequestsMCpu", requestsMCpu.toString());
+	public void setRequestsmCpu(Integer requestsmCpu) {
+		this.requestsmCpu = requestsmCpu;
+		if(requestsmCpu != null){
+			putQueryParameter("RequestsmCpu", requestsmCpu.toString());
 		}
 	}
 

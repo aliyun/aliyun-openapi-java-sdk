@@ -29,7 +29,7 @@ public class UpdateContainerRequest extends RoaAcsRequest<UpdateContainerRespons
 
 	private String appId;
 	public UpdateContainerRequest() {
-		super("Edas", "2017-08-01", "UpdateContainer", "Edas");
+		super("Edas", "2017-08-01", "UpdateContainer", "edas");
 		setUriPattern("/pop/v5/changeorder/co_update_container");
 		setMethod(MethodType.POST);
 		try {

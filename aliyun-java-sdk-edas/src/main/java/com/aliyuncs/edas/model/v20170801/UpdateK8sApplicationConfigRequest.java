@@ -33,9 +33,9 @@ public class UpdateK8sApplicationConfigRequest extends RoaAcsRequest<UpdateK8sAp
 
 	private String cpuLimit;
 
-	private String mCpuLimit;
+	private String mcpuLimit;
 	public UpdateK8sApplicationConfigRequest() {
-		super("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "Edas");
+		super("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_app_configuration");
 		setMethod(MethodType.PUT);
 		try {
@@ -88,14 +88,14 @@ public class UpdateK8sApplicationConfigRequest extends RoaAcsRequest<UpdateK8sAp
 		}
 	}
 
-	public String getMCpuLimit() {
-		return this.mCpuLimit;
+	public String getMcpuLimit() {
+		return this.mcpuLimit;
 	}
 
-	public void setMCpuLimit(String mCpuLimit) {
-		this.mCpuLimit = mCpuLimit;
-		if(mCpuLimit != null){
-			putQueryParameter("MCpuLimit", mCpuLimit);
+	public void setMcpuLimit(String mcpuLimit) {
+		this.mcpuLimit = mcpuLimit;
+		if(mcpuLimit != null){
+			putQueryParameter("McpuLimit", mcpuLimit);
 		}
 	}
 

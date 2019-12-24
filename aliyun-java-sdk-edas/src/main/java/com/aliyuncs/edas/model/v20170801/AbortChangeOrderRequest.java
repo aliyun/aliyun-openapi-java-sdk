@@ -22,15 +22,13 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DisableDegradeControlRequest extends RoaAcsRequest<DisableDegradeControlResponse> {
+public class AbortChangeOrderRequest extends RoaAcsRequest<AbortChangeOrderResponse> {
 	   
 
-	private String appId;
-
-	private String ruleId;
-	public DisableDegradeControlRequest() {
-		super("Edas", "2017-08-01", "DisableDegradeControl", "edas");
-		setUriPattern("/pop/v5/degradecontrol/disable");
+	private String changeOrderId;
+	public AbortChangeOrderRequest() {
+		super("Edas", "2017-08-01", "AbortChangeOrder", "edas");
+		setUriPattern("/pop/v5/changeorder/change_order_abort");
 		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -38,31 +36,20 @@ public class DisableDegradeControlRequest extends RoaAcsRequest<DisableDegradeCo
 		} catch (Exception e) {}
 	}
 
-	public String getAppId() {
-		return this.appId;
+	public String getChangeOrderId() {
+		return this.changeOrderId;
 	}
 
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getRuleId() {
-		return this.ruleId;
-	}
-
-	public void setRuleId(String ruleId) {
-		this.ruleId = ruleId;
-		if(ruleId != null){
-			putQueryParameter("RuleId", ruleId);
+	public void setChangeOrderId(String changeOrderId) {
+		this.changeOrderId = changeOrderId;
+		if(changeOrderId != null){
+			putQueryParameter("ChangeOrderId", changeOrderId);
 		}
 	}
 
 	@Override
-	public Class<DisableDegradeControlResponse> getResponseClass() {
-		return DisableDegradeControlResponse.class;
+	public Class<AbortChangeOrderResponse> getResponseClass() {
+		return AbortChangeOrderResponse.class;
 	}
 
 }
