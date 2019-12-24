@@ -35,7 +35,7 @@ public class UpdateK8sApplicationConfigRequest extends RoaAcsRequest<UpdateK8sAp
 
 	private String mcpuLimit;
 	public UpdateK8sApplicationConfigRequest() {
-		super("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "edas");
+		super("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_app_configuration");
 		setMethod(MethodType.PUT);
 		try {
