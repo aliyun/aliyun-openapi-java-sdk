@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.model.v20181207;
+package com.aliyuncs.unimkt.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
@@ -56,6 +56,8 @@ public class ScanCodeNotificationRequest extends RpcAcsRequest<ScanCodeNotificat
 
 	private String sex;
 
+	private String costDetail;
+
 	private String proxyUserId;
 
 	private String alipayOpenId;
@@ -74,7 +76,7 @@ public class ScanCodeNotificationRequest extends RpcAcsRequest<ScanCodeNotificat
 
 	private String cid;
 	public ScanCodeNotificationRequest() {
-		super("UniMkt", "2018-12-07", "ScanCodeNotification");
+		super("UniMkt", "2018-12-12", "ScanCodeNotification");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -245,6 +247,17 @@ public class ScanCodeNotificationRequest extends RpcAcsRequest<ScanCodeNotificat
 		this.sex = sex;
 		if(sex != null){
 			putQueryParameter("Sex", sex);
+		}
+	}
+
+	public String getCostDetail() {
+		return this.costDetail;
+	}
+
+	public void setCostDetail(String costDetail) {
+		this.costDetail = costDetail;
+		if(costDetail != null){
+			putQueryParameter("CostDetail", costDetail);
 		}
 	}
 

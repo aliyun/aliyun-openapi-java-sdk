@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.model.v20181207;
+package com.aliyuncs.unimkt.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
@@ -23,22 +23,16 @@ import com.aliyuncs.unimkt.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryWithPayRequest extends RpcAcsRequest<QueryWithPayResponse> {
+public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse> {
 	   
 
 	private String extra;
 
-	private Float salePrice;
-
-	private String commodityId;
-
 	private String alipayOpenId;
 
-	private String deviceSn;
-
 	private String channelId;
-	public QueryWithPayRequest() {
-		super("UniMkt", "2018-12-07", "QueryWithPay");
+	public QueryPromotionRequest() {
+		super("UniMkt", "2018-12-12", "QueryPromotion");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -58,28 +52,6 @@ public class QueryWithPayRequest extends RpcAcsRequest<QueryWithPayResponse> {
 		}
 	}
 
-	public Float getSalePrice() {
-		return this.salePrice;
-	}
-
-	public void setSalePrice(Float salePrice) {
-		this.salePrice = salePrice;
-		if(salePrice != null){
-			putBodyParameter("SalePrice", salePrice.toString());
-		}
-	}
-
-	public String getCommodityId() {
-		return this.commodityId;
-	}
-
-	public void setCommodityId(String commodityId) {
-		this.commodityId = commodityId;
-		if(commodityId != null){
-			putBodyParameter("CommodityId", commodityId);
-		}
-	}
-
 	public String getAlipayOpenId() {
 		return this.alipayOpenId;
 	}
@@ -88,17 +60,6 @@ public class QueryWithPayRequest extends RpcAcsRequest<QueryWithPayResponse> {
 		this.alipayOpenId = alipayOpenId;
 		if(alipayOpenId != null){
 			putBodyParameter("AlipayOpenId", alipayOpenId);
-		}
-	}
-
-	public String getDeviceSn() {
-		return this.deviceSn;
-	}
-
-	public void setDeviceSn(String deviceSn) {
-		this.deviceSn = deviceSn;
-		if(deviceSn != null){
-			putBodyParameter("DeviceSn", deviceSn);
 		}
 	}
 
@@ -114,8 +75,8 @@ public class QueryWithPayRequest extends RpcAcsRequest<QueryWithPayResponse> {
 	}
 
 	@Override
-	public Class<QueryWithPayResponse> getResponseClass() {
-		return QueryWithPayResponse.class;
+	public Class<QueryPromotionResponse> getResponseClass() {
+		return QueryPromotionResponse.class;
 	}
 
 }

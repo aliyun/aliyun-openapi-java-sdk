@@ -1,3 +1,6 @@
+2019-12-24 Version: 1.0.0
+- Generated 2018-12-12, 2018-12-07 for `UniMkt`.
+
 2019-11-26 Version: 1.0.0
 - Generated 2018-12-12, 2018-12-07 for `UniMkt`.
 
