@@ -1,3 +1,6 @@
+2019-12-25 Version: 1.2.4
+- Support specify partition number when create topic.
+
 2019-12-23 Version: 1.2.3
 - Support sasl and acl.
 

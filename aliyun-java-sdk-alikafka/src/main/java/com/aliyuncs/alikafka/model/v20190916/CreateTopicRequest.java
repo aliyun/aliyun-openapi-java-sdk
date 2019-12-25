@@ -30,6 +30,8 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 	private String instanceId;
 
 	private String topic;
+
+	private String partitionNum;
 	public CreateTopicRequest() {
 		super("alikafka", "2019-09-16", "CreateTopic", "alikafka");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 		this.topic = topic;
 		if(topic != null){
 			putQueryParameter("Topic", topic);
+		}
+	}
+
+	public String getPartitionNum() {
+		return this.partitionNum;
+	}
+
+	public void setPartitionNum(String partitionNum) {
+		this.partitionNum = partitionNum;
+		if(partitionNum != null){
+			putQueryParameter("PartitionNum", partitionNum);
 		}
 	}
 
