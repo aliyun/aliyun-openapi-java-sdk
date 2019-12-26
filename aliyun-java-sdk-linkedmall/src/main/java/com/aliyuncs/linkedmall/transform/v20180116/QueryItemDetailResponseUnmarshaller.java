@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.linkedmall.model.v20180116.QueryItemDetailResponse;
 import com.aliyuncs.linkedmall.model.v20180116.QueryItemDetailResponse.Item;
 import com.aliyuncs.linkedmall.model.v20180116.QueryItemDetailResponse.Item.Sku;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -59,6 +60,7 @@ public class QueryItemDetailResponseUnmarshaller {
 		item.setTbShopName(_ctx.stringValue("QueryItemDetailResponse.Item.TbShopName"));
 		item.setLmItemCategory(_ctx.stringValue("QueryItemDetailResponse.Item.LmItemCategory"));
 		item.setCenterInventory(_ctx.booleanValue("QueryItemDetailResponse.Item.CenterInventory"));
+		item.setCustomizedAttributeMap(_ctx.mapValue("QueryItemDetailResponse.Item.CustomizedAttributeMap"));
 
 		List<String> itemImages = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QueryItemDetailResponse.Item.ItemImages.Length"); i++) {
@@ -83,6 +85,7 @@ public class QueryItemDetailResponseUnmarshaller {
 			sku.setSkuPropertiesJson(_ctx.stringValue("QueryItemDetailResponse.Item.Skus["+ i +"].SkuPropertiesJson"));
 			sku.setReservePrice(_ctx.longValue("QueryItemDetailResponse.Item.Skus["+ i +"].ReservePrice"));
 			sku.setCanSell(_ctx.booleanValue("QueryItemDetailResponse.Item.Skus["+ i +"].CanSell"));
+			sku.setCustomizedAttributeMap(_ctx.mapValue("QueryItemDetailResponse.Item.Skus["+ i +"].CustomizedAttributeMap"));
 
 			skus.add(sku);
 		}

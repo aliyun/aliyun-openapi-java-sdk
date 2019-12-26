@@ -15,6 +15,7 @@
 package com.aliyuncs.linkedmall.model.v20180116;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkedmall.transform.v20180116.QueryItemDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -144,6 +145,8 @@ public class QueryItemDetailResponse extends AcsResponse {
 		private String lmItemCategory;
 
 		private Boolean centerInventory;
+
+		private Map<Object,Object> customizedAttributeMap;
 
 		private List<Sku> skus;
 
@@ -341,6 +344,14 @@ public class QueryItemDetailResponse extends AcsResponse {
 			this.centerInventory = centerInventory;
 		}
 
+		public Map<Object,Object> getCustomizedAttributeMap() {
+			return this.customizedAttributeMap;
+		}
+
+		public void setCustomizedAttributeMap(Map<Object,Object> customizedAttributeMap) {
+			this.customizedAttributeMap = customizedAttributeMap;
+		}
+
 		public List<Sku> getSkus() {
 			return this.skus;
 		}
@@ -386,6 +397,8 @@ public class QueryItemDetailResponse extends AcsResponse {
 			private Long reservePrice;
 
 			private Boolean canSell;
+
+			private Map<Object,Object> customizedAttributeMap;
 
 			public String getExtJson() {
 				return this.extJson;
@@ -497,6 +510,14 @@ public class QueryItemDetailResponse extends AcsResponse {
 
 			public void setCanSell(Boolean canSell) {
 				this.canSell = canSell;
+			}
+
+			public Map<Object,Object> getCustomizedAttributeMap() {
+				return this.customizedAttributeMap;
+			}
+
+			public void setCustomizedAttributeMap(Map<Object,Object> customizedAttributeMap) {
+				this.customizedAttributeMap = customizedAttributeMap;
 			}
 		}
 	}
