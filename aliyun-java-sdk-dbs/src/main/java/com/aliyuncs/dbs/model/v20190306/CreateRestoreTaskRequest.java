@@ -40,6 +40,8 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 
 	private String restoreTaskName;
 
+	private String restoreHome;
+
 	private String destinationEndpointOracleSID;
 
 	private Long restoreTime;
@@ -151,6 +153,17 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 		this.restoreTaskName = restoreTaskName;
 		if(restoreTaskName != null){
 			putQueryParameter("RestoreTaskName", restoreTaskName);
+		}
+	}
+
+	public String getRestoreHome() {
+		return this.restoreHome;
+	}
+
+	public void setRestoreHome(String restoreHome) {
+		this.restoreHome = restoreHome;
+		if(restoreHome != null){
+			putQueryParameter("RestoreHome", restoreHome);
 		}
 	}
 
