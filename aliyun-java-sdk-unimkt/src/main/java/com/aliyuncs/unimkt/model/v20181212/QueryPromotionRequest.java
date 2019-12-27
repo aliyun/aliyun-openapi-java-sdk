@@ -30,6 +30,8 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 
 	private String alipayOpenId;
 
+	private String userId;
+
 	private String channelId;
 	public QueryPromotionRequest() {
 		super("UniMkt", "2018-12-12", "QueryPromotion");
@@ -60,6 +62,17 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 		this.alipayOpenId = alipayOpenId;
 		if(alipayOpenId != null){
 			putBodyParameter("AlipayOpenId", alipayOpenId);
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putBodyParameter("UserId", userId);
 		}
 	}
 
