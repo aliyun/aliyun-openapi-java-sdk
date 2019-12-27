@@ -1,3 +1,6 @@
+2019-12-27 Version: 2.9.5
+- Support set accountType.
+
 2019-12-27 Version: 2.9.4
 - Support set accountType.
 
