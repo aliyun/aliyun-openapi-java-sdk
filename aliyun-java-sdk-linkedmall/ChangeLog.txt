@@ -1,4 +1,7 @@
 2019-12-27 Version: 2.9.5
+- Generated 2018-01-16 for `linkedmall`.
+
+2019-12-27 Version: 2.9.5
 - Support set accountType.
 
 2019-12-27 Version: 2.9.4

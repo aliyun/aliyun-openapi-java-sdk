@@ -24,9 +24,9 @@ import com.aliyuncs.http.MethodType;
 public class DeleteItemLimitRuleRequest extends RpcAcsRequest<DeleteItemLimitRuleResponse> {
 	   
 
-	private Long lmActivityId;
+	private Long itemId;
 
-	private Long ltemId;
+	private Long lmActivityId;
 
 	private String bizId;
 
@@ -40,6 +40,17 @@ public class DeleteItemLimitRuleRequest extends RpcAcsRequest<DeleteItemLimitRul
 		setMethod(MethodType.POST);
 	}
 
+	public Long getItemId() {
+		return this.itemId;
+	}
+
+	public void setItemId(Long itemId) {
+		this.itemId = itemId;
+		if(itemId != null){
+			putQueryParameter("ItemId", itemId.toString());
+		}
+	}
+
 	public Long getLmActivityId() {
 		return this.lmActivityId;
 	}
@@ -48,17 +59,6 @@ public class DeleteItemLimitRuleRequest extends RpcAcsRequest<DeleteItemLimitRul
 		this.lmActivityId = lmActivityId;
 		if(lmActivityId != null){
 			putQueryParameter("LmActivityId", lmActivityId.toString());
-		}
-	}
-
-	public Long getLtemId() {
-		return this.ltemId;
-	}
-
-	public void setLtemId(Long ltemId) {
-		this.ltemId = ltemId;
-		if(ltemId != null){
-			putQueryParameter("LtemId", ltemId.toString());
 		}
 	}
 
