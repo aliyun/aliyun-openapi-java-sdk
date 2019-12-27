@@ -62,6 +62,8 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private String releasedKeepPolicy;
 
+	private Integer logBackupLocalRetentionNumber;
+
 	private DuplicationLocation duplicationLocation;
 
 	public String getRequestId() {
@@ -214,6 +216,14 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setReleasedKeepPolicy(String releasedKeepPolicy) {
 		this.releasedKeepPolicy = releasedKeepPolicy;
+	}
+
+	public Integer getLogBackupLocalRetentionNumber() {
+		return this.logBackupLocalRetentionNumber;
+	}
+
+	public void setLogBackupLocalRetentionNumber(Integer logBackupLocalRetentionNumber) {
+		this.logBackupLocalRetentionNumber = logBackupLocalRetentionNumber;
 	}
 
 	public DuplicationLocation getDuplicationLocation() {

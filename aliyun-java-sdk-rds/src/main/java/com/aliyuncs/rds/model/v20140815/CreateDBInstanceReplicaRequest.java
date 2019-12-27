@@ -77,7 +77,7 @@ public class CreateDBInstanceReplicaRequest extends RpcAcsRequest<CreateDBInstan
 
 	private String instanceNetworkType;
 	public CreateDBInstanceReplicaRequest() {
-		super("Rds", "2014-08-15", "CreateDBInstanceReplica");
+		super("Rds", "2014-08-15", "CreateDBInstanceReplica", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

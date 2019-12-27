@@ -41,7 +41,7 @@ public class CreateMigrateTaskForSQLServerRequest extends RpcAcsRequest<CreateMi
 
 	private String dBName;
 	public CreateMigrateTaskForSQLServerRequest() {
-		super("Rds", "2014-08-15", "CreateMigrateTaskForSQLServer");
+		super("Rds", "2014-08-15", "CreateMigrateTaskForSQLServer", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

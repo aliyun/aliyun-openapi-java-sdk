@@ -65,7 +65,7 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	private String instanceNetworkType;
 	public CreateReadOnlyDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CreateReadOnlyDBInstance");
+		super("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

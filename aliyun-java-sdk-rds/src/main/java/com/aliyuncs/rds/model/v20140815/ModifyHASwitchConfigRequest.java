@@ -37,7 +37,7 @@ public class ModifyHASwitchConfigRequest extends RpcAcsRequest<ModifyHASwitchCon
 
 	private Long ownerId;
 	public ModifyHASwitchConfigRequest() {
-		super("Rds", "2014-08-15", "ModifyHASwitchConfig");
+		super("Rds", "2014-08-15", "ModifyHASwitchConfig", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

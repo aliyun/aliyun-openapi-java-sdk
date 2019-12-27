@@ -29,6 +29,7 @@ public class ModifyBackupPolicyResponseUnmarshaller {
 		modifyBackupPolicyResponse.setLocalLogRetentionSpace(_ctx.stringValue("ModifyBackupPolicyResponse.LocalLogRetentionSpace"));
 		modifyBackupPolicyResponse.setHighSpaceUsageProtection(_ctx.stringValue("ModifyBackupPolicyResponse.HighSpaceUsageProtection"));
 		modifyBackupPolicyResponse.setCompressType(_ctx.stringValue("ModifyBackupPolicyResponse.CompressType"));
+		modifyBackupPolicyResponse.setLogBackupLocalRetentionNumber(_ctx.integerValue("ModifyBackupPolicyResponse.LogBackupLocalRetentionNumber"));
 	 
 	 	return modifyBackupPolicyResponse;
 	}

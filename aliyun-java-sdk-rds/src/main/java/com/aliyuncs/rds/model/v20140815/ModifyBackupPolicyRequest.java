@@ -37,6 +37,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String highSpaceUsageProtection;
 
+	private Integer logBackupLocalRetentionNumber;
+
 	private String dBInstanceId;
 
 	private String enableBackupLog;
@@ -67,7 +69,7 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String logBackupRetentionPeriod;
 	public ModifyBackupPolicyRequest() {
-		super("Rds", "2014-08-15", "ModifyBackupPolicy");
+		super("Rds", "2014-08-15", "ModifyBackupPolicy", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -138,6 +140,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.highSpaceUsageProtection = highSpaceUsageProtection;
 		if(highSpaceUsageProtection != null){
 			putQueryParameter("HighSpaceUsageProtection", highSpaceUsageProtection);
+		}
+	}
+
+	public Integer getLogBackupLocalRetentionNumber() {
+		return this.logBackupLocalRetentionNumber;
+	}
+
+	public void setLogBackupLocalRetentionNumber(Integer logBackupLocalRetentionNumber) {
+		this.logBackupLocalRetentionNumber = logBackupLocalRetentionNumber;
+		if(logBackupLocalRetentionNumber != null){
+			putQueryParameter("LogBackupLocalRetentionNumber", logBackupLocalRetentionNumber.toString());
 		}
 	}
 

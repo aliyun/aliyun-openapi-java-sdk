@@ -39,7 +39,7 @@ public class CreateTempDBInstanceRequest extends RpcAcsRequest<CreateTempDBInsta
 
 	private Long ownerId;
 	public CreateTempDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CreateTempDBInstance");
+		super("Rds", "2014-08-15", "CreateTempDBInstance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

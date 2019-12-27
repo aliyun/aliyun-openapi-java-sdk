@@ -38,6 +38,8 @@ public class ModifyBackupPolicyResponse extends AcsResponse {
 
 	private String compressType;
 
+	private Integer logBackupLocalRetentionNumber;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -92,6 +94,14 @@ public class ModifyBackupPolicyResponse extends AcsResponse {
 
 	public void setCompressType(String compressType) {
 		this.compressType = compressType;
+	}
+
+	public Integer getLogBackupLocalRetentionNumber() {
+		return this.logBackupLocalRetentionNumber;
+	}
+
+	public void setLogBackupLocalRetentionNumber(Integer logBackupLocalRetentionNumber) {
+		this.logBackupLocalRetentionNumber = logBackupLocalRetentionNumber;
 	}
 
 	@Override

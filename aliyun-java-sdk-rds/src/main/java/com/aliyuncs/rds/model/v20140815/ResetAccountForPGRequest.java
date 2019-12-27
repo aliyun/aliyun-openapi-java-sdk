@@ -39,7 +39,7 @@ public class ResetAccountForPGRequest extends RpcAcsRequest<ResetAccountForPGRes
 
 	private String accountPassword;
 	public ResetAccountForPGRequest() {
-		super("Rds", "2014-08-15", "ResetAccountForPG");
+		super("Rds", "2014-08-15", "ResetAccountForPG", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

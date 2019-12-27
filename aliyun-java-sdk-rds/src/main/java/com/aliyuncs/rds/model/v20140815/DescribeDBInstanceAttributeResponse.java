@@ -191,6 +191,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String originConfiguration;
 
+		private String dedicatedHostGroupId;
+
 		private List<SlaveZone> slaveZones;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -771,6 +773,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setOriginConfiguration(String originConfiguration) {
 			this.originConfiguration = originConfiguration;
+		}
+
+		public String getDedicatedHostGroupId() {
+			return this.dedicatedHostGroupId;
+		}
+
+		public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
+			this.dedicatedHostGroupId = dedicatedHostGroupId;
 		}
 
 		public List<SlaveZone> getSlaveZones() {

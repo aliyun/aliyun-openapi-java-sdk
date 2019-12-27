@@ -37,7 +37,7 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 
 	private String dBInstanceId;
 	public DeleteAccountRequest() {
-		super("Rds", "2014-08-15", "DeleteAccount");
+		super("Rds", "2014-08-15", "DeleteAccount", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

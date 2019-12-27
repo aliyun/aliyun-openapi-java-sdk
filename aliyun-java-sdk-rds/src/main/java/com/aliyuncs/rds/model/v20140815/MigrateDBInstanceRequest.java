@@ -43,7 +43,7 @@ public class MigrateDBInstanceRequest extends RpcAcsRequest<MigrateDBInstanceRes
 
 	private Long ownerId;
 	public MigrateDBInstanceRequest() {
-		super("Rds", "2014-08-15", "MigrateDBInstance");
+		super("Rds", "2014-08-15", "MigrateDBInstance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

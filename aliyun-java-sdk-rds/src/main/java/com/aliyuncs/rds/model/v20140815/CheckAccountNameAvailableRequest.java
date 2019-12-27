@@ -39,7 +39,7 @@ public class CheckAccountNameAvailableRequest extends RpcAcsRequest<CheckAccount
 
 	private Long ownerId;
 	public CheckAccountNameAvailableRequest() {
-		super("Rds", "2014-08-15", "CheckAccountNameAvailable");
+		super("Rds", "2014-08-15", "CheckAccountNameAvailable", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

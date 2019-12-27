@@ -43,7 +43,7 @@ public class DescribeLogBackupFilesRequest extends RpcAcsRequest<DescribeLogBack
 
 	private Long ownerId;
 	public DescribeLogBackupFilesRequest() {
-		super("Rds", "2014-08-15", "DescribeLogBackupFiles");
+		super("Rds", "2014-08-15", "DescribeLogBackupFiles", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

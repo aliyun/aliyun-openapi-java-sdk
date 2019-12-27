@@ -45,7 +45,7 @@ public class ModifyDedicatedHostGroupAttributeRequest extends RpcAcsRequest<Modi
 
 	private String allocationPolicy;
 	public ModifyDedicatedHostGroupAttributeRequest() {
-		super("Rds", "2014-08-15", "ModifyDedicatedHostGroupAttribute");
+		super("Rds", "2014-08-15", "ModifyDedicatedHostGroupAttribute", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class DescribeReadDBInstanceDelayRequest extends RpcAcsRequest<DescribeRe
 
 	private Long ownerId;
 	public DescribeReadDBInstanceDelayRequest() {
-		super("Rds", "2014-08-15", "DescribeReadDBInstanceDelay");
+		super("Rds", "2014-08-15", "DescribeReadDBInstanceDelay", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

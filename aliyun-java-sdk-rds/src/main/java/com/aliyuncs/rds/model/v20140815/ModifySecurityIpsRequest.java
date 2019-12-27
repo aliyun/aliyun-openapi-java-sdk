@@ -31,8 +31,6 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 
 	private String securityIps;
 
-	private String securityGroupId;
-
 	private String whitelistNetworkType;
 
 	private String securityIPType;
@@ -43,7 +41,7 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 
 	private String dBInstanceIPArrayAttribute;
 	public ModifySecurityIpsRequest() {
-		super("Rds", "2014-08-15", "ModifySecurityIps");
+		super("Rds", "2014-08-15", "ModifySecurityIps", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -81,17 +79,6 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		this.securityIps = securityIps;
 		if(securityIps != null){
 			putQueryParameter("SecurityIps", securityIps);
-		}
-	}
-
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
 		}
 	}
 

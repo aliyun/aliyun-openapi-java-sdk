@@ -35,7 +35,7 @@ public class ModifyReadonlyInstanceDelayReplicationTimeRequest extends RpcAcsReq
 
 	private String dBInstanceId;
 	public ModifyReadonlyInstanceDelayReplicationTimeRequest() {
-		super("Rds", "2014-08-15", "ModifyReadonlyInstanceDelayReplicationTime");
+		super("Rds", "2014-08-15", "ModifyReadonlyInstanceDelayReplicationTime", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

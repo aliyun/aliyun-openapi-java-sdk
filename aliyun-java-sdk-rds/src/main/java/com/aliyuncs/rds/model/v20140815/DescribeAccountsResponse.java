@@ -27,6 +27,10 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String systemAdminAccountStatus;
+
+	private String systemAdminAccountFirstActivationTime;
+
 	private List<DBInstanceAccount> accounts;
 
 	public String getRequestId() {
@@ -35,6 +39,22 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getSystemAdminAccountStatus() {
+		return this.systemAdminAccountStatus;
+	}
+
+	public void setSystemAdminAccountStatus(String systemAdminAccountStatus) {
+		this.systemAdminAccountStatus = systemAdminAccountStatus;
+	}
+
+	public String getSystemAdminAccountFirstActivationTime() {
+		return this.systemAdminAccountFirstActivationTime;
+	}
+
+	public void setSystemAdminAccountFirstActivationTime(String systemAdminAccountFirstActivationTime) {
+		this.systemAdminAccountFirstActivationTime = systemAdminAccountFirstActivationTime;
 	}
 
 	public List<DBInstanceAccount> getAccounts() {

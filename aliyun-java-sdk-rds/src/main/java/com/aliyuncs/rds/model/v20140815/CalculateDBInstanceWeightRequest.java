@@ -29,7 +29,7 @@ public class CalculateDBInstanceWeightRequest extends RpcAcsRequest<CalculateDBI
 
 	private String dBInstanceId;
 	public CalculateDBInstanceWeightRequest() {
-		super("Rds", "2014-08-15", "CalculateDBInstanceWeight");
+		super("Rds", "2014-08-15", "CalculateDBInstanceWeight", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

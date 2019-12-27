@@ -45,7 +45,7 @@ public class DescribeCrossRegionBackupsRequest extends RpcAcsRequest<DescribeCro
 
 	private Integer crossBackupId;
 	public DescribeCrossRegionBackupsRequest() {
-		super("Rds", "2014-08-15", "DescribeCrossRegionBackups");
+		super("Rds", "2014-08-15", "DescribeCrossRegionBackups", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

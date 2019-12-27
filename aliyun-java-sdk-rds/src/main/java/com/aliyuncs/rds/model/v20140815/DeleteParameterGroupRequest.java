@@ -33,7 +33,7 @@ public class DeleteParameterGroupRequest extends RpcAcsRequest<DeleteParameterGr
 
 	private String parameterGroupId;
 	public DeleteParameterGroupRequest() {
-		super("Rds", "2014-08-15", "DeleteParameterGroup");
+		super("Rds", "2014-08-15", "DeleteParameterGroup", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DeleteDedicatedHostGroupRequest extends RpcAcsRequest<DeleteDedicat
 
 	private String dedicatedHostGroupId;
 	public DeleteDedicatedHostGroupRequest() {
-		super("Rds", "2014-08-15", "DeleteDedicatedHostGroup");
+		super("Rds", "2014-08-15", "DeleteDedicatedHostGroup", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

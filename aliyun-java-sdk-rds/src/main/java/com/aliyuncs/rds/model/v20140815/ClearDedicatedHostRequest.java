@@ -35,7 +35,7 @@ public class ClearDedicatedHostRequest extends RpcAcsRequest<ClearDedicatedHostR
 
 	private String failoverMode;
 	public ClearDedicatedHostRequest() {
-		super("Rds", "2014-08-15", "ClearDedicatedHost");
+		super("Rds", "2014-08-15", "ClearDedicatedHost", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

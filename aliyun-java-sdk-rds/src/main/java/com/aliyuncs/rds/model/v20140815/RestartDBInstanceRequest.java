@@ -37,7 +37,7 @@ public class RestartDBInstanceRequest extends RpcAcsRequest<RestartDBInstanceRes
 
 	private String dBInstanceId;
 	public RestartDBInstanceRequest() {
-		super("Rds", "2014-08-15", "RestartDBInstance");
+		super("Rds", "2014-08-15", "RestartDBInstance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

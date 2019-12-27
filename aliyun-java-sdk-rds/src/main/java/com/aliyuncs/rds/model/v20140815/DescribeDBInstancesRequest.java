@@ -97,7 +97,7 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String payType;
 	public DescribeDBInstancesRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstances");
+		super("Rds", "2014-08-15", "DescribeDBInstances", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

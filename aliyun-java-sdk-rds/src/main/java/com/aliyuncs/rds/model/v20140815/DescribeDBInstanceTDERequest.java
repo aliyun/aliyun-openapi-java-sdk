@@ -35,7 +35,7 @@ public class DescribeDBInstanceTDERequest extends RpcAcsRequest<DescribeDBInstan
 
 	private String dBInstanceId;
 	public DescribeDBInstanceTDERequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstanceTDE");
+		super("Rds", "2014-08-15", "DescribeDBInstanceTDE", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

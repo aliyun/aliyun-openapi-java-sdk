@@ -35,7 +35,7 @@ public class DescribeDedicatedHostAttributeRequest extends RpcAcsRequest<Describ
 
 	private String dedicatedHostGroupId;
 	public DescribeDedicatedHostAttributeRequest() {
-		super("Rds", "2014-08-15", "DescribeDedicatedHostAttribute");
+		super("Rds", "2014-08-15", "DescribeDedicatedHostAttribute", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

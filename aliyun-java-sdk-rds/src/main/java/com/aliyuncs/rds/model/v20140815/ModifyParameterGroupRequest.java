@@ -39,7 +39,7 @@ public class ModifyParameterGroupRequest extends RpcAcsRequest<ModifyParameterGr
 
 	private String parameterGroupDesc;
 	public ModifyParameterGroupRequest() {
-		super("Rds", "2014-08-15", "ModifyParameterGroup");
+		super("Rds", "2014-08-15", "ModifyParameterGroup", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

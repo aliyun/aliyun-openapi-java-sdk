@@ -1,3 +1,6 @@
+2019-12-27 Version: 2.4.1
+- Generated 2014-08-15 for `Rds`.
+
 2019-12-10 Version: 2.4.0
 - Correct RDS SDK version.
 

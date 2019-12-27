@@ -45,7 +45,7 @@ public class DescribeBackupTasksRequest extends RpcAcsRequest<DescribeBackupTask
 
 	private String backupMode;
 	public DescribeBackupTasksRequest() {
-		super("Rds", "2014-08-15", "DescribeBackupTasks");
+		super("Rds", "2014-08-15", "DescribeBackupTasks", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

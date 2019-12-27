@@ -35,7 +35,7 @@ public class ReleaseReadWriteSplittingConnectionRequest extends RpcAcsRequest<Re
 
 	private String dBInstanceId;
 	public ReleaseReadWriteSplittingConnectionRequest() {
-		super("Rds", "2014-08-15", "ReleaseReadWriteSplittingConnection");
+		super("Rds", "2014-08-15", "ReleaseReadWriteSplittingConnection", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

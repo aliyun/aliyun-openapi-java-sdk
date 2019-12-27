@@ -35,7 +35,7 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 
 	private String endTime;
 	public DescribeDBInstancePerformanceRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstancePerformance");
+		super("Rds", "2014-08-15", "DescribeDBInstancePerformance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

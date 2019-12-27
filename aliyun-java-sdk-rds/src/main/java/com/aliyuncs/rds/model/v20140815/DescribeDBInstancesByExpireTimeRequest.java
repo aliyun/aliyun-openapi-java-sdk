@@ -45,7 +45,7 @@ public class DescribeDBInstancesByExpireTimeRequest extends RpcAcsRequest<Descri
 
 	private String tags;
 	public DescribeDBInstancesByExpireTimeRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime");
+		super("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

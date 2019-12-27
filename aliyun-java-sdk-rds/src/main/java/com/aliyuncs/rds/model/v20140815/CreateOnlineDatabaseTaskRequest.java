@@ -43,7 +43,7 @@ public class CreateOnlineDatabaseTaskRequest extends RpcAcsRequest<CreateOnlineD
 
 	private String checkDBMode;
 	public CreateOnlineDatabaseTaskRequest() {
-		super("Rds", "2014-08-15", "CreateOnlineDatabaseTask");
+		super("Rds", "2014-08-15", "CreateOnlineDatabaseTask", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

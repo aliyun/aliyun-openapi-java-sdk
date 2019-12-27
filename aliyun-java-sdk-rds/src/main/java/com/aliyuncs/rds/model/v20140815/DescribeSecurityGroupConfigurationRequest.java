@@ -33,7 +33,7 @@ public class DescribeSecurityGroupConfigurationRequest extends RpcAcsRequest<Des
 
 	private String dBInstanceId;
 	public DescribeSecurityGroupConfigurationRequest() {
-		super("Rds", "2014-08-15", "DescribeSecurityGroupConfiguration");
+		super("Rds", "2014-08-15", "DescribeSecurityGroupConfiguration", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

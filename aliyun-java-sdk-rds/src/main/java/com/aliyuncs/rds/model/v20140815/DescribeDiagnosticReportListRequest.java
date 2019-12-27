@@ -27,7 +27,7 @@ public class DescribeDiagnosticReportListRequest extends RpcAcsRequest<DescribeD
 
 	private String dBInstanceId;
 	public DescribeDiagnosticReportListRequest() {
-		super("Rds", "2014-08-15", "DescribeDiagnosticReportList");
+		super("Rds", "2014-08-15", "DescribeDiagnosticReportList", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

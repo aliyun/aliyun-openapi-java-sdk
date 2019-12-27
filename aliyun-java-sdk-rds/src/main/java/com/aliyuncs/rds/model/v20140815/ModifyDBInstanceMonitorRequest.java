@@ -39,7 +39,7 @@ public class ModifyDBInstanceMonitorRequest extends RpcAcsRequest<ModifyDBInstan
 
 	private String dBInstanceId;
 	public ModifyDBInstanceMonitorRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceMonitor");
+		super("Rds", "2014-08-15", "ModifyDBInstanceMonitor", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
