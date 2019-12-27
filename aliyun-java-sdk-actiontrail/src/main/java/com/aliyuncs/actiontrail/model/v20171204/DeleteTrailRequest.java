@@ -15,18 +15,20 @@
 package com.aliyuncs.actiontrail.model.v20171204;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteTrailRequest extends RpcAcsRequest<DeleteTrailResponse> {
-	
-	public DeleteTrailRequest() {
-		super("Actiontrail", "2017-12-04", "DeleteTrail", "actiontrail");
-	}
+	   
 
 	private String name;
+	public DeleteTrailRequest() {
+		super("Actiontrail", "2017-12-04", "DeleteTrail", "actiontrail");
+		setMethod(MethodType.POST);
+	}
 
 	public String getName() {
 		return this.name;

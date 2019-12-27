@@ -15,18 +15,20 @@
 package com.aliyuncs.actiontrail.model.v20171204;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetTrailStatusRequest extends RpcAcsRequest<GetTrailStatusResponse> {
-	
-	public GetTrailStatusRequest() {
-		super("Actiontrail", "2017-12-04", "GetTrailStatus", "actiontrail");
-	}
+	   
 
 	private String name;
+	public GetTrailStatusRequest() {
+		super("Actiontrail", "2017-12-04", "GetTrailStatus", "actiontrail");
+		setMethod(MethodType.POST);
+	}
 
 	public String getName() {
 		return this.name;

@@ -26,32 +26,12 @@ public class StopLoggingResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String param;
-
-	private String result;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getParam() {
-		return this.param;
-	}
-
-	public void setParam(String param) {
-		this.param = param;
-	}
-
-	public String getResult() {
-		return this.result;
-	}
-
-	public void setResult(String result) {
-		this.result = result;
 	}
 
 	@Override

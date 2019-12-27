@@ -15,18 +15,20 @@
 package com.aliyuncs.actiontrail.model.v20171204;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class StartLoggingRequest extends RpcAcsRequest<StartLoggingResponse> {
-	
-	public StartLoggingRequest() {
-		super("Actiontrail", "2017-12-04", "StartLogging", "actiontrail");
-	}
+	   
 
 	private String name;
+	public StartLoggingRequest() {
+		super("Actiontrail", "2017-12-04", "StartLogging", "actiontrail");
+		setMethod(MethodType.GET);
+	}
 
 	public String getName() {
 		return this.name;

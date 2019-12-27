@@ -15,30 +15,34 @@
 package com.aliyuncs.actiontrail.model.v20171204;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateTrailRequest extends RpcAcsRequest<UpdateTrailResponse> {
-	
-	public UpdateTrailRequest() {
-		super("Actiontrail", "2017-12-04", "UpdateTrail", "actiontrail");
-	}
+	   
 
 	private String slsProjectArn;
 
 	private String slsWriteRoleArn;
 
+	private String ossKeyPrefix;
+
 	private String roleName;
+
+	private String eventRW;
 
 	private String name;
 
 	private String ossBucketName;
 
-	private String ossKeyPrefix;
-
-	private String eventRW;
+	private String trailRegion;
+	public UpdateTrailRequest() {
+		super("Actiontrail", "2017-12-04", "UpdateTrail", "actiontrail");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSlsProjectArn() {
 		return this.slsProjectArn;
@@ -62,6 +66,17 @@ public class UpdateTrailRequest extends RpcAcsRequest<UpdateTrailResponse> {
 		}
 	}
 
+	public String getOssKeyPrefix() {
+		return this.ossKeyPrefix;
+	}
+
+	public void setOssKeyPrefix(String ossKeyPrefix) {
+		this.ossKeyPrefix = ossKeyPrefix;
+		if(ossKeyPrefix != null){
+			putQueryParameter("OssKeyPrefix", ossKeyPrefix);
+		}
+	}
+
 	public String getRoleName() {
 		return this.roleName;
 	}
@@ -70,6 +85,17 @@ public class UpdateTrailRequest extends RpcAcsRequest<UpdateTrailResponse> {
 		this.roleName = roleName;
 		if(roleName != null){
 			putQueryParameter("RoleName", roleName);
+		}
+	}
+
+	public String getEventRW() {
+		return this.eventRW;
+	}
+
+	public void setEventRW(String eventRW) {
+		this.eventRW = eventRW;
+		if(eventRW != null){
+			putQueryParameter("EventRW", eventRW);
 		}
 	}
 
@@ -95,25 +121,14 @@ public class UpdateTrailRequest extends RpcAcsRequest<UpdateTrailResponse> {
 		}
 	}
 
-	public String getOssKeyPrefix() {
-		return this.ossKeyPrefix;
+	public String getTrailRegion() {
+		return this.trailRegion;
 	}
 
-	public void setOssKeyPrefix(String ossKeyPrefix) {
-		this.ossKeyPrefix = ossKeyPrefix;
-		if(ossKeyPrefix != null){
-			putQueryParameter("OssKeyPrefix", ossKeyPrefix);
-		}
-	}
-
-	public String getEventRW() {
-		return this.eventRW;
-	}
-
-	public void setEventRW(String eventRW) {
-		this.eventRW = eventRW;
-		if(eventRW != null){
-			putQueryParameter("EventRW", eventRW);
+	public void setTrailRegion(String trailRegion) {
+		this.trailRegion = trailRegion;
+		if(trailRegion != null){
+			putQueryParameter("TrailRegion", trailRegion);
 		}
 	}
 

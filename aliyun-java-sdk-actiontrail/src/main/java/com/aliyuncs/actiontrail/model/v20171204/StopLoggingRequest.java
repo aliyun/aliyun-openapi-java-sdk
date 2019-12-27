@@ -15,18 +15,20 @@
 package com.aliyuncs.actiontrail.model.v20171204;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class StopLoggingRequest extends RpcAcsRequest<StopLoggingResponse> {
-	
-	public StopLoggingRequest() {
-		super("Actiontrail", "2017-12-04", "StopLogging", "actiontrail");
-	}
+	   
 
 	private String name;
+	public StopLoggingRequest() {
+		super("Actiontrail", "2017-12-04", "StopLogging", "actiontrail");
+		setMethod(MethodType.GET);
+	}
 
 	public String getName() {
 		return this.name;

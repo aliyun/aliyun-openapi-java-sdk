@@ -53,23 +53,27 @@ public class DescribeTrailsResponse extends AcsResponse {
 
 		private String roleName;
 
-		private String status;
-
-		private String includeGlobalServiceEvent;
-
 		private String ossBucketName;
 
 		private String ossKeyPrefix;
 
-		private String region;
-
 		private String eventRW;
-
-		private String type;
 
 		private String slsWriteRoleArn;
 
 		private String slsProjectArn;
+
+		private String status;
+
+		private String trailRegion;
+
+		private String createTime;
+
+		private String updateTime;
+
+		private String startLoggingTime;
+
+		private String stopLoggingTime;
 
 		public String getName() {
 			return this.name;
@@ -95,22 +99,6 @@ public class DescribeTrailsResponse extends AcsResponse {
 			this.roleName = roleName;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getIncludeGlobalServiceEvent() {
-			return this.includeGlobalServiceEvent;
-		}
-
-		public void setIncludeGlobalServiceEvent(String includeGlobalServiceEvent) {
-			this.includeGlobalServiceEvent = includeGlobalServiceEvent;
-		}
-
 		public String getOssBucketName() {
 			return this.ossBucketName;
 		}
@@ -127,28 +115,12 @@ public class DescribeTrailsResponse extends AcsResponse {
 			this.ossKeyPrefix = ossKeyPrefix;
 		}
 
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
 		public String getEventRW() {
 			return this.eventRW;
 		}
 
 		public void setEventRW(String eventRW) {
 			this.eventRW = eventRW;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
 		}
 
 		public String getSlsWriteRoleArn() {
@@ -165,6 +137,54 @@ public class DescribeTrailsResponse extends AcsResponse {
 
 		public void setSlsProjectArn(String slsProjectArn) {
 			this.slsProjectArn = slsProjectArn;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getTrailRegion() {
+			return this.trailRegion;
+		}
+
+		public void setTrailRegion(String trailRegion) {
+			this.trailRegion = trailRegion;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public String getStartLoggingTime() {
+			return this.startLoggingTime;
+		}
+
+		public void setStartLoggingTime(String startLoggingTime) {
+			this.startLoggingTime = startLoggingTime;
+		}
+
+		public String getStopLoggingTime() {
+			return this.stopLoggingTime;
+		}
+
+		public void setStopLoggingTime(String stopLoggingTime) {
+			this.stopLoggingTime = stopLoggingTime;
 		}
 	}
 

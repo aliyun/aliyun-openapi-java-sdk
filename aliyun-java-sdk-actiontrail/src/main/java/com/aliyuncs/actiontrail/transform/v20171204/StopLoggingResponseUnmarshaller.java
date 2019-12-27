@@ -20,11 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StopLoggingResponseUnmarshaller {
 
-	public static StopLoggingResponse unmarshall(StopLoggingResponse stopLoggingResponse, UnmarshallerContext context) {
+	public static StopLoggingResponse unmarshall(StopLoggingResponse stopLoggingResponse, UnmarshallerContext _ctx) {
 		
-		stopLoggingResponse.setRequestId(context.stringValue("StopLoggingResponse.RequestId"));
-		stopLoggingResponse.setParam(context.stringValue("StopLoggingResponse.Param"));
-		stopLoggingResponse.setResult(context.stringValue("StopLoggingResponse.Result"));
+		stopLoggingResponse.setRequestId(_ctx.stringValue("StopLoggingResponse.RequestId"));
 	 
 	 	return stopLoggingResponse;
 	}

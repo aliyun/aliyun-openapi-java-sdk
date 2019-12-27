@@ -20,19 +20,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateTrailResponseUnmarshaller {
 
-	public static UpdateTrailResponse unmarshall(UpdateTrailResponse updateTrailResponse, UnmarshallerContext context) {
+	public static UpdateTrailResponse unmarshall(UpdateTrailResponse updateTrailResponse, UnmarshallerContext _ctx) {
 		
-		updateTrailResponse.setRequestId(context.stringValue("UpdateTrailResponse.RequestId"));
-		updateTrailResponse.setParam(context.stringValue("UpdateTrailResponse.Param"));
-		updateTrailResponse.setResult(context.stringValue("UpdateTrailResponse.Result"));
-		updateTrailResponse.setName(context.stringValue("UpdateTrailResponse.Name"));
-		updateTrailResponse.setHomeRegion(context.stringValue("UpdateTrailResponse.HomeRegion"));
-		updateTrailResponse.setOssBucketName(context.stringValue("UpdateTrailResponse.OssBucketName"));
-		updateTrailResponse.setOssKeyPrefix(context.stringValue("UpdateTrailResponse.OssKeyPrefix"));
-		updateTrailResponse.setRoleName(context.stringValue("UpdateTrailResponse.RoleName"));
-		updateTrailResponse.setSlsProjectArn(context.stringValue("UpdateTrailResponse.SlsProjectArn"));
-		updateTrailResponse.setSlsWriteRoleArn(context.stringValue("UpdateTrailResponse.SlsWriteRoleArn"));
-		updateTrailResponse.setEventRW(context.stringValue("UpdateTrailResponse.EventRW"));
+		updateTrailResponse.setRequestId(_ctx.stringValue("UpdateTrailResponse.RequestId"));
+		updateTrailResponse.setName(_ctx.stringValue("UpdateTrailResponse.Name"));
+		updateTrailResponse.setHomeRegion(_ctx.stringValue("UpdateTrailResponse.HomeRegion"));
+		updateTrailResponse.setOssBucketName(_ctx.stringValue("UpdateTrailResponse.OssBucketName"));
+		updateTrailResponse.setOssKeyPrefix(_ctx.stringValue("UpdateTrailResponse.OssKeyPrefix"));
+		updateTrailResponse.setRoleName(_ctx.stringValue("UpdateTrailResponse.RoleName"));
+		updateTrailResponse.setSlsProjectArn(_ctx.stringValue("UpdateTrailResponse.SlsProjectArn"));
+		updateTrailResponse.setSlsWriteRoleArn(_ctx.stringValue("UpdateTrailResponse.SlsWriteRoleArn"));
+		updateTrailResponse.setEventRW(_ctx.stringValue("UpdateTrailResponse.EventRW"));
+		updateTrailResponse.setTrailRegion(_ctx.stringValue("UpdateTrailResponse.TrailRegion"));
 	 
 	 	return updateTrailResponse;
 	}

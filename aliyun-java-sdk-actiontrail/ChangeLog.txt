@@ -1,3 +1,6 @@
+2019-12-27 Version: 1.0.3
+- Update DescribeTrails Response.
+
 2019-04-11 Version: 1.0.2
 1, Fix ClassCastException
 

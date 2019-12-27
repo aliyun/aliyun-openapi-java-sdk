@@ -20,17 +20,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateTrailResponseUnmarshaller {
 
-	public static CreateTrailResponse unmarshall(CreateTrailResponse createTrailResponse, UnmarshallerContext context) {
+	public static CreateTrailResponse unmarshall(CreateTrailResponse createTrailResponse, UnmarshallerContext _ctx) {
 		
-		createTrailResponse.setRequestId(context.stringValue("CreateTrailResponse.RequestId"));
-		createTrailResponse.setName(context.stringValue("CreateTrailResponse.Name"));
-		createTrailResponse.setHomeRegion(context.stringValue("CreateTrailResponse.HomeRegion"));
-		createTrailResponse.setOssBucketName(context.stringValue("CreateTrailResponse.OssBucketName"));
-		createTrailResponse.setOssKeyPrefix(context.stringValue("CreateTrailResponse.OssKeyPrefix"));
-		createTrailResponse.setRoleName(context.stringValue("CreateTrailResponse.RoleName"));
-		createTrailResponse.setSlsProjectArn(context.stringValue("CreateTrailResponse.SlsProjectArn"));
-		createTrailResponse.setSlsWriteRoleArn(context.stringValue("CreateTrailResponse.SlsWriteRoleArn"));
-		createTrailResponse.setEventRW(context.stringValue("CreateTrailResponse.EventRW"));
+		createTrailResponse.setRequestId(_ctx.stringValue("CreateTrailResponse.RequestId"));
+		createTrailResponse.setName(_ctx.stringValue("CreateTrailResponse.Name"));
+		createTrailResponse.setHomeRegion(_ctx.stringValue("CreateTrailResponse.HomeRegion"));
+		createTrailResponse.setOssBucketName(_ctx.stringValue("CreateTrailResponse.OssBucketName"));
+		createTrailResponse.setOssKeyPrefix(_ctx.stringValue("CreateTrailResponse.OssKeyPrefix"));
+		createTrailResponse.setRoleName(_ctx.stringValue("CreateTrailResponse.RoleName"));
+		createTrailResponse.setSlsProjectArn(_ctx.stringValue("CreateTrailResponse.SlsProjectArn"));
+		createTrailResponse.setSlsWriteRoleArn(_ctx.stringValue("CreateTrailResponse.SlsWriteRoleArn"));
+		createTrailResponse.setEventRW(_ctx.stringValue("CreateTrailResponse.EventRW"));
+		createTrailResponse.setTrailRegion(_ctx.stringValue("CreateTrailResponse.TrailRegion"));
 	 
 	 	return createTrailResponse;
 	}

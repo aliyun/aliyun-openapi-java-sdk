@@ -24,25 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeTrailsResponseUnmarshaller {
 
-	public static DescribeTrailsResponse unmarshall(DescribeTrailsResponse describeTrailsResponse, UnmarshallerContext context) {
+	public static DescribeTrailsResponse unmarshall(DescribeTrailsResponse describeTrailsResponse, UnmarshallerContext _ctx) {
 		
-		describeTrailsResponse.setRequestId(context.stringValue("DescribeTrailsResponse.RequestId"));
+		describeTrailsResponse.setRequestId(_ctx.stringValue("DescribeTrailsResponse.RequestId"));
 
 		List<TrailListItem> trailList = new ArrayList<TrailListItem>();
-		for (int i = 0; i < context.lengthValue("DescribeTrailsResponse.TrailList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeTrailsResponse.TrailList.Length"); i++) {
 			TrailListItem trailListItem = new TrailListItem();
-			trailListItem.setName(context.stringValue("DescribeTrailsResponse.TrailList["+ i +"].Name"));
-			trailListItem.setHomeRegion(context.stringValue("DescribeTrailsResponse.TrailList["+ i +"].HomeRegion"));
-			trailListItem.setRoleName(context.stringValue("DescribeTrailsResponse.TrailList["+ i +"].RoleName"));
-			trailListItem.setStatus(context.stringValue("DescribeTrailsResponse.TrailList["+ i +"].Status"));
-			trailListItem.setIncludeGlobalServiceEvent(context.stringValue("DescribeTrailsResponse.TrailList["+ i +"].IncludeGlobalServiceEvent"));
-			trailListItem.setOssBucketName(context.stringValue("DescribeTrailsResponse.TrailList["+ i +"].OssBucketName"));
-			trailListItem.setOssKeyPrefix(context.stringValue("DescribeTrailsResponse.TrailList["+ i +"].OssKeyPrefix"));
-			trailListItem.setRegion(context.stringValue("DescribeTrailsResponse.TrailList["+ i +"].Region"));
-			trailListItem.setEventRW(context.stringValue("DescribeTrailsResponse.TrailList["+ i +"].EventRW"));
-			trailListItem.setType(context.stringValue("DescribeTrailsResponse.TrailList["+ i +"].Type"));
-			trailListItem.setSlsWriteRoleArn(context.stringValue("DescribeTrailsResponse.TrailList["+ i +"].SlsWriteRoleArn"));
-			trailListItem.setSlsProjectArn(context.stringValue("DescribeTrailsResponse.TrailList["+ i +"].SlsProjectArn"));
+			trailListItem.setName(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].Name"));
+			trailListItem.setHomeRegion(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].HomeRegion"));
+			trailListItem.setRoleName(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].RoleName"));
+			trailListItem.setOssBucketName(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].OssBucketName"));
+			trailListItem.setOssKeyPrefix(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].OssKeyPrefix"));
+			trailListItem.setEventRW(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].EventRW"));
+			trailListItem.setSlsWriteRoleArn(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].SlsWriteRoleArn"));
+			trailListItem.setSlsProjectArn(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].SlsProjectArn"));
+			trailListItem.setStatus(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].Status"));
+			trailListItem.setTrailRegion(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].TrailRegion"));
+			trailListItem.setCreateTime(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].CreateTime"));
+			trailListItem.setUpdateTime(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].UpdateTime"));
+			trailListItem.setStartLoggingTime(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].StartLoggingTime"));
+			trailListItem.setStopLoggingTime(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].StopLoggingTime"));
 
 			trailList.add(trailListItem);
 		}

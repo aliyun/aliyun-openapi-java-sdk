@@ -15,15 +15,17 @@
 package com.aliyuncs.actiontrail.model.v20171204;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
-	
+	   
 	public DescribeRegionsRequest() {
 		super("Actiontrail", "2017-12-04", "DescribeRegions", "actiontrail");
+		setMethod(MethodType.POST);
 	}
 
 	@Override

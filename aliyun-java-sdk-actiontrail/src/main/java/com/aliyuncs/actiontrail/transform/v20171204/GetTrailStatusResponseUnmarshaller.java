@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetTrailStatusResponseUnmarshaller {
 
-	public static GetTrailStatusResponse unmarshall(GetTrailStatusResponse getTrailStatusResponse, UnmarshallerContext context) {
+	public static GetTrailStatusResponse unmarshall(GetTrailStatusResponse getTrailStatusResponse, UnmarshallerContext _ctx) {
 		
-		getTrailStatusResponse.setRequestId(context.stringValue("GetTrailStatusResponse.RequestId"));
-		getTrailStatusResponse.setIsLogging(context.booleanValue("GetTrailStatusResponse.IsLogging"));
-		getTrailStatusResponse.setLatestDeliveryError(context.stringValue("GetTrailStatusResponse.LatestDeliveryError"));
-		getTrailStatusResponse.setLatestDeliveryTime(context.stringValue("GetTrailStatusResponse.LatestDeliveryTime"));
-		getTrailStatusResponse.setStartLoggingTime(context.stringValue("GetTrailStatusResponse.StartLoggingTime"));
-		getTrailStatusResponse.setStopLoggingTime(context.stringValue("GetTrailStatusResponse.StopLoggingTime"));
+		getTrailStatusResponse.setRequestId(_ctx.stringValue("GetTrailStatusResponse.RequestId"));
+		getTrailStatusResponse.setIsLogging(_ctx.booleanValue("GetTrailStatusResponse.IsLogging"));
+		getTrailStatusResponse.setLatestDeliveryError(_ctx.stringValue("GetTrailStatusResponse.LatestDeliveryError"));
+		getTrailStatusResponse.setLatestDeliveryTime(_ctx.stringValue("GetTrailStatusResponse.LatestDeliveryTime"));
+		getTrailStatusResponse.setStartLoggingTime(_ctx.stringValue("GetTrailStatusResponse.StartLoggingTime"));
+		getTrailStatusResponse.setStopLoggingTime(_ctx.stringValue("GetTrailStatusResponse.StopLoggingTime"));
 	 
 	 	return getTrailStatusResponse;
 	}

@@ -42,6 +42,8 @@ public class CreateTrailResponse extends AcsResponse {
 
 	private String eventRW;
 
+	private String trailRegion;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -112,6 +114,14 @@ public class CreateTrailResponse extends AcsResponse {
 
 	public void setEventRW(String eventRW) {
 		this.eventRW = eventRW;
+	}
+
+	public String getTrailRegion() {
+		return this.trailRegion;
+	}
+
+	public void setTrailRegion(String trailRegion) {
+		this.trailRegion = trailRegion;
 	}
 
 	@Override

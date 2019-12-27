@@ -16,35 +16,25 @@ package com.aliyuncs.actiontrail.model.v20171204;
 
 import java.util.List;
 import java.util.Map;
-
-import javax.xml.bind.annotation.XmlRootElement;
-
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.actiontrail.transform.v20171204.LookupEventsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
-import com.google.gson.annotations.SerializedName;
 
 /**
  * @author auto create
  * @version 
  */
-@XmlRootElement
 public class LookupEventsResponse extends AcsResponse {
 
-    @SerializedName("RequestId")
 	private String requestId;
 
-    @SerializedName("NextToken")
 	private String nextToken;
 
-    @SerializedName("StartTime")
 	private String startTime;
 
-    @SerializedName("EndTime")
 	private String endTime;
 
-    @SerializedName("Events")
-	private List<Map<Object, Object>> events;
+	private List<Map<Object,Object>> events;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -78,11 +68,11 @@ public class LookupEventsResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
-	public List<Map<Object, Object>> getEvents() {
+	public List<Map<Object,Object>> getEvents() {
 		return this.events;
 	}
 
-	public void setEvents(List<Map<Object, Object>> events) {
+	public void setEvents(List<Map<Object,Object>> events) {
 		this.events = events;
 	}
 

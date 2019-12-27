@@ -24,14 +24,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class LookupEventsResponseUnmarshaller {
 
-	public static LookupEventsResponse unmarshall(LookupEventsResponse lookupEventsResponse, UnmarshallerContext context) {
+	public static LookupEventsResponse unmarshall(LookupEventsResponse lookupEventsResponse, UnmarshallerContext _ctx) {
 		
-		lookupEventsResponse.setRequestId(context.stringValue("LookupEventsResponse.RequestId"));
-		lookupEventsResponse.setNextToken(context.stringValue("LookupEventsResponse.NextToken"));
-		lookupEventsResponse.setStartTime(context.stringValue("LookupEventsResponse.StartTime"));
-		lookupEventsResponse.setEndTime(context.stringValue("LookupEventsResponse.EndTime"));
+		lookupEventsResponse.setRequestId(_ctx.stringValue("LookupEventsResponse.RequestId"));
+		lookupEventsResponse.setNextToken(_ctx.stringValue("LookupEventsResponse.NextToken"));
+		lookupEventsResponse.setStartTime(_ctx.stringValue("LookupEventsResponse.StartTime"));
+		lookupEventsResponse.setEndTime(_ctx.stringValue("LookupEventsResponse.EndTime"));
 
-		List<Map<Object, Object>> events = context.listMapValue("LookupEventsResponse.Events");
+		List<Map<Object, Object>> events = _ctx.listMapValue("LookupEventsResponse.Events");
 		lookupEventsResponse.setEvents(events);
 	 
 	 	return lookupEventsResponse;

@@ -26,10 +26,6 @@ public class UpdateTrailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String param;
-
-	private String result;
-
 	private String name;
 
 	private String homeRegion;
@@ -46,28 +42,14 @@ public class UpdateTrailResponse extends AcsResponse {
 
 	private String eventRW;
 
+	private String trailRegion;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getParam() {
-		return this.param;
-	}
-
-	public void setParam(String param) {
-		this.param = param;
-	}
-
-	public String getResult() {
-		return this.result;
-	}
-
-	public void setResult(String result) {
-		this.result = result;
 	}
 
 	public String getName() {
@@ -132,6 +114,14 @@ public class UpdateTrailResponse extends AcsResponse {
 
 	public void setEventRW(String eventRW) {
 		this.eventRW = eventRW;
+	}
+
+	public String getTrailRegion() {
+		return this.trailRegion;
+	}
+
+	public void setTrailRegion(String trailRegion) {
+		this.trailRegion = trailRegion;
 	}
 
 	@Override

@@ -15,30 +15,21 @@
 package com.aliyuncs.actiontrail.model.v20171204;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeTrailsRequest extends RpcAcsRequest<DescribeTrailsResponse> {
-	
-	public DescribeTrailsRequest() {
-		super("Actiontrail", "2017-12-04", "DescribeTrails", "actiontrail");
-	}
-
-	private String nameList;
+	   
 
 	private Boolean includeShadowTrails;
 
-	public String getNameList() {
-		return this.nameList;
-	}
-
-	public void setNameList(String nameList) {
-		this.nameList = nameList;
-		if(nameList != null){
-			putQueryParameter("NameList", nameList);
-		}
+	private String nameList;
+	public DescribeTrailsRequest() {
+		super("Actiontrail", "2017-12-04", "DescribeTrails", "actiontrail");
+		setMethod(MethodType.POST);
 	}
 
 	public Boolean getIncludeShadowTrails() {
@@ -49,6 +40,17 @@ public class DescribeTrailsRequest extends RpcAcsRequest<DescribeTrailsResponse>
 		this.includeShadowTrails = includeShadowTrails;
 		if(includeShadowTrails != null){
 			putQueryParameter("IncludeShadowTrails", includeShadowTrails.toString());
+		}
+	}
+
+	public String getNameList() {
+		return this.nameList;
+	}
+
+	public void setNameList(String nameList) {
+		this.nameList = nameList;
+		if(nameList != null){
+			putQueryParameter("NameList", nameList);
 		}
 	}
 

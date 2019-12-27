@@ -15,18 +15,26 @@
 package com.aliyuncs.actiontrail.model.v20171204;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class LookupEventsRequest extends RpcAcsRequest<LookupEventsResponse> {
-	
-	public LookupEventsRequest() {
-		super("Actiontrail", "2017-12-04", "LookupEvents", "actiontrail");
-	}
+	   
 
 	private String request;
+
+	private String startTime;
+
+	private String eventName;
+
+	private String nextToken;
+
+	private String serviceName;
+
+	private String event;
 
 	private String eventAccessKeyId;
 
@@ -34,25 +42,19 @@ public class LookupEventsRequest extends RpcAcsRequest<LookupEventsResponse> {
 
 	private String eventRW;
 
-	private String startTime;
-
 	private String resourceType;
-
-	private String eventName;
-
-	private String nextToken;
 
 	private String maxResults;
 
 	private String eventType;
 
-	private String serviceName;
-
 	private String resourceName;
 
-	private String event;
-
 	private String user;
+	public LookupEventsRequest() {
+		super("Actiontrail", "2017-12-04", "LookupEvents", "actiontrail");
+		setMethod(MethodType.POST);
+	}
 
 	public String getRequest() {
 		return this.request;
@@ -62,6 +64,61 @@ public class LookupEventsRequest extends RpcAcsRequest<LookupEventsResponse> {
 		this.request = request;
 		if(request != null){
 			putQueryParameter("Request", request);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getEventName() {
+		return this.eventName;
+	}
+
+	public void setEventName(String eventName) {
+		this.eventName = eventName;
+		if(eventName != null){
+			putQueryParameter("EventName", eventName);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
+		}
+	}
+
+	public String getEvent() {
+		return this.event;
+	}
+
+	public void setEvent(String event) {
+		this.event = event;
+		if(event != null){
+			putQueryParameter("Event", event);
 		}
 	}
 
@@ -98,17 +155,6 @@ public class LookupEventsRequest extends RpcAcsRequest<LookupEventsResponse> {
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public String getResourceType() {
 		return this.resourceType;
 	}
@@ -117,28 +163,6 @@ public class LookupEventsRequest extends RpcAcsRequest<LookupEventsResponse> {
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
-	public String getEventName() {
-		return this.eventName;
-	}
-
-	public void setEventName(String eventName) {
-		this.eventName = eventName;
-		if(eventName != null){
-			putQueryParameter("EventName", eventName);
-		}
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -164,17 +188,6 @@ public class LookupEventsRequest extends RpcAcsRequest<LookupEventsResponse> {
 		}
 	}
 
-	public String getServiceName() {
-		return this.serviceName;
-	}
-
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
-		}
-	}
-
 	public String getResourceName() {
 		return this.resourceName;
 	}
@@ -183,17 +196,6 @@ public class LookupEventsRequest extends RpcAcsRequest<LookupEventsResponse> {
 		this.resourceName = resourceName;
 		if(resourceName != null){
 			putQueryParameter("ResourceName", resourceName);
-		}
-	}
-
-	public String getEvent() {
-		return this.event;
-	}
-
-	public void setEvent(String event) {
-		this.event = event;
-		if(event != null){
-			putQueryParameter("Event", event);
 		}
 	}
 

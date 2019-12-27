@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StartLoggingResponseUnmarshaller {
 
-	public static StartLoggingResponse unmarshall(StartLoggingResponse startLoggingResponse, UnmarshallerContext context) {
+	public static StartLoggingResponse unmarshall(StartLoggingResponse startLoggingResponse, UnmarshallerContext _ctx) {
 		
-		startLoggingResponse.setRequestId(context.stringValue("StartLoggingResponse.RequestId"));
-		startLoggingResponse.setParam(context.stringValue("StartLoggingResponse.Param"));
-		startLoggingResponse.setResult(context.stringValue("StartLoggingResponse.Result"));
+		startLoggingResponse.setRequestId(_ctx.stringValue("StartLoggingResponse.RequestId"));
+		startLoggingResponse.setParam(_ctx.stringValue("StartLoggingResponse.Param"));
+		startLoggingResponse.setResult(_ctx.stringValue("StartLoggingResponse.Result"));
 	 
 	 	return startLoggingResponse;
 	}

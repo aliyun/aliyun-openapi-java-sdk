@@ -25,16 +25,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRegionsResponseUnmarshaller {
 
-	public static DescribeRegionsResponse unmarshall(DescribeRegionsResponse describeRegionsResponse, UnmarshallerContext context) {
+	public static DescribeRegionsResponse unmarshall(DescribeRegionsResponse describeRegionsResponse, UnmarshallerContext _ctx) {
 		
-		describeRegionsResponse.setRequestId(context.stringValue("DescribeRegionsResponse.RequestId"));
+		describeRegionsResponse.setRequestId(_ctx.stringValue("DescribeRegionsResponse.RequestId"));
 
 		Regions regions = new Regions();
 
 		List<RegionItem> region = new ArrayList<RegionItem>();
-		for (int i = 0; i < context.lengthValue("DescribeRegionsResponse.Regions.Region.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.Regions.Region.Length"); i++) {
 			RegionItem regionItem = new RegionItem();
-			regionItem.setRegionId(context.stringValue("DescribeRegionsResponse.Regions.Region["+ i +"].RegionId"));
+			regionItem.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Regions.Region["+ i +"].RegionId"));
 
 			region.add(regionItem);
 		}
