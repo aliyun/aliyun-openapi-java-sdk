@@ -32,6 +32,8 @@ public class ConfirmDisburseRequest extends RpcAcsRequest<ConfirmDisburseRespons
 
 	private String bizId;
 
+	private String accountType;
+
 	private Boolean useAnonymousTbAccount;
 	public ConfirmDisburseRequest() {
 		super("linkedmall", "2018-01-16", "ConfirmDisburse", "linkedmall");
@@ -79,6 +81,17 @@ public class ConfirmDisburseRequest extends RpcAcsRequest<ConfirmDisburseRespons
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
 		}
 	}
 
