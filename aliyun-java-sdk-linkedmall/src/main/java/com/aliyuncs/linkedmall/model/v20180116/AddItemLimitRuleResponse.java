@@ -32,6 +32,8 @@ public class AddItemLimitRuleResponse extends AcsResponse {
 
 	private Long model;
 
+	private Long ruleId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -62,6 +64,14 @@ public class AddItemLimitRuleResponse extends AcsResponse {
 
 	public void setModel(Long model) {
 		this.model = model;
+	}
+
+	public Long getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(Long ruleId) {
+		this.ruleId = ruleId;
 	}
 
 	@Override

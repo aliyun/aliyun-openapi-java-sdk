@@ -26,6 +26,7 @@ public class AddItemLimitRuleResponseUnmarshaller {
 		addItemLimitRuleResponse.setCode(_ctx.stringValue("AddItemLimitRuleResponse.Code"));
 		addItemLimitRuleResponse.setMessage(_ctx.stringValue("AddItemLimitRuleResponse.Message"));
 		addItemLimitRuleResponse.setModel(_ctx.longValue("AddItemLimitRuleResponse.Model"));
+		addItemLimitRuleResponse.setRuleId(_ctx.longValue("AddItemLimitRuleResponse.RuleId"));
 	 
 	 	return addItemLimitRuleResponse;
 	}
