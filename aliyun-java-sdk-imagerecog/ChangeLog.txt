@@ -1,3 +1,6 @@
+2019-12-29 Version: 1.0.1
+- Add new api.
+
 2019-11-22 Version: 1.0.0
 - First version.
 
