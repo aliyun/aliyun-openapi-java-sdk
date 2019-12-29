@@ -22,12 +22,12 @@ import com.aliyuncs.imageseg.Endpoint;
  * @author auto create
  * @version 
  */
-public class SegmentCommonImageRequest extends RpcAcsRequest<SegmentCommonImageResponse> {
+public class SegmentBodyRequest extends RpcAcsRequest<SegmentBodyResponse> {
 	   
 
 	private String imageURL;
-	public SegmentCommonImageRequest() {
-		super("imageseg", "2019-12-30", "SegmentCommonImage", "imageseg");
+	public SegmentBodyRequest() {
+		super("imageseg", "2019-12-30", "SegmentBody", "imageseg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,8 +47,8 @@ public class SegmentCommonImageRequest extends RpcAcsRequest<SegmentCommonImageR
 	}
 
 	@Override
-	public Class<SegmentCommonImageResponse> getResponseClass() {
-		return SegmentCommonImageResponse.class;
+	public Class<SegmentBodyResponse> getResponseClass() {
+		return SegmentBodyResponse.class;
 	}
 
 }
