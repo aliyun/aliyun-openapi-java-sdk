@@ -25,12 +25,6 @@ import com.aliyuncs.facebody.Endpoint;
 public class CompareFaceRequest extends RpcAcsRequest<CompareFaceResponse> {
 	   
 
-	private String imageContentB;
-
-	private Integer imageType;
-
-	private String imageContentA;
-
 	private String imageURLB;
 
 	private String imageURLA;
@@ -41,39 +35,6 @@ public class CompareFaceRequest extends RpcAcsRequest<CompareFaceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getImageContentB() {
-		return this.imageContentB;
-	}
-
-	public void setImageContentB(String imageContentB) {
-		this.imageContentB = imageContentB;
-		if(imageContentB != null){
-			putBodyParameter("ImageContentB", imageContentB);
-		}
-	}
-
-	public Integer getImageType() {
-		return this.imageType;
-	}
-
-	public void setImageType(Integer imageType) {
-		this.imageType = imageType;
-		if(imageType != null){
-			putBodyParameter("ImageType", imageType.toString());
-		}
-	}
-
-	public String getImageContentA() {
-		return this.imageContentA;
-	}
-
-	public void setImageContentA(String imageContentA) {
-		this.imageContentA = imageContentA;
-		if(imageContentA != null){
-			putBodyParameter("ImageContentA", imageContentA);
-		}
 	}
 
 	public String getImageURLB() {

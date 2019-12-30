@@ -25,11 +25,7 @@ import com.aliyuncs.facebody.Endpoint;
 public class DetectFaceRequest extends RpcAcsRequest<DetectFaceResponse> {
 	   
 
-	private Integer imageType;
-
 	private String imageURL;
-
-	private String imageContent;
 	public DetectFaceRequest() {
 		super("facebody", "2019-12-30", "DetectFace", "facebody");
 		setMethod(MethodType.POST);
@@ -37,17 +33,6 @@ public class DetectFaceRequest extends RpcAcsRequest<DetectFaceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getImageType() {
-		return this.imageType;
-	}
-
-	public void setImageType(Integer imageType) {
-		this.imageType = imageType;
-		if(imageType != null){
-			putBodyParameter("ImageType", imageType.toString());
-		}
 	}
 
 	public String getImageURL() {
@@ -58,17 +43,6 @@ public class DetectFaceRequest extends RpcAcsRequest<DetectFaceResponse> {
 		this.imageURL = imageURL;
 		if(imageURL != null){
 			putBodyParameter("ImageURL", imageURL);
-		}
-	}
-
-	public String getImageContent() {
-		return this.imageContent;
-	}
-
-	public void setImageContent(String imageContent) {
-		this.imageContent = imageContent;
-		if(imageContent != null){
-			putBodyParameter("ImageContent", imageContent);
 		}
 	}
 
