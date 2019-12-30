@@ -29,17 +29,13 @@ public class RecognizeTableRequest extends RpcAcsRequest<RecognizeTableResponse>
 
 	private Boolean skipDetection;
 
-	private String outputFormat;
+	private String imageURL;
 
-	private String imageContent;
+	private String outputFormat;
 
 	private Boolean assureDirection;
 
 	private Boolean hasLine;
-
-	private Integer imageType;
-
-	private String imageURL;
 	public RecognizeTableRequest() {
 		super("ocr", "2019-12-30", "RecognizeTable", "ocr");
 		setMethod(MethodType.POST);
@@ -71,6 +67,17 @@ public class RecognizeTableRequest extends RpcAcsRequest<RecognizeTableResponse>
 		}
 	}
 
+	public String getImageURL() {
+		return this.imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+		if(imageURL != null){
+			putBodyParameter("ImageURL", imageURL);
+		}
+	}
+
 	public String getOutputFormat() {
 		return this.outputFormat;
 	}
@@ -79,17 +86,6 @@ public class RecognizeTableRequest extends RpcAcsRequest<RecognizeTableResponse>
 		this.outputFormat = outputFormat;
 		if(outputFormat != null){
 			putBodyParameter("OutputFormat", outputFormat);
-		}
-	}
-
-	public String getImageContent() {
-		return this.imageContent;
-	}
-
-	public void setImageContent(String imageContent) {
-		this.imageContent = imageContent;
-		if(imageContent != null){
-			putBodyParameter("ImageContent", imageContent);
 		}
 	}
 
@@ -112,28 +108,6 @@ public class RecognizeTableRequest extends RpcAcsRequest<RecognizeTableResponse>
 		this.hasLine = hasLine;
 		if(hasLine != null){
 			putBodyParameter("HasLine", hasLine.toString());
-		}
-	}
-
-	public Integer getImageType() {
-		return this.imageType;
-	}
-
-	public void setImageType(Integer imageType) {
-		this.imageType = imageType;
-		if(imageType != null){
-			putBodyParameter("ImageType", imageType.toString());
-		}
-	}
-
-	public String getImageURL() {
-		return this.imageURL;
-	}
-
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
-		if(imageURL != null){
-			putBodyParameter("ImageURL", imageURL);
 		}
 	}
 
