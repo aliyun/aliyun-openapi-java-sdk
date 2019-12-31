@@ -1,3 +1,6 @@
+2019-12-31 Version: 2.9.0
+- Support asymmetric keys.
+
 2019-10-08 Version: 2.8.0
 - Generated 2016-01-20 for `Kms`.
 

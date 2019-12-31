@@ -42,6 +42,7 @@ public class DescribeKeyResponseUnmarshaller {
 		keyMetadata.setAutomaticRotation(_ctx.stringValue("DescribeKeyResponse.KeyMetadata.AutomaticRotation"));
 		keyMetadata.setRotationInterval(_ctx.stringValue("DescribeKeyResponse.KeyMetadata.RotationInterval"));
 		keyMetadata.setNextRotationDate(_ctx.stringValue("DescribeKeyResponse.KeyMetadata.NextRotationDate"));
+		keyMetadata.setKeySpec(_ctx.stringValue("DescribeKeyResponse.KeyMetadata.KeySpec"));
 		describeKeyResponse.setKeyMetadata(keyMetadata);
 	 
 	 	return describeKeyResponse;

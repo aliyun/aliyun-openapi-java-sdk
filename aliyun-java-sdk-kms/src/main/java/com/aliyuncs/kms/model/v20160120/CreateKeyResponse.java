@@ -78,6 +78,8 @@ public class CreateKeyResponse extends AcsResponse {
 
 		private String nextRotationDate;
 
+		private String keySpec;
+
 		public String getCreationDate() {
 			return this.creationDate;
 		}
@@ -204,6 +206,14 @@ public class CreateKeyResponse extends AcsResponse {
 
 		public void setNextRotationDate(String nextRotationDate) {
 			this.nextRotationDate = nextRotationDate;
+		}
+
+		public String getKeySpec() {
+			return this.keySpec;
+		}
+
+		public void setKeySpec(String keySpec) {
+			this.keySpec = keySpec;
 		}
 	}
 

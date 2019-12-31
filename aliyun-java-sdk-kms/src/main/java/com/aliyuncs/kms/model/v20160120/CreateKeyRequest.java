@@ -34,6 +34,8 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 
 	private String description;
 
+	private String keySpec;
+
 	private String rotationInterval;
 
 	private Boolean enableAutomaticRotation;
@@ -88,6 +90,17 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getKeySpec() {
+		return this.keySpec;
+	}
+
+	public void setKeySpec(String keySpec) {
+		this.keySpec = keySpec;
+		if(keySpec != null){
+			putQueryParameter("KeySpec", keySpec);
 		}
 	}
 
