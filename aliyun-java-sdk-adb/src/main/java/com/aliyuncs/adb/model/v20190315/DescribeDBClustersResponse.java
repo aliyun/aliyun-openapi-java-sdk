@@ -109,6 +109,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String commodityCode;
 
+		private String category;
+
 		private List<Tag> tags;
 
 		public String getDBClusterId() {
@@ -237,6 +239,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setCommodityCode(String commodityCode) {
 			this.commodityCode = commodityCode;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
 		public List<Tag> getTags() {

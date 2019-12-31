@@ -1,3 +1,8 @@
+2019-12-31 Version: 1.0.4
+- Support DeleteDBCluster.
+- Support ModifyDBCluster.
+- Support DescribeAvailableResource.
+
 2019-11-14 Version: 1.0.3
 - Support Tag OpenAPI.
 - Fix endpoint problem.

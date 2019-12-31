@@ -16,6 +16,7 @@ package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.adb.Endpoint;
 
 /**
  * @author auto create
@@ -40,6 +41,10 @@ public class DescribeAutoRenewAttributeRequest extends RpcAcsRequest<DescribeAut
 	public DescribeAutoRenewAttributeRequest() {
 		super("adb", "2019-03-15", "DescribeAutoRenewAttribute", "ads");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
