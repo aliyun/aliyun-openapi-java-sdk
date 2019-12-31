@@ -30,6 +30,8 @@ public class OnsGroupCreateRequest extends RpcAcsRequest<OnsGroupCreateResponse>
 	private String remark;
 
 	private String instanceId;
+
+	private String groupType;
 	public OnsGroupCreateRequest() {
 		super("Ons", "2019-02-14", "OnsGroupCreate", "ons");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class OnsGroupCreateRequest extends RpcAcsRequest<OnsGroupCreateResponse>
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getGroupType() {
+		return this.groupType;
+	}
+
+	public void setGroupType(String groupType) {
+		this.groupType = groupType;
+		if(groupType != null){
+			putQueryParameter("GroupType", groupType);
 		}
 	}
 
