@@ -15,6 +15,7 @@
 package com.aliyuncs.reid.transform.v20190928;
 
 import com.aliyuncs.reid.model.v20190928.DescribeOverviewDataResponse;
+import com.aliyuncs.reid.model.v20190928.DescribeOverviewDataResponse.AccurateOverviewDetail;
 import com.aliyuncs.reid.model.v20190928.DescribeOverviewDataResponse.OverviewDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -26,7 +27,11 @@ public class DescribeOverviewDataResponseUnmarshaller {
 		describeOverviewDataResponse.setRequestId(_ctx.stringValue("DescribeOverviewDataResponse.RequestId"));
 		describeOverviewDataResponse.setErrorCode(_ctx.stringValue("DescribeOverviewDataResponse.ErrorCode"));
 		describeOverviewDataResponse.setErrorMessage(_ctx.stringValue("DescribeOverviewDataResponse.ErrorMessage"));
+		describeOverviewDataResponse.setMessage(_ctx.stringValue("DescribeOverviewDataResponse.Message"));
+		describeOverviewDataResponse.setCode(_ctx.stringValue("DescribeOverviewDataResponse.Code"));
+		describeOverviewDataResponse.setDynamicCode(_ctx.stringValue("DescribeOverviewDataResponse.DynamicCode"));
 		describeOverviewDataResponse.setSuccess(_ctx.booleanValue("DescribeOverviewDataResponse.Success"));
+		describeOverviewDataResponse.setDynamicMessage(_ctx.stringValue("DescribeOverviewDataResponse.DynamicMessage"));
 
 		OverviewDetail overviewDetail = new OverviewDetail();
 		overviewDetail.setStayDeepAvgWOWPercent(_ctx.floatValue("DescribeOverviewDataResponse.OverviewDetail.StayDeepAvgWOWPercent"));
@@ -40,6 +45,19 @@ public class DescribeOverviewDataResponseUnmarshaller {
 		overviewDetail.setUvAvg(_ctx.floatValue("DescribeOverviewDataResponse.OverviewDetail.UvAvg"));
 		overviewDetail.setStayAvgPeriod(_ctx.floatValue("DescribeOverviewDataResponse.OverviewDetail.StayAvgPeriod"));
 		describeOverviewDataResponse.setOverviewDetail(overviewDetail);
+
+		AccurateOverviewDetail accurateOverviewDetail = new AccurateOverviewDetail();
+		accurateOverviewDetail.setStayDeepAvgWOWPercent(_ctx.stringValue("DescribeOverviewDataResponse.AccurateOverviewDetail.StayDeepAvgWOWPercent"));
+		accurateOverviewDetail.setStayDeepAvg(_ctx.stringValue("DescribeOverviewDataResponse.AccurateOverviewDetail.StayDeepAvg"));
+		accurateOverviewDetail.setUvAvgWOWPercent(_ctx.stringValue("DescribeOverviewDataResponse.AccurateOverviewDetail.UvAvgWOWPercent"));
+		accurateOverviewDetail.setStayAvgPeriodWOWPercent(_ctx.stringValue("DescribeOverviewDataResponse.AccurateOverviewDetail.StayAvgPeriodWOWPercent"));
+		accurateOverviewDetail.setUvWOWPercent(_ctx.stringValue("DescribeOverviewDataResponse.AccurateOverviewDetail.UvWOWPercent"));
+		accurateOverviewDetail.setUvEverySqmGrowthWOWPercent(_ctx.stringValue("DescribeOverviewDataResponse.AccurateOverviewDetail.UvEverySqmGrowthWOWPercent"));
+		accurateOverviewDetail.setUv(_ctx.longValue("DescribeOverviewDataResponse.AccurateOverviewDetail.Uv"));
+		accurateOverviewDetail.setUvEverySqm(_ctx.stringValue("DescribeOverviewDataResponse.AccurateOverviewDetail.UvEverySqm"));
+		accurateOverviewDetail.setUvAvg(_ctx.stringValue("DescribeOverviewDataResponse.AccurateOverviewDetail.UvAvg"));
+		accurateOverviewDetail.setStayAvgPeriod(_ctx.stringValue("DescribeOverviewDataResponse.AccurateOverviewDetail.StayAvgPeriod"));
+		describeOverviewDataResponse.setAccurateOverviewDetail(accurateOverviewDetail);
 	 
 	 	return describeOverviewDataResponse;
 	}
