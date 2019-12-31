@@ -1,3 +1,6 @@
+2019-12-31 Version: 1.15.4
+- Supported image for process.
+
 2019-11-28 Version: 1.15.3
 - Supported dash for compress.
 
