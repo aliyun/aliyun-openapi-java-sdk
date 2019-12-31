@@ -1,3 +1,7 @@
+2019-12-31 Version: 7.3.0
+- Add OTA APIs, including GenerateOTAUploadURL, CreateOTAFirmware, etc.
+- Add UpdateProductFilterConfig interface, support setting product filter config.
+
 2019-12-11 Version: 7.2.0
 - Add api `BatchAddThingTopo`, support add multiple sub-devices for a gateway.
 - Add api `QueryDeviceByStatus`, support query device list by device status.
