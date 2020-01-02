@@ -121,5 +121,5 @@ public class Main {
 ## 许可证
 [Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-版权所有 1999-2019 阿里巴巴集团
+Copyright (c) 2009-present, Alibaba Cloud All rights reserved.
 

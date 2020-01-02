@@ -1,4 +1,4 @@
-Copyright 1999-2019 Alibaba Group Holding Ltd.
+Copyright (c) 2009-present, Alibaba Cloud All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
