@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
 /**
@@ -22,42 +23,34 @@ import com.aliyuncs.nas.Endpoint;
  * @version 
  */
 public class DescribeAccessGroupsRequest extends RpcAcsRequest<DescribeAccessGroupsResponse> {
-	
+	   
+
+	private Boolean useUTCDateTime;
+
+	private String fileSystemType;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String accessGroupName;
 	public DescribeAccessGroupsRequest() {
 		super("NAS", "2017-06-26", "DescribeAccessGroups", "nas");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private Integer pageSize;
-
-	private String accessGroupName;
-
-	private String fileSystemType;
-
-	private Integer pageNumber;
-
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Boolean getUseUTCDateTime() {
+		return this.useUTCDateTime;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getAccessGroupName() {
-		return this.accessGroupName;
-	}
-
-	public void setAccessGroupName(String accessGroupName) {
-		this.accessGroupName = accessGroupName;
-		if(accessGroupName != null){
-			putQueryParameter("AccessGroupName", accessGroupName);
+	public void setUseUTCDateTime(Boolean useUTCDateTime) {
+		this.useUTCDateTime = useUTCDateTime;
+		if(useUTCDateTime != null){
+			putQueryParameter("UseUTCDateTime", useUTCDateTime.toString());
 		}
 	}
 
@@ -80,6 +73,28 @@ public class DescribeAccessGroupsRequest extends RpcAcsRequest<DescribeAccessGro
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAccessGroupName() {
+		return this.accessGroupName;
+	}
+
+	public void setAccessGroupName(String accessGroupName) {
+		this.accessGroupName = accessGroupName;
+		if(accessGroupName != null){
+			putQueryParameter("AccessGroupName", accessGroupName);
 		}
 	}
 

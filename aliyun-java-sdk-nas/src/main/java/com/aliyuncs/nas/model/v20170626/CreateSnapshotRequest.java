@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
 /**
@@ -22,22 +23,23 @@ import com.aliyuncs.nas.Endpoint;
  * @version 
  */
 public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse> {
-	
-	public CreateSnapshotRequest() {
-		super("NAS", "2017-06-26", "CreateSnapshot", "nas");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String description;
 
 	private String snapshotName;
 
-	private Integer retentionDays;
-
 	private String fileSystemId;
+
+	private Integer retentionDays;
+	public CreateSnapshotRequest() {
+		super("NAS", "2017-06-26", "CreateSnapshot", "nas");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getDescription() {
 		return this.description;
@@ -61,17 +63,6 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 		}
 	}
 
-	public Integer getRetentionDays() {
-		return this.retentionDays;
-	}
-
-	public void setRetentionDays(Integer retentionDays) {
-		this.retentionDays = retentionDays;
-		if(retentionDays != null){
-			putQueryParameter("RetentionDays", retentionDays.toString());
-		}
-	}
-
 	public String getFileSystemId() {
 		return this.fileSystemId;
 	}
@@ -80,6 +71,17 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 		this.fileSystemId = fileSystemId;
 		if(fileSystemId != null){
 			putQueryParameter("FileSystemId", fileSystemId);
+		}
+	}
+
+	public Integer getRetentionDays() {
+		return this.retentionDays;
+	}
+
+	public void setRetentionDays(Integer retentionDays) {
+		this.retentionDays = retentionDays;
+		if(retentionDays != null){
+			putQueryParameter("RetentionDays", retentionDays.toString());
 		}
 	}
 

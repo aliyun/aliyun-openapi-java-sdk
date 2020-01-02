@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.nas.model.v20170626.DescribeAccessGroupsResponse;
 import com.aliyuncs.nas.model.v20170626.DescribeAccessGroupsResponse.AccessGroup;
+import com.aliyuncs.nas.model.v20170626.DescribeAccessGroupsResponse.AccessGroup.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +40,17 @@ public class DescribeAccessGroupsResponseUnmarshaller {
 			accessGroup.setRuleCount(_ctx.integerValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].RuleCount"));
 			accessGroup.setMountTargetCount(_ctx.integerValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].MountTargetCount"));
 			accessGroup.setDescription(_ctx.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].Description"));
+			accessGroup.setCreateTime(_ctx.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].CreateTime"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			accessGroup.setTags(tags);
 
 			accessGroups.add(accessGroup);
 		}

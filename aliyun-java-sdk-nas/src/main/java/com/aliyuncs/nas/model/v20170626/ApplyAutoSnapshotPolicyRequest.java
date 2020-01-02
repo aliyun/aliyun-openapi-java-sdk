@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
 /**
@@ -22,18 +23,19 @@ import com.aliyuncs.nas.Endpoint;
  * @version 
  */
 public class ApplyAutoSnapshotPolicyRequest extends RpcAcsRequest<ApplyAutoSnapshotPolicyResponse> {
-	
+	   
+
+	private String autoSnapshotPolicyId;
+
+	private String fileSystemIds;
 	public ApplyAutoSnapshotPolicyRequest() {
 		super("NAS", "2017-06-26", "ApplyAutoSnapshotPolicy", "nas");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String autoSnapshotPolicyId;
-
-	private String fileSystemIds;
 
 	public String getAutoSnapshotPolicyId() {
 		return this.autoSnapshotPolicyId;

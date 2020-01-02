@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
 /**
@@ -22,20 +23,9 @@ import com.aliyuncs.nas.Endpoint;
  * @version 
  */
 public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsResponse> {
-	
-	public DescribeSnapshotsRequest() {
-		super("NAS", "2017-06-26", "DescribeSnapshots", "nas");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String snapshotType;
+	   
 
 	private String snapshotIds;
-
-	private Integer pageSize;
 
 	private String snapshotName;
 
@@ -43,19 +33,20 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 
 	private Integer pageNumber;
 
+	private Integer pageSize;
+
 	private String fileSystemId;
 
+	private String snapshotType;
+
 	private String status;
-
-	public String getSnapshotType() {
-		return this.snapshotType;
-	}
-
-	public void setSnapshotType(String snapshotType) {
-		this.snapshotType = snapshotType;
-		if(snapshotType != null){
-			putQueryParameter("SnapshotType", snapshotType);
-		}
+	public DescribeSnapshotsRequest() {
+		super("NAS", "2017-06-26", "DescribeSnapshots", "nas");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSnapshotIds() {
@@ -66,17 +57,6 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 		this.snapshotIds = snapshotIds;
 		if(snapshotIds != null){
 			putQueryParameter("SnapshotIds", snapshotIds);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -113,6 +93,17 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getFileSystemId() {
 		return this.fileSystemId;
 	}
@@ -121,6 +112,17 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 		this.fileSystemId = fileSystemId;
 		if(fileSystemId != null){
 			putQueryParameter("FileSystemId", fileSystemId);
+		}
+	}
+
+	public String getSnapshotType() {
+		return this.snapshotType;
+	}
+
+	public void setSnapshotType(String snapshotType) {
+		this.snapshotType = snapshotType;
+		if(snapshotType != null){
+			putQueryParameter("SnapshotType", snapshotType);
 		}
 	}
 

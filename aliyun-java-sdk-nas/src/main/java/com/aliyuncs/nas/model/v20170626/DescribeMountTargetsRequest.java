@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
 /**
@@ -22,31 +23,32 @@ import com.aliyuncs.nas.Endpoint;
  * @version 
  */
 public class DescribeMountTargetsRequest extends RpcAcsRequest<DescribeMountTargetsResponse> {
-	
+	   
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String fileSystemId;
+
+	private String mountTargetDomain;
 	public DescribeMountTargetsRequest() {
 		super("NAS", "2017-06-26", "DescribeMountTargets", "nas");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String mountTargetDomain;
-
-	private Integer pageSize;
-
-	private Integer pageNumber;
-
-	private String fileSystemId;
-
-	public String getMountTargetDomain() {
-		return this.mountTargetDomain;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setMountTargetDomain(String mountTargetDomain) {
-		this.mountTargetDomain = mountTargetDomain;
-		if(mountTargetDomain != null){
-			putQueryParameter("MountTargetDomain", mountTargetDomain);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -61,17 +63,6 @@ public class DescribeMountTargetsRequest extends RpcAcsRequest<DescribeMountTarg
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getFileSystemId() {
 		return this.fileSystemId;
 	}
@@ -80,6 +71,17 @@ public class DescribeMountTargetsRequest extends RpcAcsRequest<DescribeMountTarg
 		this.fileSystemId = fileSystemId;
 		if(fileSystemId != null){
 			putQueryParameter("FileSystemId", fileSystemId);
+		}
+	}
+
+	public String getMountTargetDomain() {
+		return this.mountTargetDomain;
+	}
+
+	public void setMountTargetDomain(String mountTargetDomain) {
+		this.mountTargetDomain = mountTargetDomain;
+		if(mountTargetDomain != null){
+			putQueryParameter("MountTargetDomain", mountTargetDomain);
 		}
 	}
 

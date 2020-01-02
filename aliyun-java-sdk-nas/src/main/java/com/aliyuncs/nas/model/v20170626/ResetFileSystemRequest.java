@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
 /**
@@ -22,18 +23,19 @@ import com.aliyuncs.nas.Endpoint;
  * @version 
  */
 public class ResetFileSystemRequest extends RpcAcsRequest<ResetFileSystemResponse> {
-	
+	   
+
+	private String snapshotId;
+
+	private String fileSystemId;
 	public ResetFileSystemRequest() {
 		super("NAS", "2017-06-26", "ResetFileSystem", "nas");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String snapshotId;
-
-	private String fileSystemId;
 
 	public String getSnapshotId() {
 		return this.snapshotId;
@@ -42,7 +44,7 @@ public class ResetFileSystemRequest extends RpcAcsRequest<ResetFileSystemRespons
 	public void setSnapshotId(String snapshotId) {
 		this.snapshotId = snapshotId;
 		if(snapshotId != null){
-			putQueryParameter("snapshotId", snapshotId);
+			putQueryParameter("SnapshotId", snapshotId);
 		}
 	}
 

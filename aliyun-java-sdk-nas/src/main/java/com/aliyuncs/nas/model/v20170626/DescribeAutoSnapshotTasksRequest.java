@@ -22,7 +22,7 @@ import com.aliyuncs.nas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
+public class DescribeAutoSnapshotTasksRequest extends RpcAcsRequest<DescribeAutoSnapshotTasksResponse> {
 	   
 
 	private String fileSystemType;
@@ -30,8 +30,12 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 	private Integer pageNumber;
 
 	private Integer pageSize;
-	public DescribeRegionsRequest() {
-		super("NAS", "2017-06-26", "DescribeRegions", "nas");
+
+	private String fileSystemIds;
+
+	private String autoSnapshotPolicyIds;
+	public DescribeAutoSnapshotTasksRequest() {
+		super("NAS", "2017-06-26", "DescribeAutoSnapshotTasks", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -72,9 +76,31 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		}
 	}
 
+	public String getFileSystemIds() {
+		return this.fileSystemIds;
+	}
+
+	public void setFileSystemIds(String fileSystemIds) {
+		this.fileSystemIds = fileSystemIds;
+		if(fileSystemIds != null){
+			putQueryParameter("FileSystemIds", fileSystemIds);
+		}
+	}
+
+	public String getAutoSnapshotPolicyIds() {
+		return this.autoSnapshotPolicyIds;
+	}
+
+	public void setAutoSnapshotPolicyIds(String autoSnapshotPolicyIds) {
+		this.autoSnapshotPolicyIds = autoSnapshotPolicyIds;
+		if(autoSnapshotPolicyIds != null){
+			putQueryParameter("AutoSnapshotPolicyIds", autoSnapshotPolicyIds);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<DescribeAutoSnapshotTasksResponse> getResponseClass() {
+		return DescribeAutoSnapshotTasksResponse.class;
 	}
 
 }

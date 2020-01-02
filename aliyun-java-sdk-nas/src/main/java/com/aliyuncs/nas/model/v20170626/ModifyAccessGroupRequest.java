@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
 /**
@@ -22,20 +23,21 @@ import com.aliyuncs.nas.Endpoint;
  * @version 
  */
 public class ModifyAccessGroupRequest extends RpcAcsRequest<ModifyAccessGroupResponse> {
-	
+	   
+
+	private String description;
+
+	private String fileSystemType;
+
+	private String accessGroupName;
 	public ModifyAccessGroupRequest() {
 		super("NAS", "2017-06-26", "ModifyAccessGroup", "nas");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String description;
-
-	private String accessGroupName;
-
-	private String fileSystemType;
 
 	public String getDescription() {
 		return this.description;
@@ -48,17 +50,6 @@ public class ModifyAccessGroupRequest extends RpcAcsRequest<ModifyAccessGroupRes
 		}
 	}
 
-	public String getAccessGroupName() {
-		return this.accessGroupName;
-	}
-
-	public void setAccessGroupName(String accessGroupName) {
-		this.accessGroupName = accessGroupName;
-		if(accessGroupName != null){
-			putQueryParameter("AccessGroupName", accessGroupName);
-		}
-	}
-
 	public String getFileSystemType() {
 		return this.fileSystemType;
 	}
@@ -67,6 +58,17 @@ public class ModifyAccessGroupRequest extends RpcAcsRequest<ModifyAccessGroupRes
 		this.fileSystemType = fileSystemType;
 		if(fileSystemType != null){
 			putQueryParameter("FileSystemType", fileSystemType);
+		}
+	}
+
+	public String getAccessGroupName() {
+		return this.accessGroupName;
+	}
+
+	public void setAccessGroupName(String accessGroupName) {
+		this.accessGroupName = accessGroupName;
+		if(accessGroupName != null){
+			putQueryParameter("AccessGroupName", accessGroupName);
 		}
 	}
 

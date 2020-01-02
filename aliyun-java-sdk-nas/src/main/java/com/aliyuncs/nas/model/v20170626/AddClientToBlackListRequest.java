@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
 /**
@@ -22,20 +23,21 @@ import com.aliyuncs.nas.Endpoint;
  * @version 
  */
 public class AddClientToBlackListRequest extends RpcAcsRequest<AddClientToBlackListResponse> {
-	
-	public AddClientToBlackListRequest() {
-		super("NAS", "2017-06-26", "AddClientToBlackList", "nas");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String clientToken;
 
 	private String clientIP;
 
 	private String fileSystemId;
+	public AddClientToBlackListRequest() {
+		super("NAS", "2017-06-26", "AddClientToBlackList", "nas");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getClientToken() {
 		return this.clientToken;

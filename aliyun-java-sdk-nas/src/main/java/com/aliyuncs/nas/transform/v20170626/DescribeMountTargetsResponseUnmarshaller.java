@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.nas.model.v20170626.DescribeMountTargetsResponse;
 import com.aliyuncs.nas.model.v20170626.DescribeMountTargetsResponse.MountTarget;
+import com.aliyuncs.nas.model.v20170626.DescribeMountTargetsResponse.MountTarget.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,6 +41,16 @@ public class DescribeMountTargetsResponseUnmarshaller {
 			mountTarget.setVswId(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].VswId"));
 			mountTarget.setAccessGroup(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].AccessGroup"));
 			mountTarget.setStatus(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].Status"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeMountTargetsResponse.MountTargets["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			mountTarget.setTags(tags);
 
 			mountTargets.add(mountTarget);
 		}

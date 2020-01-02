@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
 /**
@@ -22,22 +23,23 @@ import com.aliyuncs.nas.Endpoint;
  * @version 
  */
 public class DescribeAutoSnapshotPoliciesRequest extends RpcAcsRequest<DescribeAutoSnapshotPoliciesResponse> {
-	
+	   
+
+	private String autoSnapshotPolicyId;
+
+	private String fileSystemType;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
 	public DescribeAutoSnapshotPoliciesRequest() {
 		super("NAS", "2017-06-26", "DescribeAutoSnapshotPolicies", "nas");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String autoSnapshotPolicyId;
-
-	private Integer pageSize;
-
-	private String fileSystemType;
-
-	private Integer pageNumber;
 
 	public String getAutoSnapshotPolicyId() {
 		return this.autoSnapshotPolicyId;
@@ -47,17 +49,6 @@ public class DescribeAutoSnapshotPoliciesRequest extends RpcAcsRequest<DescribeA
 		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
 		if(autoSnapshotPolicyId != null){
 			putQueryParameter("AutoSnapshotPolicyId", autoSnapshotPolicyId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -80,6 +71,17 @@ public class DescribeAutoSnapshotPoliciesRequest extends RpcAcsRequest<DescribeA
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

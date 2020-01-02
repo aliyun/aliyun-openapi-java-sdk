@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
 /**
@@ -22,56 +23,24 @@ import com.aliyuncs.nas.Endpoint;
  * @version 
  */
 public class DescribeAccessRulesRequest extends RpcAcsRequest<DescribeAccessRulesResponse> {
-	
-	public DescribeAccessRulesRequest() {
-		super("NAS", "2017-06-26", "DescribeAccessRules", "nas");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private Integer pageSize;
-
-	private String accessGroupName;
-
-	private String accessRuleId;
+	   
 
 	private String fileSystemType;
 
 	private Integer pageNumber;
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
+	private Integer pageSize;
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
+	private String accessRuleId;
 
-	public String getAccessGroupName() {
-		return this.accessGroupName;
-	}
-
-	public void setAccessGroupName(String accessGroupName) {
-		this.accessGroupName = accessGroupName;
-		if(accessGroupName != null){
-			putQueryParameter("AccessGroupName", accessGroupName);
-		}
-	}
-
-	public String getAccessRuleId() {
-		return this.accessRuleId;
-	}
-
-	public void setAccessRuleId(String accessRuleId) {
-		this.accessRuleId = accessRuleId;
-		if(accessRuleId != null){
-			putQueryParameter("AccessRuleId", accessRuleId);
-		}
+	private String accessGroupName;
+	public DescribeAccessRulesRequest() {
+		super("NAS", "2017-06-26", "DescribeAccessRules", "nas");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getFileSystemType() {
@@ -93,6 +62,39 @@ public class DescribeAccessRulesRequest extends RpcAcsRequest<DescribeAccessRule
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAccessRuleId() {
+		return this.accessRuleId;
+	}
+
+	public void setAccessRuleId(String accessRuleId) {
+		this.accessRuleId = accessRuleId;
+		if(accessRuleId != null){
+			putQueryParameter("AccessRuleId", accessRuleId);
+		}
+	}
+
+	public String getAccessGroupName() {
+		return this.accessGroupName;
+	}
+
+	public void setAccessGroupName(String accessGroupName) {
+		this.accessGroupName = accessGroupName;
+		if(accessGroupName != null){
+			putQueryParameter("AccessGroupName", accessGroupName);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
 /**
@@ -22,32 +23,24 @@ import com.aliyuncs.nas.Endpoint;
  * @version 
  */
 public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemResponse> {
-	
+	   
+
+	private String description;
+
+	private String storageType;
+
+	private Integer encryptType;
+
+	private String zoneId;
+
+	private String protocolType;
 	public CreateFileSystemRequest() {
 		super("NAS", "2017-06-26", "CreateFileSystem", "nas");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	private String zoneId;
-
-	private String description;
-
-	private String protocolType;
-
-	private String storageType;
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
 	}
 
 	public String getDescription() {
@@ -61,17 +54,6 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 		}
 	}
 
-	public String getProtocolType() {
-		return this.protocolType;
-	}
-
-	public void setProtocolType(String protocolType) {
-		this.protocolType = protocolType;
-		if(protocolType != null){
-			putQueryParameter("ProtocolType", protocolType);
-		}
-	}
-
 	public String getStorageType() {
 		return this.storageType;
 	}
@@ -80,6 +62,39 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 		this.storageType = storageType;
 		if(storageType != null){
 			putQueryParameter("StorageType", storageType);
+		}
+	}
+
+	public Integer getEncryptType() {
+		return this.encryptType;
+	}
+
+	public void setEncryptType(Integer encryptType) {
+		this.encryptType = encryptType;
+		if(encryptType != null){
+			putQueryParameter("EncryptType", encryptType.toString());
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getProtocolType() {
+		return this.protocolType;
+	}
+
+	public void setProtocolType(String protocolType) {
+		this.protocolType = protocolType;
+		if(protocolType != null){
+			putQueryParameter("ProtocolType", protocolType);
 		}
 	}
 

@@ -16,6 +16,7 @@ package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
 /**
@@ -23,22 +24,34 @@ import com.aliyuncs.nas.Endpoint;
  * @version 
  */
 public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
-	
+	   
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private List<Tag> tags;
+
+	private String fileSystemId;
 	public DescribeTagsRequest() {
 		super("NAS", "2017-06-26", "DescribeTags", "nas");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private Integer pageSize;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
 
-	private List<Tag> tags;
-
-	private Integer pageNumber;
-
-	private String fileSystemId;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -63,17 +76,6 @@ public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
 	}
 
 	public String getFileSystemId() {

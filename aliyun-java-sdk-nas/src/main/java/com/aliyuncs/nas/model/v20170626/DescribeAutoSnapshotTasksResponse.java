@@ -16,14 +16,14 @@ package com.aliyuncs.nas.model.v20170626;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.nas.transform.v20170626.DescribeRegionsResponseUnmarshaller;
+import com.aliyuncs.nas.transform.v20170626.DescribeAutoSnapshotTasksResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRegionsResponse extends AcsResponse {
+public class DescribeAutoSnapshotTasksResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,7 +33,7 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private List<Region> regions;
+	private List<AutoSnapshotTask> autoSnapshotTasks;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,49 +67,39 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public List<Region> getRegions() {
-		return this.regions;
+	public List<AutoSnapshotTask> getAutoSnapshotTasks() {
+		return this.autoSnapshotTasks;
 	}
 
-	public void setRegions(List<Region> regions) {
-		this.regions = regions;
+	public void setAutoSnapshotTasks(List<AutoSnapshotTask> autoSnapshotTasks) {
+		this.autoSnapshotTasks = autoSnapshotTasks;
 	}
 
-	public static class Region {
+	public static class AutoSnapshotTask {
 
-		private String regionId;
+		private String sourceFileSystemId;
 
-		private String localName;
+		private String autoSnapshotPolicyId;
 
-		private String regionEndpoint;
-
-		public String getRegionId() {
-			return this.regionId;
+		public String getSourceFileSystemId() {
+			return this.sourceFileSystemId;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setSourceFileSystemId(String sourceFileSystemId) {
+			this.sourceFileSystemId = sourceFileSystemId;
 		}
 
-		public String getLocalName() {
-			return this.localName;
+		public String getAutoSnapshotPolicyId() {
+			return this.autoSnapshotPolicyId;
 		}
 
-		public void setLocalName(String localName) {
-			this.localName = localName;
-		}
-
-		public String getRegionEndpoint() {
-			return this.regionEndpoint;
-		}
-
-		public void setRegionEndpoint(String regionEndpoint) {
-			this.regionEndpoint = regionEndpoint;
+		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
 		}
 	}
 
 	@Override
-	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
+	public DescribeAutoSnapshotTasksResponse getInstance(UnmarshallerContext context) {
+		return	DescribeAutoSnapshotTasksResponseUnmarshaller.unmarshall(this, context);
 	}
 }

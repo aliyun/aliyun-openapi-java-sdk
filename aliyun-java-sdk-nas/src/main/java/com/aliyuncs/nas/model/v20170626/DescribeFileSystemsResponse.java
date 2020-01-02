@@ -83,21 +83,33 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 		private String createTime;
 
+		private String expiredTime;
+
 		private String regionId;
+
+		private String zoneId;
 
 		private String protocolType;
 
 		private String storageType;
 
-		private Long meteredSize;
+		private String fileSystemType;
 
-		private String zoneId;
+		private Integer encryptType;
+
+		private Long meteredSize;
 
 		private Long bandwidth;
 
 		private Long capacity;
 
+		private String autoSnapshotPolicyId;
+
 		private String status;
+
+		private String chargeType;
+
+		private Long mountTargetCountLimit;
 
 		private List<MountTarget> mountTargets;
 
@@ -129,28 +141,28 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
+		public String getExpiredTime() {
+			return this.expiredTime;
 		}
 
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public String getProtocolType() {
@@ -169,20 +181,28 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.storageType = storageType;
 		}
 
+		public String getFileSystemType() {
+			return this.fileSystemType;
+		}
+
+		public void setFileSystemType(String fileSystemType) {
+			this.fileSystemType = fileSystemType;
+		}
+
+		public Integer getEncryptType() {
+			return this.encryptType;
+		}
+
+		public void setEncryptType(Integer encryptType) {
+			this.encryptType = encryptType;
+		}
+
 		public Long getMeteredSize() {
 			return this.meteredSize;
 		}
 
 		public void setMeteredSize(Long meteredSize) {
 			this.meteredSize = meteredSize;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
 		}
 
 		public Long getBandwidth() {
@@ -201,12 +221,36 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.capacity = capacity;
 		}
 
+		public String getAutoSnapshotPolicyId() {
+			return this.autoSnapshotPolicyId;
+		}
+
+		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		}
+
 		public String getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public Long getMountTargetCountLimit() {
+			return this.mountTargetCountLimit;
+		}
+
+		public void setMountTargetCountLimit(Long mountTargetCountLimit) {
+			this.mountTargetCountLimit = mountTargetCountLimit;
 		}
 
 		public List<MountTarget> getMountTargets() {
@@ -246,6 +290,8 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			private String accessGroupName;
 
 			private String status;
+
+			private List<Tag> tags;
 
 			public String getMountTargetDomain() {
 				return this.mountTargetDomain;
@@ -294,11 +340,50 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			public void setStatus(String status) {
 				this.status = status;
 			}
+
+			public List<Tag> getTags() {
+				return this.tags;
+			}
+
+			public void setTags(List<Tag> tags) {
+				this.tags = tags;
+			}
+
+			public static class Tag {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
 		}
 
 		public static class _Package {
 
 			private String packageId;
+
+			private String packageType;
+
+			private Long size;
+
+			private String startTime;
+
+			private String expiredTime;
 
 			public String getPackageId() {
 				return this.packageId;
@@ -306,6 +391,38 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 			public void setPackageId(String packageId) {
 				this.packageId = packageId;
+			}
+
+			public String getPackageType() {
+				return this.packageType;
+			}
+
+			public void setPackageType(String packageType) {
+				this.packageType = packageType;
+			}
+
+			public Long getSize() {
+				return this.size;
+			}
+
+			public void setSize(Long size) {
+				this.size = size;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public String getExpiredTime() {
+				return this.expiredTime;
+			}
+
+			public void setExpiredTime(String expiredTime) {
+				this.expiredTime = expiredTime;
 			}
 		}
 

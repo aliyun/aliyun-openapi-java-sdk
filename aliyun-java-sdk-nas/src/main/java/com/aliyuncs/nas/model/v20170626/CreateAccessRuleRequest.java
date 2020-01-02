@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
 /**
@@ -22,26 +23,27 @@ import com.aliyuncs.nas.Endpoint;
  * @version 
  */
 public class CreateAccessRuleRequest extends RpcAcsRequest<CreateAccessRuleResponse> {
-	
+	   
+
+	private String rWAccessType;
+
+	private String userAccessType;
+
+	private String fileSystemType;
+
+	private String sourceCidrIp;
+
+	private Integer priority;
+
+	private String accessGroupName;
 	public CreateAccessRuleRequest() {
 		super("NAS", "2017-06-26", "CreateAccessRule", "nas");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String rWAccessType;
-
-	private String sourceCidrIp;
-
-	private String userAccessType;
-
-	private Integer priority;
-
-	private String accessGroupName;
-
-	private String fileSystemType;
 
 	public String getRWAccessType() {
 		return this.rWAccessType;
@@ -54,17 +56,6 @@ public class CreateAccessRuleRequest extends RpcAcsRequest<CreateAccessRuleRespo
 		}
 	}
 
-	public String getSourceCidrIp() {
-		return this.sourceCidrIp;
-	}
-
-	public void setSourceCidrIp(String sourceCidrIp) {
-		this.sourceCidrIp = sourceCidrIp;
-		if(sourceCidrIp != null){
-			putQueryParameter("SourceCidrIp", sourceCidrIp);
-		}
-	}
-
 	public String getUserAccessType() {
 		return this.userAccessType;
 	}
@@ -73,6 +64,28 @@ public class CreateAccessRuleRequest extends RpcAcsRequest<CreateAccessRuleRespo
 		this.userAccessType = userAccessType;
 		if(userAccessType != null){
 			putQueryParameter("UserAccessType", userAccessType);
+		}
+	}
+
+	public String getFileSystemType() {
+		return this.fileSystemType;
+	}
+
+	public void setFileSystemType(String fileSystemType) {
+		this.fileSystemType = fileSystemType;
+		if(fileSystemType != null){
+			putQueryParameter("FileSystemType", fileSystemType);
+		}
+	}
+
+	public String getSourceCidrIp() {
+		return this.sourceCidrIp;
+	}
+
+	public void setSourceCidrIp(String sourceCidrIp) {
+		this.sourceCidrIp = sourceCidrIp;
+		if(sourceCidrIp != null){
+			putQueryParameter("SourceCidrIp", sourceCidrIp);
 		}
 	}
 
@@ -95,17 +108,6 @@ public class CreateAccessRuleRequest extends RpcAcsRequest<CreateAccessRuleRespo
 		this.accessGroupName = accessGroupName;
 		if(accessGroupName != null){
 			putQueryParameter("AccessGroupName", accessGroupName);
-		}
-	}
-
-	public String getFileSystemType() {
-		return this.fileSystemType;
-	}
-
-	public void setFileSystemType(String fileSystemType) {
-		this.fileSystemType = fileSystemType;
-		if(fileSystemType != null){
-			putQueryParameter("FileSystemType", fileSystemType);
 		}
 	}
 
