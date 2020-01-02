@@ -134,4 +134,4 @@ Please make sure to read the [Contributing Guide](CONTRIBUTING.md) before making
 ## License
 [Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-Copyright 1999-2019 Alibaba Group Holding Ltd.
+Copyright (c) 2009-present, Alibaba Cloud All rights reserved.
