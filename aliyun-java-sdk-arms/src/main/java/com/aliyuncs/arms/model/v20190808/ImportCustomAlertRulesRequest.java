@@ -22,22 +22,18 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRulesResponse> {
+public class ImportCustomAlertRulesRequest extends RpcAcsRequest<ImportCustomAlertRulesResponse> {
 	   
 
 	private Boolean isAutoStart;
 
-	private String proxyUserId;
-
 	private String contactGroupIds;
 
-	private String pids;
+	private String proxyUserId;
 
 	private String templageAlertConfig;
-
-	private String templateAlertId;
-	public ImportAppAlertRulesRequest() {
-		super("ARMS", "2019-08-08", "ImportAppAlertRules", "arms");
+	public ImportCustomAlertRulesRequest() {
+		super("ARMS", "2019-08-08", "ImportCustomAlertRules", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,17 +52,6 @@ public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRule
 		}
 	}
 
-	public String getProxyUserId() {
-		return this.proxyUserId;
-	}
-
-	public void setProxyUserId(String proxyUserId) {
-		this.proxyUserId = proxyUserId;
-		if(proxyUserId != null){
-			putQueryParameter("ProxyUserId", proxyUserId);
-		}
-	}
-
 	public String getContactGroupIds() {
 		return this.contactGroupIds;
 	}
@@ -78,14 +63,14 @@ public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRule
 		}
 	}
 
-	public String getPids() {
-		return this.pids;
+	public String getProxyUserId() {
+		return this.proxyUserId;
 	}
 
-	public void setPids(String pids) {
-		this.pids = pids;
-		if(pids != null){
-			putQueryParameter("Pids", pids);
+	public void setProxyUserId(String proxyUserId) {
+		this.proxyUserId = proxyUserId;
+		if(proxyUserId != null){
+			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 
@@ -100,20 +85,9 @@ public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRule
 		}
 	}
 
-	public String getTemplateAlertId() {
-		return this.templateAlertId;
-	}
-
-	public void setTemplateAlertId(String templateAlertId) {
-		this.templateAlertId = templateAlertId;
-		if(templateAlertId != null){
-			putQueryParameter("TemplateAlertId", templateAlertId);
-		}
-	}
-
 	@Override
-	public Class<ImportAppAlertRulesResponse> getResponseClass() {
-		return ImportAppAlertRulesResponse.class;
+	public Class<ImportCustomAlertRulesResponse> getResponseClass() {
+		return ImportCustomAlertRulesResponse.class;
 	}
 
 }

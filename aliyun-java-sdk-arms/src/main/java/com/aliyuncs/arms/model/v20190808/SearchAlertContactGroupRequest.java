@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
 /**
@@ -22,16 +23,45 @@ import com.aliyuncs.arms.Endpoint;
  * @version 
  */
 public class SearchAlertContactGroupRequest extends RpcAcsRequest<SearchAlertContactGroupResponse> {
-	
+	   
+
+	private String contactName;
+
+	private Long contactId;
+
+	private String contactGroupName;
+
+	private String proxyUserId;
 	public SearchAlertContactGroupRequest() {
 		super("ARMS", "2019-08-08", "SearchAlertContactGroup", "arms");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String contactGroupName;
+	public String getContactName() {
+		return this.contactName;
+	}
+
+	public void setContactName(String contactName) {
+		this.contactName = contactName;
+		if(contactName != null){
+			putQueryParameter("ContactName", contactName);
+		}
+	}
+
+	public Long getContactId() {
+		return this.contactId;
+	}
+
+	public void setContactId(Long contactId) {
+		this.contactId = contactId;
+		if(contactId != null){
+			putQueryParameter("ContactId", contactId.toString());
+		}
+	}
 
 	public String getContactGroupName() {
 		return this.contactGroupName;
@@ -41,6 +71,17 @@ public class SearchAlertContactGroupRequest extends RpcAcsRequest<SearchAlertCon
 		this.contactGroupName = contactGroupName;
 		if(contactGroupName != null){
 			putQueryParameter("ContactGroupName", contactGroupName);
+		}
+	}
+
+	public String getProxyUserId() {
+		return this.proxyUserId;
+	}
+
+	public void setProxyUserId(String proxyUserId) {
+		this.proxyUserId = proxyUserId;
+		if(proxyUserId != null){
+			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 

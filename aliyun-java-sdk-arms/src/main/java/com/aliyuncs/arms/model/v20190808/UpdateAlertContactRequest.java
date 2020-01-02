@@ -22,10 +22,14 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateAlertContactRequest extends RpcAcsRequest<CreateAlertContactResponse> {
+public class UpdateAlertContactRequest extends RpcAcsRequest<UpdateAlertContactResponse> {
 	   
 
+	private Long contactId;
+
 	private String phoneNum;
+
+	private String proxyUserId;
 
 	private String contactName;
 
@@ -34,13 +38,24 @@ public class CreateAlertContactRequest extends RpcAcsRequest<CreateAlertContactR
 	private String email;
 
 	private Boolean systemNoc;
-	public CreateAlertContactRequest() {
-		super("ARMS", "2019-08-08", "CreateAlertContact", "arms");
+	public UpdateAlertContactRequest() {
+		super("ARMS", "2019-08-08", "UpdateAlertContact", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getContactId() {
+		return this.contactId;
+	}
+
+	public void setContactId(Long contactId) {
+		this.contactId = contactId;
+		if(contactId != null){
+			putQueryParameter("ContactId", contactId.toString());
+		}
 	}
 
 	public String getPhoneNum() {
@@ -51,6 +66,17 @@ public class CreateAlertContactRequest extends RpcAcsRequest<CreateAlertContactR
 		this.phoneNum = phoneNum;
 		if(phoneNum != null){
 			putQueryParameter("PhoneNum", phoneNum);
+		}
+	}
+
+	public String getProxyUserId() {
+		return this.proxyUserId;
+	}
+
+	public void setProxyUserId(String proxyUserId) {
+		this.proxyUserId = proxyUserId;
+		if(proxyUserId != null){
+			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 
@@ -99,8 +125,8 @@ public class CreateAlertContactRequest extends RpcAcsRequest<CreateAlertContactR
 	}
 
 	@Override
-	public Class<CreateAlertContactResponse> getResponseClass() {
-		return CreateAlertContactResponse.class;
+	public Class<UpdateAlertContactResponse> getResponseClass() {
+		return UpdateAlertContactResponse.class;
 	}
 
 }

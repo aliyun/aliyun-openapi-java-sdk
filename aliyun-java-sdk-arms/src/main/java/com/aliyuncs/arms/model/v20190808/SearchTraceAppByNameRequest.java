@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
 /**
@@ -22,16 +23,17 @@ import com.aliyuncs.arms.Endpoint;
  * @version 
  */
 public class SearchTraceAppByNameRequest extends RpcAcsRequest<SearchTraceAppByNameResponse> {
-	
+	   
+
+	private String traceAppName;
 	public SearchTraceAppByNameRequest() {
 		super("ARMS", "2019-08-08", "SearchTraceAppByName", "arms");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String traceAppName;
 
 	public String getTraceAppName() {
 		return this.traceAppName;

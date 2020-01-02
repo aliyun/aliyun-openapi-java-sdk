@@ -22,22 +22,24 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class SearchAlertContactRequest extends RpcAcsRequest<SearchAlertContactResponse> {
+public class SearchAlertRulesRequest extends RpcAcsRequest<SearchAlertRulesResponse> {
 	   
 
-	private String currentPage;
+	private String appType;
+
+	private Integer currentPage;
+
+	private String pid;
 
 	private String proxyUserId;
 
-	private String contactName;
+	private String title;
 
-	private String phone;
+	private String type;
 
-	private String pageSize;
-
-	private String email;
-	public SearchAlertContactRequest() {
-		super("ARMS", "2019-08-08", "SearchAlertContact", "arms");
+	private Integer pageSize;
+	public SearchAlertRulesRequest() {
+		super("ARMS", "2019-08-08", "SearchAlertRules", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,14 +47,36 @@ public class SearchAlertContactRequest extends RpcAcsRequest<SearchAlertContactR
 		} catch (Exception e) {}
 	}
 
-	public String getCurrentPage() {
+	public String getAppType() {
+		return this.appType;
+	}
+
+	public void setAppType(String appType) {
+		this.appType = appType;
+		if(appType != null){
+			putQueryParameter("AppType", appType);
+		}
+	}
+
+	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
 
-	public void setCurrentPage(String currentPage) {
+	public void setCurrentPage(Integer currentPage) {
 		this.currentPage = currentPage;
 		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage);
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getPid() {
+		return this.pid;
+	}
+
+	public void setPid(String pid) {
+		this.pid = pid;
+		if(pid != null){
+			putQueryParameter("Pid", pid);
 		}
 	}
 
@@ -67,53 +91,42 @@ public class SearchAlertContactRequest extends RpcAcsRequest<SearchAlertContactR
 		}
 	}
 
-	public String getContactName() {
-		return this.contactName;
+	public String getTitle() {
+		return this.title;
 	}
 
-	public void setContactName(String contactName) {
-		this.contactName = contactName;
-		if(contactName != null){
-			putQueryParameter("ContactName", contactName);
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
 		}
 	}
 
-	public String getPhone() {
-		return this.phone;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-		if(phone != null){
-			putQueryParameter("Phone", phone);
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
-	public String getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
-		}
-	}
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-		if(email != null){
-			putQueryParameter("Email", email);
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<SearchAlertContactResponse> getResponseClass() {
-		return SearchAlertContactResponse.class;
+	public Class<SearchAlertRulesResponse> getResponseClass() {
+		return SearchAlertRulesResponse.class;
 	}
 
 }

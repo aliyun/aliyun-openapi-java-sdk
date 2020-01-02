@@ -22,16 +22,14 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class SearchTraceAppByPageRequest extends RpcAcsRequest<SearchTraceAppByPageResponse> {
+public class DeleteAlertRulesRequest extends RpcAcsRequest<DeleteAlertRulesResponse> {
 	   
 
-	private String traceAppName;
+	private String alertIds;
 
-	private Integer pageSize;
-
-	private Integer pageNumber;
-	public SearchTraceAppByPageRequest() {
-		super("ARMS", "2019-08-08", "SearchTraceAppByPage", "arms");
+	private String proxyUserId;
+	public DeleteAlertRulesRequest() {
+		super("ARMS", "2019-08-08", "DeleteAlertRules", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class SearchTraceAppByPageRequest extends RpcAcsRequest<SearchTraceAppByP
 		} catch (Exception e) {}
 	}
 
-	public String getTraceAppName() {
-		return this.traceAppName;
+	public String getAlertIds() {
+		return this.alertIds;
 	}
 
-	public void setTraceAppName(String traceAppName) {
-		this.traceAppName = traceAppName;
-		if(traceAppName != null){
-			putQueryParameter("TraceAppName", traceAppName);
+	public void setAlertIds(String alertIds) {
+		this.alertIds = alertIds;
+		if(alertIds != null){
+			putQueryParameter("AlertIds", alertIds);
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getProxyUserId() {
+		return this.proxyUserId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setProxyUserId(String proxyUserId) {
+		this.proxyUserId = proxyUserId;
+		if(proxyUserId != null){
+			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 
 	@Override
-	public Class<SearchTraceAppByPageResponse> getResponseClass() {
-		return SearchTraceAppByPageResponse.class;
+	public Class<DeleteAlertRulesResponse> getResponseClass() {
+		return DeleteAlertRulesResponse.class;
 	}
 
 }

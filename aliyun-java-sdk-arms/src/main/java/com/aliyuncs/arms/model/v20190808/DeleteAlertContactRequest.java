@@ -22,16 +22,14 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class SearchTraceAppByPageRequest extends RpcAcsRequest<SearchTraceAppByPageResponse> {
+public class DeleteAlertContactRequest extends RpcAcsRequest<DeleteAlertContactResponse> {
 	   
 
-	private String traceAppName;
+	private Long contactId;
 
-	private Integer pageSize;
-
-	private Integer pageNumber;
-	public SearchTraceAppByPageRequest() {
-		super("ARMS", "2019-08-08", "SearchTraceAppByPage", "arms");
+	private String proxyUserId;
+	public DeleteAlertContactRequest() {
+		super("ARMS", "2019-08-08", "DeleteAlertContact", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class SearchTraceAppByPageRequest extends RpcAcsRequest<SearchTraceAppByP
 		} catch (Exception e) {}
 	}
 
-	public String getTraceAppName() {
-		return this.traceAppName;
+	public Long getContactId() {
+		return this.contactId;
 	}
 
-	public void setTraceAppName(String traceAppName) {
-		this.traceAppName = traceAppName;
-		if(traceAppName != null){
-			putQueryParameter("TraceAppName", traceAppName);
+	public void setContactId(Long contactId) {
+		this.contactId = contactId;
+		if(contactId != null){
+			putQueryParameter("ContactId", contactId.toString());
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getProxyUserId() {
+		return this.proxyUserId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setProxyUserId(String proxyUserId) {
+		this.proxyUserId = proxyUserId;
+		if(proxyUserId != null){
+			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 
 	@Override
-	public Class<SearchTraceAppByPageResponse> getResponseClass() {
-		return SearchTraceAppByPageResponse.class;
+	public Class<DeleteAlertContactResponse> getResponseClass() {
+		return DeleteAlertContactResponse.class;
 	}
 
 }

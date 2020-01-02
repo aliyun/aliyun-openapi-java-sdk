@@ -22,19 +22,34 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateAlertContactGroupRequest extends RpcAcsRequest<CreateAlertContactGroupResponse> {
+public class UpdateAlertContactGroupRequest extends RpcAcsRequest<UpdateAlertContactGroupResponse> {
 	   
+
+	private Long contactGroupId;
 
 	private String contactGroupName;
 
+	private String proxyUserId;
+
 	private String contactIds;
-	public CreateAlertContactGroupRequest() {
-		super("ARMS", "2019-08-08", "CreateAlertContactGroup", "arms");
+	public UpdateAlertContactGroupRequest() {
+		super("ARMS", "2019-08-08", "UpdateAlertContactGroup", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getContactGroupId() {
+		return this.contactGroupId;
+	}
+
+	public void setContactGroupId(Long contactGroupId) {
+		this.contactGroupId = contactGroupId;
+		if(contactGroupId != null){
+			putQueryParameter("ContactGroupId", contactGroupId.toString());
+		}
 	}
 
 	public String getContactGroupName() {
@@ -45,6 +60,17 @@ public class CreateAlertContactGroupRequest extends RpcAcsRequest<CreateAlertCon
 		this.contactGroupName = contactGroupName;
 		if(contactGroupName != null){
 			putQueryParameter("ContactGroupName", contactGroupName);
+		}
+	}
+
+	public String getProxyUserId() {
+		return this.proxyUserId;
+	}
+
+	public void setProxyUserId(String proxyUserId) {
+		this.proxyUserId = proxyUserId;
+		if(proxyUserId != null){
+			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 
@@ -60,8 +86,8 @@ public class CreateAlertContactGroupRequest extends RpcAcsRequest<CreateAlertCon
 	}
 
 	@Override
-	public Class<CreateAlertContactGroupResponse> getResponseClass() {
-		return CreateAlertContactGroupResponse.class;
+	public Class<UpdateAlertContactGroupResponse> getResponseClass() {
+		return UpdateAlertContactGroupResponse.class;
 	}
 
 }

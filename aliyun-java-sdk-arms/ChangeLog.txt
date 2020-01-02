@@ -1,3 +1,6 @@
+2020-01-02 Version: 2.5.4
+- Alert Apis.
+
 2019-08-27 Version: 2.5.3
 - Fixed endpoint data init.
 

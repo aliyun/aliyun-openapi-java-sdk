@@ -16,6 +16,7 @@ package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
 /**
@@ -23,22 +24,7 @@ import com.aliyuncs.arms.Endpoint;
  * @version 
  */
 public class QueryMetricRequest extends RpcAcsRequest<QueryMetricResponse> {
-	
-	public QueryMetricRequest() {
-		super("ARMS", "2019-08-08", "QueryMetric", "arms");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private List<String> measuress;
-
-	private Integer intervalInSec;
-
-	private String metric;
-
-	private Integer limit;
+	   
 
 	private Long endTime;
 
@@ -48,54 +34,26 @@ public class QueryMetricRequest extends RpcAcsRequest<QueryMetricResponse> {
 
 	private List<Filters> filterss;
 
+	private String proxyUserId;
+
+	private List<String> measuress;
+
+	private Integer intervalInSec;
+
+	private String metric;
+
+	private Integer limit;
+
 	private List<String> dimensionss;
 
 	private String order;
-
-	public List<String> getMeasuress() {
-		return this.measuress;
-	}
-
-	public void setMeasuress(List<String> measuress) {
-		this.measuress = measuress;	
-		if (measuress != null) {
-			for (int i = 0; i < measuress.size(); i++) {
-				putQueryParameter("Measures." + (i + 1) , measuress.get(i));
-			}
-		}	
-	}
-
-	public Integer getIntervalInSec() {
-		return this.intervalInSec;
-	}
-
-	public void setIntervalInSec(Integer intervalInSec) {
-		this.intervalInSec = intervalInSec;
-		if(intervalInSec != null){
-			putQueryParameter("IntervalInSec", intervalInSec.toString());
-		}
-	}
-
-	public String getMetric() {
-		return this.metric;
-	}
-
-	public void setMetric(String metric) {
-		this.metric = metric;
-		if(metric != null){
-			putQueryParameter("Metric", metric);
-		}
-	}
-
-	public Integer getLimit() {
-		return this.limit;
-	}
-
-	public void setLimit(Integer limit) {
-		this.limit = limit;
-		if(limit != null){
-			putQueryParameter("Limit", limit.toString());
-		}
+	public QueryMetricRequest() {
+		super("ARMS", "2019-08-08", "QueryMetric", "arms");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getEndTime() {
@@ -143,6 +101,63 @@ public class QueryMetricRequest extends RpcAcsRequest<QueryMetricResponse> {
 				putQueryParameter("Filters." + (depth1 + 1) + ".Key" , filterss.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getProxyUserId() {
+		return this.proxyUserId;
+	}
+
+	public void setProxyUserId(String proxyUserId) {
+		this.proxyUserId = proxyUserId;
+		if(proxyUserId != null){
+			putQueryParameter("ProxyUserId", proxyUserId);
+		}
+	}
+
+	public List<String> getMeasuress() {
+		return this.measuress;
+	}
+
+	public void setMeasuress(List<String> measuress) {
+		this.measuress = measuress;	
+		if (measuress != null) {
+			for (int i = 0; i < measuress.size(); i++) {
+				putQueryParameter("Measures." + (i + 1) , measuress.get(i));
+			}
+		}	
+	}
+
+	public Integer getIntervalInSec() {
+		return this.intervalInSec;
+	}
+
+	public void setIntervalInSec(Integer intervalInSec) {
+		this.intervalInSec = intervalInSec;
+		if(intervalInSec != null){
+			putQueryParameter("IntervalInSec", intervalInSec.toString());
+		}
+	}
+
+	public String getMetric() {
+		return this.metric;
+	}
+
+	public void setMetric(String metric) {
+		this.metric = metric;
+		if(metric != null){
+			putQueryParameter("Metric", metric);
+		}
+	}
+
+	public Integer getLimit() {
+		return this.limit;
+	}
+
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+		if(limit != null){
+			putQueryParameter("Limit", limit.toString());
+		}
 	}
 
 	public List<String> getDimensionss() {

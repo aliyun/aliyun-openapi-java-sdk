@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
 /**
@@ -22,18 +23,19 @@ import com.aliyuncs.arms.Endpoint;
  * @version 
  */
 public class CreateRetcodeAppRequest extends RpcAcsRequest<CreateRetcodeAppResponse> {
-	
+	   
+
+	private String retcodeAppName;
+
+	private String retcodeAppType;
 	public CreateRetcodeAppRequest() {
 		super("ARMS", "2019-08-08", "CreateRetcodeApp", "arms");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String retcodeAppName;
-
-	private String retcodeAppType;
 
 	public String getRetcodeAppName() {
 		return this.retcodeAppName;

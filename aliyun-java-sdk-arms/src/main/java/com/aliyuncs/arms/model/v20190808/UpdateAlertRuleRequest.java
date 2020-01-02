@@ -22,7 +22,7 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRulesResponse> {
+public class UpdateAlertRuleRequest extends RpcAcsRequest<UpdateAlertRuleResponse> {
 	   
 
 	private Boolean isAutoStart;
@@ -31,13 +31,11 @@ public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRule
 
 	private String contactGroupIds;
 
-	private String pids;
+	private Long alertId;
 
 	private String templageAlertConfig;
-
-	private String templateAlertId;
-	public ImportAppAlertRulesRequest() {
-		super("ARMS", "2019-08-08", "ImportAppAlertRules", "arms");
+	public UpdateAlertRuleRequest() {
+		super("ARMS", "2019-08-08", "UpdateAlertRule", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -78,14 +76,14 @@ public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRule
 		}
 	}
 
-	public String getPids() {
-		return this.pids;
+	public Long getAlertId() {
+		return this.alertId;
 	}
 
-	public void setPids(String pids) {
-		this.pids = pids;
-		if(pids != null){
-			putQueryParameter("Pids", pids);
+	public void setAlertId(Long alertId) {
+		this.alertId = alertId;
+		if(alertId != null){
+			putQueryParameter("AlertId", alertId.toString());
 		}
 	}
 
@@ -100,20 +98,9 @@ public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRule
 		}
 	}
 
-	public String getTemplateAlertId() {
-		return this.templateAlertId;
-	}
-
-	public void setTemplateAlertId(String templateAlertId) {
-		this.templateAlertId = templateAlertId;
-		if(templateAlertId != null){
-			putQueryParameter("TemplateAlertId", templateAlertId);
-		}
-	}
-
 	@Override
-	public Class<ImportAppAlertRulesResponse> getResponseClass() {
-		return ImportAppAlertRulesResponse.class;
+	public Class<UpdateAlertRuleResponse> getResponseClass() {
+		return UpdateAlertRuleResponse.class;
 	}
 
 }

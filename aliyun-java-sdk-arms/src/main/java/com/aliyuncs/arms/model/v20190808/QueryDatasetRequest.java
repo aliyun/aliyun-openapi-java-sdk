@@ -16,6 +16,7 @@ package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
 /**
@@ -23,18 +24,13 @@ import com.aliyuncs.arms.Endpoint;
  * @version 
  */
 public class QueryDatasetRequest extends RpcAcsRequest<QueryDatasetResponse> {
-	
-	public QueryDatasetRequest() {
-		super("ARMS", "2019-08-08", "QueryDataset", "arms");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String dateStr;
 
 	private Long minTime;
+
+	private String proxyUserId;
 
 	private Boolean reduceTail;
 
@@ -59,6 +55,14 @@ public class QueryDatasetRequest extends RpcAcsRequest<QueryDatasetResponse> {
 	private List<RequiredDims> requiredDimss;
 
 	private List<Dimensions> dimensionss;
+	public QueryDatasetRequest() {
+		super("ARMS", "2019-08-08", "QueryDataset", "arms");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getDateStr() {
 		return this.dateStr;
@@ -79,6 +83,17 @@ public class QueryDatasetRequest extends RpcAcsRequest<QueryDatasetResponse> {
 		this.minTime = minTime;
 		if(minTime != null){
 			putQueryParameter("MinTime", minTime.toString());
+		}
+	}
+
+	public String getProxyUserId() {
+		return this.proxyUserId;
+	}
+
+	public void setProxyUserId(String proxyUserId) {
+		this.proxyUserId = proxyUserId;
+		if(proxyUserId != null){
+			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 

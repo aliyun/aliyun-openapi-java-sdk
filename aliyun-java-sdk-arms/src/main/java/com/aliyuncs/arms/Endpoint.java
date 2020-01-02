@@ -21,16 +21,19 @@ public class Endpoint {
         {
             put("ap-south-1", "arms.ap-southeast-1.aliyuncs.com");
             put("eu-west-1", "arms.ap-southeast-1.aliyuncs.com");
+            put("ap-northeast-1", "arms.ap-southeast-1.aliyuncs.com");
+            put("cn-shenzhen-finance-1", "arms.aliyuncs.com");
+            put("me-east-1", "arms.ap-southeast-1.aliyuncs.com");
+            put("cn-chengdu", "arms.aliyuncs.com");
+            put("cn-north-2-gov-1", "arms.aliyuncs.com");
+            put("cn-shanghai-finance-1", "arms.aliyuncs.com");
+            put("cn-hangzhou-finance", "arms.aliyuncs.com");
             put("ap-southeast-2", "arms.ap-southeast-1.aliyuncs.com");
             put("ap-southeast-3", "arms.ap-southeast-1.aliyuncs.com");
             put("eu-central-1", "arms.ap-southeast-1.aliyuncs.com");
-            put("ap-northeast-1", "arms.ap-southeast-1.aliyuncs.com");
             put("cn-huhehaote", "arms.aliyuncs.com");
             put("ap-southeast-5", "arms.ap-southeast-1.aliyuncs.com");
             put("us-east-1", "arms.ap-southeast-1.aliyuncs.com");
-            put("me-east-1", "arms.ap-southeast-1.aliyuncs.com");
-            put("us-west-1", "arms.ap-southeast-1.aliyuncs.com");
-            put("cn-chengdu", "arms.aliyuncs.com");
         }
     };
 
