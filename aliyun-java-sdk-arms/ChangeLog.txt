@@ -1,3 +1,6 @@
+2020-01-03 Version: 2.5.4
+- Update Alert Apis.
+
 2020-01-02 Version: 2.5.4
 - Alert Apis.
 
