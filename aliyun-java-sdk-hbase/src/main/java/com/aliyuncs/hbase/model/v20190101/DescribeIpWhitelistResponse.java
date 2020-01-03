@@ -27,7 +27,7 @@ public class DescribeIpWhitelistResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> ipList;
+	private List<Group> groups;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,12 +37,45 @@ public class DescribeIpWhitelistResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getIpList() {
-		return this.ipList;
+	public List<Group> getGroups() {
+		return this.groups;
 	}
 
-	public void setIpList(List<String> ipList) {
-		this.ipList = ipList;
+	public void setGroups(List<Group> groups) {
+		this.groups = groups;
+	}
+
+	public static class Group {
+
+		private String groupName;
+
+		private Integer ipVersion;
+
+		private List<String> ipList;
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public Integer getIpVersion() {
+			return this.ipVersion;
+		}
+
+		public void setIpVersion(Integer ipVersion) {
+			this.ipVersion = ipVersion;
+		}
+
+		public List<String> getIpList() {
+			return this.ipList;
+		}
+
+		public void setIpList(List<String> ipList) {
+			this.ipList = ipList;
+		}
 	}
 
 	@Override

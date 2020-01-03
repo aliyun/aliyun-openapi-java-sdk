@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.hbase.model.v20190101.DescribeInstancesResponse;
 import com.aliyuncs.hbase.model.v20190101.DescribeInstancesResponse.Instance;
+import com.aliyuncs.hbase.model.v20190101.DescribeInstancesResponse.Instance.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -58,6 +59,19 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setZoneId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ZoneId"));
 			instance.setColdStorageStatus(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ColdStorageStatus"));
 			instance.setBackupStatus(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].BackupStatus"));
+			instance.setClusterType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ClusterType"));
+			instance.setCreatedTimeUTC(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CreatedTimeUTC"));
+			instance.setExpireTimeUTC(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ExpireTimeUTC"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			instance.setTags(tags);
 
 			instances.add(instance);
 		}

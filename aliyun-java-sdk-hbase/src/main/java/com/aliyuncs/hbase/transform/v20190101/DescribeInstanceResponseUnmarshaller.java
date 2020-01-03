@@ -55,6 +55,8 @@ public class DescribeInstanceResponseUnmarshaller {
 		describeInstanceResponse.setCoreDiskCount(_ctx.stringValue("DescribeInstanceResponse.CoreDiskCount"));
 		describeInstanceResponse.setMaintainStartTime(_ctx.stringValue("DescribeInstanceResponse.MaintainStartTime"));
 		describeInstanceResponse.setMaintainEndTime(_ctx.stringValue("DescribeInstanceResponse.MaintainEndTime"));
+		describeInstanceResponse.setCreatedTimeUTC(_ctx.stringValue("DescribeInstanceResponse.CreatedTimeUTC"));
+		describeInstanceResponse.setExpireTimeUTC(_ctx.stringValue("DescribeInstanceResponse.ExpireTimeUTC"));
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Tags.Length"); i++) {

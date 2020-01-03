@@ -125,6 +125,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String backupStatus;
 
+		private String clusterType;
+
+		private String createdTimeUTC;
+
+		private String expireTimeUTC;
+
+		private List<Tag> tags;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -315,6 +323,61 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setBackupStatus(String backupStatus) {
 			this.backupStatus = backupStatus;
+		}
+
+		public String getClusterType() {
+			return this.clusterType;
+		}
+
+		public void setClusterType(String clusterType) {
+			this.clusterType = clusterType;
+		}
+
+		public String getCreatedTimeUTC() {
+			return this.createdTimeUTC;
+		}
+
+		public void setCreatedTimeUTC(String createdTimeUTC) {
+			this.createdTimeUTC = createdTimeUTC;
+		}
+
+		public String getExpireTimeUTC() {
+			return this.expireTimeUTC;
+		}
+
+		public void setExpireTimeUTC(String expireTimeUTC) {
+			this.expireTimeUTC = expireTimeUTC;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.hbase.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hbase.Endpoint;
 
@@ -25,9 +26,15 @@ import com.aliyuncs.hbase.Endpoint;
 public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesResponse> {
 	   
 
+	private String clusterName;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private List<Tag> tags;
+
+	private String dbType;
 	public DescribeInstancesRequest() {
 		super("HBase", "2019-01-01", "DescribeInstances", "hbase");
 		setMethod(MethodType.POST);
@@ -35,6 +42,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClusterName() {
+		return this.clusterName;
+	}
+
+	public void setClusterName(String clusterName) {
+		this.clusterName = clusterName;
+		if(clusterName != null){
+			putQueryParameter("ClusterName", clusterName);
+		}
 	}
 
 	public Integer getPageNumber() {
@@ -56,6 +74,54 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getDbType() {
+		return this.dbType;
+	}
+
+	public void setDbType(String dbType) {
+		this.dbType = dbType;
+		if(dbType != null){
+			putQueryParameter("DbType", dbType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

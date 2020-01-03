@@ -83,6 +83,10 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private String maintainEndTime;
 
+	private String createdTimeUTC;
+
+	private String expireTimeUTC;
+
 	private List<Tag> tags;
 
 	public String getRequestId() {
@@ -315,6 +319,22 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public void setMaintainEndTime(String maintainEndTime) {
 		this.maintainEndTime = maintainEndTime;
+	}
+
+	public String getCreatedTimeUTC() {
+		return this.createdTimeUTC;
+	}
+
+	public void setCreatedTimeUTC(String createdTimeUTC) {
+		this.createdTimeUTC = createdTimeUTC;
+	}
+
+	public String getExpireTimeUTC() {
+		return this.expireTimeUTC;
+	}
+
+	public void setExpireTimeUTC(String expireTimeUTC) {
+		this.expireTimeUTC = expireTimeUTC;
 	}
 
 	public List<Tag> getTags() {

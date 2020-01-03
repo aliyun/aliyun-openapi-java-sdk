@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.hbase.model.v20190101.DescribeIpWhitelistResponse;
+import com.aliyuncs.hbase.model.v20190101.DescribeIpWhitelistResponse.Group;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,11 +28,21 @@ public class DescribeIpWhitelistResponseUnmarshaller {
 		
 		describeIpWhitelistResponse.setRequestId(_ctx.stringValue("DescribeIpWhitelistResponse.RequestId"));
 
-		List<String> ipList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeIpWhitelistResponse.IpList.Length"); i++) {
-			ipList.add(_ctx.stringValue("DescribeIpWhitelistResponse.IpList["+ i +"]"));
+		List<Group> groups = new ArrayList<Group>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeIpWhitelistResponse.Groups.Length"); i++) {
+			Group group = new Group();
+			group.setGroupName(_ctx.stringValue("DescribeIpWhitelistResponse.Groups["+ i +"].GroupName"));
+			group.setIpVersion(_ctx.integerValue("DescribeIpWhitelistResponse.Groups["+ i +"].IpVersion"));
+
+			List<String> ipList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeIpWhitelistResponse.Groups["+ i +"].IpList.Length"); j++) {
+				ipList.add(_ctx.stringValue("DescribeIpWhitelistResponse.Groups["+ i +"].IpList["+ j +"]"));
+			}
+			group.setIpList(ipList);
+
+			groups.add(group);
 		}
-		describeIpWhitelistResponse.setIpList(ipList);
+		describeIpWhitelistResponse.setGroups(groups);
 	 
 	 	return describeIpWhitelistResponse;
 	}

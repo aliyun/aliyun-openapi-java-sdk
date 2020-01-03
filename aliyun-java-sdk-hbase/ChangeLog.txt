@@ -1,3 +1,9 @@
+2020-01-03 Version: 2.2.0
+- ImmediateDelete.
+- DescribeInstance CreateTimeUTC ExpireTimeUTC.
+- DescribeInstances CreateTimeUTC ExpireTimeUTC.
+- DescribeIpWhitelist Groups GroupName.
+
 2019-12-04 Version: 2.1.0
 - Generated 2019-01-01 for `HBase`.
 

@@ -22,14 +22,10 @@ import com.aliyuncs.hbase.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse> {
+public class ListTagsRequest extends RpcAcsRequest<ListTagsResponse> {
 	   
-
-	private Boolean immediateDeleteFlag;
-
-	private String clusterId;
-	public DeleteInstanceRequest() {
-		super("HBase", "2019-01-01", "DeleteInstance", "hbase");
+	public ListTagsRequest() {
+		super("HBase", "2019-01-01", "ListTags", "hbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +33,9 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 		} catch (Exception e) {}
 	}
 
-	public Boolean getImmediateDeleteFlag() {
-		return this.immediateDeleteFlag;
-	}
-
-	public void setImmediateDeleteFlag(Boolean immediateDeleteFlag) {
-		this.immediateDeleteFlag = immediateDeleteFlag;
-		if(immediateDeleteFlag != null){
-			putQueryParameter("ImmediateDeleteFlag", immediateDeleteFlag.toString());
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	@Override
-	public Class<DeleteInstanceResponse> getResponseClass() {
-		return DeleteInstanceResponse.class;
+	public Class<ListTagsResponse> getResponseClass() {
+		return ListTagsResponse.class;
 	}
 
 }
