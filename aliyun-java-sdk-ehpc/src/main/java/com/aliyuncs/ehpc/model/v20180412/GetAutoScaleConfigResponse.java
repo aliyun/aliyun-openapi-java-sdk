@@ -199,6 +199,8 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 		private String queueName;
 
+		private String resourceGroupId;
+
 		private String instanceType;
 
 		private String spotStrategy;
@@ -217,6 +219,14 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 		public void setQueueName(String queueName) {
 			this.queueName = queueName;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getInstanceType() {
@@ -279,6 +289,8 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 			private String vSwitchId;
 
+			private String hostNamePrefix;
+
 			public String getInstanceType() {
 				return this.instanceType;
 			}
@@ -317,6 +329,14 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 			public void setVSwitchId(String vSwitchId) {
 				this.vSwitchId = vSwitchId;
+			}
+
+			public String getHostNamePrefix() {
+				return this.hostNamePrefix;
+			}
+
+			public void setHostNamePrefix(String hostNamePrefix) {
+				this.hostNamePrefix = hostNamePrefix;
 			}
 		}
 	}

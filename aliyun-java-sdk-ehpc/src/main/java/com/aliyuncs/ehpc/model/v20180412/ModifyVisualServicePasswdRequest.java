@@ -15,18 +15,14 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyVisualServicePasswdRequest extends RpcAcsRequest<ModifyVisualServicePasswdResponse> {
-	
-	public ModifyVisualServicePasswdRequest() {
-		super("EHPC", "2018-04-12", "ModifyVisualServicePasswd", "ehs");
-	}
-
-	private String passwd;
+	   
 
 	private String runasUserPassword;
 
@@ -34,15 +30,10 @@ public class ModifyVisualServicePasswdRequest extends RpcAcsRequest<ModifyVisual
 
 	private String clusterId;
 
-	public String getPasswd() {
-		return this.passwd;
-	}
-
-	public void setPasswd(String passwd) {
-		this.passwd = passwd;
-		if(passwd != null){
-			putQueryParameter("Passwd", passwd);
-		}
+	private String passwd;
+	public ModifyVisualServicePasswdRequest() {
+		super("EHPC", "2018-04-12", "ModifyVisualServicePasswd", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getRunasUserPassword() {
@@ -75,6 +66,17 @@ public class ModifyVisualServicePasswdRequest extends RpcAcsRequest<ModifyVisual
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getPasswd() {
+		return this.passwd;
+	}
+
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
+		if(passwd != null){
+			putQueryParameter("Passwd", passwd);
 		}
 	}
 

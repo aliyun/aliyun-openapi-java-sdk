@@ -15,32 +15,23 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListCpfsFileSystemsRequest extends RpcAcsRequest<ListCpfsFileSystemsResponse> {
-	
-	public ListCpfsFileSystemsRequest() {
-		super("EHPC", "2018-04-12", "ListCpfsFileSystems", "ehs");
-	}
-
-	private Integer pageSize;
+	   
 
 	private Integer pageNumber;
 
+	private Integer pageSize;
+
 	private String fileSystemId;
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+	public ListCpfsFileSystemsRequest() {
+		super("EHPC", "2018-04-12", "ListCpfsFileSystems", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public Integer getPageNumber() {
@@ -51,6 +42,17 @@ public class ListCpfsFileSystemsRequest extends RpcAcsRequest<ListCpfsFileSystem
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

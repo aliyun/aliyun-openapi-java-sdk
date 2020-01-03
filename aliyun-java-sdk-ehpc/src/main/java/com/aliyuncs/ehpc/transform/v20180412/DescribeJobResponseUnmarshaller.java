@@ -21,12 +21,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeJobResponseUnmarshaller {
 
-	public static DescribeJobResponse unmarshall(DescribeJobResponse describeJobResponse, UnmarshallerContext context) {
+	public static DescribeJobResponse unmarshall(DescribeJobResponse describeJobResponse, UnmarshallerContext _ctx) {
 		
-		describeJobResponse.setRequestId(context.stringValue("DescribeJobResponse.RequestId"));
+		describeJobResponse.setRequestId(_ctx.stringValue("DescribeJobResponse.RequestId"));
 
 		Message message = new Message();
-		message.setJobInfo(context.stringValue("DescribeJobResponse.Message.JobInfo"));
+		message.setJobInfo(_ctx.stringValue("DescribeJobResponse.Message.JobInfo"));
 		describeJobResponse.setMessage(message);
 	 
 	 	return describeJobResponse;

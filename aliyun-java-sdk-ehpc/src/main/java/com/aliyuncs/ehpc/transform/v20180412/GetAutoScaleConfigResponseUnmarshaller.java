@@ -25,43 +25,45 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetAutoScaleConfigResponseUnmarshaller {
 
-	public static GetAutoScaleConfigResponse unmarshall(GetAutoScaleConfigResponse getAutoScaleConfigResponse, UnmarshallerContext context) {
+	public static GetAutoScaleConfigResponse unmarshall(GetAutoScaleConfigResponse getAutoScaleConfigResponse, UnmarshallerContext _ctx) {
 		
-		getAutoScaleConfigResponse.setRequestId(context.stringValue("GetAutoScaleConfigResponse.RequestId"));
-		getAutoScaleConfigResponse.setUid(context.stringValue("GetAutoScaleConfigResponse.Uid"));
-		getAutoScaleConfigResponse.setClusterId(context.stringValue("GetAutoScaleConfigResponse.ClusterId"));
-		getAutoScaleConfigResponse.setClusterType(context.stringValue("GetAutoScaleConfigResponse.ClusterType"));
-		getAutoScaleConfigResponse.setEnableAutoGrow(context.booleanValue("GetAutoScaleConfigResponse.EnableAutoGrow"));
-		getAutoScaleConfigResponse.setEnableAutoShrink(context.booleanValue("GetAutoScaleConfigResponse.EnableAutoShrink"));
-		getAutoScaleConfigResponse.setGrowIntervalInMinutes(context.integerValue("GetAutoScaleConfigResponse.GrowIntervalInMinutes"));
-		getAutoScaleConfigResponse.setShrinkIntervalInMinutes(context.integerValue("GetAutoScaleConfigResponse.ShrinkIntervalInMinutes"));
-		getAutoScaleConfigResponse.setShrinkIdleTimes(context.integerValue("GetAutoScaleConfigResponse.ShrinkIdleTimes"));
-		getAutoScaleConfigResponse.setGrowTimeoutInMinutes(context.integerValue("GetAutoScaleConfigResponse.GrowTimeoutInMinutes"));
-		getAutoScaleConfigResponse.setExtraNodesGrowRatio(context.integerValue("GetAutoScaleConfigResponse.ExtraNodesGrowRatio"));
-		getAutoScaleConfigResponse.setGrowRatio(context.integerValue("GetAutoScaleConfigResponse.GrowRatio"));
-		getAutoScaleConfigResponse.setMaxNodesInCluster(context.integerValue("GetAutoScaleConfigResponse.MaxNodesInCluster"));
-		getAutoScaleConfigResponse.setExcludeNodes(context.stringValue("GetAutoScaleConfigResponse.ExcludeNodes"));
-		getAutoScaleConfigResponse.setSpotStrategy(context.stringValue("GetAutoScaleConfigResponse.SpotStrategy"));
-		getAutoScaleConfigResponse.setSpotPriceLimit(context.floatValue("GetAutoScaleConfigResponse.SpotPriceLimit"));
+		getAutoScaleConfigResponse.setRequestId(_ctx.stringValue("GetAutoScaleConfigResponse.RequestId"));
+		getAutoScaleConfigResponse.setUid(_ctx.stringValue("GetAutoScaleConfigResponse.Uid"));
+		getAutoScaleConfigResponse.setClusterId(_ctx.stringValue("GetAutoScaleConfigResponse.ClusterId"));
+		getAutoScaleConfigResponse.setClusterType(_ctx.stringValue("GetAutoScaleConfigResponse.ClusterType"));
+		getAutoScaleConfigResponse.setEnableAutoGrow(_ctx.booleanValue("GetAutoScaleConfigResponse.EnableAutoGrow"));
+		getAutoScaleConfigResponse.setEnableAutoShrink(_ctx.booleanValue("GetAutoScaleConfigResponse.EnableAutoShrink"));
+		getAutoScaleConfigResponse.setGrowIntervalInMinutes(_ctx.integerValue("GetAutoScaleConfigResponse.GrowIntervalInMinutes"));
+		getAutoScaleConfigResponse.setShrinkIntervalInMinutes(_ctx.integerValue("GetAutoScaleConfigResponse.ShrinkIntervalInMinutes"));
+		getAutoScaleConfigResponse.setShrinkIdleTimes(_ctx.integerValue("GetAutoScaleConfigResponse.ShrinkIdleTimes"));
+		getAutoScaleConfigResponse.setGrowTimeoutInMinutes(_ctx.integerValue("GetAutoScaleConfigResponse.GrowTimeoutInMinutes"));
+		getAutoScaleConfigResponse.setExtraNodesGrowRatio(_ctx.integerValue("GetAutoScaleConfigResponse.ExtraNodesGrowRatio"));
+		getAutoScaleConfigResponse.setGrowRatio(_ctx.integerValue("GetAutoScaleConfigResponse.GrowRatio"));
+		getAutoScaleConfigResponse.setMaxNodesInCluster(_ctx.integerValue("GetAutoScaleConfigResponse.MaxNodesInCluster"));
+		getAutoScaleConfigResponse.setExcludeNodes(_ctx.stringValue("GetAutoScaleConfigResponse.ExcludeNodes"));
+		getAutoScaleConfigResponse.setSpotStrategy(_ctx.stringValue("GetAutoScaleConfigResponse.SpotStrategy"));
+		getAutoScaleConfigResponse.setSpotPriceLimit(_ctx.floatValue("GetAutoScaleConfigResponse.SpotPriceLimit"));
 
 		List<QueueInfo> queues = new ArrayList<QueueInfo>();
-		for (int i = 0; i < context.lengthValue("GetAutoScaleConfigResponse.Queues.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetAutoScaleConfigResponse.Queues.Length"); i++) {
 			QueueInfo queueInfo = new QueueInfo();
-			queueInfo.setQueueName(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].QueueName"));
-			queueInfo.setInstanceType(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceType"));
-			queueInfo.setSpotStrategy(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].SpotStrategy"));
-			queueInfo.setSpotPriceLimit(context.floatValue("GetAutoScaleConfigResponse.Queues["+ i +"].SpotPriceLimit"));
-			queueInfo.setEnableAutoGrow(context.booleanValue("GetAutoScaleConfigResponse.Queues["+ i +"].EnableAutoGrow"));
-			queueInfo.setEnableAutoShrink(context.booleanValue("GetAutoScaleConfigResponse.Queues["+ i +"].EnableAutoShrink"));
+			queueInfo.setQueueName(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].QueueName"));
+			queueInfo.setResourceGroupId(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].ResourceGroupId"));
+			queueInfo.setInstanceType(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceType"));
+			queueInfo.setSpotStrategy(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].SpotStrategy"));
+			queueInfo.setSpotPriceLimit(_ctx.floatValue("GetAutoScaleConfigResponse.Queues["+ i +"].SpotPriceLimit"));
+			queueInfo.setEnableAutoGrow(_ctx.booleanValue("GetAutoScaleConfigResponse.Queues["+ i +"].EnableAutoGrow"));
+			queueInfo.setEnableAutoShrink(_ctx.booleanValue("GetAutoScaleConfigResponse.Queues["+ i +"].EnableAutoShrink"));
 
 			List<InstanceTypeInfo> instanceTypes = new ArrayList<InstanceTypeInfo>();
-			for (int j = 0; j < context.lengthValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes.Length"); j++) {
 				InstanceTypeInfo instanceTypeInfo = new InstanceTypeInfo();
-				instanceTypeInfo.setInstanceType(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].InstanceType"));
-				instanceTypeInfo.setSpotStrategy(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].SpotStrategy"));
-				instanceTypeInfo.setSpotPriceLimit(context.floatValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].SpotPriceLimit"));
-				instanceTypeInfo.setZoneId(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].ZoneId"));
-				instanceTypeInfo.setVSwitchId(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].VSwitchId"));
+				instanceTypeInfo.setInstanceType(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].InstanceType"));
+				instanceTypeInfo.setSpotStrategy(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].SpotStrategy"));
+				instanceTypeInfo.setSpotPriceLimit(_ctx.floatValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].SpotPriceLimit"));
+				instanceTypeInfo.setZoneId(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].ZoneId"));
+				instanceTypeInfo.setVSwitchId(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].VSwitchId"));
+				instanceTypeInfo.setHostNamePrefix(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].HostNamePrefix"));
 
 				instanceTypes.add(instanceTypeInfo);
 			}

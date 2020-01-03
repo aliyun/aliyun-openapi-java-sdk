@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyVisualServicePasswdResponseUnmarshaller {
 
-	public static ModifyVisualServicePasswdResponse unmarshall(ModifyVisualServicePasswdResponse modifyVisualServicePasswdResponse, UnmarshallerContext context) {
+	public static ModifyVisualServicePasswdResponse unmarshall(ModifyVisualServicePasswdResponse modifyVisualServicePasswdResponse, UnmarshallerContext _ctx) {
 		
-		modifyVisualServicePasswdResponse.setRequestId(context.stringValue("ModifyVisualServicePasswdResponse.RequestId"));
-		modifyVisualServicePasswdResponse.setMessage(context.stringValue("ModifyVisualServicePasswdResponse.Message"));
+		modifyVisualServicePasswdResponse.setRequestId(_ctx.stringValue("ModifyVisualServicePasswdResponse.RequestId"));
+		modifyVisualServicePasswdResponse.setMessage(_ctx.stringValue("ModifyVisualServicePasswdResponse.Message"));
 	 
 	 	return modifyVisualServicePasswdResponse;
 	}

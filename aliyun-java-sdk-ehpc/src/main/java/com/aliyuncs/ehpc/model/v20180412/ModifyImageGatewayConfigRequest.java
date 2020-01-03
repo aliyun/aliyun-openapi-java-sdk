@@ -16,34 +16,73 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyImageGatewayConfigRequest extends RpcAcsRequest<ModifyImageGatewayConfigResponse> {
-	
-	public ModifyImageGatewayConfigRequest() {
-		super("EHPC", "2018-04-12", "ModifyImageGatewayConfig", "ehs");
-	}
+	   
+
+	private List<Repo> repos;
+
+	private String dBServerInfo;
+
+	private String clusterId;
 
 	private String defaultRepoLocation;
 
 	private String dBPassword;
 
-	private List<Repo> repos;
-
 	private String dBType;
 
 	private String dBUsername;
 
-	private String dBServerInfo;
-
 	private Integer pullUpdateTimeout;
 
-	private String clusterId;
-
 	private String imageExpirationTimeout;
+	public ModifyImageGatewayConfigRequest() {
+		super("EHPC", "2018-04-12", "ModifyImageGatewayConfig", "ehs");
+		setMethod(MethodType.GET);
+	}
+
+	public List<Repo> getRepos() {
+		return this.repos;
+	}
+
+	public void setRepos(List<Repo> repos) {
+		this.repos = repos;	
+		if (repos != null) {
+			for (int depth1 = 0; depth1 < repos.size(); depth1++) {
+				putQueryParameter("Repo." + (depth1 + 1) + ".Auth" , repos.get(depth1).getAuth());
+				putQueryParameter("Repo." + (depth1 + 1) + ".Location" , repos.get(depth1).getLocation());
+				putQueryParameter("Repo." + (depth1 + 1) + ".URL" , repos.get(depth1).getURL());
+			}
+		}	
+	}
+
+	public String getDBServerInfo() {
+		return this.dBServerInfo;
+	}
+
+	public void setDBServerInfo(String dBServerInfo) {
+		this.dBServerInfo = dBServerInfo;
+		if(dBServerInfo != null){
+			putQueryParameter("DBServerInfo", dBServerInfo);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
 
 	public String getDefaultRepoLocation() {
 		return this.defaultRepoLocation;
@@ -65,21 +104,6 @@ public class ModifyImageGatewayConfigRequest extends RpcAcsRequest<ModifyImageGa
 		if(dBPassword != null){
 			putQueryParameter("DBPassword", dBPassword);
 		}
-	}
-
-	public List<Repo> getRepos() {
-		return this.repos;
-	}
-
-	public void setRepos(List<Repo> repos) {
-		this.repos = repos;	
-		if (repos != null) {
-			for (int depth1 = 0; depth1 < repos.size(); depth1++) {
-				putQueryParameter("Repo." + (depth1 + 1) + ".Auth" , repos.get(depth1).getAuth());
-				putQueryParameter("Repo." + (depth1 + 1) + ".Location" , repos.get(depth1).getLocation());
-				putQueryParameter("Repo." + (depth1 + 1) + ".URL" , repos.get(depth1).getURL());
-			}
-		}	
 	}
 
 	public String getDBType() {
@@ -104,17 +128,6 @@ public class ModifyImageGatewayConfigRequest extends RpcAcsRequest<ModifyImageGa
 		}
 	}
 
-	public String getDBServerInfo() {
-		return this.dBServerInfo;
-	}
-
-	public void setDBServerInfo(String dBServerInfo) {
-		this.dBServerInfo = dBServerInfo;
-		if(dBServerInfo != null){
-			putQueryParameter("DBServerInfo", dBServerInfo);
-		}
-	}
-
 	public Integer getPullUpdateTimeout() {
 		return this.pullUpdateTimeout;
 	}
@@ -123,17 +136,6 @@ public class ModifyImageGatewayConfigRequest extends RpcAcsRequest<ModifyImageGa
 		this.pullUpdateTimeout = pullUpdateTimeout;
 		if(pullUpdateTimeout != null){
 			putQueryParameter("PullUpdateTimeout", pullUpdateTimeout.toString());
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

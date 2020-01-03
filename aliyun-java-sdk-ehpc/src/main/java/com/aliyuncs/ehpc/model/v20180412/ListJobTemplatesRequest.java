@@ -15,22 +15,35 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListJobTemplatesRequest extends RpcAcsRequest<ListJobTemplatesResponse> {
-	
-	public ListJobTemplatesRequest() {
-		super("EHPC", "2018-04-12", "ListJobTemplates", "ehs");
-	}
+	   
+
+	private Integer pageNumber;
 
 	private String name;
 
 	private Integer pageSize;
+	public ListJobTemplatesRequest() {
+		super("EHPC", "2018-04-12", "ListJobTemplates", "ehs");
+		setMethod(MethodType.GET);
+	}
 
-	private Integer pageNumber;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getName() {
 		return this.name;
@@ -51,17 +64,6 @@ public class ListJobTemplatesRequest extends RpcAcsRequest<ListJobTemplatesRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

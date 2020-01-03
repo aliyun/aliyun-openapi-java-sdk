@@ -16,34 +16,25 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
-	
-	public DescribePriceRequest() {
-		super("EHPC", "2018-04-12", "DescribePrice", "ehs");
-	}
-
-	private String priceUnit;
+	   
 
 	private List<Commodities> commoditiess;
+
+	private String priceUnit;
 
 	private String chargeType;
 
 	private String orderType;
-
-	public String getPriceUnit() {
-		return this.priceUnit;
-	}
-
-	public void setPriceUnit(String priceUnit) {
-		this.priceUnit = priceUnit;
-		if(priceUnit != null){
-			putQueryParameter("PriceUnit", priceUnit);
-		}
+	public DescribePriceRequest() {
+		super("EHPC", "2018-04-12", "DescribePrice", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public List<Commodities> getCommoditiess() {
@@ -63,6 +54,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 				putQueryParameter("Commodities." + (depth1 + 1) + ".NetworkType" , commoditiess.get(depth1).getNetworkType());
 			}
 		}	
+	}
+
+	public String getPriceUnit() {
+		return this.priceUnit;
+	}
+
+	public void setPriceUnit(String priceUnit) {
+		this.priceUnit = priceUnit;
+		if(priceUnit != null){
+			putQueryParameter("PriceUnit", priceUnit);
+		}
 	}
 
 	public String getChargeType() {

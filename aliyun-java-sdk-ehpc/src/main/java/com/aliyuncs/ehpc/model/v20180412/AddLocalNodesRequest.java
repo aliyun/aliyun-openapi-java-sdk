@@ -15,30 +15,21 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddLocalNodesRequest extends RpcAcsRequest<AddLocalNodesResponse> {
-	
-	public AddLocalNodesRequest() {
-		super("EHPC", "2018-04-12", "AddLocalNodes", "ehs");
-	}
-
-	private String nodes;
+	   
 
 	private String clusterId;
 
-	public String getNodes() {
-		return this.nodes;
-	}
-
-	public void setNodes(String nodes) {
-		this.nodes = nodes;
-		if(nodes != null){
-			putQueryParameter("Nodes", nodes);
-		}
+	private String nodes;
+	public AddLocalNodesRequest() {
+		super("EHPC", "2018-04-12", "AddLocalNodes", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getClusterId() {
@@ -49,6 +40,17 @@ public class AddLocalNodesRequest extends RpcAcsRequest<AddLocalNodesResponse> {
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getNodes() {
+		return this.nodes;
+	}
+
+	public void setNodes(String nodes) {
+		this.nodes = nodes;
+		if(nodes != null){
+			putQueryParameter("Nodes", nodes);
 		}
 	}
 

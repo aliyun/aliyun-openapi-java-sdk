@@ -15,20 +15,22 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpgradeClientRequest extends RpcAcsRequest<UpgradeClientResponse> {
-	
-	public UpgradeClientRequest() {
-		super("EHPC", "2018-04-12", "UpgradeClient", "ehs");
-	}
+	   
 
 	private String clientVersion;
 
 	private String clusterId;
+	public UpgradeClientRequest() {
+		super("EHPC", "2018-04-12", "UpgradeClient", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getClientVersion() {
 		return this.clientVersion;

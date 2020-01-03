@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UninstallSoftwareResponseUnmarshaller {
 
-	public static UninstallSoftwareResponse unmarshall(UninstallSoftwareResponse uninstallSoftwareResponse, UnmarshallerContext context) {
+	public static UninstallSoftwareResponse unmarshall(UninstallSoftwareResponse uninstallSoftwareResponse, UnmarshallerContext _ctx) {
 		
-		uninstallSoftwareResponse.setRequestId(context.stringValue("UninstallSoftwareResponse.RequestId"));
+		uninstallSoftwareResponse.setRequestId(_ctx.stringValue("UninstallSoftwareResponse.RequestId"));
 	 
 	 	return uninstallSoftwareResponse;
 	}

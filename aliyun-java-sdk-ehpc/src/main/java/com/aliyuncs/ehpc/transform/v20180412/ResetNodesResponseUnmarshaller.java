@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ResetNodesResponseUnmarshaller {
 
-	public static ResetNodesResponse unmarshall(ResetNodesResponse resetNodesResponse, UnmarshallerContext context) {
+	public static ResetNodesResponse unmarshall(ResetNodesResponse resetNodesResponse, UnmarshallerContext _ctx) {
 		
-		resetNodesResponse.setRequestId(context.stringValue("ResetNodesResponse.RequestId"));
+		resetNodesResponse.setRequestId(_ctx.stringValue("ResetNodesResponse.RequestId"));
 	 
 	 	return resetNodesResponse;
 	}

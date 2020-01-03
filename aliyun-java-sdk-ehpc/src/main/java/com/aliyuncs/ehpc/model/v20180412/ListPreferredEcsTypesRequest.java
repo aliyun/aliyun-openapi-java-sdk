@@ -15,22 +15,24 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListPreferredEcsTypesRequest extends RpcAcsRequest<ListPreferredEcsTypesResponse> {
-	
-	public ListPreferredEcsTypesRequest() {
-		super("EHPC", "2018-04-12", "ListPreferredEcsTypes", "ehs");
-	}
+	   
 
 	private String spotStrategy;
 
 	private String zoneId;
 
 	private String instanceChargeType;
+	public ListPreferredEcsTypesRequest() {
+		super("EHPC", "2018-04-12", "ListPreferredEcsTypes", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getSpotStrategy() {
 		return this.spotStrategy;

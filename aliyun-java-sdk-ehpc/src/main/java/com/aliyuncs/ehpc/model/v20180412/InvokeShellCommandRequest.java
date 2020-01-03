@@ -16,16 +16,14 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class InvokeShellCommandRequest extends RpcAcsRequest<InvokeShellCommandResponse> {
-	
-	public InvokeShellCommandRequest() {
-		super("EHPC", "2018-04-12", "InvokeShellCommand", "ehs");
-	}
+	   
 
 	private List<Instance> instances;
 
@@ -36,6 +34,10 @@ public class InvokeShellCommandRequest extends RpcAcsRequest<InvokeShellCommandR
 	private String command;
 
 	private Integer timeout;
+	public InvokeShellCommandRequest() {
+		super("EHPC", "2018-04-12", "InvokeShellCommand", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public List<Instance> getInstances() {
 		return this.instances;

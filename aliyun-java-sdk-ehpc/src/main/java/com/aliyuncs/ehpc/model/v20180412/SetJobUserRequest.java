@@ -15,22 +15,24 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetJobUserRequest extends RpcAcsRequest<SetJobUserResponse> {
-	
-	public SetJobUserRequest() {
-		super("EHPC", "2018-04-12", "SetJobUser", "ehs");
-	}
+	   
 
 	private String runasUserPassword;
 
 	private String runasUser;
 
 	private String clusterId;
+	public SetJobUserRequest() {
+		super("EHPC", "2018-04-12", "SetJobUser", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getRunasUserPassword() {
 		return this.runasUserPassword;

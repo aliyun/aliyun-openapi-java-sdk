@@ -15,15 +15,17 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListCurrentClientVersionRequest extends RpcAcsRequest<ListCurrentClientVersionResponse> {
-	
+	   
 	public ListCurrentClientVersionRequest() {
 		super("EHPC", "2018-04-12", "ListCurrentClientVersion", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	@Override

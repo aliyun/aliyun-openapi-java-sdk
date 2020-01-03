@@ -15,20 +15,22 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddQueueRequest extends RpcAcsRequest<AddQueueResponse> {
-	
-	public AddQueueRequest() {
-		super("EHPC", "2018-04-12", "AddQueue", "ehs");
-	}
+	   
 
 	private String queueName;
 
 	private String clusterId;
+	public AddQueueRequest() {
+		super("EHPC", "2018-04-12", "AddQueue", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getQueueName() {
 		return this.queueName;

@@ -23,14 +23,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InvokeShellCommandResponseUnmarshaller {
 
-	public static InvokeShellCommandResponse unmarshall(InvokeShellCommandResponse invokeShellCommandResponse, UnmarshallerContext context) {
+	public static InvokeShellCommandResponse unmarshall(InvokeShellCommandResponse invokeShellCommandResponse, UnmarshallerContext _ctx) {
 		
-		invokeShellCommandResponse.setRequestId(context.stringValue("InvokeShellCommandResponse.RequestId"));
-		invokeShellCommandResponse.setCommandId(context.stringValue("InvokeShellCommandResponse.CommandId"));
+		invokeShellCommandResponse.setRequestId(_ctx.stringValue("InvokeShellCommandResponse.RequestId"));
+		invokeShellCommandResponse.setCommandId(_ctx.stringValue("InvokeShellCommandResponse.CommandId"));
 
 		List<String> instanceIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("InvokeShellCommandResponse.InstanceIds.Length"); i++) {
-			instanceIds.add(context.stringValue("InvokeShellCommandResponse.InstanceIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("InvokeShellCommandResponse.InstanceIds.Length"); i++) {
+			instanceIds.add(_ctx.stringValue("InvokeShellCommandResponse.InstanceIds["+ i +"]"));
 		}
 		invokeShellCommandResponse.setInstanceIds(instanceIds);
 	 

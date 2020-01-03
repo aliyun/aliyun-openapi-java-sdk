@@ -85,6 +85,8 @@ public class ListClustersMetaResponse extends AcsResponse {
 
 		private String status;
 
+		private String location;
+
 		public String getId() {
 			return this.id;
 		}
@@ -115,6 +117,14 @@ public class ListClustersMetaResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
 		}
 	}
 

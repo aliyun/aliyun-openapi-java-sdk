@@ -24,15 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListQueuesResponseUnmarshaller {
 
-	public static ListQueuesResponse unmarshall(ListQueuesResponse listQueuesResponse, UnmarshallerContext context) {
+	public static ListQueuesResponse unmarshall(ListQueuesResponse listQueuesResponse, UnmarshallerContext _ctx) {
 		
-		listQueuesResponse.setRequestId(context.stringValue("ListQueuesResponse.RequestId"));
+		listQueuesResponse.setRequestId(_ctx.stringValue("ListQueuesResponse.RequestId"));
 
 		List<QueueInfo> queues = new ArrayList<QueueInfo>();
-		for (int i = 0; i < context.lengthValue("ListQueuesResponse.Queues.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListQueuesResponse.Queues.Length"); i++) {
 			QueueInfo queueInfo = new QueueInfo();
-			queueInfo.setQueueName(context.stringValue("ListQueuesResponse.Queues["+ i +"].QueueName"));
-			queueInfo.setType(context.stringValue("ListQueuesResponse.Queues["+ i +"].Type"));
+			queueInfo.setQueueName(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].QueueName"));
+			queueInfo.setType(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].Type"));
+			queueInfo.setResourceGroupId(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].ResourceGroupId"));
+			queueInfo.setComputeInstanceType(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].ComputeInstanceType"));
 
 			queues.add(queueInfo);
 		}

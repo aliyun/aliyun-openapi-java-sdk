@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListInvocationStatusResponseUnmarshaller {
 
-	public static ListInvocationStatusResponse unmarshall(ListInvocationStatusResponse listInvocationStatusResponse, UnmarshallerContext context) {
+	public static ListInvocationStatusResponse unmarshall(ListInvocationStatusResponse listInvocationStatusResponse, UnmarshallerContext _ctx) {
 		
-		listInvocationStatusResponse.setRequestId(context.stringValue("ListInvocationStatusResponse.RequestId"));
-		listInvocationStatusResponse.setCommandId(context.stringValue("ListInvocationStatusResponse.CommandId"));
-		listInvocationStatusResponse.setInvokeStatus(context.stringValue("ListInvocationStatusResponse.InvokeStatus"));
+		listInvocationStatusResponse.setRequestId(_ctx.stringValue("ListInvocationStatusResponse.RequestId"));
+		listInvocationStatusResponse.setCommandId(_ctx.stringValue("ListInvocationStatusResponse.CommandId"));
+		listInvocationStatusResponse.setInvokeStatus(_ctx.stringValue("ListInvocationStatusResponse.InvokeStatus"));
 
 		List<InvokeInstance> invokeInstances = new ArrayList<InvokeInstance>();
-		for (int i = 0; i < context.lengthValue("ListInvocationStatusResponse.InvokeInstances.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListInvocationStatusResponse.InvokeInstances.Length"); i++) {
 			InvokeInstance invokeInstance = new InvokeInstance();
-			invokeInstance.setInstanceId(context.stringValue("ListInvocationStatusResponse.InvokeInstances["+ i +"].InstanceId"));
-			invokeInstance.setInstanceInvokeStatus(context.stringValue("ListInvocationStatusResponse.InvokeInstances["+ i +"].InstanceInvokeStatus"));
+			invokeInstance.setInstanceId(_ctx.stringValue("ListInvocationStatusResponse.InvokeInstances["+ i +"].InstanceId"));
+			invokeInstance.setInstanceInvokeStatus(_ctx.stringValue("ListInvocationStatusResponse.InvokeInstances["+ i +"].InstanceInvokeStatus"));
 
 			invokeInstances.add(invokeInstance);
 		}

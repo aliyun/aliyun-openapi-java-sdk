@@ -25,37 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListVolumesResponseUnmarshaller {
 
-	public static ListVolumesResponse unmarshall(ListVolumesResponse listVolumesResponse, UnmarshallerContext context) {
+	public static ListVolumesResponse unmarshall(ListVolumesResponse listVolumesResponse, UnmarshallerContext _ctx) {
 		
-		listVolumesResponse.setRequestId(context.stringValue("ListVolumesResponse.RequestId"));
-		listVolumesResponse.setTotalCount(context.integerValue("ListVolumesResponse.TotalCount"));
-		listVolumesResponse.setPageNumber(context.integerValue("ListVolumesResponse.PageNumber"));
-		listVolumesResponse.setPageSize(context.integerValue("ListVolumesResponse.PageSize"));
+		listVolumesResponse.setRequestId(_ctx.stringValue("ListVolumesResponse.RequestId"));
+		listVolumesResponse.setTotalCount(_ctx.integerValue("ListVolumesResponse.TotalCount"));
+		listVolumesResponse.setPageNumber(_ctx.integerValue("ListVolumesResponse.PageNumber"));
+		listVolumesResponse.setPageSize(_ctx.integerValue("ListVolumesResponse.PageSize"));
 
 		List<VolumeInfo> volumes = new ArrayList<VolumeInfo>();
-		for (int i = 0; i < context.lengthValue("ListVolumesResponse.Volumes.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListVolumesResponse.Volumes.Length"); i++) {
 			VolumeInfo volumeInfo = new VolumeInfo();
-			volumeInfo.setRegionId(context.stringValue("ListVolumesResponse.Volumes["+ i +"].RegionId"));
-			volumeInfo.setClusterId(context.stringValue("ListVolumesResponse.Volumes["+ i +"].ClusterId"));
-			volumeInfo.setClusterName(context.stringValue("ListVolumesResponse.Volumes["+ i +"].ClusterName"));
-			volumeInfo.setVolumeId(context.stringValue("ListVolumesResponse.Volumes["+ i +"].VolumeId"));
-			volumeInfo.setVolumeType(context.stringValue("ListVolumesResponse.Volumes["+ i +"].VolumeType"));
-			volumeInfo.setVolumeProtocol(context.stringValue("ListVolumesResponse.Volumes["+ i +"].VolumeProtocol"));
-			volumeInfo.setVolumeMountpoint(context.stringValue("ListVolumesResponse.Volumes["+ i +"].VolumeMountpoint"));
-			volumeInfo.setRemoteDirectory(context.stringValue("ListVolumesResponse.Volumes["+ i +"].RemoteDirectory"));
+			volumeInfo.setRegionId(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].RegionId"));
+			volumeInfo.setClusterId(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].ClusterId"));
+			volumeInfo.setClusterName(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].ClusterName"));
+			volumeInfo.setVolumeId(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].VolumeId"));
+			volumeInfo.setVolumeType(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].VolumeType"));
+			volumeInfo.setVolumeProtocol(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].VolumeProtocol"));
+			volumeInfo.setVolumeMountpoint(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].VolumeMountpoint"));
+			volumeInfo.setRemoteDirectory(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].RemoteDirectory"));
 
 			List<VolumeInfo1> additionalVolumes = new ArrayList<VolumeInfo1>();
-			for (int j = 0; j < context.lengthValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes.Length"); j++) {
 				VolumeInfo1 volumeInfo1 = new VolumeInfo1();
-				volumeInfo1.setVolumeType(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].VolumeType"));
-				volumeInfo1.setVolumeId(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].VolumeId"));
-				volumeInfo1.setVolumeProtocol(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].VolumeProtocol"));
-				volumeInfo1.setVolumeMountpoint(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].VolumeMountpoint"));
-				volumeInfo1.setRemoteDirectory(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].RemoteDirectory"));
-				volumeInfo1.setLocalDirectory(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].LocalDirectory"));
-				volumeInfo1.setRole(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].Role"));
-				volumeInfo1.setLocation(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].Location"));
-				volumeInfo1.setJobQueue(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].JobQueue"));
+				volumeInfo1.setVolumeType(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].VolumeType"));
+				volumeInfo1.setVolumeId(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].VolumeId"));
+				volumeInfo1.setVolumeProtocol(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].VolumeProtocol"));
+				volumeInfo1.setVolumeMountpoint(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].VolumeMountpoint"));
+				volumeInfo1.setRemoteDirectory(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].RemoteDirectory"));
+				volumeInfo1.setLocalDirectory(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].LocalDirectory"));
+				volumeInfo1.setRole(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].Role"));
+				volumeInfo1.setLocation(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].Location"));
+				volumeInfo1.setJobQueue(_ctx.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].JobQueue"));
 
 				additionalVolumes.add(volumeInfo1);
 			}

@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAvailableFileSystemTypesResponseUnmarshaller {
 
-	public static ListAvailableFileSystemTypesResponse unmarshall(ListAvailableFileSystemTypesResponse listAvailableFileSystemTypesResponse, UnmarshallerContext context) {
+	public static ListAvailableFileSystemTypesResponse unmarshall(ListAvailableFileSystemTypesResponse listAvailableFileSystemTypesResponse, UnmarshallerContext _ctx) {
 		
-		listAvailableFileSystemTypesResponse.setRequestId(context.stringValue("ListAvailableFileSystemTypesResponse.RequestId"));
+		listAvailableFileSystemTypesResponse.setRequestId(_ctx.stringValue("ListAvailableFileSystemTypesResponse.RequestId"));
 
 		List<FileSystemTypes> fileSystemTypeList = new ArrayList<FileSystemTypes>();
-		for (int i = 0; i < context.lengthValue("ListAvailableFileSystemTypesResponse.FileSystemTypeList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAvailableFileSystemTypesResponse.FileSystemTypeList.Length"); i++) {
 			FileSystemTypes fileSystemTypes = new FileSystemTypes();
-			fileSystemTypes.setFileSystemType(context.stringValue("ListAvailableFileSystemTypesResponse.FileSystemTypeList["+ i +"].FileSystemType"));
-			fileSystemTypes.setAvailable(context.booleanValue("ListAvailableFileSystemTypesResponse.FileSystemTypeList["+ i +"].Available"));
-			fileSystemTypes.setProtocolType(context.stringValue("ListAvailableFileSystemTypesResponse.FileSystemTypeList["+ i +"].ProtocolType"));
+			fileSystemTypes.setFileSystemType(_ctx.stringValue("ListAvailableFileSystemTypesResponse.FileSystemTypeList["+ i +"].FileSystemType"));
+			fileSystemTypes.setAvailable(_ctx.booleanValue("ListAvailableFileSystemTypesResponse.FileSystemTypeList["+ i +"].Available"));
+			fileSystemTypes.setProtocolType(_ctx.stringValue("ListAvailableFileSystemTypesResponse.FileSystemTypeList["+ i +"].ProtocolType"));
 
 			List<String> storageTypes = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListAvailableFileSystemTypesResponse.FileSystemTypeList["+ i +"].StorageTypes.Length"); j++) {
-				storageTypes.add(context.stringValue("ListAvailableFileSystemTypesResponse.FileSystemTypeList["+ i +"].StorageTypes["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListAvailableFileSystemTypesResponse.FileSystemTypeList["+ i +"].StorageTypes.Length"); j++) {
+				storageTypes.add(_ctx.stringValue("ListAvailableFileSystemTypesResponse.FileSystemTypeList["+ i +"].StorageTypes["+ j +"]"));
 			}
 			fileSystemTypes.setStorageTypes(storageTypes);
 

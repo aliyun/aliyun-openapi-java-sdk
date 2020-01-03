@@ -15,30 +15,21 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListContainerAppsRequest extends RpcAcsRequest<ListContainerAppsResponse> {
-	
-	public ListContainerAppsRequest() {
-		super("EHPC", "2018-04-12", "ListContainerApps", "ehs");
-	}
-
-	private Integer pageSize;
+	   
 
 	private Integer pageNumber;
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+	private Integer pageSize;
+	public ListContainerAppsRequest() {
+		super("EHPC", "2018-04-12", "ListContainerApps", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public Integer getPageNumber() {
@@ -49,6 +40,17 @@ public class ListContainerAppsRequest extends RpcAcsRequest<ListContainerAppsRes
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

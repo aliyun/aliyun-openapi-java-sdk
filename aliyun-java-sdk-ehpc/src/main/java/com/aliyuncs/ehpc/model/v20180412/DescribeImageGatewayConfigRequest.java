@@ -15,18 +15,20 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeImageGatewayConfigRequest extends RpcAcsRequest<DescribeImageGatewayConfigResponse> {
-	
-	public DescribeImageGatewayConfigRequest() {
-		super("EHPC", "2018-04-12", "DescribeImageGatewayConfig", "ehs");
-	}
+	   
 
 	private String clusterId;
+	public DescribeImageGatewayConfigRequest() {
+		super("EHPC", "2018-04-12", "DescribeImageGatewayConfig", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getClusterId() {
 		return this.clusterId;

@@ -16,22 +16,24 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class StopNodesRequest extends RpcAcsRequest<StopNodesResponse> {
-	
-	public StopNodesRequest() {
-		super("EHPC", "2018-04-12", "StopNodes", "ehs");
-	}
+	   
 
 	private String role;
 
 	private List<Instance> instances;
 
 	private String clusterId;
+	public StopNodesRequest() {
+		super("EHPC", "2018-04-12", "StopNodes", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getRole() {
 		return this.role;

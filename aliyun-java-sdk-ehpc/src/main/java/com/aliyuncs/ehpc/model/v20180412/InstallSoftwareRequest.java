@@ -15,30 +15,21 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class InstallSoftwareRequest extends RpcAcsRequest<InstallSoftwareResponse> {
-	
-	public InstallSoftwareRequest() {
-		super("EHPC", "2018-04-12", "InstallSoftware", "ehs");
-	}
-
-	private String application;
+	   
 
 	private String clusterId;
 
-	public String getApplication() {
-		return this.application;
-	}
-
-	public void setApplication(String application) {
-		this.application = application;
-		if(application != null){
-			putQueryParameter("Application", application);
-		}
+	private String application;
+	public InstallSoftwareRequest() {
+		super("EHPC", "2018-04-12", "InstallSoftware", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getClusterId() {
@@ -49,6 +40,17 @@ public class InstallSoftwareRequest extends RpcAcsRequest<InstallSoftwareRespons
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getApplication() {
+		return this.application;
+	}
+
+	public void setApplication(String application) {
+		this.application = application;
+		if(application != null){
+			putQueryParameter("Application", application);
 		}
 	}
 

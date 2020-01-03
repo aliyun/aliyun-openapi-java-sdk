@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListInstalledSoftwareResponseUnmarshaller {
 
-	public static ListInstalledSoftwareResponse unmarshall(ListInstalledSoftwareResponse listInstalledSoftwareResponse, UnmarshallerContext context) {
+	public static ListInstalledSoftwareResponse unmarshall(ListInstalledSoftwareResponse listInstalledSoftwareResponse, UnmarshallerContext _ctx) {
 		
 
 		List<SoftwareListItem> softwareList = new ArrayList<SoftwareListItem>();
-		for (int i = 0; i < context.lengthValue("ListInstalledSoftwareResponse.SoftwareList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListInstalledSoftwareResponse.SoftwareList.Length"); i++) {
 			SoftwareListItem softwareListItem = new SoftwareListItem();
-			softwareListItem.setSoftwareId(context.stringValue("ListInstalledSoftwareResponse.SoftwareList["+ i +"].SoftwareId"));
-			softwareListItem.setSoftwareName(context.stringValue("ListInstalledSoftwareResponse.SoftwareList["+ i +"].SoftwareName"));
-			softwareListItem.setSoftwareVersion(context.stringValue("ListInstalledSoftwareResponse.SoftwareList["+ i +"].SoftwareVersion"));
-			softwareListItem.setSoftwareStatus(context.stringValue("ListInstalledSoftwareResponse.SoftwareList["+ i +"].SoftwareStatus"));
+			softwareListItem.setSoftwareId(_ctx.stringValue("ListInstalledSoftwareResponse.SoftwareList["+ i +"].SoftwareId"));
+			softwareListItem.setSoftwareName(_ctx.stringValue("ListInstalledSoftwareResponse.SoftwareList["+ i +"].SoftwareName"));
+			softwareListItem.setSoftwareVersion(_ctx.stringValue("ListInstalledSoftwareResponse.SoftwareList["+ i +"].SoftwareVersion"));
+			softwareListItem.setSoftwareStatus(_ctx.stringValue("ListInstalledSoftwareResponse.SoftwareList["+ i +"].SoftwareStatus"));
 
 			softwareList.add(softwareListItem);
 		}

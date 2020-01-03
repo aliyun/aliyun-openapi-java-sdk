@@ -81,6 +81,8 @@ public class ListFileSystemWithMountTargetsResponse extends AcsResponse {
 
 		private String fileSystemId;
 
+		private String fileSystemType;
+
 		private String protocolType;
 
 		private String createTime;
@@ -89,32 +91,24 @@ public class ListFileSystemWithMountTargetsResponse extends AcsResponse {
 
 		private String storageType;
 
-		private String meteredSize;
+		private Integer meteredSize;
+
+		private Integer capacity;
+
+		private Integer encryptType;
+
+		private Integer bandWidth;
+
+		private String status;
 
 		private List<Packages> packageList;
 
 		private List<MountTargets> mountTargetList;
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -125,6 +119,14 @@ public class ListFileSystemWithMountTargetsResponse extends AcsResponse {
 
 		public void setFileSystemId(String fileSystemId) {
 			this.fileSystemId = fileSystemId;
+		}
+
+		public String getFileSystemType() {
+			return this.fileSystemType;
+		}
+
+		public void setFileSystemType(String fileSystemType) {
+			this.fileSystemType = fileSystemType;
 		}
 
 		public String getProtocolType() {
@@ -159,12 +161,44 @@ public class ListFileSystemWithMountTargetsResponse extends AcsResponse {
 			this.storageType = storageType;
 		}
 
-		public String getMeteredSize() {
+		public Integer getMeteredSize() {
 			return this.meteredSize;
 		}
 
-		public void setMeteredSize(String meteredSize) {
+		public void setMeteredSize(Integer meteredSize) {
 			this.meteredSize = meteredSize;
+		}
+
+		public Integer getCapacity() {
+			return this.capacity;
+		}
+
+		public void setCapacity(Integer capacity) {
+			this.capacity = capacity;
+		}
+
+		public Integer getEncryptType() {
+			return this.encryptType;
+		}
+
+		public void setEncryptType(Integer encryptType) {
+			this.encryptType = encryptType;
+		}
+
+		public Integer getBandWidth() {
+			return this.bandWidth;
+		}
+
+		public void setBandWidth(Integer bandWidth) {
+			this.bandWidth = bandWidth;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public List<Packages> getPackageList() {

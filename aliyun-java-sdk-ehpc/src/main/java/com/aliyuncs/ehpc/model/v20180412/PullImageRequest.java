@@ -15,34 +15,25 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class PullImageRequest extends RpcAcsRequest<PullImageResponse> {
-	
-	public PullImageRequest() {
-		super("EHPC", "2018-04-12", "PullImage", "ehs");
-	}
-
-	private String containerType;
+	   
 
 	private String clusterId;
 
 	private String repository;
 
+	private String containerType;
+
 	private String imageTag;
-
-	public String getContainerType() {
-		return this.containerType;
-	}
-
-	public void setContainerType(String containerType) {
-		this.containerType = containerType;
-		if(containerType != null){
-			putQueryParameter("ContainerType", containerType);
-		}
+	public PullImageRequest() {
+		super("EHPC", "2018-04-12", "PullImage", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getClusterId() {
@@ -64,6 +55,17 @@ public class PullImageRequest extends RpcAcsRequest<PullImageResponse> {
 		this.repository = repository;
 		if(repository != null){
 			putQueryParameter("Repository", repository);
+		}
+	}
+
+	public String getContainerType() {
+		return this.containerType;
+	}
+
+	public void setContainerType(String containerType) {
+		this.containerType = containerType;
+		if(containerType != null){
+			putQueryParameter("ContainerType", containerType);
 		}
 	}
 

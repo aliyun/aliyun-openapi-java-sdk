@@ -83,6 +83,8 @@ public class ListNodesResponse extends AcsResponse {
 
 		private String hostName;
 
+		private String ipAddress;
+
 		private String status;
 
 		private String version;
@@ -127,26 +129,10 @@ public class ListNodesResponse extends AcsResponse {
 			this.id = id;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -159,6 +145,14 @@ public class ListNodesResponse extends AcsResponse {
 			this.hostName = hostName;
 		}
 
+		public String getIpAddress() {
+			return this.ipAddress;
+		}
+
+		public void setIpAddress(String ipAddress) {
+			this.ipAddress = ipAddress;
+		}
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -167,26 +161,10 @@ public class ListNodesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getBizVersion() {
-			return this.version;
-		}
-
-		public void setBizVersion(String version) {
-			this.version = version;
-		}
-
-		/**
-		 * @deprecated use getBizVersion instead of this.
-		 */
-		@Deprecated
 		public String getVersion() {
 			return this.version;
 		}
 
-		/**
-		 * @deprecated use setBizVersion instead of this.
-		 */
-		@Deprecated
 		public void setVersion(String version) {
 			this.version = version;
 		}

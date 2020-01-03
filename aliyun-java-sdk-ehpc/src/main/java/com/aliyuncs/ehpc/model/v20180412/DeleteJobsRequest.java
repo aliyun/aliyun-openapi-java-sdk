@@ -15,20 +15,22 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteJobsRequest extends RpcAcsRequest<DeleteJobsResponse> {
-	
-	public DeleteJobsRequest() {
-		super("EHPC", "2018-04-12", "DeleteJobs", "ehs");
-	}
+	   
 
 	private String jobs;
 
 	private String clusterId;
+	public DeleteJobsRequest() {
+		super("EHPC", "2018-04-12", "DeleteJobs", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getJobs() {
 		return this.jobs;

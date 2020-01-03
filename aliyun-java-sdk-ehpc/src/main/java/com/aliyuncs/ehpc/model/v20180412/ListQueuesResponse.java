@@ -51,6 +51,10 @@ public class ListQueuesResponse extends AcsResponse {
 
 		private String type;
 
+		private String resourceGroupId;
+
+		private String computeInstanceType;
+
 		public String getQueueName() {
 			return this.queueName;
 		}
@@ -65,6 +69,22 @@ public class ListQueuesResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getComputeInstanceType() {
+			return this.computeInstanceType;
+		}
+
+		public void setComputeInstanceType(String computeInstanceType) {
+			this.computeInstanceType = computeInstanceType;
 		}
 	}
 

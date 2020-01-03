@@ -25,34 +25,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListPreferredEcsTypesResponseUnmarshaller {
 
-	public static ListPreferredEcsTypesResponse unmarshall(ListPreferredEcsTypesResponse listPreferredEcsTypesResponse, UnmarshallerContext context) {
+	public static ListPreferredEcsTypesResponse unmarshall(ListPreferredEcsTypesResponse listPreferredEcsTypesResponse, UnmarshallerContext _ctx) {
 		
-		listPreferredEcsTypesResponse.setRequestId(context.stringValue("ListPreferredEcsTypesResponse.RequestId"));
-		listPreferredEcsTypesResponse.setSupportSpotInstance(context.booleanValue("ListPreferredEcsTypesResponse.SupportSpotInstance"));
+		listPreferredEcsTypesResponse.setRequestId(_ctx.stringValue("ListPreferredEcsTypesResponse.RequestId"));
+		listPreferredEcsTypesResponse.setSupportSpotInstance(_ctx.booleanValue("ListPreferredEcsTypesResponse.SupportSpotInstance"));
 
 		List<SeriesInfo> series = new ArrayList<SeriesInfo>();
-		for (int i = 0; i < context.lengthValue("ListPreferredEcsTypesResponse.Series.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListPreferredEcsTypesResponse.Series.Length"); i++) {
 			SeriesInfo seriesInfo = new SeriesInfo();
-			seriesInfo.setSeriesId(context.stringValue("ListPreferredEcsTypesResponse.Series["+ i +"].SeriesId"));
-			seriesInfo.setSeriesName(context.stringValue("ListPreferredEcsTypesResponse.Series["+ i +"].SeriesName"));
+			seriesInfo.setSeriesId(_ctx.stringValue("ListPreferredEcsTypesResponse.Series["+ i +"].SeriesId"));
+			seriesInfo.setSeriesName(_ctx.stringValue("ListPreferredEcsTypesResponse.Series["+ i +"].SeriesName"));
 
 			Roles roles = new Roles();
 
 			List<String> manager = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListPreferredEcsTypesResponse.Series["+ i +"].Roles.Manager.Length"); j++) {
-				manager.add(context.stringValue("ListPreferredEcsTypesResponse.Series["+ i +"].Roles.Manager["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListPreferredEcsTypesResponse.Series["+ i +"].Roles.Manager.Length"); j++) {
+				manager.add(_ctx.stringValue("ListPreferredEcsTypesResponse.Series["+ i +"].Roles.Manager["+ j +"]"));
 			}
 			roles.setManager(manager);
 
 			List<String> compute = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListPreferredEcsTypesResponse.Series["+ i +"].Roles.Compute.Length"); j++) {
-				compute.add(context.stringValue("ListPreferredEcsTypesResponse.Series["+ i +"].Roles.Compute["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListPreferredEcsTypesResponse.Series["+ i +"].Roles.Compute.Length"); j++) {
+				compute.add(_ctx.stringValue("ListPreferredEcsTypesResponse.Series["+ i +"].Roles.Compute["+ j +"]"));
 			}
 			roles.setCompute(compute);
 
 			List<String> login = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListPreferredEcsTypesResponse.Series["+ i +"].Roles.Login.Length"); j++) {
-				login.add(context.stringValue("ListPreferredEcsTypesResponse.Series["+ i +"].Roles.Login["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListPreferredEcsTypesResponse.Series["+ i +"].Roles.Login.Length"); j++) {
+				login.add(_ctx.stringValue("ListPreferredEcsTypesResponse.Series["+ i +"].Roles.Login["+ j +"]"));
 			}
 			roles.setLogin(login);
 			seriesInfo.setRoles(roles);

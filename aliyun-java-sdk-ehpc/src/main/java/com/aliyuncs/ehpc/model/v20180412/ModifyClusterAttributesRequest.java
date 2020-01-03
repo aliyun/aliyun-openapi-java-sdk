@@ -15,32 +15,23 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyClusterAttributesRequest extends RpcAcsRequest<ModifyClusterAttributesResponse> {
-	
-	public ModifyClusterAttributesRequest() {
-		super("EHPC", "2018-04-12", "ModifyClusterAttributes", "ehs");
-	}
-
-	private String name;
+	   
 
 	private String description;
 
 	private String clusterId;
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
+	private String name;
+	public ModifyClusterAttributesRequest() {
+		super("EHPC", "2018-04-12", "ModifyClusterAttributes", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getDescription() {
@@ -62,6 +53,17 @@ public class ModifyClusterAttributesRequest extends RpcAcsRequest<ModifyClusterA
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

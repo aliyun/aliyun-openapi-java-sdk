@@ -15,16 +15,14 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeImagePriceRequest extends RpcAcsRequest<DescribeImagePriceResponse> {
-	
-	public DescribeImagePriceRequest() {
-		super("EHPC", "2018-04-12", "DescribeImagePrice", "ehs");
-	}
+	   
 
 	private Integer period;
 
@@ -32,11 +30,15 @@ public class DescribeImagePriceRequest extends RpcAcsRequest<DescribeImagePriceR
 
 	private String imageId;
 
-	private String priceUnit;
-
 	private String skuCode;
 
+	private String priceUnit;
+
 	private String orderType;
+	public DescribeImagePriceRequest() {
+		super("EHPC", "2018-04-12", "DescribeImagePrice", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public Integer getPeriod() {
 		return this.period;
@@ -71,17 +73,6 @@ public class DescribeImagePriceRequest extends RpcAcsRequest<DescribeImagePriceR
 		}
 	}
 
-	public String getPriceUnit() {
-		return this.priceUnit;
-	}
-
-	public void setPriceUnit(String priceUnit) {
-		this.priceUnit = priceUnit;
-		if(priceUnit != null){
-			putQueryParameter("PriceUnit", priceUnit);
-		}
-	}
-
 	public String getSkuCode() {
 		return this.skuCode;
 	}
@@ -90,6 +81,17 @@ public class DescribeImagePriceRequest extends RpcAcsRequest<DescribeImagePriceR
 		this.skuCode = skuCode;
 		if(skuCode != null){
 			putQueryParameter("SkuCode", skuCode);
+		}
+	}
+
+	public String getPriceUnit() {
+		return this.priceUnit;
+	}
+
+	public void setPriceUnit(String priceUnit) {
+		this.priceUnit = priceUnit;
+		if(priceUnit != null){
+			putQueryParameter("PriceUnit", priceUnit);
 		}
 	}
 

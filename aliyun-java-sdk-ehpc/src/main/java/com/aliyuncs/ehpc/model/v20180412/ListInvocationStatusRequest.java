@@ -15,20 +15,22 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListInvocationStatusRequest extends RpcAcsRequest<ListInvocationStatusResponse> {
-	
-	public ListInvocationStatusRequest() {
-		super("EHPC", "2018-04-12", "ListInvocationStatus", "ehs");
-	}
+	   
 
 	private String clusterId;
 
 	private String commandId;
+	public ListInvocationStatusRequest() {
+		super("EHPC", "2018-04-12", "ListInvocationStatus", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getClusterId() {
 		return this.clusterId;

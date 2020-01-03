@@ -15,30 +15,21 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListCustomImagesRequest extends RpcAcsRequest<ListCustomImagesResponse> {
-	
-	public ListCustomImagesRequest() {
-		super("EHPC", "2018-04-12", "ListCustomImages", "ehs");
-	}
-
-	private String baseOsTag;
+	   
 
 	private String imageOwnerAlias;
 
-	public String getBaseOsTag() {
-		return this.baseOsTag;
-	}
-
-	public void setBaseOsTag(String baseOsTag) {
-		this.baseOsTag = baseOsTag;
-		if(baseOsTag != null){
-			putQueryParameter("BaseOsTag", baseOsTag);
-		}
+	private String baseOsTag;
+	public ListCustomImagesRequest() {
+		super("EHPC", "2018-04-12", "ListCustomImages", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getImageOwnerAlias() {
@@ -49,6 +40,17 @@ public class ListCustomImagesRequest extends RpcAcsRequest<ListCustomImagesRespo
 		this.imageOwnerAlias = imageOwnerAlias;
 		if(imageOwnerAlias != null){
 			putQueryParameter("ImageOwnerAlias", imageOwnerAlias);
+		}
+	}
+
+	public String getBaseOsTag() {
+		return this.baseOsTag;
+	}
+
+	public void setBaseOsTag(String baseOsTag) {
+		this.baseOsTag = baseOsTag;
+		if(baseOsTag != null){
+			putQueryParameter("BaseOsTag", baseOsTag);
 		}
 	}
 

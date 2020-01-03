@@ -15,18 +15,20 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListQueuesRequest extends RpcAcsRequest<ListQueuesResponse> {
-	
-	public ListQueuesRequest() {
-		super("EHPC", "2018-04-12", "ListQueues", "ehs");
-	}
+	   
 
 	private String clusterId;
+	public ListQueuesRequest() {
+		super("EHPC", "2018-04-12", "ListQueues", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getClusterId() {
 		return this.clusterId;

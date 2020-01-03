@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeImageGatewayConfigResponseUnmarshaller {
 
-	public static DescribeImageGatewayConfigResponse unmarshall(DescribeImageGatewayConfigResponse describeImageGatewayConfigResponse, UnmarshallerContext context) {
+	public static DescribeImageGatewayConfigResponse unmarshall(DescribeImageGatewayConfigResponse describeImageGatewayConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeImageGatewayConfigResponse.setRequestId(context.stringValue("DescribeImageGatewayConfigResponse.RequestId"));
+		describeImageGatewayConfigResponse.setRequestId(_ctx.stringValue("DescribeImageGatewayConfigResponse.RequestId"));
 
 		Imagegw imagegw = new Imagegw();
-		imagegw.setDefaultImageLocation(context.stringValue("DescribeImageGatewayConfigResponse.Imagegw.DefaultImageLocation"));
-		imagegw.setPullUpdateTimeout(context.longValue("DescribeImageGatewayConfigResponse.Imagegw.PullUpdateTimeout"));
-		imagegw.setMongoDBURI(context.stringValue("DescribeImageGatewayConfigResponse.Imagegw.MongoDBURI"));
-		imagegw.setImageExpirationTimeout(context.stringValue("DescribeImageGatewayConfigResponse.Imagegw.ImageExpirationTimeout"));
-		imagegw.setUpdateDateTime(context.stringValue("DescribeImageGatewayConfigResponse.Imagegw.UpdateDateTime"));
+		imagegw.setDefaultImageLocation(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.DefaultImageLocation"));
+		imagegw.setPullUpdateTimeout(_ctx.longValue("DescribeImageGatewayConfigResponse.Imagegw.PullUpdateTimeout"));
+		imagegw.setMongoDBURI(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.MongoDBURI"));
+		imagegw.setImageExpirationTimeout(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.ImageExpirationTimeout"));
+		imagegw.setUpdateDateTime(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.UpdateDateTime"));
 
 		List<LocationInfo> locations = new ArrayList<LocationInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeImageGatewayConfigResponse.Imagegw.Locations.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeImageGatewayConfigResponse.Imagegw.Locations.Length"); i++) {
 			LocationInfo locationInfo = new LocationInfo();
-			locationInfo.setLocation(context.stringValue("DescribeImageGatewayConfigResponse.Imagegw.Locations["+ i +"].Location"));
-			locationInfo.setRemoteType(context.stringValue("DescribeImageGatewayConfigResponse.Imagegw.Locations["+ i +"].RemoteType"));
-			locationInfo.setAuthentication(context.stringValue("DescribeImageGatewayConfigResponse.Imagegw.Locations["+ i +"].Authentication"));
-			locationInfo.setURL(context.stringValue("DescribeImageGatewayConfigResponse.Imagegw.Locations["+ i +"].URL"));
+			locationInfo.setLocation(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.Locations["+ i +"].Location"));
+			locationInfo.setRemoteType(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.Locations["+ i +"].RemoteType"));
+			locationInfo.setAuthentication(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.Locations["+ i +"].Authentication"));
+			locationInfo.setURL(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.Locations["+ i +"].URL"));
 
 			locations.add(locationInfo);
 		}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpgradeClientResponseUnmarshaller {
 
-	public static UpgradeClientResponse unmarshall(UpgradeClientResponse upgradeClientResponse, UnmarshallerContext context) {
+	public static UpgradeClientResponse unmarshall(UpgradeClientResponse upgradeClientResponse, UnmarshallerContext _ctx) {
 		
-		upgradeClientResponse.setRequestId(context.stringValue("UpgradeClientResponse.RequestId"));
+		upgradeClientResponse.setRequestId(_ctx.stringValue("UpgradeClientResponse.RequestId"));
 	 
 	 	return upgradeClientResponse;
 	}

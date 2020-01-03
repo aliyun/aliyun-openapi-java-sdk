@@ -25,30 +25,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListCustomImagesResponseUnmarshaller {
 
-	public static ListCustomImagesResponse unmarshall(ListCustomImagesResponse listCustomImagesResponse, UnmarshallerContext context) {
+	public static ListCustomImagesResponse unmarshall(ListCustomImagesResponse listCustomImagesResponse, UnmarshallerContext _ctx) {
 		
-		listCustomImagesResponse.setRequestId(context.stringValue("ListCustomImagesResponse.RequestId"));
+		listCustomImagesResponse.setRequestId(_ctx.stringValue("ListCustomImagesResponse.RequestId"));
 
 		List<ImageInfo> images = new ArrayList<ImageInfo>();
-		for (int i = 0; i < context.lengthValue("ListCustomImagesResponse.Images.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListCustomImagesResponse.Images.Length"); i++) {
 			ImageInfo imageInfo = new ImageInfo();
-			imageInfo.setUid(context.stringValue("ListCustomImagesResponse.Images["+ i +"].Uid"));
-			imageInfo.setImageId(context.stringValue("ListCustomImagesResponse.Images["+ i +"].ImageId"));
-			imageInfo.setImageName(context.stringValue("ListCustomImagesResponse.Images["+ i +"].ImageName"));
-			imageInfo.setImageOwnerAlias(context.stringValue("ListCustomImagesResponse.Images["+ i +"].ImageOwnerAlias"));
-			imageInfo.setDescription(context.stringValue("ListCustomImagesResponse.Images["+ i +"].Description"));
-			imageInfo.setStatus(context.stringValue("ListCustomImagesResponse.Images["+ i +"].Status"));
-			imageInfo.setProductCode(context.stringValue("ListCustomImagesResponse.Images["+ i +"].ProductCode"));
-			imageInfo.setSkuCode(context.stringValue("ListCustomImagesResponse.Images["+ i +"].SkuCode"));
-			imageInfo.setPricingCycle(context.stringValue("ListCustomImagesResponse.Images["+ i +"].PricingCycle"));
-			imageInfo.setPostInstallScript(context.stringValue("ListCustomImagesResponse.Images["+ i +"].PostInstallScript"));
-			imageInfo.setSize(context.integerValue("ListCustomImagesResponse.Images["+ i +"].Size"));
+			imageInfo.setUid(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].Uid"));
+			imageInfo.setImageId(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].ImageId"));
+			imageInfo.setImageName(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].ImageName"));
+			imageInfo.setImageOwnerAlias(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].ImageOwnerAlias"));
+			imageInfo.setDescription(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].Description"));
+			imageInfo.setStatus(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].Status"));
+			imageInfo.setProductCode(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].ProductCode"));
+			imageInfo.setSkuCode(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].SkuCode"));
+			imageInfo.setPricingCycle(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].PricingCycle"));
+			imageInfo.setPostInstallScript(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].PostInstallScript"));
+			imageInfo.setSize(_ctx.integerValue("ListCustomImagesResponse.Images["+ i +"].Size"));
 
 			BaseOsTag baseOsTag = new BaseOsTag();
-			baseOsTag.setOsTag(context.stringValue("ListCustomImagesResponse.Images["+ i +"].BaseOsTag.OsTag"));
-			baseOsTag.setPlatform(context.stringValue("ListCustomImagesResponse.Images["+ i +"].BaseOsTag.Platform"));
-			baseOsTag.setVersion(context.stringValue("ListCustomImagesResponse.Images["+ i +"].BaseOsTag.Version"));
-			baseOsTag.setArchitecture(context.stringValue("ListCustomImagesResponse.Images["+ i +"].BaseOsTag.Architecture"));
+			baseOsTag.setOsTag(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].BaseOsTag.OsTag"));
+			baseOsTag.setPlatform(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].BaseOsTag.Platform"));
+			baseOsTag.setVersion(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].BaseOsTag.Version"));
+			baseOsTag.setArchitecture(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].BaseOsTag.Architecture"));
 			imageInfo.setBaseOsTag(baseOsTag);
 
 			images.add(imageInfo);

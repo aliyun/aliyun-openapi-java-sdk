@@ -15,16 +15,22 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetCloudMetricLogsRequest extends RpcAcsRequest<GetCloudMetricLogsResponse> {
-	
-	public GetCloudMetricLogsRequest() {
-		super("EHPC", "2018-04-12", "GetCloudMetricLogs", "ehs");
-	}
+	   
+
+	private String metricScope;
+
+	private String clusterId;
+
+	private Integer aggregationInterval;
+
+	private Boolean reverse;
 
 	private String aggregationType;
 
@@ -32,17 +38,57 @@ public class GetCloudMetricLogsRequest extends RpcAcsRequest<GetCloudMetricLogsR
 
 	private String metricCategories;
 
-	private String metricScope;
-
 	private Integer from;
 
-	private String clusterId;
-
 	private Integer to;
+	public GetCloudMetricLogsRequest() {
+		super("EHPC", "2018-04-12", "GetCloudMetricLogs", "ehs");
+		setMethod(MethodType.GET);
+	}
 
-	private Integer aggregationInterval;
+	public String getMetricScope() {
+		return this.metricScope;
+	}
 
-	private Boolean reverse;
+	public void setMetricScope(String metricScope) {
+		this.metricScope = metricScope;
+		if(metricScope != null){
+			putQueryParameter("MetricScope", metricScope);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Integer getAggregationInterval() {
+		return this.aggregationInterval;
+	}
+
+	public void setAggregationInterval(Integer aggregationInterval) {
+		this.aggregationInterval = aggregationInterval;
+		if(aggregationInterval != null){
+			putQueryParameter("AggregationInterval", aggregationInterval.toString());
+		}
+	}
+
+	public Boolean getReverse() {
+		return this.reverse;
+	}
+
+	public void setReverse(Boolean reverse) {
+		this.reverse = reverse;
+		if(reverse != null){
+			putQueryParameter("Reverse", reverse.toString());
+		}
+	}
 
 	public String getAggregationType() {
 		return this.aggregationType;
@@ -77,17 +123,6 @@ public class GetCloudMetricLogsRequest extends RpcAcsRequest<GetCloudMetricLogsR
 		}
 	}
 
-	public String getMetricScope() {
-		return this.metricScope;
-	}
-
-	public void setMetricScope(String metricScope) {
-		this.metricScope = metricScope;
-		if(metricScope != null){
-			putQueryParameter("MetricScope", metricScope);
-		}
-	}
-
 	public Integer getFrom() {
 		return this.from;
 	}
@@ -99,17 +134,6 @@ public class GetCloudMetricLogsRequest extends RpcAcsRequest<GetCloudMetricLogsR
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public Integer getTo() {
 		return this.to;
 	}
@@ -118,28 +142,6 @@ public class GetCloudMetricLogsRequest extends RpcAcsRequest<GetCloudMetricLogsR
 		this.to = to;
 		if(to != null){
 			putQueryParameter("To", to.toString());
-		}
-	}
-
-	public Integer getAggregationInterval() {
-		return this.aggregationInterval;
-	}
-
-	public void setAggregationInterval(Integer aggregationInterval) {
-		this.aggregationInterval = aggregationInterval;
-		if(aggregationInterval != null){
-			putQueryParameter("AggregationInterval", aggregationInterval.toString());
-		}
-	}
-
-	public Boolean getReverse() {
-		return this.reverse;
-	}
-
-	public void setReverse(Boolean reverse) {
-		this.reverse = reverse;
-		if(reverse != null){
-			putQueryParameter("Reverse", reverse.toString());
 		}
 	}
 

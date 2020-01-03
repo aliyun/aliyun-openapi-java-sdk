@@ -14,17 +14,25 @@
 
 package com.aliyuncs.ehpc.transform.v20180412;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ehpc.model.v20180412.GetAccountingReportResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class GetAccountingReportResponseUnmarshaller {
 
-	public static GetAccountingReportResponse unmarshall(GetAccountingReportResponse getAccountingReportResponse, UnmarshallerContext context) {
+	public static GetAccountingReportResponse unmarshall(GetAccountingReportResponse getAccountingReportResponse, UnmarshallerContext _ctx) {
 		
-		getAccountingReportResponse.setRequestId(context.stringValue("GetAccountingReportResponse.RequestId"));
-		getAccountingReportResponse.setMetrics(context.stringValue("GetAccountingReportResponse.Metrics"));
-		getAccountingReportResponse.setData(context.stringValue("GetAccountingReportResponse.Data"));
+		getAccountingReportResponse.setRequestId(_ctx.stringValue("GetAccountingReportResponse.RequestId"));
+		getAccountingReportResponse.setMetrics(_ctx.stringValue("GetAccountingReportResponse.Metrics"));
+
+		List<String> data = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetAccountingReportResponse.Data.Length"); i++) {
+			data.add(_ctx.stringValue("GetAccountingReportResponse.Data["+ i +"]"));
+		}
+		getAccountingReportResponse.setData(data);
 	 
 	 	return getAccountingReportResponse;
 	}

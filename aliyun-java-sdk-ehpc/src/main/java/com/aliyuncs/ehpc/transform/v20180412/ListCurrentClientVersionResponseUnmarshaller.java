@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListCurrentClientVersionResponseUnmarshaller {
 
-	public static ListCurrentClientVersionResponse unmarshall(ListCurrentClientVersionResponse listCurrentClientVersionResponse, UnmarshallerContext context) {
+	public static ListCurrentClientVersionResponse unmarshall(ListCurrentClientVersionResponse listCurrentClientVersionResponse, UnmarshallerContext _ctx) {
 		
-		listCurrentClientVersionResponse.setRequestId(context.stringValue("ListCurrentClientVersionResponse.RequestId"));
-		listCurrentClientVersionResponse.setClientVersion(context.stringValue("ListCurrentClientVersionResponse.ClientVersion"));
+		listCurrentClientVersionResponse.setRequestId(_ctx.stringValue("ListCurrentClientVersionResponse.RequestId"));
+		listCurrentClientVersionResponse.setClientVersion(_ctx.stringValue("ListCurrentClientVersionResponse.ClientVersion"));
 	 
 	 	return listCurrentClientVersionResponse;
 	}

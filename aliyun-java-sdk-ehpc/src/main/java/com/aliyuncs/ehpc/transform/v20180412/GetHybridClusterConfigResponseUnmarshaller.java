@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetHybridClusterConfigResponseUnmarshaller {
 
-	public static GetHybridClusterConfigResponse unmarshall(GetHybridClusterConfigResponse getHybridClusterConfigResponse, UnmarshallerContext context) {
+	public static GetHybridClusterConfigResponse unmarshall(GetHybridClusterConfigResponse getHybridClusterConfigResponse, UnmarshallerContext _ctx) {
 		
-		getHybridClusterConfigResponse.setRequestId(context.stringValue("GetHybridClusterConfigResponse.RequestId"));
-		getHybridClusterConfigResponse.setClusterConfig(context.stringValue("GetHybridClusterConfigResponse.ClusterConfig"));
+		getHybridClusterConfigResponse.setRequestId(_ctx.stringValue("GetHybridClusterConfigResponse.RequestId"));
+		getHybridClusterConfigResponse.setClusterConfig(_ctx.stringValue("GetHybridClusterConfigResponse.ClusterConfig"));
 	 
 	 	return getHybridClusterConfigResponse;
 	}

@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetCloudMetricProfilingResponseUnmarshaller {
 
-	public static GetCloudMetricProfilingResponse unmarshall(GetCloudMetricProfilingResponse getCloudMetricProfilingResponse, UnmarshallerContext context) {
+	public static GetCloudMetricProfilingResponse unmarshall(GetCloudMetricProfilingResponse getCloudMetricProfilingResponse, UnmarshallerContext _ctx) {
 		
-		getCloudMetricProfilingResponse.setRequestId(context.stringValue("GetCloudMetricProfilingResponse.RequestId"));
+		getCloudMetricProfilingResponse.setRequestId(_ctx.stringValue("GetCloudMetricProfilingResponse.RequestId"));
 
 		List<SvgInfo> svgUrls = new ArrayList<SvgInfo>();
-		for (int i = 0; i < context.lengthValue("GetCloudMetricProfilingResponse.SvgUrls.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetCloudMetricProfilingResponse.SvgUrls.Length"); i++) {
 			SvgInfo svgInfo = new SvgInfo();
-			svgInfo.setName(context.stringValue("GetCloudMetricProfilingResponse.SvgUrls["+ i +"].Name"));
-			svgInfo.setType(context.stringValue("GetCloudMetricProfilingResponse.SvgUrls["+ i +"].Type"));
-			svgInfo.setUrl(context.stringValue("GetCloudMetricProfilingResponse.SvgUrls["+ i +"].Url"));
-			svgInfo.setSize(context.integerValue("GetCloudMetricProfilingResponse.SvgUrls["+ i +"].Size"));
+			svgInfo.setName(_ctx.stringValue("GetCloudMetricProfilingResponse.SvgUrls["+ i +"].Name"));
+			svgInfo.setType(_ctx.stringValue("GetCloudMetricProfilingResponse.SvgUrls["+ i +"].Type"));
+			svgInfo.setUrl(_ctx.stringValue("GetCloudMetricProfilingResponse.SvgUrls["+ i +"].Url"));
+			svgInfo.setSize(_ctx.integerValue("GetCloudMetricProfilingResponse.SvgUrls["+ i +"].Size"));
 
 			svgUrls.add(svgInfo);
 		}

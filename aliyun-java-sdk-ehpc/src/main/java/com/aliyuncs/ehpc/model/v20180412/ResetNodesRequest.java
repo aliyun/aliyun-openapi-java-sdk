@@ -16,20 +16,22 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ResetNodesRequest extends RpcAcsRequest<ResetNodesResponse> {
-	
-	public ResetNodesRequest() {
-		super("EHPC", "2018-04-12", "ResetNodes", "ehs");
-	}
+	   
 
 	private List<Instance> instances;
 
 	private String clusterId;
+	public ResetNodesRequest() {
+		super("EHPC", "2018-04-12", "ResetNodes", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public List<Instance> getInstances() {
 		return this.instances;

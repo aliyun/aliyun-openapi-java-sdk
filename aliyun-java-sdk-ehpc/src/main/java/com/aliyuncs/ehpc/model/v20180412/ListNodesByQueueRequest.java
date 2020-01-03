@@ -15,24 +15,26 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListNodesByQueueRequest extends RpcAcsRequest<ListNodesByQueueResponse> {
-	
-	public ListNodesByQueueRequest() {
-		super("EHPC", "2018-04-12", "ListNodesByQueue", "ehs");
-	}
+	   
 
 	private String queueName;
-
-	private Integer pageSize;
 
 	private String clusterId;
 
 	private Integer pageNumber;
+
+	private Integer pageSize;
+	public ListNodesByQueueRequest() {
+		super("EHPC", "2018-04-12", "ListNodesByQueue", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getQueueName() {
 		return this.queueName;
@@ -42,17 +44,6 @@ public class ListNodesByQueueRequest extends RpcAcsRequest<ListNodesByQueueRespo
 		this.queueName = queueName;
 		if(queueName != null){
 			putQueryParameter("QueueName", queueName);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -75,6 +66,17 @@ public class ListNodesByQueueRequest extends RpcAcsRequest<ListNodesByQueueRespo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

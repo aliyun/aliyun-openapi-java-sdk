@@ -15,34 +15,25 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListNodesNoPagingRequest extends RpcAcsRequest<ListNodesNoPagingResponse> {
-	
-	public ListNodesNoPagingRequest() {
-		super("EHPC", "2018-04-12", "ListNodesNoPaging", "ehs");
-	}
-
-	private String hostName;
+	   
 
 	private String role;
 
 	private String clusterId;
 
+	private String hostName;
+
 	private Boolean onlyDetached;
-
-	public String getHostName() {
-		return this.hostName;
-	}
-
-	public void setHostName(String hostName) {
-		this.hostName = hostName;
-		if(hostName != null){
-			putQueryParameter("HostName", hostName);
-		}
+	public ListNodesNoPagingRequest() {
+		super("EHPC", "2018-04-12", "ListNodesNoPaging", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getRole() {
@@ -64,6 +55,17 @@ public class ListNodesNoPagingRequest extends RpcAcsRequest<ListNodesNoPagingRes
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+		if(hostName != null){
+			putQueryParameter("HostName", hostName);
 		}
 	}
 

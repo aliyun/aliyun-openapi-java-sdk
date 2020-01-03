@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetCloudMetricLogsResponseUnmarshaller {
 
-	public static GetCloudMetricLogsResponse unmarshall(GetCloudMetricLogsResponse getCloudMetricLogsResponse, UnmarshallerContext context) {
+	public static GetCloudMetricLogsResponse unmarshall(GetCloudMetricLogsResponse getCloudMetricLogsResponse, UnmarshallerContext _ctx) {
 		
-		getCloudMetricLogsResponse.setRequestId(context.stringValue("GetCloudMetricLogsResponse.RequestId"));
+		getCloudMetricLogsResponse.setRequestId(_ctx.stringValue("GetCloudMetricLogsResponse.RequestId"));
 
 		List<MetricLog> metricLogs = new ArrayList<MetricLog>();
-		for (int i = 0; i < context.lengthValue("GetCloudMetricLogsResponse.MetricLogs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetCloudMetricLogsResponse.MetricLogs.Length"); i++) {
 			MetricLog metricLog = new MetricLog();
-			metricLog.setTime(context.integerValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].Time"));
-			metricLog.setInstanceId(context.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].InstanceId"));
-			metricLog.setHostname(context.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].Hostname"));
-			metricLog.setNetworkInterface(context.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].NetworkInterface"));
-			metricLog.setDiskDevice(context.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].DiskDevice"));
-			metricLog.setMetricData(context.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].MetricData"));
+			metricLog.setTime(_ctx.integerValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].Time"));
+			metricLog.setInstanceId(_ctx.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].InstanceId"));
+			metricLog.setHostname(_ctx.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].Hostname"));
+			metricLog.setNetworkInterface(_ctx.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].NetworkInterface"));
+			metricLog.setDiskDevice(_ctx.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].DiskDevice"));
+			metricLog.setMetricData(_ctx.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].MetricData"));
 
 			metricLogs.add(metricLog);
 		}

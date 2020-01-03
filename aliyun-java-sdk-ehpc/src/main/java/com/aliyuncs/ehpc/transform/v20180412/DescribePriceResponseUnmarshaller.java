@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribePriceResponseUnmarshaller {
 
-	public static DescribePriceResponse unmarshall(DescribePriceResponse describePriceResponse, UnmarshallerContext context) {
+	public static DescribePriceResponse unmarshall(DescribePriceResponse describePriceResponse, UnmarshallerContext _ctx) {
 		
-		describePriceResponse.setRequestId(context.stringValue("DescribePriceResponse.RequestId"));
-		describePriceResponse.setTotalTradePrice(context.floatValue("DescribePriceResponse.TotalTradePrice"));
+		describePriceResponse.setRequestId(_ctx.stringValue("DescribePriceResponse.RequestId"));
+		describePriceResponse.setTotalTradePrice(_ctx.floatValue("DescribePriceResponse.TotalTradePrice"));
 
 		List<PriceInfo> prices = new ArrayList<PriceInfo>();
-		for (int i = 0; i < context.lengthValue("DescribePriceResponse.Prices.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.Prices.Length"); i++) {
 			PriceInfo priceInfo = new PriceInfo();
-			priceInfo.setNodeType(context.stringValue("DescribePriceResponse.Prices["+ i +"].NodeType"));
-			priceInfo.setOriginalPrice(context.floatValue("DescribePriceResponse.Prices["+ i +"].OriginalPrice"));
-			priceInfo.setTradePrice(context.floatValue("DescribePriceResponse.Prices["+ i +"].TradePrice"));
-			priceInfo.setCurrency(context.stringValue("DescribePriceResponse.Prices["+ i +"].Currency"));
+			priceInfo.setNodeType(_ctx.stringValue("DescribePriceResponse.Prices["+ i +"].NodeType"));
+			priceInfo.setOriginalPrice(_ctx.floatValue("DescribePriceResponse.Prices["+ i +"].OriginalPrice"));
+			priceInfo.setTradePrice(_ctx.floatValue("DescribePriceResponse.Prices["+ i +"].TradePrice"));
+			priceInfo.setCurrency(_ctx.stringValue("DescribePriceResponse.Prices["+ i +"].Currency"));
 
 			prices.add(priceInfo);
 		}

@@ -15,30 +15,21 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteClusterRequest extends RpcAcsRequest<DeleteClusterResponse> {
-	
-	public DeleteClusterRequest() {
-		super("EHPC", "2018-04-12", "DeleteCluster", "ehs");
-	}
-
-	private String releaseInstance;
+	   
 
 	private String clusterId;
 
-	public String getReleaseInstance() {
-		return this.releaseInstance;
-	}
-
-	public void setReleaseInstance(String releaseInstance) {
-		this.releaseInstance = releaseInstance;
-		if(releaseInstance != null){
-			putQueryParameter("ReleaseInstance", releaseInstance);
-		}
+	private String releaseInstance;
+	public DeleteClusterRequest() {
+		super("EHPC", "2018-04-12", "DeleteCluster", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getClusterId() {
@@ -49,6 +40,17 @@ public class DeleteClusterRequest extends RpcAcsRequest<DeleteClusterResponse> {
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getReleaseInstance() {
+		return this.releaseInstance;
+	}
+
+	public void setReleaseInstance(String releaseInstance) {
+		this.releaseInstance = releaseInstance;
+		if(releaseInstance != null){
+			putQueryParameter("ReleaseInstance", releaseInstance);
 		}
 	}
 

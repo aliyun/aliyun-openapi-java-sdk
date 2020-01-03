@@ -15,15 +15,17 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListRegionsRequest extends RpcAcsRequest<ListRegionsResponse> {
-	
+	   
 	public ListRegionsRequest() {
 		super("EHPC", "2018-04-12", "ListRegions", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	@Override

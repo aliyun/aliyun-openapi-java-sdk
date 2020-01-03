@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RunCloudMetricProfilingResponseUnmarshaller {
 
-	public static RunCloudMetricProfilingResponse unmarshall(RunCloudMetricProfilingResponse runCloudMetricProfilingResponse, UnmarshallerContext context) {
+	public static RunCloudMetricProfilingResponse unmarshall(RunCloudMetricProfilingResponse runCloudMetricProfilingResponse, UnmarshallerContext _ctx) {
 		
-		runCloudMetricProfilingResponse.setRequestId(context.stringValue("RunCloudMetricProfilingResponse.RequestId"));
+		runCloudMetricProfilingResponse.setRequestId(_ctx.stringValue("RunCloudMetricProfilingResponse.RequestId"));
 	 
 	 	return runCloudMetricProfilingResponse;
 	}

@@ -26,46 +26,46 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListNodesNoPagingResponseUnmarshaller {
 
-	public static ListNodesNoPagingResponse unmarshall(ListNodesNoPagingResponse listNodesNoPagingResponse, UnmarshallerContext context) {
+	public static ListNodesNoPagingResponse unmarshall(ListNodesNoPagingResponse listNodesNoPagingResponse, UnmarshallerContext _ctx) {
 		
-		listNodesNoPagingResponse.setRequestId(context.stringValue("ListNodesNoPagingResponse.RequestId"));
-		listNodesNoPagingResponse.setTotalCount(context.integerValue("ListNodesNoPagingResponse.TotalCount"));
-		listNodesNoPagingResponse.setPageNumber(context.integerValue("ListNodesNoPagingResponse.PageNumber"));
-		listNodesNoPagingResponse.setPageSize(context.integerValue("ListNodesNoPagingResponse.PageSize"));
+		listNodesNoPagingResponse.setRequestId(_ctx.stringValue("ListNodesNoPagingResponse.RequestId"));
+		listNodesNoPagingResponse.setTotalCount(_ctx.integerValue("ListNodesNoPagingResponse.TotalCount"));
+		listNodesNoPagingResponse.setPageNumber(_ctx.integerValue("ListNodesNoPagingResponse.PageNumber"));
+		listNodesNoPagingResponse.setPageSize(_ctx.integerValue("ListNodesNoPagingResponse.PageSize"));
 
 		List<NodeInfo> nodes = new ArrayList<NodeInfo>();
-		for (int i = 0; i < context.lengthValue("ListNodesNoPagingResponse.Nodes.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListNodesNoPagingResponse.Nodes.Length"); i++) {
 			NodeInfo nodeInfo = new NodeInfo();
-			nodeInfo.setId(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].Id"));
-			nodeInfo.setHostName(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].HostName"));
-			nodeInfo.setRegionId(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].RegionId"));
-			nodeInfo.setStatus(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].Status"));
-			nodeInfo.setVersion(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].Version"));
-			nodeInfo.setCreatedByEhpc(context.booleanValue("ListNodesNoPagingResponse.Nodes["+ i +"].CreatedByEhpc"));
-			nodeInfo.setAddTime(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].AddTime"));
-			nodeInfo.setExpired(context.booleanValue("ListNodesNoPagingResponse.Nodes["+ i +"].Expired"));
-			nodeInfo.setExpiredTime(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].ExpiredTime"));
-			nodeInfo.setSpotStrategy(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].SpotStrategy"));
-			nodeInfo.setLockReason(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].LockReason"));
-			nodeInfo.setImageOwnerAlias(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].ImageOwnerAlias"));
-			nodeInfo.setImageId(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].ImageId"));
+			nodeInfo.setId(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].Id"));
+			nodeInfo.setHostName(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].HostName"));
+			nodeInfo.setRegionId(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].RegionId"));
+			nodeInfo.setStatus(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].Status"));
+			nodeInfo.setVersion(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].Version"));
+			nodeInfo.setCreatedByEhpc(_ctx.booleanValue("ListNodesNoPagingResponse.Nodes["+ i +"].CreatedByEhpc"));
+			nodeInfo.setAddTime(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].AddTime"));
+			nodeInfo.setExpired(_ctx.booleanValue("ListNodesNoPagingResponse.Nodes["+ i +"].Expired"));
+			nodeInfo.setExpiredTime(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].ExpiredTime"));
+			nodeInfo.setSpotStrategy(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].SpotStrategy"));
+			nodeInfo.setLockReason(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].LockReason"));
+			nodeInfo.setImageOwnerAlias(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].ImageOwnerAlias"));
+			nodeInfo.setImageId(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].ImageId"));
 
 			List<String> roles = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListNodesNoPagingResponse.Nodes["+ i +"].Roles.Length"); j++) {
-				roles.add(context.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].Roles["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListNodesNoPagingResponse.Nodes["+ i +"].Roles.Length"); j++) {
+				roles.add(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].Roles["+ j +"]"));
 			}
 			nodeInfo.setRoles(roles);
 
 			TotalResources totalResources = new TotalResources();
-			totalResources.setCpu(context.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].TotalResources.Cpu"));
-			totalResources.setMemory(context.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].TotalResources.Memory"));
-			totalResources.setGpu(context.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].TotalResources.Gpu"));
+			totalResources.setCpu(_ctx.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].TotalResources.Cpu"));
+			totalResources.setMemory(_ctx.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].TotalResources.Memory"));
+			totalResources.setGpu(_ctx.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].TotalResources.Gpu"));
 			nodeInfo.setTotalResources(totalResources);
 
 			UsedResources usedResources = new UsedResources();
-			usedResources.setCpu(context.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].UsedResources.Cpu"));
-			usedResources.setMemory(context.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].UsedResources.Memory"));
-			usedResources.setGpu(context.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].UsedResources.Gpu"));
+			usedResources.setCpu(_ctx.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].UsedResources.Cpu"));
+			usedResources.setMemory(_ctx.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].UsedResources.Memory"));
+			usedResources.setGpu(_ctx.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].UsedResources.Gpu"));
 			nodeInfo.setUsedResources(usedResources);
 
 			nodes.add(nodeInfo);

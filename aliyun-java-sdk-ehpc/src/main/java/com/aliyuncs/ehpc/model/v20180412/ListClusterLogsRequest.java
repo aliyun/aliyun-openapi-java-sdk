@@ -15,32 +15,23 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListClusterLogsRequest extends RpcAcsRequest<ListClusterLogsResponse> {
-	
-	public ListClusterLogsRequest() {
-		super("EHPC", "2018-04-12", "ListClusterLogs", "ehs");
-	}
-
-	private Integer pageSize;
+	   
 
 	private String clusterId;
 
 	private Integer pageNumber;
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+	private Integer pageSize;
+	public ListClusterLogsRequest() {
+		super("EHPC", "2018-04-12", "ListClusterLogs", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getClusterId() {
@@ -62,6 +53,17 @@ public class ListClusterLogsRequest extends RpcAcsRequest<ListClusterLogsRespons
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

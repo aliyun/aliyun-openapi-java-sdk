@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StopJobsResponseUnmarshaller {
 
-	public static StopJobsResponse unmarshall(StopJobsResponse stopJobsResponse, UnmarshallerContext context) {
+	public static StopJobsResponse unmarshall(StopJobsResponse stopJobsResponse, UnmarshallerContext _ctx) {
 		
-		stopJobsResponse.setRequestId(context.stringValue("StopJobsResponse.RequestId"));
+		stopJobsResponse.setRequestId(_ctx.stringValue("StopJobsResponse.RequestId"));
 	 
 	 	return stopJobsResponse;
 	}

@@ -15,16 +15,14 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateJobFileRequest extends RpcAcsRequest<CreateJobFileResponse> {
-	
-	public CreateJobFileRequest() {
-		super("EHPC", "2018-04-12", "CreateJobFile", "ehs");
-	}
+	   
 
 	private String targetFile;
 
@@ -35,6 +33,10 @@ public class CreateJobFileRequest extends RpcAcsRequest<CreateJobFileResponse> {
 	private String clusterId;
 
 	private String content;
+	public CreateJobFileRequest() {
+		super("EHPC", "2018-04-12", "CreateJobFile", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getTargetFile() {
 		return this.targetFile;

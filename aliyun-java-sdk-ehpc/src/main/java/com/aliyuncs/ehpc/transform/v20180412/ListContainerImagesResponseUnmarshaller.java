@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListContainerImagesResponseUnmarshaller {
 
-	public static ListContainerImagesResponse unmarshall(ListContainerImagesResponse listContainerImagesResponse, UnmarshallerContext context) {
+	public static ListContainerImagesResponse unmarshall(ListContainerImagesResponse listContainerImagesResponse, UnmarshallerContext _ctx) {
 		
-		listContainerImagesResponse.setRequestId(context.stringValue("ListContainerImagesResponse.RequestId"));
-		listContainerImagesResponse.setTotalCount(context.integerValue("ListContainerImagesResponse.TotalCount"));
-		listContainerImagesResponse.setPageNumber(context.integerValue("ListContainerImagesResponse.PageNumber"));
-		listContainerImagesResponse.setPageSize(context.integerValue("ListContainerImagesResponse.PageSize"));
-		listContainerImagesResponse.setDBInfo(context.stringValue("ListContainerImagesResponse.DBInfo"));
+		listContainerImagesResponse.setRequestId(_ctx.stringValue("ListContainerImagesResponse.RequestId"));
+		listContainerImagesResponse.setTotalCount(_ctx.integerValue("ListContainerImagesResponse.TotalCount"));
+		listContainerImagesResponse.setPageNumber(_ctx.integerValue("ListContainerImagesResponse.PageNumber"));
+		listContainerImagesResponse.setPageSize(_ctx.integerValue("ListContainerImagesResponse.PageSize"));
+		listContainerImagesResponse.setDBInfo(_ctx.stringValue("ListContainerImagesResponse.DBInfo"));
 
 		List<ImagesItem> images = new ArrayList<ImagesItem>();
-		for (int i = 0; i < context.lengthValue("ListContainerImagesResponse.Images.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListContainerImagesResponse.Images.Length"); i++) {
 			ImagesItem imagesItem = new ImagesItem();
-			imagesItem.setSystem(context.stringValue("ListContainerImagesResponse.Images["+ i +"].System"));
-			imagesItem.setType(context.stringValue("ListContainerImagesResponse.Images["+ i +"].Type"));
-			imagesItem.setStatus(context.stringValue("ListContainerImagesResponse.Images["+ i +"].Status"));
-			imagesItem.setImageId(context.stringValue("ListContainerImagesResponse.Images["+ i +"].ImageId"));
-			imagesItem.setUpdateDateTime(context.stringValue("ListContainerImagesResponse.Images["+ i +"].UpdateDateTime"));
-			imagesItem.setRepository(context.stringValue("ListContainerImagesResponse.Images["+ i +"].Repository"));
-			imagesItem.setTag(context.stringValue("ListContainerImagesResponse.Images["+ i +"].Tag"));
+			imagesItem.setSystem(_ctx.stringValue("ListContainerImagesResponse.Images["+ i +"].System"));
+			imagesItem.setType(_ctx.stringValue("ListContainerImagesResponse.Images["+ i +"].Type"));
+			imagesItem.setStatus(_ctx.stringValue("ListContainerImagesResponse.Images["+ i +"].Status"));
+			imagesItem.setImageId(_ctx.stringValue("ListContainerImagesResponse.Images["+ i +"].ImageId"));
+			imagesItem.setUpdateDateTime(_ctx.stringValue("ListContainerImagesResponse.Images["+ i +"].UpdateDateTime"));
+			imagesItem.setRepository(_ctx.stringValue("ListContainerImagesResponse.Images["+ i +"].Repository"));
+			imagesItem.setTag(_ctx.stringValue("ListContainerImagesResponse.Images["+ i +"].Tag"));
 
 			images.add(imagesItem);
 		}

@@ -15,15 +15,17 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListAvailableFileSystemTypesRequest extends RpcAcsRequest<ListAvailableFileSystemTypesResponse> {
-	
+	   
 	public ListAvailableFileSystemTypesRequest() {
 		super("EHPC", "2018-04-12", "ListAvailableFileSystemTypes", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	@Override

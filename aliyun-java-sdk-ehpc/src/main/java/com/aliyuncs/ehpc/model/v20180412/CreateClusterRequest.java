@@ -16,44 +16,24 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
-	
-	public CreateClusterRequest() {
-		super("EHPC", "2018-04-12", "CreateCluster", "ehs");
-	}
-
-	private String sccClusterId;
-
-	private String imageId;
+	   
 
 	private List<AdditionalVolumes> additionalVolumess;
 
 	private String ecsOrderManagerInstanceType;
 
-	private String ehpcVersion;
-
-	private String accountType;
-
-	private String securityGroupId;
-
-	private String description;
-
 	private String keyPairName;
 
 	private String securityGroupName;
 
-	private String ecsOrderComputeInstanceType;
-
-	private String jobQueue;
-
 	private String imageOwnerAlias;
-
-	private String volumeType;
 
 	private String deployMode;
 
@@ -75,12 +55,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private Integer period;
 
-	private String volumeProtocol;
-
-	private String clientVersion;
-
-	private String osTag;
-
 	private String remoteDirectory;
 
 	private Integer ecsOrderComputeCount;
@@ -93,9 +67,43 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String periodUnit;
 
-	private List<Application> applications;
+	private Boolean computeEnableHt;
 
 	private String autoRenew;
+
+	private String name;
+
+	private String volumeId;
+
+	private String zoneId;
+
+	private String sccClusterId;
+
+	private String imageId;
+
+	private String ehpcVersion;
+
+	private String accountType;
+
+	private String securityGroupId;
+
+	private String description;
+
+	private String ecsOrderComputeInstanceType;
+
+	private String jobQueue;
+
+	private String volumeType;
+
+	private String systemDiskType;
+
+	private String volumeProtocol;
+
+	private String clientVersion;
+
+	private String osTag;
+
+	private List<Application> applications;
 
 	private String ecsChargeType;
 
@@ -105,38 +113,14 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private Boolean haEnable;
 
-	private String name;
-
 	private String schedulerType;
-
-	private String volumeId;
 
 	private String volumeMountpoint;
 
 	private String ecsOrderLoginInstanceType;
-
-	private String zoneId;
-
-	public String getSccClusterId() {
-		return this.sccClusterId;
-	}
-
-	public void setSccClusterId(String sccClusterId) {
-		this.sccClusterId = sccClusterId;
-		if(sccClusterId != null){
-			putQueryParameter("SccClusterId", sccClusterId);
-		}
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
-		}
+	public CreateClusterRequest() {
+		super("EHPC", "2018-04-12", "CreateCluster", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public List<AdditionalVolumes> getAdditionalVolumess() {
@@ -175,50 +159,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public String getEhpcVersion() {
-		return this.ehpcVersion;
-	}
-
-	public void setEhpcVersion(String ehpcVersion) {
-		this.ehpcVersion = ehpcVersion;
-		if(ehpcVersion != null){
-			putQueryParameter("EhpcVersion", ehpcVersion);
-		}
-	}
-
-	public String getAccountType() {
-		return this.accountType;
-	}
-
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-		if(accountType != null){
-			putQueryParameter("AccountType", accountType);
-		}
-	}
-
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public String getKeyPairName() {
 		return this.keyPairName;
 	}
@@ -241,28 +181,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public String getEcsOrderComputeInstanceType() {
-		return this.ecsOrderComputeInstanceType;
-	}
-
-	public void setEcsOrderComputeInstanceType(String ecsOrderComputeInstanceType) {
-		this.ecsOrderComputeInstanceType = ecsOrderComputeInstanceType;
-		if(ecsOrderComputeInstanceType != null){
-			putQueryParameter("EcsOrder.Compute.InstanceType", ecsOrderComputeInstanceType);
-		}
-	}
-
-	public String getJobQueue() {
-		return this.jobQueue;
-	}
-
-	public void setJobQueue(String jobQueue) {
-		this.jobQueue = jobQueue;
-		if(jobQueue != null){
-			putQueryParameter("JobQueue", jobQueue);
-		}
-	}
-
 	public String getImageOwnerAlias() {
 		return this.imageOwnerAlias;
 	}
@@ -271,17 +189,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.imageOwnerAlias = imageOwnerAlias;
 		if(imageOwnerAlias != null){
 			putQueryParameter("ImageOwnerAlias", imageOwnerAlias);
-		}
-	}
-
-	public String getVolumeType() {
-		return this.volumeType;
-	}
-
-	public void setVolumeType(String volumeType) {
-		this.volumeType = volumeType;
-		if(volumeType != null){
-			putQueryParameter("VolumeType", volumeType);
 		}
 	}
 
@@ -395,39 +302,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public String getVolumeProtocol() {
-		return this.volumeProtocol;
-	}
-
-	public void setVolumeProtocol(String volumeProtocol) {
-		this.volumeProtocol = volumeProtocol;
-		if(volumeProtocol != null){
-			putQueryParameter("VolumeProtocol", volumeProtocol);
-		}
-	}
-
-	public String getClientVersion() {
-		return this.clientVersion;
-	}
-
-	public void setClientVersion(String clientVersion) {
-		this.clientVersion = clientVersion;
-		if(clientVersion != null){
-			putQueryParameter("ClientVersion", clientVersion);
-		}
-	}
-
-	public String getOsTag() {
-		return this.osTag;
-	}
-
-	public void setOsTag(String osTag) {
-		this.osTag = osTag;
-		if(osTag != null){
-			putQueryParameter("OsTag", osTag);
-		}
-	}
-
 	public String getRemoteDirectory() {
 		return this.remoteDirectory;
 	}
@@ -497,17 +371,15 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public List<Application> getApplications() {
-		return this.applications;
+	public Boolean getComputeEnableHt() {
+		return this.computeEnableHt;
 	}
 
-	public void setApplications(List<Application> applications) {
-		this.applications = applications;	
-		if (applications != null) {
-			for (int depth1 = 0; depth1 < applications.size(); depth1++) {
-				putQueryParameter("Application." + (depth1 + 1) + ".Tag" , applications.get(depth1).getTag());
-			}
-		}	
+	public void setComputeEnableHt(Boolean computeEnableHt) {
+		this.computeEnableHt = computeEnableHt;
+		if(computeEnableHt != null){
+			putQueryParameter("ComputeEnableHt", computeEnableHt.toString());
+		}
 	}
 
 	public String getAutoRenew() {
@@ -519,6 +391,195 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		if(autoRenew != null){
 			putQueryParameter("AutoRenew", autoRenew);
 		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getVolumeId() {
+		return this.volumeId;
+	}
+
+	public void setVolumeId(String volumeId) {
+		this.volumeId = volumeId;
+		if(volumeId != null){
+			putQueryParameter("VolumeId", volumeId);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getSccClusterId() {
+		return this.sccClusterId;
+	}
+
+	public void setSccClusterId(String sccClusterId) {
+		this.sccClusterId = sccClusterId;
+		if(sccClusterId != null){
+			putQueryParameter("SccClusterId", sccClusterId);
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getEhpcVersion() {
+		return this.ehpcVersion;
+	}
+
+	public void setEhpcVersion(String ehpcVersion) {
+		this.ehpcVersion = ehpcVersion;
+		if(ehpcVersion != null){
+			putQueryParameter("EhpcVersion", ehpcVersion);
+		}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
+		}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getEcsOrderComputeInstanceType() {
+		return this.ecsOrderComputeInstanceType;
+	}
+
+	public void setEcsOrderComputeInstanceType(String ecsOrderComputeInstanceType) {
+		this.ecsOrderComputeInstanceType = ecsOrderComputeInstanceType;
+		if(ecsOrderComputeInstanceType != null){
+			putQueryParameter("EcsOrder.Compute.InstanceType", ecsOrderComputeInstanceType);
+		}
+	}
+
+	public String getJobQueue() {
+		return this.jobQueue;
+	}
+
+	public void setJobQueue(String jobQueue) {
+		this.jobQueue = jobQueue;
+		if(jobQueue != null){
+			putQueryParameter("JobQueue", jobQueue);
+		}
+	}
+
+	public String getVolumeType() {
+		return this.volumeType;
+	}
+
+	public void setVolumeType(String volumeType) {
+		this.volumeType = volumeType;
+		if(volumeType != null){
+			putQueryParameter("VolumeType", volumeType);
+		}
+	}
+
+	public String getSystemDiskType() {
+		return this.systemDiskType;
+	}
+
+	public void setSystemDiskType(String systemDiskType) {
+		this.systemDiskType = systemDiskType;
+		if(systemDiskType != null){
+			putQueryParameter("SystemDiskType", systemDiskType);
+		}
+	}
+
+	public String getVolumeProtocol() {
+		return this.volumeProtocol;
+	}
+
+	public void setVolumeProtocol(String volumeProtocol) {
+		this.volumeProtocol = volumeProtocol;
+		if(volumeProtocol != null){
+			putQueryParameter("VolumeProtocol", volumeProtocol);
+		}
+	}
+
+	public String getClientVersion() {
+		return this.clientVersion;
+	}
+
+	public void setClientVersion(String clientVersion) {
+		this.clientVersion = clientVersion;
+		if(clientVersion != null){
+			putQueryParameter("ClientVersion", clientVersion);
+		}
+	}
+
+	public String getOsTag() {
+		return this.osTag;
+	}
+
+	public void setOsTag(String osTag) {
+		this.osTag = osTag;
+		if(osTag != null){
+			putQueryParameter("OsTag", osTag);
+		}
+	}
+
+	public List<Application> getApplications() {
+		return this.applications;
+	}
+
+	public void setApplications(List<Application> applications) {
+		this.applications = applications;	
+		if (applications != null) {
+			for (int depth1 = 0; depth1 < applications.size(); depth1++) {
+				putQueryParameter("Application." + (depth1 + 1) + ".Tag" , applications.get(depth1).getTag());
+			}
+		}	
 	}
 
 	public String getEcsChargeType() {
@@ -565,17 +626,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getSchedulerType() {
 		return this.schedulerType;
 	}
@@ -584,17 +634,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.schedulerType = schedulerType;
 		if(schedulerType != null){
 			putQueryParameter("SchedulerType", schedulerType);
-		}
-	}
-
-	public String getVolumeId() {
-		return this.volumeId;
-	}
-
-	public void setVolumeId(String volumeId) {
-		this.volumeId = volumeId;
-		if(volumeId != null){
-			putQueryParameter("VolumeId", volumeId);
 		}
 	}
 
@@ -617,17 +656,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.ecsOrderLoginInstanceType = ecsOrderLoginInstanceType;
 		if(ecsOrderLoginInstanceType != null){
 			putQueryParameter("EcsOrder.Login.InstanceType", ecsOrderLoginInstanceType);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
@@ -751,26 +779,10 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 			this.args = args;
 		}
 
-		public String getBizUrl() {
-			return this.url;
-		}
-
-		public void setBizUrl(String url) {
-			this.url = url;
-		}
-
-		/**
-		 * @deprecated use getBizUrl instead of this.
-		 */
-		@Deprecated
 		public String getUrl() {
 			return this.url;
 		}
 
-		/**
-		 * @deprecated use setBizUrl instead of this.
-		 */
-		@Deprecated
 		public void setUrl(String url) {
 			this.url = url;
 		}

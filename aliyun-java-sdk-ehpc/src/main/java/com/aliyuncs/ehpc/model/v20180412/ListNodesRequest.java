@@ -15,36 +15,27 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
-	
-	public ListNodesRequest() {
-		super("EHPC", "2018-04-12", "ListNodes", "ehs");
-	}
-
-	private String hostName;
+	   
 
 	private String role;
-
-	private Integer pageSize;
 
 	private String clusterId;
 
 	private Integer pageNumber;
 
-	public String getHostName() {
-		return this.hostName;
-	}
+	private String hostName;
 
-	public void setHostName(String hostName) {
-		this.hostName = hostName;
-		if(hostName != null){
-			putQueryParameter("HostName", hostName);
-		}
+	private Integer pageSize;
+	public ListNodesRequest() {
+		super("EHPC", "2018-04-12", "ListNodes", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getRole() {
@@ -55,17 +46,6 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 		this.role = role;
 		if(role != null){
 			putQueryParameter("Role", role);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -88,6 +68,28 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+		if(hostName != null){
+			putQueryParameter("HostName", hostName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

@@ -15,15 +15,17 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
-	
+	   
 	public ListImagesRequest() {
 		super("EHPC", "2018-04-12", "ListImages", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	@Override

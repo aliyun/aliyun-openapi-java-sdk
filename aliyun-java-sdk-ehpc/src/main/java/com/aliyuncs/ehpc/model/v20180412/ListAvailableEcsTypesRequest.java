@@ -15,22 +15,26 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListAvailableEcsTypesRequest extends RpcAcsRequest<ListAvailableEcsTypesResponse> {
-	
-	public ListAvailableEcsTypesRequest() {
-		super("EHPC", "2018-04-12", "ListAvailableEcsTypes", "ehs");
-	}
+	   
 
 	private String spotStrategy;
 
 	private String zoneId;
 
+	private Boolean showSoldOut;
+
 	private String instanceChargeType;
+	public ListAvailableEcsTypesRequest() {
+		super("EHPC", "2018-04-12", "ListAvailableEcsTypes", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getSpotStrategy() {
 		return this.spotStrategy;
@@ -51,6 +55,17 @@ public class ListAvailableEcsTypesRequest extends RpcAcsRequest<ListAvailableEcs
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Boolean getShowSoldOut() {
+		return this.showSoldOut;
+	}
+
+	public void setShowSoldOut(Boolean showSoldOut) {
+		this.showSoldOut = showSoldOut;
+		if(showSoldOut != null){
+			putQueryParameter("ShowSoldOut", showSoldOut.toString());
 		}
 	}
 

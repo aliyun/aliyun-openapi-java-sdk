@@ -15,45 +15,25 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListContainerImagesRequest extends RpcAcsRequest<ListContainerImagesResponse> {
-	
-	public ListContainerImagesRequest() {
-		super("EHPC", "2018-04-12", "ListContainerImages", "ehs");
-	}
-
-	private String containerType;
-
-	private Integer pageSize;
+	   
 
 	private String clusterId;
 
 	private Integer pageNumber;
 
-	public String getContainerType() {
-		return this.containerType;
-	}
+	private String containerType;
 
-	public void setContainerType(String containerType) {
-		this.containerType = containerType;
-		if(containerType != null){
-			putQueryParameter("ContainerType", containerType);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+	private Integer pageSize;
+	public ListContainerImagesRequest() {
+		super("EHPC", "2018-04-12", "ListContainerImages", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getClusterId() {
@@ -75,6 +55,28 @@ public class ListContainerImagesRequest extends RpcAcsRequest<ListContainerImage
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getContainerType() {
+		return this.containerType;
+	}
+
+	public void setContainerType(String containerType) {
+		this.containerType = containerType;
+		if(containerType != null){
+			putQueryParameter("ContainerType", containerType);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

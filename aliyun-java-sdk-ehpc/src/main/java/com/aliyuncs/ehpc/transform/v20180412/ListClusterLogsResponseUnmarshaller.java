@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListClusterLogsResponseUnmarshaller {
 
-	public static ListClusterLogsResponse unmarshall(ListClusterLogsResponse listClusterLogsResponse, UnmarshallerContext context) {
+	public static ListClusterLogsResponse unmarshall(ListClusterLogsResponse listClusterLogsResponse, UnmarshallerContext _ctx) {
 		
-		listClusterLogsResponse.setRequestId(context.stringValue("ListClusterLogsResponse.RequestId"));
-		listClusterLogsResponse.setTotalCount(context.integerValue("ListClusterLogsResponse.TotalCount"));
-		listClusterLogsResponse.setPageNumber(context.integerValue("ListClusterLogsResponse.PageNumber"));
-		listClusterLogsResponse.setPageSize(context.integerValue("ListClusterLogsResponse.PageSize"));
-		listClusterLogsResponse.setClusterId(context.stringValue("ListClusterLogsResponse.ClusterId"));
+		listClusterLogsResponse.setRequestId(_ctx.stringValue("ListClusterLogsResponse.RequestId"));
+		listClusterLogsResponse.setTotalCount(_ctx.integerValue("ListClusterLogsResponse.TotalCount"));
+		listClusterLogsResponse.setPageNumber(_ctx.integerValue("ListClusterLogsResponse.PageNumber"));
+		listClusterLogsResponse.setPageSize(_ctx.integerValue("ListClusterLogsResponse.PageSize"));
+		listClusterLogsResponse.setClusterId(_ctx.stringValue("ListClusterLogsResponse.ClusterId"));
 
 		List<LogInfo> logs = new ArrayList<LogInfo>();
-		for (int i = 0; i < context.lengthValue("ListClusterLogsResponse.Logs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListClusterLogsResponse.Logs.Length"); i++) {
 			LogInfo logInfo = new LogInfo();
-			logInfo.setOperation(context.stringValue("ListClusterLogsResponse.Logs["+ i +"].Operation"));
-			logInfo.setLevel(context.stringValue("ListClusterLogsResponse.Logs["+ i +"].Level"));
-			logInfo.setMessage(context.stringValue("ListClusterLogsResponse.Logs["+ i +"].Message"));
-			logInfo.setCreateTime(context.stringValue("ListClusterLogsResponse.Logs["+ i +"].CreateTime"));
+			logInfo.setOperation(_ctx.stringValue("ListClusterLogsResponse.Logs["+ i +"].Operation"));
+			logInfo.setLevel(_ctx.stringValue("ListClusterLogsResponse.Logs["+ i +"].Level"));
+			logInfo.setMessage(_ctx.stringValue("ListClusterLogsResponse.Logs["+ i +"].Message"));
+			logInfo.setCreateTime(_ctx.stringValue("ListClusterLogsResponse.Logs["+ i +"].CreateTime"));
 
 			logs.add(logInfo);
 		}

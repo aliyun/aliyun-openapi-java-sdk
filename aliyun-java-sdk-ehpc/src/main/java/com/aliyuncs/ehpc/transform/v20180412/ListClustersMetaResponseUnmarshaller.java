@@ -24,20 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListClustersMetaResponseUnmarshaller {
 
-	public static ListClustersMetaResponse unmarshall(ListClustersMetaResponse listClustersMetaResponse, UnmarshallerContext context) {
+	public static ListClustersMetaResponse unmarshall(ListClustersMetaResponse listClustersMetaResponse, UnmarshallerContext _ctx) {
 		
-		listClustersMetaResponse.setRequestId(context.stringValue("ListClustersMetaResponse.RequestId"));
-		listClustersMetaResponse.setTotalCount(context.integerValue("ListClustersMetaResponse.TotalCount"));
-		listClustersMetaResponse.setPageNumber(context.integerValue("ListClustersMetaResponse.PageNumber"));
-		listClustersMetaResponse.setPageSize(context.integerValue("ListClustersMetaResponse.PageSize"));
+		listClustersMetaResponse.setRequestId(_ctx.stringValue("ListClustersMetaResponse.RequestId"));
+		listClustersMetaResponse.setTotalCount(_ctx.integerValue("ListClustersMetaResponse.TotalCount"));
+		listClustersMetaResponse.setPageNumber(_ctx.integerValue("ListClustersMetaResponse.PageNumber"));
+		listClustersMetaResponse.setPageSize(_ctx.integerValue("ListClustersMetaResponse.PageSize"));
 
 		List<ClusterInfoSimple> clusters = new ArrayList<ClusterInfoSimple>();
-		for (int i = 0; i < context.lengthValue("ListClustersMetaResponse.Clusters.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListClustersMetaResponse.Clusters.Length"); i++) {
 			ClusterInfoSimple clusterInfoSimple = new ClusterInfoSimple();
-			clusterInfoSimple.setId(context.stringValue("ListClustersMetaResponse.Clusters["+ i +"].Id"));
-			clusterInfoSimple.setName(context.stringValue("ListClustersMetaResponse.Clusters["+ i +"].Name"));
-			clusterInfoSimple.setDescription(context.stringValue("ListClustersMetaResponse.Clusters["+ i +"].Description"));
-			clusterInfoSimple.setStatus(context.stringValue("ListClustersMetaResponse.Clusters["+ i +"].Status"));
+			clusterInfoSimple.setId(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].Id"));
+			clusterInfoSimple.setName(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].Name"));
+			clusterInfoSimple.setDescription(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].Description"));
+			clusterInfoSimple.setStatus(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].Status"));
+			clusterInfoSimple.setLocation(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].Location"));
 
 			clusters.add(clusterInfoSimple);
 		}

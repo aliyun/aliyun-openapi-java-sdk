@@ -15,18 +15,20 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeContainerAppRequest extends RpcAcsRequest<DescribeContainerAppResponse> {
-	
-	public DescribeContainerAppRequest() {
-		super("EHPC", "2018-04-12", "DescribeContainerApp", "ehs");
-	}
+	   
 
 	private String containerId;
+	public DescribeContainerAppRequest() {
+		super("EHPC", "2018-04-12", "DescribeContainerApp", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getContainerId() {
 		return this.containerId;

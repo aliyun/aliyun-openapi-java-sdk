@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListCommandsResponseUnmarshaller {
 
-	public static ListCommandsResponse unmarshall(ListCommandsResponse listCommandsResponse, UnmarshallerContext context) {
+	public static ListCommandsResponse unmarshall(ListCommandsResponse listCommandsResponse, UnmarshallerContext _ctx) {
 		
-		listCommandsResponse.setRequestId(context.stringValue("ListCommandsResponse.RequestId"));
-		listCommandsResponse.setTotalCount(context.integerValue("ListCommandsResponse.TotalCount"));
-		listCommandsResponse.setPageNumber(context.integerValue("ListCommandsResponse.PageNumber"));
-		listCommandsResponse.setPageSize(context.integerValue("ListCommandsResponse.PageSize"));
+		listCommandsResponse.setRequestId(_ctx.stringValue("ListCommandsResponse.RequestId"));
+		listCommandsResponse.setTotalCount(_ctx.integerValue("ListCommandsResponse.TotalCount"));
+		listCommandsResponse.setPageNumber(_ctx.integerValue("ListCommandsResponse.PageNumber"));
+		listCommandsResponse.setPageSize(_ctx.integerValue("ListCommandsResponse.PageSize"));
 
 		List<Command> commands = new ArrayList<Command>();
-		for (int i = 0; i < context.lengthValue("ListCommandsResponse.Commands.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListCommandsResponse.Commands.Length"); i++) {
 			Command command = new Command();
-			command.setCommandId(context.stringValue("ListCommandsResponse.Commands["+ i +"].CommandId"));
-			command.setCommandContent(context.stringValue("ListCommandsResponse.Commands["+ i +"].CommandContent"));
-			command.setWorkingDir(context.stringValue("ListCommandsResponse.Commands["+ i +"].WorkingDir"));
-			command.setTimeout(context.stringValue("ListCommandsResponse.Commands["+ i +"].Timeout"));
+			command.setCommandId(_ctx.stringValue("ListCommandsResponse.Commands["+ i +"].CommandId"));
+			command.setCommandContent(_ctx.stringValue("ListCommandsResponse.Commands["+ i +"].CommandContent"));
+			command.setWorkingDir(_ctx.stringValue("ListCommandsResponse.Commands["+ i +"].WorkingDir"));
+			command.setTimeout(_ctx.stringValue("ListCommandsResponse.Commands["+ i +"].Timeout"));
 
 			commands.add(command);
 		}

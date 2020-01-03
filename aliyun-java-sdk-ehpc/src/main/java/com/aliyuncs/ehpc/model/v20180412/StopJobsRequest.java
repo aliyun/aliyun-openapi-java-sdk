@@ -15,20 +15,22 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class StopJobsRequest extends RpcAcsRequest<StopJobsResponse> {
-	
-	public StopJobsRequest() {
-		super("EHPC", "2018-04-12", "StopJobs", "ehs");
-	}
+	   
 
 	private String jobs;
 
 	private String clusterId;
+	public StopJobsRequest() {
+		super("EHPC", "2018-04-12", "StopJobs", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getJobs() {
 		return this.jobs;

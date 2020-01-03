@@ -15,18 +15,20 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListSoftwaresRequest extends RpcAcsRequest<ListSoftwaresResponse> {
-	
-	public ListSoftwaresRequest() {
-		super("EHPC", "2018-04-12", "ListSoftwares", "ehs");
-	}
+	   
 
 	private String ehpcVersion;
+	public ListSoftwaresRequest() {
+		super("EHPC", "2018-04-12", "ListSoftwares", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getEhpcVersion() {
 		return this.ehpcVersion;

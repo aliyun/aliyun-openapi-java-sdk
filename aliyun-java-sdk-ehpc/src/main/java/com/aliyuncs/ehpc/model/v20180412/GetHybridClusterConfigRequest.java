@@ -15,30 +15,21 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetHybridClusterConfigRequest extends RpcAcsRequest<GetHybridClusterConfigResponse> {
-	
-	public GetHybridClusterConfigRequest() {
-		super("EHPC", "2018-04-12", "GetHybridClusterConfig", "ehs");
-	}
-
-	private String node;
+	   
 
 	private String clusterId;
 
-	public String getNode() {
-		return this.node;
-	}
-
-	public void setNode(String node) {
-		this.node = node;
-		if(node != null){
-			putQueryParameter("Node", node);
-		}
+	private String node;
+	public GetHybridClusterConfigRequest() {
+		super("EHPC", "2018-04-12", "GetHybridClusterConfig", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getClusterId() {
@@ -49,6 +40,17 @@ public class GetHybridClusterConfigRequest extends RpcAcsRequest<GetHybridCluste
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getNode() {
+		return this.node;
+	}
+
+	public void setNode(String node) {
+		this.node = node;
+		if(node != null){
+			putQueryParameter("Node", node);
 		}
 	}
 

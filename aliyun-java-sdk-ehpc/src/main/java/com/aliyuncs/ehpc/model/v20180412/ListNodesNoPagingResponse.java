@@ -125,26 +125,10 @@ public class ListNodesNoPagingResponse extends AcsResponse {
 			this.hostName = hostName;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -157,26 +141,10 @@ public class ListNodesNoPagingResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getBizVersion() {
-			return this.version;
-		}
-
-		public void setBizVersion(String version) {
-			this.version = version;
-		}
-
-		/**
-		 * @deprecated use getBizVersion instead of this.
-		 */
-		@Deprecated
 		public String getVersion() {
 			return this.version;
 		}
 
-		/**
-		 * @deprecated use setBizVersion instead of this.
-		 */
-		@Deprecated
 		public void setVersion(String version) {
 			this.version = version;
 		}

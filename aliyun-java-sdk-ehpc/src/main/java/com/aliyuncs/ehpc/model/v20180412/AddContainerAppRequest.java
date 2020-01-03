@@ -15,47 +15,27 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddContainerAppRequest extends RpcAcsRequest<AddContainerAppResponse> {
-	
-	public AddContainerAppRequest() {
-		super("EHPC", "2018-04-12", "AddContainerApp", "ehs");
-	}
-
-	private String containerType;
-
-	private String name;
+	   
 
 	private String description;
 
 	private String repository;
 
+	private String containerType;
+
+	private String name;
+
 	private String imageTag;
-
-	public String getContainerType() {
-		return this.containerType;
-	}
-
-	public void setContainerType(String containerType) {
-		this.containerType = containerType;
-		if(containerType != null){
-			putQueryParameter("ContainerType", containerType);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
+	public AddContainerAppRequest() {
+		super("EHPC", "2018-04-12", "AddContainerApp", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getDescription() {
@@ -77,6 +57,28 @@ public class AddContainerAppRequest extends RpcAcsRequest<AddContainerAppRespons
 		this.repository = repository;
 		if(repository != null){
 			putQueryParameter("Repository", repository);
+		}
+	}
+
+	public String getContainerType() {
+		return this.containerType;
+	}
+
+	public void setContainerType(String containerType) {
+		this.containerType = containerType;
+		if(containerType != null){
+			putQueryParameter("ContainerType", containerType);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

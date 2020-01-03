@@ -15,24 +15,28 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetAccountingReportRequest extends RpcAcsRequest<GetAccountingReportResponse> {
-	
-	public GetAccountingReportRequest() {
-		super("EHPC", "2018-04-12", "GetAccountingReport", "ehs");
-	}
+	   
 
 	private String reportType;
 
 	private Integer endTime;
 
+	private String filterValue;
+
 	private String clusterId;
 
 	private Integer startTime;
+	public GetAccountingReportRequest() {
+		super("EHPC", "2018-04-12", "GetAccountingReport", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getReportType() {
 		return this.reportType;
@@ -53,6 +57,17 @@ public class GetAccountingReportRequest extends RpcAcsRequest<GetAccountingRepor
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public String getFilterValue() {
+		return this.filterValue;
+	}
+
+	public void setFilterValue(String filterValue) {
+		this.filterValue = filterValue;
+		if(filterValue != null){
+			putQueryParameter("FilterValue", filterValue);
 		}
 	}
 

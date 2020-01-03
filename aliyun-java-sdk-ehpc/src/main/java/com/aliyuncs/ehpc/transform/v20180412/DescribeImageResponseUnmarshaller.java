@@ -21,18 +21,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeImageResponseUnmarshaller {
 
-	public static DescribeImageResponse unmarshall(DescribeImageResponse describeImageResponse, UnmarshallerContext context) {
+	public static DescribeImageResponse unmarshall(DescribeImageResponse describeImageResponse, UnmarshallerContext _ctx) {
 		
-		describeImageResponse.setRequestId(context.stringValue("DescribeImageResponse.RequestId"));
+		describeImageResponse.setRequestId(_ctx.stringValue("DescribeImageResponse.RequestId"));
 
 		ImageInfo imageInfo = new ImageInfo();
-		imageInfo.setSystem(context.stringValue("DescribeImageResponse.ImageInfo.System"));
-		imageInfo.setType(context.stringValue("DescribeImageResponse.ImageInfo.Type"));
-		imageInfo.setStatus(context.stringValue("DescribeImageResponse.ImageInfo.Status"));
-		imageInfo.setImageId(context.stringValue("DescribeImageResponse.ImageInfo.ImageId"));
-		imageInfo.setUpdateDateTime(context.stringValue("DescribeImageResponse.ImageInfo.UpdateDateTime"));
-		imageInfo.setRepository(context.stringValue("DescribeImageResponse.ImageInfo.Repository"));
-		imageInfo.setTag(context.stringValue("DescribeImageResponse.ImageInfo.Tag"));
+		imageInfo.setSystem(_ctx.stringValue("DescribeImageResponse.ImageInfo.System"));
+		imageInfo.setType(_ctx.stringValue("DescribeImageResponse.ImageInfo.Type"));
+		imageInfo.setStatus(_ctx.stringValue("DescribeImageResponse.ImageInfo.Status"));
+		imageInfo.setImageId(_ctx.stringValue("DescribeImageResponse.ImageInfo.ImageId"));
+		imageInfo.setUpdateDateTime(_ctx.stringValue("DescribeImageResponse.ImageInfo.UpdateDateTime"));
+		imageInfo.setRepository(_ctx.stringValue("DescribeImageResponse.ImageInfo.Repository"));
+		imageInfo.setTag(_ctx.stringValue("DescribeImageResponse.ImageInfo.Tag"));
 		describeImageResponse.setImageInfo(imageInfo);
 	 
 	 	return describeImageResponse;

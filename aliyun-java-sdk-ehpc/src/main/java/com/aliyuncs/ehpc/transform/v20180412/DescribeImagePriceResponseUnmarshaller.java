@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeImagePriceResponseUnmarshaller {
 
-	public static DescribeImagePriceResponse unmarshall(DescribeImagePriceResponse describeImagePriceResponse, UnmarshallerContext context) {
+	public static DescribeImagePriceResponse unmarshall(DescribeImagePriceResponse describeImagePriceResponse, UnmarshallerContext _ctx) {
 		
-		describeImagePriceResponse.setRequestId(context.stringValue("DescribeImagePriceResponse.RequestId"));
-		describeImagePriceResponse.setImageId(context.stringValue("DescribeImagePriceResponse.ImageId"));
-		describeImagePriceResponse.setDiscountPrice(context.floatValue("DescribeImagePriceResponse.DiscountPrice"));
-		describeImagePriceResponse.setOriginalPrice(context.floatValue("DescribeImagePriceResponse.OriginalPrice"));
-		describeImagePriceResponse.setTradePrice(context.floatValue("DescribeImagePriceResponse.TradePrice"));
-		describeImagePriceResponse.setAmount(context.integerValue("DescribeImagePriceResponse.Amount"));
+		describeImagePriceResponse.setRequestId(_ctx.stringValue("DescribeImagePriceResponse.RequestId"));
+		describeImagePriceResponse.setImageId(_ctx.stringValue("DescribeImagePriceResponse.ImageId"));
+		describeImagePriceResponse.setDiscountPrice(_ctx.floatValue("DescribeImagePriceResponse.DiscountPrice"));
+		describeImagePriceResponse.setOriginalPrice(_ctx.floatValue("DescribeImagePriceResponse.OriginalPrice"));
+		describeImagePriceResponse.setTradePrice(_ctx.floatValue("DescribeImagePriceResponse.TradePrice"));
+		describeImagePriceResponse.setAmount(_ctx.integerValue("DescribeImagePriceResponse.Amount"));
 	 
 	 	return describeImagePriceResponse;
 	}

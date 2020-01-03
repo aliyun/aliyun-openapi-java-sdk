@@ -15,30 +15,21 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeJobRequest extends RpcAcsRequest<DescribeJobResponse> {
-	
-	public DescribeJobRequest() {
-		super("EHPC", "2018-04-12", "DescribeJob", "ehs");
-	}
-
-	private String jobId;
+	   
 
 	private String clusterId;
 
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
-		}
+	private String jobId;
+	public DescribeJobRequest() {
+		super("EHPC", "2018-04-12", "DescribeJob", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getClusterId() {
@@ -49,6 +40,17 @@ public class DescribeJobRequest extends RpcAcsRequest<DescribeJobResponse> {
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
 		}
 	}
 

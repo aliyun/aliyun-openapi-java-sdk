@@ -20,24 +20,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAutoScaleConfigResponseUnmarshaller {
 
-	public static DescribeAutoScaleConfigResponse unmarshall(DescribeAutoScaleConfigResponse describeAutoScaleConfigResponse, UnmarshallerContext context) {
+	public static DescribeAutoScaleConfigResponse unmarshall(DescribeAutoScaleConfigResponse describeAutoScaleConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeAutoScaleConfigResponse.setRequestId(context.stringValue("DescribeAutoScaleConfigResponse.RequestId"));
-		describeAutoScaleConfigResponse.setUid(context.stringValue("DescribeAutoScaleConfigResponse.Uid"));
-		describeAutoScaleConfigResponse.setClusterId(context.stringValue("DescribeAutoScaleConfigResponse.ClusterId"));
-		describeAutoScaleConfigResponse.setClusterType(context.stringValue("DescribeAutoScaleConfigResponse.ClusterType"));
-		describeAutoScaleConfigResponse.setEnableAutoGrow(context.booleanValue("DescribeAutoScaleConfigResponse.EnableAutoGrow"));
-		describeAutoScaleConfigResponse.setEnableAutoShrink(context.booleanValue("DescribeAutoScaleConfigResponse.EnableAutoShrink"));
-		describeAutoScaleConfigResponse.setGrowIntervalInMinutes(context.integerValue("DescribeAutoScaleConfigResponse.GrowIntervalInMinutes"));
-		describeAutoScaleConfigResponse.setShrinkIntervalInMinutes(context.integerValue("DescribeAutoScaleConfigResponse.ShrinkIntervalInMinutes"));
-		describeAutoScaleConfigResponse.setShrinkIdleTimes(context.integerValue("DescribeAutoScaleConfigResponse.ShrinkIdleTimes"));
-		describeAutoScaleConfigResponse.setGrowTimeoutInMinutes(context.integerValue("DescribeAutoScaleConfigResponse.GrowTimeoutInMinutes"));
-		describeAutoScaleConfigResponse.setExtraNodesGrowRatio(context.integerValue("DescribeAutoScaleConfigResponse.ExtraNodesGrowRatio"));
-		describeAutoScaleConfigResponse.setGrowRatio(context.integerValue("DescribeAutoScaleConfigResponse.GrowRatio"));
-		describeAutoScaleConfigResponse.setMaxNodesInCluster(context.integerValue("DescribeAutoScaleConfigResponse.MaxNodesInCluster"));
-		describeAutoScaleConfigResponse.setExcludeNodes(context.stringValue("DescribeAutoScaleConfigResponse.ExcludeNodes"));
-		describeAutoScaleConfigResponse.setSpotStrategy(context.stringValue("DescribeAutoScaleConfigResponse.SpotStrategy"));
-		describeAutoScaleConfigResponse.setSpotPriceLimit(context.stringValue("DescribeAutoScaleConfigResponse.SpotPriceLimit"));
+		describeAutoScaleConfigResponse.setRequestId(_ctx.stringValue("DescribeAutoScaleConfigResponse.RequestId"));
+		describeAutoScaleConfigResponse.setUid(_ctx.stringValue("DescribeAutoScaleConfigResponse.Uid"));
+		describeAutoScaleConfigResponse.setClusterId(_ctx.stringValue("DescribeAutoScaleConfigResponse.ClusterId"));
+		describeAutoScaleConfigResponse.setClusterType(_ctx.stringValue("DescribeAutoScaleConfigResponse.ClusterType"));
+		describeAutoScaleConfigResponse.setEnableAutoGrow(_ctx.booleanValue("DescribeAutoScaleConfigResponse.EnableAutoGrow"));
+		describeAutoScaleConfigResponse.setEnableAutoShrink(_ctx.booleanValue("DescribeAutoScaleConfigResponse.EnableAutoShrink"));
+		describeAutoScaleConfigResponse.setGrowIntervalInMinutes(_ctx.integerValue("DescribeAutoScaleConfigResponse.GrowIntervalInMinutes"));
+		describeAutoScaleConfigResponse.setShrinkIntervalInMinutes(_ctx.integerValue("DescribeAutoScaleConfigResponse.ShrinkIntervalInMinutes"));
+		describeAutoScaleConfigResponse.setShrinkIdleTimes(_ctx.integerValue("DescribeAutoScaleConfigResponse.ShrinkIdleTimes"));
+		describeAutoScaleConfigResponse.setGrowTimeoutInMinutes(_ctx.integerValue("DescribeAutoScaleConfigResponse.GrowTimeoutInMinutes"));
+		describeAutoScaleConfigResponse.setExtraNodesGrowRatio(_ctx.integerValue("DescribeAutoScaleConfigResponse.ExtraNodesGrowRatio"));
+		describeAutoScaleConfigResponse.setGrowRatio(_ctx.integerValue("DescribeAutoScaleConfigResponse.GrowRatio"));
+		describeAutoScaleConfigResponse.setMaxNodesInCluster(_ctx.integerValue("DescribeAutoScaleConfigResponse.MaxNodesInCluster"));
+		describeAutoScaleConfigResponse.setExcludeNodes(_ctx.stringValue("DescribeAutoScaleConfigResponse.ExcludeNodes"));
+		describeAutoScaleConfigResponse.setSpotStrategy(_ctx.stringValue("DescribeAutoScaleConfigResponse.SpotStrategy"));
+		describeAutoScaleConfigResponse.setSpotPriceLimit(_ctx.stringValue("DescribeAutoScaleConfigResponse.SpotPriceLimit"));
 	 
 	 	return describeAutoScaleConfigResponse;
 	}

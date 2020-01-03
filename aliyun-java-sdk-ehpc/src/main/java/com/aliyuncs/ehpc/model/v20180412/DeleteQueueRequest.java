@@ -15,20 +15,22 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteQueueRequest extends RpcAcsRequest<DeleteQueueResponse> {
-	
-	public DeleteQueueRequest() {
-		super("EHPC", "2018-04-12", "DeleteQueue", "ehs");
-	}
+	   
 
 	private String queueName;
 
 	private String clusterId;
+	public DeleteQueueRequest() {
+		super("EHPC", "2018-04-12", "DeleteQueue", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getQueueName() {
 		return this.queueName;

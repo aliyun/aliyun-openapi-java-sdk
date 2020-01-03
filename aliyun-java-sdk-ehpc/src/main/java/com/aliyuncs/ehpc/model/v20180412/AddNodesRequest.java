@@ -15,22 +15,34 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
-	
-	public AddNodesRequest() {
-		super("EHPC", "2018-04-12", "AddNodes", "ehs");
-	}
+	   
+
+	private String imageId;
+
+	private String jobQueue;
+
+	private String imageOwnerAlias;
+
+	private String systemDiskType;
+
+	private Integer systemDiskSize;
+
+	private String instanceType;
+
+	private String hostNamePrefix;
+
+	private String computeSpotPriceLimit;
 
 	private Integer autoRenewPeriod;
 
 	private Integer period;
-
-	private String imageId;
 
 	private Integer count;
 
@@ -38,13 +50,13 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private String computeSpotStrategy;
 
-	private String jobQueue;
-
-	private String imageOwnerAlias;
+	private String hostNameSuffix;
 
 	private String vSwitchId;
 
 	private String periodUnit;
+
+	private Boolean computeEnableHt;
 
 	private String autoRenew;
 
@@ -52,13 +64,99 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private String createMode;
 
-	private Integer systemDiskSize;
-
-	private String instanceType;
-
 	private String zoneId;
+	public AddNodesRequest() {
+		super("EHPC", "2018-04-12", "AddNodes", "ehs");
+		setMethod(MethodType.GET);
+	}
 
-	private String computeSpotPriceLimit;
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getJobQueue() {
+		return this.jobQueue;
+	}
+
+	public void setJobQueue(String jobQueue) {
+		this.jobQueue = jobQueue;
+		if(jobQueue != null){
+			putQueryParameter("JobQueue", jobQueue);
+		}
+	}
+
+	public String getImageOwnerAlias() {
+		return this.imageOwnerAlias;
+	}
+
+	public void setImageOwnerAlias(String imageOwnerAlias) {
+		this.imageOwnerAlias = imageOwnerAlias;
+		if(imageOwnerAlias != null){
+			putQueryParameter("ImageOwnerAlias", imageOwnerAlias);
+		}
+	}
+
+	public String getSystemDiskType() {
+		return this.systemDiskType;
+	}
+
+	public void setSystemDiskType(String systemDiskType) {
+		this.systemDiskType = systemDiskType;
+		if(systemDiskType != null){
+			putQueryParameter("SystemDiskType", systemDiskType);
+		}
+	}
+
+	public Integer getSystemDiskSize() {
+		return this.systemDiskSize;
+	}
+
+	public void setSystemDiskSize(Integer systemDiskSize) {
+		this.systemDiskSize = systemDiskSize;
+		if(systemDiskSize != null){
+			putQueryParameter("SystemDiskSize", systemDiskSize.toString());
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getHostNamePrefix() {
+		return this.hostNamePrefix;
+	}
+
+	public void setHostNamePrefix(String hostNamePrefix) {
+		this.hostNamePrefix = hostNamePrefix;
+		if(hostNamePrefix != null){
+			putQueryParameter("HostNamePrefix", hostNamePrefix);
+		}
+	}
+
+	public String getComputeSpotPriceLimit() {
+		return this.computeSpotPriceLimit;
+	}
+
+	public void setComputeSpotPriceLimit(String computeSpotPriceLimit) {
+		this.computeSpotPriceLimit = computeSpotPriceLimit;
+		if(computeSpotPriceLimit != null){
+			putQueryParameter("ComputeSpotPriceLimit", computeSpotPriceLimit);
+		}
+	}
 
 	public Integer getAutoRenewPeriod() {
 		return this.autoRenewPeriod;
@@ -79,17 +177,6 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
-		}
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
 		}
 	}
 
@@ -126,25 +213,14 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		}
 	}
 
-	public String getJobQueue() {
-		return this.jobQueue;
+	public String getHostNameSuffix() {
+		return this.hostNameSuffix;
 	}
 
-	public void setJobQueue(String jobQueue) {
-		this.jobQueue = jobQueue;
-		if(jobQueue != null){
-			putQueryParameter("JobQueue", jobQueue);
-		}
-	}
-
-	public String getImageOwnerAlias() {
-		return this.imageOwnerAlias;
-	}
-
-	public void setImageOwnerAlias(String imageOwnerAlias) {
-		this.imageOwnerAlias = imageOwnerAlias;
-		if(imageOwnerAlias != null){
-			putQueryParameter("ImageOwnerAlias", imageOwnerAlias);
+	public void setHostNameSuffix(String hostNameSuffix) {
+		this.hostNameSuffix = hostNameSuffix;
+		if(hostNameSuffix != null){
+			putQueryParameter("HostNameSuffix", hostNameSuffix);
 		}
 	}
 
@@ -167,6 +243,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.periodUnit = periodUnit;
 		if(periodUnit != null){
 			putQueryParameter("PeriodUnit", periodUnit);
+		}
+	}
+
+	public Boolean getComputeEnableHt() {
+		return this.computeEnableHt;
+	}
+
+	public void setComputeEnableHt(Boolean computeEnableHt) {
+		this.computeEnableHt = computeEnableHt;
+		if(computeEnableHt != null){
+			putQueryParameter("ComputeEnableHt", computeEnableHt.toString());
 		}
 	}
 
@@ -203,28 +290,6 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		}
 	}
 
-	public Integer getSystemDiskSize() {
-		return this.systemDiskSize;
-	}
-
-	public void setSystemDiskSize(Integer systemDiskSize) {
-		this.systemDiskSize = systemDiskSize;
-		if(systemDiskSize != null){
-			putQueryParameter("SystemDiskSize", systemDiskSize.toString());
-		}
-	}
-
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
-		}
-	}
-
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -233,17 +298,6 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getComputeSpotPriceLimit() {
-		return this.computeSpotPriceLimit;
-	}
-
-	public void setComputeSpotPriceLimit(String computeSpotPriceLimit) {
-		this.computeSpotPriceLimit = computeSpotPriceLimit;
-		if(computeSpotPriceLimit != null){
-			putQueryParameter("ComputeSpotPriceLimit", computeSpotPriceLimit);
 		}
 	}
 

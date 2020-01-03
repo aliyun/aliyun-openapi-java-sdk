@@ -16,20 +16,22 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteUsersRequest extends RpcAcsRequest<DeleteUsersResponse> {
-	
-	public DeleteUsersRequest() {
-		super("EHPC", "2018-04-12", "DeleteUsers", "ehs");
-	}
+	   
 
 	private String clusterId;
 
 	private List<User> users;
+	public DeleteUsersRequest() {
+		super("EHPC", "2018-04-12", "DeleteUsers", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getClusterId() {
 		return this.clusterId;

@@ -15,32 +15,23 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class StopVisualServiceRequest extends RpcAcsRequest<StopVisualServiceResponse> {
-	
-	public StopVisualServiceRequest() {
-		super("EHPC", "2018-04-12", "StopVisualService", "ehs");
-	}
-
-	private Integer port;
+	   
 
 	private String clusterId;
 
+	private Integer port;
+
 	private String cidrIp;
-
-	public Integer getPort() {
-		return this.port;
-	}
-
-	public void setPort(Integer port) {
-		this.port = port;
-		if(port != null){
-			putQueryParameter("Port", port.toString());
-		}
+	public StopVisualServiceRequest() {
+		super("EHPC", "2018-04-12", "StopVisualService", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getClusterId() {
@@ -51,6 +42,17 @@ public class StopVisualServiceRequest extends RpcAcsRequest<StopVisualServiceRes
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Integer getPort() {
+		return this.port;
+	}
+
+	public void setPort(Integer port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port.toString());
 		}
 	}
 

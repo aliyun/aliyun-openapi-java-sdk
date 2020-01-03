@@ -15,18 +15,20 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetVisualServiceStatusRequest extends RpcAcsRequest<GetVisualServiceStatusResponse> {
-	
-	public GetVisualServiceStatusRequest() {
-		super("EHPC", "2018-04-12", "GetVisualServiceStatus", "ehs");
-	}
+	   
 
 	private String clusterId;
+	public GetVisualServiceStatusRequest() {
+		super("EHPC", "2018-04-12", "GetVisualServiceStatus", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getClusterId() {
 		return this.clusterId;

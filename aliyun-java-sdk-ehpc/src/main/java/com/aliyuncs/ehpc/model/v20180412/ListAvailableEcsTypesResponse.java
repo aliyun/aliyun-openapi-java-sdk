@@ -109,6 +109,8 @@ public class ListAvailableEcsTypesResponse extends AcsResponse {
 
 			private String gPUSpec;
 
+			private String status;
+
 			public Integer getCpuCoreCount() {
 				return this.cpuCoreCount;
 			}
@@ -187,6 +189,14 @@ public class ListAvailableEcsTypesResponse extends AcsResponse {
 
 			public void setGPUSpec(String gPUSpec) {
 				this.gPUSpec = gPUSpec;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 		}
 	}

@@ -21,18 +21,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeContainerAppResponseUnmarshaller {
 
-	public static DescribeContainerAppResponse unmarshall(DescribeContainerAppResponse describeContainerAppResponse, UnmarshallerContext context) {
+	public static DescribeContainerAppResponse unmarshall(DescribeContainerAppResponse describeContainerAppResponse, UnmarshallerContext _ctx) {
 		
-		describeContainerAppResponse.setRequestId(context.stringValue("DescribeContainerAppResponse.RequestId"));
+		describeContainerAppResponse.setRequestId(_ctx.stringValue("DescribeContainerAppResponse.RequestId"));
 
 		ContainerAppInfo containerAppInfo = new ContainerAppInfo();
-		containerAppInfo.setId(context.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Id"));
-		containerAppInfo.setName(context.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Name"));
-		containerAppInfo.setDescription(context.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Description"));
-		containerAppInfo.setRepository(context.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Repository"));
-		containerAppInfo.setImageTag(context.stringValue("DescribeContainerAppResponse.ContainerAppInfo.ImageTag"));
-		containerAppInfo.setCreateTime(context.stringValue("DescribeContainerAppResponse.ContainerAppInfo.CreateTime"));
-		containerAppInfo.setType(context.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Type"));
+		containerAppInfo.setId(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Id"));
+		containerAppInfo.setName(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Name"));
+		containerAppInfo.setDescription(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Description"));
+		containerAppInfo.setRepository(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Repository"));
+		containerAppInfo.setImageTag(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.ImageTag"));
+		containerAppInfo.setCreateTime(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.CreateTime"));
+		containerAppInfo.setType(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Type"));
 		describeContainerAppResponse.setContainerAppInfo(containerAppInfo);
 	 
 	 	return describeContainerAppResponse;

@@ -16,16 +16,14 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridClusterResponse> {
-	
-	public CreateHybridClusterRequest() {
-		super("EHPC", "2018-04-12", "CreateHybridCluster", "ehs");
-	}
+	   
 
 	private String ehpcVersion;
 
@@ -67,7 +65,7 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 	private String vSwitchId;
 
-	private String nodes;
+	private List<Nodes> nodess;
 
 	private List<Application> applications;
 
@@ -83,7 +81,13 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 	private String zoneId;
 
+	private Boolean schedulerPreInstall;
+
 	private String location;
+	public CreateHybridClusterRequest() {
+		super("EHPC", "2018-04-12", "CreateHybridCluster", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getEhpcVersion() {
 		return this.ehpcVersion;
@@ -308,15 +312,21 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		}
 	}
 
-	public String getNodes() {
-		return this.nodes;
+	public List<Nodes> getNodess() {
+		return this.nodess;
 	}
 
-	public void setNodes(String nodes) {
-		this.nodes = nodes;
-		if(nodes != null){
-			putQueryParameter("Nodes", nodes);
-		}
+	public void setNodess(List<Nodes> nodess) {
+		this.nodess = nodess;	
+		if (nodess != null) {
+			for (int depth1 = 0; depth1 < nodess.size(); depth1++) {
+				putQueryParameter("Nodes." + (depth1 + 1) + ".IpAddress" , nodess.get(depth1).getIpAddress());
+				putQueryParameter("Nodes." + (depth1 + 1) + ".HostName" , nodess.get(depth1).getHostName());
+				putQueryParameter("Nodes." + (depth1 + 1) + ".Role" , nodess.get(depth1).getRole());
+				putQueryParameter("Nodes." + (depth1 + 1) + ".AccountType" , nodess.get(depth1).getAccountType());
+				putQueryParameter("Nodes." + (depth1 + 1) + ".SchedulerType" , nodess.get(depth1).getSchedulerType());
+			}
+		}	
 	}
 
 	public List<Application> getApplications() {
@@ -332,29 +342,10 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		}	
 	}
 
-	public String getBizDomain() {
-		return this.domain;
-	}
-
-	public void setBizDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizDomain instead of this.
-	 */
-	@Deprecated
 	public String getDomain() {
 		return this.domain;
 	}
 
-	/**
-	 * @deprecated use setBizDomain instead of this.
-	 */
-	@Deprecated
 	public void setDomain(String domain) {
 		this.domain = domain;
 		if(domain != null){
@@ -417,6 +408,17 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		}
 	}
 
+	public Boolean getSchedulerPreInstall() {
+		return this.schedulerPreInstall;
+	}
+
+	public void setSchedulerPreInstall(Boolean schedulerPreInstall) {
+		this.schedulerPreInstall = schedulerPreInstall;
+		if(schedulerPreInstall != null){
+			putQueryParameter("SchedulerPreInstall", schedulerPreInstall.toString());
+		}
+	}
+
 	public String getLocation() {
 		return this.location;
 	}
@@ -442,28 +444,65 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 			this.args = args;
 		}
 
-		public String getBizUrl() {
-			return this.url;
-		}
-
-		public void setBizUrl(String url) {
-			this.url = url;
-		}
-
-		/**
-		 * @deprecated use getBizUrl instead of this.
-		 */
-		@Deprecated
 		public String getUrl() {
 			return this.url;
 		}
 
-		/**
-		 * @deprecated use setBizUrl instead of this.
-		 */
-		@Deprecated
 		public void setUrl(String url) {
 			this.url = url;
+		}
+	}
+
+	public static class Nodes {
+
+		private String ipAddress;
+
+		private String hostName;
+
+		private String role;
+
+		private String accountType;
+
+		private String schedulerType;
+
+		public String getIpAddress() {
+			return this.ipAddress;
+		}
+
+		public void setIpAddress(String ipAddress) {
+			this.ipAddress = ipAddress;
+		}
+
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
+		}
+
+		public String getRole() {
+			return this.role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
+		}
+
+		public String getAccountType() {
+			return this.accountType;
+		}
+
+		public void setAccountType(String accountType) {
+			this.accountType = accountType;
+		}
+
+		public String getSchedulerType() {
+			return this.schedulerType;
+		}
+
+		public void setSchedulerType(String schedulerType) {
+			this.schedulerType = schedulerType;
 		}
 	}
 

@@ -16,22 +16,24 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetQueueRequest extends RpcAcsRequest<SetQueueResponse> {
-	
-	public SetQueueRequest() {
-		super("EHPC", "2018-04-12", "SetQueue", "ehs");
-	}
+	   
 
 	private String queueName;
 
-	private List<Node> nodes;
-
 	private String clusterId;
+
+	private List<Node> nodes;
+	public SetQueueRequest() {
+		super("EHPC", "2018-04-12", "SetQueue", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getQueueName() {
 		return this.queueName;
@@ -41,6 +43,17 @@ public class SetQueueRequest extends RpcAcsRequest<SetQueueResponse> {
 		this.queueName = queueName;
 		if(queueName != null){
 			putQueryParameter("QueueName", queueName);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -55,17 +68,6 @@ public class SetQueueRequest extends RpcAcsRequest<SetQueueResponse> {
 				putQueryParameter("Node." + (depth1 + 1) + ".Name" , nodes.get(depth1).getName());
 			}
 		}	
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
 	}
 
 	public static class Node {

@@ -15,30 +15,21 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetCloudMetricProfilingRequest extends RpcAcsRequest<GetCloudMetricProfilingResponse> {
-	
-	public GetCloudMetricProfilingRequest() {
-		super("EHPC", "2018-04-12", "GetCloudMetricProfiling", "ehs");
-	}
-
-	private String profilingId;
+	   
 
 	private String clusterId;
 
-	public String getProfilingId() {
-		return this.profilingId;
-	}
-
-	public void setProfilingId(String profilingId) {
-		this.profilingId = profilingId;
-		if(profilingId != null){
-			putQueryParameter("ProfilingId", profilingId);
-		}
+	private String profilingId;
+	public GetCloudMetricProfilingRequest() {
+		super("EHPC", "2018-04-12", "GetCloudMetricProfiling", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getClusterId() {
@@ -49,6 +40,17 @@ public class GetCloudMetricProfilingRequest extends RpcAcsRequest<GetCloudMetric
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getProfilingId() {
+		return this.profilingId;
+	}
+
+	public void setProfilingId(String profilingId) {
+		this.profilingId = profilingId;
+		if(profilingId != null){
+			putQueryParameter("ProfilingId", profilingId);
 		}
 	}
 

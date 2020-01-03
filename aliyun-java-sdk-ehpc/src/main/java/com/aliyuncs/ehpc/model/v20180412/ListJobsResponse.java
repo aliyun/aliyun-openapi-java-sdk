@@ -85,7 +85,7 @@ public class ListJobsResponse extends AcsResponse {
 
 		private String nodeList;
 
-		private Integer priority;
+		private String priority;
 
 		private String state;
 
@@ -139,11 +139,11 @@ public class ListJobsResponse extends AcsResponse {
 			this.nodeList = nodeList;
 		}
 
-		public Integer getPriority() {
+		public String getPriority() {
 			return this.priority;
 		}
 
-		public void setPriority(Integer priority) {
+		public void setPriority(String priority) {
 			this.priority = priority;
 		}
 

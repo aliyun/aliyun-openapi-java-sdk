@@ -24,27 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListJobTemplatesResponseUnmarshaller {
 
-	public static ListJobTemplatesResponse unmarshall(ListJobTemplatesResponse listJobTemplatesResponse, UnmarshallerContext context) {
+	public static ListJobTemplatesResponse unmarshall(ListJobTemplatesResponse listJobTemplatesResponse, UnmarshallerContext _ctx) {
 		
-		listJobTemplatesResponse.setRequestId(context.stringValue("ListJobTemplatesResponse.RequestId"));
-		listJobTemplatesResponse.setTotalCount(context.integerValue("ListJobTemplatesResponse.TotalCount"));
-		listJobTemplatesResponse.setPageNumber(context.integerValue("ListJobTemplatesResponse.PageNumber"));
-		listJobTemplatesResponse.setPageSize(context.integerValue("ListJobTemplatesResponse.PageSize"));
+		listJobTemplatesResponse.setRequestId(_ctx.stringValue("ListJobTemplatesResponse.RequestId"));
+		listJobTemplatesResponse.setTotalCount(_ctx.integerValue("ListJobTemplatesResponse.TotalCount"));
+		listJobTemplatesResponse.setPageNumber(_ctx.integerValue("ListJobTemplatesResponse.PageNumber"));
+		listJobTemplatesResponse.setPageSize(_ctx.integerValue("ListJobTemplatesResponse.PageSize"));
 
 		List<JobTemplates> templates = new ArrayList<JobTemplates>();
-		for (int i = 0; i < context.lengthValue("ListJobTemplatesResponse.Templates.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListJobTemplatesResponse.Templates.Length"); i++) {
 			JobTemplates jobTemplates = new JobTemplates();
-			jobTemplates.setId(context.stringValue("ListJobTemplatesResponse.Templates["+ i +"].Id"));
-			jobTemplates.setName(context.stringValue("ListJobTemplatesResponse.Templates["+ i +"].Name"));
-			jobTemplates.setCommandLine(context.stringValue("ListJobTemplatesResponse.Templates["+ i +"].CommandLine"));
-			jobTemplates.setRunasUser(context.stringValue("ListJobTemplatesResponse.Templates["+ i +"].RunasUser"));
-			jobTemplates.setPriority(context.integerValue("ListJobTemplatesResponse.Templates["+ i +"].Priority"));
-			jobTemplates.setPackagePath(context.stringValue("ListJobTemplatesResponse.Templates["+ i +"].PackagePath"));
-			jobTemplates.setStdoutRedirectPath(context.stringValue("ListJobTemplatesResponse.Templates["+ i +"].StdoutRedirectPath"));
-			jobTemplates.setStderrRedirectPath(context.stringValue("ListJobTemplatesResponse.Templates["+ i +"].StderrRedirectPath"));
-			jobTemplates.setReRunable(context.booleanValue("ListJobTemplatesResponse.Templates["+ i +"].ReRunable"));
-			jobTemplates.setArrayRequest(context.stringValue("ListJobTemplatesResponse.Templates["+ i +"].ArrayRequest"));
-			jobTemplates.setVariables(context.stringValue("ListJobTemplatesResponse.Templates["+ i +"].Variables"));
+			jobTemplates.setId(_ctx.stringValue("ListJobTemplatesResponse.Templates["+ i +"].Id"));
+			jobTemplates.setName(_ctx.stringValue("ListJobTemplatesResponse.Templates["+ i +"].Name"));
+			jobTemplates.setCommandLine(_ctx.stringValue("ListJobTemplatesResponse.Templates["+ i +"].CommandLine"));
+			jobTemplates.setRunasUser(_ctx.stringValue("ListJobTemplatesResponse.Templates["+ i +"].RunasUser"));
+			jobTemplates.setPriority(_ctx.integerValue("ListJobTemplatesResponse.Templates["+ i +"].Priority"));
+			jobTemplates.setPackagePath(_ctx.stringValue("ListJobTemplatesResponse.Templates["+ i +"].PackagePath"));
+			jobTemplates.setStdoutRedirectPath(_ctx.stringValue("ListJobTemplatesResponse.Templates["+ i +"].StdoutRedirectPath"));
+			jobTemplates.setStderrRedirectPath(_ctx.stringValue("ListJobTemplatesResponse.Templates["+ i +"].StderrRedirectPath"));
+			jobTemplates.setReRunable(_ctx.booleanValue("ListJobTemplatesResponse.Templates["+ i +"].ReRunable"));
+			jobTemplates.setArrayRequest(_ctx.stringValue("ListJobTemplatesResponse.Templates["+ i +"].ArrayRequest"));
+			jobTemplates.setVariables(_ctx.stringValue("ListJobTemplatesResponse.Templates["+ i +"].Variables"));
 
 			templates.add(jobTemplates);
 		}

@@ -15,16 +15,14 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class RecoverClusterRequest extends RpcAcsRequest<RecoverClusterResponse> {
-	
-	public RecoverClusterRequest() {
-		super("EHPC", "2018-04-12", "RecoverCluster", "ehs");
-	}
+	   
 
 	private String imageId;
 
@@ -34,11 +32,15 @@ public class RecoverClusterRequest extends RpcAcsRequest<RecoverClusterResponse>
 
 	private String accountType;
 
-	private String schedulerType;
-
 	private String clusterId;
 
 	private String imageOwnerAlias;
+
+	private String schedulerType;
+	public RecoverClusterRequest() {
+		super("EHPC", "2018-04-12", "RecoverCluster", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getImageId() {
 		return this.imageId;
@@ -84,17 +86,6 @@ public class RecoverClusterRequest extends RpcAcsRequest<RecoverClusterResponse>
 		}
 	}
 
-	public String getSchedulerType() {
-		return this.schedulerType;
-	}
-
-	public void setSchedulerType(String schedulerType) {
-		this.schedulerType = schedulerType;
-		if(schedulerType != null){
-			putQueryParameter("SchedulerType", schedulerType);
-		}
-	}
-
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -114,6 +105,17 @@ public class RecoverClusterRequest extends RpcAcsRequest<RecoverClusterResponse>
 		this.imageOwnerAlias = imageOwnerAlias;
 		if(imageOwnerAlias != null){
 			putQueryParameter("ImageOwnerAlias", imageOwnerAlias);
+		}
+	}
+
+	public String getSchedulerType() {
+		return this.schedulerType;
+	}
+
+	public void setSchedulerType(String schedulerType) {
+		this.schedulerType = schedulerType;
+		if(schedulerType != null){
+			putQueryParameter("SchedulerType", schedulerType);
 		}
 	}
 

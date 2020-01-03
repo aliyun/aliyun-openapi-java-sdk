@@ -117,6 +117,10 @@ public class ListClustersResponse extends AcsResponse {
 
 		private String ehpcVersion;
 
+		private String nodePrefix;
+
+		private String nodeSuffix;
+
 		private Managers managers;
 
 		private Computes computes;
@@ -133,26 +137,10 @@ public class ListClustersResponse extends AcsResponse {
 			this.id = id;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -299,6 +287,22 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setEhpcVersion(String ehpcVersion) {
 			this.ehpcVersion = ehpcVersion;
+		}
+
+		public String getNodePrefix() {
+			return this.nodePrefix;
+		}
+
+		public void setNodePrefix(String nodePrefix) {
+			this.nodePrefix = nodePrefix;
+		}
+
+		public String getNodeSuffix() {
+			return this.nodeSuffix;
+		}
+
+		public void setNodeSuffix(String nodeSuffix) {
+			this.nodeSuffix = nodeSuffix;
 		}
 
 		public Managers getManagers() {

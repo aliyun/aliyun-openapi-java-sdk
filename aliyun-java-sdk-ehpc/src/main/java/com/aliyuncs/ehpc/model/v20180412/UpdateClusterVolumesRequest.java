@@ -16,20 +16,22 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateClusterVolumesRequest extends RpcAcsRequest<UpdateClusterVolumesResponse> {
-	
-	public UpdateClusterVolumesRequest() {
-		super("EHPC", "2018-04-12", "UpdateClusterVolumes", "ehs");
-	}
+	   
 
 	private List<AdditionalVolumes> additionalVolumess;
 
 	private String clusterId;
+	public UpdateClusterVolumesRequest() {
+		super("EHPC", "2018-04-12", "UpdateClusterVolumes", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public List<AdditionalVolumes> getAdditionalVolumess() {
 		return this.additionalVolumess;

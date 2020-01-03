@@ -15,32 +15,23 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
-	
-	public ListUsersRequest() {
-		super("EHPC", "2018-04-12", "ListUsers", "ehs");
-	}
-
-	private Integer pageSize;
+	   
 
 	private String clusterId;
 
 	private Integer pageNumber;
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+	private Integer pageSize;
+	public ListUsersRequest() {
+		super("EHPC", "2018-04-12", "ListUsers", "ehs");
+		setMethod(MethodType.GET);
 	}
 
 	public String getClusterId() {
@@ -62,6 +53,17 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

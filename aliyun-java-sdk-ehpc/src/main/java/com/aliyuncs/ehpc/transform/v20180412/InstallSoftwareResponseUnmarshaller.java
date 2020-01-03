@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InstallSoftwareResponseUnmarshaller {
 
-	public static InstallSoftwareResponse unmarshall(InstallSoftwareResponse installSoftwareResponse, UnmarshallerContext context) {
+	public static InstallSoftwareResponse unmarshall(InstallSoftwareResponse installSoftwareResponse, UnmarshallerContext _ctx) {
 		
-		installSoftwareResponse.setRequestId(context.stringValue("InstallSoftwareResponse.RequestId"));
+		installSoftwareResponse.setRequestId(_ctx.stringValue("InstallSoftwareResponse.RequestId"));
 	 
 	 	return installSoftwareResponse;
 	}

@@ -16,20 +16,22 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyUserPasswordsRequest extends RpcAcsRequest<ModifyUserPasswordsResponse> {
-	
-	public ModifyUserPasswordsRequest() {
-		super("EHPC", "2018-04-12", "ModifyUserPasswords", "ehs");
-	}
+	   
 
 	private String clusterId;
 
 	private List<User> users;
+	public ModifyUserPasswordsRequest() {
+		super("EHPC", "2018-04-12", "ModifyUserPasswords", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getClusterId() {
 		return this.clusterId;

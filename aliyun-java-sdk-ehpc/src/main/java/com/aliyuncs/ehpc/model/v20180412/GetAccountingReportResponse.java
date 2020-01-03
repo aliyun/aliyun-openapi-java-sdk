@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ehpc.model.v20180412;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ehpc.transform.v20180412.GetAccountingReportResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -28,7 +29,7 @@ public class GetAccountingReportResponse extends AcsResponse {
 
 	private String metrics;
 
-	private String data;
+	private List<String> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,11 +47,11 @@ public class GetAccountingReportResponse extends AcsResponse {
 		this.metrics = metrics;
 	}
 
-	public String getData() {
+	public List<String> getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(List<String> data) {
 		this.data = data;
 	}
 

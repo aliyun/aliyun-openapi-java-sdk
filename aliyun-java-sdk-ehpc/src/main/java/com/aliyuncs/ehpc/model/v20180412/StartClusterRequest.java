@@ -15,18 +15,20 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class StartClusterRequest extends RpcAcsRequest<StartClusterResponse> {
-	
-	public StartClusterRequest() {
-		super("EHPC", "2018-04-12", "StartCluster", "ehs");
-	}
+	   
 
 	private String clusterId;
+	public StartClusterRequest() {
+		super("EHPC", "2018-04-12", "StartCluster", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getClusterId() {
 		return this.clusterId;

@@ -15,18 +15,20 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetAutoScaleConfigRequest extends RpcAcsRequest<GetAutoScaleConfigResponse> {
-	
-	public GetAutoScaleConfigRequest() {
-		super("EHPC", "2018-04-12", "GetAutoScaleConfig", "ehs");
-	}
+	   
 
 	private String clusterId;
+	public GetAutoScaleConfigRequest() {
+		super("EHPC", "2018-04-12", "GetAutoScaleConfig", "ehs");
+		setMethod(MethodType.GET);
+	}
 
 	public String getClusterId() {
 		return this.clusterId;

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyClusterAttributesResponseUnmarshaller {
 
-	public static ModifyClusterAttributesResponse unmarshall(ModifyClusterAttributesResponse modifyClusterAttributesResponse, UnmarshallerContext context) {
+	public static ModifyClusterAttributesResponse unmarshall(ModifyClusterAttributesResponse modifyClusterAttributesResponse, UnmarshallerContext _ctx) {
 		
-		modifyClusterAttributesResponse.setRequestId(context.stringValue("ModifyClusterAttributesResponse.RequestId"));
+		modifyClusterAttributesResponse.setRequestId(_ctx.stringValue("ModifyClusterAttributesResponse.RequestId"));
 	 
 	 	return modifyClusterAttributesResponse;
 	}
