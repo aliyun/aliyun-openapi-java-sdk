@@ -15,24 +15,23 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryConditionResponse> {
-	
-	public CheckRecoveryConditionRequest() {
-		super("Dds", "2015-12-01", "CheckRecoveryCondition", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
-
-	private String restoreTime;
 
 	private String databaseNames;
 
 	private String securityToken;
+
+	private String restoreTime;
 
 	private String resourceOwnerAccount;
 
@@ -43,6 +42,14 @@ public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryCo
 	private String sourceDBInstance;
 
 	private Long ownerId;
+	public CheckRecoveryConditionRequest() {
+		super("Dds", "2015-12-01", "CheckRecoveryCondition", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -52,17 +59,6 @@ public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryCo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getRestoreTime() {
-		return this.restoreTime;
-	}
-
-	public void setRestoreTime(String restoreTime) {
-		this.restoreTime = restoreTime;
-		if(restoreTime != null){
-			putQueryParameter("RestoreTime", restoreTime);
 		}
 	}
 
@@ -77,33 +73,25 @@ public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryCo
 		}
 	}
 
-	public String getBizSecurityToken() {
+	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
+	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getRestoreTime() {
+		return this.restoreTime;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setRestoreTime(String restoreTime) {
+		this.restoreTime = restoreTime;
+		if(restoreTime != null){
+			putQueryParameter("RestoreTime", restoreTime);
 		}
 	}
 

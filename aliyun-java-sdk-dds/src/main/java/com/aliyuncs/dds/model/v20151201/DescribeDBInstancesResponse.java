@@ -115,6 +115,8 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String destroyTime;
 
+		private String vpcAuthMode;
+
 		private List<MongosAttribute> mongosList;
 
 		private List<ShardAttribute> shardList;
@@ -145,26 +147,10 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.dBInstanceDescription = dBInstanceDescription;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -289,6 +275,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.destroyTime = destroyTime;
 		}
 
+		public String getVpcAuthMode() {
+			return this.vpcAuthMode;
+		}
+
+		public void setVpcAuthMode(String vpcAuthMode) {
+			this.vpcAuthMode = vpcAuthMode;
+		}
+
 		public List<MongosAttribute> getMongosList() {
 			return this.mongosList;
 		}
@@ -321,10 +315,6 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 			private String nodeClass;
 
-			private String connectSting;
-
-			private Integer port;
-
 			public String getNodeId() {
 				return this.nodeId;
 			}
@@ -347,22 +337,6 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 			public void setNodeClass(String nodeClass) {
 				this.nodeClass = nodeClass;
-			}
-
-			public String getConnectSting() {
-				return this.connectSting;
-			}
-
-			public void setConnectSting(String connectSting) {
-				this.connectSting = connectSting;
-			}
-
-			public Integer getPort() {
-				return this.port;
-			}
-
-			public void setPort(Integer port) {
-				this.port = port;
 			}
 		}
 

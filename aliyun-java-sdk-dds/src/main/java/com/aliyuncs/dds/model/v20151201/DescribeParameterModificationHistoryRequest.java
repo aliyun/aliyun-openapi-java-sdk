@@ -15,20 +15,25 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeParameterModificationHistoryRequest extends RpcAcsRequest<DescribeParameterModificationHistoryResponse> {
-	
-	public DescribeParameterModificationHistoryRequest() {
-		super("Dds", "2015-12-01", "DescribeParameterModificationHistory", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
+	private String startTime;
+
 	private String securityToken;
+
+	private String dBInstanceId;
+
+	private String nodeId;
 
 	private String resourceOwnerAccount;
 
@@ -36,13 +41,15 @@ public class DescribeParameterModificationHistoryRequest extends RpcAcsRequest<D
 
 	private String endTime;
 
-	private String dBInstanceId;
-
-	private String startTime;
-
 	private Long ownerId;
-
-	private String nodeId;
+	public DescribeParameterModificationHistoryRequest() {
+		super("Dds", "2015-12-01", "DescribeParameterModificationHistory", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,33 +62,47 @@ public class DescribeParameterModificationHistoryRequest extends RpcAcsRequest<D
 		}
 	}
 
-	public String getBizSecurityToken() {
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
+	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId);
 		}
 	}
 
@@ -118,28 +139,6 @@ public class DescribeParameterModificationHistoryRequest extends RpcAcsRequest<D
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -148,17 +147,6 @@ public class DescribeParameterModificationHistoryRequest extends RpcAcsRequest<D
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getNodeId() {
-		return this.nodeId;
-	}
-
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-		if(nodeId != null){
-			putQueryParameter("NodeId", nodeId);
 		}
 	}
 

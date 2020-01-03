@@ -15,22 +15,25 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeBackupDBsRequest extends RpcAcsRequest<DescribeBackupDBsResponse> {
-	
-	public DescribeBackupDBsRequest() {
-		super("Dds", "2015-12-01", "DescribeBackupDBs", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String restoreTime;
+	private Integer pageNumber;
 
 	private String securityToken;
+
+	private Integer pageSize;
+
+	private String restoreTime;
 
 	private String resourceOwnerAccount;
 
@@ -38,13 +41,17 @@ public class DescribeBackupDBsRequest extends RpcAcsRequest<DescribeBackupDBsRes
 
 	private String backupId;
 
-	private Integer pageSize;
-
 	private String sourceDBInstance;
 
 	private Long ownerId;
-
-	private Integer pageNumber;
+	public DescribeBackupDBsRequest() {
+		super("Dds", "2015-12-01", "DescribeBackupDBs", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -57,6 +64,39 @@ public class DescribeBackupDBsRequest extends RpcAcsRequest<DescribeBackupDBsRes
 		}
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getRestoreTime() {
 		return this.restoreTime;
 	}
@@ -65,36 +105,6 @@ public class DescribeBackupDBsRequest extends RpcAcsRequest<DescribeBackupDBsRes
 		this.restoreTime = restoreTime;
 		if(restoreTime != null){
 			putQueryParameter("RestoreTime", restoreTime);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -131,17 +141,6 @@ public class DescribeBackupDBsRequest extends RpcAcsRequest<DescribeBackupDBsRes
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getSourceDBInstance() {
 		return this.sourceDBInstance;
 	}
@@ -161,17 +160,6 @@ public class DescribeBackupDBsRequest extends RpcAcsRequest<DescribeBackupDBsRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

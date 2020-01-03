@@ -15,18 +15,23 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidResponse> {
-	
-	public TransformToPrePaidRequest() {
-		super("Dds", "2015-12-01", "TransformToPrePaid", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String couponNo;
+
+	private String securityToken;
+
+	private String businessInfo;
 
 	private Long period;
 
@@ -38,17 +43,19 @@ public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidR
 
 	private String ownerAccount;
 
-	private String couponNo;
-
 	private Long ownerId;
 
 	private String instanceId;
 
 	private String autoRenew;
-
-	private String securityToken;
-
-	private String businessInfo;
+	public TransformToPrePaidRequest() {
+		super("Dds", "2015-12-01", "TransformToPrePaid", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,6 +65,39 @@ public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCouponNo() {
+		return this.couponNo;
+	}
+
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getBusinessInfo() {
+		return this.businessInfo;
+	}
+
+	public void setBusinessInfo(String businessInfo) {
+		this.businessInfo = businessInfo;
+		if(businessInfo != null){
+			putQueryParameter("BusinessInfo", businessInfo);
 		}
 	}
 
@@ -116,17 +156,6 @@ public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidR
 		}
 	}
 
-	public String getCouponNo() {
-		return this.couponNo;
-	}
-
-	public void setCouponNo(String couponNo) {
-		this.couponNo = couponNo;
-		if(couponNo != null){
-			putQueryParameter("CouponNo", couponNo);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -157,47 +186,6 @@ public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidR
 		this.autoRenew = autoRenew;
 		if(autoRenew != null){
 			putQueryParameter("AutoRenew", autoRenew);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getBusinessInfo() {
-		return this.businessInfo;
-	}
-
-	public void setBusinessInfo(String businessInfo) {
-		this.businessInfo = businessInfo;
-		if(businessInfo != null){
-			putQueryParameter("BusinessInfo", businessInfo);
 		}
 	}
 

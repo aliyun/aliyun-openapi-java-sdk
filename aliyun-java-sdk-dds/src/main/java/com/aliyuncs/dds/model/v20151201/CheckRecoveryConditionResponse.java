@@ -26,7 +26,7 @@ public class CheckRecoveryConditionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer dBInstanceName;
+	private String dBInstanceName;
 
 	private Boolean isValid;
 
@@ -38,11 +38,11 @@ public class CheckRecoveryConditionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getDBInstanceName() {
+	public String getDBInstanceName() {
 		return this.dBInstanceName;
 	}
 
-	public void setDBInstanceName(Integer dBInstanceName) {
+	public void setDBInstanceName(String dBInstanceName) {
 		this.dBInstanceName = dBInstanceName;
 	}
 

@@ -24,17 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAccountsResponseUnmarshaller {
 
-	public static DescribeAccountsResponse unmarshall(DescribeAccountsResponse describeAccountsResponse, UnmarshallerContext context) {
+	public static DescribeAccountsResponse unmarshall(DescribeAccountsResponse describeAccountsResponse, UnmarshallerContext _ctx) {
 		
-		describeAccountsResponse.setRequestId(context.stringValue("DescribeAccountsResponse.RequestId"));
+		describeAccountsResponse.setRequestId(_ctx.stringValue("DescribeAccountsResponse.RequestId"));
 
 		List<Account> accounts = new ArrayList<Account>();
-		for (int i = 0; i < context.lengthValue("DescribeAccountsResponse.Accounts.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeAccountsResponse.Accounts.Length"); i++) {
 			Account account = new Account();
-			account.setDBInstanceId(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DBInstanceId"));
-			account.setAccountName(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountName"));
-			account.setAccountStatus(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountStatus"));
-			account.setAccountDescription(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountDescription"));
+			account.setDBInstanceId(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DBInstanceId"));
+			account.setAccountName(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountName"));
+			account.setAccountStatus(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountStatus"));
+			account.setAccountDescription(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountDescription"));
+			account.setCharacterType(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].CharacterType"));
 
 			accounts.add(account);
 		}

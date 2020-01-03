@@ -15,38 +15,23 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeIndexRecommendationRequest extends RpcAcsRequest<DescribeIndexRecommendationResponse> {
-	
-	public DescribeIndexRecommendationRequest() {
-		super("Dds", "2015-12-01", "DescribeIndexRecommendation", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
-	private String endTime;
-
-	private String collection;
-
 	private String startTime;
-
-	private String operationType;
-
-	private Long ownerId;
 
 	private Integer pageNumber;
 
 	private String database;
-
-	private String instanceId;
 
 	private String securityToken;
 
@@ -56,6 +41,28 @@ public class DescribeIndexRecommendationRequest extends RpcAcsRequest<DescribeIn
 
 	private String taskId;
 
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String endTime;
+
+	private String collection;
+
+	private String operationType;
+
+	private Long ownerId;
+
+	private String instanceId;
+	public DescribeIndexRecommendationRequest() {
+		super("Dds", "2015-12-01", "DescribeIndexRecommendation", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -64,6 +71,83 @@ public class DescribeIndexRecommendationRequest extends RpcAcsRequest<DescribeIn
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getDatabase() {
+		return this.database;
+	}
+
+	public void setDatabase(String database) {
+		this.database = database;
+		if(database != null){
+			putQueryParameter("Database", database);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId);
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
@@ -111,17 +195,6 @@ public class DescribeIndexRecommendationRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public String getOperationType() {
 		return this.operationType;
 	}
@@ -144,28 +217,6 @@ public class DescribeIndexRecommendationRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getDatabase() {
-		return this.database;
-	}
-
-	public void setDatabase(String database) {
-		this.database = database;
-		if(database != null){
-			putQueryParameter("Database", database);
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -174,69 +225,6 @@ public class DescribeIndexRecommendationRequest extends RpcAcsRequest<DescribeIn
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getNodeId() {
-		return this.nodeId;
-	}
-
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-		if(nodeId != null){
-			putQueryParameter("NodeId", nodeId);
-		}
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
 		}
 	}
 

@@ -15,20 +15,27 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
-	
-	public CreateNodeRequest() {
-		super("Dds", "2015-12-01", "CreateNode", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String nodeType;
+
+	private String clientToken;
+
+	private String nodeClass;
+
+	private String securityToken;
+
+	private String dBInstanceId;
 
 	private Boolean autoPay;
 
@@ -36,19 +43,19 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
-
 	private Integer nodeStorage;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String nodeClass;
-
-	private String securityToken;
-
-	private String dBInstanceId;
+	public CreateNodeRequest() {
+		super("Dds", "2015-12-01", "CreateNode", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -69,6 +76,50 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 		this.nodeType = nodeType;
 		if(nodeType != null){
 			putQueryParameter("NodeType", nodeType);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getNodeClass() {
+		return this.nodeClass;
+	}
+
+	public void setNodeClass(String nodeClass) {
+		this.nodeClass = nodeClass;
+		if(nodeClass != null){
+			putQueryParameter("NodeClass", nodeClass);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -105,17 +156,6 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public Integer getNodeStorage() {
 		return this.nodeStorage;
 	}
@@ -146,58 +186,6 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getNodeClass() {
-		return this.nodeClass;
-	}
-
-	public void setNodeClass(String nodeClass) {
-		this.nodeClass = nodeClass;
-		if(nodeClass != null){
-			putQueryParameter("NodeClass", nodeClass);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

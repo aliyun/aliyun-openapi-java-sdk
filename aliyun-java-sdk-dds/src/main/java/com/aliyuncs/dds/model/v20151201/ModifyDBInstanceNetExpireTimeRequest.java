@@ -15,32 +15,39 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDBInstanceNetExpireTimeResponse> {
-	
-	public ModifyDBInstanceNetExpireTimeRequest() {
-		super("Dds", "2015-12-01", "ModifyDBInstanceNetExpireTime", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
-
-	private String resourceOwnerAccount;
-
 	private String connectionString;
 
-	private String ownerAccount;
+	private Integer classicExpendExpiredDays;
+
+	private String securityToken;
 
 	private String dBInstanceId;
 
-	private Long ownerId;
+	private String resourceOwnerAccount;
 
-	private Integer classicExpendExpiredDays;
+	private String ownerAccount;
+
+	private Long ownerId;
+	public ModifyDBInstanceNetExpireTimeRequest() {
+		super("Dds", "2015-12-01", "ModifyDBInstanceNetExpireTime", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,47 +57,6 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -105,14 +71,25 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public Integer getClassicExpendExpiredDays() {
+		return this.classicExpendExpiredDays;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setClassicExpendExpiredDays(Integer classicExpendExpiredDays) {
+		this.classicExpendExpiredDays = classicExpendExpiredDays;
+		if(classicExpendExpiredDays != null){
+			putQueryParameter("ClassicExpendExpiredDays", classicExpendExpiredDays.toString());
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -127,6 +104,28 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -135,17 +134,6 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getClassicExpendExpiredDays() {
-		return this.classicExpendExpiredDays;
-	}
-
-	public void setClassicExpendExpiredDays(Integer classicExpendExpiredDays) {
-		this.classicExpendExpiredDays = classicExpendExpiredDays;
-		if(classicExpendExpiredDays != null){
-			putQueryParameter("ClassicExpendExpiredDays", classicExpendExpiredDays.toString());
 		}
 	}
 

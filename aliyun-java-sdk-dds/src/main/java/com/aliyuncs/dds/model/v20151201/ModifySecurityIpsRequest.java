@@ -15,28 +15,19 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsResponse> {
-	
-	public ModifySecurityIpsRequest() {
-		super("Dds", "2015-12-01", "ModifySecurityIps", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String modifyMode;
-
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
 	private String securityIps;
-
-	private Long ownerId;
 
 	private String securityIpGroupName;
 
@@ -44,7 +35,23 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 
 	private String dBInstanceId;
 
+	private String modifyMode;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
 	private String securityIpGroupAttribute;
+	public ModifySecurityIpsRequest() {
+		super("Dds", "2015-12-01", "ModifySecurityIps", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,6 +61,50 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSecurityIps() {
+		return this.securityIps;
+	}
+
+	public void setSecurityIps(String securityIps) {
+		this.securityIps = securityIps;
+		if(securityIps != null){
+			putQueryParameter("SecurityIps", securityIps);
+		}
+	}
+
+	public String getSecurityIpGroupName() {
+		return this.securityIpGroupName;
+	}
+
+	public void setSecurityIpGroupName(String securityIpGroupName) {
+		this.securityIpGroupName = securityIpGroupName;
+		if(securityIpGroupName != null){
+			putQueryParameter("SecurityIpGroupName", securityIpGroupName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -90,17 +141,6 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		}
 	}
 
-	public String getSecurityIps() {
-		return this.securityIps;
-	}
-
-	public void setSecurityIps(String securityIps) {
-		this.securityIps = securityIps;
-		if(securityIps != null){
-			putQueryParameter("SecurityIps", securityIps);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -109,58 +149,6 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityIpGroupName() {
-		return this.securityIpGroupName;
-	}
-
-	public void setSecurityIpGroupName(String securityIpGroupName) {
-		this.securityIpGroupName = securityIpGroupName;
-		if(securityIpGroupName != null){
-			putQueryParameter("SecurityIpGroupName", securityIpGroupName);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

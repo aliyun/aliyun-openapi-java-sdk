@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAvailableTimeRangeResponseUnmarshaller {
 
-	public static DescribeAvailableTimeRangeResponse unmarshall(DescribeAvailableTimeRangeResponse describeAvailableTimeRangeResponse, UnmarshallerContext context) {
+	public static DescribeAvailableTimeRangeResponse unmarshall(DescribeAvailableTimeRangeResponse describeAvailableTimeRangeResponse, UnmarshallerContext _ctx) {
 		
-		describeAvailableTimeRangeResponse.setRequestId(context.stringValue("DescribeAvailableTimeRangeResponse.RequestId"));
+		describeAvailableTimeRangeResponse.setRequestId(_ctx.stringValue("DescribeAvailableTimeRangeResponse.RequestId"));
 
 		List<TimeRangeItem> timeRange = new ArrayList<TimeRangeItem>();
-		for (int i = 0; i < context.lengthValue("DescribeAvailableTimeRangeResponse.TimeRange.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeAvailableTimeRangeResponse.TimeRange.Length"); i++) {
 			TimeRangeItem timeRangeItem = new TimeRangeItem();
-			timeRangeItem.setStartTime(context.stringValue("DescribeAvailableTimeRangeResponse.TimeRange["+ i +"].StartTime"));
-			timeRangeItem.setEndTime(context.stringValue("DescribeAvailableTimeRangeResponse.TimeRange["+ i +"].EndTime"));
-			timeRangeItem.setStatus(context.stringValue("DescribeAvailableTimeRangeResponse.TimeRange["+ i +"].Status"));
-			timeRangeItem.setNodeId(context.stringValue("DescribeAvailableTimeRangeResponse.TimeRange["+ i +"].NodeId"));
-			timeRangeItem.setTaskId(context.stringValue("DescribeAvailableTimeRangeResponse.TimeRange["+ i +"].TaskId"));
+			timeRangeItem.setStartTime(_ctx.stringValue("DescribeAvailableTimeRangeResponse.TimeRange["+ i +"].StartTime"));
+			timeRangeItem.setEndTime(_ctx.stringValue("DescribeAvailableTimeRangeResponse.TimeRange["+ i +"].EndTime"));
+			timeRangeItem.setStatus(_ctx.stringValue("DescribeAvailableTimeRangeResponse.TimeRange["+ i +"].Status"));
+			timeRangeItem.setNodeId(_ctx.stringValue("DescribeAvailableTimeRangeResponse.TimeRange["+ i +"].NodeId"));
+			timeRangeItem.setTaskId(_ctx.stringValue("DescribeAvailableTimeRangeResponse.TimeRange["+ i +"].TaskId"));
 
 			timeRange.add(timeRangeItem);
 		}

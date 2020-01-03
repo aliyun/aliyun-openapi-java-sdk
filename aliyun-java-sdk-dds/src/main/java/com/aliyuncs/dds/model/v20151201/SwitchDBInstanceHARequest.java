@@ -15,36 +15,39 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAResponse> {
-	
-	public SwitchDBInstanceHARequest() {
-		super("Dds", "2015-12-01", "SwitchDBInstanceHA", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String roleIds;
+
+	private String securityToken;
+
+	private String dBInstanceId;
+
+	private String nodeId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private Integer targetInstanceId;
-
-	private String securityToken;
-
-	private Integer switchType;
-
-	private String dBInstanceId;
-
-	private Integer sourceInstanceId;
-
-	private String nodeId;
+	public SwitchDBInstanceHARequest() {
+		super("Dds", "2015-12-01", "SwitchDBInstanceHA", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,6 +57,50 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getRoleIds() {
+		return this.roleIds;
+	}
+
+	public void setRoleIds(String roleIds) {
+		this.roleIds = roleIds;
+		if(roleIds != null){
+			putQueryParameter("RoleIds", roleIds);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId);
 		}
 	}
 
@@ -87,91 +134,6 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getTargetInstanceId() {
-		return this.targetInstanceId;
-	}
-
-	public void setTargetInstanceId(Integer targetInstanceId) {
-		this.targetInstanceId = targetInstanceId;
-		if(targetInstanceId != null){
-			putQueryParameter("TargetInstanceId", targetInstanceId.toString());
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Integer getSwitchType() {
-		return this.switchType;
-	}
-
-	public void setSwitchType(Integer switchType) {
-		this.switchType = switchType;
-		if(switchType != null){
-			putQueryParameter("SwitchType", switchType.toString());
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public Integer getSourceInstanceId() {
-		return this.sourceInstanceId;
-	}
-
-	public void setSourceInstanceId(Integer sourceInstanceId) {
-		this.sourceInstanceId = sourceInstanceId;
-		if(sourceInstanceId != null){
-			putQueryParameter("SourceInstanceId", sourceInstanceId.toString());
-		}
-	}
-
-	public String getNodeId() {
-		return this.nodeId;
-	}
-
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-		if(nodeId != null){
-			putQueryParameter("NodeId", nodeId);
 		}
 	}
 

@@ -20,11 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAuditPolicyResponseUnmarshaller {
 
-	public static DescribeAuditPolicyResponse unmarshall(DescribeAuditPolicyResponse describeAuditPolicyResponse, UnmarshallerContext context) {
+	public static DescribeAuditPolicyResponse unmarshall(DescribeAuditPolicyResponse describeAuditPolicyResponse, UnmarshallerContext _ctx) {
 		
-		describeAuditPolicyResponse.setRequestId(context.stringValue("DescribeAuditPolicyResponse.RequestId"));
-		describeAuditPolicyResponse.setLogAuditStatus(context.stringValue("DescribeAuditPolicyResponse.LogAuditStatus"));
-		describeAuditPolicyResponse.setStoragePeriod(context.integerValue("DescribeAuditPolicyResponse.StoragePeriod"));
+		describeAuditPolicyResponse.setRequestId(_ctx.stringValue("DescribeAuditPolicyResponse.RequestId"));
+		describeAuditPolicyResponse.setLogAuditStatus(_ctx.stringValue("DescribeAuditPolicyResponse.LogAuditStatus"));
 	 
 	 	return describeAuditPolicyResponse;
 	}

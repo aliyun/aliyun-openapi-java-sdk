@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDBInstanceSSLResponseUnmarshaller {
 
-	public static DescribeDBInstanceSSLResponse unmarshall(DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse, UnmarshallerContext context) {
+	public static DescribeDBInstanceSSLResponse unmarshall(DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse, UnmarshallerContext _ctx) {
 		
-		describeDBInstanceSSLResponse.setRequestId(context.stringValue("DescribeDBInstanceSSLResponse.RequestId"));
-		describeDBInstanceSSLResponse.setSSLExpiredTime(context.stringValue("DescribeDBInstanceSSLResponse.SSLExpiredTime"));
-		describeDBInstanceSSLResponse.setCertCommonName(context.stringValue("DescribeDBInstanceSSLResponse.CertCommonName"));
-		describeDBInstanceSSLResponse.setSSLStatus(context.stringValue("DescribeDBInstanceSSLResponse.SSLStatus"));
+		describeDBInstanceSSLResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceSSLResponse.RequestId"));
+		describeDBInstanceSSLResponse.setSSLExpiredTime(_ctx.stringValue("DescribeDBInstanceSSLResponse.SSLExpiredTime"));
+		describeDBInstanceSSLResponse.setCertCommonName(_ctx.stringValue("DescribeDBInstanceSSLResponse.CertCommonName"));
+		describeDBInstanceSSLResponse.setSSLStatus(_ctx.stringValue("DescribeDBInstanceSSLResponse.SSLStatus"));
 	 
 	 	return describeDBInstanceSSLResponse;
 	}

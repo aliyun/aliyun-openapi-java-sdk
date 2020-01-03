@@ -55,6 +55,8 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		private String accountDescription;
 
+		private String characterType;
+
 		public String getDBInstanceId() {
 			return this.dBInstanceId;
 		}
@@ -85,6 +87,14 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public void setAccountDescription(String accountDescription) {
 			this.accountDescription = accountDescription;
+		}
+
+		public String getCharacterType() {
+			return this.characterType;
+		}
+
+		public void setCharacterType(String characterType) {
+			this.characterType = characterType;
 		}
 	}
 

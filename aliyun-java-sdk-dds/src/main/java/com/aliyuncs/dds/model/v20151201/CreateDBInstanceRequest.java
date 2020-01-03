@@ -15,22 +15,19 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceResponse> {
-	
-	public CreateDBInstanceRequest() {
-		super("Dds", "2015-12-01", "CreateDBInstance", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private Integer dBInstanceStorage;
-
-	private String clientToken;
 
 	private String couponNo;
 
@@ -38,31 +35,15 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String networkType;
 
-	private String replicationFactor;
-
-	private String storageEngine;
-
 	private String resourceGroupId;
 
-	private String databaseNames;
-
 	private String securityToken;
-
-	private String engine;
 
 	private String dBInstanceDescription;
 
 	private String businessInfo;
 
 	private Integer period;
-
-	private String restoreTime;
-
-	private String resourceOwnerAccount;
-
-	private String srcDBInstanceId;
-
-	private String ownerAccount;
 
 	private String backupId;
 
@@ -74,15 +55,43 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String vSwitchId;
 
-	private String accountPassword;
-
 	private String autoRenew;
-
-	private String vpcId;
 
 	private String zoneId;
 
+	private String clientToken;
+
+	private String readonlyReplicas;
+
+	private String replicationFactor;
+
+	private String storageEngine;
+
+	private String databaseNames;
+
+	private String engine;
+
+	private String restoreTime;
+
+	private String resourceOwnerAccount;
+
+	private String srcDBInstanceId;
+
+	private String ownerAccount;
+
+	private String accountPassword;
+
+	private String vpcId;
+
 	private String chargeType;
+	public CreateDBInstanceRequest() {
+		super("Dds", "2015-12-01", "CreateDBInstance", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -103,17 +112,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBInstanceStorage = dBInstanceStorage;
 		if(dBInstanceStorage != null){
 			putQueryParameter("DBInstanceStorage", dBInstanceStorage.toString());
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -150,28 +148,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
-	public String getReplicationFactor() {
-		return this.replicationFactor;
-	}
-
-	public void setReplicationFactor(String replicationFactor) {
-		this.replicationFactor = replicationFactor;
-		if(replicationFactor != null){
-			putQueryParameter("ReplicationFactor", replicationFactor);
-		}
-	}
-
-	public String getStorageEngine() {
-		return this.storageEngine;
-	}
-
-	public void setStorageEngine(String storageEngine) {
-		this.storageEngine = storageEngine;
-		if(storageEngine != null){
-			putQueryParameter("StorageEngine", storageEngine);
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -183,55 +159,14 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
-	public String getDatabaseNames() {
-		return this.databaseNames;
-	}
-
-	public void setDatabaseNames(String databaseNames) {
-		this.databaseNames = databaseNames;
-		if(databaseNames != null){
-			putQueryParameter("DatabaseNames", databaseNames);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
 		}
 	}
 
@@ -265,50 +200,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
-		}
-	}
-
-	public String getRestoreTime() {
-		return this.restoreTime;
-	}
-
-	public void setRestoreTime(String restoreTime) {
-		this.restoreTime = restoreTime;
-		if(restoreTime != null){
-			putQueryParameter("RestoreTime", restoreTime);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getSrcDBInstanceId() {
-		return this.srcDBInstanceId;
-	}
-
-	public void setSrcDBInstanceId(String srcDBInstanceId) {
-		this.srcDBInstanceId = srcDBInstanceId;
-		if(srcDBInstanceId != null){
-			putQueryParameter("SrcDBInstanceId", srcDBInstanceId);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -367,17 +258,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
-	public String getAccountPassword() {
-		return this.accountPassword;
-	}
-
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
-		}
-	}
-
 	public String getAutoRenew() {
 		return this.autoRenew;
 	}
@@ -389,17 +269,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -408,6 +277,138 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getReadonlyReplicas() {
+		return this.readonlyReplicas;
+	}
+
+	public void setReadonlyReplicas(String readonlyReplicas) {
+		this.readonlyReplicas = readonlyReplicas;
+		if(readonlyReplicas != null){
+			putQueryParameter("ReadonlyReplicas", readonlyReplicas);
+		}
+	}
+
+	public String getReplicationFactor() {
+		return this.replicationFactor;
+	}
+
+	public void setReplicationFactor(String replicationFactor) {
+		this.replicationFactor = replicationFactor;
+		if(replicationFactor != null){
+			putQueryParameter("ReplicationFactor", replicationFactor);
+		}
+	}
+
+	public String getStorageEngine() {
+		return this.storageEngine;
+	}
+
+	public void setStorageEngine(String storageEngine) {
+		this.storageEngine = storageEngine;
+		if(storageEngine != null){
+			putQueryParameter("StorageEngine", storageEngine);
+		}
+	}
+
+	public String getDatabaseNames() {
+		return this.databaseNames;
+	}
+
+	public void setDatabaseNames(String databaseNames) {
+		this.databaseNames = databaseNames;
+		if(databaseNames != null){
+			putQueryParameter("DatabaseNames", databaseNames);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getRestoreTime() {
+		return this.restoreTime;
+	}
+
+	public void setRestoreTime(String restoreTime) {
+		this.restoreTime = restoreTime;
+		if(restoreTime != null){
+			putQueryParameter("RestoreTime", restoreTime);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getSrcDBInstanceId() {
+		return this.srcDBInstanceId;
+	}
+
+	public void setSrcDBInstanceId(String srcDBInstanceId) {
+		this.srcDBInstanceId = srcDBInstanceId;
+		if(srcDBInstanceId != null){
+			putQueryParameter("SrcDBInstanceId", srcDBInstanceId);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getAccountPassword() {
+		return this.accountPassword;
+	}
+
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+		if(accountPassword != null){
+			putQueryParameter("AccountPassword", accountPassword);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

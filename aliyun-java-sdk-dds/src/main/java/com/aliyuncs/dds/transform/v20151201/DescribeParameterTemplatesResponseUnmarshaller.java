@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeParameterTemplatesResponseUnmarshaller {
 
-	public static DescribeParameterTemplatesResponse unmarshall(DescribeParameterTemplatesResponse describeParameterTemplatesResponse, UnmarshallerContext context) {
+	public static DescribeParameterTemplatesResponse unmarshall(DescribeParameterTemplatesResponse describeParameterTemplatesResponse, UnmarshallerContext _ctx) {
 		
-		describeParameterTemplatesResponse.setRequestId(context.stringValue("DescribeParameterTemplatesResponse.RequestId"));
-		describeParameterTemplatesResponse.setEngine(context.stringValue("DescribeParameterTemplatesResponse.Engine"));
-		describeParameterTemplatesResponse.setEngineVersion(context.stringValue("DescribeParameterTemplatesResponse.EngineVersion"));
-		describeParameterTemplatesResponse.setParameterCount(context.stringValue("DescribeParameterTemplatesResponse.ParameterCount"));
+		describeParameterTemplatesResponse.setRequestId(_ctx.stringValue("DescribeParameterTemplatesResponse.RequestId"));
+		describeParameterTemplatesResponse.setEngine(_ctx.stringValue("DescribeParameterTemplatesResponse.Engine"));
+		describeParameterTemplatesResponse.setEngineVersion(_ctx.stringValue("DescribeParameterTemplatesResponse.EngineVersion"));
+		describeParameterTemplatesResponse.setParameterCount(_ctx.stringValue("DescribeParameterTemplatesResponse.ParameterCount"));
 
 		List<TemplateRecord> parameters = new ArrayList<TemplateRecord>();
-		for (int i = 0; i < context.lengthValue("DescribeParameterTemplatesResponse.Parameters.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeParameterTemplatesResponse.Parameters.Length"); i++) {
 			TemplateRecord templateRecord = new TemplateRecord();
-			templateRecord.setParameterName(context.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterName"));
-			templateRecord.setParameterValue(context.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterValue"));
-			templateRecord.setForceModify(context.booleanValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ForceModify"));
-			templateRecord.setForceRestart(context.booleanValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ForceRestart"));
-			templateRecord.setCheckingCode(context.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].CheckingCode"));
-			templateRecord.setParameterDescription(context.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterDescription"));
+			templateRecord.setParameterName(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterName"));
+			templateRecord.setParameterValue(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterValue"));
+			templateRecord.setForceModify(_ctx.booleanValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ForceModify"));
+			templateRecord.setForceRestart(_ctx.booleanValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ForceRestart"));
+			templateRecord.setCheckingCode(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].CheckingCode"));
+			templateRecord.setParameterDescription(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterDescription"));
 
 			parameters.add(templateRecord);
 		}

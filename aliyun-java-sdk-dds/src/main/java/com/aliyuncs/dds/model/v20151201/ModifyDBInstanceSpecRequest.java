@@ -15,34 +15,25 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceSpecResponse> {
-	
-	public ModifyDBInstanceSpecRequest() {
-		super("Dds", "2015-12-01", "ModifyDBInstanceSpec", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String dBInstanceStorage;
 
-	private Boolean autoPay;
-
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
+	private String readonlyReplicas;
 
 	private String couponNo;
 
-	private Long ownerId;
-
 	private String replicationFactor;
-
-	private String dBInstanceClass;
 
 	private String securityToken;
 
@@ -52,7 +43,25 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private String businessInfo;
 
+	private Boolean autoPay;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String dBInstanceClass;
+
 	private String orderType;
+	public ModifyDBInstanceSpecRequest() {
+		super("Dds", "2015-12-01", "ModifyDBInstanceSpec", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -76,36 +85,14 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
-	public Boolean getAutoPay() {
-		return this.autoPay;
+	public String getReadonlyReplicas() {
+		return this.readonlyReplicas;
 	}
 
-	public void setAutoPay(Boolean autoPay) {
-		this.autoPay = autoPay;
-		if(autoPay != null){
-			putQueryParameter("AutoPay", autoPay.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setReadonlyReplicas(String readonlyReplicas) {
+		this.readonlyReplicas = readonlyReplicas;
+		if(readonlyReplicas != null){
+			putQueryParameter("ReadonlyReplicas", readonlyReplicas);
 		}
 	}
 
@@ -120,17 +107,6 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getReplicationFactor() {
 		return this.replicationFactor;
 	}
@@ -142,40 +118,10 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
-	public String getDBInstanceClass() {
-		return this.dBInstanceClass;
-	}
-
-	public void setDBInstanceClass(String dBInstanceClass) {
-		this.dBInstanceClass = dBInstanceClass;
-		if(dBInstanceClass != null){
-			putQueryParameter("DBInstanceClass", dBInstanceClass);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -213,6 +159,61 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.businessInfo = businessInfo;
 		if(businessInfo != null){
 			putQueryParameter("BusinessInfo", businessInfo);
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
+	}
+
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		if(dBInstanceClass != null){
+			putQueryParameter("DBInstanceClass", dBInstanceClass);
 		}
 	}
 

@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeReplicaSetRoleResponseUnmarshaller {
 
-	public static DescribeReplicaSetRoleResponse unmarshall(DescribeReplicaSetRoleResponse describeReplicaSetRoleResponse, UnmarshallerContext context) {
+	public static DescribeReplicaSetRoleResponse unmarshall(DescribeReplicaSetRoleResponse describeReplicaSetRoleResponse, UnmarshallerContext _ctx) {
 		
-		describeReplicaSetRoleResponse.setRequestId(context.stringValue("DescribeReplicaSetRoleResponse.RequestId"));
-		describeReplicaSetRoleResponse.setDBInstanceId(context.stringValue("DescribeReplicaSetRoleResponse.DBInstanceId"));
+		describeReplicaSetRoleResponse.setRequestId(_ctx.stringValue("DescribeReplicaSetRoleResponse.RequestId"));
+		describeReplicaSetRoleResponse.setDBInstanceId(_ctx.stringValue("DescribeReplicaSetRoleResponse.DBInstanceId"));
 
 		List<ReplicaSet> replicaSets = new ArrayList<ReplicaSet>();
-		for (int i = 0; i < context.lengthValue("DescribeReplicaSetRoleResponse.ReplicaSets.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeReplicaSetRoleResponse.ReplicaSets.Length"); i++) {
 			ReplicaSet replicaSet = new ReplicaSet();
-			replicaSet.setReplicaSetRole(context.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ReplicaSetRole"));
-			replicaSet.setRoleId(context.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].RoleId"));
-			replicaSet.setConnectionDomain(context.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ConnectionDomain"));
-			replicaSet.setConnectionPort(context.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ConnectionPort"));
-			replicaSet.setExpiredTime(context.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ExpiredTime"));
-			replicaSet.setNetworkType(context.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].NetworkType"));
+			replicaSet.setReplicaSetRole(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ReplicaSetRole"));
+			replicaSet.setRoleId(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].RoleId"));
+			replicaSet.setConnectionDomain(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ConnectionDomain"));
+			replicaSet.setConnectionPort(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ConnectionPort"));
+			replicaSet.setExpiredTime(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ExpiredTime"));
+			replicaSet.setNetworkType(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].NetworkType"));
 
 			replicaSets.add(replicaSet);
 		}

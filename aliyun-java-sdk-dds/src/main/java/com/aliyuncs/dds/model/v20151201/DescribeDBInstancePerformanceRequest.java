@@ -15,30 +15,21 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<DescribeDBInstancePerformanceResponse> {
-	
-	public DescribeDBInstancePerformanceRequest() {
-		super("Dds", "2015-12-01", "DescribeDBInstancePerformance", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String roleId;
 
-	private String ownerAccount;
-
-	private String endTime;
-
 	private String startTime;
-
-	private Long ownerId;
 
 	private String replicaSetRole;
 
@@ -50,6 +41,22 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 
 	private String key;
 
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String endTime;
+
+	private Long ownerId;
+	public DescribeDBInstancePerformanceRequest() {
+		super("Dds", "2015-12-01", "DescribeDBInstancePerformance", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -58,17 +65,6 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -83,28 +79,6 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -113,17 +87,6 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -138,29 +101,10 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -198,6 +142,50 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		this.key = key;
 		if(key != null){
 			putQueryParameter("Key", key);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

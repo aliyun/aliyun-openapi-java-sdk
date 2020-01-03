@@ -15,30 +15,37 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceResponse> {
-	
-	public DeleteDBInstanceRequest() {
-		super("Dds", "2015-12-01", "DeleteDBInstance", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
-
-	private String resourceOwnerAccount;
-
 	private String clientToken;
 
-	private String ownerAccount;
+	private String securityToken;
 
 	private String dBInstanceId;
 
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
 	private Long ownerId;
+	public DeleteDBInstanceRequest() {
+		super("Dds", "2015-12-01", "DeleteDBInstance", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,47 +55,6 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -103,14 +69,14 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -122,6 +88,28 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

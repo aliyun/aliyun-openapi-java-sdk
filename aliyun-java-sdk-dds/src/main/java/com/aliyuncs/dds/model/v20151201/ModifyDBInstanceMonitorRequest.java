@@ -15,30 +15,37 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyDBInstanceMonitorRequest extends RpcAcsRequest<ModifyDBInstanceMonitorResponse> {
-	
-	public ModifyDBInstanceMonitorRequest() {
-		super("Dds", "2015-12-01", "ModifyDBInstanceMonitor", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String securityToken;
 
-	private String resourceOwnerAccount;
+	private String dBInstanceId;
 
-	private String granularity;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String dBInstanceId;
-
 	private Long ownerId;
+
+	private String granularity;
+	public ModifyDBInstanceMonitorRequest() {
+		super("Dds", "2015-12-01", "ModifyDBInstanceMonitor", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -51,66 +58,14 @@ public class ModifyDBInstanceMonitorRequest extends RpcAcsRequest<ModifyDBInstan
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getGranularity() {
-		return this.granularity;
-	}
-
-	public void setGranularity(String granularity) {
-		this.granularity = granularity;
-		if(granularity != null){
-			putQueryParameter("Granularity", granularity);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -125,6 +80,28 @@ public class ModifyDBInstanceMonitorRequest extends RpcAcsRequest<ModifyDBInstan
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -133,6 +110,17 @@ public class ModifyDBInstanceMonitorRequest extends RpcAcsRequest<ModifyDBInstan
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getGranularity() {
+		return this.granularity;
+	}
+
+	public void setGranularity(String granularity) {
+		this.granularity = granularity;
+		if(granularity != null){
+			putQueryParameter("Granularity", granularity);
 		}
 	}
 

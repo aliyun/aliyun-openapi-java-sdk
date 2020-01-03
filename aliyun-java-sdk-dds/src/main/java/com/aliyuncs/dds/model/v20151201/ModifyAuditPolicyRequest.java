@@ -15,32 +15,39 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyAuditPolicyRequest extends RpcAcsRequest<ModifyAuditPolicyResponse> {
-	
-	public ModifyAuditPolicyRequest() {
-		super("Dds", "2015-12-01", "ModifyAuditPolicy", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
-
-	private String auditStatus;
 
 	private Integer storagePeriod;
 
 	private String securityToken;
 
+	private String dBInstanceId;
+
+	private String auditStatus;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String dBInstanceId;
-
 	private Long ownerId;
+	public ModifyAuditPolicyRequest() {
+		super("Dds", "2015-12-01", "ModifyAuditPolicy", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,17 +57,6 @@ public class ModifyAuditPolicyRequest extends RpcAcsRequest<ModifyAuditPolicyRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getAuditStatus() {
-		return this.auditStatus;
-	}
-
-	public void setAuditStatus(String auditStatus) {
-		this.auditStatus = auditStatus;
-		if(auditStatus != null){
-			putQueryParameter("AuditStatus", auditStatus);
 		}
 	}
 
@@ -75,33 +71,36 @@ public class ModifyAuditPolicyRequest extends RpcAcsRequest<ModifyAuditPolicyRes
 		}
 	}
 
-	public String getBizSecurityToken() {
+	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
+	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getAuditStatus() {
+		return this.auditStatus;
+	}
+
+	public void setAuditStatus(String auditStatus) {
+		this.auditStatus = auditStatus;
+		if(auditStatus != null){
+			putQueryParameter("AuditStatus", auditStatus);
 		}
 	}
 
@@ -124,17 +123,6 @@ public class ModifyAuditPolicyRequest extends RpcAcsRequest<ModifyAuditPolicyRes
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

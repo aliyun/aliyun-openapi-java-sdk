@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSecurityIpsResponseUnmarshaller {
 
-	public static DescribeSecurityIpsResponse unmarshall(DescribeSecurityIpsResponse describeSecurityIpsResponse, UnmarshallerContext context) {
+	public static DescribeSecurityIpsResponse unmarshall(DescribeSecurityIpsResponse describeSecurityIpsResponse, UnmarshallerContext _ctx) {
 		
-		describeSecurityIpsResponse.setRequestId(context.stringValue("DescribeSecurityIpsResponse.RequestId"));
-		describeSecurityIpsResponse.setSecurityIps(context.stringValue("DescribeSecurityIpsResponse.SecurityIps"));
+		describeSecurityIpsResponse.setRequestId(_ctx.stringValue("DescribeSecurityIpsResponse.RequestId"));
+		describeSecurityIpsResponse.setSecurityIps(_ctx.stringValue("DescribeSecurityIpsResponse.SecurityIps"));
 
 		List<SecurityIpGroup> securityIpGroups = new ArrayList<SecurityIpGroup>();
-		for (int i = 0; i < context.lengthValue("DescribeSecurityIpsResponse.SecurityIpGroups.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityIpsResponse.SecurityIpGroups.Length"); i++) {
 			SecurityIpGroup securityIpGroup = new SecurityIpGroup();
-			securityIpGroup.setSecurityIpGroupName(context.stringValue("DescribeSecurityIpsResponse.SecurityIpGroups["+ i +"].SecurityIpGroupName"));
-			securityIpGroup.setSecurityIpGroupAttribute(context.stringValue("DescribeSecurityIpsResponse.SecurityIpGroups["+ i +"].SecurityIpGroupAttribute"));
-			securityIpGroup.setSecurityIpList(context.stringValue("DescribeSecurityIpsResponse.SecurityIpGroups["+ i +"].SecurityIpList"));
+			securityIpGroup.setSecurityIpGroupName(_ctx.stringValue("DescribeSecurityIpsResponse.SecurityIpGroups["+ i +"].SecurityIpGroupName"));
+			securityIpGroup.setSecurityIpGroupAttribute(_ctx.stringValue("DescribeSecurityIpsResponse.SecurityIpGroups["+ i +"].SecurityIpGroupAttribute"));
+			securityIpGroup.setSecurityIpList(_ctx.stringValue("DescribeSecurityIpsResponse.SecurityIpGroups["+ i +"].SecurityIpList"));
 
 			securityIpGroups.add(securityIpGroup);
 		}

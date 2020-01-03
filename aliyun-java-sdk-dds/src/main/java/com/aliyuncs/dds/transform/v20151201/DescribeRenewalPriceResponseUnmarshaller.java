@@ -27,29 +27,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRenewalPriceResponseUnmarshaller {
 
-	public static DescribeRenewalPriceResponse unmarshall(DescribeRenewalPriceResponse describeRenewalPriceResponse, UnmarshallerContext context) {
+	public static DescribeRenewalPriceResponse unmarshall(DescribeRenewalPriceResponse describeRenewalPriceResponse, UnmarshallerContext _ctx) {
 		
-		describeRenewalPriceResponse.setRequestId(context.stringValue("DescribeRenewalPriceResponse.RequestId"));
+		describeRenewalPriceResponse.setRequestId(_ctx.stringValue("DescribeRenewalPriceResponse.RequestId"));
 
 		Order order = new Order();
-		order.setOriginalAmount(context.floatValue("DescribeRenewalPriceResponse.Order.OriginalAmount"));
-		order.setTradeAmount(context.floatValue("DescribeRenewalPriceResponse.Order.TradeAmount"));
-		order.setDiscountAmount(context.floatValue("DescribeRenewalPriceResponse.Order.DiscountAmount"));
-		order.setCurrency(context.stringValue("DescribeRenewalPriceResponse.Order.Currency"));
+		order.setOriginalAmount(_ctx.floatValue("DescribeRenewalPriceResponse.Order.OriginalAmount"));
+		order.setTradeAmount(_ctx.floatValue("DescribeRenewalPriceResponse.Order.TradeAmount"));
+		order.setDiscountAmount(_ctx.floatValue("DescribeRenewalPriceResponse.Order.DiscountAmount"));
+		order.setCurrency(_ctx.stringValue("DescribeRenewalPriceResponse.Order.Currency"));
 
 		List<String> ruleIds1 = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeRenewalPriceResponse.Order.RuleIds.Length"); i++) {
-			ruleIds1.add(context.stringValue("DescribeRenewalPriceResponse.Order.RuleIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.Order.RuleIds.Length"); i++) {
+			ruleIds1.add(_ctx.stringValue("DescribeRenewalPriceResponse.Order.RuleIds["+ i +"]"));
 		}
 		order.setRuleIds1(ruleIds1);
 
 		List<Coupon> coupons = new ArrayList<Coupon>();
-		for (int i = 0; i < context.lengthValue("DescribeRenewalPriceResponse.Order.Coupons.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.Order.Coupons.Length"); i++) {
 			Coupon coupon = new Coupon();
-			coupon.setCouponNo(context.stringValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].CouponNo"));
-			coupon.setName(context.stringValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].Name"));
-			coupon.setDescription(context.stringValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].Description"));
-			coupon.setIsSelected(context.stringValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].IsSelected"));
+			coupon.setCouponNo(_ctx.stringValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].CouponNo"));
+			coupon.setName(_ctx.stringValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].Name"));
+			coupon.setDescription(_ctx.stringValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].Description"));
+			coupon.setIsSelected(_ctx.stringValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].IsSelected"));
 
 			coupons.add(coupon);
 		}
@@ -57,27 +57,27 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 		describeRenewalPriceResponse.setOrder(order);
 
 		List<Rule> rules = new ArrayList<Rule>();
-		for (int i = 0; i < context.lengthValue("DescribeRenewalPriceResponse.Rules.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleDescId(context.longValue("DescribeRenewalPriceResponse.Rules["+ i +"].RuleDescId"));
-			rule.setName(context.stringValue("DescribeRenewalPriceResponse.Rules["+ i +"].Name"));
-			rule.setTitle(context.stringValue("DescribeRenewalPriceResponse.Rules["+ i +"].Title"));
+			rule.setRuleDescId(_ctx.longValue("DescribeRenewalPriceResponse.Rules["+ i +"].RuleDescId"));
+			rule.setName(_ctx.stringValue("DescribeRenewalPriceResponse.Rules["+ i +"].Name"));
+			rule.setTitle(_ctx.stringValue("DescribeRenewalPriceResponse.Rules["+ i +"].Title"));
 
 			rules.add(rule);
 		}
 		describeRenewalPriceResponse.setRules(rules);
 
 		List<SubOrder> subOrders = new ArrayList<SubOrder>();
-		for (int i = 0; i < context.lengthValue("DescribeRenewalPriceResponse.SubOrders.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.SubOrders.Length"); i++) {
 			SubOrder subOrder = new SubOrder();
-			subOrder.setOriginalAmount(context.floatValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].OriginalAmount"));
-			subOrder.setTradeAmount(context.floatValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].TradeAmount"));
-			subOrder.setDiscountAmount(context.floatValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].DiscountAmount"));
-			subOrder.setInstanceId(context.stringValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].InstanceId"));
+			subOrder.setOriginalAmount(_ctx.floatValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].OriginalAmount"));
+			subOrder.setTradeAmount(_ctx.floatValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].TradeAmount"));
+			subOrder.setDiscountAmount(_ctx.floatValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].DiscountAmount"));
+			subOrder.setInstanceId(_ctx.stringValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].InstanceId"));
 
 			List<String> ruleIds = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].RuleIds.Length"); j++) {
-				ruleIds.add(context.stringValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].RuleIds["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].RuleIds.Length"); j++) {
+				ruleIds.add(_ctx.stringValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].RuleIds["+ j +"]"));
 			}
 			subOrder.setRuleIds(ruleIds);
 

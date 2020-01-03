@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBackupPolicyResponseUnmarshaller {
 
-	public static DescribeBackupPolicyResponse unmarshall(DescribeBackupPolicyResponse describeBackupPolicyResponse, UnmarshallerContext context) {
+	public static DescribeBackupPolicyResponse unmarshall(DescribeBackupPolicyResponse describeBackupPolicyResponse, UnmarshallerContext _ctx) {
 		
-		describeBackupPolicyResponse.setRequestId(context.stringValue("DescribeBackupPolicyResponse.RequestId"));
-		describeBackupPolicyResponse.setBackupRetentionPeriod(context.stringValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
-		describeBackupPolicyResponse.setPreferredBackupTime(context.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
-		describeBackupPolicyResponse.setPreferredBackupPeriod(context.stringValue("DescribeBackupPolicyResponse.PreferredBackupPeriod"));
-		describeBackupPolicyResponse.setPreferredNextBackupTime(context.stringValue("DescribeBackupPolicyResponse.PreferredNextBackupTime"));
+		describeBackupPolicyResponse.setRequestId(_ctx.stringValue("DescribeBackupPolicyResponse.RequestId"));
+		describeBackupPolicyResponse.setBackupRetentionPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
+		describeBackupPolicyResponse.setPreferredBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
+		describeBackupPolicyResponse.setPreferredBackupPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupPeriod"));
+		describeBackupPolicyResponse.setPreferredNextBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredNextBackupTime"));
 	 
 	 	return describeBackupPolicyResponse;
 	}

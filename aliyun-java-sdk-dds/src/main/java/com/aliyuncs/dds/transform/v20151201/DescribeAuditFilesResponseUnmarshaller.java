@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAuditFilesResponseUnmarshaller {
 
-	public static DescribeAuditFilesResponse unmarshall(DescribeAuditFilesResponse describeAuditFilesResponse, UnmarshallerContext context) {
+	public static DescribeAuditFilesResponse unmarshall(DescribeAuditFilesResponse describeAuditFilesResponse, UnmarshallerContext _ctx) {
 		
-		describeAuditFilesResponse.setRequestId(context.stringValue("DescribeAuditFilesResponse.RequestId"));
-		describeAuditFilesResponse.setTotalRecordCount(context.integerValue("DescribeAuditFilesResponse.TotalRecordCount"));
-		describeAuditFilesResponse.setPageNumber(context.integerValue("DescribeAuditFilesResponse.PageNumber"));
-		describeAuditFilesResponse.setPageRecordCount(context.integerValue("DescribeAuditFilesResponse.PageRecordCount"));
-		describeAuditFilesResponse.setDBInstanceId(context.stringValue("DescribeAuditFilesResponse.DBInstanceId"));
+		describeAuditFilesResponse.setRequestId(_ctx.stringValue("DescribeAuditFilesResponse.RequestId"));
+		describeAuditFilesResponse.setTotalRecordCount(_ctx.integerValue("DescribeAuditFilesResponse.TotalRecordCount"));
+		describeAuditFilesResponse.setPageNumber(_ctx.integerValue("DescribeAuditFilesResponse.PageNumber"));
+		describeAuditFilesResponse.setPageRecordCount(_ctx.integerValue("DescribeAuditFilesResponse.PageRecordCount"));
+		describeAuditFilesResponse.setDBInstanceId(_ctx.stringValue("DescribeAuditFilesResponse.DBInstanceId"));
 
 		List<LogFile> items = new ArrayList<LogFile>();
-		for (int i = 0; i < context.lengthValue("DescribeAuditFilesResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeAuditFilesResponse.Items.Length"); i++) {
 			LogFile logFile = new LogFile();
-			logFile.setFileID(context.integerValue("DescribeAuditFilesResponse.Items["+ i +"].FileID"));
-			logFile.setLogStatus(context.stringValue("DescribeAuditFilesResponse.Items["+ i +"].LogStatus"));
-			logFile.setLogStartTime(context.stringValue("DescribeAuditFilesResponse.Items["+ i +"].LogStartTime"));
-			logFile.setLogEndTime(context.stringValue("DescribeAuditFilesResponse.Items["+ i +"].LogEndTime"));
-			logFile.setLogDownloadURL(context.stringValue("DescribeAuditFilesResponse.Items["+ i +"].LogDownloadURL"));
-			logFile.setLogSize(context.longValue("DescribeAuditFilesResponse.Items["+ i +"].LogSize"));
+			logFile.setFileID(_ctx.integerValue("DescribeAuditFilesResponse.Items["+ i +"].FileID"));
+			logFile.setLogStatus(_ctx.stringValue("DescribeAuditFilesResponse.Items["+ i +"].LogStatus"));
+			logFile.setLogStartTime(_ctx.stringValue("DescribeAuditFilesResponse.Items["+ i +"].LogStartTime"));
+			logFile.setLogEndTime(_ctx.stringValue("DescribeAuditFilesResponse.Items["+ i +"].LogEndTime"));
+			logFile.setLogDownloadURL(_ctx.stringValue("DescribeAuditFilesResponse.Items["+ i +"].LogDownloadURL"));
+			logFile.setLogSize(_ctx.longValue("DescribeAuditFilesResponse.Items["+ i +"].LogSize"));
 
 			items.add(logFile);
 		}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpgradeDBInstanceKernelVersionResponseUnmarshaller {
 
-	public static UpgradeDBInstanceKernelVersionResponse unmarshall(UpgradeDBInstanceKernelVersionResponse upgradeDBInstanceKernelVersionResponse, UnmarshallerContext context) {
+	public static UpgradeDBInstanceKernelVersionResponse unmarshall(UpgradeDBInstanceKernelVersionResponse upgradeDBInstanceKernelVersionResponse, UnmarshallerContext _ctx) {
 		
-		upgradeDBInstanceKernelVersionResponse.setRequestId(context.stringValue("UpgradeDBInstanceKernelVersionResponse.RequestId"));
+		upgradeDBInstanceKernelVersionResponse.setRequestId(_ctx.stringValue("UpgradeDBInstanceKernelVersionResponse.RequestId"));
 	 
 	 	return upgradeDBInstanceKernelVersionResponse;
 	}

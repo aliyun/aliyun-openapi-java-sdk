@@ -24,21 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeShardingNetworkAddressResponseUnmarshaller {
 
-	public static DescribeShardingNetworkAddressResponse unmarshall(DescribeShardingNetworkAddressResponse describeShardingNetworkAddressResponse, UnmarshallerContext context) {
+	public static DescribeShardingNetworkAddressResponse unmarshall(DescribeShardingNetworkAddressResponse describeShardingNetworkAddressResponse, UnmarshallerContext _ctx) {
 		
-		describeShardingNetworkAddressResponse.setRequestId(context.stringValue("DescribeShardingNetworkAddressResponse.RequestId"));
+		describeShardingNetworkAddressResponse.setRequestId(_ctx.stringValue("DescribeShardingNetworkAddressResponse.RequestId"));
 
 		List<NetworkAddress> networkAddresses = new ArrayList<NetworkAddress>();
-		for (int i = 0; i < context.lengthValue("DescribeShardingNetworkAddressResponse.NetworkAddresses.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeShardingNetworkAddressResponse.NetworkAddresses.Length"); i++) {
 			NetworkAddress networkAddress = new NetworkAddress();
-			networkAddress.setNetworkAddress(context.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].NetworkAddress"));
-			networkAddress.setIPAddress(context.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].IPAddress"));
-			networkAddress.setNetworkType(context.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].NetworkType"));
-			networkAddress.setPort(context.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].Port"));
-			networkAddress.setVPCId(context.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].VPCId"));
-			networkAddress.setVswitchId(context.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].VswitchId"));
-			networkAddress.setNodeId(context.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].NodeId"));
-			networkAddress.setExpiredTime(context.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].ExpiredTime"));
+			networkAddress.setNetworkAddress(_ctx.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].NetworkAddress"));
+			networkAddress.setIPAddress(_ctx.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].IPAddress"));
+			networkAddress.setNetworkType(_ctx.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].NetworkType"));
+			networkAddress.setPort(_ctx.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].Port"));
+			networkAddress.setVPCId(_ctx.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].VPCId"));
+			networkAddress.setVswitchId(_ctx.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].VswitchId"));
+			networkAddress.setNodeId(_ctx.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].NodeId"));
+			networkAddress.setExpiredTime(_ctx.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].ExpiredTime"));
+			networkAddress.setNodeType(_ctx.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].NodeType"));
+			networkAddress.setRole(_ctx.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].Role"));
 
 			networkAddresses.add(networkAddress);
 		}

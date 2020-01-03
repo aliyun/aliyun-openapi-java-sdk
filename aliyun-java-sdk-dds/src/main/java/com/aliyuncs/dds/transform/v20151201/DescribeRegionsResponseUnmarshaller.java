@@ -25,21 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRegionsResponseUnmarshaller {
 
-	public static DescribeRegionsResponse unmarshall(DescribeRegionsResponse describeRegionsResponse, UnmarshallerContext context) {
+	public static DescribeRegionsResponse unmarshall(DescribeRegionsResponse describeRegionsResponse, UnmarshallerContext _ctx) {
 		
-		describeRegionsResponse.setRequestId(context.stringValue("DescribeRegionsResponse.RequestId"));
+		describeRegionsResponse.setRequestId(_ctx.stringValue("DescribeRegionsResponse.RequestId"));
 
 		List<DdsRegion> regions = new ArrayList<DdsRegion>();
-		for (int i = 0; i < context.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {
 			DdsRegion ddsRegion = new DdsRegion();
-			ddsRegion.setRegionId(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
-			ddsRegion.setZoneIds(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].ZoneIds"));
+			ddsRegion.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
 
 			List<Zone> zones = new ArrayList<Zone>();
-			for (int j = 0; j < context.lengthValue("DescribeRegionsResponse.Regions["+ i +"].Zones.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeRegionsResponse.Regions["+ i +"].Zones.Length"); j++) {
 				Zone zone = new Zone();
-				zone.setZoneId(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].Zones["+ j +"].ZoneId"));
-				zone.setVpcEnabled(context.booleanValue("DescribeRegionsResponse.Regions["+ i +"].Zones["+ j +"].VpcEnabled"));
+				zone.setZoneId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].Zones["+ j +"].ZoneId"));
+				zone.setVpcEnabled(_ctx.booleanValue("DescribeRegionsResponse.Regions["+ i +"].Zones["+ j +"].VpcEnabled"));
 
 				zones.add(zone);
 			}

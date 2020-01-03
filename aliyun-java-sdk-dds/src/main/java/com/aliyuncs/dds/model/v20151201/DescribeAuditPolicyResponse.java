@@ -28,8 +28,6 @@ public class DescribeAuditPolicyResponse extends AcsResponse {
 
 	private String logAuditStatus;
 
-	private Integer storagePeriod;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -44,14 +42,6 @@ public class DescribeAuditPolicyResponse extends AcsResponse {
 
 	public void setLogAuditStatus(String logAuditStatus) {
 		this.logAuditStatus = logAuditStatus;
-	}
-
-	public Integer getStoragePeriod() {
-		return this.storagePeriod;
-	}
-
-	public void setStoragePeriod(Integer storagePeriod) {
-		this.storagePeriod = storagePeriod;
 	}
 
 	@Override

@@ -15,42 +15,38 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class MigrateAvailableZoneRequest extends RpcAcsRequest<MigrateAvailableZoneResponse> {
-	
-	public MigrateAvailableZoneRequest() {
-		super("Dds", "2015-12-01", "MigrateAvailableZone", "Dds");
-	}
-
-	private String vswitch;
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String effectiveTime;
-
-	private String ownerAccount;
-
-	private String zoneId;
 
 	private String dBInstanceId;
 
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
 	private Long ownerId;
 
-	public String getVswitch() {
-		return this.vswitch;
-	}
+	private String vswitch;
 
-	public void setVswitch(String vswitch) {
-		this.vswitch = vswitch;
-		if(vswitch != null){
-			putQueryParameter("Vswitch", vswitch);
-		}
+	private String zoneId;
+	public MigrateAvailableZoneRequest() {
+		super("Dds", "2015-12-01", "MigrateAvailableZone", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -61,17 +57,6 @@ public class MigrateAvailableZoneRequest extends RpcAcsRequest<MigrateAvailableZ
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -86,28 +71,6 @@ public class MigrateAvailableZoneRequest extends RpcAcsRequest<MigrateAvailableZ
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -119,6 +82,28 @@ public class MigrateAvailableZoneRequest extends RpcAcsRequest<MigrateAvailableZ
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -127,6 +112,28 @@ public class MigrateAvailableZoneRequest extends RpcAcsRequest<MigrateAvailableZ
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVswitch() {
+		return this.vswitch;
+	}
+
+	public void setVswitch(String vswitch) {
+		this.vswitch = vswitch;
+		if(vswitch != null){
+			putQueryParameter("Vswitch", vswitch);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

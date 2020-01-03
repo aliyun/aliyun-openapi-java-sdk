@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateRecommendationTaskResponseUnmarshaller {
 
-	public static CreateRecommendationTaskResponse unmarshall(CreateRecommendationTaskResponse createRecommendationTaskResponse, UnmarshallerContext context) {
+	public static CreateRecommendationTaskResponse unmarshall(CreateRecommendationTaskResponse createRecommendationTaskResponse, UnmarshallerContext _ctx) {
 		
-		createRecommendationTaskResponse.setRequestId(context.stringValue("CreateRecommendationTaskResponse.RequestId"));
+		createRecommendationTaskResponse.setRequestId(_ctx.stringValue("CreateRecommendationTaskResponse.RequestId"));
 	 
 	 	return createRecommendationTaskResponse;
 	}

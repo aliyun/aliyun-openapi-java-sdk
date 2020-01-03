@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RenewDBInstanceResponseUnmarshaller {
 
-	public static RenewDBInstanceResponse unmarshall(RenewDBInstanceResponse renewDBInstanceResponse, UnmarshallerContext context) {
+	public static RenewDBInstanceResponse unmarshall(RenewDBInstanceResponse renewDBInstanceResponse, UnmarshallerContext _ctx) {
 		
-		renewDBInstanceResponse.setRequestId(context.stringValue("RenewDBInstanceResponse.RequestId"));
-		renewDBInstanceResponse.setOrderId(context.stringValue("RenewDBInstanceResponse.OrderId"));
+		renewDBInstanceResponse.setRequestId(_ctx.stringValue("RenewDBInstanceResponse.RequestId"));
+		renewDBInstanceResponse.setOrderId(_ctx.stringValue("RenewDBInstanceResponse.OrderId"));
 	 
 	 	return renewDBInstanceResponse;
 	}

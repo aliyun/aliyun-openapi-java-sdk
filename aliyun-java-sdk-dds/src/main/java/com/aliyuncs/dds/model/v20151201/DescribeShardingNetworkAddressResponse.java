@@ -63,6 +63,10 @@ public class DescribeShardingNetworkAddressResponse extends AcsResponse {
 
 		private String expiredTime;
 
+		private String nodeType;
+
+		private String role;
+
 		public String getNetworkAddress() {
 			return this.networkAddress;
 		}
@@ -125,6 +129,22 @@ public class DescribeShardingNetworkAddressResponse extends AcsResponse {
 
 		public void setExpiredTime(String expiredTime) {
 			this.expiredTime = expiredTime;
+		}
+
+		public String getNodeType() {
+			return this.nodeType;
+		}
+
+		public void setNodeType(String nodeType) {
+			this.nodeType = nodeType;
+		}
+
+		public String getRole() {
+			return this.role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
 		}
 	}
 

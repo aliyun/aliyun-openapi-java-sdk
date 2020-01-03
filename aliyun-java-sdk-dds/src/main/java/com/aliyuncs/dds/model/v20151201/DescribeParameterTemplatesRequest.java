@@ -15,30 +15,37 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribeParameterTemplatesResponse> {
-	
-	public DescribeParameterTemplatesRequest() {
-		super("Dds", "2015-12-01", "DescribeParameterTemplates", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
+	private String engineVersion;
 
-	private String resourceOwnerAccount;
+	private String securityToken;
 
 	private String engine;
 
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
 
-	private String engineVersion;
-
 	private Long ownerId;
+	public DescribeParameterTemplatesRequest() {
+		super("Dds", "2015-12-01", "DescribeParameterTemplates", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -51,44 +58,25 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
+	public String getEngineVersion() {
+		return this.engineVersion;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -103,6 +91,17 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -111,17 +110,6 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getEngineVersion() {
-		return this.engineVersion;
-	}
-
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
-		if(engineVersion != null){
-			putQueryParameter("EngineVersion", engineVersion);
 		}
 	}
 

@@ -15,28 +15,35 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeSecurityIpsRequest extends RpcAcsRequest<DescribeSecurityIpsResponse> {
-	
-	public DescribeSecurityIpsRequest() {
-		super("Dds", "2015-12-01", "DescribeSecurityIps", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String securityToken;
 
+	private String dBInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String dBInstanceId;
-
 	private Long ownerId;
+	public DescribeSecurityIpsRequest() {
+		super("Dds", "2015-12-01", "DescribeSecurityIps", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,33 +56,25 @@ public class DescribeSecurityIpsRequest extends RpcAcsRequest<DescribeSecurityIp
 		}
 	}
 
-	public String getBizSecurityToken() {
+	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
+	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -98,17 +97,6 @@ public class DescribeSecurityIpsRequest extends RpcAcsRequest<DescribeSecurityIp
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

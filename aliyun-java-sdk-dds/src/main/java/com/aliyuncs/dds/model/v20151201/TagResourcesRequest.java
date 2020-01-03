@@ -16,18 +16,19 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
-	
-	public TagResourcesRequest() {
-		super("Dds", "2015-12-01", "TagResources", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private List<Tag> tags;
 
 	private List<String> resourceIds;
 
@@ -35,11 +36,17 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 
 	private String ownerAccount;
 
-	private List<Tag> tags;
-
 	private Long ownerId;
 
 	private String resourceType;
+	public TagResourcesRequest() {
+		super("Dds", "2015-12-01", "TagResources", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,6 +57,20 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public List<String> getResourceIds() {
@@ -85,20 +106,6 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
 		}
-	}
-
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
 	}
 
 	public Long getOwnerId() {

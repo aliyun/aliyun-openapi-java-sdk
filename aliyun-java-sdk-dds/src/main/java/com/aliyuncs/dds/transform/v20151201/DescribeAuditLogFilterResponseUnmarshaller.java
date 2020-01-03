@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAuditLogFilterResponseUnmarshaller {
 
-	public static DescribeAuditLogFilterResponse unmarshall(DescribeAuditLogFilterResponse describeAuditLogFilterResponse, UnmarshallerContext context) {
+	public static DescribeAuditLogFilterResponse unmarshall(DescribeAuditLogFilterResponse describeAuditLogFilterResponse, UnmarshallerContext _ctx) {
 		
-		describeAuditLogFilterResponse.setRequestId(context.stringValue("DescribeAuditLogFilterResponse.RequestId"));
-		describeAuditLogFilterResponse.setFilter(context.stringValue("DescribeAuditLogFilterResponse.Filter"));
-		describeAuditLogFilterResponse.setRoleType(context.stringValue("DescribeAuditLogFilterResponse.RoleType"));
+		describeAuditLogFilterResponse.setRequestId(_ctx.stringValue("DescribeAuditLogFilterResponse.RequestId"));
+		describeAuditLogFilterResponse.setFilter(_ctx.stringValue("DescribeAuditLogFilterResponse.Filter"));
+		describeAuditLogFilterResponse.setRoleType(_ctx.stringValue("DescribeAuditLogFilterResponse.RoleType"));
 	 
 	 	return describeAuditLogFilterResponse;
 	}

@@ -15,34 +15,41 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
-	
-	public CreateAccountRequest() {
-		super("Dds", "2015-12-01", "CreateAccount", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String accountPassword;
+	private String accountDescription;
 
 	private String accountName;
 
 	private String securityToken;
 
+	private String dBInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String dBInstanceId;
-
 	private Long ownerId;
 
-	private String accountDescription;
+	private String accountPassword;
+	public CreateAccountRequest() {
+		super("Dds", "2015-12-01", "CreateAccount", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,14 +62,14 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getAccountPassword() {
-		return this.accountPassword;
+	public String getAccountDescription() {
+		return this.accountDescription;
 	}
 
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
+	public void setAccountDescription(String accountDescription) {
+		this.accountDescription = accountDescription;
+		if(accountDescription != null){
+			putQueryParameter("AccountDescription", accountDescription);
 		}
 	}
 
@@ -77,33 +84,25 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getBizSecurityToken() {
+	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
+	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -129,17 +128,6 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -151,14 +139,14 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getAccountDescription() {
-		return this.accountDescription;
+	public String getAccountPassword() {
+		return this.accountPassword;
 	}
 
-	public void setAccountDescription(String accountDescription) {
-		this.accountDescription = accountDescription;
-		if(accountDescription != null){
-			putQueryParameter("AccountDescription", accountDescription);
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+		if(accountPassword != null){
+			putQueryParameter("AccountPassword", accountPassword);
 		}
 	}
 

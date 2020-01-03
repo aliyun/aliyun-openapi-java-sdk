@@ -15,18 +15,19 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeKernelReleaseNotesRequest extends RpcAcsRequest<DescribeKernelReleaseNotesResponse> {
-	
-	public DescribeKernelReleaseNotesRequest() {
-		super("Dds", "2015-12-01", "DescribeKernelReleaseNotes", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String kernelVersion;
 
 	private String securityToken;
 
@@ -35,8 +36,14 @@ public class DescribeKernelReleaseNotesRequest extends RpcAcsRequest<DescribeKer
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String kernelVersion;
+	public DescribeKernelReleaseNotesRequest() {
+		super("Dds", "2015-12-01", "DescribeKernelReleaseNotes", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,29 +56,21 @@ public class DescribeKernelReleaseNotesRequest extends RpcAcsRequest<DescribeKer
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
+	public String getKernelVersion() {
+		return this.kernelVersion;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setKernelVersion(String kernelVersion) {
+		this.kernelVersion = kernelVersion;
+		if(kernelVersion != null){
+			putQueryParameter("KernelVersion", kernelVersion);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -109,17 +108,6 @@ public class DescribeKernelReleaseNotesRequest extends RpcAcsRequest<DescribeKer
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getKernelVersion() {
-		return this.kernelVersion;
-	}
-
-	public void setKernelVersion(String kernelVersion) {
-		this.kernelVersion = kernelVersion;
-		if(kernelVersion != null){
-			putQueryParameter("KernelVersion", kernelVersion);
 		}
 	}
 

@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSlowLogRecordsResponseUnmarshaller {
 
-	public static DescribeSlowLogRecordsResponse unmarshall(DescribeSlowLogRecordsResponse describeSlowLogRecordsResponse, UnmarshallerContext context) {
+	public static DescribeSlowLogRecordsResponse unmarshall(DescribeSlowLogRecordsResponse describeSlowLogRecordsResponse, UnmarshallerContext _ctx) {
 		
-		describeSlowLogRecordsResponse.setRequestId(context.stringValue("DescribeSlowLogRecordsResponse.RequestId"));
-		describeSlowLogRecordsResponse.setEngine(context.stringValue("DescribeSlowLogRecordsResponse.Engine"));
-		describeSlowLogRecordsResponse.setTotalRecordCount(context.integerValue("DescribeSlowLogRecordsResponse.TotalRecordCount"));
-		describeSlowLogRecordsResponse.setPageNumber(context.integerValue("DescribeSlowLogRecordsResponse.PageNumber"));
-		describeSlowLogRecordsResponse.setPageRecordCount(context.integerValue("DescribeSlowLogRecordsResponse.PageRecordCount"));
+		describeSlowLogRecordsResponse.setRequestId(_ctx.stringValue("DescribeSlowLogRecordsResponse.RequestId"));
+		describeSlowLogRecordsResponse.setEngine(_ctx.stringValue("DescribeSlowLogRecordsResponse.Engine"));
+		describeSlowLogRecordsResponse.setTotalRecordCount(_ctx.integerValue("DescribeSlowLogRecordsResponse.TotalRecordCount"));
+		describeSlowLogRecordsResponse.setPageNumber(_ctx.integerValue("DescribeSlowLogRecordsResponse.PageNumber"));
+		describeSlowLogRecordsResponse.setPageRecordCount(_ctx.integerValue("DescribeSlowLogRecordsResponse.PageRecordCount"));
 
 		List<LogRecords> items = new ArrayList<LogRecords>();
-		for (int i = 0; i < context.lengthValue("DescribeSlowLogRecordsResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSlowLogRecordsResponse.Items.Length"); i++) {
 			LogRecords logRecords = new LogRecords();
-			logRecords.setHostAddress(context.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].HostAddress"));
-			logRecords.setDBName(context.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DBName"));
-			logRecords.setSQLText(context.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].SQLText"));
-			logRecords.setQueryTimes(context.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueryTimes"));
-			logRecords.setDocsExamined(context.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DocsExamined"));
-			logRecords.setKeysExamined(context.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].KeysExamined"));
-			logRecords.setReturnRowCounts(context.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));
-			logRecords.setExecutionStartTime(context.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ExecutionStartTime"));
-			logRecords.setAccountName(context.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].AccountName"));
+			logRecords.setHostAddress(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].HostAddress"));
+			logRecords.setDBName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DBName"));
+			logRecords.setSQLText(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].SQLText"));
+			logRecords.setQueryTimes(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueryTimes"));
+			logRecords.setDocsExamined(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DocsExamined"));
+			logRecords.setKeysExamined(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].KeysExamined"));
+			logRecords.setReturnRowCounts(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));
+			logRecords.setExecutionStartTime(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ExecutionStartTime"));
+			logRecords.setAccountName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].AccountName"));
 
 			items.add(logRecords);
 		}

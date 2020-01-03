@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBackupDBsResponseUnmarshaller {
 
-	public static DescribeBackupDBsResponse unmarshall(DescribeBackupDBsResponse describeBackupDBsResponse, UnmarshallerContext context) {
+	public static DescribeBackupDBsResponse unmarshall(DescribeBackupDBsResponse describeBackupDBsResponse, UnmarshallerContext _ctx) {
 		
-		describeBackupDBsResponse.setRequestId(context.stringValue("DescribeBackupDBsResponse.RequestId"));
-		describeBackupDBsResponse.setPageNumber(context.integerValue("DescribeBackupDBsResponse.PageNumber"));
-		describeBackupDBsResponse.setPageSize(context.integerValue("DescribeBackupDBsResponse.PageSize"));
-		describeBackupDBsResponse.setTotalCount(context.integerValue("DescribeBackupDBsResponse.TotalCount"));
+		describeBackupDBsResponse.setRequestId(_ctx.stringValue("DescribeBackupDBsResponse.RequestId"));
+		describeBackupDBsResponse.setPageNumber(_ctx.integerValue("DescribeBackupDBsResponse.PageNumber"));
+		describeBackupDBsResponse.setPageSize(_ctx.integerValue("DescribeBackupDBsResponse.PageSize"));
+		describeBackupDBsResponse.setTotalCount(_ctx.integerValue("DescribeBackupDBsResponse.TotalCount"));
 
 		List<Database> databases = new ArrayList<Database>();
-		for (int i = 0; i < context.lengthValue("DescribeBackupDBsResponse.Databases.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeBackupDBsResponse.Databases.Length"); i++) {
 			Database database = new Database();
-			database.setDBName(context.stringValue("DescribeBackupDBsResponse.Databases["+ i +"].DBName"));
+			database.setDBName(_ctx.stringValue("DescribeBackupDBsResponse.Databases["+ i +"].DBName"));
 
 			databases.add(database);
 		}

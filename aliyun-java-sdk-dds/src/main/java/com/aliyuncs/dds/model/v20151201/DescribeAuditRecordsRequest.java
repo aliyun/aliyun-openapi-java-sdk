@@ -15,36 +15,25 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditRecordsResponse> {
-	
-	public DescribeAuditRecordsRequest() {
-		super("Dds", "2015-12-01", "DescribeAuditRecords", "Dds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
-	private String endTime;
-
 	private String startTime;
-
-	private Long ownerId;
 
 	private String queryKeywords;
 
 	private Integer pageNumber;
 
 	private String database;
-
-	private String form;
 
 	private String securityToken;
 
@@ -54,7 +43,25 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 
 	private String nodeId;
 
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String endTime;
+
+	private Long ownerId;
+
+	private String form;
+
 	private String user;
+	public DescribeAuditRecordsRequest() {
+		super("Dds", "2015-12-01", "DescribeAuditRecords", "Dds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -67,39 +74,6 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -108,17 +82,6 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -155,40 +118,10 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 		}
 	}
 
-	public String getForm() {
-		return this.form;
-	}
-
-	public void setForm(String form) {
-		this.form = form;
-		if(form != null){
-			putQueryParameter("Form", form);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -226,6 +159,61 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 		this.nodeId = nodeId;
 		if(nodeId != null){
 			putQueryParameter("NodeId", nodeId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getForm() {
+		return this.form;
+	}
+
+	public void setForm(String form) {
+		this.form = form;
+		if(form != null){
+			putQueryParameter("Form", form);
 		}
 	}
 
