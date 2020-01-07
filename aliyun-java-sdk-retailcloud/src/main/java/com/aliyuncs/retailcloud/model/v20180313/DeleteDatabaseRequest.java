@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteDatabaseRequest extends RpcAcsRequest<DeleteDatabaseResponse> {
-	
-	public DeleteDatabaseRequest() {
-		super("retailcloud", "2018-03-13", "DeleteDatabase", "retailcloud");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String dBName;
 
 	private String dBInstanceId;
+	public DeleteDatabaseRequest() {
+		super("retailcloud", "2018-03-13", "DeleteDatabase", "retailcloud");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDBName() {
 		return this.dBName;

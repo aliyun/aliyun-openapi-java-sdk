@@ -15,18 +15,20 @@
 package com.aliyuncs.retailcloud.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ResourceStatusNotifyRequest extends RpcAcsRequest<ResourceStatusNotifyResponse> {
-	
-	public ResourceStatusNotifyRequest() {
-		super("retailcloud", "2018-03-13", "ResourceStatusNotify", "retailcloud");
-	}
+	   
 
 	private String data;
+	public ResourceStatusNotifyRequest() {
+		super("retailcloud", "2018-03-13", "ResourceStatusNotify", "retailcloud");
+		setMethod(MethodType.POST);
+	}
 
 	public String getData() {
 		return this.data;

@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreateDbRequest extends RpcAcsRequest<CreateDbResponse> {
-	
-	public CreateDbRequest() {
-		super("retailcloud", "2018-03-13", "CreateDb", "retailcloud");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String dbName;
 
@@ -35,6 +31,10 @@ public class CreateDbRequest extends RpcAcsRequest<CreateDbResponse> {
 	private String dbDescription;
 
 	private String characterSetName;
+	public CreateDbRequest() {
+		super("retailcloud", "2018-03-13", "CreateDb", "retailcloud");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDbName() {
 		return this.dbName;

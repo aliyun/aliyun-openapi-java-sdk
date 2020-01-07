@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetRdsBackUpRequest extends RpcAcsRequest<GetRdsBackUpResponse> {
-	
-	public GetRdsBackUpRequest() {
-		super("retailcloud", "2018-03-13", "GetRdsBackUp", "retailcloud");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String backupId;
 
@@ -37,6 +33,10 @@ public class GetRdsBackUpRequest extends RpcAcsRequest<GetRdsBackUpResponse> {
 	private String backupType;
 
 	private Integer pageNumber;
+	public GetRdsBackUpRequest() {
+		super("retailcloud", "2018-03-13", "GetRdsBackUp", "retailcloud");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBackupId() {
 		return this.backupId;

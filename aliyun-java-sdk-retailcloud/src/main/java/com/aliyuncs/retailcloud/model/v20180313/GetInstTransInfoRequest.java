@@ -15,22 +15,24 @@
 package com.aliyuncs.retailcloud.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetInstTransInfoRequest extends RpcAcsRequest<GetInstTransInfoResponse> {
-	
-	public GetInstTransInfoRequest() {
-		super("retailcloud", "2018-03-13", "GetInstTransInfo", "retailcloud");
-	}
+	   
 
 	private String aliyunUid;
 
 	private String aliyunEquipId;
 
 	private String aliyunCommodityCode;
+	public GetInstTransInfoRequest() {
+		super("retailcloud", "2018-03-13", "GetInstTransInfo", "retailcloud");
+		setMethod(MethodType.POST);
+	}
 
 	public String getAliyunUid() {
 		return this.aliyunUid;

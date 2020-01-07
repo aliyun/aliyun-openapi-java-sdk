@@ -25,38 +25,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetRdsBackUpResponseUnmarshaller {
 
-	public static GetRdsBackUpResponse unmarshall(GetRdsBackUpResponse getRdsBackUpResponse, UnmarshallerContext context) {
+	public static GetRdsBackUpResponse unmarshall(GetRdsBackUpResponse getRdsBackUpResponse, UnmarshallerContext _ctx) {
 		
-		getRdsBackUpResponse.setRequestId(context.stringValue("GetRdsBackUpResponse.RequestId"));
-		getRdsBackUpResponse.setCode(context.integerValue("GetRdsBackUpResponse.Code"));
-		getRdsBackUpResponse.setErrMsg(context.stringValue("GetRdsBackUpResponse.ErrMsg"));
+		getRdsBackUpResponse.setRequestId(_ctx.stringValue("GetRdsBackUpResponse.RequestId"));
+		getRdsBackUpResponse.setCode(_ctx.integerValue("GetRdsBackUpResponse.Code"));
+		getRdsBackUpResponse.setErrMsg(_ctx.stringValue("GetRdsBackUpResponse.ErrMsg"));
 
 		Result result = new Result();
-		result.setTotalRecordCount(context.stringValue("GetRdsBackUpResponse.Result.TotalRecordCount"));
-		result.setPageNumber(context.stringValue("GetRdsBackUpResponse.Result.PageNumber"));
-		result.setPageRecordCount(context.stringValue("GetRdsBackUpResponse.Result.PageRecordCount"));
-		result.setTotalBackupSize(context.longValue("GetRdsBackUpResponse.Result.TotalBackupSize"));
+		result.setTotalRecordCount(_ctx.stringValue("GetRdsBackUpResponse.Result.TotalRecordCount"));
+		result.setPageNumber(_ctx.stringValue("GetRdsBackUpResponse.Result.PageNumber"));
+		result.setPageRecordCount(_ctx.stringValue("GetRdsBackUpResponse.Result.PageRecordCount"));
+		result.setTotalBackupSize(_ctx.longValue("GetRdsBackUpResponse.Result.TotalBackupSize"));
 
 		List<Backup> items = new ArrayList<Backup>();
-		for (int i = 0; i < context.lengthValue("GetRdsBackUpResponse.Result.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetRdsBackUpResponse.Result.Items.Length"); i++) {
 			Backup backup = new Backup();
-			backup.setBackupId(context.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupId"));
-			backup.setDBInstanceId(context.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].DBInstanceId"));
-			backup.setBackupStatus(context.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupStatus"));
-			backup.setBackupStartTime(context.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupStartTime"));
-			backup.setBackupEndTime(context.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupEndTime"));
-			backup.setBackupType(context.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupType"));
-			backup.setBackupMode(context.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupMode"));
-			backup.setBackupMethod(context.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupMethod"));
-			backup.setBackupLocation(context.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupLocation"));
-			backup.setBackupExtractionStatus(context.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupExtractionStatus"));
-			backup.setBackupScale(context.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupScale"));
-			backup.setBackupDBNames(context.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupDBNames"));
-			backup.setTotalBackupSize(context.longValue("GetRdsBackUpResponse.Result.Items["+ i +"].TotalBackupSize"));
-			backup.setBackupSize(context.longValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupSize"));
-			backup.setHostInstanceID(context.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].HostInstanceID"));
-			backup.setStoreStatus(context.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].StoreStatus"));
-			backup.setMetaStatus(context.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].MetaStatus"));
+			backup.setBackupId(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupId"));
+			backup.setDBInstanceId(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].DBInstanceId"));
+			backup.setBackupStatus(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupStatus"));
+			backup.setBackupStartTime(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupStartTime"));
+			backup.setBackupEndTime(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupEndTime"));
+			backup.setBackupType(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupType"));
+			backup.setBackupMode(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupMode"));
+			backup.setBackupMethod(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupMethod"));
+			backup.setBackupLocation(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupLocation"));
+			backup.setBackupExtractionStatus(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupExtractionStatus"));
+			backup.setBackupScale(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupScale"));
+			backup.setBackupDBNames(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupDBNames"));
+			backup.setTotalBackupSize(_ctx.longValue("GetRdsBackUpResponse.Result.Items["+ i +"].TotalBackupSize"));
+			backup.setBackupSize(_ctx.longValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupSize"));
+			backup.setHostInstanceID(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].HostInstanceID"));
+			backup.setStoreStatus(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].StoreStatus"));
+			backup.setMetaStatus(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].MetaStatus"));
 
 			items.add(backup);
 		}

@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetInstTransInfoResponseUnmarshaller {
 
-	public static GetInstTransInfoResponse unmarshall(GetInstTransInfoResponse getInstTransInfoResponse, UnmarshallerContext context) {
+	public static GetInstTransInfoResponse unmarshall(GetInstTransInfoResponse getInstTransInfoResponse, UnmarshallerContext _ctx) {
 		
-		getInstTransInfoResponse.setInstanceId(context.stringValue("GetInstTransInfoResponse.instanceId"));
-		getInstTransInfoResponse.setIsAutoRenew(context.booleanValue("GetInstTransInfoResponse.isAutoRenew"));
-		getInstTransInfoResponse.setRenewCycle(context.integerValue("GetInstTransInfoResponse.renewCycle"));
-		getInstTransInfoResponse.setChargeType(context.stringValue("GetInstTransInfoResponse.chargeType"));
-		getInstTransInfoResponse.setEndTime(context.longValue("GetInstTransInfoResponse.endTime"));
-		getInstTransInfoResponse.setStartTime(context.longValue("GetInstTransInfoResponse.startTime"));
+		getInstTransInfoResponse.setInstanceId(_ctx.stringValue("GetInstTransInfoResponse.instanceId"));
+		getInstTransInfoResponse.setIsAutoRenew(_ctx.booleanValue("GetInstTransInfoResponse.isAutoRenew"));
+		getInstTransInfoResponse.setRenewCycle(_ctx.integerValue("GetInstTransInfoResponse.renewCycle"));
+		getInstTransInfoResponse.setChargeType(_ctx.stringValue("GetInstTransInfoResponse.chargeType"));
+		getInstTransInfoResponse.setEndTime(_ctx.longValue("GetInstTransInfoResponse.endTime"));
+		getInstTransInfoResponse.setStartTime(_ctx.longValue("GetInstTransInfoResponse.startTime"));
 	 
 	 	return getInstTransInfoResponse;
 	}

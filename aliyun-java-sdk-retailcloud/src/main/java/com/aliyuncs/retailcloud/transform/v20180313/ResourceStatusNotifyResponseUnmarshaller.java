@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ResourceStatusNotifyResponseUnmarshaller {
 
-	public static ResourceStatusNotifyResponse unmarshall(ResourceStatusNotifyResponse resourceStatusNotifyResponse, UnmarshallerContext context) {
+	public static ResourceStatusNotifyResponse unmarshall(ResourceStatusNotifyResponse resourceStatusNotifyResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return resourceStatusNotifyResponse;

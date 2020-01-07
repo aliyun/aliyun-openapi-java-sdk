@@ -15,20 +15,22 @@
 package com.aliyuncs.retailcloud.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeRdsAccountsRequest extends RpcAcsRequest<DescribeRdsAccountsResponse> {
-	
-	public DescribeRdsAccountsRequest() {
-		super("retailcloud", "2018-03-13", "DescribeRdsAccounts", "retailcloud");
-	}
+	   
 
 	private String accountName;
 
 	private String dbInstanceId;
+	public DescribeRdsAccountsRequest() {
+		super("retailcloud", "2018-03-13", "DescribeRdsAccounts", "retailcloud");
+		setMethod(MethodType.GET);
+	}
 
 	public String getAccountName() {
 		return this.accountName;

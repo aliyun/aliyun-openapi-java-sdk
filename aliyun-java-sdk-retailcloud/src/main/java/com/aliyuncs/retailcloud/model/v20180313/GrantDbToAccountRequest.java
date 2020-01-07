@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GrantDbToAccountRequest extends RpcAcsRequest<GrantDbToAccountResponse> {
-	
-	public GrantDbToAccountRequest() {
-		super("retailcloud", "2018-03-13", "GrantDbToAccount", "retailcloud");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String accountName;
 
@@ -35,6 +31,10 @@ public class GrantDbToAccountRequest extends RpcAcsRequest<GrantDbToAccountRespo
 	private String dbInstanceId;
 
 	private String accountPrivilege;
+	public GrantDbToAccountRequest() {
+		super("retailcloud", "2018-03-13", "GrantDbToAccount", "retailcloud");
+		setMethod(MethodType.POST);
+	}
 
 	public String getAccountName() {
 		return this.accountName;

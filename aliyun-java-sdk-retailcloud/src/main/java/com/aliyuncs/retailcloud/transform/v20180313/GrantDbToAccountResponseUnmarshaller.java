@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GrantDbToAccountResponseUnmarshaller {
 
-	public static GrantDbToAccountResponse unmarshall(GrantDbToAccountResponse grantDbToAccountResponse, UnmarshallerContext context) {
+	public static GrantDbToAccountResponse unmarshall(GrantDbToAccountResponse grantDbToAccountResponse, UnmarshallerContext _ctx) {
 		
-		grantDbToAccountResponse.setRequestId(context.stringValue("GrantDbToAccountResponse.RequestId"));
-		grantDbToAccountResponse.setCode(context.integerValue("GrantDbToAccountResponse.Code"));
-		grantDbToAccountResponse.setErrMsg(context.stringValue("GrantDbToAccountResponse.ErrMsg"));
+		grantDbToAccountResponse.setRequestId(_ctx.stringValue("GrantDbToAccountResponse.RequestId"));
+		grantDbToAccountResponse.setCode(_ctx.integerValue("GrantDbToAccountResponse.Code"));
+		grantDbToAccountResponse.setErrMsg(_ctx.stringValue("GrantDbToAccountResponse.ErrMsg"));
 	 
 	 	return grantDbToAccountResponse;
 	}

@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteRdsAccountResponseUnmarshaller {
 
-	public static DeleteRdsAccountResponse unmarshall(DeleteRdsAccountResponse deleteRdsAccountResponse, UnmarshallerContext context) {
+	public static DeleteRdsAccountResponse unmarshall(DeleteRdsAccountResponse deleteRdsAccountResponse, UnmarshallerContext _ctx) {
 		
-		deleteRdsAccountResponse.setRequestId(context.stringValue("DeleteRdsAccountResponse.RequestId"));
-		deleteRdsAccountResponse.setErrMsg(context.stringValue("DeleteRdsAccountResponse.ErrMsg"));
-		deleteRdsAccountResponse.setCode(context.integerValue("DeleteRdsAccountResponse.Code"));
+		deleteRdsAccountResponse.setRequestId(_ctx.stringValue("DeleteRdsAccountResponse.RequestId"));
+		deleteRdsAccountResponse.setErrMsg(_ctx.stringValue("DeleteRdsAccountResponse.ErrMsg"));
+		deleteRdsAccountResponse.setCode(_ctx.integerValue("DeleteRdsAccountResponse.Code"));
 
 		Result result = new Result();
-		result.setRequestId(context.stringValue("DeleteRdsAccountResponse.Result.RequestId"));
+		result.setRequestId(_ctx.stringValue("DeleteRdsAccountResponse.Result.RequestId"));
 		deleteRdsAccountResponse.setResult(result);
 	 
 	 	return deleteRdsAccountResponse;

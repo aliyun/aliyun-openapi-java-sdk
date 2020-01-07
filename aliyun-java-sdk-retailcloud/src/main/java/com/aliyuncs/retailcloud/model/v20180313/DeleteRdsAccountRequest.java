@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteRdsAccountRequest extends RpcAcsRequest<DeleteRdsAccountResponse> {
-	
-	public DeleteRdsAccountRequest() {
-		super("retailcloud", "2018-03-13", "DeleteRdsAccount", "retailcloud");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String accountName;
 
 	private String dbInstanceId;
+	public DeleteRdsAccountRequest() {
+		super("retailcloud", "2018-03-13", "DeleteRdsAccount", "retailcloud");
+		setMethod(MethodType.POST);
+	}
 
 	public String getAccountName() {
 		return this.accountName;
