@@ -490,4 +490,9 @@ public class UpdateInstanceResponse extends AcsResponse {
 	public UpdateInstanceResponse getInstance(UnmarshallerContext context) {
 		return	UpdateInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

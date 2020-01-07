@@ -114,8 +114,6 @@ public class DescribeInstanceResponseUnmarshaller {
 		KibanaConfiguration kibanaConfiguration = new KibanaConfiguration();
 		kibanaConfiguration.setSpec(_ctx.stringValue("DescribeInstanceResponse.Result.kibanaConfiguration.spec"));
 		kibanaConfiguration.setAmount(_ctx.integerValue("DescribeInstanceResponse.Result.kibanaConfiguration.amount"));
-		kibanaConfiguration.setDiskType(_ctx.stringValue("DescribeInstanceResponse.Result.kibanaConfiguration.diskType"));
-		kibanaConfiguration.setDisk(_ctx.integerValue("DescribeInstanceResponse.Result.kibanaConfiguration.disk"));
 		result.setKibanaConfiguration(kibanaConfiguration);
 
 		MasterConfiguration masterConfiguration = new MasterConfiguration();

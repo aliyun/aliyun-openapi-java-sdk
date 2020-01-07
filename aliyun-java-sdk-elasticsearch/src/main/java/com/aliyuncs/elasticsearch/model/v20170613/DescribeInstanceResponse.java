@@ -702,10 +702,6 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			private Integer amount;
 
-			private String diskType;
-
-			private Integer disk;
-
 			public String getSpec() {
 				return this.spec;
 			}
@@ -720,22 +716,6 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setAmount(Integer amount) {
 				this.amount = amount;
-			}
-
-			public String getDiskType() {
-				return this.diskType;
-			}
-
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
-			}
-
-			public Integer getDisk() {
-				return this.disk;
-			}
-
-			public void setDisk(Integer disk) {
-				this.disk = disk;
 			}
 		}
 

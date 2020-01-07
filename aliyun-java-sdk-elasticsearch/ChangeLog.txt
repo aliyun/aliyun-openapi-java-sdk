@@ -1,3 +1,6 @@
+2020-01-07 Version: 3.0.12
+- Modify desribeInstance return dict item.
+
 2019-11-29 Version: 3.0.11
 - Add RenewInstance.
 - Add RenewLogstash.
