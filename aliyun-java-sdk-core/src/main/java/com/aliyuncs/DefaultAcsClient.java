@@ -18,6 +18,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 import com.aliyuncs.unmarshaller.Unmarshaller;
 import com.aliyuncs.unmarshaller.UnmarshallerFactory;
 import com.aliyuncs.utils.*;
+import io.opentracing.Scope;
 import io.opentracing.Span;
 import io.opentracing.Tracer;
 import io.opentracing.propagation.Format;
@@ -268,25 +269,27 @@ public class DefaultAcsClient implements IAcsClient {
     private <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
                                                           String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
             throws ClientException, ServerException {
+        if (!GlobalTracer.isRegistered() || clientProfile.isCloseTrace() ) {
+            return doRealAction(request, autoRetry, maxRetryNumber, regionId, credentials, signer,format);
+        }
 
-        Span span = null;
-        Tracer tracer = null;
-        if (GlobalTracer.isRegistered() && !clientProfile.isCloseTrace()) {
-            tracer = GlobalTracer.get();
-            span = tracer.buildSpan(request.getSysUrl())
+        Tracer tracer = GlobalTracer.get();
+        Span  span = tracer.buildSpan(request.getSysUrl())
                     .withTag(Tags.COMPONENT.getKey(), "aliyunApi")
                     .withTag("actionName", request.getSysActionName())
-                    .withTag("queryPa", MapUtils.getMapString(request.getQueryParameters()))
+                    .withTag("queryParam", MapUtils.getMapString(request.getQueryParameters()))
                     .start();
-                tracer.inject(span.context(), Format.Builtin.HTTP_HEADERS, new HttpHeadersInjectAdapter(request));
-        }
+        tracer.inject(span.context(), Format.Builtin.HTTP_HEADERS, new HttpHeadersInjectAdapter(request));
         try {
-            return doRealAction(request, autoRetry, maxRetryNumber, regionId, credentials, signer,format);
-        } catch (ClientException e) {
-            if (span != null) {
-                TraceUtils.onError(e, span);
-            }
-            throw e;
+            HttpResponse response = doRealAction(request, autoRetry, maxRetryNumber, regionId, credentials, signer,format);
+            span.setTag("status", response.getStatus());
+            span.setTag("ReasonPhrase", response.getReasonPhrase());
+            return response;
+        } catch (ClientException ex) {
+            TraceUtils.onError(ex, span);
+            throw ex;
+        } finally {
+            span.finish();
         }
 
     }
