@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerUDPListenerAttributeResponse;
+import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerUDPListenerAttributeResponse.PortRange;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -48,12 +49,24 @@ public class DescribeLoadBalancerUDPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerUDPListenerAttributeResponse.setAclStatus(_ctx.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.AclStatus"));
 		describeLoadBalancerUDPListenerAttributeResponse.setVpcIds(_ctx.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.VpcIds"));
 		describeLoadBalancerUDPListenerAttributeResponse.setDescription(_ctx.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.Description"));
+		describeLoadBalancerUDPListenerAttributeResponse.setConnectionDrain(_ctx.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.ConnectionDrain"));
+		describeLoadBalancerUDPListenerAttributeResponse.setConnectionDrainTimeout(_ctx.integerValue("DescribeLoadBalancerUDPListenerAttributeResponse.ConnectionDrainTimeout"));
 
 		List<String> aclIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerUDPListenerAttributeResponse.AclIds.Length"); i++) {
 			aclIds.add(_ctx.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.AclIds["+ i +"]"));
 		}
 		describeLoadBalancerUDPListenerAttributeResponse.setAclIds(aclIds);
+
+		List<PortRange> portRanges = new ArrayList<PortRange>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerUDPListenerAttributeResponse.PortRanges.Length"); i++) {
+			PortRange portRange = new PortRange();
+			portRange.setStartPort(_ctx.integerValue("DescribeLoadBalancerUDPListenerAttributeResponse.PortRanges["+ i +"].StartPort"));
+			portRange.setEndPort(_ctx.integerValue("DescribeLoadBalancerUDPListenerAttributeResponse.PortRanges["+ i +"].EndPort"));
+
+			portRanges.add(portRange);
+		}
+		describeLoadBalancerUDPListenerAttributeResponse.setPortRanges(portRanges);
 	 
 	 	return describeLoadBalancerUDPListenerAttributeResponse;
 	}

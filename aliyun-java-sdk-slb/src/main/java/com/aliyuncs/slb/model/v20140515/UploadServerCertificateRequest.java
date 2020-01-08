@@ -43,6 +43,8 @@ public class UploadServerCertificateRequest extends RpcAcsRequest<UploadServerCe
 
 	private Long ownerId;
 
+	private String aliCloudCertificateRegionId;
+
 	private String serverCertificateName;
 	public UploadServerCertificateRequest() {
 		super("Slb", "2014-05-15", "UploadServerCertificate", "slb");
@@ -149,6 +151,17 @@ public class UploadServerCertificateRequest extends RpcAcsRequest<UploadServerCe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAliCloudCertificateRegionId() {
+		return this.aliCloudCertificateRegionId;
+	}
+
+	public void setAliCloudCertificateRegionId(String aliCloudCertificateRegionId) {
+		this.aliCloudCertificateRegionId = aliCloudCertificateRegionId;
+		if(aliCloudCertificateRegionId != null){
+			putQueryParameter("AliCloudCertificateRegionId", aliCloudCertificateRegionId);
 		}
 	}
 

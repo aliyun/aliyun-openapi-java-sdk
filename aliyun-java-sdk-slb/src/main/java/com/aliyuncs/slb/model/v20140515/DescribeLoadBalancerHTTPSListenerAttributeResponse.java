@@ -31,7 +31,7 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	private Integer backendServerPort;
 
-	private Integer backendProtocol;
+	private String backendProtocol;
 
 	private Integer bandwidth;
 
@@ -139,11 +139,11 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 		this.backendServerPort = backendServerPort;
 	}
 
-	public Integer getBackendProtocol() {
+	public String getBackendProtocol() {
 		return this.backendProtocol;
 	}
 
-	public void setBackendProtocol(Integer backendProtocol) {
+	public void setBackendProtocol(String backendProtocol) {
 		this.backendProtocol = backendProtocol;
 	}
 

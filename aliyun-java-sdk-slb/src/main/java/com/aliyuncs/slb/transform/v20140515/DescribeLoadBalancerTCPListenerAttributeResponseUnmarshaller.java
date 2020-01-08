@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerTCPListenerAttributeResponse;
+import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerTCPListenerAttributeResponse.PortRange;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -53,12 +54,24 @@ public class DescribeLoadBalancerTCPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerTCPListenerAttributeResponse.setAclStatus(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.AclStatus"));
 		describeLoadBalancerTCPListenerAttributeResponse.setVpcIds(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.VpcIds"));
 		describeLoadBalancerTCPListenerAttributeResponse.setDescription(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.Description"));
+		describeLoadBalancerTCPListenerAttributeResponse.setConnectionDrain(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.ConnectionDrain"));
+		describeLoadBalancerTCPListenerAttributeResponse.setConnectionDrainTimeout(_ctx.integerValue("DescribeLoadBalancerTCPListenerAttributeResponse.ConnectionDrainTimeout"));
 
 		List<String> aclIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerTCPListenerAttributeResponse.AclIds.Length"); i++) {
 			aclIds.add(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.AclIds["+ i +"]"));
 		}
 		describeLoadBalancerTCPListenerAttributeResponse.setAclIds(aclIds);
+
+		List<PortRange> portRanges = new ArrayList<PortRange>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerTCPListenerAttributeResponse.PortRanges.Length"); i++) {
+			PortRange portRange = new PortRange();
+			portRange.setStartPort(_ctx.integerValue("DescribeLoadBalancerTCPListenerAttributeResponse.PortRanges["+ i +"].StartPort"));
+			portRange.setEndPort(_ctx.integerValue("DescribeLoadBalancerTCPListenerAttributeResponse.PortRanges["+ i +"].EndPort"));
+
+			portRanges.add(portRange);
+		}
+		describeLoadBalancerTCPListenerAttributeResponse.setPortRanges(portRanges);
 	 
 	 	return describeLoadBalancerTCPListenerAttributeResponse;
 	}
