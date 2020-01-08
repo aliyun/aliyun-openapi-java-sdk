@@ -61,6 +61,8 @@ public class ListSetTagsResponse extends AcsResponse {
 
 		private Integer tagCount;
 
+		private Integer tagLevel;
+
 		public String getTagName() {
 			return this.tagName;
 		}
@@ -75,6 +77,14 @@ public class ListSetTagsResponse extends AcsResponse {
 
 		public void setTagCount(Integer tagCount) {
 			this.tagCount = tagCount;
+		}
+
+		public Integer getTagLevel() {
+			return this.tagLevel;
+		}
+
+		public void setTagLevel(Integer tagLevel) {
+			this.tagLevel = tagLevel;
 		}
 	}
 

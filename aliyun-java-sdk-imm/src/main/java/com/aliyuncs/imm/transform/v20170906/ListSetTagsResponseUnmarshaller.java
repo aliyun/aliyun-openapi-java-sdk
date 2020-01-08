@@ -34,6 +34,7 @@ public class ListSetTagsResponseUnmarshaller {
 			TagsItem tagsItem = new TagsItem();
 			tagsItem.setTagName(_ctx.stringValue("ListSetTagsResponse.Tags["+ i +"].TagName"));
 			tagsItem.setTagCount(_ctx.integerValue("ListSetTagsResponse.Tags["+ i +"].TagCount"));
+			tagsItem.setTagLevel(_ctx.integerValue("ListSetTagsResponse.Tags["+ i +"].TagLevel"));
 
 			tags.add(tagsItem);
 		}
