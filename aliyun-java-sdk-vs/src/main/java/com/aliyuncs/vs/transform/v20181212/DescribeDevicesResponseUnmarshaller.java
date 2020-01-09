@@ -56,6 +56,10 @@ public class DescribeDevicesResponseUnmarshaller {
 			device.setPassword(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Password"));
 			device.setVendor(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Vendor"));
 			device.setDsn(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Dsn"));
+			device.setLongitude(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Longitude"));
+			device.setLatitude(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Latitude"));
+			device.setAutoPos(_ctx.booleanValue("DescribeDevicesResponse.Devices["+ i +"].AutoPos"));
+			device.setPosInterval(_ctx.longValue("DescribeDevicesResponse.Devices["+ i +"].PosInterval"));
 			device.setCreatedTime(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].CreatedTime"));
 			device.setRegisteredTime(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].RegisteredTime"));
 			device.setChannelSyncTime(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].ChannelSyncTime"));

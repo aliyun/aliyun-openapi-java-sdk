@@ -1,3 +1,7 @@
+2020-01-09 Version: 1.6.0
+- Supported ondemand transfer stream.
+- Supported device position.
+
 2019-11-22 Version: 1.5.0
 - Supported ondemand snapshot.
 

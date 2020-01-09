@@ -27,6 +27,8 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 
 	private String gbId;
 
+	private String latitude;
+
 	private String description;
 
 	private String type;
@@ -43,6 +45,8 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 
 	private String id;
 
+	private String longitude;
+
 	private String groupId;
 
 	private String ip;
@@ -55,7 +59,11 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 
 	private String name;
 
+	private Long posInterval;
+
 	private String username;
+
+	private Boolean autoPos;
 	public ModifyDeviceRequest() {
 		super("vs", "2018-12-12", "ModifyDevice", "vs");
 		setMethod(MethodType.POST);
@@ -73,6 +81,17 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 		this.gbId = gbId;
 		if(gbId != null){
 			putQueryParameter("GbId", gbId);
+		}
+	}
+
+	public String getLatitude() {
+		return this.latitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+		if(latitude != null){
+			putQueryParameter("Latitude", latitude);
 		}
 	}
 
@@ -164,6 +183,17 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 		}
 	}
 
+	public String getLongitude() {
+		return this.longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+		if(longitude != null){
+			putQueryParameter("Longitude", longitude);
+		}
+	}
+
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -230,6 +260,17 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 		}
 	}
 
+	public Long getPosInterval() {
+		return this.posInterval;
+	}
+
+	public void setPosInterval(Long posInterval) {
+		this.posInterval = posInterval;
+		if(posInterval != null){
+			putQueryParameter("PosInterval", posInterval.toString());
+		}
+	}
+
 	public String getUsername() {
 		return this.username;
 	}
@@ -238,6 +279,17 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 		this.username = username;
 		if(username != null){
 			putQueryParameter("Username", username);
+		}
+	}
+
+	public Boolean getAutoPos() {
+		return this.autoPos;
+	}
+
+	public void setAutoPos(Boolean autoPos) {
+		this.autoPos = autoPos;
+		if(autoPos != null){
+			putQueryParameter("AutoPos", autoPos.toString());
 		}
 	}
 

@@ -40,6 +40,7 @@ public class DescribeVsDomainCertificateInfoResponseUnmarshaller {
 			certInfo.setCertType(_ctx.stringValue("DescribeVsDomainCertificateInfoResponse.CertInfos["+ i +"].CertType"));
 			certInfo.setServerCertificateStatus(_ctx.stringValue("DescribeVsDomainCertificateInfoResponse.CertInfos["+ i +"].ServerCertificateStatus"));
 			certInfo.setStatus(_ctx.stringValue("DescribeVsDomainCertificateInfoResponse.CertInfos["+ i +"].Status"));
+			certInfo.setSSLPub(_ctx.stringValue("DescribeVsDomainCertificateInfoResponse.CertInfos["+ i +"].SSLPub"));
 
 			certInfos.add(certInfo);
 		}

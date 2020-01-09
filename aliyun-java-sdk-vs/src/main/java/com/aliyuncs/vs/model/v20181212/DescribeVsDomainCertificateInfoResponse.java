@@ -65,6 +65,8 @@ public class DescribeVsDomainCertificateInfoResponse extends AcsResponse {
 
 		private String status;
 
+		private String sSLPub;
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -135,6 +137,14 @@ public class DescribeVsDomainCertificateInfoResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getSSLPub() {
+			return this.sSLPub;
+		}
+
+		public void setSSLPub(String sSLPub) {
+			this.sSLPub = sSLPub;
 		}
 	}
 

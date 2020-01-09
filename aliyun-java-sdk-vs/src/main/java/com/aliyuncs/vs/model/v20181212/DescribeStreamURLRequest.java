@@ -33,6 +33,8 @@ public class DescribeStreamURLRequest extends RpcAcsRequest<DescribeStreamURLRes
 
 	private String type;
 
+	private String outHostType;
+
 	private String id;
 
 	private String outProtocol;
@@ -96,6 +98,17 @@ public class DescribeStreamURLRequest extends RpcAcsRequest<DescribeStreamURLRes
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getOutHostType() {
+		return this.outHostType;
+	}
+
+	public void setOutHostType(String outHostType) {
+		this.outHostType = outHostType;
+		if(outHostType != null){
+			putQueryParameter("OutHostType", outHostType);
 		}
 	}
 

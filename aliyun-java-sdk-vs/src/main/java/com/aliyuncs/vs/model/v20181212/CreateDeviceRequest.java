@@ -27,6 +27,8 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 
 	private String gbId;
 
+	private String latitude;
+
 	private String description;
 
 	private String type;
@@ -41,6 +43,8 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 
 	private String directoryId;
 
+	private String longitude;
+
 	private String groupId;
 
 	private String ip;
@@ -53,9 +57,13 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 
 	private String name;
 
+	private Long posInterval;
+
 	private String dsn;
 
 	private String username;
+
+	private Boolean autoPos;
 	public CreateDeviceRequest() {
 		super("vs", "2018-12-12", "CreateDevice", "vs");
 		setMethod(MethodType.POST);
@@ -73,6 +81,17 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		this.gbId = gbId;
 		if(gbId != null){
 			putQueryParameter("GbId", gbId);
+		}
+	}
+
+	public String getLatitude() {
+		return this.latitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+		if(latitude != null){
+			putQueryParameter("Latitude", latitude);
 		}
 	}
 
@@ -153,6 +172,17 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		}
 	}
 
+	public String getLongitude() {
+		return this.longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+		if(longitude != null){
+			putQueryParameter("Longitude", longitude);
+		}
+	}
+
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -219,6 +249,17 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		}
 	}
 
+	public Long getPosInterval() {
+		return this.posInterval;
+	}
+
+	public void setPosInterval(Long posInterval) {
+		this.posInterval = posInterval;
+		if(posInterval != null){
+			putQueryParameter("PosInterval", posInterval.toString());
+		}
+	}
+
 	public String getDsn() {
 		return this.dsn;
 	}
@@ -238,6 +279,17 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		this.username = username;
 		if(username != null){
 			putQueryParameter("Username", username);
+		}
+	}
+
+	public Boolean getAutoPos() {
+		return this.autoPos;
+	}
+
+	public void setAutoPos(Boolean autoPos) {
+		this.autoPos = autoPos;
+		if(autoPos != null){
+			putQueryParameter("AutoPos", autoPos.toString());
 		}
 	}
 

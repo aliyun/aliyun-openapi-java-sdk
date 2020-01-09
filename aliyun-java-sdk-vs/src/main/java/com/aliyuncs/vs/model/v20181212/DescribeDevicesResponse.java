@@ -125,6 +125,14 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 		private String dsn;
 
+		private String longitude;
+
+		private String latitude;
+
+		private Boolean autoPos;
+
+		private Long posInterval;
+
 		private String createdTime;
 
 		private String registeredTime;
@@ -285,6 +293,38 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 		public void setDsn(String dsn) {
 			this.dsn = dsn;
+		}
+
+		public String getLongitude() {
+			return this.longitude;
+		}
+
+		public void setLongitude(String longitude) {
+			this.longitude = longitude;
+		}
+
+		public String getLatitude() {
+			return this.latitude;
+		}
+
+		public void setLatitude(String latitude) {
+			this.latitude = latitude;
+		}
+
+		public Boolean getAutoPos() {
+			return this.autoPos;
+		}
+
+		public void setAutoPos(Boolean autoPos) {
+			this.autoPos = autoPos;
+		}
+
+		public Long getPosInterval() {
+			return this.posInterval;
+		}
+
+		public void setPosInterval(Long posInterval) {
+			this.posInterval = posInterval;
 		}
 
 		public String getCreatedTime() {
