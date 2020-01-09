@@ -37,9 +37,13 @@ public class QueryInstanceBillRequest extends RpcAcsRequest<QueryInstanceBillRes
 
 	private Integer pageNum;
 
+	private String billingDate;
+
 	private String productType;
 
 	private Boolean isBillingItem;
+
+	private String granularity;
 
 	private Integer pageSize;
 	public QueryInstanceBillRequest() {
@@ -117,6 +121,17 @@ public class QueryInstanceBillRequest extends RpcAcsRequest<QueryInstanceBillRes
 		}
 	}
 
+	public String getBillingDate() {
+		return this.billingDate;
+	}
+
+	public void setBillingDate(String billingDate) {
+		this.billingDate = billingDate;
+		if(billingDate != null){
+			putQueryParameter("BillingDate", billingDate);
+		}
+	}
+
 	public String getProductType() {
 		return this.productType;
 	}
@@ -136,6 +151,17 @@ public class QueryInstanceBillRequest extends RpcAcsRequest<QueryInstanceBillRes
 		this.isBillingItem = isBillingItem;
 		if(isBillingItem != null){
 			putQueryParameter("IsBillingItem", isBillingItem.toString());
+		}
+	}
+
+	public String getGranularity() {
+		return this.granularity;
+	}
+
+	public void setGranularity(String granularity) {
+		this.granularity = granularity;
+		if(granularity != null){
+			putQueryParameter("Granularity", granularity);
 		}
 	}
 

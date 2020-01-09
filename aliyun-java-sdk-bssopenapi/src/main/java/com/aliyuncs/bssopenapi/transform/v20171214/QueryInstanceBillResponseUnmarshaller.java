@@ -78,6 +78,7 @@ public class QueryInstanceBillResponseUnmarshaller {
 			item.setZone(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].Zone"));
 			item.setItem(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].Item"));
 			item.setServicePeriod(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].ServicePeriod"));
+			item.setBillingDate(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].BillingDate"));
 
 			items.add(item);
 		}
