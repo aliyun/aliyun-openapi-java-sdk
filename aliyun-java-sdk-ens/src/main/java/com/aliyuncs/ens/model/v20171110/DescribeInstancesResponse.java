@@ -119,6 +119,10 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private List<DataDiskItem> dataDisk;
 
+		private List<PublicIpAddress> publicIpAddresses;
+
+		private List<PrivateIpAddress> privateIpAddresses;
+
 		private List<String> innerIpAddress;
 
 		private List<String> publicIpAddress;
@@ -253,6 +257,22 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.dataDisk = dataDisk;
 		}
 
+		public List<PublicIpAddress> getPublicIpAddresses() {
+			return this.publicIpAddresses;
+		}
+
+		public void setPublicIpAddresses(List<PublicIpAddress> publicIpAddresses) {
+			this.publicIpAddresses = publicIpAddresses;
+		}
+
+		public List<PrivateIpAddress> getPrivateIpAddresses() {
+			return this.privateIpAddresses;
+		}
+
+		public void setPrivateIpAddresses(List<PrivateIpAddress> privateIpAddresses) {
+			this.privateIpAddresses = privateIpAddresses;
+		}
+
 		public List<String> getInnerIpAddress() {
 			return this.innerIpAddress;
 		}
@@ -367,6 +387,72 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setDiskName(String diskName) {
 				this.diskName = diskName;
+			}
+		}
+
+		public static class PublicIpAddress {
+
+			private String ip;
+
+			private String gateWay;
+
+			private String isp;
+
+			public String getIp() {
+				return this.ip;
+			}
+
+			public void setIp(String ip) {
+				this.ip = ip;
+			}
+
+			public String getGateWay() {
+				return this.gateWay;
+			}
+
+			public void setGateWay(String gateWay) {
+				this.gateWay = gateWay;
+			}
+
+			public String getIsp() {
+				return this.isp;
+			}
+
+			public void setIsp(String isp) {
+				this.isp = isp;
+			}
+		}
+
+		public static class PrivateIpAddress {
+
+			private String ip;
+
+			private String gateWay;
+
+			private String isp;
+
+			public String getIp() {
+				return this.ip;
+			}
+
+			public void setIp(String ip) {
+				this.ip = ip;
+			}
+
+			public String getGateWay() {
+				return this.gateWay;
+			}
+
+			public void setGateWay(String gateWay) {
+				this.gateWay = gateWay;
+			}
+
+			public String getIsp() {
+				return this.isp;
+			}
+
+			public void setIsp(String isp) {
+				this.isp = isp;
 			}
 		}
 

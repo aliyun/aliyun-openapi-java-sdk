@@ -15,53 +15,25 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttributeResponse> {
-	
-	public ModifyImageAttributeRequest() {
-		super("Ens", "2017-11-10", "ModifyImageAttribute", "ens");
-	}
-
-	private String product;
+	   
 
 	private String imageId;
 
 	private String imageName;
 
+	private String product;
+
 	private String version;
-
-	public String getBizProduct() {
-		return this.product;
-	}
-
-	public void setBizProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("product", product);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizProduct instead of this.
-	 */
-	@Deprecated
-	public String getProduct() {
-		return this.product;
-	}
-
-	/**
-	 * @deprecated use setBizProduct instead of this.
-	 */
-	@Deprecated
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("product", product);
-		}
+	public ModifyImageAttributeRequest() {
+		super("Ens", "2017-11-10", "ModifyImageAttribute", "ens");
+		setMethod(MethodType.POST);
 	}
 
 	public String getImageId() {
@@ -86,29 +58,21 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 		}
 	}
 
-	public String getBizVersion() {
-		return this.version;
+	public String getProduct() {
+		return this.product;
 	}
 
-	public void setBizVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
+	public void setProduct(String product) {
+		this.product = product;
+		if(product != null){
+			putQueryParameter("product", product);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizVersion instead of this.
-	 */
-	@Deprecated
 	public String getVersion() {
 		return this.version;
 	}
 
-	/**
-	 * @deprecated use setBizVersion instead of this.
-	 */
-	@Deprecated
 	public void setVersion(String version) {
 		this.version = version;
 		if(version != null){

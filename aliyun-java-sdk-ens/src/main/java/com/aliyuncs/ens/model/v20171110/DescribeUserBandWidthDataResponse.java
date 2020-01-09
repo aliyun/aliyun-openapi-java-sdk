@@ -29,7 +29,7 @@ public class DescribeUserBandWidthDataResponse extends AcsResponse {
 
 	private Integer code;
 
-	private List<MonitorDataItem> monitorData;
+	private MonitorData monitorData;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,15 +47,15 @@ public class DescribeUserBandWidthDataResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public List<MonitorDataItem> getMonitorData() {
+	public MonitorData getMonitorData() {
 		return this.monitorData;
 	}
 
-	public void setMonitorData(List<MonitorDataItem> monitorData) {
+	public void setMonitorData(MonitorData monitorData) {
 		this.monitorData = monitorData;
 	}
 
-	public static class MonitorDataItem {
+	public static class MonitorData {
 
 		private String maxDownBandWidth;
 

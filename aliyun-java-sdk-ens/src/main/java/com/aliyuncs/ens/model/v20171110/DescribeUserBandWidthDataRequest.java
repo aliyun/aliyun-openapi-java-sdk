@@ -15,48 +15,39 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeUserBandWidthDataRequest extends RpcAcsRequest<DescribeUserBandWidthDataResponse> {
-	
-	public DescribeUserBandWidthDataRequest() {
-		super("Ens", "2017-11-10", "DescribeUserBandWidthData", "ens");
-	}
-
-	private String period;
-
-	private String instanceId;
-
-	private String ensRegionId;
-
-	private String endTime;
+	   
 
 	private String startTime;
 
+	private String ensRegionId;
+
+	private String period;
+
+	private String endTime;
+
 	private String version;
 
-	public String getPeriod() {
-		return this.period;
+	private String instanceId;
+	public DescribeUserBandWidthDataRequest() {
+		super("Ens", "2017-11-10", "DescribeUserBandWidthData", "ens");
+		setMethod(MethodType.POST);
 	}
 
-	public void setPeriod(String period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period);
-		}
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -71,6 +62,17 @@ public class DescribeUserBandWidthDataRequest extends RpcAcsRequest<DescribeUser
 		}
 	}
 
+	public String getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(String period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period);
+		}
+	}
+
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -82,44 +84,25 @@ public class DescribeUserBandWidthDataRequest extends RpcAcsRequest<DescribeUser
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getBizVersion() {
-		return this.version;
-	}
-
-	public void setBizVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizVersion instead of this.
-	 */
-	@Deprecated
 	public String getVersion() {
 		return this.version;
 	}
 
-	/**
-	 * @deprecated use setBizVersion instead of this.
-	 */
-	@Deprecated
 	public void setVersion(String version) {
 		this.version = version;
 		if(version != null){
 			putQueryParameter("Version", version);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

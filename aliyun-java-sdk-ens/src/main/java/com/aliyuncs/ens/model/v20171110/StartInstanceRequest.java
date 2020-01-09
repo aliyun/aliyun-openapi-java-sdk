@@ -15,20 +15,33 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
-	
-	public StartInstanceRequest() {
-		super("Ens", "2017-11-10", "StartInstance", "ens");
-	}
-
-	private String instanceId;
+	   
 
 	private String version;
+
+	private String instanceId;
+	public StartInstanceRequest() {
+		super("Ens", "2017-11-10", "StartInstance", "ens");
+		setMethod(MethodType.POST);
+	}
+
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+		if(version != null){
+			putQueryParameter("Version", version);
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -38,36 +51,6 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getBizVersion() {
-		return this.version;
-	}
-
-	public void setBizVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizVersion instead of this.
-	 */
-	@Deprecated
-	public String getVersion() {
-		return this.version;
-	}
-
-	/**
-	 * @deprecated use setBizVersion instead of this.
-	 */
-	@Deprecated
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

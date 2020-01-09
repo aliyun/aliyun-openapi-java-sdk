@@ -15,20 +15,18 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse> {
-	
-	public DescribeImagesRequest() {
-		super("Ens", "2017-11-10", "DescribeImages", "ens");
-	}
-
-	private String product;
+	   
 
 	private String imageId;
+
+	private String pageNumber;
 
 	private String imageName;
 
@@ -36,40 +34,14 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private String pageSize;
 
+	private String product;
+
 	private String version;
 
-	private String pageNumber;
-
 	private String status;
-
-	public String getBizProduct() {
-		return this.product;
-	}
-
-	public void setBizProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("product", product);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizProduct instead of this.
-	 */
-	@Deprecated
-	public String getProduct() {
-		return this.product;
-	}
-
-	/**
-	 * @deprecated use setBizProduct instead of this.
-	 */
-	@Deprecated
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("product", product);
-		}
+	public DescribeImagesRequest() {
+		super("Ens", "2017-11-10", "DescribeImages", "ens");
+		setMethod(MethodType.POST);
 	}
 
 	public String getImageId() {
@@ -80,6 +52,17 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber);
 		}
 	}
 
@@ -116,44 +99,25 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
-	public String getBizVersion() {
-		return this.version;
+	public String getProduct() {
+		return this.product;
 	}
 
-	public void setBizVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
+	public void setProduct(String product) {
+		this.product = product;
+		if(product != null){
+			putQueryParameter("product", product);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizVersion instead of this.
-	 */
-	@Deprecated
 	public String getVersion() {
 		return this.version;
 	}
 
-	/**
-	 * @deprecated use setBizVersion instead of this.
-	 */
-	@Deprecated
 	public void setVersion(String version) {
 		this.version = version;
 		if(version != null){
 			putQueryParameter("Version", version);
-		}
-	}
-
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
 		}
 	}
 

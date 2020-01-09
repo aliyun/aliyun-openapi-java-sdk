@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ens.model.v20171110.DescribeUserBandWidthDataResponse;
-import com.aliyuncs.ens.model.v20171110.DescribeUserBandWidthDataResponse.MonitorDataItem;
-import com.aliyuncs.ens.model.v20171110.DescribeUserBandWidthDataResponse.MonitorDataItem.BandWidthMonitorDataItem;
+import com.aliyuncs.ens.model.v20171110.DescribeUserBandWidthDataResponse.MonitorData;
+import com.aliyuncs.ens.model.v20171110.DescribeUserBandWidthDataResponse.MonitorData.BandWidthMonitorDataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,27 +30,22 @@ public class DescribeUserBandWidthDataResponseUnmarshaller {
 		describeUserBandWidthDataResponse.setRequestId(_ctx.stringValue("DescribeUserBandWidthDataResponse.RequestId"));
 		describeUserBandWidthDataResponse.setCode(_ctx.integerValue("DescribeUserBandWidthDataResponse.Code"));
 
-		List<MonitorDataItem> monitorData = new ArrayList<MonitorDataItem>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeUserBandWidthDataResponse.MonitorData.Length"); i++) {
-			MonitorDataItem monitorDataItem = new MonitorDataItem();
-			monitorDataItem.setMaxDownBandWidth(_ctx.stringValue("DescribeUserBandWidthDataResponse.MonitorData["+ i +"].MaxDownBandWidth"));
-			monitorDataItem.setMaxUpBandWidth(_ctx.stringValue("DescribeUserBandWidthDataResponse.MonitorData["+ i +"].MaxUpBandWidth"));
+		MonitorData monitorData = new MonitorData();
+		monitorData.setMaxDownBandWidth(_ctx.stringValue("DescribeUserBandWidthDataResponse.MonitorData.MaxDownBandWidth"));
+		monitorData.setMaxUpBandWidth(_ctx.stringValue("DescribeUserBandWidthDataResponse.MonitorData.MaxUpBandWidth"));
 
-			List<BandWidthMonitorDataItem> bandWidthMonitorData = new ArrayList<BandWidthMonitorDataItem>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeUserBandWidthDataResponse.MonitorData["+ i +"].BandWidthMonitorData.Length"); j++) {
-				BandWidthMonitorDataItem bandWidthMonitorDataItem = new BandWidthMonitorDataItem();
-				bandWidthMonitorDataItem.setUpBandWidth(_ctx.integerValue("DescribeUserBandWidthDataResponse.MonitorData["+ i +"].BandWidthMonitorData["+ j +"].UpBandWidth"));
-				bandWidthMonitorDataItem.setDownBandWidth(_ctx.integerValue("DescribeUserBandWidthDataResponse.MonitorData["+ i +"].BandWidthMonitorData["+ j +"].DownBandWidth"));
-				bandWidthMonitorDataItem.setInternetTX(_ctx.integerValue("DescribeUserBandWidthDataResponse.MonitorData["+ i +"].BandWidthMonitorData["+ j +"].InternetTX"));
-				bandWidthMonitorDataItem.setInternetRX(_ctx.integerValue("DescribeUserBandWidthDataResponse.MonitorData["+ i +"].BandWidthMonitorData["+ j +"].InternetRX"));
-				bandWidthMonitorDataItem.setTimeStamp(_ctx.stringValue("DescribeUserBandWidthDataResponse.MonitorData["+ i +"].BandWidthMonitorData["+ j +"].TimeStamp"));
+		List<BandWidthMonitorDataItem> bandWidthMonitorData = new ArrayList<BandWidthMonitorDataItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeUserBandWidthDataResponse.MonitorData.BandWidthMonitorData.Length"); i++) {
+			BandWidthMonitorDataItem bandWidthMonitorDataItem = new BandWidthMonitorDataItem();
+			bandWidthMonitorDataItem.setUpBandWidth(_ctx.integerValue("DescribeUserBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].UpBandWidth"));
+			bandWidthMonitorDataItem.setDownBandWidth(_ctx.integerValue("DescribeUserBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].DownBandWidth"));
+			bandWidthMonitorDataItem.setInternetTX(_ctx.integerValue("DescribeUserBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].InternetTX"));
+			bandWidthMonitorDataItem.setInternetRX(_ctx.integerValue("DescribeUserBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].InternetRX"));
+			bandWidthMonitorDataItem.setTimeStamp(_ctx.stringValue("DescribeUserBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].TimeStamp"));
 
-				bandWidthMonitorData.add(bandWidthMonitorDataItem);
-			}
-			monitorDataItem.setBandWidthMonitorData(bandWidthMonitorData);
-
-			monitorData.add(monitorDataItem);
+			bandWidthMonitorData.add(bandWidthMonitorDataItem);
 		}
+		monitorData.setBandWidthMonitorData(bandWidthMonitorData);
 		describeUserBandWidthDataResponse.setMonitorData(monitorData);
 	 
 	 	return describeUserBandWidthDataResponse;

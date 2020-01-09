@@ -15,34 +15,18 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
-	
-	public CreateInstanceRequest() {
-		super("Ens", "2017-11-10", "CreateInstance", "ens");
-	}
-
-	private String autoRenewPeriod;
-
-	private String period;
+	   
 
 	private String imageId;
 
-	private String quantity;
-
-	private String version;
-
 	private String password;
-
-	private String systemDiskSize;
-
-	private String autoRenew;
-
-	private String internetChargeType;
 
 	private String ensRegionId;
 
@@ -50,26 +34,26 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String dataDisk1Size;
 
-	public String getAutoRenewPeriod() {
-		return this.autoRenewPeriod;
-	}
+	private String autoRenewPeriod;
 
-	public void setAutoRenewPeriod(String autoRenewPeriod) {
-		this.autoRenewPeriod = autoRenewPeriod;
-		if(autoRenewPeriod != null){
-			putQueryParameter("AutoRenewPeriod", autoRenewPeriod);
-		}
-	}
+	private String period;
 
-	public String getPeriod() {
-		return this.period;
-	}
+	private String quantity;
 
-	public void setPeriod(String period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period);
-		}
+	private String ipType;
+
+	private Long ownerId;
+
+	private String version;
+
+	private String systemDiskSize;
+
+	private String autoRenew;
+
+	private String internetChargeType;
+	public CreateInstanceRequest() {
+		super("Ens", "2017-11-10", "CreateInstance", "ens");
+		setMethod(MethodType.POST);
 	}
 
 	public String getImageId() {
@@ -83,47 +67,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
-	public String getQuantity() {
-		return this.quantity;
-	}
-
-	public void setQuantity(String quantity) {
-		this.quantity = quantity;
-		if(quantity != null){
-			putQueryParameter("Quantity", quantity);
-		}
-	}
-
-	public String getBizVersion() {
-		return this.version;
-	}
-
-	public void setBizVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizVersion instead of this.
-	 */
-	@Deprecated
-	public String getVersion() {
-		return this.version;
-	}
-
-	/**
-	 * @deprecated use setBizVersion instead of this.
-	 */
-	@Deprecated
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
 	public String getPassword() {
 		return this.password;
 	}
@@ -132,39 +75,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.password = password;
 		if(password != null){
 			putQueryParameter("Password", password);
-		}
-	}
-
-	public String getSystemDiskSize() {
-		return this.systemDiskSize;
-	}
-
-	public void setSystemDiskSize(String systemDiskSize) {
-		this.systemDiskSize = systemDiskSize;
-		if(systemDiskSize != null){
-			putQueryParameter("SystemDisk.Size", systemDiskSize);
-		}
-	}
-
-	public String getAutoRenew() {
-		return this.autoRenew;
-	}
-
-	public void setAutoRenew(String autoRenew) {
-		this.autoRenew = autoRenew;
-		if(autoRenew != null){
-			putQueryParameter("AutoRenew", autoRenew);
-		}
-	}
-
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
 		}
 	}
 
@@ -198,6 +108,105 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.dataDisk1Size = dataDisk1Size;
 		if(dataDisk1Size != null){
 			putQueryParameter("DataDisk.1.Size", dataDisk1Size);
+		}
+	}
+
+	public String getAutoRenewPeriod() {
+		return this.autoRenewPeriod;
+	}
+
+	public void setAutoRenewPeriod(String autoRenewPeriod) {
+		this.autoRenewPeriod = autoRenewPeriod;
+		if(autoRenewPeriod != null){
+			putQueryParameter("AutoRenewPeriod", autoRenewPeriod);
+		}
+	}
+
+	public String getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(String period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period);
+		}
+	}
+
+	public String getQuantity() {
+		return this.quantity;
+	}
+
+	public void setQuantity(String quantity) {
+		this.quantity = quantity;
+		if(quantity != null){
+			putQueryParameter("Quantity", quantity);
+		}
+	}
+
+	public String getIpType() {
+		return this.ipType;
+	}
+
+	public void setIpType(String ipType) {
+		this.ipType = ipType;
+		if(ipType != null){
+			putQueryParameter("IpType", ipType);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+		if(version != null){
+			putQueryParameter("Version", version);
+		}
+	}
+
+	public String getSystemDiskSize() {
+		return this.systemDiskSize;
+	}
+
+	public void setSystemDiskSize(String systemDiskSize) {
+		this.systemDiskSize = systemDiskSize;
+		if(systemDiskSize != null){
+			putQueryParameter("SystemDisk.Size", systemDiskSize);
+		}
+	}
+
+	public String getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(String autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew);
+		}
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
 		}
 	}
 

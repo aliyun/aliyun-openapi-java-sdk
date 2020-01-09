@@ -15,34 +15,22 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesResponse> {
-	
-	public DescribeInstancesRequest() {
-		super("Ens", "2017-11-10", "DescribeInstances", "ens");
-	}
+	   
 
 	private String imageId;
 
-	private String ensServiceId;
-
 	private String searchKey;
-
-	private String version;
 
 	private Integer pageNumber;
 
 	private String orderByParams;
-
-	private String instanceId;
-
-	private String instanceName;
-
-	private String instanceIds;
 
 	private String ensRegionId;
 
@@ -52,7 +40,21 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String instanceResourceType;
 
+	private String ensServiceId;
+
+	private String version;
+
+	private String instanceId;
+
+	private String instanceName;
+
+	private String instanceIds;
+
 	private String status;
+	public DescribeInstancesRequest() {
+		super("Ens", "2017-11-10", "DescribeInstances", "ens");
+		setMethod(MethodType.POST);
+	}
 
 	public String getImageId() {
 		return this.imageId;
@@ -65,17 +67,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public String getEnsServiceId() {
-		return this.ensServiceId;
-	}
-
-	public void setEnsServiceId(String ensServiceId) {
-		this.ensServiceId = ensServiceId;
-		if(ensServiceId != null){
-			putQueryParameter("EnsServiceId", ensServiceId);
-		}
-	}
-
 	public String getSearchKey() {
 		return this.searchKey;
 	}
@@ -84,36 +75,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.searchKey = searchKey;
 		if(searchKey != null){
 			putQueryParameter("SearchKey", searchKey);
-		}
-	}
-
-	public String getBizVersion() {
-		return this.version;
-	}
-
-	public void setBizVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizVersion instead of this.
-	 */
-	@Deprecated
-	public String getVersion() {
-		return this.version;
-	}
-
-	/**
-	 * @deprecated use setBizVersion instead of this.
-	 */
-	@Deprecated
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 
@@ -136,39 +97,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.orderByParams = orderByParams;
 		if(orderByParams != null){
 			putQueryParameter("OrderByParams", orderByParams);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-		if(instanceName != null){
-			putQueryParameter("InstanceName", instanceName);
-		}
-	}
-
-	public String getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 
@@ -213,6 +141,61 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.instanceResourceType = instanceResourceType;
 		if(instanceResourceType != null){
 			putQueryParameter("InstanceResourceType", instanceResourceType);
+		}
+	}
+
+	public String getEnsServiceId() {
+		return this.ensServiceId;
+	}
+
+	public void setEnsServiceId(String ensServiceId) {
+		this.ensServiceId = ensServiceId;
+		if(ensServiceId != null){
+			putQueryParameter("EnsServiceId", ensServiceId);
+		}
+	}
+
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+		if(version != null){
+			putQueryParameter("Version", version);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public String getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 

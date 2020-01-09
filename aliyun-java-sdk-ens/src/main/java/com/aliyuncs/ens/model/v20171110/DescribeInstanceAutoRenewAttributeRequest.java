@@ -15,20 +15,46 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeInstanceAutoRenewAttributeRequest extends RpcAcsRequest<DescribeInstanceAutoRenewAttributeResponse> {
-	
-	public DescribeInstanceAutoRenewAttributeRequest() {
-		super("Ens", "2017-11-10", "DescribeInstanceAutoRenewAttribute", "ens");
-	}
+	   
 
-	private String instanceIds;
+	private Long ownerId;
 
 	private String version;
+
+	private String instanceIds;
+	public DescribeInstanceAutoRenewAttributeRequest() {
+		super("Ens", "2017-11-10", "DescribeInstanceAutoRenewAttribute", "ens");
+		setMethod(MethodType.POST);
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+		if(version != null){
+			putQueryParameter("Version", version);
+		}
+	}
 
 	public String getInstanceIds() {
 		return this.instanceIds;
@@ -38,36 +64,6 @@ public class DescribeInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Des
 		this.instanceIds = instanceIds;
 		if(instanceIds != null){
 			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
-	public String getBizVersion() {
-		return this.version;
-	}
-
-	public void setBizVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizVersion instead of this.
-	 */
-	@Deprecated
-	public String getVersion() {
-		return this.version;
-	}
-
-	/**
-	 * @deprecated use setBizVersion instead of this.
-	 */
-	@Deprecated
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

@@ -20,6 +20,8 @@ import java.util.List;
 import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse;
 import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse.Instance;
 import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse.Instance.DataDiskItem;
+import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse.Instance.PrivateIpAddress;
+import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse.Instance.PublicIpAddress;
 import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse.Instance.SystemDisk;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -93,6 +95,28 @@ public class DescribeInstancesResponseUnmarshaller {
 				dataDisk.add(dataDiskItem);
 			}
 			instance.setDataDisk(dataDisk);
+
+			List<PublicIpAddress> publicIpAddresses = new ArrayList<PublicIpAddress>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].PublicIpAddresses.Length"); j++) {
+				PublicIpAddress publicIpAddress_ = new PublicIpAddress();
+				publicIpAddress_.setIp(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PublicIpAddresses["+ j +"].Ip"));
+				publicIpAddress_.setGateWay(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PublicIpAddresses["+ j +"].GateWay"));
+				publicIpAddress_.setIsp(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PublicIpAddresses["+ j +"].Isp"));
+
+				publicIpAddresses.add(publicIpAddress_);
+			}
+			instance.setPublicIpAddresses(publicIpAddresses);
+
+			List<PrivateIpAddress> privateIpAddresses = new ArrayList<PrivateIpAddress>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].PrivateIpAddresses.Length"); j++) {
+				PrivateIpAddress privateIpAddress = new PrivateIpAddress();
+				privateIpAddress.setIp(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PrivateIpAddresses["+ j +"].Ip"));
+				privateIpAddress.setGateWay(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PrivateIpAddresses["+ j +"].GateWay"));
+				privateIpAddress.setIsp(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PrivateIpAddresses["+ j +"].Isp"));
+
+				privateIpAddresses.add(privateIpAddress);
+			}
+			instance.setPrivateIpAddresses(privateIpAddresses);
 
 			instances.add(instance);
 		}

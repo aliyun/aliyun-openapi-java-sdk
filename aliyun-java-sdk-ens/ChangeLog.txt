@@ -1,3 +1,9 @@
+2020-01-09 Version: 1.2.0
+- Add New Interface DescribeInstanceTypes.
+- Deprecated New Interface DescribeReservedResource.
+- Add New Interface DescribeAvailableResourceInfo.
+- Add New Interface AttachEnsInstances.
+
 2019-07-30 Version: 1.1.0
 - Add DescribeInstanceTypes.
 - Add DescribeReservedResource.

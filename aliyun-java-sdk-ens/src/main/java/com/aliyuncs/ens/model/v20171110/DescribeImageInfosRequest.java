@@ -15,20 +15,22 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeImageInfosRequest extends RpcAcsRequest<DescribeImageInfosResponse> {
-	
-	public DescribeImageInfosRequest() {
-		super("Ens", "2017-11-10", "DescribeImageInfos", "ens");
-	}
+	   
 
 	private String osType;
 
 	private String version;
+	public DescribeImageInfosRequest() {
+		super("Ens", "2017-11-10", "DescribeImageInfos", "ens");
+		setMethod(MethodType.POST);
+	}
 
 	public String getOsType() {
 		return this.osType;
@@ -41,29 +43,10 @@ public class DescribeImageInfosRequest extends RpcAcsRequest<DescribeImageInfosR
 		}
 	}
 
-	public String getBizVersion() {
-		return this.version;
-	}
-
-	public void setBizVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizVersion instead of this.
-	 */
-	@Deprecated
 	public String getVersion() {
 		return this.version;
 	}
 
-	/**
-	 * @deprecated use setBizVersion instead of this.
-	 */
-	@Deprecated
 	public void setVersion(String version) {
 		this.version = version;
 		if(version != null){
