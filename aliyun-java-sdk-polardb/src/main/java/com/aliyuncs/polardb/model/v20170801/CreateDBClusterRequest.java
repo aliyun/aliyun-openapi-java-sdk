@@ -53,6 +53,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String vSwitchId;
 
+	private String securityIPList;
+
 	private Boolean autoRenew;
 
 	private String vPCId;
@@ -226,6 +228,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getSecurityIPList() {
+		return this.securityIPList;
+	}
+
+	public void setSecurityIPList(String securityIPList) {
+		this.securityIPList = securityIPList;
+		if(securityIPList != null){
+			putQueryParameter("SecurityIPList", securityIPList);
 		}
 	}
 

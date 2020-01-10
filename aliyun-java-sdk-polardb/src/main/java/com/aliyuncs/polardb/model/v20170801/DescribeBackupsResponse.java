@@ -97,6 +97,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String backupSetSize;
 
+		private String consistentTime;
+
 		public String getBackupId() {
 			return this.backupId;
 		}
@@ -175,6 +177,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupSetSize(String backupSetSize) {
 			this.backupSetSize = backupSetSize;
+		}
+
+		public String getConsistentTime() {
+			return this.consistentTime;
+		}
+
+		public void setConsistentTime(String consistentTime) {
+			this.consistentTime = consistentTime;
 		}
 	}
 

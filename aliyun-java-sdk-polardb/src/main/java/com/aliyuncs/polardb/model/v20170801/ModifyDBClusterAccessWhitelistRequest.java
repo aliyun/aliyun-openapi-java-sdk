@@ -31,6 +31,8 @@ public class ModifyDBClusterAccessWhitelistRequest extends RpcAcsRequest<ModifyD
 
 	private String dBClusterIPArrayAttribute;
 
+	private String modifyMode;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -83,6 +85,17 @@ public class ModifyDBClusterAccessWhitelistRequest extends RpcAcsRequest<ModifyD
 		this.dBClusterIPArrayAttribute = dBClusterIPArrayAttribute;
 		if(dBClusterIPArrayAttribute != null){
 			putQueryParameter("DBClusterIPArrayAttribute", dBClusterIPArrayAttribute);
+		}
+	}
+
+	public String getModifyMode() {
+		return this.modifyMode;
+	}
+
+	public void setModifyMode(String modifyMode) {
+		this.modifyMode = modifyMode;
+		if(modifyMode != null){
+			putQueryParameter("ModifyMode", modifyMode);
 		}
 	}
 

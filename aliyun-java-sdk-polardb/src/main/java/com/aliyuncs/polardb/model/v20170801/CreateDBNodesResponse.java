@@ -14,6 +14,7 @@
 
 package com.aliyuncs.polardb.model.v20170801;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.polardb.transform.v20170801.CreateDBNodesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -29,6 +30,8 @@ public class CreateDBNodesResponse extends AcsResponse {
 	private String dBClusterId;
 
 	private String orderId;
+
+	private List<String> dBNodeIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,6 +55,14 @@ public class CreateDBNodesResponse extends AcsResponse {
 
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
+	}
+
+	public List<String> getDBNodeIds() {
+		return this.dBNodeIds;
+	}
+
+	public void setDBNodeIds(List<String> dBNodeIds) {
+		this.dBNodeIds = dBNodeIds;
 	}
 
 	@Override

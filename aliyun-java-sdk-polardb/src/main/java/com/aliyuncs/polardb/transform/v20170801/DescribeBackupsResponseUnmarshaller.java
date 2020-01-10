@@ -44,6 +44,7 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setBackupMethod(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupMethod"));
 			backup.setStoreStatus(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].StoreStatus"));
 			backup.setBackupSetSize(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupSetSize"));
+			backup.setConsistentTime(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].ConsistentTime"));
 
 			items.add(backup);
 		}

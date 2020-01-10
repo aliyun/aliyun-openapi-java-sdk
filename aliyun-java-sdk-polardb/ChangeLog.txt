@@ -1,3 +1,7 @@
+2020-01-10 Version: 1.6.6
+- Return `ConsistentTime` for DescribeBackups.
+- Return `DBNodeIds` for CreateDBNodes.
+
 2019-12-19 Version: 1.6.5
 - Add DescribeSlowLogRecords,DescribeSlowLogs for SlowLog.
 

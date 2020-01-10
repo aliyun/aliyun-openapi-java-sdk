@@ -14,6 +14,9 @@
 
 package com.aliyuncs.polardb.transform.v20170801;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.polardb.model.v20170801.CreateDBNodesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -25,6 +28,12 @@ public class CreateDBNodesResponseUnmarshaller {
 		createDBNodesResponse.setRequestId(_ctx.stringValue("CreateDBNodesResponse.RequestId"));
 		createDBNodesResponse.setDBClusterId(_ctx.stringValue("CreateDBNodesResponse.DBClusterId"));
 		createDBNodesResponse.setOrderId(_ctx.stringValue("CreateDBNodesResponse.OrderId"));
+
+		List<String> dBNodeIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("CreateDBNodesResponse.DBNodeIds.Length"); i++) {
+			dBNodeIds.add(_ctx.stringValue("CreateDBNodesResponse.DBNodeIds["+ i +"]"));
+		}
+		createDBNodesResponse.setDBNodeIds(dBNodeIds);
 	 
 	 	return createDBNodesResponse;
 	}
