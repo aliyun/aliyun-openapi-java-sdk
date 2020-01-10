@@ -1,3 +1,6 @@
+2020-01-10 Version: 1.9.1
+- EMR Meta API.
+
 2020-01-10 Version: 1.9.0
 - EMR Meta API.
 
