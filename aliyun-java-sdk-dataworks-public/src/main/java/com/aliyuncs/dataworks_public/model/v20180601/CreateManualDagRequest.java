@@ -16,17 +16,14 @@ package com.aliyuncs.dataworks_public.model.v20180601;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dataworks_public.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateManualDagRequest extends RpcAcsRequest<CreateManualDagResponse> {
-	
-	public CreateManualDagRequest() {
-		super("dataworks-public", "2018-06-01", "CreateManualDag", "dataworks-public");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String projectName;
 
@@ -37,6 +34,14 @@ public class CreateManualDagRequest extends RpcAcsRequest<CreateManualDagRespons
 	private String dagPara;
 
 	private String nodePara;
+	public CreateManualDagRequest() {
+		super("dataworks-public", "2018-06-01", "CreateManualDag");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProjectName() {
 		return this.projectName;

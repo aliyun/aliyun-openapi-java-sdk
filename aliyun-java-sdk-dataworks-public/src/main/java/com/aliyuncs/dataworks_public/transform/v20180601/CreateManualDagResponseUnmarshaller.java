@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateManualDagResponseUnmarshaller {
 
-	public static CreateManualDagResponse unmarshall(CreateManualDagResponse createManualDagResponse, UnmarshallerContext context) {
+	public static CreateManualDagResponse unmarshall(CreateManualDagResponse createManualDagResponse, UnmarshallerContext _ctx) {
 		
-		createManualDagResponse.setRequestId(context.stringValue("CreateManualDagResponse.RequestId"));
-		createManualDagResponse.setReturnCode(context.stringValue("CreateManualDagResponse.ReturnCode"));
-		createManualDagResponse.setReturnErrorSolution(context.stringValue("CreateManualDagResponse.ReturnErrorSolution"));
-		createManualDagResponse.setReturnMessage(context.stringValue("CreateManualDagResponse.ReturnMessage"));
-		createManualDagResponse.setReturnValue(context.longValue("CreateManualDagResponse.ReturnValue"));
+		createManualDagResponse.setRequestId(_ctx.stringValue("CreateManualDagResponse.RequestId"));
+		createManualDagResponse.setReturnCode(_ctx.stringValue("CreateManualDagResponse.ReturnCode"));
+		createManualDagResponse.setReturnErrorSolution(_ctx.stringValue("CreateManualDagResponse.ReturnErrorSolution"));
+		createManualDagResponse.setReturnMessage(_ctx.stringValue("CreateManualDagResponse.ReturnMessage"));
+		createManualDagResponse.setReturnValue(_ctx.longValue("CreateManualDagResponse.ReturnValue"));
 	 
 	 	return createManualDagResponse;
 	}

@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SearchManualDagNodeInstanceResponseUnmarshaller {
 
-	public static SearchManualDagNodeInstanceResponse unmarshall(SearchManualDagNodeInstanceResponse searchManualDagNodeInstanceResponse, UnmarshallerContext context) {
+	public static SearchManualDagNodeInstanceResponse unmarshall(SearchManualDagNodeInstanceResponse searchManualDagNodeInstanceResponse, UnmarshallerContext _ctx) {
 		
-		searchManualDagNodeInstanceResponse.setRequestId(context.stringValue("SearchManualDagNodeInstanceResponse.RequestId"));
-		searchManualDagNodeInstanceResponse.setErrCode(context.stringValue("SearchManualDagNodeInstanceResponse.ErrCode"));
-		searchManualDagNodeInstanceResponse.setErrMsg(context.stringValue("SearchManualDagNodeInstanceResponse.ErrMsg"));
-		searchManualDagNodeInstanceResponse.setSuccess(context.booleanValue("SearchManualDagNodeInstanceResponse.Success"));
+		searchManualDagNodeInstanceResponse.setRequestId(_ctx.stringValue("SearchManualDagNodeInstanceResponse.RequestId"));
+		searchManualDagNodeInstanceResponse.setErrCode(_ctx.stringValue("SearchManualDagNodeInstanceResponse.ErrCode"));
+		searchManualDagNodeInstanceResponse.setErrMsg(_ctx.stringValue("SearchManualDagNodeInstanceResponse.ErrMsg"));
+		searchManualDagNodeInstanceResponse.setSuccess(_ctx.booleanValue("SearchManualDagNodeInstanceResponse.Success"));
 
 		List<NodeInsInfo> data = new ArrayList<NodeInsInfo>();
-		for (int i = 0; i < context.lengthValue("SearchManualDagNodeInstanceResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("SearchManualDagNodeInstanceResponse.Data.Length"); i++) {
 			NodeInsInfo nodeInsInfo = new NodeInsInfo();
-			nodeInsInfo.setInstanceId(context.longValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].InstanceId"));
-			nodeInsInfo.setDagId(context.longValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].DagId"));
-			nodeInsInfo.setDagType(context.integerValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].DagType"));
-			nodeInsInfo.setStatus(context.integerValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].Status"));
-			nodeInsInfo.setBizdate(context.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].Bizdate"));
-			nodeInsInfo.setParaValue(context.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].ParaValue"));
-			nodeInsInfo.setFinishTime(context.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].FinishTime"));
-			nodeInsInfo.setBeginWaitTimeTime(context.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].BeginWaitTimeTime"));
-			nodeInsInfo.setBeginWaitResTime(context.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].BeginWaitResTime"));
-			nodeInsInfo.setBeginRunningTime(context.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].BeginRunningTime"));
-			nodeInsInfo.setCreateTime(context.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].CreateTime"));
-			nodeInsInfo.setModifyTime(context.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].ModifyTime"));
-			nodeInsInfo.setNodeName(context.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].NodeName"));
+			nodeInsInfo.setInstanceId(_ctx.longValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].InstanceId"));
+			nodeInsInfo.setDagId(_ctx.longValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].DagId"));
+			nodeInsInfo.setDagType(_ctx.integerValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].DagType"));
+			nodeInsInfo.setStatus(_ctx.integerValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].Status"));
+			nodeInsInfo.setBizdate(_ctx.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].Bizdate"));
+			nodeInsInfo.setParaValue(_ctx.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].ParaValue"));
+			nodeInsInfo.setFinishTime(_ctx.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].FinishTime"));
+			nodeInsInfo.setBeginWaitTimeTime(_ctx.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].BeginWaitTimeTime"));
+			nodeInsInfo.setBeginWaitResTime(_ctx.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].BeginWaitResTime"));
+			nodeInsInfo.setBeginRunningTime(_ctx.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].BeginRunningTime"));
+			nodeInsInfo.setCreateTime(_ctx.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].CreateTime"));
+			nodeInsInfo.setModifyTime(_ctx.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].ModifyTime"));
+			nodeInsInfo.setNodeName(_ctx.stringValue("SearchManualDagNodeInstanceResponse.Data["+ i +"].NodeName"));
 
 			data.add(nodeInsInfo);
 		}
