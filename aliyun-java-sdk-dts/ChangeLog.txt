@@ -1,3 +1,6 @@
+2020-01-10 Version: 2.0.18
+- Support RAM policy.
+
 2020-01-10 Version: 3.1.0
 - Supported RAM fro DTS.
 
