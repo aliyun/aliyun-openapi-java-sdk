@@ -37,6 +37,8 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private String dBInstanceStorageType;
 
+	private String sourceBiz;
+
 	private String direction;
 
 	private String resourceOwnerAccount;
@@ -120,6 +122,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.dBInstanceStorageType = dBInstanceStorageType;
 		if(dBInstanceStorageType != null){
 			putQueryParameter("DBInstanceStorageType", dBInstanceStorageType);
+		}
+	}
+
+	public String getSourceBiz() {
+		return this.sourceBiz;
+	}
+
+	public void setSourceBiz(String sourceBiz) {
+		this.sourceBiz = sourceBiz;
+		if(sourceBiz != null){
+			putQueryParameter("SourceBiz", sourceBiz);
 		}
 	}
 
