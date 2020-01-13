@@ -23,26 +23,24 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyMaintenancePropertyRequest extends RpcAcsRequest<ModifyMaintenancePropertyResponse> {
+public class DescribeInstanceMaintenanceAttributesRequest extends RpcAcsRequest<DescribeInstanceMaintenanceAttributesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String startTime;
+	private Long pageNumber;
 
-	private String actionOnMaintenance;
+	private Long pageSize;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String endTime;
-
 	private Long ownerId;
 
 	private List<String> instanceIds;
-	public ModifyMaintenancePropertyRequest() {
-		super("Ecs", "2014-05-26", "ModifyMaintenanceProperty", "ecs");
+	public DescribeInstanceMaintenanceAttributesRequest() {
+		super("Ecs", "2014-05-26", "DescribeInstanceMaintenanceAttributes", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,25 +59,25 @@ public class ModifyMaintenancePropertyRequest extends RpcAcsRequest<ModifyMainte
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public Long getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getActionOnMaintenance() {
-		return this.actionOnMaintenance;
+	public Long getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setActionOnMaintenance(String actionOnMaintenance) {
-		this.actionOnMaintenance = actionOnMaintenance;
-		if(actionOnMaintenance != null){
-			putQueryParameter("ActionOnMaintenance", actionOnMaintenance);
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -102,17 +100,6 @@ public class ModifyMaintenancePropertyRequest extends RpcAcsRequest<ModifyMainte
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -141,8 +128,8 @@ public class ModifyMaintenancePropertyRequest extends RpcAcsRequest<ModifyMainte
 	}
 
 	@Override
-	public Class<ModifyMaintenancePropertyResponse> getResponseClass() {
-		return ModifyMaintenancePropertyResponse.class;
+	public Class<DescribeInstanceMaintenanceAttributesResponse> getResponseClass() {
+		return DescribeInstanceMaintenanceAttributesResponse.class;
 	}
 
 }

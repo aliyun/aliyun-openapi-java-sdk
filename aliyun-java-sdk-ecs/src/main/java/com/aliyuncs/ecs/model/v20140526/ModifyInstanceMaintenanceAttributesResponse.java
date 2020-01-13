@@ -15,14 +15,14 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.DeleteMaintenancePropertyResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.ModifyInstanceMaintenanceAttributesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteMaintenancePropertyResponse extends AcsResponse {
+public class ModifyInstanceMaintenanceAttributesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class DeleteMaintenancePropertyResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteMaintenancePropertyResponse getInstance(UnmarshallerContext context) {
-		return	DeleteMaintenancePropertyResponseUnmarshaller.unmarshall(this, context);
+	public ModifyInstanceMaintenanceAttributesResponse getInstance(UnmarshallerContext context) {
+		return	ModifyInstanceMaintenanceAttributesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -14,16 +14,16 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.CreateMaintenancePropertyResponse;
+import com.aliyuncs.ecs.model.v20140526.ModifyInstanceMaintenanceAttributesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateMaintenancePropertyResponseUnmarshaller {
+public class ModifyInstanceMaintenanceAttributesResponseUnmarshaller {
 
-	public static CreateMaintenancePropertyResponse unmarshall(CreateMaintenancePropertyResponse createMaintenancePropertyResponse, UnmarshallerContext _ctx) {
+	public static ModifyInstanceMaintenanceAttributesResponse unmarshall(ModifyInstanceMaintenanceAttributesResponse modifyInstanceMaintenanceAttributesResponse, UnmarshallerContext _ctx) {
 		
-		createMaintenancePropertyResponse.setRequestId(_ctx.stringValue("CreateMaintenancePropertyResponse.RequestId"));
+		modifyInstanceMaintenanceAttributesResponse.setRequestId(_ctx.stringValue("ModifyInstanceMaintenanceAttributesResponse.RequestId"));
 	 
-	 	return createMaintenancePropertyResponse;
+	 	return modifyInstanceMaintenanceAttributesResponse;
 	}
 }

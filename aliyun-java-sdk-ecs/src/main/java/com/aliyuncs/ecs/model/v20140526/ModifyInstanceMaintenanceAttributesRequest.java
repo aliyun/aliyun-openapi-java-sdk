@@ -23,10 +23,14 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteMaintenancePropertyRequest extends RpcAcsRequest<DeleteMaintenancePropertyResponse> {
+public class ModifyInstanceMaintenanceAttributesRequest extends RpcAcsRequest<ModifyInstanceMaintenanceAttributesResponse> {
 	   
 
 	private Long resourceOwnerId;
+
+	private List<MaintenanceWindow> maintenanceWindows;
+
+	private String actionOnMaintenance;
 
 	private String resourceOwnerAccount;
 
@@ -35,8 +39,8 @@ public class DeleteMaintenancePropertyRequest extends RpcAcsRequest<DeleteMainte
 	private Long ownerId;
 
 	private List<String> instanceIds;
-	public DeleteMaintenancePropertyRequest() {
-		super("Ecs", "2014-05-26", "DeleteMaintenanceProperty", "ecs");
+	public ModifyInstanceMaintenanceAttributesRequest() {
+		super("Ecs", "2014-05-26", "ModifyInstanceMaintenanceAttributes", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,6 +56,31 @@ public class DeleteMaintenancePropertyRequest extends RpcAcsRequest<DeleteMainte
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public List<MaintenanceWindow> getMaintenanceWindows() {
+		return this.maintenanceWindows;
+	}
+
+	public void setMaintenanceWindows(List<MaintenanceWindow> maintenanceWindows) {
+		this.maintenanceWindows = maintenanceWindows;	
+		if (maintenanceWindows != null) {
+			for (int depth1 = 0; depth1 < maintenanceWindows.size(); depth1++) {
+				putQueryParameter("MaintenanceWindow." + (depth1 + 1) + ".StartTime" , maintenanceWindows.get(depth1).getStartTime());
+				putQueryParameter("MaintenanceWindow." + (depth1 + 1) + ".EndTime" , maintenanceWindows.get(depth1).getEndTime());
+			}
+		}	
+	}
+
+	public String getActionOnMaintenance() {
+		return this.actionOnMaintenance;
+	}
+
+	public void setActionOnMaintenance(String actionOnMaintenance) {
+		this.actionOnMaintenance = actionOnMaintenance;
+		if(actionOnMaintenance != null){
+			putQueryParameter("ActionOnMaintenance", actionOnMaintenance);
 		}
 	}
 
@@ -101,9 +130,32 @@ public class DeleteMaintenancePropertyRequest extends RpcAcsRequest<DeleteMainte
 		}	
 	}
 
+	public static class MaintenanceWindow {
+
+		private String startTime;
+
+		private String endTime;
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+	}
+
 	@Override
-	public Class<DeleteMaintenancePropertyResponse> getResponseClass() {
-		return DeleteMaintenancePropertyResponse.class;
+	public Class<ModifyInstanceMaintenanceAttributesResponse> getResponseClass() {
+		return ModifyInstanceMaintenanceAttributesResponse.class;
 	}
 
 }

@@ -14,16 +14,16 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.DeleteMaintenancePropertyResponse;
+import com.aliyuncs.ecs.model.v20140526.RedeployDedicatedHostResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteMaintenancePropertyResponseUnmarshaller {
+public class RedeployDedicatedHostResponseUnmarshaller {
 
-	public static DeleteMaintenancePropertyResponse unmarshall(DeleteMaintenancePropertyResponse deleteMaintenancePropertyResponse, UnmarshallerContext _ctx) {
+	public static RedeployDedicatedHostResponse unmarshall(RedeployDedicatedHostResponse redeployDedicatedHostResponse, UnmarshallerContext _ctx) {
 		
-		deleteMaintenancePropertyResponse.setRequestId(_ctx.stringValue("DeleteMaintenancePropertyResponse.RequestId"));
+		redeployDedicatedHostResponse.setRequestId(_ctx.stringValue("RedeployDedicatedHostResponse.RequestId"));
 	 
-	 	return deleteMaintenancePropertyResponse;
+	 	return redeployDedicatedHostResponse;
 	}
 }

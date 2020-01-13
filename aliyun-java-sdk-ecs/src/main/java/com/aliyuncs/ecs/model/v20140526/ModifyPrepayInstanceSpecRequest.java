@@ -41,6 +41,8 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 
 	private Boolean autoPay;
 
+	private Boolean rebootWhenFinished;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -144,6 +146,17 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 		this.autoPay = autoPay;
 		if(autoPay != null){
 			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public Boolean getRebootWhenFinished() {
+		return this.rebootWhenFinished;
+	}
+
+	public void setRebootWhenFinished(Boolean rebootWhenFinished) {
+		this.rebootWhenFinished = rebootWhenFinished;
+		if(rebootWhenFinished != null){
+			putQueryParameter("RebootWhenFinished", rebootWhenFinished.toString());
 		}
 	}
 

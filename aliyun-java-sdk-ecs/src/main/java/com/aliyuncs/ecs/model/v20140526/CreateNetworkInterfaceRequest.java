@@ -34,6 +34,8 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private String description;
 
+	private Integer secondaryPrivateIpAddressCount;
+
 	private String businessType;
 
 	private String resourceGroupId;
@@ -53,6 +55,8 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 	private List<String> securityGroupIdss;
 
 	private String vSwitchId;
+
+	private List<String> privateIpAddresss;
 
 	private String primaryIpAddress;
 	public CreateNetworkInterfaceRequest() {
@@ -105,6 +109,17 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public Integer getSecondaryPrivateIpAddressCount() {
+		return this.secondaryPrivateIpAddressCount;
+	}
+
+	public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
+		this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
+		if(secondaryPrivateIpAddressCount != null){
+			putQueryParameter("SecondaryPrivateIpAddressCount", secondaryPrivateIpAddressCount.toString());
 		}
 	}
 
@@ -221,6 +236,19 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
 		}
+	}
+
+	public List<String> getPrivateIpAddresss() {
+		return this.privateIpAddresss;
+	}
+
+	public void setPrivateIpAddresss(List<String> privateIpAddresss) {
+		this.privateIpAddresss = privateIpAddresss;	
+		if (privateIpAddresss != null) {
+			for (int i = 0; i < privateIpAddresss.size(); i++) {
+				putQueryParameter("PrivateIpAddress." + (i + 1) , privateIpAddresss.get(i));
+			}
+		}	
 	}
 
 	public String getPrimaryIpAddress() {

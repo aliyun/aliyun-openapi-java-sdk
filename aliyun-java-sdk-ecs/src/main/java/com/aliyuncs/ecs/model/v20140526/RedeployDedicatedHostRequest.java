@@ -15,7 +15,6 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -23,24 +22,20 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeMaintenancePropertyRequest extends RpcAcsRequest<DescribeMaintenancePropertyResponse> {
+public class RedeployDedicatedHostRequest extends RpcAcsRequest<RedeployDedicatedHostResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private Long pageNumber;
-
-	private Long pageSize;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Long ownerId;
+	private String dedicatedHostId;
 
-	private List<String> instanceIds;
-	public DescribeMaintenancePropertyRequest() {
-		super("Ecs", "2014-05-26", "DescribeMaintenanceProperty", "ecs");
+	private Long ownerId;
+	public RedeployDedicatedHostRequest() {
+		super("Ecs", "2014-05-26", "RedeployDedicatedHost", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,28 +51,6 @@ public class DescribeMaintenancePropertyRequest extends RpcAcsRequest<DescribeMa
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -103,6 +76,17 @@ public class DescribeMaintenancePropertyRequest extends RpcAcsRequest<DescribeMa
 		}
 	}
 
+	public String getDedicatedHostId() {
+		return this.dedicatedHostId;
+	}
+
+	public void setDedicatedHostId(String dedicatedHostId) {
+		this.dedicatedHostId = dedicatedHostId;
+		if(dedicatedHostId != null){
+			putQueryParameter("DedicatedHostId", dedicatedHostId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,22 +98,9 @@ public class DescribeMaintenancePropertyRequest extends RpcAcsRequest<DescribeMa
 		}
 	}
 
-	public List<String> getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(List<String> instanceIds) {
-		this.instanceIds = instanceIds;	
-		if (instanceIds != null) {
-			for (int i = 0; i < instanceIds.size(); i++) {
-				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
-			}
-		}	
-	}
-
 	@Override
-	public Class<DescribeMaintenancePropertyResponse> getResponseClass() {
-		return DescribeMaintenancePropertyResponse.class;
+	public Class<RedeployDedicatedHostResponse> getResponseClass() {
+		return RedeployDedicatedHostResponse.class;
 	}
 
 }

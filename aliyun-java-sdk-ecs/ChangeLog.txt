@@ -1,3 +1,8 @@
+2020-01-13 Version: 4.18.0
+- Supported InstanceMaintenanceAtrributes for maintening the attributes of instances.
+- Deleted MaintenanceProperty.
+- Supported RedeployDedicatedHost for redeploying dedicated host in under-assessment status.
+
 2019-12-19 Version: 4.17.9
 - DescribeNetworkInterfaces Supports NextToken.
 

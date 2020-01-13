@@ -24,6 +24,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstancesFullStatusResponse.Inst
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesFullStatusResponse.InstanceFullStatusType.ScheduledSystemEventType.EventCycleStatus;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesFullStatusResponse.InstanceFullStatusType.ScheduledSystemEventType.EventType;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesFullStatusResponse.InstanceFullStatusType.ScheduledSystemEventType.ExtendedAttribute;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstancesFullStatusResponse.InstanceFullStatusType.ScheduledSystemEventType.ExtendedAttribute.InactiveDisk;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesFullStatusResponse.InstanceFullStatusType.Status;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -73,6 +74,19 @@ public class DescribeInstancesFullStatusResponseUnmarshaller {
 				ExtendedAttribute extendedAttribute = new ExtendedAttribute();
 				extendedAttribute.setDiskId(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.DiskId"));
 				extendedAttribute.setDevice(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.Device"));
+
+				List<InactiveDisk> inactiveDisks = new ArrayList<InactiveDisk>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks.Length"); k++) {
+					InactiveDisk inactiveDisk = new InactiveDisk();
+					inactiveDisk.setCreationTime(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].CreationTime"));
+					inactiveDisk.setReleaseTime(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].ReleaseTime"));
+					inactiveDisk.setDeviceType(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].DeviceType"));
+					inactiveDisk.setDeviceCategory(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].DeviceCategory"));
+					inactiveDisk.setDeviceSize(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].DeviceSize"));
+
+					inactiveDisks.add(inactiveDisk);
+				}
+				extendedAttribute.setInactiveDisks(inactiveDisks);
 				scheduledSystemEventType.setExtendedAttribute(extendedAttribute);
 
 				scheduledSystemEventSet.add(scheduledSystemEventType);

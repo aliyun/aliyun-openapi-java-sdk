@@ -91,6 +91,8 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		private Long timeout;
 
+		private Integer invokeTimes;
+
 		private String creationTime;
 
 		private Boolean enableParameter;
@@ -151,6 +153,14 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		public void setTimeout(Long timeout) {
 			this.timeout = timeout;
+		}
+
+		public Integer getInvokeTimes() {
+			return this.invokeTimes;
+		}
+
+		public void setInvokeTimes(Integer invokeTimes) {
+			this.invokeTimes = invokeTimes;
 		}
 
 		public String getCreationTime() {

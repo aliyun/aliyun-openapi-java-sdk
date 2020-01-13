@@ -22,6 +22,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse.In
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse.InstanceSystemEventType.EventCycleStatus;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse.InstanceSystemEventType.EventType;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse.InstanceSystemEventType.ExtendedAttribute;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceHistoryEventsResponse.InstanceSystemEventType.ExtendedAttribute.InactiveDisk;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -57,6 +58,19 @@ public class DescribeInstanceHistoryEventsResponseUnmarshaller {
 			ExtendedAttribute extendedAttribute = new ExtendedAttribute();
 			extendedAttribute.setDiskId(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.DiskId"));
 			extendedAttribute.setDevice(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.Device"));
+
+			List<InactiveDisk> inactiveDisks = new ArrayList<InactiveDisk>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks.Length"); j++) {
+				InactiveDisk inactiveDisk = new InactiveDisk();
+				inactiveDisk.setCreationTime(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].CreationTime"));
+				inactiveDisk.setReleaseTime(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].ReleaseTime"));
+				inactiveDisk.setDeviceType(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].DeviceType"));
+				inactiveDisk.setDeviceCategory(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].DeviceCategory"));
+				inactiveDisk.setDeviceSize(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].DeviceSize"));
+
+				inactiveDisks.add(inactiveDisk);
+			}
+			extendedAttribute.setInactiveDisks(inactiveDisks);
 			instanceSystemEventType.setExtendedAttribute(extendedAttribute);
 
 			instanceSystemEventSet.add(instanceSystemEventType);

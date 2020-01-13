@@ -241,6 +241,8 @@ public class DescribeInstancesFullStatusResponse extends AcsResponse {
 
 				private String device;
 
+				private List<InactiveDisk> inactiveDisks;
+
 				public String getDiskId() {
 					return this.diskId;
 				}
@@ -255,6 +257,67 @@ public class DescribeInstancesFullStatusResponse extends AcsResponse {
 
 				public void setDevice(String device) {
 					this.device = device;
+				}
+
+				public List<InactiveDisk> getInactiveDisks() {
+					return this.inactiveDisks;
+				}
+
+				public void setInactiveDisks(List<InactiveDisk> inactiveDisks) {
+					this.inactiveDisks = inactiveDisks;
+				}
+
+				public static class InactiveDisk {
+
+					private String creationTime;
+
+					private String releaseTime;
+
+					private String deviceType;
+
+					private String deviceCategory;
+
+					private String deviceSize;
+
+					public String getCreationTime() {
+						return this.creationTime;
+					}
+
+					public void setCreationTime(String creationTime) {
+						this.creationTime = creationTime;
+					}
+
+					public String getReleaseTime() {
+						return this.releaseTime;
+					}
+
+					public void setReleaseTime(String releaseTime) {
+						this.releaseTime = releaseTime;
+					}
+
+					public String getDeviceType() {
+						return this.deviceType;
+					}
+
+					public void setDeviceType(String deviceType) {
+						this.deviceType = deviceType;
+					}
+
+					public String getDeviceCategory() {
+						return this.deviceCategory;
+					}
+
+					public void setDeviceCategory(String deviceCategory) {
+						this.deviceCategory = deviceCategory;
+					}
+
+					public String getDeviceSize() {
+						return this.deviceSize;
+					}
+
+					public void setDeviceSize(String deviceSize) {
+						this.deviceSize = deviceSize;
+					}
 				}
 			}
 		}
