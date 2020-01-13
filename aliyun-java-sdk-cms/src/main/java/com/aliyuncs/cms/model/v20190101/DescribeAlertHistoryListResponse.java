@@ -87,9 +87,9 @@ public class DescribeAlertHistoryListResponse extends AcsResponse {
 
 	public static class AlarmHistory {
 
-		private String ruleId;
+		private String id;
 
-		private String alertName;
+		private String ruleId;
 
 		private String groupId;
 
@@ -111,9 +111,11 @@ public class DescribeAlertHistoryListResponse extends AcsResponse {
 
 		private String level;
 
+		private String preLevel;
+
 		private String ruleName;
 
-		private String alertState;
+		private String state;
 
 		private Integer status;
 
@@ -131,20 +133,20 @@ public class DescribeAlertHistoryListResponse extends AcsResponse {
 
 		private List<String> contactMails;
 
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
 		public String getRuleId() {
 			return this.ruleId;
 		}
 
 		public void setRuleId(String ruleId) {
 			this.ruleId = ruleId;
-		}
-
-		public String getAlertName() {
-			return this.alertName;
-		}
-
-		public void setAlertName(String alertName) {
-			this.alertName = alertName;
 		}
 
 		public String getGroupId() {
@@ -227,6 +229,14 @@ public class DescribeAlertHistoryListResponse extends AcsResponse {
 			this.level = level;
 		}
 
+		public String getPreLevel() {
+			return this.preLevel;
+		}
+
+		public void setPreLevel(String preLevel) {
+			this.preLevel = preLevel;
+		}
+
 		public String getRuleName() {
 			return this.ruleName;
 		}
@@ -235,12 +245,12 @@ public class DescribeAlertHistoryListResponse extends AcsResponse {
 			this.ruleName = ruleName;
 		}
 
-		public String getAlertState() {
-			return this.alertState;
+		public String getState() {
+			return this.state;
 		}
 
-		public void setAlertState(String alertState) {
-			this.alertState = alertState;
+		public void setState(String state) {
+			this.state = state;
 		}
 
 		public Integer getStatus() {

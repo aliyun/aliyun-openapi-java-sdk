@@ -31,17 +31,21 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 
 	private String type;
 
-	private String groupName;
-
 	private Integer pageNumber;
-
-	private String instanceId;
 
 	private Integer pageSize;
 
 	private List<Tag> tags;
 
 	private String keyword;
+
+	private String groupId;
+
+	private String groupName;
+
+	private String instanceId;
+
+	private String dynamicTagGroupId;
 	public DescribeMonitorGroupsRequest() {
 		super("Cms", "2019-01-01", "DescribeMonitorGroups", "cms");
 		setMethod(MethodType.POST);
@@ -80,17 +84,6 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 		}
 	}
 
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putQueryParameter("GroupName", groupName);
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -99,17 +92,6 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -146,6 +128,50 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 		this.keyword = keyword;
 		if(keyword != null){
 			putQueryParameter("Keyword", keyword);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getDynamicTagGroupId() {
+		return this.dynamicTagGroupId;
+	}
+
+	public void setDynamicTagGroupId(String dynamicTagGroupId) {
+		this.dynamicTagGroupId = dynamicTagGroupId;
+		if(dynamicTagGroupId != null){
+			putQueryParameter("DynamicTagGroupId", dynamicTagGroupId);
 		}
 	}
 

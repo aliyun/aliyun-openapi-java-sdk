@@ -35,8 +35,8 @@ public class DescribeAlertHistoryListResponseUnmarshaller {
 		List<AlarmHistory> alarmHistoryList = new ArrayList<AlarmHistory>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAlertHistoryListResponse.AlarmHistoryList.Length"); i++) {
 			AlarmHistory alarmHistory = new AlarmHistory();
+			alarmHistory.setId(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Id"));
 			alarmHistory.setRuleId(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].RuleId"));
-			alarmHistory.setAlertName(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].AlertName"));
 			alarmHistory.setGroupId(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].GroupId"));
 			alarmHistory.setNamespace(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Namespace"));
 			alarmHistory.setMetricName(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].MetricName"));
@@ -47,8 +47,9 @@ public class DescribeAlertHistoryListResponseUnmarshaller {
 			alarmHistory.setAlertTime(_ctx.longValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].AlertTime"));
 			alarmHistory.setLastTime(_ctx.longValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].LastTime"));
 			alarmHistory.setLevel(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Level"));
+			alarmHistory.setPreLevel(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].PreLevel"));
 			alarmHistory.setRuleName(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].RuleName"));
-			alarmHistory.setAlertState(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].AlertState"));
+			alarmHistory.setState(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].State"));
 			alarmHistory.setStatus(_ctx.integerValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Status"));
 			alarmHistory.setWebhooks(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Webhooks"));
 			alarmHistory.setInstanceName(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].InstanceName"));

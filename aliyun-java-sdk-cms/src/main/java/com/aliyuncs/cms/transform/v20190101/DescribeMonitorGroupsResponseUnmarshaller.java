@@ -46,6 +46,7 @@ public class DescribeMonitorGroupsResponseUnmarshaller {
 			resource.setGmtModified(_ctx.longValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GmtModified"));
 			resource.setGmtCreate(_ctx.longValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GmtCreate"));
 			resource.setBindUrl(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].BindUrl"));
+			resource.setDynamicTagGroupId(_ctx.longValue("DescribeMonitorGroupsResponse.Resources["+ i +"].DynamicTagGroupId"));
 
 			List<String> templateIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeMonitorGroupsResponse.Resources["+ i +"].TemplateIds.Length"); j++) {

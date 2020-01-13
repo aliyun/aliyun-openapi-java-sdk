@@ -24,8 +24,6 @@ import com.aliyuncs.http.MethodType;
 public class DescribeAlertHistoryListRequest extends RpcAcsRequest<DescribeAlertHistoryListResponse> {
 	   
 
-	private String alertStatus;
-
 	private String ruleName;
 
 	private String startTime;
@@ -47,20 +45,11 @@ public class DescribeAlertHistoryListRequest extends RpcAcsRequest<DescribeAlert
 	private Integer page;
 
 	private String ruleId;
+
+	private String status;
 	public DescribeAlertHistoryListRequest() {
 		super("Cms", "2019-01-01", "DescribeAlertHistoryList", "cms");
 		setMethod(MethodType.POST);
-	}
-
-	public String getAlertStatus() {
-		return this.alertStatus;
-	}
-
-	public void setAlertStatus(String alertStatus) {
-		this.alertStatus = alertStatus;
-		if(alertStatus != null){
-			putQueryParameter("AlertStatus", alertStatus);
-		}
 	}
 
 	public String getRuleName() {
@@ -181,6 +170,17 @@ public class DescribeAlertHistoryListRequest extends RpcAcsRequest<DescribeAlert
 		this.ruleId = ruleId;
 		if(ruleId != null){
 			putQueryParameter("RuleId", ruleId);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

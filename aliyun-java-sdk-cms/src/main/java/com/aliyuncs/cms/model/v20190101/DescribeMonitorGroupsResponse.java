@@ -121,6 +121,8 @@ public class DescribeMonitorGroupsResponse extends AcsResponse {
 
 		private String bindUrl;
 
+		private Long dynamicTagGroupId;
+
 		private List<ContactGroup> contactGroups;
 
 		private List<Tag> tags;
@@ -181,6 +183,14 @@ public class DescribeMonitorGroupsResponse extends AcsResponse {
 
 		public void setBindUrl(String bindUrl) {
 			this.bindUrl = bindUrl;
+		}
+
+		public Long getDynamicTagGroupId() {
+			return this.dynamicTagGroupId;
+		}
+
+		public void setDynamicTagGroupId(Long dynamicTagGroupId) {
+			this.dynamicTagGroupId = dynamicTagGroupId;
 		}
 
 		public List<ContactGroup> getContactGroups() {
