@@ -16,14 +16,14 @@ package com.aliyuncs.cloudwifi_pop.model.v20191118;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudwifi_pop.transform.v20191118.SaveApSsidConfigResponseUnmarshaller;
+import com.aliyuncs.cloudwifi_pop.transform.v20191118.PutAppConfigAndSaveResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SaveApSsidConfigResponse extends AcsResponse {
+public class PutAppConfigAndSaveResponse extends AcsResponse {
 
 	private Map<Object,Object> data;
 
@@ -32,6 +32,8 @@ public class SaveApSsidConfigResponse extends AcsResponse {
 	private Integer errorCode;
 
 	private String errorMessage;
+
+	private String requestId;
 
 	public Map<Object,Object> getData() {
 		return this.data;
@@ -65,9 +67,17 @@ public class SaveApSsidConfigResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	@Override
-	public SaveApSsidConfigResponse getInstance(UnmarshallerContext context) {
-		return	SaveApSsidConfigResponseUnmarshaller.unmarshall(this, context);
+	public PutAppConfigAndSaveResponse getInstance(UnmarshallerContext context) {
+		return	PutAppConfigAndSaveResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -16,22 +16,24 @@ package com.aliyuncs.cloudwifi_pop.model.v20191118;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudwifi_pop.transform.v20191118.SaveApSsidConfigResponseUnmarshaller;
+import com.aliyuncs.cloudwifi_pop.transform.v20191118.RepairApRadioResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SaveApSsidConfigResponse extends AcsResponse {
+public class RepairApRadioResponse extends AcsResponse {
 
 	private Map<Object,Object> data;
 
 	private Boolean isSuccess;
 
-	private Integer errorCode;
+	private Boolean errorCode;
 
 	private String errorMessage;
+
+	private String requestId;
 
 	public Map<Object,Object> getData() {
 		return this.data;
@@ -49,11 +51,11 @@ public class SaveApSsidConfigResponse extends AcsResponse {
 		this.isSuccess = isSuccess;
 	}
 
-	public Integer getErrorCode() {
+	public Boolean getErrorCode() {
 		return this.errorCode;
 	}
 
-	public void setErrorCode(Integer errorCode) {
+	public void setErrorCode(Boolean errorCode) {
 		this.errorCode = errorCode;
 	}
 
@@ -65,9 +67,17 @@ public class SaveApSsidConfigResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	@Override
-	public SaveApSsidConfigResponse getInstance(UnmarshallerContext context) {
-		return	SaveApSsidConfigResponseUnmarshaller.unmarshall(this, context);
+	public RepairApRadioResponse getInstance(UnmarshallerContext context) {
+		return	RepairApRadioResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

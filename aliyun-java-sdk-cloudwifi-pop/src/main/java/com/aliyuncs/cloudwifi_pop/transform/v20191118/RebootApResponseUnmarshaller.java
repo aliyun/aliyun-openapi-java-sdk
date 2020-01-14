@@ -14,20 +14,21 @@
 
 package com.aliyuncs.cloudwifi_pop.transform.v20191118;
 
-import com.aliyuncs.cloudwifi_pop.model.v20191118.SaveApSsidConfigResponse;
+import com.aliyuncs.cloudwifi_pop.model.v20191118.RebootApResponse;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SaveApSsidConfigResponseUnmarshaller {
+public class RebootApResponseUnmarshaller {
 
-	public static SaveApSsidConfigResponse unmarshall(SaveApSsidConfigResponse saveApSsidConfigResponse, UnmarshallerContext _ctx) {
+	public static RebootApResponse unmarshall(RebootApResponse rebootApResponse, UnmarshallerContext _ctx) {
 		
-		saveApSsidConfigResponse.setData(_ctx.mapValue("SaveApSsidConfigResponse.Data"));
-		saveApSsidConfigResponse.setIsSuccess(_ctx.booleanValue("SaveApSsidConfigResponse.IsSuccess"));
-		saveApSsidConfigResponse.setErrorCode(_ctx.integerValue("SaveApSsidConfigResponse.ErrorCode"));
-		saveApSsidConfigResponse.setErrorMessage(_ctx.stringValue("SaveApSsidConfigResponse.ErrorMessage"));
+		rebootApResponse.setRequestId(_ctx.stringValue("RebootApResponse.RequestId"));
+		rebootApResponse.setData(_ctx.mapValue("RebootApResponse.Data"));
+		rebootApResponse.setIsSuccess(_ctx.booleanValue("RebootApResponse.IsSuccess"));
+		rebootApResponse.setErrorCode(_ctx.integerValue("RebootApResponse.ErrorCode"));
+		rebootApResponse.setErrorMessage(_ctx.stringValue("RebootApResponse.ErrorMessage"));
 	 
-	 	return saveApSsidConfigResponse;
+	 	return rebootApResponse;
 	}
 }
