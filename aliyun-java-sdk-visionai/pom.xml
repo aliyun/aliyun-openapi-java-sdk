@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-visionai</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <name>aliyun-java-sdk-visionai</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

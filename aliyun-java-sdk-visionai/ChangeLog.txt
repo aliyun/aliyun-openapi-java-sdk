@@ -1,3 +1,6 @@
+2020-01-14 Version: 1.0.1
+- Visionai online.
+
 2020-01-14 Version: 1.0.0
 - Visionai online.
 
