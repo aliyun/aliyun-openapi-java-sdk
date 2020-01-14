@@ -25,7 +25,7 @@ import com.aliyuncs.visionai.Endpoint;
 public class IdentifyAnimalRequest extends RpcAcsRequest<IdentifyAnimalResponse> {
 	   
 
-	private String imageContent;
+	private String imageUrl;
 	public IdentifyAnimalRequest() {
 		super("visionai", "2019-10-24", "IdentifyAnimal", "visionai");
 		setMethod(MethodType.POST);
@@ -35,14 +35,14 @@ public class IdentifyAnimalRequest extends RpcAcsRequest<IdentifyAnimalResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getImageContent() {
-		return this.imageContent;
+	public String getImageUrl() {
+		return this.imageUrl;
 	}
 
-	public void setImageContent(String imageContent) {
-		this.imageContent = imageContent;
-		if(imageContent != null){
-			putBodyParameter("ImageContent", imageContent);
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+		if(imageUrl != null){
+			putBodyParameter("ImageUrl", imageUrl);
 		}
 	}
 

@@ -22,12 +22,12 @@ import com.aliyuncs.visionai.Endpoint;
  * @author auto create
  * @version 
  */
-public class RecognizeProdmlabelRequest extends RpcAcsRequest<RecognizeProdmlabelResponse> {
+public class SegmentBodyRequest extends RpcAcsRequest<SegmentBodyResponse> {
 	   
 
 	private String imageUrl;
-	public RecognizeProdmlabelRequest() {
-		super("visionai", "2019-10-24", "RecognizeProdmlabel", "visionai");
+	public SegmentBodyRequest() {
+		super("visionai", "2019-10-24", "SegmentBody", "visionai");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,8 +47,8 @@ public class RecognizeProdmlabelRequest extends RpcAcsRequest<RecognizeProdmlabe
 	}
 
 	@Override
-	public Class<RecognizeProdmlabelResponse> getResponseClass() {
-		return RecognizeProdmlabelResponse.class;
+	public Class<SegmentBodyResponse> getResponseClass() {
+		return SegmentBodyResponse.class;
 	}
 
 }
