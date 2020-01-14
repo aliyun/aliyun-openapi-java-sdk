@@ -1,3 +1,6 @@
+2020-01-14 Version: 1.8.7
+- Modify 2 apis.
+
 2020-01-14 Version: 1.8.6
 - Add 7 api Modify 2 api.
 
