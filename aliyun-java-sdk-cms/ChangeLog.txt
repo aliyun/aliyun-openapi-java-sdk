@@ -1,3 +1,6 @@
+2020-01-15 Version: 7.0.7
+- Fix parameter issues for label synchronization group.
+
 2020-01-15 Version: 7.0.6
 - Fix parameter issues for label synchronization group.
 
