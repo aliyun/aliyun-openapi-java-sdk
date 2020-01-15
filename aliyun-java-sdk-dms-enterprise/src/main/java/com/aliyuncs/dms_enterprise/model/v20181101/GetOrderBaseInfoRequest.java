@@ -44,7 +44,7 @@ public class GetOrderBaseInfoRequest extends RpcAcsRequest<GetOrderBaseInfoRespo
 	public void setOrderId(Long orderId) {
 		this.orderId = orderId;
 		if(orderId != null){
-			putBodyParameter("OrderId", orderId.toString());
+			putQueryParameter("OrderId", orderId.toString());
 		}
 	}
 
