@@ -12,18 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.drds.model.v20190123;
+package com.aliyuncs.drds.model.v20171016;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20190123.CreateDrdsInstanceResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20171016.DescribeReadOnlyAccountResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDrdsInstanceResponse extends AcsResponse {
+public class DescribeReadOnlyAccountResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -57,34 +56,39 @@ public class CreateDrdsInstanceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long orderId;
+		private String dbName;
 
-		private List<String> drdsInstanceIdList;
+		private String drdsInstanceId;
 
-		public Long getOrderId() {
-			return this.orderId;
+		private String accountName;
+
+		public String getDbName() {
+			return this.dbName;
 		}
 
-		public void setOrderId(Long orderId) {
-			this.orderId = orderId;
+		public void setDbName(String dbName) {
+			this.dbName = dbName;
 		}
 
-		public List<String> getDrdsInstanceIdList() {
-			return this.drdsInstanceIdList;
+		public String getDrdsInstanceId() {
+			return this.drdsInstanceId;
 		}
 
-		public void setDrdsInstanceIdList(List<String> drdsInstanceIdList) {
-			this.drdsInstanceIdList = drdsInstanceIdList;
+		public void setDrdsInstanceId(String drdsInstanceId) {
+			this.drdsInstanceId = drdsInstanceId;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 	}
 
 	@Override
-	public CreateDrdsInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateDrdsInstanceResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public DescribeReadOnlyAccountResponse getInstance(UnmarshallerContext context) {
+		return	DescribeReadOnlyAccountResponseUnmarshaller.unmarshall(this, context);
 	}
 }

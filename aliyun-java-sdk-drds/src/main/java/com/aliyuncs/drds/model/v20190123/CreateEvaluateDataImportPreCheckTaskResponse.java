@@ -14,22 +14,21 @@
 
 package com.aliyuncs.drds.model.v20190123;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20190123.CreateDrdsInstanceResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20190123.CreateEvaluateDataImportPreCheckTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDrdsInstanceResponse extends AcsResponse {
+public class CreateEvaluateDataImportPreCheckTaskResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private Data data;
+	private Long taskId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,44 +46,16 @@ public class CreateDrdsInstanceResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Data getData() {
-		return this.data;
+	public Long getTaskId() {
+		return this.taskId;
 	}
 
-	public void setData(Data data) {
-		this.data = data;
-	}
-
-	public static class Data {
-
-		private Long orderId;
-
-		private List<String> drdsInstanceIdList;
-
-		public Long getOrderId() {
-			return this.orderId;
-		}
-
-		public void setOrderId(Long orderId) {
-			this.orderId = orderId;
-		}
-
-		public List<String> getDrdsInstanceIdList() {
-			return this.drdsInstanceIdList;
-		}
-
-		public void setDrdsInstanceIdList(List<String> drdsInstanceIdList) {
-			this.drdsInstanceIdList = drdsInstanceIdList;
-		}
+	public void setTaskId(Long taskId) {
+		this.taskId = taskId;
 	}
 
 	@Override
-	public CreateDrdsInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateDrdsInstanceResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public CreateEvaluateDataImportPreCheckTaskResponse getInstance(UnmarshallerContext context) {
+		return	CreateEvaluateDataImportPreCheckTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 }

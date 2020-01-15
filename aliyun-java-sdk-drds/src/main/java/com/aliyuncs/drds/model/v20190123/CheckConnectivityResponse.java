@@ -14,22 +14,21 @@
 
 package com.aliyuncs.drds.model.v20190123;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20190123.CreateDrdsInstanceResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20190123.CheckConnectivityResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDrdsInstanceResponse extends AcsResponse {
+public class CheckConnectivityResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private Data data;
+	private CheckConnectivityResult checkConnectivityResult;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,44 +46,39 @@ public class CreateDrdsInstanceResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Data getData() {
-		return this.data;
+	public CheckConnectivityResult getCheckConnectivityResult() {
+		return this.checkConnectivityResult;
 	}
 
-	public void setData(Data data) {
-		this.data = data;
+	public void setCheckConnectivityResult(CheckConnectivityResult checkConnectivityResult) {
+		this.checkConnectivityResult = checkConnectivityResult;
 	}
 
-	public static class Data {
+	public static class CheckConnectivityResult {
 
-		private Long orderId;
+		private Boolean success;
 
-		private List<String> drdsInstanceIdList;
+		private String message;
 
-		public Long getOrderId() {
-			return this.orderId;
+		public Boolean getSuccess() {
+			return this.success;
 		}
 
-		public void setOrderId(Long orderId) {
-			this.orderId = orderId;
+		public void setSuccess(Boolean success) {
+			this.success = success;
 		}
 
-		public List<String> getDrdsInstanceIdList() {
-			return this.drdsInstanceIdList;
+		public String getMessage() {
+			return this.message;
 		}
 
-		public void setDrdsInstanceIdList(List<String> drdsInstanceIdList) {
-			this.drdsInstanceIdList = drdsInstanceIdList;
+		public void setMessage(String message) {
+			this.message = message;
 		}
-	}
-
-	@Override
-	public CreateDrdsInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateDrdsInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public CheckConnectivityResponse getInstance(UnmarshallerContext context) {
+		return	CheckConnectivityResponseUnmarshaller.unmarshall(this, context);
 	}
 }

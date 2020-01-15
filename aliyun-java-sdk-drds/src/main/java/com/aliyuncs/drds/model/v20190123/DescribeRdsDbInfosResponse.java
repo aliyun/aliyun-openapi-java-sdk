@@ -16,20 +16,22 @@ package com.aliyuncs.drds.model.v20190123;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20190123.CreateDrdsInstanceResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20190123.DescribeRdsDbInfosResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDrdsInstanceResponse extends AcsResponse {
+public class DescribeRdsDbInfosResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private Data data;
+	private String total;
+
+	private List<Database> databases;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,44 +49,57 @@ public class CreateDrdsInstanceResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Data getData() {
-		return this.data;
+	public String getTotal() {
+		return this.total;
 	}
 
-	public void setData(Data data) {
-		this.data = data;
+	public void setTotal(String total) {
+		this.total = total;
 	}
 
-	public static class Data {
+	public List<Database> getDatabases() {
+		return this.databases;
+	}
 
-		private Long orderId;
+	public void setDatabases(List<Database> databases) {
+		this.databases = databases;
+	}
 
-		private List<String> drdsInstanceIdList;
+	public static class Database {
 
-		public Long getOrderId() {
-			return this.orderId;
+		private String dbName;
+
+		private Integer status;
+
+		private String description;
+
+		public String getDbName() {
+			return this.dbName;
 		}
 
-		public void setOrderId(Long orderId) {
-			this.orderId = orderId;
+		public void setDbName(String dbName) {
+			this.dbName = dbName;
 		}
 
-		public List<String> getDrdsInstanceIdList() {
-			return this.drdsInstanceIdList;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setDrdsInstanceIdList(List<String> drdsInstanceIdList) {
-			this.drdsInstanceIdList = drdsInstanceIdList;
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 
 	@Override
-	public CreateDrdsInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateDrdsInstanceResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public DescribeRdsDbInfosResponse getInstance(UnmarshallerContext context) {
+		return	DescribeRdsDbInfosResponseUnmarshaller.unmarshall(this, context);
 	}
 }

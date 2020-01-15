@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.drds.model.v20190123;
+package com.aliyuncs.drds.model.v20171016;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -37,11 +37,7 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 
 	private Boolean isHa;
 
-	private Integer mySQLVersion;
-
 	private String instanceSeries;
-
-	private String masterInstId;
 
 	private Integer quantity;
 
@@ -57,7 +53,7 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 
 	private String pricingCycle;
 	public CreateDrdsInstanceRequest() {
-		super("Drds", "2019-01-23", "CreateDrdsInstance", "drds");
+		super("Drds", "2017-10-16", "CreateDrdsInstance", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -127,18 +123,7 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 	public void setIsHa(Boolean isHa) {
 		this.isHa = isHa;
 		if(isHa != null){
-			putQueryParameter("isHa", isHa.toString());
-		}
-	}
-
-	public Integer getMySQLVersion() {
-		return this.mySQLVersion;
-	}
-
-	public void setMySQLVersion(Integer mySQLVersion) {
-		this.mySQLVersion = mySQLVersion;
-		if(mySQLVersion != null){
-			putQueryParameter("MySQLVersion", mySQLVersion.toString());
+			putQueryParameter("IsHa", isHa.toString());
 		}
 	}
 
@@ -150,17 +135,6 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 		this.instanceSeries = instanceSeries;
 		if(instanceSeries != null){
 			putQueryParameter("InstanceSeries", instanceSeries);
-		}
-	}
-
-	public String getMasterInstId() {
-		return this.masterInstId;
-	}
-
-	public void setMasterInstId(String masterInstId) {
-		this.masterInstId = masterInstId;
-		if(masterInstId != null){
-			putQueryParameter("MasterInstId", masterInstId);
 		}
 	}
 

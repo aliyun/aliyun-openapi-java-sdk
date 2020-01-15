@@ -12,11 +12,11 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.drds.model.v20190123;
+package com.aliyuncs.drds.model.v20171016;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20190123.CreateDrdsInstanceResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20171016.CreateDrdsInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
@@ -81,10 +81,5 @@ public class CreateDrdsInstanceResponse extends AcsResponse {
 	@Override
 	public CreateDrdsInstanceResponse getInstance(UnmarshallerContext context) {
 		return	CreateDrdsInstanceResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
 	}
 }

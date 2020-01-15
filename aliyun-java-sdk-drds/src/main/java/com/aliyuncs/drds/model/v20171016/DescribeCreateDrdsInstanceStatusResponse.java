@@ -12,18 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.drds.model.v20190123;
+package com.aliyuncs.drds.model.v20171016;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20190123.CreateDrdsInstanceResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20171016.DescribeCreateDrdsInstanceStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDrdsInstanceResponse extends AcsResponse {
+public class DescribeCreateDrdsInstanceStatusResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -57,34 +56,19 @@ public class CreateDrdsInstanceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long orderId;
+		private String status;
 
-		private List<String> drdsInstanceIdList;
-
-		public Long getOrderId() {
-			return this.orderId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setOrderId(Long orderId) {
-			this.orderId = orderId;
-		}
-
-		public List<String> getDrdsInstanceIdList() {
-			return this.drdsInstanceIdList;
-		}
-
-		public void setDrdsInstanceIdList(List<String> drdsInstanceIdList) {
-			this.drdsInstanceIdList = drdsInstanceIdList;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 
 	@Override
-	public CreateDrdsInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateDrdsInstanceResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public DescribeCreateDrdsInstanceStatusResponse getInstance(UnmarshallerContext context) {
+		return	DescribeCreateDrdsInstanceStatusResponseUnmarshaller.unmarshall(this, context);
 	}
 }

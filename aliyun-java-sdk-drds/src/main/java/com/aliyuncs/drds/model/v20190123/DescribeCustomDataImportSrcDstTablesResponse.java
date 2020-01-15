@@ -16,20 +16,20 @@ package com.aliyuncs.drds.model.v20190123;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20190123.CreateDrdsInstanceResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20190123.DescribeCustomDataImportSrcDstTablesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDrdsInstanceResponse extends AcsResponse {
+public class DescribeCustomDataImportSrcDstTablesResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private Data data;
+	private DataImportSrcDstTables dataImportSrcDstTables;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,44 +47,39 @@ public class CreateDrdsInstanceResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Data getData() {
-		return this.data;
+	public DataImportSrcDstTables getDataImportSrcDstTables() {
+		return this.dataImportSrcDstTables;
 	}
 
-	public void setData(Data data) {
-		this.data = data;
+	public void setDataImportSrcDstTables(DataImportSrcDstTables dataImportSrcDstTables) {
+		this.dataImportSrcDstTables = dataImportSrcDstTables;
 	}
 
-	public static class Data {
+	public static class DataImportSrcDstTables {
 
-		private Long orderId;
+		private List<String> srcTables;
 
-		private List<String> drdsInstanceIdList;
+		private List<String> dstTables;
 
-		public Long getOrderId() {
-			return this.orderId;
+		public List<String> getSrcTables() {
+			return this.srcTables;
 		}
 
-		public void setOrderId(Long orderId) {
-			this.orderId = orderId;
+		public void setSrcTables(List<String> srcTables) {
+			this.srcTables = srcTables;
 		}
 
-		public List<String> getDrdsInstanceIdList() {
-			return this.drdsInstanceIdList;
+		public List<String> getDstTables() {
+			return this.dstTables;
 		}
 
-		public void setDrdsInstanceIdList(List<String> drdsInstanceIdList) {
-			this.drdsInstanceIdList = drdsInstanceIdList;
+		public void setDstTables(List<String> dstTables) {
+			this.dstTables = dstTables;
 		}
-	}
-
-	@Override
-	public CreateDrdsInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateDrdsInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public DescribeCustomDataImportSrcDstTablesResponse getInstance(UnmarshallerContext context) {
+		return	DescribeCustomDataImportSrcDstTablesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

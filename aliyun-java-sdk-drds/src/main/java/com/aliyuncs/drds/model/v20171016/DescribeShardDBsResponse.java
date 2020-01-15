@@ -12,24 +12,24 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.drds.model.v20190123;
+package com.aliyuncs.drds.model.v20171016;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20190123.CreateDrdsInstanceResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20171016.DescribeShardDBsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDrdsInstanceResponse extends AcsResponse {
+public class DescribeShardDBsResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private Data data;
+	private List<DbIntancePair> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,44 +47,49 @@ public class CreateDrdsInstanceResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Data getData() {
+	public List<DbIntancePair> getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(List<DbIntancePair> data) {
 		this.data = data;
 	}
 
-	public static class Data {
+	public static class DbIntancePair {
 
-		private Long orderId;
+		private String subDbName;
 
-		private List<String> drdsInstanceIdList;
+		private String instanceName;
 
-		public Long getOrderId() {
-			return this.orderId;
+		private String groupName;
+
+		public String getSubDbName() {
+			return this.subDbName;
 		}
 
-		public void setOrderId(Long orderId) {
-			this.orderId = orderId;
+		public void setSubDbName(String subDbName) {
+			this.subDbName = subDbName;
 		}
 
-		public List<String> getDrdsInstanceIdList() {
-			return this.drdsInstanceIdList;
+		public String getInstanceName() {
+			return this.instanceName;
 		}
 
-		public void setDrdsInstanceIdList(List<String> drdsInstanceIdList) {
-			this.drdsInstanceIdList = drdsInstanceIdList;
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 	}
 
 	@Override
-	public CreateDrdsInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateDrdsInstanceResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public DescribeShardDBsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeShardDBsResponseUnmarshaller.unmarshall(this, context);
 	}
 }
