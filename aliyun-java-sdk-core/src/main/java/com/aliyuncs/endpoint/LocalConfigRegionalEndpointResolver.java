@@ -14,10 +14,26 @@ public class LocalConfigRegionalEndpointResolver extends EndpointResolverBase {
     private Set<String> validRegionIds = new HashSet<String>();
     private Map<String, String> locationCodeMapping = new HashMap<String, String>();
     private JsonObject regionalEndpointData;
+    protected static final JsonObject ENDPOINTS_JSON;
+
+    static {
+        Scanner scanner = null;
+        try {
+            ClassLoader classLoader = LocalConfigRegionalEndpointResolver.class.getClassLoader();
+            InputStream is = classLoader.getResourceAsStream(ENDPOINT_JSON);
+            scanner = new Scanner(is, "UTF-8");
+            scanner.useDelimiter("\0");
+            String jsonStr = scanner.hasNext() ? scanner.next() : "";
+            ENDPOINTS_JSON = (new JsonParser()).parse(jsonStr).getAsJsonObject();
+        } finally {
+            if (null != scanner) {
+                scanner.close();
+            }
+        }
+    }
 
     public LocalConfigRegionalEndpointResolver() {
-        JsonObject obj = readLocalConfigAsJsonObject();
-        initLocalConfig(obj);
+        initLocalConfig(ENDPOINTS_JSON);
     }
 
     public LocalConfigRegionalEndpointResolver(String configJsonStr) {
@@ -86,17 +102,6 @@ public class LocalConfigRegionalEndpointResolver extends EndpointResolverBase {
             return locationCodeMapping.get(productCodeLower);
         }
         return productCodeLower;
-    }
-
-    protected JsonObject readLocalConfigAsJsonObject() {
-        ClassLoader classLoader = getClass().getClassLoader();
-        InputStream is = classLoader.getResourceAsStream(ENDPOINT_JSON);
-        Scanner scanner = new Scanner(is, "UTF-8");
-        scanner.useDelimiter("\0");
-        String jsonStr = scanner.hasNext() ? scanner.next() : "";
-        scanner.close();
-        JsonObject endpointData = (new JsonParser()).parse(jsonStr).getAsJsonObject();
-        return endpointData;
     }
 
     @Override

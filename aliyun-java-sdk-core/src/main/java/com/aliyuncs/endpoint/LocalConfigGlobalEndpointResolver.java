@@ -11,8 +11,7 @@ import java.util.Set;
 public class LocalConfigGlobalEndpointResolver extends LocalConfigRegionalEndpointResolver {
 
     public LocalConfigGlobalEndpointResolver() {
-        JsonObject obj = readLocalConfigAsJsonObject();
-        initLocalConfig(obj);
+        initLocalConfig(LocalConfigRegionalEndpointResolver.ENDPOINTS_JSON);
     }
 
     public LocalConfigGlobalEndpointResolver(String configJsonStr) {
