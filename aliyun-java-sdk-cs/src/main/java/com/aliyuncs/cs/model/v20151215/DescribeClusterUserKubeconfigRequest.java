@@ -28,7 +28,7 @@ public class DescribeClusterUserKubeconfigRequest extends RoaAcsRequest<Describe
 
 	private String clusterId;
 	public DescribeClusterUserKubeconfigRequest() {
-		super("CS", "2015-12-15", "DescribeClusterUserKubeconfig");
+		super("CS", "2015-12-15", "DescribeClusterUserKubeconfig", "csk");
 		setUriPattern("/k8s/[ClusterId]/user_config");
 		setMethod(MethodType.GET);
 	}

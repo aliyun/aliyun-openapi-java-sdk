@@ -21,13 +21,13 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class UpdateK8sClusterUserConfigExpireRequest extends RoaAcsRequest<UpdateK8sClusterUserConfigExpireResponse> {
+public class UnInstallClusterAddonsRequest extends RoaAcsRequest<UnInstallClusterAddonsResponse> {
 	   
 
 	private String clusterId;
-	public UpdateK8sClusterUserConfigExpireRequest() {
-		super("CS", "2015-12-15", "UpdateK8sClusterUserConfigExpire", "csk");
-		setUriPattern("/k8s/[ClusterId]/user_config/expire");
+	public UnInstallClusterAddonsRequest() {
+		super("CS", "2015-12-15", "UnInstallClusterAddons", "csk");
+		setUriPattern("/clusters/[ClusterId]/components/uninstall");
 		setMethod(MethodType.POST);
 	}
 
@@ -43,8 +43,8 @@ public class UpdateK8sClusterUserConfigExpireRequest extends RoaAcsRequest<Updat
 	}
 
 	@Override
-	public Class<UpdateK8sClusterUserConfigExpireResponse> getResponseClass() {
-		return UpdateK8sClusterUserConfigExpireResponse.class;
+	public Class<UnInstallClusterAddonsResponse> getResponseClass() {
+		return UnInstallClusterAddonsResponse.class;
 	}
 
 }

@@ -21,30 +21,30 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class UpdateK8sClusterUserConfigExpireRequest extends RoaAcsRequest<UpdateK8sClusterUserConfigExpireResponse> {
+public class RemoveWorkflowRequest extends RoaAcsRequest<RemoveWorkflowResponse> {
 	   
 
-	private String clusterId;
-	public UpdateK8sClusterUserConfigExpireRequest() {
-		super("CS", "2015-12-15", "UpdateK8sClusterUserConfigExpire", "csk");
-		setUriPattern("/k8s/[ClusterId]/user_config/expire");
-		setMethod(MethodType.POST);
+	private String workflowName;
+	public RemoveWorkflowRequest() {
+		super("CS", "2015-12-15", "RemoveWorkflow", "csk");
+		setUriPattern("/gs/workflow/[workflowName]");
+		setMethod(MethodType.DELETE);
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getWorkflowName() {
+		return this.workflowName;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putPathParameter("ClusterId", clusterId);
+	public void setWorkflowName(String workflowName) {
+		this.workflowName = workflowName;
+		if(workflowName != null){
+			putPathParameter("workflowName", workflowName);
 		}
 	}
 
 	@Override
-	public Class<UpdateK8sClusterUserConfigExpireResponse> getResponseClass() {
-		return UpdateK8sClusterUserConfigExpireResponse.class;
+	public Class<RemoveWorkflowResponse> getResponseClass() {
+		return RemoveWorkflowResponse.class;
 	}
 
 }

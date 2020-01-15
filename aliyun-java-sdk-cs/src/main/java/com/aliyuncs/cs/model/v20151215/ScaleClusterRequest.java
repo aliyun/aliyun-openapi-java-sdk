@@ -26,7 +26,7 @@ public class ScaleClusterRequest extends RoaAcsRequest<ScaleClusterResponse> {
 
 	private String clusterId;
 	public ScaleClusterRequest() {
-		super("CS", "2015-12-15", "ScaleCluster");
+		super("CS", "2015-12-15", "ScaleCluster", "csk");
 		setUriPattern("/clusters/[ClusterId]");
 		setMethod(MethodType.PUT);
 	}

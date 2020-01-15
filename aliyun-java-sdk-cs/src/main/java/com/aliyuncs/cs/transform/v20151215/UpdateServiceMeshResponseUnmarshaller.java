@@ -12,26 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cs.model.v20151215;
+package com.aliyuncs.cs.transform.v20151215;
 
-import com.aliyuncs.RoaAcsRequest;
-import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cs.model.v20151215.UpdateServiceMeshResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
-	   
-	public CreateClusterRequest() {
-		super("CS", "2015-12-15", "CreateCluster", "csk");
-		setUriPattern("/clusters");
-		setMethod(MethodType.POST);
+
+public class UpdateServiceMeshResponseUnmarshaller {
+
+	public static UpdateServiceMeshResponse unmarshall(UpdateServiceMeshResponse updateServiceMeshResponse, UnmarshallerContext _ctx) {
+		
+		updateServiceMeshResponse.setRequestId(_ctx.stringValue("UpdateServiceMeshResponse.RequestId"));
+	 
+	 	return updateServiceMeshResponse;
 	}
-
-	@Override
-	public Class<CreateClusterResponse> getResponseClass() {
-		return CreateClusterResponse.class;
-	}
-
 }

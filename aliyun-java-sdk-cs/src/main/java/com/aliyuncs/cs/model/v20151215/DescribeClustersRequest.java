@@ -28,7 +28,7 @@ public class DescribeClustersRequest extends RoaAcsRequest<DescribeClustersRespo
 
 	private String name;
 	public DescribeClustersRequest() {
-		super("CS", "2015-12-15", "DescribeClusters");
+		super("CS", "2015-12-15", "DescribeClusters", "csk");
 		setUriPattern("/clusters");
 		setMethod(MethodType.GET);
 	}

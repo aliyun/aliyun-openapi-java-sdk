@@ -26,7 +26,7 @@ public class DeleteClusterRequest extends RoaAcsRequest<DeleteClusterResponse> {
 
 	private String clusterId;
 	public DeleteClusterRequest() {
-		super("CS", "2015-12-15", "DeleteCluster");
+		super("CS", "2015-12-15", "DeleteCluster", "csk");
 		setUriPattern("/clusters/[ClusterId]");
 		setMethod(MethodType.DELETE);
 	}

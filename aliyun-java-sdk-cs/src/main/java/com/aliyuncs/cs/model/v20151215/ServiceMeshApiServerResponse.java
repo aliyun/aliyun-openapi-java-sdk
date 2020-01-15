@@ -14,24 +14,18 @@
 
 package com.aliyuncs.cs.model.v20151215;
 
-import com.aliyuncs.RoaAcsRequest;
-import com.aliyuncs.http.MethodType;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.cs.transform.v20151215.ServiceMeshApiServerResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
-	   
-	public CreateClusterRequest() {
-		super("CS", "2015-12-15", "CreateCluster", "csk");
-		setUriPattern("/clusters");
-		setMethod(MethodType.POST);
-	}
+public class ServiceMeshApiServerResponse extends AcsResponse {
 
 	@Override
-	public Class<CreateClusterResponse> getResponseClass() {
-		return CreateClusterResponse.class;
+	public ServiceMeshApiServerResponse getInstance(UnmarshallerContext context) {
+		return	ServiceMeshApiServerResponseUnmarshaller.unmarshall(this, context);
 	}
-
 }

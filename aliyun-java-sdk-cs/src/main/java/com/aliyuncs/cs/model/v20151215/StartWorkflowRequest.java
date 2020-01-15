@@ -21,30 +21,17 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class UpdateK8sClusterUserConfigExpireRequest extends RoaAcsRequest<UpdateK8sClusterUserConfigExpireResponse> {
+public class StartWorkflowRequest extends RoaAcsRequest<StartWorkflowResponse> {
 	   
-
-	private String clusterId;
-	public UpdateK8sClusterUserConfigExpireRequest() {
-		super("CS", "2015-12-15", "UpdateK8sClusterUserConfigExpire", "csk");
-		setUriPattern("/k8s/[ClusterId]/user_config/expire");
+	public StartWorkflowRequest() {
+		super("CS", "2015-12-15", "StartWorkflow", "csk");
+		setUriPattern("/gs/workflow");
 		setMethod(MethodType.POST);
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putPathParameter("ClusterId", clusterId);
-		}
-	}
-
 	@Override
-	public Class<UpdateK8sClusterUserConfigExpireResponse> getResponseClass() {
-		return UpdateK8sClusterUserConfigExpireResponse.class;
+	public Class<StartWorkflowResponse> getResponseClass() {
+		return StartWorkflowResponse.class;
 	}
 
 }

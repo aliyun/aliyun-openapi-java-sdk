@@ -21,30 +21,30 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class UpdateK8sClusterUserConfigExpireRequest extends RoaAcsRequest<UpdateK8sClusterUserConfigExpireResponse> {
+public class ServiceMeshApiServerRequest extends RoaAcsRequest<ServiceMeshApiServerResponse> {
 	   
 
-	private String clusterId;
-	public UpdateK8sClusterUserConfigExpireRequest() {
-		super("CS", "2015-12-15", "UpdateK8sClusterUserConfigExpire", "csk");
-		setUriPattern("/k8s/[ClusterId]/user_config/expire");
+	private String serviceMeshId;
+	public ServiceMeshApiServerRequest() {
+		super("CS", "2015-12-15", "ServiceMeshApiServer", "csk");
+		setUriPattern("/servicemesh/[ServiceMeshId]/api_proxy");
 		setMethod(MethodType.POST);
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getServiceMeshId() {
+		return this.serviceMeshId;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putPathParameter("ClusterId", clusterId);
+	public void setServiceMeshId(String serviceMeshId) {
+		this.serviceMeshId = serviceMeshId;
+		if(serviceMeshId != null){
+			putPathParameter("ServiceMeshId", serviceMeshId);
 		}
 	}
 
 	@Override
-	public Class<UpdateK8sClusterUserConfigExpireResponse> getResponseClass() {
-		return UpdateK8sClusterUserConfigExpireResponse.class;
+	public Class<ServiceMeshApiServerResponse> getResponseClass() {
+		return ServiceMeshApiServerResponse.class;
 	}
 
 }

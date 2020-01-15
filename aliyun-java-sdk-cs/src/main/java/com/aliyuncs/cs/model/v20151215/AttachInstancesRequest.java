@@ -26,7 +26,7 @@ public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesRespons
 
 	private String clusterId;
 	public AttachInstancesRequest() {
-		super("CS", "2015-12-15", "AttachInstances");
+		super("CS", "2015-12-15", "AttachInstances", "csk");
 		setUriPattern("/clusters/[ClusterId]/attach");
 		setMethod(MethodType.POST);
 	}
