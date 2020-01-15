@@ -38,7 +38,7 @@ public class DescribeDynamicTagRuleListResponseUnmarshaller {
 		List<TagGroup> tagGroupList = new ArrayList<TagGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDynamicTagRuleListResponse.TagGroupList.Length"); i++) {
 			TagGroup tagGroup = new TagGroup();
-			tagGroup.setDynamicTagGroupId(_ctx.stringValue("DescribeDynamicTagRuleListResponse.TagGroupList["+ i +"].DynamicTagGroupId"));
+			tagGroup.setDynamicTagRuleId(_ctx.stringValue("DescribeDynamicTagRuleListResponse.TagGroupList["+ i +"].DynamicTagRuleId"));
 			tagGroup.setTagKey(_ctx.stringValue("DescribeDynamicTagRuleListResponse.TagGroupList["+ i +"].TagKey"));
 			tagGroup.setRegionId(_ctx.stringValue("DescribeDynamicTagRuleListResponse.TagGroupList["+ i +"].RegionId"));
 			tagGroup.setMatchExpressFilterRelation(_ctx.stringValue("DescribeDynamicTagRuleListResponse.TagGroupList["+ i +"].MatchExpressFilterRelation"));
@@ -53,7 +53,6 @@ public class DescribeDynamicTagRuleListResponseUnmarshaller {
 			List<MatchExpressItem> matchExpress = new ArrayList<MatchExpressItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDynamicTagRuleListResponse.TagGroupList["+ i +"].MatchExpress.Length"); j++) {
 				MatchExpressItem matchExpressItem = new MatchExpressItem();
-				matchExpressItem.setTagName(_ctx.stringValue("DescribeDynamicTagRuleListResponse.TagGroupList["+ i +"].MatchExpress["+ j +"].TagName"));
 				matchExpressItem.setTagValueMatchFunction(_ctx.stringValue("DescribeDynamicTagRuleListResponse.TagGroupList["+ i +"].MatchExpress["+ j +"].TagValueMatchFunction"));
 				matchExpressItem.setTagValue(_ctx.stringValue("DescribeDynamicTagRuleListResponse.TagGroupList["+ i +"].MatchExpress["+ j +"].TagValue"));
 

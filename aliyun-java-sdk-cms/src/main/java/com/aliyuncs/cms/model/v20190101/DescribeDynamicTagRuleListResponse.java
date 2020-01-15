@@ -107,7 +107,7 @@ public class DescribeDynamicTagRuleListResponse extends AcsResponse {
 
 	public static class TagGroup {
 
-		private String dynamicTagGroupId;
+		private String dynamicTagRuleId;
 
 		private String tagKey;
 
@@ -121,12 +121,12 @@ public class DescribeDynamicTagRuleListResponse extends AcsResponse {
 
 		private List<String> templateIdList;
 
-		public String getDynamicTagGroupId() {
-			return this.dynamicTagGroupId;
+		public String getDynamicTagRuleId() {
+			return this.dynamicTagRuleId;
 		}
 
-		public void setDynamicTagGroupId(String dynamicTagGroupId) {
-			this.dynamicTagGroupId = dynamicTagGroupId;
+		public void setDynamicTagRuleId(String dynamicTagRuleId) {
+			this.dynamicTagRuleId = dynamicTagRuleId;
 		}
 
 		public String getTagKey() {
@@ -179,19 +179,9 @@ public class DescribeDynamicTagRuleListResponse extends AcsResponse {
 
 		public static class MatchExpressItem {
 
-			private String tagName;
-
 			private String tagValueMatchFunction;
 
 			private String tagValue;
-
-			public String getTagName() {
-				return this.tagName;
-			}
-
-			public void setTagName(String tagName) {
-				this.tagName = tagName;
-			}
 
 			public String getTagValueMatchFunction() {
 				return this.tagValueMatchFunction;

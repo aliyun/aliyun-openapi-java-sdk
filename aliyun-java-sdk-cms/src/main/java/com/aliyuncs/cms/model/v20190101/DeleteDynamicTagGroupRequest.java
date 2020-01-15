@@ -24,20 +24,20 @@ import com.aliyuncs.http.MethodType;
 public class DeleteDynamicTagGroupRequest extends RpcAcsRequest<DeleteDynamicTagGroupResponse> {
 	   
 
-	private String dynamicTagGroupId;
+	private String dynamicTagRuleId;
 	public DeleteDynamicTagGroupRequest() {
 		super("Cms", "2019-01-01", "DeleteDynamicTagGroup", "cms");
 		setMethod(MethodType.PUT);
 	}
 
-	public String getDynamicTagGroupId() {
-		return this.dynamicTagGroupId;
+	public String getDynamicTagRuleId() {
+		return this.dynamicTagRuleId;
 	}
 
-	public void setDynamicTagGroupId(String dynamicTagGroupId) {
-		this.dynamicTagGroupId = dynamicTagGroupId;
-		if(dynamicTagGroupId != null){
-			putQueryParameter("DynamicTagGroupId", dynamicTagGroupId);
+	public void setDynamicTagRuleId(String dynamicTagRuleId) {
+		this.dynamicTagRuleId = dynamicTagRuleId;
+		if(dynamicTagRuleId != null){
+			putQueryParameter("DynamicTagRuleId", dynamicTagRuleId);
 		}
 	}
 

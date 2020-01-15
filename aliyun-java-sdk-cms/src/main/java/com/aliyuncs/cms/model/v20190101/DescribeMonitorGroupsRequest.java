@@ -29,6 +29,8 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 
 	private Boolean includeTemplateHistory;
 
+	private String dynamicTagRuleId;
+
 	private String type;
 
 	private Integer pageNumber;
@@ -44,8 +46,6 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 	private String groupName;
 
 	private String instanceId;
-
-	private String dynamicTagGroupId;
 	public DescribeMonitorGroupsRequest() {
 		super("Cms", "2019-01-01", "DescribeMonitorGroups", "cms");
 		setMethod(MethodType.POST);
@@ -70,6 +70,17 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 		this.includeTemplateHistory = includeTemplateHistory;
 		if(includeTemplateHistory != null){
 			putQueryParameter("IncludeTemplateHistory", includeTemplateHistory.toString());
+		}
+	}
+
+	public String getDynamicTagRuleId() {
+		return this.dynamicTagRuleId;
+	}
+
+	public void setDynamicTagRuleId(String dynamicTagRuleId) {
+		this.dynamicTagRuleId = dynamicTagRuleId;
+		if(dynamicTagRuleId != null){
+			putQueryParameter("DynamicTagRuleId", dynamicTagRuleId);
 		}
 	}
 
@@ -161,17 +172,6 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getDynamicTagGroupId() {
-		return this.dynamicTagGroupId;
-	}
-
-	public void setDynamicTagGroupId(String dynamicTagGroupId) {
-		this.dynamicTagGroupId = dynamicTagGroupId;
-		if(dynamicTagGroupId != null){
-			putQueryParameter("DynamicTagGroupId", dynamicTagGroupId);
 		}
 	}
 

@@ -84,7 +84,6 @@ public class CreateDynamicTagGroupRequest extends RpcAcsRequest<CreateDynamicTag
 		this.matchExpresss = matchExpresss;	
 		if (matchExpresss != null) {
 			for (int depth1 = 0; depth1 < matchExpresss.size(); depth1++) {
-				putQueryParameter("MatchExpress." + (depth1 + 1) + ".TagName" , matchExpresss.get(depth1).getTagName());
 				putQueryParameter("MatchExpress." + (depth1 + 1) + ".TagValue" , matchExpresss.get(depth1).getTagValue());
 				putQueryParameter("MatchExpress." + (depth1 + 1) + ".TagValueMatchFunction" , matchExpresss.get(depth1).getTagValueMatchFunction());
 			}
@@ -130,19 +129,9 @@ public class CreateDynamicTagGroupRequest extends RpcAcsRequest<CreateDynamicTag
 
 	public static class MatchExpress {
 
-		private String tagName;
-
 		private String tagValue;
 
 		private String tagValueMatchFunction;
-
-		public String getTagName() {
-			return this.tagName;
-		}
-
-		public void setTagName(String tagName) {
-			this.tagName = tagName;
-		}
 
 		public String getTagValue() {
 			return this.tagValue;
