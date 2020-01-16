@@ -14,9 +14,6 @@
 
 package com.aliyuncs.cloudwifi_pop.transform.v20191118;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.cloudwifi_pop.model.v20191118.GetRadioRunHistoryTimeSerResponse;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,12 +24,10 @@ public class GetRadioRunHistoryTimeSerResponseUnmarshaller {
 	public static GetRadioRunHistoryTimeSerResponse unmarshall(GetRadioRunHistoryTimeSerResponse getRadioRunHistoryTimeSerResponse, UnmarshallerContext _ctx) {
 		
 		getRadioRunHistoryTimeSerResponse.setRequestId(_ctx.stringValue("GetRadioRunHistoryTimeSerResponse.RequestId"));
+		getRadioRunHistoryTimeSerResponse.setData(_ctx.mapValue("GetRadioRunHistoryTimeSerResponse.Data"));
 		getRadioRunHistoryTimeSerResponse.setIsSuccess(_ctx.booleanValue("GetRadioRunHistoryTimeSerResponse.IsSuccess"));
 		getRadioRunHistoryTimeSerResponse.setErrorCode(_ctx.integerValue("GetRadioRunHistoryTimeSerResponse.ErrorCode"));
 		getRadioRunHistoryTimeSerResponse.setErrorMessage(_ctx.stringValue("GetRadioRunHistoryTimeSerResponse.ErrorMessage"));
-
-		List<Map<Object, Object>> data = _ctx.listMapValue("GetRadioRunHistoryTimeSerResponse.Data");
-		getRadioRunHistoryTimeSerResponse.setData(data);
 	 
 	 	return getRadioRunHistoryTimeSerResponse;
 	}

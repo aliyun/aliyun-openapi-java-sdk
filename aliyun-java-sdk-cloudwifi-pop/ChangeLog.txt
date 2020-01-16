@@ -1,3 +1,6 @@
+2020-01-16 Version: 1.8.8
+- Modify radio run history.
+
 2020-01-14 Version: 1.8.7
 - Modify 2 apis.
 
