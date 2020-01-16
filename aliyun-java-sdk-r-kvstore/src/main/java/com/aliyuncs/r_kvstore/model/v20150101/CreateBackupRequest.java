@@ -37,7 +37,7 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 
 	private String instanceId;
 	public CreateBackupRequest() {
-		super("R-kvstore", "2015-01-01", "CreateBackup");
+		super("R-kvstore", "2015-01-01", "CreateBackup", "R-kvstore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

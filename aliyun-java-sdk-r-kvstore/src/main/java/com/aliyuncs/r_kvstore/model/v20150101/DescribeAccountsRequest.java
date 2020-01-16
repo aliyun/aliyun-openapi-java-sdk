@@ -39,7 +39,7 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 
 	private String instanceId;
 	public DescribeAccountsRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeAccounts");
+		super("R-kvstore", "2015-01-01", "DescribeAccounts", "R-kvstore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

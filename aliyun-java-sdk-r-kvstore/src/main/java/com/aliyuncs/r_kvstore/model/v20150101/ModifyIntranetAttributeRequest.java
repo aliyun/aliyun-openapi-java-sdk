@@ -37,7 +37,7 @@ public class ModifyIntranetAttributeRequest extends RpcAcsRequest<ModifyIntranet
 
 	private String instanceId;
 	public ModifyIntranetAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyIntranetAttribute");
+		super("R-kvstore", "2015-01-01", "ModifyIntranetAttribute", "R-kvstore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

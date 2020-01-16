@@ -29,6 +29,8 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private String securityToken;
 
+	private String engine;
+
 	private String instanceChargeType;
 
 	private String resourceOwnerAccount;
@@ -39,7 +41,7 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private String zoneId;
 	public DescribeAvailableResourceRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeAvailableResource");
+		super("R-kvstore", "2015-01-01", "DescribeAvailableResource", "R-kvstore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,6 +68,17 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
 		}
 	}
 

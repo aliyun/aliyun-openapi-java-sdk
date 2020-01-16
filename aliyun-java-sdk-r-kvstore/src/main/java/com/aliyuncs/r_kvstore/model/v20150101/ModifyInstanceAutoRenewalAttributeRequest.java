@@ -41,7 +41,7 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 
 	private String autoRenew;
 	public ModifyInstanceAutoRenewalAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "R-kvstore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

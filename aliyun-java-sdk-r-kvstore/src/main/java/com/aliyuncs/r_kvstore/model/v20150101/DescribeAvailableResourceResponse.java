@@ -265,12 +265,22 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 										private String instanceClass;
 
+										private String instanceClassRemark;
+
 										public String getInstanceClass() {
 											return this.instanceClass;
 										}
 
 										public void setInstanceClass(String instanceClass) {
 											this.instanceClass = instanceClass;
+										}
+
+										public String getInstanceClassRemark() {
+											return this.instanceClassRemark;
+										}
+
+										public void setInstanceClassRemark(String instanceClassRemark) {
+											this.instanceClassRemark = instanceClassRemark;
 										}
 									}
 								}

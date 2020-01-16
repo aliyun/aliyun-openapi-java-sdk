@@ -39,7 +39,7 @@ public class ReleaseInstancePublicConnectionRequest extends RpcAcsRequest<Releas
 
 	private String instanceId;
 	public ReleaseInstancePublicConnectionRequest() {
-		super("R-kvstore", "2015-01-01", "ReleaseInstancePublicConnection");
+		super("R-kvstore", "2015-01-01", "ReleaseInstancePublicConnection", "R-kvstore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

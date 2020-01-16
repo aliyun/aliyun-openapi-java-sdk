@@ -39,7 +39,7 @@ public class RestoreInstanceRequest extends RpcAcsRequest<RestoreInstanceRespons
 
 	private String instanceId;
 	public RestoreInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "RestoreInstance");
+		super("R-kvstore", "2015-01-01", "RestoreInstance", "R-kvstore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

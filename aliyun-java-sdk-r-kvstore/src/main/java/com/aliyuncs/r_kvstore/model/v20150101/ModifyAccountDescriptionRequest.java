@@ -41,7 +41,7 @@ public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccount
 
 	private String instanceId;
 	public ModifyAccountDescriptionRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyAccountDescription");
+		super("R-kvstore", "2015-01-01", "ModifyAccountDescription", "R-kvstore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

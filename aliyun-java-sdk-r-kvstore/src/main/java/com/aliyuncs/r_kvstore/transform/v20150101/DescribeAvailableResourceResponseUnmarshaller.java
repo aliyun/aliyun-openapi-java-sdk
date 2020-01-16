@@ -84,6 +84,7 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 										for (int q = 0; q < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEditionTypes["+ k +"].SupportedSeriesTypes["+ l +"].SupportedEngineVersions["+ m +"].SupportedArchitectureTypes["+ n +"].SupportedShardNumbers["+ o +"].SupportedNodeTypes["+ p +"].AvailableResources.Length"); q++) {
 											AvailableResource availableResource = new AvailableResource();
 											availableResource.setInstanceClass(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEditionTypes["+ k +"].SupportedSeriesTypes["+ l +"].SupportedEngineVersions["+ m +"].SupportedArchitectureTypes["+ n +"].SupportedShardNumbers["+ o +"].SupportedNodeTypes["+ p +"].AvailableResources["+ q +"].InstanceClass"));
+											availableResource.setInstanceClassRemark(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEditionTypes["+ k +"].SupportedSeriesTypes["+ l +"].SupportedEngineVersions["+ m +"].SupportedArchitectureTypes["+ n +"].SupportedShardNumbers["+ o +"].SupportedNodeTypes["+ p +"].AvailableResources["+ q +"].InstanceClassRemark"));
 
 											availableResources.add(availableResource);
 										}

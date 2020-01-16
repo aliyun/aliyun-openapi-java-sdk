@@ -39,7 +39,7 @@ public class FlushExpireKeysRequest extends RpcAcsRequest<FlushExpireKeysRespons
 
 	private String instanceId;
 	public FlushExpireKeysRequest() {
-		super("R-kvstore", "2015-01-01", "FlushExpireKeys");
+		super("R-kvstore", "2015-01-01", "FlushExpireKeys", "R-kvstore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

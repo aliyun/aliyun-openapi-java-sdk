@@ -37,7 +37,7 @@ public class CreateCacheAnalysisTaskRequest extends RpcAcsRequest<CreateCacheAna
 
 	private String instanceId;
 	public CreateCacheAnalysisTaskRequest() {
-		super("R-kvstore", "2015-01-01", "CreateCacheAnalysisTask");
+		super("R-kvstore", "2015-01-01", "CreateCacheAnalysisTask", "R-kvstore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

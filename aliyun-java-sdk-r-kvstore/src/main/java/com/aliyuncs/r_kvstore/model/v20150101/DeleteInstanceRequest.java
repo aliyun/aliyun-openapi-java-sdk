@@ -37,7 +37,7 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 
 	private String securityToken;
 	public DeleteInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteInstance");
+		super("R-kvstore", "2015-01-01", "DeleteInstance", "R-kvstore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
