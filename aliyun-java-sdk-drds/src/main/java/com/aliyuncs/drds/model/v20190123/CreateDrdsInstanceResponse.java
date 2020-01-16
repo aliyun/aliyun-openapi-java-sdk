@@ -82,9 +82,4 @@ public class CreateDrdsInstanceResponse extends AcsResponse {
 	public CreateDrdsInstanceResponse getInstance(UnmarshallerContext context) {
 		return	CreateDrdsInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }
