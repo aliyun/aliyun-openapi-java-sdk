@@ -16,6 +16,7 @@ package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cloudauth.Endpoint;
 
 /**
  * @author auto create
@@ -26,6 +27,10 @@ public class DescribeUploadInfoRequest extends RpcAcsRequest<DescribeUploadInfoR
 	public DescribeUploadInfoRequest() {
 		super("Cloudauth", "2019-03-07", "DescribeUploadInfo", "cloudauth");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	@Override

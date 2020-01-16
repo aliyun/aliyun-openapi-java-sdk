@@ -31,6 +31,10 @@ public class DescribeVerifyResultResponse extends AcsResponse {
 
 	private Float authorityComparisionScore;
 
+	private Float faceComparisonScore;
+
+	private Float idCardFaceComparisonScore;
+
 	private Material material;
 
 	public String getRequestId() {
@@ -55,6 +59,22 @@ public class DescribeVerifyResultResponse extends AcsResponse {
 
 	public void setAuthorityComparisionScore(Float authorityComparisionScore) {
 		this.authorityComparisionScore = authorityComparisionScore;
+	}
+
+	public Float getFaceComparisonScore() {
+		return this.faceComparisonScore;
+	}
+
+	public void setFaceComparisonScore(Float faceComparisonScore) {
+		this.faceComparisonScore = faceComparisonScore;
+	}
+
+	public Float getIdCardFaceComparisonScore() {
+		return this.idCardFaceComparisonScore;
+	}
+
+	public void setIdCardFaceComparisonScore(Float idCardFaceComparisonScore) {
+		this.idCardFaceComparisonScore = idCardFaceComparisonScore;
 	}
 
 	public Material getMaterial() {

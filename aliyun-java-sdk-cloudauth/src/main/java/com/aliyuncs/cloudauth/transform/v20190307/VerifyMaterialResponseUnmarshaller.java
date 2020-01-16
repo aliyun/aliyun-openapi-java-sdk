@@ -28,6 +28,8 @@ public class VerifyMaterialResponseUnmarshaller {
 		verifyMaterialResponse.setVerifyToken(_ctx.stringValue("VerifyMaterialResponse.VerifyToken"));
 		verifyMaterialResponse.setVerifyStatus(_ctx.integerValue("VerifyMaterialResponse.VerifyStatus"));
 		verifyMaterialResponse.setAuthorityComparisionScore(_ctx.floatValue("VerifyMaterialResponse.AuthorityComparisionScore"));
+		verifyMaterialResponse.setFaceComparisonScore(_ctx.floatValue("VerifyMaterialResponse.FaceComparisonScore"));
+		verifyMaterialResponse.setIdCardFaceComparisonScore(_ctx.floatValue("VerifyMaterialResponse.IdCardFaceComparisonScore"));
 
 		Material material = new Material();
 		material.setFaceImageUrl(_ctx.stringValue("VerifyMaterialResponse.Material.FaceImageUrl"));

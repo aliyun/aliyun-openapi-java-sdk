@@ -30,6 +30,8 @@ public class DescribeVerifyResultResponseUnmarshaller {
 		describeVerifyResultResponse.setRequestId(_ctx.stringValue("DescribeVerifyResultResponse.RequestId"));
 		describeVerifyResultResponse.setVerifyStatus(_ctx.integerValue("DescribeVerifyResultResponse.VerifyStatus"));
 		describeVerifyResultResponse.setAuthorityComparisionScore(_ctx.floatValue("DescribeVerifyResultResponse.AuthorityComparisionScore"));
+		describeVerifyResultResponse.setFaceComparisonScore(_ctx.floatValue("DescribeVerifyResultResponse.FaceComparisonScore"));
+		describeVerifyResultResponse.setIdCardFaceComparisonScore(_ctx.floatValue("DescribeVerifyResultResponse.IdCardFaceComparisonScore"));
 
 		Material material = new Material();
 		material.setFaceImageUrl(_ctx.stringValue("DescribeVerifyResultResponse.Material.FaceImageUrl"));

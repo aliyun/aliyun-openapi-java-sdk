@@ -1,3 +1,6 @@
+2020-01-16 Version: 2.0.2
+- Add fields faceComparisonScore for DescribeVerifyResult and VerifyMaterials interface.
+
 2019-10-30 Version: 2.0.1
 - Update interface params of the cloudauth.
 
