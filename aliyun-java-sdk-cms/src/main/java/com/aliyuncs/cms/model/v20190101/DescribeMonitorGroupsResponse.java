@@ -121,7 +121,11 @@ public class DescribeMonitorGroupsResponse extends AcsResponse {
 
 		private String bindUrl;
 
-		private Long dynamicTagGroupId;
+		private String dynamicTagRuleId;
+
+		private String groupFounderTagKey;
+
+		private String groupFounderTagValue;
 
 		private List<ContactGroup> contactGroups;
 
@@ -185,12 +189,28 @@ public class DescribeMonitorGroupsResponse extends AcsResponse {
 			this.bindUrl = bindUrl;
 		}
 
-		public Long getDynamicTagGroupId() {
-			return this.dynamicTagGroupId;
+		public String getDynamicTagRuleId() {
+			return this.dynamicTagRuleId;
 		}
 
-		public void setDynamicTagGroupId(Long dynamicTagGroupId) {
-			this.dynamicTagGroupId = dynamicTagGroupId;
+		public void setDynamicTagRuleId(String dynamicTagRuleId) {
+			this.dynamicTagRuleId = dynamicTagRuleId;
+		}
+
+		public String getGroupFounderTagKey() {
+			return this.groupFounderTagKey;
+		}
+
+		public void setGroupFounderTagKey(String groupFounderTagKey) {
+			this.groupFounderTagKey = groupFounderTagKey;
+		}
+
+		public String getGroupFounderTagValue() {
+			return this.groupFounderTagValue;
+		}
+
+		public void setGroupFounderTagValue(String groupFounderTagValue) {
+			this.groupFounderTagValue = groupFounderTagValue;
 		}
 
 		public List<ContactGroup> getContactGroups() {

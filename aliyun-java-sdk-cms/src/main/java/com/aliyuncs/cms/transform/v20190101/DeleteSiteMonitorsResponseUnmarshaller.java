@@ -15,6 +15,7 @@
 package com.aliyuncs.cms.transform.v20190101;
 
 import com.aliyuncs.cms.model.v20190101.DeleteSiteMonitorsResponse;
+import com.aliyuncs.cms.model.v20190101.DeleteSiteMonitorsResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,7 +27,10 @@ public class DeleteSiteMonitorsResponseUnmarshaller {
 		deleteSiteMonitorsResponse.setCode(_ctx.stringValue("DeleteSiteMonitorsResponse.Code"));
 		deleteSiteMonitorsResponse.setMessage(_ctx.stringValue("DeleteSiteMonitorsResponse.Message"));
 		deleteSiteMonitorsResponse.setSuccess(_ctx.stringValue("DeleteSiteMonitorsResponse.Success"));
-		deleteSiteMonitorsResponse.setData(_ctx.stringValue("DeleteSiteMonitorsResponse.Data"));
+
+		Data data = new Data();
+		data.setCount(_ctx.integerValue("DeleteSiteMonitorsResponse.Data.count"));
+		deleteSiteMonitorsResponse.setData(data);
 	 
 	 	return deleteSiteMonitorsResponse;
 	}

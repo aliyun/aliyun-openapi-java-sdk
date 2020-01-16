@@ -1,3 +1,6 @@
+2020-01-16 Version: 7.0.8
+- Fix the result value of DeleteSiteMonitors.
+
 2020-01-15 Version: 7.0.7
 - Fix parameter issues for label synchronization group.
 
