@@ -15,6 +15,7 @@
 package com.aliyuncs.retailcloud.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -25,6 +26,8 @@ public class UpdateDeployConfigRequest extends RpcAcsRequest<UpdateDeployConfigR
 	   
 
 	private String codePath;
+
+	private List<String> configMapLists;
 
 	private String configMap;
 
@@ -49,6 +52,19 @@ public class UpdateDeployConfigRequest extends RpcAcsRequest<UpdateDeployConfigR
 		if(codePath != null){
 			putQueryParameter("CodePath", codePath);
 		}
+	}
+
+	public List<String> getConfigMapLists() {
+		return this.configMapLists;
+	}
+
+	public void setConfigMapLists(List<String> configMapLists) {
+		this.configMapLists = configMapLists;	
+		if (configMapLists != null) {
+			for (int i = 0; i < configMapLists.size(); i++) {
+				putQueryParameter("ConfigMapList." + (i + 1) , configMapLists.get(i));
+			}
+		}	
 	}
 
 	public String getConfigMap() {

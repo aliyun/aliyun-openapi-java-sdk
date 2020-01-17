@@ -34,6 +34,8 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 
 	private String operatingSystem;
 
+	private String namespace;
+
 	private String description;
 
 	private String language;
@@ -96,6 +98,17 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 		this.operatingSystem = operatingSystem;
 		if(operatingSystem != null){
 			putBodyParameter("OperatingSystem", operatingSystem);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putBodyParameter("Namespace", namespace);
 		}
 	}
 

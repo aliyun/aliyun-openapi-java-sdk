@@ -178,6 +178,8 @@ public class ListDeployConfigResponse extends AcsResponse {
 
 			private String statefulSet;
 
+			private List<String> configMapList;
+
 			public String getDeployment() {
 				return this.deployment;
 			}
@@ -200,6 +202,14 @@ public class ListDeployConfigResponse extends AcsResponse {
 
 			public void setStatefulSet(String statefulSet) {
 				this.statefulSet = statefulSet;
+			}
+
+			public List<String> getConfigMapList() {
+				return this.configMapList;
+			}
+
+			public void setConfigMapList(List<String> configMapList) {
+				this.configMapList = configMapList;
 			}
 		}
 	}
