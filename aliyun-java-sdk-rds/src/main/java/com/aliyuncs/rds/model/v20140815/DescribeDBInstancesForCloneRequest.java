@@ -43,6 +43,8 @@ public class DescribeDBInstancesForCloneRequest extends RpcAcsRequest<DescribeDB
 
 	private String engine;
 
+	private String currentInstanceId;
+
 	private Integer pageSize;
 
 	private String dBInstanceStatus;
@@ -175,6 +177,17 @@ public class DescribeDBInstancesForCloneRequest extends RpcAcsRequest<DescribeDB
 		this.engine = engine;
 		if(engine != null){
 			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getCurrentInstanceId() {
+		return this.currentInstanceId;
+	}
+
+	public void setCurrentInstanceId(String currentInstanceId) {
+		this.currentInstanceId = currentInstanceId;
+		if(currentInstanceId != null){
+			putQueryParameter("CurrentInstanceId", currentInstanceId);
 		}
 	}
 
