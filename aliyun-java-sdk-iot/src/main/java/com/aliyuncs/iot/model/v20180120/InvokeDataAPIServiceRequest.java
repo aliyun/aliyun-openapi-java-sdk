@@ -26,9 +26,11 @@ import com.aliyuncs.iot.Endpoint;
 public class InvokeDataAPIServiceRequest extends RpcAcsRequest<InvokeDataAPIServiceResponse> {
 	   
 
-	private String apiSrn;
-
 	private List<Param> params;
+
+	private String iotInstanceId;
+
+	private String apiSrn;
 	public InvokeDataAPIServiceRequest() {
 		super("Iot", "2018-01-20", "InvokeDataAPIService", "iot");
 		setMethod(MethodType.POST);
@@ -36,17 +38,6 @@ public class InvokeDataAPIServiceRequest extends RpcAcsRequest<InvokeDataAPIServ
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getApiSrn() {
-		return this.apiSrn;
-	}
-
-	public void setApiSrn(String apiSrn) {
-		this.apiSrn = apiSrn;
-		if(apiSrn != null){
-			putQueryParameter("ApiSrn", apiSrn);
-		}
 	}
 
 	public List<Param> getParams() {
@@ -57,34 +48,59 @@ public class InvokeDataAPIServiceRequest extends RpcAcsRequest<InvokeDataAPIServ
 		this.params = params;	
 		if (params != null) {
 			for (int depth1 = 0; depth1 < params.size(); depth1++) {
-				putBodyParameter("Param." + (depth1 + 1) + ".ListParamType" , params.get(depth1).getListParamType());
+				putBodyParameter("Param." + (depth1 + 1) + ".ParamType" , params.get(depth1).getParamType());
 				if (params.get(depth1).getListParamValues() != null) {
 					for (int i = 0; i < params.get(depth1).getListParamValues().size(); i++) {
 						putBodyParameter("Param." + (depth1 + 1) + ".ListParamValue." + (i + 1) , params.get(depth1).getListParamValues().get(i));
 					}
 				}
-				putBodyParameter("Param." + (depth1 + 1) + ".ParamValue" , params.get(depth1).getParamValue());
+				putBodyParameter("Param." + (depth1 + 1) + ".ListParamType" , params.get(depth1).getListParamType());
 				putBodyParameter("Param." + (depth1 + 1) + ".ParamName" , params.get(depth1).getParamName());
+				putBodyParameter("Param." + (depth1 + 1) + ".ParamValue" , params.get(depth1).getParamValue());
 			}
 		}	
 	}
 
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putBodyParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getApiSrn() {
+		return this.apiSrn;
+	}
+
+	public void setApiSrn(String apiSrn) {
+		this.apiSrn = apiSrn;
+		if(apiSrn != null){
+			putBodyParameter("ApiSrn", apiSrn);
+		}
+	}
+
 	public static class Param {
 
-		private String listParamType;
+		private String paramType;
 
 		private List<String> listParamValues;
 
-		private String paramValue;
+		private String listParamType;
 
 		private String paramName;
 
-		public String getListParamType() {
-			return this.listParamType;
+		private String paramValue;
+
+		public String getParamType() {
+			return this.paramType;
 		}
 
-		public void setListParamType(String listParamType) {
-			this.listParamType = listParamType;
+		public void setParamType(String paramType) {
+			this.paramType = paramType;
 		}
 
 		public List<String> getListParamValues() {
@@ -95,12 +111,12 @@ public class InvokeDataAPIServiceRequest extends RpcAcsRequest<InvokeDataAPIServ
 			this.listParamValues = listParamValues;
 		}
 
-		public String getParamValue() {
-			return this.paramValue;
+		public String getListParamType() {
+			return this.listParamType;
 		}
 
-		public void setParamValue(String paramValue) {
-			this.paramValue = paramValue;
+		public void setListParamType(String listParamType) {
+			this.listParamType = listParamType;
 		}
 
 		public String getParamName() {
@@ -109,6 +125,14 @@ public class InvokeDataAPIServiceRequest extends RpcAcsRequest<InvokeDataAPIServ
 
 		public void setParamName(String paramName) {
 			this.paramName = paramName;
+		}
+
+		public String getParamValue() {
+			return this.paramValue;
+		}
+
+		public void setParamValue(String paramValue) {
+			this.paramValue = paramValue;
 		}
 	}
 

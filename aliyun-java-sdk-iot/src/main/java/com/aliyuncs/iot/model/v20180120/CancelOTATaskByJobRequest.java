@@ -27,13 +27,15 @@ public class CancelOTATaskByJobRequest extends RpcAcsRequest<CancelOTATaskByJobR
 
 	private Boolean cancelScheduledTask;
 
-	private Boolean cancelInProgressTask;
-
 	private String jobId;
 
 	private String iotInstanceId;
 
 	private Boolean cancelQueuedTask;
+
+	private Boolean cancelInProgressTask;
+
+	private Boolean cancelNotifiedTask;
 	public CancelOTATaskByJobRequest() {
 		super("Iot", "2018-01-20", "CancelOTATaskByJob", "iot");
 		setMethod(MethodType.POST);
@@ -51,17 +53,6 @@ public class CancelOTATaskByJobRequest extends RpcAcsRequest<CancelOTATaskByJobR
 		this.cancelScheduledTask = cancelScheduledTask;
 		if(cancelScheduledTask != null){
 			putQueryParameter("CancelScheduledTask", cancelScheduledTask.toString());
-		}
-	}
-
-	public Boolean getCancelInProgressTask() {
-		return this.cancelInProgressTask;
-	}
-
-	public void setCancelInProgressTask(Boolean cancelInProgressTask) {
-		this.cancelInProgressTask = cancelInProgressTask;
-		if(cancelInProgressTask != null){
-			putQueryParameter("CancelInProgressTask", cancelInProgressTask.toString());
 		}
 	}
 
@@ -95,6 +86,28 @@ public class CancelOTATaskByJobRequest extends RpcAcsRequest<CancelOTATaskByJobR
 		this.cancelQueuedTask = cancelQueuedTask;
 		if(cancelQueuedTask != null){
 			putQueryParameter("CancelQueuedTask", cancelQueuedTask.toString());
+		}
+	}
+
+	public Boolean getCancelInProgressTask() {
+		return this.cancelInProgressTask;
+	}
+
+	public void setCancelInProgressTask(Boolean cancelInProgressTask) {
+		this.cancelInProgressTask = cancelInProgressTask;
+		if(cancelInProgressTask != null){
+			putQueryParameter("CancelInProgressTask", cancelInProgressTask.toString());
+		}
+	}
+
+	public Boolean getCancelNotifiedTask() {
+		return this.cancelNotifiedTask;
+	}
+
+	public void setCancelNotifiedTask(Boolean cancelNotifiedTask) {
+		this.cancelNotifiedTask = cancelNotifiedTask;
+		if(cancelNotifiedTask != null){
+			putQueryParameter("CancelNotifiedTask", cancelNotifiedTask.toString());
 		}
 	}
 

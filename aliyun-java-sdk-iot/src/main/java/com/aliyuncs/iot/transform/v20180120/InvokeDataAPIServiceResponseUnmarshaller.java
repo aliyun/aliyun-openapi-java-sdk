@@ -29,8 +29,8 @@ public class InvokeDataAPIServiceResponseUnmarshaller {
 		
 		invokeDataAPIServiceResponse.setRequestId(_ctx.stringValue("InvokeDataAPIServiceResponse.RequestId"));
 		invokeDataAPIServiceResponse.setSuccess(_ctx.booleanValue("InvokeDataAPIServiceResponse.Success"));
-		invokeDataAPIServiceResponse.setErrorMessage(_ctx.stringValue("InvokeDataAPIServiceResponse.ErrorMessage"));
 		invokeDataAPIServiceResponse.setCode(_ctx.stringValue("InvokeDataAPIServiceResponse.Code"));
+		invokeDataAPIServiceResponse.setErrorMessage(_ctx.stringValue("InvokeDataAPIServiceResponse.ErrorMessage"));
 
 		Data data = new Data();
 		data.setPageNo(_ctx.integerValue("InvokeDataAPIServiceResponse.Data.PageNo"));

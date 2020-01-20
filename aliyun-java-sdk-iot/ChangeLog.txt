@@ -1,3 +1,6 @@
+2020-01-20 Version: 7.4.0
+- Add Thing Model APIs, including QueryThingModel, PublishThingModel, etc.
+
 2019-12-31 Version: 7.3.0
 - Add OTA APIs, including GenerateOTAUploadURL, CreateOTAFirmware, etc.
 - Add UpdateProductFilterConfig interface, support setting product filter config.

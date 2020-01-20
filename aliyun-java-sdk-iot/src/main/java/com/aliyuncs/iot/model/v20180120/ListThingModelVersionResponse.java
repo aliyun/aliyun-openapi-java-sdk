@@ -15,16 +15,15 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.InvokeDataAPIServiceResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.ListThingModelVersionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class InvokeDataAPIServiceResponse extends AcsResponse {
+public class ListThingModelVersionResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -78,59 +77,57 @@ public class InvokeDataAPIServiceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageNo;
+		private List<ModelVersion> modelVersions;
 
-		private Integer pageSize;
-
-		private String apiSrn;
-
-		private List<String> fieldNameList;
-
-		private List<Map<Object,Object>> resultList;
-
-		public Integer getPageNo() {
-			return this.pageNo;
+		public List<ModelVersion> getModelVersions() {
+			return this.modelVersions;
 		}
 
-		public void setPageNo(Integer pageNo) {
-			this.pageNo = pageNo;
+		public void setModelVersions(List<ModelVersion> modelVersions) {
+			this.modelVersions = modelVersions;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
+		public static class ModelVersion {
 
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
+			private String modelVersion;
 
-		public String getApiSrn() {
-			return this.apiSrn;
-		}
+			private String description;
 
-		public void setApiSrn(String apiSrn) {
-			this.apiSrn = apiSrn;
-		}
+			private Long gmtCreate;
 
-		public List<String> getFieldNameList() {
-			return this.fieldNameList;
-		}
+			public String getModelVersion() {
+				return this.modelVersion;
+			}
 
-		public void setFieldNameList(List<String> fieldNameList) {
-			this.fieldNameList = fieldNameList;
-		}
+			public void setModelVersion(String modelVersion) {
+				this.modelVersion = modelVersion;
+			}
 
-		public List<Map<Object,Object>> getResultList() {
-			return this.resultList;
-		}
+			public String getDescription() {
+				return this.description;
+			}
 
-		public void setResultList(List<Map<Object,Object>> resultList) {
-			this.resultList = resultList;
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
 		}
 	}
 
 	@Override
-	public InvokeDataAPIServiceResponse getInstance(UnmarshallerContext context) {
-		return	InvokeDataAPIServiceResponseUnmarshaller.unmarshall(this, context);
+	public ListThingModelVersionResponse getInstance(UnmarshallerContext context) {
+		return	ListThingModelVersionResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

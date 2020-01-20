@@ -14,17 +14,15 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
-import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.InvokeDataAPIServiceResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.GetThingModelTslResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class InvokeDataAPIServiceResponse extends AcsResponse {
+public class GetThingModelTslResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -78,59 +76,34 @@ public class InvokeDataAPIServiceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageNo;
+		private String tslStr;
 
-		private Integer pageSize;
+		private String tslUri;
 
-		private String apiSrn;
-
-		private List<String> fieldNameList;
-
-		private List<Map<Object,Object>> resultList;
-
-		public Integer getPageNo() {
-			return this.pageNo;
+		public String getTslStr() {
+			return this.tslStr;
 		}
 
-		public void setPageNo(Integer pageNo) {
-			this.pageNo = pageNo;
+		public void setTslStr(String tslStr) {
+			this.tslStr = tslStr;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
+		public String getTslUri() {
+			return this.tslUri;
 		}
 
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
-		public String getApiSrn() {
-			return this.apiSrn;
-		}
-
-		public void setApiSrn(String apiSrn) {
-			this.apiSrn = apiSrn;
-		}
-
-		public List<String> getFieldNameList() {
-			return this.fieldNameList;
-		}
-
-		public void setFieldNameList(List<String> fieldNameList) {
-			this.fieldNameList = fieldNameList;
-		}
-
-		public List<Map<Object,Object>> getResultList() {
-			return this.resultList;
-		}
-
-		public void setResultList(List<Map<Object,Object>> resultList) {
-			this.resultList = resultList;
+		public void setTslUri(String tslUri) {
+			this.tslUri = tslUri;
 		}
 	}
 
 	@Override
-	public InvokeDataAPIServiceResponse getInstance(UnmarshallerContext context) {
-		return	InvokeDataAPIServiceResponseUnmarshaller.unmarshall(this, context);
+	public GetThingModelTslResponse getInstance(UnmarshallerContext context) {
+		return	GetThingModelTslResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

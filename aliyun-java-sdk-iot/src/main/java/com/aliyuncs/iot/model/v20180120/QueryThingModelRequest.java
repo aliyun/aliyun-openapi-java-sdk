@@ -22,7 +22,7 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetProductMetaListByNameRequest extends RpcAcsRequest<GetProductMetaListByNameResponse> {
+public class QueryThingModelRequest extends RpcAcsRequest<QueryThingModelResponse> {
 	   
 
 	private String productKey;
@@ -31,11 +31,9 @@ public class GetProductMetaListByNameRequest extends RpcAcsRequest<GetProductMet
 
 	private String iotInstanceId;
 
-	private String deviceName;
-
-	private String page;
-	public GetProductMetaListByNameRequest() {
-		super("Iot", "2018-01-20", "GetProductMetaListByName", "iot");
+	private String modelVersion;
+	public QueryThingModelRequest() {
+		super("Iot", "2018-01-20", "QueryThingModel", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,7 +48,7 @@ public class GetProductMetaListByNameRequest extends RpcAcsRequest<GetProductMet
 	public void setProductKey(String productKey) {
 		this.productKey = productKey;
 		if(productKey != null){
-			putBodyParameter("ProductKey", productKey);
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 
@@ -76,31 +74,20 @@ public class GetProductMetaListByNameRequest extends RpcAcsRequest<GetProductMet
 		}
 	}
 
-	public String getDeviceName() {
-		return this.deviceName;
+	public String getModelVersion() {
+		return this.modelVersion;
 	}
 
-	public void setDeviceName(String deviceName) {
-		this.deviceName = deviceName;
-		if(deviceName != null){
-			putBodyParameter("DeviceName", deviceName);
-		}
-	}
-
-	public String getPage() {
-		return this.page;
-	}
-
-	public void setPage(String page) {
-		this.page = page;
-		if(page != null){
-			putBodyParameter("Page", page);
+	public void setModelVersion(String modelVersion) {
+		this.modelVersion = modelVersion;
+		if(modelVersion != null){
+			putQueryParameter("ModelVersion", modelVersion);
 		}
 	}
 
 	@Override
-	public Class<GetProductMetaListByNameResponse> getResponseClass() {
-		return GetProductMetaListByNameResponse.class;
+	public Class<QueryThingModelResponse> getResponseClass() {
+		return QueryThingModelResponse.class;
 	}
 
 }

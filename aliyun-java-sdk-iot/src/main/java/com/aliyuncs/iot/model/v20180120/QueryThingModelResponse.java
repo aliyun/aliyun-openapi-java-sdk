@@ -14,17 +14,15 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
-import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.InvokeDataAPIServiceResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.QueryThingModelResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class InvokeDataAPIServiceResponse extends AcsResponse {
+public class QueryThingModelResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,6 +31,8 @@ public class InvokeDataAPIServiceResponse extends AcsResponse {
 	private String code;
 
 	private String errorMessage;
+
+	private String productKey;
 
 	private Data data;
 
@@ -68,6 +68,14 @@ public class InvokeDataAPIServiceResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -78,59 +86,24 @@ public class InvokeDataAPIServiceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageNo;
+		private String thingModelJson;
 
-		private Integer pageSize;
-
-		private String apiSrn;
-
-		private List<String> fieldNameList;
-
-		private List<Map<Object,Object>> resultList;
-
-		public Integer getPageNo() {
-			return this.pageNo;
+		public String getThingModelJson() {
+			return this.thingModelJson;
 		}
 
-		public void setPageNo(Integer pageNo) {
-			this.pageNo = pageNo;
-		}
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
-		public String getApiSrn() {
-			return this.apiSrn;
-		}
-
-		public void setApiSrn(String apiSrn) {
-			this.apiSrn = apiSrn;
-		}
-
-		public List<String> getFieldNameList() {
-			return this.fieldNameList;
-		}
-
-		public void setFieldNameList(List<String> fieldNameList) {
-			this.fieldNameList = fieldNameList;
-		}
-
-		public List<Map<Object,Object>> getResultList() {
-			return this.resultList;
-		}
-
-		public void setResultList(List<Map<Object,Object>> resultList) {
-			this.resultList = resultList;
+		public void setThingModelJson(String thingModelJson) {
+			this.thingModelJson = thingModelJson;
 		}
 	}
 
 	@Override
-	public InvokeDataAPIServiceResponse getInstance(UnmarshallerContext context) {
-		return	InvokeDataAPIServiceResponseUnmarshaller.unmarshall(this, context);
+	public QueryThingModelResponse getInstance(UnmarshallerContext context) {
+		return	QueryThingModelResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

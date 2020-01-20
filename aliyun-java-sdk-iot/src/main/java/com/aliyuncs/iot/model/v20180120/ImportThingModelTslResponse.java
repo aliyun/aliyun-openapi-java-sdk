@@ -15,24 +15,22 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.GetProductMetaListByNameResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.ImportThingModelTslResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetProductMetaListByNameResponse extends AcsResponse {
+public class ImportThingModelTslResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String errorMessage;
-
 	private String code;
 
-	private String data;
+	private String errorMessage;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,14 +48,6 @@ public class GetProductMetaListByNameResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public String getCode() {
 		return this.code;
 	}
@@ -66,16 +56,21 @@ public class GetProductMetaListByNameResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getData() {
-		return this.data;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setData(String data) {
-		this.data = data;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	@Override
-	public GetProductMetaListByNameResponse getInstance(UnmarshallerContext context) {
-		return	GetProductMetaListByNameResponseUnmarshaller.unmarshall(this, context);
+	public ImportThingModelTslResponse getInstance(UnmarshallerContext context) {
+		return	ImportThingModelTslResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

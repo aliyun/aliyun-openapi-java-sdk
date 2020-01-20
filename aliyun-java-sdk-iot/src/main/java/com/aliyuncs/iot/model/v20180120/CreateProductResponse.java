@@ -181,4 +181,9 @@ public class CreateProductResponse extends AcsResponse {
 	public CreateProductResponse getInstance(UnmarshallerContext context) {
 		return	CreateProductResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

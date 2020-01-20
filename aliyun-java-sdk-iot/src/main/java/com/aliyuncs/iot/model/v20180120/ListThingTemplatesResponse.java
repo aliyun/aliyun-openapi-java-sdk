@@ -15,16 +15,15 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.InvokeDataAPIServiceResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.ListThingTemplatesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class InvokeDataAPIServiceResponse extends AcsResponse {
+public class ListThingTemplatesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -34,7 +33,7 @@ public class InvokeDataAPIServiceResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private Data data;
+	private List<CategoryInfo> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -68,69 +67,44 @@ public class InvokeDataAPIServiceResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Data getData() {
+	public List<CategoryInfo> getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(List<CategoryInfo> data) {
 		this.data = data;
 	}
 
-	public static class Data {
+	public static class CategoryInfo {
 
-		private Integer pageNo;
+		private String categoryKey;
 
-		private Integer pageSize;
+		private String categoryName;
 
-		private String apiSrn;
-
-		private List<String> fieldNameList;
-
-		private List<Map<Object,Object>> resultList;
-
-		public Integer getPageNo() {
-			return this.pageNo;
+		public String getCategoryKey() {
+			return this.categoryKey;
 		}
 
-		public void setPageNo(Integer pageNo) {
-			this.pageNo = pageNo;
+		public void setCategoryKey(String categoryKey) {
+			this.categoryKey = categoryKey;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
+		public String getCategoryName() {
+			return this.categoryName;
 		}
 
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
-		public String getApiSrn() {
-			return this.apiSrn;
-		}
-
-		public void setApiSrn(String apiSrn) {
-			this.apiSrn = apiSrn;
-		}
-
-		public List<String> getFieldNameList() {
-			return this.fieldNameList;
-		}
-
-		public void setFieldNameList(List<String> fieldNameList) {
-			this.fieldNameList = fieldNameList;
-		}
-
-		public List<Map<Object,Object>> getResultList() {
-			return this.resultList;
-		}
-
-		public void setResultList(List<Map<Object,Object>> resultList) {
-			this.resultList = resultList;
+		public void setCategoryName(String categoryName) {
+			this.categoryName = categoryName;
 		}
 	}
 
 	@Override
-	public InvokeDataAPIServiceResponse getInstance(UnmarshallerContext context) {
-		return	InvokeDataAPIServiceResponseUnmarshaller.unmarshall(this, context);
+	public ListThingTemplatesResponse getInstance(UnmarshallerContext context) {
+		return	ListThingTemplatesResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

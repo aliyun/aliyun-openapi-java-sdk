@@ -29,6 +29,8 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 
 	private String description;
 
+	private String categoryKey;
+
 	private String joinPermissionId;
 
 	private String authType;
@@ -40,6 +42,8 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 	private String productName;
 
 	private String aliyunCommodityCode;
+
+	private Boolean publishAuto;
 
 	private Long categoryId;
 
@@ -78,6 +82,17 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getCategoryKey() {
+		return this.categoryKey;
+	}
+
+	public void setCategoryKey(String categoryKey) {
+		this.categoryKey = categoryKey;
+		if(categoryKey != null){
+			putQueryParameter("CategoryKey", categoryKey);
 		}
 	}
 
@@ -144,6 +159,17 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 		this.aliyunCommodityCode = aliyunCommodityCode;
 		if(aliyunCommodityCode != null){
 			putQueryParameter("AliyunCommodityCode", aliyunCommodityCode);
+		}
+	}
+
+	public Boolean getPublishAuto() {
+		return this.publishAuto;
+	}
+
+	public void setPublishAuto(Boolean publishAuto) {
+		this.publishAuto = publishAuto;
+		if(publishAuto != null){
+			putQueryParameter("PublishAuto", publishAuto.toString());
 		}
 	}
 
