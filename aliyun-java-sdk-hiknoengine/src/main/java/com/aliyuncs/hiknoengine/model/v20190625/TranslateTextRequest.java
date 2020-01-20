@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class TranslateTextRequest extends RpcAcsRequest<TranslateTextResponse> {
-	
-	public TranslateTextRequest() {
-		super("hiknoengine", "2019-06-25", "TranslateText", "hiknoengine");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String fromLang;
 
 	private String toLang;
 
 	private String text;
+	public TranslateTextRequest() {
+		super("hiknoengine", "2019-06-25", "TranslateText", "hiknoengine");
+		setMethod(MethodType.POST);
+	}
 
 	public String getFromLang() {
 		return this.fromLang;

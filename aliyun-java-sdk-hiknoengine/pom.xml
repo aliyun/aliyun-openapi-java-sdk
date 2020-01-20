@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-hiknoengine</artifactId>
   <packaging>jar</packaging>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <name>aliyun-java-sdk-hiknoengine</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

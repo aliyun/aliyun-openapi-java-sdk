@@ -1,3 +1,6 @@
+2020-01-20 Version: 0.0.2
+- Release on full language support.
+
 2019-08-29 Version: 0.0.1
 - Supported TranslateText.
 
