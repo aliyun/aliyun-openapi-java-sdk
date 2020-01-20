@@ -1,3 +1,6 @@
+2020-01-20 Version: 1.0.2
+- Onezerotwo sdk version.
+
 2020-01-20 Version: 1.0.1
 - Onezeroone sdk version.
 
