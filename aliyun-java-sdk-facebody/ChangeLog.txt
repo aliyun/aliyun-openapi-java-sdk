@@ -1,3 +1,6 @@
+2020-01-20 Version: 1.0.1
+- Onezeroone sdk version.
+
 2019-12-30 Version: 1.0.2
 - Disable Base64 Image string data support.
 
