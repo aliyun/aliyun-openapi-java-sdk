@@ -25,6 +25,8 @@ public class GetTaskRequest extends RpcAcsRequest<GetTaskResponse> {
 	   
 
 	private String jobId;
+
+	private String appkey;
 	public GetTaskRequest() {
 		super("rsimganalys", "2019-08-01", "GetTask", "rsimganalys");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class GetTaskRequest extends RpcAcsRequest<GetTaskResponse> {
 		this.jobId = jobId;
 		if(jobId != null){
 			putQueryParameter("JobId", jobId);
+		}
+	}
+
+	public String getAppkey() {
+		return this.appkey;
+	}
+
+	public void setAppkey(String appkey) {
+		this.appkey = appkey;
+		if(appkey != null){
+			putQueryParameter("Appkey", appkey);
 		}
 	}
 
