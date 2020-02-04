@@ -49,6 +49,8 @@ public class DescribeDomainsResponseUnmarshaller {
 			domain.setInstanceEndTime(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].InstanceEndTime"));
 			domain.setInstanceExpired(_ctx.booleanValue("DescribeDomainsResponse.Domains["+ i +"].InstanceExpired"));
 			domain.setStarmark(_ctx.booleanValue("DescribeDomainsResponse.Domains["+ i +"].Starmark"));
+			domain.setCreateTime(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].CreateTime"));
+			domain.setCreateTimestamp(_ctx.longValue("DescribeDomainsResponse.Domains["+ i +"].CreateTimestamp"));
 
 			List<String> dnsServers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDomainsResponse.Domains["+ i +"].DnsServers.Length"); j++) {

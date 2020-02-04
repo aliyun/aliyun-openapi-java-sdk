@@ -107,6 +107,10 @@ public class DescribeDomainsResponse extends AcsResponse {
 
 		private Boolean starmark;
 
+		private String createTime;
+
+		private Long createTimestamp;
+
 		private List<String> dnsServers;
 
 		public String getDomainId() {
@@ -227,6 +231,22 @@ public class DescribeDomainsResponse extends AcsResponse {
 
 		public void setStarmark(Boolean starmark) {
 			this.starmark = starmark;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 
 		public List<String> getDnsServers() {

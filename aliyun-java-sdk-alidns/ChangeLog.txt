@@ -1,3 +1,6 @@
+2020-02-04 Version: 2.0.15
+- Update default endpoints.
+
 2019-12-16 Version: 2.0.14
 - DescribeTransferDomains add query param, TargetUserId, FromUserId, DomainName.
 

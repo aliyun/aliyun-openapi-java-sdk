@@ -39,8 +39,8 @@ public class Endpoint {
             put("cn-shanghai-et2-b01", "dns.aliyuncs.com");
             put("ap-southeast-1", "alidns.ap-southeast-1.aliyuncs.com");
             put("ap-southeast-2", "alidns.ap-southeast-1.aliyuncs.com");
-            put("ap-southeast-3", "alidns.ap-southeast-1.aliyuncs.com");
-            put("ap-southeast-5", "alidns.ap-southeast-1.aliyuncs.com");
+            put("ap-southeast-3", "alidns.ap-southeast-3.aliyuncs.com");
+            put("ap-southeast-5", "alidns.ap-southeast-5.aliyuncs.com");
             put("us-east-1", "alidns.ap-southeast-1.aliyuncs.com");
             put("cn-shenzhen-inner", "dns.aliyuncs.com");
             put("cn-zhangjiakou-na62-a01", "dns.aliyuncs.com");
@@ -64,7 +64,7 @@ public class Endpoint {
             put("cn-hangzhou-internal-test-2", "dns.aliyuncs.com");
             put("cn-shenzhen-finance-1", "dns.aliyuncs.com");
             put("me-east-1", "alidns.ap-southeast-1.aliyuncs.com");
-            put("cn-chengdu", "dns.aliyuncs.com");
+            put("cn-chengdu", "alidns.cn-chengdu.aliyuncs.com");
             put("cn-hangzhou-test-306", "dns.aliyuncs.com");
             put("cn-hangzhou-finance", "dns.aliyuncs.com");
             put("cn-beijing-nu16-b01", "dns.aliyuncs.com");
