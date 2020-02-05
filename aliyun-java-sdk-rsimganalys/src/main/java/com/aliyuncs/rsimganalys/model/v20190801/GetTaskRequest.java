@@ -28,7 +28,7 @@ public class GetTaskRequest extends RpcAcsRequest<GetTaskResponse> {
 
 	private String appkey;
 	public GetTaskRequest() {
-		super("rsimganalys", "2019-08-01", "GetTask", "rsimganalys");
+		super("rsimganalys", "2019-08-01", "GetTask", "aliyun-java-sdk-rsimganalys");
 		setMethod(MethodType.POST);
 	}
 

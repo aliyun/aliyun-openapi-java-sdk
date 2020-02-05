@@ -21,12 +21,12 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
+public class GetImageRequest extends RpcAcsRequest<GetImageResponse> {
 	   
 
 	private Long imageId;
-	public DeleteImageRequest() {
-		super("rsimganalys", "2019-08-01", "DeleteImage", "aliyun-java-sdk-rsimganalys");
+	public GetImageRequest() {
+		super("rsimganalys", "2019-08-01", "GetImage", "aliyun-java-sdk-rsimganalys");
 		setMethod(MethodType.POST);
 	}
 
@@ -42,8 +42,8 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 	}
 
 	@Override
-	public Class<DeleteImageResponse> getResponseClass() {
-		return DeleteImageResponse.class;
+	public Class<GetImageResponse> getResponseClass() {
+		return GetImageResponse.class;
 	}
 
 }

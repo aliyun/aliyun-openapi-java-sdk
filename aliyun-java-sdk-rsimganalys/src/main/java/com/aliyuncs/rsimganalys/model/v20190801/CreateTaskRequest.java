@@ -38,7 +38,7 @@ public class CreateTaskRequest extends RpcAcsRequest<CreateTaskResponse> {
 
 	private String dstImageId;
 	public CreateTaskRequest() {
-		super("rsimganalys", "2019-08-01", "CreateTask", "rsimganalys");
+		super("rsimganalys", "2019-08-01", "CreateTask", "aliyun-java-sdk-rsimganalys");
 		setMethod(MethodType.POST);
 	}
 
