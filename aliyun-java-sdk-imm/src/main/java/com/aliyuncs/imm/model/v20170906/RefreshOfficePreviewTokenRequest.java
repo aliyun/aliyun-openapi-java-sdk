@@ -21,30 +21,17 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetOfficePreviewURLRequest extends RpcAcsRequest<GetOfficePreviewURLResponse> {
+public class RefreshOfficePreviewTokenRequest extends RpcAcsRequest<RefreshOfficePreviewTokenResponse> {
 	   
-
-	private String srcType;
 
 	private String project;
 
-	private Boolean useHTTPS;
+	private String accessToken;
 
-	private String srcUri;
-	public GetOfficePreviewURLRequest() {
-		super("imm", "2017-09-06", "GetOfficePreviewURL", "imm");
+	private String refreshToken;
+	public RefreshOfficePreviewTokenRequest() {
+		super("imm", "2017-09-06", "RefreshOfficePreviewToken", "imm");
 		setMethod(MethodType.POST);
-	}
-
-	public String getSrcType() {
-		return this.srcType;
-	}
-
-	public void setSrcType(String srcType) {
-		this.srcType = srcType;
-		if(srcType != null){
-			putQueryParameter("SrcType", srcType);
-		}
 	}
 
 	public String getProject() {
@@ -58,31 +45,31 @@ public class GetOfficePreviewURLRequest extends RpcAcsRequest<GetOfficePreviewUR
 		}
 	}
 
-	public Boolean getUseHTTPS() {
-		return this.useHTTPS;
+	public String getAccessToken() {
+		return this.accessToken;
 	}
 
-	public void setUseHTTPS(Boolean useHTTPS) {
-		this.useHTTPS = useHTTPS;
-		if(useHTTPS != null){
-			putQueryParameter("UseHTTPS", useHTTPS.toString());
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
+		if(accessToken != null){
+			putQueryParameter("AccessToken", accessToken);
 		}
 	}
 
-	public String getSrcUri() {
-		return this.srcUri;
+	public String getRefreshToken() {
+		return this.refreshToken;
 	}
 
-	public void setSrcUri(String srcUri) {
-		this.srcUri = srcUri;
-		if(srcUri != null){
-			putQueryParameter("SrcUri", srcUri);
+	public void setRefreshToken(String refreshToken) {
+		this.refreshToken = refreshToken;
+		if(refreshToken != null){
+			putQueryParameter("RefreshToken", refreshToken);
 		}
 	}
 
 	@Override
-	public Class<GetOfficePreviewURLResponse> getResponseClass() {
-		return GetOfficePreviewURLResponse.class;
+	public Class<RefreshOfficePreviewTokenResponse> getResponseClass() {
+		return RefreshOfficePreviewTokenResponse.class;
 	}
 
 }

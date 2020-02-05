@@ -15,42 +15,24 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.GetOfficePreviewURLResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20170906.RefreshOfficePreviewTokenResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetOfficePreviewURLResponse extends AcsResponse {
-
-	private String requestId;
-
-	private String previewURL;
+public class RefreshOfficePreviewTokenResponse extends AcsResponse {
 
 	private String accessToken;
 
-	private String refreshToken;
-
 	private String accessTokenExpiredTime;
+
+	private String refreshToken;
 
 	private String refreshTokenExpiredTime;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getPreviewURL() {
-		return this.previewURL;
-	}
-
-	public void setPreviewURL(String previewURL) {
-		this.previewURL = previewURL;
-	}
+	private String requestId;
 
 	public String getAccessToken() {
 		return this.accessToken;
@@ -58,14 +40,6 @@ public class GetOfficePreviewURLResponse extends AcsResponse {
 
 	public void setAccessToken(String accessToken) {
 		this.accessToken = accessToken;
-	}
-
-	public String getRefreshToken() {
-		return this.refreshToken;
-	}
-
-	public void setRefreshToken(String refreshToken) {
-		this.refreshToken = refreshToken;
 	}
 
 	public String getAccessTokenExpiredTime() {
@@ -76,6 +50,14 @@ public class GetOfficePreviewURLResponse extends AcsResponse {
 		this.accessTokenExpiredTime = accessTokenExpiredTime;
 	}
 
+	public String getRefreshToken() {
+		return this.refreshToken;
+	}
+
+	public void setRefreshToken(String refreshToken) {
+		this.refreshToken = refreshToken;
+	}
+
 	public String getRefreshTokenExpiredTime() {
 		return this.refreshTokenExpiredTime;
 	}
@@ -84,9 +66,17 @@ public class GetOfficePreviewURLResponse extends AcsResponse {
 		this.refreshTokenExpiredTime = refreshTokenExpiredTime;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	@Override
-	public GetOfficePreviewURLResponse getInstance(UnmarshallerContext context) {
-		return	GetOfficePreviewURLResponseUnmarshaller.unmarshall(this, context);
+	public RefreshOfficePreviewTokenResponse getInstance(UnmarshallerContext context) {
+		return	RefreshOfficePreviewTokenResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
