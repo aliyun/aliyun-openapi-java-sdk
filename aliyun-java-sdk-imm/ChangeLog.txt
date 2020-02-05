@@ -2,6 +2,10 @@
 - Supported GetOfficePreviewURL.
 - Supported RefreshOfficePreviewToken.
 
+2020-02-05 Version: 1.15.6
+- Supported GetOfficePreviewURL.
+- Supported RefreshOfficePreviewToken.
+
 2020-01-08 Version: 1.15.5
 - Add TagLevel to ListSetTags.
 
