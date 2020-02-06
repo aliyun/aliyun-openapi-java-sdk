@@ -227,7 +227,7 @@ public class DefaultAcsClient implements IAcsClient {
                     }
                 }
             }
-            throw new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
+            throw new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId(), error.getErrorDescription());
         }
     }
 
