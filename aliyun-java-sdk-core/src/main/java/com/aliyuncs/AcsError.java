@@ -8,6 +8,7 @@ public class AcsError extends AcsResponse {
     private String errorCode;
     private String errorMessage;
     private String requestId;
+    private String errorDescription;
 
     public String getErrorCode() {
         return errorCode;
@@ -33,6 +34,14 @@ public class AcsError extends AcsResponse {
         this.statusCode = statusCode;
     }
 
+    public String getErrorDescription() {
+        return errorDescription;
+    }
+
+    public void setErrorDescription(String errorDescription) {
+        this.errorDescription = errorDescription;
+    }
+
     @Override
     public AcsError getInstance(UnmarshallerContext context) {
         return AcsErrorUnmarshaller.unmarshall(this, context);
@@ -53,6 +62,7 @@ public class AcsError extends AcsResponse {
         sb.append(", errorCode='").append(errorCode).append('\'');
         sb.append(", errorMessage='").append(errorMessage).append('\'');
         sb.append(", requestId='").append(requestId).append('\'');
+        sb.append(", errorDescription='").append(errorDescription).append('\'');
         sb.append('}');
         return sb.toString();
     }

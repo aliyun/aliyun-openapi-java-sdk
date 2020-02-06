@@ -12,6 +12,14 @@ public class ClientException extends Exception {
 
     private ErrorType errorType;
 
+    private String errorDescription;
+
+    public ClientException(String errorCode, String errorMessage, String requestId, String errorDescription) {
+        this(errorCode, errorMessage);
+        this.setErrorDescription(errorDescription);
+        this.setRequestId(requestId);
+    }
+
     public ClientException(String errCode, String errMsg, String requestId) {
         this(errCode, errMsg);
         this.requestId = requestId;
@@ -74,8 +82,17 @@ public class ClientException extends Exception {
         this.errorType = errorType;
     }
 
+    public String getErrorDescription() {
+        return errorDescription;
+    }
+
+    public void setErrorDescription(String errorDescription) {
+        this.errorDescription = errorDescription;
+    }
+
     @Override
     public String getMessage() {
-        return super.getMessage() + (null == getRequestId() ? "" : "\r\nRequestId : " + getRequestId());
+        return super.getMessage() + (null == getRequestId() ? "" : "\r\nRequestId : " + getRequestId()) +
+                (null == getErrorDescription() ? "" : "\r\nDescription : " + getErrorDescription());
     }
 }

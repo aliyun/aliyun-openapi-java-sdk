@@ -48,5 +48,9 @@ public class ClientExceptionTest {
         Assert.assertEquals("errMsg", ex.getErrMsg());
         ex.setErrMsg("newErrMsg");
         Assert.assertEquals("newErrMsg", ex.getErrMsg());
+
+        ex = new ClientException("errCode", "errMsg", "requestId", "errDescription");
+        Assert.assertEquals("com.aliyuncs.exceptions.ClientException: errCode : errMsg\r\n" +
+                "RequestId : requestId\r\nDescription : errDescription", ex.toString());
     }
 }
