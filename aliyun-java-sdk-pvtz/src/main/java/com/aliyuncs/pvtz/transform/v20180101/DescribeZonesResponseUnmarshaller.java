@@ -24,27 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeZonesResponseUnmarshaller {
 
-	public static DescribeZonesResponse unmarshall(DescribeZonesResponse describeZonesResponse, UnmarshallerContext context) {
+	public static DescribeZonesResponse unmarshall(DescribeZonesResponse describeZonesResponse, UnmarshallerContext _ctx) {
 		
-		describeZonesResponse.setRequestId(context.stringValue("DescribeZonesResponse.RequestId"));
-		describeZonesResponse.setTotalItems(context.integerValue("DescribeZonesResponse.TotalItems"));
-		describeZonesResponse.setTotalPages(context.integerValue("DescribeZonesResponse.TotalPages"));
-		describeZonesResponse.setPageSize(context.integerValue("DescribeZonesResponse.PageSize"));
-		describeZonesResponse.setPageNumber(context.integerValue("DescribeZonesResponse.PageNumber"));
+		describeZonesResponse.setRequestId(_ctx.stringValue("DescribeZonesResponse.RequestId"));
+		describeZonesResponse.setTotalItems(_ctx.integerValue("DescribeZonesResponse.TotalItems"));
+		describeZonesResponse.setTotalPages(_ctx.integerValue("DescribeZonesResponse.TotalPages"));
+		describeZonesResponse.setPageSize(_ctx.integerValue("DescribeZonesResponse.PageSize"));
+		describeZonesResponse.setPageNumber(_ctx.integerValue("DescribeZonesResponse.PageNumber"));
 
 		List<Zone> zones = new ArrayList<Zone>();
-		for (int i = 0; i < context.lengthValue("DescribeZonesResponse.Zones.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeZonesResponse.Zones.Length"); i++) {
 			Zone zone = new Zone();
-			zone.setZoneId(context.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneId"));
-			zone.setZoneName(context.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneName"));
-			zone.setRemark(context.stringValue("DescribeZonesResponse.Zones["+ i +"].Remark"));
-			zone.setRecordCount(context.integerValue("DescribeZonesResponse.Zones["+ i +"].RecordCount"));
-			zone.setCreateTime(context.stringValue("DescribeZonesResponse.Zones["+ i +"].CreateTime"));
-			zone.setCreateTimestamp(context.longValue("DescribeZonesResponse.Zones["+ i +"].CreateTimestamp"));
-			zone.setUpdateTime(context.stringValue("DescribeZonesResponse.Zones["+ i +"].UpdateTime"));
-			zone.setUpdateTimestamp(context.longValue("DescribeZonesResponse.Zones["+ i +"].UpdateTimestamp"));
-			zone.setIsPtr(context.booleanValue("DescribeZonesResponse.Zones["+ i +"].IsPtr"));
-			zone.setProxyPattern(context.stringValue("DescribeZonesResponse.Zones["+ i +"].ProxyPattern"));
+			zone.setZoneId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneId"));
+			zone.setZoneName(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneName"));
+			zone.setRemark(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].Remark"));
+			zone.setRecordCount(_ctx.integerValue("DescribeZonesResponse.Zones["+ i +"].RecordCount"));
+			zone.setCreateTime(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].CreateTime"));
+			zone.setCreateTimestamp(_ctx.longValue("DescribeZonesResponse.Zones["+ i +"].CreateTimestamp"));
+			zone.setUpdateTime(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].UpdateTime"));
+			zone.setUpdateTimestamp(_ctx.longValue("DescribeZonesResponse.Zones["+ i +"].UpdateTimestamp"));
+			zone.setIsPtr(_ctx.booleanValue("DescribeZonesResponse.Zones["+ i +"].IsPtr"));
+			zone.setProxyPattern(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ProxyPattern"));
 
 			zones.add(zone);
 		}

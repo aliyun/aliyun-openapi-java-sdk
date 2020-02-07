@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckZoneNameResponseUnmarshaller {
 
-	public static CheckZoneNameResponse unmarshall(CheckZoneNameResponse checkZoneNameResponse, UnmarshallerContext context) {
+	public static CheckZoneNameResponse unmarshall(CheckZoneNameResponse checkZoneNameResponse, UnmarshallerContext _ctx) {
 		
-		checkZoneNameResponse.setRequestId(context.stringValue("CheckZoneNameResponse.RequestId"));
-		checkZoneNameResponse.setSuccess(context.booleanValue("CheckZoneNameResponse.Success"));
-		checkZoneNameResponse.setCheck(context.booleanValue("CheckZoneNameResponse.Check"));
+		checkZoneNameResponse.setRequestId(_ctx.stringValue("CheckZoneNameResponse.RequestId"));
+		checkZoneNameResponse.setSuccess(_ctx.booleanValue("CheckZoneNameResponse.Success"));
+		checkZoneNameResponse.setCheck(_ctx.booleanValue("CheckZoneNameResponse.Check"));
 	 
 	 	return checkZoneNameResponse;
 	}

@@ -15,22 +15,24 @@
 package com.aliyuncs.pvtz.model.v20180101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteZoneRequest extends RpcAcsRequest<DeleteZoneResponse> {
-	
-	public DeleteZoneRequest() {
-		super("pvtz", "2018-01-01", "DeleteZone", "pvtz");
-	}
+	   
 
 	private String userClientIp;
 
 	private String zoneId;
 
 	private String lang;
+	public DeleteZoneRequest() {
+		super("pvtz", "2018-01-01", "DeleteZone", "pvtz");
+		setMethod(MethodType.POST);
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;

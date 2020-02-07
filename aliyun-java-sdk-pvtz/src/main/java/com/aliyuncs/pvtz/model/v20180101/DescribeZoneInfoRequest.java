@@ -15,22 +15,24 @@
 package com.aliyuncs.pvtz.model.v20180101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeZoneInfoRequest extends RpcAcsRequest<DescribeZoneInfoResponse> {
-	
-	public DescribeZoneInfoRequest() {
-		super("pvtz", "2018-01-01", "DescribeZoneInfo", "pvtz");
-	}
+	   
 
 	private String userClientIp;
 
 	private String zoneId;
 
 	private String lang;
+	public DescribeZoneInfoRequest() {
+		super("pvtz", "2018-01-01", "DescribeZoneInfo", "pvtz");
+		setMethod(MethodType.POST);
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;

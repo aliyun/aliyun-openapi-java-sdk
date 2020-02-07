@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddZoneRecordResponseUnmarshaller {
 
-	public static AddZoneRecordResponse unmarshall(AddZoneRecordResponse addZoneRecordResponse, UnmarshallerContext context) {
+	public static AddZoneRecordResponse unmarshall(AddZoneRecordResponse addZoneRecordResponse, UnmarshallerContext _ctx) {
 		
-		addZoneRecordResponse.setRequestId(context.stringValue("AddZoneRecordResponse.RequestId"));
-		addZoneRecordResponse.setSuccess(context.booleanValue("AddZoneRecordResponse.Success"));
-		addZoneRecordResponse.setRecordId(context.longValue("AddZoneRecordResponse.RecordId"));
+		addZoneRecordResponse.setRequestId(_ctx.stringValue("AddZoneRecordResponse.RequestId"));
+		addZoneRecordResponse.setSuccess(_ctx.booleanValue("AddZoneRecordResponse.Success"));
+		addZoneRecordResponse.setRecordId(_ctx.longValue("AddZoneRecordResponse.RecordId"));
 	 
 	 	return addZoneRecordResponse;
 	}

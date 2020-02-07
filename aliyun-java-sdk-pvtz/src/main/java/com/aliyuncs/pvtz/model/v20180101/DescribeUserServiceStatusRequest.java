@@ -15,20 +15,22 @@
 package com.aliyuncs.pvtz.model.v20180101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeUserServiceStatusRequest extends RpcAcsRequest<DescribeUserServiceStatusResponse> {
-	
-	public DescribeUserServiceStatusRequest() {
-		super("pvtz", "2018-01-01", "DescribeUserServiceStatus", "pvtz");
-	}
+	   
 
 	private String userClientIp;
 
 	private String lang;
+	public DescribeUserServiceStatusRequest() {
+		super("pvtz", "2018-01-01", "DescribeUserServiceStatus", "pvtz");
+		setMethod(MethodType.POST);
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;

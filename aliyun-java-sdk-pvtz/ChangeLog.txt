@@ -1,3 +1,8 @@
+2020-02-07 Version: 1.0.2
+- Fix bug for DescribeZoneInfo, delete return result of reionId.
+- Fix bug for DeleteZone, parameter zoneId change to compulsory.
+- Fix bug for SetProxyPattern, parameter zoneId change to compulsory.
+
 2019-03-15 Version: 1.0.1
 1, Update Dependency
 

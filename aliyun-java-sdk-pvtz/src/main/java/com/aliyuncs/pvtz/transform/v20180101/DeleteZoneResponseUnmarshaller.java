@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteZoneResponseUnmarshaller {
 
-	public static DeleteZoneResponse unmarshall(DeleteZoneResponse deleteZoneResponse, UnmarshallerContext context) {
+	public static DeleteZoneResponse unmarshall(DeleteZoneResponse deleteZoneResponse, UnmarshallerContext _ctx) {
 		
-		deleteZoneResponse.setRequestId(context.stringValue("DeleteZoneResponse.RequestId"));
-		deleteZoneResponse.setZoneId(context.stringValue("DeleteZoneResponse.ZoneId"));
+		deleteZoneResponse.setRequestId(_ctx.stringValue("DeleteZoneResponse.RequestId"));
+		deleteZoneResponse.setZoneId(_ctx.stringValue("DeleteZoneResponse.ZoneId"));
 	 
 	 	return deleteZoneResponse;
 	}

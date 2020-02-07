@@ -15,24 +15,16 @@
 package com.aliyuncs.pvtz.model.v20180101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddZoneRecordRequest extends RpcAcsRequest<AddZoneRecordResponse> {
-	
-	public AddZoneRecordRequest() {
-		super("pvtz", "2018-01-01", "AddZoneRecord", "pvtz");
-	}
+	   
 
 	private String rr;
-
-	private String userClientIp;
-
-	private String zoneId;
-
-	private String lang;
 
 	private String type;
 
@@ -40,7 +32,17 @@ public class AddZoneRecordRequest extends RpcAcsRequest<AddZoneRecordResponse> {
 
 	private Integer ttl;
 
+	private String userClientIp;
+
+	private String zoneId;
+
+	private String lang;
+
 	private String value;
+	public AddZoneRecordRequest() {
+		super("pvtz", "2018-01-01", "AddZoneRecord", "pvtz");
+		setMethod(MethodType.POST);
+	}
 
 	public String getRr() {
 		return this.rr;
@@ -50,39 +52,6 @@ public class AddZoneRecordRequest extends RpcAcsRequest<AddZoneRecordResponse> {
 		this.rr = rr;
 		if(rr != null){
 			putQueryParameter("Rr", rr);
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
 		}
 	}
 
@@ -116,6 +85,39 @@ public class AddZoneRecordRequest extends RpcAcsRequest<AddZoneRecordResponse> {
 		this.ttl = ttl;
 		if(ttl != null){
 			putQueryParameter("Ttl", ttl.toString());
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

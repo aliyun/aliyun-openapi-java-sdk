@@ -25,29 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeStatisticSummaryResponseUnmarshaller {
 
-	public static DescribeStatisticSummaryResponse unmarshall(DescribeStatisticSummaryResponse describeStatisticSummaryResponse, UnmarshallerContext context) {
+	public static DescribeStatisticSummaryResponse unmarshall(DescribeStatisticSummaryResponse describeStatisticSummaryResponse, UnmarshallerContext _ctx) {
 		
-		describeStatisticSummaryResponse.setRequestId(context.stringValue("DescribeStatisticSummaryResponse.RequestId"));
-		describeStatisticSummaryResponse.setTotalCount(context.longValue("DescribeStatisticSummaryResponse.TotalCount"));
+		describeStatisticSummaryResponse.setRequestId(_ctx.stringValue("DescribeStatisticSummaryResponse.RequestId"));
+		describeStatisticSummaryResponse.setTotalCount(_ctx.longValue("DescribeStatisticSummaryResponse.TotalCount"));
 
 		List<ZoneRequestTop> zoneRequestTops = new ArrayList<ZoneRequestTop>();
-		for (int i = 0; i < context.lengthValue("DescribeStatisticSummaryResponse.ZoneRequestTops.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeStatisticSummaryResponse.ZoneRequestTops.Length"); i++) {
 			ZoneRequestTop zoneRequestTop = new ZoneRequestTop();
-			zoneRequestTop.setZoneName(context.stringValue("DescribeStatisticSummaryResponse.ZoneRequestTops["+ i +"].ZoneName"));
-			zoneRequestTop.setRequestCount(context.longValue("DescribeStatisticSummaryResponse.ZoneRequestTops["+ i +"].RequestCount"));
+			zoneRequestTop.setZoneName(_ctx.stringValue("DescribeStatisticSummaryResponse.ZoneRequestTops["+ i +"].ZoneName"));
+			zoneRequestTop.setRequestCount(_ctx.longValue("DescribeStatisticSummaryResponse.ZoneRequestTops["+ i +"].RequestCount"));
 
 			zoneRequestTops.add(zoneRequestTop);
 		}
 		describeStatisticSummaryResponse.setZoneRequestTops(zoneRequestTops);
 
 		List<VpcRequestTop> vpcRequestTops = new ArrayList<VpcRequestTop>();
-		for (int i = 0; i < context.lengthValue("DescribeStatisticSummaryResponse.VpcRequestTops.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeStatisticSummaryResponse.VpcRequestTops.Length"); i++) {
 			VpcRequestTop vpcRequestTop = new VpcRequestTop();
-			vpcRequestTop.setRegionId(context.stringValue("DescribeStatisticSummaryResponse.VpcRequestTops["+ i +"].RegionId"));
-			vpcRequestTop.setVpcId(context.stringValue("DescribeStatisticSummaryResponse.VpcRequestTops["+ i +"].VpcId"));
-			vpcRequestTop.setTunnelId(context.stringValue("DescribeStatisticSummaryResponse.VpcRequestTops["+ i +"].TunnelId"));
-			vpcRequestTop.setRequestCount(context.longValue("DescribeStatisticSummaryResponse.VpcRequestTops["+ i +"].RequestCount"));
-			vpcRequestTop.setRegionName(context.stringValue("DescribeStatisticSummaryResponse.VpcRequestTops["+ i +"].RegionName"));
+			vpcRequestTop.setRegionId(_ctx.stringValue("DescribeStatisticSummaryResponse.VpcRequestTops["+ i +"].RegionId"));
+			vpcRequestTop.setVpcId(_ctx.stringValue("DescribeStatisticSummaryResponse.VpcRequestTops["+ i +"].VpcId"));
+			vpcRequestTop.setTunnelId(_ctx.stringValue("DescribeStatisticSummaryResponse.VpcRequestTops["+ i +"].TunnelId"));
+			vpcRequestTop.setRequestCount(_ctx.longValue("DescribeStatisticSummaryResponse.VpcRequestTops["+ i +"].RequestCount"));
+			vpcRequestTop.setRegionName(_ctx.stringValue("DescribeStatisticSummaryResponse.VpcRequestTops["+ i +"].RegionName"));
 
 			vpcRequestTops.add(vpcRequestTop);
 		}

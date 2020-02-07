@@ -14,18 +14,17 @@
 
 package com.aliyuncs.pvtz.transform.v20180101;
 
-import com.aliyuncs.pvtz.model.v20180101.SetZoneRecordStatusResponse;
+import com.aliyuncs.pvtz.model.v20180101.UpdateRecordRemarkResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SetZoneRecordStatusResponseUnmarshaller {
+public class UpdateRecordRemarkResponseUnmarshaller {
 
-	public static SetZoneRecordStatusResponse unmarshall(SetZoneRecordStatusResponse setZoneRecordStatusResponse, UnmarshallerContext _ctx) {
+	public static UpdateRecordRemarkResponse unmarshall(UpdateRecordRemarkResponse updateRecordRemarkResponse, UnmarshallerContext _ctx) {
 		
-		setZoneRecordStatusResponse.setRequestId(_ctx.stringValue("SetZoneRecordStatusResponse.RequestId"));
-		setZoneRecordStatusResponse.setRecordId(_ctx.longValue("SetZoneRecordStatusResponse.RecordId"));
-		setZoneRecordStatusResponse.setStatus(_ctx.stringValue("SetZoneRecordStatusResponse.Status"));
+		updateRecordRemarkResponse.setRequestId(_ctx.stringValue("UpdateRecordRemarkResponse.RequestId"));
+		updateRecordRemarkResponse.setRecordId(_ctx.longValue("UpdateRecordRemarkResponse.RecordId"));
 	 
-	 	return setZoneRecordStatusResponse;
+	 	return updateRecordRemarkResponse;
 	}
 }

@@ -47,6 +47,8 @@ public class DescribeZoneInfoResponse extends AcsResponse {
 
 	private String proxyPattern;
 
+	private Boolean slaveDns;
+
 	private List<Vpc> bindVpcs;
 
 	public String getRequestId() {
@@ -137,6 +139,14 @@ public class DescribeZoneInfoResponse extends AcsResponse {
 		this.proxyPattern = proxyPattern;
 	}
 
+	public Boolean getSlaveDns() {
+		return this.slaveDns;
+	}
+
+	public void setSlaveDns(Boolean slaveDns) {
+		this.slaveDns = slaveDns;
+	}
+
 	public List<Vpc> getBindVpcs() {
 		return this.bindVpcs;
 	}
@@ -147,8 +157,6 @@ public class DescribeZoneInfoResponse extends AcsResponse {
 
 	public static class Vpc {
 
-		private String reionId;
-
 		private String vpcId;
 
 		private String vpcName;
@@ -156,14 +164,6 @@ public class DescribeZoneInfoResponse extends AcsResponse {
 		private String regionName;
 
 		private String regionId;
-
-		public String getReionId() {
-			return this.reionId;
-		}
-
-		public void setReionId(String reionId) {
-			this.reionId = reionId;
-		}
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -189,26 +189,10 @@ public class DescribeZoneInfoResponse extends AcsResponse {
 			this.regionName = regionName;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}

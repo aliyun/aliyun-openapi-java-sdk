@@ -15,16 +15,14 @@
 package com.aliyuncs.pvtz.model.v20180101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetZoneRecordStatusRequest extends RpcAcsRequest<SetZoneRecordStatusResponse> {
-	
-	public SetZoneRecordStatusRequest() {
-		super("pvtz", "2018-01-01", "SetZoneRecordStatus", "pvtz");
-	}
+	   
 
 	private Long recordId;
 
@@ -33,6 +31,10 @@ public class SetZoneRecordStatusRequest extends RpcAcsRequest<SetZoneRecordStatu
 	private String lang;
 
 	private String status;
+	public SetZoneRecordStatusRequest() {
+		super("pvtz", "2018-01-01", "SetZoneRecordStatus", "pvtz");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getRecordId() {
 		return this.recordId;

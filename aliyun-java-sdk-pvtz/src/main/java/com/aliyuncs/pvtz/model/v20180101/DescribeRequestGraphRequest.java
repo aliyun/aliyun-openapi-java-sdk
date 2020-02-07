@@ -15,16 +15,18 @@
 package com.aliyuncs.pvtz.model.v20180101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeRequestGraphRequest extends RpcAcsRequest<DescribeRequestGraphResponse> {
-	
-	public DescribeRequestGraphRequest() {
-		super("pvtz", "2018-01-01", "DescribeRequestGraph", "pvtz");
-	}
+	   
+
+	private Long startTimestamp;
+
+	private Long endTimestamp;
 
 	private String vpcId;
 
@@ -33,10 +35,32 @@ public class DescribeRequestGraphRequest extends RpcAcsRequest<DescribeRequestGr
 	private String zoneId;
 
 	private String lang;
+	public DescribeRequestGraphRequest() {
+		super("pvtz", "2018-01-01", "DescribeRequestGraph", "pvtz");
+		setMethod(MethodType.POST);
+	}
 
-	private Long startTimestamp;
+	public Long getStartTimestamp() {
+		return this.startTimestamp;
+	}
 
-	private Long endTimestamp;
+	public void setStartTimestamp(Long startTimestamp) {
+		this.startTimestamp = startTimestamp;
+		if(startTimestamp != null){
+			putQueryParameter("StartTimestamp", startTimestamp.toString());
+		}
+	}
+
+	public Long getEndTimestamp() {
+		return this.endTimestamp;
+	}
+
+	public void setEndTimestamp(Long endTimestamp) {
+		this.endTimestamp = endTimestamp;
+		if(endTimestamp != null){
+			putQueryParameter("EndTimestamp", endTimestamp.toString());
+		}
+	}
 
 	public String getVpcId() {
 		return this.vpcId;
@@ -79,28 +103,6 @@ public class DescribeRequestGraphRequest extends RpcAcsRequest<DescribeRequestGr
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Long getStartTimestamp() {
-		return this.startTimestamp;
-	}
-
-	public void setStartTimestamp(Long startTimestamp) {
-		this.startTimestamp = startTimestamp;
-		if(startTimestamp != null){
-			putQueryParameter("StartTimestamp", startTimestamp.toString());
-		}
-	}
-
-	public Long getEndTimestamp() {
-		return this.endTimestamp;
-	}
-
-	public void setEndTimestamp(Long endTimestamp) {
-		this.endTimestamp = endTimestamp;
-		if(endTimestamp != null){
-			putQueryParameter("EndTimestamp", endTimestamp.toString());
 		}
 	}
 

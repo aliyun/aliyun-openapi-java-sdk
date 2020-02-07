@@ -21,18 +21,16 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class UpdateZoneRemarkRequest extends RpcAcsRequest<UpdateZoneRemarkResponse> {
+public class UpdateRecordRemarkRequest extends RpcAcsRequest<UpdateRecordRemarkResponse> {
 	   
 
 	private String remark;
 
-	private String userClientIp;
-
-	private String zoneId;
+	private Long recordId;
 
 	private String lang;
-	public UpdateZoneRemarkRequest() {
-		super("pvtz", "2018-01-01", "UpdateZoneRemark", "pvtz");
+	public UpdateRecordRemarkRequest() {
+		super("pvtz", "2018-01-01", "UpdateRecordRemark", "pvtz");
 		setMethod(MethodType.POST);
 	}
 
@@ -47,25 +45,14 @@ public class UpdateZoneRemarkRequest extends RpcAcsRequest<UpdateZoneRemarkRespo
 		}
 	}
 
-	public String getUserClientIp() {
-		return this.userClientIp;
+	public Long getRecordId() {
+		return this.recordId;
 	}
 
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
+	public void setRecordId(Long recordId) {
+		this.recordId = recordId;
+		if(recordId != null){
+			putQueryParameter("RecordId", recordId.toString());
 		}
 	}
 
@@ -81,8 +68,8 @@ public class UpdateZoneRemarkRequest extends RpcAcsRequest<UpdateZoneRemarkRespo
 	}
 
 	@Override
-	public Class<UpdateZoneRemarkResponse> getResponseClass() {
-		return UpdateZoneRemarkResponse.class;
+	public Class<UpdateRecordRemarkResponse> getResponseClass() {
+		return UpdateRecordRemarkResponse.class;
 	}
 
 }

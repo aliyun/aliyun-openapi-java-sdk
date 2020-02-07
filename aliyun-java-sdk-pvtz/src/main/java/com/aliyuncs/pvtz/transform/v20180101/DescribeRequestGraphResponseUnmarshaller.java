@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRequestGraphResponseUnmarshaller {
 
-	public static DescribeRequestGraphResponse unmarshall(DescribeRequestGraphResponse describeRequestGraphResponse, UnmarshallerContext context) {
+	public static DescribeRequestGraphResponse unmarshall(DescribeRequestGraphResponse describeRequestGraphResponse, UnmarshallerContext _ctx) {
 		
-		describeRequestGraphResponse.setRequestId(context.stringValue("DescribeRequestGraphResponse.RequestId"));
+		describeRequestGraphResponse.setRequestId(_ctx.stringValue("DescribeRequestGraphResponse.RequestId"));
 
 		List<ZoneRequestTop> requestDetails = new ArrayList<ZoneRequestTop>();
-		for (int i = 0; i < context.lengthValue("DescribeRequestGraphResponse.RequestDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRequestGraphResponse.RequestDetails.Length"); i++) {
 			ZoneRequestTop zoneRequestTop = new ZoneRequestTop();
-			zoneRequestTop.setTime(context.stringValue("DescribeRequestGraphResponse.RequestDetails["+ i +"].Time"));
-			zoneRequestTop.setTimestamp(context.longValue("DescribeRequestGraphResponse.RequestDetails["+ i +"].Timestamp"));
-			zoneRequestTop.setRequestCount(context.longValue("DescribeRequestGraphResponse.RequestDetails["+ i +"].RequestCount"));
+			zoneRequestTop.setTime(_ctx.stringValue("DescribeRequestGraphResponse.RequestDetails["+ i +"].Time"));
+			zoneRequestTop.setTimestamp(_ctx.longValue("DescribeRequestGraphResponse.RequestDetails["+ i +"].Timestamp"));
+			zoneRequestTop.setRequestCount(_ctx.longValue("DescribeRequestGraphResponse.RequestDetails["+ i +"].RequestCount"));
 
 			requestDetails.add(zoneRequestTop);
 		}

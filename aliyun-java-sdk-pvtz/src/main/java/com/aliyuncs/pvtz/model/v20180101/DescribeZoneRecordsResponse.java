@@ -101,6 +101,10 @@ public class DescribeZoneRecordsResponse extends AcsResponse {
 
 		private String status;
 
+		private String regionId;
+
+		private String remark;
+
 		public Long getRecordId() {
 			return this.recordId;
 		}
@@ -155,6 +159,22 @@ public class DescribeZoneRecordsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 	}
 

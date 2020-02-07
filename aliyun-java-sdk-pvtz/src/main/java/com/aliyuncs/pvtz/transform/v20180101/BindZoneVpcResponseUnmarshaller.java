@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BindZoneVpcResponseUnmarshaller {
 
-	public static BindZoneVpcResponse unmarshall(BindZoneVpcResponse bindZoneVpcResponse, UnmarshallerContext context) {
+	public static BindZoneVpcResponse unmarshall(BindZoneVpcResponse bindZoneVpcResponse, UnmarshallerContext _ctx) {
 		
-		bindZoneVpcResponse.setRequestId(context.stringValue("BindZoneVpcResponse.RequestId"));
+		bindZoneVpcResponse.setRequestId(_ctx.stringValue("BindZoneVpcResponse.RequestId"));
 	 
 	 	return bindZoneVpcResponse;
 	}

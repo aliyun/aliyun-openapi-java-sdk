@@ -15,20 +15,22 @@
 package com.aliyuncs.pvtz.model.v20180101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeStatisticSummaryRequest extends RpcAcsRequest<DescribeStatisticSummaryResponse> {
-	
-	public DescribeStatisticSummaryRequest() {
-		super("pvtz", "2018-01-01", "DescribeStatisticSummary", "pvtz");
-	}
+	   
 
 	private String userClientIp;
 
 	private String lang;
+	public DescribeStatisticSummaryRequest() {
+		super("pvtz", "2018-01-01", "DescribeStatisticSummary", "pvtz");
+		setMethod(MethodType.POST);
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;

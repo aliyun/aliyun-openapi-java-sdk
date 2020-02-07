@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeChangeLogsResponseUnmarshaller {
 
-	public static DescribeChangeLogsResponse unmarshall(DescribeChangeLogsResponse describeChangeLogsResponse, UnmarshallerContext context) {
+	public static DescribeChangeLogsResponse unmarshall(DescribeChangeLogsResponse describeChangeLogsResponse, UnmarshallerContext _ctx) {
 		
-		describeChangeLogsResponse.setRequestId(context.stringValue("DescribeChangeLogsResponse.RequestId"));
-		describeChangeLogsResponse.setTotalItems(context.integerValue("DescribeChangeLogsResponse.TotalItems"));
-		describeChangeLogsResponse.setTotalPages(context.integerValue("DescribeChangeLogsResponse.TotalPages"));
-		describeChangeLogsResponse.setPageSize(context.integerValue("DescribeChangeLogsResponse.PageSize"));
-		describeChangeLogsResponse.setPageNumber(context.integerValue("DescribeChangeLogsResponse.PageNumber"));
+		describeChangeLogsResponse.setRequestId(_ctx.stringValue("DescribeChangeLogsResponse.RequestId"));
+		describeChangeLogsResponse.setTotalItems(_ctx.integerValue("DescribeChangeLogsResponse.TotalItems"));
+		describeChangeLogsResponse.setTotalPages(_ctx.integerValue("DescribeChangeLogsResponse.TotalPages"));
+		describeChangeLogsResponse.setPageSize(_ctx.integerValue("DescribeChangeLogsResponse.PageSize"));
+		describeChangeLogsResponse.setPageNumber(_ctx.integerValue("DescribeChangeLogsResponse.PageNumber"));
 
 		List<ChangeLog> changeLogs = new ArrayList<ChangeLog>();
-		for (int i = 0; i < context.lengthValue("DescribeChangeLogsResponse.ChangeLogs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeChangeLogsResponse.ChangeLogs.Length"); i++) {
 			ChangeLog changeLog = new ChangeLog();
-			changeLog.setOperTime(context.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].OperTime"));
-			changeLog.setOperAction(context.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].OperAction"));
-			changeLog.setOperObject(context.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].OperObject"));
-			changeLog.setEntityId(context.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].EntityId"));
-			changeLog.setEntityName(context.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].EntityName"));
-			changeLog.setOperIp(context.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].OperIp"));
-			changeLog.setOperTimestamp(context.longValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].OperTimestamp"));
-			changeLog.setId(context.longValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].Id"));
-			changeLog.setContent(context.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].Content"));
+			changeLog.setOperTime(_ctx.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].OperTime"));
+			changeLog.setOperAction(_ctx.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].OperAction"));
+			changeLog.setOperObject(_ctx.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].OperObject"));
+			changeLog.setEntityId(_ctx.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].EntityId"));
+			changeLog.setEntityName(_ctx.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].EntityName"));
+			changeLog.setOperIp(_ctx.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].OperIp"));
+			changeLog.setOperTimestamp(_ctx.longValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].OperTimestamp"));
+			changeLog.setId(_ctx.longValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].Id"));
+			changeLog.setContent(_ctx.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].Content"));
 
 			changeLogs.add(changeLog);
 		}

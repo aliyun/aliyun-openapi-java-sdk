@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetProxyPatternResponseUnmarshaller {
 
-	public static SetProxyPatternResponse unmarshall(SetProxyPatternResponse setProxyPatternResponse, UnmarshallerContext context) {
+	public static SetProxyPatternResponse unmarshall(SetProxyPatternResponse setProxyPatternResponse, UnmarshallerContext _ctx) {
 		
-		setProxyPatternResponse.setRequestId(context.stringValue("SetProxyPatternResponse.RequestId"));
-		setProxyPatternResponse.setZoneId(context.stringValue("SetProxyPatternResponse.ZoneId"));
+		setProxyPatternResponse.setRequestId(_ctx.stringValue("SetProxyPatternResponse.RequestId"));
+		setProxyPatternResponse.setZoneId(_ctx.stringValue("SetProxyPatternResponse.ZoneId"));
 	 
 	 	return setProxyPatternResponse;
 	}
