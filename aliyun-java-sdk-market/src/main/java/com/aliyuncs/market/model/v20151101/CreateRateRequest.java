@@ -25,13 +25,13 @@ import com.aliyuncs.market.Endpoint;
 public class CreateRateRequest extends RpcAcsRequest<CreateRateResponse> {
 	   
 
-	private String score;
-
 	private String orderId;
 
-	private String requestId;
-
 	private String content;
+
+	private String score;
+
+	private String requestId;
 	public CreateRateRequest() {
 		super("Market", "2015-11-01", "CreateRate", "yunmarket");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class CreateRateRequest extends RpcAcsRequest<CreateRateResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getScore() {
-		return this.score;
-	}
-
-	public void setScore(String score) {
-		this.score = score;
-		if(score != null){
-			putQueryParameter("Score", score);
-		}
 	}
 
 	public String getOrderId() {
@@ -63,17 +52,6 @@ public class CreateRateRequest extends RpcAcsRequest<CreateRateResponse> {
 		}
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
-		}
-	}
-
 	public String getContent() {
 		return this.content;
 	}
@@ -82,6 +60,28 @@ public class CreateRateRequest extends RpcAcsRequest<CreateRateResponse> {
 		this.content = content;
 		if(content != null){
 			putQueryParameter("Content", content);
+		}
+	}
+
+	public String getScore() {
+		return this.score;
+	}
+
+	public void setScore(String score) {
+		this.score = score;
+		if(score != null){
+			putQueryParameter("Score", score);
+		}
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+		if(requestId != null){
+			putQueryParameter("RequestId", requestId);
 		}
 	}
 

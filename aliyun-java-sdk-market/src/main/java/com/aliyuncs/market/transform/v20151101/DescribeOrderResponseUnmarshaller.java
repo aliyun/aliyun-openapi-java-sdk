@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.market.model.v20151101.DescribeOrderResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,6 +44,7 @@ public class DescribeOrderResponseUnmarshaller {
 		describeOrderResponse.setTotalPrice(_ctx.floatValue("DescribeOrderResponse.TotalPrice"));
 		describeOrderResponse.setPaymentPrice(_ctx.floatValue("DescribeOrderResponse.PaymentPrice"));
 		describeOrderResponse.setCouponPrice(_ctx.floatValue("DescribeOrderResponse.CouponPrice"));
+		describeOrderResponse.setComponents(_ctx.mapValue("DescribeOrderResponse.Components"));
 
 		List<String> supplierTelephones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeOrderResponse.SupplierTelephones.Length"); i++) {

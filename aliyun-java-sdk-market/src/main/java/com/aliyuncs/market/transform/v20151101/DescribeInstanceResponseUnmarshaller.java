@@ -45,6 +45,7 @@ public class DescribeInstanceResponseUnmarshaller {
 		describeInstanceResponse.setAppJson(_ctx.stringValue("DescribeInstanceResponse.AppJson"));
 		describeInstanceResponse.setComponentJson(_ctx.stringValue("DescribeInstanceResponse.ComponentJson"));
 		describeInstanceResponse.setConstraints(_ctx.stringValue("DescribeInstanceResponse.Constraints"));
+		describeInstanceResponse.setIsTrial(_ctx.booleanValue("DescribeInstanceResponse.IsTrial"));
 
 		RelationalData relationalData = new RelationalData();
 		relationalData.setServiceStatus(_ctx.stringValue("DescribeInstanceResponse.RelationalData.ServiceStatus"));

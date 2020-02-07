@@ -25,11 +25,11 @@ import com.aliyuncs.market.Endpoint;
 public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesResponse> {
 	   
 
-	private Integer pageSize;
-
 	private Integer pageNumber;
 
 	private String productType;
+
+	private Integer pageSize;
 	public DescribeInstancesRequest() {
 		super("Market", "2015-11-01", "DescribeInstances", "yunmarket");
 		setMethod(MethodType.POST);
@@ -37,17 +37,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public Integer getPageNumber() {
@@ -69,6 +58,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.productType = productType;
 		if(productType != null){
 			putQueryParameter("ProductType", productType);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

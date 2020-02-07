@@ -57,6 +57,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private String constraints;
 
+	private Boolean isTrial;
+
 	private List<Module> modules;
 
 	private RelationalData relationalData;
@@ -187,6 +189,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public void setConstraints(String constraints) {
 		this.constraints = constraints;
+	}
+
+	public Boolean getIsTrial() {
+		return this.isTrial;
+	}
+
+	public void setIsTrial(Boolean isTrial) {
+		this.isTrial = isTrial;
 	}
 
 	public List<Module> getModules() {

@@ -1,3 +1,6 @@
+2020-02-07 Version: 2.0.30
+- Update describeInstance.
+
 2019-11-13 Version: 2.0.29
 - Update createOrder.
 - Update describePrice.
