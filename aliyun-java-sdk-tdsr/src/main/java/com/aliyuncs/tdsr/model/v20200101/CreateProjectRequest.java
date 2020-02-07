@@ -24,12 +24,40 @@ import com.aliyuncs.http.MethodType;
 public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 	   
 
+	private String businessUserIdList;
+
+	private String builderUserIdList;
+
 	private String name;
 
 	private String businessId;
+
+	private String gatherUserIdList;
 	public CreateProjectRequest() {
 		super("tdsr", "2020-01-01", "CreateProject");
 		setMethod(MethodType.POST);
+	}
+
+	public String getBusinessUserIdList() {
+		return this.businessUserIdList;
+	}
+
+	public void setBusinessUserIdList(String businessUserIdList) {
+		this.businessUserIdList = businessUserIdList;
+		if(businessUserIdList != null){
+			putQueryParameter("BusinessUserIdList", businessUserIdList);
+		}
+	}
+
+	public String getBuilderUserIdList() {
+		return this.builderUserIdList;
+	}
+
+	public void setBuilderUserIdList(String builderUserIdList) {
+		this.builderUserIdList = builderUserIdList;
+		if(builderUserIdList != null){
+			putQueryParameter("BuilderUserIdList", builderUserIdList);
+		}
 	}
 
 	public String getName() {
@@ -51,6 +79,17 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 		this.businessId = businessId;
 		if(businessId != null){
 			putQueryParameter("BusinessId", businessId);
+		}
+	}
+
+	public String getGatherUserIdList() {
+		return this.gatherUserIdList;
+	}
+
+	public void setGatherUserIdList(String gatherUserIdList) {
+		this.gatherUserIdList = gatherUserIdList;
+		if(gatherUserIdList != null){
+			putQueryParameter("GatherUserIdList", gatherUserIdList);
 		}
 	}
 
