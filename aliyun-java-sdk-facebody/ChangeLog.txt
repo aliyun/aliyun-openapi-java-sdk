@@ -1,3 +1,6 @@
+2020-02-08 Version: 1.0.3
+- Add DetectMask Api.
+
 2020-01-20 Version: 1.0.1
 - Onezeroone sdk version.
 
