@@ -1,3 +1,6 @@
+2020-02-09 Version: 1.0.4
+- Sdk version 104.
+
 2020-02-08 Version: 1.0.3
 - Add DetectMask Api.
 
