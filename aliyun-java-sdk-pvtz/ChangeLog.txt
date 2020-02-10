@@ -1,3 +1,6 @@
+2020-02-10 Version: 1.0.3
+- Update default endpoints.
+
 2020-02-07 Version: 1.0.2
 - Fix bug for DescribeZoneInfo, delete return result of reionId.
 - Fix bug for DeleteZone, parameter zoneId change to compulsory.
