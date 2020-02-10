@@ -99,6 +99,8 @@ public class GetMediaMetaResponse extends AcsResponse {
 
 			private String location;
 
+			private Address address;
+
 			public Integer getNumberStreams() {
 				return this.numberStreams;
 			}
@@ -177,6 +179,77 @@ public class GetMediaMetaResponse extends AcsResponse {
 
 			public void setLocation(String location) {
 				this.location = location;
+			}
+
+			public Address getAddress() {
+				return this.address;
+			}
+
+			public void setAddress(Address address) {
+				this.address = address;
+			}
+
+			public static class Address {
+
+				private String addressLine;
+
+				private String country;
+
+				private String province;
+
+				private String city;
+
+				private String district;
+
+				private String township;
+
+				public String getAddressLine() {
+					return this.addressLine;
+				}
+
+				public void setAddressLine(String addressLine) {
+					this.addressLine = addressLine;
+				}
+
+				public String getCountry() {
+					return this.country;
+				}
+
+				public void setCountry(String country) {
+					this.country = country;
+				}
+
+				public String getProvince() {
+					return this.province;
+				}
+
+				public void setProvince(String province) {
+					this.province = province;
+				}
+
+				public String getCity() {
+					return this.city;
+				}
+
+				public void setCity(String city) {
+					this.city = city;
+				}
+
+				public String getDistrict() {
+					return this.district;
+				}
+
+				public void setDistrict(String district) {
+					this.district = district;
+				}
+
+				public String getTownship() {
+					return this.township;
+				}
+
+				public void setTownship(String township) {
+					this.township = township;
+				}
 			}
 		}
 

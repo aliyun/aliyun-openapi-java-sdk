@@ -1,3 +1,6 @@
+2020-02-10 Version: 1.15.7
+- Supported address for GetMediaMeta.
+
 2020-02-05 Version: 1.15.6
 - Supported GetOfficePreviewURL.
 - Supported RefreshOfficePreviewToken.

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.imm.model.v20170906.GetMediaMetaResponse;
 import com.aliyuncs.imm.model.v20170906.GetMediaMetaResponse.MediaMeta;
 import com.aliyuncs.imm.model.v20170906.GetMediaMetaResponse.MediaMeta.MediaFormat;
+import com.aliyuncs.imm.model.v20170906.GetMediaMetaResponse.MediaMeta.MediaFormat.Address;
 import com.aliyuncs.imm.model.v20170906.GetMediaMetaResponse.MediaMeta.MediaStreams;
 import com.aliyuncs.imm.model.v20170906.GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStream;
 import com.aliyuncs.imm.model.v20170906.GetMediaMetaResponse.MediaMeta.MediaStreams.SubtitleStream;
@@ -47,6 +48,15 @@ public class GetMediaMetaResponseUnmarshaller {
 		mediaFormat.setBitrate(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Bitrate"));
 		mediaFormat.setCreationTime(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.CreationTime"));
 		mediaFormat.setLocation(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Location"));
+
+		Address address = new Address();
+		address.setAddressLine(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Address.AddressLine"));
+		address.setCountry(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Address.Country"));
+		address.setProvince(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Address.Province"));
+		address.setCity(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Address.City"));
+		address.setDistrict(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Address.District"));
+		address.setTownship(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Address.Township"));
+		mediaFormat.setAddress(address);
 		mediaMeta.setMediaFormat(mediaFormat);
 
 		MediaStreams mediaStreams = new MediaStreams();
