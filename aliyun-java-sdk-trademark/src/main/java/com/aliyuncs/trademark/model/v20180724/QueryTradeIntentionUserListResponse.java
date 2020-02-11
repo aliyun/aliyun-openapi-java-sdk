@@ -101,6 +101,8 @@ public class QueryTradeIntentionUserListResponse extends AcsResponse {
 
 		private Integer status;
 
+		private Integer type;
+
 		public String getRegisterNumber() {
 			return this.registerNumber;
 		}
@@ -155,6 +157,14 @@ public class QueryTradeIntentionUserListResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
+		}
+
+		public Integer getType() {
+			return this.type;
+		}
+
+		public void setType(Integer type) {
+			this.type = type;
 		}
 	}
 

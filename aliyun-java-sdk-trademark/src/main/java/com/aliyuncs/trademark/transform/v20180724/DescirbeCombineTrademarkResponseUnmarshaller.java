@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.trademark.model.v20180724.DescirbeCombineTrademarkResponse;
 import com.aliyuncs.trademark.model.v20180724.DescirbeCombineTrademarkResponse.Trademark;
+import com.aliyuncs.trademark.model.v20180724.DescirbeCombineTrademarkResponse.Trademark.AnnouncementListItem;
+import com.aliyuncs.trademark.model.v20180724.DescirbeCombineTrademarkResponse.Trademark.ProcedureList;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +35,6 @@ public class DescirbeCombineTrademarkResponseUnmarshaller {
 		descirbeCombineTrademarkResponse.setTotalPageNumber(_ctx.integerValue("DescirbeCombineTrademarkResponse.TotalPageNumber"));
 		descirbeCombineTrademarkResponse.setPrePage(_ctx.booleanValue("DescirbeCombineTrademarkResponse.PrePage"));
 		descirbeCombineTrademarkResponse.setNextPage(_ctx.booleanValue("DescirbeCombineTrademarkResponse.NextPage"));
-		descirbeCombineTrademarkResponse.setProductDescription(_ctx.stringValue("DescirbeCombineTrademarkResponse.ProductDescription"));
-		descirbeCombineTrademarkResponse.setExclusiveDateLimit(_ctx.stringValue("DescirbeCombineTrademarkResponse.ExclusiveDateLimit"));
-		descirbeCombineTrademarkResponse.setAgency(_ctx.stringValue("DescirbeCombineTrademarkResponse.Agency"));
 
 		List<Trademark> data = new ArrayList<Trademark>();
 		for (int i = 0; i < _ctx.lengthValue("DescirbeCombineTrademarkResponse.Data.Length"); i++) {
@@ -48,7 +47,6 @@ public class DescirbeCombineTrademarkResponseUnmarshaller {
 			trademark.setOwnerName(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].OwnerName"));
 			trademark.setOwnerEnName(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].OwnerEnName"));
 			trademark.setImage(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].Image"));
-			trademark.setProduct(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].Product"));
 			trademark.setPreAnnNumber(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].PreAnnNumber"));
 			trademark.setRegAnnNumber(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].RegAnnNumber"));
 			trademark.setPreAnnDate(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].PreAnnDate"));
@@ -58,12 +56,47 @@ public class DescirbeCombineTrademarkResponseUnmarshaller {
 			trademark.setShare(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].Share"));
 			trademark.setOwnerAddress(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].OwnerAddress"));
 			trademark.setOwnerEnAddress(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].OwnerEnAddress"));
+			trademark.setExclusiveDateLimit(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].ExclusiveDateLimit"));
+			trademark.setAgency(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].Agency"));
+			trademark.setProductDescription(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].ProductDescription"));
+			trademark.setSimilarGroup(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].SimilarGroup"));
+			trademark.setRegistrationType(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].RegistrationType"));
+			trademark.setOnSale(_ctx.integerValue("DescirbeCombineTrademarkResponse.Data["+ i +"].OnSale"));
+			trademark.setStatus(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].Status"));
+			trademark.setPriorityDate(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].PriorityDate"));
+			trademark.setIntlRegDate(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].IntlRegDate"));
+			trademark.setSubsequentDesignationDate(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].SubsequentDesignationDate"));
+			trademark.setFirstAnnoNumber(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].FirstAnnoNumber"));
+			trademark.setFirstAnnoType(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].FirstAnnoType"));
+			trademark.setSecondAnnoNumber(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].SecondAnnoNumber"));
+			trademark.setSecondAnnoType(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].SecondAnnoType"));
 
-			List<String> announcementList = new ArrayList<String>();
+			List<AnnouncementListItem> announcementList = new ArrayList<AnnouncementListItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescirbeCombineTrademarkResponse.Data["+ i +"].AnnouncementList.Length"); j++) {
-				announcementList.add(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].AnnouncementList["+ j +"]"));
+				AnnouncementListItem announcementListItem = new AnnouncementListItem();
+				announcementListItem.setAnnNumber(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].AnnouncementList["+ j +"].AnnNumber"));
+				announcementListItem.setAnnTypeCode(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].AnnouncementList["+ j +"].AnnTypeCode"));
+				announcementListItem.setAnnTypeName(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].AnnouncementList["+ j +"].AnnTypeName"));
+				announcementListItem.setAnnDate(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].AnnouncementList["+ j +"].AnnDate"));
+				announcementListItem.setImageUrl(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].AnnouncementList["+ j +"].ImageUrl"));
+				announcementListItem.setOriginalImageUrl(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].AnnouncementList["+ j +"].OriginalImageUrl"));
+
+				announcementList.add(announcementListItem);
 			}
 			trademark.setAnnouncementList(announcementList);
+
+			List<ProcedureList> procedures = new ArrayList<ProcedureList>();
+			for (int j = 0; j < _ctx.lengthValue("DescirbeCombineTrademarkResponse.Data["+ i +"].Procedures.Length"); j++) {
+				ProcedureList procedureList = new ProcedureList();
+				procedureList.setProcedureCode(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].Procedures["+ j +"].ProcedureCode"));
+				procedureList.setProcedureName(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].Procedures["+ j +"].ProcedureName"));
+				procedureList.setProcedureStep(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].Procedures["+ j +"].ProcedureStep"));
+				procedureList.setProcedureResult(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].Procedures["+ j +"].ProcedureResult"));
+				procedureList.setProcedureDate(_ctx.stringValue("DescirbeCombineTrademarkResponse.Data["+ i +"].Procedures["+ j +"].ProcedureDate"));
+
+				procedures.add(procedureList);
+			}
+			trademark.setProcedures(procedures);
 
 			data.add(trademark);
 		}

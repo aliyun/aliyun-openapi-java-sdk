@@ -16,6 +16,7 @@ package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.trademark.Endpoint;
 
 /**
  * @author auto create
@@ -68,6 +69,10 @@ public class StoreMaterialTemporarilyRequest extends RpcAcsRequest<StoreMaterial
 	public StoreMaterialTemporarilyRequest() {
 		super("Trademark", "2018-07-24", "StoreMaterialTemporarily");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getContactEmail() {

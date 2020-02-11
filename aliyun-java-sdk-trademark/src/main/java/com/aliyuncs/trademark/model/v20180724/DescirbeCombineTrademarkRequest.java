@@ -16,6 +16,7 @@ package com.aliyuncs.trademark.model.v20180724;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.trademark.Endpoint;
 
 /**
  * @author auto create
@@ -26,6 +27,8 @@ public class DescirbeCombineTrademarkRequest extends RpcAcsRequest<DescirbeCombi
 
 	private String ownerName;
 
+	private String classification;
+
 	private String registrationNumber;
 
 	private Boolean accurateMatch;
@@ -34,12 +37,18 @@ public class DescirbeCombineTrademarkRequest extends RpcAcsRequest<DescirbeCombi
 
 	private String products;
 
+	private String similarGroups;
+
 	private String name;
 
 	private Integer pageSize;
 	public DescirbeCombineTrademarkRequest() {
 		super("Trademark", "2018-07-24", "DescirbeCombineTrademark");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getOwnerName() {
@@ -50,6 +59,17 @@ public class DescirbeCombineTrademarkRequest extends RpcAcsRequest<DescirbeCombi
 		this.ownerName = ownerName;
 		if(ownerName != null){
 			putQueryParameter("OwnerName", ownerName);
+		}
+	}
+
+	public String getClassification() {
+		return this.classification;
+	}
+
+	public void setClassification(String classification) {
+		this.classification = classification;
+		if(classification != null){
+			putQueryParameter("Classification", classification);
 		}
 	}
 
@@ -94,6 +114,17 @@ public class DescirbeCombineTrademarkRequest extends RpcAcsRequest<DescirbeCombi
 		this.products = products;
 		if(products != null){
 			putQueryParameter("Products", products);
+		}
+	}
+
+	public String getSimilarGroups() {
+		return this.similarGroups;
+	}
+
+	public void setSimilarGroups(String similarGroups) {
+		this.similarGroups = similarGroups;
+		if(similarGroups != null){
+			putQueryParameter("SimilarGroups", similarGroups);
 		}
 	}
 

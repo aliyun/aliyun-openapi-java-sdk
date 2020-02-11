@@ -1,3 +1,6 @@
+2020-02-11 Version: 1.2.7
+- Support taobao trademark query.
+
 2019-12-18 Version: 1.2.7-SNAPSHOT
 - Support taobao trademark query.
 

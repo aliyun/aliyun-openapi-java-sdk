@@ -42,6 +42,7 @@ public class QueryTradeIntentionUserListResponseUnmarshaller {
 			trademark.setBizId(_ctx.stringValue("QueryTradeIntentionUserListResponse.Data["+ i +"].BizId"));
 			trademark.setDescription(_ctx.stringValue("QueryTradeIntentionUserListResponse.Data["+ i +"].Description"));
 			trademark.setStatus(_ctx.integerValue("QueryTradeIntentionUserListResponse.Data["+ i +"].Status"));
+			trademark.setType(_ctx.integerValue("QueryTradeIntentionUserListResponse.Data["+ i +"].Type"));
 
 			data.add(trademark);
 		}

@@ -39,12 +39,6 @@ public class DescirbeCombineTrademarkResponse extends AcsResponse {
 
 	private Boolean nextPage;
 
-	private String productDescription;
-
-	private String exclusiveDateLimit;
-
-	private String agency;
-
 	private List<Trademark> data;
 
 	public String getRequestId() {
@@ -103,30 +97,6 @@ public class DescirbeCombineTrademarkResponse extends AcsResponse {
 		this.nextPage = nextPage;
 	}
 
-	public String getProductDescription() {
-		return this.productDescription;
-	}
-
-	public void setProductDescription(String productDescription) {
-		this.productDescription = productDescription;
-	}
-
-	public String getExclusiveDateLimit() {
-		return this.exclusiveDateLimit;
-	}
-
-	public void setExclusiveDateLimit(String exclusiveDateLimit) {
-		this.exclusiveDateLimit = exclusiveDateLimit;
-	}
-
-	public String getAgency() {
-		return this.agency;
-	}
-
-	public void setAgency(String agency) {
-		this.agency = agency;
-	}
-
 	public List<Trademark> getData() {
 		return this.data;
 	}
@@ -153,8 +123,6 @@ public class DescirbeCombineTrademarkResponse extends AcsResponse {
 
 		private String image;
 
-		private String product;
-
 		private String preAnnNumber;
 
 		private String regAnnNumber;
@@ -173,7 +141,37 @@ public class DescirbeCombineTrademarkResponse extends AcsResponse {
 
 		private String ownerEnAddress;
 
-		private List<String> announcementList;
+		private String exclusiveDateLimit;
+
+		private String agency;
+
+		private String productDescription;
+
+		private String similarGroup;
+
+		private String registrationType;
+
+		private Integer onSale;
+
+		private String status;
+
+		private String priorityDate;
+
+		private String intlRegDate;
+
+		private String subsequentDesignationDate;
+
+		private String firstAnnoNumber;
+
+		private String firstAnnoType;
+
+		private String secondAnnoNumber;
+
+		private String secondAnnoType;
+
+		private List<AnnouncementListItem> announcementList;
+
+		private List<ProcedureList> procedures;
 
 		public String getIndexId() {
 			return this.indexId;
@@ -237,14 +235,6 @@ public class DescirbeCombineTrademarkResponse extends AcsResponse {
 
 		public void setImage(String image) {
 			this.image = image;
-		}
-
-		public String getProduct() {
-			return this.product;
-		}
-
-		public void setProduct(String product) {
-			this.product = product;
 		}
 
 		public String getPreAnnNumber() {
@@ -319,12 +309,248 @@ public class DescirbeCombineTrademarkResponse extends AcsResponse {
 			this.ownerEnAddress = ownerEnAddress;
 		}
 
-		public List<String> getAnnouncementList() {
+		public String getExclusiveDateLimit() {
+			return this.exclusiveDateLimit;
+		}
+
+		public void setExclusiveDateLimit(String exclusiveDateLimit) {
+			this.exclusiveDateLimit = exclusiveDateLimit;
+		}
+
+		public String getAgency() {
+			return this.agency;
+		}
+
+		public void setAgency(String agency) {
+			this.agency = agency;
+		}
+
+		public String getProductDescription() {
+			return this.productDescription;
+		}
+
+		public void setProductDescription(String productDescription) {
+			this.productDescription = productDescription;
+		}
+
+		public String getSimilarGroup() {
+			return this.similarGroup;
+		}
+
+		public void setSimilarGroup(String similarGroup) {
+			this.similarGroup = similarGroup;
+		}
+
+		public String getRegistrationType() {
+			return this.registrationType;
+		}
+
+		public void setRegistrationType(String registrationType) {
+			this.registrationType = registrationType;
+		}
+
+		public Integer getOnSale() {
+			return this.onSale;
+		}
+
+		public void setOnSale(Integer onSale) {
+			this.onSale = onSale;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getPriorityDate() {
+			return this.priorityDate;
+		}
+
+		public void setPriorityDate(String priorityDate) {
+			this.priorityDate = priorityDate;
+		}
+
+		public String getIntlRegDate() {
+			return this.intlRegDate;
+		}
+
+		public void setIntlRegDate(String intlRegDate) {
+			this.intlRegDate = intlRegDate;
+		}
+
+		public String getSubsequentDesignationDate() {
+			return this.subsequentDesignationDate;
+		}
+
+		public void setSubsequentDesignationDate(String subsequentDesignationDate) {
+			this.subsequentDesignationDate = subsequentDesignationDate;
+		}
+
+		public String getFirstAnnoNumber() {
+			return this.firstAnnoNumber;
+		}
+
+		public void setFirstAnnoNumber(String firstAnnoNumber) {
+			this.firstAnnoNumber = firstAnnoNumber;
+		}
+
+		public String getFirstAnnoType() {
+			return this.firstAnnoType;
+		}
+
+		public void setFirstAnnoType(String firstAnnoType) {
+			this.firstAnnoType = firstAnnoType;
+		}
+
+		public String getSecondAnnoNumber() {
+			return this.secondAnnoNumber;
+		}
+
+		public void setSecondAnnoNumber(String secondAnnoNumber) {
+			this.secondAnnoNumber = secondAnnoNumber;
+		}
+
+		public String getSecondAnnoType() {
+			return this.secondAnnoType;
+		}
+
+		public void setSecondAnnoType(String secondAnnoType) {
+			this.secondAnnoType = secondAnnoType;
+		}
+
+		public List<AnnouncementListItem> getAnnouncementList() {
 			return this.announcementList;
 		}
 
-		public void setAnnouncementList(List<String> announcementList) {
+		public void setAnnouncementList(List<AnnouncementListItem> announcementList) {
 			this.announcementList = announcementList;
+		}
+
+		public List<ProcedureList> getProcedures() {
+			return this.procedures;
+		}
+
+		public void setProcedures(List<ProcedureList> procedures) {
+			this.procedures = procedures;
+		}
+
+		public static class AnnouncementListItem {
+
+			private String annNumber;
+
+			private String annTypeCode;
+
+			private String annTypeName;
+
+			private String annDate;
+
+			private String imageUrl;
+
+			private String originalImageUrl;
+
+			public String getAnnNumber() {
+				return this.annNumber;
+			}
+
+			public void setAnnNumber(String annNumber) {
+				this.annNumber = annNumber;
+			}
+
+			public String getAnnTypeCode() {
+				return this.annTypeCode;
+			}
+
+			public void setAnnTypeCode(String annTypeCode) {
+				this.annTypeCode = annTypeCode;
+			}
+
+			public String getAnnTypeName() {
+				return this.annTypeName;
+			}
+
+			public void setAnnTypeName(String annTypeName) {
+				this.annTypeName = annTypeName;
+			}
+
+			public String getAnnDate() {
+				return this.annDate;
+			}
+
+			public void setAnnDate(String annDate) {
+				this.annDate = annDate;
+			}
+
+			public String getImageUrl() {
+				return this.imageUrl;
+			}
+
+			public void setImageUrl(String imageUrl) {
+				this.imageUrl = imageUrl;
+			}
+
+			public String getOriginalImageUrl() {
+				return this.originalImageUrl;
+			}
+
+			public void setOriginalImageUrl(String originalImageUrl) {
+				this.originalImageUrl = originalImageUrl;
+			}
+		}
+
+		public static class ProcedureList {
+
+			private String procedureCode;
+
+			private String procedureName;
+
+			private String procedureStep;
+
+			private String procedureResult;
+
+			private String procedureDate;
+
+			public String getProcedureCode() {
+				return this.procedureCode;
+			}
+
+			public void setProcedureCode(String procedureCode) {
+				this.procedureCode = procedureCode;
+			}
+
+			public String getProcedureName() {
+				return this.procedureName;
+			}
+
+			public void setProcedureName(String procedureName) {
+				this.procedureName = procedureName;
+			}
+
+			public String getProcedureStep() {
+				return this.procedureStep;
+			}
+
+			public void setProcedureStep(String procedureStep) {
+				this.procedureStep = procedureStep;
+			}
+
+			public String getProcedureResult() {
+				return this.procedureResult;
+			}
+
+			public void setProcedureResult(String procedureResult) {
+				this.procedureResult = procedureResult;
+			}
+
+			public String getProcedureDate() {
+				return this.procedureDate;
+			}
+
+			public void setProcedureDate(String procedureDate) {
+				this.procedureDate = procedureDate;
+			}
 		}
 	}
 
