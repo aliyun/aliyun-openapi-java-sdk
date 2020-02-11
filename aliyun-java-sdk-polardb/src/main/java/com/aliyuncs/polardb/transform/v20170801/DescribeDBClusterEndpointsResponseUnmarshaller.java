@@ -48,6 +48,7 @@ public class DescribeDBClusterEndpointsResponseUnmarshaller {
 				address.setPort(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].Port"));
 				address.setVPCId(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].VPCId"));
 				address.setVSwitchId(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].VSwitchId"));
+				address.setVpcInstanceId(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].VpcInstanceId"));
 
 				addressItems.add(address);
 			}
