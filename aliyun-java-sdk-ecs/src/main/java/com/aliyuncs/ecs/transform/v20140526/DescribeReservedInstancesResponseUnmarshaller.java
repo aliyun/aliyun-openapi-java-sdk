@@ -50,6 +50,7 @@ public class DescribeReservedInstancesResponseUnmarshaller {
 			reservedInstance.setExpiredTime(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ExpiredTime"));
 			reservedInstance.setStartTime(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].StartTime"));
 			reservedInstance.setResourceGroupId(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ResourceGroupId"));
+			reservedInstance.setAllocationStatus(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].AllocationStatus"));
 
 			List<OperationLock> operationLocks = new ArrayList<OperationLock>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].OperationLocks.Length"); j++) {

@@ -45,6 +45,8 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 	private Long ownerId;
 
 	private Integer retentionDays;
+
+	private String category;
 	public CreateSnapshotRequest() {
 		super("Ecs", "2014-05-26", "CreateSnapshot", "ecs");
 		setMethod(MethodType.POST);
@@ -164,6 +166,17 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 		this.retentionDays = retentionDays;
 		if(retentionDays != null){
 			putQueryParameter("RetentionDays", retentionDays.toString());
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
 		}
 	}
 

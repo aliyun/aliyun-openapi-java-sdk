@@ -55,6 +55,8 @@ public class DescribeReservedInstancesRequest extends RpcAcsRequest<DescribeRese
 	private String reservedInstanceName;
 
 	private List<String> statuss;
+
+	private String allocationType;
 	public DescribeReservedInstancesRequest() {
 		super("Ecs", "2014-05-26", "DescribeReservedInstances", "ecs");
 		setMethod(MethodType.POST);
@@ -231,6 +233,17 @@ public class DescribeReservedInstancesRequest extends RpcAcsRequest<DescribeRese
 				putQueryParameter("Status." + (i + 1) , statuss.get(i));
 			}
 		}	
+	}
+
+	public String getAllocationType() {
+		return this.allocationType;
+	}
+
+	public void setAllocationType(String allocationType) {
+		this.allocationType = allocationType;
+		if(allocationType != null){
+			putQueryParameter("AllocationType", allocationType);
+		}
 	}
 
 	@Override

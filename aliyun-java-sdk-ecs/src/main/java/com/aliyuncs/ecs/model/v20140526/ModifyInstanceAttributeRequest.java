@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -46,6 +47,8 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 	private String creditSpecification;
 
 	private Long ownerId;
+
+	private List<String> securityGroupIdss;
 
 	private String instanceId;
 
@@ -178,6 +181,19 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<String> getSecurityGroupIdss() {
+		return this.securityGroupIdss;
+	}
+
+	public void setSecurityGroupIdss(List<String> securityGroupIdss) {
+		this.securityGroupIdss = securityGroupIdss;	
+		if (securityGroupIdss != null) {
+			for (int i = 0; i < securityGroupIdss.size(); i++) {
+				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIdss.get(i));
+			}
+		}	
 	}
 
 	public String getInstanceId() {

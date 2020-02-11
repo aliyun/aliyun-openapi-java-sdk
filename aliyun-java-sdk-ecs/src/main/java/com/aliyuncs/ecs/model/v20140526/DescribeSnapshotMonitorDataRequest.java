@@ -38,6 +38,8 @@ public class DescribeSnapshotMonitorDataRequest extends RpcAcsRequest<DescribeSn
 	private String endTime;
 
 	private Long ownerId;
+
+	private String category;
 	public DescribeSnapshotMonitorDataRequest() {
 		super("Ecs", "2014-05-26", "DescribeSnapshotMonitorData", "ecs");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class DescribeSnapshotMonitorDataRequest extends RpcAcsRequest<DescribeSn
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
 		}
 	}
 

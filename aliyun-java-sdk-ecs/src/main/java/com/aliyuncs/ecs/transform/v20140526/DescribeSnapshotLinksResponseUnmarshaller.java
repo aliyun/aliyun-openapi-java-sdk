@@ -42,6 +42,7 @@ public class DescribeSnapshotLinksResponseUnmarshaller {
 			snapshotLink.setSourceDiskName(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskName"));
 			snapshotLink.setSourceDiskSize(_ctx.integerValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskSize"));
 			snapshotLink.setSourceDiskType(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskType"));
+			snapshotLink.setCategory(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].Category"));
 			snapshotLink.setTotalSize(_ctx.longValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].TotalSize"));
 			snapshotLink.setTotalCount(_ctx.integerValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].TotalCount"));
 

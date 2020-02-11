@@ -115,6 +115,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String kMSKeyId;
 
+		private String category;
+
 		private List<Tag> tags;
 
 		public String getSnapshotId() {
@@ -267,6 +269,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setKMSKeyId(String kMSKeyId) {
 			this.kMSKeyId = kMSKeyId;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
 		public List<Tag> getTags() {

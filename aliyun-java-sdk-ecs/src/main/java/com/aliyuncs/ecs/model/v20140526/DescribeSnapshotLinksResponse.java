@@ -93,6 +93,8 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 
 		private String sourceDiskType;
 
+		private String category;
+
 		private Long totalSize;
 
 		private Integer totalCount;
@@ -159,6 +161,14 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 
 		public void setSourceDiskType(String sourceDiskType) {
 			this.sourceDiskType = sourceDiskType;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
 		public Long getTotalSize() {

@@ -107,6 +107,8 @@ public class DescribeReservedInstancesResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String allocationStatus;
+
 		private List<OperationLock> operationLocks;
 
 		public String getReservedInstanceId() {
@@ -227,6 +229,14 @@ public class DescribeReservedInstancesResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getAllocationStatus() {
+			return this.allocationStatus;
+		}
+
+		public void setAllocationStatus(String allocationStatus) {
+			this.allocationStatus = allocationStatus;
 		}
 
 		public List<OperationLock> getOperationLocks() {
