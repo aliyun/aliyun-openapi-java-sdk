@@ -1,0 +1,3 @@
+2020-02-11 Version: 1.0.0
+- Add first bill method of GetPartnerInstancesMonthBill.
+
