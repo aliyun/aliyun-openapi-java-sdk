@@ -41,12 +41,22 @@
 </dependency>
 ```
 
-如果 maven 没有从中央存储库下载 jar 包，则需要将此依赖项添加到`pom.xml`文件中，否则将报告 NoClassDefFoundError 异常
+如果 maven 没有从中央存储库下载 jar 包，则需要将这些依赖项添加到`pom.xml`文件中，否则将报告 NoClassDefFoundError 异常
 ```xml
 <dependency>
     <groupId>com.google.code.gson</groupId>
     <artifactId>gson</artifactId>
     <version>2.8.5</version>
+</dependency>
+<dependency>
+    <groupId>io.opentracing</groupId>
+    <artifactId>opentracing-api</artifactId>
+    <version>0.33.0</version>
+</dependency>
+<dependency>
+    <groupId>io.opentracing</groupId>
+    <artifactId>opentracing-util</artifactId>
+    <version>0.33.0</version>
 </dependency>
 ```
 ## 快速使用
