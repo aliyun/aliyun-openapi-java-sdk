@@ -22,23 +22,47 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListOTAJobByFirmwareRequest extends RpcAcsRequest<ListOTAJobByFirmwareResponse> {
+public class ListOTATaskByJobRequest extends RpcAcsRequest<ListOTATaskByJobResponse> {
 	   
+
+	private String jobId;
+
+	private String taskStatus;
 
 	private String iotInstanceId;
 
 	private Integer pageSize;
 
-	private String firmwareId;
-
 	private Integer currentPage;
-	public ListOTAJobByFirmwareRequest() {
-		super("Iot", "2018-01-20", "ListOTAJobByFirmware", "iot");
+	public ListOTATaskByJobRequest() {
+		super("Iot", "2018-01-20", "ListOTATaskByJob", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
+		}
+	}
+
+	public String getTaskStatus() {
+		return this.taskStatus;
+	}
+
+	public void setTaskStatus(String taskStatus) {
+		this.taskStatus = taskStatus;
+		if(taskStatus != null){
+			putQueryParameter("TaskStatus", taskStatus);
+		}
 	}
 
 	public String getIotInstanceId() {
@@ -63,17 +87,6 @@ public class ListOTAJobByFirmwareRequest extends RpcAcsRequest<ListOTAJobByFirmw
 		}
 	}
 
-	public String getFirmwareId() {
-		return this.firmwareId;
-	}
-
-	public void setFirmwareId(String firmwareId) {
-		this.firmwareId = firmwareId;
-		if(firmwareId != null){
-			putQueryParameter("FirmwareId", firmwareId);
-		}
-	}
-
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -86,8 +99,8 @@ public class ListOTAJobByFirmwareRequest extends RpcAcsRequest<ListOTAJobByFirmw
 	}
 
 	@Override
-	public Class<ListOTAJobByFirmwareResponse> getResponseClass() {
-		return ListOTAJobByFirmwareResponse.class;
+	public Class<ListOTATaskByJobResponse> getResponseClass() {
+		return ListOTATaskByJobResponse.class;
 	}
 
 }

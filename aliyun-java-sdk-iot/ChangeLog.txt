@@ -1,3 +1,9 @@
+2020-02-11 Version: 7.5.0
+- Add Thing Model APIs, including CreateThingModel, UpdateThingModel, etc.
+- Add OTA API ListOTATaskByJob.
+- Update OTA API ListOTAJobByFirmware.
+- Update Thing Core Model API InvokeThingsService.
+
 2020-01-20 Version: 7.4.0
 - Add Thing Model APIs, including QueryThingModel, PublishThingModel, etc.
 
