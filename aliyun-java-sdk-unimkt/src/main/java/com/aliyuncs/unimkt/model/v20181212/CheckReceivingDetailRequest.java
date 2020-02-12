@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.model.v20181207;
+package com.aliyuncs.unimkt.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
@@ -23,16 +23,16 @@ import com.aliyuncs.unimkt.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse> {
+public class CheckReceivingDetailRequest extends RpcAcsRequest<CheckReceivingDetailResponse> {
 	   
 
-	private String extra;
+	private String deviceCode;
 
-	private String alipayOpenId;
+	private String v;
 
 	private String channelId;
-	public QueryPromotionRequest() {
-		super("UniMkt", "2018-12-07", "QueryPromotion", "1.0.0");
+	public CheckReceivingDetailRequest() {
+		super("UniMkt", "2018-12-12", "CheckReceivingDetail", "1.0.0");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -41,25 +41,25 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getExtra() {
-		return this.extra;
+	public String getDeviceCode() {
+		return this.deviceCode;
 	}
 
-	public void setExtra(String extra) {
-		this.extra = extra;
-		if(extra != null){
-			putBodyParameter("Extra", extra);
+	public void setDeviceCode(String deviceCode) {
+		this.deviceCode = deviceCode;
+		if(deviceCode != null){
+			putBodyParameter("DeviceCode", deviceCode);
 		}
 	}
 
-	public String getAlipayOpenId() {
-		return this.alipayOpenId;
+	public String getV() {
+		return this.v;
 	}
 
-	public void setAlipayOpenId(String alipayOpenId) {
-		this.alipayOpenId = alipayOpenId;
-		if(alipayOpenId != null){
-			putBodyParameter("AlipayOpenId", alipayOpenId);
+	public void setV(String v) {
+		this.v = v;
+		if(v != null){
+			putBodyParameter("V", v);
 		}
 	}
 
@@ -75,8 +75,8 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 	}
 
 	@Override
-	public Class<QueryPromotionResponse> getResponseClass() {
-		return QueryPromotionResponse.class;
+	public Class<CheckReceivingDetailResponse> getResponseClass() {
+		return CheckReceivingDetailResponse.class;
 	}
 
 }

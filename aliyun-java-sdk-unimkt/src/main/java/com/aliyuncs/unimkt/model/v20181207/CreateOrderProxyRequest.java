@@ -48,7 +48,7 @@ public class CreateOrderProxyRequest extends RpcAcsRequest<CreateOrderProxyRespo
 
 	private String queryStr;
 	public CreateOrderProxyRequest() {
-		super("UniMkt", "2018-12-07", "CreateOrderProxy");
+		super("UniMkt", "2018-12-07", "CreateOrderProxy", "1.0.0");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

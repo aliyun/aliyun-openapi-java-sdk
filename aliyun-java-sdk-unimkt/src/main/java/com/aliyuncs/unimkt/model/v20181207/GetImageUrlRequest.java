@@ -28,7 +28,7 @@ public class GetImageUrlRequest extends RpcAcsRequest<GetImageUrlResponse> {
 
 	private String commodityId;
 	public GetImageUrlRequest() {
-		super("UniMkt", "2018-12-07", "GetImageUrl");
+		super("UniMkt", "2018-12-07", "GetImageUrl", "1.0.0");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

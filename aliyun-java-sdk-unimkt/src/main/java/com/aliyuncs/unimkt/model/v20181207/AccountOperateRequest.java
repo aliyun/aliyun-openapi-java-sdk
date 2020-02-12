@@ -70,7 +70,7 @@ public class AccountOperateRequest extends RpcAcsRequest<AccountOperateResponse>
 
 	private String accuAmount;
 	public AccountOperateRequest() {
-		super("UniMkt", "2018-12-07", "AccountOperate");
+		super("UniMkt", "2018-12-07", "AccountOperate", "1.0.0");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

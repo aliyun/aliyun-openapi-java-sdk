@@ -74,7 +74,7 @@ public class ScanCodeNotificationRequest extends RpcAcsRequest<ScanCodeNotificat
 
 	private String cid;
 	public ScanCodeNotificationRequest() {
-		super("UniMkt", "2018-12-07", "ScanCodeNotification");
+		super("UniMkt", "2018-12-07", "ScanCodeNotification", "1.0.0");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

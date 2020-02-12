@@ -46,7 +46,7 @@ public class BrandMessageMigrateRequest extends RpcAcsRequest<BrandMessageMigrat
 
 	private String contactPhone;
 	public BrandMessageMigrateRequest() {
-		super("UniMkt", "2018-12-07", "BrandMessageMigrate");
+		super("UniMkt", "2018-12-07", "BrandMessageMigrate", "1.0.0");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

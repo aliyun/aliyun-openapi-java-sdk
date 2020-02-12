@@ -38,7 +38,7 @@ public class PushFaultEventRequest extends RpcAcsRequest<PushFaultEventResponse>
 
 	private String faultType;
 	public PushFaultEventRequest() {
-		super("UniMkt", "2018-12-12", "PushFaultEvent");
+		super("UniMkt", "2018-12-12", "PushFaultEvent", "1.0.0");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
