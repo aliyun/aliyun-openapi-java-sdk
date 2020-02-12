@@ -304,4 +304,9 @@ public class DescribeSynchronizationObjectModifyStatusResponse extends AcsRespon
 	public DescribeSynchronizationObjectModifyStatusResponse getInstance(UnmarshallerContext context) {
 		return	DescribeSynchronizationObjectModifyStatusResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

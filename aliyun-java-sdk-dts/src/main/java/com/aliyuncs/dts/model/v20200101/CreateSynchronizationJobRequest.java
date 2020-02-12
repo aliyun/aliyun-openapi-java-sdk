@@ -24,25 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class CreateSynchronizationJobRequest extends RpcAcsRequest<CreateSynchronizationJobResponse> {
 	   
 
-	private String period;
-
-	private String destRegion;
-
 	private String clientToken;
 
-	private String topology;
-
 	private String networkType;
-
-	private String ownerId;
-
-	private Integer usedTime;
 
 	private String sourceEndpointInstanceType;
 
 	private String accountId;
 
 	private String synchronizationJobClass;
+
+	private String period;
+
+	private String destRegion;
+
+	private String topology;
+
+	private String ownerId;
+
+	private Integer usedTime;
 
 	private String sourceRegion;
 
@@ -52,28 +52,6 @@ public class CreateSynchronizationJobRequest extends RpcAcsRequest<CreateSynchro
 	public CreateSynchronizationJobRequest() {
 		super("Dts", "2020-01-01", "CreateSynchronizationJob", "dts");
 		setMethod(MethodType.POST);
-	}
-
-	public String getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(String period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period);
-		}
-	}
-
-	public String getDestRegion() {
-		return this.destRegion;
-	}
-
-	public void setDestRegion(String destRegion) {
-		this.destRegion = destRegion;
-		if(destRegion != null){
-			putQueryParameter("DestRegion", destRegion);
-		}
 	}
 
 	public String getClientToken() {
@@ -87,17 +65,6 @@ public class CreateSynchronizationJobRequest extends RpcAcsRequest<CreateSynchro
 		}
 	}
 
-	public String getTopology() {
-		return this.topology;
-	}
-
-	public void setTopology(String topology) {
-		this.topology = topology;
-		if(topology != null){
-			putQueryParameter("Topology", topology);
-		}
-	}
-
 	public String getNetworkType() {
 		return this.networkType;
 	}
@@ -106,28 +73,6 @@ public class CreateSynchronizationJobRequest extends RpcAcsRequest<CreateSynchro
 		this.networkType = networkType;
 		if(networkType != null){
 			putQueryParameter("networkType", networkType);
-		}
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
-	public Integer getUsedTime() {
-		return this.usedTime;
-	}
-
-	public void setUsedTime(Integer usedTime) {
-		this.usedTime = usedTime;
-		if(usedTime != null){
-			putQueryParameter("UsedTime", usedTime.toString());
 		}
 	}
 
@@ -161,6 +106,61 @@ public class CreateSynchronizationJobRequest extends RpcAcsRequest<CreateSynchro
 		this.synchronizationJobClass = synchronizationJobClass;
 		if(synchronizationJobClass != null){
 			putQueryParameter("SynchronizationJobClass", synchronizationJobClass);
+		}
+	}
+
+	public String getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(String period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period);
+		}
+	}
+
+	public String getDestRegion() {
+		return this.destRegion;
+	}
+
+	public void setDestRegion(String destRegion) {
+		this.destRegion = destRegion;
+		if(destRegion != null){
+			putQueryParameter("DestRegion", destRegion);
+		}
+	}
+
+	public String getTopology() {
+		return this.topology;
+	}
+
+	public void setTopology(String topology) {
+		this.topology = topology;
+		if(topology != null){
+			putQueryParameter("Topology", topology);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public Integer getUsedTime() {
+		return this.usedTime;
+	}
+
+	public void setUsedTime(Integer usedTime) {
+		this.usedTime = usedTime;
+		if(usedTime != null){
+			putQueryParameter("UsedTime", usedTime.toString());
 		}
 	}
 

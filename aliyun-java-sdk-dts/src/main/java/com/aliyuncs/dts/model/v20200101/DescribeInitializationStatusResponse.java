@@ -361,4 +361,9 @@ public class DescribeInitializationStatusResponse extends AcsResponse {
 	public DescribeInitializationStatusResponse getInstance(UnmarshallerContext context) {
 		return	DescribeInitializationStatusResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

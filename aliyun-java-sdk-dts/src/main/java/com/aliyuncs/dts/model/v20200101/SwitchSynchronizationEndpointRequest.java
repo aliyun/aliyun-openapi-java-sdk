@@ -24,6 +24,14 @@ import com.aliyuncs.http.MethodType;
 public class SwitchSynchronizationEndpointRequest extends RpcAcsRequest<SwitchSynchronizationEndpointResponse> {
 	   
 
+	private String synchronizationJobId;
+
+	private String endpointType;
+
+	private String accountId;
+
+	private String endpointPort;
+
 	private String endpointInstanceType;
 
 	private String sourceEndpointOwnerID;
@@ -34,20 +42,56 @@ public class SwitchSynchronizationEndpointRequest extends RpcAcsRequest<SwitchSy
 
 	private String ownerId;
 
-	private String synchronizationJobId;
-
-	private String endpointType;
-
-	private String accountId;
-
-	private String endpointPort;
-
 	private String endpointInstanceId;
 
 	private String synchronizationDirection;
 	public SwitchSynchronizationEndpointRequest() {
 		super("Dts", "2020-01-01", "SwitchSynchronizationEndpoint", "dts");
 		setMethod(MethodType.POST);
+	}
+
+	public String getSynchronizationJobId() {
+		return this.synchronizationJobId;
+	}
+
+	public void setSynchronizationJobId(String synchronizationJobId) {
+		this.synchronizationJobId = synchronizationJobId;
+		if(synchronizationJobId != null){
+			putQueryParameter("SynchronizationJobId", synchronizationJobId);
+		}
+	}
+
+	public String getEndpointType() {
+		return this.endpointType;
+	}
+
+	public void setEndpointType(String endpointType) {
+		this.endpointType = endpointType;
+		if(endpointType != null){
+			putQueryParameter("Endpoint.Type", endpointType);
+		}
+	}
+
+	public String getAccountId() {
+		return this.accountId;
+	}
+
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
+		if(accountId != null){
+			putQueryParameter("AccountId", accountId);
+		}
+	}
+
+	public String getEndpointPort() {
+		return this.endpointPort;
+	}
+
+	public void setEndpointPort(String endpointPort) {
+		this.endpointPort = endpointPort;
+		if(endpointPort != null){
+			putQueryParameter("Endpoint.Port", endpointPort);
+		}
 	}
 
 	public String getEndpointInstanceType() {
@@ -102,50 +146,6 @@ public class SwitchSynchronizationEndpointRequest extends RpcAcsRequest<SwitchSy
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
-	public String getSynchronizationJobId() {
-		return this.synchronizationJobId;
-	}
-
-	public void setSynchronizationJobId(String synchronizationJobId) {
-		this.synchronizationJobId = synchronizationJobId;
-		if(synchronizationJobId != null){
-			putQueryParameter("SynchronizationJobId", synchronizationJobId);
-		}
-	}
-
-	public String getEndpointType() {
-		return this.endpointType;
-	}
-
-	public void setEndpointType(String endpointType) {
-		this.endpointType = endpointType;
-		if(endpointType != null){
-			putQueryParameter("Endpoint.Type", endpointType);
-		}
-	}
-
-	public String getAccountId() {
-		return this.accountId;
-	}
-
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
-		if(accountId != null){
-			putQueryParameter("AccountId", accountId);
-		}
-	}
-
-	public String getEndpointPort() {
-		return this.endpointPort;
-	}
-
-	public void setEndpointPort(String endpointPort) {
-		this.endpointPort = endpointPort;
-		if(endpointPort != null){
-			putQueryParameter("Endpoint.Port", endpointPort);
 		}
 	}
 

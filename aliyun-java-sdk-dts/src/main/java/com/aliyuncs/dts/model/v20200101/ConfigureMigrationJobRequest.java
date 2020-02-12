@@ -66,6 +66,8 @@ public class ConfigureMigrationJobRequest extends RpcAcsRequest<ConfigureMigrati
 
 	private String destinationEndpointUserName;
 
+	private String destinationEndpointOracleSID;
+
 	private String destinationEndpointPort;
 
 	private String sourceEndpointRegion;
@@ -318,6 +320,17 @@ public class ConfigureMigrationJobRequest extends RpcAcsRequest<ConfigureMigrati
 		this.destinationEndpointUserName = destinationEndpointUserName;
 		if(destinationEndpointUserName != null){
 			putQueryParameter("DestinationEndpoint.UserName", destinationEndpointUserName);
+		}
+	}
+
+	public String getDestinationEndpointOracleSID() {
+		return this.destinationEndpointOracleSID;
+	}
+
+	public void setDestinationEndpointOracleSID(String destinationEndpointOracleSID) {
+		this.destinationEndpointOracleSID = destinationEndpointOracleSID;
+		if(destinationEndpointOracleSID != null){
+			putQueryParameter("DestinationEndpoint.OracleSID", destinationEndpointOracleSID);
 		}
 	}
 

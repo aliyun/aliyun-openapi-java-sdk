@@ -672,4 +672,9 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 	public DescribeSynchronizationJobStatusResponse getInstance(UnmarshallerContext context) {
 		return	DescribeSynchronizationJobStatusResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

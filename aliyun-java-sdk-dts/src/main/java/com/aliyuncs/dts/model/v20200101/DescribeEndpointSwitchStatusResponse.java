@@ -58,4 +58,9 @@ public class DescribeEndpointSwitchStatusResponse extends AcsResponse {
 	public DescribeEndpointSwitchStatusResponse getInstance(UnmarshallerContext context) {
 		return	DescribeEndpointSwitchStatusResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }
