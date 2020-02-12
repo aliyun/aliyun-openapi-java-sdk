@@ -16,6 +16,7 @@ package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dbs.Endpoint;
 
 /**
  * @author auto create
@@ -32,10 +33,16 @@ public class DescribeFullBackupListRequest extends RpcAcsRequest<DescribeFullBac
 
 	private String ownerId;
 
+	private Boolean showStorageType;
+
 	private Integer pageSize;
 	public DescribeFullBackupListRequest() {
 		super("Dbs", "2019-03-06", "DescribeFullBackupList", "cbs");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getClientToken() {
@@ -79,6 +86,17 @@ public class DescribeFullBackupListRequest extends RpcAcsRequest<DescribeFullBac
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public Boolean getShowStorageType() {
+		return this.showStorageType;
+	}
+
+	public void setShowStorageType(Boolean showStorageType) {
+		this.showStorageType = showStorageType;
+		if(showStorageType != null){
+			putQueryParameter("ShowStorageType", showStorageType.toString());
 		}
 	}
 

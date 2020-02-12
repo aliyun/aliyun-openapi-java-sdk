@@ -1,3 +1,6 @@
+2020-02-12 Version: 1.0.19
+- Add Full showStorageTyp.
+
 2019-12-26 Version: 1.0.18
 - Modify CreateRestoreTask.
 
