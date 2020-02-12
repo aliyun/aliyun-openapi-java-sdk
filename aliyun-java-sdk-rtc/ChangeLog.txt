@@ -1,3 +1,6 @@
+2020-02-12 Version: 1.1.2
+- Support mau.
+
 2019-11-25 Version: 1.1.1
 - One or more people can be subscribed when creating tasks.
 
