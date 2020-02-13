@@ -10,6 +10,10 @@
 - ModifyNetworkInterfaceAttribute support modify QueueNumber.
 - DescribeNetworkInterfaces support QueueNumber.
 
+2020-02-13 Version: 4.18.2
+- ModifyNetworkInterfaceAttribute support modify QueueNumber.
+- DescribeNetworkInterfaces support QueueNumber.
+
 2020-02-11 Version: 4.18.1
 - Support ModifyInstanceAttributes for SecurityGroupIds.
 
