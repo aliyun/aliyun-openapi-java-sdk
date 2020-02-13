@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class AddSiteCheckConfigRequest extends RpcAcsRequest<AddSiteCheckConfigResponse> {
-	
-	public AddSiteCheckConfigRequest() {
-		super("cspro", "2018-03-15", "AddSiteCheckConfig", "cspro");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private Boolean setBaseLine;
 
@@ -39,6 +35,10 @@ public class AddSiteCheckConfigRequest extends RpcAcsRequest<AddSiteCheckConfigR
 	private Integer indexCheckFrequency;
 
 	private String siteDomain;
+	public AddSiteCheckConfigRequest() {
+		super("cspro", "2018-03-15", "AddSiteCheckConfig", "cspro");
+		setMethod(MethodType.POST);
+	}
 
 	public Boolean getSetBaseLine() {
 		return this.setBaseLine;

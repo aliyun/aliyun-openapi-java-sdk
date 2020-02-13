@@ -4,16 +4,13 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-cspro</artifactId>
   <packaging>jar</packaging>
-  <version>1.2.9</version>
+  <version>1.2.10</version>
   <name>aliyun-java-sdk-cspro</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
-
 Copyright (C) Alibaba Cloud Computing
 All rights reserved.
-
 版权所有 （C）阿里云计算有限公司
-
 http://www.aliyun.com</description>
   <distributionManagement>
     <snapshotRepository>
@@ -73,8 +70,7 @@ http://www.aliyun.com</description>
         <artifactId>maven-jar-plugin</artifactId>
         <version>2.3.2</version>
         <configuration>
-          <excludes>
-					</excludes>
+          <excludes/>
         </configuration>
       </plugin>
       <plugin>

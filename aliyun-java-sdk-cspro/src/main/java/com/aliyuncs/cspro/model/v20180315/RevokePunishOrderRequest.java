@@ -23,14 +23,14 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class RevokePunishOrderRequest extends RpcAcsRequest<RevokePunishOrderResponse> {
-	
+	   
+
+	private String punishRequestId;
 	public RevokePunishOrderRequest() {
 		super("cspro", "2018-03-15", "RevokePunishOrder", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
-
-	private String punishRequestId;
 
 	public String getPunishRequestId() {
 		return this.punishRequestId;

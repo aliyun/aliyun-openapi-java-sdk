@@ -23,12 +23,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QuerySecCheckLatestSummaryRequest extends RpcAcsRequest<QuerySecCheckLatestSummaryResponse> {
-	
-	public QuerySecCheckLatestSummaryRequest() {
-		super("cspro", "2018-03-15", "QuerySecCheckLatestSummary", "cspro");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String checkType;
 
@@ -39,6 +34,11 @@ public class QuerySecCheckLatestSummaryRequest extends RpcAcsRequest<QuerySecChe
 	private Integer currentPage;
 
 	private String confType;
+	public QuerySecCheckLatestSummaryRequest() {
+		super("cspro", "2018-03-15", "QuerySecCheckLatestSummary", "cspro");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+	}
 
 	public String getCheckType() {
 		return this.checkType;

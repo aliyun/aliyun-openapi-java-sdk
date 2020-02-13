@@ -24,18 +24,18 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class AddSecCheckSampleRequest extends RpcAcsRequest<AddSecCheckSampleResponse> {
-	
-	public AddSecCheckSampleRequest() {
-		super("cspro", "2018-03-15", "AddSecCheckSample", "cspro");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private Long libId;
 
 	private String type;
 
 	private List<String> contents;
+	public AddSecCheckSampleRequest() {
+		super("cspro", "2018-03-15", "AddSecCheckSample", "cspro");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+	}
 
 	public Long getLibId() {
 		return this.libId;

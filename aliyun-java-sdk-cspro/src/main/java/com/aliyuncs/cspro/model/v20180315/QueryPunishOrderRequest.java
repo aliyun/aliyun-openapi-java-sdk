@@ -16,19 +16,21 @@ package com.aliyuncs.cspro.model.v20180315;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryPunishOrderRequest extends RpcAcsRequest<QueryPunishOrderResponse> {
-	
+	   
+
+	private String punishRequestId;
 	public QueryPunishOrderRequest() {
 		super("cspro", "2018-03-15", "QueryPunishOrder", "cspro");
 		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.GET);
 	}
-
-	private String punishRequestId;
 
 	public String getPunishRequestId() {
 		return this.punishRequestId;

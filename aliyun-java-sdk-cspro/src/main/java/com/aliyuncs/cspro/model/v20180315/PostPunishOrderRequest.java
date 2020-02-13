@@ -23,14 +23,14 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class PostPunishOrderRequest extends RpcAcsRequest<PostPunishOrderResponse> {
-	
+	   
+
+	private String punishOrderReq;
 	public PostPunishOrderRequest() {
 		super("cspro", "2018-03-15", "PostPunishOrder", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
-
-	private String punishOrderReq;
 
 	public String getPunishOrderReq() {
 		return this.punishOrderReq;

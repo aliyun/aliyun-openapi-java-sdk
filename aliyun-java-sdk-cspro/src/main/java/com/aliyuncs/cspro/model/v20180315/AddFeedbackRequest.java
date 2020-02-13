@@ -22,43 +22,43 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class AddSecCheckSampleLibRequest extends RpcAcsRequest<AddSecCheckSampleLibResponse> {
+public class AddFeedbackRequest extends RpcAcsRequest<AddFeedbackResponse> {
 	   
 
-	private String name;
+	private String feedBack;
 
-	private String type;
-	public AddSecCheckSampleLibRequest() {
-		super("cspro", "2018-03-15", "AddSecCheckSampleLib", "cspro");
+	private Long resultId;
+	public AddFeedbackRequest() {
+		super("cspro", "2018-03-15", "AddFeedback", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
-	public String getName() {
-		return this.name;
+	public String getFeedBack() {
+		return this.feedBack;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("Name", name);
+	public void setFeedBack(String feedBack) {
+		this.feedBack = feedBack;
+		if(feedBack != null){
+			putBodyParameter("FeedBack", feedBack);
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public Long getResultId() {
+		return this.resultId;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type);
+	public void setResultId(Long resultId) {
+		this.resultId = resultId;
+		if(resultId != null){
+			putBodyParameter("ResultId", resultId.toString());
 		}
 	}
 
 	@Override
-	public Class<AddSecCheckSampleLibResponse> getResponseClass() {
-		return AddSecCheckSampleLibResponse.class;
+	public Class<AddFeedbackResponse> getResponseClass() {
+		return AddFeedbackResponse.class;
 	}
 
 }

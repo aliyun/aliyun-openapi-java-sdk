@@ -1,3 +1,6 @@
+2020-02-13 Version: 1.2.10
+- Add spec for secCheckConfig.
+
 2019-07-01 Version: 1.2.9
 - Add sample lib query interface.
 

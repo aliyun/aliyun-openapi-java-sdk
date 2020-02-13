@@ -15,16 +15,14 @@
 package com.aliyuncs.cspro.model.v20180315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QuerySiteCheckProgressRequest extends RpcAcsRequest<QuerySiteCheckProgressResponse> {
-	
-	public QuerySiteCheckProgressRequest() {
-		super("cspro", "2018-03-15", "QuerySiteCheckProgress", "cspro");
-	}
+	   
 
 	private Long checkId;
 
@@ -33,6 +31,10 @@ public class QuerySiteCheckProgressRequest extends RpcAcsRequest<QuerySiteCheckP
 	private Integer page;
 
 	private Integer pageSize;
+	public QuerySiteCheckProgressRequest() {
+		super("cspro", "2018-03-15", "QuerySiteCheckProgress", "cspro");
+		setMethod(MethodType.GET);
+	}
 
 	public Long getCheckId() {
 		return this.checkId;

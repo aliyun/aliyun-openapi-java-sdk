@@ -23,12 +23,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetSecCheckResultDetailRequest extends RpcAcsRequest<GetSecCheckResultDetailResponse> {
-	
-	public GetSecCheckResultDetailRequest() {
-		super("cspro", "2018-03-15", "GetSecCheckResultDetail", "cspro");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String riskType;
 
@@ -39,6 +34,11 @@ public class GetSecCheckResultDetailRequest extends RpcAcsRequest<GetSecCheckRes
 	private Integer pageSize;
 
 	private Integer currentPage;
+	public GetSecCheckResultDetailRequest() {
+		super("cspro", "2018-03-15", "GetSecCheckResultDetail", "cspro");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+	}
 
 	public String getRiskType() {
 		return this.riskType;

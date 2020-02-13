@@ -15,18 +15,20 @@
 package com.aliyuncs.cspro.model.v20180315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetIndexBaselineRequest extends RpcAcsRequest<SetIndexBaselineResponse> {
-	
-	public SetIndexBaselineRequest() {
-		super("cspro", "2018-03-15", "SetIndexBaseline", "cspro");
-	}
+	   
 
 	private Long id;
+	public SetIndexBaselineRequest() {
+		super("cspro", "2018-03-15", "SetIndexBaseline", "cspro");
+		setMethod(MethodType.GET);
+	}
 
 	public Long getId() {
 		return this.id;

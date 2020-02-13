@@ -24,18 +24,18 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DelSecCheckSampleRequest extends RpcAcsRequest<DelSecCheckSampleResponse> {
-	
-	public DelSecCheckSampleRequest() {
-		super("cspro", "2018-03-15", "DelSecCheckSample", "cspro");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private Long libId;
 
 	private List<Long> sampleIds;
 
 	private String type;
+	public DelSecCheckSampleRequest() {
+		super("cspro", "2018-03-15", "DelSecCheckSample", "cspro");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+	}
 
 	public Long getLibId() {
 		return this.libId;

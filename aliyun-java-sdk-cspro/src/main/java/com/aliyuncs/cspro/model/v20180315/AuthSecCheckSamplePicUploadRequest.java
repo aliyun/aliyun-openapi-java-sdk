@@ -23,7 +23,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class AuthSecCheckSamplePicUploadRequest extends RpcAcsRequest<AuthSecCheckSamplePicUploadResponse> {
-	
+	   
 	public AuthSecCheckSamplePicUploadRequest() {
 		super("cspro", "2018-03-15", "AuthSecCheckSamplePicUpload", "cspro");
 		setProtocol(ProtocolType.HTTPS);

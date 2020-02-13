@@ -23,14 +23,14 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DelOmniSecCheckConfigRequest extends RpcAcsRequest<DelOmniSecCheckConfigResponse> {
-	
+	   
+
+	private Long confId;
 	public DelOmniSecCheckConfigRequest() {
 		super("cspro", "2018-03-15", "DelOmniSecCheckConfig", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
-
-	private Long confId;
 
 	public Long getConfId() {
 		return this.confId;

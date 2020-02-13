@@ -15,18 +15,20 @@
 package com.aliyuncs.cspro.model.v20180315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetPhoneProfileRequest extends RpcAcsRequest<GetPhoneProfileResponse> {
-	
-	public GetPhoneProfileRequest() {
-		super("cspro", "2018-03-15", "GetPhoneProfile", "cspro");
-	}
+	   
 
 	private String phone;
+	public GetPhoneProfileRequest() {
+		super("cspro", "2018-03-15", "GetPhoneProfile", "cspro");
+		setMethod(MethodType.GET);
+	}
 
 	public String getPhone() {
 		return this.phone;

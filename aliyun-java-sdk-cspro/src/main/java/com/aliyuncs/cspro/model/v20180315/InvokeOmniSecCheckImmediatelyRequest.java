@@ -23,18 +23,18 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class InvokeOmniSecCheckImmediatelyRequest extends RpcAcsRequest<InvokeOmniSecCheckImmediatelyResponse> {
-	
-	public InvokeOmniSecCheckImmediatelyRequest() {
-		super("cspro", "2018-03-15", "InvokeOmniSecCheckImmediately", "cspro");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String checkType;
 
 	private String checkTarget;
 
 	private String confType;
+	public InvokeOmniSecCheckImmediatelyRequest() {
+		super("cspro", "2018-03-15", "InvokeOmniSecCheckImmediately", "cspro");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+	}
 
 	public String getCheckType() {
 		return this.checkType;

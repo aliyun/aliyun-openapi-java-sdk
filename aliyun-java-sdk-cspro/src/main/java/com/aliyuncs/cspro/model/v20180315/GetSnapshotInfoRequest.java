@@ -16,19 +16,21 @@ package com.aliyuncs.cspro.model.v20180315;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetSnapshotInfoRequest extends RpcAcsRequest<GetSnapshotInfoResponse> {
-	
+	   
+
+	private String snapshotKey;
 	public GetSnapshotInfoRequest() {
 		super("cspro", "2018-03-15", "GetSnapshotInfo", "cspro");
 		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.GET);
 	}
-
-	private String snapshotKey;
 
 	public String getSnapshotKey() {
 		return this.snapshotKey;

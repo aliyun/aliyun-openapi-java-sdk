@@ -23,16 +23,16 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class UploadOwnedDomainsRequest extends RpcAcsRequest<UploadOwnedDomainsResponse> {
-	
+	   
+
+	private Boolean isOverWrite;
+
+	private String domainList;
 	public UploadOwnedDomainsRequest() {
 		super("cspro", "2018-03-15", "UploadOwnedDomains", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
-
-	private Boolean isOverWrite;
-
-	private String domainList;
 
 	public Boolean getIsOverWrite() {
 		return this.isOverWrite;

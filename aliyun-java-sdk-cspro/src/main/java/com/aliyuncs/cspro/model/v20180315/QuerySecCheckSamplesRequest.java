@@ -23,12 +23,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QuerySecCheckSamplesRequest extends RpcAcsRequest<QuerySecCheckSamplesResponse> {
-	
-	public QuerySecCheckSamplesRequest() {
-		super("cspro", "2018-03-15", "QuerySecCheckSamples", "cspro");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private Long libId;
 
@@ -37,6 +32,11 @@ public class QuerySecCheckSamplesRequest extends RpcAcsRequest<QuerySecCheckSamp
 	private Integer currentPage;
 
 	private String type;
+	public QuerySecCheckSamplesRequest() {
+		super("cspro", "2018-03-15", "QuerySecCheckSamples", "cspro");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+	}
 
 	public Long getLibId() {
 		return this.libId;

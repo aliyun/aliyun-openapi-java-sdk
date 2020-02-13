@@ -24,12 +24,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class AddOmniSecCheckConfigRequest extends RpcAcsRequest<AddOmniSecCheckConfigResponse> {
-	
-	public AddOmniSecCheckConfigRequest() {
-		super("cspro", "2018-03-15", "AddOmniSecCheckConfig", "cspro");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String name;
 
@@ -39,7 +34,14 @@ public class AddOmniSecCheckConfigRequest extends RpcAcsRequest<AddOmniSecCheckC
 
 	private String checkTarget;
 
+	private String spec;
+
 	private String confType;
+	public AddOmniSecCheckConfigRequest() {
+		super("cspro", "2018-03-15", "AddOmniSecCheckConfig", "cspro");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+	}
 
 	public String getName() {
 		return this.name;
@@ -87,6 +89,17 @@ public class AddOmniSecCheckConfigRequest extends RpcAcsRequest<AddOmniSecCheckC
 		this.checkTarget = checkTarget;
 		if(checkTarget != null){
 			putBodyParameter("CheckTarget", checkTarget);
+		}
+	}
+
+	public String getSpec() {
+		return this.spec;
+	}
+
+	public void setSpec(String spec) {
+		this.spec = spec;
+		if(spec != null){
+			putBodyParameter("Spec", spec);
 		}
 	}
 

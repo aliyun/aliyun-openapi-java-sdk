@@ -113,6 +113,8 @@ public class QuerySecCheckConfigsResponse extends AcsResponse {
 
 			private Long id;
 
+			private String spec;
+
 			private List<OmniSecCheckDetailDTO> checkDetailDTOList;
 
 			public String getName() {
@@ -169,6 +171,14 @@ public class QuerySecCheckConfigsResponse extends AcsResponse {
 
 			public void setId(Long id) {
 				this.id = id;
+			}
+
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
 			}
 
 			public List<OmniSecCheckDetailDTO> getCheckDetailDTOList() {

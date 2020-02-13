@@ -15,18 +15,20 @@
 package com.aliyuncs.cspro.model.v20180315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DelSiteCheckConfigRequest extends RpcAcsRequest<DelSiteCheckConfigResponse> {
-	
-	public DelSiteCheckConfigRequest() {
-		super("cspro", "2018-03-15", "DelSiteCheckConfig", "cspro");
-	}
+	   
 
 	private Long id;
+	public DelSiteCheckConfigRequest() {
+		super("cspro", "2018-03-15", "DelSiteCheckConfig", "cspro");
+		setMethod(MethodType.GET);
+	}
 
 	public Long getId() {
 		return this.id;

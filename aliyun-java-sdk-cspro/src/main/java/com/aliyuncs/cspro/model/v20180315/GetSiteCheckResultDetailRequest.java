@@ -15,22 +15,24 @@
 package com.aliyuncs.cspro.model.v20180315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetSiteCheckResultDetailRequest extends RpcAcsRequest<GetSiteCheckResultDetailResponse> {
-	
-	public GetSiteCheckResultDetailRequest() {
-		super("cspro", "2018-03-15", "GetSiteCheckResultDetail", "cspro");
-	}
+	   
 
 	private Long resultId;
 
 	private String riskType;
 
 	private String type;
+	public GetSiteCheckResultDetailRequest() {
+		super("cspro", "2018-03-15", "GetSiteCheckResultDetail", "cspro");
+		setMethod(MethodType.GET);
+	}
 
 	public Long getResultId() {
 		return this.resultId;

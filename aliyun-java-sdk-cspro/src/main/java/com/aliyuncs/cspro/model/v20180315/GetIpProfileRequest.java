@@ -15,18 +15,20 @@
 package com.aliyuncs.cspro.model.v20180315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetIpProfileRequest extends RpcAcsRequest<GetIpProfileResponse> {
-	
-	public GetIpProfileRequest() {
-		super("cspro", "2018-03-15", "GetIpProfile", "cspro");
-	}
+	   
 
 	private String ip;
+	public GetIpProfileRequest() {
+		super("cspro", "2018-03-15", "GetIpProfile", "cspro");
+		setMethod(MethodType.GET);
+	}
 
 	public String getIp() {
 		return this.ip;

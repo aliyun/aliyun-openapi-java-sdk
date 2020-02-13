@@ -16,17 +16,14 @@ package com.aliyuncs.cspro.model.v20180315;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QuerySecCheckSampleLibsRequest extends RpcAcsRequest<QuerySecCheckSampleLibsResponse> {
-	
-	public QuerySecCheckSampleLibsRequest() {
-		super("cspro", "2018-03-15", "QuerySecCheckSampleLibs", "cspro");
-		setProtocol(ProtocolType.HTTPS);
-	}
+	   
 
 	private Long libId;
 
@@ -35,6 +32,11 @@ public class QuerySecCheckSampleLibsRequest extends RpcAcsRequest<QuerySecCheckS
 	private Integer currentPage;
 
 	private String type;
+	public QuerySecCheckSampleLibsRequest() {
+		super("cspro", "2018-03-15", "QuerySecCheckSampleLibs", "cspro");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.GET);
+	}
 
 	public Long getLibId() {
 		return this.libId;

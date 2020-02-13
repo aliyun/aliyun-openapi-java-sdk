@@ -52,6 +52,7 @@ public class QuerySecCheckConfigsResponseUnmarshaller {
 			omniSecCheckDTO.setValid(_ctx.booleanValue("QuerySecCheckConfigsResponse.Data.List["+ i +"].Valid"));
 			omniSecCheckDTO.setAccessible(_ctx.booleanValue("QuerySecCheckConfigsResponse.Data.List["+ i +"].Accessible"));
 			omniSecCheckDTO.setId(_ctx.longValue("QuerySecCheckConfigsResponse.Data.List["+ i +"].Id"));
+			omniSecCheckDTO.setSpec(_ctx.stringValue("QuerySecCheckConfigsResponse.Data.List["+ i +"].Spec"));
 
 			List<OmniSecCheckDetailDTO> checkDetailDTOList = new ArrayList<OmniSecCheckDetailDTO>();
 			for (int j = 0; j < _ctx.lengthValue("QuerySecCheckConfigsResponse.Data.List["+ i +"].CheckDetailDTOList.Length"); j++) {
