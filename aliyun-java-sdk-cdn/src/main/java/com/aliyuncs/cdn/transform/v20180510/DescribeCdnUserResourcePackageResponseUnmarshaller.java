@@ -35,6 +35,7 @@ public class DescribeCdnUserResourcePackageResponseUnmarshaller {
 			resourcePackageInfo.setInitCapacity(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].InitCapacity"));
 			resourcePackageInfo.setCommodityCode(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].CommodityCode"));
 			resourcePackageInfo.setDisplayName(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].DisplayName"));
+			resourcePackageInfo.setTemplateName(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].TemplateName"));
 			resourcePackageInfo.setInstanceId(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].InstanceId"));
 			resourcePackageInfo.setStatus(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].Status"));
 			resourcePackageInfo.setStartTime(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].StartTime"));

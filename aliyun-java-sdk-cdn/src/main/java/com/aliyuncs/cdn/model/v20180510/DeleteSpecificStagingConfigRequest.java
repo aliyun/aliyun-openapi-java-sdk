@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20141111;
+package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,22 +22,18 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetIgnoreQueryStringConfigRequest extends RpcAcsRequest<SetIgnoreQueryStringConfigResponse> {
+public class DeleteSpecificStagingConfigRequest extends RpcAcsRequest<DeleteSpecificStagingConfigResponse> {
 	   
 
 	private String securityToken;
-
-	private String enable;
-
-	private String keepOssArgs;
 
 	private String domainName;
 
 	private Long ownerId;
 
-	private String hashKeyArgs;
-	public SetIgnoreQueryStringConfigRequest() {
-		super("Cdn", "2014-11-11", "SetIgnoreQueryStringConfig");
+	private String configId;
+	public DeleteSpecificStagingConfigRequest() {
+		super("Cdn", "2018-05-10", "DeleteSpecificStagingConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,28 +49,6 @@ public class SetIgnoreQueryStringConfigRequest extends RpcAcsRequest<SetIgnoreQu
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getEnable() {
-		return this.enable;
-	}
-
-	public void setEnable(String enable) {
-		this.enable = enable;
-		if(enable != null){
-			putQueryParameter("Enable", enable);
-		}
-	}
-
-	public String getKeepOssArgs() {
-		return this.keepOssArgs;
-	}
-
-	public void setKeepOssArgs(String keepOssArgs) {
-		this.keepOssArgs = keepOssArgs;
-		if(keepOssArgs != null){
-			putQueryParameter("KeepOssArgs", keepOssArgs);
 		}
 	}
 
@@ -100,20 +74,20 @@ public class SetIgnoreQueryStringConfigRequest extends RpcAcsRequest<SetIgnoreQu
 		}
 	}
 
-	public String getHashKeyArgs() {
-		return this.hashKeyArgs;
+	public String getConfigId() {
+		return this.configId;
 	}
 
-	public void setHashKeyArgs(String hashKeyArgs) {
-		this.hashKeyArgs = hashKeyArgs;
-		if(hashKeyArgs != null){
-			putQueryParameter("HashKeyArgs", hashKeyArgs);
+	public void setConfigId(String configId) {
+		this.configId = configId;
+		if(configId != null){
+			putQueryParameter("ConfigId", configId);
 		}
 	}
 
 	@Override
-	public Class<SetIgnoreQueryStringConfigResponse> getResponseClass() {
-		return SetIgnoreQueryStringConfigResponse.class;
+	public Class<DeleteSpecificStagingConfigResponse> getResponseClass() {
+		return DeleteSpecificStagingConfigResponse.class;
 	}
 
 }

@@ -25,17 +25,17 @@ import com.aliyuncs.cdn.Endpoint;
 public class ResumeLiveStreamRequest extends RpcAcsRequest<ResumeLiveStreamResponse> {
 	   
 
-	private String liveStreamType;
-
-	private String domainName;
-
-	private Long ownerId;
-
 	private String appName;
 
 	private String securityToken;
 
 	private String streamName;
+
+	private String liveStreamType;
+
+	private String domainName;
+
+	private Long ownerId;
 	public ResumeLiveStreamRequest() {
 		super("Cdn", "2014-11-11", "ResumeLiveStream");
 		setMethod(MethodType.POST);
@@ -43,39 +43,6 @@ public class ResumeLiveStreamRequest extends RpcAcsRequest<ResumeLiveStreamRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getLiveStreamType() {
-		return this.liveStreamType;
-	}
-
-	public void setLiveStreamType(String liveStreamType) {
-		this.liveStreamType = liveStreamType;
-		if(liveStreamType != null){
-			putQueryParameter("LiveStreamType", liveStreamType);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
 	}
 
 	public String getAppName() {
@@ -108,6 +75,39 @@ public class ResumeLiveStreamRequest extends RpcAcsRequest<ResumeLiveStreamRespo
 		this.streamName = streamName;
 		if(streamName != null){
 			putQueryParameter("StreamName", streamName);
+		}
+	}
+
+	public String getLiveStreamType() {
+		return this.liveStreamType;
+	}
+
+	public void setLiveStreamType(String liveStreamType) {
+		this.liveStreamType = liveStreamType;
+		if(liveStreamType != null){
+			putQueryParameter("LiveStreamType", liveStreamType);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

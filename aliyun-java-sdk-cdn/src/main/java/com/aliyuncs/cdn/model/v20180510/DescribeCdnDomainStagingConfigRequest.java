@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20141111;
+package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,22 +22,16 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetIgnoreQueryStringConfigRequest extends RpcAcsRequest<SetIgnoreQueryStringConfigResponse> {
+public class DescribeCdnDomainStagingConfigRequest extends RpcAcsRequest<DescribeCdnDomainStagingConfigResponse> {
 	   
 
-	private String securityToken;
-
-	private String enable;
-
-	private String keepOssArgs;
+	private String functionNames;
 
 	private String domainName;
 
 	private Long ownerId;
-
-	private String hashKeyArgs;
-	public SetIgnoreQueryStringConfigRequest() {
-		super("Cdn", "2014-11-11", "SetIgnoreQueryStringConfig");
+	public DescribeCdnDomainStagingConfigRequest() {
+		super("Cdn", "2018-05-10", "DescribeCdnDomainStagingConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,36 +39,14 @@ public class SetIgnoreQueryStringConfigRequest extends RpcAcsRequest<SetIgnoreQu
 		} catch (Exception e) {}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getFunctionNames() {
+		return this.functionNames;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getEnable() {
-		return this.enable;
-	}
-
-	public void setEnable(String enable) {
-		this.enable = enable;
-		if(enable != null){
-			putQueryParameter("Enable", enable);
-		}
-	}
-
-	public String getKeepOssArgs() {
-		return this.keepOssArgs;
-	}
-
-	public void setKeepOssArgs(String keepOssArgs) {
-		this.keepOssArgs = keepOssArgs;
-		if(keepOssArgs != null){
-			putQueryParameter("KeepOssArgs", keepOssArgs);
+	public void setFunctionNames(String functionNames) {
+		this.functionNames = functionNames;
+		if(functionNames != null){
+			putQueryParameter("FunctionNames", functionNames);
 		}
 	}
 
@@ -100,20 +72,9 @@ public class SetIgnoreQueryStringConfigRequest extends RpcAcsRequest<SetIgnoreQu
 		}
 	}
 
-	public String getHashKeyArgs() {
-		return this.hashKeyArgs;
-	}
-
-	public void setHashKeyArgs(String hashKeyArgs) {
-		this.hashKeyArgs = hashKeyArgs;
-		if(hashKeyArgs != null){
-			putQueryParameter("HashKeyArgs", hashKeyArgs);
-		}
-	}
-
 	@Override
-	public Class<SetIgnoreQueryStringConfigResponse> getResponseClass() {
-		return SetIgnoreQueryStringConfigResponse.class;
+	public Class<DescribeCdnDomainStagingConfigResponse> getResponseClass() {
+		return DescribeCdnDomainStagingConfigResponse.class;
 	}
 
 }

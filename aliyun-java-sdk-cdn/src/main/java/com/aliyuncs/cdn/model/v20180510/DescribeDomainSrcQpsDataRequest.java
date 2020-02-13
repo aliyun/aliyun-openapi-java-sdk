@@ -22,19 +22,36 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDomainCnameRequest extends RpcAcsRequest<DescribeDomainCnameResponse> {
+public class DescribeDomainSrcQpsDataRequest extends RpcAcsRequest<DescribeDomainSrcQpsDataResponse> {
 	   
+
+	private String startTime;
 
 	private String domainName;
 
+	private String endTime;
+
 	private Long ownerId;
-	public DescribeDomainCnameRequest() {
-		super("Cdn", "2018-05-10", "DescribeDomainCname");
-		setMethod(MethodType.GET);
+
+	private String interval;
+	public DescribeDomainSrcQpsDataRequest() {
+		super("Cdn", "2018-05-10", "DescribeDomainSrcQpsData");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
 	}
 
 	public String getDomainName() {
@@ -45,6 +62,17 @@ public class DescribeDomainCnameRequest extends RpcAcsRequest<DescribeDomainCnam
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -59,9 +87,20 @@ public class DescribeDomainCnameRequest extends RpcAcsRequest<DescribeDomainCnam
 		}
 	}
 
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
+		}
+	}
+
 	@Override
-	public Class<DescribeDomainCnameResponse> getResponseClass() {
-		return DescribeDomainCnameResponse.class;
+	public Class<DescribeDomainSrcQpsDataResponse> getResponseClass() {
+		return DescribeDomainSrcQpsDataResponse.class;
 	}
 
 }

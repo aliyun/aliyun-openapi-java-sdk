@@ -12,18 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.transform.v20141111;
+package com.aliyuncs.cdn.transform.v20180510;
 
-import com.aliyuncs.cdn.model.v20141111.SetDomainGreenManagerConfigResponse;
+import com.aliyuncs.cdn.model.v20180510.DeleteSpecificStagingConfigResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SetDomainGreenManagerConfigResponseUnmarshaller {
+public class DeleteSpecificStagingConfigResponseUnmarshaller {
 
-	public static SetDomainGreenManagerConfigResponse unmarshall(SetDomainGreenManagerConfigResponse setDomainGreenManagerConfigResponse, UnmarshallerContext _ctx) {
+	public static DeleteSpecificStagingConfigResponse unmarshall(DeleteSpecificStagingConfigResponse deleteSpecificStagingConfigResponse, UnmarshallerContext _ctx) {
 		
-		setDomainGreenManagerConfigResponse.setRequestId(_ctx.stringValue("SetDomainGreenManagerConfigResponse.RequestId"));
+		deleteSpecificStagingConfigResponse.setRequestId(_ctx.stringValue("DeleteSpecificStagingConfigResponse.RequestId"));
 	 
-	 	return setDomainGreenManagerConfigResponse;
+	 	return deleteSpecificStagingConfigResponse;
 	}
 }

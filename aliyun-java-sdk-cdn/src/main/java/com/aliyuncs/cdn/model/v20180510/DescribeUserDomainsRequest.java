@@ -42,13 +42,9 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 
 	private List<Tag> tags;
 
-	private String funcFilter;
-
 	private String domainName;
 
 	private Long ownerId;
-
-	private String funcId;
 
 	private String domainStatus;
 
@@ -155,17 +151,6 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 		}	
 	}
 
-	public String getFuncFilter() {
-		return this.funcFilter;
-	}
-
-	public void setFuncFilter(String funcFilter) {
-		this.funcFilter = funcFilter;
-		if(funcFilter != null){
-			putQueryParameter("FuncFilter", funcFilter);
-		}
-	}
-
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -185,17 +170,6 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getFuncId() {
-		return this.funcId;
-	}
-
-	public void setFuncId(String funcId) {
-		this.funcId = funcId;
-		if(funcId != null){
-			putQueryParameter("FuncId", funcId);
 		}
 	}
 

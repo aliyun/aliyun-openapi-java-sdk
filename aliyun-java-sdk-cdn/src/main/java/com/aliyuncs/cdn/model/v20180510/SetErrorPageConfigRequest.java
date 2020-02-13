@@ -27,13 +27,13 @@ public class SetErrorPageConfigRequest extends RpcAcsRequest<SetErrorPageConfigR
 
 	private String pageType;
 
+	private String securityToken;
+
 	private String domainName;
 
 	private String customPageUrl;
 
 	private Long ownerId;
-
-	private String securityToken;
 	public SetErrorPageConfigRequest() {
 		super("Cdn", "2018-05-10", "SetErrorPageConfig");
 		setMethod(MethodType.POST);
@@ -51,6 +51,17 @@ public class SetErrorPageConfigRequest extends RpcAcsRequest<SetErrorPageConfigR
 		this.pageType = pageType;
 		if(pageType != null){
 			putQueryParameter("PageType", pageType);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -84,17 +95,6 @@ public class SetErrorPageConfigRequest extends RpcAcsRequest<SetErrorPageConfigR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

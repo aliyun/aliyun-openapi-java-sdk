@@ -41,10 +41,8 @@ public class DescribeCdnDomainDetailResponseUnmarshaller {
 		getDomainDetailModel.setDomainName(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.DomainName"));
 		getDomainDetailModel.setDescription(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Description"));
 		getDomainDetailModel.setServerCertificateStatus(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.ServerCertificateStatus"));
-		getDomainDetailModel.setServerCertificate(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.ServerCertificate"));
 		getDomainDetailModel.setRegion(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Region"));
 		getDomainDetailModel.setScope(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Scope"));
-		getDomainDetailModel.setCertificateName(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.CertificateName"));
 		getDomainDetailModel.setResourceGroupId(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.ResourceGroupId"));
 
 		List<String> sources = new ArrayList<String>();

@@ -69,13 +69,9 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 
 		private String serverCertificateStatus;
 
-		private String serverCertificate;
-
 		private String region;
 
 		private String scope;
-
-		private String certificateName;
 
 		private String resourceGroupId;
 
@@ -171,14 +167,6 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 			this.serverCertificateStatus = serverCertificateStatus;
 		}
 
-		public String getServerCertificate() {
-			return this.serverCertificate;
-		}
-
-		public void setServerCertificate(String serverCertificate) {
-			this.serverCertificate = serverCertificate;
-		}
-
 		public String getRegion() {
 			return this.region;
 		}
@@ -193,14 +181,6 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 
 		public void setScope(String scope) {
 			this.scope = scope;
-		}
-
-		public String getCertificateName() {
-			return this.certificateName;
-		}
-
-		public void setCertificateName(String certificateName) {
-			this.certificateName = certificateName;
 		}
 
 		public String getResourceGroupId() {

@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20141111;
+package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,27 +22,38 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetIgnoreQueryStringConfigRequest extends RpcAcsRequest<SetIgnoreQueryStringConfigResponse> {
+public class DescribeConfigOfVersionRequest extends RpcAcsRequest<DescribeConfigOfVersionResponse> {
 	   
+
+	private String versionId;
 
 	private String securityToken;
 
-	private String enable;
+	private String functionName;
 
-	private String keepOssArgs;
-
-	private String domainName;
+	private Long groupId;
 
 	private Long ownerId;
 
-	private String hashKeyArgs;
-	public SetIgnoreQueryStringConfigRequest() {
-		super("Cdn", "2014-11-11", "SetIgnoreQueryStringConfig");
+	private Integer functionId;
+	public DescribeConfigOfVersionRequest() {
+		super("Cdn", "2018-05-10", "DescribeConfigOfVersion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getVersionId() {
+		return this.versionId;
+	}
+
+	public void setVersionId(String versionId) {
+		this.versionId = versionId;
+		if(versionId != null){
+			putQueryParameter("VersionId", versionId);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -56,36 +67,25 @@ public class SetIgnoreQueryStringConfigRequest extends RpcAcsRequest<SetIgnoreQu
 		}
 	}
 
-	public String getEnable() {
-		return this.enable;
+	public String getFunctionName() {
+		return this.functionName;
 	}
 
-	public void setEnable(String enable) {
-		this.enable = enable;
-		if(enable != null){
-			putQueryParameter("Enable", enable);
+	public void setFunctionName(String functionName) {
+		this.functionName = functionName;
+		if(functionName != null){
+			putQueryParameter("FunctionName", functionName);
 		}
 	}
 
-	public String getKeepOssArgs() {
-		return this.keepOssArgs;
+	public Long getGroupId() {
+		return this.groupId;
 	}
 
-	public void setKeepOssArgs(String keepOssArgs) {
-		this.keepOssArgs = keepOssArgs;
-		if(keepOssArgs != null){
-			putQueryParameter("KeepOssArgs", keepOssArgs);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setGroupId(Long groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId.toString());
 		}
 	}
 
@@ -100,20 +100,20 @@ public class SetIgnoreQueryStringConfigRequest extends RpcAcsRequest<SetIgnoreQu
 		}
 	}
 
-	public String getHashKeyArgs() {
-		return this.hashKeyArgs;
+	public Integer getFunctionId() {
+		return this.functionId;
 	}
 
-	public void setHashKeyArgs(String hashKeyArgs) {
-		this.hashKeyArgs = hashKeyArgs;
-		if(hashKeyArgs != null){
-			putQueryParameter("HashKeyArgs", hashKeyArgs);
+	public void setFunctionId(Integer functionId) {
+		this.functionId = functionId;
+		if(functionId != null){
+			putQueryParameter("FunctionId", functionId.toString());
 		}
 	}
 
 	@Override
-	public Class<SetIgnoreQueryStringConfigResponse> getResponseClass() {
-		return SetIgnoreQueryStringConfigResponse.class;
+	public Class<DescribeConfigOfVersionResponse> getResponseClass() {
+		return DescribeConfigOfVersionResponse.class;
 	}
 
 }

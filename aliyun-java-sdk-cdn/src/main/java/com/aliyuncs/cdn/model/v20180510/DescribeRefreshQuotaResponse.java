@@ -42,6 +42,10 @@ public class DescribeRefreshQuotaResponse extends AcsResponse {
 
 	private String blockRemain;
 
+	private String regexQuota;
+
+	private String regexRemain;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -112,6 +116,22 @@ public class DescribeRefreshQuotaResponse extends AcsResponse {
 
 	public void setBlockRemain(String blockRemain) {
 		this.blockRemain = blockRemain;
+	}
+
+	public String getRegexQuota() {
+		return this.regexQuota;
+	}
+
+	public void setRegexQuota(String regexQuota) {
+		this.regexQuota = regexQuota;
+	}
+
+	public String getRegexRemain() {
+		return this.regexRemain;
+	}
+
+	public void setRegexRemain(String regexRemain) {
+		this.regexRemain = regexRemain;
 	}
 
 	@Override

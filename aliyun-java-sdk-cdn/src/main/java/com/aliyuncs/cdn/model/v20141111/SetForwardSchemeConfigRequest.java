@@ -25,17 +25,17 @@ import com.aliyuncs.cdn.Endpoint;
 public class SetForwardSchemeConfigRequest extends RpcAcsRequest<SetForwardSchemeConfigResponse> {
 	   
 
-	private String schemeOrigin;
-
 	private String schemeOriginPort;
-
-	private String domainName;
-
-	private Long ownerId;
 
 	private String securityToken;
 
 	private String enable;
+
+	private String schemeOrigin;
+
+	private String domainName;
+
+	private Long ownerId;
 	public SetForwardSchemeConfigRequest() {
 		super("Cdn", "2014-11-11", "SetForwardSchemeConfig");
 		setMethod(MethodType.POST);
@@ -43,17 +43,6 @@ public class SetForwardSchemeConfigRequest extends RpcAcsRequest<SetForwardSchem
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSchemeOrigin() {
-		return this.schemeOrigin;
-	}
-
-	public void setSchemeOrigin(String schemeOrigin) {
-		this.schemeOrigin = schemeOrigin;
-		if(schemeOrigin != null){
-			putQueryParameter("SchemeOrigin", schemeOrigin);
-		}
 	}
 
 	public String getSchemeOriginPort() {
@@ -64,28 +53,6 @@ public class SetForwardSchemeConfigRequest extends RpcAcsRequest<SetForwardSchem
 		this.schemeOriginPort = schemeOriginPort;
 		if(schemeOriginPort != null){
 			putQueryParameter("SchemeOriginPort", schemeOriginPort);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -108,6 +75,39 @@ public class SetForwardSchemeConfigRequest extends RpcAcsRequest<SetForwardSchem
 		this.enable = enable;
 		if(enable != null){
 			putQueryParameter("Enable", enable);
+		}
+	}
+
+	public String getSchemeOrigin() {
+		return this.schemeOrigin;
+	}
+
+	public void setSchemeOrigin(String schemeOrigin) {
+		this.schemeOrigin = schemeOrigin;
+		if(schemeOrigin != null){
+			putQueryParameter("SchemeOrigin", schemeOrigin);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

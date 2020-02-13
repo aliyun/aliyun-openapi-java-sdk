@@ -37,6 +37,8 @@ public class DescribeDomainRealTimeDetailDataRequest extends RpcAcsRequest<Descr
 
 	private String endTime;
 
+	private String mergeLocIsp;
+
 	private Long ownerId;
 
 	private String field;
@@ -112,6 +114,17 @@ public class DescribeDomainRealTimeDetailDataRequest extends RpcAcsRequest<Descr
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getMergeLocIsp() {
+		return this.mergeLocIsp;
+	}
+
+	public void setMergeLocIsp(String mergeLocIsp) {
+		this.mergeLocIsp = mergeLocIsp;
+		if(mergeLocIsp != null){
+			putQueryParameter("MergeLocIsp", mergeLocIsp);
 		}
 	}
 

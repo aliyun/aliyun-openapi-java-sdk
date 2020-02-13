@@ -25,19 +25,19 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeLiveStreamRecordContentRequest extends RpcAcsRequest<DescribeLiveStreamRecordContentResponse> {
 	   
 
-	private String domainName;
-
-	private String endTime;
-
 	private String startTime;
-
-	private Long ownerId;
 
 	private String appName;
 
 	private String securityToken;
 
 	private String streamName;
+
+	private String domainName;
+
+	private String endTime;
+
+	private Long ownerId;
 	public DescribeLiveStreamRecordContentRequest() {
 		super("Cdn", "2014-11-11", "DescribeLiveStreamRecordContent");
 		setMethod(MethodType.POST);
@@ -45,28 +45,6 @@ public class DescribeLiveStreamRecordContentRequest extends RpcAcsRequest<Descri
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
 	}
 
 	public String getStartTime() {
@@ -77,17 +55,6 @@ public class DescribeLiveStreamRecordContentRequest extends RpcAcsRequest<Descri
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -121,6 +88,39 @@ public class DescribeLiveStreamRecordContentRequest extends RpcAcsRequest<Descri
 		this.streamName = streamName;
 		if(streamName != null){
 			putQueryParameter("StreamName", streamName);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

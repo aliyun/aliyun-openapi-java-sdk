@@ -25,17 +25,17 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeLiveStreamsControlHistoryRequest extends RpcAcsRequest<DescribeLiveStreamsControlHistoryResponse> {
 	   
 
-	private String domainName;
-
-	private String endTime;
-
 	private String startTime;
-
-	private Long ownerId;
 
 	private String appName;
 
 	private String securityToken;
+
+	private String domainName;
+
+	private String endTime;
+
+	private Long ownerId;
 	public DescribeLiveStreamsControlHistoryRequest() {
 		super("Cdn", "2014-11-11", "DescribeLiveStreamsControlHistory");
 		setMethod(MethodType.POST);
@@ -43,6 +43,39 @@ public class DescribeLiveStreamsControlHistoryRequest extends RpcAcsRequest<Desc
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -67,17 +100,6 @@ public class DescribeLiveStreamsControlHistoryRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -86,28 +108,6 @@ public class DescribeLiveStreamsControlHistoryRequest extends RpcAcsRequest<Desc
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

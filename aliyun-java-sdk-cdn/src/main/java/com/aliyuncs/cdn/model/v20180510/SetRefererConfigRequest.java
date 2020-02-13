@@ -27,15 +27,15 @@ public class SetRefererConfigRequest extends RpcAcsRequest<SetRefererConfigRespo
 
 	private String referList;
 
-	private String domainName;
-
-	private Long ownerId;
-
 	private String securityToken;
 
 	private String referType;
 
 	private String disableAst;
+
+	private String domainName;
+
+	private Long ownerId;
 
 	private String allowEmpty;
 	public SetRefererConfigRequest() {
@@ -55,28 +55,6 @@ public class SetRefererConfigRequest extends RpcAcsRequest<SetRefererConfigRespo
 		this.referList = referList;
 		if(referList != null){
 			putQueryParameter("ReferList", referList);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -110,6 +88,28 @@ public class SetRefererConfigRequest extends RpcAcsRequest<SetRefererConfigRespo
 		this.disableAst = disableAst;
 		if(disableAst != null){
 			putQueryParameter("DisableAst", disableAst);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20141111;
+package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,32 +22,17 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetDomainGreenManagerConfigRequest extends RpcAcsRequest<SetDomainGreenManagerConfigResponse> {
+public class DescribeStagingIpRequest extends RpcAcsRequest<DescribeStagingIpResponse> {
 	   
 
-	private String domainName;
-
 	private Long ownerId;
-
-	private String enable;
-	public SetDomainGreenManagerConfigRequest() {
-		super("Cdn", "2014-11-11", "SetDomainGreenManagerConfig");
-		setMethod(MethodType.GET);
+	public DescribeStagingIpRequest() {
+		super("Cdn", "2018-05-10", "DescribeStagingIp");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
 	}
 
 	public Long getOwnerId() {
@@ -61,20 +46,9 @@ public class SetDomainGreenManagerConfigRequest extends RpcAcsRequest<SetDomainG
 		}
 	}
 
-	public String getEnable() {
-		return this.enable;
-	}
-
-	public void setEnable(String enable) {
-		this.enable = enable;
-		if(enable != null){
-			putQueryParameter("Enable", enable);
-		}
-	}
-
 	@Override
-	public Class<SetDomainGreenManagerConfigResponse> getResponseClass() {
-		return SetDomainGreenManagerConfigResponse.class;
+	public Class<DescribeStagingIpResponse> getResponseClass() {
+		return DescribeStagingIpResponse.class;
 	}
 
 }

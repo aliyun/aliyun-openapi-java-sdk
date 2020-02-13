@@ -55,6 +55,8 @@ public class DescribeCdnUserResourcePackageResponse extends AcsResponse {
 
 		private String displayName;
 
+		private String templateName;
+
 		private String instanceId;
 
 		private String status;
@@ -93,6 +95,14 @@ public class DescribeCdnUserResourcePackageResponse extends AcsResponse {
 
 		public void setDisplayName(String displayName) {
 			this.displayName = displayName;
+		}
+
+		public String getTemplateName() {
+			return this.templateName;
+		}
+
+		public void setTemplateName(String templateName) {
+			this.templateName = templateName;
 		}
 
 		public String getInstanceId() {

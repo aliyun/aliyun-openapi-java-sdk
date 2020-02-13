@@ -25,17 +25,17 @@ import com.aliyuncs.cdn.Endpoint;
 public class SetReqHeaderConfigRequest extends RpcAcsRequest<SetReqHeaderConfigResponse> {
 	   
 
-	private String domainName;
-
-	private Long ownerId;
-
 	private String securityToken;
-
-	private Long configId;
 
 	private String value;
 
 	private String key;
+
+	private String domainName;
+
+	private Long ownerId;
+
+	private Long configId;
 	public SetReqHeaderConfigRequest() {
 		super("Cdn", "2018-05-10", "SetReqHeaderConfig");
 		setMethod(MethodType.POST);
@@ -43,6 +43,39 @@ public class SetReqHeaderConfigRequest extends RpcAcsRequest<SetReqHeaderConfigR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getValue() {
+		return this.value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+		if(value != null){
+			putQueryParameter("Value", value);
+		}
+	}
+
+	public String getKey() {
+		return this.key;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
+		if(key != null){
+			putQueryParameter("Key", key);
+		}
 	}
 
 	public String getDomainName() {
@@ -67,17 +100,6 @@ public class SetReqHeaderConfigRequest extends RpcAcsRequest<SetReqHeaderConfigR
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
 	public Long getConfigId() {
 		return this.configId;
 	}
@@ -86,28 +108,6 @@ public class SetReqHeaderConfigRequest extends RpcAcsRequest<SetReqHeaderConfigR
 		this.configId = configId;
 		if(configId != null){
 			putQueryParameter("ConfigId", configId.toString());
-		}
-	}
-
-	public String getValue() {
-		return this.value;
-	}
-
-	public void setValue(String value) {
-		this.value = value;
-		if(value != null){
-			putQueryParameter("Value", value);
-		}
-	}
-
-	public String getKey() {
-		return this.key;
-	}
-
-	public void setKey(String key) {
-		this.key = key;
-		if(key != null){
-			putQueryParameter("Key", key);
 		}
 	}
 
