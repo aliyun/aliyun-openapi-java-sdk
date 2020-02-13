@@ -1,6 +1,9 @@
 2020-02-13 Version: 3.2.0
 - Add Staging apis.
 
+2020-02-13 Version: 3.2.0
+- Add Staging apis.
+
 2019-11-15 Version: 3.1.0
 - Fixed bugs.
 
