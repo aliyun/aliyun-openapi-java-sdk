@@ -79,6 +79,8 @@ public class GetDataCorrectOrderDetailResponse extends AcsResponse {
 
 		private List<TaskCheckDO> preCheckDetail;
 
+		private List<Database> databaseList;
+
 		private OrderDetail orderDetail;
 
 		public List<TaskCheckDO> getPreCheckDetail() {
@@ -87,6 +89,14 @@ public class GetDataCorrectOrderDetailResponse extends AcsResponse {
 
 		public void setPreCheckDetail(List<TaskCheckDO> preCheckDetail) {
 			this.preCheckDetail = preCheckDetail;
+		}
+
+		public List<Database> getDatabaseList() {
+			return this.databaseList;
+		}
+
+		public void setDatabaseList(List<Database> databaseList) {
+			this.databaseList = databaseList;
 		}
 
 		public OrderDetail getOrderDetail() {
@@ -127,6 +137,59 @@ public class GetDataCorrectOrderDetailResponse extends AcsResponse {
 
 			public void setUserTip(String userTip) {
 				this.userTip = userTip;
+			}
+		}
+
+		public static class Database {
+
+			private String searchName;
+
+			private String envType;
+
+			private String dbType;
+
+			private Integer dbId;
+
+			private Boolean logic;
+
+			public String getSearchName() {
+				return this.searchName;
+			}
+
+			public void setSearchName(String searchName) {
+				this.searchName = searchName;
+			}
+
+			public String getEnvType() {
+				return this.envType;
+			}
+
+			public void setEnvType(String envType) {
+				this.envType = envType;
+			}
+
+			public String getDbType() {
+				return this.dbType;
+			}
+
+			public void setDbType(String dbType) {
+				this.dbType = dbType;
+			}
+
+			public Integer getDbId() {
+				return this.dbId;
+			}
+
+			public void setDbId(Integer dbId) {
+				this.dbId = dbId;
+			}
+
+			public Boolean getLogic() {
+				return this.logic;
+			}
+
+			public void setLogic(Boolean logic) {
+				this.logic = logic;
 			}
 		}
 

@@ -1,3 +1,6 @@
+2020-02-13 Version: 1.5.2
+- Fix GetDataCorrectOrderDetail API return empty database information.
+
 2020-01-15 Version: 1.5.1
 - Fix SignatureDoesNotMatch issue of GetOrderBaseInfo API.
 

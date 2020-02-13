@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.dms_enterprise.model.v20181101.GetDataCorrectOrderDetailResponse;
 import com.aliyuncs.dms_enterprise.model.v20181101.GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail;
+import com.aliyuncs.dms_enterprise.model.v20181101.GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.Database;
 import com.aliyuncs.dms_enterprise.model.v20181101.GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail;
 import com.aliyuncs.dms_enterprise.model.v20181101.GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.TaskCheckDO;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -59,6 +60,19 @@ public class GetDataCorrectOrderDetailResponseUnmarshaller {
 			preCheckDetail.add(taskCheckDO);
 		}
 		dataCorrectOrderDetail.setPreCheckDetail(preCheckDetail);
+
+		List<Database> databaseList = new ArrayList<Database>();
+		for (int i = 0; i < _ctx.lengthValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList.Length"); i++) {
+			Database database = new Database();
+			database.setSearchName(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList["+ i +"].SearchName"));
+			database.setEnvType(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList["+ i +"].EnvType"));
+			database.setDbType(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList["+ i +"].DbType"));
+			database.setDbId(_ctx.integerValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList["+ i +"].DbId"));
+			database.setLogic(_ctx.booleanValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList["+ i +"].Logic"));
+
+			databaseList.add(database);
+		}
+		dataCorrectOrderDetail.setDatabaseList(databaseList);
 		getDataCorrectOrderDetailResponse.setDataCorrectOrderDetail(dataCorrectOrderDetail);
 	 
 	 	return getDataCorrectOrderDetailResponse;
