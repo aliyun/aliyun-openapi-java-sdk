@@ -117,6 +117,8 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		private Boolean serviceManaged;
 
+		private Integer queueNumber;
+
 		private List<PrivateIpSet> privateIpSets;
 
 		private List<Ipv6Set> ipv6Sets;
@@ -245,6 +247,14 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		public void setServiceManaged(Boolean serviceManaged) {
 			this.serviceManaged = serviceManaged;
+		}
+
+		public Integer getQueueNumber() {
+			return this.queueNumber;
+		}
+
+		public void setQueueNumber(Integer queueNumber) {
+			this.queueNumber = queueNumber;
 		}
 
 		public List<PrivateIpSet> getPrivateIpSets() {

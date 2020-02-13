@@ -26,6 +26,8 @@ import com.aliyuncs.ecs.Endpoint;
 public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<ModifyNetworkInterfaceAttributeResponse> {
 	   
 
+	private Integer queueNumber;
+
 	private Long resourceOwnerId;
 
 	private List<String> securityGroupIds;
@@ -48,6 +50,17 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getQueueNumber() {
+		return this.queueNumber;
+	}
+
+	public void setQueueNumber(Integer queueNumber) {
+		this.queueNumber = queueNumber;
+		if(queueNumber != null){
+			putQueryParameter("QueueNumber", queueNumber.toString());
+		}
 	}
 
 	public Long getResourceOwnerId() {
