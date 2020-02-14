@@ -32,7 +32,7 @@ public class DescribeSiteMonitorStatisticsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long data;
+	private String data;
 
 	public String getCode() {
 		return this.code;
@@ -66,11 +66,11 @@ public class DescribeSiteMonitorStatisticsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getData() {
+	public String getData() {
 		return this.data;
 	}
 
-	public void setData(Long data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 

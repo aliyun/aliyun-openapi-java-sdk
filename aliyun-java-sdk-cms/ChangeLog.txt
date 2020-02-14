@@ -1,3 +1,6 @@
+2020-02-14 Version: 7.0.9
+- Fix the field definition for the site monitoring option OptionJson.
+
 2020-01-16 Version: 7.0.8
 - Fix the result value of DeleteSiteMonitors.
 

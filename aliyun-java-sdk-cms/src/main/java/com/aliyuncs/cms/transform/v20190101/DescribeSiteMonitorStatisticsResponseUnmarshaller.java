@@ -26,7 +26,7 @@ public class DescribeSiteMonitorStatisticsResponseUnmarshaller {
 		describeSiteMonitorStatisticsResponse.setCode(_ctx.stringValue("DescribeSiteMonitorStatisticsResponse.Code"));
 		describeSiteMonitorStatisticsResponse.setMessage(_ctx.stringValue("DescribeSiteMonitorStatisticsResponse.Message"));
 		describeSiteMonitorStatisticsResponse.setSuccess(_ctx.stringValue("DescribeSiteMonitorStatisticsResponse.Success"));
-		describeSiteMonitorStatisticsResponse.setData(_ctx.longValue("DescribeSiteMonitorStatisticsResponse.Data"));
+		describeSiteMonitorStatisticsResponse.setData(_ctx.stringValue("DescribeSiteMonitorStatisticsResponse.Data"));
 	 
 	 	return describeSiteMonitorStatisticsResponse;
 	}
