@@ -16,35 +16,29 @@ package com.aliyuncs.fnf.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.fnf.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ReportTaskFailedRequest extends RpcAcsRequest<ReportTaskFailedResponse> {
-	
-	public ReportTaskFailedRequest() {
-		super("fnf", "2019-03-15", "ReportTaskFailed", "fnf");
-		setMethod(MethodType.POST);
-	}
-
-	private String requestId;
+	   
 
 	private String cause;
 
-	private String taskToken;
-
 	private String error;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
-		}
+	private String taskToken;
+	public ReportTaskFailedRequest() {
+		super("fnf", "2019-03-15", "ReportTaskFailed", "fnf");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getCause() {
@@ -58,17 +52,6 @@ public class ReportTaskFailedRequest extends RpcAcsRequest<ReportTaskFailedRespo
 		}
 	}
 
-	public String getTaskToken() {
-		return this.taskToken;
-	}
-
-	public void setTaskToken(String taskToken) {
-		this.taskToken = taskToken;
-		if(taskToken != null){
-			putQueryParameter("TaskToken", taskToken);
-		}
-	}
-
 	public String getError() {
 		return this.error;
 	}
@@ -77,6 +60,28 @@ public class ReportTaskFailedRequest extends RpcAcsRequest<ReportTaskFailedRespo
 		this.error = error;
 		if(error != null){
 			putBodyParameter("Error", error);
+		}
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+		if(requestId != null){
+			putQueryParameter("RequestId", requestId);
+		}
+	}
+
+	public String getTaskToken() {
+		return this.taskToken;
+	}
+
+	public void setTaskToken(String taskToken) {
+		this.taskToken = taskToken;
+		if(taskToken != null){
+			putQueryParameter("TaskToken", taskToken);
 		}
 	}
 

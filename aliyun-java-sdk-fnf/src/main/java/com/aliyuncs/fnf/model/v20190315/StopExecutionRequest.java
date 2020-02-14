@@ -16,27 +16,32 @@ package com.aliyuncs.fnf.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.fnf.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class StopExecutionRequest extends RpcAcsRequest<StopExecutionResponse> {
-	
-	public StopExecutionRequest() {
-		super("fnf", "2019-03-15", "StopExecution", "fnf");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String executionName;
 
-	private String requestId;
-
 	private String cause;
 
-	private String flowName;
-
 	private String error;
+
+	private String requestId;
+
+	private String flowName;
+	public StopExecutionRequest() {
+		super("fnf", "2019-03-15", "StopExecution", "fnf");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getExecutionName() {
 		return this.executionName;
@@ -46,17 +51,6 @@ public class StopExecutionRequest extends RpcAcsRequest<StopExecutionResponse> {
 		this.executionName = executionName;
 		if(executionName != null){
 			putBodyParameter("ExecutionName", executionName);
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
 		}
 	}
 
@@ -71,17 +65,6 @@ public class StopExecutionRequest extends RpcAcsRequest<StopExecutionResponse> {
 		}
 	}
 
-	public String getFlowName() {
-		return this.flowName;
-	}
-
-	public void setFlowName(String flowName) {
-		this.flowName = flowName;
-		if(flowName != null){
-			putBodyParameter("FlowName", flowName);
-		}
-	}
-
 	public String getError() {
 		return this.error;
 	}
@@ -90,6 +73,28 @@ public class StopExecutionRequest extends RpcAcsRequest<StopExecutionResponse> {
 		this.error = error;
 		if(error != null){
 			putBodyParameter("Error", error);
+		}
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+		if(requestId != null){
+			putQueryParameter("RequestId", requestId);
+		}
+	}
+
+	public String getFlowName() {
+		return this.flowName;
+	}
+
+	public void setFlowName(String flowName) {
+		this.flowName = flowName;
+		if(flowName != null){
+			putBodyParameter("FlowName", flowName);
 		}
 	}
 

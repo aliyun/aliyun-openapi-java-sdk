@@ -15,22 +15,29 @@
 package com.aliyuncs.fnf.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.fnf.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeExecutionRequest extends RpcAcsRequest<DescribeExecutionResponse> {
-	
-	public DescribeExecutionRequest() {
-		super("fnf", "2019-03-15", "DescribeExecution", "fnf");
-	}
+	   
 
 	private String executionName;
 
 	private String requestId;
 
 	private String flowName;
+	public DescribeExecutionRequest() {
+		super("fnf", "2019-03-15", "DescribeExecution", "fnf");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getExecutionName() {
 		return this.executionName;

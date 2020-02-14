@@ -16,23 +16,28 @@ package com.aliyuncs.fnf.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.fnf.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ReportTaskSucceededRequest extends RpcAcsRequest<ReportTaskSucceededResponse> {
-	
-	public ReportTaskSucceededRequest() {
-		super("fnf", "2019-03-15", "ReportTaskSucceeded", "fnf");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String output;
 
 	private String requestId;
 
 	private String taskToken;
+	public ReportTaskSucceededRequest() {
+		super("fnf", "2019-03-15", "ReportTaskSucceeded", "fnf");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getOutput() {
 		return this.output;

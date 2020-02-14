@@ -15,16 +15,15 @@
 package com.aliyuncs.fnf.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.fnf.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse> {
-	
-	public ListExecutionsRequest() {
-		super("fnf", "2019-03-15", "ListExecutions", "fnf");
-	}
+	   
 
 	private String nextToken;
 
@@ -33,6 +32,16 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 	private Integer limit;
 
 	private String flowName;
+
+	private String status;
+	public ListExecutionsRequest() {
+		super("fnf", "2019-03-15", "ListExecutions", "fnf");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -75,6 +84,17 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 		this.flowName = flowName;
 		if(flowName != null){
 			putQueryParameter("FlowName", flowName);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

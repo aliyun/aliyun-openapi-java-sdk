@@ -16,17 +16,18 @@ package com.aliyuncs.fnf.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.fnf.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateFlowRequest extends RpcAcsRequest<UpdateFlowResponse> {
-	
-	public UpdateFlowRequest() {
-		super("fnf", "2019-03-15", "UpdateFlow", "fnf");
-		setMethod(MethodType.POST);
-	}
+	   
+
+	private String description;
+
+	private String type;
 
 	private String requestId;
 
@@ -34,11 +35,37 @@ public class UpdateFlowRequest extends RpcAcsRequest<UpdateFlowResponse> {
 
 	private String name;
 
-	private String description;
-
 	private String definition;
+	public UpdateFlowRequest() {
+		super("fnf", "2019-03-15", "UpdateFlow", "fnf");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private String type;
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putBodyParameter("Description", description);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putBodyParameter("Type", type);
+		}
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -73,17 +100,6 @@ public class UpdateFlowRequest extends RpcAcsRequest<UpdateFlowResponse> {
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putBodyParameter("Description", description);
-		}
-	}
-
 	public String getDefinition() {
 		return this.definition;
 	}
@@ -92,17 +108,6 @@ public class UpdateFlowRequest extends RpcAcsRequest<UpdateFlowResponse> {
 		this.definition = definition;
 		if(definition != null){
 			putBodyParameter("Definition", definition);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type);
 		}
 	}
 

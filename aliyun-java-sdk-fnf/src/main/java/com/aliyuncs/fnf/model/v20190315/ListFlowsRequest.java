@@ -15,22 +15,29 @@
 package com.aliyuncs.fnf.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.fnf.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListFlowsRequest extends RpcAcsRequest<ListFlowsResponse> {
-	
-	public ListFlowsRequest() {
-		super("fnf", "2019-03-15", "ListFlows", "fnf");
-	}
+	   
 
 	private String nextToken;
 
 	private String requestId;
 
 	private Integer limit;
+	public ListFlowsRequest() {
+		super("fnf", "2019-03-15", "ListFlows", "fnf");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getNextToken() {
 		return this.nextToken;
