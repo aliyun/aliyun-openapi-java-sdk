@@ -1,3 +1,6 @@
+2020-02-14 Version: 1.1.3
+- Support map rail and shelf for lianhuapoc.
+
 2019-11-18 Version: 1.1.2
 - Support limit the number of stores and items when adding.
 

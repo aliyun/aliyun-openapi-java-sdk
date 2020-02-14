@@ -22,12 +22,14 @@ import com.aliyuncs.cloudesl.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetUserRequest extends RpcAcsRequest<GetUserResponse> {
+public class UnmapPlanogramRailRequest extends RpcAcsRequest<UnmapPlanogramRailResponse> {
 	   
 
-	private String userId;
-	public GetUserRequest() {
-		super("cloudesl", "2019-08-01", "GetUser", "cloudesl");
+	private String storeId;
+
+	private String railCode;
+	public UnmapPlanogramRailRequest() {
+		super("cloudesl", "2019-08-01", "UnmapPlanogramRail", "cloudesl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class GetUserRequest extends RpcAcsRequest<GetUserResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getStoreId() {
+		return this.storeId;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
+	public void setStoreId(String storeId) {
+		this.storeId = storeId;
+		if(storeId != null){
+			putBodyParameter("StoreId", storeId);
+		}
+	}
+
+	public String getRailCode() {
+		return this.railCode;
+	}
+
+	public void setRailCode(String railCode) {
+		this.railCode = railCode;
+		if(railCode != null){
+			putBodyParameter("RailCode", railCode);
 		}
 	}
 
 	@Override
-	public Class<GetUserResponse> getResponseClass() {
-		return GetUserResponse.class;
+	public Class<UnmapPlanogramRailResponse> getResponseClass() {
+		return UnmapPlanogramRailResponse.class;
 	}
 
 }

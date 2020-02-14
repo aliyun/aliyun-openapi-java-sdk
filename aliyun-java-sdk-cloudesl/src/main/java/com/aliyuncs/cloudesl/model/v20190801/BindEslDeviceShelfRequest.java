@@ -16,6 +16,7 @@ package com.aliyuncs.cloudesl.model.v20190801;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cloudesl.Endpoint;
 
 /**
  * @author auto create
@@ -30,8 +31,12 @@ public class BindEslDeviceShelfRequest extends RpcAcsRequest<BindEslDeviceShelfR
 
 	private String eslBarCode;
 	public BindEslDeviceShelfRequest() {
-		super("cloudesl", "2019-08-01", "BindEslDeviceShelf", "144001");
+		super("cloudesl", "2019-08-01", "BindEslDeviceShelf", "cloudesl");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getStoreId() {

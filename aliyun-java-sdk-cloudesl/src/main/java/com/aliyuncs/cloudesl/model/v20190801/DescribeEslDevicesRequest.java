@@ -16,6 +16,7 @@ package com.aliyuncs.cloudesl.model.v20190801;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cloudesl.Endpoint;
 
 /**
  * @author auto create
@@ -50,8 +51,12 @@ public class DescribeEslDevicesRequest extends RpcAcsRequest<DescribeEslDevicesR
 
 	private Boolean beBind;
 	public DescribeEslDevicesRequest() {
-		super("cloudesl", "2019-08-01", "DescribeEslDevices", "144001");
+		super("cloudesl", "2019-08-01", "DescribeEslDevices", "cloudesl");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getType() {

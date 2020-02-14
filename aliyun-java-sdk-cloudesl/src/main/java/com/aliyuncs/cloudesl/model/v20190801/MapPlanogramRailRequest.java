@@ -22,16 +22,18 @@ import com.aliyuncs.cloudesl.Endpoint;
  * @author auto create
  * @version 
  */
-public class UnbindEslDeviceRequest extends RpcAcsRequest<UnbindEslDeviceResponse> {
+public class MapPlanogramRailRequest extends RpcAcsRequest<MapPlanogramRailResponse> {
 	   
 
 	private String storeId;
 
-	private String eslBarCode;
+	private String layer;
 
-	private String itemBarCode;
-	public UnbindEslDeviceRequest() {
-		super("cloudesl", "2019-08-01", "UnbindEslDevice", "cloudesl");
+	private String shelf;
+
+	private String railCode;
+	public MapPlanogramRailRequest() {
+		super("cloudesl", "2019-08-01", "MapPlanogramRail", "cloudesl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,31 +52,42 @@ public class UnbindEslDeviceRequest extends RpcAcsRequest<UnbindEslDeviceRespons
 		}
 	}
 
-	public String getEslBarCode() {
-		return this.eslBarCode;
+	public String getLayer() {
+		return this.layer;
 	}
 
-	public void setEslBarCode(String eslBarCode) {
-		this.eslBarCode = eslBarCode;
-		if(eslBarCode != null){
-			putBodyParameter("EslBarCode", eslBarCode);
+	public void setLayer(String layer) {
+		this.layer = layer;
+		if(layer != null){
+			putBodyParameter("Layer", layer);
 		}
 	}
 
-	public String getItemBarCode() {
-		return this.itemBarCode;
+	public String getShelf() {
+		return this.shelf;
 	}
 
-	public void setItemBarCode(String itemBarCode) {
-		this.itemBarCode = itemBarCode;
-		if(itemBarCode != null){
-			putBodyParameter("ItemBarCode", itemBarCode);
+	public void setShelf(String shelf) {
+		this.shelf = shelf;
+		if(shelf != null){
+			putBodyParameter("Shelf", shelf);
+		}
+	}
+
+	public String getRailCode() {
+		return this.railCode;
+	}
+
+	public void setRailCode(String railCode) {
+		this.railCode = railCode;
+		if(railCode != null){
+			putBodyParameter("RailCode", railCode);
 		}
 	}
 
 	@Override
-	public Class<UnbindEslDeviceResponse> getResponseClass() {
-		return UnbindEslDeviceResponse.class;
+	public Class<MapPlanogramRailResponse> getResponseClass() {
+		return MapPlanogramRailResponse.class;
 	}
 
 }

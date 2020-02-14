@@ -22,42 +22,27 @@ import com.aliyuncs.cloudesl.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeStoresRequest extends RpcAcsRequest<DescribeStoresResponse> {
+public class DescribePlanogramRailsRequest extends RpcAcsRequest<DescribePlanogramRailsResponse> {
 	   
-
-	private String storeName;
 
 	private String storeId;
 
+	private String layer;
+
 	private Integer pageNumber;
 
-	private String fromDate;
+	private String shelf;
 
-	private String companyId;
-
-	private String toDate;
+	private String railCode;
 
 	private Integer pageSize;
-
-	private String brand;
-	public DescribeStoresRequest() {
-		super("cloudesl", "2019-08-01", "DescribeStores", "cloudesl");
+	public DescribePlanogramRailsRequest() {
+		super("cloudesl", "2019-08-01", "DescribePlanogramRails", "cloudesl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getStoreName() {
-		return this.storeName;
-	}
-
-	public void setStoreName(String storeName) {
-		this.storeName = storeName;
-		if(storeName != null){
-			putBodyParameter("StoreName", storeName);
-		}
 	}
 
 	public String getStoreId() {
@@ -68,6 +53,17 @@ public class DescribeStoresRequest extends RpcAcsRequest<DescribeStoresResponse>
 		this.storeId = storeId;
 		if(storeId != null){
 			putBodyParameter("StoreId", storeId);
+		}
+	}
+
+	public String getLayer() {
+		return this.layer;
+	}
+
+	public void setLayer(String layer) {
+		this.layer = layer;
+		if(layer != null){
+			putBodyParameter("Layer", layer);
 		}
 	}
 
@@ -82,36 +78,25 @@ public class DescribeStoresRequest extends RpcAcsRequest<DescribeStoresResponse>
 		}
 	}
 
-	public String getFromDate() {
-		return this.fromDate;
+	public String getShelf() {
+		return this.shelf;
 	}
 
-	public void setFromDate(String fromDate) {
-		this.fromDate = fromDate;
-		if(fromDate != null){
-			putBodyParameter("FromDate", fromDate);
+	public void setShelf(String shelf) {
+		this.shelf = shelf;
+		if(shelf != null){
+			putBodyParameter("Shelf", shelf);
 		}
 	}
 
-	public String getCompanyId() {
-		return this.companyId;
+	public String getRailCode() {
+		return this.railCode;
 	}
 
-	public void setCompanyId(String companyId) {
-		this.companyId = companyId;
-		if(companyId != null){
-			putBodyParameter("CompanyId", companyId);
-		}
-	}
-
-	public String getToDate() {
-		return this.toDate;
-	}
-
-	public void setToDate(String toDate) {
-		this.toDate = toDate;
-		if(toDate != null){
-			putBodyParameter("ToDate", toDate);
+	public void setRailCode(String railCode) {
+		this.railCode = railCode;
+		if(railCode != null){
+			putBodyParameter("RailCode", railCode);
 		}
 	}
 
@@ -126,20 +111,9 @@ public class DescribeStoresRequest extends RpcAcsRequest<DescribeStoresResponse>
 		}
 	}
 
-	public String getBrand() {
-		return this.brand;
-	}
-
-	public void setBrand(String brand) {
-		this.brand = brand;
-		if(brand != null){
-			putBodyParameter("Brand", brand);
-		}
-	}
-
 	@Override
-	public Class<DescribeStoresResponse> getResponseClass() {
-		return DescribeStoresResponse.class;
+	public Class<DescribePlanogramRailsResponse> getResponseClass() {
+		return DescribePlanogramRailsResponse.class;
 	}
 
 }

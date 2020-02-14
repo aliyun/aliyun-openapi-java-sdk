@@ -17,6 +17,7 @@ package com.aliyuncs.cloudesl.model.v20190801;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cloudesl.Endpoint;
 
 /**
  * @author auto create
@@ -29,8 +30,12 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 
 	private List<ItemInfo> itemInfos;
 	public BatchInsertItemsRequest() {
-		super("cloudesl", "2019-08-01", "BatchInsertItems", "144001");
+		super("cloudesl", "2019-08-01", "BatchInsertItems", "cloudesl");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getStoreId() {
