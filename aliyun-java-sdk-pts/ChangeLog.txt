@@ -1,3 +1,6 @@
+2020-02-14 Version: 2.0.2
+- Support ReplaceOssFile.
+
 2019-12-03 Version: 2.0.1
 - Support StartTesting.
 - Support StopTesting.

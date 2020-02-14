@@ -101,7 +101,7 @@ public class DescribeReportChainDetailResponse extends AcsResponse {
 
 		private Integer minRt;
 
-		private Integer totalRequest;
+		private Long totalRequest;
 
 		private Float qps2XX;
 
@@ -183,11 +183,11 @@ public class DescribeReportChainDetailResponse extends AcsResponse {
 			this.minRt = minRt;
 		}
 
-		public Integer getTotalRequest() {
+		public Long getTotalRequest() {
 			return this.totalRequest;
 		}
 
-		public void setTotalRequest(Integer totalRequest) {
+		public void setTotalRequest(Long totalRequest) {
 			this.totalRequest = totalRequest;
 		}
 

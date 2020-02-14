@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.pts.model.v20190810.DescribeSceneRunningStatusResponse;
 import com.aliyuncs.pts.model.v20190810.DescribeSceneRunningStatusResponse.ChainElement;
+import com.aliyuncs.pts.model.v20190810.DescribeSceneRunningStatusResponse.ChainMonitorData;
+import com.aliyuncs.pts.model.v20190810.DescribeSceneRunningStatusResponse.ChainMonitorData.QpsSummaryItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,9 +28,10 @@ public class DescribeSceneRunningStatusResponseUnmarshaller {
 
 	public static DescribeSceneRunningStatusResponse unmarshall(DescribeSceneRunningStatusResponse describeSceneRunningStatusResponse, UnmarshallerContext _ctx) {
 		
+		describeSceneRunningStatusResponse.setRequestId(_ctx.stringValue("DescribeSceneRunningStatusResponse.RequestId"));
 		describeSceneRunningStatusResponse.setTips(_ctx.stringValue("DescribeSceneRunningStatusResponse.Tips"));
-		describeSceneRunningStatusResponse.setTotalRequestCount(_ctx.integerValue("DescribeSceneRunningStatusResponse.TotalRequestCount"));
-		describeSceneRunningStatusResponse.setVum(_ctx.integerValue("DescribeSceneRunningStatusResponse.Vum"));
+		describeSceneRunningStatusResponse.setTotalRequestCount(_ctx.longValue("DescribeSceneRunningStatusResponse.TotalRequestCount"));
+		describeSceneRunningStatusResponse.setVum(_ctx.longValue("DescribeSceneRunningStatusResponse.Vum"));
 		describeSceneRunningStatusResponse.setRequestBps(_ctx.stringValue("DescribeSceneRunningStatusResponse.RequestBps"));
 		describeSceneRunningStatusResponse.setResponseBps(_ctx.stringValue("DescribeSceneRunningStatusResponse.ResponseBps"));
 		describeSceneRunningStatusResponse.setFailedRequestCount(_ctx.longValue("DescribeSceneRunningStatusResponse.FailedRequestCount"));
@@ -39,8 +42,8 @@ public class DescribeSceneRunningStatusResponseUnmarshaller {
 		describeSceneRunningStatusResponse.setTpsLimit(_ctx.integerValue("DescribeSceneRunningStatusResponse.TpsLimit"));
 		describeSceneRunningStatusResponse.setAliveAgents(_ctx.integerValue("DescribeSceneRunningStatusResponse.AliveAgents"));
 		describeSceneRunningStatusResponse.setTotalAgents(_ctx.integerValue("DescribeSceneRunningStatusResponse.TotalAgents"));
-		describeSceneRunningStatusResponse.setSeg90Rt(_ctx.integerValue("DescribeSceneRunningStatusResponse.Seg90Rt"));
-		describeSceneRunningStatusResponse.setAverageRt(_ctx.integerValue("DescribeSceneRunningStatusResponse.AverageRt"));
+		describeSceneRunningStatusResponse.setSeg90Rt(_ctx.longValue("DescribeSceneRunningStatusResponse.Seg90Rt"));
+		describeSceneRunningStatusResponse.setAverageRt(_ctx.longValue("DescribeSceneRunningStatusResponse.AverageRt"));
 		describeSceneRunningStatusResponse.setReportId(_ctx.stringValue("DescribeSceneRunningStatusResponse.ReportId"));
 		describeSceneRunningStatusResponse.setBeginTime(_ctx.longValue("DescribeSceneRunningStatusResponse.BeginTime"));
 		describeSceneRunningStatusResponse.setCurrentTime(_ctx.longValue("DescribeSceneRunningStatusResponse.CurrentTime"));
@@ -61,6 +64,39 @@ public class DescribeSceneRunningStatusResponseUnmarshaller {
 			agentsLocation.add(chainElement);
 		}
 		describeSceneRunningStatusResponse.setAgentsLocation(agentsLocation);
+
+		List<ChainMonitorData> chainMonitorDataList = new ArrayList<ChainMonitorData>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList.Length"); i++) {
+			ChainMonitorData chainMonitorData = new ChainMonitorData();
+			chainMonitorData.setChainId(_ctx.longValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].ChainId"));
+			chainMonitorData.setTimePoint(_ctx.longValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].TimePoint"));
+			chainMonitorData.setConfigQps(_ctx.integerValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].ConfigQps"));
+			chainMonitorData.setRealQps(_ctx.floatValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].RealQps"));
+			chainMonitorData.setConcurrency(_ctx.floatValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].Concurrency"));
+			chainMonitorData.setQps2XX(_ctx.floatValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].Qps2XX"));
+			chainMonitorData.setFailedQps(_ctx.floatValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].FailedQps"));
+			chainMonitorData.setAverageRt(_ctx.integerValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].AverageRt"));
+			chainMonitorData.setMaxRt(_ctx.integerValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].MaxRt"));
+			chainMonitorData.setMinRt(_ctx.integerValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].MinRt"));
+			chainMonitorData.setCount2XX(_ctx.longValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].Count2XX"));
+			chainMonitorData.setFailedCount(_ctx.longValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].FailedCount"));
+			chainMonitorData.setQueueSize(_ctx.integerValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].QueueSize"));
+			chainMonitorData.setQueueCapacity(_ctx.integerValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].QueueCapacity"));
+
+			List<QpsSummaryItem> qpsSummary = new ArrayList<QpsSummaryItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].QpsSummary.Length"); j++) {
+				QpsSummaryItem qpsSummaryItem = new QpsSummaryItem();
+				qpsSummaryItem.setStatusCode(_ctx.integerValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].QpsSummary["+ j +"].StatusCode"));
+				qpsSummaryItem.setQps(_ctx.floatValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].QpsSummary["+ j +"].Qps"));
+				qpsSummaryItem.setTotalCount(_ctx.integerValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].QpsSummary["+ j +"].TotalCount"));
+
+				qpsSummary.add(qpsSummaryItem);
+			}
+			chainMonitorData.setQpsSummary(qpsSummary);
+
+			chainMonitorDataList.add(chainMonitorData);
+		}
+		describeSceneRunningStatusResponse.setChainMonitorDataList(chainMonitorDataList);
 	 
 	 	return describeSceneRunningStatusResponse;
 	}

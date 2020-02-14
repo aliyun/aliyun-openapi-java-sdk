@@ -56,11 +56,11 @@ public class DescribeReportResponse extends AcsResponse {
 
 	private Long maxBandWidth;
 
-	private Integer vum;
+	private Long vum;
 
-	private Integer failedBusinessCount;
+	private Long failedBusinessCount;
 
-	private Integer failedRequestCount;
+	private Long failedRequestCount;
 
 	private Float businessRequestRatio;
 
@@ -198,27 +198,27 @@ public class DescribeReportResponse extends AcsResponse {
 		this.maxBandWidth = maxBandWidth;
 	}
 
-	public Integer getVum() {
+	public Long getVum() {
 		return this.vum;
 	}
 
-	public void setVum(Integer vum) {
+	public void setVum(Long vum) {
 		this.vum = vum;
 	}
 
-	public Integer getFailedBusinessCount() {
+	public Long getFailedBusinessCount() {
 		return this.failedBusinessCount;
 	}
 
-	public void setFailedBusinessCount(Integer failedBusinessCount) {
+	public void setFailedBusinessCount(Long failedBusinessCount) {
 		this.failedBusinessCount = failedBusinessCount;
 	}
 
-	public Integer getFailedRequestCount() {
+	public Long getFailedRequestCount() {
 		return this.failedRequestCount;
 	}
 
-	public void setFailedRequestCount(Integer failedRequestCount) {
+	public void setFailedRequestCount(Long failedRequestCount) {
 		this.failedRequestCount = failedRequestCount;
 	}
 

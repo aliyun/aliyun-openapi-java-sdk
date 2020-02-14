@@ -45,9 +45,9 @@ public class DescribeReportResponseUnmarshaller {
 		describeReportResponse.setSceneDeleted(_ctx.booleanValue("DescribeReportResponse.SceneDeleted"));
 		describeReportResponse.setDuration(_ctx.stringValue("DescribeReportResponse.Duration"));
 		describeReportResponse.setMaxBandWidth(_ctx.longValue("DescribeReportResponse.MaxBandWidth"));
-		describeReportResponse.setVum(_ctx.integerValue("DescribeReportResponse.Vum"));
-		describeReportResponse.setFailedBusinessCount(_ctx.integerValue("DescribeReportResponse.FailedBusinessCount"));
-		describeReportResponse.setFailedRequestCount(_ctx.integerValue("DescribeReportResponse.FailedRequestCount"));
+		describeReportResponse.setVum(_ctx.longValue("DescribeReportResponse.Vum"));
+		describeReportResponse.setFailedBusinessCount(_ctx.longValue("DescribeReportResponse.FailedBusinessCount"));
+		describeReportResponse.setFailedRequestCount(_ctx.longValue("DescribeReportResponse.FailedRequestCount"));
 		describeReportResponse.setBusinessRequestRatio(_ctx.floatValue("DescribeReportResponse.BusinessRequestRatio"));
 		describeReportResponse.setCode(_ctx.stringValue("DescribeReportResponse.Code"));
 		describeReportResponse.setMessage(_ctx.stringValue("DescribeReportResponse.Message"));

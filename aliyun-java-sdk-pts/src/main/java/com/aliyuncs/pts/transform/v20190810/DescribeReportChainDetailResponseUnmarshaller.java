@@ -42,7 +42,7 @@ public class DescribeReportChainDetailResponseUnmarshaller {
 			chain.setTimePoint(_ctx.longValue("DescribeReportChainDetailResponse.ChainDetails["+ i +"].TimePoint"));
 			chain.setMaxRt(_ctx.integerValue("DescribeReportChainDetailResponse.ChainDetails["+ i +"].MaxRt"));
 			chain.setMinRt(_ctx.integerValue("DescribeReportChainDetailResponse.ChainDetails["+ i +"].MinRt"));
-			chain.setTotalRequest(_ctx.integerValue("DescribeReportChainDetailResponse.ChainDetails["+ i +"].TotalRequest"));
+			chain.setTotalRequest(_ctx.longValue("DescribeReportChainDetailResponse.ChainDetails["+ i +"].TotalRequest"));
 			chain.setQps2XX(_ctx.floatValue("DescribeReportChainDetailResponse.ChainDetails["+ i +"].Qps2XX"));
 			chain.setTotal4XX(_ctx.longValue("DescribeReportChainDetailResponse.ChainDetails["+ i +"].Total4XX"));
 			chain.setTotal5XX(_ctx.longValue("DescribeReportChainDetailResponse.ChainDetails["+ i +"].Total5XX"));

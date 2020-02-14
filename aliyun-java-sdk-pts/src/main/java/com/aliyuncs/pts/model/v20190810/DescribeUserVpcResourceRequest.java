@@ -21,29 +21,16 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class RemoveReportsRequest extends RpcAcsRequest<RemoveReportsResponse> {
+public class DescribeUserVpcResourceRequest extends RpcAcsRequest<DescribeUserVpcResourceResponse> {
 	   
-
-	private String reportIds;
-	public RemoveReportsRequest() {
-		super("PTS", "2019-08-10", "RemoveReports", "1.0.0");
+	public DescribeUserVpcResourceRequest() {
+		super("PTS", "2019-08-10", "DescribeUserVpcResource", "1.0.0");
 		setMethod(MethodType.GET);
 	}
 
-	public String getReportIds() {
-		return this.reportIds;
-	}
-
-	public void setReportIds(String reportIds) {
-		this.reportIds = reportIds;
-		if(reportIds != null){
-			putQueryParameter("ReportIds", reportIds);
-		}
-	}
-
 	@Override
-	public Class<RemoveReportsResponse> getResponseClass() {
-		return RemoveReportsResponse.class;
+	public Class<DescribeUserVpcResourceResponse> getResponseClass() {
+		return DescribeUserVpcResourceResponse.class;
 	}
 
 }

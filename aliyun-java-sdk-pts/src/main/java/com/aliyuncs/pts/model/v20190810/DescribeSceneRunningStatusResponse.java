@@ -27,9 +27,9 @@ public class DescribeSceneRunningStatusResponse extends AcsResponse {
 
 	private String tips;
 
-	private Integer totalRequestCount;
+	private Long totalRequestCount;
 
-	private Integer vum;
+	private Long vum;
 
 	private String requestBps;
 
@@ -51,9 +51,9 @@ public class DescribeSceneRunningStatusResponse extends AcsResponse {
 
 	private Integer totalAgents;
 
-	private Integer seg90Rt;
+	private Long seg90Rt;
 
-	private Integer averageRt;
+	private Long averageRt;
 
 	private String reportId;
 
@@ -71,7 +71,11 @@ public class DescribeSceneRunningStatusResponse extends AcsResponse {
 
 	private Boolean useCustomPool;
 
+	private String requestId;
+
 	private List<ChainElement> agentsLocation;
+
+	private List<ChainMonitorData> chainMonitorDataList;
 
 	public String getTips() {
 		return this.tips;
@@ -81,19 +85,19 @@ public class DescribeSceneRunningStatusResponse extends AcsResponse {
 		this.tips = tips;
 	}
 
-	public Integer getTotalRequestCount() {
+	public Long getTotalRequestCount() {
 		return this.totalRequestCount;
 	}
 
-	public void setTotalRequestCount(Integer totalRequestCount) {
+	public void setTotalRequestCount(Long totalRequestCount) {
 		this.totalRequestCount = totalRequestCount;
 	}
 
-	public Integer getVum() {
+	public Long getVum() {
 		return this.vum;
 	}
 
-	public void setVum(Integer vum) {
+	public void setVum(Long vum) {
 		this.vum = vum;
 	}
 
@@ -177,19 +181,19 @@ public class DescribeSceneRunningStatusResponse extends AcsResponse {
 		this.totalAgents = totalAgents;
 	}
 
-	public Integer getSeg90Rt() {
+	public Long getSeg90Rt() {
 		return this.seg90Rt;
 	}
 
-	public void setSeg90Rt(Integer seg90Rt) {
+	public void setSeg90Rt(Long seg90Rt) {
 		this.seg90Rt = seg90Rt;
 	}
 
-	public Integer getAverageRt() {
+	public Long getAverageRt() {
 		return this.averageRt;
 	}
 
-	public void setAverageRt(Integer averageRt) {
+	public void setAverageRt(Long averageRt) {
 		this.averageRt = averageRt;
 	}
 
@@ -257,12 +261,28 @@ public class DescribeSceneRunningStatusResponse extends AcsResponse {
 		this.useCustomPool = useCustomPool;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<ChainElement> getAgentsLocation() {
 		return this.agentsLocation;
 	}
 
 	public void setAgentsLocation(List<ChainElement> agentsLocation) {
 		this.agentsLocation = agentsLocation;
+	}
+
+	public List<ChainMonitorData> getChainMonitorDataList() {
+		return this.chainMonitorDataList;
+	}
+
+	public void setChainMonitorDataList(List<ChainMonitorData> chainMonitorDataList) {
+		this.chainMonitorDataList = chainMonitorDataList;
 	}
 
 	public static class ChainElement {
@@ -305,6 +325,192 @@ public class DescribeSceneRunningStatusResponse extends AcsResponse {
 
 		public void setCount(Integer count) {
 			this.count = count;
+		}
+	}
+
+	public static class ChainMonitorData {
+
+		private Long chainId;
+
+		private Long timePoint;
+
+		private Integer configQps;
+
+		private Float realQps;
+
+		private Float concurrency;
+
+		private Float qps2XX;
+
+		private Float failedQps;
+
+		private Integer averageRt;
+
+		private Integer maxRt;
+
+		private Integer minRt;
+
+		private Long count2XX;
+
+		private Long failedCount;
+
+		private Integer queueSize;
+
+		private Integer queueCapacity;
+
+		private List<QpsSummaryItem> qpsSummary;
+
+		public Long getChainId() {
+			return this.chainId;
+		}
+
+		public void setChainId(Long chainId) {
+			this.chainId = chainId;
+		}
+
+		public Long getTimePoint() {
+			return this.timePoint;
+		}
+
+		public void setTimePoint(Long timePoint) {
+			this.timePoint = timePoint;
+		}
+
+		public Integer getConfigQps() {
+			return this.configQps;
+		}
+
+		public void setConfigQps(Integer configQps) {
+			this.configQps = configQps;
+		}
+
+		public Float getRealQps() {
+			return this.realQps;
+		}
+
+		public void setRealQps(Float realQps) {
+			this.realQps = realQps;
+		}
+
+		public Float getConcurrency() {
+			return this.concurrency;
+		}
+
+		public void setConcurrency(Float concurrency) {
+			this.concurrency = concurrency;
+		}
+
+		public Float getQps2XX() {
+			return this.qps2XX;
+		}
+
+		public void setQps2XX(Float qps2XX) {
+			this.qps2XX = qps2XX;
+		}
+
+		public Float getFailedQps() {
+			return this.failedQps;
+		}
+
+		public void setFailedQps(Float failedQps) {
+			this.failedQps = failedQps;
+		}
+
+		public Integer getAverageRt() {
+			return this.averageRt;
+		}
+
+		public void setAverageRt(Integer averageRt) {
+			this.averageRt = averageRt;
+		}
+
+		public Integer getMaxRt() {
+			return this.maxRt;
+		}
+
+		public void setMaxRt(Integer maxRt) {
+			this.maxRt = maxRt;
+		}
+
+		public Integer getMinRt() {
+			return this.minRt;
+		}
+
+		public void setMinRt(Integer minRt) {
+			this.minRt = minRt;
+		}
+
+		public Long getCount2XX() {
+			return this.count2XX;
+		}
+
+		public void setCount2XX(Long count2XX) {
+			this.count2XX = count2XX;
+		}
+
+		public Long getFailedCount() {
+			return this.failedCount;
+		}
+
+		public void setFailedCount(Long failedCount) {
+			this.failedCount = failedCount;
+		}
+
+		public Integer getQueueSize() {
+			return this.queueSize;
+		}
+
+		public void setQueueSize(Integer queueSize) {
+			this.queueSize = queueSize;
+		}
+
+		public Integer getQueueCapacity() {
+			return this.queueCapacity;
+		}
+
+		public void setQueueCapacity(Integer queueCapacity) {
+			this.queueCapacity = queueCapacity;
+		}
+
+		public List<QpsSummaryItem> getQpsSummary() {
+			return this.qpsSummary;
+		}
+
+		public void setQpsSummary(List<QpsSummaryItem> qpsSummary) {
+			this.qpsSummary = qpsSummary;
+		}
+
+		public static class QpsSummaryItem {
+
+			private Integer statusCode;
+
+			private Float qps;
+
+			private Integer totalCount;
+
+			public Integer getStatusCode() {
+				return this.statusCode;
+			}
+
+			public void setStatusCode(Integer statusCode) {
+				this.statusCode = statusCode;
+			}
+
+			public Float getQps() {
+				return this.qps;
+			}
+
+			public void setQps(Float qps) {
+				this.qps = qps;
+			}
+
+			public Integer getTotalCount() {
+				return this.totalCount;
+			}
+
+			public void setTotalCount(Integer totalCount) {
+				this.totalCount = totalCount;
+			}
 		}
 	}
 

@@ -21,12 +21,16 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeSceneRunningStatusRequest extends RpcAcsRequest<DescribeSceneRunningStatusResponse> {
+public class ReplaceOssFileRequest extends RpcAcsRequest<ReplaceOssFileResponse> {
 	   
 
 	private String sceneId;
-	public DescribeSceneRunningStatusRequest() {
-		super("PTS", "2019-08-10", "DescribeSceneRunningStatus", "1.0.0");
+
+	private String originalOssFileUrl;
+
+	private String newOssFileUrl;
+	public ReplaceOssFileRequest() {
+		super("PTS", "2019-08-10", "ReplaceOssFile", "1.0.0");
 		setMethod(MethodType.POST);
 	}
 
@@ -41,9 +45,31 @@ public class DescribeSceneRunningStatusRequest extends RpcAcsRequest<DescribeSce
 		}
 	}
 
+	public String getOriginalOssFileUrl() {
+		return this.originalOssFileUrl;
+	}
+
+	public void setOriginalOssFileUrl(String originalOssFileUrl) {
+		this.originalOssFileUrl = originalOssFileUrl;
+		if(originalOssFileUrl != null){
+			putQueryParameter("OriginalOssFileUrl", originalOssFileUrl);
+		}
+	}
+
+	public String getNewOssFileUrl() {
+		return this.newOssFileUrl;
+	}
+
+	public void setNewOssFileUrl(String newOssFileUrl) {
+		this.newOssFileUrl = newOssFileUrl;
+		if(newOssFileUrl != null){
+			putQueryParameter("NewOssFileUrl", newOssFileUrl);
+		}
+	}
+
 	@Override
-	public Class<DescribeSceneRunningStatusResponse> getResponseClass() {
-		return DescribeSceneRunningStatusResponse.class;
+	public Class<ReplaceOssFileResponse> getResponseClass() {
+		return ReplaceOssFileResponse.class;
 	}
 
 }

@@ -21,29 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class RemoveReportsRequest extends RpcAcsRequest<RemoveReportsResponse> {
+public class StartDebuggingRequest extends RpcAcsRequest<StartDebuggingResponse> {
 	   
 
-	private String reportIds;
-	public RemoveReportsRequest() {
-		super("PTS", "2019-08-10", "RemoveReports", "1.0.0");
-		setMethod(MethodType.GET);
+	private String sceneId;
+	public StartDebuggingRequest() {
+		super("PTS", "2019-08-10", "StartDebugging", "1.0.0");
+		setMethod(MethodType.POST);
 	}
 
-	public String getReportIds() {
-		return this.reportIds;
+	public String getSceneId() {
+		return this.sceneId;
 	}
 
-	public void setReportIds(String reportIds) {
-		this.reportIds = reportIds;
-		if(reportIds != null){
-			putQueryParameter("ReportIds", reportIds);
+	public void setSceneId(String sceneId) {
+		this.sceneId = sceneId;
+		if(sceneId != null){
+			putQueryParameter("SceneId", sceneId);
 		}
 	}
 
 	@Override
-	public Class<RemoveReportsResponse> getResponseClass() {
-		return RemoveReportsResponse.class;
+	public Class<StartDebuggingResponse> getResponseClass() {
+		return StartDebuggingResponse.class;
 	}
 
 }
