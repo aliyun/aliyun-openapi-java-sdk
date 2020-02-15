@@ -1,3 +1,7 @@
+2020-02-15 Version: 1.6.8
+- Add DescribeDBClusterSSL.
+- Add ModifyDBClusterSSL.
+
 2020-02-11 Version: 1.6.7
 - Return `VpcInstanceId ` for DescribeDBClusterEndpoints.
 - Add DescribeBackupLogs.
