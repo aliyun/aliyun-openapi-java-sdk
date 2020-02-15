@@ -103,8 +103,6 @@ public class DescribeFabricOrganizationChannelsResponse extends AcsResponse {
 
 		private String deleteTime1;
 
-		private Boolean deleted2;
-
 		private Integer maxMessageCount;
 
 		private Integer preferredMaxBytes;
@@ -253,14 +251,6 @@ public class DescribeFabricOrganizationChannelsResponse extends AcsResponse {
 
 		public void setDeleteTime1(String deleteTime1) {
 			this.deleteTime1 = deleteTime1;
-		}
-
-		public Boolean getDeleted2() {
-			return this.deleted2;
-		}
-
-		public void setDeleted2(Boolean deleted2) {
-			this.deleted2 = deleted2;
 		}
 
 		public Integer getMaxMessageCount() {

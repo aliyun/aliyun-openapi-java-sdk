@@ -120,26 +120,10 @@ public class DescribeAntChainBlockResponse extends AcsResponse {
 			this.transSummaryList = transSummaryList;
 		}
 
-		public Long getBizVersion() {
-			return this.version;
-		}
-
-		public void setBizVersion(Long version) {
-			this.version = version;
-		}
-
-		/**
-		 * @deprecated use getBizVersion instead of this.
-		 */
-		@Deprecated
 		public Long getVersion() {
 			return this.version;
 		}
 
-		/**
-		 * @deprecated use setBizVersion instead of this.
-		 */
-		@Deprecated
 		public void setVersion(Long version) {
 			this.version = version;
 		}

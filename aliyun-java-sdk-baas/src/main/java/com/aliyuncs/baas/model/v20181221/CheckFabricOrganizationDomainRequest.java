@@ -16,7 +16,6 @@ package com.aliyuncs.baas.model.v20181221;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.baas.Endpoint;
 
 /**
  * @author auto create
@@ -31,10 +30,6 @@ public class CheckFabricOrganizationDomainRequest extends RpcAcsRequest<CheckFab
 	public CheckFabricOrganizationDomainRequest() {
 		super("Baas", "2018-12-21", "CheckFabricOrganizationDomain", "baas");
 		setMethod(MethodType.PUT);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getDomainCode() {
@@ -48,29 +43,10 @@ public class CheckFabricOrganizationDomainRequest extends RpcAcsRequest<CheckFab
 		}
 	}
 
-	public String getBizDomain() {
-		return this.domain;
-	}
-
-	public void setBizDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putBodyParameter("Domain", domain);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizDomain instead of this.
-	 */
-	@Deprecated
 	public String getDomain() {
 		return this.domain;
 	}
 
-	/**
-	 * @deprecated use setBizDomain instead of this.
-	 */
-	@Deprecated
 	public void setDomain(String domain) {
 		this.domain = domain;
 		if(domain != null){

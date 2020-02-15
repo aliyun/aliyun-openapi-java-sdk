@@ -16,7 +16,6 @@ package com.aliyuncs.baas.model.v20181221;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.baas.Endpoint;
 
 /**
  * @author auto create
@@ -27,10 +26,6 @@ public class DescribeFabricConsortiumSpecsRequest extends RpcAcsRequest<Describe
 	public DescribeFabricConsortiumSpecsRequest() {
 		super("Baas", "2018-12-21", "DescribeFabricConsortiumSpecs", "baas");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	@Override

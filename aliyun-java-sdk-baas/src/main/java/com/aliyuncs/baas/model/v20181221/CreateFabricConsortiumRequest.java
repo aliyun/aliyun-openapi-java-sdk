@@ -17,7 +17,6 @@ package com.aliyuncs.baas.model.v20181221;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.baas.Endpoint;
 
 /**
  * @author auto create
@@ -54,10 +53,6 @@ public class CreateFabricConsortiumRequest extends RpcAcsRequest<CreateFabricCon
 	public CreateFabricConsortiumRequest() {
 		super("Baas", "2018-12-21", "CreateFabricConsortium", "baas");
 		setMethod(MethodType.PUT);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public Integer getOrderersCount() {
@@ -115,29 +110,10 @@ public class CreateFabricConsortiumRequest extends RpcAcsRequest<CreateFabricCon
 		}
 	}
 
-	public String getBizDomain() {
-		return this.domain;
-	}
-
-	public void setBizDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putBodyParameter("Domain", domain);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizDomain instead of this.
-	 */
-	@Deprecated
 	public String getDomain() {
 		return this.domain;
 	}
 
-	/**
-	 * @deprecated use setBizDomain instead of this.
-	 */
-	@Deprecated
 	public void setDomain(String domain) {
 		this.domain = domain;
 		if(domain != null){

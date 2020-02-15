@@ -16,7 +16,6 @@ package com.aliyuncs.baas.model.v20181221;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.baas.Endpoint;
 
 /**
  * @author auto create
@@ -31,10 +30,6 @@ public class DescribeFabricOrganizationChannelsRequest extends RpcAcsRequest<Des
 	public DescribeFabricOrganizationChannelsRequest() {
 		super("Baas", "2018-12-21", "DescribeFabricOrganizationChannels", "baas");
 		setMethod(MethodType.PUT);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getOrganizationId() {

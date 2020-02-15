@@ -80,26 +80,10 @@ public class CheckFabricOrganizationDomainResponse extends AcsResponse {
 			this.valid = valid;
 		}
 
-		public String getBizDomain() {
-			return this.domain;
-		}
-
-		public void setBizDomain(String domain) {
-			this.domain = domain;
-		}
-
-		/**
-		 * @deprecated use getBizDomain instead of this.
-		 */
-		@Deprecated
 		public String getDomain() {
 			return this.domain;
 		}
 
-		/**
-		 * @deprecated use setBizDomain instead of this.
-		 */
-		@Deprecated
 		public void setDomain(String domain) {
 			this.domain = domain;
 		}

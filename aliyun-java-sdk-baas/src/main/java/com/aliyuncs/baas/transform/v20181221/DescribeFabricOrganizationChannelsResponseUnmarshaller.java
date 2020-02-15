@@ -51,7 +51,6 @@ public class DescribeFabricOrganizationChannelsResponseUnmarshaller {
 			resultItem.setConsortiumName(_ctx.stringValue("DescribeFabricOrganizationChannelsResponse.Result["+ i +"].ConsortiumName"));
 			resultItem.setBatchTimeout(_ctx.integerValue("DescribeFabricOrganizationChannelsResponse.Result["+ i +"].BatchTimeout"));
 			resultItem.setDeleteTime1(_ctx.stringValue("DescribeFabricOrganizationChannelsResponse.Result["+ i +"].DeleteTime"));
-			resultItem.setDeleted2(_ctx.booleanValue("DescribeFabricOrganizationChannelsResponse.Result["+ i +"].Deleted"));
 			resultItem.setMaxMessageCount(_ctx.integerValue("DescribeFabricOrganizationChannelsResponse.Result["+ i +"].MaxMessageCount"));
 			resultItem.setPreferredMaxBytes(_ctx.integerValue("DescribeFabricOrganizationChannelsResponse.Result["+ i +"].PreferredMaxBytes"));
 			resultItem.setSupportChannelConfig(_ctx.booleanValue("DescribeFabricOrganizationChannelsResponse.Result["+ i +"].SupportChannelConfig"));

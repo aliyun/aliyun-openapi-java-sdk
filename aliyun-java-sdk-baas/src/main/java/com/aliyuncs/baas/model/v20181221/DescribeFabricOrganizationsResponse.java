@@ -117,26 +117,10 @@ public class DescribeFabricOrganizationsResponse extends AcsResponse {
 			this.organizationName = organizationName;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -157,26 +141,10 @@ public class DescribeFabricOrganizationsResponse extends AcsResponse {
 			this.codeName = codeName;
 		}
 
-		public String getBizDomain() {
-			return this.domain;
-		}
-
-		public void setBizDomain(String domain) {
-			this.domain = domain;
-		}
-
-		/**
-		 * @deprecated use getBizDomain instead of this.
-		 */
-		@Deprecated
 		public String getDomain() {
 			return this.domain;
 		}
 
-		/**
-		 * @deprecated use setBizDomain instead of this.
-		 */
-		@Deprecated
 		public void setDomain(String domain) {
 			this.domain = domain;
 		}
