@@ -15,16 +15,14 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteScalingRuleRequest extends RpcAcsRequest<DeleteScalingRuleResponse> {
-	
-	public DeleteScalingRuleRequest() {
-		super("Ess", "2014-08-28", "DeleteScalingRule", "ess");
-	}
+	   
 
 	private String resourceOwnerAccount;
 
@@ -33,6 +31,10 @@ public class DeleteScalingRuleRequest extends RpcAcsRequest<DeleteScalingRuleRes
 	private Long ownerId;
 
 	private String scalingRuleId;
+	public DeleteScalingRuleRequest() {
+		super("Ess", "2014-08-28", "DeleteScalingRule", "ess");
+		setMethod(MethodType.POST);
+	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;

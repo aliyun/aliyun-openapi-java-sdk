@@ -27,53 +27,53 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeScalingRulesResponseUnmarshaller {
 
-	public static DescribeScalingRulesResponse unmarshall(DescribeScalingRulesResponse describeScalingRulesResponse, UnmarshallerContext context) {
+	public static DescribeScalingRulesResponse unmarshall(DescribeScalingRulesResponse describeScalingRulesResponse, UnmarshallerContext _ctx) {
 		
-		describeScalingRulesResponse.setRequestId(context.stringValue("DescribeScalingRulesResponse.RequestId"));
-		describeScalingRulesResponse.setTotalCount(context.integerValue("DescribeScalingRulesResponse.TotalCount"));
-		describeScalingRulesResponse.setPageNumber(context.integerValue("DescribeScalingRulesResponse.PageNumber"));
-		describeScalingRulesResponse.setPageSize(context.integerValue("DescribeScalingRulesResponse.PageSize"));
+		describeScalingRulesResponse.setRequestId(_ctx.stringValue("DescribeScalingRulesResponse.RequestId"));
+		describeScalingRulesResponse.setTotalCount(_ctx.integerValue("DescribeScalingRulesResponse.TotalCount"));
+		describeScalingRulesResponse.setPageNumber(_ctx.integerValue("DescribeScalingRulesResponse.PageNumber"));
+		describeScalingRulesResponse.setPageSize(_ctx.integerValue("DescribeScalingRulesResponse.PageSize"));
 
 		List<ScalingRule> scalingRules = new ArrayList<ScalingRule>();
-		for (int i = 0; i < context.lengthValue("DescribeScalingRulesResponse.ScalingRules.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScalingRulesResponse.ScalingRules.Length"); i++) {
 			ScalingRule scalingRule = new ScalingRule();
-			scalingRule.setScalingRuleId(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].ScalingRuleId"));
-			scalingRule.setScalingGroupId(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].ScalingGroupId"));
-			scalingRule.setScalingRuleName(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].ScalingRuleName"));
-			scalingRule.setCooldown(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Cooldown"));
-			scalingRule.setMinAdjustmentMagnitude(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].MinAdjustmentMagnitude"));
-			scalingRule.setAdjustmentType(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].AdjustmentType"));
-			scalingRule.setAdjustmentValue(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].AdjustmentValue"));
-			scalingRule.setMinSize(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].MinSize"));
-			scalingRule.setMaxSize(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].MaxSize"));
-			scalingRule.setScalingRuleAri(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].ScalingRuleAri"));
-			scalingRule.setScalingRuleType(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].ScalingRuleType"));
-			scalingRule.setEstimatedInstanceWarmup(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].EstimatedInstanceWarmup"));
-			scalingRule.setMetricName(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].MetricName"));
-			scalingRule.setTargetValue(context.floatValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].TargetValue"));
-			scalingRule.setDisableScaleIn(context.booleanValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].DisableScaleIn"));
-			scalingRule.setPredictiveScalingMode(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].PredictiveScalingMode"));
-			scalingRule.setPredictiveValueBehavior(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].PredictiveValueBehavior"));
-			scalingRule.setPredictiveValueBuffer(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].PredictiveValueBuffer"));
-			scalingRule.setPredictiveTaskBufferTime(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].PredictiveTaskBufferTime"));
-			scalingRule.setInitialMaxSize(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].InitialMaxSize"));
+			scalingRule.setScalingRuleId(_ctx.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].ScalingRuleId"));
+			scalingRule.setScalingGroupId(_ctx.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].ScalingGroupId"));
+			scalingRule.setScalingRuleName(_ctx.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].ScalingRuleName"));
+			scalingRule.setCooldown(_ctx.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Cooldown"));
+			scalingRule.setMinAdjustmentMagnitude(_ctx.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].MinAdjustmentMagnitude"));
+			scalingRule.setAdjustmentType(_ctx.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].AdjustmentType"));
+			scalingRule.setAdjustmentValue(_ctx.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].AdjustmentValue"));
+			scalingRule.setMinSize(_ctx.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].MinSize"));
+			scalingRule.setMaxSize(_ctx.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].MaxSize"));
+			scalingRule.setScalingRuleAri(_ctx.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].ScalingRuleAri"));
+			scalingRule.setScalingRuleType(_ctx.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].ScalingRuleType"));
+			scalingRule.setEstimatedInstanceWarmup(_ctx.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].EstimatedInstanceWarmup"));
+			scalingRule.setMetricName(_ctx.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].MetricName"));
+			scalingRule.setTargetValue(_ctx.floatValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].TargetValue"));
+			scalingRule.setDisableScaleIn(_ctx.booleanValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].DisableScaleIn"));
+			scalingRule.setPredictiveScalingMode(_ctx.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].PredictiveScalingMode"));
+			scalingRule.setPredictiveValueBehavior(_ctx.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].PredictiveValueBehavior"));
+			scalingRule.setPredictiveValueBuffer(_ctx.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].PredictiveValueBuffer"));
+			scalingRule.setPredictiveTaskBufferTime(_ctx.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].PredictiveTaskBufferTime"));
+			scalingRule.setInitialMaxSize(_ctx.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].InitialMaxSize"));
 
 			List<Alarm> alarms = new ArrayList<Alarm>();
-			for (int j = 0; j < context.lengthValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms.Length"); j++) {
 				Alarm alarm = new Alarm();
-				alarm.setAlarmTaskName(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].AlarmTaskName"));
-				alarm.setAlarmTaskId(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].AlarmTaskId"));
-				alarm.setComparisonOperator(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].ComparisonOperator"));
-				alarm.setStatistics(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].Statistics"));
-				alarm.setMetricName(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].MetricName"));
-				alarm.setThreshold(context.floatValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].Threshold"));
-				alarm.setEvaluationCount(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].EvaluationCount"));
+				alarm.setAlarmTaskName(_ctx.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].AlarmTaskName"));
+				alarm.setAlarmTaskId(_ctx.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].AlarmTaskId"));
+				alarm.setComparisonOperator(_ctx.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].ComparisonOperator"));
+				alarm.setStatistics(_ctx.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].Statistics"));
+				alarm.setMetricName(_ctx.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].MetricName"));
+				alarm.setThreshold(_ctx.floatValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].Threshold"));
+				alarm.setEvaluationCount(_ctx.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].EvaluationCount"));
 
 				List<Dimension> dimensions = new ArrayList<Dimension>();
-				for (int k = 0; k < context.lengthValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].Dimensions.Length"); k++) {
+				for (int k = 0; k < _ctx.lengthValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].Dimensions.Length"); k++) {
 					Dimension dimension = new Dimension();
-					dimension.setDimensionKey(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].Dimensions["+ k +"].DimensionKey"));
-					dimension.setDimensionValue(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].Dimensions["+ k +"].DimensionValue"));
+					dimension.setDimensionKey(_ctx.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].Dimensions["+ k +"].DimensionKey"));
+					dimension.setDimensionValue(_ctx.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].Dimensions["+ k +"].DimensionValue"));
 
 					dimensions.add(dimension);
 				}
@@ -84,11 +84,11 @@ public class DescribeScalingRulesResponseUnmarshaller {
 			scalingRule.setAlarms(alarms);
 
 			List<StepAdjustment> stepAdjustments = new ArrayList<StepAdjustment>();
-			for (int j = 0; j < context.lengthValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].StepAdjustments.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].StepAdjustments.Length"); j++) {
 				StepAdjustment stepAdjustment = new StepAdjustment();
-				stepAdjustment.setMetricIntervalLowerBound(context.floatValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].StepAdjustments["+ j +"].MetricIntervalLowerBound"));
-				stepAdjustment.setMetricIntervalUpperBound(context.floatValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].StepAdjustments["+ j +"].MetricIntervalUpperBound"));
-				stepAdjustment.setScalingAdjustment(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].StepAdjustments["+ j +"].ScalingAdjustment"));
+				stepAdjustment.setMetricIntervalLowerBound(_ctx.floatValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].StepAdjustments["+ j +"].MetricIntervalLowerBound"));
+				stepAdjustment.setMetricIntervalUpperBound(_ctx.floatValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].StepAdjustments["+ j +"].MetricIntervalUpperBound"));
+				stepAdjustment.setScalingAdjustment(_ctx.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].StepAdjustments["+ j +"].ScalingAdjustment"));
 
 				stepAdjustments.add(stepAdjustment);
 			}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class EnableAlarmResponseUnmarshaller {
 
-	public static EnableAlarmResponse unmarshall(EnableAlarmResponse enableAlarmResponse, UnmarshallerContext context) {
+	public static EnableAlarmResponse unmarshall(EnableAlarmResponse enableAlarmResponse, UnmarshallerContext _ctx) {
 		
-		enableAlarmResponse.setRequestId(context.stringValue("EnableAlarmResponse.RequestId"));
+		enableAlarmResponse.setRequestId(_ctx.stringValue("EnableAlarmResponse.RequestId"));
 	 
 	 	return enableAlarmResponse;
 	}

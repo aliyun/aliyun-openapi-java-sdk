@@ -15,16 +15,14 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeScalingGroupsRequest extends RpcAcsRequest<DescribeScalingGroupsResponse> {
-	
-	public DescribeScalingGroupsRequest() {
-		super("Ess", "2014-08-28", "DescribeScalingGroups", "ess");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -117,6 +115,10 @@ public class DescribeScalingGroupsRequest extends RpcAcsRequest<DescribeScalingG
 	private String scalingGroupName6;
 
 	private String scalingGroupName12;
+	public DescribeScalingGroupsRequest() {
+		super("Ess", "2014-08-28", "DescribeScalingGroups", "ess");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

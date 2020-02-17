@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteScheduledTaskResponseUnmarshaller {
 
-	public static DeleteScheduledTaskResponse unmarshall(DeleteScheduledTaskResponse deleteScheduledTaskResponse, UnmarshallerContext context) {
+	public static DeleteScheduledTaskResponse unmarshall(DeleteScheduledTaskResponse deleteScheduledTaskResponse, UnmarshallerContext _ctx) {
 		
-		deleteScheduledTaskResponse.setRequestId(context.stringValue("DeleteScheduledTaskResponse.RequestId"));
+		deleteScheduledTaskResponse.setRequestId(_ctx.stringValue("DeleteScheduledTaskResponse.RequestId"));
 	 
 	 	return deleteScheduledTaskResponse;
 	}

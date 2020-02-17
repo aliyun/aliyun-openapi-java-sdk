@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DetachDBInstancesResponseUnmarshaller {
 
-	public static DetachDBInstancesResponse unmarshall(DetachDBInstancesResponse detachDBInstancesResponse, UnmarshallerContext context) {
+	public static DetachDBInstancesResponse unmarshall(DetachDBInstancesResponse detachDBInstancesResponse, UnmarshallerContext _ctx) {
 		
-		detachDBInstancesResponse.setRequestId(context.stringValue("DetachDBInstancesResponse.RequestId"));
+		detachDBInstancesResponse.setRequestId(_ctx.stringValue("DetachDBInstancesResponse.RequestId"));
 	 
 	 	return detachDBInstancesResponse;
 	}

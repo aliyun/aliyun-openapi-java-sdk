@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CompleteLifecycleActionResponseUnmarshaller {
 
-	public static CompleteLifecycleActionResponse unmarshall(CompleteLifecycleActionResponse completeLifecycleActionResponse, UnmarshallerContext context) {
+	public static CompleteLifecycleActionResponse unmarshall(CompleteLifecycleActionResponse completeLifecycleActionResponse, UnmarshallerContext _ctx) {
 		
-		completeLifecycleActionResponse.setRequestId(context.stringValue("CompleteLifecycleActionResponse.RequestId"));
+		completeLifecycleActionResponse.setRequestId(_ctx.stringValue("CompleteLifecycleActionResponse.RequestId"));
 	 
 	 	return completeLifecycleActionResponse;
 	}

@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeNotificationTypesResponseUnmarshaller {
 
-	public static DescribeNotificationTypesResponse unmarshall(DescribeNotificationTypesResponse describeNotificationTypesResponse, UnmarshallerContext context) {
+	public static DescribeNotificationTypesResponse unmarshall(DescribeNotificationTypesResponse describeNotificationTypesResponse, UnmarshallerContext _ctx) {
 		
-		describeNotificationTypesResponse.setRequestId(context.stringValue("DescribeNotificationTypesResponse.RequestId"));
+		describeNotificationTypesResponse.setRequestId(_ctx.stringValue("DescribeNotificationTypesResponse.RequestId"));
 
 		List<String> notificationTypes = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeNotificationTypesResponse.NotificationTypes.Length"); i++) {
-			notificationTypes.add(context.stringValue("DescribeNotificationTypesResponse.NotificationTypes["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeNotificationTypesResponse.NotificationTypes.Length"); i++) {
+			notificationTypes.add(_ctx.stringValue("DescribeNotificationTypesResponse.NotificationTypes["+ i +"]"));
 		}
 		describeNotificationTypesResponse.setNotificationTypes(notificationTypes);
 	 

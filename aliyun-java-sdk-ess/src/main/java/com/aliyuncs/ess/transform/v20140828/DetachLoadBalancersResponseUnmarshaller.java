@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DetachLoadBalancersResponseUnmarshaller {
 
-	public static DetachLoadBalancersResponse unmarshall(DetachLoadBalancersResponse detachLoadBalancersResponse, UnmarshallerContext context) {
+	public static DetachLoadBalancersResponse unmarshall(DetachLoadBalancersResponse detachLoadBalancersResponse, UnmarshallerContext _ctx) {
 		
-		detachLoadBalancersResponse.setRequestId(context.stringValue("DetachLoadBalancersResponse.RequestId"));
+		detachLoadBalancersResponse.setRequestId(_ctx.stringValue("DetachLoadBalancersResponse.RequestId"));
 	 
 	 	return detachLoadBalancersResponse;
 	}

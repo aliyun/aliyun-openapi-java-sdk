@@ -15,22 +15,24 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteAlarmRequest extends RpcAcsRequest<DeleteAlarmResponse> {
-	
-	public DeleteAlarmRequest() {
-		super("Ess", "2014-08-28", "DeleteAlarm", "ess");
-	}
+	   
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
 	private String alarmTaskId;
+	public DeleteAlarmRequest() {
+		super("Ess", "2014-08-28", "DeleteAlarm", "ess");
+		setMethod(MethodType.POST);
+	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;

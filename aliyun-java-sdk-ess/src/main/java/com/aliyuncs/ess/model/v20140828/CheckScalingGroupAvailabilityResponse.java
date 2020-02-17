@@ -15,14 +15,14 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ess.transform.v20140828.ModifyAlertConfigResponseUnmarshaller;
+import com.aliyuncs.ess.transform.v20140828.CheckScalingGroupAvailabilityResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyAlertConfigResponse extends AcsResponse {
+public class CheckScalingGroupAvailabilityResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class ModifyAlertConfigResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyAlertConfigResponse getInstance(UnmarshallerContext context) {
-		return	ModifyAlertConfigResponseUnmarshaller.unmarshall(this, context);
+	public CheckScalingGroupAvailabilityResponse getInstance(UnmarshallerContext context) {
+		return	CheckScalingGroupAvailabilityResponseUnmarshaller.unmarshall(this, context);
 	}
 }

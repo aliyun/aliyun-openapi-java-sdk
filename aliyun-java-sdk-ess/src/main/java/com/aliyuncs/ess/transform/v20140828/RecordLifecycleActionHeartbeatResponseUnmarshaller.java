@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RecordLifecycleActionHeartbeatResponseUnmarshaller {
 
-	public static RecordLifecycleActionHeartbeatResponse unmarshall(RecordLifecycleActionHeartbeatResponse recordLifecycleActionHeartbeatResponse, UnmarshallerContext context) {
+	public static RecordLifecycleActionHeartbeatResponse unmarshall(RecordLifecycleActionHeartbeatResponse recordLifecycleActionHeartbeatResponse, UnmarshallerContext _ctx) {
 		
-		recordLifecycleActionHeartbeatResponse.setRequestId(context.stringValue("RecordLifecycleActionHeartbeatResponse.RequestId"));
+		recordLifecycleActionHeartbeatResponse.setRequestId(_ctx.stringValue("RecordLifecycleActionHeartbeatResponse.RequestId"));
 	 
 	 	return recordLifecycleActionHeartbeatResponse;
 	}

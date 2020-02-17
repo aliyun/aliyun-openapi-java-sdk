@@ -16,36 +16,27 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyNotificationConfigurationRequest extends RpcAcsRequest<ModifyNotificationConfigurationResponse> {
-	
-	public ModifyNotificationConfigurationRequest() {
-		super("Ess", "2014-08-28", "ModifyNotificationConfiguration", "ess");
-	}
-
-	private String resourceOwnerAccount;
+	   
 
 	private String scalingGroupId;
 
 	private String notificationArn;
 
-	private List<String> notificationTypes;
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
+	private List<String> notificationTypes;
+	public ModifyNotificationConfigurationRequest() {
+		super("Ess", "2014-08-28", "ModifyNotificationConfiguration", "ess");
+		setMethod(MethodType.POST);
 	}
 
 	public String getScalingGroupId() {
@@ -70,17 +61,15 @@ public class ModifyNotificationConfigurationRequest extends RpcAcsRequest<Modify
 		}
 	}
 
-	public List<String> getNotificationTypes() {
-		return this.notificationTypes;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setNotificationTypes(List<String> notificationTypes) {
-		this.notificationTypes = notificationTypes;	
-		if (notificationTypes != null) {
-			for (int i = 0; i < notificationTypes.size(); i++) {
-				putQueryParameter("NotificationType." + (i + 1) , notificationTypes.get(i));
-			}
-		}	
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public Long getOwnerId() {
@@ -92,6 +81,19 @@ public class ModifyNotificationConfigurationRequest extends RpcAcsRequest<Modify
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<String> getNotificationTypes() {
+		return this.notificationTypes;
+	}
+
+	public void setNotificationTypes(List<String> notificationTypes) {
+		this.notificationTypes = notificationTypes;	
+		if (notificationTypes != null) {
+			for (int i = 0; i < notificationTypes.size(); i++) {
+				putQueryParameter("NotificationType." + (i + 1) , notificationTypes.get(i));
+			}
+		}	
 	}
 
 	@Override

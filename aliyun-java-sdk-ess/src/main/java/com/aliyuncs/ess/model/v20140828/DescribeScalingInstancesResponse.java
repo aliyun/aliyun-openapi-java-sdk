@@ -99,6 +99,8 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 
 		private String warmupState;
 
+		private Boolean entrusted;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -185,6 +187,14 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 
 		public void setWarmupState(String warmupState) {
 			this.warmupState = warmupState;
+		}
+
+		public Boolean getEntrusted() {
+			return this.entrusted;
+		}
+
+		public void setEntrusted(Boolean entrusted) {
+			this.entrusted = entrusted;
 		}
 	}
 

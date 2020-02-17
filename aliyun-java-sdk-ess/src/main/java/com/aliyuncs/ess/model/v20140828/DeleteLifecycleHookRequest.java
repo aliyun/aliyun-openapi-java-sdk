@@ -15,16 +15,16 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteLifecycleHookRequest extends RpcAcsRequest<DeleteLifecycleHookResponse> {
-	
-	public DeleteLifecycleHookRequest() {
-		super("Ess", "2014-08-28", "DeleteLifecycleHook", "ess");
-	}
+	   
+
+	private String scalingGroupId;
 
 	private String lifecycleHookName;
 
@@ -32,11 +32,24 @@ public class DeleteLifecycleHookRequest extends RpcAcsRequest<DeleteLifecycleHoo
 
 	private String lifecycleHookId;
 
-	private String scalingGroupId;
-
 	private String ownerAccount;
 
 	private Long ownerId;
+	public DeleteLifecycleHookRequest() {
+		super("Ess", "2014-08-28", "DeleteLifecycleHook", "ess");
+		setMethod(MethodType.POST);
+	}
+
+	public String getScalingGroupId() {
+		return this.scalingGroupId;
+	}
+
+	public void setScalingGroupId(String scalingGroupId) {
+		this.scalingGroupId = scalingGroupId;
+		if(scalingGroupId != null){
+			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
 
 	public String getLifecycleHookName() {
 		return this.lifecycleHookName;
@@ -68,17 +81,6 @@ public class DeleteLifecycleHookRequest extends RpcAcsRequest<DeleteLifecycleHoo
 		this.lifecycleHookId = lifecycleHookId;
 		if(lifecycleHookId != null){
 			putQueryParameter("LifecycleHookId", lifecycleHookId);
-		}
-	}
-
-	public String getScalingGroupId() {
-		return this.scalingGroupId;
-	}
-
-	public void setScalingGroupId(String scalingGroupId) {
-		this.scalingGroupId = scalingGroupId;
-		if(scalingGroupId != null){
-			putQueryParameter("ScalingGroupId", scalingGroupId);
 		}
 	}
 

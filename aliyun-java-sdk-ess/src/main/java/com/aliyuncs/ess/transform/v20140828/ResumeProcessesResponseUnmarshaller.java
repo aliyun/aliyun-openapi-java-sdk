@@ -14,16 +14,16 @@
 
 package com.aliyuncs.ess.transform.v20140828;
 
-import com.aliyuncs.ess.model.v20140828.ModifyAlertConfigResponse;
+import com.aliyuncs.ess.model.v20140828.ResumeProcessesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyAlertConfigResponseUnmarshaller {
+public class ResumeProcessesResponseUnmarshaller {
 
-	public static ModifyAlertConfigResponse unmarshall(ModifyAlertConfigResponse modifyAlertConfigResponse, UnmarshallerContext context) {
+	public static ResumeProcessesResponse unmarshall(ResumeProcessesResponse resumeProcessesResponse, UnmarshallerContext _ctx) {
 		
-		modifyAlertConfigResponse.setRequestId(context.stringValue("ModifyAlertConfigResponse.RequestId"));
+		resumeProcessesResponse.setRequestId(_ctx.stringValue("ResumeProcessesResponse.RequestId"));
 	 
-	 	return modifyAlertConfigResponse;
+	 	return resumeProcessesResponse;
 	}
 }

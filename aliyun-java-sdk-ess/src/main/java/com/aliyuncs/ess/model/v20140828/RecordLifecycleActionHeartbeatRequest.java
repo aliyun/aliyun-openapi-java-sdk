@@ -15,28 +15,30 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class RecordLifecycleActionHeartbeatRequest extends RpcAcsRequest<RecordLifecycleActionHeartbeatResponse> {
-	
-	public RecordLifecycleActionHeartbeatRequest() {
-		super("Ess", "2014-08-28", "RecordLifecycleActionHeartbeat", "ess");
-	}
+	   
 
 	private String lifecycleActionToken;
 
-	private String resourceOwnerAccount;
-
 	private Integer heartbeatTimeout;
+
+	private String resourceOwnerAccount;
 
 	private String lifecycleHookId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+	public RecordLifecycleActionHeartbeatRequest() {
+		super("Ess", "2014-08-28", "RecordLifecycleActionHeartbeat", "ess");
+		setMethod(MethodType.POST);
+	}
 
 	public String getLifecycleActionToken() {
 		return this.lifecycleActionToken;
@@ -49,17 +51,6 @@ public class RecordLifecycleActionHeartbeatRequest extends RpcAcsRequest<RecordL
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public Integer getHeartbeatTimeout() {
 		return this.heartbeatTimeout;
 	}
@@ -68,6 +59,17 @@ public class RecordLifecycleActionHeartbeatRequest extends RpcAcsRequest<RecordL
 		this.heartbeatTimeout = heartbeatTimeout;
 		if(heartbeatTimeout != null){
 			putQueryParameter("heartbeatTimeout", heartbeatTimeout.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

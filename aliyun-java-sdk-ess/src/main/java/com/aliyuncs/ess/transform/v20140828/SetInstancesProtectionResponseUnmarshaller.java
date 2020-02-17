@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetInstancesProtectionResponseUnmarshaller {
 
-	public static SetInstancesProtectionResponse unmarshall(SetInstancesProtectionResponse setInstancesProtectionResponse, UnmarshallerContext context) {
+	public static SetInstancesProtectionResponse unmarshall(SetInstancesProtectionResponse setInstancesProtectionResponse, UnmarshallerContext _ctx) {
 		
-		setInstancesProtectionResponse.setRequestId(context.stringValue("SetInstancesProtectionResponse.RequestId"));
+		setInstancesProtectionResponse.setRequestId(_ctx.stringValue("SetInstancesProtectionResponse.RequestId"));
 	 
 	 	return setInstancesProtectionResponse;
 	}
