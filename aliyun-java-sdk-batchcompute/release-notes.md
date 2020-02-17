@@ -1,4 +1,10 @@
 # release notes
+6.2.1
+```
+1. 支持固定集群和 Auto 集群设置 DependencyIsvService。
+2. 支持 链式刷token
+```
+
 6.2.0
 ```
 1. 支持 集群继承镜像密码功能。

@@ -24,7 +24,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,6 +34,74 @@ import java.util.Map;
  */
 @JsonIgnoreProperties(ignoreUnknown = true) @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class TaskDescription {
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonInclude(JsonInclude.Include.NON_DEFAULT)
+    public static class ChainInfo {
+        @JsonIgnore
+        public String getRole() {
+            return role;
+        }
+
+        @JsonIgnore
+        public void setRole(String role) {
+            this.role = role;
+        }
+
+        @JsonProperty("Role")
+        private String role;
+
+        @JsonIgnore
+        public int getUserId() {
+            return userId;
+        }
+
+        @JsonIgnore
+        public void setUserId(int userId) {
+            this.userId = userId;
+        }
+
+        @JsonProperty("UserId")
+        private int userId;
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonInclude(JsonInclude.Include.NON_DEFAULT)
+    public static class CredentialConfig {
+        @JsonIgnore
+        public void setServiceRole(String serviceRole) {
+            this.serviceRole = serviceRole;
+        }
+
+        @JsonIgnore
+        public String getServiceRole() {
+            return serviceRole;
+        }
+
+        @JsonProperty("ServiceRole")
+        private String serviceRole;
+
+        @JsonIgnore
+        public List<ChainInfo> getChains() {
+            return chains;
+        }
+
+        @JsonIgnore
+        public void setChains(List<ChainInfo> chains) {
+            this.chains = chains;
+        }
+
+        @JsonIgnore
+        public void addChainInfo(ChainInfo index) {
+            if(this.chains == null){
+                this.chains = new ArrayList<ChainInfo>();
+            }
+            this.chains.add(index);
+        }
+
+        @JsonProperty("Chain")
+        private List<ChainInfo> chains;
+
+    }
 
     @JsonProperty("TaskName")
     private String taskName;
@@ -210,5 +280,18 @@ public class TaskDescription {
     public void setParameters(Parameters parameters) {
         this.parameters = parameters;
     }
+
+    @JsonIgnore
+    public CredentialConfig getCredentialConfig() {
+        return credentialConfig;
+    }
+
+    @JsonIgnore
+    public void setCredentialConfig(CredentialConfig credentialConfig) {
+        this.credentialConfig = credentialConfig;
+    }
+
+    @JsonProperty("CredentialConfig")
+    private CredentialConfig credentialConfig;
 
 }
