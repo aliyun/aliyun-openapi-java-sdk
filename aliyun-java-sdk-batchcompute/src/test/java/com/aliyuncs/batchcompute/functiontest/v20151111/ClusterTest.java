@@ -89,6 +89,7 @@ public class ClusterTest extends TestCase {
         assertEquals("cluster_test", cluster.getName());
         assertEquals(gImageId, cluster.getImageId());
         assertEquals("java sdk test", cluster.getDescription());
+//        assertEquals("GTX", cluster.)
 
         Group group = cluster.getGroups().get("group1");
 
@@ -201,6 +202,7 @@ public class ClusterTest extends TestCase {
         desc.setName("cluster_test");
         desc.setImageId(gImageId);
         desc.setDescription("java sdk test");
+        desc.setDependencyIsvService("GTX");
 
 
         GroupDescription groupDesc = new GroupDescription();

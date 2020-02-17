@@ -46,6 +46,9 @@ public class ClusterDescription {
     @JsonProperty("InstanceType")
     private String instanceType;
 
+    @JsonProperty("DependencyIsvService")
+    private String dependencyIsvService;
+
     @JsonIgnore
     public String getScheduleType() {
         return scheduleType;
@@ -81,7 +84,6 @@ public class ClusterDescription {
 
     @JsonProperty("PasswordInherit")
     private Boolean passwordInherit;
-
 
     @JsonProperty("EnvVars")
     private Map<String, String> envVars;
@@ -214,6 +216,13 @@ public class ClusterDescription {
     public void setGroups(Map<String, GroupDescription> groups) {
         this.groups = groups;
     }
+
+    @JsonIgnore
+    public void setDependencyIsvService(String dependencyIsvService) { this.dependencyIsvService = dependencyIsvService; }
+
+    @JsonIgnore
+    public String getDependencyIsvService() { return dependencyIsvService; }
+
 
     public void addGroup(String groupName, GroupDescription group) {
         if(null == this.groups){

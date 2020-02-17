@@ -3,7 +3,7 @@
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-batchcompute</artifactId>
     <packaging>jar</packaging>
-    <version>6.2.0</version>
+    <version>6.2.1</version>
     <name>aliyun-java-sdk-batchcompute</name>
     <url>http://www.aliyun.com</url>
     <description>Aliyun Open API SDK for Java
