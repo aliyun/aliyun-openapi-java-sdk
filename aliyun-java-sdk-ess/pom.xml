@@ -22,6 +22,7 @@ http://www.aliyun.com</description>
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>
+ 
   <dependencies>
     <dependency>
       <groupId>com.aliyun</groupId>
