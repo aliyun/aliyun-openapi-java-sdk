@@ -15,50 +15,28 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeScalingInstancesRequest extends RpcAcsRequest<DescribeScalingInstancesResponse> {
-	
-	public DescribeScalingInstancesRequest() {
-		super("Ess", "2014-08-28", "DescribeScalingInstances", "ess");
-	}
-
-	private String instanceId10;
+	   
 
 	private Long resourceOwnerId;
 
-	private String instanceId12;
-
-	private String instanceId11;
-
-	private String scalingGroupId;
-
-	private String lifecycleState;
-
 	private String creationType;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
-	private String instanceId20;
 
 	private String instanceId1;
 
 	private String instanceId3;
-
-	private String resourceOwnerAccount;
 
 	private String instanceId2;
 
 	private String instanceId5;
 
 	private String instanceId4;
-
-	private String ownerAccount;
 
 	private String instanceId7;
 
@@ -74,6 +52,26 @@ public class DescribeScalingInstancesRequest extends RpcAcsRequest<DescribeScali
 
 	private String healthStatus;
 
+	private String instanceId10;
+
+	private String instanceId12;
+
+	private String instanceId11;
+
+	private String scalingGroupId;
+
+	private String lifecycleState;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String instanceId20;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
 	private String instanceId18;
 
 	private String instanceId17;
@@ -87,16 +85,9 @@ public class DescribeScalingInstancesRequest extends RpcAcsRequest<DescribeScali
 	private String instanceId16;
 
 	private String instanceId15;
-
-	public String getInstanceId10() {
-		return this.instanceId10;
-	}
-
-	public void setInstanceId10(String instanceId10) {
-		this.instanceId10 = instanceId10;
-		if(instanceId10 != null){
-			putQueryParameter("InstanceId.10", instanceId10);
-		}
+	public DescribeScalingInstancesRequest() {
+		super("Ess", "2014-08-28", "DescribeScalingInstances", "ess");
+		setMethod(MethodType.POST);
 	}
 
 	public Long getResourceOwnerId() {
@@ -110,50 +101,6 @@ public class DescribeScalingInstancesRequest extends RpcAcsRequest<DescribeScali
 		}
 	}
 
-	public String getInstanceId12() {
-		return this.instanceId12;
-	}
-
-	public void setInstanceId12(String instanceId12) {
-		this.instanceId12 = instanceId12;
-		if(instanceId12 != null){
-			putQueryParameter("InstanceId.12", instanceId12);
-		}
-	}
-
-	public String getInstanceId11() {
-		return this.instanceId11;
-	}
-
-	public void setInstanceId11(String instanceId11) {
-		this.instanceId11 = instanceId11;
-		if(instanceId11 != null){
-			putQueryParameter("InstanceId.11", instanceId11);
-		}
-	}
-
-	public String getScalingGroupId() {
-		return this.scalingGroupId;
-	}
-
-	public void setScalingGroupId(String scalingGroupId) {
-		this.scalingGroupId = scalingGroupId;
-		if(scalingGroupId != null){
-			putQueryParameter("ScalingGroupId", scalingGroupId);
-		}
-	}
-
-	public String getLifecycleState() {
-		return this.lifecycleState;
-	}
-
-	public void setLifecycleState(String lifecycleState) {
-		this.lifecycleState = lifecycleState;
-		if(lifecycleState != null){
-			putQueryParameter("LifecycleState", lifecycleState);
-		}
-	}
-
 	public String getCreationType() {
 		return this.creationType;
 	}
@@ -162,39 +109,6 @@ public class DescribeScalingInstancesRequest extends RpcAcsRequest<DescribeScali
 		this.creationType = creationType;
 		if(creationType != null){
 			putQueryParameter("CreationType", creationType);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getInstanceId20() {
-		return this.instanceId20;
-	}
-
-	public void setInstanceId20(String instanceId20) {
-		this.instanceId20 = instanceId20;
-		if(instanceId20 != null){
-			putQueryParameter("InstanceId.20", instanceId20);
 		}
 	}
 
@@ -217,17 +131,6 @@ public class DescribeScalingInstancesRequest extends RpcAcsRequest<DescribeScali
 		this.instanceId3 = instanceId3;
 		if(instanceId3 != null){
 			putQueryParameter("InstanceId.3", instanceId3);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -261,17 +164,6 @@ public class DescribeScalingInstancesRequest extends RpcAcsRequest<DescribeScali
 		this.instanceId4 = instanceId4;
 		if(instanceId4 != null){
 			putQueryParameter("InstanceId.4", instanceId4);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -349,6 +241,116 @@ public class DescribeScalingInstancesRequest extends RpcAcsRequest<DescribeScali
 		this.healthStatus = healthStatus;
 		if(healthStatus != null){
 			putQueryParameter("HealthStatus", healthStatus);
+		}
+	}
+
+	public String getInstanceId10() {
+		return this.instanceId10;
+	}
+
+	public void setInstanceId10(String instanceId10) {
+		this.instanceId10 = instanceId10;
+		if(instanceId10 != null){
+			putQueryParameter("InstanceId.10", instanceId10);
+		}
+	}
+
+	public String getInstanceId12() {
+		return this.instanceId12;
+	}
+
+	public void setInstanceId12(String instanceId12) {
+		this.instanceId12 = instanceId12;
+		if(instanceId12 != null){
+			putQueryParameter("InstanceId.12", instanceId12);
+		}
+	}
+
+	public String getInstanceId11() {
+		return this.instanceId11;
+	}
+
+	public void setInstanceId11(String instanceId11) {
+		this.instanceId11 = instanceId11;
+		if(instanceId11 != null){
+			putQueryParameter("InstanceId.11", instanceId11);
+		}
+	}
+
+	public String getScalingGroupId() {
+		return this.scalingGroupId;
+	}
+
+	public void setScalingGroupId(String scalingGroupId) {
+		this.scalingGroupId = scalingGroupId;
+		if(scalingGroupId != null){
+			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public String getLifecycleState() {
+		return this.lifecycleState;
+	}
+
+	public void setLifecycleState(String lifecycleState) {
+		this.lifecycleState = lifecycleState;
+		if(lifecycleState != null){
+			putQueryParameter("LifecycleState", lifecycleState);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getInstanceId20() {
+		return this.instanceId20;
+	}
+
+	public void setInstanceId20(String instanceId20) {
+		this.instanceId20 = instanceId20;
+		if(instanceId20 != null){
+			putQueryParameter("InstanceId.20", instanceId20);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

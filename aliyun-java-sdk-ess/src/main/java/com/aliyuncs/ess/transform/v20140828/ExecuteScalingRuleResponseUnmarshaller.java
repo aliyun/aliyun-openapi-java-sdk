@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ExecuteScalingRuleResponseUnmarshaller {
 
-	public static ExecuteScalingRuleResponse unmarshall(ExecuteScalingRuleResponse executeScalingRuleResponse, UnmarshallerContext context) {
+	public static ExecuteScalingRuleResponse unmarshall(ExecuteScalingRuleResponse executeScalingRuleResponse, UnmarshallerContext _ctx) {
 		
-		executeScalingRuleResponse.setRequestId(context.stringValue("ExecuteScalingRuleResponse.RequestId"));
-		executeScalingRuleResponse.setScalingActivityId(context.stringValue("ExecuteScalingRuleResponse.ScalingActivityId"));
+		executeScalingRuleResponse.setRequestId(_ctx.stringValue("ExecuteScalingRuleResponse.RequestId"));
+		executeScalingRuleResponse.setScalingActivityId(_ctx.stringValue("ExecuteScalingRuleResponse.ScalingActivityId"));
 	 
 	 	return executeScalingRuleResponse;
 	}

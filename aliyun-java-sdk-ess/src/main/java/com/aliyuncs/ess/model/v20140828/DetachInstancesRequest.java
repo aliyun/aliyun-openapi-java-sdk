@@ -16,28 +16,32 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DetachInstancesRequest extends RpcAcsRequest<DetachInstancesResponse> {
-	
-	public DetachInstancesRequest() {
-		super("Ess", "2014-08-28", "DetachInstances", "ess");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private List<String> instanceIds;
+	private String scalingGroupId;
+
+	private Boolean decreaseDesiredCapacity;
 
 	private String resourceOwnerAccount;
-
-	private String scalingGroupId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private List<String> instanceIds;
+	public DetachInstancesRequest() {
+		super("Ess", "2014-08-28", "DetachInstances", "ess");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,17 +54,26 @@ public class DetachInstancesRequest extends RpcAcsRequest<DetachInstancesRespons
 		}
 	}
 
-	public List<String> getInstanceIds() {
-		return this.instanceIds;
+	public String getScalingGroupId() {
+		return this.scalingGroupId;
 	}
 
-	public void setInstanceIds(List<String> instanceIds) {
-		this.instanceIds = instanceIds;	
-		if (instanceIds != null) {
-			for (int i = 0; i < instanceIds.size(); i++) {
-				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
-			}
-		}	
+	public void setScalingGroupId(String scalingGroupId) {
+		this.scalingGroupId = scalingGroupId;
+		if(scalingGroupId != null){
+			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public Boolean getDecreaseDesiredCapacity() {
+		return this.decreaseDesiredCapacity;
+	}
+
+	public void setDecreaseDesiredCapacity(Boolean decreaseDesiredCapacity) {
+		this.decreaseDesiredCapacity = decreaseDesiredCapacity;
+		if(decreaseDesiredCapacity != null){
+			putQueryParameter("DecreaseDesiredCapacity", decreaseDesiredCapacity.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -71,17 +84,6 @@ public class DetachInstancesRequest extends RpcAcsRequest<DetachInstancesRespons
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getScalingGroupId() {
-		return this.scalingGroupId;
-	}
-
-	public void setScalingGroupId(String scalingGroupId) {
-		this.scalingGroupId = scalingGroupId;
-		if(scalingGroupId != null){
-			putQueryParameter("ScalingGroupId", scalingGroupId);
 		}
 	}
 
@@ -105,6 +107,19 @@ public class DetachInstancesRequest extends RpcAcsRequest<DetachInstancesRespons
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;	
+		if (instanceIds != null) {
+			for (int i = 0; i < instanceIds.size(); i++) {
+				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
+			}
+		}	
 	}
 
 	@Override

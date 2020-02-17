@@ -16,36 +16,27 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DetachDBInstancesRequest extends RpcAcsRequest<DetachDBInstancesResponse> {
-	
-	public DetachDBInstancesRequest() {
-		super("Ess", "2014-08-28", "DetachDBInstances", "ess");
-	}
-
-	private String resourceOwnerAccount;
+	   
 
 	private String scalingGroupId;
 
-	private List<String> dBInstances;
+	private String resourceOwnerAccount;
 
-	private Boolean forceDetach;
+	private List<String> dBInstances;
 
 	private Long ownerId;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
+	private Boolean forceDetach;
+	public DetachDBInstancesRequest() {
+		super("Ess", "2014-08-28", "DetachDBInstances", "ess");
+		setMethod(MethodType.POST);
 	}
 
 	public String getScalingGroupId() {
@@ -56,6 +47,17 @@ public class DetachDBInstancesRequest extends RpcAcsRequest<DetachDBInstancesRes
 		this.scalingGroupId = scalingGroupId;
 		if(scalingGroupId != null){
 			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -72,17 +74,6 @@ public class DetachDBInstancesRequest extends RpcAcsRequest<DetachDBInstancesRes
 		}	
 	}
 
-	public Boolean getForceDetach() {
-		return this.forceDetach;
-	}
-
-	public void setForceDetach(Boolean forceDetach) {
-		this.forceDetach = forceDetach;
-		if(forceDetach != null){
-			putQueryParameter("ForceDetach", forceDetach.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -91,6 +82,17 @@ public class DetachDBInstancesRequest extends RpcAcsRequest<DetachDBInstancesRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getForceDetach() {
+		return this.forceDetach;
+	}
+
+	public void setForceDetach(Boolean forceDetach) {
+		this.forceDetach = forceDetach;
+		if(forceDetach != null){
+			putQueryParameter("ForceDetach", forceDetach.toString());
 		}
 	}
 

@@ -15,38 +15,40 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyLifecycleHookRequest extends RpcAcsRequest<ModifyLifecycleHookResponse> {
-	
-	public ModifyLifecycleHookRequest() {
-		super("Ess", "2014-08-28", "ModifyLifecycleHook", "ess");
-	}
+	   
 
 	private String defaultResult;
 
-	private String resourceOwnerAccount;
-
 	private Integer heartbeatTimeout;
 
-	private String lifecycleHookId;
-
 	private String scalingGroupId;
-
-	private String ownerAccount;
-
-	private String notificationMetadata;
-
-	private Long ownerId;
 
 	private String lifecycleTransition;
 
 	private String lifecycleHookName;
 
 	private String notificationArn;
+
+	private String resourceOwnerAccount;
+
+	private String lifecycleHookId;
+
+	private String ownerAccount;
+
+	private String notificationMetadata;
+
+	private Long ownerId;
+	public ModifyLifecycleHookRequest() {
+		super("Ess", "2014-08-28", "ModifyLifecycleHook", "ess");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDefaultResult() {
 		return this.defaultResult;
@@ -56,17 +58,6 @@ public class ModifyLifecycleHookRequest extends RpcAcsRequest<ModifyLifecycleHoo
 		this.defaultResult = defaultResult;
 		if(defaultResult != null){
 			putQueryParameter("DefaultResult", defaultResult);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -81,17 +72,6 @@ public class ModifyLifecycleHookRequest extends RpcAcsRequest<ModifyLifecycleHoo
 		}
 	}
 
-	public String getLifecycleHookId() {
-		return this.lifecycleHookId;
-	}
-
-	public void setLifecycleHookId(String lifecycleHookId) {
-		this.lifecycleHookId = lifecycleHookId;
-		if(lifecycleHookId != null){
-			putQueryParameter("LifecycleHookId", lifecycleHookId);
-		}
-	}
-
 	public String getScalingGroupId() {
 		return this.scalingGroupId;
 	}
@@ -100,39 +80,6 @@ public class ModifyLifecycleHookRequest extends RpcAcsRequest<ModifyLifecycleHoo
 		this.scalingGroupId = scalingGroupId;
 		if(scalingGroupId != null){
 			putQueryParameter("ScalingGroupId", scalingGroupId);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getNotificationMetadata() {
-		return this.notificationMetadata;
-	}
-
-	public void setNotificationMetadata(String notificationMetadata) {
-		this.notificationMetadata = notificationMetadata;
-		if(notificationMetadata != null){
-			putQueryParameter("NotificationMetadata", notificationMetadata);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -166,6 +113,61 @@ public class ModifyLifecycleHookRequest extends RpcAcsRequest<ModifyLifecycleHoo
 		this.notificationArn = notificationArn;
 		if(notificationArn != null){
 			putQueryParameter("NotificationArn", notificationArn);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getLifecycleHookId() {
+		return this.lifecycleHookId;
+	}
+
+	public void setLifecycleHookId(String lifecycleHookId) {
+		this.lifecycleHookId = lifecycleHookId;
+		if(lifecycleHookId != null){
+			putQueryParameter("LifecycleHookId", lifecycleHookId);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getNotificationMetadata() {
+		return this.notificationMetadata;
+	}
+
+	public void setNotificationMetadata(String notificationMetadata) {
+		this.notificationMetadata = notificationMetadata;
+		if(notificationMetadata != null){
+			putQueryParameter("NotificationMetadata", notificationMetadata);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

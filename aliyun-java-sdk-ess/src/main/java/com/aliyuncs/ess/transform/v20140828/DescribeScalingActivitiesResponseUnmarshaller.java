@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeScalingActivitiesResponseUnmarshaller {
 
-	public static DescribeScalingActivitiesResponse unmarshall(DescribeScalingActivitiesResponse describeScalingActivitiesResponse, UnmarshallerContext context) {
+	public static DescribeScalingActivitiesResponse unmarshall(DescribeScalingActivitiesResponse describeScalingActivitiesResponse, UnmarshallerContext _ctx) {
 		
-		describeScalingActivitiesResponse.setRequestId(context.stringValue("DescribeScalingActivitiesResponse.RequestId"));
-		describeScalingActivitiesResponse.setTotalCount(context.integerValue("DescribeScalingActivitiesResponse.TotalCount"));
-		describeScalingActivitiesResponse.setPageNumber(context.integerValue("DescribeScalingActivitiesResponse.PageNumber"));
-		describeScalingActivitiesResponse.setPageSize(context.integerValue("DescribeScalingActivitiesResponse.PageSize"));
+		describeScalingActivitiesResponse.setRequestId(_ctx.stringValue("DescribeScalingActivitiesResponse.RequestId"));
+		describeScalingActivitiesResponse.setTotalCount(_ctx.integerValue("DescribeScalingActivitiesResponse.TotalCount"));
+		describeScalingActivitiesResponse.setPageNumber(_ctx.integerValue("DescribeScalingActivitiesResponse.PageNumber"));
+		describeScalingActivitiesResponse.setPageSize(_ctx.integerValue("DescribeScalingActivitiesResponse.PageSize"));
 
 		List<ScalingActivity> scalingActivities = new ArrayList<ScalingActivity>();
-		for (int i = 0; i < context.lengthValue("DescribeScalingActivitiesResponse.ScalingActivities.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScalingActivitiesResponse.ScalingActivities.Length"); i++) {
 			ScalingActivity scalingActivity = new ScalingActivity();
-			scalingActivity.setScalingActivityId(context.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].ScalingActivityId"));
-			scalingActivity.setScalingGroupId(context.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].ScalingGroupId"));
-			scalingActivity.setDescription(context.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].Description"));
-			scalingActivity.setCause(context.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].Cause"));
-			scalingActivity.setStartTime(context.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].StartTime"));
-			scalingActivity.setEndTime(context.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].EndTime"));
-			scalingActivity.setProgress(context.integerValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].Progress"));
-			scalingActivity.setStatusCode(context.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].StatusCode"));
-			scalingActivity.setStatusMessage(context.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].StatusMessage"));
-			scalingActivity.setTotalCapacity(context.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].TotalCapacity"));
-			scalingActivity.setAttachedCapacity(context.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].AttachedCapacity"));
-			scalingActivity.setAutoCreatedCapacity(context.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].AutoCreatedCapacity"));
-			scalingActivity.setScalingInstanceNumber(context.integerValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].ScalingInstanceNumber"));
+			scalingActivity.setScalingActivityId(_ctx.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].ScalingActivityId"));
+			scalingActivity.setScalingGroupId(_ctx.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].ScalingGroupId"));
+			scalingActivity.setDescription(_ctx.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].Description"));
+			scalingActivity.setCause(_ctx.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].Cause"));
+			scalingActivity.setStartTime(_ctx.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].StartTime"));
+			scalingActivity.setEndTime(_ctx.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].EndTime"));
+			scalingActivity.setProgress(_ctx.integerValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].Progress"));
+			scalingActivity.setStatusCode(_ctx.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].StatusCode"));
+			scalingActivity.setStatusMessage(_ctx.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].StatusMessage"));
+			scalingActivity.setTotalCapacity(_ctx.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].TotalCapacity"));
+			scalingActivity.setAttachedCapacity(_ctx.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].AttachedCapacity"));
+			scalingActivity.setAutoCreatedCapacity(_ctx.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].AutoCreatedCapacity"));
+			scalingActivity.setScalingInstanceNumber(_ctx.integerValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].ScalingInstanceNumber"));
 
 			scalingActivities.add(scalingActivity);
 		}

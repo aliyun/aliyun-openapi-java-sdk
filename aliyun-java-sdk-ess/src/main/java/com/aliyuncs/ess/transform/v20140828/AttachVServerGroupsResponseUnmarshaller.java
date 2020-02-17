@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AttachVServerGroupsResponseUnmarshaller {
 
-	public static AttachVServerGroupsResponse unmarshall(AttachVServerGroupsResponse attachVServerGroupsResponse, UnmarshallerContext context) {
+	public static AttachVServerGroupsResponse unmarshall(AttachVServerGroupsResponse attachVServerGroupsResponse, UnmarshallerContext _ctx) {
 		
-		attachVServerGroupsResponse.setRequestId(context.stringValue("AttachVServerGroupsResponse.RequestId"));
+		attachVServerGroupsResponse.setRequestId(_ctx.stringValue("AttachVServerGroupsResponse.RequestId"));
 	 
 	 	return attachVServerGroupsResponse;
 	}

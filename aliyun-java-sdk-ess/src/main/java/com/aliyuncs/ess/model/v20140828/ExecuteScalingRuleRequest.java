@@ -15,32 +15,34 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ExecuteScalingRuleRequest extends RpcAcsRequest<ExecuteScalingRuleResponse> {
-	
-	public ExecuteScalingRuleRequest() {
-		super("Ess", "2014-08-28", "ExecuteScalingRule", "ess");
-	}
+	   
 
 	private Long resourceOwnerId;
-
-	private String scalingRuleAri;
-
-	private String resourceOwnerAccount;
 
 	private String clientToken;
 
 	private Float breachThreshold;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
 	private Float metricValue;
+
+	private String scalingRuleAri;
+	public ExecuteScalingRuleRequest() {
+		super("Ess", "2014-08-28", "ExecuteScalingRule", "ess");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,28 +52,6 @@ public class ExecuteScalingRuleRequest extends RpcAcsRequest<ExecuteScalingRuleR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getScalingRuleAri() {
-		return this.scalingRuleAri;
-	}
-
-	public void setScalingRuleAri(String scalingRuleAri) {
-		this.scalingRuleAri = scalingRuleAri;
-		if(scalingRuleAri != null){
-			putQueryParameter("ScalingRuleAri", scalingRuleAri);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -94,6 +74,17 @@ public class ExecuteScalingRuleRequest extends RpcAcsRequest<ExecuteScalingRuleR
 		this.breachThreshold = breachThreshold;
 		if(breachThreshold != null){
 			putQueryParameter("BreachThreshold", breachThreshold.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -127,6 +118,17 @@ public class ExecuteScalingRuleRequest extends RpcAcsRequest<ExecuteScalingRuleR
 		this.metricValue = metricValue;
 		if(metricValue != null){
 			putQueryParameter("MetricValue", metricValue.toString());
+		}
+	}
+
+	public String getScalingRuleAri() {
+		return this.scalingRuleAri;
+	}
+
+	public void setScalingRuleAri(String scalingRuleAri) {
+		this.scalingRuleAri = scalingRuleAri;
+		if(scalingRuleAri != null){
+			putQueryParameter("ScalingRuleAri", scalingRuleAri);
 		}
 	}
 

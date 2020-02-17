@@ -15,18 +15,14 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteScalingConfigurationRequest extends RpcAcsRequest<DeleteScalingConfigurationResponse> {
-	
-	public DeleteScalingConfigurationRequest() {
-		super("Ess", "2014-08-28", "DeleteScalingConfiguration", "ess");
-	}
-
-	private String scalingConfigurationId;
+	   
 
 	private String resourceOwnerAccount;
 
@@ -34,15 +30,10 @@ public class DeleteScalingConfigurationRequest extends RpcAcsRequest<DeleteScali
 
 	private Long ownerId;
 
-	public String getScalingConfigurationId() {
-		return this.scalingConfigurationId;
-	}
-
-	public void setScalingConfigurationId(String scalingConfigurationId) {
-		this.scalingConfigurationId = scalingConfigurationId;
-		if(scalingConfigurationId != null){
-			putQueryParameter("ScalingConfigurationId", scalingConfigurationId);
-		}
+	private String scalingConfigurationId;
+	public DeleteScalingConfigurationRequest() {
+		super("Ess", "2014-08-28", "DeleteScalingConfiguration", "ess");
+		setMethod(MethodType.POST);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -75,6 +66,17 @@ public class DeleteScalingConfigurationRequest extends RpcAcsRequest<DeleteScali
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getScalingConfigurationId() {
+		return this.scalingConfigurationId;
+	}
+
+	public void setScalingConfigurationId(String scalingConfigurationId) {
+		this.scalingConfigurationId = scalingConfigurationId;
+		if(scalingConfigurationId != null){
+			putQueryParameter("ScalingConfigurationId", scalingConfigurationId);
 		}
 	}
 

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyAlarmResponseUnmarshaller {
 
-	public static ModifyAlarmResponse unmarshall(ModifyAlarmResponse modifyAlarmResponse, UnmarshallerContext context) {
+	public static ModifyAlarmResponse unmarshall(ModifyAlarmResponse modifyAlarmResponse, UnmarshallerContext _ctx) {
 		
-		modifyAlarmResponse.setRequestId(context.stringValue("ModifyAlarmResponse.RequestId"));
-		modifyAlarmResponse.setAlarmTaskId(context.stringValue("ModifyAlarmResponse.AlarmTaskId"));
+		modifyAlarmResponse.setRequestId(_ctx.stringValue("ModifyAlarmResponse.RequestId"));
+		modifyAlarmResponse.setAlarmTaskId(_ctx.stringValue("ModifyAlarmResponse.AlarmTaskId"));
 	 
 	 	return modifyAlarmResponse;
 	}

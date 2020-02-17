@@ -15,20 +15,22 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeNotificationTypesRequest extends RpcAcsRequest<DescribeNotificationTypesResponse> {
-	
-	public DescribeNotificationTypesRequest() {
-		super("Ess", "2014-08-28", "DescribeNotificationTypes", "ess");
-	}
+	   
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
+	public DescribeNotificationTypesRequest() {
+		super("Ess", "2014-08-28", "DescribeNotificationTypes", "ess");
+		setMethod(MethodType.POST);
+	}
 
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;

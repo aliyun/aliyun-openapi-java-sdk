@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class EnterStandbyResponseUnmarshaller {
 
-	public static EnterStandbyResponse unmarshall(EnterStandbyResponse enterStandbyResponse, UnmarshallerContext context) {
+	public static EnterStandbyResponse unmarshall(EnterStandbyResponse enterStandbyResponse, UnmarshallerContext _ctx) {
 		
-		enterStandbyResponse.setRequestId(context.stringValue("EnterStandbyResponse.RequestId"));
+		enterStandbyResponse.setRequestId(_ctx.stringValue("EnterStandbyResponse.RequestId"));
 	 
 	 	return enterStandbyResponse;
 	}

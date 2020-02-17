@@ -16,26 +16,39 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DetachLoadBalancersRequest extends RpcAcsRequest<DetachLoadBalancersResponse> {
-	
-	public DetachLoadBalancersRequest() {
-		super("Ess", "2014-08-28", "DetachLoadBalancers", "ess");
-	}
+	   
+
+	private String scalingGroupId;
 
 	private List<String> loadBalancers;
 
 	private String resourceOwnerAccount;
 
-	private String scalingGroupId;
+	private Long ownerId;
 
 	private Boolean forceDetach;
+	public DetachLoadBalancersRequest() {
+		super("Ess", "2014-08-28", "DetachLoadBalancers", "ess");
+		setMethod(MethodType.POST);
+	}
 
-	private Long ownerId;
+	public String getScalingGroupId() {
+		return this.scalingGroupId;
+	}
+
+	public void setScalingGroupId(String scalingGroupId) {
+		this.scalingGroupId = scalingGroupId;
+		if(scalingGroupId != null){
+			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
 
 	public List<String> getLoadBalancers() {
 		return this.loadBalancers;
@@ -61,14 +74,14 @@ public class DetachLoadBalancersRequest extends RpcAcsRequest<DetachLoadBalancer
 		}
 	}
 
-	public String getScalingGroupId() {
-		return this.scalingGroupId;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setScalingGroupId(String scalingGroupId) {
-		this.scalingGroupId = scalingGroupId;
-		if(scalingGroupId != null){
-			putQueryParameter("ScalingGroupId", scalingGroupId);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -80,17 +93,6 @@ public class DetachLoadBalancersRequest extends RpcAcsRequest<DetachLoadBalancer
 		this.forceDetach = forceDetach;
 		if(forceDetach != null){
 			putQueryParameter("ForceDetach", forceDetach.toString());
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -16,36 +16,27 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class AttachVServerGroupsRequest extends RpcAcsRequest<AttachVServerGroupsResponse> {
-	
-	public AttachVServerGroupsRequest() {
-		super("Ess", "2014-08-28", "AttachVServerGroups", "ess");
-	}
-
-	private String resourceOwnerAccount;
+	   
 
 	private String scalingGroupId;
 
 	private Boolean forceAttach;
 
+	private String resourceOwnerAccount;
+
 	private Long ownerId;
 
 	private List<VServerGroup> vServerGroups;
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
+	public AttachVServerGroupsRequest() {
+		super("Ess", "2014-08-28", "AttachVServerGroups", "ess");
+		setMethod(MethodType.POST);
 	}
 
 	public String getScalingGroupId() {
@@ -67,6 +58,17 @@ public class AttachVServerGroupsRequest extends RpcAcsRequest<AttachVServerGroup
 		this.forceAttach = forceAttach;
 		if(forceAttach != null){
 			putQueryParameter("ForceAttach", forceAttach.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyNotificationConfigurationResponseUnmarshaller {
 
-	public static ModifyNotificationConfigurationResponse unmarshall(ModifyNotificationConfigurationResponse modifyNotificationConfigurationResponse, UnmarshallerContext context) {
+	public static ModifyNotificationConfigurationResponse unmarshall(ModifyNotificationConfigurationResponse modifyNotificationConfigurationResponse, UnmarshallerContext _ctx) {
 		
-		modifyNotificationConfigurationResponse.setRequestId(context.stringValue("ModifyNotificationConfigurationResponse.RequestId"));
+		modifyNotificationConfigurationResponse.setRequestId(_ctx.stringValue("ModifyNotificationConfigurationResponse.RequestId"));
 	 
 	 	return modifyNotificationConfigurationResponse;
 	}

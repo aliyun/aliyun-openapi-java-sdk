@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLifecycleHooksResponseUnmarshaller {
 
-	public static DescribeLifecycleHooksResponse unmarshall(DescribeLifecycleHooksResponse describeLifecycleHooksResponse, UnmarshallerContext context) {
+	public static DescribeLifecycleHooksResponse unmarshall(DescribeLifecycleHooksResponse describeLifecycleHooksResponse, UnmarshallerContext _ctx) {
 		
-		describeLifecycleHooksResponse.setRequestId(context.stringValue("DescribeLifecycleHooksResponse.RequestId"));
-		describeLifecycleHooksResponse.setTotalCount(context.integerValue("DescribeLifecycleHooksResponse.TotalCount"));
-		describeLifecycleHooksResponse.setPageNumber(context.integerValue("DescribeLifecycleHooksResponse.PageNumber"));
-		describeLifecycleHooksResponse.setPageSize(context.integerValue("DescribeLifecycleHooksResponse.PageSize"));
+		describeLifecycleHooksResponse.setRequestId(_ctx.stringValue("DescribeLifecycleHooksResponse.RequestId"));
+		describeLifecycleHooksResponse.setTotalCount(_ctx.integerValue("DescribeLifecycleHooksResponse.TotalCount"));
+		describeLifecycleHooksResponse.setPageNumber(_ctx.integerValue("DescribeLifecycleHooksResponse.PageNumber"));
+		describeLifecycleHooksResponse.setPageSize(_ctx.integerValue("DescribeLifecycleHooksResponse.PageSize"));
 
 		List<LifecycleHook> lifecycleHooks = new ArrayList<LifecycleHook>();
-		for (int i = 0; i < context.lengthValue("DescribeLifecycleHooksResponse.LifecycleHooks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLifecycleHooksResponse.LifecycleHooks.Length"); i++) {
 			LifecycleHook lifecycleHook = new LifecycleHook();
-			lifecycleHook.setScalingGroupId(context.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].ScalingGroupId"));
-			lifecycleHook.setLifecycleHookId(context.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].LifecycleHookId"));
-			lifecycleHook.setLifecycleHookName(context.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].LifecycleHookName"));
-			lifecycleHook.setDefaultResult(context.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].DefaultResult"));
-			lifecycleHook.setHeartbeatTimeout(context.integerValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].HeartbeatTimeout"));
-			lifecycleHook.setLifecycleTransition(context.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].LifecycleTransition"));
-			lifecycleHook.setNotificationMetadata(context.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].NotificationMetadata"));
-			lifecycleHook.setNotificationArn(context.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].NotificationArn"));
+			lifecycleHook.setScalingGroupId(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].ScalingGroupId"));
+			lifecycleHook.setLifecycleHookId(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].LifecycleHookId"));
+			lifecycleHook.setLifecycleHookName(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].LifecycleHookName"));
+			lifecycleHook.setDefaultResult(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].DefaultResult"));
+			lifecycleHook.setHeartbeatTimeout(_ctx.integerValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].HeartbeatTimeout"));
+			lifecycleHook.setLifecycleTransition(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].LifecycleTransition"));
+			lifecycleHook.setNotificationMetadata(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].NotificationMetadata"));
+			lifecycleHook.setNotificationArn(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].NotificationArn"));
 
 			lifecycleHooks.add(lifecycleHook);
 		}
