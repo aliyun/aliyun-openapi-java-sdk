@@ -360,6 +360,8 @@ public class DescribeSceneRunningStatusResponse extends AcsResponse {
 
 		private List<QpsSummaryItem> qpsSummary;
 
+		private CheckPointResult checkPointResult;
+
 		public Long getChainId() {
 			return this.chainId;
 		}
@@ -480,6 +482,14 @@ public class DescribeSceneRunningStatusResponse extends AcsResponse {
 			this.qpsSummary = qpsSummary;
 		}
 
+		public CheckPointResult getCheckPointResult() {
+			return this.checkPointResult;
+		}
+
+		public void setCheckPointResult(CheckPointResult checkPointResult) {
+			this.checkPointResult = checkPointResult;
+		}
+
 		public static class QpsSummaryItem {
 
 			private Integer statusCode;
@@ -510,6 +520,49 @@ public class DescribeSceneRunningStatusResponse extends AcsResponse {
 
 			public void setTotalCount(Integer totalCount) {
 				this.totalCount = totalCount;
+			}
+		}
+
+		public static class CheckPointResult {
+
+			private Long succeedBusinessCount;
+
+			private Long failedBusinessCount;
+
+			private Float succeedBusinessQps;
+
+			private Float failedBusinessQps;
+
+			public Long getSucceedBusinessCount() {
+				return this.succeedBusinessCount;
+			}
+
+			public void setSucceedBusinessCount(Long succeedBusinessCount) {
+				this.succeedBusinessCount = succeedBusinessCount;
+			}
+
+			public Long getFailedBusinessCount() {
+				return this.failedBusinessCount;
+			}
+
+			public void setFailedBusinessCount(Long failedBusinessCount) {
+				this.failedBusinessCount = failedBusinessCount;
+			}
+
+			public Float getSucceedBusinessQps() {
+				return this.succeedBusinessQps;
+			}
+
+			public void setSucceedBusinessQps(Float succeedBusinessQps) {
+				this.succeedBusinessQps = succeedBusinessQps;
+			}
+
+			public Float getFailedBusinessQps() {
+				return this.failedBusinessQps;
+			}
+
+			public void setFailedBusinessQps(Float failedBusinessQps) {
+				this.failedBusinessQps = failedBusinessQps;
 			}
 		}
 	}
