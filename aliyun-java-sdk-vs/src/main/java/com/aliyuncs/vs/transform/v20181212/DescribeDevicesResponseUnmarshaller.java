@@ -63,6 +63,7 @@ public class DescribeDevicesResponseUnmarshaller {
 			device.setCreatedTime(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].CreatedTime"));
 			device.setRegisteredTime(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].RegisteredTime"));
 			device.setChannelSyncTime(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].ChannelSyncTime"));
+			device.setParams(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Params"));
 
 			Stats stats = new Stats();
 			stats.setChannelNum(_ctx.longValue("DescribeDevicesResponse.Devices["+ i +"].Stats.ChannelNum"));

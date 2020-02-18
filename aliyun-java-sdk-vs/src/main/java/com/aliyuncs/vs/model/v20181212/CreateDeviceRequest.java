@@ -51,6 +51,8 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 
 	private Long ownerId;
 
+	private String params;
+
 	private String url;
 
 	private Long port;
@@ -213,6 +215,17 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getParams() {
+		return this.params;
+	}
+
+	public void setParams(String params) {
+		this.params = params;
+		if(params != null){
+			putQueryParameter("Params", params);
 		}
 	}
 
