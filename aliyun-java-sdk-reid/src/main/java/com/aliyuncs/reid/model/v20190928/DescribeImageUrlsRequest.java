@@ -31,7 +31,7 @@ public class DescribeImageUrlsRequest extends RpcAcsRequest<DescribeImageUrlsRes
 
 	private String objectKeys;
 	public DescribeImageUrlsRequest() {
-		super("reid", "2019-09-28", "DescribeImageUrls", "1.0.0");
+		super("reid", "2019-09-28", "DescribeImageUrls", "reid");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

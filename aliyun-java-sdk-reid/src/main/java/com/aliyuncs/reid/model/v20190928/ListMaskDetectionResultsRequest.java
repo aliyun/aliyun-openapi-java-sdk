@@ -22,16 +22,20 @@ import com.aliyuncs.reid.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeHeatMapRequest extends RpcAcsRequest<DescribeHeatMapResponse> {
+public class ListMaskDetectionResultsRequest extends RpcAcsRequest<ListMaskDetectionResultsResponse> {
 	   
 
-	private String date;
+	private Long endTime;
+
+	private Long startTime;
 
 	private Long storeId;
 
-	private Long emapId;
-	public DescribeHeatMapRequest() {
-		super("reid", "2019-09-28", "DescribeHeatMap", "reid");
+	private Integer pageNumber;
+
+	private Integer pageSize;
+	public ListMaskDetectionResultsRequest() {
+		super("reid", "2019-09-28", "ListMaskDetectionResults", "reid");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +43,25 @@ public class DescribeHeatMapRequest extends RpcAcsRequest<DescribeHeatMapRespons
 		} catch (Exception e) {}
 	}
 
-	public String getDate() {
-		return this.date;
+	public Long getEndTime() {
+		return this.endTime;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
-		if(date != null){
-			putBodyParameter("Date", date);
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putBodyParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putBodyParameter("StartTime", startTime.toString());
 		}
 	}
 
@@ -61,20 +76,31 @@ public class DescribeHeatMapRequest extends RpcAcsRequest<DescribeHeatMapRespons
 		}
 	}
 
-	public Long getEmapId() {
-		return this.emapId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setEmapId(Long emapId) {
-		this.emapId = emapId;
-		if(emapId != null){
-			putBodyParameter("EmapId", emapId.toString());
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putBodyParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeHeatMapResponse> getResponseClass() {
-		return DescribeHeatMapResponse.class;
+	public Class<ListMaskDetectionResultsResponse> getResponseClass() {
+		return ListMaskDetectionResultsResponse.class;
 	}
 
 }
