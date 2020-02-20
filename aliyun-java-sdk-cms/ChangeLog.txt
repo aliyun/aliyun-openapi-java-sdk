@@ -1,3 +1,6 @@
+2020-02-20 Version: 7.0.10
+- Fix the problem that the three APIs, disablesitemonitors, enablesitemonitors and modifysitemonitor, return result fields are not fully define.
+
 2020-02-14 Version: 7.0.9
 - Fix the field definition for the site monitoring option OptionJson.
 

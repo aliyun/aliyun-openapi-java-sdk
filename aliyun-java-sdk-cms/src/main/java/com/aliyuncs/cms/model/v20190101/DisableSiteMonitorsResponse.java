@@ -32,7 +32,7 @@ public class DisableSiteMonitorsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String data;
+	private Data data;
 
 	public String getCode() {
 		return this.code;
@@ -66,12 +66,25 @@ public class DisableSiteMonitorsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(Data data) {
 		this.data = data;
+	}
+
+	public static class Data {
+
+		private Integer count;
+
+		public Integer getCount() {
+			return this.count;
+		}
+
+		public void setCount(Integer count) {
+			this.count = count;
+		}
 	}
 
 	@Override
