@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.retailcloud.model.v20180313.ListAppInstanceResponse;
-import com.aliyuncs.retailcloud.model.v20180313.ListAppInstanceResponse.ListAppInstanceResponse1;
+import com.aliyuncs.retailcloud.model.v20180313.ListAppInstanceResponse.AppInstanceDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,18 +33,18 @@ public class ListAppInstanceResponseUnmarshaller {
 		listAppInstanceResponse.setTotalCount(_ctx.longValue("ListAppInstanceResponse.TotalCount"));
 		listAppInstanceResponse.setErrMsg(_ctx.stringValue("ListAppInstanceResponse.ErrMsg"));
 
-		List<ListAppInstanceResponse1> data = new ArrayList<ListAppInstanceResponse1>();
+		List<AppInstanceDetail> data = new ArrayList<AppInstanceDetail>();
 		for (int i = 0; i < _ctx.lengthValue("ListAppInstanceResponse.Data.Length"); i++) {
-			ListAppInstanceResponse1 listAppInstanceResponse1 = new ListAppInstanceResponse1();
-			listAppInstanceResponse1.setAppInstanceId(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].AppInstanceId"));
-			listAppInstanceResponse1.setCreateTime(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].CreateTime"));
-			listAppInstanceResponse1.setSpec(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Spec"));
-			listAppInstanceResponse1.setRestartCount(_ctx.integerValue("ListAppInstanceResponse.Data["+ i +"].RestartCount"));
-			listAppInstanceResponse1.setHostIp(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].HostIp"));
-			listAppInstanceResponse1.setPodIp(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].PodIp"));
-			listAppInstanceResponse1.setHealth(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Health"));
+			AppInstanceDetail appInstanceDetail = new AppInstanceDetail();
+			appInstanceDetail.setAppInstanceId(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].AppInstanceId"));
+			appInstanceDetail.setCreateTime(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].CreateTime"));
+			appInstanceDetail.setSpec(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Spec"));
+			appInstanceDetail.setRestartCount(_ctx.integerValue("ListAppInstanceResponse.Data["+ i +"].RestartCount"));
+			appInstanceDetail.setHostIp(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].HostIp"));
+			appInstanceDetail.setPodIp(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].PodIp"));
+			appInstanceDetail.setHealth(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Health"));
 
-			data.add(listAppInstanceResponse1);
+			data.add(appInstanceDetail);
 		}
 		listAppInstanceResponse.setData(data);
 	 

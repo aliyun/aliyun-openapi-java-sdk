@@ -22,59 +22,46 @@ import com.aliyuncs.retailcloud.Endpoint;
  * @author auto create
  * @version 
  */
-public class BatchAddServersRequest extends RpcAcsRequest<BatchAddServersResponse> {
+public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 	   
 
-	private String instanceId;
+	private Integer pageSize;
 
-	private String vpcId;
-
-	private String sign;
-	public BatchAddServersRequest() {
-		super("retailcloud", "2018-03-13", "BatchAddServers", "retailcloud");
-		setMethod(MethodType.POST);
+	private Integer pageNumber;
+	public ListUsersRequest() {
+		super("retailcloud", "2018-03-13", "ListUsers", "retailcloud");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
-	public String getSign() {
-		return this.sign;
-	}
-
-	public void setSign(String sign) {
-		this.sign = sign;
-		if(sign != null){
-			putQueryParameter("Sign", sign);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
 	@Override
-	public Class<BatchAddServersResponse> getResponseClass() {
-		return BatchAddServersResponse.class;
+	public Class<ListUsersResponse> getResponseClass() {
+		return ListUsersResponse.class;
 	}
 
 }

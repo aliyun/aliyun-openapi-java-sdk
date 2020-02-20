@@ -33,7 +33,7 @@ public class ListAppResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private List<ListAppResponse1> data;
+	private List<AppDetail> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,15 +67,15 @@ public class ListAppResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public List<ListAppResponse1> getData() {
+	public List<AppDetail> getData() {
 		return this.data;
 	}
 
-	public void setData(List<ListAppResponse1> data) {
+	public void setData(List<AppDetail> data) {
 		this.data = data;
 	}
 
-	public static class ListAppResponse1 {
+	public static class AppDetail {
 
 		private Long appId;
 
@@ -94,6 +94,8 @@ public class ListAppResponse extends AcsResponse {
 		private String deployType;
 
 		private String bizTitle;
+
+		private String appStateType;
 
 		public Long getAppId() {
 			return this.appId;
@@ -165,6 +167,14 @@ public class ListAppResponse extends AcsResponse {
 
 		public void setBizTitle(String bizTitle) {
 			this.bizTitle = bizTitle;
+		}
+
+		public String getAppStateType() {
+			return this.appStateType;
+		}
+
+		public void setAppStateType(String appStateType) {
+			this.appStateType = appStateType;
 		}
 	}
 

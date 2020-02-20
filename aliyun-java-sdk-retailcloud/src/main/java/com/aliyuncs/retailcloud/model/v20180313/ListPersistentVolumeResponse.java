@@ -37,7 +37,7 @@ public class ListPersistentVolumeResponse extends AcsResponse {
 
 	private String errMsg;
 
-	private List<ListPersistentVolumeResponse1> data;
+	private List<PersistentVolumeDetail> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -87,15 +87,15 @@ public class ListPersistentVolumeResponse extends AcsResponse {
 		this.errMsg = errMsg;
 	}
 
-	public List<ListPersistentVolumeResponse1> getData() {
+	public List<PersistentVolumeDetail> getData() {
 		return this.data;
 	}
 
-	public void setData(List<ListPersistentVolumeResponse1> data) {
+	public void setData(List<PersistentVolumeDetail> data) {
 		this.data = data;
 	}
 
-	public static class ListPersistentVolumeResponse1 {
+	public static class PersistentVolumeDetail {
 
 		private String name;
 

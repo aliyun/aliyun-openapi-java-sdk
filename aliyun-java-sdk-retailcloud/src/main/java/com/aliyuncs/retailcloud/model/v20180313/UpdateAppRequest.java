@@ -15,7 +15,9 @@
 package com.aliyuncs.retailcloud.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.retailcloud.Endpoint;
 
 /**
  * @author auto create
@@ -28,6 +30,8 @@ public class UpdateAppRequest extends RpcAcsRequest<UpdateAppResponse> {
 
 	private String serviceType;
 
+	private List<UserRoles> userRoless;
+
 	private Long appId;
 
 	private String operatingSystem;
@@ -38,6 +42,10 @@ public class UpdateAppRequest extends RpcAcsRequest<UpdateAppResponse> {
 	public UpdateAppRequest() {
 		super("retailcloud", "2018-03-13", "UpdateApp", "retailcloud");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getBizTitle() {
@@ -60,6 +68,21 @@ public class UpdateAppRequest extends RpcAcsRequest<UpdateAppResponse> {
 		if(serviceType != null){
 			putBodyParameter("ServiceType", serviceType);
 		}
+	}
+
+	public List<UserRoles> getUserRoless() {
+		return this.userRoless;
+	}
+
+	public void setUserRoless(List<UserRoles> userRoless) {
+		this.userRoless = userRoless;	
+		if (userRoless != null) {
+			for (int depth1 = 0; depth1 < userRoless.size(); depth1++) {
+				putBodyParameter("UserRoles." + (depth1 + 1) + ".RoleName" , userRoless.get(depth1).getRoleName());
+				putBodyParameter("UserRoles." + (depth1 + 1) + ".UserType" , userRoless.get(depth1).getUserType());
+				putBodyParameter("UserRoles." + (depth1 + 1) + ".UserId" , userRoless.get(depth1).getUserId());
+			}
+		}	
 	}
 
 	public Long getAppId() {
@@ -103,6 +126,39 @@ public class UpdateAppRequest extends RpcAcsRequest<UpdateAppResponse> {
 		this.language = language;
 		if(language != null){
 			putBodyParameter("Language", language);
+		}
+	}
+
+	public static class UserRoles {
+
+		private String roleName;
+
+		private String userType;
+
+		private String userId;
+
+		public String getRoleName() {
+			return this.roleName;
+		}
+
+		public void setRoleName(String roleName) {
+			this.roleName = roleName;
+		}
+
+		public String getUserType() {
+			return this.userType;
+		}
+
+		public void setUserType(String userType) {
+			this.userType = userType;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 	}
 

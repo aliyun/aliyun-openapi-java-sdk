@@ -14,6 +14,7 @@
 
 package com.aliyuncs.retailcloud.model.v20180313;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.retailcloud.transform.v20180313.DescribeAppDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -83,6 +84,10 @@ public class DescribeAppDetailResponse extends AcsResponse {
 		private String deployType;
 
 		private String description;
+
+		private String appStateType;
+
+		private List<UserRole> userRoles;
 
 		public String getServiceType() {
 			return this.serviceType;
@@ -154,6 +159,65 @@ public class DescribeAppDetailResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getAppStateType() {
+			return this.appStateType;
+		}
+
+		public void setAppStateType(String appStateType) {
+			this.appStateType = appStateType;
+		}
+
+		public List<UserRole> getUserRoles() {
+			return this.userRoles;
+		}
+
+		public void setUserRoles(List<UserRole> userRoles) {
+			this.userRoles = userRoles;
+		}
+
+		public static class UserRole {
+
+			private String userId;
+
+			private String userType;
+
+			private String realName;
+
+			private String roleName;
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public String getUserType() {
+				return this.userType;
+			}
+
+			public void setUserType(String userType) {
+				this.userType = userType;
+			}
+
+			public String getRealName() {
+				return this.realName;
+			}
+
+			public void setRealName(String realName) {
+				this.realName = realName;
+			}
+
+			public String getRoleName() {
+				return this.roleName;
+			}
+
+			public void setRoleName(String roleName) {
+				this.roleName = roleName;
+			}
 		}
 	}
 

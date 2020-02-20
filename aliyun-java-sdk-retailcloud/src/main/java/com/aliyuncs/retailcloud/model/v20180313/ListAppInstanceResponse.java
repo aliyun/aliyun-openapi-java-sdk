@@ -37,7 +37,7 @@ public class ListAppInstanceResponse extends AcsResponse {
 
 	private String errMsg;
 
-	private List<ListAppInstanceResponse1> data;
+	private List<AppInstanceDetail> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -87,15 +87,15 @@ public class ListAppInstanceResponse extends AcsResponse {
 		this.errMsg = errMsg;
 	}
 
-	public List<ListAppInstanceResponse1> getData() {
+	public List<AppInstanceDetail> getData() {
 		return this.data;
 	}
 
-	public void setData(List<ListAppInstanceResponse1> data) {
+	public void setData(List<AppInstanceDetail> data) {
 		this.data = data;
 	}
 
-	public static class ListAppInstanceResponse1 {
+	public static class AppInstanceDetail {
 
 		private String appInstanceId;
 

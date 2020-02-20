@@ -37,7 +37,7 @@ public class ListPersistentVolumeClaimResponse extends AcsResponse {
 
 	private String errorMsg;
 
-	private List<ListPersistentVolumeClaimResponse1> data;
+	private List<PersistentVolumeClaimDetail> data;
 
 	public Integer getCode() {
 		return this.code;
@@ -87,15 +87,15 @@ public class ListPersistentVolumeClaimResponse extends AcsResponse {
 		this.errorMsg = errorMsg;
 	}
 
-	public List<ListPersistentVolumeClaimResponse1> getData() {
+	public List<PersistentVolumeClaimDetail> getData() {
 		return this.data;
 	}
 
-	public void setData(List<ListPersistentVolumeClaimResponse1> data) {
+	public void setData(List<PersistentVolumeClaimDetail> data) {
 		this.data = data;
 	}
 
-	public static class ListPersistentVolumeClaimResponse1 {
+	public static class PersistentVolumeClaimDetail {
 
 		private String name;
 

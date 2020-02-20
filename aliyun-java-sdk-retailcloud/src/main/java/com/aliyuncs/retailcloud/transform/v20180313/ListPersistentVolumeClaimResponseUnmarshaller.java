@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.retailcloud.model.v20180313.ListPersistentVolumeClaimResponse;
-import com.aliyuncs.retailcloud.model.v20180313.ListPersistentVolumeClaimResponse.ListPersistentVolumeClaimResponse1;
+import com.aliyuncs.retailcloud.model.v20180313.ListPersistentVolumeClaimResponse.PersistentVolumeClaimDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,18 +33,18 @@ public class ListPersistentVolumeClaimResponseUnmarshaller {
 		listPersistentVolumeClaimResponse.setTotalCount(_ctx.longValue("ListPersistentVolumeClaimResponse.TotalCount"));
 		listPersistentVolumeClaimResponse.setErrorMsg(_ctx.stringValue("ListPersistentVolumeClaimResponse.ErrorMsg"));
 
-		List<ListPersistentVolumeClaimResponse1> data = new ArrayList<ListPersistentVolumeClaimResponse1>();
+		List<PersistentVolumeClaimDetail> data = new ArrayList<PersistentVolumeClaimDetail>();
 		for (int i = 0; i < _ctx.lengthValue("ListPersistentVolumeClaimResponse.Data.Length"); i++) {
-			ListPersistentVolumeClaimResponse1 listPersistentVolumeClaimResponse1 = new ListPersistentVolumeClaimResponse1();
-			listPersistentVolumeClaimResponse1.setName(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].Name"));
-			listPersistentVolumeClaimResponse1.setCapacity(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].Capacity"));
-			listPersistentVolumeClaimResponse1.setAccessModes(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].AccessModes"));
-			listPersistentVolumeClaimResponse1.setStatus(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].Status"));
-			listPersistentVolumeClaimResponse1.setStorageClass(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].StorageClass"));
-			listPersistentVolumeClaimResponse1.setVolumeName(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].VolumeName"));
-			listPersistentVolumeClaimResponse1.setCreateTime(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].CreateTime"));
+			PersistentVolumeClaimDetail persistentVolumeClaimDetail = new PersistentVolumeClaimDetail();
+			persistentVolumeClaimDetail.setName(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].Name"));
+			persistentVolumeClaimDetail.setCapacity(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].Capacity"));
+			persistentVolumeClaimDetail.setAccessModes(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].AccessModes"));
+			persistentVolumeClaimDetail.setStatus(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].Status"));
+			persistentVolumeClaimDetail.setStorageClass(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].StorageClass"));
+			persistentVolumeClaimDetail.setVolumeName(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].VolumeName"));
+			persistentVolumeClaimDetail.setCreateTime(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].CreateTime"));
 
-			data.add(listPersistentVolumeClaimResponse1);
+			data.add(persistentVolumeClaimDetail);
 		}
 		listPersistentVolumeClaimResponse.setData(data);
 	 
