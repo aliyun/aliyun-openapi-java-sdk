@@ -15,6 +15,7 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import java.util.Map;
 import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
@@ -23,27 +24,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse> {
+public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
 	   
 
-	private String content;
+	private String resourceType;
 
 	private Map<Object,Object> tags;
 
-	private String templateName;
-	public CreateTemplateRequest() {
-		super("oos", "2019-06-01", "CreateTemplate", "oos");
+	private String nextToken;
+
+	private List<Object> resourceIds;
+	public ListTagResourcesRequest() {
+		super("oos", "2019-06-01", "ListTagResources", "oos");
 		setMethod(MethodType.POST);
 	}
 
-	public String getContent() {
-		return this.content;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
-		if(content != null){
-			putQueryParameter("Content", content);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -58,20 +61,31 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 		}
 	}
 
-	public String getTemplateName() {
-		return this.templateName;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setTemplateName(String templateName) {
-		this.templateName = templateName;
-		if(templateName != null){
-			putQueryParameter("TemplateName", templateName);
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public List<Object> getResourceIds() {
+		return this.resourceIds;
+	}
+
+	public void setResourceIds(List<Object> resourceIds) {
+		this.resourceIds = resourceIds;
+		if(resourceIds != null){
+			putQueryParameter("ResourceIds", new Gson().toJson(resourceIds));
 		}
 	}
 
 	@Override
-	public Class<CreateTemplateResponse> getResponseClass() {
-		return CreateTemplateResponse.class;
+	public Class<ListTagResourcesResponse> getResponseClass() {
+		return ListTagResourcesResponse.class;
 	}
 
 }

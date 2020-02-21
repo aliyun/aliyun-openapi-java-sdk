@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.oos.model.v20190601.ListTemplatesResponse;
 import com.aliyuncs.oos.model.v20190601.ListTemplatesResponse.Template;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,9 +45,11 @@ public class ListTemplatesResponseUnmarshaller {
 			template.setShareType(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].ShareType"));
 			template.setTemplateFormat(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateFormat"));
 			template.setTemplateVersion(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateVersion"));
+			template.setHasTrigger(_ctx.booleanValue("ListTemplatesResponse.Templates["+ i +"].HasTrigger"));
 			template.setTotalExecutionCount(_ctx.integerValue("ListTemplatesResponse.Templates["+ i +"].TotalExecutionCount"));
 			template.setPopularity(_ctx.integerValue("ListTemplatesResponse.Templates["+ i +"].Popularity"));
-			template.setHasTrigger(_ctx.booleanValue("ListTemplatesResponse.Templates["+ i +"].HasTrigger"));
+			template.setTags(_ctx.mapValue("ListTemplatesResponse.Templates["+ i +"].Tags"));
+			template.setCategory(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].Category"));
 
 			templates.add(template);
 		}

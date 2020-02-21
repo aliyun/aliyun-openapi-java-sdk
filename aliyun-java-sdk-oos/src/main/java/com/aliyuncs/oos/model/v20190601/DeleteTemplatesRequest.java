@@ -21,15 +21,26 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteTemplateRequest extends RpcAcsRequest<DeleteTemplateResponse> {
+public class DeleteTemplatesRequest extends RpcAcsRequest<DeleteTemplatesResponse> {
 	   
 
-	private Boolean autoDeleteExecutions;
+	private String templateNames;
 
-	private String templateName;
-	public DeleteTemplateRequest() {
-		super("oos", "2019-06-01", "DeleteTemplate", "oos");
+	private Boolean autoDeleteExecutions;
+	public DeleteTemplatesRequest() {
+		super("oos", "2019-06-01", "DeleteTemplates", "oos");
 		setMethod(MethodType.POST);
+	}
+
+	public String getTemplateNames() {
+		return this.templateNames;
+	}
+
+	public void setTemplateNames(String templateNames) {
+		this.templateNames = templateNames;
+		if(templateNames != null){
+			putQueryParameter("TemplateNames", templateNames);
+		}
 	}
 
 	public Boolean getAutoDeleteExecutions() {
@@ -43,20 +54,9 @@ public class DeleteTemplateRequest extends RpcAcsRequest<DeleteTemplateResponse>
 		}
 	}
 
-	public String getTemplateName() {
-		return this.templateName;
-	}
-
-	public void setTemplateName(String templateName) {
-		this.templateName = templateName;
-		if(templateName != null){
-			putQueryParameter("TemplateName", templateName);
-		}
-	}
-
 	@Override
-	public Class<DeleteTemplateResponse> getResponseClass() {
-		return DeleteTemplateResponse.class;
+	public Class<DeleteTemplatesResponse> getResponseClass() {
+		return DeleteTemplatesResponse.class;
 	}
 
 }

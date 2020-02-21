@@ -15,6 +15,7 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oos.transform.v20190601.ListExecutionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -91,6 +92,10 @@ public class ListExecutionsResponse extends AcsResponse {
 
 		private String statusMessage;
 
+		private String statusReason;
+
+		private String waitingStatus;
+
 		private String parentExecutionId;
 
 		private String parameters;
@@ -99,15 +104,17 @@ public class ListExecutionsResponse extends AcsResponse {
 
 		private String safetyCheck;
 
+		private Boolean isParent;
+
 		private String ramRole;
 
 		private String counters;
 
-		private Boolean isParent;
+		private String category;
 
-		private String statusReason;
+		private Map<Object,Object> tags;
 
-		private String loopMode;
+		private String description;
 
 		private List<CurrentTask> currentTasks;
 
@@ -207,6 +214,22 @@ public class ListExecutionsResponse extends AcsResponse {
 			this.statusMessage = statusMessage;
 		}
 
+		public String getStatusReason() {
+			return this.statusReason;
+		}
+
+		public void setStatusReason(String statusReason) {
+			this.statusReason = statusReason;
+		}
+
+		public String getWaitingStatus() {
+			return this.waitingStatus;
+		}
+
+		public void setWaitingStatus(String waitingStatus) {
+			this.waitingStatus = waitingStatus;
+		}
+
 		public String getParentExecutionId() {
 			return this.parentExecutionId;
 		}
@@ -239,6 +262,14 @@ public class ListExecutionsResponse extends AcsResponse {
 			this.safetyCheck = safetyCheck;
 		}
 
+		public Boolean getIsParent() {
+			return this.isParent;
+		}
+
+		public void setIsParent(Boolean isParent) {
+			this.isParent = isParent;
+		}
+
 		public String getRamRole() {
 			return this.ramRole;
 		}
@@ -255,28 +286,28 @@ public class ListExecutionsResponse extends AcsResponse {
 			this.counters = counters;
 		}
 
-		public Boolean getIsParent() {
-			return this.isParent;
+		public String getCategory() {
+			return this.category;
 		}
 
-		public void setIsParent(Boolean isParent) {
-			this.isParent = isParent;
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
-		public String getStatusReason() {
-			return this.statusReason;
+		public Map<Object,Object> getTags() {
+			return this.tags;
 		}
 
-		public void setStatusReason(String statusReason) {
-			this.statusReason = statusReason;
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
 		}
 
-		public String getLoopMode() {
-			return this.loopMode;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setLoopMode(String loopMode) {
-			this.loopMode = loopMode;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public List<CurrentTask> getCurrentTasks() {

@@ -21,13 +21,52 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetExecutionTemplateRequest extends RpcAcsRequest<GetExecutionTemplateResponse> {
+public class TriggerExecutionRequest extends RpcAcsRequest<TriggerExecutionResponse> {
 	   
 
+	private String clientToken;
+
+	private String type;
+
+	private String content;
+
 	private String executionId;
-	public GetExecutionTemplateRequest() {
-		super("oos", "2019-06-01", "GetExecutionTemplate", "oos");
+	public TriggerExecutionRequest() {
+		super("oos", "2019-06-01", "TriggerExecution", "oos");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putQueryParameter("Content", content);
+		}
 	}
 
 	public String getExecutionId() {
@@ -42,8 +81,8 @@ public class GetExecutionTemplateRequest extends RpcAcsRequest<GetExecutionTempl
 	}
 
 	@Override
-	public Class<GetExecutionTemplateResponse> getResponseClass() {
-		return GetExecutionTemplateResponse.class;
+	public Class<TriggerExecutionResponse> getResponseClass() {
+		return TriggerExecutionResponse.class;
 	}
 
 }

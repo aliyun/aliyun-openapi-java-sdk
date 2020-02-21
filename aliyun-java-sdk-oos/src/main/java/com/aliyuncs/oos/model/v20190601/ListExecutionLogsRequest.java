@@ -15,21 +15,14 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.oos.Endpoint;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListExecutionLogsRequest extends RpcAcsRequest<ListExecutionLogsResponse> {
-	
-	public ListExecutionLogsRequest() {
-		super("oos", "2019-06-01", "ListExecutionLogs", "oos");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String executionId;
 
@@ -40,6 +33,10 @@ public class ListExecutionLogsRequest extends RpcAcsRequest<ListExecutionLogsRes
 	private Integer maxResults;
 
 	private String taskExecutionId;
+	public ListExecutionLogsRequest() {
+		super("oos", "2019-06-01", "ListExecutionLogs", "oos");
+		setMethod(MethodType.POST);
+	}
 
 	public String getExecutionId() {
 		return this.executionId;

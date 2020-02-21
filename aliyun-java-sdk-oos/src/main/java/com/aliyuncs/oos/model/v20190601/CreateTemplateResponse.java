@@ -14,6 +14,7 @@
 
 package com.aliyuncs.oos.model.v20190601;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oos.transform.v20190601.CreateTemplateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -69,6 +70,8 @@ public class CreateTemplateResponse extends AcsResponse {
 		private String templateVersion;
 
 		private Boolean hasTrigger;
+
+		private Map<Object,Object> tags;
 
 		public String getTemplateName() {
 			return this.templateName;
@@ -164,6 +167,14 @@ public class CreateTemplateResponse extends AcsResponse {
 
 		public void setHasTrigger(Boolean hasTrigger) {
 			this.hasTrigger = hasTrigger;
+		}
+
+		public Map<Object,Object> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
 		}
 	}
 

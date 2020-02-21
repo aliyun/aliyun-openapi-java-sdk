@@ -31,6 +31,8 @@ public class ListExecutionLogsResponse extends AcsResponse {
 
 	private String nextToken;
 
+	private Boolean isTruncated;
+
 	private List<ExecutionLog> executionLogs;
 
 	public String getRequestId() {
@@ -55,6 +57,14 @@ public class ListExecutionLogsResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public Boolean getIsTruncated() {
+		return this.isTruncated;
+	}
+
+	public void setIsTruncated(Boolean isTruncated) {
+		this.isTruncated = isTruncated;
 	}
 
 	public List<ExecutionLog> getExecutionLogs() {

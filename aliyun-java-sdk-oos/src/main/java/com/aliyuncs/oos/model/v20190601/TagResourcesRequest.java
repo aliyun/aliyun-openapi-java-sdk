@@ -15,6 +15,7 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import java.util.Map;
 import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
@@ -23,27 +24,27 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse> {
+public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 	   
 
-	private String content;
+	private String resourceType;
 
 	private Map<Object,Object> tags;
 
-	private String templateName;
-	public CreateTemplateRequest() {
-		super("oos", "2019-06-01", "CreateTemplate", "oos");
+	private List<Object> resourceIds;
+	public TagResourcesRequest() {
+		super("oos", "2019-06-01", "TagResources", "oos");
 		setMethod(MethodType.POST);
 	}
 
-	public String getContent() {
-		return this.content;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
-		if(content != null){
-			putQueryParameter("Content", content);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -58,20 +59,20 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 		}
 	}
 
-	public String getTemplateName() {
-		return this.templateName;
+	public List<Object> getResourceIds() {
+		return this.resourceIds;
 	}
 
-	public void setTemplateName(String templateName) {
-		this.templateName = templateName;
-		if(templateName != null){
-			putQueryParameter("TemplateName", templateName);
+	public void setResourceIds(List<Object> resourceIds) {
+		this.resourceIds = resourceIds;
+		if(resourceIds != null){
+			putQueryParameter("ResourceIds", new Gson().toJson(resourceIds));
 		}
 	}
 
 	@Override
-	public Class<CreateTemplateResponse> getResponseClass() {
-		return CreateTemplateResponse.class;
+	public Class<TagResourcesResponse> getResponseClass() {
+		return TagResourcesResponse.class;
 	}
 
 }

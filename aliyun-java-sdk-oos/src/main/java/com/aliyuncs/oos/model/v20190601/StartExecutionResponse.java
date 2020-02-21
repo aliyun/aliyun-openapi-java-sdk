@@ -15,6 +15,7 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oos.transform.v20190601.StartExecutionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,8 +28,6 @@ public class StartExecutionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String loopMode;
-
 	private Execution execution;
 
 	public String getRequestId() {
@@ -37,14 +36,6 @@ public class StartExecutionResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getLoopMode() {
-		return this.loopMode;
-	}
-
-	public void setLoopMode(String loopMode) {
-		this.loopMode = loopMode;
 	}
 
 	public Execution getExecution() {
@@ -66,6 +57,8 @@ public class StartExecutionResponse extends AcsResponse {
 		private String templateVersion;
 
 		private String mode;
+
+		private String loopMode;
 
 		private String executedBy;
 
@@ -89,11 +82,15 @@ public class StartExecutionResponse extends AcsResponse {
 
 		private String safetyCheck;
 
+		private Boolean isParent;
+
 		private String counters;
 
 		private String ramRole;
 
-		private String loopMode;
+		private Map<Object,Object> tags;
+
+		private String description;
 
 		private List<CurrentTask> currentTasks;
 
@@ -135,6 +132,14 @@ public class StartExecutionResponse extends AcsResponse {
 
 		public void setMode(String mode) {
 			this.mode = mode;
+		}
+
+		public String getLoopMode() {
+			return this.loopMode;
+		}
+
+		public void setLoopMode(String loopMode) {
+			this.loopMode = loopMode;
 		}
 
 		public String getExecutedBy() {
@@ -225,6 +230,14 @@ public class StartExecutionResponse extends AcsResponse {
 			this.safetyCheck = safetyCheck;
 		}
 
+		public Boolean getIsParent() {
+			return this.isParent;
+		}
+
+		public void setIsParent(Boolean isParent) {
+			this.isParent = isParent;
+		}
+
 		public String getCounters() {
 			return this.counters;
 		}
@@ -241,12 +254,20 @@ public class StartExecutionResponse extends AcsResponse {
 			this.ramRole = ramRole;
 		}
 
-		public String getLoopMode() {
-			return this.loopMode;
+		public Map<Object,Object> getTags() {
+			return this.tags;
 		}
 
-		public void setLoopMode(String loopMode) {
-			this.loopMode = loopMode;
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public List<CurrentTask> getCurrentTasks() {

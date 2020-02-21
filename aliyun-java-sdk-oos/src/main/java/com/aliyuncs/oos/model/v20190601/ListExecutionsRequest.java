@@ -15,43 +15,28 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.oos.Endpoint;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse> {
-	
-	public ListExecutionsRequest() {
-		super("oos", "2019-06-01", "ListExecutions", "oos");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String executedBy;
 
 	private Boolean includeChildExecution;
 
-	private String startDateAfter;
-
-	private String startDateBefore;
-
 	private String mode;
 
 	private String executionId;
 
-	private String parentExecutionId;
-
 	private String ramRole;
 
 	private String nextToken;
-
-	private String endDateAfter;
-
-	private Integer maxResults;
 
 	private String templateName;
 
@@ -59,9 +44,27 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 
 	private String sortOrder;
 
+	private String startDateAfter;
+
+	private String startDateBefore;
+
+	private Map<Object,Object> tags;
+
+	private String parentExecutionId;
+
+	private String endDateAfter;
+
+	private Integer maxResults;
+
 	private String sortField;
 
+	private String category;
+
 	private String status;
+	public ListExecutionsRequest() {
+		super("oos", "2019-06-01", "ListExecutions", "oos");
+		setMethod(MethodType.POST);
+	}
 
 	public String getExecutedBy() {
 		return this.executedBy;
@@ -82,28 +85,6 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 		this.includeChildExecution = includeChildExecution;
 		if(includeChildExecution != null){
 			putQueryParameter("IncludeChildExecution", includeChildExecution.toString());
-		}
-	}
-
-	public String getStartDateAfter() {
-		return this.startDateAfter;
-	}
-
-	public void setStartDateAfter(String startDateAfter) {
-		this.startDateAfter = startDateAfter;
-		if(startDateAfter != null){
-			putQueryParameter("StartDateAfter", startDateAfter);
-		}
-	}
-
-	public String getStartDateBefore() {
-		return this.startDateBefore;
-	}
-
-	public void setStartDateBefore(String startDateBefore) {
-		this.startDateBefore = startDateBefore;
-		if(startDateBefore != null){
-			putQueryParameter("StartDateBefore", startDateBefore);
 		}
 	}
 
@@ -129,17 +110,6 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 		}
 	}
 
-	public String getParentExecutionId() {
-		return this.parentExecutionId;
-	}
-
-	public void setParentExecutionId(String parentExecutionId) {
-		this.parentExecutionId = parentExecutionId;
-		if(parentExecutionId != null){
-			putQueryParameter("ParentExecutionId", parentExecutionId);
-		}
-	}
-
 	public String getRamRole() {
 		return this.ramRole;
 	}
@@ -159,28 +129,6 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
-	public String getEndDateAfter() {
-		return this.endDateAfter;
-	}
-
-	public void setEndDateAfter(String endDateAfter) {
-		this.endDateAfter = endDateAfter;
-		if(endDateAfter != null){
-			putQueryParameter("EndDateAfter", endDateAfter);
-		}
-	}
-
-	public Integer getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
@@ -217,6 +165,72 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 		}
 	}
 
+	public String getStartDateAfter() {
+		return this.startDateAfter;
+	}
+
+	public void setStartDateAfter(String startDateAfter) {
+		this.startDateAfter = startDateAfter;
+		if(startDateAfter != null){
+			putQueryParameter("StartDateAfter", startDateAfter);
+		}
+	}
+
+	public String getStartDateBefore() {
+		return this.startDateBefore;
+	}
+
+	public void setStartDateBefore(String startDateBefore) {
+		this.startDateBefore = startDateBefore;
+		if(startDateBefore != null){
+			putQueryParameter("StartDateBefore", startDateBefore);
+		}
+	}
+
+	public Map<Object,Object> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(Map<Object,Object> tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", new Gson().toJson(tags));
+		}
+	}
+
+	public String getParentExecutionId() {
+		return this.parentExecutionId;
+	}
+
+	public void setParentExecutionId(String parentExecutionId) {
+		this.parentExecutionId = parentExecutionId;
+		if(parentExecutionId != null){
+			putQueryParameter("ParentExecutionId", parentExecutionId);
+		}
+	}
+
+	public String getEndDateAfter() {
+		return this.endDateAfter;
+	}
+
+	public void setEndDateAfter(String endDateAfter) {
+		this.endDateAfter = endDateAfter;
+		if(endDateAfter != null){
+			putQueryParameter("EndDateAfter", endDateAfter);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
 	public String getSortField() {
 		return this.sortField;
 	}
@@ -225,6 +239,17 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 		this.sortField = sortField;
 		if(sortField != null){
 			putQueryParameter("SortField", sortField);
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
 		}
 	}
 

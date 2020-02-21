@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.oos.model.v20190601.ListExecutionsResponse;
 import com.aliyuncs.oos.model.v20190601.ListExecutionsResponse.Execution;
 import com.aliyuncs.oos.model.v20190601.ListExecutionsResponse.Execution.CurrentTask;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,15 +47,18 @@ public class ListExecutionsResponseUnmarshaller {
 			execution.setUpdateDate(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].UpdateDate"));
 			execution.setStatus(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Status"));
 			execution.setStatusMessage(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].StatusMessage"));
+			execution.setStatusReason(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].StatusReason"));
+			execution.setWaitingStatus(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].WaitingStatus"));
 			execution.setParentExecutionId(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ParentExecutionId"));
 			execution.setParameters(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Parameters"));
 			execution.setOutputs(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Outputs"));
 			execution.setSafetyCheck(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].SafetyCheck"));
+			execution.setIsParent(_ctx.booleanValue("ListExecutionsResponse.Executions["+ i +"].IsParent"));
 			execution.setRamRole(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].RamRole"));
 			execution.setCounters(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Counters"));
-			execution.setIsParent(_ctx.booleanValue("ListExecutionsResponse.Executions["+ i +"].IsParent"));
-			execution.setStatusReason(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].StatusReason"));
-			execution.setLoopMode(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].LoopMode"));
+			execution.setCategory(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Category"));
+			execution.setTags(_ctx.mapValue("ListExecutionsResponse.Executions["+ i +"].Tags"));
+			execution.setDescription(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Description"));
 
 			List<CurrentTask> currentTasks = new ArrayList<CurrentTask>();
 			for (int j = 0; j < _ctx.lengthValue("ListExecutionsResponse.Executions["+ i +"].CurrentTasks.Length"); j++) {

@@ -15,25 +15,14 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.oos.Endpoint;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListTaskExecutionsRequest extends RpcAcsRequest<ListTaskExecutionsResponse> {
-	
-	public ListTaskExecutionsRequest() {
-		super("oos", "2019-06-01", "ListTaskExecutions", "oos");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String startDateAfter;
-
-	private String startDateBefore;
+	   
 
 	private String taskName;
 
@@ -45,42 +34,28 @@ public class ListTaskExecutionsRequest extends RpcAcsRequest<ListTaskExecutionsR
 
 	private String nextToken;
 
+	private String endDateBefore;
+
+	private String sortOrder;
+
+	private String startDateAfter;
+
+	private String startDateBefore;
+
 	private String endDateAfter;
 
 	private Integer maxResults;
 
-	private String endDateBefore;
-
 	private String taskExecutionId;
-
-	private String sortOrder;
 
 	private String sortField;
 
 	private String taskAction;
 
 	private String status;
-
-	public String getStartDateAfter() {
-		return this.startDateAfter;
-	}
-
-	public void setStartDateAfter(String startDateAfter) {
-		this.startDateAfter = startDateAfter;
-		if(startDateAfter != null){
-			putQueryParameter("StartDateAfter", startDateAfter);
-		}
-	}
-
-	public String getStartDateBefore() {
-		return this.startDateBefore;
-	}
-
-	public void setStartDateBefore(String startDateBefore) {
-		this.startDateBefore = startDateBefore;
-		if(startDateBefore != null){
-			putQueryParameter("StartDateBefore", startDateBefore);
-		}
+	public ListTaskExecutionsRequest() {
+		super("oos", "2019-06-01", "ListTaskExecutions", "oos");
+		setMethod(MethodType.POST);
 	}
 
 	public String getTaskName() {
@@ -138,6 +113,50 @@ public class ListTaskExecutionsRequest extends RpcAcsRequest<ListTaskExecutionsR
 		}
 	}
 
+	public String getEndDateBefore() {
+		return this.endDateBefore;
+	}
+
+	public void setEndDateBefore(String endDateBefore) {
+		this.endDateBefore = endDateBefore;
+		if(endDateBefore != null){
+			putQueryParameter("EndDateBefore", endDateBefore);
+		}
+	}
+
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+		if(sortOrder != null){
+			putQueryParameter("SortOrder", sortOrder);
+		}
+	}
+
+	public String getStartDateAfter() {
+		return this.startDateAfter;
+	}
+
+	public void setStartDateAfter(String startDateAfter) {
+		this.startDateAfter = startDateAfter;
+		if(startDateAfter != null){
+			putQueryParameter("StartDateAfter", startDateAfter);
+		}
+	}
+
+	public String getStartDateBefore() {
+		return this.startDateBefore;
+	}
+
+	public void setStartDateBefore(String startDateBefore) {
+		this.startDateBefore = startDateBefore;
+		if(startDateBefore != null){
+			putQueryParameter("StartDateBefore", startDateBefore);
+		}
+	}
+
 	public String getEndDateAfter() {
 		return this.endDateAfter;
 	}
@@ -160,17 +179,6 @@ public class ListTaskExecutionsRequest extends RpcAcsRequest<ListTaskExecutionsR
 		}
 	}
 
-	public String getEndDateBefore() {
-		return this.endDateBefore;
-	}
-
-	public void setEndDateBefore(String endDateBefore) {
-		this.endDateBefore = endDateBefore;
-		if(endDateBefore != null){
-			putQueryParameter("EndDateBefore", endDateBefore);
-		}
-	}
-
 	public String getTaskExecutionId() {
 		return this.taskExecutionId;
 	}
@@ -179,17 +187,6 @@ public class ListTaskExecutionsRequest extends RpcAcsRequest<ListTaskExecutionsR
 		this.taskExecutionId = taskExecutionId;
 		if(taskExecutionId != null){
 			putQueryParameter("TaskExecutionId", taskExecutionId);
-		}
-	}
-
-	public String getSortOrder() {
-		return this.sortOrder;
-	}
-
-	public void setSortOrder(String sortOrder) {
-		this.sortOrder = sortOrder;
-		if(sortOrder != null){
-			putQueryParameter("SortOrder", sortOrder);
 		}
 	}
 

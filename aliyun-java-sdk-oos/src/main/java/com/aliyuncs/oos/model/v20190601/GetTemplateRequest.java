@@ -15,25 +15,22 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.oos.Endpoint;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetTemplateRequest extends RpcAcsRequest<GetTemplateResponse> {
-	
-	public GetTemplateRequest() {
-		super("oos", "2019-06-01", "GetTemplate", "oos");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String templateVersion;
 
 	private String templateName;
+	public GetTemplateRequest() {
+		super("oos", "2019-06-01", "GetTemplate", "oos");
+		setMethod(MethodType.POST);
+	}
 
 	public String getTemplateVersion() {
 		return this.templateVersion;

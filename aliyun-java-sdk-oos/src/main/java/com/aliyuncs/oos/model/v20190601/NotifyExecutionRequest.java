@@ -15,37 +15,45 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.oos.Endpoint;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class NotifyExecutionRequest extends RpcAcsRequest<NotifyExecutionResponse> {
-	
-	public NotifyExecutionRequest() {
-		super("oos", "2019-06-01", "NotifyExecution", "oos");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private String taskName;
 
 	private String executionId;
+
+	private String notifyType;
 
 	private String executionStatus;
 
 	private String notifyNote;
 
-	private String taskName;
+	private String loopItem;
 
 	private String taskExecutionId;
 
-	private String notifyType;
-
 	private String parameters;
+	public NotifyExecutionRequest() {
+		super("oos", "2019-06-01", "NotifyExecution", "oos");
+		setMethod(MethodType.POST);
+	}
 
-	private String loopItem;
+	public String getTaskName() {
+		return this.taskName;
+	}
+
+	public void setTaskName(String taskName) {
+		this.taskName = taskName;
+		if(taskName != null){
+			putQueryParameter("TaskName", taskName);
+		}
+	}
 
 	public String getExecutionId() {
 		return this.executionId;
@@ -55,6 +63,17 @@ public class NotifyExecutionRequest extends RpcAcsRequest<NotifyExecutionRespons
 		this.executionId = executionId;
 		if(executionId != null){
 			putQueryParameter("ExecutionId", executionId);
+		}
+	}
+
+	public String getNotifyType() {
+		return this.notifyType;
+	}
+
+	public void setNotifyType(String notifyType) {
+		this.notifyType = notifyType;
+		if(notifyType != null){
+			putQueryParameter("NotifyType", notifyType);
 		}
 	}
 
@@ -80,14 +99,14 @@ public class NotifyExecutionRequest extends RpcAcsRequest<NotifyExecutionRespons
 		}
 	}
 
-	public String getTaskName() {
-		return this.taskName;
+	public String getLoopItem() {
+		return this.loopItem;
 	}
 
-	public void setTaskName(String taskName) {
-		this.taskName = taskName;
-		if(taskName != null){
-			putQueryParameter("TaskName", taskName);
+	public void setLoopItem(String loopItem) {
+		this.loopItem = loopItem;
+		if(loopItem != null){
+			putQueryParameter("LoopItem", loopItem);
 		}
 	}
 
@@ -102,17 +121,6 @@ public class NotifyExecutionRequest extends RpcAcsRequest<NotifyExecutionRespons
 		}
 	}
 
-	public String getNotifyType() {
-		return this.notifyType;
-	}
-
-	public void setNotifyType(String notifyType) {
-		this.notifyType = notifyType;
-		if(notifyType != null){
-			putQueryParameter("NotifyType", notifyType);
-		}
-	}
-
 	public String getParameters() {
 		return this.parameters;
 	}
@@ -121,17 +129,6 @@ public class NotifyExecutionRequest extends RpcAcsRequest<NotifyExecutionRespons
 		this.parameters = parameters;
 		if(parameters != null){
 			putQueryParameter("Parameters", parameters);
-		}
-	}
-
-	public String getLoopItem() {
-		return this.loopItem;
-	}
-
-	public void setLoopItem(String loopItem) {
-		this.loopItem = loopItem;
-		if(loopItem != null){
-			putQueryParameter("LoopItem", loopItem);
 		}
 	}
 

@@ -16,6 +16,7 @@ package com.aliyuncs.oos.transform.v20190601;
 
 import com.aliyuncs.oos.model.v20190601.GetTemplateResponse;
 import com.aliyuncs.oos.model.v20190601.GetTemplateResponse.Template;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +40,7 @@ public class GetTemplateResponseUnmarshaller {
 		template.setTemplateFormat(_ctx.stringValue("GetTemplateResponse.Template.TemplateFormat"));
 		template.setTemplateVersion(_ctx.stringValue("GetTemplateResponse.Template.TemplateVersion"));
 		template.setHasTrigger(_ctx.booleanValue("GetTemplateResponse.Template.HasTrigger"));
+		template.setTags(_ctx.mapValue("GetTemplateResponse.Template.Tags"));
 		getTemplateResponse.setTemplate(template);
 	 
 	 	return getTemplateResponse;

@@ -21,26 +21,13 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteTemplateRequest extends RpcAcsRequest<DeleteTemplateResponse> {
+public class ListExecutionRiskyTasksRequest extends RpcAcsRequest<ListExecutionRiskyTasksResponse> {
 	   
 
-	private Boolean autoDeleteExecutions;
-
 	private String templateName;
-	public DeleteTemplateRequest() {
-		super("oos", "2019-06-01", "DeleteTemplate", "oos");
+	public ListExecutionRiskyTasksRequest() {
+		super("oos", "2019-06-01", "ListExecutionRiskyTasks", "oos");
 		setMethod(MethodType.POST);
-	}
-
-	public Boolean getAutoDeleteExecutions() {
-		return this.autoDeleteExecutions;
-	}
-
-	public void setAutoDeleteExecutions(Boolean autoDeleteExecutions) {
-		this.autoDeleteExecutions = autoDeleteExecutions;
-		if(autoDeleteExecutions != null){
-			putQueryParameter("AutoDeleteExecutions", autoDeleteExecutions.toString());
-		}
 	}
 
 	public String getTemplateName() {
@@ -55,8 +42,8 @@ public class DeleteTemplateRequest extends RpcAcsRequest<DeleteTemplateResponse>
 	}
 
 	@Override
-	public Class<DeleteTemplateResponse> getResponseClass() {
-		return DeleteTemplateResponse.class;
+	public Class<ListExecutionRiskyTasksResponse> getResponseClass() {
+		return ListExecutionRiskyTasksResponse.class;
 	}
 
 }

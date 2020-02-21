@@ -21,27 +21,27 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ListActionsRequest extends RpcAcsRequest<ListActionsResponse> {
+public class ListTagKeysRequest extends RpcAcsRequest<ListTagKeysResponse> {
 	   
 
-	private String oOSActionName;
+	private String resourceType;
 
 	private String nextToken;
 
 	private Integer maxResults;
-	public ListActionsRequest() {
-		super("oos", "2019-06-01", "ListActions", "oos");
+	public ListTagKeysRequest() {
+		super("oos", "2019-06-01", "ListTagKeys", "oos");
 		setMethod(MethodType.POST);
 	}
 
-	public String getOOSActionName() {
-		return this.oOSActionName;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setOOSActionName(String oOSActionName) {
-		this.oOSActionName = oOSActionName;
-		if(oOSActionName != null){
-			putQueryParameter("OOSActionName", oOSActionName);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -68,8 +68,8 @@ public class ListActionsRequest extends RpcAcsRequest<ListActionsResponse> {
 	}
 
 	@Override
-	public Class<ListActionsResponse> getResponseClass() {
-		return ListActionsResponse.class;
+	public Class<ListTagKeysResponse> getResponseClass() {
+		return ListTagKeysResponse.class;
 	}
 
 }

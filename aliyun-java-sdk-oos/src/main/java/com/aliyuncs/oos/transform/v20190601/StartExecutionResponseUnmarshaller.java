@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.oos.model.v20190601.StartExecutionResponse;
 import com.aliyuncs.oos.model.v20190601.StartExecutionResponse.Execution;
 import com.aliyuncs.oos.model.v20190601.StartExecutionResponse.Execution.CurrentTask;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,7 +29,6 @@ public class StartExecutionResponseUnmarshaller {
 	public static StartExecutionResponse unmarshall(StartExecutionResponse startExecutionResponse, UnmarshallerContext _ctx) {
 		
 		startExecutionResponse.setRequestId(_ctx.stringValue("StartExecutionResponse.RequestId"));
-		startExecutionResponse.setLoopMode(_ctx.stringValue("StartExecutionResponse.LoopMode"));
 
 		Execution execution = new Execution();
 		execution.setExecutionId(_ctx.stringValue("StartExecutionResponse.Execution.ExecutionId"));
@@ -36,6 +36,7 @@ public class StartExecutionResponseUnmarshaller {
 		execution.setTemplateId(_ctx.stringValue("StartExecutionResponse.Execution.TemplateId"));
 		execution.setTemplateVersion(_ctx.stringValue("StartExecutionResponse.Execution.TemplateVersion"));
 		execution.setMode(_ctx.stringValue("StartExecutionResponse.Execution.Mode"));
+		execution.setLoopMode(_ctx.stringValue("StartExecutionResponse.Execution.LoopMode"));
 		execution.setExecutedBy(_ctx.stringValue("StartExecutionResponse.Execution.ExecutedBy"));
 		execution.setStartDate(_ctx.stringValue("StartExecutionResponse.Execution.StartDate"));
 		execution.setEndDate(_ctx.stringValue("StartExecutionResponse.Execution.EndDate"));
@@ -47,9 +48,11 @@ public class StartExecutionResponseUnmarshaller {
 		execution.setParameters(_ctx.stringValue("StartExecutionResponse.Execution.Parameters"));
 		execution.setOutputs(_ctx.stringValue("StartExecutionResponse.Execution.Outputs"));
 		execution.setSafetyCheck(_ctx.stringValue("StartExecutionResponse.Execution.SafetyCheck"));
+		execution.setIsParent(_ctx.booleanValue("StartExecutionResponse.Execution.IsParent"));
 		execution.setCounters(_ctx.stringValue("StartExecutionResponse.Execution.Counters"));
 		execution.setRamRole(_ctx.stringValue("StartExecutionResponse.Execution.RamRole"));
-		execution.setLoopMode(_ctx.stringValue("StartExecutionResponse.Execution.LoopMode"));
+		execution.setTags(_ctx.mapValue("StartExecutionResponse.Execution.Tags"));
+		execution.setDescription(_ctx.stringValue("StartExecutionResponse.Execution.Description"));
 
 		List<CurrentTask> currentTasks = new ArrayList<CurrentTask>();
 		for (int i = 0; i < _ctx.lengthValue("StartExecutionResponse.Execution.CurrentTasks.Length"); i++) {
