@@ -22,16 +22,14 @@ import com.aliyuncs.hbase.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteHbaseHaSlbRequest extends RpcAcsRequest<DeleteHbaseHaSlbResponse> {
+public class ModifyClusterDeletionProtectionRequest extends RpcAcsRequest<ModifyClusterDeletionProtectionResponse> {
 	   
 
-	private String haId;
+	private Boolean protection;
 
-	private String haTypes;
-
-	private String bdsId;
-	public DeleteHbaseHaSlbRequest() {
-		super("HBase", "2019-01-01", "DeleteHbaseHaSlb");
+	private String clusterId;
+	public ModifyClusterDeletionProtectionRequest() {
+		super("HBase", "2019-01-01", "ModifyClusterDeletionProtection");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class DeleteHbaseHaSlbRequest extends RpcAcsRequest<DeleteHbaseHaSlbRespo
 		} catch (Exception e) {}
 	}
 
-	public String getHaId() {
-		return this.haId;
+	public Boolean getProtection() {
+		return this.protection;
 	}
 
-	public void setHaId(String haId) {
-		this.haId = haId;
-		if(haId != null){
-			putQueryParameter("HaId", haId);
+	public void setProtection(Boolean protection) {
+		this.protection = protection;
+		if(protection != null){
+			putQueryParameter("Protection", protection.toString());
 		}
 	}
 
-	public String getHaTypes() {
-		return this.haTypes;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setHaTypes(String haTypes) {
-		this.haTypes = haTypes;
-		if(haTypes != null){
-			putQueryParameter("HaTypes", haTypes);
-		}
-	}
-
-	public String getBdsId() {
-		return this.bdsId;
-	}
-
-	public void setBdsId(String bdsId) {
-		this.bdsId = bdsId;
-		if(bdsId != null){
-			putQueryParameter("BdsId", bdsId);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
 	@Override
-	public Class<DeleteHbaseHaSlbResponse> getResponseClass() {
-		return DeleteHbaseHaSlbResponse.class;
+	public Class<ModifyClusterDeletionProtectionResponse> getResponseClass() {
+		return ModifyClusterDeletionProtectionResponse.class;
 	}
 
 }

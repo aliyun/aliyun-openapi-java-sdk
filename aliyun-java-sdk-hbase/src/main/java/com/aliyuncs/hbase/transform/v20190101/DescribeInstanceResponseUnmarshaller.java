@@ -57,6 +57,12 @@ public class DescribeInstanceResponseUnmarshaller {
 		describeInstanceResponse.setMaintainEndTime(_ctx.stringValue("DescribeInstanceResponse.MaintainEndTime"));
 		describeInstanceResponse.setCreatedTimeUTC(_ctx.stringValue("DescribeInstanceResponse.CreatedTimeUTC"));
 		describeInstanceResponse.setExpireTimeUTC(_ctx.stringValue("DescribeInstanceResponse.ExpireTimeUTC"));
+		describeInstanceResponse.setIsLatestVersion(_ctx.booleanValue("DescribeInstanceResponse.IsLatestVersion"));
+		describeInstanceResponse.setIsMultiModel(_ctx.booleanValue("DescribeInstanceResponse.IsMultiModel"));
+		describeInstanceResponse.setClusterType(_ctx.stringValue("DescribeInstanceResponse.ClusterType"));
+		describeInstanceResponse.setClusterId(_ctx.stringValue("DescribeInstanceResponse.ClusterId"));
+		describeInstanceResponse.setClusterName(_ctx.stringValue("DescribeInstanceResponse.ClusterName"));
+		describeInstanceResponse.setIsDeletionProtection(_ctx.booleanValue("DescribeInstanceResponse.IsDeletionProtection"));
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Tags.Length"); i++) {

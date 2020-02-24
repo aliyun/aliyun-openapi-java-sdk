@@ -25,16 +25,29 @@ import com.aliyuncs.hbase.Endpoint;
 public class QueryXpackRelateDBRequest extends RpcAcsRequest<QueryXpackRelateDBResponse> {
 	   
 
+	private Boolean hasSingleNode;
+
 	private String clusterId;
 
 	private String relateDbType;
 	public QueryXpackRelateDBRequest() {
-		super("HBase", "2019-01-01", "QueryXpackRelateDB", "hbase");
+		super("HBase", "2019-01-01", "QueryXpackRelateDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getHasSingleNode() {
+		return this.hasSingleNode;
+	}
+
+	public void setHasSingleNode(Boolean hasSingleNode) {
+		this.hasSingleNode = hasSingleNode;
+		if(hasSingleNode != null){
+			putQueryParameter("HasSingleNode", hasSingleNode.toString());
+		}
 	}
 
 	public String getClusterId() {

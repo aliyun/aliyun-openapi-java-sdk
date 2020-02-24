@@ -27,7 +27,7 @@ public class DescribeInstanceTypeRequest extends RpcAcsRequest<DescribeInstanceT
 
 	private String instanceType;
 	public DescribeInstanceTypeRequest() {
-		super("HBase", "2019-01-01", "DescribeInstanceType", "hbase");
+		super("HBase", "2019-01-01", "DescribeInstanceType");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

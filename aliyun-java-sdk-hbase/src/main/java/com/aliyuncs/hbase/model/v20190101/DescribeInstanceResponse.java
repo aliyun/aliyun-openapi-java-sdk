@@ -87,6 +87,18 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private String expireTimeUTC;
 
+	private Boolean isLatestVersion;
+
+	private Boolean isMultiModel;
+
+	private String clusterType;
+
+	private String clusterId;
+
+	private String clusterName;
+
+	private Boolean isDeletionProtection;
+
 	private List<Tag> tags;
 
 	public String getRequestId() {
@@ -335,6 +347,54 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public void setExpireTimeUTC(String expireTimeUTC) {
 		this.expireTimeUTC = expireTimeUTC;
+	}
+
+	public Boolean getIsLatestVersion() {
+		return this.isLatestVersion;
+	}
+
+	public void setIsLatestVersion(Boolean isLatestVersion) {
+		this.isLatestVersion = isLatestVersion;
+	}
+
+	public Boolean getIsMultiModel() {
+		return this.isMultiModel;
+	}
+
+	public void setIsMultiModel(Boolean isMultiModel) {
+		this.isMultiModel = isMultiModel;
+	}
+
+	public String getClusterType() {
+		return this.clusterType;
+	}
+
+	public void setClusterType(String clusterType) {
+		this.clusterType = clusterType;
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+	}
+
+	public String getClusterName() {
+		return this.clusterName;
+	}
+
+	public void setClusterName(String clusterName) {
+		this.clusterName = clusterName;
+	}
+
+	public Boolean getIsDeletionProtection() {
+		return this.isDeletionProtection;
+	}
+
+	public void setIsDeletionProtection(Boolean isDeletionProtection) {
+		this.isDeletionProtection = isDeletionProtection;
 	}
 
 	public List<Tag> getTags() {

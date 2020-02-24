@@ -29,7 +29,7 @@ public class AddUserHdfsInfoRequest extends RpcAcsRequest<AddUserHdfsInfoRespons
 
 	private String clusterId;
 	public AddUserHdfsInfoRequest() {
-		super("HBase", "2019-01-01", "AddUserHdfsInfo", "hbase");
+		super("HBase", "2019-01-01", "AddUserHdfsInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

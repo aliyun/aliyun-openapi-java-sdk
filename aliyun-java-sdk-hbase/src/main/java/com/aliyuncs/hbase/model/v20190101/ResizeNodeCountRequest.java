@@ -29,7 +29,7 @@ public class ResizeNodeCountRequest extends RpcAcsRequest<ResizeNodeCountRespons
 
 	private Integer nodeCount;
 	public ResizeNodeCountRequest() {
-		super("HBase", "2019-01-01", "ResizeNodeCount", "hbase");
+		super("HBase", "2019-01-01", "ResizeNodeCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
