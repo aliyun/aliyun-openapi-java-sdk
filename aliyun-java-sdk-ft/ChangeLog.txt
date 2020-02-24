@@ -1,6 +1,9 @@
 2020-02-24 Version: 1.0.0
 - Release Ft SDK.
 
+2020-02-24 Version: 1.0.0
+- Release Ft SDK.
+
 2020-02-24 Version: 1.0.1
 - Release Ft SDK.
 
