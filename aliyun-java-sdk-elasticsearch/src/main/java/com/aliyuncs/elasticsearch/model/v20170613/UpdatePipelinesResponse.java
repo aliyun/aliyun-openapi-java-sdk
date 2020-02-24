@@ -14,20 +14,19 @@
 
 package com.aliyuncs.elasticsearch.model.v20170613;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.elasticsearch.transform.v20170613.DescribeConnectableClustersResponseUnmarshaller;
+import com.aliyuncs.elasticsearch.transform.v20170613.UpdatePipelinesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeConnectableClustersResponse extends AcsResponse {
+public class UpdatePipelinesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<ConnectableClustersInfo> result;
+	private Boolean result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,40 +36,17 @@ public class DescribeConnectableClustersResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<ConnectableClustersInfo> getResult() {
+	public Boolean getResult() {
 		return this.result;
 	}
 
-	public void setResult(List<ConnectableClustersInfo> result) {
+	public void setResult(Boolean result) {
 		this.result = result;
 	}
 
-	public static class ConnectableClustersInfo {
-
-		private String instances;
-
-		private String networkType;
-
-		public String getInstances() {
-			return this.instances;
-		}
-
-		public void setInstances(String instances) {
-			this.instances = instances;
-		}
-
-		public String getNetworkType() {
-			return this.networkType;
-		}
-
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
-		}
-	}
-
 	@Override
-	public DescribeConnectableClustersResponse getInstance(UnmarshallerContext context) {
-		return	DescribeConnectableClustersResponseUnmarshaller.unmarshall(this, context);
+	public UpdatePipelinesResponse getInstance(UnmarshallerContext context) {
+		return	UpdatePipelinesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

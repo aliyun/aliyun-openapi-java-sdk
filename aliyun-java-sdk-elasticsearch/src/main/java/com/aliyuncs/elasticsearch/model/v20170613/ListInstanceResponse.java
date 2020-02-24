@@ -77,6 +77,8 @@ public class ListInstanceResponse extends AcsResponse {
 
 		private Boolean dedicateMaster;
 
+		private List<Tag> tags;
+
 		private NodeSpec nodeSpec;
 
 		private NetworkConfig networkConfig;
@@ -165,6 +167,14 @@ public class ListInstanceResponse extends AcsResponse {
 			this.dedicateMaster = dedicateMaster;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public NodeSpec getNodeSpec() {
 			return this.nodeSpec;
 		}
@@ -195,6 +205,29 @@ public class ListInstanceResponse extends AcsResponse {
 
 		public void setKibanaConfiguration(KibanaConfiguration kibanaConfiguration) {
 			this.kibanaConfiguration = kibanaConfiguration;
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 
 		public static class NodeSpec {

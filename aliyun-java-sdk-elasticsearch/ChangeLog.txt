@@ -1,3 +1,6 @@
+2020-02-24 Version: 3.0.13
+- Add tag of list instance parameters.
+
 2020-01-07 Version: 3.0.12
 - Modify desribeInstance return dict item.
 

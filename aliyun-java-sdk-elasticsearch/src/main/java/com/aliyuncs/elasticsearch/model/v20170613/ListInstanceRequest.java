@@ -25,6 +25,14 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
 	   
 
+	private String description;
+
+	private String instanceCategory;
+
+	private String ownerId;
+
+	private String tags;
+
 	private String resourceGroupId;
 
 	private String instanceId;
@@ -33,11 +41,13 @@ public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
 
 	private String esVersion;
 
-	private String description;
+	private String vpcId;
+
+	private String zoneId;
 
 	private Integer page;
 
-	private String ownerId;
+	private String paymentType;
 	public ListInstanceRequest() {
 		super("elasticsearch", "2017-06-13", "ListInstance", "elasticsearch");
 		setUriPattern("/openapi/instances");
@@ -46,6 +56,50 @@ public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("description", description);
+		}
+	}
+
+	public String getInstanceCategory() {
+		return this.instanceCategory;
+	}
+
+	public void setInstanceCategory(String instanceCategory) {
+		this.instanceCategory = instanceCategory;
+		if(instanceCategory != null){
+			putQueryParameter("instanceCategory", instanceCategory);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("ownerId", ownerId);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("tags", tags);
+		}
 	}
 
 	public String getResourceGroupId() {
@@ -92,14 +146,25 @@ public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("description", description);
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("vpcId", vpcId);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("zoneId", zoneId);
 		}
 	}
 
@@ -114,14 +179,14 @@ public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
 		}
 	}
 
-	public String getOwnerId() {
-		return this.ownerId;
+	public String getPaymentType() {
+		return this.paymentType;
 	}
 
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("ownerId", ownerId);
+	public void setPaymentType(String paymentType) {
+		this.paymentType = paymentType;
+		if(paymentType != null){
+			putQueryParameter("paymentType", paymentType);
 		}
 	}
 

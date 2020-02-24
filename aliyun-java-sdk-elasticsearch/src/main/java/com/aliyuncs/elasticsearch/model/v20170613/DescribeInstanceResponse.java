@@ -106,6 +106,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private List<Dict> aliwsDicts;
 
+		private List<Tag> tags;
+
 		private List<String> esIPWhitelist;
 
 		private List<String> esIPBlacklist;
@@ -362,6 +364,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 			this.aliwsDicts = aliwsDicts;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getEsIPWhitelist() {
 			return this.esIPWhitelist;
 		}
@@ -607,6 +617,29 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setSourceType(String sourceType) {
 				this.sourceType = sourceType;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 

@@ -28,6 +28,7 @@ import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Resul
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.NetworkConfig;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.NodeSpec;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.SynonymsDictsItem;
+import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.Tag;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.WarmNodeConfiguration;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.ZoneInfo;
 import java.util.Map;
@@ -187,6 +188,16 @@ public class DescribeInstanceResponseUnmarshaller {
 			aliwsDicts.add(dict);
 		}
 		result.setAliwsDicts(aliwsDicts);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setTagKey(_ctx.stringValue("DescribeInstanceResponse.Result.tags["+ i +"].tagKey"));
+			tag.setTagValue(_ctx.stringValue("DescribeInstanceResponse.Result.tags["+ i +"].tagValue"));
+
+			tags.add(tag);
+		}
+		result.setTags(tags);
 		describeInstanceResponse.setResult(result);
 	 
 	 	return describeInstanceResponse;
