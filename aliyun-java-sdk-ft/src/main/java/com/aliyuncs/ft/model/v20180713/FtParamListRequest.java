@@ -16,20 +16,22 @@ package com.aliyuncs.ft.model.v20180713;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class FtParamListRequest extends RpcAcsRequest<FtParamListResponse> {
-	
-	public FtParamListRequest() {
-		super("Ft", "2018-07-13", "FtParamList", "ft");
-	}
+	   
 
 	private List<Disk> disks;
 
 	private String name;
+	public FtParamListRequest() {
+		super("Ft", "2018-07-13", "FtParamList");
+		setMethod(MethodType.POST);
+	}
 
 	public List<Disk> getDisks() {
 		return this.disks;

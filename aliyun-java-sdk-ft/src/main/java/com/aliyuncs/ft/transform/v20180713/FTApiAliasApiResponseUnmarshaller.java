@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class FTApiAliasApiResponseUnmarshaller {
 
-	public static FTApiAliasApiResponse unmarshall(FTApiAliasApiResponse fTApiAliasApiResponse, UnmarshallerContext context) {
+	public static FTApiAliasApiResponse unmarshall(FTApiAliasApiResponse fTApiAliasApiResponse, UnmarshallerContext _ctx) {
 		
-		fTApiAliasApiResponse.setRequestId(context.stringValue("FTApiAliasApiResponse.RequestId"));
-		fTApiAliasApiResponse.setName(context.stringValue("FTApiAliasApiResponse.Name"));
+		fTApiAliasApiResponse.setRequestId(_ctx.stringValue("FTApiAliasApiResponse.RequestId"));
+		fTApiAliasApiResponse.setName(_ctx.stringValue("FTApiAliasApiResponse.Name"));
 	 
 	 	return fTApiAliasApiResponse;
 	}

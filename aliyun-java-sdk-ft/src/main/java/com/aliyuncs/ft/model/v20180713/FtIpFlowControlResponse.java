@@ -14,20 +14,26 @@
 
 package com.aliyuncs.ft.model.v20180713;
 
-import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.MethodType;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.ft.transform.v20180713.FtIpFlowControlResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class FtFlowSpecialRequest extends RpcAcsRequest<FtFlowSpecialResponse> {
-	   
+public class FtIpFlowControlResponse extends AcsResponse {
+
+	private String requestId;
 
 	private String name;
-	public FtFlowSpecialRequest() {
-		super("Ft", "2018-07-13", "FtFlowSpecial");
-		setMethod(MethodType.POST);
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getName() {
@@ -36,14 +42,10 @@ public class FtFlowSpecialRequest extends RpcAcsRequest<FtFlowSpecialResponse> {
 
 	public void setName(String name) {
 		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
 	}
 
 	@Override
-	public Class<FtFlowSpecialResponse> getResponseClass() {
-		return FtFlowSpecialResponse.class;
+	public FtIpFlowControlResponse getInstance(UnmarshallerContext context) {
+		return	FtIpFlowControlResponseUnmarshaller.unmarshall(this, context);
 	}
-
 }

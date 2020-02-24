@@ -14,16 +14,17 @@
 
 package com.aliyuncs.ft.transform.v20180713;
 
-import com.aliyuncs.ft.model.v20180713.FtDynamicAddressHsfResponse;
+import com.aliyuncs.ft.model.v20180713.TestHttpApiResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class FtDynamicAddressHsfResponseUnmarshaller {
+public class TestHttpApiResponseUnmarshaller {
 
-	public static FtDynamicAddressHsfResponse unmarshall(FtDynamicAddressHsfResponse ftDynamicAddressHsfResponse, UnmarshallerContext _ctx) {
+	public static TestHttpApiResponse unmarshall(TestHttpApiResponse testHttpApiResponse, UnmarshallerContext _ctx) {
 		
-		ftDynamicAddressHsfResponse.setRequestId(_ctx.stringValue("FtDynamicAddressHsfResponse.RequestId"));
+		testHttpApiResponse.setParams(_ctx.stringValue("TestHttpApiResponse.Params"));
+		testHttpApiResponse.setServiceRpcSign(_ctx.stringValue("TestHttpApiResponse.ServiceRpcSign"));
 	 
-	 	return ftDynamicAddressHsfResponse;
+	 	return testHttpApiResponse;
 	}
 }

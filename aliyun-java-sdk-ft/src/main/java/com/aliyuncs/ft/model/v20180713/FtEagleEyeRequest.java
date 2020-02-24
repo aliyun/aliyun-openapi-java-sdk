@@ -15,18 +15,20 @@
 package com.aliyuncs.ft.model.v20180713;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class FtEagleEyeRequest extends RpcAcsRequest<FtEagleEyeResponse> {
-	
-	public FtEagleEyeRequest() {
-		super("Ft", "2018-07-13", "FtEagleEye", "ft");
-	}
+	   
 
 	private String name;
+	public FtEagleEyeRequest() {
+		super("Ft", "2018-07-13", "FtEagleEye");
+		setMethod(MethodType.POST);
+	}
 
 	public String getName() {
 		return this.name;

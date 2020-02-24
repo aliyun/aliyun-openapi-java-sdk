@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class FtEagleEyeResponseUnmarshaller {
 
-	public static FtEagleEyeResponse unmarshall(FtEagleEyeResponse ftEagleEyeResponse, UnmarshallerContext context) {
+	public static FtEagleEyeResponse unmarshall(FtEagleEyeResponse ftEagleEyeResponse, UnmarshallerContext _ctx) {
 		
-		ftEagleEyeResponse.setRequestId(context.stringValue("FtEagleEyeResponse.RequestId"));
-		ftEagleEyeResponse.setName(context.stringValue("FtEagleEyeResponse.Name"));
-		ftEagleEyeResponse.setEagleEyeTraceId(context.stringValue("FtEagleEyeResponse.eagleEyeTraceId"));
+		ftEagleEyeResponse.setRequestId(_ctx.stringValue("FtEagleEyeResponse.RequestId"));
+		ftEagleEyeResponse.setName(_ctx.stringValue("FtEagleEyeResponse.Name"));
+		ftEagleEyeResponse.setEagleEyeTraceId(_ctx.stringValue("FtEagleEyeResponse.eagleEyeTraceId"));
 	 
 	 	return ftEagleEyeResponse;
 	}

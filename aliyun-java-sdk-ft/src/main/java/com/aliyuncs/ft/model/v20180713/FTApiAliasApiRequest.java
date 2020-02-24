@@ -15,18 +15,20 @@
 package com.aliyuncs.ft.model.v20180713;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class FTApiAliasApiRequest extends RpcAcsRequest<FTApiAliasApiResponse> {
-	
-	public FTApiAliasApiRequest() {
-		super("Ft", "2018-07-13", "FTApiAliasApi", "ft");
-	}
+	   
 
 	private String name;
+	public FTApiAliasApiRequest() {
+		super("Ft", "2018-07-13", "FTApiAliasApi");
+		setMethod(MethodType.POST);
+	}
 
 	public String getName() {
 		return this.name;

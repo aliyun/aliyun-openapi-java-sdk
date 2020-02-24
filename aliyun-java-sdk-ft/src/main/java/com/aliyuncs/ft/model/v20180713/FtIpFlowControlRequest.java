@@ -21,16 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class FtDynamicAddressHsfRequest extends RpcAcsRequest<FtDynamicAddressHsfResponse> {
+public class FtIpFlowControlRequest extends RpcAcsRequest<FtIpFlowControlResponse> {
 	   
-	public FtDynamicAddressHsfRequest() {
-		super("Ft", "2018-07-13", "FtDynamicAddressHsf");
+
+	private String name;
+	public FtIpFlowControlRequest() {
+		super("Ft", "2018-07-13", "FtIpFlowControl");
 		setMethod(MethodType.POST);
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
 	@Override
-	public Class<FtDynamicAddressHsfResponse> getResponseClass() {
-		return FtDynamicAddressHsfResponse.class;
+	public Class<FtIpFlowControlResponse> getResponseClass() {
+		return FtIpFlowControlResponse.class;
 	}
 
 }
