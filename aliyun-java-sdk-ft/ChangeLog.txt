@@ -4,6 +4,9 @@
 2020-02-24 Version: 1.0.1
 - Release Ft SDK.
 
+2020-02-24 Version: 1.0.1
+- Release Ft SDK.
+
 2019-03-21 Version: 1.0.1
 1, Update Dependency
 
