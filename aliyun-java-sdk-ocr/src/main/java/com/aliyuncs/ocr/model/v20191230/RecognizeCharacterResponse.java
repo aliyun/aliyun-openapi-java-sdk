@@ -63,7 +63,7 @@ public class RecognizeCharacterResponse extends AcsResponse {
 
 			private String text;
 
-			private List<TextRectangle> textRectangles;
+			private TextRectangles textRectangles;
 
 			public Float getProbability() {
 				return this.probability;
@@ -81,15 +81,15 @@ public class RecognizeCharacterResponse extends AcsResponse {
 				this.text = text;
 			}
 
-			public List<TextRectangle> getTextRectangles() {
+			public TextRectangles getTextRectangles() {
 				return this.textRectangles;
 			}
 
-			public void setTextRectangles(List<TextRectangle> textRectangles) {
+			public void setTextRectangles(TextRectangles textRectangles) {
 				this.textRectangles = textRectangles;
 			}
 
-			public static class TextRectangle {
+			public static class TextRectangles {
 
 				private Integer angle;
 

@@ -20,7 +20,7 @@ import java.util.List;
 import com.aliyuncs.ocr.model.v20191230.RecognizeCharacterResponse;
 import com.aliyuncs.ocr.model.v20191230.RecognizeCharacterResponse.Data;
 import com.aliyuncs.ocr.model.v20191230.RecognizeCharacterResponse.Data.Result;
-import com.aliyuncs.ocr.model.v20191230.RecognizeCharacterResponse.Data.Result.TextRectangle;
+import com.aliyuncs.ocr.model.v20191230.RecognizeCharacterResponse.Data.Result.TextRectangles;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,17 +38,12 @@ public class RecognizeCharacterResponseUnmarshaller {
 			result.setProbability(_ctx.floatValue("RecognizeCharacterResponse.Data.Results["+ i +"].Probability"));
 			result.setText(_ctx.stringValue("RecognizeCharacterResponse.Data.Results["+ i +"].Text"));
 
-			List<TextRectangle> textRectangles = new ArrayList<TextRectangle>();
-			for (int j = 0; j < _ctx.lengthValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles.Length"); j++) {
-				TextRectangle textRectangle = new TextRectangle();
-				textRectangle.setAngle(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles["+ j +"].Angle"));
-				textRectangle.setLeft(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles["+ j +"].Left"));
-				textRectangle.setTop(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles["+ j +"].Top"));
-				textRectangle.setWidth(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles["+ j +"].Width"));
-				textRectangle.setHeight(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles["+ j +"].Height"));
-
-				textRectangles.add(textRectangle);
-			}
+			TextRectangles textRectangles = new TextRectangles();
+			textRectangles.setAngle(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles.Angle"));
+			textRectangles.setLeft(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles.Left"));
+			textRectangles.setTop(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles.Top"));
+			textRectangles.setWidth(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles.Width"));
+			textRectangles.setHeight(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles.Height"));
 			result.setTextRectangles(textRectangles);
 
 			results.add(result);

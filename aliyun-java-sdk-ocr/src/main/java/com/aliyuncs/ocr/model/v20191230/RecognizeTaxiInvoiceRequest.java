@@ -27,7 +27,7 @@ public class RecognizeTaxiInvoiceRequest extends RpcAcsRequest<RecognizeTaxiInvo
 
 	private String imageURL;
 	public RecognizeTaxiInvoiceRequest() {
-		super("ocr", "2019-12-30", "RecognizeTaxiInvoice", "ocr");
+		super("ocr", "2019-12-30", "RecognizeTaxiInvoice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class RecognizeCharacterRequest extends RpcAcsRequest<RecognizeCharacterR
 
 	private Integer minHeight;
 	public RecognizeCharacterRequest() {
-		super("ocr", "2019-12-30", "RecognizeCharacter", "ocr");
+		super("ocr", "2019-12-30", "RecognizeCharacter");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

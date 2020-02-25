@@ -1,3 +1,7 @@
+2020-02-25 Version: 1.0.5
+- JAVA fifth sdk version.
+- PYTHON second sdk version.
+
 2019-12-30 Version: 1.0.4
 - Disable Base64 string data support.
 
