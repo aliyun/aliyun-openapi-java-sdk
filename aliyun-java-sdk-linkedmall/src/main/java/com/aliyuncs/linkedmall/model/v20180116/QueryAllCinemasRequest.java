@@ -32,7 +32,7 @@ public class QueryAllCinemasRequest extends RpcAcsRequest<QueryAllCinemasRespons
 
 	private Long pageNumber;
 	public QueryAllCinemasRequest() {
-		super("linkedmall", "2018-01-16", "QueryAllCinemas", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryAllCinemas");
 		setMethod(MethodType.POST);
 	}
 

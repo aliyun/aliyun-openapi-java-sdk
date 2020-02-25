@@ -36,7 +36,7 @@ public class DeleteItemLimitRuleRequest extends RpcAcsRequest<DeleteItemLimitRul
 
 	private String subBizCode;
 	public DeleteItemLimitRuleRequest() {
-		super("linkedmall", "2018-01-16", "DeleteItemLimitRule", "linkedmall");
+		super("linkedmall", "2018-01-16", "DeleteItemLimitRule");
 		setMethod(MethodType.POST);
 	}
 

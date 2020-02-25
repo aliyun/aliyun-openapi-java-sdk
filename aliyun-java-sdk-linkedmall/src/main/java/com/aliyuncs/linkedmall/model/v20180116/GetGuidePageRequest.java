@@ -26,7 +26,7 @@ public class GetGuidePageRequest extends RpcAcsRequest<GetGuidePageResponse> {
 
 	private String bizId;
 	public GetGuidePageRequest() {
-		super("linkedmall", "2018-01-16", "GetGuidePage", "linkedmall");
+		super("linkedmall", "2018-01-16", "GetGuidePage");
 		setMethod(MethodType.GET);
 	}
 

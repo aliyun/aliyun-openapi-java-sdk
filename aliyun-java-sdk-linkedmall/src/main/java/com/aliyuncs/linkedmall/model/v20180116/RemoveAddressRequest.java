@@ -32,7 +32,7 @@ public class RemoveAddressRequest extends RpcAcsRequest<RemoveAddressResponse> {
 
 	private Boolean useAnonymousTbAccount;
 	public RemoveAddressRequest() {
-		super("linkedmall", "2018-01-16", "RemoveAddress", "linkedmall");
+		super("linkedmall", "2018-01-16", "RemoveAddress");
 		setMethod(MethodType.POST);
 	}
 

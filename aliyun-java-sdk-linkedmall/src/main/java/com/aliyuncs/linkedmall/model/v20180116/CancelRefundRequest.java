@@ -38,7 +38,7 @@ public class CancelRefundRequest extends RpcAcsRequest<CancelRefundResponse> {
 
 	private Boolean useAnonymousTbAccount;
 	public CancelRefundRequest() {
-		super("linkedmall", "2018-01-16", "CancelRefund", "linkedmall");
+		super("linkedmall", "2018-01-16", "CancelRefund");
 		setMethod(MethodType.POST);
 	}
 

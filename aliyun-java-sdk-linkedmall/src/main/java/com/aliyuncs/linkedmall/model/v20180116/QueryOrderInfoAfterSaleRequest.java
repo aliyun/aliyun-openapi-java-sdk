@@ -36,7 +36,7 @@ public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfo
 
 	private String channelUserId;
 	public QueryOrderInfoAfterSaleRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderInfoAfterSale", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryOrderInfoAfterSale");
 		setMethod(MethodType.GET);
 	}
 

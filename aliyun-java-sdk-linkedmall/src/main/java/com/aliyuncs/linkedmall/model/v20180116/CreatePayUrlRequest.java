@@ -34,7 +34,7 @@ public class CreatePayUrlRequest extends RpcAcsRequest<CreatePayUrlResponse> {
 
 	private Boolean useAnonymousTbAccount;
 	public CreatePayUrlRequest() {
-		super("linkedmall", "2018-01-16", "CreatePayUrl", "linkedmall");
+		super("linkedmall", "2018-01-16", "CreatePayUrl");
 		setMethod(MethodType.POST);
 	}
 

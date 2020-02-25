@@ -36,7 +36,7 @@ public class ConfirmDisburseRequest extends RpcAcsRequest<ConfirmDisburseRespons
 
 	private Boolean useAnonymousTbAccount;
 	public ConfirmDisburseRequest() {
-		super("linkedmall", "2018-01-16", "ConfirmDisburse", "linkedmall");
+		super("linkedmall", "2018-01-16", "ConfirmDisburse");
 		setMethod(MethodType.POST);
 	}
 

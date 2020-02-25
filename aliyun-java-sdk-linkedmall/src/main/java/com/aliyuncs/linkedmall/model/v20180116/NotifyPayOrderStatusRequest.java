@@ -34,7 +34,7 @@ public class NotifyPayOrderStatusRequest extends RpcAcsRequest<NotifyPayOrderSta
 
 	private String channelId;
 	public NotifyPayOrderStatusRequest() {
-		super("linkedmall", "2018-01-16", "NotifyPayOrderStatus", "linkedmall");
+		super("linkedmall", "2018-01-16", "NotifyPayOrderStatus");
 		setMethod(MethodType.POST);
 	}
 

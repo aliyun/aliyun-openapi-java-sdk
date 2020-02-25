@@ -32,7 +32,7 @@ public class QueryAddressDetailRequest extends RpcAcsRequest<QueryAddressDetailR
 
 	private Boolean useAnonymousTbAccount;
 	public QueryAddressDetailRequest() {
-		super("linkedmall", "2018-01-16", "QueryAddressDetail", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryAddressDetail");
 		setMethod(MethodType.POST);
 	}
 

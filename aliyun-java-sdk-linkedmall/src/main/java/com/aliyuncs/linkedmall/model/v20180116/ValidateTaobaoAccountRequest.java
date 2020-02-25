@@ -34,7 +34,7 @@ public class ValidateTaobaoAccountRequest extends RpcAcsRequest<ValidateTaobaoAc
 
 	private String tbUserNick;
 	public ValidateTaobaoAccountRequest() {
-		super("linkedmall", "2018-01-16", "ValidateTaobaoAccount", "linkedmall");
+		super("linkedmall", "2018-01-16", "ValidateTaobaoAccount");
 		setMethod(MethodType.POST);
 	}
 

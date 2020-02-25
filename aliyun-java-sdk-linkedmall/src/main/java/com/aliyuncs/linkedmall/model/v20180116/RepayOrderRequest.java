@@ -36,7 +36,7 @@ public class RepayOrderRequest extends RpcAcsRequest<RepayOrderResponse> {
 
 	private Boolean useAnonymousTbAccount;
 	public RepayOrderRequest() {
-		super("linkedmall", "2018-01-16", "RepayOrder", "linkedmall");
+		super("linkedmall", "2018-01-16", "RepayOrder");
 		setMethod(MethodType.POST);
 	}
 

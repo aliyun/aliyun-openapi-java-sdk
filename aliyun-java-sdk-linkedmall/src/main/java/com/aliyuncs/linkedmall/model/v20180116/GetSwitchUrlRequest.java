@@ -34,7 +34,7 @@ public class GetSwitchUrlRequest extends RpcAcsRequest<GetSwitchUrlResponse> {
 
 	private String url;
 	public GetSwitchUrlRequest() {
-		super("linkedmall", "2018-01-16", "GetSwitchUrl", "linkedmall");
+		super("linkedmall", "2018-01-16", "GetSwitchUrl");
 		setMethod(MethodType.POST);
 	}
 

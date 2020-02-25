@@ -32,7 +32,7 @@ public class QueryMovieTicketsRequest extends RpcAcsRequest<QueryMovieTicketsRes
 
 	private String bizId;
 	public QueryMovieTicketsRequest() {
-		super("linkedmall", "2018-01-16", "QueryMovieTickets", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryMovieTickets");
 		setMethod(MethodType.GET);
 	}
 

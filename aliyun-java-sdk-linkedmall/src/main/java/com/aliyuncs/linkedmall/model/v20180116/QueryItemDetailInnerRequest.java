@@ -40,7 +40,7 @@ public class QueryItemDetailInnerRequest extends RpcAcsRequest<QueryItemDetailIn
 
 	private String bizId;
 	public QueryItemDetailInnerRequest() {
-		super("linkedmall", "2018-01-16", "QueryItemDetailInner", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryItemDetailInner");
 		setMethod(MethodType.POST);
 	}
 

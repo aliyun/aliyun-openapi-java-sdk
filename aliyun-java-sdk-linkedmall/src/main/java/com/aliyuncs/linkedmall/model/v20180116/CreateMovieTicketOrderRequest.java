@@ -34,7 +34,7 @@ public class CreateMovieTicketOrderRequest extends RpcAcsRequest<CreateMovieTick
 
 	private String extJson;
 	public CreateMovieTicketOrderRequest() {
-		super("linkedmall", "2018-01-16", "CreateMovieTicketOrder", "linkedmall");
+		super("linkedmall", "2018-01-16", "CreateMovieTicketOrder");
 		setMethod(MethodType.GET);
 	}
 

@@ -28,7 +28,7 @@ public class GetCategoryListRequest extends RpcAcsRequest<GetCategoryListRespons
 
 	private Long categoryId;
 	public GetCategoryListRequest() {
-		super("linkedmall", "2018-01-16", "GetCategoryList", "linkedmall");
+		super("linkedmall", "2018-01-16", "GetCategoryList");
 		setMethod(MethodType.POST);
 	}
 

@@ -39,7 +39,7 @@ public class RenderOrderRequest extends RpcAcsRequest<RenderOrderResponse> {
 
 	private String deliveryAddress;
 	public RenderOrderRequest() {
-		super("linkedmall", "2018-01-16", "RenderOrder", "linkedmall");
+		super("linkedmall", "2018-01-16", "RenderOrder");
 		setMethod(MethodType.POST);
 	}
 

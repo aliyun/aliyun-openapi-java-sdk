@@ -38,7 +38,7 @@ public class ReserveMovieSeatRequest extends RpcAcsRequest<ReserveMovieSeatRespo
 
 	private Long scheduleId;
 	public ReserveMovieSeatRequest() {
-		super("linkedmall", "2018-01-16", "ReserveMovieSeat", "linkedmall");
+		super("linkedmall", "2018-01-16", "ReserveMovieSeat");
 		setMethod(MethodType.POST);
 	}
 

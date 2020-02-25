@@ -34,7 +34,7 @@ public class SyncMerchantInfoRequest extends RpcAcsRequest<SyncMerchantInfoRespo
 
 	private Long timeStamp;
 	public SyncMerchantInfoRequest() {
-		super("linkedmall", "2018-01-16", "SyncMerchantInfo", "linkedmall");
+		super("linkedmall", "2018-01-16", "SyncMerchantInfo");
 		setMethod(MethodType.POST);
 	}
 

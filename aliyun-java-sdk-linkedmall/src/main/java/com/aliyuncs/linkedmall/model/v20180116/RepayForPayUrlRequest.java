@@ -34,7 +34,7 @@ public class RepayForPayUrlRequest extends RpcAcsRequest<RepayForPayUrlResponse>
 
 	private Boolean useAnonymousTbAccount;
 	public RepayForPayUrlRequest() {
-		super("linkedmall", "2018-01-16", "RepayForPayUrl", "linkedmall");
+		super("linkedmall", "2018-01-16", "RepayForPayUrl");
 		setMethod(MethodType.POST);
 	}
 

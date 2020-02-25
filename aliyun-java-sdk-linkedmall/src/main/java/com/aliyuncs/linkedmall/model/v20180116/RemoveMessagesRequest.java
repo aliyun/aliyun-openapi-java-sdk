@@ -30,7 +30,7 @@ public class RemoveMessagesRequest extends RpcAcsRequest<RemoveMessagesResponse>
 
 	private String messageIds;
 	public RemoveMessagesRequest() {
-		super("linkedmall", "2018-01-16", "RemoveMessages", "linkedmall");
+		super("linkedmall", "2018-01-16", "RemoveMessages");
 		setMethod(MethodType.POST);
 	}
 

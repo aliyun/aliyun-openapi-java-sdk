@@ -31,7 +31,7 @@ public class DeleteBizItemsRequest extends RpcAcsRequest<DeleteBizItemsResponse>
 
 	private String subBizId;
 	public DeleteBizItemsRequest() {
-		super("linkedmall", "2018-01-16", "DeleteBizItems", "linkedmall");
+		super("linkedmall", "2018-01-16", "DeleteBizItems");
 		setMethod(MethodType.POST);
 	}
 

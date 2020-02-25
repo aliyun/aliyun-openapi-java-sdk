@@ -32,7 +32,7 @@ public class QueryGuideItemGroupRequest extends RpcAcsRequest<QueryGuideItemGrou
 
 	private Long pageNumber;
 	public QueryGuideItemGroupRequest() {
-		super("linkedmall", "2018-01-16", "QueryGuideItemGroup", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryGuideItemGroup");
 		setMethod(MethodType.POST);
 	}
 

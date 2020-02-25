@@ -32,7 +32,7 @@ public class QueryMovieCommentsRequest extends RpcAcsRequest<QueryMovieCommentsR
 
 	private Long pageNumber;
 	public QueryMovieCommentsRequest() {
-		super("linkedmall", "2018-01-16", "QueryMovieComments", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryMovieComments");
 		setMethod(MethodType.POST);
 	}
 

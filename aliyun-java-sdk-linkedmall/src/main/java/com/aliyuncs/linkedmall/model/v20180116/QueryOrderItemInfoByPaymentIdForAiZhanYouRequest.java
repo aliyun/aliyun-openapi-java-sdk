@@ -30,7 +30,7 @@ public class QueryOrderItemInfoByPaymentIdForAiZhanYouRequest extends RpcAcsRequ
 
 	private String bizId;
 	public QueryOrderItemInfoByPaymentIdForAiZhanYouRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderItemInfoByPaymentIdForAiZhanYou", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryOrderItemInfoByPaymentIdForAiZhanYou");
 		setMethod(MethodType.POST);
 	}
 

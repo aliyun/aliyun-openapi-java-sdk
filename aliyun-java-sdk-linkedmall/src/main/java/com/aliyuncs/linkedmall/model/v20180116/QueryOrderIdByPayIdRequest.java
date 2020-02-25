@@ -36,7 +36,7 @@ public class QueryOrderIdByPayIdRequest extends RpcAcsRequest<QueryOrderIdByPayI
 
 	private Boolean useAnonymousTbAccount;
 	public QueryOrderIdByPayIdRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderIdByPayId", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryOrderIdByPayId");
 		setMethod(MethodType.POST);
 	}
 

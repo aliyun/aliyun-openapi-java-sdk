@@ -34,7 +34,7 @@ public class QueryOrderDetailInnerRequest extends RpcAcsRequest<QueryOrderDetail
 
 	private Boolean useAnonymousTbAccount;
 	public QueryOrderDetailInnerRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderDetailInner", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryOrderDetailInner");
 		setMethod(MethodType.POST);
 	}
 

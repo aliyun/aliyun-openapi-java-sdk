@@ -28,7 +28,7 @@ public class QueryBatchRegistAnonymousTbAccountResultRequest extends RpcAcsReque
 
 	private String batchId;
 	public QueryBatchRegistAnonymousTbAccountResultRequest() {
-		super("linkedmall", "2018-01-16", "QueryBatchRegistAnonymousTbAccountResult", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryBatchRegistAnonymousTbAccountResult");
 		setMethod(MethodType.POST);
 	}
 

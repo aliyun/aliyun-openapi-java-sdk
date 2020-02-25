@@ -36,7 +36,7 @@ public class QueryRefundApplicationDetailRequest extends RpcAcsRequest<QueryRefu
 
 	private Boolean useAnonymousTbAccount;
 	public QueryRefundApplicationDetailRequest() {
-		super("linkedmall", "2018-01-16", "QueryRefundApplicationDetail", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryRefundApplicationDetail");
 		setMethod(MethodType.POST);
 	}
 

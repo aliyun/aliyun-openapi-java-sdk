@@ -51,7 +51,7 @@ public class ApplyRefundRequest extends RpcAcsRequest<ApplyRefundResponse> {
 
 	private String leaveMessage;
 	public ApplyRefundRequest() {
-		super("linkedmall", "2018-01-16", "ApplyRefund", "linkedmall");
+		super("linkedmall", "2018-01-16", "ApplyRefund");
 		setMethod(MethodType.POST);
 	}
 

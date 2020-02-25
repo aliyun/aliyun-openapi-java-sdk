@@ -38,7 +38,7 @@ public class GetCustomServiceUrlRequest extends RpcAcsRequest<GetCustomServiceUr
 
 	private Boolean useAnonymousTbAccount;
 	public GetCustomServiceUrlRequest() {
-		super("linkedmall", "2018-01-16", "GetCustomServiceUrl", "linkedmall");
+		super("linkedmall", "2018-01-16", "GetCustomServiceUrl");
 		setMethod(MethodType.POST);
 	}
 

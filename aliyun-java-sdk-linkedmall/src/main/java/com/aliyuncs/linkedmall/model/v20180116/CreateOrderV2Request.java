@@ -51,7 +51,7 @@ public class CreateOrderV2Request extends RpcAcsRequest<CreateOrderV2Response> {
 
 	private String deliveryAddress;
 	public CreateOrderV2Request() {
-		super("linkedmall", "2018-01-16", "CreateOrderV2", "linkedmall");
+		super("linkedmall", "2018-01-16", "CreateOrderV2");
 		setMethod(MethodType.POST);
 	}
 

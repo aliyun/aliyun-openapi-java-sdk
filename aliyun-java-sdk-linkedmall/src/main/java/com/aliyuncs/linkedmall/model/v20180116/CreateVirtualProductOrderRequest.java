@@ -51,7 +51,7 @@ public class CreateVirtualProductOrderRequest extends RpcAcsRequest<CreateVirtua
 
 	private String deliveryAddress;
 	public CreateVirtualProductOrderRequest() {
-		super("linkedmall", "2018-01-16", "CreateVirtualProductOrder", "linkedmall");
+		super("linkedmall", "2018-01-16", "CreateVirtualProductOrder");
 		setMethod(MethodType.POST);
 	}
 

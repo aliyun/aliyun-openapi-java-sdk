@@ -34,7 +34,7 @@ public class QueryBizItemsRequest extends RpcAcsRequest<QueryBizItemsResponse> {
 
 	private String subBizId;
 	public QueryBizItemsRequest() {
-		super("linkedmall", "2018-01-16", "QueryBizItems", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryBizItems");
 		setMethod(MethodType.POST);
 	}
 

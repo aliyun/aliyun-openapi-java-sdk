@@ -1,3 +1,6 @@
+2020-02-25 Version: 2.12.0
+- Support activity v2.
+
 2020-02-20 Version: 2.11.0
 - Support set accountType.
 

@@ -32,7 +32,7 @@ public class GetUserInfoRequest extends RpcAcsRequest<GetUserInfoResponse> {
 
 	private String bizId;
 	public GetUserInfoRequest() {
-		super("linkedmall", "2018-01-16", "GetUserInfo", "linkedmall");
+		super("linkedmall", "2018-01-16", "GetUserInfo");
 		setMethod(MethodType.POST);
 	}
 

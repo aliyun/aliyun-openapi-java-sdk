@@ -30,7 +30,7 @@ public class QueryMovieSchedulesRequest extends RpcAcsRequest<QueryMovieSchedule
 
 	private String bizId;
 	public QueryMovieSchedulesRequest() {
-		super("linkedmall", "2018-01-16", "QueryMovieSchedules", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryMovieSchedules");
 		setMethod(MethodType.POST);
 	}
 

@@ -40,7 +40,7 @@ public class QueryOrderAndPaymentListRequest extends RpcAcsRequest<QueryOrderAnd
 
 	private Long pageSize;
 	public QueryOrderAndPaymentListRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderAndPaymentList", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryOrderAndPaymentList");
 		setMethod(MethodType.POST);
 	}
 

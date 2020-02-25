@@ -28,7 +28,7 @@ public class QueryAllCitiesRequest extends RpcAcsRequest<QueryAllCitiesResponse>
 
 	private String bizId;
 	public QueryAllCitiesRequest() {
-		super("linkedmall", "2018-01-16", "QueryAllCities", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryAllCities");
 		setMethod(MethodType.POST);
 	}
 

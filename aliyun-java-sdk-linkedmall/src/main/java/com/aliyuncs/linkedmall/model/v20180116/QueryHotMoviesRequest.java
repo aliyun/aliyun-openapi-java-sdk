@@ -30,7 +30,7 @@ public class QueryHotMoviesRequest extends RpcAcsRequest<QueryHotMoviesResponse>
 
 	private String bizId;
 	public QueryHotMoviesRequest() {
-		super("linkedmall", "2018-01-16", "QueryHotMovies", "linkedmall");
+		super("linkedmall", "2018-01-16", "QueryHotMovies");
 		setMethod(MethodType.POST);
 	}
 

@@ -32,7 +32,7 @@ public class ListItemActivitiesRequest extends RpcAcsRequest<ListItemActivitiesR
 
 	private String bizId;
 	public ListItemActivitiesRequest() {
-		super("linkedmall", "2018-01-16", "ListItemActivities", "linkedmall");
+		super("linkedmall", "2018-01-16", "ListItemActivities");
 		setMethod(MethodType.POST);
 	}
 

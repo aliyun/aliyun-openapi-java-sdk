@@ -28,7 +28,7 @@ public class RegistAnonymousTbAccountRequest extends RpcAcsRequest<RegistAnonymo
 
 	private String bizId;
 	public RegistAnonymousTbAccountRequest() {
-		super("linkedmall", "2018-01-16", "RegistAnonymousTbAccount", "linkedmall");
+		super("linkedmall", "2018-01-16", "RegistAnonymousTbAccount");
 		setMethod(MethodType.POST);
 	}
 
