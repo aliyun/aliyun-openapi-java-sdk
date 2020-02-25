@@ -33,7 +33,7 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 
 	private String sid;
 	public DeleteInstanceRequest() {
-		super("dms-enterprise", "2018-11-01", "DeleteInstance", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "DeleteInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

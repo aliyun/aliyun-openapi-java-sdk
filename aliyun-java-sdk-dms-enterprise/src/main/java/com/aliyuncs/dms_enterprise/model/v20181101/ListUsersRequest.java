@@ -37,7 +37,7 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 
 	private Integer pageNumber;
 	public ListUsersRequest() {
-		super("dms-enterprise", "2018-11-01", "ListUsers", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "ListUsers");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

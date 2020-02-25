@@ -29,7 +29,7 @@ public class DisableUserRequest extends RpcAcsRequest<DisableUserResponse> {
 
 	private Long tid;
 	public DisableUserRequest() {
-		super("dms-enterprise", "2018-11-01", "DisableUser", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "DisableUser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

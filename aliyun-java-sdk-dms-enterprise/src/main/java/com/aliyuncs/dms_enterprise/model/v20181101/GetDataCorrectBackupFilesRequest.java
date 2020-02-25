@@ -33,7 +33,7 @@ public class GetDataCorrectBackupFilesRequest extends RpcAcsRequest<GetDataCorre
 
 	private Long tid;
 	public GetDataCorrectBackupFilesRequest() {
-		super("dms-enterprise", "2018-11-01", "GetDataCorrectBackupFiles", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "GetDataCorrectBackupFiles");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

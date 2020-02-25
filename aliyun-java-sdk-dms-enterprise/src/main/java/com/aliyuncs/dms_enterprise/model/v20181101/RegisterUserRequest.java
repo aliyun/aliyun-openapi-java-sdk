@@ -35,7 +35,7 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 
 	private Long tid;
 	public RegisterUserRequest() {
-		super("dms-enterprise", "2018-11-01", "RegisterUser", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "RegisterUser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

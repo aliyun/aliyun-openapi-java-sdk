@@ -39,7 +39,7 @@ public class SearchTableRequest extends RpcAcsRequest<SearchTableResponse> {
 
 	private Integer pageNumber;
 	public SearchTableRequest() {
-		super("dms-enterprise", "2018-11-01", "SearchTable", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "SearchTable");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

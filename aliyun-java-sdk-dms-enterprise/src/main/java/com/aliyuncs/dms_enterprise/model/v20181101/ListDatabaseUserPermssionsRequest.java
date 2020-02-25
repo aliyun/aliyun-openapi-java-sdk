@@ -39,7 +39,7 @@ public class ListDatabaseUserPermssionsRequest extends RpcAcsRequest<ListDatabas
 
 	private String userName;
 	public ListDatabaseUserPermssionsRequest() {
-		super("dms-enterprise", "2018-11-01", "ListDatabaseUserPermssions", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "ListDatabaseUserPermssions");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

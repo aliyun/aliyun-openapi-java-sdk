@@ -31,7 +31,7 @@ public class SyncDatabaseMetaRequest extends RpcAcsRequest<SyncDatabaseMetaRespo
 
 	private Long tid;
 	public SyncDatabaseMetaRequest() {
-		super("dms-enterprise", "2018-11-01", "SyncDatabaseMeta", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "SyncDatabaseMeta");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

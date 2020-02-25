@@ -31,7 +31,7 @@ public class GetUserRequest extends RpcAcsRequest<GetUserResponse> {
 
 	private Long tid;
 	public GetUserRequest() {
-		super("dms-enterprise", "2018-11-01", "GetUser", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "GetUser");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

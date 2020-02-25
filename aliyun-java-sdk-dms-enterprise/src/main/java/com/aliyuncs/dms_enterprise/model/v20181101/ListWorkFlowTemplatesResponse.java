@@ -87,7 +87,7 @@ public class ListWorkFlowTemplatesResponse extends AcsResponse {
 
 		private String enabled;
 
-		private List<WorkFlowNode> workFlowNodes;
+		private List<WorkflowNode> workflowNodes;
 
 		public String getTemplateName() {
 			return this.templateName;
@@ -129,15 +129,15 @@ public class ListWorkFlowTemplatesResponse extends AcsResponse {
 			this.enabled = enabled;
 		}
 
-		public List<WorkFlowNode> getWorkFlowNodes() {
-			return this.workFlowNodes;
+		public List<WorkflowNode> getWorkflowNodes() {
+			return this.workflowNodes;
 		}
 
-		public void setWorkFlowNodes(List<WorkFlowNode> workFlowNodes) {
-			this.workFlowNodes = workFlowNodes;
+		public void setWorkflowNodes(List<WorkflowNode> workflowNodes) {
+			this.workflowNodes = workflowNodes;
 		}
 
-		public static class WorkFlowNode {
+		public static class WorkflowNode {
 
 			private Long nodeId;
 

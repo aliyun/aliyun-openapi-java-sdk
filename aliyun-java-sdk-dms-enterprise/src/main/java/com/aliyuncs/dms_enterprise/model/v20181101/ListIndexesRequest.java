@@ -31,7 +31,7 @@ public class ListIndexesRequest extends RpcAcsRequest<ListIndexesResponse> {
 
 	private Long tid;
 	public ListIndexesRequest() {
-		super("dms-enterprise", "2018-11-01", "ListIndexes", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "ListIndexes");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

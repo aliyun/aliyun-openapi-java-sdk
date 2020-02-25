@@ -37,7 +37,7 @@ public class CreatePublishGroupTaskRequest extends RpcAcsRequest<CreatePublishGr
 
 	private String publishStrategy;
 	public CreatePublishGroupTaskRequest() {
-		super("dms-enterprise", "2018-11-01", "CreatePublishGroupTask", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "CreatePublishGroupTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

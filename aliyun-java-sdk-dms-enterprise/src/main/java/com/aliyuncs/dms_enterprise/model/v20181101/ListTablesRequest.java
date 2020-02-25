@@ -35,7 +35,7 @@ public class ListTablesRequest extends RpcAcsRequest<ListTablesResponse> {
 
 	private Integer pageNumber;
 	public ListTablesRequest() {
-		super("dms-enterprise", "2018-11-01", "ListTables", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "ListTables");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

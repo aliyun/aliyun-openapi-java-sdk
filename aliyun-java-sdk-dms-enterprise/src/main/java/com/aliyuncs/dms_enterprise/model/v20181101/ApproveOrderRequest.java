@@ -31,7 +31,7 @@ public class ApproveOrderRequest extends RpcAcsRequest<ApproveOrderResponse> {
 
 	private Long workflowInstanceId;
 	public ApproveOrderRequest() {
-		super("dms-enterprise", "2018-11-01", "ApproveOrder", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "ApproveOrder");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

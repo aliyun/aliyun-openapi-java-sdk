@@ -29,7 +29,7 @@ public class GetApprovalDetailRequest extends RpcAcsRequest<GetApprovalDetailRes
 
 	private Long workflowInstanceId;
 	public GetApprovalDetailRequest() {
-		super("dms-enterprise", "2018-11-01", "GetApprovalDetail", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "GetApprovalDetail");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

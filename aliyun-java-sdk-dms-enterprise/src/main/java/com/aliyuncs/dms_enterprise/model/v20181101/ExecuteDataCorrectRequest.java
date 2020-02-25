@@ -33,7 +33,7 @@ public class ExecuteDataCorrectRequest extends RpcAcsRequest<ExecuteDataCorrectR
 
 	private String tid;
 	public ExecuteDataCorrectRequest() {
-		super("dms-enterprise", "2018-11-01", "ExecuteDataCorrect", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "ExecuteDataCorrect");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
