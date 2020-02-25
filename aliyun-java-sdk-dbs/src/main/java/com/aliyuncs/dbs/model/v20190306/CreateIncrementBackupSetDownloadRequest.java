@@ -22,18 +22,20 @@ import com.aliyuncs.dbs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribePreCheckProgressListRequest extends RpcAcsRequest<DescribePreCheckProgressListResponse> {
+public class CreateIncrementBackupSetDownloadRequest extends RpcAcsRequest<CreateIncrementBackupSetDownloadResponse> {
 	   
 
 	private String clientToken;
 
-	private String backupPlanId;
+	private String backupSetName;
+
+	private String backupSetId;
 
 	private String ownerId;
 
-	private String restoreTaskId;
-	public DescribePreCheckProgressListRequest() {
-		super("Dbs", "2019-03-06", "DescribePreCheckProgressList");
+	private String backupSetDataFormat;
+	public CreateIncrementBackupSetDownloadRequest() {
+		super("Dbs", "2019-03-06", "CreateIncrementBackupSetDownload");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,14 +54,25 @@ public class DescribePreCheckProgressListRequest extends RpcAcsRequest<DescribeP
 		}
 	}
 
-	public String getBackupPlanId() {
-		return this.backupPlanId;
+	public String getBackupSetName() {
+		return this.backupSetName;
 	}
 
-	public void setBackupPlanId(String backupPlanId) {
-		this.backupPlanId = backupPlanId;
-		if(backupPlanId != null){
-			putQueryParameter("BackupPlanId", backupPlanId);
+	public void setBackupSetName(String backupSetName) {
+		this.backupSetName = backupSetName;
+		if(backupSetName != null){
+			putQueryParameter("BackupSetName", backupSetName);
+		}
+	}
+
+	public String getBackupSetId() {
+		return this.backupSetId;
+	}
+
+	public void setBackupSetId(String backupSetId) {
+		this.backupSetId = backupSetId;
+		if(backupSetId != null){
+			putQueryParameter("BackupSetId", backupSetId);
 		}
 	}
 
@@ -74,20 +87,20 @@ public class DescribePreCheckProgressListRequest extends RpcAcsRequest<DescribeP
 		}
 	}
 
-	public String getRestoreTaskId() {
-		return this.restoreTaskId;
+	public String getBackupSetDataFormat() {
+		return this.backupSetDataFormat;
 	}
 
-	public void setRestoreTaskId(String restoreTaskId) {
-		this.restoreTaskId = restoreTaskId;
-		if(restoreTaskId != null){
-			putQueryParameter("RestoreTaskId", restoreTaskId);
+	public void setBackupSetDataFormat(String backupSetDataFormat) {
+		this.backupSetDataFormat = backupSetDataFormat;
+		if(backupSetDataFormat != null){
+			putQueryParameter("BackupSetDataFormat", backupSetDataFormat);
 		}
 	}
 
 	@Override
-	public Class<DescribePreCheckProgressListResponse> getResponseClass() {
-		return DescribePreCheckProgressListResponse.class;
+	public Class<CreateIncrementBackupSetDownloadResponse> getResponseClass() {
+		return CreateIncrementBackupSetDownloadResponse.class;
 	}
 
 }

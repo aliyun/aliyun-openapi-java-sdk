@@ -22,18 +22,22 @@ import com.aliyuncs.dbs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribePreCheckProgressListRequest extends RpcAcsRequest<DescribePreCheckProgressListResponse> {
+public class DescribeBackupSetDownloadTaskListRequest extends RpcAcsRequest<DescribeBackupSetDownloadTaskListResponse> {
 	   
 
 	private String clientToken;
 
+	private String backupSetDownloadTaskId;
+
 	private String backupPlanId;
+
+	private Integer pageNum;
 
 	private String ownerId;
 
-	private String restoreTaskId;
-	public DescribePreCheckProgressListRequest() {
-		super("Dbs", "2019-03-06", "DescribePreCheckProgressList");
+	private Integer pageSize;
+	public DescribeBackupSetDownloadTaskListRequest() {
+		super("Dbs", "2019-03-06", "DescribeBackupSetDownloadTaskList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,6 +56,17 @@ public class DescribePreCheckProgressListRequest extends RpcAcsRequest<DescribeP
 		}
 	}
 
+	public String getBackupSetDownloadTaskId() {
+		return this.backupSetDownloadTaskId;
+	}
+
+	public void setBackupSetDownloadTaskId(String backupSetDownloadTaskId) {
+		this.backupSetDownloadTaskId = backupSetDownloadTaskId;
+		if(backupSetDownloadTaskId != null){
+			putQueryParameter("BackupSetDownloadTaskId", backupSetDownloadTaskId);
+		}
+	}
+
 	public String getBackupPlanId() {
 		return this.backupPlanId;
 	}
@@ -60,6 +75,17 @@ public class DescribePreCheckProgressListRequest extends RpcAcsRequest<DescribeP
 		this.backupPlanId = backupPlanId;
 		if(backupPlanId != null){
 			putQueryParameter("BackupPlanId", backupPlanId);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
@@ -74,20 +100,20 @@ public class DescribePreCheckProgressListRequest extends RpcAcsRequest<DescribeP
 		}
 	}
 
-	public String getRestoreTaskId() {
-		return this.restoreTaskId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRestoreTaskId(String restoreTaskId) {
-		this.restoreTaskId = restoreTaskId;
-		if(restoreTaskId != null){
-			putQueryParameter("RestoreTaskId", restoreTaskId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribePreCheckProgressListResponse> getResponseClass() {
-		return DescribePreCheckProgressListResponse.class;
+	public Class<DescribeBackupSetDownloadTaskListResponse> getResponseClass() {
+		return DescribeBackupSetDownloadTaskListResponse.class;
 	}
 
 }

@@ -65,7 +65,7 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 
 	private String destinationEndpointPassword;
 	public CreateRestoreTaskRequest() {
-		super("Dbs", "2019-03-06", "CreateRestoreTask", "cbs");
+		super("Dbs", "2019-03-06", "CreateRestoreTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -22,18 +22,16 @@ import com.aliyuncs.dbs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribePreCheckProgressListRequest extends RpcAcsRequest<DescribePreCheckProgressListResponse> {
+public class StartTaskRequest extends RpcAcsRequest<StartTaskResponse> {
 	   
 
 	private String clientToken;
 
-	private String backupPlanId;
-
 	private String ownerId;
 
-	private String restoreTaskId;
-	public DescribePreCheckProgressListRequest() {
-		super("Dbs", "2019-03-06", "DescribePreCheckProgressList");
+	private String taskId;
+	public StartTaskRequest() {
+		super("Dbs", "2019-03-06", "StartTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,17 +50,6 @@ public class DescribePreCheckProgressListRequest extends RpcAcsRequest<DescribeP
 		}
 	}
 
-	public String getBackupPlanId() {
-		return this.backupPlanId;
-	}
-
-	public void setBackupPlanId(String backupPlanId) {
-		this.backupPlanId = backupPlanId;
-		if(backupPlanId != null){
-			putQueryParameter("BackupPlanId", backupPlanId);
-		}
-	}
-
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -74,20 +61,20 @@ public class DescribePreCheckProgressListRequest extends RpcAcsRequest<DescribeP
 		}
 	}
 
-	public String getRestoreTaskId() {
-		return this.restoreTaskId;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setRestoreTaskId(String restoreTaskId) {
-		this.restoreTaskId = restoreTaskId;
-		if(restoreTaskId != null){
-			putQueryParameter("RestoreTaskId", restoreTaskId);
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<DescribePreCheckProgressListResponse> getResponseClass() {
-		return DescribePreCheckProgressListResponse.class;
+	public Class<StartTaskResponse> getResponseClass() {
+		return StartTaskResponse.class;
 	}
 
 }

@@ -37,7 +37,7 @@ public class DescribeFullBackupListRequest extends RpcAcsRequest<DescribeFullBac
 
 	private Integer pageSize;
 	public DescribeFullBackupListRequest() {
-		super("Dbs", "2019-03-06", "DescribeFullBackupList", "cbs");
+		super("Dbs", "2019-03-06", "DescribeFullBackupList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
