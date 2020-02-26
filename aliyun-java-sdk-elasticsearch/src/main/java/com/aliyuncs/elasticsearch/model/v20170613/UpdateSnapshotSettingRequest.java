@@ -29,7 +29,7 @@ public class UpdateSnapshotSettingRequest extends RoaAcsRequest<UpdateSnapshotSe
 	public UpdateSnapshotSettingRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateSnapshotSetting", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/snapshot-setting");
-		setMethod(MethodType.PUT);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
