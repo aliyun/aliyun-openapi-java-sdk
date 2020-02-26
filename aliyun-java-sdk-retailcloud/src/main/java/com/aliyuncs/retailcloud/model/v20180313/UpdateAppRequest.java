@@ -40,7 +40,7 @@ public class UpdateAppRequest extends RpcAcsRequest<UpdateAppResponse> {
 
 	private String language;
 	public UpdateAppRequest() {
-		super("retailcloud", "2018-03-13", "UpdateApp", "retailcloud");
+		super("retailcloud", "2018-03-13", "UpdateApp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

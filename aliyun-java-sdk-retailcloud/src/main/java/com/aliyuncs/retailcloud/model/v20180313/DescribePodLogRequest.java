@@ -29,7 +29,7 @@ public class DescribePodLogRequest extends RpcAcsRequest<DescribePodLogResponse>
 
 	private String appInstId;
 	public DescribePodLogRequest() {
-		super("retailcloud", "2018-03-13", "DescribePodLog", "retailcloud");
+		super("retailcloud", "2018-03-13", "DescribePodLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

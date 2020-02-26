@@ -29,7 +29,7 @@ public class DeleteAppDetailRequest extends RpcAcsRequest<DeleteAppDetailRespons
 
 	private Boolean force;
 	public DeleteAppDetailRequest() {
-		super("retailcloud", "2018-03-13", "DeleteAppDetail", "retailcloud");
+		super("retailcloud", "2018-03-13", "DeleteAppDetail");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -1,3 +1,6 @@
+2020-02-26 Version: 2.0.3
+- Generated 2018-03-13 for `retailcloud`.
+
 2020-02-20 Version: 2.0.2
 - Add new api ListUsers.
 - Supported userRole setting for api, CreateApp, UpdateApp, DescribeAppDetail.

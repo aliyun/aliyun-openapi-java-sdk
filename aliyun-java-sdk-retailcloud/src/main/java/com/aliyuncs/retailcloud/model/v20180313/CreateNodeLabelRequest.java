@@ -31,7 +31,7 @@ public class CreateNodeLabelRequest extends RpcAcsRequest<CreateNodeLabelRespons
 
 	private String clusterId;
 	public CreateNodeLabelRequest() {
-		super("retailcloud", "2018-03-13", "CreateNodeLabel", "retailcloud");
+		super("retailcloud", "2018-03-13", "CreateNodeLabel");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DeleteDeployConfigRequest extends RpcAcsRequest<DeleteDeployConfigR
 
 	private Long schemaId;
 	public DeleteDeployConfigRequest() {
-		super("retailcloud", "2018-03-13", "DeleteDeployConfig", "retailcloud");
+		super("retailcloud", "2018-03-13", "DeleteDeployConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

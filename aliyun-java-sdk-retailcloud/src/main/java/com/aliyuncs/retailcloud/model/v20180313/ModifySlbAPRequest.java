@@ -39,7 +39,7 @@ public class ModifySlbAPRequest extends RpcAcsRequest<ModifySlbAPResponse> {
 
 	private Long slbAPId;
 	public ModifySlbAPRequest() {
-		super("retailcloud", "2018-03-13", "ModifySlbAP", "retailcloud");
+		super("retailcloud", "2018-03-13", "ModifySlbAP");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

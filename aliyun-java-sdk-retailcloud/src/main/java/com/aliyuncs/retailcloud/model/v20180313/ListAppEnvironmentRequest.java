@@ -35,7 +35,7 @@ public class ListAppEnvironmentRequest extends RpcAcsRequest<ListAppEnvironmentR
 
 	private Integer pageNumber;
 	public ListAppEnvironmentRequest() {
-		super("retailcloud", "2018-03-13", "ListAppEnvironment", "retailcloud");
+		super("retailcloud", "2018-03-13", "ListAppEnvironment");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DescribeRdsAccountsRequest extends RpcAcsRequest<DescribeRdsAccount
 
 	private String dbInstanceId;
 	public DescribeRdsAccountsRequest() {
-		super("retailcloud", "2018-03-13", "DescribeRdsAccounts", "retailcloud");
+		super("retailcloud", "2018-03-13", "DescribeRdsAccounts");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -40,7 +40,7 @@ public class UpdateDeployConfigRequest extends RpcAcsRequest<UpdateDeployConfigR
 
 	private String deployment;
 	public UpdateDeployConfigRequest() {
-		super("retailcloud", "2018-03-13", "UpdateDeployConfig", "retailcloud");
+		super("retailcloud", "2018-03-13", "UpdateDeployConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
