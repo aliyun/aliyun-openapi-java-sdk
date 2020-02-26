@@ -31,7 +31,7 @@ public class DescribeRPSDKRequest extends RpcAcsRequest<DescribeRPSDKResponse> {
 
 	private String taskId;
 	public DescribeRPSDKRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeRPSDK", "cloudauth");
+		super("Cloudauth", "2019-03-07", "DescribeRPSDK");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

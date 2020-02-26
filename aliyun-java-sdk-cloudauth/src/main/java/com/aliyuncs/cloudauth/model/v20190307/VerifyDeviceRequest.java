@@ -22,10 +22,16 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVerifySettingRequest extends RpcAcsRequest<DescribeVerifySettingResponse> {
+public class VerifyDeviceRequest extends RpcAcsRequest<VerifyDeviceResponse> {
 	   
-	public DescribeVerifySettingRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeVerifySetting");
+
+	private String certifyData;
+
+	private String appVersion;
+
+	private String certifyId;
+	public VerifyDeviceRequest() {
+		super("Cloudauth", "2019-03-07", "VerifyDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -33,9 +39,42 @@ public class DescribeVerifySettingRequest extends RpcAcsRequest<DescribeVerifySe
 		} catch (Exception e) {}
 	}
 
+	public String getCertifyData() {
+		return this.certifyData;
+	}
+
+	public void setCertifyData(String certifyData) {
+		this.certifyData = certifyData;
+		if(certifyData != null){
+			putQueryParameter("CertifyData", certifyData);
+		}
+	}
+
+	public String getAppVersion() {
+		return this.appVersion;
+	}
+
+	public void setAppVersion(String appVersion) {
+		this.appVersion = appVersion;
+		if(appVersion != null){
+			putQueryParameter("AppVersion", appVersion);
+		}
+	}
+
+	public String getCertifyId() {
+		return this.certifyId;
+	}
+
+	public void setCertifyId(String certifyId) {
+		this.certifyId = certifyId;
+		if(certifyId != null){
+			putQueryParameter("CertifyId", certifyId);
+		}
+	}
+
 	@Override
-	public Class<DescribeVerifySettingResponse> getResponseClass() {
-		return DescribeVerifySettingResponse.class;
+	public Class<VerifyDeviceResponse> getResponseClass() {
+		return VerifyDeviceResponse.class;
 	}
 
 }

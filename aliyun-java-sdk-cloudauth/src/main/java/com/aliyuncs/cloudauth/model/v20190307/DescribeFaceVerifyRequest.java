@@ -22,10 +22,14 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVerifySettingRequest extends RpcAcsRequest<DescribeVerifySettingResponse> {
+public class DescribeFaceVerifyRequest extends RpcAcsRequest<DescribeFaceVerifyResponse> {
 	   
-	public DescribeVerifySettingRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeVerifySetting");
+
+	private Long sceneId;
+
+	private String certifyId;
+	public DescribeFaceVerifyRequest() {
+		super("Cloudauth", "2019-03-07", "DescribeFaceVerify");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -33,9 +37,31 @@ public class DescribeVerifySettingRequest extends RpcAcsRequest<DescribeVerifySe
 		} catch (Exception e) {}
 	}
 
+	public Long getSceneId() {
+		return this.sceneId;
+	}
+
+	public void setSceneId(Long sceneId) {
+		this.sceneId = sceneId;
+		if(sceneId != null){
+			putQueryParameter("SceneId", sceneId.toString());
+		}
+	}
+
+	public String getCertifyId() {
+		return this.certifyId;
+	}
+
+	public void setCertifyId(String certifyId) {
+		this.certifyId = certifyId;
+		if(certifyId != null){
+			putQueryParameter("CertifyId", certifyId);
+		}
+	}
+
 	@Override
-	public Class<DescribeVerifySettingResponse> getResponseClass() {
-		return DescribeVerifySettingResponse.class;
+	public Class<DescribeFaceVerifyResponse> getResponseClass() {
+		return DescribeFaceVerifyResponse.class;
 	}
 
 }

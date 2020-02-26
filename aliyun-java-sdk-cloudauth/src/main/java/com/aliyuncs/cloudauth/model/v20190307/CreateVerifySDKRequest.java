@@ -33,7 +33,7 @@ public class CreateVerifySDKRequest extends RpcAcsRequest<CreateVerifySDKRespons
 
 	private String lang;
 	public CreateVerifySDKRequest() {
-		super("Cloudauth", "2019-03-07", "CreateVerifySDK", "cloudauth");
+		super("Cloudauth", "2019-03-07", "CreateVerifySDK");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

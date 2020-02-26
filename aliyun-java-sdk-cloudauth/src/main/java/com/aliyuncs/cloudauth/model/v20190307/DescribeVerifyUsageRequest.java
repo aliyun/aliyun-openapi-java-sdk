@@ -31,7 +31,7 @@ public class DescribeVerifyUsageRequest extends RpcAcsRequest<DescribeVerifyUsag
 
 	private String endDate;
 	public DescribeVerifyUsageRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeVerifyUsage", "cloudauth");
+		super("Cloudauth", "2019-03-07", "DescribeVerifyUsage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
