@@ -47,7 +47,7 @@ public class SwitchNetworkRequest extends RpcAcsRequest<SwitchNetworkResponse> {
 
 	private String vpcId;
 	public SwitchNetworkRequest() {
-		super("R-kvstore", "2015-01-01", "SwitchNetwork", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "SwitchNetwork");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

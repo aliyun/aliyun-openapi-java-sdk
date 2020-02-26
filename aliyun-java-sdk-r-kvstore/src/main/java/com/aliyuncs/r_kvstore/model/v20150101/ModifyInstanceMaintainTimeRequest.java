@@ -41,7 +41,7 @@ public class ModifyInstanceMaintainTimeRequest extends RpcAcsRequest<ModifyInsta
 
 	private String instanceId;
 	public ModifyInstanceMaintainTimeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceMaintainTime", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceMaintainTime");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

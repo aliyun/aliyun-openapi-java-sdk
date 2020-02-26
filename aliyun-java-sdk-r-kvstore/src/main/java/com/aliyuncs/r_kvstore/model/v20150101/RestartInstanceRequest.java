@@ -39,7 +39,7 @@ public class RestartInstanceRequest extends RpcAcsRequest<RestartInstanceRespons
 
 	private String instanceId;
 	public RestartInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "RestartInstance", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "RestartInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

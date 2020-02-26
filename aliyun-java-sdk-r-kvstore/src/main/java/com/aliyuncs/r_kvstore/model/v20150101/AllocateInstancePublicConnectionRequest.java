@@ -41,7 +41,7 @@ public class AllocateInstancePublicConnectionRequest extends RpcAcsRequest<Alloc
 
 	private String port;
 	public AllocateInstancePublicConnectionRequest() {
-		super("R-kvstore", "2015-01-01", "AllocateInstancePublicConnection", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "AllocateInstancePublicConnection");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

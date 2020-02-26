@@ -39,7 +39,7 @@ public class ModifyInstanceVpcAuthModeRequest extends RpcAcsRequest<ModifyInstan
 
 	private String instanceId;
 	public ModifyInstanceVpcAuthModeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceVpcAuthMode", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceVpcAuthMode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

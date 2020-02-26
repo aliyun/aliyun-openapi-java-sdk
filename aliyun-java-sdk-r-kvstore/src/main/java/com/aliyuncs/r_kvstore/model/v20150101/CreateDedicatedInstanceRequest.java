@@ -67,7 +67,7 @@ public class CreateDedicatedInstanceRequest extends RpcAcsRequest<CreateDedicate
 
 	private String config;
 	public CreateDedicatedInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "CreateDedicatedInstance", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "CreateDedicatedInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

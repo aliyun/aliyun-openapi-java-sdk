@@ -39,7 +39,7 @@ public class ModifyInstanceSSLRequest extends RpcAcsRequest<ModifyInstanceSSLRes
 
 	private String sSLEnabled;
 	public ModifyInstanceSSLRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceSSL", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceSSL");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

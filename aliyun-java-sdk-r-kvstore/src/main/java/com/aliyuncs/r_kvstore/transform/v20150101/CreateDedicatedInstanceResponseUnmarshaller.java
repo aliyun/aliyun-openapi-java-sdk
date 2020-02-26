@@ -30,11 +30,11 @@ public class CreateDedicatedInstanceResponseUnmarshaller {
 		createDedicatedInstanceResponse.setUserName(_ctx.stringValue("CreateDedicatedInstanceResponse.UserName"));
 		createDedicatedInstanceResponse.setInstanceStatus(_ctx.stringValue("CreateDedicatedInstanceResponse.InstanceStatus"));
 		createDedicatedInstanceResponse.setRegionId(_ctx.stringValue("CreateDedicatedInstanceResponse.RegionId"));
-		createDedicatedInstanceResponse.setCapacity(_ctx.booleanValue("CreateDedicatedInstanceResponse.Capacity"));
+		createDedicatedInstanceResponse.setCapacity(_ctx.longValue("CreateDedicatedInstanceResponse.Capacity"));
 		createDedicatedInstanceResponse.setQPS(_ctx.stringValue("CreateDedicatedInstanceResponse.QPS"));
 		createDedicatedInstanceResponse.setBandwidth(_ctx.integerValue("CreateDedicatedInstanceResponse.Bandwidth"));
 		createDedicatedInstanceResponse.setConnections(_ctx.integerValue("CreateDedicatedInstanceResponse.Connections"));
-		createDedicatedInstanceResponse.setZoneId(_ctx.booleanValue("CreateDedicatedInstanceResponse.ZoneId"));
+		createDedicatedInstanceResponse.setZoneId(_ctx.stringValue("CreateDedicatedInstanceResponse.ZoneId"));
 		createDedicatedInstanceResponse.setConfig(_ctx.stringValue("CreateDedicatedInstanceResponse.Config"));
 		createDedicatedInstanceResponse.setNodeType(_ctx.stringValue("CreateDedicatedInstanceResponse.NodeType"));
 		createDedicatedInstanceResponse.setNetworkType(_ctx.stringValue("CreateDedicatedInstanceResponse.NetworkType"));

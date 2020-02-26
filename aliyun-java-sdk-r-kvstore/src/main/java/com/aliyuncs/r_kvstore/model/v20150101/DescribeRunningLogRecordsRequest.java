@@ -39,8 +39,6 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 
 	private String nodeId;
 
-	private Long sQLId;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -53,7 +51,7 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 
 	private String dBName;
 	public DescribeRunningLogRecordsRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeRunningLogRecords", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeRunningLogRecords");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -135,17 +133,6 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		this.nodeId = nodeId;
 		if(nodeId != null){
 			putQueryParameter("NodeId", nodeId);
-		}
-	}
-
-	public Long getSQLId() {
-		return this.sQLId;
-	}
-
-	public void setSQLId(Long sQLId) {
-		this.sQLId = sQLId;
-		if(sQLId != null){
-			putQueryParameter("SQLId", sQLId.toString());
 		}
 	}
 

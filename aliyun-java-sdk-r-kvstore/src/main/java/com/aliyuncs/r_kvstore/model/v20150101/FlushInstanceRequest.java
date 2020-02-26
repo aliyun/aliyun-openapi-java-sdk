@@ -37,7 +37,7 @@ public class FlushInstanceRequest extends RpcAcsRequest<FlushInstanceResponse> {
 
 	private String securityToken;
 	public FlushInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "FlushInstance", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "FlushInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

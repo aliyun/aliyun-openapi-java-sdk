@@ -37,7 +37,7 @@ public class DescribeSecurityIpsRequest extends RpcAcsRequest<DescribeSecurityIp
 
 	private String instanceId;
 	public DescribeSecurityIpsRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeSecurityIps", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeSecurityIps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

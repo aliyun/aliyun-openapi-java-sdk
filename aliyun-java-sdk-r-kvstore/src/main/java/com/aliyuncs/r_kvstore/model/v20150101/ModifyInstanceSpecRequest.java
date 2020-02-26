@@ -51,7 +51,7 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private String orderType;
 	public ModifyInstanceSpecRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceSpec", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceSpec");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

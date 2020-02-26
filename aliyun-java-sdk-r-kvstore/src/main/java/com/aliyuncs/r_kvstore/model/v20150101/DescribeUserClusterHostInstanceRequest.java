@@ -49,7 +49,7 @@ public class DescribeUserClusterHostInstanceRequest extends RpcAcsRequest<Descri
 
 	private String zoneId;
 	public DescribeUserClusterHostInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeUserClusterHostInstance", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeUserClusterHostInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

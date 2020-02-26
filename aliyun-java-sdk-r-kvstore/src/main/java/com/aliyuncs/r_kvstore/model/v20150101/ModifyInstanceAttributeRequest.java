@@ -41,7 +41,7 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	private String instanceName;
 	public ModifyInstanceAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceAttribute", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

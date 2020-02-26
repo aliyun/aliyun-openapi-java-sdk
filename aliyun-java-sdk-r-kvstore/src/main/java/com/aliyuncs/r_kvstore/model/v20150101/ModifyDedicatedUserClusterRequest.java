@@ -53,7 +53,7 @@ public class ModifyDedicatedUserClusterRequest extends RpcAcsRequest<ModifyDedic
 
 	private Integer cpuOverAllocationRatio;
 	public ModifyDedicatedUserClusterRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyDedicatedUserCluster", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyDedicatedUserCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

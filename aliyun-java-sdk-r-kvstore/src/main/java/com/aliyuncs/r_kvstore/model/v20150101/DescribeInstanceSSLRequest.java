@@ -37,7 +37,7 @@ public class DescribeInstanceSSLRequest extends RpcAcsRequest<DescribeInstanceSS
 
 	private String instanceId;
 	public DescribeInstanceSSLRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeInstanceSSL", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeInstanceSSL");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

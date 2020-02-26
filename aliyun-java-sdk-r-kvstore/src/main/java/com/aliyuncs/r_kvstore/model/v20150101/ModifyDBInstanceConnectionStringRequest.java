@@ -45,7 +45,7 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 
 	private String port;
 	public ModifyDBInstanceConnectionStringRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyDBInstanceConnectionString", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyDBInstanceConnectionString");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

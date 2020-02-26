@@ -35,7 +35,7 @@ public class DescribeMonitorItemsRequest extends RpcAcsRequest<DescribeMonitorIt
 
 	private String securityToken;
 	public DescribeMonitorItemsRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeMonitorItems", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeMonitorItems");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

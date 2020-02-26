@@ -59,7 +59,7 @@ public class CreateUserClusterHostRequest extends RpcAcsRequest<CreateUserCluste
 
 	private String chargeType;
 	public CreateUserClusterHostRequest() {
-		super("R-kvstore", "2015-01-01", "CreateUserClusterHost", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "CreateUserClusterHost");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

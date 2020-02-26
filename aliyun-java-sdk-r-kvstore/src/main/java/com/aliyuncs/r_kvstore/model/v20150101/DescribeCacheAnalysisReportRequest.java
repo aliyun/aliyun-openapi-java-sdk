@@ -47,7 +47,7 @@ public class DescribeCacheAnalysisReportRequest extends RpcAcsRequest<DescribeCa
 
 	private String instanceId;
 	public DescribeCacheAnalysisReportRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeCacheAnalysisReport", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeCacheAnalysisReport");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

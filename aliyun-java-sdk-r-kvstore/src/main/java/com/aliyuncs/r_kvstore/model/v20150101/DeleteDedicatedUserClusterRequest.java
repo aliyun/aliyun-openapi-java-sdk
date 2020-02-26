@@ -41,7 +41,7 @@ public class DeleteDedicatedUserClusterRequest extends RpcAcsRequest<DeleteDedic
 
 	private String zoneId;
 	public DeleteDedicatedUserClusterRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteDedicatedUserCluster", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DeleteDedicatedUserCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
