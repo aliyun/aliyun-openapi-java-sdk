@@ -27,7 +27,7 @@ public class RecognizeStampRequest extends RpcAcsRequest<RecognizeStampResponse>
 
 	private String imageURL;
 	public RecognizeStampRequest() {
-		super("ocr", "2019-12-30", "RecognizeStamp");
+		super("ocr", "2019-12-30", "RecognizeStamp", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

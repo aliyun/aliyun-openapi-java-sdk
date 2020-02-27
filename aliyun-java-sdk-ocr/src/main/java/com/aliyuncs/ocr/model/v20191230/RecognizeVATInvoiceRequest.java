@@ -22,12 +22,14 @@ import com.aliyuncs.ocr.Endpoint;
  * @author auto create
  * @version 
  */
-public class RecognizeBankCardRequest extends RpcAcsRequest<RecognizeBankCardResponse> {
+public class RecognizeVATInvoiceRequest extends RpcAcsRequest<RecognizeVATInvoiceResponse> {
 	   
 
-	private String imageURL;
-	public RecognizeBankCardRequest() {
-		super("ocr", "2019-12-30", "RecognizeBankCard", "ocr");
+	private String fileType;
+
+	private String fileURL;
+	public RecognizeVATInvoiceRequest() {
+		super("ocr", "2019-12-30", "RecognizeVATInvoice", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class RecognizeBankCardRequest extends RpcAcsRequest<RecognizeBankCardRes
 		} catch (Exception e) {}
 	}
 
-	public String getImageURL() {
-		return this.imageURL;
+	public String getFileType() {
+		return this.fileType;
 	}
 
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
-		if(imageURL != null){
-			putBodyParameter("ImageURL", imageURL);
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
+		if(fileType != null){
+			putBodyParameter("FileType", fileType);
+		}
+	}
+
+	public String getFileURL() {
+		return this.fileURL;
+	}
+
+	public void setFileURL(String fileURL) {
+		this.fileURL = fileURL;
+		if(fileURL != null){
+			putBodyParameter("FileURL", fileURL);
 		}
 	}
 
 	@Override
-	public Class<RecognizeBankCardResponse> getResponseClass() {
-		return RecognizeBankCardResponse.class;
+	public Class<RecognizeVATInvoiceResponse> getResponseClass() {
+		return RecognizeVATInvoiceResponse.class;
 	}
 
 }

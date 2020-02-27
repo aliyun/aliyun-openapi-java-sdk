@@ -37,7 +37,7 @@ public class RecognizeTableRequest extends RpcAcsRequest<RecognizeTableResponse>
 
 	private Boolean hasLine;
 	public RecognizeTableRequest() {
-		super("ocr", "2019-12-30", "RecognizeTable");
+		super("ocr", "2019-12-30", "RecognizeTable", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

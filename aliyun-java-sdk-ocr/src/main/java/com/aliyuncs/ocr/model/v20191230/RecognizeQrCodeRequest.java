@@ -15,6 +15,7 @@
 package com.aliyuncs.ocr.model.v20191230;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ocr.Endpoint;
 
@@ -22,12 +23,12 @@ import com.aliyuncs.ocr.Endpoint;
  * @author auto create
  * @version 
  */
-public class RecognizeBankCardRequest extends RpcAcsRequest<RecognizeBankCardResponse> {
+public class RecognizeQrCodeRequest extends RpcAcsRequest<RecognizeQrCodeResponse> {
 	   
 
-	private String imageURL;
-	public RecognizeBankCardRequest() {
-		super("ocr", "2019-12-30", "RecognizeBankCard", "ocr");
+	private List<Tasks> taskss;
+	public RecognizeQrCodeRequest() {
+		super("ocr", "2019-12-30", "RecognizeQrCode", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +36,35 @@ public class RecognizeBankCardRequest extends RpcAcsRequest<RecognizeBankCardRes
 		} catch (Exception e) {}
 	}
 
-	public String getImageURL() {
-		return this.imageURL;
+	public List<Tasks> getTaskss() {
+		return this.taskss;
 	}
 
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
-		if(imageURL != null){
-			putBodyParameter("ImageURL", imageURL);
+	public void setTaskss(List<Tasks> taskss) {
+		this.taskss = taskss;	
+		if (taskss != null) {
+			for (int depth1 = 0; depth1 < taskss.size(); depth1++) {
+				putBodyParameter("Tasks." + (depth1 + 1) + ".ImageURL" , taskss.get(depth1).getImageURL());
+			}
+		}	
+	}
+
+	public static class Tasks {
+
+		private String imageURL;
+
+		public String getImageURL() {
+			return this.imageURL;
+		}
+
+		public void setImageURL(String imageURL) {
+			this.imageURL = imageURL;
 		}
 	}
 
 	@Override
-	public Class<RecognizeBankCardResponse> getResponseClass() {
-		return RecognizeBankCardResponse.class;
+	public Class<RecognizeQrCodeResponse> getResponseClass() {
+		return RecognizeQrCodeResponse.class;
 	}
 
 }

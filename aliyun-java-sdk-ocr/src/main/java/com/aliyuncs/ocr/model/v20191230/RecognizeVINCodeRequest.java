@@ -27,7 +27,7 @@ public class RecognizeVINCodeRequest extends RpcAcsRequest<RecognizeVINCodeRespo
 
 	private String imageURL;
 	public RecognizeVINCodeRequest() {
-		super("ocr", "2019-12-30", "RecognizeVINCode");
+		super("ocr", "2019-12-30", "RecognizeVINCode", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
