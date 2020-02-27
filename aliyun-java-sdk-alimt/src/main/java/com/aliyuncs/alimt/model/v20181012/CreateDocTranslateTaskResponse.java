@@ -15,22 +15,20 @@
 package com.aliyuncs.alimt.model.v20181012;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alimt.transform.v20181012.TranslateECommerceResponseUnmarshaller;
+import com.aliyuncs.alimt.transform.v20181012.CreateDocTranslateTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class TranslateECommerceResponse extends AcsResponse {
+public class CreateDocTranslateTaskResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer code;
+	private String taskId;
 
-	private String message;
-
-	private Data data;
+	private String status;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,46 +38,25 @@ public class TranslateECommerceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getCode() {
-		return this.code;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Data getData() {
-		return this.data;
-	}
-
-	public void setData(Data data) {
-		this.data = data;
-	}
-
-	public static class Data {
-
-		private String translated;
-
-		public String getTranslated() {
-			return this.translated;
-		}
-
-		public void setTranslated(String translated) {
-			this.translated = translated;
-		}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	@Override
-	public TranslateECommerceResponse getInstance(UnmarshallerContext context) {
-		return	TranslateECommerceResponseUnmarshaller.unmarshall(this, context);
+	public CreateDocTranslateTaskResponse getInstance(UnmarshallerContext context) {
+		return	CreateDocTranslateTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

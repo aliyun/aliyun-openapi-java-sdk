@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TranslateECommerceResponseUnmarshaller {
 
-	public static TranslateECommerceResponse unmarshall(TranslateECommerceResponse translateECommerceResponse, UnmarshallerContext context) {
+	public static TranslateECommerceResponse unmarshall(TranslateECommerceResponse translateECommerceResponse, UnmarshallerContext _ctx) {
 		
-		translateECommerceResponse.setRequestId(context.stringValue("TranslateECommerceResponse.RequestId"));
-		translateECommerceResponse.setCode(context.integerValue("TranslateECommerceResponse.Code"));
-		translateECommerceResponse.setMessage(context.stringValue("TranslateECommerceResponse.Message"));
+		translateECommerceResponse.setRequestId(_ctx.stringValue("TranslateECommerceResponse.RequestId"));
+		translateECommerceResponse.setCode(_ctx.integerValue("TranslateECommerceResponse.Code"));
+		translateECommerceResponse.setMessage(_ctx.stringValue("TranslateECommerceResponse.Message"));
 
 		Data data = new Data();
-		data.setTranslated(context.stringValue("TranslateECommerceResponse.Data.Translated"));
+		data.setTranslated(_ctx.stringValue("TranslateECommerceResponse.Data.Translated"));
 		translateECommerceResponse.setData(data);
 	 
 	 	return translateECommerceResponse;

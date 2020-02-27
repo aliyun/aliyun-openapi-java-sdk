@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TranslateGeneralResponseUnmarshaller {
 
-	public static TranslateGeneralResponse unmarshall(TranslateGeneralResponse translateGeneralResponse, UnmarshallerContext context) {
+	public static TranslateGeneralResponse unmarshall(TranslateGeneralResponse translateGeneralResponse, UnmarshallerContext _ctx) {
 		
-		translateGeneralResponse.setRequestId(context.stringValue("TranslateGeneralResponse.RequestId"));
-		translateGeneralResponse.setCode(context.integerValue("TranslateGeneralResponse.Code"));
-		translateGeneralResponse.setMessage(context.stringValue("TranslateGeneralResponse.Message"));
+		translateGeneralResponse.setRequestId(_ctx.stringValue("TranslateGeneralResponse.RequestId"));
+		translateGeneralResponse.setCode(_ctx.integerValue("TranslateGeneralResponse.Code"));
+		translateGeneralResponse.setMessage(_ctx.stringValue("TranslateGeneralResponse.Message"));
 
 		Data data = new Data();
-		data.setTranslated(context.stringValue("TranslateGeneralResponse.Data.Translated"));
+		data.setTranslated(_ctx.stringValue("TranslateGeneralResponse.Data.Translated"));
 		translateGeneralResponse.setData(data);
 	 
 	 	return translateGeneralResponse;

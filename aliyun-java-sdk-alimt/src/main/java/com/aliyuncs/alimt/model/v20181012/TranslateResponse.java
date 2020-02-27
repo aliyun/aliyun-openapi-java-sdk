@@ -15,14 +15,14 @@
 package com.aliyuncs.alimt.model.v20181012;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alimt.transform.v20181012.TranslateECommerceResponseUnmarshaller;
+import com.aliyuncs.alimt.transform.v20181012.TranslateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class TranslateECommerceResponse extends AcsResponse {
+public class TranslateResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -78,8 +78,8 @@ public class TranslateECommerceResponse extends AcsResponse {
 	}
 
 	@Override
-	public TranslateECommerceResponse getInstance(UnmarshallerContext context) {
-		return	TranslateECommerceResponseUnmarshaller.unmarshall(this, context);
+	public TranslateResponse getInstance(UnmarshallerContext context) {
+		return	TranslateResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

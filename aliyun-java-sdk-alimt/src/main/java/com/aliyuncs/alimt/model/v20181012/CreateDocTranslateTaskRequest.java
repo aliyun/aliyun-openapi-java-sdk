@@ -22,20 +22,22 @@ import com.aliyuncs.alimt.Endpoint;
  * @author auto create
  * @version 
  */
-public class TranslateGeneralRequest extends RpcAcsRequest<TranslateGeneralResponse> {
+public class CreateDocTranslateTaskRequest extends RpcAcsRequest<CreateDocTranslateTaskResponse> {
 	   
 
 	private String sourceLanguage;
 
-	private String sourceText;
-
-	private String formatType;
+	private String clientToken;
 
 	private String scene;
 
+	private String fileUrl;
+
 	private String targetLanguage;
-	public TranslateGeneralRequest() {
-		super("alimt", "2018-10-12", "TranslateGeneral", "alimt");
+
+	private String callbackUrl;
+	public CreateDocTranslateTaskRequest() {
+		super("alimt", "2018-10-12", "CreateDocTranslateTask", "alimt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,25 +56,14 @@ public class TranslateGeneralRequest extends RpcAcsRequest<TranslateGeneralRespo
 		}
 	}
 
-	public String getSourceText() {
-		return this.sourceText;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setSourceText(String sourceText) {
-		this.sourceText = sourceText;
-		if(sourceText != null){
-			putBodyParameter("SourceText", sourceText);
-		}
-	}
-
-	public String getFormatType() {
-		return this.formatType;
-	}
-
-	public void setFormatType(String formatType) {
-		this.formatType = formatType;
-		if(formatType != null){
-			putBodyParameter("FormatType", formatType);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -87,6 +78,17 @@ public class TranslateGeneralRequest extends RpcAcsRequest<TranslateGeneralRespo
 		}
 	}
 
+	public String getFileUrl() {
+		return this.fileUrl;
+	}
+
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
+		if(fileUrl != null){
+			putBodyParameter("FileUrl", fileUrl);
+		}
+	}
+
 	public String getTargetLanguage() {
 		return this.targetLanguage;
 	}
@@ -98,9 +100,20 @@ public class TranslateGeneralRequest extends RpcAcsRequest<TranslateGeneralRespo
 		}
 	}
 
+	public String getCallbackUrl() {
+		return this.callbackUrl;
+	}
+
+	public void setCallbackUrl(String callbackUrl) {
+		this.callbackUrl = callbackUrl;
+		if(callbackUrl != null){
+			putBodyParameter("CallbackUrl", callbackUrl);
+		}
+	}
+
 	@Override
-	public Class<TranslateGeneralResponse> getResponseClass() {
-		return TranslateGeneralResponse.class;
+	public Class<CreateDocTranslateTaskResponse> getResponseClass() {
+		return CreateDocTranslateTaskResponse.class;
 	}
 
 }

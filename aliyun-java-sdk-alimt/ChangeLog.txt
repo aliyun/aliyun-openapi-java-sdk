@@ -1,3 +1,6 @@
+2020-02-27 Version: 1.0.8
+- Add translate api.
+
 2018-12-27 Version: 1.0.3
 1, fix php sdk
 

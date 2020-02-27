@@ -22,7 +22,7 @@ import com.aliyuncs.alimt.Endpoint;
  * @author auto create
  * @version 
  */
-public class TranslateGeneralRequest extends RpcAcsRequest<TranslateGeneralResponse> {
+public class TranslateRequest extends RpcAcsRequest<TranslateResponse> {
 	   
 
 	private String sourceLanguage;
@@ -34,8 +34,8 @@ public class TranslateGeneralRequest extends RpcAcsRequest<TranslateGeneralRespo
 	private String scene;
 
 	private String targetLanguage;
-	public TranslateGeneralRequest() {
-		super("alimt", "2018-10-12", "TranslateGeneral", "alimt");
+	public TranslateRequest() {
+		super("alimt", "2018-10-12", "Translate", "alimt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -99,8 +99,8 @@ public class TranslateGeneralRequest extends RpcAcsRequest<TranslateGeneralRespo
 	}
 
 	@Override
-	public Class<TranslateGeneralResponse> getResponseClass() {
-		return TranslateGeneralResponse.class;
+	public Class<TranslateResponse> getResponseClass() {
+		return TranslateResponse.class;
 	}
 
 }
