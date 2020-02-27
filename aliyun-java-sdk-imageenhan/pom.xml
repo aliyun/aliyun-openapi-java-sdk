@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-imageenhan</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.2</version>
+  <version>1.0.6</version>
   <name>aliyun-java-sdk-imageenhan</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
