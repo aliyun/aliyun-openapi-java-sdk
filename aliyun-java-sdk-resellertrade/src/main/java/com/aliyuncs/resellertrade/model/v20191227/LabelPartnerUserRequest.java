@@ -22,14 +22,14 @@ import com.aliyuncs.resellertrade.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetResellerPayOrderRequest extends RpcAcsRequest<GetResellerPayOrderResponse> {
+public class LabelPartnerUserRequest extends RpcAcsRequest<LabelPartnerUserResponse> {
 	   
 
-	private Long uid;
+	private String userTag;
 
-	private String orderId;
-	public GetResellerPayOrderRequest() {
-		super("ResellerTrade", "2019-12-27", "GetResellerPayOrder");
+	private Long userPK;
+	public LabelPartnerUserRequest() {
+		super("ResellerTrade", "2019-12-27", "LabelPartnerUser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class GetResellerPayOrderRequest extends RpcAcsRequest<GetResellerPayOrde
 		} catch (Exception e) {}
 	}
 
-	public Long getUid() {
-		return this.uid;
+	public String getUserTag() {
+		return this.userTag;
 	}
 
-	public void setUid(Long uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid.toString());
+	public void setUserTag(String userTag) {
+		this.userTag = userTag;
+		if(userTag != null){
+			putBodyParameter("UserTag", userTag);
 		}
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public Long getUserPK() {
+		return this.userPK;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
+	public void setUserPK(Long userPK) {
+		this.userPK = userPK;
+		if(userPK != null){
+			putBodyParameter("UserPK", userPK.toString());
 		}
 	}
 
 	@Override
-	public Class<GetResellerPayOrderResponse> getResponseClass() {
-		return GetResellerPayOrderResponse.class;
+	public Class<LabelPartnerUserResponse> getResponseClass() {
+		return LabelPartnerUserResponse.class;
 	}
 
 }

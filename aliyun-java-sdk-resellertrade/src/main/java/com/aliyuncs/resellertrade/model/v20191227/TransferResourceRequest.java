@@ -22,14 +22,14 @@ import com.aliyuncs.resellertrade.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetResellerPayOrderRequest extends RpcAcsRequest<GetResellerPayOrderResponse> {
+public class TransferResourceRequest extends RpcAcsRequest<TransferResourceResponse> {
 	   
 
-	private Long uid;
+	private String actionCode;
 
-	private String orderId;
-	public GetResellerPayOrderRequest() {
-		super("ResellerTrade", "2019-12-27", "GetResellerPayOrder");
+	private String content;
+	public TransferResourceRequest() {
+		super("ResellerTrade", "2019-12-27", "TransferResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class GetResellerPayOrderRequest extends RpcAcsRequest<GetResellerPayOrde
 		} catch (Exception e) {}
 	}
 
-	public Long getUid() {
-		return this.uid;
+	public String getActionCode() {
+		return this.actionCode;
 	}
 
-	public void setUid(Long uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid.toString());
+	public void setActionCode(String actionCode) {
+		this.actionCode = actionCode;
+		if(actionCode != null){
+			putBodyParameter("ActionCode", actionCode);
 		}
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getContent() {
+		return this.content;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putBodyParameter("Content", content);
 		}
 	}
 
 	@Override
-	public Class<GetResellerPayOrderResponse> getResponseClass() {
-		return GetResellerPayOrderResponse.class;
+	public Class<TransferResourceResponse> getResponseClass() {
+		return TransferResourceResponse.class;
 	}
 
 }
