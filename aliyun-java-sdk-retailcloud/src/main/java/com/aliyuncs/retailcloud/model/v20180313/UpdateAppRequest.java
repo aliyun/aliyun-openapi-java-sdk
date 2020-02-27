@@ -39,8 +39,10 @@ public class UpdateAppRequest extends RpcAcsRequest<UpdateAppResponse> {
 	private String description;
 
 	private String language;
+
+	private List<Integer> middleWareIdLists;
 	public UpdateAppRequest() {
-		super("retailcloud", "2018-03-13", "UpdateApp");
+		super("retailcloud", "2018-03-13", "UpdateApp", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -127,6 +129,19 @@ public class UpdateAppRequest extends RpcAcsRequest<UpdateAppResponse> {
 		if(language != null){
 			putBodyParameter("Language", language);
 		}
+	}
+
+	public List<Integer> getMiddleWareIdLists() {
+		return this.middleWareIdLists;
+	}
+
+	public void setMiddleWareIdLists(List<Integer> middleWareIdLists) {
+		this.middleWareIdLists = middleWareIdLists;	
+		if (middleWareIdLists != null) {
+			for (int i = 0; i < middleWareIdLists.size(); i++) {
+				putBodyParameter("MiddleWareIdList." + (i + 1) , middleWareIdLists.get(i));
+			}
+		}	
 	}
 
 	public static class UserRoles {

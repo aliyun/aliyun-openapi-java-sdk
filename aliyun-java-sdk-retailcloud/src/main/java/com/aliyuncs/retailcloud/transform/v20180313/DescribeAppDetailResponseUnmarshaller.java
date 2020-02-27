@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.retailcloud.model.v20180313.DescribeAppDetailResponse;
 import com.aliyuncs.retailcloud.model.v20180313.DescribeAppDetailResponse.Result;
+import com.aliyuncs.retailcloud.model.v20180313.DescribeAppDetailResponse.Result.MiddleWareInfo;
 import com.aliyuncs.retailcloud.model.v20180313.DescribeAppDetailResponse.Result.UserRole;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -54,6 +55,17 @@ public class DescribeAppDetailResponseUnmarshaller {
 			userRoles.add(userRole);
 		}
 		result.setUserRoles(userRoles);
+
+		List<MiddleWareInfo> middleWareInfoList = new ArrayList<MiddleWareInfo>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAppDetailResponse.Result.MiddleWareInfoList.Length"); i++) {
+			MiddleWareInfo middleWareInfo = new MiddleWareInfo();
+			middleWareInfo.setAppId(_ctx.longValue("DescribeAppDetailResponse.Result.MiddleWareInfoList["+ i +"].AppId"));
+			middleWareInfo.setCode(_ctx.integerValue("DescribeAppDetailResponse.Result.MiddleWareInfoList["+ i +"].Code"));
+			middleWareInfo.setName(_ctx.stringValue("DescribeAppDetailResponse.Result.MiddleWareInfoList["+ i +"].Name"));
+
+			middleWareInfoList.add(middleWareInfo);
+		}
+		result.setMiddleWareInfoList(middleWareInfoList);
 		describeAppDetailResponse.setResult(result);
 	 
 	 	return describeAppDetailResponse;

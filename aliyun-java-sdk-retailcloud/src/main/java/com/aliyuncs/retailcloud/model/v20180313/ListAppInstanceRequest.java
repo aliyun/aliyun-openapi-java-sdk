@@ -33,7 +33,7 @@ public class ListAppInstanceRequest extends RpcAcsRequest<ListAppInstanceRespons
 
 	private Integer pageNumber;
 	public ListAppInstanceRequest() {
-		super("retailcloud", "2018-03-13", "ListAppInstance");
+		super("retailcloud", "2018-03-13", "ListAppInstance", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

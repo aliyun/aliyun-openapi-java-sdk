@@ -29,7 +29,7 @@ public class DescribePodEventsRequest extends RpcAcsRequest<DescribePodEventsRes
 
 	private String appInstId;
 	public DescribePodEventsRequest() {
-		super("retailcloud", "2018-03-13", "DescribePodEvents");
+		super("retailcloud", "2018-03-13", "DescribePodEvents", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class DeletePersistentVolumeClaimRequest extends RpcAcsRequest<DeletePers
 
 	private Long envId;
 	public DeletePersistentVolumeClaimRequest() {
-		super("retailcloud", "2018-03-13", "DeletePersistentVolumeClaim");
+		super("retailcloud", "2018-03-13", "DeletePersistentVolumeClaim", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

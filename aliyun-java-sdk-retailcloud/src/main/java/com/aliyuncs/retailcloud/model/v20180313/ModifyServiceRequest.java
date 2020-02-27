@@ -32,7 +32,7 @@ public class ModifyServiceRequest extends RpcAcsRequest<ModifyServiceResponse> {
 
 	private Long serviceId;
 	public ModifyServiceRequest() {
-		super("retailcloud", "2018-03-13", "ModifyService");
+		super("retailcloud", "2018-03-13", "ModifyService", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

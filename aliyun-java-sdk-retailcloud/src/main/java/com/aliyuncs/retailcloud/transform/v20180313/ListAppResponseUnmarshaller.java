@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.retailcloud.model.v20180313.ListAppResponse;
 import com.aliyuncs.retailcloud.model.v20180313.ListAppResponse.AppDetail;
+import com.aliyuncs.retailcloud.model.v20180313.ListAppResponse.AppDetail.MiddleWareInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +45,17 @@ public class ListAppResponseUnmarshaller {
 			appDetail.setDeployType(_ctx.stringValue("ListAppResponse.Data["+ i +"].DeployType"));
 			appDetail.setBizTitle(_ctx.stringValue("ListAppResponse.Data["+ i +"].BizTitle"));
 			appDetail.setAppStateType(_ctx.stringValue("ListAppResponse.Data["+ i +"].AppStateType"));
+
+			List<MiddleWareInfo> middleWareList = new ArrayList<MiddleWareInfo>();
+			for (int j = 0; j < _ctx.lengthValue("ListAppResponse.Data["+ i +"].MiddleWareList.Length"); j++) {
+				MiddleWareInfo middleWareInfo = new MiddleWareInfo();
+				middleWareInfo.setAppId(_ctx.longValue("ListAppResponse.Data["+ i +"].MiddleWareList["+ j +"].AppId"));
+				middleWareInfo.setCode(_ctx.integerValue("ListAppResponse.Data["+ i +"].MiddleWareList["+ j +"].Code"));
+				middleWareInfo.setName(_ctx.stringValue("ListAppResponse.Data["+ i +"].MiddleWareList["+ j +"].Name"));
+
+				middleWareList.add(middleWareInfo);
+			}
+			appDetail.setMiddleWareList(middleWareList);
 
 			data.add(appDetail);
 		}

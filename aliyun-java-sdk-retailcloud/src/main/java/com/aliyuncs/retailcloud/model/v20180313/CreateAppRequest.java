@@ -28,6 +28,16 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 
 	private String bizTitle;
 
+	private String operatingSystem;
+
+	private String description;
+
+	private String language;
+
+	private String title;
+
+	private List<Integer> middleWareIdLists;
+
 	private Integer stateType;
 
 	private String serviceType;
@@ -36,17 +46,9 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 
 	private String bizCode;
 
-	private String operatingSystem;
-
 	private String namespace;
-
-	private String description;
-
-	private String language;
-
-	private String title;
 	public CreateAppRequest() {
-		super("retailcloud", "2018-03-13", "CreateApp");
+		super("retailcloud", "2018-03-13", "CreateApp", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,6 +65,63 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 		if(bizTitle != null){
 			putBodyParameter("BizTitle", bizTitle);
 		}
+	}
+
+	public String getOperatingSystem() {
+		return this.operatingSystem;
+	}
+
+	public void setOperatingSystem(String operatingSystem) {
+		this.operatingSystem = operatingSystem;
+		if(operatingSystem != null){
+			putBodyParameter("OperatingSystem", operatingSystem);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putBodyParameter("Description", description);
+		}
+	}
+
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putBodyParameter("Language", language);
+		}
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putBodyParameter("Title", title);
+		}
+	}
+
+	public List<Integer> getMiddleWareIdLists() {
+		return this.middleWareIdLists;
+	}
+
+	public void setMiddleWareIdLists(List<Integer> middleWareIdLists) {
+		this.middleWareIdLists = middleWareIdLists;	
+		if (middleWareIdLists != null) {
+			for (int i = 0; i < middleWareIdLists.size(); i++) {
+				putBodyParameter("MiddleWareIdList." + (i + 1) , middleWareIdLists.get(i));
+			}
+		}	
 	}
 
 	public Integer getStateType() {
@@ -113,17 +172,6 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 		}
 	}
 
-	public String getOperatingSystem() {
-		return this.operatingSystem;
-	}
-
-	public void setOperatingSystem(String operatingSystem) {
-		this.operatingSystem = operatingSystem;
-		if(operatingSystem != null){
-			putBodyParameter("OperatingSystem", operatingSystem);
-		}
-	}
-
 	public String getNamespace() {
 		return this.namespace;
 	}
@@ -132,39 +180,6 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 		this.namespace = namespace;
 		if(namespace != null){
 			putBodyParameter("Namespace", namespace);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putBodyParameter("Description", description);
-		}
-	}
-
-	public String getLanguage() {
-		return this.language;
-	}
-
-	public void setLanguage(String language) {
-		this.language = language;
-		if(language != null){
-			putBodyParameter("Language", language);
-		}
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-		if(title != null){
-			putBodyParameter("Title", title);
 		}
 	}
 

@@ -37,7 +37,7 @@ public class ListNodeLabelBindingsRequest extends RpcAcsRequest<ListNodeLabelBin
 
 	private Integer pageNumber;
 	public ListNodeLabelBindingsRequest() {
-		super("retailcloud", "2018-03-13", "ListNodeLabelBindings");
+		super("retailcloud", "2018-03-13", "ListNodeLabelBindings", "retailcloud");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

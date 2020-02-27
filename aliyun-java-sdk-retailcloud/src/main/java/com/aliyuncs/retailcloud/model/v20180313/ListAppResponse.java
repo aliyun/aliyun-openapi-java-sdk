@@ -97,6 +97,8 @@ public class ListAppResponse extends AcsResponse {
 
 		private String appStateType;
 
+		private List<MiddleWareInfo> middleWareList;
+
 		public Long getAppId() {
 			return this.appId;
 		}
@@ -175,6 +177,47 @@ public class ListAppResponse extends AcsResponse {
 
 		public void setAppStateType(String appStateType) {
 			this.appStateType = appStateType;
+		}
+
+		public List<MiddleWareInfo> getMiddleWareList() {
+			return this.middleWareList;
+		}
+
+		public void setMiddleWareList(List<MiddleWareInfo> middleWareList) {
+			this.middleWareList = middleWareList;
+		}
+
+		public static class MiddleWareInfo {
+
+			private Long appId;
+
+			private Integer code;
+
+			private String name;
+
+			public Long getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(Long appId) {
+				this.appId = appId;
+			}
+
+			public Integer getCode() {
+				return this.code;
+			}
+
+			public void setCode(Integer code) {
+				this.code = code;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
 		}
 	}
 

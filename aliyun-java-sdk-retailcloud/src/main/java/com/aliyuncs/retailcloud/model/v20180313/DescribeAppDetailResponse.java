@@ -89,6 +89,8 @@ public class DescribeAppDetailResponse extends AcsResponse {
 
 		private List<UserRole> userRoles;
 
+		private List<MiddleWareInfo> middleWareInfoList;
+
 		public String getServiceType() {
 			return this.serviceType;
 		}
@@ -177,6 +179,14 @@ public class DescribeAppDetailResponse extends AcsResponse {
 			this.userRoles = userRoles;
 		}
 
+		public List<MiddleWareInfo> getMiddleWareInfoList() {
+			return this.middleWareInfoList;
+		}
+
+		public void setMiddleWareInfoList(List<MiddleWareInfo> middleWareInfoList) {
+			this.middleWareInfoList = middleWareInfoList;
+		}
+
 		public static class UserRole {
 
 			private String userId;
@@ -217,6 +227,39 @@ public class DescribeAppDetailResponse extends AcsResponse {
 
 			public void setRoleName(String roleName) {
 				this.roleName = roleName;
+			}
+		}
+
+		public static class MiddleWareInfo {
+
+			private Long appId;
+
+			private Integer code;
+
+			private String name;
+
+			public Long getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(Long appId) {
+				this.appId = appId;
+			}
+
+			public Integer getCode() {
+				return this.code;
+			}
+
+			public void setCode(Integer code) {
+				this.code = code;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}
