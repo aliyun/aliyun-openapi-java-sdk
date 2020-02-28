@@ -1,3 +1,6 @@
+2020-02-28 Version: 1.8.9
+- Modify fucntion parameters.
+
 2020-01-16 Version: 1.8.8
 - Modify radio run history.
 
