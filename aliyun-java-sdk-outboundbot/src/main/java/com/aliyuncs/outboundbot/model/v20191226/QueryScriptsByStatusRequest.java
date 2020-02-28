@@ -15,6 +15,7 @@
 package com.aliyuncs.outboundbot.model.v20191226;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.outboundbot.Endpoint;
 
@@ -25,13 +26,13 @@ import com.aliyuncs.outboundbot.Endpoint;
 public class QueryScriptsByStatusRequest extends RpcAcsRequest<QueryScriptsByStatusResponse> {
 	   
 
+	private List<String> statusLists;
+
 	private Integer pageNumber;
 
 	private String instanceId;
 
 	private Integer pageSize;
-
-	private String status;
 	public QueryScriptsByStatusRequest() {
 		super("OutboundBot", "2019-12-26", "QueryScriptsByStatus", "outboundbot");
 		setMethod(MethodType.POST);
@@ -39,6 +40,19 @@ public class QueryScriptsByStatusRequest extends RpcAcsRequest<QueryScriptsBySta
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getStatusLists() {
+		return this.statusLists;
+	}
+
+	public void setStatusLists(List<String> statusLists) {
+		this.statusLists = statusLists;	
+		if (statusLists != null) {
+			for (int i = 0; i < statusLists.size(); i++) {
+				putQueryParameter("StatusList." + (i + 1) , statusLists.get(i));
+			}
+		}	
 	}
 
 	public Integer getPageNumber() {
@@ -71,17 +85,6 @@ public class QueryScriptsByStatusRequest extends RpcAcsRequest<QueryScriptsBySta
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
 		}
 	}
 
