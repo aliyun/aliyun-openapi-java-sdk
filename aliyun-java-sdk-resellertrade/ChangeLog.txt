@@ -1,3 +1,6 @@
+2020-02-28 Version: 1.0.1
+- Generated 2019-12-27 for `ResellerTrade`.
+
 2020-02-27 Version: 1.8
 - Generated 2019-12-27 for `ResellerTrade`.
 
