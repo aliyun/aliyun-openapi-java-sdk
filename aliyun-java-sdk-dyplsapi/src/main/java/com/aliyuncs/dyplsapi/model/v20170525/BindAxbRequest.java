@@ -52,6 +52,8 @@ public class BindAxbRequest extends RpcAcsRequest<BindAxbResponse> {
 	private Boolean isRecordingEnabled;
 
 	private String outId;
+
+	private String callRestrict;
 	public BindAxbRequest() {
 		super("Dyplsapi", "2017-05-25", "BindAxb", "dypls");
 		setMethod(MethodType.POST);
@@ -212,6 +214,17 @@ public class BindAxbRequest extends RpcAcsRequest<BindAxbResponse> {
 		this.outId = outId;
 		if(outId != null){
 			putQueryParameter("OutId", outId);
+		}
+	}
+
+	public String getCallRestrict() {
+		return this.callRestrict;
+	}
+
+	public void setCallRestrict(String callRestrict) {
+		this.callRestrict = callRestrict;
+		if(callRestrict != null){
+			putQueryParameter("CallRestrict", callRestrict);
 		}
 	}
 

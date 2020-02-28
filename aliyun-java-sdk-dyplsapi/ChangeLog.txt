@@ -1,3 +1,6 @@
+2020-02-28 Version: 1.2.2
+- Add QueryPhoneNoAByTrackNo  and AddAxnTrackNo.
+
 2019-11-05 Version: 1.2.1
 - Add OperateBlackNo.
 
