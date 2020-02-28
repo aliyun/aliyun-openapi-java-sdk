@@ -54,6 +54,12 @@ public class DescribeVpcAttributeResponseUnmarshaller {
 		}
 		describeVpcAttributeResponse.setUserCidrs(userCidrs);
 
+		List<String> secondaryCidrBlocks = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAttributeResponse.SecondaryCidrBlocks.Length"); i++) {
+			secondaryCidrBlocks.add(_ctx.stringValue("DescribeVpcAttributeResponse.SecondaryCidrBlocks["+ i +"]"));
+		}
+		describeVpcAttributeResponse.setSecondaryCidrBlocks(secondaryCidrBlocks);
+
 		List<AssociatedCen> associatedCens = new ArrayList<AssociatedCen>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAttributeResponse.AssociatedCens.Length"); i++) {
 			AssociatedCen associatedCen = new AssociatedCen();

@@ -73,6 +73,12 @@ public class DescribeVpcsResponseUnmarshaller {
 			}
 			vpc.setRouterTableIds(routerTableIds);
 
+			List<String> secondaryCidrBlocks = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].SecondaryCidrBlocks.Length"); j++) {
+				secondaryCidrBlocks.add(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].SecondaryCidrBlocks["+ j +"]"));
+			}
+			vpc.setSecondaryCidrBlocks(secondaryCidrBlocks);
+
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();

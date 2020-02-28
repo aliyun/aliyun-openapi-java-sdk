@@ -61,6 +61,8 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 
 	private List<String> userCidrs;
 
+	private List<String> secondaryCidrBlocks;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -203,6 +205,14 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 
 	public void setUserCidrs(List<String> userCidrs) {
 		this.userCidrs = userCidrs;
+	}
+
+	public List<String> getSecondaryCidrBlocks() {
+		return this.secondaryCidrBlocks;
+	}
+
+	public void setSecondaryCidrBlocks(List<String> secondaryCidrBlocks) {
+		this.secondaryCidrBlocks = secondaryCidrBlocks;
 	}
 
 	public static class AssociatedCen {

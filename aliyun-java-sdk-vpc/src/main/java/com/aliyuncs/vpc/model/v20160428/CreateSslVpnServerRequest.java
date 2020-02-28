@@ -31,6 +31,10 @@ public class CreateSslVpnServerRequest extends RpcAcsRequest<CreateSslVpnServerR
 
 	private String localSubnet;
 
+	private Boolean enableMultiFactorAuth;
+
+	private String iDaaSInstanceId;
+
 	private String cipher;
 
 	private String clientIpPool;
@@ -89,6 +93,28 @@ public class CreateSslVpnServerRequest extends RpcAcsRequest<CreateSslVpnServerR
 		this.localSubnet = localSubnet;
 		if(localSubnet != null){
 			putQueryParameter("LocalSubnet", localSubnet);
+		}
+	}
+
+	public Boolean getEnableMultiFactorAuth() {
+		return this.enableMultiFactorAuth;
+	}
+
+	public void setEnableMultiFactorAuth(Boolean enableMultiFactorAuth) {
+		this.enableMultiFactorAuth = enableMultiFactorAuth;
+		if(enableMultiFactorAuth != null){
+			putQueryParameter("EnableMultiFactorAuth", enableMultiFactorAuth.toString());
+		}
+	}
+
+	public String getIDaaSInstanceId() {
+		return this.iDaaSInstanceId;
+	}
+
+	public void setIDaaSInstanceId(String iDaaSInstanceId) {
+		this.iDaaSInstanceId = iDaaSInstanceId;
+		if(iDaaSInstanceId != null){
+			putQueryParameter("IDaaSInstanceId", iDaaSInstanceId);
 		}
 	}
 

@@ -22,22 +22,10 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSslServerLogsResponse> {
+public class UnassociateVpcCidrBlockRequest extends RpcAcsRequest<UnassociateVpcCidrBlockResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private Integer pageNumber;
-
-	private Integer minutePeriod;
-
-	private Integer pageSize;
-
-	private String vpnSslServerId;
-
-	private Integer from;
-
-	private String sslVpnClientCertId;
 
 	private String resourceOwnerAccount;
 
@@ -45,9 +33,11 @@ public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSs
 
 	private Long ownerId;
 
-	private Integer to;
-	public DescribeVpnSslServerLogsRequest() {
-		super("Vpc", "2016-04-28", "DescribeVpnSslServerLogs", "Vpc");
+	private String secondaryCidrBlock;
+
+	private String vpcId;
+	public UnassociateVpcCidrBlockRequest() {
+		super("Vpc", "2016-04-28", "UnassociateVpcCidrBlock", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,72 +53,6 @@ public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSs
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getMinutePeriod() {
-		return this.minutePeriod;
-	}
-
-	public void setMinutePeriod(Integer minutePeriod) {
-		this.minutePeriod = minutePeriod;
-		if(minutePeriod != null){
-			putQueryParameter("MinutePeriod", minutePeriod.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getVpnSslServerId() {
-		return this.vpnSslServerId;
-	}
-
-	public void setVpnSslServerId(String vpnSslServerId) {
-		this.vpnSslServerId = vpnSslServerId;
-		if(vpnSslServerId != null){
-			putQueryParameter("VpnSslServerId", vpnSslServerId);
-		}
-	}
-
-	public Integer getFrom() {
-		return this.from;
-	}
-
-	public void setFrom(Integer from) {
-		this.from = from;
-		if(from != null){
-			putQueryParameter("From", from.toString());
-		}
-	}
-
-	public String getSslVpnClientCertId() {
-		return this.sslVpnClientCertId;
-	}
-
-	public void setSslVpnClientCertId(String sslVpnClientCertId) {
-		this.sslVpnClientCertId = sslVpnClientCertId;
-		if(sslVpnClientCertId != null){
-			putQueryParameter("SslVpnClientCertId", sslVpnClientCertId);
 		}
 	}
 
@@ -165,20 +89,31 @@ public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSs
 		}
 	}
 
-	public Integer getTo() {
-		return this.to;
+	public String getSecondaryCidrBlock() {
+		return this.secondaryCidrBlock;
 	}
 
-	public void setTo(Integer to) {
-		this.to = to;
-		if(to != null){
-			putQueryParameter("To", to.toString());
+	public void setSecondaryCidrBlock(String secondaryCidrBlock) {
+		this.secondaryCidrBlock = secondaryCidrBlock;
+		if(secondaryCidrBlock != null){
+			putQueryParameter("SecondaryCidrBlock", secondaryCidrBlock);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
 	@Override
-	public Class<DescribeVpnSslServerLogsResponse> getResponseClass() {
-		return DescribeVpnSslServerLogsResponse.class;
+	public Class<UnassociateVpcCidrBlockResponse> getResponseClass() {
+		return UnassociateVpcCidrBlockResponse.class;
 	}
 
 }

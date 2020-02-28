@@ -113,6 +113,8 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		private List<String> routerTableIds;
 
+		private List<String> secondaryCidrBlocks;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -255,6 +257,14 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		public void setRouterTableIds(List<String> routerTableIds) {
 			this.routerTableIds = routerTableIds;
+		}
+
+		public List<String> getSecondaryCidrBlocks() {
+			return this.secondaryCidrBlocks;
+		}
+
+		public void setSecondaryCidrBlocks(List<String> secondaryCidrBlocks) {
+			this.secondaryCidrBlocks = secondaryCidrBlocks;
 		}
 
 		public static class Tag {

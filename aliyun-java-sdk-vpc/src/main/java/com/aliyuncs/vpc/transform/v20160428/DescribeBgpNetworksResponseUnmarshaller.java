@@ -37,6 +37,7 @@ public class DescribeBgpNetworksResponseUnmarshaller {
 			bgpNetwork.setVpcId(_ctx.stringValue("DescribeBgpNetworksResponse.BgpNetworks["+ i +"].VpcId"));
 			bgpNetwork.setDstCidrBlock(_ctx.stringValue("DescribeBgpNetworksResponse.BgpNetworks["+ i +"].DstCidrBlock"));
 			bgpNetwork.setRouterId(_ctx.stringValue("DescribeBgpNetworksResponse.BgpNetworks["+ i +"].RouterId"));
+			bgpNetwork.setStatus(_ctx.stringValue("DescribeBgpNetworksResponse.BgpNetworks["+ i +"].Status"));
 
 			bgpNetworks.add(bgpNetwork);
 		}

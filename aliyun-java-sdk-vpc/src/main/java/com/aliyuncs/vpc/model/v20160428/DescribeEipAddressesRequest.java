@@ -49,6 +49,8 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	private Integer pageSize;
 
+	private String segmentInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -202,6 +204,17 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSegmentInstanceId() {
+		return this.segmentInstanceId;
+	}
+
+	public void setSegmentInstanceId(String segmentInstanceId) {
+		this.segmentInstanceId = segmentInstanceId;
+		if(segmentInstanceId != null){
+			putQueryParameter("SegmentInstanceId", segmentInstanceId);
 		}
 	}
 

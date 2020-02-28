@@ -35,6 +35,8 @@ public class AddCommonBandwidthPackageIpRequest extends RpcAcsRequest<AddCommonB
 
 	private Long ownerId;
 
+	private String ipType;
+
 	private String ipInstanceId;
 	public AddCommonBandwidthPackageIpRequest() {
 		super("Vpc", "2016-04-28", "AddCommonBandwidthPackageIp", "Vpc");
@@ -97,6 +99,17 @@ public class AddCommonBandwidthPackageIpRequest extends RpcAcsRequest<AddCommonB
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getIpType() {
+		return this.ipType;
+	}
+
+	public void setIpType(String ipType) {
+		this.ipType = ipType;
+		if(ipType != null){
+			putQueryParameter("IpType", ipType);
 		}
 	}
 

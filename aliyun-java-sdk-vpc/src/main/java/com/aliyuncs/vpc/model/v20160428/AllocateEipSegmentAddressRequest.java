@@ -22,32 +22,30 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSslServerLogsResponse> {
+public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipSegmentAddressResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Integer pageNumber;
+	private String clientToken;
 
-	private Integer minutePeriod;
+	private String resourceGroupId;
 
-	private Integer pageSize;
-
-	private String vpnSslServerId;
-
-	private Integer from;
-
-	private String sslVpnClientCertId;
+	private String netmode;
 
 	private String resourceOwnerAccount;
 
+	private String bandwidth;
+
 	private String ownerAccount;
+
+	private String eipMask;
 
 	private Long ownerId;
 
-	private Integer to;
-	public DescribeVpnSslServerLogsRequest() {
-		super("Vpc", "2016-04-28", "DescribeVpnSslServerLogs", "Vpc");
+	private String internetChargeType;
+	public AllocateEipSegmentAddressRequest() {
+		super("Vpc", "2016-04-28", "AllocateEipSegmentAddress", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,69 +64,36 @@ public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSs
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public Integer getMinutePeriod() {
-		return this.minutePeriod;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setMinutePeriod(Integer minutePeriod) {
-		this.minutePeriod = minutePeriod;
-		if(minutePeriod != null){
-			putQueryParameter("MinutePeriod", minutePeriod.toString());
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getNetmode() {
+		return this.netmode;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getVpnSslServerId() {
-		return this.vpnSslServerId;
-	}
-
-	public void setVpnSslServerId(String vpnSslServerId) {
-		this.vpnSslServerId = vpnSslServerId;
-		if(vpnSslServerId != null){
-			putQueryParameter("VpnSslServerId", vpnSslServerId);
-		}
-	}
-
-	public Integer getFrom() {
-		return this.from;
-	}
-
-	public void setFrom(Integer from) {
-		this.from = from;
-		if(from != null){
-			putQueryParameter("From", from.toString());
-		}
-	}
-
-	public String getSslVpnClientCertId() {
-		return this.sslVpnClientCertId;
-	}
-
-	public void setSslVpnClientCertId(String sslVpnClientCertId) {
-		this.sslVpnClientCertId = sslVpnClientCertId;
-		if(sslVpnClientCertId != null){
-			putQueryParameter("SslVpnClientCertId", sslVpnClientCertId);
+	public void setNetmode(String netmode) {
+		this.netmode = netmode;
+		if(netmode != null){
+			putQueryParameter("Netmode", netmode);
 		}
 	}
 
@@ -143,6 +108,17 @@ public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSs
 		}
 	}
 
+	public String getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(String bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -151,6 +127,17 @@ public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSs
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getEipMask() {
+		return this.eipMask;
+	}
+
+	public void setEipMask(String eipMask) {
+		this.eipMask = eipMask;
+		if(eipMask != null){
+			putQueryParameter("EipMask", eipMask);
 		}
 	}
 
@@ -165,20 +152,20 @@ public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSs
 		}
 	}
 
-	public Integer getTo() {
-		return this.to;
+	public String getInternetChargeType() {
+		return this.internetChargeType;
 	}
 
-	public void setTo(Integer to) {
-		this.to = to;
-		if(to != null){
-			putQueryParameter("To", to.toString());
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
 		}
 	}
 
 	@Override
-	public Class<DescribeVpnSslServerLogsResponse> getResponseClass() {
-		return DescribeVpnSslServerLogsResponse.class;
+	public Class<AllocateEipSegmentAddressResponse> getResponseClass() {
+		return AllocateEipSegmentAddressResponse.class;
 	}
 
 }

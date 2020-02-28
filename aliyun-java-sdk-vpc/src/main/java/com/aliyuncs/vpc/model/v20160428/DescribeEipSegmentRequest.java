@@ -22,32 +22,26 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSslServerLogsResponse> {
+public class DescribeEipSegmentRequest extends RpcAcsRequest<DescribeEipSegmentResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Integer pageNumber;
+	private String clientToken;
 
-	private Integer minutePeriod;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private String vpnSslServerId;
-
-	private Integer from;
-
-	private String sslVpnClientCertId;
+	private String segmentInstanceId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private Integer to;
-	public DescribeVpnSslServerLogsRequest() {
-		super("Vpc", "2016-04-28", "DescribeVpnSslServerLogs", "Vpc");
+	public DescribeEipSegmentRequest() {
+		super("Vpc", "2016-04-28", "DescribeEipSegment", "Vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,6 +60,17 @@ public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSs
 		}
 	}
 
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -74,17 +79,6 @@ public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSs
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getMinutePeriod() {
-		return this.minutePeriod;
-	}
-
-	public void setMinutePeriod(Integer minutePeriod) {
-		this.minutePeriod = minutePeriod;
-		if(minutePeriod != null){
-			putQueryParameter("MinutePeriod", minutePeriod.toString());
 		}
 	}
 
@@ -99,36 +93,14 @@ public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSs
 		}
 	}
 
-	public String getVpnSslServerId() {
-		return this.vpnSslServerId;
+	public String getSegmentInstanceId() {
+		return this.segmentInstanceId;
 	}
 
-	public void setVpnSslServerId(String vpnSslServerId) {
-		this.vpnSslServerId = vpnSslServerId;
-		if(vpnSslServerId != null){
-			putQueryParameter("VpnSslServerId", vpnSslServerId);
-		}
-	}
-
-	public Integer getFrom() {
-		return this.from;
-	}
-
-	public void setFrom(Integer from) {
-		this.from = from;
-		if(from != null){
-			putQueryParameter("From", from.toString());
-		}
-	}
-
-	public String getSslVpnClientCertId() {
-		return this.sslVpnClientCertId;
-	}
-
-	public void setSslVpnClientCertId(String sslVpnClientCertId) {
-		this.sslVpnClientCertId = sslVpnClientCertId;
-		if(sslVpnClientCertId != null){
-			putQueryParameter("SslVpnClientCertId", sslVpnClientCertId);
+	public void setSegmentInstanceId(String segmentInstanceId) {
+		this.segmentInstanceId = segmentInstanceId;
+		if(segmentInstanceId != null){
+			putQueryParameter("SegmentInstanceId", segmentInstanceId);
 		}
 	}
 
@@ -165,20 +137,9 @@ public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSs
 		}
 	}
 
-	public Integer getTo() {
-		return this.to;
-	}
-
-	public void setTo(Integer to) {
-		this.to = to;
-		if(to != null){
-			putQueryParameter("To", to.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeVpnSslServerLogsResponse> getResponseClass() {
-		return DescribeVpnSslServerLogsResponse.class;
+	public Class<DescribeEipSegmentResponse> getResponseClass() {
+		return DescribeEipSegmentResponse.class;
 	}
 
 }
