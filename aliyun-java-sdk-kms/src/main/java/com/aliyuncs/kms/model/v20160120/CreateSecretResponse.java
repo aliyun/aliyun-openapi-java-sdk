@@ -15,16 +15,22 @@
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.kms.transform.v20160120.UntagResourceResponseUnmarshaller;
+import com.aliyuncs.kms.transform.v20160120.CreateSecretResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UntagResourceResponse extends AcsResponse {
+public class CreateSecretResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String arn;
+
+	private String versionId;
+
+	private String secretName;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +40,37 @@ public class UntagResourceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getArn() {
+		return this.arn;
+	}
+
+	public void setArn(String arn) {
+		this.arn = arn;
+	}
+
+	public String getVersionId() {
+		return this.versionId;
+	}
+
+	public void setVersionId(String versionId) {
+		this.versionId = versionId;
+	}
+
+	public String getSecretName() {
+		return this.secretName;
+	}
+
+	public void setSecretName(String secretName) {
+		this.secretName = secretName;
+	}
+
 	@Override
-	public UntagResourceResponse getInstance(UnmarshallerContext context) {
-		return	UntagResourceResponseUnmarshaller.unmarshall(this, context);
+	public CreateSecretResponse getInstance(UnmarshallerContext context) {
+		return	CreateSecretResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

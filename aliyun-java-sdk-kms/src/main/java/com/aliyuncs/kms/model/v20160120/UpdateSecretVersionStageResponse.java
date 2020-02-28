@@ -15,16 +15,26 @@
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.kms.transform.v20160120.UntagResourceResponseUnmarshaller;
+import com.aliyuncs.kms.transform.v20160120.UpdateSecretVersionStageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UntagResourceResponse extends AcsResponse {
+public class UpdateSecretVersionStageResponse extends AcsResponse {
+
+	private String secretName;
 
 	private String requestId;
+
+	public String getSecretName() {
+		return this.secretName;
+	}
+
+	public void setSecretName(String secretName) {
+		this.secretName = secretName;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,7 +45,12 @@ public class UntagResourceResponse extends AcsResponse {
 	}
 
 	@Override
-	public UntagResourceResponse getInstance(UnmarshallerContext context) {
-		return	UntagResourceResponseUnmarshaller.unmarshall(this, context);
+	public UpdateSecretVersionStageResponse getInstance(UnmarshallerContext context) {
+		return	UpdateSecretVersionStageResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

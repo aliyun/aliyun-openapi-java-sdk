@@ -23,16 +23,16 @@ import com.aliyuncs.kms.Endpoint;
  * @author auto create
  * @version 
  */
-public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
+public class GetSecretValueRequest extends RpcAcsRequest<GetSecretValueResponse> {
 	   
 
-	private String keyId;
+	private String versionId;
+
+	private String versionStage;
 
 	private String secretName;
-
-	private String tags;
-	public TagResourceRequest() {
-		super("Kms", "2016-01-20", "TagResource", "kms");
+	public GetSecretValueRequest() {
+		super("Kms", "2016-01-20", "GetSecretValue", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -41,14 +41,25 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getKeyId() {
-		return this.keyId;
+	public String getVersionId() {
+		return this.versionId;
 	}
 
-	public void setKeyId(String keyId) {
-		this.keyId = keyId;
-		if(keyId != null){
-			putQueryParameter("KeyId", keyId);
+	public void setVersionId(String versionId) {
+		this.versionId = versionId;
+		if(versionId != null){
+			putQueryParameter("VersionId", versionId);
+		}
+	}
+
+	public String getVersionStage() {
+		return this.versionStage;
+	}
+
+	public void setVersionStage(String versionStage) {
+		this.versionStage = versionStage;
+		if(versionStage != null){
+			putQueryParameter("VersionStage", versionStage);
 		}
 	}
 
@@ -63,20 +74,9 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 		}
 	}
 
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
-		}
-	}
-
 	@Override
-	public Class<TagResourceResponse> getResponseClass() {
-		return TagResourceResponse.class;
+	public Class<GetSecretValueResponse> getResponseClass() {
+		return GetSecretValueResponse.class;
 	}
 
 }

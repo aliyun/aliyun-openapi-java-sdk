@@ -23,16 +23,16 @@ import com.aliyuncs.kms.Endpoint;
  * @author auto create
  * @version 
  */
-public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
+public class DeleteSecretRequest extends RpcAcsRequest<DeleteSecretResponse> {
 	   
 
-	private String keyId;
+	private String forceDeleteWithoutRecovery;
+
+	private String recoveryWindowInDays;
 
 	private String secretName;
-
-	private String tags;
-	public TagResourceRequest() {
-		super("Kms", "2016-01-20", "TagResource", "kms");
+	public DeleteSecretRequest() {
+		super("Kms", "2016-01-20", "DeleteSecret", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -41,14 +41,25 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getKeyId() {
-		return this.keyId;
+	public String getForceDeleteWithoutRecovery() {
+		return this.forceDeleteWithoutRecovery;
 	}
 
-	public void setKeyId(String keyId) {
-		this.keyId = keyId;
-		if(keyId != null){
-			putQueryParameter("KeyId", keyId);
+	public void setForceDeleteWithoutRecovery(String forceDeleteWithoutRecovery) {
+		this.forceDeleteWithoutRecovery = forceDeleteWithoutRecovery;
+		if(forceDeleteWithoutRecovery != null){
+			putQueryParameter("ForceDeleteWithoutRecovery", forceDeleteWithoutRecovery);
+		}
+	}
+
+	public String getRecoveryWindowInDays() {
+		return this.recoveryWindowInDays;
+	}
+
+	public void setRecoveryWindowInDays(String recoveryWindowInDays) {
+		this.recoveryWindowInDays = recoveryWindowInDays;
+		if(recoveryWindowInDays != null){
+			putQueryParameter("RecoveryWindowInDays", recoveryWindowInDays);
 		}
 	}
 
@@ -63,20 +74,9 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 		}
 	}
 
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
-		}
-	}
-
 	@Override
-	public Class<TagResourceResponse> getResponseClass() {
-		return TagResourceResponse.class;
+	public Class<DeleteSecretResponse> getResponseClass() {
+		return DeleteSecretResponse.class;
 	}
 
 }

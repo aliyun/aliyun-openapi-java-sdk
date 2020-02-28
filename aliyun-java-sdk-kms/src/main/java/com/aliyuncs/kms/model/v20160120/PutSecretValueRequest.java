@@ -23,16 +23,20 @@ import com.aliyuncs.kms.Endpoint;
  * @author auto create
  * @version 
  */
-public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
+public class PutSecretValueRequest extends RpcAcsRequest<PutSecretValueResponse> {
 	   
 
-	private String keyId;
+	private String versionId;
+
+	private String versionStages;
+
+	private String secretData;
 
 	private String secretName;
 
-	private String tags;
-	public TagResourceRequest() {
-		super("Kms", "2016-01-20", "TagResource", "kms");
+	private String secretDataType;
+	public PutSecretValueRequest() {
+		super("Kms", "2016-01-20", "PutSecretValue", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -41,14 +45,36 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getKeyId() {
-		return this.keyId;
+	public String getVersionId() {
+		return this.versionId;
 	}
 
-	public void setKeyId(String keyId) {
-		this.keyId = keyId;
-		if(keyId != null){
-			putQueryParameter("KeyId", keyId);
+	public void setVersionId(String versionId) {
+		this.versionId = versionId;
+		if(versionId != null){
+			putQueryParameter("VersionId", versionId);
+		}
+	}
+
+	public String getVersionStages() {
+		return this.versionStages;
+	}
+
+	public void setVersionStages(String versionStages) {
+		this.versionStages = versionStages;
+		if(versionStages != null){
+			putQueryParameter("VersionStages", versionStages);
+		}
+	}
+
+	public String getSecretData() {
+		return this.secretData;
+	}
+
+	public void setSecretData(String secretData) {
+		this.secretData = secretData;
+		if(secretData != null){
+			putQueryParameter("SecretData", secretData);
 		}
 	}
 
@@ -63,20 +89,20 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 		}
 	}
 
-	public String getTags() {
-		return this.tags;
+	public String getSecretDataType() {
+		return this.secretDataType;
 	}
 
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
+	public void setSecretDataType(String secretDataType) {
+		this.secretDataType = secretDataType;
+		if(secretDataType != null){
+			putQueryParameter("SecretDataType", secretDataType);
 		}
 	}
 
 	@Override
-	public Class<TagResourceResponse> getResponseClass() {
-		return TagResourceResponse.class;
+	public Class<PutSecretValueResponse> getResponseClass() {
+		return PutSecretValueResponse.class;
 	}
 
 }

@@ -23,33 +23,20 @@ import com.aliyuncs.kms.Endpoint;
  * @author auto create
  * @version 
  */
-public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
+public class DescribeSecretRequest extends RpcAcsRequest<DescribeSecretResponse> {
 	   
-
-	private String keyId;
 
 	private String secretName;
 
-	private String tags;
-	public TagResourceRequest() {
-		super("Kms", "2016-01-20", "TagResource", "kms");
+	private String fetchTags;
+	public DescribeSecretRequest() {
+		super("Kms", "2016-01-20", "DescribeSecret", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getKeyId() {
-		return this.keyId;
-	}
-
-	public void setKeyId(String keyId) {
-		this.keyId = keyId;
-		if(keyId != null){
-			putQueryParameter("KeyId", keyId);
-		}
 	}
 
 	public String getSecretName() {
@@ -63,20 +50,20 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 		}
 	}
 
-	public String getTags() {
-		return this.tags;
+	public String getFetchTags() {
+		return this.fetchTags;
 	}
 
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
+	public void setFetchTags(String fetchTags) {
+		this.fetchTags = fetchTags;
+		if(fetchTags != null){
+			putQueryParameter("FetchTags", fetchTags);
 		}
 	}
 
 	@Override
-	public Class<TagResourceResponse> getResponseClass() {
-		return TagResourceResponse.class;
+	public Class<DescribeSecretResponse> getResponseClass() {
+		return DescribeSecretResponse.class;
 	}
 
 }

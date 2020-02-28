@@ -15,16 +15,18 @@
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.kms.transform.v20160120.UntagResourceResponseUnmarshaller;
+import com.aliyuncs.kms.transform.v20160120.GetRandomPasswordResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UntagResourceResponse extends AcsResponse {
+public class GetRandomPasswordResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String randomPassword;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,21 @@ public class UntagResourceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getRandomPassword() {
+		return this.randomPassword;
+	}
+
+	public void setRandomPassword(String randomPassword) {
+		this.randomPassword = randomPassword;
+	}
+
 	@Override
-	public UntagResourceResponse getInstance(UnmarshallerContext context) {
-		return	UntagResourceResponseUnmarshaller.unmarshall(this, context);
+	public GetRandomPasswordResponse getInstance(UnmarshallerContext context) {
+		return	GetRandomPasswordResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

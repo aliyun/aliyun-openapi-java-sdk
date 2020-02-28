@@ -15,16 +15,20 @@
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.kms.transform.v20160120.UntagResourceResponseUnmarshaller;
+import com.aliyuncs.kms.transform.v20160120.DeleteSecretResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UntagResourceResponse extends AcsResponse {
+public class DeleteSecretResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String secretName;
+
+	private String plannedDeleteTime;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +38,29 @@ public class UntagResourceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getSecretName() {
+		return this.secretName;
+	}
+
+	public void setSecretName(String secretName) {
+		this.secretName = secretName;
+	}
+
+	public String getPlannedDeleteTime() {
+		return this.plannedDeleteTime;
+	}
+
+	public void setPlannedDeleteTime(String plannedDeleteTime) {
+		this.plannedDeleteTime = plannedDeleteTime;
+	}
+
 	@Override
-	public UntagResourceResponse getInstance(UnmarshallerContext context) {
-		return	UntagResourceResponseUnmarshaller.unmarshall(this, context);
+	public DeleteSecretResponse getInstance(UnmarshallerContext context) {
+		return	DeleteSecretResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

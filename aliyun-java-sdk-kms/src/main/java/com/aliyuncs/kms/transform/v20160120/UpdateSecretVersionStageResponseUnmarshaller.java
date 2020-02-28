@@ -14,16 +14,17 @@
 
 package com.aliyuncs.kms.transform.v20160120;
 
-import com.aliyuncs.kms.model.v20160120.UntagResourceResponse;
+import com.aliyuncs.kms.model.v20160120.UpdateSecretVersionStageResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UntagResourceResponseUnmarshaller {
+public class UpdateSecretVersionStageResponseUnmarshaller {
 
-	public static UntagResourceResponse unmarshall(UntagResourceResponse untagResourceResponse, UnmarshallerContext _ctx) {
+	public static UpdateSecretVersionStageResponse unmarshall(UpdateSecretVersionStageResponse updateSecretVersionStageResponse, UnmarshallerContext _ctx) {
 		
-		untagResourceResponse.setRequestId(_ctx.stringValue("UntagResourceResponse.RequestId"));
+		updateSecretVersionStageResponse.setRequestId(_ctx.stringValue("UpdateSecretVersionStageResponse.RequestId"));
+		updateSecretVersionStageResponse.setSecretName(_ctx.stringValue("UpdateSecretVersionStageResponse.SecretName"));
 	 
-	 	return untagResourceResponse;
+	 	return updateSecretVersionStageResponse;
 	}
 }

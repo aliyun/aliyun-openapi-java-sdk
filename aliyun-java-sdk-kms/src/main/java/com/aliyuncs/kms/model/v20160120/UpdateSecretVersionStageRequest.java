@@ -23,16 +23,18 @@ import com.aliyuncs.kms.Endpoint;
  * @author auto create
  * @version 
  */
-public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
+public class UpdateSecretVersionStageRequest extends RpcAcsRequest<UpdateSecretVersionStageResponse> {
 	   
 
-	private String keyId;
+	private String removeFromVersion;
+
+	private String moveToVersion;
+
+	private String versionStage;
 
 	private String secretName;
-
-	private String tags;
-	public TagResourceRequest() {
-		super("Kms", "2016-01-20", "TagResource", "kms");
+	public UpdateSecretVersionStageRequest() {
+		super("Kms", "2016-01-20", "UpdateSecretVersionStage", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -41,14 +43,36 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getKeyId() {
-		return this.keyId;
+	public String getRemoveFromVersion() {
+		return this.removeFromVersion;
 	}
 
-	public void setKeyId(String keyId) {
-		this.keyId = keyId;
-		if(keyId != null){
-			putQueryParameter("KeyId", keyId);
+	public void setRemoveFromVersion(String removeFromVersion) {
+		this.removeFromVersion = removeFromVersion;
+		if(removeFromVersion != null){
+			putQueryParameter("RemoveFromVersion", removeFromVersion);
+		}
+	}
+
+	public String getMoveToVersion() {
+		return this.moveToVersion;
+	}
+
+	public void setMoveToVersion(String moveToVersion) {
+		this.moveToVersion = moveToVersion;
+		if(moveToVersion != null){
+			putQueryParameter("MoveToVersion", moveToVersion);
+		}
+	}
+
+	public String getVersionStage() {
+		return this.versionStage;
+	}
+
+	public void setVersionStage(String versionStage) {
+		this.versionStage = versionStage;
+		if(versionStage != null){
+			putQueryParameter("VersionStage", versionStage);
 		}
 	}
 
@@ -63,20 +87,9 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 		}
 	}
 
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
-		}
-	}
-
 	@Override
-	public Class<TagResourceResponse> getResponseClass() {
-		return TagResourceResponse.class;
+	public Class<UpdateSecretVersionStageResponse> getResponseClass() {
+		return UpdateSecretVersionStageResponse.class;
 	}
 
 }

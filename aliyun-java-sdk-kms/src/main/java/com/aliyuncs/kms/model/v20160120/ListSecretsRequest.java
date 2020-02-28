@@ -23,16 +23,16 @@ import com.aliyuncs.kms.Endpoint;
  * @author auto create
  * @version 
  */
-public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
+public class ListSecretsRequest extends RpcAcsRequest<ListSecretsResponse> {
 	   
 
-	private String keyId;
+	private Integer pageSize;
 
-	private String secretName;
+	private String fetchTags;
 
-	private String tags;
-	public TagResourceRequest() {
-		super("Kms", "2016-01-20", "TagResource", "kms");
+	private Integer pageNumber;
+	public ListSecretsRequest() {
+		super("Kms", "2016-01-20", "ListSecrets", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -41,42 +41,42 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getKeyId() {
-		return this.keyId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setKeyId(String keyId) {
-		this.keyId = keyId;
-		if(keyId != null){
-			putQueryParameter("KeyId", keyId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public String getSecretName() {
-		return this.secretName;
+	public String getFetchTags() {
+		return this.fetchTags;
 	}
 
-	public void setSecretName(String secretName) {
-		this.secretName = secretName;
-		if(secretName != null){
-			putQueryParameter("SecretName", secretName);
+	public void setFetchTags(String fetchTags) {
+		this.fetchTags = fetchTags;
+		if(fetchTags != null){
+			putQueryParameter("FetchTags", fetchTags);
 		}
 	}
 
-	public String getTags() {
-		return this.tags;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
 	@Override
-	public Class<TagResourceResponse> getResponseClass() {
-		return TagResourceResponse.class;
+	public Class<ListSecretsResponse> getResponseClass() {
+		return ListSecretsResponse.class;
 	}
 
 }

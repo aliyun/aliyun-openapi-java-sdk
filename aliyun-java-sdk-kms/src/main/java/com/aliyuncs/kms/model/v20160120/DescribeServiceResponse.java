@@ -29,6 +29,8 @@ public class DescribeServiceResponse extends AcsResponse {
 
 	private List<ProtectionLevel> protectionLevels;
 
+	private List<KeySpec> keySpecs;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -45,6 +47,14 @@ public class DescribeServiceResponse extends AcsResponse {
 		this.protectionLevels = protectionLevels;
 	}
 
+	public List<KeySpec> getKeySpecs() {
+		return this.keySpecs;
+	}
+
+	public void setKeySpecs(List<KeySpec> keySpecs) {
+		this.keySpecs = keySpecs;
+	}
+
 	public static class ProtectionLevel {
 
 		private String type;
@@ -55,6 +65,39 @@ public class DescribeServiceResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+	}
+
+	public static class KeySpec {
+
+		private String name;
+
+		private List<String> supportedProtectionLevels;
+
+		private List<String> usages;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public List<String> getSupportedProtectionLevels() {
+			return this.supportedProtectionLevels;
+		}
+
+		public void setSupportedProtectionLevels(List<String> supportedProtectionLevels) {
+			this.supportedProtectionLevels = supportedProtectionLevels;
+		}
+
+		public List<String> getUsages() {
+			return this.usages;
+		}
+
+		public void setUsages(List<String> usages) {
+			this.usages = usages;
 		}
 	}
 

@@ -14,16 +14,17 @@
 
 package com.aliyuncs.kms.transform.v20160120;
 
-import com.aliyuncs.kms.model.v20160120.UntagResourceResponse;
+import com.aliyuncs.kms.model.v20160120.GetRandomPasswordResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UntagResourceResponseUnmarshaller {
+public class GetRandomPasswordResponseUnmarshaller {
 
-	public static UntagResourceResponse unmarshall(UntagResourceResponse untagResourceResponse, UnmarshallerContext _ctx) {
+	public static GetRandomPasswordResponse unmarshall(GetRandomPasswordResponse getRandomPasswordResponse, UnmarshallerContext _ctx) {
 		
-		untagResourceResponse.setRequestId(_ctx.stringValue("UntagResourceResponse.RequestId"));
+		getRandomPasswordResponse.setRequestId(_ctx.stringValue("GetRandomPasswordResponse.RequestId"));
+		getRandomPasswordResponse.setRandomPassword(_ctx.stringValue("GetRandomPasswordResponse.RandomPassword"));
 	 
-	 	return untagResourceResponse;
+	 	return getRandomPasswordResponse;
 	}
 }
