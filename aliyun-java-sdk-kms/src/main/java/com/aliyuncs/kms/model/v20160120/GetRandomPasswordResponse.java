@@ -48,9 +48,4 @@ public class GetRandomPasswordResponse extends AcsResponse {
 	public GetRandomPasswordResponse getInstance(UnmarshallerContext context) {
 		return	GetRandomPasswordResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

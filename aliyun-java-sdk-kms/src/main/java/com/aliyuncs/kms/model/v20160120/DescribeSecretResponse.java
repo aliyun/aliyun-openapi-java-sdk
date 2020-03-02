@@ -142,9 +142,4 @@ public class DescribeSecretResponse extends AcsResponse {
 	public DescribeSecretResponse getInstance(UnmarshallerContext context) {
 		return	DescribeSecretResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

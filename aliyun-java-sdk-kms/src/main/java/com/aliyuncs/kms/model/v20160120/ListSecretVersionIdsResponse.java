@@ -122,9 +122,4 @@ public class ListSecretVersionIdsResponse extends AcsResponse {
 	public ListSecretVersionIdsResponse getInstance(UnmarshallerContext context) {
 		return	ListSecretVersionIdsResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

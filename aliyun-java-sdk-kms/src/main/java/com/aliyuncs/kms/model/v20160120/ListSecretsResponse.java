@@ -155,9 +155,4 @@ public class ListSecretsResponse extends AcsResponse {
 	public ListSecretsResponse getInstance(UnmarshallerContext context) {
 		return	ListSecretsResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

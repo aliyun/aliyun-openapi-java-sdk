@@ -48,9 +48,4 @@ public class UpdateSecretVersionStageResponse extends AcsResponse {
 	public UpdateSecretVersionStageResponse getInstance(UnmarshallerContext context) {
 		return	UpdateSecretVersionStageResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

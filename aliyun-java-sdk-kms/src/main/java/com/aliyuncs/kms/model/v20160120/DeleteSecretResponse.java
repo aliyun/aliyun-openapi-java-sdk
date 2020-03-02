@@ -58,9 +58,4 @@ public class DeleteSecretResponse extends AcsResponse {
 	public DeleteSecretResponse getInstance(UnmarshallerContext context) {
 		return	DeleteSecretResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

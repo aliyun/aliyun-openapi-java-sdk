@@ -69,9 +69,4 @@ public class PutSecretValueResponse extends AcsResponse {
 	public PutSecretValueResponse getInstance(UnmarshallerContext context) {
 		return	PutSecretValueResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }
