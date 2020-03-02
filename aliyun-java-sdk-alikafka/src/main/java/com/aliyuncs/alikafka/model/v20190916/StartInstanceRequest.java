@@ -31,9 +31,9 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	private Boolean isSetUserAndPassword;
 
-	private String vSwitchId;
-
 	private String password;
+
+	private String vSwitchId;
 
 	private String instanceId;
 
@@ -86,17 +86,6 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		}
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
 	public String getPassword() {
 		return this.password;
 	}
@@ -105,6 +94,17 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		this.password = password;
 		if(password != null){
 			putQueryParameter("Password", password);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 

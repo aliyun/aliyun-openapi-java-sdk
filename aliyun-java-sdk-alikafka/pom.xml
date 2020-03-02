@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-alikafka</artifactId>
   <packaging>jar</packaging>
-  <version>1.2.4</version>
+  <version>1.2.5</version>
   <name>aliyun-java-sdk-alikafka</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
