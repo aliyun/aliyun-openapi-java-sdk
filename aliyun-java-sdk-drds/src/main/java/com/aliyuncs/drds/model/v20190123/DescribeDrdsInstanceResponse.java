@@ -99,6 +99,8 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 
 		private Integer mysqlVersion;
 
+		private String storageType;
+
 		private List<Vip> vips;
 
 		private List<String> readOnlyDBInstanceIds;
@@ -269,6 +271,14 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 
 		public void setMysqlVersion(Integer mysqlVersion) {
 			this.mysqlVersion = mysqlVersion;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
 		}
 
 		public List<Vip> getVips() {

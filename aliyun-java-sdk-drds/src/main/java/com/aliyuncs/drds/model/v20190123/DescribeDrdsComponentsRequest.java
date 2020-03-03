@@ -27,7 +27,7 @@ public class DescribeDrdsComponentsRequest extends RpcAcsRequest<DescribeDrdsCom
 
 	private String commodityCode;
 	public DescribeDrdsComponentsRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsComponents", "drds");
+		super("Drds", "2019-01-23", "DescribeDrdsComponents", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

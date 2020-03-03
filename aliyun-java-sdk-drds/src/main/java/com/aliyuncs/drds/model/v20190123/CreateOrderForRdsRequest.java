@@ -27,7 +27,7 @@ public class CreateOrderForRdsRequest extends RpcAcsRequest<CreateOrderForRdsRes
 
 	private String params;
 	public CreateOrderForRdsRequest() {
-		super("Drds", "2019-01-23", "CreateOrderForRds", "drds");
+		super("Drds", "2019-01-23", "CreateOrderForRds", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class RemoveInstanceAccountRequest extends RpcAcsRequest<RemoveInstanceAc
 
 	private String accountName;
 	public RemoveInstanceAccountRequest() {
-		super("Drds", "2019-01-23", "RemoveInstanceAccount", "drds");
+		super("Drds", "2019-01-23", "RemoveInstanceAccount", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

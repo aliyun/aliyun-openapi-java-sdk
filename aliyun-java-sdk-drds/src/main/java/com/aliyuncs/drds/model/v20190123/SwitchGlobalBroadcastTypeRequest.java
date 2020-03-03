@@ -29,7 +29,7 @@ public class SwitchGlobalBroadcastTypeRequest extends RpcAcsRequest<SwitchGlobal
 
 	private String dbName;
 	public SwitchGlobalBroadcastTypeRequest() {
-		super("Drds", "2019-01-23", "SwitchGlobalBroadcastType", "drds");
+		super("Drds", "2019-01-23", "SwitchGlobalBroadcastType", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class SubmitRollbackTaskRequest extends RpcAcsRequest<SubmitRollbackTaskR
 
 	private String parentJobId;
 	public SubmitRollbackTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitRollbackTask", "drds");
+		super("Drds", "2019-01-23", "SubmitRollbackTask", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

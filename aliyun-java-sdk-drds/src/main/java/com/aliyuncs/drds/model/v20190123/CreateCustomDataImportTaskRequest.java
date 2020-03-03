@@ -27,7 +27,7 @@ public class CreateCustomDataImportTaskRequest extends RpcAcsRequest<CreateCusto
 
 	private String importParam;
 	public CreateCustomDataImportTaskRequest() {
-		super("Drds", "2019-01-23", "CreateCustomDataImportTask", "drds");
+		super("Drds", "2019-01-23", "CreateCustomDataImportTask", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

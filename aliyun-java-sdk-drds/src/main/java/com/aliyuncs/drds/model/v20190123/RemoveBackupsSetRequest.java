@@ -29,7 +29,7 @@ public class RemoveBackupsSetRequest extends RpcAcsRequest<RemoveBackupsSetRespo
 
 	private String drdsInstanceId;
 	public RemoveBackupsSetRequest() {
-		super("Drds", "2019-01-23", "RemoveBackupsSet", "drds");
+		super("Drds", "2019-01-23", "RemoveBackupsSet", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class FlashbackRecycleBinTableRequest extends RpcAcsRequest<FlashbackRecy
 
 	private String tableName;
 	public FlashbackRecycleBinTableRequest() {
-		super("Drds", "2019-01-23", "FlashbackRecycleBinTable", "drds");
+		super("Drds", "2019-01-23", "FlashbackRecycleBinTable", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

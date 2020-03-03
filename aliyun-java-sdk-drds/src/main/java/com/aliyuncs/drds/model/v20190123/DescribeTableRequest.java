@@ -31,7 +31,7 @@ public class DescribeTableRequest extends RpcAcsRequest<DescribeTableResponse> {
 
 	private String tableName;
 	public DescribeTableRequest() {
-		super("Drds", "2019-01-23", "DescribeTable", "drds");
+		super("Drds", "2019-01-23", "DescribeTable", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

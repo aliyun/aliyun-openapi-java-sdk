@@ -45,7 +45,7 @@ public class SubmitSqlFlashbackTaskRequest extends RpcAcsRequest<SubmitSqlFlashb
 
 	private String dbName;
 	public SubmitSqlFlashbackTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitSqlFlashbackTask", "drds");
+		super("Drds", "2019-01-23", "SubmitSqlFlashbackTask", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

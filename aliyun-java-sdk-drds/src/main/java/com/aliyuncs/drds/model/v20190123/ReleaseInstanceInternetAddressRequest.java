@@ -27,7 +27,7 @@ public class ReleaseInstanceInternetAddressRequest extends RpcAcsRequest<Release
 
 	private String drdsInstanceId;
 	public ReleaseInstanceInternetAddressRequest() {
-		super("Drds", "2019-01-23", "ReleaseInstanceInternetAddress", "drds");
+		super("Drds", "2019-01-23", "ReleaseInstanceInternetAddress", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

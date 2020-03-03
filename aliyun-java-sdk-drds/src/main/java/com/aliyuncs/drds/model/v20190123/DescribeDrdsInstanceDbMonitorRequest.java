@@ -35,7 +35,7 @@ public class DescribeDrdsInstanceDbMonitorRequest extends RpcAcsRequest<Describe
 
 	private String key;
 	public DescribeDrdsInstanceDbMonitorRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsInstanceDbMonitor", "drds");
+		super("Drds", "2019-01-23", "DescribeDrdsInstanceDbMonitor", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

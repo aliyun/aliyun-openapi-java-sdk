@@ -22,21 +22,36 @@ import com.aliyuncs.drds.Endpoint;
  * @author auto create
  * @version 
  */
-public class RemoveRecycleBinTableRequest extends RpcAcsRequest<RemoveRecycleBinTableResponse> {
+public class RemoveDrdsMysqlRequest extends RpcAcsRequest<RemoveDrdsMysqlResponse> {
 	   
+
+	private String roDbInstanceId;
 
 	private String drdsInstanceId;
 
 	private String dbName;
 
-	private String tableName;
-	public RemoveRecycleBinTableRequest() {
-		super("Drds", "2019-01-23", "RemoveRecycleBinTable", "Drds");
+	private String dbInstanceId;
+
+	private Boolean force;
+	public RemoveDrdsMysqlRequest() {
+		super("Drds", "2019-01-23", "RemoveDrdsMysql", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRoDbInstanceId() {
+		return this.roDbInstanceId;
+	}
+
+	public void setRoDbInstanceId(String roDbInstanceId) {
+		this.roDbInstanceId = roDbInstanceId;
+		if(roDbInstanceId != null){
+			putQueryParameter("RoDbInstanceId", roDbInstanceId);
+		}
 	}
 
 	public String getDrdsInstanceId() {
@@ -61,20 +76,31 @@ public class RemoveRecycleBinTableRequest extends RpcAcsRequest<RemoveRecycleBin
 		}
 	}
 
-	public String getTableName() {
-		return this.tableName;
+	public String getDbInstanceId() {
+		return this.dbInstanceId;
 	}
 
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
-		if(tableName != null){
-			putQueryParameter("TableName", tableName);
+	public void setDbInstanceId(String dbInstanceId) {
+		this.dbInstanceId = dbInstanceId;
+		if(dbInstanceId != null){
+			putQueryParameter("DbInstanceId", dbInstanceId);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 
 	@Override
-	public Class<RemoveRecycleBinTableResponse> getResponseClass() {
-		return RemoveRecycleBinTableResponse.class;
+	public Class<RemoveDrdsMysqlResponse> getResponseClass() {
+		return RemoveDrdsMysqlResponse.class;
 	}
 
 }

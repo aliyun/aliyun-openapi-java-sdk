@@ -31,7 +31,7 @@ public class SubmitCleanTableShardingKeyModifyRequest extends RpcAcsRequest<Subm
 
 	private String taskId;
 	public SubmitCleanTableShardingKeyModifyRequest() {
-		super("Drds", "2019-01-23", "SubmitCleanTableShardingKeyModify", "drds");
+		super("Drds", "2019-01-23", "SubmitCleanTableShardingKeyModify", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

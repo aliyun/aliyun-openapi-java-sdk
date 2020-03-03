@@ -35,7 +35,7 @@ public class DescribeBroadcastTablesRequest extends RpcAcsRequest<DescribeBroadc
 
 	private Integer pageSize;
 	public DescribeBroadcastTablesRequest() {
-		super("Drds", "2019-01-23", "DescribeBroadcastTables", "drds");
+		super("Drds", "2019-01-23", "DescribeBroadcastTables", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

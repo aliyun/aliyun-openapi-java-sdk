@@ -29,7 +29,7 @@ public class RefreshDrdsAtomUrlRequest extends RpcAcsRequest<RefreshDrdsAtomUrlR
 
 	private String dbName;
 	public RefreshDrdsAtomUrlRequest() {
-		super("Drds", "2019-01-23", "RefreshDrdsAtomUrl", "drds");
+		super("Drds", "2019-01-23", "RefreshDrdsAtomUrl", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

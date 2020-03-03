@@ -36,7 +36,7 @@ public class CreateEvaluateTaskRequest extends RpcAcsRequest<CreateEvaluateTaskR
 
 	private Integer evaluateHours;
 	public CreateEvaluateTaskRequest() {
-		super("Drds", "2019-01-23", "CreateEvaluateTask", "drds");
+		super("Drds", "2019-01-23", "CreateEvaluateTask", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

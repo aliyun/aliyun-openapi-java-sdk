@@ -27,7 +27,7 @@ public class DescribeBatchEvaluateTaskReportRequest extends RpcAcsRequest<Descri
 
 	private Long batchEvaluateTaskId;
 	public DescribeBatchEvaluateTaskReportRequest() {
-		super("Drds", "2019-01-23", "DescribeBatchEvaluateTaskReport", "drds");
+		super("Drds", "2019-01-23", "DescribeBatchEvaluateTaskReport", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

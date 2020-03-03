@@ -29,7 +29,7 @@ public class CheckConnectivityRequest extends RpcAcsRequest<CheckConnectivityRes
 
 	private Integer dbType;
 	public CheckConnectivityRequest() {
-		super("Drds", "2019-01-23", "CheckConnectivity", "drds");
+		super("Drds", "2019-01-23", "CheckConnectivity", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

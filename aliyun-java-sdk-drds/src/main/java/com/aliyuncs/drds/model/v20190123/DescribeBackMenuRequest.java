@@ -27,7 +27,7 @@ public class DescribeBackMenuRequest extends RpcAcsRequest<DescribeBackMenuRespo
 
 	private String drdsInstanceId;
 	public DescribeBackMenuRequest() {
-		super("Drds", "2019-01-23", "DescribeBackMenu", "drds");
+		super("Drds", "2019-01-23", "DescribeBackMenu", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

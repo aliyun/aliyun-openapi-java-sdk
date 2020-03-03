@@ -37,7 +37,7 @@ public class DescribeRestoreOrderRequest extends RpcAcsRequest<DescribeRestoreOr
 
 	private String backupMode;
 	public DescribeRestoreOrderRequest() {
-		super("Drds", "2019-01-23", "DescribeRestoreOrder", "drds");
+		super("Drds", "2019-01-23", "DescribeRestoreOrder", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

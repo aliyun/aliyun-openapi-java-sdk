@@ -31,7 +31,7 @@ public class DescribeRdsInstInfosRequest extends RpcAcsRequest<DescribeRdsInstIn
 
 	private Integer pageSize;
 	public DescribeRdsInstInfosRequest() {
-		super("Drds", "2019-01-23", "DescribeRdsInstInfos", "drds");
+		super("Drds", "2019-01-23", "DescribeRdsInstInfos", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

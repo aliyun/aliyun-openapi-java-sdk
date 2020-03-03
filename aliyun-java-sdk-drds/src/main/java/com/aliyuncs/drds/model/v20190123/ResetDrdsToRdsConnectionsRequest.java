@@ -29,7 +29,7 @@ public class ResetDrdsToRdsConnectionsRequest extends RpcAcsRequest<ResetDrdsToR
 
 	private String dbName;
 	public ResetDrdsToRdsConnectionsRequest() {
-		super("Drds", "2019-01-23", "ResetDrdsToRdsConnections", "drds");
+		super("Drds", "2019-01-23", "ResetDrdsToRdsConnections", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
