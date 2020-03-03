@@ -1,3 +1,6 @@
+2020-03-03 Version: 2.10.1
+- Supported secretmanager stable version for kms.
+
 2020-03-03 Version: 2.10.0
 - Supported secretmanager for kms.
 
