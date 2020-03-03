@@ -81,6 +81,8 @@ public class DescribeAccountAttributesResponse extends AcsResponse {
 
 			private Integer count;
 
+			private String diskCategory;
+
 			public String getValue() {
 				return this.value;
 			}
@@ -127,6 +129,14 @@ public class DescribeAccountAttributesResponse extends AcsResponse {
 
 			public void setCount(Integer count) {
 				this.count = count;
+			}
+
+			public String getDiskCategory() {
+				return this.diskCategory;
+			}
+
+			public void setDiskCategory(String diskCategory) {
+				this.diskCategory = diskCategory;
 			}
 		}
 	}

@@ -43,6 +43,7 @@ public class DescribeAccountAttributesResponseUnmarshaller {
 				valueItem.setInstanceChargeType(_ctx.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].InstanceChargeType"));
 				valueItem.setInstanceType(_ctx.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].InstanceType"));
 				valueItem.setCount(_ctx.integerValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].Count"));
+				valueItem.setDiskCategory(_ctx.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].DiskCategory"));
 
 				attributeValues.add(valueItem);
 			}

@@ -23,28 +23,26 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceStatusRequest extends RpcAcsRequest<DescribeInstanceStatusResponse> {
+public class StopInstancesRequest extends RpcAcsRequest<StopInstancesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Integer pageNumber;
+	private String stoppedMode;
 
-	private Integer pageSize;
+	private Boolean forceStop;
+
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String clusterId;
-
 	private Long ownerId;
 
 	private List<String> instanceIds;
-
-	private String zoneId;
-	public DescribeInstanceStatusRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceStatus", "ecs");
+	public StopInstancesRequest() {
+		super("Ecs", "2014-05-26", "StopInstances", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,25 +61,36 @@ public class DescribeInstanceStatusRequest extends RpcAcsRequest<DescribeInstanc
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getStoppedMode() {
+		return this.stoppedMode;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setStoppedMode(String stoppedMode) {
+		this.stoppedMode = stoppedMode;
+		if(stoppedMode != null){
+			putQueryParameter("StoppedMode", stoppedMode);
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Boolean getForceStop() {
+		return this.forceStop;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setForceStop(Boolean forceStop) {
+		this.forceStop = forceStop;
+		if(forceStop != null){
+			putQueryParameter("ForceStop", forceStop.toString());
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -104,17 +113,6 @@ public class DescribeInstanceStatusRequest extends RpcAcsRequest<DescribeInstanc
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -142,20 +140,9 @@ public class DescribeInstanceStatusRequest extends RpcAcsRequest<DescribeInstanc
 		}	
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
 	@Override
-	public Class<DescribeInstanceStatusResponse> getResponseClass() {
-		return DescribeInstanceStatusResponse.class;
+	public Class<StopInstancesResponse> getResponseClass() {
+		return StopInstancesResponse.class;
 	}
 
 }
