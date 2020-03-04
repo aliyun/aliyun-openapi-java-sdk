@@ -1,3 +1,7 @@
+2020-03-04 Version: 1.0.3
+- Public beta version.
+- Add Api GetMeetingMebers.
+
 2019-11-14 Version: 1.0.2
 - Initial construction.
 - Public beta version.

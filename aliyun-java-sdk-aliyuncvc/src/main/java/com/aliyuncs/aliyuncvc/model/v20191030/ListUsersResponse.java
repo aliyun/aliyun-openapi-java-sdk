@@ -141,6 +141,8 @@ public class ListUsersResponse extends AcsResponse {
 
 			private String jobName;
 
+			private String userId;
+
 			public Long getCreateTime() {
 				return this.createTime;
 			}
@@ -227,6 +229,14 @@ public class ListUsersResponse extends AcsResponse {
 
 			public void setJobName(String jobName) {
 				this.jobName = jobName;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
 			}
 		}
 	}
