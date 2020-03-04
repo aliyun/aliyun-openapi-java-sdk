@@ -31,6 +31,8 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 
 	private Integer buildPackId;
 
+	private String componentIds;
+
 	private String healthCheckURL;
 
 	private String reservedPortStr;
@@ -51,7 +53,7 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 
 	private String packageType;
 	public InsertApplicationRequest() {
-		super("Edas", "2017-08-01", "InsertApplication", "Edas");
+		super("Edas", "2017-08-01", "InsertApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_create_app");
 		setMethod(MethodType.POST);
 		try {
@@ -90,6 +92,17 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 		this.buildPackId = buildPackId;
 		if(buildPackId != null){
 			putQueryParameter("BuildPackId", buildPackId.toString());
+		}
+	}
+
+	public String getComponentIds() {
+		return this.componentIds;
+	}
+
+	public void setComponentIds(String componentIds) {
+		this.componentIds = componentIds;
+		if(componentIds != null){
+			putQueryParameter("ComponentIds", componentIds);
 		}
 	}
 

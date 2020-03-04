@@ -20,11 +20,14 @@ import java.util.List;
 import com.aliyuncs.edas.model.v20170801.GetChangeOrderInfoResponse;
 import com.aliyuncs.edas.model.v20170801.GetChangeOrderInfoResponse.ChangeOrderInfo;
 import com.aliyuncs.edas.model.v20170801.GetChangeOrderInfoResponse.ChangeOrderInfo.PipelineInfo;
+import com.aliyuncs.edas.model.v20170801.GetChangeOrderInfoResponse.ChangeOrderInfo.PipelineInfo.StageDetailDTO;
+import com.aliyuncs.edas.model.v20170801.GetChangeOrderInfoResponse.ChangeOrderInfo.PipelineInfo.StageDetailDTO.TaskInfoDTO;
 import com.aliyuncs.edas.model.v20170801.GetChangeOrderInfoResponse.ChangeOrderInfo.PipelineInfo.StageInfoDTO;
 import com.aliyuncs.edas.model.v20170801.GetChangeOrderInfoResponse.ChangeOrderInfo.PipelineInfo.StageInfoDTO.StageResultDTO;
 import com.aliyuncs.edas.model.v20170801.GetChangeOrderInfoResponse.ChangeOrderInfo.PipelineInfo.StageInfoDTO.StageResultDTO.InstanceDTO;
 import com.aliyuncs.edas.model.v20170801.GetChangeOrderInfoResponse.ChangeOrderInfo.PipelineInfo.StageInfoDTO.StageResultDTO.InstanceDTO.InstanceStageDTO;
 import com.aliyuncs.edas.model.v20170801.GetChangeOrderInfoResponse.ChangeOrderInfo.PipelineInfo.StageInfoDTO.StageResultDTO.ServiceStage;
+import com.aliyuncs.edas.model.v20170801.GetChangeOrderInfoResponse.ChangeOrderInfo.TrafficControl;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,6 +49,14 @@ public class GetChangeOrderInfoResponseUnmarshaller {
 		changeOrderInfo.setCoType(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.CoType"));
 		changeOrderInfo.setCreateTime(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.CreateTime"));
 		changeOrderInfo.setSupportRollback(_ctx.booleanValue("GetChangeOrderInfoResponse.changeOrderInfo.SupportRollback"));
+
+		TrafficControl trafficControl = new TrafficControl();
+		trafficControl.setModule(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.TrafficControl.Module"));
+		trafficControl.setSingle(_ctx.booleanValue("GetChangeOrderInfoResponse.changeOrderInfo.TrafficControl.Single"));
+		trafficControl.setRules(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.TrafficControl.Rules"));
+		trafficControl.setRoutes(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.TrafficControl.Routes"));
+		trafficControl.setTips(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.TrafficControl.Tips"));
+		changeOrderInfo.setTrafficControl(trafficControl);
 
 		List<PipelineInfo> pipelineInfoList = new ArrayList<PipelineInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList.Length"); i++) {
@@ -102,6 +113,33 @@ public class GetChangeOrderInfoResponseUnmarshaller {
 				stageList.add(stageInfoDTO);
 			}
 			pipelineInfo.setStageList(stageList);
+
+			List<StageDetailDTO> stageDetailList = new ArrayList<StageDetailDTO>();
+			for (int j = 0; j < _ctx.lengthValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList.Length"); j++) {
+				StageDetailDTO stageDetailDTO = new StageDetailDTO();
+				stageDetailDTO.setStageId(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList["+ j +"].StageId"));
+				stageDetailDTO.setStageName(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList["+ j +"].StageName"));
+				stageDetailDTO.setStageStatus(_ctx.integerValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList["+ j +"].StageStatus"));
+
+				List<TaskInfoDTO> taskList = new ArrayList<TaskInfoDTO>();
+				for (int k = 0; k < _ctx.lengthValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList["+ j +"].TaskList.Length"); k++) {
+					TaskInfoDTO taskInfoDTO = new TaskInfoDTO();
+					taskInfoDTO.setTaskName(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList["+ j +"].TaskList["+ k +"].TaskName"));
+					taskInfoDTO.setTaskStatus(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList["+ j +"].TaskList["+ k +"].TaskStatus"));
+					taskInfoDTO.setTaskMessage(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList["+ j +"].TaskList["+ k +"].TaskMessage"));
+					taskInfoDTO.setTaskId(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList["+ j +"].TaskList["+ k +"].TaskId"));
+					taskInfoDTO.setTaskErrorCode(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList["+ j +"].TaskList["+ k +"].TaskErrorCode"));
+					taskInfoDTO.setTaskErrorMessage(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList["+ j +"].TaskList["+ k +"].TaskErrorMessage"));
+					taskInfoDTO.setShowManualIgnorance(_ctx.booleanValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList["+ j +"].TaskList["+ k +"].ShowManualIgnorance"));
+					taskInfoDTO.setTaskErrorIgnorance(_ctx.integerValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList["+ j +"].TaskList["+ k +"].TaskErrorIgnorance"));
+
+					taskList.add(taskInfoDTO);
+				}
+				stageDetailDTO.setTaskList(taskList);
+
+				stageDetailList.add(stageDetailDTO);
+			}
+			pipelineInfo.setStageDetailList(stageDetailList);
 
 			pipelineInfoList.add(pipelineInfo);
 		}

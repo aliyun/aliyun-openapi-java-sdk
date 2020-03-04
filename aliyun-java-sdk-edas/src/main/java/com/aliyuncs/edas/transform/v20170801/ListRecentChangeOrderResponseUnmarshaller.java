@@ -43,6 +43,9 @@ public class ListRecentChangeOrderResponseUnmarshaller {
 			changeOrder.setCreateTime(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].CreateTime"));
 			changeOrder.setFinishTime(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].FinishTime"));
 			changeOrder.setCoType(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].CoType"));
+			changeOrder.setCreateUserId(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].CreateUserId"));
+			changeOrder.setCoTypeCode(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].CoTypeCode"));
+			changeOrder.setSource(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].Source"));
 
 			changeOrderList.add(changeOrder);
 		}

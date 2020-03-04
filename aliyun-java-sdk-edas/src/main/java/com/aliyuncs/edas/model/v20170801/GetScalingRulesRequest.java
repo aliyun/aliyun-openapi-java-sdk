@@ -31,7 +31,7 @@ public class GetScalingRulesRequest extends RoaAcsRequest<GetScalingRulesRespons
 
 	private String groupId;
 	public GetScalingRulesRequest() {
-		super("Edas", "2017-08-01", "GetScalingRules", "Edas");
+		super("Edas", "2017-08-01", "GetScalingRules", "edas");
 		setUriPattern("/pop/v5/app/scalingRules");
 		setMethod(MethodType.GET);
 		try {

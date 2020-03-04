@@ -54,6 +54,8 @@ public class GetApplicationResponseUnmarshaller {
 		applcation.setBuildPackageId(_ctx.longValue("GetApplicationResponse.Applcation.BuildPackageId"));
 		applcation.setCreateTime(_ctx.longValue("GetApplicationResponse.Applcation.CreateTime"));
 		applcation.setNameSpace(_ctx.stringValue("GetApplicationResponse.Applcation.NameSpace"));
+		applcation.setSlbInfo(_ctx.stringValue("GetApplicationResponse.Applcation.SlbInfo"));
+		applcation.setEmail(_ctx.stringValue("GetApplicationResponse.Applcation.Email"));
 		getApplicationResponse.setApplcation(applcation);
 	 
 	 	return getApplicationResponse;

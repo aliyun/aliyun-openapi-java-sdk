@@ -87,6 +87,12 @@ public class ListRecentChangeOrderResponse extends AcsResponse {
 
 		private String coType;
 
+		private String createUserId;
+
+		private String coTypeCode;
+
+		private String source;
+
 		public String getChangeOrderId() {
 			return this.changeOrderId;
 		}
@@ -165,6 +171,30 @@ public class ListRecentChangeOrderResponse extends AcsResponse {
 
 		public void setCoType(String coType) {
 			this.coType = coType;
+		}
+
+		public String getCreateUserId() {
+			return this.createUserId;
+		}
+
+		public void setCreateUserId(String createUserId) {
+			this.createUserId = createUserId;
+		}
+
+		public String getCoTypeCode() {
+			return this.coTypeCode;
+		}
+
+		public void setCoTypeCode(String coTypeCode) {
+			this.coTypeCode = coTypeCode;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
 		}
 	}
 

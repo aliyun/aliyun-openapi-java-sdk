@@ -87,6 +87,8 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 		private List<PipelineInfo> pipelineInfoList;
 
+		private TrafficControl trafficControl;
+
 		public String getChangeOrderId() {
 			return this.changeOrderId;
 		}
@@ -167,6 +169,14 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 			this.pipelineInfoList = pipelineInfoList;
 		}
 
+		public TrafficControl getTrafficControl() {
+			return this.trafficControl;
+		}
+
+		public void setTrafficControl(TrafficControl trafficControl) {
+			this.trafficControl = trafficControl;
+		}
+
 		public static class PipelineInfo {
 
 			private String pipelineId;
@@ -180,6 +190,8 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 			private String updateTime;
 
 			private List<StageInfoDTO> stageList;
+
+			private List<StageDetailDTO> stageDetailList;
 
 			public String getPipelineId() {
 				return this.pipelineId;
@@ -227,6 +239,14 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 			public void setStageList(List<StageInfoDTO> stageList) {
 				this.stageList = stageList;
+			}
+
+			public List<StageDetailDTO> getStageDetailList() {
+				return this.stageDetailList;
+			}
+
+			public void setStageDetailList(List<StageDetailDTO> stageDetailList) {
+				this.stageDetailList = stageDetailList;
 			}
 
 			public static class StageInfoDTO {
@@ -452,6 +472,185 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 						}
 					}
 				}
+			}
+
+			public static class StageDetailDTO {
+
+				private String stageId;
+
+				private String stageName;
+
+				private Integer stageStatus;
+
+				private List<TaskInfoDTO> taskList;
+
+				public String getStageId() {
+					return this.stageId;
+				}
+
+				public void setStageId(String stageId) {
+					this.stageId = stageId;
+				}
+
+				public String getStageName() {
+					return this.stageName;
+				}
+
+				public void setStageName(String stageName) {
+					this.stageName = stageName;
+				}
+
+				public Integer getStageStatus() {
+					return this.stageStatus;
+				}
+
+				public void setStageStatus(Integer stageStatus) {
+					this.stageStatus = stageStatus;
+				}
+
+				public List<TaskInfoDTO> getTaskList() {
+					return this.taskList;
+				}
+
+				public void setTaskList(List<TaskInfoDTO> taskList) {
+					this.taskList = taskList;
+				}
+
+				public static class TaskInfoDTO {
+
+					private String taskName;
+
+					private String taskStatus;
+
+					private String taskMessage;
+
+					private String taskId;
+
+					private String taskErrorCode;
+
+					private String taskErrorMessage;
+
+					private Boolean showManualIgnorance;
+
+					private Integer taskErrorIgnorance;
+
+					public String getTaskName() {
+						return this.taskName;
+					}
+
+					public void setTaskName(String taskName) {
+						this.taskName = taskName;
+					}
+
+					public String getTaskStatus() {
+						return this.taskStatus;
+					}
+
+					public void setTaskStatus(String taskStatus) {
+						this.taskStatus = taskStatus;
+					}
+
+					public String getTaskMessage() {
+						return this.taskMessage;
+					}
+
+					public void setTaskMessage(String taskMessage) {
+						this.taskMessage = taskMessage;
+					}
+
+					public String getTaskId() {
+						return this.taskId;
+					}
+
+					public void setTaskId(String taskId) {
+						this.taskId = taskId;
+					}
+
+					public String getTaskErrorCode() {
+						return this.taskErrorCode;
+					}
+
+					public void setTaskErrorCode(String taskErrorCode) {
+						this.taskErrorCode = taskErrorCode;
+					}
+
+					public String getTaskErrorMessage() {
+						return this.taskErrorMessage;
+					}
+
+					public void setTaskErrorMessage(String taskErrorMessage) {
+						this.taskErrorMessage = taskErrorMessage;
+					}
+
+					public Boolean getShowManualIgnorance() {
+						return this.showManualIgnorance;
+					}
+
+					public void setShowManualIgnorance(Boolean showManualIgnorance) {
+						this.showManualIgnorance = showManualIgnorance;
+					}
+
+					public Integer getTaskErrorIgnorance() {
+						return this.taskErrorIgnorance;
+					}
+
+					public void setTaskErrorIgnorance(Integer taskErrorIgnorance) {
+						this.taskErrorIgnorance = taskErrorIgnorance;
+					}
+				}
+			}
+		}
+
+		public static class TrafficControl {
+
+			private String module;
+
+			private Boolean single;
+
+			private String rules;
+
+			private String routes;
+
+			private String tips;
+
+			public String getModule() {
+				return this.module;
+			}
+
+			public void setModule(String module) {
+				this.module = module;
+			}
+
+			public Boolean getSingle() {
+				return this.single;
+			}
+
+			public void setSingle(Boolean single) {
+				this.single = single;
+			}
+
+			public String getRules() {
+				return this.rules;
+			}
+
+			public void setRules(String rules) {
+				this.rules = rules;
+			}
+
+			public String getRoutes() {
+				return this.routes;
+			}
+
+			public void setRoutes(String routes) {
+				this.routes = routes;
+			}
+
+			public String getTips() {
+				return this.tips;
+			}
+
+			public void setTips(String tips) {
+				this.tips = tips;
 			}
 		}
 	}

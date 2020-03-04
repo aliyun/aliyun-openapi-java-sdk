@@ -41,6 +41,7 @@ public class ListHistoryDeployVersionResponseUnmarshaller {
 			packageVersion.setCreateTime(_ctx.longValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].CreateTime"));
 			packageVersion.setUpdateTime(_ctx.longValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].UpdateTime"));
 			packageVersion.setType(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].Type"));
+			packageVersion.setPublicUrl(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].PublicUrl"));
 
 			packageVersionList.add(packageVersion);
 		}

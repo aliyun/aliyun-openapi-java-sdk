@@ -118,6 +118,10 @@ public class GetApplicationResponse extends AcsResponse {
 
 		private String nameSpace;
 
+		private String slbInfo;
+
+		private String email;
+
 		public String getAppId() {
 			return this.appId;
 		}
@@ -324,6 +328,22 @@ public class GetApplicationResponse extends AcsResponse {
 
 		public void setNameSpace(String nameSpace) {
 			this.nameSpace = nameSpace;
+		}
+
+		public String getSlbInfo() {
+			return this.slbInfo;
+		}
+
+		public void setSlbInfo(String slbInfo) {
+			this.slbInfo = slbInfo;
+		}
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
 		}
 	}
 

@@ -29,7 +29,7 @@ public class DeleteDegradeControlRequest extends RoaAcsRequest<DeleteDegradeCont
 
 	private String ruleId;
 	public DeleteDegradeControlRequest() {
-		super("Edas", "2017-08-01", "DeleteDegradeControl", "Edas");
+		super("Edas", "2017-08-01", "DeleteDegradeControl", "edas");
 		setUriPattern("/pop/v5/degradeControl");
 		setMethod(MethodType.DELETE);
 		try {

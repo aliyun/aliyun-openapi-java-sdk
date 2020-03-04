@@ -22,17 +22,17 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class InstallAgentRequest extends RoaAcsRequest<InstallAgentResponse> {
+public class UpdateK8sResourceRequest extends RoaAcsRequest<UpdateK8sResourceResponse> {
 	   
 
-	private String instanceIds;
-
-	private Boolean doAsync;
+	private String namespace;
 
 	private String clusterId;
-	public InstallAgentRequest() {
-		super("Edas", "2017-08-01", "InstallAgent", "edas");
-		setUriPattern("/pop/v5/ecss/install_agent");
+
+	private String resourceContent;
+	public UpdateK8sResourceRequest() {
+		super("Edas", "2017-08-01", "UpdateK8sResource", "edas");
+		setUriPattern("/pop/v5/oam/update_k8s_resource_config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -40,25 +40,14 @@ public class InstallAgentRequest extends RoaAcsRequest<InstallAgentResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceIds() {
-		return this.instanceIds;
+	public String getNamespace() {
+		return this.namespace;
 	}
 
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
-	public Boolean getDoAsync() {
-		return this.doAsync;
-	}
-
-	public void setDoAsync(Boolean doAsync) {
-		this.doAsync = doAsync;
-		if(doAsync != null){
-			putQueryParameter("DoAsync", doAsync.toString());
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putBodyParameter("Namespace", namespace);
 		}
 	}
 
@@ -69,13 +58,24 @@ public class InstallAgentRequest extends RoaAcsRequest<InstallAgentResponse> {
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
 		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+			putBodyParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getResourceContent() {
+		return this.resourceContent;
+	}
+
+	public void setResourceContent(String resourceContent) {
+		this.resourceContent = resourceContent;
+		if(resourceContent != null){
+			putBodyParameter("ResourceContent", resourceContent);
 		}
 	}
 
 	@Override
-	public Class<InstallAgentResponse> getResponseClass() {
-		return InstallAgentResponse.class;
+	public Class<UpdateK8sResourceResponse> getResponseClass() {
+		return UpdateK8sResourceResponse.class;
 	}
 
 }

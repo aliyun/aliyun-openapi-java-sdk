@@ -27,7 +27,7 @@ public class DeleteRoleRequest extends RoaAcsRequest<DeleteRoleResponse> {
 
 	private Integer roleId;
 	public DeleteRoleRequest() {
-		super("Edas", "2017-08-01", "DeleteRole", "Edas");
+		super("Edas", "2017-08-01", "DeleteRole", "edas");
 		setUriPattern("/pop/v5/account/delete_role");
 		setMethod(MethodType.POST);
 		try {
