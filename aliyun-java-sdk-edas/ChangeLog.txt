@@ -1,3 +1,6 @@
+2020-03-04 Version: 3.0.3
+- Add UpdateK8sResource API.
+
 2020-03-04 Version: 2.57.3
 - Generated 2017-08-01 for `Edas`.
 

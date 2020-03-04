@@ -29,7 +29,7 @@ public class UpdateHealthCheckUrlRequest extends RoaAcsRequest<UpdateHealthCheck
 
 	private String hcURL;
 	public UpdateHealthCheckUrlRequest() {
-		super("Edas", "2017-08-01", "UpdateHealthCheckUrl", "edas");
+		super("Edas", "2017-08-01", "UpdateHealthCheckUrl", "Edas");
 		setUriPattern("/pop/v5/app/modify_hc_url");
 		setMethod(MethodType.POST);
 		try {
