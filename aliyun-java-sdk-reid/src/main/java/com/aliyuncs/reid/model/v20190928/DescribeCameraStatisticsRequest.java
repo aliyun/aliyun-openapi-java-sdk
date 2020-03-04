@@ -22,16 +22,16 @@ import com.aliyuncs.reid.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeImageUrlsRequest extends RpcAcsRequest<DescribeImageUrlsResponse> {
+public class DescribeCameraStatisticsRequest extends RpcAcsRequest<DescribeCameraStatisticsResponse> {
 	   
 
-	private String originUrls;
+	private Long startTimestamp;
 
 	private Long storeId;
 
-	private String objectKeys;
-	public DescribeImageUrlsRequest() {
-		super("reid", "2019-09-28", "DescribeImageUrls", "1.1.2");
+	private Long endTimestamp;
+	public DescribeCameraStatisticsRequest() {
+		super("reid", "2019-09-28", "DescribeCameraStatistics", "1.1.2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +39,14 @@ public class DescribeImageUrlsRequest extends RpcAcsRequest<DescribeImageUrlsRes
 		} catch (Exception e) {}
 	}
 
-	public String getOriginUrls() {
-		return this.originUrls;
+	public Long getStartTimestamp() {
+		return this.startTimestamp;
 	}
 
-	public void setOriginUrls(String originUrls) {
-		this.originUrls = originUrls;
-		if(originUrls != null){
-			putBodyParameter("OriginUrls", originUrls);
+	public void setStartTimestamp(Long startTimestamp) {
+		this.startTimestamp = startTimestamp;
+		if(startTimestamp != null){
+			putBodyParameter("StartTimestamp", startTimestamp.toString());
 		}
 	}
 
@@ -61,20 +61,20 @@ public class DescribeImageUrlsRequest extends RpcAcsRequest<DescribeImageUrlsRes
 		}
 	}
 
-	public String getObjectKeys() {
-		return this.objectKeys;
+	public Long getEndTimestamp() {
+		return this.endTimestamp;
 	}
 
-	public void setObjectKeys(String objectKeys) {
-		this.objectKeys = objectKeys;
-		if(objectKeys != null){
-			putBodyParameter("ObjectKeys", objectKeys);
+	public void setEndTimestamp(Long endTimestamp) {
+		this.endTimestamp = endTimestamp;
+		if(endTimestamp != null){
+			putBodyParameter("EndTimestamp", endTimestamp.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeImageUrlsResponse> getResponseClass() {
-		return DescribeImageUrlsResponse.class;
+	public Class<DescribeCameraStatisticsResponse> getResponseClass() {
+		return DescribeCameraStatisticsResponse.class;
 	}
 
 }

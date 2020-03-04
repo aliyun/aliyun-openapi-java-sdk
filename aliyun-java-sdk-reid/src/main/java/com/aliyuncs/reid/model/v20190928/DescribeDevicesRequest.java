@@ -27,7 +27,7 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 
 	private Long storeId;
 	public DescribeDevicesRequest() {
-		super("reid", "2019-09-28", "DescribeDevices", "1.0.0");
+		super("reid", "2019-09-28", "DescribeDevices", "1.1.2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
