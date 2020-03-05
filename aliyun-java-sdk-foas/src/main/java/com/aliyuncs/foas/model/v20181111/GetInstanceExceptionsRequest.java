@@ -24,9 +24,15 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class GetInstanceExceptionsRequest extends RoaAcsRequest<GetInstanceExceptionsResponse> {
-	
+	   
+
+	private String projectName;
+
+	private Long instanceId;
+
+	private String jobName;
 	public GetInstanceExceptionsRequest() {
-		super("foas", "2018-11-11", "GetInstanceExceptions");
+		super("foas", "2018-11-11", "GetInstanceExceptions", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/exceptions");
 		setMethod(MethodType.GET);
@@ -35,12 +41,6 @@ public class GetInstanceExceptionsRequest extends RoaAcsRequest<GetInstanceExcep
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String projectName;
-
-	private Long instanceId;
-
-	private String jobName;
 
 	public String getProjectName() {
 		return this.projectName;

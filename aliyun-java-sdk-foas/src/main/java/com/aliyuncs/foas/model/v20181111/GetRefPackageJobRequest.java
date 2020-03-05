@@ -24,17 +24,7 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class GetRefPackageJobRequest extends RoaAcsRequest<GetRefPackageJobResponse> {
-	
-	public GetRefPackageJobRequest() {
-		super("foas", "2018-11-11", "GetRefPackageJob");
-		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/projects/[projectName]/packages/[packageName]/jobs");
-		setMethod(MethodType.GET);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String projectName;
 
@@ -43,6 +33,16 @@ public class GetRefPackageJobRequest extends RoaAcsRequest<GetRefPackageJobRespo
 	private Integer pageSize;
 
 	private Integer pageIndex;
+	public GetRefPackageJobRequest() {
+		super("foas", "2018-11-11", "GetRefPackageJob", "foas");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/projects/[projectName]/packages/[packageName]/jobs");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProjectName() {
 		return this.projectName;

@@ -24,17 +24,7 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class UpdateJobRequest extends RoaAcsRequest<UpdateJobResponse> {
-	
-	public UpdateJobRequest() {
-		super("foas", "2018-11-11", "UpdateJob");
-		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]");
-		setMethod(MethodType.PUT);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String queueName;
 
@@ -57,6 +47,16 @@ public class UpdateJobRequest extends RoaAcsRequest<UpdateJobResponse> {
 	private String properties;
 
 	private String jobName;
+	public UpdateJobRequest() {
+		super("foas", "2018-11-11", "UpdateJob", "foas");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]");
+		setMethod(MethodType.PUT);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getQueueName() {
 		return this.queueName;

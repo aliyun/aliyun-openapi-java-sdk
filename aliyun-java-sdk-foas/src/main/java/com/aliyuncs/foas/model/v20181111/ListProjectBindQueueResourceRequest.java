@@ -24,9 +24,15 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class ListProjectBindQueueResourceRequest extends RoaAcsRequest<ListProjectBindQueueResourceResponse> {
-	
+	   
+
+	private String queueName;
+
+	private String projectName;
+
+	private String clusterId;
 	public ListProjectBindQueueResourceRequest() {
-		super("foas", "2018-11-11", "ListProjectBindQueueResource");
+		super("foas", "2018-11-11", "ListProjectBindQueueResource", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/queueresource");
 		setMethod(MethodType.GET);
@@ -35,12 +41,6 @@ public class ListProjectBindQueueResourceRequest extends RoaAcsRequest<ListProje
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String queueName;
-
-	private String projectName;
-
-	private String clusterId;
 
 	public String getQueueName() {
 		return this.queueName;

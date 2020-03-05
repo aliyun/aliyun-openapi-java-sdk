@@ -24,9 +24,11 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class GetClusterQueueInfoRequest extends RoaAcsRequest<GetClusterQueueInfoResponse> {
-	
+	   
+
+	private String clusterId;
 	public GetClusterQueueInfoRequest() {
-		super("foas", "2018-11-11", "GetClusterQueueInfo");
+		super("foas", "2018-11-11", "GetClusterQueueInfo", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]/queueinfo");
 		setMethod(MethodType.GET);
@@ -35,8 +37,6 @@ public class GetClusterQueueInfoRequest extends RoaAcsRequest<GetClusterQueueInf
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clusterId;
 
 	public String getClusterId() {
 		return this.clusterId;

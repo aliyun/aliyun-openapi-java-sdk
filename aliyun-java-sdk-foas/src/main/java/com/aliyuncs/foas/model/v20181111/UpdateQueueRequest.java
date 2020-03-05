@@ -23,17 +23,23 @@ import com.aliyuncs.foas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteQueueRequest extends RoaAcsRequest<DeleteQueueResponse> {
+public class UpdateQueueRequest extends RoaAcsRequest<UpdateQueueResponse> {
 	   
 
 	private String queueName;
 
+	private Integer maxMemMB;
+
 	private String clusterId;
-	public DeleteQueueRequest() {
-		super("foas", "2018-11-11", "DeleteQueue", "foas");
+
+	private Integer gpu;
+
+	private Integer maxVcore;
+	public UpdateQueueRequest() {
+		super("foas", "2018-11-11", "UpdateQueue", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]/queue");
-		setMethod(MethodType.DELETE);
+		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -47,7 +53,18 @@ public class DeleteQueueRequest extends RoaAcsRequest<DeleteQueueResponse> {
 	public void setQueueName(String queueName) {
 		this.queueName = queueName;
 		if(queueName != null){
-			putQueryParameter("queueName", queueName);
+			putBodyParameter("queueName", queueName);
+		}
+	}
+
+	public Integer getMaxMemMB() {
+		return this.maxMemMB;
+	}
+
+	public void setMaxMemMB(Integer maxMemMB) {
+		this.maxMemMB = maxMemMB;
+		if(maxMemMB != null){
+			putBodyParameter("maxMemMB", maxMemMB.toString());
 		}
 	}
 
@@ -62,9 +79,31 @@ public class DeleteQueueRequest extends RoaAcsRequest<DeleteQueueResponse> {
 		}
 	}
 
+	public Integer getGpu() {
+		return this.gpu;
+	}
+
+	public void setGpu(Integer gpu) {
+		this.gpu = gpu;
+		if(gpu != null){
+			putBodyParameter("gpu", gpu.toString());
+		}
+	}
+
+	public Integer getMaxVcore() {
+		return this.maxVcore;
+	}
+
+	public void setMaxVcore(Integer maxVcore) {
+		this.maxVcore = maxVcore;
+		if(maxVcore != null){
+			putBodyParameter("maxVcore", maxVcore.toString());
+		}
+	}
+
 	@Override
-	public Class<DeleteQueueResponse> getResponseClass() {
-		return DeleteQueueResponse.class;
+	public Class<UpdateQueueResponse> getResponseClass() {
+		return UpdateQueueResponse.class;
 	}
 
 }

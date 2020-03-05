@@ -24,9 +24,15 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class BatchGetInstanceRunSummaryRequest extends RoaAcsRequest<BatchGetInstanceRunSummaryResponse> {
-	
+	   
+
+	private String projectName;
+
+	private String jobNames;
+
+	private String jobType;
 	public BatchGetInstanceRunSummaryRequest() {
-		super("foas", "2018-11-11", "BatchGetInstanceRunSummary");
+		super("foas", "2018-11-11", "BatchGetInstanceRunSummary", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/runsummary");
 		setMethod(MethodType.GET);
@@ -35,12 +41,6 @@ public class BatchGetInstanceRunSummaryRequest extends RoaAcsRequest<BatchGetIns
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String projectName;
-
-	private String jobNames;
-
-	private String jobType;
 
 	public String getProjectName() {
 		return this.projectName;

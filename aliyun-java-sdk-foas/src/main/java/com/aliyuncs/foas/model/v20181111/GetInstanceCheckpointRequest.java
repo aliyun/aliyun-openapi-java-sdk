@@ -24,9 +24,15 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class GetInstanceCheckpointRequest extends RoaAcsRequest<GetInstanceCheckpointResponse> {
-	
+	   
+
+	private String projectName;
+
+	private Long instanceId;
+
+	private String jobName;
 	public GetInstanceCheckpointRequest() {
-		super("foas", "2018-11-11", "GetInstanceCheckpoint");
+		super("foas", "2018-11-11", "GetInstanceCheckpoint", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/checkpoints");
 		setMethod(MethodType.GET);
@@ -35,12 +41,6 @@ public class GetInstanceCheckpointRequest extends RoaAcsRequest<GetInstanceCheck
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String projectName;
-
-	private Long instanceId;
-
-	private String jobName;
 
 	public String getProjectName() {
 		return this.projectName;

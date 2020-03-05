@@ -24,17 +24,7 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
-	
-	public CreateClusterRequest() {
-		super("foas", "2018-11-11", "CreateCluster");
-		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/clusters");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String orderId;
 
@@ -49,6 +39,16 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 	private String description;
 
 	private String userVSwitch;
+	public CreateClusterRequest() {
+		super("foas", "2018-11-11", "CreateCluster", "foas");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/clusters");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getOrderId() {
 		return this.orderId;

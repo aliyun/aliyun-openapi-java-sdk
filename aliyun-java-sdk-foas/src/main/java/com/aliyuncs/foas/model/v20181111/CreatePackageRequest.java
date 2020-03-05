@@ -24,17 +24,7 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class CreatePackageRequest extends RoaAcsRequest<CreatePackageResponse> {
-	
-	public CreatePackageRequest() {
-		super("foas", "2018-11-11", "CreatePackage");
-		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/projects/[projectName]/packages");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String projectName;
 
@@ -57,6 +47,16 @@ public class CreatePackageRequest extends RoaAcsRequest<CreatePackageResponse> {
 	private String ossPath;
 
 	private String md5;
+	public CreatePackageRequest() {
+		super("foas", "2018-11-11", "CreatePackage", "foas");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/projects/[projectName]/packages");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProjectName() {
 		return this.projectName;

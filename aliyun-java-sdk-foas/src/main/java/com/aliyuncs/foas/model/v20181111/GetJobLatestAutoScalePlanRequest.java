@@ -24,9 +24,13 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class GetJobLatestAutoScalePlanRequest extends RoaAcsRequest<GetJobLatestAutoScalePlanResponse> {
-	
+	   
+
+	private String projectName;
+
+	private String jobName;
 	public GetJobLatestAutoScalePlanRequest() {
-		super("foas", "2018-11-11", "GetJobLatestAutoScalePlan");
+		super("foas", "2018-11-11", "GetJobLatestAutoScalePlan", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/autoscale/latestplanjson");
 		setMethod(MethodType.GET);
@@ -35,10 +39,6 @@ public class GetJobLatestAutoScalePlanRequest extends RoaAcsRequest<GetJobLatest
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String projectName;
-
-	private String jobName;
 
 	public String getProjectName() {
 		return this.projectName;

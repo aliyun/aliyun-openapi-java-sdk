@@ -24,9 +24,15 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class MVFolderRequest extends RoaAcsRequest<MVFolderResponse> {
-	
+	   
+
+	private String projectName;
+
+	private String srcPath;
+
+	private String destPath;
 	public MVFolderRequest() {
-		super("foas", "2018-11-11", "MVFolder");
+		super("foas", "2018-11-11", "MVFolder", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/folders");
 		setMethod(MethodType.PUT);
@@ -35,12 +41,6 @@ public class MVFolderRequest extends RoaAcsRequest<MVFolderResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String projectName;
-
-	private String srcPath;
-
-	private String destPath;
 
 	public String getProjectName() {
 		return this.projectName;

@@ -24,17 +24,7 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class ListProjectRequest extends RoaAcsRequest<ListProjectResponse> {
-	
-	public ListProjectRequest() {
-		super("foas", "2018-11-11", "ListProject");
-		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/projects");
-		setMethod(MethodType.GET);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String name;
 
@@ -47,6 +37,16 @@ public class ListProjectRequest extends RoaAcsRequest<ListProjectResponse> {
 	private String region;
 
 	private String deployType;
+	public ListProjectRequest() {
+		super("foas", "2018-11-11", "ListProject", "foas");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/projects");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getName() {
 		return this.name;
