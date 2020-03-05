@@ -22,19 +22,13 @@ import com.aliyuncs.ehpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class PullImageRequest extends RpcAcsRequest<PullImageResponse> {
+public class DescribeGWSClusterPolicyRequest extends RpcAcsRequest<DescribeGWSClusterPolicyResponse> {
 	   
 
 	private String clusterId;
-
-	private String repository;
-
-	private String containerType;
-
-	private String imageTag;
-	public PullImageRequest() {
-		super("EHPC", "2018-04-12", "PullImage", "ehs");
-		setMethod(MethodType.GET);
+	public DescribeGWSClusterPolicyRequest() {
+		super("EHPC", "2018-04-12", "DescribeGWSClusterPolicy", "ehs");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -52,42 +46,9 @@ public class PullImageRequest extends RpcAcsRequest<PullImageResponse> {
 		}
 	}
 
-	public String getRepository() {
-		return this.repository;
-	}
-
-	public void setRepository(String repository) {
-		this.repository = repository;
-		if(repository != null){
-			putQueryParameter("Repository", repository);
-		}
-	}
-
-	public String getContainerType() {
-		return this.containerType;
-	}
-
-	public void setContainerType(String containerType) {
-		this.containerType = containerType;
-		if(containerType != null){
-			putQueryParameter("ContainerType", containerType);
-		}
-	}
-
-	public String getImageTag() {
-		return this.imageTag;
-	}
-
-	public void setImageTag(String imageTag) {
-		this.imageTag = imageTag;
-		if(imageTag != null){
-			putQueryParameter("ImageTag", imageTag);
-		}
-	}
-
 	@Override
-	public Class<PullImageResponse> getResponseClass() {
-		return PullImageResponse.class;
+	public Class<DescribeGWSClusterPolicyResponse> getResponseClass() {
+		return DescribeGWSClusterPolicyResponse.class;
 	}
 
 }

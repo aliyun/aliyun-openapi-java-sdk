@@ -55,6 +55,7 @@ public class ListNodesResponseUnmarshaller {
 			nodeInfo.setVpcId(_ctx.stringValue("ListNodesResponse.Nodes["+ i +"].VpcId"));
 			nodeInfo.setZoneId(_ctx.stringValue("ListNodesResponse.Nodes["+ i +"].ZoneId"));
 			nodeInfo.setVSwitchId(_ctx.stringValue("ListNodesResponse.Nodes["+ i +"].VSwitchId"));
+			nodeInfo.setHtEnabled(_ctx.booleanValue("ListNodesResponse.Nodes["+ i +"].HtEnabled"));
 
 			List<String> roles = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListNodesResponse.Nodes["+ i +"].Roles.Length"); j++) {

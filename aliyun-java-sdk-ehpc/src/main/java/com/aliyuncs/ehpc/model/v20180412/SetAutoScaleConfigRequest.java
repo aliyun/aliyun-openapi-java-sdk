@@ -17,6 +17,7 @@ package com.aliyuncs.ehpc.model.v20180412;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ehpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,8 @@ import com.aliyuncs.http.MethodType;
  */
 public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigResponse> {
 	   
+
+	private String imageId;
 
 	private Float spotPriceLimit;
 
@@ -55,6 +58,21 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 	public SetAutoScaleConfigRequest() {
 		super("EHPC", "2018-04-12", "SetAutoScaleConfig", "ehs");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
 	}
 
 	public Float getSpotPriceLimit() {
@@ -198,6 +216,7 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".SpotPriceLimit" , queuess.get(depth1).getInstanceTypess().get(depth2).getSpotPriceLimit());
 					}
 				}
+				putQueryParameter("Queues." + (depth1 + 1) + ".MaxNodesInQueue" , queuess.get(depth1).getMaxNodesInQueue());
 				putQueryParameter("Queues." + (depth1 + 1) + ".InstanceType" , queuess.get(depth1).getInstanceType());
 				putQueryParameter("Queues." + (depth1 + 1) + ".EnableAutoGrow" , queuess.get(depth1).getEnableAutoGrow());
 				putQueryParameter("Queues." + (depth1 + 1) + ".SpotPriceLimit" , queuess.get(depth1).getSpotPriceLimit());
@@ -236,6 +255,8 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 		private List<InstanceTypes> instanceTypess;
 
+		private Integer maxNodesInQueue;
+
 		private String instanceType;
 
 		private Boolean enableAutoGrow;
@@ -266,6 +287,14 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 		public void setInstanceTypess(List<InstanceTypes> instanceTypess) {
 			this.instanceTypess = instanceTypess;
+		}
+
+		public Integer getMaxNodesInQueue() {
+			return this.maxNodesInQueue;
+		}
+
+		public void setMaxNodesInQueue(Integer maxNodesInQueue) {
+			this.maxNodesInQueue = maxNodesInQueue;
 		}
 
 		public String getInstanceType() {

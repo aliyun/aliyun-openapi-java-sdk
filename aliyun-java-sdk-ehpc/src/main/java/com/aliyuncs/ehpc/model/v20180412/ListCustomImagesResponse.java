@@ -71,6 +71,8 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 		private BaseOsTag baseOsTag;
 
+		private OsTag osTag;
+
 		public String getUid() {
 			return this.uid;
 		}
@@ -167,6 +169,14 @@ public class ListCustomImagesResponse extends AcsResponse {
 			this.baseOsTag = baseOsTag;
 		}
 
+		public OsTag getOsTag() {
+			return this.osTag;
+		}
+
+		public void setOsTag(OsTag osTag) {
+			this.osTag = osTag;
+		}
+
 		public static class BaseOsTag {
 
 			private String osTag;
@@ -183,6 +193,59 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 			public void setOsTag(String osTag) {
 				this.osTag = osTag;
+			}
+
+			public String getPlatform() {
+				return this.platform;
+			}
+
+			public void setPlatform(String platform) {
+				this.platform = platform;
+			}
+
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
+			}
+
+			public String getArchitecture() {
+				return this.architecture;
+			}
+
+			public void setArchitecture(String architecture) {
+				this.architecture = architecture;
+			}
+		}
+
+		public static class OsTag {
+
+			private String osTag;
+
+			private String baseOsTag;
+
+			private String platform;
+
+			private String version;
+
+			private String architecture;
+
+			public String getOsTag() {
+				return this.osTag;
+			}
+
+			public void setOsTag(String osTag) {
+				this.osTag = osTag;
+			}
+
+			public String getBaseOsTag() {
+				return this.baseOsTag;
+			}
+
+			public void setBaseOsTag(String baseOsTag) {
+				this.baseOsTag = baseOsTag;
 			}
 
 			public String getPlatform() {

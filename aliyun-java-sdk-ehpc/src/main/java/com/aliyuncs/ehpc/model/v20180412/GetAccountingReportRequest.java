@@ -16,6 +16,7 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ehpc.Endpoint;
 
 /**
  * @author auto create
@@ -30,12 +31,24 @@ public class GetAccountingReportRequest extends RpcAcsRequest<GetAccountingRepor
 
 	private String filterValue;
 
+	private String dim;
+
 	private String clusterId;
 
 	private Integer startTime;
+
+	private Integer pageNumber;
+
+	private String jobId;
+
+	private Integer pageSize;
 	public GetAccountingReportRequest() {
 		super("EHPC", "2018-04-12", "GetAccountingReport", "ehs");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getReportType() {
@@ -71,6 +84,17 @@ public class GetAccountingReportRequest extends RpcAcsRequest<GetAccountingRepor
 		}
 	}
 
+	public String getDim() {
+		return this.dim;
+	}
+
+	public void setDim(String dim) {
+		this.dim = dim;
+		if(dim != null){
+			putQueryParameter("Dim", dim);
+		}
+	}
+
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -90,6 +114,39 @@ public class GetAccountingReportRequest extends RpcAcsRequest<GetAccountingRepor
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

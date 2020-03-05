@@ -121,6 +121,8 @@ public class ListClustersResponse extends AcsResponse {
 
 		private String nodeSuffix;
 
+		private String baseOsTag;
+
 		private Managers managers;
 
 		private Computes computes;
@@ -303,6 +305,14 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setNodeSuffix(String nodeSuffix) {
 			this.nodeSuffix = nodeSuffix;
+		}
+
+		public String getBaseOsTag() {
+			return this.baseOsTag;
+		}
+
+		public void setBaseOsTag(String baseOsTag) {
+			this.baseOsTag = baseOsTag;
 		}
 
 		public Managers getManagers() {

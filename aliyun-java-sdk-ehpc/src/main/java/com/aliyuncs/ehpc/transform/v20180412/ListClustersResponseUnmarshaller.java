@@ -60,6 +60,7 @@ public class ListClustersResponseUnmarshaller {
 			clusterInfoSimple.setEhpcVersion(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].EhpcVersion"));
 			clusterInfoSimple.setNodePrefix(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].NodePrefix"));
 			clusterInfoSimple.setNodeSuffix(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].NodeSuffix"));
+			clusterInfoSimple.setBaseOsTag(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].BaseOsTag"));
 
 			Managers managers = new Managers();
 			managers.setTotal(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Managers.Total"));

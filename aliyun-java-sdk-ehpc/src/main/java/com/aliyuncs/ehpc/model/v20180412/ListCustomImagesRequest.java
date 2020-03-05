@@ -16,6 +16,7 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ehpc.Endpoint;
 
 /**
  * @author auto create
@@ -27,9 +28,15 @@ public class ListCustomImagesRequest extends RpcAcsRequest<ListCustomImagesRespo
 	private String imageOwnerAlias;
 
 	private String baseOsTag;
+
+	private String instanceType;
 	public ListCustomImagesRequest() {
 		super("EHPC", "2018-04-12", "ListCustomImages", "ehs");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getImageOwnerAlias() {
@@ -51,6 +58,17 @@ public class ListCustomImagesRequest extends RpcAcsRequest<ListCustomImagesRespo
 		this.baseOsTag = baseOsTag;
 		if(baseOsTag != null){
 			putQueryParameter("BaseOsTag", baseOsTag);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 

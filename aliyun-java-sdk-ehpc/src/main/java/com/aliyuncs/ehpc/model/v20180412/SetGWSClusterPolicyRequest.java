@@ -22,44 +22,46 @@ import com.aliyuncs.ehpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetInstanceReportRequest extends RpcAcsRequest<GetInstanceReportResponse> {
+public class SetGWSClusterPolicyRequest extends RpcAcsRequest<SetGWSClusterPolicyResponse> {
 	   
 
-	private Integer endTime;
+	private String watermark;
 
-	private String filterValue;
+	private String localDrive;
 
 	private String clusterId;
 
-	private Integer startTime;
-	public GetInstanceReportRequest() {
-		super("EHPC", "2018-04-12", "GetInstanceReport", "ehs");
-		setMethod(MethodType.GET);
+	private String clipboard;
+
+	private String usbRedirect;
+	public SetGWSClusterPolicyRequest() {
+		super("EHPC", "2018-04-12", "SetGWSClusterPolicy", "ehs");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public Integer getEndTime() {
-		return this.endTime;
+	public String getWatermark() {
+		return this.watermark;
 	}
 
-	public void setEndTime(Integer endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
+	public void setWatermark(String watermark) {
+		this.watermark = watermark;
+		if(watermark != null){
+			putQueryParameter("Watermark", watermark);
 		}
 	}
 
-	public String getFilterValue() {
-		return this.filterValue;
+	public String getLocalDrive() {
+		return this.localDrive;
 	}
 
-	public void setFilterValue(String filterValue) {
-		this.filterValue = filterValue;
-		if(filterValue != null){
-			putQueryParameter("FilterValue", filterValue);
+	public void setLocalDrive(String localDrive) {
+		this.localDrive = localDrive;
+		if(localDrive != null){
+			putQueryParameter("LocalDrive", localDrive);
 		}
 	}
 
@@ -74,20 +76,31 @@ public class GetInstanceReportRequest extends RpcAcsRequest<GetInstanceReportRes
 		}
 	}
 
-	public Integer getStartTime() {
-		return this.startTime;
+	public String getClipboard() {
+		return this.clipboard;
 	}
 
-	public void setStartTime(Integer startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
+	public void setClipboard(String clipboard) {
+		this.clipboard = clipboard;
+		if(clipboard != null){
+			putQueryParameter("Clipboard", clipboard);
+		}
+	}
+
+	public String getUsbRedirect() {
+		return this.usbRedirect;
+	}
+
+	public void setUsbRedirect(String usbRedirect) {
+		this.usbRedirect = usbRedirect;
+		if(usbRedirect != null){
+			putQueryParameter("UsbRedirect", usbRedirect);
 		}
 	}
 
 	@Override
-	public Class<GetInstanceReportResponse> getResponseClass() {
-		return GetInstanceReportResponse.class;
+	public Class<SetGWSClusterPolicyResponse> getResponseClass() {
+		return SetGWSClusterPolicyResponse.class;
 	}
 
 }

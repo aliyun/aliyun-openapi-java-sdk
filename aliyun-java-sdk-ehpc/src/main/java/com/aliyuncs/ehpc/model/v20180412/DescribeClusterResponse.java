@@ -99,6 +99,8 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		private String location;
 
+		private String baseOsTag;
+
 		private List<ApplicationInfo> applications;
 
 		private List<PostInstallScriptInfo> postInstallScripts;
@@ -311,6 +313,14 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		public void setLocation(String location) {
 			this.location = location;
+		}
+
+		public String getBaseOsTag() {
+			return this.baseOsTag;
+		}
+
+		public void setBaseOsTag(String baseOsTag) {
+			this.baseOsTag = baseOsTag;
 		}
 
 		public List<ApplicationInfo> getApplications() {

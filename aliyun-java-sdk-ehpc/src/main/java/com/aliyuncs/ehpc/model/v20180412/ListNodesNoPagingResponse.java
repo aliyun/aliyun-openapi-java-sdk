@@ -103,6 +103,8 @@ public class ListNodesNoPagingResponse extends AcsResponse {
 
 		private String imageId;
 
+		private Boolean htEnabled;
+
 		private List<String> roles;
 
 		private TotalResources totalResources;
@@ -211,6 +213,14 @@ public class ListNodesNoPagingResponse extends AcsResponse {
 
 		public void setImageId(String imageId) {
 			this.imageId = imageId;
+		}
+
+		public Boolean getHtEnabled() {
+			return this.htEnabled;
+		}
+
+		public void setHtEnabled(Boolean htEnabled) {
+			this.htEnabled = htEnabled;
 		}
 
 		public List<String> getRoles() {

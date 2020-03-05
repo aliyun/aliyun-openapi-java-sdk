@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-ehpc</artifactId>
   <packaging>jar</packaging>
-  <version>1.12.0</version>
+  <version>1.12.1</version>
   <name>aliyun-java-sdk-ehpc</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

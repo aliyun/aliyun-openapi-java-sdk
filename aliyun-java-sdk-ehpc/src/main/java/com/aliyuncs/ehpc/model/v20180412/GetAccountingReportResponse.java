@@ -29,6 +29,14 @@ public class GetAccountingReportResponse extends AcsResponse {
 
 	private String metrics;
 
+	private Integer totalCoreTime;
+
+	private Integer totalCount;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
 	private List<String> data;
 
 	public String getRequestId() {
@@ -45,6 +53,38 @@ public class GetAccountingReportResponse extends AcsResponse {
 
 	public void setMetrics(String metrics) {
 		this.metrics = metrics;
+	}
+
+	public Integer getTotalCoreTime() {
+		return this.totalCoreTime;
+	}
+
+	public void setTotalCoreTime(Integer totalCoreTime) {
+		this.totalCoreTime = totalCoreTime;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<String> getData() {

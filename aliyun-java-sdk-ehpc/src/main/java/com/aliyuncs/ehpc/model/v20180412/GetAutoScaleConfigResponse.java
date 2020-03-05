@@ -57,6 +57,8 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 	private Float spotPriceLimit;
 
+	private String imageId;
+
 	private List<QueueInfo> queues;
 
 	public String getRequestId() {
@@ -187,6 +189,14 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 		this.spotPriceLimit = spotPriceLimit;
 	}
 
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+	}
+
 	public List<QueueInfo> getQueues() {
 		return this.queues;
 	}
@@ -210,6 +220,8 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 		private Boolean enableAutoGrow;
 
 		private Boolean enableAutoShrink;
+
+		private Integer maxNodesInQueue;
 
 		private List<InstanceTypeInfo> instanceTypes;
 
@@ -267,6 +279,14 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 		public void setEnableAutoShrink(Boolean enableAutoShrink) {
 			this.enableAutoShrink = enableAutoShrink;
+		}
+
+		public Integer getMaxNodesInQueue() {
+			return this.maxNodesInQueue;
+		}
+
+		public void setMaxNodesInQueue(Integer maxNodesInQueue) {
+			this.maxNodesInQueue = maxNodesInQueue;
 		}
 
 		public List<InstanceTypeInfo> getInstanceTypes() {

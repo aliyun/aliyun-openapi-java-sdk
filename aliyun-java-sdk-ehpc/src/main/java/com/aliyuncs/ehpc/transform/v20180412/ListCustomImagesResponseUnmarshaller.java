@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ehpc.model.v20180412.ListCustomImagesResponse;
 import com.aliyuncs.ehpc.model.v20180412.ListCustomImagesResponse.ImageInfo;
 import com.aliyuncs.ehpc.model.v20180412.ListCustomImagesResponse.ImageInfo.BaseOsTag;
+import com.aliyuncs.ehpc.model.v20180412.ListCustomImagesResponse.ImageInfo.OsTag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +51,14 @@ public class ListCustomImagesResponseUnmarshaller {
 			baseOsTag.setVersion(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].BaseOsTag.Version"));
 			baseOsTag.setArchitecture(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].BaseOsTag.Architecture"));
 			imageInfo.setBaseOsTag(baseOsTag);
+
+			OsTag osTag = new OsTag();
+			osTag.setOsTag(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].OsTag.OsTag"));
+			osTag.setBaseOsTag(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].OsTag.BaseOsTag"));
+			osTag.setPlatform(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].OsTag.Platform"));
+			osTag.setVersion(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].OsTag.Version"));
+			osTag.setArchitecture(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].OsTag.Architecture"));
+			imageInfo.setOsTag(osTag);
 
 			images.add(imageInfo);
 		}
