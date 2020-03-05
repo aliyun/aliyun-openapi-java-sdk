@@ -25,25 +25,12 @@ import com.aliyuncs.http.MethodType;
 public class BatchSendMessagesRequest extends RpcAcsRequest<BatchSendMessagesResponse> {
 	   
 
-	private Boolean noPersistFlag;
-
 	private String instanceId;
 
 	private List<Messages> messagess;
 	public BatchSendMessagesRequest() {
 		super("OnsMqtt", "2019-12-11", "BatchSendMessages", "onsmqtt");
 		setMethod(MethodType.POST);
-	}
-
-	public Boolean getNoPersistFlag() {
-		return this.noPersistFlag;
-	}
-
-	public void setNoPersistFlag(Boolean noPersistFlag) {
-		this.noPersistFlag = noPersistFlag;
-		if(noPersistFlag != null){
-			putQueryParameter("NoPersistFlag", noPersistFlag.toString());
-		}
 	}
 
 	public String getInstanceId() {

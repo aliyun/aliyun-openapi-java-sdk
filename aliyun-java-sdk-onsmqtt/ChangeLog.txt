@@ -1,3 +1,6 @@
+2020-03-05 Version: 1.0.1
+- Update send message noPresistFlag param.
+
 2020-02-13 Version: 1.0.0
 - Init MQTT SDK .
 
