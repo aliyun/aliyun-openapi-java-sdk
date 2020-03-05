@@ -1,3 +1,6 @@
+2020-03-05 Version: 1.0.0
+- Release.
+
 2020-03-04 Version: 1.0.0
 - Release.
 
