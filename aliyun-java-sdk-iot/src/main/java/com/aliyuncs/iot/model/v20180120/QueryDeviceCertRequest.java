@@ -25,9 +25,9 @@ import com.aliyuncs.iot.Endpoint;
 public class QueryDeviceCertRequest extends RpcAcsRequest<QueryDeviceCertResponse> {
 	   
 
-	private String productKey;
-
 	private String iotInstanceId;
+
+	private String productKey;
 
 	private String deviceName;
 	public QueryDeviceCertRequest() {
@@ -39,17 +39,6 @@ public class QueryDeviceCertRequest extends RpcAcsRequest<QueryDeviceCertRespons
 		} catch (Exception e) {}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
 	public String getIotInstanceId() {
 		return this.iotInstanceId;
 	}
@@ -58,6 +47,17 @@ public class QueryDeviceCertRequest extends RpcAcsRequest<QueryDeviceCertRespons
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

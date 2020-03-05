@@ -133,6 +133,12 @@ public class QueryEdgeInstanceHistoricDeploymentResponse extends AcsResponse {
 
 			private String type;
 
+			private Long gmtCreateTimestamp;
+
+			private Long gmtModifiedTimestamp;
+
+			private Long gmtCompletedTimestamp;
+
 			public String getGmtCreate() {
 				return this.gmtCreate;
 			}
@@ -187,6 +193,30 @@ public class QueryEdgeInstanceHistoricDeploymentResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public Long getGmtCreateTimestamp() {
+				return this.gmtCreateTimestamp;
+			}
+
+			public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
+				this.gmtCreateTimestamp = gmtCreateTimestamp;
+			}
+
+			public Long getGmtModifiedTimestamp() {
+				return this.gmtModifiedTimestamp;
+			}
+
+			public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
+				this.gmtModifiedTimestamp = gmtModifiedTimestamp;
+			}
+
+			public Long getGmtCompletedTimestamp() {
+				return this.gmtCompletedTimestamp;
+			}
+
+			public void setGmtCompletedTimestamp(Long gmtCompletedTimestamp) {
+				this.gmtCompletedTimestamp = gmtCompletedTimestamp;
 			}
 		}
 	}

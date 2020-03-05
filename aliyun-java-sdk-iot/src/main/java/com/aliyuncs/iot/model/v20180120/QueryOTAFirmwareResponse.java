@@ -108,6 +108,8 @@ public class QueryOTAFirmwareResponse extends AcsResponse {
 
 		private Integer verifyProgress;
 
+		private String moduleName;
+
 		public String getFirmwareName() {
 			return this.firmwareName;
 		}
@@ -234,6 +236,14 @@ public class QueryOTAFirmwareResponse extends AcsResponse {
 
 		public void setVerifyProgress(Integer verifyProgress) {
 			this.verifyProgress = verifyProgress;
+		}
+
+		public String getModuleName() {
+			return this.moduleName;
+		}
+
+		public void setModuleName(String moduleName) {
+			this.moduleName = moduleName;
 		}
 	}
 

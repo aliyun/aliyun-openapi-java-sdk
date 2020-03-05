@@ -1,3 +1,7 @@
+2020-03-05 Version: 7.6.0
+- Add CreateEdgeDriver, DeleteEdgeDriver, BatchGetEdgeDriver, QueryEdgeDriver, CreateEdgeDriverVersion, DeleteEdgeDriverVersion, UpdateEdgeDriverVersion, GetEdgeDriverVersion, QueryEdgeDriverVersion API.
+- Add ResetThing API, support reset thing topo and 
+
 2020-02-11 Version: 7.5.0
 - Add Thing Model APIs, including CreateThingModel, UpdateThingModel, etc.
 - Add OTA API ListOTATaskByJob.

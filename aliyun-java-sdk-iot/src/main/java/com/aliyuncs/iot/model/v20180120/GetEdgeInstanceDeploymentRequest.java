@@ -25,9 +25,9 @@ import com.aliyuncs.iot.Endpoint;
 public class GetEdgeInstanceDeploymentRequest extends RpcAcsRequest<GetEdgeInstanceDeploymentResponse> {
 	   
 
-	private String instanceId;
-
 	private String iotInstanceId;
+
+	private String instanceId;
 
 	private String deploymentId;
 	public GetEdgeInstanceDeploymentRequest() {
@@ -39,17 +39,6 @@ public class GetEdgeInstanceDeploymentRequest extends RpcAcsRequest<GetEdgeInsta
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getIotInstanceId() {
 		return this.iotInstanceId;
 	}
@@ -58,6 +47,17 @@ public class GetEdgeInstanceDeploymentRequest extends RpcAcsRequest<GetEdgeInsta
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

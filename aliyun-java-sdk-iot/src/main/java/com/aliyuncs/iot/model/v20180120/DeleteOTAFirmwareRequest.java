@@ -25,9 +25,9 @@ import com.aliyuncs.iot.Endpoint;
 public class DeleteOTAFirmwareRequest extends RpcAcsRequest<DeleteOTAFirmwareResponse> {
 	   
 
-	private String firmwareId;
-
 	private String iotInstanceId;
+
+	private String firmwareId;
 	public DeleteOTAFirmwareRequest() {
 		super("Iot", "2018-01-20", "DeleteOTAFirmware", "iot");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class DeleteOTAFirmwareRequest extends RpcAcsRequest<DeleteOTAFirmwareRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFirmwareId() {
-		return this.firmwareId;
-	}
-
-	public void setFirmwareId(String firmwareId) {
-		this.firmwareId = firmwareId;
-		if(firmwareId != null){
-			putQueryParameter("FirmwareId", firmwareId);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -56,6 +45,17 @@ public class DeleteOTAFirmwareRequest extends RpcAcsRequest<DeleteOTAFirmwareRes
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getFirmwareId() {
+		return this.firmwareId;
+	}
+
+	public void setFirmwareId(String firmwareId) {
+		this.firmwareId = firmwareId;
+		if(firmwareId != null){
+			putQueryParameter("FirmwareId", firmwareId);
 		}
 	}
 

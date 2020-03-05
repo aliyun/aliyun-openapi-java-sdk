@@ -28,9 +28,9 @@ public class CreateDataAPIServiceResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String errorMessage;
-
 	private String code;
+
+	private String errorMessage;
 
 	private Data data;
 
@@ -50,20 +50,20 @@ public class CreateDataAPIServiceResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public String getCode() {
 		return this.code;
 	}
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Data getData() {

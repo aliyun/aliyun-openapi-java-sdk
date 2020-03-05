@@ -25,9 +25,9 @@ import com.aliyuncs.iot.Endpoint;
 public class QueryCertUrlByApplyIdRequest extends RpcAcsRequest<QueryCertUrlByApplyIdResponse> {
 	   
 
-	private Long applyId;
-
 	private String iotInstanceId;
+
+	private Long applyId;
 	public QueryCertUrlByApplyIdRequest() {
 		super("Iot", "2018-01-20", "QueryCertUrlByApplyId", "iot");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class QueryCertUrlByApplyIdRequest extends RpcAcsRequest<QueryCertUrlByAp
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getApplyId() {
-		return this.applyId;
-	}
-
-	public void setApplyId(Long applyId) {
-		this.applyId = applyId;
-		if(applyId != null){
-			putQueryParameter("ApplyId", applyId.toString());
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -56,6 +45,17 @@ public class QueryCertUrlByApplyIdRequest extends RpcAcsRequest<QueryCertUrlByAp
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public Long getApplyId() {
+		return this.applyId;
+	}
+
+	public void setApplyId(Long applyId) {
+		this.applyId = applyId;
+		if(applyId != null){
+			putQueryParameter("ApplyId", applyId.toString());
 		}
 	}
 

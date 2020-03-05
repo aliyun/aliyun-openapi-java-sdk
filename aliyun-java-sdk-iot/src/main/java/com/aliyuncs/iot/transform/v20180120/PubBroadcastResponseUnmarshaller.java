@@ -26,6 +26,7 @@ public class PubBroadcastResponseUnmarshaller {
 		pubBroadcastResponse.setSuccess(_ctx.booleanValue("PubBroadcastResponse.Success"));
 		pubBroadcastResponse.setCode(_ctx.stringValue("PubBroadcastResponse.Code"));
 		pubBroadcastResponse.setErrorMessage(_ctx.stringValue("PubBroadcastResponse.ErrorMessage"));
+		pubBroadcastResponse.setMessageId(_ctx.longValue("PubBroadcastResponse.MessageId"));
 	 
 	 	return pubBroadcastResponse;
 	}

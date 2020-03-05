@@ -53,6 +53,7 @@ public class ListOTAFirmwareResponseUnmarshaller {
 			simpleFirmwareInfo.setSignMethod(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].SignMethod"));
 			simpleFirmwareInfo.setProductName(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].ProductName"));
 			simpleFirmwareInfo.setType(_ctx.integerValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].Type"));
+			simpleFirmwareInfo.setModuleName(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].ModuleName"));
 
 			firmwareInfo.add(simpleFirmwareInfo);
 		}

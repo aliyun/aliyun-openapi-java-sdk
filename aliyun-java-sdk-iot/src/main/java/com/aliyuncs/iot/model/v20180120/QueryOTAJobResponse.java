@@ -14,7 +14,6 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.iot.transform.v20180120.QueryOTAJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -157,7 +156,7 @@ public class QueryOTAJobResponse extends AcsResponse {
 
 		private String destVersion;
 
-		private List<String> srcVersions;
+		private String srcVersions;
 
 		public String getJobId() {
 			return this.jobId;
@@ -319,11 +318,11 @@ public class QueryOTAJobResponse extends AcsResponse {
 			this.destVersion = destVersion;
 		}
 
-		public List<String> getSrcVersions() {
+		public String getSrcVersions() {
 			return this.srcVersions;
 		}
 
-		public void setSrcVersions(List<String> srcVersions) {
+		public void setSrcVersions(String srcVersions) {
 			this.srcVersions = srcVersions;
 		}
 	}

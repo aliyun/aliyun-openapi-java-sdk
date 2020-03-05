@@ -25,11 +25,11 @@ import com.aliyuncs.iot.Endpoint;
 public class QueryEdgeInstanceRequest extends RpcAcsRequest<QueryEdgeInstanceResponse> {
 	   
 
-	private Integer currentPage;
-
 	private String iotInstanceId;
 
 	private Integer pageSize;
+
+	private Integer currentPage;
 
 	private String name;
 	public QueryEdgeInstanceRequest() {
@@ -39,17 +39,6 @@ public class QueryEdgeInstanceRequest extends RpcAcsRequest<QueryEdgeInstanceRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -71,6 +60,17 @@ public class QueryEdgeInstanceRequest extends RpcAcsRequest<QueryEdgeInstanceRes
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

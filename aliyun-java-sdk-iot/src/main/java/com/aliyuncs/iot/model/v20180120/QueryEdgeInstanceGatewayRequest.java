@@ -25,9 +25,9 @@ import com.aliyuncs.iot.Endpoint;
 public class QueryEdgeInstanceGatewayRequest extends RpcAcsRequest<QueryEdgeInstanceGatewayResponse> {
 	   
 
-	private String instanceId;
-
 	private String iotInstanceId;
+
+	private String instanceId;
 	public QueryEdgeInstanceGatewayRequest() {
 		super("Iot", "2018-01-20", "QueryEdgeInstanceGateway", "iot");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class QueryEdgeInstanceGatewayRequest extends RpcAcsRequest<QueryEdgeInst
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -56,6 +45,17 @@ public class QueryEdgeInstanceGatewayRequest extends RpcAcsRequest<QueryEdgeInst
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

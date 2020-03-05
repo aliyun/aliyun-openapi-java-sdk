@@ -32,6 +32,8 @@ public class PubBroadcastResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private Long messageId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -62,6 +64,14 @@ public class PubBroadcastResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public Long getMessageId() {
+		return this.messageId;
+	}
+
+	public void setMessageId(Long messageId) {
+		this.messageId = messageId;
 	}
 
 	@Override

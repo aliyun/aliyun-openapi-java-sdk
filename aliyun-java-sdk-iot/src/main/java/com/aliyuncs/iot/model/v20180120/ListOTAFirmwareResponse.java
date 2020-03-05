@@ -147,6 +147,8 @@ public class ListOTAFirmwareResponse extends AcsResponse {
 
 		private Integer type;
 
+		private String moduleName;
+
 		public String getFirmwareName() {
 			return this.firmwareName;
 		}
@@ -265,6 +267,14 @@ public class ListOTAFirmwareResponse extends AcsResponse {
 
 		public void setType(Integer type) {
 			this.type = type;
+		}
+
+		public String getModuleName() {
+			return this.moduleName;
+		}
+
+		public void setModuleName(String moduleName) {
+			this.moduleName = moduleName;
 		}
 	}
 

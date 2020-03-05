@@ -29,11 +29,11 @@ public class UpdateEdgeInstanceRequest extends RpcAcsRequest<UpdateEdgeInstanceR
 
 	private Integer spec;
 
+	private String iotInstanceId;
+
 	private String tags;
 
 	private String instanceId;
-
-	private String iotInstanceId;
 
 	private String name;
 	public UpdateEdgeInstanceRequest() {
@@ -67,6 +67,17 @@ public class UpdateEdgeInstanceRequest extends RpcAcsRequest<UpdateEdgeInstanceR
 		}
 	}
 
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
 	public String getTags() {
 		return this.tags;
 	}
@@ -86,17 +97,6 @@ public class UpdateEdgeInstanceRequest extends RpcAcsRequest<UpdateEdgeInstanceR
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

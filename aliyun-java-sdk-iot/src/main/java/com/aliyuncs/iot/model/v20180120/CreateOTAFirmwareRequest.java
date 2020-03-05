@@ -35,6 +35,8 @@ public class CreateOTAFirmwareRequest extends RpcAcsRequest<CreateOTAFirmwareRes
 
 	private String firmwareDesc;
 
+	private String moduleName;
+
 	private String firmwareSign;
 
 	private Integer firmwareSize;
@@ -107,6 +109,17 @@ public class CreateOTAFirmwareRequest extends RpcAcsRequest<CreateOTAFirmwareRes
 		this.firmwareDesc = firmwareDesc;
 		if(firmwareDesc != null){
 			putQueryParameter("FirmwareDesc", firmwareDesc);
+		}
+	}
+
+	public String getModuleName() {
+		return this.moduleName;
+	}
+
+	public void setModuleName(String moduleName) {
+		this.moduleName = moduleName;
+		if(moduleName != null){
+			putQueryParameter("ModuleName", moduleName);
 		}
 	}
 
