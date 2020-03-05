@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
 /**
@@ -22,18 +23,15 @@ import com.aliyuncs.cbn.Endpoint;
  * @version 
  */
 public class DescribeRouteConflictRequest extends RpcAcsRequest<DescribeRouteConflictResponse> {
-	
-	public DescribeRouteConflictRequest() {
-		super("Cbn", "2017-09-12", "DescribeRouteConflict", "cbn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String childInstanceId;
+	   
 
 	private Long resourceOwnerId;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String childInstanceRegionId;
 
 	private String resourceOwnerAccount;
 
@@ -41,27 +39,20 @@ public class DescribeRouteConflictRequest extends RpcAcsRequest<DescribeRouteCon
 
 	private String destinationCidrBlock;
 
-	private Integer pageSize;
-
 	private Long ownerId;
 
 	private String childInstanceType;
 
+	private String childInstanceId;
+
 	private String childInstanceRouteTableId;
-
-	private Integer pageNumber;
-
-	private String childInstanceRegionId;
-
-	public String getChildInstanceId() {
-		return this.childInstanceId;
-	}
-
-	public void setChildInstanceId(String childInstanceId) {
-		this.childInstanceId = childInstanceId;
-		if(childInstanceId != null){
-			putQueryParameter("ChildInstanceId", childInstanceId);
-		}
+	public DescribeRouteConflictRequest() {
+		super("Cbn", "2017-09-12", "DescribeRouteConflict", "Cbn");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -72,6 +63,39 @@ public class DescribeRouteConflictRequest extends RpcAcsRequest<DescribeRouteCon
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getChildInstanceRegionId() {
+		return this.childInstanceRegionId;
+	}
+
+	public void setChildInstanceRegionId(String childInstanceRegionId) {
+		this.childInstanceRegionId = childInstanceRegionId;
+		if(childInstanceRegionId != null){
+			putQueryParameter("ChildInstanceRegionId", childInstanceRegionId);
 		}
 	}
 
@@ -108,17 +132,6 @@ public class DescribeRouteConflictRequest extends RpcAcsRequest<DescribeRouteCon
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -141,6 +154,17 @@ public class DescribeRouteConflictRequest extends RpcAcsRequest<DescribeRouteCon
 		}
 	}
 
+	public String getChildInstanceId() {
+		return this.childInstanceId;
+	}
+
+	public void setChildInstanceId(String childInstanceId) {
+		this.childInstanceId = childInstanceId;
+		if(childInstanceId != null){
+			putQueryParameter("ChildInstanceId", childInstanceId);
+		}
+	}
+
 	public String getChildInstanceRouteTableId() {
 		return this.childInstanceRouteTableId;
 	}
@@ -149,28 +173,6 @@ public class DescribeRouteConflictRequest extends RpcAcsRequest<DescribeRouteCon
 		this.childInstanceRouteTableId = childInstanceRouteTableId;
 		if(childInstanceRouteTableId != null){
 			putQueryParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getChildInstanceRegionId() {
-		return this.childInstanceRegionId;
-	}
-
-	public void setChildInstanceRegionId(String childInstanceRegionId) {
-		this.childInstanceRegionId = childInstanceRegionId;
-		if(childInstanceRegionId != null){
-			putQueryParameter("ChildInstanceRegionId", childInstanceRegionId);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
 /**
@@ -22,40 +23,30 @@ import com.aliyuncs.cbn.Endpoint;
  * @version 
  */
 public class SetCenInterRegionBandwidthLimitRequest extends RpcAcsRequest<SetCenInterRegionBandwidthLimitResponse> {
-	
-	public SetCenInterRegionBandwidthLimitRequest() {
-		super("Cbn", "2017-09-12", "SetCenInterRegionBandwidthLimit", "cbn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String localRegionId;
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String cenId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private String oppositeRegionId;
 
-	private Long bandwidthLimit;
-
 	private Long ownerId;
 
-	public String getLocalRegionId() {
-		return this.localRegionId;
-	}
+	private String localRegionId;
 
-	public void setLocalRegionId(String localRegionId) {
-		this.localRegionId = localRegionId;
-		if(localRegionId != null){
-			putQueryParameter("LocalRegionId", localRegionId);
-		}
+	private Long bandwidthLimit;
+	public SetCenInterRegionBandwidthLimitRequest() {
+		super("Cbn", "2017-09-12", "SetCenInterRegionBandwidthLimit", "Cbn");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -69,17 +60,6 @@ public class SetCenInterRegionBandwidthLimitRequest extends RpcAcsRequest<SetCen
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getCenId() {
 		return this.cenId;
 	}
@@ -88,6 +68,17 @@ public class SetCenInterRegionBandwidthLimitRequest extends RpcAcsRequest<SetCen
 		this.cenId = cenId;
 		if(cenId != null){
 			putQueryParameter("CenId", cenId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -113,17 +104,6 @@ public class SetCenInterRegionBandwidthLimitRequest extends RpcAcsRequest<SetCen
 		}
 	}
 
-	public Long getBandwidthLimit() {
-		return this.bandwidthLimit;
-	}
-
-	public void setBandwidthLimit(Long bandwidthLimit) {
-		this.bandwidthLimit = bandwidthLimit;
-		if(bandwidthLimit != null){
-			putQueryParameter("BandwidthLimit", bandwidthLimit.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -132,6 +112,28 @@ public class SetCenInterRegionBandwidthLimitRequest extends RpcAcsRequest<SetCen
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getLocalRegionId() {
+		return this.localRegionId;
+	}
+
+	public void setLocalRegionId(String localRegionId) {
+		this.localRegionId = localRegionId;
+		if(localRegionId != null){
+			putQueryParameter("LocalRegionId", localRegionId);
+		}
+	}
+
+	public Long getBandwidthLimit() {
+		return this.bandwidthLimit;
+	}
+
+	public void setBandwidthLimit(Long bandwidthLimit) {
+		this.bandwidthLimit = bandwidthLimit;
+		if(bandwidthLimit != null){
+			putQueryParameter("BandwidthLimit", bandwidthLimit.toString());
 		}
 	}
 

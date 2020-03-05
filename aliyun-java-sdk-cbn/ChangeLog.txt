@@ -1,3 +1,7 @@
+2020-03-05 Version: 1.0.5
+- Support flow log.
+- Support route map.
+
 2019-08-30 Version: 1.0.4
 - Generated 2017-09-12 for `Cbn`.
 

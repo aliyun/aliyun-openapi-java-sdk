@@ -133,6 +133,8 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 
 		private List<String> operateCommunitySet;
 
+		private List<String> prependAsPath;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -355,6 +357,14 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 
 		public void setOperateCommunitySet(List<String> operateCommunitySet) {
 			this.operateCommunitySet = operateCommunitySet;
+		}
+
+		public List<String> getPrependAsPath() {
+			return this.prependAsPath;
+		}
+
+		public void setPrependAsPath(List<String> prependAsPath) {
+			this.prependAsPath = prependAsPath;
 		}
 	}
 

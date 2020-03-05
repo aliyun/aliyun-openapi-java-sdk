@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
 /**
@@ -22,16 +23,19 @@ import com.aliyuncs.cbn.Endpoint;
  * @version 
  */
 public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsResponse> {
-	
-	public DescribeFlowlogsRequest() {
-		super("Cbn", "2017-09-12", "DescribeFlowlogs", "cbn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String clientToken;
+
+	private String cenId;
+
+	private String description;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
 
 	private String projectName;
 
@@ -39,25 +43,23 @@ public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsRespo
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
-
-	private String cenId;
-
 	private String ownerAccount;
 
-	private String description;
-
 	private Long ownerId;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
 
 	private String flowLogId;
 
 	private String flowLogName;
 
 	private String status;
+	public DescribeFlowlogsRequest() {
+		super("Cbn", "2017-09-12", "DescribeFlowlogs", "Cbn");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -67,6 +69,61 @@ public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getCenId() {
+		return this.cenId;
+	}
+
+	public void setCenId(String cenId) {
+		this.cenId = cenId;
+		if(cenId != null){
+			putQueryParameter("CenId", cenId);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -103,28 +160,6 @@ public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsRespo
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getCenId() {
-		return this.cenId;
-	}
-
-	public void setCenId(String cenId) {
-		this.cenId = cenId;
-		if(cenId != null){
-			putQueryParameter("CenId", cenId);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -136,17 +171,6 @@ public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsRespo
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -155,28 +179,6 @@ public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

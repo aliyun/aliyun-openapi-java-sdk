@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.cbn.Endpoint;
  * @version 
  */
 public class DeleteCenRequest extends RpcAcsRequest<DeleteCenResponse> {
-	
-	public DeleteCenRequest() {
-		super("Cbn", "2017-09-12", "DeleteCen", "cbn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -40,6 +34,14 @@ public class DeleteCenRequest extends RpcAcsRequest<DeleteCenResponse> {
 	private String ownerAccount;
 
 	private Long ownerId;
+	public DeleteCenRequest() {
+		super("Cbn", "2017-09-12", "DeleteCen", "Cbn");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
 /**
@@ -22,30 +23,31 @@ import com.aliyuncs.cbn.Endpoint;
  * @version 
  */
 public class DisableCenVbrHealthCheckRequest extends RpcAcsRequest<DisableCenVbrHealthCheckResponse> {
-	
-	public DisableCenVbrHealthCheckRequest() {
-		super("Cbn", "2017-09-12", "DisableCenVbrHealthCheck", "cbn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
-
-	private String resourceOwnerAccount;
 
 	private String cenId;
 
 	private Long vbrInstanceOwnerId;
 
-	private String ownerAccount;
+	private String vbrInstanceRegionId;
 
-	private String vbrInstanceId;
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String vbrInstanceRegionId;
+	private String vbrInstanceId;
+	public DisableCenVbrHealthCheckRequest() {
+		super("Cbn", "2017-09-12", "DisableCenVbrHealthCheck", "Cbn");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,17 +57,6 @@ public class DisableCenVbrHealthCheckRequest extends RpcAcsRequest<DisableCenVbr
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -91,6 +82,28 @@ public class DisableCenVbrHealthCheckRequest extends RpcAcsRequest<DisableCenVbr
 		}
 	}
 
+	public String getVbrInstanceRegionId() {
+		return this.vbrInstanceRegionId;
+	}
+
+	public void setVbrInstanceRegionId(String vbrInstanceRegionId) {
+		this.vbrInstanceRegionId = vbrInstanceRegionId;
+		if(vbrInstanceRegionId != null){
+			putQueryParameter("VbrInstanceRegionId", vbrInstanceRegionId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -99,17 +112,6 @@ public class DisableCenVbrHealthCheckRequest extends RpcAcsRequest<DisableCenVbr
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getVbrInstanceId() {
-		return this.vbrInstanceId;
-	}
-
-	public void setVbrInstanceId(String vbrInstanceId) {
-		this.vbrInstanceId = vbrInstanceId;
-		if(vbrInstanceId != null){
-			putQueryParameter("VbrInstanceId", vbrInstanceId);
 		}
 	}
 
@@ -124,14 +126,14 @@ public class DisableCenVbrHealthCheckRequest extends RpcAcsRequest<DisableCenVbr
 		}
 	}
 
-	public String getVbrInstanceRegionId() {
-		return this.vbrInstanceRegionId;
+	public String getVbrInstanceId() {
+		return this.vbrInstanceId;
 	}
 
-	public void setVbrInstanceRegionId(String vbrInstanceRegionId) {
-		this.vbrInstanceRegionId = vbrInstanceRegionId;
-		if(vbrInstanceRegionId != null){
-			putQueryParameter("VbrInstanceRegionId", vbrInstanceRegionId);
+	public void setVbrInstanceId(String vbrInstanceId) {
+		this.vbrInstanceId = vbrInstanceId;
+		if(vbrInstanceId != null){
+			putQueryParameter("VbrInstanceId", vbrInstanceId);
 		}
 	}
 

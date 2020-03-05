@@ -23,10 +23,12 @@ import com.aliyuncs.cbn.Endpoint;
  * @author auto create
  * @version 
  */
-public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
+public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 	   
 
 	private Long resourceOwnerId;
+
+	private List<Tag> tags;
 
 	private List<String> resourceIds;
 
@@ -37,10 +39,8 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 	private Long ownerId;
 
 	private String resourceType;
-
-	private List<String> tagKeys;
-	public UntagResourcesRequest() {
-		super("Cbn", "2017-09-12", "UntagResources", "Cbn");
+	public TagResourcesRequest() {
+		super("Cbn", "2017-09-12", "TagResources", "Cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,6 +57,20 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public List<String> getResourceIds() {
@@ -116,22 +130,32 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		}
 	}
 
-	public List<String> getTagKeys() {
-		return this.tagKeys;
-	}
+	public static class Tag {
 
-	public void setTagKeys(List<String> tagKeys) {
-		this.tagKeys = tagKeys;	
-		if (tagKeys != null) {
-			for (int i = 0; i < tagKeys.size(); i++) {
-				putQueryParameter("TagKey." + (i + 1) , tagKeys.get(i));
-			}
-		}	
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	@Override
-	public Class<UntagResourcesResponse> getResponseClass() {
-		return UntagResourcesResponse.class;
+	public Class<TagResourcesResponse> getResponseClass() {
+		return TagResourcesResponse.class;
 	}
 
 }

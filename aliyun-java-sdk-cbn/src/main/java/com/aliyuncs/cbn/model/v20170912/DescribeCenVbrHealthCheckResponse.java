@@ -91,6 +91,10 @@ public class DescribeCenVbrHealthCheckResponse extends AcsResponse {
 
 		private Long delay;
 
+		private Integer healthCheckInterval;
+
+		private Integer healthyThreshold;
+
 		public String getCenId() {
 			return this.cenId;
 		}
@@ -145,6 +149,22 @@ public class DescribeCenVbrHealthCheckResponse extends AcsResponse {
 
 		public void setDelay(Long delay) {
 			this.delay = delay;
+		}
+
+		public Integer getHealthCheckInterval() {
+			return this.healthCheckInterval;
+		}
+
+		public void setHealthCheckInterval(Integer healthCheckInterval) {
+			this.healthCheckInterval = healthCheckInterval;
+		}
+
+		public Integer getHealthyThreshold() {
+			return this.healthyThreshold;
+		}
+
+		public void setHealthyThreshold(Integer healthyThreshold) {
+			this.healthyThreshold = healthyThreshold;
 		}
 	}
 

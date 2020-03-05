@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
 /**
@@ -22,32 +23,33 @@ import com.aliyuncs.cbn.Endpoint;
  * @version 
  */
 public class DescribeCenRegionDomainRouteEntriesRequest extends RpcAcsRequest<DescribeCenRegionDomainRouteEntriesResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private String cenId;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String cenRegionId;
+
+	private String status;
 	public DescribeCenRegionDomainRouteEntriesRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenRegionDomainRouteEntries", "cbn");
+		super("Cbn", "2017-09-12", "DescribeCenRegionDomainRouteEntries", "Cbn");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long resourceOwnerId;
-
-	private String resourceOwnerAccount;
-
-	private String cenId;
-
-	private String ownerAccount;
-
-	private String cenRegionId;
-
-	private Integer pageSize;
-
-	private Long ownerId;
-
-	private Integer pageNumber;
-
-	private String status;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -57,17 +59,6 @@ public class DescribeCenRegionDomainRouteEntriesRequest extends RpcAcsRequest<De
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -82,25 +73,14 @@ public class DescribeCenRegionDomainRouteEntriesRequest extends RpcAcsRequest<De
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getCenRegionId() {
-		return this.cenRegionId;
-	}
-
-	public void setCenRegionId(String cenRegionId) {
-		this.cenRegionId = cenRegionId;
-		if(cenRegionId != null){
-			putQueryParameter("CenRegionId", cenRegionId);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -115,6 +95,28 @@ public class DescribeCenRegionDomainRouteEntriesRequest extends RpcAcsRequest<De
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -126,14 +128,14 @@ public class DescribeCenRegionDomainRouteEntriesRequest extends RpcAcsRequest<De
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getCenRegionId() {
+		return this.cenRegionId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setCenRegionId(String cenRegionId) {
+		this.cenRegionId = cenRegionId;
+		if(cenRegionId != null){
+			putQueryParameter("CenRegionId", cenRegionId);
 		}
 	}
 

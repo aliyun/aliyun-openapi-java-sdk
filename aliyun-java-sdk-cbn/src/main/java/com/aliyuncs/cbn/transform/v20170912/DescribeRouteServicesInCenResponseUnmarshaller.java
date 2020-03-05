@@ -40,6 +40,8 @@ public class DescribeRouteServicesInCenResponseUnmarshaller {
 			routeServiceEntry.setAccessRegionId(_ctx.stringValue("DescribeRouteServicesInCenResponse.RouteServiceEntries["+ i +"].AccessRegionId"));
 			routeServiceEntry.setUpdateInterval(_ctx.stringValue("DescribeRouteServicesInCenResponse.RouteServiceEntries["+ i +"].UpdateInterval"));
 			routeServiceEntry.setStatus(_ctx.stringValue("DescribeRouteServicesInCenResponse.RouteServiceEntries["+ i +"].Status"));
+			routeServiceEntry.setHostVpcId(_ctx.stringValue("DescribeRouteServicesInCenResponse.RouteServiceEntries["+ i +"].HostVpcId"));
+			routeServiceEntry.setDescription(_ctx.stringValue("DescribeRouteServicesInCenResponse.RouteServiceEntries["+ i +"].Description"));
 
 			List<String> cidrs = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRouteServicesInCenResponse.RouteServiceEntries["+ i +"].Cidrs.Length"); j++) {

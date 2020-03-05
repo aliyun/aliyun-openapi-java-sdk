@@ -123,6 +123,12 @@ public class DescribeCenRouteMapsResponseUnmarshaller {
 			}
 			routeMap.setOperateCommunitySet(operateCommunitySet);
 
+			List<String> prependAsPath = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].PrependAsPath.Length"); j++) {
+				prependAsPath.add(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].PrependAsPath["+ j +"]"));
+			}
+			routeMap.setPrependAsPath(prependAsPath);
+
 			routeMaps.add(routeMap);
 		}
 		describeCenRouteMapsResponse.setRouteMaps(routeMaps);

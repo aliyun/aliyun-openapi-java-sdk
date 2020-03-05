@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
 /**
@@ -22,26 +23,27 @@ import com.aliyuncs.cbn.Endpoint;
  * @version 
  */
 public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantRulesToCenResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private String cenId;
+
+	private String productType;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
 	public DescribeGrantRulesToCenRequest() {
-		super("Cbn", "2017-09-12", "DescribeGrantRulesToCen", "cbn");
+		super("Cbn", "2017-09-12", "DescribeGrantRulesToCen", "Cbn");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long resourceOwnerId;
-
-	private String resourceOwnerAccount;
-
-	private String cenId;
-
-	private String ownerAccount;
-
-	private Long ownerId;
-
-	private String productType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,17 +56,6 @@ public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantR
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getCenId() {
 		return this.cenId;
 	}
@@ -73,6 +64,28 @@ public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantR
 		this.cenId = cenId;
 		if(cenId != null){
 			putQueryParameter("CenId", cenId);
+		}
+	}
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -95,17 +108,6 @@ public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getProductType() {
-		return this.productType;
-	}
-
-	public void setProductType(String productType) {
-		this.productType = productType;
-		if(productType != null){
-			putQueryParameter("ProductType", productType);
 		}
 	}
 
