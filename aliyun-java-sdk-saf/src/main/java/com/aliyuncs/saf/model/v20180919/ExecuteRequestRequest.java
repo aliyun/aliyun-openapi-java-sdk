@@ -16,21 +16,28 @@ package com.aliyuncs.saf.model.v20180919;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.saf.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ExecuteRequestRequest extends RpcAcsRequest<ExecuteRequestResponse> {
-	
-	public ExecuteRequestRequest() {
-		super("saf", "2018-09-19", "ExecuteRequest", "saf");
-		setProtocol(ProtocolType.HTTPS);
-	}
+	   
 
 	private String serviceParameters;
 
 	private String service;
+	public ExecuteRequestRequest() {
+		super("saf", "2018-09-19", "ExecuteRequest", "saf");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getServiceParameters() {
 		return this.serviceParameters;
