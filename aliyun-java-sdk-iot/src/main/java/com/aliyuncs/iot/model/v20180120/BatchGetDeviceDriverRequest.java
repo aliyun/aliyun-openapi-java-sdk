@@ -32,7 +32,7 @@ public class BatchGetDeviceDriverRequest extends RpcAcsRequest<BatchGetDeviceDri
 
 	private String instanceId;
 	public BatchGetDeviceDriverRequest() {
-		super("Iot", "2018-01-20", "BatchGetDeviceDriver", "iot");
+		super("Iot", "2018-01-20", "BatchGetDeviceDriver", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

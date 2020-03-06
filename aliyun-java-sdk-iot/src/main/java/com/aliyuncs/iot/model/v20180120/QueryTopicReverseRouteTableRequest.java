@@ -29,7 +29,7 @@ public class QueryTopicReverseRouteTableRequest extends RpcAcsRequest<QueryTopic
 
 	private String topic;
 	public QueryTopicReverseRouteTableRequest() {
-		super("Iot", "2018-01-20", "QueryTopicReverseRouteTable", "iot");
+		super("Iot", "2018-01-20", "QueryTopicReverseRouteTable", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

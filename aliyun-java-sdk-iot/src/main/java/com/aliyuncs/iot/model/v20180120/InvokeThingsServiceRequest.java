@@ -36,7 +36,7 @@ public class InvokeThingsServiceRequest extends RpcAcsRequest<InvokeThingsServic
 
 	private List<String> deviceNames;
 	public InvokeThingsServiceRequest() {
-		super("Iot", "2018-01-20", "InvokeThingsService", "iot");
+		super("Iot", "2018-01-20", "InvokeThingsService", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

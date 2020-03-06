@@ -35,7 +35,7 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 
 	private String iotInstanceId;
 	public PubRequest() {
-		super("Iot", "2018-01-20", "Pub", "iot");
+		super("Iot", "2018-01-20", "Pub", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

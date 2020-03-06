@@ -30,7 +30,7 @@ public class BatchUpdateDeviceNicknameRequest extends RpcAcsRequest<BatchUpdateD
 
 	private String iotInstanceId;
 	public BatchUpdateDeviceNicknameRequest() {
-		super("Iot", "2018-01-20", "BatchUpdateDeviceNickname", "iot");
+		super("Iot", "2018-01-20", "BatchUpdateDeviceNickname", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

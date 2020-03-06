@@ -29,7 +29,7 @@ public class CloseEdgeInstanceDeploymentRequest extends RpcAcsRequest<CloseEdgeI
 
 	private String instanceId;
 	public CloseEdgeInstanceDeploymentRequest() {
-		super("Iot", "2018-01-20", "CloseEdgeInstanceDeployment", "iot");
+		super("Iot", "2018-01-20", "CloseEdgeInstanceDeployment", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

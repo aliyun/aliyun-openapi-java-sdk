@@ -33,7 +33,7 @@ public class DeleteDeviceRequest extends RpcAcsRequest<DeleteDeviceResponse> {
 
 	private String deviceName;
 	public DeleteDeviceRequest() {
-		super("Iot", "2018-01-20", "DeleteDevice", "iot");
+		super("Iot", "2018-01-20", "DeleteDevice", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

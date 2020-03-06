@@ -34,7 +34,7 @@ public class BatchAddThingTopoRequest extends RpcAcsRequest<BatchAddThingTopoRes
 
 	private String iotInstanceId;
 	public BatchAddThingTopoRequest() {
-		super("Iot", "2018-01-20", "BatchAddThingTopo", "iot");
+		super("Iot", "2018-01-20", "BatchAddThingTopo", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

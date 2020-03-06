@@ -35,7 +35,7 @@ public class ListRuleRequest extends RpcAcsRequest<ListRuleResponse> {
 
 	private Integer pageSize;
 	public ListRuleRequest() {
-		super("Iot", "2018-01-20", "ListRule", "iot");
+		super("Iot", "2018-01-20", "ListRule", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

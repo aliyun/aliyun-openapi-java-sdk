@@ -22,21 +22,38 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetEdgeInstanceDeploymentRequest extends RpcAcsRequest<GetEdgeInstanceDeploymentResponse> {
+public class CreateEdgeOssPreSignedAddressRequest extends RpcAcsRequest<CreateEdgeOssPreSignedAddressResponse> {
 	   
+
+	private String type;
 
 	private String iotInstanceId;
 
-	private String instanceId;
+	private String resourceVersion;
 
-	private String deploymentId;
-	public GetEdgeInstanceDeploymentRequest() {
-		super("Iot", "2018-01-20", "GetEdgeInstanceDeployment", "Iot");
+	private String resourceId;
+
+	private String fileName;
+
+	private String instanceId;
+	public CreateEdgeOssPreSignedAddressRequest() {
+		super("Iot", "2018-01-20", "CreateEdgeOssPreSignedAddress", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
 	}
 
 	public String getIotInstanceId() {
@@ -47,6 +64,39 @@ public class GetEdgeInstanceDeploymentRequest extends RpcAcsRequest<GetEdgeInsta
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getResourceVersion() {
+		return this.resourceVersion;
+	}
+
+	public void setResourceVersion(String resourceVersion) {
+		this.resourceVersion = resourceVersion;
+		if(resourceVersion != null){
+			putQueryParameter("ResourceVersion", resourceVersion);
+		}
+	}
+
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
+		}
+	}
+
+	public String getFileName() {
+		return this.fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putQueryParameter("FileName", fileName);
 		}
 	}
 
@@ -61,20 +111,9 @@ public class GetEdgeInstanceDeploymentRequest extends RpcAcsRequest<GetEdgeInsta
 		}
 	}
 
-	public String getDeploymentId() {
-		return this.deploymentId;
-	}
-
-	public void setDeploymentId(String deploymentId) {
-		this.deploymentId = deploymentId;
-		if(deploymentId != null){
-			putQueryParameter("DeploymentId", deploymentId);
-		}
-	}
-
 	@Override
-	public Class<GetEdgeInstanceDeploymentResponse> getResponseClass() {
-		return GetEdgeInstanceDeploymentResponse.class;
+	public Class<CreateEdgeOssPreSignedAddressResponse> getResponseClass() {
+		return CreateEdgeOssPreSignedAddressResponse.class;
 	}
 
 }

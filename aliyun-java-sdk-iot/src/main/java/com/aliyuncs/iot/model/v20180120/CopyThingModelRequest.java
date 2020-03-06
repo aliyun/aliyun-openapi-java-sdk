@@ -35,7 +35,7 @@ public class CopyThingModelRequest extends RpcAcsRequest<CopyThingModelResponse>
 
 	private String sourceModelVersion;
 	public CopyThingModelRequest() {
-		super("Iot", "2018-01-20", "CopyThingModel", "iot");
+		super("Iot", "2018-01-20", "CopyThingModel", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -40,7 +40,7 @@ public class QueryAppDeviceListRequest extends RpcAcsRequest<QueryAppDeviceListR
 
 	private String appKey;
 	public QueryAppDeviceListRequest() {
-		super("Iot", "2018-01-20", "QueryAppDeviceList", "iot");
+		super("Iot", "2018-01-20", "QueryAppDeviceList", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

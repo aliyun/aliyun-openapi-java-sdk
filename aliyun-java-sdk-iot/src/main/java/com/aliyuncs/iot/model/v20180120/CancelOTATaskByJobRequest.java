@@ -37,7 +37,7 @@ public class CancelOTATaskByJobRequest extends RpcAcsRequest<CancelOTATaskByJobR
 
 	private Boolean cancelNotifiedTask;
 	public CancelOTATaskByJobRequest() {
-		super("Iot", "2018-01-20", "CancelOTATaskByJob", "iot");
+		super("Iot", "2018-01-20", "CancelOTATaskByJob", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

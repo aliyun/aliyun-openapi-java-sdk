@@ -31,7 +31,7 @@ public class SetProductCertInfoRequest extends RpcAcsRequest<SetProductCertInfoR
 
 	private Integer issueModel;
 	public SetProductCertInfoRequest() {
-		super("Iot", "2018-01-20", "SetProductCertInfo", "iot");
+		super("Iot", "2018-01-20", "SetProductCertInfo", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

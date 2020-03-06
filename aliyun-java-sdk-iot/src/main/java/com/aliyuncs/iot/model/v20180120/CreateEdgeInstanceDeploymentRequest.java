@@ -31,7 +31,7 @@ public class CreateEdgeInstanceDeploymentRequest extends RpcAcsRequest<CreateEdg
 
 	private String instanceId;
 	public CreateEdgeInstanceDeploymentRequest() {
-		super("Iot", "2018-01-20", "CreateEdgeInstanceDeployment", "iot");
+		super("Iot", "2018-01-20", "CreateEdgeInstanceDeployment", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

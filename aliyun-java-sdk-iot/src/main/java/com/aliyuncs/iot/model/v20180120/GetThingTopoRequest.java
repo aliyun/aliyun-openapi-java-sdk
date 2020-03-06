@@ -37,7 +37,7 @@ public class GetThingTopoRequest extends RpcAcsRequest<GetThingTopoResponse> {
 
 	private String deviceName;
 	public GetThingTopoRequest() {
-		super("Iot", "2018-01-20", "GetThingTopo", "iot");
+		super("Iot", "2018-01-20", "GetThingTopo", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

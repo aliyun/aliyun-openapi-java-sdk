@@ -32,7 +32,7 @@ public class BatchGetEdgeInstanceDeviceConfigRequest extends RpcAcsRequest<Batch
 
 	private String instanceId;
 	public BatchGetEdgeInstanceDeviceConfigRequest() {
-		super("Iot", "2018-01-20", "BatchGetEdgeInstanceDeviceConfig", "iot");
+		super("Iot", "2018-01-20", "BatchGetEdgeInstanceDeviceConfig", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

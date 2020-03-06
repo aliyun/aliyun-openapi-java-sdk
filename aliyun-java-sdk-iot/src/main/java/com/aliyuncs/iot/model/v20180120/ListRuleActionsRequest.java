@@ -29,7 +29,7 @@ public class ListRuleActionsRequest extends RpcAcsRequest<ListRuleActionsRespons
 
 	private Long ruleId;
 	public ListRuleActionsRequest() {
-		super("Iot", "2018-01-20", "ListRuleActions", "iot");
+		super("Iot", "2018-01-20", "ListRuleActions", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

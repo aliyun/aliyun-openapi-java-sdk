@@ -32,7 +32,7 @@ public class UpdateProductTagsRequest extends RpcAcsRequest<UpdateProductTagsRes
 
 	private String iotInstanceId;
 	public UpdateProductTagsRequest() {
-		super("Iot", "2018-01-20", "UpdateProductTags", "iot");
+		super("Iot", "2018-01-20", "UpdateProductTags", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

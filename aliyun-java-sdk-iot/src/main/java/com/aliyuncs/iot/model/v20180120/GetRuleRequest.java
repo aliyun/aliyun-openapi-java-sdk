@@ -29,7 +29,7 @@ public class GetRuleRequest extends RpcAcsRequest<GetRuleResponse> {
 
 	private Long ruleId;
 	public GetRuleRequest() {
-		super("Iot", "2018-01-20", "GetRule", "iot");
+		super("Iot", "2018-01-20", "GetRule", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

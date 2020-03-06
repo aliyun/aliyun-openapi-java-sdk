@@ -36,7 +36,7 @@ public class CreateOTAVerifyJobRequest extends RpcAcsRequest<CreateOTAVerifyJobR
 
 	private List<String> targetDeviceNames;
 	public CreateOTAVerifyJobRequest() {
-		super("Iot", "2018-01-20", "CreateOTAVerifyJob", "iot");
+		super("Iot", "2018-01-20", "CreateOTAVerifyJob", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

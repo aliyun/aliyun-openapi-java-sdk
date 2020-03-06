@@ -37,7 +37,7 @@ public class SetDeviceDesiredPropertyRequest extends RpcAcsRequest<SetDeviceDesi
 
 	private String items;
 	public SetDeviceDesiredPropertyRequest() {
-		super("Iot", "2018-01-20", "SetDeviceDesiredProperty", "iot");
+		super("Iot", "2018-01-20", "SetDeviceDesiredProperty", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

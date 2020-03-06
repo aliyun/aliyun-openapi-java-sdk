@@ -44,7 +44,7 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 
 	private String desc;
 	public CreateDataAPIServiceRequest() {
-		super("Iot", "2018-01-20", "CreateDataAPIService", "iot");
+		super("Iot", "2018-01-20", "CreateDataAPIService", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class QueryProductRequest extends RpcAcsRequest<QueryProductResponse> {
 
 	private String iotInstanceId;
 	public QueryProductRequest() {
-		super("Iot", "2018-01-20", "QueryProduct", "iot");
+		super("Iot", "2018-01-20", "QueryProduct", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

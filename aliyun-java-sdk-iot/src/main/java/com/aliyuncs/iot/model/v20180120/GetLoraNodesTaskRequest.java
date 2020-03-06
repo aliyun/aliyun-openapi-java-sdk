@@ -29,7 +29,7 @@ public class GetLoraNodesTaskRequest extends RpcAcsRequest<GetLoraNodesTaskRespo
 
 	private String taskId;
 	public GetLoraNodesTaskRequest() {
-		super("Iot", "2018-01-20", "GetLoraNodesTask", "iot");
+		super("Iot", "2018-01-20", "GetLoraNodesTask", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

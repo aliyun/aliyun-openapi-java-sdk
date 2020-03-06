@@ -31,7 +31,7 @@ public class SetDeviceGroupTagsRequest extends RpcAcsRequest<SetDeviceGroupTagsR
 
 	private String iotInstanceId;
 	public SetDeviceGroupTagsRequest() {
-		super("Iot", "2018-01-20", "SetDeviceGroupTags", "iot");
+		super("Iot", "2018-01-20", "SetDeviceGroupTags", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

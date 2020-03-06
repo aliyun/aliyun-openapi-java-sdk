@@ -37,7 +37,7 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 
 	private String deviceName;
 	public RegisterDeviceRequest() {
-		super("Iot", "2018-01-20", "RegisterDevice", "iot");
+		super("Iot", "2018-01-20", "RegisterDevice", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
