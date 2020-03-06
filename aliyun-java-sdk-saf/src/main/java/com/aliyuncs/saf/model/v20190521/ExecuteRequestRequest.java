@@ -30,7 +30,7 @@ public class ExecuteRequestRequest extends RpcAcsRequest<ExecuteRequestResponse>
 
 	private String service;
 	public ExecuteRequestRequest() {
-		super("saf", "2019-05-21", "ExecuteRequest", "saf");
+		super("saf", "2019-05-21", "ExecuteRequest", "saf_s");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
