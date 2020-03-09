@@ -33,7 +33,7 @@ public class DescribePreCheckProgressListRequest extends RpcAcsRequest<DescribeP
 
 	private String restoreTaskId;
 	public DescribePreCheckProgressListRequest() {
-		super("Dbs", "2019-03-06", "DescribePreCheckProgressList");
+		super("Dbs", "2019-03-06", "DescribePreCheckProgressList", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

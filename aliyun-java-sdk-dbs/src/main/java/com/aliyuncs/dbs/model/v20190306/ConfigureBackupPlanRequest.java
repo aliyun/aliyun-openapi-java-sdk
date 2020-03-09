@@ -47,6 +47,8 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 
 	private Boolean enableBackupLog;
 
+	private String backupStorageType;
+
 	private Integer duplicationArchivePeriod;
 
 	private String sourceEndpointPassword;
@@ -69,7 +71,7 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 
 	private String oSSBucketName;
 	public ConfigureBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "ConfigureBackupPlan");
+		super("Dbs", "2019-03-06", "ConfigureBackupPlan", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -195,6 +197,17 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		this.enableBackupLog = enableBackupLog;
 		if(enableBackupLog != null){
 			putQueryParameter("EnableBackupLog", enableBackupLog.toString());
+		}
+	}
+
+	public String getBackupStorageType() {
+		return this.backupStorageType;
+	}
+
+	public void setBackupStorageType(String backupStorageType) {
+		this.backupStorageType = backupStorageType;
+		if(backupStorageType != null){
+			putQueryParameter("BackupStorageType", backupStorageType);
 		}
 	}
 

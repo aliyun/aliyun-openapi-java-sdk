@@ -33,7 +33,7 @@ public class UpgradeBackupPlanRequest extends RpcAcsRequest<UpgradeBackupPlanRes
 
 	private String instanceClass;
 	public UpgradeBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "UpgradeBackupPlan");
+		super("Dbs", "2019-03-06", "UpgradeBackupPlan", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

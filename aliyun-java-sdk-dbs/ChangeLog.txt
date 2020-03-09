@@ -1,3 +1,6 @@
+2020-03-09 Version: 1.0.22
+- Add BackupStorageType.
+
 2020-02-25 Version: 1.0.21
 - Update backupsetDownloadset fun.
 

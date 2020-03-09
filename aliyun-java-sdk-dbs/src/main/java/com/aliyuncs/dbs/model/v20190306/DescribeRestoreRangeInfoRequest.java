@@ -35,7 +35,7 @@ public class DescribeRestoreRangeInfoRequest extends RpcAcsRequest<DescribeResto
 
 	private String ownerId;
 	public DescribeRestoreRangeInfoRequest() {
-		super("Dbs", "2019-03-06", "DescribeRestoreRangeInfo");
+		super("Dbs", "2019-03-06", "DescribeRestoreRangeInfo", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DescribeJobErrorCodeRequest extends RpcAcsRequest<DescribeJobErrorC
 
 	private String taskId;
 	public DescribeJobErrorCodeRequest() {
-		super("Dbs", "2019-03-06", "DescribeJobErrorCode");
+		super("Dbs", "2019-03-06", "DescribeJobErrorCode", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

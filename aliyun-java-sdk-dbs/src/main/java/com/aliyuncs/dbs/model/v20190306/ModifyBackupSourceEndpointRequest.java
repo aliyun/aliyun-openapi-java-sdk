@@ -53,7 +53,7 @@ public class ModifyBackupSourceEndpointRequest extends RpcAcsRequest<ModifyBacku
 
 	private String sourceEndpointOracleSID;
 	public ModifyBackupSourceEndpointRequest() {
-		super("Dbs", "2019-03-06", "ModifyBackupSourceEndpoint");
+		super("Dbs", "2019-03-06", "ModifyBackupSourceEndpoint", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

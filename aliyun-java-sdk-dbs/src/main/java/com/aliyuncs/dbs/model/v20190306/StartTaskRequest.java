@@ -31,7 +31,7 @@ public class StartTaskRequest extends RpcAcsRequest<StartTaskResponse> {
 
 	private String taskId;
 	public StartTaskRequest() {
-		super("Dbs", "2019-03-06", "StartTask");
+		super("Dbs", "2019-03-06", "StartTask", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

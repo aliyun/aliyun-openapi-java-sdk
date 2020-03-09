@@ -37,7 +37,7 @@ public class DescribeIncrementBackupListRequest extends RpcAcsRequest<DescribeIn
 
 	private Integer pageSize;
 	public DescribeIncrementBackupListRequest() {
-		super("Dbs", "2019-03-06", "DescribeIncrementBackupList");
+		super("Dbs", "2019-03-06", "DescribeIncrementBackupList", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

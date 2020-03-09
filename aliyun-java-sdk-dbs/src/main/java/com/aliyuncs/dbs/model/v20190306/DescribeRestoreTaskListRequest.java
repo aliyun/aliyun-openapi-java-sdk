@@ -37,7 +37,7 @@ public class DescribeRestoreTaskListRequest extends RpcAcsRequest<DescribeRestor
 
 	private Integer pageSize;
 	public DescribeRestoreTaskListRequest() {
-		super("Dbs", "2019-03-06", "DescribeRestoreTaskList");
+		super("Dbs", "2019-03-06", "DescribeRestoreTaskList", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

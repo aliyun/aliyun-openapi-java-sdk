@@ -37,7 +37,7 @@ public class DescribeBackupSetDownloadTaskListRequest extends RpcAcsRequest<Desc
 
 	private Integer pageSize;
 	public DescribeBackupSetDownloadTaskListRequest() {
-		super("Dbs", "2019-03-06", "DescribeBackupSetDownloadTaskList");
+		super("Dbs", "2019-03-06", "DescribeBackupSetDownloadTaskList", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class CreateIncrementBackupSetDownloadRequest extends RpcAcsRequest<Creat
 
 	private String backupSetDataFormat;
 	public CreateIncrementBackupSetDownloadRequest() {
-		super("Dbs", "2019-03-06", "CreateIncrementBackupSetDownload");
+		super("Dbs", "2019-03-06", "CreateIncrementBackupSetDownload", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

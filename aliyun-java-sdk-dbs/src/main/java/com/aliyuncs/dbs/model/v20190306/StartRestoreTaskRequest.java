@@ -31,7 +31,7 @@ public class StartRestoreTaskRequest extends RpcAcsRequest<StartRestoreTaskRespo
 
 	private String restoreTaskId;
 	public StartRestoreTaskRequest() {
-		super("Dbs", "2019-03-06", "StartRestoreTask");
+		super("Dbs", "2019-03-06", "StartRestoreTask", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

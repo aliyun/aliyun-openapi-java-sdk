@@ -43,7 +43,7 @@ public class ModifyBackupSetDownloadRulesRequest extends RpcAcsRequest<ModifyBac
 
 	private String backupSetDownloadDir;
 	public ModifyBackupSetDownloadRulesRequest() {
-		super("Dbs", "2019-03-06", "ModifyBackupSetDownloadRules");
+		super("Dbs", "2019-03-06", "ModifyBackupSetDownloadRules", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
