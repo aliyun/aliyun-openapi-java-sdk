@@ -29,6 +29,7 @@ public class RunContactReviewResponseUnmarshaller {
 	public static RunContactReviewResponse unmarshall(RunContactReviewResponse runContactReviewResponse, UnmarshallerContext _ctx) {
 		
 		runContactReviewResponse.setRequestId(_ctx.stringValue("RunContactReviewResponse.RequestId"));
+		runContactReviewResponse.setRawContractContent(_ctx.stringValue("RunContactReviewResponse.RawContractContent"));
 
 		ContactContent contactContent = new ContactContent();
 

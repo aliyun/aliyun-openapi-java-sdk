@@ -1,3 +1,6 @@
+2020-03-09 Version: 0.0.4
+- NlpAutoml update contract api.
+
 2019-12-26 Version: 0.0.3
 - NlpAutoml add async api.
 

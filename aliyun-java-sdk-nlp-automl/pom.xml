@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-nlp-automl</artifactId>
   <packaging>jar</packaging>
-  <version>0.0.3</version>
+  <version>0.0.4</version>
   <name>aliyun-java-sdk-nlp-automl</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
