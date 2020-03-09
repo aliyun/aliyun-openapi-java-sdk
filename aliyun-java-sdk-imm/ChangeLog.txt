@@ -1,3 +1,6 @@
+2020-03-09 Version: 1.15.8
+- Add EmotionConfidence to GetImage.
+
 2020-02-10 Version: 1.15.7
 - Supported address for GetMediaMeta.
 

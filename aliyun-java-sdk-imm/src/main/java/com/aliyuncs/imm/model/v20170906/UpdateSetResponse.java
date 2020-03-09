@@ -78,4 +78,9 @@ public class UpdateSetResponse extends AcsResponse {
 	public UpdateSetResponse getInstance(UnmarshallerContext context) {
 		return	UpdateSetResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

@@ -455,6 +455,8 @@ public class GetImageResponse extends AcsResponse {
 
 		private Float faceQuality;
 
+		private Float emotionConfidence;
+
 		private FaceAttributes faceAttributes;
 
 		private EmotionDetails emotionDetails;
@@ -529,6 +531,14 @@ public class GetImageResponse extends AcsResponse {
 
 		public void setFaceQuality(Float faceQuality) {
 			this.faceQuality = faceQuality;
+		}
+
+		public Float getEmotionConfidence() {
+			return this.emotionConfidence;
+		}
+
+		public void setEmotionConfidence(Float emotionConfidence) {
+			this.emotionConfidence = emotionConfidence;
 		}
 
 		public FaceAttributes getFaceAttributes() {

@@ -94,6 +94,7 @@ public class GetImageResponseUnmarshaller {
 			facesItem.setGenderConfidence(_ctx.floatValue("GetImageResponse.Faces["+ i +"].GenderConfidence"));
 			facesItem.setGroupId(_ctx.stringValue("GetImageResponse.Faces["+ i +"].GroupId"));
 			facesItem.setFaceQuality(_ctx.floatValue("GetImageResponse.Faces["+ i +"].FaceQuality"));
+			facesItem.setEmotionConfidence(_ctx.floatValue("GetImageResponse.Faces["+ i +"].EmotionConfidence"));
 
 			FaceAttributes faceAttributes = new FaceAttributes();
 			faceAttributes.setGlasses(_ctx.stringValue("GetImageResponse.Faces["+ i +"].FaceAttributes.Glasses"));
