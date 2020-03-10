@@ -32,6 +32,8 @@ public class CreateSceneResponse extends AcsResponse {
 
 	private String errMessage;
 
+	private String previewToken;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -62,6 +64,14 @@ public class CreateSceneResponse extends AcsResponse {
 
 	public void setErrMessage(String errMessage) {
 		this.errMessage = errMessage;
+	}
+
+	public String getPreviewToken() {
+		return this.previewToken;
+	}
+
+	public void setPreviewToken(String previewToken) {
+		this.previewToken = previewToken;
 	}
 
 	@Override
