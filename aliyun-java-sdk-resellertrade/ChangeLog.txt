@@ -1,3 +1,6 @@
+2020-03-10 Version: 1.0.2
+- Deploy GetCustomerList Service.
+
 2020-02-28 Version: 1.0.1
 - Generated 2019-12-27 for `ResellerTrade`.
 
