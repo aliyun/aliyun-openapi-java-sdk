@@ -22,16 +22,16 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetCdnDomainCSRCertificateRequest extends RpcAcsRequest<SetCdnDomainCSRCertificateResponse> {
+public class CreateIllegalUrlExportTaskRequest extends RpcAcsRequest<CreateIllegalUrlExportTaskResponse> {
 	   
 
-	private String serverCertificate;
-
-	private String domainName;
+	private String taskName;
 
 	private Long ownerId;
-	public SetCdnDomainCSRCertificateRequest() {
-		super("Cdn", "2018-05-10", "SetCdnDomainCSRCertificate");
+
+	private String timePoint;
+	public CreateIllegalUrlExportTaskRequest() {
+		super("Cdn", "2018-05-10", "CreateIllegalUrlExportTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,25 +39,14 @@ public class SetCdnDomainCSRCertificateRequest extends RpcAcsRequest<SetCdnDomai
 		} catch (Exception e) {}
 	}
 
-	public String getServerCertificate() {
-		return this.serverCertificate;
+	public String getTaskName() {
+		return this.taskName;
 	}
 
-	public void setServerCertificate(String serverCertificate) {
-		this.serverCertificate = serverCertificate;
-		if(serverCertificate != null){
-			putQueryParameter("ServerCertificate", serverCertificate);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setTaskName(String taskName) {
+		this.taskName = taskName;
+		if(taskName != null){
+			putQueryParameter("TaskName", taskName);
 		}
 	}
 
@@ -72,9 +61,20 @@ public class SetCdnDomainCSRCertificateRequest extends RpcAcsRequest<SetCdnDomai
 		}
 	}
 
+	public String getTimePoint() {
+		return this.timePoint;
+	}
+
+	public void setTimePoint(String timePoint) {
+		this.timePoint = timePoint;
+		if(timePoint != null){
+			putQueryParameter("TimePoint", timePoint);
+		}
+	}
+
 	@Override
-	public Class<SetCdnDomainCSRCertificateResponse> getResponseClass() {
-		return SetCdnDomainCSRCertificateResponse.class;
+	public Class<CreateIllegalUrlExportTaskResponse> getResponseClass() {
+		return CreateIllegalUrlExportTaskResponse.class;
 	}
 
 }

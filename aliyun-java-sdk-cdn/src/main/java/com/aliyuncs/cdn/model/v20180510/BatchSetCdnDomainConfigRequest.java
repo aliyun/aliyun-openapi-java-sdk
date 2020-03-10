@@ -29,11 +29,11 @@ public class BatchSetCdnDomainConfigRequest extends RpcAcsRequest<BatchSetCdnDom
 
 	private String domainNames;
 
+	private String securityToken;
+
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String securityToken;
 	public BatchSetCdnDomainConfigRequest() {
 		super("Cdn", "2018-05-10", "BatchSetCdnDomainConfig");
 		setMethod(MethodType.POST);
@@ -65,6 +65,17 @@ public class BatchSetCdnDomainConfigRequest extends RpcAcsRequest<BatchSetCdnDom
 		}
 	}
 
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -84,17 +95,6 @@ public class BatchSetCdnDomainConfigRequest extends RpcAcsRequest<BatchSetCdnDom
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

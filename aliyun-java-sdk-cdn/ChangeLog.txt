@@ -1,3 +1,6 @@
+2020-03-10 Version: 3.4.0
+- Add ExportTas apis.
+
 2020-02-13 Version: 3.3.0
 - Add Staging apis.
 

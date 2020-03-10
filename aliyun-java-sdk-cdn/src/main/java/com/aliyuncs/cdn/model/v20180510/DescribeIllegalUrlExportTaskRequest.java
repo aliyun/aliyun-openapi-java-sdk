@@ -22,16 +22,14 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetCdnDomainCSRCertificateRequest extends RpcAcsRequest<SetCdnDomainCSRCertificateResponse> {
+public class DescribeIllegalUrlExportTaskRequest extends RpcAcsRequest<DescribeIllegalUrlExportTaskResponse> {
 	   
 
-	private String serverCertificate;
-
-	private String domainName;
+	private String taskId;
 
 	private Long ownerId;
-	public SetCdnDomainCSRCertificateRequest() {
-		super("Cdn", "2018-05-10", "SetCdnDomainCSRCertificate");
+	public DescribeIllegalUrlExportTaskRequest() {
+		super("Cdn", "2018-05-10", "DescribeIllegalUrlExportTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,25 +37,14 @@ public class SetCdnDomainCSRCertificateRequest extends RpcAcsRequest<SetCdnDomai
 		} catch (Exception e) {}
 	}
 
-	public String getServerCertificate() {
-		return this.serverCertificate;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setServerCertificate(String serverCertificate) {
-		this.serverCertificate = serverCertificate;
-		if(serverCertificate != null){
-			putQueryParameter("ServerCertificate", serverCertificate);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
@@ -73,8 +60,8 @@ public class SetCdnDomainCSRCertificateRequest extends RpcAcsRequest<SetCdnDomai
 	}
 
 	@Override
-	public Class<SetCdnDomainCSRCertificateResponse> getResponseClass() {
-		return SetCdnDomainCSRCertificateResponse.class;
+	public Class<DescribeIllegalUrlExportTaskResponse> getResponseClass() {
+		return DescribeIllegalUrlExportTaskResponse.class;
 	}
 
 }
