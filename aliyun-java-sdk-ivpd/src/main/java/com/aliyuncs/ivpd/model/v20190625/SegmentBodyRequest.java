@@ -22,16 +22,12 @@ import com.aliyuncs.ivpd.Endpoint;
  * @author auto create
  * @version 
  */
-public class ChangeImageSizeRequest extends RpcAcsRequest<ChangeImageSizeResponse> {
+public class SegmentBodyRequest extends RpcAcsRequest<SegmentBodyResponse> {
 	   
 
-	private String url;
-
-	private Integer width;
-
-	private Integer height;
-	public ChangeImageSizeRequest() {
-		super("ivpd", "2019-06-25", "ChangeImageSize", "ivpd");
+	private String imageUrl;
+	public SegmentBodyRequest() {
+		super("ivpd", "2019-06-25", "SegmentBody", "ivpd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +35,20 @@ public class ChangeImageSizeRequest extends RpcAcsRequest<ChangeImageSizeRespons
 		} catch (Exception e) {}
 	}
 
-	public String getUrl() {
-		return this.url;
+	public String getImageUrl() {
+		return this.imageUrl;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
-		if(url != null){
-			putBodyParameter("Url", url);
-		}
-	}
-
-	public Integer getWidth() {
-		return this.width;
-	}
-
-	public void setWidth(Integer width) {
-		this.width = width;
-		if(width != null){
-			putBodyParameter("Width", width.toString());
-		}
-	}
-
-	public Integer getHeight() {
-		return this.height;
-	}
-
-	public void setHeight(Integer height) {
-		this.height = height;
-		if(height != null){
-			putBodyParameter("Height", height.toString());
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+		if(imageUrl != null){
+			putBodyParameter("ImageUrl", imageUrl);
 		}
 	}
 
 	@Override
-	public Class<ChangeImageSizeResponse> getResponseClass() {
-		return ChangeImageSizeResponse.class;
+	public Class<SegmentBodyResponse> getResponseClass() {
+		return SegmentBodyResponse.class;
 	}
 
 }

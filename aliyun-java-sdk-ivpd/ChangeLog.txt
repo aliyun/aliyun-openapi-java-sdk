@@ -1,3 +1,6 @@
+2020-03-11 Version: 1.0.1
+- Add new Api SegmentBody.
+
 2019-10-09 Version: 1.0.0
 - Support API RecognizeImageColor.
 - Support API DetectImageElements.

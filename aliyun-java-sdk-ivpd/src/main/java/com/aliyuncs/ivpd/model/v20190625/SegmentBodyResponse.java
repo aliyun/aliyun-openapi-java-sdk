@@ -15,14 +15,14 @@
 package com.aliyuncs.ivpd.model.v20190625;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ivpd.transform.v20190625.MakeSuperResolutionImageResponseUnmarshaller;
+import com.aliyuncs.ivpd.transform.v20190625.SegmentBodyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class MakeSuperResolutionImageResponse extends AcsResponse {
+public class SegmentBodyResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -66,20 +66,20 @@ public class MakeSuperResolutionImageResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String url;
+		private String imageUrl;
 
-		public String getUrl() {
-			return this.url;
+		public String getImageUrl() {
+			return this.imageUrl;
 		}
 
-		public void setUrl(String url) {
-			this.url = url;
+		public void setImageUrl(String imageUrl) {
+			this.imageUrl = imageUrl;
 		}
 	}
 
 	@Override
-	public MakeSuperResolutionImageResponse getInstance(UnmarshallerContext context) {
-		return	MakeSuperResolutionImageResponseUnmarshaller.unmarshall(this, context);
+	public SegmentBodyResponse getInstance(UnmarshallerContext context) {
+		return	SegmentBodyResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
