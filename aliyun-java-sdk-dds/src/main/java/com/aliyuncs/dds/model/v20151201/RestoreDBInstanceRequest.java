@@ -39,7 +39,7 @@ public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceRes
 
 	private Long ownerId;
 	public RestoreDBInstanceRequest() {
-		super("Dds", "2015-12-01", "RestoreDBInstance", "Dds");
+		super("Dds", "2015-12-01", "RestoreDBInstance", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

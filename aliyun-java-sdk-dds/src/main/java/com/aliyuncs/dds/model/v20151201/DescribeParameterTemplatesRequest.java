@@ -39,7 +39,7 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 
 	private Long ownerId;
 	public DescribeParameterTemplatesRequest() {
-		super("Dds", "2015-12-01", "DescribeParameterTemplates", "Dds");
+		super("Dds", "2015-12-01", "DescribeParameterTemplates", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

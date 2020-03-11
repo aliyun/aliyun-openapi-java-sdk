@@ -37,7 +37,7 @@ public class DescribeKernelReleaseNotesRequest extends RpcAcsRequest<DescribeKer
 
 	private Long ownerId;
 	public DescribeKernelReleaseNotesRequest() {
-		super("Dds", "2015-12-01", "DescribeKernelReleaseNotes", "Dds");
+		super("Dds", "2015-12-01", "DescribeKernelReleaseNotes", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -15,7 +15,6 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dds.Endpoint;
 
@@ -23,24 +22,22 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
+public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<DescribeUserEncryptionKeyListResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private List<Tag> tags;
+	private String securityToken;
 
-	private List<String> resourceIds;
+	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String resourceType;
-	public TagResourcesRequest() {
-		super("Dds", "2015-12-01", "TagResources", "dds");
+	public DescribeUserEncryptionKeyListRequest() {
+		super("Dds", "2015-12-01", "DescribeUserEncryptionKeyList", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,31 +56,26 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 		}
 	}
 
-	public List<Tag> getTags() {
-		return this.tags;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
-	public List<String> getResourceIds() {
-		return this.resourceIds;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setResourceIds(List<String> resourceIds) {
-		this.resourceIds = resourceIds;	
-		if (resourceIds != null) {
-			for (int i = 0; i < resourceIds.size(); i++) {
-				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
-			}
-		}	
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -119,43 +111,9 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 		}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
-	public static class Tag {
-
-		private String value;
-
-		private String key;
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
-	}
-
 	@Override
-	public Class<TagResourcesResponse> getResponseClass() {
-		return TagResourcesResponse.class;
+	public Class<DescribeUserEncryptionKeyListResponse> getResponseClass() {
+		return DescribeUserEncryptionKeyListResponse.class;
 	}
 
 }

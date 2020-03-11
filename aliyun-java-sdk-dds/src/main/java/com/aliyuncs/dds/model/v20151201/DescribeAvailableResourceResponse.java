@@ -27,7 +27,7 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<AvailableZone> availableZones;
+	private List<SupportedDBType> supportedDBTypes;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,132 +37,165 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<AvailableZone> getAvailableZones() {
-		return this.availableZones;
+	public List<SupportedDBType> getSupportedDBTypes() {
+		return this.supportedDBTypes;
 	}
 
-	public void setAvailableZones(List<AvailableZone> availableZones) {
-		this.availableZones = availableZones;
+	public void setSupportedDBTypes(List<SupportedDBType> supportedDBTypes) {
+		this.supportedDBTypes = supportedDBTypes;
 	}
 
-	public static class AvailableZone {
+	public static class SupportedDBType {
 
-		private String regionId;
+		private String dbType;
 
-		private String zoneId;
+		private List<AvailableZone> availableZones;
 
-		private List<SupportedEngineVersion> supportedEngineVersions;
-
-		public String getRegionId() {
-			return this.regionId;
+		public String getDbType() {
+			return this.dbType;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setDbType(String dbType) {
+			this.dbType = dbType;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
+		public List<AvailableZone> getAvailableZones() {
+			return this.availableZones;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setAvailableZones(List<AvailableZone> availableZones) {
+			this.availableZones = availableZones;
 		}
 
-		public List<SupportedEngineVersion> getSupportedEngineVersions() {
-			return this.supportedEngineVersions;
-		}
+		public static class AvailableZone {
 
-		public void setSupportedEngineVersions(List<SupportedEngineVersion> supportedEngineVersions) {
-			this.supportedEngineVersions = supportedEngineVersions;
-		}
+			private String regionId;
 
-		public static class SupportedEngineVersion {
+			private String zoneId;
 
-			private String version;
+			private List<SupportedEngineVersion> supportedEngineVersions;
 
-			private List<SupportedEngine> supportedEngines;
-
-			public String getVersion() {
-				return this.version;
+			public String getRegionId() {
+				return this.regionId;
 			}
 
-			public void setVersion(String version) {
-				this.version = version;
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 
-			public List<SupportedEngine> getSupportedEngines() {
-				return this.supportedEngines;
+			public String getZoneId() {
+				return this.zoneId;
 			}
 
-			public void setSupportedEngines(List<SupportedEngine> supportedEngines) {
-				this.supportedEngines = supportedEngines;
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
 			}
 
-			public static class SupportedEngine {
+			public List<SupportedEngineVersion> getSupportedEngineVersions() {
+				return this.supportedEngineVersions;
+			}
 
-				private String engine;
+			public void setSupportedEngineVersions(List<SupportedEngineVersion> supportedEngineVersions) {
+				this.supportedEngineVersions = supportedEngineVersions;
+			}
 
-				private List<SupportedNodeType> supportedNodeTypes;
+			public static class SupportedEngineVersion {
 
-				public String getEngine() {
-					return this.engine;
+				private String version;
+
+				private List<SupportedEngine> supportedEngines;
+
+				public String getVersion() {
+					return this.version;
 				}
 
-				public void setEngine(String engine) {
-					this.engine = engine;
+				public void setVersion(String version) {
+					this.version = version;
 				}
 
-				public List<SupportedNodeType> getSupportedNodeTypes() {
-					return this.supportedNodeTypes;
+				public List<SupportedEngine> getSupportedEngines() {
+					return this.supportedEngines;
 				}
 
-				public void setSupportedNodeTypes(List<SupportedNodeType> supportedNodeTypes) {
-					this.supportedNodeTypes = supportedNodeTypes;
+				public void setSupportedEngines(List<SupportedEngine> supportedEngines) {
+					this.supportedEngines = supportedEngines;
 				}
 
-				public static class SupportedNodeType {
+				public static class SupportedEngine {
 
-					private String nodeType;
+					private String engine;
 
-					private String networkTypes;
+					private List<SupportedNodeType> supportedNodeTypes;
 
-					private List<AvailableResource> availableResources;
-
-					public String getNodeType() {
-						return this.nodeType;
+					public String getEngine() {
+						return this.engine;
 					}
 
-					public void setNodeType(String nodeType) {
-						this.nodeType = nodeType;
+					public void setEngine(String engine) {
+						this.engine = engine;
 					}
 
-					public String getNetworkTypes() {
-						return this.networkTypes;
+					public List<SupportedNodeType> getSupportedNodeTypes() {
+						return this.supportedNodeTypes;
 					}
 
-					public void setNetworkTypes(String networkTypes) {
-						this.networkTypes = networkTypes;
+					public void setSupportedNodeTypes(List<SupportedNodeType> supportedNodeTypes) {
+						this.supportedNodeTypes = supportedNodeTypes;
 					}
 
-					public List<AvailableResource> getAvailableResources() {
-						return this.availableResources;
-					}
+					public static class SupportedNodeType {
 
-					public void setAvailableResources(List<AvailableResource> availableResources) {
-						this.availableResources = availableResources;
-					}
+						private String nodeType;
 
-					public static class AvailableResource {
+						private String networkTypes;
 
-						private String instanceClass;
+						private List<AvailableResource> availableResources;
 
-						public String getInstanceClass() {
-							return this.instanceClass;
+						public String getNodeType() {
+							return this.nodeType;
 						}
 
-						public void setInstanceClass(String instanceClass) {
-							this.instanceClass = instanceClass;
+						public void setNodeType(String nodeType) {
+							this.nodeType = nodeType;
+						}
+
+						public String getNetworkTypes() {
+							return this.networkTypes;
+						}
+
+						public void setNetworkTypes(String networkTypes) {
+							this.networkTypes = networkTypes;
+						}
+
+						public List<AvailableResource> getAvailableResources() {
+							return this.availableResources;
+						}
+
+						public void setAvailableResources(List<AvailableResource> availableResources) {
+							this.availableResources = availableResources;
+						}
+
+						public static class AvailableResource {
+
+							private String instanceClass;
+
+							private String instanceClassRemark;
+
+							public String getInstanceClass() {
+								return this.instanceClass;
+							}
+
+							public void setInstanceClass(String instanceClass) {
+								this.instanceClass = instanceClass;
+							}
+
+							public String getInstanceClassRemark() {
+								return this.instanceClassRemark;
+							}
+
+							public void setInstanceClassRemark(String instanceClassRemark) {
+								this.instanceClassRemark = instanceClassRemark;
+							}
 						}
 					}
 				}

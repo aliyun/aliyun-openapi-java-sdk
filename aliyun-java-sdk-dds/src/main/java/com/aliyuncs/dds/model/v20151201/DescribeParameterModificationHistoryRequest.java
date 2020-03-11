@@ -43,7 +43,7 @@ public class DescribeParameterModificationHistoryRequest extends RpcAcsRequest<D
 
 	private Long ownerId;
 	public DescribeParameterModificationHistoryRequest() {
-		super("Dds", "2015-12-01", "DescribeParameterModificationHistory", "Dds");
+		super("Dds", "2015-12-01", "DescribeParameterModificationHistory", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class CheckCloudResourceAuthorizedRequest extends RpcAcsRequest<CheckClou
 
 	private String targetRegionId;
 	public CheckCloudResourceAuthorizedRequest() {
-		super("Dds", "2015-12-01", "CheckCloudResourceAuthorized", "Dds");
+		super("Dds", "2015-12-01", "CheckCloudResourceAuthorized", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,7 +43,7 @@ public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryCo
 
 	private Long ownerId;
 	public CheckRecoveryConditionRequest() {
-		super("Dds", "2015-12-01", "CheckRecoveryCondition", "Dds");
+		super("Dds", "2015-12-01", "CheckRecoveryCondition", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

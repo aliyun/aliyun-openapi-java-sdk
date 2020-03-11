@@ -37,7 +37,7 @@ public class DescribeRoleZoneInfoRequest extends RpcAcsRequest<DescribeRoleZoneI
 
 	private Long ownerId;
 	public DescribeRoleZoneInfoRequest() {
-		super("Dds", "2015-12-01", "DescribeRoleZoneInfo", "Dds");
+		super("Dds", "2015-12-01", "DescribeRoleZoneInfo", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -1,3 +1,6 @@
+2020-03-11 Version: 3.0.0
+- Update structure for DescribeAvailableResource without compatible.
+
 2020-01-13 Version: 2.0.7
 - New API DescribeAvailableResource.
 

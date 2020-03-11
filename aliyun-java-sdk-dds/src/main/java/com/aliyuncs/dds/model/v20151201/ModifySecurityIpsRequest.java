@@ -45,7 +45,7 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 
 	private String securityIpGroupAttribute;
 	public ModifySecurityIpsRequest() {
-		super("Dds", "2015-12-01", "ModifySecurityIps", "Dds");
+		super("Dds", "2015-12-01", "ModifySecurityIps", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
