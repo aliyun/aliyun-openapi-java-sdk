@@ -35,6 +35,7 @@ public class DescribeTemplateResponseUnmarshaller {
 		describeTemplateResponse.setOssBucket(_ctx.stringValue("DescribeTemplateResponse.OssBucket"));
 		describeTemplateResponse.setOssEndpoint(_ctx.stringValue("DescribeTemplateResponse.OssEndpoint"));
 		describeTemplateResponse.setOssFilePrefix(_ctx.stringValue("DescribeTemplateResponse.OssFilePrefix"));
+		describeTemplateResponse.setTrigger(_ctx.stringValue("DescribeTemplateResponse.Trigger"));
 		describeTemplateResponse.setStartTime(_ctx.stringValue("DescribeTemplateResponse.StartTime"));
 		describeTemplateResponse.setEndTime(_ctx.stringValue("DescribeTemplateResponse.EndTime"));
 		describeTemplateResponse.setInterval(_ctx.longValue("DescribeTemplateResponse.Interval"));

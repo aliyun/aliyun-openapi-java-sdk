@@ -1,3 +1,7 @@
+2020-03-11 Version: 1.8.0
+- Supported ondemand record.
+- Supported ivision template binding.
+
 2020-02-18 Version: 1.7.0
 - Supported customized params in device apis.
 

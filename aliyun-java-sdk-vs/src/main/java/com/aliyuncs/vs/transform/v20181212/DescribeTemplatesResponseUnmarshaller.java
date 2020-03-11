@@ -44,6 +44,7 @@ public class DescribeTemplatesResponseUnmarshaller {
 			template.setOssBucket(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].OssBucket"));
 			template.setOssEndpoint(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].OssEndpoint"));
 			template.setOssFilePrefix(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].OssFilePrefix"));
+			template.setTrigger(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].Trigger"));
 			template.setStartTime(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].StartTime"));
 			template.setEndTime(_ctx.stringValue("DescribeTemplatesResponse.Templates["+ i +"].EndTime"));
 			template.setInterval(_ctx.longValue("DescribeTemplatesResponse.Templates["+ i +"].Interval"));

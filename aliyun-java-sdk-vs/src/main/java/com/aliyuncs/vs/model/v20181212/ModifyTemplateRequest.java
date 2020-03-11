@@ -51,6 +51,8 @@ public class ModifyTemplateRequest extends RpcAcsRequest<ModifyTemplateResponse>
 
 	private String endTime;
 
+	private String trigger;
+
 	private Long ownerId;
 
 	private String jpgSequence;
@@ -217,6 +219,17 @@ public class ModifyTemplateRequest extends RpcAcsRequest<ModifyTemplateResponse>
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getTrigger() {
+		return this.trigger;
+	}
+
+	public void setTrigger(String trigger) {
+		this.trigger = trigger;
+		if(trigger != null){
+			putQueryParameter("Trigger", trigger);
 		}
 	}
 

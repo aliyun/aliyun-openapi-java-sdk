@@ -103,6 +103,8 @@ public class DescribeTemplatesResponse extends AcsResponse {
 
 		private String ossFilePrefix;
 
+		private String trigger;
+
 		private String startTime;
 
 		private String endTime;
@@ -195,6 +197,14 @@ public class DescribeTemplatesResponse extends AcsResponse {
 
 		public void setOssFilePrefix(String ossFilePrefix) {
 			this.ossFilePrefix = ossFilePrefix;
+		}
+
+		public String getTrigger() {
+			return this.trigger;
+		}
+
+		public void setTrigger(String trigger) {
+			this.trigger = trigger;
 		}
 
 		public String getStartTime() {

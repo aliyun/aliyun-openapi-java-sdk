@@ -27,6 +27,8 @@ public class BindTemplateRequest extends RpcAcsRequest<BindTemplateResponse> {
 
 	private Boolean replace;
 
+	private String templateType;
+
 	private String instanceType;
 
 	private Boolean applyAll;
@@ -53,6 +55,17 @@ public class BindTemplateRequest extends RpcAcsRequest<BindTemplateResponse> {
 		this.replace = replace;
 		if(replace != null){
 			putQueryParameter("Replace", replace.toString());
+		}
+	}
+
+	public String getTemplateType() {
+		return this.templateType;
+	}
+
+	public void setTemplateType(String templateType) {
+		this.templateType = templateType;
+		if(templateType != null){
+			putQueryParameter("TemplateType", templateType);
 		}
 	}
 
