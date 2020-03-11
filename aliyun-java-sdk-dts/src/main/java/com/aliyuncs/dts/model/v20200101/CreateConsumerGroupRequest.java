@@ -36,7 +36,7 @@ public class CreateConsumerGroupRequest extends RpcAcsRequest<CreateConsumerGrou
 
 	private String consumerGroupUserName;
 	public CreateConsumerGroupRequest() {
-		super("Dts", "2020-01-01", "CreateConsumerGroup", "dts");
+		super("Dts", "2020-01-01", "CreateConsumerGroup");
 		setMethod(MethodType.POST);
 	}
 

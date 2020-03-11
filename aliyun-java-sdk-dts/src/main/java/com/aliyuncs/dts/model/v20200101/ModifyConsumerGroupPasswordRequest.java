@@ -40,7 +40,7 @@ public class ModifyConsumerGroupPasswordRequest extends RpcAcsRequest<ModifyCons
 
 	private String consumerGroupUserName;
 	public ModifyConsumerGroupPasswordRequest() {
-		super("Dts", "2020-01-01", "ModifyConsumerGroupPassword", "dts");
+		super("Dts", "2020-01-01", "ModifyConsumerGroupPassword");
 		setMethod(MethodType.POST);
 	}
 

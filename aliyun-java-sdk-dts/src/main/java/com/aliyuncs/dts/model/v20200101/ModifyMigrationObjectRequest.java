@@ -34,7 +34,7 @@ public class ModifyMigrationObjectRequest extends RpcAcsRequest<ModifyMigrationO
 
 	private String accountId;
 	public ModifyMigrationObjectRequest() {
-		super("Dts", "2020-01-01", "ModifyMigrationObject", "dts");
+		super("Dts", "2020-01-01", "ModifyMigrationObject");
 		setMethod(MethodType.POST);
 	}
 

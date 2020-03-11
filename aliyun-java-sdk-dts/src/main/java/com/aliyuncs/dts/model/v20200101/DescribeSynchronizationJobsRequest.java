@@ -36,7 +36,7 @@ public class DescribeSynchronizationJobsRequest extends RpcAcsRequest<DescribeSy
 
 	private Integer pageSize;
 	public DescribeSynchronizationJobsRequest() {
-		super("Dts", "2020-01-01", "DescribeSynchronizationJobs", "dts");
+		super("Dts", "2020-01-01", "DescribeSynchronizationJobs");
 		setMethod(MethodType.POST);
 	}
 

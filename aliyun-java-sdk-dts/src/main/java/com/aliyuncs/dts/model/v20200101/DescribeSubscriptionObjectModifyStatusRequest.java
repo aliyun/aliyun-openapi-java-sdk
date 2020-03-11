@@ -32,7 +32,7 @@ public class DescribeSubscriptionObjectModifyStatusRequest extends RpcAcsRequest
 
 	private String accountId;
 	public DescribeSubscriptionObjectModifyStatusRequest() {
-		super("Dts", "2020-01-01", "DescribeSubscriptionObjectModifyStatus", "dts");
+		super("Dts", "2020-01-01", "DescribeSubscriptionObjectModifyStatus");
 		setMethod(MethodType.POST);
 	}
 

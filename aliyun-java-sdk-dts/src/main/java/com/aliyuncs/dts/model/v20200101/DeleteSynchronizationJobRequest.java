@@ -30,7 +30,7 @@ public class DeleteSynchronizationJobRequest extends RpcAcsRequest<DeleteSynchro
 
 	private String accountId;
 	public DeleteSynchronizationJobRequest() {
-		super("Dts", "2020-01-01", "DeleteSynchronizationJob", "dts");
+		super("Dts", "2020-01-01", "DeleteSynchronizationJob");
 		setMethod(MethodType.POST);
 	}
 

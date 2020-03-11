@@ -34,7 +34,7 @@ public class CreateMigrationJobRequest extends RpcAcsRequest<CreateMigrationJobR
 
 	private String migrationJobClass;
 	public CreateMigrationJobRequest() {
-		super("Dts", "2020-01-01", "CreateMigrationJob", "dts");
+		super("Dts", "2020-01-01", "CreateMigrationJob");
 		setMethod(MethodType.POST);
 	}
 

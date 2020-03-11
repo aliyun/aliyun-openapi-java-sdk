@@ -32,7 +32,7 @@ public class ModifyConsumptionTimestampRequest extends RpcAcsRequest<ModifyConsu
 
 	private String accountId;
 	public ModifyConsumptionTimestampRequest() {
-		super("Dts", "2020-01-01", "ModifyConsumptionTimestamp", "dts");
+		super("Dts", "2020-01-01", "ModifyConsumptionTimestamp");
 		setMethod(MethodType.POST);
 	}
 

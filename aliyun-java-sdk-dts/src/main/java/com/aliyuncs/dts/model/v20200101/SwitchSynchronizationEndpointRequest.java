@@ -46,7 +46,7 @@ public class SwitchSynchronizationEndpointRequest extends RpcAcsRequest<SwitchSy
 
 	private String synchronizationDirection;
 	public SwitchSynchronizationEndpointRequest() {
-		super("Dts", "2020-01-01", "SwitchSynchronizationEndpoint", "dts");
+		super("Dts", "2020-01-01", "SwitchSynchronizationEndpoint");
 		setMethod(MethodType.POST);
 	}
 

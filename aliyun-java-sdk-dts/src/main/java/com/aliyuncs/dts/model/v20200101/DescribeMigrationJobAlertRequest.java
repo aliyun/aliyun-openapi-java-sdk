@@ -32,7 +32,7 @@ public class DescribeMigrationJobAlertRequest extends RpcAcsRequest<DescribeMigr
 
 	private String accountId;
 	public DescribeMigrationJobAlertRequest() {
-		super("Dts", "2020-01-01", "DescribeMigrationJobAlert", "dts");
+		super("Dts", "2020-01-01", "DescribeMigrationJobAlert");
 		setMethod(MethodType.POST);
 	}
 
