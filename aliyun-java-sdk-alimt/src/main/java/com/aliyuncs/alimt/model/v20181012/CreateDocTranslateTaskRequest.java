@@ -37,7 +37,7 @@ public class CreateDocTranslateTaskRequest extends RpcAcsRequest<CreateDocTransl
 
 	private String callbackUrl;
 	public CreateDocTranslateTaskRequest() {
-		super("alimt", "2018-10-12", "CreateDocTranslateTask", "alimt");
+		super("alimt", "2018-10-12", "CreateDocTranslateTask", "alimtct");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

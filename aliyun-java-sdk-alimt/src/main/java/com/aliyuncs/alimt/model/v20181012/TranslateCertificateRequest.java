@@ -22,20 +22,20 @@ import com.aliyuncs.alimt.Endpoint;
  * @author auto create
  * @version 
  */
-public class TranslateGeneralRequest extends RpcAcsRequest<TranslateGeneralResponse> {
+public class TranslateCertificateRequest extends RpcAcsRequest<TranslateCertificateResponse> {
 	   
 
 	private String sourceLanguage;
 
-	private String sourceText;
+	private String certificateType;
 
-	private String formatType;
+	private String resultType;
 
-	private String scene;
+	private String imageUrl;
 
 	private String targetLanguage;
-	public TranslateGeneralRequest() {
-		super("alimt", "2018-10-12", "TranslateGeneral", "alimtct");
+	public TranslateCertificateRequest() {
+		super("alimt", "2018-10-12", "TranslateCertificate", "alimtct");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,36 +54,36 @@ public class TranslateGeneralRequest extends RpcAcsRequest<TranslateGeneralRespo
 		}
 	}
 
-	public String getSourceText() {
-		return this.sourceText;
+	public String getCertificateType() {
+		return this.certificateType;
 	}
 
-	public void setSourceText(String sourceText) {
-		this.sourceText = sourceText;
-		if(sourceText != null){
-			putBodyParameter("SourceText", sourceText);
+	public void setCertificateType(String certificateType) {
+		this.certificateType = certificateType;
+		if(certificateType != null){
+			putBodyParameter("CertificateType", certificateType);
 		}
 	}
 
-	public String getFormatType() {
-		return this.formatType;
+	public String getResultType() {
+		return this.resultType;
 	}
 
-	public void setFormatType(String formatType) {
-		this.formatType = formatType;
-		if(formatType != null){
-			putBodyParameter("FormatType", formatType);
+	public void setResultType(String resultType) {
+		this.resultType = resultType;
+		if(resultType != null){
+			putBodyParameter("ResultType", resultType);
 		}
 	}
 
-	public String getScene() {
-		return this.scene;
+	public String getImageUrl() {
+		return this.imageUrl;
 	}
 
-	public void setScene(String scene) {
-		this.scene = scene;
-		if(scene != null){
-			putBodyParameter("Scene", scene);
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+		if(imageUrl != null){
+			putBodyParameter("ImageUrl", imageUrl);
 		}
 	}
 
@@ -99,8 +99,8 @@ public class TranslateGeneralRequest extends RpcAcsRequest<TranslateGeneralRespo
 	}
 
 	@Override
-	public Class<TranslateGeneralResponse> getResponseClass() {
-		return TranslateGeneralResponse.class;
+	public Class<TranslateCertificateResponse> getResponseClass() {
+		return TranslateCertificateResponse.class;
 	}
 
 }

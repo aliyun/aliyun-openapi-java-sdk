@@ -35,7 +35,7 @@ public class TranslateRequest extends RpcAcsRequest<TranslateResponse> {
 
 	private String targetLanguage;
 	public TranslateRequest() {
-		super("alimt", "2018-10-12", "Translate", "alimt");
+		super("alimt", "2018-10-12", "Translate", "alimtct");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

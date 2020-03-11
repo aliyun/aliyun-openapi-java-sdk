@@ -27,7 +27,7 @@ public class GetDocTranslateTaskRequest extends RpcAcsRequest<GetDocTranslateTas
 
 	private String taskId;
 	public GetDocTranslateTaskRequest() {
-		super("alimt", "2018-10-12", "GetDocTranslateTask", "alimt");
+		super("alimt", "2018-10-12", "GetDocTranslateTask", "alimtct");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
