@@ -31,6 +31,8 @@ public class ScalingClusterRequest extends RpcAcsRequest<ScalingClusterResponse>
 
 	private String clusterId;
 
+	private String instanceId;
+
 	private Long memoryCapacity;
 
 	private Integer instanceCount;
@@ -73,6 +75,17 @@ public class ScalingClusterRequest extends RpcAcsRequest<ScalingClusterResponse>
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putBodyParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
 		}
 	}
 

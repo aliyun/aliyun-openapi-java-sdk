@@ -125,6 +125,10 @@ public class QueryClusterDetailResponse extends AcsResponse {
 
 		private Long initCostTime;
 
+		private String vpcId;
+
+		private String pubNetworkFlow;
+
 		private List<InstanceModel> instanceModels;
 
 		public String getClusterType() {
@@ -317,6 +321,22 @@ public class QueryClusterDetailResponse extends AcsResponse {
 
 		public void setInitCostTime(Long initCostTime) {
 			this.initCostTime = initCostTime;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getPubNetworkFlow() {
+			return this.pubNetworkFlow;
+		}
+
+		public void setPubNetworkFlow(String pubNetworkFlow) {
+			this.pubNetworkFlow = pubNetworkFlow;
 		}
 
 		public List<InstanceModel> getInstanceModels() {

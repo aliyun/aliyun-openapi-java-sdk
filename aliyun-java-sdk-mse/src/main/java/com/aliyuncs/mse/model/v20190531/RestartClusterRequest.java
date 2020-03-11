@@ -27,6 +27,8 @@ public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse>
 
 	private String clusterId;
 
+	private String instanceId;
+
 	private String requestPars;
 	public RestartClusterRequest() {
 		super("mse", "2019-05-31", "RestartCluster", "mse");
@@ -45,6 +47,17 @@ public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse>
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putBodyParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
 		}
 	}
 

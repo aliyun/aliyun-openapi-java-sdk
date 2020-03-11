@@ -47,6 +47,9 @@ public class ListClustersResponseUnmarshaller {
 			clusterForListModel.setIntranetAddress(_ctx.stringValue("ListClustersResponse.Data["+ i +"].IntranetAddress"));
 			clusterForListModel.setInternetDomain(_ctx.stringValue("ListClustersResponse.Data["+ i +"].InternetDomain"));
 			clusterForListModel.setClusterType(_ctx.stringValue("ListClustersResponse.Data["+ i +"].ClusterType"));
+			clusterForListModel.setChargeType(_ctx.stringValue("ListClustersResponse.Data["+ i +"].ChargeType"));
+			clusterForListModel.setEndDate(_ctx.stringValue("ListClustersResponse.Data["+ i +"].EndDate"));
+			clusterForListModel.setInstanceId(_ctx.stringValue("ListClustersResponse.Data["+ i +"].InstanceId"));
 
 			data.add(clusterForListModel);
 		}

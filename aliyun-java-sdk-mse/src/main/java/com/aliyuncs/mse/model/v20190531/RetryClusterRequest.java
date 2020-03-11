@@ -22,16 +22,16 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateAclRequest extends RpcAcsRequest<UpdateAclResponse> {
+public class RetryClusterRequest extends RpcAcsRequest<RetryClusterResponse> {
 	   
 
 	private String clusterId;
 
-	private String aclEntryList;
-
 	private String instanceId;
-	public UpdateAclRequest() {
-		super("mse", "2019-05-31", "UpdateAcl", "mse");
+
+	private String requestPars;
+	public RetryClusterRequest() {
+		super("mse", "2019-05-31", "RetryCluster", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,17 +50,6 @@ public class UpdateAclRequest extends RpcAcsRequest<UpdateAclResponse> {
 		}
 	}
 
-	public String getAclEntryList() {
-		return this.aclEntryList;
-	}
-
-	public void setAclEntryList(String aclEntryList) {
-		this.aclEntryList = aclEntryList;
-		if(aclEntryList != null){
-			putBodyParameter("AclEntryList", aclEntryList);
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -72,9 +61,20 @@ public class UpdateAclRequest extends RpcAcsRequest<UpdateAclResponse> {
 		}
 	}
 
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putBodyParameter("RequestPars", requestPars);
+		}
+	}
+
 	@Override
-	public Class<UpdateAclResponse> getResponseClass() {
-		return UpdateAclResponse.class;
+	public Class<RetryClusterResponse> getResponseClass() {
+		return RetryClusterResponse.class;
 	}
 
 }
