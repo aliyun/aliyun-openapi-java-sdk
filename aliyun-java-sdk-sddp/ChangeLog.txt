@@ -1,3 +1,6 @@
+2020-03-12 Version: 1.0.2
+- Support datamask api.
+
 2020-03-12 Version: 1.0.1
 - Support datamask api.
 
