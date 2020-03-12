@@ -1,3 +1,10 @@
+2020-03-12 Version: 1.1.0
+- Release.
+- Add virtual host modification API.
+- Add exchange modification API.
+- Add queue modification API.
+- Add binding modification API.
+
 2020-03-05 Version: 1.0.0
 - Release.
 
