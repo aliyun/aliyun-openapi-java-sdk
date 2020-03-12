@@ -15,65 +15,46 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsResponse> {
-	
-	public DescribeOssObjectsRequest() {
-		super("Sddp", "2019-01-03", "DescribeOssObjects", "sddp");
-	}
-
-	private String instanceId;
-
-	private Integer featureType;
-
-	private String name;
-
-	private Integer pageSize;
-
-	private Integer currentPage;
-
-	private String queryName;
+	   
 
 	private Integer riskLevelId;
 
+	private Integer pageSize;
+
 	private String lang;
 
+	private Integer currentPage;
+
+	private String instanceId;
+
+	private String name;
+
 	private Long ruleId;
-
-	public String getInstanceId() {
-		return this.instanceId;
+	public DescribeOssObjectsRequest() {
+		super("Sddp", "2019-01-03", "DescribeOssObjects", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
+	public Integer getRiskLevelId() {
+		return this.riskLevelId;
 	}
 
-	public Integer getFeatureType() {
-		return this.featureType;
-	}
-
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setRiskLevelId(Integer riskLevelId) {
+		this.riskLevelId = riskLevelId;
+		if(riskLevelId != null){
+			putQueryParameter("RiskLevelId", riskLevelId.toString());
 		}
 	}
 
@@ -88,6 +69,17 @@ public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsR
 		}
 	}
 
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -99,36 +91,25 @@ public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsR
 		}
 	}
 
-	public String getQueryName() {
-		return this.queryName;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setQueryName(String queryName) {
-		this.queryName = queryName;
-		if(queryName != null){
-			putQueryParameter("QueryName", queryName);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
-	public Integer getRiskLevelId() {
-		return this.riskLevelId;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setRiskLevelId(Integer riskLevelId) {
-		this.riskLevelId = riskLevelId;
-		if(riskLevelId != null){
-			putQueryParameter("RiskLevelId", riskLevelId.toString());
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

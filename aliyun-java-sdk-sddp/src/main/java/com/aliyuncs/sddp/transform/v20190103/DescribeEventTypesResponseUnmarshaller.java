@@ -25,26 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeEventTypesResponseUnmarshaller {
 
-	public static DescribeEventTypesResponse unmarshall(DescribeEventTypesResponse describeEventTypesResponse, UnmarshallerContext context) {
+	public static DescribeEventTypesResponse unmarshall(DescribeEventTypesResponse describeEventTypesResponse, UnmarshallerContext _ctx) {
 		
-		describeEventTypesResponse.setRequestId(context.stringValue("DescribeEventTypesResponse.RequestId"));
+		describeEventTypesResponse.setRequestId(_ctx.stringValue("DescribeEventTypesResponse.RequestId"));
 
 		List<EventType> eventTypeList = new ArrayList<EventType>();
-		for (int i = 0; i < context.lengthValue("DescribeEventTypesResponse.EventTypeList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeEventTypesResponse.EventTypeList.Length"); i++) {
 			EventType eventType = new EventType();
-			eventType.setId(context.longValue("DescribeEventTypesResponse.EventTypeList["+ i +"].Id"));
-			eventType.setName(context.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].Name"));
-			eventType.setCode(context.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].Code"));
-			eventType.setDescription(context.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].Description"));
+			eventType.setId(_ctx.longValue("DescribeEventTypesResponse.EventTypeList["+ i +"].Id"));
+			eventType.setName(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].Name"));
+			eventType.setCode(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].Code"));
+			eventType.setDescription(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].Description"));
 
 			List<SubType> subTypeList = new ArrayList<SubType>();
-			for (int j = 0; j < context.lengthValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList.Length"); j++) {
 				SubType subType = new SubType();
-				subType.setId(context.longValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Id"));
-				subType.setName(context.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Name"));
-				subType.setCode(context.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Code"));
-				subType.setDescription(context.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Description"));
-				subType.setStatus(context.integerValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Status"));
+				subType.setId(_ctx.longValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Id"));
+				subType.setName(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Name"));
+				subType.setCode(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Code"));
+				subType.setDescription(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Description"));
+				subType.setStatus(_ctx.integerValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Status"));
 
 				subTypeList.add(subType);
 			}

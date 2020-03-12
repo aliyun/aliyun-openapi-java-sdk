@@ -77,7 +77,7 @@ public class DescribeDataAssetsResponse extends AcsResponse {
 
 	public static class Asset {
 
-		private Long id;
+		private String id;
 
 		private String name;
 
@@ -117,11 +117,11 @@ public class DescribeDataAssetsResponse extends AcsResponse {
 
 		private String objectKey;
 
-		public Long getId() {
+		public String getId() {
 			return this.id;
 		}
 
-		public void setId(Long id) {
+		public void setId(String id) {
 			this.id = id;
 		}
 

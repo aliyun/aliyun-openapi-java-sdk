@@ -21,21 +21,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDataLimitDetailResponseUnmarshaller {
 
-	public static DescribeDataLimitDetailResponse unmarshall(DescribeDataLimitDetailResponse describeDataLimitDetailResponse, UnmarshallerContext context) {
+	public static DescribeDataLimitDetailResponse unmarshall(DescribeDataLimitDetailResponse describeDataLimitDetailResponse, UnmarshallerContext _ctx) {
 		
-		describeDataLimitDetailResponse.setRequestId(context.stringValue("DescribeDataLimitDetailResponse.RequestId"));
+		describeDataLimitDetailResponse.setRequestId(_ctx.stringValue("DescribeDataLimitDetailResponse.RequestId"));
 
 		DataLimit dataLimit = new DataLimit();
-		dataLimit.setRegionId(context.stringValue("DescribeDataLimitDetailResponse.DataLimit.RegionId"));
-		dataLimit.setLocalName(context.stringValue("DescribeDataLimitDetailResponse.DataLimit.LocalName"));
-		dataLimit.setParentId(context.stringValue("DescribeDataLimitDetailResponse.DataLimit.ParentId"));
-		dataLimit.setId(context.longValue("DescribeDataLimitDetailResponse.DataLimit.Id"));
-		dataLimit.setUserName(context.stringValue("DescribeDataLimitDetailResponse.DataLimit.UserName"));
-		dataLimit.setPassword(context.stringValue("DescribeDataLimitDetailResponse.DataLimit.Password"));
-		dataLimit.setGmtCreate(context.longValue("DescribeDataLimitDetailResponse.DataLimit.GmtCreate"));
-		dataLimit.setConnector(context.stringValue("DescribeDataLimitDetailResponse.DataLimit.Connector"));
-		dataLimit.setCheckStatus(context.integerValue("DescribeDataLimitDetailResponse.DataLimit.CheckStatus"));
-		dataLimit.setCheckStatusName(context.stringValue("DescribeDataLimitDetailResponse.DataLimit.CheckStatusName"));
+		dataLimit.setRegionId(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.RegionId"));
+		dataLimit.setLocalName(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.LocalName"));
+		dataLimit.setParentId(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.ParentId"));
+		dataLimit.setId(_ctx.longValue("DescribeDataLimitDetailResponse.DataLimit.Id"));
+		dataLimit.setUserName(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.UserName"));
+		dataLimit.setGmtCreate(_ctx.longValue("DescribeDataLimitDetailResponse.DataLimit.GmtCreate"));
+		dataLimit.setConnector(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.Connector"));
+		dataLimit.setCheckStatus(_ctx.integerValue("DescribeDataLimitDetailResponse.DataLimit.CheckStatus"));
+		dataLimit.setCheckStatusName(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.CheckStatusName"));
+		dataLimit.setResourceType(_ctx.longValue("DescribeDataLimitDetailResponse.DataLimit.ResourceType"));
+		dataLimit.setResourceTypeCode(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.ResourceTypeCode"));
+		dataLimit.setAuditStatus(_ctx.integerValue("DescribeDataLimitDetailResponse.DataLimit.AuditStatus"));
+		dataLimit.setLogStoreDay(_ctx.integerValue("DescribeDataLimitDetailResponse.DataLimit.LogStoreDay"));
+		dataLimit.setPort(_ctx.integerValue("DescribeDataLimitDetailResponse.DataLimit.Port"));
 		describeDataLimitDetailResponse.setDataLimit(dataLimit);
 	 
 	 	return describeDataLimitDetailResponse;

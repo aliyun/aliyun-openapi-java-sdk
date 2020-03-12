@@ -15,61 +15,76 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
-	
-	public DescribeRulesRequest() {
-		super("Sddp", "2019-01-03", "DescribeRules", "sddp");
-	}
+	   
 
-	private Integer pageSize;
+	private Integer warnLevel;
 
-	private String name;
+	private Integer productCode;
 
-	private Integer currentPage;
+	private Long productId;
 
 	private Long riskLevelId;
 
+	private Integer pageSize;
+
 	private String lang;
+
+	private Integer ruleType;
+
+	private Integer currentPage;
 
 	private Integer customType;
 
+	private String name;
+
 	private Integer category;
-
-	public Integer getPageSize() {
-		return this.pageSize;
+	public DescribeRulesRequest() {
+		super("Sddp", "2019-01-03", "DescribeRules", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public Integer getWarnLevel() {
+		return this.warnLevel;
+	}
+
+	public void setWarnLevel(Integer warnLevel) {
+		this.warnLevel = warnLevel;
+		if(warnLevel != null){
+			putQueryParameter("WarnLevel", warnLevel.toString());
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public Integer getProductCode() {
+		return this.productCode;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setProductCode(Integer productCode) {
+		this.productCode = productCode;
+		if(productCode != null){
+			putQueryParameter("ProductCode", productCode.toString());
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
+	public Long getProductId() {
+		return this.productId;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
+	public void setProductId(Long productId) {
+		this.productId = productId;
+		if(productId != null){
+			putQueryParameter("ProductId", productId.toString());
 		}
 	}
 
@@ -84,6 +99,17 @@ public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getLang() {
 		return this.lang;
 	}
@@ -95,6 +121,28 @@ public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
 		}
 	}
 
+	public Integer getRuleType() {
+		return this.ruleType;
+	}
+
+	public void setRuleType(Integer ruleType) {
+		this.ruleType = ruleType;
+		if(ruleType != null){
+			putQueryParameter("RuleType", ruleType.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
 	public Integer getCustomType() {
 		return this.customType;
 	}
@@ -103,6 +151,17 @@ public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
 		this.customType = customType;
 		if(customType != null){
 			putQueryParameter("CustomType", customType.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

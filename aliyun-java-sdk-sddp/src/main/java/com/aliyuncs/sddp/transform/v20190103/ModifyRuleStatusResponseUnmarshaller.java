@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyRuleStatusResponseUnmarshaller {
 
-	public static ModifyRuleStatusResponse unmarshall(ModifyRuleStatusResponse modifyRuleStatusResponse, UnmarshallerContext context) {
+	public static ModifyRuleStatusResponse unmarshall(ModifyRuleStatusResponse modifyRuleStatusResponse, UnmarshallerContext _ctx) {
 		
-		modifyRuleStatusResponse.setRequestId(context.stringValue("ModifyRuleStatusResponse.RequestId"));
+		modifyRuleStatusResponse.setRequestId(_ctx.stringValue("ModifyRuleStatusResponse.RequestId"));
 	 
 	 	return modifyRuleStatusResponse;
 	}

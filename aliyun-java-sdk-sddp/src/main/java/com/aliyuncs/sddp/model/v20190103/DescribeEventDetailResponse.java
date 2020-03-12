@@ -61,8 +61,6 @@ public class DescribeEventDetailResponse extends AcsResponse {
 
 		private String typeName;
 
-		private String telephoneNum;
-
 		private String subTypeCode;
 
 		private String subTypeName;
@@ -147,14 +145,6 @@ public class DescribeEventDetailResponse extends AcsResponse {
 
 		public void setTypeName(String typeName) {
 			this.typeName = typeName;
-		}
-
-		public String getTelephoneNum() {
-			return this.telephoneNum;
-		}
-
-		public void setTelephoneNum(String telephoneNum) {
-			this.telephoneNum = telephoneNum;
 		}
 
 		public String getSubTypeCode() {
@@ -283,6 +273,8 @@ public class DescribeEventDetailResponse extends AcsResponse {
 
 			private List<ChartItem> chart;
 
+			private List<ResourceInfoItem> resourceInfo;
+
 			public List<ContentItem> getContent() {
 				return this.content;
 			}
@@ -297,6 +289,14 @@ public class DescribeEventDetailResponse extends AcsResponse {
 
 			public void setChart(List<ChartItem> chart) {
 				this.chart = chart;
+			}
+
+			public List<ResourceInfoItem> getResourceInfo() {
+				return this.resourceInfo;
+			}
+
+			public void setResourceInfo(List<ResourceInfoItem> resourceInfo) {
+				this.resourceInfo = resourceInfo;
 			}
 
 			public static class ContentItem {
@@ -330,6 +330,8 @@ public class DescribeEventDetailResponse extends AcsResponse {
 
 				private String yLabel;
 
+				private String type;
+
 				private Data data;
 
 				public String getLabel() {
@@ -354,6 +356,14 @@ public class DescribeEventDetailResponse extends AcsResponse {
 
 				public void setYLabel(String yLabel) {
 					this.yLabel = yLabel;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
 				}
 
 				public Data getData() {
@@ -385,6 +395,29 @@ public class DescribeEventDetailResponse extends AcsResponse {
 					public void setY(String y) {
 						this.y = y;
 					}
+				}
+			}
+
+			public static class ResourceInfoItem {
+
+				private String label;
+
+				private String value;
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
 				}
 			}
 		}

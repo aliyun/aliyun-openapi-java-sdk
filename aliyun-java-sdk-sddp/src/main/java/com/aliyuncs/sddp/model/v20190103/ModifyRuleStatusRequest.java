@@ -15,34 +15,28 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyRuleStatusRequest extends RpcAcsRequest<ModifyRuleStatusResponse> {
-	
-	public ModifyRuleStatusRequest() {
-		super("Sddp", "2019-01-03", "ModifyRuleStatus", "sddp");
-	}
-
-	private Integer featureType;
+	   
 
 	private Long id;
 
 	private String lang;
 
 	private Integer status;
-
-	public Integer getFeatureType() {
-		return this.featureType;
-	}
-
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
-		}
+	public ModifyRuleStatusRequest() {
+		super("Sddp", "2019-01-03", "ModifyRuleStatus", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getId() {

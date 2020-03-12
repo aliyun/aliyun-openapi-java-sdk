@@ -15,24 +15,17 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDataHubTopicsRequest extends RpcAcsRequest<DescribeDataHubTopicsResponse> {
-	
-	public DescribeDataHubTopicsRequest() {
-		super("Sddp", "2019-01-03", "DescribeDataHubTopics", "sddp");
-	}
-
-	private Integer featureType;
+	   
 
 	private Integer pageSize;
-
-	private Long departId;
-
-	private Integer currentPage;
 
 	private String lang;
 
@@ -40,15 +33,18 @@ public class DescribeDataHubTopicsRequest extends RpcAcsRequest<DescribeDataHubT
 
 	private String key;
 
-	public Integer getFeatureType() {
-		return this.featureType;
-	}
+	private Integer featureType;
 
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
-		}
+	private Integer currentPage;
+
+	private Long departId;
+	public DescribeDataHubTopicsRequest() {
+		super("Sddp", "2019-01-03", "DescribeDataHubTopics", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Integer getPageSize() {
@@ -59,28 +55,6 @@ public class DescribeDataHubTopicsRequest extends RpcAcsRequest<DescribeDataHubT
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Long getDepartId() {
-		return this.departId;
-	}
-
-	public void setDepartId(Long departId) {
-		this.departId = departId;
-		if(departId != null){
-			putQueryParameter("DepartId", departId.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -114,6 +88,39 @@ public class DescribeDataHubTopicsRequest extends RpcAcsRequest<DescribeDataHubT
 		this.key = key;
 		if(key != null){
 			putQueryParameter("Key", key);
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public Long getDepartId() {
+		return this.departId;
+	}
+
+	public void setDepartId(Long departId) {
+		this.departId = departId;
+		if(departId != null){
+			putQueryParameter("DepartId", departId.toString());
 		}
 	}
 

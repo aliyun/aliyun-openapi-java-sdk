@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAuthAccountsResponseUnmarshaller {
 
-	public static DescribeAuthAccountsResponse unmarshall(DescribeAuthAccountsResponse describeAuthAccountsResponse, UnmarshallerContext context) {
+	public static DescribeAuthAccountsResponse unmarshall(DescribeAuthAccountsResponse describeAuthAccountsResponse, UnmarshallerContext _ctx) {
 		
-		describeAuthAccountsResponse.setRequestId(context.stringValue("DescribeAuthAccountsResponse.RequestId"));
-		describeAuthAccountsResponse.setPageSize(context.integerValue("DescribeAuthAccountsResponse.PageSize"));
-		describeAuthAccountsResponse.setCurrentPage(context.integerValue("DescribeAuthAccountsResponse.CurrentPage"));
-		describeAuthAccountsResponse.setTotalCount(context.integerValue("DescribeAuthAccountsResponse.TotalCount"));
+		describeAuthAccountsResponse.setRequestId(_ctx.stringValue("DescribeAuthAccountsResponse.RequestId"));
+		describeAuthAccountsResponse.setPageSize(_ctx.integerValue("DescribeAuthAccountsResponse.PageSize"));
+		describeAuthAccountsResponse.setCurrentPage(_ctx.integerValue("DescribeAuthAccountsResponse.CurrentPage"));
+		describeAuthAccountsResponse.setTotalCount(_ctx.integerValue("DescribeAuthAccountsResponse.TotalCount"));
 
 		List<Account> items = new ArrayList<Account>();
-		for (int i = 0; i < context.lengthValue("DescribeAuthAccountsResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeAuthAccountsResponse.Items.Length"); i++) {
 			Account account = new Account();
-			account.setId(context.longValue("DescribeAuthAccountsResponse.Items["+ i +"].Id"));
-			account.setLoginName(context.stringValue("DescribeAuthAccountsResponse.Items["+ i +"].LoginName"));
-			account.setFullName(context.stringValue("DescribeAuthAccountsResponse.Items["+ i +"].FullName"));
-			account.setAuthLoginName(context.stringValue("DescribeAuthAccountsResponse.Items["+ i +"].AuthLoginName"));
-			account.setAuthFullName(context.stringValue("DescribeAuthAccountsResponse.Items["+ i +"].AuthFullName"));
-			account.setAuthTime(context.longValue("DescribeAuthAccountsResponse.Items["+ i +"].AuthTime"));
+			account.setId(_ctx.longValue("DescribeAuthAccountsResponse.Items["+ i +"].Id"));
+			account.setLoginName(_ctx.stringValue("DescribeAuthAccountsResponse.Items["+ i +"].LoginName"));
+			account.setFullName(_ctx.stringValue("DescribeAuthAccountsResponse.Items["+ i +"].FullName"));
+			account.setAuthLoginName(_ctx.stringValue("DescribeAuthAccountsResponse.Items["+ i +"].AuthLoginName"));
+			account.setAuthFullName(_ctx.stringValue("DescribeAuthAccountsResponse.Items["+ i +"].AuthFullName"));
+			account.setAuthTime(_ctx.longValue("DescribeAuthAccountsResponse.Items["+ i +"].AuthTime"));
 
 			items.add(account);
 		}

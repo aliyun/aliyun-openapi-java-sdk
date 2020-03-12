@@ -15,24 +15,17 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeEventsRequest extends RpcAcsRequest<DescribeEventsResponse> {
-	
-	public DescribeEventsRequest() {
-		super("Sddp", "2019-01-03", "DescribeEvents", "sddp");
-	}
+	   
 
 	private String productCode;
-
-	private Integer featureType;
-
-	private String endTime;
-
-	private Integer currentPage;
 
 	private String startTime;
 
@@ -46,13 +39,23 @@ public class DescribeEventsRequest extends RpcAcsRequest<DescribeEventsResponse>
 
 	private Integer pageSize;
 
-	private Long departId;
-
 	private String lang;
 
 	private String dealUserId;
 
+	private String endTime;
+
+	private Integer currentPage;
+
 	private String status;
+	public DescribeEventsRequest() {
+		super("Sddp", "2019-01-03", "DescribeEvents", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProductCode() {
 		return this.productCode;
@@ -62,39 +65,6 @@ public class DescribeEventsRequest extends RpcAcsRequest<DescribeEventsResponse>
 		this.productCode = productCode;
 		if(productCode != null){
 			putQueryParameter("ProductCode", productCode);
-		}
-	}
-
-	public Integer getFeatureType() {
-		return this.featureType;
-	}
-
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -164,17 +134,6 @@ public class DescribeEventsRequest extends RpcAcsRequest<DescribeEventsResponse>
 		}
 	}
 
-	public Long getDepartId() {
-		return this.departId;
-	}
-
-	public void setDepartId(Long departId) {
-		this.departId = departId;
-		if(departId != null){
-			putQueryParameter("DepartId", departId.toString());
-		}
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -194,6 +153,28 @@ public class DescribeEventsRequest extends RpcAcsRequest<DescribeEventsResponse>
 		this.dealUserId = dealUserId;
 		if(dealUserId != null){
 			putQueryParameter("DealUserId", dealUserId);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

@@ -25,22 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeOssObjectDetailResponseUnmarshaller {
 
-	public static DescribeOssObjectDetailResponse unmarshall(DescribeOssObjectDetailResponse describeOssObjectDetailResponse, UnmarshallerContext context) {
+	public static DescribeOssObjectDetailResponse unmarshall(DescribeOssObjectDetailResponse describeOssObjectDetailResponse, UnmarshallerContext _ctx) {
 		
-		describeOssObjectDetailResponse.setRequestId(context.stringValue("DescribeOssObjectDetailResponse.RequestId"));
+		describeOssObjectDetailResponse.setRequestId(_ctx.stringValue("DescribeOssObjectDetailResponse.RequestId"));
 
 		OssObjectDetail ossObjectDetail = new OssObjectDetail();
-		ossObjectDetail.setName(context.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.Name"));
-		ossObjectDetail.setRegionId(context.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RegionId"));
-		ossObjectDetail.setRiskLevelName(context.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RiskLevelName"));
-		ossObjectDetail.setBucketName(context.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.BucketName"));
-		ossObjectDetail.setCategoryName(context.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.CategoryName"));
+		ossObjectDetail.setName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.Name"));
+		ossObjectDetail.setRegionId(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RegionId"));
+		ossObjectDetail.setRiskLevelName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RiskLevelName"));
+		ossObjectDetail.setBucketName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.BucketName"));
+		ossObjectDetail.setCategoryName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.CategoryName"));
 
 		List<Rule> ruleList = new ArrayList<Rule>();
-		for (int i = 0; i < context.lengthValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleName(context.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].RuleName"));
-			rule.setCount(context.longValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].Count"));
+			rule.setRuleName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].RuleName"));
+			rule.setCount(_ctx.longValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].Count"));
+			rule.setCategory(_ctx.integerValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].Category"));
 
 			ruleList.add(rule);
 		}

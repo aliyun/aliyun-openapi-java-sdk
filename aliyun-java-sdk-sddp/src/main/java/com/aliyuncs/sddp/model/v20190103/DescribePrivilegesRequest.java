@@ -15,32 +15,52 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribePrivilegesRequest extends RpcAcsRequest<DescribePrivilegesResponse> {
-	
-	public DescribePrivilegesRequest() {
-		super("Sddp", "2019-01-03", "DescribePrivileges", "sddp");
-	}
+	   
+
+	private Integer accountType;
 
 	private Long accountId;
 
-	private Long useAccountId;
-
-	private String dataTypeIds;
-
-	private Integer featureType;
-
 	private Integer pageSize;
-
-	private Integer currentPage;
 
 	private String lang;
 
 	private String key;
+
+	private Long useAccountId;
+
+	private Integer featureType;
+
+	private Integer currentPage;
+
+	private String dataTypeIds;
+	public DescribePrivilegesRequest() {
+		super("Sddp", "2019-01-03", "DescribePrivileges", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Integer getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(Integer accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType.toString());
+		}
+	}
 
 	public Long getAccountId() {
 		return this.accountId;
@@ -53,39 +73,6 @@ public class DescribePrivilegesRequest extends RpcAcsRequest<DescribePrivilegesR
 		}
 	}
 
-	public Long getUseAccountId() {
-		return this.useAccountId;
-	}
-
-	public void setUseAccountId(Long useAccountId) {
-		this.useAccountId = useAccountId;
-		if(useAccountId != null){
-			putQueryParameter("UseAccountId", useAccountId.toString());
-		}
-	}
-
-	public String getDataTypeIds() {
-		return this.dataTypeIds;
-	}
-
-	public void setDataTypeIds(String dataTypeIds) {
-		this.dataTypeIds = dataTypeIds;
-		if(dataTypeIds != null){
-			putQueryParameter("DataTypeIds", dataTypeIds);
-		}
-	}
-
-	public Integer getFeatureType() {
-		return this.featureType;
-	}
-
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -94,17 +81,6 @@ public class DescribePrivilegesRequest extends RpcAcsRequest<DescribePrivilegesR
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -127,6 +103,50 @@ public class DescribePrivilegesRequest extends RpcAcsRequest<DescribePrivilegesR
 		this.key = key;
 		if(key != null){
 			putQueryParameter("Key", key);
+		}
+	}
+
+	public Long getUseAccountId() {
+		return this.useAccountId;
+	}
+
+	public void setUseAccountId(Long useAccountId) {
+		this.useAccountId = useAccountId;
+		if(useAccountId != null){
+			putQueryParameter("UseAccountId", useAccountId.toString());
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getDataTypeIds() {
+		return this.dataTypeIds;
+	}
+
+	public void setDataTypeIds(String dataTypeIds) {
+		this.dataTypeIds = dataTypeIds;
+		if(dataTypeIds != null){
+			putQueryParameter("DataTypeIds", dataTypeIds);
 		}
 	}
 

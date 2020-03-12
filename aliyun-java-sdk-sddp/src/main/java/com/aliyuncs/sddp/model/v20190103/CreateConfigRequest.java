@@ -15,28 +15,31 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateConfigRequest extends RpcAcsRequest<CreateConfigResponse> {
-	
-	public CreateConfigRequest() {
-		super("Sddp", "2019-01-03", "CreateConfig", "sddp");
-	}
+	   
 
 	private String code;
 
-	private Integer featureType;
-
 	private String description;
-
-	private String configList;
 
 	private String lang;
 
 	private String value;
+	public CreateConfigRequest() {
+		super("Sddp", "2019-01-03", "CreateConfig", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCode() {
 		return this.code;
@@ -49,17 +52,6 @@ public class CreateConfigRequest extends RpcAcsRequest<CreateConfigResponse> {
 		}
 	}
 
-	public Integer getFeatureType() {
-		return this.featureType;
-	}
-
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -68,17 +60,6 @@ public class CreateConfigRequest extends RpcAcsRequest<CreateConfigResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getConfigList() {
-		return this.configList;
-	}
-
-	public void setConfigList(String configList) {
-		this.configList = configList;
-		if(configList != null){
-			putQueryParameter("ConfigList", configList);
 		}
 	}
 

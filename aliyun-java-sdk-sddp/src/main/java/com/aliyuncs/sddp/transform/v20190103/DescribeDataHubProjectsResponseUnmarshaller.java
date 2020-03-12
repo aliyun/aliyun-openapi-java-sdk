@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDataHubProjectsResponseUnmarshaller {
 
-	public static DescribeDataHubProjectsResponse unmarshall(DescribeDataHubProjectsResponse describeDataHubProjectsResponse, UnmarshallerContext context) {
+	public static DescribeDataHubProjectsResponse unmarshall(DescribeDataHubProjectsResponse describeDataHubProjectsResponse, UnmarshallerContext _ctx) {
 		
-		describeDataHubProjectsResponse.setRequestId(context.stringValue("DescribeDataHubProjectsResponse.RequestId"));
-		describeDataHubProjectsResponse.setPageSize(context.integerValue("DescribeDataHubProjectsResponse.PageSize"));
-		describeDataHubProjectsResponse.setCurrentPage(context.integerValue("DescribeDataHubProjectsResponse.CurrentPage"));
-		describeDataHubProjectsResponse.setTotalCount(context.integerValue("DescribeDataHubProjectsResponse.TotalCount"));
+		describeDataHubProjectsResponse.setRequestId(_ctx.stringValue("DescribeDataHubProjectsResponse.RequestId"));
+		describeDataHubProjectsResponse.setPageSize(_ctx.integerValue("DescribeDataHubProjectsResponse.PageSize"));
+		describeDataHubProjectsResponse.setCurrentPage(_ctx.integerValue("DescribeDataHubProjectsResponse.CurrentPage"));
+		describeDataHubProjectsResponse.setTotalCount(_ctx.integerValue("DescribeDataHubProjectsResponse.TotalCount"));
 
 		List<Project> items = new ArrayList<Project>();
-		for (int i = 0; i < context.lengthValue("DescribeDataHubProjectsResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDataHubProjectsResponse.Items.Length"); i++) {
 			Project project = new Project();
-			project.setId(context.longValue("DescribeDataHubProjectsResponse.Items["+ i +"].Id"));
-			project.setName(context.stringValue("DescribeDataHubProjectsResponse.Items["+ i +"].Name"));
-			project.setDescription(context.stringValue("DescribeDataHubProjectsResponse.Items["+ i +"].Description"));
-			project.setCreationTime(context.longValue("DescribeDataHubProjectsResponse.Items["+ i +"].CreationTime"));
-			project.setTopicCount(context.stringValue("DescribeDataHubProjectsResponse.Items["+ i +"].TopicCount"));
-			project.setTopicTupleCount(context.stringValue("DescribeDataHubProjectsResponse.Items["+ i +"].TopicTupleCount"));
-			project.setTopicBlobCount(context.longValue("DescribeDataHubProjectsResponse.Items["+ i +"].TopicBlobCount"));
-			project.setUserId(context.longValue("DescribeDataHubProjectsResponse.Items["+ i +"].UserId"));
-			project.setLoginName(context.stringValue("DescribeDataHubProjectsResponse.Items["+ i +"].LoginName"));
-			project.setDisplayName(context.stringValue("DescribeDataHubProjectsResponse.Items["+ i +"].DisplayName"));
+			project.setId(_ctx.longValue("DescribeDataHubProjectsResponse.Items["+ i +"].Id"));
+			project.setName(_ctx.stringValue("DescribeDataHubProjectsResponse.Items["+ i +"].Name"));
+			project.setDescription(_ctx.stringValue("DescribeDataHubProjectsResponse.Items["+ i +"].Description"));
+			project.setCreationTime(_ctx.longValue("DescribeDataHubProjectsResponse.Items["+ i +"].CreationTime"));
+			project.setTopicCount(_ctx.stringValue("DescribeDataHubProjectsResponse.Items["+ i +"].TopicCount"));
+			project.setTopicTupleCount(_ctx.stringValue("DescribeDataHubProjectsResponse.Items["+ i +"].TopicTupleCount"));
+			project.setTopicBlobCount(_ctx.longValue("DescribeDataHubProjectsResponse.Items["+ i +"].TopicBlobCount"));
+			project.setUserId(_ctx.longValue("DescribeDataHubProjectsResponse.Items["+ i +"].UserId"));
+			project.setLoginName(_ctx.stringValue("DescribeDataHubProjectsResponse.Items["+ i +"].LoginName"));
+			project.setDisplayName(_ctx.stringValue("DescribeDataHubProjectsResponse.Items["+ i +"].DisplayName"));
 
 			items.add(project);
 		}

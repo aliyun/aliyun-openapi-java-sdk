@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeConfigsResponseUnmarshaller {
 
-	public static DescribeConfigsResponse unmarshall(DescribeConfigsResponse describeConfigsResponse, UnmarshallerContext context) {
+	public static DescribeConfigsResponse unmarshall(DescribeConfigsResponse describeConfigsResponse, UnmarshallerContext _ctx) {
 		
-		describeConfigsResponse.setRequestId(context.stringValue("DescribeConfigsResponse.RequestId"));
+		describeConfigsResponse.setRequestId(_ctx.stringValue("DescribeConfigsResponse.RequestId"));
 
 		List<Config> configList = new ArrayList<Config>();
-		for (int i = 0; i < context.lengthValue("DescribeConfigsResponse.ConfigList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeConfigsResponse.ConfigList.Length"); i++) {
 			Config config = new Config();
-			config.setId(context.longValue("DescribeConfigsResponse.ConfigList["+ i +"].Id"));
-			config.setCode(context.integerValue("DescribeConfigsResponse.ConfigList["+ i +"].Code"));
-			config.setDescription(context.stringValue("DescribeConfigsResponse.ConfigList["+ i +"].Description"));
-			config.setValue(context.longValue("DescribeConfigsResponse.ConfigList["+ i +"].Value"));
-			config.setDefaultValue(context.stringValue("DescribeConfigsResponse.ConfigList["+ i +"].DefaultValue"));
+			config.setId(_ctx.longValue("DescribeConfigsResponse.ConfigList["+ i +"].Id"));
+			config.setCode(_ctx.integerValue("DescribeConfigsResponse.ConfigList["+ i +"].Code"));
+			config.setDescription(_ctx.stringValue("DescribeConfigsResponse.ConfigList["+ i +"].Description"));
+			config.setValue(_ctx.longValue("DescribeConfigsResponse.ConfigList["+ i +"].Value"));
+			config.setDefaultValue(_ctx.stringValue("DescribeConfigsResponse.ConfigList["+ i +"].DefaultValue"));
 
 			configList.add(config);
 		}

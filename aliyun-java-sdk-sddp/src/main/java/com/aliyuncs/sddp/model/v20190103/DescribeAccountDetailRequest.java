@@ -15,32 +15,28 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeAccountDetailRequest extends RpcAcsRequest<DescribeAccountDetailResponse> {
-	
-	public DescribeAccountDetailRequest() {
-		super("Sddp", "2019-01-03", "DescribeAccountDetail", "sddp");
-	}
-
-	private String lang;
+	   
 
 	private Long userId;
 
 	private Long accountTypeId;
 
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
+	private String lang;
+	public DescribeAccountDetailRequest() {
+		super("Sddp", "2019-01-03", "DescribeAccountDetail", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getUserId() {
@@ -62,6 +58,17 @@ public class DescribeAccountDetailRequest extends RpcAcsRequest<DescribeAccountD
 		this.accountTypeId = accountTypeId;
 		if(accountTypeId != null){
 			putQueryParameter("AccountTypeId", accountTypeId.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

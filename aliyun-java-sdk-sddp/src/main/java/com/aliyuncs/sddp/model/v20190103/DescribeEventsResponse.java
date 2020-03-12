@@ -93,8 +93,6 @@ public class DescribeEventsResponse extends AcsResponse {
 
 		private String typeName;
 
-		private String telephoneNum;
-
 		private String subTypeCode;
 
 		private String subTypeName;
@@ -181,14 +179,6 @@ public class DescribeEventsResponse extends AcsResponse {
 
 		public void setTypeName(String typeName) {
 			this.typeName = typeName;
-		}
-
-		public String getTelephoneNum() {
-			return this.telephoneNum;
-		}
-
-		public void setTelephoneNum(String telephoneNum) {
-			this.telephoneNum = telephoneNum;
 		}
 
 		public String getSubTypeCode() {

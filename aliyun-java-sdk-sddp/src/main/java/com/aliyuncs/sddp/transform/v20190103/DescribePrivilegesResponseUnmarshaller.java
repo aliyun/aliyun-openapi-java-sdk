@@ -24,35 +24,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribePrivilegesResponseUnmarshaller {
 
-	public static DescribePrivilegesResponse unmarshall(DescribePrivilegesResponse describePrivilegesResponse, UnmarshallerContext context) {
+	public static DescribePrivilegesResponse unmarshall(DescribePrivilegesResponse describePrivilegesResponse, UnmarshallerContext _ctx) {
 		
-		describePrivilegesResponse.setRequestId(context.stringValue("DescribePrivilegesResponse.RequestId"));
-		describePrivilegesResponse.setPageSize(context.integerValue("DescribePrivilegesResponse.PageSize"));
-		describePrivilegesResponse.setCurrentPage(context.integerValue("DescribePrivilegesResponse.CurrentPage"));
-		describePrivilegesResponse.setTotalCount(context.integerValue("DescribePrivilegesResponse.TotalCount"));
+		describePrivilegesResponse.setRequestId(_ctx.stringValue("DescribePrivilegesResponse.RequestId"));
+		describePrivilegesResponse.setPageSize(_ctx.integerValue("DescribePrivilegesResponse.PageSize"));
+		describePrivilegesResponse.setCurrentPage(_ctx.integerValue("DescribePrivilegesResponse.CurrentPage"));
+		describePrivilegesResponse.setTotalCount(_ctx.integerValue("DescribePrivilegesResponse.TotalCount"));
 
 		List<Privilege> items = new ArrayList<Privilege>();
-		for (int i = 0; i < context.lengthValue("DescribePrivilegesResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribePrivilegesResponse.Items.Length"); i++) {
 			Privilege privilege = new Privilege();
-			privilege.setId(context.longValue("DescribePrivilegesResponse.Items["+ i +"].Id"));
-			privilege.setAccountId(context.longValue("DescribePrivilegesResponse.Items["+ i +"].AccountId"));
-			privilege.setAccountType(context.integerValue("DescribePrivilegesResponse.Items["+ i +"].AccountType"));
-			privilege.setUseAccountId(context.longValue("DescribePrivilegesResponse.Items["+ i +"].UseAccountId"));
-			privilege.setUseAccountType(context.integerValue("DescribePrivilegesResponse.Items["+ i +"].UseAccountType"));
-			privilege.setProductName(context.stringValue("DescribePrivilegesResponse.Items["+ i +"].ProductName"));
-			privilege.setProductCode(context.stringValue("DescribePrivilegesResponse.Items["+ i +"].productCode"));
-			privilege.setDataType(context.stringValue("DescribePrivilegesResponse.Items["+ i +"].DataType"));
-			privilege.setDataTypeId(context.stringValue("DescribePrivilegesResponse.Items["+ i +"].DataTypeId"));
-			privilege.setDataTypeName(context.stringValue("DescribePrivilegesResponse.Items["+ i +"].DataTypeName"));
-			privilege.setDataInstance(context.stringValue("DescribePrivilegesResponse.Items["+ i +"].DataInstance"));
-			privilege.setDataTable(context.stringValue("DescribePrivilegesResponse.Items["+ i +"].DataTable"));
-			privilege.setDataColumn(context.stringValue("DescribePrivilegesResponse.Items["+ i +"].DataColumn"));
-			privilege.setDataPackage(context.stringValue("DescribePrivilegesResponse.Items["+ i +"].DataPackage"));
-			privilege.setResourceName(context.stringValue("DescribePrivilegesResponse.Items["+ i +"].ResourceName"));
-			privilege.setResourcePath(context.stringValue("DescribePrivilegesResponse.Items["+ i +"].ResourcePath"));
-			privilege.setOperation(context.stringValue("DescribePrivilegesResponse.Items["+ i +"].Operation"));
-			privilege.setPolicyCondition(context.stringValue("DescribePrivilegesResponse.Items["+ i +"].PolicyCondition"));
-			privilege.setSensitive(context.stringValue("DescribePrivilegesResponse.Items["+ i +"].Sensitive"));
+			privilege.setId(_ctx.longValue("DescribePrivilegesResponse.Items["+ i +"].Id"));
+			privilege.setAccountId(_ctx.longValue("DescribePrivilegesResponse.Items["+ i +"].AccountId"));
+			privilege.setAccountType(_ctx.integerValue("DescribePrivilegesResponse.Items["+ i +"].AccountType"));
+			privilege.setUseAccountId(_ctx.longValue("DescribePrivilegesResponse.Items["+ i +"].UseAccountId"));
+			privilege.setUseAccountType(_ctx.integerValue("DescribePrivilegesResponse.Items["+ i +"].UseAccountType"));
+			privilege.setProductName(_ctx.stringValue("DescribePrivilegesResponse.Items["+ i +"].ProductName"));
+			privilege.setProductCode(_ctx.stringValue("DescribePrivilegesResponse.Items["+ i +"].productCode"));
+			privilege.setDataType(_ctx.stringValue("DescribePrivilegesResponse.Items["+ i +"].DataType"));
+			privilege.setDataTypeId(_ctx.stringValue("DescribePrivilegesResponse.Items["+ i +"].DataTypeId"));
+			privilege.setDataTypeName(_ctx.stringValue("DescribePrivilegesResponse.Items["+ i +"].DataTypeName"));
+			privilege.setDataInstance(_ctx.stringValue("DescribePrivilegesResponse.Items["+ i +"].DataInstance"));
+			privilege.setDataTable(_ctx.stringValue("DescribePrivilegesResponse.Items["+ i +"].DataTable"));
+			privilege.setDataColumn(_ctx.stringValue("DescribePrivilegesResponse.Items["+ i +"].DataColumn"));
+			privilege.setDataPackage(_ctx.stringValue("DescribePrivilegesResponse.Items["+ i +"].DataPackage"));
+			privilege.setResourceName(_ctx.stringValue("DescribePrivilegesResponse.Items["+ i +"].ResourceName"));
+			privilege.setResourcePath(_ctx.stringValue("DescribePrivilegesResponse.Items["+ i +"].ResourcePath"));
+			privilege.setOperation(_ctx.stringValue("DescribePrivilegesResponse.Items["+ i +"].Operation"));
+			privilege.setPolicyCondition(_ctx.stringValue("DescribePrivilegesResponse.Items["+ i +"].PolicyCondition"));
+			privilege.setSensitive(_ctx.stringValue("DescribePrivilegesResponse.Items["+ i +"].Sensitive"));
 
 			items.add(privilege);
 		}

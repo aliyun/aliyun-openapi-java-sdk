@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDepartsResponseUnmarshaller {
 
-	public static DescribeDepartsResponse unmarshall(DescribeDepartsResponse describeDepartsResponse, UnmarshallerContext context) {
+	public static DescribeDepartsResponse unmarshall(DescribeDepartsResponse describeDepartsResponse, UnmarshallerContext _ctx) {
 		
-		describeDepartsResponse.setRequestId(context.stringValue("DescribeDepartsResponse.RequestId"));
-		describeDepartsResponse.setPageSize(context.integerValue("DescribeDepartsResponse.PageSize"));
-		describeDepartsResponse.setCurrentPage(context.integerValue("DescribeDepartsResponse.CurrentPage"));
-		describeDepartsResponse.setTotalCount(context.integerValue("DescribeDepartsResponse.TotalCount"));
+		describeDepartsResponse.setRequestId(_ctx.stringValue("DescribeDepartsResponse.RequestId"));
+		describeDepartsResponse.setPageSize(_ctx.integerValue("DescribeDepartsResponse.PageSize"));
+		describeDepartsResponse.setCurrentPage(_ctx.integerValue("DescribeDepartsResponse.CurrentPage"));
+		describeDepartsResponse.setTotalCount(_ctx.integerValue("DescribeDepartsResponse.TotalCount"));
 
 		List<Depart> items = new ArrayList<Depart>();
-		for (int i = 0; i < context.lengthValue("DescribeDepartsResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDepartsResponse.Items.Length"); i++) {
 			Depart depart = new Depart();
-			depart.setId(context.longValue("DescribeDepartsResponse.Items["+ i +"].Id"));
-			depart.setDepartId(context.longValue("DescribeDepartsResponse.Items["+ i +"].DepartId"));
-			depart.setDepartName(context.stringValue("DescribeDepartsResponse.Items["+ i +"].DepartName"));
-			depart.setComment(context.stringValue("DescribeDepartsResponse.Items["+ i +"].Comment"));
-			depart.setParentDepartId(context.longValue("DescribeDepartsResponse.Items["+ i +"].ParentDepartId"));
-			depart.setParentDepartName(context.stringValue("DescribeDepartsResponse.Items["+ i +"].ParentDepartName"));
-			depart.setLevel(context.integerValue("DescribeDepartsResponse.Items["+ i +"].Level"));
+			depart.setId(_ctx.longValue("DescribeDepartsResponse.Items["+ i +"].Id"));
+			depart.setDepartId(_ctx.longValue("DescribeDepartsResponse.Items["+ i +"].DepartId"));
+			depart.setDepartName(_ctx.stringValue("DescribeDepartsResponse.Items["+ i +"].DepartName"));
+			depart.setComment(_ctx.stringValue("DescribeDepartsResponse.Items["+ i +"].Comment"));
+			depart.setParentDepartId(_ctx.longValue("DescribeDepartsResponse.Items["+ i +"].ParentDepartId"));
+			depart.setParentDepartName(_ctx.stringValue("DescribeDepartsResponse.Items["+ i +"].ParentDepartName"));
+			depart.setLevel(_ctx.integerValue("DescribeDepartsResponse.Items["+ i +"].Level"));
 
 			items.add(depart);
 		}

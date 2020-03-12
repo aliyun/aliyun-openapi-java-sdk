@@ -15,24 +15,31 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeAuthAccountsRequest extends RpcAcsRequest<DescribeAuthAccountsResponse> {
-	
-	public DescribeAuthAccountsRequest() {
-		super("Sddp", "2019-01-03", "DescribeAuthAccounts", "sddp");
-	}
+	   
 
 	private Integer featureType;
 
-	private Integer pageSize;
-
 	private Integer currentPage;
 
+	private Integer pageSize;
+
 	private String lang;
+	public DescribeAuthAccountsRequest() {
+		super("Sddp", "2019-01-03", "DescribeAuthAccounts", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getFeatureType() {
 		return this.featureType;
@@ -45,17 +52,6 @@ public class DescribeAuthAccountsRequest extends RpcAcsRequest<DescribeAuthAccou
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -64,6 +60,17 @@ public class DescribeAuthAccountsRequest extends RpcAcsRequest<DescribeAuthAccou
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

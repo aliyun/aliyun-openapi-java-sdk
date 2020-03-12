@@ -67,26 +67,10 @@ public class DescribeOssObjectDetailResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -129,6 +113,8 @@ public class DescribeOssObjectDetailResponse extends AcsResponse {
 
 			private Long count;
 
+			private Integer category;
+
 			public String getRuleName() {
 				return this.ruleName;
 			}
@@ -143,6 +129,14 @@ public class DescribeOssObjectDetailResponse extends AcsResponse {
 
 			public void setCount(Long count) {
 				this.count = count;
+			}
+
+			public Integer getCategory() {
+				return this.category;
+			}
+
+			public void setCategory(Integer category) {
+				this.category = category;
 			}
 		}
 	}

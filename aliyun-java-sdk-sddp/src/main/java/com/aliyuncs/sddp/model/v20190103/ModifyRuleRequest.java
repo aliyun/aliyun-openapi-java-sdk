@@ -15,63 +15,78 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyRuleRequest extends RpcAcsRequest<ModifyRuleResponse> {
-	
-	public ModifyRuleRequest() {
-		super("Sddp", "2019-01-03", "ModifyRule", "sddp");
-	}
+	   
 
-	private Integer featureType;
+	private Integer warnLevel;
 
-	private String name;
+	private String productCode;
 
-	private Long id;
+	private Long productId;
 
 	private Long riskLevelId;
 
+	private String content;
+
+	private Long id;
+
 	private String lang;
+
+	private Integer ruleType;
+
+	private String statExpress;
 
 	private Integer customType;
 
+	private String name;
+
 	private Integer category;
-
-	private String content;
-
-	public Integer getFeatureType() {
-		return this.featureType;
+	public ModifyRuleRequest() {
+		super("Sddp", "2019-01-03", "ModifyRule", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
+	public Integer getWarnLevel() {
+		return this.warnLevel;
+	}
+
+	public void setWarnLevel(Integer warnLevel) {
+		this.warnLevel = warnLevel;
+		if(warnLevel != null){
+			putQueryParameter("WarnLevel", warnLevel.toString());
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getProductCode() {
+		return this.productCode;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+		if(productCode != null){
+			putQueryParameter("ProductCode", productCode);
 		}
 	}
 
-	public Long getId() {
-		return this.id;
+	public Long getProductId() {
+		return this.productId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id.toString());
+	public void setProductId(Long productId) {
+		this.productId = productId;
+		if(productId != null){
+			putQueryParameter("ProductId", productId.toString());
 		}
 	}
 
@@ -86,6 +101,28 @@ public class ModifyRuleRequest extends RpcAcsRequest<ModifyRuleResponse> {
 		}
 	}
 
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putQueryParameter("Content", content);
+		}
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
+		}
+	}
+
 	public String getLang() {
 		return this.lang;
 	}
@@ -94,6 +131,28 @@ public class ModifyRuleRequest extends RpcAcsRequest<ModifyRuleResponse> {
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getRuleType() {
+		return this.ruleType;
+	}
+
+	public void setRuleType(Integer ruleType) {
+		this.ruleType = ruleType;
+		if(ruleType != null){
+			putQueryParameter("RuleType", ruleType.toString());
+		}
+	}
+
+	public String getStatExpress() {
+		return this.statExpress;
+	}
+
+	public void setStatExpress(String statExpress) {
+		this.statExpress = statExpress;
+		if(statExpress != null){
+			putQueryParameter("StatExpress", statExpress);
 		}
 	}
 
@@ -108,6 +167,17 @@ public class ModifyRuleRequest extends RpcAcsRequest<ModifyRuleResponse> {
 		}
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
 	public Integer getCategory() {
 		return this.category;
 	}
@@ -116,17 +186,6 @@ public class ModifyRuleRequest extends RpcAcsRequest<ModifyRuleResponse> {
 		this.category = category;
 		if(category != null){
 			putQueryParameter("Category", category.toString());
-		}
-	}
-
-	public String getContent() {
-		return this.content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-		if(content != null){
-			putQueryParameter("Content", content);
 		}
 	}
 

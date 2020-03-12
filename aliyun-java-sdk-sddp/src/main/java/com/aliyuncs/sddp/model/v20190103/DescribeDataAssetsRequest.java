@@ -15,53 +15,36 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDataAssetsRequest extends RpcAcsRequest<DescribeDataAssetsResponse> {
-	
-	public DescribeDataAssetsRequest() {
-		super("Sddp", "2019-01-03", "DescribeDataAssets", "sddp");
-	}
-
-	private Integer rangeId;
-
-	private Integer featureType;
+	   
 
 	private String riskLevels;
 
-	private String name;
+	private Integer rangeId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private String lang;
 
+	private Integer currentPage;
+
+	private String name;
+
 	private Long ruleId;
-
-	public Integer getRangeId() {
-		return this.rangeId;
-	}
-
-	public void setRangeId(Integer rangeId) {
-		this.rangeId = rangeId;
-		if(rangeId != null){
-			putQueryParameter("RangeId", rangeId.toString());
-		}
-	}
-
-	public Integer getFeatureType() {
-		return this.featureType;
-	}
-
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
-		}
+	public DescribeDataAssetsRequest() {
+		super("Sddp", "2019-01-03", "DescribeDataAssets", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getRiskLevels() {
@@ -75,14 +58,14 @@ public class DescribeDataAssetsRequest extends RpcAcsRequest<DescribeDataAssetsR
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public Integer getRangeId() {
+		return this.rangeId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setRangeId(Integer rangeId) {
+		this.rangeId = rangeId;
+		if(rangeId != null){
+			putQueryParameter("RangeId", rangeId.toString());
 		}
 	}
 
@@ -97,6 +80,17 @@ public class DescribeDataAssetsRequest extends RpcAcsRequest<DescribeDataAssetsR
 		}
 	}
 
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -108,14 +102,14 @@ public class DescribeDataAssetsRequest extends RpcAcsRequest<DescribeDataAssetsR
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
