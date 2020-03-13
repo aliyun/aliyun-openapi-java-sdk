@@ -123,6 +123,8 @@ public class ListTasksResponse extends AcsResponse {
 
 		private String statusCode;
 
+		private Integer enableZoneIdentification;
+
 		public String getAppkey() {
 			return this.appkey;
 		}
@@ -225,6 +227,14 @@ public class ListTasksResponse extends AcsResponse {
 
 		public void setStatusCode(String statusCode) {
 			this.statusCode = statusCode;
+		}
+
+		public Integer getEnableZoneIdentification() {
+			return this.enableZoneIdentification;
+		}
+
+		public void setEnableZoneIdentification(Integer enableZoneIdentification) {
+			this.enableZoneIdentification = enableZoneIdentification;
 		}
 	}
 

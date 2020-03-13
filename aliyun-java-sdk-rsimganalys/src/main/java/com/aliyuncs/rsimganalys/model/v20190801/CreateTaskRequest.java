@@ -32,13 +32,15 @@ public class CreateTaskRequest extends RpcAcsRequest<CreateTaskResponse> {
 
 	private String productType;
 
+	private String zoneList;
+
 	private String srcImageId;
 
 	private String appkey;
 
 	private String dstImageId;
 	public CreateTaskRequest() {
-		super("rsimganalys", "2019-08-01", "CreateTask", "aliyun-java-sdk-rsimganalys");
+		super("rsimganalys", "2019-08-01", "CreateTask");
 		setMethod(MethodType.POST);
 	}
 
@@ -83,6 +85,17 @@ public class CreateTaskRequest extends RpcAcsRequest<CreateTaskResponse> {
 		this.productType = productType;
 		if(productType != null){
 			putQueryParameter("ProductType", productType);
+		}
+	}
+
+	public String getZoneList() {
+		return this.zoneList;
+	}
+
+	public void setZoneList(String zoneList) {
+		this.zoneList = zoneList;
+		if(zoneList != null){
+			putQueryParameter("ZoneList", zoneList);
 		}
 	}
 

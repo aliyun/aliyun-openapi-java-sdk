@@ -26,7 +26,7 @@ public class GetImageRequest extends RpcAcsRequest<GetImageResponse> {
 
 	private Long imageId;
 	public GetImageRequest() {
-		super("rsimganalys", "2019-08-01", "GetImage", "aliyun-java-sdk-rsimganalys");
+		super("rsimganalys", "2019-08-01", "GetImage");
 		setMethod(MethodType.POST);
 	}
 

@@ -49,6 +49,7 @@ public class ListTasksResponseUnmarshaller {
 			contents.setResponse(_ctx.stringValue("ListTasksResponse.Data["+ i +"].Response"));
 			contents.setStatusMessage(_ctx.stringValue("ListTasksResponse.Data["+ i +"].StatusMessage"));
 			contents.setStatusCode(_ctx.stringValue("ListTasksResponse.Data["+ i +"].StatusCode"));
+			contents.setEnableZoneIdentification(_ctx.integerValue("ListTasksResponse.Data["+ i +"].EnableZoneIdentification"));
 
 			data.add(contents);
 		}

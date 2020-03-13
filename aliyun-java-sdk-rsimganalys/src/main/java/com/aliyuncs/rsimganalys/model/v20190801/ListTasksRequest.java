@@ -26,7 +26,7 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 
 	private String appkey;
 	public ListTasksRequest() {
-		super("rsimganalys", "2019-08-01", "ListTasks", "aliyun-java-sdk-rsimganalys");
+		super("rsimganalys", "2019-08-01", "ListTasks");
 		setMethod(MethodType.POST);
 	}
 
