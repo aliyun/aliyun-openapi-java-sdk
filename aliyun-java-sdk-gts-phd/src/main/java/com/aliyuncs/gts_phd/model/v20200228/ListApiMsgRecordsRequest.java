@@ -24,59 +24,16 @@ import com.aliyuncs.http.MethodType;
 public class ListApiMsgRecordsRequest extends RpcAcsRequest<ListApiMsgRecordsResponse> {
 	   
 
-	private String uid;
-
-	private String requestId;
-
-	private String sign;
-
 	private Integer pageSize;
 
 	private String msgId;
 
 	private Integer pageIndex;
 
-	private String ak;
-
 	private String state;
-
-	private String signTimestamp;
 	public ListApiMsgRecordsRequest() {
 		super("gts-phd", "2020-02-28", "ListApiMsgRecords");
 		setMethod(MethodType.GET);
-	}
-
-	public String getUid() {
-		return this.uid;
-	}
-
-	public void setUid(String uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid);
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
-		}
-	}
-
-	public String getSign() {
-		return this.sign;
-	}
-
-	public void setSign(String sign) {
-		this.sign = sign;
-		if(sign != null){
-			putQueryParameter("Sign", sign);
-		}
 	}
 
 	public Integer getPageSize() {
@@ -112,17 +69,6 @@ public class ListApiMsgRecordsRequest extends RpcAcsRequest<ListApiMsgRecordsRes
 		}
 	}
 
-	public String getAk() {
-		return this.ak;
-	}
-
-	public void setAk(String ak) {
-		this.ak = ak;
-		if(ak != null){
-			putQueryParameter("Ak", ak);
-		}
-	}
-
 	public String getState() {
 		return this.state;
 	}
@@ -131,17 +77,6 @@ public class ListApiMsgRecordsRequest extends RpcAcsRequest<ListApiMsgRecordsRes
 		this.state = state;
 		if(state != null){
 			putQueryParameter("State", state);
-		}
-	}
-
-	public String getSignTimestamp() {
-		return this.signTimestamp;
-	}
-
-	public void setSignTimestamp(String signTimestamp) {
-		this.signTimestamp = signTimestamp;
-		if(signTimestamp != null){
-			putQueryParameter("SignTimestamp", signTimestamp);
 		}
 	}
 
