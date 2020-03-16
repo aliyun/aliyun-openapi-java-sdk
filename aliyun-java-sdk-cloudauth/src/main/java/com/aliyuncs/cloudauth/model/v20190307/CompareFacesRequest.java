@@ -34,11 +34,9 @@ public class CompareFacesRequest extends RpcAcsRequest<CompareFacesResponse> {
 
 	private String targetImageValue;
 
-	private String sourceIp;
-
 	private String sourceImageValue;
 	public CompareFacesRequest() {
-		super("Cloudauth", "2019-03-07", "CompareFaces");
+		super("Cloudauth", "2019-03-07", "CompareFaces", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -88,17 +86,6 @@ public class CompareFacesRequest extends RpcAcsRequest<CompareFacesResponse> {
 		this.targetImageValue = targetImageValue;
 		if(targetImageValue != null){
 			putBodyParameter("TargetImageValue", targetImageValue);
-		}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 

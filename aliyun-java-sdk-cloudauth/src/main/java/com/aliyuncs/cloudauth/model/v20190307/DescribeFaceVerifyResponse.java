@@ -72,6 +72,8 @@ public class DescribeFaceVerifyResponse extends AcsResponse {
 
 		private String materialInfo;
 
+		private String deviceToken;
+
 		public String getPassed() {
 			return this.passed;
 		}
@@ -94,6 +96,14 @@ public class DescribeFaceVerifyResponse extends AcsResponse {
 
 		public void setMaterialInfo(String materialInfo) {
 			this.materialInfo = materialInfo;
+		}
+
+		public String getDeviceToken() {
+			return this.deviceToken;
+		}
+
+		public void setDeviceToken(String deviceToken) {
+			this.deviceToken = deviceToken;
 		}
 	}
 

@@ -31,15 +31,11 @@ public class ModifyDeviceInfoRequest extends RpcAcsRequest<ModifyDeviceInfoRespo
 
 	private String expiredDay;
 
-	private String sourceIp;
-
-	private String lang;
-
 	private String deviceId;
 
 	private String bizType;
 	public ModifyDeviceInfoRequest() {
-		super("Cloudauth", "2019-03-07", "ModifyDeviceInfo");
+		super("Cloudauth", "2019-03-07", "ModifyDeviceInfo", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -77,28 +73,6 @@ public class ModifyDeviceInfoRequest extends RpcAcsRequest<ModifyDeviceInfoRespo
 		this.expiredDay = expiredDay;
 		if(expiredDay != null){
 			putQueryParameter("ExpiredDay", expiredDay);
-		}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
 		}
 	}
 

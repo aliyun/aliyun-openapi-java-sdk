@@ -31,13 +31,9 @@ public class CreateAuthKeyRequest extends RpcAcsRequest<CreateAuthKeyResponse> {
 
 	private String bizType;
 
-	private String sourceIp;
-
 	private Integer authYears;
-
-	private String lang;
 	public CreateAuthKeyRequest() {
-		super("Cloudauth", "2019-03-07", "CreateAuthKey");
+		super("Cloudauth", "2019-03-07", "CreateAuthKey", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -78,17 +74,6 @@ public class CreateAuthKeyRequest extends RpcAcsRequest<CreateAuthKeyResponse> {
 		}
 	}
 
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
 	public Integer getAuthYears() {
 		return this.authYears;
 	}
@@ -97,17 +82,6 @@ public class CreateAuthKeyRequest extends RpcAcsRequest<CreateAuthKeyResponse> {
 		this.authYears = authYears;
 		if(authYears != null){
 			putQueryParameter("AuthYears", authYears.toString());
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
 		}
 	}
 

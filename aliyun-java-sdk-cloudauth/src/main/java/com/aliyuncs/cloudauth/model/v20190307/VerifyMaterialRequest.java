@@ -41,7 +41,7 @@ public class VerifyMaterialRequest extends RpcAcsRequest<VerifyMaterialResponse>
 
 	private String name;
 	public VerifyMaterialRequest() {
-		super("Cloudauth", "2019-03-07", "VerifyMaterial");
+		super("Cloudauth", "2019-03-07", "VerifyMaterial", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

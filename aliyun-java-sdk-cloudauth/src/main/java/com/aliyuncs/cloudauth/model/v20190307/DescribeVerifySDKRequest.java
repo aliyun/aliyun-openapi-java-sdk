@@ -25,40 +25,14 @@ import com.aliyuncs.cloudauth.Endpoint;
 public class DescribeVerifySDKRequest extends RpcAcsRequest<DescribeVerifySDKResponse> {
 	   
 
-	private String sourceIp;
-
-	private String lang;
-
 	private String taskId;
 	public DescribeVerifySDKRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeVerifySDK");
+		super("Cloudauth", "2019-03-07", "DescribeVerifySDK", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
 	}
 
 	public String getTaskId() {

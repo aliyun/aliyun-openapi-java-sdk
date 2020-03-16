@@ -42,7 +42,7 @@ public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttribu
 
 	private Boolean dontSaveDB;
 	public DetectFaceAttributesRequest() {
-		super("Cloudauth", "2019-03-07", "DetectFaceAttributes");
+		super("Cloudauth", "2019-03-07", "DetectFaceAttributes", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -49,7 +49,7 @@ public class DescribeVerifyTokenRequest extends RpcAcsRequest<DescribeVerifyToke
 
 	private String failedRedirectUrl;
 	public DescribeVerifyTokenRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeVerifyToken");
+		super("Cloudauth", "2019-03-07", "DescribeVerifyToken", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

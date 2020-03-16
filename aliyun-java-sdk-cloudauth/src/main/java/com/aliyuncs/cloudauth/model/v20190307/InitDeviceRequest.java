@@ -33,6 +33,8 @@ public class InitDeviceRequest extends RpcAcsRequest<InitDeviceResponse> {
 
 	private String appVersion;
 
+	private String deviceToken;
+
 	private String certifyId;
 
 	private String outerOrderNo;
@@ -45,7 +47,7 @@ public class InitDeviceRequest extends RpcAcsRequest<InitDeviceResponse> {
 
 	private String metaInfo;
 	public InitDeviceRequest() {
-		super("Cloudauth", "2019-03-07", "InitDevice");
+		super("Cloudauth", "2019-03-07", "InitDevice", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -94,6 +96,17 @@ public class InitDeviceRequest extends RpcAcsRequest<InitDeviceResponse> {
 		this.appVersion = appVersion;
 		if(appVersion != null){
 			putQueryParameter("AppVersion", appVersion);
+		}
+	}
+
+	public String getDeviceToken() {
+		return this.deviceToken;
+	}
+
+	public void setDeviceToken(String deviceToken) {
+		this.deviceToken = deviceToken;
+		if(deviceToken != null){
+			putQueryParameter("DeviceToken", deviceToken);
 		}
 	}
 

@@ -27,15 +27,9 @@ public class DescribeDeviceInfoRequest extends RpcAcsRequest<DescribeDeviceInfoR
 
 	private String userDeviceId;
 
-	private String sourceIp;
-
 	private Integer pageSize;
 
-	private String lang;
-
 	private String expiredStartDay;
-
-	private Integer totalCount;
 
 	private Integer currentPage;
 
@@ -45,7 +39,7 @@ public class DescribeDeviceInfoRequest extends RpcAcsRequest<DescribeDeviceInfoR
 
 	private String expiredEndDay;
 	public DescribeDeviceInfoRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeDeviceInfo");
+		super("Cloudauth", "2019-03-07", "DescribeDeviceInfo", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,17 +58,6 @@ public class DescribeDeviceInfoRequest extends RpcAcsRequest<DescribeDeviceInfoR
 		}
 	}
 
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -86,17 +69,6 @@ public class DescribeDeviceInfoRequest extends RpcAcsRequest<DescribeDeviceInfoR
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
 	public String getExpiredStartDay() {
 		return this.expiredStartDay;
 	}
@@ -105,17 +77,6 @@ public class DescribeDeviceInfoRequest extends RpcAcsRequest<DescribeDeviceInfoR
 		this.expiredStartDay = expiredStartDay;
 		if(expiredStartDay != null){
 			putQueryParameter("ExpiredStartDay", expiredStartDay);
-		}
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-		if(totalCount != null){
-			putQueryParameter("TotalCount", totalCount.toString());
 		}
 	}
 
