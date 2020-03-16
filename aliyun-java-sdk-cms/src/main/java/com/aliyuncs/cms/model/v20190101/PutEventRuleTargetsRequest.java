@@ -38,7 +38,7 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 	private List<FcParameters> fcParameterss;
 	public PutEventRuleTargetsRequest() {
 		super("Cms", "2019-01-01", "PutEventRuleTargets", "cms");
-		setMethod(MethodType.PUT);
+		setMethod(MethodType.POST);
 	}
 
 	public List<WebhookParameters> getWebhookParameterss() {

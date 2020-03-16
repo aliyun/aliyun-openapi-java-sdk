@@ -21,29 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeEventRuleTargetListRequest extends RpcAcsRequest<DescribeEventRuleTargetListResponse> {
+public class DescribeFolderListRequest extends RpcAcsRequest<DescribeFolderListResponse> {
 	   
 
-	private String ruleName;
-	public DescribeEventRuleTargetListRequest() {
-		super("Cms", "2019-01-01", "DescribeEventRuleTargetList", "cms");
-		setMethod(MethodType.POST);
+	private String appName;
+	public DescribeFolderListRequest() {
+		super("Cms", "2019-01-01", "DescribeFolderList", "cms");
+		setMethod(MethodType.GET);
 	}
 
-	public String getRuleName() {
-		return this.ruleName;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setRuleName(String ruleName) {
-		this.ruleName = ruleName;
-		if(ruleName != null){
-			putQueryParameter("RuleName", ruleName);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
 		}
 	}
 
 	@Override
-	public Class<DescribeEventRuleTargetListResponse> getResponseClass() {
-		return DescribeEventRuleTargetListResponse.class;
+	public Class<DescribeFolderListResponse> getResponseClass() {
+		return DescribeFolderListResponse.class;
 	}
 
 }

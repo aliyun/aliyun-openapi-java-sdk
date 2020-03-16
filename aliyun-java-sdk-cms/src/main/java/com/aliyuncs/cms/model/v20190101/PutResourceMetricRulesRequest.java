@@ -28,7 +28,7 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 	private List<Rules> ruless;
 	public PutResourceMetricRulesRequest() {
 		super("Cms", "2019-01-01", "PutResourceMetricRules", "cms");
-		setMethod(MethodType.PUT);
+		setMethod(MethodType.POST);
 	}
 
 	public List<Rules> getRuless() {

@@ -28,7 +28,7 @@ public class EnableEventRulesRequest extends RpcAcsRequest<EnableEventRulesRespo
 	private List<String> ruleNamess;
 	public EnableEventRulesRequest() {
 		super("Cms", "2019-01-01", "EnableEventRules", "cms");
-		setMethod(MethodType.PUT);
+		setMethod(MethodType.POST);
 	}
 
 	public List<String> getRuleNamess() {

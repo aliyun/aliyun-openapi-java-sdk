@@ -75,7 +75,7 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 	private String escalationsCriticalThreshold;
 	public PutResourceMetricRuleRequest() {
 		super("Cms", "2019-01-01", "PutResourceMetricRule", "cms");
-		setMethod(MethodType.PUT);
+		setMethod(MethodType.POST);
 	}
 
 	public String getWebhook() {

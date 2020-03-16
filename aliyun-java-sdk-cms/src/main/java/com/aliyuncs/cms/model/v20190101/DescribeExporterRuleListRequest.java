@@ -21,55 +21,42 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeDynamicTagRuleListRequest extends RpcAcsRequest<DescribeDynamicTagRuleListResponse> {
+public class DescribeExporterRuleListRequest extends RpcAcsRequest<DescribeExporterRuleListResponse> {
 	   
 
-	private String pageNumber;
+	private Integer pageNumber;
 
-	private String pageSize;
-
-	private String tagKey;
-	public DescribeDynamicTagRuleListRequest() {
-		super("Cms", "2019-01-01", "DescribeDynamicTagRuleList", "cms");
+	private Integer pageSize;
+	public DescribeExporterRuleListRequest() {
+		super("Cms", "2019-01-01", "DescribeExporterRuleList", "cms");
 		setMethod(MethodType.POST);
 	}
 
-	public String getPageNumber() {
+	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(String pageNumber) {
+	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
-		}
-	}
-
-	public String getTagKey() {
-		return this.tagKey;
-	}
-
-	public void setTagKey(String tagKey) {
-		this.tagKey = tagKey;
-		if(tagKey != null){
-			putQueryParameter("TagKey", tagKey);
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeDynamicTagRuleListResponse> getResponseClass() {
-		return DescribeDynamicTagRuleListResponse.class;
+	public Class<DescribeExporterRuleListResponse> getResponseClass() {
+		return DescribeExporterRuleListResponse.class;
 	}
 
 }

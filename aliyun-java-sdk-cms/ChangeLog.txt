@@ -1,3 +1,6 @@
+2020-03-16 Version: 7.0.11
+- Add exporter related API.
+
 2020-02-20 Version: 7.0.10
 - Fix the problem that the three APIs, disablesitemonitors, enablesitemonitors and modifysitemonitor, return result fields are not fully define.
 

@@ -21,29 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeEventRuleTargetListRequest extends RpcAcsRequest<DescribeEventRuleTargetListResponse> {
+public class DeleteExporterOutputRequest extends RpcAcsRequest<DeleteExporterOutputResponse> {
 	   
 
-	private String ruleName;
-	public DescribeEventRuleTargetListRequest() {
-		super("Cms", "2019-01-01", "DescribeEventRuleTargetList", "cms");
+	private String destName;
+	public DeleteExporterOutputRequest() {
+		super("Cms", "2019-01-01", "DeleteExporterOutput", "cms");
 		setMethod(MethodType.POST);
 	}
 
-	public String getRuleName() {
-		return this.ruleName;
+	public String getDestName() {
+		return this.destName;
 	}
 
-	public void setRuleName(String ruleName) {
-		this.ruleName = ruleName;
-		if(ruleName != null){
-			putQueryParameter("RuleName", ruleName);
+	public void setDestName(String destName) {
+		this.destName = destName;
+		if(destName != null){
+			putQueryParameter("DestName", destName);
 		}
 	}
 
 	@Override
-	public Class<DescribeEventRuleTargetListResponse> getResponseClass() {
-		return DescribeEventRuleTargetListResponse.class;
+	public Class<DeleteExporterOutputResponse> getResponseClass() {
+		return DeleteExporterOutputResponse.class;
 	}
 
 }

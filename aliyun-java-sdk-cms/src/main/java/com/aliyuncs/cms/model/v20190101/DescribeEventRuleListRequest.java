@@ -33,7 +33,7 @@ public class DescribeEventRuleListRequest extends RpcAcsRequest<DescribeEventRul
 	private String namePrefix;
 	public DescribeEventRuleListRequest() {
 		super("Cms", "2019-01-01", "DescribeEventRuleList", "cms");
-		setMethod(MethodType.PUT);
+		setMethod(MethodType.POST);
 	}
 
 	public String getGroupId() {

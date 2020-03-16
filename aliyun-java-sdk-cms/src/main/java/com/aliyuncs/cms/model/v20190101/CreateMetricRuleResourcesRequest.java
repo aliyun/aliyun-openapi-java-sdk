@@ -31,7 +31,7 @@ public class CreateMetricRuleResourcesRequest extends RpcAcsRequest<CreateMetric
 	private String overwrite;
 	public CreateMetricRuleResourcesRequest() {
 		super("Cms", "2019-01-01", "CreateMetricRuleResources", "cms");
-		setMethod(MethodType.PUT);
+		setMethod(MethodType.POST);
 	}
 
 	public String getResources() {

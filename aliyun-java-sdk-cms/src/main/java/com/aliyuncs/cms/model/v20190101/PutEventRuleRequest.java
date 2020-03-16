@@ -38,7 +38,7 @@ public class PutEventRuleRequest extends RpcAcsRequest<PutEventRuleResponse> {
 	private String state;
 	public PutEventRuleRequest() {
 		super("Cms", "2019-01-01", "PutEventRule", "cms");
-		setMethod(MethodType.PUT);
+		setMethod(MethodType.POST);
 	}
 
 	public String getGroupId() {
