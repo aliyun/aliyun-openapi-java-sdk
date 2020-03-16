@@ -16,26 +16,18 @@ package com.aliyuncs.ecs.model.v20140526;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.DescribeImagesResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.DescribeImageFromFamilyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeImagesResponse extends AcsResponse {
+public class DescribeImageFromFamilyResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String regionId;
-
-	private Integer totalCount;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
-	private List<Image> images;
+	private Image image;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,44 +37,12 @@ public class DescribeImagesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRegionId() {
-		return this.regionId;
+	public Image getImage() {
+		return this.image;
 	}
 
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public List<Image> getImages() {
-		return this.images;
-	}
-
-	public void setImages(List<Image> images) {
-		this.images = images;
+	public void setImage(Image image) {
+		this.image = image;
 	}
 
 	public static class Image {
@@ -109,8 +69,6 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String oSName;
 
-		private String oSNameEn;
-
 		private String architecture;
 
 		private String status;
@@ -130,8 +88,6 @@ public class DescribeImagesResponse extends AcsResponse {
 		private String usage;
 
 		private Boolean isCopied;
-
-		private String resourceGroupId;
 
 		private List<DiskDeviceMapping> diskDeviceMappings;
 
@@ -225,14 +181,6 @@ public class DescribeImagesResponse extends AcsResponse {
 			this.oSName = oSName;
 		}
 
-		public String getOSNameEn() {
-			return this.oSNameEn;
-		}
-
-		public void setOSNameEn(String oSNameEn) {
-			this.oSNameEn = oSNameEn;
-		}
-
 		public String getArchitecture() {
 			return this.architecture;
 		}
@@ -313,14 +261,6 @@ public class DescribeImagesResponse extends AcsResponse {
 			this.isCopied = isCopied;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
 		public List<DiskDeviceMapping> getDiskDeviceMappings() {
 			return this.diskDeviceMappings;
 		}
@@ -352,10 +292,6 @@ public class DescribeImagesResponse extends AcsResponse {
 			private String importOSSBucket;
 
 			private String importOSSObject;
-
-			private String progress;
-
-			private Integer remainTime;
 
 			public String getSnapshotId() {
 				return this.snapshotId;
@@ -412,22 +348,6 @@ public class DescribeImagesResponse extends AcsResponse {
 			public void setImportOSSObject(String importOSSObject) {
 				this.importOSSObject = importOSSObject;
 			}
-
-			public String getProgress() {
-				return this.progress;
-			}
-
-			public void setProgress(String progress) {
-				this.progress = progress;
-			}
-
-			public Integer getRemainTime() {
-				return this.remainTime;
-			}
-
-			public void setRemainTime(Integer remainTime) {
-				this.remainTime = remainTime;
-			}
 		}
 
 		public static class Tag {
@@ -455,7 +375,7 @@ public class DescribeImagesResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeImagesResponse getInstance(UnmarshallerContext context) {
-		return	DescribeImagesResponseUnmarshaller.unmarshall(this, context);
+	public DescribeImageFromFamilyResponse getInstance(UnmarshallerContext context) {
+		return	DescribeImageFromFamilyResponseUnmarshaller.unmarshall(this, context);
 	}
 }

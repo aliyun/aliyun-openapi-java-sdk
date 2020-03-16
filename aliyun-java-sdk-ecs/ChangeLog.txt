@@ -1,3 +1,8 @@
+2020-03-16 Version: 4.19.1
+- Add ImageFamily paramters and apis, in Instance creation apis and Image query apis, and add DescribeImageFromFamily.
+- Add Instance batch operation apis RebootInstances StartInstances and StopInstances.
+- Add EncryptAlgorithm paramter in instance creati
+
 2020-03-03 Version: 4.19.0
 - Add StopInstances, StartInstances, RebootInstances interfaces.
 

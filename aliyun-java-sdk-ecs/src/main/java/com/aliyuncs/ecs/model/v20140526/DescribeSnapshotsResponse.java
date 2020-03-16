@@ -117,6 +117,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String category;
 
+		private String snapshotType;
+
 		private List<Tag> tags;
 
 		public String getSnapshotId() {
@@ -277,6 +279,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+
+		public String getSnapshotType() {
+			return this.snapshotType;
+		}
+
+		public void setSnapshotType(String snapshotType) {
+			this.snapshotType = snapshotType;
 		}
 
 		public List<Tag> getTags() {

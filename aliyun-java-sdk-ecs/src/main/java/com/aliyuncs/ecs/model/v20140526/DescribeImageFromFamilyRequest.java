@@ -22,16 +22,10 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttributeResponse> {
+public class DescribeImageFromFamilyRequest extends RpcAcsRequest<DescribeImageFromFamilyResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String imageId;
-
-	private String description;
-
-	private String imageName;
 
 	private String resourceOwnerAccount;
 
@@ -39,9 +33,9 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 
 	private Long ownerId;
 
-	private String status;
-	public ModifyImageAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyImageAttribute", "ecs");
+	private String imageFamily;
+	public DescribeImageFromFamilyRequest() {
+		super("Ecs", "2014-05-26", "DescribeImageFromFamily", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,39 +51,6 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getImageName() {
-		return this.imageName;
-	}
-
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
-		if(imageName != null){
-			putQueryParameter("ImageName", imageName);
 		}
 	}
 
@@ -126,20 +87,20 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getImageFamily() {
+		return this.imageFamily;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setImageFamily(String imageFamily) {
+		this.imageFamily = imageFamily;
+		if(imageFamily != null){
+			putQueryParameter("ImageFamily", imageFamily);
 		}
 	}
 
 	@Override
-	public Class<ModifyImageAttributeResponse> getResponseClass() {
-		return ModifyImageAttributeResponse.class;
+	public Class<DescribeImageFromFamilyResponse> getResponseClass() {
+		return DescribeImageFromFamilyResponse.class;
 	}
 
 }

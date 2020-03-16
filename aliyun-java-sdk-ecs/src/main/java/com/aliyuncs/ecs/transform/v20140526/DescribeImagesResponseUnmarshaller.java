@@ -40,6 +40,7 @@ public class DescribeImagesResponseUnmarshaller {
 			image.setProgress(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Progress"));
 			image.setImageId(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageId"));
 			image.setImageName(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageName"));
+			image.setImageFamily(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageFamily"));
 			image.setImageVersion(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageVersion"));
 			image.setDescription(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Description"));
 			image.setSize(_ctx.integerValue("DescribeImagesResponse.Images["+ i +"].Size"));
