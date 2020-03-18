@@ -20,10 +20,14 @@ public class Endpoint {
     public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
         {
             put("cn-shenzhen", "gpdb.aliyuncs.com");
-            put("cn-qingdao", "gpdb.aliyuncs.com");
             put("cn-beijing", "gpdb.aliyuncs.com");
+            put("cn-shenzhen-finance-1", "gpdb.aliyuncs.com");
+            put("cn-north-2-gov-1", "gpdb.aliyuncs.com");
+            put("cn-qingdao", "gpdb.aliyuncs.com");
             put("cn-shanghai", "gpdb.aliyuncs.com");
+            put("cn-shanghai-finance-1", "gpdb.aliyuncs.com");
             put("cn-hongkong", "gpdb.aliyuncs.com");
+            put("cn-hangzhou-finance", "gpdb.aliyuncs.com");
             put("ap-southeast-1", "gpdb.aliyuncs.com");
             put("us-east-1", "gpdb.aliyuncs.com");
             put("us-west-1", "gpdb.aliyuncs.com");

@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -22,20 +23,21 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceResponse> {
-	
-	public DeleteDBInstanceRequest() {
-		super("gpdb", "2016-05-03", "DeleteDBInstance", "gpdb");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String clientToken;
 
 	private String dBInstanceId;
 
 	private Long ownerId;
+	public DeleteDBInstanceRequest() {
+		super("gpdb", "2016-05-03", "DeleteDBInstance", "gpdb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getClientToken() {
 		return this.clientToken;

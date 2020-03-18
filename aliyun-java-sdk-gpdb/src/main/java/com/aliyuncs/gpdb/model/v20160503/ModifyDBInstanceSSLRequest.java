@@ -22,18 +22,16 @@ import com.aliyuncs.gpdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsResponse> {
+public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSSLResponse> {
 	   
 
-	private String dBInstanceIPArrayName;
+	private String connectionString;
 
 	private String dBInstanceId;
 
-	private String securityIPList;
-
-	private String dBInstanceIPArrayAttribute;
-	public ModifySecurityIpsRequest() {
-		super("gpdb", "2016-05-03", "ModifySecurityIps", "gpdb");
+	private Integer sSLEnabled;
+	public ModifyDBInstanceSSLRequest() {
+		super("gpdb", "2016-05-03", "ModifyDBInstanceSSL", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +39,14 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		} catch (Exception e) {}
 	}
 
-	public String getDBInstanceIPArrayName() {
-		return this.dBInstanceIPArrayName;
+	public String getConnectionString() {
+		return this.connectionString;
 	}
 
-	public void setDBInstanceIPArrayName(String dBInstanceIPArrayName) {
-		this.dBInstanceIPArrayName = dBInstanceIPArrayName;
-		if(dBInstanceIPArrayName != null){
-			putQueryParameter("DBInstanceIPArrayName", dBInstanceIPArrayName);
+	public void setConnectionString(String connectionString) {
+		this.connectionString = connectionString;
+		if(connectionString != null){
+			putQueryParameter("ConnectionString", connectionString);
 		}
 	}
 
@@ -63,31 +61,20 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		}
 	}
 
-	public String getSecurityIPList() {
-		return this.securityIPList;
+	public Integer getSSLEnabled() {
+		return this.sSLEnabled;
 	}
 
-	public void setSecurityIPList(String securityIPList) {
-		this.securityIPList = securityIPList;
-		if(securityIPList != null){
-			putQueryParameter("SecurityIPList", securityIPList);
-		}
-	}
-
-	public String getDBInstanceIPArrayAttribute() {
-		return this.dBInstanceIPArrayAttribute;
-	}
-
-	public void setDBInstanceIPArrayAttribute(String dBInstanceIPArrayAttribute) {
-		this.dBInstanceIPArrayAttribute = dBInstanceIPArrayAttribute;
-		if(dBInstanceIPArrayAttribute != null){
-			putQueryParameter("DBInstanceIPArrayAttribute", dBInstanceIPArrayAttribute);
+	public void setSSLEnabled(Integer sSLEnabled) {
+		this.sSLEnabled = sSLEnabled;
+		if(sSLEnabled != null){
+			putQueryParameter("SSLEnabled", sSLEnabled.toString());
 		}
 	}
 
 	@Override
-	public Class<ModifySecurityIpsResponse> getResponseClass() {
-		return ModifySecurityIpsResponse.class;
+	public Class<ModifyDBInstanceSSLResponse> getResponseClass() {
+		return ModifyDBInstanceSSLResponse.class;
 	}
 
 }

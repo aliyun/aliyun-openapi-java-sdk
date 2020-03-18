@@ -15,7 +15,6 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
@@ -23,14 +22,10 @@ import com.aliyuncs.gpdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
+public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private Boolean all;
-
-	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
 
@@ -39,10 +34,8 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 	private Long ownerId;
 
 	private String resourceType;
-
-	private List<String> tagKeys;
-	public UntagResourcesRequest() {
-		super("gpdb", "2016-05-03", "UntagResources", "gpdb");
+	public DescribeTagsRequest() {
+		super("gpdb", "2016-05-03", "DescribeTags", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,30 +52,6 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
-	}
-
-	public Boolean getAll() {
-		return this.all;
-	}
-
-	public void setAll(Boolean all) {
-		this.all = all;
-		if(all != null){
-			putQueryParameter("All", all.toString());
-		}
-	}
-
-	public List<String> getResourceIds() {
-		return this.resourceIds;
-	}
-
-	public void setResourceIds(List<String> resourceIds) {
-		this.resourceIds = resourceIds;	
-		if (resourceIds != null) {
-			for (int i = 0; i < resourceIds.size(); i++) {
-				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
-			}
-		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -129,22 +98,9 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		}
 	}
 
-	public List<String> getTagKeys() {
-		return this.tagKeys;
-	}
-
-	public void setTagKeys(List<String> tagKeys) {
-		this.tagKeys = tagKeys;	
-		if (tagKeys != null) {
-			for (int i = 0; i < tagKeys.size(); i++) {
-				putQueryParameter("TagKey." + (i + 1) , tagKeys.get(i));
-			}
-		}	
-	}
-
 	@Override
-	public Class<UntagResourcesResponse> getResponseClass() {
-		return UntagResourcesResponse.class;
+	public Class<DescribeTagsResponse> getResponseClass() {
+		return DescribeTagsResponse.class;
 	}
 
 }

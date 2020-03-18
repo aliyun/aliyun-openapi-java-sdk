@@ -64,6 +64,13 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setInstanceNetworkType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].InstanceNetworkType"));
 			dBInstanceAttribute.setVpcId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VpcId"));
 			dBInstanceAttribute.setConnectionMode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ConnectionMode"));
+			dBInstanceAttribute.setStorageType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].StorageType"));
+			dBInstanceAttribute.setCpuCoresPerNode(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].CpuCoresPerNode"));
+			dBInstanceAttribute.setSegmentCounts(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SegmentCounts"));
+			dBInstanceAttribute.setStoragePerNode(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].StoragePerNode"));
+			dBInstanceAttribute.setMemoryPerNode(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MemoryPerNode"));
+			dBInstanceAttribute.setStorageUnit(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].StorageUnit"));
+			dBInstanceAttribute.setMemoryUnit(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MemoryUnit"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Tags.Length"); j++) {

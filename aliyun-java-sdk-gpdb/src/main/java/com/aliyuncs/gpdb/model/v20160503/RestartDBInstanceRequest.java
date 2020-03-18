@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -22,18 +23,19 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class RestartDBInstanceRequest extends RpcAcsRequest<RestartDBInstanceResponse> {
-	
+	   
+
+	private String clientToken;
+
+	private String dBInstanceId;
 	public RestartDBInstanceRequest() {
 		super("gpdb", "2016-05-03", "RestartDBInstance", "gpdb");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clientToken;
-
-	private String dBInstanceId;
 
 	public String getClientToken() {
 		return this.clientToken;

@@ -22,14 +22,12 @@ import com.aliyuncs.gpdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDatabaseRequest extends RpcAcsRequest<DeleteDatabaseResponse> {
+public class DescribeDBInstanceSSLRequest extends RpcAcsRequest<DescribeDBInstanceSSLResponse> {
 	   
 
 	private String dBInstanceId;
-
-	private String dBName;
-	public DeleteDatabaseRequest() {
-		super("gpdb", "2016-05-03", "DeleteDatabase", "gpdb");
+	public DescribeDBInstanceSSLRequest() {
+		super("gpdb", "2016-05-03", "DescribeDBInstanceSSL", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,20 +46,9 @@ public class DeleteDatabaseRequest extends RpcAcsRequest<DeleteDatabaseResponse>
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
-		}
-	}
-
 	@Override
-	public Class<DeleteDatabaseResponse> getResponseClass() {
-		return DeleteDatabaseResponse.class;
+	public Class<DescribeDBInstanceSSLResponse> getResponseClass() {
+		return DescribeDBInstanceSSLResponse.class;
 	}
 
 }

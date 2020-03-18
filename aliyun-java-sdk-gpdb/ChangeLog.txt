@@ -1,3 +1,6 @@
+2020-03-18 Version: 1.0.6
+- Generated 2016-05-03 for `gpdb`.
+
 2019-08-27 Version: 1.0.5
 - Fixed endpoint data init.
 

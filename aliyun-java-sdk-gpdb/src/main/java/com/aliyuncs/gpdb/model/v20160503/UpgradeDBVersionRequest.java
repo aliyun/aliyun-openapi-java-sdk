@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -22,26 +23,27 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class UpgradeDBVersionRequest extends RpcAcsRequest<UpgradeDBVersionResponse> {
-	
-	public UpgradeDBVersionRequest() {
-		super("gpdb", "2016-05-03", "UpgradeDBVersion", "gpdb");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String switchTimeMode;
-
-	private String majorVersion;
-
-	private String minorVersion;
 
 	private String dBInstanceId;
 
 	private String switchTime;
 
+	private String majorVersion;
+
+	private String minorVersion;
+
 	private Long ownerId;
+	public UpgradeDBVersionRequest() {
+		super("gpdb", "2016-05-03", "UpgradeDBVersion", "gpdb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getSwitchTimeMode() {
 		return this.switchTimeMode;
@@ -51,28 +53,6 @@ public class UpgradeDBVersionRequest extends RpcAcsRequest<UpgradeDBVersionRespo
 		this.switchTimeMode = switchTimeMode;
 		if(switchTimeMode != null){
 			putQueryParameter("SwitchTimeMode", switchTimeMode);
-		}
-	}
-
-	public String getMajorVersion() {
-		return this.majorVersion;
-	}
-
-	public void setMajorVersion(String majorVersion) {
-		this.majorVersion = majorVersion;
-		if(majorVersion != null){
-			putQueryParameter("MajorVersion", majorVersion);
-		}
-	}
-
-	public String getMinorVersion() {
-		return this.minorVersion;
-	}
-
-	public void setMinorVersion(String minorVersion) {
-		this.minorVersion = minorVersion;
-		if(minorVersion != null){
-			putQueryParameter("MinorVersion", minorVersion);
 		}
 	}
 
@@ -95,6 +75,28 @@ public class UpgradeDBVersionRequest extends RpcAcsRequest<UpgradeDBVersionRespo
 		this.switchTime = switchTime;
 		if(switchTime != null){
 			putQueryParameter("SwitchTime", switchTime);
+		}
+	}
+
+	public String getMajorVersion() {
+		return this.majorVersion;
+	}
+
+	public void setMajorVersion(String majorVersion) {
+		this.majorVersion = majorVersion;
+		if(majorVersion != null){
+			putQueryParameter("MajorVersion", majorVersion);
+		}
+	}
+
+	public String getMinorVersion() {
+		return this.minorVersion;
+	}
+
+	public void setMinorVersion(String minorVersion) {
+		this.minorVersion = minorVersion;
+		if(minorVersion != null){
+			putQueryParameter("MinorVersion", minorVersion);
 		}
 	}
 

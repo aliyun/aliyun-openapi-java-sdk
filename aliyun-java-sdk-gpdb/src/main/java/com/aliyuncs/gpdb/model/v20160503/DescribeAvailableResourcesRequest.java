@@ -22,14 +22,16 @@ import com.aliyuncs.gpdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDatabaseRequest extends RpcAcsRequest<DeleteDatabaseResponse> {
+public class DescribeAvailableResourcesRequest extends RpcAcsRequest<DescribeAvailableResourcesResponse> {
 	   
 
-	private String dBInstanceId;
+	private String zoneId;
 
-	private String dBName;
-	public DeleteDatabaseRequest() {
-		super("gpdb", "2016-05-03", "DeleteDatabase", "gpdb");
+	private String chargeType;
+
+	private String region;
+	public DescribeAvailableResourcesRequest() {
+		super("gpdb", "2016-05-03", "DescribeAvailableResources", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +39,42 @@ public class DeleteDatabaseRequest extends RpcAcsRequest<DeleteDatabaseResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
+	public String getZoneId() {
+		return this.zoneId;
 	}
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
+	public String getChargeType() {
+		return this.chargeType;
 	}
 
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 
 	@Override
-	public Class<DeleteDatabaseResponse> getResponseClass() {
-		return DeleteDatabaseResponse.class;
+	public Class<DescribeAvailableResourcesResponse> getResponseClass() {
+		return DescribeAvailableResourcesResponse.class;
 	}
 
 }

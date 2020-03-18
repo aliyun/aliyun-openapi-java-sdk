@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -22,16 +23,17 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBInstanceNetInfoResponse> {
-	
+	   
+
+	private String dBInstanceId;
 	public DescribeDBInstanceNetInfoRequest() {
 		super("gpdb", "2016-05-03", "DescribeDBInstanceNetInfo", "gpdb");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String dBInstanceId;
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;

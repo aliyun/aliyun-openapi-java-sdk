@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -22,31 +23,32 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<DescribeDBInstancePerformanceResponse> {
-	
+	   
+
+	private String startTime;
+
+	private String dBInstanceId;
+
+	private String key;
+
+	private String endTime;
 	public DescribeDBInstancePerformanceRequest() {
 		super("gpdb", "2016-05-03", "DescribeDBInstancePerformance", "gpdb");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String endTime;
-
-	private String dBInstanceId;
-
-	private String startTime;
-
-	private String key;
-
-	public String getEndTime() {
-		return this.endTime;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -61,17 +63,6 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public String getKey() {
 		return this.key;
 	}
@@ -80,6 +71,17 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		this.key = key;
 		if(key != null){
 			putQueryParameter("Key", key);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 

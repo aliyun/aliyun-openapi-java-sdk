@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -22,22 +23,23 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<ModifyDBInstanceConnectionStringResponse> {
-	
+	   
+
+	private String connectionStringPrefix;
+
+	private String dBInstanceId;
+
+	private String currentConnectionString;
+
+	private String port;
 	public ModifyDBInstanceConnectionStringRequest() {
 		super("gpdb", "2016-05-03", "ModifyDBInstanceConnectionString", "gpdb");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String connectionStringPrefix;
-
-	private String port;
-
-	private String dBInstanceId;
-
-	private String currentConnectionString;
 
 	public String getConnectionStringPrefix() {
 		return this.connectionStringPrefix;
@@ -47,17 +49,6 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		this.connectionStringPrefix = connectionStringPrefix;
 		if(connectionStringPrefix != null){
 			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
-		}
-	}
-
-	public String getPort() {
-		return this.port;
-	}
-
-	public void setPort(String port) {
-		this.port = port;
-		if(port != null){
-			putQueryParameter("Port", port);
 		}
 	}
 
@@ -80,6 +71,17 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		this.currentConnectionString = currentConnectionString;
 		if(currentConnectionString != null){
 			putQueryParameter("CurrentConnectionString", currentConnectionString);
+		}
+	}
+
+	public String getPort() {
+		return this.port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port);
 		}
 	}
 

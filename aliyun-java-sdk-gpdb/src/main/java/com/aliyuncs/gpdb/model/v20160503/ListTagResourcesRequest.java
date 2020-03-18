@@ -16,6 +16,7 @@ package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -23,30 +24,31 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
-	
-	public ListTagResourcesRequest() {
-		super("gpdb", "2016-05-03", "ListTagResources", "gpdb");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private String nextToken;
+
+	private List<Tag> tags;
 
 	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
 
-	private String nextToken;
-
 	private String ownerAccount;
-
-	private List<Tag> tags;
 
 	private Long ownerId;
 
 	private String resourceType;
+	public ListTagResourcesRequest() {
+		super("gpdb", "2016-05-03", "ListTagResources", "gpdb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -57,6 +59,31 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public List<String> getResourceIds() {
@@ -83,17 +110,6 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 		}
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -103,20 +119,6 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
 		}
-	}
-
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
 	}
 
 	public Long getOwnerId() {

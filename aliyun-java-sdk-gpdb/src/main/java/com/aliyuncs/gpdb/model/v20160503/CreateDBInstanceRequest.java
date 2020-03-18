@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -22,22 +23,19 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceResponse> {
-	
-	public CreateDBInstanceRequest() {
-		super("gpdb", "2016-05-03", "CreateDBInstance", "gpdb");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String dBInstanceGroupCount;
-
-	private String period;
+	   
 
 	private String clientToken;
 
 	private String engineVersion;
+
+	private String engine;
+
+	private String dBInstanceDescription;
+
+	private String dBInstanceGroupCount;
+
+	private String period;
 
 	private Long ownerId;
 
@@ -51,38 +49,20 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String privateIpAddress;
 
-	private String engine;
-
 	private String vPCId;
 
 	private String zoneId;
 
-	private String dBInstanceDescription;
-
 	private String payType;
 
 	private String instanceNetworkType;
-
-	public String getDBInstanceGroupCount() {
-		return this.dBInstanceGroupCount;
-	}
-
-	public void setDBInstanceGroupCount(String dBInstanceGroupCount) {
-		this.dBInstanceGroupCount = dBInstanceGroupCount;
-		if(dBInstanceGroupCount != null){
-			putQueryParameter("DBInstanceGroupCount", dBInstanceGroupCount);
-		}
-	}
-
-	public String getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(String period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period);
-		}
+	public CreateDBInstanceRequest() {
+		super("gpdb", "2016-05-03", "CreateDBInstance", "gpdb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getClientToken() {
@@ -104,6 +84,50 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getDBInstanceDescription() {
+		return this.dBInstanceDescription;
+	}
+
+	public void setDBInstanceDescription(String dBInstanceDescription) {
+		this.dBInstanceDescription = dBInstanceDescription;
+		if(dBInstanceDescription != null){
+			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
+		}
+	}
+
+	public String getDBInstanceGroupCount() {
+		return this.dBInstanceGroupCount;
+	}
+
+	public void setDBInstanceGroupCount(String dBInstanceGroupCount) {
+		this.dBInstanceGroupCount = dBInstanceGroupCount;
+		if(dBInstanceGroupCount != null){
+			putQueryParameter("DBInstanceGroupCount", dBInstanceGroupCount);
+		}
+	}
+
+	public String getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(String period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period);
 		}
 	}
 
@@ -173,17 +197,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
-		}
-	}
-
 	public String getVPCId() {
 		return this.vPCId;
 	}
@@ -203,17 +216,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getDBInstanceDescription() {
-		return this.dBInstanceDescription;
-	}
-
-	public void setDBInstanceDescription(String dBInstanceDescription) {
-		this.dBInstanceDescription = dBInstanceDescription;
-		if(dBInstanceDescription != null){
-			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
 		}
 	}
 

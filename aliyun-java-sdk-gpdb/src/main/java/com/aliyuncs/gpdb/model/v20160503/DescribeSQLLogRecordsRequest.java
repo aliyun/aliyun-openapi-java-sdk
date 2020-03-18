@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -22,86 +23,32 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class DescribeSQLLogRecordsRequest extends RpcAcsRequest<DescribeSQLLogRecordsResponse> {
-	
-	public DescribeSQLLogRecordsRequest() {
-		super("gpdb", "2016-05-03", "DescribeSQLLogRecords", "gpdb");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String database;
-
-	private String form;
-
-	private Integer pageSize;
-
-	private String endTime;
-
-	private String dBInstanceId;
+	   
 
 	private String startTime;
-
-	private String user;
 
 	private String queryKeywords;
 
 	private Integer pageNumber;
 
-	public String getDatabase() {
-		return this.database;
-	}
+	private String database;
 
-	public void setDatabase(String database) {
-		this.database = database;
-		if(database != null){
-			putQueryParameter("Database", database);
-		}
-	}
+	private Integer pageSize;
 
-	public String getForm() {
-		return this.form;
-	}
+	private String dBInstanceId;
 
-	public void setForm(String form) {
-		this.form = form;
-		if(form != null){
-			putQueryParameter("Form", form);
-		}
-	}
+	private String endTime;
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
+	private String form;
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
+	private String user;
+	public DescribeSQLLogRecordsRequest() {
+		super("gpdb", "2016-05-03", "DescribeSQLLogRecords", "gpdb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getStartTime() {
@@ -112,17 +59,6 @@ public class DescribeSQLLogRecordsRequest extends RpcAcsRequest<DescribeSQLLogRe
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getUser() {
-		return this.user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
-		if(user != null){
-			putQueryParameter("User", user);
 		}
 	}
 
@@ -145,6 +81,72 @@ public class DescribeSQLLogRecordsRequest extends RpcAcsRequest<DescribeSQLLogRe
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getDatabase() {
+		return this.database;
+	}
+
+	public void setDatabase(String database) {
+		this.database = database;
+		if(database != null){
+			putQueryParameter("Database", database);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getForm() {
+		return this.form;
+	}
+
+	public void setForm(String form) {
+		this.form = form;
+		if(form != null){
+			putQueryParameter("Form", form);
+		}
+	}
+
+	public String getUser() {
+		return this.user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+		if(user != null){
+			putQueryParameter("User", user);
 		}
 	}
 

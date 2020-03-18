@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -22,18 +23,19 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class ModifyDBInstanceConnectionModeRequest extends RpcAcsRequest<ModifyDBInstanceConnectionModeResponse> {
-	
+	   
+
+	private String connectionMode;
+
+	private String dBInstanceId;
 	public ModifyDBInstanceConnectionModeRequest() {
 		super("gpdb", "2016-05-03", "ModifyDBInstanceConnectionMode", "gpdb");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String connectionMode;
-
-	private String dBInstanceId;
 
 	public String getConnectionMode() {
 		return this.connectionMode;

@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -22,82 +23,28 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLogRecordsResponse> {
-	
-	public DescribeSlowLogRecordsRequest() {
-		super("gpdb", "2016-05-03", "DescribeSlowLogRecords", "gpdb");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private Long sQLId;
-
-	private String dBName;
-
-	private Integer pageSize;
-
-	private String endTime;
-
-	private String dBInstanceId;
+	   
 
 	private String startTime;
 
 	private Integer pageNumber;
 
-	public Long getSQLId() {
-		return this.sQLId;
-	}
+	private Integer pageSize;
 
-	public void setSQLId(Long sQLId) {
-		this.sQLId = sQLId;
-		if(sQLId != null){
-			putQueryParameter("SQLId", sQLId.toString());
-		}
-	}
+	private String dBInstanceId;
 
-	public String getDBName() {
-		return this.dBName;
-	}
+	private Long sQLId;
 
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
-		}
-	}
+	private String endTime;
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
+	private String dBName;
+	public DescribeSlowLogRecordsRequest() {
+		super("gpdb", "2016-05-03", "DescribeSlowLogRecords", "gpdb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getStartTime() {
@@ -119,6 +66,61 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public Long getSQLId() {
+		return this.sQLId;
+	}
+
+	public void setSQLId(Long sQLId) {
+		this.sQLId = sQLId;
+		if(sQLId != null){
+			putQueryParameter("SQLId", sQLId.toString());
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
 		}
 	}
 

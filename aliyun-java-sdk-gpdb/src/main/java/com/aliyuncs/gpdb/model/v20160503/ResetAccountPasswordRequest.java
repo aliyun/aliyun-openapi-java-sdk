@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -22,30 +23,20 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPasswordResponse> {
-	
-	public ResetAccountPasswordRequest() {
-		super("gpdb", "2016-05-03", "ResetAccountPassword", "gpdb");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String accountPassword;
+	   
 
 	private String accountName;
 
 	private String dBInstanceId;
 
-	public String getAccountPassword() {
-		return this.accountPassword;
-	}
-
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
-		}
+	private String accountPassword;
+	public ResetAccountPasswordRequest() {
+		super("gpdb", "2016-05-03", "ResetAccountPassword", "gpdb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getAccountName() {
@@ -67,6 +58,17 @@ public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPassw
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getAccountPassword() {
+		return this.accountPassword;
+	}
+
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+		if(accountPassword != null){
+			putQueryParameter("AccountPassword", accountPassword);
 		}
 	}
 

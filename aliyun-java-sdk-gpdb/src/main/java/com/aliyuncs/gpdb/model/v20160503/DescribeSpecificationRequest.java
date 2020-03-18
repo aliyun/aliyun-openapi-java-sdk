@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -22,24 +23,36 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class DescribeSpecificationRequest extends RpcAcsRequest<DescribeSpecificationResponse> {
-	
+	   
+
+	private String storageType;
+
+	private Integer cpuCores;
+
+	private String dBInstanceId;
+
+	private Integer totalNodeNum;
+
+	private Long ownerId;
 	public DescribeSpecificationRequest() {
 		super("gpdb", "2016-05-03", "DescribeSpecification", "gpdb");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private Integer cpuCores;
+	public String getStorageType() {
+		return this.storageType;
+	}
 
-	private Integer totalNodeNum;
-
-	private String dBInstanceId;
-
-	private Long ownerId;
-
-	private String storageType;
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
+		}
+	}
 
 	public Integer getCpuCores() {
 		return this.cpuCores;
@@ -49,17 +62,6 @@ public class DescribeSpecificationRequest extends RpcAcsRequest<DescribeSpecific
 		this.cpuCores = cpuCores;
 		if(cpuCores != null){
 			putQueryParameter("CpuCores", cpuCores.toString());
-		}
-	}
-
-	public Integer getTotalNodeNum() {
-		return this.totalNodeNum;
-	}
-
-	public void setTotalNodeNum(Integer totalNodeNum) {
-		this.totalNodeNum = totalNodeNum;
-		if(totalNodeNum != null){
-			putQueryParameter("TotalNodeNum", totalNodeNum.toString());
 		}
 	}
 
@@ -74,6 +76,17 @@ public class DescribeSpecificationRequest extends RpcAcsRequest<DescribeSpecific
 		}
 	}
 
+	public Integer getTotalNodeNum() {
+		return this.totalNodeNum;
+	}
+
+	public void setTotalNodeNum(Integer totalNodeNum) {
+		this.totalNodeNum = totalNodeNum;
+		if(totalNodeNum != null){
+			putQueryParameter("TotalNodeNum", totalNodeNum.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -82,17 +95,6 @@ public class DescribeSpecificationRequest extends RpcAcsRequest<DescribeSpecific
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getStorageType() {
-		return this.storageType;
-	}
-
-	public void setStorageType(String storageType) {
-		this.storageType = storageType;
-		if(storageType != null){
-			putQueryParameter("StorageType", storageType);
 		}
 	}
 
