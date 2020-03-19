@@ -1,3 +1,6 @@
+2020-03-19 Version: 1.8.10
+- Modify deleteApgroupConfig.
+
 2020-02-28 Version: 1.8.9
 - Modify fucntion parameters.
 
