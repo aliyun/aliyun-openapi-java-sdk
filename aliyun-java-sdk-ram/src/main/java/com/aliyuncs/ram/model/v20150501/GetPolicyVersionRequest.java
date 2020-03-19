@@ -16,33 +16,29 @@ package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ram.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetPolicyVersionRequest extends RpcAcsRequest<GetPolicyVersionResponse> {
-	
-	public GetPolicyVersionRequest() {
-		super("Ram", "2015-05-01", "GetPolicyVersion");
-		setProtocol(ProtocolType.HTTPS);
-	}
-
-	private String versionId;
+	   
 
 	private String policyType;
 
+	private String versionId;
+
 	private String policyName;
-
-	public String getVersionId() {
-		return this.versionId;
-	}
-
-	public void setVersionId(String versionId) {
-		this.versionId = versionId;
-		if(versionId != null){
-			putQueryParameter("VersionId", versionId);
-		}
+	public GetPolicyVersionRequest() {
+		super("Ram", "2015-05-01", "GetPolicyVersion", "Ram");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getPolicyType() {
@@ -53,6 +49,17 @@ public class GetPolicyVersionRequest extends RpcAcsRequest<GetPolicyVersionRespo
 		this.policyType = policyType;
 		if(policyType != null){
 			putQueryParameter("PolicyType", policyType);
+		}
+	}
+
+	public String getVersionId() {
+		return this.versionId;
+	}
+
+	public void setVersionId(String versionId) {
+		this.versionId = versionId;
+		if(versionId != null){
+			putQueryParameter("VersionId", versionId);
 		}
 	}
 

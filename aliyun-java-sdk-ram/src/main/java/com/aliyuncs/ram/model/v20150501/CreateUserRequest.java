@@ -16,48 +16,33 @@ package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ram.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
-	
-	public CreateUserRequest() {
-		super("Ram", "2015-05-01", "CreateUser");
-		setProtocol(ProtocolType.HTTPS);
-	}
-
-	private String comments;
-
-	private String displayName;
+	   
 
 	private String mobilePhone;
 
 	private String email;
 
+	private String comments;
+
+	private String displayName;
+
 	private String userName;
-
-	public String getComments() {
-		return this.comments;
-	}
-
-	public void setComments(String comments) {
-		this.comments = comments;
-		if(comments != null){
-			putQueryParameter("Comments", comments);
-		}
-	}
-
-	public String getDisplayName() {
-		return this.displayName;
-	}
-
-	public void setDisplayName(String displayName) {
-		this.displayName = displayName;
-		if(displayName != null){
-			putQueryParameter("DisplayName", displayName);
-		}
+	public CreateUserRequest() {
+		super("Ram", "2015-05-01", "CreateUser", "Ram");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getMobilePhone() {
@@ -79,6 +64,28 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 		this.email = email;
 		if(email != null){
 			putQueryParameter("Email", email);
+		}
+	}
+
+	public String getComments() {
+		return this.comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
+		if(comments != null){
+			putQueryParameter("Comments", comments);
+		}
+	}
+
+	public String getDisplayName() {
+		return this.displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+		if(displayName != null){
+			putQueryParameter("DisplayName", displayName);
 		}
 	}
 

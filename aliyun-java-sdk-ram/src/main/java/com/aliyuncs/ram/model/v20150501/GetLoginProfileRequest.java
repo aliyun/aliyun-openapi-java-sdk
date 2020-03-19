@@ -16,19 +16,26 @@ package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ram.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetLoginProfileRequest extends RpcAcsRequest<GetLoginProfileResponse> {
-	
-	public GetLoginProfileRequest() {
-		super("Ram", "2015-05-01", "GetLoginProfile");
-		setProtocol(ProtocolType.HTTPS);
-	}
+	   
 
 	private String userName;
+	public GetLoginProfileRequest() {
+		super("Ram", "2015-05-01", "GetLoginProfile", "Ram");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getUserName() {
 		return this.userName;

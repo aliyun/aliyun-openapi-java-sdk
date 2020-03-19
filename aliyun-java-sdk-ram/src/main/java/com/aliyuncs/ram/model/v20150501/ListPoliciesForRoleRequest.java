@@ -16,19 +16,26 @@ package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ram.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListPoliciesForRoleRequest extends RpcAcsRequest<ListPoliciesForRoleResponse> {
-	
-	public ListPoliciesForRoleRequest() {
-		super("Ram", "2015-05-01", "ListPoliciesForRole");
-		setProtocol(ProtocolType.HTTPS);
-	}
+	   
 
 	private String roleName;
+	public ListPoliciesForRoleRequest() {
+		super("Ram", "2015-05-01", "ListPoliciesForRole", "Ram");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getRoleName() {
 		return this.roleName;

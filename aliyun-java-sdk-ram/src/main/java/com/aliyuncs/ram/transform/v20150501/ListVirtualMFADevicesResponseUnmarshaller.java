@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListVirtualMFADevicesResponseUnmarshaller {
 
-	public static ListVirtualMFADevicesResponse unmarshall(ListVirtualMFADevicesResponse listVirtualMFADevicesResponse, UnmarshallerContext context) {
+	public static ListVirtualMFADevicesResponse unmarshall(ListVirtualMFADevicesResponse listVirtualMFADevicesResponse, UnmarshallerContext _ctx) {
 		
-		listVirtualMFADevicesResponse.setRequestId(context.stringValue("ListVirtualMFADevicesResponse.RequestId"));
+		listVirtualMFADevicesResponse.setRequestId(_ctx.stringValue("ListVirtualMFADevicesResponse.RequestId"));
 
 		List<VirtualMFADevice> virtualMFADevices = new ArrayList<VirtualMFADevice>();
-		for (int i = 0; i < context.lengthValue("ListVirtualMFADevicesResponse.VirtualMFADevices.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListVirtualMFADevicesResponse.VirtualMFADevices.Length"); i++) {
 			VirtualMFADevice virtualMFADevice = new VirtualMFADevice();
-			virtualMFADevice.setSerialNumber(context.stringValue("ListVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].SerialNumber"));
-			virtualMFADevice.setActivateDate(context.stringValue("ListVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].ActivateDate"));
+			virtualMFADevice.setSerialNumber(_ctx.stringValue("ListVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].SerialNumber"));
+			virtualMFADevice.setActivateDate(_ctx.stringValue("ListVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].ActivateDate"));
 
 			User user = new User();
-			user.setUserId(context.stringValue("ListVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].User.UserId"));
-			user.setUserName(context.stringValue("ListVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].User.UserName"));
-			user.setDisplayName(context.stringValue("ListVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].User.DisplayName"));
+			user.setUserId(_ctx.stringValue("ListVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].User.UserId"));
+			user.setUserName(_ctx.stringValue("ListVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].User.UserName"));
+			user.setDisplayName(_ctx.stringValue("ListVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].User.DisplayName"));
 			virtualMFADevice.setUser(user);
 
 			virtualMFADevices.add(virtualMFADevice);

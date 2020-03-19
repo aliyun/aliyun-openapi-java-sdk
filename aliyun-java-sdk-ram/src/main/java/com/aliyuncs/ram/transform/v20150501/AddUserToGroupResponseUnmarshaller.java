@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddUserToGroupResponseUnmarshaller {
 
-	public static AddUserToGroupResponse unmarshall(AddUserToGroupResponse addUserToGroupResponse, UnmarshallerContext context) {
+	public static AddUserToGroupResponse unmarshall(AddUserToGroupResponse addUserToGroupResponse, UnmarshallerContext _ctx) {
 		
-		addUserToGroupResponse.setRequestId(context.stringValue("AddUserToGroupResponse.RequestId"));
+		addUserToGroupResponse.setRequestId(_ctx.stringValue("AddUserToGroupResponse.RequestId"));
 	 
 	 	return addUserToGroupResponse;
 	}

@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreatePolicyResponseUnmarshaller {
 
-	public static CreatePolicyResponse unmarshall(CreatePolicyResponse createPolicyResponse, UnmarshallerContext context) {
+	public static CreatePolicyResponse unmarshall(CreatePolicyResponse createPolicyResponse, UnmarshallerContext _ctx) {
 		
-		createPolicyResponse.setRequestId(context.stringValue("CreatePolicyResponse.RequestId"));
+		createPolicyResponse.setRequestId(_ctx.stringValue("CreatePolicyResponse.RequestId"));
 
 		Policy policy = new Policy();
-		policy.setPolicyName(context.stringValue("CreatePolicyResponse.Policy.PolicyName"));
-		policy.setPolicyType(context.stringValue("CreatePolicyResponse.Policy.PolicyType"));
-		policy.setDescription(context.stringValue("CreatePolicyResponse.Policy.Description"));
-		policy.setDefaultVersion(context.stringValue("CreatePolicyResponse.Policy.DefaultVersion"));
-		policy.setCreateDate(context.stringValue("CreatePolicyResponse.Policy.CreateDate"));
+		policy.setPolicyName(_ctx.stringValue("CreatePolicyResponse.Policy.PolicyName"));
+		policy.setPolicyType(_ctx.stringValue("CreatePolicyResponse.Policy.PolicyType"));
+		policy.setDescription(_ctx.stringValue("CreatePolicyResponse.Policy.Description"));
+		policy.setDefaultVersion(_ctx.stringValue("CreatePolicyResponse.Policy.DefaultVersion"));
+		policy.setCreateDate(_ctx.stringValue("CreatePolicyResponse.Policy.CreateDate"));
 		createPolicyResponse.setPolicy(policy);
 	 
 	 	return createPolicyResponse;

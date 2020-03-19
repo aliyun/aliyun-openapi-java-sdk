@@ -21,18 +21,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateUserResponseUnmarshaller {
 
-	public static CreateUserResponse unmarshall(CreateUserResponse createUserResponse, UnmarshallerContext context) {
+	public static CreateUserResponse unmarshall(CreateUserResponse createUserResponse, UnmarshallerContext _ctx) {
 		
-		createUserResponse.setRequestId(context.stringValue("CreateUserResponse.RequestId"));
+		createUserResponse.setRequestId(_ctx.stringValue("CreateUserResponse.RequestId"));
 
 		User user = new User();
-		user.setUserId(context.stringValue("CreateUserResponse.User.UserId"));
-		user.setUserName(context.stringValue("CreateUserResponse.User.UserName"));
-		user.setDisplayName(context.stringValue("CreateUserResponse.User.DisplayName"));
-		user.setMobilePhone(context.stringValue("CreateUserResponse.User.MobilePhone"));
-		user.setEmail(context.stringValue("CreateUserResponse.User.Email"));
-		user.setComments(context.stringValue("CreateUserResponse.User.Comments"));
-		user.setCreateDate(context.stringValue("CreateUserResponse.User.CreateDate"));
+		user.setUserId(_ctx.stringValue("CreateUserResponse.User.UserId"));
+		user.setUserName(_ctx.stringValue("CreateUserResponse.User.UserName"));
+		user.setDisplayName(_ctx.stringValue("CreateUserResponse.User.DisplayName"));
+		user.setMobilePhone(_ctx.stringValue("CreateUserResponse.User.MobilePhone"));
+		user.setEmail(_ctx.stringValue("CreateUserResponse.User.Email"));
+		user.setComments(_ctx.stringValue("CreateUserResponse.User.Comments"));
+		user.setCreateDate(_ctx.stringValue("CreateUserResponse.User.CreateDate"));
 		createUserResponse.setUser(user);
 	 
 	 	return createUserResponse;

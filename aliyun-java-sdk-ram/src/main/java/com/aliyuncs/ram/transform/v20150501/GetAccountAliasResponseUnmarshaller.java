@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetAccountAliasResponseUnmarshaller {
 
-	public static GetAccountAliasResponse unmarshall(GetAccountAliasResponse getAccountAliasResponse, UnmarshallerContext context) {
+	public static GetAccountAliasResponse unmarshall(GetAccountAliasResponse getAccountAliasResponse, UnmarshallerContext _ctx) {
 		
-		getAccountAliasResponse.setRequestId(context.stringValue("GetAccountAliasResponse.RequestId"));
-		getAccountAliasResponse.setAccountAlias(context.stringValue("GetAccountAliasResponse.AccountAlias"));
+		getAccountAliasResponse.setRequestId(_ctx.stringValue("GetAccountAliasResponse.RequestId"));
+		getAccountAliasResponse.setAccountAlias(_ctx.stringValue("GetAccountAliasResponse.AccountAlias"));
 	 
 	 	return getAccountAliasResponse;
 	}

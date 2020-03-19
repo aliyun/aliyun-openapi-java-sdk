@@ -24,21 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListRolesResponseUnmarshaller {
 
-	public static ListRolesResponse unmarshall(ListRolesResponse listRolesResponse, UnmarshallerContext context) {
+	public static ListRolesResponse unmarshall(ListRolesResponse listRolesResponse, UnmarshallerContext _ctx) {
 		
-		listRolesResponse.setRequestId(context.stringValue("ListRolesResponse.RequestId"));
-		listRolesResponse.setIsTruncated(context.booleanValue("ListRolesResponse.IsTruncated"));
-		listRolesResponse.setMarker(context.stringValue("ListRolesResponse.Marker"));
+		listRolesResponse.setRequestId(_ctx.stringValue("ListRolesResponse.RequestId"));
+		listRolesResponse.setIsTruncated(_ctx.booleanValue("ListRolesResponse.IsTruncated"));
+		listRolesResponse.setMarker(_ctx.stringValue("ListRolesResponse.Marker"));
 
 		List<Role> roles = new ArrayList<Role>();
-		for (int i = 0; i < context.lengthValue("ListRolesResponse.Roles.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListRolesResponse.Roles.Length"); i++) {
 			Role role = new Role();
-			role.setRoleId(context.stringValue("ListRolesResponse.Roles["+ i +"].RoleId"));
-			role.setRoleName(context.stringValue("ListRolesResponse.Roles["+ i +"].RoleName"));
-			role.setArn(context.stringValue("ListRolesResponse.Roles["+ i +"].Arn"));
-			role.setDescription(context.stringValue("ListRolesResponse.Roles["+ i +"].Description"));
-			role.setCreateDate(context.stringValue("ListRolesResponse.Roles["+ i +"].CreateDate"));
-			role.setUpdateDate(context.stringValue("ListRolesResponse.Roles["+ i +"].UpdateDate"));
+			role.setRoleId(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].RoleId"));
+			role.setRoleName(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].RoleName"));
+			role.setArn(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].Arn"));
+			role.setDescription(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].Description"));
+			role.setCreateDate(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].CreateDate"));
+			role.setUpdateDate(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].UpdateDate"));
+			role.setMaxSessionDuration(_ctx.longValue("ListRolesResponse.Roles["+ i +"].MaxSessionDuration"));
 
 			roles.add(role);
 		}

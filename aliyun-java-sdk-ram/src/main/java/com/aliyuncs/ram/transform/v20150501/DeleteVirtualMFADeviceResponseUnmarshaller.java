@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteVirtualMFADeviceResponseUnmarshaller {
 
-	public static DeleteVirtualMFADeviceResponse unmarshall(DeleteVirtualMFADeviceResponse deleteVirtualMFADeviceResponse, UnmarshallerContext context) {
+	public static DeleteVirtualMFADeviceResponse unmarshall(DeleteVirtualMFADeviceResponse deleteVirtualMFADeviceResponse, UnmarshallerContext _ctx) {
 		
-		deleteVirtualMFADeviceResponse.setRequestId(context.stringValue("DeleteVirtualMFADeviceResponse.RequestId"));
+		deleteVirtualMFADeviceResponse.setRequestId(_ctx.stringValue("DeleteVirtualMFADeviceResponse.RequestId"));
 	 
 	 	return deleteVirtualMFADeviceResponse;
 	}

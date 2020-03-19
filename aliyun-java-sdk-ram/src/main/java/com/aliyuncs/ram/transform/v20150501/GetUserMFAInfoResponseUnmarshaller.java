@@ -21,12 +21,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetUserMFAInfoResponseUnmarshaller {
 
-	public static GetUserMFAInfoResponse unmarshall(GetUserMFAInfoResponse getUserMFAInfoResponse, UnmarshallerContext context) {
+	public static GetUserMFAInfoResponse unmarshall(GetUserMFAInfoResponse getUserMFAInfoResponse, UnmarshallerContext _ctx) {
 		
-		getUserMFAInfoResponse.setRequestId(context.stringValue("GetUserMFAInfoResponse.RequestId"));
+		getUserMFAInfoResponse.setRequestId(_ctx.stringValue("GetUserMFAInfoResponse.RequestId"));
 
 		MFADevice mFADevice = new MFADevice();
-		mFADevice.setSerialNumber(context.stringValue("GetUserMFAInfoResponse.MFADevice.SerialNumber"));
+		mFADevice.setSerialNumber(_ctx.stringValue("GetUserMFAInfoResponse.MFADevice.SerialNumber"));
 		getUserMFAInfoResponse.setMFADevice(mFADevice);
 	 
 	 	return getUserMFAInfoResponse;

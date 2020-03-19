@@ -16,23 +16,43 @@ package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ram.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
-	
-	public CreateRoleRequest() {
-		super("Ram", "2015-05-01", "CreateRole");
-		setProtocol(ProtocolType.HTTPS);
-	}
+	   
+
+	private Long maxSessionDuration;
 
 	private String roleName;
 
 	private String description;
 
 	private String assumeRolePolicyDocument;
+	public CreateRoleRequest() {
+		super("Ram", "2015-05-01", "CreateRole", "Ram");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Long getMaxSessionDuration() {
+		return this.maxSessionDuration;
+	}
+
+	public void setMaxSessionDuration(Long maxSessionDuration) {
+		this.maxSessionDuration = maxSessionDuration;
+		if(maxSessionDuration != null){
+			putQueryParameter("MaxSessionDuration", maxSessionDuration.toString());
+		}
+	}
 
 	public String getRoleName() {
 		return this.roleName;

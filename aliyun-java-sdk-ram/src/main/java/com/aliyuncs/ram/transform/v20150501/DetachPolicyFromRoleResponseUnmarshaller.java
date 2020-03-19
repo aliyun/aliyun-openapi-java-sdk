@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DetachPolicyFromRoleResponseUnmarshaller {
 
-	public static DetachPolicyFromRoleResponse unmarshall(DetachPolicyFromRoleResponse detachPolicyFromRoleResponse, UnmarshallerContext context) {
+	public static DetachPolicyFromRoleResponse unmarshall(DetachPolicyFromRoleResponse detachPolicyFromRoleResponse, UnmarshallerContext _ctx) {
 		
-		detachPolicyFromRoleResponse.setRequestId(context.stringValue("DetachPolicyFromRoleResponse.RequestId"));
+		detachPolicyFromRoleResponse.setRequestId(_ctx.stringValue("DetachPolicyFromRoleResponse.RequestId"));
 	 
 	 	return detachPolicyFromRoleResponse;
 	}

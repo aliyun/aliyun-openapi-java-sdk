@@ -21,20 +21,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetPasswordPolicyResponseUnmarshaller {
 
-	public static SetPasswordPolicyResponse unmarshall(SetPasswordPolicyResponse setPasswordPolicyResponse, UnmarshallerContext context) {
+	public static SetPasswordPolicyResponse unmarshall(SetPasswordPolicyResponse setPasswordPolicyResponse, UnmarshallerContext _ctx) {
 		
-		setPasswordPolicyResponse.setRequestId(context.stringValue("SetPasswordPolicyResponse.RequestId"));
+		setPasswordPolicyResponse.setRequestId(_ctx.stringValue("SetPasswordPolicyResponse.RequestId"));
 
 		PasswordPolicy passwordPolicy = new PasswordPolicy();
-		passwordPolicy.setMinimumPasswordLength(context.integerValue("SetPasswordPolicyResponse.PasswordPolicy.MinimumPasswordLength"));
-		passwordPolicy.setRequireLowercaseCharacters(context.booleanValue("SetPasswordPolicyResponse.PasswordPolicy.RequireLowercaseCharacters"));
-		passwordPolicy.setRequireUppercaseCharacters(context.booleanValue("SetPasswordPolicyResponse.PasswordPolicy.RequireUppercaseCharacters"));
-		passwordPolicy.setRequireNumbers(context.booleanValue("SetPasswordPolicyResponse.PasswordPolicy.RequireNumbers"));
-		passwordPolicy.setRequireSymbols(context.booleanValue("SetPasswordPolicyResponse.PasswordPolicy.RequireSymbols"));
-		passwordPolicy.setHardExpiry(context.booleanValue("SetPasswordPolicyResponse.PasswordPolicy.HardExpiry"));
-		passwordPolicy.setMaxPasswordAge(context.integerValue("SetPasswordPolicyResponse.PasswordPolicy.MaxPasswordAge"));
-		passwordPolicy.setPasswordReusePrevention(context.integerValue("SetPasswordPolicyResponse.PasswordPolicy.PasswordReusePrevention"));
-		passwordPolicy.setMaxLoginAttemps(context.integerValue("SetPasswordPolicyResponse.PasswordPolicy.MaxLoginAttemps"));
+		passwordPolicy.setMinimumPasswordLength(_ctx.integerValue("SetPasswordPolicyResponse.PasswordPolicy.MinimumPasswordLength"));
+		passwordPolicy.setRequireLowercaseCharacters(_ctx.booleanValue("SetPasswordPolicyResponse.PasswordPolicy.RequireLowercaseCharacters"));
+		passwordPolicy.setRequireUppercaseCharacters(_ctx.booleanValue("SetPasswordPolicyResponse.PasswordPolicy.RequireUppercaseCharacters"));
+		passwordPolicy.setRequireNumbers(_ctx.booleanValue("SetPasswordPolicyResponse.PasswordPolicy.RequireNumbers"));
+		passwordPolicy.setRequireSymbols(_ctx.booleanValue("SetPasswordPolicyResponse.PasswordPolicy.RequireSymbols"));
+		passwordPolicy.setHardExpiry(_ctx.booleanValue("SetPasswordPolicyResponse.PasswordPolicy.HardExpiry"));
+		passwordPolicy.setMaxPasswordAge(_ctx.integerValue("SetPasswordPolicyResponse.PasswordPolicy.MaxPasswordAge"));
+		passwordPolicy.setPasswordReusePrevention(_ctx.integerValue("SetPasswordPolicyResponse.PasswordPolicy.PasswordReusePrevention"));
+		passwordPolicy.setMaxLoginAttemps(_ctx.integerValue("SetPasswordPolicyResponse.PasswordPolicy.MaxLoginAttemps"));
 		setPasswordPolicyResponse.setPasswordPolicy(passwordPolicy);
 	 
 	 	return setPasswordPolicyResponse;

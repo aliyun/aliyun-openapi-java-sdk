@@ -16,23 +16,30 @@ package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ram.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DetachPolicyFromGroupRequest extends RpcAcsRequest<DetachPolicyFromGroupResponse> {
-	
-	public DetachPolicyFromGroupRequest() {
-		super("Ram", "2015-05-01", "DetachPolicyFromGroup");
-		setProtocol(ProtocolType.HTTPS);
-	}
+	   
 
 	private String policyType;
 
-	private String policyName;
-
 	private String groupName;
+
+	private String policyName;
+	public DetachPolicyFromGroupRequest() {
+		super("Ram", "2015-05-01", "DetachPolicyFromGroup", "Ram");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getPolicyType() {
 		return this.policyType;
@@ -45,17 +52,6 @@ public class DetachPolicyFromGroupRequest extends RpcAcsRequest<DetachPolicyFrom
 		}
 	}
 
-	public String getPolicyName() {
-		return this.policyName;
-	}
-
-	public void setPolicyName(String policyName) {
-		this.policyName = policyName;
-		if(policyName != null){
-			putQueryParameter("PolicyName", policyName);
-		}
-	}
-
 	public String getGroupName() {
 		return this.groupName;
 	}
@@ -64,6 +60,17 @@ public class DetachPolicyFromGroupRequest extends RpcAcsRequest<DetachPolicyFrom
 		this.groupName = groupName;
 		if(groupName != null){
 			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getPolicyName() {
+		return this.policyName;
+	}
+
+	public void setPolicyName(String policyName) {
+		this.policyName = policyName;
+		if(policyName != null){
+			putQueryParameter("PolicyName", policyName);
 		}
 	}
 

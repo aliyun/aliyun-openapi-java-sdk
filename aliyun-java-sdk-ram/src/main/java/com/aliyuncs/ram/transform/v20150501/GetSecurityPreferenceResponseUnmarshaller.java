@@ -25,29 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetSecurityPreferenceResponseUnmarshaller {
 
-	public static GetSecurityPreferenceResponse unmarshall(GetSecurityPreferenceResponse getSecurityPreferenceResponse, UnmarshallerContext context) {
+	public static GetSecurityPreferenceResponse unmarshall(GetSecurityPreferenceResponse getSecurityPreferenceResponse, UnmarshallerContext _ctx) {
 		
-		getSecurityPreferenceResponse.setRequestId(context.stringValue("GetSecurityPreferenceResponse.RequestId"));
+		getSecurityPreferenceResponse.setRequestId(_ctx.stringValue("GetSecurityPreferenceResponse.RequestId"));
 
 		SecurityPreference securityPreference = new SecurityPreference();
 
 		LoginProfilePreference loginProfilePreference = new LoginProfilePreference();
-		loginProfilePreference.setEnableSaveMFATicket(context.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference.EnableSaveMFATicket"));
-		loginProfilePreference.setAllowUserToChangePassword(context.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference.AllowUserToChangePassword"));
-		loginProfilePreference.setLoginSessionDuration(context.integerValue("GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference.LoginSessionDuration"));
-		loginProfilePreference.setLoginNetworkMasks(context.stringValue("GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference.LoginNetworkMasks"));
+		loginProfilePreference.setEnableSaveMFATicket(_ctx.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference.EnableSaveMFATicket"));
+		loginProfilePreference.setAllowUserToChangePassword(_ctx.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference.AllowUserToChangePassword"));
+		loginProfilePreference.setLoginSessionDuration(_ctx.integerValue("GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference.LoginSessionDuration"));
+		loginProfilePreference.setLoginNetworkMasks(_ctx.stringValue("GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference.LoginNetworkMasks"));
 		securityPreference.setLoginProfilePreference(loginProfilePreference);
 
 		AccessKeyPreference accessKeyPreference = new AccessKeyPreference();
-		accessKeyPreference.setAllowUserToManageAccessKeys(context.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.AccessKeyPreference.AllowUserToManageAccessKeys"));
+		accessKeyPreference.setAllowUserToManageAccessKeys(_ctx.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.AccessKeyPreference.AllowUserToManageAccessKeys"));
 		securityPreference.setAccessKeyPreference(accessKeyPreference);
 
 		PublicKeyPreference publicKeyPreference = new PublicKeyPreference();
-		publicKeyPreference.setAllowUserToManagePublicKeys(context.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.PublicKeyPreference.AllowUserToManagePublicKeys"));
+		publicKeyPreference.setAllowUserToManagePublicKeys(_ctx.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.PublicKeyPreference.AllowUserToManagePublicKeys"));
 		securityPreference.setPublicKeyPreference(publicKeyPreference);
 
 		MFAPreference mFAPreference = new MFAPreference();
-		mFAPreference.setAllowUserToManageMFADevices(context.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.MFAPreference.AllowUserToManageMFADevices"));
+		mFAPreference.setAllowUserToManageMFADevices(_ctx.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.MFAPreference.AllowUserToManageMFADevices"));
 		securityPreference.setMFAPreference(mFAPreference);
 		getSecurityPreferenceResponse.setSecurityPreference(securityPreference);
 	 

@@ -12,18 +12,12 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ram.transform.v20150501;
+package com.aliyuncs.ram;
 
-import com.aliyuncs.ram.model.v20150501.DetachPolicyFromUserResponse;
-import com.aliyuncs.transform.UnmarshallerContext;
+import java.util.HashMap;
 
+public class Endpoint {
+    public static HashMap<String, String> endpointMap = new HashMap<String, String>() {};
 
-public class DetachPolicyFromUserResponseUnmarshaller {
-
-	public static DetachPolicyFromUserResponse unmarshall(DetachPolicyFromUserResponse detachPolicyFromUserResponse, UnmarshallerContext _ctx) {
-		
-		detachPolicyFromUserResponse.setRequestId(_ctx.stringValue("DetachPolicyFromUserResponse.RequestId"));
-	 
-	 	return detachPolicyFromUserResponse;
-	}
+    public static String endpointRegionalType = "central";
 }

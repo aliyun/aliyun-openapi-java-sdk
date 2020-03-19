@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListGroupsResponseUnmarshaller {
 
-	public static ListGroupsResponse unmarshall(ListGroupsResponse listGroupsResponse, UnmarshallerContext context) {
+	public static ListGroupsResponse unmarshall(ListGroupsResponse listGroupsResponse, UnmarshallerContext _ctx) {
 		
-		listGroupsResponse.setRequestId(context.stringValue("ListGroupsResponse.RequestId"));
-		listGroupsResponse.setIsTruncated(context.booleanValue("ListGroupsResponse.IsTruncated"));
-		listGroupsResponse.setMarker(context.stringValue("ListGroupsResponse.Marker"));
+		listGroupsResponse.setRequestId(_ctx.stringValue("ListGroupsResponse.RequestId"));
+		listGroupsResponse.setIsTruncated(_ctx.booleanValue("ListGroupsResponse.IsTruncated"));
+		listGroupsResponse.setMarker(_ctx.stringValue("ListGroupsResponse.Marker"));
 
 		List<Group> groups = new ArrayList<Group>();
-		for (int i = 0; i < context.lengthValue("ListGroupsResponse.Groups.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListGroupsResponse.Groups.Length"); i++) {
 			Group group = new Group();
-			group.setGroupName(context.stringValue("ListGroupsResponse.Groups["+ i +"].GroupName"));
-			group.setComments(context.stringValue("ListGroupsResponse.Groups["+ i +"].Comments"));
-			group.setCreateDate(context.stringValue("ListGroupsResponse.Groups["+ i +"].CreateDate"));
-			group.setUpdateDate(context.stringValue("ListGroupsResponse.Groups["+ i +"].UpdateDate"));
+			group.setGroupName(_ctx.stringValue("ListGroupsResponse.Groups["+ i +"].GroupName"));
+			group.setComments(_ctx.stringValue("ListGroupsResponse.Groups["+ i +"].Comments"));
+			group.setCreateDate(_ctx.stringValue("ListGroupsResponse.Groups["+ i +"].CreateDate"));
+			group.setUpdateDate(_ctx.stringValue("ListGroupsResponse.Groups["+ i +"].UpdateDate"));
 
 			groups.add(group);
 		}

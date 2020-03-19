@@ -16,23 +16,41 @@ package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ram.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateGroupRequest extends RpcAcsRequest<UpdateGroupResponse> {
-	
-	public UpdateGroupRequest() {
-		super("Ram", "2015-05-01", "UpdateGroup");
-		setProtocol(ProtocolType.HTTPS);
-	}
+	   
+
+	private String groupName;
 
 	private String newGroupName;
 
 	private String newComments;
+	public UpdateGroupRequest() {
+		super("Ram", "2015-05-01", "UpdateGroup", "Ram");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private String groupName;
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
 
 	public String getNewGroupName() {
 		return this.newGroupName;
@@ -53,17 +71,6 @@ public class UpdateGroupRequest extends RpcAcsRequest<UpdateGroupResponse> {
 		this.newComments = newComments;
 		if(newComments != null){
 			putQueryParameter("NewComments", newComments);
-		}
-	}
-
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putQueryParameter("GroupName", groupName);
 		}
 	}
 
