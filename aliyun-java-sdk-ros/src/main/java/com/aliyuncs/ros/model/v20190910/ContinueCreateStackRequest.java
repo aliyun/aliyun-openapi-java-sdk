@@ -28,9 +28,11 @@ public class ContinueCreateStackRequest extends RpcAcsRequest<ContinueCreateStac
 
 	private String stackId;
 
+	private String ramRoleName;
+
 	private List<String> recreatingResourcess;
 	public ContinueCreateStackRequest() {
-		super("ROS", "2019-09-10", "ContinueCreateStack");
+		super("ROS", "2019-09-10", "ContinueCreateStack", "ROS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -46,6 +48,17 @@ public class ContinueCreateStackRequest extends RpcAcsRequest<ContinueCreateStac
 		this.stackId = stackId;
 		if(stackId != null){
 			putQueryParameter("StackId", stackId);
+		}
+	}
+
+	public String getRamRoleName() {
+		return this.ramRoleName;
+	}
+
+	public void setRamRoleName(String ramRoleName) {
+		this.ramRoleName = ramRoleName;
+		if(ramRoleName != null){
+			putQueryParameter("RamRoleName", ramRoleName);
 		}
 	}
 

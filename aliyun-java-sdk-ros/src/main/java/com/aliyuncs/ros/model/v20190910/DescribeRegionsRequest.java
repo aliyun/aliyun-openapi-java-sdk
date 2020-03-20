@@ -27,7 +27,7 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 
 	private String acceptLanguage;
 	public DescribeRegionsRequest() {
-		super("ROS", "2019-09-10", "DescribeRegions");
+		super("ROS", "2019-09-10", "DescribeRegions", "ROS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

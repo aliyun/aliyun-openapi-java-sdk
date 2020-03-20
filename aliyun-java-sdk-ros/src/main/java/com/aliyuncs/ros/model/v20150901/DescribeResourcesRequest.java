@@ -29,7 +29,7 @@ public class DescribeResourcesRequest extends RoaAcsRequest<DescribeResourcesRes
 
 	private String stackName;
 	public DescribeResourcesRequest() {
-		super("ROS", "2015-09-01", "DescribeResources");
+		super("ROS", "2015-09-01", "DescribeResources", "ROS");
 		setUriPattern("/stacks/[StackName]/[StackId]/resources");
 		setMethod(MethodType.GET);
 		try {

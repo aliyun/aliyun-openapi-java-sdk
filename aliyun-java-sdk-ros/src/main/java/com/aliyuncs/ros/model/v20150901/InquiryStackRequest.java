@@ -25,7 +25,7 @@ import com.aliyuncs.ros.Endpoint;
 public class InquiryStackRequest extends RoaAcsRequest<InquiryStackResponse> {
 	   
 	public InquiryStackRequest() {
-		super("ROS", "2015-09-01", "InquiryStack");
+		super("ROS", "2015-09-01", "InquiryStack", "ROS");
 		setUriPattern("/stacks/inquiry");
 		setMethod(MethodType.POST);
 		try {

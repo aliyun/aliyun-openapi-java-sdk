@@ -15,6 +15,7 @@
 package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ros.Endpoint;
 
@@ -27,9 +28,13 @@ public class DeleteStackRequest extends RpcAcsRequest<DeleteStackResponse> {
 
 	private String stackId;
 
+	private List<String> retainResourcess;
+
 	private Boolean retainAllResources;
+
+	private String ramRoleName;
 	public DeleteStackRequest() {
-		super("ROS", "2019-09-10", "DeleteStack");
+		super("ROS", "2019-09-10", "DeleteStack", "ROS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,6 +53,19 @@ public class DeleteStackRequest extends RpcAcsRequest<DeleteStackResponse> {
 		}
 	}
 
+	public List<String> getRetainResourcess() {
+		return this.retainResourcess;
+	}
+
+	public void setRetainResourcess(List<String> retainResourcess) {
+		this.retainResourcess = retainResourcess;	
+		if (retainResourcess != null) {
+			for (int i = 0; i < retainResourcess.size(); i++) {
+				putQueryParameter("RetainResources." + (i + 1) , retainResourcess.get(i));
+			}
+		}	
+	}
+
 	public Boolean getRetainAllResources() {
 		return this.retainAllResources;
 	}
@@ -56,6 +74,17 @@ public class DeleteStackRequest extends RpcAcsRequest<DeleteStackResponse> {
 		this.retainAllResources = retainAllResources;
 		if(retainAllResources != null){
 			putQueryParameter("RetainAllResources", retainAllResources.toString());
+		}
+	}
+
+	public String getRamRoleName() {
+		return this.ramRoleName;
+	}
+
+	public void setRamRoleName(String ramRoleName) {
+		this.ramRoleName = ramRoleName;
+		if(ramRoleName != null){
+			putQueryParameter("RamRoleName", ramRoleName);
 		}
 	}
 

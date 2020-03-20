@@ -29,7 +29,7 @@ public class GetStackPolicyRequest extends RoaAcsRequest<GetStackPolicyResponse>
 
 	private String stackName;
 	public GetStackPolicyRequest() {
-		super("ROS", "2015-09-01", "GetStackPolicy");
+		super("ROS", "2015-09-01", "GetStackPolicy", "ROS");
 		setUriPattern("/stacks/[StackName]/[StackId]/policy");
 		setMethod(MethodType.GET);
 		try {

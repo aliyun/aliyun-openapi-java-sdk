@@ -38,6 +38,8 @@ public class GetStackResourceResponseUnmarshaller {
 		getStackResourceResponse.setStatus(_ctx.stringValue("GetStackResourceResponse.Status"));
 		getStackResourceResponse.setStatusReason(_ctx.stringValue("GetStackResourceResponse.StatusReason"));
 		getStackResourceResponse.setUpdateTime(_ctx.stringValue("GetStackResourceResponse.UpdateTime"));
+		getStackResourceResponse.setResourceDriftStatus(_ctx.stringValue("GetStackResourceResponse.ResourceDriftStatus"));
+		getStackResourceResponse.setDriftDetectionTime(_ctx.stringValue("GetStackResourceResponse.DriftDetectionTime"));
 
 		List<Map<Object, Object>> resourceAttributes = _ctx.listMapValue("GetStackResourceResponse.ResourceAttributes");
 		getStackResourceResponse.setResourceAttributes(resourceAttributes);

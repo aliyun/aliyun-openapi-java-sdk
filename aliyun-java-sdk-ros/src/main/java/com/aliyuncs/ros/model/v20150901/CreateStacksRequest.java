@@ -25,7 +25,7 @@ import com.aliyuncs.ros.Endpoint;
 public class CreateStacksRequest extends RoaAcsRequest<CreateStacksResponse> {
 	   
 	public CreateStacksRequest() {
-		super("ROS", "2015-09-01", "CreateStacks");
+		super("ROS", "2015-09-01", "CreateStacks", "ROS");
 		setUriPattern("/stacks");
 		setMethod(MethodType.POST);
 		try {

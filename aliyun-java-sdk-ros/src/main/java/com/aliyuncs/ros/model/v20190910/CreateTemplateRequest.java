@@ -33,7 +33,7 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 
 	private String templateName;
 	public CreateTemplateRequest() {
-		super("ROS", "2019-09-10", "CreateTemplate");
+		super("ROS", "2019-09-10", "CreateTemplate", "ROS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

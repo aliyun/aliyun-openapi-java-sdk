@@ -97,6 +97,10 @@ public class ListStacksResponse extends AcsResponse {
 
 		private String updateTime;
 
+		private String stackDriftStatus;
+
+		private String driftDetectionTime;
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -113,26 +117,10 @@ public class ListStacksResponse extends AcsResponse {
 			this.disableRollback = disableRollback;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -191,6 +179,22 @@ public class ListStacksResponse extends AcsResponse {
 
 		public void setUpdateTime(String updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getStackDriftStatus() {
+			return this.stackDriftStatus;
+		}
+
+		public void setStackDriftStatus(String stackDriftStatus) {
+			this.stackDriftStatus = stackDriftStatus;
+		}
+
+		public String getDriftDetectionTime() {
+			return this.driftDetectionTime;
+		}
+
+		public void setDriftDetectionTime(String driftDetectionTime) {
+			this.driftDetectionTime = driftDetectionTime;
 		}
 	}
 

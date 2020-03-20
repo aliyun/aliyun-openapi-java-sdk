@@ -29,7 +29,7 @@ public class AbandonStackRequest extends RoaAcsRequest<AbandonStackResponse> {
 
 	private String stackName;
 	public AbandonStackRequest() {
-		super("ROS", "2015-09-01", "AbandonStack");
+		super("ROS", "2015-09-01", "AbandonStack", "ROS");
 		setUriPattern("/stacks/[StackName]/[StackId]/abandon");
 		setMethod(MethodType.DELETE);
 		try {

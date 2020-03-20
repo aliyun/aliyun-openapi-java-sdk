@@ -27,6 +27,7 @@ public class GetResourceTypeResponseUnmarshaller {
 		getResourceTypeResponse.setAttributes(_ctx.mapValue("GetResourceTypeResponse.Attributes"));
 		getResourceTypeResponse.setProperties(_ctx.mapValue("GetResourceTypeResponse.Properties"));
 		getResourceTypeResponse.setResourceType(_ctx.stringValue("GetResourceTypeResponse.ResourceType"));
+		getResourceTypeResponse.setSupportDriftDetection(_ctx.booleanValue("GetResourceTypeResponse.SupportDriftDetection"));
 	 
 	 	return getResourceTypeResponse;
 	}

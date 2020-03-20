@@ -40,6 +40,8 @@ public class ListStackResourcesResponseUnmarshaller {
 			resource.setStatus(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].Status"));
 			resource.setStatusReason(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].StatusReason"));
 			resource.setUpdateTime(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].UpdateTime"));
+			resource.setResourceDriftStatus(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].ResourceDriftStatus"));
+			resource.setDriftDetectionTime(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].DriftDetectionTime"));
 
 			resources.add(resource);
 		}

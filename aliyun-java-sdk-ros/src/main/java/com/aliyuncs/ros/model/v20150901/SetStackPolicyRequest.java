@@ -29,7 +29,7 @@ public class SetStackPolicyRequest extends RoaAcsRequest<SetStackPolicyResponse>
 
 	private String stackName;
 	public SetStackPolicyRequest() {
-		super("ROS", "2015-09-01", "SetStackPolicy");
+		super("ROS", "2015-09-01", "SetStackPolicy", "ROS");
 		setUriPattern("/stacks/[StackName]/[StackId]/policy");
 		setMethod(MethodType.POST);
 		try {

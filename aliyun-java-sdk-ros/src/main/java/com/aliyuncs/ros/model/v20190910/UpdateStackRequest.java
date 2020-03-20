@@ -46,11 +46,13 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 
 	private String stackPolicyDuringUpdateURL;
 
+	private String ramRoleName;
+
 	private Boolean usePreviousParameters;
 
 	private String stackPolicyURL;
 	public UpdateStackRequest() {
-		super("ROS", "2019-09-10", "UpdateStack");
+		super("ROS", "2019-09-10", "UpdateStack", "ROS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -168,6 +170,17 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 		this.stackPolicyDuringUpdateURL = stackPolicyDuringUpdateURL;
 		if(stackPolicyDuringUpdateURL != null){
 			putQueryParameter("StackPolicyDuringUpdateURL", stackPolicyDuringUpdateURL);
+		}
+	}
+
+	public String getRamRoleName() {
+		return this.ramRoleName;
+	}
+
+	public void setRamRoleName(String ramRoleName) {
+		this.ramRoleName = ramRoleName;
+		if(ramRoleName != null){
+			putQueryParameter("RamRoleName", ramRoleName);
 		}
 	}
 

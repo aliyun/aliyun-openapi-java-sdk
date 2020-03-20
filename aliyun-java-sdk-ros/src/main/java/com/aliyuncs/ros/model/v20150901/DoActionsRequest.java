@@ -29,7 +29,7 @@ public class DoActionsRequest extends RoaAcsRequest<DoActionsResponse> {
 
 	private String stackName;
 	public DoActionsRequest() {
-		super("ROS", "2015-09-01", "DoActions");
+		super("ROS", "2015-09-01", "DoActions", "ROS");
 		setUriPattern("/stacks/[StackName]/[StackId]/actions");
 		setMethod(MethodType.POST);
 		try {
