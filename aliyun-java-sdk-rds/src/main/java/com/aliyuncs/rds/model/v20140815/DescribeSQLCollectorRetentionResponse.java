@@ -26,10 +26,6 @@ public class DescribeSQLCollectorRetentionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer dBInstanceID;
-
-	private String dBInstanceName;
-
 	private String configValue;
 
 	public String getRequestId() {
@@ -38,22 +34,6 @@ public class DescribeSQLCollectorRetentionResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getDBInstanceID() {
-		return this.dBInstanceID;
-	}
-
-	public void setDBInstanceID(Integer dBInstanceID) {
-		this.dBInstanceID = dBInstanceID;
-	}
-
-	public String getDBInstanceName() {
-		return this.dBInstanceName;
-	}
-
-	public void setDBInstanceName(String dBInstanceName) {
-		this.dBInstanceName = dBInstanceName;
 	}
 
 	public String getConfigValue() {

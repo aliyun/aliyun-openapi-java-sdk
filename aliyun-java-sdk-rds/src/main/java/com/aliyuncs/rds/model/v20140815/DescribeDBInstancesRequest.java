@@ -25,23 +25,13 @@ import com.aliyuncs.rds.Endpoint;
 public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstancesResponse> {
 	   
 
-	private String tag4value;
-
 	private Long resourceOwnerId;
 
-	private String tag2key;
-
-	private String tag3key;
-
 	private String engineVersion;
-
-	private String tag1value;
 
 	private String resourceGroupId;
 
 	private String proxyId;
-
-	private String tag5key;
 
 	private Long ownerId;
 
@@ -54,8 +44,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 	private String vSwitchId;
 
 	private String zoneId;
-
-	private String tag4key;
 
 	private String instanceNetworkType;
 
@@ -79,21 +67,13 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String dedicatedHostGroupId;
 
-	private String tag3value;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private String dedicatedHostId;
 
-	private String tag5value;
-
-	private String tag1key;
-
 	private String vpcId;
-
-	private String tag2value;
 
 	private String payType;
 	public DescribeDBInstancesRequest() {
@@ -103,17 +83,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTag4value() {
-		return this.tag4value;
-	}
-
-	public void setTag4value(String tag4value) {
-		this.tag4value = tag4value;
-		if(tag4value != null){
-			putQueryParameter("Tag.4.value", tag4value);
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -127,28 +96,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getTag2key() {
-		return this.tag2key;
-	}
-
-	public void setTag2key(String tag2key) {
-		this.tag2key = tag2key;
-		if(tag2key != null){
-			putQueryParameter("Tag.2.key", tag2key);
-		}
-	}
-
-	public String getTag3key() {
-		return this.tag3key;
-	}
-
-	public void setTag3key(String tag3key) {
-		this.tag3key = tag3key;
-		if(tag3key != null){
-			putQueryParameter("Tag.3.key", tag3key);
-		}
-	}
-
 	public String getEngineVersion() {
 		return this.engineVersion;
 	}
@@ -157,17 +104,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
-		}
-	}
-
-	public String getTag1value() {
-		return this.tag1value;
-	}
-
-	public void setTag1value(String tag1value) {
-		this.tag1value = tag1value;
-		if(tag1value != null){
-			putQueryParameter("Tag.1.value", tag1value);
 		}
 	}
 
@@ -190,17 +126,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.proxyId = proxyId;
 		if(proxyId != null){
 			putQueryParameter("proxyId", proxyId);
-		}
-	}
-
-	public String getTag5key() {
-		return this.tag5key;
-	}
-
-	public void setTag5key(String tag5key) {
-		this.tag5key = tag5key;
-		if(tag5key != null){
-			putQueryParameter("Tag.5.key", tag5key);
 		}
 	}
 
@@ -267,17 +192,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getTag4key() {
-		return this.tag4key;
-	}
-
-	public void setTag4key(String tag4key) {
-		this.tag4key = tag4key;
-		if(tag4key != null){
-			putQueryParameter("Tag.4.key", tag4key);
 		}
 	}
 
@@ -402,17 +316,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getTag3value() {
-		return this.tag3value;
-	}
-
-	public void setTag3value(String tag3value) {
-		this.tag3value = tag3value;
-		if(tag3value != null){
-			putQueryParameter("Tag.3.value", tag3value);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -446,28 +349,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getTag5value() {
-		return this.tag5value;
-	}
-
-	public void setTag5value(String tag5value) {
-		this.tag5value = tag5value;
-		if(tag5value != null){
-			putQueryParameter("Tag.5.value", tag5value);
-		}
-	}
-
-	public String getTag1key() {
-		return this.tag1key;
-	}
-
-	public void setTag1key(String tag1key) {
-		this.tag1key = tag1key;
-		if(tag1key != null){
-			putQueryParameter("Tag.1.key", tag1key);
-		}
-	}
-
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -476,17 +357,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
-	public String getTag2value() {
-		return this.tag2value;
-	}
-
-	public void setTag2value(String tag2value) {
-		this.tag2value = tag2value;
-		if(tag2value != null){
-			putQueryParameter("Tag.2.value", tag2value);
 		}
 	}
 

@@ -31,6 +31,8 @@ public class DescribeAvailableDedicatedHostClassesRequest extends RpcAcsRequest<
 
 	private Long ownerId;
 
+	private String storageType;
+
 	private String zoneId;
 	public DescribeAvailableDedicatedHostClassesRequest() {
 		super("Rds", "2014-08-15", "DescribeAvailableDedicatedHostClasses", "rds");
@@ -71,6 +73,17 @@ public class DescribeAvailableDedicatedHostClassesRequest extends RpcAcsRequest<
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
 		}
 	}
 

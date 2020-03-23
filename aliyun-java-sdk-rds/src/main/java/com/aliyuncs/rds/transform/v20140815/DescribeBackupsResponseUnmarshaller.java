@@ -56,6 +56,7 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setMetaStatus(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].MetaStatus"));
 			backup.setSlaveStatus(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].SlaveStatus"));
 			backup.setConsistentTime(_ctx.longValue("DescribeBackupsResponse.Items["+ i +"].ConsistentTime"));
+			backup.setBackupInitiator(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupInitiator"));
 
 			items.add(backup);
 		}

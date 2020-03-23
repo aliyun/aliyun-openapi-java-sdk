@@ -113,6 +113,8 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		private String executionStartTime;
 
+		private Long queryTimeMS;
+
 		public String getHostAddress() {
 			return this.hostAddress;
 		}
@@ -175,6 +177,14 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		public void setExecutionStartTime(String executionStartTime) {
 			this.executionStartTime = executionStartTime;
+		}
+
+		public Long getQueryTimeMS() {
+			return this.queryTimeMS;
+		}
+
+		public void setQueryTimeMS(Long queryTimeMS) {
+			this.queryTimeMS = queryTimeMS;
 		}
 	}
 

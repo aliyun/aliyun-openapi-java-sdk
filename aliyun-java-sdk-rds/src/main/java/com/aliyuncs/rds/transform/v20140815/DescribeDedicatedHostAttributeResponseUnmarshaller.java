@@ -51,6 +51,9 @@ public class DescribeDedicatedHostAttributeResponseUnmarshaller {
 		describeDedicatedHostAttributeResponse.setCpuUsed(_ctx.stringValue("DescribeDedicatedHostAttributeResponse.CpuUsed"));
 		describeDedicatedHostAttributeResponse.setMemoryUsed(_ctx.stringValue("DescribeDedicatedHostAttributeResponse.MemoryUsed"));
 		describeDedicatedHostAttributeResponse.setStorageUsed(_ctx.stringValue("DescribeDedicatedHostAttributeResponse.StorageUsed"));
+		describeDedicatedHostAttributeResponse.setHostType(_ctx.stringValue("DescribeDedicatedHostAttributeResponse.HostType"));
+		describeDedicatedHostAttributeResponse.setAccountName(_ctx.stringValue("DescribeDedicatedHostAttributeResponse.AccountName"));
+		describeDedicatedHostAttributeResponse.setOpenPermission(_ctx.stringValue("DescribeDedicatedHostAttributeResponse.OpenPermission"));
 	 
 	 	return describeDedicatedHostAttributeResponse;
 	}

@@ -25,6 +25,8 @@ import com.aliyuncs.rds.Endpoint;
 public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceResponse> {
 	   
 
+	private String dBParamGroupId;
+
 	private Long resourceOwnerId;
 
 	private Integer dBInstanceStorage;
@@ -67,7 +69,11 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String targetDedicatedHostIdForSlave;
 
+	private String dBIsIgnoreCase;
+
 	private String engine;
+
+	private String dBTimeZone;
 
 	private String dBInstanceStorageType;
 
@@ -89,6 +95,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDBParamGroupId() {
+		return this.dBParamGroupId;
+	}
+
+	public void setDBParamGroupId(String dBParamGroupId) {
+		this.dBParamGroupId = dBParamGroupId;
+		if(dBParamGroupId != null){
+			putQueryParameter("DBParamGroupId", dBParamGroupId);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -322,6 +339,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getDBIsIgnoreCase() {
+		return this.dBIsIgnoreCase;
+	}
+
+	public void setDBIsIgnoreCase(String dBIsIgnoreCase) {
+		this.dBIsIgnoreCase = dBIsIgnoreCase;
+		if(dBIsIgnoreCase != null){
+			putQueryParameter("DBIsIgnoreCase", dBIsIgnoreCase);
+		}
+	}
+
 	public String getEngine() {
 		return this.engine;
 	}
@@ -330,6 +358,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.engine = engine;
 		if(engine != null){
 			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getDBTimeZone() {
+		return this.dBTimeZone;
+	}
+
+	public void setDBTimeZone(String dBTimeZone) {
+		this.dBTimeZone = dBTimeZone;
+		if(dBTimeZone != null){
+			putQueryParameter("DBTimeZone", dBTimeZone);
 		}
 	}
 

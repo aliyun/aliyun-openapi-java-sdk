@@ -35,6 +35,12 @@ public class DescribeDBProxyResponse extends AcsResponse {
 
 	private String dBProxyInstanceStatus;
 
+	private String dBProxyInstanceCurrentMinorVersion;
+
+	private String dBProxyInstanceLatestMinorVersion;
+
+	private String dBProxyInstanceName;
+
 	private List<DBProxyConnectStringItemsItem> dBProxyConnectStringItems;
 
 	public String getRequestId() {
@@ -77,6 +83,30 @@ public class DescribeDBProxyResponse extends AcsResponse {
 		this.dBProxyInstanceStatus = dBProxyInstanceStatus;
 	}
 
+	public String getDBProxyInstanceCurrentMinorVersion() {
+		return this.dBProxyInstanceCurrentMinorVersion;
+	}
+
+	public void setDBProxyInstanceCurrentMinorVersion(String dBProxyInstanceCurrentMinorVersion) {
+		this.dBProxyInstanceCurrentMinorVersion = dBProxyInstanceCurrentMinorVersion;
+	}
+
+	public String getDBProxyInstanceLatestMinorVersion() {
+		return this.dBProxyInstanceLatestMinorVersion;
+	}
+
+	public void setDBProxyInstanceLatestMinorVersion(String dBProxyInstanceLatestMinorVersion) {
+		this.dBProxyInstanceLatestMinorVersion = dBProxyInstanceLatestMinorVersion;
+	}
+
+	public String getDBProxyInstanceName() {
+		return this.dBProxyInstanceName;
+	}
+
+	public void setDBProxyInstanceName(String dBProxyInstanceName) {
+		this.dBProxyInstanceName = dBProxyInstanceName;
+	}
+
 	public List<DBProxyConnectStringItemsItem> getDBProxyConnectStringItems() {
 		return this.dBProxyConnectStringItems;
 	}
@@ -96,6 +126,10 @@ public class DescribeDBProxyResponse extends AcsResponse {
 		private String dBProxyConnectStringNetType;
 
 		private String dBProxyVpcInstanceId;
+
+		private String dBProxyEndpointName;
+
+		private String dBProxyConnectStringNetWorkType;
 
 		public String getDBProxyEndpointId() {
 			return this.dBProxyEndpointId;
@@ -135,6 +169,22 @@ public class DescribeDBProxyResponse extends AcsResponse {
 
 		public void setDBProxyVpcInstanceId(String dBProxyVpcInstanceId) {
 			this.dBProxyVpcInstanceId = dBProxyVpcInstanceId;
+		}
+
+		public String getDBProxyEndpointName() {
+			return this.dBProxyEndpointName;
+		}
+
+		public void setDBProxyEndpointName(String dBProxyEndpointName) {
+			this.dBProxyEndpointName = dBProxyEndpointName;
+		}
+
+		public String getDBProxyConnectStringNetWorkType() {
+			return this.dBProxyConnectStringNetWorkType;
+		}
+
+		public void setDBProxyConnectStringNetWorkType(String dBProxyConnectStringNetWorkType) {
+			this.dBProxyConnectStringNetWorkType = dBProxyConnectStringNetWorkType;
 		}
 	}
 

@@ -85,6 +85,16 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		private String allocationStatus;
 
+		private String endTime;
+
+		private String hostType;
+
+		private String bastionInstanceId;
+
+		private String openPermission;
+
+		private String accountName;
+
 		public String getHostName() {
 			return this.hostName;
 		}
@@ -195,6 +205,46 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		public void setAllocationStatus(String allocationStatus) {
 			this.allocationStatus = allocationStatus;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getHostType() {
+			return this.hostType;
+		}
+
+		public void setHostType(String hostType) {
+			this.hostType = hostType;
+		}
+
+		public String getBastionInstanceId() {
+			return this.bastionInstanceId;
+		}
+
+		public void setBastionInstanceId(String bastionInstanceId) {
+			this.bastionInstanceId = bastionInstanceId;
+		}
+
+		public String getOpenPermission() {
+			return this.openPermission;
+		}
+
+		public void setOpenPermission(String openPermission) {
+			this.openPermission = openPermission;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 	}
 
