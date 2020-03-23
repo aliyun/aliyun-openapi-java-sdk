@@ -47,7 +47,7 @@ public class ModifyDedicatedInstanceSpecRequest extends RpcAcsRequest<ModifyDedi
 
 	private Boolean forceUpgrade;
 	public ModifyDedicatedInstanceSpecRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyDedicatedInstanceSpec");
+		super("R-kvstore", "2015-01-01", "ModifyDedicatedInstanceSpec", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

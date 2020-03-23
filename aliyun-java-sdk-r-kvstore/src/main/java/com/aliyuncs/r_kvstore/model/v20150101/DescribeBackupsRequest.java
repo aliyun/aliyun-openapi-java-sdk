@@ -49,7 +49,7 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 
 	private String instanceId;
 	public DescribeBackupsRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeBackups");
+		super("R-kvstore", "2015-01-01", "DescribeBackups", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

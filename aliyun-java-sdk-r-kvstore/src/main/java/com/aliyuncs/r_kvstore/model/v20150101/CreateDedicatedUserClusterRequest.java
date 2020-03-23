@@ -51,7 +51,7 @@ public class CreateDedicatedUserClusterRequest extends RpcAcsRequest<CreateDedic
 
 	private Integer cpuOverAllocationRatio;
 	public CreateDedicatedUserClusterRequest() {
-		super("R-kvstore", "2015-01-01", "CreateDedicatedUserCluster");
+		super("R-kvstore", "2015-01-01", "CreateDedicatedUserCluster", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

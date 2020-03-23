@@ -37,7 +37,7 @@ public class DescribeDedicatedUserClusterRequest extends RpcAcsRequest<DescribeD
 
 	private String zoneId;
 	public DescribeDedicatedUserClusterRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeDedicatedUserCluster");
+		super("R-kvstore", "2015-01-01", "DescribeDedicatedUserCluster", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -57,7 +57,7 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 
 	private String orderType;
 	public DescribeSlowLogRecordsRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeSlowLogRecords");
+		super("R-kvstore", "2015-01-01", "DescribeSlowLogRecords", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

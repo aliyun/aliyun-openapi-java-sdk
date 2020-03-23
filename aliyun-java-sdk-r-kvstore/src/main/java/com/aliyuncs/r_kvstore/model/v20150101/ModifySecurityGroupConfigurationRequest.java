@@ -22,22 +22,24 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateCacheAnalysisTaskRequest extends RpcAcsRequest<CreateCacheAnalysisTaskResponse> {
+public class ModifySecurityGroupConfigurationRequest extends RpcAcsRequest<ModifySecurityGroupConfigurationResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private String securityGroupId;
+
 	private String securityToken;
+
+	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String instanceId;
-	public CreateCacheAnalysisTaskRequest() {
-		super("R-kvstore", "2015-01-01", "CreateCacheAnalysisTask", "redisa");
+	public ModifySecurityGroupConfigurationRequest() {
+		super("R-kvstore", "2015-01-01", "ModifySecurityGroupConfiguration", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +58,17 @@ public class CreateCacheAnalysisTaskRequest extends RpcAcsRequest<CreateCacheAna
 		}
 	}
 
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -64,6 +77,17 @@ public class CreateCacheAnalysisTaskRequest extends RpcAcsRequest<CreateCacheAna
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -100,20 +124,9 @@ public class CreateCacheAnalysisTaskRequest extends RpcAcsRequest<CreateCacheAna
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	@Override
-	public Class<CreateCacheAnalysisTaskResponse> getResponseClass() {
-		return CreateCacheAnalysisTaskResponse.class;
+	public Class<ModifySecurityGroupConfigurationResponse> getResponseClass() {
+		return ModifySecurityGroupConfigurationResponse.class;
 	}
 
 }

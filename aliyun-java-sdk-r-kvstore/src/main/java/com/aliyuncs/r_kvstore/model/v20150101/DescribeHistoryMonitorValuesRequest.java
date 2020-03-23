@@ -47,7 +47,7 @@ public class DescribeHistoryMonitorValuesRequest extends RpcAcsRequest<DescribeH
 
 	private String monitorKeys;
 	public DescribeHistoryMonitorValuesRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeHistoryMonitorValues");
+		super("R-kvstore", "2015-01-01", "DescribeHistoryMonitorValues", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

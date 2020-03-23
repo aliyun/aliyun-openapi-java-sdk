@@ -22,7 +22,7 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateCacheAnalysisTaskRequest extends RpcAcsRequest<CreateCacheAnalysisTaskResponse> {
+public class DescribeSecurityGroupConfigurationRequest extends RpcAcsRequest<DescribeSecurityGroupConfigurationResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -36,8 +36,8 @@ public class CreateCacheAnalysisTaskRequest extends RpcAcsRequest<CreateCacheAna
 	private Long ownerId;
 
 	private String instanceId;
-	public CreateCacheAnalysisTaskRequest() {
-		super("R-kvstore", "2015-01-01", "CreateCacheAnalysisTask", "redisa");
+	public DescribeSecurityGroupConfigurationRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeSecurityGroupConfiguration", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -112,8 +112,8 @@ public class CreateCacheAnalysisTaskRequest extends RpcAcsRequest<CreateCacheAna
 	}
 
 	@Override
-	public Class<CreateCacheAnalysisTaskResponse> getResponseClass() {
-		return CreateCacheAnalysisTaskResponse.class;
+	public Class<DescribeSecurityGroupConfigurationResponse> getResponseClass() {
+		return DescribeSecurityGroupConfigurationResponse.class;
 	}
 
 }

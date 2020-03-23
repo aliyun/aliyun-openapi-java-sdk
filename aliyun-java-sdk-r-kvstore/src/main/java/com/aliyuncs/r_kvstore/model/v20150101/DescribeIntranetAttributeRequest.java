@@ -39,7 +39,7 @@ public class DescribeIntranetAttributeRequest extends RpcAcsRequest<DescribeIntr
 
 	private String instanceId;
 	public DescribeIntranetAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeIntranetAttribute");
+		super("R-kvstore", "2015-01-01", "DescribeIntranetAttribute", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

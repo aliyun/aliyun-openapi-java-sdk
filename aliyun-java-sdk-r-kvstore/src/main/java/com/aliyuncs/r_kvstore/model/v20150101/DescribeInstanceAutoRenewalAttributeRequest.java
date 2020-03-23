@@ -41,7 +41,7 @@ public class DescribeInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<D
 
 	private Long ownerId;
 	public DescribeInstanceAutoRenewalAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeInstanceAutoRenewalAttribute");
+		super("R-kvstore", "2015-01-01", "DescribeInstanceAutoRenewalAttribute", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

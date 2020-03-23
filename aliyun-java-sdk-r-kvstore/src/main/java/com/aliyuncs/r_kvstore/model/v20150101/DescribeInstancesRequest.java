@@ -70,7 +70,7 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String chargeType;
 	public DescribeInstancesRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeInstances");
+		super("R-kvstore", "2015-01-01", "DescribeInstances", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

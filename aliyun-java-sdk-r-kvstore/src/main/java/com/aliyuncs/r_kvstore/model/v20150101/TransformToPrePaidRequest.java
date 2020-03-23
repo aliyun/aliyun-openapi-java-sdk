@@ -41,7 +41,7 @@ public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidR
 
 	private String instanceId;
 	public TransformToPrePaidRequest() {
-		super("R-kvstore", "2015-01-01", "TransformToPrePaid");
+		super("R-kvstore", "2015-01-01", "TransformToPrePaid", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

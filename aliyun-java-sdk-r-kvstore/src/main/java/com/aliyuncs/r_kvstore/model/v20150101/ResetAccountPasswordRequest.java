@@ -41,7 +41,7 @@ public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPassw
 
 	private String instanceId;
 	public ResetAccountPasswordRequest() {
-		super("R-kvstore", "2015-01-01", "ResetAccountPassword");
+		super("R-kvstore", "2015-01-01", "ResetAccountPassword", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

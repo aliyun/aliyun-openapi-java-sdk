@@ -51,7 +51,7 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 
 	private String instanceId;
 	public RenewInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "RenewInstance");
+		super("R-kvstore", "2015-01-01", "RenewInstance", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
