@@ -16,6 +16,7 @@ package com.aliyuncs.imageenhan.transform.v20190930;
 
 import com.aliyuncs.imageenhan.model.v20190930.ChangeImageSizeResponse;
 import com.aliyuncs.imageenhan.model.v20190930.ChangeImageSizeResponse.Data;
+import com.aliyuncs.imageenhan.model.v20190930.ChangeImageSizeResponse.Data.RetainLocation;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,6 +28,13 @@ public class ChangeImageSizeResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setUrl(_ctx.stringValue("ChangeImageSizeResponse.Data.Url"));
+
+		RetainLocation retainLocation = new RetainLocation();
+		retainLocation.setX(_ctx.integerValue("ChangeImageSizeResponse.Data.RetainLocation.X"));
+		retainLocation.setY(_ctx.integerValue("ChangeImageSizeResponse.Data.RetainLocation.Y"));
+		retainLocation.setWidth(_ctx.integerValue("ChangeImageSizeResponse.Data.RetainLocation.Width"));
+		retainLocation.setHeight(_ctx.integerValue("ChangeImageSizeResponse.Data.RetainLocation.Height"));
+		data.setRetainLocation(retainLocation);
 		changeImageSizeResponse.setData(data);
 	 
 	 	return changeImageSizeResponse;
