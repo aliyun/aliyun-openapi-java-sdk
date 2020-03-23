@@ -42,7 +42,7 @@ public class AddItemLimitRuleRequest extends RpcAcsRequest<AddItemLimitRuleRespo
 
 	private String bizId;
 	public AddItemLimitRuleRequest() {
-		super("linkedmall", "2018-01-16", "AddItemLimitRule");
+		super("linkedmall", "2018-01-16", "AddItemLimitRule", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

@@ -42,7 +42,7 @@ public class SubmitReturnGoodLogisticsRequest extends RpcAcsRequest<SubmitReturn
 
 	private String logisticsNo;
 	public SubmitReturnGoodLogisticsRequest() {
-		super("linkedmall", "2018-01-16", "SubmitReturnGoodLogistics");
+		super("linkedmall", "2018-01-16", "SubmitReturnGoodLogistics", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

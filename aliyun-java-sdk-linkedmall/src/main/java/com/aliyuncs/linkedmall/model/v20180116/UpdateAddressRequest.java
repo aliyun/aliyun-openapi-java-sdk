@@ -32,7 +32,7 @@ public class UpdateAddressRequest extends RpcAcsRequest<UpdateAddressResponse> {
 
 	private Boolean useAnonymousTbAccount;
 	public UpdateAddressRequest() {
-		super("linkedmall", "2018-01-16", "UpdateAddress");
+		super("linkedmall", "2018-01-16", "UpdateAddress", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

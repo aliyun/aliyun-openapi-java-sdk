@@ -30,7 +30,7 @@ public class GetCategoryChainRequest extends RpcAcsRequest<GetCategoryChainRespo
 
 	private Long categoryId;
 	public GetCategoryChainRequest() {
-		super("linkedmall", "2018-01-16", "GetCategoryChain");
+		super("linkedmall", "2018-01-16", "GetCategoryChain", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

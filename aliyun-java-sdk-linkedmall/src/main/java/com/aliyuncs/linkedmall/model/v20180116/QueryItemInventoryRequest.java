@@ -33,7 +33,7 @@ public class QueryItemInventoryRequest extends RpcAcsRequest<QueryItemInventoryR
 
 	private List<ItemList> itemLists;
 	public QueryItemInventoryRequest() {
-		super("linkedmall", "2018-01-16", "QueryItemInventory");
+		super("linkedmall", "2018-01-16", "QueryItemInventory", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

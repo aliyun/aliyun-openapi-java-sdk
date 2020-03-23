@@ -30,7 +30,7 @@ public class QueryUnfinishedActivitiesRequest extends RpcAcsRequest<QueryUnfinis
 
 	private Integer pageNumber;
 	public QueryUnfinishedActivitiesRequest() {
-		super("linkedmall", "2018-01-16", "QueryUnfinishedActivities");
+		super("linkedmall", "2018-01-16", "QueryUnfinishedActivities", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

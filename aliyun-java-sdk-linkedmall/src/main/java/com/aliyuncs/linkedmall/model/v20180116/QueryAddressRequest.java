@@ -30,7 +30,7 @@ public class QueryAddressRequest extends RpcAcsRequest<QueryAddressResponse> {
 
 	private String bizId;
 	public QueryAddressRequest() {
-		super("linkedmall", "2018-01-16", "QueryAddress");
+		super("linkedmall", "2018-01-16", "QueryAddress", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

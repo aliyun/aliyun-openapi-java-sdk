@@ -32,7 +32,7 @@ public class QueryUnfinishedSessions4ItemsRequest extends RpcAcsRequest<QueryUnf
 
 	private String bizId;
 	public QueryUnfinishedSessions4ItemsRequest() {
-		super("linkedmall", "2018-01-16", "QueryUnfinishedSessions4Items");
+		super("linkedmall", "2018-01-16", "QueryUnfinishedSessions4Items", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

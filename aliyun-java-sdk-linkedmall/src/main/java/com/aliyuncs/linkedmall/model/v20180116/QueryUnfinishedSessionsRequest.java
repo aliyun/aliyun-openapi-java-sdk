@@ -29,8 +29,10 @@ public class QueryUnfinishedSessionsRequest extends RpcAcsRequest<QueryUnfinishe
 	private Integer pageSize;
 
 	private Integer pageNumber;
+
+	private Long queryTime;
 	public QueryUnfinishedSessionsRequest() {
-		super("linkedmall", "2018-01-16", "QueryUnfinishedSessions");
+		super("linkedmall", "2018-01-16", "QueryUnfinishedSessions", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 
@@ -64,6 +66,17 @@ public class QueryUnfinishedSessionsRequest extends RpcAcsRequest<QueryUnfinishe
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getQueryTime() {
+		return this.queryTime;
+	}
+
+	public void setQueryTime(Long queryTime) {
+		this.queryTime = queryTime;
+		if(queryTime != null){
+			putQueryParameter("QueryTime", queryTime.toString());
 		}
 	}
 

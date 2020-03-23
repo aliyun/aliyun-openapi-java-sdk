@@ -36,7 +36,7 @@ public class RefundPointRequest extends RpcAcsRequest<RefundPointResponse> {
 
 	private Boolean useAnonymousTbAccount;
 	public RefundPointRequest() {
-		super("linkedmall", "2018-01-16", "RefundPoint");
+		super("linkedmall", "2018-01-16", "RefundPoint", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

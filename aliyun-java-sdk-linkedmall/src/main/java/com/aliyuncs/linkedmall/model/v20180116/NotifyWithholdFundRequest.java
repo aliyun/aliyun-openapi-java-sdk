@@ -36,7 +36,7 @@ public class NotifyWithholdFundRequest extends RpcAcsRequest<NotifyWithholdFundR
 
 	private String channelId;
 	public NotifyWithholdFundRequest() {
-		super("linkedmall", "2018-01-16", "NotifyWithholdFund");
+		super("linkedmall", "2018-01-16", "NotifyWithholdFund", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

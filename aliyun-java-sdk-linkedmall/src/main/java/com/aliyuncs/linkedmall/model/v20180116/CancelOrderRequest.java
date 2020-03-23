@@ -36,7 +36,7 @@ public class CancelOrderRequest extends RpcAcsRequest<CancelOrderResponse> {
 
 	private Boolean useAnonymousTbAccount;
 	public CancelOrderRequest() {
-		super("linkedmall", "2018-01-16", "CancelOrder");
+		super("linkedmall", "2018-01-16", "CancelOrder", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

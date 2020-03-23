@@ -30,7 +30,7 @@ public class QueryMessagesRequest extends RpcAcsRequest<QueryMessagesResponse> {
 
 	private String topic;
 	public QueryMessagesRequest() {
-		super("linkedmall", "2018-01-16", "QueryMessages");
+		super("linkedmall", "2018-01-16", "QueryMessages", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

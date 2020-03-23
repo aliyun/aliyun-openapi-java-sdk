@@ -32,7 +32,7 @@ public class QueryActivityItemsRequest extends RpcAcsRequest<QueryActivityItemsR
 
 	private Integer pageNumber;
 	public QueryActivityItemsRequest() {
-		super("linkedmall", "2018-01-16", "QueryActivityItems");
+		super("linkedmall", "2018-01-16", "QueryActivityItems", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

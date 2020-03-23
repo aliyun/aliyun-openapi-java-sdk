@@ -32,7 +32,7 @@ public class ReleaseMovieSeatRequest extends RpcAcsRequest<ReleaseMovieSeatRespo
 
 	private String lockSeatApplyKey;
 	public ReleaseMovieSeatRequest() {
-		super("linkedmall", "2018-01-16", "ReleaseMovieSeat");
+		super("linkedmall", "2018-01-16", "ReleaseMovieSeat", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

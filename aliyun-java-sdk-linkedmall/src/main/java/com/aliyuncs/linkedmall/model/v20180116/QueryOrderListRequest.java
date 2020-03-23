@@ -40,7 +40,7 @@ public class QueryOrderListRequest extends RpcAcsRequest<QueryOrderListResponse>
 
 	private Long pageSize;
 	public QueryOrderListRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderList");
+		super("linkedmall", "2018-01-16", "QueryOrderList", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

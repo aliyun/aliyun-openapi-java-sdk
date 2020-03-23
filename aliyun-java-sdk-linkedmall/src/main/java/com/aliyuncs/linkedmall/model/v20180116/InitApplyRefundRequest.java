@@ -40,7 +40,7 @@ public class InitApplyRefundRequest extends RpcAcsRequest<InitApplyRefundRespons
 
 	private String bizId;
 	public InitApplyRefundRequest() {
-		super("linkedmall", "2018-01-16", "InitApplyRefund");
+		super("linkedmall", "2018-01-16", "InitApplyRefund", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

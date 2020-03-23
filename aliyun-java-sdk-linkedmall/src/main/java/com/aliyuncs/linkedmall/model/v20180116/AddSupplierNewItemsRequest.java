@@ -29,7 +29,7 @@ public class AddSupplierNewItemsRequest extends RpcAcsRequest<AddSupplierNewItem
 
 	private List<ItemList> itemLists;
 	public AddSupplierNewItemsRequest() {
-		super("linkedmall", "2018-01-16", "AddSupplierNewItems");
+		super("linkedmall", "2018-01-16", "AddSupplierNewItems", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

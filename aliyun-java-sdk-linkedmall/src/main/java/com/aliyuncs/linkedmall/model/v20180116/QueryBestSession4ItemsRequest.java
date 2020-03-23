@@ -32,7 +32,7 @@ public class QueryBestSession4ItemsRequest extends RpcAcsRequest<QueryBestSessio
 
 	private String bizId;
 	public QueryBestSession4ItemsRequest() {
-		super("linkedmall", "2018-01-16", "QueryBestSession4Items");
+		super("linkedmall", "2018-01-16", "QueryBestSession4Items", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

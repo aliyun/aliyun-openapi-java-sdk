@@ -36,7 +36,7 @@ public class QueryOrderLogisticsRequest extends RpcAcsRequest<QueryOrderLogistic
 
 	private Boolean useAnonymousTbAccount;
 	public QueryOrderLogisticsRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderLogistics");
+		super("linkedmall", "2018-01-16", "QueryOrderLogistics", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

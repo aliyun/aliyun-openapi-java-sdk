@@ -32,7 +32,7 @@ public class RefuseMerchantSyncTaskRequest extends RpcAcsRequest<RefuseMerchantS
 
 	private Long timeStamp;
 	public RefuseMerchantSyncTaskRequest() {
-		super("linkedmall", "2018-01-16", "RefuseMerchantSyncTask");
+		super("linkedmall", "2018-01-16", "RefuseMerchantSyncTask", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

@@ -28,7 +28,7 @@ public class BatchRegistAnonymousTbAccountRequest extends RpcAcsRequest<BatchReg
 
 	private String idJsonList;
 	public BatchRegistAnonymousTbAccountRequest() {
-		super("linkedmall", "2018-01-16", "BatchRegistAnonymousTbAccount");
+		super("linkedmall", "2018-01-16", "BatchRegistAnonymousTbAccount", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

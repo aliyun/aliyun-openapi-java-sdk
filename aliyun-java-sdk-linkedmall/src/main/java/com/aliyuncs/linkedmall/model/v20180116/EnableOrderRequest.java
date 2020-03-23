@@ -40,7 +40,7 @@ public class EnableOrderRequest extends RpcAcsRequest<EnableOrderResponse> {
 
 	private String outTradeId;
 	public EnableOrderRequest() {
-		super("linkedmall", "2018-01-16", "EnableOrder");
+		super("linkedmall", "2018-01-16", "EnableOrder", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

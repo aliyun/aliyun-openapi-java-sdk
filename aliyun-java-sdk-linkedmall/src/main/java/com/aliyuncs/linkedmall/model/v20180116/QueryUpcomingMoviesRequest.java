@@ -30,7 +30,7 @@ public class QueryUpcomingMoviesRequest extends RpcAcsRequest<QueryUpcomingMovie
 
 	private String bizId;
 	public QueryUpcomingMoviesRequest() {
-		super("linkedmall", "2018-01-16", "QueryUpcomingMovies");
+		super("linkedmall", "2018-01-16", "QueryUpcomingMovies", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

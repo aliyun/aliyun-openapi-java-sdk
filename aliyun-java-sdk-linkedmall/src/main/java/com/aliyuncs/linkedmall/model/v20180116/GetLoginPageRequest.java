@@ -34,7 +34,7 @@ public class GetLoginPageRequest extends RpcAcsRequest<GetLoginPageResponse> {
 
 	private String failUrl;
 	public GetLoginPageRequest() {
-		super("linkedmall", "2018-01-16", "GetLoginPage");
+		super("linkedmall", "2018-01-16", "GetLoginPage", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

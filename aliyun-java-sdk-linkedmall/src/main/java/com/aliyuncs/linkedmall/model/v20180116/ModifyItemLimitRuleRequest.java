@@ -44,7 +44,7 @@ public class ModifyItemLimitRuleRequest extends RpcAcsRequest<ModifyItemLimitRul
 
 	private Long ruleId;
 	public ModifyItemLimitRuleRequest() {
-		super("linkedmall", "2018-01-16", "ModifyItemLimitRule");
+		super("linkedmall", "2018-01-16", "ModifyItemLimitRule", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 

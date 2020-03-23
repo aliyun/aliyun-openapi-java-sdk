@@ -28,7 +28,7 @@ public class QueryItemDetailRequest extends RpcAcsRequest<QueryItemDetailRespons
 
 	private String bizId;
 	public QueryItemDetailRequest() {
-		super("linkedmall", "2018-01-16", "QueryItemDetail");
+		super("linkedmall", "2018-01-16", "QueryItemDetail", "linkedmall");
 		setMethod(MethodType.POST);
 	}
 
