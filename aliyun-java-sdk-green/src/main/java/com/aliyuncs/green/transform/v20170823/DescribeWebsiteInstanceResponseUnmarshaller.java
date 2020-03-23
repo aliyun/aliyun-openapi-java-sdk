@@ -34,7 +34,7 @@ public class DescribeWebsiteInstanceResponseUnmarshaller {
 		List<WebsiteInstance> websiteInstanceList = new ArrayList<WebsiteInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList.Length"); i++) {
 			WebsiteInstance websiteInstance = new WebsiteInstance();
-			websiteInstance.setProtocol(_ctx.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].Protocol"));
+			websiteInstance.setBizProtocol(_ctx.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].Protocol"));
 			websiteInstance.setInstanceId(_ctx.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].InstanceId"));
 			websiteInstance.setWebsiteScanInterval(_ctx.integerValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].WebsiteScanInterval"));
 			websiteInstance.setDomain(_ctx.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].Domain"));

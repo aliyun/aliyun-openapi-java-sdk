@@ -28,7 +28,7 @@ public class DescribeWebsiteVerifyInfoResponseUnmarshaller {
 		describeWebsiteVerifyInfoResponse.setIndexPage(_ctx.stringValue("DescribeWebsiteVerifyInfoResponse.IndexPage"));
 		describeWebsiteVerifyInfoResponse.setDomain(_ctx.stringValue("DescribeWebsiteVerifyInfoResponse.Domain"));
 		describeWebsiteVerifyInfoResponse.setVerifyMethod(_ctx.stringValue("DescribeWebsiteVerifyInfoResponse.VerifyMethod"));
-		describeWebsiteVerifyInfoResponse.setProtocol(_ctx.stringValue("DescribeWebsiteVerifyInfoResponse.Protocol"));
+		describeWebsiteVerifyInfoResponse.setBizProtocol(_ctx.stringValue("DescribeWebsiteVerifyInfoResponse.Protocol"));
 	 
 	 	return describeWebsiteVerifyInfoResponse;
 	}

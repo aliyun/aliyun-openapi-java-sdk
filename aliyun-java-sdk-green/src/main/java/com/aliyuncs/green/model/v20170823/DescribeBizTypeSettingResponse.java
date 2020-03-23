@@ -31,6 +31,10 @@ public class DescribeBizTypeSettingResponse extends AcsResponse {
 
 	private Porn porn;
 
+	private Antispam antispam;
+
+	private Ad ad;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -53,6 +57,22 @@ public class DescribeBizTypeSettingResponse extends AcsResponse {
 
 	public void setPorn(Porn porn) {
 		this.porn = porn;
+	}
+
+	public Antispam getAntispam() {
+		return this.antispam;
+	}
+
+	public void setAntispam(Antispam antispam) {
+		this.antispam = antispam;
+	}
+
+	public Ad getAd() {
+		return this.ad;
+	}
+
+	public void setAd(Ad ad) {
+		this.ad = ad;
 	}
 
 	public static class Terrorism {
@@ -78,6 +98,32 @@ public class DescribeBizTypeSettingResponse extends AcsResponse {
 
 		public void setCategories1(List<String> categories1) {
 			this.categories1 = categories1;
+		}
+	}
+
+	public static class Antispam {
+
+		private List<String> categories2;
+
+		public List<String> getCategories2() {
+			return this.categories2;
+		}
+
+		public void setCategories2(List<String> categories2) {
+			this.categories2 = categories2;
+		}
+	}
+
+	public static class Ad {
+
+		private List<String> categories3;
+
+		public List<String> getCategories3() {
+			return this.categories3;
+		}
+
+		public void setCategories3(List<String> categories3) {
+			this.categories3 = categories3;
 		}
 	}
 
