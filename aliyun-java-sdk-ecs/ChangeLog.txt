@@ -1,3 +1,6 @@
+2020-03-24 Version: 4.19.2
+- DescribeInstanceTypes Supports EniIpv6AddressQuantity.
+
 2020-03-24 Version: 4.19.1
 - DescribeInstanceTypes Supports EniIpv6AddressQuantity.
 
