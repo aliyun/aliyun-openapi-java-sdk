@@ -1,3 +1,6 @@
+2020-03-24 Version: 4.19.1
+- DescribeInstanceTypes Supports EniIpv6AddressQuantity.
+
 2020-03-16 Version: 4.19.1
 - Add ImageFamily paramters and apis, in Instance creation apis and Image query apis, and add DescribeImageFromFamily.
 - Add Instance batch operation apis RebootInstances StartInstances and StopInstances.

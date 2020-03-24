@@ -191,6 +191,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private CpuOptions cpuOptions;
 
+		private MetadataOptions metadataOptions;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -647,6 +649,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.cpuOptions = cpuOptions;
 		}
 
+		public MetadataOptions getMetadataOptions() {
+			return this.metadataOptions;
+		}
+
+		public void setMetadataOptions(MetadataOptions metadataOptions) {
+			this.metadataOptions = metadataOptions;
+		}
+
 		public static class NetworkInterface {
 
 			private String networkInterfaceId;
@@ -921,6 +931,39 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setNuma(String numa) {
 				this.numa = numa;
+			}
+		}
+
+		public static class MetadataOptions {
+
+			private String httpEndpoint;
+
+			private String httpTokens;
+
+			private Integer httpPutResponseHopLimit;
+
+			public String getHttpEndpoint() {
+				return this.httpEndpoint;
+			}
+
+			public void setHttpEndpoint(String httpEndpoint) {
+				this.httpEndpoint = httpEndpoint;
+			}
+
+			public String getHttpTokens() {
+				return this.httpTokens;
+			}
+
+			public void setHttpTokens(String httpTokens) {
+				this.httpTokens = httpTokens;
+			}
+
+			public Integer getHttpPutResponseHopLimit() {
+				return this.httpPutResponseHopLimit;
+			}
+
+			public void setHttpPutResponseHopLimit(Integer httpPutResponseHopLimit) {
+				this.httpPutResponseHopLimit = httpPutResponseHopLimit;
 			}
 		}
 	}
