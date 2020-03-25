@@ -31,6 +31,8 @@ public class QueryUnfinishedSessions4ItemsRequest extends RpcAcsRequest<QueryUnf
 	private List<Object> itemIds;
 
 	private String bizId;
+
+	private Long queryTime;
 	public QueryUnfinishedSessions4ItemsRequest() {
 		super("linkedmall", "2018-01-16", "QueryUnfinishedSessions4Items", "linkedmall");
 		setMethod(MethodType.POST);
@@ -66,6 +68,17 @@ public class QueryUnfinishedSessions4ItemsRequest extends RpcAcsRequest<QueryUnf
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public Long getQueryTime() {
+		return this.queryTime;
+	}
+
+	public void setQueryTime(Long queryTime) {
+		this.queryTime = queryTime;
+		if(queryTime != null){
+			putQueryParameter("QueryTime", queryTime.toString());
 		}
 	}
 
