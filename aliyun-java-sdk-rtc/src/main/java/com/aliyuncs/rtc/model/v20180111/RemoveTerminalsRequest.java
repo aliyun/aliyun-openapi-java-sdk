@@ -34,7 +34,7 @@ public class RemoveTerminalsRequest extends RpcAcsRequest<RemoveTerminalsRespons
 
 	private String channelId;
 	public RemoveTerminalsRequest() {
-		super("rtc", "2018-01-11", "RemoveTerminals");
+		super("rtc", "2018-01-11", "RemoveTerminals", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

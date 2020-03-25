@@ -33,7 +33,7 @@ public class GetTaskStatusRequest extends RpcAcsRequest<GetTaskStatusResponse> {
 
 	private Long taskId;
 	public GetTaskStatusRequest() {
-		super("rtc", "2018-01-11", "GetTaskStatus");
+		super("rtc", "2018-01-11", "GetTaskStatus", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

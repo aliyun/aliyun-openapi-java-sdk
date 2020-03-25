@@ -37,7 +37,7 @@ public class DescribeRtcPeakChannelCntDataRequest extends RpcAcsRequest<Describe
 
 	private String interval;
 	public DescribeRtcPeakChannelCntDataRequest() {
-		super("rtc", "2018-01-11", "DescribeRtcPeakChannelCntData");
+		super("rtc", "2018-01-11", "DescribeRtcPeakChannelCntData", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

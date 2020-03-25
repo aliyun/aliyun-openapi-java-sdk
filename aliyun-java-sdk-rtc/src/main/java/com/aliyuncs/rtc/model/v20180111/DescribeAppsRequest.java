@@ -37,7 +37,7 @@ public class DescribeAppsRequest extends RpcAcsRequest<DescribeAppsResponse> {
 
 	private String status;
 	public DescribeAppsRequest() {
-		super("rtc", "2018-01-11", "DescribeApps");
+		super("rtc", "2018-01-11", "DescribeApps", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

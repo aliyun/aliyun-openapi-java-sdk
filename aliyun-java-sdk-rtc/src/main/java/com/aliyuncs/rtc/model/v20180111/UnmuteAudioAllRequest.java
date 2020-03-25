@@ -33,7 +33,7 @@ public class UnmuteAudioAllRequest extends RpcAcsRequest<UnmuteAudioAllResponse>
 
 	private String appId;
 	public UnmuteAudioAllRequest() {
-		super("rtc", "2018-01-11", "UnmuteAudioAll");
+		super("rtc", "2018-01-11", "UnmuteAudioAll", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

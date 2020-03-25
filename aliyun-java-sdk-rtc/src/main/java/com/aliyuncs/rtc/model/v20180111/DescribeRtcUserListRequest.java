@@ -35,7 +35,7 @@ public class DescribeRtcUserListRequest extends RpcAcsRequest<DescribeRtcUserLis
 
 	private String channelId;
 	public DescribeRtcUserListRequest() {
-		super("rtc", "2018-01-11", "DescribeRtcUserList");
+		super("rtc", "2018-01-11", "DescribeRtcUserList", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

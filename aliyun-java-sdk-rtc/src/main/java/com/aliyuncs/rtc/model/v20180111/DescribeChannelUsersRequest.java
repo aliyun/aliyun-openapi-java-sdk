@@ -15,7 +15,6 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rtc.Endpoint;
 
@@ -23,47 +22,21 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class MuteAudioRequest extends RpcAcsRequest<MuteAudioResponse> {
+public class DescribeChannelUsersRequest extends RpcAcsRequest<DescribeChannelUsersResponse> {
 	   
-
-	private List<String> participantIdss;
-
-	private String conferenceId;
 
 	private Long ownerId;
 
 	private String appId;
-	public MuteAudioRequest() {
-		super("rtc", "2018-01-11", "MuteAudio", "rtc");
+
+	private String channelId;
+	public DescribeChannelUsersRequest() {
+		super("rtc", "2018-01-11", "DescribeChannelUsers", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<String> getParticipantIdss() {
-		return this.participantIdss;
-	}
-
-	public void setParticipantIdss(List<String> participantIdss) {
-		this.participantIdss = participantIdss;	
-		if (participantIdss != null) {
-			for (int i = 0; i < participantIdss.size(); i++) {
-				putQueryParameter("ParticipantIds." + (i + 1) , participantIdss.get(i));
-			}
-		}	
-	}
-
-	public String getConferenceId() {
-		return this.conferenceId;
-	}
-
-	public void setConferenceId(String conferenceId) {
-		this.conferenceId = conferenceId;
-		if(conferenceId != null){
-			putQueryParameter("ConferenceId", conferenceId);
-		}
 	}
 
 	public Long getOwnerId() {
@@ -88,9 +61,20 @@ public class MuteAudioRequest extends RpcAcsRequest<MuteAudioResponse> {
 		}
 	}
 
+	public String getChannelId() {
+		return this.channelId;
+	}
+
+	public void setChannelId(String channelId) {
+		this.channelId = channelId;
+		if(channelId != null){
+			putQueryParameter("ChannelId", channelId);
+		}
+	}
+
 	@Override
-	public Class<MuteAudioResponse> getResponseClass() {
-		return MuteAudioResponse.class;
+	public Class<DescribeChannelUsersResponse> getResponseClass() {
+		return DescribeChannelUsersResponse.class;
 	}
 
 }

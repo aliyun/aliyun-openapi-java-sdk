@@ -40,7 +40,7 @@ public class UpdateMPULayoutRequest extends RpcAcsRequest<UpdateMPULayoutRespons
 
 	private String appId;
 	public UpdateMPULayoutRequest() {
-		super("rtc", "2018-01-11", "UpdateMPULayout");
+		super("rtc", "2018-01-11", "UpdateMPULayout", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class DeleteConferenceRequest extends RpcAcsRequest<DeleteConferenceRespo
 
 	private String appId;
 	public DeleteConferenceRequest() {
-		super("rtc", "2018-01-11", "DeleteConference");
+		super("rtc", "2018-01-11", "DeleteConference", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

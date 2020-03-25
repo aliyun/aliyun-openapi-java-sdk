@@ -22,22 +22,26 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRtcUserCntDataRequest extends RpcAcsRequest<DescribeRtcUserCntDataResponse> {
+public class SetChannelPropertyRequest extends RpcAcsRequest<SetChannelPropertyResponse> {
 	   
 
-	private String startTime;
+	private Integer startTime;
 
-	private String serviceArea;
+	private Integer maxUserNum;
 
-	private String endTime;
+	private Integer duration;
+
+	private String topics;
 
 	private Long ownerId;
 
+	private String priority;
+
 	private String appId;
 
-	private String interval;
-	public DescribeRtcUserCntDataRequest() {
-		super("rtc", "2018-01-11", "DescribeRtcUserCntData", "rtc");
+	private String channelId;
+	public SetChannelPropertyRequest() {
+		super("rtc", "2018-01-11", "SetChannelProperty", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,36 +49,47 @@ public class DescribeRtcUserCntDataRequest extends RpcAcsRequest<DescribeRtcUser
 		} catch (Exception e) {}
 	}
 
-	public String getStartTime() {
+	public Integer getStartTime() {
 		return this.startTime;
 	}
 
-	public void setStartTime(String startTime) {
+	public void setStartTime(Integer startTime) {
 		this.startTime = startTime;
 		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 
-	public String getServiceArea() {
-		return this.serviceArea;
+	public Integer getMaxUserNum() {
+		return this.maxUserNum;
 	}
 
-	public void setServiceArea(String serviceArea) {
-		this.serviceArea = serviceArea;
-		if(serviceArea != null){
-			putQueryParameter("ServiceArea", serviceArea);
+	public void setMaxUserNum(Integer maxUserNum) {
+		this.maxUserNum = maxUserNum;
+		if(maxUserNum != null){
+			putQueryParameter("MaxUserNum", maxUserNum.toString());
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public Integer getDuration() {
+		return this.duration;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getTopics() {
+		return this.topics;
+	}
+
+	public void setTopics(String topics) {
+		this.topics = topics;
+		if(topics != null){
+			putQueryParameter("Topics", topics);
 		}
 	}
 
@@ -89,6 +104,17 @@ public class DescribeRtcUserCntDataRequest extends RpcAcsRequest<DescribeRtcUser
 		}
 	}
 
+	public String getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(String priority) {
+		this.priority = priority;
+		if(priority != null){
+			putQueryParameter("Priority", priority);
+		}
+	}
+
 	public String getAppId() {
 		return this.appId;
 	}
@@ -100,20 +126,20 @@ public class DescribeRtcUserCntDataRequest extends RpcAcsRequest<DescribeRtcUser
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
+	public String getChannelId() {
+		return this.channelId;
 	}
 
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
+	public void setChannelId(String channelId) {
+		this.channelId = channelId;
+		if(channelId != null){
+			putQueryParameter("ChannelId", channelId);
 		}
 	}
 
 	@Override
-	public Class<DescribeRtcUserCntDataResponse> getResponseClass() {
-		return DescribeRtcUserCntDataResponse.class;
+	public Class<SetChannelPropertyResponse> getResponseClass() {
+		return SetChannelPropertyResponse.class;
 	}
 
 }

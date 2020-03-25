@@ -31,7 +31,7 @@ public class DeleteChannelRequest extends RpcAcsRequest<DeleteChannelResponse> {
 
 	private String channelId;
 	public DeleteChannelRequest() {
-		super("rtc", "2018-01-11", "DeleteChannel");
+		super("rtc", "2018-01-11", "DeleteChannel", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

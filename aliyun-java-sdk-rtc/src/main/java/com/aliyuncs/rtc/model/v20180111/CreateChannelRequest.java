@@ -31,7 +31,7 @@ public class CreateChannelRequest extends RpcAcsRequest<CreateChannelResponse> {
 
 	private String channelId;
 	public CreateChannelRequest() {
-		super("rtc", "2018-01-11", "CreateChannel");
+		super("rtc", "2018-01-11", "CreateChannel", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

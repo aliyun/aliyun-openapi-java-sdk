@@ -46,7 +46,7 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 
 	private Integer mixMode;
 	public CreateTemplateRequest() {
-		super("rtc", "2018-01-11", "CreateTemplate");
+		super("rtc", "2018-01-11", "CreateTemplate", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

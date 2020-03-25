@@ -39,7 +39,7 @@ public class ModifyConferenceRequest extends RpcAcsRequest<ModifyConferenceRespo
 
 	private Integer remindNotice;
 	public ModifyConferenceRequest() {
-		super("rtc", "2018-01-11", "ModifyConference");
+		super("rtc", "2018-01-11", "ModifyConference", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

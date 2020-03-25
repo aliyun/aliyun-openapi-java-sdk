@@ -39,7 +39,7 @@ public class DescribeRtcQualityMetricRequest extends RpcAcsRequest<DescribeRtcQu
 
 	private String channelId;
 	public DescribeRtcQualityMetricRequest() {
-		super("rtc", "2018-01-11", "DescribeRtcQualityMetric");
+		super("rtc", "2018-01-11", "DescribeRtcQualityMetric", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

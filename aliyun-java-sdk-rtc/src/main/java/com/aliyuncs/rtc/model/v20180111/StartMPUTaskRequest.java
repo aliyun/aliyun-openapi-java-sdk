@@ -50,7 +50,7 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 
 	private String channelId;
 	public StartMPUTaskRequest() {
-		super("rtc", "2018-01-11", "StartMPUTask");
+		super("rtc", "2018-01-11", "StartMPUTask", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
