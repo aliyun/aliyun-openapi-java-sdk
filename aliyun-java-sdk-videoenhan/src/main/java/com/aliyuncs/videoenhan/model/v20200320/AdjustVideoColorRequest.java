@@ -27,11 +27,11 @@ public class AdjustVideoColorRequest extends RpcAcsRequest<AdjustVideoColorRespo
 
 	private String mode;
 
-	private String videoCode;
-
 	private String videoUrl;
 
 	private String videoBitrate;
+
+	private String videoCodec;
 
 	private String videoFormat;
 	public AdjustVideoColorRequest() {
@@ -54,17 +54,6 @@ public class AdjustVideoColorRequest extends RpcAcsRequest<AdjustVideoColorRespo
 		}
 	}
 
-	public String getVideoCode() {
-		return this.videoCode;
-	}
-
-	public void setVideoCode(String videoCode) {
-		this.videoCode = videoCode;
-		if(videoCode != null){
-			putBodyParameter("VideoCode", videoCode);
-		}
-	}
-
 	public String getVideoUrl() {
 		return this.videoUrl;
 	}
@@ -84,6 +73,17 @@ public class AdjustVideoColorRequest extends RpcAcsRequest<AdjustVideoColorRespo
 		this.videoBitrate = videoBitrate;
 		if(videoBitrate != null){
 			putBodyParameter("VideoBitrate", videoBitrate);
+		}
+	}
+
+	public String getVideoCodec() {
+		return this.videoCodec;
+	}
+
+	public void setVideoCodec(String videoCodec) {
+		this.videoCodec = videoCodec;
+		if(videoCodec != null){
+			putBodyParameter("VideoCodec", videoCodec);
 		}
 	}
 
