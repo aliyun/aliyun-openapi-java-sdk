@@ -49,7 +49,7 @@
         </developer>
     </developers>
     <properties>
-        <powermock.version>2.0.5</powermock.version>
+        <powermock.version>2.0.7</powermock.version>
         <mockito.version>3.3.0</mockito.version>
     </properties>
     <dependencies>
