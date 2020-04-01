@@ -14,7 +14,7 @@
 
 package com.aliyuncs.airec.model.v20181012;
 
-import java.util.Map;
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.airec.transform.v20181012.DescribeSyncReportDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -31,7 +31,7 @@ public class DescribeSyncReportDetailResponse extends AcsResponse {
 
 	private String message;
 
-	private Map<Object,Object> result;
+	private List<ResultItem> result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,12 +57,108 @@ public class DescribeSyncReportDetailResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Map<Object,Object> getResult() {
+	public List<ResultItem> getResult() {
 		return this.result;
 	}
 
-	public void setResult(Map<Object,Object> result) {
+	public void setResult(List<ResultItem> result) {
 		this.result = result;
+	}
+
+	public static class ResultItem {
+
+		private String type;
+
+		private Float errorPercent;
+
+		private Integer errorCount;
+
+		private Boolean defaultDisplay;
+
+		private Boolean sampleDisplay;
+
+		private List<HistoryDataItem> historyData;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public Float getErrorPercent() {
+			return this.errorPercent;
+		}
+
+		public void setErrorPercent(Float errorPercent) {
+			this.errorPercent = errorPercent;
+		}
+
+		public Integer getErrorCount() {
+			return this.errorCount;
+		}
+
+		public void setErrorCount(Integer errorCount) {
+			this.errorCount = errorCount;
+		}
+
+		public Boolean getDefaultDisplay() {
+			return this.defaultDisplay;
+		}
+
+		public void setDefaultDisplay(Boolean defaultDisplay) {
+			this.defaultDisplay = defaultDisplay;
+		}
+
+		public Boolean getSampleDisplay() {
+			return this.sampleDisplay;
+		}
+
+		public void setSampleDisplay(Boolean sampleDisplay) {
+			this.sampleDisplay = sampleDisplay;
+		}
+
+		public List<HistoryDataItem> getHistoryData() {
+			return this.historyData;
+		}
+
+		public void setHistoryData(List<HistoryDataItem> historyData) {
+			this.historyData = historyData;
+		}
+
+		public static class HistoryDataItem {
+
+			private Float errorPercent;
+
+			private Long startTime;
+
+			private Long endTime;
+
+			public Float getErrorPercent() {
+				return this.errorPercent;
+			}
+
+			public void setErrorPercent(Float errorPercent) {
+				this.errorPercent = errorPercent;
+			}
+
+			public Long getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(Long startTime) {
+				this.startTime = startTime;
+			}
+
+			public Long getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(Long endTime) {
+				this.endTime = endTime;
+			}
+		}
 	}
 
 	@Override

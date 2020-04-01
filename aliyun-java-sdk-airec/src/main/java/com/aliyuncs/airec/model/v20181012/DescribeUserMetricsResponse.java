@@ -16,14 +16,14 @@ package com.aliyuncs.airec.model.v20181012;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.airec.transform.v20181012.DescribeRegionsResponseUnmarshaller;
+import com.aliyuncs.airec.transform.v20181012.DescribeUserMetricsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRegionsResponse extends AcsResponse {
+public class DescribeUserMetricsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,7 +31,7 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	private String message;
 
-	private List<Item> result;
+	private List<ResultItem> result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,70 +57,73 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<Item> getResult() {
+	public List<ResultItem> getResult() {
 		return this.result;
 	}
 
-	public void setResult(List<Item> result) {
+	public void setResult(List<ResultItem> result) {
 		this.result = result;
 	}
 
-	public static class Item {
+	public static class ResultItem {
 
-		private String regionId;
+		private String sceneId;
 
-		private String localName;
+		private List<DataPointsItem> dataPoints;
 
-		private String endpoint;
-
-		private String status;
-
-		private String consoleUrl;
-
-		public String getRegionId() {
-			return this.regionId;
+		public String getSceneId() {
+			return this.sceneId;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setSceneId(String sceneId) {
+			this.sceneId = sceneId;
 		}
 
-		public String getLocalName() {
-			return this.localName;
+		public List<DataPointsItem> getDataPoints() {
+			return this.dataPoints;
 		}
 
-		public void setLocalName(String localName) {
-			this.localName = localName;
+		public void setDataPoints(List<DataPointsItem> dataPoints) {
+			this.dataPoints = dataPoints;
 		}
 
-		public String getEndpoint() {
-			return this.endpoint;
-		}
+		public static class DataPointsItem {
 
-		public void setEndpoint(String endpoint) {
-			this.endpoint = endpoint;
-		}
+			private Float val;
 
-		public String getStatus() {
-			return this.status;
-		}
+			private Long startTime;
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
+			private Long endTime;
 
-		public String getConsoleUrl() {
-			return this.consoleUrl;
-		}
+			public Float getVal() {
+				return this.val;
+			}
 
-		public void setConsoleUrl(String consoleUrl) {
-			this.consoleUrl = consoleUrl;
+			public void setVal(Float val) {
+				this.val = val;
+			}
+
+			public Long getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(Long startTime) {
+				this.startTime = startTime;
+			}
+
+			public Long getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(Long endTime) {
+				this.endTime = endTime;
+			}
 		}
 	}
 
 	@Override
-	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
+	public DescribeUserMetricsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeUserMetricsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -16,14 +16,14 @@ package com.aliyuncs.airec.model.v20181012;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.airec.transform.v20181012.DescribeRegionsResponseUnmarshaller;
+import com.aliyuncs.airec.transform.v20181012.ListUmengAppkeysResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRegionsResponse extends AcsResponse {
+public class ListUmengAppkeysResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,7 +31,7 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	private String message;
 
-	private List<Item> result;
+	private List<ResultItem> result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,70 +57,50 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<Item> getResult() {
+	public List<ResultItem> getResult() {
 		return this.result;
 	}
 
-	public void setResult(List<Item> result) {
+	public void setResult(List<ResultItem> result) {
 		this.result = result;
 	}
 
-	public static class Item {
+	public static class ResultItem {
 
-		private String regionId;
+		private String name;
 
-		private String localName;
+		private String appkey;
 
-		private String endpoint;
+		private String platform;
 
-		private String status;
-
-		private String consoleUrl;
-
-		public String getRegionId() {
-			return this.regionId;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getLocalName() {
-			return this.localName;
+		public String getAppkey() {
+			return this.appkey;
 		}
 
-		public void setLocalName(String localName) {
-			this.localName = localName;
+		public void setAppkey(String appkey) {
+			this.appkey = appkey;
 		}
 
-		public String getEndpoint() {
-			return this.endpoint;
+		public String getPlatform() {
+			return this.platform;
 		}
 
-		public void setEndpoint(String endpoint) {
-			this.endpoint = endpoint;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getConsoleUrl() {
-			return this.consoleUrl;
-		}
-
-		public void setConsoleUrl(String consoleUrl) {
-			this.consoleUrl = consoleUrl;
+		public void setPlatform(String platform) {
+			this.platform = platform;
 		}
 	}
 
 	@Override
-	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
+	public ListUmengAppkeysResponse getInstance(UnmarshallerContext context) {
+		return	ListUmengAppkeysResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

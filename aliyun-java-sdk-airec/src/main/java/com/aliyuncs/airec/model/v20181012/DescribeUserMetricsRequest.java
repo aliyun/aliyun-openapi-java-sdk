@@ -22,26 +22,35 @@ import com.aliyuncs.airec.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSyncReportDetailRequest extends RoaAcsRequest<DescribeSyncReportDetailResponse> {
+public class DescribeUserMetricsRequest extends RoaAcsRequest<DescribeUserMetricsResponse> {
 	   
 
-	private String instanceId;
+	private String metricType;
 
-	private String levelType;
+	private String instanceId;
 
 	private Long endTime;
 
 	private Long startTime;
-
-	private String type;
-	public DescribeSyncReportDetailRequest() {
-		super("Airec", "2018-10-12", "DescribeSyncReportDetail", "airec");
-		setUriPattern("/openapi/instances/[InstanceId]/sync-reports/detail");
+	public DescribeUserMetricsRequest() {
+		super("Airec", "2018-10-12", "DescribeUserMetrics", "airec");
+		setUriPattern("/openapi/instances/[InstanceId]/metrics");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMetricType() {
+		return this.metricType;
+	}
+
+	public void setMetricType(String metricType) {
+		this.metricType = metricType;
+		if(metricType != null){
+			putQueryParameter("MetricType", metricType);
+		}
 	}
 
 	public String getInstanceId() {
@@ -52,17 +61,6 @@ public class DescribeSyncReportDetailRequest extends RoaAcsRequest<DescribeSyncR
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getLevelType() {
-		return this.levelType;
-	}
-
-	public void setLevelType(String levelType) {
-		this.levelType = levelType;
-		if(levelType != null){
-			putQueryParameter("LevelType", levelType);
 		}
 	}
 
@@ -88,20 +86,9 @@ public class DescribeSyncReportDetailRequest extends RoaAcsRequest<DescribeSyncR
 		}
 	}
 
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
 	@Override
-	public Class<DescribeSyncReportDetailResponse> getResponseClass() {
-		return DescribeSyncReportDetailResponse.class;
+	public Class<DescribeUserMetricsResponse> getResponseClass() {
+		return DescribeUserMetricsResponse.class;
 	}
 
 }
