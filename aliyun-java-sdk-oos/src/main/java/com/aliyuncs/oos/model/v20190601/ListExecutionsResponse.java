@@ -98,7 +98,7 @@ public class ListExecutionsResponse extends AcsResponse {
 
 		private String parentExecutionId;
 
-		private String parameters;
+		private Map<Object,Object> parameters;
 
 		private String outputs;
 
@@ -108,7 +108,7 @@ public class ListExecutionsResponse extends AcsResponse {
 
 		private String ramRole;
 
-		private String counters;
+		private Map<Object,Object> counters;
 
 		private String category;
 
@@ -238,11 +238,11 @@ public class ListExecutionsResponse extends AcsResponse {
 			this.parentExecutionId = parentExecutionId;
 		}
 
-		public String getParameters() {
+		public Map<Object,Object> getParameters() {
 			return this.parameters;
 		}
 
-		public void setParameters(String parameters) {
+		public void setParameters(Map<Object,Object> parameters) {
 			this.parameters = parameters;
 		}
 
@@ -278,11 +278,11 @@ public class ListExecutionsResponse extends AcsResponse {
 			this.ramRole = ramRole;
 		}
 
-		public String getCounters() {
+		public Map<Object,Object> getCounters() {
 			return this.counters;
 		}
 
-		public void setCounters(String counters) {
+		public void setCounters(Map<Object,Object> counters) {
 			this.counters = counters;
 		}
 

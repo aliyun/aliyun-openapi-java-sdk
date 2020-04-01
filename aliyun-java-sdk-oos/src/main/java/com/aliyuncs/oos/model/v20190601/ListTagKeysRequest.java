@@ -16,6 +16,7 @@ package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.oos.Endpoint;
 
 /**
  * @author auto create
@@ -32,6 +33,10 @@ public class ListTagKeysRequest extends RpcAcsRequest<ListTagKeysResponse> {
 	public ListTagKeysRequest() {
 		super("oos", "2019-06-01", "ListTagKeys", "oos");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getResourceType() {

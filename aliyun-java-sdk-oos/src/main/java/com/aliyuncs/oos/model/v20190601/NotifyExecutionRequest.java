@@ -16,6 +16,7 @@ package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.oos.Endpoint;
 
 /**
  * @author auto create
@@ -36,12 +37,18 @@ public class NotifyExecutionRequest extends RpcAcsRequest<NotifyExecutionRespons
 
 	private String loopItem;
 
+	private String taskExecutionIds;
+
 	private String taskExecutionId;
 
 	private String parameters;
 	public NotifyExecutionRequest() {
 		super("oos", "2019-06-01", "NotifyExecution", "oos");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getTaskName() {
@@ -107,6 +114,17 @@ public class NotifyExecutionRequest extends RpcAcsRequest<NotifyExecutionRespons
 		this.loopItem = loopItem;
 		if(loopItem != null){
 			putQueryParameter("LoopItem", loopItem);
+		}
+	}
+
+	public String getTaskExecutionIds() {
+		return this.taskExecutionIds;
+	}
+
+	public void setTaskExecutionIds(String taskExecutionIds) {
+		this.taskExecutionIds = taskExecutionIds;
+		if(taskExecutionIds != null){
+			putQueryParameter("TaskExecutionIds", taskExecutionIds);
 		}
 	}
 

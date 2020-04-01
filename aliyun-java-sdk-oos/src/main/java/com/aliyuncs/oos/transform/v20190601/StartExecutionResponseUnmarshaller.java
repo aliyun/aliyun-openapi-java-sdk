@@ -45,11 +45,11 @@ public class StartExecutionResponseUnmarshaller {
 		execution.setStatus(_ctx.stringValue("StartExecutionResponse.Execution.Status"));
 		execution.setStatusMessage(_ctx.stringValue("StartExecutionResponse.Execution.StatusMessage"));
 		execution.setParentExecutionId(_ctx.stringValue("StartExecutionResponse.Execution.ParentExecutionId"));
-		execution.setParameters(_ctx.stringValue("StartExecutionResponse.Execution.Parameters"));
+		execution.setParameters(_ctx.mapValue("StartExecutionResponse.Execution.Parameters"));
 		execution.setOutputs(_ctx.stringValue("StartExecutionResponse.Execution.Outputs"));
 		execution.setSafetyCheck(_ctx.stringValue("StartExecutionResponse.Execution.SafetyCheck"));
 		execution.setIsParent(_ctx.booleanValue("StartExecutionResponse.Execution.IsParent"));
-		execution.setCounters(_ctx.stringValue("StartExecutionResponse.Execution.Counters"));
+		execution.setCounters(_ctx.mapValue("StartExecutionResponse.Execution.Counters"));
 		execution.setRamRole(_ctx.stringValue("StartExecutionResponse.Execution.RamRole"));
 		execution.setTags(_ctx.mapValue("StartExecutionResponse.Execution.Tags"));
 		execution.setDescription(_ctx.stringValue("StartExecutionResponse.Execution.Description"));

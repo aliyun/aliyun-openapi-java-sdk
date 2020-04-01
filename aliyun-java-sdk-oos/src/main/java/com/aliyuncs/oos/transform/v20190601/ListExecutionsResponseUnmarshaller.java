@@ -50,12 +50,12 @@ public class ListExecutionsResponseUnmarshaller {
 			execution.setStatusReason(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].StatusReason"));
 			execution.setWaitingStatus(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].WaitingStatus"));
 			execution.setParentExecutionId(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ParentExecutionId"));
-			execution.setParameters(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Parameters"));
+			execution.setParameters(_ctx.mapValue("ListExecutionsResponse.Executions["+ i +"].Parameters"));
 			execution.setOutputs(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Outputs"));
 			execution.setSafetyCheck(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].SafetyCheck"));
 			execution.setIsParent(_ctx.booleanValue("ListExecutionsResponse.Executions["+ i +"].IsParent"));
 			execution.setRamRole(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].RamRole"));
-			execution.setCounters(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Counters"));
+			execution.setCounters(_ctx.mapValue("ListExecutionsResponse.Executions["+ i +"].Counters"));
 			execution.setCategory(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Category"));
 			execution.setTags(_ctx.mapValue("ListExecutionsResponse.Executions["+ i +"].Tags"));
 			execution.setDescription(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Description"));

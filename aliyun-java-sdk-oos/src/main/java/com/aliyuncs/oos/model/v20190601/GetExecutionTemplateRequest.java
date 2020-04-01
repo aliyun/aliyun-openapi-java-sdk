@@ -16,6 +16,7 @@ package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.oos.Endpoint;
 
 /**
  * @author auto create
@@ -28,6 +29,10 @@ public class GetExecutionTemplateRequest extends RpcAcsRequest<GetExecutionTempl
 	public GetExecutionTemplateRequest() {
 		super("oos", "2019-06-01", "GetExecutionTemplate", "oos");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getExecutionId() {
