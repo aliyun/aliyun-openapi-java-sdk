@@ -1,3 +1,7 @@
+2020-04-02 Version: 1.0.4-hk
+- Public beta version.
+- Add Api Overseas.
+
 2020-03-04 Version: 1.0.3
 - Public beta version.
 - Add Api GetMeetingMebers.
