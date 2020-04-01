@@ -27,6 +27,8 @@ public class DescribeExecutionRequest extends RpcAcsRequest<DescribeExecutionRes
 
 	private String executionName;
 
+	private Integer waitTimeSeconds;
+
 	private String requestId;
 
 	private String flowName;
@@ -47,6 +49,17 @@ public class DescribeExecutionRequest extends RpcAcsRequest<DescribeExecutionRes
 		this.executionName = executionName;
 		if(executionName != null){
 			putQueryParameter("ExecutionName", executionName);
+		}
+	}
+
+	public Integer getWaitTimeSeconds() {
+		return this.waitTimeSeconds;
+	}
+
+	public void setWaitTimeSeconds(Integer waitTimeSeconds) {
+		this.waitTimeSeconds = waitTimeSeconds;
+		if(waitTimeSeconds != null){
+			putQueryParameter("WaitTimeSeconds", waitTimeSeconds.toString());
 		}
 	}
 
