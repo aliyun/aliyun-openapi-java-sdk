@@ -1,4 +1,7 @@
-﻿2020-02-07 Version: 4.5.0
+﻿2020-04-01 Version: 4.5.1
+1, Support for basic types in list
+
+2020-02-07 Version: 4.5.0
 1, Add description in ClientException
 2, Add tracing
 
