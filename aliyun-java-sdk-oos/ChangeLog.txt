@@ -1,3 +1,6 @@
+2020-04-01 Version: 1.1.2
+- Parameters is string in StartExecution Response.
+
 2020-04-01 Version: 1.1.1
 - Counters and Parameters are changed to Map in ListExections and StartExecution.
 

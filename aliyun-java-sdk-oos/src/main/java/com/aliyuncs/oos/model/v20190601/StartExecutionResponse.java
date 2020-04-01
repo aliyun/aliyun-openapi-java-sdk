@@ -76,7 +76,7 @@ public class StartExecutionResponse extends AcsResponse {
 
 		private String parentExecutionId;
 
-		private Map<Object,Object> parameters;
+		private String parameters;
 
 		private String outputs;
 
@@ -206,11 +206,11 @@ public class StartExecutionResponse extends AcsResponse {
 			this.parentExecutionId = parentExecutionId;
 		}
 
-		public Map<Object,Object> getParameters() {
+		public String getParameters() {
 			return this.parameters;
 		}
 
-		public void setParameters(Map<Object,Object> parameters) {
+		public void setParameters(String parameters) {
 			this.parameters = parameters;
 		}
 
