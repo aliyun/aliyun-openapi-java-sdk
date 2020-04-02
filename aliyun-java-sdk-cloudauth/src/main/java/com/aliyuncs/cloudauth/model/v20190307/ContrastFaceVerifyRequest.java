@@ -22,12 +22,22 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse> {
+public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyResponse> {
 	   
 
 	private String productCode;
 
+	private String ossObjectName;
+
 	private String faceContrastPicture;
+
+	private String certName;
+
+	private String ip;
+
+	private String mobile;
+
+	private String deviceToken;
 
 	private String userId;
 
@@ -41,23 +51,11 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 
 	private String faceContrastPictureUrl;
 
-	private String metaInfo;
-
-	private String ossObjectName;
-
-	private String certName;
-
-	private String ip;
-
-	private String mobile;
-
 	private Long sceneId;
 
 	private String ossBucketName;
-
-	private String returnUrl;
-	public InitFaceVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "InitFaceVerify", "cloudauth");
+	public ContrastFaceVerifyRequest() {
+		super("Cloudauth", "2019-03-07", "ContrastFaceVerify", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -76,6 +74,17 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		}
 	}
 
+	public String getOssObjectName() {
+		return this.ossObjectName;
+	}
+
+	public void setOssObjectName(String ossObjectName) {
+		this.ossObjectName = ossObjectName;
+		if(ossObjectName != null){
+			putQueryParameter("OssObjectName", ossObjectName);
+		}
+	}
+
 	public String getFaceContrastPicture() {
 		return this.faceContrastPicture;
 	}
@@ -84,6 +93,50 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		this.faceContrastPicture = faceContrastPicture;
 		if(faceContrastPicture != null){
 			putQueryParameter("FaceContrastPicture", faceContrastPicture);
+		}
+	}
+
+	public String getCertName() {
+		return this.certName;
+	}
+
+	public void setCertName(String certName) {
+		this.certName = certName;
+		if(certName != null){
+			putQueryParameter("CertName", certName);
+		}
+	}
+
+	public String getIp() {
+		return this.ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putQueryParameter("Ip", ip);
+		}
+	}
+
+	public String getMobile() {
+		return this.mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+		if(mobile != null){
+			putQueryParameter("Mobile", mobile);
+		}
+	}
+
+	public String getDeviceToken() {
+		return this.deviceToken;
+	}
+
+	public void setDeviceToken(String deviceToken) {
+		this.deviceToken = deviceToken;
+		if(deviceToken != null){
+			putQueryParameter("DeviceToken", deviceToken);
 		}
 	}
 
@@ -153,61 +206,6 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		}
 	}
 
-	public String getMetaInfo() {
-		return this.metaInfo;
-	}
-
-	public void setMetaInfo(String metaInfo) {
-		this.metaInfo = metaInfo;
-		if(metaInfo != null){
-			putQueryParameter("MetaInfo", metaInfo);
-		}
-	}
-
-	public String getOssObjectName() {
-		return this.ossObjectName;
-	}
-
-	public void setOssObjectName(String ossObjectName) {
-		this.ossObjectName = ossObjectName;
-		if(ossObjectName != null){
-			putQueryParameter("OssObjectName", ossObjectName);
-		}
-	}
-
-	public String getCertName() {
-		return this.certName;
-	}
-
-	public void setCertName(String certName) {
-		this.certName = certName;
-		if(certName != null){
-			putQueryParameter("CertName", certName);
-		}
-	}
-
-	public String getIp() {
-		return this.ip;
-	}
-
-	public void setIp(String ip) {
-		this.ip = ip;
-		if(ip != null){
-			putQueryParameter("Ip", ip);
-		}
-	}
-
-	public String getMobile() {
-		return this.mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-		if(mobile != null){
-			putQueryParameter("Mobile", mobile);
-		}
-	}
-
 	public Long getSceneId() {
 		return this.sceneId;
 	}
@@ -230,20 +228,9 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		}
 	}
 
-	public String getReturnUrl() {
-		return this.returnUrl;
-	}
-
-	public void setReturnUrl(String returnUrl) {
-		this.returnUrl = returnUrl;
-		if(returnUrl != null){
-			putQueryParameter("ReturnUrl", returnUrl);
-		}
-	}
-
 	@Override
-	public Class<InitFaceVerifyResponse> getResponseClass() {
-		return InitFaceVerifyResponse.class;
+	public Class<ContrastFaceVerifyResponse> getResponseClass() {
+		return ContrastFaceVerifyResponse.class;
 	}
 
 }

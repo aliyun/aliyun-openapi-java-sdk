@@ -1,3 +1,6 @@
+2020-04-02 Version: 2.0.7
+- Add API ContrastFaceVerify.
+
 2020-04-01 Version: 2.0.6
 - DescribeVerifyToken API Add Parameters-UserIp and UserPhoneNumber and UserRegistTime.
 
