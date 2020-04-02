@@ -15,7 +15,6 @@
 package com.aliyuncs.csb.model.v20171118;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.csb.Endpoint;
 
@@ -23,17 +22,18 @@ import com.aliyuncs.csb.Endpoint;
  * @author auto create
  * @version 
  */
-public class FindProjectListRequest extends RpcAcsRequest<FindProjectListResponse> {
+public class FindInstanceNodeListRequest extends RpcAcsRequest<FindInstanceNodeListResponse> {
 	   
 
-	private String projectName;
-
-	private Long csbId;
+	private Boolean onlyImported;
 
 	private Integer pageNum;
-	public FindProjectListRequest() {
-		super("CSB", "2017-11-18", "FindProjectList");
-		setProtocol(ProtocolType.HTTPS);
+
+	private String instanceName;
+
+	private Integer pageSize;
+	public FindInstanceNodeListRequest() {
+		super("CSB", "2017-11-18", "FindInstanceNodeList");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +41,14 @@ public class FindProjectListRequest extends RpcAcsRequest<FindProjectListRespons
 		} catch (Exception e) {}
 	}
 
-	public String getProjectName() {
-		return this.projectName;
+	public Boolean getOnlyImported() {
+		return this.onlyImported;
 	}
 
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
-	public Long getCsbId() {
-		return this.csbId;
-	}
-
-	public void setCsbId(Long csbId) {
-		this.csbId = csbId;
-		if(csbId != null){
-			putQueryParameter("CsbId", csbId.toString());
+	public void setOnlyImported(Boolean onlyImported) {
+		this.onlyImported = onlyImported;
+		if(onlyImported != null){
+			putQueryParameter("OnlyImported", onlyImported.toString());
 		}
 	}
 
@@ -74,9 +63,31 @@ public class FindProjectListRequest extends RpcAcsRequest<FindProjectListRespons
 		}
 	}
 
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	@Override
-	public Class<FindProjectListResponse> getResponseClass() {
-		return FindProjectListResponse.class;
+	public Class<FindInstanceNodeListResponse> getResponseClass() {
+		return FindInstanceNodeListResponse.class;
 	}
 
 }

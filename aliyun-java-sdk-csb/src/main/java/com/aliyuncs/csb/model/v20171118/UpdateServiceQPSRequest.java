@@ -30,7 +30,7 @@ public class UpdateServiceQPSRequest extends RpcAcsRequest<UpdateServiceQPSRespo
 
 	private Long serviceId;
 	public UpdateServiceQPSRequest() {
-		super("CSB", "2017-11-18", "UpdateServiceQPS", "csb");
+		super("CSB", "2017-11-18", "UpdateServiceQPS");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

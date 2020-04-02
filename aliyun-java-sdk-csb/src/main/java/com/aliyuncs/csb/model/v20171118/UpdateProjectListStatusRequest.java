@@ -30,7 +30,7 @@ public class UpdateProjectListStatusRequest extends RpcAcsRequest<UpdateProjectL
 
 	private Long csbId;
 	public UpdateProjectListStatusRequest() {
-		super("CSB", "2017-11-18", "UpdateProjectListStatus", "csb");
+		super("CSB", "2017-11-18", "UpdateProjectListStatus");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

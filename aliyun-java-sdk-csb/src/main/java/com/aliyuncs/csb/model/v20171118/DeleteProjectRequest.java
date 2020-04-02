@@ -30,7 +30,7 @@ public class DeleteProjectRequest extends RpcAcsRequest<DeleteProjectResponse> {
 
 	private Long projectId;
 	public DeleteProjectRequest() {
-		super("CSB", "2017-11-18", "DeleteProject", "csb");
+		super("CSB", "2017-11-18", "DeleteProject");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -15,7 +15,6 @@
 package com.aliyuncs.csb.model.v20171118;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.csb.Endpoint;
 
@@ -23,33 +22,17 @@ import com.aliyuncs.csb.Endpoint;
  * @author auto create
  * @version 
  */
-public class FindProjectListRequest extends RpcAcsRequest<FindProjectListResponse> {
+public class FindBrokerSLOListRequest extends RpcAcsRequest<FindBrokerSLOListResponse> {
 	   
 
-	private String projectName;
-
 	private Long csbId;
-
-	private Integer pageNum;
-	public FindProjectListRequest() {
-		super("CSB", "2017-11-18", "FindProjectList");
-		setProtocol(ProtocolType.HTTPS);
+	public FindBrokerSLOListRequest() {
+		super("CSB", "2017-11-18", "FindBrokerSLOList");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
 	}
 
 	public Long getCsbId() {
@@ -63,20 +46,9 @@ public class FindProjectListRequest extends RpcAcsRequest<FindProjectListRespons
 		}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
 	@Override
-	public Class<FindProjectListResponse> getResponseClass() {
-		return FindProjectListResponse.class;
+	public Class<FindBrokerSLOListResponse> getResponseClass() {
+		return FindBrokerSLOListResponse.class;
 	}
 
 }

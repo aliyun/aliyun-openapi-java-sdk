@@ -28,7 +28,7 @@ public class ReplaceCredentialRequest extends RpcAcsRequest<ReplaceCredentialRes
 
 	private Long credentialId;
 	public ReplaceCredentialRequest() {
-		super("CSB", "2017-11-18", "ReplaceCredential", "csb");
+		super("CSB", "2017-11-18", "ReplaceCredential");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

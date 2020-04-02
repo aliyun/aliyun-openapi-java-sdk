@@ -28,7 +28,7 @@ public class ApproveOrderListRequest extends RpcAcsRequest<ApproveOrderListRespo
 
 	private String data;
 	public ApproveOrderListRequest() {
-		super("CSB", "2017-11-18", "ApproveOrderList", "csb");
+		super("CSB", "2017-11-18", "ApproveOrderList");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

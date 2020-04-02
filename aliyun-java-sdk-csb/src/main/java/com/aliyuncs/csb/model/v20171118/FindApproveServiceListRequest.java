@@ -38,7 +38,7 @@ public class FindApproveServiceListRequest extends RpcAcsRequest<FindApproveServ
 
 	private String serviceName;
 	public FindApproveServiceListRequest() {
-		super("CSB", "2017-11-18", "FindApproveServiceList", "csb");
+		super("CSB", "2017-11-18", "FindApproveServiceList");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {

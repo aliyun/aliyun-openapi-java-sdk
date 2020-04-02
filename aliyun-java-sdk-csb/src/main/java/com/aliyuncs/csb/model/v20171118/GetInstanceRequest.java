@@ -27,7 +27,7 @@ public class GetInstanceRequest extends RpcAcsRequest<GetInstanceResponse> {
 
 	private Long csbId;
 	public GetInstanceRequest() {
-		super("CSB", "2017-11-18", "GetInstance", "csb");
+		super("CSB", "2017-11-18", "GetInstance");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -30,7 +30,7 @@ public class ImportCredentialsRequest extends RpcAcsRequest<ImportCredentialsRes
 
 	private Long csbId;
 	public ImportCredentialsRequest() {
-		super("CSB", "2017-11-18", "ImportCredentials", "csb");
+		super("CSB", "2017-11-18", "ImportCredentials");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -20,13 +20,6 @@ import java.util.List;
 import com.aliyuncs.csb.model.v20171118.GetServiceResponse;
 import com.aliyuncs.csb.model.v20171118.GetServiceResponse.Data;
 import com.aliyuncs.csb.model.v20171118.GetServiceResponse.Data.Service;
-import com.aliyuncs.csb.model.v20171118.GetServiceResponse.Data.Service.RouteConf;
-import com.aliyuncs.csb.model.v20171118.GetServiceResponse.Data.Service.RouteConf.ImportConf;
-import com.aliyuncs.csb.model.v20171118.GetServiceResponse.Data.Service.RouteConf.ImportConf.InputParameter;
-import com.aliyuncs.csb.model.v20171118.GetServiceResponse.Data.Service.RouteConf.ImportConf.OutputParameter;
-import com.aliyuncs.csb.model.v20171118.GetServiceResponse.Data.Service.RouteConf.ImportConfs;
-import com.aliyuncs.csb.model.v20171118.GetServiceResponse.Data.Service.RouteConf.ImportConfs.InputParameter3;
-import com.aliyuncs.csb.model.v20171118.GetServiceResponse.Data.Service.RouteConf.ImportConfs.OutputParameter4;
 import com.aliyuncs.csb.model.v20171118.GetServiceResponse.Data.Service.ServiceVersion;
 import com.aliyuncs.csb.model.v20171118.GetServiceResponse.Data.Service.VisiableGroup;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -93,88 +86,6 @@ public class GetServiceResponseUnmarshaller {
 			consumeTypes.add(_ctx.stringValue("GetServiceResponse.Data.Service.ConsumeTypes["+ i +"]"));
 		}
 		service.setConsumeTypes(consumeTypes);
-
-		RouteConf routeConf = new RouteConf();
-		routeConf.setServiceRouteStrategy(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ServiceRouteStrategy"));
-
-		ImportConf importConf = new ImportConf();
-		importConf.setAccessEndpointJSON(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.AccessEndpointJSON"));
-		importConf.setProvideType(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.ProvideType"));
-
-		List<InputParameter> inputParameterMap = new ArrayList<InputParameter>();
-		for (int i = 0; i < _ctx.lengthValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.InputParameterMap.Length"); i++) {
-			InputParameter inputParameter = new InputParameter();
-			inputParameter.setCatType(_ctx.integerValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.InputParameterMap["+ i +"].CatType"));
-			inputParameter.setDepth(_ctx.integerValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.InputParameterMap["+ i +"].Depth"));
-			inputParameter.setExtType(_ctx.integerValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.InputParameterMap["+ i +"].ExtType"));
-			inputParameter.setMapStyle(_ctx.integerValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.InputParameterMap["+ i +"].MapStyle"));
-			inputParameter.setOptional(_ctx.booleanValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.InputParameterMap["+ i +"].Optional"));
-			inputParameter.setOriginalName(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.InputParameterMap["+ i +"].OriginalName"));
-			inputParameter.setParamType(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.InputParameterMap["+ i +"].ParamType"));
-			inputParameter.setPassMethod(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.InputParameterMap["+ i +"].PassMethod"));
-			inputParameter.setTargetName(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.InputParameterMap["+ i +"].TargetName"));
-
-			inputParameterMap.add(inputParameter);
-		}
-		importConf.setInputParameterMap(inputParameterMap);
-
-		List<OutputParameter> outputParameterMap = new ArrayList<OutputParameter>();
-		for (int i = 0; i < _ctx.lengthValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.OutputParameterMap.Length"); i++) {
-			OutputParameter outputParameter = new OutputParameter();
-			outputParameter.setCatType(_ctx.integerValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.OutputParameterMap["+ i +"].CatType"));
-			outputParameter.setDepth(_ctx.integerValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.OutputParameterMap["+ i +"].Depth"));
-			outputParameter.setExtType(_ctx.integerValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.OutputParameterMap["+ i +"].ExtType"));
-			outputParameter.setMapStyle(_ctx.integerValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.OutputParameterMap["+ i +"].MapStyle"));
-			outputParameter.setOptional(_ctx.booleanValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.OutputParameterMap["+ i +"].Optional"));
-			outputParameter.setOriginalName(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.OutputParameterMap["+ i +"].OriginalName"));
-			outputParameter.setParamType(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.OutputParameterMap["+ i +"].ParamType"));
-			outputParameter.setPassMethod(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.OutputParameterMap["+ i +"].PassMethod"));
-			outputParameter.setTargetName(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConf.OutputParameterMap["+ i +"].TargetName"));
-
-			outputParameterMap.add(outputParameter);
-		}
-		importConf.setOutputParameterMap(outputParameterMap);
-		routeConf.setImportConf(importConf);
-
-		ImportConfs importConfs = new ImportConfs();
-		importConfs.setAccessEndpointJSON(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.AccessEndpointJSON"));
-		importConfs.setProvideType(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.ProvideType"));
-
-		List<InputParameter3> inputParameterMap1 = new ArrayList<InputParameter3>();
-		for (int i = 0; i < _ctx.lengthValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.InputParameterMap.Length"); i++) {
-			InputParameter3 inputParameter3 = new InputParameter3();
-			inputParameter3.setCatType(_ctx.integerValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.InputParameterMap["+ i +"].CatType"));
-			inputParameter3.setDepth(_ctx.integerValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.InputParameterMap["+ i +"].Depth"));
-			inputParameter3.setExtType(_ctx.integerValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.InputParameterMap["+ i +"].ExtType"));
-			inputParameter3.setMapStyle(_ctx.integerValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.InputParameterMap["+ i +"].MapStyle"));
-			inputParameter3.setOptional(_ctx.booleanValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.InputParameterMap["+ i +"].Optional"));
-			inputParameter3.setOriginalName(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.InputParameterMap["+ i +"].OriginalName"));
-			inputParameter3.setParamType(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.InputParameterMap["+ i +"].ParamType"));
-			inputParameter3.setPassMethod(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.InputParameterMap["+ i +"].PassMethod"));
-			inputParameter3.setTargetName(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.InputParameterMap["+ i +"].TargetName"));
-
-			inputParameterMap1.add(inputParameter3);
-		}
-		importConfs.setInputParameterMap1(inputParameterMap1);
-
-		List<OutputParameter4> outputParameterMap2 = new ArrayList<OutputParameter4>();
-		for (int i = 0; i < _ctx.lengthValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.OutputParameterMap.Length"); i++) {
-			OutputParameter4 outputParameter4 = new OutputParameter4();
-			outputParameter4.setCatType(_ctx.integerValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.OutputParameterMap["+ i +"].CatType"));
-			outputParameter4.setDepth(_ctx.integerValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.OutputParameterMap["+ i +"].Depth"));
-			outputParameter4.setExtType(_ctx.integerValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.OutputParameterMap["+ i +"].ExtType"));
-			outputParameter4.setMapStyle(_ctx.integerValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.OutputParameterMap["+ i +"].MapStyle"));
-			outputParameter4.setOptional(_ctx.booleanValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.OutputParameterMap["+ i +"].Optional"));
-			outputParameter4.setOriginalName(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.OutputParameterMap["+ i +"].OriginalName"));
-			outputParameter4.setParamType(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.OutputParameterMap["+ i +"].ParamType"));
-			outputParameter4.setPassMethod(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.OutputParameterMap["+ i +"].PassMethod"));
-			outputParameter4.setTargetName(_ctx.stringValue("GetServiceResponse.Data.Service.RouteConf.ImportConfs.OutputParameterMap["+ i +"].TargetName"));
-
-			outputParameterMap2.add(outputParameter4);
-		}
-		importConfs.setOutputParameterMap2(outputParameterMap2);
-		routeConf.setImportConfs(importConfs);
-		service.setRouteConf(routeConf);
 
 		List<ServiceVersion> serviceVersionsList = new ArrayList<ServiceVersion>();
 		for (int i = 0; i < _ctx.lengthValue("GetServiceResponse.Data.Service.ServiceVersionsList.Length"); i++) {

@@ -15,7 +15,6 @@
 package com.aliyuncs.csb.model.v20171118;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.csb.Endpoint;
 
@@ -23,34 +22,20 @@ import com.aliyuncs.csb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteOrderListRequest extends RpcAcsRequest<DeleteOrderListResponse> {
+public class GetConsoleSLORequest extends RpcAcsRequest<GetConsoleSLOResponse> {
 	   
-
-	private String data;
-	public DeleteOrderListRequest() {
-		super("CSB", "2017-11-18", "DeleteOrderList");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
+	public GetConsoleSLORequest() {
+		super("CSB", "2017-11-18", "GetConsoleSLO");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-		if(data != null){
-			putBodyParameter("Data", data);
-		}
-	}
-
 	@Override
-	public Class<DeleteOrderListResponse> getResponseClass() {
-		return DeleteOrderListResponse.class;
+	public Class<GetConsoleSLOResponse> getResponseClass() {
+		return GetConsoleSLOResponse.class;
 	}
 
 }

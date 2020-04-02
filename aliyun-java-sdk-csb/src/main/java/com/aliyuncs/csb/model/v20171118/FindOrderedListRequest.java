@@ -42,7 +42,7 @@ public class FindOrderedListRequest extends RpcAcsRequest<FindOrderedListRespons
 
 	private String status;
 	public FindOrderedListRequest() {
-		super("CSB", "2017-11-18", "FindOrderedList", "csb");
+		super("CSB", "2017-11-18", "FindOrderedList");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {

@@ -30,7 +30,7 @@ public class GetOrderRequest extends RpcAcsRequest<GetOrderResponse> {
 
 	private String serviceName;
 	public GetOrderRequest() {
-		super("CSB", "2017-11-18", "GetOrder", "csb");
+		super("CSB", "2017-11-18", "GetOrder");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {

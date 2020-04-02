@@ -30,7 +30,7 @@ public class CheckServiceExistRequest extends RpcAcsRequest<CheckServiceExistRes
 
 	private String serviceName;
 	public CheckServiceExistRequest() {
-		super("CSB", "2017-11-18", "CheckServiceExist", "csb");
+		super("CSB", "2017-11-18", "CheckServiceExist");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

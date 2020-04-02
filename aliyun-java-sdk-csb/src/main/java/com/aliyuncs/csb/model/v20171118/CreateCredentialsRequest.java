@@ -30,7 +30,7 @@ public class CreateCredentialsRequest extends RpcAcsRequest<CreateCredentialsRes
 
 	private Long csbId;
 	public CreateCredentialsRequest() {
-		super("CSB", "2017-11-18", "CreateCredentials", "csb");
+		super("CSB", "2017-11-18", "CreateCredentials");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

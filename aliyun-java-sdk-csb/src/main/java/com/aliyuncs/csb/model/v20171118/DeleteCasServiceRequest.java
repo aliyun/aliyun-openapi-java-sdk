@@ -34,7 +34,7 @@ public class DeleteCasServiceRequest extends RpcAcsRequest<DeleteCasServiceRespo
 
 	private String casServiceId;
 	public DeleteCasServiceRequest() {
-		super("CSB", "2017-11-18", "DeleteCasService", "csb");
+		super("CSB", "2017-11-18", "DeleteCasService");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

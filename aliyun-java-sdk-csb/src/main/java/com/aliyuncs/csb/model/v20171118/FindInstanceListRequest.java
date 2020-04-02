@@ -33,7 +33,7 @@ public class FindInstanceListRequest extends RpcAcsRequest<FindInstanceListRespo
 
 	private Integer status;
 	public FindInstanceListRequest() {
-		super("CSB", "2017-11-18", "FindInstanceList", "csb");
+		super("CSB", "2017-11-18", "FindInstanceList");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

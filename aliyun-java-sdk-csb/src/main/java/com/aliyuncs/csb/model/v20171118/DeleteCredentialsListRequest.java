@@ -32,7 +32,7 @@ public class DeleteCredentialsListRequest extends RpcAcsRequest<DeleteCredential
 
 	private Boolean force;
 	public DeleteCredentialsListRequest() {
-		super("CSB", "2017-11-18", "DeleteCredentialsList", "csb");
+		super("CSB", "2017-11-18", "DeleteCredentialsList");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

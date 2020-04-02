@@ -36,11 +36,13 @@ public class FindServiceListRequest extends RpcAcsRequest<FindServiceListRespons
 
 	private Integer casShowType;
 
+	private Integer pageSize;
+
 	private String alias;
 
 	private String serviceName;
 	public FindServiceListRequest() {
-		super("CSB", "2017-11-18", "FindServiceList", "csb");
+		super("CSB", "2017-11-18", "FindServiceList");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {
@@ -101,6 +103,17 @@ public class FindServiceListRequest extends RpcAcsRequest<FindServiceListRespons
 		this.casShowType = casShowType;
 		if(casShowType != null){
 			putQueryParameter("CasShowType", casShowType.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

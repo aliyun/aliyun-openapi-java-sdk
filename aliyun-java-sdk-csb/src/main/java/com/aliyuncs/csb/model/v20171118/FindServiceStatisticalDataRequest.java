@@ -34,7 +34,7 @@ public class FindServiceStatisticalDataRequest extends RpcAcsRequest<FindService
 
 	private String serviceName;
 	public FindServiceStatisticalDataRequest() {
-		super("CSB", "2017-11-18", "FindServiceStatisticalData", "csb");
+		super("CSB", "2017-11-18", "FindServiceStatisticalData");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {

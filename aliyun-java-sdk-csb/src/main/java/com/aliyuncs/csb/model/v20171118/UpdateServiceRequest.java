@@ -30,7 +30,7 @@ public class UpdateServiceRequest extends RpcAcsRequest<UpdateServiceResponse> {
 
 	private Long csbId;
 	public UpdateServiceRequest() {
-		super("CSB", "2017-11-18", "UpdateService", "csb");
+		super("CSB", "2017-11-18", "UpdateService");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
