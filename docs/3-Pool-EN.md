@@ -14,7 +14,8 @@ DefaultProfile profile = DefaultProfile.getProfile(
 // parameters for this pool here such as maxRequestsPerHost, timeout, etc.
 HttpClientConfig clientConfig = HttpClientConfig.getDefault();
 clientConfig.setMaxRequestsPerHost(6);
-clientConfig.setMaxRequests(60);
+clientConfig.setConnectionTimeoutMillis(30000L);
+clientConfig.setMaxIdleConnections(20);
 
 profile.setHttpClientConfig(clientConfig);
 IAcsClient client = new DefaultAcsClient(profile);

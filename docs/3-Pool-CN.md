@@ -14,7 +14,8 @@ DefaultProfile profile = DefaultProfile.getProfile(
 // 比如每个host的最大连接数，超时时间等
 HttpClientConfig clientConfig = HttpClientConfig.getDefault();
 clientConfig.setMaxRequestsPerHost(6);
-clientConfig.setConnectionTimeoutMillis(10000L);
+clientConfig.setConnectionTimeoutMillis(30000L);
+clientConfig.setMaxIdleConnections(20);
 
 profile.setHttpClientConfig(clientConfig);
 IAcsClient client = new DefaultAcsClient(profile);
