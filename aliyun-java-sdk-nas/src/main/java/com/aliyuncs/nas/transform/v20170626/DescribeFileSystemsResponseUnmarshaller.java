@@ -49,12 +49,20 @@ public class DescribeFileSystemsResponseUnmarshaller {
 			fileSystem.setFileSystemType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].FileSystemType"));
 			fileSystem.setEncryptType(_ctx.integerValue("DescribeFileSystemsResponse.FileSystems["+ i +"].EncryptType"));
 			fileSystem.setMeteredSize(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MeteredSize"));
+			fileSystem.setMeteredIASize(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MeteredIASize"));
 			fileSystem.setBandwidth(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Bandwidth"));
 			fileSystem.setCapacity(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Capacity"));
 			fileSystem.setAutoSnapshotPolicyId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].AutoSnapshotPolicyId"));
 			fileSystem.setStatus(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Status"));
 			fileSystem.setChargeType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ChargeType"));
 			fileSystem.setMountTargetCountLimit(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargetCountLimit"));
+			fileSystem.setNasNamespaceId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].NasNamespaceId"));
+
+			List<String> supportedFeatures = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].SupportedFeatures.Length"); j++) {
+				supportedFeatures.add(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].SupportedFeatures["+ j +"]"));
+			}
+			fileSystem.setSupportedFeatures(supportedFeatures);
 
 			Ldap ldap = new Ldap();
 			ldap.setBindDN(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Ldap.BindDN"));

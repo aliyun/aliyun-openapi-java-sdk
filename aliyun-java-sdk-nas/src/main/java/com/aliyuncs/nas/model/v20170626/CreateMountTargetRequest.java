@@ -25,6 +25,8 @@ import com.aliyuncs.nas.Endpoint;
 public class CreateMountTargetRequest extends RpcAcsRequest<CreateMountTargetResponse> {
 	   
 
+	private String securityGroupId;
+
 	private String networkType;
 
 	private String fileSystemId;
@@ -41,6 +43,17 @@ public class CreateMountTargetRequest extends RpcAcsRequest<CreateMountTargetRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
 	}
 
 	public String getNetworkType() {

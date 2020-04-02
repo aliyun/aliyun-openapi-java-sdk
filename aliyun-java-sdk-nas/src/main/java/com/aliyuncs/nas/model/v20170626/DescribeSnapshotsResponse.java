@@ -97,6 +97,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String status;
 
+		private Integer encryptType;
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -175,6 +177,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public Integer getEncryptType() {
+			return this.encryptType;
+		}
+
+		public void setEncryptType(Integer encryptType) {
+			this.encryptType = encryptType;
 		}
 	}
 
