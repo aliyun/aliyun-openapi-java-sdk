@@ -1,3 +1,6 @@
+2020-04-03 Version: 1.0.1
+- Support namespaces.
+
 2020-03-18 Version: 1.0.0
 - ACM POP SDK.
 
