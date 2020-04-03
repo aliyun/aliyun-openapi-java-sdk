@@ -88,6 +88,7 @@ public class QueryOrderAndPaymentListResponseUnmarshaller {
 				subOrderListItem.setOrderStatus(_ctx.integerValue("QueryOrderAndPaymentListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].OrderStatus"));
 				subOrderListItem.setEnableStatus(_ctx.integerValue("QueryOrderAndPaymentListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].EnableStatus"));
 				subOrderListItem.setTbOrderId(_ctx.longValue("QueryOrderAndPaymentListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].TbOrderId"));
+				subOrderListItem.setLmItemId(_ctx.stringValue("QueryOrderAndPaymentListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].LmItemId"));
 
 				List<ItemPriceListItem> itemPriceList = new ArrayList<ItemPriceListItem>();
 				for (int k = 0; k < _ctx.lengthValue("QueryOrderAndPaymentListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].ItemPriceList.Length"); k++) {

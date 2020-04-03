@@ -45,6 +45,7 @@ public class QueryGuideItemGroupResponseUnmarshaller {
 			itemInfo.setReservePrice(_ctx.stringValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].ReservePrice"));
 			itemInfo.setPointsAmount(_ctx.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].PointsAmount"));
 			itemInfo.setPointPrice(_ctx.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].PointPrice"));
+			itemInfo.setLmItemId(_ctx.stringValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].LmItemId"));
 
 			guideItemGroup.add(itemInfo);
 		}

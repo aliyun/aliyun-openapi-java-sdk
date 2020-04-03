@@ -61,6 +61,7 @@ public class QueryItemDetailResponseUnmarshaller {
 		item.setLmItemCategory(_ctx.stringValue("QueryItemDetailResponse.Item.LmItemCategory"));
 		item.setCenterInventory(_ctx.booleanValue("QueryItemDetailResponse.Item.CenterInventory"));
 		item.setCustomizedAttributeMap(_ctx.mapValue("QueryItemDetailResponse.Item.CustomizedAttributeMap"));
+		item.setLmItemId(_ctx.stringValue("QueryItemDetailResponse.Item.LmItemId"));
 
 		List<String> itemImages = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QueryItemDetailResponse.Item.ItemImages.Length"); i++) {
@@ -86,6 +87,7 @@ public class QueryItemDetailResponseUnmarshaller {
 			sku.setReservePrice(_ctx.longValue("QueryItemDetailResponse.Item.Skus["+ i +"].ReservePrice"));
 			sku.setCanSell(_ctx.booleanValue("QueryItemDetailResponse.Item.Skus["+ i +"].CanSell"));
 			sku.setCustomizedAttributeMap(_ctx.mapValue("QueryItemDetailResponse.Item.Skus["+ i +"].CustomizedAttributeMap"));
+			sku.setLmItemId(_ctx.stringValue("QueryItemDetailResponse.Item.Skus["+ i +"].LmItemId"));
 
 			skus.add(sku);
 		}

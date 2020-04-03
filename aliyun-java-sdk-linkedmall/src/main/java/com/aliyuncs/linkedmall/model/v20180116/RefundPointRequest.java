@@ -16,6 +16,7 @@ package com.aliyuncs.linkedmall.model.v20180116;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkedmall.Endpoint;
 
 /**
  * @author auto create
@@ -26,18 +27,22 @@ public class RefundPointRequest extends RpcAcsRequest<RefundPointResponse> {
 
 	private String reason;
 
-	private String sellerId;
-
 	private String lmOrderId;
+
+	private Boolean useAnonymousTbAccount;
+
+	private String sellerId;
 
 	private String thirdPartyUserId;
 
 	private String bizId;
-
-	private Boolean useAnonymousTbAccount;
 	public RefundPointRequest() {
 		super("linkedmall", "2018-01-16", "RefundPoint", "linkedmall");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getReason() {
@@ -51,17 +56,6 @@ public class RefundPointRequest extends RpcAcsRequest<RefundPointResponse> {
 		}
 	}
 
-	public String getSellerId() {
-		return this.sellerId;
-	}
-
-	public void setSellerId(String sellerId) {
-		this.sellerId = sellerId;
-		if(sellerId != null){
-			putQueryParameter("SellerId", sellerId);
-		}
-	}
-
 	public String getLmOrderId() {
 		return this.lmOrderId;
 	}
@@ -70,6 +64,28 @@ public class RefundPointRequest extends RpcAcsRequest<RefundPointResponse> {
 		this.lmOrderId = lmOrderId;
 		if(lmOrderId != null){
 			putQueryParameter("LmOrderId", lmOrderId);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
+		}
+	}
+
+	public String getSellerId() {
+		return this.sellerId;
+	}
+
+	public void setSellerId(String sellerId) {
+		this.sellerId = sellerId;
+		if(sellerId != null){
+			putQueryParameter("SellerId", sellerId);
 		}
 	}
 
@@ -92,17 +108,6 @@ public class RefundPointRequest extends RpcAcsRequest<RefundPointResponse> {
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
-		}
-	}
-
-	public Boolean getUseAnonymousTbAccount() {
-		return this.useAnonymousTbAccount;
-	}
-
-	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
-		this.useAnonymousTbAccount = useAnonymousTbAccount;
-		if(useAnonymousTbAccount != null){
-			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
 		}
 	}
 

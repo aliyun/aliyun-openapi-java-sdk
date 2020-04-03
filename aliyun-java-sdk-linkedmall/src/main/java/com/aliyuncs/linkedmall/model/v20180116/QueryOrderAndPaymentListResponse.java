@@ -292,6 +292,8 @@ public class QueryOrderAndPaymentListResponse extends AcsResponse {
 
 			private Long tbOrderId;
 
+			private String lmItemId;
+
 			private List<ItemPriceListItem> itemPriceList;
 
 			public Long getItemId() {
@@ -372,6 +374,14 @@ public class QueryOrderAndPaymentListResponse extends AcsResponse {
 
 			public void setTbOrderId(Long tbOrderId) {
 				this.tbOrderId = tbOrderId;
+			}
+
+			public String getLmItemId() {
+				return this.lmItemId;
+			}
+
+			public void setLmItemId(String lmItemId) {
+				this.lmItemId = lmItemId;
 			}
 
 			public List<ItemPriceListItem> getItemPriceList() {

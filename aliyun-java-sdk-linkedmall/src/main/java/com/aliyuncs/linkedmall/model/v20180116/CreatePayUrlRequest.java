@@ -16,6 +16,7 @@ package com.aliyuncs.linkedmall.model.v20180116;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkedmall.Endpoint;
 
 /**
  * @author auto create
@@ -24,18 +25,44 @@ import com.aliyuncs.http.MethodType;
 public class CreatePayUrlRequest extends RpcAcsRequest<CreatePayUrlResponse> {
 	   
 
+	private String bizUid;
+
+	private Boolean useAnonymousTbAccount;
+
 	private String buyInfo;
 
 	private String thirdPartyUserId;
 
-	private String bizUid;
-
 	private String bizId;
-
-	private Boolean useAnonymousTbAccount;
 	public CreatePayUrlRequest() {
 		super("linkedmall", "2018-01-16", "CreatePayUrl", "linkedmall");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getBizUid() {
+		return this.bizUid;
+	}
+
+	public void setBizUid(String bizUid) {
+		this.bizUid = bizUid;
+		if(bizUid != null){
+			putQueryParameter("BizUid", bizUid);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
+		}
 	}
 
 	public String getBuyInfo() {
@@ -60,17 +87,6 @@ public class CreatePayUrlRequest extends RpcAcsRequest<CreatePayUrlResponse> {
 		}
 	}
 
-	public String getBizUid() {
-		return this.bizUid;
-	}
-
-	public void setBizUid(String bizUid) {
-		this.bizUid = bizUid;
-		if(bizUid != null){
-			putQueryParameter("BizUid", bizUid);
-		}
-	}
-
 	public String getBizId() {
 		return this.bizId;
 	}
@@ -79,17 +95,6 @@ public class CreatePayUrlRequest extends RpcAcsRequest<CreatePayUrlResponse> {
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
-		}
-	}
-
-	public Boolean getUseAnonymousTbAccount() {
-		return this.useAnonymousTbAccount;
-	}
-
-	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
-		this.useAnonymousTbAccount = useAnonymousTbAccount;
-		if(useAnonymousTbAccount != null){
-			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
 		}
 	}
 

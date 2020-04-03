@@ -16,6 +16,7 @@ package com.aliyuncs.linkedmall.model.v20180116;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkedmall.Endpoint;
 
 /**
  * @author auto create
@@ -24,31 +25,24 @@ import com.aliyuncs.http.MethodType;
 public class QueryOrderIdByPayIdRequest extends RpcAcsRequest<QueryOrderIdByPayIdResponse> {
 	   
 
-	private String thirdPartyUserId;
-
 	private String bizUid;
-
-	private String paymentId;
-
-	private String bizId;
 
 	private String accountType;
 
 	private Boolean useAnonymousTbAccount;
+
+	private String thirdPartyUserId;
+
+	private String paymentId;
+
+	private String bizId;
 	public QueryOrderIdByPayIdRequest() {
 		super("linkedmall", "2018-01-16", "QueryOrderIdByPayId", "linkedmall");
 		setMethod(MethodType.POST);
-	}
-
-	public String getThirdPartyUserId() {
-		return this.thirdPartyUserId;
-	}
-
-	public void setThirdPartyUserId(String thirdPartyUserId) {
-		this.thirdPartyUserId = thirdPartyUserId;
-		if(thirdPartyUserId != null){
-			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
-		}
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getBizUid() {
@@ -59,28 +53,6 @@ public class QueryOrderIdByPayIdRequest extends RpcAcsRequest<QueryOrderIdByPayI
 		this.bizUid = bizUid;
 		if(bizUid != null){
 			putQueryParameter("BizUid", bizUid);
-		}
-	}
-
-	public String getPaymentId() {
-		return this.paymentId;
-	}
-
-	public void setPaymentId(String paymentId) {
-		this.paymentId = paymentId;
-		if(paymentId != null){
-			putQueryParameter("PaymentId", paymentId);
-		}
-	}
-
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
 		}
 	}
 
@@ -103,6 +75,39 @@ public class QueryOrderIdByPayIdRequest extends RpcAcsRequest<QueryOrderIdByPayI
 		this.useAnonymousTbAccount = useAnonymousTbAccount;
 		if(useAnonymousTbAccount != null){
 			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
+		}
+	}
+
+	public String getThirdPartyUserId() {
+		return this.thirdPartyUserId;
+	}
+
+	public void setThirdPartyUserId(String thirdPartyUserId) {
+		this.thirdPartyUserId = thirdPartyUserId;
+		if(thirdPartyUserId != null){
+			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
+		}
+	}
+
+	public String getPaymentId() {
+		return this.paymentId;
+	}
+
+	public void setPaymentId(String paymentId) {
+		this.paymentId = paymentId;
+		if(paymentId != null){
+			putQueryParameter("PaymentId", paymentId);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 

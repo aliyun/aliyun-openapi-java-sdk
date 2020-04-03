@@ -115,6 +115,8 @@ public class QueryGuideItemGroupResponse extends AcsResponse {
 
 		private Long pointPrice;
 
+		private String lmItemId;
+
 		public Long getItemId() {
 			return this.itemId;
 		}
@@ -185,6 +187,14 @@ public class QueryGuideItemGroupResponse extends AcsResponse {
 
 		public void setPointPrice(Long pointPrice) {
 			this.pointPrice = pointPrice;
+		}
+
+		public String getLmItemId() {
+			return this.lmItemId;
+		}
+
+		public void setLmItemId(String lmItemId) {
+			this.lmItemId = lmItemId;
 		}
 	}
 

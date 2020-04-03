@@ -1,3 +1,7 @@
+2020-04-03 Version: 2.12.3
+- Support lmItemId.
+- Support STSToken.
+
 2020-03-25 Version: 2.12.2
 - Support new parameter for method QueryUnfinishedSessions4Items.
 

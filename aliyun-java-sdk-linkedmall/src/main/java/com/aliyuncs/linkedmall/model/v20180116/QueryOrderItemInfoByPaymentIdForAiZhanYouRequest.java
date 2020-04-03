@@ -16,6 +16,7 @@ package com.aliyuncs.linkedmall.model.v20180116;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkedmall.Endpoint;
 
 /**
  * @author auto create
@@ -32,6 +33,10 @@ public class QueryOrderItemInfoByPaymentIdForAiZhanYouRequest extends RpcAcsRequ
 	public QueryOrderItemInfoByPaymentIdForAiZhanYouRequest() {
 		super("linkedmall", "2018-01-16", "QueryOrderItemInfoByPaymentIdForAiZhanYou", "linkedmall");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getBizUid() {

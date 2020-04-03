@@ -92,4 +92,9 @@ public class GetCategoryChainResponse extends AcsResponse {
 	public GetCategoryChainResponse getInstance(UnmarshallerContext context) {
 		return	GetCategoryChainResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

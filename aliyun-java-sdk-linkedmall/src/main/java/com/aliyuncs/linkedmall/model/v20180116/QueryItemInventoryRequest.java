@@ -17,6 +17,7 @@ package com.aliyuncs.linkedmall.model.v20180116;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkedmall.Endpoint;
 
 /**
  * @author auto create
@@ -35,6 +36,10 @@ public class QueryItemInventoryRequest extends RpcAcsRequest<QueryItemInventoryR
 	public QueryItemInventoryRequest() {
 		super("linkedmall", "2018-01-16", "QueryItemInventory", "linkedmall");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDivisionCode() {
@@ -84,6 +89,7 @@ public class QueryItemInventoryRequest extends RpcAcsRequest<QueryItemInventoryR
 						putQueryParameter("ItemList." + (depth1 + 1) + ".SkuIdList." + (i + 1) , itemLists.get(depth1).getSkuIdLists().get(i));
 					}
 				}
+				putQueryParameter("ItemList." + (depth1 + 1) + ".LmItemId" , itemLists.get(depth1).getLmItemId());
 			}
 		}	
 	}
@@ -93,6 +99,8 @@ public class QueryItemInventoryRequest extends RpcAcsRequest<QueryItemInventoryR
 		private Long itemId;
 
 		private List<Long> skuIdLists;
+
+		private String lmItemId;
 
 		public Long getItemId() {
 			return this.itemId;
@@ -108,6 +116,14 @@ public class QueryItemInventoryRequest extends RpcAcsRequest<QueryItemInventoryR
 
 		public void setSkuIdLists(List<Long> skuIdLists) {
 			this.skuIdLists = skuIdLists;
+		}
+
+		public String getLmItemId() {
+			return this.lmItemId;
+		}
+
+		public void setLmItemId(String lmItemId) {
+			this.lmItemId = lmItemId;
 		}
 	}
 

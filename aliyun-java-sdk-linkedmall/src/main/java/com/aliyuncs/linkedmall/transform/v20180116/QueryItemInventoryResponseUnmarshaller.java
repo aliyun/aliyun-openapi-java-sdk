@@ -39,6 +39,7 @@ public class QueryItemInventoryResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("QueryItemInventoryResponse.ItemList.Length"); i++) {
 			Item item = new Item();
 			item.setItemId(_ctx.longValue("QueryItemInventoryResponse.ItemList["+ i +"].ItemId"));
+			item.setLmItemId(_ctx.stringValue("QueryItemInventoryResponse.ItemList["+ i +"].LmItemId"));
 
 			List<Sku> skuList = new ArrayList<Sku>();
 			for (int j = 0; j < _ctx.lengthValue("QueryItemInventoryResponse.ItemList["+ i +"].SkuList.Length"); j++) {

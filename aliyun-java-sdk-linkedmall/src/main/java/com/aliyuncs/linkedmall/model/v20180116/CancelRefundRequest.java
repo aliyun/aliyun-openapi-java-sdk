@@ -16,6 +16,7 @@ package com.aliyuncs.linkedmall.model.v20180116;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkedmall.Endpoint;
 
 /**
  * @author auto create
@@ -24,22 +25,59 @@ import com.aliyuncs.http.MethodType;
 public class CancelRefundRequest extends RpcAcsRequest<CancelRefundResponse> {
 	   
 
-	private String subLmOrderId;
-
-	private String thirdPartyUserId;
-
 	private String bizUid;
-
-	private Long disputeId;
-
-	private String bizId;
 
 	private String accountType;
 
 	private Boolean useAnonymousTbAccount;
+
+	private String subLmOrderId;
+
+	private String thirdPartyUserId;
+
+	private Long disputeId;
+
+	private String bizId;
 	public CancelRefundRequest() {
 		super("linkedmall", "2018-01-16", "CancelRefund", "linkedmall");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getBizUid() {
+		return this.bizUid;
+	}
+
+	public void setBizUid(String bizUid) {
+		this.bizUid = bizUid;
+		if(bizUid != null){
+			putQueryParameter("BizUid", bizUid);
+		}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
+		}
 	}
 
 	public String getSubLmOrderId() {
@@ -64,17 +102,6 @@ public class CancelRefundRequest extends RpcAcsRequest<CancelRefundResponse> {
 		}
 	}
 
-	public String getBizUid() {
-		return this.bizUid;
-	}
-
-	public void setBizUid(String bizUid) {
-		this.bizUid = bizUid;
-		if(bizUid != null){
-			putQueryParameter("BizUid", bizUid);
-		}
-	}
-
 	public Long getDisputeId() {
 		return this.disputeId;
 	}
@@ -94,28 +121,6 @@ public class CancelRefundRequest extends RpcAcsRequest<CancelRefundResponse> {
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
-		}
-	}
-
-	public String getAccountType() {
-		return this.accountType;
-	}
-
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-		if(accountType != null){
-			putQueryParameter("AccountType", accountType);
-		}
-	}
-
-	public Boolean getUseAnonymousTbAccount() {
-		return this.useAnonymousTbAccount;
-	}
-
-	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
-		this.useAnonymousTbAccount = useAnonymousTbAccount;
-		if(useAnonymousTbAccount != null){
-			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
 		}
 	}
 

@@ -18,6 +18,7 @@ import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkedmall.Endpoint;
 
 /**
  * @author auto create
@@ -44,6 +45,10 @@ public class QueryBizItemListRequest extends RpcAcsRequest<QueryBizItemListRespo
 	public QueryBizItemListRequest() {
 		super("linkedmall", "2018-01-16", "QueryBizItemList", "linkedmall");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public List<Object> getLmItemIds() {

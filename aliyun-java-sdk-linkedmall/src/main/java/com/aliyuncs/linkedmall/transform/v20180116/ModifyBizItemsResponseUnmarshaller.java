@@ -37,6 +37,7 @@ public class ModifyBizItemsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ModifyBizItemsResponse.FailedItemList.Length"); i++) {
 			Item item = new Item();
 			item.setItemId(_ctx.longValue("ModifyBizItemsResponse.FailedItemList["+ i +"].ItemId"));
+			item.setLmItemId(_ctx.stringValue("ModifyBizItemsResponse.FailedItemList["+ i +"].LmItemId"));
 
 			List<String> skuIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ModifyBizItemsResponse.FailedItemList["+ i +"].SkuIdList.Length"); j++) {

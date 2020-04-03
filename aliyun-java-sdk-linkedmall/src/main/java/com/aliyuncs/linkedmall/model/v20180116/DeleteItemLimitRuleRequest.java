@@ -16,6 +16,7 @@ package com.aliyuncs.linkedmall.model.v20180116;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkedmall.Endpoint;
 
 /**
  * @author auto create
@@ -24,31 +25,24 @@ import com.aliyuncs.http.MethodType;
 public class DeleteItemLimitRuleRequest extends RpcAcsRequest<DeleteItemLimitRuleResponse> {
 	   
 
-	private Long itemId;
-
 	private Long lmActivityId;
-
-	private String bizId;
 
 	private String lmItemId;
 
-	private Long ruleId;
-
 	private String subBizCode;
+
+	private Long itemId;
+
+	private String bizId;
+
+	private Long ruleId;
 	public DeleteItemLimitRuleRequest() {
 		super("linkedmall", "2018-01-16", "DeleteItemLimitRule", "linkedmall");
 		setMethod(MethodType.POST);
-	}
-
-	public Long getItemId() {
-		return this.itemId;
-	}
-
-	public void setItemId(Long itemId) {
-		this.itemId = itemId;
-		if(itemId != null){
-			putQueryParameter("ItemId", itemId.toString());
-		}
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getLmActivityId() {
@@ -59,17 +53,6 @@ public class DeleteItemLimitRuleRequest extends RpcAcsRequest<DeleteItemLimitRul
 		this.lmActivityId = lmActivityId;
 		if(lmActivityId != null){
 			putQueryParameter("LmActivityId", lmActivityId.toString());
-		}
-	}
-
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
 		}
 	}
 
@@ -84,17 +67,6 @@ public class DeleteItemLimitRuleRequest extends RpcAcsRequest<DeleteItemLimitRul
 		}
 	}
 
-	public Long getRuleId() {
-		return this.ruleId;
-	}
-
-	public void setRuleId(Long ruleId) {
-		this.ruleId = ruleId;
-		if(ruleId != null){
-			putQueryParameter("RuleId", ruleId.toString());
-		}
-	}
-
 	public String getSubBizCode() {
 		return this.subBizCode;
 	}
@@ -103,6 +75,39 @@ public class DeleteItemLimitRuleRequest extends RpcAcsRequest<DeleteItemLimitRul
 		this.subBizCode = subBizCode;
 		if(subBizCode != null){
 			putQueryParameter("SubBizCode", subBizCode);
+		}
+	}
+
+	public Long getItemId() {
+		return this.itemId;
+	}
+
+	public void setItemId(Long itemId) {
+		this.itemId = itemId;
+		if(itemId != null){
+			putQueryParameter("ItemId", itemId.toString());
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public Long getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(Long ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId.toString());
 		}
 	}
 
