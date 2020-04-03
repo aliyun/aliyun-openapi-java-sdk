@@ -22,6 +22,7 @@ public class CheckResourceResponseUnmarshaller {
 
 	public static CheckResourceResponse unmarshall(CheckResourceResponse checkResourceResponse, UnmarshallerContext _ctx) {
 		
+		checkResourceResponse.setRequestId(_ctx.stringValue("CheckResourceResponse.RequestId"));
 		checkResourceResponse.setInterrupt(_ctx.booleanValue("CheckResourceResponse.Interrupt"));
 		checkResourceResponse.setInvoker(_ctx.stringValue("CheckResourceResponse.Invoker"));
 		checkResourceResponse.setPk(_ctx.stringValue("CheckResourceResponse.Pk"));

@@ -1,3 +1,6 @@
+2020-04-03 Version: 0.0.6
+- Supported 1688 api to createProject,DeleteProject,CreateScene,ListScenes, update CreateProject to add supply user.
+
 2020-03-11 Version: 0.0.5
 - Supported 1688 api to createProject,DeleteProject,CreateScene,ListScenes, update CreateProject to add supply user.
 

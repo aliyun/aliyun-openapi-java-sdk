@@ -52,6 +52,8 @@ public class CheckResourceResponse extends AcsResponse {
 
 	private String prompt;
 
+	private String requestId;
+
 	public Boolean getInterrupt() {
 		return this.interrupt;
 	}
@@ -162,6 +164,14 @@ public class CheckResourceResponse extends AcsResponse {
 
 	public void setPrompt(String prompt) {
 		this.prompt = prompt;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
