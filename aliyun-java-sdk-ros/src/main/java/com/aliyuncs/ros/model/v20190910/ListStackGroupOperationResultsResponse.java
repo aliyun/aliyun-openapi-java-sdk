@@ -79,7 +79,7 @@ public class ListStackGroupOperationResultsResponse extends AcsResponse {
 
 		private String accountId;
 
-		private Boolean regionId;
+		private String regionId;
 
 		private String status;
 
@@ -93,11 +93,11 @@ public class ListStackGroupOperationResultsResponse extends AcsResponse {
 			this.accountId = accountId;
 		}
 
-		public Boolean getRegionId() {
+		public String getRegionId() {
 			return this.regionId;
 		}
 
-		public void setRegionId(Boolean regionId) {
+		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
 

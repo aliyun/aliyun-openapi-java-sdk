@@ -28,6 +28,8 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 
 	private Long timeoutInMinutes;
 
+	private String deletionProtection;
+
 	private String stackName;
 
 	private Boolean disableRollback;
@@ -64,6 +66,17 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 		this.timeoutInMinutes = timeoutInMinutes;
 		if(timeoutInMinutes != null){
 			putQueryParameter("TimeoutInMinutes", timeoutInMinutes.toString());
+		}
+	}
+
+	public String getDeletionProtection() {
+		return this.deletionProtection;
+	}
+
+	public void setDeletionProtection(String deletionProtection) {
+		this.deletionProtection = deletionProtection;
+		if(deletionProtection != null){
+			putQueryParameter("DeletionProtection", deletionProtection);
 		}
 	}
 

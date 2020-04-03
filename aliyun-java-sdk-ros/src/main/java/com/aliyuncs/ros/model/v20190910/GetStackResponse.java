@@ -58,6 +58,10 @@ public class GetStackResponse extends AcsResponse {
 
 	private String ramRoleName;
 
+	private String deletionProtection;
+
+	private String rootStackId;
+
 	private List<Parameter> parameters;
 
 	private List<Map<Object,Object>> outputs;
@@ -190,6 +194,22 @@ public class GetStackResponse extends AcsResponse {
 
 	public void setRamRoleName(String ramRoleName) {
 		this.ramRoleName = ramRoleName;
+	}
+
+	public String getDeletionProtection() {
+		return this.deletionProtection;
+	}
+
+	public void setDeletionProtection(String deletionProtection) {
+		this.deletionProtection = deletionProtection;
+	}
+
+	public String getRootStackId() {
+		return this.rootStackId;
+	}
+
+	public void setRootStackId(String rootStackId) {
+		this.rootStackId = rootStackId;
 	}
 
 	public List<Parameter> getParameters() {

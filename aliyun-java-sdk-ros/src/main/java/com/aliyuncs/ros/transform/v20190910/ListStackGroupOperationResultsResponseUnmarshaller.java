@@ -35,7 +35,7 @@ public class ListStackGroupOperationResultsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListStackGroupOperationResultsResponse.StackGroupOperationResults.Length"); i++) {
 			StackGroupOperationResult stackGroupOperationResult = new StackGroupOperationResult();
 			stackGroupOperationResult.setAccountId(_ctx.stringValue("ListStackGroupOperationResultsResponse.StackGroupOperationResults["+ i +"].AccountId"));
-			stackGroupOperationResult.setRegionId(_ctx.booleanValue("ListStackGroupOperationResultsResponse.StackGroupOperationResults["+ i +"].RegionId"));
+			stackGroupOperationResult.setRegionId(_ctx.stringValue("ListStackGroupOperationResultsResponse.StackGroupOperationResults["+ i +"].RegionId"));
 			stackGroupOperationResult.setStatus(_ctx.stringValue("ListStackGroupOperationResultsResponse.StackGroupOperationResults["+ i +"].Status"));
 			stackGroupOperationResult.setStatusReason(_ctx.stringValue("ListStackGroupOperationResultsResponse.StackGroupOperationResults["+ i +"].StatusReason"));
 
