@@ -1,3 +1,7 @@
+2020-04-03 Version: 2.5.8
+- Add trace api.
+- Add prometheus api.
+
 2020-02-12 Version: 2.5.7
 - Prometheus list clusters.
 
