@@ -1,3 +1,6 @@
+2020-04-07 Version: 2.0.0
+- Support shelf type for planogram position.
+
 2020-04-03 Version: 2.0.1
 - Support shelf type for planogram position.
 
