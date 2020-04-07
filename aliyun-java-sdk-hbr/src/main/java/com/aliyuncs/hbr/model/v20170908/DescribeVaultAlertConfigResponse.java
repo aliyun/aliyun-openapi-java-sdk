@@ -1,0 +1,178 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.hbr.model.v20170908;
+
+import java.util.List;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.hbr.transform.v20170908.DescribeVaultAlertConfigResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class DescribeVaultAlertConfigResponse extends AcsResponse {
+
+	private String requestId;
+
+	private Boolean success;
+
+	private String code;
+
+	private String message;
+
+	private String alertSetting;
+
+	private List<Contact> contacts;
+
+	private List<ContactGroup> contactGroups;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getAlertSetting() {
+		return this.alertSetting;
+	}
+
+	public void setAlertSetting(String alertSetting) {
+		this.alertSetting = alertSetting;
+	}
+
+	public List<Contact> getContacts() {
+		return this.contacts;
+	}
+
+	public void setContacts(List<Contact> contacts) {
+		this.contacts = contacts;
+	}
+
+	public List<ContactGroup> getContactGroups() {
+		return this.contactGroups;
+	}
+
+	public void setContactGroups(List<ContactGroup> contactGroups) {
+		this.contactGroups = contactGroups;
+	}
+
+	public static class Contact {
+
+		private String contactId;
+
+		private String name;
+
+		private String email;
+
+		private String mobile;
+
+		private String description;
+
+		public String getContactId() {
+			return this.contactId;
+		}
+
+		public void setContactId(String contactId) {
+			this.contactId = contactId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public String getMobile() {
+			return this.mobile;
+		}
+
+		public void setMobile(String mobile) {
+			this.mobile = mobile;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+	}
+
+	public static class ContactGroup {
+
+		private String contactGroupId;
+
+		private String displayName;
+
+		public String getContactGroupId() {
+			return this.contactGroupId;
+		}
+
+		public void setContactGroupId(String contactGroupId) {
+			this.contactGroupId = contactGroupId;
+		}
+
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
+	}
+
+	@Override
+	public DescribeVaultAlertConfigResponse getInstance(UnmarshallerContext context) {
+		return	DescribeVaultAlertConfigResponseUnmarshaller.unmarshall(this, context);
+	}
+}
