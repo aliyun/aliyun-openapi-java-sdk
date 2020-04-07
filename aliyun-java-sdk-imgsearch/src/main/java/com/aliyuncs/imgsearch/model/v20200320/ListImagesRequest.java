@@ -25,7 +25,15 @@ import com.aliyuncs.imgsearch.Endpoint;
 public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 	   
 
-	private String fromScrollId;
+	private String entityIdPrefix;
+
+	private Integer limit;
+
+	private String order;
+
+	private Integer offset;
+
+	private String token;
 
 	private String dbName;
 	public ListImagesRequest() {
@@ -37,14 +45,58 @@ public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getFromScrollId() {
-		return this.fromScrollId;
+	public String getEntityIdPrefix() {
+		return this.entityIdPrefix;
 	}
 
-	public void setFromScrollId(String fromScrollId) {
-		this.fromScrollId = fromScrollId;
-		if(fromScrollId != null){
-			putBodyParameter("FromScrollId", fromScrollId);
+	public void setEntityIdPrefix(String entityIdPrefix) {
+		this.entityIdPrefix = entityIdPrefix;
+		if(entityIdPrefix != null){
+			putBodyParameter("EntityIdPrefix", entityIdPrefix);
+		}
+	}
+
+	public Integer getLimit() {
+		return this.limit;
+	}
+
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+		if(limit != null){
+			putBodyParameter("Limit", limit.toString());
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putBodyParameter("Order", order);
+		}
+	}
+
+	public Integer getOffset() {
+		return this.offset;
+	}
+
+	public void setOffset(Integer offset) {
+		this.offset = offset;
+		if(offset != null){
+			putBodyParameter("Offset", offset.toString());
+		}
+	}
+
+	public String getToken() {
+		return this.token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+		if(token != null){
+			putBodyParameter("Token", token);
 		}
 	}
 

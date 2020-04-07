@@ -15,6 +15,7 @@
 package com.aliyuncs.imgsearch.transform.v20200320;
 
 import com.aliyuncs.imgsearch.model.v20200320.AddImageResponse;
+import com.aliyuncs.imgsearch.model.v20200320.AddImageResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,6 +24,10 @@ public class AddImageResponseUnmarshaller {
 	public static AddImageResponse unmarshall(AddImageResponse addImageResponse, UnmarshallerContext _ctx) {
 		
 		addImageResponse.setRequestId(_ctx.stringValue("AddImageResponse.RequestId"));
+
+		Data data = new Data();
+		data.setDataId(_ctx.stringValue("AddImageResponse.Data.DataId"));
+		addImageResponse.setData(data);
 	 
 	 	return addImageResponse;
 	}

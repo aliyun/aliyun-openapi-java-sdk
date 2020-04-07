@@ -36,7 +36,6 @@ public class SearchImageResponseUnmarshaller {
 			MatchListItem matchListItem = new MatchListItem();
 			matchListItem.setDataId(_ctx.stringValue("SearchImageResponse.Data.MatchList["+ i +"].DataId"));
 			matchListItem.setExtraData(_ctx.stringValue("SearchImageResponse.Data.MatchList["+ i +"].ExtraData"));
-			matchListItem.setImageUrl(_ctx.stringValue("SearchImageResponse.Data.MatchList["+ i +"].ImageUrl"));
 			matchListItem.setEntityId(_ctx.stringValue("SearchImageResponse.Data.MatchList["+ i +"].EntityId"));
 
 			matchList.add(matchListItem);

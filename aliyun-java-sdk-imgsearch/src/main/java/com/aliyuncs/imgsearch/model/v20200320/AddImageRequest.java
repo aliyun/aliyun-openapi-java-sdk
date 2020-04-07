@@ -27,13 +27,11 @@ public class AddImageRequest extends RpcAcsRequest<AddImageResponse> {
 
 	private String entityId;
 
-	private String extraData;
-
 	private String dbName;
 
-	private String dataId;
-
 	private String imageUrl;
+
+	private String extraData;
 	public AddImageRequest() {
 		super("imgsearch", "2020-03-20", "AddImage", "imgsearch");
 		setMethod(MethodType.POST);
@@ -54,17 +52,6 @@ public class AddImageRequest extends RpcAcsRequest<AddImageResponse> {
 		}
 	}
 
-	public String getExtraData() {
-		return this.extraData;
-	}
-
-	public void setExtraData(String extraData) {
-		this.extraData = extraData;
-		if(extraData != null){
-			putBodyParameter("ExtraData", extraData);
-		}
-	}
-
 	public String getDbName() {
 		return this.dbName;
 	}
@@ -76,17 +63,6 @@ public class AddImageRequest extends RpcAcsRequest<AddImageResponse> {
 		}
 	}
 
-	public String getDataId() {
-		return this.dataId;
-	}
-
-	public void setDataId(String dataId) {
-		this.dataId = dataId;
-		if(dataId != null){
-			putBodyParameter("DataId", dataId);
-		}
-	}
-
 	public String getImageUrl() {
 		return this.imageUrl;
 	}
@@ -95,6 +71,17 @@ public class AddImageRequest extends RpcAcsRequest<AddImageResponse> {
 		this.imageUrl = imageUrl;
 		if(imageUrl != null){
 			putBodyParameter("ImageUrl", imageUrl);
+		}
+	}
+
+	public String getExtraData() {
+		return this.extraData;
+	}
+
+	public void setExtraData(String extraData) {
+		this.extraData = extraData;
+		if(extraData != null){
+			putBodyParameter("ExtraData", extraData);
 		}
 	}
 

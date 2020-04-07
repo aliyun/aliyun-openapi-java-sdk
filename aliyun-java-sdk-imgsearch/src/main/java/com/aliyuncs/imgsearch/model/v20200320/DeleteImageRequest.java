@@ -25,9 +25,9 @@ import com.aliyuncs.imgsearch.Endpoint;
 public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 	   
 
-	private String dbName;
+	private String entityId;
 
-	private String dataId;
+	private String dbName;
 	public DeleteImageRequest() {
 		super("imgsearch", "2020-03-20", "DeleteImage", "imgsearch");
 		setMethod(MethodType.POST);
@@ -35,6 +35,17 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getEntityId() {
+		return this.entityId;
+	}
+
+	public void setEntityId(String entityId) {
+		this.entityId = entityId;
+		if(entityId != null){
+			putBodyParameter("EntityId", entityId);
+		}
 	}
 
 	public String getDbName() {
@@ -45,17 +56,6 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 		this.dbName = dbName;
 		if(dbName != null){
 			putBodyParameter("DbName", dbName);
-		}
-	}
-
-	public String getDataId() {
-		return this.dataId;
-	}
-
-	public void setDataId(String dataId) {
-		this.dataId = dataId;
-		if(dataId != null){
-			putBodyParameter("DataId", dataId);
 		}
 	}
 

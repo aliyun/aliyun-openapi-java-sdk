@@ -47,16 +47,26 @@ public class ListImagesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String scrollId;
+		private String token;
+
+		private Integer totalCount;
 
 		private List<ImageListItem> imageList;
 
-		public String getScrollId() {
-			return this.scrollId;
+		public String getToken() {
+			return this.token;
 		}
 
-		public void setScrollId(String scrollId) {
-			this.scrollId = scrollId;
+		public void setToken(String token) {
+			this.token = token;
+		}
+
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public List<ImageListItem> getImageList() {
@@ -73,9 +83,11 @@ public class ListImagesResponse extends AcsResponse {
 
 			private String extraData;
 
-			private String imageUrl;
-
 			private String entityId;
+
+			private Long updatedAt;
+
+			private Long createdAt;
 
 			public String getDataId() {
 				return this.dataId;
@@ -93,20 +105,28 @@ public class ListImagesResponse extends AcsResponse {
 				this.extraData = extraData;
 			}
 
-			public String getImageUrl() {
-				return this.imageUrl;
-			}
-
-			public void setImageUrl(String imageUrl) {
-				this.imageUrl = imageUrl;
-			}
-
 			public String getEntityId() {
 				return this.entityId;
 			}
 
 			public void setEntityId(String entityId) {
 				this.entityId = entityId;
+			}
+
+			public Long getUpdatedAt() {
+				return this.updatedAt;
+			}
+
+			public void setUpdatedAt(Long updatedAt) {
+				this.updatedAt = updatedAt;
+			}
+
+			public Long getCreatedAt() {
+				return this.createdAt;
+			}
+
+			public void setCreatedAt(Long createdAt) {
+				this.createdAt = createdAt;
 			}
 		}
 	}

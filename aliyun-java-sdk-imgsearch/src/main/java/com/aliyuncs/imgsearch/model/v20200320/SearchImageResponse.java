@@ -63,8 +63,6 @@ public class SearchImageResponse extends AcsResponse {
 
 			private String extraData;
 
-			private String imageUrl;
-
 			private String entityId;
 
 			public String getDataId() {
@@ -81,14 +79,6 @@ public class SearchImageResponse extends AcsResponse {
 
 			public void setExtraData(String extraData) {
 				this.extraData = extraData;
-			}
-
-			public String getImageUrl() {
-				return this.imageUrl;
-			}
-
-			public void setImageUrl(String imageUrl) {
-				this.imageUrl = imageUrl;
 			}
 
 			public String getEntityId() {

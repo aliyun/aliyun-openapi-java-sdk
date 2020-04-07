@@ -26,12 +26,35 @@ public class AddImageResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Data data;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String dataId;
+
+		public String getDataId() {
+			return this.dataId;
+		}
+
+		public void setDataId(String dataId) {
+			this.dataId = dataId;
+		}
 	}
 
 	@Override
