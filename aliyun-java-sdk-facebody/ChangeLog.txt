@@ -1,3 +1,6 @@
+2020-04-07 Version: 1.0.8
+- Generated 2019-12-30 for `facebody`.
+
 2020-03-23 Version: 1.0.7
 - Sdk version 107.
 

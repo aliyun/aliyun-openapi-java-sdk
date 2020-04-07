@@ -15,18 +15,16 @@
 package com.aliyuncs.facebody.model.v20191230;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.facebody.transform.v20191230.AddFaceResponseUnmarshaller;
+import com.aliyuncs.facebody.transform.v20191230.AddFaceEntityResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddFaceResponse extends AcsResponse {
+public class AddFaceEntityResponse extends AcsResponse {
 
 	private String requestId;
-
-	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,30 +34,9 @@ public class AddFaceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Data getData() {
-		return this.data;
-	}
-
-	public void setData(Data data) {
-		this.data = data;
-	}
-
-	public static class Data {
-
-		private String faceId;
-
-		public String getFaceId() {
-			return this.faceId;
-		}
-
-		public void setFaceId(String faceId) {
-			this.faceId = faceId;
-		}
-	}
-
 	@Override
-	public AddFaceResponse getInstance(UnmarshallerContext context) {
-		return	AddFaceResponseUnmarshaller.unmarshall(this, context);
+	public AddFaceEntityResponse getInstance(UnmarshallerContext context) {
+		return	AddFaceEntityResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

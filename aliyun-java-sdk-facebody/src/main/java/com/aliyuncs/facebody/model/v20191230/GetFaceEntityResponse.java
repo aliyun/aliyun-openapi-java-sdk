@@ -14,15 +14,16 @@
 
 package com.aliyuncs.facebody.model.v20191230;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.facebody.transform.v20191230.AddFaceResponseUnmarshaller;
+import com.aliyuncs.facebody.transform.v20191230.GetFaceEntityResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddFaceResponse extends AcsResponse {
+public class GetFaceEntityResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -46,20 +47,63 @@ public class AddFaceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String faceId;
+		private String dbName;
 
-		public String getFaceId() {
-			return this.faceId;
+		private String entityId;
+
+		private String labels;
+
+		private List<Face> faces;
+
+		public String getDbName() {
+			return this.dbName;
 		}
 
-		public void setFaceId(String faceId) {
-			this.faceId = faceId;
+		public void setDbName(String dbName) {
+			this.dbName = dbName;
+		}
+
+		public String getEntityId() {
+			return this.entityId;
+		}
+
+		public void setEntityId(String entityId) {
+			this.entityId = entityId;
+		}
+
+		public String getLabels() {
+			return this.labels;
+		}
+
+		public void setLabels(String labels) {
+			this.labels = labels;
+		}
+
+		public List<Face> getFaces() {
+			return this.faces;
+		}
+
+		public void setFaces(List<Face> faces) {
+			this.faces = faces;
+		}
+
+		public static class Face {
+
+			private String faceId;
+
+			public String getFaceId() {
+				return this.faceId;
+			}
+
+			public void setFaceId(String faceId) {
+				this.faceId = faceId;
+			}
 		}
 	}
 
 	@Override
-	public AddFaceResponse getInstance(UnmarshallerContext context) {
-		return	AddFaceResponseUnmarshaller.unmarshall(this, context);
+	public GetFaceEntityResponse getInstance(UnmarshallerContext context) {
+		return	GetFaceEntityResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

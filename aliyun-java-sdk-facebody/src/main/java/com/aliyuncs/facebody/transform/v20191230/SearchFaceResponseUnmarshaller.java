@@ -51,7 +51,6 @@ public class SearchFaceResponseUnmarshaller {
 				faceItemsItem.setScore(_ctx.floatValue("SearchFaceResponse.Data.MatchList["+ i +"].FaceItems["+ j +"].Score"));
 				faceItemsItem.setExtraData(_ctx.stringValue("SearchFaceResponse.Data.MatchList["+ i +"].FaceItems["+ j +"].ExtraData"));
 				faceItemsItem.setEntityId(_ctx.stringValue("SearchFaceResponse.Data.MatchList["+ i +"].FaceItems["+ j +"].EntityId"));
-				faceItemsItem.setImageUrl(_ctx.stringValue("SearchFaceResponse.Data.MatchList["+ i +"].FaceItems["+ j +"].ImageUrl"));
 
 				faceItems.add(faceItemsItem);
 			}

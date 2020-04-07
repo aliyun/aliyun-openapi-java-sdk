@@ -89,8 +89,6 @@ public class SearchFaceResponse extends AcsResponse {
 
 				private String entityId;
 
-				private String imageUrl;
-
 				public String getFaceId() {
 					return this.faceId;
 				}
@@ -121,14 +119,6 @@ public class SearchFaceResponse extends AcsResponse {
 
 				public void setEntityId(String entityId) {
 					this.entityId = entityId;
-				}
-
-				public String getImageUrl() {
-					return this.imageUrl;
-				}
-
-				public void setImageUrl(String imageUrl) {
-					this.imageUrl = imageUrl;
 				}
 			}
 

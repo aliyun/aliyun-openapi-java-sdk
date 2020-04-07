@@ -14,21 +14,16 @@
 
 package com.aliyuncs.facebody.transform.v20191230;
 
-import com.aliyuncs.facebody.model.v20191230.AddFaceResponse;
-import com.aliyuncs.facebody.model.v20191230.AddFaceResponse.Data;
+import com.aliyuncs.facebody.model.v20191230.DeleteFaceEntityResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class AddFaceResponseUnmarshaller {
+public class DeleteFaceEntityResponseUnmarshaller {
 
-	public static AddFaceResponse unmarshall(AddFaceResponse addFaceResponse, UnmarshallerContext _ctx) {
+	public static DeleteFaceEntityResponse unmarshall(DeleteFaceEntityResponse deleteFaceEntityResponse, UnmarshallerContext _ctx) {
 		
-		addFaceResponse.setRequestId(_ctx.stringValue("AddFaceResponse.RequestId"));
-
-		Data data = new Data();
-		data.setFaceId(_ctx.stringValue("AddFaceResponse.Data.FaceId"));
-		addFaceResponse.setData(data);
+		deleteFaceEntityResponse.setRequestId(_ctx.stringValue("DeleteFaceEntityResponse.RequestId"));
 	 
-	 	return addFaceResponse;
+	 	return deleteFaceEntityResponse;
 	}
 }

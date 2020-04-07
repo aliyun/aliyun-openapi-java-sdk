@@ -22,18 +22,14 @@ import com.aliyuncs.facebody.Endpoint;
  * @author auto create
  * @version 
  */
-public class AddFaceRequest extends RpcAcsRequest<AddFaceResponse> {
+public class DeleteFaceEntityRequest extends RpcAcsRequest<DeleteFaceEntityResponse> {
 	   
 
 	private String entityId;
 
 	private String dbName;
-
-	private String imageUrl;
-
-	private String extraData;
-	public AddFaceRequest() {
-		super("facebody", "2019-12-30", "AddFace", "facebody");
+	public DeleteFaceEntityRequest() {
+		super("facebody", "2019-12-30", "DeleteFaceEntity", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,31 +59,9 @@ public class AddFaceRequest extends RpcAcsRequest<AddFaceResponse> {
 		}
 	}
 
-	public String getImageUrl() {
-		return this.imageUrl;
-	}
-
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-		if(imageUrl != null){
-			putBodyParameter("ImageUrl", imageUrl);
-		}
-	}
-
-	public String getExtraData() {
-		return this.extraData;
-	}
-
-	public void setExtraData(String extraData) {
-		this.extraData = extraData;
-		if(extraData != null){
-			putBodyParameter("ExtraData", extraData);
-		}
-	}
-
 	@Override
-	public Class<AddFaceResponse> getResponseClass() {
-		return AddFaceResponse.class;
+	public Class<DeleteFaceEntityResponse> getResponseClass() {
+		return DeleteFaceEntityResponse.class;
 	}
 
 }
