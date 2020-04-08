@@ -22,7 +22,7 @@ import com.aliyuncs.aliyuncvc.Endpoint;
  * @author auto create
  * @version 
  */
-public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
+public class JoinMeetingInternationalRequest extends RpcAcsRequest<JoinMeetingInternationalResponse> {
 	   
 
 	private String userId;
@@ -30,8 +30,8 @@ public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
 	private String password;
 
 	private String meetingCode;
-	public JoinMeetingRequest() {
-		super("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc");
+	public JoinMeetingInternationalRequest() {
+		super("aliyuncvc", "2019-10-30", "JoinMeetingInternational", "aliyuncvc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -73,8 +73,8 @@ public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
 	}
 
 	@Override
-	public Class<JoinMeetingResponse> getResponseClass() {
-		return JoinMeetingResponse.class;
+	public Class<JoinMeetingInternationalResponse> getResponseClass() {
+		return JoinMeetingInternationalResponse.class;
 	}
 
 }

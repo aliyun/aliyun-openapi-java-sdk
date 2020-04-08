@@ -39,6 +39,7 @@ public class GetMeetingResponseUnmarshaller {
 		meetingInfo.setCreateTime(_ctx.longValue("GetMeetingResponse.MeetingInfo.CreateTime"));
 		meetingInfo.setUserId(_ctx.stringValue("GetMeetingResponse.MeetingInfo.UserId"));
 		meetingInfo.setMeetingUUID(_ctx.stringValue("GetMeetingResponse.MeetingInfo.MeetingUUID"));
+		meetingInfo.setPassword(_ctx.stringValue("GetMeetingResponse.MeetingInfo.Password"));
 
 		List<MemberListItem> memberList = new ArrayList<MemberListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMeetingResponse.MeetingInfo.MemberList.Length"); i++) {

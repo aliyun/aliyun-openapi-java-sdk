@@ -22,16 +22,18 @@ import com.aliyuncs.aliyuncvc.Endpoint;
  * @author auto create
  * @version 
  */
-public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
+public class ModifyMeetingPasswordInternationalRequest extends RpcAcsRequest<ModifyMeetingPasswordInternationalResponse> {
 	   
 
 	private String userId;
 
-	private String password;
+	private Boolean openPasswordFlag;
 
-	private String meetingCode;
-	public JoinMeetingRequest() {
-		super("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc");
+	private String meetingUUID;
+
+	private String password;
+	public ModifyMeetingPasswordInternationalRequest() {
+		super("aliyuncvc", "2019-10-30", "ModifyMeetingPasswordInternational", "aliyuncvc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,6 +52,28 @@ public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
 		}
 	}
 
+	public Boolean getOpenPasswordFlag() {
+		return this.openPasswordFlag;
+	}
+
+	public void setOpenPasswordFlag(Boolean openPasswordFlag) {
+		this.openPasswordFlag = openPasswordFlag;
+		if(openPasswordFlag != null){
+			putBodyParameter("OpenPasswordFlag", openPasswordFlag.toString());
+		}
+	}
+
+	public String getMeetingUUID() {
+		return this.meetingUUID;
+	}
+
+	public void setMeetingUUID(String meetingUUID) {
+		this.meetingUUID = meetingUUID;
+		if(meetingUUID != null){
+			putBodyParameter("MeetingUUID", meetingUUID);
+		}
+	}
+
 	public String getPassword() {
 		return this.password;
 	}
@@ -61,20 +85,9 @@ public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
 		}
 	}
 
-	public String getMeetingCode() {
-		return this.meetingCode;
-	}
-
-	public void setMeetingCode(String meetingCode) {
-		this.meetingCode = meetingCode;
-		if(meetingCode != null){
-			putBodyParameter("MeetingCode", meetingCode);
-		}
-	}
-
 	@Override
-	public Class<JoinMeetingResponse> getResponseClass() {
-		return JoinMeetingResponse.class;
+	public Class<ModifyMeetingPasswordInternationalResponse> getResponseClass() {
+		return ModifyMeetingPasswordInternationalResponse.class;
 	}
 
 }

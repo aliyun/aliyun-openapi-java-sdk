@@ -22,16 +22,12 @@ import com.aliyuncs.aliyuncvc.Endpoint;
  * @author auto create
  * @version 
  */
-public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
+public class GetMeetingInternationalRequest extends RpcAcsRequest<GetMeetingInternationalResponse> {
 	   
 
-	private String userId;
-
-	private String password;
-
-	private String meetingCode;
-	public JoinMeetingRequest() {
-		super("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc");
+	private String meetingUUID;
+	public GetMeetingInternationalRequest() {
+		super("aliyuncvc", "2019-10-30", "GetMeetingInternational", "aliyuncvc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +35,20 @@ public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getMeetingUUID() {
+		return this.meetingUUID;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
-		}
-	}
-
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putBodyParameter("Password", password);
-		}
-	}
-
-	public String getMeetingCode() {
-		return this.meetingCode;
-	}
-
-	public void setMeetingCode(String meetingCode) {
-		this.meetingCode = meetingCode;
-		if(meetingCode != null){
-			putBodyParameter("MeetingCode", meetingCode);
+	public void setMeetingUUID(String meetingUUID) {
+		this.meetingUUID = meetingUUID;
+		if(meetingUUID != null){
+			putBodyParameter("MeetingUUID", meetingUUID);
 		}
 	}
 
 	@Override
-	public Class<JoinMeetingResponse> getResponseClass() {
-		return JoinMeetingResponse.class;
+	public Class<GetMeetingInternationalResponse> getResponseClass() {
+		return GetMeetingInternationalResponse.class;
 	}
 
 }

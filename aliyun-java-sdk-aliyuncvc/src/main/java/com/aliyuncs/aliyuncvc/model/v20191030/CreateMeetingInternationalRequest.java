@@ -22,21 +22,34 @@ import com.aliyuncs.aliyuncvc.Endpoint;
  * @author auto create
  * @version 
  */
-public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
+public class CreateMeetingInternationalRequest extends RpcAcsRequest<CreateMeetingInternationalResponse> {
 	   
+
+	private String meetingName;
 
 	private String userId;
 
-	private String password;
+	private String openPasswordFlag;
 
-	private String meetingCode;
-	public JoinMeetingRequest() {
-		super("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc");
+	private String password;
+	public CreateMeetingInternationalRequest() {
+		super("aliyuncvc", "2019-10-30", "CreateMeetingInternational", "aliyuncvc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMeetingName() {
+		return this.meetingName;
+	}
+
+	public void setMeetingName(String meetingName) {
+		this.meetingName = meetingName;
+		if(meetingName != null){
+			putBodyParameter("MeetingName", meetingName);
+		}
 	}
 
 	public String getUserId() {
@@ -47,6 +60,17 @@ public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
 		this.userId = userId;
 		if(userId != null){
 			putBodyParameter("UserId", userId);
+		}
+	}
+
+	public String getOpenPasswordFlag() {
+		return this.openPasswordFlag;
+	}
+
+	public void setOpenPasswordFlag(String openPasswordFlag) {
+		this.openPasswordFlag = openPasswordFlag;
+		if(openPasswordFlag != null){
+			putBodyParameter("OpenPasswordFlag", openPasswordFlag);
 		}
 	}
 
@@ -61,20 +85,9 @@ public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
 		}
 	}
 
-	public String getMeetingCode() {
-		return this.meetingCode;
-	}
-
-	public void setMeetingCode(String meetingCode) {
-		this.meetingCode = meetingCode;
-		if(meetingCode != null){
-			putBodyParameter("MeetingCode", meetingCode);
-		}
-	}
-
 	@Override
-	public Class<JoinMeetingResponse> getResponseClass() {
-		return JoinMeetingResponse.class;
+	public Class<CreateMeetingInternationalResponse> getResponseClass() {
+		return CreateMeetingInternationalResponse.class;
 	}
 
 }

@@ -22,16 +22,14 @@ import com.aliyuncs.aliyuncvc.Endpoint;
  * @author auto create
  * @version 
  */
-public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
+public class CreateUserInternationalRequest extends RpcAcsRequest<CreateUserInternationalResponse> {
 	   
 
-	private String userId;
+	private Integer count;
 
-	private String password;
-
-	private String meetingCode;
-	public JoinMeetingRequest() {
-		super("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc");
+	private String userInfo;
+	public CreateUserInternationalRequest() {
+		super("aliyuncvc", "2019-10-30", "CreateUserInternational", "aliyuncvc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public Integer getCount() {
+		return this.count;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
+	public void setCount(Integer count) {
+		this.count = count;
+		if(count != null){
+			putBodyParameter("Count", count.toString());
 		}
 	}
 
-	public String getPassword() {
-		return this.password;
+	public String getUserInfo() {
+		return this.userInfo;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putBodyParameter("Password", password);
-		}
-	}
-
-	public String getMeetingCode() {
-		return this.meetingCode;
-	}
-
-	public void setMeetingCode(String meetingCode) {
-		this.meetingCode = meetingCode;
-		if(meetingCode != null){
-			putBodyParameter("MeetingCode", meetingCode);
+	public void setUserInfo(String userInfo) {
+		this.userInfo = userInfo;
+		if(userInfo != null){
+			putBodyParameter("UserInfo", userInfo);
 		}
 	}
 
 	@Override
-	public Class<JoinMeetingResponse> getResponseClass() {
-		return JoinMeetingResponse.class;
+	public Class<CreateUserInternationalResponse> getResponseClass() {
+		return CreateUserInternationalResponse.class;
 	}
 
 }

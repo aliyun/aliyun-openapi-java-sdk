@@ -16,14 +16,14 @@ package com.aliyuncs.aliyuncvc.model.v20191030;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.aliyuncvc.transform.v20191030.GetMeetingResponseUnmarshaller;
+import com.aliyuncs.aliyuncvc.transform.v20191030.GetMeetingInternationalResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetMeetingResponse extends AcsResponse {
+public class GetMeetingInternationalResponse extends AcsResponse {
 
 	private Integer errorCode;
 
@@ -212,8 +212,8 @@ public class GetMeetingResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetMeetingResponse getInstance(UnmarshallerContext context) {
-		return	GetMeetingResponseUnmarshaller.unmarshall(this, context);
+	public GetMeetingInternationalResponse getInstance(UnmarshallerContext context) {
+		return	GetMeetingInternationalResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

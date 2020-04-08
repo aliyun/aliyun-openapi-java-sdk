@@ -28,6 +28,10 @@ public class CreateMeetingRequest extends RpcAcsRequest<CreateMeetingResponse> {
 	private String meetingName;
 
 	private String userId;
+
+	private Boolean openPasswordFlag;
+
+	private String password;
 	public CreateMeetingRequest() {
 		super("aliyuncvc", "2019-10-30", "CreateMeeting", "aliyuncvc");
 		setMethod(MethodType.POST);
@@ -56,6 +60,28 @@ public class CreateMeetingRequest extends RpcAcsRequest<CreateMeetingResponse> {
 		this.userId = userId;
 		if(userId != null){
 			putBodyParameter("UserId", userId);
+		}
+	}
+
+	public Boolean getOpenPasswordFlag() {
+		return this.openPasswordFlag;
+	}
+
+	public void setOpenPasswordFlag(Boolean openPasswordFlag) {
+		this.openPasswordFlag = openPasswordFlag;
+		if(openPasswordFlag != null){
+			putBodyParameter("OpenPasswordFlag", openPasswordFlag.toString());
+		}
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putBodyParameter("Password", password);
 		}
 	}
 
