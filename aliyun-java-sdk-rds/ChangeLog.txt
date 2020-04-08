@@ -1,3 +1,6 @@
+2020-04-08 Version: 2.4.6
+- Support terminating SQL Server OSS migration task by id.
+
 2020-03-23 Version: 2.4.5
 - Generated 2014-08-15 for `Rds`.
 

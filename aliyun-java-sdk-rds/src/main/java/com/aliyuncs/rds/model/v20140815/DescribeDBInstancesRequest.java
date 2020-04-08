@@ -51,6 +51,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String clientToken;
 
+	private String instanceLevel;
+
 	private String searchKey;
 
 	private Integer pageNumber;
@@ -225,6 +227,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getInstanceLevel() {
+		return this.instanceLevel;
+	}
+
+	public void setInstanceLevel(String instanceLevel) {
+		this.instanceLevel = instanceLevel;
+		if(instanceLevel != null){
+			putQueryParameter("InstanceLevel", instanceLevel);
 		}
 	}
 

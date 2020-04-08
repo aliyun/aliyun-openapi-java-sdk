@@ -22,20 +22,20 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLocalAvailableRecoveryTimeRequest extends RpcAcsRequest<DescribeLocalAvailableRecoveryTimeResponse> {
+public class TerminateMigrateTaskRequest extends RpcAcsRequest<TerminateMigrateTaskResponse> {
 	   
 
 	private Long resourceOwnerId;
+
+	private String migrateTaskId;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
 	private String dBInstanceId;
-
-	private String region;
-	public DescribeLocalAvailableRecoveryTimeRequest() {
-		super("Rds", "2014-08-15", "DescribeLocalAvailableRecoveryTime", "rds");
+	public TerminateMigrateTaskRequest() {
+		super("Rds", "2014-08-15", "TerminateMigrateTask", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,6 +51,17 @@ public class DescribeLocalAvailableRecoveryTimeRequest extends RpcAcsRequest<Des
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getMigrateTaskId() {
+		return this.migrateTaskId;
+	}
+
+	public void setMigrateTaskId(String migrateTaskId) {
+		this.migrateTaskId = migrateTaskId;
+		if(migrateTaskId != null){
+			putQueryParameter("MigrateTaskId", migrateTaskId);
 		}
 	}
 
@@ -87,20 +98,9 @@ public class DescribeLocalAvailableRecoveryTimeRequest extends RpcAcsRequest<Des
 		}
 	}
 
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
-		}
-	}
-
 	@Override
-	public Class<DescribeLocalAvailableRecoveryTimeResponse> getResponseClass() {
-		return DescribeLocalAvailableRecoveryTimeResponse.class;
+	public Class<TerminateMigrateTaskResponse> getResponseClass() {
+		return TerminateMigrateTaskResponse.class;
 	}
 
 }

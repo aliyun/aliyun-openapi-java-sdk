@@ -51,6 +51,12 @@ public class DescribeDedicatedHostsResponseUnmarshaller {
 			dedicatedHostsItem.setBastionInstanceId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].BastionInstanceId"));
 			dedicatedHostsItem.setOpenPermission(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].OpenPermission"));
 			dedicatedHostsItem.setAccountName(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].AccountName"));
+			dedicatedHostsItem.setHostCPU(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].HostCPU"));
+			dedicatedHostsItem.setHostMem(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].HostMem"));
+			dedicatedHostsItem.setHostStorage(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].HostStorage"));
+			dedicatedHostsItem.setCpuUsed(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].CpuUsed"));
+			dedicatedHostsItem.setMemoryUsed(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].MemoryUsed"));
+			dedicatedHostsItem.setStorageUsed(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].StorageUsed"));
 
 			dedicatedHosts.add(dedicatedHostsItem);
 		}
