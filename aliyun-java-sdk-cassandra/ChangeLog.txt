@@ -1,0 +1,3 @@
+2020-04-08 Version: 1.0.0
+- Generated 2019-01-01 for `Cassandra`.
+
