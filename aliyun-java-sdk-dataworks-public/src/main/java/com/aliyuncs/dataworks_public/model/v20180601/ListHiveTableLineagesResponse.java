@@ -113,13 +113,9 @@ public class ListHiveTableLineagesResponse extends AcsResponse {
 
 			private String databaseName;
 
-			private Integer directDestTableNum;
-
 			private String engine;
 
 			private String createTime;
-
-			private Integer directSrcTableNum;
 
 			private String clusterId;
 
@@ -147,14 +143,6 @@ public class ListHiveTableLineagesResponse extends AcsResponse {
 				this.databaseName = databaseName;
 			}
 
-			public Integer getDirectDestTableNum() {
-				return this.directDestTableNum;
-			}
-
-			public void setDirectDestTableNum(Integer directDestTableNum) {
-				this.directDestTableNum = directDestTableNum;
-			}
-
 			public String getEngine() {
 				return this.engine;
 			}
@@ -169,14 +157,6 @@ public class ListHiveTableLineagesResponse extends AcsResponse {
 
 			public void setCreateTime(String createTime) {
 				this.createTime = createTime;
-			}
-
-			public Integer getDirectSrcTableNum() {
-				return this.directSrcTableNum;
-			}
-
-			public void setDirectSrcTableNum(Integer directSrcTableNum) {
-				this.directSrcTableNum = directSrcTableNum;
 			}
 
 			public String getClusterId() {

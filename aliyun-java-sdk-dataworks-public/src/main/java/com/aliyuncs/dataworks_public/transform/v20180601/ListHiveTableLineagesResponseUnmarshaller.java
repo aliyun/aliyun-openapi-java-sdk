@@ -40,10 +40,8 @@ public class ListHiveTableLineagesResponseUnmarshaller {
 			TableLineage tableLineage = new TableLineage();
 			tableLineage.setModifiedTime(_ctx.stringValue("ListHiveTableLineagesResponse.Data.UpstreamLineages["+ i +"].ModifiedTime"));
 			tableLineage.setDatabaseName(_ctx.stringValue("ListHiveTableLineagesResponse.Data.UpstreamLineages["+ i +"].DatabaseName"));
-			tableLineage.setDirectDestTableNum(_ctx.integerValue("ListHiveTableLineagesResponse.Data.UpstreamLineages["+ i +"].DirectDestTableNum"));
 			tableLineage.setEngine(_ctx.stringValue("ListHiveTableLineagesResponse.Data.UpstreamLineages["+ i +"].Engine"));
 			tableLineage.setCreateTime(_ctx.stringValue("ListHiveTableLineagesResponse.Data.UpstreamLineages["+ i +"].CreateTime"));
-			tableLineage.setDirectSrcTableNum(_ctx.integerValue("ListHiveTableLineagesResponse.Data.UpstreamLineages["+ i +"].DirectSrcTableNum"));
 			tableLineage.setClusterId(_ctx.stringValue("ListHiveTableLineagesResponse.Data.UpstreamLineages["+ i +"].ClusterId"));
 			tableLineage.setSource(_ctx.stringValue("ListHiveTableLineagesResponse.Data.UpstreamLineages["+ i +"].Source"));
 			tableLineage.setTableName(_ctx.stringValue("ListHiveTableLineagesResponse.Data.UpstreamLineages["+ i +"].TableName"));
@@ -59,10 +57,8 @@ public class ListHiveTableLineagesResponseUnmarshaller {
 			TableLineage tableLineage_ = new TableLineage();
 			tableLineage_.setModifiedTime(_ctx.stringValue("ListHiveTableLineagesResponse.Data.DownstreamLineages["+ i +"].ModifiedTime"));
 			tableLineage_.setDatabaseName(_ctx.stringValue("ListHiveTableLineagesResponse.Data.DownstreamLineages["+ i +"].DatabaseName"));
-			tableLineage_.setDirectDestTableNum(_ctx.integerValue("ListHiveTableLineagesResponse.Data.DownstreamLineages["+ i +"].DirectDestTableNum"));
 			tableLineage_.setEngine(_ctx.stringValue("ListHiveTableLineagesResponse.Data.DownstreamLineages["+ i +"].Engine"));
 			tableLineage_.setCreateTime(_ctx.stringValue("ListHiveTableLineagesResponse.Data.DownstreamLineages["+ i +"].CreateTime"));
-			tableLineage_.setDirectSrcTableNum(_ctx.integerValue("ListHiveTableLineagesResponse.Data.DownstreamLineages["+ i +"].DirectSrcTableNum"));
 			tableLineage_.setClusterId(_ctx.stringValue("ListHiveTableLineagesResponse.Data.DownstreamLineages["+ i +"].ClusterId"));
 			tableLineage_.setSource(_ctx.stringValue("ListHiveTableLineagesResponse.Data.DownstreamLineages["+ i +"].Source"));
 			tableLineage_.setTableName(_ctx.stringValue("ListHiveTableLineagesResponse.Data.DownstreamLineages["+ i +"].TableName"));
