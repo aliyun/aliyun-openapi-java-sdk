@@ -111,6 +111,8 @@ public class DescribeEmrHiveTableResponse extends AcsResponse {
 
 		private String lastModifyTime;
 
+		private Long tableSize;
+
 		private List<TableColumn> columns;
 
 		public String getClusterBizId() {
@@ -287,6 +289,14 @@ public class DescribeEmrHiveTableResponse extends AcsResponse {
 
 		public void setLastModifyTime(String lastModifyTime) {
 			this.lastModifyTime = lastModifyTime;
+		}
+
+		public Long getTableSize() {
+			return this.tableSize;
+		}
+
+		public void setTableSize(Long tableSize) {
+			this.tableSize = tableSize;
 		}
 
 		public List<TableColumn> getColumns() {

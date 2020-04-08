@@ -47,6 +47,8 @@ public class ListHiveTableLineagesResponseUnmarshaller {
 			tableLineage.setClusterId(_ctx.stringValue("ListHiveTableLineagesResponse.Data.UpstreamLineages["+ i +"].ClusterId"));
 			tableLineage.setSource(_ctx.stringValue("ListHiveTableLineagesResponse.Data.UpstreamLineages["+ i +"].Source"));
 			tableLineage.setTableName(_ctx.stringValue("ListHiveTableLineagesResponse.Data.UpstreamLineages["+ i +"].TableName"));
+			tableLineage.setJobId(_ctx.stringValue("ListHiveTableLineagesResponse.Data.UpstreamLineages["+ i +"].JobId"));
+			tableLineage.setQueryText(_ctx.stringValue("ListHiveTableLineagesResponse.Data.UpstreamLineages["+ i +"].QueryText"));
 
 			upstreamLineages.add(tableLineage);
 		}
@@ -64,6 +66,8 @@ public class ListHiveTableLineagesResponseUnmarshaller {
 			tableLineage_.setClusterId(_ctx.stringValue("ListHiveTableLineagesResponse.Data.DownstreamLineages["+ i +"].ClusterId"));
 			tableLineage_.setSource(_ctx.stringValue("ListHiveTableLineagesResponse.Data.DownstreamLineages["+ i +"].Source"));
 			tableLineage_.setTableName(_ctx.stringValue("ListHiveTableLineagesResponse.Data.DownstreamLineages["+ i +"].TableName"));
+			tableLineage_.setJobId(_ctx.stringValue("ListHiveTableLineagesResponse.Data.DownstreamLineages["+ i +"].JobId"));
+			tableLineage_.setQueryText(_ctx.stringValue("ListHiveTableLineagesResponse.Data.DownstreamLineages["+ i +"].QueryText"));
 
 			downstreamLineages.add(tableLineage_);
 		}

@@ -54,6 +54,7 @@ public class DescribeEmrHiveTableResponseUnmarshaller {
 		data.setOwnerId(_ctx.stringValue("DescribeEmrHiveTableResponse.Data.OwnerId"));
 		data.setTableDesc(_ctx.stringValue("DescribeEmrHiveTableResponse.Data.TableDesc"));
 		data.setLastModifyTime(_ctx.stringValue("DescribeEmrHiveTableResponse.Data.LastModifyTime"));
+		data.setTableSize(_ctx.longValue("DescribeEmrHiveTableResponse.Data.TableSize"));
 
 		List<TableColumn> columns = new ArrayList<TableColumn>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEmrHiveTableResponse.Data.Columns.Length"); i++) {

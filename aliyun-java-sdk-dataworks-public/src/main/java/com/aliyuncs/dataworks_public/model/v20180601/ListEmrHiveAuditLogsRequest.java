@@ -29,7 +29,11 @@ public class ListEmrHiveAuditLogsRequest extends RpcAcsRequest<ListEmrHiveAuditL
 
 	private Integer pageSize;
 
+	private Integer endTime;
+
 	private String clusterId;
+
+	private Integer startTime;
 
 	private String tableName;
 
@@ -65,6 +69,17 @@ public class ListEmrHiveAuditLogsRequest extends RpcAcsRequest<ListEmrHiveAuditL
 		}
 	}
 
+	public Integer getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Integer endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -73,6 +88,17 @@ public class ListEmrHiveAuditLogsRequest extends RpcAcsRequest<ListEmrHiveAuditL
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Integer getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Integer startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 

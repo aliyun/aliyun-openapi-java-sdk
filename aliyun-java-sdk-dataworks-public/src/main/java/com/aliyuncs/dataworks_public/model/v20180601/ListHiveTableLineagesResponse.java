@@ -127,6 +127,10 @@ public class ListHiveTableLineagesResponse extends AcsResponse {
 
 			private String tableName;
 
+			private String jobId;
+
+			private String queryText;
+
 			public String getModifiedTime() {
 				return this.modifiedTime;
 			}
@@ -197,6 +201,22 @@ public class ListHiveTableLineagesResponse extends AcsResponse {
 
 			public void setTableName(String tableName) {
 				this.tableName = tableName;
+			}
+
+			public String getJobId() {
+				return this.jobId;
+			}
+
+			public void setJobId(String jobId) {
+				this.jobId = jobId;
+			}
+
+			public String getQueryText() {
+				return this.queryText;
+			}
+
+			public void setQueryText(String queryText) {
+				this.queryText = queryText;
 			}
 		}
 	}
