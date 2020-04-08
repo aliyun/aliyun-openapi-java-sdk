@@ -74,6 +74,8 @@ public class DescribeFaceVerifyResponse extends AcsResponse {
 
 		private String deviceToken;
 
+		private String subCode;
+
 		public String getPassed() {
 			return this.passed;
 		}
@@ -104,6 +106,14 @@ public class DescribeFaceVerifyResponse extends AcsResponse {
 
 		public void setDeviceToken(String deviceToken) {
 			this.deviceToken = deviceToken;
+		}
+
+		public String getSubCode() {
+			return this.subCode;
+		}
+
+		public void setSubCode(String subCode) {
+			this.subCode = subCode;
 		}
 	}
 
