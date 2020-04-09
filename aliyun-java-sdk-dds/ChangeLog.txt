@@ -1,6 +1,9 @@
 2020-04-09 Version: 3.1.0
 - Add DescribePrice API.
 
+2020-04-09 Version: 3.1.0
+- Add DescribePrice API.
+
 2020-03-11 Version: 3.0.0
 - Update structure for DescribeAvailableResource without compatible.
 
