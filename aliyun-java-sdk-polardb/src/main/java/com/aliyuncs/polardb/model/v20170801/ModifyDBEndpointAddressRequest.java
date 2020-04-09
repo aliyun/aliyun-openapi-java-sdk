@@ -31,6 +31,10 @@ public class ModifyDBEndpointAddressRequest extends RpcAcsRequest<ModifyDBEndpoi
 
 	private String dBEndpointId;
 
+	private String privateZoneName;
+
+	private String privateZoneAddressPrefix;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -79,6 +83,28 @@ public class ModifyDBEndpointAddressRequest extends RpcAcsRequest<ModifyDBEndpoi
 		this.dBEndpointId = dBEndpointId;
 		if(dBEndpointId != null){
 			putQueryParameter("DBEndpointId", dBEndpointId);
+		}
+	}
+
+	public String getPrivateZoneName() {
+		return this.privateZoneName;
+	}
+
+	public void setPrivateZoneName(String privateZoneName) {
+		this.privateZoneName = privateZoneName;
+		if(privateZoneName != null){
+			putQueryParameter("PrivateZoneName", privateZoneName);
+		}
+	}
+
+	public String getPrivateZoneAddressPrefix() {
+		return this.privateZoneAddressPrefix;
+	}
+
+	public void setPrivateZoneAddressPrefix(String privateZoneAddressPrefix) {
+		this.privateZoneAddressPrefix = privateZoneAddressPrefix;
+		if(privateZoneAddressPrefix != null){
+			putQueryParameter("PrivateZoneAddressPrefix", privateZoneAddressPrefix);
 		}
 	}
 

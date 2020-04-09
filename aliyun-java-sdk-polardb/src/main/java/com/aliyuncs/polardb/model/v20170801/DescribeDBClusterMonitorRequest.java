@@ -22,28 +22,20 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyAutoRenewAttributeRequest extends RpcAcsRequest<ModifyAutoRenewAttributeResponse> {
+public class DescribeDBClusterMonitorRequest extends RpcAcsRequest<DescribeDBClusterMonitorResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String duration;
-
-	private String resourceGroupId;
-
-	private String renewalStatus;
-
 	private String resourceOwnerAccount;
+
+	private String dBClusterId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String periodUnit;
-
-	private String dBClusterIds;
-	public ModifyAutoRenewAttributeRequest() {
-		super("polardb", "2017-08-01", "ModifyAutoRenewAttribute", "polardb");
+	public DescribeDBClusterMonitorRequest() {
+		super("polardb", "2017-08-01", "DescribeDBClusterMonitor", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,39 +54,6 @@ public class ModifyAutoRenewAttributeRequest extends RpcAcsRequest<ModifyAutoRen
 		}
 	}
 
-	public String getDuration() {
-		return this.duration;
-	}
-
-	public void setDuration(String duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getRenewalStatus() {
-		return this.renewalStatus;
-	}
-
-	public void setRenewalStatus(String renewalStatus) {
-		this.renewalStatus = renewalStatus;
-		if(renewalStatus != null){
-			putQueryParameter("RenewalStatus", renewalStatus);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -103,6 +62,17 @@ public class ModifyAutoRenewAttributeRequest extends RpcAcsRequest<ModifyAutoRen
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -128,31 +98,9 @@ public class ModifyAutoRenewAttributeRequest extends RpcAcsRequest<ModifyAutoRen
 		}
 	}
 
-	public String getPeriodUnit() {
-		return this.periodUnit;
-	}
-
-	public void setPeriodUnit(String periodUnit) {
-		this.periodUnit = periodUnit;
-		if(periodUnit != null){
-			putQueryParameter("PeriodUnit", periodUnit);
-		}
-	}
-
-	public String getDBClusterIds() {
-		return this.dBClusterIds;
-	}
-
-	public void setDBClusterIds(String dBClusterIds) {
-		this.dBClusterIds = dBClusterIds;
-		if(dBClusterIds != null){
-			putQueryParameter("DBClusterIds", dBClusterIds);
-		}
-	}
-
 	@Override
-	public Class<ModifyAutoRenewAttributeResponse> getResponseClass() {
-		return ModifyAutoRenewAttributeResponse.class;
+	public Class<DescribeDBClusterMonitorResponse> getResponseClass() {
+		return DescribeDBClusterMonitorResponse.class;
 	}
 
 }
