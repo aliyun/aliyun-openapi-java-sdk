@@ -85,6 +85,8 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 		private Boolean supportRollback;
 
+		private String changeOrderDescription;
+
 		private List<PipelineInfo> pipelineInfoList;
 
 		private TrafficControl trafficControl;
@@ -159,6 +161,14 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 		public void setSupportRollback(Boolean supportRollback) {
 			this.supportRollback = supportRollback;
+		}
+
+		public String getChangeOrderDescription() {
+			return this.changeOrderDescription;
+		}
+
+		public void setChangeOrderDescription(String changeOrderDescription) {
+			this.changeOrderDescription = changeOrderDescription;
 		}
 
 		public List<PipelineInfo> getPipelineInfoList() {
@@ -323,6 +333,8 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 						private String podName;
 
+						private String podStatus;
+
 						private List<InstanceStageDTO> instanceStageDTOList;
 
 						public String getInstanceName() {
@@ -355,6 +367,14 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 						public void setPodName(String podName) {
 							this.podName = podName;
+						}
+
+						public String getPodStatus() {
+							return this.podStatus;
+						}
+
+						public void setPodStatus(String podStatus) {
+							this.podStatus = podStatus;
 						}
 
 						public List<InstanceStageDTO> getInstanceStageDTOList() {
@@ -603,31 +623,11 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 		public static class TrafficControl {
 
-			private String module;
-
-			private Boolean single;
-
 			private String rules;
 
 			private String routes;
 
 			private String tips;
-
-			public String getModule() {
-				return this.module;
-			}
-
-			public void setModule(String module) {
-				this.module = module;
-			}
-
-			public Boolean getSingle() {
-				return this.single;
-			}
-
-			public void setSingle(Boolean single) {
-				this.single = single;
-			}
 
 			public String getRules() {
 				return this.rules;

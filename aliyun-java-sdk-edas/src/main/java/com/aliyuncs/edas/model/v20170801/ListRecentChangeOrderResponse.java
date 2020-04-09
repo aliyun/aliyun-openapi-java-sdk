@@ -93,6 +93,8 @@ public class ListRecentChangeOrderResponse extends AcsResponse {
 
 		private String source;
 
+		private String changeOrderDescription;
+
 		public String getChangeOrderId() {
 			return this.changeOrderId;
 		}
@@ -195,6 +197,14 @@ public class ListRecentChangeOrderResponse extends AcsResponse {
 
 		public void setSource(String source) {
 			this.source = source;
+		}
+
+		public String getChangeOrderDescription() {
+			return this.changeOrderDescription;
+		}
+
+		public void setChangeOrderDescription(String changeOrderDescription) {
+			this.changeOrderDescription = changeOrderDescription;
 		}
 	}
 

@@ -98,6 +98,10 @@ public class GetClusterResponse extends AcsResponse {
 
 		private String iaasProvider;
 
+		private String csClusterId;
+
+		private Integer clusterImportStatus;
+
 		public String getClusterId() {
 			return this.clusterId;
 		}
@@ -224,6 +228,22 @@ public class GetClusterResponse extends AcsResponse {
 
 		public void setIaasProvider(String iaasProvider) {
 			this.iaasProvider = iaasProvider;
+		}
+
+		public String getCsClusterId() {
+			return this.csClusterId;
+		}
+
+		public void setCsClusterId(String csClusterId) {
+			this.csClusterId = csClusterId;
+		}
+
+		public Integer getClusterImportStatus() {
+			return this.clusterImportStatus;
+		}
+
+		public void setClusterImportStatus(Integer clusterImportStatus) {
+			this.clusterImportStatus = clusterImportStatus;
 		}
 	}
 

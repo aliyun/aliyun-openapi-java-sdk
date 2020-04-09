@@ -22,6 +22,7 @@ public class ModifyScalingRuleResponseUnmarshaller {
 
 	public static ModifyScalingRuleResponse unmarshall(ModifyScalingRuleResponse modifyScalingRuleResponse, UnmarshallerContext _ctx) {
 		
+		modifyScalingRuleResponse.setRequestId(_ctx.stringValue("ModifyScalingRuleResponse.RequestId"));
 		modifyScalingRuleResponse.setCode(_ctx.integerValue("ModifyScalingRuleResponse.Code"));
 		modifyScalingRuleResponse.setMessage(_ctx.stringValue("ModifyScalingRuleResponse.Message"));
 	 

@@ -27,7 +27,7 @@ public class ListDeployGroupRequest extends RoaAcsRequest<ListDeployGroupRespons
 
 	private String appId;
 	public ListDeployGroupRequest() {
-		super("Edas", "2017-08-01", "ListDeployGroup", "Edas");
+		super("Edas", "2017-08-01", "ListDeployGroup", "edas");
 		setUriPattern("/pop/v5/app/deploy_group_list");
 		setMethod(MethodType.POST);
 		try {

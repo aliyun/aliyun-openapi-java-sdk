@@ -46,6 +46,7 @@ public class ListRecentChangeOrderResponseUnmarshaller {
 			changeOrder.setCreateUserId(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].CreateUserId"));
 			changeOrder.setCoTypeCode(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].CoTypeCode"));
 			changeOrder.setSource(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].Source"));
+			changeOrder.setChangeOrderDescription(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].ChangeOrderDescription"));
 
 			changeOrderList.add(changeOrder);
 		}

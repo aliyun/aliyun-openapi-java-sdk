@@ -99,6 +99,8 @@ public class ListClusterResponse extends AcsResponse {
 
 		private String iaasProvider;
 
+		private String csClusterId;
+
 		public String getClusterId() {
 			return this.clusterId;
 		}
@@ -225,6 +227,14 @@ public class ListClusterResponse extends AcsResponse {
 
 		public void setIaasProvider(String iaasProvider) {
 			this.iaasProvider = iaasProvider;
+		}
+
+		public String getCsClusterId() {
+			return this.csClusterId;
+		}
+
+		public void setCsClusterId(String csClusterId) {
+			this.csClusterId = csClusterId;
 		}
 	}
 

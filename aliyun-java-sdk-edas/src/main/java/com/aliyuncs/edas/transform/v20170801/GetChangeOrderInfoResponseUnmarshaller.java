@@ -49,10 +49,9 @@ public class GetChangeOrderInfoResponseUnmarshaller {
 		changeOrderInfo.setCoType(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.CoType"));
 		changeOrderInfo.setCreateTime(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.CreateTime"));
 		changeOrderInfo.setSupportRollback(_ctx.booleanValue("GetChangeOrderInfoResponse.changeOrderInfo.SupportRollback"));
+		changeOrderInfo.setChangeOrderDescription(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.ChangeOrderDescription"));
 
 		TrafficControl trafficControl = new TrafficControl();
-		trafficControl.setModule(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.TrafficControl.Module"));
-		trafficControl.setSingle(_ctx.booleanValue("GetChangeOrderInfoResponse.changeOrderInfo.TrafficControl.Single"));
 		trafficControl.setRules(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.TrafficControl.Rules"));
 		trafficControl.setRoutes(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.TrafficControl.Routes"));
 		trafficControl.setTips(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.TrafficControl.Tips"));
@@ -90,6 +89,7 @@ public class GetChangeOrderInfoResponseUnmarshaller {
 					instanceDTO.setInstanceIp(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList["+ j +"].StageResultDTO.InstanceDTOList["+ k +"].InstanceIp"));
 					instanceDTO.setStatus(_ctx.integerValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList["+ j +"].StageResultDTO.InstanceDTOList["+ k +"].Status"));
 					instanceDTO.setPodName(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList["+ j +"].StageResultDTO.InstanceDTOList["+ k +"].PodName"));
+					instanceDTO.setPodStatus(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList["+ j +"].StageResultDTO.InstanceDTOList["+ k +"].PodStatus"));
 
 					List<InstanceStageDTO> instanceStageDTOList = new ArrayList<InstanceStageDTO>();
 					for (int l = 0; l < _ctx.lengthValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageList["+ j +"].StageResultDTO.InstanceDTOList["+ k +"].InstanceStageDTOList.Length"); l++) {

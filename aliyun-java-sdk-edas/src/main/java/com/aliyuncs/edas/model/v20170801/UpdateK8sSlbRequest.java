@@ -39,7 +39,7 @@ public class UpdateK8sSlbRequest extends RoaAcsRequest<UpdateK8sSlbResponse> {
 
 	private String targetPort;
 	public UpdateK8sSlbRequest() {
-		super("Edas", "2017-08-01", "UpdateK8sSlb", "Edas");
+		super("Edas", "2017-08-01", "UpdateK8sSlb", "edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_slb_binding");
 		setMethod(MethodType.PUT);
 		try {

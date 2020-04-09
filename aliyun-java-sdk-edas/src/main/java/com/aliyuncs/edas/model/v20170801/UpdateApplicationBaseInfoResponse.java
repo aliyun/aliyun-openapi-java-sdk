@@ -321,4 +321,9 @@ public class UpdateApplicationBaseInfoResponse extends AcsResponse {
 	public UpdateApplicationBaseInfoResponse getInstance(UnmarshallerContext context) {
 		return	UpdateApplicationBaseInfoResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

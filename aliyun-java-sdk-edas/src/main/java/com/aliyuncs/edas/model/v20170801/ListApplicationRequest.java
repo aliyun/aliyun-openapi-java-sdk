@@ -25,7 +25,7 @@ import com.aliyuncs.edas.Endpoint;
 public class ListApplicationRequest extends RoaAcsRequest<ListApplicationResponse> {
 	   
 	public ListApplicationRequest() {
-		super("Edas", "2017-08-01", "ListApplication", "Edas");
+		super("Edas", "2017-08-01", "ListApplication", "edas");
 		setUriPattern("/pop/v5/app/app_list");
 		setMethod(MethodType.POST);
 		try {
