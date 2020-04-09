@@ -42,6 +42,7 @@ public class DescribeAuditRecordsResponseUnmarshaller {
 			sQLRecord.setReturnRowCounts(_ctx.longValue("DescribeAuditRecordsResponse.Items["+ i +"].ReturnRowCounts"));
 			sQLRecord.setExecuteTime(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].ExecuteTime"));
 			sQLRecord.setThreadID(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].ThreadID"));
+			sQLRecord.setTableName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].TableName"));
 
 			items.add(sQLRecord);
 		}
