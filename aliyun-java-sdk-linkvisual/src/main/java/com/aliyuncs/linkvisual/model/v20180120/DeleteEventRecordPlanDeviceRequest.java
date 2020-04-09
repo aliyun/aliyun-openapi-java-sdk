@@ -16,6 +16,7 @@ package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkvisual.Endpoint;
 
 /**
  * @author auto create
@@ -28,8 +29,12 @@ public class DeleteEventRecordPlanDeviceRequest extends RpcAcsRequest<DeleteEven
 
 	private Integer streamType;
 	public DeleteEventRecordPlanDeviceRequest() {
-		super("Linkvisual", "2018-01-20", "DeleteEventRecordPlanDevice", "linkvisual");
+		super("Linkvisual", "2018-01-20", "DeleteEventRecordPlanDevice", "Linkvisual");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getIotId() {

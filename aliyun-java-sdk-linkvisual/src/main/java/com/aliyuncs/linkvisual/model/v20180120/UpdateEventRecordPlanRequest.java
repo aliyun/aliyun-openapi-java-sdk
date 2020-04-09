@@ -16,6 +16,7 @@ package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkvisual.Endpoint;
 
 /**
  * @author auto create
@@ -24,10 +25,6 @@ import com.aliyuncs.http.MethodType;
 public class UpdateEventRecordPlanRequest extends RpcAcsRequest<UpdateEventRecordPlanResponse> {
 	   
 
-	private String planId;
-
-	private String name;
-
 	private String eventTypes;
 
 	private Integer preRecordDuration;
@@ -35,31 +32,17 @@ public class UpdateEventRecordPlanRequest extends RpcAcsRequest<UpdateEventRecor
 	private Integer recordDuration;
 
 	private String templateId;
+
+	private String name;
+
+	private String planId;
 	public UpdateEventRecordPlanRequest() {
-		super("Linkvisual", "2018-01-20", "UpdateEventRecordPlan", "linkvisual");
+		super("Linkvisual", "2018-01-20", "UpdateEventRecordPlan", "Linkvisual");
 		setMethod(MethodType.POST);
-	}
-
-	public String getPlanId() {
-		return this.planId;
-	}
-
-	public void setPlanId(String planId) {
-		this.planId = planId;
-		if(planId != null){
-			putQueryParameter("PlanId", planId);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getEventTypes() {
@@ -103,6 +86,28 @@ public class UpdateEventRecordPlanRequest extends RpcAcsRequest<UpdateEventRecor
 		this.templateId = templateId;
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getPlanId() {
+		return this.planId;
+	}
+
+	public void setPlanId(String planId) {
+		this.planId = planId;
+		if(planId != null){
+			putQueryParameter("PlanId", planId);
 		}
 	}
 

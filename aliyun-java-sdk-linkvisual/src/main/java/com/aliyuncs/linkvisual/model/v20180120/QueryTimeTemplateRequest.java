@@ -16,6 +16,7 @@ package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkvisual.Endpoint;
 
 /**
  * @author auto create
@@ -24,23 +25,16 @@ import com.aliyuncs.http.MethodType;
 public class QueryTimeTemplateRequest extends RpcAcsRequest<QueryTimeTemplateResponse> {
 	   
 
-	private Integer currentPage;
-
 	private Integer pageSize;
+
+	private Integer currentPage;
 	public QueryTimeTemplateRequest() {
-		super("Linkvisual", "2018-01-20", "QueryTimeTemplate", "linkvisual");
+		super("Linkvisual", "2018-01-20", "QueryTimeTemplate", "Linkvisual");
 		setMethod(MethodType.POST);
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Integer getPageSize() {
@@ -51,6 +45,17 @@ public class QueryTimeTemplateRequest extends RpcAcsRequest<QueryTimeTemplateRes
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

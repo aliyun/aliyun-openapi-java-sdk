@@ -16,6 +16,7 @@ package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkvisual.Endpoint;
 
 /**
  * @author auto create
@@ -24,14 +25,29 @@ import com.aliyuncs.http.MethodType;
 public class QueryDevicePictureFileRequest extends RpcAcsRequest<QueryDevicePictureFileResponse> {
 	   
 
+	private Integer pictureType;
+
 	private String iotId;
 
 	private String captureId;
-
-	private Integer pictureType;
 	public QueryDevicePictureFileRequest() {
-		super("Linkvisual", "2018-01-20", "QueryDevicePictureFile", "linkvisual");
+		super("Linkvisual", "2018-01-20", "QueryDevicePictureFile", "Linkvisual");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Integer getPictureType() {
+		return this.pictureType;
+	}
+
+	public void setPictureType(Integer pictureType) {
+		this.pictureType = pictureType;
+		if(pictureType != null){
+			putQueryParameter("PictureType", pictureType.toString());
+		}
 	}
 
 	public String getIotId() {
@@ -53,17 +69,6 @@ public class QueryDevicePictureFileRequest extends RpcAcsRequest<QueryDevicePict
 		this.captureId = captureId;
 		if(captureId != null){
 			putQueryParameter("CaptureId", captureId);
-		}
-	}
-
-	public Integer getPictureType() {
-		return this.pictureType;
-	}
-
-	public void setPictureType(Integer pictureType) {
-		this.pictureType = pictureType;
-		if(pictureType != null){
-			putQueryParameter("PictureType", pictureType.toString());
 		}
 	}
 
