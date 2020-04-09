@@ -33,6 +33,8 @@ public class ListServicesResponseUnmarshaller {
 		listServicesResponse.setPageNumber(_ctx.integerValue("ListServicesResponse.PageNumber"));
 		listServicesResponse.setPageSize(_ctx.integerValue("ListServicesResponse.PageSize"));
 		listServicesResponse.setTotalCount(_ctx.longValue("ListServicesResponse.TotalCount"));
+		listServicesResponse.setClusterIP(_ctx.stringValue("ListServicesResponse.ClusterIP"));
+		listServicesResponse.setClusterIP1(_ctx.stringValue("ListServicesResponse.ClusterIP"));
 
 		List<ServiceInstance> data = new ArrayList<ServiceInstance>();
 		for (int i = 0; i < _ctx.lengthValue("ListServicesResponse.Data.Length"); i++) {
@@ -44,6 +46,7 @@ public class ListServicesResponseUnmarshaller {
 			serviceInstance.setName(_ctx.stringValue("ListServicesResponse.Data["+ i +"].Name"));
 			serviceInstance.setServiceId(_ctx.longValue("ListServicesResponse.Data["+ i +"].ServiceId"));
 			serviceInstance.setServiceType(_ctx.stringValue("ListServicesResponse.Data["+ i +"].ServiceType"));
+			serviceInstance.setClusterIP(_ctx.stringValue("ListServicesResponse.Data["+ i +"].ClusterIP"));
 
 			List<ServicePortMapping> portMappings = new ArrayList<ServicePortMapping>();
 			for (int j = 0; j < _ctx.lengthValue("ListServicesResponse.Data["+ i +"].PortMappings.Length"); j++) {

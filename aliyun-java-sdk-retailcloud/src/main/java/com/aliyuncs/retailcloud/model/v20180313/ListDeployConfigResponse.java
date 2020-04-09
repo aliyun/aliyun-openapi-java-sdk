@@ -180,6 +180,8 @@ public class ListDeployConfigResponse extends AcsResponse {
 
 			private List<String> configMapList;
 
+			private List<String> secretList;
+
 			public String getDeployment() {
 				return this.deployment;
 			}
@@ -210,6 +212,14 @@ public class ListDeployConfigResponse extends AcsResponse {
 
 			public void setConfigMapList(List<String> configMapList) {
 				this.configMapList = configMapList;
+			}
+
+			public List<String> getSecretList() {
+				return this.secretList;
+			}
+
+			public void setSecretList(List<String> secretList) {
+				this.secretList = secretList;
 			}
 		}
 	}

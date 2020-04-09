@@ -111,6 +111,10 @@ public class ListAppInstanceResponse extends AcsResponse {
 
 		private String health;
 
+		private String requests;
+
+		private String limits;
+
 		public String getAppInstanceId() {
 			return this.appInstanceId;
 		}
@@ -165,6 +169,22 @@ public class ListAppInstanceResponse extends AcsResponse {
 
 		public void setHealth(String health) {
 			this.health = health;
+		}
+
+		public String getRequests() {
+			return this.requests;
+		}
+
+		public void setRequests(String requests) {
+			this.requests = requests;
+		}
+
+		public String getLimits() {
+			return this.limits;
+		}
+
+		public void setLimits(String limits) {
+			this.limits = limits;
 		}
 	}
 

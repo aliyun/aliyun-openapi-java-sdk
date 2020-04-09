@@ -40,6 +40,8 @@ public class CreateDeployConfigRequest extends RpcAcsRequest<CreateDeployConfigR
 
 	private String name;
 
+	private List<String> secretLists;
+
 	private String deployment;
 	public CreateDeployConfigRequest() {
 		super("retailcloud", "2018-03-13", "CreateDeployConfig", "retailcloud");
@@ -127,6 +129,19 @@ public class CreateDeployConfigRequest extends RpcAcsRequest<CreateDeployConfigR
 		if(name != null){
 			putQueryParameter("Name", name);
 		}
+	}
+
+	public List<String> getSecretLists() {
+		return this.secretLists;
+	}
+
+	public void setSecretLists(List<String> secretLists) {
+		this.secretLists = secretLists;	
+		if (secretLists != null) {
+			for (int i = 0; i < secretLists.size(); i++) {
+				putQueryParameter("SecretList." + (i + 1) , secretLists.get(i));
+			}
+		}	
 	}
 
 	public String getDeployment() {

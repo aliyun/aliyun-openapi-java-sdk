@@ -91,6 +91,8 @@ public class DescribeServiceDetailResponse extends AcsResponse {
 
 		private String serviceType;
 
+		private String clusterIP;
+
 		private List<ServicePortMapping> portMappings;
 
 		public Long getAppId() {
@@ -147,6 +149,14 @@ public class DescribeServiceDetailResponse extends AcsResponse {
 
 		public void setServiceType(String serviceType) {
 			this.serviceType = serviceType;
+		}
+
+		public String getClusterIP() {
+			return this.clusterIP;
+		}
+
+		public void setClusterIP(String clusterIP) {
+			this.clusterIP = clusterIP;
 		}
 
 		public List<ServicePortMapping> getPortMappings() {

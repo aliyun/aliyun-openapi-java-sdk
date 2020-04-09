@@ -36,6 +36,8 @@ public class UpdateDeployConfigRequest extends RpcAcsRequest<UpdateDeployConfigR
 
 	private Long appId;
 
+	private List<String> secretLists;
+
 	private Long id;
 
 	private String deployment;
@@ -103,6 +105,19 @@ public class UpdateDeployConfigRequest extends RpcAcsRequest<UpdateDeployConfigR
 		if(appId != null){
 			putQueryParameter("AppId", appId.toString());
 		}
+	}
+
+	public List<String> getSecretLists() {
+		return this.secretLists;
+	}
+
+	public void setSecretLists(List<String> secretLists) {
+		this.secretLists = secretLists;	
+		if (secretLists != null) {
+			for (int i = 0; i < secretLists.size(); i++) {
+				putQueryParameter("SecretList." + (i + 1) , secretLists.get(i));
+			}
+		}	
 	}
 
 	public Long getId() {

@@ -43,6 +43,8 @@ public class ListAppInstanceResponseUnmarshaller {
 			appInstanceDetail.setHostIp(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].HostIp"));
 			appInstanceDetail.setPodIp(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].PodIp"));
 			appInstanceDetail.setHealth(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Health"));
+			appInstanceDetail.setRequests(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Requests"));
+			appInstanceDetail.setLimits(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Limits"));
 
 			data.add(appInstanceDetail);
 		}

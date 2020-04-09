@@ -40,6 +40,7 @@ public class DescribeServiceDetailResponseUnmarshaller {
 		result.setName(_ctx.stringValue("DescribeServiceDetailResponse.Result.Name"));
 		result.setServiceId(_ctx.longValue("DescribeServiceDetailResponse.Result.ServiceId"));
 		result.setServiceType(_ctx.stringValue("DescribeServiceDetailResponse.Result.ServiceType"));
+		result.setClusterIP(_ctx.stringValue("DescribeServiceDetailResponse.Result.ClusterIP"));
 
 		List<ServicePortMapping> portMappings = new ArrayList<ServicePortMapping>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeServiceDetailResponse.Result.PortMappings.Length"); i++) {
