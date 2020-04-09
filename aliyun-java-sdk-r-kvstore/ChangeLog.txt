@@ -1,3 +1,7 @@
+2020-04-09 Version: 2.3.0
+- Generated 2015-01-01 for `R-kvstore`.
+- Add DescribePrice API.
+
 2020-03-23 Version: 2.2.0
 - Generated 2015-01-01 for `R-kvstore`.
 - Add DescribeSecurityGroupConfiguration API.
