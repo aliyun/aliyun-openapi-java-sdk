@@ -1,3 +1,6 @@
+2020-04-09 Version: 2.5.9
+- Add prometheus api AddGrafana and AddIntegration.
+
 2020-04-03 Version: 2.5.8
 - Add trace api.
 - Add prometheus api.
