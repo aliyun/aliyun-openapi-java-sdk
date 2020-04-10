@@ -16,6 +16,7 @@ package com.aliyuncs.cassandra.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cassandra.Endpoint;
 
 /**
  * @author auto create
@@ -32,6 +33,10 @@ public class DescribeNodeToolExecutionHistoriesRequest extends RpcAcsRequest<Des
 	public DescribeNodeToolExecutionHistoriesRequest() {
 		super("Cassandra", "2019-01-01", "DescribeNodeToolExecutionHistories", "Cassandra");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getClusterId() {
