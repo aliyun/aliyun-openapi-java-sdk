@@ -1,3 +1,7 @@
+2020-04-10 Version: 1.16.0
+- Support GetOfficeEditURL.
+- Support RefreshOfficeEditToken.
+
 2020-03-09 Version: 1.15.8
 - Add EmotionConfidence to GetImage.
 
