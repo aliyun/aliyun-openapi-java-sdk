@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.waf_openapi.model.v20190910.DescribeDomainResponse;
 import com.aliyuncs.waf_openapi.model.v20190910.DescribeDomainResponse.Domain;
+import com.aliyuncs.waf_openapi.model.v20190910.DescribeDomainResponse.Domain.LogHeader;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,7 +36,6 @@ public class DescribeDomainResponseUnmarshaller {
 		domain.setCname(_ctx.stringValue("DescribeDomainResponse.Domain.Cname"));
 		domain.setIsAccessProduct(_ctx.integerValue("DescribeDomainResponse.Domain.IsAccessProduct"));
 		domain.setVersion(_ctx.longValue("DescribeDomainResponse.Domain.Version"));
-		domain.setLogHeaders(_ctx.stringValue("DescribeDomainResponse.Domain.LogHeaders"));
 		domain.setClusterType(_ctx.integerValue("DescribeDomainResponse.Domain.ClusterType"));
 		domain.setConnectionTime(_ctx.integerValue("DescribeDomainResponse.Domain.ConnectionTime"));
 		domain.setReadTime(_ctx.integerValue("DescribeDomainResponse.Domain.ReadTime"));
@@ -64,6 +64,16 @@ public class DescribeDomainResponseUnmarshaller {
 			httpsPort.add(_ctx.stringValue("DescribeDomainResponse.Domain.HttpsPort["+ i +"]"));
 		}
 		domain.setHttpsPort(httpsPort);
+
+		List<LogHeader> logHeaders = new ArrayList<LogHeader>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainResponse.Domain.LogHeaders.Length"); i++) {
+			LogHeader logHeader = new LogHeader();
+			logHeader.setV(_ctx.stringValue("DescribeDomainResponse.Domain.LogHeaders["+ i +"].v"));
+			logHeader.setK(_ctx.stringValue("DescribeDomainResponse.Domain.LogHeaders["+ i +"].k"));
+
+			logHeaders.add(logHeader);
+		}
+		domain.setLogHeaders(logHeaders);
 		describeDomainResponse.setDomain(domain);
 	 
 	 	return describeDomainResponse;

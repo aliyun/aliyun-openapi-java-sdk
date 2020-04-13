@@ -30,8 +30,6 @@ public class ModifyDomainClusterTypeRequest extends RpcAcsRequest<ModifyDomainCl
 	private String instanceId;
 
 	private String domain;
-
-	private String region;
 	public ModifyDomainClusterTypeRequest() {
 		super("waf-openapi", "2019-09-10", "ModifyDomainClusterType", "waf");
 		setMethod(MethodType.POST);
@@ -71,17 +69,6 @@ public class ModifyDomainClusterTypeRequest extends RpcAcsRequest<ModifyDomainCl
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
-		}
-	}
-
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
 		}
 	}
 

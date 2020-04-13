@@ -59,8 +59,6 @@ public class DescribeDomainResponse extends AcsResponse {
 
 		private Long version;
 
-		private String logHeaders;
-
 		private Integer clusterType;
 
 		private Integer connectionTime;
@@ -68,6 +66,8 @@ public class DescribeDomainResponse extends AcsResponse {
 		private Integer readTime;
 
 		private Integer writeTime;
+
+		private List<LogHeader> logHeaders;
 
 		private List<String> sourceIps;
 
@@ -125,14 +125,6 @@ public class DescribeDomainResponse extends AcsResponse {
 			this.version = version;
 		}
 
-		public String getLogHeaders() {
-			return this.logHeaders;
-		}
-
-		public void setLogHeaders(String logHeaders) {
-			this.logHeaders = logHeaders;
-		}
-
 		public Integer getClusterType() {
 			return this.clusterType;
 		}
@@ -165,6 +157,14 @@ public class DescribeDomainResponse extends AcsResponse {
 			this.writeTime = writeTime;
 		}
 
+		public List<LogHeader> getLogHeaders() {
+			return this.logHeaders;
+		}
+
+		public void setLogHeaders(List<LogHeader> logHeaders) {
+			this.logHeaders = logHeaders;
+		}
+
 		public List<String> getSourceIps() {
 			return this.sourceIps;
 		}
@@ -195,6 +195,29 @@ public class DescribeDomainResponse extends AcsResponse {
 
 		public void setHttpsPort(List<String> httpsPort) {
 			this.httpsPort = httpsPort;
+		}
+
+		public static class LogHeader {
+
+			private String v;
+
+			private String k;
+
+			public String getV() {
+				return this.v;
+			}
+
+			public void setV(String v) {
+				this.v = v;
+			}
+
+			public String getK() {
+				return this.k;
+			}
+
+			public void setK(String k) {
+				this.k = k;
+			}
 		}
 	}
 
