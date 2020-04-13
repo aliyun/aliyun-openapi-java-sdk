@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.oos.model.v20190601.ListTaskExecutionsResponse;
 import com.aliyuncs.oos.model.v20190601.ListTaskExecutionsResponse.TaskExecution;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,8 +50,8 @@ public class ListTaskExecutionsResponseUnmarshaller {
 			taskExecution.setChildExecutionId(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].ChildExecutionId"));
 			taskExecution.setParentTaskExecutionId(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].ParentTaskExecutionId"));
 			taskExecution.setLoopItem(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].LoopItem"));
-			taskExecution.setLoop(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].Loop"));
-			taskExecution.setExtraData(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].ExtraData"));
+			taskExecution.setLoop(_ctx.mapValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].Loop"));
+			taskExecution.setExtraData(_ctx.mapValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].ExtraData"));
 			taskExecution.setLoopBatchNumber(_ctx.integerValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].LoopBatchNumber"));
 
 			taskExecutions.add(taskExecution);

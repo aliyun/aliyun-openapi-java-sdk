@@ -15,6 +15,7 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oos.transform.v20190601.ListTaskExecutionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -99,9 +100,9 @@ public class ListTaskExecutionsResponse extends AcsResponse {
 
 		private String loopItem;
 
-		private String loop;
+		private Map<Object,Object> loop;
 
-		private String extraData;
+		private Map<Object,Object> extraData;
 
 		private Integer loopBatchNumber;
 
@@ -233,19 +234,19 @@ public class ListTaskExecutionsResponse extends AcsResponse {
 			this.loopItem = loopItem;
 		}
 
-		public String getLoop() {
+		public Map<Object,Object> getLoop() {
 			return this.loop;
 		}
 
-		public void setLoop(String loop) {
+		public void setLoop(Map<Object,Object> loop) {
 			this.loop = loop;
 		}
 
-		public String getExtraData() {
+		public Map<Object,Object> getExtraData() {
 			return this.extraData;
 		}
 
-		public void setExtraData(String extraData) {
+		public void setExtraData(Map<Object,Object> extraData) {
 			this.extraData = extraData;
 		}
 
