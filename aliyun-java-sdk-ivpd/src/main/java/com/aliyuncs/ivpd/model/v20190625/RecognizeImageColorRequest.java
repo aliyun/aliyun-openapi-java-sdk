@@ -29,7 +29,7 @@ public class RecognizeImageColorRequest extends RpcAcsRequest<RecognizeImageColo
 
 	private String colorCount;
 	public RecognizeImageColorRequest() {
-		super("ivpd", "2019-06-25", "RecognizeImageColor", "ivpd");
+		super("ivpd", "2019-06-25", "RecognizeImageColor");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
