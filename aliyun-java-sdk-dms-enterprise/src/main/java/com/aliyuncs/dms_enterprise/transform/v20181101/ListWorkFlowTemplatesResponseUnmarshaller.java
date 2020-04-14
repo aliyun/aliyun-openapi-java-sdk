@@ -40,6 +40,7 @@ public class ListWorkFlowTemplatesResponseUnmarshaller {
 			workFlowTemplate.setTemplateId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].TemplateId"));
 			workFlowTemplate.setIsSystem(_ctx.integerValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].IsSystem"));
 			workFlowTemplate.setEnabled(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].Enabled"));
+			workFlowTemplate.setCreateUserId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].CreateUserId"));
 
 			List<WorkflowNode> workflowNodes = new ArrayList<WorkflowNode>();
 			for (int j = 0; j < _ctx.lengthValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes.Length"); j++) {
@@ -50,6 +51,7 @@ public class ListWorkFlowTemplatesResponseUnmarshaller {
 				workflowNode.setNodeType(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeType"));
 				workflowNode.setComment(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].Comment"));
 				workflowNode.setPosition(_ctx.integerValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].Position"));
+				workflowNode.setCreateUserId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].CreateUserId"));
 
 				workflowNodes.add(workflowNode);
 			}

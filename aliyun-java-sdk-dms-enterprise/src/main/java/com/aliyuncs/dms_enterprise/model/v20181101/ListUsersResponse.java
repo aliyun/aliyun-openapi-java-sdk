@@ -99,6 +99,16 @@ public class ListUsersResponse extends AcsResponse {
 
 		private String state;
 
+		private String lastLoginTime;
+
+		private Long curExecuteCount;
+
+		private Long curResultCount;
+
+		private Long maxExecuteCount;
+
+		private Long maxResultCount;
+
 		private List<Integer> roleIdList;
 
 		private List<String> roleNameList;
@@ -149,6 +159,46 @@ public class ListUsersResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getLastLoginTime() {
+			return this.lastLoginTime;
+		}
+
+		public void setLastLoginTime(String lastLoginTime) {
+			this.lastLoginTime = lastLoginTime;
+		}
+
+		public Long getCurExecuteCount() {
+			return this.curExecuteCount;
+		}
+
+		public void setCurExecuteCount(Long curExecuteCount) {
+			this.curExecuteCount = curExecuteCount;
+		}
+
+		public Long getCurResultCount() {
+			return this.curResultCount;
+		}
+
+		public void setCurResultCount(Long curResultCount) {
+			this.curResultCount = curResultCount;
+		}
+
+		public Long getMaxExecuteCount() {
+			return this.maxExecuteCount;
+		}
+
+		public void setMaxExecuteCount(Long maxExecuteCount) {
+			this.maxExecuteCount = maxExecuteCount;
+		}
+
+		public Long getMaxResultCount() {
+			return this.maxResultCount;
+		}
+
+		public void setMaxResultCount(Long maxResultCount) {
+			this.maxResultCount = maxResultCount;
 		}
 
 		public List<Integer> getRoleIdList() {

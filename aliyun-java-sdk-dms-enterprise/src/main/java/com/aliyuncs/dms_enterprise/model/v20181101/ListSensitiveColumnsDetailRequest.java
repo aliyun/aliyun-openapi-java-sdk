@@ -22,14 +22,18 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetDataExportDownloadURLRequest extends RpcAcsRequest<GetDataExportDownloadURLResponse> {
+public class ListSensitiveColumnsDetailRequest extends RpcAcsRequest<ListSensitiveColumnsDetailResponse> {
 	   
 
-	private Long orderId;
+	private String schemaName;
+
+	private String tableName;
+
+	private String columnName;
 
 	private Long tid;
-	public GetDataExportDownloadURLRequest() {
-		super("dms-enterprise", "2018-11-01", "GetDataExportDownloadURL", "dmsenterprise");
+	public ListSensitiveColumnsDetailRequest() {
+		super("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail", "dmsenterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +41,36 @@ public class GetDataExportDownloadURLRequest extends RpcAcsRequest<GetDataExport
 		} catch (Exception e) {}
 	}
 
-	public Long getOrderId() {
-		return this.orderId;
+	public String getSchemaName() {
+		return this.schemaName;
 	}
 
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId.toString());
+	public void setSchemaName(String schemaName) {
+		this.schemaName = schemaName;
+		if(schemaName != null){
+			putQueryParameter("SchemaName", schemaName);
+		}
+	}
+
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
+		}
+	}
+
+	public String getColumnName() {
+		return this.columnName;
+	}
+
+	public void setColumnName(String columnName) {
+		this.columnName = columnName;
+		if(columnName != null){
+			putQueryParameter("ColumnName", columnName);
 		}
 	}
 
@@ -60,8 +86,8 @@ public class GetDataExportDownloadURLRequest extends RpcAcsRequest<GetDataExport
 	}
 
 	@Override
-	public Class<GetDataExportDownloadURLResponse> getResponseClass() {
-		return GetDataExportDownloadURLResponse.class;
+	public Class<ListSensitiveColumnsDetailResponse> getResponseClass() {
+		return ListSensitiveColumnsDetailResponse.class;
 	}
 
 }

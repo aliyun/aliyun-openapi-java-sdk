@@ -67,7 +67,7 @@ public class UpdateInstanceRequest extends RpcAcsRequest<UpdateInstanceResponse>
 
 	private String vpcId;
 	public UpdateInstanceRequest() {
-		super("dms-enterprise", "2018-11-01", "UpdateInstance");
+		super("dms-enterprise", "2018-11-01", "UpdateInstance", "dmsenterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

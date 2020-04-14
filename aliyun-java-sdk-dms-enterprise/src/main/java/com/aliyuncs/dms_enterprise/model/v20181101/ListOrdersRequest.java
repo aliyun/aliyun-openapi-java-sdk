@@ -45,7 +45,7 @@ public class ListOrdersRequest extends RpcAcsRequest<ListOrdersResponse> {
 
 	private String orderResultType;
 	public ListOrdersRequest() {
-		super("dms-enterprise", "2018-11-01", "ListOrders");
+		super("dms-enterprise", "2018-11-01", "ListOrders", "dmsenterprise");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

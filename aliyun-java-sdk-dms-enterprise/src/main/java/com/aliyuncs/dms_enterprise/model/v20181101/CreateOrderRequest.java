@@ -37,7 +37,7 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 
 	private String relatedUserList;
 	public CreateOrderRequest() {
-		super("dms-enterprise", "2018-11-01", "CreateOrder");
+		super("dms-enterprise", "2018-11-01", "CreateOrder", "dmsenterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

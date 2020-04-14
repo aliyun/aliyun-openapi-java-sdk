@@ -29,13 +29,17 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 
 	private Long uid;
 
+	private Long maxResultCount;
+
+	private Long maxExecuteCount;
+
 	private String userNick;
 
 	private String mobile;
 
 	private Long tid;
 	public UpdateUserRequest() {
-		super("dms-enterprise", "2018-11-01", "UpdateUser");
+		super("dms-enterprise", "2018-11-01", "UpdateUser", "dmsenterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,6 +66,28 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 		this.uid = uid;
 		if(uid != null){
 			putQueryParameter("Uid", uid.toString());
+		}
+	}
+
+	public Long getMaxResultCount() {
+		return this.maxResultCount;
+	}
+
+	public void setMaxResultCount(Long maxResultCount) {
+		this.maxResultCount = maxResultCount;
+		if(maxResultCount != null){
+			putQueryParameter("MaxResultCount", maxResultCount.toString());
+		}
+	}
+
+	public Long getMaxExecuteCount() {
+		return this.maxExecuteCount;
+	}
+
+	public void setMaxExecuteCount(Long maxExecuteCount) {
+		this.maxExecuteCount = maxExecuteCount;
+		if(maxExecuteCount != null){
+			putQueryParameter("MaxExecuteCount", maxExecuteCount.toString());
 		}
 	}
 

@@ -87,6 +87,8 @@ public class ListWorkFlowTemplatesResponse extends AcsResponse {
 
 		private String enabled;
 
+		private Long createUserId;
+
 		private List<WorkflowNode> workflowNodes;
 
 		public String getTemplateName() {
@@ -129,6 +131,14 @@ public class ListWorkFlowTemplatesResponse extends AcsResponse {
 			this.enabled = enabled;
 		}
 
+		public Long getCreateUserId() {
+			return this.createUserId;
+		}
+
+		public void setCreateUserId(Long createUserId) {
+			this.createUserId = createUserId;
+		}
+
 		public List<WorkflowNode> getWorkflowNodes() {
 			return this.workflowNodes;
 		}
@@ -150,6 +160,8 @@ public class ListWorkFlowTemplatesResponse extends AcsResponse {
 			private String comment;
 
 			private Integer position;
+
+			private Long createUserId;
 
 			public Long getNodeId() {
 				return this.nodeId;
@@ -197,6 +209,14 @@ public class ListWorkFlowTemplatesResponse extends AcsResponse {
 
 			public void setPosition(Integer position) {
 				this.position = position;
+			}
+
+			public Long getCreateUserId() {
+				return this.createUserId;
+			}
+
+			public void setCreateUserId(Long createUserId) {
+				this.createUserId = createUserId;
 			}
 		}
 	}

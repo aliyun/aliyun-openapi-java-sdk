@@ -22,35 +22,50 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListTablesRequest extends RpcAcsRequest<ListTablesResponse> {
+public class ListSensitiveColumnsRequest extends RpcAcsRequest<ListSensitiveColumnsResponse> {
 	   
 
-	private String searchName;
+	private String schemaName;
+
+	private String securityLevel;
 
 	private Integer pageSize;
 
-	private String databaseId;
+	private String tableName;
+
+	private String columnName;
 
 	private Long tid;
 
 	private Integer pageNumber;
-	public ListTablesRequest() {
-		super("dms-enterprise", "2018-11-01", "ListTables", "dmsenterprise");
-		setMethod(MethodType.GET);
+	public ListSensitiveColumnsRequest() {
+		super("dms-enterprise", "2018-11-01", "ListSensitiveColumns", "dmsenterprise");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getSearchName() {
-		return this.searchName;
+	public String getSchemaName() {
+		return this.schemaName;
 	}
 
-	public void setSearchName(String searchName) {
-		this.searchName = searchName;
-		if(searchName != null){
-			putQueryParameter("SearchName", searchName);
+	public void setSchemaName(String schemaName) {
+		this.schemaName = schemaName;
+		if(schemaName != null){
+			putQueryParameter("SchemaName", schemaName);
+		}
+	}
+
+	public String getSecurityLevel() {
+		return this.securityLevel;
+	}
+
+	public void setSecurityLevel(String securityLevel) {
+		this.securityLevel = securityLevel;
+		if(securityLevel != null){
+			putQueryParameter("SecurityLevel", securityLevel);
 		}
 	}
 
@@ -65,14 +80,25 @@ public class ListTablesRequest extends RpcAcsRequest<ListTablesResponse> {
 		}
 	}
 
-	public String getDatabaseId() {
-		return this.databaseId;
+	public String getTableName() {
+		return this.tableName;
 	}
 
-	public void setDatabaseId(String databaseId) {
-		this.databaseId = databaseId;
-		if(databaseId != null){
-			putQueryParameter("DatabaseId", databaseId);
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
+		}
+	}
+
+	public String getColumnName() {
+		return this.columnName;
+	}
+
+	public void setColumnName(String columnName) {
+		this.columnName = columnName;
+		if(columnName != null){
+			putQueryParameter("ColumnName", columnName);
 		}
 	}
 
@@ -99,8 +125,8 @@ public class ListTablesRequest extends RpcAcsRequest<ListTablesResponse> {
 	}
 
 	@Override
-	public Class<ListTablesResponse> getResponseClass() {
-		return ListTablesResponse.class;
+	public Class<ListSensitiveColumnsResponse> getResponseClass() {
+		return ListSensitiveColumnsResponse.class;
 	}
 
 }
