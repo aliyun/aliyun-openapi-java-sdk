@@ -1,3 +1,6 @@
+2020-04-15 Version: 0.0.5
+- Add pre train service api.
+
 2020-03-09 Version: 0.0.4
 - NlpAutoml update contract api.
 
