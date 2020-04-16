@@ -22,34 +22,47 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetRegionConfigurationRequest extends RoaAcsRequest<GetRegionConfigurationResponse> {
+public class ModifyWhiteIpsRequest extends RoaAcsRequest<ModifyWhiteIpsResponse> {
 	   
 
-	private String zoneId;
-	public GetRegionConfigurationRequest() {
-		super("elasticsearch", "2017-06-13", "GetRegionConfiguration", "elasticsearch");
-		setUriPattern("/openapi/region");
-		setMethod(MethodType.GET);
+	private String instanceId;
+
+	private String clientToken;
+	public ModifyWhiteIpsRequest() {
+		super("elasticsearch", "2017-06-13", "ModifyWhiteIps", "elasticsearch");
+		setUriPattern("/openapi/instances/[InstanceId]/actions/modify-white-ips");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("zoneId", zoneId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putPathParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("clientToken", clientToken);
 		}
 	}
 
 	@Override
-	public Class<GetRegionConfigurationResponse> getResponseClass() {
-		return GetRegionConfigurationResponse.class;
+	public Class<ModifyWhiteIpsResponse> getResponseClass() {
+		return ModifyWhiteIpsResponse.class;
 	}
 
 }

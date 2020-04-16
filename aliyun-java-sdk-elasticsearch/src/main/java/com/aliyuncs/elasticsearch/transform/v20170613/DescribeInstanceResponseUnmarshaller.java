@@ -67,6 +67,7 @@ public class DescribeInstanceResponseUnmarshaller {
 		result.setBizProtocol(_ctx.stringValue("DescribeInstanceResponse.Result.protocol"));
 		result.setEnableKibanaPublicNetwork(_ctx.booleanValue("DescribeInstanceResponse.Result.enableKibanaPublicNetwork"));
 		result.setHaveKibana(_ctx.booleanValue("DescribeInstanceResponse.Result.haveKibana"));
+		result.setResourceGroupId(_ctx.stringValue("DescribeInstanceResponse.Result.resourceGroupId"));
 
 		List<String> esIPWhitelist = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.esIPWhitelist.Length"); i++) {

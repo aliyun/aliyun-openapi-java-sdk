@@ -98,6 +98,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private Boolean haveKibana;
 
+		private String resourceGroupId;
+
 		private List<DictListItem> dictList;
 
 		private List<SynonymsDictsItem> synonymsDicts;
@@ -330,6 +332,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setHaveKibana(Boolean haveKibana) {
 			this.haveKibana = haveKibana;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<DictListItem> getDictList() {

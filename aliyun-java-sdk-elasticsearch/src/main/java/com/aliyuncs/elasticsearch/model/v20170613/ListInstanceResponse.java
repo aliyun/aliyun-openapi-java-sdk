@@ -77,6 +77,8 @@ public class ListInstanceResponse extends AcsResponse {
 
 		private Boolean dedicateMaster;
 
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		private NodeSpec nodeSpec;
@@ -165,6 +167,14 @@ public class ListInstanceResponse extends AcsResponse {
 
 		public void setDedicateMaster(Boolean dedicateMaster) {
 			this.dedicateMaster = dedicateMaster;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {
