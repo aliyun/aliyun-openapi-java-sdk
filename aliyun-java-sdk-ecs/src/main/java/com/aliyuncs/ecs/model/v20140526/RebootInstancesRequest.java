@@ -28,6 +28,8 @@ public class RebootInstancesRequest extends RpcAcsRequest<RebootInstancesRespons
 
 	private Long resourceOwnerId;
 
+	private String batchOptimization;
+
 	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
@@ -56,6 +58,17 @@ public class RebootInstancesRequest extends RpcAcsRequest<RebootInstancesRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getBatchOptimization() {
+		return this.batchOptimization;
+	}
+
+	public void setBatchOptimization(String batchOptimization) {
+		this.batchOptimization = batchOptimization;
+		if(batchOptimization != null){
+			putQueryParameter("BatchOptimization", batchOptimization);
 		}
 	}
 

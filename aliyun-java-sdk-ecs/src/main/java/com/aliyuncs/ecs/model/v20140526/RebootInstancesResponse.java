@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ecs.model.v20140526;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecs.transform.v20140526.RebootInstancesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,12 +27,75 @@ public class RebootInstancesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private List<InstanceResponse> instanceResponses;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public List<InstanceResponse> getInstanceResponses() {
+		return this.instanceResponses;
+	}
+
+	public void setInstanceResponses(List<InstanceResponse> instanceResponses) {
+		this.instanceResponses = instanceResponses;
+	}
+
+	public static class InstanceResponse {
+
+		private String instanceId;
+
+		private String previousStatus;
+
+		private String currentStatus;
+
+		private String code;
+
+		private String message;
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getPreviousStatus() {
+			return this.previousStatus;
+		}
+
+		public void setPreviousStatus(String previousStatus) {
+			this.previousStatus = previousStatus;
+		}
+
+		public String getCurrentStatus() {
+			return this.currentStatus;
+		}
+
+		public void setCurrentStatus(String currentStatus) {
+			this.currentStatus = currentStatus;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
 	}
 
 	@Override

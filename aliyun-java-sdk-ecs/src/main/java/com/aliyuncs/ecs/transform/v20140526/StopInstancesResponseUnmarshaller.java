@@ -14,7 +14,11 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.StopInstancesResponse;
+import com.aliyuncs.ecs.model.v20140526.StopInstancesResponse.InstanceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,6 +27,19 @@ public class StopInstancesResponseUnmarshaller {
 	public static StopInstancesResponse unmarshall(StopInstancesResponse stopInstancesResponse, UnmarshallerContext _ctx) {
 		
 		stopInstancesResponse.setRequestId(_ctx.stringValue("StopInstancesResponse.RequestId"));
+
+		List<InstanceResponse> instanceResponses = new ArrayList<InstanceResponse>();
+		for (int i = 0; i < _ctx.lengthValue("StopInstancesResponse.InstanceResponses.Length"); i++) {
+			InstanceResponse instanceResponse = new InstanceResponse();
+			instanceResponse.setInstanceId(_ctx.stringValue("StopInstancesResponse.InstanceResponses["+ i +"].InstanceId"));
+			instanceResponse.setPreviousStatus(_ctx.stringValue("StopInstancesResponse.InstanceResponses["+ i +"].PreviousStatus"));
+			instanceResponse.setCurrentStatus(_ctx.stringValue("StopInstancesResponse.InstanceResponses["+ i +"].CurrentStatus"));
+			instanceResponse.setCode(_ctx.stringValue("StopInstancesResponse.InstanceResponses["+ i +"].Code"));
+			instanceResponse.setMessage(_ctx.stringValue("StopInstancesResponse.InstanceResponses["+ i +"].Message"));
+
+			instanceResponses.add(instanceResponse);
+		}
+		stopInstancesResponse.setInstanceResponses(instanceResponses);
 	 
 	 	return stopInstancesResponse;
 	}

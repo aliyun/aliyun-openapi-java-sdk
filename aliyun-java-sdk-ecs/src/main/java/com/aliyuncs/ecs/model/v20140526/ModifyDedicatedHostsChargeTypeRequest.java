@@ -15,7 +15,6 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -23,14 +22,22 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartInstancesRequest extends RpcAcsRequest<StartInstancesResponse> {
+public class ModifyDedicatedHostsChargeTypeRequest extends RpcAcsRequest<ModifyDedicatedHostsChargeTypeResponse> {
 	   
+
+	private String dedicatedHostIds;
 
 	private Long resourceOwnerId;
 
-	private String batchOptimization;
+	private String clientToken;
+
+	private String dedicatedHostChargeType;
+
+	private Integer period;
 
 	private Boolean dryRun;
+
+	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
@@ -38,14 +45,27 @@ public class StartInstancesRequest extends RpcAcsRequest<StartInstancesResponse>
 
 	private Long ownerId;
 
-	private List<String> instanceIds;
-	public StartInstancesRequest() {
-		super("Ecs", "2014-05-26", "StartInstances", "ecs");
+	private Boolean detailFee;
+
+	private String periodUnit;
+	public ModifyDedicatedHostsChargeTypeRequest() {
+		super("Ecs", "2014-05-26", "ModifyDedicatedHostsChargeType", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDedicatedHostIds() {
+		return this.dedicatedHostIds;
+	}
+
+	public void setDedicatedHostIds(String dedicatedHostIds) {
+		this.dedicatedHostIds = dedicatedHostIds;
+		if(dedicatedHostIds != null){
+			putQueryParameter("DedicatedHostIds", dedicatedHostIds);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -59,14 +79,36 @@ public class StartInstancesRequest extends RpcAcsRequest<StartInstancesResponse>
 		}
 	}
 
-	public String getBatchOptimization() {
-		return this.batchOptimization;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setBatchOptimization(String batchOptimization) {
-		this.batchOptimization = batchOptimization;
-		if(batchOptimization != null){
-			putQueryParameter("BatchOptimization", batchOptimization);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDedicatedHostChargeType() {
+		return this.dedicatedHostChargeType;
+	}
+
+	public void setDedicatedHostChargeType(String dedicatedHostChargeType) {
+		this.dedicatedHostChargeType = dedicatedHostChargeType;
+		if(dedicatedHostChargeType != null){
+			putQueryParameter("DedicatedHostChargeType", dedicatedHostChargeType);
+		}
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
 		}
 	}
 
@@ -78,6 +120,17 @@ public class StartInstancesRequest extends RpcAcsRequest<StartInstancesResponse>
 		this.dryRun = dryRun;
 		if(dryRun != null){
 			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 
@@ -114,22 +167,31 @@ public class StartInstancesRequest extends RpcAcsRequest<StartInstancesResponse>
 		}
 	}
 
-	public List<String> getInstanceIds() {
-		return this.instanceIds;
+	public Boolean getDetailFee() {
+		return this.detailFee;
 	}
 
-	public void setInstanceIds(List<String> instanceIds) {
-		this.instanceIds = instanceIds;	
-		if (instanceIds != null) {
-			for (int i = 0; i < instanceIds.size(); i++) {
-				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
-			}
-		}	
+	public void setDetailFee(Boolean detailFee) {
+		this.detailFee = detailFee;
+		if(detailFee != null){
+			putQueryParameter("DetailFee", detailFee.toString());
+		}
+	}
+
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
+		}
 	}
 
 	@Override
-	public Class<StartInstancesResponse> getResponseClass() {
-		return StartInstancesResponse.class;
+	public Class<ModifyDedicatedHostsChargeTypeResponse> getResponseClass() {
+		return ModifyDedicatedHostsChargeTypeResponse.class;
 	}
 
 }

@@ -1,3 +1,11 @@
+2020-04-16 Version: 4.19.3
+- Add BatchOptimization param in Stop and Start Instances.
+- Add RemoveSymbols in GetInstanceConsoleOutput.
+- Add ImageFamily in ModifyImageAttribute.
+- Customize InstanceType on DedicatedHosts is supported.
+- Add StorageCapacityUnit interfaces.
+- Add param Tag in CreateAutoSnapshotPolicy.
+
 2020-03-24 Version: 4.19.2
 - DescribeInstanceTypes Supports EniIpv6AddressQuantity.
 

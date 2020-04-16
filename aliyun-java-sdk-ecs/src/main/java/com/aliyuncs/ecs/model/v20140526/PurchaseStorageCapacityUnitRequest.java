@@ -22,16 +22,24 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttributeResponse> {
+public class PurchaseStorageCapacityUnitRequest extends RpcAcsRequest<PurchaseStorageCapacityUnitResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String imageId;
+	private String clientToken;
 
 	private String description;
 
-	private String imageName;
+	private String startTime;
+
+	private Integer capacity;
+
+	private Integer period;
+
+	private Integer amount;
+
+	private String fromApp;
 
 	private String resourceOwnerAccount;
 
@@ -39,11 +47,11 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 
 	private Long ownerId;
 
-	private String imageFamily;
+	private String periodUnit;
 
-	private String status;
-	public ModifyImageAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyImageAttribute", "ecs");
+	private String name;
+	public PurchaseStorageCapacityUnitRequest() {
+		super("Ecs", "2014-05-26", "PurchaseStorageCapacityUnit", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,14 +70,14 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 		}
 	}
 
-	public String getImageId() {
-		return this.imageId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -84,14 +92,58 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 		}
 	}
 
-	public String getImageName() {
-		return this.imageName;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
-		if(imageName != null){
-			putQueryParameter("ImageName", imageName);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getCapacity() {
+		return this.capacity;
+	}
+
+	public void setCapacity(Integer capacity) {
+		this.capacity = capacity;
+		if(capacity != null){
+			putQueryParameter("Capacity", capacity.toString());
+		}
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public Integer getAmount() {
+		return this.amount;
+	}
+
+	public void setAmount(Integer amount) {
+		this.amount = amount;
+		if(amount != null){
+			putQueryParameter("Amount", amount.toString());
+		}
+	}
+
+	public String getFromApp() {
+		return this.fromApp;
+	}
+
+	public void setFromApp(String fromApp) {
+		this.fromApp = fromApp;
+		if(fromApp != null){
+			putQueryParameter("FromApp", fromApp);
 		}
 	}
 
@@ -128,31 +180,31 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 		}
 	}
 
-	public String getImageFamily() {
-		return this.imageFamily;
+	public String getPeriodUnit() {
+		return this.periodUnit;
 	}
 
-	public void setImageFamily(String imageFamily) {
-		this.imageFamily = imageFamily;
-		if(imageFamily != null){
-			putQueryParameter("ImageFamily", imageFamily);
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
 	@Override
-	public Class<ModifyImageAttributeResponse> getResponseClass() {
-		return ModifyImageAttributeResponse.class;
+	public Class<PurchaseStorageCapacityUnitResponse> getResponseClass() {
+		return PurchaseStorageCapacityUnitResponse.class;
 	}
 
 }

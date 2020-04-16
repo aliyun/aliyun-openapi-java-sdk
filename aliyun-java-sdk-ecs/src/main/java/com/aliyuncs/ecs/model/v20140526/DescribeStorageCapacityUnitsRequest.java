@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -22,12 +23,18 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetInstanceConsoleOutputRequest extends RpcAcsRequest<GetInstanceConsoleOutputResponse> {
+public class DescribeStorageCapacityUnitsRequest extends RpcAcsRequest<DescribeStorageCapacityUnitsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Boolean removeSymbols;
+	private Integer pageNumber;
+
+	private Integer capacity;
+
+	private List<String> storageCapacityUnitIds;
+
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
@@ -35,9 +42,11 @@ public class GetInstanceConsoleOutputRequest extends RpcAcsRequest<GetInstanceCo
 
 	private Long ownerId;
 
-	private String instanceId;
-	public GetInstanceConsoleOutputRequest() {
-		super("Ecs", "2014-05-26", "GetInstanceConsoleOutput", "ecs");
+	private String name;
+
+	private List<String> statuss;
+	public DescribeStorageCapacityUnitsRequest() {
+		super("Ecs", "2014-05-26", "DescribeStorageCapacityUnits", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,14 +65,49 @@ public class GetInstanceConsoleOutputRequest extends RpcAcsRequest<GetInstanceCo
 		}
 	}
 
-	public Boolean getRemoveSymbols() {
-		return this.removeSymbols;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setRemoveSymbols(Boolean removeSymbols) {
-		this.removeSymbols = removeSymbols;
-		if(removeSymbols != null){
-			putQueryParameter("RemoveSymbols", removeSymbols.toString());
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getCapacity() {
+		return this.capacity;
+	}
+
+	public void setCapacity(Integer capacity) {
+		this.capacity = capacity;
+		if(capacity != null){
+			putQueryParameter("Capacity", capacity.toString());
+		}
+	}
+
+	public List<String> getStorageCapacityUnitIds() {
+		return this.storageCapacityUnitIds;
+	}
+
+	public void setStorageCapacityUnitIds(List<String> storageCapacityUnitIds) {
+		this.storageCapacityUnitIds = storageCapacityUnitIds;	
+		if (storageCapacityUnitIds != null) {
+			for (int i = 0; i < storageCapacityUnitIds.size(); i++) {
+				putQueryParameter("StorageCapacityUnitId." + (i + 1) , storageCapacityUnitIds.get(i));
+			}
+		}	
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -100,20 +144,33 @@ public class GetInstanceConsoleOutputRequest extends RpcAcsRequest<GetInstanceCo
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
+	public List<String> getStatuss() {
+		return this.statuss;
+	}
+
+	public void setStatuss(List<String> statuss) {
+		this.statuss = statuss;	
+		if (statuss != null) {
+			for (int i = 0; i < statuss.size(); i++) {
+				putQueryParameter("Status." + (i + 1) , statuss.get(i));
+			}
+		}	
+	}
+
 	@Override
-	public Class<GetInstanceConsoleOutputResponse> getResponseClass() {
-		return GetInstanceConsoleOutputResponse.class;
+	public Class<DescribeStorageCapacityUnitsResponse> getResponseClass() {
+		return DescribeStorageCapacityUnitsResponse.class;
 	}
 
 }

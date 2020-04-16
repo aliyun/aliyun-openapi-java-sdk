@@ -32,6 +32,8 @@ public class StopInstancesRequest extends RpcAcsRequest<StopInstancesResponse> {
 
 	private Boolean forceStop;
 
+	private String batchOptimization;
+
 	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
@@ -80,6 +82,17 @@ public class StopInstancesRequest extends RpcAcsRequest<StopInstancesResponse> {
 		this.forceStop = forceStop;
 		if(forceStop != null){
 			putQueryParameter("ForceStop", forceStop.toString());
+		}
+	}
+
+	public String getBatchOptimization() {
+		return this.batchOptimization;
+	}
+
+	public void setBatchOptimization(String batchOptimization) {
+		this.batchOptimization = batchOptimization;
+		if(batchOptimization != null){
+			putQueryParameter("BatchOptimization", batchOptimization);
 		}
 	}
 

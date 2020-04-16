@@ -22,12 +22,14 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetInstanceConsoleOutputRequest extends RpcAcsRequest<GetInstanceConsoleOutputResponse> {
+public class ModifyStorageCapacityUnitAttributeRequest extends RpcAcsRequest<ModifyStorageCapacityUnitAttributeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Boolean removeSymbols;
+	private String description;
+
+	private String storageCapacityUnitId;
 
 	private String resourceOwnerAccount;
 
@@ -35,9 +37,9 @@ public class GetInstanceConsoleOutputRequest extends RpcAcsRequest<GetInstanceCo
 
 	private Long ownerId;
 
-	private String instanceId;
-	public GetInstanceConsoleOutputRequest() {
-		super("Ecs", "2014-05-26", "GetInstanceConsoleOutput", "ecs");
+	private String name;
+	public ModifyStorageCapacityUnitAttributeRequest() {
+		super("Ecs", "2014-05-26", "ModifyStorageCapacityUnitAttribute", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,14 +58,25 @@ public class GetInstanceConsoleOutputRequest extends RpcAcsRequest<GetInstanceCo
 		}
 	}
 
-	public Boolean getRemoveSymbols() {
-		return this.removeSymbols;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setRemoveSymbols(Boolean removeSymbols) {
-		this.removeSymbols = removeSymbols;
-		if(removeSymbols != null){
-			putQueryParameter("RemoveSymbols", removeSymbols.toString());
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getStorageCapacityUnitId() {
+		return this.storageCapacityUnitId;
+	}
+
+	public void setStorageCapacityUnitId(String storageCapacityUnitId) {
+		this.storageCapacityUnitId = storageCapacityUnitId;
+		if(storageCapacityUnitId != null){
+			putQueryParameter("StorageCapacityUnitId", storageCapacityUnitId);
 		}
 	}
 
@@ -100,20 +113,20 @@ public class GetInstanceConsoleOutputRequest extends RpcAcsRequest<GetInstanceCo
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
 	@Override
-	public Class<GetInstanceConsoleOutputResponse> getResponseClass() {
-		return GetInstanceConsoleOutputResponse.class;
+	public Class<ModifyStorageCapacityUnitAttributeResponse> getResponseClass() {
+		return ModifyStorageCapacityUnitAttributeResponse.class;
 	}
 
 }
