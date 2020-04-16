@@ -76,6 +76,9 @@ public class GetInstanceSummaryReportResponseUnmarshaller {
 		inbound.setSatisfactionIndex(_ctx.floatValue("GetInstanceSummaryReportResponse.InstanceSummaryReport.Inbound.SatisfactionIndex"));
 		inbound.setSatisfactionSurveysOffered(_ctx.longValue("GetInstanceSummaryReportResponse.InstanceSummaryReport.Inbound.SatisfactionSurveysOffered"));
 		inbound.setSatisfactionSurveysResponded(_ctx.longValue("GetInstanceSummaryReportResponse.InstanceSummaryReport.Inbound.SatisfactionSurveysResponded"));
+		inbound.setTotalWaitTime(_ctx.longValue("GetInstanceSummaryReportResponse.InstanceSummaryReport.Inbound.TotalWaitTime"));
+		inbound.setMaxWaitTime(_ctx.longValue("GetInstanceSummaryReportResponse.InstanceSummaryReport.Inbound.MaxWaitTime"));
+		inbound.setAverageWaitTime(_ctx.longValue("GetInstanceSummaryReportResponse.InstanceSummaryReport.Inbound.AverageWaitTime"));
 		instanceSummaryReport.setInbound(inbound);
 
 		Outbound outbound = new Outbound();

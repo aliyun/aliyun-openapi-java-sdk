@@ -23,21 +23,21 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class CallOnlinePrivacyNumberRequest extends RpcAcsRequest<CallOnlinePrivacyNumberResponse> {
-	
-	public CallOnlinePrivacyNumberRequest() {
-		super("CCC", "2017-07-05", "CallOnlinePrivacyNumber");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String telA;
 
 	private String telB;
 
 	private String instanceId;
+	public CallOnlinePrivacyNumberRequest() {
+		super("CCC", "2017-07-05", "CallOnlinePrivacyNumber");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTelA() {
 		return this.telA;

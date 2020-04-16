@@ -23,21 +23,21 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ModifyAgentDeviceRequest extends RpcAcsRequest<ModifyAgentDeviceResponse> {
-	
-	public ModifyAgentDeviceRequest() {
-		super("CCC", "2017-07-05", "ModifyAgentDevice");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer isLogin;
 
 	private Long agentDeviceId;
 
 	private String instanceId;
+	public ModifyAgentDeviceRequest() {
+		super("CCC", "2017-07-05", "ModifyAgentDevice");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getIsLogin() {
 		return this.isLogin;

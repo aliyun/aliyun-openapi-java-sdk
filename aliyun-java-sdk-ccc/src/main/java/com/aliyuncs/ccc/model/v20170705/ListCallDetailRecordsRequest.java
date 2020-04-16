@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRecordsResponse> {
-	
-	public ListCallDetailRecordsRequest() {
-		super("CCC", "2017-07-05", "ListCallDetailRecords");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String contactType;
 
@@ -56,6 +48,14 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 	private Integer pageSize;
 
 	private Boolean withRecording;
+	public ListCallDetailRecordsRequest() {
+		super("CCC", "2017-07-05", "ListCallDetailRecords");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getContactType() {
 		return this.contactType;

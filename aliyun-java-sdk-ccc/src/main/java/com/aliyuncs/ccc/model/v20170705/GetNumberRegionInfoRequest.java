@@ -23,19 +23,19 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class GetNumberRegionInfoRequest extends RpcAcsRequest<GetNumberRegionInfoResponse> {
-	
+	   
+
+	private String number;
+
+	private String instanceId;
 	public GetNumberRegionInfoRequest() {
 		super("CCC", "2017-07-05", "GetNumberRegionInfo");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String number;
-
-	private String instanceId;
 
 	public String getNumber() {
 		return this.number;

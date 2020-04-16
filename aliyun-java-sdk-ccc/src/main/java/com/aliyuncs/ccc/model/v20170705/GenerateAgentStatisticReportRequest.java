@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class GenerateAgentStatisticReportRequest extends RpcAcsRequest<GenerateAgentStatisticReportResponse> {
-	
-	public GenerateAgentStatisticReportRequest() {
-		super("CCC", "2017-07-05", "GenerateAgentStatisticReport");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String agentId;
 
@@ -44,6 +36,14 @@ public class GenerateAgentStatisticReportRequest extends RpcAcsRequest<GenerateA
 	private String endDate;
 
 	private Integer pageSize;
+	public GenerateAgentStatisticReportRequest() {
+		super("CCC", "2017-07-05", "GenerateAgentStatisticReport");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAgentId() {
 		return this.agentId;

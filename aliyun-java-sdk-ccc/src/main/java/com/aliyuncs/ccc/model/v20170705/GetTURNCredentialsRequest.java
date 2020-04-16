@@ -23,19 +23,19 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class GetTURNCredentialsRequest extends RpcAcsRequest<GetTURNCredentialsResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String userName;
 	public GetTURNCredentialsRequest() {
 		super("CCC", "2017-07-05", "GetTURNCredentials");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String userName;
 
 	public String getInstanceId() {
 		return this.instanceId;

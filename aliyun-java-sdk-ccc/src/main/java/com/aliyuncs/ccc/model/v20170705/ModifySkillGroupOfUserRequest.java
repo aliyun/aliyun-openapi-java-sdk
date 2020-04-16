@@ -24,15 +24,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ModifySkillGroupOfUserRequest extends RpcAcsRequest<ModifySkillGroupOfUserResponse> {
-	
-	public ModifySkillGroupOfUserRequest() {
-		super("CCC", "2017-07-05", "ModifySkillGroupOfUser");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<String> roleIds;
 
@@ -43,6 +35,14 @@ public class ModifySkillGroupOfUserRequest extends RpcAcsRequest<ModifySkillGrou
 	private String instanceId;
 
 	private List<String> skillGroupIds;
+	public ModifySkillGroupOfUserRequest() {
+		super("CCC", "2017-07-05", "ModifySkillGroupOfUser");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<String> getRoleIds() {
 		return this.roleIds;

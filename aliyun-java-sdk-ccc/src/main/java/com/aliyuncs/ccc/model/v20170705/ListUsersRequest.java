@@ -23,21 +23,21 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
-	
-	public ListUsersRequest() {
-		super("CCC", "2017-07-05", "ListUsers");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer pageNumber;
 
 	private String instanceId;
 
 	private Integer pageSize;
+	public ListUsersRequest() {
+		super("CCC", "2017-07-05", "ListUsers");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;

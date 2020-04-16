@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class SubmitCabRecordingRequest extends RpcAcsRequest<SubmitCabRecordingResponse> {
-	
-	public SubmitCabRecordingRequest() {
-		super("CCC", "2017-07-05", "SubmitCabRecording");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String mergedRecording;
 
@@ -42,6 +34,14 @@ public class SubmitCabRecordingRequest extends RpcAcsRequest<SubmitCabRecordingR
 	private Long instanceOwnerId;
 
 	private String taskId;
+	public SubmitCabRecordingRequest() {
+		super("CCC", "2017-07-05", "SubmitCabRecording");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getMergedRecording() {
 		return this.mergedRecording;

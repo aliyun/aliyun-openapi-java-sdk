@@ -33,6 +33,12 @@ public class ListOutboundPhoneNumberOfUserResponseUnmarshaller {
 		listOutboundPhoneNumberOfUserResponse.setMessage(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.Message"));
 		listOutboundPhoneNumberOfUserResponse.setHttpStatusCode(_ctx.integerValue("ListOutboundPhoneNumberOfUserResponse.HttpStatusCode"));
 
+		List<String> numberList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ListOutboundPhoneNumberOfUserResponse.NumberList.Length"); i++) {
+			numberList.add(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.NumberList["+ i +"]"));
+		}
+		listOutboundPhoneNumberOfUserResponse.setNumberList(numberList);
+
 		List<PhoneNumber> outboundPhoneNumbers = new ArrayList<PhoneNumber>();
 		for (int i = 0; i < _ctx.lengthValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers.Length"); i++) {
 			PhoneNumber phoneNumber = new PhoneNumber();

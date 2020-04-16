@@ -24,15 +24,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class PickGlobalOutboundNumbersRequest extends RpcAcsRequest<PickGlobalOutboundNumbersResponse> {
-	
-	public PickGlobalOutboundNumbersRequest() {
-		super("CCC", "2017-07-05", "PickGlobalOutboundNumbers");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Boolean isVirtual;
 
@@ -43,6 +35,14 @@ public class PickGlobalOutboundNumbersRequest extends RpcAcsRequest<PickGlobalOu
 	private List<String> skillGroupIds;
 
 	private String calleeNumber;
+	public PickGlobalOutboundNumbersRequest() {
+		super("CCC", "2017-07-05", "PickGlobalOutboundNumbers");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getIsVirtual() {
 		return this.isVirtual;

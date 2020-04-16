@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class GetCallMeasureSummaryReportRequest extends RpcAcsRequest<GetCallMeasureSummaryReportResponse> {
-	
-	public GetCallMeasureSummaryReportRequest() {
-		super("CCC", "2017-07-05", "GetCallMeasureSummaryReport");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String intervalType;
 
@@ -44,6 +36,14 @@ public class GetCallMeasureSummaryReportRequest extends RpcAcsRequest<GetCallMea
 	private Integer pageSize;
 
 	private Integer day;
+	public GetCallMeasureSummaryReportRequest() {
+		super("CCC", "2017-07-05", "GetCallMeasureSummaryReport");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getIntervalType() {
 		return this.intervalType;

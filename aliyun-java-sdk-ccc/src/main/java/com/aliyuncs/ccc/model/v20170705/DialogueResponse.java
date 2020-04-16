@@ -92,6 +92,8 @@ public class DialogueResponse extends AcsResponse {
 
 		private String actionParams;
 
+		private Boolean interruptible;
+
 		public String getContent() {
 			return this.content;
 		}
@@ -100,26 +102,10 @@ public class DialogueResponse extends AcsResponse {
 			this.content = content;
 		}
 
-		public String getBizAction() {
-			return this.action;
-		}
-
-		public void setBizAction(String action) {
-			this.action = action;
-		}
-
-		/**
-		 * @deprecated use getBizAction instead of this.
-		 */
-		@Deprecated
 		public String getAction() {
 			return this.action;
 		}
 
-		/**
-		 * @deprecated use setBizAction instead of this.
-		 */
-		@Deprecated
 		public void setAction(String action) {
 			this.action = action;
 		}
@@ -130,6 +116,14 @@ public class DialogueResponse extends AcsResponse {
 
 		public void setActionParams(String actionParams) {
 			this.actionParams = actionParams;
+		}
+
+		public Boolean getInterruptible() {
+			return this.interruptible;
+		}
+
+		public void setInterruptible(Boolean interruptible) {
+			this.interruptible = interruptible;
 		}
 	}
 

@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListSkillGroupSummaryReportsSinceMidnightRequest extends RpcAcsRequest<ListSkillGroupSummaryReportsSinceMidnightResponse> {
-	
-	public ListSkillGroupSummaryReportsSinceMidnightRequest() {
-		super("CCC", "2017-07-05", "ListSkillGroupSummaryReportsSinceMidnight");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer pageNumber;
 
@@ -40,6 +32,14 @@ public class ListSkillGroupSummaryReportsSinceMidnightRequest extends RpcAcsRequ
 	private String skillGroups;
 
 	private Integer pageSize;
+	public ListSkillGroupSummaryReportsSinceMidnightRequest() {
+		super("CCC", "2017-07-05", "ListSkillGroupSummaryReportsSinceMidnight");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;

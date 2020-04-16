@@ -24,19 +24,19 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListConfigRequest extends RpcAcsRequest<ListConfigResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private List<String> configItems;
 	public ListConfigRequest() {
 		super("CCC", "2017-07-05", "ListConfig");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private List<String> configItems;
 
 	public String getInstanceId() {
 		return this.instanceId;

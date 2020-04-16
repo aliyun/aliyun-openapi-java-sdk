@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class CreateMediaRequest extends RpcAcsRequest<CreateMediaResponse> {
-	
-	public CreateMediaRequest() {
-		super("CCC", "2017-07-05", "CreateMedia");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String description;
 
@@ -50,6 +42,14 @@ public class CreateMediaRequest extends RpcAcsRequest<CreateMediaResponse> {
 	private String fileName;
 
 	private String name;
+	public CreateMediaRequest() {
+		super("CCC", "2017-07-05", "CreateMedia");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getDescription() {
 		return this.description;

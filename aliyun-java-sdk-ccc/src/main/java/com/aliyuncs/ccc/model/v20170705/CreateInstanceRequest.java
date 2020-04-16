@@ -24,15 +24,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
-	
-	public CreateInstanceRequest() {
-		super("CCC", "2017-07-05", "CreateInstance");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<String> phoneNumberss;
 
@@ -53,6 +45,14 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private Integer storageMaxSize;
 
 	private String directoryId;
+	public CreateInstanceRequest() {
+		super("CCC", "2017-07-05", "CreateInstance");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<String> getPhoneNumberss() {
 		return this.phoneNumberss;

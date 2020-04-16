@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ModifySurveyRequest extends RpcAcsRequest<ModifySurveyResponse> {
-	
-	public ModifySurveyRequest() {
-		super("CCC", "2017-07-05", "ModifySurvey");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String role;
 
@@ -56,6 +48,14 @@ public class ModifySurveyRequest extends RpcAcsRequest<ModifySurveyResponse> {
 	private String name;
 
 	private String flowId;
+	public ModifySurveyRequest() {
+		super("CCC", "2017-07-05", "ModifySurvey");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getRole() {
 		return this.role;

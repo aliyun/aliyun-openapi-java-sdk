@@ -24,15 +24,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class StartJobRequest extends RpcAcsRequest<StartJobResponse> {
-	
-	public StartJobRequest() {
-		super("CCC", "2017-07-05", "StartJob");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String groupId;
 
@@ -45,6 +37,14 @@ public class StartJobRequest extends RpcAcsRequest<StartJobResponse> {
 	private Boolean selfHostedCallCenter;
 
 	private String scenarioId;
+	public StartJobRequest() {
+		super("CCC", "2017-07-05", "StartJob");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getGroupId() {
 		return this.groupId;

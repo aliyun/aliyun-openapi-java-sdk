@@ -23,19 +23,19 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class GetJobDataUploadParamsRequest extends RpcAcsRequest<GetJobDataUploadParamsResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String fileName;
 	public GetJobDataUploadParamsRequest() {
 		super("CCC", "2017-07-05", "GetJobDataUploadParams");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String fileName;
 
 	public String getInstanceId() {
 		return this.instanceId;

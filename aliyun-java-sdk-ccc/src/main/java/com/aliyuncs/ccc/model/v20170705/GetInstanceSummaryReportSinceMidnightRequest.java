@@ -23,21 +23,21 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class GetInstanceSummaryReportSinceMidnightRequest extends RpcAcsRequest<GetInstanceSummaryReportSinceMidnightResponse> {
-	
-	public GetInstanceSummaryReportSinceMidnightRequest() {
-		super("CCC", "2017-07-05", "GetInstanceSummaryReportSinceMidnight");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer pageNumber;
 
 	private String instanceId;
 
 	private Integer pageSize;
+	public GetInstanceSummaryReportSinceMidnightRequest() {
+		super("CCC", "2017-07-05", "GetInstanceSummaryReportSinceMidnight");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;

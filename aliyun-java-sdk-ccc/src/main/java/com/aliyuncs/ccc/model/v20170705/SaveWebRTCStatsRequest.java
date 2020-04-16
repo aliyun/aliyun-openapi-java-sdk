@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class SaveWebRTCStatsRequest extends RpcAcsRequest<SaveWebRTCStatsResponse> {
-	
-	public SaveWebRTCStatsRequest() {
-		super("CCC", "2017-07-05", "SaveWebRTCStats");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String callId;
 
@@ -50,6 +42,14 @@ public class SaveWebRTCStatsRequest extends RpcAcsRequest<SaveWebRTCStatsRespons
 	private String calleeNumber;
 
 	private String callerNumber;
+	public SaveWebRTCStatsRequest() {
+		super("CCC", "2017-07-05", "SaveWebRTCStats");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCallId() {
 		return this.callId;

@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListAgentSummaryReportsRequest extends RpcAcsRequest<ListAgentSummaryReportsResponse> {
-	
-	public ListAgentSummaryReportsRequest() {
-		super("CCC", "2017-07-05", "ListAgentSummaryReports");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String agentIds;
 
@@ -46,6 +38,14 @@ public class ListAgentSummaryReportsRequest extends RpcAcsRequest<ListAgentSumma
 	private String skillGroupId;
 
 	private Integer pageSize;
+	public ListAgentSummaryReportsRequest() {
+		super("CCC", "2017-07-05", "ListAgentSummaryReports");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAgentIds() {
 		return this.agentIds;

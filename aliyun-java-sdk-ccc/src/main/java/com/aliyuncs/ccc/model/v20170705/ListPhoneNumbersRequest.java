@@ -23,19 +23,19 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListPhoneNumbersRequest extends RpcAcsRequest<ListPhoneNumbersResponse> {
-	
+	   
+
+	private Boolean outboundOnly;
+
+	private String instanceId;
 	public ListPhoneNumbersRequest() {
 		super("CCC", "2017-07-05", "ListPhoneNumbers");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Boolean outboundOnly;
-
-	private String instanceId;
 
 	public Boolean getOutboundOnly() {
 		return this.outboundOnly;

@@ -23,19 +23,19 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class DeleteJobGroupRequest extends RpcAcsRequest<DeleteJobGroupResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String jobGroupId;
 	public DeleteJobGroupRequest() {
 		super("CCC", "2017-07-05", "DeleteJobGroup");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String jobGroupId;
 
 	public String getInstanceId() {
 		return this.instanceId;

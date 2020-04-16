@@ -23,21 +23,21 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ModifyPrivacyNumberCallDetailRequest extends RpcAcsRequest<ModifyPrivacyNumberCallDetailResponse> {
-	
-	public ModifyPrivacyNumberCallDetailRequest() {
-		super("CCC", "2017-07-05", "ModifyPrivacyNumberCallDetail");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String callId;
 
 	private String contactId;
 
 	private String instanceId;
+	public ModifyPrivacyNumberCallDetailRequest() {
+		super("CCC", "2017-07-05", "ModifyPrivacyNumberCallDetail");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCallId() {
 		return this.callId;

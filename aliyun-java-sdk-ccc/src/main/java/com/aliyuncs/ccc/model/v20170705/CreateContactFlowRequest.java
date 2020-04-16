@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class CreateContactFlowRequest extends RpcAcsRequest<CreateContactFlowResponse> {
-	
-	public CreateContactFlowRequest() {
-		super("CCC", "2017-07-05", "CreateContactFlow");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String canvas;
 
@@ -44,6 +36,14 @@ public class CreateContactFlowRequest extends RpcAcsRequest<CreateContactFlowRes
 	private String instanceId;
 
 	private String name;
+	public CreateContactFlowRequest() {
+		super("CCC", "2017-07-05", "CreateContactFlow");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCanvas() {
 		return this.canvas;
