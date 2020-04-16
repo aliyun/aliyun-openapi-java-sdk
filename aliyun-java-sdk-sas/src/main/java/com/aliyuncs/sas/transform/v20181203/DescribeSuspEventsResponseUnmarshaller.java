@@ -55,6 +55,7 @@ public class DescribeSuspEventsResponseUnmarshaller {
 			warningSummary.setAlarmEventType(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AlarmEventType"));
 			warningSummary.setAlarmEventName(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AlarmEventName"));
 			warningSummary.setAlarmUniqueInfo(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AlarmUniqueInfo"));
+			warningSummary.setAdvanced(_ctx.booleanValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Advanced"));
 
 			suspEvents.add(warningSummary);
 		}

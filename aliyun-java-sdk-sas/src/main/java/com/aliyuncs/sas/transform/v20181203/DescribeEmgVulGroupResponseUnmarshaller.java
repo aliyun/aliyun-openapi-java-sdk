@@ -38,6 +38,9 @@ public class DescribeEmgVulGroupResponseUnmarshaller {
 			emgVulGroup.setGmtPublish(_ctx.longValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].GmtPublish"));
 			emgVulGroup.setDescription(_ctx.stringValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].Description"));
 			emgVulGroup.setType(_ctx.stringValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].Type"));
+			emgVulGroup.setStatus(_ctx.integerValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].Status"));
+			emgVulGroup.setProgress(_ctx.integerValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].Progress"));
+			emgVulGroup.setGmtLastCheck(_ctx.longValue("DescribeEmgVulGroupResponse.EmgVulGroupList["+ i +"].GmtLastCheck"));
 
 			emgVulGroupList.add(emgVulGroup);
 		}
