@@ -28,6 +28,7 @@ public class QuerySmarttagJobResponseUnmarshaller {
 		
 		querySmarttagJobResponse.setRequestId(_ctx.stringValue("QuerySmarttagJobResponse.RequestId"));
 		querySmarttagJobResponse.setJobStatus(_ctx.stringValue("QuerySmarttagJobResponse.JobStatus"));
+		querySmarttagJobResponse.setUserData(_ctx.stringValue("QuerySmarttagJobResponse.UserData"));
 
 		List<Result> results = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySmarttagJobResponse.Results.Length"); i++) {

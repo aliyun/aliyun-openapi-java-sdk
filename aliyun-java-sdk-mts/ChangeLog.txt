@@ -1,3 +1,6 @@
+2020-04-16 Version: 2.7.4
+- Modify `SubmitSmarttagJob`.
+
 2019-11-20 Version: 2.7.3
 - Generated 2014-06-18 for `Mts`.
 

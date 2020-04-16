@@ -22,36 +22,32 @@ import com.aliyuncs.mts.Endpoint;
  * @author auto create
  * @version 
  */
-public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobResponse> {
+public class SubmitIProductionJobRequest extends RpcAcsRequest<SubmitIProductionJobResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String title;
-
-	private String content;
+	private String jobParams;
 
 	private String userData;
+
+	private String functionName;
 
 	private String notifyUrl;
 
 	private String resourceOwnerAccount;
 
+	private String modelId;
+
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String params;
-
 	private String pipelineId;
 
-	private String contentType;
-
-	private String input;
-
-	private String contentAddr;
-	public SubmitSmarttagJobRequest() {
-		super("Mts", "2014-06-18", "SubmitSmarttagJob", "mts");
+	private String scheduleParams;
+	public SubmitIProductionJobRequest() {
+		super("Mts", "2014-06-18", "SubmitIProductionJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -70,25 +66,14 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 		}
 	}
 
-	public String getTitle() {
-		return this.title;
+	public String getJobParams() {
+		return this.jobParams;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
-		if(title != null){
-			putQueryParameter("Title", title);
-		}
-	}
-
-	public String getContent() {
-		return this.content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-		if(content != null){
-			putQueryParameter("Content", content);
+	public void setJobParams(String jobParams) {
+		this.jobParams = jobParams;
+		if(jobParams != null){
+			putQueryParameter("JobParams", jobParams);
 		}
 	}
 
@@ -100,6 +85,17 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getFunctionName() {
+		return this.functionName;
+	}
+
+	public void setFunctionName(String functionName) {
+		this.functionName = functionName;
+		if(functionName != null){
+			putQueryParameter("FunctionName", functionName);
 		}
 	}
 
@@ -125,6 +121,17 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 		}
 	}
 
+	public String getModelId() {
+		return this.modelId;
+	}
+
+	public void setModelId(String modelId) {
+		this.modelId = modelId;
+		if(modelId != null){
+			putQueryParameter("ModelId", modelId);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -147,17 +154,6 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 		}
 	}
 
-	public String getParams() {
-		return this.params;
-	}
-
-	public void setParams(String params) {
-		this.params = params;
-		if(params != null){
-			putQueryParameter("Params", params);
-		}
-	}
-
 	public String getPipelineId() {
 		return this.pipelineId;
 	}
@@ -169,42 +165,20 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 		}
 	}
 
-	public String getContentType() {
-		return this.contentType;
+	public String getScheduleParams() {
+		return this.scheduleParams;
 	}
 
-	public void setContentType(String contentType) {
-		this.contentType = contentType;
-		if(contentType != null){
-			putQueryParameter("ContentType", contentType);
-		}
-	}
-
-	public String getInput() {
-		return this.input;
-	}
-
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
-		}
-	}
-
-	public String getContentAddr() {
-		return this.contentAddr;
-	}
-
-	public void setContentAddr(String contentAddr) {
-		this.contentAddr = contentAddr;
-		if(contentAddr != null){
-			putQueryParameter("ContentAddr", contentAddr);
+	public void setScheduleParams(String scheduleParams) {
+		this.scheduleParams = scheduleParams;
+		if(scheduleParams != null){
+			putQueryParameter("ScheduleParams", scheduleParams);
 		}
 	}
 
 	@Override
-	public Class<SubmitSmarttagJobResponse> getResponseClass() {
-		return SubmitSmarttagJobResponse.class;
+	public Class<SubmitIProductionJobResponse> getResponseClass() {
+		return SubmitIProductionJobResponse.class;
 	}
 
 }

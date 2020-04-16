@@ -55,6 +55,8 @@ public class QueryFpShotJobListResponseUnmarshaller {
 			fpShotJob.setUserData(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].UserData"));
 			fpShotJob.setPipelineId(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].PipelineId"));
 			fpShotJob.setFileId(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FileId"));
+			fpShotJob.setTransactionId(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].TransactionId"));
+			fpShotJob.setTxHash(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].TxHash"));
 			fpShotJob.setState(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].State"));
 			fpShotJob.setCode(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].Code"));
 			fpShotJob.setMessage(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].Message"));
@@ -70,6 +72,8 @@ public class QueryFpShotJobListResponseUnmarshaller {
 			FpShotConfig fpShotConfig = new FpShotConfig();
 			fpShotConfig.setPrimaryKey(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotConfig.PrimaryKey"));
 			fpShotConfig.setSaveType(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotConfig.SaveType"));
+			fpShotConfig.setNotary(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotConfig.Notary"));
+			fpShotConfig.setFpDBId(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotConfig.FpDBId"));
 			fpShotJob.setFpShotConfig(fpShotConfig);
 
 			FpShotResult fpShotResult = new FpShotResult();
@@ -83,6 +87,7 @@ public class QueryFpShotJobListResponseUnmarshaller {
 				List<FpShotSlice> fpShotSlices = new ArrayList<FpShotSlice>();
 				for (int k = 0; k < _ctx.lengthValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotResult.FpShots["+ j +"].FpShotSlices.Length"); k++) {
 					FpShotSlice fpShotSlice = new FpShotSlice();
+					fpShotSlice.setSimilarity(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotResult.FpShots["+ j +"].FpShotSlices["+ k +"].Similarity"));
 
 					Input input = new Input();
 					input.setStart(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotResult.FpShots["+ j +"].FpShotSlices["+ k +"].Input.Start"));
@@ -111,6 +116,7 @@ public class QueryFpShotJobListResponseUnmarshaller {
 				List<FpShotSlice> fpShotSlices = new ArrayList<FpShotSlice>();
 				for (int k = 0; k < _ctx.lengthValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotResult.AudioFpShots["+ j +"].FpShotSlices.Length"); k++) {
 					FpShotSlice fpShotSlice_ = new FpShotSlice();
+					fpShotSlice_.setSimilarity(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotResult.AudioFpShots["+ j +"].FpShotSlices["+ k +"].Similarity"));
 
 					com.aliyuncs.mts.model.v20140618.QueryFpShotJobListResponse.FpShotJob.FpShotResult.FpShot.FpShotSlice.Input fpShotSliceInput = new com.aliyuncs.mts.model.v20140618.QueryFpShotJobListResponse.FpShotJob.FpShotResult.FpShot.FpShotSlice.Input();
 					fpShotSliceInput.setStart(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotResult.AudioFpShots["+ j +"].FpShotSlices["+ k +"].Input.Start"));
