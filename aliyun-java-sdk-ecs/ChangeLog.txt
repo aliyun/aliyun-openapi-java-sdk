@@ -1,3 +1,6 @@
+2020-04-17 Version: 4.19.4
+- DescribeInstanceTypes support TotalEniQueueQuantity.
+
 2020-04-16 Version: 4.19.3
 - Add BatchOptimization param in Stop and Start Instances.
 - Add RemoveSymbols in GetInstanceConsoleOutput.

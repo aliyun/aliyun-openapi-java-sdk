@@ -85,6 +85,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private String instanceFamilyLevel;
 
+		private Integer totalEniQueueQuantity;
+
 		public String getInstanceTypeId() {
 			return this.instanceTypeId;
 		}
@@ -235,6 +237,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setInstanceFamilyLevel(String instanceFamilyLevel) {
 			this.instanceFamilyLevel = instanceFamilyLevel;
+		}
+
+		public Integer getTotalEniQueueQuantity() {
+			return this.totalEniQueueQuantity;
+		}
+
+		public void setTotalEniQueueQuantity(Integer totalEniQueueQuantity) {
+			this.totalEniQueueQuantity = totalEniQueueQuantity;
 		}
 	}
 
