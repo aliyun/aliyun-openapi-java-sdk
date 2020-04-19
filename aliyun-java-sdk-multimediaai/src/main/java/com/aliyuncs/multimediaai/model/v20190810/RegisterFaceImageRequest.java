@@ -31,7 +31,7 @@ public class RegisterFaceImageRequest extends RpcAcsRequest<RegisterFaceImageRes
 
 	private String imageUrl;
 	public RegisterFaceImageRequest() {
-		super("multimediaai", "2019-08-10", "RegisterFaceImage", "multimediaai");
+		super("multimediaai", "2019-08-10", "RegisterFaceImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

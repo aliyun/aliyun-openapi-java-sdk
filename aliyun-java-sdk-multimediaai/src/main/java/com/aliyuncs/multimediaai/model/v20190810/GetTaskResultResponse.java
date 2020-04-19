@@ -66,6 +66,14 @@ public class GetTaskResultResponse extends AcsResponse {
 
 		private String videoUrl;
 
+		private String errorName;
+
+		private String errorReason;
+
+		private String errorCode;
+
+		private String errorMessage;
+
 		public String getApplicationId() {
 			return this.applicationId;
 		}
@@ -104,6 +112,38 @@ public class GetTaskResultResponse extends AcsResponse {
 
 		public void setVideoUrl(String videoUrl) {
 			this.videoUrl = videoUrl;
+		}
+
+		public String getErrorName() {
+			return this.errorName;
+		}
+
+		public void setErrorName(String errorName) {
+			this.errorName = errorName;
+		}
+
+		public String getErrorReason() {
+			return this.errorReason;
+		}
+
+		public void setErrorReason(String errorReason) {
+			this.errorReason = errorReason;
+		}
+
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
 		}
 	}
 

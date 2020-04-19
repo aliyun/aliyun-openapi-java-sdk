@@ -1,3 +1,6 @@
+2020-04-19 Version: 1.1.2
+- Multimedia poc modified.
+
 2019-12-03 Version: 1.1.0
 - Supported face library operation.
 - Supported task template and words.

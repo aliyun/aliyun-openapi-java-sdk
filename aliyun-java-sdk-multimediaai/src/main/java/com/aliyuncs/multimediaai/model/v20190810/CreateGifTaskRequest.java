@@ -35,7 +35,7 @@ public class CreateGifTaskRequest extends RpcAcsRequest<CreateGifTaskResponse> {
 
 	private String applicationId;
 	public CreateGifTaskRequest() {
-		super("multimediaai", "2019-08-10", "CreateGifTask", "multimediaai");
+		super("multimediaai", "2019-08-10", "CreateGifTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
