@@ -83,7 +83,7 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 	public void setFaceContrastPicture(String faceContrastPicture) {
 		this.faceContrastPicture = faceContrastPicture;
 		if(faceContrastPicture != null){
-			putQueryParameter("FaceContrastPicture", faceContrastPicture);
+			putBodyParameter("FaceContrastPicture", faceContrastPicture);
 		}
 	}
 

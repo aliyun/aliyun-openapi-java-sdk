@@ -70,7 +70,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	public void setProductCode(String productCode) {
 		this.productCode = productCode;
 		if(productCode != null){
-			putQueryParameter("ProductCode", productCode);
+			putBodyParameter("ProductCode", productCode);
 		}
 	}
 
@@ -81,7 +81,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	public void setOssObjectName(String ossObjectName) {
 		this.ossObjectName = ossObjectName;
 		if(ossObjectName != null){
-			putQueryParameter("OssObjectName", ossObjectName);
+			putBodyParameter("OssObjectName", ossObjectName);
 		}
 	}
 
@@ -92,7 +92,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	public void setFaceContrastPicture(String faceContrastPicture) {
 		this.faceContrastPicture = faceContrastPicture;
 		if(faceContrastPicture != null){
-			putQueryParameter("FaceContrastPicture", faceContrastPicture);
+			putBodyParameter("FaceContrastPicture", faceContrastPicture);
 		}
 	}
 
@@ -103,7 +103,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	public void setCertName(String certName) {
 		this.certName = certName;
 		if(certName != null){
-			putQueryParameter("CertName", certName);
+			putBodyParameter("CertName", certName);
 		}
 	}
 
@@ -114,7 +114,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	public void setIp(String ip) {
 		this.ip = ip;
 		if(ip != null){
-			putQueryParameter("Ip", ip);
+			putBodyParameter("Ip", ip);
 		}
 	}
 
@@ -125,7 +125,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 		if(mobile != null){
-			putQueryParameter("Mobile", mobile);
+			putBodyParameter("Mobile", mobile);
 		}
 	}
 
@@ -136,7 +136,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	public void setDeviceToken(String deviceToken) {
 		this.deviceToken = deviceToken;
 		if(deviceToken != null){
-			putQueryParameter("DeviceToken", deviceToken);
+			putBodyParameter("DeviceToken", deviceToken);
 		}
 	}
 
@@ -147,7 +147,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	public void setUserId(String userId) {
 		this.userId = userId;
 		if(userId != null){
-			putQueryParameter("UserId", userId);
+			putBodyParameter("UserId", userId);
 		}
 	}
 
@@ -158,7 +158,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	public void setCertifyId(String certifyId) {
 		this.certifyId = certifyId;
 		if(certifyId != null){
-			putQueryParameter("CertifyId", certifyId);
+			putBodyParameter("CertifyId", certifyId);
 		}
 	}
 
@@ -169,7 +169,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	public void setCertNo(String certNo) {
 		this.certNo = certNo;
 		if(certNo != null){
-			putQueryParameter("CertNo", certNo);
+			putBodyParameter("CertNo", certNo);
 		}
 	}
 
@@ -180,7 +180,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	public void setOuterOrderNo(String outerOrderNo) {
 		this.outerOrderNo = outerOrderNo;
 		if(outerOrderNo != null){
-			putQueryParameter("OuterOrderNo", outerOrderNo);
+			putBodyParameter("OuterOrderNo", outerOrderNo);
 		}
 	}
 
@@ -191,7 +191,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	public void setCertType(String certType) {
 		this.certType = certType;
 		if(certType != null){
-			putQueryParameter("CertType", certType);
+			putBodyParameter("CertType", certType);
 		}
 	}
 
@@ -202,7 +202,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	public void setFaceContrastPictureUrl(String faceContrastPictureUrl) {
 		this.faceContrastPictureUrl = faceContrastPictureUrl;
 		if(faceContrastPictureUrl != null){
-			putQueryParameter("FaceContrastPictureUrl", faceContrastPictureUrl);
+			putBodyParameter("FaceContrastPictureUrl", faceContrastPictureUrl);
 		}
 	}
 
@@ -213,7 +213,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	public void setSceneId(Long sceneId) {
 		this.sceneId = sceneId;
 		if(sceneId != null){
-			putQueryParameter("SceneId", sceneId.toString());
+			putBodyParameter("SceneId", sceneId.toString());
 		}
 	}
 
@@ -224,7 +224,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	public void setOssBucketName(String ossBucketName) {
 		this.ossBucketName = ossBucketName;
 		if(ossBucketName != null){
-			putQueryParameter("OssBucketName", ossBucketName);
+			putBodyParameter("OssBucketName", ossBucketName);
 		}
 	}
 

@@ -22,12 +22,14 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeUploadInfoRequest extends RpcAcsRequest<DescribeUploadInfoResponse> {
+public class DescribeSdkUrlRequest extends RpcAcsRequest<DescribeSdkUrlResponse> {
 	   
 
-	private String biz;
-	public DescribeUploadInfoRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeUploadInfo", "cloudauth");
+	private Boolean debug;
+
+	private Long id;
+	public DescribeSdkUrlRequest() {
+		super("Cloudauth", "2019-03-07", "DescribeSdkUrl", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class DescribeUploadInfoRequest extends RpcAcsRequest<DescribeUploadInfoR
 		} catch (Exception e) {}
 	}
 
-	public String getBiz() {
-		return this.biz;
+	public Boolean getDebug() {
+		return this.debug;
 	}
 
-	public void setBiz(String biz) {
-		this.biz = biz;
-		if(biz != null){
-			putQueryParameter("Biz", biz);
+	public void setDebug(Boolean debug) {
+		this.debug = debug;
+		if(debug != null){
+			putQueryParameter("Debug", debug.toString());
+		}
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeUploadInfoResponse> getResponseClass() {
-		return DescribeUploadInfoResponse.class;
+	public Class<DescribeSdkUrlResponse> getResponseClass() {
+		return DescribeSdkUrlResponse.class;
 	}
 
 }

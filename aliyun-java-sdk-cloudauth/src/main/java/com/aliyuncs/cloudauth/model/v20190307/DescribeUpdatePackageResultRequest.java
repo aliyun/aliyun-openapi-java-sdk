@@ -22,12 +22,12 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeUploadInfoRequest extends RpcAcsRequest<DescribeUploadInfoResponse> {
+public class DescribeUpdatePackageResultRequest extends RpcAcsRequest<DescribeUpdatePackageResultResponse> {
 	   
 
-	private String biz;
-	public DescribeUploadInfoRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeUploadInfo", "cloudauth");
+	private String taskId;
+	public DescribeUpdatePackageResultRequest() {
+		super("Cloudauth", "2019-03-07", "DescribeUpdatePackageResult", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class DescribeUploadInfoRequest extends RpcAcsRequest<DescribeUploadInfoR
 		} catch (Exception e) {}
 	}
 
-	public String getBiz() {
-		return this.biz;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setBiz(String biz) {
-		this.biz = biz;
-		if(biz != null){
-			putQueryParameter("Biz", biz);
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<DescribeUploadInfoResponse> getResponseClass() {
-		return DescribeUploadInfoResponse.class;
+	public Class<DescribeUpdatePackageResultResponse> getResponseClass() {
+		return DescribeUpdatePackageResultResponse.class;
 	}
 
 }

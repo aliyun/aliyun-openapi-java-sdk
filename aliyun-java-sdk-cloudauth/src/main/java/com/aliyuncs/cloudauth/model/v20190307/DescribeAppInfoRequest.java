@@ -22,12 +22,16 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeUploadInfoRequest extends RpcAcsRequest<DescribeUploadInfoResponse> {
+public class DescribeAppInfoRequest extends RpcAcsRequest<DescribeAppInfoResponse> {
 	   
 
-	private String biz;
-	public DescribeUploadInfoRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeUploadInfo", "cloudauth");
+	private Integer currentPage;
+
+	private String platform;
+
+	private Integer pageSize;
+	public DescribeAppInfoRequest() {
+		super("Cloudauth", "2019-03-07", "DescribeAppInfo", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +39,42 @@ public class DescribeUploadInfoRequest extends RpcAcsRequest<DescribeUploadInfoR
 		} catch (Exception e) {}
 	}
 
-	public String getBiz() {
-		return this.biz;
+	public Integer getCurrentPage() {
+		return this.currentPage;
 	}
 
-	public void setBiz(String biz) {
-		this.biz = biz;
-		if(biz != null){
-			putQueryParameter("Biz", biz);
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getPlatform() {
+		return this.platform;
+	}
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+		if(platform != null){
+			putQueryParameter("Platform", platform);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeUploadInfoResponse> getResponseClass() {
-		return DescribeUploadInfoResponse.class;
+	public Class<DescribeAppInfoResponse> getResponseClass() {
+		return DescribeAppInfoResponse.class;
 	}
 
 }
