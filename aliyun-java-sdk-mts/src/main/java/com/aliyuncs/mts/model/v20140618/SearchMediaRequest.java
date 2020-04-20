@@ -53,7 +53,7 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 
 	private String to;
 	public SearchMediaRequest() {
-		super("Mts", "2014-06-18", "SearchMedia", "mts");
+		super("Mts", "2014-06-18", "SearchMedia");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

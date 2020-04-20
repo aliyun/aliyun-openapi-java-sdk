@@ -53,7 +53,7 @@ public class AddMediaRequest extends RpcAcsRequest<AddMediaResponse> {
 
 	private String fileURL;
 	public AddMediaRequest() {
-		super("Mts", "2014-06-18", "AddMedia", "mts");
+		super("Mts", "2014-06-18", "AddMedia");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class QueryTemplateListRequest extends RpcAcsRequest<QueryTemplateListRes
 
 	private Long ownerId;
 	public QueryTemplateListRequest() {
-		super("Mts", "2014-06-18", "QueryTemplateList", "mts");
+		super("Mts", "2014-06-18", "QueryTemplateList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

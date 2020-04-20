@@ -35,7 +35,7 @@ public class GetPackageRequest extends RpcAcsRequest<GetPackageResponse> {
 
 	private String ownerId;
 	public GetPackageRequest() {
-		super("Mts", "2014-06-18", "GetPackage", "mts");
+		super("Mts", "2014-06-18", "GetPackage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class ReportPornJobResultRequest extends RpcAcsRequest<ReportPornJobResul
 
 	private String detail;
 	public ReportPornJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportPornJobResult", "mts");
+		super("Mts", "2014-06-18", "ReportPornJobResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

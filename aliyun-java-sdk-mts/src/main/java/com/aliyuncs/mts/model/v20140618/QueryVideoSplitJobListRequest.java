@@ -35,7 +35,7 @@ public class QueryVideoSplitJobListRequest extends RpcAcsRequest<QueryVideoSplit
 
 	private String jobIds;
 	public QueryVideoSplitJobListRequest() {
-		super("Mts", "2014-06-18", "QueryVideoSplitJobList", "mts");
+		super("Mts", "2014-06-18", "QueryVideoSplitJobList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

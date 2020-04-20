@@ -39,7 +39,7 @@ public class QueryMediaCensorJobDetailRequest extends RpcAcsRequest<QueryMediaCe
 
 	private Long ownerId;
 	public QueryMediaCensorJobDetailRequest() {
-		super("Mts", "2014-06-18", "QueryMediaCensorJobDetail", "mts");
+		super("Mts", "2014-06-18", "QueryMediaCensorJobDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

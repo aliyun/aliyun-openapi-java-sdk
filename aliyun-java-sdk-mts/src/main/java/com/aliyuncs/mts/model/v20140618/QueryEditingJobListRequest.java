@@ -35,7 +35,7 @@ public class QueryEditingJobListRequest extends RpcAcsRequest<QueryEditingJobLis
 
 	private String jobIds;
 	public QueryEditingJobListRequest() {
-		super("Mts", "2014-06-18", "QueryEditingJobList", "mts");
+		super("Mts", "2014-06-18", "QueryEditingJobList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

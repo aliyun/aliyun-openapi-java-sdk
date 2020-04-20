@@ -37,7 +37,7 @@ public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
 
 	private Long ownerId;
 	public AddCategoryRequest() {
-		super("Mts", "2014-06-18", "AddCategory", "mts");
+		super("Mts", "2014-06-18", "AddCategory");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

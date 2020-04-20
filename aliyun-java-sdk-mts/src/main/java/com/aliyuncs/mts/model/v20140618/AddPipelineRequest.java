@@ -43,7 +43,7 @@ public class AddPipelineRequest extends RpcAcsRequest<AddPipelineResponse> {
 
 	private Long speedLevel;
 	public AddPipelineRequest() {
-		super("Mts", "2014-06-18", "AddPipeline", "mts");
+		super("Mts", "2014-06-18", "AddPipeline");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

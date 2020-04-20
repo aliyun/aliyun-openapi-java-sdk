@@ -37,7 +37,7 @@ public class UnbindInputBucketRequest extends RpcAcsRequest<UnbindInputBucketRes
 
 	private String roleArn;
 	public UnbindInputBucketRequest() {
-		super("Mts", "2014-06-18", "UnbindInputBucket", "mts");
+		super("Mts", "2014-06-18", "UnbindInputBucket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

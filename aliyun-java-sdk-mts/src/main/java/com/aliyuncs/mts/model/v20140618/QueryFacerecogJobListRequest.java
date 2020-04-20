@@ -35,7 +35,7 @@ public class QueryFacerecogJobListRequest extends RpcAcsRequest<QueryFacerecogJo
 
 	private Long ownerId;
 	public QueryFacerecogJobListRequest() {
-		super("Mts", "2014-06-18", "QueryFacerecogJobList", "mts");
+		super("Mts", "2014-06-18", "QueryFacerecogJobList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -49,7 +49,7 @@ public class PlayInfoRequest extends RpcAcsRequest<PlayInfoResponse> {
 
 	private String authInfo;
 	public PlayInfoRequest() {
-		super("Mts", "2014-06-18", "PlayInfo", "mts");
+		super("Mts", "2014-06-18", "PlayInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

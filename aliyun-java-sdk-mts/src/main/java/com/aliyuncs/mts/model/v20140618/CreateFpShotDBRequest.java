@@ -41,7 +41,7 @@ public class CreateFpShotDBRequest extends RpcAcsRequest<CreateFpShotDBResponse>
 
 	private String config;
 	public CreateFpShotDBRequest() {
-		super("Mts", "2014-06-18", "CreateFpShotDB", "mts");
+		super("Mts", "2014-06-18", "CreateFpShotDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

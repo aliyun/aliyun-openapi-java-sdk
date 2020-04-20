@@ -33,7 +33,7 @@ public class PlayerAuthRequest extends RpcAcsRequest<PlayerAuthResponse> {
 
 	private String ownerId;
 	public PlayerAuthRequest() {
-		super("Mts", "2014-06-18", "PlayerAuth", "mts");
+		super("Mts", "2014-06-18", "PlayerAuth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

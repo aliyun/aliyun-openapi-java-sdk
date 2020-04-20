@@ -43,7 +43,7 @@ public class QueryMediaListByURLRequest extends RpcAcsRequest<QueryMediaListByUR
 
 	private Boolean includeMediaInfo;
 	public QueryMediaListByURLRequest() {
-		super("Mts", "2014-06-18", "QueryMediaListByURL", "mts");
+		super("Mts", "2014-06-18", "QueryMediaListByURL");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

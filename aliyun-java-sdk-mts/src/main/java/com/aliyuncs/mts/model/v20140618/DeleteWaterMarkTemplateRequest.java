@@ -35,7 +35,7 @@ public class DeleteWaterMarkTemplateRequest extends RpcAcsRequest<DeleteWaterMar
 
 	private String waterMarkTemplateId;
 	public DeleteWaterMarkTemplateRequest() {
-		super("Mts", "2014-06-18", "DeleteWaterMarkTemplate", "mts");
+		super("Mts", "2014-06-18", "DeleteWaterMarkTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

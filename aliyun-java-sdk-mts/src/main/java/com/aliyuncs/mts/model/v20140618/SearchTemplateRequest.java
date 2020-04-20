@@ -39,7 +39,7 @@ public class SearchTemplateRequest extends RpcAcsRequest<SearchTemplateResponse>
 
 	private Long ownerId;
 	public SearchTemplateRequest() {
-		super("Mts", "2014-06-18", "SearchTemplate", "mts");
+		super("Mts", "2014-06-18", "SearchTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

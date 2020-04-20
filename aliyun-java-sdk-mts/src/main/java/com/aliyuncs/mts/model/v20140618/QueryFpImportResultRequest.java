@@ -41,7 +41,7 @@ public class QueryFpImportResultRequest extends RpcAcsRequest<QueryFpImportResul
 
 	private Long ownerId;
 	public QueryFpImportResultRequest() {
-		super("Mts", "2014-06-18", "QueryFpImportResult", "mts");
+		super("Mts", "2014-06-18", "QueryFpImportResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

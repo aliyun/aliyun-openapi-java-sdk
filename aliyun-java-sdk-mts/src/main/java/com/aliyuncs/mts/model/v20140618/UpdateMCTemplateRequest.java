@@ -57,7 +57,7 @@ public class UpdateMCTemplateRequest extends RpcAcsRequest<UpdateMCTemplateRespo
 
 	private String spam;
 	public UpdateMCTemplateRequest() {
-		super("Mts", "2014-06-18", "UpdateMCTemplate", "mts");
+		super("Mts", "2014-06-18", "UpdateMCTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

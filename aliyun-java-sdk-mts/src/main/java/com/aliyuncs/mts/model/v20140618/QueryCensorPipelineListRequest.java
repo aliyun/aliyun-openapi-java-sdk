@@ -35,7 +35,7 @@ public class QueryCensorPipelineListRequest extends RpcAcsRequest<QueryCensorPip
 
 	private String pipelineIds;
 	public QueryCensorPipelineListRequest() {
-		super("Mts", "2014-06-18", "QueryCensorPipelineList", "mts");
+		super("Mts", "2014-06-18", "QueryCensorPipelineList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class ListAsrPipelineRequest extends RpcAcsRequest<ListAsrPipelineRespons
 
 	private Long ownerId;
 	public ListAsrPipelineRequest() {
-		super("Mts", "2014-06-18", "ListAsrPipeline", "mts");
+		super("Mts", "2014-06-18", "ListAsrPipeline");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
