@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-elasticsearch</artifactId>
   <packaging>jar</packaging>
-  <version>3.0.15</version>
+  <version>3.0.16</version>
   <name>aliyun-java-sdk-elasticsearch</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

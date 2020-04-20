@@ -100,6 +100,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private Boolean enableKibanaPrivateNetwork;
+
 		private List<DictListItem> dictList;
 
 		private List<SynonymsDictsItem> synonymsDicts;
@@ -119,6 +121,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 		private List<String> publicIpWhitelist;
 
 		private List<String> privateNetworkIpWhiteList;
+
+		private List<String> kibanaPrivateIPWhitelist;
 
 		private NodeSpec nodeSpec;
 
@@ -342,6 +346,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public Boolean getEnableKibanaPrivateNetwork() {
+			return this.enableKibanaPrivateNetwork;
+		}
+
+		public void setEnableKibanaPrivateNetwork(Boolean enableKibanaPrivateNetwork) {
+			this.enableKibanaPrivateNetwork = enableKibanaPrivateNetwork;
+		}
+
 		public List<DictListItem> getDictList() {
 			return this.dictList;
 		}
@@ -420,6 +432,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setPrivateNetworkIpWhiteList(List<String> privateNetworkIpWhiteList) {
 			this.privateNetworkIpWhiteList = privateNetworkIpWhiteList;
+		}
+
+		public List<String> getKibanaPrivateIPWhitelist() {
+			return this.kibanaPrivateIPWhitelist;
+		}
+
+		public void setKibanaPrivateIPWhitelist(List<String> kibanaPrivateIPWhitelist) {
+			this.kibanaPrivateIPWhitelist = kibanaPrivateIPWhitelist;
 		}
 
 		public NodeSpec getNodeSpec() {
