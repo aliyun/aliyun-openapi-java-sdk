@@ -23,7 +23,13 @@ import com.aliyuncs.dg.Endpoint;
  * @version 
  */
 public class GetUserGatewaysRequest extends RpcAcsRequest<GetUserGatewaysResponse> {
-	
+	   
+
+	private String searchKey;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
 	public GetUserGatewaysRequest() {
 		super("dg", "2019-03-27", "GetUserGateways", "dg");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class GetUserGatewaysRequest extends RpcAcsRequest<GetUserGatewaysRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String searchKey;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
 
 	public String getSearchKey() {
 		return this.searchKey;

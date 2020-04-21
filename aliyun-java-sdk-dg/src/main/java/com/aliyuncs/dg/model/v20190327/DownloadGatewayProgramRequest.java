@@ -24,7 +24,9 @@ import com.aliyuncs.dg.Endpoint;
  * @version 
  */
 public class DownloadGatewayProgramRequest extends RpcAcsRequest<DownloadGatewayProgramResponse> {
-	
+	   
+
+	private String userOS;
 	public DownloadGatewayProgramRequest() {
 		super("dg", "2019-03-27", "DownloadGatewayProgram", "dg");
 		setProtocol(ProtocolType.HTTPS);
@@ -34,8 +36,6 @@ public class DownloadGatewayProgramRequest extends RpcAcsRequest<DownloadGateway
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String userOS;
 
 	public String getUserOS() {
 		return this.userOS;

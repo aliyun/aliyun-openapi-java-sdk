@@ -1,3 +1,6 @@
+2020-04-21 Version: 1.0.8
+- Supported version.
+
 2019-09-24 Version: 1.0.7
 - Generated 2019-03-27 for `dg`.
 

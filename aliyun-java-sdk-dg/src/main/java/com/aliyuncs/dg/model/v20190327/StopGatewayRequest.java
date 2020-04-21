@@ -24,7 +24,9 @@ import com.aliyuncs.dg.Endpoint;
  * @version 
  */
 public class StopGatewayRequest extends RpcAcsRequest<StopGatewayResponse> {
-	
+	   
+
+	private String gatewayId;
 	public StopGatewayRequest() {
 		super("dg", "2019-03-27", "StopGateway", "dg");
 		setProtocol(ProtocolType.HTTPS);
@@ -34,8 +36,6 @@ public class StopGatewayRequest extends RpcAcsRequest<StopGatewayResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String gatewayId;
 
 	public String getGatewayId() {
 		return this.gatewayId;

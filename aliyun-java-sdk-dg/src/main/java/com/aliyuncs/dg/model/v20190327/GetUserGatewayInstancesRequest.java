@@ -23,12 +23,12 @@ import com.aliyuncs.dg.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDatabaseRequest extends RpcAcsRequest<DeleteDatabaseResponse> {
+public class GetUserGatewayInstancesRequest extends RpcAcsRequest<GetUserGatewayInstancesResponse> {
 	   
 
-	private String instanceId;
-	public DeleteDatabaseRequest() {
-		super("dg", "2019-03-27", "DeleteDatabase", "dg");
+	private String gatewayId;
+	public GetUserGatewayInstancesRequest() {
+		super("dg", "2019-03-27", "GetUserGatewayInstances", "dg");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -37,20 +37,20 @@ public class DeleteDatabaseRequest extends RpcAcsRequest<DeleteDatabaseResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getGatewayId() {
+		return this.gatewayId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+	public void setGatewayId(String gatewayId) {
+		this.gatewayId = gatewayId;
+		if(gatewayId != null){
+			putBodyParameter("GatewayId", gatewayId);
 		}
 	}
 
 	@Override
-	public Class<DeleteDatabaseResponse> getResponseClass() {
-		return DeleteDatabaseResponse.class;
+	public Class<GetUserGatewayInstancesResponse> getResponseClass() {
+		return GetUserGatewayInstancesResponse.class;
 	}
 
 }

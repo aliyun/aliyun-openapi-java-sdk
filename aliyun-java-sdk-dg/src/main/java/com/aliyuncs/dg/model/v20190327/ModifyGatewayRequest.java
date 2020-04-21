@@ -24,7 +24,13 @@ import com.aliyuncs.dg.Endpoint;
  * @version 
  */
 public class ModifyGatewayRequest extends RpcAcsRequest<ModifyGatewayResponse> {
-	
+	   
+
+	private String gatewayDesc;
+
+	private String gatewayName;
+
+	private String gatewayId;
 	public ModifyGatewayRequest() {
 		super("dg", "2019-03-27", "ModifyGateway", "dg");
 		setProtocol(ProtocolType.HTTPS);
@@ -34,12 +40,6 @@ public class ModifyGatewayRequest extends RpcAcsRequest<ModifyGatewayResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String gatewayDesc;
-
-	private String gatewayName;
-
-	private String gatewayId;
 
 	public String getGatewayDesc() {
 		return this.gatewayDesc;

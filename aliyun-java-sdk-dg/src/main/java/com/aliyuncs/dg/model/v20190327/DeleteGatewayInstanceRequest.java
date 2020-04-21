@@ -23,12 +23,14 @@ import com.aliyuncs.dg.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDatabaseRequest extends RpcAcsRequest<DeleteDatabaseResponse> {
+public class DeleteGatewayInstanceRequest extends RpcAcsRequest<DeleteGatewayInstanceResponse> {
 	   
 
-	private String instanceId;
-	public DeleteDatabaseRequest() {
-		super("dg", "2019-03-27", "DeleteDatabase", "dg");
+	private String gatewayInstanceId;
+
+	private String gatewayId;
+	public DeleteGatewayInstanceRequest() {
+		super("dg", "2019-03-27", "DeleteGatewayInstance", "dg");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -37,20 +39,31 @@ public class DeleteDatabaseRequest extends RpcAcsRequest<DeleteDatabaseResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getGatewayInstanceId() {
+		return this.gatewayInstanceId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+	public void setGatewayInstanceId(String gatewayInstanceId) {
+		this.gatewayInstanceId = gatewayInstanceId;
+		if(gatewayInstanceId != null){
+			putBodyParameter("GatewayInstanceId", gatewayInstanceId);
+		}
+	}
+
+	public String getGatewayId() {
+		return this.gatewayId;
+	}
+
+	public void setGatewayId(String gatewayId) {
+		this.gatewayId = gatewayId;
+		if(gatewayId != null){
+			putBodyParameter("GatewayId", gatewayId);
 		}
 	}
 
 	@Override
-	public Class<DeleteDatabaseResponse> getResponseClass() {
-		return DeleteDatabaseResponse.class;
+	public Class<DeleteGatewayInstanceResponse> getResponseClass() {
+		return DeleteGatewayInstanceResponse.class;
 	}
 
 }

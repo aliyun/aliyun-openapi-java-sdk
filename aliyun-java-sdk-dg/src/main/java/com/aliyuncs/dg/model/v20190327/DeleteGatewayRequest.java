@@ -24,7 +24,9 @@ import com.aliyuncs.dg.Endpoint;
  * @version 
  */
 public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
-	
+	   
+
+	private String gatewayId;
 	public DeleteGatewayRequest() {
 		super("dg", "2019-03-27", "DeleteGateway", "dg");
 		setProtocol(ProtocolType.HTTPS);
@@ -34,8 +36,6 @@ public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String gatewayId;
 
 	public String getGatewayId() {
 		return this.gatewayId;

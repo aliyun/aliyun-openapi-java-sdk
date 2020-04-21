@@ -24,16 +24,9 @@ import com.aliyuncs.dg.Endpoint;
  * @version 
  */
 public class ConnectDatabaseRequest extends RpcAcsRequest<ConnectDatabaseResponse> {
-	
-	public ConnectDatabaseRequest() {
-		super("dg", "2019-03-27", "ConnectDatabase", "dg");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private String dbName;
 
 	private Integer port;
 
@@ -46,6 +39,26 @@ public class ConnectDatabaseRequest extends RpcAcsRequest<ConnectDatabaseRespons
 	private String dbUserName;
 
 	private String gatewayId;
+	public ConnectDatabaseRequest() {
+		super("dg", "2019-03-27", "ConnectDatabase", "dg");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putBodyParameter("DbName", dbName);
+		}
+	}
 
 	public Integer getPort() {
 		return this.port;

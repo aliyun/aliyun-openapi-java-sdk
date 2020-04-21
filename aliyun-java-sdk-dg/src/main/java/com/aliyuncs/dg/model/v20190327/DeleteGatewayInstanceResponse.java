@@ -15,14 +15,14 @@
 package com.aliyuncs.dg.model.v20190327;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dg.transform.v20190327.AddDatabaseResponseUnmarshaller;
+import com.aliyuncs.dg.transform.v20190327.DeleteGatewayInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddDatabaseResponse extends AcsResponse {
+public class DeleteGatewayInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -75,8 +75,8 @@ public class AddDatabaseResponse extends AcsResponse {
 	}
 
 	@Override
-	public AddDatabaseResponse getInstance(UnmarshallerContext context) {
-		return	AddDatabaseResponseUnmarshaller.unmarshall(this, context);
+	public DeleteGatewayInstanceResponse getInstance(UnmarshallerContext context) {
+		return	DeleteGatewayInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
