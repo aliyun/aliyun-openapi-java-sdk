@@ -16,14 +16,14 @@ package com.aliyuncs.csb.model.v20171118;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.csb.transform.v20171118.FindServiceStatisticalDataResponseUnmarshaller;
+import com.aliyuncs.csb.transform.v20171118.FindServiceCredentialStatisticalDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class FindServiceStatisticalDataResponse extends AcsResponse {
+public class FindServiceCredentialStatisticalDataResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -117,6 +117,8 @@ public class FindServiceStatisticalDataResponse extends AcsResponse {
 
 			private String serviceName;
 
+			private String credentialName;
+
 			private Total total;
 
 			public Float getAvgRt() {
@@ -149,6 +151,14 @@ public class FindServiceStatisticalDataResponse extends AcsResponse {
 
 			public void setServiceName(String serviceName) {
 				this.serviceName = serviceName;
+			}
+
+			public String getCredentialName() {
+				return this.credentialName;
+			}
+
+			public void setCredentialName(String credentialName) {
+				this.credentialName = credentialName;
 			}
 
 			public Total getTotal() {
@@ -185,8 +195,8 @@ public class FindServiceStatisticalDataResponse extends AcsResponse {
 	}
 
 	@Override
-	public FindServiceStatisticalDataResponse getInstance(UnmarshallerContext context) {
-		return	FindServiceStatisticalDataResponseUnmarshaller.unmarshall(this, context);
+	public FindServiceCredentialStatisticalDataResponse getInstance(UnmarshallerContext context) {
+		return	FindServiceCredentialStatisticalDataResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

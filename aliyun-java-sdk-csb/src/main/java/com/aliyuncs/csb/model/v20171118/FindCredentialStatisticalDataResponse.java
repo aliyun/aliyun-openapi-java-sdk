@@ -16,14 +16,14 @@ package com.aliyuncs.csb.model.v20171118;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.csb.transform.v20171118.FindServiceStatisticalDataResponseUnmarshaller;
+import com.aliyuncs.csb.transform.v20171118.FindCredentialStatisticalDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class FindServiceStatisticalDataResponse extends AcsResponse {
+public class FindCredentialStatisticalDataResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -115,9 +115,9 @@ public class FindServiceStatisticalDataResponse extends AcsResponse {
 
 			private Float minRt;
 
-			private String serviceName;
-
 			private Total total;
+
+			private CredentialInfoData credentialInfoData;
 
 			public Float getAvgRt() {
 				return this.avgRt;
@@ -143,20 +143,20 @@ public class FindServiceStatisticalDataResponse extends AcsResponse {
 				this.minRt = minRt;
 			}
 
-			public String getServiceName() {
-				return this.serviceName;
-			}
-
-			public void setServiceName(String serviceName) {
-				this.serviceName = serviceName;
-			}
-
 			public Total getTotal() {
 				return this.total;
 			}
 
 			public void setTotal(Total total) {
 				this.total = total;
+			}
+
+			public CredentialInfoData getCredentialInfoData() {
+				return this.credentialInfoData;
+			}
+
+			public void setCredentialInfoData(CredentialInfoData credentialInfoData) {
+				this.credentialInfoData = credentialInfoData;
 			}
 
 			public static class Total {
@@ -181,12 +181,35 @@ public class FindServiceStatisticalDataResponse extends AcsResponse {
 					this.errorNum = errorNum;
 				}
 			}
+
+			public static class CredentialInfoData {
+
+				private String currentAk;
+
+				private String credentialName;
+
+				public String getCurrentAk() {
+					return this.currentAk;
+				}
+
+				public void setCurrentAk(String currentAk) {
+					this.currentAk = currentAk;
+				}
+
+				public String getCredentialName() {
+					return this.credentialName;
+				}
+
+				public void setCredentialName(String credentialName) {
+					this.credentialName = credentialName;
+				}
+			}
 		}
 	}
 
 	@Override
-	public FindServiceStatisticalDataResponse getInstance(UnmarshallerContext context) {
-		return	FindServiceStatisticalDataResponseUnmarshaller.unmarshall(this, context);
+	public FindCredentialStatisticalDataResponse getInstance(UnmarshallerContext context) {
+		return	FindCredentialStatisticalDataResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

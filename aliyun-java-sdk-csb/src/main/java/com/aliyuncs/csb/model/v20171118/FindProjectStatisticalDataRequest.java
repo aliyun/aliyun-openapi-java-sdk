@@ -22,23 +22,34 @@ import com.aliyuncs.csb.Endpoint;
  * @author auto create
  * @version 
  */
-public class FindServiceStatisticalDataRequest extends RpcAcsRequest<FindServiceStatisticalDataResponse> {
+public class FindProjectStatisticalDataRequest extends RpcAcsRequest<FindProjectStatisticalDataResponse> {
 	   
+
+	private String projectName;
 
 	private Long csbId;
 
 	private Long endTime;
 
 	private Long startTime;
-
-	private String serviceNameVersion;
-	public FindServiceStatisticalDataRequest() {
-		super("CSB", "2017-11-18", "FindServiceStatisticalData");
+	public FindProjectStatisticalDataRequest() {
+		super("CSB", "2017-11-18", "FindProjectStatisticalData");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
+		}
 	}
 
 	public Long getCsbId() {
@@ -74,20 +85,9 @@ public class FindServiceStatisticalDataRequest extends RpcAcsRequest<FindService
 		}
 	}
 
-	public String getServiceNameVersion() {
-		return this.serviceNameVersion;
-	}
-
-	public void setServiceNameVersion(String serviceNameVersion) {
-		this.serviceNameVersion = serviceNameVersion;
-		if(serviceNameVersion != null){
-			putQueryParameter("ServiceNameVersion", serviceNameVersion);
-		}
-	}
-
 	@Override
-	public Class<FindServiceStatisticalDataResponse> getResponseClass() {
-		return FindServiceStatisticalDataResponse.class;
+	public Class<FindProjectStatisticalDataResponse> getResponseClass() {
+		return FindProjectStatisticalDataResponse.class;
 	}
 
 }

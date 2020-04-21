@@ -22,7 +22,7 @@ import com.aliyuncs.csb.Endpoint;
  * @author auto create
  * @version 
  */
-public class FindServiceStatisticalDataRequest extends RpcAcsRequest<FindServiceStatisticalDataResponse> {
+public class FindServiceCredentialStatisticalDataRequest extends RpcAcsRequest<FindServiceCredentialStatisticalDataResponse> {
 	   
 
 	private Long csbId;
@@ -31,9 +31,11 @@ public class FindServiceStatisticalDataRequest extends RpcAcsRequest<FindService
 
 	private Long startTime;
 
+	private String credentialName;
+
 	private String serviceNameVersion;
-	public FindServiceStatisticalDataRequest() {
-		super("CSB", "2017-11-18", "FindServiceStatisticalData");
+	public FindServiceCredentialStatisticalDataRequest() {
+		super("CSB", "2017-11-18", "FindServiceCredentialStatisticalData");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -74,6 +76,17 @@ public class FindServiceStatisticalDataRequest extends RpcAcsRequest<FindService
 		}
 	}
 
+	public String getCredentialName() {
+		return this.credentialName;
+	}
+
+	public void setCredentialName(String credentialName) {
+		this.credentialName = credentialName;
+		if(credentialName != null){
+			putQueryParameter("CredentialName", credentialName);
+		}
+	}
+
 	public String getServiceNameVersion() {
 		return this.serviceNameVersion;
 	}
@@ -86,8 +99,8 @@ public class FindServiceStatisticalDataRequest extends RpcAcsRequest<FindService
 	}
 
 	@Override
-	public Class<FindServiceStatisticalDataResponse> getResponseClass() {
-		return FindServiceStatisticalDataResponse.class;
+	public Class<FindServiceCredentialStatisticalDataResponse> getResponseClass() {
+		return FindServiceCredentialStatisticalDataResponse.class;
 	}
 
 }
