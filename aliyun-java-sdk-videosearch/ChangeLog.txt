@@ -1,0 +1,3 @@
+2020-04-21 Version: 1.0.0
+- VideoSearch deploy SDK.
+
