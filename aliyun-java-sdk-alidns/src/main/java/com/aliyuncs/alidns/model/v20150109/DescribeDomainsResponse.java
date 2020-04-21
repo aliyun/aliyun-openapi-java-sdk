@@ -111,6 +111,8 @@ public class DescribeDomainsResponse extends AcsResponse {
 
 		private Long createTimestamp;
 
+		private List<Tag> tags;
+
 		private List<String> dnsServers;
 
 		public String getDomainId() {
@@ -249,12 +251,43 @@ public class DescribeDomainsResponse extends AcsResponse {
 			this.createTimestamp = createTimestamp;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getDnsServers() {
 			return this.dnsServers;
 		}
 
 		public void setDnsServers(List<String> dnsServers) {
 			this.dnsServers = dnsServers;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

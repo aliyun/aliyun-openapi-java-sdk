@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.alidns.model.v20150109.DescribeDomainsResponse;
 import com.aliyuncs.alidns.model.v20150109.DescribeDomainsResponse.Domain;
+import com.aliyuncs.alidns.model.v20150109.DescribeDomainsResponse.Domain.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -57,6 +58,16 @@ public class DescribeDomainsResponseUnmarshaller {
 				dnsServers.add(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].DnsServers["+ j +"]"));
 			}
 			domain.setDnsServers(dnsServers);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDomainsResponse.Domains["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			domain.setTags(tags);
 
 			domains.add(domain);
 		}
