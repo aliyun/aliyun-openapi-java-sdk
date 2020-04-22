@@ -23,18 +23,14 @@ import com.aliyuncs.cassandra.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeClustersRequest extends RpcAcsRequest<DescribeClustersResponse> {
+public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 	   
 
-	private String clusterName;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private List<String> resourceIds;
 
 	private List<Tag> tags;
-	public DescribeClustersRequest() {
-		super("Cassandra", "2019-01-01", "DescribeClusters", "Cassandra");
+	public TagResourcesRequest() {
+		super("Cassandra", "2019-01-01", "TagResources", "Cassandra");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -42,37 +38,17 @@ public class DescribeClustersRequest extends RpcAcsRequest<DescribeClustersRespo
 		} catch (Exception e) {}
 	}
 
-	public String getClusterName() {
-		return this.clusterName;
+	public List<String> getResourceIds() {
+		return this.resourceIds;
 	}
 
-	public void setClusterName(String clusterName) {
-		this.clusterName = clusterName;
-		if(clusterName != null){
-			putQueryParameter("ClusterName", clusterName);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
 	}
 
 	public List<Tag> getTags() {
@@ -113,8 +89,8 @@ public class DescribeClustersRequest extends RpcAcsRequest<DescribeClustersRespo
 	}
 
 	@Override
-	public Class<DescribeClustersResponse> getResponseClass() {
-		return DescribeClustersResponse.class;
+	public Class<TagResourcesResponse> getResponseClass() {
+		return TagResourcesResponse.class;
 	}
 
 }

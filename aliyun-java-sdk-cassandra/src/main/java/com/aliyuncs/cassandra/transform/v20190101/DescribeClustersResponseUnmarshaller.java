@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cassandra.model.v20190101.DescribeClustersResponse;
 import com.aliyuncs.cassandra.model.v20190101.DescribeClustersResponse.Cluster;
+import com.aliyuncs.cassandra.model.v20190101.DescribeClustersResponse.Cluster.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +45,16 @@ public class DescribeClustersResponseUnmarshaller {
 			cluster.setMinorVersion(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].MinorVersion"));
 			cluster.setDataCenterCount(_ctx.integerValue("DescribeClustersResponse.Clusters["+ i +"].DataCenterCount"));
 			cluster.setLockMode(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].LockMode"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeClustersResponse.Clusters["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			cluster.setTags(tags);
 
 			clusters.add(cluster);
 		}

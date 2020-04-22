@@ -14,6 +14,7 @@
 
 package com.aliyuncs.cassandra.model.v20190101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cassandra.transform.v20190101.DescribeClusterResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -71,6 +72,8 @@ public class DescribeClusterResponse extends AcsResponse {
 		private String maintainEndTime;
 
 		private String lockMode;
+
+		private List<Tag> tags;
 
 		public String getClusterId() {
 			return this.clusterId;
@@ -174,6 +177,37 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		public void setLockMode(String lockMode) {
 			this.lockMode = lockMode;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 
