@@ -1,6 +1,9 @@
 2020-04-22 Version: 1.0.1
 - Generated 2019-01-01 for `Cassandra`.
 
+2020-04-22 Version: 1.0.1
+- Generated 2019-01-01 for `Cassandra`.
+
 2020-04-10 Version: 1.0.0
 - Generated 2019-01-01 for `Cassandra`.
 
