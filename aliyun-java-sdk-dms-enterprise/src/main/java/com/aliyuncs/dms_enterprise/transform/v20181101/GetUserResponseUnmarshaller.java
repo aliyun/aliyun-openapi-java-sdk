@@ -38,6 +38,11 @@ public class GetUserResponseUnmarshaller {
 		user.setMobile(_ctx.stringValue("GetUserResponse.User.Mobile"));
 		user.setParentUid(_ctx.longValue("GetUserResponse.User.ParentUid"));
 		user.setState(_ctx.stringValue("GetUserResponse.User.State"));
+		user.setLastLoginTime(_ctx.stringValue("GetUserResponse.User.LastLoginTime"));
+		user.setCurExecuteCount(_ctx.longValue("GetUserResponse.User.CurExecuteCount"));
+		user.setCurResultCount(_ctx.longValue("GetUserResponse.User.CurResultCount"));
+		user.setMaxExecuteCount(_ctx.longValue("GetUserResponse.User.MaxExecuteCount"));
+		user.setMaxResultCount(_ctx.longValue("GetUserResponse.User.MaxResultCount"));
 
 		List<Integer> roleIdList = new ArrayList<Integer>();
 		for (int i = 0; i < _ctx.lengthValue("GetUserResponse.User.RoleIdList.Length"); i++) {

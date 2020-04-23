@@ -34,7 +34,7 @@ public class GetInstanceRequest extends RpcAcsRequest<GetInstanceResponse> {
 	private String sid;
 	public GetInstanceRequest() {
 		super("dms-enterprise", "2018-11-01", "GetInstance", "dmsenterprise");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
