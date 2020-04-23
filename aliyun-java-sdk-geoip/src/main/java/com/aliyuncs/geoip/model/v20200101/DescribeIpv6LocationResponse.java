@@ -38,6 +38,18 @@ public class DescribeIpv6LocationResponse extends AcsResponse {
 
 	private String isp;
 
+	private String countryCode;
+
+	private String countryEn;
+
+	private String provinceEn;
+
+	private String cityEn;
+
+	private String longitude;
+
+	private String latitude;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -92,6 +104,54 @@ public class DescribeIpv6LocationResponse extends AcsResponse {
 
 	public void setIsp(String isp) {
 		this.isp = isp;
+	}
+
+	public String getCountryCode() {
+		return this.countryCode;
+	}
+
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
+	}
+
+	public String getCountryEn() {
+		return this.countryEn;
+	}
+
+	public void setCountryEn(String countryEn) {
+		this.countryEn = countryEn;
+	}
+
+	public String getProvinceEn() {
+		return this.provinceEn;
+	}
+
+	public void setProvinceEn(String provinceEn) {
+		this.provinceEn = provinceEn;
+	}
+
+	public String getCityEn() {
+		return this.cityEn;
+	}
+
+	public void setCityEn(String cityEn) {
+		this.cityEn = cityEn;
+	}
+
+	public String getLongitude() {
+		return this.longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+
+	public String getLatitude() {
+		return this.latitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
 	}
 
 	@Override

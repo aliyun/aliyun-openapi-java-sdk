@@ -29,6 +29,12 @@ public class DescribeIpv4LocationResponseUnmarshaller {
 		describeIpv4LocationResponse.setCity(_ctx.stringValue("DescribeIpv4LocationResponse.City"));
 		describeIpv4LocationResponse.setCounty(_ctx.stringValue("DescribeIpv4LocationResponse.County"));
 		describeIpv4LocationResponse.setIsp(_ctx.stringValue("DescribeIpv4LocationResponse.Isp"));
+		describeIpv4LocationResponse.setCountryCode(_ctx.stringValue("DescribeIpv4LocationResponse.CountryCode"));
+		describeIpv4LocationResponse.setCountryEn(_ctx.stringValue("DescribeIpv4LocationResponse.CountryEn"));
+		describeIpv4LocationResponse.setProvinceEn(_ctx.stringValue("DescribeIpv4LocationResponse.ProvinceEn"));
+		describeIpv4LocationResponse.setCityEn(_ctx.stringValue("DescribeIpv4LocationResponse.CityEn"));
+		describeIpv4LocationResponse.setLongitude(_ctx.stringValue("DescribeIpv4LocationResponse.Longitude"));
+		describeIpv4LocationResponse.setLatitude(_ctx.stringValue("DescribeIpv4LocationResponse.Latitude"));
 	 
 	 	return describeIpv4LocationResponse;
 	}
