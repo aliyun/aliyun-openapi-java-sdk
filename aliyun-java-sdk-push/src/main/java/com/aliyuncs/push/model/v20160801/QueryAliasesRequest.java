@@ -29,7 +29,7 @@ public class QueryAliasesRequest extends RpcAcsRequest<QueryAliasesResponse> {
 
 	private Long appKey;
 	public QueryAliasesRequest() {
-		super("Push", "2016-08-01", "QueryAliases", "cps");
+		super("Push", "2016-08-01", "QueryAliases");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

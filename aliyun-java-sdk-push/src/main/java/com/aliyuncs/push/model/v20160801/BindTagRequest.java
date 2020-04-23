@@ -33,7 +33,7 @@ public class BindTagRequest extends RpcAcsRequest<BindTagResponse> {
 
 	private Long appKey;
 	public BindTagRequest() {
-		super("Push", "2016-08-01", "BindTag", "cps");
+		super("Push", "2016-08-01", "BindTag");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

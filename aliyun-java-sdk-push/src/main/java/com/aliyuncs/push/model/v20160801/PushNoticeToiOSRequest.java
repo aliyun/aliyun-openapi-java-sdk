@@ -41,7 +41,7 @@ public class PushNoticeToiOSRequest extends RpcAcsRequest<PushNoticeToiOSRespons
 
 	private String targetValue;
 	public PushNoticeToiOSRequest() {
-		super("Push", "2016-08-01", "PushNoticeToiOS", "cps");
+		super("Push", "2016-08-01", "PushNoticeToiOS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

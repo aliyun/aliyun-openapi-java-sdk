@@ -69,7 +69,7 @@ public class QueryPushRecordsResponse extends AcsResponse {
 
 		private Long appKey;
 
-		private Long messageId;
+		private String messageId;
 
 		private String pushType;
 
@@ -95,11 +95,11 @@ public class QueryPushRecordsResponse extends AcsResponse {
 			this.appKey = appKey;
 		}
 
-		public Long getMessageId() {
+		public String getMessageId() {
 			return this.messageId;
 		}
 
-		public void setMessageId(Long messageId) {
+		public void setMessageId(String messageId) {
 			this.messageId = messageId;
 		}
 

@@ -34,7 +34,7 @@ public class QueryPushRecordsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("QueryPushRecordsResponse.PushInfos.Length"); i++) {
 			PushInfo pushInfo = new PushInfo();
 			pushInfo.setAppKey(_ctx.longValue("QueryPushRecordsResponse.PushInfos["+ i +"].AppKey"));
-			pushInfo.setMessageId(_ctx.longValue("QueryPushRecordsResponse.PushInfos["+ i +"].MessageId"));
+			pushInfo.setMessageId(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].MessageId"));
 			pushInfo.setPushType(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].PushType"));
 			pushInfo.setDeviceType(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].DeviceType"));
 			pushInfo.setTarget(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].Target"));

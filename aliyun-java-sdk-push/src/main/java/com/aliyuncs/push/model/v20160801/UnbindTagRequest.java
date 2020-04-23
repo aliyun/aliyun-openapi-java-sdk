@@ -33,7 +33,7 @@ public class UnbindTagRequest extends RpcAcsRequest<UnbindTagResponse> {
 
 	private Long appKey;
 	public UnbindTagRequest() {
-		super("Push", "2016-08-01", "UnbindTag", "cps");
+		super("Push", "2016-08-01", "UnbindTag");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

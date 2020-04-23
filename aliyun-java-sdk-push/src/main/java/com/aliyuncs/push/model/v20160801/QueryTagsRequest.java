@@ -31,7 +31,7 @@ public class QueryTagsRequest extends RpcAcsRequest<QueryTagsResponse> {
 
 	private Long appKey;
 	public QueryTagsRequest() {
-		super("Push", "2016-08-01", "QueryTags", "cps");
+		super("Push", "2016-08-01", "QueryTags");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

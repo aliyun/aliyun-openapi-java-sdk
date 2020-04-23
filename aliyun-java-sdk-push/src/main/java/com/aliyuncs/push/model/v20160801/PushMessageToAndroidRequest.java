@@ -37,7 +37,7 @@ public class PushMessageToAndroidRequest extends RpcAcsRequest<PushMessageToAndr
 
 	private String targetValue;
 	public PushMessageToAndroidRequest() {
-		super("Push", "2016-08-01", "PushMessageToAndroid", "cps");
+		super("Push", "2016-08-01", "PushMessageToAndroid");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

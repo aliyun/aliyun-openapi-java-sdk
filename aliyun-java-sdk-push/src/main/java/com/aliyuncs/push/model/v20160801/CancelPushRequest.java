@@ -29,7 +29,7 @@ public class CancelPushRequest extends RpcAcsRequest<CancelPushResponse> {
 
 	private Long appKey;
 	public CancelPushRequest() {
-		super("Push", "2016-08-01", "CancelPush", "cps");
+		super("Push", "2016-08-01", "CancelPush");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
