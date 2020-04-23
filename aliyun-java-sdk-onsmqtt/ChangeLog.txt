@@ -1,3 +1,6 @@
+2020-04-23 Version: 1.0.2
+- Support groupId operations.
+
 2020-03-05 Version: 1.0.1
 - Update send message noPresistFlag param.
 
