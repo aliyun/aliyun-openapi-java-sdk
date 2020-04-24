@@ -1,3 +1,6 @@
+2020-04-24 Version: 1.1.2
+- Template update.
+
 2020-04-19 Version: 1.1.2
 - Multimedia poc modified.
 
