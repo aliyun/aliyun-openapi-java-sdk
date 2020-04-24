@@ -15,20 +15,20 @@
 package com.aliyuncs.digitalstore.model.v20200107;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.digitalstore.transform.v20200107.CreateCaseCodeResponseUnmarshaller;
+import com.aliyuncs.digitalstore.transform.v20200107.UploadSKUTagsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateCaseCodeResponse extends AcsResponse {
+public class UploadSKUTagsResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String caseCode;
+	private Integer processCount;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,16 +46,16 @@ public class CreateCaseCodeResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCaseCode() {
-		return this.caseCode;
+	public Integer getProcessCount() {
+		return this.processCount;
 	}
 
-	public void setCaseCode(String caseCode) {
-		this.caseCode = caseCode;
+	public void setProcessCount(Integer processCount) {
+		this.processCount = processCount;
 	}
 
 	@Override
-	public CreateCaseCodeResponse getInstance(UnmarshallerContext context) {
-		return	CreateCaseCodeResponseUnmarshaller.unmarshall(this, context);
+	public UploadSKUTagsResponse getInstance(UnmarshallerContext context) {
+		return	UploadSKUTagsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

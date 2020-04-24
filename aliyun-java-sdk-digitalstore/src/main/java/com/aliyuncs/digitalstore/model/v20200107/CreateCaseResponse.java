@@ -24,23 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateCaseResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
 	private String caseId;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,14 +44,6 @@ public class CreateCaseResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getCaseId() {

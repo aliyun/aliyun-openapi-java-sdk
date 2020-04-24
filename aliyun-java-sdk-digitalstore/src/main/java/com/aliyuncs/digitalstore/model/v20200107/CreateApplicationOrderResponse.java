@@ -15,20 +15,28 @@
 package com.aliyuncs.digitalstore.model.v20200107;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.digitalstore.transform.v20200107.CreateCaseCodeResponseUnmarshaller;
+import com.aliyuncs.digitalstore.transform.v20200107.CreateApplicationOrderResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateCaseCodeResponse extends AcsResponse {
+public class CreateApplicationOrderResponse extends AcsResponse {
+
+	private String orderId;
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String caseCode;
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,16 +54,13 @@ public class CreateCaseCodeResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCaseCode() {
-		return this.caseCode;
-	}
-
-	public void setCaseCode(String caseCode) {
-		this.caseCode = caseCode;
+	@Override
+	public CreateApplicationOrderResponse getInstance(UnmarshallerContext context) {
+		return	CreateApplicationOrderResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public CreateCaseCodeResponse getInstance(UnmarshallerContext context) {
-		return	CreateCaseCodeResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

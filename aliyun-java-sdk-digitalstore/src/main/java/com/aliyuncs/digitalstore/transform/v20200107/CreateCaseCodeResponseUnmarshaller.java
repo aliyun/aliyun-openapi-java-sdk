@@ -23,9 +23,7 @@ public class CreateCaseCodeResponseUnmarshaller {
 	public static CreateCaseCodeResponse unmarshall(CreateCaseCodeResponse createCaseCodeResponse, UnmarshallerContext _ctx) {
 		
 		createCaseCodeResponse.setRequestId(_ctx.stringValue("CreateCaseCodeResponse.RequestId"));
-		createCaseCodeResponse.setMessage(_ctx.stringValue("CreateCaseCodeResponse.Message"));
 		createCaseCodeResponse.setSuccess(_ctx.booleanValue("CreateCaseCodeResponse.Success"));
-		createCaseCodeResponse.setCode(_ctx.stringValue("CreateCaseCodeResponse.Code"));
 		createCaseCodeResponse.setCaseCode(_ctx.stringValue("CreateCaseCodeResponse.CaseCode"));
 	 
 	 	return createCaseCodeResponse;

@@ -23,16 +23,16 @@ import com.aliyuncs.digitalstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class CheckTagsRequest extends RpcAcsRequest<CheckTagsResponse> {
+public class UploadSKUTagsRequest extends RpcAcsRequest<UploadSKUTagsResponse> {
 	   
 
-	private String orderId;
+	private List<String> tagLists;
 
-	private List<String> tagss;
+	private String takeStockOrderId;
 
-	private String orderType;
-	public CheckTagsRequest() {
-		super("digitalstore", "2020-01-07", "CheckTags", "digitalstore");
+	private String taskId;
+	public UploadSKUTagsRequest() {
+		super("digitalstore", "2020-01-07", "UploadSKUTags", "digitalstore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -40,44 +40,44 @@ public class CheckTagsRequest extends RpcAcsRequest<CheckTagsResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public List<String> getTagLists() {
+		return this.tagLists;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putBodyParameter("OrderId", orderId);
-		}
-	}
-
-	public List<String> getTagss() {
-		return this.tagss;
-	}
-
-	public void setTagss(List<String> tagss) {
-		this.tagss = tagss;	
-		if (tagss != null) {
-			for (int i = 0; i < tagss.size(); i++) {
-				putBodyParameter("Tags." + (i + 1) , tagss.get(i));
+	public void setTagLists(List<String> tagLists) {
+		this.tagLists = tagLists;	
+		if (tagLists != null) {
+			for (int i = 0; i < tagLists.size(); i++) {
+				putBodyParameter("TagList." + (i + 1) , tagLists.get(i));
 			}
 		}	
 	}
 
-	public String getOrderType() {
-		return this.orderType;
+	public String getTakeStockOrderId() {
+		return this.takeStockOrderId;
 	}
 
-	public void setOrderType(String orderType) {
-		this.orderType = orderType;
-		if(orderType != null){
-			putBodyParameter("OrderType", orderType);
+	public void setTakeStockOrderId(String takeStockOrderId) {
+		this.takeStockOrderId = takeStockOrderId;
+		if(takeStockOrderId != null){
+			putBodyParameter("TakeStockOrderId", takeStockOrderId);
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putBodyParameter("TaskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<CheckTagsResponse> getResponseClass() {
-		return CheckTagsResponse.class;
+	public Class<UploadSKUTagsResponse> getResponseClass() {
+		return UploadSKUTagsResponse.class;
 	}
 
 }

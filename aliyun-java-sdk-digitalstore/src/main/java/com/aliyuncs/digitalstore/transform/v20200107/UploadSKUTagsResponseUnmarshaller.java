@@ -14,17 +14,18 @@
 
 package com.aliyuncs.digitalstore.transform.v20200107;
 
-import com.aliyuncs.digitalstore.model.v20200107.UpdateCaseExpressResponse;
+import com.aliyuncs.digitalstore.model.v20200107.UploadSKUTagsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UpdateCaseExpressResponseUnmarshaller {
+public class UploadSKUTagsResponseUnmarshaller {
 
-	public static UpdateCaseExpressResponse unmarshall(UpdateCaseExpressResponse updateCaseExpressResponse, UnmarshallerContext _ctx) {
+	public static UploadSKUTagsResponse unmarshall(UploadSKUTagsResponse uploadSKUTagsResponse, UnmarshallerContext _ctx) {
 		
-		updateCaseExpressResponse.setRequestId(_ctx.stringValue("UpdateCaseExpressResponse.RequestId"));
-		updateCaseExpressResponse.setSuccess(_ctx.booleanValue("UpdateCaseExpressResponse.Success"));
+		uploadSKUTagsResponse.setRequestId(_ctx.stringValue("UploadSKUTagsResponse.RequestId"));
+		uploadSKUTagsResponse.setSuccess(_ctx.booleanValue("UploadSKUTagsResponse.Success"));
+		uploadSKUTagsResponse.setProcessCount(_ctx.integerValue("UploadSKUTagsResponse.ProcessCount"));
 	 
-	 	return updateCaseExpressResponse;
+	 	return uploadSKUTagsResponse;
 	}
 }

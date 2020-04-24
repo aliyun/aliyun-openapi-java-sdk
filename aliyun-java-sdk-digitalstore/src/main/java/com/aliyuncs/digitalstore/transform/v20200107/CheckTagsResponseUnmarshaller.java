@@ -27,9 +27,7 @@ public class CheckTagsResponseUnmarshaller {
 	public static CheckTagsResponse unmarshall(CheckTagsResponse checkTagsResponse, UnmarshallerContext _ctx) {
 		
 		checkTagsResponse.setRequestId(_ctx.stringValue("CheckTagsResponse.RequestId"));
-		checkTagsResponse.setMessage(_ctx.stringValue("CheckTagsResponse.Message"));
 		checkTagsResponse.setSuccess(_ctx.booleanValue("CheckTagsResponse.Success"));
-		checkTagsResponse.setCode(_ctx.stringValue("CheckTagsResponse.Code"));
 
 		List<CheckTagResultBiz> checkResult = new ArrayList<CheckTagResultBiz>();
 		for (int i = 0; i < _ctx.lengthValue("CheckTagsResponse.CheckResult.Length"); i++) {
