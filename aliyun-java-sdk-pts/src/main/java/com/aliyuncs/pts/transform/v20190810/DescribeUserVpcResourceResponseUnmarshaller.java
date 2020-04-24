@@ -15,7 +15,6 @@
 package com.aliyuncs.pts.transform.v20190810;
 
 import com.aliyuncs.pts.model.v20190810.DescribeUserVpcResourceResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,7 +23,14 @@ public class DescribeUserVpcResourceResponseUnmarshaller {
 	public static DescribeUserVpcResourceResponse unmarshall(DescribeUserVpcResourceResponse describeUserVpcResourceResponse, UnmarshallerContext _ctx) {
 		
 		describeUserVpcResourceResponse.setRequestId(_ctx.stringValue("DescribeUserVpcResourceResponse.RequestId"));
-		describeUserVpcResourceResponse.setVpcResources(_ctx.mapValue("DescribeUserVpcResourceResponse.VpcResources"));
+		describeUserVpcResourceResponse.setVpcResources(_ctx.stringValue("DescribeUserVpcResourceResponse.VpcResources"));
+		describeUserVpcResourceResponse.setHttpStatusCode(_ctx.integerValue("DescribeUserVpcResourceResponse.HttpStatusCode"));
+		describeUserVpcResourceResponse.setMessage(_ctx.stringValue("DescribeUserVpcResourceResponse.Message"));
+		describeUserVpcResourceResponse.setSuccess(_ctx.booleanValue("DescribeUserVpcResourceResponse.Success"));
+		describeUserVpcResourceResponse.setCode(_ctx.stringValue("DescribeUserVpcResourceResponse.Code"));
+		describeUserVpcResourceResponse.setJobId(_ctx.stringValue("DescribeUserVpcResourceResponse.JobId"));
+		describeUserVpcResourceResponse.setFinished(_ctx.booleanValue("DescribeUserVpcResourceResponse.Finished"));
+		describeUserVpcResourceResponse.setTimeout(_ctx.integerValue("DescribeUserVpcResourceResponse.Timeout"));
 	 
 	 	return describeUserVpcResourceResponse;
 	}
