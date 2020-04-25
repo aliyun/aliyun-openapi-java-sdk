@@ -27,6 +27,8 @@ public class RestartInstanceRequest extends RpcAcsRequest<RestartInstanceRespons
 
 	private Long resourceOwnerId;
 
+	private Boolean upgradeMinorVersion;
+
 	private String securityToken;
 
 	private String effectiveTime;
@@ -55,6 +57,17 @@ public class RestartInstanceRequest extends RpcAcsRequest<RestartInstanceRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getUpgradeMinorVersion() {
+		return this.upgradeMinorVersion;
+	}
+
+	public void setUpgradeMinorVersion(Boolean upgradeMinorVersion) {
+		this.upgradeMinorVersion = upgradeMinorVersion;
+		if(upgradeMinorVersion != null){
+			putQueryParameter("UpgradeMinorVersion", upgradeMinorVersion.toString());
 		}
 	}
 

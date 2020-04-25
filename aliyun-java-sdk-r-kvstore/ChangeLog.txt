@@ -1,3 +1,7 @@
+2020-04-25 Version: 2.3.1
+- Generated 2015-01-01 for `R-kvstore`.
+- Add RestoreTime for CreateInstance API.
+
 2020-04-09 Version: 2.3.0
 - Generated 2015-01-01 for `R-kvstore`.
 - Add DescribePrice API.
