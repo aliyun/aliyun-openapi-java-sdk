@@ -1,3 +1,6 @@
+2020-04-26 Version: 1.0.8
+- SDK version 108.
+
 2020-03-23 Version: 1.0.7
 - SDK version 107.
 
