@@ -15,6 +15,7 @@
 package com.aliyuncs.digitalstore.model.v20200107;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.digitalstore.Endpoint;
 
@@ -25,11 +26,13 @@ import com.aliyuncs.digitalstore.Endpoint;
 public class ListOutboundOrdersRequest extends RpcAcsRequest<ListOutboundOrdersResponse> {
 	   
 
+	private String beginDate;
+
 	private String orderByField;
 
 	private Integer pageNumber;
 
-	private String statusCode;
+	private List<String> statusCodes;
 
 	private String orderCode;
 
@@ -45,6 +48,8 @@ public class ListOutboundOrdersRequest extends RpcAcsRequest<ListOutboundOrdersR
 
 	private String toBusinessUnitId;
 
+	private String endDate;
+
 	private String orderByMethod;
 	public ListOutboundOrdersRequest() {
 		super("digitalstore", "2020-01-07", "ListOutboundOrders", "digitalstore");
@@ -53,6 +58,17 @@ public class ListOutboundOrdersRequest extends RpcAcsRequest<ListOutboundOrdersR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBeginDate() {
+		return this.beginDate;
+	}
+
+	public void setBeginDate(String beginDate) {
+		this.beginDate = beginDate;
+		if(beginDate != null){
+			putBodyParameter("BeginDate", beginDate);
+		}
 	}
 
 	public String getOrderByField() {
@@ -77,15 +93,17 @@ public class ListOutboundOrdersRequest extends RpcAcsRequest<ListOutboundOrdersR
 		}
 	}
 
-	public String getStatusCode() {
-		return this.statusCode;
+	public List<String> getStatusCodes() {
+		return this.statusCodes;
 	}
 
-	public void setStatusCode(String statusCode) {
-		this.statusCode = statusCode;
-		if(statusCode != null){
-			putBodyParameter("StatusCode", statusCode);
-		}
+	public void setStatusCodes(List<String> statusCodes) {
+		this.statusCodes = statusCodes;	
+		if (statusCodes != null) {
+			for (int i = 0; i < statusCodes.size(); i++) {
+				putBodyParameter("StatusCode." + (i + 1) , statusCodes.get(i));
+			}
+		}	
 	}
 
 	public String getOrderCode() {
@@ -162,6 +180,17 @@ public class ListOutboundOrdersRequest extends RpcAcsRequest<ListOutboundOrdersR
 		this.toBusinessUnitId = toBusinessUnitId;
 		if(toBusinessUnitId != null){
 			putBodyParameter("ToBusinessUnitId", toBusinessUnitId);
+		}
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putBodyParameter("EndDate", endDate);
 		}
 	}
 

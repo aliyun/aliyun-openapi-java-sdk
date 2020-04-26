@@ -15,6 +15,7 @@
 package com.aliyuncs.digitalstore.model.v20200107;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.digitalstore.Endpoint;
 
@@ -30,6 +31,8 @@ public class ListTakeStockOrderTasksRequest extends RpcAcsRequest<ListTakeStockO
 	private String orderByField;
 
 	private Integer pageNumber;
+
+	private List<String> statusCodes;
 
 	private String deviceNumber;
 
@@ -80,6 +83,19 @@ public class ListTakeStockOrderTasksRequest extends RpcAcsRequest<ListTakeStockO
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber.toString());
 		}
+	}
+
+	public List<String> getStatusCodes() {
+		return this.statusCodes;
+	}
+
+	public void setStatusCodes(List<String> statusCodes) {
+		this.statusCodes = statusCodes;	
+		if (statusCodes != null) {
+			for (int i = 0; i < statusCodes.size(); i++) {
+				putBodyParameter("StatusCode." + (i + 1) , statusCodes.get(i));
+			}
+		}	
 	}
 
 	public String getDeviceNumber() {

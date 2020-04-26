@@ -131,6 +131,8 @@ public class ListOutboundOrdersResponse extends AcsResponse {
 
 		private String toBusinessUnitId;
 
+		private Integer caseCount;
+
 		public String getToWarehouseName() {
 			return this.toWarehouseName;
 		}
@@ -305,6 +307,14 @@ public class ListOutboundOrdersResponse extends AcsResponse {
 
 		public void setToBusinessUnitId(String toBusinessUnitId) {
 			this.toBusinessUnitId = toBusinessUnitId;
+		}
+
+		public Integer getCaseCount() {
+			return this.caseCount;
+		}
+
+		public void setCaseCount(Integer caseCount) {
+			this.caseCount = caseCount;
 		}
 	}
 

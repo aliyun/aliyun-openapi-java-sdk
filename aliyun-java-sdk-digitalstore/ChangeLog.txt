@@ -1,3 +1,6 @@
+2020-04-26 Version: 0.0.5
+- Modify ListOutboundOrders API.
+
 2020-04-24 Version: 0.0.4
 - Add UploadSKUTags API.
 

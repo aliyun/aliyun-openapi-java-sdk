@@ -57,6 +57,7 @@ public class ListOutboundOrdersResponseUnmarshaller {
 			outboundOrder.setSourceOrderCode(_ctx.stringValue("ListOutboundOrdersResponse.OutboundOrders["+ i +"].SourceOrderCode"));
 			outboundOrder.setOrderId(_ctx.stringValue("ListOutboundOrdersResponse.OutboundOrders["+ i +"].OrderId"));
 			outboundOrder.setToBusinessUnitId(_ctx.stringValue("ListOutboundOrdersResponse.OutboundOrders["+ i +"].ToBusinessUnitId"));
+			outboundOrder.setCaseCount(_ctx.integerValue("ListOutboundOrdersResponse.OutboundOrders["+ i +"].CaseCount"));
 
 			outboundOrders.add(outboundOrder);
 		}

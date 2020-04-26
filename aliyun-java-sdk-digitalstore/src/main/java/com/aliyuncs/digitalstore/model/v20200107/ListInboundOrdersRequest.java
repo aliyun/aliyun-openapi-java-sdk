@@ -26,6 +26,8 @@ import com.aliyuncs.digitalstore.Endpoint;
 public class ListInboundOrdersRequest extends RpcAcsRequest<ListInboundOrdersResponse> {
 	   
 
+	private String beginDate;
+
 	private String orderByField;
 
 	private Integer pageNumber;
@@ -46,6 +48,8 @@ public class ListInboundOrdersRequest extends RpcAcsRequest<ListInboundOrdersRes
 
 	private String toBusinessUnitId;
 
+	private String endDate;
+
 	private String orderByMethod;
 	public ListInboundOrdersRequest() {
 		super("digitalstore", "2020-01-07", "ListInboundOrders", "digitalstore");
@@ -54,6 +58,17 @@ public class ListInboundOrdersRequest extends RpcAcsRequest<ListInboundOrdersRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBeginDate() {
+		return this.beginDate;
+	}
+
+	public void setBeginDate(String beginDate) {
+		this.beginDate = beginDate;
+		if(beginDate != null){
+			putBodyParameter("BeginDate", beginDate);
+		}
 	}
 
 	public String getOrderByField() {
@@ -165,6 +180,17 @@ public class ListInboundOrdersRequest extends RpcAcsRequest<ListInboundOrdersRes
 		this.toBusinessUnitId = toBusinessUnitId;
 		if(toBusinessUnitId != null){
 			putBodyParameter("ToBusinessUnitId", toBusinessUnitId);
+		}
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putBodyParameter("EndDate", endDate);
 		}
 	}
 
