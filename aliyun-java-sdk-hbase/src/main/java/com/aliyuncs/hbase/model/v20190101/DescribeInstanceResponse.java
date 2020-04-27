@@ -99,6 +99,12 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private Boolean isDeletionProtection;
 
+	private String parentId;
+
+	private Integer moduleId;
+
+	private String moduleStackVersion;
+
 	private List<Tag> tags;
 
 	public String getRequestId() {
@@ -395,6 +401,30 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public void setIsDeletionProtection(Boolean isDeletionProtection) {
 		this.isDeletionProtection = isDeletionProtection;
+	}
+
+	public String getParentId() {
+		return this.parentId;
+	}
+
+	public void setParentId(String parentId) {
+		this.parentId = parentId;
+	}
+
+	public Integer getModuleId() {
+		return this.moduleId;
+	}
+
+	public void setModuleId(Integer moduleId) {
+		this.moduleId = moduleId;
+	}
+
+	public String getModuleStackVersion() {
+		return this.moduleStackVersion;
+	}
+
+	public void setModuleStackVersion(String moduleStackVersion) {
+		this.moduleStackVersion = moduleStackVersion;
 	}
 
 	public List<Tag> getTags() {

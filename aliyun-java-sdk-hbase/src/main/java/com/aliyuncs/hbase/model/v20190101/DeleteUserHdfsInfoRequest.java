@@ -29,7 +29,7 @@ public class DeleteUserHdfsInfoRequest extends RpcAcsRequest<DeleteUserHdfsInfoR
 
 	private String nameService;
 	public DeleteUserHdfsInfoRequest() {
-		super("HBase", "2019-01-01", "DeleteUserHdfsInfo");
+		super("HBase", "2019-01-01", "DeleteUserHdfsInfo", "hbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

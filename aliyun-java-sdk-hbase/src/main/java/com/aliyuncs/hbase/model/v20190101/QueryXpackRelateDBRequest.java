@@ -31,7 +31,7 @@ public class QueryXpackRelateDBRequest extends RpcAcsRequest<QueryXpackRelateDBR
 
 	private String relateDbType;
 	public QueryXpackRelateDBRequest() {
-		super("HBase", "2019-01-01", "QueryXpackRelateDB");
+		super("HBase", "2019-01-01", "QueryXpackRelateDB", "hbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

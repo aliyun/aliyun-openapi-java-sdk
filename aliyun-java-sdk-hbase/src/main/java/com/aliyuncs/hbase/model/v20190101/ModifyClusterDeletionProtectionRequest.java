@@ -29,7 +29,7 @@ public class ModifyClusterDeletionProtectionRequest extends RpcAcsRequest<Modify
 
 	private String clusterId;
 	public ModifyClusterDeletionProtectionRequest() {
-		super("HBase", "2019-01-01", "ModifyClusterDeletionProtection");
+		super("HBase", "2019-01-01", "ModifyClusterDeletionProtection", "hbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

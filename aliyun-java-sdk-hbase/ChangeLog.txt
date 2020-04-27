@@ -1,3 +1,6 @@
+2020-04-27 Version: 2.4.1
+- Describe describeAvailableResource.
+
 2020-02-24 Version: 2.3.0
 - ImmediateDelete.
 - DescribeInstance CreateTimeUTC ExpireTimeUTC.

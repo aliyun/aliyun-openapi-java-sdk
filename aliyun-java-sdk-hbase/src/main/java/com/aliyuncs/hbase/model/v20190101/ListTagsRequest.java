@@ -25,7 +25,7 @@ import com.aliyuncs.hbase.Endpoint;
 public class ListTagsRequest extends RpcAcsRequest<ListTagsResponse> {
 	   
 	public ListTagsRequest() {
-		super("HBase", "2019-01-01", "ListTags");
+		super("HBase", "2019-01-01", "ListTags", "hbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

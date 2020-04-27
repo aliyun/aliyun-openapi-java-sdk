@@ -33,7 +33,7 @@ public class CreateHbaseHaSlbRequest extends RpcAcsRequest<CreateHbaseHaSlbRespo
 
 	private String haId;
 	public CreateHbaseHaSlbRequest() {
-		super("HBase", "2019-01-01", "CreateHbaseHaSlb");
+		super("HBase", "2019-01-01", "CreateHbaseHaSlb", "hbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

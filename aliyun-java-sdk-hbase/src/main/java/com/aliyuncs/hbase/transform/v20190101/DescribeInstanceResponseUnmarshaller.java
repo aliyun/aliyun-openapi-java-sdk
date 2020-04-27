@@ -63,6 +63,9 @@ public class DescribeInstanceResponseUnmarshaller {
 		describeInstanceResponse.setClusterId(_ctx.stringValue("DescribeInstanceResponse.ClusterId"));
 		describeInstanceResponse.setClusterName(_ctx.stringValue("DescribeInstanceResponse.ClusterName"));
 		describeInstanceResponse.setIsDeletionProtection(_ctx.booleanValue("DescribeInstanceResponse.IsDeletionProtection"));
+		describeInstanceResponse.setParentId(_ctx.stringValue("DescribeInstanceResponse.ParentId"));
+		describeInstanceResponse.setModuleId(_ctx.integerValue("DescribeInstanceResponse.ModuleId"));
+		describeInstanceResponse.setModuleStackVersion(_ctx.stringValue("DescribeInstanceResponse.ModuleStackVersion"));
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Tags.Length"); i++) {
