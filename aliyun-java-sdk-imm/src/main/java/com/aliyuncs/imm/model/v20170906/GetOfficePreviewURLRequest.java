@@ -28,9 +28,21 @@ public class GetOfficePreviewURLRequest extends RpcAcsRequest<GetOfficePreviewUR
 
 	private String project;
 
-	private Boolean useOldURL;
+	private Integer watermarkVertical;
+
+	private Integer watermarkType;
+
+	private Float watermarkRotate;
+
+	private String watermarkValue;
+
+	private String watermarkFont;
+
+	private Integer watermarkHorizontal;
 
 	private String srcUri;
+
+	private String watermarkFillStyle;
 	public GetOfficePreviewURLRequest() {
 		super("imm", "2017-09-06", "GetOfficePreviewURL", "imm");
 		setMethod(MethodType.POST);
@@ -58,14 +70,69 @@ public class GetOfficePreviewURLRequest extends RpcAcsRequest<GetOfficePreviewUR
 		}
 	}
 
-	public Boolean getUseOldURL() {
-		return this.useOldURL;
+	public Integer getWatermarkVertical() {
+		return this.watermarkVertical;
 	}
 
-	public void setUseOldURL(Boolean useOldURL) {
-		this.useOldURL = useOldURL;
-		if(useOldURL != null){
-			putQueryParameter("UseOldURL", useOldURL.toString());
+	public void setWatermarkVertical(Integer watermarkVertical) {
+		this.watermarkVertical = watermarkVertical;
+		if(watermarkVertical != null){
+			putQueryParameter("WatermarkVertical", watermarkVertical.toString());
+		}
+	}
+
+	public Integer getWatermarkType() {
+		return this.watermarkType;
+	}
+
+	public void setWatermarkType(Integer watermarkType) {
+		this.watermarkType = watermarkType;
+		if(watermarkType != null){
+			putQueryParameter("WatermarkType", watermarkType.toString());
+		}
+	}
+
+	public Float getWatermarkRotate() {
+		return this.watermarkRotate;
+	}
+
+	public void setWatermarkRotate(Float watermarkRotate) {
+		this.watermarkRotate = watermarkRotate;
+		if(watermarkRotate != null){
+			putQueryParameter("WatermarkRotate", watermarkRotate.toString());
+		}
+	}
+
+	public String getWatermarkValue() {
+		return this.watermarkValue;
+	}
+
+	public void setWatermarkValue(String watermarkValue) {
+		this.watermarkValue = watermarkValue;
+		if(watermarkValue != null){
+			putQueryParameter("WatermarkValue", watermarkValue);
+		}
+	}
+
+	public String getWatermarkFont() {
+		return this.watermarkFont;
+	}
+
+	public void setWatermarkFont(String watermarkFont) {
+		this.watermarkFont = watermarkFont;
+		if(watermarkFont != null){
+			putQueryParameter("WatermarkFont", watermarkFont);
+		}
+	}
+
+	public Integer getWatermarkHorizontal() {
+		return this.watermarkHorizontal;
+	}
+
+	public void setWatermarkHorizontal(Integer watermarkHorizontal) {
+		this.watermarkHorizontal = watermarkHorizontal;
+		if(watermarkHorizontal != null){
+			putQueryParameter("WatermarkHorizontal", watermarkHorizontal.toString());
 		}
 	}
 
@@ -77,6 +144,17 @@ public class GetOfficePreviewURLRequest extends RpcAcsRequest<GetOfficePreviewUR
 		this.srcUri = srcUri;
 		if(srcUri != null){
 			putQueryParameter("SrcUri", srcUri);
+		}
+	}
+
+	public String getWatermarkFillStyle() {
+		return this.watermarkFillStyle;
+	}
+
+	public void setWatermarkFillStyle(String watermarkFillStyle) {
+		this.watermarkFillStyle = watermarkFillStyle;
+		if(watermarkFillStyle != null){
+			putQueryParameter("WatermarkFillStyle", watermarkFillStyle);
 		}
 	}
 
