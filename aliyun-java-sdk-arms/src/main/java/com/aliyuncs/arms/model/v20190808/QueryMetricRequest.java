@@ -26,6 +26,8 @@ import com.aliyuncs.arms.Endpoint;
 public class QueryMetricRequest extends RpcAcsRequest<QueryMetricResponse> {
 	   
 
+	private String consistencyQueryStrategy;
+
 	private Long endTime;
 
 	private String orderBy;
@@ -33,6 +35,8 @@ public class QueryMetricRequest extends RpcAcsRequest<QueryMetricResponse> {
 	private Long startTime;
 
 	private List<Filters> filterss;
+
+	private String consistencyDataKey;
 
 	private String proxyUserId;
 
@@ -54,6 +58,17 @@ public class QueryMetricRequest extends RpcAcsRequest<QueryMetricResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getConsistencyQueryStrategy() {
+		return this.consistencyQueryStrategy;
+	}
+
+	public void setConsistencyQueryStrategy(String consistencyQueryStrategy) {
+		this.consistencyQueryStrategy = consistencyQueryStrategy;
+		if(consistencyQueryStrategy != null){
+			putQueryParameter("ConsistencyQueryStrategy", consistencyQueryStrategy);
+		}
 	}
 
 	public Long getEndTime() {
@@ -101,6 +116,17 @@ public class QueryMetricRequest extends RpcAcsRequest<QueryMetricResponse> {
 				putQueryParameter("Filters." + (depth1 + 1) + ".Key" , filterss.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getConsistencyDataKey() {
+		return this.consistencyDataKey;
+	}
+
+	public void setConsistencyDataKey(String consistencyDataKey) {
+		this.consistencyDataKey = consistencyDataKey;
+		if(consistencyDataKey != null){
+			putQueryParameter("ConsistencyDataKey", consistencyDataKey);
+		}
 	}
 
 	public String getProxyUserId() {
