@@ -72,6 +72,8 @@ public class ContrastFaceVerifyResponse extends AcsResponse {
 
 		private String materialInfo;
 
+		private String subCode;
+
 		public String getPassed() {
 			return this.passed;
 		}
@@ -94,6 +96,14 @@ public class ContrastFaceVerifyResponse extends AcsResponse {
 
 		public void setMaterialInfo(String materialInfo) {
 			this.materialInfo = materialInfo;
+		}
+
+		public String getSubCode() {
+			return this.subCode;
+		}
+
+		public void setSubCode(String subCode) {
+			this.subCode = subCode;
 		}
 	}
 
