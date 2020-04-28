@@ -25,6 +25,8 @@ import com.aliyuncs.cloudauth.Endpoint;
 public class VerifyDeviceRequest extends RpcAcsRequest<VerifyDeviceResponse> {
 	   
 
+	private String extInfo;
+
 	private String certifyData;
 
 	private String appVersion;
@@ -37,6 +39,17 @@ public class VerifyDeviceRequest extends RpcAcsRequest<VerifyDeviceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getExtInfo() {
+		return this.extInfo;
+	}
+
+	public void setExtInfo(String extInfo) {
+		this.extInfo = extInfo;
+		if(extInfo != null){
+			putBodyParameter("ExtInfo", extInfo);
+		}
 	}
 
 	public String getCertifyData() {
