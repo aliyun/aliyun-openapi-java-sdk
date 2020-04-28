@@ -23,9 +23,9 @@ public class ResetApplicationResponseUnmarshaller {
 	public static ResetApplicationResponse unmarshall(ResetApplicationResponse resetApplicationResponse, UnmarshallerContext _ctx) {
 		
 		resetApplicationResponse.setRequestId(_ctx.stringValue("ResetApplicationResponse.RequestId"));
+		resetApplicationResponse.setChangeOrderId(_ctx.stringValue("ResetApplicationResponse.ChangeOrderId"));
 		resetApplicationResponse.setCode(_ctx.integerValue("ResetApplicationResponse.Code"));
 		resetApplicationResponse.setMessage(_ctx.stringValue("ResetApplicationResponse.Message"));
-		resetApplicationResponse.setChangeOrderId(_ctx.stringValue("ResetApplicationResponse.ChangeOrderId"));
 	 
 	 	return resetApplicationResponse;
 	}

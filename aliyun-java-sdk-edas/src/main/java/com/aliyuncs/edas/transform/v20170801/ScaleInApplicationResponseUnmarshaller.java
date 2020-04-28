@@ -22,9 +22,9 @@ public class ScaleInApplicationResponseUnmarshaller {
 
 	public static ScaleInApplicationResponse unmarshall(ScaleInApplicationResponse scaleInApplicationResponse, UnmarshallerContext _ctx) {
 		
+		scaleInApplicationResponse.setChangeOrderId(_ctx.stringValue("ScaleInApplicationResponse.ChangeOrderId"));
 		scaleInApplicationResponse.setCode(_ctx.integerValue("ScaleInApplicationResponse.Code"));
 		scaleInApplicationResponse.setMessage(_ctx.stringValue("ScaleInApplicationResponse.Message"));
-		scaleInApplicationResponse.setChangeOrderId(_ctx.stringValue("ScaleInApplicationResponse.ChangeOrderId"));
 	 
 	 	return scaleInApplicationResponse;
 	}

@@ -67,13 +67,21 @@ public class ListConfigCentersResponse extends AcsResponse {
 
 	public static class ListConfigCenters {
 
+		private String appName;
+
 		private String dataId;
 
 		private String group;
 
 		private String id;
 
-		private String appName;
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
+		}
 
 		public String getDataId() {
 			return this.dataId;
@@ -97,14 +105,6 @@ public class ListConfigCentersResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
-		}
-
-		public String getAppName() {
-			return this.appName;
-		}
-
-		public void setAppName(String appName) {
-			this.appName = appName;
 		}
 	}
 

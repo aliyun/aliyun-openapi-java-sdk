@@ -24,8 +24,8 @@ public class UpdateHealthCheckUrlResponseUnmarshaller {
 		
 		updateHealthCheckUrlResponse.setRequestId(_ctx.stringValue("UpdateHealthCheckUrlResponse.RequestId"));
 		updateHealthCheckUrlResponse.setCode(_ctx.integerValue("UpdateHealthCheckUrlResponse.Code"));
-		updateHealthCheckUrlResponse.setMessage(_ctx.stringValue("UpdateHealthCheckUrlResponse.Message"));
 		updateHealthCheckUrlResponse.setHealthCheckURL(_ctx.stringValue("UpdateHealthCheckUrlResponse.HealthCheckURL"));
+		updateHealthCheckUrlResponse.setMessage(_ctx.stringValue("UpdateHealthCheckUrlResponse.Message"));
 	 
 	 	return updateHealthCheckUrlResponse;
 	}

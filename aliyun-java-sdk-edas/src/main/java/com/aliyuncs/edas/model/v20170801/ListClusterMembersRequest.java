@@ -30,6 +30,8 @@ public class ListClusterMembersRequest extends RoaAcsRequest<ListClusterMembersR
 	private Integer currentPage;
 
 	private String clusterId;
+
+	private String ecsList;
 	public ListClusterMembersRequest() {
 		super("Edas", "2017-08-01", "ListClusterMembers", "edas");
 		setUriPattern("/pop/v5/resource/cluster_member_list");
@@ -70,6 +72,17 @@ public class ListClusterMembersRequest extends RoaAcsRequest<ListClusterMembersR
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getEcsList() {
+		return this.ecsList;
+	}
+
+	public void setEcsList(String ecsList) {
+		this.ecsList = ecsList;
+		if(ecsList != null){
+			putQueryParameter("EcsList", ecsList);
 		}
 	}
 

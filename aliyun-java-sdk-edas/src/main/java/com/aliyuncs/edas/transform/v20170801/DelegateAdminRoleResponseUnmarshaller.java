@@ -14,19 +14,18 @@
 
 package com.aliyuncs.edas.transform.v20170801;
 
-import com.aliyuncs.edas.model.v20170801.StopApplicationResponse;
+import com.aliyuncs.edas.model.v20170801.DelegateAdminRoleResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class StopApplicationResponseUnmarshaller {
+public class DelegateAdminRoleResponseUnmarshaller {
 
-	public static StopApplicationResponse unmarshall(StopApplicationResponse stopApplicationResponse, UnmarshallerContext _ctx) {
+	public static DelegateAdminRoleResponse unmarshall(DelegateAdminRoleResponse delegateAdminRoleResponse, UnmarshallerContext _ctx) {
 		
-		stopApplicationResponse.setRequestId(_ctx.stringValue("StopApplicationResponse.RequestId"));
-		stopApplicationResponse.setChangeOrderId(_ctx.stringValue("StopApplicationResponse.ChangeOrderId"));
-		stopApplicationResponse.setCode(_ctx.integerValue("StopApplicationResponse.Code"));
-		stopApplicationResponse.setMessage(_ctx.stringValue("StopApplicationResponse.Message"));
+		delegateAdminRoleResponse.setRequestId(_ctx.stringValue("DelegateAdminRoleResponse.RequestId"));
+		delegateAdminRoleResponse.setCode(_ctx.integerValue("DelegateAdminRoleResponse.Code"));
+		delegateAdminRoleResponse.setMessage(_ctx.stringValue("DelegateAdminRoleResponse.Message"));
 	 
-	 	return stopApplicationResponse;
+	 	return delegateAdminRoleResponse;
 	}
 }

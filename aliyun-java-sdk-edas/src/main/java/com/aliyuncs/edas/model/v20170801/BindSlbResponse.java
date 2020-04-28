@@ -66,30 +66,54 @@ public class BindSlbResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String slbName;
+		private String extSlbId;
+
+		private String extSlbIp;
+
+		private String extSlbName;
+
+		private String extVServerGroupId;
 
 		private String slbId;
 
 		private String slbIp;
 
-		private String extSlbName;
-
-		private String extSlbId;
-
-		private String extSlbIp;
+		private String slbName;
 
 		private Integer slbPort;
 
 		private String vServerGroupId;
 
-		private String extVServerGroupId;
-
-		public String getSlbName() {
-			return this.slbName;
+		public String getExtSlbId() {
+			return this.extSlbId;
 		}
 
-		public void setSlbName(String slbName) {
-			this.slbName = slbName;
+		public void setExtSlbId(String extSlbId) {
+			this.extSlbId = extSlbId;
+		}
+
+		public String getExtSlbIp() {
+			return this.extSlbIp;
+		}
+
+		public void setExtSlbIp(String extSlbIp) {
+			this.extSlbIp = extSlbIp;
+		}
+
+		public String getExtSlbName() {
+			return this.extSlbName;
+		}
+
+		public void setExtSlbName(String extSlbName) {
+			this.extSlbName = extSlbName;
+		}
+
+		public String getExtVServerGroupId() {
+			return this.extVServerGroupId;
+		}
+
+		public void setExtVServerGroupId(String extVServerGroupId) {
+			this.extVServerGroupId = extVServerGroupId;
 		}
 
 		public String getSlbId() {
@@ -108,28 +132,12 @@ public class BindSlbResponse extends AcsResponse {
 			this.slbIp = slbIp;
 		}
 
-		public String getExtSlbName() {
-			return this.extSlbName;
+		public String getSlbName() {
+			return this.slbName;
 		}
 
-		public void setExtSlbName(String extSlbName) {
-			this.extSlbName = extSlbName;
-		}
-
-		public String getExtSlbId() {
-			return this.extSlbId;
-		}
-
-		public void setExtSlbId(String extSlbId) {
-			this.extSlbId = extSlbId;
-		}
-
-		public String getExtSlbIp() {
-			return this.extSlbIp;
-		}
-
-		public void setExtSlbIp(String extSlbIp) {
-			this.extSlbIp = extSlbIp;
+		public void setSlbName(String slbName) {
+			this.slbName = slbName;
 		}
 
 		public Integer getSlbPort() {
@@ -146,14 +154,6 @@ public class BindSlbResponse extends AcsResponse {
 
 		public void setVServerGroupId(String vServerGroupId) {
 			this.vServerGroupId = vServerGroupId;
-		}
-
-		public String getExtVServerGroupId() {
-			return this.extVServerGroupId;
-		}
-
-		public void setExtVServerGroupId(String extVServerGroupId) {
-			this.extVServerGroupId = extVServerGroupId;
 		}
 	}
 

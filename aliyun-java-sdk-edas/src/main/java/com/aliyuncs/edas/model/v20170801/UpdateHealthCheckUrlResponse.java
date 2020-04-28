@@ -26,9 +26,9 @@ public class UpdateHealthCheckUrlResponse extends AcsResponse {
 
 	private Integer code;
 
-	private String message;
-
 	private String healthCheckURL;
+
+	private String message;
 
 	private String requestId;
 
@@ -40,20 +40,20 @@ public class UpdateHealthCheckUrlResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getHealthCheckURL() {
 		return this.healthCheckURL;
 	}
 
 	public void setHealthCheckURL(String healthCheckURL) {
 		this.healthCheckURL = healthCheckURL;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {

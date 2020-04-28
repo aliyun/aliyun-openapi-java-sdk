@@ -39,6 +39,8 @@ public class ListSubAccountResponseUnmarshaller {
 			subAccount.setPhone(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].Phone"));
 			subAccount.setAdminUserKp(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].AdminUserKp"));
 			subAccount.setSubUserKp(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].SubUserKp"));
+			subAccount.setAdminEdasId(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].AdminEdasId"));
+			subAccount.setSubEdasId(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].SubEdasId"));
 
 			subAccountList.add(subAccount);
 		}

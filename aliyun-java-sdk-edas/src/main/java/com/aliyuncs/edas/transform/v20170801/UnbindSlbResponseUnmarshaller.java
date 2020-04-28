@@ -24,8 +24,8 @@ public class UnbindSlbResponseUnmarshaller {
 		
 		unbindSlbResponse.setRequestId(_ctx.stringValue("UnbindSlbResponse.RequestId"));
 		unbindSlbResponse.setCode(_ctx.integerValue("UnbindSlbResponse.Code"));
-		unbindSlbResponse.setMessage(_ctx.stringValue("UnbindSlbResponse.Message"));
 		unbindSlbResponse.setData(_ctx.stringValue("UnbindSlbResponse.Data"));
+		unbindSlbResponse.setMessage(_ctx.stringValue("UnbindSlbResponse.Message"));
 	 
 	 	return unbindSlbResponse;
 	}

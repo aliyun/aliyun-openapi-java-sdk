@@ -15,36 +15,34 @@
 package com.aliyuncs.edas.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.edas.transform.v20170801.UpdateK8sApplicationConfigResponseUnmarshaller;
+import com.aliyuncs.edas.transform.v20170801.DeleteLogPathResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateK8sApplicationConfigResponse extends AcsResponse {
-
-	private String changeOrderId;
-
-	private Integer code;
-
-	private String message;
+public class DeleteLogPathResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getChangeOrderId() {
-		return this.changeOrderId;
+	private String code;
+
+	private String message;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setChangeOrderId(String changeOrderId) {
-		this.changeOrderId = changeOrderId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public Integer getCode() {
+	public String getCode() {
 		return this.code;
 	}
 
-	public void setCode(Integer code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 
@@ -56,16 +54,8 @@ public class UpdateK8sApplicationConfigResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	@Override
-	public UpdateK8sApplicationConfigResponse getInstance(UnmarshallerContext context) {
-		return	UpdateK8sApplicationConfigResponseUnmarshaller.unmarshall(this, context);
+	public DeleteLogPathResponse getInstance(UnmarshallerContext context) {
+		return	DeleteLogPathResponseUnmarshaller.unmarshall(this, context);
 	}
 }

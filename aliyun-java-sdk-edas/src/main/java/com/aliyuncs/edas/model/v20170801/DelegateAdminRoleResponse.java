@@ -15,30 +15,20 @@
 package com.aliyuncs.edas.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.edas.transform.v20170801.UpdateK8sApplicationConfigResponseUnmarshaller;
+import com.aliyuncs.edas.transform.v20170801.DelegateAdminRoleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateK8sApplicationConfigResponse extends AcsResponse {
-
-	private String changeOrderId;
+public class DelegateAdminRoleResponse extends AcsResponse {
 
 	private Integer code;
 
 	private String message;
 
 	private String requestId;
-
-	public String getChangeOrderId() {
-		return this.changeOrderId;
-	}
-
-	public void setChangeOrderId(String changeOrderId) {
-		this.changeOrderId = changeOrderId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -65,7 +55,12 @@ public class UpdateK8sApplicationConfigResponse extends AcsResponse {
 	}
 
 	@Override
-	public UpdateK8sApplicationConfigResponse getInstance(UnmarshallerContext context) {
-		return	UpdateK8sApplicationConfigResponseUnmarshaller.unmarshall(this, context);
+	public DelegateAdminRoleResponse getInstance(UnmarshallerContext context) {
+		return	DelegateAdminRoleResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

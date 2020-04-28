@@ -23,9 +23,9 @@ public class ScaleOutApplicationResponseUnmarshaller {
 	public static ScaleOutApplicationResponse unmarshall(ScaleOutApplicationResponse scaleOutApplicationResponse, UnmarshallerContext _ctx) {
 		
 		scaleOutApplicationResponse.setRequestId(_ctx.stringValue("ScaleOutApplicationResponse.RequestId"));
+		scaleOutApplicationResponse.setChangeOrderId(_ctx.stringValue("ScaleOutApplicationResponse.ChangeOrderId"));
 		scaleOutApplicationResponse.setCode(_ctx.integerValue("ScaleOutApplicationResponse.Code"));
 		scaleOutApplicationResponse.setMessage(_ctx.stringValue("ScaleOutApplicationResponse.Message"));
-		scaleOutApplicationResponse.setChangeOrderId(_ctx.stringValue("ScaleOutApplicationResponse.ChangeOrderId"));
 	 
 	 	return scaleOutApplicationResponse;
 	}

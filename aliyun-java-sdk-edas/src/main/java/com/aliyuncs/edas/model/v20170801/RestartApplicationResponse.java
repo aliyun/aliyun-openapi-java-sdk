@@ -15,29 +15,29 @@
 package com.aliyuncs.edas.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.edas.transform.v20170801.UpdateK8sApplicationConfigResponseUnmarshaller;
+import com.aliyuncs.edas.transform.v20170801.RestartApplicationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateK8sApplicationConfigResponse extends AcsResponse {
+public class RestartApplicationResponse extends AcsResponse {
 
-	private String changeOrderId;
+	private String requestId;
 
 	private Integer code;
 
 	private String message;
 
-	private String requestId;
+	private String changeOrderId;
 
-	public String getChangeOrderId() {
-		return this.changeOrderId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setChangeOrderId(String changeOrderId) {
-		this.changeOrderId = changeOrderId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getCode() {
@@ -56,16 +56,16 @@ public class UpdateK8sApplicationConfigResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getChangeOrderId() {
+		return this.changeOrderId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setChangeOrderId(String changeOrderId) {
+		this.changeOrderId = changeOrderId;
 	}
 
 	@Override
-	public UpdateK8sApplicationConfigResponse getInstance(UnmarshallerContext context) {
-		return	UpdateK8sApplicationConfigResponseUnmarshaller.unmarshall(this, context);
+	public RestartApplicationResponse getInstance(UnmarshallerContext context) {
+		return	RestartApplicationResponseUnmarshaller.unmarshall(this, context);
 	}
 }

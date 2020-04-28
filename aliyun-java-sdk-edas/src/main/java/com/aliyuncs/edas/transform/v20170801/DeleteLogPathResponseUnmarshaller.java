@@ -14,19 +14,18 @@
 
 package com.aliyuncs.edas.transform.v20170801;
 
-import com.aliyuncs.edas.model.v20170801.StopApplicationResponse;
+import com.aliyuncs.edas.model.v20170801.DeleteLogPathResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class StopApplicationResponseUnmarshaller {
+public class DeleteLogPathResponseUnmarshaller {
 
-	public static StopApplicationResponse unmarshall(StopApplicationResponse stopApplicationResponse, UnmarshallerContext _ctx) {
+	public static DeleteLogPathResponse unmarshall(DeleteLogPathResponse deleteLogPathResponse, UnmarshallerContext _ctx) {
 		
-		stopApplicationResponse.setRequestId(_ctx.stringValue("StopApplicationResponse.RequestId"));
-		stopApplicationResponse.setChangeOrderId(_ctx.stringValue("StopApplicationResponse.ChangeOrderId"));
-		stopApplicationResponse.setCode(_ctx.integerValue("StopApplicationResponse.Code"));
-		stopApplicationResponse.setMessage(_ctx.stringValue("StopApplicationResponse.Message"));
+		deleteLogPathResponse.setRequestId(_ctx.stringValue("DeleteLogPathResponse.RequestId"));
+		deleteLogPathResponse.setCode(_ctx.stringValue("DeleteLogPathResponse.Code"));
+		deleteLogPathResponse.setMessage(_ctx.stringValue("DeleteLogPathResponse.Message"));
 	 
-	 	return stopApplicationResponse;
+	 	return deleteLogPathResponse;
 	}
 }

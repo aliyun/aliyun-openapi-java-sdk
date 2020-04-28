@@ -33,10 +33,10 @@ public class ListConfigCentersResponseUnmarshaller {
 		List<ListConfigCenters> configCentersList = new ArrayList<ListConfigCenters>();
 		for (int i = 0; i < _ctx.lengthValue("ListConfigCentersResponse.ConfigCentersList.Length"); i++) {
 			ListConfigCenters listConfigCenters = new ListConfigCenters();
+			listConfigCenters.setAppName(_ctx.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].AppName"));
 			listConfigCenters.setDataId(_ctx.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].DataId"));
 			listConfigCenters.setGroup(_ctx.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].Group"));
 			listConfigCenters.setId(_ctx.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].Id"));
-			listConfigCenters.setAppName(_ctx.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].AppName"));
 
 			configCentersList.add(listConfigCenters);
 		}

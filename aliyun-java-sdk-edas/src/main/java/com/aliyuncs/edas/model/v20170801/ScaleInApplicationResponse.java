@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ScaleInApplicationResponse extends AcsResponse {
 
+	private String changeOrderId;
+
 	private Integer code;
 
 	private String message;
 
-	private String changeOrderId;
+	public String getChangeOrderId() {
+		return this.changeOrderId;
+	}
+
+	public void setChangeOrderId(String changeOrderId) {
+		this.changeOrderId = changeOrderId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -44,14 +52,6 @@ public class ScaleInApplicationResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getChangeOrderId() {
-		return this.changeOrderId;
-	}
-
-	public void setChangeOrderId(String changeOrderId) {
-		this.changeOrderId = changeOrderId;
 	}
 
 	@Override
