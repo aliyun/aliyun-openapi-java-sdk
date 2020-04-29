@@ -50,6 +50,7 @@ public class ListTemplatesResponseUnmarshaller {
 			template.setPopularity(_ctx.integerValue("ListTemplatesResponse.Templates["+ i +"].Popularity"));
 			template.setTags(_ctx.mapValue("ListTemplatesResponse.Templates["+ i +"].Tags"));
 			template.setCategory(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].Category"));
+			template.setTemplateType(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateType"));
 
 			templates.add(template);
 		}

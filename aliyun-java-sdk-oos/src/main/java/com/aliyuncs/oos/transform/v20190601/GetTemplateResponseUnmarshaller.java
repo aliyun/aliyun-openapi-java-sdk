@@ -41,6 +41,7 @@ public class GetTemplateResponseUnmarshaller {
 		template.setTemplateVersion(_ctx.stringValue("GetTemplateResponse.Template.TemplateVersion"));
 		template.setHasTrigger(_ctx.booleanValue("GetTemplateResponse.Template.HasTrigger"));
 		template.setTags(_ctx.mapValue("GetTemplateResponse.Template.Tags"));
+		template.setTemplateType(_ctx.stringValue("GetTemplateResponse.Template.TemplateType"));
 		getTemplateResponse.setTemplate(template);
 	 
 	 	return getTemplateResponse;

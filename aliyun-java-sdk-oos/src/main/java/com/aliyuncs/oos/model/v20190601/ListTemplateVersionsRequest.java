@@ -22,14 +22,18 @@ import com.aliyuncs.oos.Endpoint;
  * @author auto create
  * @version 
  */
-public class GenerateExecutionPolicyRequest extends RpcAcsRequest<GenerateExecutionPolicyResponse> {
+public class ListTemplateVersionsRequest extends RpcAcsRequest<ListTemplateVersionsResponse> {
 	   
 
-	private String templateVersion;
+	private String nextToken;
+
+	private Integer maxResults;
 
 	private String templateName;
-	public GenerateExecutionPolicyRequest() {
-		super("oos", "2019-06-01", "GenerateExecutionPolicy", "oos");
+
+	private String shareType;
+	public ListTemplateVersionsRequest() {
+		super("oos", "2019-06-01", "ListTemplateVersions", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +41,25 @@ public class GenerateExecutionPolicyRequest extends RpcAcsRequest<GenerateExecut
 		} catch (Exception e) {}
 	}
 
-	public String getTemplateVersion() {
-		return this.templateVersion;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setTemplateVersion(String templateVersion) {
-		this.templateVersion = templateVersion;
-		if(templateVersion != null){
-			putQueryParameter("TemplateVersion", templateVersion);
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
@@ -59,9 +74,20 @@ public class GenerateExecutionPolicyRequest extends RpcAcsRequest<GenerateExecut
 		}
 	}
 
+	public String getShareType() {
+		return this.shareType;
+	}
+
+	public void setShareType(String shareType) {
+		this.shareType = shareType;
+		if(shareType != null){
+			putQueryParameter("ShareType", shareType);
+		}
+	}
+
 	@Override
-	public Class<GenerateExecutionPolicyResponse> getResponseClass() {
-		return GenerateExecutionPolicyResponse.class;
+	public Class<ListTemplateVersionsResponse> getResponseClass() {
+		return ListTemplateVersionsResponse.class;
 	}
 
 }

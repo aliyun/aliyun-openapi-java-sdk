@@ -100,6 +100,8 @@ public class ListTemplatesResponse extends AcsResponse {
 
 		private String category;
 
+		private String templateType;
+
 		public String getTemplateName() {
 			return this.templateName;
 		}
@@ -226,6 +228,14 @@ public class ListTemplatesResponse extends AcsResponse {
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+
+		public String getTemplateType() {
+			return this.templateType;
+		}
+
+		public void setTemplateType(String templateType) {
+			this.templateType = templateType;
 		}
 	}
 

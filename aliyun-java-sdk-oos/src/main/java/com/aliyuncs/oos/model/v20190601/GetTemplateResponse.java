@@ -83,6 +83,8 @@ public class GetTemplateResponse extends AcsResponse {
 
 		private Map<Object,Object> tags;
 
+		private String templateType;
+
 		public String getTemplateName() {
 			return this.templateName;
 		}
@@ -185,6 +187,14 @@ public class GetTemplateResponse extends AcsResponse {
 
 		public void setTags(Map<Object,Object> tags) {
 			this.tags = tags;
+		}
+
+		public String getTemplateType() {
+			return this.templateType;
+		}
+
+		public void setTemplateType(String templateType) {
+			this.templateType = templateType;
 		}
 	}
 

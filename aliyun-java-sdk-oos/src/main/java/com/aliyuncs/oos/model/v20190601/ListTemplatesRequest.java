@@ -33,6 +33,8 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 
 	private String nextToken;
 
+	private String templateType;
+
 	private String templateName;
 
 	private String sortOrder;
@@ -91,6 +93,17 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getTemplateType() {
+		return this.templateType;
+	}
+
+	public void setTemplateType(String templateType) {
+		this.templateType = templateType;
+		if(templateType != null){
+			putQueryParameter("TemplateType", templateType);
 		}
 	}
 

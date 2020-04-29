@@ -25,6 +25,7 @@ public class CreateTemplateResponseUnmarshaller {
 	public static CreateTemplateResponse unmarshall(CreateTemplateResponse createTemplateResponse, UnmarshallerContext _ctx) {
 		
 		createTemplateResponse.setRequestId(_ctx.stringValue("CreateTemplateResponse.RequestId"));
+		createTemplateResponse.setTemplateType(_ctx.stringValue("CreateTemplateResponse.TemplateType"));
 
 		Template template = new Template();
 		template.setTemplateName(_ctx.stringValue("CreateTemplateResponse.Template.TemplateName"));

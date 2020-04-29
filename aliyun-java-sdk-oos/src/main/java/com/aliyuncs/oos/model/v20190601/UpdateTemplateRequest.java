@@ -32,6 +32,8 @@ public class UpdateTemplateRequest extends RpcAcsRequest<UpdateTemplateResponse>
 	private Map<Object,Object> tags;
 
 	private String templateName;
+
+	private String versionName;
 	public UpdateTemplateRequest() {
 		super("oos", "2019-06-01", "UpdateTemplate", "oos");
 		setMethod(MethodType.POST);
@@ -71,6 +73,17 @@ public class UpdateTemplateRequest extends RpcAcsRequest<UpdateTemplateResponse>
 		this.templateName = templateName;
 		if(templateName != null){
 			putQueryParameter("TemplateName", templateName);
+		}
+	}
+
+	public String getVersionName() {
+		return this.versionName;
+	}
+
+	public void setVersionName(String versionName) {
+		this.versionName = versionName;
+		if(versionName != null){
+			putQueryParameter("VersionName", versionName);
 		}
 	}
 
