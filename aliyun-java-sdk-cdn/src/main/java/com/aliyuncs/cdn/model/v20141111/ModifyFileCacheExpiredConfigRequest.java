@@ -25,6 +25,8 @@ import com.aliyuncs.cdn.Endpoint;
 public class ModifyFileCacheExpiredConfigRequest extends RpcAcsRequest<ModifyFileCacheExpiredConfigResponse> {
 	   
 
+	private String securityToken;
+
 	private String domainName;
 
 	private String weight;
@@ -35,8 +37,6 @@ public class ModifyFileCacheExpiredConfigRequest extends RpcAcsRequest<ModifyFil
 
 	private String tTL;
 
-	private String securityToken;
-
 	private String configID;
 	public ModifyFileCacheExpiredConfigRequest() {
 		super("Cdn", "2014-11-11", "ModifyFileCacheExpiredConfig");
@@ -45,6 +45,17 @@ public class ModifyFileCacheExpiredConfigRequest extends RpcAcsRequest<ModifyFil
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -99,17 +110,6 @@ public class ModifyFileCacheExpiredConfigRequest extends RpcAcsRequest<ModifyFil
 		this.tTL = tTL;
 		if(tTL != null){
 			putQueryParameter("TTL", tTL);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

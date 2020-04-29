@@ -22,25 +22,44 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDomainFileSizeProportionDataRequest extends RpcAcsRequest<DescribeDomainFileSizeProportionDataResponse> {
+public class DescribeDomainCcActivityLogRequest extends RpcAcsRequest<DescribeDomainCcActivityLogResponse> {
 	   
+
+	private String ruleName;
 
 	private String startTime;
 
-	private String securityToken;
+	private String triggerObject;
+
+	private Long pageNumber;
+
+	private Long pageSize;
+
+	private String value;
 
 	private String domainName;
 
 	private String endTime;
 
 	private Long ownerId;
-	public DescribeDomainFileSizeProportionDataRequest() {
-		super("Cdn", "2018-05-10", "DescribeDomainFileSizeProportionData");
+	public DescribeDomainCcActivityLogRequest() {
+		super("Cdn", "2018-05-10", "DescribeDomainCcActivityLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRuleName() {
+		return this.ruleName;
+	}
+
+	public void setRuleName(String ruleName) {
+		this.ruleName = ruleName;
+		if(ruleName != null){
+			putQueryParameter("RuleName", ruleName);
+		}
 	}
 
 	public String getStartTime() {
@@ -54,14 +73,47 @@ public class DescribeDomainFileSizeProportionDataRequest extends RpcAcsRequest<D
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getTriggerObject() {
+		return this.triggerObject;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setTriggerObject(String triggerObject) {
+		this.triggerObject = triggerObject;
+		if(triggerObject != null){
+			putQueryParameter("TriggerObject", triggerObject);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getValue() {
+		return this.value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+		if(value != null){
+			putQueryParameter("Value", value);
 		}
 	}
 
@@ -99,8 +151,8 @@ public class DescribeDomainFileSizeProportionDataRequest extends RpcAcsRequest<D
 	}
 
 	@Override
-	public Class<DescribeDomainFileSizeProportionDataResponse> getResponseClass() {
-		return DescribeDomainFileSizeProportionDataResponse.class;
+	public Class<DescribeDomainCcActivityLogResponse> getResponseClass() {
+		return DescribeDomainCcActivityLogResponse.class;
 	}
 
 }

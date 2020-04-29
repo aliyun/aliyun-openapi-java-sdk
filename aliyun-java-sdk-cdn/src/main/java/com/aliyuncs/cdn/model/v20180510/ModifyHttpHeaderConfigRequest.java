@@ -25,13 +25,13 @@ import com.aliyuncs.cdn.Endpoint;
 public class ModifyHttpHeaderConfigRequest extends RpcAcsRequest<ModifyHttpHeaderConfigResponse> {
 	   
 
-	private String domainName;
-
-	private Long ownerId;
-
 	private String headerValue;
 
 	private String securityToken;
+
+	private String domainName;
+
+	private Long ownerId;
 
 	private String configID;
 
@@ -43,28 +43,6 @@ public class ModifyHttpHeaderConfigRequest extends RpcAcsRequest<ModifyHttpHeade
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
 	}
 
 	public String getHeaderValue() {
@@ -86,6 +64,28 @@ public class ModifyHttpHeaderConfigRequest extends RpcAcsRequest<ModifyHttpHeade
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
