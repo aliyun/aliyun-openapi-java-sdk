@@ -26,6 +26,9 @@ public class GetDocTranslateTaskResponseUnmarshaller {
 		getDocTranslateTaskResponse.setTaskId(_ctx.stringValue("GetDocTranslateTaskResponse.TaskId"));
 		getDocTranslateTaskResponse.setStatus(_ctx.stringValue("GetDocTranslateTaskResponse.Status"));
 		getDocTranslateTaskResponse.setTranslateFileUrl(_ctx.stringValue("GetDocTranslateTaskResponse.TranslateFileUrl"));
+		getDocTranslateTaskResponse.setTranslateErrorCode(_ctx.stringValue("GetDocTranslateTaskResponse.TranslateErrorCode"));
+		getDocTranslateTaskResponse.setTranslateErrorMessage(_ctx.stringValue("GetDocTranslateTaskResponse.TranslateErrorMessage"));
+		getDocTranslateTaskResponse.setPageCount(_ctx.integerValue("GetDocTranslateTaskResponse.PageCount"));
 	 
 	 	return getDocTranslateTaskResponse;
 	}

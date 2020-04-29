@@ -32,6 +32,12 @@ public class GetDocTranslateTaskResponse extends AcsResponse {
 
 	private String translateFileUrl;
 
+	private String translateErrorCode;
+
+	private String translateErrorMessage;
+
+	private Integer pageCount;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -62,6 +68,30 @@ public class GetDocTranslateTaskResponse extends AcsResponse {
 
 	public void setTranslateFileUrl(String translateFileUrl) {
 		this.translateFileUrl = translateFileUrl;
+	}
+
+	public String getTranslateErrorCode() {
+		return this.translateErrorCode;
+	}
+
+	public void setTranslateErrorCode(String translateErrorCode) {
+		this.translateErrorCode = translateErrorCode;
+	}
+
+	public String getTranslateErrorMessage() {
+		return this.translateErrorMessage;
+	}
+
+	public void setTranslateErrorMessage(String translateErrorMessage) {
+		this.translateErrorMessage = translateErrorMessage;
+	}
+
+	public Integer getPageCount() {
+		return this.pageCount;
+	}
+
+	public void setPageCount(Integer pageCount) {
+		this.pageCount = pageCount;
 	}
 
 	@Override

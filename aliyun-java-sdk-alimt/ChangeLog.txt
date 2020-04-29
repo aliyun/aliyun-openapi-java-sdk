@@ -1,3 +1,7 @@
+2020-04-29 Version: 1.1.1
+- Support Document Translation.
+- Support Lanuage Detection.
+
 2020-03-11 Version: 1.1.0
 - Support certificate translate.
 

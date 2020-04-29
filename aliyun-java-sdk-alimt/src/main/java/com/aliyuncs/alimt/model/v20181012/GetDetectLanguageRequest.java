@@ -22,33 +22,33 @@ import com.aliyuncs.alimt.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetDocTranslateTaskRequest extends RpcAcsRequest<GetDocTranslateTaskResponse> {
+public class GetDetectLanguageRequest extends RpcAcsRequest<GetDetectLanguageResponse> {
 	   
 
-	private String taskId;
-	public GetDocTranslateTaskRequest() {
-		super("alimt", "2018-10-12", "GetDocTranslateTask", "alimt");
-		setMethod(MethodType.GET);
+	private String sourceText;
+	public GetDetectLanguageRequest() {
+		super("alimt", "2018-10-12", "GetDetectLanguage", "alimt");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getSourceText() {
+		return this.sourceText;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
+	public void setSourceText(String sourceText) {
+		this.sourceText = sourceText;
+		if(sourceText != null){
+			putBodyParameter("SourceText", sourceText);
 		}
 	}
 
 	@Override
-	public Class<GetDocTranslateTaskResponse> getResponseClass() {
-		return GetDocTranslateTaskResponse.class;
+	public Class<GetDetectLanguageResponse> getResponseClass() {
+		return GetDetectLanguageResponse.class;
 	}
 
 }
