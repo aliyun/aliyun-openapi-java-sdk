@@ -25,17 +25,17 @@ import com.aliyuncs.dcdn.Endpoint;
 public class UpdateDcdnDomainRequest extends RpcAcsRequest<UpdateDcdnDomainResponse> {
 	   
 
-	private String topLevelDomain;
-
 	private String sources;
-
-	private String domainName;
-
-	private Long ownerId;
 
 	private String resourceGroupId;
 
 	private String securityToken;
+
+	private String topLevelDomain;
+
+	private String domainName;
+
+	private Long ownerId;
 	public UpdateDcdnDomainRequest() {
 		super("dcdn", "2018-01-15", "UpdateDcdnDomain");
 		setMethod(MethodType.POST);
@@ -43,17 +43,6 @@ public class UpdateDcdnDomainRequest extends RpcAcsRequest<UpdateDcdnDomainRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTopLevelDomain() {
-		return this.topLevelDomain;
-	}
-
-	public void setTopLevelDomain(String topLevelDomain) {
-		this.topLevelDomain = topLevelDomain;
-		if(topLevelDomain != null){
-			putQueryParameter("TopLevelDomain", topLevelDomain);
-		}
 	}
 
 	public String getSources() {
@@ -64,28 +53,6 @@ public class UpdateDcdnDomainRequest extends RpcAcsRequest<UpdateDcdnDomainRespo
 		this.sources = sources;
 		if(sources != null){
 			putQueryParameter("Sources", sources);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -108,6 +75,39 @@ public class UpdateDcdnDomainRequest extends RpcAcsRequest<UpdateDcdnDomainRespo
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getTopLevelDomain() {
+		return this.topLevelDomain;
+	}
+
+	public void setTopLevelDomain(String topLevelDomain) {
+		this.topLevelDomain = topLevelDomain;
+		if(topLevelDomain != null){
+			putQueryParameter("TopLevelDomain", topLevelDomain);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

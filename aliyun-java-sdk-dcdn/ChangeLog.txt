@@ -1,3 +1,6 @@
+2020-04-29 Version: 2.0.1
+- Sync cdn APIs.
+
 2019-11-15 Version: 2.0.0
 - Sync cdn APIs.
 
