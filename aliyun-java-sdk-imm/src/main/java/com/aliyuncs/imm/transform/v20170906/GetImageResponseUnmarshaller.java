@@ -72,6 +72,8 @@ public class GetImageResponseUnmarshaller {
 		getImageResponse.setAddressModifyTime(_ctx.stringValue("GetImageResponse.AddressModifyTime"));
 		getImageResponse.setAddressStatus(_ctx.stringValue("GetImageResponse.AddressStatus"));
 		getImageResponse.setAddressFailReason(_ctx.stringValue("GetImageResponse.AddressFailReason"));
+		getImageResponse.setRemarksArrayA(_ctx.stringValue("GetImageResponse.RemarksArrayA"));
+		getImageResponse.setRemarksArrayB(_ctx.stringValue("GetImageResponse.RemarksArrayB"));
 
 		Address address = new Address();
 		address.setAddressLine(_ctx.stringValue("GetImageResponse.Address.AddressLine"));

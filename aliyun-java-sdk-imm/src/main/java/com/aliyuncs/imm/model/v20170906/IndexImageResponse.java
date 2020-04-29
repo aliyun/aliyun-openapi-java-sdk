@@ -44,6 +44,10 @@ public class IndexImageResponse extends AcsResponse {
 
 	private String externalId;
 
+	private String remarksArrayA;
+
+	private String remarksArrayB;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -122,6 +126,22 @@ public class IndexImageResponse extends AcsResponse {
 
 	public void setExternalId(String externalId) {
 		this.externalId = externalId;
+	}
+
+	public String getRemarksArrayA() {
+		return this.remarksArrayA;
+	}
+
+	public void setRemarksArrayA(String remarksArrayA) {
+		this.remarksArrayA = remarksArrayA;
+	}
+
+	public String getRemarksArrayB() {
+		return this.remarksArrayB;
+	}
+
+	public void setRemarksArrayB(String remarksArrayB) {
+		this.remarksArrayB = remarksArrayB;
 	}
 
 	@Override

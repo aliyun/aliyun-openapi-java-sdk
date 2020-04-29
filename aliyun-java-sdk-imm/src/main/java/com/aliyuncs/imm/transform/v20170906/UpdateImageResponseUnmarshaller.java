@@ -32,6 +32,8 @@ public class UpdateImageResponseUnmarshaller {
 		updateImageResponse.setRemarksC(_ctx.stringValue("UpdateImageResponse.RemarksC"));
 		updateImageResponse.setRemarksD(_ctx.stringValue("UpdateImageResponse.RemarksD"));
 		updateImageResponse.setExternalId(_ctx.stringValue("UpdateImageResponse.ExternalId"));
+		updateImageResponse.setRemarksArrayA(_ctx.stringValue("UpdateImageResponse.RemarksArrayA"));
+		updateImageResponse.setRemarksArrayB(_ctx.stringValue("UpdateImageResponse.RemarksArrayB"));
 	 
 	 	return updateImageResponse;
 	}

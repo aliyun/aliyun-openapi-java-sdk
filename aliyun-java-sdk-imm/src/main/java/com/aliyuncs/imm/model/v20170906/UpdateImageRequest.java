@@ -36,6 +36,10 @@ public class UpdateImageRequest extends RpcAcsRequest<UpdateImageResponse> {
 
 	private String imageUri;
 
+	private String remarksArrayA;
+
+	private String remarksArrayB;
+
 	private String sourceUri;
 
 	private String sourcePosition;
@@ -113,6 +117,28 @@ public class UpdateImageRequest extends RpcAcsRequest<UpdateImageResponse> {
 		this.imageUri = imageUri;
 		if(imageUri != null){
 			putQueryParameter("ImageUri", imageUri);
+		}
+	}
+
+	public String getRemarksArrayA() {
+		return this.remarksArrayA;
+	}
+
+	public void setRemarksArrayA(String remarksArrayA) {
+		this.remarksArrayA = remarksArrayA;
+		if(remarksArrayA != null){
+			putQueryParameter("RemarksArrayA", remarksArrayA);
+		}
+	}
+
+	public String getRemarksArrayB() {
+		return this.remarksArrayB;
+	}
+
+	public void setRemarksArrayB(String remarksArrayB) {
+		this.remarksArrayB = remarksArrayB;
+		if(remarksArrayB != null){
+			putQueryParameter("RemarksArrayB", remarksArrayB);
 		}
 	}
 
