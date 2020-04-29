@@ -16,6 +16,7 @@ package com.aliyuncs.onsmqtt.model.v20200420;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.onsmqtt.Endpoint;
 
 /**
  * @author auto create
@@ -28,8 +29,12 @@ public class RevokeTokenRequest extends RpcAcsRequest<RevokeTokenResponse> {
 
 	private String instanceId;
 	public RevokeTokenRequest() {
-		super("OnsMqtt", "2020-04-20", "RevokeToken");
+		super("OnsMqtt", "2020-04-20", "RevokeToken", "onsmqtt");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getToken() {

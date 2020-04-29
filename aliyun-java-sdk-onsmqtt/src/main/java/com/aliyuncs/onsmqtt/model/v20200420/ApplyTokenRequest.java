@@ -16,6 +16,7 @@ package com.aliyuncs.onsmqtt.model.v20200420;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.onsmqtt.Endpoint;
 
 /**
  * @author auto create
@@ -32,8 +33,12 @@ public class ApplyTokenRequest extends RpcAcsRequest<ApplyTokenResponse> {
 
 	private String actions;
 	public ApplyTokenRequest() {
-		super("OnsMqtt", "2020-04-20", "ApplyToken");
+		super("OnsMqtt", "2020-04-20", "ApplyToken", "onsmqtt");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getExpireTime() {

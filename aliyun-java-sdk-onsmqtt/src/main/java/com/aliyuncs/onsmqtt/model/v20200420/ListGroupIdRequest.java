@@ -16,6 +16,7 @@ package com.aliyuncs.onsmqtt.model.v20200420;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.onsmqtt.Endpoint;
 
 /**
  * @author auto create
@@ -26,8 +27,12 @@ public class ListGroupIdRequest extends RpcAcsRequest<ListGroupIdResponse> {
 
 	private String instanceId;
 	public ListGroupIdRequest() {
-		super("OnsMqtt", "2020-04-20", "ListGroupId");
+		super("OnsMqtt", "2020-04-20", "ListGroupId", "onsmqtt");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getInstanceId() {
