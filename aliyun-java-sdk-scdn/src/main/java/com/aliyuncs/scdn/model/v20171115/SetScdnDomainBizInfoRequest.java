@@ -22,70 +22,31 @@ import com.aliyuncs.scdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class BatchUpdateScdnDomainRequest extends RpcAcsRequest<BatchUpdateScdnDomainResponse> {
+public class SetScdnDomainBizInfoRequest extends RpcAcsRequest<SetScdnDomainBizInfoResponse> {
 	   
 
-	private String sources;
-
-	private String resourceGroupId;
-
-	private String securityToken;
-
-	private String topLevelDomain;
+	private String bizName;
 
 	private String domainName;
 
 	private Long ownerId;
-	public BatchUpdateScdnDomainRequest() {
-		super("scdn", "2017-11-15", "BatchUpdateScdnDomain");
-		setMethod(MethodType.POST);
+	public SetScdnDomainBizInfoRequest() {
+		super("scdn", "2017-11-15", "SetScdnDomainBizInfo");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getSources() {
-		return this.sources;
+	public String getBizName() {
+		return this.bizName;
 	}
 
-	public void setSources(String sources) {
-		this.sources = sources;
-		if(sources != null){
-			putQueryParameter("Sources", sources);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getTopLevelDomain() {
-		return this.topLevelDomain;
-	}
-
-	public void setTopLevelDomain(String topLevelDomain) {
-		this.topLevelDomain = topLevelDomain;
-		if(topLevelDomain != null){
-			putQueryParameter("TopLevelDomain", topLevelDomain);
+	public void setBizName(String bizName) {
+		this.bizName = bizName;
+		if(bizName != null){
+			putQueryParameter("BizName", bizName);
 		}
 	}
 
@@ -112,8 +73,8 @@ public class BatchUpdateScdnDomainRequest extends RpcAcsRequest<BatchUpdateScdnD
 	}
 
 	@Override
-	public Class<BatchUpdateScdnDomainResponse> getResponseClass() {
-		return BatchUpdateScdnDomainResponse.class;
+	public Class<SetScdnDomainBizInfoResponse> getResponseClass() {
+		return SetScdnDomainBizInfoResponse.class;
 	}
 
 }

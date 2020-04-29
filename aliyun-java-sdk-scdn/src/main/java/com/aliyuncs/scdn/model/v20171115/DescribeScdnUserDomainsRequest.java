@@ -37,13 +37,9 @@ public class DescribeScdnUserDomainsRequest extends RpcAcsRequest<DescribeScdnUs
 
 	private Integer pageSize;
 
-	private String funcFilter;
-
 	private String domainName;
 
 	private Long ownerId;
-
-	private String funcId;
 
 	private String domainStatus;
 
@@ -125,17 +121,6 @@ public class DescribeScdnUserDomainsRequest extends RpcAcsRequest<DescribeScdnUs
 		}
 	}
 
-	public String getFuncFilter() {
-		return this.funcFilter;
-	}
-
-	public void setFuncFilter(String funcFilter) {
-		this.funcFilter = funcFilter;
-		if(funcFilter != null){
-			putQueryParameter("FuncFilter", funcFilter);
-		}
-	}
-
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -155,17 +140,6 @@ public class DescribeScdnUserDomainsRequest extends RpcAcsRequest<DescribeScdnUs
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getFuncId() {
-		return this.funcId;
-	}
-
-	public void setFuncId(String funcId) {
-		this.funcId = funcId;
-		if(funcId != null){
-			putQueryParameter("FuncId", funcId);
 		}
 	}
 

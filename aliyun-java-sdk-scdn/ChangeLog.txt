@@ -1,3 +1,7 @@
+2020-04-29 Version: 2.1.0
+- Add Scdn APIS.
+- Sync cdn APIS.
+
 2019-11-15 Version: 2.0.0
 - Add Scdn APIS.
 - Sync cdn APIS.

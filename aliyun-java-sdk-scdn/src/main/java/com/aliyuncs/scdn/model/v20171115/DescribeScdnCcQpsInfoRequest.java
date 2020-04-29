@@ -22,70 +22,33 @@ import com.aliyuncs.scdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class BatchUpdateScdnDomainRequest extends RpcAcsRequest<BatchUpdateScdnDomainResponse> {
+public class DescribeScdnCcQpsInfoRequest extends RpcAcsRequest<DescribeScdnCcQpsInfoResponse> {
 	   
 
-	private String sources;
-
-	private String resourceGroupId;
-
-	private String securityToken;
-
-	private String topLevelDomain;
+	private String startTime;
 
 	private String domainName;
 
+	private String endTime;
+
 	private Long ownerId;
-	public BatchUpdateScdnDomainRequest() {
-		super("scdn", "2017-11-15", "BatchUpdateScdnDomain");
-		setMethod(MethodType.POST);
+	public DescribeScdnCcQpsInfoRequest() {
+		super("scdn", "2017-11-15", "DescribeScdnCcQpsInfo");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getSources() {
-		return this.sources;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setSources(String sources) {
-		this.sources = sources;
-		if(sources != null){
-			putQueryParameter("Sources", sources);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getTopLevelDomain() {
-		return this.topLevelDomain;
-	}
-
-	public void setTopLevelDomain(String topLevelDomain) {
-		this.topLevelDomain = topLevelDomain;
-		if(topLevelDomain != null){
-			putQueryParameter("TopLevelDomain", topLevelDomain);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -97,6 +60,17 @@ public class BatchUpdateScdnDomainRequest extends RpcAcsRequest<BatchUpdateScdnD
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -112,8 +86,8 @@ public class BatchUpdateScdnDomainRequest extends RpcAcsRequest<BatchUpdateScdnD
 	}
 
 	@Override
-	public Class<BatchUpdateScdnDomainResponse> getResponseClass() {
-		return BatchUpdateScdnDomainResponse.class;
+	public Class<DescribeScdnCcQpsInfoResponse> getResponseClass() {
+		return DescribeScdnCcQpsInfoResponse.class;
 	}
 
 }
