@@ -27,7 +27,7 @@ public class DescribeLicenseRequest extends RpcAcsRequest<DescribeLicenseRespons
 
 	private String licenseCode;
 	public DescribeLicenseRequest() {
-		super("Market", "2015-11-01", "DescribeLicense", "yunmarket");
+		super("Market", "2015-11-01", "DescribeLicense");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

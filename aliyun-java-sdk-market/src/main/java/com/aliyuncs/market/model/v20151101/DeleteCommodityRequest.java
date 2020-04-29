@@ -27,8 +27,8 @@ public class DeleteCommodityRequest extends RpcAcsRequest<DeleteCommodityRespons
 
 	private String commodityId;
 	public DeleteCommodityRequest() {
-		super("Market", "2015-11-01", "DeleteCommodity", "yunmarket");
-		setMethod(MethodType.PUT);
+		super("Market", "2015-11-01", "DeleteCommodity");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

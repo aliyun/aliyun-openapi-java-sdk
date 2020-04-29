@@ -26,6 +26,7 @@ public class DescribeOrderResponseUnmarshaller {
 
 	public static DescribeOrderResponse unmarshall(DescribeOrderResponse describeOrderResponse, UnmarshallerContext _ctx) {
 		
+		describeOrderResponse.setRequestId(_ctx.stringValue("DescribeOrderResponse.RequestId"));
 		describeOrderResponse.setOrderId(_ctx.longValue("DescribeOrderResponse.OrderId"));
 		describeOrderResponse.setAliUid(_ctx.longValue("DescribeOrderResponse.AliUid"));
 		describeOrderResponse.setSupplierCompanyName(_ctx.stringValue("DescribeOrderResponse.SupplierCompanyName"));

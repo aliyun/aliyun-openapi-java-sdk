@@ -22,12 +22,12 @@ import com.aliyuncs.market.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRateRequest extends RpcAcsRequest<DescribeRateResponse> {
+public class DescribeProjectNodesRequest extends RpcAcsRequest<DescribeProjectNodesResponse> {
 	   
 
-	private String orderId;
-	public DescribeRateRequest() {
-		super("Market", "2015-11-01", "DescribeRate");
+	private String instanceId;
+	public DescribeProjectNodesRequest() {
+		super("Market", "2015-11-01", "DescribeProjectNodes");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class DescribeRateRequest extends RpcAcsRequest<DescribeRateResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
 	@Override
-	public Class<DescribeRateResponse> getResponseClass() {
-		return DescribeRateResponse.class;
+	public Class<DescribeProjectNodesResponse> getResponseClass() {
+		return DescribeProjectNodesResponse.class;
 	}
 
 }

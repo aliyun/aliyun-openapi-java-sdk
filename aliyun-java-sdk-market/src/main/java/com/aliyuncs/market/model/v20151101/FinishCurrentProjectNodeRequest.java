@@ -22,16 +22,18 @@ import com.aliyuncs.market.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceResponse> {
+public class FinishCurrentProjectNodeRequest extends RpcAcsRequest<FinishCurrentProjectNodeResponse> {
 	   
 
-	private Long ownerId;
+	private String templateForm;
 
 	private String instanceId;
 
-	private String orderType;
-	public DescribeInstanceRequest() {
-		super("Market", "2015-11-01", "DescribeInstance");
+	private String remark;
+
+	private Long nodeId;
+	public FinishCurrentProjectNodeRequest() {
+		super("Market", "2015-11-01", "FinishCurrentProjectNode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +41,14 @@ public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceRespo
 		} catch (Exception e) {}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getTemplateForm() {
+		return this.templateForm;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setTemplateForm(String templateForm) {
+		this.templateForm = templateForm;
+		if(templateForm != null){
+			putQueryParameter("TemplateForm", templateForm);
 		}
 	}
 
@@ -61,20 +63,31 @@ public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceRespo
 		}
 	}
 
-	public String getOrderType() {
-		return this.orderType;
+	public String getRemark() {
+		return this.remark;
 	}
 
-	public void setOrderType(String orderType) {
-		this.orderType = orderType;
-		if(orderType != null){
-			putQueryParameter("OrderType", orderType);
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public Long getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(Long nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeInstanceResponse> getResponseClass() {
-		return DescribeInstanceResponse.class;
+	public Class<FinishCurrentProjectNodeResponse> getResponseClass() {
+		return FinishCurrentProjectNodeResponse.class;
 	}
 
 }

@@ -22,12 +22,16 @@ import com.aliyuncs.market.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRateRequest extends RpcAcsRequest<DescribeRateResponse> {
+public class ResumeProjectRequest extends RpcAcsRequest<ResumeProjectResponse> {
 	   
 
-	private String orderId;
-	public DescribeRateRequest() {
-		super("Market", "2015-11-01", "DescribeRate");
+	private String instanceId;
+
+	private String remark;
+
+	private Long nodeId;
+	public ResumeProjectRequest() {
+		super("Market", "2015-11-01", "ResumeProject");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +39,42 @@ public class DescribeRateRequest extends RpcAcsRequest<DescribeRateResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public Long getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(Long nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeRateResponse> getResponseClass() {
-		return DescribeRateResponse.class;
+	public Class<ResumeProjectResponse> getResponseClass() {
+		return ResumeProjectResponse.class;
 	}
 
 }

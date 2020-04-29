@@ -33,6 +33,7 @@ public class DescribeProductResponseUnmarshaller {
 
 	public static DescribeProductResponse unmarshall(DescribeProductResponse describeProductResponse, UnmarshallerContext _ctx) {
 		
+		describeProductResponse.setRequestId(_ctx.stringValue("DescribeProductResponse.RequestId"));
 		describeProductResponse.setCode(_ctx.stringValue("DescribeProductResponse.Code"));
 		describeProductResponse.setName(_ctx.stringValue("DescribeProductResponse.Name"));
 		describeProductResponse.setType(_ctx.stringValue("DescribeProductResponse.Type"));
@@ -47,6 +48,8 @@ public class DescribeProductResponseUnmarshaller {
 		describeProductResponse.setAuditTime(_ctx.longValue("DescribeProductResponse.AuditTime"));
 		describeProductResponse.setGmtCreated(_ctx.longValue("DescribeProductResponse.GmtCreated"));
 		describeProductResponse.setGmtModified(_ctx.longValue("DescribeProductResponse.GmtModified"));
+		describeProductResponse.setSupplierPk(_ctx.longValue("DescribeProductResponse.SupplierPk"));
+		describeProductResponse.setFrontCategoryId(_ctx.longValue("DescribeProductResponse.FrontCategoryId"));
 
 		ShopInfo shopInfo = new ShopInfo();
 		shopInfo.setId(_ctx.longValue("DescribeProductResponse.ShopInfo.Id"));

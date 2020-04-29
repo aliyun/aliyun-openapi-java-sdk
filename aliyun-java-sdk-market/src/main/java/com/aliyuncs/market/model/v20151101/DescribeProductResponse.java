@@ -53,6 +53,12 @@ public class DescribeProductResponse extends AcsResponse {
 
 	private Long gmtModified;
 
+	private String requestId;
+
+	private Long supplierPk;
+
+	private Long frontCategoryId;
+
 	private List<ProductSku> productSkus;
 
 	private List<ProductExtra> productExtras;
@@ -169,6 +175,30 @@ public class DescribeProductResponse extends AcsResponse {
 
 	public void setGmtModified(Long gmtModified) {
 		this.gmtModified = gmtModified;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getSupplierPk() {
+		return this.supplierPk;
+	}
+
+	public void setSupplierPk(Long supplierPk) {
+		this.supplierPk = supplierPk;
+	}
+
+	public Long getFrontCategoryId() {
+		return this.frontCategoryId;
+	}
+
+	public void setFrontCategoryId(Long frontCategoryId) {
+		this.frontCategoryId = frontCategoryId;
 	}
 
 	public List<ProductSku> getProductSkus() {

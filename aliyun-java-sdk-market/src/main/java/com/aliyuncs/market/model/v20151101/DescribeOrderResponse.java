@@ -64,6 +64,8 @@ public class DescribeOrderResponse extends AcsResponse {
 
 	private Map<Object,Object> components;
 
+	private String requestId;
+
 	private List<String> supplierTelephones;
 
 	private List<String> instanceIds;
@@ -218,6 +220,14 @@ public class DescribeOrderResponse extends AcsResponse {
 
 	public void setComponents(Map<Object,Object> components) {
 		this.components = components;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<String> getSupplierTelephones() {

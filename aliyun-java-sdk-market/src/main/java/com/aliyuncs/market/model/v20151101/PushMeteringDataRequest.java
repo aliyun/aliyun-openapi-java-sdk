@@ -27,7 +27,7 @@ public class PushMeteringDataRequest extends RpcAcsRequest<PushMeteringDataRespo
 
 	private String metering;
 	public PushMeteringDataRequest() {
-		super("Market", "2015-11-01", "PushMeteringData", "yunmarket");
+		super("Market", "2015-11-01", "PushMeteringData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

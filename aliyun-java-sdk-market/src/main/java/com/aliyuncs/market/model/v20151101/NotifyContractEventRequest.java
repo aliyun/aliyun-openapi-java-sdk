@@ -29,7 +29,7 @@ public class NotifyContractEventRequest extends RpcAcsRequest<NotifyContractEven
 
 	private String eventType;
 	public NotifyContractEventRequest() {
-		super("Market", "2015-11-01", "NotifyContractEvent", "yunmarket");
+		super("Market", "2015-11-01", "NotifyContractEvent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
