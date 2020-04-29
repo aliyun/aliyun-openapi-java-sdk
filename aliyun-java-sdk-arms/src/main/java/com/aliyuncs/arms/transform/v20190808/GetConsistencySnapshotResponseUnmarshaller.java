@@ -22,7 +22,6 @@ import com.aliyuncs.arms.model.v20190808.GetConsistencySnapshotResponse.Consiste
 import com.aliyuncs.arms.model.v20190808.GetConsistencySnapshotResponse.ConsistencyResult.AgentHeartbeatInfo;
 import com.aliyuncs.arms.model.v20190808.GetConsistencySnapshotResponse.ConsistencyResult.SlsShardWatermarkBean;
 import com.aliyuncs.arms.model.v20190808.GetConsistencySnapshotResponse.ConsistencyResult.SlsShardWatermarkBean.CheckPointResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,7 +35,7 @@ public class GetConsistencySnapshotResponseUnmarshaller {
 		consistencyResult.setJudgeTimestamp(_ctx.longValue("GetConsistencySnapshotResponse.ConsistencyResult.JudgeTimestamp"));
 		consistencyResult.setLastSlsShardWatermarkTimestamp(_ctx.longValue("GetConsistencySnapshotResponse.ConsistencyResult.LastSlsShardWatermarkTimestamp"));
 		consistencyResult.setLastAgentInfoTimestamp(_ctx.longValue("GetConsistencySnapshotResponse.ConsistencyResult.LastAgentInfoTimestamp"));
-		consistencyResult.setBarrierPointsLastTimestampMap(_ctx.mapValue("GetConsistencySnapshotResponse.ConsistencyResult.BarrierPointsLastTimestampMap"));
+		consistencyResult.setBarrierPointsLastTimestampMap(_ctx.stringValue("GetConsistencySnapshotResponse.ConsistencyResult.BarrierPointsLastTimestampMap"));
 		consistencyResult.setLastBarrierTimestamp(_ctx.longValue("GetConsistencySnapshotResponse.ConsistencyResult.LastBarrierTimestamp"));
 
 		SlsShardWatermarkBean slsShardWatermarkBean = new SlsShardWatermarkBean();

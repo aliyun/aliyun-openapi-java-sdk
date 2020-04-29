@@ -15,7 +15,6 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.arms.transform.v20190808.GetConsistencySnapshotResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -54,7 +53,7 @@ public class GetConsistencySnapshotResponse extends AcsResponse {
 
 		private Long lastAgentInfoTimestamp;
 
-		private Map<Object,Object> barrierPointsLastTimestampMap;
+		private String barrierPointsLastTimestampMap;
 
 		private Long lastBarrierTimestamp;
 
@@ -86,11 +85,11 @@ public class GetConsistencySnapshotResponse extends AcsResponse {
 			this.lastAgentInfoTimestamp = lastAgentInfoTimestamp;
 		}
 
-		public Map<Object,Object> getBarrierPointsLastTimestampMap() {
+		public String getBarrierPointsLastTimestampMap() {
 			return this.barrierPointsLastTimestampMap;
 		}
 
-		public void setBarrierPointsLastTimestampMap(Map<Object,Object> barrierPointsLastTimestampMap) {
+		public void setBarrierPointsLastTimestampMap(String barrierPointsLastTimestampMap) {
 			this.barrierPointsLastTimestampMap = barrierPointsLastTimestampMap;
 		}
 
