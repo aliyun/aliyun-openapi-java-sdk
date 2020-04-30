@@ -63,7 +63,33 @@ public class CheckTagsResponse extends AcsResponse {
 
 		private String barcode;
 
-		private Integer isExist;
+		private Boolean beValid;
+
+		private Boolean beBound;
+
+		private Boolean beOrderTag;
+
+		private Boolean beBoxing;
+
+		private String tagPositionType;
+
+		private String styleId;
+
+		private String styleCode;
+
+		private String styleName;
+
+		private String sKUId;
+
+		private String sKUName;
+
+		private String colorCode;
+
+		private String colorName;
+
+		private String sizeCode;
+
+		private String sizeName;
 
 		public String getTagValue() {
 			return this.tagValue;
@@ -89,12 +115,116 @@ public class CheckTagsResponse extends AcsResponse {
 			this.barcode = barcode;
 		}
 
-		public Integer getIsExist() {
-			return this.isExist;
+		public Boolean getBeValid() {
+			return this.beValid;
 		}
 
-		public void setIsExist(Integer isExist) {
-			this.isExist = isExist;
+		public void setBeValid(Boolean beValid) {
+			this.beValid = beValid;
+		}
+
+		public Boolean getBeBound() {
+			return this.beBound;
+		}
+
+		public void setBeBound(Boolean beBound) {
+			this.beBound = beBound;
+		}
+
+		public Boolean getBeOrderTag() {
+			return this.beOrderTag;
+		}
+
+		public void setBeOrderTag(Boolean beOrderTag) {
+			this.beOrderTag = beOrderTag;
+		}
+
+		public Boolean getBeBoxing() {
+			return this.beBoxing;
+		}
+
+		public void setBeBoxing(Boolean beBoxing) {
+			this.beBoxing = beBoxing;
+		}
+
+		public String getTagPositionType() {
+			return this.tagPositionType;
+		}
+
+		public void setTagPositionType(String tagPositionType) {
+			this.tagPositionType = tagPositionType;
+		}
+
+		public String getStyleId() {
+			return this.styleId;
+		}
+
+		public void setStyleId(String styleId) {
+			this.styleId = styleId;
+		}
+
+		public String getStyleCode() {
+			return this.styleCode;
+		}
+
+		public void setStyleCode(String styleCode) {
+			this.styleCode = styleCode;
+		}
+
+		public String getStyleName() {
+			return this.styleName;
+		}
+
+		public void setStyleName(String styleName) {
+			this.styleName = styleName;
+		}
+
+		public String getSKUId() {
+			return this.sKUId;
+		}
+
+		public void setSKUId(String sKUId) {
+			this.sKUId = sKUId;
+		}
+
+		public String getSKUName() {
+			return this.sKUName;
+		}
+
+		public void setSKUName(String sKUName) {
+			this.sKUName = sKUName;
+		}
+
+		public String getColorCode() {
+			return this.colorCode;
+		}
+
+		public void setColorCode(String colorCode) {
+			this.colorCode = colorCode;
+		}
+
+		public String getColorName() {
+			return this.colorName;
+		}
+
+		public void setColorName(String colorName) {
+			this.colorName = colorName;
+		}
+
+		public String getSizeCode() {
+			return this.sizeCode;
+		}
+
+		public void setSizeCode(String sizeCode) {
+			this.sizeCode = sizeCode;
+		}
+
+		public String getSizeName() {
+			return this.sizeName;
+		}
+
+		public void setSizeName(String sizeName) {
+			this.sizeName = sizeName;
 		}
 	}
 
