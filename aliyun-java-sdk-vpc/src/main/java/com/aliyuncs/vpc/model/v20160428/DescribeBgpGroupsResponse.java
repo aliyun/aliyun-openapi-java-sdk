@@ -103,6 +103,8 @@ public class DescribeBgpGroupsResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String ipVersion;
+
 		public String getName() {
 			return this.name;
 		}
@@ -205,6 +207,14 @@ public class DescribeBgpGroupsResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getIpVersion() {
+			return this.ipVersion;
+		}
+
+		public void setIpVersion(String ipVersion) {
+			this.ipVersion = ipVersion;
 		}
 	}
 

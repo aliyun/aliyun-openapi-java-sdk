@@ -49,6 +49,8 @@ public class DescribeVSwitchesResponseUnmarshaller {
 			vSwitch.setIsDefault(_ctx.booleanValue("DescribeVSwitchesResponse.VSwitches["+ i +"].IsDefault"));
 			vSwitch.setResourceGroupId(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].ResourceGroupId"));
 			vSwitch.setNetworkAclId(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].NetworkAclId"));
+			vSwitch.setOwnerId(_ctx.longValue("DescribeVSwitchesResponse.VSwitches["+ i +"].OwnerId"));
+			vSwitch.setShareType(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].ShareType"));
 
 			RouteTable routeTable = new RouteTable();
 			routeTable.setRouteTableId(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].RouteTable.RouteTableId"));

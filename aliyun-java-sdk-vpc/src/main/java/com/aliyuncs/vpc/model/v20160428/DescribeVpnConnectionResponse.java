@@ -44,6 +44,10 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 
 	private String status;
 
+	private Boolean enableDpd;
+
+	private Boolean enableNatTraversal;
+
 	private IkeConfig ikeConfig;
 
 	private IpsecConfig ipsecConfig;
@@ -128,6 +132,22 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public Boolean getEnableDpd() {
+		return this.enableDpd;
+	}
+
+	public void setEnableDpd(Boolean enableDpd) {
+		this.enableDpd = enableDpd;
+	}
+
+	public Boolean getEnableNatTraversal() {
+		return this.enableNatTraversal;
+	}
+
+	public void setEnableNatTraversal(Boolean enableNatTraversal) {
+		this.enableNatTraversal = enableNatTraversal;
 	}
 
 	public IkeConfig getIkeConfig() {

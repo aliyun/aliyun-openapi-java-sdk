@@ -51,6 +51,7 @@ public class DescribeBgpPeersResponseUnmarshaller {
 			bgpPeer.setRouteLimit(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].RouteLimit"));
 			bgpPeer.setRegionId(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].RegionId"));
 			bgpPeer.setEnableBfd(_ctx.booleanValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].EnableBfd"));
+			bgpPeer.setIpVersion(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].IpVersion"));
 
 			bgpPeers.add(bgpPeer);
 		}

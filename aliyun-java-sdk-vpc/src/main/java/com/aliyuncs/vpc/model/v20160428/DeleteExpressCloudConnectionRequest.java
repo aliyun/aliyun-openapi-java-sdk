@@ -35,7 +35,7 @@ public class DeleteExpressCloudConnectionRequest extends RpcAcsRequest<DeleteExp
 
 	private Long ownerId;
 	public DeleteExpressCloudConnectionRequest() {
-		super("Vpc", "2016-04-28", "DeleteExpressCloudConnection", "Vpc");
+		super("Vpc", "2016-04-28", "DeleteExpressCloudConnection", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

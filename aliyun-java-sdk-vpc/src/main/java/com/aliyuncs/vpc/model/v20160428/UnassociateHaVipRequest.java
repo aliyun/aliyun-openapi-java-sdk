@@ -41,7 +41,7 @@ public class UnassociateHaVipRequest extends RpcAcsRequest<UnassociateHaVipRespo
 
 	private String force;
 	public UnassociateHaVipRequest() {
-		super("Vpc", "2016-04-28", "UnassociateHaVip", "Vpc");
+		super("Vpc", "2016-04-28", "UnassociateHaVip", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

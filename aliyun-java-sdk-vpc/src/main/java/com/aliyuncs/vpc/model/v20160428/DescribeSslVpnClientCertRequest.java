@@ -35,7 +35,7 @@ public class DescribeSslVpnClientCertRequest extends RpcAcsRequest<DescribeSslVp
 
 	private Long ownerId;
 	public DescribeSslVpnClientCertRequest() {
-		super("Vpc", "2016-04-28", "DescribeSslVpnClientCert", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeSslVpnClientCert", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

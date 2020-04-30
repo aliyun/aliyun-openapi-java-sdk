@@ -44,6 +44,7 @@ public class DescribeNetworkAclsResponseUnmarshaller {
 			networkAcl.setVpcId(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].VpcId"));
 			networkAcl.setCreationTime(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].CreationTime"));
 			networkAcl.setStatus(_ctx.stringValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].Status"));
+			networkAcl.setOwnerId(_ctx.longValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].OwnerId"));
 
 			List<IngressAclEntry> ingressAclEntries = new ArrayList<IngressAclEntry>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkAclsResponse.NetworkAcls["+ i +"].IngressAclEntries.Length"); j++) {

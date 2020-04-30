@@ -41,7 +41,7 @@ public class CreateRouteTableRequest extends RpcAcsRequest<CreateRouteTableRespo
 
 	private String vpcId;
 	public CreateRouteTableRequest() {
-		super("Vpc", "2016-04-28", "CreateRouteTable", "Vpc");
+		super("Vpc", "2016-04-28", "CreateRouteTable", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

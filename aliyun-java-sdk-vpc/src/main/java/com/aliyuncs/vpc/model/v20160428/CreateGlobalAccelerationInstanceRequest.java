@@ -45,7 +45,7 @@ public class CreateGlobalAccelerationInstanceRequest extends RpcAcsRequest<Creat
 
 	private String name;
 	public CreateGlobalAccelerationInstanceRequest() {
-		super("Vpc", "2016-04-28", "CreateGlobalAccelerationInstance", "Vpc");
+		super("Vpc", "2016-04-28", "CreateGlobalAccelerationInstance", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

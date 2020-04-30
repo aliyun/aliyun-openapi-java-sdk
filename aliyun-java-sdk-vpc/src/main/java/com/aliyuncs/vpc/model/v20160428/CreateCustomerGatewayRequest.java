@@ -41,7 +41,7 @@ public class CreateCustomerGatewayRequest extends RpcAcsRequest<CreateCustomerGa
 
 	private String name;
 	public CreateCustomerGatewayRequest() {
-		super("Vpc", "2016-04-28", "CreateCustomerGateway", "Vpc");
+		super("Vpc", "2016-04-28", "CreateCustomerGateway", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

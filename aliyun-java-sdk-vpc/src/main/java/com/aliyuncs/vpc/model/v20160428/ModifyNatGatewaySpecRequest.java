@@ -41,7 +41,7 @@ public class ModifyNatGatewaySpecRequest extends RpcAcsRequest<ModifyNatGatewayS
 
 	private Long ownerId;
 	public ModifyNatGatewaySpecRequest() {
-		super("Vpc", "2016-04-28", "ModifyNatGatewaySpec", "Vpc");
+		super("Vpc", "2016-04-28", "ModifyNatGatewaySpec", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

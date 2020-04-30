@@ -173,6 +173,8 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 			private String routeEntryName;
 
+			private String description;
+
 			private String routeEntryId;
 
 			private String nextHopRegionId;
@@ -241,6 +243,14 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 			public void setRouteEntryName(String routeEntryName) {
 				this.routeEntryName = routeEntryName;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getRouteEntryId() {

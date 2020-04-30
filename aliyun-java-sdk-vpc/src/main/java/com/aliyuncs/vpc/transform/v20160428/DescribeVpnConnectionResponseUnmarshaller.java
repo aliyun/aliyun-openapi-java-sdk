@@ -35,6 +35,8 @@ public class DescribeVpnConnectionResponseUnmarshaller {
 		describeVpnConnectionResponse.setCreateTime(_ctx.longValue("DescribeVpnConnectionResponse.CreateTime"));
 		describeVpnConnectionResponse.setEffectImmediately(_ctx.booleanValue("DescribeVpnConnectionResponse.EffectImmediately"));
 		describeVpnConnectionResponse.setStatus(_ctx.stringValue("DescribeVpnConnectionResponse.Status"));
+		describeVpnConnectionResponse.setEnableDpd(_ctx.booleanValue("DescribeVpnConnectionResponse.EnableDpd"));
+		describeVpnConnectionResponse.setEnableNatTraversal(_ctx.booleanValue("DescribeVpnConnectionResponse.EnableNatTraversal"));
 
 		IkeConfig ikeConfig = new IkeConfig();
 		ikeConfig.setPsk(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.Psk"));

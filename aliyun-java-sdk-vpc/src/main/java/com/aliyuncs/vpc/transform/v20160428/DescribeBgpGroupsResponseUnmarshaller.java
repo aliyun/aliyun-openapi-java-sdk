@@ -47,6 +47,7 @@ public class DescribeBgpGroupsResponseUnmarshaller {
 			bgpGroup.setIsFake(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].IsFake"));
 			bgpGroup.setRouteLimit(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].RouteLimit"));
 			bgpGroup.setRegionId(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].RegionId"));
+			bgpGroup.setIpVersion(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].IpVersion"));
 
 			bgpGroups.add(bgpGroup);
 		}

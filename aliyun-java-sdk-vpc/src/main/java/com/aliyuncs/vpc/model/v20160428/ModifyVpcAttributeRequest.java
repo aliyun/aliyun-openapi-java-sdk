@@ -39,11 +39,13 @@ public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeR
 
 	private Long ownerId;
 
+	private String ipv6CidrBlock;
+
 	private String vpcId;
 
 	private String cidrBlock;
 	public ModifyVpcAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyVpcAttribute", "Vpc");
+		super("Vpc", "2016-04-28", "ModifyVpcAttribute", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -125,6 +127,17 @@ public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getIpv6CidrBlock() {
+		return this.ipv6CidrBlock;
+	}
+
+	public void setIpv6CidrBlock(String ipv6CidrBlock) {
+		this.ipv6CidrBlock = ipv6CidrBlock;
+		if(ipv6CidrBlock != null){
+			putQueryParameter("Ipv6CidrBlock", ipv6CidrBlock);
 		}
 	}
 

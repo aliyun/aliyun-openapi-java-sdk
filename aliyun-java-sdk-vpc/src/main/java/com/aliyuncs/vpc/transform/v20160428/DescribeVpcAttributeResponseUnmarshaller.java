@@ -41,6 +41,7 @@ public class DescribeVpcAttributeResponseUnmarshaller {
 		describeVpcAttributeResponse.setClassicLinkEnabled(_ctx.booleanValue("DescribeVpcAttributeResponse.ClassicLinkEnabled"));
 		describeVpcAttributeResponse.setResourceGroupId(_ctx.stringValue("DescribeVpcAttributeResponse.ResourceGroupId"));
 		describeVpcAttributeResponse.setNetworkAclNum(_ctx.stringValue("DescribeVpcAttributeResponse.NetworkAclNum"));
+		describeVpcAttributeResponse.setOwnerId(_ctx.longValue("DescribeVpcAttributeResponse.OwnerId"));
 
 		List<String> vSwitchIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAttributeResponse.VSwitchIds.Length"); i++) {

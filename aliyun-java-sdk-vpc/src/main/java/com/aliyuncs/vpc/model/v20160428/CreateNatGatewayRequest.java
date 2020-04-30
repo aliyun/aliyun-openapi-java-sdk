@@ -60,7 +60,7 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 	private String pricingCycle;
 	public CreateNatGatewayRequest() {
-		super("Vpc", "2016-04-28", "CreateNatGateway", "Vpc");
+		super("Vpc", "2016-04-28", "CreateNatGateway", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

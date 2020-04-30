@@ -37,7 +37,7 @@ public class DeleteBgpPeerRequest extends RpcAcsRequest<DeleteBgpPeerResponse> {
 
 	private Long ownerId;
 	public DeleteBgpPeerRequest() {
-		super("Vpc", "2016-04-28", "DeleteBgpPeer", "Vpc");
+		super("Vpc", "2016-04-28", "DeleteBgpPeer", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

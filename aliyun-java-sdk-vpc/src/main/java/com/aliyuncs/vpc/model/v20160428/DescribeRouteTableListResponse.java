@@ -127,6 +127,8 @@ public class DescribeRouteTableListResponse extends AcsResponse {
 
 		private String status;
 
+		private Long ownerId;
+
 		private List<Tag> tags;
 
 		private List<String> vSwitchIds;
@@ -209,6 +211,14 @@ public class DescribeRouteTableListResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public Long getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(Long ownerId) {
+			this.ownerId = ownerId;
 		}
 
 		public List<Tag> getTags() {

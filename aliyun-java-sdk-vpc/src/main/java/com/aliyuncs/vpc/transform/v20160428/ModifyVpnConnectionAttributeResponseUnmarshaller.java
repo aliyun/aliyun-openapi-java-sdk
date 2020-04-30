@@ -35,6 +35,8 @@ public class ModifyVpnConnectionAttributeResponseUnmarshaller {
 		modifyVpnConnectionAttributeResponse.setRemoteSubnet(_ctx.stringValue("ModifyVpnConnectionAttributeResponse.RemoteSubnet"));
 		modifyVpnConnectionAttributeResponse.setCreateTime(_ctx.longValue("ModifyVpnConnectionAttributeResponse.CreateTime"));
 		modifyVpnConnectionAttributeResponse.setEffectImmediately(_ctx.booleanValue("ModifyVpnConnectionAttributeResponse.EffectImmediately"));
+		modifyVpnConnectionAttributeResponse.setEnableDpd(_ctx.booleanValue("ModifyVpnConnectionAttributeResponse.EnableDpd"));
+		modifyVpnConnectionAttributeResponse.setEnableNatTraversal(_ctx.booleanValue("ModifyVpnConnectionAttributeResponse.EnableNatTraversal"));
 
 		IkeConfig ikeConfig = new IkeConfig();
 		ikeConfig.setPsk(_ctx.stringValue("ModifyVpnConnectionAttributeResponse.IkeConfig.Psk"));

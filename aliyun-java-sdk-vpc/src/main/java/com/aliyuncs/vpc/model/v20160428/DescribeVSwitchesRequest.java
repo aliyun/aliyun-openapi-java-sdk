@@ -47,13 +47,15 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 
 	private String vSwitchId;
 
+	private Long vSwitchOwnerId;
+
 	private String vpcId;
 
 	private String vSwitchName;
 
 	private String zoneId;
 	public DescribeVSwitchesRequest() {
-		super("Vpc", "2016-04-28", "DescribeVSwitches", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeVSwitches", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -179,6 +181,17 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public Long getVSwitchOwnerId() {
+		return this.vSwitchOwnerId;
+	}
+
+	public void setVSwitchOwnerId(Long vSwitchOwnerId) {
+		this.vSwitchOwnerId = vSwitchOwnerId;
+		if(vSwitchOwnerId != null){
+			putQueryParameter("VSwitchOwnerId", vSwitchOwnerId.toString());
 		}
 	}
 

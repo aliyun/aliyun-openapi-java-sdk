@@ -33,7 +33,7 @@ public class ActivateRouterInterfaceRequest extends RpcAcsRequest<ActivateRouter
 
 	private String routerInterfaceId;
 	public ActivateRouterInterfaceRequest() {
-		super("Vpc", "2016-04-28", "ActivateRouterInterface", "Vpc");
+		super("Vpc", "2016-04-28", "ActivateRouterInterface", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

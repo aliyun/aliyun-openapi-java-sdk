@@ -45,7 +45,7 @@ public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipS
 
 	private String internetChargeType;
 	public AllocateEipSegmentAddressRequest() {
-		super("Vpc", "2016-04-28", "AllocateEipSegmentAddress", "Vpc");
+		super("Vpc", "2016-04-28", "AllocateEipSegmentAddress", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

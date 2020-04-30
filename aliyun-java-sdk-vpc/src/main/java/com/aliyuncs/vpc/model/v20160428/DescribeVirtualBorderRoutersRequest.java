@@ -38,7 +38,7 @@ public class DescribeVirtualBorderRoutersRequest extends RpcAcsRequest<DescribeV
 
 	private List<Filter> filters;
 	public DescribeVirtualBorderRoutersRequest() {
-		super("Vpc", "2016-04-28", "DescribeVirtualBorderRouters", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeVirtualBorderRouters", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

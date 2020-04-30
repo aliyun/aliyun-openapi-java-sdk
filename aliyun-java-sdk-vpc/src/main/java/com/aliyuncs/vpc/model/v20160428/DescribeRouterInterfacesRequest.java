@@ -40,7 +40,7 @@ public class DescribeRouterInterfacesRequest extends RpcAcsRequest<DescribeRoute
 
 	private List<Filter> filters;
 	public DescribeRouterInterfacesRequest() {
-		super("Vpc", "2016-04-28", "DescribeRouterInterfaces", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeRouterInterfaces", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

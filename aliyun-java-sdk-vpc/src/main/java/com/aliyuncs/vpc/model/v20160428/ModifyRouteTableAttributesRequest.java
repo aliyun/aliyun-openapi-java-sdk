@@ -39,7 +39,7 @@ public class ModifyRouteTableAttributesRequest extends RpcAcsRequest<ModifyRoute
 
 	private Long ownerId;
 	public ModifyRouteTableAttributesRequest() {
-		super("Vpc", "2016-04-28", "ModifyRouteTableAttributes", "Vpc");
+		super("Vpc", "2016-04-28", "ModifyRouteTableAttributes", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

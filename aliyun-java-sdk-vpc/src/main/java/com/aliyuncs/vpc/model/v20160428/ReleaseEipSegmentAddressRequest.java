@@ -37,7 +37,7 @@ public class ReleaseEipSegmentAddressRequest extends RpcAcsRequest<ReleaseEipSeg
 
 	private Long ownerId;
 	public ReleaseEipSegmentAddressRequest() {
-		super("Vpc", "2016-04-28", "ReleaseEipSegmentAddress", "Vpc");
+		super("Vpc", "2016-04-28", "ReleaseEipSegmentAddress", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

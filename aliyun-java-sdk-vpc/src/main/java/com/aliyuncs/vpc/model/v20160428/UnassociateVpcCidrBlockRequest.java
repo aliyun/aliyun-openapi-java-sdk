@@ -37,7 +37,7 @@ public class UnassociateVpcCidrBlockRequest extends RpcAcsRequest<UnassociateVpc
 
 	private String vpcId;
 	public UnassociateVpcCidrBlockRequest() {
-		super("Vpc", "2016-04-28", "UnassociateVpcCidrBlock", "Vpc");
+		super("Vpc", "2016-04-28", "UnassociateVpcCidrBlock", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

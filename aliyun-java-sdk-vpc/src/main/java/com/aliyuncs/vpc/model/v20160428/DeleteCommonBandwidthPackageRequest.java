@@ -37,7 +37,7 @@ public class DeleteCommonBandwidthPackageRequest extends RpcAcsRequest<DeleteCom
 
 	private String force;
 	public DeleteCommonBandwidthPackageRequest() {
-		super("Vpc", "2016-04-28", "DeleteCommonBandwidthPackage", "Vpc");
+		super("Vpc", "2016-04-28", "DeleteCommonBandwidthPackage", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

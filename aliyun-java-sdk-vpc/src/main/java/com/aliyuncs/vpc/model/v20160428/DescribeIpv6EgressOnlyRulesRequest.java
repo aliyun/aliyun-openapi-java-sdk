@@ -47,7 +47,7 @@ public class DescribeIpv6EgressOnlyRulesRequest extends RpcAcsRequest<DescribeIp
 
 	private String name;
 	public DescribeIpv6EgressOnlyRulesRequest() {
-		super("Vpc", "2016-04-28", "DescribeIpv6EgressOnlyRules", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeIpv6EgressOnlyRules", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

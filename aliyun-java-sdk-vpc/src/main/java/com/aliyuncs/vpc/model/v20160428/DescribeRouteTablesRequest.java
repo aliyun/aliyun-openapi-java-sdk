@@ -51,7 +51,7 @@ public class DescribeRouteTablesRequest extends RpcAcsRequest<DescribeRouteTable
 
 	private String routerId;
 	public DescribeRouteTablesRequest() {
-		super("Vpc", "2016-04-28", "DescribeRouteTables", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeRouteTables", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

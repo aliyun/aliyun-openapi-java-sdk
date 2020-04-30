@@ -33,7 +33,7 @@ public class DescribeRouterInterfaceAttributeRequest extends RpcAcsRequest<Descr
 
 	private String instanceId;
 	public DescribeRouterInterfaceAttributeRequest() {
-		super("Vpc", "2016-04-28", "DescribeRouterInterfaceAttribute", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeRouterInterfaceAttribute", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -53,6 +53,8 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 
 	private String networkAclNum;
 
+	private Long ownerId;
+
 	private List<AssociatedCen> associatedCens;
 
 	private List<CloudResourceSetType> cloudResources;
@@ -173,6 +175,14 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 
 	public void setNetworkAclNum(String networkAclNum) {
 		this.networkAclNum = networkAclNum;
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
 	}
 
 	public List<AssociatedCen> getAssociatedCens() {

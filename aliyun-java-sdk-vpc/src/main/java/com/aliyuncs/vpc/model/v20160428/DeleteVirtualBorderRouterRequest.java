@@ -37,7 +37,7 @@ public class DeleteVirtualBorderRouterRequest extends RpcAcsRequest<DeleteVirtua
 
 	private Long ownerId;
 	public DeleteVirtualBorderRouterRequest() {
-		super("Vpc", "2016-04-28", "DeleteVirtualBorderRouter", "Vpc");
+		super("Vpc", "2016-04-28", "DeleteVirtualBorderRouter", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

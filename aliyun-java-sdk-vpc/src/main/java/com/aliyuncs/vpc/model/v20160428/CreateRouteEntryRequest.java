@@ -32,6 +32,8 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 
 	private String clientToken;
 
+	private String description;
+
 	private String nextHopId;
 
 	private String nextHopType;
@@ -48,7 +50,7 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 
 	private List<NextHopList> nextHopLists;
 	public CreateRouteEntryRequest() {
-		super("Vpc", "2016-04-28", "CreateRouteEntry", "Vpc");
+		super("Vpc", "2016-04-28", "CreateRouteEntry", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -86,6 +88,17 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 

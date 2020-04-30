@@ -45,7 +45,7 @@ public class PublishVpnRouteEntryRequest extends RpcAcsRequest<PublishVpnRouteEn
 
 	private String nextHop;
 	public PublishVpnRouteEntryRequest() {
-		super("Vpc", "2016-04-28", "PublishVpnRouteEntry", "Vpc");
+		super("Vpc", "2016-04-28", "PublishVpnRouteEntry", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

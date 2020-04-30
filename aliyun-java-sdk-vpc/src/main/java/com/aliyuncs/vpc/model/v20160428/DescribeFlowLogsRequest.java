@@ -47,6 +47,8 @@ public class DescribeFlowLogsRequest extends RpcAcsRequest<DescribeFlowLogsRespo
 
 	private String resourceType;
 
+	private String vpcId;
+
 	private String trafficType;
 
 	private String flowLogId;
@@ -55,7 +57,7 @@ public class DescribeFlowLogsRequest extends RpcAcsRequest<DescribeFlowLogsRespo
 
 	private String status;
 	public DescribeFlowLogsRequest() {
-		super("Vpc", "2016-04-28", "DescribeFlowLogs", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeFlowLogs", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -181,6 +183,17 @@ public class DescribeFlowLogsRequest extends RpcAcsRequest<DescribeFlowLogsRespo
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

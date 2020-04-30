@@ -45,7 +45,7 @@ public class DeleteVpnRouteEntryRequest extends RpcAcsRequest<DeleteVpnRouteEntr
 
 	private String overlayMode;
 	public DeleteVpnRouteEntryRequest() {
-		super("Vpc", "2016-04-28", "DeleteVpnRouteEntry", "Vpc");
+		super("Vpc", "2016-04-28", "DeleteVpnRouteEntry", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

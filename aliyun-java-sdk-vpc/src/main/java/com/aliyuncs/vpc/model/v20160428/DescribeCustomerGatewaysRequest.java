@@ -39,7 +39,7 @@ public class DescribeCustomerGatewaysRequest extends RpcAcsRequest<DescribeCusto
 
 	private Long ownerId;
 	public DescribeCustomerGatewaysRequest() {
-		super("Vpc", "2016-04-28", "DescribeCustomerGateways", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeCustomerGateways", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

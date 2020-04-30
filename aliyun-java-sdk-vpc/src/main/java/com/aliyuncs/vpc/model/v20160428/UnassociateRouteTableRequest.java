@@ -39,7 +39,7 @@ public class UnassociateRouteTableRequest extends RpcAcsRequest<UnassociateRoute
 
 	private String vSwitchId;
 	public UnassociateRouteTableRequest() {
-		super("Vpc", "2016-04-28", "UnassociateRouteTable", "Vpc");
+		super("Vpc", "2016-04-28", "UnassociateRouteTable", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

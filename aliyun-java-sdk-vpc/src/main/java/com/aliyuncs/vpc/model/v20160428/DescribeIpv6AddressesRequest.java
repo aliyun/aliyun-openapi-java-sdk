@@ -55,7 +55,7 @@ public class DescribeIpv6AddressesRequest extends RpcAcsRequest<DescribeIpv6Addr
 
 	private String associatedInstanceId;
 	public DescribeIpv6AddressesRequest() {
-		super("Vpc", "2016-04-28", "DescribeIpv6Addresses", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeIpv6Addresses", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

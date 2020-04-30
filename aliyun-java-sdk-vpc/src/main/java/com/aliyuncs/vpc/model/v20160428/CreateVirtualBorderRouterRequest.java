@@ -33,13 +33,19 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 
 	private String clientToken;
 
+	private Boolean enableIpv6;
+
 	private String description;
 
 	private String peerGatewayIp;
 
+	private String peerIpv6GatewayIp;
+
 	private String peeringSubnetMask;
 
 	private String localGatewayIp;
+
+	private String peeringIpv6SubnetMask;
 
 	private String resourceOwnerAccount;
 
@@ -49,11 +55,13 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 
 	private String physicalConnectionId;
 
+	private String localIpv6GatewayIp;
+
 	private String name;
 
 	private Long vbrOwnerId;
 	public CreateVirtualBorderRouterRequest() {
-		super("Vpc", "2016-04-28", "CreateVirtualBorderRouter", "Vpc");
+		super("Vpc", "2016-04-28", "CreateVirtualBorderRouter", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -105,6 +113,17 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		}
 	}
 
+	public Boolean getEnableIpv6() {
+		return this.enableIpv6;
+	}
+
+	public void setEnableIpv6(Boolean enableIpv6) {
+		this.enableIpv6 = enableIpv6;
+		if(enableIpv6 != null){
+			putQueryParameter("EnableIpv6", enableIpv6.toString());
+		}
+	}
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -127,6 +146,17 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		}
 	}
 
+	public String getPeerIpv6GatewayIp() {
+		return this.peerIpv6GatewayIp;
+	}
+
+	public void setPeerIpv6GatewayIp(String peerIpv6GatewayIp) {
+		this.peerIpv6GatewayIp = peerIpv6GatewayIp;
+		if(peerIpv6GatewayIp != null){
+			putQueryParameter("PeerIpv6GatewayIp", peerIpv6GatewayIp);
+		}
+	}
+
 	public String getPeeringSubnetMask() {
 		return this.peeringSubnetMask;
 	}
@@ -146,6 +176,17 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		this.localGatewayIp = localGatewayIp;
 		if(localGatewayIp != null){
 			putQueryParameter("LocalGatewayIp", localGatewayIp);
+		}
+	}
+
+	public String getPeeringIpv6SubnetMask() {
+		return this.peeringIpv6SubnetMask;
+	}
+
+	public void setPeeringIpv6SubnetMask(String peeringIpv6SubnetMask) {
+		this.peeringIpv6SubnetMask = peeringIpv6SubnetMask;
+		if(peeringIpv6SubnetMask != null){
+			putQueryParameter("PeeringIpv6SubnetMask", peeringIpv6SubnetMask);
 		}
 	}
 
@@ -190,6 +231,17 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		this.physicalConnectionId = physicalConnectionId;
 		if(physicalConnectionId != null){
 			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
+		}
+	}
+
+	public String getLocalIpv6GatewayIp() {
+		return this.localIpv6GatewayIp;
+	}
+
+	public void setLocalIpv6GatewayIp(String localIpv6GatewayIp) {
+		this.localIpv6GatewayIp = localIpv6GatewayIp;
+		if(localIpv6GatewayIp != null){
+			putQueryParameter("LocalIpv6GatewayIp", localIpv6GatewayIp);
 		}
 	}
 

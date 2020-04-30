@@ -39,6 +39,7 @@ public class DescribeRouteEntryListResponseUnmarshaller {
 			routeEntry.setType(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].Type"));
 			routeEntry.setRouteEntryId(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].RouteEntryId"));
 			routeEntry.setRouteEntryName(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].RouteEntryName"));
+			routeEntry.setDescription(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].Description"));
 			routeEntry.setStatus(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].Status"));
 			routeEntry.setIpVersion(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].IpVersion"));
 

@@ -37,7 +37,7 @@ public class CopyNetworkAclEntriesRequest extends RpcAcsRequest<CopyNetworkAclEn
 
 	private Long ownerId;
 	public CopyNetworkAclEntriesRequest() {
-		super("Vpc", "2016-04-28", "CopyNetworkAclEntries", "Vpc");
+		super("Vpc", "2016-04-28", "CopyNetworkAclEntries", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

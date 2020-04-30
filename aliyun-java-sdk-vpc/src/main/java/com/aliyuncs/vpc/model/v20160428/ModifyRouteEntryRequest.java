@@ -27,6 +27,8 @@ public class ModifyRouteEntryRequest extends RpcAcsRequest<ModifyRouteEntryRespo
 
 	private String routeEntryName;
 
+	private String description;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -35,7 +37,7 @@ public class ModifyRouteEntryRequest extends RpcAcsRequest<ModifyRouteEntryRespo
 
 	private String routeEntryId;
 	public ModifyRouteEntryRequest() {
-		super("Vpc", "2016-04-28", "ModifyRouteEntry", "Vpc");
+		super("Vpc", "2016-04-28", "ModifyRouteEntry", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,6 +53,17 @@ public class ModifyRouteEntryRequest extends RpcAcsRequest<ModifyRouteEntryRespo
 		this.routeEntryName = routeEntryName;
 		if(routeEntryName != null){
 			putQueryParameter("RouteEntryName", routeEntryName);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 

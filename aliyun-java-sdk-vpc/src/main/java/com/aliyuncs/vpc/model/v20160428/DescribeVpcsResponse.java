@@ -103,6 +103,12 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		private String cenStatus;
 
+		private Long ownerId;
+
+		private Boolean supportAdvancedFeature;
+
+		private Boolean advancedResource;
+
 		private List<Tag> tags;
 
 		private List<String> vSwitchIds;
@@ -217,6 +223,30 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		public void setCenStatus(String cenStatus) {
 			this.cenStatus = cenStatus;
+		}
+
+		public Long getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(Long ownerId) {
+			this.ownerId = ownerId;
+		}
+
+		public Boolean getSupportAdvancedFeature() {
+			return this.supportAdvancedFeature;
+		}
+
+		public void setSupportAdvancedFeature(Boolean supportAdvancedFeature) {
+			this.supportAdvancedFeature = supportAdvancedFeature;
+		}
+
+		public Boolean getAdvancedResource() {
+			return this.advancedResource;
+		}
+
+		public void setAdvancedResource(Boolean advancedResource) {
+			this.advancedResource = advancedResource;
 		}
 
 		public List<Tag> getTags() {

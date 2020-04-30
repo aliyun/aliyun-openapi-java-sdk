@@ -67,6 +67,8 @@ public class DescribeRouteEntryListResponse extends AcsResponse {
 
 		private String routeEntryName;
 
+		private String description;
+
 		private String status;
 
 		private String ipVersion;
@@ -111,6 +113,14 @@ public class DescribeRouteEntryListResponse extends AcsResponse {
 
 		public void setRouteEntryName(String routeEntryName) {
 			this.routeEntryName = routeEntryName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getStatus() {

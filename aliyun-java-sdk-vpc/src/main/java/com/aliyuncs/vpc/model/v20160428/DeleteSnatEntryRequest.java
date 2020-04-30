@@ -39,7 +39,7 @@ public class DeleteSnatEntryRequest extends RpcAcsRequest<DeleteSnatEntryRespons
 
 	private Long ownerId;
 	public DeleteSnatEntryRequest() {
-		super("Vpc", "2016-04-28", "DeleteSnatEntry", "Vpc");
+		super("Vpc", "2016-04-28", "DeleteSnatEntry", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

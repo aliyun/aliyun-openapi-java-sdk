@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnGatewaysResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnGatewaysResponse.VpnGateway;
+import com.aliyuncs.vpc.model.v20160428.DescribeVpnGatewaysResponse.VpnGateway.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +51,16 @@ public class DescribeVpnGatewaysResponseUnmarshaller {
 			vpnGateway.setSslVpn(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].SslVpn"));
 			vpnGateway.setSslMaxConnections(_ctx.longValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].SslMaxConnections"));
 			vpnGateway.setTag(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].Tag"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			vpnGateway.setTags(tags);
 
 			vpnGateways.add(vpnGateway);
 		}
