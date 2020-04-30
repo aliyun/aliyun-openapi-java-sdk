@@ -25,7 +25,7 @@ import com.aliyuncs.openanalytics_open.Endpoint;
 public class DescribeRegionListRequest extends RpcAcsRequest<DescribeRegionListResponse> {
 	   
 	public DescribeRegionListRequest() {
-		super("openanalytics-open", "2018-06-19", "DescribeRegionList", "openanalytics");
+		super("openanalytics-open", "2018-06-19", "DescribeRegionList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

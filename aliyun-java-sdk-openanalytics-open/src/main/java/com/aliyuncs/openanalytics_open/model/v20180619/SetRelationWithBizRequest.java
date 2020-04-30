@@ -31,7 +31,7 @@ public class SetRelationWithBizRequest extends RpcAcsRequest<SetRelationWithBizR
 
 	private String externalBizAliyunUid;
 	public SetRelationWithBizRequest() {
-		super("openanalytics-open", "2018-06-19", "SetRelationWithBiz", "openanalytics");
+		super("openanalytics-open", "2018-06-19", "SetRelationWithBiz");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

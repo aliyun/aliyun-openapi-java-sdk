@@ -37,7 +37,7 @@ public class InitializeRegionRequest extends RpcAcsRequest<InitializeRegionRespo
 
 	private String externalBizAliyunUid;
 	public InitializeRegionRequest() {
-		super("openanalytics-open", "2018-06-19", "InitializeRegion", "openanalytics");
+		super("openanalytics-open", "2018-06-19", "InitializeRegion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

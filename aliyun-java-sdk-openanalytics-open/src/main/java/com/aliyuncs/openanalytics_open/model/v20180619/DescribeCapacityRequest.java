@@ -27,7 +27,7 @@ public class DescribeCapacityRequest extends RpcAcsRequest<DescribeCapacityRespo
 
 	private String externalBizAliyunId;
 	public DescribeCapacityRequest() {
-		super("openanalytics-open", "2018-06-19", "DescribeCapacity", "openanalytics");
+		super("openanalytics-open", "2018-06-19", "DescribeCapacity");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.openanalytics_open.Endpoint;
 public class QueryDataSourceDefRequest extends RpcAcsRequest<QueryDataSourceDefResponse> {
 	   
 	public QueryDataSourceDefRequest() {
-		super("openanalytics-open", "2018-06-19", "QueryDataSourceDef", "openanalytics");
+		super("openanalytics-open", "2018-06-19", "QueryDataSourceDef");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
