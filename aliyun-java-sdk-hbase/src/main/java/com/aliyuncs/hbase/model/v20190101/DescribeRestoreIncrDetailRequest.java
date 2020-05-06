@@ -22,16 +22,14 @@ import com.aliyuncs.hbase.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRestoreSummaryRequest extends RpcAcsRequest<DescribeRestoreSummaryResponse> {
+public class DescribeRestoreIncrDetailRequest extends RpcAcsRequest<DescribeRestoreIncrDetailResponse> {
 	   
 
 	private String clusterId;
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
-	public DescribeRestoreSummaryRequest() {
-		super("HBase", "2019-01-01", "DescribeRestoreSummary", "hbase");
+	private String restoreRecordId;
+	public DescribeRestoreIncrDetailRequest() {
+		super("HBase", "2019-01-01", "DescribeRestoreIncrDetail", "hbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,31 +48,20 @@ public class DescribeRestoreSummaryRequest extends RpcAcsRequest<DescribeRestore
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRestoreRecordId() {
+		return this.restoreRecordId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setRestoreRecordId(String restoreRecordId) {
+		this.restoreRecordId = restoreRecordId;
+		if(restoreRecordId != null){
+			putQueryParameter("RestoreRecordId", restoreRecordId);
 		}
 	}
 
 	@Override
-	public Class<DescribeRestoreSummaryResponse> getResponseClass() {
-		return DescribeRestoreSummaryResponse.class;
+	public Class<DescribeRestoreIncrDetailResponse> getResponseClass() {
+		return DescribeRestoreIncrDetailResponse.class;
 	}
 
 }

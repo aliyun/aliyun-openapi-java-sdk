@@ -27,6 +27,14 @@ public class DescribeBackupTablesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long total;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
+	private List<BackupRecord> backupRecords;
+
 	private List<String> tables;
 
 	public String getRequestId() {
@@ -37,12 +45,127 @@ public class DescribeBackupTablesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Long getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Long total) {
+		this.total = total;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public List<BackupRecord> getBackupRecords() {
+		return this.backupRecords;
+	}
+
+	public void setBackupRecords(List<BackupRecord> backupRecords) {
+		this.backupRecords = backupRecords;
+	}
+
 	public List<String> getTables() {
 		return this.tables;
 	}
 
 	public void setTables(List<String> tables) {
 		this.tables = tables;
+	}
+
+	public static class BackupRecord {
+
+		private String table;
+
+		private String state;
+
+		private String startTime;
+
+		private String endTime;
+
+		private String process;
+
+		private String dataSize;
+
+		private String speed;
+
+		private String message;
+
+		public String getTable() {
+			return this.table;
+		}
+
+		public void setTable(String table) {
+			this.table = table;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getProcess() {
+			return this.process;
+		}
+
+		public void setProcess(String process) {
+			this.process = process;
+		}
+
+		public String getDataSize() {
+			return this.dataSize;
+		}
+
+		public void setDataSize(String dataSize) {
+			this.dataSize = dataSize;
+		}
+
+		public String getSpeed() {
+			return this.speed;
+		}
+
+		public void setSpeed(String speed) {
+			this.speed = speed;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
 	}
 
 	@Override

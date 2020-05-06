@@ -41,8 +41,10 @@ public class DescribeBackupSummaryResponseUnmarshaller {
 
 		Full full = new Full();
 		full.setHasMore(_ctx.stringValue("DescribeBackupSummaryResponse.Full.HasMore"));
-		full.setRecordSize(_ctx.stringValue("DescribeBackupSummaryResponse.Full.RecordSize"));
 		full.setNextFullBackupDate(_ctx.stringValue("DescribeBackupSummaryResponse.Full.NextFullBackupDate"));
+		full.setPageNumber(_ctx.integerValue("DescribeBackupSummaryResponse.Full.PageNumber"));
+		full.setPageSize(_ctx.integerValue("DescribeBackupSummaryResponse.Full.PageSize"));
+		full.setTotal(_ctx.integerValue("DescribeBackupSummaryResponse.Full.Total"));
 
 		List<Record> records = new ArrayList<Record>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupSummaryResponse.Full.Records.Length"); i++) {

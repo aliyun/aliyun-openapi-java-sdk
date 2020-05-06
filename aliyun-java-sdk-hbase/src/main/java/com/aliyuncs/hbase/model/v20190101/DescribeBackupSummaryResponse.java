@@ -122,9 +122,13 @@ public class DescribeBackupSummaryResponse extends AcsResponse {
 
 		private String hasMore;
 
-		private String recordSize;
-
 		private String nextFullBackupDate;
+
+		private Integer pageNumber;
+
+		private Integer pageSize;
+
+		private Integer total;
 
 		private List<Record> records;
 
@@ -136,20 +140,36 @@ public class DescribeBackupSummaryResponse extends AcsResponse {
 			this.hasMore = hasMore;
 		}
 
-		public String getRecordSize() {
-			return this.recordSize;
-		}
-
-		public void setRecordSize(String recordSize) {
-			this.recordSize = recordSize;
-		}
-
 		public String getNextFullBackupDate() {
 			return this.nextFullBackupDate;
 		}
 
 		public void setNextFullBackupDate(String nextFullBackupDate) {
 			this.nextFullBackupDate = nextFullBackupDate;
+		}
+
+		public Integer getPageNumber() {
+			return this.pageNumber;
+		}
+
+		public void setPageNumber(Integer pageNumber) {
+			this.pageNumber = pageNumber;
+		}
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public List<Record> getRecords() {

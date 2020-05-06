@@ -26,6 +26,10 @@ public class DescribeBackupSummaryRequest extends RpcAcsRequest<DescribeBackupSu
 	   
 
 	private String clusterId;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
 	public DescribeBackupSummaryRequest() {
 		super("HBase", "2019-01-01", "DescribeBackupSummary", "hbase");
 		setMethod(MethodType.POST);
@@ -43,6 +47,28 @@ public class DescribeBackupSummaryRequest extends RpcAcsRequest<DescribeBackupSu
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

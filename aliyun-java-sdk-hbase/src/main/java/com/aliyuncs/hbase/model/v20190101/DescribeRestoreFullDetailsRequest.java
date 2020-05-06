@@ -22,32 +22,23 @@ import com.aliyuncs.hbase.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRestoreSummaryRequest extends RpcAcsRequest<DescribeRestoreSummaryResponse> {
+public class DescribeRestoreFullDetailsRequest extends RpcAcsRequest<DescribeRestoreFullDetailsResponse> {
 	   
-
-	private String clusterId;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
-	public DescribeRestoreSummaryRequest() {
-		super("HBase", "2019-01-01", "DescribeRestoreSummary", "hbase");
+
+	private String clusterId;
+
+	private String restoreRecordId;
+	public DescribeRestoreFullDetailsRequest() {
+		super("HBase", "2019-01-01", "DescribeRestoreFullDetails", "hbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
 	}
 
 	public Integer getPageNumber() {
@@ -72,9 +63,31 @@ public class DescribeRestoreSummaryRequest extends RpcAcsRequest<DescribeRestore
 		}
 	}
 
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getRestoreRecordId() {
+		return this.restoreRecordId;
+	}
+
+	public void setRestoreRecordId(String restoreRecordId) {
+		this.restoreRecordId = restoreRecordId;
+		if(restoreRecordId != null){
+			putQueryParameter("RestoreRecordId", restoreRecordId);
+		}
+	}
+
 	@Override
-	public Class<DescribeRestoreSummaryResponse> getResponseClass() {
-		return DescribeRestoreSummaryResponse.class;
+	public Class<DescribeRestoreFullDetailsResponse> getResponseClass() {
+		return DescribeRestoreFullDetailsResponse.class;
 	}
 
 }

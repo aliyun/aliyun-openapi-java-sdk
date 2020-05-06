@@ -25,9 +25,13 @@ import com.aliyuncs.hbase.Endpoint;
 public class DescribeBackupTablesRequest extends RpcAcsRequest<DescribeBackupTablesResponse> {
 	   
 
-	private String clusterId;
+	private Integer pageNumber;
+
+	private Integer pageSize;
 
 	private String backupRecordId;
+
+	private String clusterId;
 	public DescribeBackupTablesRequest() {
 		super("HBase", "2019-01-01", "DescribeBackupTables", "hbase");
 		setMethod(MethodType.POST);
@@ -37,14 +41,25 @@ public class DescribeBackupTablesRequest extends RpcAcsRequest<DescribeBackupTab
 		} catch (Exception e) {}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -56,6 +71,17 @@ public class DescribeBackupTablesRequest extends RpcAcsRequest<DescribeBackupTab
 		this.backupRecordId = backupRecordId;
 		if(backupRecordId != null){
 			putQueryParameter("BackupRecordId", backupRecordId);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

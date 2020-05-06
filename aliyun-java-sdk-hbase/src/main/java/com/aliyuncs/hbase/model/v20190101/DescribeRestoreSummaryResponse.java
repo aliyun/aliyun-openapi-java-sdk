@@ -27,9 +27,13 @@ public class DescribeRestoreSummaryResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer restoreRecordSize;
-
 	private Integer hasMoreRestoreRecord;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private Integer total;
 
 	private List<Rescord> rescords;
 
@@ -41,20 +45,36 @@ public class DescribeRestoreSummaryResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getRestoreRecordSize() {
-		return this.restoreRecordSize;
-	}
-
-	public void setRestoreRecordSize(Integer restoreRecordSize) {
-		this.restoreRecordSize = restoreRecordSize;
-	}
-
 	public Integer getHasMoreRestoreRecord() {
 		return this.hasMoreRestoreRecord;
 	}
 
 	public void setHasMoreRestoreRecord(Integer hasMoreRestoreRecord) {
 		this.hasMoreRestoreRecord = hasMoreRestoreRecord;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<Rescord> getRescords() {

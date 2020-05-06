@@ -27,8 +27,10 @@ public class DescribeRestoreSummaryResponseUnmarshaller {
 	public static DescribeRestoreSummaryResponse unmarshall(DescribeRestoreSummaryResponse describeRestoreSummaryResponse, UnmarshallerContext _ctx) {
 		
 		describeRestoreSummaryResponse.setRequestId(_ctx.stringValue("DescribeRestoreSummaryResponse.RequestId"));
-		describeRestoreSummaryResponse.setRestoreRecordSize(_ctx.integerValue("DescribeRestoreSummaryResponse.RestoreRecordSize"));
 		describeRestoreSummaryResponse.setHasMoreRestoreRecord(_ctx.integerValue("DescribeRestoreSummaryResponse.HasMoreRestoreRecord"));
+		describeRestoreSummaryResponse.setPageNumber(_ctx.integerValue("DescribeRestoreSummaryResponse.PageNumber"));
+		describeRestoreSummaryResponse.setPageSize(_ctx.integerValue("DescribeRestoreSummaryResponse.PageSize"));
+		describeRestoreSummaryResponse.setTotal(_ctx.integerValue("DescribeRestoreSummaryResponse.Total"));
 
 		List<Rescord> rescords = new ArrayList<Rescord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRestoreSummaryResponse.Rescords.Length"); i++) {
