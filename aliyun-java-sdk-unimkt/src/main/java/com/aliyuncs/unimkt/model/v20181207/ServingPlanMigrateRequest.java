@@ -52,7 +52,7 @@ public class ServingPlanMigrateRequest extends RpcAcsRequest<ServingPlanMigrateR
 
 	private String status;
 	public ServingPlanMigrateRequest() {
-		super("UniMkt", "2018-12-07", "ServingPlanMigrate", "1.0.0");
+		super("UniMkt", "2018-12-07", "ServingPlanMigrate", "uniMkt");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

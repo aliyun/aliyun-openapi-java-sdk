@@ -12,10 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.model.v20181207;
+package com.aliyuncs.unimkt.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.unimkt.Endpoint;
 
@@ -23,7 +22,7 @@ import com.aliyuncs.unimkt.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse> {
+public class ChargeLaunchRequest extends RpcAcsRequest<ChargeLaunchResponse> {
 	   
 
 	private String extra;
@@ -31,9 +30,10 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 	private String alipayOpenId;
 
 	private String channelId;
-	public QueryPromotionRequest() {
-		super("UniMkt", "2018-12-07", "QueryPromotion", "uniMkt");
-		setProtocol(ProtocolType.HTTPS);
+
+	private String outerCode;
+	public ChargeLaunchRequest() {
+		super("UniMkt", "2018-12-12", "ChargeLaunch", "uniMkt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,7 +48,7 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 	public void setExtra(String extra) {
 		this.extra = extra;
 		if(extra != null){
-			putBodyParameter("Extra", extra);
+			putQueryParameter("Extra", extra);
 		}
 	}
 
@@ -59,7 +59,7 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 	public void setAlipayOpenId(String alipayOpenId) {
 		this.alipayOpenId = alipayOpenId;
 		if(alipayOpenId != null){
-			putBodyParameter("AlipayOpenId", alipayOpenId);
+			putQueryParameter("AlipayOpenId", alipayOpenId);
 		}
 	}
 
@@ -70,13 +70,24 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 	public void setChannelId(String channelId) {
 		this.channelId = channelId;
 		if(channelId != null){
-			putBodyParameter("ChannelId", channelId);
+			putQueryParameter("ChannelId", channelId);
+		}
+	}
+
+	public String getOuterCode() {
+		return this.outerCode;
+	}
+
+	public void setOuterCode(String outerCode) {
+		this.outerCode = outerCode;
+		if(outerCode != null){
+			putQueryParameter("OuterCode", outerCode);
 		}
 	}
 
 	@Override
-	public Class<QueryPromotionResponse> getResponseClass() {
-		return QueryPromotionResponse.class;
+	public Class<ChargeLaunchResponse> getResponseClass() {
+		return ChargeLaunchResponse.class;
 	}
 
 }

@@ -28,7 +28,7 @@ public class GetConsoleInfoRequest extends RpcAcsRequest<GetConsoleInfoResponse>
 
 	private String message;
 	public GetConsoleInfoRequest() {
-		super("UniMkt", "2018-12-07", "GetConsoleInfo", "1.0.0");
+		super("UniMkt", "2018-12-07", "GetConsoleInfo", "uniMkt");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -30,7 +30,7 @@ public class CheckDeviceRequest extends RpcAcsRequest<CheckDeviceResponse> {
 
 	private String channelId;
 	public CheckDeviceRequest() {
-		super("UniMkt", "2018-12-12", "CheckDevice", "1.0.0");
+		super("UniMkt", "2018-12-12", "CheckDevice", "uniMkt");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
