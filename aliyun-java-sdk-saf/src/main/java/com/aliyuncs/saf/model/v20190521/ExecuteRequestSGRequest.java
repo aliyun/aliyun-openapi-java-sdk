@@ -23,14 +23,14 @@ import com.aliyuncs.saf.Endpoint;
  * @author auto create
  * @version 
  */
-public class ExecuteRequestRequest extends RpcAcsRequest<ExecuteRequestResponse> {
+public class ExecuteRequestSGRequest extends RpcAcsRequest<ExecuteRequestSGResponse> {
 	   
 
 	private String serviceParameters;
 
 	private String service;
-	public ExecuteRequestRequest() {
-		super("saf", "2019-05-21", "ExecuteRequest", "saf");
+	public ExecuteRequestSGRequest() {
+		super("saf", "2019-05-21", "ExecuteRequestSG", "saf");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -62,8 +62,8 @@ public class ExecuteRequestRequest extends RpcAcsRequest<ExecuteRequestResponse>
 	}
 
 	@Override
-	public Class<ExecuteRequestResponse> getResponseClass() {
-		return ExecuteRequestResponse.class;
+	public Class<ExecuteRequestSGResponse> getResponseClass() {
+		return ExecuteRequestSGResponse.class;
 	}
 
 }
