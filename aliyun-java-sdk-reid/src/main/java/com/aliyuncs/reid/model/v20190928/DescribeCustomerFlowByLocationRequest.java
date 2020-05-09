@@ -41,7 +41,7 @@ public class DescribeCustomerFlowByLocationRequest extends RpcAcsRequest<Describ
 
 	private String parentLocationIds;
 	public DescribeCustomerFlowByLocationRequest() {
-		super("reid", "2019-09-28", "DescribeCustomerFlowByLocation", "1.1.2");
+		super("reid", "2019-09-28", "DescribeCustomerFlowByLocation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

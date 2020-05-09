@@ -43,6 +43,7 @@ public class DescribeCameraStatisticsResponseUnmarshaller {
 			pvStatisticResult.setIpcId(_ctx.longValue("DescribeCameraStatisticsResponse.PvStatisticResults["+ i +"].IpcId"));
 			pvStatisticResult.setPvCount(_ctx.longValue("DescribeCameraStatisticsResponse.PvStatisticResults["+ i +"].PvCount"));
 			pvStatisticResult.setLocationId(_ctx.longValue("DescribeCameraStatisticsResponse.PvStatisticResults["+ i +"].LocationId"));
+			pvStatisticResult.setPvType(_ctx.stringValue("DescribeCameraStatisticsResponse.PvStatisticResults["+ i +"].PvType"));
 
 			List<Rect> pvRects = new ArrayList<Rect>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCameraStatisticsResponse.PvStatisticResults["+ i +"].PvRects.Length"); j++) {
