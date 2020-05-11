@@ -16,14 +16,14 @@ package com.aliyuncs.polardb.model.v20170801;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.DescribeBackupsResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.DescribeDetachedBackupsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeBackupsResponse extends AcsResponse {
+public class DescribeDetachedBackupsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -209,7 +209,7 @@ public class DescribeBackupsResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeBackupsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeBackupsResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDetachedBackupsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDetachedBackupsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

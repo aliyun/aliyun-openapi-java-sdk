@@ -31,6 +31,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String clientToken;
 
+	private String creationCategory;
+
 	private String clusterNetworkType;
 
 	private String resourceGroupId;
@@ -111,6 +113,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getCreationCategory() {
+		return this.creationCategory;
+	}
+
+	public void setCreationCategory(String creationCategory) {
+		this.creationCategory = creationCategory;
+		if(creationCategory != null){
+			putQueryParameter("CreationCategory", creationCategory);
 		}
 	}
 

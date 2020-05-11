@@ -22,12 +22,16 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterResponse> {
+public class DescribeDetachedBackupsRequest extends RpcAcsRequest<DescribeDetachedBackupsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String backupRetentionPolicyOnClusterDeletion;
+	private String startTime;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
@@ -35,9 +39,17 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 
 	private String ownerAccount;
 
+	private String backupId;
+
+	private String endTime;
+
 	private Long ownerId;
-	public DeleteDBClusterRequest() {
-		super("polardb", "2017-08-01", "DeleteDBCluster", "polardb");
+
+	private String backupStatus;
+
+	private String backupMode;
+	public DescribeDetachedBackupsRequest() {
+		super("polardb", "2017-08-01", "DescribeDetachedBackups", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,14 +68,36 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		}
 	}
 
-	public String getBackupRetentionPolicyOnClusterDeletion() {
-		return this.backupRetentionPolicyOnClusterDeletion;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setBackupRetentionPolicyOnClusterDeletion(String backupRetentionPolicyOnClusterDeletion) {
-		this.backupRetentionPolicyOnClusterDeletion = backupRetentionPolicyOnClusterDeletion;
-		if(backupRetentionPolicyOnClusterDeletion != null){
-			putQueryParameter("BackupRetentionPolicyOnClusterDeletion", backupRetentionPolicyOnClusterDeletion);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -100,6 +134,28 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		}
 	}
 
+	public String getBackupId() {
+		return this.backupId;
+	}
+
+	public void setBackupId(String backupId) {
+		this.backupId = backupId;
+		if(backupId != null){
+			putQueryParameter("BackupId", backupId);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -111,9 +167,31 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		}
 	}
 
+	public String getBackupStatus() {
+		return this.backupStatus;
+	}
+
+	public void setBackupStatus(String backupStatus) {
+		this.backupStatus = backupStatus;
+		if(backupStatus != null){
+			putQueryParameter("BackupStatus", backupStatus);
+		}
+	}
+
+	public String getBackupMode() {
+		return this.backupMode;
+	}
+
+	public void setBackupMode(String backupMode) {
+		this.backupMode = backupMode;
+		if(backupMode != null){
+			putQueryParameter("BackupMode", backupMode);
+		}
+	}
+
 	@Override
-	public Class<DeleteDBClusterResponse> getResponseClass() {
-		return DeleteDBClusterResponse.class;
+	public Class<DescribeDetachedBackupsResponse> getResponseClass() {
+		return DescribeDetachedBackupsResponse.class;
 	}
 
 }

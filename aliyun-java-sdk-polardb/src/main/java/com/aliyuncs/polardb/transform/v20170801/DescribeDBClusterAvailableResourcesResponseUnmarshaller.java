@@ -45,6 +45,7 @@ public class DescribeDBClusterAvailableResourcesResponseUnmarshaller {
 				for (int k = 0; k < _ctx.lengthValue("DescribeDBClusterAvailableResourcesResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].AvailableResources.Length"); k++) {
 					AvailableResource availableResource = new AvailableResource();
 					availableResource.setDBNodeClass(_ctx.stringValue("DescribeDBClusterAvailableResourcesResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].AvailableResources["+ k +"].DBNodeClass"));
+					availableResource.setCategory(_ctx.stringValue("DescribeDBClusterAvailableResourcesResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].AvailableResources["+ k +"].Category"));
 
 					availableResources.add(availableResource);
 				}

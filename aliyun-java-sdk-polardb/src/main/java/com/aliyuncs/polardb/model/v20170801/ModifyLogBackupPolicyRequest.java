@@ -22,12 +22,10 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterResponse> {
+public class ModifyLogBackupPolicyRequest extends RpcAcsRequest<ModifyLogBackupPolicyResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String backupRetentionPolicyOnClusterDeletion;
 
 	private String resourceOwnerAccount;
 
@@ -36,8 +34,10 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DeleteDBClusterRequest() {
-		super("polardb", "2017-08-01", "DeleteDBCluster", "polardb");
+
+	private String logBackupRetentionPeriod;
+	public ModifyLogBackupPolicyRequest() {
+		super("polardb", "2017-08-01", "ModifyLogBackupPolicy", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,17 +53,6 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getBackupRetentionPolicyOnClusterDeletion() {
-		return this.backupRetentionPolicyOnClusterDeletion;
-	}
-
-	public void setBackupRetentionPolicyOnClusterDeletion(String backupRetentionPolicyOnClusterDeletion) {
-		this.backupRetentionPolicyOnClusterDeletion = backupRetentionPolicyOnClusterDeletion;
-		if(backupRetentionPolicyOnClusterDeletion != null){
-			putQueryParameter("BackupRetentionPolicyOnClusterDeletion", backupRetentionPolicyOnClusterDeletion);
 		}
 	}
 
@@ -111,9 +100,20 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		}
 	}
 
+	public String getLogBackupRetentionPeriod() {
+		return this.logBackupRetentionPeriod;
+	}
+
+	public void setLogBackupRetentionPeriod(String logBackupRetentionPeriod) {
+		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
+		if(logBackupRetentionPeriod != null){
+			putQueryParameter("LogBackupRetentionPeriod", logBackupRetentionPeriod);
+		}
+	}
+
 	@Override
-	public Class<DeleteDBClusterResponse> getResponseClass() {
-		return DeleteDBClusterResponse.class;
+	public Class<ModifyLogBackupPolicyResponse> getResponseClass() {
+		return ModifyLogBackupPolicyResponse.class;
 	}
 
 }

@@ -103,12 +103,22 @@ public class DescribeDBClusterAvailableResourcesResponse extends AcsResponse {
 
 				private String dBNodeClass;
 
+				private String category;
+
 				public String getDBNodeClass() {
 					return this.dBNodeClass;
 				}
 
 				public void setDBNodeClass(String dBNodeClass) {
 					this.dBNodeClass = dBNodeClass;
+				}
+
+				public String getCategory() {
+					return this.category;
+				}
+
+				public void setCategory(String category) {
+					this.category = category;
 				}
 			}
 		}
