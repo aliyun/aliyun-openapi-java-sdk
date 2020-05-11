@@ -63,7 +63,7 @@ public class DescribeProjectAttachmentsResponse extends AcsResponse {
 
 		private String nodeName;
 
-		private Integer attachmentType;
+		private String attachmentType;
 
 		private String fileName;
 
@@ -111,11 +111,11 @@ public class DescribeProjectAttachmentsResponse extends AcsResponse {
 			this.nodeName = nodeName;
 		}
 
-		public Integer getAttachmentType() {
+		public String getAttachmentType() {
 			return this.attachmentType;
 		}
 
-		public void setAttachmentType(Integer attachmentType) {
+		public void setAttachmentType(String attachmentType) {
 			this.attachmentType = attachmentType;
 		}
 

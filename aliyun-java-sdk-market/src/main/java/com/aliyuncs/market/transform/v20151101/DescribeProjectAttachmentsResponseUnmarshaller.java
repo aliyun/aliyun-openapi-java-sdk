@@ -35,7 +35,7 @@ public class DescribeProjectAttachmentsResponseUnmarshaller {
 			projectAttachment.setStepNo(_ctx.integerValue("DescribeProjectAttachmentsResponse.Result["+ i +"].StepNo"));
 			projectAttachment.setNodeId(_ctx.longValue("DescribeProjectAttachmentsResponse.Result["+ i +"].NodeId"));
 			projectAttachment.setNodeName(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].NodeName"));
-			projectAttachment.setAttachmentType(_ctx.integerValue("DescribeProjectAttachmentsResponse.Result["+ i +"].AttachmentType"));
+			projectAttachment.setAttachmentType(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].AttachmentType"));
 			projectAttachment.setFileName(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].FileName"));
 			projectAttachment.setFileSuffix(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].FileSuffix"));
 			projectAttachment.setFileSize(_ctx.longValue("DescribeProjectAttachmentsResponse.Result["+ i +"].FileSize"));
