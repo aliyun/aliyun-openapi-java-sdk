@@ -27,7 +27,7 @@ public class StopTestingRequest extends RpcAcsRequest<StopTestingResponse> {
 
 	private String sceneId;
 	public StopTestingRequest() {
-		super("PTS", "2019-08-10", "StopTesting");
+		super("PTS", "2019-08-10", "StopTesting", "1.0.0");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

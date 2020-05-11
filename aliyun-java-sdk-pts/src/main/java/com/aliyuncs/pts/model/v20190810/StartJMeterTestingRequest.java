@@ -27,7 +27,7 @@ public class StartJMeterTestingRequest extends RpcAcsRequest<StartJMeterTestingR
 
 	private String sceneId;
 	public StartJMeterTestingRequest() {
-		super("PTS", "2019-08-10", "StartJMeterTesting");
+		super("PTS", "2019-08-10", "StartJMeterTesting", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

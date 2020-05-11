@@ -25,7 +25,7 @@ import com.aliyuncs.pts.Endpoint;
 public class DescribeArmsStatusRequest extends RpcAcsRequest<DescribeArmsStatusResponse> {
 	   
 	public DescribeArmsStatusRequest() {
-		super("PTS", "2019-08-10", "DescribeArmsStatus");
+		super("PTS", "2019-08-10", "DescribeArmsStatus", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

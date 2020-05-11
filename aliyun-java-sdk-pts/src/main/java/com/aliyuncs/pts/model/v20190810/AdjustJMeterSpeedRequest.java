@@ -31,7 +31,7 @@ public class AdjustJMeterSpeedRequest extends RpcAcsRequest<AdjustJMeterSpeedRes
 
 	private Integer speed;
 	public AdjustJMeterSpeedRequest() {
-		super("PTS", "2019-08-10", "AdjustJMeterSpeed");
+		super("PTS", "2019-08-10", "AdjustJMeterSpeed", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

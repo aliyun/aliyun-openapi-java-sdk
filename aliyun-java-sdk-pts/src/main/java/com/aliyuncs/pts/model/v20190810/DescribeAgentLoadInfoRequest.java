@@ -33,7 +33,7 @@ public class DescribeAgentLoadInfoRequest extends RpcAcsRequest<DescribeAgentLoa
 
 	private Long taskId;
 	public DescribeAgentLoadInfoRequest() {
-		super("PTS", "2019-08-10", "DescribeAgentLoadInfo");
+		super("PTS", "2019-08-10", "DescribeAgentLoadInfo", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

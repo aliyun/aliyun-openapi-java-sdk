@@ -33,7 +33,7 @@ public class DescribeGroupPerformanceRequest extends RpcAcsRequest<DescribeGroup
 
 	private String type;
 	public DescribeGroupPerformanceRequest() {
-		super("PTS", "2019-08-10", "DescribeGroupPerformance");
+		super("PTS", "2019-08-10", "DescribeGroupPerformance", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

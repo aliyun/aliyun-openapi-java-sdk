@@ -27,7 +27,7 @@ public class DescribeJMeterSceneRunningStatusRequest extends RpcAcsRequest<Descr
 
 	private String sceneId;
 	public DescribeJMeterSceneRunningStatusRequest() {
-		super("PTS", "2019-08-10", "DescribeJMeterSceneRunningStatus");
+		super("PTS", "2019-08-10", "DescribeJMeterSceneRunningStatus", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

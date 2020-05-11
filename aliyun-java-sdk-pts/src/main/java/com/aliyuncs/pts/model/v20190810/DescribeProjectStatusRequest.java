@@ -27,7 +27,7 @@ public class DescribeProjectStatusRequest extends RpcAcsRequest<DescribeProjectS
 
 	private String routeRequestBody;
 	public DescribeProjectStatusRequest() {
-		super("PTS", "2019-08-10", "DescribeProjectStatus");
+		super("PTS", "2019-08-10", "DescribeProjectStatus", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

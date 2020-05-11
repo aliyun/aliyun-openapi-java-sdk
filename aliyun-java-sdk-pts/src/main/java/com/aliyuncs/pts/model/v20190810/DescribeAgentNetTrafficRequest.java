@@ -33,7 +33,7 @@ public class DescribeAgentNetTrafficRequest extends RpcAcsRequest<DescribeAgentN
 
 	private Long taskId;
 	public DescribeAgentNetTrafficRequest() {
-		super("PTS", "2019-08-10", "DescribeAgentNetTraffic");
+		super("PTS", "2019-08-10", "DescribeAgentNetTraffic", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

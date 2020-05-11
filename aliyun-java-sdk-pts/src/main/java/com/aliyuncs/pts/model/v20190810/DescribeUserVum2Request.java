@@ -25,7 +25,7 @@ import com.aliyuncs.pts.Endpoint;
 public class DescribeUserVum2Request extends RpcAcsRequest<DescribeUserVum2Response> {
 	   
 	public DescribeUserVum2Request() {
-		super("PTS", "2019-08-10", "DescribeUserVum2");
+		super("PTS", "2019-08-10", "DescribeUserVum2", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

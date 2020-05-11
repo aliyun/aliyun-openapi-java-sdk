@@ -31,7 +31,7 @@ public class ConfirmGroupToSceneRequest extends RpcAcsRequest<ConfirmGroupToScen
 
 	private String sceneId;
 	public ConfirmGroupToSceneRequest() {
-		super("PTS", "2019-08-10", "ConfirmGroupToScene");
+		super("PTS", "2019-08-10", "ConfirmGroupToScene", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

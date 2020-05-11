@@ -31,7 +31,7 @@ public class RemoveInstanceFromGroupRequest extends RpcAcsRequest<RemoveInstance
 
 	private String instanceIdAndPorts;
 	public RemoveInstanceFromGroupRequest() {
-		super("PTS", "2019-08-10", "RemoveInstanceFromGroup");
+		super("PTS", "2019-08-10", "RemoveInstanceFromGroup", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

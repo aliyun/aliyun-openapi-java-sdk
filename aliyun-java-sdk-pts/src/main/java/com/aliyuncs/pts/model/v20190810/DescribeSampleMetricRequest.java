@@ -33,7 +33,7 @@ public class DescribeSampleMetricRequest extends RpcAcsRequest<DescribeSampleMet
 
 	private Long beginTime;
 	public DescribeSampleMetricRequest() {
-		super("PTS", "2019-08-10", "DescribeSampleMetric");
+		super("PTS", "2019-08-10", "DescribeSampleMetric", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

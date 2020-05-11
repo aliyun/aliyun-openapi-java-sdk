@@ -29,7 +29,7 @@ public class AdjustSceneSpeedRequest extends RpcAcsRequest<AdjustSceneSpeedRespo
 
 	private Integer speed;
 	public AdjustSceneSpeedRequest() {
-		super("PTS", "2019-08-10", "AdjustSceneSpeed");
+		super("PTS", "2019-08-10", "AdjustSceneSpeed", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,13 +29,13 @@ public class DescribeRdsByGroupIdRequest extends RpcAcsRequest<DescribeRdsByGrou
 
 	private Long groupId;
 
+	private Integer pageNumber;
+
 	private Integer pageSize;
 
 	private String keyWord;
-
-	private Integer pageNumber;
 	public DescribeRdsByGroupIdRequest() {
-		super("PTS", "2019-08-10", "DescribeRdsByGroupId");
+		super("PTS", "2019-08-10", "DescribeRdsByGroupId", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -65,6 +65,17 @@ public class DescribeRdsByGroupIdRequest extends RpcAcsRequest<DescribeRdsByGrou
 		}
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -84,17 +95,6 @@ public class DescribeRdsByGroupIdRequest extends RpcAcsRequest<DescribeRdsByGrou
 		this.keyWord = keyWord;
 		if(keyWord != null){
 			putQueryParameter("KeyWord", keyWord);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

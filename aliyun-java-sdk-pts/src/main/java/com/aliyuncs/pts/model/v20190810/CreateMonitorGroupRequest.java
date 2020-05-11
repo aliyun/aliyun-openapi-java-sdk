@@ -27,7 +27,7 @@ public class CreateMonitorGroupRequest extends RpcAcsRequest<CreateMonitorGroupR
 
 	private String groupName;
 	public CreateMonitorGroupRequest() {
-		super("PTS", "2019-08-10", "CreateMonitorGroup");
+		super("PTS", "2019-08-10", "CreateMonitorGroup", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

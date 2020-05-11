@@ -27,7 +27,7 @@ public class DescribeReportCloudMetricSummaryRequest extends RpcAcsRequest<Descr
 
 	private String reportId;
 	public DescribeReportCloudMetricSummaryRequest() {
-		super("PTS", "2019-08-10", "DescribeReportCloudMetricSummary");
+		super("PTS", "2019-08-10", "DescribeReportCloudMetricSummary", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

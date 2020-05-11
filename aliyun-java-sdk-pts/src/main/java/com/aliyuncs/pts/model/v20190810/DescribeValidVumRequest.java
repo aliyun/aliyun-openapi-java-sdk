@@ -25,7 +25,7 @@ import com.aliyuncs.pts.Endpoint;
 public class DescribeValidVumRequest extends RpcAcsRequest<DescribeValidVumResponse> {
 	   
 	public DescribeValidVumRequest() {
-		super("PTS", "2019-08-10", "DescribeValidVum");
+		super("PTS", "2019-08-10", "DescribeValidVum", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -22,12 +22,14 @@ import com.aliyuncs.pts.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopDebuggingRequest extends RpcAcsRequest<StopDebuggingResponse> {
+public class DescribeJMeterSampleSummaryRequest extends RpcAcsRequest<DescribeJMeterSampleSummaryResponse> {
 	   
 
-	private String sceneId;
-	public StopDebuggingRequest() {
-		super("PTS", "2019-08-10", "StopDebugging", "1.0.0");
+	private String reportId;
+
+	private Integer samplerId;
+	public DescribeJMeterSampleSummaryRequest() {
+		super("PTS", "2019-08-10", "DescribeJMeterSampleSummary", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class StopDebuggingRequest extends RpcAcsRequest<StopDebuggingResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getSceneId() {
-		return this.sceneId;
+	public String getReportId() {
+		return this.reportId;
 	}
 
-	public void setSceneId(String sceneId) {
-		this.sceneId = sceneId;
-		if(sceneId != null){
-			putQueryParameter("SceneId", sceneId);
+	public void setReportId(String reportId) {
+		this.reportId = reportId;
+		if(reportId != null){
+			putQueryParameter("ReportId", reportId);
+		}
+	}
+
+	public Integer getSamplerId() {
+		return this.samplerId;
+	}
+
+	public void setSamplerId(Integer samplerId) {
+		this.samplerId = samplerId;
+		if(samplerId != null){
+			putQueryParameter("SamplerId", samplerId.toString());
 		}
 	}
 
 	@Override
-	public Class<StopDebuggingResponse> getResponseClass() {
-		return StopDebuggingResponse.class;
+	public Class<DescribeJMeterSampleSummaryResponse> getResponseClass() {
+		return DescribeJMeterSampleSummaryResponse.class;
 	}
 
 }

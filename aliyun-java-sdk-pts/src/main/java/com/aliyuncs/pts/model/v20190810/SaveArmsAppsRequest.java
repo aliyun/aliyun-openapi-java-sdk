@@ -29,7 +29,7 @@ public class SaveArmsAppsRequest extends RpcAcsRequest<SaveArmsAppsResponse> {
 
 	private String appInfo;
 	public SaveArmsAppsRequest() {
-		super("PTS", "2019-08-10", "SaveArmsApps");
+		super("PTS", "2019-08-10", "SaveArmsApps", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

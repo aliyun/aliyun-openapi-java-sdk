@@ -27,7 +27,7 @@ public class SynchronizeInstanceInfoRequest extends RpcAcsRequest<SynchronizeIns
 
 	private String instanceType;
 	public SynchronizeInstanceInfoRequest() {
-		super("PTS", "2019-08-10", "SynchronizeInstanceInfo");
+		super("PTS", "2019-08-10", "SynchronizeInstanceInfo", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

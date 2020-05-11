@@ -27,7 +27,7 @@ public class ListOperationRecordsRequest extends RpcAcsRequest<ListOperationReco
 
 	private String reportId;
 	public ListOperationRecordsRequest() {
-		super("PTS", "2019-08-10", "ListOperationRecords");
+		super("PTS", "2019-08-10", "ListOperationRecords", "1.0.0");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

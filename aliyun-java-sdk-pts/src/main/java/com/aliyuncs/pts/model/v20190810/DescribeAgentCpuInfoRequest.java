@@ -33,7 +33,7 @@ public class DescribeAgentCpuInfoRequest extends RpcAcsRequest<DescribeAgentCpuI
 
 	private Long taskId;
 	public DescribeAgentCpuInfoRequest() {
-		super("PTS", "2019-08-10", "DescribeAgentCpuInfo");
+		super("PTS", "2019-08-10", "DescribeAgentCpuInfo", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

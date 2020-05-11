@@ -33,7 +33,7 @@ public class DescribeAgentGCInfoRequest extends RpcAcsRequest<DescribeAgentGCInf
 
 	private Long taskId;
 	public DescribeAgentGCInfoRequest() {
-		super("PTS", "2019-08-10", "DescribeAgentGCInfo");
+		super("PTS", "2019-08-10", "DescribeAgentGCInfo", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

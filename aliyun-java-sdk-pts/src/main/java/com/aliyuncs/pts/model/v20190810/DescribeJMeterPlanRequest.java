@@ -27,7 +27,7 @@ public class DescribeJMeterPlanRequest extends RpcAcsRequest<DescribeJMeterPlanR
 
 	private String reportId;
 	public DescribeJMeterPlanRequest() {
-		super("PTS", "2019-08-10", "DescribeJMeterPlan");
+		super("PTS", "2019-08-10", "DescribeJMeterPlan", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

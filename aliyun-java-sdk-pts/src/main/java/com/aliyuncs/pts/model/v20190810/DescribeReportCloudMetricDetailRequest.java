@@ -25,33 +25,22 @@ import com.aliyuncs.pts.Endpoint;
 public class DescribeReportCloudMetricDetailRequest extends RpcAcsRequest<DescribeReportCloudMetricDetailResponse> {
 	   
 
-	private String groupIds;
-
 	private Long endTime;
 
 	private Long beginTime;
+
+	private String groupIds;
 
 	private String metrics;
 
 	private String instanceIdAndPortList;
 	public DescribeReportCloudMetricDetailRequest() {
-		super("PTS", "2019-08-10", "DescribeReportCloudMetricDetail");
+		super("PTS", "2019-08-10", "DescribeReportCloudMetricDetail", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getGroupIds() {
-		return this.groupIds;
-	}
-
-	public void setGroupIds(String groupIds) {
-		this.groupIds = groupIds;
-		if(groupIds != null){
-			putQueryParameter("GroupIds", groupIds);
-		}
 	}
 
 	public Long getEndTime() {
@@ -73,6 +62,17 @@ public class DescribeReportCloudMetricDetailRequest extends RpcAcsRequest<Descri
 		this.beginTime = beginTime;
 		if(beginTime != null){
 			putQueryParameter("BeginTime", beginTime.toString());
+		}
+	}
+
+	public String getGroupIds() {
+		return this.groupIds;
+	}
+
+	public void setGroupIds(String groupIds) {
+		this.groupIds = groupIds;
+		if(groupIds != null){
+			putQueryParameter("GroupIds", groupIds);
 		}
 	}
 

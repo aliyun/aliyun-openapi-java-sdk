@@ -27,7 +27,7 @@ public class RemoveCronTaskRequest extends RpcAcsRequest<RemoveCronTaskResponse>
 
 	private String sceneId;
 	public RemoveCronTaskRequest() {
-		super("PTS", "2019-08-10", "RemoveCronTask");
+		super("PTS", "2019-08-10", "RemoveCronTask", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
