@@ -33,7 +33,7 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 
 	private String imageTag;
 	public DeleteImageRequest() {
-		super("EHPC", "2018-04-12", "DeleteImage", "ehs");
+		super("EHPC", "2018-04-12", "DeleteImage");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DescribeGWSClusterPolicyRequest extends RpcAcsRequest<DescribeGWSCl
 
 	private String clusterId;
 	public DescribeGWSClusterPolicyRequest() {
-		super("EHPC", "2018-04-12", "DescribeGWSClusterPolicy", "ehs");
+		super("EHPC", "2018-04-12", "DescribeGWSClusterPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -56,6 +56,7 @@ public class GetAutoScaleConfigResponseUnmarshaller {
 			queueInfo.setEnableAutoGrow(_ctx.booleanValue("GetAutoScaleConfigResponse.Queues["+ i +"].EnableAutoGrow"));
 			queueInfo.setEnableAutoShrink(_ctx.booleanValue("GetAutoScaleConfigResponse.Queues["+ i +"].EnableAutoShrink"));
 			queueInfo.setMaxNodesInQueue(_ctx.integerValue("GetAutoScaleConfigResponse.Queues["+ i +"].MaxNodesInQueue"));
+			queueInfo.setMinNodesInQueue(_ctx.integerValue("GetAutoScaleConfigResponse.Queues["+ i +"].MinNodesInQueue"));
 
 			List<InstanceTypeInfo> instanceTypes = new ArrayList<InstanceTypeInfo>();
 			for (int j = 0; j < _ctx.lengthValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes.Length"); j++) {

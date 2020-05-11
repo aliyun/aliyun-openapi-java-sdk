@@ -27,7 +27,7 @@ public class ListInstalledSoftwareRequest extends RpcAcsRequest<ListInstalledSof
 
 	private String clusterId;
 	public ListInstalledSoftwareRequest() {
-		super("EHPC", "2018-04-12", "ListInstalledSoftware", "ehs");
+		super("EHPC", "2018-04-12", "ListInstalledSoftware");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

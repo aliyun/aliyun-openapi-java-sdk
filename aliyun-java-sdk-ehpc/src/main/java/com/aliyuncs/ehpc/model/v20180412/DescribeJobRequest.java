@@ -29,7 +29,7 @@ public class DescribeJobRequest extends RpcAcsRequest<DescribeJobResponse> {
 
 	private String jobId;
 	public DescribeJobRequest() {
-		super("EHPC", "2018-04-12", "DescribeJob", "ehs");
+		super("EHPC", "2018-04-12", "DescribeJob");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

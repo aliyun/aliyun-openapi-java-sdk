@@ -56,7 +56,7 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 	private Integer growRatio;
 	public SetAutoScaleConfigRequest() {
-		super("EHPC", "2018-04-12", "SetAutoScaleConfig", "ehs");
+		super("EHPC", "2018-04-12", "SetAutoScaleConfig");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -206,6 +206,7 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 			for (int depth1 = 0; depth1 < queuess.size(); depth1++) {
 				putQueryParameter("Queues." + (depth1 + 1) + ".SpotStrategy" , queuess.get(depth1).getSpotStrategy());
 				putQueryParameter("Queues." + (depth1 + 1) + ".QueueName" , queuess.get(depth1).getQueueName());
+				putQueryParameter("Queues." + (depth1 + 1) + ".MinNodesInQueue" , queuess.get(depth1).getMinNodesInQueue());
 				if (queuess.get(depth1).getInstanceTypess() != null) {
 					for (int depth2 = 0; depth2 < queuess.get(depth1).getInstanceTypess().size(); depth2++) {
 						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".SpotStrategy" , queuess.get(depth1).getInstanceTypess().get(depth2).getSpotStrategy());
@@ -253,6 +254,8 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 		private String queueName;
 
+		private Integer minNodesInQueue;
+
 		private List<InstanceTypes> instanceTypess;
 
 		private Integer maxNodesInQueue;
@@ -279,6 +282,14 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 		public void setQueueName(String queueName) {
 			this.queueName = queueName;
+		}
+
+		public Integer getMinNodesInQueue() {
+			return this.minNodesInQueue;
+		}
+
+		public void setMinNodesInQueue(Integer minNodesInQueue) {
+			this.minNodesInQueue = minNodesInQueue;
 		}
 
 		public List<InstanceTypes> getInstanceTypess() {

@@ -27,7 +27,7 @@ public class DescribeImageGatewayConfigRequest extends RpcAcsRequest<DescribeIma
 
 	private String clusterId;
 	public DescribeImageGatewayConfigRequest() {
-		super("EHPC", "2018-04-12", "DescribeImageGatewayConfig", "ehs");
+		super("EHPC", "2018-04-12", "DescribeImageGatewayConfig");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

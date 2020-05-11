@@ -123,6 +123,12 @@ public class ListClustersResponse extends AcsResponse {
 
 		private String baseOsTag;
 
+		private String instanceChargeType;
+
+		private String computeSpotStrategy;
+
+		private Float computeSpotPriceLimit;
+
 		private Managers managers;
 
 		private Computes computes;
@@ -313,6 +319,30 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setBaseOsTag(String baseOsTag) {
 			this.baseOsTag = baseOsTag;
+		}
+
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
+		}
+
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
+		}
+
+		public String getComputeSpotStrategy() {
+			return this.computeSpotStrategy;
+		}
+
+		public void setComputeSpotStrategy(String computeSpotStrategy) {
+			this.computeSpotStrategy = computeSpotStrategy;
+		}
+
+		public Float getComputeSpotPriceLimit() {
+			return this.computeSpotPriceLimit;
+		}
+
+		public void setComputeSpotPriceLimit(Float computeSpotPriceLimit) {
+			this.computeSpotPriceLimit = computeSpotPriceLimit;
 		}
 
 		public Managers getManagers() {

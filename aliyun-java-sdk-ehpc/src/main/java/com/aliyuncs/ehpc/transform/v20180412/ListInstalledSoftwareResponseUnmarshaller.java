@@ -26,6 +26,7 @@ public class ListInstalledSoftwareResponseUnmarshaller {
 
 	public static ListInstalledSoftwareResponse unmarshall(ListInstalledSoftwareResponse listInstalledSoftwareResponse, UnmarshallerContext _ctx) {
 		
+		listInstalledSoftwareResponse.setRequestId(_ctx.stringValue("ListInstalledSoftwareResponse.RequestId"));
 
 		List<SoftwareListItem> softwareList = new ArrayList<SoftwareListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstalledSoftwareResponse.SoftwareList.Length"); i++) {

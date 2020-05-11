@@ -39,7 +39,7 @@ public class RecoverClusterRequest extends RpcAcsRequest<RecoverClusterResponse>
 
 	private String schedulerType;
 	public RecoverClusterRequest() {
-		super("EHPC", "2018-04-12", "RecoverCluster", "ehs");
+		super("EHPC", "2018-04-12", "RecoverCluster");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

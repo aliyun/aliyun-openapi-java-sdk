@@ -35,7 +35,7 @@ public class MountNFSRequest extends RpcAcsRequest<MountNFSResponse> {
 
 	private String protocolType;
 	public MountNFSRequest() {
-		super("EHPC", "2018-04-12", "MountNFS", "ehs");
+		super("EHPC", "2018-04-12", "MountNFS");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

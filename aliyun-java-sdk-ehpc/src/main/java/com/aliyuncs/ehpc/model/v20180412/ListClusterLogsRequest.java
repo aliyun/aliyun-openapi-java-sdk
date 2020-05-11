@@ -31,7 +31,7 @@ public class ListClusterLogsRequest extends RpcAcsRequest<ListClusterLogsRespons
 
 	private Integer pageSize;
 	public ListClusterLogsRequest() {
-		super("EHPC", "2018-04-12", "ListClusterLogs", "ehs");
+		super("EHPC", "2018-04-12", "ListClusterLogs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

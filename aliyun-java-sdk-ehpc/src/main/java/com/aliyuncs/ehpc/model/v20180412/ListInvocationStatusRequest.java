@@ -29,7 +29,7 @@ public class ListInvocationStatusRequest extends RpcAcsRequest<ListInvocationSta
 
 	private String commandId;
 	public ListInvocationStatusRequest() {
-		super("EHPC", "2018-04-12", "ListInvocationStatus", "ehs");
+		super("EHPC", "2018-04-12", "ListInvocationStatus");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

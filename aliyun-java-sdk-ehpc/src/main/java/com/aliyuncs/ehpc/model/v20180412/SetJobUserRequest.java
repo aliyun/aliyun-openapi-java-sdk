@@ -31,7 +31,7 @@ public class SetJobUserRequest extends RpcAcsRequest<SetJobUserResponse> {
 
 	private String clusterId;
 	public SetJobUserRequest() {
-		super("EHPC", "2018-04-12", "SetJobUser", "ehs");
+		super("EHPC", "2018-04-12", "SetJobUser");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

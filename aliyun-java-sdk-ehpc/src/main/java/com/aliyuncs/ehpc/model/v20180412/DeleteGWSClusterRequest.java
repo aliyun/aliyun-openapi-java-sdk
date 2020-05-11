@@ -27,7 +27,7 @@ public class DeleteGWSClusterRequest extends RpcAcsRequest<DeleteGWSClusterRespo
 
 	private String clusterId;
 	public DeleteGWSClusterRequest() {
-		super("EHPC", "2018-04-12", "DeleteGWSCluster", "ehs");
+		super("EHPC", "2018-04-12", "DeleteGWSCluster");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

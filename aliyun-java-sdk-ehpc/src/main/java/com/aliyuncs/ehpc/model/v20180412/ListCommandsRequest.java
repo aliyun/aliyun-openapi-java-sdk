@@ -33,7 +33,7 @@ public class ListCommandsRequest extends RpcAcsRequest<ListCommandsResponse> {
 
 	private Integer pageSize;
 	public ListCommandsRequest() {
-		super("EHPC", "2018-04-12", "ListCommands", "ehs");
+		super("EHPC", "2018-04-12", "ListCommands");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

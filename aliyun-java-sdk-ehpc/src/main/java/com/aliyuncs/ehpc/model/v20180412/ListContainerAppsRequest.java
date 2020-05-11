@@ -29,7 +29,7 @@ public class ListContainerAppsRequest extends RpcAcsRequest<ListContainerAppsRes
 
 	private Integer pageSize;
 	public ListContainerAppsRequest() {
-		super("EHPC", "2018-04-12", "ListContainerApps", "ehs");
+		super("EHPC", "2018-04-12", "ListContainerApps");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

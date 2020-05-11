@@ -33,7 +33,7 @@ public class ListContainerImagesRequest extends RpcAcsRequest<ListContainerImage
 
 	private Integer pageSize;
 	public ListContainerImagesRequest() {
-		super("EHPC", "2018-04-12", "ListContainerImages", "ehs");
+		super("EHPC", "2018-04-12", "ListContainerImages");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

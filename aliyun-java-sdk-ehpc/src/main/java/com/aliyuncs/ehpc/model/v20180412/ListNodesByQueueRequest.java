@@ -33,7 +33,7 @@ public class ListNodesByQueueRequest extends RpcAcsRequest<ListNodesByQueueRespo
 
 	private Integer pageSize;
 	public ListNodesByQueueRequest() {
-		super("EHPC", "2018-04-12", "ListNodesByQueue", "ehs");
+		super("EHPC", "2018-04-12", "ListNodesByQueue");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

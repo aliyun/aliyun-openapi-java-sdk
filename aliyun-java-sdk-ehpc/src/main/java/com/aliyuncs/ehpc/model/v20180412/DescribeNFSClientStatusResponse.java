@@ -26,6 +26,8 @@ public class DescribeNFSClientStatusResponse extends AcsResponse {
 
 	private String status;
 
+	private String requestId;
+
 	private Result result;
 
 	public String getStatus() {
@@ -34,6 +36,14 @@ public class DescribeNFSClientStatusResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Result getResult() {

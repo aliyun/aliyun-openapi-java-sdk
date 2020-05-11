@@ -39,7 +39,7 @@ public class GetWorkbenchTokenRequest extends RpcAcsRequest<GetWorkbenchTokenRes
 
 	private String userName;
 	public GetWorkbenchTokenRequest() {
-		super("EHPC", "2018-04-12", "GetWorkbenchToken", "ehs");
+		super("EHPC", "2018-04-12", "GetWorkbenchToken");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -117,6 +117,8 @@ public class ListNodesResponse extends AcsResponse {
 
 		private Boolean htEnabled;
 
+		private String publicIpAddress;
+
 		private List<String> roles;
 
 		private TotalResources totalResources;
@@ -281,6 +283,14 @@ public class ListNodesResponse extends AcsResponse {
 
 		public void setHtEnabled(Boolean htEnabled) {
 			this.htEnabled = htEnabled;
+		}
+
+		public String getPublicIpAddress() {
+			return this.publicIpAddress;
+		}
+
+		public void setPublicIpAddress(String publicIpAddress) {
+			this.publicIpAddress = publicIpAddress;
 		}
 
 		public List<String> getRoles() {

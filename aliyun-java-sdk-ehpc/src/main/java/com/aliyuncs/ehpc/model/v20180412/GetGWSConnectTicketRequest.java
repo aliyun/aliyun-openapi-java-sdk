@@ -29,7 +29,7 @@ public class GetGWSConnectTicketRequest extends RpcAcsRequest<GetGWSConnectTicke
 
 	private String appName;
 	public GetGWSConnectTicketRequest() {
-		super("EHPC", "2018-04-12", "GetGWSConnectTicket", "ehs");
+		super("EHPC", "2018-04-12", "GetGWSConnectTicket");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

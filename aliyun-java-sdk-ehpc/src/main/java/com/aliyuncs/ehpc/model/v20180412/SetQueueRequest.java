@@ -32,7 +32,7 @@ public class SetQueueRequest extends RpcAcsRequest<SetQueueResponse> {
 
 	private List<Node> nodes;
 	public SetQueueRequest() {
-		super("EHPC", "2018-04-12", "SetQueue", "ehs");
+		super("EHPC", "2018-04-12", "SetQueue");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

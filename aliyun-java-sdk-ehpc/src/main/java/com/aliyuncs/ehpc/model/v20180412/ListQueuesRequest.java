@@ -27,7 +27,7 @@ public class ListQueuesRequest extends RpcAcsRequest<ListQueuesResponse> {
 
 	private String clusterId;
 	public ListQueuesRequest() {
-		super("EHPC", "2018-04-12", "ListQueues", "ehs");
+		super("EHPC", "2018-04-12", "ListQueues");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class UnbindAccountToClusterUserRequest extends RpcAcsRequest<UnbindAccou
 
 	private String userName;
 	public UnbindAccountToClusterUserRequest() {
-		super("EHPC", "2018-04-12", "UnbindAccountToClusterUser", "ehs");
+		super("EHPC", "2018-04-12", "UnbindAccountToClusterUser");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

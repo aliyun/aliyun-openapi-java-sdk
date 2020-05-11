@@ -36,7 +36,7 @@ public class InvokeShellCommandRequest extends RpcAcsRequest<InvokeShellCommandR
 
 	private Integer timeout;
 	public InvokeShellCommandRequest() {
-		super("EHPC", "2018-04-12", "InvokeShellCommand", "ehs");
+		super("EHPC", "2018-04-12", "InvokeShellCommand");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

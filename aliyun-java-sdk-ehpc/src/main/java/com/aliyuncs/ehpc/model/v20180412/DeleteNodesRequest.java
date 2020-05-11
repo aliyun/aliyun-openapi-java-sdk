@@ -32,7 +32,7 @@ public class DeleteNodesRequest extends RpcAcsRequest<DeleteNodesResponse> {
 
 	private Boolean releaseInstance;
 	public DeleteNodesRequest() {
-		super("EHPC", "2018-04-12", "DeleteNodes", "ehs");
+		super("EHPC", "2018-04-12", "DeleteNodes");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

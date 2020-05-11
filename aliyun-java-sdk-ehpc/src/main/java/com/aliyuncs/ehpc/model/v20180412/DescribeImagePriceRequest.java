@@ -37,7 +37,7 @@ public class DescribeImagePriceRequest extends RpcAcsRequest<DescribeImagePriceR
 
 	private String orderType;
 	public DescribeImagePriceRequest() {
-		super("EHPC", "2018-04-12", "DescribeImagePrice", "ehs");
+		super("EHPC", "2018-04-12", "DescribeImagePrice");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

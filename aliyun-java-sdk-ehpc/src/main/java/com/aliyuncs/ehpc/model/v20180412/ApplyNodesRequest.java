@@ -15,6 +15,7 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ehpc.Endpoint;
 
@@ -22,34 +23,30 @@ import com.aliyuncs.ehpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
+public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 	   
 
 	private String imageId;
+
+	private Integer memory;
 
 	private Boolean allocatePublicAddress;
 
 	private Integer internetMaxBandWidthOut;
 
-	private String jobQueue;
-
-	private String imageOwnerAlias;
+	private String resourceAmountType;
 
 	private String systemDiskType;
 
+	private Integer cores;
+
 	private Integer systemDiskSize;
 
-	private String instanceType;
+	private List<ZoneInfos> zoneInfoss;
 
 	private String hostNamePrefix;
 
 	private String computeSpotPriceLimit;
-
-	private Integer autoRenewPeriod;
-
-	private Integer period;
-
-	private Integer count;
 
 	private String clusterId;
 
@@ -57,25 +54,21 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private String hostNameSuffix;
 
-	private String vSwitchId;
+	private String priorityStrategy;
 
-	private String periodUnit;
-
-	private Boolean computeEnableHt;
-
-	private String autoRenew;
+	private String instanceFamilyLevel;
 
 	private String ecsChargeType;
 
 	private String internetChargeType;
 
-	private String createMode;
-
-	private String zoneId;
+	private List<InstanceTypeModel> instanceTypeModels;
 
 	private Integer internetMaxBandWidthIn;
-	public AddNodesRequest() {
-		super("EHPC", "2018-04-12", "AddNodes");
+
+	private Integer targetCapacity;
+	public ApplyNodesRequest() {
+		super("EHPC", "2018-04-12", "ApplyNodes");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -91,6 +84,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public Integer getMemory() {
+		return this.memory;
+	}
+
+	public void setMemory(Integer memory) {
+		this.memory = memory;
+		if(memory != null){
+			putQueryParameter("Memory", memory.toString());
 		}
 	}
 
@@ -116,25 +120,14 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		}
 	}
 
-	public String getJobQueue() {
-		return this.jobQueue;
+	public String getResourceAmountType() {
+		return this.resourceAmountType;
 	}
 
-	public void setJobQueue(String jobQueue) {
-		this.jobQueue = jobQueue;
-		if(jobQueue != null){
-			putQueryParameter("JobQueue", jobQueue);
-		}
-	}
-
-	public String getImageOwnerAlias() {
-		return this.imageOwnerAlias;
-	}
-
-	public void setImageOwnerAlias(String imageOwnerAlias) {
-		this.imageOwnerAlias = imageOwnerAlias;
-		if(imageOwnerAlias != null){
-			putQueryParameter("ImageOwnerAlias", imageOwnerAlias);
+	public void setResourceAmountType(String resourceAmountType) {
+		this.resourceAmountType = resourceAmountType;
+		if(resourceAmountType != null){
+			putQueryParameter("ResourceAmountType", resourceAmountType);
 		}
 	}
 
@@ -149,6 +142,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		}
 	}
 
+	public Integer getCores() {
+		return this.cores;
+	}
+
+	public void setCores(Integer cores) {
+		this.cores = cores;
+		if(cores != null){
+			putQueryParameter("Cores", cores.toString());
+		}
+	}
+
 	public Integer getSystemDiskSize() {
 		return this.systemDiskSize;
 	}
@@ -160,15 +164,18 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
+	public List<ZoneInfos> getZoneInfoss() {
+		return this.zoneInfoss;
 	}
 
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
-		}
+	public void setZoneInfoss(List<ZoneInfos> zoneInfoss) {
+		this.zoneInfoss = zoneInfoss;	
+		if (zoneInfoss != null) {
+			for (int depth1 = 0; depth1 < zoneInfoss.size(); depth1++) {
+				putQueryParameter("ZoneInfos." + (depth1 + 1) + ".VSwitchId" , zoneInfoss.get(depth1).getVSwitchId());
+				putQueryParameter("ZoneInfos." + (depth1 + 1) + ".ZoneId" , zoneInfoss.get(depth1).getZoneId());
+			}
+		}	
 	}
 
 	public String getHostNamePrefix() {
@@ -190,39 +197,6 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.computeSpotPriceLimit = computeSpotPriceLimit;
 		if(computeSpotPriceLimit != null){
 			putQueryParameter("ComputeSpotPriceLimit", computeSpotPriceLimit);
-		}
-	}
-
-	public Integer getAutoRenewPeriod() {
-		return this.autoRenewPeriod;
-	}
-
-	public void setAutoRenewPeriod(Integer autoRenewPeriod) {
-		this.autoRenewPeriod = autoRenewPeriod;
-		if(autoRenewPeriod != null){
-			putQueryParameter("AutoRenewPeriod", autoRenewPeriod.toString());
-		}
-	}
-
-	public Integer getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
-		}
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
-		if(count != null){
-			putQueryParameter("Count", count.toString());
 		}
 	}
 
@@ -259,47 +233,25 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		}
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
+	public String getPriorityStrategy() {
+		return this.priorityStrategy;
 	}
 
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
+	public void setPriorityStrategy(String priorityStrategy) {
+		this.priorityStrategy = priorityStrategy;
+		if(priorityStrategy != null){
+			putQueryParameter("PriorityStrategy", priorityStrategy);
 		}
 	}
 
-	public String getPeriodUnit() {
-		return this.periodUnit;
+	public String getInstanceFamilyLevel() {
+		return this.instanceFamilyLevel;
 	}
 
-	public void setPeriodUnit(String periodUnit) {
-		this.periodUnit = periodUnit;
-		if(periodUnit != null){
-			putQueryParameter("PeriodUnit", periodUnit);
-		}
-	}
-
-	public Boolean getComputeEnableHt() {
-		return this.computeEnableHt;
-	}
-
-	public void setComputeEnableHt(Boolean computeEnableHt) {
-		this.computeEnableHt = computeEnableHt;
-		if(computeEnableHt != null){
-			putQueryParameter("ComputeEnableHt", computeEnableHt.toString());
-		}
-	}
-
-	public String getAutoRenew() {
-		return this.autoRenew;
-	}
-
-	public void setAutoRenew(String autoRenew) {
-		this.autoRenew = autoRenew;
-		if(autoRenew != null){
-			putQueryParameter("AutoRenew", autoRenew);
+	public void setInstanceFamilyLevel(String instanceFamilyLevel) {
+		this.instanceFamilyLevel = instanceFamilyLevel;
+		if(instanceFamilyLevel != null){
+			putQueryParameter("InstanceFamilyLevel", instanceFamilyLevel);
 		}
 	}
 
@@ -325,26 +277,18 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		}
 	}
 
-	public String getCreateMode() {
-		return this.createMode;
+	public List<InstanceTypeModel> getInstanceTypeModels() {
+		return this.instanceTypeModels;
 	}
 
-	public void setCreateMode(String createMode) {
-		this.createMode = createMode;
-		if(createMode != null){
-			putQueryParameter("CreateMode", createMode);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
+	public void setInstanceTypeModels(List<InstanceTypeModel> instanceTypeModels) {
+		this.instanceTypeModels = instanceTypeModels;	
+		if (instanceTypeModels != null) {
+			for (int depth1 = 0; depth1 < instanceTypeModels.size(); depth1++) {
+				putQueryParameter("InstanceTypeModel." + (depth1 + 1) + ".MaxPrice" , instanceTypeModels.get(depth1).getMaxPrice());
+				putQueryParameter("InstanceTypeModel." + (depth1 + 1) + ".InstanceType" , instanceTypeModels.get(depth1).getInstanceType());
+			}
+		}	
 	}
 
 	public Integer getInternetMaxBandWidthIn() {
@@ -358,9 +302,66 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		}
 	}
 
+	public Integer getTargetCapacity() {
+		return this.targetCapacity;
+	}
+
+	public void setTargetCapacity(Integer targetCapacity) {
+		this.targetCapacity = targetCapacity;
+		if(targetCapacity != null){
+			putQueryParameter("TargetCapacity", targetCapacity.toString());
+		}
+	}
+
+	public static class ZoneInfos {
+
+		private String vSwitchId;
+
+		private String zoneId;
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+	}
+
+	public static class InstanceTypeModel {
+
+		private Float maxPrice;
+
+		private String instanceType;
+
+		public Float getMaxPrice() {
+			return this.maxPrice;
+		}
+
+		public void setMaxPrice(Float maxPrice) {
+			this.maxPrice = maxPrice;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+	}
+
 	@Override
-	public Class<AddNodesResponse> getResponseClass() {
-		return AddNodesResponse.class;
+	public Class<ApplyNodesResponse> getResponseClass() {
+		return ApplyNodesResponse.class;
 	}
 
 }

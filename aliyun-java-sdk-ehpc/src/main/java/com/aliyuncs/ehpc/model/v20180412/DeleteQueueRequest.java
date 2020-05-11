@@ -29,7 +29,7 @@ public class DeleteQueueRequest extends RpcAcsRequest<DeleteQueueResponse> {
 
 	private String clusterId;
 	public DeleteQueueRequest() {
-		super("EHPC", "2018-04-12", "DeleteQueue", "ehs");
+		super("EHPC", "2018-04-12", "DeleteQueue");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class UpgradeClientRequest extends RpcAcsRequest<UpgradeClientResponse> {
 
 	private String clusterId;
 	public UpgradeClientRequest() {
-		super("EHPC", "2018-04-12", "UpgradeClient", "ehs");
+		super("EHPC", "2018-04-12", "UpgradeClient");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

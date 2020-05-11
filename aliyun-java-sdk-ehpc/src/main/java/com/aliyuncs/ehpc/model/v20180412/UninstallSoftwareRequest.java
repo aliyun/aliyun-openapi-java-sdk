@@ -29,7 +29,7 @@ public class UninstallSoftwareRequest extends RpcAcsRequest<UninstallSoftwareRes
 
 	private String application;
 	public UninstallSoftwareRequest() {
-		super("EHPC", "2018-04-12", "UninstallSoftware", "ehs");
+		super("EHPC", "2018-04-12", "UninstallSoftware");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

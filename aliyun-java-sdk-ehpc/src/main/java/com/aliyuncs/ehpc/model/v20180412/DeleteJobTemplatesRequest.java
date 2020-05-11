@@ -27,7 +27,7 @@ public class DeleteJobTemplatesRequest extends RpcAcsRequest<DeleteJobTemplatesR
 
 	private String templates;
 	public DeleteJobTemplatesRequest() {
-		super("EHPC", "2018-04-12", "DeleteJobTemplates", "ehs");
+		super("EHPC", "2018-04-12", "DeleteJobTemplates");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

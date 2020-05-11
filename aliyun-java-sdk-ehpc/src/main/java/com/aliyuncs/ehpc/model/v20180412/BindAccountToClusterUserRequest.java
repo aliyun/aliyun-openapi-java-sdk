@@ -35,7 +35,7 @@ public class BindAccountToClusterUserRequest extends RpcAcsRequest<BindAccountTo
 
 	private String userName;
 	public BindAccountToClusterUserRequest() {
-		super("EHPC", "2018-04-12", "BindAccountToClusterUser", "ehs");
+		super("EHPC", "2018-04-12", "BindAccountToClusterUser");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

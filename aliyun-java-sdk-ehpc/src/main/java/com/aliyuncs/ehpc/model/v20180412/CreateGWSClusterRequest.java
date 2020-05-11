@@ -31,7 +31,7 @@ public class CreateGWSClusterRequest extends RpcAcsRequest<CreateGWSClusterRespo
 
 	private String name;
 	public CreateGWSClusterRequest() {
-		super("EHPC", "2018-04-12", "CreateGWSCluster", "ehs");
+		super("EHPC", "2018-04-12", "CreateGWSCluster");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

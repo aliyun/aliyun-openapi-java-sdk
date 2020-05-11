@@ -29,7 +29,7 @@ public class AddLocalNodesRequest extends RpcAcsRequest<AddLocalNodesResponse> {
 
 	private String nodes;
 	public AddLocalNodesRequest() {
-		super("EHPC", "2018-04-12", "AddLocalNodes", "ehs");
+		super("EHPC", "2018-04-12", "AddLocalNodes");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

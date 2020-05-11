@@ -31,7 +31,7 @@ public class StartVisualServiceRequest extends RpcAcsRequest<StartVisualServiceR
 
 	private String cidrIp;
 	public StartVisualServiceRequest() {
-		super("EHPC", "2018-04-12", "StartVisualService", "ehs");
+		super("EHPC", "2018-04-12", "StartVisualService");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

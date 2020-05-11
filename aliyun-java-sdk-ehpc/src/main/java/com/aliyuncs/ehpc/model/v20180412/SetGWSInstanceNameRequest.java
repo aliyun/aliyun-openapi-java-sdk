@@ -29,7 +29,7 @@ public class SetGWSInstanceNameRequest extends RpcAcsRequest<SetGWSInstanceNameR
 
 	private String name;
 	public SetGWSInstanceNameRequest() {
-		super("EHPC", "2018-04-12", "SetGWSInstanceName", "ehs");
+		super("EHPC", "2018-04-12", "SetGWSInstanceName");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

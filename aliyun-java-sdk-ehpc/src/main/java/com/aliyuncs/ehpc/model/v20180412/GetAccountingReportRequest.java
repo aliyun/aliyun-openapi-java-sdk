@@ -43,7 +43,7 @@ public class GetAccountingReportRequest extends RpcAcsRequest<GetAccountingRepor
 
 	private Integer pageSize;
 	public GetAccountingReportRequest() {
-		super("EHPC", "2018-04-12", "GetAccountingReport", "ehs");
+		super("EHPC", "2018-04-12", "GetAccountingReport");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

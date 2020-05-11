@@ -29,7 +29,7 @@ public class DeleteJobsRequest extends RpcAcsRequest<DeleteJobsResponse> {
 
 	private String clusterId;
 	public DeleteJobsRequest() {
-		super("EHPC", "2018-04-12", "DeleteJobs", "ehs");
+		super("EHPC", "2018-04-12", "DeleteJobs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

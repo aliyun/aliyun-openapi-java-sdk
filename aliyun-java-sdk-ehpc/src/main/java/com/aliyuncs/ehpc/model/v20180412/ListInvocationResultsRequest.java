@@ -38,7 +38,7 @@ public class ListInvocationResultsRequest extends RpcAcsRequest<ListInvocationRe
 
 	private Integer pageSize;
 	public ListInvocationResultsRequest() {
-		super("EHPC", "2018-04-12", "ListInvocationResults", "ehs");
+		super("EHPC", "2018-04-12", "ListInvocationResults");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

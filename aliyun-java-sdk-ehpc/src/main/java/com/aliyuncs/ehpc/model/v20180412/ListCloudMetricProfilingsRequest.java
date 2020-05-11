@@ -31,7 +31,7 @@ public class ListCloudMetricProfilingsRequest extends RpcAcsRequest<ListCloudMet
 
 	private Integer pageSize;
 	public ListCloudMetricProfilingsRequest() {
-		super("EHPC", "2018-04-12", "ListCloudMetricProfilings", "ehs");
+		super("EHPC", "2018-04-12", "ListCloudMetricProfilings");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

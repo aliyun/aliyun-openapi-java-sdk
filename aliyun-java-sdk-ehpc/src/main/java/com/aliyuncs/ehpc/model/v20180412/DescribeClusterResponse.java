@@ -101,6 +101,8 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		private String baseOsTag;
 
+		private String imageName;
+
 		private List<ApplicationInfo> applications;
 
 		private List<PostInstallScriptInfo> postInstallScripts;
@@ -321,6 +323,14 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		public void setBaseOsTag(String baseOsTag) {
 			this.baseOsTag = baseOsTag;
+		}
+
+		public String getImageName() {
+			return this.imageName;
+		}
+
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
 		}
 
 		public List<ApplicationInfo> getApplications() {

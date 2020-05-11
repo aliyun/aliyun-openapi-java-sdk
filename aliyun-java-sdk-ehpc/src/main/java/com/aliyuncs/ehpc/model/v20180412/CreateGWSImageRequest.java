@@ -29,7 +29,7 @@ public class CreateGWSImageRequest extends RpcAcsRequest<CreateGWSImageResponse>
 
 	private String name;
 	public CreateGWSImageRequest() {
-		super("EHPC", "2018-04-12", "CreateGWSImage", "ehs");
+		super("EHPC", "2018-04-12", "CreateGWSImage");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

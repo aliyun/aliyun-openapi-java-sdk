@@ -29,7 +29,7 @@ public class GetCloudMetricProfilingRequest extends RpcAcsRequest<GetCloudMetric
 
 	private String profilingId;
 	public GetCloudMetricProfilingRequest() {
-		super("EHPC", "2018-04-12", "GetCloudMetricProfiling", "ehs");
+		super("EHPC", "2018-04-12", "GetCloudMetricProfiling");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

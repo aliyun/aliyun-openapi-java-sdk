@@ -29,7 +29,7 @@ public class GetHybridClusterConfigRequest extends RpcAcsRequest<GetHybridCluste
 
 	private String node;
 	public GetHybridClusterConfigRequest() {
-		super("EHPC", "2018-04-12", "GetHybridClusterConfig", "ehs");
+		super("EHPC", "2018-04-12", "GetHybridClusterConfig");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

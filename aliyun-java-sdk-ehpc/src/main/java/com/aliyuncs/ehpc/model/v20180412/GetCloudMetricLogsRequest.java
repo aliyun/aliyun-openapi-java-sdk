@@ -43,7 +43,7 @@ public class GetCloudMetricLogsRequest extends RpcAcsRequest<GetCloudMetricLogsR
 
 	private Integer to;
 	public GetCloudMetricLogsRequest() {
-		super("EHPC", "2018-04-12", "GetCloudMetricLogs", "ehs");
+		super("EHPC", "2018-04-12", "GetCloudMetricLogs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

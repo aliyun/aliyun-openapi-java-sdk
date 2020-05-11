@@ -27,7 +27,7 @@ public class GetClusterVolumesRequest extends RpcAcsRequest<GetClusterVolumesRes
 
 	private String clusterId;
 	public GetClusterVolumesRequest() {
-		super("EHPC", "2018-04-12", "GetClusterVolumes", "ehs");
+		super("EHPC", "2018-04-12", "GetClusterVolumes");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

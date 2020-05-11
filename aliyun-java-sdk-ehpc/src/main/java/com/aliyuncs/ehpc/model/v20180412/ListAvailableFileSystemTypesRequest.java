@@ -25,7 +25,7 @@ import com.aliyuncs.ehpc.Endpoint;
 public class ListAvailableFileSystemTypesRequest extends RpcAcsRequest<ListAvailableFileSystemTypesResponse> {
 	   
 	public ListAvailableFileSystemTypesRequest() {
-		super("EHPC", "2018-04-12", "ListAvailableFileSystemTypes", "ehs");
+		super("EHPC", "2018-04-12", "ListAvailableFileSystemTypes");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

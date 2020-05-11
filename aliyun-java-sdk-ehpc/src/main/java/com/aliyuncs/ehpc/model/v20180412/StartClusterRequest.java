@@ -27,7 +27,7 @@ public class StartClusterRequest extends RpcAcsRequest<StartClusterResponse> {
 
 	private String clusterId;
 	public StartClusterRequest() {
-		super("EHPC", "2018-04-12", "StartCluster", "ehs");
+		super("EHPC", "2018-04-12", "StartCluster");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

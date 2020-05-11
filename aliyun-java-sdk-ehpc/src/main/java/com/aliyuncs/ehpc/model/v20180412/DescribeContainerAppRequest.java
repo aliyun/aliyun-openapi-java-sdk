@@ -27,7 +27,7 @@ public class DescribeContainerAppRequest extends RpcAcsRequest<DescribeContainer
 
 	private String containerId;
 	public DescribeContainerAppRequest() {
-		super("EHPC", "2018-04-12", "DescribeContainerApp", "ehs");
+		super("EHPC", "2018-04-12", "DescribeContainerApp");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

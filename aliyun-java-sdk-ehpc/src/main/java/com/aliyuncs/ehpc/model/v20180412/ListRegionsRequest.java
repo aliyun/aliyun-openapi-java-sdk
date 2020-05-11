@@ -25,7 +25,7 @@ import com.aliyuncs.ehpc.Endpoint;
 public class ListRegionsRequest extends RpcAcsRequest<ListRegionsResponse> {
 	   
 	public ListRegionsRequest() {
-		super("EHPC", "2018-04-12", "ListRegions", "ehs");
+		super("EHPC", "2018-04-12", "ListRegions");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

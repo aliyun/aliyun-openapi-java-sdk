@@ -31,7 +31,7 @@ public class StopVisualServiceRequest extends RpcAcsRequest<StopVisualServiceRes
 
 	private String cidrIp;
 	public StopVisualServiceRequest() {
-		super("EHPC", "2018-04-12", "StopVisualService", "ehs");
+		super("EHPC", "2018-04-12", "StopVisualService");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

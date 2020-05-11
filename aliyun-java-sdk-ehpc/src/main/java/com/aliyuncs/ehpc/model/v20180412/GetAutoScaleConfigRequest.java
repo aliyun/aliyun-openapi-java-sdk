@@ -27,7 +27,7 @@ public class GetAutoScaleConfigRequest extends RpcAcsRequest<GetAutoScaleConfigR
 
 	private String clusterId;
 	public GetAutoScaleConfigRequest() {
-		super("EHPC", "2018-04-12", "GetAutoScaleConfig", "ehs");
+		super("EHPC", "2018-04-12", "GetAutoScaleConfig");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

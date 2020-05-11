@@ -27,7 +27,7 @@ public class DescribeClusterRequest extends RpcAcsRequest<DescribeClusterRespons
 
 	private String clusterId;
 	public DescribeClusterRequest() {
-		super("EHPC", "2018-04-12", "DescribeCluster", "ehs");
+		super("EHPC", "2018-04-12", "DescribeCluster");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

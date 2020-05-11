@@ -14,27 +14,22 @@
 
 package com.aliyuncs.ehpc.model.v20180412;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ehpc.transform.v20180412.GetGWSConnectTicketResponseUnmarshaller;
+import com.aliyuncs.ehpc.transform.v20180412.ApplyNodesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetGWSConnectTicketResponse extends AcsResponse {
-
-	private String ticket;
+public class ApplyNodesResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getTicket() {
-		return this.ticket;
-	}
+	private String detail;
 
-	public void setTicket(String ticket) {
-		this.ticket = ticket;
-	}
+	private List<String> instanceIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,8 +39,24 @@ public class GetGWSConnectTicketResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getDetail() {
+		return this.detail;
+	}
+
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;
+	}
+
 	@Override
-	public GetGWSConnectTicketResponse getInstance(UnmarshallerContext context) {
-		return	GetGWSConnectTicketResponseUnmarshaller.unmarshall(this, context);
+	public ApplyNodesResponse getInstance(UnmarshallerContext context) {
+		return	ApplyNodesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

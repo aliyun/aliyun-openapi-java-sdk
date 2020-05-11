@@ -59,7 +59,7 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 
 	private String containerId;
 	public SubmitJobRequest() {
-		super("EHPC", "2018-04-12", "SubmitJob", "ehs");
+		super("EHPC", "2018-04-12", "SubmitJob");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

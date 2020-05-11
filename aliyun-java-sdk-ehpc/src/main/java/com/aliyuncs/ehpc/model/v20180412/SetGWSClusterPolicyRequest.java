@@ -35,7 +35,7 @@ public class SetGWSClusterPolicyRequest extends RpcAcsRequest<SetGWSClusterPolic
 
 	private String usbRedirect;
 	public SetGWSClusterPolicyRequest() {
-		super("EHPC", "2018-04-12", "SetGWSClusterPolicy", "ehs");
+		super("EHPC", "2018-04-12", "SetGWSClusterPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DescribeGWSInstancesRequest extends RpcAcsRequest<DescribeGWSInstan
 
 	private Integer pageSize;
 	public DescribeGWSInstancesRequest() {
-		super("EHPC", "2018-04-12", "DescribeGWSInstances", "ehs");
+		super("EHPC", "2018-04-12", "DescribeGWSInstances");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

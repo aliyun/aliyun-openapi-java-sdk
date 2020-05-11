@@ -29,7 +29,7 @@ public class ListClustersMetaRequest extends RpcAcsRequest<ListClustersMetaRespo
 
 	private Integer pageSize;
 	public ListClustersMetaRequest() {
-		super("EHPC", "2018-04-12", "ListClustersMeta", "ehs");
+		super("EHPC", "2018-04-12", "ListClustersMeta");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

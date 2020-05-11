@@ -27,7 +27,7 @@ public class ListAccountMappingRequest extends RpcAcsRequest<ListAccountMappingR
 
 	private String clusterId;
 	public ListAccountMappingRequest() {
-		super("EHPC", "2018-04-12", "ListAccountMapping", "ehs");
+		super("EHPC", "2018-04-12", "ListAccountMapping");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

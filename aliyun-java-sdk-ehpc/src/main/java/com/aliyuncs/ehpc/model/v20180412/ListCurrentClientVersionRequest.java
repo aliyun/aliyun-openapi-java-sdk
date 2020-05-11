@@ -25,7 +25,7 @@ import com.aliyuncs.ehpc.Endpoint;
 public class ListCurrentClientVersionRequest extends RpcAcsRequest<ListCurrentClientVersionResponse> {
 	   
 	public ListCurrentClientVersionRequest() {
-		super("EHPC", "2018-04-12", "ListCurrentClientVersion", "ehs");
+		super("EHPC", "2018-04-12", "ListCurrentClientVersion");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

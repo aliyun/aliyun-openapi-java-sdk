@@ -35,7 +35,7 @@ public class CreateJobFileRequest extends RpcAcsRequest<CreateJobFileResponse> {
 
 	private String content;
 	public CreateJobFileRequest() {
-		super("EHPC", "2018-04-12", "CreateJobFile", "ehs");
+		super("EHPC", "2018-04-12", "CreateJobFile");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

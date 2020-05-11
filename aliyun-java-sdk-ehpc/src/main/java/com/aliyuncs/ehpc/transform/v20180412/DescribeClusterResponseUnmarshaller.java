@@ -62,6 +62,7 @@ public class DescribeClusterResponseUnmarshaller {
 		clusterInfo.setImageId(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.ImageId"));
 		clusterInfo.setLocation(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.Location"));
 		clusterInfo.setBaseOsTag(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.BaseOsTag"));
+		clusterInfo.setImageName(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.ImageName"));
 
 		EcsInfo ecsInfo = new EcsInfo();
 

@@ -120,7 +120,7 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String ecsOrderLoginInstanceType;
 	public CreateClusterRequest() {
-		super("EHPC", "2018-04-12", "CreateCluster", "ehs");
+		super("EHPC", "2018-04-12", "CreateCluster");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

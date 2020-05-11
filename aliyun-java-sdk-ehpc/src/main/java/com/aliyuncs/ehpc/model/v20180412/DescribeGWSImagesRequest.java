@@ -29,7 +29,7 @@ public class DescribeGWSImagesRequest extends RpcAcsRequest<DescribeGWSImagesRes
 
 	private Integer pageSize;
 	public DescribeGWSImagesRequest() {
-		super("EHPC", "2018-04-12", "DescribeGWSImages", "ehs");
+		super("EHPC", "2018-04-12", "DescribeGWSImages");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

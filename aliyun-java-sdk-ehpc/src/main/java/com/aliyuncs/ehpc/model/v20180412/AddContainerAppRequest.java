@@ -35,7 +35,7 @@ public class AddContainerAppRequest extends RpcAcsRequest<AddContainerAppRespons
 
 	private String imageTag;
 	public AddContainerAppRequest() {
-		super("EHPC", "2018-04-12", "AddContainerApp", "ehs");
+		super("EHPC", "2018-04-12", "AddContainerApp");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

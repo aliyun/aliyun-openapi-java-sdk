@@ -25,7 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListInstalledSoftwareResponse extends AcsResponse {
 
+	private String requestId;
+
 	private List<SoftwareListItem> softwareList;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public List<SoftwareListItem> getSoftwareList() {
 		return this.softwareList;

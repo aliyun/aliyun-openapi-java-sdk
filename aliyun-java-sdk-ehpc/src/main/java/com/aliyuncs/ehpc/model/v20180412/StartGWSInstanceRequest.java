@@ -27,7 +27,7 @@ public class StartGWSInstanceRequest extends RpcAcsRequest<StartGWSInstanceRespo
 
 	private String instanceId;
 	public StartGWSInstanceRequest() {
-		super("EHPC", "2018-04-12", "StartGWSInstance", "ehs");
+		super("EHPC", "2018-04-12", "StartGWSInstance");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

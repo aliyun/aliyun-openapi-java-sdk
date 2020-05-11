@@ -223,6 +223,8 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 		private Integer maxNodesInQueue;
 
+		private Integer minNodesInQueue;
+
 		private List<InstanceTypeInfo> instanceTypes;
 
 		public String getQueueName() {
@@ -287,6 +289,14 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 		public void setMaxNodesInQueue(Integer maxNodesInQueue) {
 			this.maxNodesInQueue = maxNodesInQueue;
+		}
+
+		public Integer getMinNodesInQueue() {
+			return this.minNodesInQueue;
+		}
+
+		public void setMinNodesInQueue(Integer minNodesInQueue) {
+			this.minNodesInQueue = minNodesInQueue;
 		}
 
 		public List<InstanceTypeInfo> getInstanceTypes() {

@@ -44,7 +44,7 @@ public class ModifyImageGatewayConfigRequest extends RpcAcsRequest<ModifyImageGa
 
 	private String imageExpirationTimeout;
 	public ModifyImageGatewayConfigRequest() {
-		super("EHPC", "2018-04-12", "ModifyImageGatewayConfig", "ehs");
+		super("EHPC", "2018-04-12", "ModifyImageGatewayConfig");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

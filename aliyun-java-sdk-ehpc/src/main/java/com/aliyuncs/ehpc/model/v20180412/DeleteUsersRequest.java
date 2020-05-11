@@ -30,7 +30,7 @@ public class DeleteUsersRequest extends RpcAcsRequest<DeleteUsersResponse> {
 
 	private List<User> users;
 	public DeleteUsersRequest() {
-		super("EHPC", "2018-04-12", "DeleteUsers", "ehs");
+		super("EHPC", "2018-04-12", "DeleteUsers");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

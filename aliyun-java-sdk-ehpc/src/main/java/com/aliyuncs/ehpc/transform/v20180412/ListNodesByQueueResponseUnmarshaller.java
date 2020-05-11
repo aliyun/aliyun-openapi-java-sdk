@@ -55,6 +55,8 @@ public class ListNodesByQueueResponseUnmarshaller {
 			nodeInfo.setZoneId(_ctx.stringValue("ListNodesByQueueResponse.Nodes["+ i +"].ZoneId"));
 			nodeInfo.setVSwitchId(_ctx.stringValue("ListNodesByQueueResponse.Nodes["+ i +"].VSwitchId"));
 			nodeInfo.setHtEnabled(_ctx.booleanValue("ListNodesByQueueResponse.Nodes["+ i +"].HtEnabled"));
+			nodeInfo.setIpAddress(_ctx.stringValue("ListNodesByQueueResponse.Nodes["+ i +"].IpAddress"));
+			nodeInfo.setPublicIpAddress(_ctx.stringValue("ListNodesByQueueResponse.Nodes["+ i +"].PublicIpAddress"));
 
 			TotalResources totalResources = new TotalResources();
 			totalResources.setCpu(_ctx.integerValue("ListNodesByQueueResponse.Nodes["+ i +"].TotalResources.Cpu"));

@@ -31,7 +31,7 @@ public class ListJobTemplatesRequest extends RpcAcsRequest<ListJobTemplatesRespo
 
 	private Integer pageSize;
 	public ListJobTemplatesRequest() {
-		super("EHPC", "2018-04-12", "ListJobTemplates", "ehs");
+		super("EHPC", "2018-04-12", "ListJobTemplates");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

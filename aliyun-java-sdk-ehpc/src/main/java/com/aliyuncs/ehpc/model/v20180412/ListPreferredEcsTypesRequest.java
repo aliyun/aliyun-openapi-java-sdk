@@ -31,7 +31,7 @@ public class ListPreferredEcsTypesRequest extends RpcAcsRequest<ListPreferredEcs
 
 	private String instanceChargeType;
 	public ListPreferredEcsTypesRequest() {
-		super("EHPC", "2018-04-12", "ListPreferredEcsTypes", "ehs");
+		super("EHPC", "2018-04-12", "ListPreferredEcsTypes");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
