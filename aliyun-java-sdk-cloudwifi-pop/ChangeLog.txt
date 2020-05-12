@@ -1,3 +1,6 @@
+2020-05-12 Version: 1.9.0
+- Add apis for itnet-uem.
+
 2020-03-19 Version: 1.8.10
 - Modify deleteApgroupConfig.
 
