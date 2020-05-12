@@ -28,6 +28,7 @@ public class DescribeProjectMessagesResponseUnmarshaller {
 		
 		describeProjectMessagesResponse.setRequestId(_ctx.stringValue("DescribeProjectMessagesResponse.RequestId"));
 		describeProjectMessagesResponse.setSuccess(_ctx.booleanValue("DescribeProjectMessagesResponse.Success"));
+		describeProjectMessagesResponse.setTotalCount(_ctx.longValue("DescribeProjectMessagesResponse.TotalCount"));
 
 		List<ProjectMessage> result = new ArrayList<ProjectMessage>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProjectMessagesResponse.Result.Length"); i++) {

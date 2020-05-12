@@ -29,6 +29,8 @@ public class DescribeProjectMessagesResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private Long totalCount;
+
 	private List<ProjectMessage> result;
 
 	public String getRequestId() {
@@ -45,6 +47,14 @@ public class DescribeProjectMessagesResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ProjectMessage> getResult() {

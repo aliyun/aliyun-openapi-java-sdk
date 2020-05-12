@@ -1,6 +1,9 @@
 2020-05-12 Version: 2.0.32
 - BugFix for DescribeProjectMessages not returned the totalCount property.
 
+2020-05-12 Version: 2.0.32
+- BugFix for DescribeProjectMessages not returned the totalCount property.
+
 2020-05-11 Version: 2.0.31
 - Bugfix for DescribeProjectAttachments Integer AttachmentType updated to String AttachmentType.
 
