@@ -29,7 +29,7 @@ public class CreateJMeterSceneRequest extends RpcAcsRequest<CreateJMeterSceneRes
 
 	private Map<Object,Object> scene;
 	public CreateJMeterSceneRequest() {
-		super("PTS", "2019-08-10", "CreateJMeterScene", "1.0.0");
+		super("PTS", "2019-08-10", "CreateJMeterScene");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

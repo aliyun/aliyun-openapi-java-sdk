@@ -27,7 +27,7 @@ public class ListScenarioRecordsRequest extends RpcAcsRequest<ListScenarioRecord
 
 	private String routeRequestBody;
 	public ListScenarioRecordsRequest() {
-		super("PTS", "2019-08-10", "ListScenarioRecords", "1.0.0");
+		super("PTS", "2019-08-10", "ListScenarioRecords");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

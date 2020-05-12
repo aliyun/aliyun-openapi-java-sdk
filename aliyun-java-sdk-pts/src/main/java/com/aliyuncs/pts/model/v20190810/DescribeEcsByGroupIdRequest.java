@@ -35,7 +35,7 @@ public class DescribeEcsByGroupIdRequest extends RpcAcsRequest<DescribeEcsByGrou
 
 	private String keyWord;
 	public DescribeEcsByGroupIdRequest() {
-		super("PTS", "2019-08-10", "DescribeEcsByGroupId", "1.0.0");
+		super("PTS", "2019-08-10", "DescribeEcsByGroupId");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

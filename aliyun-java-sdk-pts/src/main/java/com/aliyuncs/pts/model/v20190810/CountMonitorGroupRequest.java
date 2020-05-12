@@ -29,7 +29,7 @@ public class CountMonitorGroupRequest extends RpcAcsRequest<CountMonitorGroupRes
 
 	private String groupIds;
 	public CountMonitorGroupRequest() {
-		super("PTS", "2019-08-10", "CountMonitorGroup", "1.0.0");
+		super("PTS", "2019-08-10", "CountMonitorGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

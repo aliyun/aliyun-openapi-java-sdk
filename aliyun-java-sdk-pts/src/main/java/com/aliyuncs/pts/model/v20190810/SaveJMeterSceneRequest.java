@@ -27,7 +27,7 @@ public class SaveJMeterSceneRequest extends RpcAcsRequest<SaveJMeterSceneRespons
 
 	private String scene;
 	public SaveJMeterSceneRequest() {
-		super("PTS", "2019-08-10", "SaveJMeterScene", "1.0.0");
+		super("PTS", "2019-08-10", "SaveJMeterScene");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

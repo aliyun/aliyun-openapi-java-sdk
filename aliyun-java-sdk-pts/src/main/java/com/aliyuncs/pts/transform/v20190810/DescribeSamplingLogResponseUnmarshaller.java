@@ -55,7 +55,7 @@ public class DescribeSamplingLogResponseUnmarshaller {
 			samplingLog.setHttpTiming(_ctx.stringValue("DescribeSamplingLogResponse.SamplingLogs["+ i +"].HttpTiming"));
 			samplingLog.setRt(_ctx.stringValue("DescribeSamplingLogResponse.SamplingLogs["+ i +"].Rt"));
 			samplingLog.setHttpResponseStatus(_ctx.stringValue("DescribeSamplingLogResponse.SamplingLogs["+ i +"].HttpResponseStatus"));
-			samplingLog.setTransId(_ctx.integerValue("DescribeSamplingLogResponse.SamplingLogs["+ i +"].TransId"));
+			samplingLog.setTransId(_ctx.stringValue("DescribeSamplingLogResponse.SamplingLogs["+ i +"].TransId"));
 			samplingLog.setGroupTag(_ctx.stringValue("DescribeSamplingLogResponse.SamplingLogs["+ i +"].GroupTag"));
 
 			samplingLogs.add(samplingLog);

@@ -27,7 +27,7 @@ public class DeleteBenchmarkRequest extends RpcAcsRequest<DeleteBenchmarkRespons
 
 	private String routeRequestBody;
 	public DeleteBenchmarkRequest() {
-		super("PTS", "2019-08-10", "DeleteBenchmark", "1.0.0");
+		super("PTS", "2019-08-10", "DeleteBenchmark");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

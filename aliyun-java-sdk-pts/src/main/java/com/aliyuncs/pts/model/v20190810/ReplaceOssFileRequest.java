@@ -33,7 +33,7 @@ public class ReplaceOssFileRequest extends RpcAcsRequest<ReplaceOssFileResponse>
 
 	private String newOssFileUrl;
 	public ReplaceOssFileRequest() {
-		super("PTS", "2019-08-10", "ReplaceOssFile", "1.0.0");
+		super("PTS", "2019-08-10", "ReplaceOssFile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

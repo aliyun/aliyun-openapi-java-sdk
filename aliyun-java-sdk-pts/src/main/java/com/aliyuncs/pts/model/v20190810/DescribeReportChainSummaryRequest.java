@@ -27,7 +27,7 @@ public class DescribeReportChainSummaryRequest extends RpcAcsRequest<DescribeRep
 
 	private String reportId;
 	public DescribeReportChainSummaryRequest() {
-		super("PTS", "2019-08-10", "DescribeReportChainSummary", "1.0.0");
+		super("PTS", "2019-08-10", "DescribeReportChainSummary");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

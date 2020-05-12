@@ -29,7 +29,7 @@ public class DescribeJMeterSampleSummaryRequest extends RpcAcsRequest<DescribeJM
 
 	private Integer samplerId;
 	public DescribeJMeterSampleSummaryRequest() {
-		super("PTS", "2019-08-10", "DescribeJMeterSampleSummary", "1.0.0");
+		super("PTS", "2019-08-10", "DescribeJMeterSampleSummary");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

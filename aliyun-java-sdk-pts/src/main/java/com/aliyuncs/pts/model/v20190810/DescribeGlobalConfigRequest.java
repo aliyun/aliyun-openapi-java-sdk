@@ -25,7 +25,7 @@ import com.aliyuncs.pts.Endpoint;
 public class DescribeGlobalConfigRequest extends RpcAcsRequest<DescribeGlobalConfigResponse> {
 	   
 	public DescribeGlobalConfigRequest() {
-		super("PTS", "2019-08-10", "DescribeGlobalConfig", "1.0.0");
+		super("PTS", "2019-08-10", "DescribeGlobalConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

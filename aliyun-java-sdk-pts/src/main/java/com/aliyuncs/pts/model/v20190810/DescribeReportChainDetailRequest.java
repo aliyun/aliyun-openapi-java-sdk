@@ -33,7 +33,7 @@ public class DescribeReportChainDetailRequest extends RpcAcsRequest<DescribeRepo
 
 	private Long beginTime;
 	public DescribeReportChainDetailRequest() {
-		super("PTS", "2019-08-10", "DescribeReportChainDetail", "1.0.0");
+		super("PTS", "2019-08-10", "DescribeReportChainDetail");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

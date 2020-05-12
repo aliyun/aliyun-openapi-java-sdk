@@ -27,7 +27,7 @@ public class RemoveScenesRequest extends RpcAcsRequest<RemoveScenesResponse> {
 
 	private String sceneIds;
 	public RemoveScenesRequest() {
-		super("PTS", "2019-08-10", "RemoveScenes", "1.0.0");
+		super("PTS", "2019-08-10", "RemoveScenes");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

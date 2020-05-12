@@ -27,7 +27,7 @@ public class DeleteScenarioRecordRequest extends RpcAcsRequest<DeleteScenarioRec
 
 	private String routeRequestBody;
 	public DeleteScenarioRecordRequest() {
-		super("PTS", "2019-08-10", "DeleteScenarioRecord", "1.0.0");
+		super("PTS", "2019-08-10", "DeleteScenarioRecord");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

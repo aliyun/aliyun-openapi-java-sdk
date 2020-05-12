@@ -27,7 +27,7 @@ public class DescribeScenarioRecordDetailRequest extends RpcAcsRequest<DescribeS
 
 	private String routeRequestBody;
 	public DescribeScenarioRecordDetailRequest() {
-		super("PTS", "2019-08-10", "DescribeScenarioRecordDetail", "1.0.0");
+		super("PTS", "2019-08-10", "DescribeScenarioRecordDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

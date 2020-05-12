@@ -27,7 +27,7 @@ public class CloneJMeterSceneRequest extends RpcAcsRequest<CloneJMeterSceneRespo
 
 	private String sceneId;
 	public CloneJMeterSceneRequest() {
-		super("PTS", "2019-08-10", "CloneJMeterScene", "1.0.0");
+		super("PTS", "2019-08-10", "CloneJMeterScene");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.pts.Endpoint;
 public class DescribeUserFeaturesRequest extends RpcAcsRequest<DescribeUserFeaturesResponse> {
 	   
 	public DescribeUserFeaturesRequest() {
-		super("PTS", "2019-08-10", "DescribeUserFeatures", "1.0.0");
+		super("PTS", "2019-08-10", "DescribeUserFeatures");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

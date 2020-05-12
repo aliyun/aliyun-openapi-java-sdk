@@ -27,7 +27,7 @@ public class GetOssSignUrlRequest extends RpcAcsRequest<GetOssSignUrlResponse> {
 
 	private String url;
 	public GetOssSignUrlRequest() {
-		super("PTS", "2019-08-10", "GetOssSignUrl", "1.0.0");
+		super("PTS", "2019-08-10", "GetOssSignUrl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

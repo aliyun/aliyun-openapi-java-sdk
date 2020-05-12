@@ -151,7 +151,7 @@ public class DescribeSamplingLogResponse extends AcsResponse {
 
 		private String httpResponseStatus;
 
-		private Integer transId;
+		private String transId;
 
 		private String groupTag;
 
@@ -291,11 +291,11 @@ public class DescribeSamplingLogResponse extends AcsResponse {
 			this.httpResponseStatus = httpResponseStatus;
 		}
 
-		public Integer getTransId() {
+		public String getTransId() {
 			return this.transId;
 		}
 
-		public void setTransId(Integer transId) {
+		public void setTransId(String transId) {
 			this.transId = transId;
 		}
 

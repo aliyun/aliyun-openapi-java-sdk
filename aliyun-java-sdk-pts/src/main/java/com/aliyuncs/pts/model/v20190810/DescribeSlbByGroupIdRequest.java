@@ -35,7 +35,7 @@ public class DescribeSlbByGroupIdRequest extends RpcAcsRequest<DescribeSlbByGrou
 
 	private String keyWord;
 	public DescribeSlbByGroupIdRequest() {
-		super("PTS", "2019-08-10", "DescribeSlbByGroupId", "1.0.0");
+		super("PTS", "2019-08-10", "DescribeSlbByGroupId");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

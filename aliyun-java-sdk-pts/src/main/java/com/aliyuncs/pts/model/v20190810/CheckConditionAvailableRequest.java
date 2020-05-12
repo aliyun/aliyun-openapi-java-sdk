@@ -29,7 +29,7 @@ public class CheckConditionAvailableRequest extends RpcAcsRequest<CheckCondition
 
 	private String sceneType;
 	public CheckConditionAvailableRequest() {
-		super("PTS", "2019-08-10", "CheckConditionAvailable", "1.0.0");
+		super("PTS", "2019-08-10", "CheckConditionAvailable");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

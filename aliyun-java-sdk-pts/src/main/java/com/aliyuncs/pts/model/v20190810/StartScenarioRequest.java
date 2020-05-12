@@ -27,7 +27,7 @@ public class StartScenarioRequest extends RpcAcsRequest<StartScenarioResponse> {
 
 	private String routeRequestBody;
 	public StartScenarioRequest() {
-		super("PTS", "2019-08-10", "StartScenario", "1.0.0");
+		super("PTS", "2019-08-10", "StartScenario");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

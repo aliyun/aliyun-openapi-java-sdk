@@ -29,7 +29,7 @@ public class ListArmsAppsRequest extends RpcAcsRequest<ListArmsAppsResponse> {
 
 	private String sceneId;
 	public ListArmsAppsRequest() {
-		super("PTS", "2019-08-10", "ListArmsApps", "1.0.0");
+		super("PTS", "2019-08-10", "ListArmsApps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

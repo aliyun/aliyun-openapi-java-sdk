@@ -35,7 +35,7 @@ public class DescribeUnboundRdsByGroupIdsRequest extends RpcAcsRequest<DescribeU
 
 	private String keyword;
 	public DescribeUnboundRdsByGroupIdsRequest() {
-		super("PTS", "2019-08-10", "DescribeUnboundRdsByGroupIds", "1.0.0");
+		super("PTS", "2019-08-10", "DescribeUnboundRdsByGroupIds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

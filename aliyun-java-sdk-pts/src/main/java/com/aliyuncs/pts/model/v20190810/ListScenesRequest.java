@@ -31,7 +31,7 @@ public class ListScenesRequest extends RpcAcsRequest<ListScenesResponse> {
 
 	private Integer pageNumber;
 	public ListScenesRequest() {
-		super("PTS", "2019-08-10", "ListScenes", "1.0.0");
+		super("PTS", "2019-08-10", "ListScenes");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

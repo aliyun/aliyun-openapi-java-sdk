@@ -27,7 +27,7 @@ public class DescribeBenchmarkRequest extends RpcAcsRequest<DescribeBenchmarkRes
 
 	private String routeRequestBody;
 	public DescribeBenchmarkRequest() {
-		super("PTS", "2019-08-10", "DescribeBenchmark", "1.0.0");
+		super("PTS", "2019-08-10", "DescribeBenchmark");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class StopScenarioRequest extends RpcAcsRequest<StopScenarioResponse> {
 
 	private String routeRequestBody;
 	public StopScenarioRequest() {
-		super("PTS", "2019-08-10", "StopScenario", "1.0.0");
+		super("PTS", "2019-08-10", "StopScenario");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

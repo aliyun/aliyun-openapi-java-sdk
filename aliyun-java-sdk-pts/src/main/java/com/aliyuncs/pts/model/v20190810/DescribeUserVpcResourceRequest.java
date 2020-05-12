@@ -27,7 +27,7 @@ public class DescribeUserVpcResourceRequest extends RpcAcsRequest<DescribeUserVp
 
 	private String jobId;
 	public DescribeUserVpcResourceRequest() {
-		super("PTS", "2019-08-10", "DescribeUserVpcResource", "1.0.0");
+		super("PTS", "2019-08-10", "DescribeUserVpcResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

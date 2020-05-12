@@ -33,7 +33,7 @@ public class DescribeAgentMemoryInfoRequest extends RpcAcsRequest<DescribeAgentM
 
 	private Long taskId;
 	public DescribeAgentMemoryInfoRequest() {
-		super("PTS", "2019-08-10", "DescribeAgentMemoryInfo", "1.0.0");
+		super("PTS", "2019-08-10", "DescribeAgentMemoryInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

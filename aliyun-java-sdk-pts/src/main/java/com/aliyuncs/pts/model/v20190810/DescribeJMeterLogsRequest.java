@@ -45,7 +45,7 @@ public class DescribeJMeterLogsRequest extends RpcAcsRequest<DescribeJMeterLogsR
 
 	private Long taskId;
 	public DescribeJMeterLogsRequest() {
-		super("PTS", "2019-08-10", "DescribeJMeterLogs", "1.0.0");
+		super("PTS", "2019-08-10", "DescribeJMeterLogs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

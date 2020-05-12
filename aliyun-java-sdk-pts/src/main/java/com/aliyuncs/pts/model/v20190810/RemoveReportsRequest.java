@@ -27,7 +27,7 @@ public class RemoveReportsRequest extends RpcAcsRequest<RemoveReportsResponse> {
 
 	private String reportIds;
 	public RemoveReportsRequest() {
-		super("PTS", "2019-08-10", "RemoveReports", "1.0.0");
+		super("PTS", "2019-08-10", "RemoveReports");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

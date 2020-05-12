@@ -31,7 +31,7 @@ public class AdjustRelationSpeedRequest extends RpcAcsRequest<AdjustRelationSpee
 
 	private Integer speed;
 	public AdjustRelationSpeedRequest() {
-		super("PTS", "2019-08-10", "AdjustRelationSpeed", "1.0.0");
+		super("PTS", "2019-08-10", "AdjustRelationSpeed");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

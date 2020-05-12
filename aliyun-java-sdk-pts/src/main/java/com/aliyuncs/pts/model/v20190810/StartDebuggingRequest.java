@@ -27,7 +27,7 @@ public class StartDebuggingRequest extends RpcAcsRequest<StartDebuggingResponse>
 
 	private String sceneId;
 	public StartDebuggingRequest() {
-		super("PTS", "2019-08-10", "StartDebugging", "1.0.0");
+		super("PTS", "2019-08-10", "StartDebugging");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

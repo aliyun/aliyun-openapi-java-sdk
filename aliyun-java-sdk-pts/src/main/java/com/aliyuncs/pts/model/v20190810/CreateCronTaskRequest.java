@@ -49,7 +49,7 @@ public class CreateCronTaskRequest extends RpcAcsRequest<CreateCronTaskResponse>
 
 	private String noticeMethod;
 	public CreateCronTaskRequest() {
-		super("PTS", "2019-08-10", "CreateCronTask", "1.0.0");
+		super("PTS", "2019-08-10", "CreateCronTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

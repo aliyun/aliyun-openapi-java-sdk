@@ -27,7 +27,7 @@ public class DescribeSceneRequest extends RpcAcsRequest<DescribeSceneResponse> {
 
 	private String sceneId;
 	public DescribeSceneRequest() {
-		super("PTS", "2019-08-10", "DescribeScene", "1.0.0");
+		super("PTS", "2019-08-10", "DescribeScene");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

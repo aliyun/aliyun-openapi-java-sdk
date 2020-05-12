@@ -29,7 +29,7 @@ public class ListReceiversRequest extends RpcAcsRequest<ListReceiversResponse> {
 
 	private Integer pageNumber;
 	public ListReceiversRequest() {
-		super("PTS", "2019-08-10", "ListReceivers", "1.0.0");
+		super("PTS", "2019-08-10", "ListReceivers");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

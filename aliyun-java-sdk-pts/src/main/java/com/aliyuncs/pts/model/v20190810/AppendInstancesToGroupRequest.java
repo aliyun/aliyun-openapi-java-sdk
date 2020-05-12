@@ -31,7 +31,7 @@ public class AppendInstancesToGroupRequest extends RpcAcsRequest<AppendInstances
 
 	private String instanceIdAndPorts;
 	public AppendInstancesToGroupRequest() {
-		super("PTS", "2019-08-10", "AppendInstancesToGroup", "1.0.0");
+		super("PTS", "2019-08-10", "AppendInstancesToGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

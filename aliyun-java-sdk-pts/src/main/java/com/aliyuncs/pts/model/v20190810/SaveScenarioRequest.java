@@ -27,7 +27,7 @@ public class SaveScenarioRequest extends RpcAcsRequest<SaveScenarioResponse> {
 
 	private String routeRequestBody;
 	public SaveScenarioRequest() {
-		super("PTS", "2019-08-10", "SaveScenario", "1.0.0");
+		super("PTS", "2019-08-10", "SaveScenario");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

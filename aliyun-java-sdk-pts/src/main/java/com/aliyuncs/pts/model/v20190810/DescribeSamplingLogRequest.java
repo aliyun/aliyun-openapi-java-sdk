@@ -39,7 +39,7 @@ public class DescribeSamplingLogRequest extends RpcAcsRequest<DescribeSamplingLo
 
 	private String errorCode;
 	public DescribeSamplingLogRequest() {
-		super("PTS", "2019-08-10", "DescribeSamplingLog", "1.0.0");
+		super("PTS", "2019-08-10", "DescribeSamplingLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class AddOperationRecordRequest extends RpcAcsRequest<AddOperationRecordR
 
 	private String record;
 	public AddOperationRecordRequest() {
-		super("PTS", "2019-08-10", "AddOperationRecord", "1.0.0");
+		super("PTS", "2019-08-10", "AddOperationRecord");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

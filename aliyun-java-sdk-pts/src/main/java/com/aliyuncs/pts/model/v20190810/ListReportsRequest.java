@@ -37,7 +37,7 @@ public class ListReportsRequest extends RpcAcsRequest<ListReportsResponse> {
 
 	private Integer pageNumber;
 	public ListReportsRequest() {
-		super("PTS", "2019-08-10", "ListReports", "1.0.0");
+		super("PTS", "2019-08-10", "ListReports");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
