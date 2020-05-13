@@ -133,6 +133,20 @@ public class ListOutboundOrdersResponse extends AcsResponse {
 
 		private Integer caseCount;
 
+		private String toWarehouseCode;
+
+		private String fromWarehouseCode;
+
+		private String toBusinessUnitCode;
+
+		private String fromBusinessUnitCode;
+
+		private String createUserId;
+
+		private String createUserName;
+
+		private String createDateTime;
+
 		public String getToWarehouseName() {
 			return this.toWarehouseName;
 		}
@@ -315,6 +329,62 @@ public class ListOutboundOrdersResponse extends AcsResponse {
 
 		public void setCaseCount(Integer caseCount) {
 			this.caseCount = caseCount;
+		}
+
+		public String getToWarehouseCode() {
+			return this.toWarehouseCode;
+		}
+
+		public void setToWarehouseCode(String toWarehouseCode) {
+			this.toWarehouseCode = toWarehouseCode;
+		}
+
+		public String getFromWarehouseCode() {
+			return this.fromWarehouseCode;
+		}
+
+		public void setFromWarehouseCode(String fromWarehouseCode) {
+			this.fromWarehouseCode = fromWarehouseCode;
+		}
+
+		public String getToBusinessUnitCode() {
+			return this.toBusinessUnitCode;
+		}
+
+		public void setToBusinessUnitCode(String toBusinessUnitCode) {
+			this.toBusinessUnitCode = toBusinessUnitCode;
+		}
+
+		public String getFromBusinessUnitCode() {
+			return this.fromBusinessUnitCode;
+		}
+
+		public void setFromBusinessUnitCode(String fromBusinessUnitCode) {
+			this.fromBusinessUnitCode = fromBusinessUnitCode;
+		}
+
+		public String getCreateUserId() {
+			return this.createUserId;
+		}
+
+		public void setCreateUserId(String createUserId) {
+			this.createUserId = createUserId;
+		}
+
+		public String getCreateUserName() {
+			return this.createUserName;
+		}
+
+		public void setCreateUserName(String createUserName) {
+			this.createUserName = createUserName;
+		}
+
+		public String getCreateDateTime() {
+			return this.createDateTime;
+		}
+
+		public void setCreateDateTime(String createDateTime) {
+			this.createDateTime = createDateTime;
 		}
 	}
 

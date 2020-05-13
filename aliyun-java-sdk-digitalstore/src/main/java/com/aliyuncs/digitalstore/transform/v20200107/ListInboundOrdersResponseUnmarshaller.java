@@ -58,6 +58,13 @@ public class ListInboundOrdersResponseUnmarshaller {
 			inboundOrder.setOrderId(_ctx.stringValue("ListInboundOrdersResponse.InboundOrders["+ i +"].OrderId"));
 			inboundOrder.setToBusinessUnitId(_ctx.stringValue("ListInboundOrdersResponse.InboundOrders["+ i +"].ToBusinessUnitId"));
 			inboundOrder.setCaseCount(_ctx.integerValue("ListInboundOrdersResponse.InboundOrders["+ i +"].CaseCount"));
+			inboundOrder.setToWarehouseCode(_ctx.stringValue("ListInboundOrdersResponse.InboundOrders["+ i +"].ToWarehouseCode"));
+			inboundOrder.setFromWarehouseCode(_ctx.stringValue("ListInboundOrdersResponse.InboundOrders["+ i +"].FromWarehouseCode"));
+			inboundOrder.setToBusinessUnitCode(_ctx.stringValue("ListInboundOrdersResponse.InboundOrders["+ i +"].ToBusinessUnitCode"));
+			inboundOrder.setFromBusinessUnitCode(_ctx.stringValue("ListInboundOrdersResponse.InboundOrders["+ i +"].FromBusinessUnitCode"));
+			inboundOrder.setCreateUserId(_ctx.stringValue("ListInboundOrdersResponse.InboundOrders["+ i +"].CreateUserId"));
+			inboundOrder.setCreateUserName(_ctx.stringValue("ListInboundOrdersResponse.InboundOrders["+ i +"].CreateUserName"));
+			inboundOrder.setCreateDateTime(_ctx.stringValue("ListInboundOrdersResponse.InboundOrders["+ i +"].CreateDateTime"));
 
 			inboundOrders.add(inboundOrder);
 		}

@@ -39,6 +39,17 @@ public class ListOutboundOrderSKUTagsResponseUnmarshaller {
 			outboundOrderSkuTagBiz.setCaseId(_ctx.stringValue("ListOutboundOrderSKUTagsResponse.SkuTags["+ i +"].CaseId"));
 			outboundOrderSkuTagBiz.setTagValue(_ctx.stringValue("ListOutboundOrderSKUTagsResponse.SkuTags["+ i +"].TagValue"));
 			outboundOrderSkuTagBiz.setCaseCode(_ctx.stringValue("ListOutboundOrderSKUTagsResponse.SkuTags["+ i +"].CaseCode"));
+			outboundOrderSkuTagBiz.setSKUId(_ctx.stringValue("ListOutboundOrderSKUTagsResponse.SkuTags["+ i +"].SKUId"));
+			outboundOrderSkuTagBiz.setSKUName(_ctx.stringValue("ListOutboundOrderSKUTagsResponse.SkuTags["+ i +"].SKUName"));
+			outboundOrderSkuTagBiz.setStyleId(_ctx.stringValue("ListOutboundOrderSKUTagsResponse.SkuTags["+ i +"].StyleId"));
+			outboundOrderSkuTagBiz.setStyleCode(_ctx.stringValue("ListOutboundOrderSKUTagsResponse.SkuTags["+ i +"].StyleCode"));
+			outboundOrderSkuTagBiz.setStyleName(_ctx.stringValue("ListOutboundOrderSKUTagsResponse.SkuTags["+ i +"].StyleName"));
+			outboundOrderSkuTagBiz.setSizeId(_ctx.stringValue("ListOutboundOrderSKUTagsResponse.SkuTags["+ i +"].SizeId"));
+			outboundOrderSkuTagBiz.setSizeCode(_ctx.stringValue("ListOutboundOrderSKUTagsResponse.SkuTags["+ i +"].SizeCode"));
+			outboundOrderSkuTagBiz.setSizeName(_ctx.stringValue("ListOutboundOrderSKUTagsResponse.SkuTags["+ i +"].SizeName"));
+			outboundOrderSkuTagBiz.setColorId(_ctx.stringValue("ListOutboundOrderSKUTagsResponse.SkuTags["+ i +"].ColorId"));
+			outboundOrderSkuTagBiz.setColorCode(_ctx.stringValue("ListOutboundOrderSKUTagsResponse.SkuTags["+ i +"].ColorCode"));
+			outboundOrderSkuTagBiz.setColorName(_ctx.stringValue("ListOutboundOrderSKUTagsResponse.SkuTags["+ i +"].ColorName"));
 
 			skuTags.add(outboundOrderSkuTagBiz);
 		}

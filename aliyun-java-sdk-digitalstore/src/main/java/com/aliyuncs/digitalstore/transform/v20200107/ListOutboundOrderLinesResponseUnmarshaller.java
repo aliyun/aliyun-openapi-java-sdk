@@ -39,6 +39,17 @@ public class ListOutboundOrderLinesResponseUnmarshaller {
 			outboundOrderLineBiz.setOperateQuantity(_ctx.integerValue("ListOutboundOrderLinesResponse.OutboundOrderLines["+ i +"].OperateQuantity"));
 			outboundOrderLineBiz.setQuantity(_ctx.integerValue("ListOutboundOrderLinesResponse.OutboundOrderLines["+ i +"].Quantity"));
 			outboundOrderLineBiz.setConfirmQuantity(_ctx.integerValue("ListOutboundOrderLinesResponse.OutboundOrderLines["+ i +"].ConfirmQuantity"));
+			outboundOrderLineBiz.setSKUId(_ctx.stringValue("ListOutboundOrderLinesResponse.OutboundOrderLines["+ i +"].SKUId"));
+			outboundOrderLineBiz.setSKUName(_ctx.stringValue("ListOutboundOrderLinesResponse.OutboundOrderLines["+ i +"].SKUName"));
+			outboundOrderLineBiz.setStyleId(_ctx.stringValue("ListOutboundOrderLinesResponse.OutboundOrderLines["+ i +"].StyleId"));
+			outboundOrderLineBiz.setStyleCode(_ctx.stringValue("ListOutboundOrderLinesResponse.OutboundOrderLines["+ i +"].StyleCode"));
+			outboundOrderLineBiz.setStyleName(_ctx.stringValue("ListOutboundOrderLinesResponse.OutboundOrderLines["+ i +"].StyleName"));
+			outboundOrderLineBiz.setSizeId(_ctx.stringValue("ListOutboundOrderLinesResponse.OutboundOrderLines["+ i +"].SizeId"));
+			outboundOrderLineBiz.setSizeCode(_ctx.stringValue("ListOutboundOrderLinesResponse.OutboundOrderLines["+ i +"].SizeCode"));
+			outboundOrderLineBiz.setSizeName(_ctx.stringValue("ListOutboundOrderLinesResponse.OutboundOrderLines["+ i +"].SizeName"));
+			outboundOrderLineBiz.setColorId(_ctx.stringValue("ListOutboundOrderLinesResponse.OutboundOrderLines["+ i +"].ColorId"));
+			outboundOrderLineBiz.setColorCode(_ctx.stringValue("ListOutboundOrderLinesResponse.OutboundOrderLines["+ i +"].ColorCode"));
+			outboundOrderLineBiz.setColorName(_ctx.stringValue("ListOutboundOrderLinesResponse.OutboundOrderLines["+ i +"].ColorName"));
 
 			outboundOrderLines.add(outboundOrderLineBiz);
 		}
