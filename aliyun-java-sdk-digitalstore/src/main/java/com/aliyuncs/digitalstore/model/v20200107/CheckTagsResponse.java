@@ -91,6 +91,22 @@ public class CheckTagsResponse extends AcsResponse {
 
 		private String sizeName;
 
+		private String tagPositionId;
+
+		private String brandCode;
+
+		private String brandName;
+
+		private String caseId;
+
+		private String sizeId;
+
+		private String colorId;
+
+		private String caseCode;
+
+		private String brandId;
+
 		public String getTagValue() {
 			return this.tagValue;
 		}
@@ -225,6 +241,70 @@ public class CheckTagsResponse extends AcsResponse {
 
 		public void setSizeName(String sizeName) {
 			this.sizeName = sizeName;
+		}
+
+		public String getTagPositionId() {
+			return this.tagPositionId;
+		}
+
+		public void setTagPositionId(String tagPositionId) {
+			this.tagPositionId = tagPositionId;
+		}
+
+		public String getBrandCode() {
+			return this.brandCode;
+		}
+
+		public void setBrandCode(String brandCode) {
+			this.brandCode = brandCode;
+		}
+
+		public String getBrandName() {
+			return this.brandName;
+		}
+
+		public void setBrandName(String brandName) {
+			this.brandName = brandName;
+		}
+
+		public String getCaseId() {
+			return this.caseId;
+		}
+
+		public void setCaseId(String caseId) {
+			this.caseId = caseId;
+		}
+
+		public String getSizeId() {
+			return this.sizeId;
+		}
+
+		public void setSizeId(String sizeId) {
+			this.sizeId = sizeId;
+		}
+
+		public String getColorId() {
+			return this.colorId;
+		}
+
+		public void setColorId(String colorId) {
+			this.colorId = colorId;
+		}
+
+		public String getCaseCode() {
+			return this.caseCode;
+		}
+
+		public void setCaseCode(String caseCode) {
+			this.caseCode = caseCode;
+		}
+
+		public String getBrandId() {
+			return this.brandId;
+		}
+
+		public void setBrandId(String brandId) {
+			this.brandId = brandId;
 		}
 	}
 

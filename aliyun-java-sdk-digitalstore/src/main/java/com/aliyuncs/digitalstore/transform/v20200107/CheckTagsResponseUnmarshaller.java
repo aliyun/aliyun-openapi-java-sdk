@@ -49,6 +49,14 @@ public class CheckTagsResponseUnmarshaller {
 			checkTagResultBiz.setColorName(_ctx.stringValue("CheckTagsResponse.CheckResult["+ i +"].ColorName"));
 			checkTagResultBiz.setSizeCode(_ctx.stringValue("CheckTagsResponse.CheckResult["+ i +"].SizeCode"));
 			checkTagResultBiz.setSizeName(_ctx.stringValue("CheckTagsResponse.CheckResult["+ i +"].SizeName"));
+			checkTagResultBiz.setTagPositionId(_ctx.stringValue("CheckTagsResponse.CheckResult["+ i +"].TagPositionId"));
+			checkTagResultBiz.setBrandCode(_ctx.stringValue("CheckTagsResponse.CheckResult["+ i +"].BrandCode"));
+			checkTagResultBiz.setBrandName(_ctx.stringValue("CheckTagsResponse.CheckResult["+ i +"].BrandName"));
+			checkTagResultBiz.setCaseId(_ctx.stringValue("CheckTagsResponse.CheckResult["+ i +"].CaseId"));
+			checkTagResultBiz.setSizeId(_ctx.stringValue("CheckTagsResponse.CheckResult["+ i +"].SizeId"));
+			checkTagResultBiz.setColorId(_ctx.stringValue("CheckTagsResponse.CheckResult["+ i +"].ColorId"));
+			checkTagResultBiz.setCaseCode(_ctx.stringValue("CheckTagsResponse.CheckResult["+ i +"].CaseCode"));
+			checkTagResultBiz.setBrandId(_ctx.stringValue("CheckTagsResponse.CheckResult["+ i +"].BrandId"));
 
 			checkResult.add(checkTagResultBiz);
 		}
