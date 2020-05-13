@@ -1,3 +1,6 @@
+2020-05-13 Version: 3.4.0
+- Add ExportTas apis.
+
 2020-04-29 Version: 3.4.0
 - Add ExportTas apis.
 
