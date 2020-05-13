@@ -1,3 +1,6 @@
+2020-05-13 Version: 2.0.12
+- About 2019-03-07 and 2018-09-16 Version.
+
 2020-04-28 Version: 2.0.11
 - Add CompareFaceVerify API.
 
