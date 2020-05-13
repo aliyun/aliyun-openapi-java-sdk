@@ -25,6 +25,7 @@ script:
   - sudo o_o &
   # Test
   - mvn test -B -f ./aliyun-java-sdk-core/pom.xml
+  - mvn test -B -f ./aliyun-java-sdk-core-v5/pom.xml
   - test -z $daily_accessKeyId -a -z $daily_accessSecret || make travis-test
 
 after_success:
