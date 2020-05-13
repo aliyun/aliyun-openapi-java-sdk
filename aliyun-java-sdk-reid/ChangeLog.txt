@@ -1,3 +1,7 @@
+2020-05-13 Version: 1.1.5
+- Add ListDevicesImages DescribeIpcLiveAddress.
+- Modify DescribeDevices.
+
 2020-05-09 Version: 1.1.4
 - DescribeCamerasStatistics add pvType.
 

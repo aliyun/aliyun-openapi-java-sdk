@@ -45,6 +45,8 @@ public class DescribeDevicesResponseUnmarshaller {
 			device.setAgentReceiveTime(_ctx.longValue("DescribeDevicesResponse.Devices["+ i +"].AgentReceiveTime"));
 			device.setAgentMac(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].AgentMac"));
 			device.setIpcReceiveTime(_ctx.longValue("DescribeDevicesResponse.Devices["+ i +"].IpcReceiveTime"));
+			device.setIpcId(_ctx.longValue("DescribeDevicesResponse.Devices["+ i +"].IpcId"));
+			device.setIpcName(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].IpcName"));
 
 			devices.add(device);
 		}

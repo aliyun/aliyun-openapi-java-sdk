@@ -16,14 +16,14 @@ package com.aliyuncs.reid.model.v20190928;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.reid.transform.v20190928.DescribeDevicesResponseUnmarshaller;
+import com.aliyuncs.reid.transform.v20190928.ListDevicesImagesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeDevicesResponse extends AcsResponse {
+public class ListDevicesImagesResponse extends AcsResponse {
 
 	private String errorCode;
 
@@ -41,7 +41,7 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 	private String dynamicMessage;
 
-	private List<Device> devices;
+	private List<DeviceImage> deviceImages;
 
 	public String getErrorCode() {
 		return this.errorCode;
@@ -107,89 +107,19 @@ public class DescribeDevicesResponse extends AcsResponse {
 		this.dynamicMessage = dynamicMessage;
 	}
 
-	public List<Device> getDevices() {
-		return this.devices;
+	public List<DeviceImage> getDeviceImages() {
+		return this.deviceImages;
 	}
 
-	public void setDevices(List<Device> devices) {
-		this.devices = devices;
+	public void setDeviceImages(List<DeviceImage> deviceImages) {
+		this.deviceImages = deviceImages;
 	}
 
-	public static class Device {
-
-		private String agentStatus;
-
-		private String ipcStatus;
-
-		private String agentIp;
-
-		private String ipcIp;
-
-		private Long agentReceiveTime;
-
-		private String agentMac;
-
-		private Long ipcReceiveTime;
+	public static class DeviceImage {
 
 		private Long ipcId;
 
-		private String ipcName;
-
-		public String getAgentStatus() {
-			return this.agentStatus;
-		}
-
-		public void setAgentStatus(String agentStatus) {
-			this.agentStatus = agentStatus;
-		}
-
-		public String getIpcStatus() {
-			return this.ipcStatus;
-		}
-
-		public void setIpcStatus(String ipcStatus) {
-			this.ipcStatus = ipcStatus;
-		}
-
-		public String getAgentIp() {
-			return this.agentIp;
-		}
-
-		public void setAgentIp(String agentIp) {
-			this.agentIp = agentIp;
-		}
-
-		public String getIpcIp() {
-			return this.ipcIp;
-		}
-
-		public void setIpcIp(String ipcIp) {
-			this.ipcIp = ipcIp;
-		}
-
-		public Long getAgentReceiveTime() {
-			return this.agentReceiveTime;
-		}
-
-		public void setAgentReceiveTime(Long agentReceiveTime) {
-			this.agentReceiveTime = agentReceiveTime;
-		}
-
-		public String getAgentMac() {
-			return this.agentMac;
-		}
-
-		public void setAgentMac(String agentMac) {
-			this.agentMac = agentMac;
-		}
-
-		public Long getIpcReceiveTime() {
-			return this.ipcReceiveTime;
-		}
-
-		public void setIpcReceiveTime(Long ipcReceiveTime) {
-			this.ipcReceiveTime = ipcReceiveTime;
-		}
+		private String imageUrl;
 
 		public Long getIpcId() {
 			return this.ipcId;
@@ -199,17 +129,22 @@ public class DescribeDevicesResponse extends AcsResponse {
 			this.ipcId = ipcId;
 		}
 
-		public String getIpcName() {
-			return this.ipcName;
+		public String getImageUrl() {
+			return this.imageUrl;
 		}
 
-		public void setIpcName(String ipcName) {
-			this.ipcName = ipcName;
+		public void setImageUrl(String imageUrl) {
+			this.imageUrl = imageUrl;
 		}
 	}
 
 	@Override
-	public DescribeDevicesResponse getInstance(UnmarshallerContext context) {
-		return	DescribeDevicesResponseUnmarshaller.unmarshall(this, context);
+	public ListDevicesImagesResponse getInstance(UnmarshallerContext context) {
+		return	ListDevicesImagesResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
