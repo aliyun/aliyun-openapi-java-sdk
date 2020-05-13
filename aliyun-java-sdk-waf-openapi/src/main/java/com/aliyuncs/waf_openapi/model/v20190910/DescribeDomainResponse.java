@@ -67,6 +67,8 @@ public class DescribeDomainResponse extends AcsResponse {
 
 		private Integer writeTime;
 
+		private String resourceGroupId;
+
 		private List<LogHeader> logHeaders;
 
 		private List<String> sourceIps;
@@ -155,6 +157,14 @@ public class DescribeDomainResponse extends AcsResponse {
 
 		public void setWriteTime(Integer writeTime) {
 			this.writeTime = writeTime;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<LogHeader> getLogHeaders() {

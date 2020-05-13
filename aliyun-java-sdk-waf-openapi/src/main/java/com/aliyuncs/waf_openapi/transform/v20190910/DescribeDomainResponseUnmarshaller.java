@@ -40,6 +40,7 @@ public class DescribeDomainResponseUnmarshaller {
 		domain.setConnectionTime(_ctx.integerValue("DescribeDomainResponse.Domain.ConnectionTime"));
 		domain.setReadTime(_ctx.integerValue("DescribeDomainResponse.Domain.ReadTime"));
 		domain.setWriteTime(_ctx.integerValue("DescribeDomainResponse.Domain.WriteTime"));
+		domain.setResourceGroupId(_ctx.stringValue("DescribeDomainResponse.Domain.ResourceGroupId"));
 
 		List<String> sourceIps = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainResponse.Domain.SourceIps.Length"); i++) {
