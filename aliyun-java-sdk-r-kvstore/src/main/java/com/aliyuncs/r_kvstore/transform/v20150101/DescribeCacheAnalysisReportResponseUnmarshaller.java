@@ -14,7 +14,11 @@
 
 package com.aliyuncs.r_kvstore.transform.v20150101;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeCacheAnalysisReportResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,8 +31,12 @@ public class DescribeCacheAnalysisReportResponseUnmarshaller {
 		describeCacheAnalysisReportResponse.setPageSize(_ctx.integerValue("DescribeCacheAnalysisReportResponse.PageSize"));
 		describeCacheAnalysisReportResponse.setPageNumber(_ctx.integerValue("DescribeCacheAnalysisReportResponse.PageNumber"));
 		describeCacheAnalysisReportResponse.setPageRecordCount(_ctx.integerValue("DescribeCacheAnalysisReportResponse.PageRecordCount"));
-		describeCacheAnalysisReportResponse.setHotKeys(_ctx.stringValue("DescribeCacheAnalysisReportResponse.HotKeys"));
-		describeCacheAnalysisReportResponse.setBigKeys(_ctx.stringValue("DescribeCacheAnalysisReportResponse.BigKeys"));
+
+		List<Map<Object, Object>> hotKeys = _ctx.listMapValue("DescribeCacheAnalysisReportResponse.HotKeys");
+		describeCacheAnalysisReportResponse.setHotKeys(hotKeys);
+
+		List<Map<Object, Object>> bigKeys = _ctx.listMapValue("DescribeCacheAnalysisReportResponse.BigKeys");
+		describeCacheAnalysisReportResponse.setBigKeys(bigKeys);
 	 
 	 	return describeCacheAnalysisReportResponse;
 	}
