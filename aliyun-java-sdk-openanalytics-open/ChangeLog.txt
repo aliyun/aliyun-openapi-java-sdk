@@ -1,3 +1,6 @@
+2020-05-14 Version: 1.0.6
+- Support spark API.
+
 2020-05-07 Version: 1.0.5
 - Add new interfaces.
 
