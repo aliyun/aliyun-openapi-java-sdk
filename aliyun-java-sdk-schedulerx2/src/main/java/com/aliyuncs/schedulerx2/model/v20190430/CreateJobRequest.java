@@ -18,18 +18,14 @@ import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.schedulerx2.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
-	
-	public CreateJobRequest() {
-		super("schedulerx2", "2019-04-30", "CreateJob");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String namespaceSource;
 
@@ -90,6 +86,15 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 	private Integer timeType;
 
 	private String parameters;
+	public CreateJobRequest() {
+		super("schedulerx2", "2019-04-30", "CreateJob");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getNamespaceSource() {
 		return this.namespaceSource;

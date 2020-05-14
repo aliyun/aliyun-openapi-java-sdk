@@ -16,17 +16,15 @@ package com.aliyuncs.schedulerx2.model.v20190430;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.schedulerx2.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse> {
-	
-	public CreateAppGroupRequest() {
-		super("schedulerx2", "2019-04-30", "CreateAppGroup");
-		setProtocol(ProtocolType.HTTPS);
-	}
+	   
 
 	private Integer maxJobs;
 
@@ -34,17 +32,26 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 
 	private String namespaceSource;
 
-	private String appName;
-
 	private String metricsThresholdJson;
 
 	private String groupId;
 
-	private String namespace;
-
 	private String description;
 
+	private String appName;
+
+	private String namespace;
+
 	private String alarmJson;
+	public CreateAppGroupRequest() {
+		super("schedulerx2", "2019-04-30", "CreateAppGroup");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getMaxJobs() {
 		return this.maxJobs;
@@ -79,17 +86,6 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		}
 	}
 
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
 	public String getMetricsThresholdJson() {
 		return this.metricsThresholdJson;
 	}
@@ -112,17 +108,6 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		}
 	}
 
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -131,6 +116,28 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

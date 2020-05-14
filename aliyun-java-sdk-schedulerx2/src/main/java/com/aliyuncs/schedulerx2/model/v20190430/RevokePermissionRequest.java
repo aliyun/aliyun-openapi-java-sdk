@@ -15,7 +15,6 @@
 package com.aliyuncs.schedulerx2.model.v20190430;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.schedulerx2.Endpoint;
 
@@ -23,7 +22,7 @@ import com.aliyuncs.schedulerx2.Endpoint;
  * @author auto create
  * @version 
  */
-public class EnableWorkflowRequest extends RpcAcsRequest<EnableWorkflowResponse> {
+public class RevokePermissionRequest extends RpcAcsRequest<RevokePermissionResponse> {
 	   
 
 	private String namespaceSource;
@@ -32,11 +31,10 @@ public class EnableWorkflowRequest extends RpcAcsRequest<EnableWorkflowResponse>
 
 	private String namespace;
 
-	private Long workflowId;
-	public EnableWorkflowRequest() {
-		super("schedulerx2", "2019-04-30", "EnableWorkflow");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.GET);
+	private String userId;
+	public RevokePermissionRequest() {
+		super("schedulerx2", "2019-04-30", "RevokePermission");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -76,20 +74,20 @@ public class EnableWorkflowRequest extends RpcAcsRequest<EnableWorkflowResponse>
 		}
 	}
 
-	public Long getWorkflowId() {
-		return this.workflowId;
+	public String getUserId() {
+		return this.userId;
 	}
 
-	public void setWorkflowId(Long workflowId) {
-		this.workflowId = workflowId;
-		if(workflowId != null){
-			putQueryParameter("WorkflowId", workflowId.toString());
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 
 	@Override
-	public Class<EnableWorkflowResponse> getResponseClass() {
-		return EnableWorkflowResponse.class;
+	public Class<RevokePermissionResponse> getResponseClass() {
+		return RevokePermissionResponse.class;
 	}
 
 }
