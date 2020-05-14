@@ -15,8 +15,6 @@
 package com.aliyuncs.cloudwifi_pop.model.v20191118;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
-import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cloudwifi_pop.Endpoint;
 
@@ -31,7 +29,7 @@ public class DeleteNetDeviceInfoRequest extends RpcAcsRequest<DeleteNetDeviceInf
 
 	private String requestId;
 
-	private List<Object> ids;
+	private String ids;
 
 	private String appCode;
 	public DeleteNetDeviceInfoRequest() {
@@ -65,14 +63,14 @@ public class DeleteNetDeviceInfoRequest extends RpcAcsRequest<DeleteNetDeviceInf
 		}
 	}
 
-	public List<Object> getIds() {
+	public String getIds() {
 		return this.ids;
 	}
 
-	public void setIds(List<Object> ids) {
+	public void setIds(String ids) {
 		this.ids = ids;
 		if(ids != null){
-			putBodyParameter("Ids", new Gson().toJson(ids));
+			putQueryParameter("Ids", ids);
 		}
 	}
 
