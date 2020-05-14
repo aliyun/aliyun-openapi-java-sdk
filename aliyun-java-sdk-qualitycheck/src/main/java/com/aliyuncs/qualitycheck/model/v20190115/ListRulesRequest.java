@@ -22,12 +22,12 @@ import com.aliyuncs.qualitycheck.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetRuleCategoryRequest extends RpcAcsRequest<GetRuleCategoryResponse> {
+public class ListRulesRequest extends RpcAcsRequest<ListRulesResponse> {
 	   
 
 	private String jsonStr;
-	public GetRuleCategoryRequest() {
-		super("Qualitycheck", "2019-01-15", "GetRuleCategory", "Qualitycheck");
+	public ListRulesRequest() {
+		super("Qualitycheck", "2019-01-15", "ListRules", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,8 +47,8 @@ public class GetRuleCategoryRequest extends RpcAcsRequest<GetRuleCategoryRespons
 	}
 
 	@Override
-	public Class<GetRuleCategoryResponse> getResponseClass() {
-		return GetRuleCategoryResponse.class;
+	public Class<ListRulesResponse> getResponseClass() {
+		return ListRulesResponse.class;
 	}
 
 }

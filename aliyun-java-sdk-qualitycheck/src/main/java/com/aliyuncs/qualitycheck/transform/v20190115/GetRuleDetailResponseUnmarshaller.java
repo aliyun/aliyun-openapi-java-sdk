@@ -80,6 +80,17 @@ public class GetRuleDetailResponseUnmarshaller {
 				param.setFromEnd(_ctx.booleanValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.FromEnd"));
 				param.setDifferentRole(_ctx.booleanValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.DifferentRole"));
 				param.setTargetRole(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.TargetRole"));
+				param.setScore(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Score"));
+				param.setContextChatMatch(_ctx.booleanValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.ContextChatMatch"));
+				param.setKeywordMatchSize(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.KeywordMatchSize"));
+				param.setAverage(_ctx.booleanValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Average"));
+				param.setVelocityInMint(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.VelocityInMint"));
+				param.setMinWordSize(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.MinWordSize"));
+				param.setKeywordExtension(_ctx.booleanValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.KeywordExtension"));
+				param.setHitTime(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.HitTime"));
+				param.setFrom(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.From"));
+				param.setBeginType(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.BeginType"));
+				param.setCompareOperator(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.CompareOperator"));
 
 				List<String> operKeyWords = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.OperKeyWords.Length"); k++) {
@@ -92,6 +103,18 @@ public class GetRuleDetailResponseUnmarshaller {
 					references.add(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.References["+ k +"]"));
 				}
 				param.setReferences(references);
+
+				List<String> similarlySentences = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.SimilarlySentences.Length"); k++) {
+					similarlySentences.add(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.SimilarlySentences["+ k +"]"));
+				}
+				param.setSimilarlySentences(similarlySentences);
+
+				List<String> excludes = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Excludes.Length"); k++) {
+					excludes.add(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Excludes["+ k +"]"));
+				}
+				param.setExcludes(excludes);
 				operatorBasicInfo.setParam(param);
 
 				operators.add(operatorBasicInfo);

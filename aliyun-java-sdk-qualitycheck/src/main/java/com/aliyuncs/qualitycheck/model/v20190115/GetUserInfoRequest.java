@@ -16,6 +16,7 @@ package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.qualitycheck.Endpoint;
 
 /**
  * @author auto create
@@ -23,22 +24,13 @@ import com.aliyuncs.http.MethodType;
  */
 public class GetUserInfoRequest extends RpcAcsRequest<GetUserInfoResponse> {
 	   
-
-	private Long resourceOwnerId;
 	public GetUserInfoRequest() {
-		super("Qualitycheck", "2019-01-15", "GetUserInfo");
+		super("Qualitycheck", "2019-01-15", "GetUserInfo", "Qualitycheck");
 		setMethod(MethodType.POST);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	@Override

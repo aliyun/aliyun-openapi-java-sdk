@@ -59,6 +59,7 @@ public class ListPrecisionTaskResponseUnmarshaller {
 				precision.setPrecision(_ctx.floatValue("ListPrecisionTaskResponse.Data["+ i +"].Precisions["+ j +"].Precision"));
 				precision.setStatus(_ctx.integerValue("ListPrecisionTaskResponse.Data["+ i +"].Precisions["+ j +"].Status"));
 				precision.setTaskId(_ctx.stringValue("ListPrecisionTaskResponse.Data["+ i +"].Precisions["+ j +"].TaskId"));
+				precision.setCreateTime(_ctx.stringValue("ListPrecisionTaskResponse.Data["+ i +"].Precisions["+ j +"].CreateTime"));
 
 				precisions.add(precision);
 			}
