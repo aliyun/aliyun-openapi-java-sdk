@@ -36,6 +36,8 @@ public class DescribeDemoAccessTokenResponse extends AcsResponse {
 
 	private String demoDetailPage;
 
+	private String edition;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -82,6 +84,14 @@ public class DescribeDemoAccessTokenResponse extends AcsResponse {
 
 	public void setDemoDetailPage(String demoDetailPage) {
 		this.demoDetailPage = demoDetailPage;
+	}
+
+	public String getEdition() {
+		return this.edition;
+	}
+
+	public void setEdition(String edition) {
+		this.edition = edition;
 	}
 
 	@Override

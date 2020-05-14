@@ -15,7 +15,6 @@
 package com.aliyuncs.democenter.model.v20200121;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.democenter.Endpoint;
 
@@ -23,34 +22,33 @@ import com.aliyuncs.democenter.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDemoAccessTokenRequest extends RpcAcsRequest<DescribeDemoAccessTokenResponse> {
+public class GetDemoTrialAuthRequest extends RpcAcsRequest<GetDemoTrialAuthResponse> {
 	   
 
-	private String demoAccessToken;
-	public DescribeDemoAccessTokenRequest() {
-		super("DemoCenter", "2020-01-21", "DescribeDemoAccessToken");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
+	private Long demoId;
+	public GetDemoTrialAuthRequest() {
+		super("DemoCenter", "2020-01-21", "GetDemoTrialAuth");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getDemoAccessToken() {
-		return this.demoAccessToken;
+	public Long getDemoId() {
+		return this.demoId;
 	}
 
-	public void setDemoAccessToken(String demoAccessToken) {
-		this.demoAccessToken = demoAccessToken;
-		if(demoAccessToken != null){
-			putBodyParameter("DemoAccessToken", demoAccessToken);
+	public void setDemoId(Long demoId) {
+		this.demoId = demoId;
+		if(demoId != null){
+			putBodyParameter("DemoId", demoId.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeDemoAccessTokenResponse> getResponseClass() {
-		return DescribeDemoAccessTokenResponse.class;
+	public Class<GetDemoTrialAuthResponse> getResponseClass() {
+		return GetDemoTrialAuthResponse.class;
 	}
 
 }

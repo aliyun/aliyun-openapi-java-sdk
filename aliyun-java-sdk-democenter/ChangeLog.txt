@@ -1,3 +1,6 @@
+2020-05-14 Version: 1.1.0
+- Add demo edition auth.
+
 2020-02-12 Version: 1.0.0
 - Support to create, describe and expire demo access token.
 
