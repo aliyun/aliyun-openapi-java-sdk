@@ -14,33 +14,32 @@
 
 package com.aliyuncs.aliyuncvc.model.v20191030;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.aliyuncvc.transform.v20191030.GetMeetingMemberResponseUnmarshaller;
+import com.aliyuncs.aliyuncvc.transform.v20191030.GetDeviceTokenResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetMeetingMemberResponse extends AcsResponse {
+public class GetDeviceTokenResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer errorCode;
 
 	private String message;
 
 	private Boolean success;
 
-	private Integer errorCode;
+	private String requestId;
 
-	private Map<Object,Object> members;
+	private String token;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(Integer errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getMessage() {
@@ -59,25 +58,25 @@ public class GetMeetingMemberResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Integer getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public Map<Object,Object> getMembers() {
-		return this.members;
+	public String getToken() {
+		return this.token;
 	}
 
-	public void setMembers(Map<Object,Object> members) {
-		this.members = members;
+	public void setToken(String token) {
+		this.token = token;
 	}
 
 	@Override
-	public GetMeetingMemberResponse getInstance(UnmarshallerContext context) {
-		return	GetMeetingMemberResponseUnmarshaller.unmarshall(this, context);
+	public GetDeviceTokenResponse getInstance(UnmarshallerContext context) {
+		return	GetDeviceTokenResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

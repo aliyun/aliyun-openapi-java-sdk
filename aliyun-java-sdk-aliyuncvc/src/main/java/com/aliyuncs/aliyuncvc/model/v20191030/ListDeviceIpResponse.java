@@ -14,33 +14,33 @@
 
 package com.aliyuncs.aliyuncvc.model.v20191030;
 
-import java.util.Map;
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.aliyuncvc.transform.v20191030.GetMeetingMemberResponseUnmarshaller;
+import com.aliyuncs.aliyuncvc.transform.v20191030.ListDeviceIpResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetMeetingMemberResponse extends AcsResponse {
+public class ListDeviceIpResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer errorCode;
 
 	private String message;
 
 	private Boolean success;
 
-	private Integer errorCode;
+	private String requestId;
 
-	private Map<Object,Object> members;
+	private List<DevicesItem> devices;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(Integer errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getMessage() {
@@ -59,25 +59,48 @@ public class GetMeetingMemberResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Integer getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public Map<Object,Object> getMembers() {
-		return this.members;
+	public List<DevicesItem> getDevices() {
+		return this.devices;
 	}
 
-	public void setMembers(Map<Object,Object> members) {
-		this.members = members;
+	public void setDevices(List<DevicesItem> devices) {
+		this.devices = devices;
+	}
+
+	public static class DevicesItem {
+
+		private String screenCode;
+
+		private String ip;
+
+		public String getScreenCode() {
+			return this.screenCode;
+		}
+
+		public void setScreenCode(String screenCode) {
+			this.screenCode = screenCode;
+		}
+
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
+		}
 	}
 
 	@Override
-	public GetMeetingMemberResponse getInstance(UnmarshallerContext context) {
-		return	GetMeetingMemberResponseUnmarshaller.unmarshall(this, context);
+	public ListDeviceIpResponse getInstance(UnmarshallerContext context) {
+		return	ListDeviceIpResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

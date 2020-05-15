@@ -14,33 +14,30 @@
 
 package com.aliyuncs.aliyuncvc.model.v20191030;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.aliyuncvc.transform.v20191030.GetMeetingMemberResponseUnmarshaller;
+import com.aliyuncs.aliyuncvc.transform.v20191030.EndDeviceMeetingResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetMeetingMemberResponse extends AcsResponse {
+public class EndDeviceMeetingResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer errorCode;
 
 	private String message;
 
 	private Boolean success;
 
-	private Integer errorCode;
+	private String requestId;
 
-	private Map<Object,Object> members;
-
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(Integer errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getMessage() {
@@ -59,25 +56,17 @@ public class GetMeetingMemberResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Integer getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Map<Object,Object> getMembers() {
-		return this.members;
-	}
-
-	public void setMembers(Map<Object,Object> members) {
-		this.members = members;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
-	public GetMeetingMemberResponse getInstance(UnmarshallerContext context) {
-		return	GetMeetingMemberResponseUnmarshaller.unmarshall(this, context);
+	public EndDeviceMeetingResponse getInstance(UnmarshallerContext context) {
+		return	EndDeviceMeetingResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

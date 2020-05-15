@@ -14,33 +14,32 @@
 
 package com.aliyuncs.aliyuncvc.model.v20191030;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.aliyuncvc.transform.v20191030.GetMeetingMemberResponseUnmarshaller;
+import com.aliyuncs.aliyuncvc.transform.v20191030.UpdateDeviceHeartBeatResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetMeetingMemberResponse extends AcsResponse {
+public class UpdateDeviceHeartBeatResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer errorCode;
 
 	private String message;
 
 	private Boolean success;
 
-	private Integer errorCode;
+	private String requestId;
 
-	private Map<Object,Object> members;
+	private DeviceInfo deviceInfo;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(Integer errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getMessage() {
@@ -59,25 +58,38 @@ public class GetMeetingMemberResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Integer getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public Map<Object,Object> getMembers() {
-		return this.members;
+	public DeviceInfo getDeviceInfo() {
+		return this.deviceInfo;
 	}
 
-	public void setMembers(Map<Object,Object> members) {
-		this.members = members;
+	public void setDeviceInfo(DeviceInfo deviceInfo) {
+		this.deviceInfo = deviceInfo;
+	}
+
+	public static class DeviceInfo {
+
+		private String channelType;
+
+		public String getChannelType() {
+			return this.channelType;
+		}
+
+		public void setChannelType(String channelType) {
+			this.channelType = channelType;
+		}
 	}
 
 	@Override
-	public GetMeetingMemberResponse getInstance(UnmarshallerContext context) {
-		return	GetMeetingMemberResponseUnmarshaller.unmarshall(this, context);
+	public UpdateDeviceHeartBeatResponse getInstance(UnmarshallerContext context) {
+		return	UpdateDeviceHeartBeatResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -14,10 +14,8 @@
 
 package com.aliyuncs.aliyuncvc.transform.v20191030;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.aliyuncvc.model.v20191030.GetMeetingMemberResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,12 +27,7 @@ public class GetMeetingMemberResponseUnmarshaller {
 		getMeetingMemberResponse.setMessage(_ctx.stringValue("GetMeetingMemberResponse.Message"));
 		getMeetingMemberResponse.setSuccess(_ctx.booleanValue("GetMeetingMemberResponse.Success"));
 		getMeetingMemberResponse.setErrorCode(_ctx.integerValue("GetMeetingMemberResponse.ErrorCode"));
-
-		List<Integer> members = new ArrayList<Integer>();
-		for (int i = 0; i < _ctx.lengthValue("GetMeetingMemberResponse.Members.Length"); i++) {
-			members.add(_ctx.integerValue("GetMeetingMemberResponse.Members["+ i +"]"));
-		}
-		getMeetingMemberResponse.setMembers(members);
+		getMeetingMemberResponse.setMembers(_ctx.mapValue("GetMeetingMemberResponse.Members"));
 	 
 	 	return getMeetingMemberResponse;
 	}
