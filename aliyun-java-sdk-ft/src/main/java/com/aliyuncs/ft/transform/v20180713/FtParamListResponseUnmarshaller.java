@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class FtParamListResponseUnmarshaller {
 
-	public static FtParamListResponse unmarshall(FtParamListResponse ftParamListResponse, UnmarshallerContext context) {
+	public static FtParamListResponse unmarshall(FtParamListResponse ftParamListResponse, UnmarshallerContext _ctx) {
 		
-		ftParamListResponse.setRequestId(context.stringValue("FtParamListResponse.RequestId"));
-		ftParamListResponse.setName(context.stringValue("FtParamListResponse.Name"));
+		ftParamListResponse.setRequestId(_ctx.stringValue("FtParamListResponse.RequestId"));
+		ftParamListResponse.setName(_ctx.stringValue("FtParamListResponse.Name"));
 	 
 	 	return ftParamListResponse;
 	}

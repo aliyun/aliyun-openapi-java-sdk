@@ -35,7 +35,7 @@ public class QueryFpCompareJobListRequest extends RpcAcsRequest<QueryFpCompareJo
 
 	private String jobIds;
 	public QueryFpCompareJobListRequest() {
-		super("Mts", "2014-06-18", "QueryFpCompareJobList", "mts");
+		super("Mts", "2014-06-18", "QueryFpCompareJobList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

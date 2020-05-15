@@ -31,7 +31,7 @@ public class DeleteMAURuleRequest extends RpcAcsRequest<DeleteMAURuleResponse> {
 
 	private Long ruleId;
 	public DeleteMAURuleRequest() {
-		super("rtc", "2018-01-11", "DeleteMAURule");
+		super("rtc", "2018-01-11", "DeleteMAURule", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

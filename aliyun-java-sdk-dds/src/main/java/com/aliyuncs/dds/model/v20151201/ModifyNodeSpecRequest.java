@@ -51,7 +51,7 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 
 	private Long ownerId;
 	public ModifyNodeSpecRequest() {
-		super("Dds", "2015-12-01", "ModifyNodeSpec", "Dds");
+		super("Dds", "2015-12-01", "ModifyNodeSpec", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

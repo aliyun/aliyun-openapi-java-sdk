@@ -17,6 +17,7 @@ package com.aliyuncs.ehpc.model.v20180412;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ehpc.Endpoint;
 
 /**
  * @author auto create
@@ -43,8 +44,12 @@ public class ModifyImageGatewayConfigRequest extends RpcAcsRequest<ModifyImageGa
 
 	private String imageExpirationTimeout;
 	public ModifyImageGatewayConfigRequest() {
-		super("EHPC", "2018-04-12", "ModifyImageGatewayConfig", "ehs");
+		super("EHPC", "2018-04-12", "ModifyImageGatewayConfig");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public List<Repo> getRepos() {

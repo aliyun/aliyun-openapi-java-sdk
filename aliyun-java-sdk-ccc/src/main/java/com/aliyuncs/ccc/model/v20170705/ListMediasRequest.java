@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListMediasRequest extends RpcAcsRequest<ListMediasResponse> {
-	
-	public ListMediasRequest() {
-		super("CCC", "2017-07-05", "ListMedias");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer pageNumber;
 
@@ -40,6 +32,14 @@ public class ListMediasRequest extends RpcAcsRequest<ListMediasResponse> {
 	private Integer pageSize;
 
 	private String namePrefix;
+	public ListMediasRequest() {
+		super("CCC", "2017-07-05", "ListMedias");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;

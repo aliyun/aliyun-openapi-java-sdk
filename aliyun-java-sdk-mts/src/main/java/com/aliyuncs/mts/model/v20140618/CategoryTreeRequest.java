@@ -33,7 +33,7 @@ public class CategoryTreeRequest extends RpcAcsRequest<CategoryTreeResponse> {
 
 	private Long ownerId;
 	public CategoryTreeRequest() {
-		super("Mts", "2014-06-18", "CategoryTree", "mts");
+		super("Mts", "2014-06-18", "CategoryTree");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

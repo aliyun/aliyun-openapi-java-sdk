@@ -35,7 +35,7 @@ public class ValidateShardTaskRequest extends RpcAcsRequest<ValidateShardTaskRes
 
 	private String sourceTableName;
 	public ValidateShardTaskRequest() {
-		super("Drds", "2019-01-23", "ValidateShardTask", "drds");
+		super("Drds", "2019-01-23", "ValidateShardTask", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

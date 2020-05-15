@@ -101,6 +101,10 @@ public class DescribeScheduledTasksResponse extends AcsResponse {
 
 		private Integer minValue;
 
+		private Integer desiredCapacity;
+
+		private String scalingGroupId;
+
 		public String getScheduledTaskId() {
 			return this.scheduledTaskId;
 		}
@@ -195,6 +199,22 @@ public class DescribeScheduledTasksResponse extends AcsResponse {
 
 		public void setMinValue(Integer minValue) {
 			this.minValue = minValue;
+		}
+
+		public Integer getDesiredCapacity() {
+			return this.desiredCapacity;
+		}
+
+		public void setDesiredCapacity(Integer desiredCapacity) {
+			this.desiredCapacity = desiredCapacity;
+		}
+
+		public String getScalingGroupId() {
+			return this.scalingGroupId;
+		}
+
+		public void setScalingGroupId(String scalingGroupId) {
+			this.scalingGroupId = scalingGroupId;
 		}
 	}
 

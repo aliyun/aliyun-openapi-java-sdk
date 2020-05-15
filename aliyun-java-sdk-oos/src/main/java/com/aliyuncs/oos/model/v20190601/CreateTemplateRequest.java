@@ -15,6 +15,9 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.oos.Endpoint;
 
 /**
@@ -22,18 +25,45 @@ import com.aliyuncs.oos.Endpoint;
  * @version 
  */
 public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse> {
-	
+	   
+
+	private String content;
+
+	private Map<Object,Object> tags;
+
+	private String templateName;
+
+	private String versionName;
 	public CreateTemplateRequest() {
 		super("oos", "2019-06-01", "CreateTemplate", "oos");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String templateName;
+	public String getContent() {
+		return this.content;
+	}
 
-	private String content;
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putQueryParameter("Content", content);
+		}
+	}
+
+	public Map<Object,Object> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(Map<Object,Object> tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", new Gson().toJson(tags));
+		}
+	}
 
 	public String getTemplateName() {
 		return this.templateName;
@@ -46,14 +76,14 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 		}
 	}
 
-	public String getContent() {
-		return this.content;
+	public String getVersionName() {
+		return this.versionName;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
-		if(content != null){
-			putQueryParameter("Content", content);
+	public void setVersionName(String versionName) {
+		this.versionName = versionName;
+		if(versionName != null){
+			putQueryParameter("VersionName", versionName);
 		}
 	}
 

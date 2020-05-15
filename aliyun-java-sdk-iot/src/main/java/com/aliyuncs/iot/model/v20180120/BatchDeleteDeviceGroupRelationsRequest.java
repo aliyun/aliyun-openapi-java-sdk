@@ -32,7 +32,7 @@ public class BatchDeleteDeviceGroupRelationsRequest extends RpcAcsRequest<BatchD
 
 	private List<Device> devices;
 	public BatchDeleteDeviceGroupRelationsRequest() {
-		super("Iot", "2018-01-20", "BatchDeleteDeviceGroupRelations", "iot");
+		super("Iot", "2018-01-20", "BatchDeleteDeviceGroupRelations", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

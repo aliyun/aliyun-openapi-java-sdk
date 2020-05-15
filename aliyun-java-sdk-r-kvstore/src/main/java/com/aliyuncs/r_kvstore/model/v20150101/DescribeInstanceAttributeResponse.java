@@ -123,6 +123,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private String vpcCloudInstanceId;
 
+		private Boolean instanceReleaseProtection;
+
 		private List<Tag> tags;
 
 		public String getInstanceId() {
@@ -427,6 +429,14 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
 			this.vpcCloudInstanceId = vpcCloudInstanceId;
+		}
+
+		public Boolean getInstanceReleaseProtection() {
+			return this.instanceReleaseProtection;
+		}
+
+		public void setInstanceReleaseProtection(Boolean instanceReleaseProtection) {
+			this.instanceReleaseProtection = instanceReleaseProtection;
 		}
 
 		public List<Tag> getTags() {

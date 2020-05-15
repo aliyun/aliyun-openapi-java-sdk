@@ -30,7 +30,7 @@ public class DeleteSubscriptionInstanceRequest extends RpcAcsRequest<DeleteSubsc
 
 	private String accountId;
 	public DeleteSubscriptionInstanceRequest() {
-		super("Dts", "2020-01-01", "DeleteSubscriptionInstance", "dts");
+		super("Dts", "2020-01-01", "DeleteSubscriptionInstance");
 		setMethod(MethodType.POST);
 	}
 

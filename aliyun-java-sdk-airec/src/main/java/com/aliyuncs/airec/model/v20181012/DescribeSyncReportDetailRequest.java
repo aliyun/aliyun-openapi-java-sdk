@@ -27,6 +27,8 @@ public class DescribeSyncReportDetailRequest extends RoaAcsRequest<DescribeSyncR
 
 	private String instanceId;
 
+	private String levelType;
+
 	private Long endTime;
 
 	private Long startTime;
@@ -50,6 +52,17 @@ public class DescribeSyncReportDetailRequest extends RoaAcsRequest<DescribeSyncR
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getLevelType() {
+		return this.levelType;
+	}
+
+	public void setLevelType(String levelType) {
+		this.levelType = levelType;
+		if(levelType != null){
+			putQueryParameter("LevelType", levelType);
 		}
 	}
 

@@ -29,7 +29,7 @@ public class BindImagePackageRequest extends RpcAcsRequest<BindImagePackageRespo
 
 	private String imagePackageInstanceId;
 	public BindImagePackageRequest() {
-		super("Market", "2015-11-01", "BindImagePackage", "yunmarket");
+		super("Market", "2015-11-01", "BindImagePackage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

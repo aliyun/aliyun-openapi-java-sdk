@@ -25,44 +25,22 @@ import com.aliyuncs.iot.Endpoint;
 public class BindDriverToEdgeInstanceRequest extends RpcAcsRequest<BindDriverToEdgeInstanceResponse> {
 	   
 
-	private String orderId;
-
-	private String instanceId;
-
 	private String driverId;
 
 	private String iotInstanceId;
 
 	private String driverVersion;
+
+	private String orderId;
+
+	private String instanceId;
 	public BindDriverToEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "BindDriverToEdgeInstance", "iot");
+		super("Iot", "2018-01-20", "BindDriverToEdgeInstance", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
 	}
 
 	public String getDriverId() {
@@ -95,6 +73,28 @@ public class BindDriverToEdgeInstanceRequest extends RpcAcsRequest<BindDriverToE
 		this.driverVersion = driverVersion;
 		if(driverVersion != null){
 			putQueryParameter("DriverVersion", driverVersion);
+		}
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

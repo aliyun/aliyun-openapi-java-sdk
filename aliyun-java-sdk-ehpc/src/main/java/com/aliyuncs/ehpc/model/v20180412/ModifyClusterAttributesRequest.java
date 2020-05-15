@@ -16,6 +16,7 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ehpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,14 +25,33 @@ import com.aliyuncs.http.MethodType;
 public class ModifyClusterAttributesRequest extends RpcAcsRequest<ModifyClusterAttributesResponse> {
 	   
 
+	private String imageId;
+
 	private String description;
 
 	private String clusterId;
 
+	private String imageOwnerAlias;
+
 	private String name;
 	public ModifyClusterAttributesRequest() {
-		super("EHPC", "2018-04-12", "ModifyClusterAttributes", "ehs");
+		super("EHPC", "2018-04-12", "ModifyClusterAttributes");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
 	}
 
 	public String getDescription() {
@@ -53,6 +73,17 @@ public class ModifyClusterAttributesRequest extends RpcAcsRequest<ModifyClusterA
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getImageOwnerAlias() {
+		return this.imageOwnerAlias;
+	}
+
+	public void setImageOwnerAlias(String imageOwnerAlias) {
+		this.imageOwnerAlias = imageOwnerAlias;
+		if(imageOwnerAlias != null){
+			putQueryParameter("ImageOwnerAlias", imageOwnerAlias);
 		}
 	}
 

@@ -15,22 +15,74 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDataLimitsRequest extends RpcAcsRequest<DescribeDataLimitsResponse> {
-	
-	public DescribeDataLimitsRequest() {
-		super("Sddp", "2019-01-03", "DescribeDataLimits", "sddp");
-	}
+	   
+
+	private String parentId;
+
+	private Integer pageSize;
+
+	private Integer checkStatus;
 
 	private String lang;
 
-	private Integer resourceType;
+	private String serviceRegionId;
 
-	private String parentId;
+	private String engineType;
+
+	private Integer auditStatus;
+
+	private Integer currentPage;
+
+	private Integer resourceType;
+	public DescribeDataLimitsRequest() {
+		super("Sddp", "2019-01-03", "DescribeDataLimits", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getParentId() {
+		return this.parentId;
+	}
+
+	public void setParentId(String parentId) {
+		this.parentId = parentId;
+		if(parentId != null){
+			putQueryParameter("ParentId", parentId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCheckStatus() {
+		return this.checkStatus;
+	}
+
+	public void setCheckStatus(Integer checkStatus) {
+		this.checkStatus = checkStatus;
+		if(checkStatus != null){
+			putQueryParameter("CheckStatus", checkStatus.toString());
+		}
+	}
 
 	public String getLang() {
 		return this.lang;
@@ -43,6 +95,50 @@ public class DescribeDataLimitsRequest extends RpcAcsRequest<DescribeDataLimitsR
 		}
 	}
 
+	public String getServiceRegionId() {
+		return this.serviceRegionId;
+	}
+
+	public void setServiceRegionId(String serviceRegionId) {
+		this.serviceRegionId = serviceRegionId;
+		if(serviceRegionId != null){
+			putQueryParameter("ServiceRegionId", serviceRegionId);
+		}
+	}
+
+	public String getEngineType() {
+		return this.engineType;
+	}
+
+	public void setEngineType(String engineType) {
+		this.engineType = engineType;
+		if(engineType != null){
+			putQueryParameter("EngineType", engineType);
+		}
+	}
+
+	public Integer getAuditStatus() {
+		return this.auditStatus;
+	}
+
+	public void setAuditStatus(Integer auditStatus) {
+		this.auditStatus = auditStatus;
+		if(auditStatus != null){
+			putQueryParameter("AuditStatus", auditStatus.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
 	public Integer getResourceType() {
 		return this.resourceType;
 	}
@@ -51,17 +147,6 @@ public class DescribeDataLimitsRequest extends RpcAcsRequest<DescribeDataLimitsR
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType.toString());
-		}
-	}
-
-	public String getParentId() {
-		return this.parentId;
-	}
-
-	public void setParentId(String parentId) {
-		this.parentId = parentId;
-		if(parentId != null){
-			putQueryParameter("ParentId", parentId);
 		}
 	}
 

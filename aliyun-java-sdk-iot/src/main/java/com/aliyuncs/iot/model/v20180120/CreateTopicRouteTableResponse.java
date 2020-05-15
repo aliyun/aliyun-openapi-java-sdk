@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.iot.transform.v20180120.CreateTopicRouteTableResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -35,7 +36,7 @@ public class CreateTopicRouteTableResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private List<String> failureTopics;
+	private List<Map<Object,Object>> failureTopics;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -77,11 +78,11 @@ public class CreateTopicRouteTableResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public List<String> getFailureTopics() {
+	public List<Map<Object,Object>> getFailureTopics() {
 		return this.failureTopics;
 	}
 
-	public void setFailureTopics(List<String> failureTopics) {
+	public void setFailureTopics(List<Map<Object,Object>> failureTopics) {
 		this.failureTopics = failureTopics;
 	}
 

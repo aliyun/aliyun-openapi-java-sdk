@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyLifecycleHookResponseUnmarshaller {
 
-	public static ModifyLifecycleHookResponse unmarshall(ModifyLifecycleHookResponse modifyLifecycleHookResponse, UnmarshallerContext context) {
+	public static ModifyLifecycleHookResponse unmarshall(ModifyLifecycleHookResponse modifyLifecycleHookResponse, UnmarshallerContext _ctx) {
 		
-		modifyLifecycleHookResponse.setRequestId(context.stringValue("ModifyLifecycleHookResponse.RequestId"));
+		modifyLifecycleHookResponse.setRequestId(_ctx.stringValue("ModifyLifecycleHookResponse.RequestId"));
 	 
 	 	return modifyLifecycleHookResponse;
 	}

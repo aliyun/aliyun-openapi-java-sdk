@@ -31,6 +31,8 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private String securityToken;
 
 	private Integer pageSize;
@@ -38,8 +40,6 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 	private String roleType;
 
 	private String nodeId;
-
-	private Long sQLId;
 
 	private String resourceOwnerAccount;
 
@@ -53,7 +53,7 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 
 	private String dBName;
 	public DescribeRunningLogRecordsRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeRunningLogRecords", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeRunningLogRecords", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -91,6 +91,17 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -135,17 +146,6 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		this.nodeId = nodeId;
 		if(nodeId != null){
 			putQueryParameter("NodeId", nodeId);
-		}
-	}
-
-	public Long getSQLId() {
-		return this.sQLId;
-	}
-
-	public void setSQLId(Long sQLId) {
-		this.sQLId = sQLId;
-		if(sQLId != null){
-			putQueryParameter("SQLId", sQLId.toString());
 		}
 	}
 

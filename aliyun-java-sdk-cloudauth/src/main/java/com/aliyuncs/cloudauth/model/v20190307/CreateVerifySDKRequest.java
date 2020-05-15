@@ -28,10 +28,6 @@ public class CreateVerifySDKRequest extends RpcAcsRequest<CreateVerifySDKRespons
 	private String appUrl;
 
 	private String platform;
-
-	private String sourceIp;
-
-	private String lang;
 	public CreateVerifySDKRequest() {
 		super("Cloudauth", "2019-03-07", "CreateVerifySDK", "cloudauth");
 		setMethod(MethodType.POST);
@@ -60,28 +56,6 @@ public class CreateVerifySDKRequest extends RpcAcsRequest<CreateVerifySDKRespons
 		this.platform = platform;
 		if(platform != null){
 			putQueryParameter("Platform", platform);
-		}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
 		}
 	}
 

@@ -23,9 +23,9 @@ public class StopApplicationResponseUnmarshaller {
 	public static StopApplicationResponse unmarshall(StopApplicationResponse stopApplicationResponse, UnmarshallerContext _ctx) {
 		
 		stopApplicationResponse.setRequestId(_ctx.stringValue("StopApplicationResponse.RequestId"));
+		stopApplicationResponse.setChangeOrderId(_ctx.stringValue("StopApplicationResponse.ChangeOrderId"));
 		stopApplicationResponse.setCode(_ctx.integerValue("StopApplicationResponse.Code"));
 		stopApplicationResponse.setMessage(_ctx.stringValue("StopApplicationResponse.Message"));
-		stopApplicationResponse.setChangeOrderId(_ctx.stringValue("StopApplicationResponse.ChangeOrderId"));
 	 
 	 	return stopApplicationResponse;
 	}

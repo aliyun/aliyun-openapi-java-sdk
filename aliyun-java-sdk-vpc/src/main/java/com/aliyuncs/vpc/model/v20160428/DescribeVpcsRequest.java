@@ -27,6 +27,8 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 
 	private Long resourceOwnerId;
 
+	private Long vpcOwnerId;
+
 	private Integer pageNumber;
 
 	private String vpcName;
@@ -47,7 +49,7 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 
 	private String vpcId;
 	public DescribeVpcsRequest() {
-		super("Vpc", "2016-04-28", "DescribeVpcs", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeVpcs", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,6 +65,17 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Long getVpcOwnerId() {
+		return this.vpcOwnerId;
+	}
+
+	public void setVpcOwnerId(Long vpcOwnerId) {
+		this.vpcOwnerId = vpcOwnerId;
+		if(vpcOwnerId != null){
+			putQueryParameter("VpcOwnerId", vpcOwnerId.toString());
 		}
 	}
 

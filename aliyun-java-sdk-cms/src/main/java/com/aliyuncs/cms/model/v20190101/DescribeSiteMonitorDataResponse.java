@@ -32,9 +32,9 @@ public class DescribeSiteMonitorDataResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String data;
-
 	private String nextToken;
+
+	private String data;
 
 	public String getCode() {
 		return this.code;
@@ -68,20 +68,20 @@ public class DescribeSiteMonitorDataResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override

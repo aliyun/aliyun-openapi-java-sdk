@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
 /**
@@ -22,22 +23,15 @@ import com.aliyuncs.cbn.Endpoint;
  * @version 
  */
 public class DescribeRouteServicesInCenRequest extends RpcAcsRequest<DescribeRouteServicesInCenResponse> {
-	
-	public DescribeRouteServicesInCenRequest() {
-		super("Cbn", "2017-09-12", "DescribeRouteServicesInCen", "cbn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String cenId;
 
-	private String ownerAccount;
+	private String accessRegionId;
+
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
@@ -45,13 +39,21 @@ public class DescribeRouteServicesInCenRequest extends RpcAcsRequest<DescribeRou
 
 	private String hostRegionId;
 
-	private String accessRegionId;
-
-	private Long ownerId;
-
 	private String hostVpcId;
 
-	private Integer pageNumber;
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+	public DescribeRouteServicesInCenRequest() {
+		super("Cbn", "2017-09-12", "DescribeRouteServicesInCen", "Cbn");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -61,17 +63,6 @@ public class DescribeRouteServicesInCenRequest extends RpcAcsRequest<DescribeRou
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -86,14 +77,25 @@ public class DescribeRouteServicesInCenRequest extends RpcAcsRequest<DescribeRou
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getAccessRegionId() {
+		return this.accessRegionId;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setAccessRegionId(String accessRegionId) {
+		this.accessRegionId = accessRegionId;
+		if(accessRegionId != null){
+			putQueryParameter("AccessRegionId", accessRegionId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -130,28 +132,6 @@ public class DescribeRouteServicesInCenRequest extends RpcAcsRequest<DescribeRou
 		}
 	}
 
-	public String getAccessRegionId() {
-		return this.accessRegionId;
-	}
-
-	public void setAccessRegionId(String accessRegionId) {
-		this.accessRegionId = accessRegionId;
-		if(accessRegionId != null){
-			putQueryParameter("AccessRegionId", accessRegionId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getHostVpcId() {
 		return this.hostVpcId;
 	}
@@ -163,14 +143,36 @@ public class DescribeRouteServicesInCenRequest extends RpcAcsRequest<DescribeRou
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -35,7 +35,7 @@ public class EnableSqlAuditRequest extends RpcAcsRequest<EnableSqlAuditResponse>
 
 	private String recallEndTimestamp;
 	public EnableSqlAuditRequest() {
-		super("Drds", "2019-01-23", "EnableSqlAudit", "drds");
+		super("Drds", "2019-01-23", "EnableSqlAudit", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

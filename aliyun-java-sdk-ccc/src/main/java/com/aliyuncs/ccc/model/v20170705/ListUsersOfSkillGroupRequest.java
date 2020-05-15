@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListUsersOfSkillGroupRequest extends RpcAcsRequest<ListUsersOfSkillGroupResponse> {
-	
-	public ListUsersOfSkillGroupRequest() {
-		super("CCC", "2017-07-05", "ListUsersOfSkillGroup");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer pageNumber;
 
@@ -40,6 +32,14 @@ public class ListUsersOfSkillGroupRequest extends RpcAcsRequest<ListUsersOfSkill
 	private String skillGroupId;
 
 	private Integer pageSize;
+	public ListUsersOfSkillGroupRequest() {
+		super("CCC", "2017-07-05", "ListUsersOfSkillGroup");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;

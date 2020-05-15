@@ -24,15 +24,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class CreateScenarioRequest extends RpcAcsRequest<CreateScenarioResponse> {
-	
-	public CreateScenarioRequest() {
-		super("CCC", "2017-07-05", "CreateScenario");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<String> surveysJsons;
 
@@ -45,6 +37,14 @@ public class CreateScenarioRequest extends RpcAcsRequest<CreateScenarioResponse>
 	private String strategyJson;
 
 	private String name;
+	public CreateScenarioRequest() {
+		super("CCC", "2017-07-05", "CreateScenario");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<String> getSurveysJsons() {
 		return this.surveysJsons;

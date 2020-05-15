@@ -45,7 +45,7 @@ public class ModifyExpressCloudConnectionAttributeRequest extends RpcAcsRequest<
 
 	private String name;
 	public ModifyExpressCloudConnectionAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyExpressCloudConnectionAttribute", "Vpc");
+		super("Vpc", "2016-04-28", "ModifyExpressCloudConnectionAttribute", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

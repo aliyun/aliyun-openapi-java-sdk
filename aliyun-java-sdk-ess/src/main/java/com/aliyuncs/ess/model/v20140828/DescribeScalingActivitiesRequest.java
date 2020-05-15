@@ -15,16 +15,14 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeScalingActivitiesRequest extends RpcAcsRequest<DescribeScalingActivitiesResponse> {
-	
-	public DescribeScalingActivitiesRequest() {
-		super("Ess", "2014-08-28", "DescribeScalingActivities", "ess");
-	}
+	   
 
 	private String scalingActivityId9;
 
@@ -81,6 +79,10 @@ public class DescribeScalingActivitiesRequest extends RpcAcsRequest<DescribeScal
 	private Long ownerId;
 
 	private String scalingActivityId20;
+	public DescribeScalingActivitiesRequest() {
+		super("Ess", "2014-08-28", "DescribeScalingActivities", "ess");
+		setMethod(MethodType.POST);
+	}
 
 	public String getScalingActivityId9() {
 		return this.scalingActivityId9;

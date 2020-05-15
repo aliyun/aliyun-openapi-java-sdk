@@ -105,6 +105,10 @@ public class DescribeSslVpnServersResponse extends AcsResponse {
 
 		private String internetIp;
 
+		private Boolean enableMultiFactorAuth;
+
+		private String iDaaSInstanceId;
+
 		public String getRegionId() {
 			return this.regionId;
 		}
@@ -215,6 +219,22 @@ public class DescribeSslVpnServersResponse extends AcsResponse {
 
 		public void setInternetIp(String internetIp) {
 			this.internetIp = internetIp;
+		}
+
+		public Boolean getEnableMultiFactorAuth() {
+			return this.enableMultiFactorAuth;
+		}
+
+		public void setEnableMultiFactorAuth(Boolean enableMultiFactorAuth) {
+			this.enableMultiFactorAuth = enableMultiFactorAuth;
+		}
+
+		public String getIDaaSInstanceId() {
+			return this.iDaaSInstanceId;
+		}
+
+		public void setIDaaSInstanceId(String iDaaSInstanceId) {
+			this.iDaaSInstanceId = iDaaSInstanceId;
 		}
 	}
 

@@ -133,6 +133,8 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 			private String vpcInstanceId;
 
+			private String privateZoneConnectionString;
+
 			public String getConnectionString() {
 				return this.connectionString;
 			}
@@ -187,6 +189,14 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 			public void setVpcInstanceId(String vpcInstanceId) {
 				this.vpcInstanceId = vpcInstanceId;
+			}
+
+			public String getPrivateZoneConnectionString() {
+				return this.privateZoneConnectionString;
+			}
+
+			public void setPrivateZoneConnectionString(String privateZoneConnectionString) {
+				this.privateZoneConnectionString = privateZoneConnectionString;
 			}
 		}
 	}

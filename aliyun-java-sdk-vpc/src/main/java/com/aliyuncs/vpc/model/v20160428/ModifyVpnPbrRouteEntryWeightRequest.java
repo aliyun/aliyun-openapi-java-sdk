@@ -49,7 +49,7 @@ public class ModifyVpnPbrRouteEntryWeightRequest extends RpcAcsRequest<ModifyVpn
 
 	private String overlayMode;
 	public ModifyVpnPbrRouteEntryWeightRequest() {
-		super("Vpc", "2016-04-28", "ModifyVpnPbrRouteEntryWeight", "Vpc");
+		super("Vpc", "2016-04-28", "ModifyVpnPbrRouteEntryWeight", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

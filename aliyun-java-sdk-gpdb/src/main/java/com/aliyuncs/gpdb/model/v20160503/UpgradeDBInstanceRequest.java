@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -22,34 +23,24 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceResponse> {
-	
+	   
+
+	private String dBInstanceId;
+
+	private String dBInstanceGroupCount;
+
+	private Long ownerId;
+
+	private String dBInstanceClass;
+
+	private String payType;
 	public UpgradeDBInstanceRequest() {
 		super("gpdb", "2016-05-03", "UpgradeDBInstance", "gpdb");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	private String dBInstanceGroupCount;
-
-	private String dBInstanceId;
-
-	private Long ownerId;
-
-	private String payType;
-
-	private String dBInstanceClass;
-
-	public String getDBInstanceGroupCount() {
-		return this.dBInstanceGroupCount;
-	}
-
-	public void setDBInstanceGroupCount(String dBInstanceGroupCount) {
-		this.dBInstanceGroupCount = dBInstanceGroupCount;
-		if(dBInstanceGroupCount != null){
-			putQueryParameter("DBInstanceGroupCount", dBInstanceGroupCount);
-		}
 	}
 
 	public String getDBInstanceId() {
@@ -60,6 +51,17 @@ public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceRes
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getDBInstanceGroupCount() {
+		return this.dBInstanceGroupCount;
+	}
+
+	public void setDBInstanceGroupCount(String dBInstanceGroupCount) {
+		this.dBInstanceGroupCount = dBInstanceGroupCount;
+		if(dBInstanceGroupCount != null){
+			putQueryParameter("DBInstanceGroupCount", dBInstanceGroupCount);
 		}
 	}
 
@@ -74,17 +76,6 @@ public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceRes
 		}
 	}
 
-	public String getPayType() {
-		return this.payType;
-	}
-
-	public void setPayType(String payType) {
-		this.payType = payType;
-		if(payType != null){
-			putQueryParameter("PayType", payType);
-		}
-	}
-
 	public String getDBInstanceClass() {
 		return this.dBInstanceClass;
 	}
@@ -93,6 +84,17 @@ public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceRes
 		this.dBInstanceClass = dBInstanceClass;
 		if(dBInstanceClass != null){
 			putQueryParameter("DBInstanceClass", dBInstanceClass);
+		}
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
 		}
 	}
 

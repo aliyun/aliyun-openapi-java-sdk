@@ -28,6 +28,14 @@ public class CreateMeetingRequest extends RpcAcsRequest<CreateMeetingResponse> {
 	private String meetingName;
 
 	private String userId;
+
+	private Boolean openPasswordFlag;
+
+	private String password;
+
+	private Boolean masterEnableFlag;
+
+	private String meetingMode;
 	public CreateMeetingRequest() {
 		super("aliyuncvc", "2019-10-30", "CreateMeeting", "aliyuncvc");
 		setMethod(MethodType.POST);
@@ -56,6 +64,50 @@ public class CreateMeetingRequest extends RpcAcsRequest<CreateMeetingResponse> {
 		this.userId = userId;
 		if(userId != null){
 			putBodyParameter("UserId", userId);
+		}
+	}
+
+	public Boolean getOpenPasswordFlag() {
+		return this.openPasswordFlag;
+	}
+
+	public void setOpenPasswordFlag(Boolean openPasswordFlag) {
+		this.openPasswordFlag = openPasswordFlag;
+		if(openPasswordFlag != null){
+			putBodyParameter("OpenPasswordFlag", openPasswordFlag.toString());
+		}
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putBodyParameter("Password", password);
+		}
+	}
+
+	public Boolean getMasterEnableFlag() {
+		return this.masterEnableFlag;
+	}
+
+	public void setMasterEnableFlag(Boolean masterEnableFlag) {
+		this.masterEnableFlag = masterEnableFlag;
+		if(masterEnableFlag != null){
+			putBodyParameter("MasterEnableFlag", masterEnableFlag.toString());
+		}
+	}
+
+	public String getMeetingMode() {
+		return this.meetingMode;
+	}
+
+	public void setMeetingMode(String meetingMode) {
+		this.meetingMode = meetingMode;
+		if(meetingMode != null){
+			putBodyParameter("MeetingMode", meetingMode);
 		}
 	}
 

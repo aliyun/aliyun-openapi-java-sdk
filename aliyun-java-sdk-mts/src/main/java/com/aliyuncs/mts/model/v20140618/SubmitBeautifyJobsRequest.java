@@ -41,7 +41,7 @@ public class SubmitBeautifyJobsRequest extends RpcAcsRequest<SubmitBeautifyJobsR
 
 	private Boolean async;
 	public SubmitBeautifyJobsRequest() {
-		super("Mts", "2014-06-18", "SubmitBeautifyJobs", "mts");
+		super("Mts", "2014-06-18", "SubmitBeautifyJobs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

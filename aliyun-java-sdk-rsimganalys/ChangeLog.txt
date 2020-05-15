@@ -1,3 +1,6 @@
+2020-03-14 Version: 2.1.3
+- Support zone identification.
+
 2020-02-06 Version: 2.1.1
 - Add getImage Interface.
 

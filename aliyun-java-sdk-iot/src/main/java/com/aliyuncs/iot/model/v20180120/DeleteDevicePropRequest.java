@@ -35,7 +35,7 @@ public class DeleteDevicePropRequest extends RpcAcsRequest<DeleteDevicePropRespo
 
 	private String deviceName;
 	public DeleteDevicePropRequest() {
-		super("Iot", "2018-01-20", "DeleteDeviceProp", "iot");
+		super("Iot", "2018-01-20", "DeleteDeviceProp", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

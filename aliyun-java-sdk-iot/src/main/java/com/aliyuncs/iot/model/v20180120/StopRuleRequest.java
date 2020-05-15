@@ -29,7 +29,7 @@ public class StopRuleRequest extends RpcAcsRequest<StopRuleResponse> {
 
 	private Long ruleId;
 	public StopRuleRequest() {
-		super("Iot", "2018-01-20", "StopRule", "iot");
+		super("Iot", "2018-01-20", "StopRule", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -15,7 +15,6 @@
 package com.aliyuncs.dg.model.v20190327;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dg.Endpoint;
 
@@ -24,10 +23,9 @@ import com.aliyuncs.dg.Endpoint;
  * @version 
  */
 public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
-	
+	   
 	public DescribeRegionsRequest() {
 		super("dg", "2019-03-27", "DescribeRegions", "dg");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

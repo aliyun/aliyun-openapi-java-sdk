@@ -30,7 +30,7 @@ public class DeleteEventRuleTargetsRequest extends RpcAcsRequest<DeleteEventRule
 	private List<String> idss;
 	public DeleteEventRuleTargetsRequest() {
 		super("Cms", "2019-01-01", "DeleteEventRuleTargets", "cms");
-		setMethod(MethodType.PUT);
+		setMethod(MethodType.POST);
 	}
 
 	public String getRuleName() {

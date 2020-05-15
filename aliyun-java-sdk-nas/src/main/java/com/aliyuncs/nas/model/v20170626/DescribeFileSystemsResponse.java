@@ -99,6 +99,8 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 		private Long meteredSize;
 
+		private Long meteredIASize;
+
 		private Long bandwidth;
 
 		private Long capacity;
@@ -111,9 +113,13 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 		private Long mountTargetCountLimit;
 
+		private String nasNamespaceId;
+
 		private List<MountTarget> mountTargets;
 
 		private List<_Package> packages;
+
+		private List<String> supportedFeatures;
 
 		private Ldap ldap;
 
@@ -205,6 +211,14 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.meteredSize = meteredSize;
 		}
 
+		public Long getMeteredIASize() {
+			return this.meteredIASize;
+		}
+
+		public void setMeteredIASize(Long meteredIASize) {
+			this.meteredIASize = meteredIASize;
+		}
+
 		public Long getBandwidth() {
 			return this.bandwidth;
 		}
@@ -253,6 +267,14 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.mountTargetCountLimit = mountTargetCountLimit;
 		}
 
+		public String getNasNamespaceId() {
+			return this.nasNamespaceId;
+		}
+
+		public void setNasNamespaceId(String nasNamespaceId) {
+			this.nasNamespaceId = nasNamespaceId;
+		}
+
 		public List<MountTarget> getMountTargets() {
 			return this.mountTargets;
 		}
@@ -267,6 +289,14 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 		public void setPackages(List<_Package> packages) {
 			this.packages = packages;
+		}
+
+		public List<String> getSupportedFeatures() {
+			return this.supportedFeatures;
+		}
+
+		public void setSupportedFeatures(List<String> supportedFeatures) {
+			this.supportedFeatures = supportedFeatures;
 		}
 
 		public Ldap getLdap() {

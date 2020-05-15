@@ -32,7 +32,7 @@ public class DescribeSynchronizationObjectModifyStatusRequest extends RpcAcsRequ
 
 	private String taskId;
 	public DescribeSynchronizationObjectModifyStatusRequest() {
-		super("Dts", "2020-01-01", "DescribeSynchronizationObjectModifyStatus", "dts");
+		super("Dts", "2020-01-01", "DescribeSynchronizationObjectModifyStatus");
 		setMethod(MethodType.POST);
 	}
 

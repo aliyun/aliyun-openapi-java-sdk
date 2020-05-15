@@ -23,19 +23,19 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class GetConversationListRequest extends RpcAcsRequest<GetConversationListResponse> {
-	
+	   
+
+	private String instanceId;
+
+	private String taskId;
 	public GetConversationListRequest() {
 		super("CCC", "2017-07-05", "GetConversationList");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String taskId;
 
 	public String getInstanceId() {
 		return this.instanceId;

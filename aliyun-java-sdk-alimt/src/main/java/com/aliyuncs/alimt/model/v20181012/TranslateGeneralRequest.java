@@ -15,16 +15,15 @@
 package com.aliyuncs.alimt.model.v20181012;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alimt.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class TranslateGeneralRequest extends RpcAcsRequest<TranslateGeneralResponse> {
-	
-	public TranslateGeneralRequest() {
-		super("alimt", "2018-10-12", "TranslateGeneral", "alimt");
-	}
+	   
 
 	private String sourceLanguage;
 
@@ -32,9 +31,17 @@ public class TranslateGeneralRequest extends RpcAcsRequest<TranslateGeneralRespo
 
 	private String formatType;
 
-	private String targetLanguage;
-
 	private String scene;
+
+	private String targetLanguage;
+	public TranslateGeneralRequest() {
+		super("alimt", "2018-10-12", "TranslateGeneral", "alimt");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getSourceLanguage() {
 		return this.sourceLanguage;
@@ -69,17 +76,6 @@ public class TranslateGeneralRequest extends RpcAcsRequest<TranslateGeneralRespo
 		}
 	}
 
-	public String getTargetLanguage() {
-		return this.targetLanguage;
-	}
-
-	public void setTargetLanguage(String targetLanguage) {
-		this.targetLanguage = targetLanguage;
-		if(targetLanguage != null){
-			putBodyParameter("TargetLanguage", targetLanguage);
-		}
-	}
-
 	public String getScene() {
 		return this.scene;
 	}
@@ -88,6 +84,17 @@ public class TranslateGeneralRequest extends RpcAcsRequest<TranslateGeneralRespo
 		this.scene = scene;
 		if(scene != null){
 			putBodyParameter("Scene", scene);
+		}
+	}
+
+	public String getTargetLanguage() {
+		return this.targetLanguage;
+	}
+
+	public void setTargetLanguage(String targetLanguage) {
+		this.targetLanguage = targetLanguage;
+		if(targetLanguage != null){
+			putBodyParameter("TargetLanguage", targetLanguage);
 		}
 	}
 

@@ -38,6 +38,10 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String imageFamily;
+
+	private String status;
 	public ModifyImageAttributeRequest() {
 		super("Ecs", "2014-05-26", "ModifyImageAttribute", "ecs");
 		setMethod(MethodType.POST);
@@ -121,6 +125,28 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getImageFamily() {
+		return this.imageFamily;
+	}
+
+	public void setImageFamily(String imageFamily) {
+		this.imageFamily = imageFamily;
+		if(imageFamily != null){
+			putQueryParameter("ImageFamily", imageFamily);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

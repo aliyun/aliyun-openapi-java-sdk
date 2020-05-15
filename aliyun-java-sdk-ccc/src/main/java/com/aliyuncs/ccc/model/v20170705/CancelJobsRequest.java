@@ -24,15 +24,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class CancelJobsRequest extends RpcAcsRequest<CancelJobsResponse> {
-	
-	public CancelJobsRequest() {
-		super("CCC", "2017-07-05", "CancelJobs");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Boolean all;
 
@@ -45,6 +37,14 @@ public class CancelJobsRequest extends RpcAcsRequest<CancelJobsResponse> {
 	private String instanceId;
 
 	private String scenarioId;
+	public CancelJobsRequest() {
+		super("CCC", "2017-07-05", "CancelJobs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getAll() {
 		return this.all;

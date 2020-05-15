@@ -23,8 +23,6 @@ public class DescribeSQLCollectorRetentionResponseUnmarshaller {
 	public static DescribeSQLCollectorRetentionResponse unmarshall(DescribeSQLCollectorRetentionResponse describeSQLCollectorRetentionResponse, UnmarshallerContext _ctx) {
 		
 		describeSQLCollectorRetentionResponse.setRequestId(_ctx.stringValue("DescribeSQLCollectorRetentionResponse.RequestId"));
-		describeSQLCollectorRetentionResponse.setDBInstanceID(_ctx.integerValue("DescribeSQLCollectorRetentionResponse.DBInstanceID"));
-		describeSQLCollectorRetentionResponse.setDBInstanceName(_ctx.stringValue("DescribeSQLCollectorRetentionResponse.DBInstanceName"));
 		describeSQLCollectorRetentionResponse.setConfigValue(_ctx.stringValue("DescribeSQLCollectorRetentionResponse.ConfigValue"));
 	 
 	 	return describeSQLCollectorRetentionResponse;

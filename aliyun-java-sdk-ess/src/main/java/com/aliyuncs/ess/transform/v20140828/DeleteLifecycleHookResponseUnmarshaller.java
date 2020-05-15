@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteLifecycleHookResponseUnmarshaller {
 
-	public static DeleteLifecycleHookResponse unmarshall(DeleteLifecycleHookResponse deleteLifecycleHookResponse, UnmarshallerContext context) {
+	public static DeleteLifecycleHookResponse unmarshall(DeleteLifecycleHookResponse deleteLifecycleHookResponse, UnmarshallerContext _ctx) {
 		
-		deleteLifecycleHookResponse.setRequestId(context.stringValue("DeleteLifecycleHookResponse.RequestId"));
+		deleteLifecycleHookResponse.setRequestId(_ctx.stringValue("DeleteLifecycleHookResponse.RequestId"));
 	 
 	 	return deleteLifecycleHookResponse;
 	}

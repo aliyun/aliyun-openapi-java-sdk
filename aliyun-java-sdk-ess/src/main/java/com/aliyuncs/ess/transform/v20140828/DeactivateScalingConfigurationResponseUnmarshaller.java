@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeactivateScalingConfigurationResponseUnmarshaller {
 
-	public static DeactivateScalingConfigurationResponse unmarshall(DeactivateScalingConfigurationResponse deactivateScalingConfigurationResponse, UnmarshallerContext context) {
+	public static DeactivateScalingConfigurationResponse unmarshall(DeactivateScalingConfigurationResponse deactivateScalingConfigurationResponse, UnmarshallerContext _ctx) {
 		
-		deactivateScalingConfigurationResponse.setRequestId(context.stringValue("DeactivateScalingConfigurationResponse.RequestId"));
+		deactivateScalingConfigurationResponse.setRequestId(_ctx.stringValue("DeactivateScalingConfigurationResponse.RequestId"));
 	 
 	 	return deactivateScalingConfigurationResponse;
 	}

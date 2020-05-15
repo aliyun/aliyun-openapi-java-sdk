@@ -93,6 +93,8 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 
 		private String threadID;
 
+		private String tableName;
+
 		public String getDBName() {
 			return this.dBName;
 		}
@@ -155,6 +157,14 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 
 		public void setThreadID(String threadID) {
 			this.threadID = threadID;
+		}
+
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
 		}
 	}
 

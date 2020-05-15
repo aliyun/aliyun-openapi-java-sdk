@@ -16,6 +16,7 @@ package com.aliyuncs.pts.model.v20190810;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.pts.Endpoint;
 
 /**
  * @author auto create
@@ -23,9 +24,26 @@ import com.aliyuncs.http.MethodType;
  */
 public class DescribeUserVpcResourceRequest extends RpcAcsRequest<DescribeUserVpcResourceResponse> {
 	   
+
+	private String jobId;
 	public DescribeUserVpcResourceRequest() {
-		super("PTS", "2019-08-10", "DescribeUserVpcResource", "1.0.0");
-		setMethod(MethodType.GET);
+		super("PTS", "2019-08-10", "DescribeUserVpcResource");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
+		}
 	}
 
 	@Override

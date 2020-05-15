@@ -31,6 +31,8 @@ public class DescribeVerifyTokenRequest extends RpcAcsRequest<DescribeVerifyToke
 
 	private String callbackSeed;
 
+	private String userIp;
+
 	private String idCardBackImageUrl;
 
 	private String idCardNumber;
@@ -41,9 +43,13 @@ public class DescribeVerifyTokenRequest extends RpcAcsRequest<DescribeVerifyToke
 
 	private String passedRedirectUrl;
 
+	private Long userRegistTime;
+
 	private String bizId;
 
 	private String name;
+
+	private String userPhoneNumber;
 
 	private String callbackUrl;
 
@@ -87,6 +93,17 @@ public class DescribeVerifyTokenRequest extends RpcAcsRequest<DescribeVerifyToke
 		this.callbackSeed = callbackSeed;
 		if(callbackSeed != null){
 			putQueryParameter("CallbackSeed", callbackSeed);
+		}
+	}
+
+	public String getUserIp() {
+		return this.userIp;
+	}
+
+	public void setUserIp(String userIp) {
+		this.userIp = userIp;
+		if(userIp != null){
+			putQueryParameter("UserIp", userIp);
 		}
 	}
 
@@ -145,6 +162,17 @@ public class DescribeVerifyTokenRequest extends RpcAcsRequest<DescribeVerifyToke
 		}
 	}
 
+	public Long getUserRegistTime() {
+		return this.userRegistTime;
+	}
+
+	public void setUserRegistTime(Long userRegistTime) {
+		this.userRegistTime = userRegistTime;
+		if(userRegistTime != null){
+			putQueryParameter("UserRegistTime", userRegistTime.toString());
+		}
+	}
+
 	public String getBizId() {
 		return this.bizId;
 	}
@@ -164,6 +192,17 @@ public class DescribeVerifyTokenRequest extends RpcAcsRequest<DescribeVerifyToke
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getUserPhoneNumber() {
+		return this.userPhoneNumber;
+	}
+
+	public void setUserPhoneNumber(String userPhoneNumber) {
+		this.userPhoneNumber = userPhoneNumber;
+		if(userPhoneNumber != null){
+			putQueryParameter("UserPhoneNumber", userPhoneNumber);
 		}
 	}
 

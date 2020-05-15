@@ -29,7 +29,7 @@ public class ActivateLicenseRequest extends RpcAcsRequest<ActivateLicenseRespons
 
 	private String licenseCode;
 	public ActivateLicenseRequest() {
-		super("Market", "2015-11-01", "ActivateLicense", "yunmarket");
+		super("Market", "2015-11-01", "ActivateLicense");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,13 +35,17 @@ public class ModifyDBInstanceTDERequest extends RpcAcsRequest<ModifyDBInstanceTD
 
 	private String ownerAccount;
 
+	private String encryptionKey;
+
 	private Long ownerId;
 
 	private String encryptorName;
 
+	private String roleARN;
+
 	private String tDEStatus;
 	public ModifyDBInstanceTDERequest() {
-		super("Dds", "2015-12-01", "ModifyDBInstanceTDE", "Dds");
+		super("Dds", "2015-12-01", "ModifyDBInstanceTDE", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -104,6 +108,17 @@ public class ModifyDBInstanceTDERequest extends RpcAcsRequest<ModifyDBInstanceTD
 		}
 	}
 
+	public String getEncryptionKey() {
+		return this.encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+		if(encryptionKey != null){
+			putQueryParameter("EncryptionKey", encryptionKey);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -123,6 +138,17 @@ public class ModifyDBInstanceTDERequest extends RpcAcsRequest<ModifyDBInstanceTD
 		this.encryptorName = encryptorName;
 		if(encryptorName != null){
 			putQueryParameter("EncryptorName", encryptorName);
+		}
+	}
+
+	public String getRoleARN() {
+		return this.roleARN;
+	}
+
+	public void setRoleARN(String roleARN) {
+		this.roleARN = roleARN;
+		if(roleARN != null){
+			putQueryParameter("RoleARN", roleARN);
 		}
 	}
 

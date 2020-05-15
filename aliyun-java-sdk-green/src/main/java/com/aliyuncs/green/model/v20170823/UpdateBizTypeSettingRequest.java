@@ -25,13 +25,17 @@ import com.aliyuncs.green.Endpoint;
 public class UpdateBizTypeSettingRequest extends RpcAcsRequest<UpdateBizTypeSettingResponse> {
 	   
 
-	private String resourceType;
+	private String antispam;
 
 	private String porn;
 
 	private String terrorism;
 
 	private String bizTypeName;
+
+	private String ad;
+
+	private String resourceType;
 	public UpdateBizTypeSettingRequest() {
 		super("Green", "2017-08-23", "UpdateBizTypeSetting", "green");
 		setMethod(MethodType.POST);
@@ -41,14 +45,14 @@ public class UpdateBizTypeSettingRequest extends RpcAcsRequest<UpdateBizTypeSett
 		} catch (Exception e) {}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
+	public String getAntispam() {
+		return this.antispam;
 	}
 
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
+	public void setAntispam(String antispam) {
+		this.antispam = antispam;
+		if(antispam != null){
+			putQueryParameter("Antispam", antispam);
 		}
 	}
 
@@ -82,6 +86,28 @@ public class UpdateBizTypeSettingRequest extends RpcAcsRequest<UpdateBizTypeSett
 		this.bizTypeName = bizTypeName;
 		if(bizTypeName != null){
 			putQueryParameter("BizTypeName", bizTypeName);
+		}
+	}
+
+	public String getAd() {
+		return this.ad;
+	}
+
+	public void setAd(String ad) {
+		this.ad = ad;
+		if(ad != null){
+			putQueryParameter("Ad", ad);
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

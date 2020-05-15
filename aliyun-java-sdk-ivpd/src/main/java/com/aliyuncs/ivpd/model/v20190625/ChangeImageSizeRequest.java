@@ -31,7 +31,7 @@ public class ChangeImageSizeRequest extends RpcAcsRequest<ChangeImageSizeRespons
 
 	private Integer height;
 	public ChangeImageSizeRequest() {
-		super("ivpd", "2019-06-25", "ChangeImageSize", "ivpd");
+		super("ivpd", "2019-06-25", "ChangeImageSize");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,29 +39,10 @@ public class ChangeImageSizeRequest extends RpcAcsRequest<ChangeImageSizeRespons
 		} catch (Exception e) {}
 	}
 
-	public String getBizUrl() {
-		return this.url;
-	}
-
-	public void setBizUrl(String url) {
-		this.url = url;
-		if(url != null){
-			putBodyParameter("Url", url);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizUrl instead of this.
-	 */
-	@Deprecated
 	public String getUrl() {
 		return this.url;
 	}
 
-	/**
-	 * @deprecated use setBizUrl instead of this.
-	 */
-	@Deprecated
 	public void setUrl(String url) {
 		this.url = url;
 		if(url != null){

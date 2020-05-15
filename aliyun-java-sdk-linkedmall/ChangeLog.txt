@@ -1,3 +1,22 @@
+2020-04-20 Version: 2.12.4
+- Add RenderH5Order Interface.
+
+2020-04-03 Version: 2.12.3
+- Support lmItemId.
+- Support STSToken.
+
+2020-03-25 Version: 2.12.2
+- Support new parameter for method QueryUnfinishedSessions4Items.
+
+2020-03-23 Version: 2.12.1
+- Support new parameter for method QueryUnfinishedSessions.
+
+2020-02-25 Version: 2.12.0
+- Support activity v2.
+
+2020-02-20 Version: 2.11.0
+- Support set accountType.
+
 2020-02-05 Version: 2.10.0
 - Support VirtualProductOrder.
 

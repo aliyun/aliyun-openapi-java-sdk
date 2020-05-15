@@ -24,15 +24,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ResumeJobsRequest extends RpcAcsRequest<ResumeJobsResponse> {
-	
-	public ResumeJobsRequest() {
-		super("CCC", "2017-07-05", "ResumeJobs");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Boolean all;
 
@@ -45,6 +37,14 @@ public class ResumeJobsRequest extends RpcAcsRequest<ResumeJobsResponse> {
 	private String instanceId;
 
 	private String scenarioId;
+	public ResumeJobsRequest() {
+		super("CCC", "2017-07-05", "ResumeJobs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getAll() {
 		return this.all;

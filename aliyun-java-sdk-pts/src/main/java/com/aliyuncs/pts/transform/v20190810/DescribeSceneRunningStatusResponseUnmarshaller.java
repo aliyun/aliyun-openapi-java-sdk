@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.pts.model.v20190810.DescribeSceneRunningStatusResponse;
 import com.aliyuncs.pts.model.v20190810.DescribeSceneRunningStatusResponse.ChainElement;
 import com.aliyuncs.pts.model.v20190810.DescribeSceneRunningStatusResponse.ChainMonitorData;
+import com.aliyuncs.pts.model.v20190810.DescribeSceneRunningStatusResponse.ChainMonitorData.CheckPointResult;
 import com.aliyuncs.pts.model.v20190810.DescribeSceneRunningStatusResponse.ChainMonitorData.QpsSummaryItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -82,6 +83,13 @@ public class DescribeSceneRunningStatusResponseUnmarshaller {
 			chainMonitorData.setFailedCount(_ctx.longValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].FailedCount"));
 			chainMonitorData.setQueueSize(_ctx.integerValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].QueueSize"));
 			chainMonitorData.setQueueCapacity(_ctx.integerValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].QueueCapacity"));
+
+			CheckPointResult checkPointResult = new CheckPointResult();
+			checkPointResult.setSucceedBusinessCount(_ctx.longValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].CheckPointResult.SucceedBusinessCount"));
+			checkPointResult.setFailedBusinessCount(_ctx.longValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].CheckPointResult.FailedBusinessCount"));
+			checkPointResult.setSucceedBusinessQps(_ctx.floatValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].CheckPointResult.SucceedBusinessQps"));
+			checkPointResult.setFailedBusinessQps(_ctx.floatValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].CheckPointResult.FailedBusinessQps"));
+			chainMonitorData.setCheckPointResult(checkPointResult);
 
 			List<QpsSummaryItem> qpsSummary = new ArrayList<QpsSummaryItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSceneRunningStatusResponse.ChainMonitorDataList["+ i +"].QpsSummary.Length"); j++) {

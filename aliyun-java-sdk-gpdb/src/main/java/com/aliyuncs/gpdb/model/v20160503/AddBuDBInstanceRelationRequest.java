@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -22,30 +23,20 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class AddBuDBInstanceRelationRequest extends RpcAcsRequest<AddBuDBInstanceRelationResponse> {
-	
-	public AddBuDBInstanceRelationRequest() {
-		super("gpdb", "2016-05-03", "AddBuDBInstanceRelation", "gpdb");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String businessUnit;
+	   
 
 	private String dBInstanceId;
 
 	private Long ownerId;
 
-	public String getBusinessUnit() {
-		return this.businessUnit;
-	}
-
-	public void setBusinessUnit(String businessUnit) {
-		this.businessUnit = businessUnit;
-		if(businessUnit != null){
-			putQueryParameter("BusinessUnit", businessUnit);
-		}
+	private String businessUnit;
+	public AddBuDBInstanceRelationRequest() {
+		super("gpdb", "2016-05-03", "AddBuDBInstanceRelation", "gpdb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDBInstanceId() {
@@ -67,6 +58,17 @@ public class AddBuDBInstanceRelationRequest extends RpcAcsRequest<AddBuDBInstanc
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getBusinessUnit() {
+		return this.businessUnit;
+	}
+
+	public void setBusinessUnit(String businessUnit) {
+		this.businessUnit = businessUnit;
+		if(businessUnit != null){
+			putQueryParameter("BusinessUnit", businessUnit);
 		}
 	}
 

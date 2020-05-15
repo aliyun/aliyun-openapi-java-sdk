@@ -25,33 +25,22 @@ import com.aliyuncs.iot.Endpoint;
 public class BindGatewayToEdgeInstanceRequest extends RpcAcsRequest<BindGatewayToEdgeInstanceResponse> {
 	   
 
-	private String productKey;
-
 	private String iotId;
-
-	private String instanceId;
 
 	private String iotInstanceId;
 
+	private String productKey;
+
+	private String instanceId;
+
 	private String deviceName;
 	public BindGatewayToEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "BindGatewayToEdgeInstance", "iot");
+		super("Iot", "2018-01-20", "BindGatewayToEdgeInstance", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
 	}
 
 	public String getIotId() {
@@ -65,17 +54,6 @@ public class BindGatewayToEdgeInstanceRequest extends RpcAcsRequest<BindGatewayT
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getIotInstanceId() {
 		return this.iotInstanceId;
 	}
@@ -84,6 +62,28 @@ public class BindGatewayToEdgeInstanceRequest extends RpcAcsRequest<BindGatewayT
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

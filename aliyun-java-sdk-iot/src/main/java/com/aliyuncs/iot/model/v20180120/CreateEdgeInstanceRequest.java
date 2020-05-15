@@ -27,13 +27,13 @@ public class CreateEdgeInstanceRequest extends RpcAcsRequest<CreateEdgeInstanceR
 
 	private Integer spec;
 
-	private String tags;
-
 	private String iotInstanceId;
+
+	private String tags;
 
 	private String name;
 	public CreateEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "CreateEdgeInstance", "iot");
+		super("Iot", "2018-01-20", "CreateEdgeInstance", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,17 +52,6 @@ public class CreateEdgeInstanceRequest extends RpcAcsRequest<CreateEdgeInstanceR
 		}
 	}
 
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
-		}
-	}
-
 	public String getIotInstanceId() {
 		return this.iotInstanceId;
 	}
@@ -71,6 +60,17 @@ public class CreateEdgeInstanceRequest extends RpcAcsRequest<CreateEdgeInstanceR
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 

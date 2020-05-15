@@ -28,6 +28,8 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 
 	private Long timeoutInMinutes;
 
+	private String deletionProtection;
+
 	private String stackName;
 
 	private Boolean disableRollback;
@@ -44,9 +46,11 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 
 	private String stackPolicyBody;
 
+	private String ramRoleName;
+
 	private String stackPolicyURL;
 	public CreateStackRequest() {
-		super("ROS", "2019-09-10", "CreateStack");
+		super("ROS", "2019-09-10", "CreateStack", "ROS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,6 +66,17 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 		this.timeoutInMinutes = timeoutInMinutes;
 		if(timeoutInMinutes != null){
 			putQueryParameter("TimeoutInMinutes", timeoutInMinutes.toString());
+		}
+	}
+
+	public String getDeletionProtection() {
+		return this.deletionProtection;
+	}
+
+	public void setDeletionProtection(String deletionProtection) {
+		this.deletionProtection = deletionProtection;
+		if(deletionProtection != null){
+			putQueryParameter("DeletionProtection", deletionProtection);
 		}
 	}
 
@@ -155,6 +170,17 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 		this.stackPolicyBody = stackPolicyBody;
 		if(stackPolicyBody != null){
 			putQueryParameter("StackPolicyBody", stackPolicyBody);
+		}
+	}
+
+	public String getRamRoleName() {
+		return this.ramRoleName;
+	}
+
+	public void setRamRoleName(String ramRoleName) {
+		this.ramRoleName = ramRoleName;
+		if(ramRoleName != null){
+			putQueryParameter("RamRoleName", ramRoleName);
 		}
 	}
 

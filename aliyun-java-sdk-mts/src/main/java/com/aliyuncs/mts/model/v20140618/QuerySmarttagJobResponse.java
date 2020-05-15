@@ -29,6 +29,8 @@ public class QuerySmarttagJobResponse extends AcsResponse {
 
 	private String jobStatus;
 
+	private String userData;
+
 	private List<Result> results;
 
 	public String getRequestId() {
@@ -45,6 +47,14 @@ public class QuerySmarttagJobResponse extends AcsResponse {
 
 	public void setJobStatus(String jobStatus) {
 		this.jobStatus = jobStatus;
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
 	}
 
 	public List<Result> getResults() {

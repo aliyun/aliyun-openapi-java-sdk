@@ -31,8 +31,8 @@ public class GetDataAPIServiceDetailResponseUnmarshaller {
 		
 		getDataAPIServiceDetailResponse.setRequestId(_ctx.stringValue("GetDataAPIServiceDetailResponse.RequestId"));
 		getDataAPIServiceDetailResponse.setSuccess(_ctx.booleanValue("GetDataAPIServiceDetailResponse.Success"));
-		getDataAPIServiceDetailResponse.setErrorMessage(_ctx.stringValue("GetDataAPIServiceDetailResponse.ErrorMessage"));
 		getDataAPIServiceDetailResponse.setCode(_ctx.stringValue("GetDataAPIServiceDetailResponse.Code"));
+		getDataAPIServiceDetailResponse.setErrorMessage(_ctx.stringValue("GetDataAPIServiceDetailResponse.ErrorMessage"));
 
 		Data data = new Data();
 		data.setApiSrn(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.ApiSrn"));

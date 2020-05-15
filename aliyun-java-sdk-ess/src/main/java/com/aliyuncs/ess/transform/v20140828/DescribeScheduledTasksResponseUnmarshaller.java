@@ -24,28 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeScheduledTasksResponseUnmarshaller {
 
-	public static DescribeScheduledTasksResponse unmarshall(DescribeScheduledTasksResponse describeScheduledTasksResponse, UnmarshallerContext context) {
+	public static DescribeScheduledTasksResponse unmarshall(DescribeScheduledTasksResponse describeScheduledTasksResponse, UnmarshallerContext _ctx) {
 		
-		describeScheduledTasksResponse.setRequestId(context.stringValue("DescribeScheduledTasksResponse.RequestId"));
-		describeScheduledTasksResponse.setTotalCount(context.integerValue("DescribeScheduledTasksResponse.TotalCount"));
-		describeScheduledTasksResponse.setPageNumber(context.integerValue("DescribeScheduledTasksResponse.PageNumber"));
-		describeScheduledTasksResponse.setPageSize(context.integerValue("DescribeScheduledTasksResponse.PageSize"));
+		describeScheduledTasksResponse.setRequestId(_ctx.stringValue("DescribeScheduledTasksResponse.RequestId"));
+		describeScheduledTasksResponse.setTotalCount(_ctx.integerValue("DescribeScheduledTasksResponse.TotalCount"));
+		describeScheduledTasksResponse.setPageNumber(_ctx.integerValue("DescribeScheduledTasksResponse.PageNumber"));
+		describeScheduledTasksResponse.setPageSize(_ctx.integerValue("DescribeScheduledTasksResponse.PageSize"));
 
 		List<ScheduledTask> scheduledTasks = new ArrayList<ScheduledTask>();
-		for (int i = 0; i < context.lengthValue("DescribeScheduledTasksResponse.ScheduledTasks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeScheduledTasksResponse.ScheduledTasks.Length"); i++) {
 			ScheduledTask scheduledTask = new ScheduledTask();
-			scheduledTask.setScheduledTaskId(context.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].ScheduledTaskId"));
-			scheduledTask.setScheduledTaskName(context.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].ScheduledTaskName"));
-			scheduledTask.setDescription(context.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].Description"));
-			scheduledTask.setScheduledAction(context.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].ScheduledAction"));
-			scheduledTask.setRecurrenceEndTime(context.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].RecurrenceEndTime"));
-			scheduledTask.setLaunchTime(context.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].LaunchTime"));
-			scheduledTask.setRecurrenceType(context.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].RecurrenceType"));
-			scheduledTask.setRecurrenceValue(context.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].RecurrenceValue"));
-			scheduledTask.setLaunchExpirationTime(context.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].LaunchExpirationTime"));
-			scheduledTask.setTaskEnabled(context.booleanValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].TaskEnabled"));
-			scheduledTask.setMaxValue(context.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].MaxValue"));
-			scheduledTask.setMinValue(context.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].MinValue"));
+			scheduledTask.setScheduledTaskId(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].ScheduledTaskId"));
+			scheduledTask.setScheduledTaskName(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].ScheduledTaskName"));
+			scheduledTask.setDescription(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].Description"));
+			scheduledTask.setScheduledAction(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].ScheduledAction"));
+			scheduledTask.setRecurrenceEndTime(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].RecurrenceEndTime"));
+			scheduledTask.setLaunchTime(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].LaunchTime"));
+			scheduledTask.setRecurrenceType(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].RecurrenceType"));
+			scheduledTask.setRecurrenceValue(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].RecurrenceValue"));
+			scheduledTask.setLaunchExpirationTime(_ctx.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].LaunchExpirationTime"));
+			scheduledTask.setTaskEnabled(_ctx.booleanValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].TaskEnabled"));
+			scheduledTask.setMaxValue(_ctx.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].MaxValue"));
+			scheduledTask.setMinValue(_ctx.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].MinValue"));
+			scheduledTask.setDesiredCapacity(_ctx.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].DesiredCapacity"));
+			scheduledTask.setScalingGroupId(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].ScalingGroupId"));
 
 			scheduledTasks.add(scheduledTask);
 		}

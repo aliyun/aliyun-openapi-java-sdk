@@ -16,6 +16,7 @@ package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkvisual.Endpoint;
 
 /**
  * @author auto create
@@ -26,8 +27,12 @@ public class DeleteRecordPlanRequest extends RpcAcsRequest<DeleteRecordPlanRespo
 
 	private String planId;
 	public DeleteRecordPlanRequest() {
-		super("Linkvisual", "2018-01-20", "DeleteRecordPlan", "linkvisual");
+		super("Linkvisual", "2018-01-20", "DeleteRecordPlan", "Linkvisual");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getPlanId() {

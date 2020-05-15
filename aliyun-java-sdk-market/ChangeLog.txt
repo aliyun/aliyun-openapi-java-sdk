@@ -1,3 +1,16 @@
+2020-05-12 Version: 2.0.32
+- BugFix for DescribeProjectMessages not returned the totalCount property.
+
+2020-05-12 Version: 2.0.32
+- BugFix for DescribeProjectMessages not returned the totalCount property.
+
+2020-05-11 Version: 2.0.31
+- Bugfix for DescribeProjectAttachments Integer AttachmentType updated to String AttachmentType.
+
+2020-04-29 Version: 2.0.30
+- Supported the Marketplace Delivery Center Project Api.
+- About Project info.
+
 2020-02-07 Version: 2.0.30
 - Update describeInstance.
 

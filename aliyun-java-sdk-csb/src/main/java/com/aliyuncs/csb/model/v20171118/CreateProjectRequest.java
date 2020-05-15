@@ -30,7 +30,7 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 
 	private Long csbId;
 	public CreateProjectRequest() {
-		super("CSB", "2017-11-18", "CreateProject", "csb");
+		super("CSB", "2017-11-18", "CreateProject");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

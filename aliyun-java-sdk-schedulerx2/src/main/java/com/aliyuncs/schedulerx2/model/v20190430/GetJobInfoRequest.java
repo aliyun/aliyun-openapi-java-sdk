@@ -16,17 +16,15 @@ package com.aliyuncs.schedulerx2.model.v20190430;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.schedulerx2.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetJobInfoRequest extends RpcAcsRequest<GetJobInfoResponse> {
-	
-	public GetJobInfoRequest() {
-		super("schedulerx2", "2019-04-30", "GetJobInfo");
-		setProtocol(ProtocolType.HTTPS);
-	}
+	   
 
 	private Long jobId;
 
@@ -35,6 +33,15 @@ public class GetJobInfoRequest extends RpcAcsRequest<GetJobInfoResponse> {
 	private String groupId;
 
 	private String namespace;
+	public GetJobInfoRequest() {
+		super("schedulerx2", "2019-04-30", "GetJobInfo");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getJobId() {
 		return this.jobId;

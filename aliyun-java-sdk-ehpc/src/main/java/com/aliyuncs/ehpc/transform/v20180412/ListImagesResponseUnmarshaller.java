@@ -35,6 +35,8 @@ public class ListImagesResponseUnmarshaller {
 			osInfo.setPlatform(_ctx.stringValue("ListImagesResponse.OsTags["+ i +"].Platform"));
 			osInfo.setVersion(_ctx.stringValue("ListImagesResponse.OsTags["+ i +"].Version"));
 			osInfo.setArchitecture(_ctx.stringValue("ListImagesResponse.OsTags["+ i +"].Architecture"));
+			osInfo.setBaseOsTag(_ctx.stringValue("ListImagesResponse.OsTags["+ i +"].BaseOsTag"));
+			osInfo.setImageId(_ctx.stringValue("ListImagesResponse.OsTags["+ i +"].ImageId"));
 
 			osTags.add(osInfo);
 		}

@@ -43,7 +43,7 @@ public class DeleteUserClusterHostRequest extends RpcAcsRequest<DeleteUserCluste
 
 	private String zoneId;
 	public DeleteUserClusterHostRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteUserClusterHost", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DeleteUserClusterHost", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

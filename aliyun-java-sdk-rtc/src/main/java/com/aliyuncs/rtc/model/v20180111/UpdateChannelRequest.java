@@ -33,7 +33,7 @@ public class UpdateChannelRequest extends RpcAcsRequest<UpdateChannelResponse> {
 
 	private String channelId;
 	public UpdateChannelRequest() {
-		super("rtc", "2018-01-11", "UpdateChannel");
+		super("rtc", "2018-01-11", "UpdateChannel", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

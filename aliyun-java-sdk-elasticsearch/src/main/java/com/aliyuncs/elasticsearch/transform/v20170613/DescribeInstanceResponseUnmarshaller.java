@@ -28,6 +28,7 @@ import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Resul
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.NetworkConfig;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.NodeSpec;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.SynonymsDictsItem;
+import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.Tag;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.WarmNodeConfiguration;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.ZoneInfo;
 import java.util.Map;
@@ -66,6 +67,8 @@ public class DescribeInstanceResponseUnmarshaller {
 		result.setBizProtocol(_ctx.stringValue("DescribeInstanceResponse.Result.protocol"));
 		result.setEnableKibanaPublicNetwork(_ctx.booleanValue("DescribeInstanceResponse.Result.enableKibanaPublicNetwork"));
 		result.setHaveKibana(_ctx.booleanValue("DescribeInstanceResponse.Result.haveKibana"));
+		result.setResourceGroupId(_ctx.stringValue("DescribeInstanceResponse.Result.resourceGroupId"));
+		result.setEnableKibanaPrivateNetwork(_ctx.booleanValue("DescribeInstanceResponse.Result.enableKibanaPrivateNetwork"));
 
 		List<String> esIPWhitelist = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.esIPWhitelist.Length"); i++) {
@@ -96,6 +99,12 @@ public class DescribeInstanceResponseUnmarshaller {
 			privateNetworkIpWhiteList.add(_ctx.stringValue("DescribeInstanceResponse.Result.privateNetworkIpWhiteList["+ i +"]"));
 		}
 		result.setPrivateNetworkIpWhiteList(privateNetworkIpWhiteList);
+
+		List<String> kibanaPrivateIPWhitelist = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.kibanaPrivateIPWhitelist.Length"); i++) {
+			kibanaPrivateIPWhitelist.add(_ctx.stringValue("DescribeInstanceResponse.Result.kibanaPrivateIPWhitelist["+ i +"]"));
+		}
+		result.setKibanaPrivateIPWhitelist(kibanaPrivateIPWhitelist);
 
 		NodeSpec nodeSpec = new NodeSpec();
 		nodeSpec.setSpec(_ctx.stringValue("DescribeInstanceResponse.Result.nodeSpec.spec"));
@@ -187,6 +196,16 @@ public class DescribeInstanceResponseUnmarshaller {
 			aliwsDicts.add(dict);
 		}
 		result.setAliwsDicts(aliwsDicts);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setTagKey(_ctx.stringValue("DescribeInstanceResponse.Result.tags["+ i +"].tagKey"));
+			tag.setTagValue(_ctx.stringValue("DescribeInstanceResponse.Result.tags["+ i +"].tagValue"));
+
+			tags.add(tag);
+		}
+		result.setTags(tags);
 		describeInstanceResponse.setResult(result);
 	 
 	 	return describeInstanceResponse;

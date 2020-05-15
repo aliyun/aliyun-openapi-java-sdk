@@ -129,6 +129,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private Long consistentTime;
 
+		private String backupInitiator;
+
 		public String getBackupId() {
 			return this.backupId;
 		}
@@ -295,6 +297,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setConsistentTime(Long consistentTime) {
 			this.consistentTime = consistentTime;
+		}
+
+		public String getBackupInitiator() {
+			return this.backupInitiator;
+		}
+
+		public void setBackupInitiator(String backupInitiator) {
+			this.backupInitiator = backupInitiator;
 		}
 	}
 

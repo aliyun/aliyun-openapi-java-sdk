@@ -24,17 +24,7 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class ModifyInstanceStateRequest extends RoaAcsRequest<ModifyInstanceStateResponse> {
-	
-	public ModifyInstanceStateRequest() {
-		super("foas", "2018-11-11", "ModifyInstanceState");
-		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/expectstate");
-		setMethod(MethodType.PUT);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Boolean isFlush;
 
@@ -45,6 +35,16 @@ public class ModifyInstanceStateRequest extends RoaAcsRequest<ModifyInstanceStat
 	private String expectState;
 
 	private String jobName;
+	public ModifyInstanceStateRequest() {
+		super("foas", "2018-11-11", "ModifyInstanceState", "foas");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/expectstate");
+		setMethod(MethodType.PUT);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getIsFlush() {
 		return this.isFlush;

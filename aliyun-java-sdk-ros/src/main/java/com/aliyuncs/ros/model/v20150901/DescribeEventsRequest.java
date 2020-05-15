@@ -39,7 +39,7 @@ public class DescribeEventsRequest extends RoaAcsRequest<DescribeEventsResponse>
 
 	private Integer pageNumber;
 	public DescribeEventsRequest() {
-		super("ROS", "2015-09-01", "DescribeEvents");
+		super("ROS", "2015-09-01", "DescribeEvents", "ROS");
 		setUriPattern("/stacks/[StackName]/[StackId]/events");
 		setMethod(MethodType.GET);
 		try {

@@ -26,9 +26,9 @@ public class UnbindSlbResponse extends AcsResponse {
 
 	private Integer code;
 
-	private String message;
-
 	private String data;
+
+	private String message;
 
 	private String requestId;
 
@@ -40,20 +40,20 @@ public class UnbindSlbResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getData() {
 		return this.data;
 	}
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {

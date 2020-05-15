@@ -35,7 +35,7 @@ public class QueryVideoSummaryJobListRequest extends RpcAcsRequest<QueryVideoSum
 
 	private String jobIds;
 	public QueryVideoSummaryJobListRequest() {
-		super("Mts", "2014-06-18", "QueryVideoSummaryJobList", "mts");
+		super("Mts", "2014-06-18", "QueryVideoSummaryJobList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

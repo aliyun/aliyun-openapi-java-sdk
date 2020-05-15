@@ -39,7 +39,7 @@ public class DescribeVpnPbrRouteEntriesRequest extends RpcAcsRequest<DescribeVpn
 
 	private Long ownerId;
 	public DescribeVpnPbrRouteEntriesRequest() {
-		super("Vpc", "2016-04-28", "DescribeVpnPbrRouteEntries", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeVpnPbrRouteEntries", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

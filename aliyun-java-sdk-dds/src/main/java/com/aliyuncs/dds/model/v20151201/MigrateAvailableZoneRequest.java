@@ -41,7 +41,7 @@ public class MigrateAvailableZoneRequest extends RpcAcsRequest<MigrateAvailableZ
 
 	private String zoneId;
 	public MigrateAvailableZoneRequest() {
-		super("Dds", "2015-12-01", "MigrateAvailableZone", "Dds");
+		super("Dds", "2015-12-01", "MigrateAvailableZone", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

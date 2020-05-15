@@ -131,6 +131,18 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String expireTimeUTC;
 
+		private String clusterId;
+
+		private String clusterName;
+
+		private Boolean isDeletionProtection;
+
+		private String parentId;
+
+		private Integer moduleId;
+
+		private String moduleStackVersion;
+
 		private List<Tag> tags;
 
 		public String getInstanceId() {
@@ -347,6 +359,54 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setExpireTimeUTC(String expireTimeUTC) {
 			this.expireTimeUTC = expireTimeUTC;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public Boolean getIsDeletionProtection() {
+			return this.isDeletionProtection;
+		}
+
+		public void setIsDeletionProtection(Boolean isDeletionProtection) {
+			this.isDeletionProtection = isDeletionProtection;
+		}
+
+		public String getParentId() {
+			return this.parentId;
+		}
+
+		public void setParentId(String parentId) {
+			this.parentId = parentId;
+		}
+
+		public Integer getModuleId() {
+			return this.moduleId;
+		}
+
+		public void setModuleId(Integer moduleId) {
+			this.moduleId = moduleId;
+		}
+
+		public String getModuleStackVersion() {
+			return this.moduleStackVersion;
+		}
+
+		public void setModuleStackVersion(String moduleStackVersion) {
+			this.moduleStackVersion = moduleStackVersion;
 		}
 
 		public List<Tag> getTags() {

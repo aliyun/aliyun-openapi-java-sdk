@@ -15,32 +15,28 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDataLimitDetailRequest extends RpcAcsRequest<DescribeDataLimitDetailResponse> {
-	
-	public DescribeDataLimitDetailRequest() {
-		super("Sddp", "2019-01-03", "DescribeDataLimitDetail", "sddp");
-	}
-
-	private Long id;
+	   
 
 	private Integer networkType;
 
+	private Long id;
+
 	private String lang;
-
-	public Long getId() {
-		return this.id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("id", id.toString());
-		}
+	public DescribeDataLimitDetailRequest() {
+		super("Sddp", "2019-01-03", "DescribeDataLimitDetail", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Integer getNetworkType() {
@@ -51,6 +47,17 @@ public class DescribeDataLimitDetailRequest extends RpcAcsRequest<DescribeDataLi
 		this.networkType = networkType;
 		if(networkType != null){
 			putQueryParameter("NetworkType", networkType.toString());
+		}
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
 		}
 	}
 

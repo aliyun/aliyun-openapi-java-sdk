@@ -16,6 +16,7 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ehpc.Endpoint;
 
 /**
  * @author auto create
@@ -25,6 +26,10 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 	   
 
 	private String imageId;
+
+	private Boolean allocatePublicAddress;
+
+	private Integer internetMaxBandWidthOut;
 
 	private String jobQueue;
 
@@ -62,12 +67,20 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private String ecsChargeType;
 
+	private String internetChargeType;
+
 	private String createMode;
 
 	private String zoneId;
+
+	private Integer internetMaxBandWidthIn;
 	public AddNodesRequest() {
-		super("EHPC", "2018-04-12", "AddNodes", "ehs");
+		super("EHPC", "2018-04-12", "AddNodes");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getImageId() {
@@ -78,6 +91,28 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public Boolean getAllocatePublicAddress() {
+		return this.allocatePublicAddress;
+	}
+
+	public void setAllocatePublicAddress(Boolean allocatePublicAddress) {
+		this.allocatePublicAddress = allocatePublicAddress;
+		if(allocatePublicAddress != null){
+			putQueryParameter("AllocatePublicAddress", allocatePublicAddress.toString());
+		}
+	}
+
+	public Integer getInternetMaxBandWidthOut() {
+		return this.internetMaxBandWidthOut;
+	}
+
+	public void setInternetMaxBandWidthOut(Integer internetMaxBandWidthOut) {
+		this.internetMaxBandWidthOut = internetMaxBandWidthOut;
+		if(internetMaxBandWidthOut != null){
+			putQueryParameter("InternetMaxBandWidthOut", internetMaxBandWidthOut.toString());
 		}
 	}
 
@@ -279,6 +314,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		}
 	}
 
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
 	public String getCreateMode() {
 		return this.createMode;
 	}
@@ -298,6 +344,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Integer getInternetMaxBandWidthIn() {
+		return this.internetMaxBandWidthIn;
+	}
+
+	public void setInternetMaxBandWidthIn(Integer internetMaxBandWidthIn) {
+		this.internetMaxBandWidthIn = internetMaxBandWidthIn;
+		if(internetMaxBandWidthIn != null){
+			putQueryParameter("InternetMaxBandWidthIn", internetMaxBandWidthIn.toString());
 		}
 	}
 

@@ -31,7 +31,7 @@ public class EnableMAURuleRequest extends RpcAcsRequest<EnableMAURuleResponse> {
 
 	private Long ruleId;
 	public EnableMAURuleRequest() {
-		super("rtc", "2018-01-11", "EnableMAURule");
+		super("rtc", "2018-01-11", "EnableMAURule", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

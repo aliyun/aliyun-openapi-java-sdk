@@ -41,7 +41,7 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 
 	private Long ownerId;
 	public SwitchDBInstanceHARequest() {
-		super("Dds", "2015-12-01", "SwitchDBInstanceHA", "Dds");
+		super("Dds", "2015-12-01", "SwitchDBInstanceHA", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -16,6 +16,7 @@ package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkvisual.Endpoint;
 
 /**
  * @author auto create
@@ -26,8 +27,12 @@ public class QueryTimeTemplateDetailRequest extends RpcAcsRequest<QueryTimeTempl
 
 	private String templateId;
 	public QueryTimeTemplateDetailRequest() {
-		super("Linkvisual", "2018-01-20", "QueryTimeTemplateDetail", "linkvisual");
+		super("Linkvisual", "2018-01-20", "QueryTimeTemplateDetail", "Linkvisual");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getTemplateId() {

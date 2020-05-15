@@ -69,6 +69,12 @@ public class DescribeEmgVulGroupResponse extends AcsResponse {
 
 		private String type;
 
+		private Integer status;
+
+		private Integer progress;
+
+		private Long gmtLastCheck;
+
 		public String getAliasName() {
 			return this.aliasName;
 		}
@@ -115,6 +121,30 @@ public class DescribeEmgVulGroupResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public Integer getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Integer progress) {
+			this.progress = progress;
+		}
+
+		public Long getGmtLastCheck() {
+			return this.gmtLastCheck;
+		}
+
+		public void setGmtLastCheck(Long gmtLastCheck) {
+			this.gmtLastCheck = gmtLastCheck;
 		}
 	}
 

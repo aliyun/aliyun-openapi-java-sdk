@@ -31,7 +31,7 @@ public class ExecuteChangeSetRequest extends RoaAcsRequest<ExecuteChangeSetRespo
 
 	private String stackName;
 	public ExecuteChangeSetRequest() {
-		super("ROS", "2015-09-01", "ExecuteChangeSet");
+		super("ROS", "2015-09-01", "ExecuteChangeSet", "ROS");
 		setUriPattern("/stacks/[StackName]/[StackId]/changeSets/[ChangeSetName]/execute");
 		setMethod(MethodType.PUT);
 		try {

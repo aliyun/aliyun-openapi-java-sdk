@@ -25,14 +25,27 @@ import com.aliyuncs.iot.Endpoint;
 public class GetDataAPIServiceDetailRequest extends RpcAcsRequest<GetDataAPIServiceDetailResponse> {
 	   
 
+	private String iotInstanceId;
+
 	private String apiSrn;
 	public GetDataAPIServiceDetailRequest() {
-		super("Iot", "2018-01-20", "GetDataAPIServiceDetail", "iot");
+		super("Iot", "2018-01-20", "GetDataAPIServiceDetail", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putBodyParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public String getApiSrn() {
@@ -42,7 +55,7 @@ public class GetDataAPIServiceDetailRequest extends RpcAcsRequest<GetDataAPIServ
 	public void setApiSrn(String apiSrn) {
 		this.apiSrn = apiSrn;
 		if(apiSrn != null){
-			putQueryParameter("ApiSrn", apiSrn);
+			putBodyParameter("ApiSrn", apiSrn);
 		}
 	}
 

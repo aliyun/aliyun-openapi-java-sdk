@@ -27,13 +27,15 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 
 	private Long resourceOwnerId;
 
+	private String hostType;
+
+	private String dedicatedHostGroupId;
+
 	private String resourceOwnerAccount;
 
 	private Long orderId;
 
 	private Long ownerId;
-
-	private String dedicatedHostGroupId;
 	public DescribeDedicatedHostsRequest() {
 		super("Rds", "2014-08-15", "DescribeDedicatedHosts", "rds");
 		setMethod(MethodType.POST);
@@ -51,6 +53,28 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getHostType() {
+		return this.hostType;
+	}
+
+	public void setHostType(String hostType) {
+		this.hostType = hostType;
+		if(hostType != null){
+			putQueryParameter("HostType", hostType);
+		}
+	}
+
+	public String getDedicatedHostGroupId() {
+		return this.dedicatedHostGroupId;
+	}
+
+	public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
+		this.dedicatedHostGroupId = dedicatedHostGroupId;
+		if(dedicatedHostGroupId != null){
+			putQueryParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 		}
 	}
 
@@ -84,17 +108,6 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getDedicatedHostGroupId() {
-		return this.dedicatedHostGroupId;
-	}
-
-	public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
-		this.dedicatedHostGroupId = dedicatedHostGroupId;
-		if(dedicatedHostGroupId != null){
-			putQueryParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 		}
 	}
 

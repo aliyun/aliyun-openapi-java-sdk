@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
 /**
@@ -22,28 +23,29 @@ import com.aliyuncs.cbn.Endpoint;
  * @version 
  */
 public class DeleteCenRouteMapRequest extends RpcAcsRequest<DeleteCenRouteMapResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private String cenId;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String routeMapId;
+
+	private Long ownerId;
+
+	private String cenRegionId;
 	public DeleteCenRouteMapRequest() {
-		super("Cbn", "2017-09-12", "DeleteCenRouteMap", "cbn");
+		super("Cbn", "2017-09-12", "DeleteCenRouteMap", "Cbn");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long resourceOwnerId;
-
-	private String resourceOwnerAccount;
-
-	private String cenId;
-
-	private String ownerAccount;
-
-	private String cenRegionId;
-
-	private String routeMapId;
-
-	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,17 +55,6 @@ public class DeleteCenRouteMapRequest extends RpcAcsRequest<DeleteCenRouteMapRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -78,6 +69,17 @@ public class DeleteCenRouteMapRequest extends RpcAcsRequest<DeleteCenRouteMapRes
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -86,17 +88,6 @@ public class DeleteCenRouteMapRequest extends RpcAcsRequest<DeleteCenRouteMapRes
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getCenRegionId() {
-		return this.cenRegionId;
-	}
-
-	public void setCenRegionId(String cenRegionId) {
-		this.cenRegionId = cenRegionId;
-		if(cenRegionId != null){
-			putQueryParameter("CenRegionId", cenRegionId);
 		}
 	}
 
@@ -119,6 +110,17 @@ public class DeleteCenRouteMapRequest extends RpcAcsRequest<DeleteCenRouteMapRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getCenRegionId() {
+		return this.cenRegionId;
+	}
+
+	public void setCenRegionId(String cenRegionId) {
+		this.cenRegionId = cenRegionId;
+		if(cenRegionId != null){
+			putQueryParameter("CenRegionId", cenRegionId);
 		}
 	}
 

@@ -1,0 +1,30 @@
+2020-05-15 Version: 0.1.0
+- Add status in ListInboundOrderCases API.
+
+2020-05-13 Version: 0.0.9
+- Add caseCode in CheckTags API.
+
+2020-05-13 Version: 0.0.8
+- Add extra information to ListInboundOrders API.
+
+2020-04-30 Version: 0.0.7
+- Add ListProduceOrderSKUTags API.
+
+2020-04-26 Version: 0.0.5
+- Modify ListOutboundOrders API.
+
+2020-04-24 Version: 0.0.4
+- Add UploadSKUTags API.
+
+2020-04-22 Version: 0.0.3
+- Add checktags.
+
+2020-04-10 Version: 0.0.2
+- Publish All APIs.
+
+2020-04-10 Version: 0.0.2
+- Publish All APIs.
+
+2020-04-09 Version: 0.0.1
+- Publish listwarehouses.
+

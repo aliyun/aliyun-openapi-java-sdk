@@ -41,7 +41,7 @@ public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPriv
 
 	private String instanceId;
 	public GrantAccountPrivilegeRequest() {
-		super("R-kvstore", "2015-01-01", "GrantAccountPrivilege", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "GrantAccountPrivilege", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

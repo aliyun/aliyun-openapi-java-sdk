@@ -28,7 +28,7 @@ public class DescribeDemoAccessTokenRequest extends RpcAcsRequest<DescribeDemoAc
 
 	private String demoAccessToken;
 	public DescribeDemoAccessTokenRequest() {
-		super("DemoCenter", "2020-01-21", "DescribeDemoAccessToken", "DemoCenter");
+		super("DemoCenter", "2020-01-21", "DescribeDemoAccessToken");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

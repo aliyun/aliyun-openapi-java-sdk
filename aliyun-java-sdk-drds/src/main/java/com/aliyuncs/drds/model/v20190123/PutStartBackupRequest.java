@@ -33,7 +33,7 @@ public class PutStartBackupRequest extends RpcAcsRequest<PutStartBackupResponse>
 
 	private String backupMode;
 	public PutStartBackupRequest() {
-		super("Drds", "2019-01-23", "PutStartBackup", "drds");
+		super("Drds", "2019-01-23", "PutStartBackup", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

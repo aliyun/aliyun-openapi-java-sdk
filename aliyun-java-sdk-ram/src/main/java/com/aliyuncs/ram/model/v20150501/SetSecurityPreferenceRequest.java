@@ -16,23 +16,15 @@ package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ram.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetSecurityPreferenceRequest extends RpcAcsRequest<SetSecurityPreferenceResponse> {
-	
-	public SetSecurityPreferenceRequest() {
-		super("Ram", "2015-05-01", "SetSecurityPreference");
-		setProtocol(ProtocolType.HTTPS);
-	}
-
-	private Boolean allowUserToManageAccessKeys;
-
-	private Boolean allowUserToManageMFADevices;
-
-	private Boolean allowUserToManagePublicKeys;
+	   
 
 	private Boolean enableSaveMFATicket;
 
@@ -40,39 +32,21 @@ public class SetSecurityPreferenceRequest extends RpcAcsRequest<SetSecurityPrefe
 
 	private Boolean allowUserToChangePassword;
 
+	private Boolean allowUserToManagePublicKeys;
+
 	private Integer loginSessionDuration;
 
-	public Boolean getAllowUserToManageAccessKeys() {
-		return this.allowUserToManageAccessKeys;
-	}
+	private Boolean allowUserToManageAccessKeys;
 
-	public void setAllowUserToManageAccessKeys(Boolean allowUserToManageAccessKeys) {
-		this.allowUserToManageAccessKeys = allowUserToManageAccessKeys;
-		if(allowUserToManageAccessKeys != null){
-			putQueryParameter("AllowUserToManageAccessKeys", allowUserToManageAccessKeys.toString());
-		}
-	}
-
-	public Boolean getAllowUserToManageMFADevices() {
-		return this.allowUserToManageMFADevices;
-	}
-
-	public void setAllowUserToManageMFADevices(Boolean allowUserToManageMFADevices) {
-		this.allowUserToManageMFADevices = allowUserToManageMFADevices;
-		if(allowUserToManageMFADevices != null){
-			putQueryParameter("AllowUserToManageMFADevices", allowUserToManageMFADevices.toString());
-		}
-	}
-
-	public Boolean getAllowUserToManagePublicKeys() {
-		return this.allowUserToManagePublicKeys;
-	}
-
-	public void setAllowUserToManagePublicKeys(Boolean allowUserToManagePublicKeys) {
-		this.allowUserToManagePublicKeys = allowUserToManagePublicKeys;
-		if(allowUserToManagePublicKeys != null){
-			putQueryParameter("AllowUserToManagePublicKeys", allowUserToManagePublicKeys.toString());
-		}
+	private Boolean allowUserToManageMFADevices;
+	public SetSecurityPreferenceRequest() {
+		super("Ram", "2015-05-01", "SetSecurityPreference", "Ram");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Boolean getEnableSaveMFATicket() {
@@ -108,6 +82,17 @@ public class SetSecurityPreferenceRequest extends RpcAcsRequest<SetSecurityPrefe
 		}
 	}
 
+	public Boolean getAllowUserToManagePublicKeys() {
+		return this.allowUserToManagePublicKeys;
+	}
+
+	public void setAllowUserToManagePublicKeys(Boolean allowUserToManagePublicKeys) {
+		this.allowUserToManagePublicKeys = allowUserToManagePublicKeys;
+		if(allowUserToManagePublicKeys != null){
+			putQueryParameter("AllowUserToManagePublicKeys", allowUserToManagePublicKeys.toString());
+		}
+	}
+
 	public Integer getLoginSessionDuration() {
 		return this.loginSessionDuration;
 	}
@@ -116,6 +101,28 @@ public class SetSecurityPreferenceRequest extends RpcAcsRequest<SetSecurityPrefe
 		this.loginSessionDuration = loginSessionDuration;
 		if(loginSessionDuration != null){
 			putQueryParameter("LoginSessionDuration", loginSessionDuration.toString());
+		}
+	}
+
+	public Boolean getAllowUserToManageAccessKeys() {
+		return this.allowUserToManageAccessKeys;
+	}
+
+	public void setAllowUserToManageAccessKeys(Boolean allowUserToManageAccessKeys) {
+		this.allowUserToManageAccessKeys = allowUserToManageAccessKeys;
+		if(allowUserToManageAccessKeys != null){
+			putQueryParameter("AllowUserToManageAccessKeys", allowUserToManageAccessKeys.toString());
+		}
+	}
+
+	public Boolean getAllowUserToManageMFADevices() {
+		return this.allowUserToManageMFADevices;
+	}
+
+	public void setAllowUserToManageMFADevices(Boolean allowUserToManageMFADevices) {
+		this.allowUserToManageMFADevices = allowUserToManageMFADevices;
+		if(allowUserToManageMFADevices != null){
+			putQueryParameter("AllowUserToManageMFADevices", allowUserToManageMFADevices.toString());
 		}
 	}
 

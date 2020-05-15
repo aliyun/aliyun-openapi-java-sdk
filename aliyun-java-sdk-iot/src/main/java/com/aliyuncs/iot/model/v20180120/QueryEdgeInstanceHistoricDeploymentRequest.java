@@ -25,24 +25,57 @@ import com.aliyuncs.iot.Endpoint;
 public class QueryEdgeInstanceHistoricDeploymentRequest extends RpcAcsRequest<QueryEdgeInstanceHistoricDeploymentResponse> {
 	   
 
-	private Long endTime;
-
-	private Integer currentPage;
-
 	private Long startTime;
-
-	private String instanceId;
 
 	private String iotInstanceId;
 
 	private Integer pageSize;
+
+	private Long endTime;
+
+	private Integer currentPage;
+
+	private String instanceId;
 	public QueryEdgeInstanceHistoricDeploymentRequest() {
-		super("Iot", "2018-01-20", "QueryEdgeInstanceHistoricDeployment", "iot");
+		super("Iot", "2018-01-20", "QueryEdgeInstanceHistoricDeployment", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public Long getEndTime() {
@@ -67,17 +100,6 @@ public class QueryEdgeInstanceHistoricDeploymentRequest extends RpcAcsRequest<Qu
 		}
 	}
 
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -86,28 +108,6 @@ public class QueryEdgeInstanceHistoricDeploymentRequest extends RpcAcsRequest<Qu
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

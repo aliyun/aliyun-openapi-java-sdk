@@ -16,6 +16,7 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ehpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,8 +25,12 @@ import com.aliyuncs.http.MethodType;
 public class ListAvailableFileSystemTypesRequest extends RpcAcsRequest<ListAvailableFileSystemTypesResponse> {
 	   
 	public ListAvailableFileSystemTypesRequest() {
-		super("EHPC", "2018-04-12", "ListAvailableFileSystemTypes", "ehs");
+		super("EHPC", "2018-04-12", "ListAvailableFileSystemTypes");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	@Override

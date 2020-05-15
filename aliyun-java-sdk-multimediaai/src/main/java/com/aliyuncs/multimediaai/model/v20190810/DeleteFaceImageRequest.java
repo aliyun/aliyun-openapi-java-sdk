@@ -31,7 +31,7 @@ public class DeleteFaceImageRequest extends RpcAcsRequest<DeleteFaceImageRespons
 
 	private Long faceImageId;
 	public DeleteFaceImageRequest() {
-		super("multimediaai", "2019-08-10", "DeleteFaceImage", "multimediaai");
+		super("multimediaai", "2019-08-10", "DeleteFaceImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -23,9 +23,6 @@ public class ModifySQLCollectorRetentionResponseUnmarshaller {
 	public static ModifySQLCollectorRetentionResponse unmarshall(ModifySQLCollectorRetentionResponse modifySQLCollectorRetentionResponse, UnmarshallerContext _ctx) {
 		
 		modifySQLCollectorRetentionResponse.setRequestId(_ctx.stringValue("ModifySQLCollectorRetentionResponse.RequestId"));
-		modifySQLCollectorRetentionResponse.setDBInstanceID(_ctx.integerValue("ModifySQLCollectorRetentionResponse.DBInstanceID"));
-		modifySQLCollectorRetentionResponse.setDBInstanceName(_ctx.stringValue("ModifySQLCollectorRetentionResponse.DBInstanceName"));
-		modifySQLCollectorRetentionResponse.setTaskId(_ctx.integerValue("ModifySQLCollectorRetentionResponse.TaskId"));
 	 
 	 	return modifySQLCollectorRetentionResponse;
 	}

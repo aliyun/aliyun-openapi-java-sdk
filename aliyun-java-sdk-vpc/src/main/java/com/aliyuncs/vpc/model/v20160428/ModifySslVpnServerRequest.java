@@ -33,6 +33,10 @@ public class ModifySslVpnServerRequest extends RpcAcsRequest<ModifySslVpnServerR
 
 	private String localSubnet;
 
+	private Boolean enableMultiFactorAuth;
+
+	private String iDaaSInstanceId;
+
 	private String cipher;
 
 	private String clientIpPool;
@@ -51,7 +55,7 @@ public class ModifySslVpnServerRequest extends RpcAcsRequest<ModifySslVpnServerR
 
 	private String name;
 	public ModifySslVpnServerRequest() {
-		super("Vpc", "2016-04-28", "ModifySslVpnServer", "Vpc");
+		super("Vpc", "2016-04-28", "ModifySslVpnServer", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -100,6 +104,28 @@ public class ModifySslVpnServerRequest extends RpcAcsRequest<ModifySslVpnServerR
 		this.localSubnet = localSubnet;
 		if(localSubnet != null){
 			putQueryParameter("LocalSubnet", localSubnet);
+		}
+	}
+
+	public Boolean getEnableMultiFactorAuth() {
+		return this.enableMultiFactorAuth;
+	}
+
+	public void setEnableMultiFactorAuth(Boolean enableMultiFactorAuth) {
+		this.enableMultiFactorAuth = enableMultiFactorAuth;
+		if(enableMultiFactorAuth != null){
+			putQueryParameter("EnableMultiFactorAuth", enableMultiFactorAuth.toString());
+		}
+	}
+
+	public String getIDaaSInstanceId() {
+		return this.iDaaSInstanceId;
+	}
+
+	public void setIDaaSInstanceId(String iDaaSInstanceId) {
+		this.iDaaSInstanceId = iDaaSInstanceId;
+		if(iDaaSInstanceId != null){
+			putQueryParameter("IDaaSInstanceId", iDaaSInstanceId);
 		}
 	}
 

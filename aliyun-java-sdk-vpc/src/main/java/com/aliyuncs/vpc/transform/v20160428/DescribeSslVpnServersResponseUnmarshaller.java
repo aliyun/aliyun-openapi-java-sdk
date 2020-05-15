@@ -48,6 +48,8 @@ public class DescribeSslVpnServersResponseUnmarshaller {
 			sslVpnServer.setConnections(_ctx.integerValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].Connections"));
 			sslVpnServer.setMaxConnections(_ctx.integerValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].MaxConnections"));
 			sslVpnServer.setInternetIp(_ctx.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].InternetIp"));
+			sslVpnServer.setEnableMultiFactorAuth(_ctx.booleanValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].EnableMultiFactorAuth"));
+			sslVpnServer.setIDaaSInstanceId(_ctx.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].IDaaSInstanceId"));
 
 			sslVpnServers.add(sslVpnServer);
 		}

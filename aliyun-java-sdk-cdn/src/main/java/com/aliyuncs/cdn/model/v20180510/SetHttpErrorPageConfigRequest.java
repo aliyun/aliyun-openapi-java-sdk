@@ -36,7 +36,7 @@ public class SetHttpErrorPageConfigRequest extends RpcAcsRequest<SetHttpErrorPag
 	private Long configId;
 	public SetHttpErrorPageConfigRequest() {
 		super("Cdn", "2018-05-10", "SetHttpErrorPageConfig");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

@@ -55,7 +55,7 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 
 	private String databaseName;
 	public DescribeAuditRecordsRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeAuditRecords", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeAuditRecords", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

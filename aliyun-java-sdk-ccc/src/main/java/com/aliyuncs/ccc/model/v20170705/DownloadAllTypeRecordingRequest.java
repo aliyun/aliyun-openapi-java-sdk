@@ -23,21 +23,21 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class DownloadAllTypeRecordingRequest extends RpcAcsRequest<DownloadAllTypeRecordingResponse> {
-	
-	public DownloadAllTypeRecordingRequest() {
-		super("CCC", "2017-07-05", "DownloadAllTypeRecording");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String contactId;
 
 	private String channel;
 
 	private String instanceId;
+	public DownloadAllTypeRecordingRequest() {
+		super("CCC", "2017-07-05", "DownloadAllTypeRecording");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getContactId() {
 		return this.contactId;

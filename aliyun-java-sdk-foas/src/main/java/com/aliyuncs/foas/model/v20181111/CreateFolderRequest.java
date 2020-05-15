@@ -24,9 +24,13 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class CreateFolderRequest extends RoaAcsRequest<CreateFolderResponse> {
-	
+	   
+
+	private String path;
+
+	private String projectName;
 	public CreateFolderRequest() {
-		super("foas", "2018-11-11", "CreateFolder");
+		super("foas", "2018-11-11", "CreateFolder", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/folders");
 		setMethod(MethodType.POST);
@@ -35,10 +39,6 @@ public class CreateFolderRequest extends RoaAcsRequest<CreateFolderResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String path;
-
-	private String projectName;
 
 	public String getPath() {
 		return this.path;

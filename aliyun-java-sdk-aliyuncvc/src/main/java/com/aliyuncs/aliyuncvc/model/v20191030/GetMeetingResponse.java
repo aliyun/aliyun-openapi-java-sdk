@@ -89,6 +89,8 @@ public class GetMeetingResponse extends AcsResponse {
 
 		private String meetingUUID;
 
+		private String password;
+
 		private List<MemberListItem> memberList;
 
 		public String getMeetingName() {
@@ -137,6 +139,14 @@ public class GetMeetingResponse extends AcsResponse {
 
 		public void setMeetingUUID(String meetingUUID) {
 			this.meetingUUID = meetingUUID;
+		}
+
+		public String getPassword() {
+			return this.password;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
 		}
 
 		public List<MemberListItem> getMemberList() {

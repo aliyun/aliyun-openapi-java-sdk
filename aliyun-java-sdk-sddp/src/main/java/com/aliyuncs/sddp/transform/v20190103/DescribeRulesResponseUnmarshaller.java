@@ -24,32 +24,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRulesResponseUnmarshaller {
 
-	public static DescribeRulesResponse unmarshall(DescribeRulesResponse describeRulesResponse, UnmarshallerContext context) {
+	public static DescribeRulesResponse unmarshall(DescribeRulesResponse describeRulesResponse, UnmarshallerContext _ctx) {
 		
-		describeRulesResponse.setRequestId(context.stringValue("DescribeRulesResponse.RequestId"));
-		describeRulesResponse.setPageSize(context.integerValue("DescribeRulesResponse.PageSize"));
-		describeRulesResponse.setCurrentPage(context.integerValue("DescribeRulesResponse.CurrentPage"));
-		describeRulesResponse.setTotalCount(context.integerValue("DescribeRulesResponse.TotalCount"));
+		describeRulesResponse.setRequestId(_ctx.stringValue("DescribeRulesResponse.RequestId"));
+		describeRulesResponse.setPageSize(_ctx.integerValue("DescribeRulesResponse.PageSize"));
+		describeRulesResponse.setCurrentPage(_ctx.integerValue("DescribeRulesResponse.CurrentPage"));
+		describeRulesResponse.setTotalCount(_ctx.integerValue("DescribeRulesResponse.TotalCount"));
 
 		List<Rule> items = new ArrayList<Rule>();
-		for (int i = 0; i < context.lengthValue("DescribeRulesResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRulesResponse.Items.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setId(context.longValue("DescribeRulesResponse.Items["+ i +"].Id"));
-			rule.setGmtCreate(context.longValue("DescribeRulesResponse.Items["+ i +"].GmtCreate"));
-			rule.setGmtModified(context.longValue("DescribeRulesResponse.Items["+ i +"].GmtModified"));
-			rule.setCustomType(context.integerValue("DescribeRulesResponse.Items["+ i +"].CustomType"));
-			rule.setName(context.stringValue("DescribeRulesResponse.Items["+ i +"].Name"));
-			rule.setDescription(context.stringValue("DescribeRulesResponse.Items["+ i +"].Description"));
-			rule.setUserId(context.longValue("DescribeRulesResponse.Items["+ i +"].UserId"));
-			rule.setLoginName(context.stringValue("DescribeRulesResponse.Items["+ i +"].LoginName"));
-			rule.setDisplayName(context.stringValue("DescribeRulesResponse.Items["+ i +"].DisplayName"));
-			rule.setCategory(context.integerValue("DescribeRulesResponse.Items["+ i +"].Category"));
-			rule.setCategoryName(context.stringValue("DescribeRulesResponse.Items["+ i +"].CategoryName"));
-			rule.setStatus(context.integerValue("DescribeRulesResponse.Items["+ i +"].Status"));
-			rule.setRiskLevelName(context.stringValue("DescribeRulesResponse.Items["+ i +"].RiskLevelName"));
-			rule.setRiskLevelId(context.longValue("DescribeRulesResponse.Items["+ i +"].RiskLevelId"));
-			rule.setContent(context.stringValue("DescribeRulesResponse.Items["+ i +"].Content"));
-			rule.setDepartName(context.stringValue("DescribeRulesResponse.Items["+ i +"].DepartName"));
+			rule.setId(_ctx.longValue("DescribeRulesResponse.Items["+ i +"].Id"));
+			rule.setGmtCreate(_ctx.longValue("DescribeRulesResponse.Items["+ i +"].GmtCreate"));
+			rule.setGmtModified(_ctx.longValue("DescribeRulesResponse.Items["+ i +"].GmtModified"));
+			rule.setCustomType(_ctx.integerValue("DescribeRulesResponse.Items["+ i +"].CustomType"));
+			rule.setName(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].Name"));
+			rule.setDescription(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].Description"));
+			rule.setUserId(_ctx.longValue("DescribeRulesResponse.Items["+ i +"].UserId"));
+			rule.setLoginName(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].LoginName"));
+			rule.setDisplayName(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].DisplayName"));
+			rule.setCategory(_ctx.integerValue("DescribeRulesResponse.Items["+ i +"].Category"));
+			rule.setCategoryName(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].CategoryName"));
+			rule.setStatus(_ctx.integerValue("DescribeRulesResponse.Items["+ i +"].Status"));
+			rule.setRiskLevelName(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].RiskLevelName"));
+			rule.setRiskLevelId(_ctx.longValue("DescribeRulesResponse.Items["+ i +"].RiskLevelId"));
+			rule.setContent(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].Content"));
+			rule.setDepartName(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].DepartName"));
+			rule.setStatExpress(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].StatExpress"));
+			rule.setProductId(_ctx.longValue("DescribeRulesResponse.Items["+ i +"].ProductId"));
+			rule.setHitTotalCount(_ctx.integerValue("DescribeRulesResponse.Items["+ i +"].HitTotalCount"));
+			rule.setProductCode(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].ProductCode"));
+			rule.setWarnLevel(_ctx.integerValue("DescribeRulesResponse.Items["+ i +"].WarnLevel"));
 
 			items.add(rule);
 		}

@@ -25,27 +25,16 @@ import com.aliyuncs.iot.Endpoint;
 public class QueryOTAFirmwareRequest extends RpcAcsRequest<QueryOTAFirmwareResponse> {
 	   
 
-	private String firmwareId;
-
 	private String iotInstanceId;
+
+	private String firmwareId;
 	public QueryOTAFirmwareRequest() {
-		super("Iot", "2018-01-20", "QueryOTAFirmware", "iot");
+		super("Iot", "2018-01-20", "QueryOTAFirmware", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFirmwareId() {
-		return this.firmwareId;
-	}
-
-	public void setFirmwareId(String firmwareId) {
-		this.firmwareId = firmwareId;
-		if(firmwareId != null){
-			putQueryParameter("FirmwareId", firmwareId);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -56,6 +45,17 @@ public class QueryOTAFirmwareRequest extends RpcAcsRequest<QueryOTAFirmwareRespo
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getFirmwareId() {
+		return this.firmwareId;
+	}
+
+	public void setFirmwareId(String firmwareId) {
+		this.firmwareId = firmwareId;
+		if(firmwareId != null){
+			putQueryParameter("FirmwareId", firmwareId);
 		}
 	}
 

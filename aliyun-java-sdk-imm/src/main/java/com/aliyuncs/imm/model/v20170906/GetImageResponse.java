@@ -97,6 +97,10 @@ public class GetImageResponse extends AcsResponse {
 
 	private String addressFailReason;
 
+	private String remarksArrayA;
+
+	private String remarksArrayB;
+
 	private List<FacesItem> faces;
 
 	private List<OCRItem> oCR;
@@ -395,6 +399,22 @@ public class GetImageResponse extends AcsResponse {
 		this.addressFailReason = addressFailReason;
 	}
 
+	public String getRemarksArrayA() {
+		return this.remarksArrayA;
+	}
+
+	public void setRemarksArrayA(String remarksArrayA) {
+		this.remarksArrayA = remarksArrayA;
+	}
+
+	public String getRemarksArrayB() {
+		return this.remarksArrayB;
+	}
+
+	public void setRemarksArrayB(String remarksArrayB) {
+		this.remarksArrayB = remarksArrayB;
+	}
+
 	public List<FacesItem> getFaces() {
 		return this.faces;
 	}
@@ -454,6 +474,8 @@ public class GetImageResponse extends AcsResponse {
 		private String groupId;
 
 		private Float faceQuality;
+
+		private Float emotionConfidence;
 
 		private FaceAttributes faceAttributes;
 
@@ -529,6 +551,14 @@ public class GetImageResponse extends AcsResponse {
 
 		public void setFaceQuality(Float faceQuality) {
 			this.faceQuality = faceQuality;
+		}
+
+		public Float getEmotionConfidence() {
+			return this.emotionConfidence;
+		}
+
+		public void setEmotionConfidence(Float emotionConfidence) {
+			this.emotionConfidence = emotionConfidence;
 		}
 
 		public FaceAttributes getFaceAttributes() {

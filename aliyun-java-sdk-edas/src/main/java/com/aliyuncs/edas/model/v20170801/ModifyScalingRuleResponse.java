@@ -28,6 +28,8 @@ public class ModifyScalingRuleResponse extends AcsResponse {
 
 	private String message;
 
+	private String requestId;
+
 	public Integer getCode() {
 		return this.code;
 	}
@@ -42,6 +44,14 @@ public class ModifyScalingRuleResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

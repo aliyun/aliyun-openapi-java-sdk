@@ -77,7 +77,7 @@ public class DescribeColumnsResponse extends AcsResponse {
 
 	public static class Column {
 
-		private Long id;
+		private String id;
 
 		private String name;
 
@@ -107,11 +107,11 @@ public class DescribeColumnsResponse extends AcsResponse {
 
 		private String departName;
 
-		public Long getId() {
+		public String getId() {
 			return this.id;
 		}
 
-		public void setId(Long id) {
+		public void setId(String id) {
 			this.id = id;
 		}
 

@@ -47,6 +47,9 @@ public class QueryEdgeInstanceHistoricDeploymentResponseUnmarshaller {
 			deployment.setDescription(_ctx.stringValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].Description"));
 			deployment.setStatus(_ctx.integerValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].Status"));
 			deployment.setType(_ctx.stringValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].Type"));
+			deployment.setGmtCreateTimestamp(_ctx.longValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].GmtCreateTimestamp"));
+			deployment.setGmtModifiedTimestamp(_ctx.longValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].GmtModifiedTimestamp"));
+			deployment.setGmtCompletedTimestamp(_ctx.longValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].GmtCompletedTimestamp"));
 
 			deploymentList.add(deployment);
 		}

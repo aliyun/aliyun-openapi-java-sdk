@@ -49,6 +49,8 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	private Integer pageSize;
 
+	private String segmentInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -65,7 +67,7 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	private String status;
 	public DescribeEipAddressesRequest() {
-		super("Vpc", "2016-04-28", "DescribeEipAddresses", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeEipAddresses", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -202,6 +204,17 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSegmentInstanceId() {
+		return this.segmentInstanceId;
+	}
+
+	public void setSegmentInstanceId(String segmentInstanceId) {
+		this.segmentInstanceId = segmentInstanceId;
+		if(segmentInstanceId != null){
+			putQueryParameter("SegmentInstanceId", segmentInstanceId);
 		}
 	}
 

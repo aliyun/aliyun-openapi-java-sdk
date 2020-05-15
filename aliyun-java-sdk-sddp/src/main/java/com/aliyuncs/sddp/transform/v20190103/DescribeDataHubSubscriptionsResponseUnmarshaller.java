@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDataHubSubscriptionsResponseUnmarshaller {
 
-	public static DescribeDataHubSubscriptionsResponse unmarshall(DescribeDataHubSubscriptionsResponse describeDataHubSubscriptionsResponse, UnmarshallerContext context) {
+	public static DescribeDataHubSubscriptionsResponse unmarshall(DescribeDataHubSubscriptionsResponse describeDataHubSubscriptionsResponse, UnmarshallerContext _ctx) {
 		
-		describeDataHubSubscriptionsResponse.setRequestId(context.stringValue("DescribeDataHubSubscriptionsResponse.RequestId"));
-		describeDataHubSubscriptionsResponse.setPageSize(context.integerValue("DescribeDataHubSubscriptionsResponse.PageSize"));
-		describeDataHubSubscriptionsResponse.setCurrentPage(context.integerValue("DescribeDataHubSubscriptionsResponse.CurrentPage"));
-		describeDataHubSubscriptionsResponse.setTotalCount(context.integerValue("DescribeDataHubSubscriptionsResponse.TotalCount"));
+		describeDataHubSubscriptionsResponse.setRequestId(_ctx.stringValue("DescribeDataHubSubscriptionsResponse.RequestId"));
+		describeDataHubSubscriptionsResponse.setPageSize(_ctx.integerValue("DescribeDataHubSubscriptionsResponse.PageSize"));
+		describeDataHubSubscriptionsResponse.setCurrentPage(_ctx.integerValue("DescribeDataHubSubscriptionsResponse.CurrentPage"));
+		describeDataHubSubscriptionsResponse.setTotalCount(_ctx.integerValue("DescribeDataHubSubscriptionsResponse.TotalCount"));
 
 		List<Subscription> items = new ArrayList<Subscription>();
-		for (int i = 0; i < context.lengthValue("DescribeDataHubSubscriptionsResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDataHubSubscriptionsResponse.Items.Length"); i++) {
 			Subscription subscription = new Subscription();
-			subscription.setId(context.longValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].Id"));
-			subscription.setName(context.stringValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].Name"));
-			subscription.setDescription(context.stringValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].Description"));
-			subscription.setCreationTime(context.longValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].CreationTime"));
-			subscription.setState(context.stringValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].State"));
-			subscription.setApplicationName(context.stringValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].ApplicationName"));
-			subscription.setUserId(context.longValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].UserId"));
-			subscription.setLoginName(context.stringValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].LoginName"));
-			subscription.setDisplayName(context.stringValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].DisplayName"));
-			subscription.setSubscriptionUserId(context.longValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].SubscriptionUserId"));
-			subscription.setSubscriptionUserName(context.stringValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].SubscriptionUserName"));
-			subscription.setSubscriptionDisplayName(context.stringValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].SubscriptionDisplayName"));
+			subscription.setId(_ctx.longValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].Id"));
+			subscription.setName(_ctx.stringValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].Name"));
+			subscription.setDescription(_ctx.stringValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].Description"));
+			subscription.setCreationTime(_ctx.longValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].CreationTime"));
+			subscription.setState(_ctx.stringValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].State"));
+			subscription.setApplicationName(_ctx.stringValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].ApplicationName"));
+			subscription.setUserId(_ctx.longValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].UserId"));
+			subscription.setLoginName(_ctx.stringValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].LoginName"));
+			subscription.setDisplayName(_ctx.stringValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].DisplayName"));
+			subscription.setSubscriptionUserId(_ctx.longValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].SubscriptionUserId"));
+			subscription.setSubscriptionUserName(_ctx.stringValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].SubscriptionUserName"));
+			subscription.setSubscriptionDisplayName(_ctx.stringValue("DescribeDataHubSubscriptionsResponse.Items["+ i +"].SubscriptionDisplayName"));
 
 			items.add(subscription);
 		}

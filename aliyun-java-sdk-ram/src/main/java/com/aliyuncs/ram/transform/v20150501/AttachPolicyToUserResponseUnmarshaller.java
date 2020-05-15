@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AttachPolicyToUserResponseUnmarshaller {
 
-	public static AttachPolicyToUserResponse unmarshall(AttachPolicyToUserResponse attachPolicyToUserResponse, UnmarshallerContext context) {
+	public static AttachPolicyToUserResponse unmarshall(AttachPolicyToUserResponse attachPolicyToUserResponse, UnmarshallerContext _ctx) {
 		
-		attachPolicyToUserResponse.setRequestId(context.stringValue("AttachPolicyToUserResponse.RequestId"));
+		attachPolicyToUserResponse.setRequestId(_ctx.stringValue("AttachPolicyToUserResponse.RequestId"));
 	 
 	 	return attachPolicyToUserResponse;
 	}

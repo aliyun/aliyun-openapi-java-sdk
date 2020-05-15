@@ -37,6 +37,8 @@ public class ListOutboundPhoneNumberOfUserResponse extends AcsResponse {
 
 	private List<PhoneNumber> outboundPhoneNumbers;
 
+	private List<String> numberList;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -83,6 +85,14 @@ public class ListOutboundPhoneNumberOfUserResponse extends AcsResponse {
 
 	public void setOutboundPhoneNumbers(List<PhoneNumber> outboundPhoneNumbers) {
 		this.outboundPhoneNumbers = outboundPhoneNumbers;
+	}
+
+	public List<String> getNumberList() {
+		return this.numberList;
+	}
+
+	public void setNumberList(List<String> numberList) {
+		this.numberList = numberList;
 	}
 
 	public static class PhoneNumber {

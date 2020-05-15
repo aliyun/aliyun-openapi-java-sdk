@@ -37,7 +37,7 @@ public class UpgradeDBInstanceKernelVersionRequest extends RpcAcsRequest<Upgrade
 
 	private Long ownerId;
 	public UpgradeDBInstanceKernelVersionRequest() {
-		super("Dds", "2015-12-01", "UpgradeDBInstanceKernelVersion", "Dds");
+		super("Dds", "2015-12-01", "UpgradeDBInstanceKernelVersion", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

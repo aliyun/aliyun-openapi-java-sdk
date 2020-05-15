@@ -25,15 +25,35 @@ import com.aliyuncs.nas.Endpoint;
 public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemResponse> {
 	   
 
+	private String snapshotId;
+
+	private String clientToken;
+
 	private String description;
+
+	private String fileSystemType;
 
 	private String storageType;
 
+	private Long capacity;
+
 	private Integer encryptType;
+
+	private Integer duration;
+
+	private Boolean dryRun;
+
+	private Long bandwidth;
+
+	private String vSwitchId;
+
+	private String vpcId;
 
 	private String zoneId;
 
 	private String protocolType;
+
+	private String chargeType;
 	public CreateFileSystemRequest() {
 		super("NAS", "2017-06-26", "CreateFileSystem", "nas");
 		setMethod(MethodType.POST);
@@ -41,6 +61,28 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSnapshotId() {
+		return this.snapshotId;
+	}
+
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getDescription() {
@@ -51,6 +93,17 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getFileSystemType() {
+		return this.fileSystemType;
+	}
+
+	public void setFileSystemType(String fileSystemType) {
+		this.fileSystemType = fileSystemType;
+		if(fileSystemType != null){
+			putQueryParameter("FileSystemType", fileSystemType);
 		}
 	}
 
@@ -65,6 +118,17 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 		}
 	}
 
+	public Long getCapacity() {
+		return this.capacity;
+	}
+
+	public void setCapacity(Long capacity) {
+		this.capacity = capacity;
+		if(capacity != null){
+			putQueryParameter("Capacity", capacity.toString());
+		}
+	}
+
 	public Integer getEncryptType() {
 		return this.encryptType;
 	}
@@ -73,6 +137,61 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 		this.encryptType = encryptType;
 		if(encryptType != null){
 			putQueryParameter("EncryptType", encryptType.toString());
+		}
+	}
+
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public Long getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Long bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth.toString());
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
@@ -95,6 +214,17 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 		this.protocolType = protocolType;
 		if(protocolType != null){
 			putQueryParameter("ProtocolType", protocolType);
+		}
+	}
+
+	public String getChargeType() {
+		return this.chargeType;
+	}
+
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType);
 		}
 	}
 

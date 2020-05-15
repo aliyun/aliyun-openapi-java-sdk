@@ -16,21 +16,28 @@ package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ram.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateGroupRequest extends RpcAcsRequest<CreateGroupResponse> {
-	
-	public CreateGroupRequest() {
-		super("Ram", "2015-05-01", "CreateGroup");
-		setProtocol(ProtocolType.HTTPS);
-	}
+	   
 
 	private String comments;
 
 	private String groupName;
+	public CreateGroupRequest() {
+		super("Ram", "2015-05-01", "CreateGroup", "Ram");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getComments() {
 		return this.comments;

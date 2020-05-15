@@ -29,7 +29,7 @@ public class DescribeDrdsDbTestLinkRequest extends RpcAcsRequest<DescribeDrdsDbT
 
 	private String dbName;
 	public DescribeDrdsDbTestLinkRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsDbTestLink", "drds");
+		super("Drds", "2019-01-23", "DescribeDrdsDbTestLink", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

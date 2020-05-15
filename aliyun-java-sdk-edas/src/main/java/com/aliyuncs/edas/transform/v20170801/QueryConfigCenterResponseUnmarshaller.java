@@ -28,11 +28,11 @@ public class QueryConfigCenterResponseUnmarshaller {
 		queryConfigCenterResponse.setMessage(_ctx.stringValue("QueryConfigCenterResponse.Message"));
 
 		ConfigCenterInfo configCenterInfo = new ConfigCenterInfo();
+		configCenterInfo.setAppName(_ctx.stringValue("QueryConfigCenterResponse.configCenterInfo.AppName"));
 		configCenterInfo.setContent(_ctx.stringValue("QueryConfigCenterResponse.configCenterInfo.Content"));
 		configCenterInfo.setDataId(_ctx.stringValue("QueryConfigCenterResponse.configCenterInfo.DataId"));
 		configCenterInfo.setGroup(_ctx.stringValue("QueryConfigCenterResponse.configCenterInfo.Group"));
 		configCenterInfo.setId(_ctx.stringValue("QueryConfigCenterResponse.configCenterInfo.Id"));
-		configCenterInfo.setAppName(_ctx.stringValue("QueryConfigCenterResponse.configCenterInfo.AppName"));
 		queryConfigCenterResponse.setConfigCenterInfo(configCenterInfo);
 	 
 	 	return queryConfigCenterResponse;

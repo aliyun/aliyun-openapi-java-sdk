@@ -35,7 +35,7 @@ public class CancelExpressCloudConnectionRequest extends RpcAcsRequest<CancelExp
 
 	private Long ownerId;
 	public CancelExpressCloudConnectionRequest() {
-		super("Vpc", "2016-04-28", "CancelExpressCloudConnection", "Vpc");
+		super("Vpc", "2016-04-28", "CancelExpressCloudConnection", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

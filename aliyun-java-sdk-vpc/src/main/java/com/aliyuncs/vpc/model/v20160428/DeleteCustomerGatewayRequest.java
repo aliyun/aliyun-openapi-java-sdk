@@ -37,7 +37,7 @@ public class DeleteCustomerGatewayRequest extends RpcAcsRequest<DeleteCustomerGa
 
 	private Long ownerId;
 	public DeleteCustomerGatewayRequest() {
-		super("Vpc", "2016-04-28", "DeleteCustomerGateway", "Vpc");
+		super("Vpc", "2016-04-28", "DeleteCustomerGateway", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -1,0 +1,12 @@
+2020-04-24 Version: 0.7.0
+- Publish apis for ledger instances.
+- Publish apis for members.
+- Publish apis for time anchors.
+- Publish apis for endpoints.
+
+2020-04-24 Version: 0.7.0
+- Publish apis for ledger instances.
+- Publish apis for members.
+- Publish apis for time anchors.
+- Publish apis for endpoints.
+

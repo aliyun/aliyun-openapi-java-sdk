@@ -27,7 +27,7 @@ public class DeleteServiceGroupRequest extends RoaAcsRequest<DeleteServiceGroupR
 
 	private String groupId;
 	public DeleteServiceGroupRequest() {
-		super("Edas", "2017-08-01", "DeleteServiceGroup", "Edas");
+		super("Edas", "2017-08-01", "DeleteServiceGroup", "edas");
 		setUriPattern("/pop/v5/service/serviceGroups");
 		setMethod(MethodType.DELETE);
 		try {

@@ -60,7 +60,7 @@ public class RenderOrderResponseUnmarshaller {
 				lmItemInfosItem.setSellerId(_ctx.longValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].SellerId"));
 				lmItemInfosItem.setSellerNick(_ctx.stringValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].SellerNick"));
 				lmItemInfosItem.setCash(_ctx.longValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].Cash"));
-				lmItemInfosItem.setPoints(_ctx.longValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].points"));
+				lmItemInfosItem.setPoints(_ctx.longValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].Points"));
 				lmItemInfosItem.setActualPrice(_ctx.longValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].ActualPrice"));
 				lmItemInfosItem.setItemPicUrl(_ctx.stringValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].ItemPicUrl"));
 				lmItemInfosItem.setMessage1(_ctx.stringValue("RenderOrderResponse.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].Message"));

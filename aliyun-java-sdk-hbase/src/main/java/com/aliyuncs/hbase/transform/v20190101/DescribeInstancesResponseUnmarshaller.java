@@ -62,6 +62,12 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setClusterType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ClusterType"));
 			instance.setCreatedTimeUTC(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CreatedTimeUTC"));
 			instance.setExpireTimeUTC(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ExpireTimeUTC"));
+			instance.setClusterId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ClusterId"));
+			instance.setClusterName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ClusterName"));
+			instance.setIsDeletionProtection(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].IsDeletionProtection"));
+			instance.setParentId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ParentId"));
+			instance.setModuleId(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].ModuleId"));
+			instance.setModuleStackVersion(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ModuleStackVersion"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {

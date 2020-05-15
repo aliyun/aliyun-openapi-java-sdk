@@ -24,36 +24,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDataAssetsResponseUnmarshaller {
 
-	public static DescribeDataAssetsResponse unmarshall(DescribeDataAssetsResponse describeDataAssetsResponse, UnmarshallerContext context) {
+	public static DescribeDataAssetsResponse unmarshall(DescribeDataAssetsResponse describeDataAssetsResponse, UnmarshallerContext _ctx) {
 		
-		describeDataAssetsResponse.setRequestId(context.stringValue("DescribeDataAssetsResponse.RequestId"));
-		describeDataAssetsResponse.setPageSize(context.integerValue("DescribeDataAssetsResponse.PageSize"));
-		describeDataAssetsResponse.setCurrentPage(context.integerValue("DescribeDataAssetsResponse.CurrentPage"));
-		describeDataAssetsResponse.setTotalCount(context.integerValue("DescribeDataAssetsResponse.TotalCount"));
+		describeDataAssetsResponse.setRequestId(_ctx.stringValue("DescribeDataAssetsResponse.RequestId"));
+		describeDataAssetsResponse.setPageSize(_ctx.integerValue("DescribeDataAssetsResponse.PageSize"));
+		describeDataAssetsResponse.setCurrentPage(_ctx.integerValue("DescribeDataAssetsResponse.CurrentPage"));
+		describeDataAssetsResponse.setTotalCount(_ctx.integerValue("DescribeDataAssetsResponse.TotalCount"));
 
 		List<Asset> items = new ArrayList<Asset>();
-		for (int i = 0; i < context.lengthValue("DescribeDataAssetsResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDataAssetsResponse.Items.Length"); i++) {
 			Asset asset = new Asset();
-			asset.setId(context.longValue("DescribeDataAssetsResponse.Items["+ i +"].Id"));
-			asset.setName(context.stringValue("DescribeDataAssetsResponse.Items["+ i +"].Name"));
-			asset.setOwner(context.stringValue("DescribeDataAssetsResponse.Items["+ i +"].Owner"));
-			asset.setCreationTime(context.longValue("DescribeDataAssetsResponse.Items["+ i +"].CreationTime"));
-			asset.setProductId(context.stringValue("DescribeDataAssetsResponse.Items["+ i +"].ProductId"));
-			asset.setProductCode(context.stringValue("DescribeDataAssetsResponse.Items["+ i +"].ProductCode"));
-			asset.setProtection(context.booleanValue("DescribeDataAssetsResponse.Items["+ i +"].Protection"));
-			asset.setLabelsec(context.integerValue("DescribeDataAssetsResponse.Items["+ i +"].Labelsec"));
-			asset.setOdpsRiskLevelName(context.stringValue("DescribeDataAssetsResponse.Items["+ i +"].OdpsRiskLevelName"));
-			asset.setSensitive(context.booleanValue("DescribeDataAssetsResponse.Items["+ i +"].Sensitive"));
-			asset.setRiskLevelId(context.longValue("DescribeDataAssetsResponse.Items["+ i +"].RiskLevelId"));
-			asset.setRiskLevelName(context.stringValue("DescribeDataAssetsResponse.Items["+ i +"].RiskLevelName"));
-			asset.setRuleName(context.stringValue("DescribeDataAssetsResponse.Items["+ i +"].RuleName"));
-			asset.setDepartName(context.stringValue("DescribeDataAssetsResponse.Items["+ i +"].DepartName"));
-			asset.setTotalCount(context.integerValue("DescribeDataAssetsResponse.Items["+ i +"].TotalCount"));
-			asset.setSensitiveCount(context.integerValue("DescribeDataAssetsResponse.Items["+ i +"].SensitiveCount"));
-			asset.setAcl(context.stringValue("DescribeDataAssetsResponse.Items["+ i +"].Acl"));
-			asset.setSensitiveRatio(context.stringValue("DescribeDataAssetsResponse.Items["+ i +"].SensitiveRatio"));
-			asset.setDataType(context.stringValue("DescribeDataAssetsResponse.Items["+ i +"].DataType"));
-			asset.setObjectKey(context.stringValue("DescribeDataAssetsResponse.Items["+ i +"].ObjectKey"));
+			asset.setId(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].Id"));
+			asset.setName(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].Name"));
+			asset.setOwner(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].Owner"));
+			asset.setCreationTime(_ctx.longValue("DescribeDataAssetsResponse.Items["+ i +"].CreationTime"));
+			asset.setProductId(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].ProductId"));
+			asset.setProductCode(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].ProductCode"));
+			asset.setProtection(_ctx.booleanValue("DescribeDataAssetsResponse.Items["+ i +"].Protection"));
+			asset.setLabelsec(_ctx.integerValue("DescribeDataAssetsResponse.Items["+ i +"].Labelsec"));
+			asset.setOdpsRiskLevelName(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].OdpsRiskLevelName"));
+			asset.setSensitive(_ctx.booleanValue("DescribeDataAssetsResponse.Items["+ i +"].Sensitive"));
+			asset.setRiskLevelId(_ctx.longValue("DescribeDataAssetsResponse.Items["+ i +"].RiskLevelId"));
+			asset.setRiskLevelName(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].RiskLevelName"));
+			asset.setRuleName(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].RuleName"));
+			asset.setDepartName(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].DepartName"));
+			asset.setTotalCount(_ctx.integerValue("DescribeDataAssetsResponse.Items["+ i +"].TotalCount"));
+			asset.setSensitiveCount(_ctx.integerValue("DescribeDataAssetsResponse.Items["+ i +"].SensitiveCount"));
+			asset.setAcl(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].Acl"));
+			asset.setSensitiveRatio(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].SensitiveRatio"));
+			asset.setDataType(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].DataType"));
+			asset.setObjectKey(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].ObjectKey"));
 
 			items.add(asset);
 		}

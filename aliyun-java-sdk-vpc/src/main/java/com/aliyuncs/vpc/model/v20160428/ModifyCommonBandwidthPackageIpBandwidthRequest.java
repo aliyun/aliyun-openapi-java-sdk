@@ -39,7 +39,7 @@ public class ModifyCommonBandwidthPackageIpBandwidthRequest extends RpcAcsReques
 
 	private Long ownerId;
 	public ModifyCommonBandwidthPackageIpBandwidthRequest() {
-		super("Vpc", "2016-04-28", "ModifyCommonBandwidthPackageIpBandwidth", "Vpc");
+		super("Vpc", "2016-04-28", "ModifyCommonBandwidthPackageIpBandwidth", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

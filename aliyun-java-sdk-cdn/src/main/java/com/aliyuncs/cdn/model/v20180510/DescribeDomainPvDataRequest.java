@@ -25,15 +25,15 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeDomainPvDataRequest extends RpcAcsRequest<DescribeDomainPvDataResponse> {
 	   
 
+	private String startTime;
+
+	private String securityToken;
+
 	private String domainName;
 
 	private String endTime;
 
-	private String startTime;
-
 	private Long ownerId;
-
-	private String securityToken;
 	public DescribeDomainPvDataRequest() {
 		super("Cdn", "2018-05-10", "DescribeDomainPvData");
 		setMethod(MethodType.POST);
@@ -41,6 +41,28 @@ public class DescribeDomainPvDataRequest extends RpcAcsRequest<DescribeDomainPvD
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -65,17 +87,6 @@ public class DescribeDomainPvDataRequest extends RpcAcsRequest<DescribeDomainPvD
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -84,17 +95,6 @@ public class DescribeDomainPvDataRequest extends RpcAcsRequest<DescribeDomainPvD
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.oos.Endpoint;
 
 /**
@@ -22,16 +23,30 @@ import com.aliyuncs.oos.Endpoint;
  * @version 
  */
 public class GenerateExecutionPolicyRequest extends RpcAcsRequest<GenerateExecutionPolicyResponse> {
-	
+	   
+
+	private String templateVersion;
+
+	private String templateName;
 	public GenerateExecutionPolicyRequest() {
 		super("oos", "2019-06-01", "GenerateExecutionPolicy", "oos");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String templateName;
+	public String getTemplateVersion() {
+		return this.templateVersion;
+	}
+
+	public void setTemplateVersion(String templateVersion) {
+		this.templateVersion = templateVersion;
+		if(templateVersion != null){
+			putQueryParameter("TemplateVersion", templateVersion);
+		}
+	}
 
 	public String getTemplateName() {
 		return this.templateName;

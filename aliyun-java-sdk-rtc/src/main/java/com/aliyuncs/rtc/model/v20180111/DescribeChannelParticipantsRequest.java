@@ -37,7 +37,7 @@ public class DescribeChannelParticipantsRequest extends RpcAcsRequest<DescribeCh
 
 	private String channelId;
 	public DescribeChannelParticipantsRequest() {
-		super("rtc", "2018-01-11", "DescribeChannelParticipants");
+		super("rtc", "2018-01-11", "DescribeChannelParticipants", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -1,3 +1,6 @@
+2020-04-02 Version: 1.5.0
+- Support for WaitTimeSeconds for DescribeExecution.
+
 2020-02-14 Version: 1.4.0
 - Add callback params to StartExecution API.
 - Support ListExecutions with Status API.

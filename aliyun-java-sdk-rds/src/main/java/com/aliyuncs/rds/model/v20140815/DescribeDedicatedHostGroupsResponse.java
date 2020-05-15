@@ -15,6 +15,7 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeDedicatedHostGroupsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -72,6 +73,14 @@ public class DescribeDedicatedHostGroupsResponse extends AcsResponse {
 		private String engine;
 
 		private String text;
+
+		private Map<Object,Object> dedicatedHostCountGroupByHostType;
+
+		private String bastionInstanceId;
+
+		private String openPermission;
+
+		private List<String> zoneIDList;
 
 		public String getDedicatedHostGroupId() {
 			return this.dedicatedHostGroupId;
@@ -175,6 +184,38 @@ public class DescribeDedicatedHostGroupsResponse extends AcsResponse {
 
 		public void setText(String text) {
 			this.text = text;
+		}
+
+		public Map<Object,Object> getDedicatedHostCountGroupByHostType() {
+			return this.dedicatedHostCountGroupByHostType;
+		}
+
+		public void setDedicatedHostCountGroupByHostType(Map<Object,Object> dedicatedHostCountGroupByHostType) {
+			this.dedicatedHostCountGroupByHostType = dedicatedHostCountGroupByHostType;
+		}
+
+		public String getBastionInstanceId() {
+			return this.bastionInstanceId;
+		}
+
+		public void setBastionInstanceId(String bastionInstanceId) {
+			this.bastionInstanceId = bastionInstanceId;
+		}
+
+		public String getOpenPermission() {
+			return this.openPermission;
+		}
+
+		public void setOpenPermission(String openPermission) {
+			this.openPermission = openPermission;
+		}
+
+		public List<String> getZoneIDList() {
+			return this.zoneIDList;
+		}
+
+		public void setZoneIDList(List<String> zoneIDList) {
+			this.zoneIDList = zoneIDList;
 		}
 	}
 

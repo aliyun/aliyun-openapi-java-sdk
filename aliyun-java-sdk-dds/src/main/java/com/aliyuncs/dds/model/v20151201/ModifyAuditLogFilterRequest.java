@@ -41,7 +41,7 @@ public class ModifyAuditLogFilterRequest extends RpcAcsRequest<ModifyAuditLogFil
 
 	private String filter;
 	public ModifyAuditLogFilterRequest() {
-		super("Dds", "2015-12-01", "ModifyAuditLogFilter", "Dds");
+		super("Dds", "2015-12-01", "ModifyAuditLogFilter", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

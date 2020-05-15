@@ -17,6 +17,7 @@ package com.aliyuncs.linkedmall.model.v20180116;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkedmall.Endpoint;
 
 /**
  * @author auto create
@@ -37,6 +38,8 @@ public class CreateVirtualProductOrderRequest extends RpcAcsRequest<CreateVirtua
 
 	private Long orderExpireTime;
 
+	private String lmItemId;
+
 	private List<ItemList> itemLists;
 
 	private Long itemId;
@@ -53,6 +56,10 @@ public class CreateVirtualProductOrderRequest extends RpcAcsRequest<CreateVirtua
 	public CreateVirtualProductOrderRequest() {
 		super("linkedmall", "2018-01-16", "CreateVirtualProductOrder", "linkedmall");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getQuantity() {
@@ -121,6 +128,17 @@ public class CreateVirtualProductOrderRequest extends RpcAcsRequest<CreateVirtua
 		}
 	}
 
+	public String getLmItemId() {
+		return this.lmItemId;
+	}
+
+	public void setLmItemId(String lmItemId) {
+		this.lmItemId = lmItemId;
+		if(lmItemId != null){
+			putQueryParameter("LmItemId", lmItemId);
+		}
+	}
+
 	public List<ItemList> getItemLists() {
 		return this.itemLists;
 	}
@@ -131,6 +149,7 @@ public class CreateVirtualProductOrderRequest extends RpcAcsRequest<CreateVirtua
 			for (int depth1 = 0; depth1 < itemLists.size(); depth1++) {
 				putQueryParameter("ItemList." + (depth1 + 1) + ".ItemId" , itemLists.get(depth1).getItemId());
 				putQueryParameter("ItemList." + (depth1 + 1) + ".Quantity" , itemLists.get(depth1).getQuantity());
+				putQueryParameter("ItemList." + (depth1 + 1) + ".LmItemId" , itemLists.get(depth1).getLmItemId());
 				putQueryParameter("ItemList." + (depth1 + 1) + ".SkuId" , itemLists.get(depth1).getSkuId());
 			}
 		}	
@@ -208,6 +227,8 @@ public class CreateVirtualProductOrderRequest extends RpcAcsRequest<CreateVirtua
 
 		private Integer quantity;
 
+		private String lmItemId;
+
 		private Long skuId;
 
 		public Long getItemId() {
@@ -224,6 +245,14 @@ public class CreateVirtualProductOrderRequest extends RpcAcsRequest<CreateVirtua
 
 		public void setQuantity(Integer quantity) {
 			this.quantity = quantity;
+		}
+
+		public String getLmItemId() {
+			return this.lmItemId;
+		}
+
+		public void setLmItemId(String lmItemId) {
+			this.lmItemId = lmItemId;
 		}
 
 		public Long getSkuId() {

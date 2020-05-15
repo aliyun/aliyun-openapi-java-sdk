@@ -27,7 +27,7 @@ public class DescribeEvaluateDataImportDbTopologysRequest extends RpcAcsRequest<
 
 	private String importParam;
 	public DescribeEvaluateDataImportDbTopologysRequest() {
-		super("Drds", "2019-01-23", "DescribeEvaluateDataImportDbTopologys", "drds");
+		super("Drds", "2019-01-23", "DescribeEvaluateDataImportDbTopologys", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

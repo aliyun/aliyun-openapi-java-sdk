@@ -28,10 +28,10 @@ public class UpdateJvmConfigurationResponseUnmarshaller {
 		updateJvmConfigurationResponse.setMessage(_ctx.stringValue("UpdateJvmConfigurationResponse.Message"));
 
 		JvmConfiguration jvmConfiguration = new JvmConfiguration();
-		jvmConfiguration.setOptions(_ctx.stringValue("UpdateJvmConfigurationResponse.JvmConfiguration.Options"));
-		jvmConfiguration.setMinHeapSize(_ctx.integerValue("UpdateJvmConfigurationResponse.JvmConfiguration.MinHeapSize"));
-		jvmConfiguration.setMaxPermSize(_ctx.integerValue("UpdateJvmConfigurationResponse.JvmConfiguration.MaxPermSize"));
 		jvmConfiguration.setMaxHeapSize(_ctx.integerValue("UpdateJvmConfigurationResponse.JvmConfiguration.MaxHeapSize"));
+		jvmConfiguration.setMaxPermSize(_ctx.integerValue("UpdateJvmConfigurationResponse.JvmConfiguration.MaxPermSize"));
+		jvmConfiguration.setMinHeapSize(_ctx.integerValue("UpdateJvmConfigurationResponse.JvmConfiguration.MinHeapSize"));
+		jvmConfiguration.setOptions(_ctx.stringValue("UpdateJvmConfigurationResponse.JvmConfiguration.Options"));
 		updateJvmConfigurationResponse.setJvmConfiguration(jvmConfiguration);
 	 
 	 	return updateJvmConfigurationResponse;

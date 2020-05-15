@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
 /**
@@ -22,40 +23,30 @@ import com.aliyuncs.cbn.Endpoint;
  * @version 
  */
 public class PublishRouteEntriesRequest extends RpcAcsRequest<PublishRouteEntriesResponse> {
-	
-	public PublishRouteEntriesRequest() {
-		super("Cbn", "2017-09-12", "PublishRouteEntries", "cbn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String childInstanceId;
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String cenId;
+
+	private String childInstanceRegionId;
+
+	private String resourceOwnerAccount;
 
 	private String destinationCidrBlock;
 
 	private String childInstanceType;
 
+	private String childInstanceId;
+
 	private String childInstanceRouteTableId;
-
-	private String childInstanceRegionId;
-
-	public String getChildInstanceId() {
-		return this.childInstanceId;
-	}
-
-	public void setChildInstanceId(String childInstanceId) {
-		this.childInstanceId = childInstanceId;
-		if(childInstanceId != null){
-			putQueryParameter("ChildInstanceId", childInstanceId);
-		}
+	public PublishRouteEntriesRequest() {
+		super("Cbn", "2017-09-12", "PublishRouteEntries", "Cbn");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -69,17 +60,6 @@ public class PublishRouteEntriesRequest extends RpcAcsRequest<PublishRouteEntrie
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getCenId() {
 		return this.cenId;
 	}
@@ -88,6 +68,28 @@ public class PublishRouteEntriesRequest extends RpcAcsRequest<PublishRouteEntrie
 		this.cenId = cenId;
 		if(cenId != null){
 			putQueryParameter("CenId", cenId);
+		}
+	}
+
+	public String getChildInstanceRegionId() {
+		return this.childInstanceRegionId;
+	}
+
+	public void setChildInstanceRegionId(String childInstanceRegionId) {
+		this.childInstanceRegionId = childInstanceRegionId;
+		if(childInstanceRegionId != null){
+			putQueryParameter("ChildInstanceRegionId", childInstanceRegionId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -113,6 +115,17 @@ public class PublishRouteEntriesRequest extends RpcAcsRequest<PublishRouteEntrie
 		}
 	}
 
+	public String getChildInstanceId() {
+		return this.childInstanceId;
+	}
+
+	public void setChildInstanceId(String childInstanceId) {
+		this.childInstanceId = childInstanceId;
+		if(childInstanceId != null){
+			putQueryParameter("ChildInstanceId", childInstanceId);
+		}
+	}
+
 	public String getChildInstanceRouteTableId() {
 		return this.childInstanceRouteTableId;
 	}
@@ -121,17 +134,6 @@ public class PublishRouteEntriesRequest extends RpcAcsRequest<PublishRouteEntrie
 		this.childInstanceRouteTableId = childInstanceRouteTableId;
 		if(childInstanceRouteTableId != null){
 			putQueryParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
-		}
-	}
-
-	public String getChildInstanceRegionId() {
-		return this.childInstanceRegionId;
-	}
-
-	public void setChildInstanceRegionId(String childInstanceRegionId) {
-		this.childInstanceRegionId = childInstanceRegionId;
-		if(childInstanceRegionId != null){
-			putQueryParameter("ChildInstanceRegionId", childInstanceRegionId);
 		}
 	}
 

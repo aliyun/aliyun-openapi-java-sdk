@@ -32,6 +32,10 @@ public class GetTaskResultResponseUnmarshaller {
 		result.setProcessResultUrl(_ctx.stringValue("GetTaskResultResponse.Result.ProcessResultUrl"));
 		result.setAnalysisUseTime(_ctx.longValue("GetTaskResultResponse.Result.AnalysisUseTime"));
 		result.setVideoUrl(_ctx.stringValue("GetTaskResultResponse.Result.VideoUrl"));
+		result.setErrorName(_ctx.stringValue("GetTaskResultResponse.Result.ErrorName"));
+		result.setErrorReason(_ctx.stringValue("GetTaskResultResponse.Result.ErrorReason"));
+		result.setErrorCode(_ctx.stringValue("GetTaskResultResponse.Result.ErrorCode"));
+		result.setErrorMessage(_ctx.stringValue("GetTaskResultResponse.Result.ErrorMessage"));
 		getTaskResultResponse.setResult(result);
 	 
 	 	return getTaskResultResponse;

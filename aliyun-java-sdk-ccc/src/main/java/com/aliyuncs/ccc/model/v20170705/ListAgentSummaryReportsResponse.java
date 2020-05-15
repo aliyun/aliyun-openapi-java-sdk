@@ -253,6 +253,8 @@ public class ListAgentSummaryReportsResponse extends AcsResponse {
 
 				private Long satisfactionSurveysResponded;
 
+				private Long oneTransferCalls;
+
 				public Long getTotalCalls() {
 					return this.totalCalls;
 				}
@@ -379,6 +381,14 @@ public class ListAgentSummaryReportsResponse extends AcsResponse {
 
 				public void setSatisfactionSurveysResponded(Long satisfactionSurveysResponded) {
 					this.satisfactionSurveysResponded = satisfactionSurveysResponded;
+				}
+
+				public Long getOneTransferCalls() {
+					return this.oneTransferCalls;
+				}
+
+				public void setOneTransferCalls(Long oneTransferCalls) {
+					this.oneTransferCalls = oneTransferCalls;
 				}
 			}
 

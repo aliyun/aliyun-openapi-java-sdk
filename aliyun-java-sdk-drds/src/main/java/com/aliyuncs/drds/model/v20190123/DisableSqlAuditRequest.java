@@ -29,7 +29,7 @@ public class DisableSqlAuditRequest extends RpcAcsRequest<DisableSqlAuditRespons
 
 	private String dbName;
 	public DisableSqlAuditRequest() {
-		super("Drds", "2019-01-23", "DisableSqlAudit", "drds");
+		super("Drds", "2019-01-23", "DisableSqlAudit", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

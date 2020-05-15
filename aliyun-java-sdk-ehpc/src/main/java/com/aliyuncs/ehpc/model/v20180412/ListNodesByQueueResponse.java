@@ -113,6 +113,12 @@ public class ListNodesByQueueResponse extends AcsResponse {
 
 		private String vSwitchId;
 
+		private Boolean htEnabled;
+
+		private String ipAddress;
+
+		private String publicIpAddress;
+
 		private TotalResources totalResources;
 
 		private UsedResources usedResources;
@@ -259,6 +265,30 @@ public class ListNodesByQueueResponse extends AcsResponse {
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
+		}
+
+		public Boolean getHtEnabled() {
+			return this.htEnabled;
+		}
+
+		public void setHtEnabled(Boolean htEnabled) {
+			this.htEnabled = htEnabled;
+		}
+
+		public String getIpAddress() {
+			return this.ipAddress;
+		}
+
+		public void setIpAddress(String ipAddress) {
+			this.ipAddress = ipAddress;
+		}
+
+		public String getPublicIpAddress() {
+			return this.publicIpAddress;
+		}
+
+		public void setPublicIpAddress(String publicIpAddress) {
+			this.publicIpAddress = publicIpAddress;
 		}
 
 		public TotalResources getTotalResources() {

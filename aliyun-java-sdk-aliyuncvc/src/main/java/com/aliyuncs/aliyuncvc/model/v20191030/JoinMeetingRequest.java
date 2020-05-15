@@ -27,6 +27,8 @@ public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
 
 	private String userId;
 
+	private String password;
+
 	private String meetingCode;
 	public JoinMeetingRequest() {
 		super("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc");
@@ -45,6 +47,17 @@ public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
 		this.userId = userId;
 		if(userId != null){
 			putBodyParameter("UserId", userId);
+		}
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putBodyParameter("Password", password);
 		}
 	}
 

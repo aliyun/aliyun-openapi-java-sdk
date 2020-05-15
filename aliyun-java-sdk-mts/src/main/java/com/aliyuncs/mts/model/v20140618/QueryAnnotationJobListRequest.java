@@ -35,7 +35,7 @@ public class QueryAnnotationJobListRequest extends RpcAcsRequest<QueryAnnotation
 
 	private String annotationJobIds;
 	public QueryAnnotationJobListRequest() {
-		super("Mts", "2014-06-18", "QueryAnnotationJobList", "mts");
+		super("Mts", "2014-06-18", "QueryAnnotationJobList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

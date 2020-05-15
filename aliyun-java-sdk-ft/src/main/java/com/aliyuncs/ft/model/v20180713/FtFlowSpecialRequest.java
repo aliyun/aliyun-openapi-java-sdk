@@ -15,18 +15,20 @@
 package com.aliyuncs.ft.model.v20180713;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class FtFlowSpecialRequest extends RpcAcsRequest<FtFlowSpecialResponse> {
-	
-	public FtFlowSpecialRequest() {
-		super("Ft", "2018-07-13", "FtFlowSpecial", "ft");
-	}
+	   
 
 	private String name;
+	public FtFlowSpecialRequest() {
+		super("Ft", "2018-07-13", "FtFlowSpecial");
+		setMethod(MethodType.POST);
+	}
 
 	public String getName() {
 		return this.name;

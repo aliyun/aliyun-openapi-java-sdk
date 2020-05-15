@@ -99,6 +99,10 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String consistentTime;
 
+		private String backupsLevel;
+
+		private String isAvail;
+
 		public String getBackupId() {
 			return this.backupId;
 		}
@@ -185,6 +189,22 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setConsistentTime(String consistentTime) {
 			this.consistentTime = consistentTime;
+		}
+
+		public String getBackupsLevel() {
+			return this.backupsLevel;
+		}
+
+		public void setBackupsLevel(String backupsLevel) {
+			this.backupsLevel = backupsLevel;
+		}
+
+		public String getIsAvail() {
+			return this.isAvail;
+		}
+
+		public void setIsAvail(String isAvail) {
+			this.isAvail = isAvail;
 		}
 	}
 

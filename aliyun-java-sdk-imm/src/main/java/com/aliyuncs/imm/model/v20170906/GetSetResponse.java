@@ -118,4 +118,9 @@ public class GetSetResponse extends AcsResponse {
 	public GetSetResponse getInstance(UnmarshallerContext context) {
 		return	GetSetResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

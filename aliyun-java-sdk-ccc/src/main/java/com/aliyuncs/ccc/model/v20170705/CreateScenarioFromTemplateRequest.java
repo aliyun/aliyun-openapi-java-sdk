@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class CreateScenarioFromTemplateRequest extends RpcAcsRequest<CreateScenarioFromTemplateResponse> {
-	
-	public CreateScenarioFromTemplateRequest() {
-		super("CCC", "2017-07-05", "CreateScenarioFromTemplate");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String variables;
 
@@ -42,6 +34,14 @@ public class CreateScenarioFromTemplateRequest extends RpcAcsRequest<CreateScena
 	private String instanceId;
 
 	private String name;
+	public CreateScenarioFromTemplateRequest() {
+		super("CCC", "2017-07-05", "CreateScenarioFromTemplate");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getVariables() {
 		return this.variables;

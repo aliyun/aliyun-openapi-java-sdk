@@ -32,7 +32,7 @@ public class SuspendSynchronizationJobRequest extends RpcAcsRequest<SuspendSynch
 
 	private String synchronizationDirection;
 	public SuspendSynchronizationJobRequest() {
-		super("Dts", "2020-01-01", "SuspendSynchronizationJob", "dts");
+		super("Dts", "2020-01-01", "SuspendSynchronizationJob");
 		setMethod(MethodType.POST);
 	}
 

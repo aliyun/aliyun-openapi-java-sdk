@@ -37,7 +37,7 @@ public class ModifyGlobalAccelerationInstanceSpecRequest extends RpcAcsRequest<M
 
 	private Long ownerId;
 	public ModifyGlobalAccelerationInstanceSpecRequest() {
-		super("Vpc", "2016-04-28", "ModifyGlobalAccelerationInstanceSpec", "Vpc");
+		super("Vpc", "2016-04-28", "ModifyGlobalAccelerationInstanceSpec", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

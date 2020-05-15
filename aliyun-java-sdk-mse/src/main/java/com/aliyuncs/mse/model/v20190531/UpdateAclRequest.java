@@ -28,6 +28,8 @@ public class UpdateAclRequest extends RpcAcsRequest<UpdateAclResponse> {
 	private String clusterId;
 
 	private String aclEntryList;
+
+	private String instanceId;
 	public UpdateAclRequest() {
 		super("mse", "2019-05-31", "UpdateAcl", "mse");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class UpdateAclRequest extends RpcAcsRequest<UpdateAclResponse> {
 		this.aclEntryList = aclEntryList;
 		if(aclEntryList != null){
 			putBodyParameter("AclEntryList", aclEntryList);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
 		}
 	}
 

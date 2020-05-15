@@ -14,6 +14,8 @@
 
 package com.aliyuncs.r_kvstore.model.v20150101;
 
+import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.r_kvstore.transform.v20150101.DescribeCacheAnalysisReportResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -34,9 +36,9 @@ public class DescribeCacheAnalysisReportResponse extends AcsResponse {
 
 	private Integer pageRecordCount;
 
-	private String hotKeys;
+	private List<Map<Object,Object>> hotKeys;
 
-	private String bigKeys;
+	private List<Map<Object,Object>> bigKeys;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -78,24 +80,29 @@ public class DescribeCacheAnalysisReportResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
-	public String getHotKeys() {
+	public List<Map<Object,Object>> getHotKeys() {
 		return this.hotKeys;
 	}
 
-	public void setHotKeys(String hotKeys) {
+	public void setHotKeys(List<Map<Object,Object>> hotKeys) {
 		this.hotKeys = hotKeys;
 	}
 
-	public String getBigKeys() {
+	public List<Map<Object,Object>> getBigKeys() {
 		return this.bigKeys;
 	}
 
-	public void setBigKeys(String bigKeys) {
+	public void setBigKeys(List<Map<Object,Object>> bigKeys) {
 		this.bigKeys = bigKeys;
 	}
 
 	@Override
 	public DescribeCacheAnalysisReportResponse getInstance(UnmarshallerContext context) {
 		return	DescribeCacheAnalysisReportResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

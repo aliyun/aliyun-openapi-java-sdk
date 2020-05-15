@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.CreateTopicRouteTableResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,10 +32,7 @@ public class CreateTopicRouteTableResponseUnmarshaller {
 		createTopicRouteTableResponse.setIsAllSucceed(_ctx.booleanValue("CreateTopicRouteTableResponse.IsAllSucceed"));
 		createTopicRouteTableResponse.setErrorMessage(_ctx.stringValue("CreateTopicRouteTableResponse.ErrorMessage"));
 
-		List<String> failureTopics = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("CreateTopicRouteTableResponse.FailureTopics.Length"); i++) {
-			failureTopics.add(_ctx.stringValue("CreateTopicRouteTableResponse.FailureTopics["+ i +"]"));
-		}
+		List<Map<Object, Object>> failureTopics = _ctx.listMapValue("CreateTopicRouteTableResponse.FailureTopics");
 		createTopicRouteTableResponse.setFailureTopics(failureTopics);
 	 
 	 	return createTopicRouteTableResponse;

@@ -37,6 +37,10 @@ public class ListServicesResponse extends AcsResponse {
 
 	private Long totalCount;
 
+	private String clusterIP;
+
+	private String clusterIP1;
+
 	private List<ServiceInstance> data;
 
 	public Integer getCode() {
@@ -87,6 +91,22 @@ public class ListServicesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
+	public String getClusterIP() {
+		return this.clusterIP;
+	}
+
+	public void setClusterIP(String clusterIP) {
+		this.clusterIP = clusterIP;
+	}
+
+	public String getClusterIP1() {
+		return this.clusterIP1;
+	}
+
+	public void setClusterIP1(String clusterIP1) {
+		this.clusterIP1 = clusterIP1;
+	}
+
 	public List<ServiceInstance> getData() {
 		return this.data;
 	}
@@ -110,6 +130,8 @@ public class ListServicesResponse extends AcsResponse {
 		private Long serviceId;
 
 		private String serviceType;
+
+		private String clusterIP;
 
 		private List<ServicePortMapping> portMappings;
 
@@ -167,6 +189,14 @@ public class ListServicesResponse extends AcsResponse {
 
 		public void setServiceType(String serviceType) {
 			this.serviceType = serviceType;
+		}
+
+		public String getClusterIP() {
+			return this.clusterIP;
+		}
+
+		public void setClusterIP(String clusterIP) {
+			this.clusterIP = clusterIP;
 		}
 
 		public List<ServicePortMapping> getPortMappings() {

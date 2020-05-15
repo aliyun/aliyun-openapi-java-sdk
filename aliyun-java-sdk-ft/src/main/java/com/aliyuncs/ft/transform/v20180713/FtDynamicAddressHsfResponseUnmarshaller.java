@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class FtDynamicAddressHsfResponseUnmarshaller {
 
-	public static FtDynamicAddressHsfResponse unmarshall(FtDynamicAddressHsfResponse ftDynamicAddressHsfResponse, UnmarshallerContext context) {
+	public static FtDynamicAddressHsfResponse unmarshall(FtDynamicAddressHsfResponse ftDynamicAddressHsfResponse, UnmarshallerContext _ctx) {
 		
-		ftDynamicAddressHsfResponse.setRequestId(context.stringValue("FtDynamicAddressHsfResponse.RequestId"));
+		ftDynamicAddressHsfResponse.setRequestId(_ctx.stringValue("FtDynamicAddressHsfResponse.RequestId"));
 	 
 	 	return ftDynamicAddressHsfResponse;
 	}

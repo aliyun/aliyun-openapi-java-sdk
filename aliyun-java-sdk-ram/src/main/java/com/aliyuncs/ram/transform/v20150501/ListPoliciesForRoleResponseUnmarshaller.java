@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListPoliciesForRoleResponseUnmarshaller {
 
-	public static ListPoliciesForRoleResponse unmarshall(ListPoliciesForRoleResponse listPoliciesForRoleResponse, UnmarshallerContext context) {
+	public static ListPoliciesForRoleResponse unmarshall(ListPoliciesForRoleResponse listPoliciesForRoleResponse, UnmarshallerContext _ctx) {
 		
-		listPoliciesForRoleResponse.setRequestId(context.stringValue("ListPoliciesForRoleResponse.RequestId"));
+		listPoliciesForRoleResponse.setRequestId(_ctx.stringValue("ListPoliciesForRoleResponse.RequestId"));
 
 		List<Policy> policies = new ArrayList<Policy>();
-		for (int i = 0; i < context.lengthValue("ListPoliciesForRoleResponse.Policies.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListPoliciesForRoleResponse.Policies.Length"); i++) {
 			Policy policy = new Policy();
-			policy.setPolicyName(context.stringValue("ListPoliciesForRoleResponse.Policies["+ i +"].PolicyName"));
-			policy.setPolicyType(context.stringValue("ListPoliciesForRoleResponse.Policies["+ i +"].PolicyType"));
-			policy.setDescription(context.stringValue("ListPoliciesForRoleResponse.Policies["+ i +"].Description"));
-			policy.setDefaultVersion(context.stringValue("ListPoliciesForRoleResponse.Policies["+ i +"].DefaultVersion"));
-			policy.setAttachDate(context.stringValue("ListPoliciesForRoleResponse.Policies["+ i +"].AttachDate"));
+			policy.setPolicyName(_ctx.stringValue("ListPoliciesForRoleResponse.Policies["+ i +"].PolicyName"));
+			policy.setPolicyType(_ctx.stringValue("ListPoliciesForRoleResponse.Policies["+ i +"].PolicyType"));
+			policy.setDescription(_ctx.stringValue("ListPoliciesForRoleResponse.Policies["+ i +"].Description"));
+			policy.setDefaultVersion(_ctx.stringValue("ListPoliciesForRoleResponse.Policies["+ i +"].DefaultVersion"));
+			policy.setAttachDate(_ctx.stringValue("ListPoliciesForRoleResponse.Policies["+ i +"].AttachDate"));
 
 			policies.add(policy);
 		}

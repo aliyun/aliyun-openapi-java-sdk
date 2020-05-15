@@ -49,11 +49,15 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 
 	private Long ownerId;
 
+	private Boolean enableDpd;
+
 	private String vpnConnectionId;
 
 	private String name;
+
+	private Boolean enableNatTraversal;
 	public ModifyVpnConnectionAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyVpnConnectionAttribute", "Vpc");
+		super("Vpc", "2016-04-28", "ModifyVpnConnectionAttribute", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -193,6 +197,17 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 		}
 	}
 
+	public Boolean getEnableDpd() {
+		return this.enableDpd;
+	}
+
+	public void setEnableDpd(Boolean enableDpd) {
+		this.enableDpd = enableDpd;
+		if(enableDpd != null){
+			putQueryParameter("EnableDpd", enableDpd.toString());
+		}
+	}
+
 	public String getVpnConnectionId() {
 		return this.vpnConnectionId;
 	}
@@ -212,6 +227,17 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Boolean getEnableNatTraversal() {
+		return this.enableNatTraversal;
+	}
+
+	public void setEnableNatTraversal(Boolean enableNatTraversal) {
+		this.enableNatTraversal = enableNatTraversal;
+		if(enableNatTraversal != null){
+			putQueryParameter("EnableNatTraversal", enableNatTraversal.toString());
 		}
 	}
 

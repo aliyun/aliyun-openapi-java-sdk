@@ -31,7 +31,7 @@ public class BindPhoneRequest extends RpcAcsRequest<BindPhoneResponse> {
 
 	private Long appKey;
 	public BindPhoneRequest() {
-		super("Push", "2016-08-01", "BindPhone", "cps");
+		super("Push", "2016-08-01", "BindPhone");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

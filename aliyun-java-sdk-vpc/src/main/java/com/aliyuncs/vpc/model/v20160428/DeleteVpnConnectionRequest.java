@@ -37,7 +37,7 @@ public class DeleteVpnConnectionRequest extends RpcAcsRequest<DeleteVpnConnectio
 
 	private String vpnConnectionId;
 	public DeleteVpnConnectionRequest() {
-		super("Vpc", "2016-04-28", "DeleteVpnConnection", "Vpc");
+		super("Vpc", "2016-04-28", "DeleteVpnConnection", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

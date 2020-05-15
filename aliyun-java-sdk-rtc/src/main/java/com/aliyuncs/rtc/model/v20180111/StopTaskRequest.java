@@ -33,7 +33,7 @@ public class StopTaskRequest extends RpcAcsRequest<StopTaskResponse> {
 
 	private Long taskId;
 	public StopTaskRequest() {
-		super("rtc", "2018-01-11", "StopTask");
+		super("rtc", "2018-01-11", "StopTask", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

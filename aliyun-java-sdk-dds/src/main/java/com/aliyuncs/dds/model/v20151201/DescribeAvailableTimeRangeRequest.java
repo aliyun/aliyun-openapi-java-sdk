@@ -39,7 +39,7 @@ public class DescribeAvailableTimeRangeRequest extends RpcAcsRequest<DescribeAva
 
 	private String instanceId;
 	public DescribeAvailableTimeRangeRequest() {
-		super("Dds", "2015-12-01", "DescribeAvailableTimeRange", "Dds");
+		super("Dds", "2015-12-01", "DescribeAvailableTimeRange", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

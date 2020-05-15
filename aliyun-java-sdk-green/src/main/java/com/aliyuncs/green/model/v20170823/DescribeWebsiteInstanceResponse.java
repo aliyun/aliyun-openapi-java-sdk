@@ -103,22 +103,6 @@ public class DescribeWebsiteInstanceResponse extends AcsResponse {
 			this.protocol = protocol;
 		}
 
-		/**
-		 * @deprecated use getBizProtocol instead of this.
-		 */
-		@Deprecated
-		public String getProtocol() {
-			return this.protocol;
-		}
-
-		/**
-		 * @deprecated use setBizProtocol instead of this.
-		 */
-		@Deprecated
-		public void setProtocol(String protocol) {
-			this.protocol = protocol;
-		}
-
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -135,26 +119,10 @@ public class DescribeWebsiteInstanceResponse extends AcsResponse {
 			this.websiteScanInterval = websiteScanInterval;
 		}
 
-		public String getBizDomain() {
-			return this.domain;
-		}
-
-		public void setBizDomain(String domain) {
-			this.domain = domain;
-		}
-
-		/**
-		 * @deprecated use getBizDomain instead of this.
-		 */
-		@Deprecated
 		public String getDomain() {
 			return this.domain;
 		}
 
-		/**
-		 * @deprecated use setBizDomain instead of this.
-		 */
-		@Deprecated
 		public void setDomain(String domain) {
 			this.domain = domain;
 		}

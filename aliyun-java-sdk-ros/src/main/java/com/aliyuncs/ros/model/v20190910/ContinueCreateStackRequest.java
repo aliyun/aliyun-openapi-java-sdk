@@ -26,16 +26,39 @@ import com.aliyuncs.ros.Endpoint;
 public class ContinueCreateStackRequest extends RpcAcsRequest<ContinueCreateStackResponse> {
 	   
 
+	private String templateBody;
+
 	private String stackId;
+
+	private String templateURL;
+
+	private String mode;
+
+	private Boolean dryRun;
+
+	private String ramRoleName;
+
+	private List<Parameters> parameterss;
 
 	private List<String> recreatingResourcess;
 	public ContinueCreateStackRequest() {
-		super("ROS", "2019-09-10", "ContinueCreateStack");
+		super("ROS", "2019-09-10", "ContinueCreateStack", "ROS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTemplateBody() {
+		return this.templateBody;
+	}
+
+	public void setTemplateBody(String templateBody) {
+		this.templateBody = templateBody;
+		if(templateBody != null){
+			putQueryParameter("TemplateBody", templateBody);
+		}
 	}
 
 	public String getStackId() {
@@ -49,6 +72,64 @@ public class ContinueCreateStackRequest extends RpcAcsRequest<ContinueCreateStac
 		}
 	}
 
+	public String getTemplateURL() {
+		return this.templateURL;
+	}
+
+	public void setTemplateURL(String templateURL) {
+		this.templateURL = templateURL;
+		if(templateURL != null){
+			putQueryParameter("TemplateURL", templateURL);
+		}
+	}
+
+	public String getMode() {
+		return this.mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
+		if(mode != null){
+			putQueryParameter("Mode", mode);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public String getRamRoleName() {
+		return this.ramRoleName;
+	}
+
+	public void setRamRoleName(String ramRoleName) {
+		this.ramRoleName = ramRoleName;
+		if(ramRoleName != null){
+			putQueryParameter("RamRoleName", ramRoleName);
+		}
+	}
+
+	public List<Parameters> getParameterss() {
+		return this.parameterss;
+	}
+
+	public void setParameterss(List<Parameters> parameterss) {
+		this.parameterss = parameterss;	
+		if (parameterss != null) {
+			for (int depth1 = 0; depth1 < parameterss.size(); depth1++) {
+				putQueryParameter("Parameters." + (depth1 + 1) + ".ParameterValue" , parameterss.get(depth1).getParameterValue());
+				putQueryParameter("Parameters." + (depth1 + 1) + ".ParameterKey" , parameterss.get(depth1).getParameterKey());
+			}
+		}	
+	}
+
 	public List<String> getRecreatingResourcess() {
 		return this.recreatingResourcess;
 	}
@@ -60,6 +141,29 @@ public class ContinueCreateStackRequest extends RpcAcsRequest<ContinueCreateStac
 				putQueryParameter("RecreatingResources." + (i + 1) , recreatingResourcess.get(i));
 			}
 		}	
+	}
+
+	public static class Parameters {
+
+		private String parameterValue;
+
+		private String parameterKey;
+
+		public String getParameterValue() {
+			return this.parameterValue;
+		}
+
+		public void setParameterValue(String parameterValue) {
+			this.parameterValue = parameterValue;
+		}
+
+		public String getParameterKey() {
+			return this.parameterKey;
+		}
+
+		public void setParameterKey(String parameterKey) {
+			this.parameterKey = parameterKey;
+		}
 	}
 
 	@Override

@@ -15,20 +15,17 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyEventStatusRequest extends RpcAcsRequest<ModifyEventStatusResponse> {
-	
-	public ModifyEventStatusRequest() {
-		super("Sddp", "2019-01-03", "ModifyEventStatus", "sddp");
-	}
+	   
 
 	private Boolean backed;
-
-	private Integer featureType;
 
 	private String dealReason;
 
@@ -37,6 +34,14 @@ public class ModifyEventStatusRequest extends RpcAcsRequest<ModifyEventStatusRes
 	private String lang;
 
 	private Integer status;
+	public ModifyEventStatusRequest() {
+		super("Sddp", "2019-01-03", "ModifyEventStatus", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getBacked() {
 		return this.backed;
@@ -46,17 +51,6 @@ public class ModifyEventStatusRequest extends RpcAcsRequest<ModifyEventStatusRes
 		this.backed = backed;
 		if(backed != null){
 			putQueryParameter("Backed", backed.toString());
-		}
-	}
-
-	public Integer getFeatureType() {
-		return this.featureType;
-	}
-
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
 		}
 	}
 

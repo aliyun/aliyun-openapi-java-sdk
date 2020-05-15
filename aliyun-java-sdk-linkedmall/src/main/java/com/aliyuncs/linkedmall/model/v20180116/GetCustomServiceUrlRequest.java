@@ -16,6 +16,7 @@ package com.aliyuncs.linkedmall.model.v20180116;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkedmall.Endpoint;
 
 /**
  * @author auto create
@@ -24,22 +25,59 @@ import com.aliyuncs.http.MethodType;
 public class GetCustomServiceUrlRequest extends RpcAcsRequest<GetCustomServiceUrlResponse> {
 	   
 
+	private String cuid;
+
+	private String bizUid;
+
+	private Boolean useAnonymousTbAccount;
+
 	private String nick;
 
 	private String sellerId;
 
-	private String cuid;
-
 	private String thirdPartyUserId;
 
-	private String bizUid;
-
 	private String bizId;
-
-	private Boolean useAnonymousTbAccount;
 	public GetCustomServiceUrlRequest() {
 		super("linkedmall", "2018-01-16", "GetCustomServiceUrl", "linkedmall");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getCuid() {
+		return this.cuid;
+	}
+
+	public void setCuid(String cuid) {
+		this.cuid = cuid;
+		if(cuid != null){
+			putQueryParameter("Cuid", cuid);
+		}
+	}
+
+	public String getBizUid() {
+		return this.bizUid;
+	}
+
+	public void setBizUid(String bizUid) {
+		this.bizUid = bizUid;
+		if(bizUid != null){
+			putQueryParameter("BizUid", bizUid);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
+		}
 	}
 
 	public String getNick() {
@@ -64,17 +102,6 @@ public class GetCustomServiceUrlRequest extends RpcAcsRequest<GetCustomServiceUr
 		}
 	}
 
-	public String getCuid() {
-		return this.cuid;
-	}
-
-	public void setCuid(String cuid) {
-		this.cuid = cuid;
-		if(cuid != null){
-			putQueryParameter("Cuid", cuid);
-		}
-	}
-
 	public String getThirdPartyUserId() {
 		return this.thirdPartyUserId;
 	}
@@ -86,17 +113,6 @@ public class GetCustomServiceUrlRequest extends RpcAcsRequest<GetCustomServiceUr
 		}
 	}
 
-	public String getBizUid() {
-		return this.bizUid;
-	}
-
-	public void setBizUid(String bizUid) {
-		this.bizUid = bizUid;
-		if(bizUid != null){
-			putQueryParameter("BizUid", bizUid);
-		}
-	}
-
 	public String getBizId() {
 		return this.bizId;
 	}
@@ -105,17 +121,6 @@ public class GetCustomServiceUrlRequest extends RpcAcsRequest<GetCustomServiceUr
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
-		}
-	}
-
-	public Boolean getUseAnonymousTbAccount() {
-		return this.useAnonymousTbAccount;
-	}
-
-	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
-		this.useAnonymousTbAccount = useAnonymousTbAccount;
-		if(useAnonymousTbAccount != null){
-			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
 		}
 	}
 

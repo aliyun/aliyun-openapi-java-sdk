@@ -39,7 +39,7 @@ public class AddPornPipelineRequest extends RpcAcsRequest<AddPornPipelineRespons
 
 	private String name;
 	public AddPornPipelineRequest() {
-		super("Mts", "2014-06-18", "AddPornPipeline", "mts");
+		super("Mts", "2014-06-18", "AddPornPipeline");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -78,6 +78,8 @@ public class ListImagesResponseUnmarshaller {
 			imagesItem.setAddressModifyTime(_ctx.stringValue("ListImagesResponse.Images["+ i +"].AddressModifyTime"));
 			imagesItem.setAddressStatus(_ctx.stringValue("ListImagesResponse.Images["+ i +"].AddressStatus"));
 			imagesItem.setAddressFailReason(_ctx.stringValue("ListImagesResponse.Images["+ i +"].AddressFailReason"));
+			imagesItem.setRemarksArrayA(_ctx.stringValue("ListImagesResponse.Images["+ i +"].RemarksArrayA"));
+			imagesItem.setRemarksArrayB(_ctx.stringValue("ListImagesResponse.Images["+ i +"].RemarksArrayB"));
 
 			Address address = new Address();
 			address.setAddressLine(_ctx.stringValue("ListImagesResponse.Images["+ i +"].Address.AddressLine"));

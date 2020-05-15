@@ -33,7 +33,7 @@ public class CreateDeviceGroupRequest extends RpcAcsRequest<CreateDeviceGroupRes
 
 	private String iotInstanceId;
 	public CreateDeviceGroupRequest() {
-		super("Iot", "2018-01-20", "CreateDeviceGroup", "iot");
+		super("Iot", "2018-01-20", "CreateDeviceGroup", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

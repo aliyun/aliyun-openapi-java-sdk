@@ -24,9 +24,15 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class CheckRawPlanJsonRequest extends RoaAcsRequest<CheckRawPlanJsonResponse> {
-	
+	   
+
+	private String projectName;
+
+	private String sessionId;
+
+	private String jobName;
 	public CheckRawPlanJsonRequest() {
-		super("foas", "2018-11-11", "CheckRawPlanJson");
+		super("foas", "2018-11-11", "CheckRawPlanJson", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/planjson/check");
 		setMethod(MethodType.GET);
@@ -35,12 +41,6 @@ public class CheckRawPlanJsonRequest extends RoaAcsRequest<CheckRawPlanJsonRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String projectName;
-
-	private String sessionId;
-
-	private String jobName;
 
 	public String getProjectName() {
 		return this.projectName;

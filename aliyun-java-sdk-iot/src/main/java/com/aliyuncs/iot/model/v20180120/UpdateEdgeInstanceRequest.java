@@ -29,15 +29,15 @@ public class UpdateEdgeInstanceRequest extends RpcAcsRequest<UpdateEdgeInstanceR
 
 	private Integer spec;
 
+	private String iotInstanceId;
+
 	private String tags;
 
 	private String instanceId;
 
-	private String iotInstanceId;
-
 	private String name;
 	public UpdateEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "UpdateEdgeInstance", "iot");
+		super("Iot", "2018-01-20", "UpdateEdgeInstance", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -67,6 +67,17 @@ public class UpdateEdgeInstanceRequest extends RpcAcsRequest<UpdateEdgeInstanceR
 		}
 	}
 
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
 	public String getTags() {
 		return this.tags;
 	}
@@ -86,17 +97,6 @@ public class UpdateEdgeInstanceRequest extends RpcAcsRequest<UpdateEdgeInstanceR
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

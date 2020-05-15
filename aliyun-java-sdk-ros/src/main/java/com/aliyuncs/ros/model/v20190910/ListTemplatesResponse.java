@@ -25,27 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTemplatesResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private String requestId;
 
-	private Boolean success;
-
 	private Integer totalCount;
 
 	private List<Template> templates;
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -69,14 +57,6 @@ public class ListTemplatesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public Integer getTotalCount() {

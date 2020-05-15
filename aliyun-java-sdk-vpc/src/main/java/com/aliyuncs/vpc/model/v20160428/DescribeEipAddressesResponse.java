@@ -137,6 +137,8 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private Boolean secondLimited;
 
+		private String segmentInstanceId;
+
 		private List<LockReason> operationLocks;
 
 		private List<Tag> tags;
@@ -381,6 +383,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setSecondLimited(Boolean secondLimited) {
 			this.secondLimited = secondLimited;
+		}
+
+		public String getSegmentInstanceId() {
+			return this.segmentInstanceId;
+		}
+
+		public void setSegmentInstanceId(String segmentInstanceId) {
+			this.segmentInstanceId = segmentInstanceId;
 		}
 
 		public List<LockReason> getOperationLocks() {

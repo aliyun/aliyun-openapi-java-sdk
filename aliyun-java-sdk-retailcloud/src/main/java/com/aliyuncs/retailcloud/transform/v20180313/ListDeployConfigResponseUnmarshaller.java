@@ -57,6 +57,12 @@ public class ListDeployConfigResponseUnmarshaller {
 				configMapList.add(_ctx.stringValue("ListDeployConfigResponse.Data["+ i +"].ContainerYamlConf.ConfigMapList["+ j +"]"));
 			}
 			containerYamlConf.setConfigMapList(configMapList);
+
+			List<String> secretList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListDeployConfigResponse.Data["+ i +"].ContainerYamlConf.SecretList.Length"); j++) {
+				secretList.add(_ctx.stringValue("ListDeployConfigResponse.Data["+ i +"].ContainerYamlConf.SecretList["+ j +"]"));
+			}
+			containerYamlConf.setSecretList(secretList);
 			deployConfigInstance.setContainerYamlConf(containerYamlConf);
 
 			data.add(deployConfigInstance);

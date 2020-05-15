@@ -1,3 +1,31 @@
+2020-04-30 Version: 2.6.4
+- Build 20190808 release sdk.
+
+2020-04-30 Version: 2.6.3
+- Build 20190808 release sdk.
+
+2020-04-30 Version: 2.6.2
+- Add prometheus ListDashboards api.
+
+2020-04-29 Version: 2.5.10
+- Add prometheus ListDashboards api.
+
+2020-04-29 Version: 2.6.1
+- Build 20190808 release sdk.
+
+2020-04-27 Version: 2.6.0
+- Build 20190808 release sdk.
+
+2020-04-27 Version: 2.5.8
+- Build 20190808 release sdk.
+
+2020-04-09 Version: 2.5.9
+- Add prometheus api AddGrafana and AddIntegration.
+
+2020-04-03 Version: 2.5.8
+- Add trace api.
+- Add prometheus api.
+
 2020-02-12 Version: 2.5.7
 - Prometheus list clusters.
 

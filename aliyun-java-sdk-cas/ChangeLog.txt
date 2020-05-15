@@ -1,3 +1,8 @@
+2020-04-15 Version: 2020.04.07
+- Publish SDK For Java python.
+- Base on 2020-04-07.
+- For Certificate Package.
+
 2020-01-14 Version: 20180713_0114
 - Publish SDK For Java python, PHP.
 - Base on 2018-07-13.

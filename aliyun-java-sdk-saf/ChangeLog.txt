@@ -1,3 +1,15 @@
+2020-05-08 Version: 2.0.1
+- Support sg for region.
+
+2020-03-06 Version: 2.0.0
+- Supported Saf for oversea.
+
+2020-03-06 Version: 1.1.0
+- Supported Saf for cn.
+
+2020-03-06 Version: 2.0.0
+- Supported Saf for oversea.
+
 2018-12-07 Version: 1.0.2
 1, upload jar
 

@@ -26,29 +26,18 @@ import com.aliyuncs.iot.Endpoint;
 public class BatchSetEdgeInstanceDeviceConfigRequest extends RpcAcsRequest<BatchSetEdgeInstanceDeviceConfigResponse> {
 	   
 
-	private String instanceId;
-
 	private List<DeviceConfigs> deviceConfigss;
 
 	private String iotInstanceId;
+
+	private String instanceId;
 	public BatchSetEdgeInstanceDeviceConfigRequest() {
-		super("Iot", "2018-01-20", "BatchSetEdgeInstanceDeviceConfig", "iot");
+		super("Iot", "2018-01-20", "BatchSetEdgeInstanceDeviceConfig", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
 	}
 
 	public List<DeviceConfigs> getDeviceConfigss() {
@@ -73,6 +62,17 @@ public class BatchSetEdgeInstanceDeviceConfigRequest extends RpcAcsRequest<Batch
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

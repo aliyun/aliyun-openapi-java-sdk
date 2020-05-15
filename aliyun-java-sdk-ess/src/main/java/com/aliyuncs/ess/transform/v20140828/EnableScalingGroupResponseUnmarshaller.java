@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class EnableScalingGroupResponseUnmarshaller {
 
-	public static EnableScalingGroupResponse unmarshall(EnableScalingGroupResponse enableScalingGroupResponse, UnmarshallerContext context) {
+	public static EnableScalingGroupResponse unmarshall(EnableScalingGroupResponse enableScalingGroupResponse, UnmarshallerContext _ctx) {
 		
-		enableScalingGroupResponse.setRequestId(context.stringValue("EnableScalingGroupResponse.RequestId"));
+		enableScalingGroupResponse.setRequestId(_ctx.stringValue("EnableScalingGroupResponse.RequestId"));
 	 
 	 	return enableScalingGroupResponse;
 	}

@@ -37,7 +37,7 @@ public class EnableVpcClassicLinkRequest extends RpcAcsRequest<EnableVpcClassicL
 
 	private String vpcId;
 	public EnableVpcClassicLinkRequest() {
-		super("Vpc", "2016-04-28", "EnableVpcClassicLink", "Vpc");
+		super("Vpc", "2016-04-28", "EnableVpcClassicLink", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

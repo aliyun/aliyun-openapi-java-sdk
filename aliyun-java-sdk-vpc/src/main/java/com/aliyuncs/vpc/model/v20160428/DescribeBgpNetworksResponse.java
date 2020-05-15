@@ -83,6 +83,8 @@ public class DescribeBgpNetworksResponse extends AcsResponse {
 
 		private String routerId;
 
+		private String status;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -105,6 +107,14 @@ public class DescribeBgpNetworksResponse extends AcsResponse {
 
 		public void setRouterId(String routerId) {
 			this.routerId = routerId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

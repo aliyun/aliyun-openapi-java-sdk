@@ -126,10 +126,19 @@ public class MapUtilsTest {
         testMap.put("DescribeAntChainNodesResponse.Data.nodeState", "test");
         testMap.put("DescribeAntChainNodesResponse.Data.nodeType", "test");
         testMap.put("DescribeAntChainNodesResponse.Data.publicKey", "test");
-
+        testMap.put("DescribeAntChainNodesResponse.Data.arrayTest[0]", "0");
+        testMap.put("DescribeAntChainNodesResponse.Data.arrayTest[1]", "1.0");
+        testMap.put("DescribeAntChainNodesResponse.Data.arrayTest[2]", "test");
+        testMap.put("DescribeAntChainNodesResponse.Data.arrayTest[3]", "test.test");
         MapUtils mapUtils = new MapUtils();
         Map<Object, Object> map = mapUtils.convertMapToMap(testMap, "DescribeAntChainNodesResponse.Data");
+        List resultList = (List) map.get("Result");
+        List arrayTestList = (List) map.get("arrayTest");
         Assert.assertEquals("test", map.get("nodeState"));
-        Assert.assertTrue(map.get("Result") instanceof List);
+        Assert.assertEquals("test", ((Map) resultList.get(0)).get("publicKey"));
+        Assert.assertEquals("0", arrayTestList.get(0));
+        Assert.assertEquals("1.0", arrayTestList.get(1));
+        Assert.assertEquals("test", arrayTestList.get(2));
+        Assert.assertEquals("test.test", arrayTestList.get(3));
     }
 }

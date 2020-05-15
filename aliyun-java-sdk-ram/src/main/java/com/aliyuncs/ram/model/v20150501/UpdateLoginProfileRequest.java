@@ -16,35 +16,31 @@ package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ram.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateLoginProfileRequest extends RpcAcsRequest<UpdateLoginProfileResponse> {
-	
-	public UpdateLoginProfileRequest() {
-		super("Ram", "2015-05-01", "UpdateLoginProfile");
-		setProtocol(ProtocolType.HTTPS);
-	}
-
-	private String password;
+	   
 
 	private Boolean passwordResetRequired;
+
+	private String password;
 
 	private Boolean mFABindRequired;
 
 	private String userName;
-
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putQueryParameter("Password", password);
-		}
+	public UpdateLoginProfileRequest() {
+		super("Ram", "2015-05-01", "UpdateLoginProfile", "Ram");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Boolean getPasswordResetRequired() {
@@ -55,6 +51,17 @@ public class UpdateLoginProfileRequest extends RpcAcsRequest<UpdateLoginProfileR
 		this.passwordResetRequired = passwordResetRequired;
 		if(passwordResetRequired != null){
 			putQueryParameter("PasswordResetRequired", passwordResetRequired.toString());
+		}
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putQueryParameter("Password", password);
 		}
 	}
 

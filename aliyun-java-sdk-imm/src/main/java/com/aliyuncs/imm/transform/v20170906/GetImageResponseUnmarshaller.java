@@ -72,6 +72,8 @@ public class GetImageResponseUnmarshaller {
 		getImageResponse.setAddressModifyTime(_ctx.stringValue("GetImageResponse.AddressModifyTime"));
 		getImageResponse.setAddressStatus(_ctx.stringValue("GetImageResponse.AddressStatus"));
 		getImageResponse.setAddressFailReason(_ctx.stringValue("GetImageResponse.AddressFailReason"));
+		getImageResponse.setRemarksArrayA(_ctx.stringValue("GetImageResponse.RemarksArrayA"));
+		getImageResponse.setRemarksArrayB(_ctx.stringValue("GetImageResponse.RemarksArrayB"));
 
 		Address address = new Address();
 		address.setAddressLine(_ctx.stringValue("GetImageResponse.Address.AddressLine"));
@@ -94,6 +96,7 @@ public class GetImageResponseUnmarshaller {
 			facesItem.setGenderConfidence(_ctx.floatValue("GetImageResponse.Faces["+ i +"].GenderConfidence"));
 			facesItem.setGroupId(_ctx.stringValue("GetImageResponse.Faces["+ i +"].GroupId"));
 			facesItem.setFaceQuality(_ctx.floatValue("GetImageResponse.Faces["+ i +"].FaceQuality"));
+			facesItem.setEmotionConfidence(_ctx.floatValue("GetImageResponse.Faces["+ i +"].EmotionConfidence"));
 
 			FaceAttributes faceAttributes = new FaceAttributes();
 			faceAttributes.setGlasses(_ctx.stringValue("GetImageResponse.Faces["+ i +"].FaceAttributes.Glasses"));

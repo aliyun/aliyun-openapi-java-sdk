@@ -24,18 +24,11 @@ import com.aliyuncs.dg.Endpoint;
  * @version 
  */
 public class ModifyDatabaseRequest extends RpcAcsRequest<ModifyDatabaseResponse> {
-	
-	public ModifyDatabaseRequest() {
-		super("dg", "2019-03-27", "ModifyDatabase", "dg");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String instanceId;
+
+	private String dbName;
 
 	private Integer port;
 
@@ -48,6 +41,15 @@ public class ModifyDatabaseRequest extends RpcAcsRequest<ModifyDatabaseResponse>
 	private String dbUserName;
 
 	private String dbDescription;
+	public ModifyDatabaseRequest() {
+		super("dg", "2019-03-27", "ModifyDatabase", "dg");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -57,6 +59,17 @@ public class ModifyDatabaseRequest extends RpcAcsRequest<ModifyDatabaseResponse>
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putBodyParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putBodyParameter("DbName", dbName);
 		}
 	}
 

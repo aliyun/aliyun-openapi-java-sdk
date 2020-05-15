@@ -27,7 +27,13 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private Long resourceOwnerId;
 
+	private String dataLevel2BackupRetentionPeriod;
+
 	private String preferredBackupPeriod;
+
+	private String dataLevel1BackupRetentionPeriod;
+
+	private String backupRetentionPolicyOnClusterDeletion;
 
 	private String resourceOwnerAccount;
 
@@ -60,6 +66,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
+	public String getDataLevel2BackupRetentionPeriod() {
+		return this.dataLevel2BackupRetentionPeriod;
+	}
+
+	public void setDataLevel2BackupRetentionPeriod(String dataLevel2BackupRetentionPeriod) {
+		this.dataLevel2BackupRetentionPeriod = dataLevel2BackupRetentionPeriod;
+		if(dataLevel2BackupRetentionPeriod != null){
+			putQueryParameter("DataLevel2BackupRetentionPeriod", dataLevel2BackupRetentionPeriod);
+		}
+	}
+
 	public String getPreferredBackupPeriod() {
 		return this.preferredBackupPeriod;
 	}
@@ -68,6 +85,28 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.preferredBackupPeriod = preferredBackupPeriod;
 		if(preferredBackupPeriod != null){
 			putQueryParameter("PreferredBackupPeriod", preferredBackupPeriod);
+		}
+	}
+
+	public String getDataLevel1BackupRetentionPeriod() {
+		return this.dataLevel1BackupRetentionPeriod;
+	}
+
+	public void setDataLevel1BackupRetentionPeriod(String dataLevel1BackupRetentionPeriod) {
+		this.dataLevel1BackupRetentionPeriod = dataLevel1BackupRetentionPeriod;
+		if(dataLevel1BackupRetentionPeriod != null){
+			putQueryParameter("DataLevel1BackupRetentionPeriod", dataLevel1BackupRetentionPeriod);
+		}
+	}
+
+	public String getBackupRetentionPolicyOnClusterDeletion() {
+		return this.backupRetentionPolicyOnClusterDeletion;
+	}
+
+	public void setBackupRetentionPolicyOnClusterDeletion(String backupRetentionPolicyOnClusterDeletion) {
+		this.backupRetentionPolicyOnClusterDeletion = backupRetentionPolicyOnClusterDeletion;
+		if(backupRetentionPolicyOnClusterDeletion != null){
+			putQueryParameter("BackupRetentionPolicyOnClusterDeletion", backupRetentionPolicyOnClusterDeletion);
 		}
 	}
 

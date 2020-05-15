@@ -33,7 +33,7 @@ public class CreateRateRequest extends RpcAcsRequest<CreateRateResponse> {
 
 	private String requestId;
 	public CreateRateRequest() {
-		super("Market", "2015-11-01", "CreateRate", "yunmarket");
+		super("Market", "2015-11-01", "CreateRate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

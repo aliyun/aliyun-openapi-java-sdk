@@ -37,6 +37,8 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 
 	private String dedicatedHostGroupId;
 
+	private String backupType;
+
 	private String restoreTime;
 
 	private String period;
@@ -45,7 +47,7 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 
 	private String restoreTable;
 
-	private String usedTime;
+	private Integer usedTime;
 
 	private String dBInstanceClass;
 
@@ -139,6 +141,17 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		}
 	}
 
+	public String getBackupType() {
+		return this.backupType;
+	}
+
+	public void setBackupType(String backupType) {
+		this.backupType = backupType;
+		if(backupType != null){
+			putQueryParameter("BackupType", backupType);
+		}
+	}
+
 	public String getRestoreTime() {
 		return this.restoreTime;
 	}
@@ -183,14 +196,14 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		}
 	}
 
-	public String getUsedTime() {
+	public Integer getUsedTime() {
 		return this.usedTime;
 	}
 
-	public void setUsedTime(String usedTime) {
+	public void setUsedTime(Integer usedTime) {
 		this.usedTime = usedTime;
 		if(usedTime != null){
-			putQueryParameter("UsedTime", usedTime);
+			putQueryParameter("UsedTime", usedTime.toString());
 		}
 	}
 

@@ -16,17 +16,15 @@ package com.aliyuncs.schedulerx2.model.v20190430;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.schedulerx2.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
-	
-	public StopInstanceRequest() {
-		super("schedulerx2", "2019-04-30", "StopInstance");
-		setProtocol(ProtocolType.HTTPS);
-	}
+	   
 
 	private Long jobId;
 
@@ -37,6 +35,15 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 	private String groupId;
 
 	private String namespace;
+	public StopInstanceRequest() {
+		super("schedulerx2", "2019-04-30", "StopInstance");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getJobId() {
 		return this.jobId;

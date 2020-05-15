@@ -58,6 +58,8 @@ public class CreateRoleResponse extends AcsResponse {
 
 		private String createDate;
 
+		private Long maxSessionDuration;
+
 		public String getRoleId() {
 			return this.roleId;
 		}
@@ -104,6 +106,14 @@ public class CreateRoleResponse extends AcsResponse {
 
 		public void setCreateDate(String createDate) {
 			this.createDate = createDate;
+		}
+
+		public Long getMaxSessionDuration() {
+			return this.maxSessionDuration;
+		}
+
+		public void setMaxSessionDuration(Long maxSessionDuration) {
+			this.maxSessionDuration = maxSessionDuration;
 		}
 	}
 

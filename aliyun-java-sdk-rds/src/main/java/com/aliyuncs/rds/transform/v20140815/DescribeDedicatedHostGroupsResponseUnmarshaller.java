@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeDedicatedHostGroupsResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDedicatedHostGroupsResponse.DedicatedHostGroupsItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +45,15 @@ public class DescribeDedicatedHostGroupsResponseUnmarshaller {
 			dedicatedHostGroupsItem.setInstanceNumber(_ctx.integerValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].InstanceNumber"));
 			dedicatedHostGroupsItem.setEngine(_ctx.stringValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].Engine"));
 			dedicatedHostGroupsItem.setText(_ctx.stringValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].Text"));
+			dedicatedHostGroupsItem.setDedicatedHostCountGroupByHostType(_ctx.mapValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].DedicatedHostCountGroupByHostType"));
+			dedicatedHostGroupsItem.setBastionInstanceId(_ctx.stringValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].BastionInstanceId"));
+			dedicatedHostGroupsItem.setOpenPermission(_ctx.stringValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].OpenPermission"));
+
+			List<String> zoneIDList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].ZoneIDList.Length"); j++) {
+				zoneIDList.add(_ctx.stringValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].ZoneIDList["+ j +"]"));
+			}
+			dedicatedHostGroupsItem.setZoneIDList(zoneIDList);
 
 			dedicatedHostGroups.add(dedicatedHostGroupsItem);
 		}

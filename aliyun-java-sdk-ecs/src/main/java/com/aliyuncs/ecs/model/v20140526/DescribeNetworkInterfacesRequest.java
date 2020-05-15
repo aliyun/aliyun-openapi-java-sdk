@@ -65,6 +65,8 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 	private Integer maxResults;
 
 	private List<String> networkInterfaceIds;
+
+	private String status;
 	public DescribeNetworkInterfacesRequest() {
 		super("Ecs", "2014-05-26", "DescribeNetworkInterfaces", "ecs");
 		setMethod(MethodType.POST);
@@ -299,6 +301,17 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 				putQueryParameter("NetworkInterfaceId." + (i + 1) , networkInterfaceIds.get(i));
 			}
 		}	
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
 	}
 
 	public static class Tag {

@@ -24,31 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeColumnsResponseUnmarshaller {
 
-	public static DescribeColumnsResponse unmarshall(DescribeColumnsResponse describeColumnsResponse, UnmarshallerContext context) {
+	public static DescribeColumnsResponse unmarshall(DescribeColumnsResponse describeColumnsResponse, UnmarshallerContext _ctx) {
 		
-		describeColumnsResponse.setRequestId(context.stringValue("DescribeColumnsResponse.RequestId"));
-		describeColumnsResponse.setPageSize(context.integerValue("DescribeColumnsResponse.PageSize"));
-		describeColumnsResponse.setCurrentPage(context.integerValue("DescribeColumnsResponse.CurrentPage"));
-		describeColumnsResponse.setTotalCount(context.integerValue("DescribeColumnsResponse.TotalCount"));
+		describeColumnsResponse.setRequestId(_ctx.stringValue("DescribeColumnsResponse.RequestId"));
+		describeColumnsResponse.setPageSize(_ctx.integerValue("DescribeColumnsResponse.PageSize"));
+		describeColumnsResponse.setCurrentPage(_ctx.integerValue("DescribeColumnsResponse.CurrentPage"));
+		describeColumnsResponse.setTotalCount(_ctx.integerValue("DescribeColumnsResponse.TotalCount"));
 
 		List<Column> items = new ArrayList<Column>();
-		for (int i = 0; i < context.lengthValue("DescribeColumnsResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeColumnsResponse.Items.Length"); i++) {
 			Column column = new Column();
-			column.setId(context.longValue("DescribeColumnsResponse.Items["+ i +"].Id"));
-			column.setName(context.stringValue("DescribeColumnsResponse.Items["+ i +"].Name"));
-			column.setInstanceId(context.longValue("DescribeColumnsResponse.Items["+ i +"].InstanceId"));
-			column.setTableId(context.longValue("DescribeColumnsResponse.Items["+ i +"].TableId"));
-			column.setCreationTime(context.longValue("DescribeColumnsResponse.Items["+ i +"].CreationTime"));
-			column.setSensitive(context.booleanValue("DescribeColumnsResponse.Items["+ i +"].Sensitive"));
-			column.setProductCode(context.stringValue("DescribeColumnsResponse.Items["+ i +"].ProductCode"));
-			column.setDataType(context.stringValue("DescribeColumnsResponse.Items["+ i +"].DataType"));
-			column.setOdpsRiskLevelValue(context.integerValue("DescribeColumnsResponse.Items["+ i +"].OdpsRiskLevelValue"));
-			column.setOdpsRiskLevelName(context.stringValue("DescribeColumnsResponse.Items["+ i +"].OdpsRiskLevelName"));
-			column.setRiskLevelId(context.longValue("DescribeColumnsResponse.Items["+ i +"].RiskLevelId"));
-			column.setRiskLevelName(context.stringValue("DescribeColumnsResponse.Items["+ i +"].RiskLevelName"));
-			column.setRuleId(context.longValue("DescribeColumnsResponse.Items["+ i +"].RuleId"));
-			column.setRuleName(context.stringValue("DescribeColumnsResponse.Items["+ i +"].RuleName"));
-			column.setDepartName(context.stringValue("DescribeColumnsResponse.Items["+ i +"].DepartName"));
+			column.setId(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].Id"));
+			column.setName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].Name"));
+			column.setInstanceId(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].InstanceId"));
+			column.setTableId(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].TableId"));
+			column.setCreationTime(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].CreationTime"));
+			column.setSensitive(_ctx.booleanValue("DescribeColumnsResponse.Items["+ i +"].Sensitive"));
+			column.setProductCode(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].ProductCode"));
+			column.setDataType(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].DataType"));
+			column.setOdpsRiskLevelValue(_ctx.integerValue("DescribeColumnsResponse.Items["+ i +"].OdpsRiskLevelValue"));
+			column.setOdpsRiskLevelName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].OdpsRiskLevelName"));
+			column.setRiskLevelId(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].RiskLevelId"));
+			column.setRiskLevelName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].RiskLevelName"));
+			column.setRuleId(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].RuleId"));
+			column.setRuleName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].RuleName"));
+			column.setDepartName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].DepartName"));
 
 			items.add(column);
 		}

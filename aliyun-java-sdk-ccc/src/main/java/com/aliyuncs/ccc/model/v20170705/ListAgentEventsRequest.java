@@ -24,15 +24,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListAgentEventsRequest extends RpcAcsRequest<ListAgentEventsResponse> {
-	
-	public ListAgentEventsRequest() {
-		super("CCC", "2017-07-05", "ListAgentEvents");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long startTime;
 
@@ -43,6 +35,14 @@ public class ListAgentEventsRequest extends RpcAcsRequest<ListAgentEventsRespons
 	private String instanceId;
 
 	private List<String> events;
+	public ListAgentEventsRequest() {
+		super("CCC", "2017-07-05", "ListAgentEvents");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getStartTime() {
 		return this.startTime;

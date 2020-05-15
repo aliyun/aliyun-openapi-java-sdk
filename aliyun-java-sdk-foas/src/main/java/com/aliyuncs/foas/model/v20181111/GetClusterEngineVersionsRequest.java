@@ -24,9 +24,11 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class GetClusterEngineVersionsRequest extends RoaAcsRequest<GetClusterEngineVersionsResponse> {
-	
+	   
+
+	private String clusterId;
 	public GetClusterEngineVersionsRequest() {
-		super("foas", "2018-11-11", "GetClusterEngineVersions");
+		super("foas", "2018-11-11", "GetClusterEngineVersions", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]/engineversions");
 		setMethod(MethodType.GET);
@@ -35,8 +37,6 @@ public class GetClusterEngineVersionsRequest extends RoaAcsRequest<GetClusterEng
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clusterId;
 
 	public String getClusterId() {
 		return this.clusterId;

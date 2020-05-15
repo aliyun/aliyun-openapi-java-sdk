@@ -33,7 +33,7 @@ public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowRespons
 
 	private String deviceName;
 	public GetDeviceShadowRequest() {
-		super("Iot", "2018-01-20", "GetDeviceShadow", "iot");
+		super("Iot", "2018-01-20", "GetDeviceShadow", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

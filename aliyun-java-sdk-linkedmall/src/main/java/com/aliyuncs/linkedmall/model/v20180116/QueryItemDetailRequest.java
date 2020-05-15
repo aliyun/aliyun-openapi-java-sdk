@@ -16,6 +16,7 @@ package com.aliyuncs.linkedmall.model.v20180116;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkedmall.Endpoint;
 
 /**
  * @author auto create
@@ -27,9 +28,15 @@ public class QueryItemDetailRequest extends RpcAcsRequest<QueryItemDetailRespons
 	private Long itemId;
 
 	private String bizId;
+
+	private String lmItemId;
 	public QueryItemDetailRequest() {
 		super("linkedmall", "2018-01-16", "QueryItemDetail", "linkedmall");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getItemId() {
@@ -51,6 +58,17 @@ public class QueryItemDetailRequest extends RpcAcsRequest<QueryItemDetailRespons
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public String getLmItemId() {
+		return this.lmItemId;
+	}
+
+	public void setLmItemId(String lmItemId) {
+		this.lmItemId = lmItemId;
+		if(lmItemId != null){
+			putQueryParameter("LmItemId", lmItemId);
 		}
 	}
 

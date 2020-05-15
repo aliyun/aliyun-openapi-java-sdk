@@ -99,6 +99,8 @@ public class DescribeVulListResponse extends AcsResponse {
 
 		private String related;
 
+		private Long recordId;
+
 		private String resultCode;
 
 		private String resultMessage;
@@ -112,6 +114,12 @@ public class DescribeVulListResponse extends AcsResponse {
 		private String instanceId;
 
 		private String instanceName;
+
+		private String regionId;
+
+		private Boolean online;
+
+		private String level;
 
 		private String internetIp;
 
@@ -219,6 +227,14 @@ public class DescribeVulListResponse extends AcsResponse {
 			this.related = related;
 		}
 
+		public Long getRecordId() {
+			return this.recordId;
+		}
+
+		public void setRecordId(Long recordId) {
+			this.recordId = recordId;
+		}
+
 		public String getResultCode() {
 			return this.resultCode;
 		}
@@ -273,6 +289,30 @@ public class DescribeVulListResponse extends AcsResponse {
 
 		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Boolean getOnline() {
+			return this.online;
+		}
+
+		public void setOnline(Boolean online) {
+			this.online = online;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
 		}
 
 		public String getInternetIp() {

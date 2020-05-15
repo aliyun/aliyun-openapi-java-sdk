@@ -56,6 +56,7 @@ public class ListCallDetailRecordsResponseUnmarshaller {
 			callDetailRecord.setAgentNames(_ctx.stringValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].AgentNames"));
 			callDetailRecord.setSkillGroupNames(_ctx.stringValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].SkillGroupNames"));
 			callDetailRecord.setInstanceId(_ctx.stringValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].InstanceId"));
+			callDetailRecord.setSkillGroupIdList(_ctx.stringValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].SkillGroupIdList"));
 
 			List<CallDetailAgent> agents = new ArrayList<CallDetailAgent>();
 			for (int j = 0; j < _ctx.lengthValue("ListCallDetailRecordsResponse.CallDetailRecords.List["+ i +"].Agents.Length"); j++) {

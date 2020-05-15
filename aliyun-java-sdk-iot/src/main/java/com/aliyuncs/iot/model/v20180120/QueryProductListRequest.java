@@ -35,7 +35,7 @@ public class QueryProductListRequest extends RpcAcsRequest<QueryProductListRespo
 
 	private String aliyunCommodityCode;
 	public QueryProductListRequest() {
-		super("Iot", "2018-01-20", "QueryProductList", "iot");
+		super("Iot", "2018-01-20", "QueryProductList", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

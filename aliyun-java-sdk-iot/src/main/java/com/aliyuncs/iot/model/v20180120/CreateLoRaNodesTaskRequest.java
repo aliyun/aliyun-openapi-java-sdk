@@ -32,7 +32,7 @@ public class CreateLoRaNodesTaskRequest extends RpcAcsRequest<CreateLoRaNodesTas
 
 	private List<DeviceInfo> deviceInfos;
 	public CreateLoRaNodesTaskRequest() {
-		super("Iot", "2018-01-20", "CreateLoRaNodesTask", "iot");
+		super("Iot", "2018-01-20", "CreateLoRaNodesTask", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

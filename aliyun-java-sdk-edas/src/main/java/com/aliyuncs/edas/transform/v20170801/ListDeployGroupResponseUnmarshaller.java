@@ -57,6 +57,10 @@ public class ListDeployGroupResponseUnmarshaller {
 			deployGroup.setCsClusterId(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].CsClusterId"));
 			deployGroup.setBaseComponentMetaName(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].BaseComponentMetaName"));
 			deployGroup.setDeploymentName(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].DeploymentName"));
+			deployGroup.setCpuLimit(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].CpuLimit"));
+			deployGroup.setMemoryLimit(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].MemoryLimit"));
+			deployGroup.setPackagePublicUrl(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].PackagePublicUrl"));
+			deployGroup.setPackageVersion(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].PackageVersion"));
 
 			deployGroupList.add(deployGroup);
 		}

@@ -17,6 +17,7 @@ package com.aliyuncs.linkvisual.model.v20180120;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkvisual.Endpoint;
 
 /**
  * @author auto create
@@ -25,16 +26,35 @@ import com.aliyuncs.http.MethodType;
 public class UpdateTimeTemplateRequest extends RpcAcsRequest<UpdateTimeTemplateResponse> {
 	   
 
-	private String templateId;
+	private List<TimeSections> timeSectionss;
 
-	private String name;
+	private String templateId;
 
 	private Integer allDay;
 
-	private List<TimeSections> timeSectionss;
+	private String name;
 	public UpdateTimeTemplateRequest() {
-		super("Linkvisual", "2018-01-20", "UpdateTimeTemplate", "linkvisual");
+		super("Linkvisual", "2018-01-20", "UpdateTimeTemplate", "Linkvisual");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public List<TimeSections> getTimeSectionss() {
+		return this.timeSectionss;
+	}
+
+	public void setTimeSectionss(List<TimeSections> timeSectionss) {
+		this.timeSectionss = timeSectionss;	
+		if (timeSectionss != null) {
+			for (int depth1 = 0; depth1 < timeSectionss.size(); depth1++) {
+				putQueryParameter("TimeSections." + (depth1 + 1) + ".DayOfWeek" , timeSectionss.get(depth1).getDayOfWeek());
+				putQueryParameter("TimeSections." + (depth1 + 1) + ".Begin" , timeSectionss.get(depth1).getBegin());
+				putQueryParameter("TimeSections." + (depth1 + 1) + ".End" , timeSectionss.get(depth1).getEnd());
+			}
+		}	
 	}
 
 	public String getTemplateId() {
@@ -45,17 +65,6 @@ public class UpdateTimeTemplateRequest extends RpcAcsRequest<UpdateTimeTemplateR
 		this.templateId = templateId;
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
 		}
 	}
 
@@ -70,28 +79,24 @@ public class UpdateTimeTemplateRequest extends RpcAcsRequest<UpdateTimeTemplateR
 		}
 	}
 
-	public List<TimeSections> getTimeSectionss() {
-		return this.timeSectionss;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setTimeSectionss(List<TimeSections> timeSectionss) {
-		this.timeSectionss = timeSectionss;	
-		if (timeSectionss != null) {
-			for (int depth1 = 0; depth1 < timeSectionss.size(); depth1++) {
-				putQueryParameter("TimeSections." + (depth1 + 1) + ".DayOfWeek" , timeSectionss.get(depth1).getDayOfWeek());
-				putQueryParameter("TimeSections." + (depth1 + 1) + ".End" , timeSectionss.get(depth1).getEnd());
-				putQueryParameter("TimeSections." + (depth1 + 1) + ".Begin" , timeSectionss.get(depth1).getBegin());
-			}
-		}	
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
 	}
 
 	public static class TimeSections {
 
 		private Integer dayOfWeek;
 
-		private Integer end;
-
 		private Integer begin;
+
+		private Integer end;
 
 		public Integer getDayOfWeek() {
 			return this.dayOfWeek;
@@ -101,20 +106,20 @@ public class UpdateTimeTemplateRequest extends RpcAcsRequest<UpdateTimeTemplateR
 			this.dayOfWeek = dayOfWeek;
 		}
 
-		public Integer getEnd() {
-			return this.end;
-		}
-
-		public void setEnd(Integer end) {
-			this.end = end;
-		}
-
 		public Integer getBegin() {
 			return this.begin;
 		}
 
 		public void setBegin(Integer begin) {
 			this.begin = begin;
+		}
+
+		public Integer getEnd() {
+			return this.end;
+		}
+
+		public void setEnd(Integer end) {
+			this.end = end;
 		}
 	}
 

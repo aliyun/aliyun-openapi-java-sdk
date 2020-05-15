@@ -37,7 +37,7 @@ public class UpdateJvmConfigurationRequest extends RoaAcsRequest<UpdateJvmConfig
 
 	private Integer maxHeapSize;
 	public UpdateJvmConfigurationRequest() {
-		super("Edas", "2017-08-01", "UpdateJvmConfiguration", "Edas");
+		super("Edas", "2017-08-01", "UpdateJvmConfiguration", "edas");
 		setUriPattern("/pop/v5/app/app_jvm_config");
 		setMethod(MethodType.POST);
 		try {

@@ -35,7 +35,7 @@ public class NotifyAddThingTopoRequest extends RpcAcsRequest<NotifyAddThingTopoR
 
 	private String gwIotId;
 	public NotifyAddThingTopoRequest() {
-		super("Iot", "2018-01-20", "NotifyAddThingTopo", "iot");
+		super("Iot", "2018-01-20", "NotifyAddThingTopo", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

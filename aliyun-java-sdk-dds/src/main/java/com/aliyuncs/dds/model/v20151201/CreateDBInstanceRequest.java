@@ -85,7 +85,7 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String chargeType;
 	public CreateDBInstanceRequest() {
-		super("Dds", "2015-12-01", "CreateDBInstance", "Dds");
+		super("Dds", "2015-12-01", "CreateDBInstance", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,6 +25,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.Dedic
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.EcsCapacityReservationAttr;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.EipAddress;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.LockReason;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.MetadataOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.NetworkInterface;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.Tag;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.VpcAttributes;
@@ -152,6 +153,12 @@ public class DescribeInstancesResponseUnmarshaller {
 			cpuOptions.setThreadsPerCore(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].CpuOptions.ThreadsPerCore"));
 			cpuOptions.setNuma(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CpuOptions.Numa"));
 			instance.setCpuOptions(cpuOptions);
+
+			MetadataOptions metadataOptions = new MetadataOptions();
+			metadataOptions.setHttpEndpoint(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].MetadataOptions.HttpEndpoint"));
+			metadataOptions.setHttpTokens(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].MetadataOptions.HttpTokens"));
+			metadataOptions.setHttpPutResponseHopLimit(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].MetadataOptions.HttpPutResponseHopLimit"));
+			instance.setMetadataOptions(metadataOptions);
 
 			List<NetworkInterface> networkInterfaces = new ArrayList<NetworkInterface>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces.Length"); j++) {

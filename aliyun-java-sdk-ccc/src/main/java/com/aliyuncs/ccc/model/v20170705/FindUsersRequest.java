@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class FindUsersRequest extends RpcAcsRequest<FindUsersResponse> {
-	
-	public FindUsersRequest() {
-		super("CCC", "2017-07-05", "FindUsers");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String criteria;
 
@@ -40,6 +32,14 @@ public class FindUsersRequest extends RpcAcsRequest<FindUsersResponse> {
 	private String instanceId;
 
 	private Integer pageSize;
+	public FindUsersRequest() {
+		super("CCC", "2017-07-05", "FindUsers");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCriteria() {
 		return this.criteria;

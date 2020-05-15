@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
 /**
@@ -22,30 +23,31 @@ import com.aliyuncs.cbn.Endpoint;
  * @version 
  */
 public class RoutePrivateZoneInCenToVpcRequest extends RpcAcsRequest<RoutePrivateZoneInCenToVpcResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private String cenId;
+
+	private String accessRegionId;
+
+	private String hostRegionId;
+
+	private String hostVpcId;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
 	public RoutePrivateZoneInCenToVpcRequest() {
-		super("Cbn", "2017-09-12", "RoutePrivateZoneInCenToVpc", "cbn");
+		super("Cbn", "2017-09-12", "RoutePrivateZoneInCenToVpc", "Cbn");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long resourceOwnerId;
-
-	private String resourceOwnerAccount;
-
-	private String cenId;
-
-	private String ownerAccount;
-
-	private String hostRegionId;
-
-	private String accessRegionId;
-
-	private Long ownerId;
-
-	private String hostVpcId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,17 +57,6 @@ public class RoutePrivateZoneInCenToVpcRequest extends RpcAcsRequest<RoutePrivat
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -80,14 +71,14 @@ public class RoutePrivateZoneInCenToVpcRequest extends RpcAcsRequest<RoutePrivat
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getAccessRegionId() {
+		return this.accessRegionId;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setAccessRegionId(String accessRegionId) {
+		this.accessRegionId = accessRegionId;
+		if(accessRegionId != null){
+			putQueryParameter("AccessRegionId", accessRegionId);
 		}
 	}
 
@@ -102,14 +93,36 @@ public class RoutePrivateZoneInCenToVpcRequest extends RpcAcsRequest<RoutePrivat
 		}
 	}
 
-	public String getAccessRegionId() {
-		return this.accessRegionId;
+	public String getHostVpcId() {
+		return this.hostVpcId;
 	}
 
-	public void setAccessRegionId(String accessRegionId) {
-		this.accessRegionId = accessRegionId;
-		if(accessRegionId != null){
-			putQueryParameter("AccessRegionId", accessRegionId);
+	public void setHostVpcId(String hostVpcId) {
+		this.hostVpcId = hostVpcId;
+		if(hostVpcId != null){
+			putQueryParameter("HostVpcId", hostVpcId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -121,17 +134,6 @@ public class RoutePrivateZoneInCenToVpcRequest extends RpcAcsRequest<RoutePrivat
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getHostVpcId() {
-		return this.hostVpcId;
-	}
-
-	public void setHostVpcId(String hostVpcId) {
-		this.hostVpcId = hostVpcId;
-		if(hostVpcId != null){
-			putQueryParameter("HostVpcId", hostVpcId);
 		}
 	}
 

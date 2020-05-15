@@ -27,6 +27,9 @@ public class ReplaceOssFileResponseUnmarshaller {
 		replaceOssFileResponse.setMessage(_ctx.stringValue("ReplaceOssFileResponse.Message"));
 		replaceOssFileResponse.setHttpStatusCode(_ctx.integerValue("ReplaceOssFileResponse.HttpStatusCode"));
 		replaceOssFileResponse.setSuccess(_ctx.booleanValue("ReplaceOssFileResponse.Success"));
+		replaceOssFileResponse.setFinished(_ctx.booleanValue("ReplaceOssFileResponse.Finished"));
+		replaceOssFileResponse.setJobId(_ctx.stringValue("ReplaceOssFileResponse.JobId"));
+		replaceOssFileResponse.setTimeout(_ctx.integerValue("ReplaceOssFileResponse.Timeout"));
 	 
 	 	return replaceOssFileResponse;
 	}

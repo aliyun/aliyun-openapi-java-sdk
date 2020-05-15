@@ -34,7 +34,7 @@ public class DescribeInitializationStatusRequest extends RpcAcsRequest<DescribeI
 
 	private Integer pageSize;
 	public DescribeInitializationStatusRequest() {
-		super("Dts", "2020-01-01", "DescribeInitializationStatus", "dts");
+		super("Dts", "2020-01-01", "DescribeInitializationStatus");
 		setMethod(MethodType.POST);
 	}
 

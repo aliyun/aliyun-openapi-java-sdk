@@ -35,7 +35,7 @@ public class DescribeStacksRequest extends RoaAcsRequest<DescribeStacksResponse>
 
 	private String status;
 	public DescribeStacksRequest() {
-		super("ROS", "2015-09-01", "DescribeStacks");
+		super("ROS", "2015-09-01", "DescribeStacks", "ROS");
 		setUriPattern("/stacks");
 		setMethod(MethodType.GET);
 		try {

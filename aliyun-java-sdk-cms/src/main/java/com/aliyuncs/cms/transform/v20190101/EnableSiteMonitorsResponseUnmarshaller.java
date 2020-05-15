@@ -15,6 +15,7 @@
 package com.aliyuncs.cms.transform.v20190101;
 
 import com.aliyuncs.cms.model.v20190101.EnableSiteMonitorsResponse;
+import com.aliyuncs.cms.model.v20190101.EnableSiteMonitorsResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,7 +27,10 @@ public class EnableSiteMonitorsResponseUnmarshaller {
 		enableSiteMonitorsResponse.setCode(_ctx.stringValue("EnableSiteMonitorsResponse.Code"));
 		enableSiteMonitorsResponse.setMessage(_ctx.stringValue("EnableSiteMonitorsResponse.Message"));
 		enableSiteMonitorsResponse.setSuccess(_ctx.stringValue("EnableSiteMonitorsResponse.Success"));
-		enableSiteMonitorsResponse.setData(_ctx.stringValue("EnableSiteMonitorsResponse.Data"));
+
+		Data data = new Data();
+		data.setCount(_ctx.integerValue("EnableSiteMonitorsResponse.Data.count"));
+		enableSiteMonitorsResponse.setData(data);
 	 
 	 	return enableSiteMonitorsResponse;
 	}

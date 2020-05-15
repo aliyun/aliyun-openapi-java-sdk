@@ -34,6 +34,12 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private String preferredBackupPeriod;
 
+	private String dataLevel1BackupRetentionPeriod;
+
+	private String dataLevel2BackupRetentionPeriod;
+
+	private String backupRetentionPolicyOnClusterDeletion;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -72,6 +78,30 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
 		this.preferredBackupPeriod = preferredBackupPeriod;
+	}
+
+	public String getDataLevel1BackupRetentionPeriod() {
+		return this.dataLevel1BackupRetentionPeriod;
+	}
+
+	public void setDataLevel1BackupRetentionPeriod(String dataLevel1BackupRetentionPeriod) {
+		this.dataLevel1BackupRetentionPeriod = dataLevel1BackupRetentionPeriod;
+	}
+
+	public String getDataLevel2BackupRetentionPeriod() {
+		return this.dataLevel2BackupRetentionPeriod;
+	}
+
+	public void setDataLevel2BackupRetentionPeriod(String dataLevel2BackupRetentionPeriod) {
+		this.dataLevel2BackupRetentionPeriod = dataLevel2BackupRetentionPeriod;
+	}
+
+	public String getBackupRetentionPolicyOnClusterDeletion() {
+		return this.backupRetentionPolicyOnClusterDeletion;
+	}
+
+	public void setBackupRetentionPolicyOnClusterDeletion(String backupRetentionPolicyOnClusterDeletion) {
+		this.backupRetentionPolicyOnClusterDeletion = backupRetentionPolicyOnClusterDeletion;
 	}
 
 	@Override

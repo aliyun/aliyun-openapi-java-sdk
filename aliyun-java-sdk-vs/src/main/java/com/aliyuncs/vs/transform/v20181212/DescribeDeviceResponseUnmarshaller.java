@@ -51,6 +51,7 @@ public class DescribeDeviceResponseUnmarshaller {
 		describeDeviceResponse.setCreatedTime(_ctx.stringValue("DescribeDeviceResponse.CreatedTime"));
 		describeDeviceResponse.setRegisteredTime(_ctx.stringValue("DescribeDeviceResponse.RegisteredTime"));
 		describeDeviceResponse.setChannelSyncTime(_ctx.stringValue("DescribeDeviceResponse.ChannelSyncTime"));
+		describeDeviceResponse.setParams(_ctx.stringValue("DescribeDeviceResponse.Params"));
 
 		Stats stats = new Stats();
 		stats.setChannelNum(_ctx.longValue("DescribeDeviceResponse.Stats.ChannelNum"));

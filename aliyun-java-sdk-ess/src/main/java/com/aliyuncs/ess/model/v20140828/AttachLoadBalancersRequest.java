@@ -16,26 +16,50 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class AttachLoadBalancersRequest extends RpcAcsRequest<AttachLoadBalancersResponse> {
-	
-	public AttachLoadBalancersRequest() {
-		super("Ess", "2014-08-28", "AttachLoadBalancers", "ess");
-	}
-
-	private List<String> loadBalancers;
-
-	private String resourceOwnerAccount;
+	   
 
 	private String scalingGroupId;
 
 	private Boolean forceAttach;
 
+	private List<String> loadBalancers;
+
+	private String resourceOwnerAccount;
+
 	private Long ownerId;
+	public AttachLoadBalancersRequest() {
+		super("Ess", "2014-08-28", "AttachLoadBalancers", "ess");
+		setMethod(MethodType.POST);
+	}
+
+	public String getScalingGroupId() {
+		return this.scalingGroupId;
+	}
+
+	public void setScalingGroupId(String scalingGroupId) {
+		this.scalingGroupId = scalingGroupId;
+		if(scalingGroupId != null){
+			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public Boolean getForceAttach() {
+		return this.forceAttach;
+	}
+
+	public void setForceAttach(Boolean forceAttach) {
+		this.forceAttach = forceAttach;
+		if(forceAttach != null){
+			putQueryParameter("ForceAttach", forceAttach.toString());
+		}
+	}
 
 	public List<String> getLoadBalancers() {
 		return this.loadBalancers;
@@ -58,28 +82,6 @@ public class AttachLoadBalancersRequest extends RpcAcsRequest<AttachLoadBalancer
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getScalingGroupId() {
-		return this.scalingGroupId;
-	}
-
-	public void setScalingGroupId(String scalingGroupId) {
-		this.scalingGroupId = scalingGroupId;
-		if(scalingGroupId != null){
-			putQueryParameter("ScalingGroupId", scalingGroupId);
-		}
-	}
-
-	public Boolean getForceAttach() {
-		return this.forceAttach;
-	}
-
-	public void setForceAttach(Boolean forceAttach) {
-		this.forceAttach = forceAttach;
-		if(forceAttach != null){
-			putQueryParameter("ForceAttach", forceAttach.toString());
 		}
 	}
 

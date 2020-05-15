@@ -15,18 +15,20 @@
 package com.aliyuncs.ft.model.v20180713;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class FtGatedLaunchPolicy4Request extends RpcAcsRequest<FtGatedLaunchPolicy4Response> {
-	
-	public FtGatedLaunchPolicy4Request() {
-		super("Ft", "2018-07-13", "FtGatedLaunchPolicy4", "ft");
-	}
+	   
 
 	private String isGatedLaunch;
+	public FtGatedLaunchPolicy4Request() {
+		super("Ft", "2018-07-13", "FtGatedLaunchPolicy4");
+		setMethod(MethodType.POST);
+	}
 
 	public String getIsGatedLaunch() {
 		return this.isGatedLaunch;

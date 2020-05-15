@@ -39,15 +39,11 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 
 	private String ownerAccount;
 
-	private String commodityCode;
-
 	private Long ownerId;
 
 	private Integer usedTime;
 
 	private String dBInstanceClass;
-
-	private String promotionCode;
 
 	private String timeType;
 
@@ -140,17 +136,6 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 		}
 	}
 
-	public String getCommodityCode() {
-		return this.commodityCode;
-	}
-
-	public void setCommodityCode(String commodityCode) {
-		this.commodityCode = commodityCode;
-		if(commodityCode != null){
-			putQueryParameter("CommodityCode", commodityCode);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -181,17 +166,6 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 		this.dBInstanceClass = dBInstanceClass;
 		if(dBInstanceClass != null){
 			putQueryParameter("DBInstanceClass", dBInstanceClass);
-		}
-	}
-
-	public String getPromotionCode() {
-		return this.promotionCode;
-	}
-
-	public void setPromotionCode(String promotionCode) {
-		this.promotionCode = promotionCode;
-		if(promotionCode != null){
-			putQueryParameter("PromotionCode", promotionCode);
 		}
 	}
 

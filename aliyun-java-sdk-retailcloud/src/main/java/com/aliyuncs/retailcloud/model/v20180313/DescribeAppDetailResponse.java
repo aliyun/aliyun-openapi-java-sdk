@@ -14,6 +14,7 @@
 
 package com.aliyuncs.retailcloud.model.v20180313;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.retailcloud.transform.v20180313.DescribeAppDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -83,6 +84,12 @@ public class DescribeAppDetailResponse extends AcsResponse {
 		private String deployType;
 
 		private String description;
+
+		private String appStateType;
+
+		private List<UserRole> userRoles;
+
+		private List<MiddleWareInfo> middleWareInfoList;
 
 		public String getServiceType() {
 			return this.serviceType;
@@ -154,6 +161,106 @@ public class DescribeAppDetailResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getAppStateType() {
+			return this.appStateType;
+		}
+
+		public void setAppStateType(String appStateType) {
+			this.appStateType = appStateType;
+		}
+
+		public List<UserRole> getUserRoles() {
+			return this.userRoles;
+		}
+
+		public void setUserRoles(List<UserRole> userRoles) {
+			this.userRoles = userRoles;
+		}
+
+		public List<MiddleWareInfo> getMiddleWareInfoList() {
+			return this.middleWareInfoList;
+		}
+
+		public void setMiddleWareInfoList(List<MiddleWareInfo> middleWareInfoList) {
+			this.middleWareInfoList = middleWareInfoList;
+		}
+
+		public static class UserRole {
+
+			private String userId;
+
+			private String userType;
+
+			private String realName;
+
+			private String roleName;
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public String getUserType() {
+				return this.userType;
+			}
+
+			public void setUserType(String userType) {
+				this.userType = userType;
+			}
+
+			public String getRealName() {
+				return this.realName;
+			}
+
+			public void setRealName(String realName) {
+				this.realName = realName;
+			}
+
+			public String getRoleName() {
+				return this.roleName;
+			}
+
+			public void setRoleName(String roleName) {
+				this.roleName = roleName;
+			}
+		}
+
+		public static class MiddleWareInfo {
+
+			private Long appId;
+
+			private Integer code;
+
+			private String name;
+
+			public Long getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(Long appId) {
+				this.appId = appId;
+			}
+
+			public Integer getCode() {
+				return this.code;
+			}
+
+			public void setCode(Integer code) {
+				this.code = code;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
 		}
 	}
 

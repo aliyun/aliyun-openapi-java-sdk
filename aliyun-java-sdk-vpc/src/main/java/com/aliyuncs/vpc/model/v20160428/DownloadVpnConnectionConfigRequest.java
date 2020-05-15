@@ -35,7 +35,7 @@ public class DownloadVpnConnectionConfigRequest extends RpcAcsRequest<DownloadVp
 
 	private String vpnConnectionId;
 	public DownloadVpnConnectionConfigRequest() {
-		super("Vpc", "2016-04-28", "DownloadVpnConnectionConfig", "Vpc");
+		super("Vpc", "2016-04-28", "DownloadVpnConnectionConfig", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

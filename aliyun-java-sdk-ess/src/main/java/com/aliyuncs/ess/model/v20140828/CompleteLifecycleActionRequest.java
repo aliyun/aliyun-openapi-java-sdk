@@ -15,16 +15,14 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CompleteLifecycleActionRequest extends RpcAcsRequest<CompleteLifecycleActionResponse> {
-	
-	public CompleteLifecycleActionRequest() {
-		super("Ess", "2014-08-28", "CompleteLifecycleAction", "ess");
-	}
+	   
 
 	private String lifecycleActionToken;
 
@@ -37,6 +35,10 @@ public class CompleteLifecycleActionRequest extends RpcAcsRequest<CompleteLifecy
 	private Long ownerId;
 
 	private String lifecycleActionResult;
+	public CompleteLifecycleActionRequest() {
+		super("Ess", "2014-08-28", "CompleteLifecycleAction", "ess");
+		setMethod(MethodType.POST);
+	}
 
 	public String getLifecycleActionToken() {
 		return this.lifecycleActionToken;

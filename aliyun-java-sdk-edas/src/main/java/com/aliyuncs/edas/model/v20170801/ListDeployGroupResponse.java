@@ -115,6 +115,14 @@ public class ListDeployGroupResponse extends AcsResponse {
 
 		private String deploymentName;
 
+		private String cpuLimit;
+
+		private String memoryLimit;
+
+		private String packagePublicUrl;
+
+		private String packageVersion;
+
 		public String getGroupId() {
 			return this.groupId;
 		}
@@ -305,6 +313,38 @@ public class ListDeployGroupResponse extends AcsResponse {
 
 		public void setDeploymentName(String deploymentName) {
 			this.deploymentName = deploymentName;
+		}
+
+		public String getCpuLimit() {
+			return this.cpuLimit;
+		}
+
+		public void setCpuLimit(String cpuLimit) {
+			this.cpuLimit = cpuLimit;
+		}
+
+		public String getMemoryLimit() {
+			return this.memoryLimit;
+		}
+
+		public void setMemoryLimit(String memoryLimit) {
+			this.memoryLimit = memoryLimit;
+		}
+
+		public String getPackagePublicUrl() {
+			return this.packagePublicUrl;
+		}
+
+		public void setPackagePublicUrl(String packagePublicUrl) {
+			this.packagePublicUrl = packagePublicUrl;
+		}
+
+		public String getPackageVersion() {
+			return this.packageVersion;
+		}
+
+		public void setPackageVersion(String packageVersion) {
+			this.packageVersion = packageVersion;
 		}
 	}
 

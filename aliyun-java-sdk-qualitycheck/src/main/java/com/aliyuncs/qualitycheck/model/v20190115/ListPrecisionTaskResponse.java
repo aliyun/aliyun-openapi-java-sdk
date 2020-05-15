@@ -249,6 +249,8 @@ public class ListPrecisionTaskResponse extends AcsResponse {
 
 			private String taskId;
 
+			private String createTime;
+
 			public String getModelName() {
 				return this.modelName;
 			}
@@ -287,6 +289,14 @@ public class ListPrecisionTaskResponse extends AcsResponse {
 
 			public void setTaskId(String taskId) {
 				this.taskId = taskId;
+			}
+
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
 			}
 		}
 	}

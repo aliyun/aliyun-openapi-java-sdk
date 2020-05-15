@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class GetAgentDataRequest extends RpcAcsRequest<GetAgentDataResponse> {
-	
-	public GetAgentDataRequest() {
-		super("CCC", "2017-07-05", "GetAgentData");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String startDay;
 
@@ -44,6 +36,14 @@ public class GetAgentDataRequest extends RpcAcsRequest<GetAgentDataResponse> {
 	private String endDay;
 
 	private Integer pageSize;
+	public GetAgentDataRequest() {
+		super("CCC", "2017-07-05", "GetAgentData");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStartDay() {
 		return this.startDay;

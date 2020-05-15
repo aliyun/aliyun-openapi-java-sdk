@@ -23,21 +23,21 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class PublishSurveyRequest extends RpcAcsRequest<PublishSurveyResponse> {
-	
-	public PublishSurveyRequest() {
-		super("CCC", "2017-07-05", "PublishSurvey");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String surveyId;
 
 	private String instanceId;
 
 	private String scenarioId;
+	public PublishSurveyRequest() {
+		super("CCC", "2017-07-05", "PublishSurvey");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getSurveyId() {
 		return this.surveyId;

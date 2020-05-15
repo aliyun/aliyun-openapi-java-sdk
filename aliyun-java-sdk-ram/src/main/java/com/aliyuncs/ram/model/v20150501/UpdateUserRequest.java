@@ -16,29 +16,36 @@ package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ram.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
-	
-	public UpdateUserRequest() {
-		super("Ram", "2015-05-01", "UpdateUser");
-		setProtocol(ProtocolType.HTTPS);
-	}
+	   
 
 	private String newUserName;
 
-	private String newDisplayName;
-
 	private String newMobilePhone;
-
-	private String newComments;
 
 	private String newEmail;
 
+	private String newDisplayName;
+
+	private String newComments;
+
 	private String userName;
+	public UpdateUserRequest() {
+		super("Ram", "2015-05-01", "UpdateUser", "Ram");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getNewUserName() {
 		return this.newUserName;
@@ -48,17 +55,6 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 		this.newUserName = newUserName;
 		if(newUserName != null){
 			putQueryParameter("NewUserName", newUserName);
-		}
-	}
-
-	public String getNewDisplayName() {
-		return this.newDisplayName;
-	}
-
-	public void setNewDisplayName(String newDisplayName) {
-		this.newDisplayName = newDisplayName;
-		if(newDisplayName != null){
-			putQueryParameter("NewDisplayName", newDisplayName);
 		}
 	}
 
@@ -73,17 +69,6 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 		}
 	}
 
-	public String getNewComments() {
-		return this.newComments;
-	}
-
-	public void setNewComments(String newComments) {
-		this.newComments = newComments;
-		if(newComments != null){
-			putQueryParameter("NewComments", newComments);
-		}
-	}
-
 	public String getNewEmail() {
 		return this.newEmail;
 	}
@@ -92,6 +77,28 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 		this.newEmail = newEmail;
 		if(newEmail != null){
 			putQueryParameter("NewEmail", newEmail);
+		}
+	}
+
+	public String getNewDisplayName() {
+		return this.newDisplayName;
+	}
+
+	public void setNewDisplayName(String newDisplayName) {
+		this.newDisplayName = newDisplayName;
+		if(newDisplayName != null){
+			putQueryParameter("NewDisplayName", newDisplayName);
+		}
+	}
+
+	public String getNewComments() {
+		return this.newComments;
+	}
+
+	public void setNewComments(String newComments) {
+		this.newComments = newComments;
+		if(newComments != null){
+			putQueryParameter("NewComments", newComments);
 		}
 	}
 

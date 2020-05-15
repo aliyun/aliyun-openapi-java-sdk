@@ -31,7 +31,7 @@ public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceRespo
 
 	private String orderType;
 	public DescribeInstanceRequest() {
-		super("Market", "2015-11-01", "DescribeInstance", "yunmarket");
+		super("Market", "2015-11-01", "DescribeInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

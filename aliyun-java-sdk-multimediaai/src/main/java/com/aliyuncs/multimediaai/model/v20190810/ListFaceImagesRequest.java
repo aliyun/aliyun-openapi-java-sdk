@@ -33,7 +33,7 @@ public class ListFaceImagesRequest extends RpcAcsRequest<ListFaceImagesResponse>
 
 	private Integer pageSize;
 	public ListFaceImagesRequest() {
-		super("multimediaai", "2019-08-10", "ListFaceImages", "multimediaai");
+		super("multimediaai", "2019-08-10", "ListFaceImages");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

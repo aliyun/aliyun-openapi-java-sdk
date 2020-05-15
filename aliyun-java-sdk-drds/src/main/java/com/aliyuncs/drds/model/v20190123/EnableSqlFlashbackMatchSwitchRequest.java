@@ -29,7 +29,7 @@ public class EnableSqlFlashbackMatchSwitchRequest extends RpcAcsRequest<EnableSq
 
 	private String dbName;
 	public EnableSqlFlashbackMatchSwitchRequest() {
-		super("Drds", "2019-01-23", "EnableSqlFlashbackMatchSwitch", "drds");
+		super("Drds", "2019-01-23", "EnableSqlFlashbackMatchSwitch", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

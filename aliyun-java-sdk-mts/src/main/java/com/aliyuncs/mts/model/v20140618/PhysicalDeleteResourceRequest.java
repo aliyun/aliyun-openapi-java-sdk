@@ -47,7 +47,7 @@ public class PhysicalDeleteResourceRequest extends RpcAcsRequest<PhysicalDeleteR
 
 	private String taskIdentifier;
 	public PhysicalDeleteResourceRequest() {
-		super("Mts", "2014-06-18", "PhysicalDeleteResource", "mts");
+		super("Mts", "2014-06-18", "PhysicalDeleteResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

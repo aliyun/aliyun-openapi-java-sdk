@@ -55,7 +55,7 @@ public class DescribeIndexRecommendationRequest extends RpcAcsRequest<DescribeIn
 
 	private String instanceId;
 	public DescribeIndexRecommendationRequest() {
-		super("Dds", "2015-12-01", "DescribeIndexRecommendation", "Dds");
+		super("Dds", "2015-12-01", "DescribeIndexRecommendation", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

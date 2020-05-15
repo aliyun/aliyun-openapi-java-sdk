@@ -85,6 +85,28 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		private String allocationStatus;
 
+		private String endTime;
+
+		private String hostType;
+
+		private String bastionInstanceId;
+
+		private String openPermission;
+
+		private String accountName;
+
+		private String hostCPU;
+
+		private String hostMem;
+
+		private String hostStorage;
+
+		private String cpuUsed;
+
+		private String memoryUsed;
+
+		private String storageUsed;
+
 		public String getHostName() {
 			return this.hostName;
 		}
@@ -195,6 +217,94 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		public void setAllocationStatus(String allocationStatus) {
 			this.allocationStatus = allocationStatus;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getHostType() {
+			return this.hostType;
+		}
+
+		public void setHostType(String hostType) {
+			this.hostType = hostType;
+		}
+
+		public String getBastionInstanceId() {
+			return this.bastionInstanceId;
+		}
+
+		public void setBastionInstanceId(String bastionInstanceId) {
+			this.bastionInstanceId = bastionInstanceId;
+		}
+
+		public String getOpenPermission() {
+			return this.openPermission;
+		}
+
+		public void setOpenPermission(String openPermission) {
+			this.openPermission = openPermission;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
+		}
+
+		public String getHostCPU() {
+			return this.hostCPU;
+		}
+
+		public void setHostCPU(String hostCPU) {
+			this.hostCPU = hostCPU;
+		}
+
+		public String getHostMem() {
+			return this.hostMem;
+		}
+
+		public void setHostMem(String hostMem) {
+			this.hostMem = hostMem;
+		}
+
+		public String getHostStorage() {
+			return this.hostStorage;
+		}
+
+		public void setHostStorage(String hostStorage) {
+			this.hostStorage = hostStorage;
+		}
+
+		public String getCpuUsed() {
+			return this.cpuUsed;
+		}
+
+		public void setCpuUsed(String cpuUsed) {
+			this.cpuUsed = cpuUsed;
+		}
+
+		public String getMemoryUsed() {
+			return this.memoryUsed;
+		}
+
+		public void setMemoryUsed(String memoryUsed) {
+			this.memoryUsed = memoryUsed;
+		}
+
+		public String getStorageUsed() {
+			return this.storageUsed;
+		}
+
+		public void setStorageUsed(String storageUsed) {
+			this.storageUsed = storageUsed;
 		}
 	}
 

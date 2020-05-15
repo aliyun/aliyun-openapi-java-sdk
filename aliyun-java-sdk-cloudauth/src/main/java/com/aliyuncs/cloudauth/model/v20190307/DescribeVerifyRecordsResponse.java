@@ -91,6 +91,8 @@ public class DescribeVerifyRecordsResponse extends AcsResponse {
 
 		private String bizId;
 
+		private String dataStats;
+
 		private String verifyId;
 
 		private Long finishTime;
@@ -117,6 +119,14 @@ public class DescribeVerifyRecordsResponse extends AcsResponse {
 
 		public void setBizId(String bizId) {
 			this.bizId = bizId;
+		}
+
+		public String getDataStats() {
+			return this.dataStats;
+		}
+
+		public void setDataStats(String dataStats) {
+			this.dataStats = dataStats;
 		}
 
 		public String getVerifyId() {

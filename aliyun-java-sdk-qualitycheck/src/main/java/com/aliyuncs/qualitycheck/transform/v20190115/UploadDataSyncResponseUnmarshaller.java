@@ -21,11 +21,6 @@ import com.aliyuncs.qualitycheck.model.v20190115.UploadDataSyncResponse;
 import com.aliyuncs.qualitycheck.model.v20190115.UploadDataSyncResponse.ResultInfo;
 import com.aliyuncs.qualitycheck.model.v20190115.UploadDataSyncResponse.ResultInfo.RuleHitInfo;
 import com.aliyuncs.qualitycheck.model.v20190115.UploadDataSyncResponse.ResultInfo.RuleHitInfo.ConditionBasicInfo;
-import com.aliyuncs.qualitycheck.model.v20190115.UploadDataSyncResponse.ResultInfo.RuleHitInfo.ConditionBasicInfo.CheckRange;
-import com.aliyuncs.qualitycheck.model.v20190115.UploadDataSyncResponse.ResultInfo.RuleHitInfo.ConditionBasicInfo.CheckRange.Anchor;
-import com.aliyuncs.qualitycheck.model.v20190115.UploadDataSyncResponse.ResultInfo.RuleHitInfo.ConditionBasicInfo.CheckRange.Range;
-import com.aliyuncs.qualitycheck.model.v20190115.UploadDataSyncResponse.ResultInfo.RuleHitInfo.ConditionBasicInfo.OperatorBasicInfo;
-import com.aliyuncs.qualitycheck.model.v20190115.UploadDataSyncResponse.ResultInfo.RuleHitInfo.ConditionBasicInfo.OperatorBasicInfo.Param;
 import com.aliyuncs.qualitycheck.model.v20190115.UploadDataSyncResponse.ResultInfo.RuleHitInfo.ConditionHitInfo;
 import com.aliyuncs.qualitycheck.model.v20190115.UploadDataSyncResponse.ResultInfo.RuleHitInfo.ConditionHitInfo.HitKeyWord;
 import com.aliyuncs.qualitycheck.model.v20190115.UploadDataSyncResponse.ResultInfo.RuleHitInfo.ConditionHitInfo.Phrase;
@@ -40,17 +35,11 @@ public class UploadDataSyncResponseUnmarshaller {
 		uploadDataSyncResponse.setSuccess(_ctx.booleanValue("UploadDataSyncResponse.Success"));
 		uploadDataSyncResponse.setCode(_ctx.stringValue("UploadDataSyncResponse.Code"));
 		uploadDataSyncResponse.setMessage(_ctx.stringValue("UploadDataSyncResponse.Message"));
-		uploadDataSyncResponse.setCount(_ctx.integerValue("UploadDataSyncResponse.Count"));
 
 		List<ResultInfo> data = new ArrayList<ResultInfo>();
 		for (int i = 0; i < _ctx.lengthValue("UploadDataSyncResponse.Data.Length"); i++) {
 			ResultInfo resultInfo = new ResultInfo();
-			resultInfo.setTid(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Tid"));
-			resultInfo.setAsrMsg(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].AsrMsg"));
 			resultInfo.setScore(_ctx.integerValue("UploadDataSyncResponse.Data["+ i +"].Score"));
-			resultInfo.setReviewStatus(_ctx.integerValue("UploadDataSyncResponse.Data["+ i +"].ReviewStatus"));
-			resultInfo.setHitId(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].HitId"));
-			resultInfo.setTaskId(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].TaskId"));
 
 			List<String> handScoreIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("UploadDataSyncResponse.Data["+ i +"].HandScoreIdList.Length"); j++) {
@@ -61,8 +50,8 @@ public class UploadDataSyncResponseUnmarshaller {
 			List<RuleHitInfo> rules = new ArrayList<RuleHitInfo>();
 			for (int j = 0; j < _ctx.lengthValue("UploadDataSyncResponse.Data["+ i +"].Rules.Length"); j++) {
 				RuleHitInfo ruleHitInfo = new RuleHitInfo();
-				ruleHitInfo.setHitStatus(_ctx.integerValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].HitStatus"));
 				ruleHitInfo.setRid(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Rid"));
+				ruleHitInfo.setTid(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Tid"));
 
 				List<ConditionHitInfo> hit = new ArrayList<ConditionHitInfo>();
 				for (int k = 0; k < _ctx.lengthValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit.Length"); k++) {
@@ -81,7 +70,6 @@ public class UploadDataSyncResponseUnmarshaller {
 					phrase.setBegin(_ctx.longValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Begin"));
 					phrase.setEnd(_ctx.longValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.End"));
 					phrase.setBeginTime(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.BeginTime"));
-					phrase.setHourMinSec(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.HourMinSec"));
 					conditionHitInfo.setPhrase(phrase);
 
 					List<HitKeyWord> hitKeyWords = new ArrayList<HitKeyWord>();
@@ -105,57 +93,6 @@ public class UploadDataSyncResponseUnmarshaller {
 				for (int k = 0; k < _ctx.lengthValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo.Length"); k++) {
 					ConditionBasicInfo conditionBasicInfo = new ConditionBasicInfo();
 					conditionBasicInfo.setConditionInfoCid(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].ConditionInfoCid"));
-					conditionBasicInfo.setLambda(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Lambda"));
-
-					CheckRange checkRange = new CheckRange();
-					checkRange.setRole(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].CheckRange.Role"));
-
-					Anchor anchor = new Anchor();
-					anchor.setAnchorCid(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].CheckRange.Anchor.AnchorCid"));
-					anchor.setLocation(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].CheckRange.Anchor.Location"));
-					anchor.setHitTime(_ctx.integerValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].CheckRange.Anchor.HitTime"));
-					checkRange.setAnchor(anchor);
-
-					Range range = new Range();
-					range.setFrom(_ctx.integerValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].CheckRange.Range.From"));
-					range.setTo(_ctx.integerValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].CheckRange.Range.To"));
-					checkRange.setRange(range);
-					conditionBasicInfo.setCheckRange(checkRange);
-
-					List<OperatorBasicInfo> operators = new ArrayList<OperatorBasicInfo>();
-					for (int l = 0; l < _ctx.lengthValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators.Length"); l++) {
-						OperatorBasicInfo operatorBasicInfo = new OperatorBasicInfo();
-						operatorBasicInfo.setOid(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Oid"));
-						operatorBasicInfo.setType(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Type"));
-						operatorBasicInfo.setName(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Name"));
-
-						Param param = new Param();
-						param.setRegex(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.Regex"));
-						param.setPhrase(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.Phrase"));
-						param.setInterval(_ctx.integerValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.Interval"));
-						param.setThreshold(_ctx.floatValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.Threshold"));
-						param.setInSentence(_ctx.booleanValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.InSentence"));
-						param.setTarget(_ctx.integerValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.Target"));
-						param.setFromEnd(_ctx.booleanValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.FromEnd"));
-						param.setDifferentRole(_ctx.booleanValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.DifferentRole"));
-						param.setTargetRole(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.TargetRole"));
-
-						List<String> operKeyWords = new ArrayList<String>();
-						for (int m = 0; m < _ctx.lengthValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.OperKeyWords.Length"); m++) {
-							operKeyWords.add(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.OperKeyWords["+ m +"]"));
-						}
-						param.setOperKeyWords(operKeyWords);
-
-						List<String> references = new ArrayList<String>();
-						for (int m = 0; m < _ctx.lengthValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.References.Length"); m++) {
-							references.add(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].ConditionInfo["+ k +"].Operators["+ l +"].Param.References["+ m +"]"));
-						}
-						param.setReferences(references);
-						operatorBasicInfo.setParam(param);
-
-						operators.add(operatorBasicInfo);
-					}
-					conditionBasicInfo.setOperators(operators);
 
 					conditionInfo.add(conditionBasicInfo);
 				}

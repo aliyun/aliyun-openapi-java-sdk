@@ -14,7 +14,6 @@
 
 package com.aliyuncs.saf.model.v20180919;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.saf.transform.v20180919.ExecuteRequestResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

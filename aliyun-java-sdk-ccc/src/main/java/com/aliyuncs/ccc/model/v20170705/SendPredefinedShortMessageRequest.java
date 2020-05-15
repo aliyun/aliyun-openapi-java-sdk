@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class SendPredefinedShortMessageRequest extends RpcAcsRequest<SendPredefinedShortMessageResponse> {
-	
-	public SendPredefinedShortMessageRequest() {
-		super("CCC", "2017-07-05", "SendPredefinedShortMessage");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String phoneNumbers;
 
@@ -40,6 +32,14 @@ public class SendPredefinedShortMessageRequest extends RpcAcsRequest<SendPredefi
 	private Long configId;
 
 	private String templateParam;
+	public SendPredefinedShortMessageRequest() {
+		super("CCC", "2017-07-05", "SendPredefinedShortMessage");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getPhoneNumbers() {
 		return this.phoneNumbers;

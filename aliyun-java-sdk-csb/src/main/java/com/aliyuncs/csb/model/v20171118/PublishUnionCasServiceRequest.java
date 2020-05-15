@@ -30,7 +30,7 @@ public class PublishUnionCasServiceRequest extends RpcAcsRequest<PublishUnionCas
 
 	private String data;
 	public PublishUnionCasServiceRequest() {
-		super("CSB", "2017-11-18", "PublishUnionCasService", "csb");
+		super("CSB", "2017-11-18", "PublishUnionCasService");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -29,6 +29,8 @@ public class UntagResourceRequest extends RpcAcsRequest<UntagResourceResponse> {
 	private String tagKeys;
 
 	private String keyId;
+
+	private String secretName;
 	public UntagResourceRequest() {
 		super("Kms", "2016-01-20", "UntagResource", "kms");
 		setProtocol(ProtocolType.HTTPS);
@@ -58,6 +60,17 @@ public class UntagResourceRequest extends RpcAcsRequest<UntagResourceResponse> {
 		this.keyId = keyId;
 		if(keyId != null){
 			putQueryParameter("KeyId", keyId);
+		}
+	}
+
+	public String getSecretName() {
+		return this.secretName;
+	}
+
+	public void setSecretName(String secretName) {
+		this.secretName = secretName;
+		if(secretName != null){
+			putQueryParameter("SecretName", secretName);
 		}
 	}
 

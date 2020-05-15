@@ -44,7 +44,7 @@ public class PreviewStackRequest extends RpcAcsRequest<PreviewStackResponse> {
 
 	private List<Parameters> parameterss;
 	public PreviewStackRequest() {
-		super("ROS", "2019-09-10", "PreviewStack");
+		super("ROS", "2019-09-10", "PreviewStack", "ROS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

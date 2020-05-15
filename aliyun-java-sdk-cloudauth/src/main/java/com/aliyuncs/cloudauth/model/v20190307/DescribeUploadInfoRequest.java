@@ -24,6 +24,8 @@ import com.aliyuncs.cloudauth.Endpoint;
  */
 public class DescribeUploadInfoRequest extends RpcAcsRequest<DescribeUploadInfoResponse> {
 	   
+
+	private String biz;
 	public DescribeUploadInfoRequest() {
 		super("Cloudauth", "2019-03-07", "DescribeUploadInfo", "cloudauth");
 		setMethod(MethodType.POST);
@@ -31,6 +33,17 @@ public class DescribeUploadInfoRequest extends RpcAcsRequest<DescribeUploadInfoR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBiz() {
+		return this.biz;
+	}
+
+	public void setBiz(String biz) {
+		this.biz = biz;
+		if(biz != null){
+			putQueryParameter("Biz", biz);
+		}
 	}
 
 	@Override

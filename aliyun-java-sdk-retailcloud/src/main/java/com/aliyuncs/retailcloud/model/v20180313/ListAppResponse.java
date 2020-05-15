@@ -33,7 +33,7 @@ public class ListAppResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private List<ListAppResponse1> data;
+	private List<AppDetail> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,15 +67,15 @@ public class ListAppResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public List<ListAppResponse1> getData() {
+	public List<AppDetail> getData() {
 		return this.data;
 	}
 
-	public void setData(List<ListAppResponse1> data) {
+	public void setData(List<AppDetail> data) {
 		this.data = data;
 	}
 
-	public static class ListAppResponse1 {
+	public static class AppDetail {
 
 		private Long appId;
 
@@ -94,6 +94,10 @@ public class ListAppResponse extends AcsResponse {
 		private String deployType;
 
 		private String bizTitle;
+
+		private String appStateType;
+
+		private List<MiddleWareInfo> middleWareList;
 
 		public Long getAppId() {
 			return this.appId;
@@ -165,6 +169,55 @@ public class ListAppResponse extends AcsResponse {
 
 		public void setBizTitle(String bizTitle) {
 			this.bizTitle = bizTitle;
+		}
+
+		public String getAppStateType() {
+			return this.appStateType;
+		}
+
+		public void setAppStateType(String appStateType) {
+			this.appStateType = appStateType;
+		}
+
+		public List<MiddleWareInfo> getMiddleWareList() {
+			return this.middleWareList;
+		}
+
+		public void setMiddleWareList(List<MiddleWareInfo> middleWareList) {
+			this.middleWareList = middleWareList;
+		}
+
+		public static class MiddleWareInfo {
+
+			private Long appId;
+
+			private Integer code;
+
+			private String name;
+
+			public Long getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(Long appId) {
+				this.appId = appId;
+			}
+
+			public Integer getCode() {
+				return this.code;
+			}
+
+			public void setCode(Integer code) {
+				this.code = code;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
 		}
 	}
 

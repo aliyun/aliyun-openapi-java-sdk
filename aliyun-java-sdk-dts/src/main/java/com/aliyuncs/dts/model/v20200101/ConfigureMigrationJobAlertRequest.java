@@ -40,7 +40,7 @@ public class ConfigureMigrationJobAlertRequest extends RpcAcsRequest<ConfigureMi
 
 	private String errorAlertStatus;
 	public ConfigureMigrationJobAlertRequest() {
-		super("Dts", "2020-01-01", "ConfigureMigrationJobAlert", "dts");
+		super("Dts", "2020-01-01", "ConfigureMigrationJobAlert");
 		setMethod(MethodType.POST);
 	}
 

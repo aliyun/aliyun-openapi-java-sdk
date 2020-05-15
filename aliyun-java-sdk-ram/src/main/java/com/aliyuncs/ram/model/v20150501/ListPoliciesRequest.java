@@ -16,23 +16,30 @@ package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ram.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListPoliciesRequest extends RpcAcsRequest<ListPoliciesResponse> {
-	
-	public ListPoliciesRequest() {
-		super("Ram", "2015-05-01", "ListPolicies");
-		setProtocol(ProtocolType.HTTPS);
-	}
+	   
 
 	private String policyType;
 
 	private String marker;
 
 	private Integer maxItems;
+	public ListPoliciesRequest() {
+		super("Ram", "2015-05-01", "ListPolicies", "Ram");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getPolicyType() {
 		return this.policyType;

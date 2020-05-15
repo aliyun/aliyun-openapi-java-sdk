@@ -38,4 +38,9 @@ public class DeleteOfficeConversionTaskResponse extends AcsResponse {
 	public DeleteOfficeConversionTaskResponse getInstance(UnmarshallerContext context) {
 		return	DeleteOfficeConversionTaskResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

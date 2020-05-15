@@ -78,4 +78,9 @@ public class AddDatabaseResponse extends AcsResponse {
 	public AddDatabaseResponse getInstance(UnmarshallerContext context) {
 		return	AddDatabaseResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

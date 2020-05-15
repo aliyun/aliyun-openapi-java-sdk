@@ -41,7 +41,7 @@ public class DeleteNodeRequest extends RpcAcsRequest<DeleteNodeResponse> {
 
 	private Long ownerId;
 	public DeleteNodeRequest() {
-		super("Dds", "2015-12-01", "DeleteNode", "Dds");
+		super("Dds", "2015-12-01", "DeleteNode", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

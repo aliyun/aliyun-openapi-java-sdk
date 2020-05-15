@@ -1,3 +1,16 @@
+2020-04-20 Version: 3.0.16
+- Add kibana network white Ips.
+
+2020-04-16 Version: 3.0.15
+- Add ModifyWhiteIps.
+
+2020-02-26 Version: 3.0.14
+- Fix tag upper case parameters.
+- Fix patch.
+
+2020-02-24 Version: 3.0.13
+- Add tag of list instance parameters.
+
 2020-01-07 Version: 3.0.12
 - Modify desribeInstance return dict item.
 

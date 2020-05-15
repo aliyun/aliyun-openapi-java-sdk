@@ -16,18 +16,14 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ExitStandbyRequest extends RpcAcsRequest<ExitStandbyResponse> {
-	
-	public ExitStandbyRequest() {
-		super("Ess", "2014-08-28", "ExitStandby", "ess");
-	}
-
-	private List<String> instanceIds;
+	   
 
 	private String resourceOwnerAccount;
 
@@ -35,17 +31,10 @@ public class ExitStandbyRequest extends RpcAcsRequest<ExitStandbyResponse> {
 
 	private Long ownerId;
 
-	public List<String> getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(List<String> instanceIds) {
-		this.instanceIds = instanceIds;	
-		if (instanceIds != null) {
-			for (int i = 0; i < instanceIds.size(); i++) {
-				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
-			}
-		}	
+	private List<String> instanceIds;
+	public ExitStandbyRequest() {
+		super("Ess", "2014-08-28", "ExitStandby", "ess");
+		setMethod(MethodType.POST);
 	}
 
 	public String getResourceOwnerAccount() {
@@ -79,6 +68,19 @@ public class ExitStandbyRequest extends RpcAcsRequest<ExitStandbyResponse> {
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;	
+		if (instanceIds != null) {
+			for (int i = 0; i < instanceIds.size(); i++) {
+				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
+			}
+		}	
 	}
 
 	@Override

@@ -50,6 +50,10 @@ public class GetStackResourceResponse extends AcsResponse {
 
 	private String updateTime;
 
+	private String resourceDriftStatus;
+
+	private String driftDetectionTime;
+
 	private List<Map<Object,Object>> resourceAttributes;
 
 	public String getCreateTime() {
@@ -146,6 +150,22 @@ public class GetStackResourceResponse extends AcsResponse {
 
 	public void setUpdateTime(String updateTime) {
 		this.updateTime = updateTime;
+	}
+
+	public String getResourceDriftStatus() {
+		return this.resourceDriftStatus;
+	}
+
+	public void setResourceDriftStatus(String resourceDriftStatus) {
+		this.resourceDriftStatus = resourceDriftStatus;
+	}
+
+	public String getDriftDetectionTime() {
+		return this.driftDetectionTime;
+	}
+
+	public void setDriftDetectionTime(String driftDetectionTime) {
+		this.driftDetectionTime = driftDetectionTime;
 	}
 
 	public List<Map<Object,Object>> getResourceAttributes() {

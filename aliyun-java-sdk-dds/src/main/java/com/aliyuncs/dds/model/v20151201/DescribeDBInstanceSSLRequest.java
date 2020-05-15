@@ -37,7 +37,7 @@ public class DescribeDBInstanceSSLRequest extends RpcAcsRequest<DescribeDBInstan
 
 	private Long ownerId;
 	public DescribeDBInstanceSSLRequest() {
-		super("Dds", "2015-12-01", "DescribeDBInstanceSSL", "Dds");
+		super("Dds", "2015-12-01", "DescribeDBInstanceSSL", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

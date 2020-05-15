@@ -24,9 +24,13 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class DeleteFolderRequest extends RoaAcsRequest<DeleteFolderResponse> {
-	
+	   
+
+	private String path;
+
+	private String projectName;
 	public DeleteFolderRequest() {
-		super("foas", "2018-11-11", "DeleteFolder");
+		super("foas", "2018-11-11", "DeleteFolder", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/folders");
 		setMethod(MethodType.DELETE);
@@ -35,10 +39,6 @@ public class DeleteFolderRequest extends RoaAcsRequest<DeleteFolderResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String path;
-
-	private String projectName;
 
 	public String getPath() {
 		return this.path;

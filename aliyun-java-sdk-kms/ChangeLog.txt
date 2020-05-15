@@ -1,3 +1,12 @@
+2020-03-03 Version: 2.10.1
+- Supported secretmanager stable version for kms.
+
+2020-03-03 Version: 2.10.0
+- Supported secretmanager for kms.
+
+2020-02-28 Version: 2.10.0
+- Supported secretmanager for kms.
+
 2019-12-31 Version: 2.9.0
 - Support asymmetric keys.
 

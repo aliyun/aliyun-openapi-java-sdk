@@ -37,7 +37,7 @@ public class ListPodsResponse extends AcsResponse {
 
 	private Long totalCount;
 
-	private List<ListPodsResponse1> data;
+	private List<PodDetail> data;
 
 	public Integer getCode() {
 		return this.code;
@@ -87,15 +87,15 @@ public class ListPodsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public List<ListPodsResponse1> getData() {
+	public List<PodDetail> getData() {
 		return this.data;
 	}
 
-	public void setData(List<ListPodsResponse1> data) {
+	public void setData(List<PodDetail> data) {
 		this.data = data;
 	}
 
-	public static class ListPodsResponse1 {
+	public static class PodDetail {
 
 		private String appInstanceId;
 

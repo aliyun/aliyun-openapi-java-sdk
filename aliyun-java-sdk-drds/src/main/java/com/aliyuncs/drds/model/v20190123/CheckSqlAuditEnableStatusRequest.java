@@ -29,7 +29,7 @@ public class CheckSqlAuditEnableStatusRequest extends RpcAcsRequest<CheckSqlAudi
 
 	private String dbName;
 	public CheckSqlAuditEnableStatusRequest() {
-		super("Drds", "2019-01-23", "CheckSqlAuditEnableStatus", "drds");
+		super("Drds", "2019-01-23", "CheckSqlAuditEnableStatus", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,6 +37,8 @@ public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSs
 
 	private Integer from;
 
+	private String sslVpnClientCertId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -45,7 +47,7 @@ public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSs
 
 	private Integer to;
 	public DescribeVpnSslServerLogsRequest() {
-		super("Vpc", "2016-04-28", "DescribeVpnSslServerLogs", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeVpnSslServerLogs", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -116,6 +118,17 @@ public class DescribeVpnSslServerLogsRequest extends RpcAcsRequest<DescribeVpnSs
 		this.from = from;
 		if(from != null){
 			putQueryParameter("From", from.toString());
+		}
+	}
+
+	public String getSslVpnClientCertId() {
+		return this.sslVpnClientCertId;
+	}
+
+	public void setSslVpnClientCertId(String sslVpnClientCertId) {
+		this.sslVpnClientCertId = sslVpnClientCertId;
+		if(sslVpnClientCertId != null){
+			putQueryParameter("SslVpnClientCertId", sslVpnClientCertId);
 		}
 	}
 

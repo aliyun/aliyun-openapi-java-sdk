@@ -41,7 +41,7 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 
 	private Long ownerId;
 	public ModifyDBInstanceNetExpireTimeRequest() {
-		super("Dds", "2015-12-01", "ModifyDBInstanceNetExpireTime", "Dds");
+		super("Dds", "2015-12-01", "ModifyDBInstanceNetExpireTime", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

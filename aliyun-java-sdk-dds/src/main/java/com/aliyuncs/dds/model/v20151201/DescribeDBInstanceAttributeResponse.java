@@ -107,6 +107,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String currentKernelVersion;
 
+		private String protocolType;
+
 		private String vpcAuthMode;
 
 		private List<MongosAttribute> mongosList;
@@ -357,6 +359,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setCurrentKernelVersion(String currentKernelVersion) {
 			this.currentKernelVersion = currentKernelVersion;
+		}
+
+		public String getProtocolType() {
+			return this.protocolType;
+		}
+
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
 		}
 
 		public String getVpcAuthMode() {

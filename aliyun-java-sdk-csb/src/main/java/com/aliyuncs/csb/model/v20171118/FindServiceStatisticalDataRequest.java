@@ -15,7 +15,6 @@
 package com.aliyuncs.csb.model.v20171118;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.csb.Endpoint;
 
@@ -32,10 +31,9 @@ public class FindServiceStatisticalDataRequest extends RpcAcsRequest<FindService
 
 	private Long startTime;
 
-	private String serviceName;
+	private String serviceNameVersion;
 	public FindServiceStatisticalDataRequest() {
-		super("CSB", "2017-11-18", "FindServiceStatisticalData", "csb");
-		setProtocol(ProtocolType.HTTPS);
+		super("CSB", "2017-11-18", "FindServiceStatisticalData");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -76,14 +74,14 @@ public class FindServiceStatisticalDataRequest extends RpcAcsRequest<FindService
 		}
 	}
 
-	public String getServiceName() {
-		return this.serviceName;
+	public String getServiceNameVersion() {
+		return this.serviceNameVersion;
 	}
 
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
+	public void setServiceNameVersion(String serviceNameVersion) {
+		this.serviceNameVersion = serviceNameVersion;
+		if(serviceNameVersion != null){
+			putQueryParameter("ServiceNameVersion", serviceNameVersion);
 		}
 	}
 

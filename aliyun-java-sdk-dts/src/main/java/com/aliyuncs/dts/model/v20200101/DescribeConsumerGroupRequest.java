@@ -34,7 +34,7 @@ public class DescribeConsumerGroupRequest extends RpcAcsRequest<DescribeConsumer
 
 	private Integer pageSize;
 	public DescribeConsumerGroupRequest() {
-		super("Dts", "2020-01-01", "DescribeConsumerGroup", "dts");
+		super("Dts", "2020-01-01", "DescribeConsumerGroup");
 		setMethod(MethodType.POST);
 	}
 

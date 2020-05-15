@@ -32,7 +32,7 @@ public class BatchAddDeviceGroupRelationsRequest extends RpcAcsRequest<BatchAddD
 
 	private List<Device> devices;
 	public BatchAddDeviceGroupRelationsRequest() {
-		super("Iot", "2018-01-20", "BatchAddDeviceGroupRelations", "iot");
+		super("Iot", "2018-01-20", "BatchAddDeviceGroupRelations", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

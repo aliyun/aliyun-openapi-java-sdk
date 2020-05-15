@@ -29,7 +29,7 @@ public class DescribeEvaluateTasksRequest extends RpcAcsRequest<DescribeEvaluate
 
 	private Integer pageSize;
 	public DescribeEvaluateTasksRequest() {
-		super("Drds", "2019-01-23", "DescribeEvaluateTasks", "drds");
+		super("Drds", "2019-01-23", "DescribeEvaluateTasks", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

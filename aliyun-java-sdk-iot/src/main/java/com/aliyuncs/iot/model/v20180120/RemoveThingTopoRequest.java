@@ -33,7 +33,7 @@ public class RemoveThingTopoRequest extends RpcAcsRequest<RemoveThingTopoRespons
 
 	private String deviceName;
 	public RemoveThingTopoRequest() {
-		super("Iot", "2018-01-20", "RemoveThingTopo", "iot");
+		super("Iot", "2018-01-20", "RemoveThingTopo", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

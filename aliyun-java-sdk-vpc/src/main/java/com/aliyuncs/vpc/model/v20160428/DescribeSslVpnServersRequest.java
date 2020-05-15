@@ -43,7 +43,7 @@ public class DescribeSslVpnServersRequest extends RpcAcsRequest<DescribeSslVpnSe
 
 	private String name;
 	public DescribeSslVpnServersRequest() {
-		super("Vpc", "2016-04-28", "DescribeSslVpnServers", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeSslVpnServers", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

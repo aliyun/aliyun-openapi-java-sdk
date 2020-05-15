@@ -37,7 +37,7 @@ public class Endpoint {
             put("cn-hongkong", "hbase.aliyuncs.com");
             put("cn-beijing-finance-pop", "hbase.aliyuncs.com");
             put("cn-wuhan", "hbase.aliyuncs.com");
-            put("us-west-1", "hbase.ap-northeast-1.aliyuncs.com");
+            put("us-west-1", "hbase.aliyuncs.com");
             put("cn-shenzhen", "hbase.aliyuncs.com");
             put("cn-zhengzhou-nebula-1", "hbase.aliyuncs.com");
             put("rus-west-1-pop", "hbase.ap-northeast-1.aliyuncs.com");
@@ -53,12 +53,12 @@ public class Endpoint {
             put("cn-hangzhou-test-306", "hbase.aliyuncs.com");
             put("cn-shanghai-et2-b01", "hbase.aliyuncs.com");
             put("cn-hangzhou-finance", "hbase.aliyuncs.com");
-            put("ap-southeast-1", "hbase.ap-northeast-1.aliyuncs.com");
+            put("ap-southeast-1", "hbase.aliyuncs.com");
             put("cn-beijing-nu16-b01", "hbase.aliyuncs.com");
             put("cn-edge-1", "hbase.aliyuncs.com");
             put("cn-fujian", "hbase.aliyuncs.com");
-            put("us-east-1", "hbase.ap-northeast-1.aliyuncs.com");
-            put("ap-northeast-2-pop", "hbase.ap-northeast-1.aliyuncs.com");
+            put("us-east-1", "hbase.aliyuncs.com");
+            put("ap-northeast-2-pop", "hbase.aliyuncs.com");
             put("cn-shenzhen-inner", "hbase.aliyuncs.com");
             put("cn-zhangjiakou-na62-a01", "hbase.aliyuncs.com");
             put("cn-hangzhou", "hbase.aliyuncs.com");

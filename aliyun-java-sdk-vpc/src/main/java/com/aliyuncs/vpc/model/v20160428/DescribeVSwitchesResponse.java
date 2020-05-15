@@ -103,6 +103,10 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 		private String networkAclId;
 
+		private Long ownerId;
+
+		private String shareType;
+
 		private List<Tag> tags;
 
 		private RouteTable routeTable;
@@ -209,6 +213,22 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 		public void setNetworkAclId(String networkAclId) {
 			this.networkAclId = networkAclId;
+		}
+
+		public Long getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(Long ownerId) {
+			this.ownerId = ownerId;
+		}
+
+		public String getShareType() {
+			return this.shareType;
+		}
+
+		public void setShareType(String shareType) {
+			this.shareType = shareType;
 		}
 
 		public List<Tag> getTags() {

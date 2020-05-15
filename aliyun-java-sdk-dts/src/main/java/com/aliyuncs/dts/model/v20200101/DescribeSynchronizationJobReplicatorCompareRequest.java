@@ -34,7 +34,7 @@ public class DescribeSynchronizationJobReplicatorCompareRequest extends RpcAcsRe
 
 	private String synchronizationDirection;
 	public DescribeSynchronizationJobReplicatorCompareRequest() {
-		super("Dts", "2020-01-01", "DescribeSynchronizationJobReplicatorCompare", "dts");
+		super("Dts", "2020-01-01", "DescribeSynchronizationJobReplicatorCompare");
 		setMethod(MethodType.POST);
 	}
 

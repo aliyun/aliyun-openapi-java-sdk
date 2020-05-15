@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class AddAgentDeviceRequest extends RpcAcsRequest<AddAgentDeviceResponse> {
-	
-	public AddAgentDeviceRequest() {
-		super("CCC", "2017-07-05", "AddAgentDevice");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String remark;
 
@@ -42,6 +34,14 @@ public class AddAgentDeviceRequest extends RpcAcsRequest<AddAgentDeviceResponse>
 	private String clientIp;
 
 	private String browserVersion;
+	public AddAgentDeviceRequest() {
+		super("CCC", "2017-07-05", "AddAgentDevice");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getRemark() {
 		return this.remark;

@@ -27,7 +27,7 @@ public class ListStackResourcesRequest extends RpcAcsRequest<ListStackResourcesR
 
 	private String stackId;
 	public ListStackResourcesRequest() {
-		super("ROS", "2019-09-10", "ListStackResources");
+		super("ROS", "2019-09-10", "ListStackResources", "ROS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -91,7 +91,7 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Boolean protection;
 
-		private Integer labelsec;
+		private Boolean labelsec;
 
 		private String odpsRiskLevelName;
 
@@ -110,6 +110,18 @@ public class DescribeInstancesResponse extends AcsResponse {
 		private Integer sensitiveCount;
 
 		private String acl;
+
+		private Integer s2Count;
+
+		private Integer s3Count;
+
+		private Long lastFinishTime;
+
+		private String regionName;
+
+		private String regionId;
+
+		private String engineType;
 
 		public Long getId() {
 			return this.id;
@@ -167,11 +179,11 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.protection = protection;
 		}
 
-		public Integer getLabelsec() {
+		public Boolean getLabelsec() {
 			return this.labelsec;
 		}
 
-		public void setLabelsec(Integer labelsec) {
+		public void setLabelsec(Boolean labelsec) {
 			this.labelsec = labelsec;
 		}
 
@@ -245,6 +257,54 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setAcl(String acl) {
 			this.acl = acl;
+		}
+
+		public Integer getS2Count() {
+			return this.s2Count;
+		}
+
+		public void setS2Count(Integer s2Count) {
+			this.s2Count = s2Count;
+		}
+
+		public Integer getS3Count() {
+			return this.s3Count;
+		}
+
+		public void setS3Count(Integer s3Count) {
+			this.s3Count = s3Count;
+		}
+
+		public Long getLastFinishTime() {
+			return this.lastFinishTime;
+		}
+
+		public void setLastFinishTime(Long lastFinishTime) {
+			this.lastFinishTime = lastFinishTime;
+		}
+
+		public String getRegionName() {
+			return this.regionName;
+		}
+
+		public void setRegionName(String regionName) {
+			this.regionName = regionName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getEngineType() {
+			return this.engineType;
+		}
+
+		public void setEngineType(String engineType) {
+			this.engineType = engineType;
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
 /**
@@ -22,28 +23,29 @@ import com.aliyuncs.cbn.Endpoint;
  * @version 
  */
 public class DescribeCenPrivateZoneRoutesRequest extends RpcAcsRequest<DescribeCenPrivateZoneRoutesResponse> {
-	
-	public DescribeCenPrivateZoneRoutesRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenPrivateZoneRoutes", "cbn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String cenId;
+
+	private String accessRegionId;
+
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private String hostRegionId;
 
-	private String accessRegionId;
-
-	private Integer pageNumber;
+	private String resourceOwnerAccount;
+	public DescribeCenPrivateZoneRoutesRequest() {
+		super("Cbn", "2017-09-12", "DescribeCenPrivateZoneRoutes", "Cbn");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,17 +58,6 @@ public class DescribeCenPrivateZoneRoutesRequest extends RpcAcsRequest<DescribeC
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getCenId() {
 		return this.cenId;
 	}
@@ -75,6 +66,28 @@ public class DescribeCenPrivateZoneRoutesRequest extends RpcAcsRequest<DescribeC
 		this.cenId = cenId;
 		if(cenId != null){
 			putQueryParameter("CenId", cenId);
+		}
+	}
+
+	public String getAccessRegionId() {
+		return this.accessRegionId;
+	}
+
+	public void setAccessRegionId(String accessRegionId) {
+		this.accessRegionId = accessRegionId;
+		if(accessRegionId != null){
+			putQueryParameter("AccessRegionId", accessRegionId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -100,25 +113,14 @@ public class DescribeCenPrivateZoneRoutesRequest extends RpcAcsRequest<DescribeC
 		}
 	}
 
-	public String getAccessRegionId() {
-		return this.accessRegionId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setAccessRegionId(String accessRegionId) {
-		this.accessRegionId = accessRegionId;
-		if(accessRegionId != null){
-			putQueryParameter("AccessRegionId", accessRegionId);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

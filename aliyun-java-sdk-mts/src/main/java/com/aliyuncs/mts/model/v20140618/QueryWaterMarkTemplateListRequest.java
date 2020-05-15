@@ -35,7 +35,7 @@ public class QueryWaterMarkTemplateListRequest extends RpcAcsRequest<QueryWaterM
 
 	private String waterMarkTemplateIds;
 	public QueryWaterMarkTemplateListRequest() {
-		super("Mts", "2014-06-18", "QueryWaterMarkTemplateList", "mts");
+		super("Mts", "2014-06-18", "QueryWaterMarkTemplateList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

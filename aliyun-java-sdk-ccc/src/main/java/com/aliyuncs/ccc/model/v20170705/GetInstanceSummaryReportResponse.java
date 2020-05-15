@@ -333,6 +333,12 @@ public class GetInstanceSummaryReportResponse extends AcsResponse {
 
 			private Long satisfactionSurveysResponded;
 
+			private Long totalWaitTime;
+
+			private Long maxWaitTime;
+
+			private Long averageWaitTime;
+
 			public Long getCallsIncomingLine() {
 				return this.callsIncomingLine;
 			}
@@ -499,6 +505,30 @@ public class GetInstanceSummaryReportResponse extends AcsResponse {
 
 			public void setSatisfactionSurveysResponded(Long satisfactionSurveysResponded) {
 				this.satisfactionSurveysResponded = satisfactionSurveysResponded;
+			}
+
+			public Long getTotalWaitTime() {
+				return this.totalWaitTime;
+			}
+
+			public void setTotalWaitTime(Long totalWaitTime) {
+				this.totalWaitTime = totalWaitTime;
+			}
+
+			public Long getMaxWaitTime() {
+				return this.maxWaitTime;
+			}
+
+			public void setMaxWaitTime(Long maxWaitTime) {
+				this.maxWaitTime = maxWaitTime;
+			}
+
+			public Long getAverageWaitTime() {
+				return this.averageWaitTime;
+			}
+
+			public void setAverageWaitTime(Long averageWaitTime) {
+				this.averageWaitTime = averageWaitTime;
 			}
 		}
 

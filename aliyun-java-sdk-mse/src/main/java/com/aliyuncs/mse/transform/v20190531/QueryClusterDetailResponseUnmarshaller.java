@@ -57,6 +57,8 @@ public class QueryClusterDetailResponseUnmarshaller {
 		data.setAclId(_ctx.stringValue("QueryClusterDetailResponse.Data.AclId"));
 		data.setAclEntryList(_ctx.stringValue("QueryClusterDetailResponse.Data.AclEntryList"));
 		data.setInitCostTime(_ctx.longValue("QueryClusterDetailResponse.Data.InitCostTime"));
+		data.setVpcId(_ctx.stringValue("QueryClusterDetailResponse.Data.VpcId"));
+		data.setPubNetworkFlow(_ctx.stringValue("QueryClusterDetailResponse.Data.PubNetworkFlow"));
 
 		List<InstanceModel> instanceModels = new ArrayList<InstanceModel>();
 		for (int i = 0; i < _ctx.lengthValue("QueryClusterDetailResponse.Data.InstanceModels.Length"); i++) {

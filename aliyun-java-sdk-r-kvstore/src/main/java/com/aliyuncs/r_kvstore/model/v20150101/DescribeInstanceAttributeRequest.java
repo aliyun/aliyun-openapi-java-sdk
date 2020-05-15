@@ -37,7 +37,7 @@ public class DescribeInstanceAttributeRequest extends RpcAcsRequest<DescribeInst
 
 	private String instanceId;
 	public DescribeInstanceAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeInstanceAttribute", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeInstanceAttribute", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

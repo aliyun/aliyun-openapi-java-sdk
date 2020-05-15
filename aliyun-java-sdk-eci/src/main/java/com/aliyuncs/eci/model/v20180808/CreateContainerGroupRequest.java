@@ -66,6 +66,10 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	private String dnsPolicy;
 
+	private String spotStrategy;
+
+	private Float spotPriceLimit;
+
 	private List<HostAliase> hostAliases;
 
 	private Boolean slsEnable;
@@ -108,6 +112,28 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		this.memory = memory;
 		if (memory != null) {
 			putQueryParameter("Memory", memory);
+		}
+	}
+
+	public String getSpotStrategy() {
+		return spotStrategy;
+	}
+
+	public void setSpotStrategy(String spotStrategy) {
+		this.spotStrategy = spotStrategy;
+		if (spotStrategy != null) {
+			putQueryParameter("SpotStrategy", spotStrategy);
+		}
+	}
+
+	public Float getSpotPriceLimit() {
+		return spotPriceLimit;
+	}
+
+	public void setSpotPriceLimit(Float spotPriceLimit) {
+		this.spotPriceLimit = spotPriceLimit;
+		if (spotPriceLimit != null) {
+			putQueryParameter("SpotPriceLimit", spotPriceLimit);
 		}
 	}
 

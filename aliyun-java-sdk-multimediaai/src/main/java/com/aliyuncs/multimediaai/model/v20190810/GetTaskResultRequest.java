@@ -27,7 +27,7 @@ public class GetTaskResultRequest extends RpcAcsRequest<GetTaskResultResponse> {
 
 	private Long taskId;
 	public GetTaskResultRequest() {
-		super("multimediaai", "2019-08-10", "GetTaskResult", "multimediaai");
+		super("multimediaai", "2019-08-10", "GetTaskResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

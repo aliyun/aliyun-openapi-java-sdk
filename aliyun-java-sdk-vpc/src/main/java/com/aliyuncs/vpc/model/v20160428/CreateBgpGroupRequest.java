@@ -37,6 +37,8 @@ public class CreateBgpGroupRequest extends RpcAcsRequest<CreateBgpGroupResponse>
 
 	private Boolean isFakeAsn;
 
+	private String ipVersion;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -49,7 +51,7 @@ public class CreateBgpGroupRequest extends RpcAcsRequest<CreateBgpGroupResponse>
 
 	private Long localAsn;
 	public CreateBgpGroupRequest() {
-		super("Vpc", "2016-04-28", "CreateBgpGroup", "Vpc");
+		super("Vpc", "2016-04-28", "CreateBgpGroup", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -120,6 +122,17 @@ public class CreateBgpGroupRequest extends RpcAcsRequest<CreateBgpGroupResponse>
 		this.isFakeAsn = isFakeAsn;
 		if(isFakeAsn != null){
 			putQueryParameter("IsFakeAsn", isFakeAsn.toString());
+		}
+	}
+
+	public String getIpVersion() {
+		return this.ipVersion;
+	}
+
+	public void setIpVersion(String ipVersion) {
+		this.ipVersion = ipVersion;
+		if(ipVersion != null){
+			putQueryParameter("IpVersion", ipVersion);
 		}
 	}
 

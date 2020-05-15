@@ -44,6 +44,8 @@ public class GetClusterResponseUnmarshaller {
 		cluster.setCreateTime(_ctx.longValue("GetClusterResponse.Cluster.CreateTime"));
 		cluster.setUpdateTime(_ctx.longValue("GetClusterResponse.Cluster.UpdateTime"));
 		cluster.setIaasProvider(_ctx.stringValue("GetClusterResponse.Cluster.IaasProvider"));
+		cluster.setCsClusterId(_ctx.stringValue("GetClusterResponse.Cluster.CsClusterId"));
+		cluster.setClusterImportStatus(_ctx.integerValue("GetClusterResponse.Cluster.ClusterImportStatus"));
 		getClusterResponse.setCluster(cluster);
 	 
 	 	return getClusterResponse;

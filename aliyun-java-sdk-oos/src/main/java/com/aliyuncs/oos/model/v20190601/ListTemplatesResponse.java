@@ -15,6 +15,7 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oos.transform.v20190601.ListTemplatesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -89,11 +90,17 @@ public class ListTemplatesResponse extends AcsResponse {
 
 		private String templateVersion;
 
+		private Boolean hasTrigger;
+
 		private Integer totalExecutionCount;
 
 		private Integer popularity;
 
-		private Boolean hasTrigger;
+		private Map<Object,Object> tags;
+
+		private String category;
+
+		private String templateType;
 
 		public String getTemplateName() {
 			return this.templateName;
@@ -183,6 +190,14 @@ public class ListTemplatesResponse extends AcsResponse {
 			this.templateVersion = templateVersion;
 		}
 
+		public Boolean getHasTrigger() {
+			return this.hasTrigger;
+		}
+
+		public void setHasTrigger(Boolean hasTrigger) {
+			this.hasTrigger = hasTrigger;
+		}
+
 		public Integer getTotalExecutionCount() {
 			return this.totalExecutionCount;
 		}
@@ -199,12 +214,28 @@ public class ListTemplatesResponse extends AcsResponse {
 			this.popularity = popularity;
 		}
 
-		public Boolean getHasTrigger() {
-			return this.hasTrigger;
+		public Map<Object,Object> getTags() {
+			return this.tags;
 		}
 
-		public void setHasTrigger(Boolean hasTrigger) {
-			this.hasTrigger = hasTrigger;
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getTemplateType() {
+			return this.templateType;
+		}
+
+		public void setTemplateType(String templateType) {
+			this.templateType = templateType;
 		}
 	}
 

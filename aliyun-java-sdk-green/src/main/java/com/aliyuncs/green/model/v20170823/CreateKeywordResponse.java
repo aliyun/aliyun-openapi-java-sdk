@@ -29,9 +29,9 @@ public class CreateKeywordResponse extends AcsResponse {
 
 	private Integer successCount;
 
-	private List<String> invalidKeywordList;
+	private List<ValidKeyword> validKeywordList;
 
-	private List<String> validKeywordList;
+	private List<String> invalidKeywordList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,6 +49,14 @@ public class CreateKeywordResponse extends AcsResponse {
 		this.successCount = successCount;
 	}
 
+	public List<ValidKeyword> getValidKeywordList() {
+		return this.validKeywordList;
+	}
+
+	public void setValidKeywordList(List<ValidKeyword> validKeywordList) {
+		this.validKeywordList = validKeywordList;
+	}
+
 	public List<String> getInvalidKeywordList() {
 		return this.invalidKeywordList;
 	}
@@ -57,12 +65,27 @@ public class CreateKeywordResponse extends AcsResponse {
 		this.invalidKeywordList = invalidKeywordList;
 	}
 
-	public List<String> getValidKeywordList() {
-		return this.validKeywordList;
-	}
+	public static class ValidKeyword {
 
-	public void setValidKeywordList(List<String> validKeywordList) {
-		this.validKeywordList = validKeywordList;
+		private Integer id;
+
+		private String keyword;
+
+		public Integer getId() {
+			return this.id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
+		}
+
+		public String getKeyword() {
+			return this.keyword;
+		}
+
+		public void setKeyword(String keyword) {
+			this.keyword = keyword;
+		}
 	}
 
 	@Override

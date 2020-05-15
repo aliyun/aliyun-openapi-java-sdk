@@ -36,7 +36,7 @@ public class ListLogicTablesRequest extends RpcAcsRequest<ListLogicTablesRespons
 	private Integer pageNumber;
 	public ListLogicTablesRequest() {
 		super("dms-enterprise", "2018-11-01", "ListLogicTables", "dmsenterprise");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

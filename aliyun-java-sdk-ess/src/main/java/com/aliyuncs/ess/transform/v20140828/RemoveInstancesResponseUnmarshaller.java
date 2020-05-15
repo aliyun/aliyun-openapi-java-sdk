@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveInstancesResponseUnmarshaller {
 
-	public static RemoveInstancesResponse unmarshall(RemoveInstancesResponse removeInstancesResponse, UnmarshallerContext context) {
+	public static RemoveInstancesResponse unmarshall(RemoveInstancesResponse removeInstancesResponse, UnmarshallerContext _ctx) {
 		
-		removeInstancesResponse.setRequestId(context.stringValue("RemoveInstancesResponse.RequestId"));
-		removeInstancesResponse.setScalingActivityId(context.stringValue("RemoveInstancesResponse.ScalingActivityId"));
+		removeInstancesResponse.setRequestId(_ctx.stringValue("RemoveInstancesResponse.RequestId"));
+		removeInstancesResponse.setScalingActivityId(_ctx.stringValue("RemoveInstancesResponse.ScalingActivityId"));
 	 
 	 	return removeInstancesResponse;
 	}

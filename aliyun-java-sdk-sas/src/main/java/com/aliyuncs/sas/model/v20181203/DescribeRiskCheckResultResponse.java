@@ -119,6 +119,8 @@ public class DescribeRiskCheckResultResponse extends AcsResponse {
 
 		private String startStatus;
 
+		private String repairStatus;
+
 		private String riskAssertType;
 
 		private List<RiskItemResource> riskItemResources;
@@ -209,6 +211,14 @@ public class DescribeRiskCheckResultResponse extends AcsResponse {
 
 		public void setStartStatus(String startStatus) {
 			this.startStatus = startStatus;
+		}
+
+		public String getRepairStatus() {
+			return this.repairStatus;
+		}
+
+		public void setRepairStatus(String repairStatus) {
+			this.repairStatus = repairStatus;
 		}
 
 		public String getRiskAssertType() {

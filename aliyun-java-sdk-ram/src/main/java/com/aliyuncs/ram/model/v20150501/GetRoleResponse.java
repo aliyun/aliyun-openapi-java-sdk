@@ -60,6 +60,8 @@ public class GetRoleResponse extends AcsResponse {
 
 		private String updateDate;
 
+		private Long maxSessionDuration;
+
 		public String getRoleId() {
 			return this.roleId;
 		}
@@ -114,6 +116,14 @@ public class GetRoleResponse extends AcsResponse {
 
 		public void setUpdateDate(String updateDate) {
 			this.updateDate = updateDate;
+		}
+
+		public Long getMaxSessionDuration() {
+			return this.maxSessionDuration;
+		}
+
+		public void setMaxSessionDuration(Long maxSessionDuration) {
+			this.maxSessionDuration = maxSessionDuration;
 		}
 	}
 

@@ -24,9 +24,13 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class ModifyMasterSpecRequest extends RoaAcsRequest<ModifyMasterSpecResponse> {
-	
+	   
+
+	private String clusterId;
+
+	private String masterTargetModel;
 	public ModifyMasterSpecRequest() {
-		super("foas", "2018-11-11", "ModifyMasterSpec");
+		super("foas", "2018-11-11", "ModifyMasterSpec", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]/specification");
 		setMethod(MethodType.PUT);
@@ -35,10 +39,6 @@ public class ModifyMasterSpecRequest extends RoaAcsRequest<ModifyMasterSpecRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clusterId;
-
-	private String masterTargetModel;
 
 	public String getClusterId() {
 		return this.clusterId;

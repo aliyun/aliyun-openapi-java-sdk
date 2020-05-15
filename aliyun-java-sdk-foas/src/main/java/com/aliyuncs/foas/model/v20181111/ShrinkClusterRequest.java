@@ -24,9 +24,15 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class ShrinkClusterRequest extends RoaAcsRequest<ShrinkClusterResponse> {
-	
+	   
+
+	private String instanceIds;
+
+	private String clusterId;
+
+	private String modelTargetCount;
 	public ShrinkClusterRequest() {
-		super("foas", "2018-11-11", "ShrinkCluster");
+		super("foas", "2018-11-11", "ShrinkCluster", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]/shrink");
 		setMethod(MethodType.PUT);
@@ -35,12 +41,6 @@ public class ShrinkClusterRequest extends RoaAcsRequest<ShrinkClusterResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceIds;
-
-	private String clusterId;
-
-	private String modelTargetCount;
 
 	public String getInstanceIds() {
 		return this.instanceIds;

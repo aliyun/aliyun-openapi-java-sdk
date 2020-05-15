@@ -1,0 +1,12 @@
+2020-04-07 Version: 1.0.16
+- Add new method.
+
+2020-04-04 Version: 1.0.15
+- Add new method.
+
+2020-04-01 Version: 1.0.14
+- Transfer.
+
+2020-04-01 Version: 1.0.9-transfer-SNAPSHOT
+- Transfer.
+

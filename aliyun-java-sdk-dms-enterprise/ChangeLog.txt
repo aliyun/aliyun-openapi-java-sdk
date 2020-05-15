@@ -1,3 +1,15 @@
+2020-04-23 Version: 1.8.1
+- GetUser API return user execute query count information.
+
+2020-04-14 Version: 1.8.0
+- Support ListSensitiveColumns, ListSensitiveColumnsDetail API.
+- ListUsers API return user execute query count information.
+- Fix ListWorkFlowTemplates to return create user information.
+- UpdateUser API support to update user max execute query count.
+
+2020-02-25 Version: 1.7.0
+- Fix ListWorkFlowTemplates, ListWorkFlowNodes API Go SDK build error.
+
 2020-02-15 Version: 1.6.0
 - Supported ListWorkFlowTemplates, ListWorkFlowNodes API.
 

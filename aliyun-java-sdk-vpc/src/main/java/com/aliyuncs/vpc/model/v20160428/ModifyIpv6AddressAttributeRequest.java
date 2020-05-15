@@ -39,7 +39,7 @@ public class ModifyIpv6AddressAttributeRequest extends RpcAcsRequest<ModifyIpv6A
 
 	private String name;
 	public ModifyIpv6AddressAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyIpv6AddressAttribute", "Vpc");
+		super("Vpc", "2016-04-28", "ModifyIpv6AddressAttribute", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

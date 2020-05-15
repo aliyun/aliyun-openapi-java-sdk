@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.dms_enterprise.model.v20181101.ListWorkFlowTemplatesResponse;
 import com.aliyuncs.dms_enterprise.model.v20181101.ListWorkFlowTemplatesResponse.WorkFlowTemplate;
-import com.aliyuncs.dms_enterprise.model.v20181101.ListWorkFlowTemplatesResponse.WorkFlowTemplate.WorkFlowNode;
+import com.aliyuncs.dms_enterprise.model.v20181101.ListWorkFlowTemplatesResponse.WorkFlowTemplate.WorkflowNode;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,20 +40,22 @@ public class ListWorkFlowTemplatesResponseUnmarshaller {
 			workFlowTemplate.setTemplateId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].TemplateId"));
 			workFlowTemplate.setIsSystem(_ctx.integerValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].IsSystem"));
 			workFlowTemplate.setEnabled(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].Enabled"));
+			workFlowTemplate.setCreateUserId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].CreateUserId"));
 
-			List<WorkFlowNode> workFlowNodes = new ArrayList<WorkFlowNode>();
-			for (int j = 0; j < _ctx.lengthValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkFlowNodes.Length"); j++) {
-				WorkFlowNode workFlowNode = new WorkFlowNode();
-				workFlowNode.setNodeId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkFlowNodes["+ j +"].NodeId"));
-				workFlowNode.setTemplateId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkFlowNodes["+ j +"].TemplateId"));
-				workFlowNode.setNodeName(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkFlowNodes["+ j +"].NodeName"));
-				workFlowNode.setNodeType(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkFlowNodes["+ j +"].NodeType"));
-				workFlowNode.setComment(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkFlowNodes["+ j +"].Comment"));
-				workFlowNode.setPosition(_ctx.integerValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkFlowNodes["+ j +"].Position"));
+			List<WorkflowNode> workflowNodes = new ArrayList<WorkflowNode>();
+			for (int j = 0; j < _ctx.lengthValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes.Length"); j++) {
+				WorkflowNode workflowNode = new WorkflowNode();
+				workflowNode.setNodeId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeId"));
+				workflowNode.setTemplateId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].TemplateId"));
+				workflowNode.setNodeName(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeName"));
+				workflowNode.setNodeType(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeType"));
+				workflowNode.setComment(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].Comment"));
+				workflowNode.setPosition(_ctx.integerValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].Position"));
+				workflowNode.setCreateUserId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].CreateUserId"));
 
-				workFlowNodes.add(workFlowNode);
+				workflowNodes.add(workflowNode);
 			}
-			workFlowTemplate.setWorkFlowNodes(workFlowNodes);
+			workFlowTemplate.setWorkflowNodes(workflowNodes);
 
 			workFlowTemplates.add(workFlowTemplate);
 		}

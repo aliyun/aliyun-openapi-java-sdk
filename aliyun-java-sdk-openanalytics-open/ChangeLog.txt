@@ -1,3 +1,24 @@
+2020-05-14 Version: 1.0.6
+- Support spark API.
+
+2020-05-07 Version: 1.0.5
+- Add new interfaces.
+
+2020-05-07 Version: 1.8
+- Add new interfaces.
+
+2020-05-07 Version: 1.8
+- Add new interfaces.
+
+2020-05-07 Version: 1.8
+- Add new interfaces.
+
+2020-05-06 Version: 1.8
+- Add new interfaces.
+
+2020-04-30 Version: 1.8
+- Add new interfaces.
+
 2019-12-05 Version: 1.0.4
 - Generated 2018-06-19 for `openanalytics-open`.
 

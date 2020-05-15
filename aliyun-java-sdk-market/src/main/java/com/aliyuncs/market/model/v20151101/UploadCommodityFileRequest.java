@@ -31,7 +31,7 @@ public class UploadCommodityFileRequest extends RpcAcsRequest<UploadCommodityFil
 
 	private String fileContentType;
 	public UploadCommodityFileRequest() {
-		super("Market", "2015-11-01", "UploadCommodityFile", "yunmarket");
+		super("Market", "2015-11-01", "UploadCommodityFile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,6 +35,8 @@ public class CreateOTAFirmwareRequest extends RpcAcsRequest<CreateOTAFirmwareRes
 
 	private String firmwareDesc;
 
+	private String moduleName;
+
 	private String firmwareSign;
 
 	private Integer firmwareSize;
@@ -47,7 +49,7 @@ public class CreateOTAFirmwareRequest extends RpcAcsRequest<CreateOTAFirmwareRes
 
 	private String destVersion;
 	public CreateOTAFirmwareRequest() {
-		super("Iot", "2018-01-20", "CreateOTAFirmware", "iot");
+		super("Iot", "2018-01-20", "CreateOTAFirmware", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -107,6 +109,17 @@ public class CreateOTAFirmwareRequest extends RpcAcsRequest<CreateOTAFirmwareRes
 		this.firmwareDesc = firmwareDesc;
 		if(firmwareDesc != null){
 			putQueryParameter("FirmwareDesc", firmwareDesc);
+		}
+	}
+
+	public String getModuleName() {
+		return this.moduleName;
+	}
+
+	public void setModuleName(String moduleName) {
+		this.moduleName = moduleName;
+		if(moduleName != null){
+			putQueryParameter("ModuleName", moduleName);
 		}
 	}
 

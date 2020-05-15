@@ -27,7 +27,7 @@ public class RemoveDrdsInstanceRequest extends RpcAcsRequest<RemoveDrdsInstanceR
 
 	private String drdsInstanceId;
 	public RemoveDrdsInstanceRequest() {
-		super("Drds", "2019-01-23", "RemoveDrdsInstance", "drds");
+		super("Drds", "2019-01-23", "RemoveDrdsInstance", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

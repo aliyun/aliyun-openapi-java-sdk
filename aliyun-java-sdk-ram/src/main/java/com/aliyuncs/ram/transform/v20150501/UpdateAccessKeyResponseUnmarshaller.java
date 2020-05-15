@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateAccessKeyResponseUnmarshaller {
 
-	public static UpdateAccessKeyResponse unmarshall(UpdateAccessKeyResponse updateAccessKeyResponse, UnmarshallerContext context) {
+	public static UpdateAccessKeyResponse unmarshall(UpdateAccessKeyResponse updateAccessKeyResponse, UnmarshallerContext _ctx) {
 		
-		updateAccessKeyResponse.setRequestId(context.stringValue("UpdateAccessKeyResponse.RequestId"));
+		updateAccessKeyResponse.setRequestId(_ctx.stringValue("UpdateAccessKeyResponse.RequestId"));
 	 
 	 	return updateAccessKeyResponse;
 	}

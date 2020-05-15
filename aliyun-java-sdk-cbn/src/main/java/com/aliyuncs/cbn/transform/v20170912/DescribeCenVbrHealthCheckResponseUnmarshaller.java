@@ -41,6 +41,8 @@ public class DescribeCenVbrHealthCheckResponseUnmarshaller {
 			vbrHealthCheck.setHealthCheckSourceIp(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthCheckSourceIp"));
 			vbrHealthCheck.setHealthCheckTargetIp(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthCheckTargetIp"));
 			vbrHealthCheck.setDelay(_ctx.longValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].Delay"));
+			vbrHealthCheck.setHealthCheckInterval(_ctx.integerValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthCheckInterval"));
+			vbrHealthCheck.setHealthyThreshold(_ctx.integerValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthyThreshold"));
 
 			vbrHealthChecks.add(vbrHealthCheck);
 		}

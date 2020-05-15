@@ -24,15 +24,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupResponse> {
-	
-	public CreateSkillGroupRequest() {
-		super("CCC", "2017-07-05", "CreateSkillGroup");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Boolean allowPrivateOutboundNumber;
 
@@ -49,6 +41,14 @@ public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupRespo
 	private List<String> outboundPhoneNumberIds;
 
 	private String name;
+	public CreateSkillGroupRequest() {
+		super("CCC", "2017-07-05", "CreateSkillGroup");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getAllowPrivateOutboundNumber() {
 		return this.allowPrivateOutboundNumber;

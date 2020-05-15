@@ -31,7 +31,7 @@ public class SetupRecycleBinStatusRequest extends RpcAcsRequest<SetupRecycleBinS
 
 	private String dbName;
 	public SetupRecycleBinStatusRequest() {
-		super("Drds", "2019-01-23", "SetupRecycleBinStatus", "drds");
+		super("Drds", "2019-01-23", "SetupRecycleBinStatus", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

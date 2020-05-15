@@ -15,6 +15,9 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.oos.Endpoint;
 
 /**
@@ -22,28 +25,57 @@ import com.aliyuncs.oos.Endpoint;
  * @version 
  */
 public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse> {
-	
+	   
+
+	private String clientToken;
+
+	private String description;
+
+	private String mode;
+
+	private String templateVersion;
+
+	private String templateName;
+
+	private String loopMode;
+
+	private String safetyCheck;
+
+	private Map<Object,Object> tags;
+
+	private String parentExecutionId;
+
+	private String parameters;
 	public StartExecutionRequest() {
 		super("oos", "2019-06-01", "StartExecution", "oos");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String mode;
+	public String getClientToken() {
+		return this.clientToken;
+	}
 
-	private String templateVersion;
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
 
-	private String parentExecutionId;
+	public String getDescription() {
+		return this.description;
+	}
 
-	private String templateName;
-
-	private String safetyCheck;
-
-	private String parameters;
-
-	private String loopMode;
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
 
 	public String getMode() {
 		return this.mode;
@@ -67,17 +99,6 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 		}
 	}
 
-	public String getParentExecutionId() {
-		return this.parentExecutionId;
-	}
-
-	public void setParentExecutionId(String parentExecutionId) {
-		this.parentExecutionId = parentExecutionId;
-		if(parentExecutionId != null){
-			putQueryParameter("ParentExecutionId", parentExecutionId);
-		}
-	}
-
 	public String getTemplateName() {
 		return this.templateName;
 	}
@@ -86,6 +107,17 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 		this.templateName = templateName;
 		if(templateName != null){
 			putQueryParameter("TemplateName", templateName);
+		}
+	}
+
+	public String getLoopMode() {
+		return this.loopMode;
+	}
+
+	public void setLoopMode(String loopMode) {
+		this.loopMode = loopMode;
+		if(loopMode != null){
+			putQueryParameter("LoopMode", loopMode);
 		}
 	}
 
@@ -100,6 +132,28 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 		}
 	}
 
+	public Map<Object,Object> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(Map<Object,Object> tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", new Gson().toJson(tags));
+		}
+	}
+
+	public String getParentExecutionId() {
+		return this.parentExecutionId;
+	}
+
+	public void setParentExecutionId(String parentExecutionId) {
+		this.parentExecutionId = parentExecutionId;
+		if(parentExecutionId != null){
+			putQueryParameter("ParentExecutionId", parentExecutionId);
+		}
+	}
+
 	public String getParameters() {
 		return this.parameters;
 	}
@@ -108,17 +162,6 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 		this.parameters = parameters;
 		if(parameters != null){
 			putQueryParameter("Parameters", parameters);
-		}
-	}
-
-	public String getLoopMode() {
-		return this.loopMode;
-	}
-
-	public void setLoopMode(String loopMode) {
-		this.loopMode = loopMode;
-		if(loopMode != null){
-			putQueryParameter("LoopMode", loopMode);
 		}
 	}
 

@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dms_enterprise.model.v20181101.ListWorkFlowNodesResponse;
-import com.aliyuncs.dms_enterprise.model.v20181101.ListWorkFlowNodesResponse.WorkFlowNode;
-import com.aliyuncs.dms_enterprise.model.v20181101.ListWorkFlowNodesResponse.WorkFlowNode.AuditUser;
+import com.aliyuncs.dms_enterprise.model.v20181101.ListWorkFlowNodesResponse.WorkflowNode;
+import com.aliyuncs.dms_enterprise.model.v20181101.ListWorkFlowNodesResponse.WorkflowNode.AuditUser;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,30 +32,30 @@ public class ListWorkFlowNodesResponseUnmarshaller {
 		listWorkFlowNodesResponse.setErrorMessage(_ctx.stringValue("ListWorkFlowNodesResponse.ErrorMessage"));
 		listWorkFlowNodesResponse.setErrorCode(_ctx.stringValue("ListWorkFlowNodesResponse.ErrorCode"));
 
-		List<WorkFlowNode> workFlowNodes = new ArrayList<WorkFlowNode>();
-		for (int i = 0; i < _ctx.lengthValue("ListWorkFlowNodesResponse.WorkFlowNodes.Length"); i++) {
-			WorkFlowNode workFlowNode = new WorkFlowNode();
-			workFlowNode.setNodeName(_ctx.stringValue("ListWorkFlowNodesResponse.WorkFlowNodes["+ i +"].NodeName"));
-			workFlowNode.setComment(_ctx.stringValue("ListWorkFlowNodesResponse.WorkFlowNodes["+ i +"].Comment"));
-			workFlowNode.setNodeId(_ctx.longValue("ListWorkFlowNodesResponse.WorkFlowNodes["+ i +"].NodeId"));
-			workFlowNode.setNodeType(_ctx.stringValue("ListWorkFlowNodesResponse.WorkFlowNodes["+ i +"].NodeType"));
-			workFlowNode.setCreateUserId(_ctx.longValue("ListWorkFlowNodesResponse.WorkFlowNodes["+ i +"].CreateUserId"));
-			workFlowNode.setCreateUserNickName(_ctx.stringValue("ListWorkFlowNodesResponse.WorkFlowNodes["+ i +"].CreateUserNickName"));
+		List<WorkflowNode> workflowNodes = new ArrayList<WorkflowNode>();
+		for (int i = 0; i < _ctx.lengthValue("ListWorkFlowNodesResponse.WorkflowNodes.Length"); i++) {
+			WorkflowNode workflowNode = new WorkflowNode();
+			workflowNode.setNodeName(_ctx.stringValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].NodeName"));
+			workflowNode.setComment(_ctx.stringValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].Comment"));
+			workflowNode.setNodeId(_ctx.longValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].NodeId"));
+			workflowNode.setNodeType(_ctx.stringValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].NodeType"));
+			workflowNode.setCreateUserId(_ctx.longValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].CreateUserId"));
+			workflowNode.setCreateUserNickName(_ctx.stringValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].CreateUserNickName"));
 
 			List<AuditUser> auditUsers = new ArrayList<AuditUser>();
-			for (int j = 0; j < _ctx.lengthValue("ListWorkFlowNodesResponse.WorkFlowNodes["+ i +"].AuditUsers.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].AuditUsers.Length"); j++) {
 				AuditUser auditUser = new AuditUser();
-				auditUser.setUserId(_ctx.longValue("ListWorkFlowNodesResponse.WorkFlowNodes["+ i +"].AuditUsers["+ j +"].UserId"));
-				auditUser.setNickName(_ctx.stringValue("ListWorkFlowNodesResponse.WorkFlowNodes["+ i +"].AuditUsers["+ j +"].NickName"));
-				auditUser.setRealName(_ctx.stringValue("ListWorkFlowNodesResponse.WorkFlowNodes["+ i +"].AuditUsers["+ j +"].RealName"));
+				auditUser.setUserId(_ctx.longValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].AuditUsers["+ j +"].UserId"));
+				auditUser.setNickName(_ctx.stringValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].AuditUsers["+ j +"].NickName"));
+				auditUser.setRealName(_ctx.stringValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].AuditUsers["+ j +"].RealName"));
 
 				auditUsers.add(auditUser);
 			}
-			workFlowNode.setAuditUsers(auditUsers);
+			workflowNode.setAuditUsers(auditUsers);
 
-			workFlowNodes.add(workFlowNode);
+			workflowNodes.add(workflowNode);
 		}
-		listWorkFlowNodesResponse.setWorkFlowNodes(workFlowNodes);
+		listWorkFlowNodesResponse.setWorkflowNodes(workflowNodes);
 	 
 	 	return listWorkFlowNodesResponse;
 	}

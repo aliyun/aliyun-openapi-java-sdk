@@ -37,6 +37,9 @@ public class AutoCluster{
     @JsonProperty("ReserveOnFail")
     private boolean reserveOnFail = false;
 
+    @JsonProperty("DependencyIsvService")
+    private String dependencyIsvService;
+
     @JsonIgnore
     public boolean isReserveOnFail() {
         return reserveOnFail;
@@ -144,5 +147,11 @@ public class AutoCluster{
 
     @JsonIgnore
     public String getClusterId() { return clusterId; }
+
+    @JsonIgnore
+    public void setDependencyIsvService(String dependencyIsvService) { this.dependencyIsvService = dependencyIsvService; }
+
+    @JsonIgnore
+    public String getDependencyIsvService() { return dependencyIsvService; }
 
 }

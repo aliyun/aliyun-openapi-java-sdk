@@ -1,0 +1,3 @@
+2020-02-28 Version: 1.0.0
+- Supported Quick BI data service API.
+

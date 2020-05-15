@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.kms.model.v20160120.DescribeServiceResponse;
+import com.aliyuncs.kms.model.v20160120.DescribeServiceResponse.KeySpec;
 import com.aliyuncs.kms.model.v20160120.DescribeServiceResponse.ProtectionLevel;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -36,6 +37,27 @@ public class DescribeServiceResponseUnmarshaller {
 			protectionLevels.add(protectionLevel);
 		}
 		describeServiceResponse.setProtectionLevels(protectionLevels);
+
+		List<KeySpec> keySpecs = new ArrayList<KeySpec>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeServiceResponse.KeySpecs.Length"); i++) {
+			KeySpec keySpec = new KeySpec();
+			keySpec.setName(_ctx.stringValue("DescribeServiceResponse.KeySpecs["+ i +"].Name"));
+
+			List<String> supportedProtectionLevels = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeServiceResponse.KeySpecs["+ i +"].SupportedProtectionLevels.Length"); j++) {
+				supportedProtectionLevels.add(_ctx.stringValue("DescribeServiceResponse.KeySpecs["+ i +"].SupportedProtectionLevels["+ j +"]"));
+			}
+			keySpec.setSupportedProtectionLevels(supportedProtectionLevels);
+
+			List<String> usages = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeServiceResponse.KeySpecs["+ i +"].Usages.Length"); j++) {
+				usages.add(_ctx.stringValue("DescribeServiceResponse.KeySpecs["+ i +"].Usages["+ j +"]"));
+			}
+			keySpec.setUsages(usages);
+
+			keySpecs.add(keySpec);
+		}
+		describeServiceResponse.setKeySpecs(keySpecs);
 	 
 	 	return describeServiceResponse;
 	}

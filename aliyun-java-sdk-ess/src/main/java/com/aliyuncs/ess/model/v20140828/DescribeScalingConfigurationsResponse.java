@@ -117,6 +117,8 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private String systemDiskDescription;
 
+		private String systemDiskAutoSnapshotPolicyId;
+
 		private String lifecycleState;
 
 		private String creationTime;
@@ -142,6 +144,8 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 		private String hpcClusterId;
 
 		private String instanceDescription;
+
+		private Integer ipv6AddressCount;
 
 		private List<DataDisk> dataDisks;
 
@@ -313,6 +317,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.systemDiskDescription = systemDiskDescription;
 		}
 
+		public String getSystemDiskAutoSnapshotPolicyId() {
+			return this.systemDiskAutoSnapshotPolicyId;
+		}
+
+		public void setSystemDiskAutoSnapshotPolicyId(String systemDiskAutoSnapshotPolicyId) {
+			this.systemDiskAutoSnapshotPolicyId = systemDiskAutoSnapshotPolicyId;
+		}
+
 		public String getLifecycleState() {
 			return this.lifecycleState;
 		}
@@ -417,6 +429,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.instanceDescription = instanceDescription;
 		}
 
+		public Integer getIpv6AddressCount() {
+			return this.ipv6AddressCount;
+		}
+
+		public void setIpv6AddressCount(Integer ipv6AddressCount) {
+			this.ipv6AddressCount = ipv6AddressCount;
+		}
+
 		public List<DataDisk> getDataDisks() {
 			return this.dataDisks;
 		}
@@ -476,6 +496,8 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			private String diskName;
 
 			private String description;
+
+			private String autoSnapshotPolicyId;
 
 			public Integer getSize() {
 				return this.size;
@@ -547,6 +569,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+
+			public String getAutoSnapshotPolicyId() {
+				return this.autoSnapshotPolicyId;
+			}
+
+			public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+				this.autoSnapshotPolicyId = autoSnapshotPolicyId;
 			}
 		}
 

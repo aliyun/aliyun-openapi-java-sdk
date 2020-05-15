@@ -39,7 +39,7 @@ public class DescribeAuditLogFilterRequest extends RpcAcsRequest<DescribeAuditLo
 
 	private Long ownerId;
 	public DescribeAuditLogFilterRequest() {
-		super("Dds", "2015-12-01", "DescribeAuditLogFilter", "Dds");
+		super("Dds", "2015-12-01", "DescribeAuditLogFilter", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

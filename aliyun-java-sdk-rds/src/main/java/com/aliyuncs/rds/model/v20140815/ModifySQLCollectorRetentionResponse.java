@@ -26,42 +26,12 @@ public class ModifySQLCollectorRetentionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer dBInstanceID;
-
-	private String dBInstanceName;
-
-	private Integer taskId;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getDBInstanceID() {
-		return this.dBInstanceID;
-	}
-
-	public void setDBInstanceID(Integer dBInstanceID) {
-		this.dBInstanceID = dBInstanceID;
-	}
-
-	public String getDBInstanceName() {
-		return this.dBInstanceName;
-	}
-
-	public void setDBInstanceName(String dBInstanceName) {
-		this.dBInstanceName = dBInstanceName;
-	}
-
-	public Integer getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(Integer taskId) {
-		this.taskId = taskId;
 	}
 
 	@Override

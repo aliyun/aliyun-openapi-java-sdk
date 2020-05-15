@@ -15,30 +15,56 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitResponse> {
-	
-	public ModifyDataLimitRequest() {
-		super("Sddp", "2019-01-03", "ModifyDataLimit", "sddp");
-	}
+	   
+
+	private Boolean modifyPassword;
 
 	private String password;
-
-	private String connector;
 
 	private Long id;
 
 	private String lang;
 
-	private Integer resourceType;
-
 	private String serviceRegionId;
 
+	private String engineType;
+
+	private Integer auditStatus;
+
+	private Integer logStoreDay;
+
+	private Integer resourceType;
+
+	private Integer port;
+
 	private String userName;
+	public ModifyDataLimitRequest() {
+		super("Sddp", "2019-01-03", "ModifyDataLimit", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Boolean getModifyPassword() {
+		return this.modifyPassword;
+	}
+
+	public void setModifyPassword(Boolean modifyPassword) {
+		this.modifyPassword = modifyPassword;
+		if(modifyPassword != null){
+			putQueryParameter("ModifyPassword", modifyPassword.toString());
+		}
+	}
 
 	public String getPassword() {
 		return this.password;
@@ -48,17 +74,6 @@ public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitRespons
 		this.password = password;
 		if(password != null){
 			putQueryParameter("Password", password);
-		}
-	}
-
-	public String getConnector() {
-		return this.connector;
-	}
-
-	public void setConnector(String connector) {
-		this.connector = connector;
-		if(connector != null){
-			putQueryParameter("Connector", connector);
 		}
 	}
 
@@ -84,6 +99,50 @@ public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitRespons
 		}
 	}
 
+	public String getServiceRegionId() {
+		return this.serviceRegionId;
+	}
+
+	public void setServiceRegionId(String serviceRegionId) {
+		this.serviceRegionId = serviceRegionId;
+		if(serviceRegionId != null){
+			putQueryParameter("ServiceRegionId", serviceRegionId);
+		}
+	}
+
+	public String getEngineType() {
+		return this.engineType;
+	}
+
+	public void setEngineType(String engineType) {
+		this.engineType = engineType;
+		if(engineType != null){
+			putQueryParameter("EngineType", engineType);
+		}
+	}
+
+	public Integer getAuditStatus() {
+		return this.auditStatus;
+	}
+
+	public void setAuditStatus(Integer auditStatus) {
+		this.auditStatus = auditStatus;
+		if(auditStatus != null){
+			putQueryParameter("AuditStatus", auditStatus.toString());
+		}
+	}
+
+	public Integer getLogStoreDay() {
+		return this.logStoreDay;
+	}
+
+	public void setLogStoreDay(Integer logStoreDay) {
+		this.logStoreDay = logStoreDay;
+		if(logStoreDay != null){
+			putQueryParameter("LogStoreDay", logStoreDay.toString());
+		}
+	}
+
 	public Integer getResourceType() {
 		return this.resourceType;
 	}
@@ -95,14 +154,14 @@ public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitRespons
 		}
 	}
 
-	public String getServiceRegionId() {
-		return this.serviceRegionId;
+	public Integer getPort() {
+		return this.port;
 	}
 
-	public void setServiceRegionId(String serviceRegionId) {
-		this.serviceRegionId = serviceRegionId;
-		if(serviceRegionId != null){
-			putQueryParameter("ServiceRegionId", serviceRegionId);
+	public void setPort(Integer port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port.toString());
 		}
 	}
 

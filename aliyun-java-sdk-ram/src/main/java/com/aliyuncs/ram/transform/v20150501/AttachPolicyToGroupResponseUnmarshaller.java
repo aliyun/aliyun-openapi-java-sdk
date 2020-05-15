@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AttachPolicyToGroupResponseUnmarshaller {
 
-	public static AttachPolicyToGroupResponse unmarshall(AttachPolicyToGroupResponse attachPolicyToGroupResponse, UnmarshallerContext context) {
+	public static AttachPolicyToGroupResponse unmarshall(AttachPolicyToGroupResponse attachPolicyToGroupResponse, UnmarshallerContext _ctx) {
 		
-		attachPolicyToGroupResponse.setRequestId(context.stringValue("AttachPolicyToGroupResponse.RequestId"));
+		attachPolicyToGroupResponse.setRequestId(_ctx.stringValue("AttachPolicyToGroupResponse.RequestId"));
 	 
 	 	return attachPolicyToGroupResponse;
 	}

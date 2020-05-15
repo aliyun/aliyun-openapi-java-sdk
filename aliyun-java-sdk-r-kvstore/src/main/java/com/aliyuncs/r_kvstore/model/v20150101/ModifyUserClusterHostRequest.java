@@ -45,7 +45,7 @@ public class ModifyUserClusterHostRequest extends RpcAcsRequest<ModifyUserCluste
 
 	private String zoneId;
 	public ModifyUserClusterHostRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyUserClusterHost", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyUserClusterHost", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

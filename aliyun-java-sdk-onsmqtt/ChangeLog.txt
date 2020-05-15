@@ -1,3 +1,12 @@
+2020-04-29 Version: 1.0.3
+- Support groupId operations.
+
+2020-04-23 Version: 1.0.2
+- Support groupId operations.
+
+2020-03-05 Version: 1.0.1
+- Update send message noPresistFlag param.
+
 2020-02-13 Version: 1.0.0
 - Init MQTT SDK .
 

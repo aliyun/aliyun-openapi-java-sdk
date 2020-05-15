@@ -15,38 +15,43 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesResponse> {
-	
-	public DescribeInstancesRequest() {
-		super("Sddp", "2019-01-03", "DescribeInstances", "sddp");
-	}
+	   
 
 	private String productCode;
 
 	private Long productId;
 
-	private Integer featureType;
-
-	private String name;
+	private Long riskLevelId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
-	private String queryName;
-
-	private Long riskLevelId;
-
 	private String lang;
 
-	private Long ruleId;
+	private String serviceRegionId;
 
-	private Integer queryType;
+	private Integer featureType;
+
+	private Integer currentPage;
+
+	private String name;
+
+	private Long ruleId;
+	public DescribeInstancesRequest() {
+		super("Sddp", "2019-01-03", "DescribeInstances", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProductCode() {
 		return this.productCode;
@@ -70,25 +75,14 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public Integer getFeatureType() {
-		return this.featureType;
+	public Long getRiskLevelId() {
+		return this.riskLevelId;
 	}
 
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setRiskLevelId(Long riskLevelId) {
+		this.riskLevelId = riskLevelId;
+		if(riskLevelId != null){
+			putQueryParameter("RiskLevelId", riskLevelId.toString());
 		}
 	}
 
@@ -103,39 +97,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public String getQueryName() {
-		return this.queryName;
-	}
-
-	public void setQueryName(String queryName) {
-		this.queryName = queryName;
-		if(queryName != null){
-			putQueryParameter("QueryName", queryName);
-		}
-	}
-
-	public Long getRiskLevelId() {
-		return this.riskLevelId;
-	}
-
-	public void setRiskLevelId(Long riskLevelId) {
-		this.riskLevelId = riskLevelId;
-		if(riskLevelId != null){
-			putQueryParameter("RiskLevelId", riskLevelId.toString());
-		}
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -147,6 +108,50 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
+	public String getServiceRegionId() {
+		return this.serviceRegionId;
+	}
+
+	public void setServiceRegionId(String serviceRegionId) {
+		this.serviceRegionId = serviceRegionId;
+		if(serviceRegionId != null){
+			putQueryParameter("ServiceRegionId", serviceRegionId);
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
 	public Long getRuleId() {
 		return this.ruleId;
 	}
@@ -155,17 +160,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.ruleId = ruleId;
 		if(ruleId != null){
 			putQueryParameter("RuleId", ruleId.toString());
-		}
-	}
-
-	public Integer getQueryType() {
-		return this.queryType;
-	}
-
-	public void setQueryType(Integer queryType) {
-		this.queryType = queryType;
-		if(queryType != null){
-			putQueryParameter("QueryType", queryType.toString());
 		}
 	}
 

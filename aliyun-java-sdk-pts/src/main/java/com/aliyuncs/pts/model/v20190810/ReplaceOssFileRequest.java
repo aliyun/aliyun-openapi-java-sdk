@@ -16,6 +16,7 @@ package com.aliyuncs.pts.model.v20190810;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.pts.Endpoint;
 
 /**
  * @author auto create
@@ -24,14 +25,31 @@ import com.aliyuncs.http.MethodType;
 public class ReplaceOssFileRequest extends RpcAcsRequest<ReplaceOssFileResponse> {
 	   
 
+	private String jobId;
+
 	private String sceneId;
 
 	private String originalOssFileUrl;
 
 	private String newOssFileUrl;
 	public ReplaceOssFileRequest() {
-		super("PTS", "2019-08-10", "ReplaceOssFile", "1.0.0");
+		super("PTS", "2019-08-10", "ReplaceOssFile");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
+		}
 	}
 
 	public String getSceneId() {

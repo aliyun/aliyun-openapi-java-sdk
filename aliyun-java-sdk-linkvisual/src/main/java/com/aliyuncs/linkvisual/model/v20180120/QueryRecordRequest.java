@@ -16,6 +16,7 @@ package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkvisual.Endpoint;
 
 /**
  * @author auto create
@@ -26,20 +27,24 @@ public class QueryRecordRequest extends RpcAcsRequest<QueryRecordResponse> {
 
 	private String iotId;
 
-	private Integer streamType;
+	private Integer recordType;
 
-	private Integer beginTime;
+	private Integer pageSize;
+
+	private Integer streamType;
 
 	private Integer endTime;
 
-	private Integer recordType;
+	private Integer beginTime;
 
 	private Integer currentPage;
-
-	private Integer pageSize;
 	public QueryRecordRequest() {
-		super("Linkvisual", "2018-01-20", "QueryRecord", "linkvisual");
+		super("Linkvisual", "2018-01-20", "QueryRecord", "Linkvisual");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getIotId() {
@@ -50,39 +55,6 @@ public class QueryRecordRequest extends RpcAcsRequest<QueryRecordResponse> {
 		this.iotId = iotId;
 		if(iotId != null){
 			putQueryParameter("IotId", iotId);
-		}
-	}
-
-	public Integer getStreamType() {
-		return this.streamType;
-	}
-
-	public void setStreamType(Integer streamType) {
-		this.streamType = streamType;
-		if(streamType != null){
-			putQueryParameter("StreamType", streamType.toString());
-		}
-	}
-
-	public Integer getBeginTime() {
-		return this.beginTime;
-	}
-
-	public void setBeginTime(Integer beginTime) {
-		this.beginTime = beginTime;
-		if(beginTime != null){
-			putQueryParameter("BeginTime", beginTime.toString());
-		}
-	}
-
-	public Integer getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Integer endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -97,17 +69,6 @@ public class QueryRecordRequest extends RpcAcsRequest<QueryRecordResponse> {
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -116,6 +77,50 @@ public class QueryRecordRequest extends RpcAcsRequest<QueryRecordResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getStreamType() {
+		return this.streamType;
+	}
+
+	public void setStreamType(Integer streamType) {
+		this.streamType = streamType;
+		if(streamType != null){
+			putQueryParameter("StreamType", streamType.toString());
+		}
+	}
+
+	public Integer getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Integer endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Integer getBeginTime() {
+		return this.beginTime;
+	}
+
+	public void setBeginTime(Integer beginTime) {
+		this.beginTime = beginTime;
+		if(beginTime != null){
+			putQueryParameter("BeginTime", beginTime.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

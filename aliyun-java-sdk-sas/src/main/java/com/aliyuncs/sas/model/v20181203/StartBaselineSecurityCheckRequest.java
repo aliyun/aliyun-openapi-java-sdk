@@ -17,6 +17,7 @@ package com.aliyuncs.sas.model.v20181203;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sas.Endpoint;
 
 /**
  * @author auto create
@@ -31,14 +32,16 @@ public class StartBaselineSecurityCheckRequest extends RpcAcsRequest<StartBaseli
 
 	private String type;
 
-	private List<String> assetss;
-
 	private String sourceIp;
 
 	private String lang;
 	public StartBaselineSecurityCheckRequest() {
 		super("Sas", "2018-12-03", "StartBaselineSecurityCheck", "sas");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -74,19 +77,6 @@ public class StartBaselineSecurityCheckRequest extends RpcAcsRequest<StartBaseli
 		if(type != null){
 			putQueryParameter("Type", type);
 		}
-	}
-
-	public List<String> getAssetss() {
-		return this.assetss;
-	}
-
-	public void setAssetss(List<String> assetss) {
-		this.assetss = assetss;	
-		if (assetss != null) {
-			for (int i = 0; i < assetss.size(); i++) {
-				putQueryParameter("Assets." + (i + 1) , assetss.get(i));
-			}
-		}	
 	}
 
 	public String getSourceIp() {

@@ -16,21 +16,30 @@ package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ram.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateRoleRequest extends RpcAcsRequest<UpdateRoleResponse> {
-	
-	public UpdateRoleRequest() {
-		super("Ram", "2015-05-01", "UpdateRole");
-		setProtocol(ProtocolType.HTTPS);
-	}
+	   
 
 	private String newAssumeRolePolicyDocument;
 
 	private String roleName;
+
+	private Long newMaxSessionDuration;
+	public UpdateRoleRequest() {
+		super("Ram", "2015-05-01", "UpdateRole", "Ram");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getNewAssumeRolePolicyDocument() {
 		return this.newAssumeRolePolicyDocument;
@@ -51,6 +60,17 @@ public class UpdateRoleRequest extends RpcAcsRequest<UpdateRoleResponse> {
 		this.roleName = roleName;
 		if(roleName != null){
 			putQueryParameter("RoleName", roleName);
+		}
+	}
+
+	public Long getNewMaxSessionDuration() {
+		return this.newMaxSessionDuration;
+	}
+
+	public void setNewMaxSessionDuration(Long newMaxSessionDuration) {
+		this.newMaxSessionDuration = newMaxSessionDuration;
+		if(newMaxSessionDuration != null){
+			putQueryParameter("NewMaxSessionDuration", newMaxSessionDuration.toString());
 		}
 	}
 

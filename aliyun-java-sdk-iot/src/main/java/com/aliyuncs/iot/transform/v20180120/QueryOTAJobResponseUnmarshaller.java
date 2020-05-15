@@ -14,9 +14,6 @@
 
 package com.aliyuncs.iot.transform.v20180120;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.iot.model.v20180120.QueryOTAJobResponse;
 import com.aliyuncs.iot.model.v20180120.QueryOTAJobResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -56,12 +53,7 @@ public class QueryOTAJobResponseUnmarshaller {
 		data.setGrayPercent(_ctx.stringValue("QueryOTAJobResponse.Data.GrayPercent"));
 		data.setMaximumPerMinute(_ctx.integerValue("QueryOTAJobResponse.Data.MaximumPerMinute"));
 		data.setDestVersion(_ctx.stringValue("QueryOTAJobResponse.Data.DestVersion"));
-
-		List<String> srcVersions = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("QueryOTAJobResponse.Data.SrcVersions.Length"); i++) {
-			srcVersions.add(_ctx.stringValue("QueryOTAJobResponse.Data.SrcVersions["+ i +"]"));
-		}
-		data.setSrcVersions(srcVersions);
+		data.setSrcVersions(_ctx.stringValue("QueryOTAJobResponse.Data.SrcVersions"));
 		queryOTAJobResponse.setData(data);
 	 
 	 	return queryOTAJobResponse;

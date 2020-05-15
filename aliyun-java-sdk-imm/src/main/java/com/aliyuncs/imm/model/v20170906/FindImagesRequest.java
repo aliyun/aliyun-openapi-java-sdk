@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 	   
 
+	private String remarksArrayBIn;
+
 	private String project;
 
 	private String externalId;
@@ -56,6 +58,8 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 
 	private String gender;
 
+	private String remarksArrayAIn;
+
 	private String imageSizeRange;
 
 	private String remarksBPrefix;
@@ -80,6 +84,17 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 	public FindImagesRequest() {
 		super("imm", "2017-09-06", "FindImages", "imm");
 		setMethod(MethodType.POST);
+	}
+
+	public String getRemarksArrayBIn() {
+		return this.remarksArrayBIn;
+	}
+
+	public void setRemarksArrayBIn(String remarksArrayBIn) {
+		this.remarksArrayBIn = remarksArrayBIn;
+		if(remarksArrayBIn != null){
+			putQueryParameter("RemarksArrayBIn", remarksArrayBIn);
+		}
 	}
 
 	public String getProject() {
@@ -255,6 +270,17 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 		this.gender = gender;
 		if(gender != null){
 			putQueryParameter("Gender", gender);
+		}
+	}
+
+	public String getRemarksArrayAIn() {
+		return this.remarksArrayAIn;
+	}
+
+	public void setRemarksArrayAIn(String remarksArrayAIn) {
+		this.remarksArrayAIn = remarksArrayAIn;
+		if(remarksArrayAIn != null){
+			putQueryParameter("RemarksArrayAIn", remarksArrayAIn);
 		}
 	}
 

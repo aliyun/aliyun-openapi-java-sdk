@@ -27,6 +27,8 @@ public class DescribeIntranetAttributeRequest extends RpcAcsRequest<DescribeIntr
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private String securityToken;
 
 	private String resourceOwnerAccount;
@@ -37,7 +39,7 @@ public class DescribeIntranetAttributeRequest extends RpcAcsRequest<DescribeIntr
 
 	private String instanceId;
 	public DescribeIntranetAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeIntranetAttribute", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeIntranetAttribute", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,6 +55,17 @@ public class DescribeIntranetAttributeRequest extends RpcAcsRequest<DescribeIntr
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

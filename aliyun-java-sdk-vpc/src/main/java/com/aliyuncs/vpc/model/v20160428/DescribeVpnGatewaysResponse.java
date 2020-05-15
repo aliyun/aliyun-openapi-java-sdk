@@ -109,6 +109,8 @@ public class DescribeVpnGatewaysResponse extends AcsResponse {
 
 		private String tag;
 
+		private List<Tag> tags;
+
 		public String getVpnGatewayId() {
 			return this.vpnGatewayId;
 		}
@@ -235,6 +237,37 @@ public class DescribeVpnGatewaysResponse extends AcsResponse {
 
 		public void setTag(String tag) {
 			this.tag = tag;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

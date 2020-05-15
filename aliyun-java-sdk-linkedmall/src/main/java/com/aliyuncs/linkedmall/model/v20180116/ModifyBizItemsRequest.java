@@ -17,6 +17,7 @@ package com.aliyuncs.linkedmall.model.v20180116;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkedmall.Endpoint;
 
 /**
  * @author auto create
@@ -33,6 +34,10 @@ public class ModifyBizItemsRequest extends RpcAcsRequest<ModifyBizItemsResponse>
 	public ModifyBizItemsRequest() {
 		super("linkedmall", "2018-01-16", "ModifyBizItems", "linkedmall");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getBizId() {
@@ -55,6 +60,7 @@ public class ModifyBizItemsRequest extends RpcAcsRequest<ModifyBizItemsResponse>
 		if (itemLists != null) {
 			for (int depth1 = 0; depth1 < itemLists.size(); depth1++) {
 				putBodyParameter("ItemList." + (depth1 + 1) + ".ItemId" , itemLists.get(depth1).getItemId());
+				putBodyParameter("ItemList." + (depth1 + 1) + ".LmItemId" , itemLists.get(depth1).getLmItemId());
 				if (itemLists.get(depth1).getSkuLists() != null) {
 					for (int depth2 = 0; depth2 < itemLists.get(depth1).getSkuLists().size(); depth2++) {
 						putBodyParameter("ItemList." + (depth1 + 1) + ".SkuList." + (depth2 + 1) + ".StatusAction" , itemLists.get(depth1).getSkuLists().get(depth2).getStatusAction());
@@ -85,6 +91,8 @@ public class ModifyBizItemsRequest extends RpcAcsRequest<ModifyBizItemsResponse>
 
 		private Long itemId;
 
+		private String lmItemId;
+
 		private List<SkuList> skuLists;
 
 		public Long getItemId() {
@@ -93,6 +101,14 @@ public class ModifyBizItemsRequest extends RpcAcsRequest<ModifyBizItemsResponse>
 
 		public void setItemId(Long itemId) {
 			this.itemId = itemId;
+		}
+
+		public String getLmItemId() {
+			return this.lmItemId;
+		}
+
+		public void setLmItemId(String lmItemId) {
+			this.lmItemId = lmItemId;
 		}
 
 		public List<SkuList> getSkuLists() {

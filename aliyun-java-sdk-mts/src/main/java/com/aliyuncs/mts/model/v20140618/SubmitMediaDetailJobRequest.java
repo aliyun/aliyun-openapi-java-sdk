@@ -41,7 +41,7 @@ public class SubmitMediaDetailJobRequest extends RpcAcsRequest<SubmitMediaDetail
 
 	private String mediaDetailConfig;
 	public SubmitMediaDetailJobRequest() {
-		super("Mts", "2014-06-18", "SubmitMediaDetailJob", "mts");
+		super("Mts", "2014-06-18", "SubmitMediaDetailJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

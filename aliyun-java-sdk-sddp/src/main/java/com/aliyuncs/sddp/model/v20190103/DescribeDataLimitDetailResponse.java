@@ -56,8 +56,6 @@ public class DescribeDataLimitDetailResponse extends AcsResponse {
 
 		private String userName;
 
-		private String password;
-
 		private Long gmtCreate;
 
 		private String connector;
@@ -66,26 +64,20 @@ public class DescribeDataLimitDetailResponse extends AcsResponse {
 
 		private String checkStatusName;
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
+		private Long resourceType;
 
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+		private String resourceTypeCode;
 
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
+		private Integer auditStatus;
+
+		private Integer logStoreDay;
+
+		private Integer port;
+
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -122,14 +114,6 @@ public class DescribeDataLimitDetailResponse extends AcsResponse {
 			this.userName = userName;
 		}
 
-		public String getPassword() {
-			return this.password;
-		}
-
-		public void setPassword(String password) {
-			this.password = password;
-		}
-
 		public Long getGmtCreate() {
 			return this.gmtCreate;
 		}
@@ -160,6 +144,46 @@ public class DescribeDataLimitDetailResponse extends AcsResponse {
 
 		public void setCheckStatusName(String checkStatusName) {
 			this.checkStatusName = checkStatusName;
+		}
+
+		public Long getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(Long resourceType) {
+			this.resourceType = resourceType;
+		}
+
+		public String getResourceTypeCode() {
+			return this.resourceTypeCode;
+		}
+
+		public void setResourceTypeCode(String resourceTypeCode) {
+			this.resourceTypeCode = resourceTypeCode;
+		}
+
+		public Integer getAuditStatus() {
+			return this.auditStatus;
+		}
+
+		public void setAuditStatus(Integer auditStatus) {
+			this.auditStatus = auditStatus;
+		}
+
+		public Integer getLogStoreDay() {
+			return this.logStoreDay;
+		}
+
+		public void setLogStoreDay(Integer logStoreDay) {
+			this.logStoreDay = logStoreDay;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
 		}
 	}
 

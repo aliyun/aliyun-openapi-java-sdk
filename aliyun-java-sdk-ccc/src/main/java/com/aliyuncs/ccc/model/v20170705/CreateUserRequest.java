@@ -24,15 +24,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
-	
-	public CreateUserRequest() {
-		super("CCC", "2017-07-05", "CreateUser");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String privateOutboundNumberId;
 
@@ -51,6 +43,14 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 	private List<String> skillGroupIds;
 
 	private String email;
+	public CreateUserRequest() {
+		super("CCC", "2017-07-05", "CreateUser");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getPrivateOutboundNumberId() {
 		return this.privateOutboundNumberId;

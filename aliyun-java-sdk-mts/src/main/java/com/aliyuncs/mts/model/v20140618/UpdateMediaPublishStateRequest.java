@@ -37,7 +37,7 @@ public class UpdateMediaPublishStateRequest extends RpcAcsRequest<UpdateMediaPub
 
 	private Boolean publish;
 	public UpdateMediaPublishStateRequest() {
-		super("Mts", "2014-06-18", "UpdateMediaPublishState", "mts");
+		super("Mts", "2014-06-18", "UpdateMediaPublishState");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class StartDataImportTaskRequest extends RpcAcsRequest<StartDataImportTas
 
 	private Integer taskId;
 	public StartDataImportTaskRequest() {
-		super("Drds", "2019-01-23", "StartDataImportTask", "drds");
+		super("Drds", "2019-01-23", "StartDataImportTask", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

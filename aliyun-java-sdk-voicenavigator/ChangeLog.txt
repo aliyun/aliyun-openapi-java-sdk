@@ -1,0 +1,3 @@
+2020-02-24 Version: 1.1.0
+- Generated 2018-06-12 for `VoiceNavigator`.
+

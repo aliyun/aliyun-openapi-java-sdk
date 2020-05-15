@@ -297,6 +297,8 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 			private Boolean apAccessEnabled;
 
+			private Boolean snatEntryEnabled;
+
 			public String getAllocationId() {
 				return this.allocationId;
 			}
@@ -327,6 +329,14 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 			public void setApAccessEnabled(Boolean apAccessEnabled) {
 				this.apAccessEnabled = apAccessEnabled;
+			}
+
+			public Boolean getSnatEntryEnabled() {
+				return this.snatEntryEnabled;
+			}
+
+			public void setSnatEntryEnabled(Boolean snatEntryEnabled) {
+				this.snatEntryEnabled = snatEntryEnabled;
 			}
 		}
 

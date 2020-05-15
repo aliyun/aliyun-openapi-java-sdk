@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateScheduledTaskResponseUnmarshaller {
 
-	public static CreateScheduledTaskResponse unmarshall(CreateScheduledTaskResponse createScheduledTaskResponse, UnmarshallerContext context) {
+	public static CreateScheduledTaskResponse unmarshall(CreateScheduledTaskResponse createScheduledTaskResponse, UnmarshallerContext _ctx) {
 		
-		createScheduledTaskResponse.setRequestId(context.stringValue("CreateScheduledTaskResponse.RequestId"));
-		createScheduledTaskResponse.setScheduledTaskId(context.stringValue("CreateScheduledTaskResponse.ScheduledTaskId"));
+		createScheduledTaskResponse.setRequestId(_ctx.stringValue("CreateScheduledTaskResponse.RequestId"));
+		createScheduledTaskResponse.setScheduledTaskId(_ctx.stringValue("CreateScheduledTaskResponse.ScheduledTaskId"));
 	 
 	 	return createScheduledTaskResponse;
 	}

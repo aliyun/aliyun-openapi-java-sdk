@@ -32,7 +32,7 @@ public class DeleteConsumerGroupRequest extends RpcAcsRequest<DeleteConsumerGrou
 
 	private String accountId;
 	public DeleteConsumerGroupRequest() {
-		super("Dts", "2020-01-01", "DeleteConsumerGroup", "dts");
+		super("Dts", "2020-01-01", "DeleteConsumerGroup");
 		setMethod(MethodType.POST);
 	}
 

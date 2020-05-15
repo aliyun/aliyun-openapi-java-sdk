@@ -33,7 +33,7 @@ public class GetGatewayBySubDeviceRequest extends RpcAcsRequest<GetGatewayBySubD
 
 	private String deviceName;
 	public GetGatewayBySubDeviceRequest() {
-		super("Iot", "2018-01-20", "GetGatewayBySubDevice", "iot");
+		super("Iot", "2018-01-20", "GetGatewayBySubDevice", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

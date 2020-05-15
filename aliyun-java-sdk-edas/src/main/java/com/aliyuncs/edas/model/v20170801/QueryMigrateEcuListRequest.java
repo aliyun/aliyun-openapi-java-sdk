@@ -27,7 +27,7 @@ public class QueryMigrateEcuListRequest extends RoaAcsRequest<QueryMigrateEcuLis
 
 	private String logicalRegionId;
 	public QueryMigrateEcuListRequest() {
-		super("Edas", "2017-08-01", "QueryMigrateEcuList", "Edas");
+		super("Edas", "2017-08-01", "QueryMigrateEcuList", "edas");
 		setUriPattern("/pop/v5/resource/migrate_ecu_list");
 		setMethod(MethodType.GET);
 		try {

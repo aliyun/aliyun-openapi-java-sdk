@@ -28,7 +28,7 @@ public class ExpireDemoAccessTokenRequest extends RpcAcsRequest<ExpireDemoAccess
 
 	private String demoAccessToken;
 	public ExpireDemoAccessTokenRequest() {
-		super("DemoCenter", "2020-01-21", "ExpireDemoAccessToken", "DemoCenter");
+		super("DemoCenter", "2020-01-21", "ExpireDemoAccessToken");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

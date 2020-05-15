@@ -31,7 +31,7 @@ public class DeleteChangeSetRequest extends RoaAcsRequest<DeleteChangeSetRespons
 
 	private String stackName;
 	public DeleteChangeSetRequest() {
-		super("ROS", "2015-09-01", "DeleteChangeSet");
+		super("ROS", "2015-09-01", "DeleteChangeSet", "ROS");
 		setUriPattern("/stacks/[StackName]/[StackId]/changeSets/[ChangeSetName]");
 		setMethod(MethodType.DELETE);
 		try {

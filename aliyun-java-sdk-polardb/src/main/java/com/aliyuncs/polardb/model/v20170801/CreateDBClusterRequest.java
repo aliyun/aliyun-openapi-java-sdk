@@ -31,11 +31,15 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String clientToken;
 
+	private String creationCategory;
+
 	private String clusterNetworkType;
 
 	private String resourceGroupId;
 
 	private String dBNodeClass;
+
+	private String gDNId;
 
 	private String creationOption;
 
@@ -66,6 +70,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 	private String dBVersion;
 
 	private String cloneDataPoint;
+
+	private Boolean tDEStatus;
 
 	private String payType;
 	public CreateDBClusterRequest() {
@@ -110,6 +116,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getCreationCategory() {
+		return this.creationCategory;
+	}
+
+	public void setCreationCategory(String creationCategory) {
+		this.creationCategory = creationCategory;
+		if(creationCategory != null){
+			putQueryParameter("CreationCategory", creationCategory);
+		}
+	}
+
 	public String getClusterNetworkType() {
 		return this.clusterNetworkType;
 	}
@@ -140,6 +157,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.dBNodeClass = dBNodeClass;
 		if(dBNodeClass != null){
 			putQueryParameter("DBNodeClass", dBNodeClass);
+		}
+	}
+
+	public String getGDNId() {
+		return this.gDNId;
+	}
+
+	public void setGDNId(String gDNId) {
+		this.gDNId = gDNId;
+		if(gDNId != null){
+			putQueryParameter("GDNId", gDNId);
 		}
 	}
 
@@ -305,6 +333,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.cloneDataPoint = cloneDataPoint;
 		if(cloneDataPoint != null){
 			putQueryParameter("CloneDataPoint", cloneDataPoint);
+		}
+	}
+
+	public Boolean getTDEStatus() {
+		return this.tDEStatus;
+	}
+
+	public void setTDEStatus(Boolean tDEStatus) {
+		this.tDEStatus = tDEStatus;
+		if(tDEStatus != null){
+			putQueryParameter("TDEStatus", tDEStatus.toString());
 		}
 	}
 

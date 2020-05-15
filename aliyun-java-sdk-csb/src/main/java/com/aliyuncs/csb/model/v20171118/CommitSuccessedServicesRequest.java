@@ -30,7 +30,7 @@ public class CommitSuccessedServicesRequest extends RpcAcsRequest<CommitSuccesse
 
 	private String services;
 	public CommitSuccessedServicesRequest() {
-		super("CSB", "2017-11-18", "CommitSuccessedServices", "csb");
+		super("CSB", "2017-11-18", "CommitSuccessedServices");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

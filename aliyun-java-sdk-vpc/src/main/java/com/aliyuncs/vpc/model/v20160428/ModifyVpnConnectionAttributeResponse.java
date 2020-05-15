@@ -44,6 +44,10 @@ public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 
 	private Boolean effectImmediately;
 
+	private Boolean enableDpd;
+
+	private Boolean enableNatTraversal;
+
 	private IkeConfig ikeConfig;
 
 	private IpsecConfig ipsecConfig;
@@ -128,6 +132,22 @@ public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 
 	public void setEffectImmediately(Boolean effectImmediately) {
 		this.effectImmediately = effectImmediately;
+	}
+
+	public Boolean getEnableDpd() {
+		return this.enableDpd;
+	}
+
+	public void setEnableDpd(Boolean enableDpd) {
+		this.enableDpd = enableDpd;
+	}
+
+	public Boolean getEnableNatTraversal() {
+		return this.enableNatTraversal;
+	}
+
+	public void setEnableNatTraversal(Boolean enableNatTraversal) {
+		this.enableNatTraversal = enableNatTraversal;
 	}
 
 	public IkeConfig getIkeConfig() {

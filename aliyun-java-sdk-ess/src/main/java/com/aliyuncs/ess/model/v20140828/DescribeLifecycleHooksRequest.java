@@ -16,32 +16,56 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeLifecycleHooksRequest extends RpcAcsRequest<DescribeLifecycleHooksResponse> {
-	
-	public DescribeLifecycleHooksRequest() {
-		super("Ess", "2014-08-28", "DescribeLifecycleHooks", "ess");
-	}
+	   
+
+	private String scalingGroupId;
+
+	private Integer pageNumber;
 
 	private String lifecycleHookName;
 
-	private String resourceOwnerAccount;
+	private Integer pageSize;
 
-	private String scalingGroupId;
+	private String resourceOwnerAccount;
 
 	private List<String> lifecycleHookIds;
 
 	private String ownerAccount;
 
-	private Integer pageSize;
-
 	private Long ownerId;
+	public DescribeLifecycleHooksRequest() {
+		super("Ess", "2014-08-28", "DescribeLifecycleHooks", "ess");
+		setMethod(MethodType.POST);
+	}
 
-	private Integer pageNumber;
+	public String getScalingGroupId() {
+		return this.scalingGroupId;
+	}
+
+	public void setScalingGroupId(String scalingGroupId) {
+		this.scalingGroupId = scalingGroupId;
+		if(scalingGroupId != null){
+			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getLifecycleHookName() {
 		return this.lifecycleHookName;
@@ -54,6 +78,17 @@ public class DescribeLifecycleHooksRequest extends RpcAcsRequest<DescribeLifecyc
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -62,17 +97,6 @@ public class DescribeLifecycleHooksRequest extends RpcAcsRequest<DescribeLifecyc
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getScalingGroupId() {
-		return this.scalingGroupId;
-	}
-
-	public void setScalingGroupId(String scalingGroupId) {
-		this.scalingGroupId = scalingGroupId;
-		if(scalingGroupId != null){
-			putQueryParameter("ScalingGroupId", scalingGroupId);
 		}
 	}
 
@@ -100,17 +124,6 @@ public class DescribeLifecycleHooksRequest extends RpcAcsRequest<DescribeLifecyc
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -119,17 +132,6 @@ public class DescribeLifecycleHooksRequest extends RpcAcsRequest<DescribeLifecyc
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

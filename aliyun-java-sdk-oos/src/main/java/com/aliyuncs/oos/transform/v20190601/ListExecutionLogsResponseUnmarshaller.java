@@ -29,6 +29,7 @@ public class ListExecutionLogsResponseUnmarshaller {
 		listExecutionLogsResponse.setRequestId(_ctx.stringValue("ListExecutionLogsResponse.RequestId"));
 		listExecutionLogsResponse.setMaxResults(_ctx.integerValue("ListExecutionLogsResponse.MaxResults"));
 		listExecutionLogsResponse.setNextToken(_ctx.stringValue("ListExecutionLogsResponse.NextToken"));
+		listExecutionLogsResponse.setIsTruncated(_ctx.booleanValue("ListExecutionLogsResponse.IsTruncated"));
 
 		List<ExecutionLog> executionLogs = new ArrayList<ExecutionLog>();
 		for (int i = 0; i < _ctx.lengthValue("ListExecutionLogsResponse.ExecutionLogs.Length"); i++) {

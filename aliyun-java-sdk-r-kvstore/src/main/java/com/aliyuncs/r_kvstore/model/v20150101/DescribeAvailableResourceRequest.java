@@ -41,7 +41,7 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private String zoneId;
 	public DescribeAvailableResourceRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeAvailableResource", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeAvailableResource", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

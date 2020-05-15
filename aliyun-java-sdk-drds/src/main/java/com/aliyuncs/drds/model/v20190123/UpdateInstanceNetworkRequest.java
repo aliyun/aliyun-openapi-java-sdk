@@ -33,7 +33,7 @@ public class UpdateInstanceNetworkRequest extends RpcAcsRequest<UpdateInstanceNe
 
 	private String srcInstanceNetworkType;
 	public UpdateInstanceNetworkRequest() {
-		super("Drds", "2019-01-23", "UpdateInstanceNetwork", "drds");
+		super("Drds", "2019-01-23", "UpdateInstanceNetwork", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class GetConversationDetailByContactIdRequest extends RpcAcsRequest<GetConversationDetailByContactIdResponse> {
-	
-	public GetConversationDetailByContactIdRequest() {
-		super("CCC", "2017-07-05", "GetConversationDetailByContactId");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String contactId;
 
@@ -40,6 +32,14 @@ public class GetConversationDetailByContactIdRequest extends RpcAcsRequest<GetCo
 	private String instanceId;
 
 	private Integer pageSize;
+	public GetConversationDetailByContactIdRequest() {
+		super("CCC", "2017-07-05", "GetConversationDetailByContactId");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getContactId() {
 		return this.contactId;

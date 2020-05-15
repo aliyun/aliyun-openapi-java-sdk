@@ -24,33 +24,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstancesResponseUnmarshaller {
 
-	public static DescribeInstancesResponse unmarshall(DescribeInstancesResponse describeInstancesResponse, UnmarshallerContext context) {
+	public static DescribeInstancesResponse unmarshall(DescribeInstancesResponse describeInstancesResponse, UnmarshallerContext _ctx) {
 		
-		describeInstancesResponse.setRequestId(context.stringValue("DescribeInstancesResponse.RequestId"));
-		describeInstancesResponse.setPageSize(context.integerValue("DescribeInstancesResponse.PageSize"));
-		describeInstancesResponse.setCurrentPage(context.integerValue("DescribeInstancesResponse.CurrentPage"));
-		describeInstancesResponse.setTotalCount(context.integerValue("DescribeInstancesResponse.TotalCount"));
+		describeInstancesResponse.setRequestId(_ctx.stringValue("DescribeInstancesResponse.RequestId"));
+		describeInstancesResponse.setPageSize(_ctx.integerValue("DescribeInstancesResponse.PageSize"));
+		describeInstancesResponse.setCurrentPage(_ctx.integerValue("DescribeInstancesResponse.CurrentPage"));
+		describeInstancesResponse.setTotalCount(_ctx.integerValue("DescribeInstancesResponse.TotalCount"));
 
 		List<Instance> items = new ArrayList<Instance>();
-		for (int i = 0; i < context.lengthValue("DescribeInstancesResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstancesResponse.Items.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setId(context.longValue("DescribeInstancesResponse.Items["+ i +"].Id"));
-			instance.setName(context.stringValue("DescribeInstancesResponse.Items["+ i +"].Name"));
-			instance.setOwner(context.stringValue("DescribeInstancesResponse.Items["+ i +"].Owner"));
-			instance.setCreationTime(context.longValue("DescribeInstancesResponse.Items["+ i +"].CreationTime"));
-			instance.setProductId(context.stringValue("DescribeInstancesResponse.Items["+ i +"].ProductId"));
-			instance.setProductCode(context.stringValue("DescribeInstancesResponse.Items["+ i +"].ProductCode"));
-			instance.setProtection(context.booleanValue("DescribeInstancesResponse.Items["+ i +"].Protection"));
-			instance.setLabelsec(context.integerValue("DescribeInstancesResponse.Items["+ i +"].Labelsec"));
-			instance.setOdpsRiskLevelName(context.stringValue("DescribeInstancesResponse.Items["+ i +"].OdpsRiskLevelName"));
-			instance.setSensitive(context.booleanValue("DescribeInstancesResponse.Items["+ i +"].Sensitive"));
-			instance.setRiskLevelId(context.longValue("DescribeInstancesResponse.Items["+ i +"].RiskLevelId"));
-			instance.setRiskLevelName(context.stringValue("DescribeInstancesResponse.Items["+ i +"].RiskLevelName"));
-			instance.setRuleName(context.stringValue("DescribeInstancesResponse.Items["+ i +"].RuleName"));
-			instance.setDepartName(context.stringValue("DescribeInstancesResponse.Items["+ i +"].DepartName"));
-			instance.setTotalCount(context.integerValue("DescribeInstancesResponse.Items["+ i +"].TotalCount"));
-			instance.setSensitiveCount(context.integerValue("DescribeInstancesResponse.Items["+ i +"].SensitiveCount"));
-			instance.setAcl(context.stringValue("DescribeInstancesResponse.Items["+ i +"].Acl"));
+			instance.setId(_ctx.longValue("DescribeInstancesResponse.Items["+ i +"].Id"));
+			instance.setName(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].Name"));
+			instance.setOwner(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].Owner"));
+			instance.setCreationTime(_ctx.longValue("DescribeInstancesResponse.Items["+ i +"].CreationTime"));
+			instance.setProductId(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].ProductId"));
+			instance.setProductCode(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].ProductCode"));
+			instance.setProtection(_ctx.booleanValue("DescribeInstancesResponse.Items["+ i +"].Protection"));
+			instance.setLabelsec(_ctx.booleanValue("DescribeInstancesResponse.Items["+ i +"].Labelsec"));
+			instance.setOdpsRiskLevelName(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].OdpsRiskLevelName"));
+			instance.setSensitive(_ctx.booleanValue("DescribeInstancesResponse.Items["+ i +"].Sensitive"));
+			instance.setRiskLevelId(_ctx.longValue("DescribeInstancesResponse.Items["+ i +"].RiskLevelId"));
+			instance.setRiskLevelName(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].RiskLevelName"));
+			instance.setRuleName(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].RuleName"));
+			instance.setDepartName(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].DepartName"));
+			instance.setTotalCount(_ctx.integerValue("DescribeInstancesResponse.Items["+ i +"].TotalCount"));
+			instance.setSensitiveCount(_ctx.integerValue("DescribeInstancesResponse.Items["+ i +"].SensitiveCount"));
+			instance.setAcl(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].Acl"));
+			instance.setS2Count(_ctx.integerValue("DescribeInstancesResponse.Items["+ i +"].S2Count"));
+			instance.setS3Count(_ctx.integerValue("DescribeInstancesResponse.Items["+ i +"].S3Count"));
+			instance.setLastFinishTime(_ctx.longValue("DescribeInstancesResponse.Items["+ i +"].LastFinishTime"));
+			instance.setRegionName(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].RegionName"));
+			instance.setRegionId(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].RegionId"));
+			instance.setEngineType(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].EngineType"));
 
 			items.add(instance);
 		}

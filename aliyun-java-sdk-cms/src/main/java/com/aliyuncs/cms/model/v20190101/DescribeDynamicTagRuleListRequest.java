@@ -31,7 +31,7 @@ public class DescribeDynamicTagRuleListRequest extends RpcAcsRequest<DescribeDyn
 	private String tagKey;
 	public DescribeDynamicTagRuleListRequest() {
 		super("Cms", "2019-01-01", "DescribeDynamicTagRuleList", "cms");
-		setMethod(MethodType.PUT);
+		setMethod(MethodType.POST);
 	}
 
 	public String getPageNumber() {

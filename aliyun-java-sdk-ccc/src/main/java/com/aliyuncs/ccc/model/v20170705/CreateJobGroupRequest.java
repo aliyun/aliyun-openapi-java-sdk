@@ -24,15 +24,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class CreateJobGroupRequest extends RpcAcsRequest<CreateJobGroupResponse> {
-	
-	public CreateJobGroupRequest() {
-		super("CCC", "2017-07-05", "CreateJobGroup");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String description;
 
@@ -45,6 +37,14 @@ public class CreateJobGroupRequest extends RpcAcsRequest<CreateJobGroupResponse>
 	private String name;
 
 	private String scenarioId;
+	public CreateJobGroupRequest() {
+		super("CCC", "2017-07-05", "CreateJobGroup");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getDescription() {
 		return this.description;

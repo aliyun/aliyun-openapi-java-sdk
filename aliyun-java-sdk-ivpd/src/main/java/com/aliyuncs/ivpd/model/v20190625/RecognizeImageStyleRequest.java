@@ -27,7 +27,7 @@ public class RecognizeImageStyleRequest extends RpcAcsRequest<RecognizeImageStyl
 
 	private String url;
 	public RecognizeImageStyleRequest() {
-		super("ivpd", "2019-06-25", "RecognizeImageStyle", "ivpd");
+		super("ivpd", "2019-06-25", "RecognizeImageStyle");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,29 +35,10 @@ public class RecognizeImageStyleRequest extends RpcAcsRequest<RecognizeImageStyl
 		} catch (Exception e) {}
 	}
 
-	public String getBizUrl() {
-		return this.url;
-	}
-
-	public void setBizUrl(String url) {
-		this.url = url;
-		if(url != null){
-			putBodyParameter("Url", url);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizUrl instead of this.
-	 */
-	@Deprecated
 	public String getUrl() {
 		return this.url;
 	}
 
-	/**
-	 * @deprecated use setBizUrl instead of this.
-	 */
-	@Deprecated
 	public void setUrl(String url) {
 		this.url = url;
 		if(url != null){

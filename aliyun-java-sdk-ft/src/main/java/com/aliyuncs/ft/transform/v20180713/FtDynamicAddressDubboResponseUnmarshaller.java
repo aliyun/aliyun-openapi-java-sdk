@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class FtDynamicAddressDubboResponseUnmarshaller {
 
-	public static FtDynamicAddressDubboResponse unmarshall(FtDynamicAddressDubboResponse ftDynamicAddressDubboResponse, UnmarshallerContext context) {
+	public static FtDynamicAddressDubboResponse unmarshall(FtDynamicAddressDubboResponse ftDynamicAddressDubboResponse, UnmarshallerContext _ctx) {
 		
-		ftDynamicAddressDubboResponse.setRequestId(context.stringValue("FtDynamicAddressDubboResponse.RequestId"));
-		ftDynamicAddressDubboResponse.setStringValue(context.stringValue("FtDynamicAddressDubboResponse.StringValue"));
-		ftDynamicAddressDubboResponse.setIntValue(context.integerValue("FtDynamicAddressDubboResponse.IntValue"));
+		ftDynamicAddressDubboResponse.setRequestId(_ctx.stringValue("FtDynamicAddressDubboResponse.RequestId"));
+		ftDynamicAddressDubboResponse.setStringValue(_ctx.stringValue("FtDynamicAddressDubboResponse.StringValue"));
+		ftDynamicAddressDubboResponse.setIntValue(_ctx.integerValue("FtDynamicAddressDubboResponse.IntValue"));
 	 
 	 	return ftDynamicAddressDubboResponse;
 	}

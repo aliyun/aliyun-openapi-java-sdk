@@ -36,7 +36,7 @@ public class RecolorImageRequest extends RpcAcsRequest<RecolorImageResponse> {
 
 	private String refUrl;
 	public RecolorImageRequest() {
-		super("ivpd", "2019-06-25", "RecolorImage", "ivpd");
+		super("ivpd", "2019-06-25", "RecolorImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,29 +57,10 @@ public class RecolorImageRequest extends RpcAcsRequest<RecolorImageResponse> {
 		}	
 	}
 
-	public String getBizUrl() {
-		return this.url;
-	}
-
-	public void setBizUrl(String url) {
-		this.url = url;
-		if(url != null){
-			putBodyParameter("Url", url);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizUrl instead of this.
-	 */
-	@Deprecated
 	public String getUrl() {
 		return this.url;
 	}
 
-	/**
-	 * @deprecated use setBizUrl instead of this.
-	 */
-	@Deprecated
 	public void setUrl(String url) {
 		this.url = url;
 		if(url != null){

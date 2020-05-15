@@ -47,7 +47,7 @@ public class CreateFlowLogRequest extends RpcAcsRequest<CreateFlowLogResponse> {
 
 	private String flowLogName;
 	public CreateFlowLogRequest() {
-		super("Vpc", "2016-04-28", "CreateFlowLog", "Vpc");
+		super("Vpc", "2016-04-28", "CreateFlowLog", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

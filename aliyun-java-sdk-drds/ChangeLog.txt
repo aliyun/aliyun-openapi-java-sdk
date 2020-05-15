@@ -1,3 +1,6 @@
+2020-03-03 Version: 4.6.1
+- Supported DescribeDrdsInstance.
+
 2020-01-16 Version: 4.6.0
 - Fix create drds instance issue.
 

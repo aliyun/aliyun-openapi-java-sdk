@@ -25,8 +25,8 @@ public class CreateDataAPIServiceResponseUnmarshaller {
 		
 		createDataAPIServiceResponse.setRequestId(_ctx.stringValue("CreateDataAPIServiceResponse.RequestId"));
 		createDataAPIServiceResponse.setSuccess(_ctx.booleanValue("CreateDataAPIServiceResponse.Success"));
-		createDataAPIServiceResponse.setErrorMessage(_ctx.stringValue("CreateDataAPIServiceResponse.ErrorMessage"));
 		createDataAPIServiceResponse.setCode(_ctx.stringValue("CreateDataAPIServiceResponse.Code"));
+		createDataAPIServiceResponse.setErrorMessage(_ctx.stringValue("CreateDataAPIServiceResponse.ErrorMessage"));
 
 		Data data = new Data();
 		data.setApiSrn(_ctx.stringValue("CreateDataAPIServiceResponse.Data.ApiSrn"));

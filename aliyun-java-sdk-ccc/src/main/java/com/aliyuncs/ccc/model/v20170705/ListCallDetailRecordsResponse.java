@@ -155,6 +155,8 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			private String instanceId;
 
+			private String skillGroupIdList;
+
 			private List<CallDetailAgent> agents;
 
 			private List<Recording> recordings;
@@ -261,6 +263,14 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
+			}
+
+			public String getSkillGroupIdList() {
+				return this.skillGroupIdList;
+			}
+
+			public void setSkillGroupIdList(String skillGroupIdList) {
+				this.skillGroupIdList = skillGroupIdList;
 			}
 
 			public List<CallDetailAgent> getAgents() {

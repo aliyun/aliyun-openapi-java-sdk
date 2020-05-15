@@ -39,6 +39,8 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private String zoneId;
 
+	private String category;
+
 	private String orderType;
 	public DescribeAvailableResourceRequest() {
 		super("Rds", "2014-08-15", "DescribeAvailableResource", "rds");
@@ -123,6 +125,17 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
 		}
 	}
 

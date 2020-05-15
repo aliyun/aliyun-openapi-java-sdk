@@ -129,6 +129,8 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		private Integer stoppedCapacity;
 
+		private String costOptimizedMode;
+
 		private Integer onDemandBaseCapacity;
 
 		private Integer onDemandPercentageAboveBaseCapacity;
@@ -137,7 +139,13 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		private Integer spotInstancePools;
 
+		private Integer desiredCapacity;
+
+		private Boolean groupDeletionProtection;
+
 		private List<VServerGroup> vServerGroups;
+
+		private List<LaunchTemplateOverride> launchTemplateOverrides;
 
 		private List<String> vSwitchIds;
 
@@ -146,6 +154,8 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 		private List<String> dBInstanceIds;
 
 		private List<String> loadBalancerIds;
+
+		private List<String> suspendedProcesses;
 
 		public Integer getDefaultCooldown() {
 			return this.defaultCooldown;
@@ -259,26 +269,10 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 			this.scalingGroupId = scalingGroupId;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -371,6 +365,14 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 			this.stoppedCapacity = stoppedCapacity;
 		}
 
+		public String getCostOptimizedMode() {
+			return this.costOptimizedMode;
+		}
+
+		public void setCostOptimizedMode(String costOptimizedMode) {
+			this.costOptimizedMode = costOptimizedMode;
+		}
+
 		public Integer getOnDemandBaseCapacity() {
 			return this.onDemandBaseCapacity;
 		}
@@ -403,12 +405,36 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 			this.spotInstancePools = spotInstancePools;
 		}
 
+		public Integer getDesiredCapacity() {
+			return this.desiredCapacity;
+		}
+
+		public void setDesiredCapacity(Integer desiredCapacity) {
+			this.desiredCapacity = desiredCapacity;
+		}
+
+		public Boolean getGroupDeletionProtection() {
+			return this.groupDeletionProtection;
+		}
+
+		public void setGroupDeletionProtection(Boolean groupDeletionProtection) {
+			this.groupDeletionProtection = groupDeletionProtection;
+		}
+
 		public List<VServerGroup> getVServerGroups() {
 			return this.vServerGroups;
 		}
 
 		public void setVServerGroups(List<VServerGroup> vServerGroups) {
 			this.vServerGroups = vServerGroups;
+		}
+
+		public List<LaunchTemplateOverride> getLaunchTemplateOverrides() {
+			return this.launchTemplateOverrides;
+		}
+
+		public void setLaunchTemplateOverrides(List<LaunchTemplateOverride> launchTemplateOverrides) {
+			this.launchTemplateOverrides = launchTemplateOverrides;
 		}
 
 		public List<String> getVSwitchIds() {
@@ -441,6 +467,14 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		public void setLoadBalancerIds(List<String> loadBalancerIds) {
 			this.loadBalancerIds = loadBalancerIds;
+		}
+
+		public List<String> getSuspendedProcesses() {
+			return this.suspendedProcesses;
+		}
+
+		public void setSuspendedProcesses(List<String> suspendedProcesses) {
+			this.suspendedProcesses = suspendedProcesses;
 		}
 
 		public static class VServerGroup {
@@ -496,6 +530,19 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 				public void setWeight(Integer weight) {
 					this.weight = weight;
 				}
+			}
+		}
+
+		public static class LaunchTemplateOverride {
+
+			private String instanceType;
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
 			}
 		}
 	}

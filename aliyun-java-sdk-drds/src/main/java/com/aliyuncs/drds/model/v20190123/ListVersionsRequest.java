@@ -29,7 +29,7 @@ public class ListVersionsRequest extends RpcAcsRequest<ListVersionsResponse> {
 
 	private String drdsInstanceId;
 	public ListVersionsRequest() {
-		super("Drds", "2019-01-23", "ListVersions", "drds");
+		super("Drds", "2019-01-23", "ListVersions", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

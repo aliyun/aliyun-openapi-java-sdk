@@ -37,7 +37,7 @@ public class DescribeRtcPeakUserCntDataRequest extends RpcAcsRequest<DescribeRtc
 
 	private String interval;
 	public DescribeRtcPeakUserCntDataRequest() {
-		super("rtc", "2018-01-11", "DescribeRtcPeakUserCntData");
+		super("rtc", "2018-01-11", "DescribeRtcPeakUserCntData", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

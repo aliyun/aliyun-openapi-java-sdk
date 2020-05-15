@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateLoginProfileResponseUnmarshaller {
 
-	public static UpdateLoginProfileResponse unmarshall(UpdateLoginProfileResponse updateLoginProfileResponse, UnmarshallerContext context) {
+	public static UpdateLoginProfileResponse unmarshall(UpdateLoginProfileResponse updateLoginProfileResponse, UnmarshallerContext _ctx) {
 		
-		updateLoginProfileResponse.setRequestId(context.stringValue("UpdateLoginProfileResponse.RequestId"));
+		updateLoginProfileResponse.setRequestId(_ctx.stringValue("UpdateLoginProfileResponse.RequestId"));
 	 
 	 	return updateLoginProfileResponse;
 	}

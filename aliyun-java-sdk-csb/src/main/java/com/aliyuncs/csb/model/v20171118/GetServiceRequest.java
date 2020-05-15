@@ -30,7 +30,7 @@ public class GetServiceRequest extends RpcAcsRequest<GetServiceResponse> {
 
 	private Long serviceId;
 	public GetServiceRequest() {
-		super("CSB", "2017-11-18", "GetService", "csb");
+		super("CSB", "2017-11-18", "GetService");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {

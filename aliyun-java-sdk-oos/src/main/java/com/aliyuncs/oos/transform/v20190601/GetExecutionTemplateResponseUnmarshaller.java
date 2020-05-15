@@ -16,6 +16,7 @@ package com.aliyuncs.oos.transform.v20190601;
 
 import com.aliyuncs.oos.model.v20190601.GetExecutionTemplateResponse;
 import com.aliyuncs.oos.model.v20190601.GetExecutionTemplateResponse.Template;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +39,7 @@ public class GetExecutionTemplateResponseUnmarshaller {
 		template.setShareType(_ctx.stringValue("GetExecutionTemplateResponse.Template.ShareType"));
 		template.setTemplateFormat(_ctx.stringValue("GetExecutionTemplateResponse.Template.TemplateFormat"));
 		template.setTemplateVersion(_ctx.stringValue("GetExecutionTemplateResponse.Template.TemplateVersion"));
+		template.setTags(_ctx.mapValue("GetExecutionTemplateResponse.Template.Tags"));
 		getExecutionTemplateResponse.setTemplate(template);
 	 
 	 	return getExecutionTemplateResponse;

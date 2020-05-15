@@ -35,6 +35,12 @@ public class DescribeSamplingLogResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private Long totalCount;
+
 	private List<SamplingLog> samplingLogs;
 
 	public String getMessage() {
@@ -75,6 +81,30 @@ public class DescribeSamplingLogResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<SamplingLog> getSamplingLogs() {
@@ -118,6 +148,12 @@ public class DescribeSamplingLogResponse extends AcsResponse {
 		private String httpTiming;
 
 		private String rt;
+
+		private String httpResponseStatus;
+
+		private String transId;
+
+		private String groupTag;
 
 		public String getChainId() {
 			return this.chainId;
@@ -245,6 +281,30 @@ public class DescribeSamplingLogResponse extends AcsResponse {
 
 		public void setRt(String rt) {
 			this.rt = rt;
+		}
+
+		public String getHttpResponseStatus() {
+			return this.httpResponseStatus;
+		}
+
+		public void setHttpResponseStatus(String httpResponseStatus) {
+			this.httpResponseStatus = httpResponseStatus;
+		}
+
+		public String getTransId() {
+			return this.transId;
+		}
+
+		public void setTransId(String transId) {
+			this.transId = transId;
+		}
+
+		public String getGroupTag() {
+			return this.groupTag;
+		}
+
+		public void setGroupTag(String groupTag) {
+			this.groupTag = groupTag;
 		}
 	}
 

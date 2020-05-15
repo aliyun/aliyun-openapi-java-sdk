@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class VerifyUserResponseUnmarshaller {
 
-	public static VerifyUserResponse unmarshall(VerifyUserResponse verifyUserResponse, UnmarshallerContext context) {
+	public static VerifyUserResponse unmarshall(VerifyUserResponse verifyUserResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return verifyUserResponse;

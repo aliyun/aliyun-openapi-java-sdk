@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyDataLimitResponseUnmarshaller {
 
-	public static ModifyDataLimitResponse unmarshall(ModifyDataLimitResponse modifyDataLimitResponse, UnmarshallerContext context) {
+	public static ModifyDataLimitResponse unmarshall(ModifyDataLimitResponse modifyDataLimitResponse, UnmarshallerContext _ctx) {
 		
-		modifyDataLimitResponse.setRequestId(context.stringValue("ModifyDataLimitResponse.RequestId"));
+		modifyDataLimitResponse.setRequestId(_ctx.stringValue("ModifyDataLimitResponse.RequestId"));
 	 
 	 	return modifyDataLimitResponse;
 	}

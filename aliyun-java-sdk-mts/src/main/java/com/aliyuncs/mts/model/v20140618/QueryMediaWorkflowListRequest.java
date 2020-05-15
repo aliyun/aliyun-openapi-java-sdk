@@ -35,7 +35,7 @@ public class QueryMediaWorkflowListRequest extends RpcAcsRequest<QueryMediaWorkf
 
 	private Long ownerId;
 	public QueryMediaWorkflowListRequest() {
-		super("Mts", "2014-06-18", "QueryMediaWorkflowList", "mts");
+		super("Mts", "2014-06-18", "QueryMediaWorkflowList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

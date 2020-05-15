@@ -28,6 +28,7 @@ public class DescribeDemoAccessTokenResponseUnmarshaller {
 		describeDemoAccessTokenResponse.setOpenUserId(_ctx.stringValue("DescribeDemoAccessTokenResponse.OpenUserId"));
 		describeDemoAccessTokenResponse.setDemoTrialPage(_ctx.stringValue("DescribeDemoAccessTokenResponse.DemoTrialPage"));
 		describeDemoAccessTokenResponse.setDemoDetailPage(_ctx.stringValue("DescribeDemoAccessTokenResponse.DemoDetailPage"));
+		describeDemoAccessTokenResponse.setEdition(_ctx.stringValue("DescribeDemoAccessTokenResponse.Edition"));
 	 
 	 	return describeDemoAccessTokenResponse;
 	}

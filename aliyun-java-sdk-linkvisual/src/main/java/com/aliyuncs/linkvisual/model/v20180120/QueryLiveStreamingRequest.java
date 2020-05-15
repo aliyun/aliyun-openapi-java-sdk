@@ -16,6 +16,7 @@ package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkvisual.Endpoint;
 
 /**
  * @author auto create
@@ -24,50 +25,32 @@ import com.aliyuncs.http.MethodType;
 public class QueryLiveStreamingRequest extends RpcAcsRequest<QueryLiveStreamingResponse> {
 	   
 
-	private String iotId;
-
-	private Integer streamType;
-
-	private Boolean shouldEncrypt;
+	private String scheme;
 
 	private Integer encryptType;
 
-	private String scheme;
+	private String iotId;
+
+	private Boolean shouldEncrypt;
+
+	private Integer streamType;
 	public QueryLiveStreamingRequest() {
-		super("Linkvisual", "2018-01-20", "QueryLiveStreaming", "linkvisual");
+		super("Linkvisual", "2018-01-20", "QueryLiveStreaming", "Linkvisual");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public String getIotId() {
-		return this.iotId;
+	public String getScheme() {
+		return this.scheme;
 	}
 
-	public void setIotId(String iotId) {
-		this.iotId = iotId;
-		if(iotId != null){
-			putQueryParameter("IotId", iotId);
-		}
-	}
-
-	public Integer getStreamType() {
-		return this.streamType;
-	}
-
-	public void setStreamType(Integer streamType) {
-		this.streamType = streamType;
-		if(streamType != null){
-			putQueryParameter("StreamType", streamType.toString());
-		}
-	}
-
-	public Boolean getShouldEncrypt() {
-		return this.shouldEncrypt;
-	}
-
-	public void setShouldEncrypt(Boolean shouldEncrypt) {
-		this.shouldEncrypt = shouldEncrypt;
-		if(shouldEncrypt != null){
-			putQueryParameter("ShouldEncrypt", shouldEncrypt.toString());
+	public void setScheme(String scheme) {
+		this.scheme = scheme;
+		if(scheme != null){
+			putQueryParameter("Scheme", scheme);
 		}
 	}
 
@@ -82,14 +65,36 @@ public class QueryLiveStreamingRequest extends RpcAcsRequest<QueryLiveStreamingR
 		}
 	}
 
-	public String getScheme() {
-		return this.scheme;
+	public String getIotId() {
+		return this.iotId;
 	}
 
-	public void setScheme(String scheme) {
-		this.scheme = scheme;
-		if(scheme != null){
-			putQueryParameter("Scheme", scheme);
+	public void setIotId(String iotId) {
+		this.iotId = iotId;
+		if(iotId != null){
+			putQueryParameter("IotId", iotId);
+		}
+	}
+
+	public Boolean getShouldEncrypt() {
+		return this.shouldEncrypt;
+	}
+
+	public void setShouldEncrypt(Boolean shouldEncrypt) {
+		this.shouldEncrypt = shouldEncrypt;
+		if(shouldEncrypt != null){
+			putQueryParameter("ShouldEncrypt", shouldEncrypt.toString());
+		}
+	}
+
+	public Integer getStreamType() {
+		return this.streamType;
+	}
+
+	public void setStreamType(Integer streamType) {
+		this.streamType = streamType;
+		if(streamType != null){
+			putQueryParameter("StreamType", streamType.toString());
 		}
 	}
 

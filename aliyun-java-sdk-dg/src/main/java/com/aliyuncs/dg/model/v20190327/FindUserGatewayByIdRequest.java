@@ -24,7 +24,9 @@ import com.aliyuncs.dg.Endpoint;
  * @version 
  */
 public class FindUserGatewayByIdRequest extends RpcAcsRequest<FindUserGatewayByIdResponse> {
-	
+	   
+
+	private String gatewayId;
 	public FindUserGatewayByIdRequest() {
 		super("dg", "2019-03-27", "FindUserGatewayById", "dg");
 		setProtocol(ProtocolType.HTTPS);
@@ -34,8 +36,6 @@ public class FindUserGatewayByIdRequest extends RpcAcsRequest<FindUserGatewayByI
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String gatewayId;
 
 	public String getGatewayId() {
 		return this.gatewayId;

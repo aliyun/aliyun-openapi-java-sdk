@@ -35,7 +35,7 @@ public class QueryMcuJobRequest extends RpcAcsRequest<QueryMcuJobResponse> {
 
 	private String jobIds;
 	public QueryMcuJobRequest() {
-		super("Mts", "2014-06-18", "QueryMcuJob", "mts");
+		super("Mts", "2014-06-18", "QueryMcuJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

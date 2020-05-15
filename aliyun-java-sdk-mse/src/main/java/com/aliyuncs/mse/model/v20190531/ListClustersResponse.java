@@ -135,6 +135,12 @@ public class ListClustersResponse extends AcsResponse {
 
 		private String clusterType;
 
+		private String chargeType;
+
+		private String endDate;
+
+		private String instanceId;
+
 		public String getClusterId() {
 			return this.clusterId;
 		}
@@ -205,6 +211,30 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setClusterType(String clusterType) {
 			this.clusterType = clusterType;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getEndDate() {
+			return this.endDate;
+		}
+
+		public void setEndDate(String endDate) {
+			this.endDate = endDate;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

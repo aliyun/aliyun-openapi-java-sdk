@@ -35,7 +35,7 @@ public class SubmitSwitchTaskRequest extends RpcAcsRequest<SubmitSwitchTaskRespo
 
 	private String parentJobId;
 	public SubmitSwitchTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitSwitchTask", "drds");
+		super("Drds", "2019-01-23", "SubmitSwitchTask", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

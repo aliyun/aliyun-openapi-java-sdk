@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeNotificationConfigurationsResponseUnmarshaller {
 
-	public static DescribeNotificationConfigurationsResponse unmarshall(DescribeNotificationConfigurationsResponse describeNotificationConfigurationsResponse, UnmarshallerContext context) {
+	public static DescribeNotificationConfigurationsResponse unmarshall(DescribeNotificationConfigurationsResponse describeNotificationConfigurationsResponse, UnmarshallerContext _ctx) {
 		
-		describeNotificationConfigurationsResponse.setRequestId(context.stringValue("DescribeNotificationConfigurationsResponse.RequestId"));
+		describeNotificationConfigurationsResponse.setRequestId(_ctx.stringValue("DescribeNotificationConfigurationsResponse.RequestId"));
 
 		List<NotificationConfigurationModel> notificationConfigurationModels = new ArrayList<NotificationConfigurationModel>();
-		for (int i = 0; i < context.lengthValue("DescribeNotificationConfigurationsResponse.NotificationConfigurationModels.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeNotificationConfigurationsResponse.NotificationConfigurationModels.Length"); i++) {
 			NotificationConfigurationModel notificationConfigurationModel = new NotificationConfigurationModel();
-			notificationConfigurationModel.setScalingGroupId(context.stringValue("DescribeNotificationConfigurationsResponse.NotificationConfigurationModels["+ i +"].ScalingGroupId"));
-			notificationConfigurationModel.setNotificationArn(context.stringValue("DescribeNotificationConfigurationsResponse.NotificationConfigurationModels["+ i +"].NotificationArn"));
+			notificationConfigurationModel.setScalingGroupId(_ctx.stringValue("DescribeNotificationConfigurationsResponse.NotificationConfigurationModels["+ i +"].ScalingGroupId"));
+			notificationConfigurationModel.setNotificationArn(_ctx.stringValue("DescribeNotificationConfigurationsResponse.NotificationConfigurationModels["+ i +"].NotificationArn"));
 
 			List<String> notificationTypes = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeNotificationConfigurationsResponse.NotificationConfigurationModels["+ i +"].NotificationTypes.Length"); j++) {
-				notificationTypes.add(context.stringValue("DescribeNotificationConfigurationsResponse.NotificationConfigurationModels["+ i +"].NotificationTypes["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeNotificationConfigurationsResponse.NotificationConfigurationModels["+ i +"].NotificationTypes.Length"); j++) {
+				notificationTypes.add(_ctx.stringValue("DescribeNotificationConfigurationsResponse.NotificationConfigurationModels["+ i +"].NotificationTypes["+ j +"]"));
 			}
 			notificationConfigurationModel.setNotificationTypes(notificationTypes);
 

@@ -91,6 +91,8 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 
 		private String status;
 
+		private Long ownerId;
+
 		private List<IngressAclEntry> ingressAclEntries;
 
 		private List<EgressAclEntry> egressAclEntries;
@@ -151,6 +153,14 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public Long getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(Long ownerId) {
+			this.ownerId = ownerId;
 		}
 
 		public List<IngressAclEntry> getIngressAclEntries() {

@@ -145,6 +145,12 @@ public class QueryEdgeInstanceResponse extends AcsResponse {
 
 			private String latestDeploymentType;
 
+			private Long gmtCreateTimestamp;
+
+			private Long gmtModifiedTimestamp;
+
+			private Long roleAttachTimestamp;
+
 			public String getInstanceId() {
 				return this.instanceId;
 			}
@@ -247,6 +253,30 @@ public class QueryEdgeInstanceResponse extends AcsResponse {
 
 			public void setLatestDeploymentType(String latestDeploymentType) {
 				this.latestDeploymentType = latestDeploymentType;
+			}
+
+			public Long getGmtCreateTimestamp() {
+				return this.gmtCreateTimestamp;
+			}
+
+			public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
+				this.gmtCreateTimestamp = gmtCreateTimestamp;
+			}
+
+			public Long getGmtModifiedTimestamp() {
+				return this.gmtModifiedTimestamp;
+			}
+
+			public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
+				this.gmtModifiedTimestamp = gmtModifiedTimestamp;
+			}
+
+			public Long getRoleAttachTimestamp() {
+				return this.roleAttachTimestamp;
+			}
+
+			public void setRoleAttachTimestamp(Long roleAttachTimestamp) {
+				this.roleAttachTimestamp = roleAttachTimestamp;
 			}
 		}
 	}

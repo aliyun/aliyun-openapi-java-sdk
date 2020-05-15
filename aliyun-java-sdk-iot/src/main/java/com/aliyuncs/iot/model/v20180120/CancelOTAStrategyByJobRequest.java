@@ -29,7 +29,7 @@ public class CancelOTAStrategyByJobRequest extends RpcAcsRequest<CancelOTAStrate
 
 	private String iotInstanceId;
 	public CancelOTAStrategyByJobRequest() {
-		super("Iot", "2018-01-20", "CancelOTAStrategyByJob", "iot");
+		super("Iot", "2018-01-20", "CancelOTAStrategyByJob", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

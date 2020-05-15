@@ -33,7 +33,7 @@ public class EnableThingRequest extends RpcAcsRequest<EnableThingResponse> {
 
 	private String deviceName;
 	public EnableThingRequest() {
-		super("Iot", "2018-01-20", "EnableThing", "iot");
+		super("Iot", "2018-01-20", "EnableThing", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,7 +32,7 @@ public class ResetSynchronizationJobRequest extends RpcAcsRequest<ResetSynchroni
 
 	private String synchronizationDirection;
 	public ResetSynchronizationJobRequest() {
-		super("Dts", "2020-01-01", "ResetSynchronizationJob", "dts");
+		super("Dts", "2020-01-01", "ResetSynchronizationJob");
 		setMethod(MethodType.POST);
 	}
 

@@ -39,7 +39,7 @@ public class DescribeShardingNetworkAddressRequest extends RpcAcsRequest<Describ
 
 	private Long ownerId;
 	public DescribeShardingNetworkAddressRequest() {
-		super("Dds", "2015-12-01", "DescribeShardingNetworkAddress", "Dds");
+		super("Dds", "2015-12-01", "DescribeShardingNetworkAddress", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class DescribeVpcAttributeRequest extends RpcAcsRequest<DescribeVpcAttrib
 
 	private String vpcId;
 	public DescribeVpcAttributeRequest() {
-		super("Vpc", "2016-04-28", "DescribeVpcAttribute", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeVpcAttribute", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

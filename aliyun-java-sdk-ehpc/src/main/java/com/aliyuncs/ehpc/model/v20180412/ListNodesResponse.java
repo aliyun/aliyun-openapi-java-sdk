@@ -115,6 +115,10 @@ public class ListNodesResponse extends AcsResponse {
 
 		private String vSwitchId;
 
+		private Boolean htEnabled;
+
+		private String publicIpAddress;
+
 		private List<String> roles;
 
 		private TotalResources totalResources;
@@ -271,6 +275,22 @@ public class ListNodesResponse extends AcsResponse {
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
+		}
+
+		public Boolean getHtEnabled() {
+			return this.htEnabled;
+		}
+
+		public void setHtEnabled(Boolean htEnabled) {
+			this.htEnabled = htEnabled;
+		}
+
+		public String getPublicIpAddress() {
+			return this.publicIpAddress;
+		}
+
+		public void setPublicIpAddress(String publicIpAddress) {
+			this.publicIpAddress = publicIpAddress;
 		}
 
 		public List<String> getRoles() {

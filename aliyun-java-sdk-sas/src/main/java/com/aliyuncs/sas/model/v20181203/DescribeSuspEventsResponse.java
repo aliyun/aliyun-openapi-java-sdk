@@ -127,6 +127,8 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		private String alarmUniqueInfo;
 
+		private Boolean advanced;
+
 		public String getLastTime() {
 			return this.lastTime;
 		}
@@ -285,6 +287,14 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		public void setAlarmUniqueInfo(String alarmUniqueInfo) {
 			this.alarmUniqueInfo = alarmUniqueInfo;
+		}
+
+		public Boolean getAdvanced() {
+			return this.advanced;
+		}
+
+		public void setAdvanced(Boolean advanced) {
+			this.advanced = advanced;
 		}
 	}
 

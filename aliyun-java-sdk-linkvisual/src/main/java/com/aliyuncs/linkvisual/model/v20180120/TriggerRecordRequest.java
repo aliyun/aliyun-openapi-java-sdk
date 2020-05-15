@@ -16,6 +16,7 @@ package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkvisual.Endpoint;
 
 /**
  * @author auto create
@@ -26,14 +27,18 @@ public class TriggerRecordRequest extends RpcAcsRequest<TriggerRecordResponse> {
 
 	private String iotId;
 
-	private Integer streamType;
-
 	private Integer preRecordDuration;
 
 	private Integer recordDuration;
+
+	private Integer streamType;
 	public TriggerRecordRequest() {
-		super("Linkvisual", "2018-01-20", "TriggerRecord", "linkvisual");
+		super("Linkvisual", "2018-01-20", "TriggerRecord", "Linkvisual");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getIotId() {
@@ -44,17 +49,6 @@ public class TriggerRecordRequest extends RpcAcsRequest<TriggerRecordResponse> {
 		this.iotId = iotId;
 		if(iotId != null){
 			putQueryParameter("IotId", iotId);
-		}
-	}
-
-	public Integer getStreamType() {
-		return this.streamType;
-	}
-
-	public void setStreamType(Integer streamType) {
-		this.streamType = streamType;
-		if(streamType != null){
-			putQueryParameter("StreamType", streamType.toString());
 		}
 	}
 
@@ -77,6 +71,17 @@ public class TriggerRecordRequest extends RpcAcsRequest<TriggerRecordResponse> {
 		this.recordDuration = recordDuration;
 		if(recordDuration != null){
 			putQueryParameter("RecordDuration", recordDuration.toString());
+		}
+	}
+
+	public Integer getStreamType() {
+		return this.streamType;
+	}
+
+	public void setStreamType(Integer streamType) {
+		this.streamType = streamType;
+		if(streamType != null){
+			putQueryParameter("StreamType", streamType.toString());
 		}
 	}
 

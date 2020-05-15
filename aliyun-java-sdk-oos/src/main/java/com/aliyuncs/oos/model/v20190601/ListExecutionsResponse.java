@@ -15,6 +15,7 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oos.transform.v20190601.ListExecutionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -91,23 +92,29 @@ public class ListExecutionsResponse extends AcsResponse {
 
 		private String statusMessage;
 
+		private String statusReason;
+
+		private String waitingStatus;
+
 		private String parentExecutionId;
 
-		private String parameters;
+		private Map<Object,Object> parameters;
 
 		private String outputs;
 
 		private String safetyCheck;
 
-		private String ramRole;
-
-		private String counters;
-
 		private Boolean isParent;
 
-		private String statusReason;
+		private String ramRole;
 
-		private String loopMode;
+		private Map<Object,Object> counters;
+
+		private String category;
+
+		private Map<Object,Object> tags;
+
+		private String description;
 
 		private List<CurrentTask> currentTasks;
 
@@ -207,6 +214,22 @@ public class ListExecutionsResponse extends AcsResponse {
 			this.statusMessage = statusMessage;
 		}
 
+		public String getStatusReason() {
+			return this.statusReason;
+		}
+
+		public void setStatusReason(String statusReason) {
+			this.statusReason = statusReason;
+		}
+
+		public String getWaitingStatus() {
+			return this.waitingStatus;
+		}
+
+		public void setWaitingStatus(String waitingStatus) {
+			this.waitingStatus = waitingStatus;
+		}
+
 		public String getParentExecutionId() {
 			return this.parentExecutionId;
 		}
@@ -215,11 +238,11 @@ public class ListExecutionsResponse extends AcsResponse {
 			this.parentExecutionId = parentExecutionId;
 		}
 
-		public String getParameters() {
+		public Map<Object,Object> getParameters() {
 			return this.parameters;
 		}
 
-		public void setParameters(String parameters) {
+		public void setParameters(Map<Object,Object> parameters) {
 			this.parameters = parameters;
 		}
 
@@ -239,22 +262,6 @@ public class ListExecutionsResponse extends AcsResponse {
 			this.safetyCheck = safetyCheck;
 		}
 
-		public String getRamRole() {
-			return this.ramRole;
-		}
-
-		public void setRamRole(String ramRole) {
-			this.ramRole = ramRole;
-		}
-
-		public String getCounters() {
-			return this.counters;
-		}
-
-		public void setCounters(String counters) {
-			this.counters = counters;
-		}
-
 		public Boolean getIsParent() {
 			return this.isParent;
 		}
@@ -263,20 +270,44 @@ public class ListExecutionsResponse extends AcsResponse {
 			this.isParent = isParent;
 		}
 
-		public String getStatusReason() {
-			return this.statusReason;
+		public String getRamRole() {
+			return this.ramRole;
 		}
 
-		public void setStatusReason(String statusReason) {
-			this.statusReason = statusReason;
+		public void setRamRole(String ramRole) {
+			this.ramRole = ramRole;
 		}
 
-		public String getLoopMode() {
-			return this.loopMode;
+		public Map<Object,Object> getCounters() {
+			return this.counters;
 		}
 
-		public void setLoopMode(String loopMode) {
-			this.loopMode = loopMode;
+		public void setCounters(Map<Object,Object> counters) {
+			this.counters = counters;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public Map<Object,Object> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public List<CurrentTask> getCurrentTasks() {

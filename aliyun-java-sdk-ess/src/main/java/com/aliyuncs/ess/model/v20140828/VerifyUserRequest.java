@@ -15,22 +15,24 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class VerifyUserRequest extends RpcAcsRequest<VerifyUserResponse> {
-	
-	public VerifyUserRequest() {
-		super("Ess", "2014-08-28", "VerifyUser", "ess");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
+	public VerifyUserRequest() {
+		super("Ess", "2014-08-28", "VerifyUser", "ess");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

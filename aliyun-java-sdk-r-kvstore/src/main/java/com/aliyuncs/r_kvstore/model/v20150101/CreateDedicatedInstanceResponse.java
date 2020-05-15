@@ -40,7 +40,7 @@ public class CreateDedicatedInstanceResponse extends AcsResponse {
 
 	private String regionId;
 
-	private Boolean capacity;
+	private Long capacity;
 
 	private String qPS;
 
@@ -48,7 +48,7 @@ public class CreateDedicatedInstanceResponse extends AcsResponse {
 
 	private Integer connections;
 
-	private Boolean zoneId;
+	private String zoneId;
 
 	private String config;
 
@@ -126,11 +126,11 @@ public class CreateDedicatedInstanceResponse extends AcsResponse {
 		this.regionId = regionId;
 	}
 
-	public Boolean getCapacity() {
+	public Long getCapacity() {
 		return this.capacity;
 	}
 
-	public void setCapacity(Boolean capacity) {
+	public void setCapacity(Long capacity) {
 		this.capacity = capacity;
 	}
 
@@ -158,11 +158,11 @@ public class CreateDedicatedInstanceResponse extends AcsResponse {
 		this.connections = connections;
 	}
 
-	public Boolean getZoneId() {
+	public String getZoneId() {
 		return this.zoneId;
 	}
 
-	public void setZoneId(Boolean zoneId) {
+	public void setZoneId(String zoneId) {
 		this.zoneId = zoneId;
 	}
 

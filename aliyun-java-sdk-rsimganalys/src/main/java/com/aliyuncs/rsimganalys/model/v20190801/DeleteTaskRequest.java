@@ -28,7 +28,7 @@ public class DeleteTaskRequest extends RpcAcsRequest<DeleteTaskResponse> {
 
 	private String appkey;
 	public DeleteTaskRequest() {
-		super("rsimganalys", "2019-08-01", "DeleteTask", "aliyun-java-sdk-rsimganalys");
+		super("rsimganalys", "2019-08-01", "DeleteTask");
 		setMethod(MethodType.POST);
 	}
 

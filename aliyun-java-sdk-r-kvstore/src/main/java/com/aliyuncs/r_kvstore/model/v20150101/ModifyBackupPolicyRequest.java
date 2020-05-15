@@ -43,7 +43,7 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String instanceId;
 	public ModifyBackupPolicyRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyBackupPolicy", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyBackupPolicy", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -28,7 +28,7 @@ public class RenewCredentialsRequest extends RpcAcsRequest<RenewCredentialsRespo
 
 	private Long credentialId;
 	public RenewCredentialsRequest() {
-		super("CSB", "2017-11-18", "RenewCredentials", "csb");
+		super("CSB", "2017-11-18", "RenewCredentials");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

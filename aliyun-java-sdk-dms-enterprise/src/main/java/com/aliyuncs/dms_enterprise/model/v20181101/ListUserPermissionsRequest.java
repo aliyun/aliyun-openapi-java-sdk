@@ -44,7 +44,7 @@ public class ListUserPermissionsRequest extends RpcAcsRequest<ListUserPermission
 	private Boolean logic;
 	public ListUserPermissionsRequest() {
 		super("dms-enterprise", "2018-11-01", "ListUserPermissions", "dmsenterprise");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

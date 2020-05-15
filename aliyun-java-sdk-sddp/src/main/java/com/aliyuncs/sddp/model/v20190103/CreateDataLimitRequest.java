@@ -15,32 +15,56 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitResponse> {
-	
-	public CreateDataLimitRequest() {
-		super("Sddp", "2019-01-03", "CreateDataLimit", "sddp");
-	}
-
-	private String password;
-
-	private String connector;
-
-	private String dataLimitList;
-
-	private String lang;
-
-	private Integer resourceType;
-
-	private String serviceRegionId;
+	   
 
 	private String parentId;
 
+	private String password;
+
+	private Boolean batchCreate;
+
+	private String lang;
+
+	private String serviceRegionId;
+
+	private String engineType;
+
+	private Integer auditStatus;
+
+	private Integer logStoreDay;
+
+	private Integer resourceType;
+
+	private Integer port;
+
 	private String userName;
+	public CreateDataLimitRequest() {
+		super("Sddp", "2019-01-03", "CreateDataLimit", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getParentId() {
+		return this.parentId;
+	}
+
+	public void setParentId(String parentId) {
+		this.parentId = parentId;
+		if(parentId != null){
+			putQueryParameter("ParentId", parentId);
+		}
+	}
 
 	public String getPassword() {
 		return this.password;
@@ -53,25 +77,14 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 		}
 	}
 
-	public String getConnector() {
-		return this.connector;
+	public Boolean getBatchCreate() {
+		return this.batchCreate;
 	}
 
-	public void setConnector(String connector) {
-		this.connector = connector;
-		if(connector != null){
-			putQueryParameter("Connector", connector);
-		}
-	}
-
-	public String getDataLimitList() {
-		return this.dataLimitList;
-	}
-
-	public void setDataLimitList(String dataLimitList) {
-		this.dataLimitList = dataLimitList;
-		if(dataLimitList != null){
-			putQueryParameter("DataLimitList", dataLimitList);
+	public void setBatchCreate(Boolean batchCreate) {
+		this.batchCreate = batchCreate;
+		if(batchCreate != null){
+			putQueryParameter("BatchCreate", batchCreate.toString());
 		}
 	}
 
@@ -86,17 +99,6 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 		}
 	}
 
-	public Integer getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(Integer resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType.toString());
-		}
-	}
-
 	public String getServiceRegionId() {
 		return this.serviceRegionId;
 	}
@@ -108,14 +110,58 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 		}
 	}
 
-	public String getParentId() {
-		return this.parentId;
+	public String getEngineType() {
+		return this.engineType;
 	}
 
-	public void setParentId(String parentId) {
-		this.parentId = parentId;
-		if(parentId != null){
-			putQueryParameter("ParentId", parentId);
+	public void setEngineType(String engineType) {
+		this.engineType = engineType;
+		if(engineType != null){
+			putQueryParameter("EngineType", engineType);
+		}
+	}
+
+	public Integer getAuditStatus() {
+		return this.auditStatus;
+	}
+
+	public void setAuditStatus(Integer auditStatus) {
+		this.auditStatus = auditStatus;
+		if(auditStatus != null){
+			putQueryParameter("AuditStatus", auditStatus.toString());
+		}
+	}
+
+	public Integer getLogStoreDay() {
+		return this.logStoreDay;
+	}
+
+	public void setLogStoreDay(Integer logStoreDay) {
+		this.logStoreDay = logStoreDay;
+		if(logStoreDay != null){
+			putQueryParameter("LogStoreDay", logStoreDay.toString());
+		}
+	}
+
+	public Integer getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(Integer resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType.toString());
+		}
+	}
+
+	public Integer getPort() {
+		return this.port;
+	}
+
+	public void setPort(Integer port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port.toString());
 		}
 	}
 

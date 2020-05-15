@@ -53,7 +53,7 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 		private Integer pageSize;
 
-		private List<AlertRule> alertRules;
+		private List<AlertRuleEntity> alertRules;
 
 		public Integer getTotalCount() {
 			return this.totalCount;
@@ -79,15 +79,15 @@ public class SearchAlertRulesResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public List<AlertRule> getAlertRules() {
+		public List<AlertRuleEntity> getAlertRules() {
 			return this.alertRules;
 		}
 
-		public void setAlertRules(List<AlertRule> alertRules) {
+		public void setAlertRules(List<AlertRuleEntity> alertRules) {
 			this.alertRules = alertRules;
 		}
 
-		public static class AlertRule {
+		public static class AlertRuleEntity {
 
 			private String alertTitle;
 
@@ -121,7 +121,7 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 			private AlarmContext alarmContext;
 
-			private AlertRule1 alertRule1;
+			private AlertRule alertRule;
 
 			private MetricParam metricParam;
 
@@ -255,12 +255,12 @@ public class SearchAlertRulesResponse extends AcsResponse {
 				this.alarmContext = alarmContext;
 			}
 
-			public AlertRule1 getAlertRule1() {
-				return this.alertRule1;
+			public AlertRule getAlertRule() {
+				return this.alertRule;
 			}
 
-			public void setAlertRule1(AlertRule1 alertRule1) {
-				this.alertRule1 = alertRule1;
+			public void setAlertRule(AlertRule alertRule) {
+				this.alertRule = alertRule;
 			}
 
 			public MetricParam getMetricParam() {
@@ -302,7 +302,7 @@ public class SearchAlertRulesResponse extends AcsResponse {
 				}
 			}
 
-			public static class AlertRule1 {
+			public static class AlertRule {
 
 				private String operator;
 

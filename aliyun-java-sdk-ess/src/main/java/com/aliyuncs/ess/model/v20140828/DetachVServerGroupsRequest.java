@@ -16,36 +16,27 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DetachVServerGroupsRequest extends RpcAcsRequest<DetachVServerGroupsResponse> {
-	
-	public DetachVServerGroupsRequest() {
-		super("Ess", "2014-08-28", "DetachVServerGroups", "ess");
-	}
-
-	private String resourceOwnerAccount;
+	   
 
 	private String scalingGroupId;
 
-	private Boolean forceDetach;
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
+	private Boolean forceDetach;
+
 	private List<VServerGroup> vServerGroups;
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
+	public DetachVServerGroupsRequest() {
+		super("Ess", "2014-08-28", "DetachVServerGroups", "ess");
+		setMethod(MethodType.POST);
 	}
 
 	public String getScalingGroupId() {
@@ -59,14 +50,14 @@ public class DetachVServerGroupsRequest extends RpcAcsRequest<DetachVServerGroup
 		}
 	}
 
-	public Boolean getForceDetach() {
-		return this.forceDetach;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setForceDetach(Boolean forceDetach) {
-		this.forceDetach = forceDetach;
-		if(forceDetach != null){
-			putQueryParameter("ForceDetach", forceDetach.toString());
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -78,6 +69,17 @@ public class DetachVServerGroupsRequest extends RpcAcsRequest<DetachVServerGroup
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getForceDetach() {
+		return this.forceDetach;
+	}
+
+	public void setForceDetach(Boolean forceDetach) {
+		this.forceDetach = forceDetach;
+		if(forceDetach != null){
+			putQueryParameter("ForceDetach", forceDetach.toString());
 		}
 	}
 

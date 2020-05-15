@@ -27,7 +27,7 @@ public class GetResourceTypeRequest extends RpcAcsRequest<GetResourceTypeRespons
 
 	private String resourceType;
 	public GetResourceTypeRequest() {
-		super("ROS", "2019-09-10", "GetResourceType");
+		super("ROS", "2019-09-10", "GetResourceType", "ROS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

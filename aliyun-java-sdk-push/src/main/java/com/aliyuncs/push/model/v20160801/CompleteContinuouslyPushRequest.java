@@ -29,7 +29,7 @@ public class CompleteContinuouslyPushRequest extends RpcAcsRequest<CompleteConti
 
 	private Long appKey;
 	public CompleteContinuouslyPushRequest() {
-		super("Push", "2016-08-01", "CompleteContinuouslyPush", "cps");
+		super("Push", "2016-08-01", "CompleteContinuouslyPush");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

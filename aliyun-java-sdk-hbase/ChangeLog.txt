@@ -1,3 +1,16 @@
+2020-05-06 Version: 2.4.2
+- Describe describeAvailableResource.
+
+2020-04-27 Version: 2.4.1
+- Describe describeAvailableResource.
+
+2020-02-24 Version: 2.3.0
+- ImmediateDelete.
+- DescribeInstance CreateTimeUTC ExpireTimeUTC.
+- DescribeInstances CreateTimeUTC ExpireTimeUTC.
+- DescribeIpWhitelist Groups GroupName.
+- CreateCluster.
+
 2020-01-03 Version: 2.2.0
 - ImmediateDelete.
 - DescribeInstance CreateTimeUTC ExpireTimeUTC.

@@ -15,15 +15,17 @@
 package com.aliyuncs.ft.model.v20180713;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class FtDynamicAddressHsfRequest extends RpcAcsRequest<FtDynamicAddressHsfResponse> {
-	
+	   
 	public FtDynamicAddressHsfRequest() {
-		super("Ft", "2018-07-13", "FtDynamicAddressHsf", "ft");
+		super("Ft", "2018-07-13", "FtDynamicAddressHsf");
+		setMethod(MethodType.POST);
 	}
 
 	@Override

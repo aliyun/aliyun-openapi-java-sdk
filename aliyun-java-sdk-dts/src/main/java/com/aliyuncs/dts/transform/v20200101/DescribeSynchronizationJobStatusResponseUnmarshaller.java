@@ -49,6 +49,7 @@ public class DescribeSynchronizationJobStatusResponseUnmarshaller {
 		describeSynchronizationJobStatusResponse.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.ErrorMessage"));
 		describeSynchronizationJobStatusResponse.setDelay(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.Delay"));
 		describeSynchronizationJobStatusResponse.setCheckpoint(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.Checkpoint"));
+		describeSynchronizationJobStatusResponse.setDelayMillis(_ctx.longValue("DescribeSynchronizationJobStatusResponse.DelayMillis"));
 
 		SourceEndpoint sourceEndpoint = new SourceEndpoint();
 		sourceEndpoint.setInstanceType(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SourceEndpoint.InstanceType"));
@@ -105,6 +106,7 @@ public class DescribeSynchronizationJobStatusResponseUnmarshaller {
 		dataSynchronizationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DataSynchronizationStatus.ErrorMessage"));
 		dataSynchronizationStatus.setDelay(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DataSynchronizationStatus.Delay"));
 		dataSynchronizationStatus.setCheckpoint(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DataSynchronizationStatus.Checkpoint"));
+		dataSynchronizationStatus.setDelayMillis(_ctx.longValue("DescribeSynchronizationJobStatusResponse.DataSynchronizationStatus.DelayMillis"));
 		describeSynchronizationJobStatusResponse.setDataSynchronizationStatus(dataSynchronizationStatus);
 
 		Performance performance = new Performance();

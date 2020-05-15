@@ -16,6 +16,7 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ehpc.Endpoint;
 
 /**
  * @author auto create
@@ -30,8 +31,12 @@ public class SetGWSInstanceUserRequest extends RpcAcsRequest<SetGWSInstanceUserR
 
 	private String userName;
 	public SetGWSInstanceUserRequest() {
-		super("EHPC", "2018-04-12", "SetGWSInstanceUser", "ehs");
+		super("EHPC", "2018-04-12", "SetGWSInstanceUser");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getInstanceId() {

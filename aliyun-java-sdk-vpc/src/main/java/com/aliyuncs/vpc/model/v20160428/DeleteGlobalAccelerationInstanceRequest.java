@@ -35,7 +35,7 @@ public class DeleteGlobalAccelerationInstanceRequest extends RpcAcsRequest<Delet
 
 	private Long ownerId;
 	public DeleteGlobalAccelerationInstanceRequest() {
-		super("Vpc", "2016-04-28", "DeleteGlobalAccelerationInstance", "Vpc");
+		super("Vpc", "2016-04-28", "DeleteGlobalAccelerationInstance", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

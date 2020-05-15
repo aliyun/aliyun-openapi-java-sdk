@@ -32,7 +32,7 @@ public class StartSynchronizationJobRequest extends RpcAcsRequest<StartSynchroni
 
 	private String synchronizationDirection;
 	public StartSynchronizationJobRequest() {
-		super("Dts", "2020-01-01", "StartSynchronizationJob", "dts");
+		super("Dts", "2020-01-01", "StartSynchronizationJob");
 		setMethod(MethodType.POST);
 	}
 

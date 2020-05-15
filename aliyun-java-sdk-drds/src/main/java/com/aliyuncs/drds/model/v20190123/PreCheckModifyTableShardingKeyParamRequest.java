@@ -53,7 +53,7 @@ public class PreCheckModifyTableShardingKeyParamRequest extends RpcAcsRequest<Pr
 
 	private String tbShardingColumnList;
 	public PreCheckModifyTableShardingKeyParamRequest() {
-		super("Drds", "2019-01-23", "PreCheckModifyTableShardingKeyParam", "drds");
+		super("Drds", "2019-01-23", "PreCheckModifyTableShardingKeyParam", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,6 +25,8 @@ import com.aliyuncs.cloudwifi_pop.Endpoint;
 public class PutAppConfigAndSaveRequest extends RpcAcsRequest<PutAppConfigAndSaveResponse> {
 	   
 
+	private Long currentTime;
+
 	private String appName;
 
 	private String data;
@@ -32,8 +34,6 @@ public class PutAppConfigAndSaveRequest extends RpcAcsRequest<PutAppConfigAndSav
 	private String appCode;
 
 	private String apMac;
-
-	private Long timestamp;
 	public PutAppConfigAndSaveRequest() {
 		super("cloudwifi-pop", "2019-11-18", "PutAppConfigAndSave", "cloudap");
 		setMethod(MethodType.POST);
@@ -41,6 +41,17 @@ public class PutAppConfigAndSaveRequest extends RpcAcsRequest<PutAppConfigAndSav
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getCurrentTime() {
+		return this.currentTime;
+	}
+
+	public void setCurrentTime(Long currentTime) {
+		this.currentTime = currentTime;
+		if(currentTime != null){
+			putQueryParameter("CurrentTime", currentTime.toString());
+		}
 	}
 
 	public String getAppName() {
@@ -84,17 +95,6 @@ public class PutAppConfigAndSaveRequest extends RpcAcsRequest<PutAppConfigAndSav
 		this.apMac = apMac;
 		if(apMac != null){
 			putQueryParameter("ApMac", apMac);
-		}
-	}
-
-	public Long getTimestamp() {
-		return this.timestamp;
-	}
-
-	public void setTimestamp(Long timestamp) {
-		this.timestamp = timestamp;
-		if(timestamp != null){
-			putQueryParameter("Timestamp", timestamp.toString());
 		}
 	}
 

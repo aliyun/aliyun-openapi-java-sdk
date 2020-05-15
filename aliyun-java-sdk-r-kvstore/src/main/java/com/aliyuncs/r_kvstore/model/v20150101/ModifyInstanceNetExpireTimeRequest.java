@@ -41,7 +41,7 @@ public class ModifyInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyInst
 
 	private String instanceId;
 	public ModifyInstanceNetExpireTimeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceNetExpireTime", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceNetExpireTime", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

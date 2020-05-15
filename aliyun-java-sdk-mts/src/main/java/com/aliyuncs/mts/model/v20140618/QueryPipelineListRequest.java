@@ -35,7 +35,7 @@ public class QueryPipelineListRequest extends RpcAcsRequest<QueryPipelineListRes
 
 	private String pipelineIds;
 	public QueryPipelineListRequest() {
-		super("Mts", "2014-06-18", "QueryPipelineList", "mts");
+		super("Mts", "2014-06-18", "QueryPipelineList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

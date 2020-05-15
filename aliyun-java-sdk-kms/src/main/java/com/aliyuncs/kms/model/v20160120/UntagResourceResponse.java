@@ -24,14 +24,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UntagResourceResponse extends AcsResponse {
 
-	private String keyId;
+	private String requestId;
 
-	public String getKeyId() {
-		return this.keyId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setKeyId(String keyId) {
-		this.keyId = keyId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

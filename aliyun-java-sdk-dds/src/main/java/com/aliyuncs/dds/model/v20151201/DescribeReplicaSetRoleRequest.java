@@ -37,7 +37,7 @@ public class DescribeReplicaSetRoleRequest extends RpcAcsRequest<DescribeReplica
 
 	private Long ownerId;
 	public DescribeReplicaSetRoleRequest() {
-		super("Dds", "2015-12-01", "DescribeReplicaSetRole", "Dds");
+		super("Dds", "2015-12-01", "DescribeReplicaSetRole", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

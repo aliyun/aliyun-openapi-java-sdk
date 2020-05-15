@@ -26,11 +26,13 @@ import com.aliyuncs.iot.Endpoint;
 public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServiceResponse> {
 	   
 
-	private String apiPath;
-
 	private List<RequestParam> requestParams;
 
 	private String folderId;
+
+	private String iotInstanceId;
+
+	private String apiPath;
 
 	private String templateSql;
 
@@ -42,23 +44,12 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 
 	private String desc;
 	public CreateDataAPIServiceRequest() {
-		super("Iot", "2018-01-20", "CreateDataAPIService", "iot");
+		super("Iot", "2018-01-20", "CreateDataAPIService", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getApiPath() {
-		return this.apiPath;
-	}
-
-	public void setApiPath(String apiPath) {
-		this.apiPath = apiPath;
-		if(apiPath != null){
-			putQueryParameter("ApiPath", apiPath);
-		}
 	}
 
 	public List<RequestParam> getRequestParams() {
@@ -71,9 +62,9 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 			for (int depth1 = 0; depth1 < requestParams.size(); depth1++) {
 				putBodyParameter("RequestParam." + (depth1 + 1) + ".Name" , requestParams.get(depth1).getName());
 				putBodyParameter("RequestParam." + (depth1 + 1) + ".Type" , requestParams.get(depth1).getType());
-				putBodyParameter("RequestParam." + (depth1 + 1) + ".Required" , requestParams.get(depth1).getRequired());
 				putBodyParameter("RequestParam." + (depth1 + 1) + ".Desc" , requestParams.get(depth1).getDesc());
 				putBodyParameter("RequestParam." + (depth1 + 1) + ".Example" , requestParams.get(depth1).getExample());
+				putBodyParameter("RequestParam." + (depth1 + 1) + ".Required" , requestParams.get(depth1).getRequired());
 			}
 		}	
 	}
@@ -85,7 +76,29 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 	public void setFolderId(String folderId) {
 		this.folderId = folderId;
 		if(folderId != null){
-			putQueryParameter("FolderId", folderId);
+			putBodyParameter("FolderId", folderId);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putBodyParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getApiPath() {
+		return this.apiPath;
+	}
+
+	public void setApiPath(String apiPath) {
+		this.apiPath = apiPath;
+		if(apiPath != null){
+			putBodyParameter("ApiPath", apiPath);
 		}
 	}
 
@@ -96,7 +109,7 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 	public void setTemplateSql(String templateSql) {
 		this.templateSql = templateSql;
 		if(templateSql != null){
-			putQueryParameter("TemplateSql", templateSql);
+			putBodyParameter("TemplateSql", templateSql);
 		}
 	}
 
@@ -110,9 +123,9 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 			for (int depth1 = 0; depth1 < responseParams.size(); depth1++) {
 				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Name" , responseParams.get(depth1).getName());
 				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Type" , responseParams.get(depth1).getType());
-				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Required" , responseParams.get(depth1).getRequired());
 				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Desc" , responseParams.get(depth1).getDesc());
 				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Example" , responseParams.get(depth1).getExample());
+				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Required" , responseParams.get(depth1).getRequired());
 			}
 		}	
 	}
@@ -124,7 +137,7 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 	public void setOriginSql(String originSql) {
 		this.originSql = originSql;
 		if(originSql != null){
-			putQueryParameter("OriginSql", originSql);
+			putBodyParameter("OriginSql", originSql);
 		}
 	}
 
@@ -135,7 +148,7 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 	public void setDisplayName(String displayName) {
 		this.displayName = displayName;
 		if(displayName != null){
-			putQueryParameter("DisplayName", displayName);
+			putBodyParameter("DisplayName", displayName);
 		}
 	}
 
@@ -146,7 +159,7 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 	public void setDesc(String desc) {
 		this.desc = desc;
 		if(desc != null){
-			putQueryParameter("Desc", desc);
+			putBodyParameter("Desc", desc);
 		}
 	}
 
@@ -156,11 +169,11 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 
 		private String type;
 
-		private Boolean required;
-
 		private String desc;
 
 		private String example;
+
+		private Boolean required;
 
 		public String getName() {
 			return this.name;
@@ -178,14 +191,6 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 			this.type = type;
 		}
 
-		public Boolean getRequired() {
-			return this.required;
-		}
-
-		public void setRequired(Boolean required) {
-			this.required = required;
-		}
-
 		public String getDesc() {
 			return this.desc;
 		}
@@ -200,6 +205,14 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 
 		public void setExample(String example) {
 			this.example = example;
+		}
+
+		public Boolean getRequired() {
+			return this.required;
+		}
+
+		public void setRequired(Boolean required) {
+			this.required = required;
 		}
 	}
 
@@ -209,11 +222,11 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 
 		private String type;
 
-		private Boolean required;
-
 		private String desc;
 
 		private String example;
+
+		private Boolean required;
 
 		public String getName() {
 			return this.name;
@@ -231,14 +244,6 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 			this.type = type;
 		}
 
-		public Boolean getRequired() {
-			return this.required;
-		}
-
-		public void setRequired(Boolean required) {
-			this.required = required;
-		}
-
 		public String getDesc() {
 			return this.desc;
 		}
@@ -253,6 +258,14 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 
 		public void setExample(String example) {
 			this.example = example;
+		}
+
+		public Boolean getRequired() {
+			return this.required;
+		}
+
+		public void setRequired(Boolean required) {
+			this.required = required;
 		}
 	}
 

@@ -43,7 +43,7 @@ public class DescribeIpv6GatewaysRequest extends RpcAcsRequest<DescribeIpv6Gatew
 
 	private String name;
 	public DescribeIpv6GatewaysRequest() {
-		super("Vpc", "2016-04-28", "DescribeIpv6Gateways", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeIpv6Gateways", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

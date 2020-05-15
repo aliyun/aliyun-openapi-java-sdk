@@ -24,9 +24,15 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class GetInstanceResourceRequest extends RoaAcsRequest<GetInstanceResourceResponse> {
-	
+	   
+
+	private String projectName;
+
+	private Long instanceId;
+
+	private String jobName;
 	public GetInstanceResourceRequest() {
-		super("foas", "2018-11-11", "GetInstanceResource");
+		super("foas", "2018-11-11", "GetInstanceResource", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/resource");
 		setMethod(MethodType.GET);
@@ -35,12 +41,6 @@ public class GetInstanceResourceRequest extends RoaAcsRequest<GetInstanceResourc
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String projectName;
-
-	private Long instanceId;
-
-	private String jobName;
 
 	public String getProjectName() {
 		return this.projectName;

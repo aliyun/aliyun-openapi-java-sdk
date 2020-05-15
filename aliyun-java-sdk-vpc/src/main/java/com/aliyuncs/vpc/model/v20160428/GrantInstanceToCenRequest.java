@@ -43,7 +43,7 @@ public class GrantInstanceToCenRequest extends RpcAcsRequest<GrantInstanceToCenR
 
 	private String instanceId;
 	public GrantInstanceToCenRequest() {
-		super("Vpc", "2016-04-28", "GrantInstanceToCen", "Vpc");
+		super("Vpc", "2016-04-28", "GrantInstanceToCen", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -34,7 +34,7 @@ public class QueryDeviceGroupByTagsRequest extends RpcAcsRequest<QueryDeviceGrou
 
 	private List<Tag> tags;
 	public QueryDeviceGroupByTagsRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceGroupByTags", "iot");
+		super("Iot", "2018-01-20", "QueryDeviceGroupByTags", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

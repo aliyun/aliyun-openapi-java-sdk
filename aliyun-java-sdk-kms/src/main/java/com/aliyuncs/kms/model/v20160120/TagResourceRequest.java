@@ -28,6 +28,8 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 
 	private String keyId;
 
+	private String secretName;
+
 	private String tags;
 	public TagResourceRequest() {
 		super("Kms", "2016-01-20", "TagResource", "kms");
@@ -47,6 +49,17 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 		this.keyId = keyId;
 		if(keyId != null){
 			putQueryParameter("KeyId", keyId);
+		}
+	}
+
+	public String getSecretName() {
+		return this.secretName;
+	}
+
+	public void setSecretName(String secretName) {
+		this.secretName = secretName;
+		if(secretName != null){
+			putQueryParameter("SecretName", secretName);
 		}
 	}
 

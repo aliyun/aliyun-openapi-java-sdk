@@ -38,7 +38,7 @@ public class ListStackEventsRequest extends RpcAcsRequest<ListStackEventsRespons
 
 	private List<String> statuss;
 	public ListStackEventsRequest() {
-		super("ROS", "2019-09-10", "ListStackEvents");
+		super("ROS", "2019-09-10", "ListStackEvents", "ROS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

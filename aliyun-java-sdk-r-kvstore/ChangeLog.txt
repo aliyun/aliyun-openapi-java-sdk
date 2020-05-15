@@ -1,3 +1,24 @@
+2020-05-14 Version: 2.3.2
+- Generated 2015-01-01 for `R-kvstore`.
+- Fix DescribeCacheAnalysisReport return empty BigKeys because of wrong type defination.
+
+2020-04-25 Version: 2.3.1
+- Generated 2015-01-01 for `R-kvstore`.
+- Add RestoreTime for CreateInstance API.
+
+2020-04-09 Version: 2.3.0
+- Generated 2015-01-01 for `R-kvstore`.
+- Add DescribePrice API.
+
+2020-03-23 Version: 2.2.0
+- Generated 2015-01-01 for `R-kvstore`.
+- Add DescribeSecurityGroupConfiguration API.
+- Add ModifySecurityGroupConfiguration API.
+
+2020-02-26 Version: 2.1.5
+- Generated 2015-01-01 for `R-kvstore`.
+- Add VpcCloudInstanceId for DescribeInstanceAttribute.
+
 2020-01-16 Version: 2.1.4
 - Generated 2015-01-01 for `R-kvstore`.
 - Update DescribeAvailableResource.

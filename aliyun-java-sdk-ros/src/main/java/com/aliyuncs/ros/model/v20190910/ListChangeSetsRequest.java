@@ -36,9 +36,11 @@ public class ListChangeSetsRequest extends RpcAcsRequest<ListChangeSetsResponse>
 
 	private List<String> changeSetNames;
 
+	private String changeSetId;
+
 	private List<String> statuss;
 	public ListChangeSetsRequest() {
-		super("ROS", "2019-09-10", "ListChangeSets");
+		super("ROS", "2019-09-10", "ListChangeSets", "ROS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -103,6 +105,17 @@ public class ListChangeSetsRequest extends RpcAcsRequest<ListChangeSetsResponse>
 				putQueryParameter("ChangeSetName." + (i + 1) , changeSetNames.get(i));
 			}
 		}	
+	}
+
+	public String getChangeSetId() {
+		return this.changeSetId;
+	}
+
+	public void setChangeSetId(String changeSetId) {
+		this.changeSetId = changeSetId;
+		if(changeSetId != null){
+			putQueryParameter("ChangeSetId", changeSetId);
+		}
 	}
 
 	public List<String> getStatuss() {

@@ -31,6 +31,10 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 
 	private String content;
 
+	private String userData;
+
+	private String notifyUrl;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -39,13 +43,17 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 
 	private String params;
 
+	private String templateId;
+
 	private String pipelineId;
 
 	private String contentType;
 
+	private String input;
+
 	private String contentAddr;
 	public SubmitSmarttagJobRequest() {
-		super("Mts", "2014-06-18", "SubmitSmarttagJob", "mts");
+		super("Mts", "2014-06-18", "SubmitSmarttagJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -83,6 +91,28 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 		this.content = content;
 		if(content != null){
 			putQueryParameter("Content", content);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getNotifyUrl() {
+		return this.notifyUrl;
+	}
+
+	public void setNotifyUrl(String notifyUrl) {
+		this.notifyUrl = notifyUrl;
+		if(notifyUrl != null){
+			putQueryParameter("NotifyUrl", notifyUrl);
 		}
 	}
 
@@ -130,6 +160,17 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 		}
 	}
 
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
+		}
+	}
+
 	public String getPipelineId() {
 		return this.pipelineId;
 	}
@@ -149,6 +190,17 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 		this.contentType = contentType;
 		if(contentType != null){
 			putQueryParameter("ContentType", contentType);
+		}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
 		}
 	}
 

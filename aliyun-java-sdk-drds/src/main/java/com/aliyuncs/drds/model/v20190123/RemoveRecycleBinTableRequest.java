@@ -31,7 +31,7 @@ public class RemoveRecycleBinTableRequest extends RpcAcsRequest<RemoveRecycleBin
 
 	private String tableName;
 	public RemoveRecycleBinTableRequest() {
-		super("Drds", "2019-01-23", "RemoveRecycleBinTable", "drds");
+		super("Drds", "2019-01-23", "RemoveRecycleBinTable", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

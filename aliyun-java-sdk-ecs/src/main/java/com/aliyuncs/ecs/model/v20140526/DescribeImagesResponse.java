@@ -93,6 +93,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String imageName;
 
+		private String imageFamily;
+
 		private String imageVersion;
 
 		private String description;
@@ -157,6 +159,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setImageName(String imageName) {
 			this.imageName = imageName;
+		}
+
+		public String getImageFamily() {
+			return this.imageFamily;
+		}
+
+		public void setImageFamily(String imageFamily) {
+			this.imageFamily = imageFamily;
 		}
 
 		public String getImageVersion() {

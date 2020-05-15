@@ -1,3 +1,7 @@
+2020-03-06 Version: 3.1.4
+- Add request parameter groupType for OnsGroupCreate.
+- Add request parameter groupType for OnsGroupList.
+
 2019-12-31 Version: 3.1.3
 - Add request parameter groupType for OnsGroupCreate.
 

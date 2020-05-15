@@ -24,15 +24,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class AssignJobsRequest extends RpcAcsRequest<AssignJobsResponse> {
-	
-	public AssignJobsRequest() {
-		super("CCC", "2017-07-05", "AssignJobs");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String groupId;
 
@@ -45,6 +37,14 @@ public class AssignJobsRequest extends RpcAcsRequest<AssignJobsResponse> {
 	private String strategyJson;
 
 	private String scenarioId;
+	public AssignJobsRequest() {
+		super("CCC", "2017-07-05", "AssignJobs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getGroupId() {
 		return this.groupId;

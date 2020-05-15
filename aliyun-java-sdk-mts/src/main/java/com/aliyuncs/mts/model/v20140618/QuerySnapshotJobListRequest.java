@@ -47,7 +47,7 @@ public class QuerySnapshotJobListRequest extends RpcAcsRequest<QuerySnapshotJobL
 
 	private String pipelineId;
 	public QuerySnapshotJobListRequest() {
-		super("Mts", "2014-06-18", "QuerySnapshotJobList", "mts");
+		super("Mts", "2014-06-18", "QuerySnapshotJobList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

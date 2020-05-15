@@ -1,3 +1,28 @@
+2020-04-17 Version: 4.19.4
+- DescribeInstanceTypes support TotalEniQueueQuantity.
+
+2020-04-16 Version: 4.19.3
+- Add BatchOptimization param in Stop and Start Instances.
+- Add RemoveSymbols in GetInstanceConsoleOutput.
+- Add ImageFamily in ModifyImageAttribute.
+- Customize InstanceType on DedicatedHosts is supported.
+- Add StorageCapacityUnit interfaces.
+- Add param Tag in CreateAutoSnapshotPolicy.
+
+2020-03-24 Version: 4.19.2
+- DescribeInstanceTypes Supports EniIpv6AddressQuantity.
+
+2020-03-24 Version: 4.19.1
+- DescribeInstanceTypes Supports EniIpv6AddressQuantity.
+
+2020-03-16 Version: 4.19.1
+- Add ImageFamily paramters and apis, in Instance creation apis and Image query apis, and add DescribeImageFromFamily.
+- Add Instance batch operation apis RebootInstances StartInstances and StopInstances.
+- Add EncryptAlgorithm paramter in instance creati
+
+2020-03-03 Version: 4.19.0
+- Add StopInstances, StartInstances, RebootInstances interfaces.
+
 2020-02-13 Version: 4.18.3
 - ModifyNetworkInterfaceAttribute support modify QueueNumber.
 - DescribeNetworkInterfaces support QueueNumber.

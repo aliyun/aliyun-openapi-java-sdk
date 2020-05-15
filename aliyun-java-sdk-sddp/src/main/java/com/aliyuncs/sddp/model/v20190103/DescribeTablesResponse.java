@@ -105,6 +105,14 @@ public class DescribeTablesResponse extends AcsResponse {
 
 		private Long instanceId;
 
+		private Integer s2Count;
+
+		private Integer s3Count;
+
+		private Integer totalRows;
+
+		private Long lastScanTime;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -215,6 +223,38 @@ public class DescribeTablesResponse extends AcsResponse {
 
 		public void setInstanceId(Long instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public Integer getS2Count() {
+			return this.s2Count;
+		}
+
+		public void setS2Count(Integer s2Count) {
+			this.s2Count = s2Count;
+		}
+
+		public Integer getS3Count() {
+			return this.s3Count;
+		}
+
+		public void setS3Count(Integer s3Count) {
+			this.s3Count = s3Count;
+		}
+
+		public Integer getTotalRows() {
+			return this.totalRows;
+		}
+
+		public void setTotalRows(Integer totalRows) {
+			this.totalRows = totalRows;
+		}
+
+		public Long getLastScanTime() {
+			return this.lastScanTime;
+		}
+
+		public void setLastScanTime(Long lastScanTime) {
+			this.lastScanTime = lastScanTime;
 		}
 	}
 

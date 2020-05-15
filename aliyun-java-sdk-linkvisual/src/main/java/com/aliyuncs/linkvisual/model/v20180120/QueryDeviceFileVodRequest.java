@@ -16,6 +16,7 @@ package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkvisual.Endpoint;
 
 /**
  * @author auto create
@@ -24,16 +25,31 @@ import com.aliyuncs.http.MethodType;
 public class QueryDeviceFileVodRequest extends RpcAcsRequest<QueryDeviceFileVodResponse> {
 	   
 
-	private String iotId;
+	private Integer encryptType;
 
-	private String fileName;
+	private String iotId;
 
 	private Boolean shouldEncrypt;
 
-	private Integer encryptType;
+	private String fileName;
 	public QueryDeviceFileVodRequest() {
-		super("Linkvisual", "2018-01-20", "QueryDeviceFileVod", "linkvisual");
+		super("Linkvisual", "2018-01-20", "QueryDeviceFileVod", "Linkvisual");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Integer getEncryptType() {
+		return this.encryptType;
+	}
+
+	public void setEncryptType(Integer encryptType) {
+		this.encryptType = encryptType;
+		if(encryptType != null){
+			putQueryParameter("EncryptType", encryptType.toString());
+		}
 	}
 
 	public String getIotId() {
@@ -44,17 +60,6 @@ public class QueryDeviceFileVodRequest extends RpcAcsRequest<QueryDeviceFileVodR
 		this.iotId = iotId;
 		if(iotId != null){
 			putQueryParameter("IotId", iotId);
-		}
-	}
-
-	public String getFileName() {
-		return this.fileName;
-	}
-
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		if(fileName != null){
-			putQueryParameter("FileName", fileName);
 		}
 	}
 
@@ -69,14 +74,14 @@ public class QueryDeviceFileVodRequest extends RpcAcsRequest<QueryDeviceFileVodR
 		}
 	}
 
-	public Integer getEncryptType() {
-		return this.encryptType;
+	public String getFileName() {
+		return this.fileName;
 	}
 
-	public void setEncryptType(Integer encryptType) {
-		this.encryptType = encryptType;
-		if(encryptType != null){
-			putQueryParameter("EncryptType", encryptType.toString());
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putQueryParameter("FileName", fileName);
 		}
 	}
 

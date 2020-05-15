@@ -24,6 +24,7 @@ public class CreateNodeResponseUnmarshaller {
 		
 		createNodeResponse.setRequestId(_ctx.stringValue("CreateNodeResponse.RequestId"));
 		createNodeResponse.setOrderId(_ctx.stringValue("CreateNodeResponse.OrderId"));
+		createNodeResponse.setNodeId(_ctx.stringValue("CreateNodeResponse.NodeId"));
 	 
 	 	return createNodeResponse;
 	}

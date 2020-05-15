@@ -52,6 +52,16 @@ public class GetStackResponse extends AcsResponse {
 
 	private String parentStackId;
 
+	private String stackDriftStatus;
+
+	private String driftDetectionTime;
+
+	private String ramRoleName;
+
+	private String deletionProtection;
+
+	private String rootStackId;
+
 	private List<Parameter> parameters;
 
 	private List<Map<Object,Object>> outputs;
@@ -82,26 +92,10 @@ public class GetStackResponse extends AcsResponse {
 		this.disableRollback = disableRollback;
 	}
 
-	public String getBizRegionId() {
-		return this.regionId;
-	}
-
-	public void setBizRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	/**
-	 * @deprecated use getBizRegionId instead of this.
-	 */
-	@Deprecated
 	public String getRegionId() {
 		return this.regionId;
 	}
 
-	/**
-	 * @deprecated use setBizRegionId instead of this.
-	 */
-	@Deprecated
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
 	}
@@ -176,6 +170,46 @@ public class GetStackResponse extends AcsResponse {
 
 	public void setParentStackId(String parentStackId) {
 		this.parentStackId = parentStackId;
+	}
+
+	public String getStackDriftStatus() {
+		return this.stackDriftStatus;
+	}
+
+	public void setStackDriftStatus(String stackDriftStatus) {
+		this.stackDriftStatus = stackDriftStatus;
+	}
+
+	public String getDriftDetectionTime() {
+		return this.driftDetectionTime;
+	}
+
+	public void setDriftDetectionTime(String driftDetectionTime) {
+		this.driftDetectionTime = driftDetectionTime;
+	}
+
+	public String getRamRoleName() {
+		return this.ramRoleName;
+	}
+
+	public void setRamRoleName(String ramRoleName) {
+		this.ramRoleName = ramRoleName;
+	}
+
+	public String getDeletionProtection() {
+		return this.deletionProtection;
+	}
+
+	public void setDeletionProtection(String deletionProtection) {
+		this.deletionProtection = deletionProtection;
+	}
+
+	public String getRootStackId() {
+		return this.rootStackId;
+	}
+
+	public void setRootStackId(String rootStackId) {
+		this.rootStackId = rootStackId;
 	}
 
 	public List<Parameter> getParameters() {

@@ -29,7 +29,7 @@ public class SetCapacityLimitPolicyRequest extends RpcAcsRequest<SetCapacityLimi
 
 	private String externalBizAliyunUid;
 	public SetCapacityLimitPolicyRequest() {
-		super("openanalytics-open", "2018-06-19", "SetCapacityLimitPolicy", "openanalytics");
+		super("openanalytics-open", "2018-06-19", "SetCapacityLimitPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class SubmitSmoothExpandPreCheckRequest extends RpcAcsRequest<SubmitSmoot
 
 	private String dbInstType;
 	public SubmitSmoothExpandPreCheckRequest() {
-		super("Drds", "2019-01-23", "SubmitSmoothExpandPreCheck", "drds");
+		super("Drds", "2019-01-23", "SubmitSmoothExpandPreCheck", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

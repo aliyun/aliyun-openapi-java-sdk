@@ -37,7 +37,7 @@ public class DeleteHaVipRequest extends RpcAcsRequest<DeleteHaVipResponse> {
 
 	private Long ownerId;
 	public DeleteHaVipRequest() {
-		super("Vpc", "2016-04-28", "DeleteHaVip", "Vpc");
+		super("Vpc", "2016-04-28", "DeleteHaVip", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

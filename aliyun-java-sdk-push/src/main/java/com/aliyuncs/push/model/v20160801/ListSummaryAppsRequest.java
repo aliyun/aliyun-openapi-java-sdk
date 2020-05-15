@@ -25,7 +25,7 @@ import com.aliyuncs.push.Endpoint;
 public class ListSummaryAppsRequest extends RpcAcsRequest<ListSummaryAppsResponse> {
 	   
 	public ListSummaryAppsRequest() {
-		super("Push", "2016-08-01", "ListSummaryApps", "cps");
+		super("Push", "2016-08-01", "ListSummaryApps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

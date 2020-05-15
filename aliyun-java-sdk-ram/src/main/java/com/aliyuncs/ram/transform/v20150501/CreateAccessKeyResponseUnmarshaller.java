@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateAccessKeyResponseUnmarshaller {
 
-	public static CreateAccessKeyResponse unmarshall(CreateAccessKeyResponse createAccessKeyResponse, UnmarshallerContext context) {
+	public static CreateAccessKeyResponse unmarshall(CreateAccessKeyResponse createAccessKeyResponse, UnmarshallerContext _ctx) {
 		
-		createAccessKeyResponse.setRequestId(context.stringValue("CreateAccessKeyResponse.RequestId"));
+		createAccessKeyResponse.setRequestId(_ctx.stringValue("CreateAccessKeyResponse.RequestId"));
 
 		AccessKey accessKey = new AccessKey();
-		accessKey.setAccessKeyId(context.stringValue("CreateAccessKeyResponse.AccessKey.AccessKeyId"));
-		accessKey.setAccessKeySecret(context.stringValue("CreateAccessKeyResponse.AccessKey.AccessKeySecret"));
-		accessKey.setStatus(context.stringValue("CreateAccessKeyResponse.AccessKey.Status"));
-		accessKey.setCreateDate(context.stringValue("CreateAccessKeyResponse.AccessKey.CreateDate"));
+		accessKey.setAccessKeyId(_ctx.stringValue("CreateAccessKeyResponse.AccessKey.AccessKeyId"));
+		accessKey.setAccessKeySecret(_ctx.stringValue("CreateAccessKeyResponse.AccessKey.AccessKeySecret"));
+		accessKey.setStatus(_ctx.stringValue("CreateAccessKeyResponse.AccessKey.Status"));
+		accessKey.setCreateDate(_ctx.stringValue("CreateAccessKeyResponse.AccessKey.CreateDate"));
 		createAccessKeyResponse.setAccessKey(accessKey);
 	 
 	 	return createAccessKeyResponse;

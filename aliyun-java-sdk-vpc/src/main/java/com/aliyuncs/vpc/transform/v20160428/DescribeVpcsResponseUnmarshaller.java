@@ -48,6 +48,9 @@ public class DescribeVpcsResponseUnmarshaller {
 			vpc.setNetworkAclNum(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].NetworkAclNum"));
 			vpc.setResourceGroupId(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].ResourceGroupId"));
 			vpc.setCenStatus(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].CenStatus"));
+			vpc.setOwnerId(_ctx.longValue("DescribeVpcsResponse.Vpcs["+ i +"].OwnerId"));
+			vpc.setSupportAdvancedFeature(_ctx.booleanValue("DescribeVpcsResponse.Vpcs["+ i +"].SupportAdvancedFeature"));
+			vpc.setAdvancedResource(_ctx.booleanValue("DescribeVpcsResponse.Vpcs["+ i +"].AdvancedResource"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].VSwitchIds.Length"); j++) {
@@ -72,6 +75,12 @@ public class DescribeVpcsResponseUnmarshaller {
 				routerTableIds.add(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].RouterTableIds["+ j +"]"));
 			}
 			vpc.setRouterTableIds(routerTableIds);
+
+			List<String> secondaryCidrBlocks = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].SecondaryCidrBlocks.Length"); j++) {
+				secondaryCidrBlocks.add(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].SecondaryCidrBlocks["+ j +"]"));
+			}
+			vpc.setSecondaryCidrBlocks(secondaryCidrBlocks);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].Tags.Length"); j++) {

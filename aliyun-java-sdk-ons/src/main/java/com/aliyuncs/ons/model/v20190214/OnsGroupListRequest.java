@@ -28,6 +28,8 @@ public class OnsGroupListRequest extends RpcAcsRequest<OnsGroupListResponse> {
 	private String groupId;
 
 	private String instanceId;
+
+	private String groupType;
 	public OnsGroupListRequest() {
 		super("Ons", "2019-02-14", "OnsGroupList", "ons");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class OnsGroupListRequest extends RpcAcsRequest<OnsGroupListResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getGroupType() {
+		return this.groupType;
+	}
+
+	public void setGroupType(String groupType) {
+		this.groupType = groupType;
+		if(groupType != null){
+			putQueryParameter("GroupType", groupType);
 		}
 	}
 

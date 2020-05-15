@@ -25,27 +25,16 @@ import com.aliyuncs.iot.Endpoint;
 public class GisQueryDeviceLocationRequest extends RpcAcsRequest<GisQueryDeviceLocationResponse> {
 	   
 
-	private String thingList;
-
 	private String iotInstanceId;
+
+	private String thingList;
 	public GisQueryDeviceLocationRequest() {
-		super("Iot", "2018-01-20", "GisQueryDeviceLocation", "iot");
+		super("Iot", "2018-01-20", "GisQueryDeviceLocation", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getThingList() {
-		return this.thingList;
-	}
-
-	public void setThingList(String thingList) {
-		this.thingList = thingList;
-		if(thingList != null){
-			putQueryParameter("ThingList", thingList);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -56,6 +45,17 @@ public class GisQueryDeviceLocationRequest extends RpcAcsRequest<GisQueryDeviceL
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getThingList() {
+		return this.thingList;
+	}
+
+	public void setThingList(String thingList) {
+		this.thingList = thingList;
+		if(thingList != null){
+			putQueryParameter("ThingList", thingList);
 		}
 	}
 

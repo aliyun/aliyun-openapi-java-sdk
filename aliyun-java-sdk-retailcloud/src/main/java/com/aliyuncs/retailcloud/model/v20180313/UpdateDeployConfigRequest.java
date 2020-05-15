@@ -17,6 +17,7 @@ package com.aliyuncs.retailcloud.model.v20180313;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.retailcloud.Endpoint;
 
 /**
  * @author auto create
@@ -35,12 +36,18 @@ public class UpdateDeployConfigRequest extends RpcAcsRequest<UpdateDeployConfigR
 
 	private Long appId;
 
+	private List<String> secretLists;
+
 	private Long id;
 
 	private String deployment;
 	public UpdateDeployConfigRequest() {
 		super("retailcloud", "2018-03-13", "UpdateDeployConfig", "retailcloud");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getCodePath() {
@@ -98,6 +105,19 @@ public class UpdateDeployConfigRequest extends RpcAcsRequest<UpdateDeployConfigR
 		if(appId != null){
 			putQueryParameter("AppId", appId.toString());
 		}
+	}
+
+	public List<String> getSecretLists() {
+		return this.secretLists;
+	}
+
+	public void setSecretLists(List<String> secretLists) {
+		this.secretLists = secretLists;	
+		if (secretLists != null) {
+			for (int i = 0; i < secretLists.size(); i++) {
+				putQueryParameter("SecretList." + (i + 1) , secretLists.get(i));
+			}
+		}	
 	}
 
 	public Long getId() {

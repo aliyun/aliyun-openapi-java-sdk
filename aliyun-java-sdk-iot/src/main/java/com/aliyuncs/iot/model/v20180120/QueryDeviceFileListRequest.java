@@ -37,7 +37,7 @@ public class QueryDeviceFileListRequest extends RpcAcsRequest<QueryDeviceFileLis
 
 	private String deviceName;
 	public QueryDeviceFileListRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceFileList", "iot");
+		super("Iot", "2018-01-20", "QueryDeviceFileList", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

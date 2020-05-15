@@ -64,7 +64,7 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 
 	private String subscriptionInstanceName;
 	public ConfigureSubscriptionInstanceRequest() {
-		super("Dts", "2020-01-01", "ConfigureSubscriptionInstance", "dts");
+		super("Dts", "2020-01-01", "ConfigureSubscriptionInstance");
 		setMethod(MethodType.POST);
 	}
 

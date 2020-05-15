@@ -49,6 +49,8 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String zoneIds;
+
 		private List<Zone> zones;
 
 		public String getRegionId() {
@@ -57,6 +59,14 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getZoneIds() {
+			return this.zoneIds;
+		}
+
+		public void setZoneIds(String zoneIds) {
+			this.zoneIds = zoneIds;
 		}
 
 		public List<Zone> getZones() {

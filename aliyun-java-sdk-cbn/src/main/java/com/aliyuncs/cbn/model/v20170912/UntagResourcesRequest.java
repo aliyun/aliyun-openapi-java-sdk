@@ -16,6 +16,7 @@ package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
 /**
@@ -23,14 +24,7 @@ import com.aliyuncs.cbn.Endpoint;
  * @version 
  */
 public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
-	
-	public UntagResourcesRequest() {
-		super("Cbn", "2017-09-12", "UntagResources", "cbn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -40,15 +34,19 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 
 	private String ownerAccount;
 
-	private Long tagOwnerUid;
-
-	private String tagOwnerBid;
-
 	private Long ownerId;
 
-	private List<String> tagKeys;
-
 	private String resourceType;
+
+	private List<String> tagKeys;
+	public UntagResourcesRequest() {
+		super("Cbn", "2017-09-12", "UntagResources", "Cbn");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -96,28 +94,6 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		}
 	}
 
-	public Long getTagOwnerUid() {
-		return this.tagOwnerUid;
-	}
-
-	public void setTagOwnerUid(Long tagOwnerUid) {
-		this.tagOwnerUid = tagOwnerUid;
-		if(tagOwnerUid != null){
-			putQueryParameter("TagOwnerUid", tagOwnerUid.toString());
-		}
-	}
-
-	public String getTagOwnerBid() {
-		return this.tagOwnerBid;
-	}
-
-	public void setTagOwnerBid(String tagOwnerBid) {
-		this.tagOwnerBid = tagOwnerBid;
-		if(tagOwnerBid != null){
-			putQueryParameter("TagOwnerBid", tagOwnerBid);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -126,6 +102,17 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -140,17 +127,6 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 				putQueryParameter("TagKey." + (i + 1) , tagKeys.get(i));
 			}
 		}	
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
 	}
 
 	@Override

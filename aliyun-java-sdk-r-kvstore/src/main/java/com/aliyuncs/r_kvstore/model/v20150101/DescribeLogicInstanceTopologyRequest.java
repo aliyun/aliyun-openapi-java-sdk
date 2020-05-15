@@ -37,7 +37,7 @@ public class DescribeLogicInstanceTopologyRequest extends RpcAcsRequest<Describe
 
 	private String instanceId;
 	public DescribeLogicInstanceTopologyRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeLogicInstanceTopology", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeLogicInstanceTopology", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

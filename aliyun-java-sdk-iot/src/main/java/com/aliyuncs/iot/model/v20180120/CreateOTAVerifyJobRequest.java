@@ -26,44 +26,22 @@ import com.aliyuncs.iot.Endpoint;
 public class CreateOTAVerifyJobRequest extends RpcAcsRequest<CreateOTAVerifyJobResponse> {
 	   
 
-	private String firmwareId;
-
-	private String productKey;
-
 	private Integer timeoutInMinutes;
 
 	private String iotInstanceId;
 
+	private String firmwareId;
+
+	private String productKey;
+
 	private List<String> targetDeviceNames;
 	public CreateOTAVerifyJobRequest() {
-		super("Iot", "2018-01-20", "CreateOTAVerifyJob", "iot");
+		super("Iot", "2018-01-20", "CreateOTAVerifyJob", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFirmwareId() {
-		return this.firmwareId;
-	}
-
-	public void setFirmwareId(String firmwareId) {
-		this.firmwareId = firmwareId;
-		if(firmwareId != null){
-			putQueryParameter("FirmwareId", firmwareId);
-		}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
 	}
 
 	public Integer getTimeoutInMinutes() {
@@ -85,6 +63,28 @@ public class CreateOTAVerifyJobRequest extends RpcAcsRequest<CreateOTAVerifyJobR
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getFirmwareId() {
+		return this.firmwareId;
+	}
+
+	public void setFirmwareId(String firmwareId) {
+		this.firmwareId = firmwareId;
+		if(firmwareId != null){
+			putQueryParameter("FirmwareId", firmwareId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

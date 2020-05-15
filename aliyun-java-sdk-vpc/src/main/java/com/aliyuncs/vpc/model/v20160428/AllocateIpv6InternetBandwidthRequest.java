@@ -43,7 +43,7 @@ public class AllocateIpv6InternetBandwidthRequest extends RpcAcsRequest<Allocate
 
 	private String ipv6GatewayId;
 	public AllocateIpv6InternetBandwidthRequest() {
-		super("Vpc", "2016-04-28", "AllocateIpv6InternetBandwidth", "Vpc");
+		super("Vpc", "2016-04-28", "AllocateIpv6InternetBandwidth", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

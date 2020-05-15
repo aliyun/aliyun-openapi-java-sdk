@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveUserFromGroupResponseUnmarshaller {
 
-	public static RemoveUserFromGroupResponse unmarshall(RemoveUserFromGroupResponse removeUserFromGroupResponse, UnmarshallerContext context) {
+	public static RemoveUserFromGroupResponse unmarshall(RemoveUserFromGroupResponse removeUserFromGroupResponse, UnmarshallerContext _ctx) {
 		
-		removeUserFromGroupResponse.setRequestId(context.stringValue("RemoveUserFromGroupResponse.RequestId"));
+		removeUserFromGroupResponse.setRequestId(_ctx.stringValue("RemoveUserFromGroupResponse.RequestId"));
 	 
 	 	return removeUserFromGroupResponse;
 	}

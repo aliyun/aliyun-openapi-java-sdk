@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class StartBack2BackCallRequest extends RpcAcsRequest<StartBack2BackCallResponse> {
-	
-	public StartBack2BackCallRequest() {
-		super("CCC", "2017-07-05", "StartBack2BackCall");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String callCenterNumber;
 
@@ -42,6 +34,14 @@ public class StartBack2BackCallRequest extends RpcAcsRequest<StartBack2BackCallR
 	private String instanceId;
 
 	private String workflowId;
+	public StartBack2BackCallRequest() {
+		super("CCC", "2017-07-05", "StartBack2BackCall");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCallCenterNumber() {
 		return this.callCenterNumber;

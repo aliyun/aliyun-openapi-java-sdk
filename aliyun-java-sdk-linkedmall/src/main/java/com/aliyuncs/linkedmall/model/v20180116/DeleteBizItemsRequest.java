@@ -17,6 +17,7 @@ package com.aliyuncs.linkedmall.model.v20180116;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkedmall.Endpoint;
 
 /**
  * @author auto create
@@ -33,6 +34,10 @@ public class DeleteBizItemsRequest extends RpcAcsRequest<DeleteBizItemsResponse>
 	public DeleteBizItemsRequest() {
 		super("linkedmall", "2018-01-16", "DeleteBizItems", "linkedmall");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getBizId() {

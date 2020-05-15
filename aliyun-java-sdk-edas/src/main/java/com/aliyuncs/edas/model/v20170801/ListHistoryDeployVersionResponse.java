@@ -83,6 +83,8 @@ public class ListHistoryDeployVersionResponse extends AcsResponse {
 
 		private String type;
 
+		private String publicUrl;
+
 		public String getId() {
 			return this.id;
 		}
@@ -145,6 +147,14 @@ public class ListHistoryDeployVersionResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getPublicUrl() {
+			return this.publicUrl;
+		}
+
+		public void setPublicUrl(String publicUrl) {
+			this.publicUrl = publicUrl;
 		}
 	}
 

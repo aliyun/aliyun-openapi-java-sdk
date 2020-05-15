@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListJobStatusRequest extends RpcAcsRequest<ListJobStatusResponse> {
-	
-	public ListJobStatusRequest() {
-		super("CCC", "2017-07-05", "ListJobStatus");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String timeAlignment;
 
@@ -52,6 +44,14 @@ public class ListJobStatusRequest extends RpcAcsRequest<ListJobStatusResponse> {
 	private Integer pageSize;
 
 	private String scenarioId;
+	public ListJobStatusRequest() {
+		super("CCC", "2017-07-05", "ListJobStatus");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTimeAlignment() {
 		return this.timeAlignment;

@@ -28,13 +28,13 @@ public class SetEdgeInstanceDriverConfigsRequest extends RpcAcsRequest<SetEdgeIn
 
 	private List<Configs> configss;
 
-	private String instanceId;
-
 	private String driverId;
 
 	private String iotInstanceId;
+
+	private String instanceId;
 	public SetEdgeInstanceDriverConfigsRequest() {
-		super("Iot", "2018-01-20", "SetEdgeInstanceDriverConfigs", "iot");
+		super("Iot", "2018-01-20", "SetEdgeInstanceDriverConfigs", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,17 +57,6 @@ public class SetEdgeInstanceDriverConfigsRequest extends RpcAcsRequest<SetEdgeIn
 		}	
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getDriverId() {
 		return this.driverId;
 	}
@@ -87,6 +76,17 @@ public class SetEdgeInstanceDriverConfigsRequest extends RpcAcsRequest<SetEdgeIn
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

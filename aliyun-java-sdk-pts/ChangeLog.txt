@@ -1,3 +1,18 @@
+2020-05-12 Version: 2.0.10
+- Fixed Bug for DescribeSamplingLog.
+
+2020-05-12 Version: 2.0.10
+- Fixed Bug for DescribeSamplingLog.
+
+2020-05-11 Version: 2.0.10
+- Fixed bugs for DescribeSamplinglogs.
+
+2020-04-24 Version: 2.0.8
+- Support ReplaceOssFile.
+
+2020-02-17 Version: 2.0.2
+- Support checkPoint for DescribeSceneRunningStatus.
+
 2020-02-14 Version: 2.0.2
 - Support ReplaceOssFile.
 

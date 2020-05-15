@@ -16,6 +16,7 @@ package com.aliyuncs.linkedmall.model.v20180116;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkedmall.Endpoint;
 
 /**
  * @author auto create
@@ -28,14 +29,18 @@ public class ValidateTaobaoAccountRequest extends RpcAcsRequest<ValidateTaobaoAc
 
 	private String extJson;
 
-	private String bizId;
-
 	private String mobileNo;
+
+	private String bizId;
 
 	private String tbUserNick;
 	public ValidateTaobaoAccountRequest() {
 		super("linkedmall", "2018-01-16", "ValidateTaobaoAccount", "linkedmall");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getBizUid() {
@@ -60,17 +65,6 @@ public class ValidateTaobaoAccountRequest extends RpcAcsRequest<ValidateTaobaoAc
 		}
 	}
 
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
-		}
-	}
-
 	public String getMobileNo() {
 		return this.mobileNo;
 	}
@@ -79,6 +73,17 @@ public class ValidateTaobaoAccountRequest extends RpcAcsRequest<ValidateTaobaoAc
 		this.mobileNo = mobileNo;
 		if(mobileNo != null){
 			putQueryParameter("MobileNo", mobileNo);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 

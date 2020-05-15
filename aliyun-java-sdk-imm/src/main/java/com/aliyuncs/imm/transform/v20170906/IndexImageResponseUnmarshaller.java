@@ -32,6 +32,8 @@ public class IndexImageResponseUnmarshaller {
 		indexImageResponse.setRemarksC(_ctx.stringValue("IndexImageResponse.RemarksC"));
 		indexImageResponse.setRemarksD(_ctx.stringValue("IndexImageResponse.RemarksD"));
 		indexImageResponse.setExternalId(_ctx.stringValue("IndexImageResponse.ExternalId"));
+		indexImageResponse.setRemarksArrayA(_ctx.stringValue("IndexImageResponse.RemarksArrayA"));
+		indexImageResponse.setRemarksArrayB(_ctx.stringValue("IndexImageResponse.RemarksArrayB"));
 	 
 	 	return indexImageResponse;
 	}

@@ -36,7 +36,7 @@ public class DescribeSubscriptionInstancesRequest extends RpcAcsRequest<Describe
 
 	private String subscriptionInstanceName;
 	public DescribeSubscriptionInstancesRequest() {
-		super("Dts", "2020-01-01", "DescribeSubscriptionInstances", "dts");
+		super("Dts", "2020-01-01", "DescribeSubscriptionInstances");
 		setMethod(MethodType.POST);
 	}
 

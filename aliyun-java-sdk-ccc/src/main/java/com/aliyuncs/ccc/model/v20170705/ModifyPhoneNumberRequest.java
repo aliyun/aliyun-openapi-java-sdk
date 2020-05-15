@@ -24,15 +24,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ModifyPhoneNumberRequest extends RpcAcsRequest<ModifyPhoneNumberResponse> {
-	
-	public ModifyPhoneNumberRequest() {
-		super("CCC", "2017-07-05", "ModifyPhoneNumber");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String contactFlowId;
 
@@ -43,6 +35,14 @@ public class ModifyPhoneNumberRequest extends RpcAcsRequest<ModifyPhoneNumberRes
 	private String phoneNumberId;
 
 	private List<String> skillGroupIds;
+	public ModifyPhoneNumberRequest() {
+		super("CCC", "2017-07-05", "ModifyPhoneNumber");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getContactFlowId() {
 		return this.contactFlowId;

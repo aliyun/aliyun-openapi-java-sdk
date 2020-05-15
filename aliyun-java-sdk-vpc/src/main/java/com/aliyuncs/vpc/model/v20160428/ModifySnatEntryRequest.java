@@ -43,7 +43,7 @@ public class ModifySnatEntryRequest extends RpcAcsRequest<ModifySnatEntryRespons
 
 	private String snatEntryName;
 	public ModifySnatEntryRequest() {
-		super("Vpc", "2016-04-28", "ModifySnatEntry", "Vpc");
+		super("Vpc", "2016-04-28", "ModifySnatEntry", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

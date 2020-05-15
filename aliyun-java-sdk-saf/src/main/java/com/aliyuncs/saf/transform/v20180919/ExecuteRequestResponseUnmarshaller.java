@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ExecuteRequestResponseUnmarshaller {
 
-	public static ExecuteRequestResponse unmarshall(ExecuteRequestResponse executeRequestResponse, UnmarshallerContext context) {
+	public static ExecuteRequestResponse unmarshall(ExecuteRequestResponse executeRequestResponse, UnmarshallerContext _ctx) {
 		
-		executeRequestResponse.setRequestId(context.stringValue("ExecuteRequestResponse.RequestId"));
-		executeRequestResponse.setCode(context.integerValue("ExecuteRequestResponse.Code"));
-		executeRequestResponse.setMessage(context.stringValue("ExecuteRequestResponse.Message"));
+		executeRequestResponse.setRequestId(_ctx.stringValue("ExecuteRequestResponse.RequestId"));
+		executeRequestResponse.setCode(_ctx.integerValue("ExecuteRequestResponse.Code"));
+		executeRequestResponse.setMessage(_ctx.stringValue("ExecuteRequestResponse.Message"));
 
 		Data data = new Data();
-		data.setTags(context.stringValue("ExecuteRequestResponse.Data.Tags"));
-		data.setScore(context.stringValue("ExecuteRequestResponse.Data.Score"));
-		data.setExtend(context.stringValue("ExecuteRequestResponse.Data.Extend"));
+		data.setTags(_ctx.stringValue("ExecuteRequestResponse.Data.Tags"));
+		data.setScore(_ctx.stringValue("ExecuteRequestResponse.Data.Score"));
+		data.setExtend(_ctx.stringValue("ExecuteRequestResponse.Data.Extend"));
 		executeRequestResponse.setData(data);
 	 
 	 	return executeRequestResponse;

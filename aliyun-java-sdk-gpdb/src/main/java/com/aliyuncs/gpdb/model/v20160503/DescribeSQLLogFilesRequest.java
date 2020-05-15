@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -22,31 +23,32 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class DescribeSQLLogFilesRequest extends RpcAcsRequest<DescribeSQLLogFilesResponse> {
-	
+	   
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String dBInstanceId;
+
+	private String fileName;
 	public DescribeSQLLogFilesRequest() {
 		super("gpdb", "2016-05-03", "DescribeSQLLogFiles", "gpdb");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String fileName;
-
-	private Integer pageSize;
-
-	private String dBInstanceId;
-
-	private Integer pageNumber;
-
-	public String getFileName() {
-		return this.fileName;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		if(fileName != null){
-			putQueryParameter("FileName", fileName);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -72,14 +74,14 @@ public class DescribeSQLLogFilesRequest extends RpcAcsRequest<DescribeSQLLogFile
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getFileName() {
+		return this.fileName;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putQueryParameter("FileName", fileName);
 		}
 	}
 

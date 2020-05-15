@@ -27,7 +27,7 @@ public class DescribeUserClusterHostInstanceRequest extends RpcAcsRequest<Descri
 
 	private Long resourceOwnerId;
 
-	private String pageNumber;
+	private Integer pageNumber;
 
 	private String securityToken;
 
@@ -39,7 +39,7 @@ public class DescribeUserClusterHostInstanceRequest extends RpcAcsRequest<Descri
 
 	private String ownerAccount;
 
-	private String maxRecordsPerPage;
+	private Integer maxRecordsPerPage;
 
 	private String clusterId;
 
@@ -49,7 +49,7 @@ public class DescribeUserClusterHostInstanceRequest extends RpcAcsRequest<Descri
 
 	private String zoneId;
 	public DescribeUserClusterHostInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeUserClusterHostInstance", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeUserClusterHostInstance", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,14 +68,14 @@ public class DescribeUserClusterHostInstanceRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getPageNumber() {
+	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(String pageNumber) {
+	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -134,14 +134,14 @@ public class DescribeUserClusterHostInstanceRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getMaxRecordsPerPage() {
+	public Integer getMaxRecordsPerPage() {
 		return this.maxRecordsPerPage;
 	}
 
-	public void setMaxRecordsPerPage(String maxRecordsPerPage) {
+	public void setMaxRecordsPerPage(Integer maxRecordsPerPage) {
 		this.maxRecordsPerPage = maxRecordsPerPage;
 		if(maxRecordsPerPage != null){
-			putQueryParameter("MaxRecordsPerPage", maxRecordsPerPage);
+			putQueryParameter("MaxRecordsPerPage", maxRecordsPerPage.toString());
 		}
 	}
 

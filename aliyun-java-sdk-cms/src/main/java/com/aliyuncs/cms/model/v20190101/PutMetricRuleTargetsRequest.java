@@ -30,7 +30,7 @@ public class PutMetricRuleTargetsRequest extends RpcAcsRequest<PutMetricRuleTarg
 	private String ruleId;
 	public PutMetricRuleTargetsRequest() {
 		super("Cms", "2019-01-01", "PutMetricRuleTargets", "cms");
-		setMethod(MethodType.PUT);
+		setMethod(MethodType.POST);
 	}
 
 	public List<Targets> getTargetss() {

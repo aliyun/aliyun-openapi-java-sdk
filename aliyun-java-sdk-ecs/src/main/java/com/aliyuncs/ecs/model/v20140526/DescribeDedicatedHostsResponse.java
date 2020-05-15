@@ -125,6 +125,8 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		private List<String> supportedInstanceTypeFamilies;
 
+		private List<String> supportedCustomInstanceTypeFamilies;
+
 		private List<String> supportedInstanceTypesList;
 
 		private Capacity capacity;
@@ -321,6 +323,14 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		public void setSupportedInstanceTypeFamilies(List<String> supportedInstanceTypeFamilies) {
 			this.supportedInstanceTypeFamilies = supportedInstanceTypeFamilies;
+		}
+
+		public List<String> getSupportedCustomInstanceTypeFamilies() {
+			return this.supportedCustomInstanceTypeFamilies;
+		}
+
+		public void setSupportedCustomInstanceTypeFamilies(List<String> supportedCustomInstanceTypeFamilies) {
+			this.supportedCustomInstanceTypeFamilies = supportedCustomInstanceTypeFamilies;
 		}
 
 		public List<String> getSupportedInstanceTypesList() {

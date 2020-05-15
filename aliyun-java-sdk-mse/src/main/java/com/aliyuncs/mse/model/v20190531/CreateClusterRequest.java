@@ -27,29 +27,27 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String clusterSpecification;
 
-	private String likeEngines;
+	private String pubSlbSpecification;
 
-	private String memoryCapacity;
+	private String privateSlbSpecification;
 
-	private String instanceCount;
+	private Integer instanceCount;
 
-	private String requestPars;
-
-	private String diskCapacity;
-
-	private String cpu;
-
-	private String appVersion;
+	private String clusterVersion;
 
 	private String diskType;
 
+	private String vSwitchId;
+
 	private String clusterType;
 
-	private String vSwitchId;
+	private String pubNetworkFlow;
 
 	private String vpcId;
 
 	private String netType;
+
+	private String region;
 	public CreateClusterRequest() {
 		super("mse", "2019-05-31", "CreateCluster", "mse");
 		setMethod(MethodType.POST);
@@ -70,80 +68,47 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public String getLikeEngines() {
-		return this.likeEngines;
+	public String getPubSlbSpecification() {
+		return this.pubSlbSpecification;
 	}
 
-	public void setLikeEngines(String likeEngines) {
-		this.likeEngines = likeEngines;
-		if(likeEngines != null){
-			putBodyParameter("LikeEngines", likeEngines);
+	public void setPubSlbSpecification(String pubSlbSpecification) {
+		this.pubSlbSpecification = pubSlbSpecification;
+		if(pubSlbSpecification != null){
+			putBodyParameter("PubSlbSpecification", pubSlbSpecification);
 		}
 	}
 
-	public String getMemoryCapacity() {
-		return this.memoryCapacity;
+	public String getPrivateSlbSpecification() {
+		return this.privateSlbSpecification;
 	}
 
-	public void setMemoryCapacity(String memoryCapacity) {
-		this.memoryCapacity = memoryCapacity;
-		if(memoryCapacity != null){
-			putBodyParameter("MemoryCapacity", memoryCapacity);
+	public void setPrivateSlbSpecification(String privateSlbSpecification) {
+		this.privateSlbSpecification = privateSlbSpecification;
+		if(privateSlbSpecification != null){
+			putBodyParameter("PrivateSlbSpecification", privateSlbSpecification);
 		}
 	}
 
-	public String getInstanceCount() {
+	public Integer getInstanceCount() {
 		return this.instanceCount;
 	}
 
-	public void setInstanceCount(String instanceCount) {
+	public void setInstanceCount(Integer instanceCount) {
 		this.instanceCount = instanceCount;
 		if(instanceCount != null){
-			putBodyParameter("InstanceCount", instanceCount);
+			putBodyParameter("InstanceCount", instanceCount.toString());
 		}
 	}
 
-	public String getRequestPars() {
-		return this.requestPars;
+	public String getClusterVersion() {
+		return this.clusterVersion;
 	}
 
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
-		}
-	}
-
-	public String getDiskCapacity() {
-		return this.diskCapacity;
-	}
-
-	public void setDiskCapacity(String diskCapacity) {
-		this.diskCapacity = diskCapacity;
-		if(diskCapacity != null){
-			putBodyParameter("DiskCapacity", diskCapacity);
-		}
-	}
-
-	public String getCpu() {
-		return this.cpu;
-	}
-
-	public void setCpu(String cpu) {
-		this.cpu = cpu;
-		if(cpu != null){
-			putBodyParameter("Cpu", cpu);
-		}
-	}
-
-	public String getAppVersion() {
-		return this.appVersion;
-	}
-
-	public void setAppVersion(String appVersion) {
-		this.appVersion = appVersion;
-		if(appVersion != null){
-			putBodyParameter("AppVersion", appVersion);
+	public void setClusterVersion(String clusterVersion) {
+		this.clusterVersion = clusterVersion;
+		if(clusterVersion != null){
+			putBodyParameter("ClusterVersion", clusterVersion);
 		}
 	}
 
@@ -158,6 +123,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putBodyParameter("VSwitchId", vSwitchId);
+		}
+	}
+
 	public String getClusterType() {
 		return this.clusterType;
 	}
@@ -169,14 +145,14 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
+	public String getPubNetworkFlow() {
+		return this.pubNetworkFlow;
 	}
 
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putBodyParameter("VSwitchId", vSwitchId);
+	public void setPubNetworkFlow(String pubNetworkFlow) {
+		this.pubNetworkFlow = pubNetworkFlow;
+		if(pubNetworkFlow != null){
+			putBodyParameter("PubNetworkFlow", pubNetworkFlow);
 		}
 	}
 
@@ -199,6 +175,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.netType = netType;
 		if(netType != null){
 			putBodyParameter("NetType", netType);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putBodyParameter("Region", region);
 		}
 	}
 

@@ -66,6 +66,7 @@ public class DescribeEipAddressesResponseUnmarshaller {
 			eipAddress.setMode(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Mode"));
 			eipAddress.setDeletionProtection(_ctx.booleanValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].DeletionProtection"));
 			eipAddress.setSecondLimited(_ctx.booleanValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].SecondLimited"));
+			eipAddress.setSegmentInstanceId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].SegmentInstanceId"));
 
 			List<String> availableRegions = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].AvailableRegions.Length"); j++) {

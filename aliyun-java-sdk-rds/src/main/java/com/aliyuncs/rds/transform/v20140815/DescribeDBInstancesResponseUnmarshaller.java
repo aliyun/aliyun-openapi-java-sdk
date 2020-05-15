@@ -73,6 +73,9 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setDedicatedHostNameForMaster(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DedicatedHostNameForMaster"));
 			dBInstance.setDedicatedHostNameForSlave(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DedicatedHostNameForSlave"));
 			dBInstance.setDedicatedHostNameForLog(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DedicatedHostNameForLog"));
+			dBInstance.setDedicatedHostZoneIdForMaster(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DedicatedHostZoneIdForMaster"));
+			dBInstance.setDedicatedHostZoneIdForSlave(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DedicatedHostZoneIdForSlave"));
+			dBInstance.setDedicatedHostZoneIdForLog(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DedicatedHostZoneIdForLog"));
 
 			List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new ArrayList<ReadOnlyDBInstanceId>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

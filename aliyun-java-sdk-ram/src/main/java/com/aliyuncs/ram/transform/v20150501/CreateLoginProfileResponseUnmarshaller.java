@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateLoginProfileResponseUnmarshaller {
 
-	public static CreateLoginProfileResponse unmarshall(CreateLoginProfileResponse createLoginProfileResponse, UnmarshallerContext context) {
+	public static CreateLoginProfileResponse unmarshall(CreateLoginProfileResponse createLoginProfileResponse, UnmarshallerContext _ctx) {
 		
-		createLoginProfileResponse.setRequestId(context.stringValue("CreateLoginProfileResponse.RequestId"));
+		createLoginProfileResponse.setRequestId(_ctx.stringValue("CreateLoginProfileResponse.RequestId"));
 
 		LoginProfile loginProfile = new LoginProfile();
-		loginProfile.setUserName(context.stringValue("CreateLoginProfileResponse.LoginProfile.UserName"));
-		loginProfile.setPasswordResetRequired(context.booleanValue("CreateLoginProfileResponse.LoginProfile.PasswordResetRequired"));
-		loginProfile.setMFABindRequired(context.booleanValue("CreateLoginProfileResponse.LoginProfile.MFABindRequired"));
-		loginProfile.setCreateDate(context.stringValue("CreateLoginProfileResponse.LoginProfile.CreateDate"));
+		loginProfile.setUserName(_ctx.stringValue("CreateLoginProfileResponse.LoginProfile.UserName"));
+		loginProfile.setPasswordResetRequired(_ctx.booleanValue("CreateLoginProfileResponse.LoginProfile.PasswordResetRequired"));
+		loginProfile.setMFABindRequired(_ctx.booleanValue("CreateLoginProfileResponse.LoginProfile.MFABindRequired"));
+		loginProfile.setCreateDate(_ctx.stringValue("CreateLoginProfileResponse.LoginProfile.CreateDate"));
 		createLoginProfileResponse.setLoginProfile(loginProfile);
 	 
 	 	return createLoginProfileResponse;

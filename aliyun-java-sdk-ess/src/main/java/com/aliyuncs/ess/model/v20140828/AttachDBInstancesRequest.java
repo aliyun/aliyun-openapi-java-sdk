@@ -16,36 +16,27 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class AttachDBInstancesRequest extends RpcAcsRequest<AttachDBInstancesResponse> {
-	
-	public AttachDBInstancesRequest() {
-		super("Ess", "2014-08-28", "AttachDBInstances", "ess");
-	}
-
-	private String resourceOwnerAccount;
+	   
 
 	private String scalingGroupId;
 
 	private Boolean forceAttach;
 
+	private String resourceOwnerAccount;
+
 	private List<String> dBInstances;
 
 	private Long ownerId;
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
+	public AttachDBInstancesRequest() {
+		super("Ess", "2014-08-28", "AttachDBInstances", "ess");
+		setMethod(MethodType.POST);
 	}
 
 	public String getScalingGroupId() {
@@ -67,6 +58,17 @@ public class AttachDBInstancesRequest extends RpcAcsRequest<AttachDBInstancesRes
 		this.forceAttach = forceAttach;
 		if(forceAttach != null){
 			putQueryParameter("ForceAttach", forceAttach.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

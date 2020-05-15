@@ -54,6 +54,8 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 	private String instanceId;
 
+	private String imageFamily;
+
 	private String imageVersion;
 	public CreateImageRequest() {
 		super("Ecs", "2014-05-26", "CreateImage", "ecs");
@@ -223,6 +225,17 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getImageFamily() {
+		return this.imageFamily;
+	}
+
+	public void setImageFamily(String imageFamily) {
+		this.imageFamily = imageFamily;
+		if(imageFamily != null){
+			putQueryParameter("ImageFamily", imageFamily);
 		}
 	}
 

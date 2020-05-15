@@ -43,7 +43,7 @@ public class ModifyBgpPeerAttributeRequest extends RpcAcsRequest<ModifyBgpPeerAt
 
 	private Long ownerId;
 	public ModifyBgpPeerAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyBgpPeerAttribute", "Vpc");
+		super("Vpc", "2016-04-28", "ModifyBgpPeerAttribute", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,6 +29,8 @@ public class UpdateClusterRequest extends RpcAcsRequest<UpdateClusterResponse> {
 
 	private String clusterId;
 
+	private String instanceId;
+
 	private String requestPars;
 	public UpdateClusterRequest() {
 		super("mse", "2019-05-31", "UpdateCluster", "mse");
@@ -58,6 +60,17 @@ public class UpdateClusterRequest extends RpcAcsRequest<UpdateClusterResponse> {
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putBodyParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
 		}
 	}
 

@@ -16,6 +16,7 @@ package com.aliyuncs.pts.model.v20190810;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.pts.Endpoint;
 
 /**
  * @author auto create
@@ -36,8 +37,12 @@ public class ListReportsRequest extends RpcAcsRequest<ListReportsResponse> {
 
 	private Integer pageNumber;
 	public ListReportsRequest() {
-		super("PTS", "2019-08-10", "ListReports", "1.0.0");
+		super("PTS", "2019-08-10", "ListReports");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSceneType() {

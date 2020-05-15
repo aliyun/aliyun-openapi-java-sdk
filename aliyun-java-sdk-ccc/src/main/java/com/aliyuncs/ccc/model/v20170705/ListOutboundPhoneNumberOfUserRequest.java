@@ -23,19 +23,45 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListOutboundPhoneNumberOfUserRequest extends RpcAcsRequest<ListOutboundPhoneNumberOfUserResponse> {
-	
+	   
+
+	private String userId;
+
+	private Integer pageNumber;
+
+	private String instanceId;
+
+	private Integer pageSize;
 	public ListOutboundPhoneNumberOfUserRequest() {
 		super("CCC", "2017-07-05", "ListOutboundPhoneNumberOfUser");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String instanceId;
+	public String getUserId() {
+		return this.userId;
+	}
 
-	private String userId;
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -48,14 +74,14 @@ public class ListOutboundPhoneNumberOfUserRequest extends RpcAcsRequest<ListOutb
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

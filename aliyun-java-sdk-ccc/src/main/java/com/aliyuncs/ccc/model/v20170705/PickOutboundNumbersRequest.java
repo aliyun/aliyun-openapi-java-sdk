@@ -24,15 +24,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class PickOutboundNumbersRequest extends RpcAcsRequest<PickOutboundNumbersResponse> {
-	
-	public PickOutboundNumbersRequest() {
-		super("CCC", "2017-07-05", "PickOutboundNumbers");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer count;
 
@@ -41,6 +33,14 @@ public class PickOutboundNumbersRequest extends RpcAcsRequest<PickOutboundNumber
 	private List<String> candidateNumbers;
 
 	private String calleeNumber;
+	public PickOutboundNumbersRequest() {
+		super("CCC", "2017-07-05", "PickOutboundNumbers");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getCount() {
 		return this.count;

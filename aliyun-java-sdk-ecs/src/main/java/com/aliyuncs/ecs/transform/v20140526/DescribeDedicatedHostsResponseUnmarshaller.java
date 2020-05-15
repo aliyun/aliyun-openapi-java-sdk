@@ -66,6 +66,12 @@ public class DescribeDedicatedHostsResponseUnmarshaller {
 			}
 			dedicatedHost.setSupportedInstanceTypeFamilies(supportedInstanceTypeFamilies);
 
+			List<String> supportedCustomInstanceTypeFamilies = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SupportedCustomInstanceTypeFamilies.Length"); j++) {
+				supportedCustomInstanceTypeFamilies.add(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SupportedCustomInstanceTypeFamilies["+ j +"]"));
+			}
+			dedicatedHost.setSupportedCustomInstanceTypeFamilies(supportedCustomInstanceTypeFamilies);
+
 			List<String> supportedInstanceTypesList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SupportedInstanceTypesList.Length"); j++) {
 				supportedInstanceTypesList.add(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SupportedInstanceTypesList["+ j +"]"));

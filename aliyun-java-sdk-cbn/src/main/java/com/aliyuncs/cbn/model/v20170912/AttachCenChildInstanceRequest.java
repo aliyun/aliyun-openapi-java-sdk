@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
 /**
@@ -22,22 +23,15 @@ import com.aliyuncs.cbn.Endpoint;
  * @version 
  */
 public class AttachCenChildInstanceRequest extends RpcAcsRequest<AttachCenChildInstanceResponse> {
-	
-	public AttachCenChildInstanceRequest() {
-		super("Cbn", "2017-09-12", "AttachCenChildInstance", "cbn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String childInstanceId;
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String cenId;
+
+	private String childInstanceRegionId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
@@ -47,17 +41,14 @@ public class AttachCenChildInstanceRequest extends RpcAcsRequest<AttachCenChildI
 
 	private Long childInstanceOwnerId;
 
-	private String childInstanceRegionId;
-
-	public String getChildInstanceId() {
-		return this.childInstanceId;
-	}
-
-	public void setChildInstanceId(String childInstanceId) {
-		this.childInstanceId = childInstanceId;
-		if(childInstanceId != null){
-			putQueryParameter("ChildInstanceId", childInstanceId);
-		}
+	private String childInstanceId;
+	public AttachCenChildInstanceRequest() {
+		super("Cbn", "2017-09-12", "AttachCenChildInstance", "Cbn");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -71,17 +62,6 @@ public class AttachCenChildInstanceRequest extends RpcAcsRequest<AttachCenChildI
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getCenId() {
 		return this.cenId;
 	}
@@ -90,6 +70,28 @@ public class AttachCenChildInstanceRequest extends RpcAcsRequest<AttachCenChildI
 		this.cenId = cenId;
 		if(cenId != null){
 			putQueryParameter("CenId", cenId);
+		}
+	}
+
+	public String getChildInstanceRegionId() {
+		return this.childInstanceRegionId;
+	}
+
+	public void setChildInstanceRegionId(String childInstanceRegionId) {
+		this.childInstanceRegionId = childInstanceRegionId;
+		if(childInstanceRegionId != null){
+			putQueryParameter("ChildInstanceRegionId", childInstanceRegionId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -137,14 +139,14 @@ public class AttachCenChildInstanceRequest extends RpcAcsRequest<AttachCenChildI
 		}
 	}
 
-	public String getChildInstanceRegionId() {
-		return this.childInstanceRegionId;
+	public String getChildInstanceId() {
+		return this.childInstanceId;
 	}
 
-	public void setChildInstanceRegionId(String childInstanceRegionId) {
-		this.childInstanceRegionId = childInstanceRegionId;
-		if(childInstanceRegionId != null){
-			putQueryParameter("ChildInstanceRegionId", childInstanceRegionId);
+	public void setChildInstanceId(String childInstanceId) {
+		this.childInstanceId = childInstanceId;
+		if(childInstanceId != null){
+			putQueryParameter("ChildInstanceId", childInstanceId);
 		}
 	}
 

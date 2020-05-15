@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListBasicStatisticsReportSubItemsRequest extends RpcAcsRequest<ListBasicStatisticsReportSubItemsResponse> {
-	
-	public ListBasicStatisticsReportSubItemsRequest() {
-		super("CCC", "2017-07-05", "ListBasicStatisticsReportSubItems");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String title;
 
@@ -42,6 +34,14 @@ public class ListBasicStatisticsReportSubItemsRequest extends RpcAcsRequest<List
 	private String jobGroupId;
 
 	private Integer pageSize;
+	public ListBasicStatisticsReportSubItemsRequest() {
+		super("CCC", "2017-07-05", "ListBasicStatisticsReportSubItems");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTitle() {
 		return this.title;

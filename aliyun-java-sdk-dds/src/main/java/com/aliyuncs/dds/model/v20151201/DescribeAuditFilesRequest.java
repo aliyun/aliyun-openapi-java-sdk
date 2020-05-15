@@ -43,7 +43,7 @@ public class DescribeAuditFilesRequest extends RpcAcsRequest<DescribeAuditFilesR
 
 	private Long ownerId;
 	public DescribeAuditFilesRequest() {
-		super("Dds", "2015-12-01", "DescribeAuditFiles", "Dds");
+		super("Dds", "2015-12-01", "DescribeAuditFiles", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -21,18 +21,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetRoleResponseUnmarshaller {
 
-	public static GetRoleResponse unmarshall(GetRoleResponse getRoleResponse, UnmarshallerContext context) {
+	public static GetRoleResponse unmarshall(GetRoleResponse getRoleResponse, UnmarshallerContext _ctx) {
 		
-		getRoleResponse.setRequestId(context.stringValue("GetRoleResponse.RequestId"));
+		getRoleResponse.setRequestId(_ctx.stringValue("GetRoleResponse.RequestId"));
 
 		Role role = new Role();
-		role.setRoleId(context.stringValue("GetRoleResponse.Role.RoleId"));
-		role.setRoleName(context.stringValue("GetRoleResponse.Role.RoleName"));
-		role.setArn(context.stringValue("GetRoleResponse.Role.Arn"));
-		role.setDescription(context.stringValue("GetRoleResponse.Role.Description"));
-		role.setAssumeRolePolicyDocument(context.stringValue("GetRoleResponse.Role.AssumeRolePolicyDocument"));
-		role.setCreateDate(context.stringValue("GetRoleResponse.Role.CreateDate"));
-		role.setUpdateDate(context.stringValue("GetRoleResponse.Role.UpdateDate"));
+		role.setRoleId(_ctx.stringValue("GetRoleResponse.Role.RoleId"));
+		role.setRoleName(_ctx.stringValue("GetRoleResponse.Role.RoleName"));
+		role.setArn(_ctx.stringValue("GetRoleResponse.Role.Arn"));
+		role.setDescription(_ctx.stringValue("GetRoleResponse.Role.Description"));
+		role.setAssumeRolePolicyDocument(_ctx.stringValue("GetRoleResponse.Role.AssumeRolePolicyDocument"));
+		role.setCreateDate(_ctx.stringValue("GetRoleResponse.Role.CreateDate"));
+		role.setUpdateDate(_ctx.stringValue("GetRoleResponse.Role.UpdateDate"));
+		role.setMaxSessionDuration(_ctx.longValue("GetRoleResponse.Role.MaxSessionDuration"));
 		getRoleResponse.setRole(role);
 	 
 	 	return getRoleResponse;

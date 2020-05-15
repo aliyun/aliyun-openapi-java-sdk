@@ -32,7 +32,7 @@ public class CheckReceivingDetailRequest extends RpcAcsRequest<CheckReceivingDet
 
 	private String channelId;
 	public CheckReceivingDetailRequest() {
-		super("UniMkt", "2018-12-12", "CheckReceivingDetail", "1.0.0");
+		super("UniMkt", "2018-12-12", "CheckReceivingDetail", "uniMkt");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

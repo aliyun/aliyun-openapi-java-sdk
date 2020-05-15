@@ -33,6 +33,8 @@ public class CreateBgpPeerRequest extends RpcAcsRequest<CreateBgpPeerResponse> {
 
 	private String peerIpAddress;
 
+	private String ipVersion;
+
 	private Boolean enableBfd;
 
 	private String resourceOwnerAccount;
@@ -41,7 +43,7 @@ public class CreateBgpPeerRequest extends RpcAcsRequest<CreateBgpPeerResponse> {
 
 	private Long ownerId;
 	public CreateBgpPeerRequest() {
-		super("Vpc", "2016-04-28", "CreateBgpPeer", "Vpc");
+		super("Vpc", "2016-04-28", "CreateBgpPeer", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -90,6 +92,17 @@ public class CreateBgpPeerRequest extends RpcAcsRequest<CreateBgpPeerResponse> {
 		this.peerIpAddress = peerIpAddress;
 		if(peerIpAddress != null){
 			putQueryParameter("PeerIpAddress", peerIpAddress);
+		}
+	}
+
+	public String getIpVersion() {
+		return this.ipVersion;
+	}
+
+	public void setIpVersion(String ipVersion) {
+		this.ipVersion = ipVersion;
+		if(ipVersion != null){
+			putQueryParameter("IpVersion", ipVersion);
 		}
 	}
 

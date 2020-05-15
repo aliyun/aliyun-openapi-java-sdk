@@ -41,7 +41,7 @@ public class ModifyInstanceMinorVersionRequest extends RpcAcsRequest<ModifyInsta
 
 	private String instanceId;
 	public ModifyInstanceMinorVersionRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

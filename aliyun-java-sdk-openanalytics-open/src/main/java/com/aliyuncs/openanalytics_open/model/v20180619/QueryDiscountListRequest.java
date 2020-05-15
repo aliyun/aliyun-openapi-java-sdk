@@ -29,7 +29,7 @@ public class QueryDiscountListRequest extends RpcAcsRequest<QueryDiscountListRes
 
 	private Integer pageNumber;
 	public QueryDiscountListRequest() {
-		super("openanalytics-open", "2018-06-19", "QueryDiscountList", "openanalytics");
+		super("openanalytics-open", "2018-06-19", "QueryDiscountList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

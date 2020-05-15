@@ -22,7 +22,7 @@ public class UntagResourceResponseUnmarshaller {
 
 	public static UntagResourceResponse unmarshall(UntagResourceResponse untagResourceResponse, UnmarshallerContext _ctx) {
 		
-		untagResourceResponse.setKeyId(_ctx.stringValue("UntagResourceResponse.KeyId"));
+		untagResourceResponse.setRequestId(_ctx.stringValue("UntagResourceResponse.RequestId"));
 	 
 	 	return untagResourceResponse;
 	}

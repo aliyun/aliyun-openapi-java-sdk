@@ -47,7 +47,7 @@ public class LogicalDeleteResourceRequest extends RpcAcsRequest<LogicalDeleteRes
 
 	private String taskIdentifier;
 	public LogicalDeleteResourceRequest() {
-		super("Mts", "2014-06-18", "LogicalDeleteResource", "mts");
+		super("Mts", "2014-06-18", "LogicalDeleteResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

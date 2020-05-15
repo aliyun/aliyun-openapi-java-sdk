@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateScalingConfigurationResponseUnmarshaller {
 
-	public static CreateScalingConfigurationResponse unmarshall(CreateScalingConfigurationResponse createScalingConfigurationResponse, UnmarshallerContext context) {
+	public static CreateScalingConfigurationResponse unmarshall(CreateScalingConfigurationResponse createScalingConfigurationResponse, UnmarshallerContext _ctx) {
 		
-		createScalingConfigurationResponse.setRequestId(context.stringValue("CreateScalingConfigurationResponse.RequestId"));
-		createScalingConfigurationResponse.setScalingConfigurationId(context.stringValue("CreateScalingConfigurationResponse.ScalingConfigurationId"));
+		createScalingConfigurationResponse.setRequestId(_ctx.stringValue("CreateScalingConfigurationResponse.RequestId"));
+		createScalingConfigurationResponse.setScalingConfigurationId(_ctx.stringValue("CreateScalingConfigurationResponse.ScalingConfigurationId"));
 	 
 	 	return createScalingConfigurationResponse;
 	}

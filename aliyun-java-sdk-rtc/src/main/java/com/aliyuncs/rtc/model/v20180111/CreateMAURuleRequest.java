@@ -37,7 +37,7 @@ public class CreateMAURuleRequest extends RpcAcsRequest<CreateMAURuleResponse> {
 
 	private String callBack;
 	public CreateMAURuleRequest() {
-		super("rtc", "2018-01-11", "CreateMAURule");
+		super("rtc", "2018-01-11", "CreateMAURule", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

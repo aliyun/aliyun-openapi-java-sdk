@@ -40,6 +40,7 @@ public class GetResultResponseUnmarshaller {
 		getResultResponse.setCount(_ctx.integerValue("GetResultResponse.Count"));
 		getResultResponse.setPageSize(_ctx.integerValue("GetResultResponse.PageSize"));
 		getResultResponse.setPageNumber(_ctx.integerValue("GetResultResponse.PageNumber"));
+		getResultResponse.setResultCountId(_ctx.stringValue("GetResultResponse.ResultCountId"));
 
 		List<ResultInfo> data = new ArrayList<ResultInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetResultResponse.Data.Length"); i++) {
@@ -68,6 +69,10 @@ public class GetResultResponseUnmarshaller {
 			recording.setCallee(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Callee"));
 			recording.setCallTime(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.CallTime"));
 			recording.setCallType(_ctx.integerValue("GetResultResponse.Data["+ i +"].Recording.CallType"));
+			recording.setBusiness(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Business"));
+			recording.setRemark1(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark1"));
+			recording.setRemark2(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark2"));
+			recording.setRemark3(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark3"));
 			resultInfo.setRecording(recording);
 
 			Agent agent = new Agent();

@@ -39,7 +39,7 @@ public class QueryDeviceByStatusRequest extends RpcAcsRequest<QueryDeviceByStatu
 
 	private Integer status;
 	public QueryDeviceByStatusRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceByStatus", "iot");
+		super("Iot", "2018-01-20", "QueryDeviceByStatus", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

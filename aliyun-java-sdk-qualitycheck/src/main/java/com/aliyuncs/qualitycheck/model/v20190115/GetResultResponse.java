@@ -39,6 +39,8 @@ public class GetResultResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
+	private String resultCountId;
+
 	private List<ResultInfo> data;
 
 	public String getRequestId() {
@@ -95,6 +97,14 @@ public class GetResultResponse extends AcsResponse {
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
+	}
+
+	public String getResultCountId() {
+		return this.resultCountId;
+	}
+
+	public void setResultCountId(String resultCountId) {
+		this.resultCountId = resultCountId;
 	}
 
 	public List<ResultInfo> getData() {
@@ -556,6 +566,14 @@ public class GetResultResponse extends AcsResponse {
 
 			private Integer callType;
 
+			private String business;
+
+			private String remark1;
+
+			private String remark2;
+
+			private String remark3;
+
 			public String getId() {
 				return this.id;
 			}
@@ -588,26 +606,10 @@ public class GetResultResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public String getBizUrl() {
-				return this.url;
-			}
-
-			public void setBizUrl(String url) {
-				this.url = url;
-			}
-
-			/**
-			 * @deprecated use getBizUrl instead of this.
-			 */
-			@Deprecated
 			public String getUrl() {
 				return this.url;
 			}
 
-			/**
-			 * @deprecated use setBizUrl instead of this.
-			 */
-			@Deprecated
 			public void setUrl(String url) {
 				this.url = url;
 			}
@@ -658,6 +660,38 @@ public class GetResultResponse extends AcsResponse {
 
 			public void setCallType(Integer callType) {
 				this.callType = callType;
+			}
+
+			public String getBusiness() {
+				return this.business;
+			}
+
+			public void setBusiness(String business) {
+				this.business = business;
+			}
+
+			public String getRemark1() {
+				return this.remark1;
+			}
+
+			public void setRemark1(String remark1) {
+				this.remark1 = remark1;
+			}
+
+			public String getRemark2() {
+				return this.remark2;
+			}
+
+			public void setRemark2(String remark2) {
+				this.remark2 = remark2;
+			}
+
+			public String getRemark3() {
+				return this.remark3;
+			}
+
+			public void setRemark3(String remark3) {
+				this.remark3 = remark3;
 			}
 		}
 

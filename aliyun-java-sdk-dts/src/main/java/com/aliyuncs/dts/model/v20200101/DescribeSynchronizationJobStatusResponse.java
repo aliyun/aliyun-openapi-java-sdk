@@ -51,6 +51,8 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 	private String checkpoint;
 
+	private Long delayMillis;
+
 	private List<SynchronizationObject> synchronizationObjects;
 
 	private SourceEndpoint sourceEndpoint;
@@ -169,6 +171,14 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 	public void setCheckpoint(String checkpoint) {
 		this.checkpoint = checkpoint;
+	}
+
+	public Long getDelayMillis() {
+		return this.delayMillis;
+	}
+
+	public void setDelayMillis(Long delayMillis) {
+		this.delayMillis = delayMillis;
 	}
 
 	public List<SynchronizationObject> getSynchronizationObjects() {
@@ -604,6 +614,8 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 		private String checkpoint;
 
+		private Long delayMillis;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -642,6 +654,14 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 		public void setCheckpoint(String checkpoint) {
 			this.checkpoint = checkpoint;
+		}
+
+		public Long getDelayMillis() {
+			return this.delayMillis;
+		}
+
+		public void setDelayMillis(Long delayMillis) {
+			this.delayMillis = delayMillis;
 		}
 	}
 

@@ -31,7 +31,7 @@ public class DescribeProductRequest extends RpcAcsRequest<DescribeProductRespons
 
 	private String aliUid;
 	public DescribeProductRequest() {
-		super("Market", "2015-11-01", "DescribeProduct", "yunmarket");
+		super("Market", "2015-11-01", "DescribeProduct");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

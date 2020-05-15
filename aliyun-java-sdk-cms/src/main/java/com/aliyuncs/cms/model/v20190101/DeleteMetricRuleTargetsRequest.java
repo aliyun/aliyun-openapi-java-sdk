@@ -30,7 +30,7 @@ public class DeleteMetricRuleTargetsRequest extends RpcAcsRequest<DeleteMetricRu
 	private String ruleId;
 	public DeleteMetricRuleTargetsRequest() {
 		super("Cms", "2019-01-01", "DeleteMetricRuleTargets", "cms");
-		setMethod(MethodType.PUT);
+		setMethod(MethodType.POST);
 	}
 
 	public List<String> getTargetIdss() {

@@ -24,9 +24,15 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class StartJobRequest extends RoaAcsRequest<StartJobResponse> {
-	
+	   
+
+	private String projectName;
+
+	private String parameterJson;
+
+	private String jobName;
 	public StartJobRequest() {
-		super("foas", "2018-11-11", "StartJob");
+		super("foas", "2018-11-11", "StartJob", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instance");
 		setMethod(MethodType.POST);
@@ -35,12 +41,6 @@ public class StartJobRequest extends RoaAcsRequest<StartJobResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String projectName;
-
-	private String parameterJson;
-
-	private String jobName;
 
 	public String getProjectName() {
 		return this.projectName;

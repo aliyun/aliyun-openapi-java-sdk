@@ -34,6 +34,12 @@ public class ReplaceOssFileResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private Boolean finished;
+
+	private String jobId;
+
+	private Integer timeout;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -72,6 +78,30 @@ public class ReplaceOssFileResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Boolean getFinished() {
+		return this.finished;
+	}
+
+	public void setFinished(Boolean finished) {
+		this.finished = finished;
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+	}
+
+	public Integer getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(Integer timeout) {
+		this.timeout = timeout;
 	}
 
 	@Override

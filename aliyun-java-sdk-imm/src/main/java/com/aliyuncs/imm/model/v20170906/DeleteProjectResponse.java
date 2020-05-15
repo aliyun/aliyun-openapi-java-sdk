@@ -38,4 +38,9 @@ public class DeleteProjectResponse extends AcsResponse {
 	public DeleteProjectResponse getInstance(UnmarshallerContext context) {
 		return	DeleteProjectResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

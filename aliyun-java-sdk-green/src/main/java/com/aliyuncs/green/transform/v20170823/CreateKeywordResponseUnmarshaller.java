@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.green.model.v20170823.CreateKeywordResponse;
+import com.aliyuncs.green.model.v20170823.CreateKeywordResponse.ValidKeyword;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,9 +35,13 @@ public class CreateKeywordResponseUnmarshaller {
 		}
 		createKeywordResponse.setInvalidKeywordList(invalidKeywordList);
 
-		List<String> validKeywordList = new ArrayList<String>();
+		List<ValidKeyword> validKeywordList = new ArrayList<ValidKeyword>();
 		for (int i = 0; i < _ctx.lengthValue("CreateKeywordResponse.validKeywordList.Length"); i++) {
-			validKeywordList.add(_ctx.stringValue("CreateKeywordResponse.validKeywordList["+ i +"]"));
+			ValidKeyword validKeyword = new ValidKeyword();
+			validKeyword.setId(_ctx.integerValue("CreateKeywordResponse.validKeywordList["+ i +"].id"));
+			validKeyword.setKeyword(_ctx.stringValue("CreateKeywordResponse.validKeywordList["+ i +"].keyword"));
+
+			validKeywordList.add(validKeyword);
 		}
 		createKeywordResponse.setValidKeywordList(validKeywordList);
 	 

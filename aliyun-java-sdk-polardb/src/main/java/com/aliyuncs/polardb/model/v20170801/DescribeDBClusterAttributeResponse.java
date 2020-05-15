@@ -73,6 +73,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String resourceGroupId;
 
+	private Long dataLevel1BackupChainSize;
+
 	private List<Tag> tags;
 
 	private List<DBNode> dBNodes;
@@ -267,6 +269,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setResourceGroupId(String resourceGroupId) {
 		this.resourceGroupId = resourceGroupId;
+	}
+
+	public Long getDataLevel1BackupChainSize() {
+		return this.dataLevel1BackupChainSize;
+	}
+
+	public void setDataLevel1BackupChainSize(Long dataLevel1BackupChainSize) {
+		this.dataLevel1BackupChainSize = dataLevel1BackupChainSize;
 	}
 
 	public List<Tag> getTags() {

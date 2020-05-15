@@ -1,3 +1,19 @@
+2020-04-21 Version: 1.0.4
+- Supported PackageDesign Apis.
+- Supported Api ListPackageDesignModelTypes.
+- Supported Api PreviewModelForPackageDesign.
+- Supported Api RenderImageForPackageDesign.
+- Supported Api GetRenderResult.
+
+2020-04-14 Version: 1.0.3
+- Supported CreateSegmentBodyJob.
+
+2020-03-12 Version: 1.0.2
+- Add new Api SegmentBody.
+
+2020-03-11 Version: 1.0.1
+- Add new Api SegmentBody.
+
 2019-10-09 Version: 1.0.0
 - Support API RecognizeImageColor.
 - Support API DetectImageElements.

@@ -27,6 +27,8 @@ public class RunContactReviewResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String rawContractContent;
+
 	private ContactContent contactContent;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class RunContactReviewResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getRawContractContent() {
+		return this.rawContractContent;
+	}
+
+	public void setRawContractContent(String rawContractContent) {
+		this.rawContractContent = rawContractContent;
 	}
 
 	public ContactContent getContactContent() {

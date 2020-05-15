@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -22,35 +23,36 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
-	
+	   
+
+	private String accountDescription;
+
+	private String accountName;
+
+	private String dBInstanceId;
+
+	private Long ownerId;
+
+	private String accountPassword;
+
+	private String databaseName;
 	public CreateAccountRequest() {
 		super("gpdb", "2016-05-03", "CreateAccount", "gpdb");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String accountPassword;
-
-	private String accountName;
-
-	private String databaseName;
-
-	private String dBInstanceId;
-
-	private Long ownerId;
-
-	private String accountDescription;
-
-	public String getAccountPassword() {
-		return this.accountPassword;
+	public String getAccountDescription() {
+		return this.accountDescription;
 	}
 
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
+	public void setAccountDescription(String accountDescription) {
+		this.accountDescription = accountDescription;
+		if(accountDescription != null){
+			putQueryParameter("AccountDescription", accountDescription);
 		}
 	}
 
@@ -62,17 +64,6 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
-		}
-	}
-
-	public String getDatabaseName() {
-		return this.databaseName;
-	}
-
-	public void setDatabaseName(String databaseName) {
-		this.databaseName = databaseName;
-		if(databaseName != null){
-			putQueryParameter("DatabaseName", databaseName);
 		}
 	}
 
@@ -98,14 +89,25 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getAccountDescription() {
-		return this.accountDescription;
+	public String getAccountPassword() {
+		return this.accountPassword;
 	}
 
-	public void setAccountDescription(String accountDescription) {
-		this.accountDescription = accountDescription;
-		if(accountDescription != null){
-			putQueryParameter("AccountDescription", accountDescription);
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+		if(accountPassword != null){
+			putQueryParameter("AccountPassword", accountPassword);
+		}
+	}
+
+	public String getDatabaseName() {
+		return this.databaseName;
+	}
+
+	public void setDatabaseName(String databaseName) {
+		this.databaseName = databaseName;
+		if(databaseName != null){
+			putQueryParameter("DatabaseName", databaseName);
 		}
 	}
 

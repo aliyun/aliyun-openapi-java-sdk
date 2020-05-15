@@ -29,7 +29,7 @@ public class AsyncTaskCancelRequest extends RpcAcsRequest<AsyncTaskCancelRespons
 
 	private Long taskId;
 	public AsyncTaskCancelRequest() {
-		super("Drds", "2019-01-23", "AsyncTaskCancel", "drds");
+		super("Drds", "2019-01-23", "AsyncTaskCancel", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

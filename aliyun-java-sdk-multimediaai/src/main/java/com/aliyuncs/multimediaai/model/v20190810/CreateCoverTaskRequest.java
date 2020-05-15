@@ -35,7 +35,7 @@ public class CreateCoverTaskRequest extends RpcAcsRequest<CreateCoverTaskRespons
 
 	private String applicationId;
 	public CreateCoverTaskRequest() {
-		super("multimediaai", "2019-08-10", "CreateCoverTask", "multimediaai");
+		super("multimediaai", "2019-08-10", "CreateCoverTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

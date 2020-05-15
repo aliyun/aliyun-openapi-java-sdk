@@ -27,6 +27,8 @@ public class UploadImageToLibRequest extends RpcAcsRequest<UploadImageToLibRespo
 
 	private String images;
 
+	private String urls;
+
 	private String sourceIp;
 
 	private Integer imageLibId;
@@ -47,6 +49,17 @@ public class UploadImageToLibRequest extends RpcAcsRequest<UploadImageToLibRespo
 		this.images = images;
 		if(images != null){
 			putQueryParameter("Images", images);
+		}
+	}
+
+	public String getUrls() {
+		return this.urls;
+	}
+
+	public void setUrls(String urls) {
+		this.urls = urls;
+		if(urls != null){
+			putQueryParameter("Urls", urls);
 		}
 	}
 

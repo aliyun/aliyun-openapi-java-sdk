@@ -73,6 +73,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Integer eniPrivateIpAddressQuantity;
 
+		private Integer eniIpv6AddressQuantity;
+
 		private Integer instanceBandwidthRx;
 
 		private Integer instanceBandwidthTx;
@@ -82,6 +84,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 		private Long instancePpsTx;
 
 		private String instanceFamilyLevel;
+
+		private Integer totalEniQueueQuantity;
 
 		public String getInstanceTypeId() {
 			return this.instanceTypeId;
@@ -187,6 +191,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.eniPrivateIpAddressQuantity = eniPrivateIpAddressQuantity;
 		}
 
+		public Integer getEniIpv6AddressQuantity() {
+			return this.eniIpv6AddressQuantity;
+		}
+
+		public void setEniIpv6AddressQuantity(Integer eniIpv6AddressQuantity) {
+			this.eniIpv6AddressQuantity = eniIpv6AddressQuantity;
+		}
+
 		public Integer getInstanceBandwidthRx() {
 			return this.instanceBandwidthRx;
 		}
@@ -225,6 +237,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setInstanceFamilyLevel(String instanceFamilyLevel) {
 			this.instanceFamilyLevel = instanceFamilyLevel;
+		}
+
+		public Integer getTotalEniQueueQuantity() {
+			return this.totalEniQueueQuantity;
+		}
+
+		public void setTotalEniQueueQuantity(Integer totalEniQueueQuantity) {
+			this.totalEniQueueQuantity = totalEniQueueQuantity;
 		}
 	}
 

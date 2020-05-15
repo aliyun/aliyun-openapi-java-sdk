@@ -53,7 +53,7 @@ public class DescribeRouteEntryListRequest extends RpcAcsRequest<DescribeRouteEn
 
 	private String routeEntryId;
 	public DescribeRouteEntryListRequest() {
-		super("Vpc", "2016-04-28", "DescribeRouteEntryList", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeRouteEntryList", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

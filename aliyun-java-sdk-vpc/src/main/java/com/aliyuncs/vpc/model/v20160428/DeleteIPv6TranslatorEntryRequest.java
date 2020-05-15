@@ -39,7 +39,7 @@ public class DeleteIPv6TranslatorEntryRequest extends RpcAcsRequest<DeleteIPv6Tr
 
 	private String ipv6TranslatorId;
 	public DeleteIPv6TranslatorEntryRequest() {
-		super("Vpc", "2016-04-28", "DeleteIPv6TranslatorEntry", "Vpc");
+		super("Vpc", "2016-04-28", "DeleteIPv6TranslatorEntry", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,7 +43,7 @@ public class RevokeInstanceFromCenRequest extends RpcAcsRequest<RevokeInstanceFr
 
 	private String instanceId;
 	public RevokeInstanceFromCenRequest() {
-		super("Vpc", "2016-04-28", "RevokeInstanceFromCen", "Vpc");
+		super("Vpc", "2016-04-28", "RevokeInstanceFromCen", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

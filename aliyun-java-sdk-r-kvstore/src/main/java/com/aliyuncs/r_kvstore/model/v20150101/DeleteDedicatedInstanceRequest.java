@@ -41,7 +41,7 @@ public class DeleteDedicatedInstanceRequest extends RpcAcsRequest<DeleteDedicate
 
 	private String zoneId;
 	public DeleteDedicatedInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteDedicatedInstance", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DeleteDedicatedInstance", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

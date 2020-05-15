@@ -41,7 +41,7 @@ public class ModifyDBInstanceMaintainTimeRequest extends RpcAcsRequest<ModifyDBI
 
 	private String maintainEndTime;
 	public ModifyDBInstanceMaintainTimeRequest() {
-		super("Dds", "2015-12-01", "ModifyDBInstanceMaintainTime", "Dds");
+		super("Dds", "2015-12-01", "ModifyDBInstanceMaintainTime", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

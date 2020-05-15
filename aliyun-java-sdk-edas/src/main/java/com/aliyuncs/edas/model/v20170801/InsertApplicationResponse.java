@@ -151,4 +151,9 @@ public class InsertApplicationResponse extends AcsResponse {
 	public InsertApplicationResponse getInstance(UnmarshallerContext context) {
 		return	InsertApplicationResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

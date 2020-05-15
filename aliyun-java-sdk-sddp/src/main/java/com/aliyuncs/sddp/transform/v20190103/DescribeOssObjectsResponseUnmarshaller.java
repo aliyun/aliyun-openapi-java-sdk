@@ -24,24 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeOssObjectsResponseUnmarshaller {
 
-	public static DescribeOssObjectsResponse unmarshall(DescribeOssObjectsResponse describeOssObjectsResponse, UnmarshallerContext context) {
+	public static DescribeOssObjectsResponse unmarshall(DescribeOssObjectsResponse describeOssObjectsResponse, UnmarshallerContext _ctx) {
 		
-		describeOssObjectsResponse.setRequestId(context.stringValue("DescribeOssObjectsResponse.RequestId"));
-		describeOssObjectsResponse.setPageSize(context.integerValue("DescribeOssObjectsResponse.PageSize"));
-		describeOssObjectsResponse.setCurrentPage(context.integerValue("DescribeOssObjectsResponse.CurrentPage"));
-		describeOssObjectsResponse.setTotalCount(context.integerValue("DescribeOssObjectsResponse.TotalCount"));
+		describeOssObjectsResponse.setRequestId(_ctx.stringValue("DescribeOssObjectsResponse.RequestId"));
+		describeOssObjectsResponse.setPageSize(_ctx.integerValue("DescribeOssObjectsResponse.PageSize"));
+		describeOssObjectsResponse.setCurrentPage(_ctx.integerValue("DescribeOssObjectsResponse.CurrentPage"));
+		describeOssObjectsResponse.setTotalCount(_ctx.integerValue("DescribeOssObjectsResponse.TotalCount"));
 
 		List<Column> items = new ArrayList<Column>();
-		for (int i = 0; i < context.lengthValue("DescribeOssObjectsResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeOssObjectsResponse.Items.Length"); i++) {
 			Column column = new Column();
-			column.setId(context.longValue("DescribeOssObjectsResponse.Items["+ i +"].Id"));
-			column.setName(context.stringValue("DescribeOssObjectsResponse.Items["+ i +"].Name"));
-			column.setRegionId(context.stringValue("DescribeOssObjectsResponse.Items["+ i +"].RegionId"));
-			column.setRiskLevelId(context.longValue("DescribeOssObjectsResponse.Items["+ i +"].RiskLevelId"));
-			column.setCategory(context.longValue("DescribeOssObjectsResponse.Items["+ i +"].Category"));
-			column.setInstanceId(context.longValue("DescribeOssObjectsResponse.Items["+ i +"].InstanceId"));
-			column.setFileId(context.stringValue("DescribeOssObjectsResponse.Items["+ i +"].FileId"));
-			column.setRiskLevelName(context.longValue("DescribeOssObjectsResponse.Items["+ i +"].RiskLevelName"));
+			column.setId(_ctx.stringValue("DescribeOssObjectsResponse.Items["+ i +"].Id"));
+			column.setName(_ctx.stringValue("DescribeOssObjectsResponse.Items["+ i +"].Name"));
+			column.setRegionId(_ctx.stringValue("DescribeOssObjectsResponse.Items["+ i +"].RegionId"));
+			column.setRiskLevelId(_ctx.longValue("DescribeOssObjectsResponse.Items["+ i +"].RiskLevelId"));
+			column.setCategory(_ctx.longValue("DescribeOssObjectsResponse.Items["+ i +"].Category"));
+			column.setInstanceId(_ctx.longValue("DescribeOssObjectsResponse.Items["+ i +"].InstanceId"));
+			column.setFileId(_ctx.stringValue("DescribeOssObjectsResponse.Items["+ i +"].FileId"));
+			column.setRiskLevelName(_ctx.stringValue("DescribeOssObjectsResponse.Items["+ i +"].RiskLevelName"));
+			column.setSize(_ctx.longValue("DescribeOssObjectsResponse.Items["+ i +"].Size"));
+			column.setSensitiveCount(_ctx.integerValue("DescribeOssObjectsResponse.Items["+ i +"].SensitiveCount"));
+			column.setRuleCount(_ctx.integerValue("DescribeOssObjectsResponse.Items["+ i +"].RuleCount"));
+			column.setCategoryName(_ctx.stringValue("DescribeOssObjectsResponse.Items["+ i +"].CategoryName"));
+			column.setBucketName(_ctx.stringValue("DescribeOssObjectsResponse.Items["+ i +"].BucketName"));
 
 			items.add(column);
 		}

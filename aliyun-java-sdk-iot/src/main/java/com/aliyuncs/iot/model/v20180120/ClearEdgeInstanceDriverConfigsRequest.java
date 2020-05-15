@@ -25,29 +25,18 @@ import com.aliyuncs.iot.Endpoint;
 public class ClearEdgeInstanceDriverConfigsRequest extends RpcAcsRequest<ClearEdgeInstanceDriverConfigsResponse> {
 	   
 
-	private String instanceId;
-
 	private String driverId;
 
 	private String iotInstanceId;
+
+	private String instanceId;
 	public ClearEdgeInstanceDriverConfigsRequest() {
-		super("Iot", "2018-01-20", "ClearEdgeInstanceDriverConfigs", "iot");
+		super("Iot", "2018-01-20", "ClearEdgeInstanceDriverConfigs", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
 	}
 
 	public String getDriverId() {
@@ -69,6 +58,17 @@ public class ClearEdgeInstanceDriverConfigsRequest extends RpcAcsRequest<ClearEd
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

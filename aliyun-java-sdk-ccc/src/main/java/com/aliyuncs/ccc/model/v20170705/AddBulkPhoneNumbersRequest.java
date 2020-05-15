@@ -24,15 +24,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class AddBulkPhoneNumbersRequest extends RpcAcsRequest<AddBulkPhoneNumbersResponse> {
-	
-	public AddBulkPhoneNumbersRequest() {
-		super("CCC", "2017-07-05", "AddBulkPhoneNumbers");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String contactFlowId;
 
@@ -43,6 +35,14 @@ public class AddBulkPhoneNumbersRequest extends RpcAcsRequest<AddBulkPhoneNumber
 	private String instanceId;
 
 	private List<String> skillGroupIds;
+	public AddBulkPhoneNumbersRequest() {
+		super("CCC", "2017-07-05", "AddBulkPhoneNumbers");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getContactFlowId() {
 		return this.contactFlowId;

@@ -32,7 +32,7 @@ public class FindProjectListRequest extends RpcAcsRequest<FindProjectListRespons
 
 	private Integer pageNum;
 	public FindProjectListRequest() {
-		super("CSB", "2017-11-18", "FindProjectList", "csb");
+		super("CSB", "2017-11-18", "FindProjectList");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {

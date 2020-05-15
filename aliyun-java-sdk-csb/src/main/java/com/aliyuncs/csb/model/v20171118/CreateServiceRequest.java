@@ -30,7 +30,7 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 
 	private Long csbId;
 	public CreateServiceRequest() {
-		super("CSB", "2017-11-18", "CreateService", "csb");
+		super("CSB", "2017-11-18", "CreateService");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

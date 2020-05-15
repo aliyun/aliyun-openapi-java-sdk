@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListAgentDevicesRequest extends RpcAcsRequest<ListAgentDevicesResponse> {
-	
-	public ListAgentDevicesRequest() {
-		super("CCC", "2017-07-05", "ListAgentDevices");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String ramIds;
 
@@ -40,6 +32,14 @@ public class ListAgentDevicesRequest extends RpcAcsRequest<ListAgentDevicesRespo
 	private Long stopTime;
 
 	private String instanceId;
+	public ListAgentDevicesRequest() {
+		super("CCC", "2017-07-05", "ListAgentDevices");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getRamIds() {
 		return this.ramIds;

@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
-	
-	public CreateFaultRequest() {
-		super("CCC", "2017-07-05", "CreateFault");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String agentOssFileName;
 
@@ -72,6 +64,14 @@ public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
 	private String microphoneEquipment;
 
 	private String browserVersion;
+	public CreateFaultRequest() {
+		super("CCC", "2017-07-05", "CreateFault");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAgentOssFileName() {
 		return this.agentOssFileName;

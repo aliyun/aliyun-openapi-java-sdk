@@ -55,7 +55,7 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 
 	private String pricingCycle;
 	public AllocateEipAddressRequest() {
-		super("Vpc", "2016-04-28", "AllocateEipAddress", "Vpc");
+		super("Vpc", "2016-04-28", "AllocateEipAddress", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

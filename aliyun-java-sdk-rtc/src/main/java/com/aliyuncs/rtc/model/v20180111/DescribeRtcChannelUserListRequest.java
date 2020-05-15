@@ -37,7 +37,7 @@ public class DescribeRtcChannelUserListRequest extends RpcAcsRequest<DescribeRtc
 
 	private String timePoint;
 	public DescribeRtcChannelUserListRequest() {
-		super("rtc", "2018-01-11", "DescribeRtcChannelUserList");
+		super("rtc", "2018-01-11", "DescribeRtcChannelUserList", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

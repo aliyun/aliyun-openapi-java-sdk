@@ -1,3 +1,6 @@
+2020-03-05 Version: 2.6.0
+- Add UpdateQueue api.
+
 2019-09-11 Version: 2.3.4
 - Fixed setUriPattern method not exist.
 

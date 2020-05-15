@@ -26,7 +26,7 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 	private String imageList;
 	public CreateImageRequest() {
-		super("rsimganalys", "2019-08-01", "CreateImage", "aliyun-java-sdk-rsimganalys");
+		super("rsimganalys", "2019-08-01", "CreateImage");
 		setMethod(MethodType.POST);
 	}
 

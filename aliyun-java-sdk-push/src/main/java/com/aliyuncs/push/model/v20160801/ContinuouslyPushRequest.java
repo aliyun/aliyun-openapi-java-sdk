@@ -33,7 +33,7 @@ public class ContinuouslyPushRequest extends RpcAcsRequest<ContinuouslyPushRespo
 
 	private String targetValue;
 	public ContinuouslyPushRequest() {
-		super("Push", "2016-08-01", "ContinuouslyPush", "cps");
+		super("Push", "2016-08-01", "ContinuouslyPush");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteStackRequest extends RoaAcsRequest<DeleteStackResponse> {
 
 	private String stackName;
 	public DeleteStackRequest() {
-		super("ROS", "2015-09-01", "DeleteStack");
+		super("ROS", "2015-09-01", "DeleteStack", "ROS");
 		setUriPattern("/stacks/[StackName]/[StackId]");
 		setMethod(MethodType.DELETE);
 		try {

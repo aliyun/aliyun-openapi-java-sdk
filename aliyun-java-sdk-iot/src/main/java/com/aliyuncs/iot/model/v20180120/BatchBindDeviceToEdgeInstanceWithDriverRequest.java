@@ -26,31 +26,20 @@ import com.aliyuncs.iot.Endpoint;
 public class BatchBindDeviceToEdgeInstanceWithDriverRequest extends RpcAcsRequest<BatchBindDeviceToEdgeInstanceWithDriverResponse> {
 	   
 
-	private String instanceId;
-
 	private String driverId;
 
 	private List<String> iotIdss;
 
 	private String iotInstanceId;
+
+	private String instanceId;
 	public BatchBindDeviceToEdgeInstanceWithDriverRequest() {
-		super("Iot", "2018-01-20", "BatchBindDeviceToEdgeInstanceWithDriver", "iot");
+		super("Iot", "2018-01-20", "BatchBindDeviceToEdgeInstanceWithDriver", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
 	}
 
 	public String getDriverId() {
@@ -85,6 +74,17 @@ public class BatchBindDeviceToEdgeInstanceWithDriverRequest extends RpcAcsReques
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

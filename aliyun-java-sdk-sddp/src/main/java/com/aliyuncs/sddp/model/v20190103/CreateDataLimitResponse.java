@@ -26,12 +26,22 @@ public class CreateDataLimitResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer id;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getId() {
+		return this.id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	@Override

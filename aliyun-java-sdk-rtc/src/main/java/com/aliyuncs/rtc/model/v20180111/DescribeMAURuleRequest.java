@@ -29,7 +29,7 @@ public class DescribeMAURuleRequest extends RpcAcsRequest<DescribeMAURuleRespons
 
 	private String appId;
 	public DescribeMAURuleRequest() {
-		super("rtc", "2018-01-11", "DescribeMAURule");
+		super("rtc", "2018-01-11", "DescribeMAURule", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

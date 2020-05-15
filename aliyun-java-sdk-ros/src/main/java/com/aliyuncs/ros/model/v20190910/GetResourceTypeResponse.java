@@ -33,6 +33,8 @@ public class GetResourceTypeResponse extends AcsResponse {
 
 	private String resourceType;
 
+	private Boolean supportDriftDetection;
+
 	public Map<Object,Object> getAttributes() {
 		return this.attributes;
 	}
@@ -63,6 +65,14 @@ public class GetResourceTypeResponse extends AcsResponse {
 
 	public void setResourceType(String resourceType) {
 		this.resourceType = resourceType;
+	}
+
+	public Boolean getSupportDriftDetection() {
+		return this.supportDriftDetection;
+	}
+
+	public void setSupportDriftDetection(Boolean supportDriftDetection) {
+		this.supportDriftDetection = supportDriftDetection;
 	}
 
 	@Override

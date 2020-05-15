@@ -22,26 +22,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetPolicyResponseUnmarshaller {
 
-	public static GetPolicyResponse unmarshall(GetPolicyResponse getPolicyResponse, UnmarshallerContext context) {
+	public static GetPolicyResponse unmarshall(GetPolicyResponse getPolicyResponse, UnmarshallerContext _ctx) {
 		
-		getPolicyResponse.setRequestId(context.stringValue("GetPolicyResponse.RequestId"));
+		getPolicyResponse.setRequestId(_ctx.stringValue("GetPolicyResponse.RequestId"));
 
 		Policy policy = new Policy();
-		policy.setPolicyName(context.stringValue("GetPolicyResponse.Policy.PolicyName"));
-		policy.setPolicyType(context.stringValue("GetPolicyResponse.Policy.PolicyType"));
-		policy.setDescription(context.stringValue("GetPolicyResponse.Policy.Description"));
-		policy.setDefaultVersion(context.stringValue("GetPolicyResponse.Policy.DefaultVersion"));
-		policy.setPolicyDocument(context.stringValue("GetPolicyResponse.Policy.PolicyDocument"));
-		policy.setCreateDate(context.stringValue("GetPolicyResponse.Policy.CreateDate"));
-		policy.setUpdateDate(context.stringValue("GetPolicyResponse.Policy.UpdateDate"));
-		policy.setAttachmentCount(context.integerValue("GetPolicyResponse.Policy.AttachmentCount"));
+		policy.setPolicyName(_ctx.stringValue("GetPolicyResponse.Policy.PolicyName"));
+		policy.setPolicyType(_ctx.stringValue("GetPolicyResponse.Policy.PolicyType"));
+		policy.setDescription(_ctx.stringValue("GetPolicyResponse.Policy.Description"));
+		policy.setDefaultVersion(_ctx.stringValue("GetPolicyResponse.Policy.DefaultVersion"));
+		policy.setPolicyDocument(_ctx.stringValue("GetPolicyResponse.Policy.PolicyDocument"));
+		policy.setCreateDate(_ctx.stringValue("GetPolicyResponse.Policy.CreateDate"));
+		policy.setUpdateDate(_ctx.stringValue("GetPolicyResponse.Policy.UpdateDate"));
+		policy.setAttachmentCount(_ctx.integerValue("GetPolicyResponse.Policy.AttachmentCount"));
 		getPolicyResponse.setPolicy(policy);
 
 		DefaultPolicyVersion defaultPolicyVersion = new DefaultPolicyVersion();
-		defaultPolicyVersion.setVersionId(context.stringValue("GetPolicyResponse.DefaultPolicyVersion.VersionId"));
-		defaultPolicyVersion.setIsDefaultVersion(context.booleanValue("GetPolicyResponse.DefaultPolicyVersion.IsDefaultVersion"));
-		defaultPolicyVersion.setPolicyDocument(context.stringValue("GetPolicyResponse.DefaultPolicyVersion.PolicyDocument"));
-		defaultPolicyVersion.setCreateDate(context.stringValue("GetPolicyResponse.DefaultPolicyVersion.CreateDate"));
+		defaultPolicyVersion.setVersionId(_ctx.stringValue("GetPolicyResponse.DefaultPolicyVersion.VersionId"));
+		defaultPolicyVersion.setIsDefaultVersion(_ctx.booleanValue("GetPolicyResponse.DefaultPolicyVersion.IsDefaultVersion"));
+		defaultPolicyVersion.setPolicyDocument(_ctx.stringValue("GetPolicyResponse.DefaultPolicyVersion.PolicyDocument"));
+		defaultPolicyVersion.setCreateDate(_ctx.stringValue("GetPolicyResponse.DefaultPolicyVersion.CreateDate"));
 		getPolicyResponse.setDefaultPolicyVersion(defaultPolicyVersion);
 	 
 	 	return getPolicyResponse;

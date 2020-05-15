@@ -73,7 +73,7 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 
 	private String pricingCycle;
 	public CreateRouterInterfaceRequest() {
-		super("Vpc", "2016-04-28", "CreateRouterInterface", "Vpc");
+		super("Vpc", "2016-04-28", "CreateRouterInterface", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

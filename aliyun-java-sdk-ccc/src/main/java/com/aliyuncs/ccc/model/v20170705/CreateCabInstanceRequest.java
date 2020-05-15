@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class CreateCabInstanceRequest extends RpcAcsRequest<CreateCabInstanceResponse> {
-	
-	public CreateCabInstanceRequest() {
-		super("CCC", "2017-07-05", "CreateCabInstance");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer maxConcurrentConversation;
 
@@ -40,6 +32,14 @@ public class CreateCabInstanceRequest extends RpcAcsRequest<CreateCabInstanceRes
 	private String callCenterInstanceId;
 
 	private String instanceDescription;
+	public CreateCabInstanceRequest() {
+		super("CCC", "2017-07-05", "CreateCabInstance");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getMaxConcurrentConversation() {
 		return this.maxConcurrentConversation;

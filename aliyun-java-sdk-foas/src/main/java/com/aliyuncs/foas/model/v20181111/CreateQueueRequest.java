@@ -24,17 +24,7 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class CreateQueueRequest extends RoaAcsRequest<CreateQueueResponse> {
-	
-	public CreateQueueRequest() {
-		super("foas", "2018-11-11", "CreateQueue");
-		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/clusters/[clusterId]/queue");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String queueName;
 
@@ -45,6 +35,16 @@ public class CreateQueueRequest extends RoaAcsRequest<CreateQueueResponse> {
 	private Integer gpu;
 
 	private Integer maxVcore;
+	public CreateQueueRequest() {
+		super("foas", "2018-11-11", "CreateQueue", "foas");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/clusters/[clusterId]/queue");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getQueueName() {
 		return this.queueName;

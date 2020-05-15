@@ -39,6 +39,7 @@ public class DescribeVerifyRecordsResponseUnmarshaller {
 			Records records = new Records();
 			records.setBizType(_ctx.stringValue("DescribeVerifyRecordsResponse.RecordsList["+ i +"].BizType"));
 			records.setBizId(_ctx.stringValue("DescribeVerifyRecordsResponse.RecordsList["+ i +"].BizId"));
+			records.setDataStats(_ctx.stringValue("DescribeVerifyRecordsResponse.RecordsList["+ i +"].DataStats"));
 			records.setVerifyId(_ctx.stringValue("DescribeVerifyRecordsResponse.RecordsList["+ i +"].VerifyId"));
 			records.setFinishTime(_ctx.longValue("DescribeVerifyRecordsResponse.RecordsList["+ i +"].FinishTime"));
 			records.setStatus(_ctx.integerValue("DescribeVerifyRecordsResponse.RecordsList["+ i +"].Status"));

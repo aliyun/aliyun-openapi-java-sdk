@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListIvrTrackingDetailRequest extends RpcAcsRequest<ListIvrTrackingDetailResponse> {
-	
-	public ListIvrTrackingDetailRequest() {
-		super("CCC", "2017-07-05", "ListIvrTrackingDetail");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String contactId;
 
@@ -48,6 +40,14 @@ public class ListIvrTrackingDetailRequest extends RpcAcsRequest<ListIvrTrackingD
 	private String calledNumber;
 
 	private Integer pageSize;
+	public ListIvrTrackingDetailRequest() {
+		super("CCC", "2017-07-05", "ListIvrTrackingDetail");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getContactId() {
 		return this.contactId;

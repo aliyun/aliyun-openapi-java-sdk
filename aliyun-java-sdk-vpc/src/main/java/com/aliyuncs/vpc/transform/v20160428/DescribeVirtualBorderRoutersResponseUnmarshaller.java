@@ -62,6 +62,10 @@ public class DescribeVirtualBorderRoutersResponseUnmarshaller {
 			virtualBorderRouterType.setMinTxInterval(_ctx.longValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].MinTxInterval"));
 			virtualBorderRouterType.setMinRxInterval(_ctx.longValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].MinRxInterval"));
 			virtualBorderRouterType.setDetectMultiplier(_ctx.longValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].DetectMultiplier"));
+			virtualBorderRouterType.setLocalIpv6GatewayIp(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].LocalIpv6GatewayIp"));
+			virtualBorderRouterType.setPeerIpv6GatewayIp(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PeerIpv6GatewayIp"));
+			virtualBorderRouterType.setPeeringIpv6SubnetMask(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PeeringIpv6SubnetMask"));
+			virtualBorderRouterType.setEnableIpv6(_ctx.booleanValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].EnableIpv6"));
 
 			List<AssociatedPhysicalConnection> associatedPhysicalConnections = new ArrayList<AssociatedPhysicalConnection>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections.Length"); j++) {
@@ -76,6 +80,10 @@ public class DescribeVirtualBorderRoutersResponseUnmarshaller {
 				associatedPhysicalConnection.setPhysicalConnectionBusinessStatus(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].PhysicalConnectionBusinessStatus"));
 				associatedPhysicalConnection.setPhysicalConnectionOwnerUid(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].PhysicalConnectionOwnerUid"));
 				associatedPhysicalConnection.setVlanId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].VlanId"));
+				associatedPhysicalConnection.setLocalIpv6GatewayIp(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].LocalIpv6GatewayIp"));
+				associatedPhysicalConnection.setPeerIpv6GatewayIp(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].PeerIpv6GatewayIp"));
+				associatedPhysicalConnection.setPeeringIpv6SubnetMask(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].PeeringIpv6SubnetMask"));
+				associatedPhysicalConnection.setStatus(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].Status"));
 
 				associatedPhysicalConnections.add(associatedPhysicalConnection);
 			}

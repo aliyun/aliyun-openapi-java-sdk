@@ -51,6 +51,7 @@ public class DescribeVulListResponseUnmarshaller {
 			vulRecord.setRepairTs(_ctx.longValue("DescribeVulListResponse.VulRecords["+ i +"].RepairTs"));
 			vulRecord.setStatus(_ctx.integerValue("DescribeVulListResponse.VulRecords["+ i +"].Status"));
 			vulRecord.setRelated(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Related"));
+			vulRecord.setRecordId(_ctx.longValue("DescribeVulListResponse.VulRecords["+ i +"].RecordId"));
 			vulRecord.setResultCode(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ResultCode"));
 			vulRecord.setResultMessage(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ResultMessage"));
 			vulRecord.setModifyTs(_ctx.longValue("DescribeVulListResponse.VulRecords["+ i +"].ModifyTs"));
@@ -58,6 +59,9 @@ public class DescribeVulListResponseUnmarshaller {
 			vulRecord.setGroupId(_ctx.integerValue("DescribeVulListResponse.VulRecords["+ i +"].GroupId"));
 			vulRecord.setInstanceId(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].InstanceId"));
 			vulRecord.setInstanceName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].InstanceName"));
+			vulRecord.setRegionId(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].RegionId"));
+			vulRecord.setOnline(_ctx.booleanValue("DescribeVulListResponse.VulRecords["+ i +"].Online"));
+			vulRecord.setLevel(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Level"));
 			vulRecord.setInternetIp(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].InternetIp"));
 			vulRecord.setIntranetIp(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].IntranetIp"));
 			vulRecord.setIp(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Ip"));

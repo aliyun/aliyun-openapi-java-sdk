@@ -23,9 +23,9 @@ public class BindK8sSlbResponseUnmarshaller {
 	public static BindK8sSlbResponse unmarshall(BindK8sSlbResponse bindK8sSlbResponse, UnmarshallerContext _ctx) {
 		
 		bindK8sSlbResponse.setRequestId(_ctx.stringValue("BindK8sSlbResponse.RequestId"));
+		bindK8sSlbResponse.setChangeOrderId(_ctx.stringValue("BindK8sSlbResponse.ChangeOrderId"));
 		bindK8sSlbResponse.setCode(_ctx.integerValue("BindK8sSlbResponse.Code"));
 		bindK8sSlbResponse.setMessage(_ctx.stringValue("BindK8sSlbResponse.Message"));
-		bindK8sSlbResponse.setChangeOrderId(_ctx.stringValue("BindK8sSlbResponse.ChangeOrderId"));
 	 
 	 	return bindK8sSlbResponse;
 	}

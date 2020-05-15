@@ -26,6 +26,8 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 	   
 
 	private String clusterId;
+
+	private String instanceId;
 	public QueryClusterDetailRequest() {
 		super("mse", "2019-05-31", "QueryClusterDetail", "mse");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putBodyParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
 		}
 	}
 

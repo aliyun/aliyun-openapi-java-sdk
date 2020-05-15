@@ -24,9 +24,13 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class DeleteQueueRequest extends RoaAcsRequest<DeleteQueueResponse> {
-	
+	   
+
+	private String queueName;
+
+	private String clusterId;
 	public DeleteQueueRequest() {
-		super("foas", "2018-11-11", "DeleteQueue");
+		super("foas", "2018-11-11", "DeleteQueue", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]/queue");
 		setMethod(MethodType.DELETE);
@@ -35,10 +39,6 @@ public class DeleteQueueRequest extends RoaAcsRequest<DeleteQueueResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String queueName;
-
-	private String clusterId;
 
 	public String getQueueName() {
 		return this.queueName;

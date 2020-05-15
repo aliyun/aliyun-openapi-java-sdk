@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListPoliciesResponseUnmarshaller {
 
-	public static ListPoliciesResponse unmarshall(ListPoliciesResponse listPoliciesResponse, UnmarshallerContext context) {
+	public static ListPoliciesResponse unmarshall(ListPoliciesResponse listPoliciesResponse, UnmarshallerContext _ctx) {
 		
-		listPoliciesResponse.setRequestId(context.stringValue("ListPoliciesResponse.RequestId"));
-		listPoliciesResponse.setIsTruncated(context.booleanValue("ListPoliciesResponse.IsTruncated"));
-		listPoliciesResponse.setMarker(context.stringValue("ListPoliciesResponse.Marker"));
+		listPoliciesResponse.setRequestId(_ctx.stringValue("ListPoliciesResponse.RequestId"));
+		listPoliciesResponse.setIsTruncated(_ctx.booleanValue("ListPoliciesResponse.IsTruncated"));
+		listPoliciesResponse.setMarker(_ctx.stringValue("ListPoliciesResponse.Marker"));
 
 		List<Policy> policies = new ArrayList<Policy>();
-		for (int i = 0; i < context.lengthValue("ListPoliciesResponse.Policies.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListPoliciesResponse.Policies.Length"); i++) {
 			Policy policy = new Policy();
-			policy.setPolicyName(context.stringValue("ListPoliciesResponse.Policies["+ i +"].PolicyName"));
-			policy.setPolicyType(context.stringValue("ListPoliciesResponse.Policies["+ i +"].PolicyType"));
-			policy.setDescription(context.stringValue("ListPoliciesResponse.Policies["+ i +"].Description"));
-			policy.setDefaultVersion(context.stringValue("ListPoliciesResponse.Policies["+ i +"].DefaultVersion"));
-			policy.setCreateDate(context.stringValue("ListPoliciesResponse.Policies["+ i +"].CreateDate"));
-			policy.setUpdateDate(context.stringValue("ListPoliciesResponse.Policies["+ i +"].UpdateDate"));
-			policy.setAttachmentCount(context.integerValue("ListPoliciesResponse.Policies["+ i +"].AttachmentCount"));
+			policy.setPolicyName(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].PolicyName"));
+			policy.setPolicyType(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].PolicyType"));
+			policy.setDescription(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].Description"));
+			policy.setDefaultVersion(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].DefaultVersion"));
+			policy.setCreateDate(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].CreateDate"));
+			policy.setUpdateDate(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].UpdateDate"));
+			policy.setAttachmentCount(_ctx.integerValue("ListPoliciesResponse.Policies["+ i +"].AttachmentCount"));
 
 			policies.add(policy);
 		}

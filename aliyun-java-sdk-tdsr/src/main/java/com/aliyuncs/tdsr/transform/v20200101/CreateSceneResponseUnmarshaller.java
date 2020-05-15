@@ -26,6 +26,7 @@ public class CreateSceneResponseUnmarshaller {
 		createSceneResponse.setSceneId(_ctx.longValue("CreateSceneResponse.SceneId"));
 		createSceneResponse.setSuccess(_ctx.booleanValue("CreateSceneResponse.Success"));
 		createSceneResponse.setErrMessage(_ctx.stringValue("CreateSceneResponse.ErrMessage"));
+		createSceneResponse.setPreviewToken(_ctx.stringValue("CreateSceneResponse.PreviewToken"));
 	 
 	 	return createSceneResponse;
 	}

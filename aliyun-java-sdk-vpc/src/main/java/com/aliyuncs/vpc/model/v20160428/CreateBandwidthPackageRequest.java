@@ -51,7 +51,7 @@ public class CreateBandwidthPackageRequest extends RpcAcsRequest<CreateBandwidth
 
 	private Integer ipCount;
 	public CreateBandwidthPackageRequest() {
-		super("Vpc", "2016-04-28", "CreateBandwidthPackage", "Vpc");
+		super("Vpc", "2016-04-28", "CreateBandwidthPackage", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -131,6 +131,10 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 		private Long ipcReceiveTime;
 
+		private Long ipcId;
+
+		private String ipcName;
+
 		public String getAgentStatus() {
 			return this.agentStatus;
 		}
@@ -185,6 +189,22 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 		public void setIpcReceiveTime(Long ipcReceiveTime) {
 			this.ipcReceiveTime = ipcReceiveTime;
+		}
+
+		public Long getIpcId() {
+			return this.ipcId;
+		}
+
+		public void setIpcId(Long ipcId) {
+			this.ipcId = ipcId;
+		}
+
+		public String getIpcName() {
+			return this.ipcName;
+		}
+
+		public void setIpcName(String ipcName) {
+			this.ipcName = ipcName;
 		}
 	}
 

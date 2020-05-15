@@ -77,7 +77,7 @@ public class DescribeOssObjectsResponse extends AcsResponse {
 
 	public static class Column {
 
-		private Long id;
+		private String id;
 
 		private String name;
 
@@ -91,13 +91,23 @@ public class DescribeOssObjectsResponse extends AcsResponse {
 
 		private String fileId;
 
-		private Long riskLevelName;
+		private String riskLevelName;
 
-		public Long getId() {
+		private Long size;
+
+		private Integer sensitiveCount;
+
+		private Integer ruleCount;
+
+		private String categoryName;
+
+		private String bucketName;
+
+		public String getId() {
 			return this.id;
 		}
 
-		public void setId(Long id) {
+		public void setId(String id) {
 			this.id = id;
 		}
 
@@ -109,26 +119,10 @@ public class DescribeOssObjectsResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -165,12 +159,52 @@ public class DescribeOssObjectsResponse extends AcsResponse {
 			this.fileId = fileId;
 		}
 
-		public Long getRiskLevelName() {
+		public String getRiskLevelName() {
 			return this.riskLevelName;
 		}
 
-		public void setRiskLevelName(Long riskLevelName) {
+		public void setRiskLevelName(String riskLevelName) {
 			this.riskLevelName = riskLevelName;
+		}
+
+		public Long getSize() {
+			return this.size;
+		}
+
+		public void setSize(Long size) {
+			this.size = size;
+		}
+
+		public Integer getSensitiveCount() {
+			return this.sensitiveCount;
+		}
+
+		public void setSensitiveCount(Integer sensitiveCount) {
+			this.sensitiveCount = sensitiveCount;
+		}
+
+		public Integer getRuleCount() {
+			return this.ruleCount;
+		}
+
+		public void setRuleCount(Integer ruleCount) {
+			this.ruleCount = ruleCount;
+		}
+
+		public String getCategoryName() {
+			return this.categoryName;
+		}
+
+		public void setCategoryName(String categoryName) {
+			this.categoryName = categoryName;
+		}
+
+		public String getBucketName() {
+			return this.bucketName;
+		}
+
+		public void setBucketName(String bucketName) {
+			this.bucketName = bucketName;
 		}
 	}
 

@@ -29,7 +29,7 @@ public class CheckExpandStatusRequest extends RpcAcsRequest<CheckExpandStatusRes
 
 	private String dbName;
 	public CheckExpandStatusRequest() {
-		super("Drds", "2019-01-23", "CheckExpandStatus", "drds");
+		super("Drds", "2019-01-23", "CheckExpandStatus", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

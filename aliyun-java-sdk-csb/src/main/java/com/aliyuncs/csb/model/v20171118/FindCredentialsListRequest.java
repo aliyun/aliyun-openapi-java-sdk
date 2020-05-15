@@ -32,7 +32,7 @@ public class FindCredentialsListRequest extends RpcAcsRequest<FindCredentialsLis
 
 	private String groupName;
 	public FindCredentialsListRequest() {
-		super("CSB", "2017-11-18", "FindCredentialsList", "csb");
+		super("CSB", "2017-11-18", "FindCredentialsList");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {

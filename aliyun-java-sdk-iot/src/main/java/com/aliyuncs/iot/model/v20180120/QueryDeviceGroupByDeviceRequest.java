@@ -31,7 +31,7 @@ public class QueryDeviceGroupByDeviceRequest extends RpcAcsRequest<QueryDeviceGr
 
 	private String deviceName;
 	public QueryDeviceGroupByDeviceRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceGroupByDevice", "iot");
+		super("Iot", "2018-01-20", "QueryDeviceGroupByDevice", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

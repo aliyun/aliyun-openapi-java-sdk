@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -38,6 +39,8 @@ public class DescribeInstanceStatusRequest extends RpcAcsRequest<DescribeInstanc
 	private String clusterId;
 
 	private Long ownerId;
+
+	private List<String> instanceIds;
 
 	private String zoneId;
 	public DescribeInstanceStatusRequest() {
@@ -124,6 +127,19 @@ public class DescribeInstanceStatusRequest extends RpcAcsRequest<DescribeInstanc
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;	
+		if (instanceIds != null) {
+			for (int i = 0; i < instanceIds.size(); i++) {
+				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
+			}
+		}	
 	}
 
 	public String getZoneId() {

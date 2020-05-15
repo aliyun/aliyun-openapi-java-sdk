@@ -42,6 +42,9 @@ public class GetEdgeInstanceResponseUnmarshaller {
 		data.setRoleAttachTime(_ctx.stringValue("GetEdgeInstanceResponse.Data.RoleAttachTime"));
 		data.setLatestDeploymentStatus(_ctx.integerValue("GetEdgeInstanceResponse.Data.LatestDeploymentStatus"));
 		data.setLatestDeploymentType(_ctx.stringValue("GetEdgeInstanceResponse.Data.LatestDeploymentType"));
+		data.setGmtCreateTimestamp(_ctx.longValue("GetEdgeInstanceResponse.Data.GmtCreateTimestamp"));
+		data.setGmtModifiedTimestamp(_ctx.longValue("GetEdgeInstanceResponse.Data.GmtModifiedTimestamp"));
+		data.setRoleAttachTimestamp(_ctx.longValue("GetEdgeInstanceResponse.Data.RoleAttachTimestamp"));
 		getEdgeInstanceResponse.setData(data);
 	 
 	 	return getEdgeInstanceResponse;

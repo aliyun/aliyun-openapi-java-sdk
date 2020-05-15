@@ -201,9 +201,35 @@ public class GetRuleDetailResponse extends AcsResponse {
 
 					private String targetRole;
 
+					private Integer score;
+
+					private Boolean contextChatMatch;
+
+					private Integer keywordMatchSize;
+
+					private Boolean average;
+
+					private Integer velocityInMint;
+
+					private Integer minWordSize;
+
+					private Boolean keywordExtension;
+
+					private Integer hitTime;
+
+					private Integer from;
+
+					private String beginType;
+
+					private String compareOperator;
+
 					private List<String> operKeyWords;
 
 					private List<String> references;
+
+					private List<String> similarlySentences;
+
+					private List<String> excludes;
 
 					public String getRegex() {
 						return this.regex;
@@ -277,6 +303,94 @@ public class GetRuleDetailResponse extends AcsResponse {
 						this.targetRole = targetRole;
 					}
 
+					public Integer getScore() {
+						return this.score;
+					}
+
+					public void setScore(Integer score) {
+						this.score = score;
+					}
+
+					public Boolean getContextChatMatch() {
+						return this.contextChatMatch;
+					}
+
+					public void setContextChatMatch(Boolean contextChatMatch) {
+						this.contextChatMatch = contextChatMatch;
+					}
+
+					public Integer getKeywordMatchSize() {
+						return this.keywordMatchSize;
+					}
+
+					public void setKeywordMatchSize(Integer keywordMatchSize) {
+						this.keywordMatchSize = keywordMatchSize;
+					}
+
+					public Boolean getAverage() {
+						return this.average;
+					}
+
+					public void setAverage(Boolean average) {
+						this.average = average;
+					}
+
+					public Integer getVelocityInMint() {
+						return this.velocityInMint;
+					}
+
+					public void setVelocityInMint(Integer velocityInMint) {
+						this.velocityInMint = velocityInMint;
+					}
+
+					public Integer getMinWordSize() {
+						return this.minWordSize;
+					}
+
+					public void setMinWordSize(Integer minWordSize) {
+						this.minWordSize = minWordSize;
+					}
+
+					public Boolean getKeywordExtension() {
+						return this.keywordExtension;
+					}
+
+					public void setKeywordExtension(Boolean keywordExtension) {
+						this.keywordExtension = keywordExtension;
+					}
+
+					public Integer getHitTime() {
+						return this.hitTime;
+					}
+
+					public void setHitTime(Integer hitTime) {
+						this.hitTime = hitTime;
+					}
+
+					public Integer getFrom() {
+						return this.from;
+					}
+
+					public void setFrom(Integer from) {
+						this.from = from;
+					}
+
+					public String getBeginType() {
+						return this.beginType;
+					}
+
+					public void setBeginType(String beginType) {
+						this.beginType = beginType;
+					}
+
+					public String getCompareOperator() {
+						return this.compareOperator;
+					}
+
+					public void setCompareOperator(String compareOperator) {
+						this.compareOperator = compareOperator;
+					}
+
 					public List<String> getOperKeyWords() {
 						return this.operKeyWords;
 					}
@@ -291,6 +405,22 @@ public class GetRuleDetailResponse extends AcsResponse {
 
 					public void setReferences(List<String> references) {
 						this.references = references;
+					}
+
+					public List<String> getSimilarlySentences() {
+						return this.similarlySentences;
+					}
+
+					public void setSimilarlySentences(List<String> similarlySentences) {
+						this.similarlySentences = similarlySentences;
+					}
+
+					public List<String> getExcludes() {
+						return this.excludes;
+					}
+
+					public void setExcludes(List<String> excludes) {
+						this.excludes = excludes;
 					}
 				}
 			}

@@ -35,7 +35,7 @@ public class DeactivateMediaWorkflowRequest extends RpcAcsRequest<DeactivateMedi
 
 	private String mediaWorkflowId;
 	public DeactivateMediaWorkflowRequest() {
-		super("Mts", "2014-06-18", "DeactivateMediaWorkflow", "mts");
+		super("Mts", "2014-06-18", "DeactivateMediaWorkflow");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

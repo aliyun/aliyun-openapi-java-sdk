@@ -14,6 +14,7 @@
 
 package com.aliyuncs.oos.model.v20190601;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oos.transform.v20190601.GetExecutionTemplateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -77,6 +78,8 @@ public class GetExecutionTemplateResponse extends AcsResponse {
 		private String templateFormat;
 
 		private String templateVersion;
+
+		private Map<Object,Object> tags;
 
 		public String getTemplateName() {
 			return this.templateName;
@@ -164,6 +167,14 @@ public class GetExecutionTemplateResponse extends AcsResponse {
 
 		public void setTemplateVersion(String templateVersion) {
 			this.templateVersion = templateVersion;
+		}
+
+		public Map<Object,Object> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
 		}
 	}
 

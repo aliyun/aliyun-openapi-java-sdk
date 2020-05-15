@@ -40,7 +40,7 @@ public class ConfigureSubscriptionInstanceAlertRequest extends RpcAcsRequest<Con
 
 	private String errorAlertStatus;
 	public ConfigureSubscriptionInstanceAlertRequest() {
-		super("Dts", "2020-01-01", "ConfigureSubscriptionInstanceAlert", "dts");
+		super("Dts", "2020-01-01", "ConfigureSubscriptionInstanceAlert");
 		setMethod(MethodType.POST);
 	}
 

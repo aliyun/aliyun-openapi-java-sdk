@@ -29,7 +29,7 @@ public class DescribeMtsUserResourcePackageRequest extends RpcAcsRequest<Describ
 
 	private String securityToken;
 	public DescribeMtsUserResourcePackageRequest() {
-		super("Mts", "2014-06-18", "DescribeMtsUserResourcePackage", "mts");
+		super("Mts", "2014-06-18", "DescribeMtsUserResourcePackage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

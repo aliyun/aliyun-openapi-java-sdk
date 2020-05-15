@@ -16,6 +16,7 @@ package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkvisual.Endpoint;
 
 /**
  * @author auto create
@@ -24,23 +25,16 @@ import com.aliyuncs.http.MethodType;
 public class QueryDeviceEventRecordRequest extends RpcAcsRequest<QueryDeviceEventRecordResponse> {
 	   
 
-	private String iotId;
-
 	private String eventId;
+
+	private String iotId;
 	public QueryDeviceEventRecordRequest() {
-		super("Linkvisual", "2018-01-20", "QueryDeviceEventRecord", "linkvisual");
+		super("Linkvisual", "2018-01-20", "QueryDeviceEventRecord", "Linkvisual");
 		setMethod(MethodType.POST);
-	}
-
-	public String getIotId() {
-		return this.iotId;
-	}
-
-	public void setIotId(String iotId) {
-		this.iotId = iotId;
-		if(iotId != null){
-			putQueryParameter("IotId", iotId);
-		}
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getEventId() {
@@ -51,6 +45,17 @@ public class QueryDeviceEventRecordRequest extends RpcAcsRequest<QueryDeviceEven
 		this.eventId = eventId;
 		if(eventId != null){
 			putQueryParameter("EventId", eventId);
+		}
+	}
+
+	public String getIotId() {
+		return this.iotId;
+	}
+
+	public void setIotId(String iotId) {
+		this.iotId = iotId;
+		if(iotId != null){
+			putQueryParameter("IotId", iotId);
 		}
 	}
 

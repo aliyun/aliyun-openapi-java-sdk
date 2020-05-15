@@ -53,7 +53,7 @@ public class ModifyPhysicalConnectionAttributeRequest extends RpcAcsRequest<Modi
 
 	private String name;
 	public ModifyPhysicalConnectionAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyPhysicalConnectionAttribute", "Vpc");
+		super("Vpc", "2016-04-28", "ModifyPhysicalConnectionAttribute", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

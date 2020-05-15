@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class LaunchShortMessageAppraiseRequest extends RpcAcsRequest<LaunchShortMessageAppraiseResponse> {
-	
-	public LaunchShortMessageAppraiseRequest() {
-		super("CCC", "2017-07-05", "LaunchShortMessageAppraise");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer contactType;
 
@@ -42,6 +34,14 @@ public class LaunchShortMessageAppraiseRequest extends RpcAcsRequest<LaunchShort
 	private String instanceId;
 
 	private String skillGroupId;
+	public LaunchShortMessageAppraiseRequest() {
+		super("CCC", "2017-07-05", "LaunchShortMessageAppraise");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getContactType() {
 		return this.contactType;

@@ -24,8 +24,6 @@ import com.aliyuncs.http.MethodType;
 public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 	   
 
-	private Boolean noPersistFlag;
-
 	private String mqttTopic;
 
 	private String instanceId;
@@ -36,17 +34,6 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 	public SendMessageRequest() {
 		super("OnsMqtt", "2019-12-11", "SendMessage", "onsmqtt");
 		setMethod(MethodType.POST);
-	}
-
-	public Boolean getNoPersistFlag() {
-		return this.noPersistFlag;
-	}
-
-	public void setNoPersistFlag(Boolean noPersistFlag) {
-		this.noPersistFlag = noPersistFlag;
-		if(noPersistFlag != null){
-			putQueryParameter("NoPersistFlag", noPersistFlag.toString());
-		}
 	}
 
 	public String getMqttTopic() {

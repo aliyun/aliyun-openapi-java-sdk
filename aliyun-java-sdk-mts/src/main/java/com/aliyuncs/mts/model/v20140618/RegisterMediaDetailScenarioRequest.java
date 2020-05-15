@@ -39,7 +39,7 @@ public class RegisterMediaDetailScenarioRequest extends RpcAcsRequest<RegisterMe
 
 	private Long ownerId;
 	public RegisterMediaDetailScenarioRequest() {
-		super("Mts", "2014-06-18", "RegisterMediaDetailScenario", "mts");
+		super("Mts", "2014-06-18", "RegisterMediaDetailScenario");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

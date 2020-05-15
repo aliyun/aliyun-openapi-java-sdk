@@ -42,7 +42,7 @@ public class DescribeMigrationJobDetailRequest extends RpcAcsRequest<DescribeMig
 
 	private Integer pageSize;
 	public DescribeMigrationJobDetailRequest() {
-		super("Dts", "2020-01-01", "DescribeMigrationJobDetail", "dts");
+		super("Dts", "2020-01-01", "DescribeMigrationJobDetail");
 		setMethod(MethodType.POST);
 	}
 

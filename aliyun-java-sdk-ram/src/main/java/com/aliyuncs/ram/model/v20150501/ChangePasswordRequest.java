@@ -16,21 +16,28 @@ package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ram.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ChangePasswordRequest extends RpcAcsRequest<ChangePasswordResponse> {
-	
-	public ChangePasswordRequest() {
-		super("Ram", "2015-05-01", "ChangePassword");
-		setProtocol(ProtocolType.HTTPS);
-	}
+	   
 
 	private String oldPassword;
 
 	private String newPassword;
+	public ChangePasswordRequest() {
+		super("Ram", "2015-05-01", "ChangePassword", "Ram");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getOldPassword() {
 		return this.oldPassword;

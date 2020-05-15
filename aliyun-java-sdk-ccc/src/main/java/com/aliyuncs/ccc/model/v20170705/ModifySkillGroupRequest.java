@@ -24,15 +24,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ModifySkillGroupRequest extends RpcAcsRequest<ModifySkillGroupResponse> {
-	
-	public ModifySkillGroupRequest() {
-		super("CCC", "2017-07-05", "ModifySkillGroup");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Boolean allowPrivateOutboundNumber;
 
@@ -51,6 +43,14 @@ public class ModifySkillGroupRequest extends RpcAcsRequest<ModifySkillGroupRespo
 	private String skillGroupId;
 
 	private String name;
+	public ModifySkillGroupRequest() {
+		super("CCC", "2017-07-05", "ModifySkillGroup");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getAllowPrivateOutboundNumber() {
 		return this.allowPrivateOutboundNumber;

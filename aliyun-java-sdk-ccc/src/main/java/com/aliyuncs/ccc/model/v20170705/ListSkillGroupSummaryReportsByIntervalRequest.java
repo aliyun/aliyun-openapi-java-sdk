@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListSkillGroupSummaryReportsByIntervalRequest extends RpcAcsRequest<ListSkillGroupSummaryReportsByIntervalResponse> {
-	
-	public ListSkillGroupSummaryReportsByIntervalRequest() {
-		super("CCC", "2017-07-05", "ListSkillGroupSummaryReportsByInterval");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String endTime;
 
@@ -46,6 +38,14 @@ public class ListSkillGroupSummaryReportsByIntervalRequest extends RpcAcsRequest
 	private Integer pageSize;
 
 	private String interval;
+	public ListSkillGroupSummaryReportsByIntervalRequest() {
+		super("CCC", "2017-07-05", "ListSkillGroupSummaryReportsByInterval");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getEndTime() {
 		return this.endTime;

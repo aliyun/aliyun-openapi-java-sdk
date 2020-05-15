@@ -24,27 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDataHubConnectorsResponseUnmarshaller {
 
-	public static DescribeDataHubConnectorsResponse unmarshall(DescribeDataHubConnectorsResponse describeDataHubConnectorsResponse, UnmarshallerContext context) {
+	public static DescribeDataHubConnectorsResponse unmarshall(DescribeDataHubConnectorsResponse describeDataHubConnectorsResponse, UnmarshallerContext _ctx) {
 		
-		describeDataHubConnectorsResponse.setRequestId(context.stringValue("DescribeDataHubConnectorsResponse.RequestId"));
-		describeDataHubConnectorsResponse.setPageSize(context.integerValue("DescribeDataHubConnectorsResponse.PageSize"));
-		describeDataHubConnectorsResponse.setCurrentPage(context.integerValue("DescribeDataHubConnectorsResponse.CurrentPage"));
-		describeDataHubConnectorsResponse.setTotalCount(context.integerValue("DescribeDataHubConnectorsResponse.TotalCount"));
+		describeDataHubConnectorsResponse.setRequestId(_ctx.stringValue("DescribeDataHubConnectorsResponse.RequestId"));
+		describeDataHubConnectorsResponse.setPageSize(_ctx.integerValue("DescribeDataHubConnectorsResponse.PageSize"));
+		describeDataHubConnectorsResponse.setCurrentPage(_ctx.integerValue("DescribeDataHubConnectorsResponse.CurrentPage"));
+		describeDataHubConnectorsResponse.setTotalCount(_ctx.integerValue("DescribeDataHubConnectorsResponse.TotalCount"));
 
 		List<Connector> items = new ArrayList<Connector>();
-		for (int i = 0; i < context.lengthValue("DescribeDataHubConnectorsResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDataHubConnectorsResponse.Items.Length"); i++) {
 			Connector connector = new Connector();
-			connector.setId(context.longValue("DescribeDataHubConnectorsResponse.Items["+ i +"].Id"));
-			connector.setName(context.stringValue("DescribeDataHubConnectorsResponse.Items["+ i +"].Name"));
-			connector.setDescription(context.stringValue("DescribeDataHubConnectorsResponse.Items["+ i +"].Description"));
-			connector.setCreationTime(context.longValue("DescribeDataHubConnectorsResponse.Items["+ i +"].CreationTime"));
-			connector.setConnectorProduct(context.stringValue("DescribeDataHubConnectorsResponse.Items["+ i +"].ConnectorProduct"));
-			connector.setConnectorPath(context.stringValue("DescribeDataHubConnectorsResponse.Items["+ i +"].ConnectorPath"));
-			connector.setRiskLevelId(context.longValue("DescribeDataHubConnectorsResponse.Items["+ i +"].RiskLevelId"));
-			connector.setRiskLevelName(context.stringValue("DescribeDataHubConnectorsResponse.Items["+ i +"].RiskLevelName"));
-			connector.setUserId(context.longValue("DescribeDataHubConnectorsResponse.Items["+ i +"].UserId"));
-			connector.setLoginName(context.stringValue("DescribeDataHubConnectorsResponse.Items["+ i +"].LoginName"));
-			connector.setDisplayName(context.stringValue("DescribeDataHubConnectorsResponse.Items["+ i +"].DisplayName"));
+			connector.setId(_ctx.longValue("DescribeDataHubConnectorsResponse.Items["+ i +"].Id"));
+			connector.setName(_ctx.stringValue("DescribeDataHubConnectorsResponse.Items["+ i +"].Name"));
+			connector.setDescription(_ctx.stringValue("DescribeDataHubConnectorsResponse.Items["+ i +"].Description"));
+			connector.setCreationTime(_ctx.longValue("DescribeDataHubConnectorsResponse.Items["+ i +"].CreationTime"));
+			connector.setConnectorProduct(_ctx.stringValue("DescribeDataHubConnectorsResponse.Items["+ i +"].ConnectorProduct"));
+			connector.setConnectorPath(_ctx.stringValue("DescribeDataHubConnectorsResponse.Items["+ i +"].ConnectorPath"));
+			connector.setRiskLevelId(_ctx.longValue("DescribeDataHubConnectorsResponse.Items["+ i +"].RiskLevelId"));
+			connector.setRiskLevelName(_ctx.stringValue("DescribeDataHubConnectorsResponse.Items["+ i +"].RiskLevelName"));
+			connector.setUserId(_ctx.longValue("DescribeDataHubConnectorsResponse.Items["+ i +"].UserId"));
+			connector.setLoginName(_ctx.stringValue("DescribeDataHubConnectorsResponse.Items["+ i +"].LoginName"));
+			connector.setDisplayName(_ctx.stringValue("DescribeDataHubConnectorsResponse.Items["+ i +"].DisplayName"));
 
 			items.add(connector);
 		}

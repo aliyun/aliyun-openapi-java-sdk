@@ -54,6 +54,8 @@ public class ConfigureSynchronizationJobRequest extends RpcAcsRequest<ConfigureS
 
 	private String sourceEndpointUserName;
 
+	private String sourceEndpointDatabaseName;
+
 	private Boolean partitionKeyModifyTime_Month;
 
 	private String sourceEndpointPort;
@@ -72,6 +74,8 @@ public class ConfigureSynchronizationJobRequest extends RpcAcsRequest<ConfigureS
 
 	private Boolean partitionKeyModifyTime_Hour;
 
+	private String destinationEndpointDataBaseName;
+
 	private String sourceEndpointPassword;
 
 	private String migrationReserved;
@@ -82,7 +86,7 @@ public class ConfigureSynchronizationJobRequest extends RpcAcsRequest<ConfigureS
 
 	private String synchronizationDirection;
 	public ConfigureSynchronizationJobRequest() {
-		super("Dts", "2020-01-01", "ConfigureSynchronizationJob", "dts");
+		super("Dts", "2020-01-01", "ConfigureSynchronizationJob");
 		setMethod(MethodType.POST);
 	}
 
@@ -251,6 +255,17 @@ public class ConfigureSynchronizationJobRequest extends RpcAcsRequest<ConfigureS
 		}
 	}
 
+	public String getSourceEndpointDatabaseName() {
+		return this.sourceEndpointDatabaseName;
+	}
+
+	public void setSourceEndpointDatabaseName(String sourceEndpointDatabaseName) {
+		this.sourceEndpointDatabaseName = sourceEndpointDatabaseName;
+		if(sourceEndpointDatabaseName != null){
+			putQueryParameter("SourceEndpoint.DatabaseName", sourceEndpointDatabaseName);
+		}
+	}
+
 	public Boolean getPartitionKeyModifyTime_Month() {
 		return this.partitionKeyModifyTime_Month;
 	}
@@ -347,6 +362,17 @@ public class ConfigureSynchronizationJobRequest extends RpcAcsRequest<ConfigureS
 		this.partitionKeyModifyTime_Hour = partitionKeyModifyTime_Hour;
 		if(partitionKeyModifyTime_Hour != null){
 			putQueryParameter("PartitionKey.ModifyTime_Hour", partitionKeyModifyTime_Hour.toString());
+		}
+	}
+
+	public String getDestinationEndpointDataBaseName() {
+		return this.destinationEndpointDataBaseName;
+	}
+
+	public void setDestinationEndpointDataBaseName(String destinationEndpointDataBaseName) {
+		this.destinationEndpointDataBaseName = destinationEndpointDataBaseName;
+		if(destinationEndpointDataBaseName != null){
+			putQueryParameter("DestinationEndpoint.DataBaseName", destinationEndpointDataBaseName);
 		}
 	}
 

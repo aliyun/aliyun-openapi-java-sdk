@@ -98,6 +98,10 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private Boolean haveKibana;
 
+		private String resourceGroupId;
+
+		private Boolean enableKibanaPrivateNetwork;
+
 		private List<DictListItem> dictList;
 
 		private List<SynonymsDictsItem> synonymsDicts;
@@ -105,6 +109,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 		private List<ZoneInfo> zoneInfos;
 
 		private List<Dict> aliwsDicts;
+
+		private List<Tag> tags;
 
 		private List<String> esIPWhitelist;
 
@@ -115,6 +121,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 		private List<String> publicIpWhitelist;
 
 		private List<String> privateNetworkIpWhiteList;
+
+		private List<String> kibanaPrivateIPWhitelist;
 
 		private NodeSpec nodeSpec;
 
@@ -330,6 +338,22 @@ public class DescribeInstanceResponse extends AcsResponse {
 			this.haveKibana = haveKibana;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Boolean getEnableKibanaPrivateNetwork() {
+			return this.enableKibanaPrivateNetwork;
+		}
+
+		public void setEnableKibanaPrivateNetwork(Boolean enableKibanaPrivateNetwork) {
+			this.enableKibanaPrivateNetwork = enableKibanaPrivateNetwork;
+		}
+
 		public List<DictListItem> getDictList() {
 			return this.dictList;
 		}
@@ -360,6 +384,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setAliwsDicts(List<Dict> aliwsDicts) {
 			this.aliwsDicts = aliwsDicts;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public List<String> getEsIPWhitelist() {
@@ -400,6 +432,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setPrivateNetworkIpWhiteList(List<String> privateNetworkIpWhiteList) {
 			this.privateNetworkIpWhiteList = privateNetworkIpWhiteList;
+		}
+
+		public List<String> getKibanaPrivateIPWhitelist() {
+			return this.kibanaPrivateIPWhitelist;
+		}
+
+		public void setKibanaPrivateIPWhitelist(List<String> kibanaPrivateIPWhitelist) {
+			this.kibanaPrivateIPWhitelist = kibanaPrivateIPWhitelist;
 		}
 
 		public NodeSpec getNodeSpec() {
@@ -607,6 +647,29 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setSourceType(String sourceType) {
 				this.sourceType = sourceType;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 

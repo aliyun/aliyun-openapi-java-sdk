@@ -1,3 +1,7 @@
+2020-03-02 Version: 1.2.5
+- Add API GetAllowedIpList.
+- Add API UpdateAllowedIp.
+
 2019-12-25 Version: 1.2.4
 - Support specify partition number when create topic.
 

@@ -24,6 +24,7 @@ import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse.Instance.
 import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse.Instance.MasterConfiguration;
 import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse.Instance.NetworkConfig;
 import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse.Instance.NodeSpec;
+import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse.Instance.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +51,7 @@ public class ListInstanceResponseUnmarshaller {
 			instance.setUpdatedAt(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].updatedAt"));
 			instance.setAdvancedDedicateMaster(_ctx.booleanValue("ListInstanceResponse.Result["+ i +"].advancedDedicateMaster"));
 			instance.setDedicateMaster(_ctx.booleanValue("ListInstanceResponse.Result["+ i +"].dedicateMaster"));
+			instance.setResourceGroupId(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].resourceGroupId"));
 
 			NodeSpec nodeSpec = new NodeSpec();
 			nodeSpec.setSpec(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].nodeSpec.spec"));
@@ -77,6 +79,16 @@ public class ListInstanceResponseUnmarshaller {
 			kibanaConfiguration.setAmount(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].kibanaConfiguration.amount"));
 			kibanaConfiguration.setDiskType(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].kibanaConfiguration.diskType"));
 			instance.setKibanaConfiguration(kibanaConfiguration);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListInstanceResponse.Result["+ i +"].tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].tags["+ j +"].tagKey"));
+				tag.setTagValue(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].tags["+ j +"].tagValue"));
+
+				tags.add(tag);
+			}
+			instance.setTags(tags);
 
 			result.add(instance);
 		}

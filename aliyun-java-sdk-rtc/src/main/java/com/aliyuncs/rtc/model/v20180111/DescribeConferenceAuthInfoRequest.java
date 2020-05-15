@@ -31,7 +31,7 @@ public class DescribeConferenceAuthInfoRequest extends RpcAcsRequest<DescribeCon
 
 	private String appId;
 	public DescribeConferenceAuthInfoRequest() {
-		super("rtc", "2018-01-11", "DescribeConferenceAuthInfo");
+		super("rtc", "2018-01-11", "DescribeConferenceAuthInfo", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -79,7 +79,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String payType;
 	public CreateInstanceRequest() {
-		super("HBase", "2019-01-01", "CreateInstance", "hbase");
+		super("HBase", "2019-01-01", "CreateInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

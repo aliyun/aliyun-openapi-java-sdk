@@ -29,7 +29,7 @@ public class DescribeInstDbLogInfoRequest extends RpcAcsRequest<DescribeInstDbLo
 
 	private String dbName;
 	public DescribeInstDbLogInfoRequest() {
-		super("Drds", "2019-01-23", "DescribeInstDbLogInfo", "drds");
+		super("Drds", "2019-01-23", "DescribeInstDbLogInfo", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

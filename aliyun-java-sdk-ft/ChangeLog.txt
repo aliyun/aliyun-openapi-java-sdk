@@ -1,3 +1,27 @@
+2020-05-15 Version: 0.5.16
+- Generated 2016-01-02 for `Ft`.
+
+2020-05-15 Version: 0.5.15
+- Generated 2016-01-02 for `Ft`.
+
+2020-02-27 Version: 1.0.0
+- Release Ft SDK.
+
+2020-02-24 Version: 1.0.0
+- Release Ft SDK.
+
+2020-02-24 Version: 1.0.0
+- Release Ft SDK.
+
+2020-02-24 Version: 1.0.1
+- Release Ft SDK.
+
+2020-02-24 Version: 1.0.1
+- Release Ft SDK.
+
+2020-02-24 Version: 1.0.1
+- Release Ft SDK.
+
 2019-03-21 Version: 1.0.1
 1, Update Dependency
 

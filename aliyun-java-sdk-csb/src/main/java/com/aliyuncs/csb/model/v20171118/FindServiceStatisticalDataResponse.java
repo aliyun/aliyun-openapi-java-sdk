@@ -71,6 +71,8 @@ public class FindServiceStatisticalDataResponse extends AcsResponse {
 
 		private Integer pageNumber;
 
+		private Long total;
+
 		private List<ServiceStatisticData> monitorStatisticData;
 
 		public Integer getCurrentPage() {
@@ -89,6 +91,14 @@ public class FindServiceStatisticalDataResponse extends AcsResponse {
 			this.pageNumber = pageNumber;
 		}
 
+		public Long getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Long total) {
+			this.total = total;
+		}
+
 		public List<ServiceStatisticData> getMonitorStatisticData() {
 			return this.monitorStatisticData;
 		}
@@ -105,11 +115,7 @@ public class FindServiceStatisticalDataResponse extends AcsResponse {
 
 			private Float minRt;
 
-			private Long requestTime;
-
 			private String serviceName;
-
-			private String userId;
 
 			private Total total;
 
@@ -137,28 +143,12 @@ public class FindServiceStatisticalDataResponse extends AcsResponse {
 				this.minRt = minRt;
 			}
 
-			public Long getRequestTime() {
-				return this.requestTime;
-			}
-
-			public void setRequestTime(Long requestTime) {
-				this.requestTime = requestTime;
-			}
-
 			public String getServiceName() {
 				return this.serviceName;
 			}
 
 			public void setServiceName(String serviceName) {
 				this.serviceName = serviceName;
-			}
-
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
 			}
 
 			public Total getTotal() {
@@ -171,24 +161,24 @@ public class FindServiceStatisticalDataResponse extends AcsResponse {
 
 			public static class Total {
 
-				private Integer errorNum;
+				private Long total;
 
-				private Integer total;
+				private Long errorNum;
 
-				public Integer getErrorNum() {
-					return this.errorNum;
-				}
-
-				public void setErrorNum(Integer errorNum) {
-					this.errorNum = errorNum;
-				}
-
-				public Integer getTotal() {
+				public Long getTotal() {
 					return this.total;
 				}
 
-				public void setTotal(Integer total) {
+				public void setTotal(Long total) {
 					this.total = total;
+				}
+
+				public Long getErrorNum() {
+					return this.errorNum;
+				}
+
+				public void setErrorNum(Long errorNum) {
+					this.errorNum = errorNum;
 				}
 			}
 		}

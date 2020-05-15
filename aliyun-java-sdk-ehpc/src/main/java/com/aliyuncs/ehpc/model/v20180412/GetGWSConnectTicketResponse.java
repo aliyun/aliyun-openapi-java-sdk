@@ -26,12 +26,22 @@ public class GetGWSConnectTicketResponse extends AcsResponse {
 
 	private String ticket;
 
+	private String requestId;
+
 	public String getTicket() {
 		return this.ticket;
 	}
 
 	public void setTicket(String ticket) {
 		this.ticket = ticket;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

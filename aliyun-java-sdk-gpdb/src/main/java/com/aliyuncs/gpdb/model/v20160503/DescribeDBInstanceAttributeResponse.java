@@ -111,6 +111,20 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String connectionMode;
 
+		private String storageType;
+
+		private Integer cpuCoresPerNode;
+
+		private Integer segmentCounts;
+
+		private Integer storagePerNode;
+
+		private Integer memoryPerNode;
+
+		private String storageUnit;
+
+		private String memoryUnit;
+
 		private List<Tag> tags;
 
 		public String getDBInstanceId() {
@@ -137,26 +151,10 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.dBInstanceClassType = dBInstanceClassType;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -383,6 +381,62 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setConnectionMode(String connectionMode) {
 			this.connectionMode = connectionMode;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public Integer getCpuCoresPerNode() {
+			return this.cpuCoresPerNode;
+		}
+
+		public void setCpuCoresPerNode(Integer cpuCoresPerNode) {
+			this.cpuCoresPerNode = cpuCoresPerNode;
+		}
+
+		public Integer getSegmentCounts() {
+			return this.segmentCounts;
+		}
+
+		public void setSegmentCounts(Integer segmentCounts) {
+			this.segmentCounts = segmentCounts;
+		}
+
+		public Integer getStoragePerNode() {
+			return this.storagePerNode;
+		}
+
+		public void setStoragePerNode(Integer storagePerNode) {
+			this.storagePerNode = storagePerNode;
+		}
+
+		public Integer getMemoryPerNode() {
+			return this.memoryPerNode;
+		}
+
+		public void setMemoryPerNode(Integer memoryPerNode) {
+			this.memoryPerNode = memoryPerNode;
+		}
+
+		public String getStorageUnit() {
+			return this.storageUnit;
+		}
+
+		public void setStorageUnit(String storageUnit) {
+			this.storageUnit = storageUnit;
+		}
+
+		public String getMemoryUnit() {
+			return this.memoryUnit;
+		}
+
+		public void setMemoryUnit(String memoryUnit) {
+			this.memoryUnit = memoryUnit;
 		}
 
 		public List<Tag> getTags() {

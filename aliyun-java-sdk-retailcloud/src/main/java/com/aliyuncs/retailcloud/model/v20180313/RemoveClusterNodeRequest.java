@@ -17,6 +17,7 @@ package com.aliyuncs.retailcloud.model.v20180313;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.retailcloud.Endpoint;
 
 /**
  * @author auto create
@@ -31,6 +32,10 @@ public class RemoveClusterNodeRequest extends RpcAcsRequest<RemoveClusterNodeRes
 	public RemoveClusterNodeRequest() {
 		super("retailcloud", "2018-03-13", "RemoveClusterNode", "retailcloud");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public List<String> getEcsInstanceIdLists() {

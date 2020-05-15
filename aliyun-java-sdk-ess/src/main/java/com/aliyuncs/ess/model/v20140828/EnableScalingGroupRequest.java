@@ -15,16 +15,14 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupResponse> {
-	
-	public EnableScalingGroupRequest() {
-		super("Ess", "2014-08-28", "EnableScalingGroup", "ess");
-	}
+	   
 
 	private Integer loadBalancerWeight6;
 
@@ -121,6 +119,10 @@ public class EnableScalingGroupRequest extends RpcAcsRequest<EnableScalingGroupR
 	private String instanceId16;
 
 	private String instanceId15;
+	public EnableScalingGroupRequest() {
+		super("Ess", "2014-08-28", "EnableScalingGroup", "ess");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getLoadBalancerWeight6() {
 		return this.loadBalancerWeight6;

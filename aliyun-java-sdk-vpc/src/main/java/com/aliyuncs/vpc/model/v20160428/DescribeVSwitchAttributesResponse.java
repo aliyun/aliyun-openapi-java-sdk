@@ -53,6 +53,10 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 
 	private String networkAclId;
 
+	private Long ownerId;
+
+	private String shareType;
+
 	private List<CloudResourceSetType> cloudResources;
 
 	private RouteTable routeTable;
@@ -167,6 +171,22 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 
 	public void setNetworkAclId(String networkAclId) {
 		this.networkAclId = networkAclId;
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+	}
+
+	public String getShareType() {
+		return this.shareType;
+	}
+
+	public void setShareType(String shareType) {
+		this.shareType = shareType;
 	}
 
 	public List<CloudResourceSetType> getCloudResources() {

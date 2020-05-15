@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class CommitContactFlowVersionModificationRequest extends RpcAcsRequest<CommitContactFlowVersionModificationResponse> {
-	
-	public CommitContactFlowVersionModificationRequest() {
-		super("CCC", "2017-07-05", "CommitContactFlowVersionModification");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String canvas;
 
@@ -40,6 +32,14 @@ public class CommitContactFlowVersionModificationRequest extends RpcAcsRequest<C
 	private String instanceId;
 
 	private String contactFlowVersionId;
+	public CommitContactFlowVersionModificationRequest() {
+		super("CCC", "2017-07-05", "CommitContactFlowVersionModification");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCanvas() {
 		return this.canvas;

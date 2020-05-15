@@ -29,6 +29,10 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 
 	private Long uid;
 
+	private Long maxResultCount;
+
+	private Long maxExecuteCount;
+
 	private String userNick;
 
 	private String mobile;
@@ -62,6 +66,28 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 		this.uid = uid;
 		if(uid != null){
 			putQueryParameter("Uid", uid.toString());
+		}
+	}
+
+	public Long getMaxResultCount() {
+		return this.maxResultCount;
+	}
+
+	public void setMaxResultCount(Long maxResultCount) {
+		this.maxResultCount = maxResultCount;
+		if(maxResultCount != null){
+			putQueryParameter("MaxResultCount", maxResultCount.toString());
+		}
+	}
+
+	public Long getMaxExecuteCount() {
+		return this.maxExecuteCount;
+	}
+
+	public void setMaxExecuteCount(Long maxExecuteCount) {
+		this.maxExecuteCount = maxExecuteCount;
+		if(maxExecuteCount != null){
+			putQueryParameter("MaxExecuteCount", maxExecuteCount.toString());
 		}
 	}
 

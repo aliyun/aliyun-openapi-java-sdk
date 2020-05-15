@@ -31,7 +31,7 @@ public class BindAliasRequest extends RpcAcsRequest<BindAliasResponse> {
 
 	private Long appKey;
 	public BindAliasRequest() {
-		super("Push", "2016-08-01", "BindAlias", "cps");
+		super("Push", "2016-08-01", "BindAlias");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

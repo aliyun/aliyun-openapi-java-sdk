@@ -48,6 +48,7 @@ public class DescribeRouteTableListResponseUnmarshaller {
 			routerTableListType.setResourceGroupId(_ctx.stringValue("DescribeRouteTableListResponse.RouterTableList["+ i +"].ResourceGroupId"));
 			routerTableListType.setCreationTime(_ctx.stringValue("DescribeRouteTableListResponse.RouterTableList["+ i +"].CreationTime"));
 			routerTableListType.setStatus(_ctx.stringValue("DescribeRouteTableListResponse.RouterTableList["+ i +"].Status"));
+			routerTableListType.setOwnerId(_ctx.longValue("DescribeRouteTableListResponse.RouterTableList["+ i +"].OwnerId"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRouteTableListResponse.RouterTableList["+ i +"].VSwitchIds.Length"); j++) {

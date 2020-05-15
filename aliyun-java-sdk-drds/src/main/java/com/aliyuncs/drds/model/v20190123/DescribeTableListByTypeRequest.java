@@ -37,7 +37,7 @@ public class DescribeTableListByTypeRequest extends RpcAcsRequest<DescribeTableL
 
 	private Integer pageSize;
 	public DescribeTableListByTypeRequest() {
-		super("Drds", "2019-01-23", "DescribeTableListByType", "drds");
+		super("Drds", "2019-01-23", "DescribeTableListByType", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

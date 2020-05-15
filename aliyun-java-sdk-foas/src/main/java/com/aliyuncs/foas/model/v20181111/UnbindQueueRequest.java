@@ -24,9 +24,15 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class UnbindQueueRequest extends RoaAcsRequest<UnbindQueueResponse> {
-	
+	   
+
+	private String queueName;
+
+	private String projectName;
+
+	private String clusterId;
 	public UnbindQueueRequest() {
-		super("foas", "2018-11-11", "UnbindQueue");
+		super("foas", "2018-11-11", "UnbindQueue", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/queue");
 		setMethod(MethodType.DELETE);
@@ -35,12 +41,6 @@ public class UnbindQueueRequest extends RoaAcsRequest<UnbindQueueResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String queueName;
-
-	private String projectName;
-
-	private String clusterId;
 
 	public String getQueueName() {
 		return this.queueName;

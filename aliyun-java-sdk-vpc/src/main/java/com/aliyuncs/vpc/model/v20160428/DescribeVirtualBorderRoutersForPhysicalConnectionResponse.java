@@ -113,6 +113,14 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 
 		private String bandwidth;
 
+		private String localIpv6GatewayIp;
+
+		private String peerIpv6GatewayIp;
+
+		private String peeringIpv6SubnetMask;
+
+		private Boolean enableIpv6;
+
 		public String getVbrId() {
 			return this.vbrId;
 		}
@@ -255,6 +263,38 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 
 		public void setBandwidth(String bandwidth) {
 			this.bandwidth = bandwidth;
+		}
+
+		public String getLocalIpv6GatewayIp() {
+			return this.localIpv6GatewayIp;
+		}
+
+		public void setLocalIpv6GatewayIp(String localIpv6GatewayIp) {
+			this.localIpv6GatewayIp = localIpv6GatewayIp;
+		}
+
+		public String getPeerIpv6GatewayIp() {
+			return this.peerIpv6GatewayIp;
+		}
+
+		public void setPeerIpv6GatewayIp(String peerIpv6GatewayIp) {
+			this.peerIpv6GatewayIp = peerIpv6GatewayIp;
+		}
+
+		public String getPeeringIpv6SubnetMask() {
+			return this.peeringIpv6SubnetMask;
+		}
+
+		public void setPeeringIpv6SubnetMask(String peeringIpv6SubnetMask) {
+			this.peeringIpv6SubnetMask = peeringIpv6SubnetMask;
+		}
+
+		public Boolean getEnableIpv6() {
+			return this.enableIpv6;
+		}
+
+		public void setEnableIpv6(Boolean enableIpv6) {
+			this.enableIpv6 = enableIpv6;
 		}
 	}
 

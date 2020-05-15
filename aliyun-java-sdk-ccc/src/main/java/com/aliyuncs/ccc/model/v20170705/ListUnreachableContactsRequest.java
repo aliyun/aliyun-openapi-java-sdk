@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListUnreachableContactsRequest extends RpcAcsRequest<ListUnreachableContactsResponse> {
-	
-	public ListUnreachableContactsRequest() {
-		super("CCC", "2017-07-05", "ListUnreachableContacts");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer pageNumber;
 
@@ -40,6 +32,14 @@ public class ListUnreachableContactsRequest extends RpcAcsRequest<ListUnreachabl
 	private String jobGroupId;
 
 	private Integer pageSize;
+	public ListUnreachableContactsRequest() {
+		super("CCC", "2017-07-05", "ListUnreachableContacts");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;

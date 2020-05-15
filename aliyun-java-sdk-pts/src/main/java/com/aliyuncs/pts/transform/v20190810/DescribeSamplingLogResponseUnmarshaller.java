@@ -31,6 +31,9 @@ public class DescribeSamplingLogResponseUnmarshaller {
 		describeSamplingLogResponse.setHttpStatusCode(_ctx.integerValue("DescribeSamplingLogResponse.HttpStatusCode"));
 		describeSamplingLogResponse.setSuccess(_ctx.booleanValue("DescribeSamplingLogResponse.Success"));
 		describeSamplingLogResponse.setCode(_ctx.stringValue("DescribeSamplingLogResponse.Code"));
+		describeSamplingLogResponse.setPageNumber(_ctx.integerValue("DescribeSamplingLogResponse.PageNumber"));
+		describeSamplingLogResponse.setPageSize(_ctx.integerValue("DescribeSamplingLogResponse.PageSize"));
+		describeSamplingLogResponse.setTotalCount(_ctx.longValue("DescribeSamplingLogResponse.TotalCount"));
 
 		List<SamplingLog> samplingLogs = new ArrayList<SamplingLog>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSamplingLogResponse.SamplingLogs.Length"); i++) {
@@ -51,6 +54,9 @@ public class DescribeSamplingLogResponseUnmarshaller {
 			samplingLog.setCheckResult(_ctx.stringValue("DescribeSamplingLogResponse.SamplingLogs["+ i +"].CheckResult"));
 			samplingLog.setHttpTiming(_ctx.stringValue("DescribeSamplingLogResponse.SamplingLogs["+ i +"].HttpTiming"));
 			samplingLog.setRt(_ctx.stringValue("DescribeSamplingLogResponse.SamplingLogs["+ i +"].Rt"));
+			samplingLog.setHttpResponseStatus(_ctx.stringValue("DescribeSamplingLogResponse.SamplingLogs["+ i +"].HttpResponseStatus"));
+			samplingLog.setTransId(_ctx.stringValue("DescribeSamplingLogResponse.SamplingLogs["+ i +"].TransId"));
+			samplingLog.setGroupTag(_ctx.stringValue("DescribeSamplingLogResponse.SamplingLogs["+ i +"].GroupTag"));
 
 			samplingLogs.add(samplingLog);
 		}

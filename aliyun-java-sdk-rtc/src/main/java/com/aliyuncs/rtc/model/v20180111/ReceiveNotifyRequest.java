@@ -37,7 +37,7 @@ public class ReceiveNotifyRequest extends RpcAcsRequest<ReceiveNotifyResponse> {
 
 	private String bizId;
 	public ReceiveNotifyRequest() {
-		super("rtc", "2018-01-11", "ReceiveNotify");
+		super("rtc", "2018-01-11", "ReceiveNotify", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

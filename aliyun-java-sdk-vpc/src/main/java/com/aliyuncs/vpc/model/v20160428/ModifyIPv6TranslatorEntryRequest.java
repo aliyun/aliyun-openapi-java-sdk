@@ -55,7 +55,7 @@ public class ModifyIPv6TranslatorEntryRequest extends RpcAcsRequest<ModifyIPv6Tr
 
 	private String transProtocol;
 	public ModifyIPv6TranslatorEntryRequest() {
-		super("Vpc", "2016-04-28", "ModifyIPv6TranslatorEntry", "Vpc");
+		super("Vpc", "2016-04-28", "ModifyIPv6TranslatorEntry", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

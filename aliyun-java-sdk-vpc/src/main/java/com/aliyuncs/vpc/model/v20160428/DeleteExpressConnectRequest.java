@@ -39,7 +39,7 @@ public class DeleteExpressConnectRequest extends RpcAcsRequest<DeleteExpressConn
 
 	private Boolean force;
 	public DeleteExpressConnectRequest() {
-		super("Vpc", "2016-04-28", "DeleteExpressConnect", "Vpc");
+		super("Vpc", "2016-04-28", "DeleteExpressConnect", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

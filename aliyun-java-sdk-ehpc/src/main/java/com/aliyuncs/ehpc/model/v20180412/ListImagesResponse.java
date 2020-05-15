@@ -55,6 +55,10 @@ public class ListImagesResponse extends AcsResponse {
 
 		private String architecture;
 
+		private String baseOsTag;
+
+		private String imageId;
+
 		public String getOsTag() {
 			return this.osTag;
 		}
@@ -85,6 +89,22 @@ public class ListImagesResponse extends AcsResponse {
 
 		public void setArchitecture(String architecture) {
 			this.architecture = architecture;
+		}
+
+		public String getBaseOsTag() {
+			return this.baseOsTag;
+		}
+
+		public void setBaseOsTag(String baseOsTag) {
+			this.baseOsTag = baseOsTag;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
 		}
 	}
 

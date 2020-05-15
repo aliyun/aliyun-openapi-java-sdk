@@ -89,6 +89,10 @@ public class DescribeRouteServicesInCenResponse extends AcsResponse {
 
 		private String status;
 
+		private String hostVpcId;
+
+		private String description;
+
 		private List<String> cidrs;
 
 		public String getCenId() {
@@ -137,6 +141,22 @@ public class DescribeRouteServicesInCenResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getHostVpcId() {
+			return this.hostVpcId;
+		}
+
+		public void setHostVpcId(String hostVpcId) {
+			this.hostVpcId = hostVpcId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public List<String> getCidrs() {

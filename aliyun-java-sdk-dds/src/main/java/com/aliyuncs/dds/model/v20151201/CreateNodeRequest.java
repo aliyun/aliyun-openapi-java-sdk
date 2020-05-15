@@ -49,7 +49,7 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 
 	private Long ownerId;
 	public CreateNodeRequest() {
-		super("Dds", "2015-12-01", "CreateNode", "Dds");
+		super("Dds", "2015-12-01", "CreateNode", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

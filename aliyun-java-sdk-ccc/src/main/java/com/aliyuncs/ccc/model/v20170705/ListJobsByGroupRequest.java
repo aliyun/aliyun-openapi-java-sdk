@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class ListJobsByGroupRequest extends RpcAcsRequest<ListJobsByGroupResponse> {
-	
-	public ListJobsByGroupRequest() {
-		super("CCC", "2017-07-05", "ListJobsByGroup");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String jobStatus;
 
@@ -44,6 +36,14 @@ public class ListJobsByGroupRequest extends RpcAcsRequest<ListJobsByGroupRespons
 	private String jobGroupId;
 
 	private Integer pageSize;
+	public ListJobsByGroupRequest() {
+		super("CCC", "2017-07-05", "ListJobsByGroup");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getJobStatus() {
 		return this.jobStatus;

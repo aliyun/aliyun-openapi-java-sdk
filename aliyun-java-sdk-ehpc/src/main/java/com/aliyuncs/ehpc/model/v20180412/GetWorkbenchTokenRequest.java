@@ -16,6 +16,7 @@ package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ehpc.Endpoint;
 
 /**
  * @author auto create
@@ -38,8 +39,12 @@ public class GetWorkbenchTokenRequest extends RpcAcsRequest<GetWorkbenchTokenRes
 
 	private String userName;
 	public GetWorkbenchTokenRequest() {
-		super("EHPC", "2018-04-12", "GetWorkbenchToken", "ehs");
+		super("EHPC", "2018-04-12", "GetWorkbenchToken");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getClusterId() {

@@ -1,3 +1,9 @@
+2020-04-21 Version: 1.2.8
+- Add Statistics API.
+
+2020-04-02 Version: 1.2.7
+- Add slo metrics.
+
 2019-11-13 Version: 1.2.1
 - FindServiceList add RouteConfJson result.
 

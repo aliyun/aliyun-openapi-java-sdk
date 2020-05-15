@@ -35,7 +35,7 @@ public class CreateLabelTaskRequest extends RpcAcsRequest<CreateLabelTaskRespons
 
 	private String applicationId;
 	public CreateLabelTaskRequest() {
-		super("multimediaai", "2019-08-10", "CreateLabelTask", "multimediaai");
+		super("multimediaai", "2019-08-10", "CreateLabelTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

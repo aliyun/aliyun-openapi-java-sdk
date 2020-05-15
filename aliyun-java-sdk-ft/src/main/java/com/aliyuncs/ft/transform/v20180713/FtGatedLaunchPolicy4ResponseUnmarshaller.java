@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class FtGatedLaunchPolicy4ResponseUnmarshaller {
 
-	public static FtGatedLaunchPolicy4Response unmarshall(FtGatedLaunchPolicy4Response ftGatedLaunchPolicy4Response, UnmarshallerContext context) {
+	public static FtGatedLaunchPolicy4Response unmarshall(FtGatedLaunchPolicy4Response ftGatedLaunchPolicy4Response, UnmarshallerContext _ctx) {
 		
-		ftGatedLaunchPolicy4Response.setRequestId(context.stringValue("FtGatedLaunchPolicy4Response.RequestId"));
-		ftGatedLaunchPolicy4Response.setIsGatedLaunch(context.stringValue("FtGatedLaunchPolicy4Response.IsGatedLaunch"));
+		ftGatedLaunchPolicy4Response.setRequestId(_ctx.stringValue("FtGatedLaunchPolicy4Response.RequestId"));
+		ftGatedLaunchPolicy4Response.setIsGatedLaunch(_ctx.stringValue("FtGatedLaunchPolicy4Response.IsGatedLaunch"));
 	 
 	 	return ftGatedLaunchPolicy4Response;
 	}

@@ -16,6 +16,7 @@ package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkvisual.Endpoint;
 
 /**
  * @author auto create
@@ -24,23 +25,16 @@ import com.aliyuncs.http.MethodType;
 public class CreateRecordPlanRequest extends RpcAcsRequest<CreateRecordPlanResponse> {
 	   
 
-	private String name;
-
 	private String templateId;
+
+	private String name;
 	public CreateRecordPlanRequest() {
-		super("Linkvisual", "2018-01-20", "CreateRecordPlan", "linkvisual");
+		super("Linkvisual", "2018-01-20", "CreateRecordPlan", "Linkvisual");
 		setMethod(MethodType.POST);
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getTemplateId() {
@@ -51,6 +45,17 @@ public class CreateRecordPlanRequest extends RpcAcsRequest<CreateRecordPlanRespo
 		this.templateId = templateId;
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

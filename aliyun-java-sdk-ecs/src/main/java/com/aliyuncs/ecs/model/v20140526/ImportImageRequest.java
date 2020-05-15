@@ -34,7 +34,11 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 	private String platform;
 
+	private String resourceGroupId;
+
 	private String imageName;
+
+	private List<Tag> tags;
 
 	private String architecture;
 
@@ -107,6 +111,17 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getImageName() {
 		return this.imageName;
 	}
@@ -116,6 +131,20 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		if(imageName != null){
 			putQueryParameter("ImageName", imageName);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getArchitecture() {
@@ -244,6 +273,29 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 		public void setDiskImageSize(Integer diskImageSize) {
 			this.diskImageSize = diskImageSize;
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

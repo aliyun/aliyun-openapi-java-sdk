@@ -58,4 +58,9 @@ public class AuthorizeResourceGroupResponse extends AcsResponse {
 	public AuthorizeResourceGroupResponse getInstance(UnmarshallerContext context) {
 		return	AuthorizeResourceGroupResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

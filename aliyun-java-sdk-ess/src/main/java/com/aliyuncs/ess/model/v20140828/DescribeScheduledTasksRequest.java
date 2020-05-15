@@ -15,16 +15,14 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeScheduledTasksRequest extends RpcAcsRequest<DescribeScheduledTasksResponse> {
-	
-	public DescribeScheduledTasksRequest() {
-		super("Ess", "2014-08-28", "DescribeScheduledTasks", "ess");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -157,6 +155,10 @@ public class DescribeScheduledTasksRequest extends RpcAcsRequest<DescribeSchedul
 	private String scheduledAction10;
 
 	private String scheduledAction11;
+	public DescribeScheduledTasksRequest() {
+		super("Ess", "2014-08-28", "DescribeScheduledTasks", "ess");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

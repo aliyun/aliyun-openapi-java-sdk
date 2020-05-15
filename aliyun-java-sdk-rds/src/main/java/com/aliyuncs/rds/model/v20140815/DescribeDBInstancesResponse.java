@@ -153,6 +153,12 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String dedicatedHostNameForLog;
 
+		private String dedicatedHostZoneIdForMaster;
+
+		private String dedicatedHostZoneIdForSlave;
+
+		private String dedicatedHostZoneIdForLog;
+
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 		public Integer getInsId() {
@@ -457,6 +463,30 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setDedicatedHostNameForLog(String dedicatedHostNameForLog) {
 			this.dedicatedHostNameForLog = dedicatedHostNameForLog;
+		}
+
+		public String getDedicatedHostZoneIdForMaster() {
+			return this.dedicatedHostZoneIdForMaster;
+		}
+
+		public void setDedicatedHostZoneIdForMaster(String dedicatedHostZoneIdForMaster) {
+			this.dedicatedHostZoneIdForMaster = dedicatedHostZoneIdForMaster;
+		}
+
+		public String getDedicatedHostZoneIdForSlave() {
+			return this.dedicatedHostZoneIdForSlave;
+		}
+
+		public void setDedicatedHostZoneIdForSlave(String dedicatedHostZoneIdForSlave) {
+			this.dedicatedHostZoneIdForSlave = dedicatedHostZoneIdForSlave;
+		}
+
+		public String getDedicatedHostZoneIdForLog() {
+			return this.dedicatedHostZoneIdForLog;
+		}
+
+		public void setDedicatedHostZoneIdForLog(String dedicatedHostZoneIdForLog) {
+			this.dedicatedHostZoneIdForLog = dedicatedHostZoneIdForLog;
 		}
 
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {

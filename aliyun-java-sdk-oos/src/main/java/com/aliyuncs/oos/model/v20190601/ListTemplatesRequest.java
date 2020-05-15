@@ -15,6 +15,9 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.oos.Endpoint;
 
 /**
@@ -22,16 +25,7 @@ import com.aliyuncs.oos.Endpoint;
  * @version 
  */
 public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
-	
-	public ListTemplatesRequest() {
-		super("oos", "2019-06-01", "ListTemplates", "oos");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private Boolean hasTrigger;
+	   
 
 	private String createdDateBefore;
 
@@ -39,29 +33,34 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 
 	private String nextToken;
 
-	private String createdDateAfter;
-
-	private Integer maxResults;
+	private String templateType;
 
 	private String templateName;
 
 	private String sortOrder;
 
-	private String templateFormat;
-
 	private String shareType;
+
+	private Boolean hasTrigger;
+
+	private String createdDateAfter;
+
+	private Map<Object,Object> tags;
+
+	private Integer maxResults;
+
+	private String templateFormat;
 
 	private String sortField;
 
-	public Boolean getHasTrigger() {
-		return this.hasTrigger;
-	}
-
-	public void setHasTrigger(Boolean hasTrigger) {
-		this.hasTrigger = hasTrigger;
-		if(hasTrigger != null){
-			putQueryParameter("HasTrigger", hasTrigger.toString());
-		}
+	private String category;
+	public ListTemplatesRequest() {
+		super("oos", "2019-06-01", "ListTemplates", "oos");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getCreatedDateBefore() {
@@ -97,25 +96,14 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 		}
 	}
 
-	public String getCreatedDateAfter() {
-		return this.createdDateAfter;
+	public String getTemplateType() {
+		return this.templateType;
 	}
 
-	public void setCreatedDateAfter(String createdDateAfter) {
-		this.createdDateAfter = createdDateAfter;
-		if(createdDateAfter != null){
-			putQueryParameter("CreatedDateAfter", createdDateAfter);
-		}
-	}
-
-	public Integer getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
+	public void setTemplateType(String templateType) {
+		this.templateType = templateType;
+		if(templateType != null){
+			putQueryParameter("TemplateType", templateType);
 		}
 	}
 
@@ -141,17 +129,6 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 		}
 	}
 
-	public String getTemplateFormat() {
-		return this.templateFormat;
-	}
-
-	public void setTemplateFormat(String templateFormat) {
-		this.templateFormat = templateFormat;
-		if(templateFormat != null){
-			putQueryParameter("TemplateFormat", templateFormat);
-		}
-	}
-
 	public String getShareType() {
 		return this.shareType;
 	}
@@ -163,6 +140,61 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 		}
 	}
 
+	public Boolean getHasTrigger() {
+		return this.hasTrigger;
+	}
+
+	public void setHasTrigger(Boolean hasTrigger) {
+		this.hasTrigger = hasTrigger;
+		if(hasTrigger != null){
+			putQueryParameter("HasTrigger", hasTrigger.toString());
+		}
+	}
+
+	public String getCreatedDateAfter() {
+		return this.createdDateAfter;
+	}
+
+	public void setCreatedDateAfter(String createdDateAfter) {
+		this.createdDateAfter = createdDateAfter;
+		if(createdDateAfter != null){
+			putQueryParameter("CreatedDateAfter", createdDateAfter);
+		}
+	}
+
+	public Map<Object,Object> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(Map<Object,Object> tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", new Gson().toJson(tags));
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getTemplateFormat() {
+		return this.templateFormat;
+	}
+
+	public void setTemplateFormat(String templateFormat) {
+		this.templateFormat = templateFormat;
+		if(templateFormat != null){
+			putQueryParameter("TemplateFormat", templateFormat);
+		}
+	}
+
 	public String getSortField() {
 		return this.sortField;
 	}
@@ -171,6 +203,17 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 		this.sortField = sortField;
 		if(sortField != null){
 			putQueryParameter("SortField", sortField);
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
 		}
 	}
 

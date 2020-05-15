@@ -16,24 +16,16 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
-	
-	public ModifyAlarmRequest() {
-		super("Ess", "2014-08-28", "ModifyAlarm", "ess");
-	}
+	   
 
 	private String metricType;
-
-	private Integer period;
-
-	private String resourceOwnerAccount;
-
-	private Integer groupId;
 
 	private String description;
 
@@ -41,21 +33,31 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 
 	private Float threshold;
 
+	private Integer evaluationCount;
+
+	private String metricName;
+
+	private List<Dimension> dimensions;
+
+	private Integer period;
+
+	private String resourceOwnerAccount;
+
+	private Integer groupId;
+
 	private Long ownerId;
 
 	private String alarmTaskId;
 
 	private String name;
 
-	private Integer evaluationCount;
-
-	private String metricName;
-
 	private String comparisonOperator;
 
-	private List<Dimension> dimensions;
-
 	private String statistics;
+	public ModifyAlarmRequest() {
+		super("Ess", "2014-08-28", "ModifyAlarm", "ess");
+		setMethod(MethodType.POST);
+	}
 
 	public String getMetricType() {
 		return this.metricType;
@@ -65,39 +67,6 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 		this.metricType = metricType;
 		if(metricType != null){
 			putQueryParameter("MetricType", metricType);
-		}
-	}
-
-	public Integer getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Integer getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(Integer groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId.toString());
 		}
 	}
 
@@ -136,6 +105,75 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 		}
 	}
 
+	public Integer getEvaluationCount() {
+		return this.evaluationCount;
+	}
+
+	public void setEvaluationCount(Integer evaluationCount) {
+		this.evaluationCount = evaluationCount;
+		if(evaluationCount != null){
+			putQueryParameter("EvaluationCount", evaluationCount.toString());
+		}
+	}
+
+	public String getMetricName() {
+		return this.metricName;
+	}
+
+	public void setMetricName(String metricName) {
+		this.metricName = metricName;
+		if(metricName != null){
+			putQueryParameter("MetricName", metricName);
+		}
+	}
+
+	public List<Dimension> getDimensions() {
+		return this.dimensions;
+	}
+
+	public void setDimensions(List<Dimension> dimensions) {
+		this.dimensions = dimensions;	
+		if (dimensions != null) {
+			for (int depth1 = 0; depth1 < dimensions.size(); depth1++) {
+				putQueryParameter("Dimension." + (depth1 + 1) + ".DimensionValue" , dimensions.get(depth1).getDimensionValue());
+				putQueryParameter("Dimension." + (depth1 + 1) + ".DimensionKey" , dimensions.get(depth1).getDimensionKey());
+			}
+		}	
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Integer getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(Integer groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -169,28 +207,6 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 		}
 	}
 
-	public Integer getEvaluationCount() {
-		return this.evaluationCount;
-	}
-
-	public void setEvaluationCount(Integer evaluationCount) {
-		this.evaluationCount = evaluationCount;
-		if(evaluationCount != null){
-			putQueryParameter("EvaluationCount", evaluationCount.toString());
-		}
-	}
-
-	public String getMetricName() {
-		return this.metricName;
-	}
-
-	public void setMetricName(String metricName) {
-		this.metricName = metricName;
-		if(metricName != null){
-			putQueryParameter("MetricName", metricName);
-		}
-	}
-
 	public String getComparisonOperator() {
 		return this.comparisonOperator;
 	}
@@ -200,20 +216,6 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 		if(comparisonOperator != null){
 			putQueryParameter("ComparisonOperator", comparisonOperator);
 		}
-	}
-
-	public List<Dimension> getDimensions() {
-		return this.dimensions;
-	}
-
-	public void setDimensions(List<Dimension> dimensions) {
-		this.dimensions = dimensions;	
-		if (dimensions != null) {
-			for (int depth1 = 0; depth1 < dimensions.size(); depth1++) {
-				putQueryParameter("Dimension." + (depth1 + 1) + ".DimensionValue" , dimensions.get(depth1).getDimensionValue());
-				putQueryParameter("Dimension." + (depth1 + 1) + ".DimensionKey" , dimensions.get(depth1).getDimensionKey());
-			}
-		}	
 	}
 
 	public String getStatistics() {

@@ -85,6 +85,10 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 
 		private String fileId;
 
+		private String transactionId;
+
+		private String txHash;
+
 		private String state;
 
 		private String code;
@@ -131,6 +135,22 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 
 		public void setFileId(String fileId) {
 			this.fileId = fileId;
+		}
+
+		public String getTransactionId() {
+			return this.transactionId;
+		}
+
+		public void setTransactionId(String transactionId) {
+			this.transactionId = transactionId;
+		}
+
+		public String getTxHash() {
+			return this.txHash;
+		}
+
+		public void setTxHash(String txHash) {
+			this.txHash = txHash;
 		}
 
 		public String getState() {
@@ -236,6 +256,10 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 
 			private String saveType;
 
+			private String notary;
+
+			private String fpDBId;
+
 			public String getPrimaryKey() {
 				return this.primaryKey;
 			}
@@ -250,6 +274,22 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 
 			public void setSaveType(String saveType) {
 				this.saveType = saveType;
+			}
+
+			public String getNotary() {
+				return this.notary;
+			}
+
+			public void setNotary(String notary) {
+				this.notary = notary;
+			}
+
+			public String getFpDBId() {
+				return this.fpDBId;
+			}
+
+			public void setFpDBId(String fpDBId) {
+				this.fpDBId = fpDBId;
 			}
 		}
 
@@ -309,9 +349,19 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 
 				public static class FpShotSlice {
 
+					private String similarity;
+
 					private Input input;
 
 					private Duplication duplication;
+
+					public String getSimilarity() {
+						return this.similarity;
+					}
+
+					public void setSimilarity(String similarity) {
+						this.similarity = similarity;
+					}
 
 					public Input getInput() {
 						return this.input;

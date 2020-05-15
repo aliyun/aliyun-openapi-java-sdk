@@ -91,6 +91,12 @@ public class GetEdgeInstanceDeploymentResponse extends AcsResponse {
 
 		private String type;
 
+		private Long gmtCreateTimestamp;
+
+		private Long gmtModifiedTimestamp;
+
+		private Long gmtCompletedTimestamp;
+
 		private List<Task> taskList;
 
 		public String getGmtCreate() {
@@ -149,6 +155,30 @@ public class GetEdgeInstanceDeploymentResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public Long getGmtCreateTimestamp() {
+			return this.gmtCreateTimestamp;
+		}
+
+		public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
+			this.gmtCreateTimestamp = gmtCreateTimestamp;
+		}
+
+		public Long getGmtModifiedTimestamp() {
+			return this.gmtModifiedTimestamp;
+		}
+
+		public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
+			this.gmtModifiedTimestamp = gmtModifiedTimestamp;
+		}
+
+		public Long getGmtCompletedTimestamp() {
+			return this.gmtCompletedTimestamp;
+		}
+
+		public void setGmtCompletedTimestamp(Long gmtCompletedTimestamp) {
+			this.gmtCompletedTimestamp = gmtCompletedTimestamp;
+		}
+
 		public List<Task> getTaskList() {
 			return this.taskList;
 		}
@@ -172,6 +202,12 @@ public class GetEdgeInstanceDeploymentResponse extends AcsResponse {
 			private Integer stage;
 
 			private Integer status;
+
+			private Long gmtCreateTimestamp;
+
+			private Long gmtModifiedTimestamp;
+
+			private Long gmtCompletedTimestamp;
 
 			private List<ResourceSnapshot> resourceSnapshotList;
 
@@ -231,6 +267,30 @@ public class GetEdgeInstanceDeploymentResponse extends AcsResponse {
 				this.status = status;
 			}
 
+			public Long getGmtCreateTimestamp() {
+				return this.gmtCreateTimestamp;
+			}
+
+			public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
+				this.gmtCreateTimestamp = gmtCreateTimestamp;
+			}
+
+			public Long getGmtModifiedTimestamp() {
+				return this.gmtModifiedTimestamp;
+			}
+
+			public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
+				this.gmtModifiedTimestamp = gmtModifiedTimestamp;
+			}
+
+			public Long getGmtCompletedTimestamp() {
+				return this.gmtCompletedTimestamp;
+			}
+
+			public void setGmtCompletedTimestamp(Long gmtCompletedTimestamp) {
+				this.gmtCompletedTimestamp = gmtCompletedTimestamp;
+			}
+
 			public List<ResourceSnapshot> getResourceSnapshotList() {
 				return this.resourceSnapshotList;
 			}
@@ -262,6 +322,12 @@ public class GetEdgeInstanceDeploymentResponse extends AcsResponse {
 				private Integer status;
 
 				private String log;
+
+				private Long gmtCreateTimestamp;
+
+				private Long gmtModifiedTimestamp;
+
+				private Long gmtCompletedTimestamp;
 
 				public String getGmtCreate() {
 					return this.gmtCreate;
@@ -349,6 +415,30 @@ public class GetEdgeInstanceDeploymentResponse extends AcsResponse {
 
 				public void setLog(String log) {
 					this.log = log;
+				}
+
+				public Long getGmtCreateTimestamp() {
+					return this.gmtCreateTimestamp;
+				}
+
+				public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
+					this.gmtCreateTimestamp = gmtCreateTimestamp;
+				}
+
+				public Long getGmtModifiedTimestamp() {
+					return this.gmtModifiedTimestamp;
+				}
+
+				public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
+					this.gmtModifiedTimestamp = gmtModifiedTimestamp;
+				}
+
+				public Long getGmtCompletedTimestamp() {
+					return this.gmtCompletedTimestamp;
+				}
+
+				public void setGmtCompletedTimestamp(Long gmtCompletedTimestamp) {
+					this.gmtCompletedTimestamp = gmtCompletedTimestamp;
 				}
 			}
 		}

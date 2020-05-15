@@ -53,6 +53,9 @@ public class QueryEdgeInstanceResponseUnmarshaller {
 			instance.setBizEnable(_ctx.booleanValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].BizEnable"));
 			instance.setLatestDeploymentStatus(_ctx.integerValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].LatestDeploymentStatus"));
 			instance.setLatestDeploymentType(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].LatestDeploymentType"));
+			instance.setGmtCreateTimestamp(_ctx.longValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].GmtCreateTimestamp"));
+			instance.setGmtModifiedTimestamp(_ctx.longValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].GmtModifiedTimestamp"));
+			instance.setRoleAttachTimestamp(_ctx.longValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].RoleAttachTimestamp"));
 
 			instanceList.add(instance);
 		}

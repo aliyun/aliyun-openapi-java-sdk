@@ -29,7 +29,7 @@ public class DeleteRuleActionRequest extends RpcAcsRequest<DeleteRuleActionRespo
 
 	private Long actionId;
 	public DeleteRuleActionRequest() {
-		super("Iot", "2018-01-20", "DeleteRuleAction", "iot");
+		super("Iot", "2018-01-20", "DeleteRuleAction", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -15,44 +15,35 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeAlarmsRequest extends RpcAcsRequest<DescribeAlarmsResponse> {
-	
-	public DescribeAlarmsRequest() {
-		super("Ess", "2014-08-28", "DescribeAlarms", "ess");
-	}
-
-	private Boolean isEnable;
+	   
 
 	private String metricType;
 
-	private String resourceOwnerAccount;
-
 	private String scalingGroupId;
+
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private String state;
 
+	private String resourceOwnerAccount;
+
 	private Long ownerId;
 
 	private String alarmTaskId;
 
-	private Integer pageNumber;
-
-	public Boolean getIsEnable() {
-		return this.isEnable;
-	}
-
-	public void setIsEnable(Boolean isEnable) {
-		this.isEnable = isEnable;
-		if(isEnable != null){
-			putQueryParameter("IsEnable", isEnable.toString());
-		}
+	private Boolean isEnable;
+	public DescribeAlarmsRequest() {
+		super("Ess", "2014-08-28", "DescribeAlarms", "ess");
+		setMethod(MethodType.POST);
 	}
 
 	public String getMetricType() {
@@ -66,17 +57,6 @@ public class DescribeAlarmsRequest extends RpcAcsRequest<DescribeAlarmsResponse>
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getScalingGroupId() {
 		return this.scalingGroupId;
 	}
@@ -85,6 +65,17 @@ public class DescribeAlarmsRequest extends RpcAcsRequest<DescribeAlarmsResponse>
 		this.scalingGroupId = scalingGroupId;
 		if(scalingGroupId != null){
 			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -110,6 +101,17 @@ public class DescribeAlarmsRequest extends RpcAcsRequest<DescribeAlarmsResponse>
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -132,14 +134,14 @@ public class DescribeAlarmsRequest extends RpcAcsRequest<DescribeAlarmsResponse>
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Boolean getIsEnable() {
+		return this.isEnable;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setIsEnable(Boolean isEnable) {
+		this.isEnable = isEnable;
+		if(isEnable != null){
+			putQueryParameter("IsEnable", isEnable.toString());
 		}
 	}
 

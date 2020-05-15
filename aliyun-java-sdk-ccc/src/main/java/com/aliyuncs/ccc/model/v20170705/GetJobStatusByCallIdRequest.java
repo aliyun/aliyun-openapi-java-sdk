@@ -23,19 +23,19 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class GetJobStatusByCallIdRequest extends RpcAcsRequest<GetJobStatusByCallIdResponse> {
-	
+	   
+
+	private String callId;
+
+	private String instanceId;
 	public GetJobStatusByCallIdRequest() {
 		super("CCC", "2017-07-05", "GetJobStatusByCallId");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String callId;
-
-	private String instanceId;
 
 	public String getCallId() {
 		return this.callId;

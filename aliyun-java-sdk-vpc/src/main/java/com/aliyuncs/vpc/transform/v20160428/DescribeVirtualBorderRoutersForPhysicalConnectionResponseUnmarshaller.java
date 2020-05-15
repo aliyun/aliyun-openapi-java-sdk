@@ -52,6 +52,10 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponseUnmarshall
 			virtualBorderRouterForPhysicalConnectionType.setPConnVbrExpireTime(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PConnVbrExpireTime"));
 			virtualBorderRouterForPhysicalConnectionType.setPConnVbrBussinessStatus(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PConnVbrBussinessStatus"));
 			virtualBorderRouterForPhysicalConnectionType.setBandwidth(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].Bandwidth"));
+			virtualBorderRouterForPhysicalConnectionType.setLocalIpv6GatewayIp(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].LocalIpv6GatewayIp"));
+			virtualBorderRouterForPhysicalConnectionType.setPeerIpv6GatewayIp(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeerIpv6GatewayIp"));
+			virtualBorderRouterForPhysicalConnectionType.setPeeringIpv6SubnetMask(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeeringIpv6SubnetMask"));
+			virtualBorderRouterForPhysicalConnectionType.setEnableIpv6(_ctx.booleanValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].EnableIpv6"));
 
 			virtualBorderRouterForPhysicalConnectionSet.add(virtualBorderRouterForPhysicalConnectionType);
 		}

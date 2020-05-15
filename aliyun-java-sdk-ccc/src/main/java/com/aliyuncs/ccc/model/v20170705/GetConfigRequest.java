@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class GetConfigRequest extends RpcAcsRequest<GetConfigResponse> {
-	
-	public GetConfigRequest() {
-		super("CCC", "2017-07-05", "GetConfig");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String instanceId;
 
@@ -40,6 +32,14 @@ public class GetConfigRequest extends RpcAcsRequest<GetConfigResponse> {
 	private String objectType;
 
 	private String objectId;
+	public GetConfigRequest() {
+		super("CCC", "2017-07-05", "GetConfig");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;

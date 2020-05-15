@@ -18,7 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.retailcloud.model.v20180313.ListAppResponse;
-import com.aliyuncs.retailcloud.model.v20180313.ListAppResponse.ListAppResponse1;
+import com.aliyuncs.retailcloud.model.v20180313.ListAppResponse.AppDetail;
+import com.aliyuncs.retailcloud.model.v20180313.ListAppResponse.AppDetail.MiddleWareInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,20 +32,32 @@ public class ListAppResponseUnmarshaller {
 		listAppResponse.setErrorMsg(_ctx.stringValue("ListAppResponse.ErrorMsg"));
 		listAppResponse.setTotalCount(_ctx.integerValue("ListAppResponse.TotalCount"));
 
-		List<ListAppResponse1> data = new ArrayList<ListAppResponse1>();
+		List<AppDetail> data = new ArrayList<AppDetail>();
 		for (int i = 0; i < _ctx.lengthValue("ListAppResponse.Data.Length"); i++) {
-			ListAppResponse1 listAppResponse1 = new ListAppResponse1();
-			listAppResponse1.setAppId(_ctx.longValue("ListAppResponse.Data["+ i +"].AppId"));
-			listAppResponse1.setTitle(_ctx.stringValue("ListAppResponse.Data["+ i +"].Title"));
-			listAppResponse1.setDescription(_ctx.stringValue("ListAppResponse.Data["+ i +"].Description"));
-			listAppResponse1.setLanguage(_ctx.stringValue("ListAppResponse.Data["+ i +"].Language"));
-			listAppResponse1.setOperatingSystem(_ctx.stringValue("ListAppResponse.Data["+ i +"].OperatingSystem"));
-			listAppResponse1.setBizName(_ctx.stringValue("ListAppResponse.Data["+ i +"].BizName"));
-			listAppResponse1.setServiceType(_ctx.stringValue("ListAppResponse.Data["+ i +"].ServiceType"));
-			listAppResponse1.setDeployType(_ctx.stringValue("ListAppResponse.Data["+ i +"].DeployType"));
-			listAppResponse1.setBizTitle(_ctx.stringValue("ListAppResponse.Data["+ i +"].BizTitle"));
+			AppDetail appDetail = new AppDetail();
+			appDetail.setAppId(_ctx.longValue("ListAppResponse.Data["+ i +"].AppId"));
+			appDetail.setTitle(_ctx.stringValue("ListAppResponse.Data["+ i +"].Title"));
+			appDetail.setDescription(_ctx.stringValue("ListAppResponse.Data["+ i +"].Description"));
+			appDetail.setLanguage(_ctx.stringValue("ListAppResponse.Data["+ i +"].Language"));
+			appDetail.setOperatingSystem(_ctx.stringValue("ListAppResponse.Data["+ i +"].OperatingSystem"));
+			appDetail.setBizName(_ctx.stringValue("ListAppResponse.Data["+ i +"].BizName"));
+			appDetail.setServiceType(_ctx.stringValue("ListAppResponse.Data["+ i +"].ServiceType"));
+			appDetail.setDeployType(_ctx.stringValue("ListAppResponse.Data["+ i +"].DeployType"));
+			appDetail.setBizTitle(_ctx.stringValue("ListAppResponse.Data["+ i +"].BizTitle"));
+			appDetail.setAppStateType(_ctx.stringValue("ListAppResponse.Data["+ i +"].AppStateType"));
 
-			data.add(listAppResponse1);
+			List<MiddleWareInfo> middleWareList = new ArrayList<MiddleWareInfo>();
+			for (int j = 0; j < _ctx.lengthValue("ListAppResponse.Data["+ i +"].MiddleWareList.Length"); j++) {
+				MiddleWareInfo middleWareInfo = new MiddleWareInfo();
+				middleWareInfo.setAppId(_ctx.longValue("ListAppResponse.Data["+ i +"].MiddleWareList["+ j +"].AppId"));
+				middleWareInfo.setCode(_ctx.integerValue("ListAppResponse.Data["+ i +"].MiddleWareList["+ j +"].Code"));
+				middleWareInfo.setName(_ctx.stringValue("ListAppResponse.Data["+ i +"].MiddleWareList["+ j +"].Name"));
+
+				middleWareList.add(middleWareInfo);
+			}
+			appDetail.setMiddleWareList(middleWareList);
+
+			data.add(appDetail);
 		}
 		listAppResponse.setData(data);
 	 

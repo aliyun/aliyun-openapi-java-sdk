@@ -27,10 +27,8 @@ public class ListTemplatesResponseUnmarshaller {
 	public static ListTemplatesResponse unmarshall(ListTemplatesResponse listTemplatesResponse, UnmarshallerContext _ctx) {
 		
 		listTemplatesResponse.setRequestId(_ctx.stringValue("ListTemplatesResponse.RequestId"));
-		listTemplatesResponse.setHttpStatusCode(_ctx.integerValue("ListTemplatesResponse.HttpStatusCode"));
 		listTemplatesResponse.setPageNumber(_ctx.integerValue("ListTemplatesResponse.PageNumber"));
 		listTemplatesResponse.setPageSize(_ctx.integerValue("ListTemplatesResponse.PageSize"));
-		listTemplatesResponse.setSuccess(_ctx.booleanValue("ListTemplatesResponse.Success"));
 		listTemplatesResponse.setTotalCount(_ctx.integerValue("ListTemplatesResponse.TotalCount"));
 
 		List<Template> templates = new ArrayList<Template>();

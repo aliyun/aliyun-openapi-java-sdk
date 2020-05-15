@@ -109,6 +109,16 @@ public class DescribeRulesResponse extends AcsResponse {
 
 		private String departName;
 
+		private String statExpress;
+
+		private Long productId;
+
+		private Integer hitTotalCount;
+
+		private String productCode;
+
+		private Integer warnLevel;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -235,6 +245,46 @@ public class DescribeRulesResponse extends AcsResponse {
 
 		public void setDepartName(String departName) {
 			this.departName = departName;
+		}
+
+		public String getStatExpress() {
+			return this.statExpress;
+		}
+
+		public void setStatExpress(String statExpress) {
+			this.statExpress = statExpress;
+		}
+
+		public Long getProductId() {
+			return this.productId;
+		}
+
+		public void setProductId(Long productId) {
+			this.productId = productId;
+		}
+
+		public Integer getHitTotalCount() {
+			return this.hitTotalCount;
+		}
+
+		public void setHitTotalCount(Integer hitTotalCount) {
+			this.hitTotalCount = hitTotalCount;
+		}
+
+		public String getProductCode() {
+			return this.productCode;
+		}
+
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
+		}
+
+		public Integer getWarnLevel() {
+			return this.warnLevel;
+		}
+
+		public void setWarnLevel(Integer warnLevel) {
+			this.warnLevel = warnLevel;
 		}
 	}
 

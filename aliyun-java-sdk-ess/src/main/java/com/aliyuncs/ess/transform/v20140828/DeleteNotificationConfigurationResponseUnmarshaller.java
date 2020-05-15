@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteNotificationConfigurationResponseUnmarshaller {
 
-	public static DeleteNotificationConfigurationResponse unmarshall(DeleteNotificationConfigurationResponse deleteNotificationConfigurationResponse, UnmarshallerContext context) {
+	public static DeleteNotificationConfigurationResponse unmarshall(DeleteNotificationConfigurationResponse deleteNotificationConfigurationResponse, UnmarshallerContext _ctx) {
 		
-		deleteNotificationConfigurationResponse.setRequestId(context.stringValue("DeleteNotificationConfigurationResponse.RequestId"));
+		deleteNotificationConfigurationResponse.setRequestId(_ctx.stringValue("DeleteNotificationConfigurationResponse.RequestId"));
 	 
 	 	return deleteNotificationConfigurationResponse;
 	}

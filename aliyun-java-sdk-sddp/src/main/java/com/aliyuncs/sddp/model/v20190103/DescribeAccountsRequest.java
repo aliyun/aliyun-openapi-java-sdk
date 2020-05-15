@@ -15,36 +15,21 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsResponse> {
-	
-	public DescribeAccountsRequest() {
-		super("Sddp", "2019-01-03", "DescribeAccounts", "sddp");
-	}
+	   
 
 	private String productCode;
 
-	private String loginName;
-
-	private Integer featureType;
-
-	private String columnId;
-
 	private String packageId;
 
-	private Integer currentPage;
-
-	private String instanceId;
-
 	private Integer pageSize;
-
-	private Long departId;
-
-	private Integer operationId;
 
 	private String tableId;
 
@@ -54,6 +39,28 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 
 	private Integer queryType;
 
+	private String loginName;
+
+	private Integer featureType;
+
+	private String columnId;
+
+	private Integer currentPage;
+
+	private String instanceId;
+
+	private Long departId;
+
+	private Integer operationId;
+	public DescribeAccountsRequest() {
+		super("Sddp", "2019-01-03", "DescribeAccounts", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
 	public String getProductCode() {
 		return this.productCode;
 	}
@@ -62,39 +69,6 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 		this.productCode = productCode;
 		if(productCode != null){
 			putQueryParameter("ProductCode", productCode);
-		}
-	}
-
-	public String getLoginName() {
-		return this.loginName;
-	}
-
-	public void setLoginName(String loginName) {
-		this.loginName = loginName;
-		if(loginName != null){
-			putQueryParameter("LoginName", loginName);
-		}
-	}
-
-	public Integer getFeatureType() {
-		return this.featureType;
-	}
-
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
-		}
-	}
-
-	public String getColumnId() {
-		return this.columnId;
-	}
-
-	public void setColumnId(String columnId) {
-		this.columnId = columnId;
-		if(columnId != null){
-			putQueryParameter("ColumnId", columnId);
 		}
 	}
 
@@ -109,28 +83,6 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -139,28 +91,6 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Long getDepartId() {
-		return this.departId;
-	}
-
-	public void setDepartId(Long departId) {
-		this.departId = departId;
-		if(departId != null){
-			putQueryParameter("DepartId", departId.toString());
-		}
-	}
-
-	public Integer getOperationId() {
-		return this.operationId;
-	}
-
-	public void setOperationId(Integer operationId) {
-		this.operationId = operationId;
-		if(operationId != null){
-			putQueryParameter("OperationId", operationId.toString());
 		}
 	}
 
@@ -205,6 +135,83 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 		this.queryType = queryType;
 		if(queryType != null){
 			putQueryParameter("QueryType", queryType.toString());
+		}
+	}
+
+	public String getLoginName() {
+		return this.loginName;
+	}
+
+	public void setLoginName(String loginName) {
+		this.loginName = loginName;
+		if(loginName != null){
+			putQueryParameter("LoginName", loginName);
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
+		}
+	}
+
+	public String getColumnId() {
+		return this.columnId;
+	}
+
+	public void setColumnId(String columnId) {
+		this.columnId = columnId;
+		if(columnId != null){
+			putQueryParameter("ColumnId", columnId);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Long getDepartId() {
+		return this.departId;
+	}
+
+	public void setDepartId(Long departId) {
+		this.departId = departId;
+		if(departId != null){
+			putQueryParameter("DepartId", departId.toString());
+		}
+	}
+
+	public Integer getOperationId() {
+		return this.operationId;
+	}
+
+	public void setOperationId(Integer operationId) {
+		this.operationId = operationId;
+		if(operationId != null){
+			putQueryParameter("OperationId", operationId.toString());
 		}
 	}
 

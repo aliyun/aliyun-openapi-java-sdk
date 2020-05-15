@@ -171,26 +171,10 @@ public class DescribeAppInfoResponse extends AcsResponse {
 
 			private String version;
 
-			public String getBizVersion() {
-				return this.version;
-			}
-
-			public void setBizVersion(String version) {
-				this.version = version;
-			}
-
-			/**
-			 * @deprecated use getBizVersion instead of this.
-			 */
-			@Deprecated
 			public String getVersion() {
 				return this.version;
 			}
 
-			/**
-			 * @deprecated use setBizVersion instead of this.
-			 */
-			@Deprecated
 			public void setVersion(String version) {
 				this.version = version;
 			}
@@ -200,26 +184,10 @@ public class DescribeAppInfoResponse extends AcsResponse {
 
 			private String version;
 
-			public String getBizVersion() {
-				return this.version;
-			}
-
-			public void setBizVersion(String version) {
-				this.version = version;
-			}
-
-			/**
-			 * @deprecated use getBizVersion instead of this.
-			 */
-			@Deprecated
 			public String getVersion() {
 				return this.version;
 			}
 
-			/**
-			 * @deprecated use setBizVersion instead of this.
-			 */
-			@Deprecated
 			public void setVersion(String version) {
 				this.version = version;
 			}

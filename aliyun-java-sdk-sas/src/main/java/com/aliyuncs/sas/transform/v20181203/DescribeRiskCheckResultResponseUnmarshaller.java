@@ -48,6 +48,7 @@ public class DescribeRiskCheckResultResponseUnmarshaller {
 			riskCheckResultForDisplay.setSort(_ctx.integerValue("DescribeRiskCheckResultResponse.List["+ i +"].Sort"));
 			riskCheckResultForDisplay.setType(_ctx.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].Type"));
 			riskCheckResultForDisplay.setStartStatus(_ctx.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].StartStatus"));
+			riskCheckResultForDisplay.setRepairStatus(_ctx.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].RepairStatus"));
 			riskCheckResultForDisplay.setRiskAssertType(_ctx.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].RiskAssertType"));
 
 			List<RiskItemResource> riskItemResources = new ArrayList<RiskItemResource>();

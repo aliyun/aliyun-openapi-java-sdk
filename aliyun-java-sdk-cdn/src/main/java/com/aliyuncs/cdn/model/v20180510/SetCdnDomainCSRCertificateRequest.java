@@ -25,7 +25,7 @@ import com.aliyuncs.cdn.Endpoint;
 public class SetCdnDomainCSRCertificateRequest extends RpcAcsRequest<SetCdnDomainCSRCertificateResponse> {
 	   
 
-	private String certificate;
+	private String serverCertificate;
 
 	private String domainName;
 
@@ -39,14 +39,14 @@ public class SetCdnDomainCSRCertificateRequest extends RpcAcsRequest<SetCdnDomai
 		} catch (Exception e) {}
 	}
 
-	public String getCertificate() {
-		return this.certificate;
+	public String getServerCertificate() {
+		return this.serverCertificate;
 	}
 
-	public void setCertificate(String certificate) {
-		this.certificate = certificate;
-		if(certificate != null){
-			putQueryParameter("Certificate", certificate);
+	public void setServerCertificate(String serverCertificate) {
+		this.serverCertificate = serverCertificate;
+		if(serverCertificate != null){
+			putQueryParameter("ServerCertificate", serverCertificate);
 		}
 	}
 

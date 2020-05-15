@@ -16,24 +16,38 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleResponse> {
-	
-	public ModifyScalingRuleRequest() {
-		super("Ess", "2014-08-28", "ModifyScalingRule", "ess");
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private List<StepAdjustment> stepAdjustments;
+
+	private Boolean disableScaleIn;
+
+	private String scalingRuleId;
+
+	private Integer initialMaxSize;
+
+	private String scalingRuleName;
+
+	private Integer cooldown;
+
+	private String predictiveValueBehavior;
+
+	private String metricName;
+
+	private String predictiveScalingMode;
 
 	private String resourceOwnerAccount;
 
 	private Integer adjustmentValue;
-
-	private List<StepAdjustment> stepAdjustments;
 
 	private Integer estimatedInstanceWarmup;
 
@@ -43,29 +57,17 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 
 	private String adjustmentType;
 
-	private Boolean disableScaleIn;
-
 	private Long ownerId;
-
-	private String scalingRuleId;
-
-	private Integer initialMaxSize;
 
 	private Integer predictiveValueBuffer;
 
-	private String scalingRuleName;
-
-	private Integer cooldown;
-
 	private Integer minAdjustmentMagnitude;
 
-	private String predictiveValueBehavior;
-
 	private Float targetValue;
-
-	private String metricName;
-
-	private String predictiveScalingMode;
+	public ModifyScalingRuleRequest() {
+		super("Ess", "2014-08-28", "ModifyScalingRule", "ess");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -75,6 +77,109 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public List<StepAdjustment> getStepAdjustments() {
+		return this.stepAdjustments;
+	}
+
+	public void setStepAdjustments(List<StepAdjustment> stepAdjustments) {
+		this.stepAdjustments = stepAdjustments;	
+		if (stepAdjustments != null) {
+			for (int depth1 = 0; depth1 < stepAdjustments.size(); depth1++) {
+				putQueryParameter("StepAdjustment." + (depth1 + 1) + ".MetricIntervalLowerBound" , stepAdjustments.get(depth1).getMetricIntervalLowerBound());
+				putQueryParameter("StepAdjustment." + (depth1 + 1) + ".MetricIntervalUpperBound" , stepAdjustments.get(depth1).getMetricIntervalUpperBound());
+				putQueryParameter("StepAdjustment." + (depth1 + 1) + ".ScalingAdjustment" , stepAdjustments.get(depth1).getScalingAdjustment());
+			}
+		}	
+	}
+
+	public Boolean getDisableScaleIn() {
+		return this.disableScaleIn;
+	}
+
+	public void setDisableScaleIn(Boolean disableScaleIn) {
+		this.disableScaleIn = disableScaleIn;
+		if(disableScaleIn != null){
+			putQueryParameter("DisableScaleIn", disableScaleIn.toString());
+		}
+	}
+
+	public String getScalingRuleId() {
+		return this.scalingRuleId;
+	}
+
+	public void setScalingRuleId(String scalingRuleId) {
+		this.scalingRuleId = scalingRuleId;
+		if(scalingRuleId != null){
+			putQueryParameter("ScalingRuleId", scalingRuleId);
+		}
+	}
+
+	public Integer getInitialMaxSize() {
+		return this.initialMaxSize;
+	}
+
+	public void setInitialMaxSize(Integer initialMaxSize) {
+		this.initialMaxSize = initialMaxSize;
+		if(initialMaxSize != null){
+			putQueryParameter("InitialMaxSize", initialMaxSize.toString());
+		}
+	}
+
+	public String getScalingRuleName() {
+		return this.scalingRuleName;
+	}
+
+	public void setScalingRuleName(String scalingRuleName) {
+		this.scalingRuleName = scalingRuleName;
+		if(scalingRuleName != null){
+			putQueryParameter("ScalingRuleName", scalingRuleName);
+		}
+	}
+
+	public Integer getCooldown() {
+		return this.cooldown;
+	}
+
+	public void setCooldown(Integer cooldown) {
+		this.cooldown = cooldown;
+		if(cooldown != null){
+			putQueryParameter("Cooldown", cooldown.toString());
+		}
+	}
+
+	public String getPredictiveValueBehavior() {
+		return this.predictiveValueBehavior;
+	}
+
+	public void setPredictiveValueBehavior(String predictiveValueBehavior) {
+		this.predictiveValueBehavior = predictiveValueBehavior;
+		if(predictiveValueBehavior != null){
+			putQueryParameter("PredictiveValueBehavior", predictiveValueBehavior);
+		}
+	}
+
+	public String getMetricName() {
+		return this.metricName;
+	}
+
+	public void setMetricName(String metricName) {
+		this.metricName = metricName;
+		if(metricName != null){
+			putQueryParameter("MetricName", metricName);
+		}
+	}
+
+	public String getPredictiveScalingMode() {
+		return this.predictiveScalingMode;
+	}
+
+	public void setPredictiveScalingMode(String predictiveScalingMode) {
+		this.predictiveScalingMode = predictiveScalingMode;
+		if(predictiveScalingMode != null){
+			putQueryParameter("PredictiveScalingMode", predictiveScalingMode);
 		}
 	}
 
@@ -98,21 +203,6 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		if(adjustmentValue != null){
 			putQueryParameter("AdjustmentValue", adjustmentValue.toString());
 		}
-	}
-
-	public List<StepAdjustment> getStepAdjustments() {
-		return this.stepAdjustments;
-	}
-
-	public void setStepAdjustments(List<StepAdjustment> stepAdjustments) {
-		this.stepAdjustments = stepAdjustments;	
-		if (stepAdjustments != null) {
-			for (int depth1 = 0; depth1 < stepAdjustments.size(); depth1++) {
-				putQueryParameter("StepAdjustment." + (depth1 + 1) + ".MetricIntervalLowerBound" , stepAdjustments.get(depth1).getMetricIntervalLowerBound());
-				putQueryParameter("StepAdjustment." + (depth1 + 1) + ".MetricIntervalUpperBound" , stepAdjustments.get(depth1).getMetricIntervalUpperBound());
-				putQueryParameter("StepAdjustment." + (depth1 + 1) + ".ScalingAdjustment" , stepAdjustments.get(depth1).getScalingAdjustment());
-			}
-		}	
 	}
 
 	public Integer getEstimatedInstanceWarmup() {
@@ -159,17 +249,6 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		}
 	}
 
-	public Boolean getDisableScaleIn() {
-		return this.disableScaleIn;
-	}
-
-	public void setDisableScaleIn(Boolean disableScaleIn) {
-		this.disableScaleIn = disableScaleIn;
-		if(disableScaleIn != null){
-			putQueryParameter("DisableScaleIn", disableScaleIn.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -178,28 +257,6 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getScalingRuleId() {
-		return this.scalingRuleId;
-	}
-
-	public void setScalingRuleId(String scalingRuleId) {
-		this.scalingRuleId = scalingRuleId;
-		if(scalingRuleId != null){
-			putQueryParameter("ScalingRuleId", scalingRuleId);
-		}
-	}
-
-	public Integer getInitialMaxSize() {
-		return this.initialMaxSize;
-	}
-
-	public void setInitialMaxSize(Integer initialMaxSize) {
-		this.initialMaxSize = initialMaxSize;
-		if(initialMaxSize != null){
-			putQueryParameter("InitialMaxSize", initialMaxSize.toString());
 		}
 	}
 
@@ -214,28 +271,6 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		}
 	}
 
-	public String getScalingRuleName() {
-		return this.scalingRuleName;
-	}
-
-	public void setScalingRuleName(String scalingRuleName) {
-		this.scalingRuleName = scalingRuleName;
-		if(scalingRuleName != null){
-			putQueryParameter("ScalingRuleName", scalingRuleName);
-		}
-	}
-
-	public Integer getCooldown() {
-		return this.cooldown;
-	}
-
-	public void setCooldown(Integer cooldown) {
-		this.cooldown = cooldown;
-		if(cooldown != null){
-			putQueryParameter("Cooldown", cooldown.toString());
-		}
-	}
-
 	public Integer getMinAdjustmentMagnitude() {
 		return this.minAdjustmentMagnitude;
 	}
@@ -247,17 +282,6 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		}
 	}
 
-	public String getPredictiveValueBehavior() {
-		return this.predictiveValueBehavior;
-	}
-
-	public void setPredictiveValueBehavior(String predictiveValueBehavior) {
-		this.predictiveValueBehavior = predictiveValueBehavior;
-		if(predictiveValueBehavior != null){
-			putQueryParameter("PredictiveValueBehavior", predictiveValueBehavior);
-		}
-	}
-
 	public Float getTargetValue() {
 		return this.targetValue;
 	}
@@ -266,28 +290,6 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		this.targetValue = targetValue;
 		if(targetValue != null){
 			putQueryParameter("TargetValue", targetValue.toString());
-		}
-	}
-
-	public String getMetricName() {
-		return this.metricName;
-	}
-
-	public void setMetricName(String metricName) {
-		this.metricName = metricName;
-		if(metricName != null){
-			putQueryParameter("MetricName", metricName);
-		}
-	}
-
-	public String getPredictiveScalingMode() {
-		return this.predictiveScalingMode;
-	}
-
-	public void setPredictiveScalingMode(String predictiveScalingMode) {
-		this.predictiveScalingMode = predictiveScalingMode;
-		if(predictiveScalingMode != null){
-			putQueryParameter("PredictiveScalingMode", predictiveScalingMode);
 		}
 	}
 

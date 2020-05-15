@@ -35,7 +35,7 @@ public class QuerySubtitleJobListRequest extends RpcAcsRequest<QuerySubtitleJobL
 
 	private String jobIds;
 	public QuerySubtitleJobListRequest() {
-		super("Mts", "2014-06-18", "QuerySubtitleJobList", "mts");
+		super("Mts", "2014-06-18", "QuerySubtitleJobList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

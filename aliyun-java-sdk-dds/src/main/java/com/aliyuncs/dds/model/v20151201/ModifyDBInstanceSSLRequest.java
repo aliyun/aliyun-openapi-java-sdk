@@ -39,7 +39,7 @@ public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSS
 
 	private String sSLAction;
 	public ModifyDBInstanceSSLRequest() {
-		super("Dds", "2015-12-01", "ModifyDBInstanceSSL", "Dds");
+		super("Dds", "2015-12-01", "ModifyDBInstanceSSL", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

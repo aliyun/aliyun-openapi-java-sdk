@@ -34,7 +34,7 @@ public class DescribeMigrationJobsRequest extends RpcAcsRequest<DescribeMigratio
 
 	private String migrationJobName;
 	public DescribeMigrationJobsRequest() {
-		super("Dts", "2020-01-01", "DescribeMigrationJobs", "dts");
+		super("Dts", "2020-01-01", "DescribeMigrationJobs");
 		setMethod(MethodType.POST);
 	}
 

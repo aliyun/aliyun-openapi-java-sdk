@@ -137,26 +137,10 @@ public class DescribeViewContentResponse extends AcsResponse {
 			this.content = content;
 		}
 
-		public String getBizUrl() {
-			return this.url;
-		}
-
-		public void setBizUrl(String url) {
-			this.url = url;
-		}
-
-		/**
-		 * @deprecated use getBizUrl instead of this.
-		 */
-		@Deprecated
 		public String getUrl() {
 			return this.url;
 		}
 
-		/**
-		 * @deprecated use setBizUrl instead of this.
-		 */
-		@Deprecated
 		public void setUrl(String url) {
 			this.url = url;
 		}
@@ -272,26 +256,10 @@ public class DescribeViewContentResponse extends AcsResponse {
 
 			private Integer offset;
 
-			public String getBizUrl() {
-				return this.url;
-			}
-
-			public void setBizUrl(String url) {
-				this.url = url;
-			}
-
-			/**
-			 * @deprecated use getBizUrl instead of this.
-			 */
-			@Deprecated
 			public String getUrl() {
 				return this.url;
 			}
 
-			/**
-			 * @deprecated use setBizUrl instead of this.
-			 */
-			@Deprecated
 			public void setUrl(String url) {
 				this.url = url;
 			}

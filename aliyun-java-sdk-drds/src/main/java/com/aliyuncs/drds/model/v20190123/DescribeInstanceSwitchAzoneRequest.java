@@ -27,7 +27,7 @@ public class DescribeInstanceSwitchAzoneRequest extends RpcAcsRequest<DescribeIn
 
 	private String drdsInstanceId;
 	public DescribeInstanceSwitchAzoneRequest() {
-		super("Drds", "2019-01-23", "DescribeInstanceSwitchAzone", "drds");
+		super("Drds", "2019-01-23", "DescribeInstanceSwitchAzone", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

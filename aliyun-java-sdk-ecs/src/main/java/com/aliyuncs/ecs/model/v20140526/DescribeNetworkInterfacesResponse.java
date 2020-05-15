@@ -119,6 +119,8 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		private Integer queueNumber;
 
+		private String ownerId;
+
 		private List<PrivateIpSet> privateIpSets;
 
 		private List<Ipv6Set> ipv6Sets;
@@ -255,6 +257,14 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		public void setQueueNumber(Integer queueNumber) {
 			this.queueNumber = queueNumber;
+		}
+
+		public String getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
 		}
 
 		public List<PrivateIpSet> getPrivateIpSets() {

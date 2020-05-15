@@ -35,6 +35,7 @@ public class FindServiceStatisticalDataResponseUnmarshaller {
 		Data data = new Data();
 		data.setCurrentPage(_ctx.integerValue("FindServiceStatisticalDataResponse.Data.CurrentPage"));
 		data.setPageNumber(_ctx.integerValue("FindServiceStatisticalDataResponse.Data.PageNumber"));
+		data.setTotal(_ctx.longValue("FindServiceStatisticalDataResponse.Data.Total"));
 
 		List<ServiceStatisticData> monitorStatisticData = new ArrayList<ServiceStatisticData>();
 		for (int i = 0; i < _ctx.lengthValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData.Length"); i++) {
@@ -42,13 +43,11 @@ public class FindServiceStatisticalDataResponseUnmarshaller {
 			serviceStatisticData.setAvgRt(_ctx.floatValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].AvgRt"));
 			serviceStatisticData.setMaxRt(_ctx.floatValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].MaxRt"));
 			serviceStatisticData.setMinRt(_ctx.floatValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].MinRt"));
-			serviceStatisticData.setRequestTime(_ctx.longValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].RequestTime"));
 			serviceStatisticData.setServiceName(_ctx.stringValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].ServiceName"));
-			serviceStatisticData.setUserId(_ctx.stringValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].UserId"));
 
 			Total total = new Total();
-			total.setErrorNum(_ctx.integerValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].Total.ErrorNum"));
-			total.setTotal(_ctx.integerValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].Total.Total"));
+			total.setTotal(_ctx.longValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].Total.Total"));
+			total.setErrorNum(_ctx.longValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].Total.ErrorNum"));
 			serviceStatisticData.setTotal(total);
 
 			monitorStatisticData.add(serviceStatisticData);

@@ -39,7 +39,7 @@ public class ModifyAuditLogConfigRequest extends RpcAcsRequest<ModifyAuditLogCon
 
 	private String instanceId;
 	public ModifyAuditLogConfigRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyAuditLogConfig", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyAuditLogConfig", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

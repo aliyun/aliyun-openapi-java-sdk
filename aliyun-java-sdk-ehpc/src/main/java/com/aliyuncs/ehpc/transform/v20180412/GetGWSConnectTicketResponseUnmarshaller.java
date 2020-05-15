@@ -22,6 +22,7 @@ public class GetGWSConnectTicketResponseUnmarshaller {
 
 	public static GetGWSConnectTicketResponse unmarshall(GetGWSConnectTicketResponse getGWSConnectTicketResponse, UnmarshallerContext _ctx) {
 		
+		getGWSConnectTicketResponse.setRequestId(_ctx.stringValue("GetGWSConnectTicketResponse.RequestId"));
 		getGWSConnectTicketResponse.setTicket(_ctx.stringValue("GetGWSConnectTicketResponse.Ticket"));
 	 
 	 	return getGWSConnectTicketResponse;

@@ -1,3 +1,7 @@
+2020-03-11 Version: 5.0.34.19.2
+- Synchronization support source and destination database.
+- Synchronization add delayMillis.
+
 2020-02-13 Version: 5.0.26.19.1
 - Add api.
 

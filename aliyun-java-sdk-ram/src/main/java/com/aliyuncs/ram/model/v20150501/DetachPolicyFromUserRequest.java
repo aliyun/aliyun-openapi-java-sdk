@@ -16,23 +16,30 @@ package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ram.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DetachPolicyFromUserRequest extends RpcAcsRequest<DetachPolicyFromUserResponse> {
-	
-	public DetachPolicyFromUserRequest() {
-		super("Ram", "2015-05-01", "DetachPolicyFromUser");
-		setProtocol(ProtocolType.HTTPS);
-	}
+	   
 
 	private String policyType;
 
 	private String policyName;
 
 	private String userName;
+	public DetachPolicyFromUserRequest() {
+		super("Ram", "2015-05-01", "DetachPolicyFromUser", "Ram");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getPolicyType() {
 		return this.policyType;

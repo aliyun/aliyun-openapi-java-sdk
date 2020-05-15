@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateK8sSlbResponse extends AcsResponse {
 
+	private String changeOrderId;
+
 	private Integer code;
 
 	private String message;
 
-	private String changeOrderId;
-
 	private String requestId;
+
+	public String getChangeOrderId() {
+		return this.changeOrderId;
+	}
+
+	public void setChangeOrderId(String changeOrderId) {
+		this.changeOrderId = changeOrderId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -46,14 +54,6 @@ public class UpdateK8sSlbResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getChangeOrderId() {
-		return this.changeOrderId;
-	}
-
-	public void setChangeOrderId(String changeOrderId) {
-		this.changeOrderId = changeOrderId;
 	}
 
 	public String getRequestId() {

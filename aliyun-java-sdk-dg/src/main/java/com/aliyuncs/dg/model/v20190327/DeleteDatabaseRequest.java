@@ -24,7 +24,9 @@ import com.aliyuncs.dg.Endpoint;
  * @version 
  */
 public class DeleteDatabaseRequest extends RpcAcsRequest<DeleteDatabaseResponse> {
-	
+	   
+
+	private String instanceId;
 	public DeleteDatabaseRequest() {
 		super("dg", "2019-03-27", "DeleteDatabase", "dg");
 		setProtocol(ProtocolType.HTTPS);
@@ -34,8 +36,6 @@ public class DeleteDatabaseRequest extends RpcAcsRequest<DeleteDatabaseResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceId;
 
 	public String getInstanceId() {
 		return this.instanceId;

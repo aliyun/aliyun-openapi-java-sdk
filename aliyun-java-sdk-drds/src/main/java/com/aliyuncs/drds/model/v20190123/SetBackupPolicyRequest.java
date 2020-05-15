@@ -45,7 +45,7 @@ public class SetBackupPolicyRequest extends RpcAcsRequest<SetBackupPolicyRespons
 
 	private String logBackupRetentionPeriod;
 	public SetBackupPolicyRequest() {
-		super("Drds", "2019-01-23", "SetBackupPolicy", "drds");
+		super("Drds", "2019-01-23", "SetBackupPolicy", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

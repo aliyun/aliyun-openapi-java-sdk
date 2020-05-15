@@ -39,6 +39,7 @@ public class OnsGroupListResponseUnmarshaller {
 			subscribeInfoDo.setInstanceId(_ctx.stringValue("OnsGroupListResponse.Data["+ i +"].InstanceId"));
 			subscribeInfoDo.setIndependentNaming(_ctx.booleanValue("OnsGroupListResponse.Data["+ i +"].IndependentNaming"));
 			subscribeInfoDo.setCreateTime(_ctx.longValue("OnsGroupListResponse.Data["+ i +"].CreateTime"));
+			subscribeInfoDo.setGroupType(_ctx.stringValue("OnsGroupListResponse.Data["+ i +"].GroupType"));
 
 			data.add(subscribeInfoDo);
 		}

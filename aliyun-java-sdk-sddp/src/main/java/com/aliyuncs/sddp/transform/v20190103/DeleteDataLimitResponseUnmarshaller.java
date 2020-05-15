@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteDataLimitResponseUnmarshaller {
 
-	public static DeleteDataLimitResponse unmarshall(DeleteDataLimitResponse deleteDataLimitResponse, UnmarshallerContext context) {
+	public static DeleteDataLimitResponse unmarshall(DeleteDataLimitResponse deleteDataLimitResponse, UnmarshallerContext _ctx) {
 		
-		deleteDataLimitResponse.setRequestId(context.stringValue("DeleteDataLimitResponse.RequestId"));
+		deleteDataLimitResponse.setRequestId(_ctx.stringValue("DeleteDataLimitResponse.RequestId"));
 	 
 	 	return deleteDataLimitResponse;
 	}

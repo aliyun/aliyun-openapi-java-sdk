@@ -33,7 +33,7 @@ public class ListWorkFlowNodesResponse extends AcsResponse {
 
 	private String errorCode;
 
-	private List<WorkFlowNode> workFlowNodes;
+	private List<WorkflowNode> workflowNodes;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,15 +67,15 @@ public class ListWorkFlowNodesResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public List<WorkFlowNode> getWorkFlowNodes() {
-		return this.workFlowNodes;
+	public List<WorkflowNode> getWorkflowNodes() {
+		return this.workflowNodes;
 	}
 
-	public void setWorkFlowNodes(List<WorkFlowNode> workFlowNodes) {
-		this.workFlowNodes = workFlowNodes;
+	public void setWorkflowNodes(List<WorkflowNode> workflowNodes) {
+		this.workflowNodes = workflowNodes;
 	}
 
-	public static class WorkFlowNode {
+	public static class WorkflowNode {
 
 		private String nodeName;
 

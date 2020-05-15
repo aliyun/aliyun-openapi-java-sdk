@@ -23,15 +23,7 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class GetInstanceSummaryReportRequest extends RpcAcsRequest<GetInstanceSummaryReportResponse> {
-	
-	public GetInstanceSummaryReportRequest() {
-		super("CCC", "2017-07-05", "GetInstanceSummaryReport");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String endTime;
 
@@ -42,6 +34,14 @@ public class GetInstanceSummaryReportRequest extends RpcAcsRequest<GetInstanceSu
 	private String instanceId;
 
 	private Integer pageSize;
+	public GetInstanceSummaryReportRequest() {
+		super("CCC", "2017-07-05", "GetInstanceSummaryReport");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getEndTime() {
 		return this.endTime;

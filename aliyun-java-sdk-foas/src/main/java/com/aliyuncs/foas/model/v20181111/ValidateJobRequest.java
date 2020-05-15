@@ -24,9 +24,13 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class ValidateJobRequest extends RoaAcsRequest<ValidateJobResponse> {
-	
+	   
+
+	private String projectName;
+
+	private String jobName;
 	public ValidateJobRequest() {
-		super("foas", "2018-11-11", "ValidateJob");
+		super("foas", "2018-11-11", "ValidateJob", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/validate");
 		setMethod(MethodType.GET);
@@ -35,10 +39,6 @@ public class ValidateJobRequest extends RoaAcsRequest<ValidateJobResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String projectName;
-
-	private String jobName;
 
 	public String getProjectName() {
 		return this.projectName;

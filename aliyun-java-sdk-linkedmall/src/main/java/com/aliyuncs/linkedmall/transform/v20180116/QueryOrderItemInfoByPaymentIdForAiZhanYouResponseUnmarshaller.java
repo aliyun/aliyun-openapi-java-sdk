@@ -38,6 +38,7 @@ public class QueryOrderItemInfoByPaymentIdForAiZhanYouResponseUnmarshaller {
 			lmOrderListItem.setSkuId(_ctx.longValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].SkuId"));
 			lmOrderListItem.setSkuName(_ctx.stringValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].SkuName"));
 			lmOrderListItem.setItemId(_ctx.longValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].ItemId"));
+			lmOrderListItem.setLmItemId(_ctx.stringValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].LmItemId"));
 
 			lmOrderList.add(lmOrderListItem);
 		}

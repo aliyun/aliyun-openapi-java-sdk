@@ -49,12 +49,22 @@ To use the Ecs SDK as an example, you only need to declare the following two dep
 </dependency>
 ```
 
-If maven is not downloading jar packages from a central repository, you need to add this dependency in the pom.xml file, or a NoClassDefFoundError exception will be reported
+If maven is not downloading jar packages from a central repository, you need to add these dependencies in the pom.xml file, or a NoClassDefFoundError exception will be reported
 ```xml
 <dependency>
     <groupId>com.google.code.gson</groupId>
     <artifactId>gson</artifactId>
     <version>2.8.5</version>
+</dependency>
+<dependency>
+    <groupId>io.opentracing</groupId>
+    <artifactId>opentracing-api</artifactId>
+    <version>0.33.0</version>
+</dependency>
+<dependency>
+    <groupId>io.opentracing</groupId>
+    <artifactId>opentracing-util</artifactId>
+    <version>0.33.0</version>
 </dependency>
 ```
 

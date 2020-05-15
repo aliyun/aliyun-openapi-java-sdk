@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDataHubTopicsResponseUnmarshaller {
 
-	public static DescribeDataHubTopicsResponse unmarshall(DescribeDataHubTopicsResponse describeDataHubTopicsResponse, UnmarshallerContext context) {
+	public static DescribeDataHubTopicsResponse unmarshall(DescribeDataHubTopicsResponse describeDataHubTopicsResponse, UnmarshallerContext _ctx) {
 		
-		describeDataHubTopicsResponse.setRequestId(context.stringValue("DescribeDataHubTopicsResponse.RequestId"));
-		describeDataHubTopicsResponse.setPageSize(context.integerValue("DescribeDataHubTopicsResponse.PageSize"));
-		describeDataHubTopicsResponse.setCurrentPage(context.integerValue("DescribeDataHubTopicsResponse.CurrentPage"));
-		describeDataHubTopicsResponse.setTotalCount(context.integerValue("DescribeDataHubTopicsResponse.TotalCount"));
+		describeDataHubTopicsResponse.setRequestId(_ctx.stringValue("DescribeDataHubTopicsResponse.RequestId"));
+		describeDataHubTopicsResponse.setPageSize(_ctx.integerValue("DescribeDataHubTopicsResponse.PageSize"));
+		describeDataHubTopicsResponse.setCurrentPage(_ctx.integerValue("DescribeDataHubTopicsResponse.CurrentPage"));
+		describeDataHubTopicsResponse.setTotalCount(_ctx.integerValue("DescribeDataHubTopicsResponse.TotalCount"));
 
 		List<Topic> items = new ArrayList<Topic>();
-		for (int i = 0; i < context.lengthValue("DescribeDataHubTopicsResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDataHubTopicsResponse.Items.Length"); i++) {
 			Topic topic = new Topic();
-			topic.setId(context.longValue("DescribeDataHubTopicsResponse.Items["+ i +"].Id"));
-			topic.setName(context.stringValue("DescribeDataHubTopicsResponse.Items["+ i +"].Name"));
-			topic.setDescription(context.stringValue("DescribeDataHubTopicsResponse.Items["+ i +"].Description"));
-			topic.setCreationTime(context.longValue("DescribeDataHubTopicsResponse.Items["+ i +"].CreationTime"));
-			topic.setRecordType(context.stringValue("DescribeDataHubTopicsResponse.Items["+ i +"].RecordType"));
-			topic.setLifeCycle(context.integerValue("DescribeDataHubTopicsResponse.Items["+ i +"].LifeCycle"));
-			topic.setUserId(context.longValue("DescribeDataHubTopicsResponse.Items["+ i +"].UserId"));
-			topic.setLoginName(context.stringValue("DescribeDataHubTopicsResponse.Items["+ i +"].LoginName"));
-			topic.setDisplayName(context.stringValue("DescribeDataHubTopicsResponse.Items["+ i +"].DisplayName"));
+			topic.setId(_ctx.longValue("DescribeDataHubTopicsResponse.Items["+ i +"].Id"));
+			topic.setName(_ctx.stringValue("DescribeDataHubTopicsResponse.Items["+ i +"].Name"));
+			topic.setDescription(_ctx.stringValue("DescribeDataHubTopicsResponse.Items["+ i +"].Description"));
+			topic.setCreationTime(_ctx.longValue("DescribeDataHubTopicsResponse.Items["+ i +"].CreationTime"));
+			topic.setRecordType(_ctx.stringValue("DescribeDataHubTopicsResponse.Items["+ i +"].RecordType"));
+			topic.setLifeCycle(_ctx.integerValue("DescribeDataHubTopicsResponse.Items["+ i +"].LifeCycle"));
+			topic.setUserId(_ctx.longValue("DescribeDataHubTopicsResponse.Items["+ i +"].UserId"));
+			topic.setLoginName(_ctx.stringValue("DescribeDataHubTopicsResponse.Items["+ i +"].LoginName"));
+			topic.setDisplayName(_ctx.stringValue("DescribeDataHubTopicsResponse.Items["+ i +"].DisplayName"));
 
 			items.add(topic);
 		}

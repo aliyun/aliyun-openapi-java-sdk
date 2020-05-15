@@ -36,7 +36,7 @@ public class FindOrderableListRequest extends RpcAcsRequest<FindOrderableListRes
 
 	private String serviceName;
 	public FindOrderableListRequest() {
-		super("CSB", "2017-11-18", "FindOrderableList", "csb");
+		super("CSB", "2017-11-18", "FindOrderableList");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {

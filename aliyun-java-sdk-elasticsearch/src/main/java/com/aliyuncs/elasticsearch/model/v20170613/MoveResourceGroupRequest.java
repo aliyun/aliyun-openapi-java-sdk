@@ -31,7 +31,7 @@ public class MoveResourceGroupRequest extends RoaAcsRequest<MoveResourceGroupRes
 	public MoveResourceGroupRequest() {
 		super("elasticsearch", "2017-06-13", "MoveResourceGroup", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/resourcegroup");
-		setMethod(MethodType.PUT);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

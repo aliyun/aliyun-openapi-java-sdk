@@ -135,6 +135,10 @@ public class FindImagesResponse extends AcsResponse {
 
 		private String addressFailReason;
 
+		private String remarksArrayB;
+
+		private String remarksArrayA;
+
 		private List<FacesItem> faces;
 
 		private List<TagsItem> tags;
@@ -415,6 +419,22 @@ public class FindImagesResponse extends AcsResponse {
 
 		public void setAddressFailReason(String addressFailReason) {
 			this.addressFailReason = addressFailReason;
+		}
+
+		public String getRemarksArrayB() {
+			return this.remarksArrayB;
+		}
+
+		public void setRemarksArrayB(String remarksArrayB) {
+			this.remarksArrayB = remarksArrayB;
+		}
+
+		public String getRemarksArrayA() {
+			return this.remarksArrayA;
+		}
+
+		public void setRemarksArrayA(String remarksArrayA) {
+			this.remarksArrayA = remarksArrayA;
 		}
 
 		public List<FacesItem> getFaces() {

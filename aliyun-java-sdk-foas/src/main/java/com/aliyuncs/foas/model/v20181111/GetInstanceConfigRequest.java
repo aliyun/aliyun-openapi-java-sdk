@@ -24,9 +24,15 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class GetInstanceConfigRequest extends RoaAcsRequest<GetInstanceConfigResponse> {
-	
+	   
+
+	private String projectName;
+
+	private Long instanceId;
+
+	private String jobName;
 	public GetInstanceConfigRequest() {
-		super("foas", "2018-11-11", "GetInstanceConfig");
+		super("foas", "2018-11-11", "GetInstanceConfig", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/config");
 		setMethod(MethodType.GET);
@@ -35,12 +41,6 @@ public class GetInstanceConfigRequest extends RoaAcsRequest<GetInstanceConfigRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String projectName;
-
-	private Long instanceId;
-
-	private String jobName;
 
 	public String getProjectName() {
 		return this.projectName;

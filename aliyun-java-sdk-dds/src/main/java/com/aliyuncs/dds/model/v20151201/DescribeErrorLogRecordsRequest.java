@@ -51,7 +51,7 @@ public class DescribeErrorLogRecordsRequest extends RpcAcsRequest<DescribeErrorL
 
 	private String dBName;
 	public DescribeErrorLogRecordsRequest() {
-		super("Dds", "2015-12-01", "DescribeErrorLogRecords", "Dds");
+		super("Dds", "2015-12-01", "DescribeErrorLogRecords", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

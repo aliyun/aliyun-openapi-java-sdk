@@ -24,9 +24,13 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class OfflineJobRequest extends RoaAcsRequest<OfflineJobResponse> {
-	
+	   
+
+	private String projectName;
+
+	private String jobName;
 	public OfflineJobRequest() {
-		super("foas", "2018-11-11", "OfflineJob");
+		super("foas", "2018-11-11", "OfflineJob", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/offline");
 		setMethod(MethodType.PUT);
@@ -35,10 +39,6 @@ public class OfflineJobRequest extends RoaAcsRequest<OfflineJobResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String projectName;
-
-	private String jobName;
 
 	public String getProjectName() {
 		return this.projectName;

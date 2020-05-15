@@ -25,27 +25,16 @@ import com.aliyuncs.iot.Endpoint;
 public class GetEdgeInstanceRequest extends RpcAcsRequest<GetEdgeInstanceResponse> {
 	   
 
-	private String instanceId;
-
 	private String iotInstanceId;
+
+	private String instanceId;
 	public GetEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "GetEdgeInstance", "iot");
+		super("Iot", "2018-01-20", "GetEdgeInstance", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -56,6 +45,17 @@ public class GetEdgeInstanceRequest extends RpcAcsRequest<GetEdgeInstanceRespons
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

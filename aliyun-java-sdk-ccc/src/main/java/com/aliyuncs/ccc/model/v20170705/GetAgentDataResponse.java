@@ -804,4 +804,9 @@ public class GetAgentDataResponse extends AcsResponse {
 	public GetAgentDataResponse getInstance(UnmarshallerContext context) {
 		return	GetAgentDataResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

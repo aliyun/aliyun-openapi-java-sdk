@@ -1,3 +1,18 @@
+2020-05-14 Version: 1.9.2
+- Modify deletedevice api.
+
+2020-05-13 Version: 1.9.1
+- Add two apis.
+
+2020-05-12 Version: 1.9.0
+- Add apis for itnet-uem.
+
+2020-03-19 Version: 1.8.10
+- Modify deleteApgroupConfig.
+
+2020-02-28 Version: 1.8.9
+- Modify fucntion parameters.
+
 2020-01-16 Version: 1.8.8
 - Modify radio run history.
 

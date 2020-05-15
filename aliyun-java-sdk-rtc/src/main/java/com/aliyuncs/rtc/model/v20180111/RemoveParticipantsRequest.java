@@ -28,13 +28,13 @@ public class RemoveParticipantsRequest extends RpcAcsRequest<RemoveParticipantsR
 
 	private List<String> participantIdss;
 
-	private Long ownerId;
-
 	private String conferenceId;
+
+	private Long ownerId;
 
 	private String appId;
 	public RemoveParticipantsRequest() {
-		super("rtc", "2018-01-11", "RemoveParticipants");
+		super("rtc", "2018-01-11", "RemoveParticipants", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,17 +55,6 @@ public class RemoveParticipantsRequest extends RpcAcsRequest<RemoveParticipantsR
 		}	
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getConferenceId() {
 		return this.conferenceId;
 	}
@@ -74,6 +63,17 @@ public class RemoveParticipantsRequest extends RpcAcsRequest<RemoveParticipantsR
 		this.conferenceId = conferenceId;
 		if(conferenceId != null){
 			putQueryParameter("ConferenceId", conferenceId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

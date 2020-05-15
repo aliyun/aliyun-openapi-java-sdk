@@ -16,6 +16,7 @@ package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
 /**
@@ -23,16 +24,9 @@ import com.aliyuncs.gpdb.Endpoint;
  * @version 
  */
 public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstancesResponse> {
-	
-	public DescribeDBInstancesRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstances", "gpdb");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
-	private String dBInstanceIds;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
@@ -40,20 +34,28 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private List<Tag> tags;
 
+	private String dBInstanceIds;
+
 	private Long ownerId;
 
 	private String instanceNetworkType;
-
-	private Integer pageNumber;
-
-	public String getDBInstanceIds() {
-		return this.dBInstanceIds;
+	public DescribeDBInstancesRequest() {
+		super("gpdb", "2016-05-03", "DescribeDBInstances", "gpdb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setDBInstanceIds(String dBInstanceIds) {
-		this.dBInstanceIds = dBInstanceIds;
-		if(dBInstanceIds != null){
-			putQueryParameter("DBInstanceIds", dBInstanceIds);
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -93,6 +95,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}	
 	}
 
+	public String getDBInstanceIds() {
+		return this.dBInstanceIds;
+	}
+
+	public void setDBInstanceIds(String dBInstanceIds) {
+		this.dBInstanceIds = dBInstanceIds;
+		if(dBInstanceIds != null){
+			putQueryParameter("DBInstanceIds", dBInstanceIds);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -112,17 +125,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.instanceNetworkType = instanceNetworkType;
 		if(instanceNetworkType != null){
 			putQueryParameter("InstanceNetworkType", instanceNetworkType);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

@@ -24,30 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeTablesResponseUnmarshaller {
 
-	public static DescribeTablesResponse unmarshall(DescribeTablesResponse describeTablesResponse, UnmarshallerContext context) {
+	public static DescribeTablesResponse unmarshall(DescribeTablesResponse describeTablesResponse, UnmarshallerContext _ctx) {
 		
-		describeTablesResponse.setRequestId(context.stringValue("DescribeTablesResponse.RequestId"));
-		describeTablesResponse.setPageSize(context.integerValue("DescribeTablesResponse.PageSize"));
-		describeTablesResponse.setCurrentPage(context.integerValue("DescribeTablesResponse.CurrentPage"));
-		describeTablesResponse.setTotalCount(context.integerValue("DescribeTablesResponse.TotalCount"));
+		describeTablesResponse.setRequestId(_ctx.stringValue("DescribeTablesResponse.RequestId"));
+		describeTablesResponse.setPageSize(_ctx.integerValue("DescribeTablesResponse.PageSize"));
+		describeTablesResponse.setCurrentPage(_ctx.integerValue("DescribeTablesResponse.CurrentPage"));
+		describeTablesResponse.setTotalCount(_ctx.integerValue("DescribeTablesResponse.TotalCount"));
 
 		List<Table> items = new ArrayList<Table>();
-		for (int i = 0; i < context.lengthValue("DescribeTablesResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeTablesResponse.Items.Length"); i++) {
 			Table table = new Table();
-			table.setId(context.longValue("DescribeTablesResponse.Items["+ i +"].Id"));
-			table.setName(context.stringValue("DescribeTablesResponse.Items["+ i +"].Name"));
-			table.setOwner(context.stringValue("DescribeTablesResponse.Items["+ i +"].Owner"));
-			table.setCreationTime(context.longValue("DescribeTablesResponse.Items["+ i +"].CreationTime"));
-			table.setProductId(context.stringValue("DescribeTablesResponse.Items["+ i +"].ProductId"));
-			table.setProductCode(context.stringValue("DescribeTablesResponse.Items["+ i +"].ProductCode"));
-			table.setSensitive(context.booleanValue("DescribeTablesResponse.Items["+ i +"].Sensitive"));
-			table.setRiskLevelId(context.longValue("DescribeTablesResponse.Items["+ i +"].RiskLevelId"));
-			table.setRiskLevelName(context.stringValue("DescribeTablesResponse.Items["+ i +"].RiskLevelName"));
-			table.setDepartName(context.stringValue("DescribeTablesResponse.Items["+ i +"].DepartName"));
-			table.setTotalCount(context.integerValue("DescribeTablesResponse.Items["+ i +"].TotalCount"));
-			table.setSensitiveCount(context.integerValue("DescribeTablesResponse.Items["+ i +"].SensitiveCount"));
-			table.setSensitiveRatio(context.stringValue("DescribeTablesResponse.Items["+ i +"].SensitiveRatio"));
-			table.setInstanceId(context.longValue("DescribeTablesResponse.Items["+ i +"].InstanceId"));
+			table.setId(_ctx.longValue("DescribeTablesResponse.Items["+ i +"].Id"));
+			table.setName(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].Name"));
+			table.setOwner(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].Owner"));
+			table.setCreationTime(_ctx.longValue("DescribeTablesResponse.Items["+ i +"].CreationTime"));
+			table.setProductId(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].ProductId"));
+			table.setProductCode(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].ProductCode"));
+			table.setSensitive(_ctx.booleanValue("DescribeTablesResponse.Items["+ i +"].Sensitive"));
+			table.setRiskLevelId(_ctx.longValue("DescribeTablesResponse.Items["+ i +"].RiskLevelId"));
+			table.setRiskLevelName(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].RiskLevelName"));
+			table.setDepartName(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].DepartName"));
+			table.setTotalCount(_ctx.integerValue("DescribeTablesResponse.Items["+ i +"].TotalCount"));
+			table.setSensitiveCount(_ctx.integerValue("DescribeTablesResponse.Items["+ i +"].SensitiveCount"));
+			table.setSensitiveRatio(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].SensitiveRatio"));
+			table.setInstanceId(_ctx.longValue("DescribeTablesResponse.Items["+ i +"].InstanceId"));
+			table.setS2Count(_ctx.integerValue("DescribeTablesResponse.Items["+ i +"].S2Count"));
+			table.setS3Count(_ctx.integerValue("DescribeTablesResponse.Items["+ i +"].S3Count"));
+			table.setTotalRows(_ctx.integerValue("DescribeTablesResponse.Items["+ i +"].TotalRows"));
+			table.setLastScanTime(_ctx.longValue("DescribeTablesResponse.Items["+ i +"].LastScanTime"));
 
 			items.add(table);
 		}

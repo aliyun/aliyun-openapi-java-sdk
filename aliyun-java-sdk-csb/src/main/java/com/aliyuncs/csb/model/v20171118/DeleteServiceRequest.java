@@ -30,7 +30,7 @@ public class DeleteServiceRequest extends RpcAcsRequest<DeleteServiceResponse> {
 
 	private Long serviceId;
 	public DeleteServiceRequest() {
-		super("CSB", "2017-11-18", "DeleteService", "csb");
+		super("CSB", "2017-11-18", "DeleteService");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

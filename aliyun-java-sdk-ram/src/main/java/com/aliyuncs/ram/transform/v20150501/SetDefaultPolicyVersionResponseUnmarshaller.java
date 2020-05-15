@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetDefaultPolicyVersionResponseUnmarshaller {
 
-	public static SetDefaultPolicyVersionResponse unmarshall(SetDefaultPolicyVersionResponse setDefaultPolicyVersionResponse, UnmarshallerContext context) {
+	public static SetDefaultPolicyVersionResponse unmarshall(SetDefaultPolicyVersionResponse setDefaultPolicyVersionResponse, UnmarshallerContext _ctx) {
 		
-		setDefaultPolicyVersionResponse.setRequestId(context.stringValue("SetDefaultPolicyVersionResponse.RequestId"));
+		setDefaultPolicyVersionResponse.setRequestId(_ctx.stringValue("SetDefaultPolicyVersionResponse.RequestId"));
 	 
 	 	return setDefaultPolicyVersionResponse;
 	}

@@ -29,7 +29,7 @@ public class CheckDrdsDbNameRequest extends RpcAcsRequest<CheckDrdsDbNameRespons
 
 	private String dbName;
 	public CheckDrdsDbNameRequest() {
-		super("Drds", "2019-01-23", "CheckDrdsDbName", "drds");
+		super("Drds", "2019-01-23", "CheckDrdsDbName", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

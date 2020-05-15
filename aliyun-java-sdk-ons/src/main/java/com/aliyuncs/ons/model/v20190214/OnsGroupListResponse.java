@@ -71,6 +71,8 @@ public class OnsGroupListResponse extends AcsResponse {
 
 		private Long createTime;
 
+		private String groupType;
+
 		public String getOwner() {
 			return this.owner;
 		}
@@ -125,6 +127,14 @@ public class OnsGroupListResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getGroupType() {
+			return this.groupType;
+		}
+
+		public void setGroupType(String groupType) {
+			this.groupType = groupType;
 		}
 	}
 

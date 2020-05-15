@@ -35,7 +35,7 @@ public class DeactiveFlowLogRequest extends RpcAcsRequest<DeactiveFlowLogRespons
 
 	private String flowLogId;
 	public DeactiveFlowLogRequest() {
-		super("Vpc", "2016-04-28", "DeactiveFlowLog", "Vpc");
+		super("Vpc", "2016-04-28", "DeactiveFlowLog", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

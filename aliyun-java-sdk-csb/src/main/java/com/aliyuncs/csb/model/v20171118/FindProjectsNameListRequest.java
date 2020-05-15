@@ -30,7 +30,7 @@ public class FindProjectsNameListRequest extends RpcAcsRequest<FindProjectsNameL
 
 	private Long csbId;
 	public FindProjectsNameListRequest() {
-		super("CSB", "2017-11-18", "FindProjectsNameList", "csb");
+		super("CSB", "2017-11-18", "FindProjectsNameList");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {

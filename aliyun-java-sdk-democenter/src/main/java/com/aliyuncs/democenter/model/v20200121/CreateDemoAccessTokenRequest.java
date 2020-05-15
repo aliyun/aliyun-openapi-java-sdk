@@ -26,15 +26,28 @@ import com.aliyuncs.democenter.Endpoint;
 public class CreateDemoAccessTokenRequest extends RpcAcsRequest<CreateDemoAccessTokenResponse> {
 	   
 
+	private Integer edition;
+
 	private Long demoId;
 	public CreateDemoAccessTokenRequest() {
-		super("DemoCenter", "2020-01-21", "CreateDemoAccessToken", "DemoCenter");
+		super("DemoCenter", "2020-01-21", "CreateDemoAccessToken");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getEdition() {
+		return this.edition;
+	}
+
+	public void setEdition(Integer edition) {
+		this.edition = edition;
+		if(edition != null){
+			putBodyParameter("Edition", edition.toString());
+		}
 	}
 
 	public Long getDemoId() {

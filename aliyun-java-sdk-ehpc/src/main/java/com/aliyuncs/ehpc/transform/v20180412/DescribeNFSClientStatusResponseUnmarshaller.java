@@ -23,6 +23,7 @@ public class DescribeNFSClientStatusResponseUnmarshaller {
 
 	public static DescribeNFSClientStatusResponse unmarshall(DescribeNFSClientStatusResponse describeNFSClientStatusResponse, UnmarshallerContext _ctx) {
 		
+		describeNFSClientStatusResponse.setRequestId(_ctx.stringValue("DescribeNFSClientStatusResponse.RequestId"));
 		describeNFSClientStatusResponse.setStatus(_ctx.stringValue("DescribeNFSClientStatusResponse.Status"));
 
 		Result result = new Result();

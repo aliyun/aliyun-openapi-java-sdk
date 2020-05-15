@@ -45,23 +45,32 @@ public class MapUtils {
             return "";
         }
         StringBuilder sb = new StringBuilder("{");
-        for (Map.Entry<String,String> entry : map.entrySet()) {
+        for (Map.Entry<String, String> entry : map.entrySet()) {
             sb.append("\"").append(entry.getKey()).append("\":\"").append(entry.getValue()).append("\"");
         }
         sb.append("}");
         return sb.toString();
     }
 
-    private List<Map<Object, Object>> setList(List<Map<Object, Object>> targetList, int index, String key,
-            String value) {
-        List<Map<Object, Object>> list = targetList;
-        if (null == list) {
-            list = new ArrayList<Map<Object, Object>>();
+    private List<Map<Object, Object>> setList(List targetList, int index, String key, String value) {
+        List list = targetList;
+        if (null != key && key.contains("[") && !key.contains(".")) {
+            if (null == list) {
+                list = new ArrayList();
+            }
+            while (list.size() <= index) {
+                list.add("");
+            }
+            list.set(index, value);
+        } else {
+            if (null == list) {
+                list = new ArrayList<Map<Object, Object>>();
+            }
+            while (list.size() <= index) {
+                list.add(new HashMap<Object, Object>());
+            }
+            list.set(index, setMap((Map<Object, Object>) list.get(index), key, value));
         }
-        while (list.size() <= index) {
-            list.add(new HashMap<Object, Object>());
-        }
-        list.set(index, setMap(list.get(index), key, value));
         return list;
     }
 
@@ -74,7 +83,7 @@ public class MapUtils {
             String[] keys = key.split("\\.");
             String listKey = key.substring(0, key.indexOf("["));
             int index = Integer.parseInt(key.substring(key.indexOf("[") + 1, key.indexOf("]")));
-            List<Map<Object, Object>> listObj = (List<Map<Object, Object>>) map.get(listKey);
+            List listObj = (List) map.get(listKey);
             listObj = setList(listObj, index, key.replace(keys[0] + ".", ""), value);
             map.put(listKey, listObj);
         } else if (key.contains(".")) {

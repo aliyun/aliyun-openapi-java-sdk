@@ -16,6 +16,7 @@ package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.linkvisual.Endpoint;
 
 /**
  * @author auto create
@@ -26,12 +27,16 @@ public class AddEventRecordPlanDeviceRequest extends RpcAcsRequest<AddEventRecor
 
 	private String iotId;
 
-	private String planId;
-
 	private Integer streamType;
+
+	private String planId;
 	public AddEventRecordPlanDeviceRequest() {
-		super("Linkvisual", "2018-01-20", "AddEventRecordPlanDevice", "linkvisual");
+		super("Linkvisual", "2018-01-20", "AddEventRecordPlanDevice", "Linkvisual");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getIotId() {
@@ -45,17 +50,6 @@ public class AddEventRecordPlanDeviceRequest extends RpcAcsRequest<AddEventRecor
 		}
 	}
 
-	public String getPlanId() {
-		return this.planId;
-	}
-
-	public void setPlanId(String planId) {
-		this.planId = planId;
-		if(planId != null){
-			putQueryParameter("PlanId", planId);
-		}
-	}
-
 	public Integer getStreamType() {
 		return this.streamType;
 	}
@@ -64,6 +58,17 @@ public class AddEventRecordPlanDeviceRequest extends RpcAcsRequest<AddEventRecor
 		this.streamType = streamType;
 		if(streamType != null){
 			putQueryParameter("StreamType", streamType.toString());
+		}
+	}
+
+	public String getPlanId() {
+		return this.planId;
+	}
+
+	public void setPlanId(String planId) {
+		this.planId = planId;
+		if(planId != null){
+			putQueryParameter("PlanId", planId);
 		}
 	}
 

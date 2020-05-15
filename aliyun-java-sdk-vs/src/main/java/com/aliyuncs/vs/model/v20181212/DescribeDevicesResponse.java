@@ -139,6 +139,8 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 		private String channelSyncTime;
 
+		private String params;
+
 		private Stats stats;
 
 		private Directory directory;
@@ -349,6 +351,14 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 		public void setChannelSyncTime(String channelSyncTime) {
 			this.channelSyncTime = channelSyncTime;
+		}
+
+		public String getParams() {
+			return this.params;
+		}
+
+		public void setParams(String params) {
+			this.params = params;
 		}
 
 		public Stats getStats() {

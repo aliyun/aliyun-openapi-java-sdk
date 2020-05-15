@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
 /**
@@ -22,34 +23,35 @@ import com.aliyuncs.cbn.Endpoint;
  * @version 
  */
 public class DescribeCenRouteMapsRequest extends RpcAcsRequest<DescribeCenRouteMapsResponse> {
-	
-	public DescribeCenRouteMapsRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenRouteMaps", "cbn");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String cenId;
 
-	private String ownerAccount;
-
-	private String cenRegionId;
+	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private String transmitDirection;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private String routeMapId;
 
 	private Long ownerId;
 
-	private Integer pageNumber;
-
-	private String transmitDirection;
+	private String cenRegionId;
+	public DescribeCenRouteMapsRequest() {
+		super("Cbn", "2017-09-12", "DescribeCenRouteMaps", "Cbn");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -59,17 +61,6 @@ public class DescribeCenRouteMapsRequest extends RpcAcsRequest<DescribeCenRouteM
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -84,25 +75,14 @@ public class DescribeCenRouteMapsRequest extends RpcAcsRequest<DescribeCenRouteM
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getCenRegionId() {
-		return this.cenRegionId;
-	}
-
-	public void setCenRegionId(String cenRegionId) {
-		this.cenRegionId = cenRegionId;
-		if(cenRegionId != null){
-			putQueryParameter("CenRegionId", cenRegionId);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -114,6 +94,39 @@ public class DescribeCenRouteMapsRequest extends RpcAcsRequest<DescribeCenRouteM
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTransmitDirection() {
+		return this.transmitDirection;
+	}
+
+	public void setTransmitDirection(String transmitDirection) {
+		this.transmitDirection = transmitDirection;
+		if(transmitDirection != null){
+			putQueryParameter("TransmitDirection", transmitDirection);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -139,25 +152,14 @@ public class DescribeCenRouteMapsRequest extends RpcAcsRequest<DescribeCenRouteM
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getCenRegionId() {
+		return this.cenRegionId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getTransmitDirection() {
-		return this.transmitDirection;
-	}
-
-	public void setTransmitDirection(String transmitDirection) {
-		this.transmitDirection = transmitDirection;
-		if(transmitDirection != null){
-			putQueryParameter("TransmitDirection", transmitDirection);
+	public void setCenRegionId(String cenRegionId) {
+		this.cenRegionId = cenRegionId;
+		if(cenRegionId != null){
+			putQueryParameter("CenRegionId", cenRegionId);
 		}
 	}
 

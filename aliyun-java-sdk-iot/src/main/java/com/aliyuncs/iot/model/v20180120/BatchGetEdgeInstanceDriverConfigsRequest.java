@@ -28,11 +28,11 @@ public class BatchGetEdgeInstanceDriverConfigsRequest extends RpcAcsRequest<Batc
 
 	private List<String> driverIdss;
 
-	private String instanceId;
-
 	private String iotInstanceId;
+
+	private String instanceId;
 	public BatchGetEdgeInstanceDriverConfigsRequest() {
-		super("Iot", "2018-01-20", "BatchGetEdgeInstanceDriverConfigs", "iot");
+		super("Iot", "2018-01-20", "BatchGetEdgeInstanceDriverConfigs", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,17 +53,6 @@ public class BatchGetEdgeInstanceDriverConfigsRequest extends RpcAcsRequest<Batc
 		}	
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getIotInstanceId() {
 		return this.iotInstanceId;
 	}
@@ -72,6 +61,17 @@ public class BatchGetEdgeInstanceDriverConfigsRequest extends RpcAcsRequest<Batc
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

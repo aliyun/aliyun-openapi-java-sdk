@@ -32,7 +32,7 @@ public class StopMigrationJobRequest extends RpcAcsRequest<StopMigrationJobRespo
 
 	private String accountId;
 	public StopMigrationJobRequest() {
-		super("Dts", "2020-01-01", "StopMigrationJob", "dts");
+		super("Dts", "2020-01-01", "StopMigrationJob");
 		setMethod(MethodType.POST);
 	}
 

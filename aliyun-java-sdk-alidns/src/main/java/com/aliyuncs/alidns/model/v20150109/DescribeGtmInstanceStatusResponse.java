@@ -34,6 +34,10 @@ public class DescribeGtmInstanceStatusResponse extends AcsResponse {
 
 	private Integer strategyNotAvailableNum;
 
+	private String status;
+
+	private String statusReason;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -72,6 +76,22 @@ public class DescribeGtmInstanceStatusResponse extends AcsResponse {
 
 	public void setStrategyNotAvailableNum(Integer strategyNotAvailableNum) {
 		this.strategyNotAvailableNum = strategyNotAvailableNum;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getStatusReason() {
+		return this.statusReason;
+	}
+
+	public void setStatusReason(String statusReason) {
+		this.statusReason = statusReason;
 	}
 
 	@Override

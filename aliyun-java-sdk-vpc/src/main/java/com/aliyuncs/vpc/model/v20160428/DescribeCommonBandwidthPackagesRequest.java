@@ -45,7 +45,7 @@ public class DescribeCommonBandwidthPackagesRequest extends RpcAcsRequest<Descri
 
 	private String name;
 	public DescribeCommonBandwidthPackagesRequest() {
-		super("Vpc", "2016-04-28", "DescribeCommonBandwidthPackages", "Vpc");
+		super("Vpc", "2016-04-28", "DescribeCommonBandwidthPackages", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

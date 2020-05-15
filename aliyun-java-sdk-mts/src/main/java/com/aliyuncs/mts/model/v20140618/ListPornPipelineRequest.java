@@ -39,7 +39,7 @@ public class ListPornPipelineRequest extends RpcAcsRequest<ListPornPipelineRespo
 
 	private Long ownerId;
 	public ListPornPipelineRequest() {
-		super("Mts", "2014-06-18", "ListPornPipeline", "mts");
+		super("Mts", "2014-06-18", "ListPornPipeline");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

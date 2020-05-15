@@ -27,11 +27,11 @@ public class RefreshObjectCachesRequest extends RpcAcsRequest<RefreshObjectCache
 
 	private String objectPath;
 
-	private Long ownerId;
-
 	private String securityToken;
 
 	private String objectType;
+
+	private Long ownerId;
 	public RefreshObjectCachesRequest() {
 		super("Cdn", "2018-05-10", "RefreshObjectCaches");
 		setMethod(MethodType.POST);
@@ -49,17 +49,6 @@ public class RefreshObjectCachesRequest extends RpcAcsRequest<RefreshObjectCache
 		this.objectPath = objectPath;
 		if(objectPath != null){
 			putQueryParameter("ObjectPath", objectPath);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -82,6 +71,17 @@ public class RefreshObjectCachesRequest extends RpcAcsRequest<RefreshObjectCache
 		this.objectType = objectType;
 		if(objectType != null){
 			putQueryParameter("ObjectType", objectType);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

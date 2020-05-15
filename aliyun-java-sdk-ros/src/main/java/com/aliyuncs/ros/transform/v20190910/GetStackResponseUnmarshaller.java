@@ -40,6 +40,11 @@ public class GetStackResponseUnmarshaller {
 		getStackResponse.setTimeoutInMinutes(_ctx.integerValue("GetStackResponse.TimeoutInMinutes"));
 		getStackResponse.setUpdateTime(_ctx.stringValue("GetStackResponse.UpdateTime"));
 		getStackResponse.setParentStackId(_ctx.stringValue("GetStackResponse.ParentStackId"));
+		getStackResponse.setStackDriftStatus(_ctx.stringValue("GetStackResponse.StackDriftStatus"));
+		getStackResponse.setDriftDetectionTime(_ctx.stringValue("GetStackResponse.DriftDetectionTime"));
+		getStackResponse.setRamRoleName(_ctx.stringValue("GetStackResponse.RamRoleName"));
+		getStackResponse.setDeletionProtection(_ctx.stringValue("GetStackResponse.DeletionProtection"));
+		getStackResponse.setRootStackId(_ctx.stringValue("GetStackResponse.RootStackId"));
 
 		List<Map<Object, Object>> outputs = _ctx.listMapValue("GetStackResponse.Outputs");
 		getStackResponse.setOutputs(outputs);

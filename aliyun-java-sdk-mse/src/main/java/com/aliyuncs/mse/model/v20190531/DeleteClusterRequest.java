@@ -26,6 +26,8 @@ public class DeleteClusterRequest extends RpcAcsRequest<DeleteClusterResponse> {
 	   
 
 	private String clusterId;
+
+	private String instanceId;
 	public DeleteClusterRequest() {
 		super("mse", "2019-05-31", "DeleteCluster", "mse");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class DeleteClusterRequest extends RpcAcsRequest<DeleteClusterResponse> {
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putBodyParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
 		}
 	}
 

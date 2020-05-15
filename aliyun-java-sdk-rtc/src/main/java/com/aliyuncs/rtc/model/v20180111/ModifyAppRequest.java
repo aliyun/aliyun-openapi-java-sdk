@@ -31,7 +31,7 @@ public class ModifyAppRequest extends RpcAcsRequest<ModifyAppResponse> {
 
 	private String appId;
 	public ModifyAppRequest() {
-		super("rtc", "2018-01-11", "ModifyApp");
+		super("rtc", "2018-01-11", "ModifyApp", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

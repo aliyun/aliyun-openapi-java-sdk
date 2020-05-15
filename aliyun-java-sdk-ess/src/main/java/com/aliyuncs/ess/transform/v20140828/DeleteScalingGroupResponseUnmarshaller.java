@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteScalingGroupResponseUnmarshaller {
 
-	public static DeleteScalingGroupResponse unmarshall(DeleteScalingGroupResponse deleteScalingGroupResponse, UnmarshallerContext context) {
+	public static DeleteScalingGroupResponse unmarshall(DeleteScalingGroupResponse deleteScalingGroupResponse, UnmarshallerContext _ctx) {
 		
-		deleteScalingGroupResponse.setRequestId(context.stringValue("DeleteScalingGroupResponse.RequestId"));
+		deleteScalingGroupResponse.setRequestId(_ctx.stringValue("DeleteScalingGroupResponse.RequestId"));
 	 
 	 	return deleteScalingGroupResponse;
 	}

@@ -34,7 +34,7 @@ public class MuteAudioRequest extends RpcAcsRequest<MuteAudioResponse> {
 
 	private String appId;
 	public MuteAudioRequest() {
-		super("rtc", "2018-01-11", "MuteAudio");
+		super("rtc", "2018-01-11", "MuteAudio", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

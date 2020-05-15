@@ -24,17 +24,7 @@ import com.aliyuncs.foas.Endpoint;
  * @version 
  */
 public class GetInstanceHistoryAutoScalePlanContentRequest extends RoaAcsRequest<GetInstanceHistoryAutoScalePlanContentResponse> {
-	
-	public GetInstanceHistoryAutoScalePlanContentRequest() {
-		super("foas", "2018-11-11", "GetInstanceHistoryAutoScalePlanContent");
-		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instance/[instanceId]/autoscale/plancontent");
-		setMethod(MethodType.GET);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String projectName;
 
@@ -43,6 +33,16 @@ public class GetInstanceHistoryAutoScalePlanContentRequest extends RoaAcsRequest
 	private String planName;
 
 	private String jobName;
+	public GetInstanceHistoryAutoScalePlanContentRequest() {
+		super("foas", "2018-11-11", "GetInstanceHistoryAutoScalePlanContent", "foas");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instance/[instanceId]/autoscale/plancontent");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProjectName() {
 		return this.projectName;

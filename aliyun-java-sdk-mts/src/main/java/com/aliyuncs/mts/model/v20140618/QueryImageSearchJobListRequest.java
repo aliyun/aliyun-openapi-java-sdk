@@ -35,7 +35,7 @@ public class QueryImageSearchJobListRequest extends RpcAcsRequest<QueryImageSear
 
 	private String jobIds;
 	public QueryImageSearchJobListRequest() {
-		super("Mts", "2014-06-18", "QueryImageSearchJobList", "mts");
+		super("Mts", "2014-06-18", "QueryImageSearchJobList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

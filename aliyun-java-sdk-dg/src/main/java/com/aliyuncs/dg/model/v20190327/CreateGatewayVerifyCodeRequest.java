@@ -24,7 +24,9 @@ import com.aliyuncs.dg.Endpoint;
  * @version 
  */
 public class CreateGatewayVerifyCodeRequest extends RpcAcsRequest<CreateGatewayVerifyCodeResponse> {
-	
+	   
+
+	private String gatewayId;
 	public CreateGatewayVerifyCodeRequest() {
 		super("dg", "2019-03-27", "CreateGatewayVerifyCode", "dg");
 		setProtocol(ProtocolType.HTTPS);
@@ -34,8 +36,6 @@ public class CreateGatewayVerifyCodeRequest extends RpcAcsRequest<CreateGatewayV
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String gatewayId;
 
 	public String getGatewayId() {
 		return this.gatewayId;

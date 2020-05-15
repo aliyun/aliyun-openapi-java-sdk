@@ -15,6 +15,7 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.oos.Endpoint;
 
 /**
@@ -22,16 +23,17 @@ import com.aliyuncs.oos.Endpoint;
  * @version 
  */
 public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
-	
+	   
+
+	private String acceptLanguage;
 	public DescribeRegionsRequest() {
 		super("oos", "2019-06-01", "DescribeRegions", "oos");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String acceptLanguage;
 
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;

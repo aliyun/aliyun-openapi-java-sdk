@@ -35,7 +35,7 @@ public class RefreshCdnDomainConfigsCacheRequest extends RpcAcsRequest<RefreshCd
 
 	private String ownerId;
 	public RefreshCdnDomainConfigsCacheRequest() {
-		super("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache", "mts");
+		super("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

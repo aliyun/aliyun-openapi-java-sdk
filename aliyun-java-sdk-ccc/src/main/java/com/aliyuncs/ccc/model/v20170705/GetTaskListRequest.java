@@ -23,19 +23,19 @@ import com.aliyuncs.ccc.Endpoint;
  * @version 
  */
 public class GetTaskListRequest extends RpcAcsRequest<GetTaskListResponse> {
-	
+	   
+
+	private String jobId;
+
+	private String instanceId;
 	public GetTaskListRequest() {
 		super("CCC", "2017-07-05", "GetTaskList");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String jobId;
-
-	private String instanceId;
 
 	public String getJobId() {
 		return this.jobId;

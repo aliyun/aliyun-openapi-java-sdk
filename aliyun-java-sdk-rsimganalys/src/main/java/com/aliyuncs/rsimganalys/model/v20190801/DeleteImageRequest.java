@@ -26,7 +26,7 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 
 	private Long imageId;
 	public DeleteImageRequest() {
-		super("rsimganalys", "2019-08-01", "DeleteImage", "aliyun-java-sdk-rsimganalys");
+		super("rsimganalys", "2019-08-01", "DeleteImage");
 		setMethod(MethodType.POST);
 	}
 

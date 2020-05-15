@@ -72,4 +72,9 @@ public class DescribeConnectableClustersResponse extends AcsResponse {
 	public DescribeConnectableClustersResponse getInstance(UnmarshallerContext context) {
 		return	DescribeConnectableClustersResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

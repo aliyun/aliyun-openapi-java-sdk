@@ -16,6 +16,7 @@ package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sas.Endpoint;
 
 /**
  * @author auto create
@@ -24,13 +25,13 @@ import com.aliyuncs.http.MethodType;
 public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulResponse> {
 	   
 
-	private String statusList;
-
 	private String type;
 
 	private Integer pageSize;
 
 	private String lang;
+
+	private String groupId;
 
 	private String dealed;
 
@@ -44,17 +45,10 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 	public DescribeGroupedVulRequest() {
 		super("Sas", "2018-12-03", "DescribeGroupedVul", "sas");
 		setMethod(MethodType.POST);
-	}
-
-	public String getStatusList() {
-		return this.statusList;
-	}
-
-	public void setStatusList(String statusList) {
-		this.statusList = statusList;
-		if(statusList != null){
-			putQueryParameter("StatusList", statusList);
-		}
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getType() {
@@ -87,6 +81,17 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

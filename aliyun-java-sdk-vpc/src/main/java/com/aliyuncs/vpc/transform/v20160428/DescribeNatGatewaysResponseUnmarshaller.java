@@ -86,6 +86,7 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 				ipList.setIpAddress(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpLists["+ j +"].IpAddress"));
 				ipList.setUsingStatus(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpLists["+ j +"].UsingStatus"));
 				ipList.setApAccessEnabled(_ctx.booleanValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpLists["+ j +"].ApAccessEnabled"));
+				ipList.setSnatEntryEnabled(_ctx.booleanValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpLists["+ j +"].SnatEntryEnabled"));
 
 				ipLists.add(ipList);
 			}

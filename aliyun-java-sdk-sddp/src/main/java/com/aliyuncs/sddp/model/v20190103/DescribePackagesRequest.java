@@ -15,48 +15,38 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribePackagesRequest extends RpcAcsRequest<DescribePackagesResponse> {
-	
-	public DescribePackagesRequest() {
-		super("Sddp", "2019-01-03", "DescribePackages", "sddp");
-	}
-
-	private Long instanceId;
+	   
 
 	private Long productId;
 
-	private Integer featureType;
-
-	private String name;
+	private Long riskLevelId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
-	private String queryName;
-
-	private Long riskLevelId;
-
 	private String lang;
 
+	private Integer currentPage;
+
+	private Long instanceId;
+
+	private String name;
+
 	private Long ruleId;
-
-	private Integer queryType;
-
-	public Long getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(Long instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId.toString());
-		}
+	public DescribePackagesRequest() {
+		super("Sddp", "2019-01-03", "DescribePackages", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getProductId() {
@@ -67,61 +57,6 @@ public class DescribePackagesRequest extends RpcAcsRequest<DescribePackagesRespo
 		this.productId = productId;
 		if(productId != null){
 			putQueryParameter("ProductId", productId.toString());
-		}
-	}
-
-	public Integer getFeatureType() {
-		return this.featureType;
-	}
-
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public String getQueryName() {
-		return this.queryName;
-	}
-
-	public void setQueryName(String queryName) {
-		this.queryName = queryName;
-		if(queryName != null){
-			putQueryParameter("QueryName", queryName);
 		}
 	}
 
@@ -136,6 +71,17 @@ public class DescribePackagesRequest extends RpcAcsRequest<DescribePackagesRespo
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getLang() {
 		return this.lang;
 	}
@@ -147,6 +93,39 @@ public class DescribePackagesRequest extends RpcAcsRequest<DescribePackagesRespo
 		}
 	}
 
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public Long getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(Long instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
 	public Long getRuleId() {
 		return this.ruleId;
 	}
@@ -155,17 +134,6 @@ public class DescribePackagesRequest extends RpcAcsRequest<DescribePackagesRespo
 		this.ruleId = ruleId;
 		if(ruleId != null){
 			putQueryParameter("RuleId", ruleId.toString());
-		}
-	}
-
-	public Integer getQueryType() {
-		return this.queryType;
-	}
-
-	public void setQueryType(Integer queryType) {
-		this.queryType = queryType;
-		if(queryType != null){
-			putQueryParameter("QueryType", queryType.toString());
 		}
 	}
 

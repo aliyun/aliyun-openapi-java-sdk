@@ -1,3 +1,13 @@
+2020-04-03 Version: 3.2.1
+- Support deletion protection.
+- ContinueCreateStack enhancement.
+
+2020-03-20 Version: 3.2.0
+- Support tag.
+- Support stack group.
+- Support drift detection.
+- Support RoleName, RetainResources.
+
 2019-10-22 Version: 3.1.0
 - Add API CreateTemplate.
 - Add API DeleteTemplate.

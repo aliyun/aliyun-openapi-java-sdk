@@ -82,6 +82,12 @@ public class DescribeDedicatedHostAttributeResponse extends AcsResponse {
 
 	private String storageUsed;
 
+	private String hostType;
+
+	private String accountName;
+
+	private String openPermission;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -312,6 +318,30 @@ public class DescribeDedicatedHostAttributeResponse extends AcsResponse {
 
 	public void setStorageUsed(String storageUsed) {
 		this.storageUsed = storageUsed;
+	}
+
+	public String getHostType() {
+		return this.hostType;
+	}
+
+	public void setHostType(String hostType) {
+		this.hostType = hostType;
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+	}
+
+	public String getOpenPermission() {
+		return this.openPermission;
+	}
+
+	public void setOpenPermission(String openPermission) {
+		this.openPermission = openPermission;
 	}
 
 	@Override

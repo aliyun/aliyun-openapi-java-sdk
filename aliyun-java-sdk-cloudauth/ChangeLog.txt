@@ -1,3 +1,30 @@
+2020-05-13 Version: 2.0.12
+- About 2019-03-07 and 2018-09-16 Version.
+
+2020-04-28 Version: 2.0.11
+- Add CompareFaceVerify API.
+
+2020-04-27 Version: 2.0.10
+- ContrastFaceVerify Return SubCode.
+
+2020-04-20 Version: 2.0.9
+- Fix FaceContrastPicture.
+
+2020-04-08 Version: 2.0.8
+- Add SubCode for DescribeFaceVerify.
+
+2020-04-02 Version: 2.0.7
+- Add API ContrastFaceVerify.
+
+2020-04-01 Version: 2.0.6
+- DescribeVerifyToken API Add Parameters-UserIp and UserPhoneNumber and UserRegistTime.
+
+2020-03-16 Version: 2.0.5
+- DescribeFaceVerify API Return DeviceToken Field.
+
+2020-02-26 Version: 2.0.4
+- Add InitFaceVerify and DescribeFaceVerify API.
+
 2020-01-16 Version: 2.0.2
 - Add fields faceComparisonScore for DescribeVerifyResult and VerifyMaterials interface.
 

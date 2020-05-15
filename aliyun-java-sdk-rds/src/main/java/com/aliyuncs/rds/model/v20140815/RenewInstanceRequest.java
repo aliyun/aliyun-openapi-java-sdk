@@ -31,7 +31,7 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 
 	private String dBInstanceId;
 
-	private String period;
+	private Integer period;
 
 	private String autoPay;
 
@@ -80,14 +80,14 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		}
 	}
 
-	public String getPeriod() {
+	public Integer getPeriod() {
 		return this.period;
 	}
 
-	public void setPeriod(String period) {
+	public void setPeriod(Integer period) {
 		this.period = period;
 		if(period != null){
-			putQueryParameter("Period", period);
+			putQueryParameter("Period", period.toString());
 		}
 	}
 

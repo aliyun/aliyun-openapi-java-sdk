@@ -28,7 +28,7 @@ public class DeleteOrderListRequest extends RpcAcsRequest<DeleteOrderListRespons
 
 	private String data;
 	public DeleteOrderListRequest() {
-		super("CSB", "2017-11-18", "DeleteOrderList", "csb");
+		super("CSB", "2017-11-18", "DeleteOrderList");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

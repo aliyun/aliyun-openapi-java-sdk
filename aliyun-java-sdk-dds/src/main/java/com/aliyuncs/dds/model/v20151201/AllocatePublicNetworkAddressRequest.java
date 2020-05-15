@@ -39,7 +39,7 @@ public class AllocatePublicNetworkAddressRequest extends RpcAcsRequest<AllocateP
 
 	private Long ownerId;
 	public AllocatePublicNetworkAddressRequest() {
-		super("Dds", "2015-12-01", "AllocatePublicNetworkAddress", "Dds");
+		super("Dds", "2015-12-01", "AllocatePublicNetworkAddress", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

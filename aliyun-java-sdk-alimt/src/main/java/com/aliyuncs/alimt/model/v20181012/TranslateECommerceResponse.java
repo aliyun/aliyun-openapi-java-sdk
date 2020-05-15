@@ -14,7 +14,6 @@
 
 package com.aliyuncs.alimt.model.v20181012;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.alimt.transform.v20181012.TranslateECommerceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

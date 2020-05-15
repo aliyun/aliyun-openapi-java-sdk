@@ -34,7 +34,7 @@ public class DescribeSynchronizationJobStatusRequest extends RpcAcsRequest<Descr
 
 	private String synchronizationDirection;
 	public DescribeSynchronizationJobStatusRequest() {
-		super("Dts", "2020-01-01", "DescribeSynchronizationJobStatus", "dts");
+		super("Dts", "2020-01-01", "DescribeSynchronizationJobStatus");
 		setMethod(MethodType.POST);
 	}
 

@@ -31,7 +31,7 @@ public class ListThingModelVersionRequest extends RpcAcsRequest<ListThingModelVe
 
 	private String iotInstanceId;
 	public ListThingModelVersionRequest() {
-		super("Iot", "2018-01-20", "ListThingModelVersion", "iot");
+		super("Iot", "2018-01-20", "ListThingModelVersion", "Iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

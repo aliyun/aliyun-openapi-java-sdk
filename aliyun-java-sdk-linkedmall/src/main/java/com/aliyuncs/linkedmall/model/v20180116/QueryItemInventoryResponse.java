@@ -99,6 +99,8 @@ public class QueryItemInventoryResponse extends AcsResponse {
 
 		private Long itemId;
 
+		private String lmItemId;
+
 		private List<Sku> skuList;
 
 		public Long getItemId() {
@@ -107,6 +109,14 @@ public class QueryItemInventoryResponse extends AcsResponse {
 
 		public void setItemId(Long itemId) {
 			this.itemId = itemId;
+		}
+
+		public String getLmItemId() {
+			return this.lmItemId;
+		}
+
+		public void setLmItemId(String lmItemId) {
+			this.lmItemId = lmItemId;
 		}
 
 		public List<Sku> getSkuList() {

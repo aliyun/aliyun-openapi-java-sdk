@@ -32,7 +32,7 @@ public class DeleteShardTasksRequest extends RpcAcsRequest<DeleteShardTasksRespo
 
 	private List<TableName> tableNames;
 	public DeleteShardTasksRequest() {
-		super("Drds", "2019-01-23", "DeleteShardTasks", "drds");
+		super("Drds", "2019-01-23", "DeleteShardTasks", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

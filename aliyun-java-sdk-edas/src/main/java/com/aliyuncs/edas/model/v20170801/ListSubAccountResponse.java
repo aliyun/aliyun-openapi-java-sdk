@@ -79,6 +79,10 @@ public class ListSubAccountResponse extends AcsResponse {
 
 		private String subUserKp;
 
+		private String adminEdasId;
+
+		private String subEdasId;
+
 		public String getAdminUserId() {
 			return this.adminUserId;
 		}
@@ -125,6 +129,22 @@ public class ListSubAccountResponse extends AcsResponse {
 
 		public void setSubUserKp(String subUserKp) {
 			this.subUserKp = subUserKp;
+		}
+
+		public String getAdminEdasId() {
+			return this.adminEdasId;
+		}
+
+		public void setAdminEdasId(String adminEdasId) {
+			this.adminEdasId = adminEdasId;
+		}
+
+		public String getSubEdasId() {
+			return this.subEdasId;
+		}
+
+		public void setSubEdasId(String subEdasId) {
+			this.subEdasId = subEdasId;
 		}
 	}
 
