@@ -26,13 +26,13 @@ import com.aliyuncs.iot.Endpoint;
 public class QueryDeviceDesiredPropertyRequest extends RpcAcsRequest<QueryDeviceDesiredPropertyResponse> {
 	   
 
-	private List<String> identifiers;
-
-	private String productKey;
-
 	private String iotId;
 
 	private String iotInstanceId;
+
+	private List<String> identifiers;
+
+	private String productKey;
 
 	private String deviceName;
 	public QueryDeviceDesiredPropertyRequest() {
@@ -42,6 +42,28 @@ public class QueryDeviceDesiredPropertyRequest extends RpcAcsRequest<QueryDevice
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIotId() {
+		return this.iotId;
+	}
+
+	public void setIotId(String iotId) {
+		this.iotId = iotId;
+		if(iotId != null){
+			putQueryParameter("IotId", iotId);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public List<String> getIdentifiers() {
@@ -65,28 +87,6 @@ public class QueryDeviceDesiredPropertyRequest extends RpcAcsRequest<QueryDevice
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
-	public String getIotId() {
-		return this.iotId;
-	}
-
-	public void setIotId(String iotId) {
-		this.iotId = iotId;
-		if(iotId != null){
-			putQueryParameter("IotId", iotId);
-		}
-	}
-
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

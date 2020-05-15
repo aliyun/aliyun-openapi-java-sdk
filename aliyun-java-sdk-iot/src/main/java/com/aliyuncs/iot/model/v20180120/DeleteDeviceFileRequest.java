@@ -25,15 +25,15 @@ import com.aliyuncs.iot.Endpoint;
 public class DeleteDeviceFileRequest extends RpcAcsRequest<DeleteDeviceFileResponse> {
 	   
 
-	private String productKey;
-
 	private String iotId;
 
 	private String iotInstanceId;
 
-	private String deviceName;
-
 	private String fileId;
+
+	private String productKey;
+
+	private String deviceName;
 	public DeleteDeviceFileRequest() {
 		super("Iot", "2018-01-20", "DeleteDeviceFile", "Iot");
 		setMethod(MethodType.POST);
@@ -41,17 +41,6 @@ public class DeleteDeviceFileRequest extends RpcAcsRequest<DeleteDeviceFileRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
 	}
 
 	public String getIotId() {
@@ -76,17 +65,6 @@ public class DeleteDeviceFileRequest extends RpcAcsRequest<DeleteDeviceFileRespo
 		}
 	}
 
-	public String getDeviceName() {
-		return this.deviceName;
-	}
-
-	public void setDeviceName(String deviceName) {
-		this.deviceName = deviceName;
-		if(deviceName != null){
-			putQueryParameter("DeviceName", deviceName);
-		}
-	}
-
 	public String getFileId() {
 		return this.fileId;
 	}
@@ -95,6 +73,28 @@ public class DeleteDeviceFileRequest extends RpcAcsRequest<DeleteDeviceFileRespo
 		this.fileId = fileId;
 		if(fileId != null){
 			putQueryParameter("FileId", fileId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 

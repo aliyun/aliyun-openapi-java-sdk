@@ -26,9 +26,9 @@ import com.aliyuncs.iot.Endpoint;
 public class SetDevicesPropertyRequest extends RpcAcsRequest<SetDevicesPropertyResponse> {
 	   
 
-	private String productKey;
-
 	private String iotInstanceId;
+
+	private String productKey;
 
 	private List<String> deviceNames;
 
@@ -42,17 +42,6 @@ public class SetDevicesPropertyRequest extends RpcAcsRequest<SetDevicesPropertyR
 		} catch (Exception e) {}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
 	public String getIotInstanceId() {
 		return this.iotInstanceId;
 	}
@@ -61,6 +50,17 @@ public class SetDevicesPropertyRequest extends RpcAcsRequest<SetDevicesPropertyR
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

@@ -27,6 +27,8 @@ public class UpdateProductFilterConfigRequest extends RpcAcsRequest<UpdateProduc
 
 	private Boolean propertyTimestampFilter;
 
+	private String iotInstanceId;
+
 	private String productKey;
 
 	private Boolean propertyValueFilter;
@@ -47,6 +49,17 @@ public class UpdateProductFilterConfigRequest extends RpcAcsRequest<UpdateProduc
 		this.propertyTimestampFilter = propertyTimestampFilter;
 		if(propertyTimestampFilter != null){
 			putQueryParameter("PropertyTimestampFilter", propertyTimestampFilter.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

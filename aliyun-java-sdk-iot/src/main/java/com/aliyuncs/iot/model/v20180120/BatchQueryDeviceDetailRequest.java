@@ -26,9 +26,9 @@ import com.aliyuncs.iot.Endpoint;
 public class BatchQueryDeviceDetailRequest extends RpcAcsRequest<BatchQueryDeviceDetailResponse> {
 	   
 
-	private String productKey;
-
 	private String iotInstanceId;
+
+	private String productKey;
 
 	private List<String> deviceNames;
 	public BatchQueryDeviceDetailRequest() {
@@ -40,17 +40,6 @@ public class BatchQueryDeviceDetailRequest extends RpcAcsRequest<BatchQueryDevic
 		} catch (Exception e) {}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
 	public String getIotInstanceId() {
 		return this.iotInstanceId;
 	}
@@ -59,6 +48,17 @@ public class BatchQueryDeviceDetailRequest extends RpcAcsRequest<BatchQueryDevic
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

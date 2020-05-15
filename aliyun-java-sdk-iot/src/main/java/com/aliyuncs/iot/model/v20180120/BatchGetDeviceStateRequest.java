@@ -26,11 +26,11 @@ import com.aliyuncs.iot.Endpoint;
 public class BatchGetDeviceStateRequest extends RpcAcsRequest<BatchGetDeviceStateResponse> {
 	   
 
-	private String productKey;
-
 	private List<String> iotIds;
 
 	private String iotInstanceId;
+
+	private String productKey;
 
 	private List<String> deviceNames;
 	public BatchGetDeviceStateRequest() {
@@ -40,17 +40,6 @@ public class BatchGetDeviceStateRequest extends RpcAcsRequest<BatchGetDeviceStat
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
 	}
 
 	public List<String> getIotIds() {
@@ -74,6 +63,17 @@ public class BatchGetDeviceStateRequest extends RpcAcsRequest<BatchGetDeviceStat
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

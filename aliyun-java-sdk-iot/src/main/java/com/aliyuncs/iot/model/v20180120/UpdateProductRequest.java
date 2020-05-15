@@ -27,11 +27,11 @@ public class UpdateProductRequest extends RpcAcsRequest<UpdateProductResponse> {
 
 	private String description;
 
-	private String productKey;
-
 	private String iotInstanceId;
 
 	private String productName;
+
+	private String productKey;
 	public UpdateProductRequest() {
 		super("Iot", "2018-01-20", "UpdateProduct", "Iot");
 		setMethod(MethodType.POST);
@@ -49,17 +49,6 @@ public class UpdateProductRequest extends RpcAcsRequest<UpdateProductResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
 		}
 	}
 
@@ -82,6 +71,17 @@ public class UpdateProductRequest extends RpcAcsRequest<UpdateProductResponse> {
 		this.productName = productName;
 		if(productName != null){
 			putQueryParameter("ProductName", productName);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

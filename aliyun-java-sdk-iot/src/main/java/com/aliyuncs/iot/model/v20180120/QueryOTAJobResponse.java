@@ -32,14 +32,6 @@ public class QueryOTAJobResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private Integer total;
-
-	private Integer pageSize;
-
-	private Integer pageCount;
-
-	private Integer currentPage;
-
 	private Data data;
 
 	public String getRequestId() {
@@ -72,38 +64,6 @@ public class QueryOTAJobResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
-	}
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getPageCount() {
-		return this.pageCount;
-	}
-
-	public void setPageCount(Integer pageCount) {
-		this.pageCount = pageCount;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Data getData() {

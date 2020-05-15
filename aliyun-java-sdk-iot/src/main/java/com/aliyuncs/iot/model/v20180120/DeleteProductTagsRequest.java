@@ -26,11 +26,11 @@ import com.aliyuncs.iot.Endpoint;
 public class DeleteProductTagsRequest extends RpcAcsRequest<DeleteProductTagsResponse> {
 	   
 
-	private String productKey;
-
 	private String iotInstanceId;
 
 	private List<String> productTagKeys;
+
+	private String productKey;
 	public DeleteProductTagsRequest() {
 		super("Iot", "2018-01-20", "DeleteProductTags", "Iot");
 		setMethod(MethodType.POST);
@@ -38,17 +38,6 @@ public class DeleteProductTagsRequest extends RpcAcsRequest<DeleteProductTagsRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -73,6 +62,17 @@ public class DeleteProductTagsRequest extends RpcAcsRequest<DeleteProductTagsRes
 				putQueryParameter("ProductTagKey." + (i + 1) , productTagKeys.get(i));
 			}
 		}	
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
 	}
 
 	@Override

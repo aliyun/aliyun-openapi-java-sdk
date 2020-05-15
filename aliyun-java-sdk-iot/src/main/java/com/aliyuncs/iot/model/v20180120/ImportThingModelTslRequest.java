@@ -25,11 +25,11 @@ import com.aliyuncs.iot.Endpoint;
 public class ImportThingModelTslRequest extends RpcAcsRequest<ImportThingModelTslResponse> {
 	   
 
-	private String productKey;
-
 	private String resourceGroupId;
 
 	private String iotInstanceId;
+
+	private String productKey;
 
 	private String tslUrl;
 
@@ -41,17 +41,6 @@ public class ImportThingModelTslRequest extends RpcAcsRequest<ImportThingModelTs
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
 	}
 
 	public String getResourceGroupId() {
@@ -73,6 +62,17 @@ public class ImportThingModelTslRequest extends RpcAcsRequest<ImportThingModelTs
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

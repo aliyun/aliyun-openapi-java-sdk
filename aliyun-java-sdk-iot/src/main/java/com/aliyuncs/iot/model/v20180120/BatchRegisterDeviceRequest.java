@@ -25,11 +25,11 @@ import com.aliyuncs.iot.Endpoint;
 public class BatchRegisterDeviceRequest extends RpcAcsRequest<BatchRegisterDeviceResponse> {
 	   
 
+	private String iotInstanceId;
+
 	private Integer count;
 
 	private String productKey;
-
-	private String iotInstanceId;
 	public BatchRegisterDeviceRequest() {
 		super("Iot", "2018-01-20", "BatchRegisterDevice", "Iot");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class BatchRegisterDeviceRequest extends RpcAcsRequest<BatchRegisterDevic
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public Integer getCount() {
@@ -58,17 +69,6 @@ public class BatchRegisterDeviceRequest extends RpcAcsRequest<BatchRegisterDevic
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

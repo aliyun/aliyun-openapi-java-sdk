@@ -29,9 +29,9 @@ public class UpdateProductTopicRequest extends RpcAcsRequest<UpdateProductTopicR
 
 	private String iotInstanceId;
 
-	private String operation;
-
 	private String topicShortName;
+
+	private String operation;
 
 	private String desc;
 	public UpdateProductTopicRequest() {
@@ -65,17 +65,6 @@ public class UpdateProductTopicRequest extends RpcAcsRequest<UpdateProductTopicR
 		}
 	}
 
-	public String getOperation() {
-		return this.operation;
-	}
-
-	public void setOperation(String operation) {
-		this.operation = operation;
-		if(operation != null){
-			putQueryParameter("Operation", operation);
-		}
-	}
-
 	public String getTopicShortName() {
 		return this.topicShortName;
 	}
@@ -84,6 +73,17 @@ public class UpdateProductTopicRequest extends RpcAcsRequest<UpdateProductTopicR
 		this.topicShortName = topicShortName;
 		if(topicShortName != null){
 			putQueryParameter("TopicShortName", topicShortName);
+		}
+	}
+
+	public String getOperation() {
+		return this.operation;
+	}
+
+	public void setOperation(String operation) {
+		this.operation = operation;
+		if(operation != null){
+			putQueryParameter("Operation", operation);
 		}
 	}
 

@@ -25,9 +25,9 @@ import com.aliyuncs.iot.Endpoint;
 public class DeleteDeviceGroupRequest extends RpcAcsRequest<DeleteDeviceGroupResponse> {
 	   
 
-	private String groupId;
-
 	private String iotInstanceId;
+
+	private String groupId;
 	public DeleteDeviceGroupRequest() {
 		super("Iot", "2018-01-20", "DeleteDeviceGroup", "Iot");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class DeleteDeviceGroupRequest extends RpcAcsRequest<DeleteDeviceGroupRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -56,6 +45,17 @@ public class DeleteDeviceGroupRequest extends RpcAcsRequest<DeleteDeviceGroupRes
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

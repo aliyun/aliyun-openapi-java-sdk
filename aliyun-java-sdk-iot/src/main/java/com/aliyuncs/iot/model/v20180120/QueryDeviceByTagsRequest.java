@@ -26,13 +26,13 @@ import com.aliyuncs.iot.Endpoint;
 public class QueryDeviceByTagsRequest extends RpcAcsRequest<QueryDeviceByTagsResponse> {
 	   
 
-	private Integer currentPage;
-
 	private String iotInstanceId;
 
 	private Integer pageSize;
 
 	private List<Tag> tags;
+
+	private Integer currentPage;
 	public QueryDeviceByTagsRequest() {
 		super("Iot", "2018-01-20", "QueryDeviceByTags", "Iot");
 		setMethod(MethodType.POST);
@@ -40,17 +40,6 @@ public class QueryDeviceByTagsRequest extends RpcAcsRequest<QueryDeviceByTagsRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -87,6 +76,17 @@ public class QueryDeviceByTagsRequest extends RpcAcsRequest<QueryDeviceByTagsRes
 				putQueryParameter("Tag." + (depth1 + 1) + ".TagKey" , tags.get(depth1).getTagKey());
 			}
 		}	
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
 	}
 
 	public static class Tag {

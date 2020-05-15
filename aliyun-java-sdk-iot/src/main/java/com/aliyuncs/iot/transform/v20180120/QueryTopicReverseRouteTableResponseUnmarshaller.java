@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.QueryTopicReverseRouteTableResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,10 +31,7 @@ public class QueryTopicReverseRouteTableResponseUnmarshaller {
 		queryTopicReverseRouteTableResponse.setCode(_ctx.stringValue("QueryTopicReverseRouteTableResponse.Code"));
 		queryTopicReverseRouteTableResponse.setErrorMessage(_ctx.stringValue("QueryTopicReverseRouteTableResponse.ErrorMessage"));
 
-		List<String> srcTopics = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("QueryTopicReverseRouteTableResponse.SrcTopics.Length"); i++) {
-			srcTopics.add(_ctx.stringValue("QueryTopicReverseRouteTableResponse.SrcTopics["+ i +"]"));
-		}
+		List<Map<Object, Object>> srcTopics = _ctx.listMapValue("QueryTopicReverseRouteTableResponse.SrcTopics");
 		queryTopicReverseRouteTableResponse.setSrcTopics(srcTopics);
 	 
 	 	return queryTopicReverseRouteTableResponse;

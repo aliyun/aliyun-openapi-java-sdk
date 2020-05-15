@@ -31,9 +31,9 @@ public class CreateRuleActionRequest extends RpcAcsRequest<CreateRuleActionRespo
 
 	private String iotInstanceId;
 
-	private Long ruleId;
-
 	private Boolean errorActionFlag;
+
+	private Long ruleId;
 	public CreateRuleActionRequest() {
 		super("Iot", "2018-01-20", "CreateRuleAction", "Iot");
 		setMethod(MethodType.POST);
@@ -76,17 +76,6 @@ public class CreateRuleActionRequest extends RpcAcsRequest<CreateRuleActionRespo
 		}
 	}
 
-	public Long getRuleId() {
-		return this.ruleId;
-	}
-
-	public void setRuleId(Long ruleId) {
-		this.ruleId = ruleId;
-		if(ruleId != null){
-			putQueryParameter("RuleId", ruleId.toString());
-		}
-	}
-
 	public Boolean getErrorActionFlag() {
 		return this.errorActionFlag;
 	}
@@ -95,6 +84,17 @@ public class CreateRuleActionRequest extends RpcAcsRequest<CreateRuleActionRespo
 		this.errorActionFlag = errorActionFlag;
 		if(errorActionFlag != null){
 			putQueryParameter("ErrorActionFlag", errorActionFlag.toString());
+		}
+	}
+
+	public Long getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(Long ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId.toString());
 		}
 	}
 

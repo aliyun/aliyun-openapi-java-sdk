@@ -27,11 +27,11 @@ public class GetThingModelTslRequest extends RpcAcsRequest<GetThingModelTslRespo
 
 	private Boolean simple;
 
-	private String productKey;
-
 	private String resourceGroupId;
 
 	private String iotInstanceId;
+
+	private String productKey;
 
 	private String modelVersion;
 	public GetThingModelTslRequest() {
@@ -54,17 +54,6 @@ public class GetThingModelTslRequest extends RpcAcsRequest<GetThingModelTslRespo
 		}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -84,6 +73,17 @@ public class GetThingModelTslRequest extends RpcAcsRequest<GetThingModelTslRespo
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

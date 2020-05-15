@@ -25,15 +25,15 @@ import com.aliyuncs.iot.Endpoint;
 public class InvokeThingServiceRequest extends RpcAcsRequest<InvokeThingServiceResponse> {
 	   
 
+	private String iotId;
+
+	private String iotInstanceId;
+
 	private String identifier;
 
 	private String productKey;
 
 	private String args;
-
-	private String iotId;
-
-	private String iotInstanceId;
 
 	private String deviceName;
 	public InvokeThingServiceRequest() {
@@ -43,6 +43,28 @@ public class InvokeThingServiceRequest extends RpcAcsRequest<InvokeThingServiceR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIotId() {
+		return this.iotId;
+	}
+
+	public void setIotId(String iotId) {
+		this.iotId = iotId;
+		if(iotId != null){
+			putQueryParameter("IotId", iotId);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public String getIdentifier() {
@@ -75,28 +97,6 @@ public class InvokeThingServiceRequest extends RpcAcsRequest<InvokeThingServiceR
 		this.args = args;
 		if(args != null){
 			putQueryParameter("Args", args);
-		}
-	}
-
-	public String getIotId() {
-		return this.iotId;
-	}
-
-	public void setIotId(String iotId) {
-		this.iotId = iotId;
-		if(iotId != null){
-			putQueryParameter("IotId", iotId);
-		}
-	}
-
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

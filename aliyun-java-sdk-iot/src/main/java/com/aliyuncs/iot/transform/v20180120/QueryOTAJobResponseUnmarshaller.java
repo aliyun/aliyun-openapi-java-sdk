@@ -27,10 +27,6 @@ public class QueryOTAJobResponseUnmarshaller {
 		queryOTAJobResponse.setSuccess(_ctx.booleanValue("QueryOTAJobResponse.Success"));
 		queryOTAJobResponse.setCode(_ctx.stringValue("QueryOTAJobResponse.Code"));
 		queryOTAJobResponse.setErrorMessage(_ctx.stringValue("QueryOTAJobResponse.ErrorMessage"));
-		queryOTAJobResponse.setTotal(_ctx.integerValue("QueryOTAJobResponse.Total"));
-		queryOTAJobResponse.setPageSize(_ctx.integerValue("QueryOTAJobResponse.PageSize"));
-		queryOTAJobResponse.setPageCount(_ctx.integerValue("QueryOTAJobResponse.PageCount"));
-		queryOTAJobResponse.setCurrentPage(_ctx.integerValue("QueryOTAJobResponse.CurrentPage"));
 
 		Data data = new Data();
 		data.setJobId(_ctx.stringValue("QueryOTAJobResponse.Data.JobId"));

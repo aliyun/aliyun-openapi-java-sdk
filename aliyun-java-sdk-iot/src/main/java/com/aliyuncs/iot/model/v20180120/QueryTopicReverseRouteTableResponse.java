@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.iot.transform.v20180120.QueryTopicReverseRouteTableResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,7 +34,7 @@ public class QueryTopicReverseRouteTableResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private List<String> srcTopics;
+	private List<Map<Object,Object>> srcTopics;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,11 +68,11 @@ public class QueryTopicReverseRouteTableResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public List<String> getSrcTopics() {
+	public List<Map<Object,Object>> getSrcTopics() {
 		return this.srcTopics;
 	}
 
-	public void setSrcTopics(List<String> srcTopics) {
+	public void setSrcTopics(List<Map<Object,Object>> srcTopics) {
 		this.srcTopics = srcTopics;
 	}
 

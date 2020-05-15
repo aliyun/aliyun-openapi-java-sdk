@@ -27,9 +27,9 @@ public class UpdateDeviceShadowRequest extends RpcAcsRequest<UpdateDeviceShadowR
 
 	private String shadowMessage;
 
-	private String productKey;
-
 	private String iotInstanceId;
+
+	private String productKey;
 
 	private String deviceName;
 	public UpdateDeviceShadowRequest() {
@@ -52,17 +52,6 @@ public class UpdateDeviceShadowRequest extends RpcAcsRequest<UpdateDeviceShadowR
 		}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
 	public String getIotInstanceId() {
 		return this.iotInstanceId;
 	}
@@ -71,6 +60,17 @@ public class UpdateDeviceShadowRequest extends RpcAcsRequest<UpdateDeviceShadowR
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

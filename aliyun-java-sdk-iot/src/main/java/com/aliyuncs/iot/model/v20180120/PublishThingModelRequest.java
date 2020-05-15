@@ -27,11 +27,11 @@ public class PublishThingModelRequest extends RpcAcsRequest<PublishThingModelRes
 
 	private String description;
 
-	private String productKey;
-
 	private String resourceGroupId;
 
 	private String iotInstanceId;
+
+	private String productKey;
 
 	private String modelVersion;
 	public PublishThingModelRequest() {
@@ -54,17 +54,6 @@ public class PublishThingModelRequest extends RpcAcsRequest<PublishThingModelRes
 		}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -84,6 +73,17 @@ public class PublishThingModelRequest extends RpcAcsRequest<PublishThingModelRes
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

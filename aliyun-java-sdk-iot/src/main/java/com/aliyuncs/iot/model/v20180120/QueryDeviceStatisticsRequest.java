@@ -25,9 +25,9 @@ import com.aliyuncs.iot.Endpoint;
 public class QueryDeviceStatisticsRequest extends RpcAcsRequest<QueryDeviceStatisticsResponse> {
 	   
 
-	private String productKey;
-
 	private String iotInstanceId;
+
+	private String productKey;
 	public QueryDeviceStatisticsRequest() {
 		super("Iot", "2018-01-20", "QueryDeviceStatistics", "Iot");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class QueryDeviceStatisticsRequest extends RpcAcsRequest<QueryDeviceStati
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -56,6 +45,17 @@ public class QueryDeviceStatisticsRequest extends RpcAcsRequest<QueryDeviceStati
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

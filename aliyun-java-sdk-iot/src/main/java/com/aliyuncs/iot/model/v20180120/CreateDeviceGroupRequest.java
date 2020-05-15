@@ -27,11 +27,11 @@ public class CreateDeviceGroupRequest extends RpcAcsRequest<CreateDeviceGroupRes
 
 	private String superGroupId;
 
+	private String iotInstanceId;
+
 	private String groupName;
 
 	private String groupDesc;
-
-	private String iotInstanceId;
 	public CreateDeviceGroupRequest() {
 		super("Iot", "2018-01-20", "CreateDeviceGroup", "Iot");
 		setMethod(MethodType.POST);
@@ -49,6 +49,17 @@ public class CreateDeviceGroupRequest extends RpcAcsRequest<CreateDeviceGroupRes
 		this.superGroupId = superGroupId;
 		if(superGroupId != null){
 			putQueryParameter("SuperGroupId", superGroupId);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 
@@ -71,17 +82,6 @@ public class CreateDeviceGroupRequest extends RpcAcsRequest<CreateDeviceGroupRes
 		this.groupDesc = groupDesc;
 		if(groupDesc != null){
 			putQueryParameter("GroupDesc", groupDesc);
-		}
-	}
-
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

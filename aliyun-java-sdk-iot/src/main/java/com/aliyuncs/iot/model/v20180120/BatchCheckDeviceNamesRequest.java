@@ -26,9 +26,9 @@ import com.aliyuncs.iot.Endpoint;
 public class BatchCheckDeviceNamesRequest extends RpcAcsRequest<BatchCheckDeviceNamesResponse> {
 	   
 
-	private String productKey;
-
 	private String iotInstanceId;
+
+	private String productKey;
 
 	private List<String> deviceNames;
 	public BatchCheckDeviceNamesRequest() {
@@ -40,17 +40,6 @@ public class BatchCheckDeviceNamesRequest extends RpcAcsRequest<BatchCheckDevice
 		} catch (Exception e) {}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
 	public String getIotInstanceId() {
 		return this.iotInstanceId;
 	}
@@ -59,6 +48,17 @@ public class BatchCheckDeviceNamesRequest extends RpcAcsRequest<BatchCheckDevice
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

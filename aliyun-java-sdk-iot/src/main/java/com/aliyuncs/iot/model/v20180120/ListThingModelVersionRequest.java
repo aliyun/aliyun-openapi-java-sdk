@@ -25,11 +25,11 @@ import com.aliyuncs.iot.Endpoint;
 public class ListThingModelVersionRequest extends RpcAcsRequest<ListThingModelVersionResponse> {
 	   
 
-	private String productKey;
-
 	private String resourceGroupId;
 
 	private String iotInstanceId;
+
+	private String productKey;
 	public ListThingModelVersionRequest() {
 		super("Iot", "2018-01-20", "ListThingModelVersion", "Iot");
 		setMethod(MethodType.POST);
@@ -37,17 +37,6 @@ public class ListThingModelVersionRequest extends RpcAcsRequest<ListThingModelVe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
 	}
 
 	public String getResourceGroupId() {
@@ -69,6 +58,17 @@ public class ListThingModelVersionRequest extends RpcAcsRequest<ListThingModelVe
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

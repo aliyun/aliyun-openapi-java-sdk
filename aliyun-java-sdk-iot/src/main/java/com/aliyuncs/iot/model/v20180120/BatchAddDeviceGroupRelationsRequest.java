@@ -26,9 +26,9 @@ import com.aliyuncs.iot.Endpoint;
 public class BatchAddDeviceGroupRelationsRequest extends RpcAcsRequest<BatchAddDeviceGroupRelationsResponse> {
 	   
 
-	private String groupId;
-
 	private String iotInstanceId;
+
+	private String groupId;
 
 	private List<Device> devices;
 	public BatchAddDeviceGroupRelationsRequest() {
@@ -40,17 +40,6 @@ public class BatchAddDeviceGroupRelationsRequest extends RpcAcsRequest<BatchAddD
 		} catch (Exception e) {}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
 	public String getIotInstanceId() {
 		return this.iotInstanceId;
 	}
@@ -59,6 +48,17 @@ public class BatchAddDeviceGroupRelationsRequest extends RpcAcsRequest<BatchAddD
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

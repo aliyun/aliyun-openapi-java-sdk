@@ -26,11 +26,11 @@ import com.aliyuncs.iot.Endpoint;
 public class CreateLoRaNodesTaskRequest extends RpcAcsRequest<CreateLoRaNodesTaskResponse> {
 	   
 
-	private String productKey;
-
 	private String iotInstanceId;
 
 	private List<DeviceInfo> deviceInfos;
+
+	private String productKey;
 	public CreateLoRaNodesTaskRequest() {
 		super("Iot", "2018-01-20", "CreateLoRaNodesTask", "Iot");
 		setMethod(MethodType.POST);
@@ -38,17 +38,6 @@ public class CreateLoRaNodesTaskRequest extends RpcAcsRequest<CreateLoRaNodesTas
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -74,6 +63,17 @@ public class CreateLoRaNodesTaskRequest extends RpcAcsRequest<CreateLoRaNodesTas
 				putQueryParameter("DeviceInfo." + (depth1 + 1) + ".DevEui" , deviceInfos.get(depth1).getDevEui());
 			}
 		}	
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
 	}
 
 	public static class DeviceInfo {

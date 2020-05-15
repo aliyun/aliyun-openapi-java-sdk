@@ -25,6 +25,8 @@ import com.aliyuncs.iot.Endpoint;
 public class CreateThingModelRequest extends RpcAcsRequest<CreateThingModelResponse> {
 	   
 
+	private String iotInstanceId;
+
 	private String productKey;
 
 	private String thingModelJson;
@@ -35,6 +37,17 @@ public class CreateThingModelRequest extends RpcAcsRequest<CreateThingModelRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public String getProductKey() {

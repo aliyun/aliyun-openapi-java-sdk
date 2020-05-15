@@ -1,3 +1,8 @@
+2020-05-15 Version: 7.8.0
+- Add LinkIoTEdge CreateEdgeInstanceChannel, BatchDeleteEdgeInstanceChannel, UpdateEdgeInstanceChannel, BatchGetEdgeInstanceChannel, QueryEdgeInstanceChannel, QueryEdgeInstanceDeviceByDriver, BatchGetEdgeInstanceDeviceDriver, BatchSetEdgeInstanceDeviceChannel, BatchGetEdgeInstanceDeviceChannel API.
+- Add LinkIoTEdge BindApplicationToEdgeInstance, UnbindApplicationFromEdgeInstance API.
+- Add LinkIoTEdge ReplaceEdgeInstanceGateway, ReleaseEdgeDriverVersion, BatchGetDeviceBindStatus API.
+
 2020-03-06 Version: 7.7.0
 - Add LinkIoTEdge CreateEdgeOssPreSignedAddress API.
 

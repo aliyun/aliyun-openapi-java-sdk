@@ -25,21 +25,21 @@ import com.aliyuncs.iot.Endpoint;
 public class QueryDeviceServiceDataRequest extends RpcAcsRequest<QueryDeviceServiceDataResponse> {
 	   
 
-	private String identifier;
-
-	private Long endTime;
-
 	private Long startTime;
-
-	private String productKey;
-
-	private Integer asc;
 
 	private String iotId;
 
 	private String iotInstanceId;
 
 	private Integer pageSize;
+
+	private String identifier;
+
+	private Long endTime;
+
+	private String productKey;
+
+	private Integer asc;
 
 	private String deviceName;
 	public QueryDeviceServiceDataRequest() {
@@ -51,28 +51,6 @@ public class QueryDeviceServiceDataRequest extends RpcAcsRequest<QueryDeviceServ
 		} catch (Exception e) {}
 	}
 
-	public String getIdentifier() {
-		return this.identifier;
-	}
-
-	public void setIdentifier(String identifier) {
-		this.identifier = identifier;
-		if(identifier != null){
-			putQueryParameter("Identifier", identifier);
-		}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
-	}
-
 	public Long getStartTime() {
 		return this.startTime;
 	}
@@ -81,28 +59,6 @@ public class QueryDeviceServiceDataRequest extends RpcAcsRequest<QueryDeviceServ
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
-	public Integer getAsc() {
-		return this.asc;
-	}
-
-	public void setAsc(Integer asc) {
-		this.asc = asc;
-		if(asc != null){
-			putQueryParameter("Asc", asc.toString());
 		}
 	}
 
@@ -136,6 +92,50 @@ public class QueryDeviceServiceDataRequest extends RpcAcsRequest<QueryDeviceServ
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getIdentifier() {
+		return this.identifier;
+	}
+
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
+		if(identifier != null){
+			putQueryParameter("Identifier", identifier);
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public Integer getAsc() {
+		return this.asc;
+	}
+
+	public void setAsc(Integer asc) {
+		this.asc = asc;
+		if(asc != null){
+			putQueryParameter("Asc", asc.toString());
 		}
 	}
 

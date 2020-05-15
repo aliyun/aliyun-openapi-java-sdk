@@ -25,15 +25,15 @@ import com.aliyuncs.iot.Endpoint;
 public class GetThingTopoRequest extends RpcAcsRequest<GetThingTopoResponse> {
 	   
 
-	private String productKey;
-
 	private String iotId;
-
-	private Integer pageNo;
 
 	private String iotInstanceId;
 
 	private Integer pageSize;
+
+	private String productKey;
+
+	private Integer pageNo;
 
 	private String deviceName;
 	public GetThingTopoRequest() {
@@ -45,17 +45,6 @@ public class GetThingTopoRequest extends RpcAcsRequest<GetThingTopoResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
 	public String getIotId() {
 		return this.iotId;
 	}
@@ -64,17 +53,6 @@ public class GetThingTopoRequest extends RpcAcsRequest<GetThingTopoResponse> {
 		this.iotId = iotId;
 		if(iotId != null){
 			putQueryParameter("IotId", iotId);
-		}
-	}
-
-	public Integer getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 
@@ -97,6 +75,28 @@ public class GetThingTopoRequest extends RpcAcsRequest<GetThingTopoResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 

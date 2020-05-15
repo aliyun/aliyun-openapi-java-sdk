@@ -28,17 +28,17 @@ public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADy
 
 	private Integer retryCount;
 
+	private Integer timeoutInMinutes;
+
+	private String iotInstanceId;
+
 	private String firmwareId;
 
 	private String productKey;
 
-	private Integer timeoutInMinutes;
-
 	private Integer retryInterval;
 
 	private List<String> srcVersions;
-
-	private String iotInstanceId;
 
 	private Integer maximumPerMinute;
 	public CreateOTADynamicUpgradeJobRequest() {
@@ -58,6 +58,28 @@ public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADy
 		this.retryCount = retryCount;
 		if(retryCount != null){
 			putQueryParameter("RetryCount", retryCount.toString());
+		}
+	}
+
+	public Integer getTimeoutInMinutes() {
+		return this.timeoutInMinutes;
+	}
+
+	public void setTimeoutInMinutes(Integer timeoutInMinutes) {
+		this.timeoutInMinutes = timeoutInMinutes;
+		if(timeoutInMinutes != null){
+			putQueryParameter("TimeoutInMinutes", timeoutInMinutes.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 
@@ -83,17 +105,6 @@ public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADy
 		}
 	}
 
-	public Integer getTimeoutInMinutes() {
-		return this.timeoutInMinutes;
-	}
-
-	public void setTimeoutInMinutes(Integer timeoutInMinutes) {
-		this.timeoutInMinutes = timeoutInMinutes;
-		if(timeoutInMinutes != null){
-			putQueryParameter("TimeoutInMinutes", timeoutInMinutes.toString());
-		}
-	}
-
 	public Integer getRetryInterval() {
 		return this.retryInterval;
 	}
@@ -116,17 +127,6 @@ public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADy
 				putQueryParameter("SrcVersion." + (i + 1) , srcVersions.get(i));
 			}
 		}	
-	}
-
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
 	}
 
 	public Integer getMaximumPerMinute() {

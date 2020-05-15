@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.DeleteTopicRouteTableResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,10 +32,7 @@ public class DeleteTopicRouteTableResponseUnmarshaller {
 		deleteTopicRouteTableResponse.setIsAllSucceed(_ctx.booleanValue("DeleteTopicRouteTableResponse.IsAllSucceed"));
 		deleteTopicRouteTableResponse.setErrorMessage(_ctx.stringValue("DeleteTopicRouteTableResponse.ErrorMessage"));
 
-		List<String> failureTopics = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DeleteTopicRouteTableResponse.FailureTopics.Length"); i++) {
-			failureTopics.add(_ctx.stringValue("DeleteTopicRouteTableResponse.FailureTopics["+ i +"]"));
-		}
+		List<Map<Object, Object>> failureTopics = _ctx.listMapValue("DeleteTopicRouteTableResponse.FailureTopics");
 		deleteTopicRouteTableResponse.setFailureTopics(failureTopics);
 	 
 	 	return deleteTopicRouteTableResponse;

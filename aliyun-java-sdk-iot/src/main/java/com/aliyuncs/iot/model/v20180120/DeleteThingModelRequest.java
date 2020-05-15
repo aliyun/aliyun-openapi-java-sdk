@@ -26,15 +26,15 @@ import com.aliyuncs.iot.Endpoint;
 public class DeleteThingModelRequest extends RpcAcsRequest<DeleteThingModelResponse> {
 	   
 
-	private List<String> serviceIdentifiers;
-
-	private String productKey;
-
 	private String resourceGroupId;
 
 	private List<String> propertyIdentifiers;
 
 	private String iotInstanceId;
+
+	private List<String> serviceIdentifiers;
+
+	private String productKey;
 
 	private List<String> eventIdentifiers;
 	public DeleteThingModelRequest() {
@@ -44,30 +44,6 @@ public class DeleteThingModelRequest extends RpcAcsRequest<DeleteThingModelRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<String> getServiceIdentifiers() {
-		return this.serviceIdentifiers;
-	}
-
-	public void setServiceIdentifiers(List<String> serviceIdentifiers) {
-		this.serviceIdentifiers = serviceIdentifiers;	
-		if (serviceIdentifiers != null) {
-			for (int i = 0; i < serviceIdentifiers.size(); i++) {
-				putQueryParameter("ServiceIdentifier." + (i + 1) , serviceIdentifiers.get(i));
-			}
-		}	
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
 	}
 
 	public String getResourceGroupId() {
@@ -102,6 +78,30 @@ public class DeleteThingModelRequest extends RpcAcsRequest<DeleteThingModelRespo
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public List<String> getServiceIdentifiers() {
+		return this.serviceIdentifiers;
+	}
+
+	public void setServiceIdentifiers(List<String> serviceIdentifiers) {
+		this.serviceIdentifiers = serviceIdentifiers;	
+		if (serviceIdentifiers != null) {
+			for (int i = 0; i < serviceIdentifiers.size(); i++) {
+				putQueryParameter("ServiceIdentifier." + (i + 1) , serviceIdentifiers.get(i));
+			}
+		}	
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

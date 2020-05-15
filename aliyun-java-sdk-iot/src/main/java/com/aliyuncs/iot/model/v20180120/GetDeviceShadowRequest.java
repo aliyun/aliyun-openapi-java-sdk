@@ -25,11 +25,9 @@ import com.aliyuncs.iot.Endpoint;
 public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowResponse> {
 	   
 
-	private String shadowMessage;
+	private String iotInstanceId;
 
 	private String productKey;
-
-	private String iotInstanceId;
 
 	private String deviceName;
 	public GetDeviceShadowRequest() {
@@ -41,14 +39,14 @@ public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowRespons
 		} catch (Exception e) {}
 	}
 
-	public String getShadowMessage() {
-		return this.shadowMessage;
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
 	}
 
-	public void setShadowMessage(String shadowMessage) {
-		this.shadowMessage = shadowMessage;
-		if(shadowMessage != null){
-			putQueryParameter("ShadowMessage", shadowMessage);
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 
@@ -60,17 +58,6 @@ public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowRespons
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

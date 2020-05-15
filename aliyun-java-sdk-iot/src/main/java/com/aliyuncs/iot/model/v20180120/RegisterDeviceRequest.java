@@ -25,15 +25,15 @@ import com.aliyuncs.iot.Endpoint;
 public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse> {
 	   
 
+	private String iotInstanceId;
+
+	private String nickname;
+
 	private String pinCode;
 
 	private String productKey;
 
 	private String devEui;
-
-	private String iotInstanceId;
-
-	private String nickname;
 
 	private String deviceName;
 	public RegisterDeviceRequest() {
@@ -43,6 +43,28 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getNickname() {
+		return this.nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+		if(nickname != null){
+			putQueryParameter("Nickname", nickname);
+		}
 	}
 
 	public String getPinCode() {
@@ -75,28 +97,6 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 		this.devEui = devEui;
 		if(devEui != null){
 			putQueryParameter("DevEui", devEui);
-		}
-	}
-
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
-	}
-
-	public String getNickname() {
-		return this.nickname;
-	}
-
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-		if(nickname != null){
-			putQueryParameter("Nickname", nickname);
 		}
 	}
 

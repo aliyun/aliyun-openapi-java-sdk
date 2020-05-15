@@ -25,15 +25,15 @@ import com.aliyuncs.iot.Endpoint;
 public class PubRequest extends RpcAcsRequest<PubResponse> {
 	   
 
-	private String topicFullName;
-
 	private String messageContent;
-
-	private String productKey;
 
 	private Integer qos;
 
 	private String iotInstanceId;
+
+	private String topicFullName;
+
+	private String productKey;
 	public PubRequest() {
 		super("Iot", "2018-01-20", "Pub", "Iot");
 		setMethod(MethodType.POST);
@@ -41,17 +41,6 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTopicFullName() {
-		return this.topicFullName;
-	}
-
-	public void setTopicFullName(String topicFullName) {
-		this.topicFullName = topicFullName;
-		if(topicFullName != null){
-			putQueryParameter("TopicFullName", topicFullName);
-		}
 	}
 
 	public String getMessageContent() {
@@ -62,17 +51,6 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		this.messageContent = messageContent;
 		if(messageContent != null){
 			putQueryParameter("MessageContent", messageContent);
-		}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
 		}
 	}
 
@@ -95,6 +73,28 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getTopicFullName() {
+		return this.topicFullName;
+	}
+
+	public void setTopicFullName(String topicFullName) {
+		this.topicFullName = topicFullName;
+		if(topicFullName != null){
+			putQueryParameter("TopicFullName", topicFullName);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

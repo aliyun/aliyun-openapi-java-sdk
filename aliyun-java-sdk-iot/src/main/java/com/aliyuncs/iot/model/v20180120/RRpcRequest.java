@@ -25,13 +25,13 @@ import com.aliyuncs.iot.Endpoint;
 public class RRpcRequest extends RpcAcsRequest<RRpcResponse> {
 	   
 
-	private String requestBase64Byte;
-
-	private String productKey;
-
 	private Integer timeout;
 
 	private String iotInstanceId;
+
+	private String requestBase64Byte;
+
+	private String productKey;
 
 	private String topic;
 
@@ -43,28 +43,6 @@ public class RRpcRequest extends RpcAcsRequest<RRpcResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getRequestBase64Byte() {
-		return this.requestBase64Byte;
-	}
-
-	public void setRequestBase64Byte(String requestBase64Byte) {
-		this.requestBase64Byte = requestBase64Byte;
-		if(requestBase64Byte != null){
-			putQueryParameter("RequestBase64Byte", requestBase64Byte);
-		}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
 	}
 
 	public Integer getTimeout() {
@@ -86,6 +64,28 @@ public class RRpcRequest extends RpcAcsRequest<RRpcResponse> {
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getRequestBase64Byte() {
+		return this.requestBase64Byte;
+	}
+
+	public void setRequestBase64Byte(String requestBase64Byte) {
+		this.requestBase64Byte = requestBase64Byte;
+		if(requestBase64Byte != null){
+			putQueryParameter("RequestBase64Byte", requestBase64Byte);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

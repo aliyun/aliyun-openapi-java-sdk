@@ -25,8 +25,6 @@ import com.aliyuncs.iot.Endpoint;
 public class CopyThingModelRequest extends RpcAcsRequest<CopyThingModelResponse> {
 	   
 
-	private String sourceProductKey;
-
 	private String targetProductKey;
 
 	private String resourceGroupId;
@@ -34,6 +32,8 @@ public class CopyThingModelRequest extends RpcAcsRequest<CopyThingModelResponse>
 	private String iotInstanceId;
 
 	private String sourceModelVersion;
+
+	private String sourceProductKey;
 	public CopyThingModelRequest() {
 		super("Iot", "2018-01-20", "CopyThingModel", "Iot");
 		setMethod(MethodType.POST);
@@ -41,17 +41,6 @@ public class CopyThingModelRequest extends RpcAcsRequest<CopyThingModelResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSourceProductKey() {
-		return this.sourceProductKey;
-	}
-
-	public void setSourceProductKey(String sourceProductKey) {
-		this.sourceProductKey = sourceProductKey;
-		if(sourceProductKey != null){
-			putQueryParameter("SourceProductKey", sourceProductKey);
-		}
 	}
 
 	public String getTargetProductKey() {
@@ -95,6 +84,17 @@ public class CopyThingModelRequest extends RpcAcsRequest<CopyThingModelResponse>
 		this.sourceModelVersion = sourceModelVersion;
 		if(sourceModelVersion != null){
 			putQueryParameter("SourceModelVersion", sourceModelVersion);
+		}
+	}
+
+	public String getSourceProductKey() {
+		return this.sourceProductKey;
+	}
+
+	public void setSourceProductKey(String sourceProductKey) {
+		this.sourceProductKey = sourceProductKey;
+		if(sourceProductKey != null){
+			putQueryParameter("SourceProductKey", sourceProductKey);
 		}
 	}
 

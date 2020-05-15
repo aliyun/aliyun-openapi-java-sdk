@@ -28,8 +28,6 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 
 	private List<RequestParam> requestParams;
 
-	private String folderId;
-
 	private String iotInstanceId;
 
 	private String apiPath;
@@ -67,17 +65,6 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 				putBodyParameter("RequestParam." + (depth1 + 1) + ".Required" , requestParams.get(depth1).getRequired());
 			}
 		}	
-	}
-
-	public String getFolderId() {
-		return this.folderId;
-	}
-
-	public void setFolderId(String folderId) {
-		this.folderId = folderId;
-		if(folderId != null){
-			putBodyParameter("FolderId", folderId);
-		}
 	}
 
 	public String getIotInstanceId() {
