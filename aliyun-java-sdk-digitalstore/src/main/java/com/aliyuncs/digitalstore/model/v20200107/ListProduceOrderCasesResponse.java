@@ -99,6 +99,12 @@ public class ListProduceOrderCasesResponse extends AcsResponse {
 
 		private String encasementMode;
 
+		private Boolean beConfirmInboundCase;
+
+		private Boolean beConfirmOutboundCase;
+
+		private String applyStatus;
+
 		public Integer getBindingQuantity() {
 			return this.bindingQuantity;
 		}
@@ -145,6 +151,30 @@ public class ListProduceOrderCasesResponse extends AcsResponse {
 
 		public void setEncasementMode(String encasementMode) {
 			this.encasementMode = encasementMode;
+		}
+
+		public Boolean getBeConfirmInboundCase() {
+			return this.beConfirmInboundCase;
+		}
+
+		public void setBeConfirmInboundCase(Boolean beConfirmInboundCase) {
+			this.beConfirmInboundCase = beConfirmInboundCase;
+		}
+
+		public Boolean getBeConfirmOutboundCase() {
+			return this.beConfirmOutboundCase;
+		}
+
+		public void setBeConfirmOutboundCase(Boolean beConfirmOutboundCase) {
+			this.beConfirmOutboundCase = beConfirmOutboundCase;
+		}
+
+		public String getApplyStatus() {
+			return this.applyStatus;
+		}
+
+		public void setApplyStatus(String applyStatus) {
+			this.applyStatus = applyStatus;
 		}
 	}
 

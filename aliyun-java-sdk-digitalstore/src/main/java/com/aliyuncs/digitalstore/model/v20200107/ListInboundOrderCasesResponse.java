@@ -95,6 +95,12 @@ public class ListInboundOrderCasesResponse extends AcsResponse {
 
 		private String caseStatus;
 
+		private Boolean beConfirmInboundCase;
+
+		private Boolean beConfirmOutboundCase;
+
+		private String applyStatus;
+
 		public String getId() {
 			return this.id;
 		}
@@ -125,6 +131,30 @@ public class ListInboundOrderCasesResponse extends AcsResponse {
 
 		public void setCaseStatus(String caseStatus) {
 			this.caseStatus = caseStatus;
+		}
+
+		public Boolean getBeConfirmInboundCase() {
+			return this.beConfirmInboundCase;
+		}
+
+		public void setBeConfirmInboundCase(Boolean beConfirmInboundCase) {
+			this.beConfirmInboundCase = beConfirmInboundCase;
+		}
+
+		public Boolean getBeConfirmOutboundCase() {
+			return this.beConfirmOutboundCase;
+		}
+
+		public void setBeConfirmOutboundCase(Boolean beConfirmOutboundCase) {
+			this.beConfirmOutboundCase = beConfirmOutboundCase;
+		}
+
+		public String getApplyStatus() {
+			return this.applyStatus;
+		}
+
+		public void setApplyStatus(String applyStatus) {
+			this.applyStatus = applyStatus;
 		}
 	}
 

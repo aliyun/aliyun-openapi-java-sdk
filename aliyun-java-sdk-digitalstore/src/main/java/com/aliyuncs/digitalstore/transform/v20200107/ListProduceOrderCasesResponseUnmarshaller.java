@@ -41,6 +41,9 @@ public class ListProduceOrderCasesResponseUnmarshaller {
 			produceOrderCaseModel.setBoxQuantity(_ctx.integerValue("ListProduceOrderCasesResponse.ProduceOrderCases["+ i +"].BoxQuantity"));
 			produceOrderCaseModel.setCaseId(_ctx.stringValue("ListProduceOrderCasesResponse.ProduceOrderCases["+ i +"].CaseId"));
 			produceOrderCaseModel.setEncasementMode(_ctx.stringValue("ListProduceOrderCasesResponse.ProduceOrderCases["+ i +"].EncasementMode"));
+			produceOrderCaseModel.setBeConfirmInboundCase(_ctx.booleanValue("ListProduceOrderCasesResponse.ProduceOrderCases["+ i +"].BeConfirmInboundCase"));
+			produceOrderCaseModel.setBeConfirmOutboundCase(_ctx.booleanValue("ListProduceOrderCasesResponse.ProduceOrderCases["+ i +"].BeConfirmOutboundCase"));
+			produceOrderCaseModel.setApplyStatus(_ctx.stringValue("ListProduceOrderCasesResponse.ProduceOrderCases["+ i +"].ApplyStatus"));
 
 			produceOrderCases.add(produceOrderCaseModel);
 		}

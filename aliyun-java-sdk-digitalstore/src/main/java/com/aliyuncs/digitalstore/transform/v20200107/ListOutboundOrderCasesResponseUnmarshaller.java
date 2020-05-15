@@ -39,6 +39,9 @@ public class ListOutboundOrderCasesResponseUnmarshaller {
 			caseBiz.setOperateQuantity(_ctx.stringValue("ListOutboundOrderCasesResponse.Cases["+ i +"].OperateQuantity"));
 			caseBiz.setCaseCode(_ctx.stringValue("ListOutboundOrderCasesResponse.Cases["+ i +"].CaseCode"));
 			caseBiz.setCaseStatus(_ctx.stringValue("ListOutboundOrderCasesResponse.Cases["+ i +"].CaseStatus"));
+			caseBiz.setBeConfirmInboundCase(_ctx.booleanValue("ListOutboundOrderCasesResponse.Cases["+ i +"].BeConfirmInboundCase"));
+			caseBiz.setBeConfirmOutboundCase(_ctx.booleanValue("ListOutboundOrderCasesResponse.Cases["+ i +"].BeConfirmOutboundCase"));
+			caseBiz.setApplyStatus(_ctx.booleanValue("ListOutboundOrderCasesResponse.Cases["+ i +"].ApplyStatus"));
 
 			cases.add(caseBiz);
 		}
