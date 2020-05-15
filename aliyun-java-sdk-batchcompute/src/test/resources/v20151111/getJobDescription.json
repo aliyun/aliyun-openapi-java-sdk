@@ -31,7 +31,17 @@
         "StderrRedirectPath": "oss://my-bucket/test/logs/",
         "StdoutRedirectPath": "oss://my-bucket/test/logs/"},
       "Timeout": 10000,
-      "WriteSupport": false}}},
+      "WriteSupport": false,
+      "CredentialConfig": {
+        "Chain": [
+          {
+            "Role": "testRoleChain",
+            "UserId": 123456
+          }
+        ],
+        "ServiceRole": "testRole"
+      }
+    }}},
   "Description": "",
   "JobFailOnInstanceFail": true,
   "AutoRelease": false,
@@ -62,5 +72,4 @@
       ]
     }
   }
-}
 }

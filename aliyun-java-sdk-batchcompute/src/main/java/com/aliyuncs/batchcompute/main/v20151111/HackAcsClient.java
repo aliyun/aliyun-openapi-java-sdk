@@ -87,6 +87,9 @@ public class HackAcsClient {
     private static AcsError readError(HttpResponse httpResponse, FormatType format) throws ClientException {
         AcsError error = new AcsError();
         String responseEndpoint = "Error";
+        if(FormatType.RAW == format){
+            throw new ServerException("BadGateway", "Server unreachable", "");
+        }
         Reader reader = ReaderFactory.createInstance(format);
         UnmarshallerContext context = new UnmarshallerContext();
         String stringContent = getResponseContent(httpResponse);

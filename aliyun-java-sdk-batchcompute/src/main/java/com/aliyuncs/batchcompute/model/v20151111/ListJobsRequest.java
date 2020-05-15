@@ -37,6 +37,9 @@ public class ListJobsRequest extends BatchComputeRequest<ListJobsResponse> {
 	private String marker;
 	private int maxItemCount= 50;
 	private String state;
+	private boolean IsReverse;
+	private String ClusterId;
+	private String OrderBy;
 
 	public String getMarker() {
 		return marker;
@@ -67,6 +70,37 @@ public class ListJobsRequest extends BatchComputeRequest<ListJobsResponse> {
 		if(state!=null && !state.equals("")) {
 			this.putQueryParameter("State", state);
 		}
+	}
+
+	public String getClusterId() {
+		return ClusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.ClusterId = clusterId;
+		this.putQueryParameter("ClusterId", clusterId);
+	}
+
+
+
+	public String getOrderBy() {
+		return OrderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.OrderBy = orderBy;
+		this.putQueryParameter("OrderBy", orderBy);
+	}
+
+
+
+	public boolean isReverse() {
+		return this.IsReverse;
+	}
+
+	public void setReverse(boolean reverse) {
+		this.IsReverse = reverse;
+		this.putQueryParameter("IsReverse", reverse+"");
 	}
 
 	@Override

@@ -157,6 +157,10 @@ public class JobTest extends TestCase {
 
         ListJobsRequest listJobsRequest2 = new ListJobsRequest();
         listJobsRequest2.setMaxItemCount(60);
+        listJobsRequest2.setOrderBy("Id");
+        listJobsRequest2.setReverse(true);
+        assertTrue(listJobsRequest2.isReverse());
+        assertTrue("Id" == listJobsRequest2.getOrderBy());
         //listJobsRequest2.setMarker("");
         ListJobsResponse listJobsResponse2 = client.listJobs(listJobsRequest2);
         List<Job> jobList2 = listJobsResponse2.getItems();
@@ -189,6 +193,12 @@ public class JobTest extends TestCase {
 
         TaskDescription taskDesc2 = jobDesc2.getDag().getTasks().get("task_1");
         assertEquals(gClusterId, taskDesc2.getClusterId());
+
+        TaskDescription.CredentialConfig credentialConfig = taskDesc2.getCredentialConfig();
+        assertEquals("testRole", credentialConfig.getServiceRole());
+        assertEquals(1, credentialConfig.getChains().size());
+        assertEquals("testRoleChain", credentialConfig.getChains().get(0).getRole());
+        assertEquals(123456, credentialConfig.getChains().get(0).getUserId());
 
         Topic tp = jobDesc2.getNotification().getTopic();
 
@@ -344,6 +354,14 @@ public class JobTest extends TestCase {
         task.setTaskName("task_1");
         task.setTimeout(10000);
 
+        TaskDescription.CredentialConfig credentialConfig = new TaskDescription.CredentialConfig();
+        credentialConfig.setServiceRole("testRole");
+        TaskDescription.ChainInfo chainInfo = new TaskDescription.ChainInfo();
+        chainInfo.setRole("testRoleChain");
+        chainInfo.setUserId(123456);
+        credentialConfig.addChainInfo(chainInfo);
+        task.setCredentialConfig(credentialConfig);
+
         Parameters parameters = new Parameters();
         Command cmd = new Command();
         cmd.setCommandLine("python main.py");
@@ -391,6 +409,7 @@ public class JobTest extends TestCase {
         autoCluster.setInstanceType(gInstanceType);
         autoCluster.setResourceType("OnDemand");
         autoCluster.setReserveOnFail(true);
+        autoCluster.setDependencyIsvService("GTX");
 
         DataDisk dataDisk = new DataDisk();
         dataDisk.setMountPoint("/disk1");
@@ -434,6 +453,14 @@ public class JobTest extends TestCase {
         task.addInputMapping("oss://my-bucket/disk1/", "/home/admin/disk1/");
         task.addOutputMapping("/home/admin/disk2/", "oss://my-bucket/disk2/");
         //task.addLogMapping( "/home/admin/a.log","oss://my-bucket/a.log");
+
+        TaskDescription.CredentialConfig credentialConfig = new TaskDescription.CredentialConfig();
+        credentialConfig.setServiceRole("testRole");
+        TaskDescription.ChainInfo chainInfo = new TaskDescription.ChainInfo();
+        chainInfo.setRole("testRoleChain");
+        chainInfo.setUserId(123456);
+        credentialConfig.addChainInfo(chainInfo);
+        task.setCredentialConfig(credentialConfig);
 
 
         return task;
