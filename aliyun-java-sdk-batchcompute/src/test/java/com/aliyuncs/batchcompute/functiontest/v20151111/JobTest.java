@@ -157,6 +157,10 @@ public class JobTest extends TestCase {
 
         ListJobsRequest listJobsRequest2 = new ListJobsRequest();
         listJobsRequest2.setMaxItemCount(60);
+        listJobsRequest2.setOrderBy("Id");
+        listJobsRequest2.setReverse(true);
+        assertTrue(listJobsRequest2.isReverse());
+        assertTrue("Id" == listJobsRequest2.getOrderBy());
         //listJobsRequest2.setMarker("");
         ListJobsResponse listJobsResponse2 = client.listJobs(listJobsRequest2);
         List<Job> jobList2 = listJobsResponse2.getItems();
@@ -405,6 +409,7 @@ public class JobTest extends TestCase {
         autoCluster.setInstanceType(gInstanceType);
         autoCluster.setResourceType("OnDemand");
         autoCluster.setReserveOnFail(true);
+        autoCluster.setDependencyIsvService("GTX");
 
         DataDisk dataDisk = new DataDisk();
         dataDisk.setMountPoint("/disk1");

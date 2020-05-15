@@ -1,4 +1,14 @@
 # release notes
+6.2.3
+```
+1. 支持ListJob接口 条件过滤，按Id，CreationTime以及集群Id过滤
+```
+
+6.2.2
+```
+1. 解决后端502时未正确捕获异常的问题
+```
+
 6.2.1
 ```
 1. 支持固定集群和 Auto 集群设置 DependencyIsvService。
