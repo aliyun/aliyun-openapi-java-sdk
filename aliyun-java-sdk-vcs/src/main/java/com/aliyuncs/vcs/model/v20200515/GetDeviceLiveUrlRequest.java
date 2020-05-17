@@ -31,7 +31,7 @@ public class GetDeviceLiveUrlRequest extends RpcAcsRequest<GetDeviceLiveUrlRespo
 
 	private Long deviceId;
 	public GetDeviceLiveUrlRequest() {
-		super("Vcs", "2020-05-15", "GetDeviceLiveUrl", "VCS");
+		super("Vcs", "2020-05-15", "GetDeviceLiveUrl", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
