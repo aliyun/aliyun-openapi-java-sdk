@@ -16,6 +16,7 @@ package com.aliyuncs.vcs.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vcs.Endpoint;
 
 /**
  * @author auto create
@@ -44,8 +45,12 @@ public class UpdateDeviceRequest extends RpcAcsRequest<UpdateDeviceResponse> {
 
 	private String deviceName;
 	public UpdateDeviceRequest() {
-		super("Vcs", "2020-05-15", "UpdateDevice");
+		super("Vcs", "2020-05-15", "UpdateDevice", "VCS");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDeviceSite() {

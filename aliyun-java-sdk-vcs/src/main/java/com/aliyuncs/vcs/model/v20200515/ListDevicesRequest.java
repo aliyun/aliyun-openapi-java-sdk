@@ -16,6 +16,7 @@ package com.aliyuncs.vcs.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vcs.Endpoint;
 
 /**
  * @author auto create
@@ -34,8 +35,12 @@ public class ListDevicesRequest extends RpcAcsRequest<ListDevicesResponse> {
 
 	private String deviceName;
 	public ListDevicesRequest() {
-		super("Vcs", "2020-05-15", "ListDevices");
+		super("Vcs", "2020-05-15", "ListDevices", "VCS");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getCorpId() {
