@@ -28,6 +28,8 @@ public class DescribeIpcLiveAddressRequest extends RpcAcsRequest<DescribeIpcLive
 	private Long ipcId;
 
 	private Long storeId;
+
+	private String protocolType;
 	public DescribeIpcLiveAddressRequest() {
 		super("reid", "2019-09-28", "DescribeIpcLiveAddress");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class DescribeIpcLiveAddressRequest extends RpcAcsRequest<DescribeIpcLive
 		this.storeId = storeId;
 		if(storeId != null){
 			putBodyParameter("StoreId", storeId.toString());
+		}
+	}
+
+	public String getProtocolType() {
+		return this.protocolType;
+	}
+
+	public void setProtocolType(String protocolType) {
+		this.protocolType = protocolType;
+		if(protocolType != null){
+			putBodyParameter("ProtocolType", protocolType);
 		}
 	}
 
