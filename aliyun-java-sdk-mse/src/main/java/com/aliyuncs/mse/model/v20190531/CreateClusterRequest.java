@@ -64,7 +64,7 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	public void setClusterSpecification(String clusterSpecification) {
 		this.clusterSpecification = clusterSpecification;
 		if(clusterSpecification != null){
-			putBodyParameter("ClusterSpecification", clusterSpecification);
+			putQueryParameter("ClusterSpecification", clusterSpecification);
 		}
 	}
 
@@ -75,7 +75,7 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	public void setPubSlbSpecification(String pubSlbSpecification) {
 		this.pubSlbSpecification = pubSlbSpecification;
 		if(pubSlbSpecification != null){
-			putBodyParameter("PubSlbSpecification", pubSlbSpecification);
+			putQueryParameter("PubSlbSpecification", pubSlbSpecification);
 		}
 	}
 
@@ -86,7 +86,7 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	public void setPrivateSlbSpecification(String privateSlbSpecification) {
 		this.privateSlbSpecification = privateSlbSpecification;
 		if(privateSlbSpecification != null){
-			putBodyParameter("PrivateSlbSpecification", privateSlbSpecification);
+			putQueryParameter("PrivateSlbSpecification", privateSlbSpecification);
 		}
 	}
 
@@ -97,7 +97,7 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	public void setInstanceCount(Integer instanceCount) {
 		this.instanceCount = instanceCount;
 		if(instanceCount != null){
-			putBodyParameter("InstanceCount", instanceCount.toString());
+			putQueryParameter("InstanceCount", instanceCount.toString());
 		}
 	}
 
@@ -108,7 +108,7 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	public void setClusterVersion(String clusterVersion) {
 		this.clusterVersion = clusterVersion;
 		if(clusterVersion != null){
-			putBodyParameter("ClusterVersion", clusterVersion);
+			putQueryParameter("ClusterVersion", clusterVersion);
 		}
 	}
 
@@ -119,7 +119,7 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	public void setDiskType(String diskType) {
 		this.diskType = diskType;
 		if(diskType != null){
-			putBodyParameter("DiskType", diskType);
+			putQueryParameter("DiskType", diskType);
 		}
 	}
 
@@ -130,7 +130,7 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	public void setVSwitchId(String vSwitchId) {
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
-			putBodyParameter("VSwitchId", vSwitchId);
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
@@ -141,7 +141,7 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	public void setClusterType(String clusterType) {
 		this.clusterType = clusterType;
 		if(clusterType != null){
-			putBodyParameter("ClusterType", clusterType);
+			putQueryParameter("ClusterType", clusterType);
 		}
 	}
 
@@ -152,7 +152,7 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	public void setPubNetworkFlow(String pubNetworkFlow) {
 		this.pubNetworkFlow = pubNetworkFlow;
 		if(pubNetworkFlow != null){
-			putBodyParameter("PubNetworkFlow", pubNetworkFlow);
+			putQueryParameter("PubNetworkFlow", pubNetworkFlow);
 		}
 	}
 
@@ -163,7 +163,7 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	public void setVpcId(String vpcId) {
 		this.vpcId = vpcId;
 		if(vpcId != null){
-			putBodyParameter("VpcId", vpcId);
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
@@ -174,7 +174,7 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	public void setNetType(String netType) {
 		this.netType = netType;
 		if(netType != null){
-			putBodyParameter("NetType", netType);
+			putQueryParameter("NetType", netType);
 		}
 	}
 
@@ -185,7 +185,7 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	public void setRegion(String region) {
 		this.region = region;
 		if(region != null){
-			putBodyParameter("Region", region);
+			putQueryParameter("Region", region);
 		}
 	}
 

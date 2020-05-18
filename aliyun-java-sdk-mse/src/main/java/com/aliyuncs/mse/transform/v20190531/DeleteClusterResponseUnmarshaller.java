@@ -26,9 +26,7 @@ public class DeleteClusterResponseUnmarshaller {
 		deleteClusterResponse.setSuccess(_ctx.booleanValue("DeleteClusterResponse.Success"));
 		deleteClusterResponse.setMessage(_ctx.stringValue("DeleteClusterResponse.Message"));
 		deleteClusterResponse.setErrorCode(_ctx.stringValue("DeleteClusterResponse.ErrorCode"));
-		deleteClusterResponse.setData(_ctx.stringValue("DeleteClusterResponse.Data"));
 		deleteClusterResponse.setHttpCode(_ctx.stringValue("DeleteClusterResponse.HttpCode"));
-		deleteClusterResponse.setClusterId(_ctx.stringValue("DeleteClusterResponse.ClusterId"));
 	 
 	 	return deleteClusterResponse;
 	}

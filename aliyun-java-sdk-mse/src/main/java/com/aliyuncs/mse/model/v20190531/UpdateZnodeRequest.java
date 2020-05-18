@@ -48,7 +48,7 @@ public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
 	public void setData(String data) {
 		this.data = data;
 		if(data != null){
-			putBodyParameter("Data", data);
+			putQueryParameter("Data", data);
 		}
 	}
 
@@ -59,7 +59,7 @@ public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
 		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -70,7 +70,7 @@ public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
 	public void setPath(String path) {
 		this.path = path;
 		if(path != null){
-			putBodyParameter("Path", path);
+			putQueryParameter("Path", path);
 		}
 	}
 
@@ -81,7 +81,7 @@ public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
 	public void setRequestPars(String requestPars) {
 		this.requestPars = requestPars;
 		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
+			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 

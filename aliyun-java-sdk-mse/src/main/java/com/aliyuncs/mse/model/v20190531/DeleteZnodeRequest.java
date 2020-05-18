@@ -46,7 +46,7 @@ public class DeleteZnodeRequest extends RpcAcsRequest<DeleteZnodeResponse> {
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
 		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -57,7 +57,7 @@ public class DeleteZnodeRequest extends RpcAcsRequest<DeleteZnodeResponse> {
 	public void setPath(String path) {
 		this.path = path;
 		if(path != null){
-			putBodyParameter("Path", path);
+			putQueryParameter("Path", path);
 		}
 	}
 
@@ -68,7 +68,7 @@ public class DeleteZnodeRequest extends RpcAcsRequest<DeleteZnodeResponse> {
 	public void setRequestPars(String requestPars) {
 		this.requestPars = requestPars;
 		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
+			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 

@@ -46,7 +46,7 @@ public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 	public void setConfigType(String configType) {
 		this.configType = configType;
 		if(configType != null){
-			putBodyParameter("ConfigType", configType);
+			putQueryParameter("ConfigType", configType);
 		}
 	}
 
@@ -57,7 +57,7 @@ public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
 		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

@@ -77,7 +77,7 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	public void setPassWord(String passWord) {
 		this.passWord = passWord;
 		if(passWord != null){
-			putBodyParameter("PassWord", passWord);
+			putQueryParameter("PassWord", passWord);
 		}
 	}
 
@@ -88,7 +88,7 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	public void setMaxClientCnxns(String maxClientCnxns) {
 		this.maxClientCnxns = maxClientCnxns;
 		if(maxClientCnxns != null){
-			putBodyParameter("MaxClientCnxns", maxClientCnxns);
+			putQueryParameter("MaxClientCnxns", maxClientCnxns);
 		}
 	}
 
@@ -99,7 +99,7 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	public void setRequestPars(String requestPars) {
 		this.requestPars = requestPars;
 		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
+			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 
@@ -110,7 +110,7 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	public void setJuteMaxbuffer(String juteMaxbuffer) {
 		this.juteMaxbuffer = juteMaxbuffer;
 		if(juteMaxbuffer != null){
-			putBodyParameter("JuteMaxbuffer", juteMaxbuffer);
+			putQueryParameter("JuteMaxbuffer", juteMaxbuffer);
 		}
 	}
 
@@ -121,7 +121,7 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	public void setConfigType(String configType) {
 		this.configType = configType;
 		if(configType != null){
-			putBodyParameter("ConfigType", configType);
+			putQueryParameter("ConfigType", configType);
 		}
 	}
 
@@ -132,7 +132,7 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	public void setAutopurgeSnapRetainCount(String autopurgeSnapRetainCount) {
 		this.autopurgeSnapRetainCount = autopurgeSnapRetainCount;
 		if(autopurgeSnapRetainCount != null){
-			putBodyParameter("AutopurgeSnapRetainCount", autopurgeSnapRetainCount);
+			putQueryParameter("AutopurgeSnapRetainCount", autopurgeSnapRetainCount);
 		}
 	}
 
@@ -143,7 +143,7 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	public void setTickTime(String tickTime) {
 		this.tickTime = tickTime;
 		if(tickTime != null){
-			putBodyParameter("TickTime", tickTime);
+			putQueryParameter("TickTime", tickTime);
 		}
 	}
 
@@ -154,7 +154,7 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
 		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -165,7 +165,7 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	public void setSyncLimit(String syncLimit) {
 		this.syncLimit = syncLimit;
 		if(syncLimit != null){
-			putBodyParameter("SyncLimit", syncLimit);
+			putQueryParameter("SyncLimit", syncLimit);
 		}
 	}
 
@@ -176,7 +176,7 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	public void setAutopurgePurgeInterval(String autopurgePurgeInterval) {
 		this.autopurgePurgeInterval = autopurgePurgeInterval;
 		if(autopurgePurgeInterval != null){
-			putBodyParameter("AutopurgePurgeInterval", autopurgePurgeInterval);
+			putQueryParameter("AutopurgePurgeInterval", autopurgePurgeInterval);
 		}
 	}
 
@@ -187,7 +187,7 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	public void setInitLimit(String initLimit) {
 		this.initLimit = initLimit;
 		if(initLimit != null){
-			putBodyParameter("InitLimit", initLimit);
+			putQueryParameter("InitLimit", initLimit);
 		}
 	}
 
@@ -198,7 +198,7 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	public void setUserName(String userName) {
 		this.userName = userName;
 		if(userName != null){
-			putBodyParameter("UserName", userName);
+			putQueryParameter("UserName", userName);
 		}
 	}
 

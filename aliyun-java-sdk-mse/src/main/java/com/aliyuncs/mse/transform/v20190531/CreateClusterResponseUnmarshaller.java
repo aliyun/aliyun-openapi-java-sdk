@@ -27,7 +27,6 @@ public class CreateClusterResponseUnmarshaller {
 		createClusterResponse.setMessage(_ctx.stringValue("CreateClusterResponse.Message"));
 		createClusterResponse.setSuccess(_ctx.booleanValue("CreateClusterResponse.Success"));
 		createClusterResponse.setOrderId(_ctx.stringValue("CreateClusterResponse.OrderId"));
-		createClusterResponse.setInstanceId(_ctx.stringValue("CreateClusterResponse.InstanceId"));
 	 
 	 	return createClusterResponse;
 	}

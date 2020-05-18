@@ -29,8 +29,6 @@ public class ScalingClusterRequest extends RpcAcsRequest<ScalingClusterResponse>
 
 	private Integer cpu;
 
-	private String clusterId;
-
 	private String instanceId;
 
 	private Long memoryCapacity;
@@ -52,7 +50,7 @@ public class ScalingClusterRequest extends RpcAcsRequest<ScalingClusterResponse>
 	public void setClusterSpecification(String clusterSpecification) {
 		this.clusterSpecification = clusterSpecification;
 		if(clusterSpecification != null){
-			putBodyParameter("ClusterSpecification", clusterSpecification);
+			putQueryParameter("ClusterSpecification", clusterSpecification);
 		}
 	}
 
@@ -63,18 +61,7 @@ public class ScalingClusterRequest extends RpcAcsRequest<ScalingClusterResponse>
 	public void setCpu(Integer cpu) {
 		this.cpu = cpu;
 		if(cpu != null){
-			putBodyParameter("Cpu", cpu.toString());
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
+			putQueryParameter("Cpu", cpu.toString());
 		}
 	}
 
@@ -85,7 +72,7 @@ public class ScalingClusterRequest extends RpcAcsRequest<ScalingClusterResponse>
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -96,7 +83,7 @@ public class ScalingClusterRequest extends RpcAcsRequest<ScalingClusterResponse>
 	public void setMemoryCapacity(Long memoryCapacity) {
 		this.memoryCapacity = memoryCapacity;
 		if(memoryCapacity != null){
-			putBodyParameter("MemoryCapacity", memoryCapacity.toString());
+			putQueryParameter("MemoryCapacity", memoryCapacity.toString());
 		}
 	}
 
@@ -107,7 +94,7 @@ public class ScalingClusterRequest extends RpcAcsRequest<ScalingClusterResponse>
 	public void setInstanceCount(Integer instanceCount) {
 		this.instanceCount = instanceCount;
 		if(instanceCount != null){
-			putBodyParameter("InstanceCount", instanceCount.toString());
+			putQueryParameter("InstanceCount", instanceCount.toString());
 		}
 	}
 

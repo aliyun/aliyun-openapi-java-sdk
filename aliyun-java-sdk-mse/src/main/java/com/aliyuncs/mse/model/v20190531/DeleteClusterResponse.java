@@ -32,11 +32,7 @@ public class DeleteClusterResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String data;
-
 	private String httpCode;
-
-	private String clusterId;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -70,28 +66,12 @@ public class DeleteClusterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public String getHttpCode() {
 		return this.httpCode;
 	}
 
 	public void setHttpCode(String httpCode) {
 		this.httpCode = httpCode;
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
 	}
 
 	@Override

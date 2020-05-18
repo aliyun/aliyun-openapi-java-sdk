@@ -28,7 +28,7 @@ public class QueryClusterDetailResponseUnmarshaller {
 	public static QueryClusterDetailResponse unmarshall(QueryClusterDetailResponse queryClusterDetailResponse, UnmarshallerContext _ctx) {
 		
 		queryClusterDetailResponse.setRequestId(_ctx.stringValue("QueryClusterDetailResponse.RequestId"));
-		queryClusterDetailResponse.setSuccess(_ctx.stringValue("QueryClusterDetailResponse.Success"));
+		queryClusterDetailResponse.setSuccess(_ctx.booleanValue("QueryClusterDetailResponse.Success"));
 		queryClusterDetailResponse.setMessage(_ctx.stringValue("QueryClusterDetailResponse.Message"));
 		queryClusterDetailResponse.setErrorCode(_ctx.stringValue("QueryClusterDetailResponse.ErrorCode"));
 
@@ -59,6 +59,7 @@ public class QueryClusterDetailResponseUnmarshaller {
 		data.setInitCostTime(_ctx.longValue("QueryClusterDetailResponse.Data.InitCostTime"));
 		data.setVpcId(_ctx.stringValue("QueryClusterDetailResponse.Data.VpcId"));
 		data.setPubNetworkFlow(_ctx.stringValue("QueryClusterDetailResponse.Data.PubNetworkFlow"));
+		data.setInstanceId(_ctx.stringValue("QueryClusterDetailResponse.Data.InstanceId"));
 
 		List<InstanceModel> instanceModels = new ArrayList<InstanceModel>();
 		for (int i = 0; i < _ctx.lengthValue("QueryClusterDetailResponse.Data.InstanceModels.Length"); i++) {

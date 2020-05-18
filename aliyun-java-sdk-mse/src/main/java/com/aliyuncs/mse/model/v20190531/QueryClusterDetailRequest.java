@@ -25,7 +25,7 @@ import com.aliyuncs.mse.Endpoint;
 public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailResponse> {
 	   
 
-	private String clusterId;
+	private String orderId;
 
 	private String instanceId;
 	public QueryClusterDetailRequest() {
@@ -37,14 +37,14 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 		} catch (Exception e) {}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId);
 		}
 	}
 
@@ -55,7 +55,7 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

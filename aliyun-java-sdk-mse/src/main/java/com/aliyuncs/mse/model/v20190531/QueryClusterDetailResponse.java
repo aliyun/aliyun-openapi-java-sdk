@@ -27,7 +27,7 @@ public class QueryClusterDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String success;
+	private Boolean success;
 
 	private String message;
 
@@ -43,11 +43,11 @@ public class QueryClusterDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSuccess() {
+	public Boolean getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(String success) {
+	public void setSuccess(Boolean success) {
 		this.success = success;
 	}
 
@@ -128,6 +128,8 @@ public class QueryClusterDetailResponse extends AcsResponse {
 		private String vpcId;
 
 		private String pubNetworkFlow;
+
+		private String instanceId;
 
 		private List<InstanceModel> instanceModels;
 
@@ -337,6 +339,14 @@ public class QueryClusterDetailResponse extends AcsResponse {
 
 		public void setPubNetworkFlow(String pubNetworkFlow) {
 			this.pubNetworkFlow = pubNetworkFlow;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public List<InstanceModel> getInstanceModels() {

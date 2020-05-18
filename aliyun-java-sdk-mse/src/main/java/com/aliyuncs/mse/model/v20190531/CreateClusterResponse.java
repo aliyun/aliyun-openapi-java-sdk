@@ -34,8 +34,6 @@ public class CreateClusterResponse extends AcsResponse {
 
 	private String orderId;
 
-	private String instanceId;
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
@@ -74,14 +72,6 @@ public class CreateClusterResponse extends AcsResponse {
 
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
 	}
 
 	@Override

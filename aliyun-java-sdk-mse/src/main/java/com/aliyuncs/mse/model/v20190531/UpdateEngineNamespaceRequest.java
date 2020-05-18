@@ -50,7 +50,7 @@ public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineName
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
 		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -61,7 +61,7 @@ public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineName
 	public void setServiceCount(Integer serviceCount) {
 		this.serviceCount = serviceCount;
 		if(serviceCount != null){
-			putBodyParameter("ServiceCount", serviceCount.toString());
+			putQueryParameter("ServiceCount", serviceCount.toString());
 		}
 	}
 
@@ -72,7 +72,7 @@ public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineName
 	public void setName(String name) {
 		this.name = name;
 		if(name != null){
-			putBodyParameter("Name", name);
+			putQueryParameter("Name", name);
 		}
 	}
 
@@ -83,7 +83,7 @@ public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineName
 	public void setId(String id) {
 		this.id = id;
 		if(id != null){
-			putBodyParameter("Id", id);
+			putQueryParameter("Id", id);
 		}
 	}
 
@@ -94,7 +94,7 @@ public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineName
 	public void setDesc(String desc) {
 		this.desc = desc;
 		if(desc != null){
-			putBodyParameter("Desc", desc);
+			putQueryParameter("Desc", desc);
 		}
 	}
 

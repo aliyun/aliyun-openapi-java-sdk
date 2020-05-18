@@ -26,7 +26,6 @@ public class ScalingClusterResponseUnmarshaller {
 		scalingClusterResponse.setSuccess(_ctx.booleanValue("ScalingClusterResponse.Success"));
 		scalingClusterResponse.setMessage(_ctx.stringValue("ScalingClusterResponse.Message"));
 		scalingClusterResponse.setErrorCode(_ctx.stringValue("ScalingClusterResponse.ErrorCode"));
-		scalingClusterResponse.setClusterId(_ctx.stringValue("ScalingClusterResponse.ClusterId"));
 	 
 	 	return scalingClusterResponse;
 	}

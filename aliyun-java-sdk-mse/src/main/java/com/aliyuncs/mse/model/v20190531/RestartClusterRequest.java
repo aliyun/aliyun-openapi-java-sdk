@@ -46,7 +46,7 @@ public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse>
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
 		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -57,7 +57,7 @@ public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse>
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -68,7 +68,7 @@ public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse>
 	public void setRequestPars(String requestPars) {
 		this.requestPars = requestPars;
 		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
+			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 

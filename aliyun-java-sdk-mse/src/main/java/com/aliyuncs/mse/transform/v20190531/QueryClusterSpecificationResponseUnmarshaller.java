@@ -27,7 +27,7 @@ public class QueryClusterSpecificationResponseUnmarshaller {
 	public static QueryClusterSpecificationResponse unmarshall(QueryClusterSpecificationResponse queryClusterSpecificationResponse, UnmarshallerContext _ctx) {
 		
 		queryClusterSpecificationResponse.setRequestId(_ctx.stringValue("QueryClusterSpecificationResponse.RequestId"));
-		queryClusterSpecificationResponse.setSuccess(_ctx.stringValue("QueryClusterSpecificationResponse.Success"));
+		queryClusterSpecificationResponse.setSuccess(_ctx.booleanValue("QueryClusterSpecificationResponse.Success"));
 		queryClusterSpecificationResponse.setMessage(_ctx.stringValue("QueryClusterSpecificationResponse.Message"));
 		queryClusterSpecificationResponse.setErrorCode(_ctx.stringValue("QueryClusterSpecificationResponse.ErrorCode"));
 

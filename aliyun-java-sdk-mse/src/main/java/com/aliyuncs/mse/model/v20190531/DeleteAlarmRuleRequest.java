@@ -44,7 +44,7 @@ public class DeleteAlarmRuleRequest extends RpcAcsRequest<DeleteAlarmRuleRespons
 	public void setAlarmRuleId(String alarmRuleId) {
 		this.alarmRuleId = alarmRuleId;
 		if(alarmRuleId != null){
-			putBodyParameter("AlarmRuleId", alarmRuleId);
+			putQueryParameter("AlarmRuleId", alarmRuleId);
 		}
 	}
 
@@ -55,7 +55,7 @@ public class DeleteAlarmRuleRequest extends RpcAcsRequest<DeleteAlarmRuleRespons
 	public void setRequestPars(String requestPars) {
 		this.requestPars = requestPars;
 		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
+			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 

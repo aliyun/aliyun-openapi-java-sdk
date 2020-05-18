@@ -32,8 +32,6 @@ public class ScalingClusterResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String clusterId;
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -64,14 +62,6 @@ public class ScalingClusterResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
 	}
 
 	@Override

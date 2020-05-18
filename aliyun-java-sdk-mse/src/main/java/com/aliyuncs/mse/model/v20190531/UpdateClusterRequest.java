@@ -27,8 +27,6 @@ public class UpdateClusterRequest extends RpcAcsRequest<UpdateClusterResponse> {
 
 	private String clusterAliasName;
 
-	private String clusterId;
-
 	private String instanceId;
 
 	private String requestPars;
@@ -48,18 +46,7 @@ public class UpdateClusterRequest extends RpcAcsRequest<UpdateClusterResponse> {
 	public void setClusterAliasName(String clusterAliasName) {
 		this.clusterAliasName = clusterAliasName;
 		if(clusterAliasName != null){
-			putBodyParameter("ClusterAliasName", clusterAliasName);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
+			putQueryParameter("ClusterAliasName", clusterAliasName);
 		}
 	}
 
@@ -70,7 +57,7 @@ public class UpdateClusterRequest extends RpcAcsRequest<UpdateClusterResponse> {
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -81,7 +68,7 @@ public class UpdateClusterRequest extends RpcAcsRequest<UpdateClusterResponse> {
 	public void setRequestPars(String requestPars) {
 		this.requestPars = requestPars;
 		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
+			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 

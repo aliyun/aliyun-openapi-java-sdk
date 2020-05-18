@@ -29,11 +29,11 @@ public class CreateAlarmRuleRequest extends RpcAcsRequest<CreateAlarmRuleRespons
 
 	private String alarmItem;
 
-	private String clusterId;
-
 	private String operator;
 
 	private String alarmAliasName;
+
+	private String instanceId;
 
 	private String contactGroupIds;
 
@@ -58,7 +58,7 @@ public class CreateAlarmRuleRequest extends RpcAcsRequest<CreateAlarmRuleRespons
 	public void setNValue(Integer nValue) {
 		this.nValue = nValue;
 		if(nValue != null){
-			putBodyParameter("NValue", nValue.toString());
+			putQueryParameter("NValue", nValue.toString());
 		}
 	}
 
@@ -69,18 +69,7 @@ public class CreateAlarmRuleRequest extends RpcAcsRequest<CreateAlarmRuleRespons
 	public void setAlarmItem(String alarmItem) {
 		this.alarmItem = alarmItem;
 		if(alarmItem != null){
-			putBodyParameter("AlarmItem", alarmItem);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
+			putQueryParameter("AlarmItem", alarmItem);
 		}
 	}
 
@@ -91,7 +80,7 @@ public class CreateAlarmRuleRequest extends RpcAcsRequest<CreateAlarmRuleRespons
 	public void setOperator(String operator) {
 		this.operator = operator;
 		if(operator != null){
-			putBodyParameter("Operator", operator);
+			putQueryParameter("Operator", operator);
 		}
 	}
 
@@ -102,7 +91,18 @@ public class CreateAlarmRuleRequest extends RpcAcsRequest<CreateAlarmRuleRespons
 	public void setAlarmAliasName(String alarmAliasName) {
 		this.alarmAliasName = alarmAliasName;
 		if(alarmAliasName != null){
-			putBodyParameter("AlarmAliasName", alarmAliasName);
+			putQueryParameter("AlarmAliasName", alarmAliasName);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -113,7 +113,7 @@ public class CreateAlarmRuleRequest extends RpcAcsRequest<CreateAlarmRuleRespons
 	public void setContactGroupIds(String contactGroupIds) {
 		this.contactGroupIds = contactGroupIds;
 		if(contactGroupIds != null){
-			putBodyParameter("ContactGroupIds", contactGroupIds);
+			putQueryParameter("ContactGroupIds", contactGroupIds);
 		}
 	}
 
@@ -124,7 +124,7 @@ public class CreateAlarmRuleRequest extends RpcAcsRequest<CreateAlarmRuleRespons
 	public void setAlertWay(String alertWay) {
 		this.alertWay = alertWay;
 		if(alertWay != null){
-			putBodyParameter("AlertWay", alertWay);
+			putQueryParameter("AlertWay", alertWay);
 		}
 	}
 
@@ -135,7 +135,7 @@ public class CreateAlarmRuleRequest extends RpcAcsRequest<CreateAlarmRuleRespons
 	public void setAggregates(String aggregates) {
 		this.aggregates = aggregates;
 		if(aggregates != null){
-			putBodyParameter("Aggregates", aggregates);
+			putQueryParameter("Aggregates", aggregates);
 		}
 	}
 
@@ -146,7 +146,7 @@ public class CreateAlarmRuleRequest extends RpcAcsRequest<CreateAlarmRuleRespons
 	public void setValue(Float value) {
 		this.value = value;
 		if(value != null){
-			putBodyParameter("Value", value.toString());
+			putQueryParameter("Value", value.toString());
 		}
 	}
 

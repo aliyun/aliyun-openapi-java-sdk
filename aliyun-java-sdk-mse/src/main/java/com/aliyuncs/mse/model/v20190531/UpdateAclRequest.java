@@ -25,8 +25,6 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateAclRequest extends RpcAcsRequest<UpdateAclResponse> {
 	   
 
-	private String clusterId;
-
 	private String aclEntryList;
 
 	private String instanceId;
@@ -39,17 +37,6 @@ public class UpdateAclRequest extends RpcAcsRequest<UpdateAclResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
-		}
-	}
-
 	public String getAclEntryList() {
 		return this.aclEntryList;
 	}
@@ -57,7 +44,7 @@ public class UpdateAclRequest extends RpcAcsRequest<UpdateAclResponse> {
 	public void setAclEntryList(String aclEntryList) {
 		this.aclEntryList = aclEntryList;
 		if(aclEntryList != null){
-			putBodyParameter("AclEntryList", aclEntryList);
+			putQueryParameter("AclEntryList", aclEntryList);
 		}
 	}
 
@@ -68,7 +55,7 @@ public class UpdateAclRequest extends RpcAcsRequest<UpdateAclResponse> {
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

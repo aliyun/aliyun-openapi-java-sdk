@@ -96,7 +96,7 @@ public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 	public void setRequestPars(String requestPars) {
 		this.requestPars = requestPars;
 		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
+			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 
