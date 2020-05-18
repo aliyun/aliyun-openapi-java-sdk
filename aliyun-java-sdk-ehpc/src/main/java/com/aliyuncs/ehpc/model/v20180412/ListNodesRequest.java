@@ -31,6 +31,8 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 
 	private Integer pageNumber;
 
+	private String sequence;
+
 	private String hostName;
 
 	private Integer pageSize;
@@ -73,6 +75,17 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getSequence() {
+		return this.sequence;
+	}
+
+	public void setSequence(String sequence) {
+		this.sequence = sequence;
+		if(sequence != null){
+			putQueryParameter("Sequence", sequence);
 		}
 	}
 

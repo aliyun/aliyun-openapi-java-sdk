@@ -67,6 +67,8 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 	private Integer internetMaxBandWidthIn;
 
 	private Integer targetCapacity;
+
+	private Boolean strictSatisfiedTargetCapacity;
 	public ApplyNodesRequest() {
 		super("EHPC", "2018-04-12", "ApplyNodes");
 		setMethod(MethodType.GET);
@@ -310,6 +312,17 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 		this.targetCapacity = targetCapacity;
 		if(targetCapacity != null){
 			putQueryParameter("TargetCapacity", targetCapacity.toString());
+		}
+	}
+
+	public Boolean getStrictSatisfiedTargetCapacity() {
+		return this.strictSatisfiedTargetCapacity;
+	}
+
+	public void setStrictSatisfiedTargetCapacity(Boolean strictSatisfiedTargetCapacity) {
+		this.strictSatisfiedTargetCapacity = strictSatisfiedTargetCapacity;
+		if(strictSatisfiedTargetCapacity != null){
+			putQueryParameter("StrictSatisfiedTargetCapacity", strictSatisfiedTargetCapacity.toString());
 		}
 	}
 

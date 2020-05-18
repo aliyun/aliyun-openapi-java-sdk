@@ -29,6 +29,8 @@ public class ListNodesNoPagingRequest extends RpcAcsRequest<ListNodesNoPagingRes
 
 	private String clusterId;
 
+	private String sequence;
+
 	private String hostName;
 
 	private Boolean onlyDetached;
@@ -60,6 +62,17 @@ public class ListNodesNoPagingRequest extends RpcAcsRequest<ListNodesNoPagingRes
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getSequence() {
+		return this.sequence;
+	}
+
+	public void setSequence(String sequence) {
+		this.sequence = sequence;
+		if(sequence != null){
+			putQueryParameter("Sequence", sequence);
 		}
 	}
 
