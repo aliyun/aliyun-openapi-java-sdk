@@ -1,3 +1,6 @@
+2020-05-18 Version: 1.1.6
+- Fix DescribeIpcLiveAddress , add in params.
+
 2020-05-18 Version: 1.1.5
 - Fix DescribeIpcLiveAddress , add in params.
 
