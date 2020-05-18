@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DeleteCasterLayoutRequest extends RpcAcsRequest<DeleteCasterLayoutResponse> {
-	
+	   
+
+	private String layoutId;
+
+	private String casterId;
+
+	private Long ownerId;
 	public DeleteCasterLayoutRequest() {
 		super("live", "2016-11-01", "DeleteCasterLayout", "live");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class DeleteCasterLayoutRequest extends RpcAcsRequest<DeleteCasterLayoutR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String layoutId;
-
-	private String casterId;
-
-	private Long ownerId;
 
 	public String getLayoutId() {
 		return this.layoutId;

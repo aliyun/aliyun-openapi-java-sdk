@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiveLazyPullStreamInfoConfigResponse> {
-	
-	public SetLiveLazyPullStreamInfoConfigRequest() {
-		super("live", "2016-11-01", "SetLiveLazyPullStreamInfoConfig", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String pullArgs;
 
@@ -52,6 +44,14 @@ public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiv
 	private String pullAppName;
 
 	private String pullProtocol;
+	public SetLiveLazyPullStreamInfoConfigRequest() {
+		super("live", "2016-11-01", "SetLiveLazyPullStreamInfoConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getPullArgs() {
 		return this.pullArgs;

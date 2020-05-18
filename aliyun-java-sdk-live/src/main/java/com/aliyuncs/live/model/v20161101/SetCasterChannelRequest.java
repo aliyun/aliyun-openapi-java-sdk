@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class SetCasterChannelRequest extends RpcAcsRequest<SetCasterChannelResponse> {
-	
-	public SetCasterChannelRequest() {
-		super("live", "2016-11-01", "SetCasterChannel", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer seekOffset;
 
@@ -43,7 +35,17 @@ public class SetCasterChannelRequest extends RpcAcsRequest<SetCasterChannelRespo
 
 	private Long ownerId;
 
+	private Integer reloadFlag;
+
 	private String channelId;
+	public SetCasterChannelRequest() {
+		super("live", "2016-11-01", "SetCasterChannel", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getSeekOffset() {
 		return this.seekOffset;
@@ -97,6 +99,17 @@ public class SetCasterChannelRequest extends RpcAcsRequest<SetCasterChannelRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getReloadFlag() {
+		return this.reloadFlag;
+	}
+
+	public void setReloadFlag(Integer reloadFlag) {
+		this.reloadFlag = reloadFlag;
+		if(reloadFlag != null){
+			putQueryParameter("ReloadFlag", reloadFlag.toString());
 		}
 	}
 

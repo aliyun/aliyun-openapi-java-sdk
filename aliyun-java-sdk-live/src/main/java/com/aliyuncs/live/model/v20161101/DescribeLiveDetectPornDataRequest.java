@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeLiveDetectPornDataRequest extends RpcAcsRequest<DescribeLiveDetectPornDataResponse> {
-	
-	public DescribeLiveDetectPornDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveDetectPornData", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String fee;
 
@@ -52,6 +44,14 @@ public class DescribeLiveDetectPornDataRequest extends RpcAcsRequest<DescribeLiv
 	private Long ownerId;
 
 	private String region;
+	public DescribeLiveDetectPornDataRequest() {
+		super("live", "2016-11-01", "DescribeLiveDetectPornData", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getFee() {
 		return this.fee;

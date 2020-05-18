@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DeleteBoardRequest extends RpcAcsRequest<DeleteBoardResponse> {
-	
+	   
+
+	private Long ownerId;
+
+	private String appId;
+
+	private String boardId;
 	public DeleteBoardRequest() {
 		super("live", "2016-11-01", "DeleteBoard", "live");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class DeleteBoardRequest extends RpcAcsRequest<DeleteBoardResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long ownerId;
-
-	private String appId;
-
-	private String boardId;
 
 	public Long getOwnerId() {
 		return this.ownerId;

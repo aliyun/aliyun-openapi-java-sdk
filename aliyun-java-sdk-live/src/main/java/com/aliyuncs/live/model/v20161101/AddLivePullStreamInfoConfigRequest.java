@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class AddLivePullStreamInfoConfigRequest extends RpcAcsRequest<AddLivePullStreamInfoConfigResponse> {
-	
-	public AddLivePullStreamInfoConfigRequest() {
-		super("live", "2016-11-01", "AddLivePullStreamInfoConfig", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String startTime;
 
@@ -46,6 +38,14 @@ public class AddLivePullStreamInfoConfigRequest extends RpcAcsRequest<AddLivePul
 	private Long ownerId;
 
 	private String sourceUrl;
+	public AddLivePullStreamInfoConfigRequest() {
+		super("live", "2016-11-01", "AddLivePullStreamInfoConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStartTime() {
 		return this.startTime;

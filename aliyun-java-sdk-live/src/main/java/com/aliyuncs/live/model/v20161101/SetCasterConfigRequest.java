@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigResponse> {
-	
-	public SetCasterConfigRequest() {
-		super("live", "2016-11-01", "SetCasterConfig", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer channelEnable;
 
@@ -58,6 +50,14 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 	private Float delay;
 
 	private String callbackUrl;
+	public SetCasterConfigRequest() {
+		super("live", "2016-11-01", "SetCasterConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getChannelEnable() {
 		return this.channelEnable;

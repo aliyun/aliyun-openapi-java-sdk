@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeLiveRecordVodConfigsRequest extends RpcAcsRequest<DescribeLiveRecordVodConfigsResponse> {
-	
-	public DescribeLiveRecordVodConfigsRequest() {
-		super("live", "2016-11-01", "DescribeLiveRecordVodConfigs", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long pageNum;
 
@@ -44,6 +36,14 @@ public class DescribeLiveRecordVodConfigsRequest extends RpcAcsRequest<DescribeL
 	private String domainName;
 
 	private Long ownerId;
+	public DescribeLiveRecordVodConfigsRequest() {
+		super("live", "2016-11-01", "DescribeLiveRecordVodConfigs", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getPageNum() {
 		return this.pageNum;

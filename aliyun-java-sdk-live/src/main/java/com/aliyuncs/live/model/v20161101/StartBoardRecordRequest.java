@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class StartBoardRecordRequest extends RpcAcsRequest<StartBoardRecordResponse> {
-	
-	public StartBoardRecordRequest() {
-		super("live", "2016-11-01", "StartBoardRecord", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String startTime;
 
@@ -40,6 +32,14 @@ public class StartBoardRecordRequest extends RpcAcsRequest<StartBoardRecordRespo
 	private Long ownerId;
 
 	private String appId;
+	public StartBoardRecordRequest() {
+		super("live", "2016-11-01", "StartBoardRecord", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStartTime() {
 		return this.startTime;

@@ -1,3 +1,6 @@
+2020-05-18 Version: 3.9.0
+- Support live audio audit config API.
+
 2019-09-18 Version: 3.8.0
 - Generated 2016-11-01 for `live`.
 

@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCasterVideoResourceResponse> {
-	
-	public ModifyCasterVideoResourceRequest() {
-		super("live", "2016-11-01", "ModifyCasterVideoResource", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer endOffset;
 
@@ -54,6 +46,14 @@ public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCaster
 	private String resourceName;
 
 	private Integer repeatNum;
+	public ModifyCasterVideoResourceRequest() {
+		super("live", "2016-11-01", "ModifyCasterVideoResource", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getEndOffset() {
 		return this.endOffset;

@@ -23,7 +23,11 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<DescribeLiveStreamsNotifyUrlConfigResponse> {
-	
+	   
+
+	private String domainName;
+
+	private Long ownerId;
 	public DescribeLiveStreamsNotifyUrlConfigRequest() {
 		super("live", "2016-11-01", "DescribeLiveStreamsNotifyUrlConfig", "live");
 		setMethod(MethodType.POST);
@@ -32,10 +36,6 @@ public class DescribeLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<Des
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String domainName;
-
-	private Long ownerId;
 
 	public String getDomainName() {
 		return this.domainName;

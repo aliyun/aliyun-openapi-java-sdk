@@ -24,15 +24,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class AddCasterEpisodeRequest extends RpcAcsRequest<AddCasterEpisodeResponse> {
-	
-	public AddCasterEpisodeRequest() {
-		super("live", "2016-11-01", "AddCasterEpisode", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String episodeName;
 
@@ -51,6 +43,14 @@ public class AddCasterEpisodeRequest extends RpcAcsRequest<AddCasterEpisodeRespo
 	private Long ownerId;
 
 	private String switchType;
+	public AddCasterEpisodeRequest() {
+		super("live", "2016-11-01", "AddCasterEpisode", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getEpisodeName() {
 		return this.episodeName;

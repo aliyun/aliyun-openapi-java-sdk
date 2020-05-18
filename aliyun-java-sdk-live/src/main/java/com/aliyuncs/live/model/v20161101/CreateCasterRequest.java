@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class CreateCasterRequest extends RpcAcsRequest<CreateCasterResponse> {
-	
-	public CreateCasterRequest() {
-		super("live", "2016-11-01", "CreateCaster", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String clientToken;
 
@@ -48,6 +40,14 @@ public class CreateCasterRequest extends RpcAcsRequest<CreateCasterResponse> {
 	private String purchaseTime;
 
 	private String chargeType;
+	public CreateCasterRequest() {
+		super("live", "2016-11-01", "CreateCaster", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getClientToken() {
 		return this.clientToken;

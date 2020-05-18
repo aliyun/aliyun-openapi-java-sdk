@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeCasterComponentsRequest extends RpcAcsRequest<DescribeCasterComponentsResponse> {
-	
+	   
+
+	private String componentId;
+
+	private String casterId;
+
+	private Long ownerId;
 	public DescribeCasterComponentsRequest() {
 		super("live", "2016-11-01", "DescribeCasterComponents", "live");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class DescribeCasterComponentsRequest extends RpcAcsRequest<DescribeCaste
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String componentId;
-
-	private String casterId;
-
-	private Long ownerId;
 
 	public String getComponentId() {
 		return this.componentId;

@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeUpBpsPeakDataRequest extends RpcAcsRequest<DescribeUpBpsPeakDataResponse> {
-	
-	public DescribeUpBpsPeakDataRequest() {
-		super("live", "2016-11-01", "DescribeUpBpsPeakData", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String startTime;
 
@@ -42,6 +34,14 @@ public class DescribeUpBpsPeakDataRequest extends RpcAcsRequest<DescribeUpBpsPea
 	private Long ownerId;
 
 	private String domainSwitch;
+	public DescribeUpBpsPeakDataRequest() {
+		super("live", "2016-11-01", "DescribeUpBpsPeakData", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStartTime() {
 		return this.startTime;

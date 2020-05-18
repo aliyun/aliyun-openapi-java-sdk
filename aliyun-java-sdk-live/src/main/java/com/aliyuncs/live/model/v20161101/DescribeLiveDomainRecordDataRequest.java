@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeLiveDomainRecordDataRequest extends RpcAcsRequest<DescribeLiveDomainRecordDataResponse> {
-	
-	public DescribeLiveDomainRecordDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainRecordData", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String startTime;
 
@@ -42,6 +34,14 @@ public class DescribeLiveDomainRecordDataRequest extends RpcAcsRequest<DescribeL
 	private String endTime;
 
 	private Long ownerId;
+	public DescribeLiveDomainRecordDataRequest() {
+		super("live", "2016-11-01", "DescribeLiveDomainRecordData", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStartTime() {
 		return this.startTime;

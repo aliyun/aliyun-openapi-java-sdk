@@ -23,7 +23,11 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeLiveStreamDelayConfigRequest extends RpcAcsRequest<DescribeLiveStreamDelayConfigResponse> {
-	
+	   
+
+	private String domainName;
+
+	private Long ownerId;
 	public DescribeLiveStreamDelayConfigRequest() {
 		super("live", "2016-11-01", "DescribeLiveStreamDelayConfig", "live");
 		setMethod(MethodType.POST);
@@ -32,10 +36,6 @@ public class DescribeLiveStreamDelayConfigRequest extends RpcAcsRequest<Describe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String domainName;
-
-	private Long ownerId;
 
 	public String getDomainName() {
 		return this.domainName;

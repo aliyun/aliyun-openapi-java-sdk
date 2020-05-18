@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DeleteLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<DeleteLiveLazyPullStreamInfoConfigResponse> {
-	
+	   
+
+	private String domainName;
+
+	private Long ownerId;
+
+	private String appName;
 	public DeleteLiveLazyPullStreamInfoConfigRequest() {
 		super("live", "2016-11-01", "DeleteLiveLazyPullStreamInfoConfig", "live");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class DeleteLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<Del
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String domainName;
-
-	private Long ownerId;
-
-	private String appName;
 
 	public String getDomainName() {
 		return this.domainName;

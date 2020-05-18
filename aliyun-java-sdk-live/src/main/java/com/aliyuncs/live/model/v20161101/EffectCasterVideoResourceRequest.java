@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class EffectCasterVideoResourceRequest extends RpcAcsRequest<EffectCasterVideoResourceResponse> {
-	
-	public EffectCasterVideoResourceRequest() {
-		super("live", "2016-11-01", "EffectCasterVideoResource", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String resourceId;
 
@@ -40,6 +32,14 @@ public class EffectCasterVideoResourceRequest extends RpcAcsRequest<EffectCaster
 	private Long ownerId;
 
 	private String sceneId;
+	public EffectCasterVideoResourceRequest() {
+		super("live", "2016-11-01", "EffectCasterVideoResource", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getResourceId() {
 		return this.resourceId;

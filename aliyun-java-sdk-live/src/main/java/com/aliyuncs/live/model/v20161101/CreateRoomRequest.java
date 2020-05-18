@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class CreateRoomRequest extends RpcAcsRequest<CreateRoomResponse> {
-	
-	public CreateRoomRequest() {
-		super("live", "2016-11-01", "CreateRoom", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String templateIds;
 
@@ -44,6 +36,14 @@ public class CreateRoomRequest extends RpcAcsRequest<CreateRoomResponse> {
 	private String roomId;
 
 	private String appId;
+	public CreateRoomRequest() {
+		super("live", "2016-11-01", "CreateRoom", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTemplateIds() {
 		return this.templateIds;

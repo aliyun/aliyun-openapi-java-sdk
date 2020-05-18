@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class AllowPushStreamRequest extends RpcAcsRequest<AllowPushStreamResponse> {
-	
+	   
+
+	private Long ownerId;
+
+	private String roomId;
+
+	private String appId;
 	public AllowPushStreamRequest() {
 		super("live", "2016-11-01", "AllowPushStream", "live");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class AllowPushStreamRequest extends RpcAcsRequest<AllowPushStreamRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long ownerId;
-
-	private String roomId;
-
-	private String appId;
 
 	public Long getOwnerId() {
 		return this.ownerId;

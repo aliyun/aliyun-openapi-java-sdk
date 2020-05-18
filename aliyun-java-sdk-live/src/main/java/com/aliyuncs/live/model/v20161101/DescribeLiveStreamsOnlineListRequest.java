@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<DescribeLiveStreamsOnlineListResponse> {
-	
-	public DescribeLiveStreamsOnlineListRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsOnlineList", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer pageNum;
 
@@ -48,6 +40,14 @@ public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<Describe
 	private String domainName;
 
 	private Long ownerId;
+	public DescribeLiveStreamsOnlineListRequest() {
+		super("live", "2016-11-01", "DescribeLiveStreamsOnlineList", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getPageNum() {
 		return this.pageNum;

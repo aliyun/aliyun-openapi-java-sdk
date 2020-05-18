@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeRecordsRequest extends RpcAcsRequest<DescribeRecordsResponse> {
-	
-	public DescribeRecordsRequest() {
-		super("live", "2016-11-01", "DescribeRecords", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String recordState;
 
@@ -42,6 +34,14 @@ public class DescribeRecordsRequest extends RpcAcsRequest<DescribeRecordsRespons
 	private Long ownerId;
 
 	private String appId;
+	public DescribeRecordsRequest() {
+		super("live", "2016-11-01", "DescribeRecords", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getRecordState() {
 		return this.recordState;

@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeLiveDomainTrafficDataRequest extends RpcAcsRequest<DescribeLiveDomainTrafficDataResponse> {
-	
-	public DescribeLiveDomainTrafficDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainTrafficData", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String locationNameEn;
 
@@ -46,6 +38,14 @@ public class DescribeLiveDomainTrafficDataRequest extends RpcAcsRequest<Describe
 	private Long ownerId;
 
 	private String interval;
+	public DescribeLiveDomainTrafficDataRequest() {
+		super("live", "2016-11-01", "DescribeLiveDomainTrafficData", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getLocationNameEn() {
 		return this.locationNameEn;

@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class CompleteBoardRequest extends RpcAcsRequest<CompleteBoardResponse> {
-	
+	   
+
+	private Long ownerId;
+
+	private String appId;
+
+	private String boardId;
 	public CompleteBoardRequest() {
 		super("live", "2016-11-01", "CompleteBoard", "live");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class CompleteBoardRequest extends RpcAcsRequest<CompleteBoardResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long ownerId;
-
-	private String appId;
-
-	private String boardId;
 
 	public Long getOwnerId() {
 		return this.ownerId;

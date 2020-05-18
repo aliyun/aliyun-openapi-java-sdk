@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeRoomListRequest extends RpcAcsRequest<DescribeRoomListResponse> {
-	
-	public DescribeRoomListRequest() {
-		super("live", "2016-11-01", "DescribeRoomList", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String startTime;
 
@@ -52,6 +44,14 @@ public class DescribeRoomListRequest extends RpcAcsRequest<DescribeRoomListRespo
 	private String roomId;
 
 	private String appId;
+	public DescribeRoomListRequest() {
+		super("live", "2016-11-01", "DescribeRoomList", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStartTime() {
 		return this.startTime;

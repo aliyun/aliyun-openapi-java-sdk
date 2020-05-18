@@ -23,19 +23,15 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class AddCasterComponentRequest extends RpcAcsRequest<AddCasterComponentResponse> {
-	
-	public AddCasterComponentRequest() {
-		super("live", "2016-11-01", "AddCasterComponent", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private String htmlLayerContent;
 
 	private String imageLayerContent;
 
 	private String componentName;
+
+	private String layerOrder;
 
 	private String casterId;
 
@@ -52,6 +48,25 @@ public class AddCasterComponentRequest extends RpcAcsRequest<AddCasterComponentR
 	private String captionLayerContent;
 
 	private String textLayerContent;
+	public AddCasterComponentRequest() {
+		super("live", "2016-11-01", "AddCasterComponent", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getHtmlLayerContent() {
+		return this.htmlLayerContent;
+	}
+
+	public void setHtmlLayerContent(String htmlLayerContent) {
+		this.htmlLayerContent = htmlLayerContent;
+		if(htmlLayerContent != null){
+			putQueryParameter("HtmlLayerContent", htmlLayerContent);
+		}
+	}
 
 	public String getImageLayerContent() {
 		return this.imageLayerContent;
@@ -72,6 +87,17 @@ public class AddCasterComponentRequest extends RpcAcsRequest<AddCasterComponentR
 		this.componentName = componentName;
 		if(componentName != null){
 			putQueryParameter("ComponentName", componentName);
+		}
+	}
+
+	public String getLayerOrder() {
+		return this.layerOrder;
+	}
+
+	public void setLayerOrder(String layerOrder) {
+		this.layerOrder = layerOrder;
+		if(layerOrder != null){
+			putQueryParameter("LayerOrder", layerOrder);
 		}
 	}
 

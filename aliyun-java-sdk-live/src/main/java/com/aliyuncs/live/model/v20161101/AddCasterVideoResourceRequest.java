@@ -23,21 +23,15 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoResourceResponse> {
-	
-	public AddCasterVideoResourceRequest() {
-		super("live", "2016-11-01", "AddCasterVideoResource", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer endOffset;
 
 	private String materialId;
 
 	private String vodUrl;
+
+	private String streamId;
 
 	private String casterId;
 
@@ -54,6 +48,14 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 	private String resourceName;
 
 	private Integer repeatNum;
+	public AddCasterVideoResourceRequest() {
+		super("live", "2016-11-01", "AddCasterVideoResource", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getEndOffset() {
 		return this.endOffset;
@@ -85,6 +87,17 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 		this.vodUrl = vodUrl;
 		if(vodUrl != null){
 			putQueryParameter("VodUrl", vodUrl);
+		}
+	}
+
+	public String getStreamId() {
+		return this.streamId;
+	}
+
+	public void setStreamId(String streamId) {
+		this.streamId = streamId;
+		if(streamId != null){
+			putQueryParameter("StreamId", streamId);
 		}
 	}
 

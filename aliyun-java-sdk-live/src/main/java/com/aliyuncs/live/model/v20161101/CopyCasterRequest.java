@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class CopyCasterRequest extends RpcAcsRequest<CopyCasterResponse> {
-	
-	public CopyCasterRequest() {
-		super("live", "2016-11-01", "CopyCaster", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String clientToken;
 
@@ -40,6 +32,14 @@ public class CopyCasterRequest extends RpcAcsRequest<CopyCasterResponse> {
 	private String srcCasterId;
 
 	private Long ownerId;
+	public CopyCasterRequest() {
+		super("live", "2016-11-01", "CopyCaster", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getClientToken() {
 		return this.clientToken;

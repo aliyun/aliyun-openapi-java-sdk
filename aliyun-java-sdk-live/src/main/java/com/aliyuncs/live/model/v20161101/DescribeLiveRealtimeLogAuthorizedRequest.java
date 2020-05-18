@@ -23,7 +23,11 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeLiveRealtimeLogAuthorizedRequest extends RpcAcsRequest<DescribeLiveRealtimeLogAuthorizedResponse> {
-	
+	   
+
+	private Long ownerId;
+
+	private String liveOpenapiReserve;
 	public DescribeLiveRealtimeLogAuthorizedRequest() {
 		super("live", "2016-11-01", "DescribeLiveRealtimeLogAuthorized", "live");
 		setMethod(MethodType.GET);
@@ -32,10 +36,6 @@ public class DescribeLiveRealtimeLogAuthorizedRequest extends RpcAcsRequest<Desc
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long ownerId;
-
-	private String liveOpenapiReserve;
 
 	public Long getOwnerId() {
 		return this.ownerId;

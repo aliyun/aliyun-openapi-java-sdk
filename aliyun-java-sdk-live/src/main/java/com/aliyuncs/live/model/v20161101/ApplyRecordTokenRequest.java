@@ -23,7 +23,11 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class ApplyRecordTokenRequest extends RpcAcsRequest<ApplyRecordTokenResponse> {
-	
+	   
+
+	private Long ownerId;
+
+	private String appId;
 	public ApplyRecordTokenRequest() {
 		super("live", "2016-11-01", "ApplyRecordToken", "live");
 		setMethod(MethodType.POST);
@@ -32,10 +36,6 @@ public class ApplyRecordTokenRequest extends RpcAcsRequest<ApplyRecordTokenRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long ownerId;
-
-	private String appId;
 
 	public Long getOwnerId() {
 		return this.ownerId;

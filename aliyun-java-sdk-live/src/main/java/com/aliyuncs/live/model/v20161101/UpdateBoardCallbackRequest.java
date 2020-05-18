@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class UpdateBoardCallbackRequest extends RpcAcsRequest<UpdateBoardCallbackResponse> {
-	
-	public UpdateBoardCallbackRequest() {
-		super("live", "2016-11-01", "UpdateBoardCallback", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String authKey;
 
@@ -46,6 +38,14 @@ public class UpdateBoardCallbackRequest extends RpcAcsRequest<UpdateBoardCallbac
 	private String appId;
 
 	private String authSwitch;
+	public UpdateBoardCallbackRequest() {
+		super("live", "2016-11-01", "UpdateBoardCallback", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAuthKey() {
 		return this.authKey;

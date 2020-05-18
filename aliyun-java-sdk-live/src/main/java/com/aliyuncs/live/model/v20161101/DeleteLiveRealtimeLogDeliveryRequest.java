@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DeleteLiveRealtimeLogDeliveryRequest extends RpcAcsRequest<DeleteLiveRealtimeLogDeliveryResponse> {
-	
-	public DeleteLiveRealtimeLogDeliveryRequest() {
-		super("live", "2016-11-01", "DeleteLiveRealtimeLogDelivery", "live");
-		setMethod(MethodType.GET);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String project;
 
@@ -42,6 +34,14 @@ public class DeleteLiveRealtimeLogDeliveryRequest extends RpcAcsRequest<DeleteLi
 	private String region;
 
 	private String logstore;
+	public DeleteLiveRealtimeLogDeliveryRequest() {
+		super("live", "2016-11-01", "DeleteLiveRealtimeLogDelivery", "live");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProject() {
 		return this.project;

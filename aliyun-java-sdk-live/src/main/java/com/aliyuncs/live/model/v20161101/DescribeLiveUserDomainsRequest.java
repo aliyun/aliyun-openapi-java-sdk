@@ -15,6 +15,7 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.live.Endpoint;
 
@@ -23,15 +24,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeLiveUserDomainsRequest extends RpcAcsRequest<DescribeLiveUserDomainsResponse> {
-	
-	public DescribeLiveUserDomainsRequest() {
-		super("live", "2016-11-01", "DescribeLiveUserDomains", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer pageNumber;
 
@@ -40,6 +33,8 @@ public class DescribeLiveUserDomainsRequest extends RpcAcsRequest<DescribeLiveUs
 	private Integer pageSize;
 
 	private String regionName;
+
+	private List<Tag> tags;
 
 	private String domainName;
 
@@ -50,6 +45,14 @@ public class DescribeLiveUserDomainsRequest extends RpcAcsRequest<DescribeLiveUs
 	private String domainSearchType;
 
 	private String liveDomainType;
+	public DescribeLiveUserDomainsRequest() {
+		super("live", "2016-11-01", "DescribeLiveUserDomains", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -62,29 +65,10 @@ public class DescribeLiveUserDomainsRequest extends RpcAcsRequest<DescribeLiveUs
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -112,6 +96,20 @@ public class DescribeLiveUserDomainsRequest extends RpcAcsRequest<DescribeLiveUs
 		if(regionName != null){
 			putQueryParameter("RegionName", regionName);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getDomainName() {
@@ -166,6 +164,29 @@ public class DescribeLiveUserDomainsRequest extends RpcAcsRequest<DescribeLiveUs
 		this.liveDomainType = liveDomainType;
 		if(liveDomainType != null){
 			putQueryParameter("LiveDomainType", liveDomainType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

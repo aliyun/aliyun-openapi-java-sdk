@@ -23,7 +23,11 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeLiveStreamTranscodeStreamNumRequest extends RpcAcsRequest<DescribeLiveStreamTranscodeStreamNumResponse> {
-	
+	   
+
+	private String domainName;
+
+	private Long ownerId;
 	public DescribeLiveStreamTranscodeStreamNumRequest() {
 		super("live", "2016-11-01", "DescribeLiveStreamTranscodeStreamNum", "live");
 		setMethod(MethodType.POST);
@@ -32,10 +36,6 @@ public class DescribeLiveStreamTranscodeStreamNumRequest extends RpcAcsRequest<D
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String domainName;
-
-	private Long ownerId;
 
 	public String getDomainName() {
 		return this.domainName;

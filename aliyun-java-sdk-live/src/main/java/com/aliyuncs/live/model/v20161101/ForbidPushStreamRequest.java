@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class ForbidPushStreamRequest extends RpcAcsRequest<ForbidPushStreamResponse> {
-	
-	public ForbidPushStreamRequest() {
-		super("live", "2016-11-01", "ForbidPushStream", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String userData;
 
@@ -42,6 +34,14 @@ public class ForbidPushStreamRequest extends RpcAcsRequest<ForbidPushStreamRespo
 	private String roomId;
 
 	private String appId;
+	public ForbidPushStreamRequest() {
+		super("live", "2016-11-01", "ForbidPushStream", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getUserData() {
 		return this.userData;

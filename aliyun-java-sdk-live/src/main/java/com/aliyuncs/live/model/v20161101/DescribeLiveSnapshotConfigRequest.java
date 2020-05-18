@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiveSnapshotConfigResponse> {
-	
-	public DescribeLiveSnapshotConfigRequest() {
-		super("live", "2016-11-01", "DescribeLiveSnapshotConfig", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer pageNum;
 
@@ -46,6 +38,14 @@ public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiv
 	private String domainName;
 
 	private Long ownerId;
+	public DescribeLiveSnapshotConfigRequest() {
+		super("live", "2016-11-01", "DescribeLiveSnapshotConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getPageNum() {
 		return this.pageNum;
@@ -69,29 +69,10 @@ public class DescribeLiveSnapshotConfigRequest extends RpcAcsRequest<DescribeLiv
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

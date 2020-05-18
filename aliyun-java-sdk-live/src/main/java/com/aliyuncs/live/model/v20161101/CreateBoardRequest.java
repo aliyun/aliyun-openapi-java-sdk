@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class CreateBoardRequest extends RpcAcsRequest<CreateBoardResponse> {
-	
+	   
+
+	private String appUid;
+
+	private Long ownerId;
+
+	private String appId;
 	public CreateBoardRequest() {
 		super("live", "2016-11-01", "CreateBoard", "live");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class CreateBoardRequest extends RpcAcsRequest<CreateBoardResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appUid;
-
-	private Long ownerId;
-
-	private String appId;
 
 	public String getAppUid() {
 		return this.appUid;

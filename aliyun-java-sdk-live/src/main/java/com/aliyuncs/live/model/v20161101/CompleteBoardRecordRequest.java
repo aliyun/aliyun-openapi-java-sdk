@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class CompleteBoardRecordRequest extends RpcAcsRequest<CompleteBoardRecordResponse> {
-	
-	public CompleteBoardRecordRequest() {
-		super("live", "2016-11-01", "CompleteBoardRecord", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String endTime;
 
@@ -40,6 +32,14 @@ public class CompleteBoardRecordRequest extends RpcAcsRequest<CompleteBoardRecor
 	private String recordId;
 
 	private String appId;
+	public CompleteBoardRecordRequest() {
+		super("live", "2016-11-01", "CompleteBoardRecord", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getEndTime() {
 		return this.endTime;

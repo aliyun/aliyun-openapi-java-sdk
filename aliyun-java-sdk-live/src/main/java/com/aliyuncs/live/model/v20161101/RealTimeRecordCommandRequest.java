@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class RealTimeRecordCommandRequest extends RpcAcsRequest<RealTimeRecordCommandResponse> {
-	
-	public RealTimeRecordCommandRequest() {
-		super("live", "2016-11-01", "RealTimeRecordCommand", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String appName;
 
@@ -42,6 +34,14 @@ public class RealTimeRecordCommandRequest extends RpcAcsRequest<RealTimeRecordCo
 	private Long ownerId;
 
 	private String command;
+	public RealTimeRecordCommandRequest() {
+		super("live", "2016-11-01", "RealTimeRecordCommand", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAppName() {
 		return this.appName;

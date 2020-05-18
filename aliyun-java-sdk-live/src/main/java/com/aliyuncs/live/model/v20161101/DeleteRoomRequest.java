@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DeleteRoomRequest extends RpcAcsRequest<DeleteRoomResponse> {
-	
+	   
+
+	private Long ownerId;
+
+	private String roomId;
+
+	private String appId;
 	public DeleteRoomRequest() {
 		super("live", "2016-11-01", "DeleteRoom", "live");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class DeleteRoomRequest extends RpcAcsRequest<DeleteRoomResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long ownerId;
-
-	private String roomId;
-
-	private String appId;
 
 	public Long getOwnerId() {
 		return this.ownerId;

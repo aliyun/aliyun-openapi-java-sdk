@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVodConfigResponse> {
-	
-	public AddLiveRecordVodConfigRequest() {
-		super("live", "2016-11-01", "AddLiveRecordVodConfig", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String autoCompose;
 
@@ -50,6 +42,14 @@ public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVo
 	private Integer cycleDuration;
 
 	private Long ownerId;
+	public AddLiveRecordVodConfigRequest() {
+		super("live", "2016-11-01", "AddLiveRecordVodConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAutoCompose() {
 		return this.autoCompose;

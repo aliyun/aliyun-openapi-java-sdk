@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DeleteLiveDomainRequest extends RpcAcsRequest<DeleteLiveDomainResponse> {
-	
-	public DeleteLiveDomainRequest() {
-		super("live", "2016-11-01", "DeleteLiveDomain", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String ownerAccount;
 
@@ -40,6 +32,14 @@ public class DeleteLiveDomainRequest extends RpcAcsRequest<DeleteLiveDomainRespo
 	private Long ownerId;
 
 	private String securityToken;
+	public DeleteLiveDomainRequest() {
+		super("live", "2016-11-01", "DeleteLiveDomain", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getOwnerAccount() {
 		return this.ownerAccount;
@@ -74,29 +74,10 @@ public class DeleteLiveDomainRequest extends RpcAcsRequest<DeleteLiveDomainRespo
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

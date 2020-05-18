@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class ModifyCasterComponentRequest extends RpcAcsRequest<ModifyCasterComponentResponse> {
-	
-	public ModifyCasterComponentRequest() {
-		super("live", "2016-11-01", "ModifyCasterComponent", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String imageLayerContent;
 
@@ -52,6 +44,14 @@ public class ModifyCasterComponentRequest extends RpcAcsRequest<ModifyCasterComp
 	private String captionLayerContent;
 
 	private String textLayerContent;
+	public ModifyCasterComponentRequest() {
+		super("live", "2016-11-01", "ModifyCasterComponent", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getImageLayerContent() {
 		return this.imageLayerContent;

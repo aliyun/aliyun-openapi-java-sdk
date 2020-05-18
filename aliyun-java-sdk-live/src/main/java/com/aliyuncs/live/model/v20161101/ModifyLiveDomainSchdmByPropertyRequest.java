@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class ModifyLiveDomainSchdmByPropertyRequest extends RpcAcsRequest<ModifyLiveDomainSchdmByPropertyResponse> {
-	
+	   
+
+	private String property;
+
+	private String domainName;
+
+	private Long ownerId;
 	public ModifyLiveDomainSchdmByPropertyRequest() {
 		super("live", "2016-11-01", "ModifyLiveDomainSchdmByProperty", "live");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class ModifyLiveDomainSchdmByPropertyRequest extends RpcAcsRequest<Modify
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String property;
-
-	private String domainName;
-
-	private Long ownerId;
 
 	public String getProperty() {
 		return this.property;

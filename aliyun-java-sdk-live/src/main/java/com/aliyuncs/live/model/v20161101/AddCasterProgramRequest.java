@@ -24,7 +24,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class AddCasterProgramRequest extends RpcAcsRequest<AddCasterProgramResponse> {
-	
+	   
+
+	private List<Episode> episodes;
+
+	private String casterId;
+
+	private Long ownerId;
 	public AddCasterProgramRequest() {
 		super("live", "2016-11-01", "AddCasterProgram", "live");
 		setMethod(MethodType.POST);
@@ -33,12 +39,6 @@ public class AddCasterProgramRequest extends RpcAcsRequest<AddCasterProgramRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private List<Episode> episodes;
-
-	private String casterId;
-
-	private Long ownerId;
 
 	public List<Episode> getEpisodes() {
 		return this.episodes;

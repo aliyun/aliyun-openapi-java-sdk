@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeBoardsRequest extends RpcAcsRequest<DescribeBoardsResponse> {
-	
-	public DescribeBoardsRequest() {
-		super("live", "2016-11-01", "DescribeBoards", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer pageNum;
 
@@ -40,6 +32,14 @@ public class DescribeBoardsRequest extends RpcAcsRequest<DescribeBoardsResponse>
 	private Long ownerId;
 
 	private String appId;
+	public DescribeBoardsRequest() {
+		super("live", "2016-11-01", "DescribeBoards", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getPageNum() {
 		return this.pageNum;

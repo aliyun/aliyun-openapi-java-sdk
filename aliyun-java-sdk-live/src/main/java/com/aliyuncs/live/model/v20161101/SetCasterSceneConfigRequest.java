@@ -24,15 +24,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class SetCasterSceneConfigRequest extends RpcAcsRequest<SetCasterSceneConfigResponse> {
-	
-	public SetCasterSceneConfigRequest() {
-		super("live", "2016-11-01", "SetCasterSceneConfig", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String layoutId;
 
@@ -43,6 +35,14 @@ public class SetCasterSceneConfigRequest extends RpcAcsRequest<SetCasterSceneCon
 	private Long ownerId;
 
 	private String sceneId;
+	public SetCasterSceneConfigRequest() {
+		super("live", "2016-11-01", "SetCasterSceneConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getLayoutId() {
 		return this.layoutId;

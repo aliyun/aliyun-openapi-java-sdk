@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DeleteLiveRecordVodConfigRequest extends RpcAcsRequest<DeleteLiveRecordVodConfigResponse> {
-	
-	public DeleteLiveRecordVodConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveRecordVodConfig", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String appName;
 
@@ -40,6 +32,14 @@ public class DeleteLiveRecordVodConfigRequest extends RpcAcsRequest<DeleteLiveRe
 	private String domainName;
 
 	private Long ownerId;
+	public DeleteLiveRecordVodConfigRequest() {
+		super("live", "2016-11-01", "DeleteLiveRecordVodConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAppName() {
 		return this.appName;

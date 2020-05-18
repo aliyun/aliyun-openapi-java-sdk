@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeLiveDomainBpsDataByTimeStampRequest extends RpcAcsRequest<DescribeLiveDomainBpsDataByTimeStampResponse> {
-	
-	public DescribeLiveDomainBpsDataByTimeStampRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainBpsDataByTimeStamp", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String locationNames;
 
@@ -42,6 +34,14 @@ public class DescribeLiveDomainBpsDataByTimeStampRequest extends RpcAcsRequest<D
 	private Long ownerId;
 
 	private String timePoint;
+	public DescribeLiveDomainBpsDataByTimeStampRequest() {
+		super("live", "2016-11-01", "DescribeLiveDomainBpsDataByTimeStamp", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getLocationNames() {
 		return this.locationNames;

@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DeleteCasterSceneConfigRequest extends RpcAcsRequest<DeleteCasterSceneConfigResponse> {
-	
-	public DeleteCasterSceneConfigRequest() {
-		super("live", "2016-11-01", "DeleteCasterSceneConfig", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String type;
 
@@ -40,6 +32,14 @@ public class DeleteCasterSceneConfigRequest extends RpcAcsRequest<DeleteCasterSc
 	private Long ownerId;
 
 	private String sceneId;
+	public DeleteCasterSceneConfigRequest() {
+		super("live", "2016-11-01", "DeleteCasterSceneConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getType() {
 		return this.type;

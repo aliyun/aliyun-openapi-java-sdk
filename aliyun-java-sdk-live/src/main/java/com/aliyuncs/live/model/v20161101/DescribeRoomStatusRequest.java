@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeRoomStatusRequest extends RpcAcsRequest<DescribeRoomStatusResponse> {
-	
+	   
+
+	private Long ownerId;
+
+	private String roomId;
+
+	private String appId;
 	public DescribeRoomStatusRequest() {
 		super("live", "2016-11-01", "DescribeRoomStatus", "live");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class DescribeRoomStatusRequest extends RpcAcsRequest<DescribeRoomStatusR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long ownerId;
-
-	private String roomId;
-
-	private String appId;
 
 	public Long getOwnerId() {
 		return this.ownerId;

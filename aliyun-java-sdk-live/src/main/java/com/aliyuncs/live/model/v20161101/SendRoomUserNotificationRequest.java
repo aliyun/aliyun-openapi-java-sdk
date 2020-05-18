@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class SendRoomUserNotificationRequest extends RpcAcsRequest<SendRoomUserNotificationResponse> {
-	
-	public SendRoomUserNotificationRequest() {
-		super("live", "2016-11-01", "SendRoomUserNotification", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String data;
 
@@ -46,6 +38,14 @@ public class SendRoomUserNotificationRequest extends RpcAcsRequest<SendRoomUserN
 	private String roomId;
 
 	private String appId;
+	public SendRoomUserNotificationRequest() {
+		super("live", "2016-11-01", "SendRoomUserNotification", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getData() {
 		return this.data;

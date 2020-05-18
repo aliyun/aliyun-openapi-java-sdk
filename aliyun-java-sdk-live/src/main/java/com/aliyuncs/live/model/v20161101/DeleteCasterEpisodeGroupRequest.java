@@ -23,7 +23,11 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DeleteCasterEpisodeGroupRequest extends RpcAcsRequest<DeleteCasterEpisodeGroupResponse> {
-	
+	   
+
+	private String programId;
+
+	private Long ownerId;
 	public DeleteCasterEpisodeGroupRequest() {
 		super("live", "2016-11-01", "DeleteCasterEpisodeGroup", "live");
 		setMethod(MethodType.POST);
@@ -32,10 +36,6 @@ public class DeleteCasterEpisodeGroupRequest extends RpcAcsRequest<DeleteCasterE
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String programId;
-
-	private Long ownerId;
 
 	public String getProgramId() {
 		return this.programId;

@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeLiveStreamOptimizedFeatureConfigRequest extends RpcAcsRequest<DescribeLiveStreamOptimizedFeatureConfigResponse> {
-	
+	   
+
+	private String configName;
+
+	private String domainName;
+
+	private Long ownerId;
 	public DescribeLiveStreamOptimizedFeatureConfigRequest() {
 		super("live", "2016-11-01", "DescribeLiveStreamOptimizedFeatureConfig", "live");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class DescribeLiveStreamOptimizedFeatureConfigRequest extends RpcAcsReque
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String configName;
-
-	private String domainName;
-
-	private Long ownerId;
 
 	public String getConfigName() {
 		return this.configName;

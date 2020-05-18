@@ -24,15 +24,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class AddCasterLayoutRequest extends RpcAcsRequest<AddCasterLayoutResponse> {
-	
-	public AddCasterLayoutRequest() {
-		super("live", "2016-11-01", "AddCasterLayout", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<String> blendLists;
 
@@ -45,6 +37,14 @@ public class AddCasterLayoutRequest extends RpcAcsRequest<AddCasterLayoutRespons
 	private List<VideoLayer> videoLayers;
 
 	private List<String> mixLists;
+	public AddCasterLayoutRequest() {
+		super("live", "2016-11-01", "AddCasterLayout", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<String> getBlendLists() {
 		return this.blendLists;

@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeLiveDomainOnlineUserNumRequest extends RpcAcsRequest<DescribeLiveDomainOnlineUserNumResponse> {
-	
+	   
+
+	private String queryTime;
+
+	private String domainName;
+
+	private Long ownerId;
 	public DescribeLiveDomainOnlineUserNumRequest() {
 		super("live", "2016-11-01", "DescribeLiveDomainOnlineUserNum", "live");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class DescribeLiveDomainOnlineUserNumRequest extends RpcAcsRequest<Descri
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String queryTime;
-
-	private String domainName;
-
-	private Long ownerId;
 
 	public String getQueryTime() {
 		return this.queryTime;

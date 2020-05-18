@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class JoinBoardRequest extends RpcAcsRequest<JoinBoardResponse> {
-	
-	public JoinBoardRequest() {
-		super("live", "2016-11-01", "JoinBoard", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String boardId;
 
@@ -40,6 +32,14 @@ public class JoinBoardRequest extends RpcAcsRequest<JoinBoardResponse> {
 	private Long ownerId;
 
 	private String appId;
+	public JoinBoardRequest() {
+		super("live", "2016-11-01", "JoinBoard", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getBoardId() {
 		return this.boardId;

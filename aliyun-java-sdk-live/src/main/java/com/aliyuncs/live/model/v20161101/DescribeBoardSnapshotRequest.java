@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeBoardSnapshotRequest extends RpcAcsRequest<DescribeBoardSnapshotResponse> {
-	
+	   
+
+	private Long ownerId;
+
+	private String appId;
+
+	private String boardId;
 	public DescribeBoardSnapshotRequest() {
 		super("live", "2016-11-01", "DescribeBoardSnapshot", "live");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class DescribeBoardSnapshotRequest extends RpcAcsRequest<DescribeBoardSna
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long ownerId;
-
-	private String appId;
-
-	private String boardId;
 
 	public Long getOwnerId() {
 		return this.ownerId;

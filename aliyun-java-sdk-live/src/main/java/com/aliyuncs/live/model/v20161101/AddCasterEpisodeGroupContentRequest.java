@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class AddCasterEpisodeGroupContentRequest extends RpcAcsRequest<AddCasterEpisodeGroupContentResponse> {
-	
+	   
+
+	private String clientToken;
+
+	private String content;
+
+	private Long ownerId;
 	public AddCasterEpisodeGroupContentRequest() {
 		super("live", "2016-11-01", "AddCasterEpisodeGroupContent", "live");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class AddCasterEpisodeGroupContentRequest extends RpcAcsRequest<AddCaster
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clientToken;
-
-	private String content;
-
-	private Long ownerId;
 
 	public String getClientToken() {
 		return this.clientToken;

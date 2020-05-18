@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeHlsLiveStreamRealTimeBpsDataRequest extends RpcAcsRequest<DescribeHlsLiveStreamRealTimeBpsDataResponse> {
-	
+	   
+
+	private String domainName;
+
+	private Long ownerId;
+
+	private String time;
 	public DescribeHlsLiveStreamRealTimeBpsDataRequest() {
 		super("live", "2016-11-01", "DescribeHlsLiveStreamRealTimeBpsData", "live");
 		setMethod(MethodType.GET);
@@ -32,12 +38,6 @@ public class DescribeHlsLiveStreamRealTimeBpsDataRequest extends RpcAcsRequest<D
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String domainName;
-
-	private Long ownerId;
-
-	private String time;
 
 	public String getDomainName() {
 		return this.domainName;

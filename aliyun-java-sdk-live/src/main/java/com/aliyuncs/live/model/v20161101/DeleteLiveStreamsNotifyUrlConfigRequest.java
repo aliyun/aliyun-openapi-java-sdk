@@ -23,7 +23,11 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DeleteLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<DeleteLiveStreamsNotifyUrlConfigResponse> {
-	
+	   
+
+	private String domainName;
+
+	private Long ownerId;
 	public DeleteLiveStreamsNotifyUrlConfigRequest() {
 		super("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig", "live");
 		setMethod(MethodType.POST);
@@ -32,10 +36,6 @@ public class DeleteLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<Delet
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String domainName;
-
-	private Long ownerId;
 
 	public String getDomainName() {
 		return this.domainName;

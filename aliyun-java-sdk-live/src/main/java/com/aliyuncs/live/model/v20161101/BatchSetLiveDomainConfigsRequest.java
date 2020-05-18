@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class BatchSetLiveDomainConfigsRequest extends RpcAcsRequest<BatchSetLiveDomainConfigsResponse> {
-	
-	public BatchSetLiveDomainConfigsRequest() {
-		super("live", "2016-11-01", "BatchSetLiveDomainConfigs", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String functions;
 
@@ -42,6 +34,14 @@ public class BatchSetLiveDomainConfigsRequest extends RpcAcsRequest<BatchSetLive
 	private Long ownerId;
 
 	private String securityToken;
+	public BatchSetLiveDomainConfigsRequest() {
+		super("live", "2016-11-01", "BatchSetLiveDomainConfigs", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getFunctions() {
 		return this.functions;
@@ -87,29 +87,10 @@ public class BatchSetLiveDomainConfigsRequest extends RpcAcsRequest<BatchSetLive
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

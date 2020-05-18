@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class EffectCasterUrgentRequest extends RpcAcsRequest<EffectCasterUrgentResponse> {
-	
+	   
+
+	private String casterId;
+
+	private Long ownerId;
+
+	private String sceneId;
 	public EffectCasterUrgentRequest() {
 		super("live", "2016-11-01", "EffectCasterUrgent", "live");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class EffectCasterUrgentRequest extends RpcAcsRequest<EffectCasterUrgentR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String casterId;
-
-	private Long ownerId;
-
-	private String sceneId;
 
 	public String getCasterId() {
 		return this.casterId;

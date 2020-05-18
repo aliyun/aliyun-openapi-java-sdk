@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeLiveRealtimeDeliveryAccRequest extends RpcAcsRequest<DescribeLiveRealtimeDeliveryAccResponse> {
-	
-	public DescribeLiveRealtimeDeliveryAccRequest() {
-		super("live", "2016-11-01", "DescribeLiveRealtimeDeliveryAcc", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String project;
 
@@ -44,6 +36,14 @@ public class DescribeLiveRealtimeDeliveryAccRequest extends RpcAcsRequest<Descri
 	private String interval;
 
 	private String logStore;
+	public DescribeLiveRealtimeDeliveryAccRequest() {
+		super("live", "2016-11-01", "DescribeLiveRealtimeDeliveryAcc", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProject() {
 		return this.project;

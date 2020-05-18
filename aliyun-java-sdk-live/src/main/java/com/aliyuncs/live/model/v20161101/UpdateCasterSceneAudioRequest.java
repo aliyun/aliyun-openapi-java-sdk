@@ -24,15 +24,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSceneAudioResponse> {
-	
-	public UpdateCasterSceneAudioRequest() {
-		super("live", "2016-11-01", "UpdateCasterSceneAudio", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String casterId;
 
@@ -45,6 +37,14 @@ public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSce
 	private List<String> mixLists;
 
 	private Integer followEnable;
+	public UpdateCasterSceneAudioRequest() {
+		super("live", "2016-11-01", "UpdateCasterSceneAudio", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCasterId() {
 		return this.casterId;

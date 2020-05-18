@@ -23,7 +23,11 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class EnableLiveRealtimeLogDeliveryRequest extends RpcAcsRequest<EnableLiveRealtimeLogDeliveryResponse> {
-	
+	   
+
+	private String domainName;
+
+	private Long ownerId;
 	public EnableLiveRealtimeLogDeliveryRequest() {
 		super("live", "2016-11-01", "EnableLiveRealtimeLogDelivery", "live");
 		setMethod(MethodType.GET);
@@ -32,10 +36,6 @@ public class EnableLiveRealtimeLogDeliveryRequest extends RpcAcsRequest<EnableLi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String domainName;
-
-	private Long ownerId;
 
 	public String getDomainName() {
 		return this.domainName;

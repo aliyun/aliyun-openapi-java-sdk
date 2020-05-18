@@ -23,15 +23,7 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class CopyCasterSceneConfigRequest extends RpcAcsRequest<CopyCasterSceneConfigResponse> {
-	
-	public CopyCasterSceneConfigRequest() {
-		super("live", "2016-11-01", "CopyCasterSceneConfig", "live");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String fromSceneId;
 
@@ -40,6 +32,14 @@ public class CopyCasterSceneConfigRequest extends RpcAcsRequest<CopyCasterSceneC
 	private String casterId;
 
 	private Long ownerId;
+	public CopyCasterSceneConfigRequest() {
+		super("live", "2016-11-01", "CopyCasterSceneConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getFromSceneId() {
 		return this.fromSceneId;

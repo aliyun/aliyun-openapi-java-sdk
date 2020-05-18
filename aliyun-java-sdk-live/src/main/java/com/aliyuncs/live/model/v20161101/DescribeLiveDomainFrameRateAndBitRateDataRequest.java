@@ -23,7 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @version 
  */
 public class DescribeLiveDomainFrameRateAndBitRateDataRequest extends RpcAcsRequest<DescribeLiveDomainFrameRateAndBitRateDataResponse> {
-	
+	   
+
+	private String queryTime;
+
+	private String domainName;
+
+	private Long ownerId;
 	public DescribeLiveDomainFrameRateAndBitRateDataRequest() {
 		super("live", "2016-11-01", "DescribeLiveDomainFrameRateAndBitRateData", "live");
 		setMethod(MethodType.POST);
@@ -32,12 +38,6 @@ public class DescribeLiveDomainFrameRateAndBitRateDataRequest extends RpcAcsRequ
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String queryTime;
-
-	private String domainName;
-
-	private Long ownerId;
 
 	public String getQueryTime() {
 		return this.queryTime;
