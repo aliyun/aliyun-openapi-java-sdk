@@ -95,6 +95,8 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		private String invokeStatus;
 
+		private String invocationStatus;
+
 		private String parameters;
 
 		private List<InvokeInstance> invokeInstances;
@@ -169,6 +171,14 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		public void setInvokeStatus(String invokeStatus) {
 			this.invokeStatus = invokeStatus;
+		}
+
+		public String getInvocationStatus() {
+			return this.invocationStatus;
+		}
+
+		public void setInvocationStatus(String invocationStatus) {
+			this.invocationStatus = invocationStatus;
 		}
 
 		public String getParameters() {

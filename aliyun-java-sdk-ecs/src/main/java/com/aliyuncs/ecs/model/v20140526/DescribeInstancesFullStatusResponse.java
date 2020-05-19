@@ -127,6 +127,8 @@ public class DescribeInstancesFullStatusResponse extends AcsResponse {
 
 			private String reason;
 
+			private String impactLevel;
+
 			private EventCycleStatus eventCycleStatus;
 
 			private EventType eventType;
@@ -163,6 +165,14 @@ public class DescribeInstancesFullStatusResponse extends AcsResponse {
 
 			public void setReason(String reason) {
 				this.reason = reason;
+			}
+
+			public String getImpactLevel() {
+				return this.impactLevel;
+			}
+
+			public void setImpactLevel(String impactLevel) {
+				this.impactLevel = impactLevel;
 			}
 
 			public EventCycleStatus getEventCycleStatus() {

@@ -131,6 +131,8 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		private AssociatedPublicIp associatedPublicIp;
 
+		private Attachment attachment;
+
 		public String getNetworkInterfaceId() {
 			return this.networkInterfaceId;
 		}
@@ -307,6 +309,14 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 			this.associatedPublicIp = associatedPublicIp;
 		}
 
+		public Attachment getAttachment() {
+			return this.attachment;
+		}
+
+		public void setAttachment(Attachment attachment) {
+			this.attachment = attachment;
+		}
+
 		public static class PrivateIpSet {
 
 			private String privateIpAddress;
@@ -419,6 +429,39 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 			public void setAllocationId(String allocationId) {
 				this.allocationId = allocationId;
+			}
+		}
+
+		public static class Attachment {
+
+			private String instanceId;
+
+			private String trunkNetworkInterfaceId;
+
+			private Integer deviceIndex;
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getTrunkNetworkInterfaceId() {
+				return this.trunkNetworkInterfaceId;
+			}
+
+			public void setTrunkNetworkInterfaceId(String trunkNetworkInterfaceId) {
+				this.trunkNetworkInterfaceId = trunkNetworkInterfaceId;
+			}
+
+			public Integer getDeviceIndex() {
+				return this.deviceIndex;
+			}
+
+			public void setDeviceIndex(Integer deviceIndex) {
+				this.deviceIndex = deviceIndex;
 			}
 		}
 	}

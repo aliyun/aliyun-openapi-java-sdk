@@ -87,6 +87,10 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Integer totalEniQueueQuantity;
 
+		private Boolean eniTrunkSupported;
+
+		private Integer eniTotalQuantity;
+
 		public String getInstanceTypeId() {
 			return this.instanceTypeId;
 		}
@@ -245,6 +249,22 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setTotalEniQueueQuantity(Integer totalEniQueueQuantity) {
 			this.totalEniQueueQuantity = totalEniQueueQuantity;
+		}
+
+		public Boolean getEniTrunkSupported() {
+			return this.eniTrunkSupported;
+		}
+
+		public void setEniTrunkSupported(Boolean eniTrunkSupported) {
+			this.eniTrunkSupported = eniTrunkSupported;
+		}
+
+		public Integer getEniTotalQuantity() {
+			return this.eniTotalQuantity;
+		}
+
+		public void setEniTotalQuantity(Integer eniTotalQuantity) {
+			this.eniTotalQuantity = eniTotalQuantity;
 		}
 	}
 

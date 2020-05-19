@@ -58,6 +58,7 @@ public class DescribeDisksFullStatusResponseUnmarshaller {
 				diskEventType.setEventId(_ctx.stringValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventId"));
 				diskEventType.setEventTime(_ctx.stringValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventTime"));
 				diskEventType.setEventEndTime(_ctx.stringValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventEndTime"));
+				diskEventType.setImpactLevel(_ctx.stringValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].ImpactLevel"));
 
 				EventType eventType = new EventType();
 				eventType.setCode(_ctx.integerValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventType.Code"));

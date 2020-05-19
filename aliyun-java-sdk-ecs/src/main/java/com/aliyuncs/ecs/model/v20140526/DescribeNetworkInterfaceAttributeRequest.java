@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -22,12 +23,14 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DetachNetworkInterfaceRequest extends RpcAcsRequest<DetachNetworkInterfaceResponse> {
+public class DescribeNetworkInterfaceAttributeRequest extends RpcAcsRequest<DescribeNetworkInterfaceAttributeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String trunkNetworkInstanceId;
+	private List<Tag> tags;
+
+	private String attribute;
 
 	private String resourceOwnerAccount;
 
@@ -35,11 +38,9 @@ public class DetachNetworkInterfaceRequest extends RpcAcsRequest<DetachNetworkIn
 
 	private Long ownerId;
 
-	private String instanceId;
-
 	private String networkInterfaceId;
-	public DetachNetworkInterfaceRequest() {
-		super("Ecs", "2014-05-26", "DetachNetworkInterface", "ecs");
+	public DescribeNetworkInterfaceAttributeRequest() {
+		super("Ecs", "2014-05-26", "DescribeNetworkInterfaceAttribute", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,14 +59,28 @@ public class DetachNetworkInterfaceRequest extends RpcAcsRequest<DetachNetworkIn
 		}
 	}
 
-	public String getTrunkNetworkInstanceId() {
-		return this.trunkNetworkInstanceId;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setTrunkNetworkInstanceId(String trunkNetworkInstanceId) {
-		this.trunkNetworkInstanceId = trunkNetworkInstanceId;
-		if(trunkNetworkInstanceId != null){
-			putQueryParameter("TrunkNetworkInstanceId", trunkNetworkInstanceId);
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
+	}
+
+	public String getAttribute() {
+		return this.attribute;
+	}
+
+	public void setAttribute(String attribute) {
+		this.attribute = attribute;
+		if(attribute != null){
+			putQueryParameter("Attribute", attribute);
 		}
 	}
 
@@ -102,17 +117,6 @@ public class DetachNetworkInterfaceRequest extends RpcAcsRequest<DetachNetworkIn
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getNetworkInterfaceId() {
 		return this.networkInterfaceId;
 	}
@@ -124,9 +128,32 @@ public class DetachNetworkInterfaceRequest extends RpcAcsRequest<DetachNetworkIn
 		}
 	}
 
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+	}
+
 	@Override
-	public Class<DetachNetworkInterfaceResponse> getResponseClass() {
-		return DetachNetworkInterfaceResponse.class;
+	public Class<DescribeNetworkInterfaceAttributeResponse> getResponseClass() {
+		return DescribeNetworkInterfaceAttributeResponse.class;
 	}
 
 }

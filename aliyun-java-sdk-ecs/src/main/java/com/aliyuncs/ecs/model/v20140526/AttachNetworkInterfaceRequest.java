@@ -27,6 +27,8 @@ public class AttachNetworkInterfaceRequest extends RpcAcsRequest<AttachNetworkIn
 
 	private Long resourceOwnerId;
 
+	private String trunkNetworkInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -53,6 +55,17 @@ public class AttachNetworkInterfaceRequest extends RpcAcsRequest<AttachNetworkIn
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getTrunkNetworkInstanceId() {
+		return this.trunkNetworkInstanceId;
+	}
+
+	public void setTrunkNetworkInstanceId(String trunkNetworkInstanceId) {
+		this.trunkNetworkInstanceId = trunkNetworkInstanceId;
+		if(trunkNetworkInstanceId != null){
+			putQueryParameter("TrunkNetworkInstanceId", trunkNetworkInstanceId);
 		}
 	}
 

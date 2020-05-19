@@ -28,11 +28,15 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 
 	private Long resourceOwnerId;
 
+	private Integer copiedSnapshotsRetentionDays;
+
 	private String timePoints;
 
 	private String repeatWeekdays;
 
 	private List<Tag> tags;
+
+	private Boolean enableCrossRegionCopy;
 
 	private String resourceOwnerAccount;
 
@@ -41,6 +45,8 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 	private String autoSnapshotPolicyName;
 
 	private Integer retentionDays;
+
+	private String targetCopyRegions;
 	public CreateAutoSnapshotPolicyRequest() {
 		super("Ecs", "2014-05-26", "CreateAutoSnapshotPolicy", "ecs");
 		setMethod(MethodType.POST);
@@ -58,6 +64,17 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getCopiedSnapshotsRetentionDays() {
+		return this.copiedSnapshotsRetentionDays;
+	}
+
+	public void setCopiedSnapshotsRetentionDays(Integer copiedSnapshotsRetentionDays) {
+		this.copiedSnapshotsRetentionDays = copiedSnapshotsRetentionDays;
+		if(copiedSnapshotsRetentionDays != null){
+			putQueryParameter("CopiedSnapshotsRetentionDays", copiedSnapshotsRetentionDays.toString());
 		}
 	}
 
@@ -95,6 +112,17 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public Boolean getEnableCrossRegionCopy() {
+		return this.enableCrossRegionCopy;
+	}
+
+	public void setEnableCrossRegionCopy(Boolean enableCrossRegionCopy) {
+		this.enableCrossRegionCopy = enableCrossRegionCopy;
+		if(enableCrossRegionCopy != null){
+			putQueryParameter("EnableCrossRegionCopy", enableCrossRegionCopy.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -138,6 +166,17 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 		this.retentionDays = retentionDays;
 		if(retentionDays != null){
 			putQueryParameter("retentionDays", retentionDays.toString());
+		}
+	}
+
+	public String getTargetCopyRegions() {
+		return this.targetCopyRegions;
+	}
+
+	public void setTargetCopyRegions(String targetCopyRegions) {
+		this.targetCopyRegions = targetCopyRegions;
+		if(targetCopyRegions != null){
+			putQueryParameter("TargetCopyRegions", targetCopyRegions);
 		}
 	}
 

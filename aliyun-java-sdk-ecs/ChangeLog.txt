@@ -1,3 +1,6 @@
+2020-05-19 Version: 4.19.5
+- ModifyInstanceVpcAttribute supports modification of instance vpc.
+
 2020-04-17 Version: 4.19.4
 - DescribeInstanceTypes support TotalEniQueueQuantity.
 

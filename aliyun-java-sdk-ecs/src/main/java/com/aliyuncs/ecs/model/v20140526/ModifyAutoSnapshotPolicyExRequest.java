@@ -29,9 +29,13 @@ public class ModifyAutoSnapshotPolicyExRequest extends RpcAcsRequest<ModifyAutoS
 
 	private String autoSnapshotPolicyId;
 
+	private Integer copiedSnapshotsRetentionDays;
+
 	private String timePoints;
 
 	private String repeatWeekdays;
+
+	private Boolean enableCrossRegionCopy;
 
 	private String resourceOwnerAccount;
 
@@ -40,6 +44,8 @@ public class ModifyAutoSnapshotPolicyExRequest extends RpcAcsRequest<ModifyAutoS
 	private String autoSnapshotPolicyName;
 
 	private Integer retentionDays;
+
+	private String targetCopyRegions;
 	public ModifyAutoSnapshotPolicyExRequest() {
 		super("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicyEx", "ecs");
 		setMethod(MethodType.POST);
@@ -71,6 +77,17 @@ public class ModifyAutoSnapshotPolicyExRequest extends RpcAcsRequest<ModifyAutoS
 		}
 	}
 
+	public Integer getCopiedSnapshotsRetentionDays() {
+		return this.copiedSnapshotsRetentionDays;
+	}
+
+	public void setCopiedSnapshotsRetentionDays(Integer copiedSnapshotsRetentionDays) {
+		this.copiedSnapshotsRetentionDays = copiedSnapshotsRetentionDays;
+		if(copiedSnapshotsRetentionDays != null){
+			putQueryParameter("CopiedSnapshotsRetentionDays", copiedSnapshotsRetentionDays.toString());
+		}
+	}
+
 	public String getTimePoints() {
 		return this.timePoints;
 	}
@@ -90,6 +107,17 @@ public class ModifyAutoSnapshotPolicyExRequest extends RpcAcsRequest<ModifyAutoS
 		this.repeatWeekdays = repeatWeekdays;
 		if(repeatWeekdays != null){
 			putQueryParameter("repeatWeekdays", repeatWeekdays);
+		}
+	}
+
+	public Boolean getEnableCrossRegionCopy() {
+		return this.enableCrossRegionCopy;
+	}
+
+	public void setEnableCrossRegionCopy(Boolean enableCrossRegionCopy) {
+		this.enableCrossRegionCopy = enableCrossRegionCopy;
+		if(enableCrossRegionCopy != null){
+			putQueryParameter("EnableCrossRegionCopy", enableCrossRegionCopy.toString());
 		}
 	}
 
@@ -134,6 +162,17 @@ public class ModifyAutoSnapshotPolicyExRequest extends RpcAcsRequest<ModifyAutoS
 		this.retentionDays = retentionDays;
 		if(retentionDays != null){
 			putQueryParameter("retentionDays", retentionDays.toString());
+		}
+	}
+
+	public String getTargetCopyRegions() {
+		return this.targetCopyRegions;
+	}
+
+	public void setTargetCopyRegions(String targetCopyRegions) {
+		this.targetCopyRegions = targetCopyRegions;
+		if(targetCopyRegions != null){
+			putQueryParameter("TargetCopyRegions", targetCopyRegions);
 		}
 	}
 

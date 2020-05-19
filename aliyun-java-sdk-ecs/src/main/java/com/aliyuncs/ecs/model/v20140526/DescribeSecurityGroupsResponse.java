@@ -105,6 +105,10 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private Long serviceID;
+
+		private Boolean serviceManaged;
+
 		private List<Tag> tags;
 
 		public String getSecurityGroupId() {
@@ -177,6 +181,22 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Long getServiceID() {
+			return this.serviceID;
+		}
+
+		public void setServiceID(Long serviceID) {
+			this.serviceID = serviceID;
+		}
+
+		public Boolean getServiceManaged() {
+			return this.serviceManaged;
+		}
+
+		public void setServiceManaged(Boolean serviceManaged) {
+			this.serviceManaged = serviceManaged;
 		}
 
 		public List<Tag> getTags() {

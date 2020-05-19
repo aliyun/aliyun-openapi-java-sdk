@@ -56,6 +56,8 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 
 	private String securityGroupIds;
 
+	private String securityGroupType;
+
 	private String vpcId;
 	public DescribeSecurityGroupsRequest() {
 		super("Ecs", "2014-05-26", "DescribeSecurityGroups", "ecs");
@@ -231,6 +233,17 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 		this.securityGroupIds = securityGroupIds;
 		if(securityGroupIds != null){
 			putQueryParameter("SecurityGroupIds", securityGroupIds);
+		}
+	}
+
+	public String getSecurityGroupType() {
+		return this.securityGroupType;
+	}
+
+	public void setSecurityGroupType(String securityGroupType) {
+		this.securityGroupType = securityGroupType;
+		if(securityGroupType != null){
+			putQueryParameter("SecurityGroupType", securityGroupType);
 		}
 	}
 

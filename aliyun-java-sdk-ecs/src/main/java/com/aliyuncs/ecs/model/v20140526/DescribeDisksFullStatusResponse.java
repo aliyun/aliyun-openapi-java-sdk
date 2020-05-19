@@ -145,6 +145,8 @@ public class DescribeDisksFullStatusResponse extends AcsResponse {
 
 			private String eventEndTime;
 
+			private String impactLevel;
+
 			private EventType eventType;
 
 			public String getEventId() {
@@ -169,6 +171,14 @@ public class DescribeDisksFullStatusResponse extends AcsResponse {
 
 			public void setEventEndTime(String eventEndTime) {
 				this.eventEndTime = eventEndTime;
+			}
+
+			public String getImpactLevel() {
+				return this.impactLevel;
+			}
+
+			public void setImpactLevel(String impactLevel) {
+				this.impactLevel = impactLevel;
 			}
 
 			public EventType getEventType() {

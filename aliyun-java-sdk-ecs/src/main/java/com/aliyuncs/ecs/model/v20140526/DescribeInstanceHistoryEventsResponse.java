@@ -89,6 +89,8 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 		private String reason;
 
+		private String impactLevel;
+
 		private EventType eventType;
 
 		private EventCycleStatus eventCycleStatus;
@@ -141,6 +143,14 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 		public void setReason(String reason) {
 			this.reason = reason;
+		}
+
+		public String getImpactLevel() {
+			return this.impactLevel;
+		}
+
+		public void setImpactLevel(String impactLevel) {
+			this.impactLevel = impactLevel;
 		}
 
 		public EventType getEventType() {

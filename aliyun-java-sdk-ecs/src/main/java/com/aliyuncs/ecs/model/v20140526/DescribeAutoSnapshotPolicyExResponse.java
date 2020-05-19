@@ -97,6 +97,12 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 
 		private String status;
 
+		private Boolean enableCrossRegionCopy;
+
+		private String targetCopyRegions;
+
+		private Integer copiedSnapshotsRetentionDays;
+
 		private List<Tag> tags;
 
 		public String getAutoSnapshotPolicyId() {
@@ -177,6 +183,30 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public Boolean getEnableCrossRegionCopy() {
+			return this.enableCrossRegionCopy;
+		}
+
+		public void setEnableCrossRegionCopy(Boolean enableCrossRegionCopy) {
+			this.enableCrossRegionCopy = enableCrossRegionCopy;
+		}
+
+		public String getTargetCopyRegions() {
+			return this.targetCopyRegions;
+		}
+
+		public void setTargetCopyRegions(String targetCopyRegions) {
+			this.targetCopyRegions = targetCopyRegions;
+		}
+
+		public Integer getCopiedSnapshotsRetentionDays() {
+			return this.copiedSnapshotsRetentionDays;
+		}
+
+		public void setCopiedSnapshotsRetentionDays(Integer copiedSnapshotsRetentionDays) {
+			this.copiedSnapshotsRetentionDays = copiedSnapshotsRetentionDays;
 		}
 
 		public List<Tag> getTags() {

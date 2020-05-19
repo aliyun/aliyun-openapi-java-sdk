@@ -97,13 +97,25 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			private String startTime;
 
+			private String stopTime;
+
 			private String finishedTime;
+
+			private Integer repeats;
 
 			private String output;
 
+			private Integer dropped;
+
 			private String invokeRecordStatus;
 
+			private String invocationStatus;
+
 			private Long exitCode;
+
+			private String errorCode;
+
+			private String errorInfo;
 
 			public String getCommandId() {
 				return this.commandId;
@@ -137,12 +149,28 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
+			public String getStopTime() {
+				return this.stopTime;
+			}
+
+			public void setStopTime(String stopTime) {
+				this.stopTime = stopTime;
+			}
+
 			public String getFinishedTime() {
 				return this.finishedTime;
 			}
 
 			public void setFinishedTime(String finishedTime) {
 				this.finishedTime = finishedTime;
+			}
+
+			public Integer getRepeats() {
+				return this.repeats;
+			}
+
+			public void setRepeats(Integer repeats) {
+				this.repeats = repeats;
 			}
 
 			public String getOutput() {
@@ -153,6 +181,14 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 				this.output = output;
 			}
 
+			public Integer getDropped() {
+				return this.dropped;
+			}
+
+			public void setDropped(Integer dropped) {
+				this.dropped = dropped;
+			}
+
 			public String getInvokeRecordStatus() {
 				return this.invokeRecordStatus;
 			}
@@ -161,12 +197,36 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 				this.invokeRecordStatus = invokeRecordStatus;
 			}
 
+			public String getInvocationStatus() {
+				return this.invocationStatus;
+			}
+
+			public void setInvocationStatus(String invocationStatus) {
+				this.invocationStatus = invocationStatus;
+			}
+
 			public Long getExitCode() {
 				return this.exitCode;
 			}
 
 			public void setExitCode(Long exitCode) {
 				this.exitCode = exitCode;
+			}
+
+			public String getErrorCode() {
+				return this.errorCode;
+			}
+
+			public void setErrorCode(String errorCode) {
+				this.errorCode = errorCode;
+			}
+
+			public String getErrorInfo() {
+				return this.errorInfo;
+			}
+
+			public void setErrorInfo(String errorInfo) {
+				this.errorInfo = errorInfo;
 			}
 		}
 	}
