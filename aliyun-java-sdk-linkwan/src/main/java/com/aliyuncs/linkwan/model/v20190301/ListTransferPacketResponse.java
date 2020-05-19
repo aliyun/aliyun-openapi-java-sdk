@@ -16,18 +16,22 @@ package com.aliyuncs.linkwan.model.v20190301;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkwan.transform.v20190301.ListNodeGroupTransferPacketsResponseUnmarshaller;
+import com.aliyuncs.linkwan.transform.v20190301.ListTransferPacketResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListNodeGroupTransferPacketsResponse extends AcsResponse {
+public class ListTransferPacketResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
+
+	private String code;
+
+	private String errorMessage;
 
 	private Data data;
 
@@ -45,6 +49,22 @@ public class ListNodeGroupTransferPacketsResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Data getData() {
@@ -97,8 +117,6 @@ public class ListNodeGroupTransferPacketsResponse extends AcsResponse {
 
 			private Integer fPort;
 
-			private String gwOwnerAliyunId;
-
 			private Long freqBandPlanGroupId;
 
 			private Long logMillis;
@@ -115,11 +133,9 @@ public class ListNodeGroupTransferPacketsResponse extends AcsResponse {
 
 			private String messageType;
 
-			private String macCommandCIDs;
+			private Long fcntDown;
 
 			private Long fcntUp;
-
-			private Long fcntDown;
 
 			public String getGwEui() {
 				return this.gwEui;
@@ -193,14 +209,6 @@ public class ListNodeGroupTransferPacketsResponse extends AcsResponse {
 				this.fPort = fPort;
 			}
 
-			public String getGwOwnerAliyunId() {
-				return this.gwOwnerAliyunId;
-			}
-
-			public void setGwOwnerAliyunId(String gwOwnerAliyunId) {
-				this.gwOwnerAliyunId = gwOwnerAliyunId;
-			}
-
 			public Long getFreqBandPlanGroupId() {
 				return this.freqBandPlanGroupId;
 			}
@@ -265,12 +273,12 @@ public class ListNodeGroupTransferPacketsResponse extends AcsResponse {
 				this.messageType = messageType;
 			}
 
-			public String getMacCommandCIDs() {
-				return this.macCommandCIDs;
+			public Long getFcntDown() {
+				return this.fcntDown;
 			}
 
-			public void setMacCommandCIDs(String macCommandCIDs) {
-				this.macCommandCIDs = macCommandCIDs;
+			public void setFcntDown(Long fcntDown) {
+				this.fcntDown = fcntDown;
 			}
 
 			public Long getFcntUp() {
@@ -280,24 +288,11 @@ public class ListNodeGroupTransferPacketsResponse extends AcsResponse {
 			public void setFcntUp(Long fcntUp) {
 				this.fcntUp = fcntUp;
 			}
-
-			public Long getFcntDown() {
-				return this.fcntDown;
-			}
-
-			public void setFcntDown(Long fcntDown) {
-				this.fcntDown = fcntDown;
-			}
 		}
 	}
 
 	@Override
-	public ListNodeGroupTransferPacketsResponse getInstance(UnmarshallerContext context) {
-		return	ListNodeGroupTransferPacketsResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public ListTransferPacketResponse getInstance(UnmarshallerContext context) {
+		return	ListTransferPacketResponseUnmarshaller.unmarshall(this, context);
 	}
 }

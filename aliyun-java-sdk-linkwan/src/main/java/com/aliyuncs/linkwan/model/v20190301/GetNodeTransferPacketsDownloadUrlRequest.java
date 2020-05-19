@@ -15,7 +15,6 @@
 package com.aliyuncs.linkwan.model.v20190301;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.linkwan.Endpoint;
 
@@ -26,9 +25,11 @@ import com.aliyuncs.linkwan.Endpoint;
 public class GetNodeTransferPacketsDownloadUrlRequest extends RpcAcsRequest<GetNodeTransferPacketsDownloadUrlResponse> {
 	   
 
+	private Long endMillis;
+
 	private String gwEui;
 
-	private Long endMillis;
+	private Boolean ascending;
 
 	private String devEui;
 
@@ -37,16 +38,24 @@ public class GetNodeTransferPacketsDownloadUrlRequest extends RpcAcsRequest<GetN
 	private Long beginMillis;
 
 	private String sortingField;
-
-	private Boolean ascending;
 	public GetNodeTransferPacketsDownloadUrlRequest() {
 		super("LinkWAN", "2019-03-01", "GetNodeTransferPacketsDownloadUrl", "linkwan");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getEndMillis() {
+		return this.endMillis;
+	}
+
+	public void setEndMillis(Long endMillis) {
+		this.endMillis = endMillis;
+		if(endMillis != null){
+			putQueryParameter("EndMillis", endMillis.toString());
+		}
 	}
 
 	public String getGwEui() {
@@ -60,14 +69,14 @@ public class GetNodeTransferPacketsDownloadUrlRequest extends RpcAcsRequest<GetN
 		}
 	}
 
-	public Long getEndMillis() {
-		return this.endMillis;
+	public Boolean getAscending() {
+		return this.ascending;
 	}
 
-	public void setEndMillis(Long endMillis) {
-		this.endMillis = endMillis;
-		if(endMillis != null){
-			putQueryParameter("EndMillis", endMillis.toString());
+	public void setAscending(Boolean ascending) {
+		this.ascending = ascending;
+		if(ascending != null){
+			putQueryParameter("Ascending", ascending.toString());
 		}
 	}
 
@@ -112,17 +121,6 @@ public class GetNodeTransferPacketsDownloadUrlRequest extends RpcAcsRequest<GetN
 		this.sortingField = sortingField;
 		if(sortingField != null){
 			putQueryParameter("SortingField", sortingField);
-		}
-	}
-
-	public Boolean getAscending() {
-		return this.ascending;
-	}
-
-	public void setAscending(Boolean ascending) {
-		this.ascending = ascending;
-		if(ascending != null){
-			putQueryParameter("Ascending", ascending.toString());
 		}
 	}
 

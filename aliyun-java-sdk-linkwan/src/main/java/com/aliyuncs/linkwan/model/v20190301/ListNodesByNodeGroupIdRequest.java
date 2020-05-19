@@ -26,17 +26,17 @@ import com.aliyuncs.linkwan.Endpoint;
 public class ListNodesByNodeGroupIdRequest extends RpcAcsRequest<ListNodesByNodeGroupIdResponse> {
 	   
 
-	private Long offset;
-
-	private String nodeGroupId;
-
 	private String fuzzyDevEui;
 
 	private Long limit;
 
-	private String sortingField;
+	private Long offset;
 
 	private Boolean ascending;
+
+	private String nodeGroupId;
+
+	private String sortingField;
 	public ListNodesByNodeGroupIdRequest() {
 		super("LinkWAN", "2019-03-01", "ListNodesByNodeGroupId", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -45,28 +45,6 @@ public class ListNodesByNodeGroupIdRequest extends RpcAcsRequest<ListNodesByNode
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOffset() {
-		return this.offset;
-	}
-
-	public void setOffset(Long offset) {
-		this.offset = offset;
-		if(offset != null){
-			putQueryParameter("Offset", offset.toString());
-		}
-	}
-
-	public String getNodeGroupId() {
-		return this.nodeGroupId;
-	}
-
-	public void setNodeGroupId(String nodeGroupId) {
-		this.nodeGroupId = nodeGroupId;
-		if(nodeGroupId != null){
-			putQueryParameter("NodeGroupId", nodeGroupId);
-		}
 	}
 
 	public String getFuzzyDevEui() {
@@ -91,14 +69,14 @@ public class ListNodesByNodeGroupIdRequest extends RpcAcsRequest<ListNodesByNode
 		}
 	}
 
-	public String getSortingField() {
-		return this.sortingField;
+	public Long getOffset() {
+		return this.offset;
 	}
 
-	public void setSortingField(String sortingField) {
-		this.sortingField = sortingField;
-		if(sortingField != null){
-			putQueryParameter("SortingField", sortingField);
+	public void setOffset(Long offset) {
+		this.offset = offset;
+		if(offset != null){
+			putQueryParameter("Offset", offset.toString());
 		}
 	}
 
@@ -110,6 +88,28 @@ public class ListNodesByNodeGroupIdRequest extends RpcAcsRequest<ListNodesByNode
 		this.ascending = ascending;
 		if(ascending != null){
 			putQueryParameter("Ascending", ascending.toString());
+		}
+	}
+
+	public String getNodeGroupId() {
+		return this.nodeGroupId;
+	}
+
+	public void setNodeGroupId(String nodeGroupId) {
+		this.nodeGroupId = nodeGroupId;
+		if(nodeGroupId != null){
+			putQueryParameter("NodeGroupId", nodeGroupId);
+		}
+	}
+
+	public String getSortingField() {
+		return this.sortingField;
+	}
+
+	public void setSortingField(String sortingField) {
+		this.sortingField = sortingField;
+		if(sortingField != null){
+			putQueryParameter("SortingField", sortingField);
 		}
 	}
 

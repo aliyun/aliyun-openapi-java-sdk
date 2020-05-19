@@ -28,9 +28,9 @@ public class UpdateOwnedLocalJoinPermissionRequest extends RpcAcsRequest<UpdateO
 
 	private String rxDelay;
 
-	private String classMode;
-
 	private String joinPermissionId;
+
+	private String classMode;
 
 	private Long freqBandPlanGroupId;
 
@@ -58,17 +58,6 @@ public class UpdateOwnedLocalJoinPermissionRequest extends RpcAcsRequest<UpdateO
 		}
 	}
 
-	public String getClassMode() {
-		return this.classMode;
-	}
-
-	public void setClassMode(String classMode) {
-		this.classMode = classMode;
-		if(classMode != null){
-			putQueryParameter("ClassMode", classMode);
-		}
-	}
-
 	public String getJoinPermissionId() {
 		return this.joinPermissionId;
 	}
@@ -77,6 +66,17 @@ public class UpdateOwnedLocalJoinPermissionRequest extends RpcAcsRequest<UpdateO
 		this.joinPermissionId = joinPermissionId;
 		if(joinPermissionId != null){
 			putQueryParameter("JoinPermissionId", joinPermissionId);
+		}
+	}
+
+	public String getClassMode() {
+		return this.classMode;
+	}
+
+	public void setClassMode(String classMode) {
+		this.classMode = classMode;
+		if(classMode != null){
+			putQueryParameter("ClassMode", classMode);
 		}
 	}
 

@@ -22,14 +22,14 @@ import com.aliyuncs.linkwan.Endpoint;
  * @author auto create
  * @version 
  */
-public class SubmitGatewayTupleOrderRequest extends RpcAcsRequest<SubmitGatewayTupleOrderResponse> {
+public class UpdateNodeEnablingStateRequest extends RpcAcsRequest<UpdateNodeEnablingStateResponse> {
 	   
 
-	private String tupleType;
+	private String devEui;
 
-	private Long requiredCount;
-	public SubmitGatewayTupleOrderRequest() {
-		super("LinkWAN", "2019-03-01", "SubmitGatewayTupleOrder", "linkwan");
+	private Boolean isEnable;
+	public UpdateNodeEnablingStateRequest() {
+		super("LinkWAN", "2019-03-01", "UpdateNodeEnablingState", "linkwan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class SubmitGatewayTupleOrderRequest extends RpcAcsRequest<SubmitGatewayT
 		} catch (Exception e) {}
 	}
 
-	public String getTupleType() {
-		return this.tupleType;
+	public String getDevEui() {
+		return this.devEui;
 	}
 
-	public void setTupleType(String tupleType) {
-		this.tupleType = tupleType;
-		if(tupleType != null){
-			putQueryParameter("TupleType", tupleType);
+	public void setDevEui(String devEui) {
+		this.devEui = devEui;
+		if(devEui != null){
+			putQueryParameter("DevEui", devEui);
 		}
 	}
 
-	public Long getRequiredCount() {
-		return this.requiredCount;
+	public Boolean getIsEnable() {
+		return this.isEnable;
 	}
 
-	public void setRequiredCount(Long requiredCount) {
-		this.requiredCount = requiredCount;
-		if(requiredCount != null){
-			putQueryParameter("RequiredCount", requiredCount.toString());
+	public void setIsEnable(Boolean isEnable) {
+		this.isEnable = isEnable;
+		if(isEnable != null){
+			putQueryParameter("IsEnable", isEnable.toString());
 		}
 	}
 
 	@Override
-	public Class<SubmitGatewayTupleOrderResponse> getResponseClass() {
-		return SubmitGatewayTupleOrderResponse.class;
+	public Class<UpdateNodeEnablingStateResponse> getResponseClass() {
+		return UpdateNodeEnablingStateResponse.class;
 	}
 
 }

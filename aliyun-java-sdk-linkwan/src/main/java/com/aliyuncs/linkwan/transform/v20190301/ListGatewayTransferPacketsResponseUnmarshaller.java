@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.linkwan.model.v20190301.ListGatewayTransferPacketsResponse;
 import com.aliyuncs.linkwan.model.v20190301.ListGatewayTransferPacketsResponse.Data;
 import com.aliyuncs.linkwan.model.v20190301.ListGatewayTransferPacketsResponse.Data.Packet;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -54,10 +55,7 @@ public class ListGatewayTransferPacketsResponseUnmarshaller {
 			packet.setMessageType(_ctx.stringValue("ListGatewayTransferPacketsResponse.Data.List["+ i +"].MessageType"));
 			packet.setNodeOwnerAliyunId(_ctx.stringValue("ListGatewayTransferPacketsResponse.Data.List["+ i +"].NodeOwnerAliyunId"));
 
-			List<String> macCommandCIDs = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListGatewayTransferPacketsResponse.Data.List["+ i +"].MacCommandCIDs.Length"); j++) {
-				macCommandCIDs.add(_ctx.stringValue("ListGatewayTransferPacketsResponse.Data.List["+ i +"].MacCommandCIDs["+ j +"]"));
-			}
+			List<Map<Object, Object>> macCommandCIDs = _ctx.listMapValue("ListGatewayTransferPacketsResponse.Data.List["+ i +"].MacCommandCIDs");
 			packet.setMacCommandCIDs(macCommandCIDs);
 
 			list.add(packet);

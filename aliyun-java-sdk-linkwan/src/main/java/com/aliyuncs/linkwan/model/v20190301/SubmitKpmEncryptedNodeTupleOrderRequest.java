@@ -15,7 +15,6 @@
 package com.aliyuncs.linkwan.model.v20190301;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.linkwan.Endpoint;
 
@@ -28,12 +27,11 @@ public class SubmitKpmEncryptedNodeTupleOrderRequest extends RpcAcsRequest<Submi
 
 	private String loraVersion;
 
-	private Long requiredCount;
-
 	private String tupleType;
+
+	private Long requiredCount;
 	public SubmitKpmEncryptedNodeTupleOrderRequest() {
 		super("LinkWAN", "2019-03-01", "SubmitKpmEncryptedNodeTupleOrder", "linkwan");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,17 +50,6 @@ public class SubmitKpmEncryptedNodeTupleOrderRequest extends RpcAcsRequest<Submi
 		}
 	}
 
-	public Long getRequiredCount() {
-		return this.requiredCount;
-	}
-
-	public void setRequiredCount(Long requiredCount) {
-		this.requiredCount = requiredCount;
-		if(requiredCount != null){
-			putQueryParameter("RequiredCount", requiredCount.toString());
-		}
-	}
-
 	public String getTupleType() {
 		return this.tupleType;
 	}
@@ -71,6 +58,17 @@ public class SubmitKpmEncryptedNodeTupleOrderRequest extends RpcAcsRequest<Submi
 		this.tupleType = tupleType;
 		if(tupleType != null){
 			putQueryParameter("TupleType", tupleType);
+		}
+	}
+
+	public Long getRequiredCount() {
+		return this.requiredCount;
+	}
+
+	public void setRequiredCount(Long requiredCount) {
+		this.requiredCount = requiredCount;
+		if(requiredCount != null){
+			putQueryParameter("RequiredCount", requiredCount.toString());
 		}
 	}
 

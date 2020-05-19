@@ -15,18 +15,22 @@
 package com.aliyuncs.linkwan.model.v20190301;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkwan.transform.v20190301.GetNodeResponseUnmarshaller;
+import com.aliyuncs.linkwan.transform.v20190301.GetUserNetProfileDescriptionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetNodeResponse extends AcsResponse {
+public class GetUserNetProfileDescriptionResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
+
+	private String code;
+
+	private String errorMessage;
 
 	private Data data;
 
@@ -46,6 +50,22 @@ public class GetNodeResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -56,70 +76,30 @@ public class GetNodeResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String devEui;
+		private Boolean isolated;
 
-		private String devAddr;
+		private Long isoUpdatedRemainingSec;
 
-		private String classMode;
-
-		private Long lastJoinMillis;
-
-		private Long boundMillis;
-
-		private String authTypes;
-
-		public String getDevEui() {
-			return this.devEui;
+		public Boolean getIsolated() {
+			return this.isolated;
 		}
 
-		public void setDevEui(String devEui) {
-			this.devEui = devEui;
+		public void setIsolated(Boolean isolated) {
+			this.isolated = isolated;
 		}
 
-		public String getDevAddr() {
-			return this.devAddr;
+		public Long getIsoUpdatedRemainingSec() {
+			return this.isoUpdatedRemainingSec;
 		}
 
-		public void setDevAddr(String devAddr) {
-			this.devAddr = devAddr;
-		}
-
-		public String getClassMode() {
-			return this.classMode;
-		}
-
-		public void setClassMode(String classMode) {
-			this.classMode = classMode;
-		}
-
-		public Long getLastJoinMillis() {
-			return this.lastJoinMillis;
-		}
-
-		public void setLastJoinMillis(Long lastJoinMillis) {
-			this.lastJoinMillis = lastJoinMillis;
-		}
-
-		public Long getBoundMillis() {
-			return this.boundMillis;
-		}
-
-		public void setBoundMillis(Long boundMillis) {
-			this.boundMillis = boundMillis;
-		}
-
-		public String getAuthTypes() {
-			return this.authTypes;
-		}
-
-		public void setAuthTypes(String authTypes) {
-			this.authTypes = authTypes;
+		public void setIsoUpdatedRemainingSec(Long isoUpdatedRemainingSec) {
+			this.isoUpdatedRemainingSec = isoUpdatedRemainingSec;
 		}
 	}
 
 	@Override
-	public GetNodeResponse getInstance(UnmarshallerContext context) {
-		return	GetNodeResponseUnmarshaller.unmarshall(this, context);
+	public GetUserNetProfileDescriptionResponse getInstance(UnmarshallerContext context) {
+		return	GetUserNetProfileDescriptionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

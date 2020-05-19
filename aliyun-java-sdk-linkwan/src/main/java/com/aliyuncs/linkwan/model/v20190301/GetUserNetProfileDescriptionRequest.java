@@ -22,14 +22,10 @@ import com.aliyuncs.linkwan.Endpoint;
  * @author auto create
  * @version 
  */
-public class SubmitGatewayTupleOrderRequest extends RpcAcsRequest<SubmitGatewayTupleOrderResponse> {
+public class GetUserNetProfileDescriptionRequest extends RpcAcsRequest<GetUserNetProfileDescriptionResponse> {
 	   
-
-	private String tupleType;
-
-	private Long requiredCount;
-	public SubmitGatewayTupleOrderRequest() {
-		super("LinkWAN", "2019-03-01", "SubmitGatewayTupleOrder", "linkwan");
+	public GetUserNetProfileDescriptionRequest() {
+		super("LinkWAN", "2019-03-01", "GetUserNetProfileDescription", "linkwan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +33,9 @@ public class SubmitGatewayTupleOrderRequest extends RpcAcsRequest<SubmitGatewayT
 		} catch (Exception e) {}
 	}
 
-	public String getTupleType() {
-		return this.tupleType;
-	}
-
-	public void setTupleType(String tupleType) {
-		this.tupleType = tupleType;
-		if(tupleType != null){
-			putQueryParameter("TupleType", tupleType);
-		}
-	}
-
-	public Long getRequiredCount() {
-		return this.requiredCount;
-	}
-
-	public void setRequiredCount(Long requiredCount) {
-		this.requiredCount = requiredCount;
-		if(requiredCount != null){
-			putQueryParameter("RequiredCount", requiredCount.toString());
-		}
-	}
-
 	@Override
-	public Class<SubmitGatewayTupleOrderResponse> getResponseClass() {
-		return SubmitGatewayTupleOrderResponse.class;
+	public Class<GetUserNetProfileDescriptionResponse> getResponseClass() {
+		return GetUserNetProfileDescriptionResponse.class;
 	}
 
 }

@@ -26,15 +26,15 @@ import com.aliyuncs.linkwan.Endpoint;
 public class ListGatewayOnlineRecordsRequest extends RpcAcsRequest<ListGatewayOnlineRecordsResponse> {
 	   
 
-	private Long offSet;
-
 	private Long limit;
+
+	private Long offSet;
 
 	private String gwEui;
 
-	private String sortingField;
-
 	private Boolean ascending;
+
+	private String sortingField;
 	public ListGatewayOnlineRecordsRequest() {
 		super("LinkWAN", "2019-03-01", "ListGatewayOnlineRecords", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -45,17 +45,6 @@ public class ListGatewayOnlineRecordsRequest extends RpcAcsRequest<ListGatewayOn
 		} catch (Exception e) {}
 	}
 
-	public Long getOffSet() {
-		return this.offSet;
-	}
-
-	public void setOffSet(Long offSet) {
-		this.offSet = offSet;
-		if(offSet != null){
-			putQueryParameter("OffSet", offSet.toString());
-		}
-	}
-
 	public Long getLimit() {
 		return this.limit;
 	}
@@ -64,6 +53,17 @@ public class ListGatewayOnlineRecordsRequest extends RpcAcsRequest<ListGatewayOn
 		this.limit = limit;
 		if(limit != null){
 			putQueryParameter("Limit", limit.toString());
+		}
+	}
+
+	public Long getOffSet() {
+		return this.offSet;
+	}
+
+	public void setOffSet(Long offSet) {
+		this.offSet = offSet;
+		if(offSet != null){
+			putQueryParameter("OffSet", offSet.toString());
 		}
 	}
 
@@ -78,17 +78,6 @@ public class ListGatewayOnlineRecordsRequest extends RpcAcsRequest<ListGatewayOn
 		}
 	}
 
-	public String getSortingField() {
-		return this.sortingField;
-	}
-
-	public void setSortingField(String sortingField) {
-		this.sortingField = sortingField;
-		if(sortingField != null){
-			putQueryParameter("SortingField", sortingField);
-		}
-	}
-
 	public Boolean getAscending() {
 		return this.ascending;
 	}
@@ -97,6 +86,17 @@ public class ListGatewayOnlineRecordsRequest extends RpcAcsRequest<ListGatewayOn
 		this.ascending = ascending;
 		if(ascending != null){
 			putQueryParameter("Ascending", ascending.toString());
+		}
+	}
+
+	public String getSortingField() {
+		return this.sortingField;
+	}
+
+	public void setSortingField(String sortingField) {
+		this.sortingField = sortingField;
+		if(sortingField != null){
+			putQueryParameter("SortingField", sortingField);
 		}
 	}
 

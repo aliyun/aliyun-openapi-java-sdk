@@ -26,9 +26,9 @@ import com.aliyuncs.linkwan.Endpoint;
 public class UnbindJoinPermissionFromNodeGroupRequest extends RpcAcsRequest<UnbindJoinPermissionFromNodeGroupResponse> {
 	   
 
-	private String nodeGroupId;
-
 	private String joinPermissionId;
+
+	private String nodeGroupId;
 	public UnbindJoinPermissionFromNodeGroupRequest() {
 		super("LinkWAN", "2019-03-01", "UnbindJoinPermissionFromNodeGroup", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -39,17 +39,6 @@ public class UnbindJoinPermissionFromNodeGroupRequest extends RpcAcsRequest<Unbi
 		} catch (Exception e) {}
 	}
 
-	public String getNodeGroupId() {
-		return this.nodeGroupId;
-	}
-
-	public void setNodeGroupId(String nodeGroupId) {
-		this.nodeGroupId = nodeGroupId;
-		if(nodeGroupId != null){
-			putQueryParameter("NodeGroupId", nodeGroupId);
-		}
-	}
-
 	public String getJoinPermissionId() {
 		return this.joinPermissionId;
 	}
@@ -58,6 +47,17 @@ public class UnbindJoinPermissionFromNodeGroupRequest extends RpcAcsRequest<Unbi
 		this.joinPermissionId = joinPermissionId;
 		if(joinPermissionId != null){
 			putQueryParameter("JoinPermissionId", joinPermissionId);
+		}
+	}
+
+	public String getNodeGroupId() {
+		return this.nodeGroupId;
+	}
+
+	public void setNodeGroupId(String nodeGroupId) {
+		this.nodeGroupId = nodeGroupId;
+		if(nodeGroupId != null){
+			putQueryParameter("NodeGroupId", nodeGroupId);
 		}
 	}
 

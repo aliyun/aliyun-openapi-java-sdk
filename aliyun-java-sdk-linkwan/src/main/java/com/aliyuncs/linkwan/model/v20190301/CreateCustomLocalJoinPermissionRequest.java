@@ -15,7 +15,6 @@
 package com.aliyuncs.linkwan.model.v20190301;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.linkwan.Endpoint;
 
@@ -35,7 +34,6 @@ public class CreateCustomLocalJoinPermissionRequest extends RpcAcsRequest<Create
 	private String joinPermissionName;
 	public CreateCustomLocalJoinPermissionRequest() {
 		super("LinkWAN", "2019-03-01", "CreateCustomLocalJoinPermission", "linkwan");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

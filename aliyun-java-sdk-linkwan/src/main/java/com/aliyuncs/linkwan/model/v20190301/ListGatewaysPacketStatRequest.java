@@ -28,9 +28,9 @@ public class ListGatewaysPacketStatRequest extends RpcAcsRequest<ListGatewaysPac
 
 	private Long endMillis;
 
-	private Long beginMillis;
-
 	private List<String> gwEuiLists;
+
+	private Long beginMillis;
 	public ListGatewaysPacketStatRequest() {
 		super("LinkWAN", "2019-03-01", "ListGatewaysPacketStat", "linkwan");
 		setMethod(MethodType.POST);
@@ -51,17 +51,6 @@ public class ListGatewaysPacketStatRequest extends RpcAcsRequest<ListGatewaysPac
 		}
 	}
 
-	public Long getBeginMillis() {
-		return this.beginMillis;
-	}
-
-	public void setBeginMillis(Long beginMillis) {
-		this.beginMillis = beginMillis;
-		if(beginMillis != null){
-			putQueryParameter("BeginMillis", beginMillis.toString());
-		}
-	}
-
 	public List<String> getGwEuiLists() {
 		return this.gwEuiLists;
 	}
@@ -73,6 +62,17 @@ public class ListGatewaysPacketStatRequest extends RpcAcsRequest<ListGatewaysPac
 				putQueryParameter("GwEuiList." + (i + 1) , gwEuiLists.get(i));
 			}
 		}	
+	}
+
+	public Long getBeginMillis() {
+		return this.beginMillis;
+	}
+
+	public void setBeginMillis(Long beginMillis) {
+		this.beginMillis = beginMillis;
+		if(beginMillis != null){
+			putQueryParameter("BeginMillis", beginMillis.toString());
+		}
 	}
 
 	@Override

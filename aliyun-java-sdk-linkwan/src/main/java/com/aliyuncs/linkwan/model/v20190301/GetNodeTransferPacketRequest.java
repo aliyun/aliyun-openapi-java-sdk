@@ -26,11 +26,11 @@ import com.aliyuncs.linkwan.Endpoint;
 public class GetNodeTransferPacketRequest extends RpcAcsRequest<GetNodeTransferPacketResponse> {
 	   
 
-	private String devEui;
-
 	private String base64EncodedMacPayload;
 
 	private Long logMillis;
+
+	private String devEui;
 	public GetNodeTransferPacketRequest() {
 		super("LinkWAN", "2019-03-01", "GetNodeTransferPacket", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -39,17 +39,6 @@ public class GetNodeTransferPacketRequest extends RpcAcsRequest<GetNodeTransferP
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDevEui() {
-		return this.devEui;
-	}
-
-	public void setDevEui(String devEui) {
-		this.devEui = devEui;
-		if(devEui != null){
-			putQueryParameter("DevEui", devEui);
-		}
 	}
 
 	public String getBase64EncodedMacPayload() {
@@ -71,6 +60,17 @@ public class GetNodeTransferPacketRequest extends RpcAcsRequest<GetNodeTransferP
 		this.logMillis = logMillis;
 		if(logMillis != null){
 			putQueryParameter("LogMillis", logMillis.toString());
+		}
+	}
+
+	public String getDevEui() {
+		return this.devEui;
+	}
+
+	public void setDevEui(String devEui) {
+		this.devEui = devEui;
+		if(devEui != null){
+			putQueryParameter("DevEui", devEui);
 		}
 	}
 

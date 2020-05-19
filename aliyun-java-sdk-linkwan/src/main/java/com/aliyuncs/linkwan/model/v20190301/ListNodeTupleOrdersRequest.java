@@ -16,7 +16,6 @@ package com.aliyuncs.linkwan.model.v20190301;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.linkwan.Endpoint;
 
@@ -29,18 +28,17 @@ public class ListNodeTupleOrdersRequest extends RpcAcsRequest<ListNodeTupleOrder
 
 	private Boolean isKpm;
 
-	private Long offset;
-
 	private Long limit;
 
 	private List<String> states;
 
-	private String sortingField;
+	private Long offset;
 
 	private Boolean ascending;
+
+	private String sortingField;
 	public ListNodeTupleOrdersRequest() {
 		super("LinkWAN", "2019-03-01", "ListNodeTupleOrders", "linkwan");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,17 +54,6 @@ public class ListNodeTupleOrdersRequest extends RpcAcsRequest<ListNodeTupleOrder
 		this.isKpm = isKpm;
 		if(isKpm != null){
 			putQueryParameter("IsKpm", isKpm.toString());
-		}
-	}
-
-	public Long getOffset() {
-		return this.offset;
-	}
-
-	public void setOffset(Long offset) {
-		this.offset = offset;
-		if(offset != null){
-			putQueryParameter("Offset", offset.toString());
 		}
 	}
 
@@ -94,14 +81,14 @@ public class ListNodeTupleOrdersRequest extends RpcAcsRequest<ListNodeTupleOrder
 		}	
 	}
 
-	public String getSortingField() {
-		return this.sortingField;
+	public Long getOffset() {
+		return this.offset;
 	}
 
-	public void setSortingField(String sortingField) {
-		this.sortingField = sortingField;
-		if(sortingField != null){
-			putQueryParameter("SortingField", sortingField);
+	public void setOffset(Long offset) {
+		this.offset = offset;
+		if(offset != null){
+			putQueryParameter("Offset", offset.toString());
 		}
 	}
 
@@ -113,6 +100,17 @@ public class ListNodeTupleOrdersRequest extends RpcAcsRequest<ListNodeTupleOrder
 		this.ascending = ascending;
 		if(ascending != null){
 			putQueryParameter("Ascending", ascending.toString());
+		}
+	}
+
+	public String getSortingField() {
+		return this.sortingField;
+	}
+
+	public void setSortingField(String sortingField) {
+		this.sortingField = sortingField;
+		if(sortingField != null){
+			putQueryParameter("SortingField", sortingField);
 		}
 	}
 

@@ -28,9 +28,9 @@ public class ListNodeGroupsPacketStatRequest extends RpcAcsRequest<ListNodeGroup
 
 	private Long endMillis;
 
-	private Long beginMillis;
-
 	private List<String> nodeGroupIdLists;
+
+	private Long beginMillis;
 	public ListNodeGroupsPacketStatRequest() {
 		super("LinkWAN", "2019-03-01", "ListNodeGroupsPacketStat", "linkwan");
 		setMethod(MethodType.POST);
@@ -51,17 +51,6 @@ public class ListNodeGroupsPacketStatRequest extends RpcAcsRequest<ListNodeGroup
 		}
 	}
 
-	public Long getBeginMillis() {
-		return this.beginMillis;
-	}
-
-	public void setBeginMillis(Long beginMillis) {
-		this.beginMillis = beginMillis;
-		if(beginMillis != null){
-			putQueryParameter("BeginMillis", beginMillis.toString());
-		}
-	}
-
 	public List<String> getNodeGroupIdLists() {
 		return this.nodeGroupIdLists;
 	}
@@ -73,6 +62,17 @@ public class ListNodeGroupsPacketStatRequest extends RpcAcsRequest<ListNodeGroup
 				putQueryParameter("NodeGroupIdList." + (i + 1) , nodeGroupIdLists.get(i));
 			}
 		}	
+	}
+
+	public Long getBeginMillis() {
+		return this.beginMillis;
+	}
+
+	public void setBeginMillis(Long beginMillis) {
+		this.beginMillis = beginMillis;
+		if(beginMillis != null){
+			putQueryParameter("BeginMillis", beginMillis.toString());
+		}
 	}
 
 	@Override

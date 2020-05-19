@@ -27,21 +27,21 @@ import com.aliyuncs.linkwan.Endpoint;
 public class ListNotificationsRequest extends RpcAcsRequest<ListNotificationsResponse> {
 	   
 
-	private Long offset;
-
 	private Long endMillis;
 
-	private String handleState;
-
 	private Long limit;
+
+	private Long offset;
+
+	private Boolean ascending;
+
+	private String handleState;
 
 	private List<String> categorys;
 
 	private Long beginMillis;
 
 	private String sortingField;
-
-	private Boolean ascending;
 	public ListNotificationsRequest() {
 		super("LinkWAN", "2019-03-01", "ListNotifications", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -50,17 +50,6 @@ public class ListNotificationsRequest extends RpcAcsRequest<ListNotificationsRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOffset() {
-		return this.offset;
-	}
-
-	public void setOffset(Long offset) {
-		this.offset = offset;
-		if(offset != null){
-			putQueryParameter("Offset", offset.toString());
-		}
 	}
 
 	public Long getEndMillis() {
@@ -74,17 +63,6 @@ public class ListNotificationsRequest extends RpcAcsRequest<ListNotificationsRes
 		}
 	}
 
-	public String getHandleState() {
-		return this.handleState;
-	}
-
-	public void setHandleState(String handleState) {
-		this.handleState = handleState;
-		if(handleState != null){
-			putQueryParameter("HandleState", handleState);
-		}
-	}
-
 	public Long getLimit() {
 		return this.limit;
 	}
@@ -93,6 +71,39 @@ public class ListNotificationsRequest extends RpcAcsRequest<ListNotificationsRes
 		this.limit = limit;
 		if(limit != null){
 			putQueryParameter("Limit", limit.toString());
+		}
+	}
+
+	public Long getOffset() {
+		return this.offset;
+	}
+
+	public void setOffset(Long offset) {
+		this.offset = offset;
+		if(offset != null){
+			putQueryParameter("Offset", offset.toString());
+		}
+	}
+
+	public Boolean getAscending() {
+		return this.ascending;
+	}
+
+	public void setAscending(Boolean ascending) {
+		this.ascending = ascending;
+		if(ascending != null){
+			putQueryParameter("Ascending", ascending.toString());
+		}
+	}
+
+	public String getHandleState() {
+		return this.handleState;
+	}
+
+	public void setHandleState(String handleState) {
+		this.handleState = handleState;
+		if(handleState != null){
+			putQueryParameter("HandleState", handleState);
 		}
 	}
 
@@ -128,17 +139,6 @@ public class ListNotificationsRequest extends RpcAcsRequest<ListNotificationsRes
 		this.sortingField = sortingField;
 		if(sortingField != null){
 			putQueryParameter("SortingField", sortingField);
-		}
-	}
-
-	public Boolean getAscending() {
-		return this.ascending;
-	}
-
-	public void setAscending(Boolean ascending) {
-		this.ascending = ascending;
-		if(ascending != null){
-			putQueryParameter("Ascending", ascending.toString());
 		}
 	}
 

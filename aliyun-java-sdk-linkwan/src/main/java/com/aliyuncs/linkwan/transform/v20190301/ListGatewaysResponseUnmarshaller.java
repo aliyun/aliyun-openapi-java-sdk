@@ -56,12 +56,7 @@ public class ListGatewaysResponseUnmarshaller {
 			gateway.setOnlineStateChangedMillis(_ctx.longValue("ListGatewaysResponse.Data.List["+ i +"].OnlineStateChangedMillis"));
 			gateway.setEmbeddedNsId(_ctx.stringValue("ListGatewaysResponse.Data.List["+ i +"].EmbeddedNsId"));
 			gateway.setChargeStatus(_ctx.stringValue("ListGatewaysResponse.Data.List["+ i +"].ChargeStatus"));
-
-			List<String> authTypes = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListGatewaysResponse.Data.List["+ i +"].AuthTypes.Length"); j++) {
-				authTypes.add(_ctx.stringValue("ListGatewaysResponse.Data.List["+ i +"].AuthTypes["+ j +"]"));
-			}
-			gateway.setAuthTypes(authTypes);
+			gateway.setAuthTypes(_ctx.stringValue("ListGatewaysResponse.Data.List["+ i +"].AuthTypes"));
 
 			list.add(gateway);
 		}

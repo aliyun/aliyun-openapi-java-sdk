@@ -26,11 +26,11 @@ import com.aliyuncs.linkwan.Endpoint;
 public class CountNodeGroupsRequest extends RpcAcsRequest<CountNodeGroupsResponse> {
 	   
 
-	private String fuzzyName;
-
 	private String fuzzyJoinEui;
 
 	private String fuzzyDevEui;
+
+	private String fuzzyName;
 	public CountNodeGroupsRequest() {
 		super("LinkWAN", "2019-03-01", "CountNodeGroups", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -39,17 +39,6 @@ public class CountNodeGroupsRequest extends RpcAcsRequest<CountNodeGroupsRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFuzzyName() {
-		return this.fuzzyName;
-	}
-
-	public void setFuzzyName(String fuzzyName) {
-		this.fuzzyName = fuzzyName;
-		if(fuzzyName != null){
-			putQueryParameter("FuzzyName", fuzzyName);
-		}
 	}
 
 	public String getFuzzyJoinEui() {
@@ -71,6 +60,17 @@ public class CountNodeGroupsRequest extends RpcAcsRequest<CountNodeGroupsRespons
 		this.fuzzyDevEui = fuzzyDevEui;
 		if(fuzzyDevEui != null){
 			putQueryParameter("FuzzyDevEui", fuzzyDevEui);
+		}
+	}
+
+	public String getFuzzyName() {
+		return this.fuzzyName;
+	}
+
+	public void setFuzzyName(String fuzzyName) {
+		this.fuzzyName = fuzzyName;
+		if(fuzzyName != null){
+			putQueryParameter("FuzzyName", fuzzyName);
 		}
 	}
 

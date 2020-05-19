@@ -15,7 +15,6 @@
 package com.aliyuncs.linkwan.model.v20190301;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.linkwan.Endpoint;
 
@@ -34,6 +33,8 @@ public class ListNodeTransferPacketsRequest extends RpcAcsRequest<ListNodeTransf
 
 	private String gwEui;
 
+	private Boolean ascending;
+
 	private String devEui;
 
 	private String category;
@@ -41,11 +42,8 @@ public class ListNodeTransferPacketsRequest extends RpcAcsRequest<ListNodeTransf
 	private Long beginMillis;
 
 	private String sortingField;
-
-	private Boolean ascending;
 	public ListNodeTransferPacketsRequest() {
 		super("LinkWAN", "2019-03-01", "ListNodeTransferPackets", "linkwan");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -97,6 +95,17 @@ public class ListNodeTransferPacketsRequest extends RpcAcsRequest<ListNodeTransf
 		}
 	}
 
+	public Boolean getAscending() {
+		return this.ascending;
+	}
+
+	public void setAscending(Boolean ascending) {
+		this.ascending = ascending;
+		if(ascending != null){
+			putQueryParameter("Ascending", ascending.toString());
+		}
+	}
+
 	public String getDevEui() {
 		return this.devEui;
 	}
@@ -138,17 +147,6 @@ public class ListNodeTransferPacketsRequest extends RpcAcsRequest<ListNodeTransf
 		this.sortingField = sortingField;
 		if(sortingField != null){
 			putQueryParameter("SortingField", sortingField);
-		}
-	}
-
-	public Boolean getAscending() {
-		return this.ascending;
-	}
-
-	public void setAscending(Boolean ascending) {
-		this.ascending = ascending;
-		if(ascending != null){
-			putQueryParameter("Ascending", ascending.toString());
 		}
 	}
 

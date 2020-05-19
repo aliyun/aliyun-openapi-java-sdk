@@ -28,19 +28,19 @@ public class UpdateDataDispatchConfigRequest extends RpcAcsRequest<UpdateDataDis
 
 	private String uplinkTopic;
 
-	private String productKey;
-
 	private Boolean debugSwitch;
 
 	private String productType;
 
 	private String productName;
 
+	private String dataDispatchDestination;
+
 	private String uplinkRegionName;
 
-	private String nodeGroupId;
+	private String productKey;
 
-	private String dataDispatchDestination;
+	private String nodeGroupId;
 	public UpdateDataDispatchConfigRequest() {
 		super("LinkWAN", "2019-03-01", "UpdateDataDispatchConfig", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -59,17 +59,6 @@ public class UpdateDataDispatchConfigRequest extends RpcAcsRequest<UpdateDataDis
 		this.uplinkTopic = uplinkTopic;
 		if(uplinkTopic != null){
 			putQueryParameter("UplinkTopic", uplinkTopic);
-		}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
 		}
 	}
 
@@ -106,6 +95,17 @@ public class UpdateDataDispatchConfigRequest extends RpcAcsRequest<UpdateDataDis
 		}
 	}
 
+	public String getDataDispatchDestination() {
+		return this.dataDispatchDestination;
+	}
+
+	public void setDataDispatchDestination(String dataDispatchDestination) {
+		this.dataDispatchDestination = dataDispatchDestination;
+		if(dataDispatchDestination != null){
+			putQueryParameter("DataDispatchDestination", dataDispatchDestination);
+		}
+	}
+
 	public String getUplinkRegionName() {
 		return this.uplinkRegionName;
 	}
@@ -117,6 +117,17 @@ public class UpdateDataDispatchConfigRequest extends RpcAcsRequest<UpdateDataDis
 		}
 	}
 
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
 	public String getNodeGroupId() {
 		return this.nodeGroupId;
 	}
@@ -125,17 +136,6 @@ public class UpdateDataDispatchConfigRequest extends RpcAcsRequest<UpdateDataDis
 		this.nodeGroupId = nodeGroupId;
 		if(nodeGroupId != null){
 			putQueryParameter("NodeGroupId", nodeGroupId);
-		}
-	}
-
-	public String getDataDispatchDestination() {
-		return this.dataDispatchDestination;
-	}
-
-	public void setDataDispatchDestination(String dataDispatchDestination) {
-		this.dataDispatchDestination = dataDispatchDestination;
-		if(dataDispatchDestination != null){
-			putQueryParameter("DataDispatchDestination", dataDispatchDestination);
 		}
 	}
 

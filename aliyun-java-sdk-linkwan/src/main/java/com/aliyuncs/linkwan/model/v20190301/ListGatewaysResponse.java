@@ -119,7 +119,7 @@ public class ListGatewaysResponse extends AcsResponse {
 
 			private String chargeStatus;
 
-			private List<String> authTypes;
+			private String authTypes;
 
 			public String getGwEui() {
 				return this.gwEui;
@@ -281,11 +281,11 @@ public class ListGatewaysResponse extends AcsResponse {
 				this.chargeStatus = chargeStatus;
 			}
 
-			public List<String> getAuthTypes() {
+			public String getAuthTypes() {
 				return this.authTypes;
 			}
 
-			public void setAuthTypes(List<String> authTypes) {
+			public void setAuthTypes(String authTypes) {
 				this.authTypes = authTypes;
 			}
 		}

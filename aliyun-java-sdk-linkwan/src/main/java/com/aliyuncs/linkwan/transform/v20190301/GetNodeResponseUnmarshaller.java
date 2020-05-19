@@ -14,9 +14,6 @@
 
 package com.aliyuncs.linkwan.transform.v20190301;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.linkwan.model.v20190301.GetNodeResponse;
 import com.aliyuncs.linkwan.model.v20190301.GetNodeResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -35,12 +32,7 @@ public class GetNodeResponseUnmarshaller {
 		data.setClassMode(_ctx.stringValue("GetNodeResponse.Data.ClassMode"));
 		data.setLastJoinMillis(_ctx.longValue("GetNodeResponse.Data.LastJoinMillis"));
 		data.setBoundMillis(_ctx.longValue("GetNodeResponse.Data.BoundMillis"));
-
-		List<String> authTypes = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetNodeResponse.Data.AuthTypes.Length"); i++) {
-			authTypes.add(_ctx.stringValue("GetNodeResponse.Data.AuthTypes["+ i +"]"));
-		}
-		data.setAuthTypes(authTypes);
+		data.setAuthTypes(_ctx.stringValue("GetNodeResponse.Data.AuthTypes"));
 		getNodeResponse.setData(data);
 	 
 	 	return getNodeResponse;

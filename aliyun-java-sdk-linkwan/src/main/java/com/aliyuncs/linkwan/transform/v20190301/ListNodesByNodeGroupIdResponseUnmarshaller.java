@@ -42,12 +42,7 @@ public class ListNodesByNodeGroupIdResponseUnmarshaller {
 			node.setLastJoinMillis(_ctx.longValue("ListNodesByNodeGroupIdResponse.Data.List["+ i +"].LastJoinMillis"));
 			node.setBoundMillis(_ctx.longValue("ListNodesByNodeGroupIdResponse.Data.List["+ i +"].BoundMillis"));
 			node.setMulticastGroupId(_ctx.stringValue("ListNodesByNodeGroupIdResponse.Data.List["+ i +"].MulticastGroupId"));
-
-			List<String> authTypes = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListNodesByNodeGroupIdResponse.Data.List["+ i +"].AuthTypes.Length"); j++) {
-				authTypes.add(_ctx.stringValue("ListNodesByNodeGroupIdResponse.Data.List["+ i +"].AuthTypes["+ j +"]"));
-			}
-			node.setAuthTypes(authTypes);
+			node.setAuthTypes(_ctx.stringValue("ListNodesByNodeGroupIdResponse.Data.List["+ i +"].AuthTypes"));
 
 			list.add(node);
 		}

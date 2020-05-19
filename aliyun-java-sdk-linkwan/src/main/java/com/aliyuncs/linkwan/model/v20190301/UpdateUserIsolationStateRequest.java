@@ -22,14 +22,12 @@ import com.aliyuncs.linkwan.Endpoint;
  * @author auto create
  * @version 
  */
-public class SubmitGatewayTupleOrderRequest extends RpcAcsRequest<SubmitGatewayTupleOrderResponse> {
+public class UpdateUserIsolationStateRequest extends RpcAcsRequest<UpdateUserIsolationStateResponse> {
 	   
 
-	private String tupleType;
-
-	private Long requiredCount;
-	public SubmitGatewayTupleOrderRequest() {
-		super("LinkWAN", "2019-03-01", "SubmitGatewayTupleOrder", "linkwan");
+	private Boolean isolated;
+	public UpdateUserIsolationStateRequest() {
+		super("LinkWAN", "2019-03-01", "UpdateUserIsolationState", "linkwan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class SubmitGatewayTupleOrderRequest extends RpcAcsRequest<SubmitGatewayT
 		} catch (Exception e) {}
 	}
 
-	public String getTupleType() {
-		return this.tupleType;
+	public Boolean getIsolated() {
+		return this.isolated;
 	}
 
-	public void setTupleType(String tupleType) {
-		this.tupleType = tupleType;
-		if(tupleType != null){
-			putQueryParameter("TupleType", tupleType);
-		}
-	}
-
-	public Long getRequiredCount() {
-		return this.requiredCount;
-	}
-
-	public void setRequiredCount(Long requiredCount) {
-		this.requiredCount = requiredCount;
-		if(requiredCount != null){
-			putQueryParameter("RequiredCount", requiredCount.toString());
+	public void setIsolated(Boolean isolated) {
+		this.isolated = isolated;
+		if(isolated != null){
+			putQueryParameter("Isolated", isolated.toString());
 		}
 	}
 
 	@Override
-	public Class<SubmitGatewayTupleOrderResponse> getResponseClass() {
-		return SubmitGatewayTupleOrderResponse.class;
+	public Class<UpdateUserIsolationStateResponse> getResponseClass() {
+		return UpdateUserIsolationStateResponse.class;
 	}
 
 }

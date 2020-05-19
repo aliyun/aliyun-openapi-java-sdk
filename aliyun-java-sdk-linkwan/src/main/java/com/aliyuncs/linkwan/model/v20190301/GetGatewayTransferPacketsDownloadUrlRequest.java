@@ -26,9 +26,11 @@ import com.aliyuncs.linkwan.Endpoint;
 public class GetGatewayTransferPacketsDownloadUrlRequest extends RpcAcsRequest<GetGatewayTransferPacketsDownloadUrlResponse> {
 	   
 
+	private Long endMillis;
+
 	private String gwEui;
 
-	private Long endMillis;
+	private Boolean ascending;
 
 	private String devEui;
 
@@ -37,8 +39,6 @@ public class GetGatewayTransferPacketsDownloadUrlRequest extends RpcAcsRequest<G
 	private Long beginMillis;
 
 	private String sortingField;
-
-	private Boolean ascending;
 	public GetGatewayTransferPacketsDownloadUrlRequest() {
 		super("LinkWAN", "2019-03-01", "GetGatewayTransferPacketsDownloadUrl", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -47,6 +47,17 @@ public class GetGatewayTransferPacketsDownloadUrlRequest extends RpcAcsRequest<G
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getEndMillis() {
+		return this.endMillis;
+	}
+
+	public void setEndMillis(Long endMillis) {
+		this.endMillis = endMillis;
+		if(endMillis != null){
+			putQueryParameter("EndMillis", endMillis.toString());
+		}
 	}
 
 	public String getGwEui() {
@@ -60,14 +71,14 @@ public class GetGatewayTransferPacketsDownloadUrlRequest extends RpcAcsRequest<G
 		}
 	}
 
-	public Long getEndMillis() {
-		return this.endMillis;
+	public Boolean getAscending() {
+		return this.ascending;
 	}
 
-	public void setEndMillis(Long endMillis) {
-		this.endMillis = endMillis;
-		if(endMillis != null){
-			putQueryParameter("EndMillis", endMillis.toString());
+	public void setAscending(Boolean ascending) {
+		this.ascending = ascending;
+		if(ascending != null){
+			putQueryParameter("Ascending", ascending.toString());
 		}
 	}
 
@@ -112,17 +123,6 @@ public class GetGatewayTransferPacketsDownloadUrlRequest extends RpcAcsRequest<G
 		this.sortingField = sortingField;
 		if(sortingField != null){
 			putQueryParameter("SortingField", sortingField);
-		}
-	}
-
-	public Boolean getAscending() {
-		return this.ascending;
-	}
-
-	public void setAscending(Boolean ascending) {
-		this.ascending = ascending;
-		if(ascending != null){
-			putQueryParameter("Ascending", ascending.toString());
 		}
 	}
 

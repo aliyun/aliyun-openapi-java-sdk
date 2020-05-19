@@ -15,18 +15,22 @@
 package com.aliyuncs.linkwan.model.v20190301;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkwan.transform.v20190301.UpdateGatewayEnablingStateResponseUnmarshaller;
+import com.aliyuncs.linkwan.transform.v20190301.UpdateUserIsolationStateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateGatewayEnablingStateResponse extends AcsResponse {
+public class UpdateUserIsolationStateResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
+
+	private String code;
+
+	private String errorMessage;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,8 +48,24 @@ public class UpdateGatewayEnablingStateResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	@Override
-	public UpdateGatewayEnablingStateResponse getInstance(UnmarshallerContext context) {
-		return	UpdateGatewayEnablingStateResponseUnmarshaller.unmarshall(this, context);
+	public UpdateUserIsolationStateResponse getInstance(UnmarshallerContext context) {
+		return	UpdateUserIsolationStateResponseUnmarshaller.unmarshall(this, context);
 	}
 }

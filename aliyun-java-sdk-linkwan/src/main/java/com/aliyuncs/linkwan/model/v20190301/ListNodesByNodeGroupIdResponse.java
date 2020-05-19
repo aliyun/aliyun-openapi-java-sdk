@@ -91,7 +91,7 @@ public class ListNodesByNodeGroupIdResponse extends AcsResponse {
 
 			private String multicastGroupId;
 
-			private List<String> authTypes;
+			private String authTypes;
 
 			public String getDevEui() {
 				return this.devEui;
@@ -141,11 +141,11 @@ public class ListNodesByNodeGroupIdResponse extends AcsResponse {
 				this.multicastGroupId = multicastGroupId;
 			}
 
-			public List<String> getAuthTypes() {
+			public String getAuthTypes() {
 				return this.authTypes;
 			}
 
-			public void setAuthTypes(List<String> authTypes) {
+			public void setAuthTypes(String authTypes) {
 				this.authTypes = authTypes;
 			}
 		}

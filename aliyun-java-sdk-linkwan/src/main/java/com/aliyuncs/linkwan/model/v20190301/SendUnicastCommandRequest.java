@@ -15,7 +15,6 @@
 package com.aliyuncs.linkwan.model.v20190301;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.linkwan.Endpoint;
 
@@ -26,20 +25,19 @@ import com.aliyuncs.linkwan.Endpoint;
 public class SendUnicastCommandRequest extends RpcAcsRequest<SendUnicastCommandResponse> {
 	   
 
-	private String devEui;
+	private Boolean confirmed;
+
+	private String content;
 
 	private Integer maxRetries;
+
+	private String devEui;
 
 	private Boolean cleanUp;
 
 	private Integer fPort;
-
-	private Boolean confirmed;
-
-	private String content;
 	public SendUnicastCommandRequest() {
 		super("LinkWAN", "2019-03-01", "SendUnicastCommand", "linkwan");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,14 +45,25 @@ public class SendUnicastCommandRequest extends RpcAcsRequest<SendUnicastCommandR
 		} catch (Exception e) {}
 	}
 
-	public String getDevEui() {
-		return this.devEui;
+	public Boolean getConfirmed() {
+		return this.confirmed;
 	}
 
-	public void setDevEui(String devEui) {
-		this.devEui = devEui;
-		if(devEui != null){
-			putQueryParameter("DevEui", devEui);
+	public void setConfirmed(Boolean confirmed) {
+		this.confirmed = confirmed;
+		if(confirmed != null){
+			putQueryParameter("Confirmed", confirmed.toString());
+		}
+	}
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putQueryParameter("Content", content);
 		}
 	}
 
@@ -66,6 +75,17 @@ public class SendUnicastCommandRequest extends RpcAcsRequest<SendUnicastCommandR
 		this.maxRetries = maxRetries;
 		if(maxRetries != null){
 			putQueryParameter("MaxRetries", maxRetries.toString());
+		}
+	}
+
+	public String getDevEui() {
+		return this.devEui;
+	}
+
+	public void setDevEui(String devEui) {
+		this.devEui = devEui;
+		if(devEui != null){
+			putQueryParameter("DevEui", devEui);
 		}
 	}
 
@@ -88,28 +108,6 @@ public class SendUnicastCommandRequest extends RpcAcsRequest<SendUnicastCommandR
 		this.fPort = fPort;
 		if(fPort != null){
 			putQueryParameter("FPort", fPort.toString());
-		}
-	}
-
-	public Boolean getConfirmed() {
-		return this.confirmed;
-	}
-
-	public void setConfirmed(Boolean confirmed) {
-		this.confirmed = confirmed;
-		if(confirmed != null){
-			putQueryParameter("Confirmed", confirmed.toString());
-		}
-	}
-
-	public String getContent() {
-		return this.content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-		if(content != null){
-			putQueryParameter("Content", content);
 		}
 	}
 

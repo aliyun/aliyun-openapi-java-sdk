@@ -15,7 +15,6 @@
 package com.aliyuncs.linkwan.model.v20190301;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.linkwan.Endpoint;
 
@@ -26,36 +25,24 @@ import com.aliyuncs.linkwan.Endpoint;
 public class CountRentedJoinPermissionsRequest extends RpcAcsRequest<CountRentedJoinPermissionsResponse> {
 	   
 
-	private String fuzzyJoinPermissionName;
-
 	private String type;
 
 	private Boolean enabled;
 
-	private Boolean boundNodeGroup;
-
 	private String fuzzyJoinEui;
+
+	private String fuzzyJoinPermissionName;
+
+	private Boolean boundNodeGroup;
 
 	private String fuzzyOwnerAliyunId;
 	public CountRentedJoinPermissionsRequest() {
 		super("LinkWAN", "2019-03-01", "CountRentedJoinPermissions", "linkwan");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFuzzyJoinPermissionName() {
-		return this.fuzzyJoinPermissionName;
-	}
-
-	public void setFuzzyJoinPermissionName(String fuzzyJoinPermissionName) {
-		this.fuzzyJoinPermissionName = fuzzyJoinPermissionName;
-		if(fuzzyJoinPermissionName != null){
-			putQueryParameter("FuzzyJoinPermissionName", fuzzyJoinPermissionName);
-		}
 	}
 
 	public String getType() {
@@ -80,17 +67,6 @@ public class CountRentedJoinPermissionsRequest extends RpcAcsRequest<CountRented
 		}
 	}
 
-	public Boolean getBoundNodeGroup() {
-		return this.boundNodeGroup;
-	}
-
-	public void setBoundNodeGroup(Boolean boundNodeGroup) {
-		this.boundNodeGroup = boundNodeGroup;
-		if(boundNodeGroup != null){
-			putQueryParameter("BoundNodeGroup", boundNodeGroup.toString());
-		}
-	}
-
 	public String getFuzzyJoinEui() {
 		return this.fuzzyJoinEui;
 	}
@@ -99,6 +75,28 @@ public class CountRentedJoinPermissionsRequest extends RpcAcsRequest<CountRented
 		this.fuzzyJoinEui = fuzzyJoinEui;
 		if(fuzzyJoinEui != null){
 			putQueryParameter("FuzzyJoinEui", fuzzyJoinEui);
+		}
+	}
+
+	public String getFuzzyJoinPermissionName() {
+		return this.fuzzyJoinPermissionName;
+	}
+
+	public void setFuzzyJoinPermissionName(String fuzzyJoinPermissionName) {
+		this.fuzzyJoinPermissionName = fuzzyJoinPermissionName;
+		if(fuzzyJoinPermissionName != null){
+			putQueryParameter("FuzzyJoinPermissionName", fuzzyJoinPermissionName);
+		}
+	}
+
+	public Boolean getBoundNodeGroup() {
+		return this.boundNodeGroup;
+	}
+
+	public void setBoundNodeGroup(Boolean boundNodeGroup) {
+		this.boundNodeGroup = boundNodeGroup;
+		if(boundNodeGroup != null){
+			putQueryParameter("BoundNodeGroup", boundNodeGroup.toString());
 		}
 	}
 

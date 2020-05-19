@@ -28,11 +28,11 @@ public class ListNodeGroupTransferFlowStatsRequest extends RpcAcsRequest<ListNod
 
 	private Long endMillis;
 
-	private Long beginMillis;
+	private String timeIntervalUnit;
 
 	private String nodeGroupId;
 
-	private String timeIntervalUnit;
+	private Long beginMillis;
 	public ListNodeGroupTransferFlowStatsRequest() {
 		super("LinkWAN", "2019-03-01", "ListNodeGroupTransferFlowStats", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -54,14 +54,14 @@ public class ListNodeGroupTransferFlowStatsRequest extends RpcAcsRequest<ListNod
 		}
 	}
 
-	public Long getBeginMillis() {
-		return this.beginMillis;
+	public String getTimeIntervalUnit() {
+		return this.timeIntervalUnit;
 	}
 
-	public void setBeginMillis(Long beginMillis) {
-		this.beginMillis = beginMillis;
-		if(beginMillis != null){
-			putQueryParameter("BeginMillis", beginMillis.toString());
+	public void setTimeIntervalUnit(String timeIntervalUnit) {
+		this.timeIntervalUnit = timeIntervalUnit;
+		if(timeIntervalUnit != null){
+			putQueryParameter("TimeIntervalUnit", timeIntervalUnit);
 		}
 	}
 
@@ -76,14 +76,14 @@ public class ListNodeGroupTransferFlowStatsRequest extends RpcAcsRequest<ListNod
 		}
 	}
 
-	public String getTimeIntervalUnit() {
-		return this.timeIntervalUnit;
+	public Long getBeginMillis() {
+		return this.beginMillis;
 	}
 
-	public void setTimeIntervalUnit(String timeIntervalUnit) {
-		this.timeIntervalUnit = timeIntervalUnit;
-		if(timeIntervalUnit != null){
-			putQueryParameter("TimeIntervalUnit", timeIntervalUnit);
+	public void setBeginMillis(Long beginMillis) {
+		this.beginMillis = beginMillis;
+		if(beginMillis != null){
+			putQueryParameter("BeginMillis", beginMillis.toString());
 		}
 	}
 

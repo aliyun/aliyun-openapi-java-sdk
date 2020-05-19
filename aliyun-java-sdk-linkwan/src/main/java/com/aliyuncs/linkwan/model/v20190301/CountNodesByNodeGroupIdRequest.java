@@ -26,9 +26,9 @@ import com.aliyuncs.linkwan.Endpoint;
 public class CountNodesByNodeGroupIdRequest extends RpcAcsRequest<CountNodesByNodeGroupIdResponse> {
 	   
 
-	private String nodeGroupId;
-
 	private String fuzzyDevEui;
+
+	private String nodeGroupId;
 	public CountNodesByNodeGroupIdRequest() {
 		super("LinkWAN", "2019-03-01", "CountNodesByNodeGroupId", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -39,17 +39,6 @@ public class CountNodesByNodeGroupIdRequest extends RpcAcsRequest<CountNodesByNo
 		} catch (Exception e) {}
 	}
 
-	public String getNodeGroupId() {
-		return this.nodeGroupId;
-	}
-
-	public void setNodeGroupId(String nodeGroupId) {
-		this.nodeGroupId = nodeGroupId;
-		if(nodeGroupId != null){
-			putQueryParameter("NodeGroupId", nodeGroupId);
-		}
-	}
-
 	public String getFuzzyDevEui() {
 		return this.fuzzyDevEui;
 	}
@@ -58,6 +47,17 @@ public class CountNodesByNodeGroupIdRequest extends RpcAcsRequest<CountNodesByNo
 		this.fuzzyDevEui = fuzzyDevEui;
 		if(fuzzyDevEui != null){
 			putQueryParameter("FuzzyDevEui", fuzzyDevEui);
+		}
+	}
+
+	public String getNodeGroupId() {
+		return this.nodeGroupId;
+	}
+
+	public void setNodeGroupId(String nodeGroupId) {
+		this.nodeGroupId = nodeGroupId;
+		if(nodeGroupId != null){
+			putQueryParameter("NodeGroupId", nodeGroupId);
 		}
 	}
 

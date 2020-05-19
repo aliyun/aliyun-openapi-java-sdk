@@ -38,13 +38,13 @@ public class ListRentedJoinPermissionsRequest extends RpcAcsRequest<ListRentedJo
 
 	private Long offset;
 
+	private Boolean ascending;
+
 	private Boolean boundNodeGroup;
 
 	private String fuzzyOwnerAliyunId;
 
 	private String sortingField;
-
-	private Boolean ascending;
 	public ListRentedJoinPermissionsRequest() {
 		super("LinkWAN", "2019-03-01", "ListRentedJoinPermissions", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -121,6 +121,17 @@ public class ListRentedJoinPermissionsRequest extends RpcAcsRequest<ListRentedJo
 		}
 	}
 
+	public Boolean getAscending() {
+		return this.ascending;
+	}
+
+	public void setAscending(Boolean ascending) {
+		this.ascending = ascending;
+		if(ascending != null){
+			putQueryParameter("Ascending", ascending.toString());
+		}
+	}
+
 	public Boolean getBoundNodeGroup() {
 		return this.boundNodeGroup;
 	}
@@ -151,17 +162,6 @@ public class ListRentedJoinPermissionsRequest extends RpcAcsRequest<ListRentedJo
 		this.sortingField = sortingField;
 		if(sortingField != null){
 			putQueryParameter("SortingField", sortingField);
-		}
-	}
-
-	public Boolean getAscending() {
-		return this.ascending;
-	}
-
-	public void setAscending(Boolean ascending) {
-		this.ascending = ascending;
-		if(ascending != null){
-			putQueryParameter("Ascending", ascending.toString());
 		}
 	}
 

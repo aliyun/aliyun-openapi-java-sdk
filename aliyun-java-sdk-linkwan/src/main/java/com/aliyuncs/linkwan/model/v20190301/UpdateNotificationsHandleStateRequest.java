@@ -27,9 +27,9 @@ import com.aliyuncs.linkwan.Endpoint;
 public class UpdateNotificationsHandleStateRequest extends RpcAcsRequest<UpdateNotificationsHandleStateResponse> {
 	   
 
-	private List<Long> notificationIds;
-
 	private String targetHandleState;
+
+	private List<Long> notificationIds;
 	public UpdateNotificationsHandleStateRequest() {
 		super("LinkWAN", "2019-03-01", "UpdateNotificationsHandleState", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -38,6 +38,17 @@ public class UpdateNotificationsHandleStateRequest extends RpcAcsRequest<UpdateN
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTargetHandleState() {
+		return this.targetHandleState;
+	}
+
+	public void setTargetHandleState(String targetHandleState) {
+		this.targetHandleState = targetHandleState;
+		if(targetHandleState != null){
+			putQueryParameter("TargetHandleState", targetHandleState);
+		}
 	}
 
 	public List<Long> getNotificationIds() {
@@ -51,17 +62,6 @@ public class UpdateNotificationsHandleStateRequest extends RpcAcsRequest<UpdateN
 				putQueryParameter("NotificationId." + (i + 1) , notificationIds.get(i));
 			}
 		}	
-	}
-
-	public String getTargetHandleState() {
-		return this.targetHandleState;
-	}
-
-	public void setTargetHandleState(String targetHandleState) {
-		this.targetHandleState = targetHandleState;
-		if(targetHandleState != null){
-			putQueryParameter("TargetHandleState", targetHandleState);
-		}
 	}
 
 	@Override

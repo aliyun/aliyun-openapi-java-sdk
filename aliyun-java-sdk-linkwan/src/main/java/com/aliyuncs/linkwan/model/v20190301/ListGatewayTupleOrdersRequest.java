@@ -26,15 +26,15 @@ import com.aliyuncs.linkwan.Endpoint;
 public class ListGatewayTupleOrdersRequest extends RpcAcsRequest<ListGatewayTupleOrdersResponse> {
 	   
 
-	private Long offset;
-
 	private Long limit;
 
 	private List<String> states;
 
-	private String sortingField;
+	private Long offset;
 
 	private Boolean ascending;
+
+	private String sortingField;
 	public ListGatewayTupleOrdersRequest() {
 		super("LinkWAN", "2019-03-01", "ListGatewayTupleOrders", "linkwan");
 		setMethod(MethodType.POST);
@@ -42,17 +42,6 @@ public class ListGatewayTupleOrdersRequest extends RpcAcsRequest<ListGatewayTupl
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOffset() {
-		return this.offset;
-	}
-
-	public void setOffset(Long offset) {
-		this.offset = offset;
-		if(offset != null){
-			putQueryParameter("Offset", offset.toString());
-		}
 	}
 
 	public Long getLimit() {
@@ -79,14 +68,14 @@ public class ListGatewayTupleOrdersRequest extends RpcAcsRequest<ListGatewayTupl
 		}	
 	}
 
-	public String getSortingField() {
-		return this.sortingField;
+	public Long getOffset() {
+		return this.offset;
 	}
 
-	public void setSortingField(String sortingField) {
-		this.sortingField = sortingField;
-		if(sortingField != null){
-			putQueryParameter("SortingField", sortingField);
+	public void setOffset(Long offset) {
+		this.offset = offset;
+		if(offset != null){
+			putQueryParameter("Offset", offset.toString());
 		}
 	}
 
@@ -98,6 +87,17 @@ public class ListGatewayTupleOrdersRequest extends RpcAcsRequest<ListGatewayTupl
 		this.ascending = ascending;
 		if(ascending != null){
 			putQueryParameter("Ascending", ascending.toString());
+		}
+	}
+
+	public String getSortingField() {
+		return this.sortingField;
+	}
+
+	public void setSortingField(String sortingField) {
+		this.sortingField = sortingField;
+		if(sortingField != null){
+			putQueryParameter("SortingField", sortingField);
 		}
 	}
 

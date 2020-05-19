@@ -14,9 +14,6 @@
 
 package com.aliyuncs.linkwan.transform.v20190301;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.linkwan.model.v20190301.GetGatewayResponse;
 import com.aliyuncs.linkwan.model.v20190301.GetGatewayResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -50,12 +47,7 @@ public class GetGatewayResponseUnmarshaller {
 		data.setOnlineStateChangedMillis(_ctx.longValue("GetGatewayResponse.Data.OnlineStateChangedMillis"));
 		data.setEmbeddedNsId(_ctx.stringValue("GetGatewayResponse.Data.EmbeddedNsId"));
 		data.setChargeStatus(_ctx.stringValue("GetGatewayResponse.Data.ChargeStatus"));
-
-		List<String> authTypes = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetGatewayResponse.Data.AuthTypes.Length"); i++) {
-			authTypes.add(_ctx.stringValue("GetGatewayResponse.Data.AuthTypes["+ i +"]"));
-		}
-		data.setAuthTypes(authTypes);
+		data.setAuthTypes(_ctx.stringValue("GetGatewayResponse.Data.AuthTypes"));
 		getGatewayResponse.setData(data);
 	 
 	 	return getGatewayResponse;

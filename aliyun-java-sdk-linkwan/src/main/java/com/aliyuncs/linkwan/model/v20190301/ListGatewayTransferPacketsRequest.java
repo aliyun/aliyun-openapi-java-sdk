@@ -34,6 +34,8 @@ public class ListGatewayTransferPacketsRequest extends RpcAcsRequest<ListGateway
 
 	private String gwEui;
 
+	private Boolean ascending;
+
 	private String devEui;
 
 	private String category;
@@ -41,8 +43,6 @@ public class ListGatewayTransferPacketsRequest extends RpcAcsRequest<ListGateway
 	private Long beginMillis;
 
 	private String sortingField;
-
-	private Boolean ascending;
 	public ListGatewayTransferPacketsRequest() {
 		super("LinkWAN", "2019-03-01", "ListGatewayTransferPackets", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -97,6 +97,17 @@ public class ListGatewayTransferPacketsRequest extends RpcAcsRequest<ListGateway
 		}
 	}
 
+	public Boolean getAscending() {
+		return this.ascending;
+	}
+
+	public void setAscending(Boolean ascending) {
+		this.ascending = ascending;
+		if(ascending != null){
+			putQueryParameter("Ascending", ascending.toString());
+		}
+	}
+
 	public String getDevEui() {
 		return this.devEui;
 	}
@@ -138,17 +149,6 @@ public class ListGatewayTransferPacketsRequest extends RpcAcsRequest<ListGateway
 		this.sortingField = sortingField;
 		if(sortingField != null){
 			putQueryParameter("SortingField", sortingField);
-		}
-	}
-
-	public Boolean getAscending() {
-		return this.ascending;
-	}
-
-	public void setAscending(Boolean ascending) {
-		this.ascending = ascending;
-		if(ascending != null){
-			putQueryParameter("Ascending", ascending.toString());
 		}
 	}
 

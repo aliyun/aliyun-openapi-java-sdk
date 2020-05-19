@@ -14,7 +14,6 @@
 
 package com.aliyuncs.linkwan.model.v20190301;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkwan.transform.v20190301.GetGatewayResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -97,7 +96,7 @@ public class GetGatewayResponse extends AcsResponse {
 
 		private String chargeStatus;
 
-		private List<String> authTypes;
+		private String authTypes;
 
 		public String getGwEui() {
 			return this.gwEui;
@@ -259,11 +258,11 @@ public class GetGatewayResponse extends AcsResponse {
 			this.chargeStatus = chargeStatus;
 		}
 
-		public List<String> getAuthTypes() {
+		public String getAuthTypes() {
 			return this.authTypes;
 		}
 
-		public void setAuthTypes(List<String> authTypes) {
+		public void setAuthTypes(String authTypes) {
 			this.authTypes = authTypes;
 		}
 	}

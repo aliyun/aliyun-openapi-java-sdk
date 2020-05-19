@@ -26,13 +26,13 @@ import com.aliyuncs.linkwan.Endpoint;
 public class CountOwnedJoinPermissionsRequest extends RpcAcsRequest<CountOwnedJoinPermissionsResponse> {
 	   
 
-	private String fuzzyJoinPermissionName;
-
-	private String fuzzyRenterAliyunId;
-
 	private Boolean enabled;
 
 	private String fuzzyJoinEui;
+
+	private String fuzzyJoinPermissionName;
+
+	private String fuzzyRenterAliyunId;
 	public CountOwnedJoinPermissionsRequest() {
 		super("LinkWAN", "2019-03-01", "CountOwnedJoinPermissions", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -41,28 +41,6 @@ public class CountOwnedJoinPermissionsRequest extends RpcAcsRequest<CountOwnedJo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFuzzyJoinPermissionName() {
-		return this.fuzzyJoinPermissionName;
-	}
-
-	public void setFuzzyJoinPermissionName(String fuzzyJoinPermissionName) {
-		this.fuzzyJoinPermissionName = fuzzyJoinPermissionName;
-		if(fuzzyJoinPermissionName != null){
-			putQueryParameter("FuzzyJoinPermissionName", fuzzyJoinPermissionName);
-		}
-	}
-
-	public String getFuzzyRenterAliyunId() {
-		return this.fuzzyRenterAliyunId;
-	}
-
-	public void setFuzzyRenterAliyunId(String fuzzyRenterAliyunId) {
-		this.fuzzyRenterAliyunId = fuzzyRenterAliyunId;
-		if(fuzzyRenterAliyunId != null){
-			putQueryParameter("FuzzyRenterAliyunId", fuzzyRenterAliyunId);
-		}
 	}
 
 	public Boolean getEnabled() {
@@ -84,6 +62,28 @@ public class CountOwnedJoinPermissionsRequest extends RpcAcsRequest<CountOwnedJo
 		this.fuzzyJoinEui = fuzzyJoinEui;
 		if(fuzzyJoinEui != null){
 			putQueryParameter("FuzzyJoinEui", fuzzyJoinEui);
+		}
+	}
+
+	public String getFuzzyJoinPermissionName() {
+		return this.fuzzyJoinPermissionName;
+	}
+
+	public void setFuzzyJoinPermissionName(String fuzzyJoinPermissionName) {
+		this.fuzzyJoinPermissionName = fuzzyJoinPermissionName;
+		if(fuzzyJoinPermissionName != null){
+			putQueryParameter("FuzzyJoinPermissionName", fuzzyJoinPermissionName);
+		}
+	}
+
+	public String getFuzzyRenterAliyunId() {
+		return this.fuzzyRenterAliyunId;
+	}
+
+	public void setFuzzyRenterAliyunId(String fuzzyRenterAliyunId) {
+		this.fuzzyRenterAliyunId = fuzzyRenterAliyunId;
+		if(fuzzyRenterAliyunId != null){
+			putQueryParameter("FuzzyRenterAliyunId", fuzzyRenterAliyunId);
 		}
 	}
 

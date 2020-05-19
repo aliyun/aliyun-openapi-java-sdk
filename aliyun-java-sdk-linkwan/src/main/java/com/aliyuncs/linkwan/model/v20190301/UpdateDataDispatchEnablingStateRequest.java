@@ -26,9 +26,9 @@ import com.aliyuncs.linkwan.Endpoint;
 public class UpdateDataDispatchEnablingStateRequest extends RpcAcsRequest<UpdateDataDispatchEnablingStateResponse> {
 	   
 
-	private String nodeGroupId;
-
 	private Boolean dataDispatchEnabled;
+
+	private String nodeGroupId;
 	public UpdateDataDispatchEnablingStateRequest() {
 		super("LinkWAN", "2019-03-01", "UpdateDataDispatchEnablingState", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -39,17 +39,6 @@ public class UpdateDataDispatchEnablingStateRequest extends RpcAcsRequest<Update
 		} catch (Exception e) {}
 	}
 
-	public String getNodeGroupId() {
-		return this.nodeGroupId;
-	}
-
-	public void setNodeGroupId(String nodeGroupId) {
-		this.nodeGroupId = nodeGroupId;
-		if(nodeGroupId != null){
-			putQueryParameter("NodeGroupId", nodeGroupId);
-		}
-	}
-
 	public Boolean getDataDispatchEnabled() {
 		return this.dataDispatchEnabled;
 	}
@@ -58,6 +47,17 @@ public class UpdateDataDispatchEnablingStateRequest extends RpcAcsRequest<Update
 		this.dataDispatchEnabled = dataDispatchEnabled;
 		if(dataDispatchEnabled != null){
 			putQueryParameter("DataDispatchEnabled", dataDispatchEnabled.toString());
+		}
+	}
+
+	public String getNodeGroupId() {
+		return this.nodeGroupId;
+	}
+
+	public void setNodeGroupId(String nodeGroupId) {
+		this.nodeGroupId = nodeGroupId;
+		if(nodeGroupId != null){
+			putQueryParameter("NodeGroupId", nodeGroupId);
 		}
 	}
 

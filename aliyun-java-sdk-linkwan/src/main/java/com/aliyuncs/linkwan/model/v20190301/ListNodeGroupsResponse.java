@@ -111,6 +111,8 @@ public class ListNodeGroupsResponse extends AcsResponse {
 
 			private Long createMillis;
 
+			private String joinPermissionName;
+
 			private List<Lock> locks;
 
 			private DataDispatchConfig dataDispatchConfig;
@@ -241,6 +243,14 @@ public class ListNodeGroupsResponse extends AcsResponse {
 
 			public void setCreateMillis(Long createMillis) {
 				this.createMillis = createMillis;
+			}
+
+			public String getJoinPermissionName() {
+				return this.joinPermissionName;
+			}
+
+			public void setJoinPermissionName(String joinPermissionName) {
+				this.joinPermissionName = joinPermissionName;
 			}
 
 			public List<Lock> getLocks() {

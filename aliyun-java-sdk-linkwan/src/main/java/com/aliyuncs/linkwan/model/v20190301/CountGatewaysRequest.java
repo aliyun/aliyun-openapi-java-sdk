@@ -26,17 +26,17 @@ import com.aliyuncs.linkwan.Endpoint;
 public class CountGatewaysRequest extends RpcAcsRequest<CountGatewaysResponse> {
 	   
 
-	private String fuzzyName;
-
 	private String fuzzyGwEui;
-
-	private Long freqBandPlanGroupId;
 
 	private String fuzzyCity;
 
 	private String onlineState;
 
 	private Boolean isEnabled;
+
+	private String fuzzyName;
+
+	private Long freqBandPlanGroupId;
 	public CountGatewaysRequest() {
 		super("LinkWAN", "2019-03-01", "CountGateways", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -47,17 +47,6 @@ public class CountGatewaysRequest extends RpcAcsRequest<CountGatewaysResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getFuzzyName() {
-		return this.fuzzyName;
-	}
-
-	public void setFuzzyName(String fuzzyName) {
-		this.fuzzyName = fuzzyName;
-		if(fuzzyName != null){
-			putQueryParameter("FuzzyName", fuzzyName);
-		}
-	}
-
 	public String getFuzzyGwEui() {
 		return this.fuzzyGwEui;
 	}
@@ -66,17 +55,6 @@ public class CountGatewaysRequest extends RpcAcsRequest<CountGatewaysResponse> {
 		this.fuzzyGwEui = fuzzyGwEui;
 		if(fuzzyGwEui != null){
 			putQueryParameter("FuzzyGwEui", fuzzyGwEui);
-		}
-	}
-
-	public Long getFreqBandPlanGroupId() {
-		return this.freqBandPlanGroupId;
-	}
-
-	public void setFreqBandPlanGroupId(Long freqBandPlanGroupId) {
-		this.freqBandPlanGroupId = freqBandPlanGroupId;
-		if(freqBandPlanGroupId != null){
-			putQueryParameter("FreqBandPlanGroupId", freqBandPlanGroupId.toString());
 		}
 	}
 
@@ -110,6 +88,28 @@ public class CountGatewaysRequest extends RpcAcsRequest<CountGatewaysResponse> {
 		this.isEnabled = isEnabled;
 		if(isEnabled != null){
 			putQueryParameter("IsEnabled", isEnabled.toString());
+		}
+	}
+
+	public String getFuzzyName() {
+		return this.fuzzyName;
+	}
+
+	public void setFuzzyName(String fuzzyName) {
+		this.fuzzyName = fuzzyName;
+		if(fuzzyName != null){
+			putQueryParameter("FuzzyName", fuzzyName);
+		}
+	}
+
+	public Long getFreqBandPlanGroupId() {
+		return this.freqBandPlanGroupId;
+	}
+
+	public void setFreqBandPlanGroupId(Long freqBandPlanGroupId) {
+		this.freqBandPlanGroupId = freqBandPlanGroupId;
+		if(freqBandPlanGroupId != null){
+			putQueryParameter("FreqBandPlanGroupId", freqBandPlanGroupId.toString());
 		}
 	}
 

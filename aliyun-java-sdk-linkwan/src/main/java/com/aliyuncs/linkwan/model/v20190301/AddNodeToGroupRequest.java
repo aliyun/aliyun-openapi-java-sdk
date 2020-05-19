@@ -26,9 +26,9 @@ import com.aliyuncs.linkwan.Endpoint;
 public class AddNodeToGroupRequest extends RpcAcsRequest<AddNodeToGroupResponse> {
 	   
 
-	private String devEui;
-
 	private String pinCode;
+
+	private String devEui;
 
 	private String nodeGroupId;
 	public AddNodeToGroupRequest() {
@@ -41,17 +41,6 @@ public class AddNodeToGroupRequest extends RpcAcsRequest<AddNodeToGroupResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getDevEui() {
-		return this.devEui;
-	}
-
-	public void setDevEui(String devEui) {
-		this.devEui = devEui;
-		if(devEui != null){
-			putQueryParameter("DevEui", devEui);
-		}
-	}
-
 	public String getPinCode() {
 		return this.pinCode;
 	}
@@ -60,6 +49,17 @@ public class AddNodeToGroupRequest extends RpcAcsRequest<AddNodeToGroupResponse>
 		this.pinCode = pinCode;
 		if(pinCode != null){
 			putQueryParameter("PinCode", pinCode);
+		}
+	}
+
+	public String getDevEui() {
+		return this.devEui;
+	}
+
+	public void setDevEui(String devEui) {
+		this.devEui = devEui;
+		if(devEui != null){
+			putQueryParameter("DevEui", devEui);
 		}
 	}
 

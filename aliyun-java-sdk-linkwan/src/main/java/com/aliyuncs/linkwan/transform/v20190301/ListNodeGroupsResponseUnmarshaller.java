@@ -56,6 +56,7 @@ public class ListNodeGroupsResponseUnmarshaller {
 			nodeGroup.setTxDailySum(_ctx.longValue("ListNodeGroupsResponse.Data.List["+ i +"].TxDailySum"));
 			nodeGroup.setTxMonthSum(_ctx.longValue("ListNodeGroupsResponse.Data.List["+ i +"].TxMonthSum"));
 			nodeGroup.setCreateMillis(_ctx.longValue("ListNodeGroupsResponse.Data.List["+ i +"].CreateMillis"));
+			nodeGroup.setJoinPermissionName(_ctx.stringValue("ListNodeGroupsResponse.Data.List["+ i +"].JoinPermissionName"));
 
 			DataDispatchConfig dataDispatchConfig = new DataDispatchConfig();
 			dataDispatchConfig.setDestination(_ctx.stringValue("ListNodeGroupsResponse.Data.List["+ i +"].DataDispatchConfig.Destination"));

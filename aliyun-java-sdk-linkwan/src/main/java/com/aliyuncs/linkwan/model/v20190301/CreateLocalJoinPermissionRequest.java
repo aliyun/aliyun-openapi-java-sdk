@@ -28,11 +28,11 @@ public class CreateLocalJoinPermissionRequest extends RpcAcsRequest<CreateLocalJ
 
 	private Long rxDelay;
 
+	private Boolean useDefaultJoinEui;
+
 	private String classMode;
 
 	private Long freqBandPlanGroupId;
-
-	private Boolean useDefaultJoinEui;
 
 	private String joinPermissionName;
 
@@ -58,6 +58,17 @@ public class CreateLocalJoinPermissionRequest extends RpcAcsRequest<CreateLocalJ
 		}
 	}
 
+	public Boolean getUseDefaultJoinEui() {
+		return this.useDefaultJoinEui;
+	}
+
+	public void setUseDefaultJoinEui(Boolean useDefaultJoinEui) {
+		this.useDefaultJoinEui = useDefaultJoinEui;
+		if(useDefaultJoinEui != null){
+			putQueryParameter("UseDefaultJoinEui", useDefaultJoinEui.toString());
+		}
+	}
+
 	public String getClassMode() {
 		return this.classMode;
 	}
@@ -77,17 +88,6 @@ public class CreateLocalJoinPermissionRequest extends RpcAcsRequest<CreateLocalJ
 		this.freqBandPlanGroupId = freqBandPlanGroupId;
 		if(freqBandPlanGroupId != null){
 			putQueryParameter("FreqBandPlanGroupId", freqBandPlanGroupId.toString());
-		}
-	}
-
-	public Boolean getUseDefaultJoinEui() {
-		return this.useDefaultJoinEui;
-	}
-
-	public void setUseDefaultJoinEui(Boolean useDefaultJoinEui) {
-		this.useDefaultJoinEui = useDefaultJoinEui;
-		if(useDefaultJoinEui != null){
-			putQueryParameter("UseDefaultJoinEui", useDefaultJoinEui.toString());
 		}
 	}
 

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.linkwan.model.v20190301.GetNodeTransferPacketResponse;
 import com.aliyuncs.linkwan.model.v20190301.GetNodeTransferPacketResponse.Data;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,10 +50,7 @@ public class GetNodeTransferPacketResponseUnmarshaller {
 		data.setMessageType(_ctx.stringValue("GetNodeTransferPacketResponse.Data.MessageType"));
 		data.setGwOwnerAliyunId(_ctx.stringValue("GetNodeTransferPacketResponse.Data.GwOwnerAliyunId"));
 
-		List<String> macCommandCIDs = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetNodeTransferPacketResponse.Data.MacCommandCIDs.Length"); i++) {
-			macCommandCIDs.add(_ctx.stringValue("GetNodeTransferPacketResponse.Data.MacCommandCIDs["+ i +"]"));
-		}
+		List<Map<Object, Object>> macCommandCIDs = _ctx.listMapValue("GetNodeTransferPacketResponse.Data.MacCommandCIDs");
 		data.setMacCommandCIDs(macCommandCIDs);
 		getNodeTransferPacketResponse.setData(data);
 	 

@@ -54,12 +54,9 @@ public class ListNodeGroupTransferPacketsResponseUnmarshaller {
 			packet.setMacPayloadSize(_ctx.longValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].MacPayloadSize"));
 			packet.setProcessEvent(_ctx.stringValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].ProcessEvent"));
 			packet.setMessageType(_ctx.stringValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].MessageType"));
-
-			List<String> macCommandCIDs = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].MacCommandCIDs.Length"); j++) {
-				macCommandCIDs.add(_ctx.stringValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].MacCommandCIDs["+ j +"]"));
-			}
-			packet.setMacCommandCIDs(macCommandCIDs);
+			packet.setMacCommandCIDs(_ctx.stringValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].MacCommandCIDs"));
+			packet.setFcntUp(_ctx.longValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].FcntUp"));
+			packet.setFcntDown(_ctx.longValue("ListNodeGroupTransferPacketsResponse.Data.List["+ i +"].FcntDown"));
 
 			list.add(packet);
 		}

@@ -26,21 +26,21 @@ import com.aliyuncs.linkwan.Endpoint;
 public class ListOwnedJoinPermissionsRequest extends RpcAcsRequest<ListOwnedJoinPermissionsResponse> {
 	   
 
-	private String fuzzyJoinPermissionName;
-
-	private Long offset;
-
-	private String fuzzyRenterAliyunId;
-
 	private Boolean enabled;
 
 	private String fuzzyJoinEui;
 
 	private Long limit;
 
-	private String sortingField;
+	private String fuzzyJoinPermissionName;
+
+	private Long offset;
+
+	private String fuzzyRenterAliyunId;
 
 	private Boolean ascending;
+
+	private String sortingField;
 	public ListOwnedJoinPermissionsRequest() {
 		super("LinkWAN", "2019-03-01", "ListOwnedJoinPermissions", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -49,39 +49,6 @@ public class ListOwnedJoinPermissionsRequest extends RpcAcsRequest<ListOwnedJoin
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFuzzyJoinPermissionName() {
-		return this.fuzzyJoinPermissionName;
-	}
-
-	public void setFuzzyJoinPermissionName(String fuzzyJoinPermissionName) {
-		this.fuzzyJoinPermissionName = fuzzyJoinPermissionName;
-		if(fuzzyJoinPermissionName != null){
-			putQueryParameter("FuzzyJoinPermissionName", fuzzyJoinPermissionName);
-		}
-	}
-
-	public Long getOffset() {
-		return this.offset;
-	}
-
-	public void setOffset(Long offset) {
-		this.offset = offset;
-		if(offset != null){
-			putQueryParameter("Offset", offset.toString());
-		}
-	}
-
-	public String getFuzzyRenterAliyunId() {
-		return this.fuzzyRenterAliyunId;
-	}
-
-	public void setFuzzyRenterAliyunId(String fuzzyRenterAliyunId) {
-		this.fuzzyRenterAliyunId = fuzzyRenterAliyunId;
-		if(fuzzyRenterAliyunId != null){
-			putQueryParameter("FuzzyRenterAliyunId", fuzzyRenterAliyunId);
-		}
 	}
 
 	public Boolean getEnabled() {
@@ -117,14 +84,36 @@ public class ListOwnedJoinPermissionsRequest extends RpcAcsRequest<ListOwnedJoin
 		}
 	}
 
-	public String getSortingField() {
-		return this.sortingField;
+	public String getFuzzyJoinPermissionName() {
+		return this.fuzzyJoinPermissionName;
 	}
 
-	public void setSortingField(String sortingField) {
-		this.sortingField = sortingField;
-		if(sortingField != null){
-			putQueryParameter("SortingField", sortingField);
+	public void setFuzzyJoinPermissionName(String fuzzyJoinPermissionName) {
+		this.fuzzyJoinPermissionName = fuzzyJoinPermissionName;
+		if(fuzzyJoinPermissionName != null){
+			putQueryParameter("FuzzyJoinPermissionName", fuzzyJoinPermissionName);
+		}
+	}
+
+	public Long getOffset() {
+		return this.offset;
+	}
+
+	public void setOffset(Long offset) {
+		this.offset = offset;
+		if(offset != null){
+			putQueryParameter("Offset", offset.toString());
+		}
+	}
+
+	public String getFuzzyRenterAliyunId() {
+		return this.fuzzyRenterAliyunId;
+	}
+
+	public void setFuzzyRenterAliyunId(String fuzzyRenterAliyunId) {
+		this.fuzzyRenterAliyunId = fuzzyRenterAliyunId;
+		if(fuzzyRenterAliyunId != null){
+			putQueryParameter("FuzzyRenterAliyunId", fuzzyRenterAliyunId);
 		}
 	}
 
@@ -136,6 +125,17 @@ public class ListOwnedJoinPermissionsRequest extends RpcAcsRequest<ListOwnedJoin
 		this.ascending = ascending;
 		if(ascending != null){
 			putQueryParameter("Ascending", ascending.toString());
+		}
+	}
+
+	public String getSortingField() {
+		return this.sortingField;
+	}
+
+	public void setSortingField(String sortingField) {
+		this.sortingField = sortingField;
+		if(sortingField != null){
+			putQueryParameter("SortingField", sortingField);
 		}
 	}
 

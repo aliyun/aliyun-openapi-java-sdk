@@ -15,7 +15,6 @@
 package com.aliyuncs.linkwan.model.v20190301;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.linkwan.Endpoint;
 
@@ -23,25 +22,22 @@ import com.aliyuncs.linkwan.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetNodeGroupTransferPacketsDownloadUrlRequest extends RpcAcsRequest<GetNodeGroupTransferPacketsDownloadUrlResponse> {
+public class ListTransferPacketRequest extends RpcAcsRequest<ListTransferPacketResponse> {
 	   
 
 	private Long endMillis;
 
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
 	private Boolean ascending;
-
-	private String devEui;
-
-	private String nodeGroupId;
-
-	private String category;
 
 	private Long beginMillis;
 
 	private String sortingField;
-	public GetNodeGroupTransferPacketsDownloadUrlRequest() {
-		super("LinkWAN", "2019-03-01", "GetNodeGroupTransferPacketsDownloadUrl", "linkwan");
-		setProtocol(ProtocolType.HTTPS);
+	public ListTransferPacketRequest() {
+		super("LinkWAN", "2019-03-01", "ListTransferPacket", "linkwan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,6 +56,28 @@ public class GetNodeGroupTransferPacketsDownloadUrlRequest extends RpcAcsRequest
 		}
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public Boolean getAscending() {
 		return this.ascending;
 	}
@@ -68,39 +86,6 @@ public class GetNodeGroupTransferPacketsDownloadUrlRequest extends RpcAcsRequest
 		this.ascending = ascending;
 		if(ascending != null){
 			putQueryParameter("Ascending", ascending.toString());
-		}
-	}
-
-	public String getDevEui() {
-		return this.devEui;
-	}
-
-	public void setDevEui(String devEui) {
-		this.devEui = devEui;
-		if(devEui != null){
-			putQueryParameter("DevEui", devEui);
-		}
-	}
-
-	public String getNodeGroupId() {
-		return this.nodeGroupId;
-	}
-
-	public void setNodeGroupId(String nodeGroupId) {
-		this.nodeGroupId = nodeGroupId;
-		if(nodeGroupId != null){
-			putQueryParameter("NodeGroupId", nodeGroupId);
-		}
-	}
-
-	public String getCategory() {
-		return this.category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-		if(category != null){
-			putQueryParameter("Category", category);
 		}
 	}
 
@@ -127,8 +112,8 @@ public class GetNodeGroupTransferPacketsDownloadUrlRequest extends RpcAcsRequest
 	}
 
 	@Override
-	public Class<GetNodeGroupTransferPacketsDownloadUrlResponse> getResponseClass() {
-		return GetNodeGroupTransferPacketsDownloadUrlResponse.class;
+	public Class<ListTransferPacketResponse> getResponseClass() {
+		return ListTransferPacketResponse.class;
 	}
 
 }

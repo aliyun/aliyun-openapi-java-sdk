@@ -15,6 +15,7 @@
 package com.aliyuncs.linkwan.model.v20190301;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkwan.transform.v20190301.ListGatewayTransferPacketsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -113,7 +114,7 @@ public class ListGatewayTransferPacketsResponse extends AcsResponse {
 
 			private String nodeOwnerAliyunId;
 
-			private List<String> macCommandCIDs;
+			private List<Map<Object,Object>> macCommandCIDs;
 
 			public String getGwEui() {
 				return this.gwEui;
@@ -251,11 +252,11 @@ public class ListGatewayTransferPacketsResponse extends AcsResponse {
 				this.nodeOwnerAliyunId = nodeOwnerAliyunId;
 			}
 
-			public List<String> getMacCommandCIDs() {
+			public List<Map<Object,Object>> getMacCommandCIDs() {
 				return this.macCommandCIDs;
 			}
 
-			public void setMacCommandCIDs(List<String> macCommandCIDs) {
+			public void setMacCommandCIDs(List<Map<Object,Object>> macCommandCIDs) {
 				this.macCommandCIDs = macCommandCIDs;
 			}
 		}

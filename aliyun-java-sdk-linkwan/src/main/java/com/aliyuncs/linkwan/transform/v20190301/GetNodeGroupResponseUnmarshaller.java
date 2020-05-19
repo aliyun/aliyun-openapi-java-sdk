@@ -63,6 +63,7 @@ public class GetNodeGroupResponseUnmarshaller {
 		iotProduct.setProductName(_ctx.stringValue("GetNodeGroupResponse.Data.DataDispatchConfig.IotProduct.ProductName"));
 		iotProduct.setProductKey(_ctx.stringValue("GetNodeGroupResponse.Data.DataDispatchConfig.IotProduct.ProductKey"));
 		iotProduct.setProductType(_ctx.stringValue("GetNodeGroupResponse.Data.DataDispatchConfig.IotProduct.ProductType"));
+		iotProduct.setDebugSwitch(_ctx.booleanValue("GetNodeGroupResponse.Data.DataDispatchConfig.IotProduct.DebugSwitch"));
 		dataDispatchConfig.setIotProduct(iotProduct);
 
 		OnsTopics onsTopics = new OnsTopics();

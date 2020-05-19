@@ -25,9 +25,9 @@ import com.aliyuncs.linkwan.Endpoint;
 public class UpdateGatewaySshCtrlRequest extends RpcAcsRequest<UpdateGatewaySshCtrlResponse> {
 	   
 
-	private String gwEui;
-
 	private Boolean enabled;
+
+	private String gwEui;
 	public UpdateGatewaySshCtrlRequest() {
 		super("LinkWAN", "2019-03-01", "UpdateGatewaySshCtrl", "linkwan");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class UpdateGatewaySshCtrlRequest extends RpcAcsRequest<UpdateGatewaySshC
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getGwEui() {
-		return this.gwEui;
-	}
-
-	public void setGwEui(String gwEui) {
-		this.gwEui = gwEui;
-		if(gwEui != null){
-			putQueryParameter("GwEui", gwEui);
-		}
 	}
 
 	public Boolean getEnabled() {
@@ -56,6 +45,17 @@ public class UpdateGatewaySshCtrlRequest extends RpcAcsRequest<UpdateGatewaySshC
 		this.enabled = enabled;
 		if(enabled != null){
 			putQueryParameter("Enabled", enabled.toString());
+		}
+	}
+
+	public String getGwEui() {
+		return this.gwEui;
+	}
+
+	public void setGwEui(String gwEui) {
+		this.gwEui = gwEui;
+		if(gwEui != null){
+			putQueryParameter("GwEui", gwEui);
 		}
 	}
 
