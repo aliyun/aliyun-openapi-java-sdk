@@ -42,11 +42,11 @@ public class SearchFaceResponseUnmarshaller {
 			Record record = new Record();
 			record.setGbId(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].GbId"));
 			record.setImageUrl(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].ImageUrl"));
-			record.setLeftTopX(_ctx.integerValue("SearchFaceResponse.Data.Records["+ i +"].LeftTopX"));
-			record.setLeftTopY(_ctx.integerValue("SearchFaceResponse.Data.Records["+ i +"].LeftTopY"));
-			record.setRightBottomX(_ctx.integerValue("SearchFaceResponse.Data.Records["+ i +"].RightBottomX"));
-			record.setRightBottomY(_ctx.integerValue("SearchFaceResponse.Data.Records["+ i +"].RightBottomY"));
-			record.setScore(_ctx.integerValue("SearchFaceResponse.Data.Records["+ i +"].Score"));
+			record.setLeftTopX(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].LeftTopX"));
+			record.setLeftTopY(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].LeftTopY"));
+			record.setRightBottomX(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].RightBottomX"));
+			record.setRightBottomY(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].RightBottomY"));
+			record.setScore(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].Score"));
 			record.setTargetImageUrl(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].TargetImageUrl"));
 
 			records.add(record);

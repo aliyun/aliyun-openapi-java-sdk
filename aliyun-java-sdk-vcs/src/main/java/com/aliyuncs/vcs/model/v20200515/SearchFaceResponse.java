@@ -123,15 +123,15 @@ public class SearchFaceResponse extends AcsResponse {
 
 			private String imageUrl;
 
-			private Integer leftTopX;
+			private Float leftTopX;
 
-			private Integer leftTopY;
+			private Float leftTopY;
 
-			private Integer rightBottomX;
+			private Float rightBottomX;
 
-			private Integer rightBottomY;
+			private Float rightBottomY;
 
-			private Integer score;
+			private Float score;
 
 			private String targetImageUrl;
 
@@ -151,43 +151,43 @@ public class SearchFaceResponse extends AcsResponse {
 				this.imageUrl = imageUrl;
 			}
 
-			public Integer getLeftTopX() {
+			public Float getLeftTopX() {
 				return this.leftTopX;
 			}
 
-			public void setLeftTopX(Integer leftTopX) {
+			public void setLeftTopX(Float leftTopX) {
 				this.leftTopX = leftTopX;
 			}
 
-			public Integer getLeftTopY() {
+			public Float getLeftTopY() {
 				return this.leftTopY;
 			}
 
-			public void setLeftTopY(Integer leftTopY) {
+			public void setLeftTopY(Float leftTopY) {
 				this.leftTopY = leftTopY;
 			}
 
-			public Integer getRightBottomX() {
+			public Float getRightBottomX() {
 				return this.rightBottomX;
 			}
 
-			public void setRightBottomX(Integer rightBottomX) {
+			public void setRightBottomX(Float rightBottomX) {
 				this.rightBottomX = rightBottomX;
 			}
 
-			public Integer getRightBottomY() {
+			public Float getRightBottomY() {
 				return this.rightBottomY;
 			}
 
-			public void setRightBottomY(Integer rightBottomY) {
+			public void setRightBottomY(Float rightBottomY) {
 				this.rightBottomY = rightBottomY;
 			}
 
-			public Integer getScore() {
+			public Float getScore() {
 				return this.score;
 			}
 
-			public void setScore(Integer score) {
+			public void setScore(Float score) {
 				this.score = score;
 			}
 

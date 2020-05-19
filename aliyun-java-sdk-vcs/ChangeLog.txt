@@ -1,3 +1,6 @@
+2020-05-19 Version: 1.0.0
+- Initial version.
+
 2020-05-17 Version: 1.0.0
 - Open API publish.
 
