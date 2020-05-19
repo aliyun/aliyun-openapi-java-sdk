@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -27,6 +28,8 @@ public class ModifyInstanceVpcAttributeRequest extends RpcAcsRequest<ModifyInsta
 
 	private Long resourceOwnerId;
 
+	private List<String> securityGroupIds;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -38,6 +41,8 @@ public class ModifyInstanceVpcAttributeRequest extends RpcAcsRequest<ModifyInsta
 	private String privateIpAddress;
 
 	private String instanceId;
+
+	private String vpcId;
 	public ModifyInstanceVpcAttributeRequest() {
 		super("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute", "ecs");
 		setMethod(MethodType.POST);
@@ -56,6 +61,19 @@ public class ModifyInstanceVpcAttributeRequest extends RpcAcsRequest<ModifyInsta
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
+	}
+
+	public List<String> getSecurityGroupIds() {
+		return this.securityGroupIds;
+	}
+
+	public void setSecurityGroupIds(List<String> securityGroupIds) {
+		this.securityGroupIds = securityGroupIds;	
+		if (securityGroupIds != null) {
+			for (int i = 0; i < securityGroupIds.size(); i++) {
+				putQueryParameter("SecurityGroupId." + (i + 1) , securityGroupIds.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -121,6 +139,17 @@ public class ModifyInstanceVpcAttributeRequest extends RpcAcsRequest<ModifyInsta
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
