@@ -91,7 +91,7 @@ public class DescribeDomainAdvanceConfigsResponse extends AcsResponse {
 
 			private Integer clusterType;
 
-			private Integer gSLBStatus;
+			private String gSLBStatus;
 
 			public String getCname() {
 				return this.cname;
@@ -181,11 +181,11 @@ public class DescribeDomainAdvanceConfigsResponse extends AcsResponse {
 				this.clusterType = clusterType;
 			}
 
-			public Integer getGSLBStatus() {
+			public String getGSLBStatus() {
 				return this.gSLBStatus;
 			}
 
-			public void setGSLBStatus(Integer gSLBStatus) {
+			public void setGSLBStatus(String gSLBStatus) {
 				this.gSLBStatus = gSLBStatus;
 			}
 		}

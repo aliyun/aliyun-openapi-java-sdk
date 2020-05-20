@@ -46,7 +46,7 @@ public class DescribeDomainAdvanceConfigsResponseUnmarshaller {
 			profile.setHttp2Port(_ctx.stringValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.Http2Port"));
 			profile.setRs(_ctx.stringValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.Rs"));
 			profile.setClusterType(_ctx.integerValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.ClusterType"));
-			profile.setGSLBStatus(_ctx.integerValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.GSLBStatus"));
+			profile.setGSLBStatus(_ctx.stringValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.GSLBStatus"));
 			domainConfig.setProfile(profile);
 
 			domainConfigs.add(domainConfig);
