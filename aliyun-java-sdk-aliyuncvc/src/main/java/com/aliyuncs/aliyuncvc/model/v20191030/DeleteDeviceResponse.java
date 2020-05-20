@@ -14,16 +14,15 @@
 
 package com.aliyuncs.aliyuncvc.model.v20191030;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.aliyuncvc.transform.v20191030.ListDeviceIpResponseUnmarshaller;
+import com.aliyuncs.aliyuncvc.transform.v20191030.DeleteDeviceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListDeviceIpResponse extends AcsResponse {
+public class DeleteDeviceResponse extends AcsResponse {
 
 	private Integer errorCode;
 
@@ -32,8 +31,6 @@ public class ListDeviceIpResponse extends AcsResponse {
 	private Boolean success;
 
 	private String requestId;
-
-	private List<DevicesItem> devices;
 
 	public Integer getErrorCode() {
 		return this.errorCode;
@@ -67,60 +64,9 @@ public class ListDeviceIpResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<DevicesItem> getDevices() {
-		return this.devices;
-	}
-
-	public void setDevices(List<DevicesItem> devices) {
-		this.devices = devices;
-	}
-
-	public static class DevicesItem {
-
-		private String screenCode;
-
-		private String ip;
-
-		private String mac;
-
-		private String ssId;
-
-		public String getScreenCode() {
-			return this.screenCode;
-		}
-
-		public void setScreenCode(String screenCode) {
-			this.screenCode = screenCode;
-		}
-
-		public String getIp() {
-			return this.ip;
-		}
-
-		public void setIp(String ip) {
-			this.ip = ip;
-		}
-
-		public String getMac() {
-			return this.mac;
-		}
-
-		public void setMac(String mac) {
-			this.mac = mac;
-		}
-
-		public String getSsId() {
-			return this.ssId;
-		}
-
-		public void setSsId(String ssId) {
-			this.ssId = ssId;
-		}
-	}
-
 	@Override
-	public ListDeviceIpResponse getInstance(UnmarshallerContext context) {
-		return	ListDeviceIpResponseUnmarshaller.unmarshall(this, context);
+	public DeleteDeviceResponse getInstance(UnmarshallerContext context) {
+		return	DeleteDeviceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
