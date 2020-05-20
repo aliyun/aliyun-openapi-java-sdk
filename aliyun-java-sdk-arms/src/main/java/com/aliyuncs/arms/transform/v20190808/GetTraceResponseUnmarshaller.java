@@ -43,6 +43,7 @@ public class GetTraceResponseUnmarshaller {
 			span.setRpcId(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].RpcId"));
 			span.setResultCode(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].ResultCode"));
 			span.setHaveStack(_ctx.booleanValue("GetTraceResponse.Spans["+ i +"].HaveStack"));
+			span.setRpcType(_ctx.integerValue("GetTraceResponse.Spans["+ i +"].RpcType"));
 
 			List<TagEntry> tagEntryList = new ArrayList<TagEntry>();
 			for (int j = 0; j < _ctx.lengthValue("GetTraceResponse.Spans["+ i +"].TagEntryList.Length"); j++) {

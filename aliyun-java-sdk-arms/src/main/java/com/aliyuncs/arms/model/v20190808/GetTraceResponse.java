@@ -65,6 +65,8 @@ public class GetTraceResponse extends AcsResponse {
 
 		private Boolean haveStack;
 
+		private Integer rpcType;
+
 		private List<TagEntry> tagEntryList;
 
 		private List<LogEvent> logEventList;
@@ -139,6 +141,14 @@ public class GetTraceResponse extends AcsResponse {
 
 		public void setHaveStack(Boolean haveStack) {
 			this.haveStack = haveStack;
+		}
+
+		public Integer getRpcType() {
+			return this.rpcType;
+		}
+
+		public void setRpcType(Integer rpcType) {
+			this.rpcType = rpcType;
 		}
 
 		public List<TagEntry> getTagEntryList() {
