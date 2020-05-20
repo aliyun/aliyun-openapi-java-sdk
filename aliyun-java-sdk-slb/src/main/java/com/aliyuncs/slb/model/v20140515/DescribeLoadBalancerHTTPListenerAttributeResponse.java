@@ -103,6 +103,12 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	private String description;
 
+	private String xForwardedFor_SLBPORT;
+
+	private String xForwardedFor_ClientSrcPort;
+
+	private Integer forwardCode;
+
 	private List<Rule> rules;
 
 	private List<String> aclIds;
@@ -417,6 +423,30 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getXForwardedFor_SLBPORT() {
+		return this.xForwardedFor_SLBPORT;
+	}
+
+	public void setXForwardedFor_SLBPORT(String xForwardedFor_SLBPORT) {
+		this.xForwardedFor_SLBPORT = xForwardedFor_SLBPORT;
+	}
+
+	public String getXForwardedFor_ClientSrcPort() {
+		return this.xForwardedFor_ClientSrcPort;
+	}
+
+	public void setXForwardedFor_ClientSrcPort(String xForwardedFor_ClientSrcPort) {
+		this.xForwardedFor_ClientSrcPort = xForwardedFor_ClientSrcPort;
+	}
+
+	public Integer getForwardCode() {
+		return this.forwardCode;
+	}
+
+	public void setForwardCode(Integer forwardCode) {
+		this.forwardCode = forwardCode;
 	}
 
 	public List<Rule> getRules() {

@@ -65,6 +65,9 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerHTTPListenerAttributeResponse.setRequestTimeout(_ctx.integerValue("DescribeLoadBalancerHTTPListenerAttributeResponse.RequestTimeout"));
 		describeLoadBalancerHTTPListenerAttributeResponse.setIdleTimeout(_ctx.integerValue("DescribeLoadBalancerHTTPListenerAttributeResponse.IdleTimeout"));
 		describeLoadBalancerHTTPListenerAttributeResponse.setDescription(_ctx.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.Description"));
+		describeLoadBalancerHTTPListenerAttributeResponse.setXForwardedFor_SLBPORT(_ctx.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.XForwardedFor_SLBPORT"));
+		describeLoadBalancerHTTPListenerAttributeResponse.setXForwardedFor_ClientSrcPort(_ctx.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.XForwardedFor_ClientSrcPort"));
+		describeLoadBalancerHTTPListenerAttributeResponse.setForwardCode(_ctx.integerValue("DescribeLoadBalancerHTTPListenerAttributeResponse.ForwardCode"));
 
 		List<String> aclIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerHTTPListenerAttributeResponse.AclIds.Length"); i++) {

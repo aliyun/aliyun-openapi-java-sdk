@@ -69,12 +69,21 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 		describeLoadBalancerAttributeResponse.setTunnelType(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.TunnelType"));
 		describeLoadBalancerAttributeResponse.setCloudInstanceUid(_ctx.longValue("DescribeLoadBalancerAttributeResponse.CloudInstanceUid"));
 		describeLoadBalancerAttributeResponse.setSupportPrivateLink(_ctx.booleanValue("DescribeLoadBalancerAttributeResponse.SupportPrivateLink"));
+		describeLoadBalancerAttributeResponse.setBusinessStatus(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.BusinessStatus"));
+		describeLoadBalancerAttributeResponse.setModificationProtectionStatus(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.ModificationProtectionStatus"));
+		describeLoadBalancerAttributeResponse.setModificationProtectionReason(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.ModificationProtectionReason"));
 
 		List<Integer> listenerPorts = new ArrayList<Integer>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerAttributeResponse.ListenerPorts.Length"); i++) {
 			listenerPorts.add(_ctx.integerValue("DescribeLoadBalancerAttributeResponse.ListenerPorts["+ i +"]"));
 		}
 		describeLoadBalancerAttributeResponse.setListenerPorts(listenerPorts);
+
+		List<String> labels = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerAttributeResponse.Labels.Length"); i++) {
+			labels.add(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.Labels["+ i +"]"));
+		}
+		describeLoadBalancerAttributeResponse.setLabels(labels);
 
 		List<ListenerPortAndProtocal> listenerPortsAndProtocal = new ArrayList<ListenerPortAndProtocal>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerAttributeResponse.ListenerPortsAndProtocal.Length"); i++) {

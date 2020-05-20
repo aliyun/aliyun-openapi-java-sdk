@@ -113,6 +113,12 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		private String addressIPVersion;
 
+		private String businessStatus;
+
+		private String modificationProtectionStatus;
+
+		private String modificationProtectionReason;
+
 		private List<Tag> tags;
 
 		public String getLoadBalancerId() {
@@ -257,6 +263,30 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		public void setAddressIPVersion(String addressIPVersion) {
 			this.addressIPVersion = addressIPVersion;
+		}
+
+		public String getBusinessStatus() {
+			return this.businessStatus;
+		}
+
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
+		}
+
+		public String getModificationProtectionStatus() {
+			return this.modificationProtectionStatus;
+		}
+
+		public void setModificationProtectionStatus(String modificationProtectionStatus) {
+			this.modificationProtectionStatus = modificationProtectionStatus;
+		}
+
+		public String getModificationProtectionReason() {
+			return this.modificationProtectionReason;
+		}
+
+		public void setModificationProtectionReason(String modificationProtectionReason) {
+			this.modificationProtectionReason = modificationProtectionReason;
 		}
 
 		public List<Tag> getTags() {

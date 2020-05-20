@@ -67,6 +67,10 @@ public class DescribeCACertificatesResponse extends AcsResponse {
 
 		private String commonName;
 
+		private String encryptionAlgorithm;
+
+		private Integer encryptionKeyLength;
+
 		private List<Tag> tags;
 
 		public String getRegionId() {
@@ -147,6 +151,22 @@ public class DescribeCACertificatesResponse extends AcsResponse {
 
 		public void setCommonName(String commonName) {
 			this.commonName = commonName;
+		}
+
+		public String getEncryptionAlgorithm() {
+			return this.encryptionAlgorithm;
+		}
+
+		public void setEncryptionAlgorithm(String encryptionAlgorithm) {
+			this.encryptionAlgorithm = encryptionAlgorithm;
+		}
+
+		public Integer getEncryptionKeyLength() {
+			return this.encryptionKeyLength;
+		}
+
+		public void setEncryptionKeyLength(Integer encryptionKeyLength) {
+			this.encryptionKeyLength = encryptionKeyLength;
 		}
 
 		public List<Tag> getTags() {

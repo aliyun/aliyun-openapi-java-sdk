@@ -53,6 +53,9 @@ public class DescribeLoadBalancersResponseUnmarshaller {
 			loadBalancer.setPayType(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].PayType"));
 			loadBalancer.setResourceGroupId(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].ResourceGroupId"));
 			loadBalancer.setAddressIPVersion(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].AddressIPVersion"));
+			loadBalancer.setBusinessStatus(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].BusinessStatus"));
+			loadBalancer.setModificationProtectionStatus(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].ModificationProtectionStatus"));
+			loadBalancer.setModificationProtectionReason(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].ModificationProtectionReason"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].Tags.Length"); j++) {

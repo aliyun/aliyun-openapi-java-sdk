@@ -107,6 +107,12 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	private Boolean supportPrivateLink;
 
+	private String businessStatus;
+
+	private String modificationProtectionStatus;
+
+	private String modificationProtectionReason;
+
 	private List<ListenerPortAndProtocal> listenerPortsAndProtocal;
 
 	private List<ListenerPortAndProtocol> listenerPortsAndProtocol;
@@ -114,6 +120,8 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 	private List<BackendServer> backendServers;
 
 	private List<Integer> listenerPorts;
+
+	private List<String> labels;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -443,6 +451,30 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 		this.supportPrivateLink = supportPrivateLink;
 	}
 
+	public String getBusinessStatus() {
+		return this.businessStatus;
+	}
+
+	public void setBusinessStatus(String businessStatus) {
+		this.businessStatus = businessStatus;
+	}
+
+	public String getModificationProtectionStatus() {
+		return this.modificationProtectionStatus;
+	}
+
+	public void setModificationProtectionStatus(String modificationProtectionStatus) {
+		this.modificationProtectionStatus = modificationProtectionStatus;
+	}
+
+	public String getModificationProtectionReason() {
+		return this.modificationProtectionReason;
+	}
+
+	public void setModificationProtectionReason(String modificationProtectionReason) {
+		this.modificationProtectionReason = modificationProtectionReason;
+	}
+
 	public List<ListenerPortAndProtocal> getListenerPortsAndProtocal() {
 		return this.listenerPortsAndProtocal;
 	}
@@ -473,6 +505,14 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setListenerPorts(List<Integer> listenerPorts) {
 		this.listenerPorts = listenerPorts;
+	}
+
+	public List<String> getLabels() {
+		return this.labels;
+	}
+
+	public void setLabels(List<String> labels) {
+		this.labels = labels;
 	}
 
 	public static class ListenerPortAndProtocal {

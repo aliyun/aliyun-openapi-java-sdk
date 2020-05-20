@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtension;
+import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtension.Certificate;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse.Rule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -69,6 +70,16 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerHTTPSListenerAttributeResponse.setEnableHttp2(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.EnableHttp2"));
 		describeLoadBalancerHTTPSListenerAttributeResponse.setTLSCipherPolicy(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.TLSCipherPolicy"));
 		describeLoadBalancerHTTPSListenerAttributeResponse.setDescription(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.Description"));
+		describeLoadBalancerHTTPSListenerAttributeResponse.setXForwardedFor_SLBPORT(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_SLBPORT"));
+		describeLoadBalancerHTTPSListenerAttributeResponse.setXForwardedFor_ClientSrcPort(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_ClientSrcPort"));
+		describeLoadBalancerHTTPSListenerAttributeResponse.setXForwardedFor_ClientCertSubjectDN(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_ClientCertSubjectDN"));
+		describeLoadBalancerHTTPSListenerAttributeResponse.setXForwardedFor_ClientCertIssuerDN(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_ClientCertIssuerDN"));
+		describeLoadBalancerHTTPSListenerAttributeResponse.setXForwardedFor_ClientCertFingerprint(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_ClientCertFingerprint"));
+		describeLoadBalancerHTTPSListenerAttributeResponse.setXForwardedFor_ClientCertClientVerify(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_ClientCertClientVerify"));
+		describeLoadBalancerHTTPSListenerAttributeResponse.setXForwardedFor_ClientCertSubjectDNAlias(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_ClientCertSubjectDNAlias"));
+		describeLoadBalancerHTTPSListenerAttributeResponse.setXForwardedFor_ClientCertIssuerDNAlias(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_ClientCertIssuerDNAlias"));
+		describeLoadBalancerHTTPSListenerAttributeResponse.setXForwardedFor_ClientCertFingerprintAlias(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_ClientCertFingerprintAlias"));
+		describeLoadBalancerHTTPSListenerAttributeResponse.setXForwardedFor_ClientCertClientVerifyAlias(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_ClientCertClientVerifyAlias"));
 
 		List<String> aclIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.AclIds.Length"); i++) {
@@ -95,6 +106,16 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponseUnmarshaller {
 			domainExtension.setDomainExtensionId(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtensions["+ i +"].DomainExtensionId"));
 			domainExtension.setDomain(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtensions["+ i +"].Domain"));
 			domainExtension.setServerCertificateId(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtensions["+ i +"].ServerCertificateId"));
+
+			List<Certificate> certificates = new ArrayList<Certificate>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtensions["+ i +"].Certificates.Length"); j++) {
+				Certificate certificate = new Certificate();
+				certificate.setCertificateId(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtensions["+ i +"].Certificates["+ j +"].CertificateId"));
+				certificate.setEncryptionAlgorithm(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtensions["+ i +"].Certificates["+ j +"].EncryptionAlgorithm"));
+
+				certificates.add(certificate);
+			}
+			domainExtension.setCertificates(certificates);
 
 			domainExtensions.add(domainExtension);
 		}

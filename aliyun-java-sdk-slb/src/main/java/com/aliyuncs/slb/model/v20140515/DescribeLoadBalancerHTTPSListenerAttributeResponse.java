@@ -109,6 +109,26 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	private String description;
 
+	private String xForwardedFor_SLBPORT;
+
+	private String xForwardedFor_ClientSrcPort;
+
+	private String xForwardedFor_ClientCertSubjectDN;
+
+	private String xForwardedFor_ClientCertIssuerDN;
+
+	private String xForwardedFor_ClientCertFingerprint;
+
+	private String xForwardedFor_ClientCertClientVerify;
+
+	private String xForwardedFor_ClientCertSubjectDNAlias;
+
+	private String xForwardedFor_ClientCertIssuerDNAlias;
+
+	private String xForwardedFor_ClientCertFingerprintAlias;
+
+	private String xForwardedFor_ClientCertClientVerifyAlias;
+
 	private List<Rule> rules;
 
 	private List<DomainExtension> domainExtensions;
@@ -451,6 +471,86 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 		this.description = description;
 	}
 
+	public String getXForwardedFor_SLBPORT() {
+		return this.xForwardedFor_SLBPORT;
+	}
+
+	public void setXForwardedFor_SLBPORT(String xForwardedFor_SLBPORT) {
+		this.xForwardedFor_SLBPORT = xForwardedFor_SLBPORT;
+	}
+
+	public String getXForwardedFor_ClientSrcPort() {
+		return this.xForwardedFor_ClientSrcPort;
+	}
+
+	public void setXForwardedFor_ClientSrcPort(String xForwardedFor_ClientSrcPort) {
+		this.xForwardedFor_ClientSrcPort = xForwardedFor_ClientSrcPort;
+	}
+
+	public String getXForwardedFor_ClientCertSubjectDN() {
+		return this.xForwardedFor_ClientCertSubjectDN;
+	}
+
+	public void setXForwardedFor_ClientCertSubjectDN(String xForwardedFor_ClientCertSubjectDN) {
+		this.xForwardedFor_ClientCertSubjectDN = xForwardedFor_ClientCertSubjectDN;
+	}
+
+	public String getXForwardedFor_ClientCertIssuerDN() {
+		return this.xForwardedFor_ClientCertIssuerDN;
+	}
+
+	public void setXForwardedFor_ClientCertIssuerDN(String xForwardedFor_ClientCertIssuerDN) {
+		this.xForwardedFor_ClientCertIssuerDN = xForwardedFor_ClientCertIssuerDN;
+	}
+
+	public String getXForwardedFor_ClientCertFingerprint() {
+		return this.xForwardedFor_ClientCertFingerprint;
+	}
+
+	public void setXForwardedFor_ClientCertFingerprint(String xForwardedFor_ClientCertFingerprint) {
+		this.xForwardedFor_ClientCertFingerprint = xForwardedFor_ClientCertFingerprint;
+	}
+
+	public String getXForwardedFor_ClientCertClientVerify() {
+		return this.xForwardedFor_ClientCertClientVerify;
+	}
+
+	public void setXForwardedFor_ClientCertClientVerify(String xForwardedFor_ClientCertClientVerify) {
+		this.xForwardedFor_ClientCertClientVerify = xForwardedFor_ClientCertClientVerify;
+	}
+
+	public String getXForwardedFor_ClientCertSubjectDNAlias() {
+		return this.xForwardedFor_ClientCertSubjectDNAlias;
+	}
+
+	public void setXForwardedFor_ClientCertSubjectDNAlias(String xForwardedFor_ClientCertSubjectDNAlias) {
+		this.xForwardedFor_ClientCertSubjectDNAlias = xForwardedFor_ClientCertSubjectDNAlias;
+	}
+
+	public String getXForwardedFor_ClientCertIssuerDNAlias() {
+		return this.xForwardedFor_ClientCertIssuerDNAlias;
+	}
+
+	public void setXForwardedFor_ClientCertIssuerDNAlias(String xForwardedFor_ClientCertIssuerDNAlias) {
+		this.xForwardedFor_ClientCertIssuerDNAlias = xForwardedFor_ClientCertIssuerDNAlias;
+	}
+
+	public String getXForwardedFor_ClientCertFingerprintAlias() {
+		return this.xForwardedFor_ClientCertFingerprintAlias;
+	}
+
+	public void setXForwardedFor_ClientCertFingerprintAlias(String xForwardedFor_ClientCertFingerprintAlias) {
+		this.xForwardedFor_ClientCertFingerprintAlias = xForwardedFor_ClientCertFingerprintAlias;
+	}
+
+	public String getXForwardedFor_ClientCertClientVerifyAlias() {
+		return this.xForwardedFor_ClientCertClientVerifyAlias;
+	}
+
+	public void setXForwardedFor_ClientCertClientVerifyAlias(String xForwardedFor_ClientCertClientVerifyAlias) {
+		this.xForwardedFor_ClientCertClientVerifyAlias = xForwardedFor_ClientCertClientVerifyAlias;
+	}
+
 	public List<Rule> getRules() {
 		return this.rules;
 	}
@@ -536,6 +636,8 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 		private String serverCertificateId;
 
+		private List<Certificate> certificates;
+
 		public String getDomainExtensionId() {
 			return this.domainExtensionId;
 		}
@@ -558,6 +660,37 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 		public void setServerCertificateId(String serverCertificateId) {
 			this.serverCertificateId = serverCertificateId;
+		}
+
+		public List<Certificate> getCertificates() {
+			return this.certificates;
+		}
+
+		public void setCertificates(List<Certificate> certificates) {
+			this.certificates = certificates;
+		}
+
+		public static class Certificate {
+
+			private String certificateId;
+
+			private String encryptionAlgorithm;
+
+			public String getCertificateId() {
+				return this.certificateId;
+			}
+
+			public void setCertificateId(String certificateId) {
+				this.certificateId = certificateId;
+			}
+
+			public String getEncryptionAlgorithm() {
+				return this.encryptionAlgorithm;
+			}
+
+			public void setEncryptionAlgorithm(String encryptionAlgorithm) {
+				this.encryptionAlgorithm = encryptionAlgorithm;
+			}
 		}
 	}
 

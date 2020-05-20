@@ -53,6 +53,8 @@ public class DescribeDomainExtensionsResponse extends AcsResponse {
 
 		private String serverCertificateId;
 
+		private List<Certificate> certificates;
+
 		public String getDomainExtensionId() {
 			return this.domainExtensionId;
 		}
@@ -75,6 +77,37 @@ public class DescribeDomainExtensionsResponse extends AcsResponse {
 
 		public void setServerCertificateId(String serverCertificateId) {
 			this.serverCertificateId = serverCertificateId;
+		}
+
+		public List<Certificate> getCertificates() {
+			return this.certificates;
+		}
+
+		public void setCertificates(List<Certificate> certificates) {
+			this.certificates = certificates;
+		}
+
+		public static class Certificate {
+
+			private String certificateId;
+
+			private String encryptionAlgorithm;
+
+			public String getCertificateId() {
+				return this.certificateId;
+			}
+
+			public void setCertificateId(String certificateId) {
+				this.certificateId = certificateId;
+			}
+
+			public String getEncryptionAlgorithm() {
+				return this.encryptionAlgorithm;
+			}
+
+			public void setEncryptionAlgorithm(String encryptionAlgorithm) {
+				this.encryptionAlgorithm = encryptionAlgorithm;
+			}
 		}
 	}
 

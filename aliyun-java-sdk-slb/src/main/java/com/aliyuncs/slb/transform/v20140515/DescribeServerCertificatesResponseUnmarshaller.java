@@ -46,6 +46,8 @@ public class DescribeServerCertificatesResponseUnmarshaller {
 			serverCertificate.setExpireTime(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ExpireTime"));
 			serverCertificate.setExpireTimeStamp(_ctx.longValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ExpireTimeStamp"));
 			serverCertificate.setCommonName(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].CommonName"));
+			serverCertificate.setEncryptionAlgorithm(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].EncryptionAlgorithm"));
+			serverCertificate.setEncryptionKeyLength(_ctx.integerValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].EncryptionKeyLength"));
 
 			List<String> subjectAlternativeNames = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].SubjectAlternativeNames.Length"); j++) {

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.slb.model.v20140515;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.slb.transform.v20140515.DescribeDomainExtensionAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -35,6 +36,8 @@ public class DescribeDomainExtensionAttributeResponse extends AcsResponse {
 	private String loadBalancerId;
 
 	private Integer listenerPort;
+
+	private List<Certificate> certificates;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -82,6 +85,37 @@ public class DescribeDomainExtensionAttributeResponse extends AcsResponse {
 
 	public void setListenerPort(Integer listenerPort) {
 		this.listenerPort = listenerPort;
+	}
+
+	public List<Certificate> getCertificates() {
+		return this.certificates;
+	}
+
+	public void setCertificates(List<Certificate> certificates) {
+		this.certificates = certificates;
+	}
+
+	public static class Certificate {
+
+		private String certificateId;
+
+		private String encryptionAlgorithm;
+
+		public String getCertificateId() {
+			return this.certificateId;
+		}
+
+		public void setCertificateId(String certificateId) {
+			this.certificateId = certificateId;
+		}
+
+		public String getEncryptionAlgorithm() {
+			return this.encryptionAlgorithm;
+		}
+
+		public void setEncryptionAlgorithm(String encryptionAlgorithm) {
+			this.encryptionAlgorithm = encryptionAlgorithm;
+		}
 	}
 
 	@Override
