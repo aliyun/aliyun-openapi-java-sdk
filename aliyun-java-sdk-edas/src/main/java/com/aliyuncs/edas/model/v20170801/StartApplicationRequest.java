@@ -29,7 +29,7 @@ public class StartApplicationRequest extends RoaAcsRequest<StartApplicationRespo
 
 	private String eccInfo;
 	public StartApplicationRequest() {
-		super("Edas", "2017-08-01", "StartApplication", "edas");
+		super("Edas", "2017-08-01", "StartApplication", "Edas");
 		setUriPattern("/pop/v5/changeorder/co_start");
 		setMethod(MethodType.POST);
 		try {

@@ -31,7 +31,7 @@ public class UnbindSlbRequest extends RoaAcsRequest<UnbindSlbResponse> {
 
 	private String type;
 	public UnbindSlbRequest() {
-		super("Edas", "2017-08-01", "UnbindSlb", "edas");
+		super("Edas", "2017-08-01", "UnbindSlb", "Edas");
 		setUriPattern("/pop/app/unbind_slb_json");
 		setMethod(MethodType.POST);
 		try {

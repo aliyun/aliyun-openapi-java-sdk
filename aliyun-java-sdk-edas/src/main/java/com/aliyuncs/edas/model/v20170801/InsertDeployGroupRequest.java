@@ -29,7 +29,7 @@ public class InsertDeployGroupRequest extends RoaAcsRequest<InsertDeployGroupRes
 
 	private String groupName;
 	public InsertDeployGroupRequest() {
-		super("Edas", "2017-08-01", "InsertDeployGroup", "edas");
+		super("Edas", "2017-08-01", "InsertDeployGroup", "Edas");
 		setUriPattern("/pop/v5/deploy_group");
 		setMethod(MethodType.POST);
 		try {

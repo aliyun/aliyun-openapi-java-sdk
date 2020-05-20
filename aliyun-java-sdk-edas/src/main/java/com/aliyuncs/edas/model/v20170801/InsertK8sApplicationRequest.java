@@ -67,6 +67,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private Integer requestsmCpu;
 
+	private String deployAcrossZones;
+
 	private String internetSlbProtocol;
 
 	private Integer intranetSlbPort;
@@ -103,11 +105,13 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String packageType;
 
+	private String runtimeClassName;
+
 	private Integer requestsCpu;
 
 	private String postStart;
 	public InsertK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "InsertK8sApplication", "edas");
+		super("Edas", "2017-08-01", "InsertK8sApplication", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/create_k8s_app");
 		setMethod(MethodType.POST);
 		try {
@@ -347,6 +351,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public String getDeployAcrossZones() {
+		return this.deployAcrossZones;
+	}
+
+	public void setDeployAcrossZones(String deployAcrossZones) {
+		this.deployAcrossZones = deployAcrossZones;
+		if(deployAcrossZones != null){
+			putQueryParameter("DeployAcrossZones", deployAcrossZones);
+		}
+	}
+
 	public String getInternetSlbProtocol() {
 		return this.internetSlbProtocol;
 	}
@@ -542,6 +557,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.packageType = packageType;
 		if(packageType != null){
 			putQueryParameter("PackageType", packageType);
+		}
+	}
+
+	public String getRuntimeClassName() {
+		return this.runtimeClassName;
+	}
+
+	public void setRuntimeClassName(String runtimeClassName) {
+		this.runtimeClassName = runtimeClassName;
+		if(runtimeClassName != null){
+			putQueryParameter("RuntimeClassName", runtimeClassName);
 		}
 	}
 

@@ -25,15 +25,28 @@ import com.aliyuncs.edas.Endpoint;
 public class DeleteClusterRequest extends RoaAcsRequest<DeleteClusterResponse> {
 	   
 
+	private Integer mode;
+
 	private String clusterId;
 	public DeleteClusterRequest() {
-		super("Edas", "2017-08-01", "DeleteCluster", "edas");
+		super("Edas", "2017-08-01", "DeleteCluster", "Edas");
 		setUriPattern("/pop/v5/resource/cluster");
 		setMethod(MethodType.DELETE);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getMode() {
+		return this.mode;
+	}
+
+	public void setMode(Integer mode) {
+		this.mode = mode;
+		if(mode != null){
+			putQueryParameter("Mode", mode.toString());
+		}
 	}
 
 	public String getClusterId() {

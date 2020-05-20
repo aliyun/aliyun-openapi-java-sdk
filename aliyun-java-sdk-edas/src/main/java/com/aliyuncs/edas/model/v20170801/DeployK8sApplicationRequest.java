@@ -53,6 +53,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String imageTag;
 
+	private String deployAcrossZones;
+
 	private Integer memoryRequest;
 
 	private String image;
@@ -89,9 +91,11 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String volumesStr;
 
+	private String runtimeClassName;
+
 	private String postStart;
 	public DeployK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "DeployK8sApplication", "edas");
+		super("Edas", "2017-08-01", "DeployK8sApplication", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_apps");
 		setMethod(MethodType.POST);
 		try {
@@ -251,6 +255,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.imageTag = imageTag;
 		if(imageTag != null){
 			putQueryParameter("ImageTag", imageTag);
+		}
+	}
+
+	public String getDeployAcrossZones() {
+		return this.deployAcrossZones;
+	}
+
+	public void setDeployAcrossZones(String deployAcrossZones) {
+		this.deployAcrossZones = deployAcrossZones;
+		if(deployAcrossZones != null){
+			putQueryParameter("DeployAcrossZones", deployAcrossZones);
 		}
 	}
 
@@ -449,6 +464,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.volumesStr = volumesStr;
 		if(volumesStr != null){
 			putQueryParameter("VolumesStr", volumesStr);
+		}
+	}
+
+	public String getRuntimeClassName() {
+		return this.runtimeClassName;
+	}
+
+	public void setRuntimeClassName(String runtimeClassName) {
+		this.runtimeClassName = runtimeClassName;
+		if(runtimeClassName != null){
+			putQueryParameter("RuntimeClassName", runtimeClassName);
 		}
 	}
 

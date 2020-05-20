@@ -356,6 +356,10 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			private String readiness;
 
+			private String runtimeClassName;
+
+			private String deployAcrossZones;
+
 			public String getJarStartArgs() {
 				return this.jarStartArgs;
 			}
@@ -442,6 +446,22 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setReadiness(String readiness) {
 				this.readiness = readiness;
+			}
+
+			public String getRuntimeClassName() {
+				return this.runtimeClassName;
+			}
+
+			public void setRuntimeClassName(String runtimeClassName) {
+				this.runtimeClassName = runtimeClassName;
+			}
+
+			public String getDeployAcrossZones() {
+				return this.deployAcrossZones;
+			}
+
+			public void setDeployAcrossZones(String deployAcrossZones) {
+				this.deployAcrossZones = deployAcrossZones;
 			}
 		}
 	}

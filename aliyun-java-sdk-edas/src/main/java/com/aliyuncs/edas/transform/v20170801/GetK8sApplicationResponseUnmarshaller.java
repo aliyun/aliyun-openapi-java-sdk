@@ -81,6 +81,8 @@ public class GetK8sApplicationResponseUnmarshaller {
 		conf.setPostStart(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.PostStart"));
 		conf.setPreStop(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.PreStop"));
 		conf.setReadiness(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.Readiness"));
+		conf.setRuntimeClassName(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.RuntimeClassName"));
+		conf.setDeployAcrossZones(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.DeployAcrossZones"));
 		applcation.setConf(conf);
 
 		List<DeployGroup> deployGroups = new ArrayList<DeployGroup>();

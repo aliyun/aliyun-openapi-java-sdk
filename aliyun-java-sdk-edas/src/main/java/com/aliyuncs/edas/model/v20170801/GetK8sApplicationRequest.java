@@ -29,7 +29,7 @@ public class GetK8sApplicationRequest extends RoaAcsRequest<GetK8sApplicationRes
 
 	private String from;
 	public GetK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "GetK8sApplication", "edas");
+		super("Edas", "2017-08-01", "GetK8sApplication", "Edas");
 		setUriPattern("/pop/v5/changeorder/co_application");
 		setMethod(MethodType.GET);
 		try {
