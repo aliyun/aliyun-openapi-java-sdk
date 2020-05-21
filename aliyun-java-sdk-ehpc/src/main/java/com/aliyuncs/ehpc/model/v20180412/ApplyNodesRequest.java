@@ -46,7 +46,7 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 
 	private String hostNamePrefix;
 
-	private String computeSpotPriceLimit;
+	private Float computeSpotPriceLimit;
 
 	private String clusterId;
 
@@ -57,8 +57,6 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 	private String priorityStrategy;
 
 	private String instanceFamilyLevel;
-
-	private String ecsChargeType;
 
 	private String internetChargeType;
 
@@ -191,14 +189,14 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 		}
 	}
 
-	public String getComputeSpotPriceLimit() {
+	public Float getComputeSpotPriceLimit() {
 		return this.computeSpotPriceLimit;
 	}
 
-	public void setComputeSpotPriceLimit(String computeSpotPriceLimit) {
+	public void setComputeSpotPriceLimit(Float computeSpotPriceLimit) {
 		this.computeSpotPriceLimit = computeSpotPriceLimit;
 		if(computeSpotPriceLimit != null){
-			putQueryParameter("ComputeSpotPriceLimit", computeSpotPriceLimit);
+			putQueryParameter("ComputeSpotPriceLimit", computeSpotPriceLimit.toString());
 		}
 	}
 
@@ -254,17 +252,6 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 		this.instanceFamilyLevel = instanceFamilyLevel;
 		if(instanceFamilyLevel != null){
 			putQueryParameter("InstanceFamilyLevel", instanceFamilyLevel);
-		}
-	}
-
-	public String getEcsChargeType() {
-		return this.ecsChargeType;
-	}
-
-	public void setEcsChargeType(String ecsChargeType) {
-		this.ecsChargeType = ecsChargeType;
-		if(ecsChargeType != null){
-			putQueryParameter("EcsChargeType", ecsChargeType);
 		}
 	}
 
