@@ -31,6 +31,8 @@ public class DescribeExecutionResponseUnmarshaller {
 		describeExecutionResponse.setStatus(_ctx.stringValue("DescribeExecutionResponse.Status"));
 		describeExecutionResponse.setStartedTime(_ctx.stringValue("DescribeExecutionResponse.StartedTime"));
 		describeExecutionResponse.setStoppedTime(_ctx.stringValue("DescribeExecutionResponse.StoppedTime"));
+		describeExecutionResponse.setExternalInputUri(_ctx.stringValue("DescribeExecutionResponse.ExternalInputUri"));
+		describeExecutionResponse.setExternalOutputUri(_ctx.stringValue("DescribeExecutionResponse.ExternalOutputUri"));
 	 
 	 	return describeExecutionResponse;
 	}

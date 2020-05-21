@@ -33,7 +33,7 @@ public class DescribeExecutionRequest extends RpcAcsRequest<DescribeExecutionRes
 
 	private String flowName;
 	public DescribeExecutionRequest() {
-		super("fnf", "2019-03-15", "DescribeExecution", "fnf");
+		super("fnf", "2019-03-15", "DescribeExecution");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

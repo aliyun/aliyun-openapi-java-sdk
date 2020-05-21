@@ -31,6 +31,8 @@ public class StopExecutionResponseUnmarshaller {
 		stopExecutionResponse.setStatus(_ctx.stringValue("StopExecutionResponse.Status"));
 		stopExecutionResponse.setStartedTime(_ctx.stringValue("StopExecutionResponse.StartedTime"));
 		stopExecutionResponse.setStoppedTime(_ctx.stringValue("StopExecutionResponse.StoppedTime"));
+		stopExecutionResponse.setExternalInputUri(_ctx.stringValue("StopExecutionResponse.ExternalInputUri"));
+		stopExecutionResponse.setExternalOutputUri(_ctx.stringValue("StopExecutionResponse.ExternalOutputUri"));
 	 
 	 	return stopExecutionResponse;
 	}

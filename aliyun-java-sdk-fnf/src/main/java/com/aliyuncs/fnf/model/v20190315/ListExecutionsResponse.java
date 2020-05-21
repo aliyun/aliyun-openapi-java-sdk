@@ -73,6 +73,10 @@ public class ListExecutionsResponse extends AcsResponse {
 
 		private String stoppedTime;
 
+		private String externalInputUri;
+
+		private String externalOutputUri;
+
 		public String getName() {
 			return this.name;
 		}
@@ -135,6 +139,22 @@ public class ListExecutionsResponse extends AcsResponse {
 
 		public void setStoppedTime(String stoppedTime) {
 			this.stoppedTime = stoppedTime;
+		}
+
+		public String getExternalInputUri() {
+			return this.externalInputUri;
+		}
+
+		public void setExternalInputUri(String externalInputUri) {
+			this.externalInputUri = externalInputUri;
+		}
+
+		public String getExternalOutputUri() {
+			return this.externalOutputUri;
+		}
+
+		public void setExternalOutputUri(String externalOutputUri) {
+			this.externalOutputUri = externalOutputUri;
 		}
 	}
 

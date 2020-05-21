@@ -31,6 +31,7 @@ public class CreateFlowResponseUnmarshaller {
 		createFlowResponse.setRoleArn(_ctx.stringValue("CreateFlowResponse.RoleArn"));
 		createFlowResponse.setCreatedTime(_ctx.stringValue("CreateFlowResponse.CreatedTime"));
 		createFlowResponse.setLastModifiedTime(_ctx.stringValue("CreateFlowResponse.LastModifiedTime"));
+		createFlowResponse.setExternalStorageLocation(_ctx.stringValue("CreateFlowResponse.ExternalStorageLocation"));
 	 
 	 	return createFlowResponse;
 	}

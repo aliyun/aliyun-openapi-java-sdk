@@ -31,6 +31,7 @@ public class DescribeFlowResponseUnmarshaller {
 		describeFlowResponse.setRoleArn(_ctx.stringValue("DescribeFlowResponse.RoleArn"));
 		describeFlowResponse.setCreatedTime(_ctx.stringValue("DescribeFlowResponse.CreatedTime"));
 		describeFlowResponse.setLastModifiedTime(_ctx.stringValue("DescribeFlowResponse.LastModifiedTime"));
+		describeFlowResponse.setExternalStorageLocation(_ctx.stringValue("DescribeFlowResponse.ExternalStorageLocation"));
 	 
 	 	return describeFlowResponse;
 	}

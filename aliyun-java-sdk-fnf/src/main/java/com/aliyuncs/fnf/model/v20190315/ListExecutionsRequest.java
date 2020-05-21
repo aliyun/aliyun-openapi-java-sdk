@@ -35,7 +35,7 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 
 	private String status;
 	public ListExecutionsRequest() {
-		super("fnf", "2019-03-15", "ListExecutions", "fnf");
+		super("fnf", "2019-03-15", "ListExecutions");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

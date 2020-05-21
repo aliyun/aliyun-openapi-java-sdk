@@ -40,6 +40,8 @@ public class ListExecutionsResponseUnmarshaller {
 			executionsItem.setStatus(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Status"));
 			executionsItem.setStartedTime(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].StartedTime"));
 			executionsItem.setStoppedTime(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].StoppedTime"));
+			executionsItem.setExternalInputUri(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ExternalInputUri"));
+			executionsItem.setExternalOutputUri(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ExternalOutputUri"));
 
 			executions.add(executionsItem);
 		}

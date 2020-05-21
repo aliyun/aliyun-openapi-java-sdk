@@ -42,6 +42,8 @@ public class CreateFlowResponse extends AcsResponse {
 
 	private String lastModifiedTime;
 
+	private String externalStorageLocation;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -112,6 +114,14 @@ public class CreateFlowResponse extends AcsResponse {
 
 	public void setLastModifiedTime(String lastModifiedTime) {
 		this.lastModifiedTime = lastModifiedTime;
+	}
+
+	public String getExternalStorageLocation() {
+		return this.externalStorageLocation;
+	}
+
+	public void setExternalStorageLocation(String externalStorageLocation) {
+		this.externalStorageLocation = externalStorageLocation;
 	}
 
 	@Override

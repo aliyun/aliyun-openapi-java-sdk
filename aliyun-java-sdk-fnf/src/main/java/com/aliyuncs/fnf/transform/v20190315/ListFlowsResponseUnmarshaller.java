@@ -40,6 +40,7 @@ public class ListFlowsResponseUnmarshaller {
 			flowsItem.setRoleArn(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].RoleArn"));
 			flowsItem.setCreatedTime(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].CreatedTime"));
 			flowsItem.setLastModifiedTime(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].LastModifiedTime"));
+			flowsItem.setExternalStorageLocation(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].ExternalStorageLocation"));
 
 			flows.add(flowsItem);
 		}

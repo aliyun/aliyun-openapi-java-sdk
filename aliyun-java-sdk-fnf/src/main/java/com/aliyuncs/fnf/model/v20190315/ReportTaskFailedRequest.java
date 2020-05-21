@@ -33,7 +33,7 @@ public class ReportTaskFailedRequest extends RpcAcsRequest<ReportTaskFailedRespo
 
 	private String taskToken;
 	public ReportTaskFailedRequest() {
-		super("fnf", "2019-03-15", "ReportTaskFailed", "fnf");
+		super("fnf", "2019-03-15", "ReportTaskFailed");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

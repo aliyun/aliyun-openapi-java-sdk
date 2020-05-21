@@ -29,7 +29,7 @@ public class DescribeFlowRequest extends RpcAcsRequest<DescribeFlowResponse> {
 
 	private String name;
 	public DescribeFlowRequest() {
-		super("fnf", "2019-03-15", "DescribeFlow", "fnf");
+		super("fnf", "2019-03-15", "DescribeFlow");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

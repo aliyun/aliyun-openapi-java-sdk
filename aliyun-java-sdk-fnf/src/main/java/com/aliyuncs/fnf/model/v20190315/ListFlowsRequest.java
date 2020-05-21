@@ -31,7 +31,7 @@ public class ListFlowsRequest extends RpcAcsRequest<ListFlowsResponse> {
 
 	private Integer limit;
 	public ListFlowsRequest() {
-		super("fnf", "2019-03-15", "ListFlows", "fnf");
+		super("fnf", "2019-03-15", "ListFlows");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

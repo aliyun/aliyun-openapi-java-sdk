@@ -35,7 +35,7 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 
 	private String flowName;
 	public StartExecutionRequest() {
-		super("fnf", "2019-03-15", "StartExecution", "fnf");
+		super("fnf", "2019-03-15", "StartExecution");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

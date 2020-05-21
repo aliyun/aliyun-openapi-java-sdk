@@ -35,7 +35,7 @@ public class GetExecutionHistoryRequest extends RpcAcsRequest<GetExecutionHistor
 
 	private String flowName;
 	public GetExecutionHistoryRequest() {
-		super("fnf", "2019-03-15", "GetExecutionHistory", "fnf");
+		super("fnf", "2019-03-15", "GetExecutionHistory");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

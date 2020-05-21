@@ -73,6 +73,8 @@ public class ListFlowsResponse extends AcsResponse {
 
 		private String lastModifiedTime;
 
+		private String externalStorageLocation;
+
 		public String getName() {
 			return this.name;
 		}
@@ -135,6 +137,14 @@ public class ListFlowsResponse extends AcsResponse {
 
 		public void setLastModifiedTime(String lastModifiedTime) {
 			this.lastModifiedTime = lastModifiedTime;
+		}
+
+		public String getExternalStorageLocation() {
+			return this.externalStorageLocation;
+		}
+
+		public void setExternalStorageLocation(String externalStorageLocation) {
+			this.externalStorageLocation = externalStorageLocation;
 		}
 	}
 
