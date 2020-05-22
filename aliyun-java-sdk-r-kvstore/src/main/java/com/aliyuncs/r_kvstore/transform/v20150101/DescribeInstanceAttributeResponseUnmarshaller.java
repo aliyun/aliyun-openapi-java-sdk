@@ -71,6 +71,7 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setReplicationMode(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReplicationMode"));
 			dBInstanceAttribute.setVpcCloudInstanceId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].VpcCloudInstanceId"));
 			dBInstanceAttribute.setInstanceReleaseProtection(_ctx.booleanValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceReleaseProtection"));
+			dBInstanceAttribute.setResourceGroupId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags.Length"); j++) {

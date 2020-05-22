@@ -125,6 +125,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private Boolean instanceReleaseProtection;
 
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		public String getInstanceId() {
@@ -437,6 +439,14 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setInstanceReleaseProtection(Boolean instanceReleaseProtection) {
 			this.instanceReleaseProtection = instanceReleaseProtection;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

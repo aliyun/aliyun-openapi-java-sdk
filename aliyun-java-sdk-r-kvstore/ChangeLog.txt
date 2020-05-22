@@ -1,3 +1,8 @@
+2020-05-23 Version: 2.4.0
+- Generated 2015-01-01 for `R-kvstore`.
+- Add ModifyResourceGroup API.
+- DescribeInstanceAttribute return ResourceGroupId.
+
 2020-05-14 Version: 2.3.2
 - Generated 2015-01-01 for `R-kvstore`.
 - Fix DescribeCacheAnalysisReport return empty BigKeys because of wrong type defination.
