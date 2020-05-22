@@ -60,6 +60,10 @@ public class DescribeEvaluateTaskReportResponseUnmarshaller {
 			tableShardResultsItem.setRowCount(_ctx.integerValue("DescribeEvaluateTaskReportResponse.EvaluateResult.TableShardResults["+ i +"].RowCount"));
 			tableShardResultsItem.setSqlCount(_ctx.integerValue("DescribeEvaluateTaskReportResponse.EvaluateResult.TableShardResults["+ i +"].SqlCount"));
 			tableShardResultsItem.setShardKeyType(_ctx.stringValue("DescribeEvaluateTaskReportResponse.EvaluateResult.TableShardResults["+ i +"].ShardKeyType"));
+			tableShardResultsItem.setDbShardMethod(_ctx.stringValue("DescribeEvaluateTaskReportResponse.EvaluateResult.TableShardResults["+ i +"].DbShardMethod"));
+			tableShardResultsItem.setTbShardMethod(_ctx.stringValue("DescribeEvaluateTaskReportResponse.EvaluateResult.TableShardResults["+ i +"].TbShardMethod"));
+			tableShardResultsItem.setOriginDbShardMethod(_ctx.stringValue("DescribeEvaluateTaskReportResponse.EvaluateResult.TableShardResults["+ i +"].OriginDbShardMethod"));
+			tableShardResultsItem.setOriginTbShardMethod(_ctx.stringValue("DescribeEvaluateTaskReportResponse.EvaluateResult.TableShardResults["+ i +"].OriginTbShardMethod"));
 
 			tableShardResults.add(tableShardResultsItem);
 		}

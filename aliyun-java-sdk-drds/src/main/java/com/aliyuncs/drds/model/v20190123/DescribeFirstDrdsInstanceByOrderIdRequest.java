@@ -27,7 +27,7 @@ public class DescribeFirstDrdsInstanceByOrderIdRequest extends RpcAcsRequest<Des
 
 	private String orderId;
 	public DescribeFirstDrdsInstanceByOrderIdRequest() {
-		super("Drds", "2019-01-23", "DescribeFirstDrdsInstanceByOrderId", "Drds");
+		super("Drds", "2019-01-23", "DescribeFirstDrdsInstanceByOrderId", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

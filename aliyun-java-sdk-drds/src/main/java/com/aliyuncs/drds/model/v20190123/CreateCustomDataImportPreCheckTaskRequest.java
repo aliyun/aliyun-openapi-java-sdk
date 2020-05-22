@@ -27,7 +27,7 @@ public class CreateCustomDataImportPreCheckTaskRequest extends RpcAcsRequest<Cre
 
 	private String importParam;
 	public CreateCustomDataImportPreCheckTaskRequest() {
-		super("Drds", "2019-01-23", "CreateCustomDataImportPreCheckTask", "Drds");
+		super("Drds", "2019-01-23", "CreateCustomDataImportPreCheckTask", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

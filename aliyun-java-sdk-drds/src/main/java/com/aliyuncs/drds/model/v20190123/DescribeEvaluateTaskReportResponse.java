@@ -239,6 +239,14 @@ public class DescribeEvaluateTaskReportResponse extends AcsResponse {
 
 			private String shardKeyType;
 
+			private String dbShardMethod;
+
+			private String tbShardMethod;
+
+			private String originDbShardMethod;
+
+			private String originTbShardMethod;
+
 			public String getTable() {
 				return this.table;
 			}
@@ -317,6 +325,38 @@ public class DescribeEvaluateTaskReportResponse extends AcsResponse {
 
 			public void setShardKeyType(String shardKeyType) {
 				this.shardKeyType = shardKeyType;
+			}
+
+			public String getDbShardMethod() {
+				return this.dbShardMethod;
+			}
+
+			public void setDbShardMethod(String dbShardMethod) {
+				this.dbShardMethod = dbShardMethod;
+			}
+
+			public String getTbShardMethod() {
+				return this.tbShardMethod;
+			}
+
+			public void setTbShardMethod(String tbShardMethod) {
+				this.tbShardMethod = tbShardMethod;
+			}
+
+			public String getOriginDbShardMethod() {
+				return this.originDbShardMethod;
+			}
+
+			public void setOriginDbShardMethod(String originDbShardMethod) {
+				this.originDbShardMethod = originDbShardMethod;
+			}
+
+			public String getOriginTbShardMethod() {
+				return this.originTbShardMethod;
+			}
+
+			public void setOriginTbShardMethod(String originTbShardMethod) {
+				this.originTbShardMethod = originTbShardMethod;
 			}
 		}
 

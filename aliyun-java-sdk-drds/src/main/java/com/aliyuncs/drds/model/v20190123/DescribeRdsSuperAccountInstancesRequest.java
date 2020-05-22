@@ -32,7 +32,7 @@ public class DescribeRdsSuperAccountInstancesRequest extends RpcAcsRequest<Descr
 
 	private String dbInstType;
 	public DescribeRdsSuperAccountInstancesRequest() {
-		super("Drds", "2019-01-23", "DescribeRdsSuperAccountInstances", "Drds");
+		super("Drds", "2019-01-23", "DescribeRdsSuperAccountInstances", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

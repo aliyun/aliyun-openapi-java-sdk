@@ -33,7 +33,7 @@ public class DatalinkReplicationPrecheckRequest extends RpcAcsRequest<DatalinkRe
 
 	private String dstTableName;
 	public DatalinkReplicationPrecheckRequest() {
-		super("Drds", "2019-01-23", "DatalinkReplicationPrecheck", "Drds");
+		super("Drds", "2019-01-23", "DatalinkReplicationPrecheck", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

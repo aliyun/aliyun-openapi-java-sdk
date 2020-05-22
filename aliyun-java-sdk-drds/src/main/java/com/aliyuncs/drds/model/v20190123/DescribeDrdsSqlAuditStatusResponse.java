@@ -63,6 +63,14 @@ public class DescribeDrdsSqlAuditStatusResponse extends AcsResponse {
 
 		private String detailed;
 
+		private Boolean extraWriteEnabled;
+
+		private Long extraAliUid;
+
+		private String extraSlsProject;
+
+		private String extraSlsLogStore;
+
 		public String getDbName() {
 			return this.dbName;
 		}
@@ -85,6 +93,38 @@ public class DescribeDrdsSqlAuditStatusResponse extends AcsResponse {
 
 		public void setDetailed(String detailed) {
 			this.detailed = detailed;
+		}
+
+		public Boolean getExtraWriteEnabled() {
+			return this.extraWriteEnabled;
+		}
+
+		public void setExtraWriteEnabled(Boolean extraWriteEnabled) {
+			this.extraWriteEnabled = extraWriteEnabled;
+		}
+
+		public Long getExtraAliUid() {
+			return this.extraAliUid;
+		}
+
+		public void setExtraAliUid(Long extraAliUid) {
+			this.extraAliUid = extraAliUid;
+		}
+
+		public String getExtraSlsProject() {
+			return this.extraSlsProject;
+		}
+
+		public void setExtraSlsProject(String extraSlsProject) {
+			this.extraSlsProject = extraSlsProject;
+		}
+
+		public String getExtraSlsLogStore() {
+			return this.extraSlsLogStore;
+		}
+
+		public void setExtraSlsLogStore(String extraSlsLogStore) {
+			this.extraSlsLogStore = extraSlsLogStore;
 		}
 	}
 

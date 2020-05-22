@@ -28,8 +28,10 @@ public class SqlCompatibilityStartRequest extends RpcAcsRequest<SqlCompatibility
 	private String targetVersion;
 
 	private String drdsInstanceId;
+
+	private Boolean performanceTest;
 	public SqlCompatibilityStartRequest() {
-		super("Drds", "2019-01-23", "SqlCompatibilityStart", "Drds");
+		super("Drds", "2019-01-23", "SqlCompatibilityStart", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +58,17 @@ public class SqlCompatibilityStartRequest extends RpcAcsRequest<SqlCompatibility
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public Boolean getPerformanceTest() {
+		return this.performanceTest;
+	}
+
+	public void setPerformanceTest(Boolean performanceTest) {
+		this.performanceTest = performanceTest;
+		if(performanceTest != null){
+			putQueryParameter("PerformanceTest", performanceTest.toString());
 		}
 	}
 

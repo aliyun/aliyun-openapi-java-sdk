@@ -59,6 +59,8 @@ public class DescribeDrdsDbInstanceResponse extends AcsResponse {
 
 		private String dBInstanceId;
 
+		private String dmInstanceId;
+
 		private String connectUrl;
 
 		private Integer port;
@@ -91,6 +93,14 @@ public class DescribeDrdsDbInstanceResponse extends AcsResponse {
 
 		public void setDBInstanceId(String dBInstanceId) {
 			this.dBInstanceId = dBInstanceId;
+		}
+
+		public String getDmInstanceId() {
+			return this.dmInstanceId;
+		}
+
+		public void setDmInstanceId(String dmInstanceId) {
+			this.dmInstanceId = dmInstanceId;
 		}
 
 		public String getConnectUrl() {
@@ -201,6 +211,8 @@ public class DescribeDrdsDbInstanceResponse extends AcsResponse {
 
 			private String dBInstanceId;
 
+			private String dmInstanceId;
+
 			private String connectUrl;
 
 			private Integer port;
@@ -233,6 +245,14 @@ public class DescribeDrdsDbInstanceResponse extends AcsResponse {
 
 			public void setDBInstanceId(String dBInstanceId) {
 				this.dBInstanceId = dBInstanceId;
+			}
+
+			public String getDmInstanceId() {
+				return this.dmInstanceId;
+			}
+
+			public void setDmInstanceId(String dmInstanceId) {
+				this.dmInstanceId = dmInstanceId;
 			}
 
 			public String getConnectUrl() {

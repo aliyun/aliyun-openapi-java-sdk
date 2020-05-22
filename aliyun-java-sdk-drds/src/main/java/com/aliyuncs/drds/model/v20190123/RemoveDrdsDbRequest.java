@@ -29,7 +29,7 @@ public class RemoveDrdsDbRequest extends RpcAcsRequest<RemoveDrdsDbResponse> {
 
 	private String dbName;
 	public RemoveDrdsDbRequest() {
-		super("Drds", "2019-01-23", "RemoveDrdsDb", "Drds");
+		super("Drds", "2019-01-23", "RemoveDrdsDb", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

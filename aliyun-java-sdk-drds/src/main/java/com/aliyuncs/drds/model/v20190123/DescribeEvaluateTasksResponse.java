@@ -109,6 +109,8 @@ public class DescribeEvaluateTasksResponse extends AcsResponse {
 
 		private Integer allSqlCount;
 
+		private Integer dbType;
+
 		public Integer getId() {
 			return this.id;
 		}
@@ -195,6 +197,14 @@ public class DescribeEvaluateTasksResponse extends AcsResponse {
 
 		public void setAllSqlCount(Integer allSqlCount) {
 			this.allSqlCount = allSqlCount;
+		}
+
+		public Integer getDbType() {
+			return this.dbType;
+		}
+
+		public void setDbType(Integer dbType) {
+			this.dbType = dbType;
 		}
 	}
 

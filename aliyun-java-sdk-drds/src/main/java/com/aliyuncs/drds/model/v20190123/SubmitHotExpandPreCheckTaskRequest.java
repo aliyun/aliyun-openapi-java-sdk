@@ -34,7 +34,7 @@ public class SubmitHotExpandPreCheckTaskRequest extends RpcAcsRequest<SubmitHotE
 
 	private String dbInstType;
 	public SubmitHotExpandPreCheckTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitHotExpandPreCheckTask", "Drds");
+		super("Drds", "2019-01-23", "SubmitHotExpandPreCheckTask", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

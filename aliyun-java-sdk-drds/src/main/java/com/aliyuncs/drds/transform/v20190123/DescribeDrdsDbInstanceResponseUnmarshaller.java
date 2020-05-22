@@ -32,6 +32,7 @@ public class DescribeDrdsDbInstanceResponseUnmarshaller {
 
 		DbInstance dbInstance = new DbInstance();
 		dbInstance.setDBInstanceId(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.DBInstanceId"));
+		dbInstance.setDmInstanceId(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.DmInstanceId"));
 		dbInstance.setConnectUrl(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ConnectUrl"));
 		dbInstance.setPort(_ctx.integerValue("DescribeDrdsDbInstanceResponse.DbInstance.Port"));
 		dbInstance.setDBInstanceStatus(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.DBInstanceStatus"));
@@ -49,6 +50,7 @@ public class DescribeDrdsDbInstanceResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances.Length"); i++) {
 			ReadOnlyInstance readOnlyInstance = new ReadOnlyInstance();
 			readOnlyInstance.setDBInstanceId(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].DBInstanceId"));
+			readOnlyInstance.setDmInstanceId(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].DmInstanceId"));
 			readOnlyInstance.setConnectUrl(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].ConnectUrl"));
 			readOnlyInstance.setPort(_ctx.integerValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].Port"));
 			readOnlyInstance.setDBInstanceStatus(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].DBInstanceStatus"));

@@ -27,7 +27,7 @@ public class RollbackInstanceVersionRequest extends RpcAcsRequest<RollbackInstan
 
 	private String drdsInstanceId;
 	public RollbackInstanceVersionRequest() {
-		super("Drds", "2019-01-23", "RollbackInstanceVersion", "Drds");
+		super("Drds", "2019-01-23", "RollbackInstanceVersion", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

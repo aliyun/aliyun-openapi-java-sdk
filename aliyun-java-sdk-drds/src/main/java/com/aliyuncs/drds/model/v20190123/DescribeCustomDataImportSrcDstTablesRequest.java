@@ -27,7 +27,7 @@ public class DescribeCustomDataImportSrcDstTablesRequest extends RpcAcsRequest<D
 
 	private String importParam;
 	public DescribeCustomDataImportSrcDstTablesRequest() {
-		super("Drds", "2019-01-23", "DescribeCustomDataImportSrcDstTables", "Drds");
+		super("Drds", "2019-01-23", "DescribeCustomDataImportSrcDstTables", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

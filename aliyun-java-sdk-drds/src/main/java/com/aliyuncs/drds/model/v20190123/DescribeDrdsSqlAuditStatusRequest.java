@@ -27,7 +27,7 @@ public class DescribeDrdsSqlAuditStatusRequest extends RpcAcsRequest<DescribeDrd
 
 	private String drdsInstanceId;
 	public DescribeDrdsSqlAuditStatusRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsSqlAuditStatus", "Drds");
+		super("Drds", "2019-01-23", "DescribeDrdsSqlAuditStatus", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

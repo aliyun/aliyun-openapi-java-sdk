@@ -46,6 +46,7 @@ public class DescribeEvaluateTasksResponseUnmarshaller {
 			evaluateTask.setProgress(_ctx.integerValue("DescribeEvaluateTasksResponse.Data["+ i +"].Progress"));
 			evaluateTask.setEvalauteHours(_ctx.integerValue("DescribeEvaluateTasksResponse.Data["+ i +"].EvalauteHours"));
 			evaluateTask.setAllSqlCount(_ctx.integerValue("DescribeEvaluateTasksResponse.Data["+ i +"].AllSqlCount"));
+			evaluateTask.setDbType(_ctx.integerValue("DescribeEvaluateTasksResponse.Data["+ i +"].DbType"));
 
 			data.add(evaluateTask);
 		}
