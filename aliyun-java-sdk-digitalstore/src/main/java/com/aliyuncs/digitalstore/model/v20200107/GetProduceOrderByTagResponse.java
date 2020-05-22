@@ -42,6 +42,28 @@ public class GetProduceOrderByTagResponse extends AcsResponse {
 
 	private String barcode;
 
+	private String sKUId;
+
+	private String productId;
+
+	private String productCode;
+
+	private String productName;
+
+	private String productColorCode;
+
+	private String productColorId;
+
+	private String productColorName;
+
+	private String productSizeCode;
+
+	private String productSizeId;
+
+	private String productSizeName;
+
+	private String sKUName;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -112,6 +134,94 @@ public class GetProduceOrderByTagResponse extends AcsResponse {
 
 	public void setBarcode(String barcode) {
 		this.barcode = barcode;
+	}
+
+	public String getSKUId() {
+		return this.sKUId;
+	}
+
+	public void setSKUId(String sKUId) {
+		this.sKUId = sKUId;
+	}
+
+	public String getProductId() {
+		return this.productId;
+	}
+
+	public void setProductId(String productId) {
+		this.productId = productId;
+	}
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
+
+	public String getProductName() {
+		return this.productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public String getProductColorCode() {
+		return this.productColorCode;
+	}
+
+	public void setProductColorCode(String productColorCode) {
+		this.productColorCode = productColorCode;
+	}
+
+	public String getProductColorId() {
+		return this.productColorId;
+	}
+
+	public void setProductColorId(String productColorId) {
+		this.productColorId = productColorId;
+	}
+
+	public String getProductColorName() {
+		return this.productColorName;
+	}
+
+	public void setProductColorName(String productColorName) {
+		this.productColorName = productColorName;
+	}
+
+	public String getProductSizeCode() {
+		return this.productSizeCode;
+	}
+
+	public void setProductSizeCode(String productSizeCode) {
+		this.productSizeCode = productSizeCode;
+	}
+
+	public String getProductSizeId() {
+		return this.productSizeId;
+	}
+
+	public void setProductSizeId(String productSizeId) {
+		this.productSizeId = productSizeId;
+	}
+
+	public String getProductSizeName() {
+		return this.productSizeName;
+	}
+
+	public void setProductSizeName(String productSizeName) {
+		this.productSizeName = productSizeName;
+	}
+
+	public String getSKUName() {
+		return this.sKUName;
+	}
+
+	public void setSKUName(String sKUName) {
+		this.sKUName = sKUName;
 	}
 
 	@Override

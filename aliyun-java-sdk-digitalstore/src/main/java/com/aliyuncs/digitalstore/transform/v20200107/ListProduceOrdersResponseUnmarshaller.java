@@ -63,6 +63,8 @@ public class ListProduceOrdersResponseUnmarshaller {
 			produceOrderModel.setSourceOrderType(_ctx.stringValue("ListProduceOrdersResponse.Orders["+ i +"].SourceOrderType"));
 			produceOrderModel.setStatus(_ctx.stringValue("ListProduceOrdersResponse.Orders["+ i +"].Status"));
 			produceOrderModel.setScanType(_ctx.stringValue("ListProduceOrdersResponse.Orders["+ i +"].ScanType"));
+			produceOrderModel.setApplyOrderQuantity(_ctx.integerValue("ListProduceOrdersResponse.Orders["+ i +"].ApplyOrderQuantity"));
+			produceOrderModel.setApplyCaseQuantity(_ctx.integerValue("ListProduceOrdersResponse.Orders["+ i +"].ApplyCaseQuantity"));
 
 			orders.add(produceOrderModel);
 		}

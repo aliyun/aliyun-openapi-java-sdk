@@ -31,6 +31,17 @@ public class GetProduceOrderByTagResponseUnmarshaller {
 		getProduceOrderByTagResponse.setCaseCode(_ctx.stringValue("GetProduceOrderByTagResponse.CaseCode"));
 		getProduceOrderByTagResponse.setTag(_ctx.stringValue("GetProduceOrderByTagResponse.Tag"));
 		getProduceOrderByTagResponse.setBarcode(_ctx.stringValue("GetProduceOrderByTagResponse.Barcode"));
+		getProduceOrderByTagResponse.setSKUId(_ctx.stringValue("GetProduceOrderByTagResponse.SKUId"));
+		getProduceOrderByTagResponse.setProductId(_ctx.stringValue("GetProduceOrderByTagResponse.ProductId"));
+		getProduceOrderByTagResponse.setProductCode(_ctx.stringValue("GetProduceOrderByTagResponse.ProductCode"));
+		getProduceOrderByTagResponse.setProductName(_ctx.stringValue("GetProduceOrderByTagResponse.ProductName"));
+		getProduceOrderByTagResponse.setProductColorCode(_ctx.stringValue("GetProduceOrderByTagResponse.ProductColorCode"));
+		getProduceOrderByTagResponse.setProductColorId(_ctx.stringValue("GetProduceOrderByTagResponse.ProductColorId"));
+		getProduceOrderByTagResponse.setProductColorName(_ctx.stringValue("GetProduceOrderByTagResponse.ProductColorName"));
+		getProduceOrderByTagResponse.setProductSizeCode(_ctx.stringValue("GetProduceOrderByTagResponse.ProductSizeCode"));
+		getProduceOrderByTagResponse.setProductSizeId(_ctx.stringValue("GetProduceOrderByTagResponse.ProductSizeId"));
+		getProduceOrderByTagResponse.setProductSizeName(_ctx.stringValue("GetProduceOrderByTagResponse.ProductSizeName"));
+		getProduceOrderByTagResponse.setSKUName(_ctx.stringValue("GetProduceOrderByTagResponse.SKUName"));
 	 
 	 	return getProduceOrderByTagResponse;
 	}

@@ -143,6 +143,10 @@ public class ListProduceOrdersResponse extends AcsResponse {
 
 		private String scanType;
 
+		private Integer applyOrderQuantity;
+
+		private Integer applyCaseQuantity;
+
 		public String getOrderId() {
 			return this.orderId;
 		}
@@ -365,6 +369,22 @@ public class ListProduceOrdersResponse extends AcsResponse {
 
 		public void setScanType(String scanType) {
 			this.scanType = scanType;
+		}
+
+		public Integer getApplyOrderQuantity() {
+			return this.applyOrderQuantity;
+		}
+
+		public void setApplyOrderQuantity(Integer applyOrderQuantity) {
+			this.applyOrderQuantity = applyOrderQuantity;
+		}
+
+		public Integer getApplyCaseQuantity() {
+			return this.applyCaseQuantity;
+		}
+
+		public void setApplyCaseQuantity(Integer applyCaseQuantity) {
+			this.applyCaseQuantity = applyCaseQuantity;
 		}
 	}
 
