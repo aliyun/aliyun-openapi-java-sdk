@@ -29,6 +29,8 @@ public class DescribeGroupResponse extends AcsResponse {
 
 	private String id;
 
+	private String aliasId;
+
 	private String name;
 
 	private String description;
@@ -54,6 +56,16 @@ public class DescribeGroupResponse extends AcsResponse {
 	private Boolean lazyPull;
 
 	private String callback;
+
+	private Integer captureInterval;
+
+	private Integer captureImage;
+
+	private Integer captureVideo;
+
+	private String captureOssBucket;
+
+	private String captureOssPath;
 
 	private String gbId;
 
@@ -81,6 +93,14 @@ public class DescribeGroupResponse extends AcsResponse {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getAliasId() {
+		return this.aliasId;
+	}
+
+	public void setAliasId(String aliasId) {
+		this.aliasId = aliasId;
 	}
 
 	public String getName() {
@@ -185,6 +205,46 @@ public class DescribeGroupResponse extends AcsResponse {
 
 	public void setCallback(String callback) {
 		this.callback = callback;
+	}
+
+	public Integer getCaptureInterval() {
+		return this.captureInterval;
+	}
+
+	public void setCaptureInterval(Integer captureInterval) {
+		this.captureInterval = captureInterval;
+	}
+
+	public Integer getCaptureImage() {
+		return this.captureImage;
+	}
+
+	public void setCaptureImage(Integer captureImage) {
+		this.captureImage = captureImage;
+	}
+
+	public Integer getCaptureVideo() {
+		return this.captureVideo;
+	}
+
+	public void setCaptureVideo(Integer captureVideo) {
+		this.captureVideo = captureVideo;
+	}
+
+	public String getCaptureOssBucket() {
+		return this.captureOssBucket;
+	}
+
+	public void setCaptureOssBucket(String captureOssBucket) {
+		this.captureOssBucket = captureOssBucket;
+	}
+
+	public String getCaptureOssPath() {
+		return this.captureOssPath;
+	}
+
+	public void setCaptureOssPath(String captureOssPath) {
+		this.captureOssPath = captureOssPath;
 	}
 
 	public String getGbId() {

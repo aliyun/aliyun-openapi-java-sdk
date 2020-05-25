@@ -22,34 +22,19 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
+public class DescribePurchasedDeviceRequest extends RpcAcsRequest<DescribePurchasedDeviceResponse> {
 	   
-
-	private Long startTime;
 
 	private String id;
 
-	private Long endTime;
-
 	private Long ownerId;
-	public StartStreamRequest() {
-		super("vs", "2018-12-12", "StartStream", "vs");
+	public DescribePurchasedDeviceRequest() {
+		super("vs", "2018-12-12", "DescribePurchasedDevice", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
 	}
 
 	public String getId() {
@@ -60,17 +45,6 @@ public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id);
-		}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -86,8 +60,8 @@ public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
 	}
 
 	@Override
-	public Class<StartStreamResponse> getResponseClass() {
-		return StartStreamResponse.class;
+	public Class<DescribePurchasedDeviceResponse> getResponseClass() {
+		return DescribePurchasedDeviceResponse.class;
 	}
 
 }

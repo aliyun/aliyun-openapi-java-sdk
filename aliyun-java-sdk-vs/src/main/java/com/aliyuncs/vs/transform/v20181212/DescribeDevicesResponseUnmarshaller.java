@@ -59,6 +59,7 @@ public class DescribeDevicesResponseUnmarshaller {
 			device.setLongitude(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Longitude"));
 			device.setLatitude(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Latitude"));
 			device.setAutoPos(_ctx.booleanValue("DescribeDevicesResponse.Devices["+ i +"].AutoPos"));
+			device.setAlarmMethod(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].AlarmMethod"));
 			device.setPosInterval(_ctx.longValue("DescribeDevicesResponse.Devices["+ i +"].PosInterval"));
 			device.setCreatedTime(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].CreatedTime"));
 			device.setRegisteredTime(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].RegisteredTime"));

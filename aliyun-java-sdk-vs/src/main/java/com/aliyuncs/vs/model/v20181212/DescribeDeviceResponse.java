@@ -72,6 +72,8 @@ public class DescribeDeviceResponse extends AcsResponse {
 
 	private Long posInterval;
 
+	private String alarmMethod;
+
 	private String createdTime;
 
 	private String registeredTime;
@@ -274,6 +276,14 @@ public class DescribeDeviceResponse extends AcsResponse {
 
 	public void setPosInterval(Long posInterval) {
 		this.posInterval = posInterval;
+	}
+
+	public String getAlarmMethod() {
+		return this.alarmMethod;
+	}
+
+	public void setAlarmMethod(String alarmMethod) {
+		this.alarmMethod = alarmMethod;
 	}
 
 	public String getCreatedTime() {

@@ -48,6 +48,7 @@ public class DescribeDeviceResponseUnmarshaller {
 		describeDeviceResponse.setLatitude(_ctx.stringValue("DescribeDeviceResponse.Latitude"));
 		describeDeviceResponse.setAutoPos(_ctx.booleanValue("DescribeDeviceResponse.AutoPos"));
 		describeDeviceResponse.setPosInterval(_ctx.longValue("DescribeDeviceResponse.PosInterval"));
+		describeDeviceResponse.setAlarmMethod(_ctx.stringValue("DescribeDeviceResponse.AlarmMethod"));
 		describeDeviceResponse.setCreatedTime(_ctx.stringValue("DescribeDeviceResponse.CreatedTime"));
 		describeDeviceResponse.setRegisteredTime(_ctx.stringValue("DescribeDeviceResponse.RegisteredTime"));
 		describeDeviceResponse.setChannelSyncTime(_ctx.stringValue("DescribeDeviceResponse.ChannelSyncTime"));

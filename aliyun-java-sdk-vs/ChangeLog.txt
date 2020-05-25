@@ -1,3 +1,9 @@
+2020-05-25 Version: 1.9.0
+- Supported auvsp protocol changes.
+- Supported start vod streams.
+- Supported stop vod streams.
+- Supported gb28281 alarm on device.
+
 2020-03-11 Version: 1.8.0
 - Supported ondemand record.
 - Supported ivision template binding.

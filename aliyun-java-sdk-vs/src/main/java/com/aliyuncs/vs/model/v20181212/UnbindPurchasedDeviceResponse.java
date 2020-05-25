@@ -15,20 +15,16 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vs.transform.v20181212.StartStreamResponseUnmarshaller;
+import com.aliyuncs.vs.transform.v20181212.UnbindPurchasedDeviceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StartStreamResponse extends AcsResponse {
+public class UnbindPurchasedDeviceResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String id;
-
-	private String name;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +34,13 @@ public class StartStreamResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	@Override
+	public UnbindPurchasedDeviceResponse getInstance(UnmarshallerContext context) {
+		return	UnbindPurchasedDeviceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public StartStreamResponse getInstance(UnmarshallerContext context) {
-		return	StartStreamResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

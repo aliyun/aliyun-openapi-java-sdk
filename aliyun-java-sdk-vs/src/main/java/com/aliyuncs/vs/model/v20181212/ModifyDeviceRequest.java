@@ -41,6 +41,8 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 
 	private String vendor;
 
+	private String alarmMethod;
+
 	private String directoryId;
 
 	private String id;
@@ -160,6 +162,17 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 		this.vendor = vendor;
 		if(vendor != null){
 			putQueryParameter("Vendor", vendor);
+		}
+	}
+
+	public String getAlarmMethod() {
+		return this.alarmMethod;
+	}
+
+	public void setAlarmMethod(String alarmMethod) {
+		this.alarmMethod = alarmMethod;
+		if(alarmMethod != null){
+			putQueryParameter("AlarmMethod", alarmMethod);
 		}
 	}
 

@@ -131,6 +131,8 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 		private Boolean autoPos;
 
+		private String alarmMethod;
+
 		private Long posInterval;
 
 		private String createdTime;
@@ -319,6 +321,14 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 		public void setAutoPos(Boolean autoPos) {
 			this.autoPos = autoPos;
+		}
+
+		public String getAlarmMethod() {
+			return this.alarmMethod;
+		}
+
+		public void setAlarmMethod(String alarmMethod) {
+			this.alarmMethod = alarmMethod;
 		}
 
 		public Long getPosInterval() {

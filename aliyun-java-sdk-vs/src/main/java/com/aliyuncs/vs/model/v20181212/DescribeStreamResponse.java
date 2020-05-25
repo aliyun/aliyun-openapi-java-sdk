@@ -46,6 +46,10 @@ public class DescribeStreamResponse extends AcsResponse {
 
 	private String status;
 
+	private Integer height;
+
+	private Integer width;
+
 	private String createdTime;
 
 	public String getRequestId() {
@@ -134,6 +138,22 @@ public class DescribeStreamResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public Integer getHeight() {
+		return this.height;
+	}
+
+	public void setHeight(Integer height) {
+		this.height = height;
+	}
+
+	public Integer getWidth() {
+		return this.width;
+	}
+
+	public void setWidth(Integer width) {
+		this.width = width;
 	}
 
 	public String getCreatedTime() {

@@ -25,15 +25,23 @@ import com.aliyuncs.vs.Endpoint;
 public class CreateGroupRequest extends RpcAcsRequest<CreateGroupResponse> {
 	   
 
+	private Integer captureVideo;
+
 	private String description;
 
+	private String captureOssPath;
+
 	private String pushDomain;
+
+	private Integer captureImage;
 
 	private String app;
 
 	private String playDomain;
 
 	private String outProtocol;
+
+	private Integer captureInterval;
 
 	private Long ownerId;
 
@@ -46,6 +54,8 @@ public class CreateGroupRequest extends RpcAcsRequest<CreateGroupResponse> {
 	private String callback;
 
 	private String region;
+
+	private String captureOssBucket;
 	public CreateGroupRequest() {
 		super("vs", "2018-12-12", "CreateGroup", "vs");
 		setMethod(MethodType.POST);
@@ -53,6 +63,17 @@ public class CreateGroupRequest extends RpcAcsRequest<CreateGroupResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getCaptureVideo() {
+		return this.captureVideo;
+	}
+
+	public void setCaptureVideo(Integer captureVideo) {
+		this.captureVideo = captureVideo;
+		if(captureVideo != null){
+			putQueryParameter("CaptureVideo", captureVideo.toString());
+		}
 	}
 
 	public String getDescription() {
@@ -66,6 +87,17 @@ public class CreateGroupRequest extends RpcAcsRequest<CreateGroupResponse> {
 		}
 	}
 
+	public String getCaptureOssPath() {
+		return this.captureOssPath;
+	}
+
+	public void setCaptureOssPath(String captureOssPath) {
+		this.captureOssPath = captureOssPath;
+		if(captureOssPath != null){
+			putQueryParameter("CaptureOssPath", captureOssPath);
+		}
+	}
+
 	public String getPushDomain() {
 		return this.pushDomain;
 	}
@@ -74,6 +106,17 @@ public class CreateGroupRequest extends RpcAcsRequest<CreateGroupResponse> {
 		this.pushDomain = pushDomain;
 		if(pushDomain != null){
 			putQueryParameter("PushDomain", pushDomain);
+		}
+	}
+
+	public Integer getCaptureImage() {
+		return this.captureImage;
+	}
+
+	public void setCaptureImage(Integer captureImage) {
+		this.captureImage = captureImage;
+		if(captureImage != null){
+			putQueryParameter("CaptureImage", captureImage.toString());
 		}
 	}
 
@@ -107,6 +150,17 @@ public class CreateGroupRequest extends RpcAcsRequest<CreateGroupResponse> {
 		this.outProtocol = outProtocol;
 		if(outProtocol != null){
 			putQueryParameter("OutProtocol", outProtocol);
+		}
+	}
+
+	public Integer getCaptureInterval() {
+		return this.captureInterval;
+	}
+
+	public void setCaptureInterval(Integer captureInterval) {
+		this.captureInterval = captureInterval;
+		if(captureInterval != null){
+			putQueryParameter("CaptureInterval", captureInterval.toString());
 		}
 	}
 
@@ -173,6 +227,17 @@ public class CreateGroupRequest extends RpcAcsRequest<CreateGroupResponse> {
 		this.region = region;
 		if(region != null){
 			putQueryParameter("Region", region);
+		}
+	}
+
+	public String getCaptureOssBucket() {
+		return this.captureOssBucket;
+	}
+
+	public void setCaptureOssBucket(String captureOssBucket) {
+		this.captureOssBucket = captureOssBucket;
+		if(captureOssBucket != null){
+			putQueryParameter("CaptureOssBucket", captureOssBucket);
 		}
 	}
 

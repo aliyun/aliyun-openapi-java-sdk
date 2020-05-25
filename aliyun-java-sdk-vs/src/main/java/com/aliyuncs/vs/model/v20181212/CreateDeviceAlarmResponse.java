@@ -15,20 +15,24 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vs.transform.v20181212.StartStreamResponseUnmarshaller;
+import com.aliyuncs.vs.transform.v20181212.CreateDeviceAlarmResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StartStreamResponse extends AcsResponse {
+public class CreateDeviceAlarmResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String id;
+	private String url;
 
-	private String name;
+	private Long expire;
+
+	private String alarmId;
+
+	private Long alarmDelay;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +42,40 @@ public class StartStreamResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getId() {
-		return this.id;
+	public String getUrl() {
+		return this.url;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
-	public String getName() {
-		return this.name;
+	public Long getExpire() {
+		return this.expire;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setExpire(Long expire) {
+		this.expire = expire;
+	}
+
+	public String getAlarmId() {
+		return this.alarmId;
+	}
+
+	public void setAlarmId(String alarmId) {
+		this.alarmId = alarmId;
+	}
+
+	public Long getAlarmDelay() {
+		return this.alarmDelay;
+	}
+
+	public void setAlarmDelay(Long alarmDelay) {
+		this.alarmDelay = alarmDelay;
 	}
 
 	@Override
-	public StartStreamResponse getInstance(UnmarshallerContext context) {
-		return	StartStreamResponseUnmarshaller.unmarshall(this, context);
+	public CreateDeviceAlarmResponse getInstance(UnmarshallerContext context) {
+		return	CreateDeviceAlarmResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -22,18 +22,18 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
+public class ModifyDeviceCaptureRequest extends RpcAcsRequest<ModifyDeviceCaptureResponse> {
 	   
 
-	private Long startTime;
+	private Integer video;
 
 	private String id;
 
-	private Long endTime;
+	private Integer image;
 
 	private Long ownerId;
-	public StartStreamRequest() {
-		super("vs", "2018-12-12", "StartStream", "vs");
+	public ModifyDeviceCaptureRequest() {
+		super("vs", "2018-12-12", "ModifyDeviceCapture", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +41,14 @@ public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getStartTime() {
-		return this.startTime;
+	public Integer getVideo() {
+		return this.video;
 	}
 
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
+	public void setVideo(Integer video) {
+		this.video = video;
+		if(video != null){
+			putQueryParameter("Video", video.toString());
 		}
 	}
 
@@ -63,14 +63,14 @@ public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
 		}
 	}
 
-	public Long getEndTime() {
-		return this.endTime;
+	public Integer getImage() {
+		return this.image;
 	}
 
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
+	public void setImage(Integer image) {
+		this.image = image;
+		if(image != null){
+			putQueryParameter("Image", image.toString());
 		}
 	}
 
@@ -86,8 +86,8 @@ public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
 	}
 
 	@Override
-	public Class<StartStreamResponse> getResponseClass() {
-		return StartStreamResponse.class;
+	public Class<ModifyDeviceCaptureResponse> getResponseClass() {
+		return ModifyDeviceCaptureResponse.class;
 	}
 
 }

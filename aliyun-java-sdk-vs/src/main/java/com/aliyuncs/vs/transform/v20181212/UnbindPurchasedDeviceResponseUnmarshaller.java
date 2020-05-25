@@ -14,18 +14,16 @@
 
 package com.aliyuncs.vs.transform.v20181212;
 
-import com.aliyuncs.vs.model.v20181212.StartStreamResponse;
+import com.aliyuncs.vs.model.v20181212.UnbindPurchasedDeviceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class StartStreamResponseUnmarshaller {
+public class UnbindPurchasedDeviceResponseUnmarshaller {
 
-	public static StartStreamResponse unmarshall(StartStreamResponse startStreamResponse, UnmarshallerContext _ctx) {
+	public static UnbindPurchasedDeviceResponse unmarshall(UnbindPurchasedDeviceResponse unbindPurchasedDeviceResponse, UnmarshallerContext _ctx) {
 		
-		startStreamResponse.setRequestId(_ctx.stringValue("StartStreamResponse.RequestId"));
-		startStreamResponse.setId(_ctx.stringValue("StartStreamResponse.Id"));
-		startStreamResponse.setName(_ctx.stringValue("StartStreamResponse.Name"));
+		unbindPurchasedDeviceResponse.setRequestId(_ctx.stringValue("UnbindPurchasedDeviceResponse.RequestId"));
 	 
-	 	return startStreamResponse;
+	 	return unbindPurchasedDeviceResponse;
 	}
 }

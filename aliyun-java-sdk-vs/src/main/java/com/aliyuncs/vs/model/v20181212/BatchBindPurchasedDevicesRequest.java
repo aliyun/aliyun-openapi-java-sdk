@@ -22,18 +22,18 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopStreamRequest extends RpcAcsRequest<StopStreamResponse> {
+public class BatchBindPurchasedDevicesRequest extends RpcAcsRequest<BatchBindPurchasedDevicesResponse> {
 	   
 
-	private String startTime;
-
-	private String id;
+	private String groupId;
 
 	private Long ownerId;
 
-	private String name;
-	public StopStreamRequest() {
-		super("vs", "2018-12-12", "StopStream", "vs");
+	private String deviceId;
+
+	private String region;
+	public BatchBindPurchasedDevicesRequest() {
+		super("vs", "2018-12-12", "BatchBindPurchasedDevices", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +41,14 @@ public class StopStreamRequest extends RpcAcsRequest<StopStreamResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
@@ -74,20 +63,31 @@ public class StopStreamRequest extends RpcAcsRequest<StopStreamResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getDeviceId() {
+		return this.deviceId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+		if(deviceId != null){
+			putQueryParameter("DeviceId", deviceId);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 
 	@Override
-	public Class<StopStreamResponse> getResponseClass() {
-		return StopStreamResponse.class;
+	public Class<BatchBindPurchasedDevicesResponse> getResponseClass() {
+		return BatchBindPurchasedDevicesResponse.class;
 	}
 
 }

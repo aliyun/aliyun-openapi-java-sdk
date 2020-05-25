@@ -41,6 +41,8 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 
 	private String vendor;
 
+	private String alarmMethod;
+
 	private String directoryId;
 
 	private String longitude;
@@ -160,6 +162,17 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		this.vendor = vendor;
 		if(vendor != null){
 			putQueryParameter("Vendor", vendor);
+		}
+	}
+
+	public String getAlarmMethod() {
+		return this.alarmMethod;
+	}
+
+	public void setAlarmMethod(String alarmMethod) {
+		this.alarmMethod = alarmMethod;
+		if(alarmMethod != null){
+			putQueryParameter("AlarmMethod", alarmMethod);
 		}
 	}
 

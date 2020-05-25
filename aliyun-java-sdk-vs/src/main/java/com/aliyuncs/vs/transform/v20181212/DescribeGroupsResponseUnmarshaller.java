@@ -37,6 +37,7 @@ public class DescribeGroupsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeGroupsResponse.Groups.Length"); i++) {
 			Group group = new Group();
 			group.setId(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].Id"));
+			group.setAliasId(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].AliasId"));
 			group.setName(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].Name"));
 			group.setDescription(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].Description"));
 			group.setApp(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].App"));
@@ -50,6 +51,11 @@ public class DescribeGroupsResponseUnmarshaller {
 			group.setPlayDomain(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].PlayDomain"));
 			group.setLazyPull(_ctx.booleanValue("DescribeGroupsResponse.Groups["+ i +"].LazyPull"));
 			group.setCallback(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].Callback"));
+			group.setCaptureInterval(_ctx.integerValue("DescribeGroupsResponse.Groups["+ i +"].CaptureInterval"));
+			group.setCaptureImage(_ctx.integerValue("DescribeGroupsResponse.Groups["+ i +"].CaptureImage"));
+			group.setCaptureVideo(_ctx.integerValue("DescribeGroupsResponse.Groups["+ i +"].CaptureVideo"));
+			group.setCaptureOssBucket(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].CaptureOssBucket"));
+			group.setCaptureOssPath(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].CaptureOssPath"));
 			group.setGbId(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].GbId"));
 			group.setGbIp(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].GbIp"));
 			group.setGbPort(_ctx.longValue("DescribeGroupsResponse.Groups["+ i +"].GbPort"));

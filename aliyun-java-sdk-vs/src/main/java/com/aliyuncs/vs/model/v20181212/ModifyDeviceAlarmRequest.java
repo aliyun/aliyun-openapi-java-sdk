@@ -22,34 +22,25 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
+public class ModifyDeviceAlarmRequest extends RpcAcsRequest<ModifyDeviceAlarmResponse> {
 	   
-
-	private Long startTime;
 
 	private String id;
 
-	private Long endTime;
-
 	private Long ownerId;
-	public StartStreamRequest() {
-		super("vs", "2018-12-12", "StartStream", "vs");
+
+	private String alarmId;
+
+	private Integer channelId;
+
+	private Integer status;
+	public ModifyDeviceAlarmRequest() {
+		super("vs", "2018-12-12", "ModifyDeviceAlarm", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
 	}
 
 	public String getId() {
@@ -60,17 +51,6 @@ public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id);
-		}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -85,9 +65,42 @@ public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
 		}
 	}
 
+	public String getAlarmId() {
+		return this.alarmId;
+	}
+
+	public void setAlarmId(String alarmId) {
+		this.alarmId = alarmId;
+		if(alarmId != null){
+			putQueryParameter("AlarmId", alarmId);
+		}
+	}
+
+	public Integer getChannelId() {
+		return this.channelId;
+	}
+
+	public void setChannelId(Integer channelId) {
+		this.channelId = channelId;
+		if(channelId != null){
+			putQueryParameter("ChannelId", channelId.toString());
+		}
+	}
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status.toString());
+		}
+	}
+
 	@Override
-	public Class<StartStreamResponse> getResponseClass() {
-		return StartStreamResponse.class;
+	public Class<ModifyDeviceAlarmResponse> getResponseClass() {
+		return ModifyDeviceAlarmResponse.class;
 	}
 
 }

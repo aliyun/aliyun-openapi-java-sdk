@@ -22,30 +22,32 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRecordsRequest extends RpcAcsRequest<DescribeRecordsResponse> {
+public class DescribePurchasedDevicesRequest extends RpcAcsRequest<DescribePurchasedDevicesResponse> {
 	   
 
 	private String sortDirection;
-
-	private String startTime;
 
 	private String type;
 
 	private Long pageNum;
 
-	private Boolean privateBucket;
+	private String subType;
+
+	private String vendor;
 
 	private Long pageSize;
 
-	private String streamId;
+	private String id;
 
-	private String endTime;
+	private String groupId;
 
 	private Long ownerId;
 
+	private String name;
+
 	private String sortBy;
-	public DescribeRecordsRequest() {
-		super("vs", "2018-12-12", "DescribeRecords", "vs");
+	public DescribePurchasedDevicesRequest() {
+		super("vs", "2018-12-12", "DescribePurchasedDevices", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,17 +63,6 @@ public class DescribeRecordsRequest extends RpcAcsRequest<DescribeRecordsRespons
 		this.sortDirection = sortDirection;
 		if(sortDirection != null){
 			putQueryParameter("SortDirection", sortDirection);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -97,14 +88,25 @@ public class DescribeRecordsRequest extends RpcAcsRequest<DescribeRecordsRespons
 		}
 	}
 
-	public Boolean getPrivateBucket() {
-		return this.privateBucket;
+	public String getSubType() {
+		return this.subType;
 	}
 
-	public void setPrivateBucket(Boolean privateBucket) {
-		this.privateBucket = privateBucket;
-		if(privateBucket != null){
-			putQueryParameter("PrivateBucket", privateBucket.toString());
+	public void setSubType(String subType) {
+		this.subType = subType;
+		if(subType != null){
+			putQueryParameter("SubType", subType);
+		}
+	}
+
+	public String getVendor() {
+		return this.vendor;
+	}
+
+	public void setVendor(String vendor) {
+		this.vendor = vendor;
+		if(vendor != null){
+			putQueryParameter("Vendor", vendor);
 		}
 	}
 
@@ -119,25 +121,25 @@ public class DescribeRecordsRequest extends RpcAcsRequest<DescribeRecordsRespons
 		}
 	}
 
-	public String getStreamId() {
-		return this.streamId;
+	public String getId() {
+		return this.id;
 	}
 
-	public void setStreamId(String streamId) {
-		this.streamId = streamId;
-		if(streamId != null){
-			putQueryParameter("StreamId", streamId);
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
@@ -149,6 +151,17 @@ public class DescribeRecordsRequest extends RpcAcsRequest<DescribeRecordsRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
@@ -164,8 +177,8 @@ public class DescribeRecordsRequest extends RpcAcsRequest<DescribeRecordsRespons
 	}
 
 	@Override
-	public Class<DescribeRecordsResponse> getResponseClass() {
-		return DescribeRecordsResponse.class;
+	public Class<DescribePurchasedDevicesResponse> getResponseClass() {
+		return DescribePurchasedDevicesResponse.class;
 	}
 
 }

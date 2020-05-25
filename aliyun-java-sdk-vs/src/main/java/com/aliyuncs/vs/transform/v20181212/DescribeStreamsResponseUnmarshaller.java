@@ -45,6 +45,8 @@ public class DescribeStreamsResponseUnmarshaller {
 			stream.setDeviceId(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].DeviceId"));
 			stream.setEnabled(_ctx.booleanValue("DescribeStreamsResponse.Streams["+ i +"].Enabled"));
 			stream.setStatus(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].Status"));
+			stream.setHeight(_ctx.integerValue("DescribeStreamsResponse.Streams["+ i +"].Height"));
+			stream.setWidth(_ctx.integerValue("DescribeStreamsResponse.Streams["+ i +"].Width"));
 			stream.setCreatedTime(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].CreatedTime"));
 
 			streams.add(stream);

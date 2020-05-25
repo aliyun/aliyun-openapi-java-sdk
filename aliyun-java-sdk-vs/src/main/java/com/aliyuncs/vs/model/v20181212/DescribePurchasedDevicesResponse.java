@@ -16,14 +16,14 @@ package com.aliyuncs.vs.model.v20181212;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vs.transform.v20181212.DescribeStreamsResponseUnmarshaller;
+import com.aliyuncs.vs.transform.v20181212.DescribePurchasedDevicesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeStreamsResponse extends AcsResponse {
+public class DescribePurchasedDevicesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class DescribeStreamsResponse extends AcsResponse {
 
 	private Long totalCount;
 
-	private List<Stream> streams;
+	private List<Device> devices;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -77,39 +77,37 @@ public class DescribeStreamsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public List<Stream> getStreams() {
-		return this.streams;
+	public List<Device> getDevices() {
+		return this.devices;
 	}
 
-	public void setStreams(List<Stream> streams) {
-		this.streams = streams;
+	public void setDevices(List<Device> devices) {
+		this.devices = devices;
 	}
 
-	public static class Stream {
+	public static class Device {
 
 		private String id;
 
 		private String name;
 
-		private String pushDomain;
+		private String description;
 
-		private String playDomain;
+		private String type;
 
-		private String app;
+		private String subType;
 
-		private String protocol;
+		private String registerCode;
+
+		private String vendor;
+
+		private String orderId;
+
+		private String region;
 
 		private String groupId;
 
-		private String deviceId;
-
-		private Boolean enabled;
-
-		private String status;
-
-		private Integer height;
-
-		private Integer width;
+		private String groupName;
 
 		private String createdTime;
 
@@ -129,36 +127,60 @@ public class DescribeStreamsResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getPushDomain() {
-			return this.pushDomain;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setPushDomain(String pushDomain) {
-			this.pushDomain = pushDomain;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
-		public String getPlayDomain() {
-			return this.playDomain;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setPlayDomain(String playDomain) {
-			this.playDomain = playDomain;
+		public void setType(String type) {
+			this.type = type;
 		}
 
-		public String getApp() {
-			return this.app;
+		public String getSubType() {
+			return this.subType;
 		}
 
-		public void setApp(String app) {
-			this.app = app;
+		public void setSubType(String subType) {
+			this.subType = subType;
 		}
 
-		public String getBizProtocol() {
-			return this.protocol;
+		public String getRegisterCode() {
+			return this.registerCode;
 		}
 
-		public void setBizProtocol(String protocol) {
-			this.protocol = protocol;
+		public void setRegisterCode(String registerCode) {
+			this.registerCode = registerCode;
+		}
+
+		public String getVendor() {
+			return this.vendor;
+		}
+
+		public void setVendor(String vendor) {
+			this.vendor = vendor;
+		}
+
+		public String getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(String orderId) {
+			this.orderId = orderId;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
 		public String getGroupId() {
@@ -169,44 +191,12 @@ public class DescribeStreamsResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public String getDeviceId() {
-			return this.deviceId;
+		public String getGroupName() {
+			return this.groupName;
 		}
 
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
-
-		public Boolean getEnabled() {
-			return this.enabled;
-		}
-
-		public void setEnabled(Boolean enabled) {
-			this.enabled = enabled;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public Integer getHeight() {
-			return this.height;
-		}
-
-		public void setHeight(Integer height) {
-			this.height = height;
-		}
-
-		public Integer getWidth() {
-			return this.width;
-		}
-
-		public void setWidth(Integer width) {
-			this.width = width;
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 
 		public String getCreatedTime() {
@@ -219,8 +209,8 @@ public class DescribeStreamsResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeStreamsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeStreamsResponseUnmarshaller.unmarshall(this, context);
+	public DescribePurchasedDevicesResponse getInstance(UnmarshallerContext context) {
+		return	DescribePurchasedDevicesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

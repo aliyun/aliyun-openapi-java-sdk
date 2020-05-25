@@ -22,56 +22,19 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
+public class BatchUnbindPurchasedDevicesRequest extends RpcAcsRequest<BatchUnbindPurchasedDevicesResponse> {
 	   
 
-	private Long startTime;
-
-	private String id;
-
-	private Long endTime;
-
 	private Long ownerId;
-	public StartStreamRequest() {
-		super("vs", "2018-12-12", "StartStream", "vs");
+
+	private String deviceId;
+	public BatchUnbindPurchasedDevicesRequest() {
+		super("vs", "2018-12-12", "BatchUnbindPurchasedDevices", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
-		}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
 	}
 
 	public Long getOwnerId() {
@@ -85,9 +48,20 @@ public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
 		}
 	}
 
+	public String getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+		if(deviceId != null){
+			putQueryParameter("DeviceId", deviceId);
+		}
+	}
+
 	@Override
-	public Class<StartStreamResponse> getResponseClass() {
-		return StartStreamResponse.class;
+	public Class<BatchUnbindPurchasedDevicesResponse> getResponseClass() {
+		return BatchUnbindPurchasedDevicesResponse.class;
 	}
 
 }

@@ -22,18 +22,28 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
+public class CreateDeviceAlarmRequest extends RpcAcsRequest<CreateDeviceAlarmResponse> {
 	   
 
 	private Long startTime;
 
+	private Integer alarm;
+
 	private String id;
+
+	private Integer objectType;
 
 	private Long endTime;
 
 	private Long ownerId;
-	public StartStreamRequest() {
-		super("vs", "2018-12-12", "StartStream", "vs");
+
+	private Integer subAlarm;
+
+	private Long expire;
+
+	private Integer channelId;
+	public CreateDeviceAlarmRequest() {
+		super("vs", "2018-12-12", "CreateDeviceAlarm", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,6 +62,17 @@ public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
 		}
 	}
 
+	public Integer getAlarm() {
+		return this.alarm;
+	}
+
+	public void setAlarm(Integer alarm) {
+		this.alarm = alarm;
+		if(alarm != null){
+			putQueryParameter("Alarm", alarm.toString());
+		}
+	}
+
 	public String getId() {
 		return this.id;
 	}
@@ -60,6 +81,17 @@ public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id);
+		}
+	}
+
+	public Integer getObjectType() {
+		return this.objectType;
+	}
+
+	public void setObjectType(Integer objectType) {
+		this.objectType = objectType;
+		if(objectType != null){
+			putQueryParameter("ObjectType", objectType.toString());
 		}
 	}
 
@@ -85,9 +117,42 @@ public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
 		}
 	}
 
+	public Integer getSubAlarm() {
+		return this.subAlarm;
+	}
+
+	public void setSubAlarm(Integer subAlarm) {
+		this.subAlarm = subAlarm;
+		if(subAlarm != null){
+			putQueryParameter("SubAlarm", subAlarm.toString());
+		}
+	}
+
+	public Long getExpire() {
+		return this.expire;
+	}
+
+	public void setExpire(Long expire) {
+		this.expire = expire;
+		if(expire != null){
+			putQueryParameter("Expire", expire.toString());
+		}
+	}
+
+	public Integer getChannelId() {
+		return this.channelId;
+	}
+
+	public void setChannelId(Integer channelId) {
+		this.channelId = channelId;
+		if(channelId != null){
+			putQueryParameter("ChannelId", channelId.toString());
+		}
+	}
+
 	@Override
-	public Class<StartStreamResponse> getResponseClass() {
-		return StartStreamResponse.class;
+	public Class<CreateDeviceAlarmResponse> getResponseClass() {
+		return CreateDeviceAlarmResponse.class;
 	}
 
 }

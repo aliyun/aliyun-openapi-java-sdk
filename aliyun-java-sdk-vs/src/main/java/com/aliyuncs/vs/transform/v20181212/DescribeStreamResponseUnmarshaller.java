@@ -33,6 +33,8 @@ public class DescribeStreamResponseUnmarshaller {
 		describeStreamResponse.setDeviceId(_ctx.stringValue("DescribeStreamResponse.DeviceId"));
 		describeStreamResponse.setEnabled(_ctx.booleanValue("DescribeStreamResponse.Enabled"));
 		describeStreamResponse.setStatus(_ctx.stringValue("DescribeStreamResponse.Status"));
+		describeStreamResponse.setHeight(_ctx.integerValue("DescribeStreamResponse.Height"));
+		describeStreamResponse.setWidth(_ctx.integerValue("DescribeStreamResponse.Width"));
 		describeStreamResponse.setCreatedTime(_ctx.stringValue("DescribeStreamResponse.CreatedTime"));
 	 
 	 	return describeStreamResponse;

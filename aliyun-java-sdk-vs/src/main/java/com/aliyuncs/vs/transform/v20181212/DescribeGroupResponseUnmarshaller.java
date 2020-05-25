@@ -28,6 +28,7 @@ public class DescribeGroupResponseUnmarshaller {
 		
 		describeGroupResponse.setRequestId(_ctx.stringValue("DescribeGroupResponse.RequestId"));
 		describeGroupResponse.setId(_ctx.stringValue("DescribeGroupResponse.Id"));
+		describeGroupResponse.setAliasId(_ctx.stringValue("DescribeGroupResponse.AliasId"));
 		describeGroupResponse.setName(_ctx.stringValue("DescribeGroupResponse.Name"));
 		describeGroupResponse.setDescription(_ctx.stringValue("DescribeGroupResponse.Description"));
 		describeGroupResponse.setApp(_ctx.stringValue("DescribeGroupResponse.App"));
@@ -41,6 +42,11 @@ public class DescribeGroupResponseUnmarshaller {
 		describeGroupResponse.setPlayDomain(_ctx.stringValue("DescribeGroupResponse.PlayDomain"));
 		describeGroupResponse.setLazyPull(_ctx.booleanValue("DescribeGroupResponse.LazyPull"));
 		describeGroupResponse.setCallback(_ctx.stringValue("DescribeGroupResponse.Callback"));
+		describeGroupResponse.setCaptureInterval(_ctx.integerValue("DescribeGroupResponse.CaptureInterval"));
+		describeGroupResponse.setCaptureImage(_ctx.integerValue("DescribeGroupResponse.CaptureImage"));
+		describeGroupResponse.setCaptureVideo(_ctx.integerValue("DescribeGroupResponse.CaptureVideo"));
+		describeGroupResponse.setCaptureOssBucket(_ctx.stringValue("DescribeGroupResponse.CaptureOssBucket"));
+		describeGroupResponse.setCaptureOssPath(_ctx.stringValue("DescribeGroupResponse.CaptureOssPath"));
 		describeGroupResponse.setGbId(_ctx.stringValue("DescribeGroupResponse.GbId"));
 		describeGroupResponse.setGbIp(_ctx.stringValue("DescribeGroupResponse.GbIp"));
 		describeGroupResponse.setGbPort(_ctx.longValue("DescribeGroupResponse.GbPort"));
