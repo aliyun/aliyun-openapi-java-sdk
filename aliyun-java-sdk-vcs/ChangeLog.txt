@@ -1,3 +1,6 @@
+2020-05-25 Version: 1.0.1
+- Add monitor related.
+
 2020-05-19 Version: 1.0.0
 - Initial version.
 

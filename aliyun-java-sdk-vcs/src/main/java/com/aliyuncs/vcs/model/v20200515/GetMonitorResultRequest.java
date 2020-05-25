@@ -22,14 +22,20 @@ import com.aliyuncs.vcs.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetDeviceLiveUrlRequest extends RpcAcsRequest<GetDeviceLiveUrlResponse> {
+public class GetMonitorResultRequest extends RpcAcsRequest<GetMonitorResultResponse> {
 	   
 
 	private String corpId;
 
-	private String gbId;
-	public GetDeviceLiveUrlRequest() {
-		super("Vcs", "2020-05-15", "GetDeviceLiveUrl", "vcs");
+	private Long endTime;
+
+	private Long startTime;
+
+	private String minRecordId;
+
+	private String taskId;
+	public GetMonitorResultRequest() {
+		super("Vcs", "2020-05-15", "GetMonitorResult", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,20 +54,53 @@ public class GetDeviceLiveUrlRequest extends RpcAcsRequest<GetDeviceLiveUrlRespo
 		}
 	}
 
-	public String getGbId() {
-		return this.gbId;
+	public Long getEndTime() {
+		return this.endTime;
 	}
 
-	public void setGbId(String gbId) {
-		this.gbId = gbId;
-		if(gbId != null){
-			putBodyParameter("GbId", gbId);
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putBodyParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putBodyParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getMinRecordId() {
+		return this.minRecordId;
+	}
+
+	public void setMinRecordId(String minRecordId) {
+		this.minRecordId = minRecordId;
+		if(minRecordId != null){
+			putBodyParameter("MinRecordId", minRecordId);
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putBodyParameter("TaskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<GetDeviceLiveUrlResponse> getResponseClass() {
-		return GetDeviceLiveUrlResponse.class;
+	public Class<GetMonitorResultResponse> getResponseClass() {
+		return GetMonitorResultResponse.class;
 	}
 
 }

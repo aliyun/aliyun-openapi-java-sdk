@@ -125,7 +125,7 @@ public class ListDevicesResponse extends AcsResponse {
 
 			private String coverImageUrl;
 
-			private String gBid;
+			private String gbId;
 
 			private String deviceAddress;
 
@@ -181,12 +181,12 @@ public class ListDevicesResponse extends AcsResponse {
 				this.coverImageUrl = coverImageUrl;
 			}
 
-			public String getGBid() {
-				return this.gBid;
+			public String getGbId() {
+				return this.gbId;
 			}
 
-			public void setGBid(String gBid) {
-				this.gBid = gBid;
+			public void setGbId(String gbId) {
+				this.gbId = gbId;
 			}
 
 			public String getDeviceAddress() {

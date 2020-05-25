@@ -22,14 +22,12 @@ import com.aliyuncs.vcs.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetDeviceLiveUrlRequest extends RpcAcsRequest<GetDeviceLiveUrlResponse> {
+public class GetBodyOptionsRequest extends RpcAcsRequest<GetBodyOptionsResponse> {
 	   
 
 	private String corpId;
-
-	private String gbId;
-	public GetDeviceLiveUrlRequest() {
-		super("Vcs", "2020-05-15", "GetDeviceLiveUrl", "vcs");
+	public GetBodyOptionsRequest() {
+		super("Vcs", "2020-05-15", "GetBodyOptions", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,20 +46,9 @@ public class GetDeviceLiveUrlRequest extends RpcAcsRequest<GetDeviceLiveUrlRespo
 		}
 	}
 
-	public String getGbId() {
-		return this.gbId;
-	}
-
-	public void setGbId(String gbId) {
-		this.gbId = gbId;
-		if(gbId != null){
-			putBodyParameter("GbId", gbId);
-		}
-	}
-
 	@Override
-	public Class<GetDeviceLiveUrlResponse> getResponseClass() {
-		return GetDeviceLiveUrlResponse.class;
+	public Class<GetBodyOptionsResponse> getResponseClass() {
+		return GetBodyOptionsResponse.class;
 	}
 
 }

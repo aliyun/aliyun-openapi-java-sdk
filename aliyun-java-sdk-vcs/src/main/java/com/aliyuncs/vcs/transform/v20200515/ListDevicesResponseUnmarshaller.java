@@ -43,7 +43,7 @@ public class ListDevicesResponseUnmarshaller {
 			record.setAccessProtocolType(_ctx.stringValue("ListDevicesResponse.Data.Records["+ i +"].AccessProtocolType"));
 			record.setBitRate(_ctx.stringValue("ListDevicesResponse.Data.Records["+ i +"].BitRate"));
 			record.setCoverImageUrl(_ctx.stringValue("ListDevicesResponse.Data.Records["+ i +"].CoverImageUrl"));
-			record.setGBid(_ctx.stringValue("ListDevicesResponse.Data.Records["+ i +"].GBid"));
+			record.setGbId(_ctx.stringValue("ListDevicesResponse.Data.Records["+ i +"].GbId"));
 			record.setDeviceAddress(_ctx.stringValue("ListDevicesResponse.Data.Records["+ i +"].DeviceAddress"));
 			record.setDeviceDirection(_ctx.stringValue("ListDevicesResponse.Data.Records["+ i +"].DeviceDirection"));
 			record.setDeviceSite(_ctx.stringValue("ListDevicesResponse.Data.Records["+ i +"].DeviceSite"));

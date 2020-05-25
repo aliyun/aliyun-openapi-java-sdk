@@ -31,9 +31,9 @@ public class AddDeviceRequest extends RpcAcsRequest<AddDeviceResponse> {
 
 	private String gbId;
 
-	private String deviceDirection;
+	private String bitRate;
 
-	private String deviceRate;
+	private String deviceDirection;
 
 	private String deviceAddress;
 
@@ -86,6 +86,17 @@ public class AddDeviceRequest extends RpcAcsRequest<AddDeviceResponse> {
 		}
 	}
 
+	public String getBitRate() {
+		return this.bitRate;
+	}
+
+	public void setBitRate(String bitRate) {
+		this.bitRate = bitRate;
+		if(bitRate != null){
+			putBodyParameter("BitRate", bitRate);
+		}
+	}
+
 	public String getDeviceDirection() {
 		return this.deviceDirection;
 	}
@@ -94,17 +105,6 @@ public class AddDeviceRequest extends RpcAcsRequest<AddDeviceResponse> {
 		this.deviceDirection = deviceDirection;
 		if(deviceDirection != null){
 			putBodyParameter("DeviceDirection", deviceDirection);
-		}
-	}
-
-	public String getDeviceRate() {
-		return this.deviceRate;
-	}
-
-	public void setDeviceRate(String deviceRate) {
-		this.deviceRate = deviceRate;
-		if(deviceRate != null){
-			putBodyParameter("DeviceRate", deviceRate);
 		}
 	}
 

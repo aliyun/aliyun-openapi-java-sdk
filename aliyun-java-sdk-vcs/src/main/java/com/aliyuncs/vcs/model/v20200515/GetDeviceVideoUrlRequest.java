@@ -22,14 +22,18 @@ import com.aliyuncs.vcs.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetDeviceLiveUrlRequest extends RpcAcsRequest<GetDeviceLiveUrlResponse> {
+public class GetDeviceVideoUrlRequest extends RpcAcsRequest<GetDeviceVideoUrlResponse> {
 	   
 
 	private String corpId;
 
 	private String gbId;
-	public GetDeviceLiveUrlRequest() {
-		super("Vcs", "2020-05-15", "GetDeviceLiveUrl", "vcs");
+
+	private Long endTime;
+
+	private Long startTime;
+	public GetDeviceVideoUrlRequest() {
+		super("Vcs", "2020-05-15", "GetDeviceVideoUrl", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,9 +63,31 @@ public class GetDeviceLiveUrlRequest extends RpcAcsRequest<GetDeviceLiveUrlRespo
 		}
 	}
 
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putBodyParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putBodyParameter("StartTime", startTime.toString());
+		}
+	}
+
 	@Override
-	public Class<GetDeviceLiveUrlResponse> getResponseClass() {
-		return GetDeviceLiveUrlResponse.class;
+	public Class<GetDeviceVideoUrlResponse> getResponseClass() {
+		return GetDeviceVideoUrlResponse.class;
 	}
 
 }

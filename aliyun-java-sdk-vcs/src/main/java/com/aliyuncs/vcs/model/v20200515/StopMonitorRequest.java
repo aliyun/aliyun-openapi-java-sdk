@@ -22,14 +22,12 @@ import com.aliyuncs.vcs.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetDeviceLiveUrlRequest extends RpcAcsRequest<GetDeviceLiveUrlResponse> {
+public class StopMonitorRequest extends RpcAcsRequest<StopMonitorResponse> {
 	   
 
-	private String corpId;
-
-	private String gbId;
-	public GetDeviceLiveUrlRequest() {
-		super("Vcs", "2020-05-15", "GetDeviceLiveUrl", "vcs");
+	private String taskId;
+	public StopMonitorRequest() {
+		super("Vcs", "2020-05-15", "StopMonitor", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class GetDeviceLiveUrlRequest extends RpcAcsRequest<GetDeviceLiveUrlRespo
 		} catch (Exception e) {}
 	}
 
-	public String getCorpId() {
-		return this.corpId;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setCorpId(String corpId) {
-		this.corpId = corpId;
-		if(corpId != null){
-			putBodyParameter("CorpId", corpId);
-		}
-	}
-
-	public String getGbId() {
-		return this.gbId;
-	}
-
-	public void setGbId(String gbId) {
-		this.gbId = gbId;
-		if(gbId != null){
-			putBodyParameter("GbId", gbId);
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putBodyParameter("TaskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<GetDeviceLiveUrlResponse> getResponseClass() {
-		return GetDeviceLiveUrlResponse.class;
+	public Class<StopMonitorResponse> getResponseClass() {
+		return StopMonitorResponse.class;
 	}
 
 }

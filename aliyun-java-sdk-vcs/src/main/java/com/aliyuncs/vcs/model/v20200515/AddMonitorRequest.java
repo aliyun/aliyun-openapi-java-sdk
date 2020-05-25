@@ -22,19 +22,34 @@ import com.aliyuncs.vcs.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetDeviceLiveUrlRequest extends RpcAcsRequest<GetDeviceLiveUrlResponse> {
+public class AddMonitorRequest extends RpcAcsRequest<AddMonitorResponse> {
 	   
+
+	private String monitorType;
 
 	private String corpId;
 
-	private String gbId;
-	public GetDeviceLiveUrlRequest() {
-		super("Vcs", "2020-05-15", "GetDeviceLiveUrl", "vcs");
+	private String description;
+
+	private Integer batchIndicator;
+	public AddMonitorRequest() {
+		super("Vcs", "2020-05-15", "AddMonitor", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMonitorType() {
+		return this.monitorType;
+	}
+
+	public void setMonitorType(String monitorType) {
+		this.monitorType = monitorType;
+		if(monitorType != null){
+			putBodyParameter("MonitorType", monitorType);
+		}
 	}
 
 	public String getCorpId() {
@@ -48,20 +63,31 @@ public class GetDeviceLiveUrlRequest extends RpcAcsRequest<GetDeviceLiveUrlRespo
 		}
 	}
 
-	public String getGbId() {
-		return this.gbId;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setGbId(String gbId) {
-		this.gbId = gbId;
-		if(gbId != null){
-			putBodyParameter("GbId", gbId);
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putBodyParameter("Description", description);
+		}
+	}
+
+	public Integer getBatchIndicator() {
+		return this.batchIndicator;
+	}
+
+	public void setBatchIndicator(Integer batchIndicator) {
+		this.batchIndicator = batchIndicator;
+		if(batchIndicator != null){
+			putBodyParameter("BatchIndicator", batchIndicator.toString());
 		}
 	}
 
 	@Override
-	public Class<GetDeviceLiveUrlResponse> getResponseClass() {
-		return GetDeviceLiveUrlResponse.class;
+	public Class<AddMonitorResponse> getResponseClass() {
+		return AddMonitorResponse.class;
 	}
 
 }
