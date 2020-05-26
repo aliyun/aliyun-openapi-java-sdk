@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vcs.model.v20200515.GetMonitorResultResponse;
 import com.aliyuncs.vcs.model.v20200515.GetMonitorResultResponse.Data;
-import com.aliyuncs.vcs.model.v20200515.GetMonitorResultResponse.RecordsItem;
+import com.aliyuncs.vcs.model.v20200515.GetMonitorResultResponse.Data.RecordsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,27 +30,27 @@ public class GetMonitorResultResponseUnmarshaller {
 		getMonitorResultResponse.setRequestId(_ctx.stringValue("GetMonitorResultResponse.RequestId"));
 		getMonitorResultResponse.setCode(_ctx.stringValue("GetMonitorResultResponse.Code"));
 		getMonitorResultResponse.setMessage(_ctx.stringValue("GetMonitorResultResponse.Message"));
-		getMonitorResultResponse.setScore(_ctx.stringValue("GetMonitorResultResponse.Score"));
-		getMonitorResultResponse.setLeftTopX(_ctx.stringValue("GetMonitorResultResponse.LeftTopX"));
-		getMonitorResultResponse.setLeftTopY(_ctx.stringValue("GetMonitorResultResponse.LeftTopY"));
-		getMonitorResultResponse.setRightBottomX(_ctx.stringValue("GetMonitorResultResponse.RightBottomX"));
-		getMonitorResultResponse.setRightBottomY(_ctx.stringValue("GetMonitorResultResponse.RightBottomY"));
 
 		Data data = new Data();
-		data.setMaxRecordId(_ctx.stringValue("GetMonitorResultResponse.Data.MaxRecordId"));
-		getMonitorResultResponse.setData(data);
+		data.setMaxId(_ctx.stringValue("GetMonitorResultResponse.Data.MaxId"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
-		for (int i = 0; i < _ctx.lengthValue("GetMonitorResultResponse.Records.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetMonitorResultResponse.Data.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
-			recordsItem.setGbId(_ctx.stringValue("GetMonitorResultResponse.Records["+ i +"].GbId"));
-			recordsItem.setShotTime(_ctx.stringValue("GetMonitorResultResponse.Records["+ i +"].ShotTime"));
-			recordsItem.setMonitorPicUrl(_ctx.stringValue("GetMonitorResultResponse.Records["+ i +"].MonitorPicUrl"));
-			recordsItem.setShotPicUrl(_ctx.stringValue("GetMonitorResultResponse.Records["+ i +"].ShotPicUrl"));
+			recordsItem.setRightBottomY(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].RightBottomY"));
+			recordsItem.setRightBottomX(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].RightBottomX"));
+			recordsItem.setLeftUpY(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].LeftUpY"));
+			recordsItem.setLeftUpX(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].LeftUpX"));
+			recordsItem.setGbId(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].GbId"));
+			recordsItem.setScore(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].Score"));
+			recordsItem.setPicUrl(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].PicUrl"));
+			recordsItem.setShotTime(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].ShotTime"));
+			recordsItem.setMonitorPicUrl(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].MonitorPicUrl"));
 
 			records.add(recordsItem);
 		}
-		getMonitorResultResponse.setRecords(records);
+		data.setRecords(records);
+		getMonitorResultResponse.setData(data);
 	 
 	 	return getMonitorResultResponse;
 	}

@@ -31,18 +31,6 @@ public class GetMonitorResultResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String score;
-
-	private String leftTopX;
-
-	private String leftTopY;
-
-	private String rightBottomX;
-
-	private String rightBottomY;
-
-	private List<RecordsItem> records;
-
 	private Data data;
 
 	public String getCode() {
@@ -69,54 +57,6 @@ public class GetMonitorResultResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getScore() {
-		return this.score;
-	}
-
-	public void setScore(String score) {
-		this.score = score;
-	}
-
-	public String getLeftTopX() {
-		return this.leftTopX;
-	}
-
-	public void setLeftTopX(String leftTopX) {
-		this.leftTopX = leftTopX;
-	}
-
-	public String getLeftTopY() {
-		return this.leftTopY;
-	}
-
-	public void setLeftTopY(String leftTopY) {
-		this.leftTopY = leftTopY;
-	}
-
-	public String getRightBottomX() {
-		return this.rightBottomX;
-	}
-
-	public void setRightBottomX(String rightBottomX) {
-		this.rightBottomX = rightBottomX;
-	}
-
-	public String getRightBottomY() {
-		return this.rightBottomY;
-	}
-
-	public void setRightBottomY(String rightBottomY) {
-		this.rightBottomY = rightBottomY;
-	}
-
-	public List<RecordsItem> getRecords() {
-		return this.records;
-	}
-
-	public void setRecords(List<RecordsItem> records) {
-		this.records = records;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -125,59 +65,119 @@ public class GetMonitorResultResponse extends AcsResponse {
 		this.data = data;
 	}
 
-	public static class RecordsItem {
-
-		private String gbId;
-
-		private String shotTime;
-
-		private String monitorPicUrl;
-
-		private String shotPicUrl;
-
-		public String getGbId() {
-			return this.gbId;
-		}
-
-		public void setGbId(String gbId) {
-			this.gbId = gbId;
-		}
-
-		public String getShotTime() {
-			return this.shotTime;
-		}
-
-		public void setShotTime(String shotTime) {
-			this.shotTime = shotTime;
-		}
-
-		public String getMonitorPicUrl() {
-			return this.monitorPicUrl;
-		}
-
-		public void setMonitorPicUrl(String monitorPicUrl) {
-			this.monitorPicUrl = monitorPicUrl;
-		}
-
-		public String getShotPicUrl() {
-			return this.shotPicUrl;
-		}
-
-		public void setShotPicUrl(String shotPicUrl) {
-			this.shotPicUrl = shotPicUrl;
-		}
-	}
-
 	public static class Data {
 
-		private String maxRecordId;
+		private String maxId;
 
-		public String getMaxRecordId() {
-			return this.maxRecordId;
+		private List<RecordsItem> records;
+
+		public String getMaxId() {
+			return this.maxId;
 		}
 
-		public void setMaxRecordId(String maxRecordId) {
-			this.maxRecordId = maxRecordId;
+		public void setMaxId(String maxId) {
+			this.maxId = maxId;
+		}
+
+		public List<RecordsItem> getRecords() {
+			return this.records;
+		}
+
+		public void setRecords(List<RecordsItem> records) {
+			this.records = records;
+		}
+
+		public static class RecordsItem {
+
+			private String rightBottomY;
+
+			private String rightBottomX;
+
+			private String leftUpY;
+
+			private String leftUpX;
+
+			private String gbId;
+
+			private String score;
+
+			private String picUrl;
+
+			private String shotTime;
+
+			private String monitorPicUrl;
+
+			public String getRightBottomY() {
+				return this.rightBottomY;
+			}
+
+			public void setRightBottomY(String rightBottomY) {
+				this.rightBottomY = rightBottomY;
+			}
+
+			public String getRightBottomX() {
+				return this.rightBottomX;
+			}
+
+			public void setRightBottomX(String rightBottomX) {
+				this.rightBottomX = rightBottomX;
+			}
+
+			public String getLeftUpY() {
+				return this.leftUpY;
+			}
+
+			public void setLeftUpY(String leftUpY) {
+				this.leftUpY = leftUpY;
+			}
+
+			public String getLeftUpX() {
+				return this.leftUpX;
+			}
+
+			public void setLeftUpX(String leftUpX) {
+				this.leftUpX = leftUpX;
+			}
+
+			public String getGbId() {
+				return this.gbId;
+			}
+
+			public void setGbId(String gbId) {
+				this.gbId = gbId;
+			}
+
+			public String getScore() {
+				return this.score;
+			}
+
+			public void setScore(String score) {
+				this.score = score;
+			}
+
+			public String getPicUrl() {
+				return this.picUrl;
+			}
+
+			public void setPicUrl(String picUrl) {
+				this.picUrl = picUrl;
+			}
+
+			public String getShotTime() {
+				return this.shotTime;
+			}
+
+			public void setShotTime(String shotTime) {
+				this.shotTime = shotTime;
+			}
+
+			public String getMonitorPicUrl() {
+				return this.monitorPicUrl;
+			}
+
+			public void setMonitorPicUrl(String monitorPicUrl) {
+				this.monitorPicUrl = monitorPicUrl;
+			}
 		}
 	}
 
