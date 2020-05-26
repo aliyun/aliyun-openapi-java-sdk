@@ -1,3 +1,6 @@
+2020-05-26 Version: 0.0.6
+- Add smartcall service api.
+
 2020-04-15 Version: 0.0.5
 - Add pre train service api.
 
