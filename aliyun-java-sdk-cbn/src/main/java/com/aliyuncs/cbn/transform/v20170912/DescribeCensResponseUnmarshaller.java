@@ -41,6 +41,7 @@ public class DescribeCensResponseUnmarshaller {
 			cen.setProtectionLevel(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].ProtectionLevel"));
 			cen.setStatus(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].Status"));
 			cen.setCreationTime(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].CreationTime"));
+			cen.setIpv6Level(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].Ipv6Level"));
 
 			List<String> cenBandwidthPackageIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCensResponse.Cens["+ i +"].CenBandwidthPackageIds.Length"); j++) {

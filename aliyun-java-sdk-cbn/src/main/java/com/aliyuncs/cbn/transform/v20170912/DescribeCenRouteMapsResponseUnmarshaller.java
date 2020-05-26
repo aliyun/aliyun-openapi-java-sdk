@@ -50,6 +50,7 @@ public class DescribeCenRouteMapsResponseUnmarshaller {
 			routeMap.setTransmitDirection(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].TransmitDirection"));
 			routeMap.setSourceInstanceIdsReverseMatch(_ctx.booleanValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].SourceInstanceIdsReverseMatch"));
 			routeMap.setDestinationInstanceIdsReverseMatch(_ctx.booleanValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].DestinationInstanceIdsReverseMatch"));
+			routeMap.setGatewayZoneId(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].GatewayZoneId"));
 
 			List<String> sourceInstanceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].SourceInstanceIds.Length"); j++) {
@@ -128,6 +129,24 @@ public class DescribeCenRouteMapsResponseUnmarshaller {
 				prependAsPath.add(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].PrependAsPath["+ j +"]"));
 			}
 			routeMap.setPrependAsPath(prependAsPath);
+
+			List<String> destinationRegionIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].DestinationRegionIds.Length"); j++) {
+				destinationRegionIds.add(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].DestinationRegionIds["+ j +"]"));
+			}
+			routeMap.setDestinationRegionIds(destinationRegionIds);
+
+			List<String> originalRouteTableIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].OriginalRouteTableIds.Length"); j++) {
+				originalRouteTableIds.add(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].OriginalRouteTableIds["+ j +"]"));
+			}
+			routeMap.setOriginalRouteTableIds(originalRouteTableIds);
+
+			List<String> srcZoneIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].SrcZoneIds.Length"); j++) {
+				srcZoneIds.add(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].SrcZoneIds["+ j +"]"));
+			}
+			routeMap.setSrcZoneIds(srcZoneIds);
 
 			routeMaps.add(routeMap);
 		}

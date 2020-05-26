@@ -22,20 +22,24 @@ import com.aliyuncs.cbn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeChildInstanceRegionsRequest extends RpcAcsRequest<DescribeChildInstanceRegionsResponse> {
+public class TempUpgradeCenBandwidthPackageSpecRequest extends RpcAcsRequest<TempUpgradeCenBandwidthPackageSpecResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String productType;
-
 	private String resourceOwnerAccount;
+
+	private Integer bandwidth;
 
 	private String ownerAccount;
 
+	private String endTime;
+
 	private Long ownerId;
-	public DescribeChildInstanceRegionsRequest() {
-		super("Cbn", "2017-09-12", "DescribeChildInstanceRegions", "Cbn");
+
+	private String cenBandwidthPackageId;
+	public TempUpgradeCenBandwidthPackageSpecRequest() {
+		super("Cbn", "2017-09-12", "TempUpgradeCenBandwidthPackageSpec", "Cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,17 +58,6 @@ public class DescribeChildInstanceRegionsRequest extends RpcAcsRequest<DescribeC
 		}
 	}
 
-	public String getProductType() {
-		return this.productType;
-	}
-
-	public void setProductType(String productType) {
-		this.productType = productType;
-		if(productType != null){
-			putQueryParameter("ProductType", productType);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -73,6 +66,17 @@ public class DescribeChildInstanceRegionsRequest extends RpcAcsRequest<DescribeC
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth.toString());
 		}
 	}
 
@@ -87,6 +91,17 @@ public class DescribeChildInstanceRegionsRequest extends RpcAcsRequest<DescribeC
 		}
 	}
 
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -98,9 +113,20 @@ public class DescribeChildInstanceRegionsRequest extends RpcAcsRequest<DescribeC
 		}
 	}
 
+	public String getCenBandwidthPackageId() {
+		return this.cenBandwidthPackageId;
+	}
+
+	public void setCenBandwidthPackageId(String cenBandwidthPackageId) {
+		this.cenBandwidthPackageId = cenBandwidthPackageId;
+		if(cenBandwidthPackageId != null){
+			putQueryParameter("CenBandwidthPackageId", cenBandwidthPackageId);
+		}
+	}
+
 	@Override
-	public Class<DescribeChildInstanceRegionsResponse> getResponseClass() {
-		return DescribeChildInstanceRegionsResponse.class;
+	public Class<TempUpgradeCenBandwidthPackageSpecResponse> getResponseClass() {
+		return TempUpgradeCenBandwidthPackageSpecResponse.class;
 	}
 
 }

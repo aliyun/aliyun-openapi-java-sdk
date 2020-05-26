@@ -14,6 +14,7 @@
 
 package com.aliyuncs.cbn.model.v20170912;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cbn.transform.v20170912.DescribeCenAttachedChildInstanceAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -41,6 +42,10 @@ public class DescribeCenAttachedChildInstanceAttributeResponse extends AcsRespon
 	private String childInstanceName;
 
 	private String childInstanceAttachTime;
+
+	private String ipv6StatusInCen;
+
+	private List<ChildInstanceRouteTable> childInstanceRouteTables;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -112,6 +117,45 @@ public class DescribeCenAttachedChildInstanceAttributeResponse extends AcsRespon
 
 	public void setChildInstanceAttachTime(String childInstanceAttachTime) {
 		this.childInstanceAttachTime = childInstanceAttachTime;
+	}
+
+	public String getIpv6StatusInCen() {
+		return this.ipv6StatusInCen;
+	}
+
+	public void setIpv6StatusInCen(String ipv6StatusInCen) {
+		this.ipv6StatusInCen = ipv6StatusInCen;
+	}
+
+	public List<ChildInstanceRouteTable> getChildInstanceRouteTables() {
+		return this.childInstanceRouteTables;
+	}
+
+	public void setChildInstanceRouteTables(List<ChildInstanceRouteTable> childInstanceRouteTables) {
+		this.childInstanceRouteTables = childInstanceRouteTables;
+	}
+
+	public static class ChildInstanceRouteTable {
+
+		private String routeTableId;
+
+		private String routeTableType;
+
+		public String getRouteTableId() {
+			return this.routeTableId;
+		}
+
+		public void setRouteTableId(String routeTableId) {
+			this.routeTableId = routeTableId;
+		}
+
+		public String getRouteTableType() {
+			return this.routeTableType;
+		}
+
+		public void setRouteTableType(String routeTableType) {
+			this.routeTableType = routeTableType;
+		}
 	}
 
 	@Override

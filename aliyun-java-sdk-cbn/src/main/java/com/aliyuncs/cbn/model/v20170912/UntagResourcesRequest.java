@@ -28,6 +28,8 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 
 	private Long resourceOwnerId;
 
+	private Boolean all;
+
 	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
@@ -56,6 +58,17 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getAll() {
+		return this.all;
+	}
+
+	public void setAll(Boolean all) {
+		this.all = all;
+		if(all != null){
+			putQueryParameter("All", all.toString());
 		}
 	}
 

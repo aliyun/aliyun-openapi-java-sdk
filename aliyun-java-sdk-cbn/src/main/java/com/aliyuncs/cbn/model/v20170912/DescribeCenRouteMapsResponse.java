@@ -109,6 +109,8 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 
 		private Boolean destinationInstanceIdsReverseMatch;
 
+		private String gatewayZoneId;
+
 		private List<String> sourceInstanceIds;
 
 		private List<String> destinationInstanceIds;
@@ -134,6 +136,12 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 		private List<String> operateCommunitySet;
 
 		private List<String> prependAsPath;
+
+		private List<String> destinationRegionIds;
+
+		private List<String> originalRouteTableIds;
+
+		private List<String> srcZoneIds;
 
 		public String getStatus() {
 			return this.status;
@@ -263,6 +271,14 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 			this.destinationInstanceIdsReverseMatch = destinationInstanceIdsReverseMatch;
 		}
 
+		public String getGatewayZoneId() {
+			return this.gatewayZoneId;
+		}
+
+		public void setGatewayZoneId(String gatewayZoneId) {
+			this.gatewayZoneId = gatewayZoneId;
+		}
+
 		public List<String> getSourceInstanceIds() {
 			return this.sourceInstanceIds;
 		}
@@ -365,6 +381,30 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 
 		public void setPrependAsPath(List<String> prependAsPath) {
 			this.prependAsPath = prependAsPath;
+		}
+
+		public List<String> getDestinationRegionIds() {
+			return this.destinationRegionIds;
+		}
+
+		public void setDestinationRegionIds(List<String> destinationRegionIds) {
+			this.destinationRegionIds = destinationRegionIds;
+		}
+
+		public List<String> getOriginalRouteTableIds() {
+			return this.originalRouteTableIds;
+		}
+
+		public void setOriginalRouteTableIds(List<String> originalRouteTableIds) {
+			this.originalRouteTableIds = originalRouteTableIds;
+		}
+
+		public List<String> getSrcZoneIds() {
+			return this.srcZoneIds;
+		}
+
+		public void setSrcZoneIds(List<String> srcZoneIds) {
+			this.srcZoneIds = srcZoneIds;
 		}
 	}
 

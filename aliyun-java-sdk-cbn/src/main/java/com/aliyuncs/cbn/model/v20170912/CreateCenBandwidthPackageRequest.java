@@ -31,6 +31,8 @@ public class CreateCenBandwidthPackageRequest extends RpcAcsRequest<CreateCenBan
 
 	private String description;
 
+	private Integer autoRenewDuration;
+
 	private String bandwidthPackageChargeType;
 
 	private String geographicRegionBId;
@@ -48,6 +50,8 @@ public class CreateCenBandwidthPackageRequest extends RpcAcsRequest<CreateCenBan
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Boolean autoRenew;
 
 	private String name;
 
@@ -91,6 +95,17 @@ public class CreateCenBandwidthPackageRequest extends RpcAcsRequest<CreateCenBan
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public Integer getAutoRenewDuration() {
+		return this.autoRenewDuration;
+	}
+
+	public void setAutoRenewDuration(Integer autoRenewDuration) {
+		this.autoRenewDuration = autoRenewDuration;
+		if(autoRenewDuration != null){
+			putQueryParameter("AutoRenewDuration", autoRenewDuration.toString());
 		}
 	}
 
@@ -190,6 +205,17 @@ public class CreateCenBandwidthPackageRequest extends RpcAcsRequest<CreateCenBan
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 

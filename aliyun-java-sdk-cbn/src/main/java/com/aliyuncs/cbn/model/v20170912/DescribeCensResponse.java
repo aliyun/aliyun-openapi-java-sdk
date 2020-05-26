@@ -89,6 +89,8 @@ public class DescribeCensResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String ipv6Level;
+
 		private List<Tag> tags;
 
 		private List<String> cenBandwidthPackageIds;
@@ -139,6 +141,14 @@ public class DescribeCensResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getIpv6Level() {
+			return this.ipv6Level;
+		}
+
+		public void setIpv6Level(String ipv6Level) {
+			this.ipv6Level = ipv6Level;
 		}
 
 		public List<Tag> getTags() {

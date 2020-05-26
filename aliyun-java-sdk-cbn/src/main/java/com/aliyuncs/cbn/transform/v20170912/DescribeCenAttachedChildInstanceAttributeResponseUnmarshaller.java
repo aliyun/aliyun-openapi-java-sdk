@@ -14,7 +14,11 @@
 
 package com.aliyuncs.cbn.transform.v20170912;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.cbn.model.v20170912.DescribeCenAttachedChildInstanceAttributeResponse;
+import com.aliyuncs.cbn.model.v20170912.DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceRouteTable;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,6 +35,17 @@ public class DescribeCenAttachedChildInstanceAttributeResponseUnmarshaller {
 		describeCenAttachedChildInstanceAttributeResponse.setStatus(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.Status"));
 		describeCenAttachedChildInstanceAttributeResponse.setChildInstanceName(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceName"));
 		describeCenAttachedChildInstanceAttributeResponse.setChildInstanceAttachTime(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceAttachTime"));
+		describeCenAttachedChildInstanceAttributeResponse.setIpv6StatusInCen(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.Ipv6StatusInCen"));
+
+		List<ChildInstanceRouteTable> childInstanceRouteTables = new ArrayList<ChildInstanceRouteTable>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceRouteTables.Length"); i++) {
+			ChildInstanceRouteTable childInstanceRouteTable = new ChildInstanceRouteTable();
+			childInstanceRouteTable.setRouteTableId(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceRouteTables["+ i +"].RouteTableId"));
+			childInstanceRouteTable.setRouteTableType(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceRouteTables["+ i +"].RouteTableType"));
+
+			childInstanceRouteTables.add(childInstanceRouteTable);
+		}
+		describeCenAttachedChildInstanceAttributeResponse.setChildInstanceRouteTables(childInstanceRouteTables);
 	 
 	 	return describeCenAttachedChildInstanceAttributeResponse;
 	}

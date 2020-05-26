@@ -89,6 +89,8 @@ public class DescribeCenInterRegionBandwidthLimitsResponse extends AcsResponse {
 
 		private String status;
 
+		private String bandwidthPackageId;
+
 		public String getCenId() {
 			return this.cenId;
 		}
@@ -135,6 +137,14 @@ public class DescribeCenInterRegionBandwidthLimitsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getBandwidthPackageId() {
+			return this.bandwidthPackageId;
+		}
+
+		public void setBandwidthPackageId(String bandwidthPackageId) {
+			this.bandwidthPackageId = bandwidthPackageId;
 		}
 	}
 
