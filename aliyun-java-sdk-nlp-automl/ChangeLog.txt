@@ -1,3 +1,6 @@
+2020-05-26 Version: 0.0.7
+- Add smartcall service api.
+
 2020-05-26 Version: 0.0.6
 - Add smartcall service api.
 
