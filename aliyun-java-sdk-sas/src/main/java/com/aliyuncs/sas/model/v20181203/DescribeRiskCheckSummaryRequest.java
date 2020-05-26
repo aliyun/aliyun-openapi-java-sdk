@@ -30,6 +30,8 @@ public class DescribeRiskCheckSummaryRequest extends RpcAcsRequest<DescribeRiskC
 	private String sourceIp;
 
 	private String lang;
+
+	private String resourceDirectoryAccountId;
 	public DescribeRiskCheckSummaryRequest() {
 		super("Sas", "2018-12-03", "DescribeRiskCheckSummary", "sas");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class DescribeRiskCheckSummaryRequest extends RpcAcsRequest<DescribeRiskC
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getResourceDirectoryAccountId() {
+		return this.resourceDirectoryAccountId;
+	}
+
+	public void setResourceDirectoryAccountId(String resourceDirectoryAccountId) {
+		this.resourceDirectoryAccountId = resourceDirectoryAccountId;
+		if(resourceDirectoryAccountId != null){
+			putQueryParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId);
 		}
 	}
 

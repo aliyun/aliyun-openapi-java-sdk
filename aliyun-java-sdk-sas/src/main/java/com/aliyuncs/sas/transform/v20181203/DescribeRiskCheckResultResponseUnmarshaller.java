@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.sas.model.v20181203.DescribeRiskCheckResultResponse;
 import com.aliyuncs.sas.model.v20181203.DescribeRiskCheckResultResponse.RiskCheckResultForDisplay;
 import com.aliyuncs.sas.model.v20181203.DescribeRiskCheckResultResponse.RiskCheckResultForDisplay.RiskItemResource;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -55,7 +56,7 @@ public class DescribeRiskCheckResultResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("DescribeRiskCheckResultResponse.List["+ i +"].RiskItemResources.Length"); j++) {
 				RiskItemResource riskItemResource = new RiskItemResource();
 				riskItemResource.setResourceName(_ctx.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].RiskItemResources["+ j +"].ResourceName"));
-				riskItemResource.setContentResource(_ctx.stringValue("DescribeRiskCheckResultResponse.List["+ i +"].RiskItemResources["+ j +"].ContentResource"));
+				riskItemResource.setContentResource(_ctx.mapValue("DescribeRiskCheckResultResponse.List["+ i +"].RiskItemResources["+ j +"].ContentResource"));
 
 				riskItemResources.add(riskItemResource);
 			}

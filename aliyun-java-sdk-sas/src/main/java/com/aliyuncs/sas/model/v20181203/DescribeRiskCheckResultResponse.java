@@ -15,6 +15,7 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.sas.transform.v20181203.DescribeRiskCheckResultResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -241,7 +242,7 @@ public class DescribeRiskCheckResultResponse extends AcsResponse {
 
 			private String resourceName;
 
-			private String contentResource;
+			private Map<Object,Object> contentResource;
 
 			public String getResourceName() {
 				return this.resourceName;
@@ -251,11 +252,11 @@ public class DescribeRiskCheckResultResponse extends AcsResponse {
 				this.resourceName = resourceName;
 			}
 
-			public String getContentResource() {
+			public Map<Object,Object> getContentResource() {
 				return this.contentResource;
 			}
 
-			public void setContentResource(String contentResource) {
+			public void setContentResource(Map<Object,Object> contentResource) {
 				this.contentResource = contentResource;
 			}
 		}

@@ -25,6 +25,8 @@ import com.aliyuncs.sas.Endpoint;
 public class GetIOCsRequest extends RpcAcsRequest<GetIOCsResponse> {
 	   
 
+	private String date;
+
 	private String type;
 	public GetIOCsRequest() {
 		super("Sas", "2018-12-03", "GetIOCs", "sas");
@@ -33,6 +35,17 @@ public class GetIOCsRequest extends RpcAcsRequest<GetIOCsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDate() {
+		return this.date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+		if(date != null){
+			putQueryParameter("Date", date);
+		}
 	}
 
 	public String getType() {

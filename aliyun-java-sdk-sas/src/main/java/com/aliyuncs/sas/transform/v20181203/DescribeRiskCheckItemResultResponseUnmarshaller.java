@@ -16,6 +16,7 @@ package com.aliyuncs.sas.transform.v20181203;
 
 import com.aliyuncs.sas.model.v20181203.DescribeRiskCheckItemResultResponse;
 import com.aliyuncs.sas.model.v20181203.DescribeRiskCheckItemResultResponse.PageContentResource;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,7 +27,7 @@ public class DescribeRiskCheckItemResultResponseUnmarshaller {
 		describeRiskCheckItemResultResponse.setRequestId(_ctx.stringValue("DescribeRiskCheckItemResultResponse.RequestId"));
 
 		PageContentResource pageContentResource = new PageContentResource();
-		pageContentResource.setContentResource(_ctx.stringValue("DescribeRiskCheckItemResultResponse.PageContentResource.ContentResource"));
+		pageContentResource.setContentResource(_ctx.mapValue("DescribeRiskCheckItemResultResponse.PageContentResource.ContentResource"));
 		pageContentResource.setCurrentPage(_ctx.integerValue("DescribeRiskCheckItemResultResponse.PageContentResource.CurrentPage"));
 		pageContentResource.setPageSize(_ctx.integerValue("DescribeRiskCheckItemResultResponse.PageContentResource.PageSize"));
 		pageContentResource.setTotalCount(_ctx.integerValue("DescribeRiskCheckItemResultResponse.PageContentResource.TotalCount"));

@@ -22,21 +22,47 @@ import com.aliyuncs.sas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSummaryInfoRequest extends RpcAcsRequest<DescribeSummaryInfoResponse> {
+public class FixCheckWarningsRequest extends RpcAcsRequest<FixCheckWarningsResponse> {
 	   
+
+	private Long riskId;
+
+	private String checkParams;
 
 	private String sourceIp;
 
 	private String lang;
 
-	private String resourceDirectoryAccountId;
-	public DescribeSummaryInfoRequest() {
-		super("Sas", "2018-12-03", "DescribeSummaryInfo", "sas");
+	private String uuids;
+	public FixCheckWarningsRequest() {
+		super("Sas", "2018-12-03", "FixCheckWarnings", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getRiskId() {
+		return this.riskId;
+	}
+
+	public void setRiskId(Long riskId) {
+		this.riskId = riskId;
+		if(riskId != null){
+			putQueryParameter("RiskId", riskId.toString());
+		}
+	}
+
+	public String getCheckParams() {
+		return this.checkParams;
+	}
+
+	public void setCheckParams(String checkParams) {
+		this.checkParams = checkParams;
+		if(checkParams != null){
+			putQueryParameter("CheckParams", checkParams);
+		}
 	}
 
 	public String getSourceIp() {
@@ -61,20 +87,20 @@ public class DescribeSummaryInfoRequest extends RpcAcsRequest<DescribeSummaryInf
 		}
 	}
 
-	public String getResourceDirectoryAccountId() {
-		return this.resourceDirectoryAccountId;
+	public String getUuids() {
+		return this.uuids;
 	}
 
-	public void setResourceDirectoryAccountId(String resourceDirectoryAccountId) {
-		this.resourceDirectoryAccountId = resourceDirectoryAccountId;
-		if(resourceDirectoryAccountId != null){
-			putQueryParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId);
+	public void setUuids(String uuids) {
+		this.uuids = uuids;
+		if(uuids != null){
+			putQueryParameter("Uuids", uuids);
 		}
 	}
 
 	@Override
-	public Class<DescribeSummaryInfoResponse> getResponseClass() {
-		return DescribeSummaryInfoResponse.class;
+	public Class<FixCheckWarningsResponse> getResponseClass() {
+		return FixCheckWarningsResponse.class;
 	}
 
 }

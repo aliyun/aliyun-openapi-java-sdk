@@ -44,6 +44,7 @@ public class DescribeSuspEventDetailResponseUnmarshaller {
 		describeSuspEventDetailResponse.setSasId(_ctx.stringValue("DescribeSuspEventDetailResponse.SasId"));
 		describeSuspEventDetailResponse.setEventName(_ctx.stringValue("DescribeSuspEventDetailResponse.EventName"));
 		describeSuspEventDetailResponse.setCanBeDealOnLine(_ctx.booleanValue("DescribeSuspEventDetailResponse.CanBeDealOnLine"));
+		describeSuspEventDetailResponse.setOperateErrorCode(_ctx.stringValue("DescribeSuspEventDetailResponse.OperateErrorCode"));
 
 		List<QuaraFile> details = new ArrayList<QuaraFile>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSuspEventDetailResponse.Details.Length"); i++) {

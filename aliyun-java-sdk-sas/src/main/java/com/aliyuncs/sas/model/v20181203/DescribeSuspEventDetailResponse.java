@@ -61,6 +61,8 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 
 	private Boolean canBeDealOnLine;
 
+	private String operateErrorCode;
+
 	private List<QuaraFile> details;
 
 	public String getRequestId() {
@@ -205,6 +207,14 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 
 	public void setCanBeDealOnLine(Boolean canBeDealOnLine) {
 		this.canBeDealOnLine = canBeDealOnLine;
+	}
+
+	public String getOperateErrorCode() {
+		return this.operateErrorCode;
+	}
+
+	public void setOperateErrorCode(String operateErrorCode) {
+		this.operateErrorCode = operateErrorCode;
 	}
 
 	public List<QuaraFile> getDetails() {

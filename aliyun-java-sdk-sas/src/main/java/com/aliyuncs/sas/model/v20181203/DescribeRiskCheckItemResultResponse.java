@@ -14,6 +14,7 @@
 
 package com.aliyuncs.sas.model.v20181203;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.sas.transform.v20181203.DescribeRiskCheckItemResultResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -46,7 +47,7 @@ public class DescribeRiskCheckItemResultResponse extends AcsResponse {
 
 	public static class PageContentResource {
 
-		private String contentResource;
+		private Map<Object,Object> contentResource;
 
 		private Integer currentPage;
 
@@ -58,11 +59,11 @@ public class DescribeRiskCheckItemResultResponse extends AcsResponse {
 
 		private Integer pageCount;
 
-		public String getContentResource() {
+		public Map<Object,Object> getContentResource() {
 			return this.contentResource;
 		}
 
-		public void setContentResource(String contentResource) {
+		public void setContentResource(Map<Object,Object> contentResource) {
 			this.contentResource = contentResource;
 		}
 
