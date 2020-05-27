@@ -99,7 +99,7 @@ public class ListOutboundOrderCasesResponse extends AcsResponse {
 
 		private Boolean beConfirmOutboundCase;
 
-		private Boolean applyStatus;
+		private String applyStatus;
 
 		public String getId() {
 			return this.id;
@@ -149,11 +149,11 @@ public class ListOutboundOrderCasesResponse extends AcsResponse {
 			this.beConfirmOutboundCase = beConfirmOutboundCase;
 		}
 
-		public Boolean getApplyStatus() {
+		public String getApplyStatus() {
 			return this.applyStatus;
 		}
 
-		public void setApplyStatus(Boolean applyStatus) {
+		public void setApplyStatus(String applyStatus) {
 			this.applyStatus = applyStatus;
 		}
 	}
