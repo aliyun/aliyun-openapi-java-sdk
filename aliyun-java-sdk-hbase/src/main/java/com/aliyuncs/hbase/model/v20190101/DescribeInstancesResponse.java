@@ -143,6 +143,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String moduleStackVersion;
 
+		private String coreDiskCount;
+
 		private List<Tag> tags;
 
 		public String getInstanceId() {
@@ -407,6 +409,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setModuleStackVersion(String moduleStackVersion) {
 			this.moduleStackVersion = moduleStackVersion;
+		}
+
+		public String getCoreDiskCount() {
+			return this.coreDiskCount;
+		}
+
+		public void setCoreDiskCount(String coreDiskCount) {
+			this.coreDiskCount = coreDiskCount;
 		}
 
 		public List<Tag> getTags() {

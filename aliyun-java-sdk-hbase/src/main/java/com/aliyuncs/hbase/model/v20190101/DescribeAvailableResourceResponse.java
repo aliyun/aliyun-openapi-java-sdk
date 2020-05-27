@@ -179,6 +179,8 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 							private String instanceType;
 
+							private Integer maxCoreCount;
+
 							private DBInstanceStorageRange dBInstanceStorageRange;
 
 							private InstanceTypeDetail instanceTypeDetail;
@@ -189,6 +191,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 							public void setInstanceType(String instanceType) {
 								this.instanceType = instanceType;
+							}
+
+							public Integer getMaxCoreCount() {
+								return this.maxCoreCount;
+							}
+
+							public void setMaxCoreCount(Integer maxCoreCount) {
+								this.maxCoreCount = maxCoreCount;
 							}
 
 							public DBInstanceStorageRange getDBInstanceStorageRange() {

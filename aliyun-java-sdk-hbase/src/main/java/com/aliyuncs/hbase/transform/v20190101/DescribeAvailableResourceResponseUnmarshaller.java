@@ -67,6 +67,7 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 							for (int n = 0; n < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategories["+ l +"].SupportedStorageTypes["+ m +"].CoreResources.Length"); n++) {
 								CoreResource coreResource = new CoreResource();
 								coreResource.setInstanceType(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategories["+ l +"].SupportedStorageTypes["+ m +"].CoreResources["+ n +"].InstanceType"));
+								coreResource.setMaxCoreCount(_ctx.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategories["+ l +"].SupportedStorageTypes["+ m +"].CoreResources["+ n +"].MaxCoreCount"));
 
 								DBInstanceStorageRange dBInstanceStorageRange = new DBInstanceStorageRange();
 								dBInstanceStorageRange.setMaxSize(_ctx.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategories["+ l +"].SupportedStorageTypes["+ m +"].CoreResources["+ n +"].DBInstanceStorageRange.MaxSize"));
