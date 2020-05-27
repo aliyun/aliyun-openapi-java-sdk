@@ -1,3 +1,7 @@
+2020-05-27 Version: 0.2.0
+- Add app-group-management and quota-updating APIs.
+- Add app management APIs.
+
 2020-04-03 Version: 0.1.0
 - Support sort script.
 
