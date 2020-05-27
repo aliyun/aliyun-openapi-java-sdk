@@ -52,6 +52,7 @@ public class ListProduceOrderLinesResponseUnmarshaller {
 			produceOrderLineModel.setBusinessPrice(_ctx.integerValue("ListProduceOrderLinesResponse.ProduceOrderLines["+ i +"].BusinessPrice"));
 			produceOrderLineModel.setBarcodeId(_ctx.stringValue("ListProduceOrderLinesResponse.ProduceOrderLines["+ i +"].BarcodeId"));
 			produceOrderLineModel.setBarcode(_ctx.stringValue("ListProduceOrderLinesResponse.ProduceOrderLines["+ i +"].Barcode"));
+			produceOrderLineModel.setSKUName(_ctx.stringValue("ListProduceOrderLinesResponse.ProduceOrderLines["+ i +"].SKUName"));
 
 			produceOrderLines.add(produceOrderLineModel);
 		}

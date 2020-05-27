@@ -50,6 +50,7 @@ public class ListProduceOrderCaseSkusResponseUnmarshaller {
 			produceOrderCaseSkuModel.setBindingQuantity(_ctx.integerValue("ListProduceOrderCaseSkusResponse.ProductionOrderCaseSkus["+ i +"].BindingQuantity"));
 			produceOrderCaseSkuModel.setBarcodeId(_ctx.stringValue("ListProduceOrderCaseSkusResponse.ProductionOrderCaseSkus["+ i +"].BarcodeId"));
 			produceOrderCaseSkuModel.setBarcode(_ctx.stringValue("ListProduceOrderCaseSkusResponse.ProductionOrderCaseSkus["+ i +"].Barcode"));
+			produceOrderCaseSkuModel.setSKUName(_ctx.stringValue("ListProduceOrderCaseSkusResponse.ProductionOrderCaseSkus["+ i +"].SKUName"));
 
 			productionOrderCaseSkus.add(produceOrderCaseSkuModel);
 		}

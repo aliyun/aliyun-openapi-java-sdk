@@ -121,6 +121,8 @@ public class ListProduceOrderLinesResponse extends AcsResponse {
 
 		private String barcode;
 
+		private String sKUName;
+
 		public String getProductId() {
 			return this.productId;
 		}
@@ -255,6 +257,14 @@ public class ListProduceOrderLinesResponse extends AcsResponse {
 
 		public void setBarcode(String barcode) {
 			this.barcode = barcode;
+		}
+
+		public String getSKUName() {
+			return this.sKUName;
+		}
+
+		public void setSKUName(String sKUName) {
+			this.sKUName = sKUName;
 		}
 	}
 
