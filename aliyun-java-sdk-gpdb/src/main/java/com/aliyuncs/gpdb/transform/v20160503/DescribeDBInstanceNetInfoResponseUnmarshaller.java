@@ -38,6 +38,7 @@ public class DescribeDBInstanceNetInfoResponseUnmarshaller {
 			dBInstanceNetInfo.setPort(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].Port"));
 			dBInstanceNetInfo.setVPCId(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].VPCId"));
 			dBInstanceNetInfo.setVSwitchId(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].VSwitchId"));
+			dBInstanceNetInfo.setVpcInstanceId(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].VpcInstanceId"));
 
 			dBInstanceNetInfos.add(dBInstanceNetInfo);
 		}

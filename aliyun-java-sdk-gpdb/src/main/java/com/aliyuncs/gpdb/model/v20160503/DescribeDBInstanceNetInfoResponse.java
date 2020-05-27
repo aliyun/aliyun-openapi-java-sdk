@@ -69,6 +69,8 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 		private String vSwitchId;
 
+		private String vpcInstanceId;
+
 		public String getConnectionString() {
 			return this.connectionString;
 		}
@@ -115,6 +117,14 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
+		}
+
+		public String getVpcInstanceId() {
+			return this.vpcInstanceId;
+		}
+
+		public void setVpcInstanceId(String vpcInstanceId) {
+			this.vpcInstanceId = vpcInstanceId;
 		}
 	}
 
