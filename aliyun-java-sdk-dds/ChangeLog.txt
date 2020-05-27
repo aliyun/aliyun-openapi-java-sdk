@@ -1,3 +1,7 @@
+2020-05-27 Version: 3.1.2
+- Added cn-heyuan endpoint url.
+- Added cn-wulanchabu endpoint url.
+
 2020-04-15 Version: 3.1.1
 - CreateNode API add return NodeId.
 
