@@ -68,6 +68,7 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".ExpireTime" , pushTasks.get(depth1).getExpireTime());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidPopupBody" , pushTasks.get(depth1).getAndroidPopupBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSNotificationCategory" , pushTasks.get(depth1).getIOSNotificationCategory());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationXiaomiChannel" , pushTasks.get(depth1).getAndroidNotificationXiaomiChannel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".StoreOffline" , pushTasks.get(depth1).getStoreOffline());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSSilentNotification" , pushTasks.get(depth1).getIOSSilentNotification());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".JobKey" , pushTasks.get(depth1).getJobKey());
@@ -144,6 +145,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 		private String androidPopupBody;
 
 		private String iOSNotificationCategory;
+
+		private String androidNotificationXiaomiChannel;
 
 		private Boolean storeOffline;
 
@@ -351,6 +354,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setIOSNotificationCategory(String iOSNotificationCategory) {
 			this.iOSNotificationCategory = iOSNotificationCategory;
+		}
+
+		public String getAndroidNotificationXiaomiChannel() {
+			return this.androidNotificationXiaomiChannel;
+		}
+
+		public void setAndroidNotificationXiaomiChannel(String androidNotificationXiaomiChannel) {
+			this.androidNotificationXiaomiChannel = androidNotificationXiaomiChannel;
 		}
 
 		public Boolean getStoreOffline() {

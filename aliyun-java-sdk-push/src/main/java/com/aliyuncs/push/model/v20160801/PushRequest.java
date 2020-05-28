@@ -57,6 +57,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String iOSNotificationCategory;
 
+	private String androidNotificationXiaomiChannel;
+
 	private Boolean storeOffline;
 
 	private String smsParams;
@@ -294,6 +296,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.iOSNotificationCategory = iOSNotificationCategory;
 		if(iOSNotificationCategory != null){
 			putQueryParameter("iOSNotificationCategory", iOSNotificationCategory);
+		}
+	}
+
+	public String getAndroidNotificationXiaomiChannel() {
+		return this.androidNotificationXiaomiChannel;
+	}
+
+	public void setAndroidNotificationXiaomiChannel(String androidNotificationXiaomiChannel) {
+		this.androidNotificationXiaomiChannel = androidNotificationXiaomiChannel;
+		if(androidNotificationXiaomiChannel != null){
+			putQueryParameter("AndroidNotificationXiaomiChannel", androidNotificationXiaomiChannel);
 		}
 	}
 
