@@ -49,6 +49,9 @@ public class ListInboundOrderPreboxingsResponseUnmarshaller {
 			inboundOrderPreboxingBiz.setSizeId(_ctx.stringValue("ListInboundOrderPreboxingsResponse.InboundOrderPreboxings["+ i +"].SizeId"));
 			inboundOrderPreboxingBiz.setSizeCode(_ctx.stringValue("ListInboundOrderPreboxingsResponse.InboundOrderPreboxings["+ i +"].SizeCode"));
 			inboundOrderPreboxingBiz.setSizeName(_ctx.stringValue("ListInboundOrderPreboxingsResponse.InboundOrderPreboxings["+ i +"].SizeName"));
+			inboundOrderPreboxingBiz.setSKUName(_ctx.stringValue("ListInboundOrderPreboxingsResponse.InboundOrderPreboxings["+ i +"].SKUName"));
+			inboundOrderPreboxingBiz.setSKUId(_ctx.stringValue("ListInboundOrderPreboxingsResponse.InboundOrderPreboxings["+ i +"].SKUId"));
+			inboundOrderPreboxingBiz.setCaseCode(_ctx.stringValue("ListInboundOrderPreboxingsResponse.InboundOrderPreboxings["+ i +"].CaseCode"));
 
 			inboundOrderPreboxings.add(inboundOrderPreboxingBiz);
 		}

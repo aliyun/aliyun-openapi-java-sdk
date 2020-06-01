@@ -91,6 +91,12 @@ public class ListInboundOrderPreboxingsResponse extends AcsResponse {
 
 		private String sizeName;
 
+		private String sKUName;
+
+		private String sKUId;
+
+		private String caseCode;
+
 		public String getOrderId() {
 			return this.orderId;
 		}
@@ -225,6 +231,30 @@ public class ListInboundOrderPreboxingsResponse extends AcsResponse {
 
 		public void setSizeName(String sizeName) {
 			this.sizeName = sizeName;
+		}
+
+		public String getSKUName() {
+			return this.sKUName;
+		}
+
+		public void setSKUName(String sKUName) {
+			this.sKUName = sKUName;
+		}
+
+		public String getSKUId() {
+			return this.sKUId;
+		}
+
+		public void setSKUId(String sKUId) {
+			this.sKUId = sKUId;
+		}
+
+		public String getCaseCode() {
+			return this.caseCode;
+		}
+
+		public void setCaseCode(String caseCode) {
+			this.caseCode = caseCode;
 		}
 	}
 

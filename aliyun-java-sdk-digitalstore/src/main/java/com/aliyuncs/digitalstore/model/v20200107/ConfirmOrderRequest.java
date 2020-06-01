@@ -22,16 +22,14 @@ import com.aliyuncs.digitalstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListInboundOrderPreboxingsRequest extends RpcAcsRequest<ListInboundOrderPreboxingsResponse> {
+public class ConfirmOrderRequest extends RpcAcsRequest<ConfirmOrderResponse> {
 	   
 
 	private String orderId;
 
-	private String caseCode;
-
-	private String caseId;
-	public ListInboundOrderPreboxingsRequest() {
-		super("digitalstore", "2020-01-07", "ListInboundOrderPreboxings", "digitalstore");
+	private String orderType;
+	public ConfirmOrderRequest() {
+		super("digitalstore", "2020-01-07", "ConfirmOrder", "digitalstore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,31 +48,20 @@ public class ListInboundOrderPreboxingsRequest extends RpcAcsRequest<ListInbound
 		}
 	}
 
-	public String getCaseCode() {
-		return this.caseCode;
+	public String getOrderType() {
+		return this.orderType;
 	}
 
-	public void setCaseCode(String caseCode) {
-		this.caseCode = caseCode;
-		if(caseCode != null){
-			putBodyParameter("CaseCode", caseCode);
-		}
-	}
-
-	public String getCaseId() {
-		return this.caseId;
-	}
-
-	public void setCaseId(String caseId) {
-		this.caseId = caseId;
-		if(caseId != null){
-			putBodyParameter("CaseId", caseId);
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putBodyParameter("OrderType", orderType);
 		}
 	}
 
 	@Override
-	public Class<ListInboundOrderPreboxingsResponse> getResponseClass() {
-		return ListInboundOrderPreboxingsResponse.class;
+	public Class<ConfirmOrderResponse> getResponseClass() {
+		return ConfirmOrderResponse.class;
 	}
 
 }

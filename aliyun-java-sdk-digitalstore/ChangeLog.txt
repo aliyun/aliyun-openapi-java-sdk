@@ -1,3 +1,6 @@
+2020-06-01 Version: 0.1.5
+- Modify ListInboundOrderPreboxings.
+
 2020-05-27 Version: 0.1.4
 - Modify ListOutboundOrderCases Parameter.
 
