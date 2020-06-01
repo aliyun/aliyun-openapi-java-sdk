@@ -25,6 +25,7 @@ public class ImportOutBoundOrderResponseUnmarshaller {
 		importOutBoundOrderResponse.setRequestId(_ctx.stringValue("ImportOutBoundOrderResponse.RequestId"));
 		importOutBoundOrderResponse.setSuccess(_ctx.booleanValue("ImportOutBoundOrderResponse.Success"));
 		importOutBoundOrderResponse.setOrderId(_ctx.stringValue("ImportOutBoundOrderResponse.OrderId"));
+		importOutBoundOrderResponse.setOrderCode(_ctx.stringValue("ImportOutBoundOrderResponse.OrderCode"));
 	 
 	 	return importOutBoundOrderResponse;
 	}

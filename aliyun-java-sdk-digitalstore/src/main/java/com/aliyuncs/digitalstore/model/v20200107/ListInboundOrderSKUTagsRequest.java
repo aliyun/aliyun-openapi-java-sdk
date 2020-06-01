@@ -15,6 +15,7 @@
 package com.aliyuncs.digitalstore.model.v20200107;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.digitalstore.Endpoint;
 
@@ -28,6 +29,8 @@ public class ListInboundOrderSKUTagsRequest extends RpcAcsRequest<ListInboundOrd
 	private String orderId;
 
 	private String orderByField;
+
+	private List<String> barcodess;
 
 	private Integer pageNumber;
 
@@ -65,6 +68,19 @@ public class ListInboundOrderSKUTagsRequest extends RpcAcsRequest<ListInboundOrd
 		if(orderByField != null){
 			putBodyParameter("OrderByField", orderByField);
 		}
+	}
+
+	public List<String> getBarcodess() {
+		return this.barcodess;
+	}
+
+	public void setBarcodess(List<String> barcodess) {
+		this.barcodess = barcodess;	
+		if (barcodess != null) {
+			for (int i = 0; i < barcodess.size(); i++) {
+				putBodyParameter("Barcodes." + (i + 1) , barcodess.get(i));
+			}
+		}	
 	}
 
 	public Integer getPageNumber() {

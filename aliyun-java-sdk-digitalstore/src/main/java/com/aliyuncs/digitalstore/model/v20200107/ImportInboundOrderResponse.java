@@ -15,14 +15,14 @@
 package com.aliyuncs.digitalstore.model.v20200107;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.digitalstore.transform.v20200107.ImportOutBoundOrderResponseUnmarshaller;
+import com.aliyuncs.digitalstore.transform.v20200107.ImportInboundOrderResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ImportOutBoundOrderResponse extends AcsResponse {
+public class ImportInboundOrderResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -65,7 +65,7 @@ public class ImportOutBoundOrderResponse extends AcsResponse {
 	}
 
 	@Override
-	public ImportOutBoundOrderResponse getInstance(UnmarshallerContext context) {
-		return	ImportOutBoundOrderResponseUnmarshaller.unmarshall(this, context);
+	public ImportInboundOrderResponse getInstance(UnmarshallerContext context) {
+		return	ImportInboundOrderResponseUnmarshaller.unmarshall(this, context);
 	}
 }
