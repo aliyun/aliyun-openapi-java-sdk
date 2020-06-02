@@ -16,6 +16,7 @@ package com.aliyuncs.datav_outer.model.v20190402;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.datav_outer.Endpoint;
 
 /**
  * @author auto create
@@ -42,6 +43,10 @@ public class CreateScreenRequest extends RpcAcsRequest<CreateScreenResponse> {
 	public CreateScreenRequest() {
 		super("datav-outer", "2019-04-02", "CreateScreen", "datav");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getProduct() {
