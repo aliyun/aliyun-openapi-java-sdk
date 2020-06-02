@@ -36,6 +36,8 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 
 	private String serviceIp;
 
+	private List<ExclusionFilters> exclusionFilterss;
+
 	private String operationName;
 
 	private String serviceName;
@@ -105,6 +107,20 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 		}
 	}
 
+	public List<ExclusionFilters> getExclusionFilterss() {
+		return this.exclusionFilterss;
+	}
+
+	public void setExclusionFilterss(List<ExclusionFilters> exclusionFilterss) {
+		this.exclusionFilterss = exclusionFilterss;	
+		if (exclusionFilterss != null) {
+			for (int depth1 = 0; depth1 < exclusionFilterss.size(); depth1++) {
+				putQueryParameter("ExclusionFilters." + (depth1 + 1) + ".Value" , exclusionFilterss.get(depth1).getValue());
+				putQueryParameter("ExclusionFilters." + (depth1 + 1) + ".Key" , exclusionFilterss.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getOperationName() {
 		return this.operationName;
 	}
@@ -139,6 +155,29 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public static class ExclusionFilters {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	public static class Tag {

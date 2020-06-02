@@ -1,3 +1,6 @@
+2020-06-02 Version: 2.6.6
+- Edit SearchTraces api.
+
 2020-05-20 Version: 2.6.5
 - Edit GetTrace and SearchTraces api.
 
