@@ -22,9 +22,9 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetRegionListRequest extends RoaAcsRequest<GetRegionListResponse> {
-	
+	   
 	public GetRegionListRequest() {
-		super("cr", "2016-06-07", "GetRegionList", "cr");
+		super("cr", "2016-06-07", "GetRegionList", "acr");
 		setUriPattern("/regions");
 		setMethod(MethodType.GET);
 	}

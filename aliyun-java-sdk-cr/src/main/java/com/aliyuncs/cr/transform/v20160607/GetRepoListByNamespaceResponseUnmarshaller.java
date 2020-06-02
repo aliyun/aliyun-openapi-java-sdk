@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetRepoListByNamespaceResponseUnmarshaller {
 
-	public static GetRepoListByNamespaceResponse unmarshall(GetRepoListByNamespaceResponse getRepoListByNamespaceResponse, UnmarshallerContext context) {
+	public static GetRepoListByNamespaceResponse unmarshall(GetRepoListByNamespaceResponse getRepoListByNamespaceResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return getRepoListByNamespaceResponse;

@@ -22,18 +22,18 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetImageLayerRequest extends RoaAcsRequest<GetImageLayerResponse> {
-	
-	public GetImageLayerRequest() {
-		super("cr", "2016-06-07", "GetImageLayer", "cr");
-		setUriPattern("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/layers");
-		setMethod(MethodType.GET);
-	}
+	   
 
 	private String repoNamespace;
 
 	private String repoName;
 
 	private String tag;
+	public GetImageLayerRequest() {
+		super("cr", "2016-06-07", "GetImageLayer", "acr");
+		setUriPattern("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/layers");
+		setMethod(MethodType.GET);
+	}
 
 	public String getRepoNamespace() {
 		return this.repoNamespace;

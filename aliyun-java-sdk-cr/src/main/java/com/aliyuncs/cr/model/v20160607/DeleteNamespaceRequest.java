@@ -22,14 +22,14 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteNamespaceRequest extends RoaAcsRequest<DeleteNamespaceResponse> {
-	
+	   
+
+	private String namespace;
 	public DeleteNamespaceRequest() {
-		super("cr", "2016-06-07", "DeleteNamespace", "cr");
+		super("cr", "2016-06-07", "DeleteNamespace", "acr");
 		setUriPattern("/namespace/[Namespace]");
 		setMethod(MethodType.DELETE);
 	}
-
-	private String namespace;
 
 	public String getNamespace() {
 		return this.namespace;

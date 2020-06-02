@@ -22,12 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetRepoBuildListRequest extends RoaAcsRequest<GetRepoBuildListResponse> {
-	
-	public GetRepoBuildListRequest() {
-		super("cr", "2016-06-07", "GetRepoBuildList", "cr");
-		setUriPattern("/repos/[RepoNamespace]/[RepoName]/build");
-		setMethod(MethodType.GET);
-	}
+	   
 
 	private String repoNamespace;
 
@@ -36,6 +31,11 @@ public class GetRepoBuildListRequest extends RoaAcsRequest<GetRepoBuildListRespo
 	private Integer pageSize;
 
 	private Integer page;
+	public GetRepoBuildListRequest() {
+		super("cr", "2016-06-07", "GetRepoBuildList", "acr");
+		setUriPattern("/repos/[RepoNamespace]/[RepoName]/build");
+		setMethod(MethodType.GET);
+	}
 
 	public String getRepoNamespace() {
 		return this.repoNamespace;

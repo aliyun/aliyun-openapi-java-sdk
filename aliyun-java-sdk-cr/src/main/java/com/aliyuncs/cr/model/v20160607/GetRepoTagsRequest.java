@@ -22,12 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetRepoTagsRequest extends RoaAcsRequest<GetRepoTagsResponse> {
-	
-	public GetRepoTagsRequest() {
-		super("cr", "2016-06-07", "GetRepoTags", "cr");
-		setUriPattern("/repos/[RepoNamespace]/[RepoName]/tags");
-		setMethod(MethodType.GET);
-	}
+	   
 
 	private String repoNamespace;
 
@@ -36,6 +31,11 @@ public class GetRepoTagsRequest extends RoaAcsRequest<GetRepoTagsResponse> {
 	private Integer pageSize;
 
 	private Integer page;
+	public GetRepoTagsRequest() {
+		super("cr", "2016-06-07", "GetRepoTags", "acr");
+		setUriPattern("/repos/[RepoNamespace]/[RepoName]/tags");
+		setMethod(MethodType.GET);
+	}
 
 	public String getRepoNamespace() {
 		return this.repoNamespace;

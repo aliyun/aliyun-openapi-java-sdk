@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateNamespaceResponseUnmarshaller {
 
-	public static UpdateNamespaceResponse unmarshall(UpdateNamespaceResponse updateNamespaceResponse, UnmarshallerContext context) {
+	public static UpdateNamespaceResponse unmarshall(UpdateNamespaceResponse updateNamespaceResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return updateNamespaceResponse;

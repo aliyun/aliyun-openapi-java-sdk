@@ -22,18 +22,18 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetRepoListRequest extends RoaAcsRequest<GetRepoListResponse> {
-	
-	public GetRepoListRequest() {
-		super("cr", "2016-06-07", "GetRepoList", "cr");
-		setUriPattern("/repos");
-		setMethod(MethodType.GET);
-	}
+	   
 
 	private Integer pageSize;
 
 	private Integer page;
 
 	private String status;
+	public GetRepoListRequest() {
+		super("cr", "2016-06-07", "GetRepoList", "acr");
+		setUriPattern("/repos");
+		setMethod(MethodType.GET);
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;

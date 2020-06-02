@@ -22,18 +22,29 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class StartRepoBuildByRuleRequest extends RoaAcsRequest<StartRepoBuildByRuleResponse> {
-	
-	public StartRepoBuildByRuleRequest() {
-		super("cr", "2016-06-07", "StartRepoBuildByRule", "cr");
-		setUriPattern("/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]/build");
-		setMethod(MethodType.PUT);
-	}
+	   
+
+	private Long buildRuleId;
 
 	private String repoNamespace;
 
 	private String repoName;
+	public StartRepoBuildByRuleRequest() {
+		super("cr", "2016-06-07", "StartRepoBuildByRule", "acr");
+		setUriPattern("/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]/build");
+		setMethod(MethodType.PUT);
+	}
 
-	private Long buildRuleId;
+	public Long getBuildRuleId() {
+		return this.buildRuleId;
+	}
+
+	public void setBuildRuleId(Long buildRuleId) {
+		this.buildRuleId = buildRuleId;
+		if(buildRuleId != null){
+			putPathParameter("BuildRuleId", buildRuleId.toString());
+		}
+	}
 
 	public String getRepoNamespace() {
 		return this.repoNamespace;
@@ -54,17 +65,6 @@ public class StartRepoBuildByRuleRequest extends RoaAcsRequest<StartRepoBuildByR
 		this.repoName = repoName;
 		if(repoName != null){
 			putPathParameter("RepoName", repoName);
-		}
-	}
-
-	public Long getBuildRuleId() {
-		return this.buildRuleId;
-	}
-
-	public void setBuildRuleId(Long buildRuleId) {
-		this.buildRuleId = buildRuleId;
-		if(buildRuleId != null){
-			putPathParameter("BuildRuleId", buildRuleId.toString());
 		}
 	}
 

@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetRepoTagsResponseUnmarshaller {
 
-	public static GetRepoTagsResponse unmarshall(GetRepoTagsResponse getRepoTagsResponse, UnmarshallerContext context) {
+	public static GetRepoTagsResponse unmarshall(GetRepoTagsResponse getRepoTagsResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return getRepoTagsResponse;

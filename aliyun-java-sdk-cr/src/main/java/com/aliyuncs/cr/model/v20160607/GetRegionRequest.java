@@ -22,38 +22,19 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetRegionRequest extends RoaAcsRequest<GetRegionResponse> {
-	
+	   
+
+	private String domain;
 	public GetRegionRequest() {
-		super("cr", "2016-06-07", "GetRegion", "cr");
+		super("cr", "2016-06-07", "GetRegion", "acr");
 		setUriPattern("/regions");
 		setMethod(MethodType.GET);
 	}
 
-	private String domain;
-
-	public String getBizDomain() {
-		return this.domain;
-	}
-
-	public void setBizDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizDomain instead of this.
-	 */
-	@Deprecated
 	public String getDomain() {
 		return this.domain;
 	}
 
-	/**
-	 * @deprecated use setBizDomain instead of this.
-	 */
-	@Deprecated
 	public void setDomain(String domain) {
 		this.domain = domain;
 		if(domain != null){

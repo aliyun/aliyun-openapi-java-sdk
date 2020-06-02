@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteImageResponseUnmarshaller {
 
-	public static DeleteImageResponse unmarshall(DeleteImageResponse deleteImageResponse, UnmarshallerContext context) {
+	public static DeleteImageResponse unmarshall(DeleteImageResponse deleteImageResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return deleteImageResponse;

@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteNamespaceResponseUnmarshaller {
 
-	public static DeleteNamespaceResponse unmarshall(DeleteNamespaceResponse deleteNamespaceResponse, UnmarshallerContext context) {
+	public static DeleteNamespaceResponse unmarshall(DeleteNamespaceResponse deleteNamespaceResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return deleteNamespaceResponse;

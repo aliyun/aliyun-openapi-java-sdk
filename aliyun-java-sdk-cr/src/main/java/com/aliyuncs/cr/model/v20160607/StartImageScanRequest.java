@@ -22,18 +22,18 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class StartImageScanRequest extends RoaAcsRequest<StartImageScanResponse> {
-	
-	public StartImageScanRequest() {
-		super("cr", "2016-06-07", "StartImageScan", "cr");
-		setUriPattern("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/scan");
-		setMethod(MethodType.PUT);
-	}
+	   
 
 	private String repoNamespace;
 
 	private String repoName;
 
 	private String tag;
+	public StartImageScanRequest() {
+		super("cr", "2016-06-07", "StartImageScan", "acr");
+		setUriPattern("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/scan");
+		setMethod(MethodType.PUT);
+	}
 
 	public String getRepoNamespace() {
 		return this.repoNamespace;

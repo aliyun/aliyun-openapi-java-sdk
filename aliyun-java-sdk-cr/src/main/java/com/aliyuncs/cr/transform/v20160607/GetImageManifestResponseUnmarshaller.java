@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetImageManifestResponseUnmarshaller {
 
-	public static GetImageManifestResponse unmarshall(GetImageManifestResponse getImageManifestResponse, UnmarshallerContext context) {
+	public static GetImageManifestResponse unmarshall(GetImageManifestResponse getImageManifestResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return getImageManifestResponse;

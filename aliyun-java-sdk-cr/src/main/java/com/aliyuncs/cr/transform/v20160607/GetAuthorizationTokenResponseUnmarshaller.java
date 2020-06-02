@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetAuthorizationTokenResponseUnmarshaller {
 
-	public static GetAuthorizationTokenResponse unmarshall(GetAuthorizationTokenResponse getAuthorizationTokenResponse, UnmarshallerContext context) {
+	public static GetAuthorizationTokenResponse unmarshall(GetAuthorizationTokenResponse getAuthorizationTokenResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return getAuthorizationTokenResponse;

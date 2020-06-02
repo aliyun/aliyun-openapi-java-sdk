@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteRepoWebhookResponseUnmarshaller {
 
-	public static DeleteRepoWebhookResponse unmarshall(DeleteRepoWebhookResponse deleteRepoWebhookResponse, UnmarshallerContext context) {
+	public static DeleteRepoWebhookResponse unmarshall(DeleteRepoWebhookResponse deleteRepoWebhookResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return deleteRepoWebhookResponse;

@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CancelRepoBuildResponseUnmarshaller {
 
-	public static CancelRepoBuildResponse unmarshall(CancelRepoBuildResponse cancelRepoBuildResponse, UnmarshallerContext context) {
+	public static CancelRepoBuildResponse unmarshall(CancelRepoBuildResponse cancelRepoBuildResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return cancelRepoBuildResponse;

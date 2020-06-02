@@ -22,16 +22,16 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetRepoWebhookRequest extends RoaAcsRequest<GetRepoWebhookResponse> {
-	
-	public GetRepoWebhookRequest() {
-		super("cr", "2016-06-07", "GetRepoWebhook", "cr");
-		setUriPattern("/repos/[RepoNamespace]/[RepoName]/webhooks");
-		setMethod(MethodType.GET);
-	}
+	   
 
 	private String repoNamespace;
 
 	private String repoName;
+	public GetRepoWebhookRequest() {
+		super("cr", "2016-06-07", "GetRepoWebhook", "acr");
+		setUriPattern("/repos/[RepoNamespace]/[RepoName]/webhooks");
+		setMethod(MethodType.GET);
+	}
 
 	public String getRepoNamespace() {
 		return this.repoNamespace;

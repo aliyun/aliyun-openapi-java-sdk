@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetRegionResponseUnmarshaller {
 
-	public static GetRegionResponse unmarshall(GetRegionResponse getRegionResponse, UnmarshallerContext context) {
+	public static GetRegionResponse unmarshall(GetRegionResponse getRegionResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return getRegionResponse;

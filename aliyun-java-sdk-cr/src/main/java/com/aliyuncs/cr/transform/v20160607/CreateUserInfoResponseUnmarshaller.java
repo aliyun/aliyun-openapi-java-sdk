@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateUserInfoResponseUnmarshaller {
 
-	public static CreateUserInfoResponse unmarshall(CreateUserInfoResponse createUserInfoResponse, UnmarshallerContext context) {
+	public static CreateUserInfoResponse unmarshall(CreateUserInfoResponse createUserInfoResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return createUserInfoResponse;

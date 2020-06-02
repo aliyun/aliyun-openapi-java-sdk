@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetRepoBuildStatusResponseUnmarshaller {
 
-	public static GetRepoBuildStatusResponse unmarshall(GetRepoBuildStatusResponse getRepoBuildStatusResponse, UnmarshallerContext context) {
+	public static GetRepoBuildStatusResponse unmarshall(GetRepoBuildStatusResponse getRepoBuildStatusResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return getRepoBuildStatusResponse;

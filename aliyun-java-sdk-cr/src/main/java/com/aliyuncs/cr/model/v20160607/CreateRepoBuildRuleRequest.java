@@ -22,16 +22,16 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreateRepoBuildRuleRequest extends RoaAcsRequest<CreateRepoBuildRuleResponse> {
-	
-	public CreateRepoBuildRuleRequest() {
-		super("cr", "2016-06-07", "CreateRepoBuildRule", "cr");
-		setUriPattern("/repos/[RepoNamespace]/[RepoName]/rules");
-		setMethod(MethodType.PUT);
-	}
+	   
 
 	private String repoNamespace;
 
 	private String repoName;
+	public CreateRepoBuildRuleRequest() {
+		super("cr", "2016-06-07", "CreateRepoBuildRule", "acr");
+		setUriPattern("/repos/[RepoNamespace]/[RepoName]/rules");
+		setMethod(MethodType.PUT);
+	}
 
 	public String getRepoNamespace() {
 		return this.repoNamespace;

@@ -22,9 +22,9 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreateUserInfoRequest extends RoaAcsRequest<CreateUserInfoResponse> {
-	
+	   
 	public CreateUserInfoRequest() {
-		super("cr", "2016-06-07", "CreateUserInfo", "cr");
+		super("cr", "2016-06-07", "CreateUserInfo", "acr");
 		setUriPattern("/users");
 		setMethod(MethodType.PUT);
 	}

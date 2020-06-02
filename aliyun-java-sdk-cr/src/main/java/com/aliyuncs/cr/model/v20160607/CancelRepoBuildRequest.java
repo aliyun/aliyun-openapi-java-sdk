@@ -22,18 +22,29 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CancelRepoBuildRequest extends RoaAcsRequest<CancelRepoBuildResponse> {
-	
-	public CancelRepoBuildRequest() {
-		super("cr", "2016-06-07", "CancelRepoBuild", "cr");
-		setUriPattern("/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/cancel");
-		setMethod(MethodType.POST);
-	}
+	   
+
+	private String buildId;
 
 	private String repoNamespace;
 
 	private String repoName;
+	public CancelRepoBuildRequest() {
+		super("cr", "2016-06-07", "CancelRepoBuild", "acr");
+		setUriPattern("/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/cancel");
+		setMethod(MethodType.POST);
+	}
 
-	private String buildId;
+	public String getBuildId() {
+		return this.buildId;
+	}
+
+	public void setBuildId(String buildId) {
+		this.buildId = buildId;
+		if(buildId != null){
+			putPathParameter("BuildId", buildId);
+		}
+	}
 
 	public String getRepoNamespace() {
 		return this.repoNamespace;
@@ -54,17 +65,6 @@ public class CancelRepoBuildRequest extends RoaAcsRequest<CancelRepoBuildRespons
 		this.repoName = repoName;
 		if(repoName != null){
 			putPathParameter("RepoName", repoName);
-		}
-	}
-
-	public String getBuildId() {
-		return this.buildId;
-	}
-
-	public void setBuildId(String buildId) {
-		this.buildId = buildId;
-		if(buildId != null){
-			putPathParameter("BuildId", buildId);
 		}
 	}
 

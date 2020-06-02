@@ -22,9 +22,9 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class UpdateUserInfoRequest extends RoaAcsRequest<UpdateUserInfoResponse> {
-	
+	   
 	public UpdateUserInfoRequest() {
-		super("cr", "2016-06-07", "UpdateUserInfo", "cr");
+		super("cr", "2016-06-07", "UpdateUserInfo", "acr");
 		setUriPattern("/users");
 		setMethod(MethodType.POST);
 	}

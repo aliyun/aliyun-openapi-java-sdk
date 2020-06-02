@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetRepoWebhookResponseUnmarshaller {
 
-	public static GetRepoWebhookResponse unmarshall(GetRepoWebhookResponse getRepoWebhookResponse, UnmarshallerContext context) {
+	public static GetRepoWebhookResponse unmarshall(GetRepoWebhookResponse getRepoWebhookResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return getRepoWebhookResponse;

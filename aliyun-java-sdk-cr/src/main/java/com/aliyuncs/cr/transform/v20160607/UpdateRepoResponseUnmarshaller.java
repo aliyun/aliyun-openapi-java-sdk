@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateRepoResponseUnmarshaller {
 
-	public static UpdateRepoResponse unmarshall(UpdateRepoResponse updateRepoResponse, UnmarshallerContext context) {
+	public static UpdateRepoResponse unmarshall(UpdateRepoResponse updateRepoResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return updateRepoResponse;

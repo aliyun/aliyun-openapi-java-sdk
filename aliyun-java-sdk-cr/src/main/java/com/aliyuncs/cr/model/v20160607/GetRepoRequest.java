@@ -22,16 +22,16 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetRepoRequest extends RoaAcsRequest<GetRepoResponse> {
-	
-	public GetRepoRequest() {
-		super("cr", "2016-06-07", "GetRepo", "cr");
-		setUriPattern("/repos/[RepoNamespace]/[RepoName]");
-		setMethod(MethodType.GET);
-	}
+	   
 
 	private String repoNamespace;
 
 	private String repoName;
+	public GetRepoRequest() {
+		super("cr", "2016-06-07", "GetRepo", "acr");
+		setUriPattern("/repos/[RepoNamespace]/[RepoName]");
+		setMethod(MethodType.GET);
+	}
 
 	public String getRepoNamespace() {
 		return this.repoNamespace;

@@ -22,16 +22,16 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class UpdateRepoRequest extends RoaAcsRequest<UpdateRepoResponse> {
-	
-	public UpdateRepoRequest() {
-		super("cr", "2016-06-07", "UpdateRepo", "cr");
-		setUriPattern("/repos/[RepoNamespace]/[RepoName]");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String repoNamespace;
 
 	private String repoName;
+	public UpdateRepoRequest() {
+		super("cr", "2016-06-07", "UpdateRepo", "acr");
+		setUriPattern("/repos/[RepoNamespace]/[RepoName]");
+		setMethod(MethodType.POST);
+	}
 
 	public String getRepoNamespace() {
 		return this.repoNamespace;

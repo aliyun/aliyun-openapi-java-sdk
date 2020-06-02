@@ -22,18 +22,29 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteRepoBuildRuleRequest extends RoaAcsRequest<DeleteRepoBuildRuleResponse> {
-	
-	public DeleteRepoBuildRuleRequest() {
-		super("cr", "2016-06-07", "DeleteRepoBuildRule", "cr");
-		setUriPattern("/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]");
-		setMethod(MethodType.DELETE);
-	}
+	   
+
+	private Long buildRuleId;
 
 	private String repoNamespace;
 
 	private String repoName;
+	public DeleteRepoBuildRuleRequest() {
+		super("cr", "2016-06-07", "DeleteRepoBuildRule", "acr");
+		setUriPattern("/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]");
+		setMethod(MethodType.DELETE);
+	}
 
-	private Long buildRuleId;
+	public Long getBuildRuleId() {
+		return this.buildRuleId;
+	}
+
+	public void setBuildRuleId(Long buildRuleId) {
+		this.buildRuleId = buildRuleId;
+		if(buildRuleId != null){
+			putPathParameter("BuildRuleId", buildRuleId.toString());
+		}
+	}
 
 	public String getRepoNamespace() {
 		return this.repoNamespace;
@@ -54,17 +65,6 @@ public class DeleteRepoBuildRuleRequest extends RoaAcsRequest<DeleteRepoBuildRul
 		this.repoName = repoName;
 		if(repoName != null){
 			putPathParameter("RepoName", repoName);
-		}
-	}
-
-	public Long getBuildRuleId() {
-		return this.buildRuleId;
-	}
-
-	public void setBuildRuleId(Long buildRuleId) {
-		this.buildRuleId = buildRuleId;
-		if(buildRuleId != null){
-			putPathParameter("BuildRuleId", buildRuleId.toString());
 		}
 	}
 

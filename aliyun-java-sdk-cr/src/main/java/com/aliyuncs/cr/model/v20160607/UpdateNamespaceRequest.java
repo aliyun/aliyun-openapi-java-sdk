@@ -22,14 +22,14 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class UpdateNamespaceRequest extends RoaAcsRequest<UpdateNamespaceResponse> {
-	
+	   
+
+	private String namespace;
 	public UpdateNamespaceRequest() {
-		super("cr", "2016-06-07", "UpdateNamespace", "cr");
+		super("cr", "2016-06-07", "UpdateNamespace", "acr");
 		setUriPattern("/namespace/[Namespace]");
 		setMethod(MethodType.POST);
 	}
-
-	private String namespace;
 
 	public String getNamespace() {
 		return this.namespace;

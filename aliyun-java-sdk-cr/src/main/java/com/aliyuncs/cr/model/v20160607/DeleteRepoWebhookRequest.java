@@ -22,28 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteRepoWebhookRequest extends RoaAcsRequest<DeleteRepoWebhookResponse> {
-	
-	public DeleteRepoWebhookRequest() {
-		super("cr", "2016-06-07", "DeleteRepoWebhook", "cr");
-		setUriPattern("/repos/[RepoNamespace]/[RepoName]/webhooks/[WebhookId]");
-		setMethod(MethodType.DELETE);
-	}
-
-	private String repoNamespace;
+	   
 
 	private Long webhookId;
 
+	private String repoNamespace;
+
 	private String repoName;
-
-	public String getRepoNamespace() {
-		return this.repoNamespace;
-	}
-
-	public void setRepoNamespace(String repoNamespace) {
-		this.repoNamespace = repoNamespace;
-		if(repoNamespace != null){
-			putPathParameter("RepoNamespace", repoNamespace);
-		}
+	public DeleteRepoWebhookRequest() {
+		super("cr", "2016-06-07", "DeleteRepoWebhook", "acr");
+		setUriPattern("/repos/[RepoNamespace]/[RepoName]/webhooks/[WebhookId]");
+		setMethod(MethodType.DELETE);
 	}
 
 	public Long getWebhookId() {
@@ -54,6 +43,17 @@ public class DeleteRepoWebhookRequest extends RoaAcsRequest<DeleteRepoWebhookRes
 		this.webhookId = webhookId;
 		if(webhookId != null){
 			putPathParameter("WebhookId", webhookId.toString());
+		}
+	}
+
+	public String getRepoNamespace() {
+		return this.repoNamespace;
+	}
+
+	public void setRepoNamespace(String repoNamespace) {
+		this.repoNamespace = repoNamespace;
+		if(repoNamespace != null){
+			putPathParameter("RepoNamespace", repoNamespace);
 		}
 	}
 
