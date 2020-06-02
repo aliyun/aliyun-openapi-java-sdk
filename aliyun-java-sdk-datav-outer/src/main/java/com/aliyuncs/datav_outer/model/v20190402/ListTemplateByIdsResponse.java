@@ -55,6 +55,10 @@ public class ListTemplateByIdsResponse extends AcsResponse {
 
 		private String workspaceId;
 
+		private String thumbnail;
+
+		private String size;
+
 		public String getID() {
 			return this.iD;
 		}
@@ -85,6 +89,22 @@ public class ListTemplateByIdsResponse extends AcsResponse {
 
 		public void setWorkspaceId(String workspaceId) {
 			this.workspaceId = workspaceId;
+		}
+
+		public String getThumbnail() {
+			return this.thumbnail;
+		}
+
+		public void setThumbnail(String thumbnail) {
+			this.thumbnail = thumbnail;
+		}
+
+		public String getSize() {
+			return this.size;
+		}
+
+		public void setSize(String size) {
+			this.size = size;
 		}
 	}
 

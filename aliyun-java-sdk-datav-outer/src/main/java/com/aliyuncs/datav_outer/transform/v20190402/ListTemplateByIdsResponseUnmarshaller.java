@@ -35,6 +35,8 @@ public class ListTemplateByIdsResponseUnmarshaller {
 			templateInstance.setName(_ctx.stringValue("ListTemplateByIdsResponse.Templates["+ i +"].Name"));
 			templateInstance.setConfig(_ctx.stringValue("ListTemplateByIdsResponse.Templates["+ i +"].Config"));
 			templateInstance.setWorkspaceId(_ctx.stringValue("ListTemplateByIdsResponse.Templates["+ i +"].WorkspaceId"));
+			templateInstance.setThumbnail(_ctx.stringValue("ListTemplateByIdsResponse.Templates["+ i +"].Thumbnail"));
+			templateInstance.setSize(_ctx.stringValue("ListTemplateByIdsResponse.Templates["+ i +"].Size"));
 
 			templates.add(templateInstance);
 		}
