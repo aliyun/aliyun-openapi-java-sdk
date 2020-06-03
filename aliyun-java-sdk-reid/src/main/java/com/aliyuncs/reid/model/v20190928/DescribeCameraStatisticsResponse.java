@@ -127,6 +127,8 @@ public class DescribeCameraStatisticsResponse extends AcsResponse {
 
 		private String pvType;
 
+		private Long maxDataTime;
+
 		private List<Rect> pvRects;
 
 		public Long getProcessCursor() {
@@ -167,6 +169,14 @@ public class DescribeCameraStatisticsResponse extends AcsResponse {
 
 		public void setPvType(String pvType) {
 			this.pvType = pvType;
+		}
+
+		public Long getMaxDataTime() {
+			return this.maxDataTime;
+		}
+
+		public void setMaxDataTime(Long maxDataTime) {
+			this.maxDataTime = maxDataTime;
 		}
 
 		public List<Rect> getPvRects() {

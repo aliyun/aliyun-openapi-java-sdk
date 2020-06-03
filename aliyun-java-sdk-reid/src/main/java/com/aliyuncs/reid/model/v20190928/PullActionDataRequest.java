@@ -33,7 +33,7 @@ public class PullActionDataRequest extends RpcAcsRequest<PullActionDataResponse>
 
 	private Long startMessageId;
 	public PullActionDataRequest() {
-		super("reid", "2019-09-28", "PullActionData");
+		super("reid", "2019-09-28", "PullActionData", "1.1.7");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

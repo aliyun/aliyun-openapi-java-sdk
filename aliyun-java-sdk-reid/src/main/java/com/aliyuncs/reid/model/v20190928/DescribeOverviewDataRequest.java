@@ -29,7 +29,7 @@ public class DescribeOverviewDataRequest extends RpcAcsRequest<DescribeOverviewD
 
 	private String storeIds;
 	public DescribeOverviewDataRequest() {
-		super("reid", "2019-09-28", "DescribeOverviewData");
+		super("reid", "2019-09-28", "DescribeOverviewData", "1.1.7");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
