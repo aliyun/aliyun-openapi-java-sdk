@@ -69,6 +69,8 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setModuleId(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].ModuleId"));
 			instance.setModuleStackVersion(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ModuleStackVersion"));
 			instance.setCoreDiskCount(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CoreDiskCount"));
+			instance.setAutoRenewal(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].AutoRenewal"));
+			instance.setDuration(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Duration"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {

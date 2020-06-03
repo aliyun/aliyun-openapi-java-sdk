@@ -145,6 +145,10 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String coreDiskCount;
 
+		private Boolean autoRenewal;
+
+		private Integer duration;
+
 		private List<Tag> tags;
 
 		public String getInstanceId() {
@@ -417,6 +421,22 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setCoreDiskCount(String coreDiskCount) {
 			this.coreDiskCount = coreDiskCount;
+		}
+
+		public Boolean getAutoRenewal() {
+			return this.autoRenewal;
+		}
+
+		public void setAutoRenewal(Boolean autoRenewal) {
+			this.autoRenewal = autoRenewal;
+		}
+
+		public Integer getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Integer duration) {
+			this.duration = duration;
 		}
 
 		public List<Tag> getTags() {

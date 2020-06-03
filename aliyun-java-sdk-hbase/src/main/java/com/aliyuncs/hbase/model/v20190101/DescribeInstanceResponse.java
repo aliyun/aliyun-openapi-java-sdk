@@ -105,6 +105,10 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private String moduleStackVersion;
 
+	private Boolean autoRenewal;
+
+	private Integer duration;
+
 	private List<Tag> tags;
 
 	public String getRequestId() {
@@ -425,6 +429,22 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public void setModuleStackVersion(String moduleStackVersion) {
 		this.moduleStackVersion = moduleStackVersion;
+	}
+
+	public Boolean getAutoRenewal() {
+		return this.autoRenewal;
+	}
+
+	public void setAutoRenewal(Boolean autoRenewal) {
+		this.autoRenewal = autoRenewal;
+	}
+
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
 	}
 
 	public List<Tag> getTags() {
