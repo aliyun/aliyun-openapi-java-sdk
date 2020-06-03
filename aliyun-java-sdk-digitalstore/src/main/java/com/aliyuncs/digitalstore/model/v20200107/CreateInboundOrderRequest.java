@@ -22,20 +22,20 @@ import com.aliyuncs.digitalstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateOutboundOrderRequest extends RpcAcsRequest<CreateOutboundOrderResponse> {
+public class CreateInboundOrderRequest extends RpcAcsRequest<CreateInboundOrderResponse> {
 	   
 
 	private String clientToken;
 
 	private String toWarehouseId;
 
-	private String toBusinessUnitId;
-
 	private String orderCode;
 
+	private String fromBusinessUnitId;
+
 	private String fromWarehouseId;
-	public CreateOutboundOrderRequest() {
-		super("digitalstore", "2020-01-07", "CreateOutboundOrder", "digitalstore");
+	public CreateInboundOrderRequest() {
+		super("digitalstore", "2020-01-07", "CreateInboundOrder", "digitalstore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -65,17 +65,6 @@ public class CreateOutboundOrderRequest extends RpcAcsRequest<CreateOutboundOrde
 		}
 	}
 
-	public String getToBusinessUnitId() {
-		return this.toBusinessUnitId;
-	}
-
-	public void setToBusinessUnitId(String toBusinessUnitId) {
-		this.toBusinessUnitId = toBusinessUnitId;
-		if(toBusinessUnitId != null){
-			putBodyParameter("ToBusinessUnitId", toBusinessUnitId);
-		}
-	}
-
 	public String getOrderCode() {
 		return this.orderCode;
 	}
@@ -84,6 +73,17 @@ public class CreateOutboundOrderRequest extends RpcAcsRequest<CreateOutboundOrde
 		this.orderCode = orderCode;
 		if(orderCode != null){
 			putBodyParameter("OrderCode", orderCode);
+		}
+	}
+
+	public String getFromBusinessUnitId() {
+		return this.fromBusinessUnitId;
+	}
+
+	public void setFromBusinessUnitId(String fromBusinessUnitId) {
+		this.fromBusinessUnitId = fromBusinessUnitId;
+		if(fromBusinessUnitId != null){
+			putBodyParameter("FromBusinessUnitId", fromBusinessUnitId);
 		}
 	}
 
@@ -99,8 +99,8 @@ public class CreateOutboundOrderRequest extends RpcAcsRequest<CreateOutboundOrde
 	}
 
 	@Override
-	public Class<CreateOutboundOrderResponse> getResponseClass() {
-		return CreateOutboundOrderResponse.class;
+	public Class<CreateInboundOrderResponse> getResponseClass() {
+		return CreateInboundOrderResponse.class;
 	}
 
 }

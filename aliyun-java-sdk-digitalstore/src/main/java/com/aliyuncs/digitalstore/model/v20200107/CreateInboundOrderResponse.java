@@ -15,14 +15,14 @@
 package com.aliyuncs.digitalstore.model.v20200107;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.digitalstore.transform.v20200107.CreateOutboundOrderResponseUnmarshaller;
+import com.aliyuncs.digitalstore.transform.v20200107.CreateInboundOrderResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateOutboundOrderResponse extends AcsResponse {
+public class CreateInboundOrderResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -65,7 +65,12 @@ public class CreateOutboundOrderResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateOutboundOrderResponse getInstance(UnmarshallerContext context) {
-		return	CreateOutboundOrderResponseUnmarshaller.unmarshall(this, context);
+	public CreateInboundOrderResponse getInstance(UnmarshallerContext context) {
+		return	CreateInboundOrderResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

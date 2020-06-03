@@ -25,6 +25,7 @@ public class CreateOutboundOrderResponseUnmarshaller {
 		createOutboundOrderResponse.setRequestId(_ctx.stringValue("CreateOutboundOrderResponse.RequestId"));
 		createOutboundOrderResponse.setSuccess(_ctx.booleanValue("CreateOutboundOrderResponse.Success"));
 		createOutboundOrderResponse.setOrderId(_ctx.stringValue("CreateOutboundOrderResponse.OrderId"));
+		createOutboundOrderResponse.setOrderCode(_ctx.stringValue("CreateOutboundOrderResponse.OrderCode"));
 	 
 	 	return createOutboundOrderResponse;
 	}

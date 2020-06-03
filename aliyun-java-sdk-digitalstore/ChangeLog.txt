@@ -1,3 +1,6 @@
+2020-06-03 Version: 0.1.7
+- Add CreateOutboundOrder.
+
 2020-06-01 Version: 0.1.6
 - Modify ListInboundOrderSKUTags.
 
