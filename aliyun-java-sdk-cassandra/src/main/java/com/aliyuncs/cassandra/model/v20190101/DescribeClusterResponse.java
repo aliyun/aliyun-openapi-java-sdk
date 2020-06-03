@@ -73,6 +73,10 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		private String lockMode;
 
+		private Boolean autoRenewal;
+
+		private Integer autoRenewPeriod;
+
 		private List<Tag> tags;
 
 		public String getClusterId() {
@@ -177,6 +181,22 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		public void setLockMode(String lockMode) {
 			this.lockMode = lockMode;
+		}
+
+		public Boolean getAutoRenewal() {
+			return this.autoRenewal;
+		}
+
+		public void setAutoRenewal(Boolean autoRenewal) {
+			this.autoRenewal = autoRenewal;
+		}
+
+		public Integer getAutoRenewPeriod() {
+			return this.autoRenewPeriod;
+		}
+
+		public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+			this.autoRenewPeriod = autoRenewPeriod;
 		}
 
 		public List<Tag> getTags() {

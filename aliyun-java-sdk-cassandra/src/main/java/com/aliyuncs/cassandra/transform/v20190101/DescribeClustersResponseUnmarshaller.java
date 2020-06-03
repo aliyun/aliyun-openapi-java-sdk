@@ -45,6 +45,8 @@ public class DescribeClustersResponseUnmarshaller {
 			cluster.setMinorVersion(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].MinorVersion"));
 			cluster.setDataCenterCount(_ctx.integerValue("DescribeClustersResponse.Clusters["+ i +"].DataCenterCount"));
 			cluster.setLockMode(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].LockMode"));
+			cluster.setAutoRenewal(_ctx.booleanValue("DescribeClustersResponse.Clusters["+ i +"].AutoRenewal"));
+			cluster.setAutoRenewPeriod(_ctx.integerValue("DescribeClustersResponse.Clusters["+ i +"].AutoRenewPeriod"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeClustersResponse.Clusters["+ i +"].Tags.Length"); j++) {

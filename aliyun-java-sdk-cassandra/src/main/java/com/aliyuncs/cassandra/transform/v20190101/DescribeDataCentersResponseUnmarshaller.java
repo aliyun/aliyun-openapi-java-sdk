@@ -48,6 +48,8 @@ public class DescribeDataCentersResponseUnmarshaller {
 			dataCenter.setCommodityInstance(_ctx.stringValue("DescribeDataCentersResponse.DataCenters["+ i +"].CommodityInstance"));
 			dataCenter.setExpireTime(_ctx.stringValue("DescribeDataCentersResponse.DataCenters["+ i +"].ExpireTime"));
 			dataCenter.setLockMode(_ctx.stringValue("DescribeDataCentersResponse.DataCenters["+ i +"].LockMode"));
+			dataCenter.setAutoRenewal(_ctx.booleanValue("DescribeDataCentersResponse.DataCenters["+ i +"].AutoRenewal"));
+			dataCenter.setAutoRenewPeriod(_ctx.integerValue("DescribeDataCentersResponse.DataCenters["+ i +"].AutoRenewPeriod"));
 
 			dataCenters.add(dataCenter);
 		}

@@ -40,6 +40,8 @@ public class DescribeDataCenterResponseUnmarshaller {
 		describeDataCenterResponse.setCommodityInstance(_ctx.stringValue("DescribeDataCenterResponse.CommodityInstance"));
 		describeDataCenterResponse.setExpireTime(_ctx.stringValue("DescribeDataCenterResponse.ExpireTime"));
 		describeDataCenterResponse.setLockMode(_ctx.stringValue("DescribeDataCenterResponse.LockMode"));
+		describeDataCenterResponse.setAutoRenewal(_ctx.booleanValue("DescribeDataCenterResponse.AutoRenewal"));
+		describeDataCenterResponse.setAutoRenewPeriod(_ctx.integerValue("DescribeDataCenterResponse.AutoRenewPeriod"));
 	 
 	 	return describeDataCenterResponse;
 	}

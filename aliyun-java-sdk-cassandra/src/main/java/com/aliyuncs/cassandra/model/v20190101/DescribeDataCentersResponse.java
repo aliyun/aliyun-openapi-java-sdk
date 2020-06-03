@@ -81,6 +81,10 @@ public class DescribeDataCentersResponse extends AcsResponse {
 
 		private String lockMode;
 
+		private Boolean autoRenewal;
+
+		private Integer autoRenewPeriod;
+
 		public String getDataCenterId() {
 			return this.dataCenterId;
 		}
@@ -215,6 +219,22 @@ public class DescribeDataCentersResponse extends AcsResponse {
 
 		public void setLockMode(String lockMode) {
 			this.lockMode = lockMode;
+		}
+
+		public Boolean getAutoRenewal() {
+			return this.autoRenewal;
+		}
+
+		public void setAutoRenewal(Boolean autoRenewal) {
+			this.autoRenewal = autoRenewal;
+		}
+
+		public Integer getAutoRenewPeriod() {
+			return this.autoRenewPeriod;
+		}
+
+		public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+			this.autoRenewPeriod = autoRenewPeriod;
 		}
 	}
 

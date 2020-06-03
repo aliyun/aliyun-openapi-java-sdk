@@ -25,6 +25,8 @@ import com.aliyuncs.cassandra.Endpoint;
 public class RebootClusterRequest extends RpcAcsRequest<RebootClusterResponse> {
 	   
 
+	private String dataCenterId;
+
 	private String clusterId;
 	public RebootClusterRequest() {
 		super("Cassandra", "2019-01-01", "RebootCluster", "Cassandra");
@@ -33,6 +35,17 @@ public class RebootClusterRequest extends RpcAcsRequest<RebootClusterResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDataCenterId() {
+		return this.dataCenterId;
+	}
+
+	public void setDataCenterId(String dataCenterId) {
+		this.dataCenterId = dataCenterId;
+		if(dataCenterId != null){
+			putQueryParameter("DataCenterId", dataCenterId);
+		}
 	}
 
 	public String getClusterId() {
