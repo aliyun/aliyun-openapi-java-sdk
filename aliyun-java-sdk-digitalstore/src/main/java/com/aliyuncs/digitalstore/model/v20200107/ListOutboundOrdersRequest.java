@@ -50,6 +50,8 @@ public class ListOutboundOrdersRequest extends RpcAcsRequest<ListOutboundOrdersR
 
 	private String endDate;
 
+	private Boolean beHasSourceOrder;
+
 	private String orderByMethod;
 	public ListOutboundOrdersRequest() {
 		super("digitalstore", "2020-01-07", "ListOutboundOrders", "digitalstore");
@@ -191,6 +193,17 @@ public class ListOutboundOrdersRequest extends RpcAcsRequest<ListOutboundOrdersR
 		this.endDate = endDate;
 		if(endDate != null){
 			putBodyParameter("EndDate", endDate);
+		}
+	}
+
+	public Boolean getBeHasSourceOrder() {
+		return this.beHasSourceOrder;
+	}
+
+	public void setBeHasSourceOrder(Boolean beHasSourceOrder) {
+		this.beHasSourceOrder = beHasSourceOrder;
+		if(beHasSourceOrder != null){
+			putBodyParameter("BeHasSourceOrder", beHasSourceOrder.toString());
 		}
 	}
 

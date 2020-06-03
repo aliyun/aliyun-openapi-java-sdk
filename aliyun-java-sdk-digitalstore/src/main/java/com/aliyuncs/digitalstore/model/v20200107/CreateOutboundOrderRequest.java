@@ -27,6 +27,8 @@ public class CreateOutboundOrderRequest extends RpcAcsRequest<CreateOutboundOrde
 
 	private String clientToken;
 
+	private String description;
+
 	private String toWarehouseId;
 
 	private String toBusinessUnitId;
@@ -51,6 +53,17 @@ public class CreateOutboundOrderRequest extends RpcAcsRequest<CreateOutboundOrde
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putBodyParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putBodyParameter("Description", description);
 		}
 	}
 
