@@ -89,6 +89,14 @@ public class DescribeVpnRouteEntriesResponse extends AcsResponse {
 
 		private String state;
 
+		private String asPath;
+
+		private String community;
+
+		private String source;
+
+		private String routeEntryType;
+
 		public String getVpnInstanceId() {
 			return this.vpnInstanceId;
 		}
@@ -135,6 +143,38 @@ public class DescribeVpnRouteEntriesResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getAsPath() {
+			return this.asPath;
+		}
+
+		public void setAsPath(String asPath) {
+			this.asPath = asPath;
+		}
+
+		public String getCommunity() {
+			return this.community;
+		}
+
+		public void setCommunity(String community) {
+			this.community = community;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public String getRouteEntryType() {
+			return this.routeEntryType;
+		}
+
+		public void setRouteEntryType(String routeEntryType) {
+			this.routeEntryType = routeEntryType;
 		}
 	}
 

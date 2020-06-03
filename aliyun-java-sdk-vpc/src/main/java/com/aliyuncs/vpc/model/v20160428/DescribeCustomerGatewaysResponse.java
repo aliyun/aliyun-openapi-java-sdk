@@ -87,6 +87,8 @@ public class DescribeCustomerGatewaysResponse extends AcsResponse {
 
 		private Long createTime;
 
+		private Integer asn;
+
 		public String getCustomerGatewayId() {
 			return this.customerGatewayId;
 		}
@@ -125,6 +127,14 @@ public class DescribeCustomerGatewaysResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
+		}
+
+		public Integer getAsn() {
+			return this.asn;
+		}
+
+		public void setAsn(Integer asn) {
+			this.asn = asn;
 		}
 	}
 

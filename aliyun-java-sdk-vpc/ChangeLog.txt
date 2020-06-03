@@ -1,3 +1,6 @@
+2020-06-03 Version: 3.1.0
+- Add enhanced natgateway sdk.
+
 2020-04-30 Version: 3.1.0
 - Supported share vpc feature.
 

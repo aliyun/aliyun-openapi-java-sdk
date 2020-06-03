@@ -105,6 +105,8 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 
 		private VcoHealthCheck vcoHealthCheck;
 
+		private VpnBgpConfig vpnBgpConfig;
+
 		public String getVpnConnectionId() {
 			return this.vpnConnectionId;
 		}
@@ -215,6 +217,14 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 
 		public void setVcoHealthCheck(VcoHealthCheck vcoHealthCheck) {
 			this.vcoHealthCheck = vcoHealthCheck;
+		}
+
+		public VpnBgpConfig getVpnBgpConfig() {
+			return this.vpnBgpConfig;
+		}
+
+		public void setVpnBgpConfig(VpnBgpConfig vpnBgpConfig) {
+			this.vpnBgpConfig = vpnBgpConfig;
 		}
 
 		public static class IkeConfig {
@@ -405,6 +415,69 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 
 			public void setRetry(Integer retry) {
 				this.retry = retry;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+		}
+
+		public static class VpnBgpConfig {
+
+			private String tunnelCidr;
+
+			private String localBgpIp;
+
+			private String peerBgpIp;
+
+			private String localAsn;
+
+			private String peerAsn;
+
+			private String status;
+
+			public String getTunnelCidr() {
+				return this.tunnelCidr;
+			}
+
+			public void setTunnelCidr(String tunnelCidr) {
+				this.tunnelCidr = tunnelCidr;
+			}
+
+			public String getLocalBgpIp() {
+				return this.localBgpIp;
+			}
+
+			public void setLocalBgpIp(String localBgpIp) {
+				this.localBgpIp = localBgpIp;
+			}
+
+			public String getPeerBgpIp() {
+				return this.peerBgpIp;
+			}
+
+			public void setPeerBgpIp(String peerBgpIp) {
+				this.peerBgpIp = peerBgpIp;
+			}
+
+			public String getLocalAsn() {
+				return this.localAsn;
+			}
+
+			public void setLocalAsn(String localAsn) {
+				this.localAsn = localAsn;
+			}
+
+			public String getPeerAsn() {
+				return this.peerAsn;
+			}
+
+			public void setPeerAsn(String peerAsn) {
+				this.peerAsn = peerAsn;
 			}
 
 			public String getStatus() {

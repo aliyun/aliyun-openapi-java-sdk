@@ -40,6 +40,8 @@ public class CreateCustomerGatewayRequest extends RpcAcsRequest<CreateCustomerGa
 	private Long ownerId;
 
 	private String name;
+
+	private String asn;
 	public CreateCustomerGatewayRequest() {
 		super("Vpc", "2016-04-28", "CreateCustomerGateway", "vpc");
 		setMethod(MethodType.POST);
@@ -134,6 +136,17 @@ public class CreateCustomerGatewayRequest extends RpcAcsRequest<CreateCustomerGa
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getAsn() {
+		return this.asn;
+	}
+
+	public void setAsn(String asn) {
+		this.asn = asn;
+		if(asn != null){
+			putQueryParameter("Asn", asn);
 		}
 	}
 

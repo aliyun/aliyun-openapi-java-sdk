@@ -54,6 +54,8 @@ public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 
 	private VcoHealthCheck vcoHealthCheck;
 
+	private VpnBgpConfig vpnBgpConfig;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -172,6 +174,14 @@ public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 
 	public void setVcoHealthCheck(VcoHealthCheck vcoHealthCheck) {
 		this.vcoHealthCheck = vcoHealthCheck;
+	}
+
+	public VpnBgpConfig getVpnBgpConfig() {
+		return this.vpnBgpConfig;
+	}
+
+	public void setVpnBgpConfig(VpnBgpConfig vpnBgpConfig) {
+		this.vpnBgpConfig = vpnBgpConfig;
 	}
 
 	public static class IkeConfig {
@@ -360,6 +370,79 @@ public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 
 		public void setRetry(Integer retry) {
 			this.retry = retry;
+		}
+	}
+
+	public static class VpnBgpConfig {
+
+		private String enableBgp;
+
+		private String tunnelCidr;
+
+		private String localBgpIp;
+
+		private String peerBgpIp;
+
+		private Integer localAsn;
+
+		private Integer peerAsn;
+
+		private String status;
+
+		public String getEnableBgp() {
+			return this.enableBgp;
+		}
+
+		public void setEnableBgp(String enableBgp) {
+			this.enableBgp = enableBgp;
+		}
+
+		public String getTunnelCidr() {
+			return this.tunnelCidr;
+		}
+
+		public void setTunnelCidr(String tunnelCidr) {
+			this.tunnelCidr = tunnelCidr;
+		}
+
+		public String getLocalBgpIp() {
+			return this.localBgpIp;
+		}
+
+		public void setLocalBgpIp(String localBgpIp) {
+			this.localBgpIp = localBgpIp;
+		}
+
+		public String getPeerBgpIp() {
+			return this.peerBgpIp;
+		}
+
+		public void setPeerBgpIp(String peerBgpIp) {
+			this.peerBgpIp = peerBgpIp;
+		}
+
+		public Integer getLocalAsn() {
+			return this.localAsn;
+		}
+
+		public void setLocalAsn(Integer localAsn) {
+			this.localAsn = localAsn;
+		}
+
+		public Integer getPeerAsn() {
+			return this.peerAsn;
+		}
+
+		public void setPeerAsn(Integer peerAsn) {
+			this.peerAsn = peerAsn;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

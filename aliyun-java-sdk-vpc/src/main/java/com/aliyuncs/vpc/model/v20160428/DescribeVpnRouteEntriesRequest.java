@@ -31,6 +31,8 @@ public class DescribeVpnRouteEntriesRequest extends RpcAcsRequest<DescribeVpnRou
 
 	private Integer pageSize;
 
+	private String routeEntryType;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -77,6 +79,17 @@ public class DescribeVpnRouteEntriesRequest extends RpcAcsRequest<DescribeVpnRou
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getRouteEntryType() {
+		return this.routeEntryType;
+	}
+
+	public void setRouteEntryType(String routeEntryType) {
+		this.routeEntryType = routeEntryType;
+		if(routeEntryType != null){
+			putQueryParameter("RouteEntryType", routeEntryType);
 		}
 	}
 

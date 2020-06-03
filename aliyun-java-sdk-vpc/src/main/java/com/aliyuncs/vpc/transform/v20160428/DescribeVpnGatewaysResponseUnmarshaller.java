@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnGatewaysResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnGatewaysResponse.VpnGateway;
+import com.aliyuncs.vpc.model.v20160428.DescribeVpnGatewaysResponse.VpnGateway.ReservationData;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnGatewaysResponse.VpnGateway.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -51,6 +52,18 @@ public class DescribeVpnGatewaysResponseUnmarshaller {
 			vpnGateway.setSslVpn(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].SslVpn"));
 			vpnGateway.setSslMaxConnections(_ctx.longValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].SslMaxConnections"));
 			vpnGateway.setTag(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].Tag"));
+			vpnGateway.setEnableBgp(_ctx.booleanValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].EnableBgp"));
+			vpnGateway.setAutoPropagate(_ctx.booleanValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].AutoPropagate"));
+
+			ReservationData reservationData = new ReservationData();
+			reservationData.setStatus(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].ReservationData.Status"));
+			reservationData.setReservationEndTime(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].ReservationData.ReservationEndTime"));
+			reservationData.setReservationOrderType(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].ReservationData.ReservationOrderType"));
+			reservationData.setReservationSpec(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].ReservationData.ReservationSpec"));
+			reservationData.setReservationIpsec(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].ReservationData.ReservationIpsec"));
+			reservationData.setReservationSsl(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].ReservationData.ReservationSsl"));
+			reservationData.setReservationMaxConnections(_ctx.integerValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].ReservationData.ReservationMaxConnections"));
+			vpnGateway.setReservationData(reservationData);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].Tags.Length"); j++) {

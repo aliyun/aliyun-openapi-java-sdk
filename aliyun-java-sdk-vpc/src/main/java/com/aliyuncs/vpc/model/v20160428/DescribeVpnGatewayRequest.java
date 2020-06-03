@@ -27,6 +27,8 @@ public class DescribeVpnGatewayRequest extends RpcAcsRequest<DescribeVpnGatewayR
 
 	private Long resourceOwnerId;
 
+	private Boolean includeReservationData;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -51,6 +53,17 @@ public class DescribeVpnGatewayRequest extends RpcAcsRequest<DescribeVpnGatewayR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getIncludeReservationData() {
+		return this.includeReservationData;
+	}
+
+	public void setIncludeReservationData(Boolean includeReservationData) {
+		this.includeReservationData = includeReservationData;
+		if(includeReservationData != null){
+			putQueryParameter("IncludeReservationData", includeReservationData.toString());
 		}
 	}
 

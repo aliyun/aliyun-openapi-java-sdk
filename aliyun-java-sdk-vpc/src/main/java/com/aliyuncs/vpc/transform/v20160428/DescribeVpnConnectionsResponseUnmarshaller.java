@@ -22,6 +22,7 @@ import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse.VpnConnec
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse.VpnConnection.IkeConfig;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse.VpnConnection.IpsecConfig;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse.VpnConnection.VcoHealthCheck;
+import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse.VpnConnection.VpnBgpConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -76,6 +77,15 @@ public class DescribeVpnConnectionsResponseUnmarshaller {
 			vcoHealthCheck.setRetry(_ctx.integerValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].VcoHealthCheck.Retry"));
 			vcoHealthCheck.setStatus(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].VcoHealthCheck.Status"));
 			vpnConnection.setVcoHealthCheck(vcoHealthCheck);
+
+			VpnBgpConfig vpnBgpConfig = new VpnBgpConfig();
+			vpnBgpConfig.setTunnelCidr(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].VpnBgpConfig.TunnelCidr"));
+			vpnBgpConfig.setLocalBgpIp(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].VpnBgpConfig.LocalBgpIp"));
+			vpnBgpConfig.setPeerBgpIp(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].VpnBgpConfig.PeerBgpIp"));
+			vpnBgpConfig.setLocalAsn(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].VpnBgpConfig.LocalAsn"));
+			vpnBgpConfig.setPeerAsn(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].VpnBgpConfig.PeerAsn"));
+			vpnBgpConfig.setStatus(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].VpnBgpConfig.Status"));
+			vpnConnection.setVpnBgpConfig(vpnBgpConfig);
 
 			vpnConnections.add(vpnConnection);
 		}

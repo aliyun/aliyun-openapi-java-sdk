@@ -39,6 +39,7 @@ public class DescribeCustomerGatewaysResponseUnmarshaller {
 			customerGateway.setIpAddress(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].IpAddress"));
 			customerGateway.setDescription(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].Description"));
 			customerGateway.setCreateTime(_ctx.longValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].CreateTime"));
+			customerGateway.setAsn(_ctx.integerValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].Asn"));
 
 			customerGateways.add(customerGateway);
 		}

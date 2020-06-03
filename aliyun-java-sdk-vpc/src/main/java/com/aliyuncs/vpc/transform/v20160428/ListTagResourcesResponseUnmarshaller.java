@@ -36,6 +36,7 @@ public class ListTagResourcesResponseUnmarshaller {
 			tagResource.setTagValue(_ctx.stringValue("ListTagResourcesResponse.TagResources["+ i +"].TagValue"));
 			tagResource.setResourcId(_ctx.stringValue("ListTagResourcesResponse.TagResources["+ i +"].ResourcId"));
 			tagResource.setResourceType(_ctx.stringValue("ListTagResourcesResponse.TagResources["+ i +"].ResourceType"));
+			tagResource.setResourceId(_ctx.stringValue("ListTagResourcesResponse.TagResources["+ i +"].ResourceId"));
 
 			tagResources.add(tagResource);
 		}

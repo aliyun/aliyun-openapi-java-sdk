@@ -28,6 +28,7 @@ public class DescribeCustomerGatewayResponseUnmarshaller {
 		describeCustomerGatewayResponse.setName(_ctx.stringValue("DescribeCustomerGatewayResponse.Name"));
 		describeCustomerGatewayResponse.setDescription(_ctx.stringValue("DescribeCustomerGatewayResponse.Description"));
 		describeCustomerGatewayResponse.setCreateTime(_ctx.longValue("DescribeCustomerGatewayResponse.CreateTime"));
+		describeCustomerGatewayResponse.setAsn(_ctx.integerValue("DescribeCustomerGatewayResponse.Asn"));
 	 
 	 	return describeCustomerGatewayResponse;
 	}

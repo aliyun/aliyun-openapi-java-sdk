@@ -14,6 +14,7 @@
 
 package com.aliyuncs.vpc.model.v20160428;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vpc.transform.v20160428.DescribeVpnGatewayResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -57,6 +58,14 @@ public class DescribeVpnGatewayResponse extends AcsResponse {
 	private Long sslMaxConnections;
 
 	private String tag;
+
+	private Boolean enableBgp;
+
+	private Boolean autoPropagate;
+
+	private List<Tag> tags;
+
+	private ReservationData reservationData;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -192,6 +201,134 @@ public class DescribeVpnGatewayResponse extends AcsResponse {
 
 	public void setTag(String tag) {
 		this.tag = tag;
+	}
+
+	public Boolean getEnableBgp() {
+		return this.enableBgp;
+	}
+
+	public void setEnableBgp(Boolean enableBgp) {
+		this.enableBgp = enableBgp;
+	}
+
+	public Boolean getAutoPropagate() {
+		return this.autoPropagate;
+	}
+
+	public void setAutoPropagate(Boolean autoPropagate) {
+		this.autoPropagate = autoPropagate;
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
+	public ReservationData getReservationData() {
+		return this.reservationData;
+	}
+
+	public void setReservationData(ReservationData reservationData) {
+		this.reservationData = reservationData;
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+	}
+
+	public static class ReservationData {
+
+		private String status;
+
+		private String reservationEndTime;
+
+		private String reservationOrderType;
+
+		private String reservationSpec;
+
+		private String reservationIpsec;
+
+		private String reservationSsl;
+
+		private Integer reservationMaxConnections;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getReservationEndTime() {
+			return this.reservationEndTime;
+		}
+
+		public void setReservationEndTime(String reservationEndTime) {
+			this.reservationEndTime = reservationEndTime;
+		}
+
+		public String getReservationOrderType() {
+			return this.reservationOrderType;
+		}
+
+		public void setReservationOrderType(String reservationOrderType) {
+			this.reservationOrderType = reservationOrderType;
+		}
+
+		public String getReservationSpec() {
+			return this.reservationSpec;
+		}
+
+		public void setReservationSpec(String reservationSpec) {
+			this.reservationSpec = reservationSpec;
+		}
+
+		public String getReservationIpsec() {
+			return this.reservationIpsec;
+		}
+
+		public void setReservationIpsec(String reservationIpsec) {
+			this.reservationIpsec = reservationIpsec;
+		}
+
+		public String getReservationSsl() {
+			return this.reservationSsl;
+		}
+
+		public void setReservationSsl(String reservationSsl) {
+			this.reservationSsl = reservationSsl;
+		}
+
+		public Integer getReservationMaxConnections() {
+			return this.reservationMaxConnections;
+		}
+
+		public void setReservationMaxConnections(Integer reservationMaxConnections) {
+			this.reservationMaxConnections = reservationMaxConnections;
+		}
 	}
 
 	@Override

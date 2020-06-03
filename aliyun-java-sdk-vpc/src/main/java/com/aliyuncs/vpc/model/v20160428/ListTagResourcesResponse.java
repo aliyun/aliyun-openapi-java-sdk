@@ -65,6 +65,8 @@ public class ListTagResourcesResponse extends AcsResponse {
 
 		private String resourceType;
 
+		private String resourceId;
+
 		public String getTagKey() {
 			return this.tagKey;
 		}
@@ -95,6 +97,14 @@ public class ListTagResourcesResponse extends AcsResponse {
 
 		public void setResourceType(String resourceType) {
 			this.resourceType = resourceType;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
 		}
 	}
 

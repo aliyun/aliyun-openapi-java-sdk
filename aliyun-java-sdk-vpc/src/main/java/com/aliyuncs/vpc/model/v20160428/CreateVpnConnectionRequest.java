@@ -35,6 +35,8 @@ public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectio
 
 	private String ipsecConfig;
 
+	private String bgpConfig;
+
 	private String healthCheckConfig;
 
 	private String customerGatewayId;
@@ -119,6 +121,17 @@ public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectio
 		this.ipsecConfig = ipsecConfig;
 		if(ipsecConfig != null){
 			putQueryParameter("IpsecConfig", ipsecConfig);
+		}
+	}
+
+	public String getBgpConfig() {
+		return this.bgpConfig;
+	}
+
+	public void setBgpConfig(String bgpConfig) {
+		this.bgpConfig = bgpConfig;
+		if(bgpConfig != null){
+			putQueryParameter("BgpConfig", bgpConfig);
 		}
 	}
 

@@ -50,6 +50,10 @@ public class ModifyVpnGatewayAttributeResponse extends AcsResponse {
 
 	private String businessStatus;
 
+	private Boolean enableBgp;
+
+	private Boolean autoPropagate;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -152,6 +156,22 @@ public class ModifyVpnGatewayAttributeResponse extends AcsResponse {
 
 	public void setBusinessStatus(String businessStatus) {
 		this.businessStatus = businessStatus;
+	}
+
+	public Boolean getEnableBgp() {
+		return this.enableBgp;
+	}
+
+	public void setEnableBgp(Boolean enableBgp) {
+		this.enableBgp = enableBgp;
+	}
+
+	public Boolean getAutoPropagate() {
+		return this.autoPropagate;
+	}
+
+	public void setAutoPropagate(Boolean autoPropagate) {
+		this.autoPropagate = autoPropagate;
 	}
 
 	@Override

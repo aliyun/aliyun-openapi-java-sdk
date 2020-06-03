@@ -40,6 +40,10 @@ public class DescribeVpnRouteEntriesResponseUnmarshaller {
 			vpnRouteEntry.setWeight(_ctx.integerValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].Weight"));
 			vpnRouteEntry.setCreateTime(_ctx.longValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].CreateTime"));
 			vpnRouteEntry.setState(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].State"));
+			vpnRouteEntry.setAsPath(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].AsPath"));
+			vpnRouteEntry.setCommunity(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].Community"));
+			vpnRouteEntry.setSource(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].Source"));
+			vpnRouteEntry.setRouteEntryType(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].RouteEntryType"));
 
 			vpnRouteEntries.add(vpnRouteEntry);
 		}
