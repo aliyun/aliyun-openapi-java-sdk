@@ -4,6 +4,7 @@ import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.LegacyCredentials;
 import com.aliyuncs.auth.Signer;
+import com.aliyuncs.auth.sts.AssumeRoleRequest;
 import com.aliyuncs.ecs.v20140526.model.DescribeRegionsResponse;
 import com.aliyuncs.endpoint.DefaultEndpointResolver;
 import com.aliyuncs.endpoint.ResolveEndpointRequest;
@@ -39,6 +40,7 @@ import org.slf4j.Logger;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -830,6 +832,25 @@ public class DefaultAcsClientTest {
         AcsRequest request = initRequest(TestResponse.class);
         Assert.assertTrue(client.doAction(request) instanceof HttpResponse);
         verify(request).putHeaderParameter(eq("test1"), eq("test1"));
+    }
+
+    @Test
+    public void parseAcsResponseTest() throws Exception{
+        HttpResponse httpResponse = new HttpResponse();
+        httpResponse.setHttpContentType(FormatType.RAW);
+        httpResponse.setHttpContent("test".getBytes("UTF-8"), "UTF-8", FormatType.RAW);
+        Method parseAcsResponse = DefaultAcsClient.class.getDeclaredMethod("parseAcsResponse", AcsRequest.class,
+                HttpResponse.class);
+        parseAcsResponse.setAccessible(true);
+        AssumeRoleRequest roleRequest = new AssumeRoleRequest();
+        try {
+            parseAcsResponse.invoke(new DefaultAcsClient(DefaultProfile.getProfile("test",
+                    "test", "test")), roleRequest, httpResponse);
+            Assert.fail();
+        } catch (Exception e) {
+            Assert.assertEquals("Server response has a bad format type: RAW;\nThe original return is: test;",
+                    e.getCause().getLocalizedMessage());
+        }
     }
 
     @Test
