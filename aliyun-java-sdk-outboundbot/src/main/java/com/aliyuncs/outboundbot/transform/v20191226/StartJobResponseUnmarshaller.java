@@ -27,10 +27,10 @@ public class StartJobResponseUnmarshaller {
 	public static StartJobResponse unmarshall(StartJobResponse startJobResponse, UnmarshallerContext _ctx) {
 		
 		startJobResponse.setRequestId(_ctx.stringValue("StartJobResponse.RequestId"));
-		startJobResponse.setSuccess(_ctx.booleanValue("StartJobResponse.Success"));
 		startJobResponse.setCode(_ctx.stringValue("StartJobResponse.Code"));
-		startJobResponse.setMessage(_ctx.stringValue("StartJobResponse.Message"));
 		startJobResponse.setHttpStatusCode(_ctx.integerValue("StartJobResponse.HttpStatusCode"));
+		startJobResponse.setMessage(_ctx.stringValue("StartJobResponse.Message"));
+		startJobResponse.setSuccess(_ctx.booleanValue("StartJobResponse.Success"));
 
 		List<KeyValuePair> taskIds = new ArrayList<KeyValuePair>();
 		for (int i = 0; i < _ctx.lengthValue("StartJobResponse.TaskIds.Length"); i++) {

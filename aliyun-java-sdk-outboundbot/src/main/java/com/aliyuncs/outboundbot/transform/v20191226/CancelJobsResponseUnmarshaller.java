@@ -23,10 +23,10 @@ public class CancelJobsResponseUnmarshaller {
 	public static CancelJobsResponse unmarshall(CancelJobsResponse cancelJobsResponse, UnmarshallerContext _ctx) {
 		
 		cancelJobsResponse.setRequestId(_ctx.stringValue("CancelJobsResponse.RequestId"));
-		cancelJobsResponse.setSuccess(_ctx.booleanValue("CancelJobsResponse.Success"));
 		cancelJobsResponse.setCode(_ctx.stringValue("CancelJobsResponse.Code"));
-		cancelJobsResponse.setMessage(_ctx.stringValue("CancelJobsResponse.Message"));
 		cancelJobsResponse.setHttpStatusCode(_ctx.integerValue("CancelJobsResponse.HttpStatusCode"));
+		cancelJobsResponse.setMessage(_ctx.stringValue("CancelJobsResponse.Message"));
+		cancelJobsResponse.setSuccess(_ctx.booleanValue("CancelJobsResponse.Success"));
 	 
 	 	return cancelJobsResponse;
 	}

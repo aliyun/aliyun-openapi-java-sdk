@@ -23,11 +23,11 @@ public class CreateIntentResponseUnmarshaller {
 	public static CreateIntentResponse unmarshall(CreateIntentResponse createIntentResponse, UnmarshallerContext _ctx) {
 		
 		createIntentResponse.setRequestId(_ctx.stringValue("CreateIntentResponse.RequestId"));
-		createIntentResponse.setSuccess(_ctx.booleanValue("CreateIntentResponse.Success"));
 		createIntentResponse.setCode(_ctx.stringValue("CreateIntentResponse.Code"));
-		createIntentResponse.setMessage(_ctx.stringValue("CreateIntentResponse.Message"));
 		createIntentResponse.setHttpStatusCode(_ctx.integerValue("CreateIntentResponse.HttpStatusCode"));
 		createIntentResponse.setIntentId(_ctx.stringValue("CreateIntentResponse.IntentId"));
+		createIntentResponse.setMessage(_ctx.stringValue("CreateIntentResponse.Message"));
+		createIntentResponse.setSuccess(_ctx.booleanValue("CreateIntentResponse.Success"));
 	 
 	 	return createIntentResponse;
 	}

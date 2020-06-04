@@ -31,8 +31,6 @@ public class SubmitRecordingRequest extends RpcAcsRequest<SubmitRecordingRespons
 
 	private String instanceId;
 
-	private Long instanceOwnerId;
-
 	private String taskId;
 	public SubmitRecordingRequest() {
 		super("OutboundBot", "2019-12-26", "SubmitRecording", "outboundbot");
@@ -73,17 +71,6 @@ public class SubmitRecordingRequest extends RpcAcsRequest<SubmitRecordingRespons
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Long getInstanceOwnerId() {
-		return this.instanceOwnerId;
-	}
-
-	public void setInstanceOwnerId(Long instanceOwnerId) {
-		this.instanceOwnerId = instanceOwnerId;
-		if(instanceOwnerId != null){
-			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
 		}
 	}
 

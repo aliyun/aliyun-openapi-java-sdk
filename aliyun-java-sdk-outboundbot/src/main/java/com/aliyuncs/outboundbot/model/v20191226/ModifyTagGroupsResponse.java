@@ -25,19 +25,43 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyTagGroupsResponse extends AcsResponse {
 
+	private String code;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
+	private List<TagGroup> tagGroups;
 
 	private List<Tag> tags;
 
-	private List<TagGroup> tagGroups;
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -55,28 +79,12 @@ public class ModifyTagGroupsResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
+	public List<TagGroup> getTagGroups() {
+		return this.tagGroups;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setTagGroups(List<TagGroup> tagGroups) {
+		this.tagGroups = tagGroups;
 	}
 
 	public List<Tag> getTags() {
@@ -87,49 +95,15 @@ public class ModifyTagGroupsResponse extends AcsResponse {
 		this.tags = tags;
 	}
 
-	public List<TagGroup> getTagGroups() {
-		return this.tagGroups;
-	}
-
-	public void setTagGroups(List<TagGroup> tagGroups) {
-		this.tagGroups = tagGroups;
-	}
-
-	public static class Tag {
-
-		private String tagId;
-
-		private String tagName;
-
-		private Integer tagIndex;
+	public static class TagGroup {
 
 		private String scriptId;
 
 		private String tagGroup;
 
-		public String getTagId() {
-			return this.tagId;
-		}
+		private String tagGroupId;
 
-		public void setTagId(String tagId) {
-			this.tagId = tagId;
-		}
-
-		public String getTagName() {
-			return this.tagName;
-		}
-
-		public void setTagName(String tagName) {
-			this.tagName = tagName;
-		}
-
-		public Integer getTagIndex() {
-			return this.tagIndex;
-		}
-
-		public void setTagIndex(Integer tagIndex) {
-			this.tagIndex = tagIndex;
-		}
+		private Integer tagGroupIndex;
 
 		public String getScriptId() {
 			return this.scriptId;
@@ -146,17 +120,6 @@ public class ModifyTagGroupsResponse extends AcsResponse {
 		public void setTagGroup(String tagGroup) {
 			this.tagGroup = tagGroup;
 		}
-	}
-
-	public static class TagGroup {
-
-		private String tagGroupId;
-
-		private Integer tagGroupIndex;
-
-		private String scriptId;
-
-		private String tagGroup;
 
 		public String getTagGroupId() {
 			return this.tagGroupId;
@@ -173,6 +136,19 @@ public class ModifyTagGroupsResponse extends AcsResponse {
 		public void setTagGroupIndex(Integer tagGroupIndex) {
 			this.tagGroupIndex = tagGroupIndex;
 		}
+	}
+
+	public static class Tag {
+
+		private String scriptId;
+
+		private String tagGroup;
+
+		private String tagId;
+
+		private Integer tagIndex;
+
+		private String tagName;
 
 		public String getScriptId() {
 			return this.scriptId;
@@ -188,6 +164,30 @@ public class ModifyTagGroupsResponse extends AcsResponse {
 
 		public void setTagGroup(String tagGroup) {
 			this.tagGroup = tagGroup;
+		}
+
+		public String getTagId() {
+			return this.tagId;
+		}
+
+		public void setTagId(String tagId) {
+			this.tagId = tagId;
+		}
+
+		public Integer getTagIndex() {
+			return this.tagIndex;
+		}
+
+		public void setTagIndex(Integer tagIndex) {
+			this.tagIndex = tagIndex;
+		}
+
+		public String getTagName() {
+			return this.tagName;
+		}
+
+		public void setTagName(String tagName) {
+			this.tagName = tagName;
 		}
 	}
 

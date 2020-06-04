@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryScriptsByStatusResponse extends AcsResponse {
 
+	private String code;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
 	private Scripts scripts;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class QueryScriptsByStatusResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public Scripts getScripts() {
 		return this.scripts;
 	}
@@ -87,21 +87,13 @@ public class QueryScriptsByStatusResponse extends AcsResponse {
 
 	public static class Scripts {
 
-		private Integer totalCount;
-
 		private Integer pageNumber;
 
 		private Integer pageSize;
 
+		private Integer totalCount;
+
 		private List<Script> list;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public Integer getPageNumber() {
 			return this.pageNumber;
@@ -119,6 +111,14 @@ public class QueryScriptsByStatusResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<Script> getList() {
 			return this.list;
 		}
@@ -129,76 +129,36 @@ public class QueryScriptsByStatusResponse extends AcsResponse {
 
 		public static class Script {
 
-			private String scriptId;
-
-			private String scriptName;
-
-			private String scriptDescription;
-
-			private String industry;
-
-			private String scene;
-
-			private String status;
+			private String appliedVersion;
 
 			private String debugStatus;
 
 			private String debugVersion;
 
-			private String appliedVersion;
-
-			private Long updateTime;
-
-			private Boolean isDrafted;
+			private String industry;
 
 			private Boolean isDebugDrafted;
 
-			public String getScriptId() {
-				return this.scriptId;
+			private Boolean isDrafted;
+
+			private String scene;
+
+			private String scriptDescription;
+
+			private String scriptId;
+
+			private String scriptName;
+
+			private String status;
+
+			private Long updateTime;
+
+			public String getAppliedVersion() {
+				return this.appliedVersion;
 			}
 
-			public void setScriptId(String scriptId) {
-				this.scriptId = scriptId;
-			}
-
-			public String getScriptName() {
-				return this.scriptName;
-			}
-
-			public void setScriptName(String scriptName) {
-				this.scriptName = scriptName;
-			}
-
-			public String getScriptDescription() {
-				return this.scriptDescription;
-			}
-
-			public void setScriptDescription(String scriptDescription) {
-				this.scriptDescription = scriptDescription;
-			}
-
-			public String getIndustry() {
-				return this.industry;
-			}
-
-			public void setIndustry(String industry) {
-				this.industry = industry;
-			}
-
-			public String getScene() {
-				return this.scene;
-			}
-
-			public void setScene(String scene) {
-				this.scene = scene;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
+			public void setAppliedVersion(String appliedVersion) {
+				this.appliedVersion = appliedVersion;
 			}
 
 			public String getDebugStatus() {
@@ -217,20 +177,20 @@ public class QueryScriptsByStatusResponse extends AcsResponse {
 				this.debugVersion = debugVersion;
 			}
 
-			public String getAppliedVersion() {
-				return this.appliedVersion;
+			public String getIndustry() {
+				return this.industry;
 			}
 
-			public void setAppliedVersion(String appliedVersion) {
-				this.appliedVersion = appliedVersion;
+			public void setIndustry(String industry) {
+				this.industry = industry;
 			}
 
-			public Long getUpdateTime() {
-				return this.updateTime;
+			public Boolean getIsDebugDrafted() {
+				return this.isDebugDrafted;
 			}
 
-			public void setUpdateTime(Long updateTime) {
-				this.updateTime = updateTime;
+			public void setIsDebugDrafted(Boolean isDebugDrafted) {
+				this.isDebugDrafted = isDebugDrafted;
 			}
 
 			public Boolean getIsDrafted() {
@@ -241,12 +201,52 @@ public class QueryScriptsByStatusResponse extends AcsResponse {
 				this.isDrafted = isDrafted;
 			}
 
-			public Boolean getIsDebugDrafted() {
-				return this.isDebugDrafted;
+			public String getScene() {
+				return this.scene;
 			}
 
-			public void setIsDebugDrafted(Boolean isDebugDrafted) {
-				this.isDebugDrafted = isDebugDrafted;
+			public void setScene(String scene) {
+				this.scene = scene;
+			}
+
+			public String getScriptDescription() {
+				return this.scriptDescription;
+			}
+
+			public void setScriptDescription(String scriptDescription) {
+				this.scriptDescription = scriptDescription;
+			}
+
+			public String getScriptId() {
+				return this.scriptId;
+			}
+
+			public void setScriptId(String scriptId) {
+				this.scriptId = scriptId;
+			}
+
+			public String getScriptName() {
+				return this.scriptName;
+			}
+
+			public void setScriptName(String scriptName) {
+				this.scriptName = scriptName;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Long getUpdateTime() {
+				return this.updateTime;
+			}
+
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
 			}
 		}
 	}

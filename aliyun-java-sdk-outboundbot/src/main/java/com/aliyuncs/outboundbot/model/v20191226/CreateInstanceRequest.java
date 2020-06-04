@@ -29,8 +29,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String instanceName;
 
-	private String callCenterInstanceId;
-
 	private String instanceDescription;
 	public CreateInstanceRequest() {
 		super("OutboundBot", "2019-12-26", "CreateInstance", "outboundbot");
@@ -60,17 +58,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.instanceName = instanceName;
 		if(instanceName != null){
 			putQueryParameter("InstanceName", instanceName);
-		}
-	}
-
-	public String getCallCenterInstanceId() {
-		return this.callCenterInstanceId;
-	}
-
-	public void setCallCenterInstanceId(String callCenterInstanceId) {
-		this.callCenterInstanceId = callCenterInstanceId;
-		if(callCenterInstanceId != null){
-			putQueryParameter("CallCenterInstanceId", callCenterInstanceId);
 		}
 	}
 

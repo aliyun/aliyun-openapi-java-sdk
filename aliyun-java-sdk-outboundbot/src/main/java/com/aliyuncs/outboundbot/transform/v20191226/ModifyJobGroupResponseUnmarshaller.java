@@ -29,18 +29,18 @@ public class ModifyJobGroupResponseUnmarshaller {
 	public static ModifyJobGroupResponse unmarshall(ModifyJobGroupResponse modifyJobGroupResponse, UnmarshallerContext _ctx) {
 		
 		modifyJobGroupResponse.setRequestId(_ctx.stringValue("ModifyJobGroupResponse.RequestId"));
-		modifyJobGroupResponse.setSuccess(_ctx.booleanValue("ModifyJobGroupResponse.Success"));
 		modifyJobGroupResponse.setCode(_ctx.stringValue("ModifyJobGroupResponse.Code"));
-		modifyJobGroupResponse.setMessage(_ctx.stringValue("ModifyJobGroupResponse.Message"));
 		modifyJobGroupResponse.setHttpStatusCode(_ctx.integerValue("ModifyJobGroupResponse.HttpStatusCode"));
+		modifyJobGroupResponse.setMessage(_ctx.stringValue("ModifyJobGroupResponse.Message"));
+		modifyJobGroupResponse.setSuccess(_ctx.booleanValue("ModifyJobGroupResponse.Success"));
 
 		JobGroup jobGroup = new JobGroup();
+		jobGroup.setCreationTime(_ctx.longValue("ModifyJobGroupResponse.JobGroup.CreationTime"));
+		jobGroup.setJobFilePath(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.JobFilePath"));
+		jobGroup.setJobGroupDescription(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.JobGroupDescription"));
 		jobGroup.setJobGroupId(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.JobGroupId"));
 		jobGroup.setJobGroupName(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.JobGroupName"));
-		jobGroup.setJobGroupDescription(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.JobGroupDescription"));
 		jobGroup.setScenarioId(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.ScenarioId"));
-		jobGroup.setJobFilePath(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.JobFilePath"));
-		jobGroup.setCreationTime(_ctx.longValue("ModifyJobGroupResponse.JobGroup.CreationTime"));
 
 		List<String> callingNumbers = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ModifyJobGroupResponse.JobGroup.CallingNumbers.Length"); i++) {
@@ -49,19 +49,19 @@ public class ModifyJobGroupResponseUnmarshaller {
 		jobGroup.setCallingNumbers(callingNumbers);
 
 		Strategy strategy = new Strategy();
-		strategy.setStrategyId(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Strategy.StrategyId"));
-		strategy.setStrategyName(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Strategy.StrategyName"));
-		strategy.setStrategyDescription(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Strategy.StrategyDescription"));
-		strategy.setType(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Strategy.Type"));
-		strategy.setStartTime(_ctx.longValue("ModifyJobGroupResponse.JobGroup.Strategy.StartTime"));
-		strategy.setEndTime(_ctx.longValue("ModifyJobGroupResponse.JobGroup.Strategy.EndTime"));
-		strategy.setRepeatBy(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Strategy.RepeatBy"));
-		strategy.setMaxAttemptsPerDay(_ctx.integerValue("ModifyJobGroupResponse.JobGroup.Strategy.MaxAttemptsPerDay"));
-		strategy.setMinAttemptInterval(_ctx.integerValue("ModifyJobGroupResponse.JobGroup.Strategy.MinAttemptInterval"));
 		strategy.setCustomized(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Strategy.Customized"));
-		strategy.setRoutingStrategy(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Strategy.RoutingStrategy"));
+		strategy.setEndTime(_ctx.longValue("ModifyJobGroupResponse.JobGroup.Strategy.EndTime"));
 		strategy.setFollowUpStrategy(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Strategy.FollowUpStrategy"));
 		strategy.setIsTemplate(_ctx.booleanValue("ModifyJobGroupResponse.JobGroup.Strategy.IsTemplate"));
+		strategy.setMaxAttemptsPerDay(_ctx.integerValue("ModifyJobGroupResponse.JobGroup.Strategy.MaxAttemptsPerDay"));
+		strategy.setMinAttemptInterval(_ctx.integerValue("ModifyJobGroupResponse.JobGroup.Strategy.MinAttemptInterval"));
+		strategy.setRepeatBy(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Strategy.RepeatBy"));
+		strategy.setRoutingStrategy(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Strategy.RoutingStrategy"));
+		strategy.setStartTime(_ctx.longValue("ModifyJobGroupResponse.JobGroup.Strategy.StartTime"));
+		strategy.setStrategyDescription(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Strategy.StrategyDescription"));
+		strategy.setStrategyId(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Strategy.StrategyId"));
+		strategy.setStrategyName(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Strategy.StrategyName"));
+		strategy.setType(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Strategy.Type"));
 
 		List<String> repeatDays = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ModifyJobGroupResponse.JobGroup.Strategy.RepeatDays.Length"); i++) {

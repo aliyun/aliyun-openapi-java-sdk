@@ -28,27 +28,27 @@ public class ListIntentsResponseUnmarshaller {
 	public static ListIntentsResponse unmarshall(ListIntentsResponse listIntentsResponse, UnmarshallerContext _ctx) {
 		
 		listIntentsResponse.setRequestId(_ctx.stringValue("ListIntentsResponse.RequestId"));
-		listIntentsResponse.setSuccess(_ctx.booleanValue("ListIntentsResponse.Success"));
 		listIntentsResponse.setCode(_ctx.stringValue("ListIntentsResponse.Code"));
-		listIntentsResponse.setMessage(_ctx.stringValue("ListIntentsResponse.Message"));
 		listIntentsResponse.setHttpStatusCode(_ctx.integerValue("ListIntentsResponse.HttpStatusCode"));
+		listIntentsResponse.setMessage(_ctx.stringValue("ListIntentsResponse.Message"));
+		listIntentsResponse.setSuccess(_ctx.booleanValue("ListIntentsResponse.Success"));
 
 		Intents intents = new Intents();
-		intents.setTotalCount(_ctx.integerValue("ListIntentsResponse.Intents.TotalCount"));
 		intents.setPageNumber(_ctx.integerValue("ListIntentsResponse.Intents.PageNumber"));
 		intents.setPageSize(_ctx.integerValue("ListIntentsResponse.Intents.PageSize"));
+		intents.setTotalCount(_ctx.integerValue("ListIntentsResponse.Intents.TotalCount"));
 
 		List<Intent> list = new ArrayList<Intent>();
 		for (int i = 0; i < _ctx.lengthValue("ListIntentsResponse.Intents.List.Length"); i++) {
 			Intent intent = new Intent();
-			intent.setIntentId(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].IntentId"));
-			intent.setScriptId(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].ScriptId"));
-			intent.setIntentName(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].IntentName"));
-			intent.setIntentDescription(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].IntentDescription"));
-			intent.setUtterances(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].Utterances"));
-			intent.setKeywords(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].Keywords"));
 			intent.setCreateTime(_ctx.longValue("ListIntentsResponse.Intents.List["+ i +"].CreateTime"));
+			intent.setIntentDescription(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].IntentDescription"));
+			intent.setIntentId(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].IntentId"));
+			intent.setIntentName(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].IntentName"));
+			intent.setKeywords(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].Keywords"));
+			intent.setScriptId(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].ScriptId"));
 			intent.setUpdateTime(_ctx.longValue("ListIntentsResponse.Intents.List["+ i +"].UpdateTime"));
+			intent.setUtterances(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].Utterances"));
 
 			list.add(intent);
 		}

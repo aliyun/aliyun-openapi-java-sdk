@@ -24,17 +24,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyInstanceResponse extends AcsResponse {
 
+	private String code;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
 	private Instance instance;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,30 +76,6 @@ public class ModifyInstanceResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public Instance getInstance() {
 		return this.instance;
 	}
@@ -86,19 +86,47 @@ public class ModifyInstanceResponse extends AcsResponse {
 
 	public static class Instance {
 
+		private String callCenterInstanceId;
+
+		private Long creationTime;
+
+		private String instanceDescription;
+
 		private String instanceId;
 
 		private String instanceName;
-
-		private String instanceDescription;
 
 		private Integer maxConcurrentConversation;
 
 		private String owner;
 
-		private Long creationTime;
+		private String nluServiceType;
 
-		private String callCenterInstanceId;
+		private NluProfile nluProfile;
+
+		public String getCallCenterInstanceId() {
+			return this.callCenterInstanceId;
+		}
+
+		public void setCallCenterInstanceId(String callCenterInstanceId) {
+			this.callCenterInstanceId = callCenterInstanceId;
+		}
+
+		public Long getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(Long creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getInstanceDescription() {
+			return this.instanceDescription;
+		}
+
+		public void setInstanceDescription(String instanceDescription) {
+			this.instanceDescription = instanceDescription;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -114,14 +142,6 @@ public class ModifyInstanceResponse extends AcsResponse {
 
 		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
-		}
-
-		public String getInstanceDescription() {
-			return this.instanceDescription;
-		}
-
-		public void setInstanceDescription(String instanceDescription) {
-			this.instanceDescription = instanceDescription;
 		}
 
 		public Integer getMaxConcurrentConversation() {
@@ -140,20 +160,53 @@ public class ModifyInstanceResponse extends AcsResponse {
 			this.owner = owner;
 		}
 
-		public Long getCreationTime() {
-			return this.creationTime;
+		public String getNluServiceType() {
+			return this.nluServiceType;
 		}
 
-		public void setCreationTime(Long creationTime) {
-			this.creationTime = creationTime;
+		public void setNluServiceType(String nluServiceType) {
+			this.nluServiceType = nluServiceType;
 		}
 
-		public String getCallCenterInstanceId() {
-			return this.callCenterInstanceId;
+		public NluProfile getNluProfile() {
+			return this.nluProfile;
 		}
 
-		public void setCallCenterInstanceId(String callCenterInstanceId) {
-			this.callCenterInstanceId = callCenterInstanceId;
+		public void setNluProfile(NluProfile nluProfile) {
+			this.nluProfile = nluProfile;
+		}
+
+		public static class NluProfile {
+
+			private String endpoint;
+
+			private String accessKey;
+
+			private String secretKey;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getAccessKey() {
+				return this.accessKey;
+			}
+
+			public void setAccessKey(String accessKey) {
+				this.accessKey = accessKey;
+			}
+
+			public String getSecretKey() {
+				return this.secretKey;
+			}
+
+			public void setSecretKey(String secretKey) {
+				this.secretKey = secretKey;
+			}
 		}
 	}
 

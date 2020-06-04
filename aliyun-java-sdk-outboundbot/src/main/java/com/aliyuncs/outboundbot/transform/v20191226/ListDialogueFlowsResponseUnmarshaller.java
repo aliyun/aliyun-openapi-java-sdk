@@ -27,20 +27,20 @@ public class ListDialogueFlowsResponseUnmarshaller {
 	public static ListDialogueFlowsResponse unmarshall(ListDialogueFlowsResponse listDialogueFlowsResponse, UnmarshallerContext _ctx) {
 		
 		listDialogueFlowsResponse.setRequestId(_ctx.stringValue("ListDialogueFlowsResponse.RequestId"));
-		listDialogueFlowsResponse.setSuccess(_ctx.booleanValue("ListDialogueFlowsResponse.Success"));
 		listDialogueFlowsResponse.setCode(_ctx.stringValue("ListDialogueFlowsResponse.Code"));
-		listDialogueFlowsResponse.setMessage(_ctx.stringValue("ListDialogueFlowsResponse.Message"));
 		listDialogueFlowsResponse.setHttpStatusCode(_ctx.integerValue("ListDialogueFlowsResponse.HttpStatusCode"));
+		listDialogueFlowsResponse.setMessage(_ctx.stringValue("ListDialogueFlowsResponse.Message"));
+		listDialogueFlowsResponse.setSuccess(_ctx.booleanValue("ListDialogueFlowsResponse.Success"));
 
 		List<DialogueFlow> dialogueFlows = new ArrayList<DialogueFlow>();
 		for (int i = 0; i < _ctx.lengthValue("ListDialogueFlowsResponse.DialogueFlows.Length"); i++) {
 			DialogueFlow dialogueFlow = new DialogueFlow();
+			dialogueFlow.setDialogueFlowDefinition(_ctx.stringValue("ListDialogueFlowsResponse.DialogueFlows["+ i +"].DialogueFlowDefinition"));
 			dialogueFlow.setDialogueFlowId(_ctx.stringValue("ListDialogueFlowsResponse.DialogueFlows["+ i +"].DialogueFlowId"));
 			dialogueFlow.setDialogueFlowName(_ctx.stringValue("ListDialogueFlowsResponse.DialogueFlows["+ i +"].DialogueFlowName"));
+			dialogueFlow.setDialogueFlowType(_ctx.stringValue("ListDialogueFlowsResponse.DialogueFlows["+ i +"].DialogueFlowType"));
 			dialogueFlow.setScriptId(_ctx.stringValue("ListDialogueFlowsResponse.DialogueFlows["+ i +"].ScriptId"));
 			dialogueFlow.setScriptVersion(_ctx.stringValue("ListDialogueFlowsResponse.DialogueFlows["+ i +"].ScriptVersion"));
-			dialogueFlow.setDialogueFlowType(_ctx.stringValue("ListDialogueFlowsResponse.DialogueFlows["+ i +"].DialogueFlowType"));
-			dialogueFlow.setDialogueFlowDefinition(_ctx.stringValue("ListDialogueFlowsResponse.DialogueFlows["+ i +"].DialogueFlowDefinition"));
 
 			dialogueFlows.add(dialogueFlow);
 		}

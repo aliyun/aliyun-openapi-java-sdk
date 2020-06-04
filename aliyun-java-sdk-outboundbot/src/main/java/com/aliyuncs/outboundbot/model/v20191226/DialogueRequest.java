@@ -27,17 +27,7 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 
 	private String callId;
 
-	private String actionParams;
-
-	private String callingNumber;
-
-	private String instanceId;
-
-	private Long instanceOwnerId;
-
 	private String calledNumber;
-
-	private String actionKey;
 
 	private String callType;
 
@@ -46,6 +36,14 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 	private String taskId;
 
 	private String utterance;
+
+	private String actionParams;
+
+	private String callingNumber;
+
+	private String instanceId;
+
+	private String actionKey;
 	public DialogueRequest() {
 		super("OutboundBot", "2019-12-26", "Dialogue", "outboundbot");
 		setMethod(MethodType.POST);
@@ -66,50 +64,6 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 		}
 	}
 
-	public String getActionParams() {
-		return this.actionParams;
-	}
-
-	public void setActionParams(String actionParams) {
-		this.actionParams = actionParams;
-		if(actionParams != null){
-			putQueryParameter("ActionParams", actionParams);
-		}
-	}
-
-	public String getCallingNumber() {
-		return this.callingNumber;
-	}
-
-	public void setCallingNumber(String callingNumber) {
-		this.callingNumber = callingNumber;
-		if(callingNumber != null){
-			putQueryParameter("CallingNumber", callingNumber);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Long getInstanceOwnerId() {
-		return this.instanceOwnerId;
-	}
-
-	public void setInstanceOwnerId(Long instanceOwnerId) {
-		this.instanceOwnerId = instanceOwnerId;
-		if(instanceOwnerId != null){
-			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
-		}
-	}
-
 	public String getCalledNumber() {
 		return this.calledNumber;
 	}
@@ -118,17 +72,6 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 		this.calledNumber = calledNumber;
 		if(calledNumber != null){
 			putQueryParameter("CalledNumber", calledNumber);
-		}
-	}
-
-	public String getActionKey() {
-		return this.actionKey;
-	}
-
-	public void setActionKey(String actionKey) {
-		this.actionKey = actionKey;
-		if(actionKey != null){
-			putQueryParameter("ActionKey", actionKey);
 		}
 	}
 
@@ -173,6 +116,50 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 		this.utterance = utterance;
 		if(utterance != null){
 			putQueryParameter("Utterance", utterance);
+		}
+	}
+
+	public String getActionParams() {
+		return this.actionParams;
+	}
+
+	public void setActionParams(String actionParams) {
+		this.actionParams = actionParams;
+		if(actionParams != null){
+			putQueryParameter("ActionParams", actionParams);
+		}
+	}
+
+	public String getCallingNumber() {
+		return this.callingNumber;
+	}
+
+	public void setCallingNumber(String callingNumber) {
+		this.callingNumber = callingNumber;
+		if(callingNumber != null){
+			putQueryParameter("CallingNumber", callingNumber);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getActionKey() {
+		return this.actionKey;
+	}
+
+	public void setActionKey(String actionKey) {
+		this.actionKey = actionKey;
+		if(actionKey != null){
+			putQueryParameter("ActionKey", actionKey);
 		}
 	}
 

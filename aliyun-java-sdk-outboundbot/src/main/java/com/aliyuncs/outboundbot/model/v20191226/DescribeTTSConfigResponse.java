@@ -24,17 +24,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTTSConfigResponse extends AcsResponse {
 
+	private String code;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
 	private TTSConfig tTSConfig;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,30 +76,6 @@ public class DescribeTTSConfigResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public TTSConfig getTTSConfig() {
 		return this.tTSConfig;
 	}
@@ -88,13 +88,13 @@ public class DescribeTTSConfigResponse extends AcsResponse {
 
 		private String id;
 
-		private String scriptId;
-
 		private String instanceId;
 
-		private String voice;
+		private String scriptId;
 
 		private String speechRate;
+
+		private String voice;
 
 		private String volume;
 
@@ -106,14 +106,6 @@ public class DescribeTTSConfigResponse extends AcsResponse {
 			this.id = id;
 		}
 
-		public String getScriptId() {
-			return this.scriptId;
-		}
-
-		public void setScriptId(String scriptId) {
-			this.scriptId = scriptId;
-		}
-
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -122,12 +114,12 @@ public class DescribeTTSConfigResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getVoice() {
-			return this.voice;
+		public String getScriptId() {
+			return this.scriptId;
 		}
 
-		public void setVoice(String voice) {
-			this.voice = voice;
+		public void setScriptId(String scriptId) {
+			this.scriptId = scriptId;
 		}
 
 		public String getSpeechRate() {
@@ -136,6 +128,14 @@ public class DescribeTTSConfigResponse extends AcsResponse {
 
 		public void setSpeechRate(String speechRate) {
 			this.speechRate = speechRate;
+		}
+
+		public String getVoice() {
+			return this.voice;
+		}
+
+		public void setVoice(String voice) {
+			this.voice = voice;
 		}
 
 		public String getVolume() {

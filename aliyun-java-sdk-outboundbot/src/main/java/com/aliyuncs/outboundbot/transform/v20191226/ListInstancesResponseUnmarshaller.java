@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.outboundbot.model.v20191226.ListInstancesResponse;
 import com.aliyuncs.outboundbot.model.v20191226.ListInstancesResponse.Instance;
+import com.aliyuncs.outboundbot.model.v20191226.ListInstancesResponse.Instance.NluProfile;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,22 +28,29 @@ public class ListInstancesResponseUnmarshaller {
 	public static ListInstancesResponse unmarshall(ListInstancesResponse listInstancesResponse, UnmarshallerContext _ctx) {
 		
 		listInstancesResponse.setRequestId(_ctx.stringValue("ListInstancesResponse.RequestId"));
-		listInstancesResponse.setSuccess(_ctx.booleanValue("ListInstancesResponse.Success"));
 		listInstancesResponse.setCode(_ctx.stringValue("ListInstancesResponse.Code"));
-		listInstancesResponse.setMessage(_ctx.stringValue("ListInstancesResponse.Message"));
 		listInstancesResponse.setHttpStatusCode(_ctx.integerValue("ListInstancesResponse.HttpStatusCode"));
+		listInstancesResponse.setMessage(_ctx.stringValue("ListInstancesResponse.Message"));
+		listInstancesResponse.setSuccess(_ctx.booleanValue("ListInstancesResponse.Success"));
 
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstancesResponse.Instances.Length"); i++) {
 			Instance instance = new Instance();
+			instance.setCallCenterInstanceId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].CallCenterInstanceId"));
+			instance.setCreationTime(_ctx.longValue("ListInstancesResponse.Instances["+ i +"].CreationTime"));
+			instance.setInstanceDescription(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].InstanceDescription"));
 			instance.setInstanceId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].InstanceId"));
 			instance.setInstanceName(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].InstanceName"));
-			instance.setInstanceDescription(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].InstanceDescription"));
+			instance.setIsTemplateContainer(_ctx.booleanValue("ListInstancesResponse.Instances["+ i +"].IsTemplateContainer"));
 			instance.setMaxConcurrentConversation(_ctx.integerValue("ListInstancesResponse.Instances["+ i +"].MaxConcurrentConversation"));
 			instance.setOwner(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Owner"));
-			instance.setCreationTime(_ctx.longValue("ListInstancesResponse.Instances["+ i +"].CreationTime"));
-			instance.setCallCenterInstanceId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].CallCenterInstanceId"));
-			instance.setIsTemplateContainer(_ctx.booleanValue("ListInstancesResponse.Instances["+ i +"].IsTemplateContainer"));
+			instance.setNluServiceType(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluServiceType"));
+
+			NluProfile nluProfile = new NluProfile();
+			nluProfile.setEndpoint(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluProfile.Endpoint"));
+			nluProfile.setAccessKey(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluProfile.AccessKey"));
+			nluProfile.setSecretKey(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluProfile.SecretKey"));
+			instance.setNluProfile(nluProfile);
 
 			instances.add(instance);
 		}

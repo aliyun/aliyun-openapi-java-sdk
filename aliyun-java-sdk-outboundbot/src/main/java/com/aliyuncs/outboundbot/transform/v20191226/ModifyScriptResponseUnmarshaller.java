@@ -24,22 +24,23 @@ public class ModifyScriptResponseUnmarshaller {
 	public static ModifyScriptResponse unmarshall(ModifyScriptResponse modifyScriptResponse, UnmarshallerContext _ctx) {
 		
 		modifyScriptResponse.setRequestId(_ctx.stringValue("ModifyScriptResponse.RequestId"));
-		modifyScriptResponse.setSuccess(_ctx.booleanValue("ModifyScriptResponse.Success"));
 		modifyScriptResponse.setCode(_ctx.stringValue("ModifyScriptResponse.Code"));
-		modifyScriptResponse.setMessage(_ctx.stringValue("ModifyScriptResponse.Message"));
 		modifyScriptResponse.setHttpStatusCode(_ctx.integerValue("ModifyScriptResponse.HttpStatusCode"));
+		modifyScriptResponse.setMessage(_ctx.stringValue("ModifyScriptResponse.Message"));
+		modifyScriptResponse.setSuccess(_ctx.booleanValue("ModifyScriptResponse.Success"));
+		modifyScriptResponse.setChatbotId(_ctx.stringValue("ModifyScriptResponse.ChatbotId"));
 
 		Script script = new Script();
+		script.setDebugStatus(_ctx.stringValue("ModifyScriptResponse.Script.DebugStatus"));
+		script.setIndustry(_ctx.stringValue("ModifyScriptResponse.Script.Industry"));
+		script.setIsDebugDrafted(_ctx.booleanValue("ModifyScriptResponse.Script.IsDebugDrafted"));
+		script.setIsDrafted(_ctx.booleanValue("ModifyScriptResponse.Script.IsDrafted"));
+		script.setScene(_ctx.stringValue("ModifyScriptResponse.Script.Scene"));
+		script.setScriptDescription(_ctx.stringValue("ModifyScriptResponse.Script.ScriptDescription"));
 		script.setScriptId(_ctx.stringValue("ModifyScriptResponse.Script.ScriptId"));
 		script.setScriptName(_ctx.stringValue("ModifyScriptResponse.Script.ScriptName"));
-		script.setScriptDescription(_ctx.stringValue("ModifyScriptResponse.Script.ScriptDescription"));
-		script.setIndustry(_ctx.stringValue("ModifyScriptResponse.Script.Industry"));
-		script.setScene(_ctx.stringValue("ModifyScriptResponse.Script.Scene"));
 		script.setStatus(_ctx.stringValue("ModifyScriptResponse.Script.Status"));
-		script.setDebugStatus(_ctx.stringValue("ModifyScriptResponse.Script.DebugStatus"));
 		script.setUpdateTime(_ctx.longValue("ModifyScriptResponse.Script.UpdateTime"));
-		script.setIsDrafted(_ctx.booleanValue("ModifyScriptResponse.Script.IsDrafted"));
-		script.setIsDebugDrafted(_ctx.booleanValue("ModifyScriptResponse.Script.IsDebugDrafted"));
 		modifyScriptResponse.setScript(script);
 	 
 	 	return modifyScriptResponse;

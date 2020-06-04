@@ -23,10 +23,10 @@ public class DeleteScriptWaveformResponseUnmarshaller {
 	public static DeleteScriptWaveformResponse unmarshall(DeleteScriptWaveformResponse deleteScriptWaveformResponse, UnmarshallerContext _ctx) {
 		
 		deleteScriptWaveformResponse.setRequestId(_ctx.stringValue("DeleteScriptWaveformResponse.RequestId"));
-		deleteScriptWaveformResponse.setSuccess(_ctx.booleanValue("DeleteScriptWaveformResponse.Success"));
 		deleteScriptWaveformResponse.setCode(_ctx.stringValue("DeleteScriptWaveformResponse.Code"));
-		deleteScriptWaveformResponse.setMessage(_ctx.stringValue("DeleteScriptWaveformResponse.Message"));
 		deleteScriptWaveformResponse.setHttpStatusCode(_ctx.integerValue("DeleteScriptWaveformResponse.HttpStatusCode"));
+		deleteScriptWaveformResponse.setMessage(_ctx.stringValue("DeleteScriptWaveformResponse.Message"));
+		deleteScriptWaveformResponse.setSuccess(_ctx.booleanValue("DeleteScriptWaveformResponse.Success"));
 	 
 	 	return deleteScriptWaveformResponse;
 	}

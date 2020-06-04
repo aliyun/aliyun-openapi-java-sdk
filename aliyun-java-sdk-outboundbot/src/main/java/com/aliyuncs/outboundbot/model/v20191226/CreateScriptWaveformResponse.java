@@ -24,33 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateScriptWaveformResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
-
-	private String message;
 
 	private Integer httpStatusCode;
 
+	private String message;
+
+	private String requestId;
+
 	private String scriptWaveformId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private Boolean success;
 
 	public String getCode() {
 		return this.code;
@@ -58,14 +42,6 @@ public class CreateScriptWaveformResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -76,12 +52,36 @@ public class CreateScriptWaveformResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getScriptWaveformId() {
 		return this.scriptWaveformId;
 	}
 
 	public void setScriptWaveformId(String scriptWaveformId) {
 		this.scriptWaveformId = scriptWaveformId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

@@ -24,20 +24,20 @@ public class DescribeIntentResponseUnmarshaller {
 	public static DescribeIntentResponse unmarshall(DescribeIntentResponse describeIntentResponse, UnmarshallerContext _ctx) {
 		
 		describeIntentResponse.setRequestId(_ctx.stringValue("DescribeIntentResponse.RequestId"));
-		describeIntentResponse.setSuccess(_ctx.booleanValue("DescribeIntentResponse.Success"));
 		describeIntentResponse.setCode(_ctx.stringValue("DescribeIntentResponse.Code"));
-		describeIntentResponse.setMessage(_ctx.stringValue("DescribeIntentResponse.Message"));
 		describeIntentResponse.setHttpStatusCode(_ctx.integerValue("DescribeIntentResponse.HttpStatusCode"));
+		describeIntentResponse.setMessage(_ctx.stringValue("DescribeIntentResponse.Message"));
+		describeIntentResponse.setSuccess(_ctx.booleanValue("DescribeIntentResponse.Success"));
 
 		Intent intent = new Intent();
-		intent.setIntentId(_ctx.stringValue("DescribeIntentResponse.Intent.IntentId"));
-		intent.setScriptId(_ctx.stringValue("DescribeIntentResponse.Intent.ScriptId"));
-		intent.setIntentName(_ctx.stringValue("DescribeIntentResponse.Intent.IntentName"));
-		intent.setIntentDescription(_ctx.stringValue("DescribeIntentResponse.Intent.IntentDescription"));
-		intent.setUtterances(_ctx.stringValue("DescribeIntentResponse.Intent.Utterances"));
-		intent.setKeywords(_ctx.stringValue("DescribeIntentResponse.Intent.Keywords"));
 		intent.setCreateTime(_ctx.longValue("DescribeIntentResponse.Intent.CreateTime"));
+		intent.setIntentDescription(_ctx.stringValue("DescribeIntentResponse.Intent.IntentDescription"));
+		intent.setIntentId(_ctx.stringValue("DescribeIntentResponse.Intent.IntentId"));
+		intent.setIntentName(_ctx.stringValue("DescribeIntentResponse.Intent.IntentName"));
+		intent.setKeywords(_ctx.stringValue("DescribeIntentResponse.Intent.Keywords"));
+		intent.setScriptId(_ctx.stringValue("DescribeIntentResponse.Intent.ScriptId"));
 		intent.setUpdateTime(_ctx.longValue("DescribeIntentResponse.Intent.UpdateTime"));
+		intent.setUtterances(_ctx.stringValue("DescribeIntentResponse.Intent.Utterances"));
 		describeIntentResponse.setIntent(intent);
 	 
 	 	return describeIntentResponse;

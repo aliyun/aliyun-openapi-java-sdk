@@ -30,8 +30,6 @@ public class PublishScriptRequest extends RpcAcsRequest<PublishScriptResponse> {
 	private String scriptId;
 
 	private String instanceId;
-
-	private Long instanceOwnerId;
 	public PublishScriptRequest() {
 		super("OutboundBot", "2019-12-26", "PublishScript", "outboundbot");
 		setMethod(MethodType.POST);
@@ -71,17 +69,6 @@ public class PublishScriptRequest extends RpcAcsRequest<PublishScriptResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Long getInstanceOwnerId() {
-		return this.instanceOwnerId;
-	}
-
-	public void setInstanceOwnerId(Long instanceOwnerId) {
-		this.instanceOwnerId = instanceOwnerId;
-		if(instanceOwnerId != null){
-			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
 		}
 	}
 

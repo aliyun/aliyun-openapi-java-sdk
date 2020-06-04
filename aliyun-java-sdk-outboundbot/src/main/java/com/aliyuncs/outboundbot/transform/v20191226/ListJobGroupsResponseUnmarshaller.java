@@ -30,39 +30,39 @@ public class ListJobGroupsResponseUnmarshaller {
 	public static ListJobGroupsResponse unmarshall(ListJobGroupsResponse listJobGroupsResponse, UnmarshallerContext _ctx) {
 		
 		listJobGroupsResponse.setRequestId(_ctx.stringValue("ListJobGroupsResponse.RequestId"));
-		listJobGroupsResponse.setSuccess(_ctx.booleanValue("ListJobGroupsResponse.Success"));
 		listJobGroupsResponse.setCode(_ctx.stringValue("ListJobGroupsResponse.Code"));
-		listJobGroupsResponse.setMessage(_ctx.stringValue("ListJobGroupsResponse.Message"));
 		listJobGroupsResponse.setHttpStatusCode(_ctx.integerValue("ListJobGroupsResponse.HttpStatusCode"));
+		listJobGroupsResponse.setMessage(_ctx.stringValue("ListJobGroupsResponse.Message"));
+		listJobGroupsResponse.setSuccess(_ctx.booleanValue("ListJobGroupsResponse.Success"));
 
 		JobGroups jobGroups = new JobGroups();
-		jobGroups.setTotalCount(_ctx.integerValue("ListJobGroupsResponse.JobGroups.TotalCount"));
 		jobGroups.setPageNumber(_ctx.integerValue("ListJobGroupsResponse.JobGroups.PageNumber"));
 		jobGroups.setPageSize(_ctx.integerValue("ListJobGroupsResponse.JobGroups.PageSize"));
+		jobGroups.setTotalCount(_ctx.integerValue("ListJobGroupsResponse.JobGroups.TotalCount"));
 
 		List<JobGroup> list = new ArrayList<JobGroup>();
 		for (int i = 0; i < _ctx.lengthValue("ListJobGroupsResponse.JobGroups.List.Length"); i++) {
 			JobGroup jobGroup = new JobGroup();
+			jobGroup.setCreationTime(_ctx.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].CreationTime"));
+			jobGroup.setJobGroupDescription(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobGroupDescription"));
 			jobGroup.setJobGroupId(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobGroupId"));
 			jobGroup.setJobGroupName(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobGroupName"));
-			jobGroup.setJobGroupDescription(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobGroupDescription"));
 			jobGroup.setScriptId(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ScriptId"));
 			jobGroup.setScriptName(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ScriptName"));
-			jobGroup.setCreationTime(_ctx.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].CreationTime"));
-
-			Strategy strategy = new Strategy();
-			strategy.setStartTime(_ctx.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.StartTime"));
-			strategy.setEndTime(_ctx.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.EndTime"));
-			jobGroup.setStrategy(strategy);
 
 			Progress progress = new Progress();
-			progress.setTotalJobs(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalJobs"));
-			progress.setStatus(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Status"));
-			progress.setTotalNotAnswered(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalNotAnswered"));
-			progress.setTotalCompleted(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalCompleted"));
-			progress.setStartTime(_ctx.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.StartTime"));
 			progress.setDuration(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Duration"));
+			progress.setStartTime(_ctx.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.StartTime"));
+			progress.setStatus(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Status"));
+			progress.setTotalCompleted(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalCompleted"));
+			progress.setTotalJobs(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalJobs"));
+			progress.setTotalNotAnswered(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalNotAnswered"));
 			jobGroup.setProgress(progress);
+
+			Strategy strategy = new Strategy();
+			strategy.setEndTime(_ctx.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.EndTime"));
+			strategy.setStartTime(_ctx.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.StartTime"));
+			jobGroup.setStrategy(strategy);
 
 			list.add(jobGroup);
 		}

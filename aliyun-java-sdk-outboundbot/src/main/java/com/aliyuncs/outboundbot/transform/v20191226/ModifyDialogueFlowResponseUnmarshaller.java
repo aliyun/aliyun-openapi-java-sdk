@@ -23,12 +23,12 @@ public class ModifyDialogueFlowResponseUnmarshaller {
 	public static ModifyDialogueFlowResponse unmarshall(ModifyDialogueFlowResponse modifyDialogueFlowResponse, UnmarshallerContext _ctx) {
 		
 		modifyDialogueFlowResponse.setRequestId(_ctx.stringValue("ModifyDialogueFlowResponse.RequestId"));
-		modifyDialogueFlowResponse.setSuccess(_ctx.booleanValue("ModifyDialogueFlowResponse.Success"));
 		modifyDialogueFlowResponse.setCode(_ctx.stringValue("ModifyDialogueFlowResponse.Code"));
-		modifyDialogueFlowResponse.setMessage(_ctx.stringValue("ModifyDialogueFlowResponse.Message"));
-		modifyDialogueFlowResponse.setHttpStatusCode(_ctx.integerValue("ModifyDialogueFlowResponse.HttpStatusCode"));
-		modifyDialogueFlowResponse.setDialogueFlowId(_ctx.stringValue("ModifyDialogueFlowResponse.DialogueFlowId"));
 		modifyDialogueFlowResponse.setDialogueFlowDefinition(_ctx.stringValue("ModifyDialogueFlowResponse.DialogueFlowDefinition"));
+		modifyDialogueFlowResponse.setDialogueFlowId(_ctx.stringValue("ModifyDialogueFlowResponse.DialogueFlowId"));
+		modifyDialogueFlowResponse.setHttpStatusCode(_ctx.integerValue("ModifyDialogueFlowResponse.HttpStatusCode"));
+		modifyDialogueFlowResponse.setMessage(_ctx.stringValue("ModifyDialogueFlowResponse.Message"));
+		modifyDialogueFlowResponse.setSuccess(_ctx.booleanValue("ModifyDialogueFlowResponse.Success"));
 	 
 	 	return modifyDialogueFlowResponse;
 	}

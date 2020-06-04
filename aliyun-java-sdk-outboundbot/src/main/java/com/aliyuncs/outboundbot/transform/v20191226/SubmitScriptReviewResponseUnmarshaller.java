@@ -23,10 +23,10 @@ public class SubmitScriptReviewResponseUnmarshaller {
 	public static SubmitScriptReviewResponse unmarshall(SubmitScriptReviewResponse submitScriptReviewResponse, UnmarshallerContext _ctx) {
 		
 		submitScriptReviewResponse.setRequestId(_ctx.stringValue("SubmitScriptReviewResponse.RequestId"));
-		submitScriptReviewResponse.setSuccess(_ctx.booleanValue("SubmitScriptReviewResponse.Success"));
 		submitScriptReviewResponse.setCode(_ctx.stringValue("SubmitScriptReviewResponse.Code"));
-		submitScriptReviewResponse.setMessage(_ctx.stringValue("SubmitScriptReviewResponse.Message"));
 		submitScriptReviewResponse.setHttpStatusCode(_ctx.integerValue("SubmitScriptReviewResponse.HttpStatusCode"));
+		submitScriptReviewResponse.setMessage(_ctx.stringValue("SubmitScriptReviewResponse.Message"));
+		submitScriptReviewResponse.setSuccess(_ctx.booleanValue("SubmitScriptReviewResponse.Success"));
 	 
 	 	return submitScriptReviewResponse;
 	}

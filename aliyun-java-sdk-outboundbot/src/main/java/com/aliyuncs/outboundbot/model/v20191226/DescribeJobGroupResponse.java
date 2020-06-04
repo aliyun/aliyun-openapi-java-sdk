@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeJobGroupResponse extends AcsResponse {
 
+	private String code;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
 	private JobGroup jobGroup;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class DescribeJobGroupResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public JobGroup getJobGroup() {
 		return this.jobGroup;
 	}
@@ -87,11 +87,15 @@ public class DescribeJobGroupResponse extends AcsResponse {
 
 	public static class JobGroup {
 
+		private Long creationTime;
+
+		private String jobFilePath;
+
+		private String jobGroupDescription;
+
 		private String jobGroupId;
 
 		private String jobGroupName;
-
-		private String jobGroupDescription;
 
 		private String scenarioId;
 
@@ -99,15 +103,35 @@ public class DescribeJobGroupResponse extends AcsResponse {
 
 		private String scriptName;
 
-		private String jobFilePath;
-
-		private Long creationTime;
-
 		private List<String> callingNumbers;
+
+		private Progress progress;
 
 		private Strategy strategy;
 
-		private Progress progress;
+		public Long getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(Long creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getJobFilePath() {
+			return this.jobFilePath;
+		}
+
+		public void setJobFilePath(String jobFilePath) {
+			this.jobFilePath = jobFilePath;
+		}
+
+		public String getJobGroupDescription() {
+			return this.jobGroupDescription;
+		}
+
+		public void setJobGroupDescription(String jobGroupDescription) {
+			this.jobGroupDescription = jobGroupDescription;
+		}
 
 		public String getJobGroupId() {
 			return this.jobGroupId;
@@ -123,14 +147,6 @@ public class DescribeJobGroupResponse extends AcsResponse {
 
 		public void setJobGroupName(String jobGroupName) {
 			this.jobGroupName = jobGroupName;
-		}
-
-		public String getJobGroupDescription() {
-			return this.jobGroupDescription;
-		}
-
-		public void setJobGroupDescription(String jobGroupDescription) {
-			this.jobGroupDescription = jobGroupDescription;
 		}
 
 		public String getScenarioId() {
@@ -157,36 +173,12 @@ public class DescribeJobGroupResponse extends AcsResponse {
 			this.scriptName = scriptName;
 		}
 
-		public String getJobFilePath() {
-			return this.jobFilePath;
-		}
-
-		public void setJobFilePath(String jobFilePath) {
-			this.jobFilePath = jobFilePath;
-		}
-
-		public Long getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(Long creationTime) {
-			this.creationTime = creationTime;
-		}
-
 		public List<String> getCallingNumbers() {
 			return this.callingNumbers;
 		}
 
 		public void setCallingNumbers(List<String> callingNumbers) {
 			this.callingNumbers = callingNumbers;
-		}
-
-		public Strategy getStrategy() {
-			return this.strategy;
-		}
-
-		public void setStrategy(Strategy strategy) {
-			this.strategy = strategy;
 		}
 
 		public Progress getProgress() {
@@ -197,68 +189,88 @@ public class DescribeJobGroupResponse extends AcsResponse {
 			this.progress = progress;
 		}
 
-		public static class Strategy {
+		public Strategy getStrategy() {
+			return this.strategy;
+		}
 
-			private String strategyId;
+		public void setStrategy(Strategy strategy) {
+			this.strategy = strategy;
+		}
 
-			private String strategyName;
+		public static class Progress {
 
-			private String strategyDescription;
+			private Integer cancelled;
 
-			private String type;
+			private Integer duration;
+
+			private Integer executing;
+
+			private Integer failed;
+
+			private Integer paused;
+
+			private Integer scheduling;
 
 			private Long startTime;
 
-			private Long endTime;
+			private String status;
 
-			private String repeatBy;
+			private Integer totalCompleted;
 
-			private Integer maxAttemptsPerDay;
+			private Integer totalJobs;
 
-			private Integer minAttemptInterval;
+			private Integer totalNotAnswered;
 
-			private String customized;
+			private List<KeyValuePair> briefs;
 
-			private String routingStrategy;
+			private List<KeyValuePair> categories;
 
-			private String followUpStrategy;
-
-			private Boolean isTemplate;
-
-			private List<TimeFrame> workingTime;
-
-			private List<String> repeatDays;
-
-			public String getStrategyId() {
-				return this.strategyId;
+			public Integer getCancelled() {
+				return this.cancelled;
 			}
 
-			public void setStrategyId(String strategyId) {
-				this.strategyId = strategyId;
+			public void setCancelled(Integer cancelled) {
+				this.cancelled = cancelled;
 			}
 
-			public String getStrategyName() {
-				return this.strategyName;
+			public Integer getDuration() {
+				return this.duration;
 			}
 
-			public void setStrategyName(String strategyName) {
-				this.strategyName = strategyName;
+			public void setDuration(Integer duration) {
+				this.duration = duration;
 			}
 
-			public String getStrategyDescription() {
-				return this.strategyDescription;
+			public Integer getExecuting() {
+				return this.executing;
 			}
 
-			public void setStrategyDescription(String strategyDescription) {
-				this.strategyDescription = strategyDescription;
+			public void setExecuting(Integer executing) {
+				this.executing = executing;
 			}
 
-			public String getType() {
-				return this.type;
+			public Integer getFailed() {
+				return this.failed;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setFailed(Integer failed) {
+				this.failed = failed;
+			}
+
+			public Integer getPaused() {
+				return this.paused;
+			}
+
+			public void setPaused(Integer paused) {
+				this.paused = paused;
+			}
+
+			public Integer getScheduling() {
+				return this.scheduling;
+			}
+
+			public void setScheduling(Integer scheduling) {
+				this.scheduling = scheduling;
 			}
 
 			public Long getStartTime() {
@@ -269,6 +281,118 @@ public class DescribeJobGroupResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Integer getTotalCompleted() {
+				return this.totalCompleted;
+			}
+
+			public void setTotalCompleted(Integer totalCompleted) {
+				this.totalCompleted = totalCompleted;
+			}
+
+			public Integer getTotalJobs() {
+				return this.totalJobs;
+			}
+
+			public void setTotalJobs(Integer totalJobs) {
+				this.totalJobs = totalJobs;
+			}
+
+			public Integer getTotalNotAnswered() {
+				return this.totalNotAnswered;
+			}
+
+			public void setTotalNotAnswered(Integer totalNotAnswered) {
+				this.totalNotAnswered = totalNotAnswered;
+			}
+
+			public List<KeyValuePair> getBriefs() {
+				return this.briefs;
+			}
+
+			public void setBriefs(List<KeyValuePair> briefs) {
+				this.briefs = briefs;
+			}
+
+			public List<KeyValuePair> getCategories() {
+				return this.categories;
+			}
+
+			public void setCategories(List<KeyValuePair> categories) {
+				this.categories = categories;
+			}
+
+			public static class KeyValuePair {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+		}
+
+		public static class Strategy {
+
+			private String customized;
+
+			private Long endTime;
+
+			private String followUpStrategy;
+
+			private Boolean isTemplate;
+
+			private Integer maxAttemptsPerDay;
+
+			private Integer minAttemptInterval;
+
+			private String repeatBy;
+
+			private String routingStrategy;
+
+			private Long startTime;
+
+			private String strategyDescription;
+
+			private String strategyId;
+
+			private String strategyName;
+
+			private String type;
+
+			private List<TimeFrame> workingTime;
+
+			private List<String> repeatDays;
+
+			public String getCustomized() {
+				return this.customized;
+			}
+
+			public void setCustomized(String customized) {
+				this.customized = customized;
+			}
+
 			public Long getEndTime() {
 				return this.endTime;
 			}
@@ -277,12 +401,20 @@ public class DescribeJobGroupResponse extends AcsResponse {
 				this.endTime = endTime;
 			}
 
-			public String getRepeatBy() {
-				return this.repeatBy;
+			public String getFollowUpStrategy() {
+				return this.followUpStrategy;
 			}
 
-			public void setRepeatBy(String repeatBy) {
-				this.repeatBy = repeatBy;
+			public void setFollowUpStrategy(String followUpStrategy) {
+				this.followUpStrategy = followUpStrategy;
+			}
+
+			public Boolean getIsTemplate() {
+				return this.isTemplate;
+			}
+
+			public void setIsTemplate(Boolean isTemplate) {
+				this.isTemplate = isTemplate;
 			}
 
 			public Integer getMaxAttemptsPerDay() {
@@ -301,12 +433,12 @@ public class DescribeJobGroupResponse extends AcsResponse {
 				this.minAttemptInterval = minAttemptInterval;
 			}
 
-			public String getCustomized() {
-				return this.customized;
+			public String getRepeatBy() {
+				return this.repeatBy;
 			}
 
-			public void setCustomized(String customized) {
-				this.customized = customized;
+			public void setRepeatBy(String repeatBy) {
+				this.repeatBy = repeatBy;
 			}
 
 			public String getRoutingStrategy() {
@@ -317,20 +449,44 @@ public class DescribeJobGroupResponse extends AcsResponse {
 				this.routingStrategy = routingStrategy;
 			}
 
-			public String getFollowUpStrategy() {
-				return this.followUpStrategy;
+			public Long getStartTime() {
+				return this.startTime;
 			}
 
-			public void setFollowUpStrategy(String followUpStrategy) {
-				this.followUpStrategy = followUpStrategy;
+			public void setStartTime(Long startTime) {
+				this.startTime = startTime;
 			}
 
-			public Boolean getIsTemplate() {
-				return this.isTemplate;
+			public String getStrategyDescription() {
+				return this.strategyDescription;
 			}
 
-			public void setIsTemplate(Boolean isTemplate) {
-				this.isTemplate = isTemplate;
+			public void setStrategyDescription(String strategyDescription) {
+				this.strategyDescription = strategyDescription;
+			}
+
+			public String getStrategyId() {
+				return this.strategyId;
+			}
+
+			public void setStrategyId(String strategyId) {
+				this.strategyId = strategyId;
+			}
+
+			public String getStrategyName() {
+				return this.strategyName;
+			}
+
+			public void setStrategyName(String strategyName) {
+				this.strategyName = strategyName;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public List<TimeFrame> getWorkingTime() {
@@ -369,162 +525,6 @@ public class DescribeJobGroupResponse extends AcsResponse {
 
 				public void setEndTime(String endTime) {
 					this.endTime = endTime;
-				}
-			}
-		}
-
-		public static class Progress {
-
-			private Integer totalJobs;
-
-			private String status;
-
-			private Integer totalNotAnswered;
-
-			private Integer totalCompleted;
-
-			private Long startTime;
-
-			private Integer duration;
-
-			private Integer scheduling;
-
-			private Integer executing;
-
-			private Integer paused;
-
-			private Integer failed;
-
-			private Integer cancelled;
-
-			private List<KeyValuePair> categories;
-
-			private List<KeyValuePair> briefs;
-
-			public Integer getTotalJobs() {
-				return this.totalJobs;
-			}
-
-			public void setTotalJobs(Integer totalJobs) {
-				this.totalJobs = totalJobs;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public Integer getTotalNotAnswered() {
-				return this.totalNotAnswered;
-			}
-
-			public void setTotalNotAnswered(Integer totalNotAnswered) {
-				this.totalNotAnswered = totalNotAnswered;
-			}
-
-			public Integer getTotalCompleted() {
-				return this.totalCompleted;
-			}
-
-			public void setTotalCompleted(Integer totalCompleted) {
-				this.totalCompleted = totalCompleted;
-			}
-
-			public Long getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(Long startTime) {
-				this.startTime = startTime;
-			}
-
-			public Integer getDuration() {
-				return this.duration;
-			}
-
-			public void setDuration(Integer duration) {
-				this.duration = duration;
-			}
-
-			public Integer getScheduling() {
-				return this.scheduling;
-			}
-
-			public void setScheduling(Integer scheduling) {
-				this.scheduling = scheduling;
-			}
-
-			public Integer getExecuting() {
-				return this.executing;
-			}
-
-			public void setExecuting(Integer executing) {
-				this.executing = executing;
-			}
-
-			public Integer getPaused() {
-				return this.paused;
-			}
-
-			public void setPaused(Integer paused) {
-				this.paused = paused;
-			}
-
-			public Integer getFailed() {
-				return this.failed;
-			}
-
-			public void setFailed(Integer failed) {
-				this.failed = failed;
-			}
-
-			public Integer getCancelled() {
-				return this.cancelled;
-			}
-
-			public void setCancelled(Integer cancelled) {
-				this.cancelled = cancelled;
-			}
-
-			public List<KeyValuePair> getCategories() {
-				return this.categories;
-			}
-
-			public void setCategories(List<KeyValuePair> categories) {
-				this.categories = categories;
-			}
-
-			public List<KeyValuePair> getBriefs() {
-				return this.briefs;
-			}
-
-			public void setBriefs(List<KeyValuePair> briefs) {
-				this.briefs = briefs;
-			}
-
-			public static class KeyValuePair {
-
-				private String key;
-
-				private String value;
-
-				public String getKey() {
-					return this.key;
-				}
-
-				public void setKey(String key) {
-					this.key = key;
-				}
-
-				public String getValue() {
-					return this.value;
-				}
-
-				public void setValue(String value) {
-					this.value = value;
 				}
 			}
 		}

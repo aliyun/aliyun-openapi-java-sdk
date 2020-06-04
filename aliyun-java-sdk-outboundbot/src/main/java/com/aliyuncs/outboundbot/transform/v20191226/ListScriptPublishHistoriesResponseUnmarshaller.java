@@ -28,24 +28,24 @@ public class ListScriptPublishHistoriesResponseUnmarshaller {
 	public static ListScriptPublishHistoriesResponse unmarshall(ListScriptPublishHistoriesResponse listScriptPublishHistoriesResponse, UnmarshallerContext _ctx) {
 		
 		listScriptPublishHistoriesResponse.setRequestId(_ctx.stringValue("ListScriptPublishHistoriesResponse.RequestId"));
-		listScriptPublishHistoriesResponse.setSuccess(_ctx.booleanValue("ListScriptPublishHistoriesResponse.Success"));
 		listScriptPublishHistoriesResponse.setCode(_ctx.stringValue("ListScriptPublishHistoriesResponse.Code"));
-		listScriptPublishHistoriesResponse.setMessage(_ctx.stringValue("ListScriptPublishHistoriesResponse.Message"));
 		listScriptPublishHistoriesResponse.setHttpStatusCode(_ctx.integerValue("ListScriptPublishHistoriesResponse.HttpStatusCode"));
+		listScriptPublishHistoriesResponse.setMessage(_ctx.stringValue("ListScriptPublishHistoriesResponse.Message"));
+		listScriptPublishHistoriesResponse.setSuccess(_ctx.booleanValue("ListScriptPublishHistoriesResponse.Success"));
 
 		ScriptPublishHistories scriptPublishHistories = new ScriptPublishHistories();
-		scriptPublishHistories.setTotalCount(_ctx.integerValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.TotalCount"));
 		scriptPublishHistories.setPageNumber(_ctx.integerValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.PageNumber"));
 		scriptPublishHistories.setPageSize(_ctx.integerValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.PageSize"));
+		scriptPublishHistories.setTotalCount(_ctx.integerValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.TotalCount"));
 
 		List<PublishHistory> list = new ArrayList<PublishHistory>();
 		for (int i = 0; i < _ctx.lengthValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.List.Length"); i++) {
 			PublishHistory publishHistory = new PublishHistory();
+			publishHistory.setDescription(_ctx.stringValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.List["+ i +"].Description"));
 			publishHistory.setInstanceId(_ctx.stringValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.List["+ i +"].InstanceId"));
+			publishHistory.setPublishTime(_ctx.longValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.List["+ i +"].PublishTime"));
 			publishHistory.setScriptId(_ctx.stringValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.List["+ i +"].ScriptId"));
 			publishHistory.setScriptVersion(_ctx.stringValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.List["+ i +"].ScriptVersion"));
-			publishHistory.setDescription(_ctx.stringValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.List["+ i +"].Description"));
-			publishHistory.setPublishTime(_ctx.longValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.List["+ i +"].PublishTime"));
 
 			list.add(publishHistory);
 		}

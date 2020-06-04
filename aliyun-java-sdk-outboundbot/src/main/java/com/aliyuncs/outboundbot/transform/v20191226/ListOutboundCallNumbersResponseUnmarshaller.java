@@ -28,23 +28,23 @@ public class ListOutboundCallNumbersResponseUnmarshaller {
 	public static ListOutboundCallNumbersResponse unmarshall(ListOutboundCallNumbersResponse listOutboundCallNumbersResponse, UnmarshallerContext _ctx) {
 		
 		listOutboundCallNumbersResponse.setRequestId(_ctx.stringValue("ListOutboundCallNumbersResponse.RequestId"));
-		listOutboundCallNumbersResponse.setSuccess(_ctx.booleanValue("ListOutboundCallNumbersResponse.Success"));
 		listOutboundCallNumbersResponse.setCode(_ctx.stringValue("ListOutboundCallNumbersResponse.Code"));
-		listOutboundCallNumbersResponse.setMessage(_ctx.stringValue("ListOutboundCallNumbersResponse.Message"));
 		listOutboundCallNumbersResponse.setHttpStatusCode(_ctx.integerValue("ListOutboundCallNumbersResponse.HttpStatusCode"));
+		listOutboundCallNumbersResponse.setMessage(_ctx.stringValue("ListOutboundCallNumbersResponse.Message"));
+		listOutboundCallNumbersResponse.setSuccess(_ctx.booleanValue("ListOutboundCallNumbersResponse.Success"));
 
 		OutboundCallNumbers outboundCallNumbers = new OutboundCallNumbers();
-		outboundCallNumbers.setTotalCount(_ctx.integerValue("ListOutboundCallNumbersResponse.OutboundCallNumbers.TotalCount"));
 		outboundCallNumbers.setPageNumber(_ctx.integerValue("ListOutboundCallNumbersResponse.OutboundCallNumbers.PageNumber"));
 		outboundCallNumbers.setPageSize(_ctx.integerValue("ListOutboundCallNumbersResponse.OutboundCallNumbers.PageSize"));
+		outboundCallNumbers.setTotalCount(_ctx.integerValue("ListOutboundCallNumbersResponse.OutboundCallNumbers.TotalCount"));
 
 		List<OutboundCallNumber> list = new ArrayList<OutboundCallNumber>();
 		for (int i = 0; i < _ctx.lengthValue("ListOutboundCallNumbersResponse.OutboundCallNumbers.List.Length"); i++) {
 			OutboundCallNumber outboundCallNumber = new OutboundCallNumber();
-			outboundCallNumber.setOutboundCallNumberId(_ctx.stringValue("ListOutboundCallNumbersResponse.OutboundCallNumbers.List["+ i +"].OutboundCallNumberId"));
 			outboundCallNumber.setNumber(_ctx.stringValue("ListOutboundCallNumbersResponse.OutboundCallNumbers.List["+ i +"].Number"));
-			outboundCallNumber.setRateLimitPeriod(_ctx.stringValue("ListOutboundCallNumbersResponse.OutboundCallNumbers.List["+ i +"].RateLimitPeriod"));
+			outboundCallNumber.setOutboundCallNumberId(_ctx.stringValue("ListOutboundCallNumbersResponse.OutboundCallNumbers.List["+ i +"].OutboundCallNumberId"));
 			outboundCallNumber.setRateLimitCount(_ctx.stringValue("ListOutboundCallNumbersResponse.OutboundCallNumbers.List["+ i +"].RateLimitCount"));
+			outboundCallNumber.setRateLimitPeriod(_ctx.stringValue("ListOutboundCallNumbersResponse.OutboundCallNumbers.List["+ i +"].RateLimitPeriod"));
 
 			list.add(outboundCallNumber);
 		}

@@ -24,18 +24,18 @@ public class DescribeGlobalQuestionResponseUnmarshaller {
 	public static DescribeGlobalQuestionResponse unmarshall(DescribeGlobalQuestionResponse describeGlobalQuestionResponse, UnmarshallerContext _ctx) {
 		
 		describeGlobalQuestionResponse.setRequestId(_ctx.stringValue("DescribeGlobalQuestionResponse.RequestId"));
-		describeGlobalQuestionResponse.setSuccess(_ctx.booleanValue("DescribeGlobalQuestionResponse.Success"));
 		describeGlobalQuestionResponse.setCode(_ctx.stringValue("DescribeGlobalQuestionResponse.Code"));
-		describeGlobalQuestionResponse.setMessage(_ctx.stringValue("DescribeGlobalQuestionResponse.Message"));
 		describeGlobalQuestionResponse.setHttpStatusCode(_ctx.integerValue("DescribeGlobalQuestionResponse.HttpStatusCode"));
+		describeGlobalQuestionResponse.setMessage(_ctx.stringValue("DescribeGlobalQuestionResponse.Message"));
+		describeGlobalQuestionResponse.setSuccess(_ctx.booleanValue("DescribeGlobalQuestionResponse.Success"));
 
 		GlobalQuestion globalQuestion = new GlobalQuestion();
+		globalQuestion.setAnswers(_ctx.stringValue("DescribeGlobalQuestionResponse.GlobalQuestion.Answers"));
 		globalQuestion.setGlobalQuestionId(_ctx.stringValue("DescribeGlobalQuestionResponse.GlobalQuestion.GlobalQuestionId"));
-		globalQuestion.setScriptId(_ctx.stringValue("DescribeGlobalQuestionResponse.GlobalQuestion.ScriptId"));
 		globalQuestion.setGlobalQuestionName(_ctx.stringValue("DescribeGlobalQuestionResponse.GlobalQuestion.GlobalQuestionName"));
 		globalQuestion.setGlobalQuestionType(_ctx.stringValue("DescribeGlobalQuestionResponse.GlobalQuestion.GlobalQuestionType"));
 		globalQuestion.setQuestions(_ctx.stringValue("DescribeGlobalQuestionResponse.GlobalQuestion.Questions"));
-		globalQuestion.setAnswers(_ctx.stringValue("DescribeGlobalQuestionResponse.GlobalQuestion.Answers"));
+		globalQuestion.setScriptId(_ctx.stringValue("DescribeGlobalQuestionResponse.GlobalQuestion.ScriptId"));
 		describeGlobalQuestionResponse.setGlobalQuestion(globalQuestion);
 	 
 	 	return describeGlobalQuestionResponse;

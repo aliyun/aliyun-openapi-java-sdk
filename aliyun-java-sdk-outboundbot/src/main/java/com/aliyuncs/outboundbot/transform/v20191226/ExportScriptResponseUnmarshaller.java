@@ -24,10 +24,10 @@ public class ExportScriptResponseUnmarshaller {
 	public static ExportScriptResponse unmarshall(ExportScriptResponse exportScriptResponse, UnmarshallerContext _ctx) {
 		
 		exportScriptResponse.setRequestId(_ctx.stringValue("ExportScriptResponse.RequestId"));
-		exportScriptResponse.setSuccess(_ctx.booleanValue("ExportScriptResponse.Success"));
 		exportScriptResponse.setCode(_ctx.stringValue("ExportScriptResponse.Code"));
-		exportScriptResponse.setMessage(_ctx.stringValue("ExportScriptResponse.Message"));
 		exportScriptResponse.setHttpStatusCode(_ctx.integerValue("ExportScriptResponse.HttpStatusCode"));
+		exportScriptResponse.setMessage(_ctx.stringValue("ExportScriptResponse.Message"));
+		exportScriptResponse.setSuccess(_ctx.booleanValue("ExportScriptResponse.Success"));
 
 		DownloadParams downloadParams = new DownloadParams();
 		downloadParams.setSignatureUrl(_ctx.stringValue("ExportScriptResponse.DownloadParams.SignatureUrl"));

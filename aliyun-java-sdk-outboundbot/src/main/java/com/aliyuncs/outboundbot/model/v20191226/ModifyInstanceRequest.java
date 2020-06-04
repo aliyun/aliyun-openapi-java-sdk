@@ -31,8 +31,6 @@ public class ModifyInstanceRequest extends RpcAcsRequest<ModifyInstanceResponse>
 
 	private String instanceName;
 
-	private String callCenterInstanceId;
-
 	private String instanceDescription;
 	public ModifyInstanceRequest() {
 		super("OutboundBot", "2019-12-26", "ModifyInstance", "outboundbot");
@@ -73,17 +71,6 @@ public class ModifyInstanceRequest extends RpcAcsRequest<ModifyInstanceResponse>
 		this.instanceName = instanceName;
 		if(instanceName != null){
 			putQueryParameter("InstanceName", instanceName);
-		}
-	}
-
-	public String getCallCenterInstanceId() {
-		return this.callCenterInstanceId;
-	}
-
-	public void setCallCenterInstanceId(String callCenterInstanceId) {
-		this.callCenterInstanceId = callCenterInstanceId;
-		if(callCenterInstanceId != null){
-			putQueryParameter("CallCenterInstanceId", callCenterInstanceId);
 		}
 	}
 

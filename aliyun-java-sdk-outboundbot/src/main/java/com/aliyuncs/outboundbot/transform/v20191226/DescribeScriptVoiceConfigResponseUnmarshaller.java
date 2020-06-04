@@ -24,19 +24,19 @@ public class DescribeScriptVoiceConfigResponseUnmarshaller {
 	public static DescribeScriptVoiceConfigResponse unmarshall(DescribeScriptVoiceConfigResponse describeScriptVoiceConfigResponse, UnmarshallerContext _ctx) {
 		
 		describeScriptVoiceConfigResponse.setRequestId(_ctx.stringValue("DescribeScriptVoiceConfigResponse.RequestId"));
-		describeScriptVoiceConfigResponse.setSuccess(_ctx.booleanValue("DescribeScriptVoiceConfigResponse.Success"));
 		describeScriptVoiceConfigResponse.setCode(_ctx.stringValue("DescribeScriptVoiceConfigResponse.Code"));
-		describeScriptVoiceConfigResponse.setMessage(_ctx.stringValue("DescribeScriptVoiceConfigResponse.Message"));
 		describeScriptVoiceConfigResponse.setHttpStatusCode(_ctx.integerValue("DescribeScriptVoiceConfigResponse.HttpStatusCode"));
+		describeScriptVoiceConfigResponse.setMessage(_ctx.stringValue("DescribeScriptVoiceConfigResponse.Message"));
+		describeScriptVoiceConfigResponse.setSuccess(_ctx.booleanValue("DescribeScriptVoiceConfigResponse.Success"));
 
 		ScriptVoiceConfig scriptVoiceConfig = new ScriptVoiceConfig();
-		scriptVoiceConfig.setScriptVoiceConfigId(_ctx.stringValue("DescribeScriptVoiceConfigResponse.ScriptVoiceConfig.ScriptVoiceConfigId"));
 		scriptVoiceConfig.setInstanceId(_ctx.stringValue("DescribeScriptVoiceConfigResponse.ScriptVoiceConfig.InstanceId"));
-		scriptVoiceConfig.setScriptId(_ctx.stringValue("DescribeScriptVoiceConfigResponse.ScriptVoiceConfig.ScriptId"));
 		scriptVoiceConfig.setScriptContent(_ctx.stringValue("DescribeScriptVoiceConfigResponse.ScriptVoiceConfig.ScriptContent"));
+		scriptVoiceConfig.setScriptId(_ctx.stringValue("DescribeScriptVoiceConfigResponse.ScriptVoiceConfig.ScriptId"));
+		scriptVoiceConfig.setScriptVoiceConfigId(_ctx.stringValue("DescribeScriptVoiceConfigResponse.ScriptVoiceConfig.ScriptVoiceConfigId"));
+		scriptVoiceConfig.setScriptWaveformRelation(_ctx.stringValue("DescribeScriptVoiceConfigResponse.ScriptVoiceConfig.ScriptWaveformRelation"));
 		scriptVoiceConfig.setSource(_ctx.stringValue("DescribeScriptVoiceConfigResponse.ScriptVoiceConfig.Source"));
 		scriptVoiceConfig.setType(_ctx.stringValue("DescribeScriptVoiceConfigResponse.ScriptVoiceConfig.Type"));
-		scriptVoiceConfig.setScriptWaveformRelation(_ctx.stringValue("DescribeScriptVoiceConfigResponse.ScriptVoiceConfig.ScriptWaveformRelation"));
 		describeScriptVoiceConfigResponse.setScriptVoiceConfig(scriptVoiceConfig);
 	 
 	 	return describeScriptVoiceConfigResponse;

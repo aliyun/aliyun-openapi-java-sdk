@@ -24,16 +24,16 @@ public class ModifyOutboundCallNumberResponseUnmarshaller {
 	public static ModifyOutboundCallNumberResponse unmarshall(ModifyOutboundCallNumberResponse modifyOutboundCallNumberResponse, UnmarshallerContext _ctx) {
 		
 		modifyOutboundCallNumberResponse.setRequestId(_ctx.stringValue("ModifyOutboundCallNumberResponse.RequestId"));
-		modifyOutboundCallNumberResponse.setSuccess(_ctx.booleanValue("ModifyOutboundCallNumberResponse.Success"));
 		modifyOutboundCallNumberResponse.setCode(_ctx.stringValue("ModifyOutboundCallNumberResponse.Code"));
-		modifyOutboundCallNumberResponse.setMessage(_ctx.stringValue("ModifyOutboundCallNumberResponse.Message"));
 		modifyOutboundCallNumberResponse.setHttpStatusCode(_ctx.integerValue("ModifyOutboundCallNumberResponse.HttpStatusCode"));
+		modifyOutboundCallNumberResponse.setMessage(_ctx.stringValue("ModifyOutboundCallNumberResponse.Message"));
+		modifyOutboundCallNumberResponse.setSuccess(_ctx.booleanValue("ModifyOutboundCallNumberResponse.Success"));
 
 		OutboundCallNumber outboundCallNumber = new OutboundCallNumber();
-		outboundCallNumber.setOutboundCallNumberId(_ctx.stringValue("ModifyOutboundCallNumberResponse.OutboundCallNumber.OutboundCallNumberId"));
 		outboundCallNumber.setNumber(_ctx.stringValue("ModifyOutboundCallNumberResponse.OutboundCallNumber.Number"));
-		outboundCallNumber.setRateLimitPeriod(_ctx.stringValue("ModifyOutboundCallNumberResponse.OutboundCallNumber.RateLimitPeriod"));
+		outboundCallNumber.setOutboundCallNumberId(_ctx.stringValue("ModifyOutboundCallNumberResponse.OutboundCallNumber.OutboundCallNumberId"));
 		outboundCallNumber.setRateLimitCount(_ctx.stringValue("ModifyOutboundCallNumberResponse.OutboundCallNumber.RateLimitCount"));
+		outboundCallNumber.setRateLimitPeriod(_ctx.stringValue("ModifyOutboundCallNumberResponse.OutboundCallNumber.RateLimitPeriod"));
 		modifyOutboundCallNumberResponse.setOutboundCallNumber(outboundCallNumber);
 	 
 	 	return modifyOutboundCallNumberResponse;

@@ -28,26 +28,26 @@ public class ListScriptVoiceConfigsResponseUnmarshaller {
 	public static ListScriptVoiceConfigsResponse unmarshall(ListScriptVoiceConfigsResponse listScriptVoiceConfigsResponse, UnmarshallerContext _ctx) {
 		
 		listScriptVoiceConfigsResponse.setRequestId(_ctx.stringValue("ListScriptVoiceConfigsResponse.RequestId"));
-		listScriptVoiceConfigsResponse.setSuccess(_ctx.booleanValue("ListScriptVoiceConfigsResponse.Success"));
 		listScriptVoiceConfigsResponse.setCode(_ctx.stringValue("ListScriptVoiceConfigsResponse.Code"));
-		listScriptVoiceConfigsResponse.setMessage(_ctx.stringValue("ListScriptVoiceConfigsResponse.Message"));
 		listScriptVoiceConfigsResponse.setHttpStatusCode(_ctx.integerValue("ListScriptVoiceConfigsResponse.HttpStatusCode"));
+		listScriptVoiceConfigsResponse.setMessage(_ctx.stringValue("ListScriptVoiceConfigsResponse.Message"));
+		listScriptVoiceConfigsResponse.setSuccess(_ctx.booleanValue("ListScriptVoiceConfigsResponse.Success"));
 
 		ScriptVoiceConfigs scriptVoiceConfigs = new ScriptVoiceConfigs();
-		scriptVoiceConfigs.setTotalCount(_ctx.integerValue("ListScriptVoiceConfigsResponse.ScriptVoiceConfigs.TotalCount"));
 		scriptVoiceConfigs.setPageNumber(_ctx.integerValue("ListScriptVoiceConfigsResponse.ScriptVoiceConfigs.PageNumber"));
 		scriptVoiceConfigs.setPageSize(_ctx.integerValue("ListScriptVoiceConfigsResponse.ScriptVoiceConfigs.PageSize"));
+		scriptVoiceConfigs.setTotalCount(_ctx.integerValue("ListScriptVoiceConfigsResponse.ScriptVoiceConfigs.TotalCount"));
 
 		List<ScriptVoiceConfig> list = new ArrayList<ScriptVoiceConfig>();
 		for (int i = 0; i < _ctx.lengthValue("ListScriptVoiceConfigsResponse.ScriptVoiceConfigs.List.Length"); i++) {
 			ScriptVoiceConfig scriptVoiceConfig = new ScriptVoiceConfig();
-			scriptVoiceConfig.setScriptVoiceConfigId(_ctx.stringValue("ListScriptVoiceConfigsResponse.ScriptVoiceConfigs.List["+ i +"].ScriptVoiceConfigId"));
 			scriptVoiceConfig.setInstanceId(_ctx.stringValue("ListScriptVoiceConfigsResponse.ScriptVoiceConfigs.List["+ i +"].InstanceId"));
-			scriptVoiceConfig.setScriptId(_ctx.stringValue("ListScriptVoiceConfigsResponse.ScriptVoiceConfigs.List["+ i +"].ScriptId"));
 			scriptVoiceConfig.setScriptContent(_ctx.stringValue("ListScriptVoiceConfigsResponse.ScriptVoiceConfigs.List["+ i +"].ScriptContent"));
+			scriptVoiceConfig.setScriptId(_ctx.stringValue("ListScriptVoiceConfigsResponse.ScriptVoiceConfigs.List["+ i +"].ScriptId"));
+			scriptVoiceConfig.setScriptVoiceConfigId(_ctx.stringValue("ListScriptVoiceConfigsResponse.ScriptVoiceConfigs.List["+ i +"].ScriptVoiceConfigId"));
+			scriptVoiceConfig.setScriptWaveformRelation(_ctx.stringValue("ListScriptVoiceConfigsResponse.ScriptVoiceConfigs.List["+ i +"].ScriptWaveformRelation"));
 			scriptVoiceConfig.setSource(_ctx.stringValue("ListScriptVoiceConfigsResponse.ScriptVoiceConfigs.List["+ i +"].Source"));
 			scriptVoiceConfig.setType(_ctx.stringValue("ListScriptVoiceConfigsResponse.ScriptVoiceConfigs.List["+ i +"].Type"));
-			scriptVoiceConfig.setScriptWaveformRelation(_ctx.stringValue("ListScriptVoiceConfigsResponse.ScriptVoiceConfigs.List["+ i +"].ScriptWaveformRelation"));
 
 			list.add(scriptVoiceConfig);
 		}

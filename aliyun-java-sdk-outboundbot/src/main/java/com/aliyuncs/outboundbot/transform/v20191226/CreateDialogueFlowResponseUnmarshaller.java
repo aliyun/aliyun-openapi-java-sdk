@@ -23,11 +23,11 @@ public class CreateDialogueFlowResponseUnmarshaller {
 	public static CreateDialogueFlowResponse unmarshall(CreateDialogueFlowResponse createDialogueFlowResponse, UnmarshallerContext _ctx) {
 		
 		createDialogueFlowResponse.setRequestId(_ctx.stringValue("CreateDialogueFlowResponse.RequestId"));
-		createDialogueFlowResponse.setSuccess(_ctx.booleanValue("CreateDialogueFlowResponse.Success"));
 		createDialogueFlowResponse.setCode(_ctx.stringValue("CreateDialogueFlowResponse.Code"));
-		createDialogueFlowResponse.setMessage(_ctx.stringValue("CreateDialogueFlowResponse.Message"));
-		createDialogueFlowResponse.setHttpStatusCode(_ctx.integerValue("CreateDialogueFlowResponse.HttpStatusCode"));
 		createDialogueFlowResponse.setDialogueFlowId(_ctx.stringValue("CreateDialogueFlowResponse.DialogueFlowId"));
+		createDialogueFlowResponse.setHttpStatusCode(_ctx.integerValue("CreateDialogueFlowResponse.HttpStatusCode"));
+		createDialogueFlowResponse.setMessage(_ctx.stringValue("CreateDialogueFlowResponse.Message"));
+		createDialogueFlowResponse.setSuccess(_ctx.booleanValue("CreateDialogueFlowResponse.Success"));
 	 
 	 	return createDialogueFlowResponse;
 	}

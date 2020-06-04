@@ -34,8 +34,6 @@ public class StartJobRequest extends RpcAcsRequest<StartJobResponse> {
 
 	private String jobGroupId;
 
-	private Boolean selfHostedCallCenter;
-
 	private String scenarioId;
 	public StartJobRequest() {
 		super("OutboundBot", "2019-12-26", "StartJob", "outboundbot");
@@ -89,17 +87,6 @@ public class StartJobRequest extends RpcAcsRequest<StartJobResponse> {
 		this.jobGroupId = jobGroupId;
 		if(jobGroupId != null){
 			putQueryParameter("JobGroupId", jobGroupId);
-		}
-	}
-
-	public Boolean getSelfHostedCallCenter() {
-		return this.selfHostedCallCenter;
-	}
-
-	public void setSelfHostedCallCenter(Boolean selfHostedCallCenter) {
-		this.selfHostedCallCenter = selfHostedCallCenter;
-		if(selfHostedCallCenter != null){
-			putQueryParameter("SelfHostedCallCenter", selfHostedCallCenter.toString());
 		}
 	}
 

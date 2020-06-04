@@ -24,17 +24,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIntentResponse extends AcsResponse {
 
+	private String code;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
 	private Intent intent;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,30 +76,6 @@ public class DescribeIntentResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public Intent getIntent() {
 		return this.intent;
 	}
@@ -86,44 +86,28 @@ public class DescribeIntentResponse extends AcsResponse {
 
 	public static class Intent {
 
-		private String intentId;
-
-		private String scriptId;
-
-		private String intentName;
+		private Long createTime;
 
 		private String intentDescription;
 
-		private String utterances;
+		private String intentId;
+
+		private String intentName;
 
 		private String keywords;
 
-		private Long createTime;
+		private String scriptId;
 
 		private Long updateTime;
 
-		public String getIntentId() {
-			return this.intentId;
+		private String utterances;
+
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setIntentId(String intentId) {
-			this.intentId = intentId;
-		}
-
-		public String getScriptId() {
-			return this.scriptId;
-		}
-
-		public void setScriptId(String scriptId) {
-			this.scriptId = scriptId;
-		}
-
-		public String getIntentName() {
-			return this.intentName;
-		}
-
-		public void setIntentName(String intentName) {
-			this.intentName = intentName;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getIntentDescription() {
@@ -134,12 +118,20 @@ public class DescribeIntentResponse extends AcsResponse {
 			this.intentDescription = intentDescription;
 		}
 
-		public String getUtterances() {
-			return this.utterances;
+		public String getIntentId() {
+			return this.intentId;
 		}
 
-		public void setUtterances(String utterances) {
-			this.utterances = utterances;
+		public void setIntentId(String intentId) {
+			this.intentId = intentId;
+		}
+
+		public String getIntentName() {
+			return this.intentName;
+		}
+
+		public void setIntentName(String intentName) {
+			this.intentName = intentName;
 		}
 
 		public String getKeywords() {
@@ -150,12 +142,12 @@ public class DescribeIntentResponse extends AcsResponse {
 			this.keywords = keywords;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
+		public String getScriptId() {
+			return this.scriptId;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setScriptId(String scriptId) {
+			this.scriptId = scriptId;
 		}
 
 		public Long getUpdateTime() {
@@ -164,6 +156,14 @@ public class DescribeIntentResponse extends AcsResponse {
 
 		public void setUpdateTime(Long updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getUtterances() {
+			return this.utterances;
+		}
+
+		public void setUtterances(String utterances) {
+			this.utterances = utterances;
 		}
 	}
 

@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListJobsByGroupResponse extends AcsResponse {
 
+	private String code;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
 	private Jobs jobs;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class ListJobsByGroupResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public Jobs getJobs() {
 		return this.jobs;
 	}
@@ -87,21 +87,13 @@ public class ListJobsByGroupResponse extends AcsResponse {
 
 	public static class Jobs {
 
-		private Integer totalCount;
-
 		private Integer pageNumber;
 
 		private Integer pageSize;
 
+		private Integer totalCount;
+
 		private List<Job> list;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public Integer getPageNumber() {
 			return this.pageNumber;
@@ -119,6 +111,14 @@ public class ListJobsByGroupResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<Job> getList() {
 			return this.list;
 		}
@@ -129,23 +129,23 @@ public class ListJobsByGroupResponse extends AcsResponse {
 
 		public static class Job {
 
-			private String jobId;
+			private String failureReason;
 
 			private String jobGroupId;
 
-			private String scenarioId;
-
-			private String strategyId;
+			private String jobId;
 
 			private Integer priority;
 
-			private Integer systemPriority;
+			private String referenceId;
+
+			private String scenarioId;
 
 			private String status;
 
-			private String referenceId;
+			private String strategyId;
 
-			private String failureReason;
+			private Integer systemPriority;
 
 			private List<Contact> contacts;
 
@@ -155,12 +155,12 @@ public class ListJobsByGroupResponse extends AcsResponse {
 
 			private List<String> callingNumbers;
 
-			public String getJobId() {
-				return this.jobId;
+			public String getFailureReason() {
+				return this.failureReason;
 			}
 
-			public void setJobId(String jobId) {
-				this.jobId = jobId;
+			public void setFailureReason(String failureReason) {
+				this.failureReason = failureReason;
 			}
 
 			public String getJobGroupId() {
@@ -171,20 +171,12 @@ public class ListJobsByGroupResponse extends AcsResponse {
 				this.jobGroupId = jobGroupId;
 			}
 
-			public String getScenarioId() {
-				return this.scenarioId;
+			public String getJobId() {
+				return this.jobId;
 			}
 
-			public void setScenarioId(String scenarioId) {
-				this.scenarioId = scenarioId;
-			}
-
-			public String getStrategyId() {
-				return this.strategyId;
-			}
-
-			public void setStrategyId(String strategyId) {
-				this.strategyId = strategyId;
+			public void setJobId(String jobId) {
+				this.jobId = jobId;
 			}
 
 			public Integer getPriority() {
@@ -195,12 +187,20 @@ public class ListJobsByGroupResponse extends AcsResponse {
 				this.priority = priority;
 			}
 
-			public Integer getSystemPriority() {
-				return this.systemPriority;
+			public String getReferenceId() {
+				return this.referenceId;
 			}
 
-			public void setSystemPriority(Integer systemPriority) {
-				this.systemPriority = systemPriority;
+			public void setReferenceId(String referenceId) {
+				this.referenceId = referenceId;
+			}
+
+			public String getScenarioId() {
+				return this.scenarioId;
+			}
+
+			public void setScenarioId(String scenarioId) {
+				this.scenarioId = scenarioId;
 			}
 
 			public String getStatus() {
@@ -211,20 +211,20 @@ public class ListJobsByGroupResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getReferenceId() {
-				return this.referenceId;
+			public String getStrategyId() {
+				return this.strategyId;
 			}
 
-			public void setReferenceId(String referenceId) {
-				this.referenceId = referenceId;
+			public void setStrategyId(String strategyId) {
+				this.strategyId = strategyId;
 			}
 
-			public String getFailureReason() {
-				return this.failureReason;
+			public Integer getSystemPriority() {
+				return this.systemPriority;
 			}
 
-			public void setFailureReason(String failureReason) {
-				this.failureReason = failureReason;
+			public void setSystemPriority(Integer systemPriority) {
+				this.systemPriority = systemPriority;
 			}
 
 			public List<Contact> getContacts() {
@@ -267,15 +267,15 @@ public class ListJobsByGroupResponse extends AcsResponse {
 
 				private String honorific;
 
-				private String role;
+				private String jobId;
 
 				private String phoneNumber;
 
-				private String state;
-
 				private String referenceId;
 
-				private String jobId;
+				private String role;
+
+				private String state;
 
 				public String getContactId() {
 					return this.contactId;
@@ -301,12 +301,12 @@ public class ListJobsByGroupResponse extends AcsResponse {
 					this.honorific = honorific;
 				}
 
-				public String getRole() {
-					return this.role;
+				public String getJobId() {
+					return this.jobId;
 				}
 
-				public void setRole(String role) {
-					this.role = role;
+				public void setJobId(String jobId) {
+					this.jobId = jobId;
 				}
 
 				public String getPhoneNumber() {
@@ -317,14 +317,6 @@ public class ListJobsByGroupResponse extends AcsResponse {
 					this.phoneNumber = phoneNumber;
 				}
 
-				public String getState() {
-					return this.state;
-				}
-
-				public void setState(String state) {
-					this.state = state;
-				}
-
 				public String getReferenceId() {
 					return this.referenceId;
 				}
@@ -333,12 +325,20 @@ public class ListJobsByGroupResponse extends AcsResponse {
 					this.referenceId = referenceId;
 				}
 
-				public String getJobId() {
-					return this.jobId;
+				public String getRole() {
+					return this.role;
 				}
 
-				public void setJobId(String jobId) {
-					this.jobId = jobId;
+				public void setRole(String role) {
+					this.role = role;
+				}
+
+				public String getState() {
+					return this.state;
+				}
+
+				public void setState(String state) {
+					this.state = state;
 				}
 			}
 
@@ -367,28 +367,44 @@ public class ListJobsByGroupResponse extends AcsResponse {
 
 			public static class SummaryItem {
 
-				private String summaryId;
+				private String category;
+
+				private String content;
+
+				private String conversationDetailId;
 
 				private String jobGroupId;
 
 				private String jobId;
 
-				private String taskId;
-
-				private String conversationDetailId;
-
-				private String category;
+				private String summaryId;
 
 				private String summaryName;
 
-				private String content;
+				private String taskId;
 
-				public String getSummaryId() {
-					return this.summaryId;
+				public String getCategory() {
+					return this.category;
 				}
 
-				public void setSummaryId(String summaryId) {
-					this.summaryId = summaryId;
+				public void setCategory(String category) {
+					this.category = category;
+				}
+
+				public String getContent() {
+					return this.content;
+				}
+
+				public void setContent(String content) {
+					this.content = content;
+				}
+
+				public String getConversationDetailId() {
+					return this.conversationDetailId;
+				}
+
+				public void setConversationDetailId(String conversationDetailId) {
+					this.conversationDetailId = conversationDetailId;
 				}
 
 				public String getJobGroupId() {
@@ -407,28 +423,12 @@ public class ListJobsByGroupResponse extends AcsResponse {
 					this.jobId = jobId;
 				}
 
-				public String getTaskId() {
-					return this.taskId;
+				public String getSummaryId() {
+					return this.summaryId;
 				}
 
-				public void setTaskId(String taskId) {
-					this.taskId = taskId;
-				}
-
-				public String getConversationDetailId() {
-					return this.conversationDetailId;
-				}
-
-				public void setConversationDetailId(String conversationDetailId) {
-					this.conversationDetailId = conversationDetailId;
-				}
-
-				public String getCategory() {
-					return this.category;
-				}
-
-				public void setCategory(String category) {
-					this.category = category;
+				public void setSummaryId(String summaryId) {
+					this.summaryId = summaryId;
 				}
 
 				public String getSummaryName() {
@@ -439,12 +439,12 @@ public class ListJobsByGroupResponse extends AcsResponse {
 					this.summaryName = summaryName;
 				}
 
-				public String getContent() {
-					return this.content;
+				public String getTaskId() {
+					return this.taskId;
 				}
 
-				public void setContent(String content) {
-					this.content = content;
+				public void setTaskId(String taskId) {
+					this.taskId = taskId;
 				}
 			}
 		}

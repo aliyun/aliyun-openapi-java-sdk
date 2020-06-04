@@ -24,17 +24,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGlobalQuestionResponse extends AcsResponse {
 
+	private String code;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
 	private GlobalQuestion globalQuestion;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,30 +76,6 @@ public class DescribeGlobalQuestionResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public GlobalQuestion getGlobalQuestion() {
 		return this.globalQuestion;
 	}
@@ -86,9 +86,9 @@ public class DescribeGlobalQuestionResponse extends AcsResponse {
 
 	public static class GlobalQuestion {
 
-		private String globalQuestionId;
+		private String answers;
 
-		private String scriptId;
+		private String globalQuestionId;
 
 		private String globalQuestionName;
 
@@ -96,7 +96,15 @@ public class DescribeGlobalQuestionResponse extends AcsResponse {
 
 		private String questions;
 
-		private String answers;
+		private String scriptId;
+
+		public String getAnswers() {
+			return this.answers;
+		}
+
+		public void setAnswers(String answers) {
+			this.answers = answers;
+		}
 
 		public String getGlobalQuestionId() {
 			return this.globalQuestionId;
@@ -104,14 +112,6 @@ public class DescribeGlobalQuestionResponse extends AcsResponse {
 
 		public void setGlobalQuestionId(String globalQuestionId) {
 			this.globalQuestionId = globalQuestionId;
-		}
-
-		public String getScriptId() {
-			return this.scriptId;
-		}
-
-		public void setScriptId(String scriptId) {
-			this.scriptId = scriptId;
 		}
 
 		public String getGlobalQuestionName() {
@@ -138,12 +138,12 @@ public class DescribeGlobalQuestionResponse extends AcsResponse {
 			this.questions = questions;
 		}
 
-		public String getAnswers() {
-			return this.answers;
+		public String getScriptId() {
+			return this.scriptId;
 		}
 
-		public void setAnswers(String answers) {
-			this.answers = answers;
+		public void setScriptId(String scriptId) {
+			this.scriptId = scriptId;
 		}
 	}
 

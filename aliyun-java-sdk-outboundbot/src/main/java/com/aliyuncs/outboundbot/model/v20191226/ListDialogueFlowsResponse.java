@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDialogueFlowsResponse extends AcsResponse {
 
+	private String code;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
 	private List<DialogueFlow> dialogueFlows;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class ListDialogueFlowsResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public List<DialogueFlow> getDialogueFlows() {
 		return this.dialogueFlows;
 	}
@@ -87,17 +87,25 @@ public class ListDialogueFlowsResponse extends AcsResponse {
 
 	public static class DialogueFlow {
 
+		private String dialogueFlowDefinition;
+
 		private String dialogueFlowId;
 
 		private String dialogueFlowName;
+
+		private String dialogueFlowType;
 
 		private String scriptId;
 
 		private String scriptVersion;
 
-		private String dialogueFlowType;
+		public String getDialogueFlowDefinition() {
+			return this.dialogueFlowDefinition;
+		}
 
-		private String dialogueFlowDefinition;
+		public void setDialogueFlowDefinition(String dialogueFlowDefinition) {
+			this.dialogueFlowDefinition = dialogueFlowDefinition;
+		}
 
 		public String getDialogueFlowId() {
 			return this.dialogueFlowId;
@@ -115,6 +123,14 @@ public class ListDialogueFlowsResponse extends AcsResponse {
 			this.dialogueFlowName = dialogueFlowName;
 		}
 
+		public String getDialogueFlowType() {
+			return this.dialogueFlowType;
+		}
+
+		public void setDialogueFlowType(String dialogueFlowType) {
+			this.dialogueFlowType = dialogueFlowType;
+		}
+
 		public String getScriptId() {
 			return this.scriptId;
 		}
@@ -129,22 +145,6 @@ public class ListDialogueFlowsResponse extends AcsResponse {
 
 		public void setScriptVersion(String scriptVersion) {
 			this.scriptVersion = scriptVersion;
-		}
-
-		public String getDialogueFlowType() {
-			return this.dialogueFlowType;
-		}
-
-		public void setDialogueFlowType(String dialogueFlowType) {
-			this.dialogueFlowType = dialogueFlowType;
-		}
-
-		public String getDialogueFlowDefinition() {
-			return this.dialogueFlowDefinition;
-		}
-
-		public void setDialogueFlowDefinition(String dialogueFlowDefinition) {
-			this.dialogueFlowDefinition = dialogueFlowDefinition;
 		}
 	}
 

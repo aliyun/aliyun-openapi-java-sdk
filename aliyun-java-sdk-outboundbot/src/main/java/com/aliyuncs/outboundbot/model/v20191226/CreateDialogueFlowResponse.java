@@ -24,17 +24,49 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDialogueFlowResponse extends AcsResponse {
 
+	private String code;
+
+	private String dialogueFlowId;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
+	public String getCode() {
+		return this.code;
+	}
 
-	private String message;
+	public void setCode(String code) {
+		this.code = code;
+	}
 
-	private Integer httpStatusCode;
+	public String getDialogueFlowId() {
+		return this.dialogueFlowId;
+	}
 
-	private String dialogueFlowId;
+	public void setDialogueFlowId(String dialogueFlowId) {
+		this.dialogueFlowId = dialogueFlowId;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,38 +82,6 @@ public class CreateDialogueFlowResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getDialogueFlowId() {
-		return this.dialogueFlowId;
-	}
-
-	public void setDialogueFlowId(String dialogueFlowId) {
-		this.dialogueFlowId = dialogueFlowId;
 	}
 
 	@Override

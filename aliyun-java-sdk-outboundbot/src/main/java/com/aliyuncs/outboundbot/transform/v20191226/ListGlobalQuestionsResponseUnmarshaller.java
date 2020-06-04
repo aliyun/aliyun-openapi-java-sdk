@@ -28,25 +28,25 @@ public class ListGlobalQuestionsResponseUnmarshaller {
 	public static ListGlobalQuestionsResponse unmarshall(ListGlobalQuestionsResponse listGlobalQuestionsResponse, UnmarshallerContext _ctx) {
 		
 		listGlobalQuestionsResponse.setRequestId(_ctx.stringValue("ListGlobalQuestionsResponse.RequestId"));
-		listGlobalQuestionsResponse.setSuccess(_ctx.booleanValue("ListGlobalQuestionsResponse.Success"));
 		listGlobalQuestionsResponse.setCode(_ctx.stringValue("ListGlobalQuestionsResponse.Code"));
-		listGlobalQuestionsResponse.setMessage(_ctx.stringValue("ListGlobalQuestionsResponse.Message"));
 		listGlobalQuestionsResponse.setHttpStatusCode(_ctx.integerValue("ListGlobalQuestionsResponse.HttpStatusCode"));
+		listGlobalQuestionsResponse.setMessage(_ctx.stringValue("ListGlobalQuestionsResponse.Message"));
+		listGlobalQuestionsResponse.setSuccess(_ctx.booleanValue("ListGlobalQuestionsResponse.Success"));
 
 		GlobalQuestions globalQuestions = new GlobalQuestions();
-		globalQuestions.setTotalCount(_ctx.integerValue("ListGlobalQuestionsResponse.GlobalQuestions.TotalCount"));
 		globalQuestions.setPageNumber(_ctx.integerValue("ListGlobalQuestionsResponse.GlobalQuestions.PageNumber"));
 		globalQuestions.setPageSize(_ctx.integerValue("ListGlobalQuestionsResponse.GlobalQuestions.PageSize"));
+		globalQuestions.setTotalCount(_ctx.integerValue("ListGlobalQuestionsResponse.GlobalQuestions.TotalCount"));
 
 		List<GlobalQuestion> list = new ArrayList<GlobalQuestion>();
 		for (int i = 0; i < _ctx.lengthValue("ListGlobalQuestionsResponse.GlobalQuestions.List.Length"); i++) {
 			GlobalQuestion globalQuestion = new GlobalQuestion();
+			globalQuestion.setAnswers(_ctx.stringValue("ListGlobalQuestionsResponse.GlobalQuestions.List["+ i +"].Answers"));
 			globalQuestion.setGlobalQuestionId(_ctx.stringValue("ListGlobalQuestionsResponse.GlobalQuestions.List["+ i +"].GlobalQuestionId"));
-			globalQuestion.setScriptId(_ctx.stringValue("ListGlobalQuestionsResponse.GlobalQuestions.List["+ i +"].ScriptId"));
 			globalQuestion.setGlobalQuestionName(_ctx.stringValue("ListGlobalQuestionsResponse.GlobalQuestions.List["+ i +"].GlobalQuestionName"));
 			globalQuestion.setGlobalQuestionType(_ctx.stringValue("ListGlobalQuestionsResponse.GlobalQuestions.List["+ i +"].GlobalQuestionType"));
 			globalQuestion.setQuestions(_ctx.stringValue("ListGlobalQuestionsResponse.GlobalQuestions.List["+ i +"].Questions"));
-			globalQuestion.setAnswers(_ctx.stringValue("ListGlobalQuestionsResponse.GlobalQuestions.List["+ i +"].Answers"));
+			globalQuestion.setScriptId(_ctx.stringValue("ListGlobalQuestionsResponse.GlobalQuestions.List["+ i +"].ScriptId"));
 
 			list.add(globalQuestion);
 		}

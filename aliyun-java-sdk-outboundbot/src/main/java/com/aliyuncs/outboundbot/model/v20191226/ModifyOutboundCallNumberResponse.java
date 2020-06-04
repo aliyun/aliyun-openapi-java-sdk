@@ -24,17 +24,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyOutboundCallNumberResponse extends AcsResponse {
 
+	private String code;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
 	private OutboundCallNumber outboundCallNumber;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,30 +76,6 @@ public class ModifyOutboundCallNumberResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public OutboundCallNumber getOutboundCallNumber() {
 		return this.outboundCallNumber;
 	}
@@ -86,21 +86,13 @@ public class ModifyOutboundCallNumberResponse extends AcsResponse {
 
 	public static class OutboundCallNumber {
 
-		private String outboundCallNumberId;
-
 		private String number;
 
-		private String rateLimitPeriod;
+		private String outboundCallNumberId;
 
 		private String rateLimitCount;
 
-		public String getOutboundCallNumberId() {
-			return this.outboundCallNumberId;
-		}
-
-		public void setOutboundCallNumberId(String outboundCallNumberId) {
-			this.outboundCallNumberId = outboundCallNumberId;
-		}
+		private String rateLimitPeriod;
 
 		public String getNumber() {
 			return this.number;
@@ -110,12 +102,12 @@ public class ModifyOutboundCallNumberResponse extends AcsResponse {
 			this.number = number;
 		}
 
-		public String getRateLimitPeriod() {
-			return this.rateLimitPeriod;
+		public String getOutboundCallNumberId() {
+			return this.outboundCallNumberId;
 		}
 
-		public void setRateLimitPeriod(String rateLimitPeriod) {
-			this.rateLimitPeriod = rateLimitPeriod;
+		public void setOutboundCallNumberId(String outboundCallNumberId) {
+			this.outboundCallNumberId = outboundCallNumberId;
 		}
 
 		public String getRateLimitCount() {
@@ -124,6 +116,14 @@ public class ModifyOutboundCallNumberResponse extends AcsResponse {
 
 		public void setRateLimitCount(String rateLimitCount) {
 			this.rateLimitCount = rateLimitCount;
+		}
+
+		public String getRateLimitPeriod() {
+			return this.rateLimitPeriod;
+		}
+
+		public void setRateLimitPeriod(String rateLimitPeriod) {
+			this.rateLimitPeriod = rateLimitPeriod;
 		}
 	}
 

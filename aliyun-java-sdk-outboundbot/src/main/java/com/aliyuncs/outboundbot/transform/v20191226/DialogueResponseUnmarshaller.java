@@ -24,15 +24,15 @@ public class DialogueResponseUnmarshaller {
 	public static DialogueResponse unmarshall(DialogueResponse dialogueResponse, UnmarshallerContext _ctx) {
 		
 		dialogueResponse.setRequestId(_ctx.stringValue("DialogueResponse.RequestId"));
-		dialogueResponse.setSuccess(_ctx.booleanValue("DialogueResponse.Success"));
 		dialogueResponse.setCode(_ctx.stringValue("DialogueResponse.Code"));
-		dialogueResponse.setMessage(_ctx.stringValue("DialogueResponse.Message"));
 		dialogueResponse.setHttpStatusCode(_ctx.integerValue("DialogueResponse.HttpStatusCode"));
+		dialogueResponse.setMessage(_ctx.stringValue("DialogueResponse.Message"));
+		dialogueResponse.setSuccess(_ctx.booleanValue("DialogueResponse.Success"));
 
 		Feedback feedback = new Feedback();
-		feedback.setContent(_ctx.stringValue("DialogueResponse.Feedback.Content"));
 		feedback.setAction(_ctx.stringValue("DialogueResponse.Feedback.Action"));
 		feedback.setActionParams(_ctx.stringValue("DialogueResponse.Feedback.ActionParams"));
+		feedback.setContent(_ctx.stringValue("DialogueResponse.Feedback.Content"));
 		feedback.setInterruptible(_ctx.booleanValue("DialogueResponse.Feedback.Interruptible"));
 		dialogueResponse.setFeedback(feedback);
 	 

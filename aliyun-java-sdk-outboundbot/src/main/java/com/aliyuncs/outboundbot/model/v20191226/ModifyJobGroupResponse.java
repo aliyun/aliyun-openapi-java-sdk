@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyJobGroupResponse extends AcsResponse {
 
+	private String code;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
 	private JobGroup jobGroup;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class ModifyJobGroupResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public JobGroup getJobGroup() {
 		return this.jobGroup;
 	}
@@ -87,21 +87,45 @@ public class ModifyJobGroupResponse extends AcsResponse {
 
 	public static class JobGroup {
 
+		private Long creationTime;
+
+		private String jobFilePath;
+
+		private String jobGroupDescription;
+
 		private String jobGroupId;
 
 		private String jobGroupName;
 
-		private String jobGroupDescription;
-
 		private String scenarioId;
-
-		private String jobFilePath;
-
-		private Long creationTime;
 
 		private List<String> callingNumbers;
 
 		private Strategy strategy;
+
+		public Long getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(Long creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getJobFilePath() {
+			return this.jobFilePath;
+		}
+
+		public void setJobFilePath(String jobFilePath) {
+			this.jobFilePath = jobFilePath;
+		}
+
+		public String getJobGroupDescription() {
+			return this.jobGroupDescription;
+		}
+
+		public void setJobGroupDescription(String jobGroupDescription) {
+			this.jobGroupDescription = jobGroupDescription;
+		}
 
 		public String getJobGroupId() {
 			return this.jobGroupId;
@@ -119,36 +143,12 @@ public class ModifyJobGroupResponse extends AcsResponse {
 			this.jobGroupName = jobGroupName;
 		}
 
-		public String getJobGroupDescription() {
-			return this.jobGroupDescription;
-		}
-
-		public void setJobGroupDescription(String jobGroupDescription) {
-			this.jobGroupDescription = jobGroupDescription;
-		}
-
 		public String getScenarioId() {
 			return this.scenarioId;
 		}
 
 		public void setScenarioId(String scenarioId) {
 			this.scenarioId = scenarioId;
-		}
-
-		public String getJobFilePath() {
-			return this.jobFilePath;
-		}
-
-		public void setJobFilePath(String jobFilePath) {
-			this.jobFilePath = jobFilePath;
-		}
-
-		public Long getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(Long creationTime) {
-			this.creationTime = creationTime;
 		}
 
 		public List<String> getCallingNumbers() {
@@ -169,74 +169,42 @@ public class ModifyJobGroupResponse extends AcsResponse {
 
 		public static class Strategy {
 
-			private String strategyId;
-
-			private String strategyName;
-
-			private String strategyDescription;
-
-			private String type;
-
-			private Long startTime;
-
-			private Long endTime;
-
-			private String repeatBy;
-
-			private Integer maxAttemptsPerDay;
-
-			private Integer minAttemptInterval;
-
 			private String customized;
 
-			private String routingStrategy;
+			private Long endTime;
 
 			private String followUpStrategy;
 
 			private Boolean isTemplate;
 
+			private Integer maxAttemptsPerDay;
+
+			private Integer minAttemptInterval;
+
+			private String repeatBy;
+
+			private String routingStrategy;
+
+			private Long startTime;
+
+			private String strategyDescription;
+
+			private String strategyId;
+
+			private String strategyName;
+
+			private String type;
+
 			private List<TimeFrame> workingTime;
 
 			private List<String> repeatDays;
 
-			public String getStrategyId() {
-				return this.strategyId;
+			public String getCustomized() {
+				return this.customized;
 			}
 
-			public void setStrategyId(String strategyId) {
-				this.strategyId = strategyId;
-			}
-
-			public String getStrategyName() {
-				return this.strategyName;
-			}
-
-			public void setStrategyName(String strategyName) {
-				this.strategyName = strategyName;
-			}
-
-			public String getStrategyDescription() {
-				return this.strategyDescription;
-			}
-
-			public void setStrategyDescription(String strategyDescription) {
-				this.strategyDescription = strategyDescription;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public Long getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(Long startTime) {
-				this.startTime = startTime;
+			public void setCustomized(String customized) {
+				this.customized = customized;
 			}
 
 			public Long getEndTime() {
@@ -247,12 +215,20 @@ public class ModifyJobGroupResponse extends AcsResponse {
 				this.endTime = endTime;
 			}
 
-			public String getRepeatBy() {
-				return this.repeatBy;
+			public String getFollowUpStrategy() {
+				return this.followUpStrategy;
 			}
 
-			public void setRepeatBy(String repeatBy) {
-				this.repeatBy = repeatBy;
+			public void setFollowUpStrategy(String followUpStrategy) {
+				this.followUpStrategy = followUpStrategy;
+			}
+
+			public Boolean getIsTemplate() {
+				return this.isTemplate;
+			}
+
+			public void setIsTemplate(Boolean isTemplate) {
+				this.isTemplate = isTemplate;
 			}
 
 			public Integer getMaxAttemptsPerDay() {
@@ -271,12 +247,12 @@ public class ModifyJobGroupResponse extends AcsResponse {
 				this.minAttemptInterval = minAttemptInterval;
 			}
 
-			public String getCustomized() {
-				return this.customized;
+			public String getRepeatBy() {
+				return this.repeatBy;
 			}
 
-			public void setCustomized(String customized) {
-				this.customized = customized;
+			public void setRepeatBy(String repeatBy) {
+				this.repeatBy = repeatBy;
 			}
 
 			public String getRoutingStrategy() {
@@ -287,20 +263,44 @@ public class ModifyJobGroupResponse extends AcsResponse {
 				this.routingStrategy = routingStrategy;
 			}
 
-			public String getFollowUpStrategy() {
-				return this.followUpStrategy;
+			public Long getStartTime() {
+				return this.startTime;
 			}
 
-			public void setFollowUpStrategy(String followUpStrategy) {
-				this.followUpStrategy = followUpStrategy;
+			public void setStartTime(Long startTime) {
+				this.startTime = startTime;
 			}
 
-			public Boolean getIsTemplate() {
-				return this.isTemplate;
+			public String getStrategyDescription() {
+				return this.strategyDescription;
 			}
 
-			public void setIsTemplate(Boolean isTemplate) {
-				this.isTemplate = isTemplate;
+			public void setStrategyDescription(String strategyDescription) {
+				this.strategyDescription = strategyDescription;
+			}
+
+			public String getStrategyId() {
+				return this.strategyId;
+			}
+
+			public void setStrategyId(String strategyId) {
+				this.strategyId = strategyId;
+			}
+
+			public String getStrategyName() {
+				return this.strategyName;
+			}
+
+			public void setStrategyName(String strategyName) {
+				this.strategyName = strategyName;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public List<TimeFrame> getWorkingTime() {

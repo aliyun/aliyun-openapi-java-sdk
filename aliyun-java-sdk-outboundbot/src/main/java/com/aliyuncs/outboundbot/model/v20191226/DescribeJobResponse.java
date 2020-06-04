@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeJobResponse extends AcsResponse {
 
+	private String code;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
 	private Job job;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class DescribeJobResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public Job getJob() {
 		return this.job;
 	}
@@ -87,40 +87,40 @@ public class DescribeJobResponse extends AcsResponse {
 
 	public static class Job {
 
-		private String jobId;
+		private String failureReason;
 
 		private String jobGroupId;
 
-		private String scenarioId;
-
-		private String strategyId;
+		private String jobId;
 
 		private Integer priority;
 
-		private Integer systemPriority;
+		private String referenceId;
+
+		private String scenarioId;
 
 		private String status;
 
-		private String referenceId;
+		private String strategyId;
 
-		private String failureReason;
+		private Integer systemPriority;
 
 		private List<Contact> contacts;
 
 		private List<KeyValuePair> extras;
 
-		private List<Task> tasks;
+		private List<SummaryItem> summary;
 
-		private List<SummaryItem3> summary;
+		private List<Task> tasks;
 
 		private List<String> callingNumbers;
 
-		public String getJobId() {
-			return this.jobId;
+		public String getFailureReason() {
+			return this.failureReason;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
+		public void setFailureReason(String failureReason) {
+			this.failureReason = failureReason;
 		}
 
 		public String getJobGroupId() {
@@ -131,20 +131,12 @@ public class DescribeJobResponse extends AcsResponse {
 			this.jobGroupId = jobGroupId;
 		}
 
-		public String getScenarioId() {
-			return this.scenarioId;
+		public String getJobId() {
+			return this.jobId;
 		}
 
-		public void setScenarioId(String scenarioId) {
-			this.scenarioId = scenarioId;
-		}
-
-		public String getStrategyId() {
-			return this.strategyId;
-		}
-
-		public void setStrategyId(String strategyId) {
-			this.strategyId = strategyId;
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 
 		public Integer getPriority() {
@@ -155,12 +147,20 @@ public class DescribeJobResponse extends AcsResponse {
 			this.priority = priority;
 		}
 
-		public Integer getSystemPriority() {
-			return this.systemPriority;
+		public String getReferenceId() {
+			return this.referenceId;
 		}
 
-		public void setSystemPriority(Integer systemPriority) {
-			this.systemPriority = systemPriority;
+		public void setReferenceId(String referenceId) {
+			this.referenceId = referenceId;
+		}
+
+		public String getScenarioId() {
+			return this.scenarioId;
+		}
+
+		public void setScenarioId(String scenarioId) {
+			this.scenarioId = scenarioId;
 		}
 
 		public String getStatus() {
@@ -171,20 +171,20 @@ public class DescribeJobResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getReferenceId() {
-			return this.referenceId;
+		public String getStrategyId() {
+			return this.strategyId;
 		}
 
-		public void setReferenceId(String referenceId) {
-			this.referenceId = referenceId;
+		public void setStrategyId(String strategyId) {
+			this.strategyId = strategyId;
 		}
 
-		public String getFailureReason() {
-			return this.failureReason;
+		public Integer getSystemPriority() {
+			return this.systemPriority;
 		}
 
-		public void setFailureReason(String failureReason) {
-			this.failureReason = failureReason;
+		public void setSystemPriority(Integer systemPriority) {
+			this.systemPriority = systemPriority;
 		}
 
 		public List<Contact> getContacts() {
@@ -203,20 +203,20 @@ public class DescribeJobResponse extends AcsResponse {
 			this.extras = extras;
 		}
 
+		public List<SummaryItem> getSummary() {
+			return this.summary;
+		}
+
+		public void setSummary(List<SummaryItem> summary) {
+			this.summary = summary;
+		}
+
 		public List<Task> getTasks() {
 			return this.tasks;
 		}
 
 		public void setTasks(List<Task> tasks) {
 			this.tasks = tasks;
-		}
-
-		public List<SummaryItem3> getSummary() {
-			return this.summary;
-		}
-
-		public void setSummary(List<SummaryItem3> summary) {
-			this.summary = summary;
 		}
 
 		public List<String> getCallingNumbers() {
@@ -235,15 +235,15 @@ public class DescribeJobResponse extends AcsResponse {
 
 			private String honorific;
 
-			private String role;
+			private String jobId;
 
 			private String phoneNumber;
 
-			private String state;
-
 			private String referenceId;
 
-			private String jobId;
+			private String role;
+
+			private String state;
 
 			public String getContactId() {
 				return this.contactId;
@@ -269,12 +269,12 @@ public class DescribeJobResponse extends AcsResponse {
 				this.honorific = honorific;
 			}
 
-			public String getRole() {
-				return this.role;
+			public String getJobId() {
+				return this.jobId;
 			}
 
-			public void setRole(String role) {
-				this.role = role;
+			public void setJobId(String jobId) {
+				this.jobId = jobId;
 			}
 
 			public String getPhoneNumber() {
@@ -285,14 +285,6 @@ public class DescribeJobResponse extends AcsResponse {
 				this.phoneNumber = phoneNumber;
 			}
 
-			public String getState() {
-				return this.state;
-			}
-
-			public void setState(String state) {
-				this.state = state;
-			}
-
 			public String getReferenceId() {
 				return this.referenceId;
 			}
@@ -301,12 +293,20 @@ public class DescribeJobResponse extends AcsResponse {
 				this.referenceId = referenceId;
 			}
 
-			public String getJobId() {
-				return this.jobId;
+			public String getRole() {
+				return this.role;
 			}
 
-			public void setJobId(String jobId) {
-				this.jobId = jobId;
+			public void setRole(String role) {
+				this.role = role;
+			}
+
+			public String getState() {
+				return this.state;
+			}
+
+			public void setState(String state) {
+				this.state = state;
 			}
 		}
 
@@ -333,75 +333,68 @@ public class DescribeJobResponse extends AcsResponse {
 			}
 		}
 
+		public static class SummaryItem {
+
+			private String category;
+
+			private String content;
+
+			private String summaryName;
+
+			public String getCategory() {
+				return this.category;
+			}
+
+			public void setCategory(String category) {
+				this.category = category;
+			}
+
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
+			}
+
+			public String getSummaryName() {
+				return this.summaryName;
+			}
+
+			public void setSummaryName(String summaryName) {
+				this.summaryName = summaryName;
+			}
+		}
+
 		public static class Task {
-
-			private String taskId;
-
-			private String jobId;
-
-			private String scenarioId;
-
-			private String chatbotId;
-
-			private Long planedTime;
 
 			private Long actualTime;
 
-			private String callingNumber;
-
-			private String calledNumber;
+			private String brief;
 
 			private String callId;
 
-			private String status;
+			private String calledNumber;
 
-			private String brief;
+			private String callingNumber;
+
+			private String chatbotId;
 
 			private Integer duration;
 
+			private String jobId;
+
+			private Long planedTime;
+
+			private String scenarioId;
+
+			private String status;
+
+			private String taskId;
+
 			private List<ConversationDetail> conversation;
 
-			private Contact2 contact2;
-
-			public String getTaskId() {
-				return this.taskId;
-			}
-
-			public void setTaskId(String taskId) {
-				this.taskId = taskId;
-			}
-
-			public String getJobId() {
-				return this.jobId;
-			}
-
-			public void setJobId(String jobId) {
-				this.jobId = jobId;
-			}
-
-			public String getScenarioId() {
-				return this.scenarioId;
-			}
-
-			public void setScenarioId(String scenarioId) {
-				this.scenarioId = scenarioId;
-			}
-
-			public String getChatbotId() {
-				return this.chatbotId;
-			}
-
-			public void setChatbotId(String chatbotId) {
-				this.chatbotId = chatbotId;
-			}
-
-			public Long getPlanedTime() {
-				return this.planedTime;
-			}
-
-			public void setPlanedTime(Long planedTime) {
-				this.planedTime = planedTime;
-			}
+			private Contact3 contact3;
 
 			public Long getActualTime() {
 				return this.actualTime;
@@ -409,38 +402,6 @@ public class DescribeJobResponse extends AcsResponse {
 
 			public void setActualTime(Long actualTime) {
 				this.actualTime = actualTime;
-			}
-
-			public String getCallingNumber() {
-				return this.callingNumber;
-			}
-
-			public void setCallingNumber(String callingNumber) {
-				this.callingNumber = callingNumber;
-			}
-
-			public String getCalledNumber() {
-				return this.calledNumber;
-			}
-
-			public void setCalledNumber(String calledNumber) {
-				this.calledNumber = calledNumber;
-			}
-
-			public String getCallId() {
-				return this.callId;
-			}
-
-			public void setCallId(String callId) {
-				this.callId = callId;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
 			}
 
 			public String getBrief() {
@@ -451,12 +412,84 @@ public class DescribeJobResponse extends AcsResponse {
 				this.brief = brief;
 			}
 
+			public String getCallId() {
+				return this.callId;
+			}
+
+			public void setCallId(String callId) {
+				this.callId = callId;
+			}
+
+			public String getCalledNumber() {
+				return this.calledNumber;
+			}
+
+			public void setCalledNumber(String calledNumber) {
+				this.calledNumber = calledNumber;
+			}
+
+			public String getCallingNumber() {
+				return this.callingNumber;
+			}
+
+			public void setCallingNumber(String callingNumber) {
+				this.callingNumber = callingNumber;
+			}
+
+			public String getChatbotId() {
+				return this.chatbotId;
+			}
+
+			public void setChatbotId(String chatbotId) {
+				this.chatbotId = chatbotId;
+			}
+
 			public Integer getDuration() {
 				return this.duration;
 			}
 
 			public void setDuration(Integer duration) {
 				this.duration = duration;
+			}
+
+			public String getJobId() {
+				return this.jobId;
+			}
+
+			public void setJobId(String jobId) {
+				this.jobId = jobId;
+			}
+
+			public Long getPlanedTime() {
+				return this.planedTime;
+			}
+
+			public void setPlanedTime(Long planedTime) {
+				this.planedTime = planedTime;
+			}
+
+			public String getScenarioId() {
+				return this.scenarioId;
+			}
+
+			public void setScenarioId(String scenarioId) {
+				this.scenarioId = scenarioId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getTaskId() {
+				return this.taskId;
+			}
+
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
 			}
 
 			public List<ConversationDetail> getConversation() {
@@ -467,30 +500,30 @@ public class DescribeJobResponse extends AcsResponse {
 				this.conversation = conversation;
 			}
 
-			public Contact2 getContact2() {
-				return this.contact2;
+			public Contact3 getContact3() {
+				return this.contact3;
 			}
 
-			public void setContact2(Contact2 contact2) {
-				this.contact2 = contact2;
+			public void setContact3(Contact3 contact3) {
+				this.contact3 = contact3;
 			}
 
 			public static class ConversationDetail {
 
-				private Long timestamp;
+				private String script;
 
 				private String speaker;
 
-				private String script;
+				private Long timestamp;
 
-				private List<SummaryItem> summary1;
+				private List<SummaryItem2> summary1;
 
-				public Long getTimestamp() {
-					return this.timestamp;
+				public String getScript() {
+					return this.script;
 				}
 
-				public void setTimestamp(Long timestamp) {
-					this.timestamp = timestamp;
+				public void setScript(String script) {
+					this.script = script;
 				}
 
 				public String getSpeaker() {
@@ -501,29 +534,29 @@ public class DescribeJobResponse extends AcsResponse {
 					this.speaker = speaker;
 				}
 
-				public String getScript() {
-					return this.script;
+				public Long getTimestamp() {
+					return this.timestamp;
 				}
 
-				public void setScript(String script) {
-					this.script = script;
+				public void setTimestamp(Long timestamp) {
+					this.timestamp = timestamp;
 				}
 
-				public List<SummaryItem> getSummary1() {
+				public List<SummaryItem2> getSummary1() {
 					return this.summary1;
 				}
 
-				public void setSummary1(List<SummaryItem> summary1) {
+				public void setSummary1(List<SummaryItem2> summary1) {
 					this.summary1 = summary1;
 				}
 
-				public static class SummaryItem {
+				public static class SummaryItem2 {
 
 					private String category;
 
-					private String summaryName;
-
 					private String content;
+
+					private String summaryName;
 
 					public String getCategory() {
 						return this.category;
@@ -533,14 +566,6 @@ public class DescribeJobResponse extends AcsResponse {
 						this.category = category;
 					}
 
-					public String getSummaryName() {
-						return this.summaryName;
-					}
-
-					public void setSummaryName(String summaryName) {
-						this.summaryName = summaryName;
-					}
-
 					public String getContent() {
 						return this.content;
 					}
@@ -548,10 +573,18 @@ public class DescribeJobResponse extends AcsResponse {
 					public void setContent(String content) {
 						this.content = content;
 					}
+
+					public String getSummaryName() {
+						return this.summaryName;
+					}
+
+					public void setSummaryName(String summaryName) {
+						this.summaryName = summaryName;
+					}
 				}
 			}
 
-			public static class Contact2 {
+			public static class Contact3 {
 
 				private String contactId;
 
@@ -559,15 +592,15 @@ public class DescribeJobResponse extends AcsResponse {
 
 				private String honorific;
 
-				private String role;
+				private String jobId;
 
 				private String phoneNumber;
 
-				private String state;
-
 				private String referenceId;
 
-				private String jobId;
+				private String role;
+
+				private String state;
 
 				public String getContactId() {
 					return this.contactId;
@@ -593,12 +626,12 @@ public class DescribeJobResponse extends AcsResponse {
 					this.honorific = honorific;
 				}
 
-				public String getRole() {
-					return this.role;
+				public String getJobId() {
+					return this.jobId;
 				}
 
-				public void setRole(String role) {
-					this.role = role;
+				public void setJobId(String jobId) {
+					this.jobId = jobId;
 				}
 
 				public String getPhoneNumber() {
@@ -609,14 +642,6 @@ public class DescribeJobResponse extends AcsResponse {
 					this.phoneNumber = phoneNumber;
 				}
 
-				public String getState() {
-					return this.state;
-				}
-
-				public void setState(String state) {
-					this.state = state;
-				}
-
 				public String getReferenceId() {
 					return this.referenceId;
 				}
@@ -625,46 +650,21 @@ public class DescribeJobResponse extends AcsResponse {
 					this.referenceId = referenceId;
 				}
 
-				public String getJobId() {
-					return this.jobId;
+				public String getRole() {
+					return this.role;
 				}
 
-				public void setJobId(String jobId) {
-					this.jobId = jobId;
+				public void setRole(String role) {
+					this.role = role;
 				}
-			}
-		}
 
-		public static class SummaryItem3 {
+				public String getState() {
+					return this.state;
+				}
 
-			private String category;
-
-			private String summaryName;
-
-			private String content;
-
-			public String getCategory() {
-				return this.category;
-			}
-
-			public void setCategory(String category) {
-				this.category = category;
-			}
-
-			public String getSummaryName() {
-				return this.summaryName;
-			}
-
-			public void setSummaryName(String summaryName) {
-				this.summaryName = summaryName;
-			}
-
-			public String getContent() {
-				return this.content;
-			}
-
-			public void setContent(String content) {
-				this.content = content;
+				public void setState(String state) {
+					this.state = state;
+				}
 			}
 		}
 	}

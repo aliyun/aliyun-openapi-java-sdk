@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListInstancesResponse extends AcsResponse {
 
+	private String code;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
 	private List<Instance> instances;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class ListInstancesResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public List<Instance> getInstances() {
 		return this.instances;
 	}
@@ -87,21 +87,49 @@ public class ListInstancesResponse extends AcsResponse {
 
 	public static class Instance {
 
+		private String callCenterInstanceId;
+
+		private Long creationTime;
+
+		private String instanceDescription;
+
 		private String instanceId;
 
 		private String instanceName;
 
-		private String instanceDescription;
+		private Boolean isTemplateContainer;
 
 		private Integer maxConcurrentConversation;
 
 		private String owner;
 
-		private Long creationTime;
+		private String nluServiceType;
 
-		private String callCenterInstanceId;
+		private NluProfile nluProfile;
 
-		private Boolean isTemplateContainer;
+		public String getCallCenterInstanceId() {
+			return this.callCenterInstanceId;
+		}
+
+		public void setCallCenterInstanceId(String callCenterInstanceId) {
+			this.callCenterInstanceId = callCenterInstanceId;
+		}
+
+		public Long getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(Long creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getInstanceDescription() {
+			return this.instanceDescription;
+		}
+
+		public void setInstanceDescription(String instanceDescription) {
+			this.instanceDescription = instanceDescription;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -119,12 +147,12 @@ public class ListInstancesResponse extends AcsResponse {
 			this.instanceName = instanceName;
 		}
 
-		public String getInstanceDescription() {
-			return this.instanceDescription;
+		public Boolean getIsTemplateContainer() {
+			return this.isTemplateContainer;
 		}
 
-		public void setInstanceDescription(String instanceDescription) {
-			this.instanceDescription = instanceDescription;
+		public void setIsTemplateContainer(Boolean isTemplateContainer) {
+			this.isTemplateContainer = isTemplateContainer;
 		}
 
 		public Integer getMaxConcurrentConversation() {
@@ -143,28 +171,53 @@ public class ListInstancesResponse extends AcsResponse {
 			this.owner = owner;
 		}
 
-		public Long getCreationTime() {
-			return this.creationTime;
+		public String getNluServiceType() {
+			return this.nluServiceType;
 		}
 
-		public void setCreationTime(Long creationTime) {
-			this.creationTime = creationTime;
+		public void setNluServiceType(String nluServiceType) {
+			this.nluServiceType = nluServiceType;
 		}
 
-		public String getCallCenterInstanceId() {
-			return this.callCenterInstanceId;
+		public NluProfile getNluProfile() {
+			return this.nluProfile;
 		}
 
-		public void setCallCenterInstanceId(String callCenterInstanceId) {
-			this.callCenterInstanceId = callCenterInstanceId;
+		public void setNluProfile(NluProfile nluProfile) {
+			this.nluProfile = nluProfile;
 		}
 
-		public Boolean getIsTemplateContainer() {
-			return this.isTemplateContainer;
-		}
+		public static class NluProfile {
 
-		public void setIsTemplateContainer(Boolean isTemplateContainer) {
-			this.isTemplateContainer = isTemplateContainer;
+			private String endpoint;
+
+			private String accessKey;
+
+			private String secretKey;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getAccessKey() {
+				return this.accessKey;
+			}
+
+			public void setAccessKey(String accessKey) {
+				this.accessKey = accessKey;
+			}
+
+			public String getSecretKey() {
+				return this.secretKey;
+			}
+
+			public void setSecretKey(String secretKey) {
+				this.secretKey = secretKey;
+			}
 		}
 	}
 

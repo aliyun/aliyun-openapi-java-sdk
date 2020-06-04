@@ -16,6 +16,7 @@ package com.aliyuncs.outboundbot.transform.v20191226;
 
 import com.aliyuncs.outboundbot.model.v20191226.CreateInstanceResponse;
 import com.aliyuncs.outboundbot.model.v20191226.CreateInstanceResponse.Instance;
+import com.aliyuncs.outboundbot.model.v20191226.CreateInstanceResponse.Instance.NluProfile;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,19 +25,26 @@ public class CreateInstanceResponseUnmarshaller {
 	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext _ctx) {
 		
 		createInstanceResponse.setRequestId(_ctx.stringValue("CreateInstanceResponse.RequestId"));
-		createInstanceResponse.setSuccess(_ctx.booleanValue("CreateInstanceResponse.Success"));
 		createInstanceResponse.setCode(_ctx.stringValue("CreateInstanceResponse.Code"));
-		createInstanceResponse.setMessage(_ctx.stringValue("CreateInstanceResponse.Message"));
 		createInstanceResponse.setHttpStatusCode(_ctx.integerValue("CreateInstanceResponse.HttpStatusCode"));
+		createInstanceResponse.setMessage(_ctx.stringValue("CreateInstanceResponse.Message"));
+		createInstanceResponse.setSuccess(_ctx.booleanValue("CreateInstanceResponse.Success"));
 
 		Instance instance = new Instance();
+		instance.setCallCenterInstanceId(_ctx.stringValue("CreateInstanceResponse.Instance.CallCenterInstanceId"));
+		instance.setCreationTime(_ctx.longValue("CreateInstanceResponse.Instance.CreationTime"));
+		instance.setInstanceDescription(_ctx.stringValue("CreateInstanceResponse.Instance.InstanceDescription"));
 		instance.setInstanceId(_ctx.stringValue("CreateInstanceResponse.Instance.InstanceId"));
 		instance.setInstanceName(_ctx.stringValue("CreateInstanceResponse.Instance.InstanceName"));
-		instance.setInstanceDescription(_ctx.stringValue("CreateInstanceResponse.Instance.InstanceDescription"));
 		instance.setMaxConcurrentConversation(_ctx.integerValue("CreateInstanceResponse.Instance.MaxConcurrentConversation"));
 		instance.setOwner(_ctx.stringValue("CreateInstanceResponse.Instance.Owner"));
-		instance.setCreationTime(_ctx.longValue("CreateInstanceResponse.Instance.CreationTime"));
-		instance.setCallCenterInstanceId(_ctx.stringValue("CreateInstanceResponse.Instance.CallCenterInstanceId"));
+		instance.setNluServiceType(_ctx.stringValue("CreateInstanceResponse.Instance.NluServiceType"));
+
+		NluProfile nluProfile = new NluProfile();
+		nluProfile.setEndpoint(_ctx.stringValue("CreateInstanceResponse.Instance.NluProfile.Endpoint"));
+		nluProfile.setAccessKey(_ctx.stringValue("CreateInstanceResponse.Instance.NluProfile.AccessKey"));
+		nluProfile.setSecretKey(_ctx.stringValue("CreateInstanceResponse.Instance.NluProfile.SecretKey"));
+		instance.setNluProfile(nluProfile);
 		createInstanceResponse.setInstance(instance);
 	 
 	 	return createInstanceResponse;

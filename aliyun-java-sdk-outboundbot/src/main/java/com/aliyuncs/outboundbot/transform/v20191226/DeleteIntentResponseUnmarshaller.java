@@ -23,10 +23,10 @@ public class DeleteIntentResponseUnmarshaller {
 	public static DeleteIntentResponse unmarshall(DeleteIntentResponse deleteIntentResponse, UnmarshallerContext _ctx) {
 		
 		deleteIntentResponse.setRequestId(_ctx.stringValue("DeleteIntentResponse.RequestId"));
-		deleteIntentResponse.setSuccess(_ctx.booleanValue("DeleteIntentResponse.Success"));
 		deleteIntentResponse.setCode(_ctx.stringValue("DeleteIntentResponse.Code"));
-		deleteIntentResponse.setMessage(_ctx.stringValue("DeleteIntentResponse.Message"));
 		deleteIntentResponse.setHttpStatusCode(_ctx.integerValue("DeleteIntentResponse.HttpStatusCode"));
+		deleteIntentResponse.setMessage(_ctx.stringValue("DeleteIntentResponse.Message"));
+		deleteIntentResponse.setSuccess(_ctx.booleanValue("DeleteIntentResponse.Success"));
 	 
 	 	return deleteIntentResponse;
 	}
