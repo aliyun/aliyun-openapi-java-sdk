@@ -25,11 +25,7 @@ import com.aliyuncs.vcs.Endpoint;
 public class UpdateMonitorRequest extends RpcAcsRequest<UpdateMonitorResponse> {
 	   
 
-	private String deviceOperateType;
-
 	private String corpId;
-
-	private String picList;
 
 	private String description;
 
@@ -39,13 +35,19 @@ public class UpdateMonitorRequest extends RpcAcsRequest<UpdateMonitorResponse> {
 
 	private String attributeName;
 
+	private String attributeOperateType;
+
+	private String ruleExpression;
+
+	private String taskId;
+
+	private String deviceOperateType;
+
+	private String picList;
+
 	private String attributeValueList;
 
 	private String deviceList;
-
-	private String attributeOperateType;
-
-	private String taskId;
 	public UpdateMonitorRequest() {
 		super("Vcs", "2020-05-15", "UpdateMonitor", "vcs");
 		setMethod(MethodType.POST);
@@ -53,17 +55,6 @@ public class UpdateMonitorRequest extends RpcAcsRequest<UpdateMonitorResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDeviceOperateType() {
-		return this.deviceOperateType;
-	}
-
-	public void setDeviceOperateType(String deviceOperateType) {
-		this.deviceOperateType = deviceOperateType;
-		if(deviceOperateType != null){
-			putBodyParameter("DeviceOperateType", deviceOperateType);
-		}
 	}
 
 	public String getCorpId() {
@@ -74,17 +65,6 @@ public class UpdateMonitorRequest extends RpcAcsRequest<UpdateMonitorResponse> {
 		this.corpId = corpId;
 		if(corpId != null){
 			putBodyParameter("CorpId", corpId);
-		}
-	}
-
-	public String getPicList() {
-		return this.picList;
-	}
-
-	public void setPicList(String picList) {
-		this.picList = picList;
-		if(picList != null){
-			putBodyParameter("PicList", picList);
 		}
 	}
 
@@ -132,6 +112,61 @@ public class UpdateMonitorRequest extends RpcAcsRequest<UpdateMonitorResponse> {
 		}
 	}
 
+	public String getAttributeOperateType() {
+		return this.attributeOperateType;
+	}
+
+	public void setAttributeOperateType(String attributeOperateType) {
+		this.attributeOperateType = attributeOperateType;
+		if(attributeOperateType != null){
+			putBodyParameter("AttributeOperateType", attributeOperateType);
+		}
+	}
+
+	public String getRuleExpression() {
+		return this.ruleExpression;
+	}
+
+	public void setRuleExpression(String ruleExpression) {
+		this.ruleExpression = ruleExpression;
+		if(ruleExpression != null){
+			putBodyParameter("RuleExpression", ruleExpression);
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putBodyParameter("TaskId", taskId);
+		}
+	}
+
+	public String getDeviceOperateType() {
+		return this.deviceOperateType;
+	}
+
+	public void setDeviceOperateType(String deviceOperateType) {
+		this.deviceOperateType = deviceOperateType;
+		if(deviceOperateType != null){
+			putBodyParameter("DeviceOperateType", deviceOperateType);
+		}
+	}
+
+	public String getPicList() {
+		return this.picList;
+	}
+
+	public void setPicList(String picList) {
+		this.picList = picList;
+		if(picList != null){
+			putBodyParameter("PicList", picList);
+		}
+	}
+
 	public String getAttributeValueList() {
 		return this.attributeValueList;
 	}
@@ -151,28 +186,6 @@ public class UpdateMonitorRequest extends RpcAcsRequest<UpdateMonitorResponse> {
 		this.deviceList = deviceList;
 		if(deviceList != null){
 			putBodyParameter("DeviceList", deviceList);
-		}
-	}
-
-	public String getAttributeOperateType() {
-		return this.attributeOperateType;
-	}
-
-	public void setAttributeOperateType(String attributeOperateType) {
-		this.attributeOperateType = attributeOperateType;
-		if(attributeOperateType != null){
-			putBodyParameter("AttributeOperateType", attributeOperateType);
-		}
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putBodyParameter("TaskId", taskId);
 		}
 	}
 

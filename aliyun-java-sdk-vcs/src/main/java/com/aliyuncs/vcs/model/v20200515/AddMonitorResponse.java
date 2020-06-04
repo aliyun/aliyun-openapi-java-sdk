@@ -30,7 +30,7 @@ public class AddMonitorResponse extends AcsResponse {
 
 	private String message;
 
-	private String data;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,12 +56,25 @@ public class AddMonitorResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(Data data) {
 		this.data = data;
+	}
+
+	public static class Data {
+
+		private String taskId;
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
 	}
 
 	@Override

@@ -15,6 +15,7 @@
 package com.aliyuncs.vcs.transform.v20200515;
 
 import com.aliyuncs.vcs.model.v20200515.AddMonitorResponse;
+import com.aliyuncs.vcs.model.v20200515.AddMonitorResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,7 +26,10 @@ public class AddMonitorResponseUnmarshaller {
 		addMonitorResponse.setRequestId(_ctx.stringValue("AddMonitorResponse.RequestId"));
 		addMonitorResponse.setCode(_ctx.stringValue("AddMonitorResponse.Code"));
 		addMonitorResponse.setMessage(_ctx.stringValue("AddMonitorResponse.Message"));
-		addMonitorResponse.setData(_ctx.stringValue("AddMonitorResponse.Data"));
+
+		Data data = new Data();
+		data.setTaskId(_ctx.stringValue("AddMonitorResponse.Data.TaskId"));
+		addMonitorResponse.setData(data);
 	 
 	 	return addMonitorResponse;
 	}
