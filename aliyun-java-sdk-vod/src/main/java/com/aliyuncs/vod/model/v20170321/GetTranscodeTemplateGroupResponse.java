@@ -171,6 +171,10 @@ public class GetTranscodeTemplateGroupResponse extends AcsResponse {
 
 			private String rotate;
 
+			private String type;
+
+			private String userData;
+
 			private List<String> watermarkIds;
 
 			public String getTranscodeTemplateId() {
@@ -299,6 +303,22 @@ public class GetTranscodeTemplateGroupResponse extends AcsResponse {
 
 			public void setRotate(String rotate) {
 				this.rotate = rotate;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getUserData() {
+				return this.userData;
+			}
+
+			public void setUserData(String userData) {
+				this.userData = userData;
 			}
 
 			public List<String> getWatermarkIds() {

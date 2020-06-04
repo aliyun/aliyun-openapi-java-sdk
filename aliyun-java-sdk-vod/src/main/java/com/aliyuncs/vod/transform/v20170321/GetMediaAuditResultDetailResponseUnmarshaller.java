@@ -41,6 +41,12 @@ public class GetMediaAuditResultDetailResponseUnmarshaller {
 			listItem.setTerrorismScore(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].TerrorismScore"));
 			listItem.setTimestamp(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].Timestamp"));
 			listItem.setUrl(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].Url"));
+			listItem.setAdLabel(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].AdLabel"));
+			listItem.setAdScore(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].AdScore"));
+			listItem.setLiveLabel(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].LiveLabel"));
+			listItem.setLiveScore(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].LiveScore"));
+			listItem.setLogoLabel(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].LogoLabel"));
+			listItem.setLogoScore(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].LogoScore"));
 
 			list.add(listItem);
 		}

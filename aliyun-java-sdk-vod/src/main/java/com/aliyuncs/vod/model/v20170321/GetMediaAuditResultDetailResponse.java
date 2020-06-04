@@ -81,6 +81,18 @@ public class GetMediaAuditResultDetailResponse extends AcsResponse {
 
 			private String url;
 
+			private String adLabel;
+
+			private String adScore;
+
+			private String liveLabel;
+
+			private String liveScore;
+
+			private String logoLabel;
+
+			private String logoScore;
+
 			public String getPornLabel() {
 				return this.pornLabel;
 			}
@@ -127,6 +139,54 @@ public class GetMediaAuditResultDetailResponse extends AcsResponse {
 
 			public void setUrl(String url) {
 				this.url = url;
+			}
+
+			public String getAdLabel() {
+				return this.adLabel;
+			}
+
+			public void setAdLabel(String adLabel) {
+				this.adLabel = adLabel;
+			}
+
+			public String getAdScore() {
+				return this.adScore;
+			}
+
+			public void setAdScore(String adScore) {
+				this.adScore = adScore;
+			}
+
+			public String getLiveLabel() {
+				return this.liveLabel;
+			}
+
+			public void setLiveLabel(String liveLabel) {
+				this.liveLabel = liveLabel;
+			}
+
+			public String getLiveScore() {
+				return this.liveScore;
+			}
+
+			public void setLiveScore(String liveScore) {
+				this.liveScore = liveScore;
+			}
+
+			public String getLogoLabel() {
+				return this.logoLabel;
+			}
+
+			public void setLogoLabel(String logoLabel) {
+				this.logoLabel = logoLabel;
+			}
+
+			public String getLogoScore() {
+				return this.logoScore;
+			}
+
+			public void setLogoScore(String logoScore) {
+				this.logoScore = logoScore;
 			}
 		}
 	}

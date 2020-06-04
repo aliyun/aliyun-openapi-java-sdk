@@ -58,6 +58,8 @@ public class GetTranscodeTemplateGroupResponseUnmarshaller {
 			transcodeTemplate.setTranscodeFileRegular(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TranscodeFileRegular"));
 			transcodeTemplate.setClip(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Clip"));
 			transcodeTemplate.setRotate(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Rotate"));
+			transcodeTemplate.setType(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Type"));
+			transcodeTemplate.setUserData(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].UserData"));
 
 			List<String> watermarkIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].WatermarkIds.Length"); j++) {

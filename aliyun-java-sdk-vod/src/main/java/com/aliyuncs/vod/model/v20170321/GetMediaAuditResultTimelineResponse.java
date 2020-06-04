@@ -51,6 +51,12 @@ public class GetMediaAuditResultTimelineResponse extends AcsResponse {
 
 		private List<TerrorismItem> terrorism;
 
+		private List<LogoItem> logo;
+
+		private List<LiveItem> live;
+
+		private List<AdItem> ad;
+
 		public List<PornItem> getPorn() {
 			return this.porn;
 		}
@@ -65,6 +71,30 @@ public class GetMediaAuditResultTimelineResponse extends AcsResponse {
 
 		public void setTerrorism(List<TerrorismItem> terrorism) {
 			this.terrorism = terrorism;
+		}
+
+		public List<LogoItem> getLogo() {
+			return this.logo;
+		}
+
+		public void setLogo(List<LogoItem> logo) {
+			this.logo = logo;
+		}
+
+		public List<LiveItem> getLive() {
+			return this.live;
+		}
+
+		public void setLive(List<LiveItem> live) {
+			this.live = live;
+		}
+
+		public List<AdItem> getAd() {
+			return this.ad;
+		}
+
+		public void setAd(List<AdItem> ad) {
+			this.ad = ad;
 		}
 
 		public static class PornItem {
@@ -101,6 +131,105 @@ public class GetMediaAuditResultTimelineResponse extends AcsResponse {
 		}
 
 		public static class TerrorismItem {
+
+			private String label;
+
+			private String score;
+
+			private String timestamp;
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
+			}
+
+			public String getScore() {
+				return this.score;
+			}
+
+			public void setScore(String score) {
+				this.score = score;
+			}
+
+			public String getTimestamp() {
+				return this.timestamp;
+			}
+
+			public void setTimestamp(String timestamp) {
+				this.timestamp = timestamp;
+			}
+		}
+
+		public static class LogoItem {
+
+			private String label;
+
+			private String score;
+
+			private String timestamp;
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
+			}
+
+			public String getScore() {
+				return this.score;
+			}
+
+			public void setScore(String score) {
+				this.score = score;
+			}
+
+			public String getTimestamp() {
+				return this.timestamp;
+			}
+
+			public void setTimestamp(String timestamp) {
+				this.timestamp = timestamp;
+			}
+		}
+
+		public static class LiveItem {
+
+			private String label;
+
+			private String score;
+
+			private String timestamp;
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
+			}
+
+			public String getScore() {
+				return this.score;
+			}
+
+			public void setScore(String score) {
+				this.score = score;
+			}
+
+			public String getTimestamp() {
+				return this.timestamp;
+			}
+
+			public void setTimestamp(String timestamp) {
+				this.timestamp = timestamp;
+			}
+		}
+
+		public static class AdItem {
 
 			private String label;
 

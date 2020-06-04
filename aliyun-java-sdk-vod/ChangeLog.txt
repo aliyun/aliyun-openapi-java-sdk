@@ -1,3 +1,8 @@
+2020-06-04 Version: 2.15.9
+- Add SubmitMediaDNADeleteJob and ListMediaDNADeleteJob.
+- Modify GetMediaAuditResult interface, support ad logo and live result.
+- Modify GetMediaAuditResultTimeline interface, support ad logo and live result.
+
 2019-10-23 Version: 2.15.8
 - Add a new api named SubmitDynamicImageJob capture a certain part of the video as a dynamic image.
 - Add a new api named SubmitWorkflowJob to initiate the VoD workflow processing for audio and video.
