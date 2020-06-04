@@ -1,4 +1,7 @@
-﻿2020-04-01 Version: 4.5.1
+﻿2020-06-05 Version: 4.5.2
+1, Add return to resolve no error message problem
+
+2020-04-01 Version: 4.5.1
 1, Support for basic types in list
 
 2020-02-07 Version: 4.5.0
