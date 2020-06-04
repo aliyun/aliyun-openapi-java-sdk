@@ -1,3 +1,6 @@
+2020-06-04 Version: 4.19.7
+- Supported Eni Trunking.
+
 2020-05-19 Version: 4.19.6
 - ModifyInstanceVpcAttribute supports modification of instance vpc.
 

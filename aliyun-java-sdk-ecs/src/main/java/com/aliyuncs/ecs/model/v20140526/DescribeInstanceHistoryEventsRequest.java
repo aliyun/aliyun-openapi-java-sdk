@@ -34,6 +34,8 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 
 	private Integer pageNumber;
 
+	private String impactLevel;
+
 	private Integer pageSize;
 
 	private List<String> instanceEventCycleStatuss;
@@ -109,6 +111,17 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getImpactLevel() {
+		return this.impactLevel;
+	}
+
+	public void setImpactLevel(String impactLevel) {
+		this.impactLevel = impactLevel;
+		if(impactLevel != null){
+			putQueryParameter("ImpactLevel", impactLevel);
 		}
 	}
 
