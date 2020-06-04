@@ -89,7 +89,7 @@ public class ListOutboundOrderCasesResponse extends AcsResponse {
 
 		private String id;
 
-		private String operateQuantity;
+		private Integer operateQuantity;
 
 		private String caseCode;
 
@@ -109,11 +109,11 @@ public class ListOutboundOrderCasesResponse extends AcsResponse {
 			this.id = id;
 		}
 
-		public String getOperateQuantity() {
+		public Integer getOperateQuantity() {
 			return this.operateQuantity;
 		}
 
-		public void setOperateQuantity(String operateQuantity) {
+		public void setOperateQuantity(Integer operateQuantity) {
 			this.operateQuantity = operateQuantity;
 		}
 

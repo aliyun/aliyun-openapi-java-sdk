@@ -42,6 +42,7 @@ public class ListInboundOrderCasesResponseUnmarshaller {
 			caseBiz.setBeConfirmInboundCase(_ctx.booleanValue("ListInboundOrderCasesResponse.Cases["+ i +"].BeConfirmInboundCase"));
 			caseBiz.setBeConfirmOutboundCase(_ctx.booleanValue("ListInboundOrderCasesResponse.Cases["+ i +"].BeConfirmOutboundCase"));
 			caseBiz.setApplyStatus(_ctx.stringValue("ListInboundOrderCasesResponse.Cases["+ i +"].ApplyStatus"));
+			caseBiz.setPreboxingQuantity(_ctx.integerValue("ListInboundOrderCasesResponse.Cases["+ i +"].PreboxingQuantity"));
 
 			cases.add(caseBiz);
 		}

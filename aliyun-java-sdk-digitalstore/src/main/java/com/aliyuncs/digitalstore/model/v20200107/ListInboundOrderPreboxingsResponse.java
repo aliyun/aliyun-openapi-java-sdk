@@ -97,8 +97,6 @@ public class ListInboundOrderPreboxingsResponse extends AcsResponse {
 
 		private String caseCode;
 
-		private Integer preboxingQuantity;
-
 		public String getOrderId() {
 			return this.orderId;
 		}
@@ -257,14 +255,6 @@ public class ListInboundOrderPreboxingsResponse extends AcsResponse {
 
 		public void setCaseCode(String caseCode) {
 			this.caseCode = caseCode;
-		}
-
-		public Integer getPreboxingQuantity() {
-			return this.preboxingQuantity;
-		}
-
-		public void setPreboxingQuantity(Integer preboxingQuantity) {
-			this.preboxingQuantity = preboxingQuantity;
 		}
 	}
 

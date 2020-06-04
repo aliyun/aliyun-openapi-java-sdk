@@ -101,6 +101,8 @@ public class ListInboundOrderCasesResponse extends AcsResponse {
 
 		private String applyStatus;
 
+		private Integer preboxingQuantity;
+
 		public String getId() {
 			return this.id;
 		}
@@ -155,6 +157,14 @@ public class ListInboundOrderCasesResponse extends AcsResponse {
 
 		public void setApplyStatus(String applyStatus) {
 			this.applyStatus = applyStatus;
+		}
+
+		public Integer getPreboxingQuantity() {
+			return this.preboxingQuantity;
+		}
+
+		public void setPreboxingQuantity(Integer preboxingQuantity) {
+			this.preboxingQuantity = preboxingQuantity;
 		}
 	}
 

@@ -52,7 +52,6 @@ public class ListInboundOrderPreboxingsResponseUnmarshaller {
 			inboundOrderPreboxingBiz.setSKUName(_ctx.stringValue("ListInboundOrderPreboxingsResponse.InboundOrderPreboxings["+ i +"].SKUName"));
 			inboundOrderPreboxingBiz.setSKUId(_ctx.stringValue("ListInboundOrderPreboxingsResponse.InboundOrderPreboxings["+ i +"].SKUId"));
 			inboundOrderPreboxingBiz.setCaseCode(_ctx.stringValue("ListInboundOrderPreboxingsResponse.InboundOrderPreboxings["+ i +"].CaseCode"));
-			inboundOrderPreboxingBiz.setPreboxingQuantity(_ctx.integerValue("ListInboundOrderPreboxingsResponse.InboundOrderPreboxings["+ i +"].PreboxingQuantity"));
 
 			inboundOrderPreboxings.add(inboundOrderPreboxingBiz);
 		}
