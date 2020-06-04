@@ -207,6 +207,10 @@ public class DefaultAcsClient implements IAcsClient {
     private <T extends AcsResponse> T parseAcsResponse(AcsRequest<T> request, HttpResponse baseResponse)
             throws ServerException, ClientException {
         FormatType format = baseResponse.getHttpContentType();
+        if (FormatType.JSON != format && FormatType.XML != format) {
+            throw new ClientException(String.format("Server response has a bad format type: %s;\nThe original return is: %s;" ,
+                    format, baseResponse.getHttpContentString()));
+        }
         if (baseResponse.isSuccess()) {
             return readResponse(request.getResponseClass(), baseResponse, format);
         } else {
