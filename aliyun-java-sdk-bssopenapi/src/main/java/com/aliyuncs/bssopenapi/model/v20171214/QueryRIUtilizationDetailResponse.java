@@ -133,6 +133,10 @@ public class QueryRIUtilizationDetailResponse extends AcsResponse {
 
 			private String deductedProductDetail;
 
+			private Float deductQuantity;
+
+			private Float deductFactorTotal;
+
 			public String getRIInstanceId() {
 				return this.rIInstanceId;
 			}
@@ -187,6 +191,22 @@ public class QueryRIUtilizationDetailResponse extends AcsResponse {
 
 			public void setDeductedProductDetail(String deductedProductDetail) {
 				this.deductedProductDetail = deductedProductDetail;
+			}
+
+			public Float getDeductQuantity() {
+				return this.deductQuantity;
+			}
+
+			public void setDeductQuantity(Float deductQuantity) {
+				this.deductQuantity = deductQuantity;
+			}
+
+			public Float getDeductFactorTotal() {
+				return this.deductFactorTotal;
+			}
+
+			public void setDeductFactorTotal(Float deductFactorTotal) {
+				this.deductFactorTotal = deductFactorTotal;
 			}
 		}
 	}

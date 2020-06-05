@@ -37,7 +37,7 @@ public class QueryAccountBillRequest extends RpcAcsRequest<QueryAccountBillRespo
 
 	private Integer pageSize;
 	public QueryAccountBillRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryAccountBill");
+		super("BssOpenApi", "2017-12-14", "QueryAccountBill", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

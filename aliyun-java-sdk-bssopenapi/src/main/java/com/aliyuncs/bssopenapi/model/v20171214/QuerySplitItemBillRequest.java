@@ -22,32 +22,24 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class QuerySettlementBillRequest extends RpcAcsRequest<QuerySettlementBillResponse> {
+public class QuerySplitItemBillRequest extends RpcAcsRequest<QuerySplitItemBillResponse> {
 	   
 
 	private String productCode;
 
-	private Boolean isHideZeroCharge;
-
 	private String subscriptionType;
 
-	private String endTime;
-
 	private String billingCycle;
-
-	private String startTime;
 
 	private Long ownerId;
 
 	private Integer pageNum;
 
-	private String type;
-
 	private String productType;
 
 	private Integer pageSize;
-	public QuerySettlementBillRequest() {
-		super("BssOpenApi", "2017-12-14", "QuerySettlementBill", "bssopenapi");
+	public QuerySplitItemBillRequest() {
+		super("BssOpenApi", "2017-12-14", "QuerySplitItemBill", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,17 +58,6 @@ public class QuerySettlementBillRequest extends RpcAcsRequest<QuerySettlementBil
 		}
 	}
 
-	public Boolean getIsHideZeroCharge() {
-		return this.isHideZeroCharge;
-	}
-
-	public void setIsHideZeroCharge(Boolean isHideZeroCharge) {
-		this.isHideZeroCharge = isHideZeroCharge;
-		if(isHideZeroCharge != null){
-			putQueryParameter("IsHideZeroCharge", isHideZeroCharge.toString());
-		}
-	}
-
 	public String getSubscriptionType() {
 		return this.subscriptionType;
 	}
@@ -88,17 +69,6 @@ public class QuerySettlementBillRequest extends RpcAcsRequest<QuerySettlementBil
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public String getBillingCycle() {
 		return this.billingCycle;
 	}
@@ -107,17 +77,6 @@ public class QuerySettlementBillRequest extends RpcAcsRequest<QuerySettlementBil
 		this.billingCycle = billingCycle;
 		if(billingCycle != null){
 			putQueryParameter("BillingCycle", billingCycle);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -140,17 +99,6 @@ public class QuerySettlementBillRequest extends RpcAcsRequest<QuerySettlementBil
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
 		}
 	}
 
@@ -177,8 +125,8 @@ public class QuerySettlementBillRequest extends RpcAcsRequest<QuerySettlementBil
 	}
 
 	@Override
-	public Class<QuerySettlementBillResponse> getResponseClass() {
-		return QuerySettlementBillResponse.class;
+	public Class<QuerySplitItemBillResponse> getResponseClass() {
+		return QuerySplitItemBillResponse.class;
 	}
 
 }

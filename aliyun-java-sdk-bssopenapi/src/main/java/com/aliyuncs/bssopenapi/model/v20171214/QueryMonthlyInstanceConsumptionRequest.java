@@ -39,7 +39,7 @@ public class QueryMonthlyInstanceConsumptionRequest extends RpcAcsRequest<QueryM
 
 	private Integer pageSize;
 	public QueryMonthlyInstanceConsumptionRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryMonthlyInstanceConsumption");
+		super("BssOpenApi", "2017-12-14", "QueryMonthlyInstanceConsumption", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

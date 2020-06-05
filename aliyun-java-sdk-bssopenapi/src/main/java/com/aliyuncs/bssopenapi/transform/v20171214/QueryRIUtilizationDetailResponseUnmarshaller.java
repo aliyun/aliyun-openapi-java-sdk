@@ -47,6 +47,8 @@ public class QueryRIUtilizationDetailResponseUnmarshaller {
 			detailListItem.setDeductDate(_ctx.stringValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductDate"));
 			detailListItem.setDeductHours(_ctx.stringValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductHours"));
 			detailListItem.setDeductedProductDetail(_ctx.stringValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductedProductDetail"));
+			detailListItem.setDeductQuantity(_ctx.floatValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductQuantity"));
+			detailListItem.setDeductFactorTotal(_ctx.floatValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductFactorTotal"));
 
 			detailList.add(detailListItem);
 		}

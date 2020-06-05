@@ -35,7 +35,7 @@ public class RenewResourcePackageRequest extends RpcAcsRequest<RenewResourcePack
 
 	private String pricingCycle;
 	public RenewResourcePackageRequest() {
-		super("BssOpenApi", "2017-12-14", "RenewResourcePackage");
+		super("BssOpenApi", "2017-12-14", "RenewResourcePackage", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

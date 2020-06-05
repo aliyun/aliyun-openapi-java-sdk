@@ -30,8 +30,6 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 
 	private Integer processWay;
 
-	private Long callerBid;
-
 	private Long ownerId;
 
 	private Long invoiceAmount;
@@ -45,10 +43,8 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 	private Long customerId;
 
 	private List<Long> selectedIdss;
-
-	private Long callerUid;
 	public ApplyInvoiceRequest() {
-		super("BssOpenApi", "2017-12-14", "ApplyInvoice");
+		super("BssOpenApi", "2017-12-14", "ApplyInvoice", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -75,17 +71,6 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 		this.processWay = processWay;
 		if(processWay != null){
 			putQueryParameter("ProcessWay", processWay.toString());
-		}
-	}
-
-	public Long getCallerBid() {
-		return this.callerBid;
-	}
-
-	public void setCallerBid(Long callerBid) {
-		this.callerBid = callerBid;
-		if(callerBid != null){
-			putQueryParameter("callerBid", callerBid.toString());
 		}
 	}
 
@@ -166,17 +151,6 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 				putQueryParameter("SelectedIds." + (i + 1) , selectedIdss.get(i));
 			}
 		}	
-	}
-
-	public Long getCallerUid() {
-		return this.callerUid;
-	}
-
-	public void setCallerUid(Long callerUid) {
-		this.callerUid = callerUid;
-		if(callerUid != null){
-			putQueryParameter("callerUid", callerUid.toString());
-		}
 	}
 
 	@Override

@@ -29,8 +29,8 @@ public class EnableBillGenerationRequest extends RpcAcsRequest<EnableBillGenerat
 
 	private Long ownerId;
 	public EnableBillGenerationRequest() {
-		super("BssOpenApi", "2017-12-14", "EnableBillGeneration");
-		setMethod(MethodType.PUT);
+		super("BssOpenApi", "2017-12-14", "EnableBillGeneration", "bssopenapi");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

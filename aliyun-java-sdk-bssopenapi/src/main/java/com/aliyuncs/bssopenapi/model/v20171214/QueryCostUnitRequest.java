@@ -33,7 +33,7 @@ public class QueryCostUnitRequest extends RpcAcsRequest<QueryCostUnitResponse> {
 
 	private Long ownerUid;
 	public QueryCostUnitRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryCostUnit");
+		super("BssOpenApi", "2017-12-14", "QueryCostUnit", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

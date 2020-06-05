@@ -25,29 +25,14 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class QueryCustomerAddressListRequest extends RpcAcsRequest<QueryCustomerAddressListResponse> {
 	   
 
-	private Long callerBid;
-
 	private Long ownerId;
-
-	private Long callerUid;
 	public QueryCustomerAddressListRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryCustomerAddressList");
+		super("BssOpenApi", "2017-12-14", "QueryCustomerAddressList", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getCallerBid() {
-		return this.callerBid;
-	}
-
-	public void setCallerBid(Long callerBid) {
-		this.callerBid = callerBid;
-		if(callerBid != null){
-			putQueryParameter("callerBid", callerBid.toString());
-		}
 	}
 
 	public Long getOwnerId() {
@@ -58,17 +43,6 @@ public class QueryCustomerAddressListRequest extends RpcAcsRequest<QueryCustomer
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Long getCallerUid() {
-		return this.callerUid;
-	}
-
-	public void setCallerUid(Long callerUid) {
-		this.callerUid = callerUid;
-		if(callerUid != null){
-			putQueryParameter("callerUid", callerUid.toString());
 		}
 	}
 

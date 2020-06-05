@@ -37,7 +37,7 @@ public class QueryResourcePackageInstancesRequest extends RpcAcsRequest<QueryRes
 
 	private Integer pageSize;
 	public QueryResourcePackageInstancesRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryResourcePackageInstances");
+		super("BssOpenApi", "2017-12-14", "QueryResourcePackageInstances", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
