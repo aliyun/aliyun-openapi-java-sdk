@@ -34,6 +34,8 @@ public class PutAppConfigAndSaveRequest extends RpcAcsRequest<PutAppConfigAndSav
 	private String appCode;
 
 	private String apMac;
+
+	private String configureType;
 	public PutAppConfigAndSaveRequest() {
 		super("cloudwifi-pop", "2019-11-18", "PutAppConfigAndSave", "cloudap");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class PutAppConfigAndSaveRequest extends RpcAcsRequest<PutAppConfigAndSav
 		this.apMac = apMac;
 		if(apMac != null){
 			putQueryParameter("ApMac", apMac);
+		}
+	}
+
+	public String getConfigureType() {
+		return this.configureType;
+	}
+
+	public void setConfigureType(String configureType) {
+		this.configureType = configureType;
+		if(configureType != null){
+			putQueryParameter("ConfigureType", configureType);
 		}
 	}
 
