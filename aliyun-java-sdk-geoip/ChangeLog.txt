@@ -1,3 +1,6 @@
+2020-06-08 Version: 1.0.3
+- Support offline instance.
+
 2020-04-23 Version: 1.0.2
 - Add location info.
 
