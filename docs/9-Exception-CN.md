@@ -1,4 +1,4 @@
-[← 日志](8-Log-CN.md) | 异常[(English)](9-Exception-EN.md) | [首页 →](../README-CN.md)
+[← 日志](8-Log-CN.md) | 异常[(English)](9-Exception-EN.md) | [Endpoint →](10-Endpoint-CN.md)
 ***
 
 # 问题
