@@ -1,4 +1,4 @@
-[← Log](8-Log-EN.md) | Exception[(中文)](9-Exception-CN.md) |[Home →](../README.md)
+[← Log](8-Log-EN.md) | Exception[(中文)](9-Exception-CN.md) |[Endpoint →](10-Endpoint-EN.md)
 ***
 
 # Questions
