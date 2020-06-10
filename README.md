@@ -125,6 +125,7 @@ public class Main {
 * [Debug](./docs/7-Debug-EN.md)
 * [Log](./docs/8-Log-EN.md)
 * [Exception](./docs/9-Exception-EN.md)
+* [Endpoint](./docs/10-Endpoint-EN.md)
 
 
 ## Issues
