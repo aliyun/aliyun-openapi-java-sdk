@@ -37,7 +37,7 @@ public class ConvertChargeTypeRequest extends RpcAcsRequest<ConvertChargeTypeRes
 
 	private String instanceId;
 	public ConvertChargeTypeRequest() {
-		super("BssOpenApi", "2017-12-14", "ConvertChargeType", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "ConvertChargeType");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

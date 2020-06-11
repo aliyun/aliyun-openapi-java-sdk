@@ -27,7 +27,7 @@ public class QueryMonthlyBillRequest extends RpcAcsRequest<QueryMonthlyBillRespo
 
 	private String billingCycle;
 	public QueryMonthlyBillRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryMonthlyBill", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QueryMonthlyBill");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

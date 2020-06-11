@@ -31,7 +31,7 @@ public class SetResellerUserStatusRequest extends RpcAcsRequest<SetResellerUserS
 
 	private String status;
 	public SetResellerUserStatusRequest() {
-		super("BssOpenApi", "2017-12-14", "SetResellerUserStatus", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "SetResellerUserStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

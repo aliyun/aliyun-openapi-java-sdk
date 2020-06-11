@@ -1,3 +1,6 @@
+2020-06-11 Version: 1.5.7
+- Support ServicePeriodUnit in QueryInstanceBill.
+
 2020-06-05 Version: 1.5.6
 - Support split bill.
 

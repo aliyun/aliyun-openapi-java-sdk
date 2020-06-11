@@ -44,7 +44,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String renewalStatus;
 	public CreateInstanceRequest() {
-		super("BssOpenApi", "2017-12-14", "CreateInstance", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "CreateInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

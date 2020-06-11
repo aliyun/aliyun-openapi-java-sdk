@@ -41,7 +41,7 @@ public class SetRenewalRequest extends RpcAcsRequest<SetRenewalResponse> {
 
 	private String renewalPeriodUnit;
 	public SetRenewalRequest() {
-		super("BssOpenApi", "2017-12-14", "SetRenewal", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "SetRenewal");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class SubscribeBillToOSSRequest extends RpcAcsRequest<SubscribeBillToOSSR
 
 	private String multAccountRelSubscribe;
 	public SubscribeBillToOSSRequest() {
-		super("BssOpenApi", "2017-12-14", "SubscribeBillToOSS", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "SubscribeBillToOSS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

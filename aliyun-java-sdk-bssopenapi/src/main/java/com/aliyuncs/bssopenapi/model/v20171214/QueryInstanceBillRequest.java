@@ -47,7 +47,7 @@ public class QueryInstanceBillRequest extends RpcAcsRequest<QueryInstanceBillRes
 
 	private Integer pageSize;
 	public QueryInstanceBillRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryInstanceBill", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QueryInstanceBill");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

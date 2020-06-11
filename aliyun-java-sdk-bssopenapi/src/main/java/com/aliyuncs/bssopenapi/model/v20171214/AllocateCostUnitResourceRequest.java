@@ -36,7 +36,7 @@ public class AllocateCostUnitResourceRequest extends RpcAcsRequest<AllocateCostU
 
 	private Long toUnitUserId;
 	public AllocateCostUnitResourceRequest() {
-		super("BssOpenApi", "2017-12-14", "AllocateCostUnitResource", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "AllocateCostUnitResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

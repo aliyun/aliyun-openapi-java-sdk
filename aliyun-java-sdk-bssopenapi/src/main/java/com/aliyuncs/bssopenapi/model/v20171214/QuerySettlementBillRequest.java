@@ -47,7 +47,7 @@ public class QuerySettlementBillRequest extends RpcAcsRequest<QuerySettlementBil
 
 	private Integer pageSize;
 	public QuerySettlementBillRequest() {
-		super("BssOpenApi", "2017-12-14", "QuerySettlementBill", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QuerySettlementBill");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DescribePricingModuleRequest extends RpcAcsRequest<DescribePricingM
 
 	private String productType;
 	public DescribePricingModuleRequest() {
-		super("BssOpenApi", "2017-12-14", "DescribePricingModule", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "DescribePricingModule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

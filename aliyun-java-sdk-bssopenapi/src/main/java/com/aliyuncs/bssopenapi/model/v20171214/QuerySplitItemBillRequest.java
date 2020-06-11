@@ -39,7 +39,7 @@ public class QuerySplitItemBillRequest extends RpcAcsRequest<QuerySplitItemBillR
 
 	private Integer pageSize;
 	public QuerySplitItemBillRequest() {
-		super("BssOpenApi", "2017-12-14", "QuerySplitItemBill", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QuerySplitItemBill");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

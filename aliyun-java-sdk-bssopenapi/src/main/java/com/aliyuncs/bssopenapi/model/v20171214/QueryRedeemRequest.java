@@ -35,7 +35,7 @@ public class QueryRedeemRequest extends RpcAcsRequest<QueryRedeemResponse> {
 
 	private Integer pageSize;
 	public QueryRedeemRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryRedeem", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QueryRedeem");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
