@@ -66,6 +66,7 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSMutableContent" , pushTasks.get(depth1).getIOSMutableContent());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationBarPriority" , pushTasks.get(depth1).getAndroidNotificationBarPriority());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".ExpireTime" , pushTasks.get(depth1).getExpireTime());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationVivoChannel" , pushTasks.get(depth1).getAndroidNotificationVivoChannel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidPopupBody" , pushTasks.get(depth1).getAndroidPopupBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSNotificationCategory" , pushTasks.get(depth1).getIOSNotificationCategory());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationXiaomiChannel" , pushTasks.get(depth1).getAndroidNotificationXiaomiChannel());
@@ -141,6 +142,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 		private Integer androidNotificationBarPriority;
 
 		private String expireTime;
+
+		private String androidNotificationVivoChannel;
 
 		private String androidPopupBody;
 
@@ -338,6 +341,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setExpireTime(String expireTime) {
 			this.expireTime = expireTime;
+		}
+
+		public String getAndroidNotificationVivoChannel() {
+			return this.androidNotificationVivoChannel;
+		}
+
+		public void setAndroidNotificationVivoChannel(String androidNotificationVivoChannel) {
+			this.androidNotificationVivoChannel = androidNotificationVivoChannel;
 		}
 
 		public String getAndroidPopupBody() {

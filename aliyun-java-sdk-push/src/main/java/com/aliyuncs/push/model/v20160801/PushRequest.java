@@ -55,6 +55,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String expireTime;
 
+	private String androidNotificationVivoChannel;
+
 	private String iOSNotificationCategory;
 
 	private String androidNotificationXiaomiChannel;
@@ -285,6 +287,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.expireTime = expireTime;
 		if(expireTime != null){
 			putQueryParameter("ExpireTime", expireTime);
+		}
+	}
+
+	public String getAndroidNotificationVivoChannel() {
+		return this.androidNotificationVivoChannel;
+	}
+
+	public void setAndroidNotificationVivoChannel(String androidNotificationVivoChannel) {
+		this.androidNotificationVivoChannel = androidNotificationVivoChannel;
+		if(androidNotificationVivoChannel != null){
+			putQueryParameter("AndroidNotificationVivoChannel", androidNotificationVivoChannel);
 		}
 	}
 
