@@ -23,15 +23,7 @@ import com.aliyuncs.rdc.Endpoint;
  * @version 
  */
 public class CreateEnterpriseRequest extends RpcAcsRequest<CreateEnterpriseResponse> {
-	
-	public CreateEnterpriseRequest() {
-		super("Rdc", "2018-08-21", "CreateEnterprise");
-		setMethod(MethodType.POST);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String emails;
 
@@ -42,6 +34,14 @@ public class CreateEnterpriseRequest extends RpcAcsRequest<CreateEnterpriseRespo
 	private String name;
 
 	private String description;
+	public CreateEnterpriseRequest() {
+		super("Rdc", "2018-08-21", "CreateEnterprise");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getEmails() {
 		return this.emails;
@@ -65,29 +65,10 @@ public class CreateEnterpriseRequest extends RpcAcsRequest<CreateEnterpriseRespo
 		}
 	}
 
-	public String getBizDomain() {
-		return this.domain;
-	}
-
-	public void setBizDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizDomain instead of this.
-	 */
-	@Deprecated
 	public String getDomain() {
 		return this.domain;
 	}
 
-	/**
-	 * @deprecated use setBizDomain instead of this.
-	 */
-	@Deprecated
 	public void setDomain(String domain) {
 		this.domain = domain;
 		if(domain != null){

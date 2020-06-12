@@ -15,6 +15,7 @@
 package com.aliyuncs.rdc.model.v20180821;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rdc.Endpoint;
 
 /**
@@ -22,18 +23,15 @@ import com.aliyuncs.rdc.Endpoint;
  * @version 
  */
 public class SearchWorkitemRequest extends RpcAcsRequest<SearchWorkitemResponse> {
-	
-	public SearchWorkitemRequest() {
-		super("Rdc", "2018-08-21", "SearchWorkitem");
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer sprintId;
 
+	private String createdAtEnd;
+
 	private String corpIdentifier;
+
+	private String createdAtStart;
 
 	private Integer toPage;
 
@@ -42,6 +40,14 @@ public class SearchWorkitemRequest extends RpcAcsRequest<SearchWorkitemResponse>
 	private String stamp;
 
 	private Integer aKProjectId;
+	public SearchWorkitemRequest() {
+		super("Rdc", "2018-08-21", "SearchWorkitem");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getSprintId() {
 		return this.sprintId;
@@ -54,6 +60,17 @@ public class SearchWorkitemRequest extends RpcAcsRequest<SearchWorkitemResponse>
 		}
 	}
 
+	public String getCreatedAtEnd() {
+		return this.createdAtEnd;
+	}
+
+	public void setCreatedAtEnd(String createdAtEnd) {
+		this.createdAtEnd = createdAtEnd;
+		if(createdAtEnd != null){
+			putBodyParameter("CreatedAtEnd", createdAtEnd);
+		}
+	}
+
 	public String getCorpIdentifier() {
 		return this.corpIdentifier;
 	}
@@ -62,6 +79,17 @@ public class SearchWorkitemRequest extends RpcAcsRequest<SearchWorkitemResponse>
 		this.corpIdentifier = corpIdentifier;
 		if(corpIdentifier != null){
 			putQueryParameter("CorpIdentifier", corpIdentifier);
+		}
+	}
+
+	public String getCreatedAtStart() {
+		return this.createdAtStart;
+	}
+
+	public void setCreatedAtStart(String createdAtStart) {
+		this.createdAtStart = createdAtStart;
+		if(createdAtStart != null){
+			putBodyParameter("CreatedAtStart", createdAtStart);
 		}
 	}
 

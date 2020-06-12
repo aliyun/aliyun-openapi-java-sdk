@@ -23,15 +23,7 @@ import com.aliyuncs.rdc.Endpoint;
  * @version 
  */
 public class UpdateWorkitemRequest extends RpcAcsRequest<UpdateWorkitemResponse> {
-	
-	public UpdateWorkitemRequest() {
-		super("Rdc", "2018-08-21", "UpdateWorkitem");
-		setMethod(MethodType.POST);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer issueId;
 
@@ -66,6 +58,14 @@ public class UpdateWorkitemRequest extends RpcAcsRequest<UpdateWorkitemResponse>
 	private String cfList;
 
 	private String status;
+	public UpdateWorkitemRequest() {
+		super("Rdc", "2018-08-21", "UpdateWorkitem");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getIssueId() {
 		return this.issueId;

@@ -15,6 +15,7 @@
 package com.aliyuncs.rdc.model.v20180821;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rdc.Endpoint;
 
 /**
@@ -22,20 +23,21 @@ import com.aliyuncs.rdc.Endpoint;
  * @version 
  */
 public class GetCustomFieldsByTemplateIdRequest extends RpcAcsRequest<GetCustomFieldsByTemplateIdResponse> {
-	
-	public GetCustomFieldsByTemplateIdRequest() {
-		super("Rdc", "2018-08-21", "GetCustomFieldsByTemplateId");
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String corpIdentifier;
 
 	private Integer aKProjectId;
 
 	private Integer templateId;
+	public GetCustomFieldsByTemplateIdRequest() {
+		super("Rdc", "2018-08-21", "GetCustomFieldsByTemplateId");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCorpIdentifier() {
 		return this.corpIdentifier;

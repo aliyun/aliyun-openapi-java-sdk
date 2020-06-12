@@ -23,17 +23,17 @@ import com.aliyuncs.rdc.Endpoint;
  * @version 
  */
 public class JoinCompanyRequest extends RpcAcsRequest<JoinCompanyResponse> {
-	
+	   
+
+	private String code;
 	public JoinCompanyRequest() {
 		super("Rdc", "2018-08-21", "JoinCompany");
 		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String code;
 
 	public String getCode() {
 		return this.code;

@@ -23,15 +23,7 @@ import com.aliyuncs.rdc.Endpoint;
  * @version 
  */
 public class CreateWorkitemRequest extends RpcAcsRequest<CreateWorkitemResponse> {
-	
-	public CreateWorkitemRequest() {
-		super("Rdc", "2018-08-21", "CreateWorkitem");
-		setMethod(MethodType.POST);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String author;
 
@@ -60,6 +52,14 @@ public class CreateWorkitemRequest extends RpcAcsRequest<CreateWorkitemResponse>
 	private String verifier;
 
 	private String cfList;
+	public CreateWorkitemRequest() {
+		super("Rdc", "2018-08-21", "CreateWorkitem");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAuthor() {
 		return this.author;

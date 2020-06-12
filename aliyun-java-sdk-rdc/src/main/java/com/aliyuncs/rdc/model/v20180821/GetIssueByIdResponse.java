@@ -435,26 +435,10 @@ public class GetIssueByIdResponse extends AcsResponse {
 			this.recordChangeLog = recordChangeLog;
 		}
 
-		public Integer getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(Integer regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public Integer getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(Integer regionId) {
 			this.regionId = regionId;
 		}

@@ -23,15 +23,7 @@ import com.aliyuncs.rdc.Endpoint;
  * @version 
  */
 public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
-	
-	public CreateProjectRequest() {
-		super("Rdc", "2018-08-16", "CreateProject");
-		setMethod(MethodType.POST);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String corpIdentifier;
 
@@ -40,6 +32,14 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 	private String region;
 
 	private String staffId;
+	public CreateProjectRequest() {
+		super("Rdc", "2018-08-16", "CreateProject");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCorpIdentifier() {
 		return this.corpIdentifier;

@@ -15,6 +15,7 @@
 package com.aliyuncs.rdc.model.v20180821;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rdc.Endpoint;
 
 /**
@@ -22,20 +23,21 @@ import com.aliyuncs.rdc.Endpoint;
  * @version 
  */
 public class GetProjectMembersRequest extends RpcAcsRequest<GetProjectMembersResponse> {
-	
-	public GetProjectMembersRequest() {
-		super("Rdc", "2018-08-21", "GetProjectMembers");
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String corpIdentifier;
 
 	private Integer projectId;
 
 	private String staffId;
+	public GetProjectMembersRequest() {
+		super("Rdc", "2018-08-21", "GetProjectMembers");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCorpIdentifier() {
 		return this.corpIdentifier;
