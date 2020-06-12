@@ -1,3 +1,6 @@
+2020-06-12 Version: 2.4.4
+- Add support for enable hbaseue extra module like lindorm-search or lindorm-sql.
+
 2020-06-03 Version: 2.4.3
 - Describe describeAvailableResource.
 
