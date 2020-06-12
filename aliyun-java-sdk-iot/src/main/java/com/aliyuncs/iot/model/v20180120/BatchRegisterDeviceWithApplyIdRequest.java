@@ -31,7 +31,7 @@ public class BatchRegisterDeviceWithApplyIdRequest extends RpcAcsRequest<BatchRe
 
 	private Long applyId;
 	public BatchRegisterDeviceWithApplyIdRequest() {
-		super("Iot", "2018-01-20", "BatchRegisterDeviceWithApplyId", "Iot");
+		super("Iot", "2018-01-20", "BatchRegisterDeviceWithApplyId", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

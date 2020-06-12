@@ -27,6 +27,8 @@ public class UpdateEdgeDriverVersionRequest extends RpcAcsRequest<UpdateEdgeDriv
 
 	private String configCheckRule;
 
+	private String argument;
+
 	private String edgeVersion;
 
 	private String description;
@@ -43,7 +45,7 @@ public class UpdateEdgeDriverVersionRequest extends RpcAcsRequest<UpdateEdgeDriv
 
 	private String sourceConfig;
 	public UpdateEdgeDriverVersionRequest() {
-		super("Iot", "2018-01-20", "UpdateEdgeDriverVersion", "Iot");
+		super("Iot", "2018-01-20", "UpdateEdgeDriverVersion", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,6 +61,17 @@ public class UpdateEdgeDriverVersionRequest extends RpcAcsRequest<UpdateEdgeDriv
 		this.configCheckRule = configCheckRule;
 		if(configCheckRule != null){
 			putQueryParameter("ConfigCheckRule", configCheckRule);
+		}
+	}
+
+	public String getArgument() {
+		return this.argument;
+	}
+
+	public void setArgument(String argument) {
+		this.argument = argument;
+		if(argument != null){
+			putQueryParameter("Argument", argument);
 		}
 	}
 

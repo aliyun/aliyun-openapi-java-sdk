@@ -27,6 +27,8 @@ public class CreateEdgeDriverVersionRequest extends RpcAcsRequest<CreateEdgeDriv
 
 	private String configCheckRule;
 
+	private String argument;
+
 	private String edgeVersion;
 
 	private String description;
@@ -43,7 +45,7 @@ public class CreateEdgeDriverVersionRequest extends RpcAcsRequest<CreateEdgeDriv
 
 	private String sourceConfig;
 	public CreateEdgeDriverVersionRequest() {
-		super("Iot", "2018-01-20", "CreateEdgeDriverVersion", "Iot");
+		super("Iot", "2018-01-20", "CreateEdgeDriverVersion", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,6 +61,17 @@ public class CreateEdgeDriverVersionRequest extends RpcAcsRequest<CreateEdgeDriv
 		this.configCheckRule = configCheckRule;
 		if(configCheckRule != null){
 			putQueryParameter("ConfigCheckRule", configCheckRule);
+		}
+	}
+
+	public String getArgument() {
+		return this.argument;
+	}
+
+	public void setArgument(String argument) {
+		this.argument = argument;
+		if(argument != null){
+			putQueryParameter("Argument", argument);
 		}
 	}
 

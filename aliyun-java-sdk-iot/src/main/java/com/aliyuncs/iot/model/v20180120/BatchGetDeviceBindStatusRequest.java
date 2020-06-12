@@ -30,7 +30,7 @@ public class BatchGetDeviceBindStatusRequest extends RpcAcsRequest<BatchGetDevic
 
 	private String iotInstanceId;
 	public BatchGetDeviceBindStatusRequest() {
-		super("Iot", "2018-01-20", "BatchGetDeviceBindStatus", "Iot");
+		super("Iot", "2018-01-20", "BatchGetDeviceBindStatus", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

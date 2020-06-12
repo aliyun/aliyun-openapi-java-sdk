@@ -29,7 +29,7 @@ public class QueryOTAFirmwareRequest extends RpcAcsRequest<QueryOTAFirmwareRespo
 
 	private String firmwareId;
 	public QueryOTAFirmwareRequest() {
-		super("Iot", "2018-01-20", "QueryOTAFirmware", "Iot");
+		super("Iot", "2018-01-20", "QueryOTAFirmware", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

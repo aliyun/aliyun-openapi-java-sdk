@@ -98,6 +98,8 @@ public class GetEdgeDriverVersionResponse extends AcsResponse {
 
 		private Long gmtModifiedTimestamp;
 
+		private String argument;
+
 		public String getDriverId() {
 			return this.driverId;
 		}
@@ -184,6 +186,14 @@ public class GetEdgeDriverVersionResponse extends AcsResponse {
 
 		public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
 			this.gmtModifiedTimestamp = gmtModifiedTimestamp;
+		}
+
+		public String getArgument() {
+			return this.argument;
+		}
+
+		public void setArgument(String argument) {
+			this.argument = argument;
 		}
 	}
 

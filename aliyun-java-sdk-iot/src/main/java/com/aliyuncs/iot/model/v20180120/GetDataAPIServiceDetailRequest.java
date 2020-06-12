@@ -29,7 +29,7 @@ public class GetDataAPIServiceDetailRequest extends RpcAcsRequest<GetDataAPIServ
 
 	private String apiSrn;
 	public GetDataAPIServiceDetailRequest() {
-		super("Iot", "2018-01-20", "GetDataAPIServiceDetail", "Iot");
+		super("Iot", "2018-01-20", "GetDataAPIServiceDetail", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

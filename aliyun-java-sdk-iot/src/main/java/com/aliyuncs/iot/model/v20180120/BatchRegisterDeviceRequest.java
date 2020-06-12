@@ -31,7 +31,7 @@ public class BatchRegisterDeviceRequest extends RpcAcsRequest<BatchRegisterDevic
 
 	private String productKey;
 	public BatchRegisterDeviceRequest() {
-		super("Iot", "2018-01-20", "BatchRegisterDevice", "Iot");
+		super("Iot", "2018-01-20", "BatchRegisterDevice", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

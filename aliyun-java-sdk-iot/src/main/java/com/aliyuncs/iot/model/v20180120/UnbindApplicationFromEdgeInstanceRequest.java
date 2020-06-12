@@ -31,7 +31,7 @@ public class UnbindApplicationFromEdgeInstanceRequest extends RpcAcsRequest<Unbi
 
 	private String instanceId;
 	public UnbindApplicationFromEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "UnbindApplicationFromEdgeInstance", "Iot");
+		super("Iot", "2018-01-20", "UnbindApplicationFromEdgeInstance", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

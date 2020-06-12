@@ -31,7 +31,7 @@ public class GetEdgeDriverVersionRequest extends RpcAcsRequest<GetEdgeDriverVers
 
 	private String driverVersion;
 	public GetEdgeDriverVersionRequest() {
-		super("Iot", "2018-01-20", "GetEdgeDriverVersion", "Iot");
+		super("Iot", "2018-01-20", "GetEdgeDriverVersion", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

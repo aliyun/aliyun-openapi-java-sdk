@@ -33,7 +33,7 @@ public class GetDeviceStatusRequest extends RpcAcsRequest<GetDeviceStatusRespons
 
 	private String deviceName;
 	public GetDeviceStatusRequest() {
-		super("Iot", "2018-01-20", "GetDeviceStatus", "Iot");
+		super("Iot", "2018-01-20", "GetDeviceStatus", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

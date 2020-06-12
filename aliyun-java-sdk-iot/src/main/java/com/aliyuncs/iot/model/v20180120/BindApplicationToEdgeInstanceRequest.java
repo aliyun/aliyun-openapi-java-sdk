@@ -33,7 +33,7 @@ public class BindApplicationToEdgeInstanceRequest extends RpcAcsRequest<BindAppl
 
 	private String instanceId;
 	public BindApplicationToEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "BindApplicationToEdgeInstance", "Iot");
+		super("Iot", "2018-01-20", "BindApplicationToEdgeInstance", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -50,7 +50,7 @@ public class CreateOTAStaticUpgradeJobRequest extends RpcAcsRequest<CreateOTASta
 
 	private List<String> targetDeviceNames;
 	public CreateOTAStaticUpgradeJobRequest() {
-		super("Iot", "2018-01-20", "CreateOTAStaticUpgradeJob", "Iot");
+		super("Iot", "2018-01-20", "CreateOTAStaticUpgradeJob", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

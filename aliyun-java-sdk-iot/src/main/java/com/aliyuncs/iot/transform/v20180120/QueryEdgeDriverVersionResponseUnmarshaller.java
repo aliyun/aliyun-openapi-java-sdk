@@ -51,6 +51,7 @@ public class QueryEdgeDriverVersionResponseUnmarshaller {
 			driverVersion.setConfigCheckRule(_ctx.stringValue("QueryEdgeDriverVersionResponse.Data.DriverVersionList["+ i +"].ConfigCheckRule"));
 			driverVersion.setGmtCreateTimestamp(_ctx.longValue("QueryEdgeDriverVersionResponse.Data.DriverVersionList["+ i +"].GmtCreateTimestamp"));
 			driverVersion.setGmtModifiedTimestamp(_ctx.longValue("QueryEdgeDriverVersionResponse.Data.DriverVersionList["+ i +"].GmtModifiedTimestamp"));
+			driverVersion.setArgument(_ctx.stringValue("QueryEdgeDriverVersionResponse.Data.DriverVersionList["+ i +"].Argument"));
 
 			driverVersionList.add(driverVersion);
 		}

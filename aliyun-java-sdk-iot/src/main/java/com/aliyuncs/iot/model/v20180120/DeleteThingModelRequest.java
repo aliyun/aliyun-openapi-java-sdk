@@ -38,7 +38,7 @@ public class DeleteThingModelRequest extends RpcAcsRequest<DeleteThingModelRespo
 
 	private List<String> eventIdentifiers;
 	public DeleteThingModelRequest() {
-		super("Iot", "2018-01-20", "DeleteThingModel", "Iot");
+		super("Iot", "2018-01-20", "DeleteThingModel", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

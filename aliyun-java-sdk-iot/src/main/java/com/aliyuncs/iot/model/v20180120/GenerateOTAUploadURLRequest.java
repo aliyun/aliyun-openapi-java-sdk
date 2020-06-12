@@ -27,7 +27,7 @@ public class GenerateOTAUploadURLRequest extends RpcAcsRequest<GenerateOTAUpload
 
 	private String iotInstanceId;
 	public GenerateOTAUploadURLRequest() {
-		super("Iot", "2018-01-20", "GenerateOTAUploadURL", "Iot");
+		super("Iot", "2018-01-20", "GenerateOTAUploadURL", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

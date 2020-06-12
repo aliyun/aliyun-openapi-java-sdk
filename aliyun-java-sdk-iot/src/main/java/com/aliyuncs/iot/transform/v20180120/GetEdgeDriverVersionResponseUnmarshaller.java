@@ -40,6 +40,7 @@ public class GetEdgeDriverVersionResponseUnmarshaller {
 		data.setConfigCheckRule(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.ConfigCheckRule"));
 		data.setGmtCreateTimestamp(_ctx.longValue("GetEdgeDriverVersionResponse.Data.GmtCreateTimestamp"));
 		data.setGmtModifiedTimestamp(_ctx.longValue("GetEdgeDriverVersionResponse.Data.GmtModifiedTimestamp"));
+		data.setArgument(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.Argument"));
 		getEdgeDriverVersionResponse.setData(data);
 	 
 	 	return getEdgeDriverVersionResponse;

@@ -104,6 +104,8 @@ public class CreateProductResponse extends AcsResponse {
 
 		private String authType;
 
+		private String productSecret;
+
 		public Integer getDataFormat() {
 			return this.dataFormat;
 		}
@@ -174,6 +176,14 @@ public class CreateProductResponse extends AcsResponse {
 
 		public void setAuthType(String authType) {
 			this.authType = authType;
+		}
+
+		public String getProductSecret() {
+			return this.productSecret;
+		}
+
+		public void setProductSecret(String productSecret) {
+			this.productSecret = productSecret;
 		}
 	}
 

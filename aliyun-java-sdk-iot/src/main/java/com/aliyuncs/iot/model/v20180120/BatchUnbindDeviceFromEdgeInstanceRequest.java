@@ -32,7 +32,7 @@ public class BatchUnbindDeviceFromEdgeInstanceRequest extends RpcAcsRequest<Batc
 
 	private String instanceId;
 	public BatchUnbindDeviceFromEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "BatchUnbindDeviceFromEdgeInstance", "Iot");
+		super("Iot", "2018-01-20", "BatchUnbindDeviceFromEdgeInstance", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

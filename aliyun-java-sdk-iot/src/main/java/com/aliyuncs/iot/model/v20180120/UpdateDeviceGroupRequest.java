@@ -31,7 +31,7 @@ public class UpdateDeviceGroupRequest extends RpcAcsRequest<UpdateDeviceGroupRes
 
 	private String groupDesc;
 	public UpdateDeviceGroupRequest() {
-		super("Iot", "2018-01-20", "UpdateDeviceGroup", "Iot");
+		super("Iot", "2018-01-20", "UpdateDeviceGroup", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

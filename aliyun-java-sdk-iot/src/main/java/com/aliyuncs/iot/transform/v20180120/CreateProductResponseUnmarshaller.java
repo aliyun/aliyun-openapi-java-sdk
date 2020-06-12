@@ -39,6 +39,7 @@ public class CreateProductResponseUnmarshaller {
 		data.setId2(_ctx.booleanValue("CreateProductResponse.Data.Id2"));
 		data.setProtocolType(_ctx.stringValue("CreateProductResponse.Data.ProtocolType"));
 		data.setAuthType(_ctx.stringValue("CreateProductResponse.Data.AuthType"));
+		data.setProductSecret(_ctx.stringValue("CreateProductResponse.Data.ProductSecret"));
 		createProductResponse.setData(data);
 	 
 	 	return createProductResponse;

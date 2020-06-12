@@ -15,7 +15,6 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.iot.transform.v20180120.QueryBatchRegisterDeviceStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -80,9 +79,9 @@ public class QueryBatchRegisterDeviceStatusResponse extends AcsResponse {
 
 		private String status;
 
-		private List<Map<Object,Object>> validList;
+		private List<String> validList;
 
-		private List<Map<Object,Object>> invalidList;
+		private List<String> invalidList;
 
 		public String getStatus() {
 			return this.status;
@@ -92,19 +91,19 @@ public class QueryBatchRegisterDeviceStatusResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public List<Map<Object,Object>> getValidList() {
+		public List<String> getValidList() {
 			return this.validList;
 		}
 
-		public void setValidList(List<Map<Object,Object>> validList) {
+		public void setValidList(List<String> validList) {
 			this.validList = validList;
 		}
 
-		public List<Map<Object,Object>> getInvalidList() {
+		public List<String> getInvalidList() {
 			return this.invalidList;
 		}
 
-		public void setInvalidList(List<Map<Object,Object>> invalidList) {
+		public void setInvalidList(List<String> invalidList) {
 			this.invalidList = invalidList;
 		}
 	}
