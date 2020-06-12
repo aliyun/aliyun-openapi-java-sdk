@@ -26,6 +26,7 @@ public class BatchCreateDeviceResponseUnmarshaller {
 
 	public static BatchCreateDeviceResponse unmarshall(BatchCreateDeviceResponse batchCreateDeviceResponse, UnmarshallerContext _ctx) {
 		
+		batchCreateDeviceResponse.setRequestId(_ctx.stringValue("BatchCreateDeviceResponse.RequestId"));
 		batchCreateDeviceResponse.setErrorCode(_ctx.integerValue("BatchCreateDeviceResponse.ErrorCode"));
 		batchCreateDeviceResponse.setMessage(_ctx.stringValue("BatchCreateDeviceResponse.Message"));
 		batchCreateDeviceResponse.setSuccess(_ctx.booleanValue("BatchCreateDeviceResponse.Success"));

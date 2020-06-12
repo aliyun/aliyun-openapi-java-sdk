@@ -14,16 +14,15 @@
 
 package com.aliyuncs.aliyuncvc.model.v20191030;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.aliyuncvc.transform.v20191030.BatchCreateDeviceResponseUnmarshaller;
+import com.aliyuncs.aliyuncvc.transform.v20191030.CallDeviceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BatchCreateDeviceResponse extends AcsResponse {
+public class CallDeviceResponse extends AcsResponse {
 
 	private Integer errorCode;
 
@@ -33,7 +32,7 @@ public class BatchCreateDeviceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Data> devices;
+	private String messageId;
 
 	public Integer getErrorCode() {
 		return this.errorCode;
@@ -67,60 +66,17 @@ public class BatchCreateDeviceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Data> getDevices() {
-		return this.devices;
+	public String getMessageId() {
+		return this.messageId;
 	}
 
-	public void setDevices(List<Data> devices) {
-		this.devices = devices;
-	}
-
-	public static class Data {
-
-		private Integer deviceErrorCode;
-
-		private String deviceMessage;
-
-		private String sN;
-
-		private String activeCode;
-
-		public Integer getDeviceErrorCode() {
-			return this.deviceErrorCode;
-		}
-
-		public void setDeviceErrorCode(Integer deviceErrorCode) {
-			this.deviceErrorCode = deviceErrorCode;
-		}
-
-		public String getDeviceMessage() {
-			return this.deviceMessage;
-		}
-
-		public void setDeviceMessage(String deviceMessage) {
-			this.deviceMessage = deviceMessage;
-		}
-
-		public String getSN() {
-			return this.sN;
-		}
-
-		public void setSN(String sN) {
-			this.sN = sN;
-		}
-
-		public String getActiveCode() {
-			return this.activeCode;
-		}
-
-		public void setActiveCode(String activeCode) {
-			this.activeCode = activeCode;
-		}
+	public void setMessageId(String messageId) {
+		this.messageId = messageId;
 	}
 
 	@Override
-	public BatchCreateDeviceResponse getInstance(UnmarshallerContext context) {
-		return	BatchCreateDeviceResponseUnmarshaller.unmarshall(this, context);
+	public CallDeviceResponse getInstance(UnmarshallerContext context) {
+		return	CallDeviceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
