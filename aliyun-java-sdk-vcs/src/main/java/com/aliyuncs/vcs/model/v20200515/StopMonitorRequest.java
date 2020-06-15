@@ -25,6 +25,8 @@ import com.aliyuncs.vcs.Endpoint;
 public class StopMonitorRequest extends RpcAcsRequest<StopMonitorResponse> {
 	   
 
+	private String algorithmVendor;
+
 	private String taskId;
 	public StopMonitorRequest() {
 		super("Vcs", "2020-05-15", "StopMonitor", "vcs");
@@ -33,6 +35,17 @@ public class StopMonitorRequest extends RpcAcsRequest<StopMonitorResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAlgorithmVendor() {
+		return this.algorithmVendor;
+	}
+
+	public void setAlgorithmVendor(String algorithmVendor) {
+		this.algorithmVendor = algorithmVendor;
+		if(algorithmVendor != null){
+			putBodyParameter("AlgorithmVendor", algorithmVendor);
+		}
 	}
 
 	public String getTaskId() {

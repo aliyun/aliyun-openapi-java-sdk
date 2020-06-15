@@ -32,6 +32,8 @@ public class AddMonitorRequest extends RpcAcsRequest<AddMonitorResponse> {
 	private String description;
 
 	private Integer batchIndicator;
+
+	private String algorithmVendor;
 	public AddMonitorRequest() {
 		super("Vcs", "2020-05-15", "AddMonitor", "vcs");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class AddMonitorRequest extends RpcAcsRequest<AddMonitorResponse> {
 		this.batchIndicator = batchIndicator;
 		if(batchIndicator != null){
 			putBodyParameter("BatchIndicator", batchIndicator.toString());
+		}
+	}
+
+	public String getAlgorithmVendor() {
+		return this.algorithmVendor;
+	}
+
+	public void setAlgorithmVendor(String algorithmVendor) {
+		this.algorithmVendor = algorithmVendor;
+		if(algorithmVendor != null){
+			putBodyParameter("AlgorithmVendor", algorithmVendor);
 		}
 	}
 

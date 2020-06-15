@@ -48,6 +48,8 @@ public class UpdateMonitorRequest extends RpcAcsRequest<UpdateMonitorResponse> {
 	private String attributeValueList;
 
 	private String deviceList;
+
+	private String algorithmVendor;
 	public UpdateMonitorRequest() {
 		super("Vcs", "2020-05-15", "UpdateMonitor", "vcs");
 		setMethod(MethodType.POST);
@@ -186,6 +188,17 @@ public class UpdateMonitorRequest extends RpcAcsRequest<UpdateMonitorResponse> {
 		this.deviceList = deviceList;
 		if(deviceList != null){
 			putBodyParameter("DeviceList", deviceList);
+		}
+	}
+
+	public String getAlgorithmVendor() {
+		return this.algorithmVendor;
+	}
+
+	public void setAlgorithmVendor(String algorithmVendor) {
+		this.algorithmVendor = algorithmVendor;
+		if(algorithmVendor != null){
+			putBodyParameter("AlgorithmVendor", algorithmVendor);
 		}
 	}
 

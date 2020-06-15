@@ -31,6 +31,8 @@ public class GetMonitorResultRequest extends RpcAcsRequest<GetMonitorResultRespo
 
 	private Long startTime;
 
+	private String algorithmVendor;
+
 	private String minRecordId;
 
 	private String taskId;
@@ -73,6 +75,17 @@ public class GetMonitorResultRequest extends RpcAcsRequest<GetMonitorResultRespo
 		this.startTime = startTime;
 		if(startTime != null){
 			putBodyParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getAlgorithmVendor() {
+		return this.algorithmVendor;
+	}
+
+	public void setAlgorithmVendor(String algorithmVendor) {
+		this.algorithmVendor = algorithmVendor;
+		if(algorithmVendor != null){
+			putBodyParameter("AlgorithmVendor", algorithmVendor);
 		}
 	}
 
