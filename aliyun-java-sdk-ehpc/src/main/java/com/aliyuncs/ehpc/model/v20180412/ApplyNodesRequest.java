@@ -275,6 +275,7 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 		if (instanceTypeModels != null) {
 			for (int depth1 = 0; depth1 < instanceTypeModels.size(); depth1++) {
 				putQueryParameter("InstanceTypeModel." + (depth1 + 1) + ".MaxPrice" , instanceTypeModels.get(depth1).getMaxPrice());
+				putQueryParameter("InstanceTypeModel." + (depth1 + 1) + ".TargetImageId" , instanceTypeModels.get(depth1).getTargetImageId());
 				putQueryParameter("InstanceTypeModel." + (depth1 + 1) + ".InstanceType" , instanceTypeModels.get(depth1).getInstanceType());
 			}
 		}	
@@ -340,6 +341,8 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 
 		private Float maxPrice;
 
+		private String targetImageId;
+
 		private String instanceType;
 
 		public Float getMaxPrice() {
@@ -348,6 +351,14 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 
 		public void setMaxPrice(Float maxPrice) {
 			this.maxPrice = maxPrice;
+		}
+
+		public String getTargetImageId() {
+			return this.targetImageId;
+		}
+
+		public void setTargetImageId(String targetImageId) {
+			this.targetImageId = targetImageId;
 		}
 
 		public String getInstanceType() {
