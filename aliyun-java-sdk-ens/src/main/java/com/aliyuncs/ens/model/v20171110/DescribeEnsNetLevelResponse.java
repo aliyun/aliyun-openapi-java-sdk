@@ -16,20 +16,20 @@ package com.aliyuncs.ens.model.v20171110;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.AllocateEipAddressResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.DescribeEnsNetLevelResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AllocateEipAddressResponse extends AcsResponse {
+public class DescribeEnsNetLevelResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String bizStatusCode;
+	private Integer code;
 
-	private List<EipAddress> eipAddresses;
+	private List<EnsNetLevel> ensNetLevels;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,37 +39,37 @@ public class AllocateEipAddressResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getBizStatusCode() {
-		return this.bizStatusCode;
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setBizStatusCode(String bizStatusCode) {
-		this.bizStatusCode = bizStatusCode;
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
-	public List<EipAddress> getEipAddresses() {
-		return this.eipAddresses;
+	public List<EnsNetLevel> getEnsNetLevels() {
+		return this.ensNetLevels;
 	}
 
-	public void setEipAddresses(List<EipAddress> eipAddresses) {
-		this.eipAddresses = eipAddresses;
+	public void setEnsNetLevels(List<EnsNetLevel> ensNetLevels) {
+		this.ensNetLevels = ensNetLevels;
 	}
 
-	public static class EipAddress {
+	public static class EnsNetLevel {
 
-		private String eip;
+		private String ensNetLevelCode;
 
-		public String getEip() {
-			return this.eip;
+		public String getEnsNetLevelCode() {
+			return this.ensNetLevelCode;
 		}
 
-		public void setEip(String eip) {
-			this.eip = eip;
+		public void setEnsNetLevelCode(String ensNetLevelCode) {
+			this.ensNetLevelCode = ensNetLevelCode;
 		}
 	}
 
 	@Override
-	public AllocateEipAddressResponse getInstance(UnmarshallerContext context) {
-		return	AllocateEipAddressResponseUnmarshaller.unmarshall(this, context);
+	public DescribeEnsNetLevelResponse getInstance(UnmarshallerContext context) {
+		return	DescribeEnsNetLevelResponseUnmarshaller.unmarshall(this, context);
 	}
 }

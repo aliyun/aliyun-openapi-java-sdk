@@ -21,24 +21,24 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeUserBandWidthDataRequest extends RpcAcsRequest<DescribeUserBandWidthDataResponse> {
+public class DescribeEnsRegionIdResourceRequest extends RpcAcsRequest<DescribeEnsRegionIdResourceResponse> {
 	   
 
 	private String isp;
 
 	private String startTime;
 
-	private String ensRegionId;
+	private Integer pageNumber;
 
-	private String period;
+	private String orderByParams;
+
+	private String pageSize;
 
 	private String endTime;
 
 	private String version;
-
-	private String instanceId;
-	public DescribeUserBandWidthDataRequest() {
-		super("Ens", "2017-11-10", "DescribeUserBandWidthData", "ens");
+	public DescribeEnsRegionIdResourceRequest() {
+		super("Ens", "2017-11-10", "DescribeEnsRegionIdResource", "ens");
 		setMethod(MethodType.POST);
 	}
 
@@ -64,25 +64,36 @@ public class DescribeUserBandWidthDataRequest extends RpcAcsRequest<DescribeUser
 		}
 	}
 
-	public String getEnsRegionId() {
-		return this.ensRegionId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setEnsRegionId(String ensRegionId) {
-		this.ensRegionId = ensRegionId;
-		if(ensRegionId != null){
-			putQueryParameter("EnsRegionId", ensRegionId);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getPeriod() {
-		return this.period;
+	public String getOrderByParams() {
+		return this.orderByParams;
 	}
 
-	public void setPeriod(String period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period);
+	public void setOrderByParams(String orderByParams) {
+		this.orderByParams = orderByParams;
+		if(orderByParams != null){
+			putQueryParameter("OrderByParams", orderByParams);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
 		}
 	}
 
@@ -108,20 +119,9 @@ public class DescribeUserBandWidthDataRequest extends RpcAcsRequest<DescribeUser
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	@Override
-	public Class<DescribeUserBandWidthDataResponse> getResponseClass() {
-		return DescribeUserBandWidthDataResponse.class;
+	public Class<DescribeEnsRegionIdResourceResponse> getResponseClass() {
+		return DescribeEnsRegionIdResourceResponse.class;
 	}
 
 }

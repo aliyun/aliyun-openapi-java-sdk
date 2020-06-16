@@ -14,22 +14,19 @@
 
 package com.aliyuncs.ens.model.v20171110;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.AllocateEipAddressResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.ExportBillDetailDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AllocateEipAddressResponse extends AcsResponse {
+public class ExportBillDetailDataResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String bizStatusCode;
-
-	private List<EipAddress> eipAddresses;
+	private String filePath;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,37 +36,16 @@ public class AllocateEipAddressResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getBizStatusCode() {
-		return this.bizStatusCode;
+	public String getFilePath() {
+		return this.filePath;
 	}
 
-	public void setBizStatusCode(String bizStatusCode) {
-		this.bizStatusCode = bizStatusCode;
-	}
-
-	public List<EipAddress> getEipAddresses() {
-		return this.eipAddresses;
-	}
-
-	public void setEipAddresses(List<EipAddress> eipAddresses) {
-		this.eipAddresses = eipAddresses;
-	}
-
-	public static class EipAddress {
-
-		private String eip;
-
-		public String getEip() {
-			return this.eip;
-		}
-
-		public void setEip(String eip) {
-			this.eip = eip;
-		}
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
 	}
 
 	@Override
-	public AllocateEipAddressResponse getInstance(UnmarshallerContext context) {
-		return	AllocateEipAddressResponseUnmarshaller.unmarshall(this, context);
+	public ExportBillDetailDataResponse getInstance(UnmarshallerContext context) {
+		return	ExportBillDetailDataResponseUnmarshaller.unmarshall(this, context);
 	}
 }

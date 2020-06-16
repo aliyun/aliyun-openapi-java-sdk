@@ -57,6 +57,8 @@ public class DescribeMeasurementDataResponse extends AcsResponse {
 
 		private List<BandWidthFeeData> bandWidthFeeDatas;
 
+		private List<ResourceFeeDataDetail> resourceFeeDataDetails;
+
 		private ResourceFeeData resourceFeeData;
 
 		public String getChargeModel() {
@@ -99,6 +101,14 @@ public class DescribeMeasurementDataResponse extends AcsResponse {
 			this.bandWidthFeeDatas = bandWidthFeeDatas;
 		}
 
+		public List<ResourceFeeDataDetail> getResourceFeeDataDetails() {
+			return this.resourceFeeDataDetails;
+		}
+
+		public void setResourceFeeDataDetails(List<ResourceFeeDataDetail> resourceFeeDataDetails) {
+			this.resourceFeeDataDetails = resourceFeeDataDetails;
+		}
+
 		public ResourceFeeData getResourceFeeData() {
 			return this.resourceFeeData;
 		}
@@ -137,6 +147,49 @@ public class DescribeMeasurementDataResponse extends AcsResponse {
 
 			public void setCostName(String costName) {
 				this.costName = costName;
+			}
+		}
+
+		public static class ResourceFeeDataDetail {
+
+			private Integer costVal;
+
+			private String costCode;
+
+			private String costName;
+
+			private String resourceType;
+
+			public Integer getCostVal() {
+				return this.costVal;
+			}
+
+			public void setCostVal(Integer costVal) {
+				this.costVal = costVal;
+			}
+
+			public String getCostCode() {
+				return this.costCode;
+			}
+
+			public void setCostCode(String costCode) {
+				this.costCode = costCode;
+			}
+
+			public String getCostName() {
+				return this.costName;
+			}
+
+			public void setCostName(String costName) {
+				this.costName = costName;
+			}
+
+			public String getResourceType() {
+				return this.resourceType;
+			}
+
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
 			}
 		}
 

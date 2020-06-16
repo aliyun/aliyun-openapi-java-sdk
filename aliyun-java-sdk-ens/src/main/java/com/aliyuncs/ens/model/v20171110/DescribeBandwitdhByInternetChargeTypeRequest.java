@@ -21,7 +21,7 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeUserBandWidthDataRequest extends RpcAcsRequest<DescribeUserBandWidthDataResponse> {
+public class DescribeBandwitdhByInternetChargeTypeRequest extends RpcAcsRequest<DescribeBandwitdhByInternetChargeTypeResponse> {
 	   
 
 	private String isp;
@@ -30,15 +30,11 @@ public class DescribeUserBandWidthDataRequest extends RpcAcsRequest<DescribeUser
 
 	private String ensRegionId;
 
-	private String period;
-
 	private String endTime;
 
 	private String version;
-
-	private String instanceId;
-	public DescribeUserBandWidthDataRequest() {
-		super("Ens", "2017-11-10", "DescribeUserBandWidthData", "ens");
+	public DescribeBandwitdhByInternetChargeTypeRequest() {
+		super("Ens", "2017-11-10", "DescribeBandwitdhByInternetChargeType", "ens");
 		setMethod(MethodType.POST);
 	}
 
@@ -75,17 +71,6 @@ public class DescribeUserBandWidthDataRequest extends RpcAcsRequest<DescribeUser
 		}
 	}
 
-	public String getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(String period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period);
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -108,20 +93,9 @@ public class DescribeUserBandWidthDataRequest extends RpcAcsRequest<DescribeUser
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	@Override
-	public Class<DescribeUserBandWidthDataResponse> getResponseClass() {
-		return DescribeUserBandWidthDataResponse.class;
+	public Class<DescribeBandwitdhByInternetChargeTypeResponse> getResponseClass() {
+		return DescribeBandwitdhByInternetChargeTypeResponse.class;
 	}
 
 }

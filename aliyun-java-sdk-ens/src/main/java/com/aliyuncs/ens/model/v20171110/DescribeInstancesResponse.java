@@ -123,6 +123,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private List<PrivateIpAddress> privateIpAddresses;
 
+		private List<String> securityGroupIds;
+
 		private List<String> innerIpAddress;
 
 		private List<String> publicIpAddress;
@@ -271,6 +273,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setPrivateIpAddresses(List<PrivateIpAddress> privateIpAddresses) {
 			this.privateIpAddresses = privateIpAddresses;
+		}
+
+		public List<String> getSecurityGroupIds() {
+			return this.securityGroupIds;
+		}
+
+		public void setSecurityGroupIds(List<String> securityGroupIds) {
+			this.securityGroupIds = securityGroupIds;
 		}
 
 		public List<String> getInnerIpAddress() {

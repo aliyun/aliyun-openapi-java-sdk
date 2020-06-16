@@ -27,6 +27,7 @@ public class AllocateEipAddressResponseUnmarshaller {
 	public static AllocateEipAddressResponse unmarshall(AllocateEipAddressResponse allocateEipAddressResponse, UnmarshallerContext _ctx) {
 		
 		allocateEipAddressResponse.setRequestId(_ctx.stringValue("AllocateEipAddressResponse.RequestId"));
+		allocateEipAddressResponse.setBizStatusCode(_ctx.stringValue("AllocateEipAddressResponse.BizStatusCode"));
 
 		List<EipAddress> eipAddresses = new ArrayList<EipAddress>();
 		for (int i = 0; i < _ctx.lengthValue("AllocateEipAddressResponse.EipAddresses.Length"); i++) {

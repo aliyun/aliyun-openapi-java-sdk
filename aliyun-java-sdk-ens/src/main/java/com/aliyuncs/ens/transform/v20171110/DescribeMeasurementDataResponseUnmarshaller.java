@@ -21,6 +21,7 @@ import com.aliyuncs.ens.model.v20171110.DescribeMeasurementDataResponse;
 import com.aliyuncs.ens.model.v20171110.DescribeMeasurementDataResponse.MeasurementData;
 import com.aliyuncs.ens.model.v20171110.DescribeMeasurementDataResponse.MeasurementData.BandWidthFeeData;
 import com.aliyuncs.ens.model.v20171110.DescribeMeasurementDataResponse.MeasurementData.ResourceFeeData;
+import com.aliyuncs.ens.model.v20171110.DescribeMeasurementDataResponse.MeasurementData.ResourceFeeDataDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -54,6 +55,18 @@ public class DescribeMeasurementDataResponseUnmarshaller {
 				bandWidthFeeDatas.add(bandWidthFeeData);
 			}
 			measurementData.setBandWidthFeeDatas(bandWidthFeeDatas);
+
+			List<ResourceFeeDataDetail> resourceFeeDataDetails = new ArrayList<ResourceFeeDataDetail>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeMeasurementDataResponse.MeasurementDatas["+ i +"].ResourceFeeDataDetails.Length"); j++) {
+				ResourceFeeDataDetail resourceFeeDataDetail = new ResourceFeeDataDetail();
+				resourceFeeDataDetail.setCostVal(_ctx.integerValue("DescribeMeasurementDataResponse.MeasurementDatas["+ i +"].ResourceFeeDataDetails["+ j +"].CostVal"));
+				resourceFeeDataDetail.setCostCode(_ctx.stringValue("DescribeMeasurementDataResponse.MeasurementDatas["+ i +"].ResourceFeeDataDetails["+ j +"].CostCode"));
+				resourceFeeDataDetail.setCostName(_ctx.stringValue("DescribeMeasurementDataResponse.MeasurementDatas["+ i +"].ResourceFeeDataDetails["+ j +"].CostName"));
+				resourceFeeDataDetail.setResourceType(_ctx.stringValue("DescribeMeasurementDataResponse.MeasurementDatas["+ i +"].ResourceFeeDataDetails["+ j +"].ResourceType"));
+
+				resourceFeeDataDetails.add(resourceFeeDataDetail);
+			}
+			measurementData.setResourceFeeDataDetails(resourceFeeDataDetails);
 
 			measurementDatas.add(measurementData);
 		}

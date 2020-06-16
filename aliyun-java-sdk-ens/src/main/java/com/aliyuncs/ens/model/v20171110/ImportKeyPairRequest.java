@@ -21,51 +21,38 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressResponse> {
+public class ImportKeyPairRequest extends RpcAcsRequest<ImportKeyPairResponse> {
 	   
 
-	private Integer minCount;
+	private String keyPairName;
 
-	private String ensRegionId;
-
-	private Integer count;
+	private String publicKeyBody;
 
 	private String version;
-	public AllocateEipAddressRequest() {
-		super("Ens", "2017-11-10", "AllocateEipAddress", "ens");
+	public ImportKeyPairRequest() {
+		super("Ens", "2017-11-10", "ImportKeyPair", "ens");
 		setMethod(MethodType.POST);
 	}
 
-	public Integer getMinCount() {
-		return this.minCount;
+	public String getKeyPairName() {
+		return this.keyPairName;
 	}
 
-	public void setMinCount(Integer minCount) {
-		this.minCount = minCount;
-		if(minCount != null){
-			putQueryParameter("MinCount", minCount.toString());
+	public void setKeyPairName(String keyPairName) {
+		this.keyPairName = keyPairName;
+		if(keyPairName != null){
+			putQueryParameter("KeyPairName", keyPairName);
 		}
 	}
 
-	public String getEnsRegionId() {
-		return this.ensRegionId;
+	public String getPublicKeyBody() {
+		return this.publicKeyBody;
 	}
 
-	public void setEnsRegionId(String ensRegionId) {
-		this.ensRegionId = ensRegionId;
-		if(ensRegionId != null){
-			putQueryParameter("EnsRegionId", ensRegionId);
-		}
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
-		if(count != null){
-			putQueryParameter("Count", count.toString());
+	public void setPublicKeyBody(String publicKeyBody) {
+		this.publicKeyBody = publicKeyBody;
+		if(publicKeyBody != null){
+			putQueryParameter("PublicKeyBody", publicKeyBody);
 		}
 	}
 
@@ -81,8 +68,8 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 	}
 
 	@Override
-	public Class<AllocateEipAddressResponse> getResponseClass() {
-		return AllocateEipAddressResponse.class;
+	public Class<ImportKeyPairResponse> getResponseClass() {
+		return ImportKeyPairResponse.class;
 	}
 
 }

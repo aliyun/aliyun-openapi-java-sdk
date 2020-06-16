@@ -1,3 +1,6 @@
+2020-06-16 Version: 1.3.0
+- Add sshkey apis.
+
 2020-01-09 Version: 1.2.0
 - Add New Interface DescribeInstanceTypes.
 - Deprecated New Interface DescribeReservedResource.

@@ -21,51 +21,38 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressResponse> {
+public class DescribeEnsNetSaleDistrictRequest extends RpcAcsRequest<DescribeEnsNetSaleDistrictResponse> {
 	   
 
-	private Integer minCount;
+	private String netLevelCode;
 
-	private String ensRegionId;
-
-	private Integer count;
+	private String netDistrictCode;
 
 	private String version;
-	public AllocateEipAddressRequest() {
-		super("Ens", "2017-11-10", "AllocateEipAddress", "ens");
+	public DescribeEnsNetSaleDistrictRequest() {
+		super("Ens", "2017-11-10", "DescribeEnsNetSaleDistrict", "ens");
 		setMethod(MethodType.POST);
 	}
 
-	public Integer getMinCount() {
-		return this.minCount;
+	public String getNetLevelCode() {
+		return this.netLevelCode;
 	}
 
-	public void setMinCount(Integer minCount) {
-		this.minCount = minCount;
-		if(minCount != null){
-			putQueryParameter("MinCount", minCount.toString());
+	public void setNetLevelCode(String netLevelCode) {
+		this.netLevelCode = netLevelCode;
+		if(netLevelCode != null){
+			putQueryParameter("NetLevelCode", netLevelCode);
 		}
 	}
 
-	public String getEnsRegionId() {
-		return this.ensRegionId;
+	public String getNetDistrictCode() {
+		return this.netDistrictCode;
 	}
 
-	public void setEnsRegionId(String ensRegionId) {
-		this.ensRegionId = ensRegionId;
-		if(ensRegionId != null){
-			putQueryParameter("EnsRegionId", ensRegionId);
-		}
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
-		if(count != null){
-			putQueryParameter("Count", count.toString());
+	public void setNetDistrictCode(String netDistrictCode) {
+		this.netDistrictCode = netDistrictCode;
+		if(netDistrictCode != null){
+			putQueryParameter("NetDistrictCode", netDistrictCode);
 		}
 	}
 
@@ -81,8 +68,8 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 	}
 
 	@Override
-	public Class<AllocateEipAddressResponse> getResponseClass() {
-		return AllocateEipAddressResponse.class;
+	public Class<DescribeEnsNetSaleDistrictResponse> getResponseClass() {
+		return DescribeEnsNetSaleDistrictResponse.class;
 	}
 
 }

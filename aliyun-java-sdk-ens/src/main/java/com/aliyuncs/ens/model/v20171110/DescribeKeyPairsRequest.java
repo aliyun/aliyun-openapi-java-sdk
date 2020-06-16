@@ -21,51 +21,51 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressResponse> {
+public class DescribeKeyPairsRequest extends RpcAcsRequest<DescribeKeyPairsResponse> {
 	   
 
-	private Integer minCount;
+	private String keyPairName;
 
-	private String ensRegionId;
+	private String pageNumber;
 
-	private Integer count;
+	private String pageSize;
 
 	private String version;
-	public AllocateEipAddressRequest() {
-		super("Ens", "2017-11-10", "AllocateEipAddress", "ens");
+	public DescribeKeyPairsRequest() {
+		super("Ens", "2017-11-10", "DescribeKeyPairs", "ens");
 		setMethod(MethodType.POST);
 	}
 
-	public Integer getMinCount() {
-		return this.minCount;
+	public String getKeyPairName() {
+		return this.keyPairName;
 	}
 
-	public void setMinCount(Integer minCount) {
-		this.minCount = minCount;
-		if(minCount != null){
-			putQueryParameter("MinCount", minCount.toString());
+	public void setKeyPairName(String keyPairName) {
+		this.keyPairName = keyPairName;
+		if(keyPairName != null){
+			putQueryParameter("KeyPairName", keyPairName);
 		}
 	}
 
-	public String getEnsRegionId() {
-		return this.ensRegionId;
+	public String getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setEnsRegionId(String ensRegionId) {
-		this.ensRegionId = ensRegionId;
-		if(ensRegionId != null){
-			putQueryParameter("EnsRegionId", ensRegionId);
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber);
 		}
 	}
 
-	public Integer getCount() {
-		return this.count;
+	public String getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setCount(Integer count) {
-		this.count = count;
-		if(count != null){
-			putQueryParameter("Count", count.toString());
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
 		}
 	}
 
@@ -81,8 +81,8 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 	}
 
 	@Override
-	public Class<AllocateEipAddressResponse> getResponseClass() {
-		return AllocateEipAddressResponse.class;
+	public Class<DescribeKeyPairsResponse> getResponseClass() {
+		return DescribeKeyPairsResponse.class;
 	}
 
 }
