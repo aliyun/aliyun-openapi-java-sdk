@@ -1,4 +1,4 @@
-[← 安装](1-Installation-CN.md) | 客户端[(English)](2-Client-EN.md) | [连接池 →](3-Pool-CN.md)
+[← 安装](1-Installation-CN.md) | 客户端与凭证[(English)](2-Client-EN.md) | [连接池 →](3-Pool-CN.md)
 ***
 
 ### 使用 AccessKey 调用
@@ -149,4 +149,4 @@ public class Main {
 ```
 
 ***
-[← 安装](1-Installation-CN.md) | 客户端[(English)](2-Client-EN.md) | [连接池 →](3-Pool-CN.md)
+[← 安装](1-Installation-CN.md) | 客户端与凭证[(English)](2-Client-EN.md) | [连接池 →](3-Pool-CN.md)

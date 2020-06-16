@@ -1,4 +1,4 @@
-[← Client](2-Client-EN.md) | Connection Pool[(中文)](3-Pool-CN.md) | [Timeout →](4-Timeout-EN.md)
+[← Client & Credentials](2-Client-EN.md) | Connection Pool[(中文)](3-Pool-CN.md) | [Timeout →](4-Timeout-EN.md)
 ***
 
 ## Configure the connection pool
@@ -22,5 +22,5 @@ IAcsClient client = new DefaultAcsClient(profile);
 ```
 
 ***
-[← Client](2-Client-EN.md) | Connection Pool[(中文)](3-Pool-CN.md) | [Timeout →](4-Timeout-EN.md)
+[← Client & Credentials](2-Client-EN.md) | Connection Pool[(中文)](3-Pool-CN.md) | [Timeout →](4-Timeout-EN.md)
 

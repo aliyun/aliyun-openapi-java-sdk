@@ -1,4 +1,4 @@
-[← 客户端](2-Client-CN.md) | 连接池[(English)](3-Pool-EN.md) | [超时机制 →](4-Timeout-CN.md)
+[← 客户端与凭证](2-Client-CN.md) | 连接池[(English)](3-Pool-EN.md) | [超时机制 →](4-Timeout-CN.md)
 ***
 
 ## 配置连接池
@@ -22,4 +22,4 @@ IAcsClient client = new DefaultAcsClient(profile);
 ```
 
 ***
-[← 客户端](2-Client-CN.md) | 连接池[(English)](3-Pool-EN.md) | [超时机制 →](4-Timeout-CN.md)
+[← 客户端与凭证](2-Client-CN.md) | 连接池[(English)](3-Pool-EN.md) | [超时机制 →](4-Timeout-CN.md)

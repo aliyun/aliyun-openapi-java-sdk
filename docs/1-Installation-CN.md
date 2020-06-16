@@ -1,4 +1,4 @@
-[← 环境要求](0-Requirements-CN.md) | 安装[(English)](1-Installation-EN.md) | [客户端 →](2-Client-CN.md)
+[← 环境要求](0-Requirements-CN.md) | 安装[(English)](1-Installation-EN.md) | [客户端与凭证 →](2-Client-CN.md)
 ***
 
 无论您要使用哪个产品的开发工具包，都必须安装`aliyun-java-sdk-core`。比如，对云服务器SDK的调用，您需要安装`aliyun-java-sdk-core`和`aliyun-java-sdk-ecs`。
@@ -27,4 +27,4 @@
 </dependency>
 ```
 ***
-[← 环境要求](0-Requirements-CN.md)  | 安装[(English)](1-Installation-EN.md) | [客户端 →](2-Client-CN.md)
+[← 环境要求](0-Requirements-CN.md)  | 安装[(English)](1-Installation-EN.md) | [客户端与凭证 →](2-Client-CN.md)
