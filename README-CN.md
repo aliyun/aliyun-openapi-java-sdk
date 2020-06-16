@@ -105,7 +105,7 @@ public class Main {
 ## 文档
 * [环境要求](./docs/0-Requirements-CN.md)
 * [安装](./docs/1-Installation-CN.md)
-* [客户端](./docs/2-Client-CN.md)
+* [客户端与凭证](./docs/2-Client-CN.md)
 * [连接池](./docs/3-Pool-CN.md)
 * [超时机制](./docs/4-Timeout-CN.md)
 * [HTTPS配置](./docs/5-HTTPS-CN.md)

@@ -1,4 +1,4 @@
-[← Installation](1-Installation-EN.md) | Client[(中文)](2-Client-CN.md) | [Connection Pool →](3-Pool-EN.md)
+[← Installation](1-Installation-EN.md) | Client & Credentials[(中文)](2-Client-CN.md) | [Connection Pool →](3-Pool-EN.md)
 ***
 
 ### Using AccessKey call
@@ -151,4 +151,4 @@ public class Main {
 ```
 
 ***
-[← Installation](1-Installation-EN.md) | Client[(中文)](2-Client-CN.md) | [Connection Pool →](3-Pool-EN.md)
+[← Installation](1-Installation-EN.md) | Client & Credentials[(中文)](2-Client-CN.md) | [Connection Pool →](3-Pool-EN.md)

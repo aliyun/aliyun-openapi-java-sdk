@@ -1,4 +1,4 @@
-[← Requirements](0-Requirements-EN.md) | Installation[(中文)](1-Installation-CN.md) | [Client →](2-Client-EN.md)
+[← Requirements](0-Requirements-EN.md) | Installation[(中文)](1-Installation-CN.md) | [Client & Credentials →](2-Client-EN.md)
 ***
 
 If you use Apache Maven to manage Java projects, you only need to add corresponding dependencies to the `pom.xml` files of the projects. You can download the Maven dependencies of different cloud products in [Alibaba Cloud developer resources](https://help.aliyun.com/learn/developer.html).
@@ -29,4 +29,4 @@ If maven is not downloading jar packages from a central repository, you need to 
 ```
 
 ***
-[← Requirements](0-Requirements-EN.md) | Installation[(中文)](1-Installation-CN.md) | [Client →](2-Client-EN.md)
+[← Requirements](0-Requirements-EN.md) | Installation[(中文)](1-Installation-CN.md) | [Client & Credentials →](2-Client-EN.md)

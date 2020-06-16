@@ -117,7 +117,7 @@ public class Main {
 ## Documentation
 * [Requirements](./docs/0-Requirements-EN.md)
 * [Installation](./docs/1-Installation-EN.md)
-* [Client](./docs/2-Client-EN.md)
+* [Client & Credentials](./docs/2-Client-EN.md)
 * [Connection Pool](./docs/3-Pool-EN.md)
 * [Timeout](./docs/4-Timeout-EN.md)
 * [HTTPS Configurations](./docs/5-HTTPS-EN.md)
