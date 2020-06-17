@@ -1,3 +1,6 @@
+2020-06-17 Version: 4.19.8
+- Supported sync create eni and assign private ip.
+
 2020-06-05 Version: 4.19.7
 - Supported Eni Trunking.
 

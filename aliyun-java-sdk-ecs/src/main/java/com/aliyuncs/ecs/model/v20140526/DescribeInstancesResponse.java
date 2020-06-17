@@ -107,6 +107,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String deploymentSetId;
 
+		private Integer deploymentSetGroupNo;
+
 		private String status;
 
 		private String serialNumber;
@@ -311,6 +313,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setDeploymentSetId(String deploymentSetId) {
 			this.deploymentSetId = deploymentSetId;
+		}
+
+		public Integer getDeploymentSetGroupNo() {
+			return this.deploymentSetGroupNo;
+		}
+
+		public void setDeploymentSetGroupNo(Integer deploymentSetGroupNo) {
+			this.deploymentSetGroupNo = deploymentSetGroupNo;
 		}
 
 		public String getStatus() {

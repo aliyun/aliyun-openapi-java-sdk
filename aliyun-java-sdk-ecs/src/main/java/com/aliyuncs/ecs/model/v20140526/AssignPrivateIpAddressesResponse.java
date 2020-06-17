@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ecs.model.v20140526;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecs.transform.v20140526.AssignPrivateIpAddressesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,12 +27,45 @@ public class AssignPrivateIpAddressesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private AssignedPrivateIpAddressesSet assignedPrivateIpAddressesSet;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public AssignedPrivateIpAddressesSet getAssignedPrivateIpAddressesSet() {
+		return this.assignedPrivateIpAddressesSet;
+	}
+
+	public void setAssignedPrivateIpAddressesSet(AssignedPrivateIpAddressesSet assignedPrivateIpAddressesSet) {
+		this.assignedPrivateIpAddressesSet = assignedPrivateIpAddressesSet;
+	}
+
+	public static class AssignedPrivateIpAddressesSet {
+
+		private String networkInterfaceId;
+
+		private List<String> privateIpSet;
+
+		public String getNetworkInterfaceId() {
+			return this.networkInterfaceId;
+		}
+
+		public void setNetworkInterfaceId(String networkInterfaceId) {
+			this.networkInterfaceId = networkInterfaceId;
+		}
+
+		public List<String> getPrivateIpSet() {
+			return this.privateIpSet;
+		}
+
+		public void setPrivateIpSet(List<String> privateIpSet) {
+			this.privateIpSet = privateIpSet;
+		}
 	}
 
 	@Override

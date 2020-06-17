@@ -15,7 +15,6 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -23,26 +22,18 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class AssignPrivateIpAddressesRequest extends RpcAcsRequest<AssignPrivateIpAddressesResponse> {
+public class DescribeDeploymentSetSupportedInstanceTypeFamilyRequest extends RpcAcsRequest<DescribeDeploymentSetSupportedInstanceTypeFamilyResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String clientToken;
-
-	private Integer secondaryPrivateIpAddressCount;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private List<String> privateIpAddresss;
-
-	private String networkInterfaceId;
-	public AssignPrivateIpAddressesRequest() {
-		super("Ecs", "2014-05-26", "AssignPrivateIpAddresses", "ecs");
+	public DescribeDeploymentSetSupportedInstanceTypeFamilyRequest() {
+		super("Ecs", "2014-05-26", "DescribeDeploymentSetSupportedInstanceTypeFamily", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,28 +49,6 @@ public class AssignPrivateIpAddressesRequest extends RpcAcsRequest<AssignPrivate
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public Integer getSecondaryPrivateIpAddressCount() {
-		return this.secondaryPrivateIpAddressCount;
-	}
-
-	public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
-		this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
-		if(secondaryPrivateIpAddressCount != null){
-			putQueryParameter("SecondaryPrivateIpAddressCount", secondaryPrivateIpAddressCount.toString());
 		}
 	}
 
@@ -116,33 +85,9 @@ public class AssignPrivateIpAddressesRequest extends RpcAcsRequest<AssignPrivate
 		}
 	}
 
-	public List<String> getPrivateIpAddresss() {
-		return this.privateIpAddresss;
-	}
-
-	public void setPrivateIpAddresss(List<String> privateIpAddresss) {
-		this.privateIpAddresss = privateIpAddresss;	
-		if (privateIpAddresss != null) {
-			for (int i = 0; i < privateIpAddresss.size(); i++) {
-				putQueryParameter("PrivateIpAddress." + (i + 1) , privateIpAddresss.get(i));
-			}
-		}	
-	}
-
-	public String getNetworkInterfaceId() {
-		return this.networkInterfaceId;
-	}
-
-	public void setNetworkInterfaceId(String networkInterfaceId) {
-		this.networkInterfaceId = networkInterfaceId;
-		if(networkInterfaceId != null){
-			putQueryParameter("NetworkInterfaceId", networkInterfaceId);
-		}
-	}
-
 	@Override
-	public Class<AssignPrivateIpAddressesResponse> getResponseClass() {
-		return AssignPrivateIpAddressesResponse.class;
+	public Class<DescribeDeploymentSetSupportedInstanceTypeFamilyResponse> getResponseClass() {
+		return DescribeDeploymentSetSupportedInstanceTypeFamilyResponse.class;
 	}
 
 }

@@ -52,6 +52,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String password;
 
+	private Integer deploymentSetGroupNo;
+
 	private Integer storageSetPartitionNumber;
 
 	private List<Tag> tags;
@@ -314,6 +316,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.password = password;
 		if(password != null){
 			putQueryParameter("Password", password);
+		}
+	}
+
+	public Integer getDeploymentSetGroupNo() {
+		return this.deploymentSetGroupNo;
+	}
+
+	public void setDeploymentSetGroupNo(Integer deploymentSetGroupNo) {
+		this.deploymentSetGroupNo = deploymentSetGroupNo;
+		if(deploymentSetGroupNo != null){
+			putQueryParameter("DeploymentSetGroupNo", deploymentSetGroupNo.toString());
 		}
 	}
 

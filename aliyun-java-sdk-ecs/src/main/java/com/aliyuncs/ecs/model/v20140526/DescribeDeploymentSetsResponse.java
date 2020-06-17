@@ -101,6 +101,8 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 
 		private String granularity;
 
+		private Integer groupCount;
+
 		private Integer instanceAmount;
 
 		private String creationTime;
@@ -161,6 +163,14 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 
 		public void setGranularity(String granularity) {
 			this.granularity = granularity;
+		}
+
+		public Integer getGroupCount() {
+			return this.groupCount;
+		}
+
+		public void setGroupCount(Integer groupCount) {
+			this.groupCount = groupCount;
 		}
 
 		public Integer getInstanceAmount() {

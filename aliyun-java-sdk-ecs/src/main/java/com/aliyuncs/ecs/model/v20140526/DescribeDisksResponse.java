@@ -149,6 +149,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private String bdfId;
 
+		private String serialNumber;
+
 		private List<OperationLock> operationLocks;
 
 		private List<MountInstance> mountInstances;
@@ -441,6 +443,14 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setBdfId(String bdfId) {
 			this.bdfId = bdfId;
+		}
+
+		public String getSerialNumber() {
+			return this.serialNumber;
+		}
+
+		public void setSerialNumber(String serialNumber) {
+			this.serialNumber = serialNumber;
 		}
 
 		public List<OperationLock> getOperationLocks() {

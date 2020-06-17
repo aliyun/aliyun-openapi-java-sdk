@@ -73,6 +73,7 @@ public class DescribeDisksResponseUnmarshaller {
 			disk.setKMSKeyId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].KMSKeyId"));
 			disk.setPerformanceLevel(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].PerformanceLevel"));
 			disk.setBdfId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].BdfId"));
+			disk.setSerialNumber(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].SerialNumber"));
 
 			List<OperationLock> operationLocks = new ArrayList<OperationLock>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDisksResponse.Disks["+ i +"].OperationLocks.Length"); j++) {

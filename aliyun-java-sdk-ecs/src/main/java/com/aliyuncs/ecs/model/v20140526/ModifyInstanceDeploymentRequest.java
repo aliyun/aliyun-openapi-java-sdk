@@ -27,6 +27,8 @@ public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanc
 
 	private Long resourceOwnerId;
 
+	private Integer deploymentSetGroupNo;
+
 	private String instanceType;
 
 	private String deploymentSetId;
@@ -65,6 +67,17 @@ public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanc
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getDeploymentSetGroupNo() {
+		return this.deploymentSetGroupNo;
+	}
+
+	public void setDeploymentSetGroupNo(Integer deploymentSetGroupNo) {
+		this.deploymentSetGroupNo = deploymentSetGroupNo;
+		if(deploymentSetGroupNo != null){
+			putQueryParameter("DeploymentSetGroupNo", deploymentSetGroupNo.toString());
 		}
 	}
 

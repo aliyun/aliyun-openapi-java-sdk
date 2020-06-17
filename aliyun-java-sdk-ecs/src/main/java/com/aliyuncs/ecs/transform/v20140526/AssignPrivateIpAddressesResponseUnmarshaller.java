@@ -14,7 +14,11 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.AssignPrivateIpAddressesResponse;
+import com.aliyuncs.ecs.model.v20140526.AssignPrivateIpAddressesResponse.AssignedPrivateIpAddressesSet;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,6 +27,16 @@ public class AssignPrivateIpAddressesResponseUnmarshaller {
 	public static AssignPrivateIpAddressesResponse unmarshall(AssignPrivateIpAddressesResponse assignPrivateIpAddressesResponse, UnmarshallerContext _ctx) {
 		
 		assignPrivateIpAddressesResponse.setRequestId(_ctx.stringValue("AssignPrivateIpAddressesResponse.RequestId"));
+
+		AssignedPrivateIpAddressesSet assignedPrivateIpAddressesSet = new AssignedPrivateIpAddressesSet();
+		assignedPrivateIpAddressesSet.setNetworkInterfaceId(_ctx.stringValue("AssignPrivateIpAddressesResponse.AssignedPrivateIpAddressesSet.NetworkInterfaceId"));
+
+		List<String> privateIpSet = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("AssignPrivateIpAddressesResponse.AssignedPrivateIpAddressesSet.PrivateIpSet.Length"); i++) {
+			privateIpSet.add(_ctx.stringValue("AssignPrivateIpAddressesResponse.AssignedPrivateIpAddressesSet.PrivateIpSet["+ i +"]"));
+		}
+		assignedPrivateIpAddressesSet.setPrivateIpSet(privateIpSet);
+		assignPrivateIpAddressesResponse.setAssignedPrivateIpAddressesSet(assignedPrivateIpAddressesSet);
 	 
 	 	return assignPrivateIpAddressesResponse;
 	}

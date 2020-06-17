@@ -59,6 +59,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setMemory(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Memory"));
 			instance.setHostName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].HostName"));
 			instance.setDeploymentSetId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DeploymentSetId"));
+			instance.setDeploymentSetGroupNo(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].DeploymentSetGroupNo"));
 			instance.setStatus(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Status"));
 			instance.setSerialNumber(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SerialNumber"));
 			instance.setInternetChargeType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InternetChargeType"));

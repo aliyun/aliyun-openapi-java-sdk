@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ecs.model.v20140526;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecs.transform.v20140526.CreateNetworkInterfaceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,6 +28,38 @@ public class CreateNetworkInterfaceResponse extends AcsResponse {
 	private String requestId;
 
 	private String networkInterfaceId;
+
+	private String status;
+
+	private String type;
+
+	private String vpcId;
+
+	private String vSwitchId;
+
+	private String zoneId;
+
+	private String privateIpAddress;
+
+	private String macAddress;
+
+	private String networkInterfaceName;
+
+	private String description;
+
+	private String resourceGroupId;
+
+	private Long serviceID;
+
+	private Boolean serviceManaged;
+
+	private String ownerId;
+
+	private List<PrivateIpSet> privateIpSets;
+
+	private List<Tag> tags;
+
+	private List<String> securityGroupIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +75,180 @@ public class CreateNetworkInterfaceResponse extends AcsResponse {
 
 	public void setNetworkInterfaceId(String networkInterfaceId) {
 		this.networkInterfaceId = networkInterfaceId;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+	}
+
+	public String getPrivateIpAddress() {
+		return this.privateIpAddress;
+	}
+
+	public void setPrivateIpAddress(String privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
+	}
+
+	public String getMacAddress() {
+		return this.macAddress;
+	}
+
+	public void setMacAddress(String macAddress) {
+		this.macAddress = macAddress;
+	}
+
+	public String getNetworkInterfaceName() {
+		return this.networkInterfaceName;
+	}
+
+	public void setNetworkInterfaceName(String networkInterfaceName) {
+		this.networkInterfaceName = networkInterfaceName;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public Long getServiceID() {
+		return this.serviceID;
+	}
+
+	public void setServiceID(Long serviceID) {
+		this.serviceID = serviceID;
+	}
+
+	public Boolean getServiceManaged() {
+		return this.serviceManaged;
+	}
+
+	public void setServiceManaged(Boolean serviceManaged) {
+		this.serviceManaged = serviceManaged;
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+	}
+
+	public List<PrivateIpSet> getPrivateIpSets() {
+		return this.privateIpSets;
+	}
+
+	public void setPrivateIpSets(List<PrivateIpSet> privateIpSets) {
+		this.privateIpSets = privateIpSets;
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
+	public List<String> getSecurityGroupIds() {
+		return this.securityGroupIds;
+	}
+
+	public void setSecurityGroupIds(List<String> securityGroupIds) {
+		this.securityGroupIds = securityGroupIds;
+	}
+
+	public static class PrivateIpSet {
+
+		private String privateIpAddress;
+
+		private Boolean primary;
+
+		public String getPrivateIpAddress() {
+			return this.privateIpAddress;
+		}
+
+		public void setPrivateIpAddress(String privateIpAddress) {
+			this.privateIpAddress = privateIpAddress;
+		}
+
+		public Boolean getPrimary() {
+			return this.primary;
+		}
+
+		public void setPrimary(Boolean primary) {
+			this.primary = primary;
+		}
+	}
+
+	public static class Tag {
+
+		private String tagKey;
+
+		private String tagValue;
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
+		}
 	}
 
 	@Override

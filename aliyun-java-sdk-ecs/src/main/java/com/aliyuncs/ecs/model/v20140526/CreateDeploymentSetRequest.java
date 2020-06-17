@@ -31,6 +31,8 @@ public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSe
 
 	private String description;
 
+	private Long groupCount;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -85,6 +87,17 @@ public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSe
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public Long getGroupCount() {
+		return this.groupCount;
+	}
+
+	public void setGroupCount(Long groupCount) {
+		this.groupCount = groupCount;
+		if(groupCount != null){
+			putQueryParameter("GroupCount", groupCount.toString());
 		}
 	}
 

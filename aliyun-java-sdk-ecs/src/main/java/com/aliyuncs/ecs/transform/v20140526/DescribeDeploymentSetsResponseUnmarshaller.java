@@ -42,6 +42,7 @@ public class DescribeDeploymentSetsResponseUnmarshaller {
 			deploymentSet.setDeploymentStrategy(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].DeploymentStrategy"));
 			deploymentSet.setDomain(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Domain"));
 			deploymentSet.setGranularity(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Granularity"));
+			deploymentSet.setGroupCount(_ctx.integerValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].GroupCount"));
 			deploymentSet.setInstanceAmount(_ctx.integerValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].InstanceAmount"));
 			deploymentSet.setCreationTime(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].CreationTime"));
 
