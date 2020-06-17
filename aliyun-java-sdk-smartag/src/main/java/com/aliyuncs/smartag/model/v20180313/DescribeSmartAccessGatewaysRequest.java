@@ -39,6 +39,8 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 
 	private String versionComparator;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
 
 	private String instanceType;
@@ -54,6 +56,8 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 	private String associatedCcnId;
 
 	private Long ownerId;
+
+	private String businessState;
 
 	private String name;
 
@@ -146,6 +150,17 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -231,6 +246,17 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getBusinessState() {
+		return this.businessState;
+	}
+
+	public void setBusinessState(String businessState) {
+		this.businessState = businessState;
+		if(businessState != null){
+			putQueryParameter("BusinessState", businessState);
 		}
 	}
 

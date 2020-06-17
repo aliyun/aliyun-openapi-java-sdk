@@ -35,6 +35,8 @@ public class DescribeSmartAccessGatewayClientUsersRequest extends RpcAcsRequest<
 
 	private String ownerAccount;
 
+	private String userMail;
+
 	private Long ownerId;
 
 	private String smartAGId;
@@ -101,6 +103,17 @@ public class DescribeSmartAccessGatewayClientUsersRequest extends RpcAcsRequest<
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getUserMail() {
+		return this.userMail;
+	}
+
+	public void setUserMail(String userMail) {
+		this.userMail = userMail;
+		if(userMail != null){
+			putQueryParameter("UserMail", userMail);
 		}
 	}
 

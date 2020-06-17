@@ -31,8 +31,6 @@ public class CreateCloudConnectNetworkRequest extends RpcAcsRequest<CreateCloudC
 
 	private String snatCidrBlock;
 
-	private Boolean isDefault;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -81,17 +79,6 @@ public class CreateCloudConnectNetworkRequest extends RpcAcsRequest<CreateCloudC
 		this.snatCidrBlock = snatCidrBlock;
 		if(snatCidrBlock != null){
 			putQueryParameter("SnatCidrBlock", snatCidrBlock);
-		}
-	}
-
-	public Boolean getIsDefault() {
-		return this.isDefault;
-	}
-
-	public void setIsDefault(Boolean isDefault) {
-		this.isDefault = isDefault;
-		if(isDefault != null){
-			putQueryParameter("IsDefault", isDefault.toString());
 		}
 	}
 

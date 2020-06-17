@@ -67,6 +67,8 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 
 	private String name;
 
+	private Boolean alreadyHaveSag;
+
 	private String receiverCountry;
 
 	private String chargeType;
@@ -309,6 +311,17 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Boolean getAlreadyHaveSag() {
+		return this.alreadyHaveSag;
+	}
+
+	public void setAlreadyHaveSag(Boolean alreadyHaveSag) {
+		this.alreadyHaveSag = alreadyHaveSag;
+		if(alreadyHaveSag != null){
+			putQueryParameter("AlreadyHaveSag", alreadyHaveSag.toString());
 		}
 	}
 

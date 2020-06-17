@@ -52,6 +52,10 @@ public class DescribeSmartAccessGatewayAttributeResponseUnmarshaller {
 		describeSmartAccessGatewayAttributeResponse.setBackupBoxControllerIp(_ctx.stringValue("DescribeSmartAccessGatewayAttributeResponse.BackupBoxControllerIp"));
 		describeSmartAccessGatewayAttributeResponse.setUpBandwidthWan(_ctx.integerValue("DescribeSmartAccessGatewayAttributeResponse.UpBandwidthWan"));
 		describeSmartAccessGatewayAttributeResponse.setUpBandwidth4G(_ctx.integerValue("DescribeSmartAccessGatewayAttributeResponse.UpBandwidth4G"));
+		describeSmartAccessGatewayAttributeResponse.setEnableOptimization(_ctx.booleanValue("DescribeSmartAccessGatewayAttributeResponse.EnableOptimization"));
+		describeSmartAccessGatewayAttributeResponse.setOptimizationType(_ctx.booleanValue("DescribeSmartAccessGatewayAttributeResponse.OptimizationType"));
+		describeSmartAccessGatewayAttributeResponse.setResourceGroupId(_ctx.stringValue("DescribeSmartAccessGatewayAttributeResponse.ResourceGroupId"));
+		describeSmartAccessGatewayAttributeResponse.setAccessPointId(_ctx.stringValue("DescribeSmartAccessGatewayAttributeResponse.AccessPointId"));
 
 		List<String> aclIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSmartAccessGatewayAttributeResponse.AclIds.Length"); i++) {
@@ -94,8 +98,9 @@ public class DescribeSmartAccessGatewayAttributeResponseUnmarshaller {
 			device.setSerialNumber(_ctx.stringValue("DescribeSmartAccessGatewayAttributeResponse.Devices["+ i +"].SerialNumber"));
 			device.setHcState(_ctx.stringValue("DescribeSmartAccessGatewayAttributeResponse.Devices["+ i +"].HcState"));
 			device.setHaState(_ctx.stringValue("DescribeSmartAccessGatewayAttributeResponse.Devices["+ i +"].HaState"));
-			device.setSoftwareVersion(_ctx.longValue("DescribeSmartAccessGatewayAttributeResponse.Devices["+ i +"].SoftwareVersion"));
+			device.setSoftwareVersion(_ctx.stringValue("DescribeSmartAccessGatewayAttributeResponse.Devices["+ i +"].SoftwareVersion"));
 			device.setMonitorVersion(_ctx.stringValue("DescribeSmartAccessGatewayAttributeResponse.Devices["+ i +"].MonitorVersion"));
+			device.setDistributeSkStatus(_ctx.integerValue("DescribeSmartAccessGatewayAttributeResponse.Devices["+ i +"].DistributeSkStatus"));
 
 			devices.add(device);
 		}

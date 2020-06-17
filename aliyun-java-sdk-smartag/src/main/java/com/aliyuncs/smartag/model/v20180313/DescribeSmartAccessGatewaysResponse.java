@@ -127,6 +127,12 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 
 		private String backupStatus;
 
+		private String resourceGroupId;
+
+		private String vpnStatus;
+
+		private String ipsecStatus;
+
 		private List<Link> links;
 
 		public String getSmartAGId() {
@@ -327,6 +333,30 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 
 		public void setBackupStatus(String backupStatus) {
 			this.backupStatus = backupStatus;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getVpnStatus() {
+			return this.vpnStatus;
+		}
+
+		public void setVpnStatus(String vpnStatus) {
+			this.vpnStatus = vpnStatus;
+		}
+
+		public String getIpsecStatus() {
+			return this.ipsecStatus;
+		}
+
+		public void setIpsecStatus(String ipsecStatus) {
+			this.ipsecStatus = ipsecStatus;
 		}
 
 		public List<Link> getLinks() {

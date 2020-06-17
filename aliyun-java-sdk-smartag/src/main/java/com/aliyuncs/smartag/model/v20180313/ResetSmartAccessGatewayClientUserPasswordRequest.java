@@ -27,6 +27,8 @@ public class ResetSmartAccessGatewayClientUserPasswordRequest extends RpcAcsRequ
 
 	private Long resourceOwnerId;
 
+	private String password;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -53,6 +55,17 @@ public class ResetSmartAccessGatewayClientUserPasswordRequest extends RpcAcsRequ
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putQueryParameter("Password", password);
 		}
 	}
 

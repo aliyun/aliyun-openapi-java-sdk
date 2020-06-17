@@ -1,0 +1,66 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.smartag.model.v20180313;
+
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.smartag.transform.v20180313.DescribeSagCurrentDnsResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class DescribeSagCurrentDnsResponse extends AcsResponse {
+
+	private String requestId;
+
+	private String masterDns;
+
+	private String slaveDns;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getMasterDns() {
+		return this.masterDns;
+	}
+
+	public void setMasterDns(String masterDns) {
+		this.masterDns = masterDns;
+	}
+
+	public String getSlaveDns() {
+		return this.slaveDns;
+	}
+
+	public void setSlaveDns(String slaveDns) {
+		this.slaveDns = slaveDns;
+	}
+
+	@Override
+	public DescribeSagCurrentDnsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeSagCurrentDnsResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
+}

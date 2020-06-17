@@ -27,6 +27,8 @@ public class ModifySmartAccessGatewayClientUserRequest extends RpcAcsRequest<Mod
 
 	private Long resourceOwnerId;
 
+	private String email;
+
 	private String resourceOwnerAccount;
 
 	private Integer bandwidth;
@@ -55,6 +57,17 @@ public class ModifySmartAccessGatewayClientUserRequest extends RpcAcsRequest<Mod
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+		if(email != null){
+			putQueryParameter("Email", email);
 		}
 	}
 

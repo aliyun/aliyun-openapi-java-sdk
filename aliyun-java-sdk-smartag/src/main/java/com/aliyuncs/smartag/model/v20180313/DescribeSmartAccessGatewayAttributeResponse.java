@@ -75,6 +75,14 @@ public class DescribeSmartAccessGatewayAttributeResponse extends AcsResponse {
 
 	private Integer upBandwidth4G;
 
+	private Boolean enableOptimization;
+
+	private Boolean optimizationType;
+
+	private String resourceGroupId;
+
+	private String accessPointId;
+
 	private List<Link> links;
 
 	private List<Device> devices;
@@ -285,6 +293,38 @@ public class DescribeSmartAccessGatewayAttributeResponse extends AcsResponse {
 		this.upBandwidth4G = upBandwidth4G;
 	}
 
+	public Boolean getEnableOptimization() {
+		return this.enableOptimization;
+	}
+
+	public void setEnableOptimization(Boolean enableOptimization) {
+		this.enableOptimization = enableOptimization;
+	}
+
+	public Boolean getOptimizationType() {
+		return this.optimizationType;
+	}
+
+	public void setOptimizationType(Boolean optimizationType) {
+		this.optimizationType = optimizationType;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getAccessPointId() {
+		return this.accessPointId;
+	}
+
+	public void setAccessPointId(String accessPointId) {
+		this.accessPointId = accessPointId;
+	}
+
 	public List<Link> getLinks() {
 		return this.links;
 	}
@@ -426,9 +466,11 @@ public class DescribeSmartAccessGatewayAttributeResponse extends AcsResponse {
 
 		private String haState;
 
-		private Long softwareVersion;
+		private String softwareVersion;
 
 		private String monitorVersion;
+
+		private Integer distributeSkStatus;
 
 		public String getSerialNumber() {
 			return this.serialNumber;
@@ -454,11 +496,11 @@ public class DescribeSmartAccessGatewayAttributeResponse extends AcsResponse {
 			this.haState = haState;
 		}
 
-		public Long getSoftwareVersion() {
+		public String getSoftwareVersion() {
 			return this.softwareVersion;
 		}
 
-		public void setSoftwareVersion(Long softwareVersion) {
+		public void setSoftwareVersion(String softwareVersion) {
 			this.softwareVersion = softwareVersion;
 		}
 
@@ -468,6 +510,14 @@ public class DescribeSmartAccessGatewayAttributeResponse extends AcsResponse {
 
 		public void setMonitorVersion(String monitorVersion) {
 			this.monitorVersion = monitorVersion;
+		}
+
+		public Integer getDistributeSkStatus() {
+			return this.distributeSkStatus;
+		}
+
+		public void setDistributeSkStatus(Integer distributeSkStatus) {
+			this.distributeSkStatus = distributeSkStatus;
 		}
 	}
 
