@@ -83,7 +83,7 @@ public class ListDevicesResponse extends AcsResponse {
 
 		private Integer pageNumber;
 
-		private List<Data> devices;
+		private List<Device> devices;
 
 		public Integer getTotal() {
 			return this.total;
@@ -109,12 +109,95 @@ public class ListDevicesResponse extends AcsResponse {
 			this.pageNumber = pageNumber;
 		}
 
-		public List<Data> getDevices() {
+		public List<Device> getDevices() {
 			return this.devices;
 		}
 
-		public void setDevices(List<Data> devices) {
+		public void setDevices(List<Device> devices) {
 			this.devices = devices;
+		}
+
+		public static class Device {
+
+			private String activationCode;
+
+			private String conferenceCode;
+
+			private String conferenceName;
+
+			private String createTime;
+
+			private String pictureUrl;
+
+			private String sN;
+
+			private String status;
+
+			private String castScreenCode;
+
+			public String getActivationCode() {
+				return this.activationCode;
+			}
+
+			public void setActivationCode(String activationCode) {
+				this.activationCode = activationCode;
+			}
+
+			public String getConferenceCode() {
+				return this.conferenceCode;
+			}
+
+			public void setConferenceCode(String conferenceCode) {
+				this.conferenceCode = conferenceCode;
+			}
+
+			public String getConferenceName() {
+				return this.conferenceName;
+			}
+
+			public void setConferenceName(String conferenceName) {
+				this.conferenceName = conferenceName;
+			}
+
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getPictureUrl() {
+				return this.pictureUrl;
+			}
+
+			public void setPictureUrl(String pictureUrl) {
+				this.pictureUrl = pictureUrl;
+			}
+
+			public String getSN() {
+				return this.sN;
+			}
+
+			public void setSN(String sN) {
+				this.sN = sN;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getCastScreenCode() {
+				return this.castScreenCode;
+			}
+
+			public void setCastScreenCode(String castScreenCode) {
+				this.castScreenCode = castScreenCode;
+			}
 		}
 	}
 

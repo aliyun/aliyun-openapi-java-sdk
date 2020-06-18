@@ -18,7 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.aliyuncvc.model.v20190919.ListDevicesResponse;
-import com.aliyuncs.aliyuncvc.model.v20190919.ListDevicesResponse.Data.Data;
+import com.aliyuncs.aliyuncvc.model.v20190919.ListDevicesResponse.Data;
+import com.aliyuncs.aliyuncvc.model.v20190919.ListDevicesResponse.Data.Device;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,22 +37,22 @@ public class ListDevicesResponseUnmarshaller {
 		data.setPageSize(_ctx.integerValue("ListDevicesResponse.Data.PageSize"));
 		data.setPageNumber(_ctx.integerValue("ListDevicesResponse.Data.PageNumber"));
 
-		List<Data> devices = new ArrayList<Data>();
+		List<Device> devices = new ArrayList<Device>();
 		for (int i = 0; i < _ctx.lengthValue("ListDevicesResponse.Data.Devices.Length"); i++) {
-			Data data_ = new Data();
-			data_.setActivationCode(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].ActivationCode"));
-			data_.setConferenceCode(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].ConferenceCode"));
-			data_.setConferenceName(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].ConferenceName"));
-			data_.setCreateTime(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].CreateTime"));
-			data_.setPictureUrl(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].PictureUrl"));
-			data_.setSN(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].SN"));
-			data_.setStatus(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].Status"));
-			data_.setCastScreenCode(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].CastScreenCode"));
+			Device device = new Device();
+			device.setActivationCode(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].ActivationCode"));
+			device.setConferenceCode(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].ConferenceCode"));
+			device.setConferenceName(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].ConferenceName"));
+			device.setCreateTime(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].CreateTime"));
+			device.setPictureUrl(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].PictureUrl"));
+			device.setSN(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].SN"));
+			device.setStatus(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].Status"));
+			device.setCastScreenCode(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].CastScreenCode"));
 
-			devices.add(data_);
+			devices.add(device);
 		}
 		data.setDevices(devices);
-		listDevicesResponse.setData(listDevicesResponseData);
+		listDevicesResponse.setData(data);
 	 
 	 	return listDevicesResponse;
 	}
