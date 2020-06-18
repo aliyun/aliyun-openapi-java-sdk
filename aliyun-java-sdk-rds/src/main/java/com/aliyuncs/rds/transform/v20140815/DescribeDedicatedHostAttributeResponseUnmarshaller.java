@@ -54,6 +54,7 @@ public class DescribeDedicatedHostAttributeResponseUnmarshaller {
 		describeDedicatedHostAttributeResponse.setHostType(_ctx.stringValue("DescribeDedicatedHostAttributeResponse.HostType"));
 		describeDedicatedHostAttributeResponse.setAccountName(_ctx.stringValue("DescribeDedicatedHostAttributeResponse.AccountName"));
 		describeDedicatedHostAttributeResponse.setOpenPermission(_ctx.stringValue("DescribeDedicatedHostAttributeResponse.OpenPermission"));
+		describeDedicatedHostAttributeResponse.setImageCategory(_ctx.stringValue("DescribeDedicatedHostAttributeResponse.ImageCategory"));
 	 
 	 	return describeDedicatedHostAttributeResponse;
 	}

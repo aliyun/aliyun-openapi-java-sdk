@@ -51,7 +51,7 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String clientToken;
 
-	private String instanceLevel;
+	private Integer instanceLevel;
 
 	private String searchKey;
 
@@ -230,14 +230,14 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getInstanceLevel() {
+	public Integer getInstanceLevel() {
 		return this.instanceLevel;
 	}
 
-	public void setInstanceLevel(String instanceLevel) {
+	public void setInstanceLevel(Integer instanceLevel) {
 		this.instanceLevel = instanceLevel;
 		if(instanceLevel != null){
-			putQueryParameter("InstanceLevel", instanceLevel);
+			putQueryParameter("InstanceLevel", instanceLevel.toString());
 		}
 	}
 

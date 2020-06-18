@@ -107,6 +107,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setMultipleTempUpgrade(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MultipleTempUpgrade"));
 			dBInstanceAttribute.setOriginConfiguration(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].OriginConfiguration"));
 			dBInstanceAttribute.setDedicatedHostGroupId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DedicatedHostGroupId"));
+			dBInstanceAttribute.setSuperPermissionMode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SuperPermissionMode"));
 
 			Extra extra = new Extra();
 			extra.setReplicaGroupID(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ReplicaGroupID"));

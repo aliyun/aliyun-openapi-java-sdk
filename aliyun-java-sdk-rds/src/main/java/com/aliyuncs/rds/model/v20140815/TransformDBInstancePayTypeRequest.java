@@ -22,24 +22,32 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQLCollectorPolicyResponse> {
+public class TransformDBInstancePayTypeRequest extends RpcAcsRequest<TransformDBInstancePayTypeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private String resourceGroupId;
-
 	private String dBInstanceId;
 
+	private String businessInfo;
+
+	private String period;
+
 	private String resourceOwnerAccount;
+
+	private String resource;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeSQLCollectorPolicyRequest() {
-		super("Rds", "2014-08-15", "DescribeSQLCollectorPolicy", "rds");
+
+	private Integer usedTime;
+
+	private String payType;
+	public TransformDBInstancePayTypeRequest() {
+		super("Rds", "2014-08-15", "TransformDBInstancePayType", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,17 +77,6 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -91,6 +88,28 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
+	public String getBusinessInfo() {
+		return this.businessInfo;
+	}
+
+	public void setBusinessInfo(String businessInfo) {
+		this.businessInfo = businessInfo;
+		if(businessInfo != null){
+			putQueryParameter("BusinessInfo", businessInfo);
+		}
+	}
+
+	public String getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(String period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -99,6 +118,17 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getResource() {
+		return this.resource;
+	}
+
+	public void setResource(String resource) {
+		this.resource = resource;
+		if(resource != null){
+			putQueryParameter("Resource", resource);
 		}
 	}
 
@@ -124,9 +154,31 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
+	public Integer getUsedTime() {
+		return this.usedTime;
+	}
+
+	public void setUsedTime(Integer usedTime) {
+		this.usedTime = usedTime;
+		if(usedTime != null){
+			putQueryParameter("UsedTime", usedTime.toString());
+		}
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
+		}
+	}
+
 	@Override
-	public Class<DescribeSQLCollectorPolicyResponse> getResponseClass() {
-		return DescribeSQLCollectorPolicyResponse.class;
+	public Class<TransformDBInstancePayTypeResponse> getResponseClass() {
+		return TransformDBInstancePayTypeResponse.class;
 	}
 
 }

@@ -55,6 +55,7 @@ public class DescribeCrossRegionBackupsResponseUnmarshaller {
 			item.setDBInstanceStorageType(_ctx.stringValue("DescribeCrossRegionBackupsResponse.Items["+ i +"].DBInstanceStorageType"));
 			item.setCategory(_ctx.stringValue("DescribeCrossRegionBackupsResponse.Items["+ i +"].Category"));
 			item.setConsistentTime(_ctx.stringValue("DescribeCrossRegionBackupsResponse.Items["+ i +"].ConsistentTime"));
+			item.setHasBackupTableMeta(_ctx.stringValue("DescribeCrossRegionBackupsResponse.Items["+ i +"].HasBackupTableMeta"));
 
 			List<String> restoreRegions = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCrossRegionBackupsResponse.Items["+ i +"].RestoreRegions.Length"); j++) {

@@ -107,6 +107,8 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		private String storageUsed;
 
+		private String imageCategory;
+
 		public String getHostName() {
 			return this.hostName;
 		}
@@ -305,6 +307,14 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		public void setStorageUsed(String storageUsed) {
 			this.storageUsed = storageUsed;
+		}
+
+		public String getImageCategory() {
+			return this.imageCategory;
+		}
+
+		public void setImageCategory(String imageCategory) {
+			this.imageCategory = imageCategory;
 		}
 	}
 

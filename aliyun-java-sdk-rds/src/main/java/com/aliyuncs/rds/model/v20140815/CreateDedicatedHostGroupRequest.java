@@ -37,6 +37,8 @@ public class CreateDedicatedHostGroupRequest extends RpcAcsRequest<CreateDedicat
 
 	private Integer diskAllocationRatio;
 
+	private Integer openPermission;
+
 	private Integer memAllocationRatio;
 
 	private Long ownerId;
@@ -118,6 +120,17 @@ public class CreateDedicatedHostGroupRequest extends RpcAcsRequest<CreateDedicat
 		this.diskAllocationRatio = diskAllocationRatio;
 		if(diskAllocationRatio != null){
 			putQueryParameter("DiskAllocationRatio", diskAllocationRatio.toString());
+		}
+	}
+
+	public Integer getOpenPermission() {
+		return this.openPermission;
+	}
+
+	public void setOpenPermission(Integer openPermission) {
+		this.openPermission = openPermission;
+		if(openPermission != null){
+			putQueryParameter("OpenPermission", openPermission.toString());
 		}
 	}
 

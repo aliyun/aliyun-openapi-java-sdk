@@ -22,24 +22,26 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQLCollectorPolicyResponse> {
+public class ModifyDBProxyEndpointAddressRequest extends RpcAcsRequest<ModifyDBProxyEndpointAddressResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
-	private String resourceGroupId;
+	private String dBProxyConnectStringNetType;
 
 	private String dBInstanceId;
 
+	private String dBProxyNewConnectStringPort;
+
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
-
 	private Long ownerId;
-	public DescribeSQLCollectorPolicyRequest() {
-		super("Rds", "2014-08-15", "DescribeSQLCollectorPolicy", "rds");
+
+	private String dBProxyEndpointId;
+
+	private String dBProxyNewConnectString;
+	public ModifyDBProxyEndpointAddressRequest() {
+		super("Rds", "2014-08-15", "ModifyDBProxyEndpointAddress", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,25 +60,14 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getDBProxyConnectStringNetType() {
+		return this.dBProxyConnectStringNetType;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setDBProxyConnectStringNetType(String dBProxyConnectStringNetType) {
+		this.dBProxyConnectStringNetType = dBProxyConnectStringNetType;
+		if(dBProxyConnectStringNetType != null){
+			putQueryParameter("DBProxyConnectStringNetType", dBProxyConnectStringNetType);
 		}
 	}
 
@@ -91,6 +82,17 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
+	public String getDBProxyNewConnectStringPort() {
+		return this.dBProxyNewConnectStringPort;
+	}
+
+	public void setDBProxyNewConnectStringPort(String dBProxyNewConnectStringPort) {
+		this.dBProxyNewConnectStringPort = dBProxyNewConnectStringPort;
+		if(dBProxyNewConnectStringPort != null){
+			putQueryParameter("DBProxyNewConnectStringPort", dBProxyNewConnectStringPort);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -99,17 +101,6 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -124,9 +115,31 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
+	public String getDBProxyEndpointId() {
+		return this.dBProxyEndpointId;
+	}
+
+	public void setDBProxyEndpointId(String dBProxyEndpointId) {
+		this.dBProxyEndpointId = dBProxyEndpointId;
+		if(dBProxyEndpointId != null){
+			putQueryParameter("DBProxyEndpointId", dBProxyEndpointId);
+		}
+	}
+
+	public String getDBProxyNewConnectString() {
+		return this.dBProxyNewConnectString;
+	}
+
+	public void setDBProxyNewConnectString(String dBProxyNewConnectString) {
+		this.dBProxyNewConnectString = dBProxyNewConnectString;
+		if(dBProxyNewConnectString != null){
+			putQueryParameter("DBProxyNewConnectString", dBProxyNewConnectString);
+		}
+	}
+
 	@Override
-	public Class<DescribeSQLCollectorPolicyResponse> getResponseClass() {
-		return DescribeSQLCollectorPolicyResponse.class;
+	public Class<ModifyDBProxyEndpointAddressResponse> getResponseClass() {
+		return ModifyDBProxyEndpointAddressResponse.class;
 	}
 
 }

@@ -33,6 +33,10 @@ public class DescribeResourceUsageResponseUnmarshaller {
 		describeResourceUsageResponse.setBackupOssLogSize(_ctx.longValue("DescribeResourceUsageResponse.BackupOssLogSize"));
 		describeResourceUsageResponse.setSQLSize(_ctx.longValue("DescribeResourceUsageResponse.SQLSize"));
 		describeResourceUsageResponse.setColdBackupSize(_ctx.longValue("DescribeResourceUsageResponse.ColdBackupSize"));
+		describeResourceUsageResponse.setBackupDataSize(_ctx.longValue("DescribeResourceUsageResponse.BackupDataSize"));
+		describeResourceUsageResponse.setBackupLogSize(_ctx.longValue("DescribeResourceUsageResponse.BackupLogSize"));
+		describeResourceUsageResponse.setPaidBackupSize(_ctx.longValue("DescribeResourceUsageResponse.PaidBackupSize"));
+		describeResourceUsageResponse.setArchiveBackupSize(_ctx.longValue("DescribeResourceUsageResponse.ArchiveBackupSize"));
 	 
 	 	return describeResourceUsageResponse;
 	}

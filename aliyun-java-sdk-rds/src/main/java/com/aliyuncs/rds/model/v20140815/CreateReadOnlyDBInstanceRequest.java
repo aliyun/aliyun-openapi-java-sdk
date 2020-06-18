@@ -35,6 +35,8 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	private String resourceGroupId;
 
+	private String targetDedicatedHostIdForMaster;
+
 	private String dBInstanceId;
 
 	private String dBInstanceDescription;
@@ -125,6 +127,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getTargetDedicatedHostIdForMaster() {
+		return this.targetDedicatedHostIdForMaster;
+	}
+
+	public void setTargetDedicatedHostIdForMaster(String targetDedicatedHostIdForMaster) {
+		this.targetDedicatedHostIdForMaster = targetDedicatedHostIdForMaster;
+		if(targetDedicatedHostIdForMaster != null){
+			putQueryParameter("TargetDedicatedHostIdForMaster", targetDedicatedHostIdForMaster);
 		}
 	}
 

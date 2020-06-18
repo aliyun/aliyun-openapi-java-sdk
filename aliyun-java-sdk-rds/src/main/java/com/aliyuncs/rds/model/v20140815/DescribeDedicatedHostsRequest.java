@@ -29,6 +29,10 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 
 	private String hostType;
 
+	private String hostStatus;
+
+	private String allocationStatus;
+
 	private String dedicatedHostGroupId;
 
 	private String resourceOwnerAccount;
@@ -36,6 +40,8 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 	private Long orderId;
 
 	private Long ownerId;
+
+	private String zoneId;
 	public DescribeDedicatedHostsRequest() {
 		super("Rds", "2014-08-15", "DescribeDedicatedHosts", "rds");
 		setMethod(MethodType.POST);
@@ -64,6 +70,28 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 		this.hostType = hostType;
 		if(hostType != null){
 			putQueryParameter("HostType", hostType);
+		}
+	}
+
+	public String getHostStatus() {
+		return this.hostStatus;
+	}
+
+	public void setHostStatus(String hostStatus) {
+		this.hostStatus = hostStatus;
+		if(hostStatus != null){
+			putQueryParameter("HostStatus", hostStatus);
+		}
+	}
+
+	public String getAllocationStatus() {
+		return this.allocationStatus;
+	}
+
+	public void setAllocationStatus(String allocationStatus) {
+		this.allocationStatus = allocationStatus;
+		if(allocationStatus != null){
+			putQueryParameter("AllocationStatus", allocationStatus);
 		}
 	}
 
@@ -108,6 +136,17 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

@@ -22,24 +22,28 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQLCollectorPolicyResponse> {
+public class DescribeCrossBackupMetaListRequest extends RpcAcsRequest<DescribeCrossBackupMetaListResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
+	private String pattern;
 
-	private String resourceGroupId;
+	private String pageSize;
 
-	private String dBInstanceId;
+	private String pageIndex;
 
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
+	private String backupSetId;
 
 	private Long ownerId;
-	public DescribeSQLCollectorPolicyRequest() {
-		super("Rds", "2014-08-15", "DescribeSQLCollectorPolicy", "rds");
+
+	private String getDbName;
+
+	private String region;
+	public DescribeCrossBackupMetaListRequest() {
+		super("Rds", "2014-08-15", "DescribeCrossBackupMetaList", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,36 +62,36 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getPattern() {
+		return this.pattern;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setPattern(String pattern) {
+		this.pattern = pattern;
+		if(pattern != null){
+			putQueryParameter("Pattern", pattern);
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
+	public String getPageIndex() {
+		return this.pageIndex;
 	}
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
+	public void setPageIndex(String pageIndex) {
+		this.pageIndex = pageIndex;
+		if(pageIndex != null){
+			putQueryParameter("PageIndex", pageIndex);
 		}
 	}
 
@@ -102,14 +106,14 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getBackupSetId() {
+		return this.backupSetId;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setBackupSetId(String backupSetId) {
+		this.backupSetId = backupSetId;
+		if(backupSetId != null){
+			putQueryParameter("BackupSetId", backupSetId);
 		}
 	}
 
@@ -124,9 +128,31 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
+	public String getGetDbName() {
+		return this.getDbName;
+	}
+
+	public void setGetDbName(String getDbName) {
+		this.getDbName = getDbName;
+		if(getDbName != null){
+			putQueryParameter("GetDbName", getDbName);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
 	@Override
-	public Class<DescribeSQLCollectorPolicyResponse> getResponseClass() {
-		return DescribeSQLCollectorPolicyResponse.class;
+	public Class<DescribeCrossBackupMetaListResponse> getResponseClass() {
+		return DescribeCrossBackupMetaListResponse.class;
 	}
 
 }

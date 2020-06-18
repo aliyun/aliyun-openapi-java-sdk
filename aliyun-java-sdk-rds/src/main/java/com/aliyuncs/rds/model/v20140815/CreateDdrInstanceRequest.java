@@ -31,6 +31,8 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 
 	private String systemDBCharset;
 
+	private String binlogRole;
+
 	private String engineVersion;
 
 	private String resourceGroupId;
@@ -50,6 +52,8 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 	private String vSwitchId;
 
 	private String privateIpAddress;
+
+	private String binlogName;
 
 	private String zoneId;
 
@@ -74,6 +78,8 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 	private String ownerAccount;
 
 	private String usedTime;
+
+	private String binlogPosition;
 
 	private String restoreType;
 
@@ -121,6 +127,17 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		this.systemDBCharset = systemDBCharset;
 		if(systemDBCharset != null){
 			putQueryParameter("SystemDBCharset", systemDBCharset);
+		}
+	}
+
+	public String getBinlogRole() {
+		return this.binlogRole;
+	}
+
+	public void setBinlogRole(String binlogRole) {
+		this.binlogRole = binlogRole;
+		if(binlogRole != null){
+			putQueryParameter("BinlogRole", binlogRole);
 		}
 	}
 
@@ -231,6 +248,17 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		this.privateIpAddress = privateIpAddress;
 		if(privateIpAddress != null){
 			putQueryParameter("PrivateIpAddress", privateIpAddress);
+		}
+	}
+
+	public String getBinlogName() {
+		return this.binlogName;
+	}
+
+	public void setBinlogName(String binlogName) {
+		this.binlogName = binlogName;
+		if(binlogName != null){
+			putQueryParameter("BinlogName", binlogName);
 		}
 	}
 
@@ -363,6 +391,17 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime);
+		}
+	}
+
+	public String getBinlogPosition() {
+		return this.binlogPosition;
+	}
+
+	public void setBinlogPosition(String binlogPosition) {
+		this.binlogPosition = binlogPosition;
+		if(binlogPosition != null){
+			putQueryParameter("BinlogPosition", binlogPosition);
 		}
 	}
 

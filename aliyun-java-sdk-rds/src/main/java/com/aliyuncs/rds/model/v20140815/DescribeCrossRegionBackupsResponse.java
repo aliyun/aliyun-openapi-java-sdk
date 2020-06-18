@@ -143,6 +143,8 @@ public class DescribeCrossRegionBackupsResponse extends AcsResponse {
 
 		private String consistentTime;
 
+		private String hasBackupTableMeta;
+
 		private List<String> restoreRegions;
 
 		public Integer getCrossBackupId() {
@@ -287,6 +289,14 @@ public class DescribeCrossRegionBackupsResponse extends AcsResponse {
 
 		public void setConsistentTime(String consistentTime) {
 			this.consistentTime = consistentTime;
+		}
+
+		public String getHasBackupTableMeta() {
+			return this.hasBackupTableMeta;
+		}
+
+		public void setHasBackupTableMeta(String hasBackupTableMeta) {
+			this.hasBackupTableMeta = hasBackupTableMeta;
 		}
 
 		public List<String> getRestoreRegions() {

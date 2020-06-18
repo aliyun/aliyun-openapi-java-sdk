@@ -35,6 +35,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	private Long totalBackupSize;
 
+	private Long totalEcsSnapshotSize;
+
 	private List<Backup> items;
 
 	public String getRequestId() {
@@ -75,6 +77,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	public void setTotalBackupSize(Long totalBackupSize) {
 		this.totalBackupSize = totalBackupSize;
+	}
+
+	public Long getTotalEcsSnapshotSize() {
+		return this.totalEcsSnapshotSize;
+	}
+
+	public void setTotalEcsSnapshotSize(Long totalEcsSnapshotSize) {
+		this.totalEcsSnapshotSize = totalEcsSnapshotSize;
 	}
 
 	public List<Backup> getItems() {
@@ -130,6 +140,10 @@ public class DescribeBackupsResponse extends AcsResponse {
 		private Long consistentTime;
 
 		private String backupInitiator;
+
+		private String copyOnlyBackup;
+
+		private String storageClass;
 
 		public String getBackupId() {
 			return this.backupId;
@@ -305,6 +319,22 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupInitiator(String backupInitiator) {
 			this.backupInitiator = backupInitiator;
+		}
+
+		public String getCopyOnlyBackup() {
+			return this.copyOnlyBackup;
+		}
+
+		public void setCopyOnlyBackup(String copyOnlyBackup) {
+			this.copyOnlyBackup = copyOnlyBackup;
+		}
+
+		public String getStorageClass() {
+			return this.storageClass;
+		}
+
+		public void setStorageClass(String storageClass) {
+			this.storageClass = storageClass;
 		}
 	}
 

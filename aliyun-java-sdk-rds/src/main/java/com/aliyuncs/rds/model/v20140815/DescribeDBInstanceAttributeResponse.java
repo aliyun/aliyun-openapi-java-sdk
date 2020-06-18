@@ -193,6 +193,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String dedicatedHostGroupId;
 
+		private String superPermissionMode;
+
 		private List<SlaveZone> slaveZones;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -781,6 +783,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
 			this.dedicatedHostGroupId = dedicatedHostGroupId;
+		}
+
+		public String getSuperPermissionMode() {
+			return this.superPermissionMode;
+		}
+
+		public void setSuperPermissionMode(String superPermissionMode) {
+			this.superPermissionMode = superPermissionMode;
 		}
 
 		public List<SlaveZone> getSlaveZones() {

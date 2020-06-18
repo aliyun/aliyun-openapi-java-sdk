@@ -22,24 +22,18 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQLCollectorPolicyResponse> {
+public class DescribeDedicatedHostImageCategoriesRequest extends RpcAcsRequest<DescribeDedicatedHostImageCategoriesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
-	private String resourceGroupId;
-
-	private String dBInstanceId;
-
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
-
 	private Long ownerId;
-	public DescribeSQLCollectorPolicyRequest() {
-		super("Rds", "2014-08-15", "DescribeSQLCollectorPolicy", "rds");
+
+	private String hostGroup;
+	public DescribeDedicatedHostImageCategoriesRequest() {
+		super("Rds", "2014-08-15", "DescribeDedicatedHostImageCategories", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,39 +52,6 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -99,17 +60,6 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -124,9 +74,20 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
+	public String getHostGroup() {
+		return this.hostGroup;
+	}
+
+	public void setHostGroup(String hostGroup) {
+		this.hostGroup = hostGroup;
+		if(hostGroup != null){
+			putQueryParameter("HostGroup", hostGroup);
+		}
+	}
+
 	@Override
-	public Class<DescribeSQLCollectorPolicyResponse> getResponseClass() {
-		return DescribeSQLCollectorPolicyResponse.class;
+	public Class<DescribeDedicatedHostImageCategoriesResponse> getResponseClass() {
+		return DescribeDedicatedHostImageCategoriesResponse.class;
 	}
 
 }

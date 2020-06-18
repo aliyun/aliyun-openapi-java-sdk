@@ -88,6 +88,8 @@ public class DescribeDedicatedHostAttributeResponse extends AcsResponse {
 
 	private String openPermission;
 
+	private String imageCategory;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -342,6 +344,14 @@ public class DescribeDedicatedHostAttributeResponse extends AcsResponse {
 
 	public void setOpenPermission(String openPermission) {
 		this.openPermission = openPermission;
+	}
+
+	public String getImageCategory() {
+		return this.imageCategory;
+	}
+
+	public void setImageCategory(String imageCategory) {
+		this.imageCategory = imageCategory;
 	}
 
 	@Override

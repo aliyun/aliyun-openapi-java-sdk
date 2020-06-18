@@ -46,6 +46,14 @@ public class DescribeResourceUsageResponse extends AcsResponse {
 
 	private Long coldBackupSize;
 
+	private Long backupDataSize;
+
+	private Long backupLogSize;
+
+	private Long paidBackupSize;
+
+	private Long archiveBackupSize;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -132,6 +140,38 @@ public class DescribeResourceUsageResponse extends AcsResponse {
 
 	public void setColdBackupSize(Long coldBackupSize) {
 		this.coldBackupSize = coldBackupSize;
+	}
+
+	public Long getBackupDataSize() {
+		return this.backupDataSize;
+	}
+
+	public void setBackupDataSize(Long backupDataSize) {
+		this.backupDataSize = backupDataSize;
+	}
+
+	public Long getBackupLogSize() {
+		return this.backupLogSize;
+	}
+
+	public void setBackupLogSize(Long backupLogSize) {
+		this.backupLogSize = backupLogSize;
+	}
+
+	public Long getPaidBackupSize() {
+		return this.paidBackupSize;
+	}
+
+	public void setPaidBackupSize(Long paidBackupSize) {
+		this.paidBackupSize = paidBackupSize;
+	}
+
+	public Long getArchiveBackupSize() {
+		return this.archiveBackupSize;
+	}
+
+	public void setArchiveBackupSize(Long archiveBackupSize) {
+		this.archiveBackupSize = archiveBackupSize;
 	}
 
 	@Override

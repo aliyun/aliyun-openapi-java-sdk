@@ -31,6 +31,8 @@ public class DescribeDedicatedHostGroupsRequest extends RpcAcsRequest<DescribeDe
 
 	private Long ownerId;
 
+	private String imageCategory;
+
 	private String dedicatedHostGroupId;
 	public DescribeDedicatedHostGroupsRequest() {
 		super("Rds", "2014-08-15", "DescribeDedicatedHostGroups", "rds");
@@ -71,6 +73,17 @@ public class DescribeDedicatedHostGroupsRequest extends RpcAcsRequest<DescribeDe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getImageCategory() {
+		return this.imageCategory;
+	}
+
+	public void setImageCategory(String imageCategory) {
+		this.imageCategory = imageCategory;
+		if(imageCategory != null){
+			putQueryParameter("ImageCategory", imageCategory);
 		}
 	}
 

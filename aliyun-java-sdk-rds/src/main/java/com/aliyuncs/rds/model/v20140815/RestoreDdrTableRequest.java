@@ -22,24 +22,32 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQLCollectorPolicyResponse> {
+public class RestoreDdrTableRequest extends RpcAcsRequest<RestoreDdrTableResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private String sourceDBInstanceName;
+
 	private String clientToken;
 
-	private String resourceGroupId;
+	private String tableMeta;
 
 	private String dBInstanceId;
 
+	private String restoreTime;
+
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
+	private String backupId;
 
 	private Long ownerId;
-	public DescribeSQLCollectorPolicyRequest() {
-		super("Rds", "2014-08-15", "DescribeSQLCollectorPolicy", "rds");
+
+	private String restoreType;
+
+	private String sourceRegion;
+	public RestoreDdrTableRequest() {
+		super("Rds", "2014-08-15", "RestoreDdrTable", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +66,17 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
+	public String getSourceDBInstanceName() {
+		return this.sourceDBInstanceName;
+	}
+
+	public void setSourceDBInstanceName(String sourceDBInstanceName) {
+		this.sourceDBInstanceName = sourceDBInstanceName;
+		if(sourceDBInstanceName != null){
+			putQueryParameter("SourceDBInstanceName", sourceDBInstanceName);
+		}
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -69,14 +88,14 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getTableMeta() {
+		return this.tableMeta;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setTableMeta(String tableMeta) {
+		this.tableMeta = tableMeta;
+		if(tableMeta != null){
+			putQueryParameter("TableMeta", tableMeta);
 		}
 	}
 
@@ -91,6 +110,17 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
+	public String getRestoreTime() {
+		return this.restoreTime;
+	}
+
+	public void setRestoreTime(String restoreTime) {
+		this.restoreTime = restoreTime;
+		if(restoreTime != null){
+			putQueryParameter("RestoreTime", restoreTime);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -102,14 +132,14 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getBackupId() {
+		return this.backupId;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setBackupId(String backupId) {
+		this.backupId = backupId;
+		if(backupId != null){
+			putQueryParameter("BackupId", backupId);
 		}
 	}
 
@@ -124,9 +154,31 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
+	public String getRestoreType() {
+		return this.restoreType;
+	}
+
+	public void setRestoreType(String restoreType) {
+		this.restoreType = restoreType;
+		if(restoreType != null){
+			putQueryParameter("RestoreType", restoreType);
+		}
+	}
+
+	public String getSourceRegion() {
+		return this.sourceRegion;
+	}
+
+	public void setSourceRegion(String sourceRegion) {
+		this.sourceRegion = sourceRegion;
+		if(sourceRegion != null){
+			putQueryParameter("SourceRegion", sourceRegion);
+		}
+	}
+
 	@Override
-	public Class<DescribeSQLCollectorPolicyResponse> getResponseClass() {
-		return DescribeSQLCollectorPolicyResponse.class;
+	public Class<RestoreDdrTableResponse> getResponseClass() {
+		return RestoreDdrTableResponse.class;
 	}
 
 }

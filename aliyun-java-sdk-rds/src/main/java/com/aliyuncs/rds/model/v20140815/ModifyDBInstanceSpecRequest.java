@@ -39,6 +39,8 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private String sourceBiz;
 
+	private String dedicatedHostGroupId;
+
 	private String direction;
 
 	private String resourceOwnerAccount;
@@ -48,6 +50,8 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 	private Long ownerId;
 
 	private String dBInstanceClass;
+
+	private String zoneId;
 
 	private String payType;
 	public ModifyDBInstanceSpecRequest() {
@@ -136,6 +140,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
+	public String getDedicatedHostGroupId() {
+		return this.dedicatedHostGroupId;
+	}
+
+	public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
+		this.dedicatedHostGroupId = dedicatedHostGroupId;
+		if(dedicatedHostGroupId != null){
+			putQueryParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+		}
+	}
+
 	public String getDirection() {
 		return this.direction;
 	}
@@ -188,6 +203,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.dBInstanceClass = dBInstanceClass;
 		if(dBInstanceClass != null){
 			putQueryParameter("DBInstanceClass", dBInstanceClass);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

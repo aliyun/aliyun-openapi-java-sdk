@@ -35,6 +35,8 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private String instanceChargeType;
 
+	private Integer dispenseMode;
+
 	private String dBInstanceClass;
 
 	private String zoneId;
@@ -103,6 +105,17 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		this.instanceChargeType = instanceChargeType;
 		if(instanceChargeType != null){
 			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
+	}
+
+	public Integer getDispenseMode() {
+		return this.dispenseMode;
+	}
+
+	public void setDispenseMode(Integer dispenseMode) {
+		this.dispenseMode = dispenseMode;
+		if(dispenseMode != null){
+			putQueryParameter("DispenseMode", dispenseMode.toString());
 		}
 	}
 
