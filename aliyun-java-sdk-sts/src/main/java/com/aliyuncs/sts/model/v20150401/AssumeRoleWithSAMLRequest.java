@@ -23,18 +23,20 @@ import com.aliyuncs.sts.Endpoint;
  * @author auto create
  * @version 
  */
-public class AssumeRoleRequest extends RpcAcsRequest<AssumeRoleResponse> {
+public class AssumeRoleWithSAMLRequest extends RpcAcsRequest<AssumeRoleWithSAMLResponse> {
 	   
 
-	private String roleSessionName;
-
-	private String policy;
+	private String sAMLAssertion;
 
 	private String roleArn;
 
+	private String sAMLProviderArn;
+
 	private Long durationSeconds;
-	public AssumeRoleRequest() {
-		super("Sts", "2015-04-01", "AssumeRole", "sts");
+
+	private String policy;
+	public AssumeRoleWithSAMLRequest() {
+		super("Sts", "2015-04-01", "AssumeRoleWithSAML", "sts");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -43,25 +45,14 @@ public class AssumeRoleRequest extends RpcAcsRequest<AssumeRoleResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getRoleSessionName() {
-		return this.roleSessionName;
+	public String getSAMLAssertion() {
+		return this.sAMLAssertion;
 	}
 
-	public void setRoleSessionName(String roleSessionName) {
-		this.roleSessionName = roleSessionName;
-		if(roleSessionName != null){
-			putQueryParameter("RoleSessionName", roleSessionName);
-		}
-	}
-
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-		if(policy != null){
-			putQueryParameter("Policy", policy);
+	public void setSAMLAssertion(String sAMLAssertion) {
+		this.sAMLAssertion = sAMLAssertion;
+		if(sAMLAssertion != null){
+			putQueryParameter("SAMLAssertion", sAMLAssertion);
 		}
 	}
 
@@ -76,6 +67,17 @@ public class AssumeRoleRequest extends RpcAcsRequest<AssumeRoleResponse> {
 		}
 	}
 
+	public String getSAMLProviderArn() {
+		return this.sAMLProviderArn;
+	}
+
+	public void setSAMLProviderArn(String sAMLProviderArn) {
+		this.sAMLProviderArn = sAMLProviderArn;
+		if(sAMLProviderArn != null){
+			putQueryParameter("SAMLProviderArn", sAMLProviderArn);
+		}
+	}
+
 	public Long getDurationSeconds() {
 		return this.durationSeconds;
 	}
@@ -87,9 +89,20 @@ public class AssumeRoleRequest extends RpcAcsRequest<AssumeRoleResponse> {
 		}
 	}
 
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
+		}
+	}
+
 	@Override
-	public Class<AssumeRoleResponse> getResponseClass() {
-		return AssumeRoleResponse.class;
+	public Class<AssumeRoleWithSAMLResponse> getResponseClass() {
+		return AssumeRoleWithSAMLResponse.class;
 	}
 
 }
