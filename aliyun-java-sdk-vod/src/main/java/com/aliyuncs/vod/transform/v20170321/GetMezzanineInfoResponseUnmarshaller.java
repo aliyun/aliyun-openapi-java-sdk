@@ -95,6 +95,7 @@ public class GetMezzanineInfoResponseUnmarshaller {
 			videoStream.setNumFrames(_ctx.stringValue("GetMezzanineInfoResponse.Mezzanine.VideoStreamList["+ i +"].NumFrames"));
 			videoStream.setLang(_ctx.stringValue("GetMezzanineInfoResponse.Mezzanine.VideoStreamList["+ i +"].Lang"));
 			videoStream.setRotate(_ctx.stringValue("GetMezzanineInfoResponse.Mezzanine.VideoStreamList["+ i +"].Rotate"));
+			videoStream.setBitrate(_ctx.stringValue("GetMezzanineInfoResponse.Mezzanine.VideoStreamList["+ i +"].Bitrate"));
 
 			videoStreamList.add(videoStream);
 		}

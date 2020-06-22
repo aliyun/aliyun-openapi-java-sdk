@@ -416,6 +416,8 @@ public class GetMezzanineInfoResponse extends AcsResponse {
 
 			private String rotate;
 
+			private String bitrate;
+
 			public String getIndex() {
 				return this.index;
 			}
@@ -590,6 +592,14 @@ public class GetMezzanineInfoResponse extends AcsResponse {
 
 			public void setRotate(String rotate) {
 				this.rotate = rotate;
+			}
+
+			public String getBitrate() {
+				return this.bitrate;
+			}
+
+			public void setBitrate(String bitrate) {
+				this.bitrate = bitrate;
 			}
 		}
 	}
