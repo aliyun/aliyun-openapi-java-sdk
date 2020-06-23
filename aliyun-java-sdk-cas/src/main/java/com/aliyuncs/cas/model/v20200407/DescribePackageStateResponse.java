@@ -32,6 +32,8 @@ public class DescribePackageStateResponse extends AcsResponse {
 
 	private Long issuedCount;
 
+	private String productCode;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -62,6 +64,14 @@ public class DescribePackageStateResponse extends AcsResponse {
 
 	public void setIssuedCount(Long issuedCount) {
 		this.issuedCount = issuedCount;
+	}
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
 	}
 
 	@Override

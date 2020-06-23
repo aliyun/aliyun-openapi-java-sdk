@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-cas</artifactId>
   <packaging>jar</packaging>
-  <version>2020.04.07</version>
+  <version>2020.06.23</version>
   <name>aliyun-java-sdk-cas</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

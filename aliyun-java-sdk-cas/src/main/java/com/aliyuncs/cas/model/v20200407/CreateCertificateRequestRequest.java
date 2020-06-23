@@ -25,13 +25,15 @@ import com.aliyuncs.cas.Endpoint;
 public class CreateCertificateRequestRequest extends RpcAcsRequest<CreateCertificateRequestResponse> {
 	   
 
+	private String productCode;
+
 	private String validateType;
+
+	private String email;
 
 	private String phone;
 
 	private String domain;
-
-	private String email;
 
 	private String username;
 	public CreateCertificateRequestRequest() {
@@ -43,6 +45,17 @@ public class CreateCertificateRequestRequest extends RpcAcsRequest<CreateCertifi
 		} catch (Exception e) {}
 	}
 
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+		if(productCode != null){
+			putQueryParameter("ProductCode", productCode);
+		}
+	}
+
 	public String getValidateType() {
 		return this.validateType;
 	}
@@ -51,6 +64,17 @@ public class CreateCertificateRequestRequest extends RpcAcsRequest<CreateCertifi
 		this.validateType = validateType;
 		if(validateType != null){
 			putQueryParameter("ValidateType", validateType);
+		}
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+		if(email != null){
+			putQueryParameter("Email", email);
 		}
 	}
 
@@ -73,17 +97,6 @@ public class CreateCertificateRequestRequest extends RpcAcsRequest<CreateCertifi
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
-		}
-	}
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-		if(email != null){
-			putQueryParameter("Email", email);
 		}
 	}
 

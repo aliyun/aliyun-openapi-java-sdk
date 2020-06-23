@@ -26,6 +26,7 @@ public class DescribePackageStateResponseUnmarshaller {
 		describePackageStateResponse.setTotalCount(_ctx.longValue("DescribePackageStateResponse.TotalCount"));
 		describePackageStateResponse.setUsedCount(_ctx.longValue("DescribePackageStateResponse.UsedCount"));
 		describePackageStateResponse.setIssuedCount(_ctx.longValue("DescribePackageStateResponse.IssuedCount"));
+		describePackageStateResponse.setProductCode(_ctx.stringValue("DescribePackageStateResponse.ProductCode"));
 	 
 	 	return describePackageStateResponse;
 	}

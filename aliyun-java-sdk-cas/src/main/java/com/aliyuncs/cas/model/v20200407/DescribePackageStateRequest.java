@@ -24,6 +24,8 @@ import com.aliyuncs.cas.Endpoint;
  */
 public class DescribePackageStateRequest extends RpcAcsRequest<DescribePackageStateResponse> {
 	   
+
+	private String productCode;
 	public DescribePackageStateRequest() {
 		super("cas", "2020-04-07", "DescribePackageState", "cas");
 		setMethod(MethodType.POST);
@@ -31,6 +33,17 @@ public class DescribePackageStateRequest extends RpcAcsRequest<DescribePackageSt
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+		if(productCode != null){
+			putQueryParameter("ProductCode", productCode);
+		}
 	}
 
 	@Override
