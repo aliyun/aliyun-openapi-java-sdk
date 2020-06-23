@@ -25,6 +25,8 @@ import com.aliyuncs.aliyuncvc.Endpoint;
 public class CallDeviceRequest extends RpcAcsRequest<CallDeviceResponse> {
 	   
 
+	private String inviteName;
+
 	private String operateUserId;
 
 	private Boolean joinMeetingFlag;
@@ -39,6 +41,17 @@ public class CallDeviceRequest extends RpcAcsRequest<CallDeviceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getInviteName() {
+		return this.inviteName;
+	}
+
+	public void setInviteName(String inviteName) {
+		this.inviteName = inviteName;
+		if(inviteName != null){
+			putBodyParameter("InviteName", inviteName);
+		}
 	}
 
 	public String getOperateUserId() {
