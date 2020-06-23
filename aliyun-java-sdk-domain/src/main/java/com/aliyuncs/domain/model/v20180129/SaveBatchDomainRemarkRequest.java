@@ -15,24 +15,42 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveBatchDomainRemarkRequest extends RpcAcsRequest<SaveBatchDomainRemarkResponse> {
-	
-	public SaveBatchDomainRemarkRequest() {
-		super("Domain", "2018-01-29", "SaveBatchDomainRemark");
-	}
+	   
+
+	private String remark;
 
 	private String instanceIds;
 
 	private String userClientIp;
 
-	private String remark;
-
 	private String lang;
+	public SaveBatchDomainRemarkRequest() {
+		super("Domain", "2018-01-29", "SaveBatchDomainRemark", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
+		}
+	}
 
 	public String getInstanceIds() {
 		return this.instanceIds;
@@ -53,17 +71,6 @@ public class SaveBatchDomainRemarkRequest extends RpcAcsRequest<SaveBatchDomainR
 		this.userClientIp = userClientIp;
 		if(userClientIp != null){
 			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public String getRemark() {
-		return this.remark;
-	}
-
-	public void setRemark(String remark) {
-		this.remark = remark;
-		if(remark != null){
-			putQueryParameter("Remark", remark);
 		}
 	}
 

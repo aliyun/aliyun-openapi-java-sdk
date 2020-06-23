@@ -15,24 +15,42 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryDomainGroupListRequest extends RpcAcsRequest<QueryDomainGroupListResponse> {
-	
-	public QueryDomainGroupListRequest() {
-		super("Domain", "2018-01-29", "QueryDomainGroupList");
-	}
+	   
+
+	private Boolean showDeletingGroup;
 
 	private String userClientIp;
 
 	private String domainGroupName;
 
 	private String lang;
+	public QueryDomainGroupListRequest() {
+		super("Domain", "2018-01-29", "QueryDomainGroupList", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private Boolean showDeletingGroup;
+	public Boolean getShowDeletingGroup() {
+		return this.showDeletingGroup;
+	}
+
+	public void setShowDeletingGroup(Boolean showDeletingGroup) {
+		this.showDeletingGroup = showDeletingGroup;
+		if(showDeletingGroup != null){
+			putQueryParameter("ShowDeletingGroup", showDeletingGroup.toString());
+		}
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;
@@ -64,17 +82,6 @@ public class QueryDomainGroupListRequest extends RpcAcsRequest<QueryDomainGroupL
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Boolean getShowDeletingGroup() {
-		return this.showDeletingGroup;
-	}
-
-	public void setShowDeletingGroup(Boolean showDeletingGroup) {
-		this.showDeletingGroup = showDeletingGroup;
-		if(showDeletingGroup != null){
-			putQueryParameter("ShowDeletingGroup", showDeletingGroup.toString());
 		}
 	}
 

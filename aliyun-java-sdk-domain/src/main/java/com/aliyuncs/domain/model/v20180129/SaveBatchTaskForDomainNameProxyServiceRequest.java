@@ -16,34 +16,30 @@ package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveBatchTaskForDomainNameProxyServiceRequest extends RpcAcsRequest<SaveBatchTaskForDomainNameProxyServiceResponse> {
-	
-	public SaveBatchTaskForDomainNameProxyServiceRequest() {
-		super("Domain", "2018-01-29", "SaveBatchTaskForDomainNameProxyService");
-	}
-
-	private String userClientIp;
+	   
 
 	private List<String> domainNames;
+
+	private String userClientIp;
 
 	private String lang;
 
 	private Boolean status;
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
+	public SaveBatchTaskForDomainNameProxyServiceRequest() {
+		super("Domain", "2018-01-29", "SaveBatchTaskForDomainNameProxyService", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public List<String> getDomainNames() {
@@ -57,6 +53,17 @@ public class SaveBatchTaskForDomainNameProxyServiceRequest extends RpcAcsRequest
 				putQueryParameter("DomainName." + (i + 1) , domainNames.get(i));
 			}
 		}	
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public String getLang() {

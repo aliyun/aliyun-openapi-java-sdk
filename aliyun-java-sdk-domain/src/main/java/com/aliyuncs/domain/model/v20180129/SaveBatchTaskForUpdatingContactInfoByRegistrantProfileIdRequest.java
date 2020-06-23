@@ -16,20 +16,17 @@ package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest extends RpcAcsRequest<SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdResponse> {
-	
-	public SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest() {
-		super("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId");
-	}
+	   
 
 	private String contactType;
-
-	private String userClientIp;
 
 	private Long registrantProfileId;
 
@@ -37,7 +34,17 @@ public class SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest ext
 
 	private Boolean transferOutProhibited;
 
+	private String userClientIp;
+
 	private String lang;
+	public SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest() {
+		super("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getContactType() {
 		return this.contactType;
@@ -47,17 +54,6 @@ public class SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest ext
 		this.contactType = contactType;
 		if(contactType != null){
 			putQueryParameter("ContactType", contactType);
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 
@@ -93,6 +89,17 @@ public class SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest ext
 		this.transferOutProhibited = transferOutProhibited;
 		if(transferOutProhibited != null){
 			putQueryParameter("TransferOutProhibited", transferOutProhibited.toString());
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

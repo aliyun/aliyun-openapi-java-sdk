@@ -16,16 +16,19 @@ package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveBatchTaskForCreatingOrderRenewRequest extends RpcAcsRequest<SaveBatchTaskForCreatingOrderRenewResponse> {
-	
-	public SaveBatchTaskForCreatingOrderRenewRequest() {
-		super("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRenew");
-	}
+	   
+
+	private String couponNo;
+
+	private Boolean useCoupon;
 
 	private String promotionNo;
 
@@ -33,13 +36,39 @@ public class SaveBatchTaskForCreatingOrderRenewRequest extends RpcAcsRequest<Sav
 
 	private List<OrderRenewParam> orderRenewParams;
 
-	private String couponNo;
-
-	private Boolean useCoupon;
-
 	private String lang;
 
 	private Boolean usePromotion;
+	public SaveBatchTaskForCreatingOrderRenewRequest() {
+		super("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRenew", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getCouponNo() {
+		return this.couponNo;
+	}
+
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
+		}
+	}
+
+	public Boolean getUseCoupon() {
+		return this.useCoupon;
+	}
+
+	public void setUseCoupon(Boolean useCoupon) {
+		this.useCoupon = useCoupon;
+		if(useCoupon != null){
+			putQueryParameter("UseCoupon", useCoupon.toString());
+		}
+	}
 
 	public String getPromotionNo() {
 		return this.promotionNo;
@@ -76,28 +105,6 @@ public class SaveBatchTaskForCreatingOrderRenewRequest extends RpcAcsRequest<Sav
 				putQueryParameter("OrderRenewParam." + (depth1 + 1) + ".DomainName" , orderRenewParams.get(depth1).getDomainName());
 			}
 		}	
-	}
-
-	public String getCouponNo() {
-		return this.couponNo;
-	}
-
-	public void setCouponNo(String couponNo) {
-		this.couponNo = couponNo;
-		if(couponNo != null){
-			putQueryParameter("CouponNo", couponNo);
-		}
-	}
-
-	public Boolean getUseCoupon() {
-		return this.useCoupon;
-	}
-
-	public void setUseCoupon(Boolean useCoupon) {
-		this.useCoupon = useCoupon;
-		if(useCoupon != null){
-			putQueryParameter("UseCoupon", useCoupon.toString());
-		}
 	}
 
 	public String getLang() {

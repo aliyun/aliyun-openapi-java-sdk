@@ -15,20 +15,33 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ScrollDomainListRequest extends RpcAcsRequest<ScrollDomainListResponse> {
-	
-	public ScrollDomainListRequest() {
-		super("Domain", "2018-01-29", "ScrollDomainList");
-	}
-
-	private Long endExpirationDate;
+	   
 
 	private String productDomainType;
+
+	private String excluded;
+
+	private Integer startLength;
+
+	private Boolean excludedSuffix;
+
+	private Integer pageSize;
+
+	private String lang;
+
+	private Boolean excludedPrefix;
+
+	private String keyWord;
+
+	private Long endExpirationDate;
 
 	private String suffixs;
 
@@ -42,15 +55,9 @@ public class ScrollDomainListRequest extends RpcAcsRequest<ScrollDomainListRespo
 
 	private String scrollId;
 
-	private String excluded;
-
 	private Boolean keyWordPrefix;
 
-	private Integer startLength;
-
 	private Integer tradeType;
-
-	private Boolean excludedSuffix;
 
 	private Long endRegistrationDate;
 
@@ -58,27 +65,16 @@ public class ScrollDomainListRequest extends RpcAcsRequest<ScrollDomainListRespo
 
 	private String userClientIp;
 
-	private Integer pageSize;
-
-	private String lang;
-
-	private Boolean excludedPrefix;
-
-	private String keyWord;
-
 	private Long startRegistrationDate;
 
 	private Integer endLength;
-
-	public Long getEndExpirationDate() {
-		return this.endExpirationDate;
-	}
-
-	public void setEndExpirationDate(Long endExpirationDate) {
-		this.endExpirationDate = endExpirationDate;
-		if(endExpirationDate != null){
-			putQueryParameter("EndExpirationDate", endExpirationDate.toString());
-		}
+	public ScrollDomainListRequest() {
+		super("Domain", "2018-01-29", "ScrollDomainList", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getProductDomainType() {
@@ -89,6 +85,94 @@ public class ScrollDomainListRequest extends RpcAcsRequest<ScrollDomainListRespo
 		this.productDomainType = productDomainType;
 		if(productDomainType != null){
 			putQueryParameter("ProductDomainType", productDomainType);
+		}
+	}
+
+	public String getExcluded() {
+		return this.excluded;
+	}
+
+	public void setExcluded(String excluded) {
+		this.excluded = excluded;
+		if(excluded != null){
+			putQueryParameter("Excluded", excluded);
+		}
+	}
+
+	public Integer getStartLength() {
+		return this.startLength;
+	}
+
+	public void setStartLength(Integer startLength) {
+		this.startLength = startLength;
+		if(startLength != null){
+			putQueryParameter("StartLength", startLength.toString());
+		}
+	}
+
+	public Boolean getExcludedSuffix() {
+		return this.excludedSuffix;
+	}
+
+	public void setExcludedSuffix(Boolean excludedSuffix) {
+		this.excludedSuffix = excludedSuffix;
+		if(excludedSuffix != null){
+			putQueryParameter("ExcludedSuffix", excludedSuffix.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Boolean getExcludedPrefix() {
+		return this.excludedPrefix;
+	}
+
+	public void setExcludedPrefix(Boolean excludedPrefix) {
+		this.excludedPrefix = excludedPrefix;
+		if(excludedPrefix != null){
+			putQueryParameter("ExcludedPrefix", excludedPrefix.toString());
+		}
+	}
+
+	public String getKeyWord() {
+		return this.keyWord;
+	}
+
+	public void setKeyWord(String keyWord) {
+		this.keyWord = keyWord;
+		if(keyWord != null){
+			putQueryParameter("KeyWord", keyWord);
+		}
+	}
+
+	public Long getEndExpirationDate() {
+		return this.endExpirationDate;
+	}
+
+	public void setEndExpirationDate(Long endExpirationDate) {
+		this.endExpirationDate = endExpirationDate;
+		if(endExpirationDate != null){
+			putQueryParameter("EndExpirationDate", endExpirationDate.toString());
 		}
 	}
 
@@ -158,17 +242,6 @@ public class ScrollDomainListRequest extends RpcAcsRequest<ScrollDomainListRespo
 		}
 	}
 
-	public String getExcluded() {
-		return this.excluded;
-	}
-
-	public void setExcluded(String excluded) {
-		this.excluded = excluded;
-		if(excluded != null){
-			putQueryParameter("Excluded", excluded);
-		}
-	}
-
 	public Boolean getKeyWordPrefix() {
 		return this.keyWordPrefix;
 	}
@@ -180,17 +253,6 @@ public class ScrollDomainListRequest extends RpcAcsRequest<ScrollDomainListRespo
 		}
 	}
 
-	public Integer getStartLength() {
-		return this.startLength;
-	}
-
-	public void setStartLength(Integer startLength) {
-		this.startLength = startLength;
-		if(startLength != null){
-			putQueryParameter("StartLength", startLength.toString());
-		}
-	}
-
 	public Integer getTradeType() {
 		return this.tradeType;
 	}
@@ -199,17 +261,6 @@ public class ScrollDomainListRequest extends RpcAcsRequest<ScrollDomainListRespo
 		this.tradeType = tradeType;
 		if(tradeType != null){
 			putQueryParameter("TradeType", tradeType.toString());
-		}
-	}
-
-	public Boolean getExcludedSuffix() {
-		return this.excludedSuffix;
-	}
-
-	public void setExcludedSuffix(Boolean excludedSuffix) {
-		this.excludedSuffix = excludedSuffix;
-		if(excludedSuffix != null){
-			putQueryParameter("ExcludedSuffix", excludedSuffix.toString());
 		}
 	}
 
@@ -243,50 +294,6 @@ public class ScrollDomainListRequest extends RpcAcsRequest<ScrollDomainListRespo
 		this.userClientIp = userClientIp;
 		if(userClientIp != null){
 			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Boolean getExcludedPrefix() {
-		return this.excludedPrefix;
-	}
-
-	public void setExcludedPrefix(Boolean excludedPrefix) {
-		this.excludedPrefix = excludedPrefix;
-		if(excludedPrefix != null){
-			putQueryParameter("ExcludedPrefix", excludedPrefix.toString());
-		}
-	}
-
-	public String getKeyWord() {
-		return this.keyWord;
-	}
-
-	public void setKeyWord(String keyWord) {
-		this.keyWord = keyWord;
-		if(keyWord != null){
-			putQueryParameter("KeyWord", keyWord);
 		}
 	}
 

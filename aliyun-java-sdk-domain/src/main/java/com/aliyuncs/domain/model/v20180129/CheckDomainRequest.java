@@ -15,26 +15,44 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CheckDomainRequest extends RpcAcsRequest<CheckDomainResponse> {
-	
-	public CheckDomainRequest() {
-		super("Domain", "2018-01-29", "CheckDomain");
-	}
+	   
+
+	private String domainName;
 
 	private String feeCurrency;
 
 	private Integer feePeriod;
 
-	private String domainName;
-
 	private String feeCommand;
 
 	private String lang;
+	public CheckDomainRequest() {
+		super("Domain", "2018-01-29", "CheckDomain", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
 
 	public String getFeeCurrency() {
 		return this.feeCurrency;
@@ -55,17 +73,6 @@ public class CheckDomainRequest extends RpcAcsRequest<CheckDomainResponse> {
 		this.feePeriod = feePeriod;
 		if(feePeriod != null){
 			putQueryParameter("FeePeriod", feePeriod.toString());
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
 		}
 	}
 

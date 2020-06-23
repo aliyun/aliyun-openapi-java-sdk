@@ -15,22 +15,29 @@
 package com.aliyuncs.domain.model.v20180208;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class BidDomainRequest extends RpcAcsRequest<BidDomainResponse> {
-	
-	public BidDomainRequest() {
-		super("Domain", "2018-02-08", "BidDomain");
-	}
+	   
 
 	private String auctionId;
 
 	private Float maxBid;
 
 	private String currency;
+	public BidDomainRequest() {
+		super("Domain", "2018-02-08", "BidDomain", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAuctionId() {
 		return this.auctionId;

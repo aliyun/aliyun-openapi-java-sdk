@@ -15,24 +15,42 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryQualificationDetailRequest extends RpcAcsRequest<QueryQualificationDetailResponse> {
-	
-	public QueryQualificationDetailRequest() {
-		super("Domain", "2018-01-29", "QueryQualificationDetail");
-	}
+	   
+
+	private String qualificationType;
 
 	private String instanceId;
 
 	private String userClientIp;
 
 	private String lang;
+	public QueryQualificationDetailRequest() {
+		super("Domain", "2018-01-29", "QueryQualificationDetail", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private String qualificationType;
+	public String getQualificationType() {
+		return this.qualificationType;
+	}
+
+	public void setQualificationType(String qualificationType) {
+		this.qualificationType = qualificationType;
+		if(qualificationType != null){
+			putQueryParameter("QualificationType", qualificationType);
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -64,17 +82,6 @@ public class QueryQualificationDetailRequest extends RpcAcsRequest<QueryQualific
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getQualificationType() {
-		return this.qualificationType;
-	}
-
-	public void setQualificationType(String qualificationType) {
-		this.qualificationType = qualificationType;
-		if(qualificationType != null){
-			putQueryParameter("QualificationType", qualificationType);
 		}
 	}
 

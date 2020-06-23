@@ -16,22 +16,29 @@ package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class AcknowledgeTaskResultRequest extends RpcAcsRequest<AcknowledgeTaskResultResponse> {
-	
-	public AcknowledgeTaskResultRequest() {
-		super("Domain", "2018-01-29", "AcknowledgeTaskResult");
-	}
+	   
 
 	private List<String> taskDetailNos;
 
 	private String userClientIp;
 
 	private String lang;
+	public AcknowledgeTaskResultRequest() {
+		super("Domain", "2018-01-29", "AcknowledgeTaskResult", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<String> getTaskDetailNos() {
 		return this.taskDetailNos;

@@ -15,16 +15,21 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveSingleTaskForSaveArtExtensionRequest extends RpcAcsRequest<SaveSingleTaskForSaveArtExtensionResponse> {
-	
-	public SaveSingleTaskForSaveArtExtensionRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForSaveArtExtension");
-	}
+	   
+
+	private String subject;
+
+	private String title;
+
+	private String dateOrPeriod;
 
 	private String reference;
 
@@ -32,23 +37,58 @@ public class SaveSingleTaskForSaveArtExtensionRequest extends RpcAcsRequest<Save
 
 	private String inscriptionsAndMarkings;
 
-	private String subject;
+	private String objectType;
+
+	private String lang;
 
 	private String domainName;
 
 	private String maker;
 
-	private String objectType;
-
-	private String title;
-
-	private String lang;
-
 	private String materialsAndTechniques;
 
-	private String dateOrPeriod;
-
 	private String dimensions;
+	public SaveSingleTaskForSaveArtExtensionRequest() {
+		super("Domain", "2018-01-29", "SaveSingleTaskForSaveArtExtension", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getSubject() {
+		return this.subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+		if(subject != null){
+			putQueryParameter("Subject", subject);
+		}
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
+		}
+	}
+
+	public String getDateOrPeriod() {
+		return this.dateOrPeriod;
+	}
+
+	public void setDateOrPeriod(String dateOrPeriod) {
+		this.dateOrPeriod = dateOrPeriod;
+		if(dateOrPeriod != null){
+			putQueryParameter("DateOrPeriod", dateOrPeriod);
+		}
+	}
 
 	public String getReference() {
 		return this.reference;
@@ -83,14 +123,25 @@ public class SaveSingleTaskForSaveArtExtensionRequest extends RpcAcsRequest<Save
 		}
 	}
 
-	public String getSubject() {
-		return this.subject;
+	public String getObjectType() {
+		return this.objectType;
 	}
 
-	public void setSubject(String subject) {
-		this.subject = subject;
-		if(subject != null){
-			putQueryParameter("Subject", subject);
+	public void setObjectType(String objectType) {
+		this.objectType = objectType;
+		if(objectType != null){
+			putQueryParameter("ObjectType", objectType);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
@@ -116,39 +167,6 @@ public class SaveSingleTaskForSaveArtExtensionRequest extends RpcAcsRequest<Save
 		}
 	}
 
-	public String getObjectType() {
-		return this.objectType;
-	}
-
-	public void setObjectType(String objectType) {
-		this.objectType = objectType;
-		if(objectType != null){
-			putQueryParameter("ObjectType", objectType);
-		}
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-		if(title != null){
-			putQueryParameter("Title", title);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
 	public String getMaterialsAndTechniques() {
 		return this.materialsAndTechniques;
 	}
@@ -157,17 +175,6 @@ public class SaveSingleTaskForSaveArtExtensionRequest extends RpcAcsRequest<Save
 		this.materialsAndTechniques = materialsAndTechniques;
 		if(materialsAndTechniques != null){
 			putQueryParameter("MaterialsAndTechniques", materialsAndTechniques);
-		}
-	}
-
-	public String getDateOrPeriod() {
-		return this.dateOrPeriod;
-	}
-
-	public void setDateOrPeriod(String dateOrPeriod) {
-		this.dateOrPeriod = dateOrPeriod;
-		if(dateOrPeriod != null){
-			putQueryParameter("DateOrPeriod", dateOrPeriod);
 		}
 	}
 

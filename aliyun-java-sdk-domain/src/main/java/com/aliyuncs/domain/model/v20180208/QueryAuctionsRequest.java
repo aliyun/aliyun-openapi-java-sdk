@@ -15,22 +15,29 @@
 package com.aliyuncs.domain.model.v20180208;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryAuctionsRequest extends RpcAcsRequest<QueryAuctionsResponse> {
-	
-	public QueryAuctionsRequest() {
-		super("Domain", "2018-02-08", "QueryAuctions");
-	}
+	   
 
 	private Integer pageSize;
 
 	private Integer currentPage;
 
 	private String status;
+	public QueryAuctionsRequest() {
+		super("Domain", "2018-02-08", "QueryAuctions", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;

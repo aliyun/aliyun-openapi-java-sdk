@@ -15,34 +15,30 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CheckProcessingServerLockApplyRequest extends RpcAcsRequest<CheckProcessingServerLockApplyResponse> {
-	
-	public CheckProcessingServerLockApplyRequest() {
-		super("Domain", "2018-01-29", "CheckProcessingServerLockApply");
-	}
-
-	private Integer feePeriod;
+	   
 
 	private String domainName;
+
+	private Integer feePeriod;
 
 	private String userClientIp;
 
 	private String lang;
-
-	public Integer getFeePeriod() {
-		return this.feePeriod;
-	}
-
-	public void setFeePeriod(Integer feePeriod) {
-		this.feePeriod = feePeriod;
-		if(feePeriod != null){
-			putQueryParameter("FeePeriod", feePeriod.toString());
-		}
+	public CheckProcessingServerLockApplyRequest() {
+		super("Domain", "2018-01-29", "CheckProcessingServerLockApply", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDomainName() {
@@ -53,6 +49,17 @@ public class CheckProcessingServerLockApplyRequest extends RpcAcsRequest<CheckPr
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Integer getFeePeriod() {
+		return this.feePeriod;
+	}
+
+	public void setFeePeriod(Integer feePeriod) {
+		this.feePeriod = feePeriod;
+		if(feePeriod != null){
+			putQueryParameter("FeePeriod", feePeriod.toString());
 		}
 	}
 

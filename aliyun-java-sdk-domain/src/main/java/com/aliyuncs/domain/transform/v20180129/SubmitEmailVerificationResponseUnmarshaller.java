@@ -41,23 +41,23 @@ public class SubmitEmailVerificationResponseUnmarshaller {
 
 		List<SendResult> failList = new ArrayList<SendResult>();
 		for (int i = 0; i < _ctx.lengthValue("SubmitEmailVerificationResponse.FailList.Length"); i++) {
-			SendResult sendResult = new SendResult();
-			sendResult.setEmail(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Email"));
-			sendResult.setCode(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Code"));
-			sendResult.setMessage(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Message"));
+			SendResult sendResult_ = new SendResult();
+			sendResult_.setEmail(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Email"));
+			sendResult_.setCode(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Code"));
+			sendResult_.setMessage(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Message"));
 
-			failList.add(sendResult);
+			failList.add(sendResult_);
 		}
 		submitEmailVerificationResponse.setFailList(failList);
 
 		List<SendResult> existList = new ArrayList<SendResult>();
 		for (int i = 0; i < _ctx.lengthValue("SubmitEmailVerificationResponse.ExistList.Length"); i++) {
-			SendResult sendResult = new SendResult();
-			sendResult.setEmail(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Email"));
-			sendResult.setCode(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Code"));
-			sendResult.setMessage(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Message"));
+			SendResult sendResult_ = new SendResult();
+			sendResult_.setEmail(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Email"));
+			sendResult_.setCode(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Code"));
+			sendResult_.setMessage(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Message"));
 
-			existList.add(sendResult);
+			existList.add(sendResult_);
 		}
 		submitEmailVerificationResponse.setExistList(existList);
 	 

@@ -15,26 +15,41 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveRegistrantProfileRequest extends RpcAcsRequest<SaveRegistrantProfileResponse> {
-	
-	public SaveRegistrantProfileRequest() {
-		super("Domain", "2018-01-29", "SaveRegistrantProfile");
-	}
+	   
 
 	private String country;
-
-	private String address;
-
-	private String telArea;
 
 	private String city;
 
 	private Long registrantProfileId;
+
+	private String zhCity;
+
+	private String telExt;
+
+	private String province;
+
+	private String zhRegistrantName;
+
+	private String postalCode;
+
+	private String lang;
+
+	private String email;
+
+	private String zhRegistrantOrganization;
+
+	private String address;
+
+	private String telArea;
 
 	private String zhAddress;
 
@@ -46,29 +61,21 @@ public class SaveRegistrantProfileRequest extends RpcAcsRequest<SaveRegistrantPr
 
 	private Boolean defaultRegistrantProfile;
 
-	private String zhCity;
-
 	private String zhProvince;
 
 	private String registrantOrganization;
 
-	private String telExt;
-
-	private String province;
-
-	private String zhRegistrantName;
-
-	private String postalCode;
-
 	private String userClientIp;
 
-	private String lang;
-
-	private String email;
-
 	private String registrantName;
-
-	private String zhRegistrantOrganization;
+	public SaveRegistrantProfileRequest() {
+		super("Domain", "2018-01-29", "SaveRegistrantProfile", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCountry() {
 		return this.country;
@@ -78,28 +85,6 @@ public class SaveRegistrantProfileRequest extends RpcAcsRequest<SaveRegistrantPr
 		this.country = country;
 		if(country != null){
 			putQueryParameter("Country", country);
-		}
-	}
-
-	public String getAddress() {
-		return this.address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-		if(address != null){
-			putQueryParameter("Address", address);
-		}
-	}
-
-	public String getTelArea() {
-		return this.telArea;
-	}
-
-	public void setTelArea(String telArea) {
-		this.telArea = telArea;
-		if(telArea != null){
-			putQueryParameter("TelArea", telArea);
 		}
 	}
 
@@ -122,6 +107,116 @@ public class SaveRegistrantProfileRequest extends RpcAcsRequest<SaveRegistrantPr
 		this.registrantProfileId = registrantProfileId;
 		if(registrantProfileId != null){
 			putQueryParameter("RegistrantProfileId", registrantProfileId.toString());
+		}
+	}
+
+	public String getZhCity() {
+		return this.zhCity;
+	}
+
+	public void setZhCity(String zhCity) {
+		this.zhCity = zhCity;
+		if(zhCity != null){
+			putQueryParameter("ZhCity", zhCity);
+		}
+	}
+
+	public String getTelExt() {
+		return this.telExt;
+	}
+
+	public void setTelExt(String telExt) {
+		this.telExt = telExt;
+		if(telExt != null){
+			putQueryParameter("TelExt", telExt);
+		}
+	}
+
+	public String getProvince() {
+		return this.province;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
+		if(province != null){
+			putQueryParameter("Province", province);
+		}
+	}
+
+	public String getZhRegistrantName() {
+		return this.zhRegistrantName;
+	}
+
+	public void setZhRegistrantName(String zhRegistrantName) {
+		this.zhRegistrantName = zhRegistrantName;
+		if(zhRegistrantName != null){
+			putQueryParameter("ZhRegistrantName", zhRegistrantName);
+		}
+	}
+
+	public String getPostalCode() {
+		return this.postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+		if(postalCode != null){
+			putQueryParameter("PostalCode", postalCode);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+		if(email != null){
+			putQueryParameter("Email", email);
+		}
+	}
+
+	public String getZhRegistrantOrganization() {
+		return this.zhRegistrantOrganization;
+	}
+
+	public void setZhRegistrantOrganization(String zhRegistrantOrganization) {
+		this.zhRegistrantOrganization = zhRegistrantOrganization;
+		if(zhRegistrantOrganization != null){
+			putQueryParameter("ZhRegistrantOrganization", zhRegistrantOrganization);
+		}
+	}
+
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+		if(address != null){
+			putQueryParameter("Address", address);
+		}
+	}
+
+	public String getTelArea() {
+		return this.telArea;
+	}
+
+	public void setTelArea(String telArea) {
+		this.telArea = telArea;
+		if(telArea != null){
+			putQueryParameter("TelArea", telArea);
 		}
 	}
 
@@ -180,17 +275,6 @@ public class SaveRegistrantProfileRequest extends RpcAcsRequest<SaveRegistrantPr
 		}
 	}
 
-	public String getZhCity() {
-		return this.zhCity;
-	}
-
-	public void setZhCity(String zhCity) {
-		this.zhCity = zhCity;
-		if(zhCity != null){
-			putQueryParameter("ZhCity", zhCity);
-		}
-	}
-
 	public String getZhProvince() {
 		return this.zhProvince;
 	}
@@ -213,50 +297,6 @@ public class SaveRegistrantProfileRequest extends RpcAcsRequest<SaveRegistrantPr
 		}
 	}
 
-	public String getTelExt() {
-		return this.telExt;
-	}
-
-	public void setTelExt(String telExt) {
-		this.telExt = telExt;
-		if(telExt != null){
-			putQueryParameter("TelExt", telExt);
-		}
-	}
-
-	public String getProvince() {
-		return this.province;
-	}
-
-	public void setProvince(String province) {
-		this.province = province;
-		if(province != null){
-			putQueryParameter("Province", province);
-		}
-	}
-
-	public String getZhRegistrantName() {
-		return this.zhRegistrantName;
-	}
-
-	public void setZhRegistrantName(String zhRegistrantName) {
-		this.zhRegistrantName = zhRegistrantName;
-		if(zhRegistrantName != null){
-			putQueryParameter("ZhRegistrantName", zhRegistrantName);
-		}
-	}
-
-	public String getPostalCode() {
-		return this.postalCode;
-	}
-
-	public void setPostalCode(String postalCode) {
-		this.postalCode = postalCode;
-		if(postalCode != null){
-			putQueryParameter("PostalCode", postalCode);
-		}
-	}
-
 	public String getUserClientIp() {
 		return this.userClientIp;
 	}
@@ -268,28 +308,6 @@ public class SaveRegistrantProfileRequest extends RpcAcsRequest<SaveRegistrantPr
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-		if(email != null){
-			putQueryParameter("Email", email);
-		}
-	}
-
 	public String getRegistrantName() {
 		return this.registrantName;
 	}
@@ -298,17 +316,6 @@ public class SaveRegistrantProfileRequest extends RpcAcsRequest<SaveRegistrantPr
 		this.registrantName = registrantName;
 		if(registrantName != null){
 			putQueryParameter("RegistrantName", registrantName);
-		}
-	}
-
-	public String getZhRegistrantOrganization() {
-		return this.zhRegistrantOrganization;
-	}
-
-	public void setZhRegistrantOrganization(String zhRegistrantOrganization) {
-		this.zhRegistrantOrganization = zhRegistrantOrganization;
-		if(zhRegistrantOrganization != null){
-			putQueryParameter("ZhRegistrantOrganization", zhRegistrantOrganization);
 		}
 	}
 

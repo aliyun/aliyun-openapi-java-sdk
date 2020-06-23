@@ -15,16 +15,15 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveSingleTaskForAddingDSRecordRequest extends RpcAcsRequest<SaveSingleTaskForAddingDSRecordResponse> {
-	
-	public SaveSingleTaskForAddingDSRecordRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForAddingDSRecord");
-	}
+	   
 
 	private Integer keyTag;
 
@@ -39,6 +38,14 @@ public class SaveSingleTaskForAddingDSRecordRequest extends RpcAcsRequest<SaveSi
 	private String lang;
 
 	private Integer algorithm;
+	public SaveSingleTaskForAddingDSRecordRequest() {
+		super("Domain", "2018-01-29", "SaveSingleTaskForAddingDSRecord", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getKeyTag() {
 		return this.keyTag;

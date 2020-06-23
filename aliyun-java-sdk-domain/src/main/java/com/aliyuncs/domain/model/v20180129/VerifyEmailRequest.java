@@ -15,22 +15,40 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class VerifyEmailRequest extends RpcAcsRequest<VerifyEmailResponse> {
-	
-	public VerifyEmailRequest() {
-		super("Domain", "2018-01-29", "VerifyEmail");
-	}
+	   
+
+	private String token;
 
 	private String userClientIp;
 
 	private String lang;
+	public VerifyEmailRequest() {
+		super("Domain", "2018-01-29", "VerifyEmail", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private String token;
+	public String getToken() {
+		return this.token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+		if(token != null){
+			putQueryParameter("Token", token);
+		}
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;
@@ -51,17 +69,6 @@ public class VerifyEmailRequest extends RpcAcsRequest<VerifyEmailResponse> {
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
 		}
 	}
 

@@ -15,24 +15,42 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CheckTransferInFeasibilityRequest extends RpcAcsRequest<CheckTransferInFeasibilityResponse> {
-	
-	public CheckTransferInFeasibilityRequest() {
-		super("Domain", "2018-01-29", "CheckTransferInFeasibility");
-	}
+	   
+
+	private String domainName;
 
 	private String transferAuthorizationCode;
 
 	private String userClientIp;
 
-	private String domainName;
-
 	private String lang;
+	public CheckTransferInFeasibilityRequest() {
+		super("Domain", "2018-01-29", "CheckTransferInFeasibility", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
 
 	public String getTransferAuthorizationCode() {
 		return this.transferAuthorizationCode;
@@ -53,17 +71,6 @@ public class CheckTransferInFeasibilityRequest extends RpcAcsRequest<CheckTransf
 		this.userClientIp = userClientIp;
 		if(userClientIp != null){
 			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
 		}
 	}
 

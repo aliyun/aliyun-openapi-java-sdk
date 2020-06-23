@@ -15,34 +15,30 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class TransferInReenterTransferAuthorizationCodeRequest extends RpcAcsRequest<TransferInReenterTransferAuthorizationCodeResponse> {
-	
-	public TransferInReenterTransferAuthorizationCodeRequest() {
-		super("Domain", "2018-01-29", "TransferInReenterTransferAuthorizationCode");
-	}
-
-	private String transferAuthorizationCode;
+	   
 
 	private String domainName;
+
+	private String transferAuthorizationCode;
 
 	private String userClientIp;
 
 	private String lang;
-
-	public String getTransferAuthorizationCode() {
-		return this.transferAuthorizationCode;
-	}
-
-	public void setTransferAuthorizationCode(String transferAuthorizationCode) {
-		this.transferAuthorizationCode = transferAuthorizationCode;
-		if(transferAuthorizationCode != null){
-			putQueryParameter("TransferAuthorizationCode", transferAuthorizationCode);
-		}
+	public TransferInReenterTransferAuthorizationCodeRequest() {
+		super("Domain", "2018-01-29", "TransferInReenterTransferAuthorizationCode", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDomainName() {
@@ -53,6 +49,17 @@ public class TransferInReenterTransferAuthorizationCodeRequest extends RpcAcsReq
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getTransferAuthorizationCode() {
+		return this.transferAuthorizationCode;
+	}
+
+	public void setTransferAuthorizationCode(String transferAuthorizationCode) {
+		this.transferAuthorizationCode = transferAuthorizationCode;
+		if(transferAuthorizationCode != null){
+			putQueryParameter("TransferAuthorizationCode", transferAuthorizationCode);
 		}
 	}
 

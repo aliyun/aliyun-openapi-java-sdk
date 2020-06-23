@@ -41,12 +41,12 @@ public class ResendEmailVerificationResponseUnmarshaller {
 
 		List<SendResult> failList = new ArrayList<SendResult>();
 		for (int i = 0; i < _ctx.lengthValue("ResendEmailVerificationResponse.FailList.Length"); i++) {
-			SendResult sendResult = new SendResult();
-			sendResult.setEmail(_ctx.stringValue("ResendEmailVerificationResponse.FailList["+ i +"].Email"));
-			sendResult.setCode(_ctx.stringValue("ResendEmailVerificationResponse.FailList["+ i +"].Code"));
-			sendResult.setMessage(_ctx.stringValue("ResendEmailVerificationResponse.FailList["+ i +"].Message"));
+			SendResult sendResult_ = new SendResult();
+			sendResult_.setEmail(_ctx.stringValue("ResendEmailVerificationResponse.FailList["+ i +"].Email"));
+			sendResult_.setCode(_ctx.stringValue("ResendEmailVerificationResponse.FailList["+ i +"].Code"));
+			sendResult_.setMessage(_ctx.stringValue("ResendEmailVerificationResponse.FailList["+ i +"].Message"));
 
-			failList.add(sendResult);
+			failList.add(sendResult_);
 		}
 		resendEmailVerificationResponse.setFailList(failList);
 	 

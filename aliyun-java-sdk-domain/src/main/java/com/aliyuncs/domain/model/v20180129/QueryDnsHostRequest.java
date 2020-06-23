@@ -15,22 +15,29 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryDnsHostRequest extends RpcAcsRequest<QueryDnsHostResponse> {
-	
-	public QueryDnsHostRequest() {
-		super("Domain", "2018-01-29", "QueryDnsHost");
-	}
+	   
 
 	private String instanceId;
 
 	private String userClientIp;
 
 	private String lang;
+	public QueryDnsHostRequest() {
+		super("Domain", "2018-01-29", "QueryDnsHost", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;

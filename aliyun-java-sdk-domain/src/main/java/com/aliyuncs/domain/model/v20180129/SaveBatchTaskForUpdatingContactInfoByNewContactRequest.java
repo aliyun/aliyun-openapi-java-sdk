@@ -16,42 +16,23 @@ package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends RpcAcsRequest<SaveBatchTaskForUpdatingContactInfoByNewContactResponse> {
-	
-	public SaveBatchTaskForUpdatingContactInfoByNewContactRequest() {
-		super("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByNewContact");
-	}
+	   
 
 	private String country;
 
-	private String address;
-
-	private String telArea;
-
-	private String contactType;
-
 	private String city;
-
-	private String zhAddress;
-
-	private String registrantType;
-
-	private List<String> domainNames;
-
-	private String telephone;
 
 	private Boolean transferOutProhibited;
 
 	private String zhCity;
-
-	private String zhProvince;
-
-	private String registrantOrganization;
 
 	private String telExt;
 
@@ -61,15 +42,41 @@ public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends RpcA
 
 	private String postalCode;
 
-	private String userClientIp;
-
 	private String lang;
 
 	private String email;
 
-	private String registrantName;
-
 	private String zhRegistrantOrganization;
+
+	private String address;
+
+	private String telArea;
+
+	private String contactType;
+
+	private String zhAddress;
+
+	private String registrantType;
+
+	private List<String> domainNames;
+
+	private String telephone;
+
+	private String zhProvince;
+
+	private String registrantOrganization;
+
+	private String userClientIp;
+
+	private String registrantName;
+	public SaveBatchTaskForUpdatingContactInfoByNewContactRequest() {
+		super("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByNewContact", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCountry() {
 		return this.country;
@@ -79,6 +86,116 @@ public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends RpcA
 		this.country = country;
 		if(country != null){
 			putQueryParameter("Country", country);
+		}
+	}
+
+	public String getCity() {
+		return this.city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+		if(city != null){
+			putQueryParameter("City", city);
+		}
+	}
+
+	public Boolean getTransferOutProhibited() {
+		return this.transferOutProhibited;
+	}
+
+	public void setTransferOutProhibited(Boolean transferOutProhibited) {
+		this.transferOutProhibited = transferOutProhibited;
+		if(transferOutProhibited != null){
+			putQueryParameter("TransferOutProhibited", transferOutProhibited.toString());
+		}
+	}
+
+	public String getZhCity() {
+		return this.zhCity;
+	}
+
+	public void setZhCity(String zhCity) {
+		this.zhCity = zhCity;
+		if(zhCity != null){
+			putQueryParameter("ZhCity", zhCity);
+		}
+	}
+
+	public String getTelExt() {
+		return this.telExt;
+	}
+
+	public void setTelExt(String telExt) {
+		this.telExt = telExt;
+		if(telExt != null){
+			putQueryParameter("TelExt", telExt);
+		}
+	}
+
+	public String getProvince() {
+		return this.province;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
+		if(province != null){
+			putQueryParameter("Province", province);
+		}
+	}
+
+	public String getZhRegistrantName() {
+		return this.zhRegistrantName;
+	}
+
+	public void setZhRegistrantName(String zhRegistrantName) {
+		this.zhRegistrantName = zhRegistrantName;
+		if(zhRegistrantName != null){
+			putQueryParameter("ZhRegistrantName", zhRegistrantName);
+		}
+	}
+
+	public String getPostalCode() {
+		return this.postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+		if(postalCode != null){
+			putQueryParameter("PostalCode", postalCode);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+		if(email != null){
+			putQueryParameter("Email", email);
+		}
+	}
+
+	public String getZhRegistrantOrganization() {
+		return this.zhRegistrantOrganization;
+	}
+
+	public void setZhRegistrantOrganization(String zhRegistrantOrganization) {
+		this.zhRegistrantOrganization = zhRegistrantOrganization;
+		if(zhRegistrantOrganization != null){
+			putQueryParameter("ZhRegistrantOrganization", zhRegistrantOrganization);
 		}
 	}
 
@@ -112,17 +229,6 @@ public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends RpcA
 		this.contactType = contactType;
 		if(contactType != null){
 			putQueryParameter("ContactType", contactType);
-		}
-	}
-
-	public String getCity() {
-		return this.city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-		if(city != null){
-			putQueryParameter("City", city);
 		}
 	}
 
@@ -172,28 +278,6 @@ public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends RpcA
 		}
 	}
 
-	public Boolean getTransferOutProhibited() {
-		return this.transferOutProhibited;
-	}
-
-	public void setTransferOutProhibited(Boolean transferOutProhibited) {
-		this.transferOutProhibited = transferOutProhibited;
-		if(transferOutProhibited != null){
-			putQueryParameter("TransferOutProhibited", transferOutProhibited.toString());
-		}
-	}
-
-	public String getZhCity() {
-		return this.zhCity;
-	}
-
-	public void setZhCity(String zhCity) {
-		this.zhCity = zhCity;
-		if(zhCity != null){
-			putQueryParameter("ZhCity", zhCity);
-		}
-	}
-
 	public String getZhProvince() {
 		return this.zhProvince;
 	}
@@ -216,50 +300,6 @@ public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends RpcA
 		}
 	}
 
-	public String getTelExt() {
-		return this.telExt;
-	}
-
-	public void setTelExt(String telExt) {
-		this.telExt = telExt;
-		if(telExt != null){
-			putQueryParameter("TelExt", telExt);
-		}
-	}
-
-	public String getProvince() {
-		return this.province;
-	}
-
-	public void setProvince(String province) {
-		this.province = province;
-		if(province != null){
-			putQueryParameter("Province", province);
-		}
-	}
-
-	public String getZhRegistrantName() {
-		return this.zhRegistrantName;
-	}
-
-	public void setZhRegistrantName(String zhRegistrantName) {
-		this.zhRegistrantName = zhRegistrantName;
-		if(zhRegistrantName != null){
-			putQueryParameter("ZhRegistrantName", zhRegistrantName);
-		}
-	}
-
-	public String getPostalCode() {
-		return this.postalCode;
-	}
-
-	public void setPostalCode(String postalCode) {
-		this.postalCode = postalCode;
-		if(postalCode != null){
-			putQueryParameter("PostalCode", postalCode);
-		}
-	}
-
 	public String getUserClientIp() {
 		return this.userClientIp;
 	}
@@ -271,28 +311,6 @@ public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends RpcA
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-		if(email != null){
-			putQueryParameter("Email", email);
-		}
-	}
-
 	public String getRegistrantName() {
 		return this.registrantName;
 	}
@@ -301,17 +319,6 @@ public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends RpcA
 		this.registrantName = registrantName;
 		if(registrantName != null){
 			putQueryParameter("RegistrantName", registrantName);
-		}
-	}
-
-	public String getZhRegistrantOrganization() {
-		return this.zhRegistrantOrganization;
-	}
-
-	public void setZhRegistrantOrganization(String zhRegistrantOrganization) {
-		this.zhRegistrantOrganization = zhRegistrantOrganization;
-		if(zhRegistrantOrganization != null){
-			putQueryParameter("ZhRegistrantOrganization", zhRegistrantOrganization);
 		}
 	}
 

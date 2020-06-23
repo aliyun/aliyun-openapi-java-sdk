@@ -15,16 +15,15 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest<SaveSingleTaskForCreatingOrderActivateResponse> {
-	
-	public SaveSingleTaskForCreatingOrderActivateRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderActivate");
-	}
+	   
 
 	private String country;
 
@@ -89,6 +88,14 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 	private String registrantName;
 
 	private Boolean usePromotion;
+	public SaveSingleTaskForCreatingOrderActivateRequest() {
+		super("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderActivate", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCountry() {
 		return this.country;

@@ -15,22 +15,29 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class LookupTmchNoticeRequest extends RpcAcsRequest<LookupTmchNoticeResponse> {
-	
-	public LookupTmchNoticeRequest() {
-		super("Domain", "2018-01-29", "LookupTmchNotice");
-	}
+	   
 
 	private String claimKey;
 
 	private String userClientIp;
 
 	private String lang;
+	public LookupTmchNoticeRequest() {
+		super("Domain", "2018-01-29", "LookupTmchNotice", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getClaimKey() {
 		return this.claimKey;

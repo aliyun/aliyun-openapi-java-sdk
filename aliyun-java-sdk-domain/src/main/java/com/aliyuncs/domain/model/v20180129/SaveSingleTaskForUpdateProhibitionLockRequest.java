@@ -15,34 +15,30 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveSingleTaskForUpdateProhibitionLockRequest extends RpcAcsRequest<SaveSingleTaskForUpdateProhibitionLockResponse> {
-	
-	public SaveSingleTaskForUpdateProhibitionLockRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForUpdateProhibitionLock");
-	}
-
-	private String userClientIp;
+	   
 
 	private String domainName;
+
+	private String userClientIp;
 
 	private String lang;
 
 	private Boolean status;
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
+	public SaveSingleTaskForUpdateProhibitionLockRequest() {
+		super("Domain", "2018-01-29", "SaveSingleTaskForUpdateProhibitionLock", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDomainName() {
@@ -53,6 +49,17 @@ public class SaveSingleTaskForUpdateProhibitionLockRequest extends RpcAcsRequest
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

@@ -15,24 +15,31 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveSingleTaskForAssociatingEnsRequest extends RpcAcsRequest<SaveSingleTaskForAssociatingEnsResponse> {
-	
-	public SaveSingleTaskForAssociatingEnsRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForAssociatingEns");
-	}
+	   
 
 	private String address;
 
-	private String userClientIp;
-
 	private String domainName;
 
+	private String userClientIp;
+
 	private String lang;
+	public SaveSingleTaskForAssociatingEnsRequest() {
+		super("Domain", "2018-01-29", "SaveSingleTaskForAssociatingEns", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAddress() {
 		return this.address;
@@ -45,17 +52,6 @@ public class SaveSingleTaskForAssociatingEnsRequest extends RpcAcsRequest<SaveSi
 		}
 	}
 
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -64,6 +60,17 @@ public class SaveSingleTaskForAssociatingEnsRequest extends RpcAcsRequest<SaveSi
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

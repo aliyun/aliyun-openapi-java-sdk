@@ -15,16 +15,15 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryAdvancedDomainListRequest extends RpcAcsRequest<QueryAdvancedDomainListResponse> {
-	
-	public QueryAdvancedDomainListRequest() {
-		super("Domain", "2018-01-29", "QueryAdvancedDomainList");
-	}
+	   
 
 	private String productDomainType;
 
@@ -77,6 +76,14 @@ public class QueryAdvancedDomainListRequest extends RpcAcsRequest<QueryAdvancedD
 	private Long startRegistrationDate;
 
 	private Integer endLength;
+	public QueryAdvancedDomainListRequest() {
+		super("Domain", "2018-01-29", "QueryAdvancedDomainList", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProductDomainType() {
 		return this.productDomainType;

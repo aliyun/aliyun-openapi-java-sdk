@@ -17,21 +17,14 @@ package com.aliyuncs.domain.model.v20180129;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateDomainToDomainGroupRequest extends RpcAcsRequest<UpdateDomainToDomainGroupResponse> {
-	
-	public UpdateDomainToDomainGroupRequest() {
-		super("Domain", "2018-01-29", "UpdateDomainToDomainGroup");
-		setMethod(MethodType.POST);
-	}
-
-	private Integer dataSource;
-
-	private String userClientIp;
+	   
 
 	private String fileToUpload;
 
@@ -39,30 +32,20 @@ public class UpdateDomainToDomainGroupRequest extends RpcAcsRequest<UpdateDomain
 
 	private Boolean replace;
 
-	private String lang;
-
 	private Long domainGroupId;
 
-	public Integer getDataSource() {
-		return this.dataSource;
-	}
+	private Integer dataSource;
 
-	public void setDataSource(Integer dataSource) {
-		this.dataSource = dataSource;
-		if(dataSource != null){
-			putQueryParameter("DataSource", dataSource.toString());
-		}
-	}
+	private String userClientIp;
 
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
+	private String lang;
+	public UpdateDomainToDomainGroupRequest() {
+		super("Domain", "2018-01-29", "UpdateDomainToDomainGroup", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getFileToUpload() {
@@ -100,17 +83,6 @@ public class UpdateDomainToDomainGroupRequest extends RpcAcsRequest<UpdateDomain
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
 	public Long getDomainGroupId() {
 		return this.domainGroupId;
 	}
@@ -119,6 +91,39 @@ public class UpdateDomainToDomainGroupRequest extends RpcAcsRequest<UpdateDomain
 		this.domainGroupId = domainGroupId;
 		if(domainGroupId != null){
 			putQueryParameter("DomainGroupId", domainGroupId.toString());
+		}
+	}
+
+	public Integer getDataSource() {
+		return this.dataSource;
+	}
+
+	public void setDataSource(Integer dataSource) {
+		this.dataSource = dataSource;
+		if(dataSource != null){
+			putQueryParameter("DataSource", dataSource.toString());
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

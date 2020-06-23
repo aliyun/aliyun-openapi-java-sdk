@@ -16,18 +16,15 @@ package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest extends RpcAcsRequest<SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse> {
-	
-	public SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest() {
-		super("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID");
-	}
-
-	private String userClientIp;
+	   
 
 	private Long registrantProfileId;
 
@@ -35,17 +32,16 @@ public class SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest exten
 
 	private Boolean transferOutProhibited;
 
+	private String userClientIp;
+
 	private String lang;
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
+	public SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest() {
+		super("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getRegistrantProfileId() {
@@ -80,6 +76,17 @@ public class SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest exten
 		this.transferOutProhibited = transferOutProhibited;
 		if(transferOutProhibited != null){
 			putQueryParameter("TransferOutProhibited", transferOutProhibited.toString());
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

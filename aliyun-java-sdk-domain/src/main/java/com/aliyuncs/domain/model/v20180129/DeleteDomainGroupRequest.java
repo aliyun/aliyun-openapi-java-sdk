@@ -15,22 +15,40 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteDomainGroupRequest extends RpcAcsRequest<DeleteDomainGroupResponse> {
-	
-	public DeleteDomainGroupRequest() {
-		super("Domain", "2018-01-29", "DeleteDomainGroup");
-	}
+	   
+
+	private Long domainGroupId;
 
 	private String userClientIp;
 
 	private String lang;
+	public DeleteDomainGroupRequest() {
+		super("Domain", "2018-01-29", "DeleteDomainGroup", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private Long domainGroupId;
+	public Long getDomainGroupId() {
+		return this.domainGroupId;
+	}
+
+	public void setDomainGroupId(Long domainGroupId) {
+		this.domainGroupId = domainGroupId;
+		if(domainGroupId != null){
+			putQueryParameter("DomainGroupId", domainGroupId.toString());
+		}
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;
@@ -51,17 +69,6 @@ public class DeleteDomainGroupRequest extends RpcAcsRequest<DeleteDomainGroupRes
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Long getDomainGroupId() {
-		return this.domainGroupId;
-	}
-
-	public void setDomainGroupId(Long domainGroupId) {
-		this.domainGroupId = domainGroupId;
-		if(domainGroupId != null){
-			putQueryParameter("DomainGroupId", domainGroupId.toString());
 		}
 	}
 

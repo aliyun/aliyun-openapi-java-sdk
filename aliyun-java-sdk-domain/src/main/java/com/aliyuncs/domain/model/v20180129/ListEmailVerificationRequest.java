@@ -15,20 +15,23 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListEmailVerificationRequest extends RpcAcsRequest<ListEmailVerificationResponse> {
-	
-	public ListEmailVerificationRequest() {
-		super("Domain", "2018-01-29", "ListEmailVerification");
-	}
-
-	private Long beginCreateTime;
+	   
 
 	private Long endCreateTime;
+
+	private Integer pageNum;
+
+	private Integer verificationStatus;
+
+	private Long beginCreateTime;
 
 	private Integer pageSize;
 
@@ -36,21 +39,14 @@ public class ListEmailVerificationRequest extends RpcAcsRequest<ListEmailVerific
 
 	private String lang;
 
-	private Integer pageNum;
-
 	private String email;
-
-	private Integer verificationStatus;
-
-	public Long getBeginCreateTime() {
-		return this.beginCreateTime;
-	}
-
-	public void setBeginCreateTime(Long beginCreateTime) {
-		this.beginCreateTime = beginCreateTime;
-		if(beginCreateTime != null){
-			putQueryParameter("BeginCreateTime", beginCreateTime.toString());
-		}
+	public ListEmailVerificationRequest() {
+		super("Domain", "2018-01-29", "ListEmailVerification", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getEndCreateTime() {
@@ -61,6 +57,39 @@ public class ListEmailVerificationRequest extends RpcAcsRequest<ListEmailVerific
 		this.endCreateTime = endCreateTime;
 		if(endCreateTime != null){
 			putQueryParameter("EndCreateTime", endCreateTime.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getVerificationStatus() {
+		return this.verificationStatus;
+	}
+
+	public void setVerificationStatus(Integer verificationStatus) {
+		this.verificationStatus = verificationStatus;
+		if(verificationStatus != null){
+			putQueryParameter("VerificationStatus", verificationStatus.toString());
+		}
+	}
+
+	public Long getBeginCreateTime() {
+		return this.beginCreateTime;
+	}
+
+	public void setBeginCreateTime(Long beginCreateTime) {
+		this.beginCreateTime = beginCreateTime;
+		if(beginCreateTime != null){
+			putQueryParameter("BeginCreateTime", beginCreateTime.toString());
 		}
 	}
 
@@ -97,17 +126,6 @@ public class ListEmailVerificationRequest extends RpcAcsRequest<ListEmailVerific
 		}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
 	public String getEmail() {
 		return this.email;
 	}
@@ -116,17 +134,6 @@ public class ListEmailVerificationRequest extends RpcAcsRequest<ListEmailVerific
 		this.email = email;
 		if(email != null){
 			putQueryParameter("Email", email);
-		}
-	}
-
-	public Integer getVerificationStatus() {
-		return this.verificationStatus;
-	}
-
-	public void setVerificationStatus(Integer verificationStatus) {
-		this.verificationStatus = verificationStatus;
-		if(verificationStatus != null){
-			putQueryParameter("VerificationStatus", verificationStatus.toString());
 		}
 	}
 

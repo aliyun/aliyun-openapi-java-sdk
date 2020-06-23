@@ -15,20 +15,19 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryTaskInfoHistoryRequest extends RpcAcsRequest<QueryTaskInfoHistoryResponse> {
-	
-	public QueryTaskInfoHistoryRequest() {
-		super("Domain", "2018-01-29", "QueryTaskInfoHistory");
-	}
-
-	private Long beginCreateTime;
+	   
 
 	private Long endCreateTime;
+
+	private Long beginCreateTime;
 
 	private String taskNoCursor;
 
@@ -39,16 +38,13 @@ public class QueryTaskInfoHistoryRequest extends RpcAcsRequest<QueryTaskInfoHist
 	private String lang;
 
 	private Long createTimeCursor;
-
-	public Long getBeginCreateTime() {
-		return this.beginCreateTime;
-	}
-
-	public void setBeginCreateTime(Long beginCreateTime) {
-		this.beginCreateTime = beginCreateTime;
-		if(beginCreateTime != null){
-			putQueryParameter("BeginCreateTime", beginCreateTime.toString());
-		}
+	public QueryTaskInfoHistoryRequest() {
+		super("Domain", "2018-01-29", "QueryTaskInfoHistory", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getEndCreateTime() {
@@ -59,6 +55,17 @@ public class QueryTaskInfoHistoryRequest extends RpcAcsRequest<QueryTaskInfoHist
 		this.endCreateTime = endCreateTime;
 		if(endCreateTime != null){
 			putQueryParameter("EndCreateTime", endCreateTime.toString());
+		}
+	}
+
+	public Long getBeginCreateTime() {
+		return this.beginCreateTime;
+	}
+
+	public void setBeginCreateTime(Long beginCreateTime) {
+		this.beginCreateTime = beginCreateTime;
+		if(beginCreateTime != null){
+			putQueryParameter("BeginCreateTime", beginCreateTime.toString());
 		}
 	}
 

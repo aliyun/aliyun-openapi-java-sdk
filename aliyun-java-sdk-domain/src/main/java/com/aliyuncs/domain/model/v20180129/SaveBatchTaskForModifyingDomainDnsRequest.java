@@ -16,36 +16,32 @@ package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.domain.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveBatchTaskForModifyingDomainDnsRequest extends RpcAcsRequest<SaveBatchTaskForModifyingDomainDnsResponse> {
-	
-	public SaveBatchTaskForModifyingDomainDnsRequest() {
-		super("Domain", "2018-01-29", "SaveBatchTaskForModifyingDomainDns");
-	}
-
-	private String userClientIp;
+	   
 
 	private List<String> domainNames;
+
+	private Boolean aliyunDns;
+
+	private String userClientIp;
 
 	private List<String> domainNameServers;
 
 	private String lang;
-
-	private Boolean aliyunDns;
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
+	public SaveBatchTaskForModifyingDomainDnsRequest() {
+		super("Domain", "2018-01-29", "SaveBatchTaskForModifyingDomainDns", "domain");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public List<String> getDomainNames() {
@@ -59,6 +55,28 @@ public class SaveBatchTaskForModifyingDomainDnsRequest extends RpcAcsRequest<Sav
 				putQueryParameter("DomainName." + (i + 1) , domainNames.get(i));
 			}
 		}	
+	}
+
+	public Boolean getAliyunDns() {
+		return this.aliyunDns;
+	}
+
+	public void setAliyunDns(Boolean aliyunDns) {
+		this.aliyunDns = aliyunDns;
+		if(aliyunDns != null){
+			putQueryParameter("AliyunDns", aliyunDns.toString());
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public List<String> getDomainNameServers() {
@@ -82,17 +100,6 @@ public class SaveBatchTaskForModifyingDomainDnsRequest extends RpcAcsRequest<Sav
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Boolean getAliyunDns() {
-		return this.aliyunDns;
-	}
-
-	public void setAliyunDns(Boolean aliyunDns) {
-		this.aliyunDns = aliyunDns;
-		if(aliyunDns != null){
-			putQueryParameter("AliyunDns", aliyunDns.toString());
 		}
 	}
 
