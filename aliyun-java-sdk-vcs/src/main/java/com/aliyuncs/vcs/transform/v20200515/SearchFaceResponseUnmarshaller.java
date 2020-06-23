@@ -48,6 +48,7 @@ public class SearchFaceResponseUnmarshaller {
 			record.setRightBottomY(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].RightBottomY"));
 			record.setScore(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].Score"));
 			record.setTargetImageUrl(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].TargetImageUrl"));
+			record.setMatchSuggestion(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].MatchSuggestion"));
 
 			records.add(record);
 		}

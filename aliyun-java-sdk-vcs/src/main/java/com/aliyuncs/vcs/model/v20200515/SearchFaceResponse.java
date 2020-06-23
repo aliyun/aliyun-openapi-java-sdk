@@ -135,6 +135,8 @@ public class SearchFaceResponse extends AcsResponse {
 
 			private String targetImageUrl;
 
+			private String matchSuggestion;
+
 			public String getGbId() {
 				return this.gbId;
 			}
@@ -197,6 +199,14 @@ public class SearchFaceResponse extends AcsResponse {
 
 			public void setTargetImageUrl(String targetImageUrl) {
 				this.targetImageUrl = targetImageUrl;
+			}
+
+			public String getMatchSuggestion() {
+				return this.matchSuggestion;
+			}
+
+			public void setMatchSuggestion(String matchSuggestion) {
+				this.matchSuggestion = matchSuggestion;
 			}
 		}
 	}
