@@ -26,8 +26,6 @@ import com.aliyuncs.tag.Endpoint;
 public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private List<String> resourceARNs;
 
 	private String resourceOwnerAccount;
@@ -44,17 +42,6 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public List<String> getResourceARNs() {

@@ -15,7 +15,6 @@
 package com.aliyuncs.tag.model.v20180828;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.tag.Endpoint;
 
@@ -23,10 +22,12 @@ import com.aliyuncs.tag.Endpoint;
  * @author auto create
  * @version 
  */
-public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
+public class ListTagKeysRequest extends RpcAcsRequest<ListTagKeysResponse> {
 	   
 
-	private List<String> resourceARNs;
+	private String nextToken;
+
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
@@ -34,9 +35,11 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 
 	private Long ownerId;
 
-	private String tags;
-	public TagResourcesRequest() {
-		super("Tag", "2018-08-28", "TagResources", "tag");
+	private String resourceType;
+
+	private String category;
+	public ListTagKeysRequest() {
+		super("Tag", "2018-08-28", "ListTagKeys", "tag");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -44,17 +47,26 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 		} catch (Exception e) {}
 	}
 
-	public List<String> getResourceARNs() {
-		return this.resourceARNs;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setResourceARNs(List<String> resourceARNs) {
-		this.resourceARNs = resourceARNs;	
-		if (resourceARNs != null) {
-			for (int i = 0; i < resourceARNs.size(); i++) {
-				putQueryParameter("ResourceARN." + (i + 1) , resourceARNs.get(i));
-			}
-		}	
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -90,20 +102,31 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 		}
 	}
 
-	public String getTags() {
-		return this.tags;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
 		}
 	}
 
 	@Override
-	public Class<TagResourcesResponse> getResponseClass() {
-		return TagResourcesResponse.class;
+	public Class<ListTagKeysResponse> getResponseClass() {
+		return ListTagKeysResponse.class;
 	}
 
 }
