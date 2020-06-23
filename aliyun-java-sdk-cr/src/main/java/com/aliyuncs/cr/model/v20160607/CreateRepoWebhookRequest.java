@@ -16,6 +16,7 @@ package com.aliyuncs.cr.model.v20160607;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cr.Endpoint;
 
 /**
  * @author auto create
@@ -31,6 +32,10 @@ public class CreateRepoWebhookRequest extends RoaAcsRequest<CreateRepoWebhookRes
 		super("cr", "2016-06-07", "CreateRepoWebhook", "acr");
 		setUriPattern("/repos/[RepoNamespace]/[RepoName]/webhooks");
 		setMethod(MethodType.PUT);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getRepoNamespace() {

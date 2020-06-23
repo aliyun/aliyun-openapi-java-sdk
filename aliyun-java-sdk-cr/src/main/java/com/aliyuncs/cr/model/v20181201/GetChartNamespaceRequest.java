@@ -16,6 +16,7 @@ package com.aliyuncs.cr.model.v20181201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cr.Endpoint;
 
 /**
  * @author auto create
@@ -30,6 +31,10 @@ public class GetChartNamespaceRequest extends RpcAcsRequest<GetChartNamespaceRes
 	public GetChartNamespaceRequest() {
 		super("cr", "2018-12-01", "GetChartNamespace", "acr");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getNamespaceName() {
