@@ -1,3 +1,6 @@
+2020-06-23 Version: 1.4.0
+- Add export self image apis.
+
 2020-06-16 Version: 1.3.0
 - Add sshkey apis.
 
