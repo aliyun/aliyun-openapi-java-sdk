@@ -16,6 +16,7 @@ package com.aliyuncs.cs.model.v20151215;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cs.Endpoint;
 
 /**
  * @author auto create
@@ -26,9 +27,13 @@ public class DeleteClusterRequest extends RoaAcsRequest<DeleteClusterResponse> {
 
 	private String clusterId;
 	public DeleteClusterRequest() {
-		super("CS", "2015-12-15", "DeleteCluster", "csk");
+		super("CS", "2015-12-15", "DeleteCluster");
 		setUriPattern("/clusters/[ClusterId]");
 		setMethod(MethodType.DELETE);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getClusterId() {

@@ -14,7 +14,11 @@
 
 package com.aliyuncs.cs.transform.v20151215;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.cs.model.v20151215.AttachInstancesResponse;
+import com.aliyuncs.cs.model.v20151215.AttachInstancesResponse.ListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -22,6 +26,18 @@ public class AttachInstancesResponseUnmarshaller {
 
 	public static AttachInstancesResponse unmarshall(AttachInstancesResponse attachInstancesResponse, UnmarshallerContext _ctx) {
 		
+		attachInstancesResponse.setTask_id(_ctx.stringValue("AttachInstancesResponse.task_id"));
+
+		List<ListItem> list = new ArrayList<ListItem>();
+		for (int i = 0; i < _ctx.lengthValue("AttachInstancesResponse.list.Length"); i++) {
+			ListItem listItem = new ListItem();
+			listItem.setCode(_ctx.stringValue("AttachInstancesResponse.list["+ i +"].code"));
+			listItem.setInstanceId(_ctx.stringValue("AttachInstancesResponse.list["+ i +"].instanceId"));
+			listItem.setMessage(_ctx.stringValue("AttachInstancesResponse.list["+ i +"].message"));
+
+			list.add(listItem);
+		}
+		attachInstancesResponse.setList(list);
 	 
 	 	return attachInstancesResponse;
 	}

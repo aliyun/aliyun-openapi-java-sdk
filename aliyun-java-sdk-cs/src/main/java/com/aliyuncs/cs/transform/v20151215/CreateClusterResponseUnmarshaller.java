@@ -22,7 +22,9 @@ public class CreateClusterResponseUnmarshaller {
 
 	public static CreateClusterResponse unmarshall(CreateClusterResponse createClusterResponse, UnmarshallerContext _ctx) {
 		
-		createClusterResponse.setRequestId(_ctx.stringValue("CreateClusterResponse.RequestId"));
+		createClusterResponse.setCluster_id(_ctx.stringValue("CreateClusterResponse.cluster_id"));
+		createClusterResponse.setRequest_id(_ctx.stringValue("CreateClusterResponse.request_id"));
+		createClusterResponse.setTask_id(_ctx.stringValue("CreateClusterResponse.task_id"));
 	 
 	 	return createClusterResponse;
 	}

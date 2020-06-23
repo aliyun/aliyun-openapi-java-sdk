@@ -16,6 +16,7 @@ package com.aliyuncs.cs.model.v20151215;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cs.Endpoint;
 
 /**
  * @author auto create
@@ -24,11 +25,28 @@ import com.aliyuncs.http.MethodType;
 public class UnInstallClusterAddonsRequest extends RoaAcsRequest<UnInstallClusterAddonsResponse> {
 	   
 
+	private String name;
+
 	private String clusterId;
 	public UnInstallClusterAddonsRequest() {
-		super("CS", "2015-12-15", "UnInstallClusterAddons", "csk");
+		super("CS", "2015-12-15", "UnInstallClusterAddons");
 		setUriPattern("/clusters/[ClusterId]/components/uninstall");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putBodyParameter("name", name);
+		}
 	}
 
 	public String getClusterId() {

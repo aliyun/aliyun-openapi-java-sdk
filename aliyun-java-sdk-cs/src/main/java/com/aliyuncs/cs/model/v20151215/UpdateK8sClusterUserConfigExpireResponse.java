@@ -28,4 +28,9 @@ public class UpdateK8sClusterUserConfigExpireResponse extends AcsResponse {
 	public UpdateK8sClusterUserConfigExpireResponse getInstance(UnmarshallerContext context) {
 		return	UpdateK8sClusterUserConfigExpireResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

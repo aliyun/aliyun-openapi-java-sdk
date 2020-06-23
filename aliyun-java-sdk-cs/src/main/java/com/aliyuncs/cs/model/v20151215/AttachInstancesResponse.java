@@ -14,6 +14,7 @@
 
 package com.aliyuncs.cs.model.v20151215;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cs.transform.v20151215.AttachInstancesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,8 +25,66 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AttachInstancesResponse extends AcsResponse {
 
+	private String task_id;
+
+	private List<ListItem> list;
+
+	public String getTask_id() {
+		return this.task_id;
+	}
+
+	public void setTask_id(String task_id) {
+		this.task_id = task_id;
+	}
+
+	public List<ListItem> getList() {
+		return this.list;
+	}
+
+	public void setList(List<ListItem> list) {
+		this.list = list;
+	}
+
+	public static class ListItem {
+
+		private String code;
+
+		private String instanceId;
+
+		private String message;
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
+	}
+
 	@Override
 	public AttachInstancesResponse getInstance(UnmarshallerContext context) {
 		return	AttachInstancesResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

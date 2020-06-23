@@ -16,6 +16,7 @@ package com.aliyuncs.cs.model.v20151215;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cs.Endpoint;
 
 /**
  * @author auto create
@@ -24,11 +25,28 @@ import com.aliyuncs.http.MethodType;
 public class DeleteClusterNodesRequest extends RoaAcsRequest<DeleteClusterNodesResponse> {
 	   
 
+	private String release_node;
+
 	private String clusterId;
 	public DeleteClusterNodesRequest() {
-		super("CS", "2015-12-15", "DeleteClusterNodes", "csk");
+		super("CS", "2015-12-15", "DeleteClusterNodes");
 		setUriPattern("/clusters/[ClusterId]/nodes");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getRelease_node() {
+		return this.release_node;
+	}
+
+	public void setRelease_node(String release_node) {
+		this.release_node = release_node;
+		if(release_node != null){
+			putBodyParameter("release_node", release_node);
+		}
 	}
 
 	public String getClusterId() {

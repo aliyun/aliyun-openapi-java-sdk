@@ -16,6 +16,7 @@ package com.aliyuncs.cs.model.v20151215;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cs.Endpoint;
 
 /**
  * @author auto create
@@ -28,9 +29,13 @@ public class DescribeClusterV2UserKubeconfigRequest extends RoaAcsRequest<Descri
 
 	private String clusterId;
 	public DescribeClusterV2UserKubeconfigRequest() {
-		super("CS", "2015-12-15", "DescribeClusterV2UserKubeconfig", "csk");
+		super("CS", "2015-12-15", "DescribeClusterV2UserKubeconfig");
 		setUriPattern("/api/v2/k8s/[ClusterId]/user_config");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Boolean getPrivateIpAddress() {
