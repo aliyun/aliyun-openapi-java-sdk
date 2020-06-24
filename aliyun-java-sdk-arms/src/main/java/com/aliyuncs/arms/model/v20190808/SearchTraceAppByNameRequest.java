@@ -27,7 +27,7 @@ public class SearchTraceAppByNameRequest extends RpcAcsRequest<SearchTraceAppByN
 
 	private String traceAppName;
 	public SearchTraceAppByNameRequest() {
-		super("ARMS", "2019-08-08", "SearchTraceAppByName");
+		super("ARMS", "2019-08-08", "SearchTraceAppByName", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

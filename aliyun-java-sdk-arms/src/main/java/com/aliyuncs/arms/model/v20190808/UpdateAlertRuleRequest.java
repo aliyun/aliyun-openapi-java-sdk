@@ -35,7 +35,7 @@ public class UpdateAlertRuleRequest extends RpcAcsRequest<UpdateAlertRuleRespons
 
 	private String templageAlertConfig;
 	public UpdateAlertRuleRequest() {
-		super("ARMS", "2019-08-08", "UpdateAlertRule");
+		super("ARMS", "2019-08-08", "UpdateAlertRule", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

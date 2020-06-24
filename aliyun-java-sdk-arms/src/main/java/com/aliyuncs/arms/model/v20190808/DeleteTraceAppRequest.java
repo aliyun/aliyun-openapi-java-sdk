@@ -29,7 +29,7 @@ public class DeleteTraceAppRequest extends RpcAcsRequest<DeleteTraceAppResponse>
 
 	private String type;
 	public DeleteTraceAppRequest() {
-		super("ARMS", "2019-08-08", "DeleteTraceApp");
+		super("ARMS", "2019-08-08", "DeleteTraceApp", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

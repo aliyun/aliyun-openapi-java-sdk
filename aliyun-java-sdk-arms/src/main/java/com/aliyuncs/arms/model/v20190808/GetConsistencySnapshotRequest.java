@@ -33,7 +33,7 @@ public class GetConsistencySnapshotRequest extends RpcAcsRequest<GetConsistencyS
 
 	private String proxyUserId;
 	public GetConsistencySnapshotRequest() {
-		super("ARMS", "2019-08-08", "GetConsistencySnapshot");
+		super("ARMS", "2019-08-08", "GetConsistencySnapshot", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
