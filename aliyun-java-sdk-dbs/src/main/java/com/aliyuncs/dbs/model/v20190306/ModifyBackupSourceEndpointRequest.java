@@ -41,6 +41,10 @@ public class ModifyBackupSourceEndpointRequest extends RpcAcsRequest<ModifyBacku
 
 	private String sourceEndpointIP;
 
+	private String crossRoleName;
+
+	private String crossAliyunId;
+
 	private String sourceEndpointPassword;
 
 	private String backupObjects;
@@ -146,6 +150,28 @@ public class ModifyBackupSourceEndpointRequest extends RpcAcsRequest<ModifyBacku
 		this.sourceEndpointIP = sourceEndpointIP;
 		if(sourceEndpointIP != null){
 			putQueryParameter("SourceEndpointIP", sourceEndpointIP);
+		}
+	}
+
+	public String getCrossRoleName() {
+		return this.crossRoleName;
+	}
+
+	public void setCrossRoleName(String crossRoleName) {
+		this.crossRoleName = crossRoleName;
+		if(crossRoleName != null){
+			putQueryParameter("CrossRoleName", crossRoleName);
+		}
+	}
+
+	public String getCrossAliyunId() {
+		return this.crossAliyunId;
+	}
+
+	public void setCrossAliyunId(String crossAliyunId) {
+		this.crossAliyunId = crossAliyunId;
+		if(crossAliyunId != null){
+			putQueryParameter("CrossAliyunId", crossAliyunId);
 		}
 	}
 

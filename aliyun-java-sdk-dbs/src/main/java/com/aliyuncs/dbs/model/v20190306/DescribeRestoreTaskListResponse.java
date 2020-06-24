@@ -171,6 +171,10 @@ public class DescribeRestoreTaskListResponse extends AcsResponse {
 
 		private Integer fullStruAfterRestoreProgress;
 
+		private String crossAliyunId;
+
+		private String crossRoleName;
+
 		private String errMessage;
 
 		public String getBackupPlanId() {
@@ -347,6 +351,22 @@ public class DescribeRestoreTaskListResponse extends AcsResponse {
 
 		public void setFullStruAfterRestoreProgress(Integer fullStruAfterRestoreProgress) {
 			this.fullStruAfterRestoreProgress = fullStruAfterRestoreProgress;
+		}
+
+		public String getCrossAliyunId() {
+			return this.crossAliyunId;
+		}
+
+		public void setCrossAliyunId(String crossAliyunId) {
+			this.crossAliyunId = crossAliyunId;
+		}
+
+		public String getCrossRoleName() {
+			return this.crossRoleName;
+		}
+
+		public void setCrossRoleName(String crossRoleName) {
+			this.crossRoleName = crossRoleName;
 		}
 
 		public String getErrMessage() {

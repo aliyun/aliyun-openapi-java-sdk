@@ -61,6 +61,8 @@ public class DescribeRestoreTaskListResponseUnmarshaller {
 			restoreTaskDetail.setFullDataRestoreProgress(_ctx.integerValue("DescribeRestoreTaskListResponse.Items["+ i +"].FullDataRestoreProgress"));
 			restoreTaskDetail.setContinuousRestoreProgress(_ctx.integerValue("DescribeRestoreTaskListResponse.Items["+ i +"].ContinuousRestoreProgress"));
 			restoreTaskDetail.setFullStruAfterRestoreProgress(_ctx.integerValue("DescribeRestoreTaskListResponse.Items["+ i +"].FullStruAfterRestoreProgress"));
+			restoreTaskDetail.setCrossAliyunId(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].CrossAliyunId"));
+			restoreTaskDetail.setCrossRoleName(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].CrossRoleName"));
 			restoreTaskDetail.setErrMessage(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].ErrMessage"));
 
 			items.add(restoreTaskDetail);

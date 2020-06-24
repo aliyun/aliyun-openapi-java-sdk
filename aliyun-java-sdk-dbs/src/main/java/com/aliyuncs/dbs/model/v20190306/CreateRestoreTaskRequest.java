@@ -35,6 +35,8 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 
 	private String destinationEndpointRegion;
 
+	private String crossRoleName;
+
 	private String destinationEndpointUserName;
 
 	private String restoreObjects;
@@ -46,6 +48,8 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 	private String destinationEndpointOracleSID;
 
 	private Long restoreTime;
+
+	private String crossAliyunId;
 
 	private String destinationEndpointInstanceID;
 
@@ -128,6 +132,17 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 		}
 	}
 
+	public String getCrossRoleName() {
+		return this.crossRoleName;
+	}
+
+	public void setCrossRoleName(String crossRoleName) {
+		this.crossRoleName = crossRoleName;
+		if(crossRoleName != null){
+			putQueryParameter("CrossRoleName", crossRoleName);
+		}
+	}
+
 	public String getDestinationEndpointUserName() {
 		return this.destinationEndpointUserName;
 	}
@@ -191,6 +206,17 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 		this.restoreTime = restoreTime;
 		if(restoreTime != null){
 			putQueryParameter("RestoreTime", restoreTime.toString());
+		}
+	}
+
+	public String getCrossAliyunId() {
+		return this.crossAliyunId;
+	}
+
+	public void setCrossAliyunId(String crossAliyunId) {
+		this.crossAliyunId = crossAliyunId;
+		if(crossAliyunId != null){
+			putQueryParameter("CrossAliyunId", crossAliyunId);
 		}
 	}
 

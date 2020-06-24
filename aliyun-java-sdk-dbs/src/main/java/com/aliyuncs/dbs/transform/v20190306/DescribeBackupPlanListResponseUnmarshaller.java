@@ -64,6 +64,15 @@ public class DescribeBackupPlanListResponseUnmarshaller {
 			backupPlanDetail.setBackupPlanStatus(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPlanStatus"));
 			backupPlanDetail.setBeginTimestampForRestore(_ctx.longValue("DescribeBackupPlanListResponse.Items["+ i +"].BeginTimestampForRestore"));
 			backupPlanDetail.setEndTimestampForRestore(_ctx.longValue("DescribeBackupPlanListResponse.Items["+ i +"].EndTimestampForRestore"));
+			backupPlanDetail.setOpenBackupSetAutoDownload(_ctx.booleanValue("DescribeBackupPlanListResponse.Items["+ i +"].OpenBackupSetAutoDownload"));
+			backupPlanDetail.setBackupSetDownloadTargetType(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupSetDownloadTargetType"));
+			backupPlanDetail.setBackupSetDownloadDir(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupSetDownloadDir"));
+			backupPlanDetail.setBackupSetDownloadGatewayId(_ctx.longValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupSetDownloadGatewayId"));
+			backupPlanDetail.setBackupSetDownloadFullDataFormat(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupSetDownloadFullDataFormat"));
+			backupPlanDetail.setBackupSetDownloadIncrementDataFormat(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupSetDownloadIncrementDataFormat"));
+			backupPlanDetail.setCrossAliyunId(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].CrossAliyunId"));
+			backupPlanDetail.setCrossRoleName(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].CrossRoleName"));
+			backupPlanDetail.setBackupStorageType(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupStorageType"));
 
 			items.add(backupPlanDetail);
 		}

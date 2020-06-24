@@ -22,26 +22,18 @@ import com.aliyuncs.dbs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeBackupPlanListRequest extends RpcAcsRequest<DescribeBackupPlanListResponse> {
+public class DescribeBackupPlanBillingRequest extends RpcAcsRequest<DescribeBackupPlanBillingResponse> {
 	   
 
 	private String clientToken;
 
 	private String backupPlanId;
 
-	private Integer pageNum;
-
 	private String ownerId;
 
-	private String backupPlanStatus;
-
-	private String backupPlanName;
-
-	private Integer pageSize;
-
-	private String region;
-	public DescribeBackupPlanListRequest() {
-		super("Dbs", "2019-03-06", "DescribeBackupPlanList", "cbs");
+	private Boolean showStorageType;
+	public DescribeBackupPlanBillingRequest() {
+		super("Dbs", "2019-03-06", "DescribeBackupPlanBilling", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,17 +63,6 @@ public class DescribeBackupPlanListRequest extends RpcAcsRequest<DescribeBackupP
 		}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -93,53 +74,20 @@ public class DescribeBackupPlanListRequest extends RpcAcsRequest<DescribeBackupP
 		}
 	}
 
-	public String getBackupPlanStatus() {
-		return this.backupPlanStatus;
+	public Boolean getShowStorageType() {
+		return this.showStorageType;
 	}
 
-	public void setBackupPlanStatus(String backupPlanStatus) {
-		this.backupPlanStatus = backupPlanStatus;
-		if(backupPlanStatus != null){
-			putQueryParameter("BackupPlanStatus", backupPlanStatus);
-		}
-	}
-
-	public String getBackupPlanName() {
-		return this.backupPlanName;
-	}
-
-	public void setBackupPlanName(String backupPlanName) {
-		this.backupPlanName = backupPlanName;
-		if(backupPlanName != null){
-			putQueryParameter("BackupPlanName", backupPlanName);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
+	public void setShowStorageType(Boolean showStorageType) {
+		this.showStorageType = showStorageType;
+		if(showStorageType != null){
+			putQueryParameter("ShowStorageType", showStorageType.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeBackupPlanListResponse> getResponseClass() {
-		return DescribeBackupPlanListResponse.class;
+	public Class<DescribeBackupPlanBillingResponse> getResponseClass() {
+		return DescribeBackupPlanBillingResponse.class;
 	}
 
 }

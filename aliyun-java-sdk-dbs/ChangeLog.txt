@@ -1,3 +1,13 @@
+2020-06-24 Version: 1.0.23
+- Add DescribeBackupPlanBilling.
+- Modify ConfigureBackupPlan.
+- Modify CreateBackupPlan.
+- Modify CreateRestoreTask.
+- Modify DescribeRestoreTaskList.
+- Modify DescribeBackupPlanList.
+- Modify ModifyBackupSourceEndpoint.
+- Modify ModifyBackupStrategy.
+
 2020-03-09 Version: 1.0.22
 - Add BackupStorageType.
 

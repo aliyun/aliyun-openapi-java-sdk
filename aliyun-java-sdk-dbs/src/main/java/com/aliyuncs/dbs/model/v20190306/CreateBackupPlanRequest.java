@@ -39,6 +39,8 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 
 	private String period;
 
+	private String fromApp;
+
 	private String ownerId;
 
 	private Integer usedTime;
@@ -133,6 +135,17 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period);
+		}
+	}
+
+	public String getFromApp() {
+		return this.fromApp;
+	}
+
+	public void setFromApp(String fromApp) {
+		this.fromApp = fromApp;
+		if(fromApp != null){
+			putQueryParameter("FromApp", fromApp);
 		}
 	}
 

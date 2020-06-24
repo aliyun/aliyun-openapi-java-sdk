@@ -177,6 +177,24 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 
 		private Long endTimestampForRestore;
 
+		private Boolean openBackupSetAutoDownload;
+
+		private String backupSetDownloadTargetType;
+
+		private String backupSetDownloadDir;
+
+		private Long backupSetDownloadGatewayId;
+
+		private String backupSetDownloadFullDataFormat;
+
+		private String backupSetDownloadIncrementDataFormat;
+
+		private String crossAliyunId;
+
+		private String crossRoleName;
+
+		private String backupStorageType;
+
 		public String getBackupPlanId() {
 			return this.backupPlanId;
 		}
@@ -375,6 +393,78 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 
 		public void setEndTimestampForRestore(Long endTimestampForRestore) {
 			this.endTimestampForRestore = endTimestampForRestore;
+		}
+
+		public Boolean getOpenBackupSetAutoDownload() {
+			return this.openBackupSetAutoDownload;
+		}
+
+		public void setOpenBackupSetAutoDownload(Boolean openBackupSetAutoDownload) {
+			this.openBackupSetAutoDownload = openBackupSetAutoDownload;
+		}
+
+		public String getBackupSetDownloadTargetType() {
+			return this.backupSetDownloadTargetType;
+		}
+
+		public void setBackupSetDownloadTargetType(String backupSetDownloadTargetType) {
+			this.backupSetDownloadTargetType = backupSetDownloadTargetType;
+		}
+
+		public String getBackupSetDownloadDir() {
+			return this.backupSetDownloadDir;
+		}
+
+		public void setBackupSetDownloadDir(String backupSetDownloadDir) {
+			this.backupSetDownloadDir = backupSetDownloadDir;
+		}
+
+		public Long getBackupSetDownloadGatewayId() {
+			return this.backupSetDownloadGatewayId;
+		}
+
+		public void setBackupSetDownloadGatewayId(Long backupSetDownloadGatewayId) {
+			this.backupSetDownloadGatewayId = backupSetDownloadGatewayId;
+		}
+
+		public String getBackupSetDownloadFullDataFormat() {
+			return this.backupSetDownloadFullDataFormat;
+		}
+
+		public void setBackupSetDownloadFullDataFormat(String backupSetDownloadFullDataFormat) {
+			this.backupSetDownloadFullDataFormat = backupSetDownloadFullDataFormat;
+		}
+
+		public String getBackupSetDownloadIncrementDataFormat() {
+			return this.backupSetDownloadIncrementDataFormat;
+		}
+
+		public void setBackupSetDownloadIncrementDataFormat(String backupSetDownloadIncrementDataFormat) {
+			this.backupSetDownloadIncrementDataFormat = backupSetDownloadIncrementDataFormat;
+		}
+
+		public String getCrossAliyunId() {
+			return this.crossAliyunId;
+		}
+
+		public void setCrossAliyunId(String crossAliyunId) {
+			this.crossAliyunId = crossAliyunId;
+		}
+
+		public String getCrossRoleName() {
+			return this.crossRoleName;
+		}
+
+		public void setCrossRoleName(String crossRoleName) {
+			this.crossRoleName = crossRoleName;
+		}
+
+		public String getBackupStorageType() {
+			return this.backupStorageType;
+		}
+
+		public void setBackupStorageType(String backupStorageType) {
+			this.backupStorageType = backupStorageType;
 		}
 	}
 
