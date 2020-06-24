@@ -27,7 +27,7 @@ public class ListDashboardsRequest extends RpcAcsRequest<ListDashboardsResponse>
 
 	private String clusterId;
 	public ListDashboardsRequest() {
-		super("ARMS", "2019-08-08", "ListDashboards", "arms");
+		super("ARMS", "2019-08-08", "ListDashboards");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

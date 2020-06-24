@@ -39,7 +39,7 @@ public class UpdateAlertContactRequest extends RpcAcsRequest<UpdateAlertContactR
 
 	private Boolean systemNoc;
 	public UpdateAlertContactRequest() {
-		super("ARMS", "2019-08-08", "UpdateAlertContact", "arms");
+		super("ARMS", "2019-08-08", "UpdateAlertContact");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

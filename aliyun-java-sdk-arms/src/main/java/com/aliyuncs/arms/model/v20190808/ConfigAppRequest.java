@@ -22,14 +22,14 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetRetcodeShareStatusRequest extends RpcAcsRequest<SetRetcodeShareStatusResponse> {
+public class ConfigAppRequest extends RpcAcsRequest<ConfigAppResponse> {
 	   
 
-	private String pid;
+	private String appIds;
 
-	private Boolean status;
-	public SetRetcodeShareStatusRequest() {
-		super("ARMS", "2019-08-08", "SetRetcodeShareStatus");
+	private Boolean enable;
+	public ConfigAppRequest() {
+		super("ARMS", "2019-08-08", "ConfigApp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class SetRetcodeShareStatusRequest extends RpcAcsRequest<SetRetcodeShareS
 		} catch (Exception e) {}
 	}
 
-	public String getPid() {
-		return this.pid;
+	public String getAppIds() {
+		return this.appIds;
 	}
 
-	public void setPid(String pid) {
-		this.pid = pid;
-		if(pid != null){
-			putQueryParameter("Pid", pid);
+	public void setAppIds(String appIds) {
+		this.appIds = appIds;
+		if(appIds != null){
+			putQueryParameter("AppIds", appIds);
 		}
 	}
 
-	public Boolean getStatus() {
-		return this.status;
+	public Boolean getEnable() {
+		return this.enable;
 	}
 
-	public void setStatus(Boolean status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status.toString());
+	public void setEnable(Boolean enable) {
+		this.enable = enable;
+		if(enable != null){
+			putQueryParameter("Enable", enable.toString());
 		}
 	}
 
 	@Override
-	public Class<SetRetcodeShareStatusResponse> getResponseClass() {
-		return SetRetcodeShareStatusResponse.class;
+	public Class<ConfigAppResponse> getResponseClass() {
+		return ConfigAppResponse.class;
 	}
 
 }
