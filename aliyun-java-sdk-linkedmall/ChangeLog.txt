@@ -1,3 +1,8 @@
+2020-06-24 Version: 2.12.5
+- Add QueryOrderCommissionRate.
+- Modify QueryLogistics, add company code.
+- Modify QueryBizItemList, add grade price.
+
 2020-04-20 Version: 2.12.4
 - Add RenderH5Order Interface.
 

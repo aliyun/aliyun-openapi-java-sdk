@@ -75,6 +75,8 @@ public class QueryLogisticsResponse extends AcsResponse {
 
 		private String logisticsCompanyName;
 
+		private String logisticsCompanyCode;
+
 		private List<LogisticsDetailListItem> logisticsDetailList;
 
 		private List<GoodsItem> goods;
@@ -109,6 +111,14 @@ public class QueryLogisticsResponse extends AcsResponse {
 
 		public void setLogisticsCompanyName(String logisticsCompanyName) {
 			this.logisticsCompanyName = logisticsCompanyName;
+		}
+
+		public String getLogisticsCompanyCode() {
+			return this.logisticsCompanyCode;
+		}
+
+		public void setLogisticsCompanyCode(String logisticsCompanyCode) {
+			this.logisticsCompanyCode = logisticsCompanyCode;
 		}
 
 		public List<LogisticsDetailListItem> getLogisticsDetailList() {

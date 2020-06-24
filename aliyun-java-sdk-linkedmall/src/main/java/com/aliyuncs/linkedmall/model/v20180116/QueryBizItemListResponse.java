@@ -238,6 +238,8 @@ public class QueryBizItemListResponse extends AcsResponse {
 
 			private Map<Object,Object> customizedAttributeMap;
 
+			private List<GradePriceModel> gradePriceModels;
+
 			public Long getSkuId() {
 				return this.skuId;
 			}
@@ -308,6 +310,157 @@ public class QueryBizItemListResponse extends AcsResponse {
 
 			public void setCustomizedAttributeMap(Map<Object,Object> customizedAttributeMap) {
 				this.customizedAttributeMap = customizedAttributeMap;
+			}
+
+			public List<GradePriceModel> getGradePriceModels() {
+				return this.gradePriceModels;
+			}
+
+			public void setGradePriceModels(List<GradePriceModel> gradePriceModels) {
+				this.gradePriceModels = gradePriceModels;
+			}
+
+			public static class GradePriceModel {
+
+				private String characteristicCode;
+
+				private String characteristicName;
+
+				private String subBizCode;
+
+				private Boolean canBuy;
+
+				private Boolean exclusive;
+
+				private Boolean recommend;
+
+				private Long priceCent;
+
+				private Long pointsAmount;
+
+				private Long points;
+
+				private Long pointPrice;
+
+				private String showName;
+
+				private String accessUrl;
+
+				private String icon;
+
+				private List<String> userLabelList;
+
+				public String getCharacteristicCode() {
+					return this.characteristicCode;
+				}
+
+				public void setCharacteristicCode(String characteristicCode) {
+					this.characteristicCode = characteristicCode;
+				}
+
+				public String getCharacteristicName() {
+					return this.characteristicName;
+				}
+
+				public void setCharacteristicName(String characteristicName) {
+					this.characteristicName = characteristicName;
+				}
+
+				public String getSubBizCode() {
+					return this.subBizCode;
+				}
+
+				public void setSubBizCode(String subBizCode) {
+					this.subBizCode = subBizCode;
+				}
+
+				public Boolean getCanBuy() {
+					return this.canBuy;
+				}
+
+				public void setCanBuy(Boolean canBuy) {
+					this.canBuy = canBuy;
+				}
+
+				public Boolean getExclusive() {
+					return this.exclusive;
+				}
+
+				public void setExclusive(Boolean exclusive) {
+					this.exclusive = exclusive;
+				}
+
+				public Boolean getRecommend() {
+					return this.recommend;
+				}
+
+				public void setRecommend(Boolean recommend) {
+					this.recommend = recommend;
+				}
+
+				public Long getPriceCent() {
+					return this.priceCent;
+				}
+
+				public void setPriceCent(Long priceCent) {
+					this.priceCent = priceCent;
+				}
+
+				public Long getPointsAmount() {
+					return this.pointsAmount;
+				}
+
+				public void setPointsAmount(Long pointsAmount) {
+					this.pointsAmount = pointsAmount;
+				}
+
+				public Long getPoints() {
+					return this.points;
+				}
+
+				public void setPoints(Long points) {
+					this.points = points;
+				}
+
+				public Long getPointPrice() {
+					return this.pointPrice;
+				}
+
+				public void setPointPrice(Long pointPrice) {
+					this.pointPrice = pointPrice;
+				}
+
+				public String getShowName() {
+					return this.showName;
+				}
+
+				public void setShowName(String showName) {
+					this.showName = showName;
+				}
+
+				public String getAccessUrl() {
+					return this.accessUrl;
+				}
+
+				public void setAccessUrl(String accessUrl) {
+					this.accessUrl = accessUrl;
+				}
+
+				public String getIcon() {
+					return this.icon;
+				}
+
+				public void setIcon(String icon) {
+					this.icon = icon;
+				}
+
+				public List<String> getUserLabelList() {
+					return this.userLabelList;
+				}
+
+				public void setUserLabelList(List<String> userLabelList) {
+					this.userLabelList = userLabelList;
+				}
 			}
 		}
 	}

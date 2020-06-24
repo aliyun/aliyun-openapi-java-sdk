@@ -39,6 +39,7 @@ public class QueryLogisticsResponseUnmarshaller {
 			dataItem.setDataProvider(_ctx.stringValue("QueryLogisticsResponse.Data["+ i +"].DataProvider"));
 			dataItem.setDataProviderTitle(_ctx.stringValue("QueryLogisticsResponse.Data["+ i +"].DataProviderTitle"));
 			dataItem.setLogisticsCompanyName(_ctx.stringValue("QueryLogisticsResponse.Data["+ i +"].LogisticsCompanyName"));
+			dataItem.setLogisticsCompanyCode(_ctx.stringValue("QueryLogisticsResponse.Data["+ i +"].LogisticsCompanyCode"));
 
 			List<LogisticsDetailListItem> logisticsDetailList = new ArrayList<LogisticsDetailListItem>();
 			for (int j = 0; j < _ctx.lengthValue("QueryLogisticsResponse.Data["+ i +"].LogisticsDetailList.Length"); j++) {
