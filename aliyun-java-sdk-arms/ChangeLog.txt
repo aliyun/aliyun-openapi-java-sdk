@@ -4,6 +4,9 @@
 2020-06-24 Version: 2.6.9
 - ConfigApp.
 
+2020-06-24 Version: 2.6.9
+- ConfigApp.
+
 2020-06-23 Version: 2.6.8
 - Support ConfigApp.
 
