@@ -30,7 +30,7 @@ public class GetJobLatestAutoScalePlanRequest extends RoaAcsRequest<GetJobLatest
 
 	private String jobName;
 	public GetJobLatestAutoScalePlanRequest() {
-		super("foas", "2018-11-11", "GetJobLatestAutoScalePlan", "foas");
+		super("foas", "2018-11-11", "GetJobLatestAutoScalePlan");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/autoscale/latestplanjson");
 		setMethod(MethodType.GET);

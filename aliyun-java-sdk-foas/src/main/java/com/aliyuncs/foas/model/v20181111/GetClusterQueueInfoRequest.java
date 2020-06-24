@@ -28,7 +28,7 @@ public class GetClusterQueueInfoRequest extends RoaAcsRequest<GetClusterQueueInf
 
 	private String clusterId;
 	public GetClusterQueueInfoRequest() {
-		super("foas", "2018-11-11", "GetClusterQueueInfo", "foas");
+		super("foas", "2018-11-11", "GetClusterQueueInfo");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]/queueinfo");
 		setMethod(MethodType.GET);

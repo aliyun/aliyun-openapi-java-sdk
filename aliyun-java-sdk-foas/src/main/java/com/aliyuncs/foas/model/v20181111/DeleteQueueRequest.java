@@ -30,7 +30,7 @@ public class DeleteQueueRequest extends RoaAcsRequest<DeleteQueueResponse> {
 
 	private String clusterId;
 	public DeleteQueueRequest() {
-		super("foas", "2018-11-11", "DeleteQueue", "foas");
+		super("foas", "2018-11-11", "DeleteQueue");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]/queue");
 		setMethod(MethodType.DELETE);

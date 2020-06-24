@@ -38,7 +38,7 @@ public class ListClusterRequest extends RoaAcsRequest<ListClusterResponse> {
 
 	private String region;
 	public ListClusterRequest() {
-		super("foas", "2018-11-11", "ListCluster", "foas");
+		super("foas", "2018-11-11", "ListCluster");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters");
 		setMethod(MethodType.GET);

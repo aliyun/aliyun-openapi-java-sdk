@@ -30,7 +30,7 @@ public class GetPackageRequest extends RoaAcsRequest<GetPackageResponse> {
 
 	private String packageName;
 	public GetPackageRequest() {
-		super("foas", "2018-11-11", "GetPackage", "foas");
+		super("foas", "2018-11-11", "GetPackage");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/packages/[packageName]");
 		setMethod(MethodType.GET);

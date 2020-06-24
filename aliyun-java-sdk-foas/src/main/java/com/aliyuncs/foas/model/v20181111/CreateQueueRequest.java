@@ -36,7 +36,7 @@ public class CreateQueueRequest extends RoaAcsRequest<CreateQueueResponse> {
 
 	private Integer maxVcore;
 	public CreateQueueRequest() {
-		super("foas", "2018-11-11", "CreateQueue", "foas");
+		super("foas", "2018-11-11", "CreateQueue");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]/queue");
 		setMethod(MethodType.POST);

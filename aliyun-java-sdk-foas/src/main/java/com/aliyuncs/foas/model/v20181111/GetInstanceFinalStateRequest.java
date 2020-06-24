@@ -32,7 +32,7 @@ public class GetInstanceFinalStateRequest extends RoaAcsRequest<GetInstanceFinal
 
 	private String jobName;
 	public GetInstanceFinalStateRequest() {
-		super("foas", "2018-11-11", "GetInstanceFinalState", "foas");
+		super("foas", "2018-11-11", "GetInstanceFinalState");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/finalstate");
 		setMethod(MethodType.GET);

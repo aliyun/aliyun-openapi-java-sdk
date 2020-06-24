@@ -34,7 +34,7 @@ public class ExpandClusterRequest extends RoaAcsRequest<ExpandClusterResponse> {
 
 	private String clusterId;
 	public ExpandClusterRequest() {
-		super("foas", "2018-11-11", "ExpandCluster", "foas");
+		super("foas", "2018-11-11", "ExpandCluster");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]/expand");
 		setMethod(MethodType.PUT);

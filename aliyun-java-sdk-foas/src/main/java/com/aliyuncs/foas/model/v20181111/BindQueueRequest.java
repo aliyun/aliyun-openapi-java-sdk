@@ -32,7 +32,7 @@ public class BindQueueRequest extends RoaAcsRequest<BindQueueResponse> {
 
 	private String clusterId;
 	public BindQueueRequest() {
-		super("foas", "2018-11-11", "BindQueue", "foas");
+		super("foas", "2018-11-11", "BindQueue");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/queue");
 		setMethod(MethodType.POST);

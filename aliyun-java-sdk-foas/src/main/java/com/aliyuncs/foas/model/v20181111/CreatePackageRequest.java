@@ -48,7 +48,7 @@ public class CreatePackageRequest extends RoaAcsRequest<CreatePackageResponse> {
 
 	private String md5;
 	public CreatePackageRequest() {
-		super("foas", "2018-11-11", "CreatePackage", "foas");
+		super("foas", "2018-11-11", "CreatePackage");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/packages");
 		setMethod(MethodType.POST);

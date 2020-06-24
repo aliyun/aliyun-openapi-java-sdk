@@ -34,7 +34,7 @@ public class GetInstanceMetricRequest extends RoaAcsRequest<GetInstanceMetricRes
 
 	private String jobName;
 	public GetInstanceMetricRequest() {
-		super("foas", "2018-11-11", "GetInstanceMetric", "foas");
+		super("foas", "2018-11-11", "GetInstanceMetric");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/metric");
 		setMethod(MethodType.POST);

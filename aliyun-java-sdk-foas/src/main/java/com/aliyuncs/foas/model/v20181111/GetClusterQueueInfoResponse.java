@@ -69,6 +69,8 @@ public class GetClusterQueueInfoResponse extends AcsResponse {
 
 		private Integer maxMem;
 
+		private String externalInfo;
+
 		public String getClusterId() {
 			return this.clusterId;
 		}
@@ -155,6 +157,14 @@ public class GetClusterQueueInfoResponse extends AcsResponse {
 
 		public void setMaxMem(Integer maxMem) {
 			this.maxMem = maxMem;
+		}
+
+		public String getExternalInfo() {
+			return this.externalInfo;
+		}
+
+		public void setExternalInfo(String externalInfo) {
+			this.externalInfo = externalInfo;
 		}
 	}
 

@@ -32,7 +32,7 @@ public class GetInstanceRequest extends RoaAcsRequest<GetInstanceResponse> {
 
 	private String jobName;
 	public GetInstanceRequest() {
-		super("foas", "2018-11-11", "GetInstance", "foas");
+		super("foas", "2018-11-11", "GetInstance");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]");
 		setMethod(MethodType.GET);

@@ -30,7 +30,7 @@ public class DeleteFolderRequest extends RoaAcsRequest<DeleteFolderResponse> {
 
 	private String projectName;
 	public DeleteFolderRequest() {
-		super("foas", "2018-11-11", "DeleteFolder", "foas");
+		super("foas", "2018-11-11", "DeleteFolder");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/folders");
 		setMethod(MethodType.DELETE);

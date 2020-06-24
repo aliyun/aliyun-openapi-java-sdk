@@ -36,7 +36,7 @@ public class GetRawPlanJsonRequest extends RoaAcsRequest<GetRawPlanJsonResponse>
 
 	private Boolean autoconfEnable;
 	public GetRawPlanJsonRequest() {
-		super("foas", "2018-11-11", "GetRawPlanJson", "foas");
+		super("foas", "2018-11-11", "GetRawPlanJson");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/planjson");
 		setMethod(MethodType.GET);

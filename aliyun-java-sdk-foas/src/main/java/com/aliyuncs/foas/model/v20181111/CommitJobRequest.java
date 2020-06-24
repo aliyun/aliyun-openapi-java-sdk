@@ -36,7 +36,7 @@ public class CommitJobRequest extends RoaAcsRequest<CommitJobResponse> {
 
 	private String jobName;
 	public CommitJobRequest() {
-		super("foas", "2018-11-11", "CommitJob", "foas");
+		super("foas", "2018-11-11", "CommitJob");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/commit");
 		setMethod(MethodType.PUT);

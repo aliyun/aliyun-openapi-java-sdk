@@ -28,7 +28,7 @@ public class GetClusterEngineVersionsRequest extends RoaAcsRequest<GetClusterEng
 
 	private String clusterId;
 	public GetClusterEngineVersionsRequest() {
-		super("foas", "2018-11-11", "GetClusterEngineVersions", "foas");
+		super("foas", "2018-11-11", "GetClusterEngineVersions");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]/engineversions");
 		setMethod(MethodType.GET);

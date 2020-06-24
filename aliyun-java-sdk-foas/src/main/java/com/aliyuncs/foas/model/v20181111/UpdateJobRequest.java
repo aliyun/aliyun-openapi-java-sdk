@@ -48,7 +48,7 @@ public class UpdateJobRequest extends RoaAcsRequest<UpdateJobResponse> {
 
 	private String jobName;
 	public UpdateJobRequest() {
-		super("foas", "2018-11-11", "UpdateJob", "foas");
+		super("foas", "2018-11-11", "UpdateJob");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]");
 		setMethod(MethodType.PUT);

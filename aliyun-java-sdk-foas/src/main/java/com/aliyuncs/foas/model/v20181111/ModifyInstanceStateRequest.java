@@ -36,7 +36,7 @@ public class ModifyInstanceStateRequest extends RoaAcsRequest<ModifyInstanceStat
 
 	private String jobName;
 	public ModifyInstanceStateRequest() {
-		super("foas", "2018-11-11", "ModifyInstanceState", "foas");
+		super("foas", "2018-11-11", "ModifyInstanceState");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/expectstate");
 		setMethod(MethodType.PUT);

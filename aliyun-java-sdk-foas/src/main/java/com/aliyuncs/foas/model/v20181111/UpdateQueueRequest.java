@@ -36,7 +36,7 @@ public class UpdateQueueRequest extends RoaAcsRequest<UpdateQueueResponse> {
 
 	private Integer maxVcore;
 	public UpdateQueueRequest() {
-		super("foas", "2018-11-11", "UpdateQueue", "foas");
+		super("foas", "2018-11-11", "UpdateQueue");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]/queue");
 		setMethod(MethodType.PUT);

@@ -34,7 +34,7 @@ public class GetRefPackageJobRequest extends RoaAcsRequest<GetRefPackageJobRespo
 
 	private Integer pageIndex;
 	public GetRefPackageJobRequest() {
-		super("foas", "2018-11-11", "GetRefPackageJob", "foas");
+		super("foas", "2018-11-11", "GetRefPackageJob");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/packages/[packageName]/jobs");
 		setMethod(MethodType.GET);

@@ -32,7 +32,7 @@ public class GetInstanceRunSummaryRequest extends RoaAcsRequest<GetInstanceRunSu
 
 	private String jobName;
 	public GetInstanceRunSummaryRequest() {
-		super("foas", "2018-11-11", "GetInstanceRunSummary", "foas");
+		super("foas", "2018-11-11", "GetInstanceRunSummary");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/runsummary");
 		setMethod(MethodType.GET);

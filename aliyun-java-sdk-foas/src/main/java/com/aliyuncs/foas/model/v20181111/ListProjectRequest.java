@@ -38,7 +38,7 @@ public class ListProjectRequest extends RoaAcsRequest<ListProjectResponse> {
 
 	private String deployType;
 	public ListProjectRequest() {
-		super("foas", "2018-11-11", "ListProject", "foas");
+		super("foas", "2018-11-11", "ListProject");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects");
 		setMethod(MethodType.GET);

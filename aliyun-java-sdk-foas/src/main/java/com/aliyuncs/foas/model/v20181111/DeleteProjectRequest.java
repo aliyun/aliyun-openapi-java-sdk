@@ -28,7 +28,7 @@ public class DeleteProjectRequest extends RoaAcsRequest<DeleteProjectResponse> {
 
 	private String projectName;
 	public DeleteProjectRequest() {
-		super("foas", "2018-11-11", "DeleteProject", "foas");
+		super("foas", "2018-11-11", "DeleteProject");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]");
 		setMethod(MethodType.DELETE);

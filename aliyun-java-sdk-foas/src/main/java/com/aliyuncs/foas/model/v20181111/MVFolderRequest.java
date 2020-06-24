@@ -32,7 +32,7 @@ public class MVFolderRequest extends RoaAcsRequest<MVFolderResponse> {
 
 	private String destPath;
 	public MVFolderRequest() {
-		super("foas", "2018-11-11", "MVFolder", "foas");
+		super("foas", "2018-11-11", "MVFolder");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/folders");
 		setMethod(MethodType.PUT);

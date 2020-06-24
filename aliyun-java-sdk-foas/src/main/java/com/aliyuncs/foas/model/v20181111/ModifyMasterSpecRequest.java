@@ -30,7 +30,7 @@ public class ModifyMasterSpecRequest extends RoaAcsRequest<ModifyMasterSpecRespo
 
 	private String masterTargetModel;
 	public ModifyMasterSpecRequest() {
-		super("foas", "2018-11-11", "ModifyMasterSpec", "foas");
+		super("foas", "2018-11-11", "ModifyMasterSpec");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]/specification");
 		setMethod(MethodType.PUT);

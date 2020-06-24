@@ -30,7 +30,7 @@ public class OfflineJobRequest extends RoaAcsRequest<OfflineJobResponse> {
 
 	private String jobName;
 	public OfflineJobRequest() {
-		super("foas", "2018-11-11", "OfflineJob", "foas");
+		super("foas", "2018-11-11", "OfflineJob");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/offline");
 		setMethod(MethodType.PUT);

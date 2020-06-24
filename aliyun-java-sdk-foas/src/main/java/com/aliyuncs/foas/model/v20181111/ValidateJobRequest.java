@@ -30,7 +30,7 @@ public class ValidateJobRequest extends RoaAcsRequest<ValidateJobResponse> {
 
 	private String jobName;
 	public ValidateJobRequest() {
-		super("foas", "2018-11-11", "ValidateJob", "foas");
+		super("foas", "2018-11-11", "ValidateJob");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/validate");
 		setMethod(MethodType.GET);

@@ -28,7 +28,7 @@ public class GetClusterDetailsRequest extends RoaAcsRequest<GetClusterDetailsRes
 
 	private String clusterId;
 	public GetClusterDetailsRequest() {
-		super("foas", "2018-11-11", "GetClusterDetails", "foas");
+		super("foas", "2018-11-11", "GetClusterDetails");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]/details");
 		setMethod(MethodType.GET);

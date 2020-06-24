@@ -30,7 +30,7 @@ public class GetFolderRequest extends RoaAcsRequest<GetFolderResponse> {
 
 	private String projectName;
 	public GetFolderRequest() {
-		super("foas", "2018-11-11", "GetFolder", "foas");
+		super("foas", "2018-11-11", "GetFolder");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/folders");
 		setMethod(MethodType.GET);

@@ -30,7 +30,7 @@ public class DeleteJobRequest extends RoaAcsRequest<DeleteJobResponse> {
 
 	private String jobName;
 	public DeleteJobRequest() {
-		super("foas", "2018-11-11", "DeleteJob", "foas");
+		super("foas", "2018-11-11", "DeleteJob");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]");
 		setMethod(MethodType.DELETE);

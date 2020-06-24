@@ -42,6 +42,7 @@ public class GetClusterQueueInfoResponseUnmarshaller {
 			queue.setMinVCore(_ctx.integerValue("GetClusterQueueInfoResponse.Queues["+ i +"].MinVCore"));
 			queue.setMaxVCore(_ctx.integerValue("GetClusterQueueInfoResponse.Queues["+ i +"].MaxVCore"));
 			queue.setMaxMem(_ctx.integerValue("GetClusterQueueInfoResponse.Queues["+ i +"].MaxMem"));
+			queue.setExternalInfo(_ctx.stringValue("GetClusterQueueInfoResponse.Queues["+ i +"].ExternalInfo"));
 
 			queues.add(queue);
 		}

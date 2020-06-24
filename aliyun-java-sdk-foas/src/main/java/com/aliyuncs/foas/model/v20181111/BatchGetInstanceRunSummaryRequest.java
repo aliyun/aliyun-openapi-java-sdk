@@ -32,7 +32,7 @@ public class BatchGetInstanceRunSummaryRequest extends RoaAcsRequest<BatchGetIns
 
 	private String jobType;
 	public BatchGetInstanceRunSummaryRequest() {
-		super("foas", "2018-11-11", "BatchGetInstanceRunSummary", "foas");
+		super("foas", "2018-11-11", "BatchGetInstanceRunSummary");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/runsummary");
 		setMethod(MethodType.GET);

@@ -32,7 +32,7 @@ public class GetInstanceHistoryAutoScalePlanListRequest extends RoaAcsRequest<Ge
 
 	private String jobName;
 	public GetInstanceHistoryAutoScalePlanListRequest() {
-		super("foas", "2018-11-11", "GetInstanceHistoryAutoScalePlanList", "foas");
+		super("foas", "2018-11-11", "GetInstanceHistoryAutoScalePlanList");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instance/[instanceId]/autoscale/planlist");
 		setMethod(MethodType.GET);
