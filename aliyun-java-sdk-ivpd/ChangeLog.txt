@@ -1,3 +1,6 @@
+2020-06-26 Version: 1.0.5
+- Supported Api EraseLogoInVideo.
+
 2020-04-21 Version: 1.0.4
 - Supported PackageDesign Apis.
 - Supported Api ListPackageDesignModelTypes.
