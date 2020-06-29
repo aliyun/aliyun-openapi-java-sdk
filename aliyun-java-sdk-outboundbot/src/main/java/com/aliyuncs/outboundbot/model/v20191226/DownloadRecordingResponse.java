@@ -24,17 +24,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DownloadRecordingResponse extends AcsResponse {
 
+	private String code;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
 	private DownloadParams downloadParams;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,30 +76,6 @@ public class DownloadRecordingResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public DownloadParams getDownloadParams() {
 		return this.downloadParams;
 	}
@@ -86,17 +86,9 @@ public class DownloadRecordingResponse extends AcsResponse {
 
 	public static class DownloadParams {
 
-		private String signatureUrl;
-
 		private String fileName;
 
-		public String getSignatureUrl() {
-			return this.signatureUrl;
-		}
-
-		public void setSignatureUrl(String signatureUrl) {
-			this.signatureUrl = signatureUrl;
-		}
+		private String signatureUrl;
 
 		public String getFileName() {
 			return this.fileName;
@@ -104,6 +96,14 @@ public class DownloadRecordingResponse extends AcsResponse {
 
 		public void setFileName(String fileName) {
 			this.fileName = fileName;
+		}
+
+		public String getSignatureUrl() {
+			return this.signatureUrl;
+		}
+
+		public void setSignatureUrl(String signatureUrl) {
+			this.signatureUrl = signatureUrl;
 		}
 	}
 

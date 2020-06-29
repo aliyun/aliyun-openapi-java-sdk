@@ -24,14 +24,14 @@ public class DownloadRecordingResponseUnmarshaller {
 	public static DownloadRecordingResponse unmarshall(DownloadRecordingResponse downloadRecordingResponse, UnmarshallerContext _ctx) {
 		
 		downloadRecordingResponse.setRequestId(_ctx.stringValue("DownloadRecordingResponse.RequestId"));
-		downloadRecordingResponse.setSuccess(_ctx.booleanValue("DownloadRecordingResponse.Success"));
 		downloadRecordingResponse.setCode(_ctx.stringValue("DownloadRecordingResponse.Code"));
-		downloadRecordingResponse.setMessage(_ctx.stringValue("DownloadRecordingResponse.Message"));
 		downloadRecordingResponse.setHttpStatusCode(_ctx.integerValue("DownloadRecordingResponse.HttpStatusCode"));
+		downloadRecordingResponse.setMessage(_ctx.stringValue("DownloadRecordingResponse.Message"));
+		downloadRecordingResponse.setSuccess(_ctx.booleanValue("DownloadRecordingResponse.Success"));
 
 		DownloadParams downloadParams = new DownloadParams();
-		downloadParams.setSignatureUrl(_ctx.stringValue("DownloadRecordingResponse.DownloadParams.SignatureUrl"));
 		downloadParams.setFileName(_ctx.stringValue("DownloadRecordingResponse.DownloadParams.FileName"));
+		downloadParams.setSignatureUrl(_ctx.stringValue("DownloadRecordingResponse.DownloadParams.SignatureUrl"));
 		downloadRecordingResponse.setDownloadParams(downloadParams);
 	 
 	 	return downloadRecordingResponse;
