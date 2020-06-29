@@ -1,3 +1,6 @@
+2020-06-29 Version: 1.16.7
+- Supported Rotate.
+
 2020-06-29 Version: 1.16.6
 - Supported Rotate.
 
