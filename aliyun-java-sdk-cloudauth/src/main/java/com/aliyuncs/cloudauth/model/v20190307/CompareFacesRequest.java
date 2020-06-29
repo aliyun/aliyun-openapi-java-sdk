@@ -28,8 +28,6 @@ public class CompareFacesRequest extends RpcAcsRequest<CompareFacesResponse> {
 
 	private String sourceImageType;
 
-	private Long resourceOwnerId;
-
 	private String targetImageType;
 
 	private String targetImageValue;
@@ -53,17 +51,6 @@ public class CompareFacesRequest extends RpcAcsRequest<CompareFacesResponse> {
 		this.sourceImageType = sourceImageType;
 		if(sourceImageType != null){
 			putBodyParameter("SourceImageType", sourceImageType);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 

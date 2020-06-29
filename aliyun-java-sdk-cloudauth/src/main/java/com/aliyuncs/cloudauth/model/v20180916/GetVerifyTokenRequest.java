@@ -26,8 +26,6 @@ import com.aliyuncs.cloudauth.Endpoint;
 public class GetVerifyTokenRequest extends RpcAcsRequest<GetVerifyTokenResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String binding;
 
 	private String verifyConfigs;
@@ -35,8 +33,6 @@ public class GetVerifyTokenRequest extends RpcAcsRequest<GetVerifyTokenResponse>
 	private String userData;
 
 	private String biz;
-
-	private String sourceIp;
 
 	private String ticketId;
 	public GetVerifyTokenRequest() {
@@ -47,17 +43,6 @@ public class GetVerifyTokenRequest extends RpcAcsRequest<GetVerifyTokenResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getBinding() {
@@ -101,17 +86,6 @@ public class GetVerifyTokenRequest extends RpcAcsRequest<GetVerifyTokenResponse>
 		this.biz = biz;
 		if(biz != null){
 			putQueryParameter("Biz", biz);
-		}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 

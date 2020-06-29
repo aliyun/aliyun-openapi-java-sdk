@@ -41,6 +41,8 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 
 	private String faceContrastPictureUrl;
 
+	private String model;
+
 	private String metaInfo;
 
 	private String ossObjectName;
@@ -150,6 +152,17 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		this.faceContrastPictureUrl = faceContrastPictureUrl;
 		if(faceContrastPictureUrl != null){
 			putQueryParameter("FaceContrastPictureUrl", faceContrastPictureUrl);
+		}
+	}
+
+	public String getModel() {
+		return this.model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+		if(model != null){
+			putBodyParameter("Model", model);
 		}
 	}
 

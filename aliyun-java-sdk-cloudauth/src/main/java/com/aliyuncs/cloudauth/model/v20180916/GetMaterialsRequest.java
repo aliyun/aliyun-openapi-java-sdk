@@ -26,11 +26,7 @@ import com.aliyuncs.cloudauth.Endpoint;
 public class GetMaterialsRequest extends RpcAcsRequest<GetMaterialsResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String biz;
-
-	private String sourceIp;
 
 	private String ticketId;
 	public GetMaterialsRequest() {
@@ -43,17 +39,6 @@ public class GetMaterialsRequest extends RpcAcsRequest<GetMaterialsResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getBiz() {
 		return this.biz;
 	}
@@ -62,17 +47,6 @@ public class GetMaterialsRequest extends RpcAcsRequest<GetMaterialsResponse> {
 		this.biz = biz;
 		if(biz != null){
 			putQueryParameter("Biz", biz);
-		}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 
