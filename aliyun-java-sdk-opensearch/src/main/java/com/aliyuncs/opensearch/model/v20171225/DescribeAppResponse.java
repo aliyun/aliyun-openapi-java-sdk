@@ -15,6 +15,7 @@
 package com.aliyuncs.opensearch.model.v20171225;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.opensearch.transform.v20171225.DescribeAppResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -65,9 +66,9 @@ public class DescribeAppResponse extends AcsResponse {
 
 		private Integer progressPercent;
 
-		private List<String> fetchFields;
+		private Map<Object,Object> schema;
 
-		private Schema schema;
+		private List<String> fetchFields;
 
 		private Quota quota;
 
@@ -143,6 +144,14 @@ public class DescribeAppResponse extends AcsResponse {
 			this.progressPercent = progressPercent;
 		}
 
+		public Map<Object,Object> getSchema() {
+			return this.schema;
+		}
+
+		public void setSchema(Map<Object,Object> schema) {
+			this.schema = schema;
+		}
+
 		public List<String> getFetchFields() {
 			return this.fetchFields;
 		}
@@ -151,303 +160,12 @@ public class DescribeAppResponse extends AcsResponse {
 			this.fetchFields = fetchFields;
 		}
 
-		public Schema getSchema() {
-			return this.schema;
-		}
-
-		public void setSchema(Schema schema) {
-			this.schema = schema;
-		}
-
 		public Quota getQuota() {
 			return this.quota;
 		}
 
 		public void setQuota(Quota quota) {
 			this.quota = quota;
-		}
-
-		public static class Schema {
-
-			private String pluginInfo;
-
-			private List<String> routeField;
-
-			private Tables tables;
-
-			private Indexes indexes;
-
-			public String getPluginInfo() {
-				return this.pluginInfo;
-			}
-
-			public void setPluginInfo(String pluginInfo) {
-				this.pluginInfo = pluginInfo;
-			}
-
-			public List<String> getRouteField() {
-				return this.routeField;
-			}
-
-			public void setRouteField(List<String> routeField) {
-				this.routeField = routeField;
-			}
-
-			public Tables getTables() {
-				return this.tables;
-			}
-
-			public void setTables(Tables tables) {
-				this.tables = tables;
-			}
-
-			public Indexes getIndexes() {
-				return this.indexes;
-			}
-
-			public void setIndexes(Indexes indexes) {
-				this.indexes = indexes;
-			}
-
-			public static class Tables {
-
-				private Main main;
-
-				public Main getMain() {
-					return this.main;
-				}
-
-				public void setMain(Main main) {
-					this.main = main;
-				}
-
-				public static class Main {
-
-					private Boolean primaryTable;
-
-					private String name;
-
-					private Fields fields;
-
-					public Boolean getPrimaryTable() {
-						return this.primaryTable;
-					}
-
-					public void setPrimaryTable(Boolean primaryTable) {
-						this.primaryTable = primaryTable;
-					}
-
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
-
-					public Fields getFields() {
-						return this.fields;
-					}
-
-					public void setFields(Fields fields) {
-						this.fields = fields;
-					}
-
-					public static class Fields {
-
-						private Id id;
-
-						private Title title;
-
-						private Buy buy;
-
-						public Id getId() {
-							return this.id;
-						}
-
-						public void setId(Id id) {
-							this.id = id;
-						}
-
-						public Title getTitle() {
-							return this.title;
-						}
-
-						public void setTitle(Title title) {
-							this.title = title;
-						}
-
-						public Buy getBuy() {
-							return this.buy;
-						}
-
-						public void setBuy(Buy buy) {
-							this.buy = buy;
-						}
-
-						public static class Id {
-
-							private List<String> fields1;
-
-							public List<String> getFields1() {
-								return this.fields1;
-							}
-
-							public void setFields1(List<String> fields1) {
-								this.fields1 = fields1;
-							}
-						}
-
-						public static class Title {
-
-							private String type;
-
-							private String name;
-
-							private Boolean primaryKey;
-
-							public String getType() {
-								return this.type;
-							}
-
-							public void setType(String type) {
-								this.type = type;
-							}
-
-							public String getName() {
-								return this.name;
-							}
-
-							public void setName(String name) {
-								this.name = name;
-							}
-
-							public Boolean getPrimaryKey() {
-								return this.primaryKey;
-							}
-
-							public void setPrimaryKey(Boolean primaryKey) {
-								this.primaryKey = primaryKey;
-							}
-						}
-
-						public static class Buy {
-
-							private String type;
-
-							private String name;
-
-							private Boolean primaryKey;
-
-							public String getType() {
-								return this.type;
-							}
-
-							public void setType(String type) {
-								this.type = type;
-							}
-
-							public String getName() {
-								return this.name;
-							}
-
-							public void setName(String name) {
-								this.name = name;
-							}
-
-							public Boolean getPrimaryKey() {
-								return this.primaryKey;
-							}
-
-							public void setPrimaryKey(Boolean primaryKey) {
-								this.primaryKey = primaryKey;
-							}
-						}
-					}
-				}
-			}
-
-			public static class Indexes {
-
-				private List<String> filterFields;
-
-				private SearchFields searchFields;
-
-				public List<String> getFilterFields() {
-					return this.filterFields;
-				}
-
-				public void setFilterFields(List<String> filterFields) {
-					this.filterFields = filterFields;
-				}
-
-				public SearchFields getSearchFields() {
-					return this.searchFields;
-				}
-
-				public void setSearchFields(SearchFields searchFields) {
-					this.searchFields = searchFields;
-				}
-
-				public static class SearchFields {
-
-					private _Default _default;
-
-					private Id2 id2;
-
-					public _Default get_Default() {
-						return this._default;
-					}
-
-					public void set_Default(_Default _default) {
-						this._default = _default;
-					}
-
-					public Id2 getId2() {
-						return this.id2;
-					}
-
-					public void setId2(Id2 id2) {
-						this.id2 = id2;
-					}
-
-					public static class _Default {
-
-						private String analyzer;
-
-						private List<String> fields3;
-
-						public String getAnalyzer() {
-							return this.analyzer;
-						}
-
-						public void setAnalyzer(String analyzer) {
-							this.analyzer = analyzer;
-						}
-
-						public List<String> getFields3() {
-							return this.fields3;
-						}
-
-						public void setFields3(List<String> fields3) {
-							this.fields3 = fields3;
-						}
-					}
-
-					public static class Id2 {
-
-						private List<String> fields4;
-
-						public List<String> getFields4() {
-							return this.fields4;
-						}
-
-						public void setFields4(List<String> fields4) {
-							this.fields4 = fields4;
-						}
-					}
-				}
-			}
 		}
 
 		public static class Quota {

@@ -1,3 +1,6 @@
+2020-06-29 Version: 0.2.1
+- Fix response structure of DescribeApp.
+
 2020-05-27 Version: 0.2.0
 - Add app-group-management and quota-updating APIs.
 - Add app management APIs.
