@@ -1,3 +1,6 @@
+2020-06-29 Version: 1.10.0
+- Supported gb28181 parent platform.
+
 2020-05-25 Version: 1.9.0
 - Supported auvsp protocol changes.
 - Supported start vod streams.
