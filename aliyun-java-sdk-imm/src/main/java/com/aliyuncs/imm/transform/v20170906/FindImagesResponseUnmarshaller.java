@@ -22,11 +22,14 @@ import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.Address;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.CelebrityItem;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.CelebrityItem.CelebrityBoundary;
+import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.CroppingSuggestionItem;
+import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.CroppingSuggestionItem.CroppingBoundary;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.FacesItem;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.FacesItem.EmotionDetails;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.FacesItem.FaceAttributes;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.FacesItem.FaceAttributes.FaceBoundary;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.FacesItem.FaceAttributes.HeadPose;
+import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.ImageQuality;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.OCRItem;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.OCRItem.OCRBoundary;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.TagsItem;
@@ -80,6 +83,25 @@ public class FindImagesResponseUnmarshaller {
 			imagesItem.setAddressFailReason(_ctx.stringValue("FindImagesResponse.Images["+ i +"].AddressFailReason"));
 			imagesItem.setRemarksArrayB(_ctx.stringValue("FindImagesResponse.Images["+ i +"].RemarksArrayB"));
 			imagesItem.setRemarksArrayA(_ctx.stringValue("FindImagesResponse.Images["+ i +"].RemarksArrayA"));
+			imagesItem.setImageQualityStatus(_ctx.stringValue("FindImagesResponse.Images["+ i +"].ImageQualityStatus"));
+			imagesItem.setImageQualityFailReason(_ctx.stringValue("FindImagesResponse.Images["+ i +"].ImageQualityFailReason"));
+			imagesItem.setImageQualityModifyTime(_ctx.stringValue("FindImagesResponse.Images["+ i +"].ImageQualityModifyTime"));
+			imagesItem.setCroppingSuggestionStatus(_ctx.stringValue("FindImagesResponse.Images["+ i +"].CroppingSuggestionStatus"));
+			imagesItem.setCroppingSuggestionFailReason(_ctx.stringValue("FindImagesResponse.Images["+ i +"].CroppingSuggestionFailReason"));
+			imagesItem.setCroppingSuggestionModifyTime(_ctx.stringValue("FindImagesResponse.Images["+ i +"].CroppingSuggestionModifyTime"));
+
+			ImageQuality imageQuality = new ImageQuality();
+			imageQuality.setOverallScore(_ctx.floatValue("FindImagesResponse.Images["+ i +"].ImageQuality.OverallScore"));
+			imageQuality.setClarityScore(_ctx.floatValue("FindImagesResponse.Images["+ i +"].ImageQuality.ClarityScore"));
+			imageQuality.setClarity(_ctx.floatValue("FindImagesResponse.Images["+ i +"].ImageQuality.Clarity"));
+			imageQuality.setExposureScore(_ctx.floatValue("FindImagesResponse.Images["+ i +"].ImageQuality.ExposureScore"));
+			imageQuality.setExposure(_ctx.floatValue("FindImagesResponse.Images["+ i +"].ImageQuality.Exposure"));
+			imageQuality.setContrastScore(_ctx.floatValue("FindImagesResponse.Images["+ i +"].ImageQuality.ContrastScore"));
+			imageQuality.setContrast(_ctx.floatValue("FindImagesResponse.Images["+ i +"].ImageQuality.Contrast"));
+			imageQuality.setColorScore(_ctx.floatValue("FindImagesResponse.Images["+ i +"].ImageQuality.ColorScore"));
+			imageQuality.setColor(_ctx.floatValue("FindImagesResponse.Images["+ i +"].ImageQuality.Color"));
+			imageQuality.setCompositionScore(_ctx.floatValue("FindImagesResponse.Images["+ i +"].ImageQuality.CompositionScore"));
+			imagesItem.setImageQuality(imageQuality);
 
 			Address address = new Address();
 			address.setAddressLine(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Address.AddressLine"));
@@ -89,6 +111,23 @@ public class FindImagesResponseUnmarshaller {
 			address.setDistrict(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Address.District"));
 			address.setTownship(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Address.Township"));
 			imagesItem.setAddress(address);
+
+			List<CroppingSuggestionItem> croppingSuggestion = new ArrayList<CroppingSuggestionItem>();
+			for (int j = 0; j < _ctx.lengthValue("FindImagesResponse.Images["+ i +"].CroppingSuggestion.Length"); j++) {
+				CroppingSuggestionItem croppingSuggestionItem = new CroppingSuggestionItem();
+				croppingSuggestionItem.setAspectRatio(_ctx.stringValue("FindImagesResponse.Images["+ i +"].CroppingSuggestion["+ j +"].AspectRatio"));
+				croppingSuggestionItem.setScore(_ctx.floatValue("FindImagesResponse.Images["+ i +"].CroppingSuggestion["+ j +"].Score"));
+
+				CroppingBoundary croppingBoundary = new CroppingBoundary();
+				croppingBoundary.setWidth(_ctx.integerValue("FindImagesResponse.Images["+ i +"].CroppingSuggestion["+ j +"].CroppingBoundary.Width"));
+				croppingBoundary.setHeight(_ctx.integerValue("FindImagesResponse.Images["+ i +"].CroppingSuggestion["+ j +"].CroppingBoundary.Height"));
+				croppingBoundary.setLeft(_ctx.integerValue("FindImagesResponse.Images["+ i +"].CroppingSuggestion["+ j +"].CroppingBoundary.Left"));
+				croppingBoundary.setTop(_ctx.integerValue("FindImagesResponse.Images["+ i +"].CroppingSuggestion["+ j +"].CroppingBoundary.Top"));
+				croppingSuggestionItem.setCroppingBoundary(croppingBoundary);
+
+				croppingSuggestion.add(croppingSuggestionItem);
+			}
+			imagesItem.setCroppingSuggestion(croppingSuggestion);
 
 			List<FacesItem> faces = new ArrayList<FacesItem>();
 			for (int j = 0; j < _ctx.lengthValue("FindImagesResponse.Images["+ i +"].Faces.Length"); j++) {

@@ -21,11 +21,14 @@ import com.aliyuncs.imm.model.v20170906.GetImageResponse;
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.Address;
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.CelebrityItem;
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.CelebrityItem.CelebrityBoundary;
+import com.aliyuncs.imm.model.v20170906.GetImageResponse.CroppingSuggestionItem;
+import com.aliyuncs.imm.model.v20170906.GetImageResponse.CroppingSuggestionItem.CroppingBoundary;
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.FacesItem;
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.FacesItem.EmotionDetails;
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.FacesItem.FaceAttributes;
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.FacesItem.FaceAttributes.FaceBoundary;
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.FacesItem.FaceAttributes.HeadPose;
+import com.aliyuncs.imm.model.v20170906.GetImageResponse.ImageQuality;
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.OCRItem;
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.OCRItem.OCRBoundary;
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.TagsItem;
@@ -74,6 +77,25 @@ public class GetImageResponseUnmarshaller {
 		getImageResponse.setAddressFailReason(_ctx.stringValue("GetImageResponse.AddressFailReason"));
 		getImageResponse.setRemarksArrayA(_ctx.stringValue("GetImageResponse.RemarksArrayA"));
 		getImageResponse.setRemarksArrayB(_ctx.stringValue("GetImageResponse.RemarksArrayB"));
+		getImageResponse.setImageQualityModifyTime(_ctx.stringValue("GetImageResponse.ImageQualityModifyTime"));
+		getImageResponse.setImageQualityFailReason(_ctx.stringValue("GetImageResponse.ImageQualityFailReason"));
+		getImageResponse.setImageQualityStatus(_ctx.stringValue("GetImageResponse.ImageQualityStatus"));
+		getImageResponse.setCroppingSuggestionStatus(_ctx.stringValue("GetImageResponse.CroppingSuggestionStatus"));
+		getImageResponse.setCroppingSuggestionFailReason(_ctx.stringValue("GetImageResponse.CroppingSuggestionFailReason"));
+		getImageResponse.setCroppingSuggestionModifyTime(_ctx.stringValue("GetImageResponse.CroppingSuggestionModifyTime"));
+
+		ImageQuality imageQuality = new ImageQuality();
+		imageQuality.setOverallScore(_ctx.floatValue("GetImageResponse.ImageQuality.OverallScore"));
+		imageQuality.setClarityScore(_ctx.floatValue("GetImageResponse.ImageQuality.ClarityScore"));
+		imageQuality.setClarity(_ctx.floatValue("GetImageResponse.ImageQuality.Clarity"));
+		imageQuality.setExposureScore(_ctx.floatValue("GetImageResponse.ImageQuality.ExposureScore"));
+		imageQuality.setExposure(_ctx.floatValue("GetImageResponse.ImageQuality.Exposure"));
+		imageQuality.setContrastScore(_ctx.floatValue("GetImageResponse.ImageQuality.ContrastScore"));
+		imageQuality.setContrast(_ctx.floatValue("GetImageResponse.ImageQuality.Contrast"));
+		imageQuality.setColorScore(_ctx.floatValue("GetImageResponse.ImageQuality.ColorScore"));
+		imageQuality.setColor(_ctx.floatValue("GetImageResponse.ImageQuality.Color"));
+		imageQuality.setCompositionScore(_ctx.floatValue("GetImageResponse.ImageQuality.CompositionScore"));
+		getImageResponse.setImageQuality(imageQuality);
 
 		Address address = new Address();
 		address.setAddressLine(_ctx.stringValue("GetImageResponse.Address.AddressLine"));
@@ -83,6 +105,23 @@ public class GetImageResponseUnmarshaller {
 		address.setDistrict(_ctx.stringValue("GetImageResponse.Address.District"));
 		address.setTownship(_ctx.stringValue("GetImageResponse.Address.Township"));
 		getImageResponse.setAddress(address);
+
+		List<CroppingSuggestionItem> croppingSuggestion = new ArrayList<CroppingSuggestionItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetImageResponse.CroppingSuggestion.Length"); i++) {
+			CroppingSuggestionItem croppingSuggestionItem = new CroppingSuggestionItem();
+			croppingSuggestionItem.setAspectRatio(_ctx.stringValue("GetImageResponse.CroppingSuggestion["+ i +"].AspectRatio"));
+			croppingSuggestionItem.setScore(_ctx.floatValue("GetImageResponse.CroppingSuggestion["+ i +"].Score"));
+
+			CroppingBoundary croppingBoundary = new CroppingBoundary();
+			croppingBoundary.setWidth(_ctx.integerValue("GetImageResponse.CroppingSuggestion["+ i +"].CroppingBoundary.Width"));
+			croppingBoundary.setHeight(_ctx.integerValue("GetImageResponse.CroppingSuggestion["+ i +"].CroppingBoundary.Height"));
+			croppingBoundary.setLeft(_ctx.integerValue("GetImageResponse.CroppingSuggestion["+ i +"].CroppingBoundary.Left"));
+			croppingBoundary.setTop(_ctx.integerValue("GetImageResponse.CroppingSuggestion["+ i +"].CroppingBoundary.Top"));
+			croppingSuggestionItem.setCroppingBoundary(croppingBoundary);
+
+			croppingSuggestion.add(croppingSuggestionItem);
+		}
+		getImageResponse.setCroppingSuggestion(croppingSuggestion);
 
 		List<FacesItem> faces = new ArrayList<FacesItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetImageResponse.Faces.Length"); i++) {

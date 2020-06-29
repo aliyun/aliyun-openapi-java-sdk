@@ -86,6 +86,7 @@ public class GetMediaMetaResponseUnmarshaller {
 			videoStream.setDuration(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Duration"));
 			videoStream.setBitrate(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Bitrate"));
 			videoStream.setFrames(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Frames"));
+			videoStream.setRotate(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Rotate"));
 
 			videoStreams.add(videoStream);
 		}

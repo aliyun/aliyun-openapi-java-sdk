@@ -139,6 +139,20 @@ public class FindImagesResponse extends AcsResponse {
 
 		private String remarksArrayA;
 
+		private String imageQualityStatus;
+
+		private String imageQualityFailReason;
+
+		private String imageQualityModifyTime;
+
+		private String croppingSuggestionStatus;
+
+		private String croppingSuggestionFailReason;
+
+		private String croppingSuggestionModifyTime;
+
+		private List<CroppingSuggestionItem> croppingSuggestion;
+
 		private List<FacesItem> faces;
 
 		private List<TagsItem> tags;
@@ -146,6 +160,8 @@ public class FindImagesResponse extends AcsResponse {
 		private List<OCRItem> oCR;
 
 		private List<CelebrityItem> celebrity;
+
+		private ImageQuality imageQuality;
 
 		private Address address;
 
@@ -437,6 +453,62 @@ public class FindImagesResponse extends AcsResponse {
 			this.remarksArrayA = remarksArrayA;
 		}
 
+		public String getImageQualityStatus() {
+			return this.imageQualityStatus;
+		}
+
+		public void setImageQualityStatus(String imageQualityStatus) {
+			this.imageQualityStatus = imageQualityStatus;
+		}
+
+		public String getImageQualityFailReason() {
+			return this.imageQualityFailReason;
+		}
+
+		public void setImageQualityFailReason(String imageQualityFailReason) {
+			this.imageQualityFailReason = imageQualityFailReason;
+		}
+
+		public String getImageQualityModifyTime() {
+			return this.imageQualityModifyTime;
+		}
+
+		public void setImageQualityModifyTime(String imageQualityModifyTime) {
+			this.imageQualityModifyTime = imageQualityModifyTime;
+		}
+
+		public String getCroppingSuggestionStatus() {
+			return this.croppingSuggestionStatus;
+		}
+
+		public void setCroppingSuggestionStatus(String croppingSuggestionStatus) {
+			this.croppingSuggestionStatus = croppingSuggestionStatus;
+		}
+
+		public String getCroppingSuggestionFailReason() {
+			return this.croppingSuggestionFailReason;
+		}
+
+		public void setCroppingSuggestionFailReason(String croppingSuggestionFailReason) {
+			this.croppingSuggestionFailReason = croppingSuggestionFailReason;
+		}
+
+		public String getCroppingSuggestionModifyTime() {
+			return this.croppingSuggestionModifyTime;
+		}
+
+		public void setCroppingSuggestionModifyTime(String croppingSuggestionModifyTime) {
+			this.croppingSuggestionModifyTime = croppingSuggestionModifyTime;
+		}
+
+		public List<CroppingSuggestionItem> getCroppingSuggestion() {
+			return this.croppingSuggestion;
+		}
+
+		public void setCroppingSuggestion(List<CroppingSuggestionItem> croppingSuggestion) {
+			this.croppingSuggestion = croppingSuggestion;
+		}
+
 		public List<FacesItem> getFaces() {
 			return this.faces;
 		}
@@ -469,12 +541,96 @@ public class FindImagesResponse extends AcsResponse {
 			this.celebrity = celebrity;
 		}
 
+		public ImageQuality getImageQuality() {
+			return this.imageQuality;
+		}
+
+		public void setImageQuality(ImageQuality imageQuality) {
+			this.imageQuality = imageQuality;
+		}
+
 		public Address getAddress() {
 			return this.address;
 		}
 
 		public void setAddress(Address address) {
 			this.address = address;
+		}
+
+		public static class CroppingSuggestionItem {
+
+			private String aspectRatio;
+
+			private Float score;
+
+			private CroppingBoundary croppingBoundary;
+
+			public String getAspectRatio() {
+				return this.aspectRatio;
+			}
+
+			public void setAspectRatio(String aspectRatio) {
+				this.aspectRatio = aspectRatio;
+			}
+
+			public Float getScore() {
+				return this.score;
+			}
+
+			public void setScore(Float score) {
+				this.score = score;
+			}
+
+			public CroppingBoundary getCroppingBoundary() {
+				return this.croppingBoundary;
+			}
+
+			public void setCroppingBoundary(CroppingBoundary croppingBoundary) {
+				this.croppingBoundary = croppingBoundary;
+			}
+
+			public static class CroppingBoundary {
+
+				private Integer width;
+
+				private Integer height;
+
+				private Integer left;
+
+				private Integer top;
+
+				public Integer getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(Integer width) {
+					this.width = width;
+				}
+
+				public Integer getHeight() {
+					return this.height;
+				}
+
+				public void setHeight(Integer height) {
+					this.height = height;
+				}
+
+				public Integer getLeft() {
+					return this.left;
+				}
+
+				public void setLeft(Integer left) {
+					this.left = left;
+				}
+
+				public Integer getTop() {
+					return this.top;
+				}
+
+				public void setTop(Integer top) {
+					this.top = top;
+				}
+			}
 		}
 
 		public static class FacesItem {
@@ -1064,6 +1220,109 @@ public class FindImagesResponse extends AcsResponse {
 				public void setHeight(Integer height) {
 					this.height = height;
 				}
+			}
+		}
+
+		public static class ImageQuality {
+
+			private Float overallScore;
+
+			private Float clarityScore;
+
+			private Float clarity;
+
+			private Float exposureScore;
+
+			private Float exposure;
+
+			private Float contrastScore;
+
+			private Float contrast;
+
+			private Float colorScore;
+
+			private Float color;
+
+			private Float compositionScore;
+
+			public Float getOverallScore() {
+				return this.overallScore;
+			}
+
+			public void setOverallScore(Float overallScore) {
+				this.overallScore = overallScore;
+			}
+
+			public Float getClarityScore() {
+				return this.clarityScore;
+			}
+
+			public void setClarityScore(Float clarityScore) {
+				this.clarityScore = clarityScore;
+			}
+
+			public Float getClarity() {
+				return this.clarity;
+			}
+
+			public void setClarity(Float clarity) {
+				this.clarity = clarity;
+			}
+
+			public Float getExposureScore() {
+				return this.exposureScore;
+			}
+
+			public void setExposureScore(Float exposureScore) {
+				this.exposureScore = exposureScore;
+			}
+
+			public Float getExposure() {
+				return this.exposure;
+			}
+
+			public void setExposure(Float exposure) {
+				this.exposure = exposure;
+			}
+
+			public Float getContrastScore() {
+				return this.contrastScore;
+			}
+
+			public void setContrastScore(Float contrastScore) {
+				this.contrastScore = contrastScore;
+			}
+
+			public Float getContrast() {
+				return this.contrast;
+			}
+
+			public void setContrast(Float contrast) {
+				this.contrast = contrast;
+			}
+
+			public Float getColorScore() {
+				return this.colorScore;
+			}
+
+			public void setColorScore(Float colorScore) {
+				this.colorScore = colorScore;
+			}
+
+			public Float getColor() {
+				return this.color;
+			}
+
+			public void setColor(Float color) {
+				this.color = color;
+			}
+
+			public Float getCompositionScore() {
+				return this.compositionScore;
+			}
+
+			public void setCompositionScore(Float compositionScore) {
+				this.compositionScore = compositionScore;
 			}
 		}
 

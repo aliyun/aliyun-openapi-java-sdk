@@ -331,6 +331,8 @@ public class GetMediaMetaResponse extends AcsResponse {
 
 				private String frames;
 
+				private String rotate;
+
 				public Integer getIndex() {
 					return this.index;
 				}
@@ -505,6 +507,14 @@ public class GetMediaMetaResponse extends AcsResponse {
 
 				public void setFrames(String frames) {
 					this.frames = frames;
+				}
+
+				public String getRotate() {
+					return this.rotate;
+				}
+
+				public void setRotate(String rotate) {
+					this.rotate = rotate;
 				}
 			}
 
