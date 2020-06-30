@@ -1,3 +1,6 @@
+2020-06-30 Version: 1.0.4
+- Add ListMetrics API.
+
 2020-06-23 Version: 1.0.4
 - Add face quality detection API.
 
