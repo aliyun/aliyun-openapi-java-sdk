@@ -30,7 +30,7 @@ public class ListConfigRequest extends RpcAcsRequest<ListConfigResponse> {
 
 	private List<String> configItems;
 	public ListConfigRequest() {
-		super("CCC", "2017-07-05", "ListConfig");
+		super("CCC", "2017-07-05", "ListConfig", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class CreateVoiceAppraiseRequest extends RpcAcsRequest<CreateVoiceApprais
 
 	private String contactFlowVersionId;
 	public CreateVoiceAppraiseRequest() {
-		super("CCC", "2017-07-05", "CreateVoiceAppraise");
+		super("CCC", "2017-07-05", "CreateVoiceAppraise", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

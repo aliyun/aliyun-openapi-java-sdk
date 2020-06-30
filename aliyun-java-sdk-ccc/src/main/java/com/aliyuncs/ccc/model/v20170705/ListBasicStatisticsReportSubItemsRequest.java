@@ -35,7 +35,7 @@ public class ListBasicStatisticsReportSubItemsRequest extends RpcAcsRequest<List
 
 	private Integer pageSize;
 	public ListBasicStatisticsReportSubItemsRequest() {
-		super("CCC", "2017-07-05", "ListBasicStatisticsReportSubItems");
+		super("CCC", "2017-07-05", "ListBasicStatisticsReportSubItems", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class GetInstanceSummaryReportSinceMidnightRequest extends RpcAcsRequest<
 
 	private Integer pageSize;
 	public GetInstanceSummaryReportSinceMidnightRequest() {
-		super("CCC", "2017-07-05", "GetInstanceSummaryReportSinceMidnight");
+		super("CCC", "2017-07-05", "GetInstanceSummaryReportSinceMidnight", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

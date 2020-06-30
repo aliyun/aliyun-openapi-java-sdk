@@ -32,7 +32,7 @@ public class PickLocalNumberRequest extends RpcAcsRequest<PickLocalNumberRespons
 
 	private String calleeNumber;
 	public PickLocalNumberRequest() {
-		super("CCC", "2017-07-05", "PickLocalNumber");
+		super("CCC", "2017-07-05", "PickLocalNumber", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class ListMediasRequest extends RpcAcsRequest<ListMediasResponse> {
 
 	private String namePrefix;
 	public ListMediasRequest() {
-		super("CCC", "2017-07-05", "ListMedias");
+		super("CCC", "2017-07-05", "ListMedias", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

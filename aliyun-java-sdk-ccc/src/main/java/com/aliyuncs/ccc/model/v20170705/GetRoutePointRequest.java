@@ -29,7 +29,7 @@ public class GetRoutePointRequest extends RpcAcsRequest<GetRoutePointResponse> {
 
 	private String instanceId;
 	public GetRoutePointRequest() {
-		super("CCC", "2017-07-05", "GetRoutePoint");
+		super("CCC", "2017-07-05", "GetRoutePoint", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

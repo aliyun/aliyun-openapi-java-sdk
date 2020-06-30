@@ -31,7 +31,7 @@ public class DownloadRecordingRequest extends RpcAcsRequest<DownloadRecordingRes
 
 	private String fileName;
 	public DownloadRecordingRequest() {
-		super("CCC", "2017-07-05", "DownloadRecording");
+		super("CCC", "2017-07-05", "DownloadRecording", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

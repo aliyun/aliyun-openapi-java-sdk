@@ -38,7 +38,7 @@ public class CreateScenarioRequest extends RpcAcsRequest<CreateScenarioResponse>
 
 	private String name;
 	public CreateScenarioRequest() {
-		super("CCC", "2017-07-05", "CreateScenario");
+		super("CCC", "2017-07-05", "CreateScenario", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class ListPhoneNumbersRequest extends RpcAcsRequest<ListPhoneNumbersRespo
 
 	private String instanceId;
 	public ListPhoneNumbersRequest() {
-		super("CCC", "2017-07-05", "ListPhoneNumbers");
+		super("CCC", "2017-07-05", "ListPhoneNumbers", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

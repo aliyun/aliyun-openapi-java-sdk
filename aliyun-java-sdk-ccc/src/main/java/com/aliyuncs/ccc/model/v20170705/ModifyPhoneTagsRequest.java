@@ -32,7 +32,7 @@ public class ModifyPhoneTagsRequest extends RpcAcsRequest<ModifyPhoneTagsRespons
 
 	private String serviceTag;
 	public ModifyPhoneTagsRequest() {
-		super("CCC", "2017-07-05", "ModifyPhoneTags");
+		super("CCC", "2017-07-05", "ModifyPhoneTags", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

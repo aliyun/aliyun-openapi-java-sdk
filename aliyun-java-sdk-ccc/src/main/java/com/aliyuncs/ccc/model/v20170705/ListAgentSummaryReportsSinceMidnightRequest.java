@@ -35,7 +35,7 @@ public class ListAgentSummaryReportsSinceMidnightRequest extends RpcAcsRequest<L
 
 	private Integer pageSize;
 	public ListAgentSummaryReportsSinceMidnightRequest() {
-		super("CCC", "2017-07-05", "ListAgentSummaryReportsSinceMidnight");
+		super("CCC", "2017-07-05", "ListAgentSummaryReportsSinceMidnight", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

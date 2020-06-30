@@ -29,7 +29,7 @@ public class GetNumberRegionInfoRequest extends RpcAcsRequest<GetNumberRegionInf
 
 	private String instanceId;
 	public GetNumberRegionInfoRequest() {
-		super("CCC", "2017-07-05", "GetNumberRegionInfo");
+		super("CCC", "2017-07-05", "GetNumberRegionInfo", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

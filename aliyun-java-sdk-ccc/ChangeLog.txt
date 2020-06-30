@@ -1,3 +1,6 @@
+2020-06-30 Version: 1.0.22
+- Add new open api.
+
 2020-04-16 Version: 1.0.21
 - Add features for open api.
 

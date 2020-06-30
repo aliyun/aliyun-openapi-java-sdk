@@ -29,7 +29,7 @@ public class GetJobDataUploadParamsRequest extends RpcAcsRequest<GetJobDataUploa
 
 	private String fileName;
 	public GetJobDataUploadParamsRequest() {
-		super("CCC", "2017-07-05", "GetJobDataUploadParams");
+		super("CCC", "2017-07-05", "GetJobDataUploadParams", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class ListRolesRequest extends RpcAcsRequest<ListRolesResponse> {
 
 	private String instanceId;
 	public ListRolesRequest() {
-		super("CCC", "2017-07-05", "ListRoles");
+		super("CCC", "2017-07-05", "ListRoles", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

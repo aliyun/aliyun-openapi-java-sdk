@@ -37,7 +37,7 @@ public class DialExRequest extends RpcAcsRequest<DialExResponse> {
 
 	private Integer answerMode;
 	public DialExRequest() {
-		super("CCC", "2017-07-05", "DialEx");
+		super("CCC", "2017-07-05", "DialEx", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

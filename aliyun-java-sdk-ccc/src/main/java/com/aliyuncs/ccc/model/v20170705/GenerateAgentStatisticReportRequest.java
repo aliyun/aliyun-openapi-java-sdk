@@ -37,7 +37,7 @@ public class GenerateAgentStatisticReportRequest extends RpcAcsRequest<GenerateA
 
 	private Integer pageSize;
 	public GenerateAgentStatisticReportRequest() {
-		super("CCC", "2017-07-05", "GenerateAgentStatisticReport");
+		super("CCC", "2017-07-05", "GenerateAgentStatisticReport", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -34,7 +34,7 @@ public class PickOutboundNumbersRequest extends RpcAcsRequest<PickOutboundNumber
 
 	private String calleeNumber;
 	public PickOutboundNumbersRequest() {
-		super("CCC", "2017-07-05", "PickOutboundNumbers");
+		super("CCC", "2017-07-05", "PickOutboundNumbers", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class CommitContactFlowVersionModificationRequest extends RpcAcsRequest<C
 
 	private String contactFlowVersionId;
 	public CommitContactFlowVersionModificationRequest() {
-		super("CCC", "2017-07-05", "CommitContactFlowVersionModification");
+		super("CCC", "2017-07-05", "CommitContactFlowVersionModification", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

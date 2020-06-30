@@ -33,7 +33,7 @@ public class GetConfigRequest extends RpcAcsRequest<GetConfigResponse> {
 
 	private String objectId;
 	public GetConfigRequest() {
-		super("CCC", "2017-07-05", "GetConfig");
+		super("CCC", "2017-07-05", "GetConfig", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

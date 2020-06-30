@@ -29,7 +29,7 @@ public class LaunchAppraiseRequest extends RpcAcsRequest<LaunchAppraiseResponse>
 
 	private String instanceId;
 	public LaunchAppraiseRequest() {
-		super("CCC", "2017-07-05", "LaunchAppraise");
+		super("CCC", "2017-07-05", "LaunchAppraise", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

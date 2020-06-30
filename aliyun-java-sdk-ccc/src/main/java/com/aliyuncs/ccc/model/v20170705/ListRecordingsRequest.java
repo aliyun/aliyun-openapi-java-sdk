@@ -41,7 +41,7 @@ public class ListRecordingsRequest extends RpcAcsRequest<ListRecordingsResponse>
 
 	private Integer pageSize;
 	public ListRecordingsRequest() {
-		super("CCC", "2017-07-05", "ListRecordings");
+		super("CCC", "2017-07-05", "ListRecordings", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

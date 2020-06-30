@@ -29,7 +29,7 @@ public class GetConversationListRequest extends RpcAcsRequest<GetConversationLis
 
 	private String taskId;
 	public GetConversationListRequest() {
-		super("CCC", "2017-07-05", "GetConversationList");
+		super("CCC", "2017-07-05", "GetConversationList", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

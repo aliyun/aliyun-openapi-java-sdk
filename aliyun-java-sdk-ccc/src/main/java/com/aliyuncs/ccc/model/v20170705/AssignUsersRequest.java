@@ -36,7 +36,7 @@ public class AssignUsersRequest extends RpcAcsRequest<AssignUsersResponse> {
 
 	private List<String> skillGroupIds;
 	public AssignUsersRequest() {
-		super("CCC", "2017-07-05", "AssignUsers");
+		super("CCC", "2017-07-05", "AssignUsers", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

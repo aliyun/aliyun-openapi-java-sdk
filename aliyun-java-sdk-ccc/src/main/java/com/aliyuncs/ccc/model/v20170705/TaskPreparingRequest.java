@@ -31,7 +31,7 @@ public class TaskPreparingRequest extends RpcAcsRequest<TaskPreparingResponse> {
 
 	private Long instanceOwnerId;
 	public TaskPreparingRequest() {
-		super("CCC", "2017-07-05", "TaskPreparing");
+		super("CCC", "2017-07-05", "TaskPreparing", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

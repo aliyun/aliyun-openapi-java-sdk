@@ -31,7 +31,7 @@ public class PublishContactFlowVersionRequest extends RpcAcsRequest<PublishConta
 
 	private Boolean useTianGong;
 	public PublishContactFlowVersionRequest() {
-		super("CCC", "2017-07-05", "PublishContactFlowVersion");
+		super("CCC", "2017-07-05", "PublishContactFlowVersion", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

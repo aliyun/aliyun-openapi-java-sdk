@@ -43,7 +43,7 @@ public class SaveWebRTCStatsRequest extends RpcAcsRequest<SaveWebRTCStatsRespons
 
 	private String callerNumber;
 	public SaveWebRTCStatsRequest() {
-		super("CCC", "2017-07-05", "SaveWebRTCStats");
+		super("CCC", "2017-07-05", "SaveWebRTCStats", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

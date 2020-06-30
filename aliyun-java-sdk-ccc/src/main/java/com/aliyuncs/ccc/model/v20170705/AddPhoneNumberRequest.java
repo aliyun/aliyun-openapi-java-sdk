@@ -33,7 +33,7 @@ public class AddPhoneNumberRequest extends RpcAcsRequest<AddPhoneNumberResponse>
 
 	private String instanceId;
 	public AddPhoneNumberRequest() {
-		super("CCC", "2017-07-05", "AddPhoneNumber");
+		super("CCC", "2017-07-05", "AddPhoneNumber", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

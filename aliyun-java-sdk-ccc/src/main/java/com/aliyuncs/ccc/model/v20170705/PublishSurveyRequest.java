@@ -31,7 +31,7 @@ public class PublishSurveyRequest extends RpcAcsRequest<PublishSurveyResponse> {
 
 	private String scenarioId;
 	public PublishSurveyRequest() {
-		super("CCC", "2017-07-05", "PublishSurvey");
+		super("CCC", "2017-07-05", "PublishSurvey", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

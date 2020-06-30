@@ -35,7 +35,7 @@ public class LaunchShortMessageAppraiseRequest extends RpcAcsRequest<LaunchShort
 
 	private String skillGroupId;
 	public LaunchShortMessageAppraiseRequest() {
-		super("CCC", "2017-07-05", "LaunchShortMessageAppraise");
+		super("CCC", "2017-07-05", "LaunchShortMessageAppraise", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

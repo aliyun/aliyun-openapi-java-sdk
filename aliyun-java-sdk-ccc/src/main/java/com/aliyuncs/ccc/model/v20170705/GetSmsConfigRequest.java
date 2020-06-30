@@ -30,7 +30,7 @@ public class GetSmsConfigRequest extends RpcAcsRequest<GetSmsConfigResponse> {
 
 	private List<Integer> scenarios;
 	public GetSmsConfigRequest() {
-		super("CCC", "2017-07-05", "GetSmsConfig");
+		super("CCC", "2017-07-05", "GetSmsConfig", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

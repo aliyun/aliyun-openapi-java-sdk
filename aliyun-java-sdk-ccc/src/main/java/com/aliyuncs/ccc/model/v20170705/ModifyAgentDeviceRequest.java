@@ -31,7 +31,7 @@ public class ModifyAgentDeviceRequest extends RpcAcsRequest<ModifyAgentDeviceRes
 
 	private String instanceId;
 	public ModifyAgentDeviceRequest() {
-		super("CCC", "2017-07-05", "ModifyAgentDevice");
+		super("CCC", "2017-07-05", "ModifyAgentDevice", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

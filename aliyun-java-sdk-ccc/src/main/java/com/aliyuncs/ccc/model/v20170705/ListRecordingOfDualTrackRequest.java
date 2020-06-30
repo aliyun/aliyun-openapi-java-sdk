@@ -43,7 +43,7 @@ public class ListRecordingOfDualTrackRequest extends RpcAcsRequest<ListRecording
 
 	private String connectId;
 	public ListRecordingOfDualTrackRequest() {
-		super("CCC", "2017-07-05", "ListRecordingOfDualTrack");
+		super("CCC", "2017-07-05", "ListRecordingOfDualTrack", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

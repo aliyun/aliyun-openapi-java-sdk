@@ -33,7 +33,7 @@ public class GetConversationDetailByContactIdRequest extends RpcAcsRequest<GetCo
 
 	private Integer pageSize;
 	public GetConversationDetailByContactIdRequest() {
-		super("CCC", "2017-07-05", "GetConversationDetailByContactId");
+		super("CCC", "2017-07-05", "GetConversationDetailByContactId", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

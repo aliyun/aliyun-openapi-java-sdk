@@ -22,18 +22,22 @@ import com.aliyuncs.ccc.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListOutboundPhoneNumberOfUserRequest extends RpcAcsRequest<ListOutboundPhoneNumberOfUserResponse> {
+public class ListAgentStateLogsRequest extends RpcAcsRequest<ListAgentStateLogsResponse> {
 	   
 
-	private String userId;
+	private Long endTime;
+
+	private Long startTime;
+
+	private Long ramId;
 
 	private Integer pageNumber;
 
 	private String instanceId;
 
 	private Integer pageSize;
-	public ListOutboundPhoneNumberOfUserRequest() {
-		super("CCC", "2017-07-05", "ListOutboundPhoneNumberOfUser", "CCC");
+	public ListAgentStateLogsRequest() {
+		super("CCC", "2017-07-05", "ListAgentStateLogs", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +45,36 @@ public class ListOutboundPhoneNumberOfUserRequest extends RpcAcsRequest<ListOutb
 		} catch (Exception e) {}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public Long getEndTime() {
+		return this.endTime;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Long getRamId() {
+		return this.ramId;
+	}
+
+	public void setRamId(Long ramId) {
+		this.ramId = ramId;
+		if(ramId != null){
+			putQueryParameter("RamId", ramId.toString());
 		}
 	}
 
@@ -86,8 +112,8 @@ public class ListOutboundPhoneNumberOfUserRequest extends RpcAcsRequest<ListOutb
 	}
 
 	@Override
-	public Class<ListOutboundPhoneNumberOfUserResponse> getResponseClass() {
-		return ListOutboundPhoneNumberOfUserResponse.class;
+	public Class<ListAgentStateLogsResponse> getResponseClass() {
+		return ListAgentStateLogsResponse.class;
 	}
 
 }

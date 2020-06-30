@@ -49,7 +49,7 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 
 	private Boolean withRecording;
 	public ListCallDetailRecordsRequest() {
-		super("CCC", "2017-07-05", "ListCallDetailRecords");
+		super("CCC", "2017-07-05", "ListCallDetailRecords", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

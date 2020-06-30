@@ -31,7 +31,7 @@ public class CheckNumberAvaliableRequest extends RpcAcsRequest<CheckNumberAvalia
 
 	private String callee;
 	public CheckNumberAvaliableRequest() {
-		super("CCC", "2017-07-05", "CheckNumberAvaliable");
+		super("CCC", "2017-07-05", "CheckNumberAvaliable", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

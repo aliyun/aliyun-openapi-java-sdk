@@ -33,7 +33,7 @@ public class ListAgentDevicesRequest extends RpcAcsRequest<ListAgentDevicesRespo
 
 	private String instanceId;
 	public ListAgentDevicesRequest() {
-		super("CCC", "2017-07-05", "ListAgentDevices");
+		super("CCC", "2017-07-05", "ListAgentDevices", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

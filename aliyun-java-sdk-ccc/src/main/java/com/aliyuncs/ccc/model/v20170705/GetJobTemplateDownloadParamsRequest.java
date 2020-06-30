@@ -29,7 +29,7 @@ public class GetJobTemplateDownloadParamsRequest extends RpcAcsRequest<GetJobTem
 
 	private String scenarioId;
 	public GetJobTemplateDownloadParamsRequest() {
-		super("CCC", "2017-07-05", "GetJobTemplateDownloadParams");
+		super("CCC", "2017-07-05", "GetJobTemplateDownloadParams", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

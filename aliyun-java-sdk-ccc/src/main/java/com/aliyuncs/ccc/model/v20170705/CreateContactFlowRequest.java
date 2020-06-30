@@ -37,7 +37,7 @@ public class CreateContactFlowRequest extends RpcAcsRequest<CreateContactFlowRes
 
 	private String name;
 	public CreateContactFlowRequest() {
-		super("CCC", "2017-07-05", "CreateContactFlow");
+		super("CCC", "2017-07-05", "CreateContactFlow", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

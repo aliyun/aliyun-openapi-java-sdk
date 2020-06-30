@@ -37,7 +37,7 @@ public class GetCallMeasureSummaryReportRequest extends RpcAcsRequest<GetCallMea
 
 	private Integer day;
 	public GetCallMeasureSummaryReportRequest() {
-		super("CCC", "2017-07-05", "GetCallMeasureSummaryReport");
+		super("CCC", "2017-07-05", "GetCallMeasureSummaryReport", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

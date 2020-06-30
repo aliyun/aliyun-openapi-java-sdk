@@ -25,7 +25,7 @@ import com.aliyuncs.ccc.Endpoint;
 public class ListInstancesOfUserRequest extends RpcAcsRequest<ListInstancesOfUserResponse> {
 	   
 	public ListInstancesOfUserRequest() {
-		super("CCC", "2017-07-05", "ListInstancesOfUser");
+		super("CCC", "2017-07-05", "ListInstancesOfUser", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

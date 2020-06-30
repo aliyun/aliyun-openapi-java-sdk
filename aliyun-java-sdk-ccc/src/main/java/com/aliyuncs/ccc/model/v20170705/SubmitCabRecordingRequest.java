@@ -35,7 +35,7 @@ public class SubmitCabRecordingRequest extends RpcAcsRequest<SubmitCabRecordingR
 
 	private String taskId;
 	public SubmitCabRecordingRequest() {
-		super("CCC", "2017-07-05", "SubmitCabRecording");
+		super("CCC", "2017-07-05", "SubmitCabRecording", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

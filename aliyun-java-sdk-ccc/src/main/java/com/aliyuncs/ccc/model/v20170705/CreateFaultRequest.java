@@ -65,7 +65,7 @@ public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
 
 	private String browserVersion;
 	public CreateFaultRequest() {
-		super("CCC", "2017-07-05", "CreateFault");
+		super("CCC", "2017-07-05", "CreateFault", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

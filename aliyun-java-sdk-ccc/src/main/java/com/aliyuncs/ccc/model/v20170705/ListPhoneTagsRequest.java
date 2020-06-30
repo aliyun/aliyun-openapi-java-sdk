@@ -38,7 +38,7 @@ public class ListPhoneTagsRequest extends RpcAcsRequest<ListPhoneTagsResponse> {
 
 	private Integer pageSize;
 	public ListPhoneTagsRequest() {
-		super("CCC", "2017-07-05", "ListPhoneTags");
+		super("CCC", "2017-07-05", "ListPhoneTags", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

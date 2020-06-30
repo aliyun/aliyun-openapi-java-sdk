@@ -40,9 +40,11 @@ public class AddPhoneTagsRequest extends RpcAcsRequest<AddPhoneTagsResponse> {
 
 	private String serviceTag;
 
+	private String sipTag;
+
 	private String regionNameCity;
 	public AddPhoneTagsRequest() {
-		super("CCC", "2017-07-05", "AddPhoneTags");
+		super("CCC", "2017-07-05", "AddPhoneTags", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -126,6 +128,17 @@ public class AddPhoneTagsRequest extends RpcAcsRequest<AddPhoneTagsResponse> {
 		this.serviceTag = serviceTag;
 		if(serviceTag != null){
 			putQueryParameter("ServiceTag", serviceTag);
+		}
+	}
+
+	public String getSipTag() {
+		return this.sipTag;
+	}
+
+	public void setSipTag(String sipTag) {
+		this.sipTag = sipTag;
+		if(sipTag != null){
+			putQueryParameter("SipTag", sipTag);
 		}
 	}
 

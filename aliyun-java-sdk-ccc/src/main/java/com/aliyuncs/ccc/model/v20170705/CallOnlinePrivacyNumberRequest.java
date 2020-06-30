@@ -31,7 +31,7 @@ public class CallOnlinePrivacyNumberRequest extends RpcAcsRequest<CallOnlinePriv
 
 	private String instanceId;
 	public CallOnlinePrivacyNumberRequest() {
-		super("CCC", "2017-07-05", "CallOnlinePrivacyNumber");
+		super("CCC", "2017-07-05", "CallOnlinePrivacyNumber", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

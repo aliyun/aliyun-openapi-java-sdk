@@ -38,7 +38,7 @@ public class AssignJobsRequest extends RpcAcsRequest<AssignJobsResponse> {
 
 	private String scenarioId;
 	public AssignJobsRequest() {
-		super("CCC", "2017-07-05", "AssignJobs");
+		super("CCC", "2017-07-05", "AssignJobs", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class RefreshTokenRequest extends RpcAcsRequest<RefreshTokenResponse> {
 
 	private String instanceId;
 	public RefreshTokenRequest() {
-		super("CCC", "2017-07-05", "RefreshToken");
+		super("CCC", "2017-07-05", "RefreshToken", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
