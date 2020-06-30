@@ -1,3 +1,6 @@
+2020-06-30 Version: 1.4.1
+- Add VSwitch apis.
+
 2020-06-23 Version: 1.4.0
 - Add export self image apis.
 

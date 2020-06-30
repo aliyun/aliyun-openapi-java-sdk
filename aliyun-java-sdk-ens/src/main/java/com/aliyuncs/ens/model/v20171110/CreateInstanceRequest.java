@@ -50,6 +50,10 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String version;
 
+	private String vSwitchId;
+
+	private String privateIpAddress;
+
 	private String systemDiskSize;
 
 	private String autoRenew;
@@ -200,6 +204,28 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.version = version;
 		if(version != null){
 			putQueryParameter("Version", version);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getPrivateIpAddress() {
+		return this.privateIpAddress;
+	}
+
+	public void setPrivateIpAddress(String privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
+		if(privateIpAddress != null){
+			putQueryParameter("PrivateIpAddress", privateIpAddress);
 		}
 	}
 
