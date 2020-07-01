@@ -1,3 +1,6 @@
+2020-07-01 Version: 1.0.5
+- Add ListFace-MotorAlgorithmResults API.
+
 2020-06-30 Version: 1.0.4
 - Add ListMetrics API.
 
