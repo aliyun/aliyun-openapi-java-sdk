@@ -87,8 +87,6 @@ public class DescribeAlertHistoryListResponse extends AcsResponse {
 
 	public static class AlarmHistory {
 
-		private String id;
-
 		private String ruleId;
 
 		private String groupId;
@@ -132,14 +130,6 @@ public class DescribeAlertHistoryListResponse extends AcsResponse {
 		private List<String> contactSmses;
 
 		private List<String> contactMails;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
 
 		public String getRuleId() {
 			return this.ruleId;

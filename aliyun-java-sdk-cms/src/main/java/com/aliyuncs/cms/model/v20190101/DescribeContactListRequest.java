@@ -24,14 +24,29 @@ import com.aliyuncs.http.MethodType;
 public class DescribeContactListRequest extends RpcAcsRequest<DescribeContactListResponse> {
 	   
 
+	private String chanelType;
+
 	private Integer pageNumber;
 
 	private String contactName;
 
 	private Integer pageSize;
+
+	private String chanelValue;
 	public DescribeContactListRequest() {
 		super("Cms", "2019-01-01", "DescribeContactList", "cms");
 		setMethod(MethodType.POST);
+	}
+
+	public String getChanelType() {
+		return this.chanelType;
+	}
+
+	public void setChanelType(String chanelType) {
+		this.chanelType = chanelType;
+		if(chanelType != null){
+			putQueryParameter("ChanelType", chanelType);
+		}
 	}
 
 	public Integer getPageNumber() {
@@ -64,6 +79,17 @@ public class DescribeContactListRequest extends RpcAcsRequest<DescribeContactLis
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getChanelValue() {
+		return this.chanelValue;
+	}
+
+	public void setChanelValue(String chanelValue) {
+		this.chanelValue = chanelValue;
+		if(chanelValue != null){
+			putQueryParameter("ChanelValue", chanelValue);
 		}
 	}
 

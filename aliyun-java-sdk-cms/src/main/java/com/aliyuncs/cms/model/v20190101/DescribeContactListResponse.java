@@ -95,7 +95,11 @@ public class DescribeContactListResponse extends AcsResponse {
 
 		private Long updateTime;
 
+		private List<String> contactGroups;
+
 		private Channels channels;
+
+		private ChannelsState channelsState;
 
 		public String getName() {
 			return this.name;
@@ -129,6 +133,14 @@ public class DescribeContactListResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
+		public List<String> getContactGroups() {
+			return this.contactGroups;
+		}
+
+		public void setContactGroups(List<String> contactGroups) {
+			this.contactGroups = contactGroups;
+		}
+
 		public Channels getChannels() {
 			return this.channels;
 		}
@@ -137,7 +149,58 @@ public class DescribeContactListResponse extends AcsResponse {
 			this.channels = channels;
 		}
 
+		public ChannelsState getChannelsState() {
+			return this.channelsState;
+		}
+
+		public void setChannelsState(ChannelsState channelsState) {
+			this.channelsState = channelsState;
+		}
+
 		public static class Channels {
+
+			private String sMS;
+
+			private String mail;
+
+			private String aliIM;
+
+			private String dingWebHook;
+
+			public String getSMS() {
+				return this.sMS;
+			}
+
+			public void setSMS(String sMS) {
+				this.sMS = sMS;
+			}
+
+			public String getMail() {
+				return this.mail;
+			}
+
+			public void setMail(String mail) {
+				this.mail = mail;
+			}
+
+			public String getAliIM() {
+				return this.aliIM;
+			}
+
+			public void setAliIM(String aliIM) {
+				this.aliIM = aliIM;
+			}
+
+			public String getDingWebHook() {
+				return this.dingWebHook;
+			}
+
+			public void setDingWebHook(String dingWebHook) {
+				this.dingWebHook = dingWebHook;
+			}
+		}
+
+		public static class ChannelsState {
 
 			private String sMS;
 

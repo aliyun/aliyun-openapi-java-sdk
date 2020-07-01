@@ -35,7 +35,6 @@ public class DescribeAlertHistoryListResponseUnmarshaller {
 		List<AlarmHistory> alarmHistoryList = new ArrayList<AlarmHistory>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAlertHistoryListResponse.AlarmHistoryList.Length"); i++) {
 			AlarmHistory alarmHistory = new AlarmHistory();
-			alarmHistory.setId(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Id"));
 			alarmHistory.setRuleId(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].RuleId"));
 			alarmHistory.setGroupId(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].GroupId"));
 			alarmHistory.setNamespace(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Namespace"));

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.cms.model.v20190101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cms.transform.v20190101.DescribeProductsOfActiveMetricRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,6 +34,8 @@ public class DescribeProductsOfActiveMetricRuleResponse extends AcsResponse {
 	private String message;
 
 	private String datapoints;
+
+	private List<AllProductInitMetricRule> allProductInitMetricRuleList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -72,6 +75,100 @@ public class DescribeProductsOfActiveMetricRuleResponse extends AcsResponse {
 
 	public void setDatapoints(String datapoints) {
 		this.datapoints = datapoints;
+	}
+
+	public List<AllProductInitMetricRule> getAllProductInitMetricRuleList() {
+		return this.allProductInitMetricRuleList;
+	}
+
+	public void setAllProductInitMetricRuleList(List<AllProductInitMetricRule> allProductInitMetricRuleList) {
+		this.allProductInitMetricRuleList = allProductInitMetricRuleList;
+	}
+
+	public static class AllProductInitMetricRule {
+
+		private String product;
+
+		private List<AlertInitConfig> alertInitConfigList;
+
+		public String getProduct() {
+			return this.product;
+		}
+
+		public void setProduct(String product) {
+			this.product = product;
+		}
+
+		public List<AlertInitConfig> getAlertInitConfigList() {
+			return this.alertInitConfigList;
+		}
+
+		public void setAlertInitConfigList(List<AlertInitConfig> alertInitConfigList) {
+			this.alertInitConfigList = alertInitConfigList;
+		}
+
+		public static class AlertInitConfig {
+
+			private String namespace;
+
+			private String metricName;
+
+			private String statistics;
+
+			private String evaluationCount;
+
+			private String threshold;
+
+			private String period;
+
+			public String getNamespace() {
+				return this.namespace;
+			}
+
+			public void setNamespace(String namespace) {
+				this.namespace = namespace;
+			}
+
+			public String getMetricName() {
+				return this.metricName;
+			}
+
+			public void setMetricName(String metricName) {
+				this.metricName = metricName;
+			}
+
+			public String getStatistics() {
+				return this.statistics;
+			}
+
+			public void setStatistics(String statistics) {
+				this.statistics = statistics;
+			}
+
+			public String getEvaluationCount() {
+				return this.evaluationCount;
+			}
+
+			public void setEvaluationCount(String evaluationCount) {
+				this.evaluationCount = evaluationCount;
+			}
+
+			public String getThreshold() {
+				return this.threshold;
+			}
+
+			public void setThreshold(String threshold) {
+				this.threshold = threshold;
+			}
+
+			public String getPeriod() {
+				return this.period;
+			}
+
+			public void setPeriod(String period) {
+				this.period = period;
+			}
+		}
 	}
 
 	@Override

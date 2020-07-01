@@ -28,10 +28,6 @@ public class DescribeSystemEventHistogramRequest extends RpcAcsRequest<DescribeS
 
 	private String searchKeywords;
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
 	private String product;
 
 	private String level;
@@ -69,28 +65,6 @@ public class DescribeSystemEventHistogramRequest extends RpcAcsRequest<DescribeS
 		this.searchKeywords = searchKeywords;
 		if(searchKeywords != null){
 			putQueryParameter("SearchKeywords", searchKeywords);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

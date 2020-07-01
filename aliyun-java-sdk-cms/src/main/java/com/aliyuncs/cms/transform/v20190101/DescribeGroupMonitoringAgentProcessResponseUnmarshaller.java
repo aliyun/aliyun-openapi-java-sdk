@@ -32,6 +32,9 @@ public class DescribeGroupMonitoringAgentProcessResponseUnmarshaller {
 		describeGroupMonitoringAgentProcessResponse.setCode(_ctx.stringValue("DescribeGroupMonitoringAgentProcessResponse.Code"));
 		describeGroupMonitoringAgentProcessResponse.setMessage(_ctx.stringValue("DescribeGroupMonitoringAgentProcessResponse.Message"));
 		describeGroupMonitoringAgentProcessResponse.setSuccess(_ctx.booleanValue("DescribeGroupMonitoringAgentProcessResponse.Success"));
+		describeGroupMonitoringAgentProcessResponse.setTotal(_ctx.stringValue("DescribeGroupMonitoringAgentProcessResponse.Total"));
+		describeGroupMonitoringAgentProcessResponse.setPageSize(_ctx.stringValue("DescribeGroupMonitoringAgentProcessResponse.PageSize"));
+		describeGroupMonitoringAgentProcessResponse.setPageNumber(_ctx.stringValue("DescribeGroupMonitoringAgentProcessResponse.PageNumber"));
 
 		List<Process> processes = new ArrayList<Process>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGroupMonitoringAgentProcessResponse.Processes.Length"); i++) {

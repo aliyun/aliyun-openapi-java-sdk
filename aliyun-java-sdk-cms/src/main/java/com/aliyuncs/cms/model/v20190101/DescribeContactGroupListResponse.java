@@ -35,6 +35,8 @@ public class DescribeContactGroupListResponse extends AcsResponse {
 
 	private String requestId;
 
+	private List<ContactGroup> contactGroupList;
+
 	private List<String> contactGroups;
 
 	public Boolean getSuccess() {
@@ -77,12 +79,93 @@ public class DescribeContactGroupListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public List<ContactGroup> getContactGroupList() {
+		return this.contactGroupList;
+	}
+
+	public void setContactGroupList(List<ContactGroup> contactGroupList) {
+		this.contactGroupList = contactGroupList;
+	}
+
 	public List<String> getContactGroups() {
 		return this.contactGroups;
 	}
 
 	public void setContactGroups(List<String> contactGroups) {
 		this.contactGroups = contactGroups;
+	}
+
+	public static class ContactGroup {
+
+		private String name;
+
+		private String describe;
+
+		private Long createTime;
+
+		private Long updateTime;
+
+		private Boolean enabledWeeklyReport;
+
+		private Boolean enableSubscribed;
+
+		private List<String> contacts;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDescribe() {
+			return this.describe;
+		}
+
+		public void setDescribe(String describe) {
+			this.describe = describe;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public Boolean getEnabledWeeklyReport() {
+			return this.enabledWeeklyReport;
+		}
+
+		public void setEnabledWeeklyReport(Boolean enabledWeeklyReport) {
+			this.enabledWeeklyReport = enabledWeeklyReport;
+		}
+
+		public Boolean getEnableSubscribed() {
+			return this.enableSubscribed;
+		}
+
+		public void setEnableSubscribed(Boolean enableSubscribed) {
+			this.enableSubscribed = enableSubscribed;
+		}
+
+		public List<String> getContacts() {
+			return this.contacts;
+		}
+
+		public void setContacts(List<String> contacts) {
+			this.contacts = contacts;
+		}
 	}
 
 	@Override

@@ -46,8 +46,6 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 	private String groupName;
 
 	private String instanceId;
-
-	private String serviceId;
 	public DescribeMonitorGroupsRequest() {
 		super("Cms", "2019-01-01", "DescribeMonitorGroups", "cms");
 		setMethod(MethodType.POST);
@@ -174,17 +172,6 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getServiceId() {
-		return this.serviceId;
-	}
-
-	public void setServiceId(String serviceId) {
-		this.serviceId = serviceId;
-		if(serviceId != null){
-			putQueryParameter("ServiceId", serviceId);
 		}
 	}
 

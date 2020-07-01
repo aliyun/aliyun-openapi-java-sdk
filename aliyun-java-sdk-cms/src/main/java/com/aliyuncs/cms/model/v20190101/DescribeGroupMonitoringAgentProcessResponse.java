@@ -33,6 +33,12 @@ public class DescribeGroupMonitoringAgentProcessResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String total;
+
+	private String pageSize;
+
+	private String pageNumber;
+
 	private List<Process> processes;
 
 	public String getCode() {
@@ -65,6 +71,30 @@ public class DescribeGroupMonitoringAgentProcessResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(String total) {
+		this.total = total;
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Process> getProcesses() {

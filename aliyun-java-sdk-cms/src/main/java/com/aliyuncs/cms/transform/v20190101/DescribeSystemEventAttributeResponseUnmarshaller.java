@@ -38,7 +38,6 @@ public class DescribeSystemEventAttributeResponseUnmarshaller {
 			systemEvent.setProduct(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].Product"));
 			systemEvent.setName(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].Name"));
 			systemEvent.setGroupId(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].GroupId"));
-			systemEvent.setNum(_ctx.longValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].Num"));
 			systemEvent.setLevel(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].Level"));
 			systemEvent.setStatus(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].Status"));
 			systemEvent.setResourceId(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].ResourceId"));

@@ -47,6 +47,7 @@ public class ModifyGroupMonitoringAgentProcessRequest extends RpcAcsRequest<Modi
 			for (int depth1 = 0; depth1 < alertConfigs.size(); depth1++) {
 				putQueryParameter("AlertConfig." + (depth1 + 1) + ".Times" , alertConfigs.get(depth1).getTimes());
 				putQueryParameter("AlertConfig." + (depth1 + 1) + ".NoEffectiveInterval" , alertConfigs.get(depth1).getNoEffectiveInterval());
+				putQueryParameter("AlertConfig." + (depth1 + 1) + ".Webhook" , alertConfigs.get(depth1).getWebhook());
 				putQueryParameter("AlertConfig." + (depth1 + 1) + ".SilenceTime" , alertConfigs.get(depth1).getSilenceTime());
 				putQueryParameter("AlertConfig." + (depth1 + 1) + ".Threshold" , alertConfigs.get(depth1).getThreshold());
 				putQueryParameter("AlertConfig." + (depth1 + 1) + ".EffectiveInterval" , alertConfigs.get(depth1).getEffectiveInterval());
@@ -96,6 +97,8 @@ public class ModifyGroupMonitoringAgentProcessRequest extends RpcAcsRequest<Modi
 
 		private String noEffectiveInterval;
 
+		private String webhook;
+
 		private String silenceTime;
 
 		private String threshold;
@@ -122,6 +125,14 @@ public class ModifyGroupMonitoringAgentProcessRequest extends RpcAcsRequest<Modi
 
 		public void setNoEffectiveInterval(String noEffectiveInterval) {
 			this.noEffectiveInterval = noEffectiveInterval;
+		}
+
+		public String getWebhook() {
+			return this.webhook;
+		}
+
+		public void setWebhook(String webhook) {
+			this.webhook = webhook;
 		}
 
 		public String getSilenceTime() {

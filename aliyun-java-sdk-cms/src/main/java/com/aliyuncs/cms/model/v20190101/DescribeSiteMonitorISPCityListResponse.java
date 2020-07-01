@@ -81,21 +81,25 @@ public class DescribeSiteMonitorISPCityListResponse extends AcsResponse {
 
 		private String city;
 
-		private String ispNamezh_CN;
+		private String region;
 
-		private String cityNamezh_CN;
-
-		private String regionzh_CN;
-
-		private String countryzh_CN;
+		private String country;
 
 		private String ispNameen;
 
+		private String ispNamezh_CN;
+
 		private String cityNameen;
+
+		private String cityNamezh_CN;
 
 		private String regionen;
 
+		private String regionzh_CN;
+
 		private String countryen;
+
+		private String countryzh_CN;
 
 		public String getIsp() {
 			return this.isp;
@@ -113,36 +117,20 @@ public class DescribeSiteMonitorISPCityListResponse extends AcsResponse {
 			this.city = city;
 		}
 
-		public String getIspNamezh_CN() {
-			return this.ispNamezh_CN;
+		public String getRegion() {
+			return this.region;
 		}
 
-		public void setIspNamezh_CN(String ispNamezh_CN) {
-			this.ispNamezh_CN = ispNamezh_CN;
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
-		public String getCityNamezh_CN() {
-			return this.cityNamezh_CN;
+		public String getCountry() {
+			return this.country;
 		}
 
-		public void setCityNamezh_CN(String cityNamezh_CN) {
-			this.cityNamezh_CN = cityNamezh_CN;
-		}
-
-		public String getRegionzh_CN() {
-			return this.regionzh_CN;
-		}
-
-		public void setRegionzh_CN(String regionzh_CN) {
-			this.regionzh_CN = regionzh_CN;
-		}
-
-		public String getCountryzh_CN() {
-			return this.countryzh_CN;
-		}
-
-		public void setCountryzh_CN(String countryzh_CN) {
-			this.countryzh_CN = countryzh_CN;
+		public void setCountry(String country) {
+			this.country = country;
 		}
 
 		public String getIspNameen() {
@@ -153,12 +141,28 @@ public class DescribeSiteMonitorISPCityListResponse extends AcsResponse {
 			this.ispNameen = ispNameen;
 		}
 
+		public String getIspNamezh_CN() {
+			return this.ispNamezh_CN;
+		}
+
+		public void setIspNamezh_CN(String ispNamezh_CN) {
+			this.ispNamezh_CN = ispNamezh_CN;
+		}
+
 		public String getCityNameen() {
 			return this.cityNameen;
 		}
 
 		public void setCityNameen(String cityNameen) {
 			this.cityNameen = cityNameen;
+		}
+
+		public String getCityNamezh_CN() {
+			return this.cityNamezh_CN;
+		}
+
+		public void setCityNamezh_CN(String cityNamezh_CN) {
+			this.cityNamezh_CN = cityNamezh_CN;
 		}
 
 		public String getRegionen() {
@@ -169,12 +173,28 @@ public class DescribeSiteMonitorISPCityListResponse extends AcsResponse {
 			this.regionen = regionen;
 		}
 
+		public String getRegionzh_CN() {
+			return this.regionzh_CN;
+		}
+
+		public void setRegionzh_CN(String regionzh_CN) {
+			this.regionzh_CN = regionzh_CN;
+		}
+
 		public String getCountryen() {
 			return this.countryen;
 		}
 
 		public void setCountryen(String countryen) {
 			this.countryen = countryen;
+		}
+
+		public String getCountryzh_CN() {
+			return this.countryzh_CN;
+		}
+
+		public void setCountryzh_CN(String countryzh_CN) {
+			this.countryzh_CN = countryzh_CN;
 		}
 	}
 

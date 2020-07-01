@@ -29,6 +29,7 @@ public class DescribeMetricRuleTargetsResponseUnmarshaller {
 		describeMetricRuleTargetsResponse.setRequestId(_ctx.stringValue("DescribeMetricRuleTargetsResponse.RequestId"));
 		describeMetricRuleTargetsResponse.setCode(_ctx.stringValue("DescribeMetricRuleTargetsResponse.Code"));
 		describeMetricRuleTargetsResponse.setMessage(_ctx.stringValue("DescribeMetricRuleTargetsResponse.Message"));
+		describeMetricRuleTargetsResponse.setSuccess(_ctx.booleanValue("DescribeMetricRuleTargetsResponse.Success"));
 
 		List<Target> targets = new ArrayList<Target>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMetricRuleTargetsResponse.Targets.Length"); i++) {

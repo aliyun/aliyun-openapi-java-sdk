@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.cms.model.v20190101.DescribeContactGroupListResponse;
+import com.aliyuncs.cms.model.v20190101.DescribeContactGroupListResponse.ContactGroup;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,6 +37,26 @@ public class DescribeContactGroupListResponseUnmarshaller {
 			contactGroups.add(_ctx.stringValue("DescribeContactGroupListResponse.ContactGroups["+ i +"]"));
 		}
 		describeContactGroupListResponse.setContactGroups(contactGroups);
+
+		List<ContactGroup> contactGroupList = new ArrayList<ContactGroup>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeContactGroupListResponse.ContactGroupList.Length"); i++) {
+			ContactGroup contactGroup = new ContactGroup();
+			contactGroup.setName(_ctx.stringValue("DescribeContactGroupListResponse.ContactGroupList["+ i +"].Name"));
+			contactGroup.setDescribe(_ctx.stringValue("DescribeContactGroupListResponse.ContactGroupList["+ i +"].Describe"));
+			contactGroup.setCreateTime(_ctx.longValue("DescribeContactGroupListResponse.ContactGroupList["+ i +"].CreateTime"));
+			contactGroup.setUpdateTime(_ctx.longValue("DescribeContactGroupListResponse.ContactGroupList["+ i +"].UpdateTime"));
+			contactGroup.setEnabledWeeklyReport(_ctx.booleanValue("DescribeContactGroupListResponse.ContactGroupList["+ i +"].EnabledWeeklyReport"));
+			contactGroup.setEnableSubscribed(_ctx.booleanValue("DescribeContactGroupListResponse.ContactGroupList["+ i +"].EnableSubscribed"));
+
+			List<String> contacts = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeContactGroupListResponse.ContactGroupList["+ i +"].Contacts.Length"); j++) {
+				contacts.add(_ctx.stringValue("DescribeContactGroupListResponse.ContactGroupList["+ i +"].Contacts["+ j +"]"));
+			}
+			contactGroup.setContacts(contacts);
+
+			contactGroupList.add(contactGroup);
+		}
+		describeContactGroupListResponse.setContactGroupList(contactGroupList);
 	 
 	 	return describeContactGroupListResponse;
 	}

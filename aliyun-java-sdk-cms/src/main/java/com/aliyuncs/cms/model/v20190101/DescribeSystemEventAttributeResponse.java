@@ -85,8 +85,6 @@ public class DescribeSystemEventAttributeResponse extends AcsResponse {
 
 		private String groupId;
 
-		private Long num;
-
 		private String level;
 
 		private String status;
@@ -129,14 +127,6 @@ public class DescribeSystemEventAttributeResponse extends AcsResponse {
 
 		public void setGroupId(String groupId) {
 			this.groupId = groupId;
-		}
-
-		public Long getNum() {
-			return this.num;
-		}
-
-		public void setNum(Long num) {
-			this.num = num;
 		}
 
 		public String getLevel() {

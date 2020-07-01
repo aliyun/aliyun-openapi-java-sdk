@@ -14,16 +14,15 @@
 
 package com.aliyuncs.cms.model.v20190101;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cms.transform.v20190101.DescribeMetricRuleTargetsResponseUnmarshaller;
+import com.aliyuncs.cms.transform.v20190101.ModifyHostInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeMetricRuleTargetsResponse extends AcsResponse {
+public class ModifyHostInfoResponse extends AcsResponse {
 
 	private String code;
 
@@ -32,8 +31,6 @@ public class DescribeMetricRuleTargetsResponse extends AcsResponse {
 	private Boolean success;
 
 	private String requestId;
-
-	private List<Target> targets;
 
 	public String getCode() {
 		return this.code;
@@ -67,49 +64,8 @@ public class DescribeMetricRuleTargetsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Target> getTargets() {
-		return this.targets;
-	}
-
-	public void setTargets(List<Target> targets) {
-		this.targets = targets;
-	}
-
-	public static class Target {
-
-		private String id;
-
-		private String arn;
-
-		private String level;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getArn() {
-			return this.arn;
-		}
-
-		public void setArn(String arn) {
-			this.arn = arn;
-		}
-
-		public String getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(String level) {
-			this.level = level;
-		}
-	}
-
 	@Override
-	public DescribeMetricRuleTargetsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeMetricRuleTargetsResponseUnmarshaller.unmarshall(this, context);
+	public ModifyHostInfoResponse getInstance(UnmarshallerContext context) {
+		return	ModifyHostInfoResponseUnmarshaller.unmarshall(this, context);
 	}
 }

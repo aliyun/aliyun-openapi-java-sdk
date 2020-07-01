@@ -36,14 +36,16 @@ public class DescribeSiteMonitorISPCityListResponseUnmarshaller {
 			IspCity ispCity = new IspCity();
 			ispCity.setIsp(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Isp"));
 			ispCity.setCity(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].City"));
-			ispCity.setIspNamezh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IspName.zh_CN"));
-			ispCity.setCityNamezh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].CityName.zh_CN"));
-			ispCity.setRegionzh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region.zh_CN"));
-			ispCity.setCountryzh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country.zh_CN"));
+			ispCity.setRegion(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region"));
+			ispCity.setCountry(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country"));
 			ispCity.setIspNameen(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IspName.en"));
+			ispCity.setIspNamezh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IspName.zh_CN"));
 			ispCity.setCityNameen(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].CityName.en"));
+			ispCity.setCityNamezh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].CityName.zh_CN"));
 			ispCity.setRegionen(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region.en"));
+			ispCity.setRegionzh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region.zh_CN"));
 			ispCity.setCountryen(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country.en"));
+			ispCity.setCountryzh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country.zh_CN"));
 
 			ispCityList.add(ispCity);
 		}
