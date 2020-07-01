@@ -15,7 +15,6 @@
 package com.aliyuncs.saf.model.v20190521;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.saf.Endpoint;
 
@@ -23,15 +22,16 @@ import com.aliyuncs.saf.Endpoint;
  * @author auto create
  * @version 
  */
-public class ExecuteRequestSGRequest extends RpcAcsRequest<ExecuteRequestSGResponse> {
+public class ExecuteExtendServiceRequest extends RpcAcsRequest<ExecuteExtendServiceResponse> {
 	   
 
 	private String serviceParameters;
 
 	private String service;
-	public ExecuteRequestSGRequest() {
-		super("saf", "2019-05-21", "ExecuteRequestSG", "SAF");
-		setProtocol(ProtocolType.HTTPS);
+
+	private String region;
+	public ExecuteExtendServiceRequest() {
+		super("saf", "2019-05-21", "ExecuteExtendService", "SAF");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,9 +61,20 @@ public class ExecuteRequestSGRequest extends RpcAcsRequest<ExecuteRequestSGRespo
 		}
 	}
 
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
 	@Override
-	public Class<ExecuteRequestSGResponse> getResponseClass() {
-		return ExecuteRequestSGResponse.class;
+	public Class<ExecuteExtendServiceResponse> getResponseClass() {
+		return ExecuteExtendServiceResponse.class;
 	}
 
 }
