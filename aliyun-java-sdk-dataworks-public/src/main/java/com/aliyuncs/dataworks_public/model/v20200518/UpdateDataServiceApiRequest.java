@@ -51,7 +51,7 @@ public class UpdateDataServiceApiRequest extends RpcAcsRequest<UpdateDataService
 
 	private Integer responseContentType;
 	public UpdateDataServiceApiRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateDataServiceApi");
+		super("dataworks-public", "2020-05-18", "UpdateDataServiceApi", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

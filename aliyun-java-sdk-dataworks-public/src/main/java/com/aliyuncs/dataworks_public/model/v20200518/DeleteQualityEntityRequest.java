@@ -31,7 +31,7 @@ public class DeleteQualityEntityRequest extends RpcAcsRequest<DeleteQualityEntit
 
 	private Long entityId;
 	public DeleteQualityEntityRequest() {
-		super("dataworks-public", "2020-05-18", "DeleteQualityEntity");
+		super("dataworks-public", "2020-05-18", "DeleteQualityEntity", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

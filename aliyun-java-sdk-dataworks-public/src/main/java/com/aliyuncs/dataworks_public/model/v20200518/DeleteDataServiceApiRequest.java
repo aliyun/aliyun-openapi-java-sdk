@@ -31,7 +31,7 @@ public class DeleteDataServiceApiRequest extends RpcAcsRequest<DeleteDataService
 
 	private Long apiId;
 	public DeleteDataServiceApiRequest() {
-		super("dataworks-public", "2020-05-18", "DeleteDataServiceApi");
+		super("dataworks-public", "2020-05-18", "DeleteDataServiceApi", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

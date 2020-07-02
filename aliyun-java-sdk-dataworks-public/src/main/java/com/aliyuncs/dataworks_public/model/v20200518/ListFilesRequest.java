@@ -43,7 +43,7 @@ public class ListFilesRequest extends RpcAcsRequest<ListFilesResponse> {
 
 	private Integer useType;
 	public ListFilesRequest() {
-		super("dataworks-public", "2020-05-18", "ListFiles");
+		super("dataworks-public", "2020-05-18", "ListFiles", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class UpdateQualityFollowerRequest extends RpcAcsRequest<UpdateQualityFol
 
 	private Long followerId;
 	public UpdateQualityFollowerRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateQualityFollower");
+		super("dataworks-public", "2020-05-18", "UpdateQualityFollower", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

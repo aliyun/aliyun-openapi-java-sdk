@@ -29,7 +29,7 @@ public class DeleteQualityFollowerRequest extends RpcAcsRequest<DeleteQualityFol
 
 	private Long followerId;
 	public DeleteQualityFollowerRequest() {
-		super("dataworks-public", "2020-05-18", "DeleteQualityFollower");
+		super("dataworks-public", "2020-05-18", "DeleteQualityFollower", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class CheckMetaTableRequest extends RpcAcsRequest<CheckMetaTableResponse>
 
 	private String tableGuid;
 	public CheckMetaTableRequest() {
-		super("dataworks-public", "2020-05-18", "CheckMetaTable");
+		super("dataworks-public", "2020-05-18", "CheckMetaTable", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

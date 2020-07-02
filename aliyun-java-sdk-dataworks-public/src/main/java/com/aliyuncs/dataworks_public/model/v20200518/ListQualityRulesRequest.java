@@ -33,7 +33,7 @@ public class ListQualityRulesRequest extends RpcAcsRequest<ListQualityRulesRespo
 
 	private Integer pageNumber;
 	public ListQualityRulesRequest() {
-		super("dataworks-public", "2020-05-18", "ListQualityRules");
+		super("dataworks-public", "2020-05-18", "ListQualityRules", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

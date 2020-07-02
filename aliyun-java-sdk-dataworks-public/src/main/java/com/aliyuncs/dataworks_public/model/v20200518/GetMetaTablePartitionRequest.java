@@ -31,7 +31,7 @@ public class GetMetaTablePartitionRequest extends RpcAcsRequest<GetMetaTablePart
 
 	private Integer pageNumber;
 	public GetMetaTablePartitionRequest() {
-		super("dataworks-public", "2020-05-18", "GetMetaTablePartition");
+		super("dataworks-public", "2020-05-18", "GetMetaTablePartition", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

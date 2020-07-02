@@ -59,7 +59,7 @@ public class UpdateRemindRequest extends RpcAcsRequest<UpdateRemindResponse> {
 
 	private String nodeIds;
 	public UpdateRemindRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateRemind");
+		super("dataworks-public", "2020-05-18", "UpdateRemind", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

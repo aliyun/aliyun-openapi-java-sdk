@@ -45,7 +45,7 @@ public class CreateNodeTestRequest extends RpcAcsRequest<CreateNodeTestResponse>
 
 	private Long nodeProjectId;
 	public CreateNodeTestRequest() {
-		super("dataworks-public", "2020-05-18", "CreateNodeTest");
+		super("dataworks-public", "2020-05-18", "CreateNodeTest", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

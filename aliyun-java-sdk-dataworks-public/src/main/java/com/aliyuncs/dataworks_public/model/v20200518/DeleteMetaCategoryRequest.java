@@ -27,7 +27,7 @@ public class DeleteMetaCategoryRequest extends RpcAcsRequest<DeleteMetaCategoryR
 
 	private Long categoryId;
 	public DeleteMetaCategoryRequest() {
-		super("dataworks-public", "2020-05-18", "DeleteMetaCategory");
+		super("dataworks-public", "2020-05-18", "DeleteMetaCategory", "dide");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

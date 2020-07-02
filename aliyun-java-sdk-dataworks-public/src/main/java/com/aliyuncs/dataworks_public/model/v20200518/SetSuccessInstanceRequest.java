@@ -29,7 +29,7 @@ public class SetSuccessInstanceRequest extends RpcAcsRequest<SetSuccessInstanceR
 
 	private Long instanceId;
 	public SetSuccessInstanceRequest() {
-		super("dataworks-public", "2020-05-18", "SetSuccessInstance");
+		super("dataworks-public", "2020-05-18", "SetSuccessInstance", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class ListBaselineConfigsRequest extends RpcAcsRequest<ListBaselineConfig
 
 	private String baselineTypes;
 	public ListBaselineConfigsRequest() {
-		super("dataworks-public", "2020-05-18", "ListBaselineConfigs");
+		super("dataworks-public", "2020-05-18", "ListBaselineConfigs", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

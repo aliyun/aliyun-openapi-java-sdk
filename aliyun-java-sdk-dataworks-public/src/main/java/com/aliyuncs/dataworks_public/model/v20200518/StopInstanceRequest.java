@@ -29,7 +29,7 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 
 	private Long instanceId;
 	public StopInstanceRequest() {
-		super("dataworks-public", "2020-05-18", "StopInstance");
+		super("dataworks-public", "2020-05-18", "StopInstance", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

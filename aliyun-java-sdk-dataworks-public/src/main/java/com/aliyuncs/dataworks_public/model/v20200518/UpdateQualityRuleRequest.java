@@ -63,7 +63,7 @@ public class UpdateQualityRuleRequest extends RpcAcsRequest<UpdateQualityRuleRes
 
 	private Integer predictType;
 	public UpdateQualityRuleRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateQualityRule");
+		super("dataworks-public", "2020-05-18", "UpdateQualityRule", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

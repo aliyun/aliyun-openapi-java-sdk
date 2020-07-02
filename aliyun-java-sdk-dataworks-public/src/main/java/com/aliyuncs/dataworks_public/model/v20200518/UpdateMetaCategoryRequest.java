@@ -31,7 +31,7 @@ public class UpdateMetaCategoryRequest extends RpcAcsRequest<UpdateMetaCategoryR
 
 	private Long categoryId;
 	public UpdateMetaCategoryRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateMetaCategory");
+		super("dataworks-public", "2020-05-18", "UpdateMetaCategory", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

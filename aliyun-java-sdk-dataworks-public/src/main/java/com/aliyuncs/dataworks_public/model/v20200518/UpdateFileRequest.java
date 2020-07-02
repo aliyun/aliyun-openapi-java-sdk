@@ -65,7 +65,7 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 
 	private String fileDescription;
 	public UpdateFileRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateFile");
+		super("dataworks-public", "2020-05-18", "UpdateFile", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class AbolishDataServiceApiRequest extends RpcAcsRequest<AbolishDataServi
 
 	private Long apiId;
 	public AbolishDataServiceApiRequest() {
-		super("dataworks-public", "2020-05-18", "AbolishDataServiceApi");
+		super("dataworks-public", "2020-05-18", "AbolishDataServiceApi", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

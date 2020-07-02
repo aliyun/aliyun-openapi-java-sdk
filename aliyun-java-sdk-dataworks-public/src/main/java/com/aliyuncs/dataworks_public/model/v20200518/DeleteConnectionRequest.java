@@ -27,7 +27,7 @@ public class DeleteConnectionRequest extends RpcAcsRequest<DeleteConnectionRespo
 
 	private Long connectionId;
 	public DeleteConnectionRequest() {
-		super("dataworks-public", "2020-05-18", "DeleteConnection");
+		super("dataworks-public", "2020-05-18", "DeleteConnection", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

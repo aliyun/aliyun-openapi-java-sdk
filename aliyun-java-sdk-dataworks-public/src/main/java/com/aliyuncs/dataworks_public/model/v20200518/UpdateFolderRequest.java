@@ -33,7 +33,7 @@ public class UpdateFolderRequest extends RpcAcsRequest<UpdateFolderResponse> {
 
 	private String folderId;
 	public UpdateFolderRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateFolder");
+		super("dataworks-public", "2020-05-18", "UpdateFolder", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

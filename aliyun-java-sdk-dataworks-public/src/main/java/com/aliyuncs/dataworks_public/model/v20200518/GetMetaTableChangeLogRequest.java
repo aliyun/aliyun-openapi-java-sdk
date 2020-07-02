@@ -39,7 +39,7 @@ public class GetMetaTableChangeLogRequest extends RpcAcsRequest<GetMetaTableChan
 
 	private String objectType;
 	public GetMetaTableChangeLogRequest() {
-		super("dataworks-public", "2020-05-18", "GetMetaTableChangeLog");
+		super("dataworks-public", "2020-05-18", "GetMetaTableChangeLog", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

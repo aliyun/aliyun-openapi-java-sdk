@@ -35,7 +35,7 @@ public class EstablishRelationTableToBusinessRequest extends RpcAcsRequest<Estab
 
 	private String folderId;
 	public EstablishRelationTableToBusinessRequest() {
-		super("dataworks-public", "2020-05-18", "EstablishRelationTableToBusiness");
+		super("dataworks-public", "2020-05-18", "EstablishRelationTableToBusiness", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

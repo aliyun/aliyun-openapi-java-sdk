@@ -33,7 +33,7 @@ public class SubmitFileRequest extends RpcAcsRequest<SubmitFileResponse> {
 
 	private Long fileId;
 	public SubmitFileRequest() {
-		super("dataworks-public", "2020-05-18", "SubmitFile");
+		super("dataworks-public", "2020-05-18", "SubmitFile", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

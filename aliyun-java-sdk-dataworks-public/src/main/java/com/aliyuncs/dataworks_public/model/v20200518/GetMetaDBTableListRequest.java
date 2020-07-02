@@ -31,7 +31,7 @@ public class GetMetaDBTableListRequest extends RpcAcsRequest<GetMetaDBTableListR
 
 	private Integer pageNumber;
 	public GetMetaDBTableListRequest() {
-		super("dataworks-public", "2020-05-18", "GetMetaDBTableList");
+		super("dataworks-public", "2020-05-18", "GetMetaDBTableList", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

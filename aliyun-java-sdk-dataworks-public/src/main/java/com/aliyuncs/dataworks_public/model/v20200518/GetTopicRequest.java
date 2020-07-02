@@ -27,7 +27,7 @@ public class GetTopicRequest extends RpcAcsRequest<GetTopicResponse> {
 
 	private Long topicId;
 	public GetTopicRequest() {
-		super("dataworks-public", "2020-05-18", "GetTopic");
+		super("dataworks-public", "2020-05-18", "GetTopic", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

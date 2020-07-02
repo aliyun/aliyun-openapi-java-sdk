@@ -31,7 +31,7 @@ public class CreateMetaCategoryRequest extends RpcAcsRequest<CreateMetaCategoryR
 
 	private Long parentId;
 	public CreateMetaCategoryRequest() {
-		super("dataworks-public", "2020-05-18", "CreateMetaCategory");
+		super("dataworks-public", "2020-05-18", "CreateMetaCategory", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

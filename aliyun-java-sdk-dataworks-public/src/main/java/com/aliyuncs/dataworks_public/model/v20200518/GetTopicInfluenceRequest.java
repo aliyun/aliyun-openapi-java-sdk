@@ -27,7 +27,7 @@ public class GetTopicInfluenceRequest extends RpcAcsRequest<GetTopicInfluenceRes
 
 	private Long topicId;
 	public GetTopicInfluenceRequest() {
-		super("dataworks-public", "2020-05-18", "GetTopicInfluence");
+		super("dataworks-public", "2020-05-18", "GetTopicInfluence", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

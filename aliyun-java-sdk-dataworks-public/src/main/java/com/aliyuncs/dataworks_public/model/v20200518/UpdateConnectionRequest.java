@@ -35,7 +35,7 @@ public class UpdateConnectionRequest extends RpcAcsRequest<UpdateConnectionRespo
 
 	private String status;
 	public UpdateConnectionRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateConnection");
+		super("dataworks-public", "2020-05-18", "UpdateConnection", "dide");
 		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class DeleteQualityRelativeNodeRequest extends RpcAcsRequest<DeleteQualit
 
 	private Long projectId;
 	public DeleteQualityRelativeNodeRequest() {
-		super("dataworks-public", "2020-05-18", "DeleteQualityRelativeNode");
+		super("dataworks-public", "2020-05-18", "DeleteQualityRelativeNode", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

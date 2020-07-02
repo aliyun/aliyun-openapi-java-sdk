@@ -33,7 +33,7 @@ public class CreateQualityFollowerRequest extends RpcAcsRequest<CreateQualityFol
 
 	private Long entityId;
 	public CreateQualityFollowerRequest() {
-		super("dataworks-public", "2020-05-18", "CreateQualityFollower");
+		super("dataworks-public", "2020-05-18", "CreateQualityFollower", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

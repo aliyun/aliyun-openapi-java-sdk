@@ -31,7 +31,7 @@ public class GetMetaCategoryRequest extends RpcAcsRequest<GetMetaCategoryRespons
 
 	private Integer pageNum;
 	public GetMetaCategoryRequest() {
-		super("dataworks-public", "2020-05-18", "GetMetaCategory");
+		super("dataworks-public", "2020-05-18", "GetMetaCategory", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

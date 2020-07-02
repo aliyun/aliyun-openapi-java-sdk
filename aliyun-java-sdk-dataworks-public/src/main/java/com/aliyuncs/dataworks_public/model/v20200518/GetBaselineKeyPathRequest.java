@@ -31,7 +31,7 @@ public class GetBaselineKeyPathRequest extends RpcAcsRequest<GetBaselineKeyPathR
 
 	private Long baselineId;
 	public GetBaselineKeyPathRequest() {
-		super("dataworks-public", "2020-05-18", "GetBaselineKeyPath");
+		super("dataworks-public", "2020-05-18", "GetBaselineKeyPath", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

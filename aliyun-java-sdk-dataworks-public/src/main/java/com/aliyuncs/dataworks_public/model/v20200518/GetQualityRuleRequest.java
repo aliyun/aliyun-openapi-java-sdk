@@ -29,7 +29,7 @@ public class GetQualityRuleRequest extends RpcAcsRequest<GetQualityRuleResponse>
 
 	private Long ruleId;
 	public GetQualityRuleRequest() {
-		super("dataworks-public", "2020-05-18", "GetQualityRule");
+		super("dataworks-public", "2020-05-18", "GetQualityRule", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

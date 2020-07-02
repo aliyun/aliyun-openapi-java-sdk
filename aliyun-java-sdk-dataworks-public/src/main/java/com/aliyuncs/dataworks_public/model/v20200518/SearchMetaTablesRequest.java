@@ -35,7 +35,7 @@ public class SearchMetaTablesRequest extends RpcAcsRequest<SearchMetaTablesRespo
 
 	private Integer pageNumber;
 	public SearchMetaTablesRequest() {
-		super("dataworks-public", "2020-05-18", "SearchMetaTables");
+		super("dataworks-public", "2020-05-18", "SearchMetaTables", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

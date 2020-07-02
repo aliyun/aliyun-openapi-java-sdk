@@ -43,7 +43,7 @@ public class ListTopicsRequest extends RpcAcsRequest<ListTopicsResponse> {
 
 	private Long nodeId;
 	public ListTopicsRequest() {
-		super("dataworks-public", "2020-05-18", "ListTopics");
+		super("dataworks-public", "2020-05-18", "ListTopics", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

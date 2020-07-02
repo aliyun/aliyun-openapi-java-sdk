@@ -29,7 +29,7 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 
 	private String keyword;
 	public ListResourceGroupsRequest() {
-		super("dataworks-public", "2020-05-18", "ListResourceGroups");
+		super("dataworks-public", "2020-05-18", "ListResourceGroups", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

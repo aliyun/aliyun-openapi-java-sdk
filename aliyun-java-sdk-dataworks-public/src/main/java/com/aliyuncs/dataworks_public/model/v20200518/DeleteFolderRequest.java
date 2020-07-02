@@ -31,7 +31,7 @@ public class DeleteFolderRequest extends RpcAcsRequest<DeleteFolderResponse> {
 
 	private String folderId;
 	public DeleteFolderRequest() {
-		super("dataworks-public", "2020-05-18", "DeleteFolder");
+		super("dataworks-public", "2020-05-18", "DeleteFolder", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

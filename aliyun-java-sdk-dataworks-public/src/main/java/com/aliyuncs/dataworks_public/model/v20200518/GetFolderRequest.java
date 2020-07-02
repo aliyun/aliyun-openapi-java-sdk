@@ -33,7 +33,7 @@ public class GetFolderRequest extends RpcAcsRequest<GetFolderResponse> {
 
 	private String folderId;
 	public GetFolderRequest() {
-		super("dataworks-public", "2020-05-18", "GetFolder");
+		super("dataworks-public", "2020-05-18", "GetFolder", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

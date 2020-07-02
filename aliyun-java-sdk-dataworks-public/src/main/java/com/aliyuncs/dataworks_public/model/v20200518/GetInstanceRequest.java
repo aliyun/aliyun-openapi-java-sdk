@@ -29,7 +29,7 @@ public class GetInstanceRequest extends RpcAcsRequest<GetInstanceResponse> {
 
 	private Long instanceId;
 	public GetInstanceRequest() {
-		super("dataworks-public", "2020-05-18", "GetInstance");
+		super("dataworks-public", "2020-05-18", "GetInstance", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

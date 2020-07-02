@@ -49,7 +49,7 @@ public class UpdateUdfFileRequest extends RpcAcsRequest<UpdateUdfFileResponse> {
 
 	private String fileId;
 	public UpdateUdfFileRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateUdfFile");
+		super("dataworks-public", "2020-05-18", "UpdateUdfFile", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

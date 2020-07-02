@@ -31,7 +31,7 @@ public class DeleteFileRequest extends RpcAcsRequest<DeleteFileResponse> {
 
 	private Long fileId;
 	public DeleteFileRequest() {
-		super("dataworks-public", "2020-05-18", "DeleteFile");
+		super("dataworks-public", "2020-05-18", "DeleteFile", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

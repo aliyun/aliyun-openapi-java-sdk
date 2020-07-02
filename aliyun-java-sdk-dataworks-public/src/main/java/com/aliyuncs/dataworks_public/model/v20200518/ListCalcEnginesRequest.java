@@ -37,7 +37,7 @@ public class ListCalcEnginesRequest extends RpcAcsRequest<ListCalcEnginesRespons
 
 	private Long projectId;
 	public ListCalcEnginesRequest() {
-		super("dataworks-public", "2020-05-18", "ListCalcEngines");
+		super("dataworks-public", "2020-05-18", "ListCalcEngines", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

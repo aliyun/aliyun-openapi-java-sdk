@@ -31,7 +31,7 @@ public class GetBusinessRequest extends RpcAcsRequest<GetBusinessResponse> {
 
 	private String projectIdentifier;
 	public GetBusinessRequest() {
-		super("dataworks-public", "2020-05-18", "GetBusiness");
+		super("dataworks-public", "2020-05-18", "GetBusiness", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
