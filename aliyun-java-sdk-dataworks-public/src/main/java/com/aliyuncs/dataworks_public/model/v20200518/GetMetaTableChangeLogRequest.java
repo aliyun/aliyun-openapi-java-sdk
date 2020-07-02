@@ -1,0 +1,132 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.dataworks_public.model.v20200518;
+
+import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dataworks_public.Endpoint;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class GetMetaTableChangeLogRequest extends RpcAcsRequest<GetMetaTableChangeLogResponse> {
+	   
+
+	private String startDate;
+
+	private Integer pageNumber;
+
+	private String endDate;
+
+	private String tableGuid;
+
+	private String changeType;
+
+	private Integer pageSize;
+
+	private String objectType;
+	public GetMetaTableChangeLogRequest() {
+		super("dataworks-public", "2020-05-18", "GetMetaTableChangeLog", "dide");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+		if(startDate != null){
+			putBodyParameter("StartDate", startDate);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putBodyParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putBodyParameter("EndDate", endDate);
+		}
+	}
+
+	public String getTableGuid() {
+		return this.tableGuid;
+	}
+
+	public void setTableGuid(String tableGuid) {
+		this.tableGuid = tableGuid;
+		if(tableGuid != null){
+			putBodyParameter("TableGuid", tableGuid);
+		}
+	}
+
+	public String getChangeType() {
+		return this.changeType;
+	}
+
+	public void setChangeType(String changeType) {
+		this.changeType = changeType;
+		if(changeType != null){
+			putBodyParameter("ChangeType", changeType);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getObjectType() {
+		return this.objectType;
+	}
+
+	public void setObjectType(String objectType) {
+		this.objectType = objectType;
+		if(objectType != null){
+			putBodyParameter("ObjectType", objectType);
+		}
+	}
+
+	@Override
+	public Class<GetMetaTableChangeLogResponse> getResponseClass() {
+		return GetMetaTableChangeLogResponse.class;
+	}
+
+}
