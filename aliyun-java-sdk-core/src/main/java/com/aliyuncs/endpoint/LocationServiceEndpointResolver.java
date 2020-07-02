@@ -1,6 +1,6 @@
 package com.aliyuncs.endpoint;
 
-import com.aliyuncs.DefaultAcsClient;
+import com.aliyuncs.IAcsClient;
 import com.aliyuncs.endpoint.location.model.v20150612.DescribeEndpointsRequest;
 import com.aliyuncs.endpoint.location.model.v20150612.DescribeEndpointsResponse;
 import com.aliyuncs.exceptions.ClientException;
@@ -20,13 +20,13 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
     public int locationServiceCallCounter = 0;
     protected String locationServiceEndpoint = DEFAULT_LOCATION_SERVICE_ENDPOINT;
     protected String locationServiceApiVersion = DEFAULT_LOCATION_SERVICE_API_VERSION;
-    private DefaultAcsClient client;
+    private IAcsClient client;
     private Set<String> invalidProductCodes;
     private Set<String> validProductCodes;
     private Set<String> invalidRegionIds;
     private Set<String> validRegionIds;
 
-    public LocationServiceEndpointResolver(DefaultAcsClient client) {
+    public LocationServiceEndpointResolver(IAcsClient client) {
         this.client = client;
         invalidProductCodes = new HashSet<String>();
         invalidRegionIds = new HashSet<String>();
