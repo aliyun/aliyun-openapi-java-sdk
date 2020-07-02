@@ -25,7 +25,7 @@ import com.aliyuncs.reid.Endpoint;
 public class ListStoreRequest extends RpcAcsRequest<ListStoreResponse> {
 	   
 	public ListStoreRequest() {
-		super("reid", "2019-09-28", "ListStore", "1.1.7");
+		super("reid", "2019-09-28", "ListStore", "1.1.8");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

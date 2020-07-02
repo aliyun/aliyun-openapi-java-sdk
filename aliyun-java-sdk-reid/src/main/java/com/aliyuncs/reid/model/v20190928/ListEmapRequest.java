@@ -27,7 +27,7 @@ public class ListEmapRequest extends RpcAcsRequest<ListEmapResponse> {
 
 	private Long storeId;
 	public ListEmapRequest() {
-		super("reid", "2019-09-28", "ListEmap", "1.1.7");
+		super("reid", "2019-09-28", "ListEmap", "1.1.8");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
