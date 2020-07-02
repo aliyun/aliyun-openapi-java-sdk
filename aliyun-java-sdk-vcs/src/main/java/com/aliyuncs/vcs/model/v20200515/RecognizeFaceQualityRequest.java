@@ -27,6 +27,8 @@ public class RecognizeFaceQualityRequest extends RpcAcsRequest<RecognizeFaceQual
 
 	private String corpId;
 
+	private String picUrl;
+
 	private String picContent;
 
 	private String picFormat;
@@ -47,6 +49,17 @@ public class RecognizeFaceQualityRequest extends RpcAcsRequest<RecognizeFaceQual
 		this.corpId = corpId;
 		if(corpId != null){
 			putBodyParameter("CorpId", corpId);
+		}
+	}
+
+	public String getPicUrl() {
+		return this.picUrl;
+	}
+
+	public void setPicUrl(String picUrl) {
+		this.picUrl = picUrl;
+		if(picUrl != null){
+			putBodyParameter("PicUrl", picUrl);
 		}
 	}
 

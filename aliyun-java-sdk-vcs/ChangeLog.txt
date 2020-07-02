@@ -1,3 +1,6 @@
+2020-07-03 Version: 1.0.5.1
+- Add PicUrl parameter for picture related API.
+
 2020-07-01 Version: 1.0.5
 - Add ListFace-MotorAlgorithmResults API.
 
