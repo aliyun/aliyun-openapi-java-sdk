@@ -1,6 +1,9 @@
 2020-07-02 Version: 1.0.0
 - Generated 2020-05-18 for `dataworks-public`.
 
+2020-07-02 Version: 1.0.0
+- Generated 2020-05-18 for `dataworks-public`.
+
 2020-04-08 Version: 1.9.5
 - EMR Meta API.
 
