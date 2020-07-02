@@ -26,16 +26,21 @@ public class Endpoint {
             put("ap-northeast-1", "dbs-api.ap-northeast-1.aliyuncs.com");
             put("cn-shenzhen-finance-1", "dbs-api.cn-hangzhou.aliyuncs.com");
             put("me-east-1", "dbs-api.me-east-1.aliyuncs.com");
+            put("cn-chengdu", "dbs-api.cn-chengdu.aliyuncs.com");
             put("cn-qingdao", "dbs-api.cn-hangzhou.aliyuncs.com");
             put("cn-shanghai", "dbs-api.cn-hangzhou.aliyuncs.com");
             put("cn-shanghai-finance-1", "dbs-api.cn-hangzhou.aliyuncs.com");
             put("cn-hongkong", "dbs-api.cn-hangzhou.aliyuncs.com");
             put("cn-hangzhou-finance", "dbs-api.cn-hangzhou.aliyuncs.com");
             put("ap-southeast-1", "dbs-api.ap-southeast-1.aliyuncs.com");
+            put("ap-southeast-2", "dbs-api.ap-southeast-2.aliyuncs.com");
+            put("ap-southeast-3", "dbs-api.ap-southeast-3.aliyuncs.com");
+            put("eu-central-1", "dbs-api.eu-central-1.aliyuncs.com");
             put("cn-huhehaote", "dbs-api.cn-huhehaote.aliyuncs.com");
-            put("us-east-1", "dbs.cn-hangzhou.aliyuncs.com");
+            put("ap-southeast-5", "dbs-api.ap-southeast-5.aliyuncs.com");
+            put("us-east-1", "dbs-api.cn-hangzhou.aliyuncs.com");
             put("cn-zhangjiakou", "dbs-api.cn-hangzhou.aliyuncs.com");
-            put("us-west-1", "dbs.cn-hangzhou.aliyuncs.com");
+            put("us-west-1", "dbs-api.cn-hangzhou.aliyuncs.com");
             put("cn-hangzhou", "dbs-api.cn-hangzhou.aliyuncs.com");
         }
     };
