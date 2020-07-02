@@ -1,6 +1,6 @@
 package com.aliyuncs.endpoint;
 
-import com.aliyuncs.DefaultAcsClient;
+import com.aliyuncs.IAcsClient;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
@@ -15,7 +15,7 @@ public class DefaultEndpointResolver implements EndpointResolver {
     private EndpointResolver insideEndpointResolver;
 
     public DefaultEndpointResolver(
-            DefaultAcsClient client,
+            IAcsClient client,
             String userConfig,
             IClientProfile profile) {
         userCustomizedEndpointResolver = new UserCustomizedEndpointResolver();
@@ -46,11 +46,11 @@ public class DefaultEndpointResolver implements EndpointResolver {
         insideEndpointResolver = new ChainedEndpointResolver(resolverChain);
     }
 
-    public DefaultEndpointResolver(DefaultAcsClient client) {
+    public DefaultEndpointResolver(IAcsClient client) {
         this(client, null, DefaultProfile.getProfile(null));
     }
 
-    public DefaultEndpointResolver(DefaultAcsClient client, IClientProfile profile) {
+    public DefaultEndpointResolver(IAcsClient client, IClientProfile profile) {
         this(client, null, profile);
     }
 
