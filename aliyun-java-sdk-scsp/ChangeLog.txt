@@ -4,3 +4,9 @@
 - Support UpdateAgent API.
 - Support GetAgent API.
 
+2020-07-02 Version: 1.0.0
+- Support CreateAgent API.
+- Support DeleteAgent API.
+- Support UpdateAgent API.
+- Support GetAgent API.
+
