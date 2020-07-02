@@ -41,7 +41,7 @@ public class DestroyInstanceRequest extends RpcAcsRequest<DestroyInstanceRespons
 
 	private String instanceId;
 	public DestroyInstanceRequest() {
-		super("Dds", "2015-12-01", "DestroyInstance", "dds");
+		super("Dds", "2015-12-01", "DestroyInstance", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

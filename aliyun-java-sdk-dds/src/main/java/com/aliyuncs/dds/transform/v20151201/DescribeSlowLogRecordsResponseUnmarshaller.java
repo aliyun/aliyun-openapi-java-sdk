@@ -44,6 +44,7 @@ public class DescribeSlowLogRecordsResponseUnmarshaller {
 			logRecords.setReturnRowCounts(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));
 			logRecords.setExecutionStartTime(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ExecutionStartTime"));
 			logRecords.setAccountName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].AccountName"));
+			logRecords.setTableName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].TableName"));
 
 			items.add(logRecords);
 		}

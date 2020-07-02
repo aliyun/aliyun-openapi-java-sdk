@@ -95,7 +95,7 @@ public class DescribeRunningLogRecordsResponse extends AcsResponse {
 
 		private String connInfo;
 
-		private String content;
+		private Long content;
 
 		public Integer getId() {
 			return this.id;
@@ -129,11 +129,11 @@ public class DescribeRunningLogRecordsResponse extends AcsResponse {
 			this.connInfo = connInfo;
 		}
 
-		public String getContent() {
+		public Long getContent() {
 			return this.content;
 		}
 
-		public void setContent(String content) {
+		public void setContent(Long content) {
 			this.content = content;
 		}
 	}

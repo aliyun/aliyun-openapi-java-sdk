@@ -49,7 +49,7 @@ public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidR
 
 	private String autoRenew;
 	public TransformToPrePaidRequest() {
-		super("Dds", "2015-12-01", "TransformToPrePaid", "dds");
+		super("Dds", "2015-12-01", "TransformToPrePaid", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

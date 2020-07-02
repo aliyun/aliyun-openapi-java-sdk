@@ -111,6 +111,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String vpcAuthMode;
 
+		private Boolean dBInstanceReleaseProtection;
+
 		private List<MongosAttribute> mongosList;
 
 		private List<ShardAttribute> shardList;
@@ -375,6 +377,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setVpcAuthMode(String vpcAuthMode) {
 			this.vpcAuthMode = vpcAuthMode;
+		}
+
+		public Boolean getDBInstanceReleaseProtection() {
+			return this.dBInstanceReleaseProtection;
+		}
+
+		public void setDBInstanceReleaseProtection(Boolean dBInstanceReleaseProtection) {
+			this.dBInstanceReleaseProtection = dBInstanceReleaseProtection;
 		}
 
 		public List<MongosAttribute> getMongosList() {

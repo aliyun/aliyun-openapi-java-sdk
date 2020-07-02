@@ -38,8 +38,10 @@ public class DescribeParametersRequest extends RpcAcsRequest<DescribeParametersR
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String characterType;
 	public DescribeParametersRequest() {
-		super("Dds", "2015-12-01", "DescribeParameters", "dds");
+		super("Dds", "2015-12-01", "DescribeParameters", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -121,6 +123,17 @@ public class DescribeParametersRequest extends RpcAcsRequest<DescribeParametersR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getCharacterType() {
+		return this.characterType;
+	}
+
+	public void setCharacterType(String characterType) {
+		this.characterType = characterType;
+		if(characterType != null){
+			putQueryParameter("CharacterType", characterType);
 		}
 	}
 

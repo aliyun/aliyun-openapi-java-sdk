@@ -72,9 +72,11 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	private String zoneId;
 
+	private String protocolType;
+
 	private String chargeType;
 	public CreateShardingDBInstanceRequest() {
-		super("Dds", "2015-12-01", "CreateShardingDBInstance", "dds");
+		super("Dds", "2015-12-01", "CreateShardingDBInstance", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -340,6 +342,17 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getProtocolType() {
+		return this.protocolType;
+	}
+
+	public void setProtocolType(String protocolType) {
+		this.protocolType = protocolType;
+		if(protocolType != null){
+			putQueryParameter("ProtocolType", protocolType);
 		}
 	}
 

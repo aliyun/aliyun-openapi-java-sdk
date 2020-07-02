@@ -37,7 +37,7 @@ public class DescribeAuditPolicyRequest extends RpcAcsRequest<DescribeAuditPolic
 
 	private Long ownerId;
 	public DescribeAuditPolicyRequest() {
-		super("Dds", "2015-12-01", "DescribeAuditPolicy", "dds");
+		super("Dds", "2015-12-01", "DescribeAuditPolicy", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

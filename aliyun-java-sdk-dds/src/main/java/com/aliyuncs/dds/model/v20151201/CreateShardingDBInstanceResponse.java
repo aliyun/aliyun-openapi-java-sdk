@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateShardingDBInstanceResponse extends AcsResponse {
 
-	private String requestId;
+	private String dBInstanceId;
 
 	private String orderId;
 
-	private String dBInstanceId;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
 	}
 
 	public String getOrderId() {
@@ -46,12 +46,12 @@ public class CreateShardingDBInstanceResponse extends AcsResponse {
 		this.orderId = orderId;
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

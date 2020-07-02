@@ -41,6 +41,8 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 
 	private String nodeId;
 
+	private Long sQLId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -50,8 +52,10 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 	private Long ownerId;
 
 	private String dBName;
+
+	private String orderType;
 	public DescribeRunningLogRecordsRequest() {
-		super("Dds", "2015-12-01", "DescribeRunningLogRecords", "dds");
+		super("Dds", "2015-12-01", "DescribeRunningLogRecords", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -147,6 +151,17 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		}
 	}
 
+	public Long getSQLId() {
+		return this.sQLId;
+	}
+
+	public void setSQLId(Long sQLId) {
+		this.sQLId = sQLId;
+		if(sQLId != null){
+			putQueryParameter("SQLId", sQLId.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -199,6 +214,17 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		this.dBName = dBName;
 		if(dBName != null){
 			putQueryParameter("DBName", dBName);
+		}
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
 		}
 	}
 

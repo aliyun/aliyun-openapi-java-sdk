@@ -54,8 +54,10 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 	private String form;
 
 	private String user;
+
+	private String orderType;
 	public DescribeAuditRecordsRequest() {
-		super("Dds", "2015-12-01", "DescribeAuditRecords", "dds");
+		super("Dds", "2015-12-01", "DescribeAuditRecords", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -225,6 +227,17 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 		this.user = user;
 		if(user != null){
 			putQueryParameter("User", user);
+		}
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
 		}
 	}
 

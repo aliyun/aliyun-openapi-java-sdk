@@ -105,6 +105,8 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		private String accountName;
 
+		private String tableName;
+
 		public String getHostAddress() {
 			return this.hostAddress;
 		}
@@ -175,6 +177,14 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		public void setAccountName(String accountName) {
 			this.accountName = accountName;
+		}
+
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
 		}
 	}
 
