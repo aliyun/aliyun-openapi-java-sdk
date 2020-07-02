@@ -31,7 +31,7 @@ public class GetBaselineStatusRequest extends RpcAcsRequest<GetBaselineStatusRes
 
 	private Long baselineId;
 	public GetBaselineStatusRequest() {
-		super("dataworks-public", "2020-05-18", "GetBaselineStatus", "dide");
+		super("dataworks-public", "2020-05-18", "GetBaselineStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

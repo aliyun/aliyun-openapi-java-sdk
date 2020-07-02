@@ -27,7 +27,7 @@ public class GetRemindRequest extends RpcAcsRequest<GetRemindResponse> {
 
 	private Long remindId;
 	public GetRemindRequest() {
-		super("dataworks-public", "2020-05-18", "GetRemind", "dide");
+		super("dataworks-public", "2020-05-18", "GetRemind");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

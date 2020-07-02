@@ -27,7 +27,7 @@ public class GetMetaTableBasicInfoRequest extends RpcAcsRequest<GetMetaTableBasi
 
 	private String tableGuid;
 	public GetMetaTableBasicInfoRequest() {
-		super("dataworks-public", "2020-05-18", "GetMetaTableBasicInfo", "dide");
+		super("dataworks-public", "2020-05-18", "GetMetaTableBasicInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

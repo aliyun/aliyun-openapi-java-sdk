@@ -47,7 +47,7 @@ public class CreateNodeComplementRequest extends RpcAcsRequest<CreateNodeComplem
 
 	private Long nodeProjectId;
 	public CreateNodeComplementRequest() {
-		super("dataworks-public", "2020-05-18", "CreateNodeComplement", "dide");
+		super("dataworks-public", "2020-05-18", "CreateNodeComplement");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

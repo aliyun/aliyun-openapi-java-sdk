@@ -35,7 +35,7 @@ public class ListFoldersRequest extends RpcAcsRequest<ListFoldersResponse> {
 
 	private Integer pageNumber;
 	public ListFoldersRequest() {
-		super("dataworks-public", "2020-05-18", "ListFolders", "dide");
+		super("dataworks-public", "2020-05-18", "ListFolders");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class GetMetaTableOutputRequest extends RpcAcsRequest<GetMetaTableOutputR
 
 	private Integer pageNumber;
 	public GetMetaTableOutputRequest() {
-		super("dataworks-public", "2020-05-18", "GetMetaTableOutput", "dide");
+		super("dataworks-public", "2020-05-18", "GetMetaTableOutput");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

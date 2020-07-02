@@ -33,7 +33,7 @@ public class GetMetaColumnLineageRequest extends RpcAcsRequest<GetMetaColumnLine
 
 	private String direction;
 	public GetMetaColumnLineageRequest() {
-		super("dataworks-public", "2020-05-18", "GetMetaColumnLineage", "dide");
+		super("dataworks-public", "2020-05-18", "GetMetaColumnLineage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

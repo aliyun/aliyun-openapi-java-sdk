@@ -31,7 +31,7 @@ public class GetMetaTableColumnRequest extends RpcAcsRequest<GetMetaTableColumnR
 
 	private Integer pageNum;
 	public GetMetaTableColumnRequest() {
-		super("dataworks-public", "2020-05-18", "GetMetaTableColumn", "dide");
+		super("dataworks-public", "2020-05-18", "GetMetaTableColumn");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

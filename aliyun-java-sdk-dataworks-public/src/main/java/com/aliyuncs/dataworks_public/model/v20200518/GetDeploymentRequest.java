@@ -31,7 +31,7 @@ public class GetDeploymentRequest extends RpcAcsRequest<GetDeploymentResponse> {
 
 	private String projectIdentifier;
 	public GetDeploymentRequest() {
-		super("dataworks-public", "2020-05-18", "GetDeployment", "dide");
+		super("dataworks-public", "2020-05-18", "GetDeployment");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

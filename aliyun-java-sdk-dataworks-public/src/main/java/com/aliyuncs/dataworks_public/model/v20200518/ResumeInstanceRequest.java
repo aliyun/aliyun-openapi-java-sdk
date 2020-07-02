@@ -29,7 +29,7 @@ public class ResumeInstanceRequest extends RpcAcsRequest<ResumeInstanceResponse>
 
 	private Long instanceId;
 	public ResumeInstanceRequest() {
-		super("dataworks-public", "2020-05-18", "ResumeInstance", "dide");
+		super("dataworks-public", "2020-05-18", "ResumeInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class CreateFolderRequest extends RpcAcsRequest<CreateFolderResponse> {
 
 	private String projectIdentifier;
 	public CreateFolderRequest() {
-		super("dataworks-public", "2020-05-18", "CreateFolder", "dide");
+		super("dataworks-public", "2020-05-18", "CreateFolder");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

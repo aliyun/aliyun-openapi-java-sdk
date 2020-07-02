@@ -27,7 +27,7 @@ public class GetNodeOnBaselineRequest extends RpcAcsRequest<GetNodeOnBaselineRes
 
 	private Long baselineId;
 	public GetNodeOnBaselineRequest() {
-		super("dataworks-public", "2020-05-18", "GetNodeOnBaseline", "dide");
+		super("dataworks-public", "2020-05-18", "GetNodeOnBaseline");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

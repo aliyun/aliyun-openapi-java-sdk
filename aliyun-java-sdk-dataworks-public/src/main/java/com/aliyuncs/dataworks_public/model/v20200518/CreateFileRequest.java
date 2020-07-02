@@ -65,7 +65,7 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 
 	private String fileDescription;
 	public CreateFileRequest() {
-		super("dataworks-public", "2020-05-18", "CreateFile", "dide");
+		super("dataworks-public", "2020-05-18", "CreateFile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

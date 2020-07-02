@@ -37,7 +37,7 @@ public class UpdateBusinessRequest extends RpcAcsRequest<UpdateBusinessResponse>
 
 	private String projectIdentifier;
 	public UpdateBusinessRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateBusiness", "dide");
+		super("dataworks-public", "2020-05-18", "UpdateBusiness");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

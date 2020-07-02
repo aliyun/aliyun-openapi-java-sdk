@@ -29,7 +29,7 @@ public class GetNodeRequest extends RpcAcsRequest<GetNodeResponse> {
 
 	private Long nodeId;
 	public GetNodeRequest() {
-		super("dataworks-public", "2020-05-18", "GetNode", "dide");
+		super("dataworks-public", "2020-05-18", "GetNode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

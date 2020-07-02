@@ -31,7 +31,7 @@ public class DeleteBusinessRequest extends RpcAcsRequest<DeleteBusinessResponse>
 
 	private String projectIdentifier;
 	public DeleteBusinessRequest() {
-		super("dataworks-public", "2020-05-18", "DeleteBusiness", "dide");
+		super("dataworks-public", "2020-05-18", "DeleteBusiness");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

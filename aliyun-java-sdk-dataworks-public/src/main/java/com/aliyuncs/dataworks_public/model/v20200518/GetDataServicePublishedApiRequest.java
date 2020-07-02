@@ -31,7 +31,7 @@ public class GetDataServicePublishedApiRequest extends RpcAcsRequest<GetDataServ
 
 	private Long apiId;
 	public GetDataServicePublishedApiRequest() {
-		super("dataworks-public", "2020-05-18", "GetDataServicePublishedApi", "dide");
+		super("dataworks-public", "2020-05-18", "GetDataServicePublishedApi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteQualityRuleRequest extends RpcAcsRequest<DeleteQualityRuleRes
 
 	private Long ruleId;
 	public DeleteQualityRuleRequest() {
-		super("dataworks-public", "2020-05-18", "DeleteQualityRule", "dide");
+		super("dataworks-public", "2020-05-18", "DeleteQualityRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

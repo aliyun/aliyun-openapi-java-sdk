@@ -39,7 +39,7 @@ public class CreateConnectionRequest extends RpcAcsRequest<CreateConnectionRespo
 
 	private Long projectId;
 	public CreateConnectionRequest() {
-		super("dataworks-public", "2020-05-18", "CreateConnection", "dide");
+		super("dataworks-public", "2020-05-18", "CreateConnection");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
