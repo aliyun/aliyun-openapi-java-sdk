@@ -1,3 +1,8 @@
+2020-07-03 Version: 1.2.0
+- Add ListResourceExecutionStatus API.
+- ListExecutions API supports filtering by resource id.
+- TriggerExecution API supports TimerTrigger.
+
 2020-04-29 Version: 1.1.4
 - Add ListTemplateVersions API.
 - GenerateExecutionPolicy supports TemplateVersion.

@@ -45,6 +45,8 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 
 	private String sortOrder;
 
+	private String resourceId;
+
 	private String startDateAfter;
 
 	private String startDateBefore;
@@ -61,9 +63,11 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 
 	private String category;
 
+	private String resourceTemplateName;
+
 	private String status;
 	public ListExecutionsRequest() {
-		super("oos", "2019-06-01", "ListExecutions", "oos");
+		super("oos", "2019-06-01", "ListExecutions");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -170,6 +174,17 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 		}
 	}
 
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
+		}
+	}
+
 	public String getStartDateAfter() {
 		return this.startDateAfter;
 	}
@@ -255,6 +270,17 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 		this.category = category;
 		if(category != null){
 			putQueryParameter("Category", category);
+		}
+	}
+
+	public String getResourceTemplateName() {
+		return this.resourceTemplateName;
+	}
+
+	public void setResourceTemplateName(String resourceTemplateName) {
+		this.resourceTemplateName = resourceTemplateName;
+		if(resourceTemplateName != null){
+			putQueryParameter("ResourceTemplateName", resourceTemplateName);
 		}
 	}
 

@@ -27,7 +27,7 @@ public class ListExecutionRiskyTasksRequest extends RpcAcsRequest<ListExecutionR
 
 	private String templateName;
 	public ListExecutionRiskyTasksRequest() {
-		super("oos", "2019-06-01", "ListExecutionRiskyTasks", "oos");
+		super("oos", "2019-06-01", "ListExecutionRiskyTasks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

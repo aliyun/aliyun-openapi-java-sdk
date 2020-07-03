@@ -85,6 +85,8 @@ public class GetTemplateResponse extends AcsResponse {
 
 		private String templateType;
 
+		private String versionName;
+
 		public String getTemplateName() {
 			return this.templateName;
 		}
@@ -195,6 +197,14 @@ public class GetTemplateResponse extends AcsResponse {
 
 		public void setTemplateType(String templateType) {
 			this.templateType = templateType;
+		}
+
+		public String getVersionName() {
+			return this.versionName;
+		}
+
+		public void setVersionName(String versionName) {
+			this.versionName = versionName;
 		}
 	}
 

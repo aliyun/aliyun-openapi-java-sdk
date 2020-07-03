@@ -27,7 +27,7 @@ public class GetExecutionTemplateRequest extends RpcAcsRequest<GetExecutionTempl
 
 	private String executionId;
 	public GetExecutionTemplateRequest() {
-		super("oos", "2019-06-01", "GetExecutionTemplate", "oos");
+		super("oos", "2019-06-01", "GetExecutionTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

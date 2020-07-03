@@ -35,7 +35,7 @@ public class UpdateTemplateRequest extends RpcAcsRequest<UpdateTemplateResponse>
 
 	private String versionName;
 	public UpdateTemplateRequest() {
-		super("oos", "2019-06-01", "UpdateTemplate", "oos");
+		super("oos", "2019-06-01", "UpdateTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class GenerateExecutionPolicyRequest extends RpcAcsRequest<GenerateExecut
 
 	private String templateName;
 	public GenerateExecutionPolicyRequest() {
-		super("oos", "2019-06-01", "GenerateExecutionPolicy", "oos");
+		super("oos", "2019-06-01", "GenerateExecutionPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

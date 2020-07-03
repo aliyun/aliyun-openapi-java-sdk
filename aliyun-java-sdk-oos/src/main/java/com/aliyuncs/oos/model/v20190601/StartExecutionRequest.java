@@ -47,7 +47,7 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 
 	private String parameters;
 	public StartExecutionRequest() {
-		super("oos", "2019-06-01", "StartExecution", "oos");
+		super("oos", "2019-06-01", "StartExecution");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

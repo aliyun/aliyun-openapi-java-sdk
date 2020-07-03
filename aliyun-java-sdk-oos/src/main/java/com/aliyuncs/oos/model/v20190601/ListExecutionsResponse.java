@@ -116,6 +116,16 @@ public class ListExecutionsResponse extends AcsResponse {
 
 		private String description;
 
+		private String targets;
+
+		private String lastTriggerTime;
+
+		private String lastTriggerStatus;
+
+		private String lastSuccessfulTriggerTime;
+
+		private String resourceStatus;
+
 		private List<CurrentTask> currentTasks;
 
 		public String getExecutionId() {
@@ -308,6 +318,46 @@ public class ListExecutionsResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getTargets() {
+			return this.targets;
+		}
+
+		public void setTargets(String targets) {
+			this.targets = targets;
+		}
+
+		public String getLastTriggerTime() {
+			return this.lastTriggerTime;
+		}
+
+		public void setLastTriggerTime(String lastTriggerTime) {
+			this.lastTriggerTime = lastTriggerTime;
+		}
+
+		public String getLastTriggerStatus() {
+			return this.lastTriggerStatus;
+		}
+
+		public void setLastTriggerStatus(String lastTriggerStatus) {
+			this.lastTriggerStatus = lastTriggerStatus;
+		}
+
+		public String getLastSuccessfulTriggerTime() {
+			return this.lastSuccessfulTriggerTime;
+		}
+
+		public void setLastSuccessfulTriggerTime(String lastSuccessfulTriggerTime) {
+			this.lastSuccessfulTriggerTime = lastSuccessfulTriggerTime;
+		}
+
+		public String getResourceStatus() {
+			return this.resourceStatus;
+		}
+
+		public void setResourceStatus(String resourceStatus) {
+			this.resourceStatus = resourceStatus;
 		}
 
 		public List<CurrentTask> getCurrentTasks() {

@@ -22,12 +22,16 @@ import com.aliyuncs.oos.Endpoint;
  * @author auto create
  * @version 
  */
-public class CancelExecutionRequest extends RpcAcsRequest<CancelExecutionResponse> {
+public class ListResourceExecutionStatusRequest extends RpcAcsRequest<ListResourceExecutionStatusResponse> {
 	   
 
 	private String executionId;
-	public CancelExecutionRequest() {
-		super("oos", "2019-06-01", "CancelExecution");
+
+	private String nextToken;
+
+	private Integer maxResults;
+	public ListResourceExecutionStatusRequest() {
+		super("oos", "2019-06-01", "ListResourceExecutionStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -46,9 +50,31 @@ public class CancelExecutionRequest extends RpcAcsRequest<CancelExecutionRespons
 		}
 	}
 
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
 	@Override
-	public Class<CancelExecutionResponse> getResponseClass() {
-		return CancelExecutionResponse.class;
+	public Class<ListResourceExecutionStatusResponse> getResponseClass() {
+		return ListResourceExecutionStatusResponse.class;
 	}
 
 }

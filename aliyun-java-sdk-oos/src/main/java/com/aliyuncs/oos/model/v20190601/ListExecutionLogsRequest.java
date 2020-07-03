@@ -35,7 +35,7 @@ public class ListExecutionLogsRequest extends RpcAcsRequest<ListExecutionLogsRes
 
 	private String taskExecutionId;
 	public ListExecutionLogsRequest() {
-		super("oos", "2019-06-01", "ListExecutionLogs", "oos");
+		super("oos", "2019-06-01", "ListExecutionLogs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
