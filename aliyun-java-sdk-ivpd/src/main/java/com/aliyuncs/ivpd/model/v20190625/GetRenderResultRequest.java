@@ -27,7 +27,7 @@ public class GetRenderResultRequest extends RpcAcsRequest<GetRenderResultRespons
 
 	private String jobId;
 	public GetRenderResultRequest() {
-		super("ivpd", "2019-06-25", "GetRenderResult", "ivpd");
+		super("ivpd", "2019-06-25", "GetRenderResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,7 +32,7 @@ public class CreateSegmentBodyJobRequest extends RpcAcsRequest<CreateSegmentBody
 
 	private Integer timeToLive;
 	public CreateSegmentBodyJobRequest() {
-		super("ivpd", "2019-06-25", "CreateSegmentBodyJob", "ivpd");
+		super("ivpd", "2019-06-25", "CreateSegmentBodyJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -44,7 +44,7 @@ public class RenderImageForPackageDesignRequest extends RpcAcsRequest<RenderImag
 
 	private Integer targetHeight;
 	public RenderImageForPackageDesignRequest() {
-		super("ivpd", "2019-06-25", "RenderImageForPackageDesign", "ivpd");
+		super("ivpd", "2019-06-25", "RenderImageForPackageDesign");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

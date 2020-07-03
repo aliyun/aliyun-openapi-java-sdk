@@ -38,7 +38,7 @@ public class PreviewModelForPackageDesignRequest extends RpcAcsRequest<PreviewMo
 
 	private String category;
 	public PreviewModelForPackageDesignRequest() {
-		super("ivpd", "2019-06-25", "PreviewModelForPackageDesign", "ivpd");
+		super("ivpd", "2019-06-25", "PreviewModelForPackageDesign");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -1,3 +1,6 @@
+2020-07-03 Version: 1.0.6
+- Supported UpdateUserBucketConfig.
+
 2020-06-26 Version: 1.0.5
 - Supported Api EraseLogoInVideo.
 

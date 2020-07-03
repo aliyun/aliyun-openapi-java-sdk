@@ -27,7 +27,7 @@ public class RecognizeImageStyleRequest extends RpcAcsRequest<RecognizeImageStyl
 
 	private String url;
 	public RecognizeImageStyleRequest() {
-		super("ivpd", "2019-06-25", "RecognizeImageStyle", "ivpd");
+		super("ivpd", "2019-06-25", "RecognizeImageStyle");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

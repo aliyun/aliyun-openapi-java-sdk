@@ -15,6 +15,7 @@
 package com.aliyuncs.ivpd.model.v20190625;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ivpd.Endpoint;
 
@@ -22,14 +23,12 @@ import com.aliyuncs.ivpd.Endpoint;
  * @author auto create
  * @version 
  */
-public class ExtendImageStyleRequest extends RpcAcsRequest<ExtendImageStyleResponse> {
+public class ListUserBucketsRequest extends RpcAcsRequest<ListUserBucketsResponse> {
 	   
 
-	private String majorUrl;
-
-	private String styleUrl;
-	public ExtendImageStyleRequest() {
-		super("ivpd", "2019-06-25", "ExtendImageStyle");
+	private List<Data> datas;
+	public ListUserBucketsRequest() {
+		super("ivpd", "2019-06-25", "ListUserBuckets");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +36,35 @@ public class ExtendImageStyleRequest extends RpcAcsRequest<ExtendImageStyleRespo
 		} catch (Exception e) {}
 	}
 
-	public String getMajorUrl() {
-		return this.majorUrl;
+	public List<Data> getDatas() {
+		return this.datas;
 	}
 
-	public void setMajorUrl(String majorUrl) {
-		this.majorUrl = majorUrl;
-		if(majorUrl != null){
-			putBodyParameter("MajorUrl", majorUrl);
+	public void setDatas(List<Data> datas) {
+		this.datas = datas;	
+		if (datas != null) {
+			for (int depth1 = 0; depth1 < datas.size(); depth1++) {
+				putBodyParameter("Data." + (depth1 + 1) + ".RegionId" , datas.get(depth1).getRegionId());
+			}
+		}	
+	}
+
+	public static class Data {
+
+		private String regionId;
+
+		public String getRegionId() {
+			return this.regionId;
 		}
-	}
 
-	public String getStyleUrl() {
-		return this.styleUrl;
-	}
-
-	public void setStyleUrl(String styleUrl) {
-		this.styleUrl = styleUrl;
-		if(styleUrl != null){
-			putBodyParameter("StyleUrl", styleUrl);
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 
 	@Override
-	public Class<ExtendImageStyleResponse> getResponseClass() {
-		return ExtendImageStyleResponse.class;
+	public Class<ListUserBucketsResponse> getResponseClass() {
+		return ListUserBucketsResponse.class;
 	}
 
 }

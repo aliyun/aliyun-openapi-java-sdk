@@ -31,7 +31,7 @@ public class ChangeImageSizeRequest extends RpcAcsRequest<ChangeImageSizeRespons
 
 	private Integer height;
 	public ChangeImageSizeRequest() {
-		super("ivpd", "2019-06-25", "ChangeImageSize", "ivpd");
+		super("ivpd", "2019-06-25", "ChangeImageSize");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

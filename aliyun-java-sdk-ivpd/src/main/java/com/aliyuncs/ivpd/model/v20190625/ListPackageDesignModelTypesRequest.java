@@ -25,7 +25,7 @@ import com.aliyuncs.ivpd.Endpoint;
 public class ListPackageDesignModelTypesRequest extends RpcAcsRequest<ListPackageDesignModelTypesResponse> {
 	   
 	public ListPackageDesignModelTypesRequest() {
-		super("ivpd", "2019-06-25", "ListPackageDesignModelTypes", "ivpd");
+		super("ivpd", "2019-06-25", "ListPackageDesignModelTypes");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

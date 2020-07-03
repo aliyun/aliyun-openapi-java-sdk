@@ -22,14 +22,10 @@ import com.aliyuncs.ivpd.Endpoint;
  * @author auto create
  * @version 
  */
-public class ExtendImageStyleRequest extends RpcAcsRequest<ExtendImageStyleResponse> {
+public class GetUserBucketConfigRequest extends RpcAcsRequest<GetUserBucketConfigResponse> {
 	   
-
-	private String majorUrl;
-
-	private String styleUrl;
-	public ExtendImageStyleRequest() {
-		super("ivpd", "2019-06-25", "ExtendImageStyle");
+	public GetUserBucketConfigRequest() {
+		super("ivpd", "2019-06-25", "GetUserBucketConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +33,9 @@ public class ExtendImageStyleRequest extends RpcAcsRequest<ExtendImageStyleRespo
 		} catch (Exception e) {}
 	}
 
-	public String getMajorUrl() {
-		return this.majorUrl;
-	}
-
-	public void setMajorUrl(String majorUrl) {
-		this.majorUrl = majorUrl;
-		if(majorUrl != null){
-			putBodyParameter("MajorUrl", majorUrl);
-		}
-	}
-
-	public String getStyleUrl() {
-		return this.styleUrl;
-	}
-
-	public void setStyleUrl(String styleUrl) {
-		this.styleUrl = styleUrl;
-		if(styleUrl != null){
-			putBodyParameter("StyleUrl", styleUrl);
-		}
-	}
-
 	@Override
-	public Class<ExtendImageStyleResponse> getResponseClass() {
-		return ExtendImageStyleResponse.class;
+	public Class<GetUserBucketConfigResponse> getResponseClass() {
+		return GetUserBucketConfigResponse.class;
 	}
 
 }
