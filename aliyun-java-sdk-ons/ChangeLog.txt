@@ -1,3 +1,6 @@
+2020-07-03 Version: 3.1.5
+- Supports tag management APIs.
+
 2020-03-06 Version: 3.1.4
 - Add request parameter groupType for OnsGroupCreate.
 - Add request parameter groupType for OnsGroupList.

@@ -23,21 +23,47 @@ import com.aliyuncs.ons.Endpoint;
  * @author auto create
  * @version 
  */
-public class OnsTopicListRequest extends RpcAcsRequest<OnsTopicListResponse> {
+public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 	   
+
+	private List<String> resourceIds;
+
+	private String resourceType;
 
 	private String instanceId;
 
-	private String topic;
-
 	private List<Tag> tags;
-	public OnsTopicListRequest() {
-		super("Ons", "2019-02-14", "OnsTopicList", "ons");
+	public TagResourcesRequest() {
+		super("Ons", "2019-02-14", "TagResources", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getResourceIds() {
+		return this.resourceIds;
+	}
+
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
 	}
 
 	public String getInstanceId() {
@@ -48,17 +74,6 @@ public class OnsTopicListRequest extends RpcAcsRequest<OnsTopicListResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getTopic() {
-		return this.topic;
-	}
-
-	public void setTopic(String topic) {
-		this.topic = topic;
-		if(topic != null){
-			putQueryParameter("Topic", topic);
 		}
 	}
 
@@ -100,8 +115,8 @@ public class OnsTopicListRequest extends RpcAcsRequest<OnsTopicListResponse> {
 	}
 
 	@Override
-	public Class<OnsTopicListResponse> getResponseClass() {
-		return OnsTopicListResponse.class;
+	public Class<TagResourcesResponse> getResponseClass() {
+		return TagResourcesResponse.class;
 	}
 
 }

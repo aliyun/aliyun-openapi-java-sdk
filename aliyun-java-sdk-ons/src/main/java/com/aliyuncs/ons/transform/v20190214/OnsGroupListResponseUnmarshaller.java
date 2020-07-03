@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ons.model.v20190214.OnsGroupListResponse;
 import com.aliyuncs.ons.model.v20190214.OnsGroupListResponse.SubscribeInfoDo;
+import com.aliyuncs.ons.model.v20190214.OnsGroupListResponse.SubscribeInfoDo.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,6 +41,16 @@ public class OnsGroupListResponseUnmarshaller {
 			subscribeInfoDo.setIndependentNaming(_ctx.booleanValue("OnsGroupListResponse.Data["+ i +"].IndependentNaming"));
 			subscribeInfoDo.setCreateTime(_ctx.longValue("OnsGroupListResponse.Data["+ i +"].CreateTime"));
 			subscribeInfoDo.setGroupType(_ctx.stringValue("OnsGroupListResponse.Data["+ i +"].GroupType"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("OnsGroupListResponse.Data["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("OnsGroupListResponse.Data["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("OnsGroupListResponse.Data["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			subscribeInfoDo.setTags(tags);
 
 			data.add(subscribeInfoDo);
 		}

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ons.model.v20190214.OnsTopicListResponse;
 import com.aliyuncs.ons.model.v20190214.OnsTopicListResponse.PublishInfoDo;
+import com.aliyuncs.ons.model.v20190214.OnsTopicListResponse.PublishInfoDo.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +42,16 @@ public class OnsTopicListResponseUnmarshaller {
 			publishInfoDo.setMessageType(_ctx.integerValue("OnsTopicListResponse.Data["+ i +"].MessageType"));
 			publishInfoDo.setInstanceId(_ctx.stringValue("OnsTopicListResponse.Data["+ i +"].InstanceId"));
 			publishInfoDo.setIndependentNaming(_ctx.booleanValue("OnsTopicListResponse.Data["+ i +"].IndependentNaming"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("OnsTopicListResponse.Data["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("OnsTopicListResponse.Data["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("OnsTopicListResponse.Data["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			publishInfoDo.setTags(tags);
 
 			data.add(publishInfoDo);
 		}

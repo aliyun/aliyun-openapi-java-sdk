@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ons.model.v20190214.OnsInstanceInServiceListResponse;
 import com.aliyuncs.ons.model.v20190214.OnsInstanceInServiceListResponse.InstanceVO;
+import com.aliyuncs.ons.model.v20190214.OnsInstanceInServiceListResponse.InstanceVO.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +39,16 @@ public class OnsInstanceInServiceListResponseUnmarshaller {
 			instanceVO.setInstanceType(_ctx.integerValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceType"));
 			instanceVO.setInstanceName(_ctx.stringValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceName"));
 			instanceVO.setIndependentNaming(_ctx.booleanValue("OnsInstanceInServiceListResponse.Data["+ i +"].IndependentNaming"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("OnsInstanceInServiceListResponse.Data["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("OnsInstanceInServiceListResponse.Data["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("OnsInstanceInServiceListResponse.Data["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			instanceVO.setTags(tags);
 
 			data.add(instanceVO);
 		}

@@ -23,21 +23,49 @@ import com.aliyuncs.ons.Endpoint;
  * @author auto create
  * @version 
  */
-public class OnsTopicListRequest extends RpcAcsRequest<OnsTopicListResponse> {
+public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
 	   
+
+	private List<String> resourceIds;
+
+	private String resourceType;
 
 	private String instanceId;
 
-	private String topic;
+	private String nextToken;
 
 	private List<Tag> tags;
-	public OnsTopicListRequest() {
-		super("Ons", "2019-02-14", "OnsTopicList", "ons");
+	public ListTagResourcesRequest() {
+		super("Ons", "2019-02-14", "ListTagResources", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getResourceIds() {
+		return this.resourceIds;
+	}
+
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
 	}
 
 	public String getInstanceId() {
@@ -51,14 +79,14 @@ public class OnsTopicListRequest extends RpcAcsRequest<OnsTopicListResponse> {
 		}
 	}
 
-	public String getTopic() {
-		return this.topic;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setTopic(String topic) {
-		this.topic = topic;
-		if(topic != null){
-			putQueryParameter("Topic", topic);
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -100,8 +128,8 @@ public class OnsTopicListRequest extends RpcAcsRequest<OnsTopicListResponse> {
 	}
 
 	@Override
-	public Class<OnsTopicListResponse> getResponseClass() {
-		return OnsTopicListResponse.class;
+	public Class<ListTagResourcesResponse> getResponseClass() {
+		return ListTagResourcesResponse.class;
 	}
 
 }
