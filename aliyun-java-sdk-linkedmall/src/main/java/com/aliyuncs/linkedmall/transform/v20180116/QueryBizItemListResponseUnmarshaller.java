@@ -64,6 +64,12 @@ public class QueryBizItemListResponseUnmarshaller {
 				sku.setCanSell(_ctx.booleanValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].CanSell"));
 				sku.setCustomizedAttributeMap(_ctx.mapValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].CustomizedAttributeMap"));
 
+				List<String> userLabelList = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].UserLabelList.Length"); k++) {
+					userLabelList.add(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].UserLabelList["+ k +"]"));
+				}
+				sku.setUserLabelList(userLabelList);
+
 				List<GradePriceModel> gradePriceModels = new ArrayList<GradePriceModel>();
 				for (int k = 0; k < _ctx.lengthValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].GradePriceModels.Length"); k++) {
 					GradePriceModel gradePriceModel = new GradePriceModel();
@@ -81,11 +87,11 @@ public class QueryBizItemListResponseUnmarshaller {
 					gradePriceModel.setAccessUrl(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].GradePriceModels["+ k +"].AccessUrl"));
 					gradePriceModel.setIcon(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].GradePriceModels["+ k +"].Icon"));
 
-					List<String> userLabelList = new ArrayList<String>();
+					List<String> userLabelList1 = new ArrayList<String>();
 					for (int l = 0; l < _ctx.lengthValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].GradePriceModels["+ k +"].UserLabelList.Length"); l++) {
-						userLabelList.add(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].GradePriceModels["+ k +"].UserLabelList["+ l +"]"));
+						userLabelList1.add(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].GradePriceModels["+ k +"].UserLabelList["+ l +"]"));
 					}
-					gradePriceModel.setUserLabelList(userLabelList);
+					gradePriceModel.setUserLabelList1(userLabelList1);
 
 					gradePriceModels.add(gradePriceModel);
 				}

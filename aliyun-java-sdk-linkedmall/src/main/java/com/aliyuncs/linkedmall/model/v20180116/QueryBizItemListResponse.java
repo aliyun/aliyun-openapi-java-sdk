@@ -240,6 +240,8 @@ public class QueryBizItemListResponse extends AcsResponse {
 
 			private List<GradePriceModel> gradePriceModels;
 
+			private List<String> userLabelList;
+
 			public Long getSkuId() {
 				return this.skuId;
 			}
@@ -320,6 +322,14 @@ public class QueryBizItemListResponse extends AcsResponse {
 				this.gradePriceModels = gradePriceModels;
 			}
 
+			public List<String> getUserLabelList() {
+				return this.userLabelList;
+			}
+
+			public void setUserLabelList(List<String> userLabelList) {
+				this.userLabelList = userLabelList;
+			}
+
 			public static class GradePriceModel {
 
 				private String characteristicCode;
@@ -348,7 +358,7 @@ public class QueryBizItemListResponse extends AcsResponse {
 
 				private String icon;
 
-				private List<String> userLabelList;
+				private List<String> userLabelList1;
 
 				public String getCharacteristicCode() {
 					return this.characteristicCode;
@@ -454,12 +464,12 @@ public class QueryBizItemListResponse extends AcsResponse {
 					this.icon = icon;
 				}
 
-				public List<String> getUserLabelList() {
-					return this.userLabelList;
+				public List<String> getUserLabelList1() {
+					return this.userLabelList1;
 				}
 
-				public void setUserLabelList(List<String> userLabelList) {
-					this.userLabelList = userLabelList;
+				public void setUserLabelList1(List<String> userLabelList1) {
+					this.userLabelList1 = userLabelList1;
 				}
 			}
 		}

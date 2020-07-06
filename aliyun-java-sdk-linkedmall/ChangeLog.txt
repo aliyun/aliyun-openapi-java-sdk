@@ -1,3 +1,6 @@
+2020-07-06 Version: 2.12.6
+- Modify QueryBizItemList, add user label.
+
 2020-06-24 Version: 2.12.5
 - Add QueryOrderCommissionRate.
 - Modify QueryLogistics, add company code.
