@@ -15,6 +15,7 @@
 package com.aliyuncs.scsp.model.v20200702;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -29,6 +30,8 @@ public class UpdateAgentRequest extends RpcAcsRequest<UpdateAgentResponse> {
 	private String accountName;
 
 	private String displayName;
+
+	private List<Long> skillGroupIdLists;
 	public UpdateAgentRequest() {
 		super("scsp", "2020-07-02", "UpdateAgent", "scsp");
 		setMethod(MethodType.PUT);
@@ -65,6 +68,19 @@ public class UpdateAgentRequest extends RpcAcsRequest<UpdateAgentResponse> {
 		if(displayName != null){
 			putBodyParameter("DisplayName", displayName);
 		}
+	}
+
+	public List<Long> getSkillGroupIdLists() {
+		return this.skillGroupIdLists;
+	}
+
+	public void setSkillGroupIdLists(List<Long> skillGroupIdLists) {
+		this.skillGroupIdLists = skillGroupIdLists;	
+		if (skillGroupIdLists != null) {
+			for (int i = 0; i < skillGroupIdLists.size(); i++) {
+				putBodyParameter("SkillGroupIdList." + (i + 1) , skillGroupIdLists.get(i));
+			}
+		}	
 	}
 
 	@Override

@@ -15,25 +15,26 @@
 package com.aliyuncs.scsp.model.v20200702;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateAgentRequest extends RpcAcsRequest<CreateAgentResponse> {
+public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupResponse> {
 	   
 
 	private String instanceId;
 
-	private String accountName;
-
 	private String displayName;
 
-	private List<Long> skillGroupIdLists;
-	public CreateAgentRequest() {
-		super("scsp", "2020-07-02", "CreateAgent", "scsp");
+	private Integer channelType;
+
+	private String skillGroupName;
+
+	private String description;
+	public CreateSkillGroupRequest() {
+		super("scsp", "2020-07-02", "CreateSkillGroup", "scsp");
 		setMethod(MethodType.POST);
 	}
 
@@ -48,17 +49,6 @@ public class CreateAgentRequest extends RpcAcsRequest<CreateAgentResponse> {
 		}
 	}
 
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putBodyParameter("AccountName", accountName);
-		}
-	}
-
 	public String getDisplayName() {
 		return this.displayName;
 	}
@@ -70,22 +60,42 @@ public class CreateAgentRequest extends RpcAcsRequest<CreateAgentResponse> {
 		}
 	}
 
-	public List<Long> getSkillGroupIdLists() {
-		return this.skillGroupIdLists;
+	public Integer getChannelType() {
+		return this.channelType;
 	}
 
-	public void setSkillGroupIdLists(List<Long> skillGroupIdLists) {
-		this.skillGroupIdLists = skillGroupIdLists;	
-		if (skillGroupIdLists != null) {
-			for (int i = 0; i < skillGroupIdLists.size(); i++) {
-				putBodyParameter("SkillGroupIdList." + (i + 1) , skillGroupIdLists.get(i));
-			}
-		}	
+	public void setChannelType(Integer channelType) {
+		this.channelType = channelType;
+		if(channelType != null){
+			putBodyParameter("ChannelType", channelType.toString());
+		}
+	}
+
+	public String getSkillGroupName() {
+		return this.skillGroupName;
+	}
+
+	public void setSkillGroupName(String skillGroupName) {
+		this.skillGroupName = skillGroupName;
+		if(skillGroupName != null){
+			putBodyParameter("SkillGroupName", skillGroupName);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putBodyParameter("Description", description);
+		}
 	}
 
 	@Override
-	public Class<CreateAgentResponse> getResponseClass() {
-		return CreateAgentResponse.class;
+	public Class<CreateSkillGroupResponse> getResponseClass() {
+		return CreateSkillGroupResponse.class;
 	}
 
 }
