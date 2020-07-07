@@ -16,14 +16,14 @@ package com.aliyuncs.vcs.model.v20200515;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vcs.transform.v20200515.ListMotorAlgorithmResultsResponseUnmarshaller;
+import com.aliyuncs.vcs.transform.v20200515.ListEventAlgorithmResultsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListMotorAlgorithmResultsResponse extends AcsResponse {
+public class ListEventAlgorithmResultsResponse extends AcsResponse {
 
 	private String code;
 
@@ -119,31 +119,29 @@ public class ListMotorAlgorithmResultsResponse extends AcsResponse {
 
 		public static class RecordsItem {
 
+			private String capStyle;
+
 			private String corpId;
 
 			private String dataSourceId;
 
-			private Float leftTopX;
+			private String eventType;
 
-			private Float leftTopY;
-
-			private String motorId;
+			private String faceCount;
 
 			private String picUrlPath;
-
-			private String plateNumber;
-
-			private Float rightBottomX;
-
-			private Float rightBottomY;
 
 			private String shotTime;
 
 			private String targetPicUrlPath;
 
-			private String motorStyle;
+			public String getCapStyle() {
+				return this.capStyle;
+			}
 
-			private String motorModel;
+			public void setCapStyle(String capStyle) {
+				this.capStyle = capStyle;
+			}
 
 			public String getCorpId() {
 				return this.corpId;
@@ -161,28 +159,20 @@ public class ListMotorAlgorithmResultsResponse extends AcsResponse {
 				this.dataSourceId = dataSourceId;
 			}
 
-			public Float getLeftTopX() {
-				return this.leftTopX;
+			public String getEventType() {
+				return this.eventType;
 			}
 
-			public void setLeftTopX(Float leftTopX) {
-				this.leftTopX = leftTopX;
+			public void setEventType(String eventType) {
+				this.eventType = eventType;
 			}
 
-			public Float getLeftTopY() {
-				return this.leftTopY;
+			public String getFaceCount() {
+				return this.faceCount;
 			}
 
-			public void setLeftTopY(Float leftTopY) {
-				this.leftTopY = leftTopY;
-			}
-
-			public String getMotorId() {
-				return this.motorId;
-			}
-
-			public void setMotorId(String motorId) {
-				this.motorId = motorId;
+			public void setFaceCount(String faceCount) {
+				this.faceCount = faceCount;
 			}
 
 			public String getPicUrlPath() {
@@ -191,30 +181,6 @@ public class ListMotorAlgorithmResultsResponse extends AcsResponse {
 
 			public void setPicUrlPath(String picUrlPath) {
 				this.picUrlPath = picUrlPath;
-			}
-
-			public String getPlateNumber() {
-				return this.plateNumber;
-			}
-
-			public void setPlateNumber(String plateNumber) {
-				this.plateNumber = plateNumber;
-			}
-
-			public Float getRightBottomX() {
-				return this.rightBottomX;
-			}
-
-			public void setRightBottomX(Float rightBottomX) {
-				this.rightBottomX = rightBottomX;
-			}
-
-			public Float getRightBottomY() {
-				return this.rightBottomY;
-			}
-
-			public void setRightBottomY(Float rightBottomY) {
-				this.rightBottomY = rightBottomY;
 			}
 
 			public String getShotTime() {
@@ -232,28 +198,12 @@ public class ListMotorAlgorithmResultsResponse extends AcsResponse {
 			public void setTargetPicUrlPath(String targetPicUrlPath) {
 				this.targetPicUrlPath = targetPicUrlPath;
 			}
-
-			public String getMotorStyle() {
-				return this.motorStyle;
-			}
-
-			public void setMotorStyle(String motorStyle) {
-				this.motorStyle = motorStyle;
-			}
-
-			public String getMotorModel() {
-				return this.motorModel;
-			}
-
-			public void setMotorModel(String motorModel) {
-				this.motorModel = motorModel;
-			}
 		}
 	}
 
 	@Override
-	public ListMotorAlgorithmResultsResponse getInstance(UnmarshallerContext context) {
-		return	ListMotorAlgorithmResultsResponseUnmarshaller.unmarshall(this, context);
+	public ListEventAlgorithmResultsResponse getInstance(UnmarshallerContext context) {
+		return	ListEventAlgorithmResultsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

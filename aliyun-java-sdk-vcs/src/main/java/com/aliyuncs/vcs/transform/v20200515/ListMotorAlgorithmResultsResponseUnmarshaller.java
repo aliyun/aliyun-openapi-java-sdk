@@ -51,6 +51,8 @@ public class ListMotorAlgorithmResultsResponseUnmarshaller {
 			recordsItem.setRightBottomY(_ctx.floatValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].RightBottomY"));
 			recordsItem.setShotTime(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].ShotTime"));
 			recordsItem.setTargetPicUrlPath(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].TargetPicUrlPath"));
+			recordsItem.setMotorStyle(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorStyle"));
+			recordsItem.setMotorModel(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorModel"));
 
 			records.add(recordsItem);
 		}
