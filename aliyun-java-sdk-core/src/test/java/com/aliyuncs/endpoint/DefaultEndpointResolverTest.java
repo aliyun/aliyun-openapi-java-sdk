@@ -2,6 +2,8 @@ package com.aliyuncs.endpoint;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
+
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.aliyuncs.profile.DefaultProfile;
@@ -16,6 +18,15 @@ public class DefaultEndpointResolverTest {
         DefaultEndpointResolver resolver = new DefaultEndpointResolver(client);
 
         assertEquals("ecs-cn-hangzhou.aliyuncs.com", resolver.resolve(request));
+    }
+
+    @Test
+    public void getSetEndpointResolverTest() throws Exception{
+        DefaultEndpointResolver defaultEndpointResolver = new DefaultEndpointResolver(null);
+        UserConfigEndpointResolverTest resolverTest = new UserConfigEndpointResolverTest();
+        defaultEndpointResolver.setInsideEndpointResolver(resolverTest);
+        Assert.assertEquals(resolverTest, defaultEndpointResolver.getInsideEndpointResolver());
+
     }
 
     @Test

@@ -25,6 +25,7 @@ public class DefaultEndpointResolver implements EndpointResolver {
         // The order is very IMPORTANT!
         resolverChain.add(predefinedEndpointResolver);
         resolverChain.add(userCustomizedEndpointResolver);
+
         if (profile.isUsingVpcEndpoint()) {
             resolverChain.add(new UserVpcEndpointResolver());
         }
@@ -44,6 +45,14 @@ public class DefaultEndpointResolver implements EndpointResolver {
         }
 
         insideEndpointResolver = new ChainedEndpointResolver(resolverChain);
+    }
+
+    public EndpointResolver getInsideEndpointResolver() {
+        return insideEndpointResolver;
+    }
+
+    public void setInsideEndpointResolver(EndpointResolver insideEndpointResolver) {
+        this.insideEndpointResolver = insideEndpointResolver;
     }
 
     public DefaultEndpointResolver(IAcsClient client) {
