@@ -127,7 +127,7 @@ public class GetFileResponse extends AcsResponse {
 
 			private Integer fileType;
 
-			private Integer useType;
+			private String useType;
 
 			private String fileDescription;
 
@@ -217,11 +217,11 @@ public class GetFileResponse extends AcsResponse {
 				this.fileType = fileType;
 			}
 
-			public Integer getUseType() {
+			public String getUseType() {
 				return this.useType;
 			}
 
-			public void setUseType(Integer useType) {
+			public void setUseType(String useType) {
 				this.useType = useType;
 			}
 
@@ -292,9 +292,9 @@ public class GetFileResponse extends AcsResponse {
 
 		public static class NodeConfiguration {
 
-			private Integer taskRerunTime;
+			private Integer autoRerunTimes;
 
-			private Integer taskRerunIntervalMillis;
+			private Integer autoRerunIntervalMillis;
 
 			private String rerunMode;
 
@@ -318,20 +318,20 @@ public class GetFileResponse extends AcsResponse {
 
 			private List<NodeInputOutput1> outputList;
 
-			public Integer getTaskRerunTime() {
-				return this.taskRerunTime;
+			public Integer getAutoRerunTimes() {
+				return this.autoRerunTimes;
 			}
 
-			public void setTaskRerunTime(Integer taskRerunTime) {
-				this.taskRerunTime = taskRerunTime;
+			public void setAutoRerunTimes(Integer autoRerunTimes) {
+				this.autoRerunTimes = autoRerunTimes;
 			}
 
-			public Integer getTaskRerunIntervalMillis() {
-				return this.taskRerunIntervalMillis;
+			public Integer getAutoRerunIntervalMillis() {
+				return this.autoRerunIntervalMillis;
 			}
 
-			public void setTaskRerunIntervalMillis(Integer taskRerunIntervalMillis) {
-				this.taskRerunIntervalMillis = taskRerunIntervalMillis;
+			public void setAutoRerunIntervalMillis(Integer autoRerunIntervalMillis) {
+				this.autoRerunIntervalMillis = autoRerunIntervalMillis;
 			}
 
 			public String getRerunMode() {

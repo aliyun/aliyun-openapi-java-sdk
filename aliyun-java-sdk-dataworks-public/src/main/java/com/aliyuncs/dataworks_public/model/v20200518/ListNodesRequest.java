@@ -25,11 +25,11 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 	   
 
+	private String owner;
+
 	private String projectEnv;
 
 	private String bizName;
-
-	private String ownerId;
 
 	private Integer pageNumber;
 
@@ -47,6 +47,17 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOwner() {
+		return this.owner;
+	}
+
+	public void setOwner(String owner) {
+		this.owner = owner;
+		if(owner != null){
+			putBodyParameter("Owner", owner);
+		}
 	}
 
 	public String getProjectEnv() {
@@ -68,17 +79,6 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 		this.bizName = bizName;
 		if(bizName != null){
 			putBodyParameter("BizName", bizName);
-		}
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putBodyParameter("OwnerId", ownerId);
 		}
 	}
 

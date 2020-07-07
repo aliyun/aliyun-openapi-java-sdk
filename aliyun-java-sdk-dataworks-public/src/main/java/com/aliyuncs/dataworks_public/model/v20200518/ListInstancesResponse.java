@@ -93,7 +93,7 @@ public class ListInstancesResponse extends AcsResponse {
 
 		private Integer totalCount;
 
-		private List<InstancesItem> instances;
+		private List<Instance> instances;
 
 		public Integer getPageNumber() {
 			return this.pageNumber;
@@ -119,15 +119,15 @@ public class ListInstancesResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public List<InstancesItem> getInstances() {
+		public List<Instance> getInstances() {
 			return this.instances;
 		}
 
-		public void setInstances(List<InstancesItem> instances) {
+		public void setInstances(List<Instance> instances) {
 			this.instances = instances;
 		}
 
-		public static class InstancesItem {
+		public static class Instance {
 
 			private Integer nodeId;
 

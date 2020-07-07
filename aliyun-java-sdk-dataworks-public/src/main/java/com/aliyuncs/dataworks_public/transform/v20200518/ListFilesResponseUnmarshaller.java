@@ -50,7 +50,7 @@ public class ListFilesResponseUnmarshaller {
 			file.setFileFolderId(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].FileFolderId"));
 			file.setFileName(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].FileName"));
 			file.setFileType(_ctx.integerValue("ListFilesResponse.Data.Files["+ i +"].FileType"));
-			file.setUseType(_ctx.integerValue("ListFilesResponse.Data.Files["+ i +"].UseType"));
+			file.setUseType(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].UseType"));
 			file.setFileDescription(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].FileDescription"));
 			file.setContent(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].Content"));
 			file.setNodeId(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].NodeId"));

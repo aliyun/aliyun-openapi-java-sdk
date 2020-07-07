@@ -69,45 +69,25 @@ public class GetProjectDetailResponse extends AcsResponse {
 
 		private String gmtModified;
 
-		private Integer maxFlowNode;
-
 		private String defaultDiResourceGroupIdentifier;
 
-		private Integer destination;
-
 		private Integer isAllowDownload;
-
-		private String prodStorageQuota;
 
 		private Integer schedulerRetryInterval;
 
 		private String residentArea;
 
-		private Integer tablePrivacyMode;
-
 		private String projectOwnerBaseId;
-
-		private Boolean useProxyOdpsAccount;
-
-		private Boolean disableDevelopment;
 
 		private Integer projectMode;
 
 		private String gmtCreate;
 
-		private String devStorageQuota;
-
-		private Integer isDefault;
-
 		private Integer protectedMode;
-
-		private Boolean baseProject;
 
 		private Long tenantId;
 
 		private String projectDescription;
-
-		private String appkey;
 
 		private Integer schedulerMaxRetryTimes;
 
@@ -131,14 +111,6 @@ public class GetProjectDetailResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
-		public Integer getMaxFlowNode() {
-			return this.maxFlowNode;
-		}
-
-		public void setMaxFlowNode(Integer maxFlowNode) {
-			this.maxFlowNode = maxFlowNode;
-		}
-
 		public String getDefaultDiResourceGroupIdentifier() {
 			return this.defaultDiResourceGroupIdentifier;
 		}
@@ -147,28 +119,12 @@ public class GetProjectDetailResponse extends AcsResponse {
 			this.defaultDiResourceGroupIdentifier = defaultDiResourceGroupIdentifier;
 		}
 
-		public Integer getDestination() {
-			return this.destination;
-		}
-
-		public void setDestination(Integer destination) {
-			this.destination = destination;
-		}
-
 		public Integer getIsAllowDownload() {
 			return this.isAllowDownload;
 		}
 
 		public void setIsAllowDownload(Integer isAllowDownload) {
 			this.isAllowDownload = isAllowDownload;
-		}
-
-		public String getProdStorageQuota() {
-			return this.prodStorageQuota;
-		}
-
-		public void setProdStorageQuota(String prodStorageQuota) {
-			this.prodStorageQuota = prodStorageQuota;
 		}
 
 		public Integer getSchedulerRetryInterval() {
@@ -187,36 +143,12 @@ public class GetProjectDetailResponse extends AcsResponse {
 			this.residentArea = residentArea;
 		}
 
-		public Integer getTablePrivacyMode() {
-			return this.tablePrivacyMode;
-		}
-
-		public void setTablePrivacyMode(Integer tablePrivacyMode) {
-			this.tablePrivacyMode = tablePrivacyMode;
-		}
-
 		public String getProjectOwnerBaseId() {
 			return this.projectOwnerBaseId;
 		}
 
 		public void setProjectOwnerBaseId(String projectOwnerBaseId) {
 			this.projectOwnerBaseId = projectOwnerBaseId;
-		}
-
-		public Boolean getUseProxyOdpsAccount() {
-			return this.useProxyOdpsAccount;
-		}
-
-		public void setUseProxyOdpsAccount(Boolean useProxyOdpsAccount) {
-			this.useProxyOdpsAccount = useProxyOdpsAccount;
-		}
-
-		public Boolean getDisableDevelopment() {
-			return this.disableDevelopment;
-		}
-
-		public void setDisableDevelopment(Boolean disableDevelopment) {
-			this.disableDevelopment = disableDevelopment;
 		}
 
 		public Integer getProjectMode() {
@@ -235,36 +167,12 @@ public class GetProjectDetailResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
-		public String getDevStorageQuota() {
-			return this.devStorageQuota;
-		}
-
-		public void setDevStorageQuota(String devStorageQuota) {
-			this.devStorageQuota = devStorageQuota;
-		}
-
-		public Integer getIsDefault() {
-			return this.isDefault;
-		}
-
-		public void setIsDefault(Integer isDefault) {
-			this.isDefault = isDefault;
-		}
-
 		public Integer getProtectedMode() {
 			return this.protectedMode;
 		}
 
 		public void setProtectedMode(Integer protectedMode) {
 			this.protectedMode = protectedMode;
-		}
-
-		public Boolean getBaseProject() {
-			return this.baseProject;
-		}
-
-		public void setBaseProject(Boolean baseProject) {
-			this.baseProject = baseProject;
 		}
 
 		public Long getTenantId() {
@@ -281,14 +189,6 @@ public class GetProjectDetailResponse extends AcsResponse {
 
 		public void setProjectDescription(String projectDescription) {
 			this.projectDescription = projectDescription;
-		}
-
-		public String getAppkey() {
-			return this.appkey;
-		}
-
-		public void setAppkey(String appkey) {
-			this.appkey = appkey;
 		}
 
 		public Integer getSchedulerMaxRetryTimes() {

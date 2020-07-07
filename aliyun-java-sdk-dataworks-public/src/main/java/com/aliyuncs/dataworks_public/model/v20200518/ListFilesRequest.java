@@ -41,7 +41,7 @@ public class ListFilesRequest extends RpcAcsRequest<ListFilesResponse> {
 
 	private Long projectId;
 
-	private Integer useType;
+	private String useType;
 	public ListFilesRequest() {
 		super("dataworks-public", "2020-05-18", "ListFiles", "dide");
 		setMethod(MethodType.POST);
@@ -139,14 +139,14 @@ public class ListFilesRequest extends RpcAcsRequest<ListFilesResponse> {
 		}
 	}
 
-	public Integer getUseType() {
+	public String getUseType() {
 		return this.useType;
 	}
 
-	public void setUseType(Integer useType) {
+	public void setUseType(String useType) {
 		this.useType = useType;
 		if(useType != null){
-			putBodyParameter("UseType", useType.toString());
+			putBodyParameter("UseType", useType);
 		}
 	}
 

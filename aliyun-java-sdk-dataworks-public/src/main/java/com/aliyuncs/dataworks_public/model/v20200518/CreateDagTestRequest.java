@@ -22,16 +22,20 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListNodeIORequest extends RpcAcsRequest<ListNodeIOResponse> {
+public class CreateDagTestRequest extends RpcAcsRequest<CreateDagTestResponse> {
 	   
 
 	private String projectEnv;
 
-	private Long nodeId;
+	private String bizdate;
 
-	private String ioType;
-	public ListNodeIORequest() {
-		super("dataworks-public", "2020-05-18", "ListNodeIO", "dide");
+	private String name;
+
+	private String nodeParams;
+
+	private Long nodeId;
+	public CreateDagTestRequest() {
+		super("dataworks-public", "2020-05-18", "CreateDagTest", "dide");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,6 +54,39 @@ public class ListNodeIORequest extends RpcAcsRequest<ListNodeIOResponse> {
 		}
 	}
 
+	public String getBizdate() {
+		return this.bizdate;
+	}
+
+	public void setBizdate(String bizdate) {
+		this.bizdate = bizdate;
+		if(bizdate != null){
+			putBodyParameter("Bizdate", bizdate);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putBodyParameter("Name", name);
+		}
+	}
+
+	public String getNodeParams() {
+		return this.nodeParams;
+	}
+
+	public void setNodeParams(String nodeParams) {
+		this.nodeParams = nodeParams;
+		if(nodeParams != null){
+			putBodyParameter("NodeParams", nodeParams);
+		}
+	}
+
 	public Long getNodeId() {
 		return this.nodeId;
 	}
@@ -61,20 +98,9 @@ public class ListNodeIORequest extends RpcAcsRequest<ListNodeIOResponse> {
 		}
 	}
 
-	public String getIoType() {
-		return this.ioType;
-	}
-
-	public void setIoType(String ioType) {
-		this.ioType = ioType;
-		if(ioType != null){
-			putBodyParameter("IoType", ioType);
-		}
-	}
-
 	@Override
-	public Class<ListNodeIOResponse> getResponseClass() {
-		return ListNodeIOResponse.class;
+	public Class<CreateDagTestResponse> getResponseClass() {
+		return CreateDagTestResponse.class;
 	}
 
 }

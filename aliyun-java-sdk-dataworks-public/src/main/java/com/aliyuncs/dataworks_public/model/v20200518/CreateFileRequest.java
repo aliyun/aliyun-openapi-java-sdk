@@ -27,6 +27,8 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 
 	private Integer fileType;
 
+	private String dependentNodeIdList;
+
 	private String content;
 
 	private String projectIdentifier;
@@ -40,8 +42,6 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 	private String owner;
 
 	private Integer autoRerunIntervalMillis;
-
-	private String dependentCloudUuidList;
 
 	private String inputList;
 
@@ -81,6 +81,17 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 		this.fileType = fileType;
 		if(fileType != null){
 			putBodyParameter("FileType", fileType.toString());
+		}
+	}
+
+	public String getDependentNodeIdList() {
+		return this.dependentNodeIdList;
+	}
+
+	public void setDependentNodeIdList(String dependentNodeIdList) {
+		this.dependentNodeIdList = dependentNodeIdList;
+		if(dependentNodeIdList != null){
+			putBodyParameter("DependentNodeIdList", dependentNodeIdList);
 		}
 	}
 
@@ -158,17 +169,6 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 		this.autoRerunIntervalMillis = autoRerunIntervalMillis;
 		if(autoRerunIntervalMillis != null){
 			putBodyParameter("AutoRerunIntervalMillis", autoRerunIntervalMillis.toString());
-		}
-	}
-
-	public String getDependentCloudUuidList() {
-		return this.dependentCloudUuidList;
-	}
-
-	public void setDependentCloudUuidList(String dependentCloudUuidList) {
-		this.dependentCloudUuidList = dependentCloudUuidList;
-		if(dependentCloudUuidList != null){
-			putBodyParameter("DependentCloudUuidList", dependentCloudUuidList);
 		}
 	}
 

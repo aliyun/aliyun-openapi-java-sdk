@@ -32,26 +32,16 @@ public class GetProjectDetailResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setGmtModified(_ctx.stringValue("GetProjectDetailResponse.Data.GmtModified"));
-		data.setMaxFlowNode(_ctx.integerValue("GetProjectDetailResponse.Data.MaxFlowNode"));
 		data.setDefaultDiResourceGroupIdentifier(_ctx.stringValue("GetProjectDetailResponse.Data.DefaultDiResourceGroupIdentifier"));
-		data.setDestination(_ctx.integerValue("GetProjectDetailResponse.Data.Destination"));
 		data.setIsAllowDownload(_ctx.integerValue("GetProjectDetailResponse.Data.IsAllowDownload"));
-		data.setProdStorageQuota(_ctx.stringValue("GetProjectDetailResponse.Data.ProdStorageQuota"));
 		data.setSchedulerRetryInterval(_ctx.integerValue("GetProjectDetailResponse.Data.SchedulerRetryInterval"));
 		data.setResidentArea(_ctx.stringValue("GetProjectDetailResponse.Data.ResidentArea"));
-		data.setTablePrivacyMode(_ctx.integerValue("GetProjectDetailResponse.Data.TablePrivacyMode"));
 		data.setProjectOwnerBaseId(_ctx.stringValue("GetProjectDetailResponse.Data.ProjectOwnerBaseId"));
-		data.setUseProxyOdpsAccount(_ctx.booleanValue("GetProjectDetailResponse.Data.UseProxyOdpsAccount"));
-		data.setDisableDevelopment(_ctx.booleanValue("GetProjectDetailResponse.Data.DisableDevelopment"));
 		data.setProjectMode(_ctx.integerValue("GetProjectDetailResponse.Data.ProjectMode"));
 		data.setGmtCreate(_ctx.stringValue("GetProjectDetailResponse.Data.GmtCreate"));
-		data.setDevStorageQuota(_ctx.stringValue("GetProjectDetailResponse.Data.DevStorageQuota"));
-		data.setIsDefault(_ctx.integerValue("GetProjectDetailResponse.Data.IsDefault"));
 		data.setProtectedMode(_ctx.integerValue("GetProjectDetailResponse.Data.ProtectedMode"));
-		data.setBaseProject(_ctx.booleanValue("GetProjectDetailResponse.Data.BaseProject"));
 		data.setTenantId(_ctx.longValue("GetProjectDetailResponse.Data.TenantId"));
 		data.setProjectDescription(_ctx.stringValue("GetProjectDetailResponse.Data.ProjectDescription"));
-		data.setAppkey(_ctx.stringValue("GetProjectDetailResponse.Data.Appkey"));
 		data.setSchedulerMaxRetryTimes(_ctx.integerValue("GetProjectDetailResponse.Data.SchedulerMaxRetryTimes"));
 		data.setProjectName(_ctx.stringValue("GetProjectDetailResponse.Data.ProjectName"));
 		data.setProjectIdentifier(_ctx.stringValue("GetProjectDetailResponse.Data.ProjectIdentifier"));

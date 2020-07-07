@@ -48,7 +48,7 @@ public class GetFileResponseUnmarshaller {
 		file.setFileFolderId(_ctx.stringValue("GetFileResponse.Data.File.FileFolderId"));
 		file.setFileName(_ctx.stringValue("GetFileResponse.Data.File.FileName"));
 		file.setFileType(_ctx.integerValue("GetFileResponse.Data.File.FileType"));
-		file.setUseType(_ctx.integerValue("GetFileResponse.Data.File.UseType"));
+		file.setUseType(_ctx.stringValue("GetFileResponse.Data.File.UseType"));
 		file.setFileDescription(_ctx.stringValue("GetFileResponse.Data.File.FileDescription"));
 		file.setContent(_ctx.stringValue("GetFileResponse.Data.File.Content"));
 		file.setNodeId(_ctx.longValue("GetFileResponse.Data.File.NodeId"));
@@ -60,8 +60,8 @@ public class GetFileResponseUnmarshaller {
 		data.setFile(file);
 
 		NodeConfiguration nodeConfiguration = new NodeConfiguration();
-		nodeConfiguration.setTaskRerunTime(_ctx.integerValue("GetFileResponse.Data.NodeConfiguration.TaskRerunTime"));
-		nodeConfiguration.setTaskRerunIntervalMillis(_ctx.integerValue("GetFileResponse.Data.NodeConfiguration.TaskRerunIntervalMillis"));
+		nodeConfiguration.setAutoRerunTimes(_ctx.integerValue("GetFileResponse.Data.NodeConfiguration.AutoRerunTimes"));
+		nodeConfiguration.setAutoRerunIntervalMillis(_ctx.integerValue("GetFileResponse.Data.NodeConfiguration.AutoRerunIntervalMillis"));
 		nodeConfiguration.setRerunMode(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.RerunMode"));
 		nodeConfiguration.setStop(_ctx.booleanValue("GetFileResponse.Data.NodeConfiguration.Stop"));
 		nodeConfiguration.setParaValue(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.ParaValue"));

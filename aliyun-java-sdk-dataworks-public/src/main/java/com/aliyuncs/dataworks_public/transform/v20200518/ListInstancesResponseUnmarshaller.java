@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.dataworks_public.model.v20200518.ListInstancesResponse;
 import com.aliyuncs.dataworks_public.model.v20200518.ListInstancesResponse.Data;
-import com.aliyuncs.dataworks_public.model.v20200518.ListInstancesResponse.Data.InstancesItem;
+import com.aliyuncs.dataworks_public.model.v20200518.ListInstancesResponse.Data.Instance;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,26 +38,26 @@ public class ListInstancesResponseUnmarshaller {
 		data.setPageSize(_ctx.integerValue("ListInstancesResponse.Data.PageSize"));
 		data.setTotalCount(_ctx.integerValue("ListInstancesResponse.Data.TotalCount"));
 
-		List<InstancesItem> instances = new ArrayList<InstancesItem>();
+		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstancesResponse.Data.Instances.Length"); i++) {
-			InstancesItem instancesItem = new InstancesItem();
-			instancesItem.setNodeId(_ctx.integerValue("ListInstancesResponse.Data.Instances["+ i +"].NodeId"));
-			instancesItem.setInstanceId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].InstanceId"));
-			instancesItem.setDagId(_ctx.integerValue("ListInstancesResponse.Data.Instances["+ i +"].DagId"));
-			instancesItem.setDagType(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].DagType"));
-			instancesItem.setStatus(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].Status"));
-			instancesItem.setBizdate(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].Bizdate"));
-			instancesItem.setCycTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].CycTime"));
-			instancesItem.setCreateTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].CreateTime"));
-			instancesItem.setModifyTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].ModifyTime"));
-			instancesItem.setNodeName(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].NodeName"));
-			instancesItem.setBeginWaitTimeTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BeginWaitTimeTime"));
-			instancesItem.setBeginWaitResTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BeginWaitResTime"));
-			instancesItem.setBeginRunningTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BeginRunningTime"));
-			instancesItem.setParamValues(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].ParamValues"));
-			instancesItem.setFinishTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].FinishTime"));
+			Instance instance = new Instance();
+			instance.setNodeId(_ctx.integerValue("ListInstancesResponse.Data.Instances["+ i +"].NodeId"));
+			instance.setInstanceId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].InstanceId"));
+			instance.setDagId(_ctx.integerValue("ListInstancesResponse.Data.Instances["+ i +"].DagId"));
+			instance.setDagType(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].DagType"));
+			instance.setStatus(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].Status"));
+			instance.setBizdate(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].Bizdate"));
+			instance.setCycTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].CycTime"));
+			instance.setCreateTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].CreateTime"));
+			instance.setModifyTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].ModifyTime"));
+			instance.setNodeName(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].NodeName"));
+			instance.setBeginWaitTimeTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BeginWaitTimeTime"));
+			instance.setBeginWaitResTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BeginWaitResTime"));
+			instance.setBeginRunningTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BeginRunningTime"));
+			instance.setParamValues(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].ParamValues"));
+			instance.setFinishTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].FinishTime"));
 
-			instances.add(instancesItem);
+			instances.add(instance);
 		}
 		data.setInstances(instances);
 		listInstancesResponse.setData(data);

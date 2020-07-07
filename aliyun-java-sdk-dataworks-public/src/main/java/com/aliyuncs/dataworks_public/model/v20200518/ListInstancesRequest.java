@@ -27,9 +27,9 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 
 	private String projectEnv;
 
-	private String bizName;
+	private String owner;
 
-	private String ownerId;
+	private String bizName;
 
 	private Integer pageNumber;
 
@@ -62,6 +62,17 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		}
 	}
 
+	public String getOwner() {
+		return this.owner;
+	}
+
+	public void setOwner(String owner) {
+		this.owner = owner;
+		if(owner != null){
+			putBodyParameter("Owner", owner);
+		}
+	}
+
 	public String getBizName() {
 		return this.bizName;
 	}
@@ -73,17 +84,6 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		}
 	}
 
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putBodyParameter("OwnerId", ownerId);
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -91,7 +91,7 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+			putBodyParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -124,7 +124,7 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 

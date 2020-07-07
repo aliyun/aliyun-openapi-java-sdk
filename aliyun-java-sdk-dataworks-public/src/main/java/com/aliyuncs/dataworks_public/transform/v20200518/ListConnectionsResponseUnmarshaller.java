@@ -56,6 +56,7 @@ public class ListConnectionsResponseUnmarshaller {
 			connectionsItem.setId(_ctx.integerValue("ListConnectionsResponse.Data.Connections["+ i +"].Id"));
 			connectionsItem.setProjectId(_ctx.integerValue("ListConnectionsResponse.Data.Connections["+ i +"].ProjectId"));
 			connectionsItem.setStatus(_ctx.integerValue("ListConnectionsResponse.Data.Connections["+ i +"].Status"));
+			connectionsItem.setContent(_ctx.stringValue("ListConnectionsResponse.Data.Connections["+ i +"].Content"));
 
 			connections.add(connectionsItem);
 		}

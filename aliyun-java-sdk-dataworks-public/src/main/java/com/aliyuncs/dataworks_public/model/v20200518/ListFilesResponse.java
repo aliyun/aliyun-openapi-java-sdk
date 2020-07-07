@@ -147,7 +147,7 @@ public class ListFilesResponse extends AcsResponse {
 
 			private Integer fileType;
 
-			private Integer useType;
+			private String useType;
 
 			private String fileDescription;
 
@@ -237,11 +237,11 @@ public class ListFilesResponse extends AcsResponse {
 				this.fileType = fileType;
 			}
 
-			public Integer getUseType() {
+			public String getUseType() {
 				return this.useType;
 			}
 
-			public void setUseType(Integer useType) {
+			public void setUseType(String useType) {
 				this.useType = useType;
 			}
 
