@@ -1,3 +1,6 @@
+2020-07-07 Version: 1.0.4
+- Support instance pop interface.
+
 2019-10-15 Version: 1.0.3
 - Supported Managed Conditions Query and Verification Interface.
 

@@ -26,7 +26,7 @@ public class VerifyRdOperationRequest extends RpcAcsRequest<VerifyRdOperationRes
 
 	private String rdOperation;
 	public VerifyRdOperationRequest() {
-		super("efc-service", "2019-03-18", "VerifyRdOperation");
+		super("efc-service", "2019-03-18", "VerifyRdOperation", "efcservice");
 		setMethod(MethodType.POST);
 	}
 

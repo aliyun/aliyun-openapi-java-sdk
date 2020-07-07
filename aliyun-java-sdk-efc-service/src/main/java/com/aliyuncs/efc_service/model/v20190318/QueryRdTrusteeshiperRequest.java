@@ -28,7 +28,7 @@ public class QueryRdTrusteeshiperRequest extends RpcAcsRequest<QueryRdTrusteeshi
 
 	private Long userId;
 	public QueryRdTrusteeshiperRequest() {
-		super("efc-service", "2019-03-18", "QueryRdTrusteeshiper");
+		super("efc-service", "2019-03-18", "QueryRdTrusteeshiper", "efcservice");
 		setMethod(MethodType.POST);
 	}
 

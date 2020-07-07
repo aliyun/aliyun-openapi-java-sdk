@@ -28,7 +28,7 @@ public class CheckMasterTrusteeshipRequest extends RpcAcsRequest<CheckMasterTrus
 
 	private Long userId;
 	public CheckMasterTrusteeshipRequest() {
-		super("efc-service", "2019-03-18", "CheckMasterTrusteeship");
+		super("efc-service", "2019-03-18", "CheckMasterTrusteeship", "efcservice");
 		setMethod(MethodType.POST);
 	}
 
