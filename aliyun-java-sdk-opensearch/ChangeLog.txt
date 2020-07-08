@@ -1,3 +1,6 @@
+2020-07-08 Version: 0.3.0
+- Support hotword and hint.
+
 2020-06-29 Version: 0.2.1
 - Fix response structure of DescribeApp.
 
