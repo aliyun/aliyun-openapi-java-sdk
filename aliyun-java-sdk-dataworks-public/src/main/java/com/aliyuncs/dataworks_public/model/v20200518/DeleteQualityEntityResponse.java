@@ -26,7 +26,7 @@ public class DeleteQualityEntityResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private Boolean errorCode;
+	private String errorCode;
 
 	private String errorMessage;
 
@@ -44,11 +44,11 @@ public class DeleteQualityEntityResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Boolean getErrorCode() {
+	public String getErrorCode() {
 		return this.errorCode;
 	}
 
-	public void setErrorCode(Boolean errorCode) {
+	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
 	}
 

@@ -24,7 +24,7 @@ public class DeleteQualityEntityResponseUnmarshaller {
 		
 		deleteQualityEntityResponse.setRequestId(_ctx.stringValue("DeleteQualityEntityResponse.RequestId"));
 		deleteQualityEntityResponse.setSuccess(_ctx.booleanValue("DeleteQualityEntityResponse.Success"));
-		deleteQualityEntityResponse.setErrorCode(_ctx.booleanValue("DeleteQualityEntityResponse.ErrorCode"));
+		deleteQualityEntityResponse.setErrorCode(_ctx.stringValue("DeleteQualityEntityResponse.ErrorCode"));
 		deleteQualityEntityResponse.setErrorMessage(_ctx.stringValue("DeleteQualityEntityResponse.ErrorMessage"));
 		deleteQualityEntityResponse.setHttpStatusCode(_ctx.integerValue("DeleteQualityEntityResponse.HttpStatusCode"));
 		deleteQualityEntityResponse.setData(_ctx.booleanValue("DeleteQualityEntityResponse.Data"));
