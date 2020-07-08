@@ -24,22 +24,24 @@ import com.aliyuncs.http.MethodType;
 public class CreateServiceConnectionRequest extends RpcAcsRequest<CreateServiceConnectionResponse> {
 	   
 
-	private String sourceType;
+	private String serviceConnectionType;
 
 	private String userPk;
+
+	private String orgId;
 	public CreateServiceConnectionRequest() {
 		super("devops-rdc", "2020-03-03", "CreateServiceConnection");
 		setMethod(MethodType.POST);
 	}
 
-	public String getSourceType() {
-		return this.sourceType;
+	public String getServiceConnectionType() {
+		return this.serviceConnectionType;
 	}
 
-	public void setSourceType(String sourceType) {
-		this.sourceType = sourceType;
-		if(sourceType != null){
-			putBodyParameter("SourceType", sourceType);
+	public void setServiceConnectionType(String serviceConnectionType) {
+		this.serviceConnectionType = serviceConnectionType;
+		if(serviceConnectionType != null){
+			putBodyParameter("ServiceConnectionType", serviceConnectionType);
 		}
 	}
 
@@ -51,6 +53,17 @@ public class CreateServiceConnectionRequest extends RpcAcsRequest<CreateServiceC
 		this.userPk = userPk;
 		if(userPk != null){
 			putBodyParameter("UserPk", userPk);
+		}
+	}
+
+	public String getOrgId() {
+		return this.orgId;
+	}
+
+	public void setOrgId(String orgId) {
+		this.orgId = orgId;
+		if(orgId != null){
+			putBodyParameter("OrgId", orgId);
 		}
 	}
 
