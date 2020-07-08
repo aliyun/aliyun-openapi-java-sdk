@@ -33,7 +33,7 @@ public class RecognizeImageRequest extends RpcAcsRequest<RecognizeImageResponse>
 
 	private String picFormat;
 	public RecognizeImageRequest() {
-		super("Vcs", "2020-05-15", "RecognizeImage", "vcs");
+		super("Vcs", "2020-05-15", "RecognizeImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

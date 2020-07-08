@@ -15,7 +15,6 @@
 package com.aliyuncs.vcs.transform.v20200515;
 
 import com.aliyuncs.vcs.model.v20200515.CreateVideoComposeTaskResponse;
-import com.aliyuncs.vcs.model.v20200515.CreateVideoComposeTaskResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,11 +25,8 @@ public class CreateVideoComposeTaskResponseUnmarshaller {
 		createVideoComposeTaskResponse.setRequestId(_ctx.stringValue("CreateVideoComposeTaskResponse.RequestId"));
 		createVideoComposeTaskResponse.setCode(_ctx.stringValue("CreateVideoComposeTaskResponse.Code"));
 		createVideoComposeTaskResponse.setMessage(_ctx.stringValue("CreateVideoComposeTaskResponse.Message"));
-
-		Data data = new Data();
-		data.setDomainName(_ctx.integerValue("CreateVideoComposeTaskResponse.Data.DomainName"));
-		data.setBucketName(_ctx.integerValue("CreateVideoComposeTaskResponse.Data.BucketName"));
-		createVideoComposeTaskResponse.setData(data);
+		createVideoComposeTaskResponse.setDomainName(_ctx.stringValue("CreateVideoComposeTaskResponse.DomainName"));
+		createVideoComposeTaskResponse.setBucketName(_ctx.stringValue("CreateVideoComposeTaskResponse.BucketName"));
 	 
 	 	return createVideoComposeTaskResponse;
 	}

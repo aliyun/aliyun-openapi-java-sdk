@@ -29,19 +29,19 @@ public class CreateVideoComposeTaskRequest extends RpcAcsRequest<CreateVideoComp
 
 	private String domainName;
 
-	private String picUrlList;
+	private Integer videoFrameRate;
 
-	private String audioUrl;
+	private String imageFileNames;
+
+	private String audioFileName;
 
 	private String bucketName;
 
 	private String imageParameters;
 
-	private String videoRate;
-
 	private String videoFormat;
 	public CreateVideoComposeTaskRequest() {
-		super("Vcs", "2020-05-15", "CreateVideoComposeTask", "vcs");
+		super("Vcs", "2020-05-15", "CreateVideoComposeTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,25 +71,36 @@ public class CreateVideoComposeTaskRequest extends RpcAcsRequest<CreateVideoComp
 		}
 	}
 
-	public String getPicUrlList() {
-		return this.picUrlList;
+	public Integer getVideoFrameRate() {
+		return this.videoFrameRate;
 	}
 
-	public void setPicUrlList(String picUrlList) {
-		this.picUrlList = picUrlList;
-		if(picUrlList != null){
-			putBodyParameter("PicUrlList", picUrlList);
+	public void setVideoFrameRate(Integer videoFrameRate) {
+		this.videoFrameRate = videoFrameRate;
+		if(videoFrameRate != null){
+			putBodyParameter("VideoFrameRate", videoFrameRate.toString());
 		}
 	}
 
-	public String getAudioUrl() {
-		return this.audioUrl;
+	public String getImageFileNames() {
+		return this.imageFileNames;
 	}
 
-	public void setAudioUrl(String audioUrl) {
-		this.audioUrl = audioUrl;
-		if(audioUrl != null){
-			putBodyParameter("AudioUrl", audioUrl);
+	public void setImageFileNames(String imageFileNames) {
+		this.imageFileNames = imageFileNames;
+		if(imageFileNames != null){
+			putBodyParameter("ImageFileNames", imageFileNames);
+		}
+	}
+
+	public String getAudioFileName() {
+		return this.audioFileName;
+	}
+
+	public void setAudioFileName(String audioFileName) {
+		this.audioFileName = audioFileName;
+		if(audioFileName != null){
+			putBodyParameter("AudioFileName", audioFileName);
 		}
 	}
 
@@ -112,17 +123,6 @@ public class CreateVideoComposeTaskRequest extends RpcAcsRequest<CreateVideoComp
 		this.imageParameters = imageParameters;
 		if(imageParameters != null){
 			putBodyParameter("ImageParameters", imageParameters);
-		}
-	}
-
-	public String getVideoRate() {
-		return this.videoRate;
-	}
-
-	public void setVideoRate(String videoRate) {
-		this.videoRate = videoRate;
-		if(videoRate != null){
-			putBodyParameter("VideoRate", videoRate);
 		}
 	}
 

@@ -1,3 +1,6 @@
+2020-07-08 Version: 1.0.7
+- Add video compose api.
+
 2020-07-08 Version: 1.0.6.1
 - Add video summarization related API.
 

@@ -25,6 +25,8 @@ public class GetVideoComposeResultResponseUnmarshaller {
 		getVideoComposeResultResponse.setRequestId(_ctx.stringValue("GetVideoComposeResultResponse.RequestId"));
 		getVideoComposeResultResponse.setMessage(_ctx.stringValue("GetVideoComposeResultResponse.Message"));
 		getVideoComposeResultResponse.setVideoUrl(_ctx.stringValue("GetVideoComposeResultResponse.VideoUrl"));
+		getVideoComposeResultResponse.setCode(_ctx.stringValue("GetVideoComposeResultResponse.Code"));
+		getVideoComposeResultResponse.setStatus(_ctx.stringValue("GetVideoComposeResultResponse.Status"));
 	 
 	 	return getVideoComposeResultResponse;
 	}

@@ -30,6 +30,10 @@ public class GetVideoComposeResultResponse extends AcsResponse {
 
 	private String videoUrl;
 
+	private String code;
+
+	private String status;
+
 	public String getMessage() {
 		return this.message;
 	}
@@ -52,6 +56,22 @@ public class GetVideoComposeResultResponse extends AcsResponse {
 
 	public void setVideoUrl(String videoUrl) {
 		this.videoUrl = videoUrl;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	@Override

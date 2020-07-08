@@ -30,7 +30,9 @@ public class CreateVideoComposeTaskResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Data data;
+	private String domainName;
+
+	private String bucketName;
 
 	public String getCode() {
 		return this.code;
@@ -56,35 +58,20 @@ public class CreateVideoComposeTaskResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Data getData() {
-		return this.data;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setData(Data data) {
-		this.data = data;
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
 	}
 
-	public static class Data {
+	public String getBucketName() {
+		return this.bucketName;
+	}
 
-		private Integer domainName;
-
-		private Integer bucketName;
-
-		public Integer getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(Integer domainName) {
-			this.domainName = domainName;
-		}
-
-		public Integer getBucketName() {
-			return this.bucketName;
-		}
-
-		public void setBucketName(Integer bucketName) {
-			this.bucketName = bucketName;
-		}
+	public void setBucketName(String bucketName) {
+		this.bucketName = bucketName;
 	}
 
 	@Override
