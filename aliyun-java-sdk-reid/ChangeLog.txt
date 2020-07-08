@@ -1,3 +1,8 @@
+2020-07-08 Version: 1.1.8.2
+- Remove GetFootwearPosition PullTakeShoesEvent PullTryOnShoesEvent.
+- Add GetFootwearEvent.
+- Please ignore the pd s pot.
+
 2020-07-07 Version: 1.1.8.1
 - Fix previous version problems.
 

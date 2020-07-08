@@ -22,19 +22,30 @@ import com.aliyuncs.reid.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCursorRequest extends RpcAcsRequest<DescribeCursorResponse> {
+public class GetFootwearEventRequest extends RpcAcsRequest<GetFootwearEventResponse> {
 	   
 
-	private Long storeId;
+	private String date;
 
-	private String time;
-	public DescribeCursorRequest() {
-		super("reid", "2019-09-28", "DescribeCursor", "1.1.8.2");
+	private Long storeId;
+	public GetFootwearEventRequest() {
+		super("reid", "2019-09-28", "GetFootwearEvent", "1.1.8.2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDate() {
+		return this.date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+		if(date != null){
+			putBodyParameter("Date", date);
+		}
 	}
 
 	public Long getStoreId() {
@@ -48,20 +59,9 @@ public class DescribeCursorRequest extends RpcAcsRequest<DescribeCursorResponse>
 		}
 	}
 
-	public String getTime() {
-		return this.time;
-	}
-
-	public void setTime(String time) {
-		this.time = time;
-		if(time != null){
-			putBodyParameter("Time", time);
-		}
-	}
-
 	@Override
-	public Class<DescribeCursorResponse> getResponseClass() {
-		return DescribeCursorResponse.class;
+	public Class<GetFootwearEventResponse> getResponseClass() {
+		return GetFootwearEventResponse.class;
 	}
 
 }

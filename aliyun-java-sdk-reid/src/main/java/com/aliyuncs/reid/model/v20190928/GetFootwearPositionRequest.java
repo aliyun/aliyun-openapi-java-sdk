@@ -31,7 +31,7 @@ public class GetFootwearPositionRequest extends RpcAcsRequest<GetFootwearPositio
 
 	private String skuId;
 	public GetFootwearPositionRequest() {
-		super("reid", "2019-09-28", "GetFootwearPosition", "1.1.8.1");
+		super("reid", "2019-09-28", "GetFootwearPosition", "1.1.8.2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
