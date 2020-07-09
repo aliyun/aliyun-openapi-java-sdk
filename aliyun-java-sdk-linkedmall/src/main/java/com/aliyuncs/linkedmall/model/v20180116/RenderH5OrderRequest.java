@@ -29,6 +29,8 @@ public class RenderH5OrderRequest extends RpcAcsRequest<RenderH5OrderResponse> {
 
 	private String bizUid;
 
+	private String accountType;
+
 	private Boolean useAnonymousTbAccount;
 
 	private String thirdPartyUserId;
@@ -62,6 +64,17 @@ public class RenderH5OrderRequest extends RpcAcsRequest<RenderH5OrderResponse> {
 		this.bizUid = bizUid;
 		if(bizUid != null){
 			putQueryParameter("BizUid", bizUid);
+		}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
 		}
 	}
 

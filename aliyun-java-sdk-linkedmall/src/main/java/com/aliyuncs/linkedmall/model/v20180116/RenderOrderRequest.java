@@ -30,6 +30,8 @@ public class RenderOrderRequest extends RpcAcsRequest<RenderOrderResponse> {
 
 	private String extJson;
 
+	private String accountType;
+
 	private Boolean useAnonymousTbAccount;
 
 	private String lmItemId;
@@ -69,6 +71,17 @@ public class RenderOrderRequest extends RpcAcsRequest<RenderOrderResponse> {
 		this.extJson = extJson;
 		if(extJson != null){
 			putQueryParameter("ExtJson", extJson);
+		}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
 		}
 	}
 
