@@ -26,8 +26,6 @@ public class DescribeCustomEventCountRequest extends RpcAcsRequest<DescribeCusto
 
 	private String eventId;
 
-	private String level;
-
 	private String groupId;
 
 	private String endTime;
@@ -50,17 +48,6 @@ public class DescribeCustomEventCountRequest extends RpcAcsRequest<DescribeCusto
 		this.eventId = eventId;
 		if(eventId != null){
 			putQueryParameter("EventId", eventId);
-		}
-	}
-
-	public String getLevel() {
-		return this.level;
-	}
-
-	public void setLevel(String level) {
-		this.level = level;
-		if(level != null){
-			putQueryParameter("Level", level);
 		}
 	}
 

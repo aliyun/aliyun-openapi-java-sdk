@@ -34,8 +34,6 @@ public class DescribeCustomEventAttributeRequest extends RpcAcsRequest<DescribeC
 
 	private Integer pageSize;
 
-	private String level;
-
 	private String groupId;
 
 	private String endTime;
@@ -98,17 +96,6 @@ public class DescribeCustomEventAttributeRequest extends RpcAcsRequest<DescribeC
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getLevel() {
-		return this.level;
-	}
-
-	public void setLevel(String level) {
-		this.level = level;
-		if(level != null){
-			putQueryParameter("Level", level);
 		}
 	}
 

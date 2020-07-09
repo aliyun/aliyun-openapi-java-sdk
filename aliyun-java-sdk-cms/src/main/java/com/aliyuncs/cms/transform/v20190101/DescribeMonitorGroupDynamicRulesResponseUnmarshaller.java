@@ -31,9 +31,6 @@ public class DescribeMonitorGroupDynamicRulesResponseUnmarshaller {
 		describeMonitorGroupDynamicRulesResponse.setSuccess(_ctx.booleanValue("DescribeMonitorGroupDynamicRulesResponse.Success"));
 		describeMonitorGroupDynamicRulesResponse.setCode(_ctx.integerValue("DescribeMonitorGroupDynamicRulesResponse.Code"));
 		describeMonitorGroupDynamicRulesResponse.setMessage(_ctx.stringValue("DescribeMonitorGroupDynamicRulesResponse.Message"));
-		describeMonitorGroupDynamicRulesResponse.setPageNumber(_ctx.integerValue("DescribeMonitorGroupDynamicRulesResponse.PageNumber"));
-		describeMonitorGroupDynamicRulesResponse.setPageSize(_ctx.integerValue("DescribeMonitorGroupDynamicRulesResponse.PageSize"));
-		describeMonitorGroupDynamicRulesResponse.setTotal(_ctx.integerValue("DescribeMonitorGroupDynamicRulesResponse.Total"));
 
 		List<ResourceItem> resource = new ArrayList<ResourceItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMonitorGroupDynamicRulesResponse.Resource.Length"); i++) {

@@ -21,42 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ModifyHostInfoRequest extends RpcAcsRequest<ModifyHostInfoResponse> {
+public class DeleteLogMonitorRequest extends RpcAcsRequest<DeleteLogMonitorResponse> {
 	   
 
-	private String hostName;
-
-	private String instanceId;
-	public ModifyHostInfoRequest() {
-		super("Cms", "2019-01-01", "ModifyHostInfo", "cms");
+	private Long logId;
+	public DeleteLogMonitorRequest() {
+		super("Cms", "2019-01-01", "DeleteLogMonitor", "cms");
 		setMethod(MethodType.POST);
 	}
 
-	public String getHostName() {
-		return this.hostName;
+	public Long getLogId() {
+		return this.logId;
 	}
 
-	public void setHostName(String hostName) {
-		this.hostName = hostName;
-		if(hostName != null){
-			putQueryParameter("HostName", hostName);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setLogId(Long logId) {
+		this.logId = logId;
+		if(logId != null){
+			putQueryParameter("LogId", logId.toString());
 		}
 	}
 
 	@Override
-	public Class<ModifyHostInfoResponse> getResponseClass() {
-		return ModifyHostInfoResponse.class;
+	public Class<DeleteLogMonitorResponse> getResponseClass() {
+		return DeleteLogMonitorResponse.class;
 	}
 
 }

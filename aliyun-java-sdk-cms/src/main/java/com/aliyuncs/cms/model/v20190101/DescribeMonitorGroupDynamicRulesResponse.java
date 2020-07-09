@@ -33,12 +33,6 @@ public class DescribeMonitorGroupDynamicRulesResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
-	private Integer total;
-
 	private List<ResourceItem> resource;
 
 	public String getRequestId() {
@@ -71,30 +65,6 @@ public class DescribeMonitorGroupDynamicRulesResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
 	}
 
 	public List<ResourceItem> getResource() {
