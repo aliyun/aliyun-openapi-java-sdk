@@ -1,6 +1,9 @@
 2020-07-09 Version: 2.12.7
 - Add accountType for renderOrder.
 
+2020-07-09 Version: 2.12.7
+- Add accountType for renderOrder.
+
 2020-07-06 Version: 2.12.6
 - Modify QueryBizItemList, add user label.
 
