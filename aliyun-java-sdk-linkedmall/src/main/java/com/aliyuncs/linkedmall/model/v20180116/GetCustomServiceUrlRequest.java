@@ -29,6 +29,8 @@ public class GetCustomServiceUrlRequest extends RpcAcsRequest<GetCustomServiceUr
 
 	private String bizUid;
 
+	private String accountType;
+
 	private Boolean useAnonymousTbAccount;
 
 	private String nick;
@@ -66,6 +68,17 @@ public class GetCustomServiceUrlRequest extends RpcAcsRequest<GetCustomServiceUr
 		this.bizUid = bizUid;
 		if(bizUid != null){
 			putQueryParameter("BizUid", bizUid);
+		}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
 		}
 	}
 

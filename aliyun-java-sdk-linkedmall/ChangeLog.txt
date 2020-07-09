@@ -1,3 +1,6 @@
+2020-07-09 Version: 2.12.8
+- Add accountType for customer service.
+
 2020-07-09 Version: 2.12.7
 - Add accountType for renderOrder.
 
