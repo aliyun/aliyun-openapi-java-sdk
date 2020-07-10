@@ -1,6 +1,9 @@
 2020-07-10 Version: 1.0.7
 - Add ListBodyAlgorithmResult API.
 
+2020-07-10 Version: 1.0.7
+- Add ListBodyAlgorithmResult API.
+
 2020-07-08 Version: 1.0.7
 - Add video compose api.
 
