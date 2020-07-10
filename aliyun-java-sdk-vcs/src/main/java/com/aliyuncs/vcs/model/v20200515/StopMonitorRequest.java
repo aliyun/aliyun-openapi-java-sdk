@@ -29,7 +29,7 @@ public class StopMonitorRequest extends RpcAcsRequest<StopMonitorResponse> {
 
 	private String taskId;
 	public StopMonitorRequest() {
-		super("Vcs", "2020-05-15", "StopMonitor");
+		super("Vcs", "2020-05-15", "StopMonitor", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

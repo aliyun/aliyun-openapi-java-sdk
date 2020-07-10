@@ -37,7 +37,7 @@ public class CreateVideoSummaryTaskRequest extends RpcAcsRequest<CreateVideoSumm
 
 	private String optionList;
 	public CreateVideoSummaryTaskRequest() {
-		super("Vcs", "2020-05-15", "CreateVideoSummaryTask");
+		super("Vcs", "2020-05-15", "CreateVideoSummaryTask", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

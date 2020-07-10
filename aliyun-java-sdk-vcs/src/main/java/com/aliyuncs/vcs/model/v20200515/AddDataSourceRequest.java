@@ -33,7 +33,7 @@ public class AddDataSourceRequest extends RpcAcsRequest<AddDataSourceResponse> {
 
 	private String dataSourceName;
 	public AddDataSourceRequest() {
-		super("Vcs", "2020-05-15", "AddDataSource");
+		super("Vcs", "2020-05-15", "AddDataSource", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

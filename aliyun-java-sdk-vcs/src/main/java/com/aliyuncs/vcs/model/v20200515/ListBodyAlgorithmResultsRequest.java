@@ -22,10 +22,14 @@ import com.aliyuncs.vcs.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListEventAlgorithmResultsRequest extends RpcAcsRequest<ListEventAlgorithmResultsResponse> {
+public class ListBodyAlgorithmResultsRequest extends RpcAcsRequest<ListBodyAlgorithmResultsResponse> {
 	   
 
+	private String algorithmType;
+
 	private String corpId;
+
+	private String capStyle;
 
 	private String endTime;
 
@@ -36,15 +40,24 @@ public class ListEventAlgorithmResultsRequest extends RpcAcsRequest<ListEventAlg
 	private String dataSourceId;
 
 	private String pageSize;
-
-	private String eventType;
-	public ListEventAlgorithmResultsRequest() {
-		super("Vcs", "2020-05-15", "ListEventAlgorithmResults", "vcs");
+	public ListBodyAlgorithmResultsRequest() {
+		super("Vcs", "2020-05-15", "ListBodyAlgorithmResults", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAlgorithmType() {
+		return this.algorithmType;
+	}
+
+	public void setAlgorithmType(String algorithmType) {
+		this.algorithmType = algorithmType;
+		if(algorithmType != null){
+			putBodyParameter("AlgorithmType", algorithmType);
+		}
 	}
 
 	public String getCorpId() {
@@ -55,6 +68,17 @@ public class ListEventAlgorithmResultsRequest extends RpcAcsRequest<ListEventAlg
 		this.corpId = corpId;
 		if(corpId != null){
 			putBodyParameter("CorpId", corpId);
+		}
+	}
+
+	public String getCapStyle() {
+		return this.capStyle;
+	}
+
+	public void setCapStyle(String capStyle) {
+		this.capStyle = capStyle;
+		if(capStyle != null){
+			putBodyParameter("CapStyle", capStyle);
 		}
 	}
 
@@ -113,20 +137,9 @@ public class ListEventAlgorithmResultsRequest extends RpcAcsRequest<ListEventAlg
 		}
 	}
 
-	public String getEventType() {
-		return this.eventType;
-	}
-
-	public void setEventType(String eventType) {
-		this.eventType = eventType;
-		if(eventType != null){
-			putBodyParameter("EventType", eventType);
-		}
-	}
-
 	@Override
-	public Class<ListEventAlgorithmResultsResponse> getResponseClass() {
-		return ListEventAlgorithmResultsResponse.class;
+	public Class<ListBodyAlgorithmResultsResponse> getResponseClass() {
+		return ListBodyAlgorithmResultsResponse.class;
 	}
 
 }

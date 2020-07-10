@@ -29,7 +29,7 @@ public class GetVideoComposeResultRequest extends RpcAcsRequest<GetVideoComposeR
 
 	private String taskRequestId;
 	public GetVideoComposeResultRequest() {
-		super("Vcs", "2020-05-15", "GetVideoComposeResult");
+		super("Vcs", "2020-05-15", "GetVideoComposeResult", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
