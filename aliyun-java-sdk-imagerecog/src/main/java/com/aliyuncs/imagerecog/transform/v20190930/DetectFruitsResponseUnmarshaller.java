@@ -35,7 +35,7 @@ public class DetectFruitsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DetectFruitsResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
 			element.setName(_ctx.stringValue("DetectFruitsResponse.Data.Elements["+ i +"].Name"));
-			element.setScore(_ctx.stringValue("DetectFruitsResponse.Data.Elements["+ i +"].Score"));
+			element.setScore(_ctx.floatValue("DetectFruitsResponse.Data.Elements["+ i +"].Score"));
 
 			List<Float> box = new ArrayList<Float>();
 			for (int j = 0; j < _ctx.lengthValue("DetectFruitsResponse.Data.Elements["+ i +"].Box.Length"); j++) {

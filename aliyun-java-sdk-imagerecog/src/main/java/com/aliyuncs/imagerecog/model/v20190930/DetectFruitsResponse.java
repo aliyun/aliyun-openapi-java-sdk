@@ -61,7 +61,7 @@ public class DetectFruitsResponse extends AcsResponse {
 
 			private String name;
 
-			private String score;
+			private Float score;
 
 			private List<Float> box;
 
@@ -73,11 +73,11 @@ public class DetectFruitsResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public String getScore() {
+			public Float getScore() {
 				return this.score;
 			}
 
-			public void setScore(String score) {
+			public void setScore(Float score) {
 				this.score = score;
 			}
 
