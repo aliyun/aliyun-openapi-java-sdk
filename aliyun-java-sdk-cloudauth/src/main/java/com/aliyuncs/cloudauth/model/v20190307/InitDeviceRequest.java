@@ -37,9 +37,13 @@ public class InitDeviceRequest extends RpcAcsRequest<InitDeviceResponse> {
 
 	private String certifyId;
 
+	private String webUmidToken;
+
 	private String outerOrderNo;
 
 	private String produceNode;
+
+	private String uaToken;
 
 	private String productName;
 
@@ -121,6 +125,17 @@ public class InitDeviceRequest extends RpcAcsRequest<InitDeviceResponse> {
 		}
 	}
 
+	public String getWebUmidToken() {
+		return this.webUmidToken;
+	}
+
+	public void setWebUmidToken(String webUmidToken) {
+		this.webUmidToken = webUmidToken;
+		if(webUmidToken != null){
+			putBodyParameter("WebUmidToken", webUmidToken);
+		}
+	}
+
 	public String getOuterOrderNo() {
 		return this.outerOrderNo;
 	}
@@ -140,6 +155,17 @@ public class InitDeviceRequest extends RpcAcsRequest<InitDeviceResponse> {
 		this.produceNode = produceNode;
 		if(produceNode != null){
 			putQueryParameter("ProduceNode", produceNode);
+		}
+	}
+
+	public String getUaToken() {
+		return this.uaToken;
+	}
+
+	public void setUaToken(String uaToken) {
+		this.uaToken = uaToken;
+		if(uaToken != null){
+			putBodyParameter("UaToken", uaToken);
 		}
 	}
 

@@ -92,6 +92,10 @@ public class InitDeviceResponse extends AcsResponse {
 
 		private String fileNamePrefix;
 
+		private String fileName;
+
+		private String presignedUrl;
+
 		public String getCertifyId() {
 			return this.certifyId;
 		}
@@ -194,6 +198,22 @@ public class InitDeviceResponse extends AcsResponse {
 
 		public void setFileNamePrefix(String fileNamePrefix) {
 			this.fileNamePrefix = fileNamePrefix;
+		}
+
+		public String getFileName() {
+			return this.fileName;
+		}
+
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
+		}
+
+		public String getPresignedUrl() {
+			return this.presignedUrl;
+		}
+
+		public void setPresignedUrl(String presignedUrl) {
+			this.presignedUrl = presignedUrl;
 		}
 	}
 

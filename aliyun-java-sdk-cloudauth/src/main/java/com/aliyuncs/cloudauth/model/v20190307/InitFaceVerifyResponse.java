@@ -68,12 +68,22 @@ public class InitFaceVerifyResponse extends AcsResponse {
 
 		private String certifyId;
 
+		private String certifyUrl;
+
 		public String getCertifyId() {
 			return this.certifyId;
 		}
 
 		public void setCertifyId(String certifyId) {
 			this.certifyId = certifyId;
+		}
+
+		public String getCertifyUrl() {
+			return this.certifyUrl;
+		}
+
+		public void setCertifyUrl(String certifyUrl) {
+			this.certifyUrl = certifyUrl;
 		}
 	}
 

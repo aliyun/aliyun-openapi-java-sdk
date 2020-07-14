@@ -41,6 +41,8 @@ public class InitDeviceResponseUnmarshaller {
 		resultObject.setSecurityToken(_ctx.stringValue("InitDeviceResponse.ResultObject.SecurityToken"));
 		resultObject.setBucketName(_ctx.stringValue("InitDeviceResponse.ResultObject.BucketName"));
 		resultObject.setFileNamePrefix(_ctx.stringValue("InitDeviceResponse.ResultObject.FileNamePrefix"));
+		resultObject.setFileName(_ctx.stringValue("InitDeviceResponse.ResultObject.FileName"));
+		resultObject.setPresignedUrl(_ctx.stringValue("InitDeviceResponse.ResultObject.PresignedUrl"));
 		initDeviceResponse.setResultObject(resultObject);
 	 
 	 	return initDeviceResponse;

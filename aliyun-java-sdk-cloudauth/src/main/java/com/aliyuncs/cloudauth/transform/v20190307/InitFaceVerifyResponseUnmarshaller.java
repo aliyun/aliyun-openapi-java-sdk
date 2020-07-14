@@ -29,6 +29,7 @@ public class InitFaceVerifyResponseUnmarshaller {
 
 		ResultObject resultObject = new ResultObject();
 		resultObject.setCertifyId(_ctx.stringValue("InitFaceVerifyResponse.ResultObject.CertifyId"));
+		resultObject.setCertifyUrl(_ctx.stringValue("InitFaceVerifyResponse.ResultObject.CertifyUrl"));
 		initFaceVerifyResponse.setResultObject(resultObject);
 	 
 	 	return initFaceVerifyResponse;
