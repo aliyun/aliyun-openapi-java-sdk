@@ -14,25 +14,24 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.SetDeviceDesiredPropertyResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.QueryClientIdsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetDeviceDesiredPropertyResponse extends AcsResponse {
+public class QueryClientIdsResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String errorMessage;
-
 	private String code;
 
-	private String messageArguments;
+	private String errorMessage;
 
 	private Data data;
 
@@ -52,14 +51,6 @@ public class SetDeviceDesiredPropertyResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public String getCode() {
 		return this.code;
 	}
@@ -68,12 +59,12 @@ public class SetDeviceDesiredPropertyResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessageArguments() {
-		return this.messageArguments;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setMessageArguments(String messageArguments) {
-		this.messageArguments = messageArguments;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Data getData() {
@@ -86,29 +77,57 @@ public class SetDeviceDesiredPropertyResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String messageId;
+		private String iotId;
 
-		private String versions;
+		private List<DynamicRegClientId> dynamicRegClientIds;
 
-		public String getMessageId() {
-			return this.messageId;
+		public String getIotId() {
+			return this.iotId;
 		}
 
-		public void setMessageId(String messageId) {
-			this.messageId = messageId;
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 
-		public String getVersions() {
-			return this.versions;
+		public List<DynamicRegClientId> getDynamicRegClientIds() {
+			return this.dynamicRegClientIds;
 		}
 
-		public void setVersions(String versions) {
-			this.versions = versions;
+		public void setDynamicRegClientIds(List<DynamicRegClientId> dynamicRegClientIds) {
+			this.dynamicRegClientIds = dynamicRegClientIds;
+		}
+
+		public static class DynamicRegClientId {
+
+			private String clientId;
+
+			private Long createTime;
+
+			public String getClientId() {
+				return this.clientId;
+			}
+
+			public void setClientId(String clientId) {
+				this.clientId = clientId;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
 		}
 	}
 
 	@Override
-	public SetDeviceDesiredPropertyResponse getInstance(UnmarshallerContext context) {
-		return	SetDeviceDesiredPropertyResponseUnmarshaller.unmarshall(this, context);
+	public QueryClientIdsResponse getInstance(UnmarshallerContext context) {
+		return	QueryClientIdsResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

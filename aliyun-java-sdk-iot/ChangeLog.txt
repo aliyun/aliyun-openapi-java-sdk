@@ -1,3 +1,8 @@
+2020-07-14 Version: 7.10.0
+- Add Dynamic Registration APIs, including TransformClientId, DeleteClientIds, QueryClientIds, etc.
+- Update OTA API, including CreateOTAStaticUpgradeJob and QueryOTAJob.
+- Update Device Shadow API UpdateDeviceShadow.
+
 2020-06-12 Version: 7.9.0
 - Add CreateProduct API ProductSecret in Response.
 - Add AMQP APIs, including CreateSubscribeRelation, CreateConsumerGroup, etc.

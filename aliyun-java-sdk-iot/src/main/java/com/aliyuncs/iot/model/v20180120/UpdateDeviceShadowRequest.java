@@ -31,6 +31,8 @@ public class UpdateDeviceShadowRequest extends RpcAcsRequest<UpdateDeviceShadowR
 
 	private String productKey;
 
+	private Boolean deltaUpdate;
+
 	private String deviceName;
 	public UpdateDeviceShadowRequest() {
 		super("Iot", "2018-01-20", "UpdateDeviceShadow", "iot");
@@ -71,6 +73,17 @@ public class UpdateDeviceShadowRequest extends RpcAcsRequest<UpdateDeviceShadowR
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public Boolean getDeltaUpdate() {
+		return this.deltaUpdate;
+	}
+
+	public void setDeltaUpdate(Boolean deltaUpdate) {
+		this.deltaUpdate = deltaUpdate;
+		if(deltaUpdate != null){
+			putQueryParameter("DeltaUpdate", deltaUpdate.toString());
 		}
 	}
 

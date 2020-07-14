@@ -117,6 +117,8 @@ public class QueryOTAJobResponse extends AcsResponse {
 
 		private String destVersion;
 
+		private String utcScheduleFinishTime;
+
 		private List<String> srcVersions;
 
 		public String getJobId() {
@@ -277,6 +279,14 @@ public class QueryOTAJobResponse extends AcsResponse {
 
 		public void setDestVersion(String destVersion) {
 			this.destVersion = destVersion;
+		}
+
+		public String getUtcScheduleFinishTime() {
+			return this.utcScheduleFinishTime;
+		}
+
+		public void setUtcScheduleFinishTime(String utcScheduleFinishTime) {
+			this.utcScheduleFinishTime = utcScheduleFinishTime;
 		}
 
 		public List<String> getSrcVersions() {

@@ -34,6 +34,8 @@ public class CreateOTAStaticUpgradeJobRequest extends RpcAcsRequest<CreateOTASta
 
 	private String targetSelection;
 
+	private Long scheduleFinishTime;
+
 	private String grayPercent;
 
 	private String firmwareId;
@@ -99,6 +101,17 @@ public class CreateOTAStaticUpgradeJobRequest extends RpcAcsRequest<CreateOTASta
 		this.targetSelection = targetSelection;
 		if(targetSelection != null){
 			putQueryParameter("TargetSelection", targetSelection);
+		}
+	}
+
+	public Long getScheduleFinishTime() {
+		return this.scheduleFinishTime;
+	}
+
+	public void setScheduleFinishTime(Long scheduleFinishTime) {
+		this.scheduleFinishTime = scheduleFinishTime;
+		if(scheduleFinishTime != null){
+			putQueryParameter("ScheduleFinishTime", scheduleFinishTime.toString());
 		}
 	}
 

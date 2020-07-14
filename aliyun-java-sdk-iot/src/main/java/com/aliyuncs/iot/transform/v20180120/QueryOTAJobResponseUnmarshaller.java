@@ -52,6 +52,7 @@ public class QueryOTAJobResponseUnmarshaller {
 		data.setGrayPercent(_ctx.stringValue("QueryOTAJobResponse.Data.GrayPercent"));
 		data.setMaximumPerMinute(_ctx.integerValue("QueryOTAJobResponse.Data.MaximumPerMinute"));
 		data.setDestVersion(_ctx.stringValue("QueryOTAJobResponse.Data.DestVersion"));
+		data.setUtcScheduleFinishTime(_ctx.stringValue("QueryOTAJobResponse.Data.UtcScheduleFinishTime"));
 
 		List<String> srcVersions = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QueryOTAJobResponse.Data.SrcVersions.Length"); i++) {
