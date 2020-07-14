@@ -33,7 +33,7 @@ public class UpdateDomainRecordRemarkRequest extends RpcAcsRequest<UpdateDomainR
 
 	private String lang;
 	public UpdateDomainRecordRemarkRequest() {
-		super("Alidns", "2015-01-09", "UpdateDomainRecordRemark", "Alidns");
+		super("Alidns", "2015-01-09", "UpdateDomainRecordRemark", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class SetDomainRecordStatusRequest extends RpcAcsRequest<SetDomainRecordS
 
 	private String status;
 	public SetDomainRecordStatusRequest() {
-		super("Alidns", "2015-01-09", "SetDomainRecordStatus", "Alidns");
+		super("Alidns", "2015-01-09", "SetDomainRecordStatus", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

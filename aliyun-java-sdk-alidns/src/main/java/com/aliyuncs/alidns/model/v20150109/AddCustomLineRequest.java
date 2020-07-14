@@ -34,7 +34,7 @@ public class AddCustomLineRequest extends RpcAcsRequest<AddCustomLineResponse> {
 
 	private String lang;
 	public AddCustomLineRequest() {
-		super("Alidns", "2015-01-09", "AddCustomLine", "Alidns");
+		super("Alidns", "2015-01-09", "AddCustomLine", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

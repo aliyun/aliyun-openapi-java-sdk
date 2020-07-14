@@ -33,7 +33,7 @@ public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 
 	private String lang;
 	public DescribeTagsRequest() {
-		super("Alidns", "2015-01-09", "DescribeTags", "Alidns");
+		super("Alidns", "2015-01-09", "DescribeTags", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

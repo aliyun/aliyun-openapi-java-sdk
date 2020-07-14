@@ -37,7 +37,7 @@ public class AddGtmAccessStrategyRequest extends RpcAcsRequest<AddGtmAccessStrat
 
 	private String lang;
 	public AddGtmAccessStrategyRequest() {
-		super("Alidns", "2015-01-09", "AddGtmAccessStrategy", "Alidns");
+		super("Alidns", "2015-01-09", "AddGtmAccessStrategy", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

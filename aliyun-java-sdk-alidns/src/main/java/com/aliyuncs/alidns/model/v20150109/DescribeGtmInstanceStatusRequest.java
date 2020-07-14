@@ -29,7 +29,7 @@ public class DescribeGtmInstanceStatusRequest extends RpcAcsRequest<DescribeGtmI
 
 	private String lang;
 	public DescribeGtmInstanceStatusRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmInstanceStatus", "Alidns");
+		super("Alidns", "2015-01-09", "DescribeGtmInstanceStatus", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

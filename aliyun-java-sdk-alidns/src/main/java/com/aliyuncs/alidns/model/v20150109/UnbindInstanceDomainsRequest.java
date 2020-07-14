@@ -31,7 +31,7 @@ public class UnbindInstanceDomainsRequest extends RpcAcsRequest<UnbindInstanceDo
 
 	private String lang;
 	public UnbindInstanceDomainsRequest() {
-		super("Alidns", "2015-01-09", "UnbindInstanceDomains", "Alidns");
+		super("Alidns", "2015-01-09", "UnbindInstanceDomains", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

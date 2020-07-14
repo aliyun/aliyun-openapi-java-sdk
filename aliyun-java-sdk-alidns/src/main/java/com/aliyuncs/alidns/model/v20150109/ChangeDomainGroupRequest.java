@@ -31,7 +31,7 @@ public class ChangeDomainGroupRequest extends RpcAcsRequest<ChangeDomainGroupRes
 
 	private String lang;
 	public ChangeDomainGroupRequest() {
-		super("Alidns", "2015-01-09", "ChangeDomainGroup", "Alidns");
+		super("Alidns", "2015-01-09", "ChangeDomainGroup", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

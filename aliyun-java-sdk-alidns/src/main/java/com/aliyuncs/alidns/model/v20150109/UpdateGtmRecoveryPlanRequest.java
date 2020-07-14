@@ -35,7 +35,7 @@ public class UpdateGtmRecoveryPlanRequest extends RpcAcsRequest<UpdateGtmRecover
 
 	private String lang;
 	public UpdateGtmRecoveryPlanRequest() {
-		super("Alidns", "2015-01-09", "UpdateGtmRecoveryPlan", "Alidns");
+		super("Alidns", "2015-01-09", "UpdateGtmRecoveryPlan", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

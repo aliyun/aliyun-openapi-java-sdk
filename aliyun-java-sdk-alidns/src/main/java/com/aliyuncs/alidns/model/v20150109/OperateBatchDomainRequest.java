@@ -32,7 +32,7 @@ public class OperateBatchDomainRequest extends RpcAcsRequest<OperateBatchDomainR
 
 	private String lang;
 	public OperateBatchDomainRequest() {
-		super("Alidns", "2015-01-09", "OperateBatchDomain", "Alidns");
+		super("Alidns", "2015-01-09", "OperateBatchDomain", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

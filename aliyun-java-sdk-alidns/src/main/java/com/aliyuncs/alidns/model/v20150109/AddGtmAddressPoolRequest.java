@@ -52,7 +52,7 @@ public class AddGtmAddressPoolRequest extends RpcAcsRequest<AddGtmAddressPoolRes
 
 	private List<IspCityNode> ispCityNodes;
 	public AddGtmAddressPoolRequest() {
-		super("Alidns", "2015-01-09", "AddGtmAddressPool", "Alidns");
+		super("Alidns", "2015-01-09", "AddGtmAddressPool", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

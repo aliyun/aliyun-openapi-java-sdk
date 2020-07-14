@@ -29,7 +29,7 @@ public class DeleteGtmAddressPoolRequest extends RpcAcsRequest<DeleteGtmAddressP
 
 	private String lang;
 	public DeleteGtmAddressPoolRequest() {
-		super("Alidns", "2015-01-09", "DeleteGtmAddressPool", "Alidns");
+		super("Alidns", "2015-01-09", "DeleteGtmAddressPool", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

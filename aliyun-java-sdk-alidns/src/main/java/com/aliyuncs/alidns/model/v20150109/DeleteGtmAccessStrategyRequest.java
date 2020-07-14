@@ -29,7 +29,7 @@ public class DeleteGtmAccessStrategyRequest extends RpcAcsRequest<DeleteGtmAcces
 
 	private String lang;
 	public DeleteGtmAccessStrategyRequest() {
-		super("Alidns", "2015-01-09", "DeleteGtmAccessStrategy", "Alidns");
+		super("Alidns", "2015-01-09", "DeleteGtmAccessStrategy", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class RetrieveDomainRequest extends RpcAcsRequest<RetrieveDomainResponse>
 
 	private String lang;
 	public RetrieveDomainRequest() {
-		super("Alidns", "2015-01-09", "RetrieveDomain", "Alidns");
+		super("Alidns", "2015-01-09", "RetrieveDomain", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

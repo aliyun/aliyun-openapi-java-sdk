@@ -35,7 +35,7 @@ public class ChangeDomainOfDnsProductRequest extends RpcAcsRequest<ChangeDomainO
 
 	private String lang;
 	public ChangeDomainOfDnsProductRequest() {
-		super("Alidns", "2015-01-09", "ChangeDomainOfDnsProduct", "Alidns");
+		super("Alidns", "2015-01-09", "ChangeDomainOfDnsProduct", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

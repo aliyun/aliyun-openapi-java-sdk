@@ -34,7 +34,7 @@ public class UpdateCustomLineRequest extends RpcAcsRequest<UpdateCustomLineRespo
 
 	private String lang;
 	public UpdateCustomLineRequest() {
-		super("Alidns", "2015-01-09", "UpdateCustomLine", "Alidns");
+		super("Alidns", "2015-01-09", "UpdateCustomLine", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

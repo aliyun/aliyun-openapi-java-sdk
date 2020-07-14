@@ -31,7 +31,7 @@ public class DescribeDohUserInfoRequest extends RpcAcsRequest<DescribeDohUserInf
 
 	private String lang;
 	public DescribeDohUserInfoRequest() {
-		super("Alidns", "2015-01-09", "DescribeDohUserInfo", "Alidns");
+		super("Alidns", "2015-01-09", "DescribeDohUserInfo", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

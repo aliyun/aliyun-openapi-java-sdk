@@ -31,7 +31,7 @@ public class BindInstanceDomainsRequest extends RpcAcsRequest<BindInstanceDomain
 
 	private String lang;
 	public BindInstanceDomainsRequest() {
-		super("Alidns", "2015-01-09", "BindInstanceDomains", "Alidns");
+		super("Alidns", "2015-01-09", "BindInstanceDomains", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

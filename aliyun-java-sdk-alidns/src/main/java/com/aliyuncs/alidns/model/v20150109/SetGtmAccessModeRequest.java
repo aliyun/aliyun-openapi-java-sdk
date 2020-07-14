@@ -31,7 +31,7 @@ public class SetGtmAccessModeRequest extends RpcAcsRequest<SetGtmAccessModeRespo
 
 	private String accessMode;
 	public SetGtmAccessModeRequest() {
-		super("Alidns", "2015-01-09", "SetGtmAccessMode", "Alidns");
+		super("Alidns", "2015-01-09", "SetGtmAccessMode", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

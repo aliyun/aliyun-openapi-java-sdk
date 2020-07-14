@@ -31,7 +31,7 @@ public class SetGtmMonitorStatusRequest extends RpcAcsRequest<SetGtmMonitorStatu
 
 	private String status;
 	public SetGtmMonitorStatusRequest() {
-		super("Alidns", "2015-01-09", "SetGtmMonitorStatus", "Alidns");
+		super("Alidns", "2015-01-09", "SetGtmMonitorStatus", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

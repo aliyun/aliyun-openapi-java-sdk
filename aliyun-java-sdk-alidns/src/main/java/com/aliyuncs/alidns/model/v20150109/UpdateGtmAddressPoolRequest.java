@@ -38,7 +38,7 @@ public class UpdateGtmAddressPoolRequest extends RpcAcsRequest<UpdateGtmAddressP
 
 	private List<Addr> addrs;
 	public UpdateGtmAddressPoolRequest() {
-		super("Alidns", "2015-01-09", "UpdateGtmAddressPool", "Alidns");
+		super("Alidns", "2015-01-09", "UpdateGtmAddressPool", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

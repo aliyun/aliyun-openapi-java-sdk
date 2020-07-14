@@ -33,7 +33,7 @@ public class DescribeDomainGroupsRequest extends RpcAcsRequest<DescribeDomainGro
 
 	private String keyWord;
 	public DescribeDomainGroupsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomainGroups", "Alidns");
+		super("Alidns", "2015-01-09", "DescribeDomainGroups", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

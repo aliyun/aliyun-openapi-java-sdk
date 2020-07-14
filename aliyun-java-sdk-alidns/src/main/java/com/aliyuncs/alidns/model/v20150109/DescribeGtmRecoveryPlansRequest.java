@@ -33,7 +33,7 @@ public class DescribeGtmRecoveryPlansRequest extends RpcAcsRequest<DescribeGtmRe
 
 	private String keyword;
 	public DescribeGtmRecoveryPlansRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmRecoveryPlans", "Alidns");
+		super("Alidns", "2015-01-09", "DescribeGtmRecoveryPlans", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

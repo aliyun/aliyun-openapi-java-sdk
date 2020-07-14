@@ -31,7 +31,7 @@ public class ModifyHichinaDomainDNSRequest extends RpcAcsRequest<ModifyHichinaDo
 
 	private String lang;
 	public ModifyHichinaDomainDNSRequest() {
-		super("Alidns", "2015-01-09", "ModifyHichinaDomainDNS", "Alidns");
+		super("Alidns", "2015-01-09", "ModifyHichinaDomainDNS", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

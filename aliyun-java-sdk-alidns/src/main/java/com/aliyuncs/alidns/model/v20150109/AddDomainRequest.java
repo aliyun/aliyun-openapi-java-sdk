@@ -33,7 +33,7 @@ public class AddDomainRequest extends RpcAcsRequest<AddDomainResponse> {
 
 	private String lang;
 	public AddDomainRequest() {
-		super("Alidns", "2015-01-09", "AddDomain", "Alidns");
+		super("Alidns", "2015-01-09", "AddDomain", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DescribeDNSSLBSubDomainsRequest extends RpcAcsRequest<DescribeDNSSL
 
 	private String lang;
 	public DescribeDNSSLBSubDomainsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDNSSLBSubDomains", "Alidns");
+		super("Alidns", "2015-01-09", "DescribeDNSSLBSubDomains", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

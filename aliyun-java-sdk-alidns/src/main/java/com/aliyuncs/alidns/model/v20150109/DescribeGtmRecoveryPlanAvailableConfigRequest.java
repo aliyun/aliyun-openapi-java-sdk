@@ -27,7 +27,7 @@ public class DescribeGtmRecoveryPlanAvailableConfigRequest extends RpcAcsRequest
 
 	private String lang;
 	public DescribeGtmRecoveryPlanAvailableConfigRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmRecoveryPlanAvailableConfig", "Alidns");
+		super("Alidns", "2015-01-09", "DescribeGtmRecoveryPlanAvailableConfig", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

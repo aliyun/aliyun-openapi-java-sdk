@@ -37,7 +37,7 @@ public class DescribeDohDomainStatisticsSummaryRequest extends RpcAcsRequest<Des
 
 	private String lang;
 	public DescribeDohDomainStatisticsSummaryRequest() {
-		super("Alidns", "2015-01-09", "DescribeDohDomainStatisticsSummary", "Alidns");
+		super("Alidns", "2015-01-09", "DescribeDohDomainStatisticsSummary", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

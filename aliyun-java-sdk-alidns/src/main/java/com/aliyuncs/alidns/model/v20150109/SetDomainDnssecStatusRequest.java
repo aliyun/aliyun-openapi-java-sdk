@@ -31,7 +31,7 @@ public class SetDomainDnssecStatusRequest extends RpcAcsRequest<SetDomainDnssecS
 
 	private String status;
 	public SetDomainDnssecStatusRequest() {
-		super("Alidns", "2015-01-09", "SetDomainDnssecStatus", "Alidns");
+		super("Alidns", "2015-01-09", "SetDomainDnssecStatus", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

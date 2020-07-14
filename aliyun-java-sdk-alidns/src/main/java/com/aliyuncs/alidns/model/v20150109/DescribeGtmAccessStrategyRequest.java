@@ -29,7 +29,7 @@ public class DescribeGtmAccessStrategyRequest extends RpcAcsRequest<DescribeGtmA
 
 	private String lang;
 	public DescribeGtmAccessStrategyRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmAccessStrategy", "Alidns");
+		super("Alidns", "2015-01-09", "DescribeGtmAccessStrategy", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

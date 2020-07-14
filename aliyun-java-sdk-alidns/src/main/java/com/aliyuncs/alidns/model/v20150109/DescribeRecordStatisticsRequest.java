@@ -35,7 +35,7 @@ public class DescribeRecordStatisticsRequest extends RpcAcsRequest<DescribeRecor
 
 	private String lang;
 	public DescribeRecordStatisticsRequest() {
-		super("Alidns", "2015-01-09", "DescribeRecordStatistics", "Alidns");
+		super("Alidns", "2015-01-09", "DescribeRecordStatistics", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

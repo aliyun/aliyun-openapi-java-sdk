@@ -1,4 +1,7 @@
 2020-07-14 Version: 2.6.18
+- Fixed bug for service code.
+
+2020-07-14 Version: 2.6.18
 - Supported API for DescribeDohUserInfo.
 - Supported API for DescribeDohAccountStatistics.
 - Supported API for DescribeDohDomainStatistics.

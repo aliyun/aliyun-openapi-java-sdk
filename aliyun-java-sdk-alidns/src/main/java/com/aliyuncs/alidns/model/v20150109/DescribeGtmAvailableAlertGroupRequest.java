@@ -27,7 +27,7 @@ public class DescribeGtmAvailableAlertGroupRequest extends RpcAcsRequest<Describ
 
 	private String lang;
 	public DescribeGtmAvailableAlertGroupRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmAvailableAlertGroup", "Alidns");
+		super("Alidns", "2015-01-09", "DescribeGtmAvailableAlertGroup", "alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
