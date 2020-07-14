@@ -16,6 +16,7 @@ package com.aliyuncs.vcs.transform.v20200515;
 
 import com.aliyuncs.vcs.model.v20200515.RecognizeFaceQualityResponse;
 import com.aliyuncs.vcs.model.v20200515.RecognizeFaceQualityResponse.Data;
+import com.aliyuncs.vcs.model.v20200515.RecognizeFaceQualityResponse.Data.Attributes;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,6 +31,17 @@ public class RecognizeFaceQualityResponseUnmarshaller {
 		Data data = new Data();
 		data.setQualityScore(_ctx.stringValue("RecognizeFaceQualityResponse.Data.QualityScore"));
 		data.setDescription(_ctx.stringValue("RecognizeFaceQualityResponse.Data.Description"));
+
+		Attributes attributes = new Attributes();
+		attributes.setLeftTopX(_ctx.integerValue("RecognizeFaceQualityResponse.Data.Attributes.LeftTopX"));
+		attributes.setLeftTopY(_ctx.integerValue("RecognizeFaceQualityResponse.Data.Attributes.LeftTopY"));
+		attributes.setRightBottomX(_ctx.integerValue("RecognizeFaceQualityResponse.Data.Attributes.RightBottomX"));
+		attributes.setRightBottomY(_ctx.integerValue("RecognizeFaceQualityResponse.Data.Attributes.RightBottomY"));
+		attributes.setTargetImageStoragePath(_ctx.stringValue("RecognizeFaceQualityResponse.Data.Attributes.TargetImageStoragePath"));
+		attributes.setFaceStyle(_ctx.stringValue("RecognizeFaceQualityResponse.Data.Attributes.FaceStyle"));
+		attributes.setFaceQuality(_ctx.stringValue("RecognizeFaceQualityResponse.Data.Attributes.FaceQuality"));
+		attributes.setFaceScore(_ctx.stringValue("RecognizeFaceQualityResponse.Data.Attributes.FaceScore"));
+		data.setAttributes(attributes);
 		recognizeFaceQualityResponse.setData(data);
 	 
 	 	return recognizeFaceQualityResponse;

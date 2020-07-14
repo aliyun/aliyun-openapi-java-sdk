@@ -70,6 +70,8 @@ public class RecognizeFaceQualityResponse extends AcsResponse {
 
 		private String description;
 
+		private Attributes attributes;
+
 		public String getQualityScore() {
 			return this.qualityScore;
 		}
@@ -84,6 +86,97 @@ public class RecognizeFaceQualityResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public Attributes getAttributes() {
+			return this.attributes;
+		}
+
+		public void setAttributes(Attributes attributes) {
+			this.attributes = attributes;
+		}
+
+		public static class Attributes {
+
+			private Integer leftTopX;
+
+			private Integer leftTopY;
+
+			private Integer rightBottomX;
+
+			private Integer rightBottomY;
+
+			private String targetImageStoragePath;
+
+			private String faceStyle;
+
+			private String faceQuality;
+
+			private String faceScore;
+
+			public Integer getLeftTopX() {
+				return this.leftTopX;
+			}
+
+			public void setLeftTopX(Integer leftTopX) {
+				this.leftTopX = leftTopX;
+			}
+
+			public Integer getLeftTopY() {
+				return this.leftTopY;
+			}
+
+			public void setLeftTopY(Integer leftTopY) {
+				this.leftTopY = leftTopY;
+			}
+
+			public Integer getRightBottomX() {
+				return this.rightBottomX;
+			}
+
+			public void setRightBottomX(Integer rightBottomX) {
+				this.rightBottomX = rightBottomX;
+			}
+
+			public Integer getRightBottomY() {
+				return this.rightBottomY;
+			}
+
+			public void setRightBottomY(Integer rightBottomY) {
+				this.rightBottomY = rightBottomY;
+			}
+
+			public String getTargetImageStoragePath() {
+				return this.targetImageStoragePath;
+			}
+
+			public void setTargetImageStoragePath(String targetImageStoragePath) {
+				this.targetImageStoragePath = targetImageStoragePath;
+			}
+
+			public String getFaceStyle() {
+				return this.faceStyle;
+			}
+
+			public void setFaceStyle(String faceStyle) {
+				this.faceStyle = faceStyle;
+			}
+
+			public String getFaceQuality() {
+				return this.faceQuality;
+			}
+
+			public void setFaceQuality(String faceQuality) {
+				this.faceQuality = faceQuality;
+			}
+
+			public String getFaceScore() {
+				return this.faceScore;
+			}
+
+			public void setFaceScore(String faceScore) {
+				this.faceScore = faceScore;
+			}
 		}
 	}
 
