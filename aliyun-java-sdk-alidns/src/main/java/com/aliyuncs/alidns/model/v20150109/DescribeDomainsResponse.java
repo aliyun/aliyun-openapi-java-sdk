@@ -111,6 +111,8 @@ public class DescribeDomainsResponse extends AcsResponse {
 
 		private Long createTimestamp;
 
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		private List<String> dnsServers;
@@ -249,6 +251,14 @@ public class DescribeDomainsResponse extends AcsResponse {
 
 		public void setCreateTimestamp(Long createTimestamp) {
 			this.createTimestamp = createTimestamp;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

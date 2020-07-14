@@ -33,7 +33,7 @@ public class UpdateDNSSLBWeightRequest extends RpcAcsRequest<UpdateDNSSLBWeightR
 
 	private String lang;
 	public UpdateDNSSLBWeightRequest() {
-		super("Alidns", "2015-01-09", "UpdateDNSSLBWeight", "alidns");
+		super("Alidns", "2015-01-09", "UpdateDNSSLBWeight", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

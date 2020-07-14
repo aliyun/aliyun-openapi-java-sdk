@@ -29,7 +29,7 @@ public class GetMainDomainNameRequest extends RpcAcsRequest<GetMainDomainNameRes
 
 	private String lang;
 	public GetMainDomainNameRequest() {
-		super("Alidns", "2015-01-09", "GetMainDomainName", "alidns");
+		super("Alidns", "2015-01-09", "GetMainDomainName", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

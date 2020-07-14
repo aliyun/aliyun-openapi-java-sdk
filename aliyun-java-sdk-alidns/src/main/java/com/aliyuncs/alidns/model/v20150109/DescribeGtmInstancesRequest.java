@@ -37,7 +37,7 @@ public class DescribeGtmInstancesRequest extends RpcAcsRequest<DescribeGtmInstan
 
 	private Boolean needDetailAttributes;
 	public DescribeGtmInstancesRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmInstances", "alidns");
+		super("Alidns", "2015-01-09", "DescribeGtmInstances", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

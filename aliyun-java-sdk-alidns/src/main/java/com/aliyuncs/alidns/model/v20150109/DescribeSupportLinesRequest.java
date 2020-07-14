@@ -31,7 +31,7 @@ public class DescribeSupportLinesRequest extends RpcAcsRequest<DescribeSupportLi
 
 	private String lang;
 	public DescribeSupportLinesRequest() {
-		super("Alidns", "2015-01-09", "DescribeSupportLines", "alidns");
+		super("Alidns", "2015-01-09", "DescribeSupportLines", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

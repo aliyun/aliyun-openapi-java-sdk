@@ -29,7 +29,7 @@ public class RollbackGtmRecoveryPlanRequest extends RpcAcsRequest<RollbackGtmRec
 
 	private String lang;
 	public RollbackGtmRecoveryPlanRequest() {
-		super("Alidns", "2015-01-09", "RollbackGtmRecoveryPlan", "alidns");
+		super("Alidns", "2015-01-09", "RollbackGtmRecoveryPlan", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

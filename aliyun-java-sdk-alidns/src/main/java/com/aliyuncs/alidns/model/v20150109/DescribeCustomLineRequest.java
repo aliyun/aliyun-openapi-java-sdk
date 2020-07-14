@@ -29,7 +29,7 @@ public class DescribeCustomLineRequest extends RpcAcsRequest<DescribeCustomLineR
 
 	private String lang;
 	public DescribeCustomLineRequest() {
-		super("Alidns", "2015-01-09", "DescribeCustomLine", "alidns");
+		super("Alidns", "2015-01-09", "DescribeCustomLine", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

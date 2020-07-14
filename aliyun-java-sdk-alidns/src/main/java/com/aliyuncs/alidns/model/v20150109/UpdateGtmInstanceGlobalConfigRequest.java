@@ -43,7 +43,7 @@ public class UpdateGtmInstanceGlobalConfigRequest extends RpcAcsRequest<UpdateGt
 
 	private String lang;
 	public UpdateGtmInstanceGlobalConfigRequest() {
-		super("Alidns", "2015-01-09", "UpdateGtmInstanceGlobalConfig", "alidns");
+		super("Alidns", "2015-01-09", "UpdateGtmInstanceGlobalConfig", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

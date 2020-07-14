@@ -42,7 +42,7 @@ public class AddGtmMonitorRequest extends RpcAcsRequest<AddGtmMonitorResponse> {
 
 	private List<IspCityNode> ispCityNodes;
 	public AddGtmMonitorRequest() {
-		super("Alidns", "2015-01-09", "AddGtmMonitor", "alidns");
+		super("Alidns", "2015-01-09", "AddGtmMonitor", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

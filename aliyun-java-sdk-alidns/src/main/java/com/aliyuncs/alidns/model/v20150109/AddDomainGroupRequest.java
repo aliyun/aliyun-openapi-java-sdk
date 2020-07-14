@@ -29,7 +29,7 @@ public class AddDomainGroupRequest extends RpcAcsRequest<AddDomainGroupResponse>
 
 	private String lang;
 	public AddDomainGroupRequest() {
-		super("Alidns", "2015-01-09", "AddDomainGroup", "alidns");
+		super("Alidns", "2015-01-09", "AddDomainGroup", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

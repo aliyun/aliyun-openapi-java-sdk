@@ -37,7 +37,7 @@ public class SetDNSSLBStatusRequest extends RpcAcsRequest<SetDNSSLBStatusRespons
 
 	private Boolean open;
 	public SetDNSSLBStatusRequest() {
-		super("Alidns", "2015-01-09", "SetDNSSLBStatus", "alidns");
+		super("Alidns", "2015-01-09", "SetDNSSLBStatus", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

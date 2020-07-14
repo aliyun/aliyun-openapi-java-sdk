@@ -31,7 +31,7 @@ public class DeleteDomainRecordRequest extends RpcAcsRequest<DeleteDomainRecordR
 
 	private String lang;
 	public DeleteDomainRecordRequest() {
-		super("Alidns", "2015-01-09", "DeleteDomainRecord", "alidns");
+		super("Alidns", "2015-01-09", "DeleteDomainRecord", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

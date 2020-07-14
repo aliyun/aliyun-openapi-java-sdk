@@ -33,7 +33,7 @@ public class DescribeGtmInstanceAddressPoolsRequest extends RpcAcsRequest<Descri
 
 	private String lang;
 	public DescribeGtmInstanceAddressPoolsRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmInstanceAddressPools", "alidns");
+		super("Alidns", "2015-01-09", "DescribeGtmInstanceAddressPools", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -61,6 +61,8 @@ public class DescribeDomainInfoResponse extends AcsResponse {
 
 	private Boolean slaveDns;
 
+	private String resourceGroupId;
+
 	private List<RecordLine> recordLines;
 
 	private List<String> dnsServers;
@@ -209,6 +211,14 @@ public class DescribeDomainInfoResponse extends AcsResponse {
 
 	public void setSlaveDns(Boolean slaveDns) {
 		this.slaveDns = slaveDns;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public List<RecordLine> getRecordLines() {

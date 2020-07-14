@@ -31,7 +31,7 @@ public class GetTxtRecordForVerifyRequest extends RpcAcsRequest<GetTxtRecordForV
 
 	private String lang;
 	public GetTxtRecordForVerifyRequest() {
-		super("Alidns", "2015-01-09", "GetTxtRecordForVerify", "alidns");
+		super("Alidns", "2015-01-09", "GetTxtRecordForVerify", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

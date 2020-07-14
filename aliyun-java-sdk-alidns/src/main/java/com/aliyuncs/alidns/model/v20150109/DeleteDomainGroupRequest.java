@@ -29,7 +29,7 @@ public class DeleteDomainGroupRequest extends RpcAcsRequest<DeleteDomainGroupRes
 
 	private String lang;
 	public DeleteDomainGroupRequest() {
-		super("Alidns", "2015-01-09", "DeleteDomainGroup", "alidns");
+		super("Alidns", "2015-01-09", "DeleteDomainGroup", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

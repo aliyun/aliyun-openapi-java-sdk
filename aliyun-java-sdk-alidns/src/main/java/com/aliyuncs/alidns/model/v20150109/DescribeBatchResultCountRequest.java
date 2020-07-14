@@ -31,7 +31,7 @@ public class DescribeBatchResultCountRequest extends RpcAcsRequest<DescribeBatch
 
 	private Long taskId;
 	public DescribeBatchResultCountRequest() {
-		super("Alidns", "2015-01-09", "DescribeBatchResultCount", "alidns");
+		super("Alidns", "2015-01-09", "DescribeBatchResultCount", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

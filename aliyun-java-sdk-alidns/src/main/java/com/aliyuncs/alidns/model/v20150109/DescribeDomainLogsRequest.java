@@ -41,7 +41,7 @@ public class DescribeDomainLogsRequest extends RpcAcsRequest<DescribeDomainLogsR
 
 	private String keyWord;
 	public DescribeDomainLogsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomainLogs", "alidns");
+		super("Alidns", "2015-01-09", "DescribeDomainLogs", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

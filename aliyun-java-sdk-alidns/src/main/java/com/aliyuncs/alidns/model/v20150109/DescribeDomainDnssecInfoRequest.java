@@ -29,7 +29,7 @@ public class DescribeDomainDnssecInfoRequest extends RpcAcsRequest<DescribeDomai
 
 	private String lang;
 	public DescribeDomainDnssecInfoRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomainDnssecInfo", "alidns");
+		super("Alidns", "2015-01-09", "DescribeDomainDnssecInfo", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

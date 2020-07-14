@@ -29,7 +29,7 @@ public class DeleteCustomLinesRequest extends RpcAcsRequest<DeleteCustomLinesRes
 
 	private String lang;
 	public DeleteCustomLinesRequest() {
-		super("Alidns", "2015-01-09", "DeleteCustomLines", "alidns");
+		super("Alidns", "2015-01-09", "DeleteCustomLines", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

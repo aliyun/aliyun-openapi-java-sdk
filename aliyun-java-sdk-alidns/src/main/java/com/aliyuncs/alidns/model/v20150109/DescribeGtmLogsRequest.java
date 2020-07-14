@@ -39,7 +39,7 @@ public class DescribeGtmLogsRequest extends RpcAcsRequest<DescribeGtmLogsRespons
 
 	private String keyword;
 	public DescribeGtmLogsRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmLogs", "alidns");
+		super("Alidns", "2015-01-09", "DescribeGtmLogs", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

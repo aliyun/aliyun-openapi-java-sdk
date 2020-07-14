@@ -29,7 +29,7 @@ public class DescribeGtmInstanceSystemCnameRequest extends RpcAcsRequest<Describ
 
 	private String lang;
 	public DescribeGtmInstanceSystemCnameRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmInstanceSystemCname", "alidns");
+		super("Alidns", "2015-01-09", "DescribeGtmInstanceSystemCname", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DescribeGtmMonitorAvailableConfigRequest extends RpcAcsRequest<Desc
 
 	private String lang;
 	public DescribeGtmMonitorAvailableConfigRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmMonitorAvailableConfig", "alidns");
+		super("Alidns", "2015-01-09", "DescribeGtmMonitorAvailableConfig", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

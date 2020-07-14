@@ -37,7 +37,7 @@ public class DescribeBatchResultDetailRequest extends RpcAcsRequest<DescribeBatc
 
 	private String status;
 	public DescribeBatchResultDetailRequest() {
-		super("Alidns", "2015-01-09", "DescribeBatchResultDetail", "alidns");
+		super("Alidns", "2015-01-09", "DescribeBatchResultDetail", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

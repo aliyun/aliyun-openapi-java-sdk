@@ -33,7 +33,7 @@ public class TransferDomainRequest extends RpcAcsRequest<TransferDomainResponse>
 
 	private String lang;
 	public TransferDomainRequest() {
-		super("Alidns", "2015-01-09", "TransferDomain", "alidns");
+		super("Alidns", "2015-01-09", "TransferDomain", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

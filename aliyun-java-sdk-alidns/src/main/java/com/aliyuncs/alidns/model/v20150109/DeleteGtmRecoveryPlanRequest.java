@@ -29,7 +29,7 @@ public class DeleteGtmRecoveryPlanRequest extends RpcAcsRequest<DeleteGtmRecover
 
 	private String lang;
 	public DeleteGtmRecoveryPlanRequest() {
-		super("Alidns", "2015-01-09", "DeleteGtmRecoveryPlan", "alidns");
+		super("Alidns", "2015-01-09", "DeleteGtmRecoveryPlan", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

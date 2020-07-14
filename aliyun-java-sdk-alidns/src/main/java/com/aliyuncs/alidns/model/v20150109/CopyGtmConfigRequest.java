@@ -33,7 +33,7 @@ public class CopyGtmConfigRequest extends RpcAcsRequest<CopyGtmConfigResponse> {
 
 	private String lang;
 	public CopyGtmConfigRequest() {
-		super("Alidns", "2015-01-09", "CopyGtmConfig", "alidns");
+		super("Alidns", "2015-01-09", "CopyGtmConfig", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class AddDomainBackupRequest extends RpcAcsRequest<AddDomainBackupRespons
 
 	private String lang;
 	public AddDomainBackupRequest() {
-		super("Alidns", "2015-01-09", "AddDomainBackup", "alidns");
+		super("Alidns", "2015-01-09", "AddDomainBackup", "Alidns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
