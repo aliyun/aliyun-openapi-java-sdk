@@ -2,6 +2,9 @@
 - Add ListEventAlgorithmResult API.
 
 2020-07-14 Version: 1.0.8
+- Add ListEventAlgorithmResult API.
+
+2020-07-14 Version: 1.0.8
 - Add ListBodyAlgorithmResult API.
 
 2020-07-14 Version: 1.0.7
