@@ -39,6 +39,7 @@ public class SearchTraceAppByNameResponseUnmarshaller {
 			traceApp.setRegionId(_ctx.stringValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].RegionId"));
 			traceApp.setCreateTime(_ctx.longValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].CreateTime"));
 			traceApp.setUpdateTime(_ctx.longValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].UpdateTime"));
+			traceApp.setShow(_ctx.booleanValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].Show"));
 
 			traceApps.add(traceApp);
 		}

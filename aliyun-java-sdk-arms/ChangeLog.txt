@@ -1,3 +1,8 @@
+2020-07-15 Version: 2.6.8
+- Edit ListTraceApp api.
+- Edit SearchTraceAppByName api.
+- Edut SearchTraceAppByPage api.
+
 2020-06-24 Version: 2.6.9
 - ConfigApp.
 

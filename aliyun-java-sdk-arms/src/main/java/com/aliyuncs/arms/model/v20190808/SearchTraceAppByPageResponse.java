@@ -105,6 +105,8 @@ public class SearchTraceAppByPageResponse extends AcsResponse {
 
 			private Long updateTime;
 
+			private Boolean show;
+
 			public Long getAppId() {
 				return this.appId;
 			}
@@ -167,6 +169,14 @@ public class SearchTraceAppByPageResponse extends AcsResponse {
 
 			public void setUpdateTime(Long updateTime) {
 				this.updateTime = updateTime;
+			}
+
+			public Boolean getShow() {
+				return this.show;
+			}
+
+			public void setShow(Boolean show) {
+				this.show = show;
 			}
 		}
 	}

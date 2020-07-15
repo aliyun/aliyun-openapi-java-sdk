@@ -93,6 +93,8 @@ public class ListTraceAppsResponse extends AcsResponse {
 
 		private String regionId;
 
+		private Boolean show;
+
 		public Long getAppId() {
 			return this.appId;
 		}
@@ -155,6 +157,14 @@ public class ListTraceAppsResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public Boolean getShow() {
+			return this.show;
+		}
+
+		public void setShow(Boolean show) {
+			this.show = show;
 		}
 	}
 

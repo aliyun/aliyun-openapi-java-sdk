@@ -45,6 +45,7 @@ public class SearchTraceAppByPageResponseUnmarshaller {
 			traceApp.setRegionId(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].RegionId"));
 			traceApp.setCreateTime(_ctx.longValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].CreateTime"));
 			traceApp.setUpdateTime(_ctx.longValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].UpdateTime"));
+			traceApp.setShow(_ctx.booleanValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].Show"));
 
 			traceApps.add(traceApp);
 		}

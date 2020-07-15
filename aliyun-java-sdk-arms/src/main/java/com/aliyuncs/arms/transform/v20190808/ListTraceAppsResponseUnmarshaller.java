@@ -42,6 +42,7 @@ public class ListTraceAppsResponseUnmarshaller {
 			traceApp.setCreateTime(_ctx.longValue("ListTraceAppsResponse.TraceApps["+ i +"].CreateTime"));
 			traceApp.setUpdateTime(_ctx.longValue("ListTraceAppsResponse.TraceApps["+ i +"].UpdateTime"));
 			traceApp.setRegionId(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].RegionId"));
+			traceApp.setShow(_ctx.booleanValue("ListTraceAppsResponse.TraceApps["+ i +"].Show"));
 
 			traceApps.add(traceApp);
 		}
