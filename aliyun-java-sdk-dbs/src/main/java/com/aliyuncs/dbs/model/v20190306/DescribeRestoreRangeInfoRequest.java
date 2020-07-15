@@ -34,6 +34,8 @@ public class DescribeRestoreRangeInfoRequest extends RpcAcsRequest<DescribeResto
 	private String backupPlanId;
 
 	private String ownerId;
+
+	private Boolean recentlyRestore;
 	public DescribeRestoreRangeInfoRequest() {
 		super("Dbs", "2019-03-06", "DescribeRestoreRangeInfo", "cbs");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class DescribeRestoreRangeInfoRequest extends RpcAcsRequest<DescribeResto
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public Boolean getRecentlyRestore() {
+		return this.recentlyRestore;
+	}
+
+	public void setRecentlyRestore(Boolean recentlyRestore) {
+		this.recentlyRestore = recentlyRestore;
+		if(recentlyRestore != null){
+			putQueryParameter("RecentlyRestore", recentlyRestore.toString());
 		}
 	}
 

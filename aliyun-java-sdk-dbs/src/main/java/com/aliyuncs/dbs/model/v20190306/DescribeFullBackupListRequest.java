@@ -29,6 +29,8 @@ public class DescribeFullBackupListRequest extends RpcAcsRequest<DescribeFullBac
 
 	private String backupPlanId;
 
+	private String backupSetId;
+
 	private Integer pageNum;
 
 	private String ownerId;
@@ -64,6 +66,17 @@ public class DescribeFullBackupListRequest extends RpcAcsRequest<DescribeFullBac
 		this.backupPlanId = backupPlanId;
 		if(backupPlanId != null){
 			putQueryParameter("BackupPlanId", backupPlanId);
+		}
+	}
+
+	public String getBackupSetId() {
+		return this.backupSetId;
+	}
+
+	public void setBackupSetId(String backupSetId) {
+		this.backupSetId = backupSetId;
+		if(backupSetId != null){
+			putQueryParameter("BackupSetId", backupSetId);
 		}
 	}
 

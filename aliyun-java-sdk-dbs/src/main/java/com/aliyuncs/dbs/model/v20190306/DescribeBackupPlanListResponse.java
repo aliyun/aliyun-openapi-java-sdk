@@ -195,6 +195,8 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 
 		private String backupStorageType;
 
+		private String errMessage;
+
 		public String getBackupPlanId() {
 			return this.backupPlanId;
 		}
@@ -465,6 +467,14 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 
 		public void setBackupStorageType(String backupStorageType) {
 			this.backupStorageType = backupStorageType;
+		}
+
+		public String getErrMessage() {
+			return this.errMessage;
+		}
+
+		public void setErrMessage(String errMessage) {
+			this.errMessage = errMessage;
 		}
 	}
 

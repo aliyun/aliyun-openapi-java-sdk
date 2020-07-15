@@ -55,6 +55,8 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 
 	private String crossAliyunId;
 
+	private Boolean autoStartBackup;
+
 	private String sourceEndpointPassword;
 
 	private String backupObjects;
@@ -249,6 +251,17 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		this.crossAliyunId = crossAliyunId;
 		if(crossAliyunId != null){
 			putQueryParameter("CrossAliyunId", crossAliyunId);
+		}
+	}
+
+	public Boolean getAutoStartBackup() {
+		return this.autoStartBackup;
+	}
+
+	public void setAutoStartBackup(Boolean autoStartBackup) {
+		this.autoStartBackup = autoStartBackup;
+		if(autoStartBackup != null){
+			putQueryParameter("AutoStartBackup", autoStartBackup.toString());
 		}
 	}
 

@@ -73,6 +73,7 @@ public class DescribeBackupPlanListResponseUnmarshaller {
 			backupPlanDetail.setCrossAliyunId(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].CrossAliyunId"));
 			backupPlanDetail.setCrossRoleName(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].CrossRoleName"));
 			backupPlanDetail.setBackupStorageType(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupStorageType"));
+			backupPlanDetail.setErrMessage(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].ErrMessage"));
 
 			items.add(backupPlanDetail);
 		}
