@@ -30,6 +30,8 @@ public class ModifyImageSharePermissionRequest extends RpcAcsRequest<ModifyImage
 
 	private String imageId;
 
+	private String launchPermission;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -67,6 +69,17 @@ public class ModifyImageSharePermissionRequest extends RpcAcsRequest<ModifyImage
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getLaunchPermission() {
+		return this.launchPermission;
+	}
+
+	public void setLaunchPermission(String launchPermission) {
+		this.launchPermission = launchPermission;
+		if(launchPermission != null){
+			putQueryParameter("LaunchPermission", launchPermission);
 		}
 	}
 

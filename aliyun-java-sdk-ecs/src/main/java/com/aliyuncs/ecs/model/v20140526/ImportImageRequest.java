@@ -36,6 +36,8 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 	private String resourceGroupId;
 
+	private String bootMode;
+
 	private String imageName;
 
 	private List<Tag> tags;
@@ -119,6 +121,17 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getBootMode() {
+		return this.bootMode;
+	}
+
+	public void setBootMode(String bootMode) {
+		this.bootMode = bootMode;
+		if(bootMode != null){
+			putQueryParameter("BootMode", bootMode);
 		}
 	}
 
