@@ -27,6 +27,9 @@ public class ListInstancesResponseUnmarshaller {
 	public static ListInstancesResponse unmarshall(ListInstancesResponse listInstancesResponse, UnmarshallerContext _ctx) {
 		
 		listInstancesResponse.setRequestId(_ctx.stringValue("ListInstancesResponse.RequestId"));
+		listInstancesResponse.setPageNumber(_ctx.integerValue("ListInstancesResponse.PageNumber"));
+		listInstancesResponse.setPageSize(_ctx.integerValue("ListInstancesResponse.PageSize"));
+		listInstancesResponse.setTotalCount(_ctx.integerValue("ListInstancesResponse.TotalCount"));
 
 		List<InstancesItem> instances = new ArrayList<InstancesItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstancesResponse.Instances.Length"); i++) {

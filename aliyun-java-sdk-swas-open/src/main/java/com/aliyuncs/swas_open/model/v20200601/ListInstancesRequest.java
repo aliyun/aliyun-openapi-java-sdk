@@ -24,7 +24,11 @@ import com.aliyuncs.http.MethodType;
 public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 	   
 
+	private Integer pageNumber;
+
 	private String instanceIds;
+
+	private Integer pageSize;
 
 	private String publicIpAddresses;
 
@@ -32,6 +36,17 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 	public ListInstancesRequest() {
 		super("SWAS-OPEN", "2020-06-01", "ListInstances");
 		setMethod(MethodType.POST);
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public String getInstanceIds() {
@@ -42,6 +57,17 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		this.instanceIds = instanceIds;
 		if(instanceIds != null){
 			putQueryParameter("InstanceIds", instanceIds);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

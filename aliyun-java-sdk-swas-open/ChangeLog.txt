@@ -1,3 +1,6 @@
+2020-07-15 Version: 1.8
+- Feature.
+
 2020-07-14 Version: 1.8
 - Release.
 
