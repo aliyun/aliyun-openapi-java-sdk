@@ -6,6 +6,7 @@ import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.UserAgentConfig;
 import com.aliyuncs.regions.ProductDomain;
+import com.aliyuncs.utils.ParameterHelper;
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
@@ -132,6 +133,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
      */
     @Deprecated
     public void setRegionId(String regionId) {
+        ParameterHelper.validateParameter(regionId, "regionId");
         this.regionId = regionId;
     }
 
@@ -331,6 +333,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
     }
 
     public void setSysRegionId(String regionId) {
+        ParameterHelper.validateParameter(regionId, "regionId");
         this.regionId = regionId;
     }
 
