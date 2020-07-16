@@ -16,14 +16,14 @@ package com.aliyuncs.opensearch.model.v20171225;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.opensearch.transform.v20171225.DescribeRegionsResponseUnmarshaller;
+import com.aliyuncs.opensearch.transform.v20171225.ListQueryProcessorNersResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRegionsResponse extends AcsResponse {
+public class ListQueryProcessorNersResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -47,50 +47,50 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String regionId;
+		private String tag;
 
-		private String localName;
+		private String priority;
 
-		private String endpoint;
+		private Integer order;
 
-		private String consoleUrl;
+		private String label;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getTag() {
+			return this.tag;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setTag(String tag) {
+			this.tag = tag;
 		}
 
-		public String getLocalName() {
-			return this.localName;
+		public String getPriority() {
+			return this.priority;
 		}
 
-		public void setLocalName(String localName) {
-			this.localName = localName;
+		public void setPriority(String priority) {
+			this.priority = priority;
 		}
 
-		public String getEndpoint() {
-			return this.endpoint;
+		public Integer getOrder() {
+			return this.order;
 		}
 
-		public void setEndpoint(String endpoint) {
-			this.endpoint = endpoint;
+		public void setOrder(Integer order) {
+			this.order = order;
 		}
 
-		public String getConsoleUrl() {
-			return this.consoleUrl;
+		public String getLabel() {
+			return this.label;
 		}
 
-		public void setConsoleUrl(String consoleUrl) {
-			this.consoleUrl = consoleUrl;
+		public void setLabel(String label) {
+			this.label = label;
 		}
 	}
 
 	@Override
-	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
+	public ListQueryProcessorNersResponse getInstance(UnmarshallerContext context) {
+		return	ListQueryProcessorNersResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

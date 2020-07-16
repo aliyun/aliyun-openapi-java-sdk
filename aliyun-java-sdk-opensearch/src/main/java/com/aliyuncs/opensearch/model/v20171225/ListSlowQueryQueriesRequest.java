@@ -22,11 +22,15 @@ import com.aliyuncs.opensearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class ListSlowQueryQueriesRequest extends RoaAcsRequest<ListSlowQueryQueriesResponse> {
 	   
-	public DescribeRegionsRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeRegions", "opensearch");
-		setUriPattern("/v4/openapi/regions");
+
+	private String categoryIndex;
+
+	private String appGroupIdentity;
+	public ListSlowQueryQueriesRequest() {
+		super("OpenSearch", "2017-12-25", "ListSlowQueryQueries", "opensearch");
+		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query/categories/[categoryIndex]/queries");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -34,9 +38,31 @@ public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsRespons
 		} catch (Exception e) {}
 	}
 
+	public String getCategoryIndex() {
+		return this.categoryIndex;
+	}
+
+	public void setCategoryIndex(String categoryIndex) {
+		this.categoryIndex = categoryIndex;
+		if(categoryIndex != null){
+			putPathParameter("categoryIndex", categoryIndex);
+		}
+	}
+
+	public String getAppGroupIdentity() {
+		return this.appGroupIdentity;
+	}
+
+	public void setAppGroupIdentity(String appGroupIdentity) {
+		this.appGroupIdentity = appGroupIdentity;
+		if(appGroupIdentity != null){
+			putPathParameter("appGroupIdentity", appGroupIdentity);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<ListSlowQueryQueriesResponse> getResponseClass() {
+		return ListSlowQueryQueriesResponse.class;
 	}
 
 }

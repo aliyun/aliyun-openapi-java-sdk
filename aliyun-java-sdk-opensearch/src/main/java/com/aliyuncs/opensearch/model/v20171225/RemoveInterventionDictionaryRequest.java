@@ -22,21 +22,34 @@ import com.aliyuncs.opensearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class RemoveInterventionDictionaryRequest extends RoaAcsRequest<RemoveInterventionDictionaryResponse> {
 	   
-	public DescribeRegionsRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeRegions", "opensearch");
-		setUriPattern("/v4/openapi/regions");
-		setMethod(MethodType.GET);
+
+	private String name;
+	public RemoveInterventionDictionaryRequest() {
+		super("OpenSearch", "2017-12-25", "RemoveInterventionDictionary", "opensearch");
+		setUriPattern("/v4/openapi/intervention-dictionaries/[name]");
+		setMethod(MethodType.DELETE);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putPathParameter("name", name);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<RemoveInterventionDictionaryResponse> getResponseClass() {
+		return RemoveInterventionDictionaryResponse.class;
 	}
 
 }

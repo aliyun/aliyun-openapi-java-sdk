@@ -22,11 +22,11 @@ import com.aliyuncs.opensearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class DescribeRegionRequest extends RoaAcsRequest<DescribeRegionResponse> {
 	   
-	public DescribeRegionsRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeRegions", "opensearch");
-		setUriPattern("/v4/openapi/regions");
+	public DescribeRegionRequest() {
+		super("OpenSearch", "2017-12-25", "DescribeRegion", "opensearch");
+		setUriPattern("/v4/openapi/region");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,8 +35,8 @@ public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsRespons
 	}
 
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<DescribeRegionResponse> getResponseClass() {
+		return DescribeRegionResponse.class;
 	}
 
 }

@@ -14,20 +14,20 @@
 
 package com.aliyuncs.opensearch.model.v20171225;
 
-import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.opensearch.transform.v20171225.DescribeRegionsResponseUnmarshaller;
+import com.aliyuncs.opensearch.transform.v20171225.DescribeRegionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRegionsResponse extends AcsResponse {
+public class DescribeRegionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<ResultItem> result;
+	private Result result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,23 +37,19 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<ResultItem> getResult() {
+	public Result getResult() {
 		return this.result;
 	}
 
-	public void setResult(List<ResultItem> result) {
+	public void setResult(Result result) {
 		this.result = result;
 	}
 
-	public static class ResultItem {
+	public static class Result {
 
 		private String regionId;
 
-		private String localName;
-
-		private String endpoint;
-
-		private String consoleUrl;
+		private Map<Object,Object> config;
 
 		public String getRegionId() {
 			return this.regionId;
@@ -63,34 +59,18 @@ public class DescribeRegionsResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public String getLocalName() {
-			return this.localName;
+		public Map<Object,Object> getConfig() {
+			return this.config;
 		}
 
-		public void setLocalName(String localName) {
-			this.localName = localName;
-		}
-
-		public String getEndpoint() {
-			return this.endpoint;
-		}
-
-		public void setEndpoint(String endpoint) {
-			this.endpoint = endpoint;
-		}
-
-		public String getConsoleUrl() {
-			return this.consoleUrl;
-		}
-
-		public void setConsoleUrl(String consoleUrl) {
-			this.consoleUrl = consoleUrl;
+		public void setConfig(Map<Object,Object> config) {
+			this.config = config;
 		}
 	}
 
 	@Override
-	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
+	public DescribeRegionResponse getInstance(UnmarshallerContext context) {
+		return	DescribeRegionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

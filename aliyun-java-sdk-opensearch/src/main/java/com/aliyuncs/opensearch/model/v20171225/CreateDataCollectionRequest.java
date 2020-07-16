@@ -22,21 +22,34 @@ import com.aliyuncs.opensearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class CreateDataCollectionRequest extends RoaAcsRequest<CreateDataCollectionResponse> {
 	   
-	public DescribeRegionsRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeRegions", "opensearch");
-		setUriPattern("/v4/openapi/regions");
-		setMethod(MethodType.GET);
+
+	private String appGroupIdentity;
+	public CreateDataCollectionRequest() {
+		super("OpenSearch", "2017-12-25", "CreateDataCollection", "opensearch");
+		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/data-collections");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
+	public String getAppGroupIdentity() {
+		return this.appGroupIdentity;
+	}
+
+	public void setAppGroupIdentity(String appGroupIdentity) {
+		this.appGroupIdentity = appGroupIdentity;
+		if(appGroupIdentity != null){
+			putPathParameter("appGroupIdentity", appGroupIdentity);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<CreateDataCollectionResponse> getResponseClass() {
+		return CreateDataCollectionResponse.class;
 	}
 
 }

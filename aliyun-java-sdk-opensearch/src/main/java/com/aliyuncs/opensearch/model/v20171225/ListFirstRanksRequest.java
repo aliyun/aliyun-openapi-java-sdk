@@ -22,11 +22,15 @@ import com.aliyuncs.opensearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class ListFirstRanksRequest extends RoaAcsRequest<ListFirstRanksResponse> {
 	   
-	public DescribeRegionsRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeRegions", "opensearch");
-		setUriPattern("/v4/openapi/regions");
+
+	private Integer appId;
+
+	private String appGroupIdentity;
+	public ListFirstRanksRequest() {
+		super("OpenSearch", "2017-12-25", "ListFirstRanks", "opensearch");
+		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/first-ranks");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -34,9 +38,31 @@ public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsRespons
 		} catch (Exception e) {}
 	}
 
+	public Integer getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(Integer appId) {
+		this.appId = appId;
+		if(appId != null){
+			putPathParameter("appId", appId.toString());
+		}
+	}
+
+	public String getAppGroupIdentity() {
+		return this.appGroupIdentity;
+	}
+
+	public void setAppGroupIdentity(String appGroupIdentity) {
+		this.appGroupIdentity = appGroupIdentity;
+		if(appGroupIdentity != null){
+			putPathParameter("appGroupIdentity", appGroupIdentity);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<ListFirstRanksResponse> getResponseClass() {
+		return ListFirstRanksResponse.class;
 	}
 
 }

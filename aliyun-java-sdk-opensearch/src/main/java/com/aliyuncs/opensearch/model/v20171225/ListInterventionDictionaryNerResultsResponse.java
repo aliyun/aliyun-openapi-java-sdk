@@ -16,18 +16,18 @@ package com.aliyuncs.opensearch.model.v20171225;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.opensearch.transform.v20171225.DescribeRegionsResponseUnmarshaller;
+import com.aliyuncs.opensearch.transform.v20171225.ListInterventionDictionaryNerResultsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRegionsResponse extends AcsResponse {
+public class ListInterventionDictionaryNerResultsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<ResultItem> result;
+	private List<NerItem> result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,60 +37,60 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<ResultItem> getResult() {
+	public List<NerItem> getResult() {
 		return this.result;
 	}
 
-	public void setResult(List<ResultItem> result) {
+	public void setResult(List<NerItem> result) {
 		this.result = result;
 	}
 
-	public static class ResultItem {
+	public static class NerItem {
 
-		private String regionId;
+		private String tag;
 
-		private String localName;
+		private String tagLabel;
 
-		private String endpoint;
+		private String token;
 
-		private String consoleUrl;
+		private Integer order;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getTag() {
+			return this.tag;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setTag(String tag) {
+			this.tag = tag;
 		}
 
-		public String getLocalName() {
-			return this.localName;
+		public String getTagLabel() {
+			return this.tagLabel;
 		}
 
-		public void setLocalName(String localName) {
-			this.localName = localName;
+		public void setTagLabel(String tagLabel) {
+			this.tagLabel = tagLabel;
 		}
 
-		public String getEndpoint() {
-			return this.endpoint;
+		public String getToken() {
+			return this.token;
 		}
 
-		public void setEndpoint(String endpoint) {
-			this.endpoint = endpoint;
+		public void setToken(String token) {
+			this.token = token;
 		}
 
-		public String getConsoleUrl() {
-			return this.consoleUrl;
+		public Integer getOrder() {
+			return this.order;
 		}
 
-		public void setConsoleUrl(String consoleUrl) {
-			this.consoleUrl = consoleUrl;
+		public void setOrder(Integer order) {
+			this.order = order;
 		}
 	}
 
 	@Override
-	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
+	public ListInterventionDictionaryNerResultsResponse getInstance(UnmarshallerContext context) {
+		return	ListInterventionDictionaryNerResultsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

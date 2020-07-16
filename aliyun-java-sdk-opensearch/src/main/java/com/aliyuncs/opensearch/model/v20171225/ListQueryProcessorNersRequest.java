@@ -22,11 +22,13 @@ import com.aliyuncs.opensearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class ListQueryProcessorNersRequest extends RoaAcsRequest<ListQueryProcessorNersResponse> {
 	   
-	public DescribeRegionsRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeRegions", "opensearch");
-		setUriPattern("/v4/openapi/regions");
+
+	private String domain;
+	public ListQueryProcessorNersRequest() {
+		super("OpenSearch", "2017-12-25", "ListQueryProcessorNers", "opensearch");
+		setUriPattern("/v4/openapi/query-processor/ner/default-priorities");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -34,9 +36,20 @@ public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsRespons
 		} catch (Exception e) {}
 	}
 
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("domain", domain);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<ListQueryProcessorNersResponse> getResponseClass() {
+		return ListQueryProcessorNersResponse.class;
 	}
 
 }

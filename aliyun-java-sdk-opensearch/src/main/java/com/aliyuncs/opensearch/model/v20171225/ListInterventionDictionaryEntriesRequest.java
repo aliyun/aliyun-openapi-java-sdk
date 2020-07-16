@@ -22,11 +22,15 @@ import com.aliyuncs.opensearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class ListInterventionDictionaryEntriesRequest extends RoaAcsRequest<ListInterventionDictionaryEntriesResponse> {
 	   
-	public DescribeRegionsRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeRegions", "opensearch");
-		setUriPattern("/v4/openapi/regions");
+
+	private String name;
+
+	private String word;
+	public ListInterventionDictionaryEntriesRequest() {
+		super("OpenSearch", "2017-12-25", "ListInterventionDictionaryEntries", "opensearch");
+		setUriPattern("/v4/openapi/intervention-dictionaries/[name]/entries");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -34,9 +38,31 @@ public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsRespons
 		} catch (Exception e) {}
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putPathParameter("name", name);
+		}
+	}
+
+	public String getWord() {
+		return this.word;
+	}
+
+	public void setWord(String word) {
+		this.word = word;
+		if(word != null){
+			putQueryParameter("word", word);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<ListInterventionDictionaryEntriesResponse> getResponseClass() {
+		return ListInterventionDictionaryEntriesResponse.class;
 	}
 
 }

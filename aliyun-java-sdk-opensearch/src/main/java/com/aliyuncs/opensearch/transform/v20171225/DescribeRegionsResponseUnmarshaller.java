@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.opensearch.model.v20171225.DescribeRegionsResponse;
-import com.aliyuncs.opensearch.model.v20171225.DescribeRegionsResponse.Error;
+import com.aliyuncs.opensearch.model.v20171225.DescribeRegionsResponse.ResultItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,18 +26,19 @@ public class DescribeRegionsResponseUnmarshaller {
 
 	public static DescribeRegionsResponse unmarshall(DescribeRegionsResponse describeRegionsResponse, UnmarshallerContext _ctx) {
 		
-		describeRegionsResponse.setRequest_id(_ctx.stringValue("DescribeRegionsResponse.request_id"));
-		describeRegionsResponse.setStatus(_ctx.stringValue("DescribeRegionsResponse.status"));
+		describeRegionsResponse.setRequestId(_ctx.stringValue("DescribeRegionsResponse.requestId"));
 
-		List<Error> errors = new ArrayList<Error>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.errors.Length"); i++) {
-			Error error = new Error();
-			error.setCode(_ctx.integerValue("DescribeRegionsResponse.errors["+ i +"].code"));
-			error.setMessage(_ctx.stringValue("DescribeRegionsResponse.errors["+ i +"].message"));
+		List<ResultItem> result = new ArrayList<ResultItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.result.Length"); i++) {
+			ResultItem resultItem = new ResultItem();
+			resultItem.setRegionId(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].regionId"));
+			resultItem.setLocalName(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].localName"));
+			resultItem.setEndpoint(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].endpoint"));
+			resultItem.setConsoleUrl(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].consoleUrl"));
 
-			errors.add(error);
+			result.add(resultItem);
 		}
-		describeRegionsResponse.setErrors(errors);
+		describeRegionsResponse.setResult(result);
 	 
 	 	return describeRegionsResponse;
 	}

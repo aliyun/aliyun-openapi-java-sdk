@@ -22,21 +22,47 @@ import com.aliyuncs.opensearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class RemoveScheduledTaskRequest extends RoaAcsRequest<RemoveScheduledTaskResponse> {
 	   
-	public DescribeRegionsRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeRegions", "opensearch");
-		setUriPattern("/v4/openapi/regions");
-		setMethod(MethodType.GET);
+
+	private String appGroupIdentity;
+
+	private String taskId;
+	public RemoveScheduledTaskRequest() {
+		super("OpenSearch", "2017-12-25", "RemoveScheduledTask", "opensearch");
+		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scheduled-tasks/[taskId]");
+		setMethod(MethodType.DELETE);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
+	public String getAppGroupIdentity() {
+		return this.appGroupIdentity;
+	}
+
+	public void setAppGroupIdentity(String appGroupIdentity) {
+		this.appGroupIdentity = appGroupIdentity;
+		if(appGroupIdentity != null){
+			putPathParameter("appGroupIdentity", appGroupIdentity);
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putPathParameter("taskId", taskId);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<RemoveScheduledTaskResponse> getResponseClass() {
+		return RemoveScheduledTaskResponse.class;
 	}
 
 }
