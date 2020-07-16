@@ -25,18 +25,29 @@ import com.aliyuncs.openanalytics_open.Endpoint;
 public class ListSparkJobRequest extends RpcAcsRequest<ListSparkJobResponse> {
 	   
 
+	private Integer pageNumber;
+
 	private Integer pageSize;
 
 	private String vcName;
-
-	private Integer pageNumber;
 	public ListSparkJobRequest() {
-		super("openanalytics-open", "2018-06-19", "ListSparkJob");
+		super("openanalytics-open", "2018-06-19", "ListSparkJob", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putBodyParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public Integer getPageSize() {
@@ -58,17 +69,6 @@ public class ListSparkJobRequest extends RpcAcsRequest<ListSparkJobResponse> {
 		this.vcName = vcName;
 		if(vcName != null){
 			putBodyParameter("VcName", vcName);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putBodyParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

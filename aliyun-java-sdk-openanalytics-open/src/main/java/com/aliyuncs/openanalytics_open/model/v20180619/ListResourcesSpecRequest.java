@@ -25,7 +25,7 @@ import com.aliyuncs.openanalytics_open.Endpoint;
 public class ListResourcesSpecRequest extends RpcAcsRequest<ListResourcesSpecResponse> {
 	   
 	public ListResourcesSpecRequest() {
-		super("openanalytics-open", "2018-06-19", "ListResourcesSpec");
+		super("openanalytics-open", "2018-06-19", "ListResourcesSpec", "openanalytics");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

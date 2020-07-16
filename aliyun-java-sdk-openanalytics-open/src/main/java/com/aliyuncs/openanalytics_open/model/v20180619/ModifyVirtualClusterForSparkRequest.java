@@ -31,17 +31,17 @@ public class ModifyVirtualClusterForSparkRequest extends RpcAcsRequest<ModifyVir
 
 	private String sparkModuleReleaseName;
 
-	private String name;
-
 	private String description;
 
 	private Long defaultExecutorNumbers;
 
 	private Float maxCpu;
 
+	private String name;
+
 	private String defaultDriverSpecName;
 	public ModifyVirtualClusterForSparkRequest() {
-		super("openanalytics-open", "2018-06-19", "ModifyVirtualClusterForSpark");
+		super("openanalytics-open", "2018-06-19", "ModifyVirtualClusterForSpark", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,17 +82,6 @@ public class ModifyVirtualClusterForSparkRequest extends RpcAcsRequest<ModifyVir
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("Name", name);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -123,6 +112,17 @@ public class ModifyVirtualClusterForSparkRequest extends RpcAcsRequest<ModifyVir
 		this.maxCpu = maxCpu;
 		if(maxCpu != null){
 			putBodyParameter("MaxCpu", maxCpu.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putBodyParameter("Name", name);
 		}
 	}
 

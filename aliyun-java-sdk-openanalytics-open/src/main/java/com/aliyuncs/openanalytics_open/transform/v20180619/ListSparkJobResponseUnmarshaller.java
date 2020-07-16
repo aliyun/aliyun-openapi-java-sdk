@@ -37,21 +37,21 @@ public class ListSparkJobResponseUnmarshaller {
 		List<Data> jobList = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("ListSparkJobResponse.DataResult.JobList.Length"); i++) {
 			Data data = new Data();
-			data.setJobId(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].JobId"));
-			data.setJobName(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].JobName"));
-			data.setStatus(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].Status"));
-			data.setDetail(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].Detail"));
-			data.setSparkUI(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].SparkUI"));
 			data.setCreateTime(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].CreateTime"));
 			data.setCreateTimeValue(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].CreateTimeValue"));
-			data.setUpdateTime(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].UpdateTime"));
-			data.setUpdateTimeValue(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].UpdateTimeValue"));
+			data.setDetail(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].Detail"));
+			data.setDriverResourceSpec(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].DriverResourceSpec"));
+			data.setExecutorInstances(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].ExecutorInstances"));
+			data.setExecutorResourceSpec(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].ExecutorResourceSpec"));
+			data.setJobId(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].JobId"));
+			data.setJobName(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].JobName"));
+			data.setSparkUI(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].SparkUI"));
+			data.setStatus(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].Status"));
 			data.setSubmitTime(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].SubmitTime"));
 			data.setSubmitTimeValue(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].SubmitTimeValue"));
+			data.setUpdateTime(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].UpdateTime"));
+			data.setUpdateTimeValue(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].UpdateTimeValue"));
 			data.setVcName(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].VcName"));
-			data.setDriverResourceSpec(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].DriverResourceSpec"));
-			data.setExecutorResourceSpec(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].ExecutorResourceSpec"));
-			data.setExecutorInstances(_ctx.stringValue("ListSparkJobResponse.DataResult.JobList["+ i +"].ExecutorInstances"));
 
 			jobList.add(data);
 		}

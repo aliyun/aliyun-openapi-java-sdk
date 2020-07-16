@@ -29,7 +29,7 @@ public class SetTrafficLimitPolicyRequest extends RpcAcsRequest<SetTrafficLimitP
 
 	private String externalBizAliyunUid;
 	public SetTrafficLimitPolicyRequest() {
-		super("openanalytics-open", "2018-06-19", "SetTrafficLimitPolicy");
+		super("openanalytics-open", "2018-06-19", "SetTrafficLimitPolicy", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class GetDLAServiceStatusRequest extends RpcAcsRequest<GetDLAServiceStatu
 
 	private String externalBizAliyunUid;
 	public GetDLAServiceStatusRequest() {
-		super("openanalytics-open", "2018-06-19", "GetDLAServiceStatus");
+		super("openanalytics-open", "2018-06-19", "GetDLAServiceStatus", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DescribeVirtualClusterRequest extends RpcAcsRequest<DescribeVirtual
 
 	private String name;
 	public DescribeVirtualClusterRequest() {
-		super("openanalytics-open", "2018-06-19", "DescribeVirtualCluster");
+		super("openanalytics-open", "2018-06-19", "DescribeVirtualCluster", "openanalytics");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

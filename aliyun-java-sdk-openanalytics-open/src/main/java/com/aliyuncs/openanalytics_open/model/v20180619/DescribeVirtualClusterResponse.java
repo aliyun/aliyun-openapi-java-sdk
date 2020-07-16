@@ -71,6 +71,10 @@ public class DescribeVirtualClusterResponse extends AcsResponse {
 
 		private Float maxMemory;
 
+		private Float maxCpuLimit;
+
+		private Float maxMemoryLimit;
+
 		public String getName() {
 			return this.name;
 		}
@@ -165,6 +169,22 @@ public class DescribeVirtualClusterResponse extends AcsResponse {
 
 		public void setMaxMemory(Float maxMemory) {
 			this.maxMemory = maxMemory;
+		}
+
+		public Float getMaxCpuLimit() {
+			return this.maxCpuLimit;
+		}
+
+		public void setMaxCpuLimit(Float maxCpuLimit) {
+			this.maxCpuLimit = maxCpuLimit;
+		}
+
+		public Float getMaxMemoryLimit() {
+			return this.maxMemoryLimit;
+		}
+
+		public void setMaxMemoryLimit(Float maxMemoryLimit) {
+			this.maxMemoryLimit = maxMemoryLimit;
 		}
 	}
 

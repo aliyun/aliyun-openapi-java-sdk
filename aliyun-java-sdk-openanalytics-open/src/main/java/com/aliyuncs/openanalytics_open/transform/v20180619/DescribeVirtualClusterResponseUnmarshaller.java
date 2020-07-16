@@ -43,6 +43,8 @@ public class DescribeVirtualClusterResponseUnmarshaller {
 			dataItem.setSparkVersionDescription(_ctx.stringValue("DescribeVirtualClusterResponse.Data["+ i +"].SparkVersionDescription"));
 			dataItem.setMaxCpu(_ctx.floatValue("DescribeVirtualClusterResponse.Data["+ i +"].MaxCpu"));
 			dataItem.setMaxMemory(_ctx.floatValue("DescribeVirtualClusterResponse.Data["+ i +"].MaxMemory"));
+			dataItem.setMaxCpuLimit(_ctx.floatValue("DescribeVirtualClusterResponse.Data["+ i +"].MaxCpuLimit"));
+			dataItem.setMaxMemoryLimit(_ctx.floatValue("DescribeVirtualClusterResponse.Data["+ i +"].MaxMemoryLimit"));
 
 			data.add(dataItem);
 		}

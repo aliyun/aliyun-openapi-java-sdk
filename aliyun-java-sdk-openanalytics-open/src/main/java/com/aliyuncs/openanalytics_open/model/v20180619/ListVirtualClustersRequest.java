@@ -25,7 +25,7 @@ import com.aliyuncs.openanalytics_open.Endpoint;
 public class ListVirtualClustersRequest extends RpcAcsRequest<ListVirtualClustersResponse> {
 	   
 	public ListVirtualClustersRequest() {
-		super("openanalytics-open", "2018-06-19", "ListVirtualClusters");
+		super("openanalytics-open", "2018-06-19", "ListVirtualClusters", "openanalytics");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

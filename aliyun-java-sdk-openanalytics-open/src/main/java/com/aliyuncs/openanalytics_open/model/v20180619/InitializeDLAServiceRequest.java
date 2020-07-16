@@ -37,7 +37,7 @@ public class InitializeDLAServiceRequest extends RpcAcsRequest<InitializeDLAServ
 
 	private String externalBizAliyunUid;
 	public InitializeDLAServiceRequest() {
-		super("openanalytics-open", "2018-06-19", "InitializeDLAService");
+		super("openanalytics-open", "2018-06-19", "InitializeDLAService", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

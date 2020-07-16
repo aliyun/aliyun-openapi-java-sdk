@@ -31,7 +31,7 @@ public class GetRegionStatusRequest extends RpcAcsRequest<GetRegionStatusRespons
 
 	private String externalBizAliyunUid;
 	public GetRegionStatusRequest() {
-		super("openanalytics-open", "2018-06-19", "GetRegionStatus");
+		super("openanalytics-open", "2018-06-19", "GetRegionStatus", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

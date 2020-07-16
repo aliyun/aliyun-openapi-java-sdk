@@ -31,7 +31,7 @@ public class QueryTaskSumRequest extends RpcAcsRequest<QueryTaskSumResponse> {
 
 	private String todayBeginTs;
 	public QueryTaskSumRequest() {
-		super("openanalytics-open", "2018-06-19", "QueryTaskSum");
+		super("openanalytics-open", "2018-06-19", "QueryTaskSum", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

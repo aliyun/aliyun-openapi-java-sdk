@@ -25,7 +25,7 @@ import com.aliyuncs.openanalytics_open.Endpoint;
 public class GetConsolePermissionRequest extends RpcAcsRequest<GetConsolePermissionResponse> {
 	   
 	public GetConsolePermissionRequest() {
-		super("openanalytics-open", "2018-06-19", "GetConsolePermission");
+		super("openanalytics-open", "2018-06-19", "GetConsolePermission", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

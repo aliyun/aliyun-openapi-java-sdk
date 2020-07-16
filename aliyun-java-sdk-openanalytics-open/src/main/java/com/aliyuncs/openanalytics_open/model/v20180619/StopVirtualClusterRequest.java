@@ -27,8 +27,8 @@ public class StopVirtualClusterRequest extends RpcAcsRequest<StopVirtualClusterR
 
 	private String name;
 	public StopVirtualClusterRequest() {
-		super("openanalytics-open", "2018-06-19", "StopVirtualCluster");
-		setMethod(MethodType.GET);
+		super("openanalytics-open", "2018-06-19", "StopVirtualCluster", "openanalytics");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

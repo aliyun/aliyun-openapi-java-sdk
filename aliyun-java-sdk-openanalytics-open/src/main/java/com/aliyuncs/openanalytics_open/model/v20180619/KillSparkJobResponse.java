@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class KillSparkJobResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getData() {
 		return this.data;
@@ -42,6 +34,14 @@ public class KillSparkJobResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

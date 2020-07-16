@@ -27,8 +27,8 @@ public class DestroyVirtualClusterRequest extends RpcAcsRequest<DestroyVirtualCl
 
 	private String name;
 	public DestroyVirtualClusterRequest() {
-		super("openanalytics-open", "2018-06-19", "DestroyVirtualCluster");
-		setMethod(MethodType.GET);
+		super("openanalytics-open", "2018-06-19", "DestroyVirtualCluster", "openanalytics");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

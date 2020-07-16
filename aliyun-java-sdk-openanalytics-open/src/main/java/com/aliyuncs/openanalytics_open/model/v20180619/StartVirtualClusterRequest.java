@@ -27,8 +27,8 @@ public class StartVirtualClusterRequest extends RpcAcsRequest<StartVirtualCluste
 
 	private String name;
 	public StartVirtualClusterRequest() {
-		super("openanalytics-open", "2018-06-19", "StartVirtualCluster");
-		setMethod(MethodType.GET);
+		super("openanalytics-open", "2018-06-19", "StartVirtualCluster", "openanalytics");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

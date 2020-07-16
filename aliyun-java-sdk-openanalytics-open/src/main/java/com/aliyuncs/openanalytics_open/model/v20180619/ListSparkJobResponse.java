@@ -89,75 +89,35 @@ public class ListSparkJobResponse extends AcsResponse {
 
 		public static class Data {
 
-			private String jobId;
-
-			private String jobName;
-
-			private String status;
-
-			private String detail;
-
-			private String sparkUI;
-
 			private String createTime;
 
 			private String createTimeValue;
 
-			private String updateTime;
+			private String detail;
 
-			private String updateTimeValue;
+			private String driverResourceSpec;
+
+			private String executorInstances;
+
+			private String executorResourceSpec;
+
+			private String jobId;
+
+			private String jobName;
+
+			private String sparkUI;
+
+			private String status;
 
 			private String submitTime;
 
 			private String submitTimeValue;
 
+			private String updateTime;
+
+			private String updateTimeValue;
+
 			private String vcName;
-
-			private String driverResourceSpec;
-
-			private String executorResourceSpec;
-
-			private String executorInstances;
-
-			public String getJobId() {
-				return this.jobId;
-			}
-
-			public void setJobId(String jobId) {
-				this.jobId = jobId;
-			}
-
-			public String getJobName() {
-				return this.jobName;
-			}
-
-			public void setJobName(String jobName) {
-				this.jobName = jobName;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getDetail() {
-				return this.detail;
-			}
-
-			public void setDetail(String detail) {
-				this.detail = detail;
-			}
-
-			public String getSparkUI() {
-				return this.sparkUI;
-			}
-
-			public void setSparkUI(String sparkUI) {
-				this.sparkUI = sparkUI;
-			}
 
 			public String getCreateTime() {
 				return this.createTime;
@@ -175,20 +135,68 @@ public class ListSparkJobResponse extends AcsResponse {
 				this.createTimeValue = createTimeValue;
 			}
 
-			public String getUpdateTime() {
-				return this.updateTime;
+			public String getDetail() {
+				return this.detail;
 			}
 
-			public void setUpdateTime(String updateTime) {
-				this.updateTime = updateTime;
+			public void setDetail(String detail) {
+				this.detail = detail;
 			}
 
-			public String getUpdateTimeValue() {
-				return this.updateTimeValue;
+			public String getDriverResourceSpec() {
+				return this.driverResourceSpec;
 			}
 
-			public void setUpdateTimeValue(String updateTimeValue) {
-				this.updateTimeValue = updateTimeValue;
+			public void setDriverResourceSpec(String driverResourceSpec) {
+				this.driverResourceSpec = driverResourceSpec;
+			}
+
+			public String getExecutorInstances() {
+				return this.executorInstances;
+			}
+
+			public void setExecutorInstances(String executorInstances) {
+				this.executorInstances = executorInstances;
+			}
+
+			public String getExecutorResourceSpec() {
+				return this.executorResourceSpec;
+			}
+
+			public void setExecutorResourceSpec(String executorResourceSpec) {
+				this.executorResourceSpec = executorResourceSpec;
+			}
+
+			public String getJobId() {
+				return this.jobId;
+			}
+
+			public void setJobId(String jobId) {
+				this.jobId = jobId;
+			}
+
+			public String getJobName() {
+				return this.jobName;
+			}
+
+			public void setJobName(String jobName) {
+				this.jobName = jobName;
+			}
+
+			public String getSparkUI() {
+				return this.sparkUI;
+			}
+
+			public void setSparkUI(String sparkUI) {
+				this.sparkUI = sparkUI;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getSubmitTime() {
@@ -207,36 +215,28 @@ public class ListSparkJobResponse extends AcsResponse {
 				this.submitTimeValue = submitTimeValue;
 			}
 
+			public String getUpdateTime() {
+				return this.updateTime;
+			}
+
+			public void setUpdateTime(String updateTime) {
+				this.updateTime = updateTime;
+			}
+
+			public String getUpdateTimeValue() {
+				return this.updateTimeValue;
+			}
+
+			public void setUpdateTimeValue(String updateTimeValue) {
+				this.updateTimeValue = updateTimeValue;
+			}
+
 			public String getVcName() {
 				return this.vcName;
 			}
 
 			public void setVcName(String vcName) {
 				this.vcName = vcName;
-			}
-
-			public String getDriverResourceSpec() {
-				return this.driverResourceSpec;
-			}
-
-			public void setDriverResourceSpec(String driverResourceSpec) {
-				this.driverResourceSpec = driverResourceSpec;
-			}
-
-			public String getExecutorResourceSpec() {
-				return this.executorResourceSpec;
-			}
-
-			public void setExecutorResourceSpec(String executorResourceSpec) {
-				this.executorResourceSpec = executorResourceSpec;
-			}
-
-			public String getExecutorInstances() {
-				return this.executorInstances;
-			}
-
-			public void setExecutorInstances(String executorInstances) {
-				this.executorInstances = executorInstances;
 			}
 		}
 	}

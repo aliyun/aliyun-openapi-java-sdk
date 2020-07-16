@@ -25,7 +25,7 @@ import com.aliyuncs.openanalytics_open.Endpoint;
 public class ListModulesReleaseRequest extends RpcAcsRequest<ListModulesReleaseResponse> {
 	   
 	public ListModulesReleaseRequest() {
-		super("openanalytics-open", "2018-06-19", "ListModulesRelease");
+		super("openanalytics-open", "2018-06-19", "ListModulesRelease", "openanalytics");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

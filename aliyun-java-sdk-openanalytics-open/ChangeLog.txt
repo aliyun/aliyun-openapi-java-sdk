@@ -1,3 +1,8 @@
+2020-07-16 Version: 1.0.7
+- Fix signature error in virtual cluster API.
+- Fix signature error in spark job API.
+- Add support for DMS.
+
 2020-05-14 Version: 1.0.6
 - Support spark API.
 
