@@ -5,6 +5,7 @@ import com.aliyuncs.endpoint.DefaultEndpointResolver;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpClientConfig;
+import com.aliyuncs.utils.ParameterHelper;
 import org.slf4j.Logger;
 
 import static com.aliyuncs.utils.LogUtils.DEFAULT_LOG_FORMAT;
@@ -90,6 +91,7 @@ public class DefaultProfile implements IClientProfile {
     }
 
     public synchronized static void addEndpoint(String regionId, String product, String endpoint) {
+        ParameterHelper.validateParameter(regionId, "regionId");
         DefaultEndpointResolver.predefinedEndpointResolver.putEndpointEntry(regionId, product, endpoint);
     }
 

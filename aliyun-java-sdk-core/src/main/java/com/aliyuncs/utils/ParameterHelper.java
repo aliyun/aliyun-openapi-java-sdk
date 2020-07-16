@@ -8,12 +8,14 @@ import java.security.MessageDigest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class ParameterHelper {
 
     private final static String TIME_ZONE = "GMT";
     private final static String FORMAT_ISO8601 = "yyyy-MM-dd'T'HH:mm:ss'Z'";
     private final static String FORMAT_RFC2616 = "EEE, dd MMM yyyy HH:mm:ss zzz";
+    public final static String PATTERN = "^[a-zA-Z0-9_-]+$";
 
     public ParameterHelper() {
     }
@@ -25,6 +27,13 @@ public class ParameterHelper {
         uniqueNonce.append(System.currentTimeMillis());
         uniqueNonce.append(Thread.currentThread().getId());
         return uniqueNonce.toString();
+    }
+
+    public static void validateParameter(String parameter, String parameterName) {
+        if (Pattern.matches(ParameterHelper.PATTERN, parameter)) {
+            return;
+        }
+        throw new RuntimeException("The parameter " + parameterName + " not match with " + ParameterHelper.PATTERN);
     }
 
     public static String getISO8601Time(Date date) {

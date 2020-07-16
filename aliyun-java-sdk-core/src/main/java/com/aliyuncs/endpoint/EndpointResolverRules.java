@@ -1,5 +1,8 @@
 package com.aliyuncs.endpoint;
 
+import com.aliyuncs.utils.ParameterHelper;
+import com.aliyuncs.utils.StringUtils;
+
 import java.util.HashMap;
 
 public class EndpointResolverRules extends EndpointResolverBase {
@@ -12,6 +15,10 @@ public class EndpointResolverRules extends EndpointResolverBase {
 
     @Override
     public String resolve(ResolveEndpointRequest request) {
+        ParameterHelper.validateParameter(request.productNetwork, "productNetwork");
+        if (!StringUtils.isEmpty(productSuffix)) {
+            ParameterHelper.validateParameter(request.productSuffix, "productSuffix");
+        }
         this.productEndpointMap = request.productEndpointMap;
         this.productEndpointRegional = request.productEndpointRegional;
         this.productNetwork = request.productNetwork;

@@ -23,6 +23,17 @@ public class ParameterHelperTest {
     }
 
     @Test
+    public void validateParameterTest() {
+        ParameterHelper.validateParameter("cn-hangzhou", "regionId");
+        try {
+            ParameterHelper.validateParameter("test.test", "regionId");
+            Assert.fail();
+        } catch (Exception e) {
+            Assert.assertEquals("The parameter regionId not match with " + ParameterHelper.PATTERN, e.getMessage());
+        }
+    }
+
+    @Test
     public void getRFC2616Date() throws ParseException {
         Date d2 = ParameterHelper.parseRFC2616("Tue, 18 Dec 2018 16:13:15 GMT");
         Assert.assertEquals("Tue, 18 Dec 2018 16:13:15 GMT", ParameterHelper.getRFC2616Date(d2));
