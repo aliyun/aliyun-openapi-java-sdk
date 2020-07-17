@@ -1,3 +1,9 @@
+2020-07-17 Version: 1.0.25
+- Add DescribeRegions.
+- Modify DescribeFullBackupList.
+- Modify DescribeBackupPlanList.
+- Modify DescribeRestoreRangeInfo.
+
 2020-07-15 Version: 1.0.24
 - Modify ConfigureBackupPlan.
 - Modify DescribeFullBackupList.
