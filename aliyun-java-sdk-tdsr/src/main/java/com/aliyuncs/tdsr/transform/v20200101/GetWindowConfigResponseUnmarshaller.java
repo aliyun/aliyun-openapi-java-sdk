@@ -15,6 +15,7 @@
 package com.aliyuncs.tdsr.transform.v20200101;
 
 import com.aliyuncs.tdsr.model.v20200101.GetWindowConfigResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,7 +26,7 @@ public class GetWindowConfigResponseUnmarshaller {
 		getWindowConfigResponse.setRequestId(_ctx.stringValue("GetWindowConfigResponse.RequestId"));
 		getWindowConfigResponse.setSuccess(_ctx.booleanValue("GetWindowConfigResponse.Success"));
 		getWindowConfigResponse.setErrMessage(_ctx.stringValue("GetWindowConfigResponse.ErrMessage"));
-		getWindowConfigResponse.setData(_ctx.stringValue("GetWindowConfigResponse.Data"));
+		getWindowConfigResponse.setData(_ctx.mapValue("GetWindowConfigResponse.Data"));
 	 
 	 	return getWindowConfigResponse;
 	}

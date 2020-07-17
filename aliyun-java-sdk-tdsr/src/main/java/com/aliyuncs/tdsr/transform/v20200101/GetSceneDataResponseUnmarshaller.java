@@ -15,6 +15,7 @@
 package com.aliyuncs.tdsr.transform.v20200101;
 
 import com.aliyuncs.tdsr.model.v20200101.GetSceneDataResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,7 +26,7 @@ public class GetSceneDataResponseUnmarshaller {
 		getSceneDataResponse.setRequestId(_ctx.stringValue("GetSceneDataResponse.RequestId"));
 		getSceneDataResponse.setSuccess(_ctx.booleanValue("GetSceneDataResponse.Success"));
 		getSceneDataResponse.setErrMessage(_ctx.stringValue("GetSceneDataResponse.ErrMessage"));
-		getSceneDataResponse.setData(_ctx.stringValue("GetSceneDataResponse.Data"));
+		getSceneDataResponse.setData(_ctx.mapValue("GetSceneDataResponse.Data"));
 	 
 	 	return getSceneDataResponse;
 	}

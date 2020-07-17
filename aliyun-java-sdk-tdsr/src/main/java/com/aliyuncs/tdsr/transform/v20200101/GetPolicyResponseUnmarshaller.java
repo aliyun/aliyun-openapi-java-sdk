@@ -15,6 +15,7 @@
 package com.aliyuncs.tdsr.transform.v20200101;
 
 import com.aliyuncs.tdsr.model.v20200101.GetPolicyResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,7 +26,7 @@ public class GetPolicyResponseUnmarshaller {
 		getPolicyResponse.setRequestId(_ctx.stringValue("GetPolicyResponse.RequestId"));
 		getPolicyResponse.setSuccess(_ctx.booleanValue("GetPolicyResponse.Success"));
 		getPolicyResponse.setErrMessage(_ctx.stringValue("GetPolicyResponse.ErrMessage"));
-		getPolicyResponse.setData(_ctx.stringValue("GetPolicyResponse.Data"));
+		getPolicyResponse.setData(_ctx.mapValue("GetPolicyResponse.Data"));
 	 
 	 	return getPolicyResponse;
 	}

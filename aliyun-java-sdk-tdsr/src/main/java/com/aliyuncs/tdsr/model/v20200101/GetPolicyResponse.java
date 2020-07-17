@@ -14,6 +14,7 @@
 
 package com.aliyuncs.tdsr.model.v20200101;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.tdsr.transform.v20200101.GetPolicyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -30,7 +31,7 @@ public class GetPolicyResponse extends AcsResponse {
 
 	private String errMessage;
 
-	private String data;
+	private Map<Object,Object> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,11 +57,11 @@ public class GetPolicyResponse extends AcsResponse {
 		this.errMessage = errMessage;
 	}
 
-	public String getData() {
+	public Map<Object,Object> getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(Map<Object,Object> data) {
 		this.data = data;
 	}
 

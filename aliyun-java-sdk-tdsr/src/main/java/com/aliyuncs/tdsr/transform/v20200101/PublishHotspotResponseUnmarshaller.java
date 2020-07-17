@@ -15,6 +15,7 @@
 package com.aliyuncs.tdsr.transform.v20200101;
 
 import com.aliyuncs.tdsr.model.v20200101.PublishHotspotResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,7 +26,7 @@ public class PublishHotspotResponseUnmarshaller {
 		publishHotspotResponse.setRequestId(_ctx.stringValue("PublishHotspotResponse.RequestId"));
 		publishHotspotResponse.setSuccess(_ctx.booleanValue("PublishHotspotResponse.Success"));
 		publishHotspotResponse.setErrMessage(_ctx.stringValue("PublishHotspotResponse.ErrMessage"));
-		publishHotspotResponse.setData(_ctx.stringValue("PublishHotspotResponse.Data"));
+		publishHotspotResponse.setData(_ctx.mapValue("PublishHotspotResponse.Data"));
 	 
 	 	return publishHotspotResponse;
 	}
