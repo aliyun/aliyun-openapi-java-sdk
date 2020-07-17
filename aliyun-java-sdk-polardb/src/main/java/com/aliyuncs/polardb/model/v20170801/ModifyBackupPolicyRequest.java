@@ -44,8 +44,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 	private Long ownerId;
 
 	private String preferredBackupTime;
-
-	private String backupRetentionPeriod;
 	public ModifyBackupPolicyRequest() {
 		super("polardb", "2017-08-01", "ModifyBackupPolicy", "polardb");
 		setMethod(MethodType.POST);
@@ -162,17 +160,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.preferredBackupTime = preferredBackupTime;
 		if(preferredBackupTime != null){
 			putQueryParameter("PreferredBackupTime", preferredBackupTime);
-		}
-	}
-
-	public String getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
-	}
-
-	public void setBackupRetentionPeriod(String backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
-		if(backupRetentionPeriod != null){
-			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod);
 		}
 	}
 

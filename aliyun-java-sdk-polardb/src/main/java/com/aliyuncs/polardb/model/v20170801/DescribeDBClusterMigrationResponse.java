@@ -14,6 +14,7 @@
 
 package com.aliyuncs.polardb.model.v20170801;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.polardb.transform.v20170801.DescribeDBClusterMigrationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -43,6 +44,10 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 	private String dBClusterReadWriteMode;
 
 	private String comment;
+
+	private List<DBClusterEndpoint> dBClusterEndpointList;
+
+	private List<RdsEndpoint> rdsEndpointList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -122,6 +127,214 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+
+	public List<DBClusterEndpoint> getDBClusterEndpointList() {
+		return this.dBClusterEndpointList;
+	}
+
+	public void setDBClusterEndpointList(List<DBClusterEndpoint> dBClusterEndpointList) {
+		this.dBClusterEndpointList = dBClusterEndpointList;
+	}
+
+	public List<RdsEndpoint> getRdsEndpointList() {
+		return this.rdsEndpointList;
+	}
+
+	public void setRdsEndpointList(List<RdsEndpoint> rdsEndpointList) {
+		this.rdsEndpointList = rdsEndpointList;
+	}
+
+	public static class DBClusterEndpoint {
+
+		private String dBEndpointId;
+
+		private String endpointType;
+
+		private List<Address> addressItems;
+
+		public String getDBEndpointId() {
+			return this.dBEndpointId;
+		}
+
+		public void setDBEndpointId(String dBEndpointId) {
+			this.dBEndpointId = dBEndpointId;
+		}
+
+		public String getEndpointType() {
+			return this.endpointType;
+		}
+
+		public void setEndpointType(String endpointType) {
+			this.endpointType = endpointType;
+		}
+
+		public List<Address> getAddressItems() {
+			return this.addressItems;
+		}
+
+		public void setAddressItems(List<Address> addressItems) {
+			this.addressItems = addressItems;
+		}
+
+		public static class Address {
+
+			private String connectionString;
+
+			private String iPAddress;
+
+			private String netType;
+
+			private String port;
+
+			private String vPCId;
+
+			private String vSwitchId;
+
+			public String getConnectionString() {
+				return this.connectionString;
+			}
+
+			public void setConnectionString(String connectionString) {
+				this.connectionString = connectionString;
+			}
+
+			public String getIPAddress() {
+				return this.iPAddress;
+			}
+
+			public void setIPAddress(String iPAddress) {
+				this.iPAddress = iPAddress;
+			}
+
+			public String getNetType() {
+				return this.netType;
+			}
+
+			public void setNetType(String netType) {
+				this.netType = netType;
+			}
+
+			public String getPort() {
+				return this.port;
+			}
+
+			public void setPort(String port) {
+				this.port = port;
+			}
+
+			public String getVPCId() {
+				return this.vPCId;
+			}
+
+			public void setVPCId(String vPCId) {
+				this.vPCId = vPCId;
+			}
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+		}
+	}
+
+	public static class RdsEndpoint {
+
+		private String dBEndpointId;
+
+		private String endpointType;
+
+		private List<Address2> addressItems1;
+
+		public String getDBEndpointId() {
+			return this.dBEndpointId;
+		}
+
+		public void setDBEndpointId(String dBEndpointId) {
+			this.dBEndpointId = dBEndpointId;
+		}
+
+		public String getEndpointType() {
+			return this.endpointType;
+		}
+
+		public void setEndpointType(String endpointType) {
+			this.endpointType = endpointType;
+		}
+
+		public List<Address2> getAddressItems1() {
+			return this.addressItems1;
+		}
+
+		public void setAddressItems1(List<Address2> addressItems1) {
+			this.addressItems1 = addressItems1;
+		}
+
+		public static class Address2 {
+
+			private String connectionString;
+
+			private String iPAddress;
+
+			private String netType;
+
+			private String port;
+
+			private String vPCId;
+
+			private String vSwitchId;
+
+			public String getConnectionString() {
+				return this.connectionString;
+			}
+
+			public void setConnectionString(String connectionString) {
+				this.connectionString = connectionString;
+			}
+
+			public String getIPAddress() {
+				return this.iPAddress;
+			}
+
+			public void setIPAddress(String iPAddress) {
+				this.iPAddress = iPAddress;
+			}
+
+			public String getNetType() {
+				return this.netType;
+			}
+
+			public void setNetType(String netType) {
+				this.netType = netType;
+			}
+
+			public String getPort() {
+				return this.port;
+			}
+
+			public void setPort(String port) {
+				this.port = port;
+			}
+
+			public String getVPCId() {
+				return this.vPCId;
+			}
+
+			public void setVPCId(String vPCId) {
+				this.vPCId = vPCId;
+			}
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+		}
 	}
 
 	@Override

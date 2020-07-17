@@ -59,6 +59,8 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		private String endpointConfig;
 
+		private String nodeWithRoles;
+
 		private List<Address> addressItems;
 
 		public String getDBEndpointId() {
@@ -107,6 +109,14 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		public void setEndpointConfig(String endpointConfig) {
 			this.endpointConfig = endpointConfig;
+		}
+
+		public String getNodeWithRoles() {
+			return this.nodeWithRoles;
+		}
+
+		public void setNodeWithRoles(String nodeWithRoles) {
+			this.nodeWithRoles = nodeWithRoles;
 		}
 
 		public List<Address> getAddressItems() {

@@ -38,6 +38,7 @@ public class DescribeDBClusterEndpointsResponseUnmarshaller {
 			dBEndpoint.setReadWriteMode(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].ReadWriteMode"));
 			dBEndpoint.setAutoAddNewNodes(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AutoAddNewNodes"));
 			dBEndpoint.setEndpointConfig(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].EndpointConfig"));
+			dBEndpoint.setNodeWithRoles(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].NodeWithRoles"));
 
 			List<Address> addressItems = new ArrayList<Address>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems.Length"); j++) {

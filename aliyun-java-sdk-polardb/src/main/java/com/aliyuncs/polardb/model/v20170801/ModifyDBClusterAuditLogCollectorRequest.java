@@ -22,18 +22,10 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDBEndpointAddressRequest extends RpcAcsRequest<ModifyDBEndpointAddressResponse> {
+public class ModifyDBClusterAuditLogCollectorRequest extends RpcAcsRequest<ModifyDBClusterAuditLogCollectorResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String connectionStringPrefix;
-
-	private String dBEndpointId;
-
-	private String privateZoneName;
-
-	private String privateZoneAddressPrefix;
 
 	private String resourceOwnerAccount;
 
@@ -41,13 +33,11 @@ public class ModifyDBEndpointAddressRequest extends RpcAcsRequest<ModifyDBEndpoi
 
 	private String ownerAccount;
 
+	private String collectorStatus;
+
 	private Long ownerId;
-
-	private String port;
-
-	private String netType;
-	public ModifyDBEndpointAddressRequest() {
-		super("polardb", "2017-08-01", "ModifyDBEndpointAddress", "polardb");
+	public ModifyDBClusterAuditLogCollectorRequest() {
+		super("polardb", "2017-08-01", "ModifyDBClusterAuditLogCollector", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,50 +53,6 @@ public class ModifyDBEndpointAddressRequest extends RpcAcsRequest<ModifyDBEndpoi
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getConnectionStringPrefix() {
-		return this.connectionStringPrefix;
-	}
-
-	public void setConnectionStringPrefix(String connectionStringPrefix) {
-		this.connectionStringPrefix = connectionStringPrefix;
-		if(connectionStringPrefix != null){
-			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
-		}
-	}
-
-	public String getDBEndpointId() {
-		return this.dBEndpointId;
-	}
-
-	public void setDBEndpointId(String dBEndpointId) {
-		this.dBEndpointId = dBEndpointId;
-		if(dBEndpointId != null){
-			putQueryParameter("DBEndpointId", dBEndpointId);
-		}
-	}
-
-	public String getPrivateZoneName() {
-		return this.privateZoneName;
-	}
-
-	public void setPrivateZoneName(String privateZoneName) {
-		this.privateZoneName = privateZoneName;
-		if(privateZoneName != null){
-			putQueryParameter("PrivateZoneName", privateZoneName);
-		}
-	}
-
-	public String getPrivateZoneAddressPrefix() {
-		return this.privateZoneAddressPrefix;
-	}
-
-	public void setPrivateZoneAddressPrefix(String privateZoneAddressPrefix) {
-		this.privateZoneAddressPrefix = privateZoneAddressPrefix;
-		if(privateZoneAddressPrefix != null){
-			putQueryParameter("PrivateZoneAddressPrefix", privateZoneAddressPrefix);
 		}
 	}
 
@@ -143,6 +89,17 @@ public class ModifyDBEndpointAddressRequest extends RpcAcsRequest<ModifyDBEndpoi
 		}
 	}
 
+	public String getCollectorStatus() {
+		return this.collectorStatus;
+	}
+
+	public void setCollectorStatus(String collectorStatus) {
+		this.collectorStatus = collectorStatus;
+		if(collectorStatus != null){
+			putQueryParameter("CollectorStatus", collectorStatus);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -154,31 +111,9 @@ public class ModifyDBEndpointAddressRequest extends RpcAcsRequest<ModifyDBEndpoi
 		}
 	}
 
-	public String getPort() {
-		return this.port;
-	}
-
-	public void setPort(String port) {
-		this.port = port;
-		if(port != null){
-			putQueryParameter("Port", port);
-		}
-	}
-
-	public String getNetType() {
-		return this.netType;
-	}
-
-	public void setNetType(String netType) {
-		this.netType = netType;
-		if(netType != null){
-			putQueryParameter("NetType", netType);
-		}
-	}
-
 	@Override
-	public Class<ModifyDBEndpointAddressResponse> getResponseClass() {
-		return ModifyDBEndpointAddressResponse.class;
+	public Class<ModifyDBClusterAuditLogCollectorResponse> getResponseClass() {
+		return ModifyDBClusterAuditLogCollectorResponse.class;
 	}
 
 }

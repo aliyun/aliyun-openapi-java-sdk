@@ -39,6 +39,8 @@ public class ModifyDBClusterMigrationRequest extends RpcAcsRequest<ModifyDBClust
 
 	private String sourceRDSDBInstanceId;
 
+	private String swapConnectionString;
+
 	private Long ownerId;
 	public ModifyDBClusterMigrationRequest() {
 		super("polardb", "2017-08-01", "ModifyDBClusterMigration", "polardb");
@@ -123,6 +125,17 @@ public class ModifyDBClusterMigrationRequest extends RpcAcsRequest<ModifyDBClust
 		this.sourceRDSDBInstanceId = sourceRDSDBInstanceId;
 		if(sourceRDSDBInstanceId != null){
 			putQueryParameter("SourceRDSDBInstanceId", sourceRDSDBInstanceId);
+		}
+	}
+
+	public String getSwapConnectionString() {
+		return this.swapConnectionString;
+	}
+
+	public void setSwapConnectionString(String swapConnectionString) {
+		this.swapConnectionString = swapConnectionString;
+		if(swapConnectionString != null){
+			putQueryParameter("SwapConnectionString", swapConnectionString);
 		}
 	}
 
