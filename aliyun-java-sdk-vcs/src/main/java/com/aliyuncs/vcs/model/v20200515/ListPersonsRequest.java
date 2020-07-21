@@ -25,18 +25,35 @@ import com.aliyuncs.vcs.Endpoint;
 public class ListPersonsRequest extends RpcAcsRequest<ListPersonsResponse> {
 	   
 
+	private String algorithmType;
+
 	private String corpId;
+
+	private String endTime;
+
+	private String startTime;
 
 	private String pageNo;
 
 	private String pageSize;
 	public ListPersonsRequest() {
-		super("Vcs", "2020-05-15", "ListPersons", "vcs");
+		super("Vcs", "2020-05-15", "ListPersons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAlgorithmType() {
+		return this.algorithmType;
+	}
+
+	public void setAlgorithmType(String algorithmType) {
+		this.algorithmType = algorithmType;
+		if(algorithmType != null){
+			putBodyParameter("AlgorithmType", algorithmType);
+		}
 	}
 
 	public String getCorpId() {
@@ -47,6 +64,28 @@ public class ListPersonsRequest extends RpcAcsRequest<ListPersonsResponse> {
 		this.corpId = corpId;
 		if(corpId != null){
 			putBodyParameter("CorpId", corpId);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putBodyParameter("EndTime", endTime);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putBodyParameter("StartTime", startTime);
 		}
 	}
 

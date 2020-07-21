@@ -29,15 +29,15 @@ public class CreateVideoSummaryTaskRequest extends RpcAcsRequest<CreateVideoSumm
 
 	private String liveVideoSummary;
 
-	private String startTimeStamp;
+	private Long startTimeStamp;
 
 	private String deviceId;
 
-	private String endTimeStamp;
+	private Long endTimeStamp;
 
 	private String optionList;
 	public CreateVideoSummaryTaskRequest() {
-		super("Vcs", "2020-05-15", "CreateVideoSummaryTask", "vcs");
+		super("Vcs", "2020-05-15", "CreateVideoSummaryTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -67,14 +67,14 @@ public class CreateVideoSummaryTaskRequest extends RpcAcsRequest<CreateVideoSumm
 		}
 	}
 
-	public String getStartTimeStamp() {
+	public Long getStartTimeStamp() {
 		return this.startTimeStamp;
 	}
 
-	public void setStartTimeStamp(String startTimeStamp) {
+	public void setStartTimeStamp(Long startTimeStamp) {
 		this.startTimeStamp = startTimeStamp;
 		if(startTimeStamp != null){
-			putBodyParameter("StartTimeStamp", startTimeStamp);
+			putBodyParameter("StartTimeStamp", startTimeStamp.toString());
 		}
 	}
 
@@ -89,14 +89,14 @@ public class CreateVideoSummaryTaskRequest extends RpcAcsRequest<CreateVideoSumm
 		}
 	}
 
-	public String getEndTimeStamp() {
+	public Long getEndTimeStamp() {
 		return this.endTimeStamp;
 	}
 
-	public void setEndTimeStamp(String endTimeStamp) {
+	public void setEndTimeStamp(Long endTimeStamp) {
 		this.endTimeStamp = endTimeStamp;
 		if(endTimeStamp != null){
-			putBodyParameter("EndTimeStamp", endTimeStamp);
+			putBodyParameter("EndTimeStamp", endTimeStamp.toString());
 		}
 	}
 

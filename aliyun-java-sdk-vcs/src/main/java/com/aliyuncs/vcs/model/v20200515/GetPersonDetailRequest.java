@@ -25,16 +25,29 @@ import com.aliyuncs.vcs.Endpoint;
 public class GetPersonDetailRequest extends RpcAcsRequest<GetPersonDetailResponse> {
 	   
 
+	private String algorithmType;
+
 	private String corpId;
 
 	private String personID;
 	public GetPersonDetailRequest() {
-		super("Vcs", "2020-05-15", "GetPersonDetail", "vcs");
+		super("Vcs", "2020-05-15", "GetPersonDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAlgorithmType() {
+		return this.algorithmType;
+	}
+
+	public void setAlgorithmType(String algorithmType) {
+		this.algorithmType = algorithmType;
+		if(algorithmType != null){
+			putBodyParameter("AlgorithmType", algorithmType);
+		}
 	}
 
 	public String getCorpId() {

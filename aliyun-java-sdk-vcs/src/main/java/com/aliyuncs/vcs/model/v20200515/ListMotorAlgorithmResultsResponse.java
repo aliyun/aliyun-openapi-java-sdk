@@ -145,6 +145,20 @@ public class ListMotorAlgorithmResultsResponse extends AcsResponse {
 
 			private String motorModel;
 
+			private String motorColor;
+
+			private String motorClass;
+
+			private String motorBrand;
+
+			private String plateColor;
+
+			private String plateClass;
+
+			private String safetyBelt;
+
+			private String calling;
+
 			public String getCorpId() {
 				return this.corpId;
 			}
@@ -247,6 +261,62 @@ public class ListMotorAlgorithmResultsResponse extends AcsResponse {
 
 			public void setMotorModel(String motorModel) {
 				this.motorModel = motorModel;
+			}
+
+			public String getMotorColor() {
+				return this.motorColor;
+			}
+
+			public void setMotorColor(String motorColor) {
+				this.motorColor = motorColor;
+			}
+
+			public String getMotorClass() {
+				return this.motorClass;
+			}
+
+			public void setMotorClass(String motorClass) {
+				this.motorClass = motorClass;
+			}
+
+			public String getMotorBrand() {
+				return this.motorBrand;
+			}
+
+			public void setMotorBrand(String motorBrand) {
+				this.motorBrand = motorBrand;
+			}
+
+			public String getPlateColor() {
+				return this.plateColor;
+			}
+
+			public void setPlateColor(String plateColor) {
+				this.plateColor = plateColor;
+			}
+
+			public String getPlateClass() {
+				return this.plateClass;
+			}
+
+			public void setPlateClass(String plateClass) {
+				this.plateClass = plateClass;
+			}
+
+			public String getSafetyBelt() {
+				return this.safetyBelt;
+			}
+
+			public void setSafetyBelt(String safetyBelt) {
+				this.safetyBelt = safetyBelt;
+			}
+
+			public String getCalling() {
+				return this.calling;
+			}
+
+			public void setCalling(String calling) {
+				this.calling = calling;
 			}
 		}
 	}

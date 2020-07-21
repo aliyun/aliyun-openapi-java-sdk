@@ -1,3 +1,6 @@
+2020-07-21 Version: 1.0.9
+- Add algorithm type for ListPerson.
+
 2020-07-14 Version: 1.0.8
 - Add ListEventAlgorithmResult API.
 

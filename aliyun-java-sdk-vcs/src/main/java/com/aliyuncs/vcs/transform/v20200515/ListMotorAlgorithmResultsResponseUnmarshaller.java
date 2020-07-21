@@ -53,6 +53,13 @@ public class ListMotorAlgorithmResultsResponseUnmarshaller {
 			recordsItem.setTargetPicUrlPath(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].TargetPicUrlPath"));
 			recordsItem.setMotorStyle(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorStyle"));
 			recordsItem.setMotorModel(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorModel"));
+			recordsItem.setMotorColor(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorColor"));
+			recordsItem.setMotorClass(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorClass"));
+			recordsItem.setMotorBrand(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorBrand"));
+			recordsItem.setPlateColor(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].PlateColor"));
+			recordsItem.setPlateClass(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].PlateClass"));
+			recordsItem.setSafetyBelt(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].SafetyBelt"));
+			recordsItem.setCalling(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].Calling"));
 
 			records.add(recordsItem);
 		}

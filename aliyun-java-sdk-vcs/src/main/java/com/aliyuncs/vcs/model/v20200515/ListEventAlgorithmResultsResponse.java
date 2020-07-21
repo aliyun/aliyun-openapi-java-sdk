@@ -135,6 +135,8 @@ public class ListEventAlgorithmResultsResponse extends AcsResponse {
 
 			private String targetPicUrlPath;
 
+			private String recordId;
+
 			public String getCapStyle() {
 				return this.capStyle;
 			}
@@ -197,6 +199,14 @@ public class ListEventAlgorithmResultsResponse extends AcsResponse {
 
 			public void setTargetPicUrlPath(String targetPicUrlPath) {
 				this.targetPicUrlPath = targetPicUrlPath;
+			}
+
+			public String getRecordId() {
+				return this.recordId;
+			}
+
+			public void setRecordId(String recordId) {
+				this.recordId = recordId;
 			}
 		}
 	}

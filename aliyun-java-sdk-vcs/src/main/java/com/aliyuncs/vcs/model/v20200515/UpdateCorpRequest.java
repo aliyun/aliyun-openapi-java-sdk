@@ -35,7 +35,7 @@ public class UpdateCorpRequest extends RpcAcsRequest<UpdateCorpResponse> {
 
 	private String corpName;
 	public UpdateCorpRequest() {
-		super("Vcs", "2020-05-15", "UpdateCorp", "vcs");
+		super("Vcs", "2020-05-15", "UpdateCorp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

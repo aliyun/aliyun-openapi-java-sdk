@@ -25,6 +25,8 @@ import com.aliyuncs.vcs.Endpoint;
 public class CreateCorpRequest extends RpcAcsRequest<CreateCorpResponse> {
 	   
 
+	private String algorithmType;
+
 	private String parentCorpId;
 
 	private String description;
@@ -33,12 +35,23 @@ public class CreateCorpRequest extends RpcAcsRequest<CreateCorpResponse> {
 
 	private String corpName;
 	public CreateCorpRequest() {
-		super("Vcs", "2020-05-15", "CreateCorp", "vcs");
+		super("Vcs", "2020-05-15", "CreateCorp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAlgorithmType() {
+		return this.algorithmType;
+	}
+
+	public void setAlgorithmType(String algorithmType) {
+		this.algorithmType = algorithmType;
+		if(algorithmType != null){
+			putBodyParameter("AlgorithmType", algorithmType);
+		}
 	}
 
 	public String getParentCorpId() {

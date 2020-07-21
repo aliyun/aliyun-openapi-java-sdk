@@ -27,7 +27,7 @@ public class GetInventoryRequest extends RpcAcsRequest<GetInventoryResponse> {
 
 	private String commodityCode;
 	public GetInventoryRequest() {
-		super("Vcs", "2020-05-15", "GetInventory", "vcs");
+		super("Vcs", "2020-05-15", "GetInventory");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

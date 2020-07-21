@@ -149,6 +149,18 @@ public class ListBodyAlgorithmResultsResponse extends AcsResponse {
 
 			private String targetPicUrlPath;
 
+			private String coatLength;
+
+			private String coatStyle;
+
+			private String trousersLength;
+
+			private String trousersStyle;
+
+			private String coatColor;
+
+			private String trousersColor;
+
 			public String getCapStyle() {
 				return this.capStyle;
 			}
@@ -267,6 +279,54 @@ public class ListBodyAlgorithmResultsResponse extends AcsResponse {
 
 			public void setTargetPicUrlPath(String targetPicUrlPath) {
 				this.targetPicUrlPath = targetPicUrlPath;
+			}
+
+			public String getCoatLength() {
+				return this.coatLength;
+			}
+
+			public void setCoatLength(String coatLength) {
+				this.coatLength = coatLength;
+			}
+
+			public String getCoatStyle() {
+				return this.coatStyle;
+			}
+
+			public void setCoatStyle(String coatStyle) {
+				this.coatStyle = coatStyle;
+			}
+
+			public String getTrousersLength() {
+				return this.trousersLength;
+			}
+
+			public void setTrousersLength(String trousersLength) {
+				this.trousersLength = trousersLength;
+			}
+
+			public String getTrousersStyle() {
+				return this.trousersStyle;
+			}
+
+			public void setTrousersStyle(String trousersStyle) {
+				this.trousersStyle = trousersStyle;
+			}
+
+			public String getCoatColor() {
+				return this.coatColor;
+			}
+
+			public void setCoatColor(String coatColor) {
+				this.coatColor = coatColor;
+			}
+
+			public String getTrousersColor() {
+				return this.trousersColor;
+			}
+
+			public void setTrousersColor(String trousersColor) {
+				this.trousersColor = trousersColor;
 			}
 		}
 	}

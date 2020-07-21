@@ -27,7 +27,7 @@ public class GetFaceOptionsRequest extends RpcAcsRequest<GetFaceOptionsResponse>
 
 	private String corpId;
 	public GetFaceOptionsRequest() {
-		super("Vcs", "2020-05-15", "GetFaceOptions", "vcs");
+		super("Vcs", "2020-05-15", "GetFaceOptions");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
