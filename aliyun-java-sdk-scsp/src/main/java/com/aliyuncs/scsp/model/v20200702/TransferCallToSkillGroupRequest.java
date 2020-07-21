@@ -24,11 +24,13 @@ import com.aliyuncs.http.MethodType;
 public class TransferCallToSkillGroupRequest extends RpcAcsRequest<TransferCallToSkillGroupResponse> {
 	   
 
+	private String clientToken;
+
 	private String instanceId;
 
 	private String accountName;
 
-	private String skillGroupId;
+	private Long skillGroupId;
 
 	private String callId;
 
@@ -42,6 +44,17 @@ public class TransferCallToSkillGroupRequest extends RpcAcsRequest<TransferCallT
 	public TransferCallToSkillGroupRequest() {
 		super("scsp", "2020-07-02", "TransferCallToSkillGroup", "scsp");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getInstanceId() {
@@ -66,14 +79,14 @@ public class TransferCallToSkillGroupRequest extends RpcAcsRequest<TransferCallT
 		}
 	}
 
-	public String getSkillGroupId() {
+	public Long getSkillGroupId() {
 		return this.skillGroupId;
 	}
 
-	public void setSkillGroupId(String skillGroupId) {
+	public void setSkillGroupId(Long skillGroupId) {
 		this.skillGroupId = skillGroupId;
 		if(skillGroupId != null){
-			putBodyParameter("SkillGroupId", skillGroupId);
+			putBodyParameter("SkillGroupId", skillGroupId.toString());
 		}
 	}
 

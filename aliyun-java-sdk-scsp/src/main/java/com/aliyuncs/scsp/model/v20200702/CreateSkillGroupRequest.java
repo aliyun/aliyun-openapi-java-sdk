@@ -26,6 +26,8 @@ public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupRespo
 
 	private String instanceId;
 
+	private String clientToken;
+
 	private String displayName;
 
 	private Integer channelType;
@@ -46,6 +48,17 @@ public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putBodyParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
 		}
 	}
 

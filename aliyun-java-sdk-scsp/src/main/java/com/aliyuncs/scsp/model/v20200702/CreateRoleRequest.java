@@ -25,6 +25,8 @@ import com.aliyuncs.http.MethodType;
 public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 	   
 
+	private String clientToken;
+
 	private String instanceId;
 
 	private String roleName;
@@ -35,6 +37,17 @@ public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 	public CreateRoleRequest() {
 		super("scsp", "2020-07-02", "CreateRole", "scsp");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getInstanceId() {

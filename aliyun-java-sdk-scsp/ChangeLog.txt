@@ -1,3 +1,6 @@
+2020-07-21 Version: 1.0.3
+- Support Aliyun and RAM AK and SK.
+
 2020-07-09 Version: 1.0.2
 - Support Hotline OpenAPI.
 

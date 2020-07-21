@@ -24,12 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class GetGrantedRoleIdsRequest extends RpcAcsRequest<GetGrantedRoleIdsResponse> {
 	   
 
+	private String clientToken;
+
 	private String instanceId;
 
 	private String accountName;
 	public GetGrantedRoleIdsRequest() {
 		super("scsp", "2020-07-02", "GetGrantedRoleIds", "scsp");
 		setMethod(MethodType.GET);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getInstanceId() {

@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class TransferCallToPhoneRequest extends RpcAcsRequest<TransferCallToPhoneResponse> {
 	   
 
+	private String clientToken;
+
 	private String instanceId;
 
 	private String accountName;
@@ -44,6 +46,17 @@ public class TransferCallToPhoneRequest extends RpcAcsRequest<TransferCallToPhon
 	public TransferCallToPhoneRequest() {
 		super("scsp", "2020-07-02", "TransferCallToPhone", "scsp");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getInstanceId() {

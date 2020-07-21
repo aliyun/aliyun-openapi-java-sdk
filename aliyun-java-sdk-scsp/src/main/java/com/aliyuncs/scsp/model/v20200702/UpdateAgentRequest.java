@@ -25,6 +25,8 @@ import com.aliyuncs.http.MethodType;
 public class UpdateAgentRequest extends RpcAcsRequest<UpdateAgentResponse> {
 	   
 
+	private String clientToken;
+
 	private String instanceId;
 
 	private String accountName;
@@ -35,6 +37,17 @@ public class UpdateAgentRequest extends RpcAcsRequest<UpdateAgentResponse> {
 	public UpdateAgentRequest() {
 		super("scsp", "2020-07-02", "UpdateAgent", "scsp");
 		setMethod(MethodType.PUT);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getInstanceId() {

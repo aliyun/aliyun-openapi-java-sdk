@@ -24,12 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class GenerateWebSocketSignRequest extends RpcAcsRequest<GenerateWebSocketSignResponse> {
 	   
 
+	private String clientToken;
+
 	private String instanceId;
 
 	private String accountName;
 	public GenerateWebSocketSignRequest() {
 		super("scsp", "2020-07-02", "GenerateWebSocketSign", "scsp");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getInstanceId() {

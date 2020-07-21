@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class SendHotlineHeartBeatRequest extends RpcAcsRequest<SendHotlineHeartBeatResponse> {
 	   
 
+	private String clientToken;
+
 	private String instanceId;
 
 	private String accountName;
@@ -32,6 +34,17 @@ public class SendHotlineHeartBeatRequest extends RpcAcsRequest<SendHotlineHeartB
 	public SendHotlineHeartBeatRequest() {
 		super("scsp", "2020-07-02", "SendHotlineHeartBeat", "scsp");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getInstanceId() {

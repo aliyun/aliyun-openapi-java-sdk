@@ -26,6 +26,8 @@ public class RemoveSkillGroupRequest extends RpcAcsRequest<RemoveSkillGroupRespo
 
 	private String instanceId;
 
+	private String clientToken;
+
 	private String skillGroupId;
 	public RemoveSkillGroupRequest() {
 		super("scsp", "2020-07-02", "RemoveSkillGroup", "scsp");
@@ -40,6 +42,17 @@ public class RemoveSkillGroupRequest extends RpcAcsRequest<RemoveSkillGroupRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putBodyParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
 		}
 	}
 

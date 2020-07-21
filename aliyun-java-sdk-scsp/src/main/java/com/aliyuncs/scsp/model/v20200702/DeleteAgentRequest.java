@@ -24,12 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class DeleteAgentRequest extends RpcAcsRequest<DeleteAgentResponse> {
 	   
 
+	private String clientToken;
+
 	private String instanceId;
 
 	private String accountName;
 	public DeleteAgentRequest() {
 		super("scsp", "2020-07-02", "DeleteAgent", "scsp");
 		setMethod(MethodType.DELETE);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getInstanceId() {

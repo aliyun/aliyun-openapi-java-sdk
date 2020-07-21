@@ -26,6 +26,8 @@ public class UpdateSkillGroupRequest extends RpcAcsRequest<UpdateSkillGroupRespo
 
 	private String instanceId;
 
+	private String clientToken;
+
 	private Long skillGroupId;
 
 	private String displayName;
@@ -46,6 +48,17 @@ public class UpdateSkillGroupRequest extends RpcAcsRequest<UpdateSkillGroupRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

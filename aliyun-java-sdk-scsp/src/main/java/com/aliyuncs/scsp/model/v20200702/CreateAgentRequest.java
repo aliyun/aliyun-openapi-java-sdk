@@ -25,6 +25,8 @@ import com.aliyuncs.http.MethodType;
 public class CreateAgentRequest extends RpcAcsRequest<CreateAgentResponse> {
 	   
 
+	private String clientToken;
+
 	private String instanceId;
 
 	private String accountName;
@@ -35,6 +37,17 @@ public class CreateAgentRequest extends RpcAcsRequest<CreateAgentResponse> {
 	public CreateAgentRequest() {
 		super("scsp", "2020-07-02", "CreateAgent", "scsp");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getInstanceId() {

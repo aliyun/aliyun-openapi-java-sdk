@@ -26,6 +26,8 @@ public class QuerySkillGroupsRequest extends RpcAcsRequest<QuerySkillGroupsRespo
 
 	private String instanceId;
 
+	private String clientToken;
+
 	private Integer pageNo;
 
 	private Integer pageSize;
@@ -42,6 +44,17 @@ public class QuerySkillGroupsRequest extends RpcAcsRequest<QuerySkillGroupsRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

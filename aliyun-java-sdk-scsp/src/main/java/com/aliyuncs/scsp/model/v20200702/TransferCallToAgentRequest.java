@@ -24,11 +24,13 @@ import com.aliyuncs.http.MethodType;
 public class TransferCallToAgentRequest extends RpcAcsRequest<TransferCallToAgentResponse> {
 	   
 
+	private String clientToken;
+
 	private String instanceId;
 
 	private String accountName;
 
-	private String targetAgentId;
+	private String targetAccountName;
 
 	private String callId;
 
@@ -42,6 +44,17 @@ public class TransferCallToAgentRequest extends RpcAcsRequest<TransferCallToAgen
 	public TransferCallToAgentRequest() {
 		super("scsp", "2020-07-02", "TransferCallToAgent", "scsp");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getInstanceId() {
@@ -66,14 +79,14 @@ public class TransferCallToAgentRequest extends RpcAcsRequest<TransferCallToAgen
 		}
 	}
 
-	public String getTargetAgentId() {
-		return this.targetAgentId;
+	public String getTargetAccountName() {
+		return this.targetAccountName;
 	}
 
-	public void setTargetAgentId(String targetAgentId) {
-		this.targetAgentId = targetAgentId;
-		if(targetAgentId != null){
-			putBodyParameter("TargetAgentId", targetAgentId);
+	public void setTargetAccountName(String targetAccountName) {
+		this.targetAccountName = targetAccountName;
+		if(targetAccountName != null){
+			putBodyParameter("TargetAccountName", targetAccountName);
 		}
 	}
 
