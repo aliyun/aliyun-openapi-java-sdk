@@ -44,6 +44,10 @@ public class DescribeSlowLogRecordsResponseUnmarshaller {
 			slowLogRecord.setParseRowCounts(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ParseRowCounts"));
 			slowLogRecord.setProcessID(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ProcessID"));
 			slowLogRecord.setUserName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].UserName"));
+			slowLogRecord.setScanSize(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ScanSize"));
+			slowLogRecord.setPeakMemoryUsage(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].PeakMemoryUsage"));
+			slowLogRecord.setQueueTime(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueueTime"));
+			slowLogRecord.setState(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].State"));
 
 			items.add(slowLogRecord);
 		}

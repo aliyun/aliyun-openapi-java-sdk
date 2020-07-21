@@ -37,6 +37,7 @@ public class DescribeColumnsResponseUnmarshaller {
 			column.setColumnName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].ColumnName"));
 			column.setType(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].Type"));
 			column.setPrimaryKey(_ctx.booleanValue("DescribeColumnsResponse.Items["+ i +"].PrimaryKey"));
+			column.setAutoIncrementColumn(_ctx.booleanValue("DescribeColumnsResponse.Items["+ i +"].AutoIncrementColumn"));
 
 			items.add(column);
 		}

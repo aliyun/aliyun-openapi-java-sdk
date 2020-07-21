@@ -111,6 +111,38 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String category;
 
+		private String rdsInstanceId;
+
+		private String dtsJobId;
+
+		private String executorCount;
+
+		private String diskType;
+
+		private String vPCCloudInstanceId;
+
+		private String engine;
+
+		private String dBClusterNetworkType;
+
+		private String vPCId;
+
+		private String vSwitchId;
+
+		private String zoneId;
+
+		private String connectionString;
+
+		private String port;
+
+		private String computeResource;
+
+		private String storageResource;
+
+		private String mode;
+
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		public String getDBClusterId() {
@@ -247,6 +279,134 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+
+		public String getRdsInstanceId() {
+			return this.rdsInstanceId;
+		}
+
+		public void setRdsInstanceId(String rdsInstanceId) {
+			this.rdsInstanceId = rdsInstanceId;
+		}
+
+		public String getDtsJobId() {
+			return this.dtsJobId;
+		}
+
+		public void setDtsJobId(String dtsJobId) {
+			this.dtsJobId = dtsJobId;
+		}
+
+		public String getExecutorCount() {
+			return this.executorCount;
+		}
+
+		public void setExecutorCount(String executorCount) {
+			this.executorCount = executorCount;
+		}
+
+		public String getDiskType() {
+			return this.diskType;
+		}
+
+		public void setDiskType(String diskType) {
+			this.diskType = diskType;
+		}
+
+		public String getVPCCloudInstanceId() {
+			return this.vPCCloudInstanceId;
+		}
+
+		public void setVPCCloudInstanceId(String vPCCloudInstanceId) {
+			this.vPCCloudInstanceId = vPCCloudInstanceId;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public String getDBClusterNetworkType() {
+			return this.dBClusterNetworkType;
+		}
+
+		public void setDBClusterNetworkType(String dBClusterNetworkType) {
+			this.dBClusterNetworkType = dBClusterNetworkType;
+		}
+
+		public String getVPCId() {
+			return this.vPCId;
+		}
+
+		public void setVPCId(String vPCId) {
+			this.vPCId = vPCId;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getConnectionString() {
+			return this.connectionString;
+		}
+
+		public void setConnectionString(String connectionString) {
+			this.connectionString = connectionString;
+		}
+
+		public String getPort() {
+			return this.port;
+		}
+
+		public void setPort(String port) {
+			this.port = port;
+		}
+
+		public String getComputeResource() {
+			return this.computeResource;
+		}
+
+		public void setComputeResource(String computeResource) {
+			this.computeResource = computeResource;
+		}
+
+		public String getStorageResource() {
+			return this.storageResource;
+		}
+
+		public void setStorageResource(String storageResource) {
+			this.storageResource = storageResource;
+		}
+
+		public String getMode() {
+			return this.mode;
+		}
+
+		public void setMode(String mode) {
+			this.mode = mode;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

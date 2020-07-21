@@ -16,14 +16,14 @@ package com.aliyuncs.adb.model.v20190315;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.adb.transform.v20190315.DescribeSlowLogRecordsResponseUnmarshaller;
+import com.aliyuncs.adb.transform.v20190315.DescribeAuditLogRecordsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeSlowLogRecordsResponse extends AcsResponse {
+public class DescribeAuditLogRecordsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -93,25 +93,17 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		private String sQLText;
 
-		private Long queryTime;
+		private String sQLType;
 
-		private Long returnRowCounts;
+		private String connId;
 
-		private String executionStartTime;
+		private String executeTime;
 
-		private Long parseRowCounts;
+		private String succeed;
+
+		private String totalTime;
 
 		private String processID;
-
-		private String userName;
-
-		private String scanSize;
-
-		private String peakMemoryUsage;
-
-		private Long queueTime;
-
-		private String state;
 
 		public String getHostAddress() {
 			return this.hostAddress;
@@ -137,36 +129,44 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.sQLText = sQLText;
 		}
 
-		public Long getQueryTime() {
-			return this.queryTime;
+		public String getSQLType() {
+			return this.sQLType;
 		}
 
-		public void setQueryTime(Long queryTime) {
-			this.queryTime = queryTime;
+		public void setSQLType(String sQLType) {
+			this.sQLType = sQLType;
 		}
 
-		public Long getReturnRowCounts() {
-			return this.returnRowCounts;
+		public String getConnId() {
+			return this.connId;
 		}
 
-		public void setReturnRowCounts(Long returnRowCounts) {
-			this.returnRowCounts = returnRowCounts;
+		public void setConnId(String connId) {
+			this.connId = connId;
 		}
 
-		public String getExecutionStartTime() {
-			return this.executionStartTime;
+		public String getExecuteTime() {
+			return this.executeTime;
 		}
 
-		public void setExecutionStartTime(String executionStartTime) {
-			this.executionStartTime = executionStartTime;
+		public void setExecuteTime(String executeTime) {
+			this.executeTime = executeTime;
 		}
 
-		public Long getParseRowCounts() {
-			return this.parseRowCounts;
+		public String getSucceed() {
+			return this.succeed;
 		}
 
-		public void setParseRowCounts(Long parseRowCounts) {
-			this.parseRowCounts = parseRowCounts;
+		public void setSucceed(String succeed) {
+			this.succeed = succeed;
+		}
+
+		public String getTotalTime() {
+			return this.totalTime;
+		}
+
+		public void setTotalTime(String totalTime) {
+			this.totalTime = totalTime;
 		}
 
 		public String getProcessID() {
@@ -176,50 +176,15 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 		public void setProcessID(String processID) {
 			this.processID = processID;
 		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
-
-		public String getScanSize() {
-			return this.scanSize;
-		}
-
-		public void setScanSize(String scanSize) {
-			this.scanSize = scanSize;
-		}
-
-		public String getPeakMemoryUsage() {
-			return this.peakMemoryUsage;
-		}
-
-		public void setPeakMemoryUsage(String peakMemoryUsage) {
-			this.peakMemoryUsage = peakMemoryUsage;
-		}
-
-		public Long getQueueTime() {
-			return this.queueTime;
-		}
-
-		public void setQueueTime(Long queueTime) {
-			this.queueTime = queueTime;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
 	}
 
 	@Override
-	public DescribeSlowLogRecordsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeSlowLogRecordsResponseUnmarshaller.unmarshall(this, context);
+	public DescribeAuditLogRecordsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeAuditLogRecordsResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

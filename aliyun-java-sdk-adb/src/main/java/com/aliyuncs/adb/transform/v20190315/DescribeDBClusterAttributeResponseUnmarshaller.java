@@ -56,6 +56,16 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBCluster.setVPCCloudInstanceId(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].VPCCloudInstanceId"));
 			dBCluster.setCommodityCode(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].CommodityCode"));
 			dBCluster.setDBClusterNetworkType(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].DBClusterNetworkType"));
+			dBCluster.setConnectionString(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].ConnectionString"));
+			dBCluster.setPort(_ctx.integerValue("DescribeDBClusterAttributeResponse.Items["+ i +"].Port"));
+			dBCluster.setRdsInstanceId(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].RdsInstanceId"));
+			dBCluster.setDtsJobId(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].DtsJobId"));
+			dBCluster.setExecutorCount(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].ExecutorCount"));
+			dBCluster.setDiskType(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].DiskType"));
+			dBCluster.setComputeResource(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].ComputeResource"));
+			dBCluster.setStorageResource(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].StorageResource"));
+			dBCluster.setMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].Mode"));
+			dBCluster.setResourceGroupId(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterAttributeResponse.Items["+ i +"].Tags.Length"); j++) {

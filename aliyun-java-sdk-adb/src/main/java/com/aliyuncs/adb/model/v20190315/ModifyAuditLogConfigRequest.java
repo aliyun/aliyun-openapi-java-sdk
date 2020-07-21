@@ -22,14 +22,10 @@ import com.aliyuncs.adb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterResponse> {
+public class ModifyAuditLogConfigRequest extends RpcAcsRequest<ModifyAuditLogConfigResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String storageResource;
-
-	private String dBNodeClass;
 
 	private String resourceOwnerAccount;
 
@@ -39,17 +35,9 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 
 	private Long ownerId;
 
-	private String dBNodeGroupCount;
-
-	private String dBNodeStorage;
-
-	private String executorCount;
-
-	private String modifyType;
-
-	private String computeResource;
-	public ModifyDBClusterRequest() {
-		super("adb", "2019-03-15", "ModifyDBCluster", "ads");
+	private String auditLogStatus;
+	public ModifyAuditLogConfigRequest() {
+		super("adb", "2019-03-15", "ModifyAuditLogConfig", "ads");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -65,28 +53,6 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getStorageResource() {
-		return this.storageResource;
-	}
-
-	public void setStorageResource(String storageResource) {
-		this.storageResource = storageResource;
-		if(storageResource != null){
-			putQueryParameter("StorageResource", storageResource);
-		}
-	}
-
-	public String getDBNodeClass() {
-		return this.dBNodeClass;
-	}
-
-	public void setDBNodeClass(String dBNodeClass) {
-		this.dBNodeClass = dBNodeClass;
-		if(dBNodeClass != null){
-			putQueryParameter("DBNodeClass", dBNodeClass);
 		}
 	}
 
@@ -134,64 +100,20 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		}
 	}
 
-	public String getDBNodeGroupCount() {
-		return this.dBNodeGroupCount;
+	public String getAuditLogStatus() {
+		return this.auditLogStatus;
 	}
 
-	public void setDBNodeGroupCount(String dBNodeGroupCount) {
-		this.dBNodeGroupCount = dBNodeGroupCount;
-		if(dBNodeGroupCount != null){
-			putQueryParameter("DBNodeGroupCount", dBNodeGroupCount);
-		}
-	}
-
-	public String getDBNodeStorage() {
-		return this.dBNodeStorage;
-	}
-
-	public void setDBNodeStorage(String dBNodeStorage) {
-		this.dBNodeStorage = dBNodeStorage;
-		if(dBNodeStorage != null){
-			putQueryParameter("DBNodeStorage", dBNodeStorage);
-		}
-	}
-
-	public String getExecutorCount() {
-		return this.executorCount;
-	}
-
-	public void setExecutorCount(String executorCount) {
-		this.executorCount = executorCount;
-		if(executorCount != null){
-			putQueryParameter("ExecutorCount", executorCount);
-		}
-	}
-
-	public String getModifyType() {
-		return this.modifyType;
-	}
-
-	public void setModifyType(String modifyType) {
-		this.modifyType = modifyType;
-		if(modifyType != null){
-			putQueryParameter("ModifyType", modifyType);
-		}
-	}
-
-	public String getComputeResource() {
-		return this.computeResource;
-	}
-
-	public void setComputeResource(String computeResource) {
-		this.computeResource = computeResource;
-		if(computeResource != null){
-			putQueryParameter("ComputeResource", computeResource);
+	public void setAuditLogStatus(String auditLogStatus) {
+		this.auditLogStatus = auditLogStatus;
+		if(auditLogStatus != null){
+			putQueryParameter("AuditLogStatus", auditLogStatus);
 		}
 	}
 
 	@Override
-	public Class<ModifyDBClusterResponse> getResponseClass() {
-		return ModifyDBClusterResponse.class;
+	public Class<ModifyAuditLogConfigResponse> getResponseClass() {
+		return ModifyAuditLogConfigResponse.class;
 	}
 
 }

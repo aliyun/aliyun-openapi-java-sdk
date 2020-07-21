@@ -1,3 +1,6 @@
+2020-07-21 Version: 1.0.5
+- Support Tag API.
+
 2019-12-31 Version: 1.0.4
 - Support DeleteDBCluster.
 - Support ModifyDBCluster.

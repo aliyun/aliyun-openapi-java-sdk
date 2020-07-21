@@ -59,7 +59,7 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 		private String zoneId;
 
-		private List<SupportedSerial> supportedSerialList;
+		private List<SupportedModeItem> supportedMode;
 
 		public String getZoneId() {
 			return this.zoneId;
@@ -69,88 +69,243 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
-		public List<SupportedSerial> getSupportedSerialList() {
-			return this.supportedSerialList;
+		public List<SupportedModeItem> getSupportedMode() {
+			return this.supportedMode;
 		}
 
-		public void setSupportedSerialList(List<SupportedSerial> supportedSerialList) {
-			this.supportedSerialList = supportedSerialList;
+		public void setSupportedMode(List<SupportedModeItem> supportedMode) {
+			this.supportedMode = supportedMode;
 		}
 
-		public static class SupportedSerial {
+		public static class SupportedModeItem {
 
-			private String serial;
+			private String mode;
 
-			private List<SupportedInstanceClass> supportedInstanceClassList;
+			private List<SupportedSerialListItem> supportedSerialList;
 
-			public String getSerial() {
-				return this.serial;
+			public String getMode() {
+				return this.mode;
 			}
 
-			public void setSerial(String serial) {
-				this.serial = serial;
+			public void setMode(String mode) {
+				this.mode = mode;
 			}
 
-			public List<SupportedInstanceClass> getSupportedInstanceClassList() {
-				return this.supportedInstanceClassList;
+			public List<SupportedSerialListItem> getSupportedSerialList() {
+				return this.supportedSerialList;
 			}
 
-			public void setSupportedInstanceClassList(List<SupportedInstanceClass> supportedInstanceClassList) {
-				this.supportedInstanceClassList = supportedInstanceClassList;
+			public void setSupportedSerialList(List<SupportedSerialListItem> supportedSerialList) {
+				this.supportedSerialList = supportedSerialList;
 			}
 
-			public static class SupportedInstanceClass {
+			public static class SupportedSerialListItem {
 
-				private String instanceClass;
+				private String serial;
 
-				private String tips;
+				private List<SupportedFlexibleResourceItem> supportedFlexibleResource;
 
-				private List<SupportedNodeCount> supportedNodeCountList;
+				private List<SupportedInstanceClass> supportedInstanceClassList;
 
-				public String getInstanceClass() {
-					return this.instanceClass;
+				public String getSerial() {
+					return this.serial;
 				}
 
-				public void setInstanceClass(String instanceClass) {
-					this.instanceClass = instanceClass;
+				public void setSerial(String serial) {
+					this.serial = serial;
 				}
 
-				public String getTips() {
-					return this.tips;
+				public List<SupportedFlexibleResourceItem> getSupportedFlexibleResource() {
+					return this.supportedFlexibleResource;
 				}
 
-				public void setTips(String tips) {
-					this.tips = tips;
+				public void setSupportedFlexibleResource(List<SupportedFlexibleResourceItem> supportedFlexibleResource) {
+					this.supportedFlexibleResource = supportedFlexibleResource;
 				}
 
-				public List<SupportedNodeCount> getSupportedNodeCountList() {
-					return this.supportedNodeCountList;
+				public List<SupportedInstanceClass> getSupportedInstanceClassList() {
+					return this.supportedInstanceClassList;
 				}
 
-				public void setSupportedNodeCountList(List<SupportedNodeCount> supportedNodeCountList) {
-					this.supportedNodeCountList = supportedNodeCountList;
+				public void setSupportedInstanceClassList(List<SupportedInstanceClass> supportedInstanceClassList) {
+					this.supportedInstanceClassList = supportedInstanceClassList;
 				}
 
-				public static class SupportedNodeCount {
+				public static class SupportedFlexibleResourceItem {
 
-					private String nodeCount;
+					private String storageType;
 
-					private List<String> storageSize;
+					private List<String> supportedStorageResource;
 
-					public String getNodeCount() {
-						return this.nodeCount;
+					private List<String> supportedComputeResource;
+
+					public String getStorageType() {
+						return this.storageType;
 					}
 
-					public void setNodeCount(String nodeCount) {
-						this.nodeCount = nodeCount;
+					public void setStorageType(String storageType) {
+						this.storageType = storageType;
 					}
 
-					public List<String> getStorageSize() {
-						return this.storageSize;
+					public List<String> getSupportedStorageResource() {
+						return this.supportedStorageResource;
 					}
 
-					public void setStorageSize(List<String> storageSize) {
-						this.storageSize = storageSize;
+					public void setSupportedStorageResource(List<String> supportedStorageResource) {
+						this.supportedStorageResource = supportedStorageResource;
+					}
+
+					public List<String> getSupportedComputeResource() {
+						return this.supportedComputeResource;
+					}
+
+					public void setSupportedComputeResource(List<String> supportedComputeResource) {
+						this.supportedComputeResource = supportedComputeResource;
+					}
+				}
+
+				public static class SupportedInstanceClass {
+
+					private String instanceClass;
+
+					private String tips;
+
+					private List<SupportedNodeCount> supportedNodeCountList;
+
+					private List<SupportedExecutor> supportedExecutorList;
+
+					public String getInstanceClass() {
+						return this.instanceClass;
+					}
+
+					public void setInstanceClass(String instanceClass) {
+						this.instanceClass = instanceClass;
+					}
+
+					public String getTips() {
+						return this.tips;
+					}
+
+					public void setTips(String tips) {
+						this.tips = tips;
+					}
+
+					public List<SupportedNodeCount> getSupportedNodeCountList() {
+						return this.supportedNodeCountList;
+					}
+
+					public void setSupportedNodeCountList(List<SupportedNodeCount> supportedNodeCountList) {
+						this.supportedNodeCountList = supportedNodeCountList;
+					}
+
+					public List<SupportedExecutor> getSupportedExecutorList() {
+						return this.supportedExecutorList;
+					}
+
+					public void setSupportedExecutorList(List<SupportedExecutor> supportedExecutorList) {
+						this.supportedExecutorList = supportedExecutorList;
+					}
+
+					public static class SupportedNodeCount {
+
+						private List<String> storageSize;
+
+						private NodeCount nodeCount;
+
+						public List<String> getStorageSize() {
+							return this.storageSize;
+						}
+
+						public void setStorageSize(List<String> storageSize) {
+							this.storageSize = storageSize;
+						}
+
+						public NodeCount getNodeCount() {
+							return this.nodeCount;
+						}
+
+						public void setNodeCount(NodeCount nodeCount) {
+							this.nodeCount = nodeCount;
+						}
+
+						public static class NodeCount {
+
+							private String minCount;
+
+							private String maxCount;
+
+							private String step;
+
+							public String getMinCount() {
+								return this.minCount;
+							}
+
+							public void setMinCount(String minCount) {
+								this.minCount = minCount;
+							}
+
+							public String getMaxCount() {
+								return this.maxCount;
+							}
+
+							public void setMaxCount(String maxCount) {
+								this.maxCount = maxCount;
+							}
+
+							public String getStep() {
+								return this.step;
+							}
+
+							public void setStep(String step) {
+								this.step = step;
+							}
+						}
+					}
+
+					public static class SupportedExecutor {
+
+						private NodeCount1 nodeCount1;
+
+						public NodeCount1 getNodeCount1() {
+							return this.nodeCount1;
+						}
+
+						public void setNodeCount1(NodeCount1 nodeCount1) {
+							this.nodeCount1 = nodeCount1;
+						}
+
+						public static class NodeCount1 {
+
+							private String minCount;
+
+							private String maxCount;
+
+							private String step;
+
+							public String getMinCount() {
+								return this.minCount;
+							}
+
+							public void setMinCount(String minCount) {
+								this.minCount = minCount;
+							}
+
+							public String getMaxCount() {
+								return this.maxCount;
+							}
+
+							public void setMaxCount(String maxCount) {
+								this.maxCount = maxCount;
+							}
+
+							public String getStep() {
+								return this.step;
+							}
+
+							public void setStep(String step) {
+								this.step = step;
+							}
+						}
 					}
 				}
 			}

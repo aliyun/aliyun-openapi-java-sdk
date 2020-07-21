@@ -19,9 +19,14 @@ import java.util.List;
 
 import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse;
 import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone;
-import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedSerial;
-import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedSerial.SupportedInstanceClass;
-import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedSerial.SupportedInstanceClass.SupportedNodeCount;
+import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedModeItem;
+import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedModeItem.SupportedSerialListItem;
+import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedModeItem.SupportedSerialListItem.SupportedFlexibleResourceItem;
+import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedModeItem.SupportedSerialListItem.SupportedInstanceClass;
+import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedModeItem.SupportedSerialListItem.SupportedInstanceClass.SupportedExecutor;
+import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedModeItem.SupportedSerialListItem.SupportedInstanceClass.SupportedExecutor.NodeCount1;
+import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedModeItem.SupportedSerialListItem.SupportedInstanceClass.SupportedNodeCount;
+import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedModeItem.SupportedSerialListItem.SupportedInstanceClass.SupportedNodeCount.NodeCount;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,39 +42,88 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 			AvailableZone availableZone = new AvailableZone();
 			availableZone.setZoneId(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].ZoneId"));
 
-			List<SupportedSerial> supportedSerialList = new ArrayList<SupportedSerial>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedSerialList.Length"); j++) {
-				SupportedSerial supportedSerial = new SupportedSerial();
-				supportedSerial.setSerial(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedSerialList["+ j +"].Serial"));
+			List<SupportedModeItem> supportedMode = new ArrayList<SupportedModeItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode.Length"); j++) {
+				SupportedModeItem supportedModeItem = new SupportedModeItem();
+				supportedModeItem.setMode(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].Mode"));
 
-				List<SupportedInstanceClass> supportedInstanceClassList = new ArrayList<SupportedInstanceClass>();
-				for (int k = 0; k < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedSerialList["+ j +"].SupportedInstanceClassList.Length"); k++) {
-					SupportedInstanceClass supportedInstanceClass = new SupportedInstanceClass();
-					supportedInstanceClass.setInstanceClass(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedSerialList["+ j +"].SupportedInstanceClassList["+ k +"].InstanceClass"));
-					supportedInstanceClass.setTips(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedSerialList["+ j +"].SupportedInstanceClassList["+ k +"].Tips"));
+				List<SupportedSerialListItem> supportedSerialList = new ArrayList<SupportedSerialListItem>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList.Length"); k++) {
+					SupportedSerialListItem supportedSerialListItem = new SupportedSerialListItem();
+					supportedSerialListItem.setSerial(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].Serial"));
 
-					List<SupportedNodeCount> supportedNodeCountList = new ArrayList<SupportedNodeCount>();
-					for (int l = 0; l < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedSerialList["+ j +"].SupportedInstanceClassList["+ k +"].SupportedNodeCountList.Length"); l++) {
-						SupportedNodeCount supportedNodeCount = new SupportedNodeCount();
-						supportedNodeCount.setNodeCount(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedSerialList["+ j +"].SupportedInstanceClassList["+ k +"].SupportedNodeCountList["+ l +"].NodeCount"));
+					List<SupportedFlexibleResourceItem> supportedFlexibleResource = new ArrayList<SupportedFlexibleResourceItem>();
+					for (int l = 0; l < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource.Length"); l++) {
+						SupportedFlexibleResourceItem supportedFlexibleResourceItem = new SupportedFlexibleResourceItem();
+						supportedFlexibleResourceItem.setStorageType(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].StorageType"));
 
-						List<String> storageSize = new ArrayList<String>();
-						for (int m = 0; m < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedSerialList["+ j +"].SupportedInstanceClassList["+ k +"].SupportedNodeCountList["+ l +"].StorageSize.Length"); m++) {
-							storageSize.add(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedSerialList["+ j +"].SupportedInstanceClassList["+ k +"].SupportedNodeCountList["+ l +"].StorageSize["+ m +"]"));
+						List<String> supportedStorageResource = new ArrayList<String>();
+						for (int m = 0; m < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].SupportedStorageResource.Length"); m++) {
+							supportedStorageResource.add(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].SupportedStorageResource["+ m +"]"));
 						}
-						supportedNodeCount.setStorageSize(storageSize);
+						supportedFlexibleResourceItem.setSupportedStorageResource(supportedStorageResource);
 
-						supportedNodeCountList.add(supportedNodeCount);
+						List<String> supportedComputeResource = new ArrayList<String>();
+						for (int m = 0; m < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].SupportedComputeResource.Length"); m++) {
+							supportedComputeResource.add(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].SupportedComputeResource["+ m +"]"));
+						}
+						supportedFlexibleResourceItem.setSupportedComputeResource(supportedComputeResource);
+
+						supportedFlexibleResource.add(supportedFlexibleResourceItem);
 					}
-					supportedInstanceClass.setSupportedNodeCountList(supportedNodeCountList);
+					supportedSerialListItem.setSupportedFlexibleResource(supportedFlexibleResource);
 
-					supportedInstanceClassList.add(supportedInstanceClass);
+					List<SupportedInstanceClass> supportedInstanceClassList = new ArrayList<SupportedInstanceClass>();
+					for (int l = 0; l < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList.Length"); l++) {
+						SupportedInstanceClass supportedInstanceClass = new SupportedInstanceClass();
+						supportedInstanceClass.setInstanceClass(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].InstanceClass"));
+						supportedInstanceClass.setTips(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].Tips"));
+
+						List<SupportedNodeCount> supportedNodeCountList = new ArrayList<SupportedNodeCount>();
+						for (int m = 0; m < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedNodeCountList.Length"); m++) {
+							SupportedNodeCount supportedNodeCount = new SupportedNodeCount();
+
+							List<String> storageSize = new ArrayList<String>();
+							for (int n = 0; n < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedNodeCountList["+ m +"].StorageSize.Length"); n++) {
+								storageSize.add(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedNodeCountList["+ m +"].StorageSize["+ n +"]"));
+							}
+							supportedNodeCount.setStorageSize(storageSize);
+
+							NodeCount nodeCount = new NodeCount();
+							nodeCount.setMinCount(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedNodeCountList["+ m +"].NodeCount.MinCount"));
+							nodeCount.setMaxCount(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedNodeCountList["+ m +"].NodeCount.MaxCount"));
+							nodeCount.setStep(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedNodeCountList["+ m +"].NodeCount.Step"));
+							supportedNodeCount.setNodeCount(nodeCount);
+
+							supportedNodeCountList.add(supportedNodeCount);
+						}
+						supportedInstanceClass.setSupportedNodeCountList(supportedNodeCountList);
+
+						List<SupportedExecutor> supportedExecutorList = new ArrayList<SupportedExecutor>();
+						for (int m = 0; m < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedExecutorList.Length"); m++) {
+							SupportedExecutor supportedExecutor = new SupportedExecutor();
+
+							NodeCount1 nodeCount1 = new NodeCount1();
+							nodeCount1.setMinCount(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedExecutorList["+ m +"].NodeCount.MinCount"));
+							nodeCount1.setMaxCount(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedExecutorList["+ m +"].NodeCount.MaxCount"));
+							nodeCount1.setStep(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedExecutorList["+ m +"].NodeCount.Step"));
+							supportedExecutor.setNodeCount1(nodeCount1);
+
+							supportedExecutorList.add(supportedExecutor);
+						}
+						supportedInstanceClass.setSupportedExecutorList(supportedExecutorList);
+
+						supportedInstanceClassList.add(supportedInstanceClass);
+					}
+					supportedSerialListItem.setSupportedInstanceClassList(supportedInstanceClassList);
+
+					supportedSerialList.add(supportedSerialListItem);
 				}
-				supportedSerial.setSupportedInstanceClassList(supportedInstanceClassList);
+				supportedModeItem.setSupportedSerialList(supportedSerialList);
 
-				supportedSerialList.add(supportedSerial);
+				supportedMode.add(supportedModeItem);
 			}
-			availableZone.setSupportedSerialList(supportedSerialList);
+			availableZone.setSupportedMode(supportedMode);
 
 			availableZoneList.add(availableZone);
 		}

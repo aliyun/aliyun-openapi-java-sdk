@@ -15,20 +15,16 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.adb.transform.v20190315.ResetAccountPasswordResponseUnmarshaller;
+import com.aliyuncs.adb.transform.v20190315.ModifyClusterConnectionStringResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ResetAccountPasswordResponse extends AcsResponse {
+public class ModifyClusterConnectionStringResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String dBClusterId;
-
-	private Integer taskId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +34,13 @@ public class ResetAccountPasswordResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-	}
-
-	public Integer getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(Integer taskId) {
-		this.taskId = taskId;
+	@Override
+	public ModifyClusterConnectionStringResponse getInstance(UnmarshallerContext context) {
+		return	ModifyClusterConnectionStringResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public ResetAccountPasswordResponse getInstance(UnmarshallerContext context) {
-		return	ResetAccountPasswordResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

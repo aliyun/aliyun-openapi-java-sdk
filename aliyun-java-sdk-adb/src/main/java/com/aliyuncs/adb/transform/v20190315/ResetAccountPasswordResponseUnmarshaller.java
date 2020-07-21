@@ -23,6 +23,8 @@ public class ResetAccountPasswordResponseUnmarshaller {
 	public static ResetAccountPasswordResponse unmarshall(ResetAccountPasswordResponse resetAccountPasswordResponse, UnmarshallerContext _ctx) {
 		
 		resetAccountPasswordResponse.setRequestId(_ctx.stringValue("ResetAccountPasswordResponse.RequestId"));
+		resetAccountPasswordResponse.setDBClusterId(_ctx.stringValue("ResetAccountPasswordResponse.DBClusterId"));
+		resetAccountPasswordResponse.setTaskId(_ctx.integerValue("ResetAccountPasswordResponse.TaskId"));
 	 
 	 	return resetAccountPasswordResponse;
 	}

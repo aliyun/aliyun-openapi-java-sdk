@@ -15,20 +15,20 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.adb.transform.v20190315.ResetAccountPasswordResponseUnmarshaller;
+import com.aliyuncs.adb.transform.v20190315.DescribeAuditLogConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ResetAccountPasswordResponse extends AcsResponse {
+public class DescribeAuditLogConfigResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String dBClusterId;
+	private String auditLogStatus;
 
-	private Integer taskId;
+	private String dBClusterId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,6 +36,14 @@ public class ResetAccountPasswordResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAuditLogStatus() {
+		return this.auditLogStatus;
+	}
+
+	public void setAuditLogStatus(String auditLogStatus) {
+		this.auditLogStatus = auditLogStatus;
 	}
 
 	public String getDBClusterId() {
@@ -46,16 +54,8 @@ public class ResetAccountPasswordResponse extends AcsResponse {
 		this.dBClusterId = dBClusterId;
 	}
 
-	public Integer getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(Integer taskId) {
-		this.taskId = taskId;
-	}
-
 	@Override
-	public ResetAccountPasswordResponse getInstance(UnmarshallerContext context) {
-		return	ResetAccountPasswordResponseUnmarshaller.unmarshall(this, context);
+	public DescribeAuditLogConfigResponse getInstance(UnmarshallerContext context) {
+		return	DescribeAuditLogConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 }

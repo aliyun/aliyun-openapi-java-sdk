@@ -14,18 +14,18 @@
 
 package com.aliyuncs.adb.transform.v20190315;
 
-import com.aliyuncs.adb.model.v20190315.CreateAccountResponse;
+import com.aliyuncs.adb.model.v20190315.DescribeAuditLogConfigResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateAccountResponseUnmarshaller {
+public class DescribeAuditLogConfigResponseUnmarshaller {
 
-	public static CreateAccountResponse unmarshall(CreateAccountResponse createAccountResponse, UnmarshallerContext _ctx) {
+	public static DescribeAuditLogConfigResponse unmarshall(DescribeAuditLogConfigResponse describeAuditLogConfigResponse, UnmarshallerContext _ctx) {
 		
-		createAccountResponse.setRequestId(_ctx.stringValue("CreateAccountResponse.RequestId"));
-		createAccountResponse.setDBClusterId(_ctx.stringValue("CreateAccountResponse.DBClusterId"));
-		createAccountResponse.setTaskId(_ctx.integerValue("CreateAccountResponse.TaskId"));
+		describeAuditLogConfigResponse.setRequestId(_ctx.stringValue("DescribeAuditLogConfigResponse.RequestId"));
+		describeAuditLogConfigResponse.setAuditLogStatus(_ctx.stringValue("DescribeAuditLogConfigResponse.AuditLogStatus"));
+		describeAuditLogConfigResponse.setDBClusterId(_ctx.stringValue("DescribeAuditLogConfigResponse.DBClusterId"));
 	 
-	 	return createAccountResponse;
+	 	return describeAuditLogConfigResponse;
 	}
 }

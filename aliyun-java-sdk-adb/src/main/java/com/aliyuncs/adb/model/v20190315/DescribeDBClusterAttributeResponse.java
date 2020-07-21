@@ -95,6 +95,26 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private String dBClusterNetworkType;
 
+		private String connectionString;
+
+		private Integer port;
+
+		private String rdsInstanceId;
+
+		private String dtsJobId;
+
+		private String executorCount;
+
+		private String diskType;
+
+		private String computeResource;
+
+		private String storageResource;
+
+		private String mode;
+
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		public String getRegionId() {
@@ -287,6 +307,86 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setDBClusterNetworkType(String dBClusterNetworkType) {
 			this.dBClusterNetworkType = dBClusterNetworkType;
+		}
+
+		public String getConnectionString() {
+			return this.connectionString;
+		}
+
+		public void setConnectionString(String connectionString) {
+			this.connectionString = connectionString;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public String getRdsInstanceId() {
+			return this.rdsInstanceId;
+		}
+
+		public void setRdsInstanceId(String rdsInstanceId) {
+			this.rdsInstanceId = rdsInstanceId;
+		}
+
+		public String getDtsJobId() {
+			return this.dtsJobId;
+		}
+
+		public void setDtsJobId(String dtsJobId) {
+			this.dtsJobId = dtsJobId;
+		}
+
+		public String getExecutorCount() {
+			return this.executorCount;
+		}
+
+		public void setExecutorCount(String executorCount) {
+			this.executorCount = executorCount;
+		}
+
+		public String getDiskType() {
+			return this.diskType;
+		}
+
+		public void setDiskType(String diskType) {
+			this.diskType = diskType;
+		}
+
+		public String getComputeResource() {
+			return this.computeResource;
+		}
+
+		public void setComputeResource(String computeResource) {
+			this.computeResource = computeResource;
+		}
+
+		public String getStorageResource() {
+			return this.storageResource;
+		}
+
+		public void setStorageResource(String storageResource) {
+			this.storageResource = storageResource;
+		}
+
+		public String getMode() {
+			return this.mode;
+		}
+
+		public void setMode(String mode) {
+			this.mode = mode;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

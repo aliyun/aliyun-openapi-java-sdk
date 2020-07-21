@@ -59,6 +59,8 @@ public class DescribeColumnsResponse extends AcsResponse {
 
 		private Boolean primaryKey;
 
+		private Boolean autoIncrementColumn;
+
 		public String getDBClusterId() {
 			return this.dBClusterId;
 		}
@@ -105,6 +107,14 @@ public class DescribeColumnsResponse extends AcsResponse {
 
 		public void setPrimaryKey(Boolean primaryKey) {
 			this.primaryKey = primaryKey;
+		}
+
+		public Boolean getAutoIncrementColumn() {
+			return this.autoIncrementColumn;
+		}
+
+		public void setAutoIncrementColumn(Boolean autoIncrementColumn) {
+			this.autoIncrementColumn = autoIncrementColumn;
 		}
 	}
 

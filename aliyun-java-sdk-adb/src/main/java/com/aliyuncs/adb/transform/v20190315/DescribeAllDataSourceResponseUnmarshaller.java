@@ -60,6 +60,7 @@ public class DescribeAllDataSourceResponseUnmarshaller {
 			column.setColumnName(_ctx.stringValue("DescribeAllDataSourceResponse.Columns["+ i +"].ColumnName"));
 			column.setType(_ctx.stringValue("DescribeAllDataSourceResponse.Columns["+ i +"].Type"));
 			column.setPrimaryKey(_ctx.booleanValue("DescribeAllDataSourceResponse.Columns["+ i +"].PrimaryKey"));
+			column.setAutoIncrementColumn(_ctx.booleanValue("DescribeAllDataSourceResponse.Columns["+ i +"].AutoIncrementColumn"));
 
 			columns.add(column);
 		}

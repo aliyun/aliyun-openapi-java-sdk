@@ -22,14 +22,12 @@ import com.aliyuncs.adb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterResponse> {
+public class ModifyClusterConnectionStringRequest extends RpcAcsRequest<ModifyClusterConnectionStringResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String storageResource;
-
-	private String dBNodeClass;
+	private String connectionStringPrefix;
 
 	private String resourceOwnerAccount;
 
@@ -39,17 +37,11 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 
 	private Long ownerId;
 
-	private String dBNodeGroupCount;
+	private String currentConnectionString;
 
-	private String dBNodeStorage;
-
-	private String executorCount;
-
-	private String modifyType;
-
-	private String computeResource;
-	public ModifyDBClusterRequest() {
-		super("adb", "2019-03-15", "ModifyDBCluster", "ads");
+	private Integer port;
+	public ModifyClusterConnectionStringRequest() {
+		super("adb", "2019-03-15", "ModifyClusterConnectionString", "ads");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,25 +60,14 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		}
 	}
 
-	public String getStorageResource() {
-		return this.storageResource;
+	public String getConnectionStringPrefix() {
+		return this.connectionStringPrefix;
 	}
 
-	public void setStorageResource(String storageResource) {
-		this.storageResource = storageResource;
-		if(storageResource != null){
-			putQueryParameter("StorageResource", storageResource);
-		}
-	}
-
-	public String getDBNodeClass() {
-		return this.dBNodeClass;
-	}
-
-	public void setDBNodeClass(String dBNodeClass) {
-		this.dBNodeClass = dBNodeClass;
-		if(dBNodeClass != null){
-			putQueryParameter("DBNodeClass", dBNodeClass);
+	public void setConnectionStringPrefix(String connectionStringPrefix) {
+		this.connectionStringPrefix = connectionStringPrefix;
+		if(connectionStringPrefix != null){
+			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
 		}
 	}
 
@@ -134,64 +115,31 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		}
 	}
 
-	public String getDBNodeGroupCount() {
-		return this.dBNodeGroupCount;
+	public String getCurrentConnectionString() {
+		return this.currentConnectionString;
 	}
 
-	public void setDBNodeGroupCount(String dBNodeGroupCount) {
-		this.dBNodeGroupCount = dBNodeGroupCount;
-		if(dBNodeGroupCount != null){
-			putQueryParameter("DBNodeGroupCount", dBNodeGroupCount);
+	public void setCurrentConnectionString(String currentConnectionString) {
+		this.currentConnectionString = currentConnectionString;
+		if(currentConnectionString != null){
+			putQueryParameter("CurrentConnectionString", currentConnectionString);
 		}
 	}
 
-	public String getDBNodeStorage() {
-		return this.dBNodeStorage;
+	public Integer getPort() {
+		return this.port;
 	}
 
-	public void setDBNodeStorage(String dBNodeStorage) {
-		this.dBNodeStorage = dBNodeStorage;
-		if(dBNodeStorage != null){
-			putQueryParameter("DBNodeStorage", dBNodeStorage);
-		}
-	}
-
-	public String getExecutorCount() {
-		return this.executorCount;
-	}
-
-	public void setExecutorCount(String executorCount) {
-		this.executorCount = executorCount;
-		if(executorCount != null){
-			putQueryParameter("ExecutorCount", executorCount);
-		}
-	}
-
-	public String getModifyType() {
-		return this.modifyType;
-	}
-
-	public void setModifyType(String modifyType) {
-		this.modifyType = modifyType;
-		if(modifyType != null){
-			putQueryParameter("ModifyType", modifyType);
-		}
-	}
-
-	public String getComputeResource() {
-		return this.computeResource;
-	}
-
-	public void setComputeResource(String computeResource) {
-		this.computeResource = computeResource;
-		if(computeResource != null){
-			putQueryParameter("ComputeResource", computeResource);
+	public void setPort(Integer port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port.toString());
 		}
 	}
 
 	@Override
-	public Class<ModifyDBClusterResponse> getResponseClass() {
-		return ModifyDBClusterResponse.class;
+	public Class<ModifyClusterConnectionStringResponse> getResponseClass() {
+		return ModifyClusterConnectionStringResponse.class;
 	}
 
 }

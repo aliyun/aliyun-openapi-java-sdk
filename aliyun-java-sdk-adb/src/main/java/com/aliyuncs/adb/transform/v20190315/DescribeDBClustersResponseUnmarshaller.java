@@ -52,6 +52,22 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setDBNodeCount(_ctx.longValue("DescribeDBClustersResponse.Items["+ i +"].DBNodeCount"));
 			dBCluster.setCommodityCode(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].CommodityCode"));
 			dBCluster.setCategory(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].Category"));
+			dBCluster.setRdsInstanceId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].RdsInstanceId"));
+			dBCluster.setDtsJobId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DtsJobId"));
+			dBCluster.setExecutorCount(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].ExecutorCount"));
+			dBCluster.setDiskType(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DiskType"));
+			dBCluster.setVPCCloudInstanceId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].VPCCloudInstanceId"));
+			dBCluster.setEngine(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].Engine"));
+			dBCluster.setDBClusterNetworkType(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBClusterNetworkType"));
+			dBCluster.setVPCId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].VPCId"));
+			dBCluster.setVSwitchId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].VSwitchId"));
+			dBCluster.setZoneId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].ZoneId"));
+			dBCluster.setConnectionString(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].ConnectionString"));
+			dBCluster.setPort(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].Port"));
+			dBCluster.setComputeResource(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].ComputeResource"));
+			dBCluster.setStorageResource(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].StorageResource"));
+			dBCluster.setMode(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].Mode"));
+			dBCluster.setResourceGroupId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClustersResponse.Items["+ i +"].Tags.Length"); j++) {

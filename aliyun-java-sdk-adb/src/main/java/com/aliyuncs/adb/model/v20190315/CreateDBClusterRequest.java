@@ -31,6 +31,14 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String clientToken;
 
+	private String storageType;
+
+	private String mode;
+
+	private String resourceGroupId;
+
+	private String storageResource;
+
 	private String dBClusterCategory;
 
 	private String dBClusterNetworkType;
@@ -55,9 +63,13 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String dBNodeStorage;
 
+	private String executorCount;
+
 	private String vPCId;
 
 	private String zoneId;
+
+	private String computeResource;
 
 	private String payType;
 	public CreateDBClusterRequest() {
@@ -99,6 +111,50 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
+		}
+	}
+
+	public String getMode() {
+		return this.mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
+		if(mode != null){
+			putQueryParameter("Mode", mode);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getStorageResource() {
+		return this.storageResource;
+	}
+
+	public void setStorageResource(String storageResource) {
+		this.storageResource = storageResource;
+		if(storageResource != null){
+			putQueryParameter("StorageResource", storageResource);
 		}
 	}
 
@@ -234,6 +290,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getExecutorCount() {
+		return this.executorCount;
+	}
+
+	public void setExecutorCount(String executorCount) {
+		this.executorCount = executorCount;
+		if(executorCount != null){
+			putQueryParameter("ExecutorCount", executorCount);
+		}
+	}
+
 	public String getVPCId() {
 		return this.vPCId;
 	}
@@ -253,6 +320,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getComputeResource() {
+		return this.computeResource;
+	}
+
+	public void setComputeResource(String computeResource) {
+		this.computeResource = computeResource;
+		if(computeResource != null){
+			putQueryParameter("ComputeResource", computeResource);
 		}
 	}
 

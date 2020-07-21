@@ -22,26 +22,42 @@ import com.aliyuncs.adb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAutoRenewAttributeRequest extends RpcAcsRequest<DescribeAutoRenewAttributeResponse> {
+public class DescribeAuditLogRecordsRequest extends RpcAcsRequest<DescribeAuditLogRecordsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private String startTime;
+
 	private Integer pageNumber;
 
-	private String resourceGroupId;
+	private String hostAddress;
 
 	private Integer pageSize;
 
+	private String sqlType;
+
 	private String resourceOwnerAccount;
+
+	private String dBClusterId;
 
 	private String ownerAccount;
 
+	private String queryKeyword;
+
+	private String endTime;
+
 	private Long ownerId;
 
-	private String dBClusterIds;
-	public DescribeAutoRenewAttributeRequest() {
-		super("adb", "2019-03-15", "DescribeAutoRenewAttribute", "ads");
+	private String dBName;
+
+	private String succeed;
+
+	private String user;
+
+	private String orderType;
+	public DescribeAuditLogRecordsRequest() {
+		super("adb", "2019-03-15", "DescribeAuditLogRecords", "ads");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,6 +76,17 @@ public class DescribeAutoRenewAttributeRequest extends RpcAcsRequest<DescribeAut
 		}
 	}
 
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -71,14 +98,14 @@ public class DescribeAutoRenewAttributeRequest extends RpcAcsRequest<DescribeAut
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getHostAddress() {
+		return this.hostAddress;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setHostAddress(String hostAddress) {
+		this.hostAddress = hostAddress;
+		if(hostAddress != null){
+			putQueryParameter("HostAddress", hostAddress);
 		}
 	}
 
@@ -93,6 +120,17 @@ public class DescribeAutoRenewAttributeRequest extends RpcAcsRequest<DescribeAut
 		}
 	}
 
+	public String getSqlType() {
+		return this.sqlType;
+	}
+
+	public void setSqlType(String sqlType) {
+		this.sqlType = sqlType;
+		if(sqlType != null){
+			putQueryParameter("SqlType", sqlType);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -101,6 +139,17 @@ public class DescribeAutoRenewAttributeRequest extends RpcAcsRequest<DescribeAut
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -115,6 +164,28 @@ public class DescribeAutoRenewAttributeRequest extends RpcAcsRequest<DescribeAut
 		}
 	}
 
+	public String getQueryKeyword() {
+		return this.queryKeyword;
+	}
+
+	public void setQueryKeyword(String queryKeyword) {
+		this.queryKeyword = queryKeyword;
+		if(queryKeyword != null){
+			putQueryParameter("QueryKeyword", queryKeyword);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -126,20 +197,53 @@ public class DescribeAutoRenewAttributeRequest extends RpcAcsRequest<DescribeAut
 		}
 	}
 
-	public String getDBClusterIds() {
-		return this.dBClusterIds;
+	public String getDBName() {
+		return this.dBName;
 	}
 
-	public void setDBClusterIds(String dBClusterIds) {
-		this.dBClusterIds = dBClusterIds;
-		if(dBClusterIds != null){
-			putQueryParameter("DBClusterIds", dBClusterIds);
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
+		}
+	}
+
+	public String getSucceed() {
+		return this.succeed;
+	}
+
+	public void setSucceed(String succeed) {
+		this.succeed = succeed;
+		if(succeed != null){
+			putQueryParameter("Succeed", succeed);
+		}
+	}
+
+	public String getUser() {
+		return this.user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+		if(user != null){
+			putQueryParameter("User", user);
+		}
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
 		}
 	}
 
 	@Override
-	public Class<DescribeAutoRenewAttributeResponse> getResponseClass() {
-		return DescribeAutoRenewAttributeResponse.class;
+	public Class<DescribeAuditLogRecordsResponse> getResponseClass() {
+		return DescribeAuditLogRecordsResponse.class;
 	}
 
 }

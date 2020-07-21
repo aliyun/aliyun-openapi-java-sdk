@@ -23,6 +23,8 @@ public class ModifyDBClusterAccessWhiteListResponseUnmarshaller {
 	public static ModifyDBClusterAccessWhiteListResponse unmarshall(ModifyDBClusterAccessWhiteListResponse modifyDBClusterAccessWhiteListResponse, UnmarshallerContext _ctx) {
 		
 		modifyDBClusterAccessWhiteListResponse.setRequestId(_ctx.stringValue("ModifyDBClusterAccessWhiteListResponse.RequestId"));
+		modifyDBClusterAccessWhiteListResponse.setDBClusterId(_ctx.stringValue("ModifyDBClusterAccessWhiteListResponse.DBClusterId"));
+		modifyDBClusterAccessWhiteListResponse.setTaskId(_ctx.integerValue("ModifyDBClusterAccessWhiteListResponse.TaskId"));
 	 
 	 	return modifyDBClusterAccessWhiteListResponse;
 	}
