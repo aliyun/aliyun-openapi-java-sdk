@@ -32,6 +32,8 @@ public class AddDataSourceRequest extends RpcAcsRequest<AddDataSourceResponse> {
 	private String description;
 
 	private String dataSourceName;
+
+	private Integer fileRetentionDays;
 	public AddDataSourceRequest() {
 		super("Vcs", "2020-05-15", "AddDataSource");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class AddDataSourceRequest extends RpcAcsRequest<AddDataSourceResponse> {
 		this.dataSourceName = dataSourceName;
 		if(dataSourceName != null){
 			putBodyParameter("DataSourceName", dataSourceName);
+		}
+	}
+
+	public Integer getFileRetentionDays() {
+		return this.fileRetentionDays;
+	}
+
+	public void setFileRetentionDays(Integer fileRetentionDays) {
+		this.fileRetentionDays = fileRetentionDays;
+		if(fileRetentionDays != null){
+			putBodyParameter("FileRetentionDays", fileRetentionDays.toString());
 		}
 	}
 

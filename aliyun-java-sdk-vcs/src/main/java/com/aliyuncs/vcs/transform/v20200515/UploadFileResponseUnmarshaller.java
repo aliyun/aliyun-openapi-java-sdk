@@ -14,7 +14,12 @@
 
 package com.aliyuncs.vcs.transform.v20200515;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.vcs.model.v20200515.UploadFileResponse;
+import com.aliyuncs.vcs.model.v20200515.UploadFileResponse.Data;
+import com.aliyuncs.vcs.model.v20200515.UploadFileResponse.Data.OssPath;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,8 +29,20 @@ public class UploadFileResponseUnmarshaller {
 		
 		uploadFileResponse.setRequestId(_ctx.stringValue("UploadFileResponse.RequestId"));
 		uploadFileResponse.setCode(_ctx.stringValue("UploadFileResponse.Code"));
-		uploadFileResponse.setData(_ctx.stringValue("UploadFileResponse.Data"));
 		uploadFileResponse.setMessage(_ctx.stringValue("UploadFileResponse.Message"));
+
+		Data data = new Data();
+
+		List<OssPath> records = new ArrayList<OssPath>();
+		for (int i = 0; i < _ctx.lengthValue("UploadFileResponse.Data.Records.Length"); i++) {
+			OssPath ossPath = new OssPath();
+			ossPath.setOssPath(_ctx.stringValue("UploadFileResponse.Data.Records["+ i +"].OssPath"));
+			ossPath.setSourceId(_ctx.stringValue("UploadFileResponse.Data.Records["+ i +"].SourceId"));
+
+			records.add(ossPath);
+		}
+		data.setRecords(records);
+		uploadFileResponse.setData(data);
 	 
 	 	return uploadFileResponse;
 	}

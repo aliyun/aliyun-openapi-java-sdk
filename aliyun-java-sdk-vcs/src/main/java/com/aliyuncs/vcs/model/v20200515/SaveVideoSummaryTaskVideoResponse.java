@@ -14,24 +14,23 @@
 
 package com.aliyuncs.vcs.model.v20200515;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vcs.transform.v20200515.UploadFileResponseUnmarshaller;
+import com.aliyuncs.vcs.transform.v20200515.SaveVideoSummaryTaskVideoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UploadFileResponse extends AcsResponse {
+public class SaveVideoSummaryTaskVideoResponse extends AcsResponse {
 
 	private String code;
+
+	private String data;
 
 	private String message;
 
 	private String requestId;
-
-	private Data data;
 
 	public String getCode() {
 		return this.code;
@@ -39,6 +38,14 @@ public class UploadFileResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	public String getMessage() {
@@ -57,53 +64,9 @@ public class UploadFileResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Data getData() {
-		return this.data;
-	}
-
-	public void setData(Data data) {
-		this.data = data;
-	}
-
-	public static class Data {
-
-		private List<OssPath> records;
-
-		public List<OssPath> getRecords() {
-			return this.records;
-		}
-
-		public void setRecords(List<OssPath> records) {
-			this.records = records;
-		}
-
-		public static class OssPath {
-
-			private String ossPath;
-
-			private String sourceId;
-
-			public String getOssPath() {
-				return this.ossPath;
-			}
-
-			public void setOssPath(String ossPath) {
-				this.ossPath = ossPath;
-			}
-
-			public String getSourceId() {
-				return this.sourceId;
-			}
-
-			public void setSourceId(String sourceId) {
-				this.sourceId = sourceId;
-			}
-		}
-	}
-
 	@Override
-	public UploadFileResponse getInstance(UnmarshallerContext context) {
-		return	UploadFileResponseUnmarshaller.unmarshall(this, context);
+	public SaveVideoSummaryTaskVideoResponse getInstance(UnmarshallerContext context) {
+		return	SaveVideoSummaryTaskVideoResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
