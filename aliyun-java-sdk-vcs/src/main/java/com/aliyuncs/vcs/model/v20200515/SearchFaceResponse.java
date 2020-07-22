@@ -127,6 +127,8 @@ public class SearchFaceResponse extends AcsResponse {
 
 			private Float leftTopY;
 
+			private String matchSuggestion;
+
 			private Float rightBottomX;
 
 			private Float rightBottomY;
@@ -135,7 +137,7 @@ public class SearchFaceResponse extends AcsResponse {
 
 			private String targetImageUrl;
 
-			private String matchSuggestion;
+			private String sourceId;
 
 			public String getGbId() {
 				return this.gbId;
@@ -167,6 +169,14 @@ public class SearchFaceResponse extends AcsResponse {
 
 			public void setLeftTopY(Float leftTopY) {
 				this.leftTopY = leftTopY;
+			}
+
+			public String getMatchSuggestion() {
+				return this.matchSuggestion;
+			}
+
+			public void setMatchSuggestion(String matchSuggestion) {
+				this.matchSuggestion = matchSuggestion;
 			}
 
 			public Float getRightBottomX() {
@@ -201,12 +211,12 @@ public class SearchFaceResponse extends AcsResponse {
 				this.targetImageUrl = targetImageUrl;
 			}
 
-			public String getMatchSuggestion() {
-				return this.matchSuggestion;
+			public String getSourceId() {
+				return this.sourceId;
 			}
 
-			public void setMatchSuggestion(String matchSuggestion) {
-				this.matchSuggestion = matchSuggestion;
+			public void setSourceId(String sourceId) {
+				this.sourceId = sourceId;
 			}
 		}
 	}

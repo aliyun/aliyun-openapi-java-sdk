@@ -44,11 +44,12 @@ public class SearchFaceResponseUnmarshaller {
 			record.setImageUrl(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].ImageUrl"));
 			record.setLeftTopX(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].LeftTopX"));
 			record.setLeftTopY(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].LeftTopY"));
+			record.setMatchSuggestion(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].MatchSuggestion"));
 			record.setRightBottomX(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].RightBottomX"));
 			record.setRightBottomY(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].RightBottomY"));
 			record.setScore(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].Score"));
 			record.setTargetImageUrl(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].TargetImageUrl"));
-			record.setMatchSuggestion(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].MatchSuggestion"));
+			record.setSourceId(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].SourceId"));
 
 			records.add(record);
 		}
