@@ -68,6 +68,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			kVStoreInstance.setDestroyTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DestroyTime"));
 			kVStoreInstance.setConnectionMode(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnectionMode"));
 			kVStoreInstance.setVpcCloudInstanceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].VpcCloudInstanceId"));
+			kVStoreInstance.setResourceGroupId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {

@@ -22,44 +22,38 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunningLogRecordsResponse> {
+public class DescribeDedicatedClusterInstanceListRequest extends RpcAcsRequest<DescribeDedicatedClusterInstanceListResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String startTime;
+	private String engineVersion;
 
 	private Integer pageNumber;
 
-	private String resourceGroupId;
-
 	private String securityToken;
+
+	private String engine;
 
 	private Integer pageSize;
 
-	private String roleType;
+	private Integer instanceStatus;
 
-	private String nodeId;
+	private String dedicatedHostName;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String queryKeyword;
+	private String instanceNetType;
 
-	private String endTime;
+	private String clusterId;
 
 	private Long ownerId;
 
 	private String instanceId;
-
-	private String dBName;
-
-	private String characterType;
-
-	private String orderType;
-	public DescribeRunningLogRecordsRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeRunningLogRecords", "redisa");
+	public DescribeDedicatedClusterInstanceListRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeDedicatedClusterInstanceList", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -78,14 +72,14 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getEngineVersion() {
+		return this.engineVersion;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
 		}
 	}
 
@@ -100,17 +94,6 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -119,6 +102,17 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
 		}
 	}
 
@@ -133,25 +127,25 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		}
 	}
 
-	public String getRoleType() {
-		return this.roleType;
+	public Integer getInstanceStatus() {
+		return this.instanceStatus;
 	}
 
-	public void setRoleType(String roleType) {
-		this.roleType = roleType;
-		if(roleType != null){
-			putQueryParameter("RoleType", roleType);
+	public void setInstanceStatus(Integer instanceStatus) {
+		this.instanceStatus = instanceStatus;
+		if(instanceStatus != null){
+			putQueryParameter("InstanceStatus", instanceStatus.toString());
 		}
 	}
 
-	public String getNodeId() {
-		return this.nodeId;
+	public String getDedicatedHostName() {
+		return this.dedicatedHostName;
 	}
 
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-		if(nodeId != null){
-			putQueryParameter("NodeId", nodeId);
+	public void setDedicatedHostName(String dedicatedHostName) {
+		this.dedicatedHostName = dedicatedHostName;
+		if(dedicatedHostName != null){
+			putQueryParameter("DedicatedHostName", dedicatedHostName);
 		}
 	}
 
@@ -177,25 +171,25 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		}
 	}
 
-	public String getQueryKeyword() {
-		return this.queryKeyword;
+	public String getInstanceNetType() {
+		return this.instanceNetType;
 	}
 
-	public void setQueryKeyword(String queryKeyword) {
-		this.queryKeyword = queryKeyword;
-		if(queryKeyword != null){
-			putQueryParameter("QueryKeyword", queryKeyword);
+	public void setInstanceNetType(String instanceNetType) {
+		this.instanceNetType = instanceNetType;
+		if(instanceNetType != null){
+			putQueryParameter("InstanceNetType", instanceNetType);
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -221,42 +215,9 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
-		}
-	}
-
-	public String getCharacterType() {
-		return this.characterType;
-	}
-
-	public void setCharacterType(String characterType) {
-		this.characterType = characterType;
-		if(characterType != null){
-			putQueryParameter("CharacterType", characterType);
-		}
-	}
-
-	public String getOrderType() {
-		return this.orderType;
-	}
-
-	public void setOrderType(String orderType) {
-		this.orderType = orderType;
-		if(orderType != null){
-			putQueryParameter("OrderType", orderType);
-		}
-	}
-
 	@Override
-	public Class<DescribeRunningLogRecordsResponse> getResponseClass() {
-		return DescribeRunningLogRecordsResponse.class;
+	public Class<DescribeDedicatedClusterInstanceListResponse> getResponseClass() {
+		return DescribeDedicatedClusterInstanceListResponse.class;
 	}
 
 }

@@ -1,3 +1,7 @@
+2020-07-22 Version: 2.5.0
+- Generated 2015-01-01 for `R-kvstore`.
+- Add SyncDtsStatus API.
+
 2020-05-23 Version: 2.4.0
 - Generated 2015-01-01 for `R-kvstore`.
 - Add ModifyResourceGroup API.

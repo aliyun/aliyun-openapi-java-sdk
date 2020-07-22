@@ -143,6 +143,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String vpcCloudInstanceId;
 
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		public String getReplacateId() {
@@ -407,6 +409,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
 			this.vpcCloudInstanceId = vpcCloudInstanceId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {
