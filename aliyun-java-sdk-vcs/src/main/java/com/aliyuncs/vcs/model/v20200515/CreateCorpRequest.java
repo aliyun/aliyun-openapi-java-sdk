@@ -35,7 +35,7 @@ public class CreateCorpRequest extends RpcAcsRequest<CreateCorpResponse> {
 
 	private String corpName;
 	public CreateCorpRequest() {
-		super("Vcs", "2020-05-15", "CreateCorp");
+		super("Vcs", "2020-05-15", "CreateCorp", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

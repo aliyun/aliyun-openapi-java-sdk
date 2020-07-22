@@ -51,7 +51,7 @@ public class UpdateMonitorRequest extends RpcAcsRequest<UpdateMonitorResponse> {
 
 	private String algorithmVendor;
 	public UpdateMonitorRequest() {
-		super("Vcs", "2020-05-15", "UpdateMonitor");
+		super("Vcs", "2020-05-15", "UpdateMonitor", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

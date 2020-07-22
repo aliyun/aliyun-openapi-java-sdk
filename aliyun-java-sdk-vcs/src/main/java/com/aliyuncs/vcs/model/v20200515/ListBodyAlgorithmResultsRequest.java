@@ -41,7 +41,7 @@ public class ListBodyAlgorithmResultsRequest extends RpcAcsRequest<ListBodyAlgor
 
 	private String pageSize;
 	public ListBodyAlgorithmResultsRequest() {
-		super("Vcs", "2020-05-15", "ListBodyAlgorithmResults");
+		super("Vcs", "2020-05-15", "ListBodyAlgorithmResults", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

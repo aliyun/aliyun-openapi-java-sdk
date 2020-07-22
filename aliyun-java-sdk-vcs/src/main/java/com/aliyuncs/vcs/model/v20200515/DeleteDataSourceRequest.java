@@ -29,7 +29,7 @@ public class DeleteDataSourceRequest extends RpcAcsRequest<DeleteDataSourceRespo
 
 	private String dataSourceId;
 	public DeleteDataSourceRequest() {
-		super("Vcs", "2020-05-15", "DeleteDataSource");
+		super("Vcs", "2020-05-15", "DeleteDataSource", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

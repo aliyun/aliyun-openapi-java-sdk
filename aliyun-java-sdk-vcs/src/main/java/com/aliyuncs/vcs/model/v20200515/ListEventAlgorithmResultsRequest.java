@@ -39,7 +39,7 @@ public class ListEventAlgorithmResultsRequest extends RpcAcsRequest<ListEventAlg
 
 	private String eventType;
 	public ListEventAlgorithmResultsRequest() {
-		super("Vcs", "2020-05-15", "ListEventAlgorithmResults");
+		super("Vcs", "2020-05-15", "ListEventAlgorithmResults", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
