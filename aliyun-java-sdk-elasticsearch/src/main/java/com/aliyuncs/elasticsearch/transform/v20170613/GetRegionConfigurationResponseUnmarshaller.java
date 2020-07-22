@@ -24,6 +24,9 @@ import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse
 import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse.Result.ClientNodeAmountRange;
 import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse.Result.DataDiskListItem;
 import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse.Result.Disk;
+import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse.Result.ElasticNodeProperties;
+import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse.Result.ElasticNodeProperties.AmountRange6;
+import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse.Result.ElasticNodeProperties.Disk8;
 import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse.Result.EsVersionsLatestListItem;
 import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse.Result.JvmConfine;
 import com.aliyuncs.elasticsearch.model.v20170613.GetRegionConfigurationResponse.Result.KibanaNodeProperties;
@@ -71,6 +74,12 @@ public class GetRegionConfigurationResponseUnmarshaller {
 		}
 		result.setClientNodeSpec(clientNodeSpec);
 
+		List<String> instanceSupportNodes = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetRegionConfigurationResponse.Result.instanceSupportNodes.Length"); i++) {
+			instanceSupportNodes.add(_ctx.stringValue("GetRegionConfigurationResponse.Result.instanceSupportNodes["+ i +"]"));
+		}
+		result.setInstanceSupportNodes(instanceSupportNodes);
+
 		Node node = new Node();
 		node.setMinAmount(_ctx.integerValue("GetRegionConfigurationResponse.Result.node.minAmount"));
 		node.setMaxAmount(_ctx.integerValue("GetRegionConfigurationResponse.Result.node.maxAmount"));
@@ -106,17 +115,18 @@ public class GetRegionConfigurationResponseUnmarshaller {
 		warmNodeProperties.setSpec(spec);
 
 		AmountRange amountRange = new AmountRange();
-		amountRange.setMinAmount(_ctx.integerValue("GetRegionConfigurationResponse.Result.warmNodeProperties.amountRange.minAmount"));
 		amountRange.setMaxAmount(_ctx.integerValue("GetRegionConfigurationResponse.Result.warmNodeProperties.amountRange.maxAmount"));
+		amountRange.setMinAmount(_ctx.integerValue("GetRegionConfigurationResponse.Result.warmNodeProperties.amountRange.minAmount"));
 		warmNodeProperties.setAmountRange(amountRange);
 
 		List<Disk1> diskList = new ArrayList<Disk1>();
 		for (int i = 0; i < _ctx.lengthValue("GetRegionConfigurationResponse.Result.warmNodeProperties.diskList.Length"); i++) {
 			Disk1 disk1 = new Disk1();
 			disk1.setDiskType(_ctx.stringValue("GetRegionConfigurationResponse.Result.warmNodeProperties.diskList["+ i +"].diskType"));
-			disk1.setMinSize(_ctx.integerValue("GetRegionConfigurationResponse.Result.warmNodeProperties.diskList["+ i +"].minSize"));
 			disk1.setMaxSize(_ctx.integerValue("GetRegionConfigurationResponse.Result.warmNodeProperties.diskList["+ i +"].maxSize"));
+			disk1.setMinSize(_ctx.integerValue("GetRegionConfigurationResponse.Result.warmNodeProperties.diskList["+ i +"].minSize"));
 			disk1.setScaleLimit(_ctx.integerValue("GetRegionConfigurationResponse.Result.warmNodeProperties.diskList["+ i +"].scaleLimit"));
+			disk1.setDiskEncryption(_ctx.booleanValue("GetRegionConfigurationResponse.Result.warmNodeProperties.diskList["+ i +"].diskEncryption"));
 
 			List<String> valueLimitSet2 = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetRegionConfigurationResponse.Result.warmNodeProperties.diskList["+ i +"].valueLimitSet.Length"); j++) {
@@ -138,10 +148,43 @@ public class GetRegionConfigurationResponseUnmarshaller {
 		kibanaNodeProperties.setSpec3(spec3);
 
 		AmountRange4 amountRange4 = new AmountRange4();
-		amountRange4.setMinAmount(_ctx.integerValue("GetRegionConfigurationResponse.Result.kibanaNodeProperties.amountRange.minAmount"));
 		amountRange4.setMaxAmount(_ctx.integerValue("GetRegionConfigurationResponse.Result.kibanaNodeProperties.amountRange.maxAmount"));
+		amountRange4.setMinAmount(_ctx.integerValue("GetRegionConfigurationResponse.Result.kibanaNodeProperties.amountRange.minAmount"));
 		kibanaNodeProperties.setAmountRange4(amountRange4);
 		result.setKibanaNodeProperties(kibanaNodeProperties);
+
+		ElasticNodeProperties elasticNodeProperties = new ElasticNodeProperties();
+
+		List<String> spec5 = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetRegionConfigurationResponse.Result.elasticNodeProperties.spec.Length"); i++) {
+			spec5.add(_ctx.stringValue("GetRegionConfigurationResponse.Result.elasticNodeProperties.spec["+ i +"]"));
+		}
+		elasticNodeProperties.setSpec5(spec5);
+
+		AmountRange6 amountRange6 = new AmountRange6();
+		amountRange6.setMaxAmount(_ctx.integerValue("GetRegionConfigurationResponse.Result.elasticNodeProperties.amountRange.maxAmount"));
+		amountRange6.setMinAmount(_ctx.integerValue("GetRegionConfigurationResponse.Result.elasticNodeProperties.amountRange.minAmount"));
+		elasticNodeProperties.setAmountRange6(amountRange6);
+
+		List<Disk8> diskList7 = new ArrayList<Disk8>();
+		for (int i = 0; i < _ctx.lengthValue("GetRegionConfigurationResponse.Result.elasticNodeProperties.diskList.Length"); i++) {
+			Disk8 disk8 = new Disk8();
+			disk8.setDiskType(_ctx.stringValue("GetRegionConfigurationResponse.Result.elasticNodeProperties.diskList["+ i +"].diskType"));
+			disk8.setMaxSize(_ctx.integerValue("GetRegionConfigurationResponse.Result.elasticNodeProperties.diskList["+ i +"].maxSize"));
+			disk8.setMinSize(_ctx.integerValue("GetRegionConfigurationResponse.Result.elasticNodeProperties.diskList["+ i +"].minSize"));
+			disk8.setScaleLimit(_ctx.integerValue("GetRegionConfigurationResponse.Result.elasticNodeProperties.diskList["+ i +"].scaleLimit"));
+			disk8.setDiskEncryption(_ctx.booleanValue("GetRegionConfigurationResponse.Result.elasticNodeProperties.diskList["+ i +"].diskEncryption"));
+
+			List<String> valueLimitSet9 = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("GetRegionConfigurationResponse.Result.elasticNodeProperties.diskList["+ i +"].valueLimitSet.Length"); j++) {
+				valueLimitSet9.add(_ctx.stringValue("GetRegionConfigurationResponse.Result.elasticNodeProperties.diskList["+ i +"].valueLimitSet["+ j +"]"));
+			}
+			disk8.setValueLimitSet9(valueLimitSet9);
+
+			diskList7.add(disk8);
+		}
+		elasticNodeProperties.setDiskList7(diskList7);
+		result.setElasticNodeProperties(elasticNodeProperties);
 
 		List<DataDiskListItem> dataDiskList = new ArrayList<DataDiskListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetRegionConfigurationResponse.Result.dataDiskList.Length"); i++) {

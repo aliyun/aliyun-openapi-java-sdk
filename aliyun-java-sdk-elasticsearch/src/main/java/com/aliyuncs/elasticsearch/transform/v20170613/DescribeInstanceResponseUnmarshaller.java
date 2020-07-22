@@ -23,6 +23,7 @@ import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Resul
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.ClientNodeConfiguration;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.Dict;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.DictListItem;
+import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.ElasticDataNodeConfiguration;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.KibanaConfiguration;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.MasterConfiguration;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.NetworkConfig;
@@ -150,6 +151,14 @@ public class DescribeInstanceResponseUnmarshaller {
 		AdvancedSetting advancedSetting = new AdvancedSetting();
 		advancedSetting.setGcName(_ctx.stringValue("DescribeInstanceResponse.Result.advancedSetting.gcName"));
 		result.setAdvancedSetting(advancedSetting);
+
+		ElasticDataNodeConfiguration elasticDataNodeConfiguration = new ElasticDataNodeConfiguration();
+		elasticDataNodeConfiguration.setSpec(_ctx.stringValue("DescribeInstanceResponse.Result.elasticDataNodeConfiguration.spec"));
+		elasticDataNodeConfiguration.setAmount(_ctx.integerValue("DescribeInstanceResponse.Result.elasticDataNodeConfiguration.amount"));
+		elasticDataNodeConfiguration.setDiskType(_ctx.stringValue("DescribeInstanceResponse.Result.elasticDataNodeConfiguration.diskType"));
+		elasticDataNodeConfiguration.setDisk(_ctx.integerValue("DescribeInstanceResponse.Result.elasticDataNodeConfiguration.disk"));
+		elasticDataNodeConfiguration.setDiskEncryption(_ctx.booleanValue("DescribeInstanceResponse.Result.elasticDataNodeConfiguration.diskEncryption"));
+		result.setElasticDataNodeConfiguration(elasticDataNodeConfiguration);
 
 		List<DictListItem> dictList = new ArrayList<DictListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.dictList.Length"); i++) {

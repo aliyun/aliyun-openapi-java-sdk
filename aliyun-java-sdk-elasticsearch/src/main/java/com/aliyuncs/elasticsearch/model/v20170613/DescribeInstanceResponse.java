@@ -138,6 +138,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private AdvancedSetting advancedSetting;
 
+		private ElasticDataNodeConfiguration elasticDataNodeConfiguration;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -496,6 +498,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setAdvancedSetting(AdvancedSetting advancedSetting) {
 			this.advancedSetting = advancedSetting;
+		}
+
+		public ElasticDataNodeConfiguration getElasticDataNodeConfiguration() {
+			return this.elasticDataNodeConfiguration;
+		}
+
+		public void setElasticDataNodeConfiguration(ElasticDataNodeConfiguration elasticDataNodeConfiguration) {
+			this.elasticDataNodeConfiguration = elasticDataNodeConfiguration;
 		}
 
 		public static class DictListItem {
@@ -931,6 +941,59 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setGcName(String gcName) {
 				this.gcName = gcName;
+			}
+		}
+
+		public static class ElasticDataNodeConfiguration {
+
+			private String spec;
+
+			private Integer amount;
+
+			private String diskType;
+
+			private Integer disk;
+
+			private Boolean diskEncryption;
+
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
+
+			public Integer getAmount() {
+				return this.amount;
+			}
+
+			public void setAmount(Integer amount) {
+				this.amount = amount;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
+
+			public Integer getDisk() {
+				return this.disk;
+			}
+
+			public void setDisk(Integer disk) {
+				this.disk = disk;
+			}
+
+			public Boolean getDiskEncryption() {
+				return this.diskEncryption;
+			}
+
+			public void setDiskEncryption(Boolean diskEncryption) {
+				this.diskEncryption = diskEncryption;
 			}
 		}
 	}

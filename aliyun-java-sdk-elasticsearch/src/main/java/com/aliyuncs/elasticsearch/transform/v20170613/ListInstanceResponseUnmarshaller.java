@@ -20,6 +20,8 @@ import java.util.List;
 import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse;
 import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse.Headers;
 import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse.Instance;
+import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse.Instance.ClientNodeConfiguration;
+import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse.Instance.ElasticDataNodeConfiguration;
 import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse.Instance.KibanaConfiguration;
 import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse.Instance.MasterConfiguration;
 import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse.Instance.NetworkConfig;
@@ -79,6 +81,21 @@ public class ListInstanceResponseUnmarshaller {
 			kibanaConfiguration.setAmount(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].kibanaConfiguration.amount"));
 			kibanaConfiguration.setDiskType(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].kibanaConfiguration.diskType"));
 			instance.setKibanaConfiguration(kibanaConfiguration);
+
+			ElasticDataNodeConfiguration elasticDataNodeConfiguration = new ElasticDataNodeConfiguration();
+			elasticDataNodeConfiguration.setSpec(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].elasticDataNodeConfiguration.spec"));
+			elasticDataNodeConfiguration.setAmount(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].elasticDataNodeConfiguration.amount"));
+			elasticDataNodeConfiguration.setDiskType(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].elasticDataNodeConfiguration.diskType"));
+			elasticDataNodeConfiguration.setDisk(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].elasticDataNodeConfiguration.disk"));
+			elasticDataNodeConfiguration.setDiskEncryption(_ctx.booleanValue("ListInstanceResponse.Result["+ i +"].elasticDataNodeConfiguration.diskEncryption"));
+			instance.setElasticDataNodeConfiguration(elasticDataNodeConfiguration);
+
+			ClientNodeConfiguration clientNodeConfiguration = new ClientNodeConfiguration();
+			clientNodeConfiguration.setSpec(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].clientNodeConfiguration.spec"));
+			clientNodeConfiguration.setAmount(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].clientNodeConfiguration.amount"));
+			clientNodeConfiguration.setDiskType(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].clientNodeConfiguration.diskType"));
+			clientNodeConfiguration.setDisk(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].clientNodeConfiguration.disk"));
+			instance.setClientNodeConfiguration(clientNodeConfiguration);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListInstanceResponse.Result["+ i +"].tags.Length"); j++) {

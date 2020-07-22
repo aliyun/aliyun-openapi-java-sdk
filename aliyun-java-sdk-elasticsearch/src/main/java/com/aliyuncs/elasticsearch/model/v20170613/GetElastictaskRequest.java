@@ -22,33 +22,18 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateInstanceRequest extends RoaAcsRequest<UpdateInstanceResponse> {
+public class GetElastictaskRequest extends RoaAcsRequest<GetElastictaskResponse> {
 	   
 
-	private Boolean ignoreStatus;
-
 	private String instanceId;
-
-	private String clientToken;
-	public UpdateInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateInstance", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]");
-		setMethod(MethodType.PUT);
+	public GetElastictaskRequest() {
+		super("elasticsearch", "2017-06-13", "GetElastictask", "elasticsearch");
+		setUriPattern("/openapi/instances/[InstanceId]/elastic-task");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getIgnoreStatus() {
-		return this.ignoreStatus;
-	}
-
-	public void setIgnoreStatus(Boolean ignoreStatus) {
-		this.ignoreStatus = ignoreStatus;
-		if(ignoreStatus != null){
-			putQueryParameter("ignoreStatus", ignoreStatus.toString());
-		}
 	}
 
 	public String getInstanceId() {
@@ -62,20 +47,9 @@ public class UpdateInstanceRequest extends RoaAcsRequest<UpdateInstanceResponse>
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("clientToken", clientToken);
-		}
-	}
-
 	@Override
-	public Class<UpdateInstanceResponse> getResponseClass() {
-		return UpdateInstanceResponse.class;
+	public Class<GetElastictaskResponse> getResponseClass() {
+		return GetElastictaskResponse.class;
 	}
 
 }

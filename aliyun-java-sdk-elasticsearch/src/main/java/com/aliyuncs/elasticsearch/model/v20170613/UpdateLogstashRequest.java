@@ -31,7 +31,7 @@ public class UpdateLogstashRequest extends RoaAcsRequest<UpdateLogstashResponse>
 	public UpdateLogstashRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateLogstash", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

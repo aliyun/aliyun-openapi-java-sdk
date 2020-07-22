@@ -27,6 +27,8 @@ public class DeleteSnapshotRepoRequest extends RoaAcsRequest<DeleteSnapshotRepoR
 
 	private String instanceId;
 
+	private String clientToken;
+
 	private String repoPath;
 	public DeleteSnapshotRepoRequest() {
 		super("elasticsearch", "2017-06-13", "DeleteSnapshotRepo", "elasticsearch");
@@ -46,6 +48,17 @@ public class DeleteSnapshotRepoRequest extends RoaAcsRequest<DeleteSnapshotRepoR
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("clientToken", clientToken);
 		}
 	}
 

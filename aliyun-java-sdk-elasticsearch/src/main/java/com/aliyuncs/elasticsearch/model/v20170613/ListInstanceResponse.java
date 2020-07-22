@@ -89,6 +89,10 @@ public class ListInstanceResponse extends AcsResponse {
 
 		private KibanaConfiguration kibanaConfiguration;
 
+		private ElasticDataNodeConfiguration elasticDataNodeConfiguration;
+
+		private ClientNodeConfiguration clientNodeConfiguration;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -215,6 +219,22 @@ public class ListInstanceResponse extends AcsResponse {
 
 		public void setKibanaConfiguration(KibanaConfiguration kibanaConfiguration) {
 			this.kibanaConfiguration = kibanaConfiguration;
+		}
+
+		public ElasticDataNodeConfiguration getElasticDataNodeConfiguration() {
+			return this.elasticDataNodeConfiguration;
+		}
+
+		public void setElasticDataNodeConfiguration(ElasticDataNodeConfiguration elasticDataNodeConfiguration) {
+			this.elasticDataNodeConfiguration = elasticDataNodeConfiguration;
+		}
+
+		public ClientNodeConfiguration getClientNodeConfiguration() {
+			return this.clientNodeConfiguration;
+		}
+
+		public void setClientNodeConfiguration(ClientNodeConfiguration clientNodeConfiguration) {
+			this.clientNodeConfiguration = clientNodeConfiguration;
 		}
 
 		public static class Tag {
@@ -399,6 +419,102 @@ public class ListInstanceResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
+			}
+		}
+
+		public static class ElasticDataNodeConfiguration {
+
+			private String spec;
+
+			private Integer amount;
+
+			private String diskType;
+
+			private Integer disk;
+
+			private Boolean diskEncryption;
+
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
+
+			public Integer getAmount() {
+				return this.amount;
+			}
+
+			public void setAmount(Integer amount) {
+				this.amount = amount;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
+
+			public Integer getDisk() {
+				return this.disk;
+			}
+
+			public void setDisk(Integer disk) {
+				this.disk = disk;
+			}
+
+			public Boolean getDiskEncryption() {
+				return this.diskEncryption;
+			}
+
+			public void setDiskEncryption(Boolean diskEncryption) {
+				this.diskEncryption = diskEncryption;
+			}
+		}
+
+		public static class ClientNodeConfiguration {
+
+			private String spec;
+
+			private Integer amount;
+
+			private String diskType;
+
+			private Integer disk;
+
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
+
+			public Integer getAmount() {
+				return this.amount;
+			}
+
+			public void setAmount(Integer amount) {
+				this.amount = amount;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
+
+			public Integer getDisk() {
+				return this.disk;
+			}
+
+			public void setDisk(Integer disk) {
+				this.disk = disk;
 			}
 		}
 	}

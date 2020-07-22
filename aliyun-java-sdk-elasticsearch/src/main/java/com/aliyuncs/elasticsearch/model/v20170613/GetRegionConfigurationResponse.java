@@ -73,6 +73,8 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 
 		private List<String> clientNodeSpec;
 
+		private List<String> instanceSupportNodes;
+
 		private Node node;
 
 		private JvmConfine jvmConfine;
@@ -82,6 +84,8 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 		private WarmNodeProperties warmNodeProperties;
 
 		private KibanaNodeProperties kibanaNodeProperties;
+
+		private ElasticNodeProperties elasticNodeProperties;
 
 		public String getEnv() {
 			return this.env;
@@ -187,6 +191,14 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 			this.clientNodeSpec = clientNodeSpec;
 		}
 
+		public List<String> getInstanceSupportNodes() {
+			return this.instanceSupportNodes;
+		}
+
+		public void setInstanceSupportNodes(List<String> instanceSupportNodes) {
+			this.instanceSupportNodes = instanceSupportNodes;
+		}
+
 		public Node getNode() {
 			return this.node;
 		}
@@ -225,6 +237,14 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 
 		public void setKibanaNodeProperties(KibanaNodeProperties kibanaNodeProperties) {
 			this.kibanaNodeProperties = kibanaNodeProperties;
+		}
+
+		public ElasticNodeProperties getElasticNodeProperties() {
+			return this.elasticNodeProperties;
+		}
+
+		public void setElasticNodeProperties(ElasticNodeProperties elasticNodeProperties) {
+			this.elasticNodeProperties = elasticNodeProperties;
 		}
 
 		public static class DataDiskListItem {
@@ -580,11 +600,13 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 
 				private String diskType;
 
-				private Integer minSize;
-
 				private Integer maxSize;
 
+				private Integer minSize;
+
 				private Integer scaleLimit;
+
+				private Boolean diskEncryption;
 
 				private List<String> valueLimitSet2;
 
@@ -596,14 +618,6 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 					this.diskType = diskType;
 				}
 
-				public Integer getMinSize() {
-					return this.minSize;
-				}
-
-				public void setMinSize(Integer minSize) {
-					this.minSize = minSize;
-				}
-
 				public Integer getMaxSize() {
 					return this.maxSize;
 				}
@@ -612,12 +626,28 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 					this.maxSize = maxSize;
 				}
 
+				public Integer getMinSize() {
+					return this.minSize;
+				}
+
+				public void setMinSize(Integer minSize) {
+					this.minSize = minSize;
+				}
+
 				public Integer getScaleLimit() {
 					return this.scaleLimit;
 				}
 
 				public void setScaleLimit(Integer scaleLimit) {
 					this.scaleLimit = scaleLimit;
+				}
+
+				public Boolean getDiskEncryption() {
+					return this.diskEncryption;
+				}
+
+				public void setDiskEncryption(Boolean diskEncryption) {
+					this.diskEncryption = diskEncryption;
 				}
 
 				public List<String> getValueLimitSet2() {
@@ -631,17 +661,9 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 
 			public static class AmountRange {
 
-				private Integer minAmount;
-
 				private Integer maxAmount;
 
-				public Integer getMinAmount() {
-					return this.minAmount;
-				}
-
-				public void setMinAmount(Integer minAmount) {
-					this.minAmount = minAmount;
-				}
+				private Integer minAmount;
 
 				public Integer getMaxAmount() {
 					return this.maxAmount;
@@ -649,6 +671,14 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 
 				public void setMaxAmount(Integer maxAmount) {
 					this.maxAmount = maxAmount;
+				}
+
+				public Integer getMinAmount() {
+					return this.minAmount;
+				}
+
+				public void setMinAmount(Integer minAmount) {
+					this.minAmount = minAmount;
 				}
 			}
 		}
@@ -677,9 +707,17 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 
 			public static class AmountRange4 {
 
+				private Integer maxAmount;
+
 				private Integer minAmount;
 
-				private Integer maxAmount;
+				public Integer getMaxAmount() {
+					return this.maxAmount;
+				}
+
+				public void setMaxAmount(Integer maxAmount) {
+					this.maxAmount = maxAmount;
+				}
 
 				public Integer getMinAmount() {
 					return this.minAmount;
@@ -688,6 +726,109 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 				public void setMinAmount(Integer minAmount) {
 					this.minAmount = minAmount;
 				}
+			}
+		}
+
+		public static class ElasticNodeProperties {
+
+			private List<Disk8> diskList7;
+
+			private List<String> spec5;
+
+			private AmountRange6 amountRange6;
+
+			public List<Disk8> getDiskList7() {
+				return this.diskList7;
+			}
+
+			public void setDiskList7(List<Disk8> diskList7) {
+				this.diskList7 = diskList7;
+			}
+
+			public List<String> getSpec5() {
+				return this.spec5;
+			}
+
+			public void setSpec5(List<String> spec5) {
+				this.spec5 = spec5;
+			}
+
+			public AmountRange6 getAmountRange6() {
+				return this.amountRange6;
+			}
+
+			public void setAmountRange6(AmountRange6 amountRange6) {
+				this.amountRange6 = amountRange6;
+			}
+
+			public static class Disk8 {
+
+				private String diskType;
+
+				private Integer maxSize;
+
+				private Integer minSize;
+
+				private Integer scaleLimit;
+
+				private Boolean diskEncryption;
+
+				private List<String> valueLimitSet9;
+
+				public String getDiskType() {
+					return this.diskType;
+				}
+
+				public void setDiskType(String diskType) {
+					this.diskType = diskType;
+				}
+
+				public Integer getMaxSize() {
+					return this.maxSize;
+				}
+
+				public void setMaxSize(Integer maxSize) {
+					this.maxSize = maxSize;
+				}
+
+				public Integer getMinSize() {
+					return this.minSize;
+				}
+
+				public void setMinSize(Integer minSize) {
+					this.minSize = minSize;
+				}
+
+				public Integer getScaleLimit() {
+					return this.scaleLimit;
+				}
+
+				public void setScaleLimit(Integer scaleLimit) {
+					this.scaleLimit = scaleLimit;
+				}
+
+				public Boolean getDiskEncryption() {
+					return this.diskEncryption;
+				}
+
+				public void setDiskEncryption(Boolean diskEncryption) {
+					this.diskEncryption = diskEncryption;
+				}
+
+				public List<String> getValueLimitSet9() {
+					return this.valueLimitSet9;
+				}
+
+				public void setValueLimitSet9(List<String> valueLimitSet9) {
+					this.valueLimitSet9 = valueLimitSet9;
+				}
+			}
+
+			public static class AmountRange6 {
+
+				private Integer maxAmount;
+
+				private Integer minAmount;
 
 				public Integer getMaxAmount() {
 					return this.maxAmount;
@@ -695,6 +836,14 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 
 				public void setMaxAmount(Integer maxAmount) {
 					this.maxAmount = maxAmount;
+				}
+
+				public Integer getMinAmount() {
+					return this.minAmount;
+				}
+
+				public void setMinAmount(Integer minAmount) {
+					this.minAmount = minAmount;
 				}
 			}
 		}

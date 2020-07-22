@@ -25,6 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class ValidateShrinkNodesRequest extends RoaAcsRequest<ValidateShrinkNodesResponse> {
 	   
 
+	private Boolean ignoreStatus;
+
 	private String instanceId;
 
 	private String nodeType;
@@ -36,6 +38,17 @@ public class ValidateShrinkNodesRequest extends RoaAcsRequest<ValidateShrinkNode
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getIgnoreStatus() {
+		return this.ignoreStatus;
+	}
+
+	public void setIgnoreStatus(Boolean ignoreStatus) {
+		this.ignoreStatus = ignoreStatus;
+		if(ignoreStatus != null){
+			putQueryParameter("ignoreStatus", ignoreStatus.toString());
+		}
 	}
 
 	public String getInstanceId() {
