@@ -1,0 +1,3 @@
+2020-07-23 Version: 1.0.0
+- Supported CloudGame.
+
