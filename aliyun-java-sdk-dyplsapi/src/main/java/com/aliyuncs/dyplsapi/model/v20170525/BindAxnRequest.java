@@ -33,6 +33,8 @@ public class BindAxnRequest extends RpcAcsRequest<BindAxnResponse> {
 
 	private String ringConfig;
 
+	private Boolean aSRStatus;
+
 	private String phoneNoB;
 
 	private String phoneNoA;
@@ -54,6 +56,8 @@ public class BindAxnRequest extends RpcAcsRequest<BindAxnResponse> {
 	private String outId;
 
 	private String noType;
+
+	private String aSRModelId;
 	public BindAxnRequest() {
 		super("Dyplsapi", "2017-05-25", "BindAxn", "dypls");
 		setMethod(MethodType.POST);
@@ -104,6 +108,17 @@ public class BindAxnRequest extends RpcAcsRequest<BindAxnResponse> {
 		this.ringConfig = ringConfig;
 		if(ringConfig != null){
 			putQueryParameter("RingConfig", ringConfig);
+		}
+	}
+
+	public Boolean getASRStatus() {
+		return this.aSRStatus;
+	}
+
+	public void setASRStatus(Boolean aSRStatus) {
+		this.aSRStatus = aSRStatus;
+		if(aSRStatus != null){
+			putQueryParameter("ASRStatus", aSRStatus.toString());
 		}
 	}
 
@@ -225,6 +240,17 @@ public class BindAxnRequest extends RpcAcsRequest<BindAxnResponse> {
 		this.noType = noType;
 		if(noType != null){
 			putQueryParameter("NoType", noType);
+		}
+	}
+
+	public String getASRModelId() {
+		return this.aSRModelId;
+	}
+
+	public void setASRModelId(String aSRModelId) {
+		this.aSRModelId = aSRModelId;
+		if(aSRModelId != null){
+			putQueryParameter("ASRModelId", aSRModelId);
 		}
 	}
 

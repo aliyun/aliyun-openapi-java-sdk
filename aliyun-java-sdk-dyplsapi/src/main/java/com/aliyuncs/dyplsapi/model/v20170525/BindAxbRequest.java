@@ -33,6 +33,8 @@ public class BindAxbRequest extends RpcAcsRequest<BindAxbResponse> {
 
 	private String ringConfig;
 
+	private Boolean aSRStatus;
+
 	private String phoneNoB;
 
 	private String phoneNoA;
@@ -52,6 +54,8 @@ public class BindAxbRequest extends RpcAcsRequest<BindAxbResponse> {
 	private Boolean isRecordingEnabled;
 
 	private String outId;
+
+	private String aSRModelId;
 
 	private String callRestrict;
 	public BindAxbRequest() {
@@ -104,6 +108,17 @@ public class BindAxbRequest extends RpcAcsRequest<BindAxbResponse> {
 		this.ringConfig = ringConfig;
 		if(ringConfig != null){
 			putQueryParameter("RingConfig", ringConfig);
+		}
+	}
+
+	public Boolean getASRStatus() {
+		return this.aSRStatus;
+	}
+
+	public void setASRStatus(Boolean aSRStatus) {
+		this.aSRStatus = aSRStatus;
+		if(aSRStatus != null){
+			putQueryParameter("ASRStatus", aSRStatus.toString());
 		}
 	}
 
@@ -214,6 +229,17 @@ public class BindAxbRequest extends RpcAcsRequest<BindAxbResponse> {
 		this.outId = outId;
 		if(outId != null){
 			putQueryParameter("OutId", outId);
+		}
+	}
+
+	public String getASRModelId() {
+		return this.aSRModelId;
+	}
+
+	public void setASRModelId(String aSRModelId) {
+		this.aSRModelId = aSRModelId;
+		if(aSRModelId != null){
+			putQueryParameter("ASRModelId", aSRModelId);
 		}
 	}
 

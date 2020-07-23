@@ -37,6 +37,8 @@ public class UpdateSubscriptionRequest extends RpcAcsRequest<UpdateSubscriptionR
 
 	private String ringConfig;
 
+	private Boolean aSRStatus;
+
 	private String phoneNoB;
 
 	private String phoneNoA;
@@ -56,6 +58,8 @@ public class UpdateSubscriptionRequest extends RpcAcsRequest<UpdateSubscriptionR
 	private Boolean isRecordingEnabled;
 
 	private String operateType;
+
+	private String aSRModelId;
 
 	private String callRestrict;
 	public UpdateSubscriptionRequest() {
@@ -130,6 +134,17 @@ public class UpdateSubscriptionRequest extends RpcAcsRequest<UpdateSubscriptionR
 		this.ringConfig = ringConfig;
 		if(ringConfig != null){
 			putQueryParameter("RingConfig", ringConfig);
+		}
+	}
+
+	public Boolean getASRStatus() {
+		return this.aSRStatus;
+	}
+
+	public void setASRStatus(Boolean aSRStatus) {
+		this.aSRStatus = aSRStatus;
+		if(aSRStatus != null){
+			putQueryParameter("ASRStatus", aSRStatus.toString());
 		}
 	}
 
@@ -240,6 +255,17 @@ public class UpdateSubscriptionRequest extends RpcAcsRequest<UpdateSubscriptionR
 		this.operateType = operateType;
 		if(operateType != null){
 			putQueryParameter("OperateType", operateType);
+		}
+	}
+
+	public String getASRModelId() {
+		return this.aSRModelId;
+	}
+
+	public void setASRModelId(String aSRModelId) {
+		this.aSRModelId = aSRModelId;
+		if(aSRModelId != null){
+			putQueryParameter("ASRModelId", aSRModelId);
 		}
 	}
 

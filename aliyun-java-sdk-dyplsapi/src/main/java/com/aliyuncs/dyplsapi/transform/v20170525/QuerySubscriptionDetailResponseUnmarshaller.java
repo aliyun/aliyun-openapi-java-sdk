@@ -39,6 +39,8 @@ public class QuerySubscriptionDetailResponseUnmarshaller {
 		secretBindDetailDTO.setNeedRecord(_ctx.booleanValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.NeedRecord"));
 		secretBindDetailDTO.setCallRestrict(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.CallRestrict"));
 		secretBindDetailDTO.setStatus(_ctx.longValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.Status"));
+		secretBindDetailDTO.setASRStatus(_ctx.booleanValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.ASRStatus"));
+		secretBindDetailDTO.setASRModelId(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.ASRModelId"));
 		querySubscriptionDetailResponse.setSecretBindDetailDTO(secretBindDetailDTO);
 	 
 	 	return querySubscriptionDetailResponse;

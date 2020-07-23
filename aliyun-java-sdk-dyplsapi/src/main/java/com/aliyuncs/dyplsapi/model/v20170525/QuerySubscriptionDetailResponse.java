@@ -88,6 +88,10 @@ public class QuerySubscriptionDetailResponse extends AcsResponse {
 
 		private Long status;
 
+		private Boolean aSRStatus;
+
+		private String aSRModelId;
+
 		public String getSubsId() {
 			return this.subsId;
 		}
@@ -174,6 +178,22 @@ public class QuerySubscriptionDetailResponse extends AcsResponse {
 
 		public void setStatus(Long status) {
 			this.status = status;
+		}
+
+		public Boolean getASRStatus() {
+			return this.aSRStatus;
+		}
+
+		public void setASRStatus(Boolean aSRStatus) {
+			this.aSRStatus = aSRStatus;
+		}
+
+		public String getASRModelId() {
+			return this.aSRModelId;
+		}
+
+		public void setASRModelId(String aSRModelId) {
+			this.aSRModelId = aSRModelId;
 		}
 	}
 
