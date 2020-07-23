@@ -28,7 +28,7 @@ public class EnableKeyRequest extends RpcAcsRequest<EnableKeyResponse> {
 
 	private String keyId;
 	public EnableKeyRequest() {
-		super("Kms", "2016-01-20", "EnableKey", "kms");
+		super("Kms", "2016-01-20", "EnableKey", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

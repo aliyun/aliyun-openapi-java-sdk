@@ -34,7 +34,7 @@ public class UpdateSecretVersionStageRequest extends RpcAcsRequest<UpdateSecretV
 
 	private String secretName;
 	public UpdateSecretVersionStageRequest() {
-		super("Kms", "2016-01-20", "UpdateSecretVersionStage", "kms");
+		super("Kms", "2016-01-20", "UpdateSecretVersionStage", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

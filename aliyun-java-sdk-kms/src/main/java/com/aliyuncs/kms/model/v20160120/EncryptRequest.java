@@ -32,7 +32,7 @@ public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 
 	private String plaintext;
 	public EncryptRequest() {
-		super("Kms", "2016-01-20", "Encrypt", "kms");
+		super("Kms", "2016-01-20", "Encrypt", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -28,7 +28,7 @@ public class CancelKeyDeletionRequest extends RpcAcsRequest<CancelKeyDeletionRes
 
 	private String keyId;
 	public CancelKeyDeletionRequest() {
-		super("Kms", "2016-01-20", "CancelKeyDeletion", "kms");
+		super("Kms", "2016-01-20", "CancelKeyDeletion", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

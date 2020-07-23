@@ -28,7 +28,7 @@ public class DeleteAliasRequest extends RpcAcsRequest<DeleteAliasResponse> {
 
 	private String aliasName;
 	public DeleteAliasRequest() {
-		super("Kms", "2016-01-20", "DeleteAlias", "kms");
+		super("Kms", "2016-01-20", "DeleteAlias", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

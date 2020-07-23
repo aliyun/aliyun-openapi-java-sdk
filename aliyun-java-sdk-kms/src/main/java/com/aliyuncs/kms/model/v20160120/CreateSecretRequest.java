@@ -40,7 +40,7 @@ public class CreateSecretRequest extends RpcAcsRequest<CreateSecretResponse> {
 
 	private String tags;
 	public CreateSecretRequest() {
-		super("Kms", "2016-01-20", "CreateSecret", "kms");
+		super("Kms", "2016-01-20", "CreateSecret", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

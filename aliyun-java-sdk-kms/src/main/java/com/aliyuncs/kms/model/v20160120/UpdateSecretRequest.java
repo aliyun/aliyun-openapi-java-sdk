@@ -30,7 +30,7 @@ public class UpdateSecretRequest extends RpcAcsRequest<UpdateSecretResponse> {
 
 	private String secretName;
 	public UpdateSecretRequest() {
-		super("Kms", "2016-01-20", "UpdateSecret", "kms");
+		super("Kms", "2016-01-20", "UpdateSecret", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

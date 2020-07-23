@@ -32,7 +32,7 @@ public class ListAliasesByKeyIdRequest extends RpcAcsRequest<ListAliasesByKeyIdR
 
 	private Integer pageNumber;
 	public ListAliasesByKeyIdRequest() {
-		super("Kms", "2016-01-20", "ListAliasesByKeyId", "kms");
+		super("Kms", "2016-01-20", "ListAliasesByKeyId", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -40,7 +40,7 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 
 	private Boolean enableAutomaticRotation;
 	public CreateKeyRequest() {
-		super("Kms", "2016-01-20", "CreateKey", "kms");
+		super("Kms", "2016-01-20", "CreateKey", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

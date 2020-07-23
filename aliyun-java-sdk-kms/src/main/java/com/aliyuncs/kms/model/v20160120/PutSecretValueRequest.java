@@ -36,7 +36,7 @@ public class PutSecretValueRequest extends RpcAcsRequest<PutSecretValueResponse>
 
 	private String secretDataType;
 	public PutSecretValueRequest() {
-		super("Kms", "2016-01-20", "PutSecretValue", "kms");
+		super("Kms", "2016-01-20", "PutSecretValue", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

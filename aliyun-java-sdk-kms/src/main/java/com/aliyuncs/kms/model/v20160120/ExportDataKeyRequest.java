@@ -23,14 +23,20 @@ import com.aliyuncs.kms.Endpoint;
  * @author auto create
  * @version 
  */
-public class DecryptRequest extends RpcAcsRequest<DecryptResponse> {
+public class ExportDataKeyRequest extends RpcAcsRequest<ExportDataKeyResponse> {
 	   
 
 	private String encryptionContext;
 
+	private String wrappingAlgorithm;
+
 	private String ciphertextBlob;
-	public DecryptRequest() {
-		super("Kms", "2016-01-20", "Decrypt", "kms-service");
+
+	private String publicKeyBlob;
+
+	private String wrappingKeySpec;
+	public ExportDataKeyRequest() {
+		super("Kms", "2016-01-20", "ExportDataKey", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -50,6 +56,17 @@ public class DecryptRequest extends RpcAcsRequest<DecryptResponse> {
 		}
 	}
 
+	public String getWrappingAlgorithm() {
+		return this.wrappingAlgorithm;
+	}
+
+	public void setWrappingAlgorithm(String wrappingAlgorithm) {
+		this.wrappingAlgorithm = wrappingAlgorithm;
+		if(wrappingAlgorithm != null){
+			putQueryParameter("WrappingAlgorithm", wrappingAlgorithm);
+		}
+	}
+
 	public String getCiphertextBlob() {
 		return this.ciphertextBlob;
 	}
@@ -61,9 +78,31 @@ public class DecryptRequest extends RpcAcsRequest<DecryptResponse> {
 		}
 	}
 
+	public String getPublicKeyBlob() {
+		return this.publicKeyBlob;
+	}
+
+	public void setPublicKeyBlob(String publicKeyBlob) {
+		this.publicKeyBlob = publicKeyBlob;
+		if(publicKeyBlob != null){
+			putQueryParameter("PublicKeyBlob", publicKeyBlob);
+		}
+	}
+
+	public String getWrappingKeySpec() {
+		return this.wrappingKeySpec;
+	}
+
+	public void setWrappingKeySpec(String wrappingKeySpec) {
+		this.wrappingKeySpec = wrappingKeySpec;
+		if(wrappingKeySpec != null){
+			putQueryParameter("WrappingKeySpec", wrappingKeySpec);
+		}
+	}
+
 	@Override
-	public Class<DecryptResponse> getResponseClass() {
-		return DecryptResponse.class;
+	public Class<ExportDataKeyResponse> getResponseClass() {
+		return ExportDataKeyResponse.class;
 	}
 
 }

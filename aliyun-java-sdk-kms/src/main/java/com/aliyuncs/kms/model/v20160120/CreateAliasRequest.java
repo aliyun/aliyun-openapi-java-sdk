@@ -30,7 +30,7 @@ public class CreateAliasRequest extends RpcAcsRequest<CreateAliasResponse> {
 
 	private String keyId;
 	public CreateAliasRequest() {
-		super("Kms", "2016-01-20", "CreateAlias", "kms");
+		super("Kms", "2016-01-20", "CreateAlias", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

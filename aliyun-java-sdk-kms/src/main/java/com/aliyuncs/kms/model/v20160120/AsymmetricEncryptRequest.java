@@ -34,7 +34,7 @@ public class AsymmetricEncryptRequest extends RpcAcsRequest<AsymmetricEncryptRes
 
 	private String algorithm;
 	public AsymmetricEncryptRequest() {
-		super("Kms", "2016-01-20", "AsymmetricEncrypt", "kms");
+		super("Kms", "2016-01-20", "AsymmetricEncrypt", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

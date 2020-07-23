@@ -23,7 +23,7 @@ import com.aliyuncs.kms.Endpoint;
  * @author auto create
  * @version 
  */
-public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyResponse> {
+public class GenerateAndExportDataKeyRequest extends RpcAcsRequest<GenerateAndExportDataKeyResponse> {
 	   
 
 	private String encryptionContext;
@@ -33,8 +33,14 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 	private String keySpec;
 
 	private Integer numberOfBytes;
-	public GenerateDataKeyRequest() {
-		super("Kms", "2016-01-20", "GenerateDataKey", "kms-service");
+
+	private String wrappingAlgorithm;
+
+	private String publicKeyBlob;
+
+	private String wrappingKeySpec;
+	public GenerateAndExportDataKeyRequest() {
+		super("Kms", "2016-01-20", "GenerateAndExportDataKey", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -87,9 +93,42 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 		}
 	}
 
+	public String getWrappingAlgorithm() {
+		return this.wrappingAlgorithm;
+	}
+
+	public void setWrappingAlgorithm(String wrappingAlgorithm) {
+		this.wrappingAlgorithm = wrappingAlgorithm;
+		if(wrappingAlgorithm != null){
+			putQueryParameter("WrappingAlgorithm", wrappingAlgorithm);
+		}
+	}
+
+	public String getPublicKeyBlob() {
+		return this.publicKeyBlob;
+	}
+
+	public void setPublicKeyBlob(String publicKeyBlob) {
+		this.publicKeyBlob = publicKeyBlob;
+		if(publicKeyBlob != null){
+			putQueryParameter("PublicKeyBlob", publicKeyBlob);
+		}
+	}
+
+	public String getWrappingKeySpec() {
+		return this.wrappingKeySpec;
+	}
+
+	public void setWrappingKeySpec(String wrappingKeySpec) {
+		this.wrappingKeySpec = wrappingKeySpec;
+		if(wrappingKeySpec != null){
+			putQueryParameter("WrappingKeySpec", wrappingKeySpec);
+		}
+	}
+
 	@Override
-	public Class<GenerateDataKeyResponse> getResponseClass() {
-		return GenerateDataKeyResponse.class;
+	public Class<GenerateAndExportDataKeyResponse> getResponseClass() {
+		return GenerateAndExportDataKeyResponse.class;
 	}
 
 }

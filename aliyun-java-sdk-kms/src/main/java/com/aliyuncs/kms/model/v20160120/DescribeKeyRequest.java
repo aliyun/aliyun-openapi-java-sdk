@@ -28,7 +28,7 @@ public class DescribeKeyRequest extends RpcAcsRequest<DescribeKeyResponse> {
 
 	private String keyId;
 	public DescribeKeyRequest() {
-		super("Kms", "2016-01-20", "DescribeKey", "kms");
+		super("Kms", "2016-01-20", "DescribeKey", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
