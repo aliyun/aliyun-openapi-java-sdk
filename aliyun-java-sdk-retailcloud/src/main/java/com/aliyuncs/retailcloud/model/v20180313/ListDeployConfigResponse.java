@@ -178,6 +178,8 @@ public class ListDeployConfigResponse extends AcsResponse {
 
 			private String statefulSet;
 
+			private String cronJob;
+
 			private List<String> configMapList;
 
 			private List<String> secretList;
@@ -204,6 +206,14 @@ public class ListDeployConfigResponse extends AcsResponse {
 
 			public void setStatefulSet(String statefulSet) {
 				this.statefulSet = statefulSet;
+			}
+
+			public String getCronJob() {
+				return this.cronJob;
+			}
+
+			public void setCronJob(String cronJob) {
+				this.cronJob = cronJob;
 			}
 
 			public List<String> getConfigMapList() {

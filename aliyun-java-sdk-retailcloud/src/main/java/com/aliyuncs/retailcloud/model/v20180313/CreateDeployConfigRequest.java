@@ -42,6 +42,8 @@ public class CreateDeployConfigRequest extends RpcAcsRequest<CreateDeployConfigR
 
 	private List<String> secretLists;
 
+	private String cronJob;
+
 	private String deployment;
 	public CreateDeployConfigRequest() {
 		super("retailcloud", "2018-03-13", "CreateDeployConfig", "retailcloud");
@@ -142,6 +144,17 @@ public class CreateDeployConfigRequest extends RpcAcsRequest<CreateDeployConfigR
 				putQueryParameter("SecretList." + (i + 1) , secretLists.get(i));
 			}
 		}	
+	}
+
+	public String getCronJob() {
+		return this.cronJob;
+	}
+
+	public void setCronJob(String cronJob) {
+		this.cronJob = cronJob;
+		if(cronJob != null){
+			putQueryParameter("CronJob", cronJob);
+		}
 	}
 
 	public String getDeployment() {

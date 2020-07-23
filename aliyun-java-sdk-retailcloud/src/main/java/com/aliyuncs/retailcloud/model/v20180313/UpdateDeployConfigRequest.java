@@ -40,6 +40,8 @@ public class UpdateDeployConfigRequest extends RpcAcsRequest<UpdateDeployConfigR
 
 	private Long id;
 
+	private String cronJob;
+
 	private String deployment;
 	public UpdateDeployConfigRequest() {
 		super("retailcloud", "2018-03-13", "UpdateDeployConfig", "retailcloud");
@@ -128,6 +130,17 @@ public class UpdateDeployConfigRequest extends RpcAcsRequest<UpdateDeployConfigR
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id.toString());
+		}
+	}
+
+	public String getCronJob() {
+		return this.cronJob;
+	}
+
+	public void setCronJob(String cronJob) {
+		this.cronJob = cronJob;
+		if(cronJob != null){
+			putQueryParameter("CronJob", cronJob);
 		}
 	}
 
