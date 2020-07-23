@@ -35,6 +35,8 @@ public class GenerateOTAUploadURLResponseUnmarshaller {
 		data.setOSSAccessKeyId(_ctx.stringValue("GenerateOTAUploadURLResponse.Data.OSSAccessKeyId"));
 		data.setSignature(_ctx.stringValue("GenerateOTAUploadURLResponse.Data.Signature"));
 		data.setFirmwareUrl(_ctx.stringValue("GenerateOTAUploadURLResponse.Data.FirmwareUrl"));
+		data.setUtcCreate(_ctx.stringValue("GenerateOTAUploadURLResponse.Data.UtcCreate"));
+		data.setObjectStorage(_ctx.stringValue("GenerateOTAUploadURLResponse.Data.ObjectStorage"));
 		generateOTAUploadURLResponse.setData(data);
 	 
 	 	return generateOTAUploadURLResponse;

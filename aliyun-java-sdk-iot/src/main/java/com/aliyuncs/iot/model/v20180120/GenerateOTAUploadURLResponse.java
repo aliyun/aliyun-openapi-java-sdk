@@ -88,6 +88,10 @@ public class GenerateOTAUploadURLResponse extends AcsResponse {
 
 		private String firmwareUrl;
 
+		private String utcCreate;
+
+		private String objectStorage;
+
 		public String getKey() {
 			return this.key;
 		}
@@ -134,6 +138,22 @@ public class GenerateOTAUploadURLResponse extends AcsResponse {
 
 		public void setFirmwareUrl(String firmwareUrl) {
 			this.firmwareUrl = firmwareUrl;
+		}
+
+		public String getUtcCreate() {
+			return this.utcCreate;
+		}
+
+		public void setUtcCreate(String utcCreate) {
+			this.utcCreate = utcCreate;
+		}
+
+		public String getObjectStorage() {
+			return this.objectStorage;
+		}
+
+		public void setObjectStorage(String objectStorage) {
+			this.objectStorage = objectStorage;
 		}
 	}
 
