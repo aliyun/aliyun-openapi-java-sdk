@@ -107,6 +107,8 @@ public class SearchTraceAppByPageResponse extends AcsResponse {
 
 			private Boolean show;
 
+			private List<String> labels;
+
 			public Long getAppId() {
 				return this.appId;
 			}
@@ -177,6 +179,14 @@ public class SearchTraceAppByPageResponse extends AcsResponse {
 
 			public void setShow(Boolean show) {
 				this.show = show;
+			}
+
+			public List<String> getLabels() {
+				return this.labels;
+			}
+
+			public void setLabels(List<String> labels) {
+				this.labels = labels;
 			}
 		}
 	}

@@ -27,7 +27,7 @@ public class ConfigAppRequest extends RpcAcsRequest<ConfigAppResponse> {
 
 	private String appIds;
 
-	private Boolean enable;
+	private String enable;
 	public ConfigAppRequest() {
 		super("ARMS", "2019-08-08", "ConfigApp", "arms");
 		setMethod(MethodType.POST);
@@ -48,14 +48,14 @@ public class ConfigAppRequest extends RpcAcsRequest<ConfigAppResponse> {
 		}
 	}
 
-	public Boolean getEnable() {
+	public String getEnable() {
 		return this.enable;
 	}
 
-	public void setEnable(Boolean enable) {
+	public void setEnable(String enable) {
 		this.enable = enable;
 		if(enable != null){
-			putQueryParameter("Enable", enable.toString());
+			putQueryParameter("Enable", enable);
 		}
 	}
 

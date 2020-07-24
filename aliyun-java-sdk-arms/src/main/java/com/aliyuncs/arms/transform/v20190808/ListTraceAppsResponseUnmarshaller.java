@@ -44,6 +44,12 @@ public class ListTraceAppsResponseUnmarshaller {
 			traceApp.setRegionId(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].RegionId"));
 			traceApp.setShow(_ctx.booleanValue("ListTraceAppsResponse.TraceApps["+ i +"].Show"));
 
+			List<String> labels = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListTraceAppsResponse.TraceApps["+ i +"].Labels.Length"); j++) {
+				labels.add(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].Labels["+ j +"]"));
+			}
+			traceApp.setLabels(labels);
+
 			traceApps.add(traceApp);
 		}
 		listTraceAppsResponse.setTraceApps(traceApps);

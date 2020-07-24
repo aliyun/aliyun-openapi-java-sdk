@@ -41,6 +41,12 @@ public class SearchTraceAppByNameResponseUnmarshaller {
 			traceApp.setUpdateTime(_ctx.longValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].UpdateTime"));
 			traceApp.setShow(_ctx.booleanValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].Show"));
 
+			List<String> labels = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].Labels.Length"); j++) {
+				labels.add(_ctx.stringValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].Labels["+ j +"]"));
+			}
+			traceApp.setLabels(labels);
+
 			traceApps.add(traceApp);
 		}
 		searchTraceAppByNameResponse.setTraceApps(traceApps);

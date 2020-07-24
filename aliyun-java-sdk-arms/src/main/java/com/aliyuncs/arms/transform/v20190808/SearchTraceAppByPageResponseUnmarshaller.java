@@ -47,6 +47,12 @@ public class SearchTraceAppByPageResponseUnmarshaller {
 			traceApp.setUpdateTime(_ctx.longValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].UpdateTime"));
 			traceApp.setShow(_ctx.booleanValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].Show"));
 
+			List<String> labels = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].Labels.Length"); j++) {
+				labels.add(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].Labels["+ j +"]"));
+			}
+			traceApp.setLabels(labels);
+
 			traceApps.add(traceApp);
 		}
 		pageBean.setTraceApps(traceApps);
