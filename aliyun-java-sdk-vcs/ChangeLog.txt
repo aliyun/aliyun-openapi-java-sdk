@@ -1,3 +1,6 @@
+2020-07-24 Version: 1.1.0
+- Change version number.
+
 2020-07-22 Version: 1.0.9.2
 - Add SourceId for SearchFace.
 
