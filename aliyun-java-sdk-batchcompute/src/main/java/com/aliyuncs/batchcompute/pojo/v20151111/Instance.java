@@ -39,6 +39,9 @@ public class Instance{
     @JsonProperty("InstanceId")
     private int instanceId;
 
+    @JsonProperty("NodeIp")
+    private String nodeIp;
+
 
     @JsonProperty("State")
     private String state;
@@ -184,7 +187,11 @@ public class Instance{
         this.endTime = endTime;
     }
 
+    @JsonIgnore
+    public void setNodeIp(String nodeIp) { this.nodeIp = nodeIp; }
 
+    @JsonIgnore
+    public String getNodeIp() { return nodeIp; }
 
 }
 

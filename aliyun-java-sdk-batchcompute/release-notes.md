@@ -1,4 +1,9 @@
 # release notes
+6.2.4
+```
+1. 查询作业实例信息时返回对应实例的IP信息
+```
+
 6.2.3
 ```
 1. 支持ListJob接口 条件过滤，按Id，CreationTime以及集群Id过滤
