@@ -10,6 +10,7 @@
       "ExitCode": 0},
     "RetryCount": 0,
     "StartTime": "",
+    "NodeIp": "10.1.98.33",
     "State": "Stopped",
     "StderrRedirectPath": "oss://my-bucket/test/logs/0.stderr",
     "StdoutRedirectPath": "oss://my-bucket/test/logs/0.stdout"}],
