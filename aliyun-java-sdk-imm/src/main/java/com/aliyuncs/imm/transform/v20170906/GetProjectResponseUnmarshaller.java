@@ -31,6 +31,7 @@ public class GetProjectResponseUnmarshaller {
 		getProjectResponse.setType(_ctx.stringValue("GetProjectResponse.Type"));
 		getProjectResponse.setCU(_ctx.integerValue("GetProjectResponse.CU"));
 		getProjectResponse.setBillingType(_ctx.stringValue("GetProjectResponse.BillingType"));
+		getProjectResponse.setRegionId(_ctx.stringValue("GetProjectResponse.RegionId"));
 	 
 	 	return getProjectResponse;
 	}

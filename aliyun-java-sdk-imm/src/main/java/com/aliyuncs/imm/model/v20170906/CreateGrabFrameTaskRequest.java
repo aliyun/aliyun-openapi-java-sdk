@@ -36,7 +36,7 @@ public class CreateGrabFrameTaskRequest extends RpcAcsRequest<CreateGrabFrameTas
 
 	private String videoUri;
 	public CreateGrabFrameTaskRequest() {
-		super("imm", "2017-09-06", "CreateGrabFrameTask", "imm");
+		super("imm", "2017-09-06", "CreateGrabFrameTask");
 		setMethod(MethodType.POST);
 	}
 

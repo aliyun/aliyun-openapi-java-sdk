@@ -38,7 +38,7 @@ public class FindSimilarFacesRequest extends RpcAcsRequest<FindSimilarFacesRespo
 
 	private String setId;
 	public FindSimilarFacesRequest() {
-		super("imm", "2017-09-06", "FindSimilarFaces", "imm");
+		super("imm", "2017-09-06", "FindSimilarFaces");
 		setMethod(MethodType.POST);
 	}
 

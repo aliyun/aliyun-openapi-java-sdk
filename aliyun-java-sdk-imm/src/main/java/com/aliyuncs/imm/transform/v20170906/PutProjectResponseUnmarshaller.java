@@ -31,6 +31,7 @@ public class PutProjectResponseUnmarshaller {
 		putProjectResponse.setType(_ctx.stringValue("PutProjectResponse.Type"));
 		putProjectResponse.setEndpoint(_ctx.stringValue("PutProjectResponse.Endpoint"));
 		putProjectResponse.setBillingType(_ctx.stringValue("PutProjectResponse.BillingType"));
+		putProjectResponse.setRegionId(_ctx.stringValue("PutProjectResponse.RegionId"));
 	 
 	 	return putProjectResponse;
 	}

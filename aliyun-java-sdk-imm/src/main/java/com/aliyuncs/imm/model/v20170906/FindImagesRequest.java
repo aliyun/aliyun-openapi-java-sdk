@@ -82,7 +82,7 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 
 	private String setId;
 	public FindImagesRequest() {
-		super("imm", "2017-09-06", "FindImages", "imm");
+		super("imm", "2017-09-06", "FindImages");
 		setMethod(MethodType.POST);
 	}
 

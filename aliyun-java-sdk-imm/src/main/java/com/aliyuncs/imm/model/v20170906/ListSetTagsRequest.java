@@ -28,7 +28,7 @@ public class ListSetTagsRequest extends RpcAcsRequest<ListSetTagsResponse> {
 
 	private String setId;
 	public ListSetTagsRequest() {
-		super("imm", "2017-09-06", "ListSetTags", "imm");
+		super("imm", "2017-09-06", "ListSetTags");
 		setMethod(MethodType.POST);
 	}
 

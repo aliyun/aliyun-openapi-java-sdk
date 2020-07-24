@@ -34,7 +34,7 @@ public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 
 	private String createTimeStart;
 	public ListImagesRequest() {
-		super("imm", "2017-09-06", "ListImages", "imm");
+		super("imm", "2017-09-06", "ListImages");
 		setMethod(MethodType.POST);
 	}
 

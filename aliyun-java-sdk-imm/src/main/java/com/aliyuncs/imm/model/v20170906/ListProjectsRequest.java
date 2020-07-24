@@ -28,7 +28,7 @@ public class ListProjectsRequest extends RpcAcsRequest<ListProjectsResponse> {
 
 	private String marker;
 	public ListProjectsRequest() {
-		super("imm", "2017-09-06", "ListProjects", "imm");
+		super("imm", "2017-09-06", "ListProjects");
 		setMethod(MethodType.POST);
 	}
 

@@ -34,11 +34,13 @@ public class EncodeBlindWatermarkRequest extends RpcAcsRequest<EncodeBlindWaterm
 
 	private String targetUri;
 
+	private String model;
+
 	private String targetImageType;
 
 	private String imageUri;
 	public EncodeBlindWatermarkRequest() {
-		super("imm", "2017-09-06", "EncodeBlindWatermark", "imm");
+		super("imm", "2017-09-06", "EncodeBlindWatermark");
 		setMethod(MethodType.POST);
 	}
 
@@ -94,6 +96,17 @@ public class EncodeBlindWatermarkRequest extends RpcAcsRequest<EncodeBlindWaterm
 		this.targetUri = targetUri;
 		if(targetUri != null){
 			putQueryParameter("TargetUri", targetUri);
+		}
+	}
+
+	public String getModel() {
+		return this.model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+		if(model != null){
+			putQueryParameter("Model", model);
 		}
 	}
 

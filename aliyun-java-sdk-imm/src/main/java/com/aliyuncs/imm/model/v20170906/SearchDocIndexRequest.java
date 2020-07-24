@@ -62,7 +62,7 @@ public class SearchDocIndexRequest extends RpcAcsRequest<SearchDocIndexResponse>
 
 	private String name;
 	public SearchDocIndexRequest() {
-		super("imm", "2017-09-06", "SearchDocIndex", "imm");
+		super("imm", "2017-09-06", "SearchDocIndex");
 		setMethod(MethodType.POST);
 	}
 

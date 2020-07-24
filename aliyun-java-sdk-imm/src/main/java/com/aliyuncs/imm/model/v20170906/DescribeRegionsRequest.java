@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
 	   
 	public DescribeRegionsRequest() {
-		super("imm", "2017-09-06", "DescribeRegions", "imm");
+		super("imm", "2017-09-06", "DescribeRegions");
 		setMethod(MethodType.POST);
 	}
 

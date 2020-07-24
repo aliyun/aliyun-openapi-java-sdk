@@ -30,7 +30,7 @@ public class ListOfficeConversionTaskRequest extends RpcAcsRequest<ListOfficeCon
 
 	private String marker;
 	public ListOfficeConversionTaskRequest() {
-		super("imm", "2017-09-06", "ListOfficeConversionTask", "imm");
+		super("imm", "2017-09-06", "ListOfficeConversionTask");
 		setMethod(MethodType.POST);
 	}
 

@@ -21,14 +21,16 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteSetRequest extends RpcAcsRequest<DeleteSetResponse> {
+public class GetImageCroppingSuggestionsRequest extends RpcAcsRequest<GetImageCroppingSuggestionsResponse> {
 	   
 
 	private String project;
 
-	private String setId;
-	public DeleteSetRequest() {
-		super("imm", "2017-09-06", "DeleteSet");
+	private String aspectRatios;
+
+	private String imageUri;
+	public GetImageCroppingSuggestionsRequest() {
+		super("imm", "2017-09-06", "GetImageCroppingSuggestions");
 		setMethod(MethodType.POST);
 	}
 
@@ -43,20 +45,31 @@ public class DeleteSetRequest extends RpcAcsRequest<DeleteSetResponse> {
 		}
 	}
 
-	public String getSetId() {
-		return this.setId;
+	public String getAspectRatios() {
+		return this.aspectRatios;
 	}
 
-	public void setSetId(String setId) {
-		this.setId = setId;
-		if(setId != null){
-			putQueryParameter("SetId", setId);
+	public void setAspectRatios(String aspectRatios) {
+		this.aspectRatios = aspectRatios;
+		if(aspectRatios != null){
+			putQueryParameter("AspectRatios", aspectRatios);
+		}
+	}
+
+	public String getImageUri() {
+		return this.imageUri;
+	}
+
+	public void setImageUri(String imageUri) {
+		this.imageUri = imageUri;
+		if(imageUri != null){
+			putQueryParameter("ImageUri", imageUri);
 		}
 	}
 
 	@Override
-	public Class<DeleteSetResponse> getResponseClass() {
-		return DeleteSetResponse.class;
+	public Class<GetImageCroppingSuggestionsResponse> getResponseClass() {
+		return GetImageCroppingSuggestionsResponse.class;
 	}
 
 }

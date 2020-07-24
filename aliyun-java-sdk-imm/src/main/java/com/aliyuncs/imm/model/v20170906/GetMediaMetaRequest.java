@@ -28,7 +28,7 @@ public class GetMediaMetaRequest extends RpcAcsRequest<GetMediaMetaResponse> {
 
 	private String project;
 	public GetMediaMetaRequest() {
-		super("imm", "2017-09-06", "GetMediaMeta", "imm");
+		super("imm", "2017-09-06", "GetMediaMeta");
 		setMethod(MethodType.POST);
 	}
 

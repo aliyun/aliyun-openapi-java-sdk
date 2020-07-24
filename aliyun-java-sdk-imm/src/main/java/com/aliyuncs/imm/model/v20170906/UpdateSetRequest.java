@@ -30,7 +30,7 @@ public class UpdateSetRequest extends RpcAcsRequest<UpdateSetResponse> {
 
 	private String setId;
 	public UpdateSetRequest() {
-		super("imm", "2017-09-06", "UpdateSet", "imm");
+		super("imm", "2017-09-06", "UpdateSet");
 		setMethod(MethodType.POST);
 	}
 

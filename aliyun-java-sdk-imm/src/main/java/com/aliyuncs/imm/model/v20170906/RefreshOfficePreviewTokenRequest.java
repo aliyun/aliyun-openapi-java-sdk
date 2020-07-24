@@ -30,7 +30,7 @@ public class RefreshOfficePreviewTokenRequest extends RpcAcsRequest<RefreshOffic
 
 	private String refreshToken;
 	public RefreshOfficePreviewTokenRequest() {
-		super("imm", "2017-09-06", "RefreshOfficePreviewToken", "imm");
+		super("imm", "2017-09-06", "RefreshOfficePreviewToken");
 		setMethod(MethodType.POST);
 	}
 

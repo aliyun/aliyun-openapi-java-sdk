@@ -30,11 +30,13 @@ public class DecodeBlindWatermarkRequest extends RpcAcsRequest<DecodeBlindWaterm
 
 	private String targetUri;
 
+	private String model;
+
 	private String imageUri;
 
 	private String originalImageUri;
 	public DecodeBlindWatermarkRequest() {
-		super("imm", "2017-09-06", "DecodeBlindWatermark", "imm");
+		super("imm", "2017-09-06", "DecodeBlindWatermark");
 		setMethod(MethodType.POST);
 	}
 
@@ -68,6 +70,17 @@ public class DecodeBlindWatermarkRequest extends RpcAcsRequest<DecodeBlindWaterm
 		this.targetUri = targetUri;
 		if(targetUri != null){
 			putQueryParameter("TargetUri", targetUri);
+		}
+	}
+
+	public String getModel() {
+		return this.model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+		if(model != null){
+			putQueryParameter("Model", model);
 		}
 	}
 

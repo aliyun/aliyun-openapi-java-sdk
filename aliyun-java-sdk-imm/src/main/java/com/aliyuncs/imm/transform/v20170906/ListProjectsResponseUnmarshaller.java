@@ -40,6 +40,7 @@ public class ListProjectsResponseUnmarshaller {
 			projectsItem.setCU(_ctx.integerValue("ListProjectsResponse.Projects["+ i +"].CU"));
 			projectsItem.setType(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].Type"));
 			projectsItem.setBillingType(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].BillingType"));
+			projectsItem.setRegionId(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].RegionId"));
 
 			projects.add(projectsItem);
 		}

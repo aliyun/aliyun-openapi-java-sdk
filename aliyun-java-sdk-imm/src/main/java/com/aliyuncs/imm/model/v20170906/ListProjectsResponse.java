@@ -73,6 +73,8 @@ public class ListProjectsResponse extends AcsResponse {
 
 		private String billingType;
 
+		private String regionId;
+
 		public String getProject() {
 			return this.project;
 		}
@@ -135,6 +137,14 @@ public class ListProjectsResponse extends AcsResponse {
 
 		public void setBillingType(String billingType) {
 			this.billingType = billingType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

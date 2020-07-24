@@ -38,6 +38,8 @@ public class UpdateProjectResponse extends AcsResponse {
 
 	private String type;
 
+	private String regionId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -92,6 +94,14 @@ public class UpdateProjectResponse extends AcsResponse {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	@Override

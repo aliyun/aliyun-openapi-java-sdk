@@ -26,7 +26,7 @@ public class ListProjectAPIsRequest extends RpcAcsRequest<ListProjectAPIsRespons
 
 	private String project;
 	public ListProjectAPIsRequest() {
-		super("imm", "2017-09-06", "ListProjectAPIs", "imm");
+		super("imm", "2017-09-06", "ListProjectAPIs");
 		setMethod(MethodType.POST);
 	}
 

@@ -32,7 +32,7 @@ public class ListVideoTasksRequest extends RpcAcsRequest<ListVideoTasksResponse>
 
 	private String marker;
 	public ListVideoTasksRequest() {
-		super("imm", "2017-09-06", "ListVideoTasks", "imm");
+		super("imm", "2017-09-06", "ListVideoTasks");
 		setMethod(MethodType.POST);
 	}
 

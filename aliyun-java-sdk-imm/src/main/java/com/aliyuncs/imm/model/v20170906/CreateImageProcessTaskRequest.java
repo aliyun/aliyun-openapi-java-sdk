@@ -34,7 +34,7 @@ public class CreateImageProcessTaskRequest extends RpcAcsRequest<CreateImageProc
 
 	private String imageUri;
 	public CreateImageProcessTaskRequest() {
-		super("imm", "2017-09-06", "CreateImageProcessTask", "imm");
+		super("imm", "2017-09-06", "CreateImageProcessTask");
 		setMethod(MethodType.POST);
 	}
 

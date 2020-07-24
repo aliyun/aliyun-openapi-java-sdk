@@ -32,7 +32,7 @@ public class ListVideosRequest extends RpcAcsRequest<ListVideosResponse> {
 
 	private String createTimeStart;
 	public ListVideosRequest() {
-		super("imm", "2017-09-06", "ListVideos", "imm");
+		super("imm", "2017-09-06", "ListVideos");
 		setMethod(MethodType.POST);
 	}
 

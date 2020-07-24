@@ -32,7 +32,7 @@ public class ListVideoAudiosRequest extends RpcAcsRequest<ListVideoAudiosRespons
 
 	private String setId;
 	public ListVideoAudiosRequest() {
-		super("imm", "2017-09-06", "ListVideoAudios", "imm");
+		super("imm", "2017-09-06", "ListVideoAudios");
 		setMethod(MethodType.POST);
 	}
 

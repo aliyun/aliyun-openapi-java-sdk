@@ -29,6 +29,7 @@ public class UpdateProjectResponseUnmarshaller {
 		updateProjectResponse.setServiceRole(_ctx.stringValue("UpdateProjectResponse.ServiceRole"));
 		updateProjectResponse.setCU(_ctx.integerValue("UpdateProjectResponse.CU"));
 		updateProjectResponse.setType(_ctx.stringValue("UpdateProjectResponse.Type"));
+		updateProjectResponse.setRegionId(_ctx.stringValue("UpdateProjectResponse.RegionId"));
 	 
 	 	return updateProjectResponse;
 	}

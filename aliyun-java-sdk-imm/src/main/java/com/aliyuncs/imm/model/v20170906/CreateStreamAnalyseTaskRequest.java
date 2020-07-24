@@ -34,7 +34,7 @@ public class CreateStreamAnalyseTaskRequest extends RpcAcsRequest<CreateStreamAn
 
 	private String tgtUri;
 	public CreateStreamAnalyseTaskRequest() {
-		super("imm", "2017-09-06", "CreateStreamAnalyseTask", "imm");
+		super("imm", "2017-09-06", "CreateStreamAnalyseTask");
 		setMethod(MethodType.POST);
 	}
 

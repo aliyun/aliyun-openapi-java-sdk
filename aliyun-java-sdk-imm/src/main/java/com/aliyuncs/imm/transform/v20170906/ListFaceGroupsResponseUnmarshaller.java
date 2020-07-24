@@ -39,6 +39,14 @@ public class ListFaceGroupsResponseUnmarshaller {
 			faceGroupsItem.setFaceCount(_ctx.integerValue("ListFaceGroupsResponse.FaceGroups["+ i +"].FaceCount"));
 			faceGroupsItem.setCreateTime(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].CreateTime"));
 			faceGroupsItem.setModifyTime(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].ModifyTime"));
+			faceGroupsItem.setRemarksA(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].RemarksA"));
+			faceGroupsItem.setRemarksB(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].RemarksB"));
+			faceGroupsItem.setRemarksC(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].RemarksC"));
+			faceGroupsItem.setRemarksD(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].RemarksD"));
+			faceGroupsItem.setRemarksArrayA(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].RemarksArrayA"));
+			faceGroupsItem.setRemarksArrayB(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].RemarksArrayB"));
+			faceGroupsItem.setExternalId(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].ExternalId"));
+			faceGroupsItem.setImageCount(_ctx.integerValue("ListFaceGroupsResponse.FaceGroups["+ i +"].ImageCount"));
 
 			GroupCoverFace groupCoverFace = new GroupCoverFace();
 			groupCoverFace.setFaceId(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].GroupCoverFace.FaceId"));

@@ -67,6 +67,22 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 		private String modifyTime;
 
+		private String remarksA;
+
+		private String remarksB;
+
+		private String remarksC;
+
+		private String remarksD;
+
+		private String remarksArrayA;
+
+		private String remarksArrayB;
+
+		private String externalId;
+
+		private Integer imageCount;
+
 		private GroupCoverFace groupCoverFace;
 
 		public String getGroupId() {
@@ -107,6 +123,70 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public String getRemarksA() {
+			return this.remarksA;
+		}
+
+		public void setRemarksA(String remarksA) {
+			this.remarksA = remarksA;
+		}
+
+		public String getRemarksB() {
+			return this.remarksB;
+		}
+
+		public void setRemarksB(String remarksB) {
+			this.remarksB = remarksB;
+		}
+
+		public String getRemarksC() {
+			return this.remarksC;
+		}
+
+		public void setRemarksC(String remarksC) {
+			this.remarksC = remarksC;
+		}
+
+		public String getRemarksD() {
+			return this.remarksD;
+		}
+
+		public void setRemarksD(String remarksD) {
+			this.remarksD = remarksD;
+		}
+
+		public String getRemarksArrayA() {
+			return this.remarksArrayA;
+		}
+
+		public void setRemarksArrayA(String remarksArrayA) {
+			this.remarksArrayA = remarksArrayA;
+		}
+
+		public String getRemarksArrayB() {
+			return this.remarksArrayB;
+		}
+
+		public void setRemarksArrayB(String remarksArrayB) {
+			this.remarksArrayB = remarksArrayB;
+		}
+
+		public String getExternalId() {
+			return this.externalId;
+		}
+
+		public void setExternalId(String externalId) {
+			this.externalId = externalId;
+		}
+
+		public Integer getImageCount() {
+			return this.imageCount;
+		}
+
+		public void setImageCount(Integer imageCount) {
+			this.imageCount = imageCount;
 		}
 
 		public GroupCoverFace getGroupCoverFace() {

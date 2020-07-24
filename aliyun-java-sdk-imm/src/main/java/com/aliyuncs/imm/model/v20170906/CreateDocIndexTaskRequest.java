@@ -48,7 +48,7 @@ public class CreateDocIndexTaskRequest extends RpcAcsRequest<CreateDocIndexTaskR
 
 	private String srcUri;
 	public CreateDocIndexTaskRequest() {
-		super("imm", "2017-09-06", "CreateDocIndexTask", "imm");
+		super("imm", "2017-09-06", "CreateDocIndexTask");
 		setMethod(MethodType.POST);
 	}
 

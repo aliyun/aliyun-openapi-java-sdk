@@ -44,7 +44,7 @@ public class UpdateDocIndexMetaRequest extends RpcAcsRequest<UpdateDocIndexMetaR
 
 	private String name;
 	public UpdateDocIndexMetaRequest() {
-		super("imm", "2017-09-06", "UpdateDocIndexMeta", "imm");
+		super("imm", "2017-09-06", "UpdateDocIndexMeta");
 		setMethod(MethodType.POST);
 	}
 

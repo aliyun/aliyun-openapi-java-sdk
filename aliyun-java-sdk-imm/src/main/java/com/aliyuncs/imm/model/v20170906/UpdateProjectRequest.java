@@ -30,7 +30,7 @@ public class UpdateProjectRequest extends RpcAcsRequest<UpdateProjectResponse> {
 
 	private Integer newCU;
 	public UpdateProjectRequest() {
-		super("imm", "2017-09-06", "UpdateProject", "imm");
+		super("imm", "2017-09-06", "UpdateProject");
 		setMethod(MethodType.POST);
 	}
 

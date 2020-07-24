@@ -30,7 +30,7 @@ public class DetectImageCelebrityRequest extends RpcAcsRequest<DetectImageCelebr
 
 	private String imageUri;
 	public DetectImageCelebrityRequest() {
-		super("imm", "2017-09-06", "DetectImageCelebrity", "imm");
+		super("imm", "2017-09-06", "DetectImageCelebrity");
 		setMethod(MethodType.POST);
 	}
 

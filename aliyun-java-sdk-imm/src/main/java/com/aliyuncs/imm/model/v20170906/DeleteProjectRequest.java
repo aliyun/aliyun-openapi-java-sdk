@@ -26,7 +26,7 @@ public class DeleteProjectRequest extends RpcAcsRequest<DeleteProjectResponse> {
 
 	private String project;
 	public DeleteProjectRequest() {
-		super("imm", "2017-09-06", "DeleteProject", "imm");
+		super("imm", "2017-09-06", "DeleteProject");
 		setMethod(MethodType.POST);
 	}
 

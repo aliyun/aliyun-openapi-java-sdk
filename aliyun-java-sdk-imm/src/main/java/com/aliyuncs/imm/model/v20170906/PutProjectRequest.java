@@ -34,7 +34,7 @@ public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
 
 	private String billingType;
 	public PutProjectRequest() {
-		super("imm", "2017-09-06", "PutProject", "imm");
+		super("imm", "2017-09-06", "PutProject");
 		setMethod(MethodType.POST);
 	}
 

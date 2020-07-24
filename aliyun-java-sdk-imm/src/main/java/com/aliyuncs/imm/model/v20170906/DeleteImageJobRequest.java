@@ -30,7 +30,7 @@ public class DeleteImageJobRequest extends RpcAcsRequest<DeleteImageJobResponse>
 
 	private String jobType;
 	public DeleteImageJobRequest() {
-		super("imm", "2017-09-06", "DeleteImageJob", "imm");
+		super("imm", "2017-09-06", "DeleteImageJob");
 		setMethod(MethodType.POST);
 	}
 

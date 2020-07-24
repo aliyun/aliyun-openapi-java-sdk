@@ -72,7 +72,7 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 
 	private String tgtUri;
 	public CreateOfficeConversionTaskRequest() {
-		super("imm", "2017-09-06", "CreateOfficeConversionTask", "imm");
+		super("imm", "2017-09-06", "CreateOfficeConversionTask");
 		setMethod(MethodType.POST);
 	}
 

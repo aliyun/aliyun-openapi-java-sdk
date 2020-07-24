@@ -28,7 +28,7 @@ public class DeleteOfficeConversionTaskRequest extends RpcAcsRequest<DeleteOffic
 
 	private String taskId;
 	public DeleteOfficeConversionTaskRequest() {
-		super("imm", "2017-09-06", "DeleteOfficeConversionTask", "imm");
+		super("imm", "2017-09-06", "DeleteOfficeConversionTask");
 		setMethod(MethodType.POST);
 	}
 

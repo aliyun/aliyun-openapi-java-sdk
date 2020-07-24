@@ -32,7 +32,7 @@ public class GetContentKeyRequest extends RpcAcsRequest<GetContentKeyResponse> {
 
 	private String keyIds;
 	public GetContentKeyRequest() {
-		super("imm", "2017-09-06", "GetContentKey", "imm");
+		super("imm", "2017-09-06", "GetContentKey");
 		setMethod(MethodType.POST);
 	}
 

@@ -28,7 +28,7 @@ public class GetOfficeConversionTaskRequest extends RpcAcsRequest<GetOfficeConve
 
 	private String taskId;
 	public GetOfficeConversionTaskRequest() {
-		super("imm", "2017-09-06", "GetOfficeConversionTask", "imm");
+		super("imm", "2017-09-06", "GetOfficeConversionTask");
 		setMethod(MethodType.POST);
 	}
 
