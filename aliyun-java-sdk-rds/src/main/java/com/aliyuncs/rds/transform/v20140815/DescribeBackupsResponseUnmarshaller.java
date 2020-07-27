@@ -60,6 +60,7 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setBackupInitiator(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupInitiator"));
 			backup.setCopyOnlyBackup(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].CopyOnlyBackup"));
 			backup.setStorageClass(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].StorageClass"));
+			backup.setIsAvail(_ctx.integerValue("DescribeBackupsResponse.Items["+ i +"].IsAvail"));
 
 			items.add(backup);
 		}

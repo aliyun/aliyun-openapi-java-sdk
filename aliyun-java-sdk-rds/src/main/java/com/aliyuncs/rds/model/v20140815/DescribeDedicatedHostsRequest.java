@@ -39,6 +39,8 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 
 	private Long orderId;
 
+	private String dedicatedHostId;
+
 	private Long ownerId;
 
 	private String zoneId;
@@ -125,6 +127,17 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 		this.orderId = orderId;
 		if(orderId != null){
 			putQueryParameter("OrderId", orderId.toString());
+		}
+	}
+
+	public String getDedicatedHostId() {
+		return this.dedicatedHostId;
+	}
+
+	public void setDedicatedHostId(String dedicatedHostId) {
+		this.dedicatedHostId = dedicatedHostId;
+		if(dedicatedHostId != null){
+			putQueryParameter("DedicatedHostId", dedicatedHostId);
 		}
 	}
 

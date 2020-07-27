@@ -48,6 +48,16 @@ public class DescribeDedicatedHostGroupsResponseUnmarshaller {
 			dedicatedHostGroupsItem.setDedicatedHostCountGroupByHostType(_ctx.mapValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].DedicatedHostCountGroupByHostType"));
 			dedicatedHostGroupsItem.setBastionInstanceId(_ctx.stringValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].BastionInstanceId"));
 			dedicatedHostGroupsItem.setOpenPermission(_ctx.stringValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].OpenPermission"));
+			dedicatedHostGroupsItem.setMemUtility(_ctx.floatValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].MemUtility"));
+			dedicatedHostGroupsItem.setMemUsedAmount(_ctx.floatValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].MemUsedAmount"));
+			dedicatedHostGroupsItem.setDiskUtility(_ctx.floatValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].DiskUtility"));
+			dedicatedHostGroupsItem.setDiskUsedAmount(_ctx.floatValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].DiskUsedAmount"));
+			dedicatedHostGroupsItem.setCpuAllocateRation(_ctx.floatValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].CpuAllocateRation"));
+			dedicatedHostGroupsItem.setCpuAllocatedAmount(_ctx.floatValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].CpuAllocatedAmount"));
+			dedicatedHostGroupsItem.setMemAllocateRation(_ctx.floatValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].MemAllocateRation"));
+			dedicatedHostGroupsItem.setMemAllocatedAmount(_ctx.floatValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].MemAllocatedAmount"));
+			dedicatedHostGroupsItem.setDiskAllocateRation(_ctx.floatValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].DiskAllocateRation"));
+			dedicatedHostGroupsItem.setDiskAllocatedAmount(_ctx.floatValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].DiskAllocatedAmount"));
 
 			List<String> zoneIDList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostGroupsResponse.DedicatedHostGroups["+ i +"].ZoneIDList.Length"); j++) {

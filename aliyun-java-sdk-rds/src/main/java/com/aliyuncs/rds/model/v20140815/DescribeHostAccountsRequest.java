@@ -22,22 +22,20 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceResponse> {
+public class DescribeHostAccountsRequest extends RpcAcsRequest<DescribeHostAccountsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String dBInstanceId;
-
-	private String releasedKeepPolicy;
-
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
+	private String clientToken;
 
 	private Long ownerId;
-	public DeleteDBInstanceRequest() {
-		super("Rds", "2014-08-15", "DeleteDBInstance", "rds");
+
+	private String dBInstanceId;
+	public DescribeHostAccountsRequest() {
+		super("Rds", "2014-08-15", "DescribeHostAccounts", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,28 +54,6 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getReleasedKeepPolicy() {
-		return this.releasedKeepPolicy;
-	}
-
-	public void setReleasedKeepPolicy(String releasedKeepPolicy) {
-		this.releasedKeepPolicy = releasedKeepPolicy;
-		if(releasedKeepPolicy != null){
-			putQueryParameter("ReleasedKeepPolicy", releasedKeepPolicy);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -89,14 +65,14 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -111,9 +87,20 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 		}
 	}
 
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
 	@Override
-	public Class<DeleteDBInstanceResponse> getResponseClass() {
-		return DeleteDBInstanceResponse.class;
+	public Class<DescribeHostAccountsResponse> getResponseClass() {
+		return DescribeHostAccountsResponse.class;
 	}
 
 }

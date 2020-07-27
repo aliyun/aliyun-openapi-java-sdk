@@ -114,11 +114,11 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			extra.setReplicaGroupStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ReplicaGroupStatus"));
 			extra.setActiveReplicaDBInstanceID(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ActiveReplicaDBInstanceID"));
 
-			List<String> dBInstanceId = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.DBInstanceId.Length"); j++) {
-				dBInstanceId.add(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.DBInstanceId["+ j +"]"));
+			List<String> dBInstanceIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.DBInstanceIds.Length"); j++) {
+				dBInstanceIds.add(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.DBInstanceIds["+ j +"]"));
 			}
-			extra.setDBInstanceId(dBInstanceId);
+			extra.setDBInstanceIds(dBInstanceIds);
 			dBInstanceAttribute.setExtra(extra);
 
 			List<SlaveZone> slaveZones = new ArrayList<SlaveZone>();

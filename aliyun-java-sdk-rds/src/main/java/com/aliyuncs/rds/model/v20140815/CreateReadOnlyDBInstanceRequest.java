@@ -35,15 +35,21 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	private String resourceGroupId;
 
+	private String tddlRegionConfig;
+
 	private String targetDedicatedHostIdForMaster;
 
 	private String dBInstanceId;
 
 	private String dBInstanceDescription;
 
+	private String gdnInstanceName;
+
 	private String dBInstanceStorageType;
 
 	private String dedicatedHostGroupId;
+
+	private String tddlBizType;
 
 	private String resourceOwnerAccount;
 
@@ -130,6 +136,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		}
 	}
 
+	public String getTddlRegionConfig() {
+		return this.tddlRegionConfig;
+	}
+
+	public void setTddlRegionConfig(String tddlRegionConfig) {
+		this.tddlRegionConfig = tddlRegionConfig;
+		if(tddlRegionConfig != null){
+			putQueryParameter("TddlRegionConfig", tddlRegionConfig);
+		}
+	}
+
 	public String getTargetDedicatedHostIdForMaster() {
 		return this.targetDedicatedHostIdForMaster;
 	}
@@ -163,6 +180,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		}
 	}
 
+	public String getGdnInstanceName() {
+		return this.gdnInstanceName;
+	}
+
+	public void setGdnInstanceName(String gdnInstanceName) {
+		this.gdnInstanceName = gdnInstanceName;
+		if(gdnInstanceName != null){
+			putQueryParameter("GdnInstanceName", gdnInstanceName);
+		}
+	}
+
 	public String getDBInstanceStorageType() {
 		return this.dBInstanceStorageType;
 	}
@@ -182,6 +210,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		this.dedicatedHostGroupId = dedicatedHostGroupId;
 		if(dedicatedHostGroupId != null){
 			putQueryParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+		}
+	}
+
+	public String getTddlBizType() {
+		return this.tddlBizType;
+	}
+
+	public void setTddlBizType(String tddlBizType) {
+		this.tddlBizType = tddlBizType;
+		if(tddlBizType != null){
+			putQueryParameter("TddlBizType", tddlBizType);
 		}
 	}
 

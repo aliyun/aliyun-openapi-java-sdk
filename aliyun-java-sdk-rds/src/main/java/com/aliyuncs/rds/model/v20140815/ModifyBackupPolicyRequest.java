@@ -35,6 +35,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String backupLog;
 
+	private String backupInterval;
+
 	private String highSpaceUsageProtection;
 
 	private Integer logBackupLocalRetentionNumber;
@@ -66,6 +68,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 	private String backupRetentionPeriod;
 
 	private String archiveBackupRetentionPeriod;
+
+	private String category;
 
 	private String logBackupRetentionPeriod;
 	public ModifyBackupPolicyRequest() {
@@ -129,6 +133,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.backupLog = backupLog;
 		if(backupLog != null){
 			putQueryParameter("BackupLog", backupLog);
+		}
+	}
+
+	public String getBackupInterval() {
+		return this.backupInterval;
+	}
+
+	public void setBackupInterval(String backupInterval) {
+		this.backupInterval = backupInterval;
+		if(backupInterval != null){
+			putQueryParameter("BackupInterval", backupInterval);
 		}
 	}
 
@@ -305,6 +320,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.archiveBackupRetentionPeriod = archiveBackupRetentionPeriod;
 		if(archiveBackupRetentionPeriod != null){
 			putQueryParameter("ArchiveBackupRetentionPeriod", archiveBackupRetentionPeriod);
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
 		}
 	}
 

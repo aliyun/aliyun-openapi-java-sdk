@@ -64,6 +64,12 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private Integer logBackupLocalRetentionNumber;
 
+	private String category;
+
+	private Integer supportReleasedKeep;
+
+	private String backupInterval;
+
 	private DuplicationLocation duplicationLocation;
 
 	public String getRequestId() {
@@ -224,6 +230,30 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setLogBackupLocalRetentionNumber(Integer logBackupLocalRetentionNumber) {
 		this.logBackupLocalRetentionNumber = logBackupLocalRetentionNumber;
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public Integer getSupportReleasedKeep() {
+		return this.supportReleasedKeep;
+	}
+
+	public void setSupportReleasedKeep(Integer supportReleasedKeep) {
+		this.supportReleasedKeep = supportReleasedKeep;
+	}
+
+	public String getBackupInterval() {
+		return this.backupInterval;
+	}
+
+	public void setBackupInterval(String backupInterval) {
+		this.backupInterval = backupInterval;
 	}
 
 	public DuplicationLocation getDuplicationLocation() {

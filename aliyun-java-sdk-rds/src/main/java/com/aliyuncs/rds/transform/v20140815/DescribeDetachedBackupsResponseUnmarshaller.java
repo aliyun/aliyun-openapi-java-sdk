@@ -56,6 +56,7 @@ public class DescribeDetachedBackupsResponseUnmarshaller {
 			backup.setMetaStatus(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].MetaStatus"));
 			backup.setSlaveStatus(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].SlaveStatus"));
 			backup.setConsistentTime(_ctx.longValue("DescribeDetachedBackupsResponse.Items["+ i +"].ConsistentTime"));
+			backup.setIsAvail(_ctx.integerValue("DescribeDetachedBackupsResponse.Items["+ i +"].IsAvail"));
 
 			items.add(backup);
 		}

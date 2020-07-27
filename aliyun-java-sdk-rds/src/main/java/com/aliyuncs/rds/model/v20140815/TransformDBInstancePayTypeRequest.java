@@ -37,8 +37,6 @@ public class TransformDBInstancePayTypeRequest extends RpcAcsRequest<TransformDB
 
 	private String resourceOwnerAccount;
 
-	private String resource;
-
 	private String ownerAccount;
 
 	private Long ownerId;
@@ -118,17 +116,6 @@ public class TransformDBInstancePayTypeRequest extends RpcAcsRequest<TransformDB
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getResource() {
-		return this.resource;
-	}
-
-	public void setResource(String resource) {
-		this.resource = resource;
-		if(resource != null){
-			putQueryParameter("Resource", resource);
 		}
 	}
 

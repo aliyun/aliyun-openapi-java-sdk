@@ -145,6 +145,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String storageClass;
 
+		private Integer isAvail;
+
 		public String getBackupId() {
 			return this.backupId;
 		}
@@ -335,6 +337,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setStorageClass(String storageClass) {
 			this.storageClass = storageClass;
+		}
+
+		public Integer getIsAvail() {
+			return this.isAvail;
+		}
+
+		public void setIsAvail(Integer isAvail) {
+			this.isAvail = isAvail;
 		}
 	}
 

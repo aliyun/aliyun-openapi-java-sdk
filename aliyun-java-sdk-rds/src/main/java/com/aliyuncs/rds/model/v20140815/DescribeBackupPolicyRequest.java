@@ -31,6 +31,8 @@ public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPol
 
 	private String backupPolicyMode;
 
+	private String releasedKeepPolicy;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -77,6 +79,17 @@ public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPol
 		this.backupPolicyMode = backupPolicyMode;
 		if(backupPolicyMode != null){
 			putQueryParameter("BackupPolicyMode", backupPolicyMode);
+		}
+	}
+
+	public String getReleasedKeepPolicy() {
+		return this.releasedKeepPolicy;
+	}
+
+	public void setReleasedKeepPolicy(String releasedKeepPolicy) {
+		this.releasedKeepPolicy = releasedKeepPolicy;
+		if(releasedKeepPolicy != null){
+			putQueryParameter("ReleasedKeepPolicy", releasedKeepPolicy);
 		}
 	}
 

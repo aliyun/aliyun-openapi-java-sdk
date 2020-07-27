@@ -109,6 +109,10 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		private String imageCategory;
 
+		private String dedicatedHostGroupId;
+
+		private String engine;
+
 		public String getHostName() {
 			return this.hostName;
 		}
@@ -315,6 +319,22 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		public void setImageCategory(String imageCategory) {
 			this.imageCategory = imageCategory;
+		}
+
+		public String getDedicatedHostGroupId() {
+			return this.dedicatedHostGroupId;
+		}
+
+		public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
+			this.dedicatedHostGroupId = dedicatedHostGroupId;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
 		}
 	}
 

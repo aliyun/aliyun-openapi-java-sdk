@@ -129,6 +129,8 @@ public class DescribeDetachedBackupsResponse extends AcsResponse {
 
 		private Long consistentTime;
 
+		private Integer isAvail;
+
 		public String getBackupId() {
 			return this.backupId;
 		}
@@ -295,6 +297,14 @@ public class DescribeDetachedBackupsResponse extends AcsResponse {
 
 		public void setConsistentTime(Long consistentTime) {
 			this.consistentTime = consistentTime;
+		}
+
+		public Integer getIsAvail() {
+			return this.isAvail;
+		}
+
+		public void setIsAvail(Integer isAvail) {
+			this.isAvail = isAvail;
 		}
 	}
 

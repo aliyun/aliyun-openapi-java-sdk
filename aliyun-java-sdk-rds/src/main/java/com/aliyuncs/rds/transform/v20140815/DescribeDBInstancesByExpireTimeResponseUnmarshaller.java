@@ -39,6 +39,7 @@ public class DescribeDBInstancesByExpireTimeResponseUnmarshaller {
 			dBInstanceExpireTime.setExpireTime(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].ExpireTime"));
 			dBInstanceExpireTime.setDBInstanceStatus(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].DBInstanceStatus"));
 			dBInstanceExpireTime.setLockMode(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].LockMode"));
+			dBInstanceExpireTime.setPayType(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].PayType"));
 
 			items.add(dBInstanceExpireTime);
 		}

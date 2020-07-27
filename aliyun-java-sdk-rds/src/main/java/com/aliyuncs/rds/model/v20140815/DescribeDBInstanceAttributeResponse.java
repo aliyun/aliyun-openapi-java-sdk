@@ -851,7 +851,7 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			private String activeReplicaDBInstanceID;
 
-			private List<String> dBInstanceId;
+			private List<String> dBInstanceIds;
 
 			public String getReplicaGroupID() {
 				return this.replicaGroupID;
@@ -877,12 +877,12 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 				this.activeReplicaDBInstanceID = activeReplicaDBInstanceID;
 			}
 
-			public List<String> getDBInstanceId() {
-				return this.dBInstanceId;
+			public List<String> getDBInstanceIds() {
+				return this.dBInstanceIds;
 			}
 
-			public void setDBInstanceId(List<String> dBInstanceId) {
-				this.dBInstanceId = dBInstanceId;
+			public void setDBInstanceIds(List<String> dBInstanceIds) {
+				this.dBInstanceIds = dBInstanceIds;
 			}
 		}
 	}

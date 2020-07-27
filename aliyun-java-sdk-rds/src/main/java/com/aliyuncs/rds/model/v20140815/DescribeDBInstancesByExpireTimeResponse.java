@@ -87,6 +87,8 @@ public class DescribeDBInstancesByExpireTimeResponse extends AcsResponse {
 
 		private String lockMode;
 
+		private String payType;
+
 		public String getDBInstanceId() {
 			return this.dBInstanceId;
 		}
@@ -125,6 +127,14 @@ public class DescribeDBInstancesByExpireTimeResponse extends AcsResponse {
 
 		public void setLockMode(String lockMode) {
 			this.lockMode = lockMode;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
 		}
 	}
 

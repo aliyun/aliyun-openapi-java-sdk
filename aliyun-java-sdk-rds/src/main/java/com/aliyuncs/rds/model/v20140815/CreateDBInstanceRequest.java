@@ -71,6 +71,10 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String targetDedicatedHostIdForSlave;
 
+	private String zoneIdSlave1;
+
+	private String zoneIdSlave2;
+
 	private String dBIsIgnoreCase;
 
 	private String engine;
@@ -349,6 +353,28 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.targetDedicatedHostIdForSlave = targetDedicatedHostIdForSlave;
 		if(targetDedicatedHostIdForSlave != null){
 			putQueryParameter("TargetDedicatedHostIdForSlave", targetDedicatedHostIdForSlave);
+		}
+	}
+
+	public String getZoneIdSlave1() {
+		return this.zoneIdSlave1;
+	}
+
+	public void setZoneIdSlave1(String zoneIdSlave1) {
+		this.zoneIdSlave1 = zoneIdSlave1;
+		if(zoneIdSlave1 != null){
+			putQueryParameter("ZoneIdSlave1", zoneIdSlave1);
+		}
+	}
+
+	public String getZoneIdSlave2() {
+		return this.zoneIdSlave2;
+	}
+
+	public void setZoneIdSlave2(String zoneIdSlave2) {
+		this.zoneIdSlave2 = zoneIdSlave2;
+		if(zoneIdSlave2 != null){
+			putQueryParameter("ZoneIdSlave2", zoneIdSlave2);
 		}
 	}
 

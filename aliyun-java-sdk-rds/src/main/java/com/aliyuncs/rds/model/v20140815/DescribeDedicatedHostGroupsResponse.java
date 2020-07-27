@@ -80,6 +80,26 @@ public class DescribeDedicatedHostGroupsResponse extends AcsResponse {
 
 		private String openPermission;
 
+		private Float memUtility;
+
+		private Float memUsedAmount;
+
+		private Float diskUtility;
+
+		private Float diskUsedAmount;
+
+		private Float cpuAllocateRation;
+
+		private Float cpuAllocatedAmount;
+
+		private Float memAllocateRation;
+
+		private Float memAllocatedAmount;
+
+		private Float diskAllocateRation;
+
+		private Float diskAllocatedAmount;
+
 		private List<String> zoneIDList;
 
 		public String getDedicatedHostGroupId() {
@@ -208,6 +228,86 @@ public class DescribeDedicatedHostGroupsResponse extends AcsResponse {
 
 		public void setOpenPermission(String openPermission) {
 			this.openPermission = openPermission;
+		}
+
+		public Float getMemUtility() {
+			return this.memUtility;
+		}
+
+		public void setMemUtility(Float memUtility) {
+			this.memUtility = memUtility;
+		}
+
+		public Float getMemUsedAmount() {
+			return this.memUsedAmount;
+		}
+
+		public void setMemUsedAmount(Float memUsedAmount) {
+			this.memUsedAmount = memUsedAmount;
+		}
+
+		public Float getDiskUtility() {
+			return this.diskUtility;
+		}
+
+		public void setDiskUtility(Float diskUtility) {
+			this.diskUtility = diskUtility;
+		}
+
+		public Float getDiskUsedAmount() {
+			return this.diskUsedAmount;
+		}
+
+		public void setDiskUsedAmount(Float diskUsedAmount) {
+			this.diskUsedAmount = diskUsedAmount;
+		}
+
+		public Float getCpuAllocateRation() {
+			return this.cpuAllocateRation;
+		}
+
+		public void setCpuAllocateRation(Float cpuAllocateRation) {
+			this.cpuAllocateRation = cpuAllocateRation;
+		}
+
+		public Float getCpuAllocatedAmount() {
+			return this.cpuAllocatedAmount;
+		}
+
+		public void setCpuAllocatedAmount(Float cpuAllocatedAmount) {
+			this.cpuAllocatedAmount = cpuAllocatedAmount;
+		}
+
+		public Float getMemAllocateRation() {
+			return this.memAllocateRation;
+		}
+
+		public void setMemAllocateRation(Float memAllocateRation) {
+			this.memAllocateRation = memAllocateRation;
+		}
+
+		public Float getMemAllocatedAmount() {
+			return this.memAllocatedAmount;
+		}
+
+		public void setMemAllocatedAmount(Float memAllocatedAmount) {
+			this.memAllocatedAmount = memAllocatedAmount;
+		}
+
+		public Float getDiskAllocateRation() {
+			return this.diskAllocateRation;
+		}
+
+		public void setDiskAllocateRation(Float diskAllocateRation) {
+			this.diskAllocateRation = diskAllocateRation;
+		}
+
+		public Float getDiskAllocatedAmount() {
+			return this.diskAllocatedAmount;
+		}
+
+		public void setDiskAllocatedAmount(Float diskAllocatedAmount) {
+			this.diskAllocatedAmount = diskAllocatedAmount;
 		}
 
 		public List<String> getZoneIDList() {

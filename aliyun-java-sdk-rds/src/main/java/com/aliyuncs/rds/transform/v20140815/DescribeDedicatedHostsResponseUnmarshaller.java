@@ -58,6 +58,8 @@ public class DescribeDedicatedHostsResponseUnmarshaller {
 			dedicatedHostsItem.setMemoryUsed(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].MemoryUsed"));
 			dedicatedHostsItem.setStorageUsed(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].StorageUsed"));
 			dedicatedHostsItem.setImageCategory(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].ImageCategory"));
+			dedicatedHostsItem.setDedicatedHostGroupId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].DedicatedHostGroupId"));
+			dedicatedHostsItem.setEngine(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Engine"));
 
 			dedicatedHosts.add(dedicatedHostsItem);
 		}

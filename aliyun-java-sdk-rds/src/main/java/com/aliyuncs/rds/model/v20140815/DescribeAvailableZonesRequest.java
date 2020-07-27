@@ -31,6 +31,8 @@ public class DescribeAvailableZonesRequest extends RpcAcsRequest<DescribeAvailab
 
 	private String engine;
 
+	private String instanceChargeType;
+
 	private String zoneId;
 	public DescribeAvailableZonesRequest() {
 		super("Rds", "2014-08-15", "DescribeAvailableZones", "rds");
@@ -71,6 +73,17 @@ public class DescribeAvailableZonesRequest extends RpcAcsRequest<DescribeAvailab
 		this.engine = engine;
 		if(engine != null){
 			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
 		}
 	}
 
