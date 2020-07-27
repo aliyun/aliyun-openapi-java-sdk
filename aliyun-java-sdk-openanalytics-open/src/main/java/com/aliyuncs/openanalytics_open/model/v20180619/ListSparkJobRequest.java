@@ -46,7 +46,7 @@ public class ListSparkJobRequest extends RpcAcsRequest<ListSparkJobResponse> {
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
-			putBodyParameter("PageNumber", pageNumber.toString());
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -57,7 +57,7 @@ public class ListSparkJobRequest extends RpcAcsRequest<ListSparkJobResponse> {
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -68,7 +68,7 @@ public class ListSparkJobRequest extends RpcAcsRequest<ListSparkJobResponse> {
 	public void setVcName(String vcName) {
 		this.vcName = vcName;
 		if(vcName != null){
-			putBodyParameter("VcName", vcName);
+			putQueryParameter("VcName", vcName);
 		}
 	}
 

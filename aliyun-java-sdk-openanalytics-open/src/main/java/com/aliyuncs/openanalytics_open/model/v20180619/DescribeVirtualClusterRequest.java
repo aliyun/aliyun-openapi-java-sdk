@@ -42,7 +42,7 @@ public class DescribeVirtualClusterRequest extends RpcAcsRequest<DescribeVirtual
 	public void setName(String name) {
 		this.name = name;
 		if(name != null){
-			putBodyParameter("Name", name);
+			putQueryParameter("Name", name);
 		}
 	}
 

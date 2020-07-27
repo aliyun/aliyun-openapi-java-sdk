@@ -1,3 +1,7 @@
+2020-07-27 Version: 1.0.8
+- Fix signature error in list virtual API.
+- Fix signature error in list spark job API.
+
 2020-07-16 Version: 1.0.7
 - Fix signature error in virtual cluster API.
 - Fix signature error in spark job API.
