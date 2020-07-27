@@ -42,6 +42,8 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 
 	private List<Tag> tags;
 
+	private String coverage;
+
 	private String domainName;
 
 	private Long ownerId;
@@ -149,6 +151,17 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getCoverage() {
+		return this.coverage;
+	}
+
+	public void setCoverage(String coverage) {
+		this.coverage = coverage;
+		if(coverage != null){
+			putQueryParameter("Coverage", coverage);
+		}
 	}
 
 	public String getDomainName() {

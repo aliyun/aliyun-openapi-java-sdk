@@ -22,18 +22,18 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheResponse> {
+public class DescribeDomainNamesOfVersionRequest extends RpcAcsRequest<DescribeDomainNamesOfVersionResponse> {
 	   
 
-	private String objectPath;
+	private String versionId;
 
-	private String securityToken;
+	private String pageSize;
 
-	private String area;
+	private Integer pageIndex;
 
 	private Long ownerId;
-	public PushObjectCacheRequest() {
-		super("Cdn", "2018-05-10", "PushObjectCache");
+	public DescribeDomainNamesOfVersionRequest() {
+		super("Cdn", "2018-05-10", "DescribeDomainNamesOfVersion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +41,36 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 		} catch (Exception e) {}
 	}
 
-	public String getObjectPath() {
-		return this.objectPath;
+	public String getVersionId() {
+		return this.versionId;
 	}
 
-	public void setObjectPath(String objectPath) {
-		this.objectPath = objectPath;
-		if(objectPath != null){
-			putQueryParameter("ObjectPath", objectPath);
+	public void setVersionId(String versionId) {
+		this.versionId = versionId;
+		if(versionId != null){
+			putQueryParameter("VersionId", versionId);
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
 		}
 	}
 
-	public String getArea() {
-		return this.area;
+	public Integer getPageIndex() {
+		return this.pageIndex;
 	}
 
-	public void setArea(String area) {
-		this.area = area;
-		if(area != null){
-			putQueryParameter("Area", area);
+	public void setPageIndex(Integer pageIndex) {
+		this.pageIndex = pageIndex;
+		if(pageIndex != null){
+			putQueryParameter("PageIndex", pageIndex.toString());
 		}
 	}
 
@@ -86,8 +86,8 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 	}
 
 	@Override
-	public Class<PushObjectCacheResponse> getResponseClass() {
-		return PushObjectCacheResponse.class;
+	public Class<DescribeDomainNamesOfVersionResponse> getResponseClass() {
+		return DescribeDomainNamesOfVersionResponse.class;
 	}
 
 }

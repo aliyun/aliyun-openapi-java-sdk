@@ -22,18 +22,14 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheResponse> {
+public class DescribeCdnUserConfigsRequest extends RpcAcsRequest<DescribeCdnUserConfigsResponse> {
 	   
 
-	private String objectPath;
-
-	private String securityToken;
-
-	private String area;
+	private String functionName;
 
 	private Long ownerId;
-	public PushObjectCacheRequest() {
-		super("Cdn", "2018-05-10", "PushObjectCache");
+	public DescribeCdnUserConfigsRequest() {
+		super("Cdn", "2018-05-10", "DescribeCdnUserConfigs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +37,14 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 		} catch (Exception e) {}
 	}
 
-	public String getObjectPath() {
-		return this.objectPath;
+	public String getFunctionName() {
+		return this.functionName;
 	}
 
-	public void setObjectPath(String objectPath) {
-		this.objectPath = objectPath;
-		if(objectPath != null){
-			putQueryParameter("ObjectPath", objectPath);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getArea() {
-		return this.area;
-	}
-
-	public void setArea(String area) {
-		this.area = area;
-		if(area != null){
-			putQueryParameter("Area", area);
+	public void setFunctionName(String functionName) {
+		this.functionName = functionName;
+		if(functionName != null){
+			putQueryParameter("FunctionName", functionName);
 		}
 	}
 
@@ -86,8 +60,8 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 	}
 
 	@Override
-	public Class<PushObjectCacheResponse> getResponseClass() {
-		return PushObjectCacheResponse.class;
+	public Class<DescribeCdnUserConfigsResponse> getResponseClass() {
+		return DescribeCdnUserConfigsResponse.class;
 	}
 
 }

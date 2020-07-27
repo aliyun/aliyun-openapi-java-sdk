@@ -42,8 +42,6 @@ public class SetDomainServerCertificateRequest extends RpcAcsRequest<SetDomainSe
 	private String domainName;
 
 	private Long ownerId;
-
-	private String region;
 	public SetDomainServerCertificateRequest() {
 		super("Cdn", "2018-05-10", "SetDomainServerCertificate");
 		setMethod(MethodType.POST);
@@ -149,17 +147,6 @@ public class SetDomainServerCertificateRequest extends RpcAcsRequest<SetDomainSe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
 		}
 	}
 

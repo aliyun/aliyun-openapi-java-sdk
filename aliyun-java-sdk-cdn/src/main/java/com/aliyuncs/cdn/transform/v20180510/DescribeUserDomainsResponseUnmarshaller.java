@@ -45,6 +45,7 @@ public class DescribeUserDomainsResponseUnmarshaller {
 			pageData.setSslProtocol(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].SslProtocol"));
 			pageData.setResourceGroupId(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].ResourceGroupId"));
 			pageData.setSandbox(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Sandbox"));
+			pageData.setCoverage(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Coverage"));
 
 			List<Source> sources = new ArrayList<Source>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeUserDomainsResponse.Domains["+ i +"].Sources.Length"); j++) {

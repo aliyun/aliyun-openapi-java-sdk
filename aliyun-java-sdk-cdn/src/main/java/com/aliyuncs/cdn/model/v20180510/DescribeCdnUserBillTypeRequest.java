@@ -22,18 +22,16 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheResponse> {
+public class DescribeCdnUserBillTypeRequest extends RpcAcsRequest<DescribeCdnUserBillTypeResponse> {
 	   
 
-	private String objectPath;
+	private String startTime;
 
-	private String securityToken;
-
-	private String area;
+	private String endTime;
 
 	private Long ownerId;
-	public PushObjectCacheRequest() {
-		super("Cdn", "2018-05-10", "PushObjectCache");
+	public DescribeCdnUserBillTypeRequest() {
+		super("Cdn", "2018-05-10", "DescribeCdnUserBillType");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +39,25 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 		} catch (Exception e) {}
 	}
 
-	public String getObjectPath() {
-		return this.objectPath;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setObjectPath(String objectPath) {
-		this.objectPath = objectPath;
-		if(objectPath != null){
-			putQueryParameter("ObjectPath", objectPath);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getArea() {
-		return this.area;
-	}
-
-	public void setArea(String area) {
-		this.area = area;
-		if(area != null){
-			putQueryParameter("Area", area);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -86,8 +73,8 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 	}
 
 	@Override
-	public Class<PushObjectCacheResponse> getResponseClass() {
-		return PushObjectCacheResponse.class;
+	public Class<DescribeCdnUserBillTypeResponse> getResponseClass() {
+		return DescribeCdnUserBillTypeResponse.class;
 	}
 
 }

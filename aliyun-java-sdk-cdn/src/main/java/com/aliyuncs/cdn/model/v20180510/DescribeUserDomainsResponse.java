@@ -97,6 +97,8 @@ public class DescribeUserDomainsResponse extends AcsResponse {
 
 		private String sandbox;
 
+		private String coverage;
+
 		private List<Source> sources;
 
 		public String getDomainName() {
@@ -177,6 +179,14 @@ public class DescribeUserDomainsResponse extends AcsResponse {
 
 		public void setSandbox(String sandbox) {
 			this.sandbox = sandbox;
+		}
+
+		public String getCoverage() {
+			return this.coverage;
+		}
+
+		public void setCoverage(String coverage) {
+			this.coverage = coverage;
 		}
 
 		public List<Source> getSources() {
