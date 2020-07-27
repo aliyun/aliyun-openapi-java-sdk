@@ -57,6 +57,8 @@ public class DescribeFileSystemsResponseUnmarshaller {
 			fileSystem.setChargeType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ChargeType"));
 			fileSystem.setMountTargetCountLimit(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargetCountLimit"));
 			fileSystem.setNasNamespaceId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].NasNamespaceId"));
+			fileSystem.setKMSKeyId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].KMSKeyId"));
+			fileSystem.setVersion(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Version"));
 
 			List<String> supportedFeatures = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].SupportedFeatures.Length"); j++) {

@@ -99,6 +99,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private Integer encryptType;
 
+		private String sourceFileSystemVersion;
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -185,6 +187,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setEncryptType(Integer encryptType) {
 			this.encryptType = encryptType;
+		}
+
+		public String getSourceFileSystemVersion() {
+			return this.sourceFileSystemVersion;
+		}
+
+		public void setSourceFileSystemVersion(String sourceFileSystemVersion) {
+			this.sourceFileSystemVersion = sourceFileSystemVersion;
 		}
 	}
 

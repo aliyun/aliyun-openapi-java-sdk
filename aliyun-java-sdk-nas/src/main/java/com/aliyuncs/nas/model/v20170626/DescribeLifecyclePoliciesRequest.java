@@ -22,15 +22,17 @@ import com.aliyuncs.nas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLogAnalysisRequest extends RpcAcsRequest<DescribeLogAnalysisResponse> {
+public class DescribeLifecyclePoliciesRequest extends RpcAcsRequest<DescribeLifecyclePoliciesResponse> {
 	   
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
-	public DescribeLogAnalysisRequest() {
-		super("NAS", "2017-06-26", "DescribeLogAnalysis", "nas");
-		setMethod(MethodType.POST);
+
+	private String fileSystemId;
+	public DescribeLifecyclePoliciesRequest() {
+		super("NAS", "2017-06-26", "DescribeLifecyclePolicies", "nas");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -59,9 +61,20 @@ public class DescribeLogAnalysisRequest extends RpcAcsRequest<DescribeLogAnalysi
 		}
 	}
 
+	public String getFileSystemId() {
+		return this.fileSystemId;
+	}
+
+	public void setFileSystemId(String fileSystemId) {
+		this.fileSystemId = fileSystemId;
+		if(fileSystemId != null){
+			putQueryParameter("FileSystemId", fileSystemId);
+		}
+	}
+
 	@Override
-	public Class<DescribeLogAnalysisResponse> getResponseClass() {
-		return DescribeLogAnalysisResponse.class;
+	public Class<DescribeLifecyclePoliciesResponse> getResponseClass() {
+		return DescribeLifecyclePoliciesResponse.class;
 	}
 
 }

@@ -22,14 +22,14 @@ import com.aliyuncs.nas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLogAnalysisRequest extends RpcAcsRequest<DescribeLogAnalysisResponse> {
+public class DeleteLifecyclePolicyRequest extends RpcAcsRequest<DeleteLifecyclePolicyResponse> {
 	   
 
-	private Integer pageNumber;
+	private String lifecyclePolicyName;
 
-	private Integer pageSize;
-	public DescribeLogAnalysisRequest() {
-		super("NAS", "2017-06-26", "DescribeLogAnalysis", "nas");
+	private String fileSystemId;
+	public DeleteLifecyclePolicyRequest() {
+		super("NAS", "2017-06-26", "DeleteLifecyclePolicy", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class DescribeLogAnalysisRequest extends RpcAcsRequest<DescribeLogAnalysi
 		} catch (Exception e) {}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getLifecyclePolicyName() {
+		return this.lifecyclePolicyName;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setLifecyclePolicyName(String lifecyclePolicyName) {
+		this.lifecyclePolicyName = lifecyclePolicyName;
+		if(lifecyclePolicyName != null){
+			putQueryParameter("LifecyclePolicyName", lifecyclePolicyName);
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getFileSystemId() {
+		return this.fileSystemId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setFileSystemId(String fileSystemId) {
+		this.fileSystemId = fileSystemId;
+		if(fileSystemId != null){
+			putQueryParameter("FileSystemId", fileSystemId);
 		}
 	}
 
 	@Override
-	public Class<DescribeLogAnalysisResponse> getResponseClass() {
-		return DescribeLogAnalysisResponse.class;
+	public Class<DeleteLifecyclePolicyResponse> getResponseClass() {
+		return DeleteLifecyclePolicyResponse.class;
 	}
 
 }

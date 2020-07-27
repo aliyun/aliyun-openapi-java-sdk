@@ -45,6 +45,7 @@ public class DescribeSnapshotsResponseUnmarshaller {
 			snapshot.setSourceFileSystemSize(_ctx.longValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceFileSystemSize"));
 			snapshot.setStatus(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Status"));
 			snapshot.setEncryptType(_ctx.integerValue("DescribeSnapshotsResponse.Snapshots["+ i +"].EncryptType"));
+			snapshot.setSourceFileSystemVersion(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceFileSystemVersion"));
 
 			snapshots.add(snapshot);
 		}

@@ -22,14 +22,18 @@ import com.aliyuncs.nas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLogAnalysisRequest extends RpcAcsRequest<DescribeLogAnalysisResponse> {
+public class DescribeDirQuotasRequest extends RpcAcsRequest<DescribeDirQuotasResponse> {
 	   
 
 	private Integer pageNumber;
 
+	private String path;
+
 	private Integer pageSize;
-	public DescribeLogAnalysisRequest() {
-		super("NAS", "2017-06-26", "DescribeLogAnalysis", "nas");
+
+	private String fileSystemId;
+	public DescribeDirQuotasRequest() {
+		super("NAS", "2017-06-26", "DescribeDirQuotas", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,6 +52,17 @@ public class DescribeLogAnalysisRequest extends RpcAcsRequest<DescribeLogAnalysi
 		}
 	}
 
+	public String getPath() {
+		return this.path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+		if(path != null){
+			putQueryParameter("Path", path);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -59,9 +74,20 @@ public class DescribeLogAnalysisRequest extends RpcAcsRequest<DescribeLogAnalysi
 		}
 	}
 
+	public String getFileSystemId() {
+		return this.fileSystemId;
+	}
+
+	public void setFileSystemId(String fileSystemId) {
+		this.fileSystemId = fileSystemId;
+		if(fileSystemId != null){
+			putQueryParameter("FileSystemId", fileSystemId);
+		}
+	}
+
 	@Override
-	public Class<DescribeLogAnalysisResponse> getResponseClass() {
-		return DescribeLogAnalysisResponse.class;
+	public Class<DescribeDirQuotasResponse> getResponseClass() {
+		return DescribeDirQuotasResponse.class;
 	}
 
 }

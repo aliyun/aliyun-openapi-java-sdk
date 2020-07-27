@@ -115,6 +115,10 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 		private String nasNamespaceId;
 
+		private String kMSKeyId;
+
+		private String version;
+
 		private List<MountTarget> mountTargets;
 
 		private List<_Package> packages;
@@ -273,6 +277,22 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 		public void setNasNamespaceId(String nasNamespaceId) {
 			this.nasNamespaceId = nasNamespaceId;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 
 		public List<MountTarget> getMountTargets() {
