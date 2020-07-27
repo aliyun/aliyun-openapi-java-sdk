@@ -27,8 +27,6 @@ public class GetNerCustomizedChEcomRequest extends RpcAcsRequest<GetNerCustomize
 
 	private String lexerId;
 
-	private String uuid;
-
 	private String serviceCode;
 
 	private String text;
@@ -49,17 +47,6 @@ public class GetNerCustomizedChEcomRequest extends RpcAcsRequest<GetNerCustomize
 		this.lexerId = lexerId;
 		if(lexerId != null){
 			putBodyParameter("LexerId", lexerId);
-		}
-	}
-
-	public String getUuid() {
-		return this.uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-		if(uuid != null){
-			putBodyParameter("Uuid", uuid);
 		}
 	}
 

@@ -25,8 +25,6 @@ import com.aliyuncs.alinlp.Endpoint;
 public class GetWsCustomizedChGeneralRequest extends RpcAcsRequest<GetWsCustomizedChGeneralResponse> {
 	   
 
-	private String uuid;
-
 	private String serviceCode;
 
 	private String tokenizerId;
@@ -41,17 +39,6 @@ public class GetWsCustomizedChGeneralRequest extends RpcAcsRequest<GetWsCustomiz
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUuid() {
-		return this.uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-		if(uuid != null){
-			putBodyParameter("Uuid", uuid);
-		}
 	}
 
 	public String getServiceCode() {
