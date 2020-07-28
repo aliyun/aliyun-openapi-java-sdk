@@ -24,6 +24,9 @@ public class ParameterHelperTest {
 
     @Test
     public void validateParameterTest() {
+        ParameterHelper.validateParameter("  ", "regionId");
+        ParameterHelper.validateParameter("", "regionId");
+        ParameterHelper.validateParameter(null, "regionId");
         ParameterHelper.validateParameter("cn-hangzhou", "regionId");
         try {
             ParameterHelper.validateParameter("test.test", "regionId");
