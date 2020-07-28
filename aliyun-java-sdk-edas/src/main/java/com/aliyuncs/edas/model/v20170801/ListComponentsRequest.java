@@ -25,7 +25,7 @@ import com.aliyuncs.edas.Endpoint;
 public class ListComponentsRequest extends RoaAcsRequest<ListComponentsResponse> {
 	   
 	public ListComponentsRequest() {
-		super("Edas", "2017-08-01", "ListComponents", "Edas");
+		super("Edas", "2017-08-01", "ListComponents", "edas");
 		setUriPattern("/pop/v5/resource/components");
 		setMethod(MethodType.GET);
 		try {

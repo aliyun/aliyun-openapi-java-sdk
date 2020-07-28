@@ -52,11 +52,22 @@ public class GetK8sApplicationResponseUnmarshaller {
 		App app = new App();
 		app.setApplicationType(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.ApplicationType"));
 		app.setCmd(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.Cmd"));
-		app.setCmdArgs(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.CmdArgs"));
 		app.setDeployType(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.DeployType"));
 		app.setEdasContainerVersion(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.EdasContainerVersion"));
 		app.setBuildpackId(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.BuildpackId"));
 		app.setTomcatVersion(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.TomcatVersion"));
+		app.setInstancesBeforeScaling(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.InstancesBeforeScaling"));
+		app.setAppId(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.AppId"));
+		app.setApplicationName(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.ApplicationName"));
+		app.setClusterId(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.ClusterId"));
+		app.setInstances(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.Instances"));
+		app.setCsClusterId(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.CsClusterId"));
+
+		List<String> cmdArgs = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetK8sApplicationResponse.Applcation.App.CmdArgs.Length"); i++) {
+			cmdArgs.add(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.CmdArgs["+ i +"]"));
+		}
+		app.setCmdArgs(cmdArgs);
 
 		List<Env> envList = new ArrayList<Env>();
 		for (int i = 0; i < _ctx.lengthValue("GetK8sApplicationResponse.Applcation.App.EnvList.Length"); i++) {
@@ -83,6 +94,7 @@ public class GetK8sApplicationResponseUnmarshaller {
 		conf.setReadiness(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.Readiness"));
 		conf.setRuntimeClassName(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.RuntimeClassName"));
 		conf.setDeployAcrossZones(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.DeployAcrossZones"));
+		conf.setAhasEnabled(_ctx.booleanValue("GetK8sApplicationResponse.Applcation.Conf.AhasEnabled"));
 		applcation.setConf(conf);
 
 		List<DeployGroup> deployGroups = new ArrayList<DeployGroup>();

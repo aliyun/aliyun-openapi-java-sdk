@@ -29,6 +29,10 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String webContainer;
 
+	private Boolean enableAhas;
+
+	private String slsConfigs;
+
 	private String readiness;
 
 	private String packageVersionId;
@@ -67,6 +71,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private Integer cpuRequest;
 
+	private String webContainerConfig;
+
 	private String localVolume;
 
 	private String command;
@@ -85,6 +91,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String appId;
 
+	private Integer batchTimeout;
+
 	private Integer mcpuRequest;
 
 	private Integer mcpuLimit;
@@ -94,8 +102,10 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 	private String runtimeClassName;
 
 	private String postStart;
+
+	private String javaStartUpConfig;
 	public DeployK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "DeployK8sApplication", "Edas");
+		super("Edas", "2017-08-01", "DeployK8sApplication", "edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_apps");
 		setMethod(MethodType.POST);
 		try {
@@ -123,6 +133,28 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.webContainer = webContainer;
 		if(webContainer != null){
 			putQueryParameter("WebContainer", webContainer);
+		}
+	}
+
+	public Boolean getEnableAhas() {
+		return this.enableAhas;
+	}
+
+	public void setEnableAhas(Boolean enableAhas) {
+		this.enableAhas = enableAhas;
+		if(enableAhas != null){
+			putQueryParameter("EnableAhas", enableAhas.toString());
+		}
+	}
+
+	public String getSlsConfigs() {
+		return this.slsConfigs;
+	}
+
+	public void setSlsConfigs(String slsConfigs) {
+		this.slsConfigs = slsConfigs;
+		if(slsConfigs != null){
+			putQueryParameter("SlsConfigs", slsConfigs);
 		}
 	}
 
@@ -335,6 +367,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
+	public String getWebContainerConfig() {
+		return this.webContainerConfig;
+	}
+
+	public void setWebContainerConfig(String webContainerConfig) {
+		this.webContainerConfig = webContainerConfig;
+		if(webContainerConfig != null){
+			putQueryParameter("WebContainerConfig", webContainerConfig);
+		}
+	}
+
 	public String getLocalVolume() {
 		return this.localVolume;
 	}
@@ -434,6 +477,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
+	public Integer getBatchTimeout() {
+		return this.batchTimeout;
+	}
+
+	public void setBatchTimeout(Integer batchTimeout) {
+		this.batchTimeout = batchTimeout;
+		if(batchTimeout != null){
+			putQueryParameter("BatchTimeout", batchTimeout.toString());
+		}
+	}
+
 	public Integer getMcpuRequest() {
 		return this.mcpuRequest;
 	}
@@ -486,6 +540,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.postStart = postStart;
 		if(postStart != null){
 			putQueryParameter("PostStart", postStart);
+		}
+	}
+
+	public String getJavaStartUpConfig() {
+		return this.javaStartUpConfig;
+	}
+
+	public void setJavaStartUpConfig(String javaStartUpConfig) {
+		this.javaStartUpConfig = javaStartUpConfig;
+		if(javaStartUpConfig != null){
+			putQueryParameter("JavaStartUpConfig", javaStartUpConfig);
 		}
 	}
 

@@ -24,14 +24,27 @@ import com.aliyuncs.edas.Endpoint;
  */
 public class ListApplicationRequest extends RoaAcsRequest<ListApplicationResponse> {
 	   
+
+	private String clusterId;
 	public ListApplicationRequest() {
-		super("Edas", "2017-08-01", "ListApplication", "Edas");
+		super("Edas", "2017-08-01", "ListApplication", "edas");
 		setUriPattern("/pop/v5/app/app_list");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
 	}
 
 	@Override

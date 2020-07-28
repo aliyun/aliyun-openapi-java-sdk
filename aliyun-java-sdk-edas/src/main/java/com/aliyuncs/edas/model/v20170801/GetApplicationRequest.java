@@ -27,7 +27,7 @@ public class GetApplicationRequest extends RoaAcsRequest<GetApplicationResponse>
 
 	private String appId;
 	public GetApplicationRequest() {
-		super("Edas", "2017-08-01", "GetApplication", "Edas");
+		super("Edas", "2017-08-01", "GetApplication", "edas");
 		setUriPattern("/pop/v5/app/app_info");
 		setMethod(MethodType.POST);
 		try {

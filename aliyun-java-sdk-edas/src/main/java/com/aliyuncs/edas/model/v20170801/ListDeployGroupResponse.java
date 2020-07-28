@@ -123,6 +123,10 @@ public class ListDeployGroupResponse extends AcsResponse {
 
 		private String packageVersion;
 
+		private String cpuRequest;
+
+		private String memoryRequest;
+
 		public String getGroupId() {
 			return this.groupId;
 		}
@@ -345,6 +349,22 @@ public class ListDeployGroupResponse extends AcsResponse {
 
 		public void setPackageVersion(String packageVersion) {
 			this.packageVersion = packageVersion;
+		}
+
+		public String getCpuRequest() {
+			return this.cpuRequest;
+		}
+
+		public void setCpuRequest(String cpuRequest) {
+			this.cpuRequest = cpuRequest;
+		}
+
+		public String getMemoryRequest() {
+			return this.memoryRequest;
+		}
+
+		public void setMemoryRequest(String memoryRequest) {
+			this.memoryRequest = memoryRequest;
 		}
 	}
 

@@ -28,8 +28,10 @@ public class ScaleK8sApplicationRequest extends RoaAcsRequest<ScaleK8sApplicatio
 	private Integer replicas;
 
 	private String appId;
+
+	private Integer timeout;
 	public ScaleK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "ScaleK8sApplication", "Edas");
+		super("Edas", "2017-08-01", "ScaleK8sApplication", "edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_apps");
 		setMethod(MethodType.PUT);
 		try {
@@ -57,6 +59,17 @@ public class ScaleK8sApplicationRequest extends RoaAcsRequest<ScaleK8sApplicatio
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public Integer getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(Integer timeout) {
+		this.timeout = timeout;
+		if(timeout != null){
+			putQueryParameter("Timeout", timeout.toString());
 		}
 	}
 

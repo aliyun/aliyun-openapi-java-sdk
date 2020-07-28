@@ -61,6 +61,8 @@ public class ListDeployGroupResponseUnmarshaller {
 			deployGroup.setMemoryLimit(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].MemoryLimit"));
 			deployGroup.setPackagePublicUrl(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].PackagePublicUrl"));
 			deployGroup.setPackageVersion(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].PackageVersion"));
+			deployGroup.setCpuRequest(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].CpuRequest"));
+			deployGroup.setMemoryRequest(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].MemoryRequest"));
 
 			deployGroupList.add(deployGroup);
 		}

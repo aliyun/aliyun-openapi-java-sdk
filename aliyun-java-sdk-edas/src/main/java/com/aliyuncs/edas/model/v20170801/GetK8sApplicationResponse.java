@@ -232,8 +232,6 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			private String cmd;
 
-			private String cmdArgs;
-
 			private String deployType;
 
 			private String edasContainerVersion;
@@ -242,7 +240,21 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			private String tomcatVersion;
 
+			private Integer instancesBeforeScaling;
+
+			private String appId;
+
+			private String applicationName;
+
+			private String clusterId;
+
+			private Integer instances;
+
+			private String csClusterId;
+
 			private List<Env> envList;
+
+			private List<String> cmdArgs;
 
 			public String getApplicationType() {
 				return this.applicationType;
@@ -258,14 +270,6 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setCmd(String cmd) {
 				this.cmd = cmd;
-			}
-
-			public String getCmdArgs() {
-				return this.cmdArgs;
-			}
-
-			public void setCmdArgs(String cmdArgs) {
-				this.cmdArgs = cmdArgs;
 			}
 
 			public String getDeployType() {
@@ -300,12 +304,68 @@ public class GetK8sApplicationResponse extends AcsResponse {
 				this.tomcatVersion = tomcatVersion;
 			}
 
+			public Integer getInstancesBeforeScaling() {
+				return this.instancesBeforeScaling;
+			}
+
+			public void setInstancesBeforeScaling(Integer instancesBeforeScaling) {
+				this.instancesBeforeScaling = instancesBeforeScaling;
+			}
+
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
+			}
+
+			public String getApplicationName() {
+				return this.applicationName;
+			}
+
+			public void setApplicationName(String applicationName) {
+				this.applicationName = applicationName;
+			}
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
+			}
+
+			public Integer getInstances() {
+				return this.instances;
+			}
+
+			public void setInstances(Integer instances) {
+				this.instances = instances;
+			}
+
+			public String getCsClusterId() {
+				return this.csClusterId;
+			}
+
+			public void setCsClusterId(String csClusterId) {
+				this.csClusterId = csClusterId;
+			}
+
 			public List<Env> getEnvList() {
 				return this.envList;
 			}
 
 			public void setEnvList(List<Env> envList) {
 				this.envList = envList;
+			}
+
+			public List<String> getCmdArgs() {
+				return this.cmdArgs;
+			}
+
+			public void setCmdArgs(List<String> cmdArgs) {
+				this.cmdArgs = cmdArgs;
 			}
 
 			public static class Env {
@@ -359,6 +419,8 @@ public class GetK8sApplicationResponse extends AcsResponse {
 			private String runtimeClassName;
 
 			private String deployAcrossZones;
+
+			private Boolean ahasEnabled;
 
 			public String getJarStartArgs() {
 				return this.jarStartArgs;
@@ -462,6 +524,14 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setDeployAcrossZones(String deployAcrossZones) {
 				this.deployAcrossZones = deployAcrossZones;
+			}
+
+			public Boolean getAhasEnabled() {
+				return this.ahasEnabled;
+			}
+
+			public void setAhasEnabled(Boolean ahasEnabled) {
+				this.ahasEnabled = ahasEnabled;
 			}
 		}
 	}

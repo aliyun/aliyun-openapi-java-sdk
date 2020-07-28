@@ -33,7 +33,11 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String webContainer;
 
+	private Boolean enableAhas;
+
 	private String intranetSlbId;
+
+	private String slsConfigs;
 
 	private String commandArgs;
 
@@ -50,6 +54,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 	private String packageVersion;
 
 	private String storageType;
+
+	private Integer timeout;
 
 	private Integer limitMem;
 
@@ -81,6 +87,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private Integer limitCpu;
 
+	private String webContainerConfig;
+
 	private String clusterId;
 
 	private Integer intranetTargetPort;
@@ -110,8 +118,10 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 	private Integer requestsCpu;
 
 	private String postStart;
+
+	private String javaStartUpConfig;
 	public InsertK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "InsertK8sApplication", "Edas");
+		super("Edas", "2017-08-01", "InsertK8sApplication", "edas");
 		setUriPattern("/pop/v5/k8s/acs/create_k8s_app");
 		setMethod(MethodType.POST);
 		try {
@@ -164,6 +174,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public Boolean getEnableAhas() {
+		return this.enableAhas;
+	}
+
+	public void setEnableAhas(Boolean enableAhas) {
+		this.enableAhas = enableAhas;
+		if(enableAhas != null){
+			putQueryParameter("EnableAhas", enableAhas.toString());
+		}
+	}
+
 	public String getIntranetSlbId() {
 		return this.intranetSlbId;
 	}
@@ -172,6 +193,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.intranetSlbId = intranetSlbId;
 		if(intranetSlbId != null){
 			putQueryParameter("IntranetSlbId", intranetSlbId);
+		}
+	}
+
+	public String getSlsConfigs() {
+		return this.slsConfigs;
+	}
+
+	public void setSlsConfigs(String slsConfigs) {
+		this.slsConfigs = slsConfigs;
+		if(slsConfigs != null){
+			putQueryParameter("SlsConfigs", slsConfigs);
 		}
 	}
 
@@ -260,6 +292,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.storageType = storageType;
 		if(storageType != null){
 			putQueryParameter("StorageType", storageType);
+		}
+	}
+
+	public Integer getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(Integer timeout) {
+		this.timeout = timeout;
+		if(timeout != null){
+			putQueryParameter("Timeout", timeout.toString());
 		}
 	}
 
@@ -428,6 +471,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public String getWebContainerConfig() {
+		return this.webContainerConfig;
+	}
+
+	public void setWebContainerConfig(String webContainerConfig) {
+		this.webContainerConfig = webContainerConfig;
+		if(webContainerConfig != null){
+			putQueryParameter("WebContainerConfig", webContainerConfig);
+		}
+	}
+
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -590,6 +644,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.postStart = postStart;
 		if(postStart != null){
 			putQueryParameter("PostStart", postStart);
+		}
+	}
+
+	public String getJavaStartUpConfig() {
+		return this.javaStartUpConfig;
+	}
+
+	public void setJavaStartUpConfig(String javaStartUpConfig) {
+		this.javaStartUpConfig = javaStartUpConfig;
+		if(javaStartUpConfig != null){
+			putQueryParameter("JavaStartUpConfig", javaStartUpConfig);
 		}
 	}
 

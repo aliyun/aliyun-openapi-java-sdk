@@ -25,7 +25,11 @@ import com.aliyuncs.edas.Endpoint;
 public class UpdateK8sApplicationConfigRequest extends RoaAcsRequest<UpdateK8sApplicationConfigResponse> {
 	   
 
+	private String memoryRequest;
+
 	private String appId;
+
+	private String cpuRequest;
 
 	private String memoryLimit;
 
@@ -34,14 +38,29 @@ public class UpdateK8sApplicationConfigRequest extends RoaAcsRequest<UpdateK8sAp
 	private String cpuLimit;
 
 	private String mcpuLimit;
+
+	private String mcpuRequest;
+
+	private Integer timeout;
 	public UpdateK8sApplicationConfigRequest() {
-		super("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "Edas");
+		super("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_app_configuration");
 		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMemoryRequest() {
+		return this.memoryRequest;
+	}
+
+	public void setMemoryRequest(String memoryRequest) {
+		this.memoryRequest = memoryRequest;
+		if(memoryRequest != null){
+			putQueryParameter("MemoryRequest", memoryRequest);
+		}
 	}
 
 	public String getAppId() {
@@ -52,6 +71,17 @@ public class UpdateK8sApplicationConfigRequest extends RoaAcsRequest<UpdateK8sAp
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getCpuRequest() {
+		return this.cpuRequest;
+	}
+
+	public void setCpuRequest(String cpuRequest) {
+		this.cpuRequest = cpuRequest;
+		if(cpuRequest != null){
+			putQueryParameter("CpuRequest", cpuRequest);
 		}
 	}
 
@@ -96,6 +126,28 @@ public class UpdateK8sApplicationConfigRequest extends RoaAcsRequest<UpdateK8sAp
 		this.mcpuLimit = mcpuLimit;
 		if(mcpuLimit != null){
 			putQueryParameter("McpuLimit", mcpuLimit);
+		}
+	}
+
+	public String getMcpuRequest() {
+		return this.mcpuRequest;
+	}
+
+	public void setMcpuRequest(String mcpuRequest) {
+		this.mcpuRequest = mcpuRequest;
+		if(mcpuRequest != null){
+			putQueryParameter("McpuRequest", mcpuRequest);
+		}
+	}
+
+	public Integer getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(Integer timeout) {
+		this.timeout = timeout;
+		if(timeout != null){
+			putQueryParameter("Timeout", timeout.toString());
 		}
 	}
 
