@@ -1,3 +1,6 @@
+2020-07-28 Version: 1.0.9
+- Add support DLA userName bing to ram sub uid.
+
 2020-07-27 Version: 1.0.8
 - Fix signature error in list virtual API.
 - Fix signature error in list spark job API.

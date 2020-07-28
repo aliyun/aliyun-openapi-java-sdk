@@ -39,6 +39,7 @@ public class QueryAccountListResponseUnmarshaller {
 			dataItem.setRole(_ctx.stringValue("QueryAccountListResponse.Data["+ i +"].Role"));
 			dataItem.setShortName(_ctx.stringValue("QueryAccountListResponse.Data["+ i +"].ShortName"));
 			dataItem.setRemark(_ctx.stringValue("QueryAccountListResponse.Data["+ i +"].Remark"));
+			dataItem.setRamUid(_ctx.stringValue("QueryAccountListResponse.Data["+ i +"].RamUid"));
 
 			data.add(dataItem);
 		}

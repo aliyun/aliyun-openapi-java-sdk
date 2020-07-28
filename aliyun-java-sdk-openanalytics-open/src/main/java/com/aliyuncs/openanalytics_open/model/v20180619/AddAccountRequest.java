@@ -25,6 +25,8 @@ import com.aliyuncs.openanalytics_open.Endpoint;
 public class AddAccountRequest extends RpcAcsRequest<AddAccountResponse> {
 	   
 
+	private String ramUid;
+
 	private Boolean isShort;
 
 	private String remark;
@@ -43,6 +45,17 @@ public class AddAccountRequest extends RpcAcsRequest<AddAccountResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRamUid() {
+		return this.ramUid;
+	}
+
+	public void setRamUid(String ramUid) {
+		this.ramUid = ramUid;
+		if(ramUid != null){
+			putBodyParameter("RamUid", ramUid);
+		}
 	}
 
 	public Boolean getIsShort() {

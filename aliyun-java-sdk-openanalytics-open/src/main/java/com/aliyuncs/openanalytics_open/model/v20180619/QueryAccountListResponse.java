@@ -95,6 +95,8 @@ public class QueryAccountListResponse extends AcsResponse {
 
 		private String remark;
 
+		private String ramUid;
+
 		public String getUserName() {
 			return this.userName;
 		}
@@ -125,6 +127,14 @@ public class QueryAccountListResponse extends AcsResponse {
 
 		public void setRemark(String remark) {
 			this.remark = remark;
+		}
+
+		public String getRamUid() {
+			return this.ramUid;
+		}
+
+		public void setRamUid(String ramUid) {
+			this.ramUid = ramUid;
 		}
 	}
 
