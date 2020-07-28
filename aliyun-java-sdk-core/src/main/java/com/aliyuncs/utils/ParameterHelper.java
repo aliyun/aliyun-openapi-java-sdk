@@ -30,6 +30,9 @@ public class ParameterHelper {
     }
 
     public static void validateParameter(String parameter, String parameterName) {
+        if (null == parameter || "".equals(parameter.trim())) {
+            return;
+        }
         if (Pattern.matches(ParameterHelper.PATTERN, parameter)) {
             return;
         }
