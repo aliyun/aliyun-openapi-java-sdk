@@ -4,6 +4,9 @@
 2020-07-28 Version: 3.4.1
 - Generated 2017-08-01 for `Edas`.
 
+2020-07-28 Version: 3.4.1
+- Generated 2017-08-01 for `Edas`.
+
 2020-05-20 Version: 3.4.0
 - Add supportting for deploy K8s application across zones.
 - Add supportting for choosing K8s application runtime class.
