@@ -22,7 +22,7 @@ import com.aliyuncs.airec.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDataMessageRequest extends RoaAcsRequest<QueryDataMessageResponse> {
+public class QueryDataMessageStatisticsRequest extends RoaAcsRequest<QueryDataMessageStatisticsResponse> {
 	   
 
 	private String traceId;
@@ -43,18 +43,14 @@ public class QueryDataMessageRequest extends RoaAcsRequest<QueryDataMessageRespo
 
 	private String cmdType;
 
-	private Integer size;
-
 	private String sceneId;
 
 	private String bhvType;
 
-	private Integer page;
-
 	private String table;
-	public QueryDataMessageRequest() {
-		super("Airec", "2018-10-12", "QueryDataMessage", "airec");
-		setUriPattern("/openapi/instances/[InstanceId]/tables/[Table]/data-message");
+	public QueryDataMessageStatisticsRequest() {
+		super("Airec", "2018-10-12", "QueryDataMessageStatistics", "airec");
+		setUriPattern("/openapi/instances/[InstanceId]/tables/[Table]/data-message-statistics");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -161,17 +157,6 @@ public class QueryDataMessageRequest extends RoaAcsRequest<QueryDataMessageRespo
 		}
 	}
 
-	public Integer getSize() {
-		return this.size;
-	}
-
-	public void setSize(Integer size) {
-		this.size = size;
-		if(size != null){
-			putQueryParameter("Size", size.toString());
-		}
-	}
-
 	public String getSceneId() {
 		return this.sceneId;
 	}
@@ -194,17 +179,6 @@ public class QueryDataMessageRequest extends RoaAcsRequest<QueryDataMessageRespo
 		}
 	}
 
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-		if(page != null){
-			putQueryParameter("Page", page.toString());
-		}
-	}
-
 	public String getTable() {
 		return this.table;
 	}
@@ -217,8 +191,8 @@ public class QueryDataMessageRequest extends RoaAcsRequest<QueryDataMessageRespo
 	}
 
 	@Override
-	public Class<QueryDataMessageResponse> getResponseClass() {
-		return QueryDataMessageResponse.class;
+	public Class<QueryDataMessageStatisticsResponse> getResponseClass() {
+		return QueryDataMessageStatisticsResponse.class;
 	}
 
 }

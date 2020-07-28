@@ -27,7 +27,13 @@ public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
 
 	private Integer size;
 
+	private String name;
+
+	private String expiredTime;
+
 	private Integer page;
+
+	private String status;
 	public ListInstanceRequest() {
 		super("Airec", "2018-10-12", "ListInstance", "airec");
 		setUriPattern("/openapi/instances");
@@ -49,6 +55,28 @@ public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
 		}
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getExpiredTime() {
+		return this.expiredTime;
+	}
+
+	public void setExpiredTime(String expiredTime) {
+		this.expiredTime = expiredTime;
+		if(expiredTime != null){
+			putQueryParameter("ExpiredTime", expiredTime);
+		}
+	}
+
 	public Integer getPage() {
 		return this.page;
 	}
@@ -57,6 +85,17 @@ public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

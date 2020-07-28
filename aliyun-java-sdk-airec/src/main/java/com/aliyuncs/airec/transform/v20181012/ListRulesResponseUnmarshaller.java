@@ -33,8 +33,8 @@ public class ListRulesResponseUnmarshaller {
 			ResultItem resultItem = new ResultItem();
 			resultItem.setRuleId(_ctx.stringValue("ListRulesResponse.Result["+ i +"].RuleId"));
 			resultItem.setStatus(_ctx.stringValue("ListRulesResponse.Result["+ i +"].Status"));
-			resultItem.setGmtCreate(_ctx.longValue("ListRulesResponse.Result["+ i +"].GmtCreate"));
-			resultItem.setGmtModified(_ctx.longValue("ListRulesResponse.Result["+ i +"].GmtModified"));
+			resultItem.setGmtCreate(_ctx.stringValue("ListRulesResponse.Result["+ i +"].GmtCreate"));
+			resultItem.setGmtModified(_ctx.stringValue("ListRulesResponse.Result["+ i +"].GmtModified"));
 
 			result.add(resultItem);
 		}

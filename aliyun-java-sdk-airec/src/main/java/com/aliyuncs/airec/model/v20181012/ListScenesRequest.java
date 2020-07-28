@@ -26,6 +26,8 @@ public class ListScenesRequest extends RoaAcsRequest<ListScenesResponse> {
 	   
 
 	private String instanceId;
+
+	private String status;
 	public ListScenesRequest() {
 		super("Airec", "2018-10-12", "ListScenes", "airec");
 		setUriPattern("/openapi/instances/[InstanceId]/scenes");
@@ -44,6 +46,17 @@ public class ListScenesRequest extends RoaAcsRequest<ListScenesResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

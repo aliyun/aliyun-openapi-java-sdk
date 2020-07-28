@@ -51,9 +51,9 @@ public class ListRulesResponse extends AcsResponse {
 
 		private String status;
 
-		private Long gmtCreate;
+		private String gmtCreate;
 
-		private Long gmtModified;
+		private String gmtModified;
 
 		public String getRuleId() {
 			return this.ruleId;
@@ -71,19 +71,19 @@ public class ListRulesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Long getGmtCreate() {
+		public String getGmtCreate() {
 			return this.gmtCreate;
 		}
 
-		public void setGmtCreate(Long gmtCreate) {
+		public void setGmtCreate(String gmtCreate) {
 			this.gmtCreate = gmtCreate;
 		}
 
-		public Long getGmtModified() {
+		public String getGmtModified() {
 			return this.gmtModified;
 		}
 
-		public void setGmtModified(Long gmtModified) {
+		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
 		}
 	}
