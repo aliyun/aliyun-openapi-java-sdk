@@ -25,9 +25,7 @@ import com.aliyuncs.tdsr.Endpoint;
 public class GetPolicyRequest extends RpcAcsRequest<GetPolicyResponse> {
 	   
 
-	private String subSceneId;
-
-	private String accountId;
+	private String subSceneUuid;
 
 	private String type;
 	public GetPolicyRequest() {
@@ -39,25 +37,14 @@ public class GetPolicyRequest extends RpcAcsRequest<GetPolicyResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getSubSceneId() {
-		return this.subSceneId;
+	public String getSubSceneUuid() {
+		return this.subSceneUuid;
 	}
 
-	public void setSubSceneId(String subSceneId) {
-		this.subSceneId = subSceneId;
-		if(subSceneId != null){
-			putQueryParameter("SubSceneId", subSceneId);
-		}
-	}
-
-	public String getAccountId() {
-		return this.accountId;
-	}
-
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
-		if(accountId != null){
-			putQueryParameter("AccountId", accountId);
+	public void setSubSceneUuid(String subSceneUuid) {
+		this.subSceneUuid = subSceneUuid;
+		if(subSceneUuid != null){
+			putQueryParameter("SubSceneUuid", subSceneUuid);
 		}
 	}
 

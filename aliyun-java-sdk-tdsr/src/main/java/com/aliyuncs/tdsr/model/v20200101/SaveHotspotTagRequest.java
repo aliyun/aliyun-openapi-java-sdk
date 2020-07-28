@@ -25,7 +25,7 @@ import com.aliyuncs.tdsr.Endpoint;
 public class SaveHotspotTagRequest extends RpcAcsRequest<SaveHotspotTagResponse> {
 	   
 
-	private String accountId;
+	private String subSceneUuid;
 
 	private String paramTag;
 	public SaveHotspotTagRequest() {
@@ -37,14 +37,14 @@ public class SaveHotspotTagRequest extends RpcAcsRequest<SaveHotspotTagResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getAccountId() {
-		return this.accountId;
+	public String getSubSceneUuid() {
+		return this.subSceneUuid;
 	}
 
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
-		if(accountId != null){
-			putQueryParameter("AccountId", accountId);
+	public void setSubSceneUuid(String subSceneUuid) {
+		this.subSceneUuid = subSceneUuid;
+		if(subSceneUuid != null){
+			putQueryParameter("SubSceneUuid", subSceneUuid);
 		}
 	}
 

@@ -22,14 +22,12 @@ import com.aliyuncs.tdsr.Endpoint;
  * @author auto create
  * @version 
  */
-public class PublishHotspotRequest extends RpcAcsRequest<PublishHotspotResponse> {
+public class ListMainScenesRequest extends RpcAcsRequest<ListMainScenesResponse> {
 	   
 
-	private String subSceneUuid;
-
-	private String paramTag;
-	public PublishHotspotRequest() {
-		super("tdsr", "2020-01-01", "PublishHotspot");
+	private String queryName;
+	public ListMainScenesRequest() {
+		super("tdsr", "2020-01-01", "ListMainScenes");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class PublishHotspotRequest extends RpcAcsRequest<PublishHotspotResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getSubSceneUuid() {
-		return this.subSceneUuid;
+	public String getQueryName() {
+		return this.queryName;
 	}
 
-	public void setSubSceneUuid(String subSceneUuid) {
-		this.subSceneUuid = subSceneUuid;
-		if(subSceneUuid != null){
-			putQueryParameter("SubSceneUuid", subSceneUuid);
-		}
-	}
-
-	public String getParamTag() {
-		return this.paramTag;
-	}
-
-	public void setParamTag(String paramTag) {
-		this.paramTag = paramTag;
-		if(paramTag != null){
-			putQueryParameter("ParamTag", paramTag);
+	public void setQueryName(String queryName) {
+		this.queryName = queryName;
+		if(queryName != null){
+			putQueryParameter("QueryName", queryName);
 		}
 	}
 
 	@Override
-	public Class<PublishHotspotResponse> getResponseClass() {
-		return PublishHotspotResponse.class;
+	public Class<ListMainScenesResponse> getResponseClass() {
+		return ListMainScenesResponse.class;
 	}
 
 }

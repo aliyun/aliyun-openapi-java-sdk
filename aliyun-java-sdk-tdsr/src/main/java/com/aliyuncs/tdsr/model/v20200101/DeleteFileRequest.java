@@ -25,7 +25,7 @@ import com.aliyuncs.tdsr.Endpoint;
 public class DeleteFileRequest extends RpcAcsRequest<DeleteFileResponse> {
 	   
 
-	private String accountId;
+	private String subSceneUuid;
 
 	private String paramFile;
 	public DeleteFileRequest() {
@@ -37,14 +37,14 @@ public class DeleteFileRequest extends RpcAcsRequest<DeleteFileResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getAccountId() {
-		return this.accountId;
+	public String getSubSceneUuid() {
+		return this.subSceneUuid;
 	}
 
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
-		if(accountId != null){
-			putQueryParameter("AccountId", accountId);
+	public void setSubSceneUuid(String subSceneUuid) {
+		this.subSceneUuid = subSceneUuid;
+		if(subSceneUuid != null){
+			putQueryParameter("SubSceneUuid", subSceneUuid);
 		}
 	}
 
