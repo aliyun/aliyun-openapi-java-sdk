@@ -27,7 +27,7 @@ public class DescribeCertificateStateRequest extends RpcAcsRequest<DescribeCerti
 
 	private Long orderId;
 	public DescribeCertificateStateRequest() {
-		super("cas", "2020-04-07", "DescribeCertificateState", "cas");
+		super("cas", "2020-04-07", "DescribeCertificateState", "cas-pack");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

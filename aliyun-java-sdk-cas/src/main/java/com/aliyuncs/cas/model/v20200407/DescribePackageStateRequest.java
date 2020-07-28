@@ -27,7 +27,7 @@ public class DescribePackageStateRequest extends RpcAcsRequest<DescribePackageSt
 
 	private String productCode;
 	public DescribePackageStateRequest() {
-		super("cas", "2020-04-07", "DescribePackageState", "cas");
+		super("cas", "2020-04-07", "DescribePackageState", "cas-pack");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -22,10 +22,12 @@ import com.aliyuncs.cas.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateCertificateRequestRequest extends RpcAcsRequest<CreateCertificateRequestResponse> {
+public class CreateCertificateWithCsrRequestRequest extends RpcAcsRequest<CreateCertificateWithCsrRequestResponse> {
 	   
 
 	private String productCode;
+
+	private String csr;
 
 	private String validateType;
 
@@ -33,11 +35,9 @@ public class CreateCertificateRequestRequest extends RpcAcsRequest<CreateCertifi
 
 	private String phone;
 
-	private String domain;
-
 	private String username;
-	public CreateCertificateRequestRequest() {
-		super("cas", "2020-04-07", "CreateCertificateRequest", "cas-pack");
+	public CreateCertificateWithCsrRequestRequest() {
+		super("cas", "2020-04-07", "CreateCertificateWithCsrRequest", "cas-pack");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,6 +53,17 @@ public class CreateCertificateRequestRequest extends RpcAcsRequest<CreateCertifi
 		this.productCode = productCode;
 		if(productCode != null){
 			putQueryParameter("ProductCode", productCode);
+		}
+	}
+
+	public String getCsr() {
+		return this.csr;
+	}
+
+	public void setCsr(String csr) {
+		this.csr = csr;
+		if(csr != null){
+			putQueryParameter("Csr", csr);
 		}
 	}
 
@@ -89,17 +100,6 @@ public class CreateCertificateRequestRequest extends RpcAcsRequest<CreateCertifi
 		}
 	}
 
-	public String getDomain() {
-		return this.domain;
-	}
-
-	public void setDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
-		}
-	}
-
 	public String getUsername() {
 		return this.username;
 	}
@@ -112,8 +112,8 @@ public class CreateCertificateRequestRequest extends RpcAcsRequest<CreateCertifi
 	}
 
 	@Override
-	public Class<CreateCertificateRequestResponse> getResponseClass() {
-		return CreateCertificateRequestResponse.class;
+	public Class<CreateCertificateWithCsrRequestResponse> getResponseClass() {
+		return CreateCertificateWithCsrRequestResponse.class;
 	}
 
 }
