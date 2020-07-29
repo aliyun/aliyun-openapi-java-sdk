@@ -15,6 +15,7 @@
 package com.aliyuncs.videosearch.transform.v20200225;
 
 import com.aliyuncs.videosearch.model.v20200225.GetTaskStatusResponse;
+import com.aliyuncs.videosearch.model.v20200225.GetTaskStatusResponse.TaskInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,6 +25,24 @@ public class GetTaskStatusResponseUnmarshaller {
 		
 		getTaskStatusResponse.setRequestId(_ctx.stringValue("GetTaskStatusResponse.RequestId"));
 		getTaskStatusResponse.setData(_ctx.integerValue("GetTaskStatusResponse.Data"));
+
+		TaskInfo taskInfo = new TaskInfo();
+		taskInfo.setAnalysisUseTime(_ctx.longValue("GetTaskStatusResponse.TaskInfo.AnalysisUseTime"));
+		taskInfo.setDuration(_ctx.floatValue("GetTaskStatusResponse.TaskInfo.Duration"));
+		taskInfo.setProcessResultOss(_ctx.stringValue("GetTaskStatusResponse.TaskInfo.ProcessResultOss"));
+		taskInfo.setResolution(_ctx.stringValue("GetTaskStatusResponse.TaskInfo.Resolution"));
+		taskInfo.setStatus(_ctx.integerValue("GetTaskStatusResponse.TaskInfo.Status"));
+		taskInfo.setSubmitTime(_ctx.longValue("GetTaskStatusResponse.TaskInfo.SubmitTime"));
+		taskInfo.setFinishTime(_ctx.longValue("GetTaskStatusResponse.TaskInfo.FinishTime"));
+		taskInfo.setTaskId(_ctx.longValue("GetTaskStatusResponse.TaskInfo.TaskId"));
+		taskInfo.setErrorInfo(_ctx.stringValue("GetTaskStatusResponse.TaskInfo.ErrorInfo"));
+		taskInfo.setStorageInfo(_ctx.integerValue("GetTaskStatusResponse.TaskInfo.StorageInfo"));
+		taskInfo.setDescription(_ctx.stringValue("GetTaskStatusResponse.TaskInfo.Description"));
+		taskInfo.setVideoId(_ctx.stringValue("GetTaskStatusResponse.TaskInfo.VideoId"));
+		taskInfo.setVideoTags(_ctx.stringValue("GetTaskStatusResponse.TaskInfo.VideoTags"));
+		taskInfo.setVideoUrl(_ctx.stringValue("GetTaskStatusResponse.TaskInfo.VideoUrl"));
+		taskInfo.setQueryTags(_ctx.stringValue("GetTaskStatusResponse.TaskInfo.QueryTags"));
+		getTaskStatusResponse.setTaskInfo(taskInfo);
 	 
 	 	return getTaskStatusResponse;
 	}
