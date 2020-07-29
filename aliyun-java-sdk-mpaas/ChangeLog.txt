@@ -1,3 +1,6 @@
+2020-07-29 Version: 1.2.0.0
+- Supported Mas Tinyapp Analysis.
+
 2020-05-29 Version: 1.1.0
 - Add mds openapi.
 
