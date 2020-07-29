@@ -27,7 +27,7 @@ public class StopStackGroupOperationRequest extends RpcAcsRequest<StopStackGroup
 
 	private String operationId;
 	public StopStackGroupOperationRequest() {
-		super("ROS", "2019-09-10", "StopStackGroupOperation", "ROS");
+		super("ROS", "2019-09-10", "StopStackGroupOperation", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -34,7 +34,7 @@ public class DeleteStackRequest extends RpcAcsRequest<DeleteStackResponse> {
 
 	private String ramRoleName;
 	public DeleteStackRequest() {
-		super("ROS", "2019-09-10", "DeleteStack", "ROS");
+		super("ROS", "2019-09-10", "DeleteStack", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

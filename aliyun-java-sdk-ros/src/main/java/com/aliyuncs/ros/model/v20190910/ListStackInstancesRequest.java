@@ -35,7 +35,7 @@ public class ListStackInstancesRequest extends RpcAcsRequest<ListStackInstancesR
 
 	private String stackInstanceAccountId;
 	public ListStackInstancesRequest() {
-		super("ROS", "2019-09-10", "ListStackInstances", "ROS");
+		super("ROS", "2019-09-10", "ListStackInstances", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

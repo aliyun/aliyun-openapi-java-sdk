@@ -22,12 +22,16 @@ import com.aliyuncs.ros.Endpoint;
  * @author auto create
  * @version 
  */
-public class ExecuteChangeSetRequest extends RpcAcsRequest<ExecuteChangeSetResponse> {
+public class ListTagValuesRequest extends RpcAcsRequest<ListTagValuesResponse> {
 	   
 
-	private String changeSetId;
-	public ExecuteChangeSetRequest() {
-		super("ROS", "2019-09-10", "ExecuteChangeSet", "ros");
+	private String nextToken;
+
+	private String key;
+
+	private String resourceType;
+	public ListTagValuesRequest() {
+		super("ROS", "2019-09-10", "ListTagValues", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +39,42 @@ public class ExecuteChangeSetRequest extends RpcAcsRequest<ExecuteChangeSetRespo
 		} catch (Exception e) {}
 	}
 
-	public String getChangeSetId() {
-		return this.changeSetId;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setChangeSetId(String changeSetId) {
-		this.changeSetId = changeSetId;
-		if(changeSetId != null){
-			putQueryParameter("ChangeSetId", changeSetId);
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getKey() {
+		return this.key;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
+		if(key != null){
+			putQueryParameter("Key", key);
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
 	@Override
-	public Class<ExecuteChangeSetResponse> getResponseClass() {
-		return ExecuteChangeSetResponse.class;
+	public Class<ListTagValuesResponse> getResponseClass() {
+		return ListTagValuesResponse.class;
 	}
 
 }

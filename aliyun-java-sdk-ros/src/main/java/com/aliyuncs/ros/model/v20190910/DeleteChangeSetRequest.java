@@ -27,7 +27,7 @@ public class DeleteChangeSetRequest extends RpcAcsRequest<DeleteChangeSetRespons
 
 	private String changeSetId;
 	public DeleteChangeSetRequest() {
-		super("ROS", "2019-09-10", "DeleteChangeSet", "ROS");
+		super("ROS", "2019-09-10", "DeleteChangeSet", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

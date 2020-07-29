@@ -22,21 +22,36 @@ import com.aliyuncs.ros.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTemplateRequest extends RpcAcsRequest<GetTemplateResponse> {
+public class GetTemplateSummaryRequest extends RpcAcsRequest<GetTemplateSummaryResponse> {
 	   
 
+	private String templateBody;
+
 	private String stackId;
+
+	private String templateURL;
 
 	private String templateId;
 
 	private String changeSetId;
-	public GetTemplateRequest() {
-		super("ROS", "2019-09-10", "GetTemplate", "ros");
+	public GetTemplateSummaryRequest() {
+		super("ROS", "2019-09-10", "GetTemplateSummary", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTemplateBody() {
+		return this.templateBody;
+	}
+
+	public void setTemplateBody(String templateBody) {
+		this.templateBody = templateBody;
+		if(templateBody != null){
+			putQueryParameter("TemplateBody", templateBody);
+		}
 	}
 
 	public String getStackId() {
@@ -47,6 +62,17 @@ public class GetTemplateRequest extends RpcAcsRequest<GetTemplateResponse> {
 		this.stackId = stackId;
 		if(stackId != null){
 			putQueryParameter("StackId", stackId);
+		}
+	}
+
+	public String getTemplateURL() {
+		return this.templateURL;
+	}
+
+	public void setTemplateURL(String templateURL) {
+		this.templateURL = templateURL;
+		if(templateURL != null){
+			putQueryParameter("TemplateURL", templateURL);
 		}
 	}
 
@@ -73,8 +99,8 @@ public class GetTemplateRequest extends RpcAcsRequest<GetTemplateResponse> {
 	}
 
 	@Override
-	public Class<GetTemplateResponse> getResponseClass() {
-		return GetTemplateResponse.class;
+	public Class<GetTemplateSummaryResponse> getResponseClass() {
+		return GetTemplateSummaryResponse.class;
 	}
 
 }

@@ -29,7 +29,7 @@ public class GetChangeSetRequest extends RpcAcsRequest<GetChangeSetResponse> {
 
 	private String changeSetId;
 	public GetChangeSetRequest() {
-		super("ROS", "2019-09-10", "GetChangeSet", "ROS");
+		super("ROS", "2019-09-10", "GetChangeSet", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

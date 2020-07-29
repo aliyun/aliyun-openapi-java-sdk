@@ -50,7 +50,7 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 
 	private String stackPolicyURL;
 	public CreateStackRequest() {
-		super("ROS", "2019-09-10", "CreateStack", "ROS");
+		super("ROS", "2019-09-10", "CreateStack", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

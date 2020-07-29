@@ -29,7 +29,7 @@ public class ValidateTemplateRequest extends RpcAcsRequest<ValidateTemplateRespo
 
 	private String templateURL;
 	public ValidateTemplateRequest() {
-		super("ROS", "2019-09-10", "ValidateTemplate", "ROS");
+		super("ROS", "2019-09-10", "ValidateTemplate", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

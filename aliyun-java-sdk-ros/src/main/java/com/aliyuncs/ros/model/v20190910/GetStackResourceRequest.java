@@ -33,7 +33,7 @@ public class GetStackResourceRequest extends RpcAcsRequest<GetStackResourceRespo
 
 	private Boolean showResourceAttributes;
 	public GetStackResourceRequest() {
-		super("ROS", "2019-09-10", "GetStackResource", "ROS");
+		super("ROS", "2019-09-10", "GetStackResource", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

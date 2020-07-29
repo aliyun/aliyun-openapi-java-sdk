@@ -27,7 +27,7 @@ public class DeleteStackGroupRequest extends RpcAcsRequest<DeleteStackGroupRespo
 
 	private String stackGroupName;
 	public DeleteStackGroupRequest() {
-		super("ROS", "2019-09-10", "DeleteStackGroup", "ROS");
+		super("ROS", "2019-09-10", "DeleteStackGroup", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

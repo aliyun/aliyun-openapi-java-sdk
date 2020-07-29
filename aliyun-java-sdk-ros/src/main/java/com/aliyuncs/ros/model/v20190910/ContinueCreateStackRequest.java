@@ -42,7 +42,7 @@ public class ContinueCreateStackRequest extends RpcAcsRequest<ContinueCreateStac
 
 	private List<String> recreatingResourcess;
 	public ContinueCreateStackRequest() {
-		super("ROS", "2019-09-10", "ContinueCreateStack", "ROS");
+		super("ROS", "2019-09-10", "ContinueCreateStack", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

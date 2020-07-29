@@ -50,9 +50,11 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 
 	private Boolean usePreviousParameters;
 
+	private String replacementOption;
+
 	private String stackPolicyURL;
 	public UpdateStackRequest() {
-		super("ROS", "2019-09-10", "UpdateStack", "ROS");
+		super("ROS", "2019-09-10", "UpdateStack", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -192,6 +194,17 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 		this.usePreviousParameters = usePreviousParameters;
 		if(usePreviousParameters != null){
 			putQueryParameter("UsePreviousParameters", usePreviousParameters.toString());
+		}
+	}
+
+	public String getReplacementOption() {
+		return this.replacementOption;
+	}
+
+	public void setReplacementOption(String replacementOption) {
+		this.replacementOption = replacementOption;
+		if(replacementOption != null){
+			putQueryParameter("ReplacementOption", replacementOption);
 		}
 	}
 

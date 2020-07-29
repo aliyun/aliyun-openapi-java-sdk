@@ -34,7 +34,7 @@ public class ListStackResourceDriftsRequest extends RpcAcsRequest<ListStackResou
 
 	private Long maxResults;
 	public ListStackResourceDriftsRequest() {
-		super("ROS", "2019-09-10", "ListStackResourceDrifts", "ROS");
+		super("ROS", "2019-09-10", "ListStackResourceDrifts", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

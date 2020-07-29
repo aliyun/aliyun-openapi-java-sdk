@@ -40,7 +40,7 @@ public class ListChangeSetsRequest extends RpcAcsRequest<ListChangeSetsResponse>
 
 	private List<String> statuss;
 	public ListChangeSetsRequest() {
-		super("ROS", "2019-09-10", "ListChangeSets", "ROS");
+		super("ROS", "2019-09-10", "ListChangeSets", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

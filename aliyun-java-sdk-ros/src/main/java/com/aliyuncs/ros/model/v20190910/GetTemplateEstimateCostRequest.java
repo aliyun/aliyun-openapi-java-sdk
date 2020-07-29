@@ -34,7 +34,7 @@ public class GetTemplateEstimateCostRequest extends RpcAcsRequest<GetTemplateEst
 
 	private List<Parameters> parameterss;
 	public GetTemplateEstimateCostRequest() {
-		super("ROS", "2019-09-10", "GetTemplateEstimateCost", "ROS");
+		super("ROS", "2019-09-10", "GetTemplateEstimateCost", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

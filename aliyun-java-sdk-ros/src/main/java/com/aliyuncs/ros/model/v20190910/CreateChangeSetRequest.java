@@ -50,6 +50,8 @@ public class CreateChangeSetRequest extends RpcAcsRequest<CreateChangeSetRespons
 
 	private List<String> notificationURLss;
 
+	private List<ResourcesToImport> resourcesToImports;
+
 	private String stackPolicyBody;
 
 	private String stackPolicyDuringUpdateURL;
@@ -58,11 +60,13 @@ public class CreateChangeSetRequest extends RpcAcsRequest<CreateChangeSetRespons
 
 	private Boolean usePreviousParameters;
 
+	private String replacementOption;
+
 	private String stackPolicyURL;
 
 	private String changeSetName;
 	public CreateChangeSetRequest() {
-		super("ROS", "2019-09-10", "CreateChangeSet", "ROS");
+		super("ROS", "2019-09-10", "CreateChangeSet", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -207,6 +211,21 @@ public class CreateChangeSetRequest extends RpcAcsRequest<CreateChangeSetRespons
 		}	
 	}
 
+	public List<ResourcesToImport> getResourcesToImports() {
+		return this.resourcesToImports;
+	}
+
+	public void setResourcesToImports(List<ResourcesToImport> resourcesToImports) {
+		this.resourcesToImports = resourcesToImports;	
+		if (resourcesToImports != null) {
+			for (int depth1 = 0; depth1 < resourcesToImports.size(); depth1++) {
+				putQueryParameter("ResourcesToImport." + (depth1 + 1) + ".ResourceIdentifier" , resourcesToImports.get(depth1).getResourceIdentifier());
+				putQueryParameter("ResourcesToImport." + (depth1 + 1) + ".LogicalResourceId" , resourcesToImports.get(depth1).getLogicalResourceId());
+				putQueryParameter("ResourcesToImport." + (depth1 + 1) + ".ResourceType" , resourcesToImports.get(depth1).getResourceType());
+			}
+		}	
+	}
+
 	public String getStackPolicyBody() {
 		return this.stackPolicyBody;
 	}
@@ -248,6 +267,17 @@ public class CreateChangeSetRequest extends RpcAcsRequest<CreateChangeSetRespons
 		this.usePreviousParameters = usePreviousParameters;
 		if(usePreviousParameters != null){
 			putQueryParameter("UsePreviousParameters", usePreviousParameters.toString());
+		}
+	}
+
+	public String getReplacementOption() {
+		return this.replacementOption;
+	}
+
+	public void setReplacementOption(String replacementOption) {
+		this.replacementOption = replacementOption;
+		if(replacementOption != null){
+			putQueryParameter("ReplacementOption", replacementOption);
 		}
 	}
 
@@ -293,6 +323,39 @@ public class CreateChangeSetRequest extends RpcAcsRequest<CreateChangeSetRespons
 
 		public void setParameterKey(String parameterKey) {
 			this.parameterKey = parameterKey;
+		}
+	}
+
+	public static class ResourcesToImport {
+
+		private String resourceIdentifier;
+
+		private String logicalResourceId;
+
+		private String resourceType;
+
+		public String getResourceIdentifier() {
+			return this.resourceIdentifier;
+		}
+
+		public void setResourceIdentifier(String resourceIdentifier) {
+			this.resourceIdentifier = resourceIdentifier;
+		}
+
+		public String getLogicalResourceId() {
+			return this.logicalResourceId;
+		}
+
+		public void setLogicalResourceId(String logicalResourceId) {
+			this.logicalResourceId = logicalResourceId;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 	}
 

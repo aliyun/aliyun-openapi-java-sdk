@@ -54,6 +54,8 @@ public class GetChangeSetResponse extends AcsResponse {
 
 	private Integer timeoutInMinutes;
 
+	private String statusReason;
+
 	private List<Parameter> parameters;
 
 	private List<Map<Object,Object>> changes;
@@ -168,6 +170,14 @@ public class GetChangeSetResponse extends AcsResponse {
 
 	public void setTimeoutInMinutes(Integer timeoutInMinutes) {
 		this.timeoutInMinutes = timeoutInMinutes;
+	}
+
+	public String getStatusReason() {
+		return this.statusReason;
+	}
+
+	public void setStatusReason(String statusReason) {
+		this.statusReason = statusReason;
 	}
 
 	public List<Parameter> getParameters() {

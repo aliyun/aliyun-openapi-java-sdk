@@ -52,7 +52,7 @@ public class UpdateStackGroupRequest extends RpcAcsRequest<UpdateStackGroupRespo
 
 	private String administrationRoleName;
 	public UpdateStackGroupRequest() {
-		super("ROS", "2019-09-10", "UpdateStackGroup", "ROS");
+		super("ROS", "2019-09-10", "UpdateStackGroup", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

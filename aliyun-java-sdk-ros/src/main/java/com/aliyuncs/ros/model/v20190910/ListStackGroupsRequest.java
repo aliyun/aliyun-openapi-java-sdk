@@ -31,7 +31,7 @@ public class ListStackGroupsRequest extends RpcAcsRequest<ListStackGroupsRespons
 
 	private String status;
 	public ListStackGroupsRequest() {
-		super("ROS", "2019-09-10", "ListStackGroups", "ROS");
+		super("ROS", "2019-09-10", "ListStackGroups", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

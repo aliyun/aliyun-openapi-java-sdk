@@ -38,7 +38,6 @@ public class GetStackGroupResponseUnmarshaller {
 		stackGroup.setTemplateBody(_ctx.stringValue("GetStackGroupResponse.StackGroup.TemplateBody"));
 		stackGroup.setExecutionRoleName(_ctx.stringValue("GetStackGroupResponse.StackGroup.ExecutionRoleName"));
 		stackGroup.setAdministrationRoleName(_ctx.stringValue("GetStackGroupResponse.StackGroup.AdministrationRoleName"));
-		stackGroup.setTemplateBody1(_ctx.stringValue("GetStackGroupResponse.StackGroup.TemplateBody"));
 
 		StackGroupDriftDetectionDetail stackGroupDriftDetectionDetail = new StackGroupDriftDetectionDetail();
 		stackGroupDriftDetectionDetail.setDriftDetectionTime(_ctx.stringValue("GetStackGroupResponse.StackGroup.StackGroupDriftDetectionDetail.DriftDetectionTime"));

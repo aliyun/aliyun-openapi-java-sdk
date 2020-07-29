@@ -23,20 +23,22 @@ import com.aliyuncs.ros.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateStackTemplateByResourcesRequest extends RpcAcsRequest<UpdateStackTemplateByResourcesResponse> {
+public class ListStackOperationRisksRequest extends RpcAcsRequest<ListStackOperationRisksResponse> {
 	   
 
 	private String clientToken;
 
 	private String stackId;
 
-	private List<String> logicalResourceIds;
+	private List<String> retainResourcess;
 
-	private Boolean dryRun;
+	private Boolean retainAllResources;
 
-	private String templateFormat;
-	public UpdateStackTemplateByResourcesRequest() {
-		super("ROS", "2019-09-10", "UpdateStackTemplateByResources", "ros");
+	private String ramRoleName;
+
+	private String operationType;
+	public ListStackOperationRisksRequest() {
+		super("ROS", "2019-09-10", "ListStackOperationRisks", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,44 +68,55 @@ public class UpdateStackTemplateByResourcesRequest extends RpcAcsRequest<UpdateS
 		}
 	}
 
-	public List<String> getLogicalResourceIds() {
-		return this.logicalResourceIds;
+	public List<String> getRetainResourcess() {
+		return this.retainResourcess;
 	}
 
-	public void setLogicalResourceIds(List<String> logicalResourceIds) {
-		this.logicalResourceIds = logicalResourceIds;	
-		if (logicalResourceIds != null) {
-			for (int i = 0; i < logicalResourceIds.size(); i++) {
-				putQueryParameter("LogicalResourceId." + (i + 1) , logicalResourceIds.get(i));
+	public void setRetainResourcess(List<String> retainResourcess) {
+		this.retainResourcess = retainResourcess;	
+		if (retainResourcess != null) {
+			for (int i = 0; i < retainResourcess.size(); i++) {
+				putQueryParameter("RetainResources." + (i + 1) , retainResourcess.get(i));
 			}
 		}	
 	}
 
-	public Boolean getDryRun() {
-		return this.dryRun;
+	public Boolean getRetainAllResources() {
+		return this.retainAllResources;
 	}
 
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
+	public void setRetainAllResources(Boolean retainAllResources) {
+		this.retainAllResources = retainAllResources;
+		if(retainAllResources != null){
+			putQueryParameter("RetainAllResources", retainAllResources.toString());
 		}
 	}
 
-	public String getTemplateFormat() {
-		return this.templateFormat;
+	public String getRamRoleName() {
+		return this.ramRoleName;
 	}
 
-	public void setTemplateFormat(String templateFormat) {
-		this.templateFormat = templateFormat;
-		if(templateFormat != null){
-			putQueryParameter("TemplateFormat", templateFormat);
+	public void setRamRoleName(String ramRoleName) {
+		this.ramRoleName = ramRoleName;
+		if(ramRoleName != null){
+			putQueryParameter("RamRoleName", ramRoleName);
+		}
+	}
+
+	public String getOperationType() {
+		return this.operationType;
+	}
+
+	public void setOperationType(String operationType) {
+		this.operationType = operationType;
+		if(operationType != null){
+			putQueryParameter("OperationType", operationType);
 		}
 	}
 
 	@Override
-	public Class<UpdateStackTemplateByResourcesResponse> getResponseClass() {
-		return UpdateStackTemplateByResourcesResponse.class;
+	public Class<ListStackOperationRisksResponse> getResponseClass() {
+		return ListStackOperationRisksResponse.class;
 	}
 
 }

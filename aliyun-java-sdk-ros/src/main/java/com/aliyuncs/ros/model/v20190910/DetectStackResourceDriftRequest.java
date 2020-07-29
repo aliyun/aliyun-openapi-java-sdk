@@ -31,7 +31,7 @@ public class DetectStackResourceDriftRequest extends RpcAcsRequest<DetectStackRe
 
 	private String logicalResourceId;
 	public DetectStackResourceDriftRequest() {
-		super("ROS", "2019-09-10", "DetectStackResourceDrift", "ROS");
+		super("ROS", "2019-09-10", "DetectStackResourceDrift", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -34,7 +34,7 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 
 	private List<Tag> tags;
 	public ListTemplatesRequest() {
-		super("ROS", "2019-09-10", "ListTemplates", "ROS");
+		super("ROS", "2019-09-10", "ListTemplates", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

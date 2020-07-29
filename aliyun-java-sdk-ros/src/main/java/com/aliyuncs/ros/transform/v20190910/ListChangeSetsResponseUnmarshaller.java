@@ -44,6 +44,7 @@ public class ListChangeSetsResponseUnmarshaller {
 			changeSet.setStackId(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].StackId"));
 			changeSet.setStackName(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].StackName"));
 			changeSet.setStatus(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].Status"));
+			changeSet.setStatusReason(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].StatusReason"));
 
 			changeSets.add(changeSet);
 		}

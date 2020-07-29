@@ -61,8 +61,6 @@ public class GetStackGroupResponse extends AcsResponse {
 
 		private String administrationRoleName;
 
-		private String templateBody1;
-
 		private List<Parameter> parameters;
 
 		private StackGroupDriftDetectionDetail stackGroupDriftDetectionDetail;
@@ -121,14 +119,6 @@ public class GetStackGroupResponse extends AcsResponse {
 
 		public void setAdministrationRoleName(String administrationRoleName) {
 			this.administrationRoleName = administrationRoleName;
-		}
-
-		public String getTemplateBody1() {
-			return this.templateBody1;
-		}
-
-		public void setTemplateBody1(String templateBody1) {
-			this.templateBody1 = templateBody1;
 		}
 
 		public List<Parameter> getParameters() {

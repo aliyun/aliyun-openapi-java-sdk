@@ -31,7 +31,7 @@ public class ListStackGroupOperationsRequest extends RpcAcsRequest<ListStackGrou
 
 	private Long pageSize;
 	public ListStackGroupOperationsRequest() {
-		super("ROS", "2019-09-10", "ListStackGroupOperations", "ROS");
+		super("ROS", "2019-09-10", "ListStackGroupOperations", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class GetStackPolicyRequest extends RpcAcsRequest<GetStackPolicyResponse>
 
 	private String stackId;
 	public GetStackPolicyRequest() {
-		super("ROS", "2019-09-10", "GetStackPolicy", "ROS");
+		super("ROS", "2019-09-10", "GetStackPolicy", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

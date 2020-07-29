@@ -32,7 +32,7 @@ public class DetectStackDriftRequest extends RpcAcsRequest<DetectStackDriftRespo
 
 	private List<String> logicalResourceIds;
 	public DetectStackDriftRequest() {
-		super("ROS", "2019-09-10", "DetectStackDrift", "ROS");
+		super("ROS", "2019-09-10", "DetectStackDrift", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

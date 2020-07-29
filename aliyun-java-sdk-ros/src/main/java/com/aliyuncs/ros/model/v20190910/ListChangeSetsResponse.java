@@ -97,6 +97,8 @@ public class ListChangeSetsResponse extends AcsResponse {
 
 		private String status;
 
+		private String statusReason;
+
 		public String getChangeSetId() {
 			return this.changeSetId;
 		}
@@ -175,6 +177,14 @@ public class ListChangeSetsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getStatusReason() {
+			return this.statusReason;
+		}
+
+		public void setStatusReason(String statusReason) {
+			this.statusReason = statusReason;
 		}
 	}
 

@@ -42,7 +42,7 @@ public class DeleteStackInstancesRequest extends RpcAcsRequest<DeleteStackInstan
 
 	private List<Object> accountIds;
 	public DeleteStackInstancesRequest() {
-		super("ROS", "2019-09-10", "DeleteStackInstances", "ROS");
+		super("ROS", "2019-09-10", "DeleteStackInstances", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

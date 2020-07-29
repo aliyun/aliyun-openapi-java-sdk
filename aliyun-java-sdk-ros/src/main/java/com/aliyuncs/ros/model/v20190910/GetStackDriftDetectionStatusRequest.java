@@ -27,7 +27,7 @@ public class GetStackDriftDetectionStatusRequest extends RpcAcsRequest<GetStackD
 
 	private String driftDetectionId;
 	public GetStackDriftDetectionStatusRequest() {
-		super("ROS", "2019-09-10", "GetStackDriftDetectionStatus", "ROS");
+		super("ROS", "2019-09-10", "GetStackDriftDetectionStatus", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

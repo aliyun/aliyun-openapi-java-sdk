@@ -27,7 +27,7 @@ public class GetStackGroupRequest extends RpcAcsRequest<GetStackGroupResponse> {
 
 	private String stackGroupName;
 	public GetStackGroupRequest() {
-		super("ROS", "2019-09-10", "GetStackGroup", "ROS");
+		super("ROS", "2019-09-10", "GetStackGroup", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

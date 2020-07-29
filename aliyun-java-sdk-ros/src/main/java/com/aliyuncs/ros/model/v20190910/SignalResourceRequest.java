@@ -35,7 +35,7 @@ public class SignalResourceRequest extends RpcAcsRequest<SignalResourceResponse>
 
 	private String status;
 	public SignalResourceRequest() {
-		super("ROS", "2019-09-10", "SignalResource", "ROS");
+		super("ROS", "2019-09-10", "SignalResource", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

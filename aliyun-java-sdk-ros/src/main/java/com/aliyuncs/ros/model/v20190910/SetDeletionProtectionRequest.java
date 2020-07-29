@@ -29,7 +29,7 @@ public class SetDeletionProtectionRequest extends RpcAcsRequest<SetDeletionProte
 
 	private String deletionProtection;
 	public SetDeletionProtectionRequest() {
-		super("ROS", "2019-09-10", "SetDeletionProtection", "ROS");
+		super("ROS", "2019-09-10", "SetDeletionProtection", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

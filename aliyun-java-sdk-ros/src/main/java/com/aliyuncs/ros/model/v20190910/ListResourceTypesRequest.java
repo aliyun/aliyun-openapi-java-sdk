@@ -25,7 +25,7 @@ import com.aliyuncs.ros.Endpoint;
 public class ListResourceTypesRequest extends RpcAcsRequest<ListResourceTypesResponse> {
 	   
 	public ListResourceTypesRequest() {
-		super("ROS", "2019-09-10", "ListResourceTypes", "ROS");
+		super("ROS", "2019-09-10", "ListResourceTypes", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

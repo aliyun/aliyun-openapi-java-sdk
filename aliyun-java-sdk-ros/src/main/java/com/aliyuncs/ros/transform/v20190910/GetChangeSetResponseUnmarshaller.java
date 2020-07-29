@@ -41,6 +41,7 @@ public class GetChangeSetResponseUnmarshaller {
 		getChangeSetResponse.setStatus(_ctx.stringValue("GetChangeSetResponse.Status"));
 		getChangeSetResponse.setTemplateBody(_ctx.stringValue("GetChangeSetResponse.TemplateBody"));
 		getChangeSetResponse.setTimeoutInMinutes(_ctx.integerValue("GetChangeSetResponse.TimeoutInMinutes"));
+		getChangeSetResponse.setStatusReason(_ctx.stringValue("GetChangeSetResponse.StatusReason"));
 
 		List<Map<Object, Object>> changes = _ctx.listMapValue("GetChangeSetResponse.Changes");
 		getChangeSetResponse.setChanges(changes);

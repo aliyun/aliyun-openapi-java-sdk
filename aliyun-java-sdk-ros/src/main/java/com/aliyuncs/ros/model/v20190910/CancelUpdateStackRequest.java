@@ -29,7 +29,7 @@ public class CancelUpdateStackRequest extends RpcAcsRequest<CancelUpdateStackRes
 
 	private String cancelType;
 	public CancelUpdateStackRequest() {
-		super("ROS", "2019-09-10", "CancelUpdateStack", "ROS");
+		super("ROS", "2019-09-10", "CancelUpdateStack", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

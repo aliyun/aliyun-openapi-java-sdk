@@ -42,7 +42,7 @@ public class CreateStackGroupRequest extends RpcAcsRequest<CreateStackGroupRespo
 
 	private String administrationRoleName;
 	public CreateStackGroupRequest() {
-		super("ROS", "2019-09-10", "CreateStackGroup", "ROS");
+		super("ROS", "2019-09-10", "CreateStackGroup", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

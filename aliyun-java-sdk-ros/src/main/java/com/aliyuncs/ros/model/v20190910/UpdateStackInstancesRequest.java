@@ -42,7 +42,7 @@ public class UpdateStackInstancesRequest extends RpcAcsRequest<UpdateStackInstan
 
 	private List<ParameterOverrides> parameterOverridess;
 	public UpdateStackInstancesRequest() {
-		super("ROS", "2019-09-10", "UpdateStackInstances", "ROS");
+		super("ROS", "2019-09-10", "UpdateStackInstances", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

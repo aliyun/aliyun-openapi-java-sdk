@@ -31,7 +31,7 @@ public class DetectStackGroupDriftRequest extends RpcAcsRequest<DetectStackGroup
 
 	private String operationPreferences;
 	public DetectStackGroupDriftRequest() {
-		super("ROS", "2019-09-10", "DetectStackGroupDrift", "ROS");
+		super("ROS", "2019-09-10", "DetectStackGroupDrift", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
