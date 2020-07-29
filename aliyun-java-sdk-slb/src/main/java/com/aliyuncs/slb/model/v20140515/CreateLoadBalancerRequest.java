@@ -47,6 +47,8 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	private String pricingCycle;
 
+	private String modificationProtectionReason;
+
 	private String clientToken;
 
 	private Integer duration;
@@ -64,6 +66,8 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 	private Integer bandwidth;
 
 	private String ownerAccount;
+
+	private String modificationProtectionStatus;
 
 	private String vpcId;
 
@@ -198,6 +202,17 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		}
 	}
 
+	public String getModificationProtectionReason() {
+		return this.modificationProtectionReason;
+	}
+
+	public void setModificationProtectionReason(String modificationProtectionReason) {
+		this.modificationProtectionReason = modificationProtectionReason;
+		if(modificationProtectionReason != null){
+			putQueryParameter("ModificationProtectionReason", modificationProtectionReason);
+		}
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -294,6 +309,17 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getModificationProtectionStatus() {
+		return this.modificationProtectionStatus;
+	}
+
+	public void setModificationProtectionStatus(String modificationProtectionStatus) {
+		this.modificationProtectionStatus = modificationProtectionStatus;
+		if(modificationProtectionStatus != null){
+			putQueryParameter("ModificationProtectionStatus", modificationProtectionStatus);
 		}
 	}
 

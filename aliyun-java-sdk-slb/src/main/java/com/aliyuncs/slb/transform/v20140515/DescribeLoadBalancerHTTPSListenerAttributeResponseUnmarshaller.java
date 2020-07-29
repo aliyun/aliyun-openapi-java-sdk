@@ -20,7 +20,9 @@ import java.util.List;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtension;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtension.Certificate;
+import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtension.ServerCertificate;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse.Rule;
+import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse.ServerCertificate2;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -117,9 +119,33 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponseUnmarshaller {
 			}
 			domainExtension.setCertificates(certificates);
 
+			List<ServerCertificate> serverCertificates1 = new ArrayList<ServerCertificate>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtensions["+ i +"].ServerCertificates.Length"); j++) {
+				ServerCertificate serverCertificate = new ServerCertificate();
+				serverCertificate.setCertificateId(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtensions["+ i +"].ServerCertificates["+ j +"].CertificateId"));
+				serverCertificate.setEncryptionAlgorithm(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtensions["+ i +"].ServerCertificates["+ j +"].EncryptionAlgorithm"));
+				serverCertificate.setStandardType(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtensions["+ i +"].ServerCertificates["+ j +"].StandardType"));
+				serverCertificate.setBindingType(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtensions["+ i +"].ServerCertificates["+ j +"].BindingType"));
+
+				serverCertificates1.add(serverCertificate);
+			}
+			domainExtension.setServerCertificates1(serverCertificates1);
+
 			domainExtensions.add(domainExtension);
 		}
 		describeLoadBalancerHTTPSListenerAttributeResponse.setDomainExtensions(domainExtensions);
+
+		List<ServerCertificate2> serverCertificates = new ArrayList<ServerCertificate2>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.ServerCertificates.Length"); i++) {
+			ServerCertificate2 serverCertificate2 = new ServerCertificate2();
+			serverCertificate2.setCertificateId(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.ServerCertificates["+ i +"].CertificateId"));
+			serverCertificate2.setEncryptionAlgorithm(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.ServerCertificates["+ i +"].EncryptionAlgorithm"));
+			serverCertificate2.setStandardType(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.ServerCertificates["+ i +"].StandardType"));
+			serverCertificate2.setBindingType(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.ServerCertificates["+ i +"].BindingType"));
+
+			serverCertificates.add(serverCertificate2);
+		}
+		describeLoadBalancerHTTPSListenerAttributeResponse.setServerCertificates(serverCertificates);
 	 
 	 	return describeLoadBalancerHTTPSListenerAttributeResponse;
 	}

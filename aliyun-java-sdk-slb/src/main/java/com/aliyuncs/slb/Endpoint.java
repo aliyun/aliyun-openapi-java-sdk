@@ -38,7 +38,7 @@ public class Endpoint {
             put("cn-wuhan", "slb.aliyuncs.com");
             put("us-west-1", "slb.aliyuncs.com");
             put("cn-shenzhen", "slb.aliyuncs.com");
-            put("cn-zhengzhou-nebula-1", "slb-api.cn-qingdao-nebula.aliyuncs.com");
+            put("cn-zhengzhou-nebula-1", "slb.aliyuncs.com");
             put("rus-west-1-pop", "slb.aliyuncs.com");
             put("cn-shanghai-et15-b01", "slb.aliyuncs.com");
             put("cn-hangzhou-bj-b01", "slb.aliyuncs.com");

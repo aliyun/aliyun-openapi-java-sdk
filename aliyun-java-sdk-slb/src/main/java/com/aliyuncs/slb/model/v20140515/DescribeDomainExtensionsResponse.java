@@ -55,6 +55,8 @@ public class DescribeDomainExtensionsResponse extends AcsResponse {
 
 		private List<Certificate> certificates;
 
+		private List<ServerCertificate> serverCertificates;
+
 		public String getDomainExtensionId() {
 			return this.domainExtensionId;
 		}
@@ -87,6 +89,14 @@ public class DescribeDomainExtensionsResponse extends AcsResponse {
 			this.certificates = certificates;
 		}
 
+		public List<ServerCertificate> getServerCertificates() {
+			return this.serverCertificates;
+		}
+
+		public void setServerCertificates(List<ServerCertificate> serverCertificates) {
+			this.serverCertificates = serverCertificates;
+		}
+
 		public static class Certificate {
 
 			private String certificateId;
@@ -107,6 +117,49 @@ public class DescribeDomainExtensionsResponse extends AcsResponse {
 
 			public void setEncryptionAlgorithm(String encryptionAlgorithm) {
 				this.encryptionAlgorithm = encryptionAlgorithm;
+			}
+		}
+
+		public static class ServerCertificate {
+
+			private String certificateId;
+
+			private String encryptionAlgorithm;
+
+			private String bindingType;
+
+			private String standardType;
+
+			public String getCertificateId() {
+				return this.certificateId;
+			}
+
+			public void setCertificateId(String certificateId) {
+				this.certificateId = certificateId;
+			}
+
+			public String getEncryptionAlgorithm() {
+				return this.encryptionAlgorithm;
+			}
+
+			public void setEncryptionAlgorithm(String encryptionAlgorithm) {
+				this.encryptionAlgorithm = encryptionAlgorithm;
+			}
+
+			public String getBindingType() {
+				return this.bindingType;
+			}
+
+			public void setBindingType(String bindingType) {
+				this.bindingType = bindingType;
+			}
+
+			public String getStandardType() {
+				return this.standardType;
+			}
+
+			public void setStandardType(String standardType) {
+				this.standardType = standardType;
 			}
 		}
 	}

@@ -71,6 +71,8 @@ public class DescribeCACertificatesResponse extends AcsResponse {
 
 		private Integer encryptionKeyLength;
 
+		private String standardType;
+
 		private List<Tag> tags;
 
 		public String getRegionId() {
@@ -167,6 +169,14 @@ public class DescribeCACertificatesResponse extends AcsResponse {
 
 		public void setEncryptionKeyLength(Integer encryptionKeyLength) {
 			this.encryptionKeyLength = encryptionKeyLength;
+		}
+
+		public String getStandardType() {
+			return this.standardType;
+		}
+
+		public void setStandardType(String standardType) {
+			this.standardType = standardType;
 		}
 
 		public List<Tag> getTags() {

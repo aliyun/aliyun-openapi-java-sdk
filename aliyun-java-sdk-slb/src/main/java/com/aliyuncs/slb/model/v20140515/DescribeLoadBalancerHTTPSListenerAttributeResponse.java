@@ -133,6 +133,8 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	private List<DomainExtension> domainExtensions;
 
+	private List<ServerCertificate2> serverCertificates;
+
 	private List<String> aclIds;
 
 	public String getRequestId() {
@@ -567,6 +569,14 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 		this.domainExtensions = domainExtensions;
 	}
 
+	public List<ServerCertificate2> getServerCertificates() {
+		return this.serverCertificates;
+	}
+
+	public void setServerCertificates(List<ServerCertificate2> serverCertificates) {
+		this.serverCertificates = serverCertificates;
+	}
+
 	public List<String> getAclIds() {
 		return this.aclIds;
 	}
@@ -638,6 +648,8 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 		private List<Certificate> certificates;
 
+		private List<ServerCertificate> serverCertificates1;
+
 		public String getDomainExtensionId() {
 			return this.domainExtensionId;
 		}
@@ -670,6 +682,14 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 			this.certificates = certificates;
 		}
 
+		public List<ServerCertificate> getServerCertificates1() {
+			return this.serverCertificates1;
+		}
+
+		public void setServerCertificates1(List<ServerCertificate> serverCertificates1) {
+			this.serverCertificates1 = serverCertificates1;
+		}
+
 		public static class Certificate {
 
 			private String certificateId;
@@ -691,6 +711,92 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 			public void setEncryptionAlgorithm(String encryptionAlgorithm) {
 				this.encryptionAlgorithm = encryptionAlgorithm;
 			}
+		}
+
+		public static class ServerCertificate {
+
+			private String certificateId;
+
+			private String encryptionAlgorithm;
+
+			private String standardType;
+
+			private String bindingType;
+
+			public String getCertificateId() {
+				return this.certificateId;
+			}
+
+			public void setCertificateId(String certificateId) {
+				this.certificateId = certificateId;
+			}
+
+			public String getEncryptionAlgorithm() {
+				return this.encryptionAlgorithm;
+			}
+
+			public void setEncryptionAlgorithm(String encryptionAlgorithm) {
+				this.encryptionAlgorithm = encryptionAlgorithm;
+			}
+
+			public String getStandardType() {
+				return this.standardType;
+			}
+
+			public void setStandardType(String standardType) {
+				this.standardType = standardType;
+			}
+
+			public String getBindingType() {
+				return this.bindingType;
+			}
+
+			public void setBindingType(String bindingType) {
+				this.bindingType = bindingType;
+			}
+		}
+	}
+
+	public static class ServerCertificate2 {
+
+		private String certificateId;
+
+		private String encryptionAlgorithm;
+
+		private String standardType;
+
+		private String bindingType;
+
+		public String getCertificateId() {
+			return this.certificateId;
+		}
+
+		public void setCertificateId(String certificateId) {
+			this.certificateId = certificateId;
+		}
+
+		public String getEncryptionAlgorithm() {
+			return this.encryptionAlgorithm;
+		}
+
+		public void setEncryptionAlgorithm(String encryptionAlgorithm) {
+			this.encryptionAlgorithm = encryptionAlgorithm;
+		}
+
+		public String getStandardType() {
+			return this.standardType;
+		}
+
+		public void setStandardType(String standardType) {
+			this.standardType = standardType;
+		}
+
+		public String getBindingType() {
+			return this.bindingType;
+		}
+
+		public void setBindingType(String bindingType) {
+			this.bindingType = bindingType;
 		}
 	}
 

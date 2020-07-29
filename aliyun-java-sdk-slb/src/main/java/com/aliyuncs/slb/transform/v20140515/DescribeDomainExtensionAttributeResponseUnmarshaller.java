@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeDomainExtensionAttributeResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeDomainExtensionAttributeResponse.Certificate;
+import com.aliyuncs.slb.model.v20140515.DescribeDomainExtensionAttributeResponse.ServerCertificate;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,6 +43,18 @@ public class DescribeDomainExtensionAttributeResponseUnmarshaller {
 			certificates.add(certificate);
 		}
 		describeDomainExtensionAttributeResponse.setCertificates(certificates);
+
+		List<ServerCertificate> serverCertificates = new ArrayList<ServerCertificate>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainExtensionAttributeResponse.ServerCertificates.Length"); i++) {
+			ServerCertificate serverCertificate = new ServerCertificate();
+			serverCertificate.setCertificateId(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.ServerCertificates["+ i +"].CertificateId"));
+			serverCertificate.setEncryptionAlgorithm(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.ServerCertificates["+ i +"].EncryptionAlgorithm"));
+			serverCertificate.setStandardType(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.ServerCertificates["+ i +"].StandardType"));
+			serverCertificate.setBindingType(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.ServerCertificates["+ i +"].BindingType"));
+
+			serverCertificates.add(serverCertificate);
+		}
+		describeDomainExtensionAttributeResponse.setServerCertificates(serverCertificates);
 	 
 	 	return describeDomainExtensionAttributeResponse;
 	}

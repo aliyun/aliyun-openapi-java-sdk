@@ -44,6 +44,7 @@ public class DescribeCACertificatesResponseUnmarshaller {
 			cACertificate.setCommonName(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].CommonName"));
 			cACertificate.setEncryptionAlgorithm(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].EncryptionAlgorithm"));
 			cACertificate.setEncryptionKeyLength(_ctx.integerValue("DescribeCACertificatesResponse.CACertificates["+ i +"].EncryptionKeyLength"));
+			cACertificate.setStandardType(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].StandardType"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCACertificatesResponse.CACertificates["+ i +"].Tags.Length"); j++) {

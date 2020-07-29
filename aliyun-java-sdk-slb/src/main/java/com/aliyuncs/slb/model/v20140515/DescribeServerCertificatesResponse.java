@@ -79,6 +79,8 @@ public class DescribeServerCertificatesResponse extends AcsResponse {
 
 		private Integer encryptionKeyLength;
 
+		private String standardType;
+
 		private List<Tag> tags;
 
 		private List<String> subjectAlternativeNames;
@@ -209,6 +211,14 @@ public class DescribeServerCertificatesResponse extends AcsResponse {
 
 		public void setEncryptionKeyLength(Integer encryptionKeyLength) {
 			this.encryptionKeyLength = encryptionKeyLength;
+		}
+
+		public String getStandardType() {
+			return this.standardType;
+		}
+
+		public void setStandardType(String standardType) {
+			this.standardType = standardType;
 		}
 
 		public List<Tag> getTags() {
