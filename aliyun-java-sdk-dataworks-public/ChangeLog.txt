@@ -1,3 +1,6 @@
+2020-07-29 Version: 2.2.1
+- Generated 2020-05-18 for `dataworks-public`.
+
 2020-07-08 Version: 2.2.0
 - Generated 2020-05-18 for `dataworks-public`.
 

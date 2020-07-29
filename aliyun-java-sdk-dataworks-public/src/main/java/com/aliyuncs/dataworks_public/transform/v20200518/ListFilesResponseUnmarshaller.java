@@ -59,6 +59,7 @@ public class ListFilesResponseUnmarshaller {
 			file.setLastEditUser(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].LastEditUser"));
 			file.setLastEditTime(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].LastEditTime"));
 			file.setCommitStatus(_ctx.integerValue("ListFilesResponse.Data.Files["+ i +"].CommitStatus"));
+			file.setFileId(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].FileId"));
 
 			files.add(file);
 		}

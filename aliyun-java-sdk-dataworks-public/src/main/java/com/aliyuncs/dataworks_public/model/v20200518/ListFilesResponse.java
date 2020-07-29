@@ -165,6 +165,8 @@ public class ListFilesResponse extends AcsResponse {
 
 			private Integer commitStatus;
 
+			private Long fileId;
+
 			public String getConnectionName() {
 				return this.connectionName;
 			}
@@ -307,6 +309,14 @@ public class ListFilesResponse extends AcsResponse {
 
 			public void setCommitStatus(Integer commitStatus) {
 				this.commitStatus = commitStatus;
+			}
+
+			public Long getFileId() {
+				return this.fileId;
+			}
+
+			public void setFileId(Long fileId) {
+				this.fileId = fileId;
 			}
 		}
 	}
