@@ -14,7 +14,6 @@
 
 package com.aliyuncs.tdsr.model.v20200101;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.tdsr.transform.v20200101.GetHotspotTagResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -31,7 +30,7 @@ public class GetHotspotTagResponse extends AcsResponse {
 
 	private String errMessage;
 
-	private Map<Object,Object> data;
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,11 +56,11 @@ public class GetHotspotTagResponse extends AcsResponse {
 		this.errMessage = errMessage;
 	}
 
-	public Map<Object,Object> getData() {
+	public String getData() {
 		return this.data;
 	}
 
-	public void setData(Map<Object,Object> data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 

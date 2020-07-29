@@ -15,7 +15,6 @@
 package com.aliyuncs.tdsr.transform.v20200101;
 
 import com.aliyuncs.tdsr.model.v20200101.GetHotspotTagResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,7 +25,7 @@ public class GetHotspotTagResponseUnmarshaller {
 		getHotspotTagResponse.setRequestId(_ctx.stringValue("GetHotspotTagResponse.RequestId"));
 		getHotspotTagResponse.setSuccess(_ctx.booleanValue("GetHotspotTagResponse.Success"));
 		getHotspotTagResponse.setErrMessage(_ctx.stringValue("GetHotspotTagResponse.ErrMessage"));
-		getHotspotTagResponse.setData(_ctx.mapValue("GetHotspotTagResponse.Data"));
+		getHotspotTagResponse.setData(_ctx.stringValue("GetHotspotTagResponse.Data"));
 	 
 	 	return getHotspotTagResponse;
 	}
