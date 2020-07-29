@@ -27,7 +27,7 @@ public class DescribeResourceTypeTemplateRequest extends RoaAcsRequest<DescribeR
 
 	private String typeName;
 	public DescribeResourceTypeTemplateRequest() {
-		super("ROS", "2015-09-01", "DescribeResourceTypeTemplate", "ROS");
+		super("ROS", "2015-09-01", "DescribeResourceTypeTemplate", "ros");
 		setUriPattern("/resource_types/[TypeName]/template");
 		setMethod(MethodType.GET);
 		try {

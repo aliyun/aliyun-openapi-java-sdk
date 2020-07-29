@@ -25,7 +25,7 @@ import com.aliyuncs.ros.Endpoint;
 public class PreviewStackRequest extends RoaAcsRequest<PreviewStackResponse> {
 	   
 	public PreviewStackRequest() {
-		super("ROS", "2015-09-01", "PreviewStack", "ROS");
+		super("ROS", "2015-09-01", "PreviewStack", "ros");
 		setUriPattern("/stacks/preview");
 		setMethod(MethodType.POST);
 		try {

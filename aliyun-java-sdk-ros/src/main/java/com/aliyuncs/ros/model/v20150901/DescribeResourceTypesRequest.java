@@ -27,7 +27,7 @@ public class DescribeResourceTypesRequest extends RoaAcsRequest<DescribeResource
 
 	private String supportStatus;
 	public DescribeResourceTypesRequest() {
-		super("ROS", "2015-09-01", "DescribeResourceTypes", "ROS");
+		super("ROS", "2015-09-01", "DescribeResourceTypes", "ros");
 		setUriPattern("/resource_types");
 		setMethod(MethodType.GET);
 		try {

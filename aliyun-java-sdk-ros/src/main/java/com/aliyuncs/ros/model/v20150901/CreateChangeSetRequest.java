@@ -25,7 +25,7 @@ import com.aliyuncs.ros.Endpoint;
 public class CreateChangeSetRequest extends RoaAcsRequest<CreateChangeSetResponse> {
 	   
 	public CreateChangeSetRequest() {
-		super("ROS", "2015-09-01", "CreateChangeSet", "ROS");
+		super("ROS", "2015-09-01", "CreateChangeSet", "ros");
 		setUriPattern("/changeSets");
 		setMethod(MethodType.POST);
 		try {

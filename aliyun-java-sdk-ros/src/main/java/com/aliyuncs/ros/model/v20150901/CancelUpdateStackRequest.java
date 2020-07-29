@@ -29,7 +29,7 @@ public class CancelUpdateStackRequest extends RoaAcsRequest<CancelUpdateStackRes
 
 	private String stackName;
 	public CancelUpdateStackRequest() {
-		super("ROS", "2015-09-01", "CancelUpdateStack", "ROS");
+		super("ROS", "2015-09-01", "CancelUpdateStack", "ros");
 		setUriPattern("/stacks/[StackName]/[StackId]/cancel");
 		setMethod(MethodType.PUT);
 		try {

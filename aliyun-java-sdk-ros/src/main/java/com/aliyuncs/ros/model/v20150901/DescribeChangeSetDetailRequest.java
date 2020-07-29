@@ -31,7 +31,7 @@ public class DescribeChangeSetDetailRequest extends RoaAcsRequest<DescribeChange
 
 	private String stackName;
 	public DescribeChangeSetDetailRequest() {
-		super("ROS", "2015-09-01", "DescribeChangeSetDetail", "ROS");
+		super("ROS", "2015-09-01", "DescribeChangeSetDetail", "ros");
 		setUriPattern("/stacks/[StackName]/[StackId]/changeSets/[ChangeSetName]");
 		setMethod(MethodType.GET);
 		try {

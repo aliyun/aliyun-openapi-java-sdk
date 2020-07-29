@@ -25,7 +25,7 @@ import com.aliyuncs.ros.Endpoint;
 public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
 	   
 	public DescribeRegionsRequest() {
-		super("ROS", "2015-09-01", "DescribeRegions", "ROS");
+		super("ROS", "2015-09-01", "DescribeRegions", "ros");
 		setUriPattern("/regions");
 		setMethod(MethodType.GET);
 		try {

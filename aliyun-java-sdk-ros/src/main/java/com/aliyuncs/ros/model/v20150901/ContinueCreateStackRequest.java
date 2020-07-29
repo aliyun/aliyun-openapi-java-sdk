@@ -29,7 +29,7 @@ public class ContinueCreateStackRequest extends RoaAcsRequest<ContinueCreateStac
 
 	private String stackName;
 	public ContinueCreateStackRequest() {
-		super("ROS", "2015-09-01", "ContinueCreateStack", "ROS");
+		super("ROS", "2015-09-01", "ContinueCreateStack", "ros");
 		setUriPattern("/stacks/[StackName]/[StackId]/continue");
 		setMethod(MethodType.POST);
 		try {

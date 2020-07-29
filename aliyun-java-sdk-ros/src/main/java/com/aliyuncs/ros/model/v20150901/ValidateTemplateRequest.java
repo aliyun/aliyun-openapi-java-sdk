@@ -25,7 +25,7 @@ import com.aliyuncs.ros.Endpoint;
 public class ValidateTemplateRequest extends RoaAcsRequest<ValidateTemplateResponse> {
 	   
 	public ValidateTemplateRequest() {
-		super("ROS", "2015-09-01", "ValidateTemplate", "ROS");
+		super("ROS", "2015-09-01", "ValidateTemplate", "ros");
 		setUriPattern("/validate");
 		setMethod(MethodType.POST);
 		try {

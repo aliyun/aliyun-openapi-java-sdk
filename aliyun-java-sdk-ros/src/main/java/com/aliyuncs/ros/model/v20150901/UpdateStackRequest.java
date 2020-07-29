@@ -29,7 +29,7 @@ public class UpdateStackRequest extends RoaAcsRequest<UpdateStackResponse> {
 
 	private String stackName;
 	public UpdateStackRequest() {
-		super("ROS", "2015-09-01", "UpdateStack", "ROS");
+		super("ROS", "2015-09-01", "UpdateStack", "ros");
 		setUriPattern("/stacks/[StackName]/[StackId]");
 		setMethod(MethodType.PUT);
 		try {

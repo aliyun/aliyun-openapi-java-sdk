@@ -29,7 +29,7 @@ public class DescribeTemplateRequest extends RoaAcsRequest<DescribeTemplateRespo
 
 	private String stackName;
 	public DescribeTemplateRequest() {
-		super("ROS", "2015-09-01", "DescribeTemplate", "ROS");
+		super("ROS", "2015-09-01", "DescribeTemplate", "ros");
 		setUriPattern("/stacks/[StackName]/[StackId]/template");
 		setMethod(MethodType.GET);
 		try {

@@ -35,7 +35,7 @@ public class WaitConditionsRequest extends RoaAcsRequest<WaitConditionsResponse>
 
 	private String stackname;
 	public WaitConditionsRequest() {
-		super("ROS", "2015-09-01", "WaitConditions", "ROS");
+		super("ROS", "2015-09-01", "WaitConditions", "ros");
 		setUriPattern("/waitcondition");
 		setMethod(MethodType.POST);
 		try {
