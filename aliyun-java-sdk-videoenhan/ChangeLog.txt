@@ -10,6 +10,9 @@
 2020-07-30 Version: 1.0.3
 - Add ChangeVideoSize.
 
+2020-07-30 Version: 1.0.3
+- Add ChangeVideoSize.
+
 2020-04-26 Version: 1.0.2
 - SDK versioin 101.
 
