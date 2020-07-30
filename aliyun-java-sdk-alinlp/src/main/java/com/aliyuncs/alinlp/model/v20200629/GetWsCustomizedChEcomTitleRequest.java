@@ -22,38 +22,23 @@ import com.aliyuncs.alinlp.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetWeChEcomRequest extends RpcAcsRequest<GetWeChEcomResponse> {
+public class GetWsCustomizedChEcomTitleRequest extends RpcAcsRequest<GetWsCustomizedChEcomTitleResponse> {
 	   
 
-	private String type;
-
 	private String serviceCode;
-
-	private String size;
 
 	private String tokenizerId;
 
 	private String text;
 
-	private String operation;
-	public GetWeChEcomRequest() {
-		super("alinlp", "2020-06-29", "GetWeChEcom", "alinlp");
+	private String outType;
+	public GetWsCustomizedChEcomTitleRequest() {
+		super("alinlp", "2020-06-29", "GetWsCustomizedChEcomTitle", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type);
-		}
 	}
 
 	public String getServiceCode() {
@@ -64,17 +49,6 @@ public class GetWeChEcomRequest extends RpcAcsRequest<GetWeChEcomResponse> {
 		this.serviceCode = serviceCode;
 		if(serviceCode != null){
 			putBodyParameter("ServiceCode", serviceCode);
-		}
-	}
-
-	public String getSize() {
-		return this.size;
-	}
-
-	public void setSize(String size) {
-		this.size = size;
-		if(size != null){
-			putBodyParameter("Size", size);
 		}
 	}
 
@@ -100,20 +74,20 @@ public class GetWeChEcomRequest extends RpcAcsRequest<GetWeChEcomResponse> {
 		}
 	}
 
-	public String getOperation() {
-		return this.operation;
+	public String getOutType() {
+		return this.outType;
 	}
 
-	public void setOperation(String operation) {
-		this.operation = operation;
-		if(operation != null){
-			putBodyParameter("Operation", operation);
+	public void setOutType(String outType) {
+		this.outType = outType;
+		if(outType != null){
+			putBodyParameter("OutType", outType);
 		}
 	}
 
 	@Override
-	public Class<GetWeChEcomResponse> getResponseClass() {
-		return GetWeChEcomResponse.class;
+	public Class<GetWsCustomizedChEcomTitleResponse> getResponseClass() {
+		return GetWsCustomizedChEcomTitleResponse.class;
 	}
 
 }

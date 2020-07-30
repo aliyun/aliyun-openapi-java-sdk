@@ -22,22 +22,16 @@ import com.aliyuncs.alinlp.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetWeChEcomRequest extends RpcAcsRequest<GetWeChEcomResponse> {
+public class GetWsCustomizedSeaEcomRequest extends RpcAcsRequest<GetWsCustomizedSeaEcomResponse> {
 	   
 
-	private String type;
+	private String language;
 
 	private String serviceCode;
 
-	private String size;
-
-	private String tokenizerId;
-
 	private String text;
-
-	private String operation;
-	public GetWeChEcomRequest() {
-		super("alinlp", "2020-06-29", "GetWeChEcom", "alinlp");
+	public GetWsCustomizedSeaEcomRequest() {
+		super("alinlp", "2020-06-29", "GetWsCustomizedSeaEcom", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,14 +39,14 @@ public class GetWeChEcomRequest extends RpcAcsRequest<GetWeChEcomResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getLanguage() {
+		return this.language;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type);
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putBodyParameter("Language", language);
 		}
 	}
 
@@ -67,28 +61,6 @@ public class GetWeChEcomRequest extends RpcAcsRequest<GetWeChEcomResponse> {
 		}
 	}
 
-	public String getSize() {
-		return this.size;
-	}
-
-	public void setSize(String size) {
-		this.size = size;
-		if(size != null){
-			putBodyParameter("Size", size);
-		}
-	}
-
-	public String getTokenizerId() {
-		return this.tokenizerId;
-	}
-
-	public void setTokenizerId(String tokenizerId) {
-		this.tokenizerId = tokenizerId;
-		if(tokenizerId != null){
-			putBodyParameter("TokenizerId", tokenizerId);
-		}
-	}
-
 	public String getText() {
 		return this.text;
 	}
@@ -100,20 +72,9 @@ public class GetWeChEcomRequest extends RpcAcsRequest<GetWeChEcomResponse> {
 		}
 	}
 
-	public String getOperation() {
-		return this.operation;
-	}
-
-	public void setOperation(String operation) {
-		this.operation = operation;
-		if(operation != null){
-			putBodyParameter("Operation", operation);
-		}
-	}
-
 	@Override
-	public Class<GetWeChEcomResponse> getResponseClass() {
-		return GetWeChEcomResponse.class;
+	public Class<GetWsCustomizedSeaEcomResponse> getResponseClass() {
+		return GetWsCustomizedSeaEcomResponse.class;
 	}
 
 }
