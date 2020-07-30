@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.opensearch.model.v20171225.ListInterventionDictionaryEntriesResponse;
 import com.aliyuncs.opensearch.model.v20171225.ListInterventionDictionaryEntriesResponse.WordItem;
+import com.aliyuncs.opensearch.model.v20171225.ListInterventionDictionaryEntriesResponse.WordItem.Token;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -28,6 +29,7 @@ public class ListInterventionDictionaryEntriesResponseUnmarshaller {
 	public static ListInterventionDictionaryEntriesResponse unmarshall(ListInterventionDictionaryEntriesResponse listInterventionDictionaryEntriesResponse, UnmarshallerContext _ctx) {
 		
 		listInterventionDictionaryEntriesResponse.setRequestId(_ctx.stringValue("ListInterventionDictionaryEntriesResponse.requestId"));
+		listInterventionDictionaryEntriesResponse.setTotalCount(_ctx.integerValue("ListInterventionDictionaryEntriesResponse.totalCount"));
 
 		List<WordItem> result = new ArrayList<WordItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListInterventionDictionaryEntriesResponse.result.Length"); i++) {
@@ -38,6 +40,18 @@ public class ListInterventionDictionaryEntriesResponseUnmarshaller {
 			wordItem.setUpdated(_ctx.longValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].updated"));
 			wordItem.setStatus(_ctx.stringValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].status"));
 			wordItem.setRelevance(_ctx.mapValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].relevance"));
+
+			List<Token> tokens = new ArrayList<Token>();
+			for (int j = 0; j < _ctx.lengthValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].tokens.Length"); j++) {
+				Token token = new Token();
+				token.setTag(_ctx.stringValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].tokens["+ j +"].tag"));
+				token.setToken(_ctx.stringValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].tokens["+ j +"].token"));
+				token.setOrder(_ctx.integerValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].tokens["+ j +"].order"));
+				token.setTagLabel(_ctx.stringValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].tokens["+ j +"].tagLabel"));
+
+				tokens.add(token);
+			}
+			wordItem.setTokens(tokens);
 
 			result.add(wordItem);
 		}

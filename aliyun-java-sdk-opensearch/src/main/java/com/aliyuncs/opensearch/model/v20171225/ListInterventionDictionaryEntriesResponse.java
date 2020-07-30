@@ -28,6 +28,8 @@ public class ListInterventionDictionaryEntriesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer totalCount;
+
 	private List<WordItem> result;
 
 	public String getRequestId() {
@@ -36,6 +38,14 @@ public class ListInterventionDictionaryEntriesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<WordItem> getResult() {
@@ -59,6 +69,8 @@ public class ListInterventionDictionaryEntriesResponse extends AcsResponse {
 		private String status;
 
 		private Map<Object,Object> relevance;
+
+		private List<Token> tokens;
 
 		public String getCmd() {
 			return this.cmd;
@@ -106,6 +118,57 @@ public class ListInterventionDictionaryEntriesResponse extends AcsResponse {
 
 		public void setRelevance(Map<Object,Object> relevance) {
 			this.relevance = relevance;
+		}
+
+		public List<Token> getTokens() {
+			return this.tokens;
+		}
+
+		public void setTokens(List<Token> tokens) {
+			this.tokens = tokens;
+		}
+
+		public static class Token {
+
+			private String tag;
+
+			private String token;
+
+			private Integer order;
+
+			private String tagLabel;
+
+			public String getTag() {
+				return this.tag;
+			}
+
+			public void setTag(String tag) {
+				this.tag = tag;
+			}
+
+			public String getToken() {
+				return this.token;
+			}
+
+			public void setToken(String token) {
+				this.token = token;
+			}
+
+			public Integer getOrder() {
+				return this.order;
+			}
+
+			public void setOrder(Integer order) {
+				this.order = order;
+			}
+
+			public String getTagLabel() {
+				return this.tagLabel;
+			}
+
+			public void setTagLabel(String tagLabel) {
+				this.tagLabel = tagLabel;
+			}
 		}
 	}
 
