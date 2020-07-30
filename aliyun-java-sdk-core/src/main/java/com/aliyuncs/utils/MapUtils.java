@@ -1,45 +1,8 @@
 package com.aliyuncs.utils;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class MapUtils {
-
-    public List<Map<Object, Object>> convertMapToListMap(Map<String, String> flattenMap, String prefix) {
-        List<Map<Object, Object>> list = new ArrayList<Map<Object, Object>>();
-        for (Map.Entry<String, String> entry : flattenMap.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            if (key.contains(prefix)) {
-                String[] keys = key.replace(prefix, "").split("\\.");
-                String pre = prefix + keys[0];
-                if (keys[0].contains("[")) {
-                    String mapKey = key.replace(pre + ".", "");
-                    int index = Integer.parseInt(keys[0].replace("[", "").replace("]", ""));
-                    list = setList(list, index, mapKey, value);
-                }
-            }
-        }
-        return list;
-    }
-
-    public Map<Object, Object> convertMapToMap(Map<String, String> flattenMap, String prefix) {
-        Map<Object, Object> map = new HashMap<Object, Object>();
-        for (Map.Entry<String, String> entry : flattenMap.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            if (key.contains(prefix)) {
-                String[] keys = key.replace(prefix, "").split("\\.");
-                String pre = prefix + keys[0];
-                String mapKey = key.replace(pre + ".", "");
-                map = setMap(map, mapKey, value);
-            }
-        }
-        return map;
-    }
-
     public static String getMapString(Map<String, String> map) {
         if (map == null) {
             return "";
@@ -52,51 +15,131 @@ public class MapUtils {
         return sb.toString();
     }
 
-    private List<Map<Object, Object>> setList(List targetList, int index, String key, String value) {
-        List list = targetList;
-        if (null != key && key.contains("[") && !key.contains(".")) {
-            if (null == list) {
-                list = new ArrayList();
-            }
-            while (list.size() <= index) {
-                list.add("");
-            }
-            list.set(index, value);
-        } else {
-            if (null == list) {
-                list = new ArrayList<Map<Object, Object>>();
-            }
-            while (list.size() <= index) {
-                list.add(new HashMap<Object, Object>());
-            }
-            list.set(index, setMap((Map<Object, Object>) list.get(index), key, value));
-        }
-        return list;
+    public Map<Object, Object> convertMapToMap(Map<String, String> flattenMap, String prefix) {
+        Object obj = new HashMap<Object, Object>();
+        obj = parse(obj, flattenMap, prefix);
+        return (Map<Object, Object>) obj;
     }
 
-    private Map<Object, Object> setMap(Map<Object, Object> targetMap, String key, String value) {
-        Map<Object, Object> map = targetMap;
-        if (null == map) {
-            map = new HashMap<Object, Object>();
+    public List<Map<Object, Object>> convertMapToListMap(Map<String, String> flattenMap, String prefix) {
+        Object obj = new ArrayList<Object>();
+        obj = parse(obj, flattenMap, prefix);
+        return (List<Map<Object, Object>>) obj;
+    }
+
+    private Object parse(Object objSource, Map<String, String> flattenMap, String prefix) {
+        Object obj = objSource;
+        for (Map.Entry<String, String> entry : flattenMap.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            if (key.contains(prefix)) {
+                String remainKey = key.replace(prefix, "");
+                if (!remainKey.equalsIgnoreCase(".length")) {
+                    obj = resolve(obj, remainKey, value);
+                }
+            }
+        }
+        return obj;
+    }
+
+    private Object resolve(Object objSource, String currKey, String value) {
+        Object obj = objSource;
+        if (currKey.equalsIgnoreCase("length") || currKey.equalsIgnoreCase(".length")) {
+            return obj;
+        }
+        String key = popKey(currKey);
+        String remainKey = popRemainKey(currKey);
+        if (remainKey.equalsIgnoreCase("length") || remainKey.equalsIgnoreCase(".length")) {
+            Map currMap = initMap(obj, key);
+            int len = Integer.parseInt(value);
+            List currList = initList(currMap.get(key), len);
+            currMap.put(key, currList);
+            obj = currMap;
+            return obj;
+        }
+        if (remainKey.length() == 0) {
+            if (key.contains("[")) {
+                int index = getIndexFromKey(key);
+                List currList = initList(obj, index);
+                currList.set(index, value);
+                obj = currList;
+            } else {
+                Map currMap = initMap(obj, key);
+                currMap.put(key, value);
+                obj = currMap;
+            }
+            return obj;
         }
         if (key.contains("[")) {
-            String[] keys = key.split("\\.");
-            String listKey = key.substring(0, key.indexOf("["));
-            int index = Integer.parseInt(key.substring(key.indexOf("[") + 1, key.indexOf("]")));
-            List listObj = (List) map.get(listKey);
-            listObj = setList(listObj, index, key.replace(keys[0] + ".", ""), value);
-            map.put(listKey, listObj);
-        } else if (key.contains(".")) {
-            String[] keys = key.split("\\.");
-            String mapKey = keys[0];
-            // exclude *.Length
-            if (!(map.get(mapKey) instanceof List) && !"Length".equals(keys[1])) {
-                map.put(mapKey, setMap((Map<Object, Object>) map.get(mapKey),
-                        key.replace(keys[0] + ".", ""), value));
-            }
+            int index = getIndexFromKey(key);
+            List currList = initList(obj, index);
+            Object newObj = currList.get(index);
+            currList.set(index, resolve(newObj, remainKey, value));
+            obj = currList;
         } else {
-            map.put(key, value);
+            Map currMap = initMap(obj, key);
+            currMap.put(key, resolve(currMap.get(key), remainKey, value));
+            obj = currMap;
         }
-        return map;
+        return obj;
+    }
+
+    private Map initMap(Object obj, String key) {
+        Map currMap = (Map) obj;
+        if (null == currMap) {
+            currMap = new HashMap<Object, Object>();
+        }
+        if (!currMap.containsKey(key)) {
+            currMap.put(key, null);
+        }
+        return currMap;
+    }
+
+    private List initList(Object obj, int index) {
+        List currList = (List) obj;
+        if (null == currList) {
+            currList = new ArrayList<Object>();
+        }
+        while (currList.size() <= index) {
+            currList.add(null);
+        }
+        return currList;
+    }
+
+    private int getIndexFromKey(String key) {
+        return Integer.parseInt(key.replace("[", "").replace("]", ""));
+    }
+
+    private String getMapKeyFromListIndex(String key) {
+        return key.substring(0, key.indexOf("["));
+    }
+
+    private String popKey(String keyString) {
+        String key = keyString;
+        if (key.startsWith(".")) {
+            key = key.substring(1);
+        }
+        String[] keys = key.split("\\.");
+        key = keys[0];
+        if (key.contains("[") && key.indexOf("[") != 0) {
+            return getMapKeyFromListIndex(key);
+        }
+        return key;
+    }
+
+    private String popRemainKey(String keyString) {
+        String key = keyString;
+        if (key.startsWith(".")) {
+            key = key.substring(1);
+        }
+        String popKey = popKey(key);
+        if (popKey.endsWith("Length")) {
+            return "";
+        }
+        String remainKey = key.substring(popKey.length());
+        if (remainKey.startsWith(".")) {
+            remainKey = remainKey.substring(1);
+        }
+        return remainKey;
     }
 }
