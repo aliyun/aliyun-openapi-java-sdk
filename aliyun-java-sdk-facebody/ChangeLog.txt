@@ -1,3 +1,6 @@
+2020-07-30 Version: 1.1.3
+- Update DetectCelebrity.
+
 2020-07-30 Version: 1.1.2
 - Add DetectCelebrity.
 

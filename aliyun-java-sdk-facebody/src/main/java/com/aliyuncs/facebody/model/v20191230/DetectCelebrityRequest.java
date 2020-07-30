@@ -28,7 +28,7 @@ public class DetectCelebrityRequest extends RpcAcsRequest<DetectCelebrityRespons
 	private String imageURL;
 	public DetectCelebrityRequest() {
 		super("facebody", "2019-12-30", "DetectCelebrity", "facebody");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
