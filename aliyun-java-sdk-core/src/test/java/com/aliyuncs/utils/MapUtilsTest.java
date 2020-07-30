@@ -79,10 +79,18 @@ public class MapUtilsTest {
         testMap.put("DescribeAntChainNodesResponse.RequestId", "test");
         testMap.put("DescribeAntChainNodesResponse.Result[0].endpoints[0].ip", "test");
         testMap.put("DescribeAntChainNodesResponse.Result[3].nodeState", "test");
+        testMap.put("DescribeAntChainNodesResponse.List[0].key", "ListKey");
+        testMap.put("DescribeAntChainNodesResponse.List[0].map.key.List[0]", "ListMapKeyList");
         MapUtils mapUtils = new MapUtils();
         List<Map<Object, Object>> list = mapUtils.convertMapToListMap(testMap, "DescribeAntChainNodesResponse.Result");
         Assert.assertEquals("test", list.get(0).get("nodeState"));
         Assert.assertTrue(list.get(0).get("endpoints") instanceof List);
+
+        List<Map<Object, Object>> list2 = mapUtils.convertMapToListMap(testMap, "DescribeAntChainNodesResponse.List");
+        Map<Object, Object> map = (Map<Object, Object>) list2.get(0).get("map");
+        Assert.assertEquals(list2.get(0).get("key"), "ListKey");
+        List<String> list3 = (List<String>) map.get("key");
+        Assert.assertEquals(list3.get(0), "ListMapKeyList");
     }
 
     @Test

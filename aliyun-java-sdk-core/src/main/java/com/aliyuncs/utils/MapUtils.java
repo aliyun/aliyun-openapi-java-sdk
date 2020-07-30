@@ -54,7 +54,7 @@ public class MapUtils {
 
     private List<Map<Object, Object>> setList(List targetList, int index, String key, String value) {
         List list = targetList;
-        if (null != key && key.contains("[") && !key.contains(".")) {
+        if (key.endsWith("]")) {
             if (null == list) {
                 list = new ArrayList();
             }
@@ -62,7 +62,7 @@ public class MapUtils {
                 list.add("");
             }
             list.set(index, value);
-        } else {
+        } else if (key.endsWith(".")) {
             if (null == list) {
                 list = new ArrayList<Map<Object, Object>>();
             }
@@ -79,14 +79,14 @@ public class MapUtils {
         if (null == map) {
             map = new HashMap<Object, Object>();
         }
-        if (key.contains("[")) {
+        if (key.endsWith("]")) {
             String[] keys = key.split("\\.");
             String listKey = key.substring(0, key.indexOf("["));
             int index = Integer.parseInt(key.substring(key.indexOf("[") + 1, key.indexOf("]")));
             List listObj = (List) map.get(listKey);
             listObj = setList(listObj, index, key.replace(keys[0] + ".", ""), value);
             map.put(listKey, listObj);
-        } else if (key.contains(".")) {
+        } else if (key.endsWith(".")) {
             String[] keys = key.split("\\.");
             String mapKey = keys[0];
             // exclude *.Length
