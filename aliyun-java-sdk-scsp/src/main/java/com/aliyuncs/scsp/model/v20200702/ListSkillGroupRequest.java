@@ -21,19 +21,17 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class SuspendHotlineServiceRequest extends RpcAcsRequest<SuspendHotlineServiceResponse> {
+public class ListSkillGroupRequest extends RpcAcsRequest<ListSkillGroupResponse> {
 	   
 
 	private String clientToken;
 
 	private String instanceId;
 
-	private String accountName;
-
-	private Integer type;
-	public SuspendHotlineServiceRequest() {
-		super("scsp", "2020-07-02", "SuspendHotlineService", "scsp");
-		setMethod(MethodType.POST);
+	private Integer channelType;
+	public ListSkillGroupRequest() {
+		super("scsp", "2020-07-02", "ListSkillGroup", "scsp");
+		setMethod(MethodType.GET);
 	}
 
 	public String getClientToken() {
@@ -43,7 +41,7 @@ public class SuspendHotlineServiceRequest extends RpcAcsRequest<SuspendHotlineSe
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
 		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -54,35 +52,24 @@ public class SuspendHotlineServiceRequest extends RpcAcsRequest<SuspendHotlineSe
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
-	public String getAccountName() {
-		return this.accountName;
+	public Integer getChannelType() {
+		return this.channelType;
 	}
 
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putBodyParameter("AccountName", accountName);
-		}
-	}
-
-	public Integer getType() {
-		return this.type;
-	}
-
-	public void setType(Integer type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type.toString());
+	public void setChannelType(Integer channelType) {
+		this.channelType = channelType;
+		if(channelType != null){
+			putQueryParameter("ChannelType", channelType.toString());
 		}
 	}
 
 	@Override
-	public Class<SuspendHotlineServiceResponse> getResponseClass() {
-		return SuspendHotlineServiceResponse.class;
+	public Class<ListSkillGroupResponse> getResponseClass() {
+		return ListSkillGroupResponse.class;
 	}
 
 }
