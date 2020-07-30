@@ -37,6 +37,9 @@ public class DescribeVerifyResultResponseUnmarshaller {
 		material.setFaceImageUrl(_ctx.stringValue("DescribeVerifyResultResponse.Material.FaceImageUrl"));
 		material.setIdCardName(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardName"));
 		material.setIdCardNumber(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardNumber"));
+		material.setFaceQuality(_ctx.stringValue("DescribeVerifyResultResponse.Material.FaceQuality"));
+		material.setFaceGlobalUrl(_ctx.stringValue("DescribeVerifyResultResponse.Material.FaceGlobalUrl"));
+		material.setFaceMask(_ctx.booleanValue("DescribeVerifyResultResponse.Material.FaceMask"));
 
 		List<String> videoUrls = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVerifyResultResponse.Material.VideoUrls.Length"); i++) {

@@ -93,6 +93,12 @@ public class DescribeVerifyResultResponse extends AcsResponse {
 
 		private String idCardNumber;
 
+		private String faceQuality;
+
+		private String faceGlobalUrl;
+
+		private Boolean faceMask;
+
 		private List<String> videoUrls;
 
 		private IdCardInfo idCardInfo;
@@ -119,6 +125,30 @@ public class DescribeVerifyResultResponse extends AcsResponse {
 
 		public void setIdCardNumber(String idCardNumber) {
 			this.idCardNumber = idCardNumber;
+		}
+
+		public String getFaceQuality() {
+			return this.faceQuality;
+		}
+
+		public void setFaceQuality(String faceQuality) {
+			this.faceQuality = faceQuality;
+		}
+
+		public String getFaceGlobalUrl() {
+			return this.faceGlobalUrl;
+		}
+
+		public void setFaceGlobalUrl(String faceGlobalUrl) {
+			this.faceGlobalUrl = faceGlobalUrl;
+		}
+
+		public Boolean getFaceMask() {
+			return this.faceMask;
+		}
+
+		public void setFaceMask(Boolean faceMask) {
+			this.faceMask = faceMask;
 		}
 
 		public List<String> getVideoUrls() {
