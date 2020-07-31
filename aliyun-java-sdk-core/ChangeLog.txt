@@ -1,4 +1,7 @@
-﻿2020-07-22 Version: 4.5.5
+﻿2020-07-31 Version: 4.5.6
+1, Support for complex type serialization
+
+2020-07-22 Version: 4.5.5
 1, Null and enmpty strings are not validated
 
 2020-07-22 Version: 4.5.4
