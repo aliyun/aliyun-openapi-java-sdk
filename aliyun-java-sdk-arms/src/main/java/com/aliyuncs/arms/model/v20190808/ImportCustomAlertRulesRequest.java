@@ -29,9 +29,7 @@ public class ImportCustomAlertRulesRequest extends RpcAcsRequest<ImportCustomAle
 
 	private String contactGroupIds;
 
-	private String proxyUserId;
-
-	private String templageAlertConfig;
+	private String templateAlertConfig;
 	public ImportCustomAlertRulesRequest() {
 		super("ARMS", "2019-08-08", "ImportCustomAlertRules", "arms");
 		setMethod(MethodType.POST);
@@ -63,25 +61,14 @@ public class ImportCustomAlertRulesRequest extends RpcAcsRequest<ImportCustomAle
 		}
 	}
 
-	public String getProxyUserId() {
-		return this.proxyUserId;
+	public String getTemplateAlertConfig() {
+		return this.templateAlertConfig;
 	}
 
-	public void setProxyUserId(String proxyUserId) {
-		this.proxyUserId = proxyUserId;
-		if(proxyUserId != null){
-			putQueryParameter("ProxyUserId", proxyUserId);
-		}
-	}
-
-	public String getTemplageAlertConfig() {
-		return this.templageAlertConfig;
-	}
-
-	public void setTemplageAlertConfig(String templageAlertConfig) {
-		this.templageAlertConfig = templageAlertConfig;
-		if(templageAlertConfig != null){
-			putQueryParameter("TemplageAlertConfig", templageAlertConfig);
+	public void setTemplateAlertConfig(String templateAlertConfig) {
+		this.templateAlertConfig = templateAlertConfig;
+		if(templateAlertConfig != null){
+			putQueryParameter("TemplateAlertConfig", templateAlertConfig);
 		}
 	}
 

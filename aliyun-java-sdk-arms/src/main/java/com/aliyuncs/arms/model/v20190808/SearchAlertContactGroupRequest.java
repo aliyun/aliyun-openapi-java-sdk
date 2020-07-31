@@ -30,8 +30,6 @@ public class SearchAlertContactGroupRequest extends RpcAcsRequest<SearchAlertCon
 	private Long contactId;
 
 	private String contactGroupName;
-
-	private String proxyUserId;
 	public SearchAlertContactGroupRequest() {
 		super("ARMS", "2019-08-08", "SearchAlertContactGroup", "arms");
 		setMethod(MethodType.POST);
@@ -71,17 +69,6 @@ public class SearchAlertContactGroupRequest extends RpcAcsRequest<SearchAlertCon
 		this.contactGroupName = contactGroupName;
 		if(contactGroupName != null){
 			putQueryParameter("ContactGroupName", contactGroupName);
-		}
-	}
-
-	public String getProxyUserId() {
-		return this.proxyUserId;
-	}
-
-	public void setProxyUserId(String proxyUserId) {
-		this.proxyUserId = proxyUserId;
-		if(proxyUserId != null){
-			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 

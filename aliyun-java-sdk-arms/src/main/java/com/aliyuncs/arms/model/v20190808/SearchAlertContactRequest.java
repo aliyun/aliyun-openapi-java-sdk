@@ -27,8 +27,6 @@ public class SearchAlertContactRequest extends RpcAcsRequest<SearchAlertContactR
 
 	private String currentPage;
 
-	private String proxyUserId;
-
 	private String contactName;
 
 	private String phone;
@@ -53,17 +51,6 @@ public class SearchAlertContactRequest extends RpcAcsRequest<SearchAlertContactR
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage);
-		}
-	}
-
-	public String getProxyUserId() {
-		return this.proxyUserId;
-	}
-
-	public void setProxyUserId(String proxyUserId) {
-		this.proxyUserId = proxyUserId;
-		if(proxyUserId != null){
-			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 

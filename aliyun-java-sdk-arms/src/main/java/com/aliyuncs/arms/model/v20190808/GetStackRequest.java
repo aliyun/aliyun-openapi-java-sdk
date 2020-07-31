@@ -28,6 +28,8 @@ public class GetStackRequest extends RpcAcsRequest<GetStackResponse> {
 	private String traceID;
 
 	private String rpcID;
+
+	private String pid;
 	public GetStackRequest() {
 		super("ARMS", "2019-08-08", "GetStack", "arms");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class GetStackRequest extends RpcAcsRequest<GetStackResponse> {
 		this.rpcID = rpcID;
 		if(rpcID != null){
 			putQueryParameter("RpcID", rpcID);
+		}
+	}
+
+	public String getPid() {
+		return this.pid;
+	}
+
+	public void setPid(String pid) {
+		this.pid = pid;
+		if(pid != null){
+			putQueryParameter("Pid", pid);
 		}
 	}
 

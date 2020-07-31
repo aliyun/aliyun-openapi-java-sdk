@@ -27,8 +27,6 @@ public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRule
 
 	private Boolean isAutoStart;
 
-	private String proxyUserId;
-
 	private String contactGroupIds;
 
 	private String pids;
@@ -53,17 +51,6 @@ public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRule
 		this.isAutoStart = isAutoStart;
 		if(isAutoStart != null){
 			putQueryParameter("IsAutoStart", isAutoStart.toString());
-		}
-	}
-
-	public String getProxyUserId() {
-		return this.proxyUserId;
-	}
-
-	public void setProxyUserId(String proxyUserId) {
-		this.proxyUserId = proxyUserId;
-		if(proxyUserId != null){
-			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 

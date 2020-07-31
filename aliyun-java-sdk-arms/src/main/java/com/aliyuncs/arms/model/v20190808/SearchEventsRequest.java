@@ -37,8 +37,6 @@ public class SearchEventsRequest extends RpcAcsRequest<SearchEventsResponse> {
 
 	private Long startTime;
 
-	private String proxyUserId;
-
 	private Integer alertType;
 
 	private Integer pageSize;
@@ -116,17 +114,6 @@ public class SearchEventsRequest extends RpcAcsRequest<SearchEventsResponse> {
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
-	public String getProxyUserId() {
-		return this.proxyUserId;
-	}
-
-	public void setProxyUserId(String proxyUserId) {
-		this.proxyUserId = proxyUserId;
-		if(proxyUserId != null){
-			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 

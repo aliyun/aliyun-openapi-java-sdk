@@ -27,8 +27,6 @@ public class UpdateAlertRuleRequest extends RpcAcsRequest<UpdateAlertRuleRespons
 
 	private Boolean isAutoStart;
 
-	private String proxyUserId;
-
 	private String contactGroupIds;
 
 	private Long alertId;
@@ -51,17 +49,6 @@ public class UpdateAlertRuleRequest extends RpcAcsRequest<UpdateAlertRuleRespons
 		this.isAutoStart = isAutoStart;
 		if(isAutoStart != null){
 			putQueryParameter("IsAutoStart", isAutoStart.toString());
-		}
-	}
-
-	public String getProxyUserId() {
-		return this.proxyUserId;
-	}
-
-	public void setProxyUserId(String proxyUserId) {
-		this.proxyUserId = proxyUserId;
-		if(proxyUserId != null){
-			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 

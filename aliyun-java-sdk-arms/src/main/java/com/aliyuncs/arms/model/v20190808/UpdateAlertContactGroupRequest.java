@@ -29,8 +29,6 @@ public class UpdateAlertContactGroupRequest extends RpcAcsRequest<UpdateAlertCon
 
 	private String contactGroupName;
 
-	private String proxyUserId;
-
 	private String contactIds;
 	public UpdateAlertContactGroupRequest() {
 		super("ARMS", "2019-08-08", "UpdateAlertContactGroup", "arms");
@@ -60,17 +58,6 @@ public class UpdateAlertContactGroupRequest extends RpcAcsRequest<UpdateAlertCon
 		this.contactGroupName = contactGroupName;
 		if(contactGroupName != null){
 			putQueryParameter("ContactGroupName", contactGroupName);
-		}
-	}
-
-	public String getProxyUserId() {
-		return this.proxyUserId;
-	}
-
-	public void setProxyUserId(String proxyUserId) {
-		this.proxyUserId = proxyUserId;
-		if(proxyUserId != null){
-			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 

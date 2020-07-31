@@ -27,6 +27,8 @@ public class DeleteTraceAppRequest extends RpcAcsRequest<DeleteTraceAppResponse>
 
 	private String appId;
 
+	private String pid;
+
 	private String type;
 	public DeleteTraceAppRequest() {
 		super("ARMS", "2019-08-08", "DeleteTraceApp", "arms");
@@ -45,6 +47,17 @@ public class DeleteTraceAppRequest extends RpcAcsRequest<DeleteTraceAppResponse>
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getPid() {
+		return this.pid;
+	}
+
+	public void setPid(String pid) {
+		this.pid = pid;
+		if(pid != null){
+			putQueryParameter("Pid", pid);
 		}
 	}
 

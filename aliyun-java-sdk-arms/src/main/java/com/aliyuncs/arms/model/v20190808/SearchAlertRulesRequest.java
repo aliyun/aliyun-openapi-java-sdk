@@ -31,8 +31,6 @@ public class SearchAlertRulesRequest extends RpcAcsRequest<SearchAlertRulesRespo
 
 	private String pid;
 
-	private String proxyUserId;
-
 	private String title;
 
 	private String type;
@@ -77,17 +75,6 @@ public class SearchAlertRulesRequest extends RpcAcsRequest<SearchAlertRulesRespo
 		this.pid = pid;
 		if(pid != null){
 			putQueryParameter("Pid", pid);
-		}
-	}
-
-	public String getProxyUserId() {
-		return this.proxyUserId;
-	}
-
-	public void setProxyUserId(String proxyUserId) {
-		this.proxyUserId = proxyUserId;
-		if(proxyUserId != null){
-			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 

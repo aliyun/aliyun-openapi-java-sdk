@@ -61,7 +61,7 @@ public class GetStackResponse extends AcsResponse {
 
 		private String line;
 
-		private List<ExtInfoItem> extInfo;
+		private ExtInfo extInfo;
 
 		public Long getStartTime() {
 			return this.startTime;
@@ -119,15 +119,15 @@ public class GetStackResponse extends AcsResponse {
 			this.line = line;
 		}
 
-		public List<ExtInfoItem> getExtInfo() {
+		public ExtInfo getExtInfo() {
 			return this.extInfo;
 		}
 
-		public void setExtInfo(List<ExtInfoItem> extInfo) {
+		public void setExtInfo(ExtInfo extInfo) {
 			this.extInfo = extInfo;
 		}
 
-		public static class ExtInfoItem {
+		public static class ExtInfo {
 
 			private String type;
 

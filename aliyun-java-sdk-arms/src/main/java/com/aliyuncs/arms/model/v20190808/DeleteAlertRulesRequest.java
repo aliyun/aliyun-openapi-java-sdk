@@ -26,8 +26,6 @@ public class DeleteAlertRulesRequest extends RpcAcsRequest<DeleteAlertRulesRespo
 	   
 
 	private String alertIds;
-
-	private String proxyUserId;
 	public DeleteAlertRulesRequest() {
 		super("ARMS", "2019-08-08", "DeleteAlertRules", "arms");
 		setMethod(MethodType.POST);
@@ -45,17 +43,6 @@ public class DeleteAlertRulesRequest extends RpcAcsRequest<DeleteAlertRulesRespo
 		this.alertIds = alertIds;
 		if(alertIds != null){
 			putQueryParameter("AlertIds", alertIds);
-		}
-	}
-
-	public String getProxyUserId() {
-		return this.proxyUserId;
-	}
-
-	public void setProxyUserId(String proxyUserId) {
-		this.proxyUserId = proxyUserId;
-		if(proxyUserId != null){
-			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 

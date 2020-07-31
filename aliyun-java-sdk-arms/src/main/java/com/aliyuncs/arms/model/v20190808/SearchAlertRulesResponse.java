@@ -117,7 +117,13 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 			private String userId;
 
+			private String title;
+
+			private String contactGroupIds;
+
 			private List<String> alertWays;
+
+			private List<String> alertWay;
 
 			private AlarmContext alarmContext;
 
@@ -239,12 +245,36 @@ public class SearchAlertRulesResponse extends AcsResponse {
 				this.userId = userId;
 			}
 
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
+			}
+
+			public String getContactGroupIds() {
+				return this.contactGroupIds;
+			}
+
+			public void setContactGroupIds(String contactGroupIds) {
+				this.contactGroupIds = contactGroupIds;
+			}
+
 			public List<String> getAlertWays() {
 				return this.alertWays;
 			}
 
 			public void setAlertWays(List<String> alertWays) {
 				this.alertWays = alertWays;
+			}
+
+			public List<String> getAlertWay() {
+				return this.alertWay;
+			}
+
+			public void setAlertWay(List<String> alertWay) {
+				this.alertWay = alertWay;
 			}
 
 			public AlarmContext getAlarmContext() {
@@ -285,6 +315,10 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 				private String alarmContentSubTitle;
 
+				private String content;
+
+				private String subTitle;
+
 				public String getAlarmContentTemplate() {
 					return this.alarmContentTemplate;
 				}
@@ -299,6 +333,22 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 				public void setAlarmContentSubTitle(String alarmContentSubTitle) {
 					this.alarmContentSubTitle = alarmContentSubTitle;
+				}
+
+				public String getContent() {
+					return this.content;
+				}
+
+				public void setContent(String content) {
+					this.content = content;
+				}
+
+				public String getSubTitle() {
+					return this.subTitle;
+				}
+
+				public void setSubTitle(String subTitle) {
+					this.subTitle = subTitle;
 				}
 			}
 

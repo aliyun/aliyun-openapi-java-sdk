@@ -29,8 +29,6 @@ public class UpdateAlertContactRequest extends RpcAcsRequest<UpdateAlertContactR
 
 	private String phoneNum;
 
-	private String proxyUserId;
-
 	private String contactName;
 
 	private String dingRobotWebhookUrl;
@@ -66,17 +64,6 @@ public class UpdateAlertContactRequest extends RpcAcsRequest<UpdateAlertContactR
 		this.phoneNum = phoneNum;
 		if(phoneNum != null){
 			putQueryParameter("PhoneNum", phoneNum);
-		}
-	}
-
-	public String getProxyUserId() {
-		return this.proxyUserId;
-	}
-
-	public void setProxyUserId(String proxyUserId) {
-		this.proxyUserId = proxyUserId;
-		if(proxyUserId != null){
-			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 

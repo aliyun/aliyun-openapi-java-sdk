@@ -57,6 +57,8 @@ public class SearchAlertRulesResponseUnmarshaller {
 			alertRuleEntity.setTaskStatus(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].TaskStatus"));
 			alertRuleEntity.setUpdateTime(_ctx.longValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].UpdateTime"));
 			alertRuleEntity.setUserId(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].UserId"));
+			alertRuleEntity.setTitle(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].Title"));
+			alertRuleEntity.setContactGroupIds(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].ContactGroupIds"));
 
 			List<String> alertWays = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertWays.Length"); j++) {
@@ -64,9 +66,17 @@ public class SearchAlertRulesResponseUnmarshaller {
 			}
 			alertRuleEntity.setAlertWays(alertWays);
 
+			List<String> alertWay = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertWay.Length"); j++) {
+				alertWay.add(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertWay["+ j +"]"));
+			}
+			alertRuleEntity.setAlertWay(alertWay);
+
 			AlarmContext alarmContext = new AlarmContext();
 			alarmContext.setAlarmContentTemplate(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlarmContext.AlarmContentTemplate"));
 			alarmContext.setAlarmContentSubTitle(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlarmContext.AlarmContentSubTitle"));
+			alarmContext.setContent(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlarmContext.Content"));
+			alarmContext.setSubTitle(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlarmContext.SubTitle"));
 			alertRuleEntity.setAlarmContext(alarmContext);
 
 			AlertRule alertRule = new AlertRule();

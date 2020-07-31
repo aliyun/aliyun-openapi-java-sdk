@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.arms.model.v20190808.GetStackResponse;
 import com.aliyuncs.arms.model.v20190808.GetStackResponse.StackInfoItem;
-import com.aliyuncs.arms.model.v20190808.GetStackResponse.StackInfoItem.ExtInfoItem;
+import com.aliyuncs.arms.model.v20190808.GetStackResponse.StackInfoItem.ExtInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,14 +40,9 @@ public class GetStackResponseUnmarshaller {
 			stackInfoItem.setException(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].Exception"));
 			stackInfoItem.setLine(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].Line"));
 
-			List<ExtInfoItem> extInfo = new ArrayList<ExtInfoItem>();
-			for (int j = 0; j < _ctx.lengthValue("GetStackResponse.StackInfo["+ i +"].ExtInfo.Length"); j++) {
-				ExtInfoItem extInfoItem = new ExtInfoItem();
-				extInfoItem.setType(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].ExtInfo["+ j +"].Type"));
-				extInfoItem.setInfo(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].ExtInfo["+ j +"].Info"));
-
-				extInfo.add(extInfoItem);
-			}
+			ExtInfo extInfo = new ExtInfo();
+			extInfo.setType(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].ExtInfo.Type"));
+			extInfo.setInfo(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].ExtInfo.Info"));
 			stackInfoItem.setExtInfo(extInfo);
 
 			stackInfo.add(stackInfoItem);
