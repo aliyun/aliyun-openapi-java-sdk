@@ -1,3 +1,9 @@
+2020-07-31 Version: 0.5.0
+- Add ABTest-related APIs.
+- Add UserAnalyzer-related APIs.
+- Add API ListSortExpressions.
+- Fix property tag_label of response of ListInterventionDictionaryEntries.
+
 2020-07-30 Version: 0.5.0
 - Add ABTest-related APIs.
 - Add UserAnalyzer-related APIs.
