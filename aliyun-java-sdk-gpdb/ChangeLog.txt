@@ -1,3 +1,6 @@
+2020-07-31 Version: 1.0.8
+- Support create ecs instance.
+
 2020-05-29 Version: 1.0.7
 - DBInstanceNetInfo add VpcInstanceId.
 
