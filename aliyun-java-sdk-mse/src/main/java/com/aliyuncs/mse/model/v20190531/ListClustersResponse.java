@@ -141,6 +141,8 @@ public class ListClustersResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String appVersion;
+
 		public String getClusterId() {
 			return this.clusterId;
 		}
@@ -235,6 +237,14 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getAppVersion() {
+			return this.appVersion;
+		}
+
+		public void setAppVersion(String appVersion) {
+			this.appVersion = appVersion;
 		}
 	}
 

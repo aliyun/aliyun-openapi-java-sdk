@@ -50,6 +50,7 @@ public class ListClustersResponseUnmarshaller {
 			clusterForListModel.setChargeType(_ctx.stringValue("ListClustersResponse.Data["+ i +"].ChargeType"));
 			clusterForListModel.setEndDate(_ctx.stringValue("ListClustersResponse.Data["+ i +"].EndDate"));
 			clusterForListModel.setInstanceId(_ctx.stringValue("ListClustersResponse.Data["+ i +"].InstanceId"));
+			clusterForListModel.setAppVersion(_ctx.stringValue("ListClustersResponse.Data["+ i +"].AppVersion"));
 
 			data.add(clusterForListModel);
 		}

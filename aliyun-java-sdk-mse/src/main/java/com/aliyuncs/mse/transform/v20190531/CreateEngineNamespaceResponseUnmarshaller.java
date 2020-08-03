@@ -36,6 +36,7 @@ public class CreateEngineNamespaceResponseUnmarshaller {
 		data.setQuota(_ctx.integerValue("CreateEngineNamespaceResponse.Data.Quota"));
 		data.setConfigCount(_ctx.integerValue("CreateEngineNamespaceResponse.Data.ConfigCount"));
 		data.setType(_ctx.integerValue("CreateEngineNamespaceResponse.Data.Type"));
+		data.setServiceCount(_ctx.integerValue("CreateEngineNamespaceResponse.Data.ServiceCount"));
 		createEngineNamespaceResponse.setData(data);
 	 
 	 	return createEngineNamespaceResponse;

@@ -22,22 +22,20 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineNamespaceResponse> {
+public class GetNacosHistoryConfigRequest extends RpcAcsRequest<GetNacosHistoryConfigResponse> {
 	   
 
-	private String clusterId;
+	private String nid;
 
 	private String instanceId;
 
-	private Integer serviceCount;
+	private String dataId;
 
-	private String name;
+	private String namespaceId;
 
-	private String id;
-
-	private String desc;
-	public UpdateEngineNamespaceRequest() {
-		super("mse", "2019-05-31", "UpdateEngineNamespace", "mse");
+	private String group;
+	public GetNacosHistoryConfigRequest() {
+		super("mse", "2019-05-31", "GetNacosHistoryConfig", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,14 +43,14 @@ public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineName
 		} catch (Exception e) {}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getNid() {
+		return this.nid;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setNid(String nid) {
+		this.nid = nid;
+		if(nid != null){
+			putQueryParameter("Nid", nid);
 		}
 	}
 
@@ -67,53 +65,42 @@ public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineName
 		}
 	}
 
-	public Integer getServiceCount() {
-		return this.serviceCount;
+	public String getDataId() {
+		return this.dataId;
 	}
 
-	public void setServiceCount(Integer serviceCount) {
-		this.serviceCount = serviceCount;
-		if(serviceCount != null){
-			putQueryParameter("ServiceCount", serviceCount.toString());
+	public void setDataId(String dataId) {
+		this.dataId = dataId;
+		if(dataId != null){
+			putQueryParameter("DataId", dataId);
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getNamespaceId() {
+		return this.namespaceId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
 		}
 	}
 
-	public String getId() {
-		return this.id;
+	public String getGroup() {
+		return this.group;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
-		}
-	}
-
-	public String getDesc() {
-		return this.desc;
-	}
-
-	public void setDesc(String desc) {
-		this.desc = desc;
-		if(desc != null){
-			putQueryParameter("Desc", desc);
+	public void setGroup(String group) {
+		this.group = group;
+		if(group != null){
+			putQueryParameter("Group", group);
 		}
 	}
 
 	@Override
-	public Class<UpdateEngineNamespaceResponse> getResponseClass() {
-		return UpdateEngineNamespaceResponse.class;
+	public Class<GetNacosHistoryConfigResponse> getResponseClass() {
+		return GetNacosHistoryConfigResponse.class;
 	}
 
 }

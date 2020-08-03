@@ -16,14 +16,14 @@ package com.aliyuncs.mse.model.v20190531;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mse.transform.v20190531.ListEngineNamespacesResponseUnmarshaller;
+import com.aliyuncs.mse.transform.v20190531.ListNacosHistoryConfigsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListEngineNamespacesResponse extends AcsResponse {
+public class ListNacosHistoryConfigsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -41,7 +41,7 @@ public class ListEngineNamespacesResponse extends AcsResponse {
 
 	private String httpCode;
 
-	private List<Namespace> data;
+	private List<HistoryItem> historyItems;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -107,90 +107,80 @@ public class ListEngineNamespacesResponse extends AcsResponse {
 		this.httpCode = httpCode;
 	}
 
-	public List<Namespace> getData() {
-		return this.data;
+	public List<HistoryItem> getHistoryItems() {
+		return this.historyItems;
 	}
 
-	public void setData(List<Namespace> data) {
-		this.data = data;
+	public void setHistoryItems(List<HistoryItem> historyItems) {
+		this.historyItems = historyItems;
 	}
 
-	public static class Namespace {
+	public static class HistoryItem {
 
-		private String namespace;
+		private String dataId;
 
-		private String namespaceShowName;
+		private String group;
 
-		private String namespaceDesc;
+		private Long lastModifiedTime;
 
-		private Integer quota;
+		private Long id;
 
-		private Integer configCount;
+		private String opType;
 
-		private Integer type;
+		private String appName;
 
-		private String serviceCount;
-
-		public String getNamespace() {
-			return this.namespace;
+		public String getDataId() {
+			return this.dataId;
 		}
 
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
+		public void setDataId(String dataId) {
+			this.dataId = dataId;
 		}
 
-		public String getNamespaceShowName() {
-			return this.namespaceShowName;
+		public String getGroup() {
+			return this.group;
 		}
 
-		public void setNamespaceShowName(String namespaceShowName) {
-			this.namespaceShowName = namespaceShowName;
+		public void setGroup(String group) {
+			this.group = group;
 		}
 
-		public String getNamespaceDesc() {
-			return this.namespaceDesc;
+		public Long getLastModifiedTime() {
+			return this.lastModifiedTime;
 		}
 
-		public void setNamespaceDesc(String namespaceDesc) {
-			this.namespaceDesc = namespaceDesc;
+		public void setLastModifiedTime(Long lastModifiedTime) {
+			this.lastModifiedTime = lastModifiedTime;
 		}
 
-		public Integer getQuota() {
-			return this.quota;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setQuota(Integer quota) {
-			this.quota = quota;
+		public void setId(Long id) {
+			this.id = id;
 		}
 
-		public Integer getConfigCount() {
-			return this.configCount;
+		public String getOpType() {
+			return this.opType;
 		}
 
-		public void setConfigCount(Integer configCount) {
-			this.configCount = configCount;
+		public void setOpType(String opType) {
+			this.opType = opType;
 		}
 
-		public Integer getType() {
-			return this.type;
+		public String getAppName() {
+			return this.appName;
 		}
 
-		public void setType(Integer type) {
-			this.type = type;
-		}
-
-		public String getServiceCount() {
-			return this.serviceCount;
-		}
-
-		public void setServiceCount(String serviceCount) {
-			this.serviceCount = serviceCount;
+		public void setAppName(String appName) {
+			this.appName = appName;
 		}
 	}
 
 	@Override
-	public ListEngineNamespacesResponse getInstance(UnmarshallerContext context) {
-		return	ListEngineNamespacesResponseUnmarshaller.unmarshall(this, context);
+	public ListNacosHistoryConfigsResponse getInstance(UnmarshallerContext context) {
+		return	ListNacosHistoryConfigsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

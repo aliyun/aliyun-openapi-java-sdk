@@ -22,22 +22,16 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineNamespaceResponse> {
+public class DeleteEngineNamespaceRequest extends RpcAcsRequest<DeleteEngineNamespaceResponse> {
 	   
 
 	private String clusterId;
 
 	private String instanceId;
 
-	private Integer serviceCount;
-
-	private String name;
-
 	private String id;
-
-	private String desc;
-	public UpdateEngineNamespaceRequest() {
-		super("mse", "2019-05-31", "UpdateEngineNamespace", "mse");
+	public DeleteEngineNamespaceRequest() {
+		super("mse", "2019-05-31", "DeleteEngineNamespace", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -67,28 +61,6 @@ public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineName
 		}
 	}
 
-	public Integer getServiceCount() {
-		return this.serviceCount;
-	}
-
-	public void setServiceCount(Integer serviceCount) {
-		this.serviceCount = serviceCount;
-		if(serviceCount != null){
-			putQueryParameter("ServiceCount", serviceCount.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getId() {
 		return this.id;
 	}
@@ -100,20 +72,9 @@ public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineName
 		}
 	}
 
-	public String getDesc() {
-		return this.desc;
-	}
-
-	public void setDesc(String desc) {
-		this.desc = desc;
-		if(desc != null){
-			putQueryParameter("Desc", desc);
-		}
-	}
-
 	@Override
-	public Class<UpdateEngineNamespaceResponse> getResponseClass() {
-		return UpdateEngineNamespaceResponse.class;
+	public Class<DeleteEngineNamespaceResponse> getResponseClass() {
+		return DeleteEngineNamespaceResponse.class;
 	}
 
 }

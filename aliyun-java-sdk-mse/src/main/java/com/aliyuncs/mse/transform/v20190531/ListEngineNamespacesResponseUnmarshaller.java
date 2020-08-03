@@ -44,6 +44,7 @@ public class ListEngineNamespacesResponseUnmarshaller {
 			namespace.setQuota(_ctx.integerValue("ListEngineNamespacesResponse.Data["+ i +"].Quota"));
 			namespace.setConfigCount(_ctx.integerValue("ListEngineNamespacesResponse.Data["+ i +"].ConfigCount"));
 			namespace.setType(_ctx.integerValue("ListEngineNamespacesResponse.Data["+ i +"].Type"));
+			namespace.setServiceCount(_ctx.stringValue("ListEngineNamespacesResponse.Data["+ i +"].ServiceCount"));
 
 			data.add(namespace);
 		}

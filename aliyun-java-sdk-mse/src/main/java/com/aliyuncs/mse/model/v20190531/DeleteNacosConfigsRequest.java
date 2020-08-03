@@ -22,45 +22,21 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListEngineNamespacesRequest extends RpcAcsRequest<ListEngineNamespacesResponse> {
+public class DeleteNacosConfigsRequest extends RpcAcsRequest<DeleteNacosConfigsResponse> {
 	   
-
-	private String clusterId;
-
-	private Integer pageNum;
 
 	private String instanceId;
 
-	private Integer pageSize;
-	public ListEngineNamespacesRequest() {
-		super("mse", "2019-05-31", "ListEngineNamespaces", "mse");
-		setMethod(MethodType.GET);
+	private String namespaceId;
+
+	private String ids;
+	public DeleteNacosConfigsRequest() {
+		super("mse", "2019-05-31", "DeleteNacosConfigs", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
 	}
 
 	public String getInstanceId() {
@@ -74,20 +50,31 @@ public class ListEngineNamespacesRequest extends RpcAcsRequest<ListEngineNamespa
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getNamespaceId() {
+		return this.namespaceId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getIds() {
+		return this.ids;
+	}
+
+	public void setIds(String ids) {
+		this.ids = ids;
+		if(ids != null){
+			putQueryParameter("Ids", ids);
 		}
 	}
 
 	@Override
-	public Class<ListEngineNamespacesResponse> getResponseClass() {
-		return ListEngineNamespacesResponse.class;
+	public Class<DeleteNacosConfigsResponse> getResponseClass() {
+		return DeleteNacosConfigsResponse.class;
 	}
 
 }

@@ -22,44 +22,31 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListEngineNamespacesRequest extends RpcAcsRequest<ListEngineNamespacesResponse> {
+public class UpgradeClusterRequest extends RpcAcsRequest<UpgradeClusterResponse> {
 	   
 
-	private String clusterId;
-
-	private Integer pageNum;
+	private String upgradeVersion;
 
 	private String instanceId;
 
-	private Integer pageSize;
-	public ListEngineNamespacesRequest() {
-		super("mse", "2019-05-31", "ListEngineNamespaces", "mse");
-		setMethod(MethodType.GET);
+	private String requestPars;
+	public UpgradeClusterRequest() {
+		super("mse", "2019-05-31", "UpgradeCluster", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getUpgradeVersion() {
+		return this.upgradeVersion;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
+	public void setUpgradeVersion(String upgradeVersion) {
+		this.upgradeVersion = upgradeVersion;
+		if(upgradeVersion != null){
+			putQueryParameter("UpgradeVersion", upgradeVersion);
 		}
 	}
 
@@ -74,20 +61,20 @@ public class ListEngineNamespacesRequest extends RpcAcsRequest<ListEngineNamespa
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getRequestPars() {
+		return this.requestPars;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 
 	@Override
-	public Class<ListEngineNamespacesResponse> getResponseClass() {
-		return ListEngineNamespacesResponse.class;
+	public Class<UpgradeClusterResponse> getResponseClass() {
+		return UpgradeClusterResponse.class;
 	}
 
 }

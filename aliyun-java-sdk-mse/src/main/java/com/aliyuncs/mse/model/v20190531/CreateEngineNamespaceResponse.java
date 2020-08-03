@@ -98,6 +98,8 @@ public class CreateEngineNamespaceResponse extends AcsResponse {
 
 		private Integer type;
 
+		private Integer serviceCount;
+
 		public String getNamespace() {
 			return this.namespace;
 		}
@@ -144,6 +146,14 @@ public class CreateEngineNamespaceResponse extends AcsResponse {
 
 		public void setType(Integer type) {
 			this.type = type;
+		}
+
+		public Integer getServiceCount() {
+			return this.serviceCount;
+		}
+
+		public void setServiceCount(Integer serviceCount) {
+			this.serviceCount = serviceCount;
 		}
 	}
 

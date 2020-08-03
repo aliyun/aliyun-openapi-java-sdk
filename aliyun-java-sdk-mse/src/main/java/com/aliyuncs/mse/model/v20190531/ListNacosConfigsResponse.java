@@ -16,14 +16,14 @@ package com.aliyuncs.mse.model.v20190531;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mse.transform.v20190531.ListEngineNamespacesResponseUnmarshaller;
+import com.aliyuncs.mse.transform.v20190531.ListNacosConfigsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListEngineNamespacesResponse extends AcsResponse {
+public class ListNacosConfigsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -41,7 +41,7 @@ public class ListEngineNamespacesResponse extends AcsResponse {
 
 	private String httpCode;
 
-	private List<Namespace> data;
+	private List<NacosConfigForListModel> configurations;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -107,90 +107,60 @@ public class ListEngineNamespacesResponse extends AcsResponse {
 		this.httpCode = httpCode;
 	}
 
-	public List<Namespace> getData() {
-		return this.data;
+	public List<NacosConfigForListModel> getConfigurations() {
+		return this.configurations;
 	}
 
-	public void setData(List<Namespace> data) {
-		this.data = data;
+	public void setConfigurations(List<NacosConfigForListModel> configurations) {
+		this.configurations = configurations;
 	}
 
-	public static class Namespace {
+	public static class NacosConfigForListModel {
 
-		private String namespace;
+		private String dataId;
 
-		private String namespaceShowName;
+		private String group;
 
-		private String namespaceDesc;
+		private String appName;
 
-		private Integer quota;
+		private String id;
 
-		private Integer configCount;
-
-		private Integer type;
-
-		private String serviceCount;
-
-		public String getNamespace() {
-			return this.namespace;
+		public String getDataId() {
+			return this.dataId;
 		}
 
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
+		public void setDataId(String dataId) {
+			this.dataId = dataId;
 		}
 
-		public String getNamespaceShowName() {
-			return this.namespaceShowName;
+		public String getGroup() {
+			return this.group;
 		}
 
-		public void setNamespaceShowName(String namespaceShowName) {
-			this.namespaceShowName = namespaceShowName;
+		public void setGroup(String group) {
+			this.group = group;
 		}
 
-		public String getNamespaceDesc() {
-			return this.namespaceDesc;
+		public String getAppName() {
+			return this.appName;
 		}
 
-		public void setNamespaceDesc(String namespaceDesc) {
-			this.namespaceDesc = namespaceDesc;
+		public void setAppName(String appName) {
+			this.appName = appName;
 		}
 
-		public Integer getQuota() {
-			return this.quota;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setQuota(Integer quota) {
-			this.quota = quota;
-		}
-
-		public Integer getConfigCount() {
-			return this.configCount;
-		}
-
-		public void setConfigCount(Integer configCount) {
-			this.configCount = configCount;
-		}
-
-		public Integer getType() {
-			return this.type;
-		}
-
-		public void setType(Integer type) {
-			this.type = type;
-		}
-
-		public String getServiceCount() {
-			return this.serviceCount;
-		}
-
-		public void setServiceCount(String serviceCount) {
-			this.serviceCount = serviceCount;
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 
 	@Override
-	public ListEngineNamespacesResponse getInstance(UnmarshallerContext context) {
-		return	ListEngineNamespacesResponseUnmarshaller.unmarshall(this, context);
+	public ListNacosConfigsResponse getInstance(UnmarshallerContext context) {
+		return	ListNacosConfigsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

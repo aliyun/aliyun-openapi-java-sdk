@@ -22,36 +22,23 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateEngineNamespaceRequest extends RpcAcsRequest<CreateEngineNamespaceResponse> {
+public class DeleteNacosConfigRequest extends RpcAcsRequest<DeleteNacosConfigResponse> {
 	   
-
-	private String clusterId;
 
 	private String instanceId;
 
-	private Integer serviceCount;
+	private String dataId;
 
-	private String name;
+	private String namespaceId;
 
-	private String desc;
-	public CreateEngineNamespaceRequest() {
-		super("mse", "2019-05-31", "CreateEngineNamespace", "mse");
+	private String group;
+	public DeleteNacosConfigRequest() {
+		super("mse", "2019-05-31", "DeleteNacosConfig", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
 	}
 
 	public String getInstanceId() {
@@ -65,42 +52,42 @@ public class CreateEngineNamespaceRequest extends RpcAcsRequest<CreateEngineName
 		}
 	}
 
-	public Integer getServiceCount() {
-		return this.serviceCount;
+	public String getDataId() {
+		return this.dataId;
 	}
 
-	public void setServiceCount(Integer serviceCount) {
-		this.serviceCount = serviceCount;
-		if(serviceCount != null){
-			putQueryParameter("ServiceCount", serviceCount.toString());
+	public void setDataId(String dataId) {
+		this.dataId = dataId;
+		if(dataId != null){
+			putQueryParameter("DataId", dataId);
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getNamespaceId() {
+		return this.namespaceId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
 		}
 	}
 
-	public String getDesc() {
-		return this.desc;
+	public String getGroup() {
+		return this.group;
 	}
 
-	public void setDesc(String desc) {
-		this.desc = desc;
-		if(desc != null){
-			putQueryParameter("Desc", desc);
+	public void setGroup(String group) {
+		this.group = group;
+		if(group != null){
+			putQueryParameter("Group", group);
 		}
 	}
 
 	@Override
-	public Class<CreateEngineNamespaceResponse> getResponseClass() {
-		return CreateEngineNamespaceResponse.class;
+	public Class<DeleteNacosConfigResponse> getResponseClass() {
+		return DeleteNacosConfigResponse.class;
 	}
 
 }

@@ -16,14 +16,14 @@ package com.aliyuncs.mse.model.v20190531;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mse.transform.v20190531.ListEngineNamespacesResponseUnmarshaller;
+import com.aliyuncs.mse.transform.v20190531.ListListenersByConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListEngineNamespacesResponse extends AcsResponse {
+public class ListListenersByConfigResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -41,7 +41,7 @@ public class ListEngineNamespacesResponse extends AcsResponse {
 
 	private String httpCode;
 
-	private List<Namespace> data;
+	private List<Listener> listeners;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -107,90 +107,40 @@ public class ListEngineNamespacesResponse extends AcsResponse {
 		this.httpCode = httpCode;
 	}
 
-	public List<Namespace> getData() {
-		return this.data;
+	public List<Listener> getListeners() {
+		return this.listeners;
 	}
 
-	public void setData(List<Namespace> data) {
-		this.data = data;
+	public void setListeners(List<Listener> listeners) {
+		this.listeners = listeners;
 	}
 
-	public static class Namespace {
+	public static class Listener {
 
-		private String namespace;
+		private String ip;
 
-		private String namespaceShowName;
+		private String md5;
 
-		private String namespaceDesc;
-
-		private Integer quota;
-
-		private Integer configCount;
-
-		private Integer type;
-
-		private String serviceCount;
-
-		public String getNamespace() {
-			return this.namespace;
+		public String getIp() {
+			return this.ip;
 		}
 
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
+		public void setIp(String ip) {
+			this.ip = ip;
 		}
 
-		public String getNamespaceShowName() {
-			return this.namespaceShowName;
+		public String getMd5() {
+			return this.md5;
 		}
 
-		public void setNamespaceShowName(String namespaceShowName) {
-			this.namespaceShowName = namespaceShowName;
-		}
-
-		public String getNamespaceDesc() {
-			return this.namespaceDesc;
-		}
-
-		public void setNamespaceDesc(String namespaceDesc) {
-			this.namespaceDesc = namespaceDesc;
-		}
-
-		public Integer getQuota() {
-			return this.quota;
-		}
-
-		public void setQuota(Integer quota) {
-			this.quota = quota;
-		}
-
-		public Integer getConfigCount() {
-			return this.configCount;
-		}
-
-		public void setConfigCount(Integer configCount) {
-			this.configCount = configCount;
-		}
-
-		public Integer getType() {
-			return this.type;
-		}
-
-		public void setType(Integer type) {
-			this.type = type;
-		}
-
-		public String getServiceCount() {
-			return this.serviceCount;
-		}
-
-		public void setServiceCount(String serviceCount) {
-			this.serviceCount = serviceCount;
+		public void setMd5(String md5) {
+			this.md5 = md5;
 		}
 	}
 
 	@Override
-	public ListEngineNamespacesResponse getInstance(UnmarshallerContext context) {
-		return	ListEngineNamespacesResponseUnmarshaller.unmarshall(this, context);
+	public ListListenersByConfigResponse getInstance(UnmarshallerContext context) {
+		return	ListListenersByConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
