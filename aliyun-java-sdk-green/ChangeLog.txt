@@ -1,3 +1,6 @@
+2020-08-03 Version: 3.6.1
+- Fix Some API Response Define.
+
 2020-08-03 Version: 3.6.0
 - Add Voice Synchronous Scan API.
 
