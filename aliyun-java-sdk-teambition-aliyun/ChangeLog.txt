@@ -1,3 +1,6 @@
+2020-08-03 Version: 1.0.7
+- Add action.
+
 2020-07-31 Version: 1.0.6
 - Support user api.
 
