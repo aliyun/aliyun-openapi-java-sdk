@@ -29,6 +29,8 @@ public class InvokeMotorModelRequest extends RpcAcsRequest<InvokeMotorModelRespo
 
 	private String corpId;
 
+	private String picUrl;
+
 	private String picId;
 	public InvokeMotorModelRequest() {
 		super("Vcs", "2020-05-15", "InvokeMotorModel", "vcs");
@@ -58,6 +60,17 @@ public class InvokeMotorModelRequest extends RpcAcsRequest<InvokeMotorModelRespo
 		this.corpId = corpId;
 		if(corpId != null){
 			putBodyParameter("CorpId", corpId);
+		}
+	}
+
+	public String getPicUrl() {
+		return this.picUrl;
+	}
+
+	public void setPicUrl(String picUrl) {
+		this.picUrl = picUrl;
+		if(picUrl != null){
+			putBodyParameter("PicUrl", picUrl);
 		}
 	}
 
