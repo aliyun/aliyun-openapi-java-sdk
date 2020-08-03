@@ -46,6 +46,7 @@ public class GetMonitorResultResponseUnmarshaller {
 			recordsItem.setPicUrl(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].PicUrl"));
 			recordsItem.setShotTime(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].ShotTime"));
 			recordsItem.setMonitorPicUrl(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].MonitorPicUrl"));
+			recordsItem.setTargetPicUrl(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].TargetPicUrl"));
 
 			records.add(recordsItem);
 		}

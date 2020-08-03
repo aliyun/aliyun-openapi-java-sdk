@@ -1,3 +1,6 @@
+2020-08-03 Version: 1.1.0
+- Add source picture url for Monitor.
+
 2020-07-24 Version: 1.1.0
 - Change version number.
 

@@ -107,6 +107,8 @@ public class GetMonitorResultResponse extends AcsResponse {
 
 			private String monitorPicUrl;
 
+			private String targetPicUrl;
+
 			public String getRightBottomY() {
 				return this.rightBottomY;
 			}
@@ -177,6 +179,14 @@ public class GetMonitorResultResponse extends AcsResponse {
 
 			public void setMonitorPicUrl(String monitorPicUrl) {
 				this.monitorPicUrl = monitorPicUrl;
+			}
+
+			public String getTargetPicUrl() {
+				return this.targetPicUrl;
+			}
+
+			public void setTargetPicUrl(String targetPicUrl) {
+				this.targetPicUrl = targetPicUrl;
 			}
 		}
 	}
