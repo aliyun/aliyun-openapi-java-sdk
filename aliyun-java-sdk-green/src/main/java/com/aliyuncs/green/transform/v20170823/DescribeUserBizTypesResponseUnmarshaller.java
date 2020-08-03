@@ -35,6 +35,8 @@ public class DescribeUserBizTypesResponseUnmarshaller {
 			item.setSourceBizType(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeList["+ i +"].SourceBizType"));
 			item.setGray(_ctx.booleanValue("DescribeUserBizTypesResponse.BizTypeList["+ i +"].Gray"));
 			item.setSource(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeList["+ i +"].Source"));
+			item.setCiteTemplate(_ctx.booleanValue("DescribeUserBizTypesResponse.BizTypeList["+ i +"].CiteTemplate"));
+			item.setIndustryInfo(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeList["+ i +"].IndustryInfo"));
 
 			bizTypeList.add(item);
 		}
@@ -47,6 +49,8 @@ public class DescribeUserBizTypesResponseUnmarshaller {
 			item_.setSourceBizType(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].SourceBizType"));
 			item_.setGray(_ctx.booleanValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].Gray"));
 			item_.setSource(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].Source"));
+			item_.setCiteTemplate(_ctx.booleanValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].CiteTemplate"));
+			item_.setIndustryInfo(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].IndustryInfo"));
 
 			bizTypeListImport.add(item_);
 		}

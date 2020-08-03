@@ -65,6 +65,10 @@ public class DescribeUserBizTypesResponse extends AcsResponse {
 
 		private String source;
 
+		private Boolean citeTemplate;
+
+		private String industryInfo;
+
 		public String getBizType() {
 			return this.bizType;
 		}
@@ -95,6 +99,22 @@ public class DescribeUserBizTypesResponse extends AcsResponse {
 
 		public void setSource(String source) {
 			this.source = source;
+		}
+
+		public Boolean getCiteTemplate() {
+			return this.citeTemplate;
+		}
+
+		public void setCiteTemplate(Boolean citeTemplate) {
+			this.citeTemplate = citeTemplate;
+		}
+
+		public String getIndustryInfo() {
+			return this.industryInfo;
+		}
+
+		public void setIndustryInfo(String industryInfo) {
+			this.industryInfo = industryInfo;
 		}
 	}
 

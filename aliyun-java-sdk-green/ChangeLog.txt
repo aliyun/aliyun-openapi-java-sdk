@@ -1,3 +1,6 @@
+2020-08-03 Version: 3.6.0
+- Add Voice Synchronous Scan API.
+
 2020-03-23 Version: 3.5.2
 - Add interface for getting bill data.
 

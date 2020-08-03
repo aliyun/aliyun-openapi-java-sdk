@@ -186,6 +186,10 @@ public class DescribeOssIncrementCheckSettingResponse extends AcsResponse {
 
 		private String terrorism;
 
+		private String ad;
+
+		private String live;
+
 		public Boolean getEnabled() {
 			return this.enabled;
 		}
@@ -208,6 +212,22 @@ public class DescribeOssIncrementCheckSettingResponse extends AcsResponse {
 
 		public void setTerrorism(String terrorism) {
 			this.terrorism = terrorism;
+		}
+
+		public String getAd() {
+			return this.ad;
+		}
+
+		public void setAd(String ad) {
+			this.ad = ad;
+		}
+
+		public String getLive() {
+			return this.live;
+		}
+
+		public void setLive(String live) {
+			this.live = live;
 		}
 	}
 

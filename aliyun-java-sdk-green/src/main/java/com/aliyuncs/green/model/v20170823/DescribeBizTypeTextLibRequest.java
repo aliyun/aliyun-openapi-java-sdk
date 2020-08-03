@@ -22,18 +22,16 @@ import com.aliyuncs.green.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateBizTypeRequest extends RpcAcsRequest<CreateBizTypeResponse> {
+public class DescribeBizTypeTextLibRequest extends RpcAcsRequest<DescribeBizTypeTextLibResponse> {
 	   
 
-	private String bizTypeImport;
+	private String resourceType;
 
-	private Boolean citeTemplate;
-
-	private String industryInfo;
+	private String scene;
 
 	private String bizTypeName;
-	public CreateBizTypeRequest() {
-		super("Green", "2017-08-23", "CreateBizType", "green");
+	public DescribeBizTypeTextLibRequest() {
+		super("Green", "2017-08-23", "DescribeBizTypeTextLib", "green");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +39,25 @@ public class CreateBizTypeRequest extends RpcAcsRequest<CreateBizTypeResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getBizTypeImport() {
-		return this.bizTypeImport;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setBizTypeImport(String bizTypeImport) {
-		this.bizTypeImport = bizTypeImport;
-		if(bizTypeImport != null){
-			putQueryParameter("BizTypeImport", bizTypeImport);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
-	public Boolean getCiteTemplate() {
-		return this.citeTemplate;
+	public String getScene() {
+		return this.scene;
 	}
 
-	public void setCiteTemplate(Boolean citeTemplate) {
-		this.citeTemplate = citeTemplate;
-		if(citeTemplate != null){
-			putQueryParameter("CiteTemplate", citeTemplate.toString());
-		}
-	}
-
-	public String getIndustryInfo() {
-		return this.industryInfo;
-	}
-
-	public void setIndustryInfo(String industryInfo) {
-		this.industryInfo = industryInfo;
-		if(industryInfo != null){
-			putQueryParameter("IndustryInfo", industryInfo);
+	public void setScene(String scene) {
+		this.scene = scene;
+		if(scene != null){
+			putQueryParameter("Scene", scene);
 		}
 	}
 
@@ -86,8 +73,8 @@ public class CreateBizTypeRequest extends RpcAcsRequest<CreateBizTypeResponse> {
 	}
 
 	@Override
-	public Class<CreateBizTypeResponse> getResponseClass() {
-		return CreateBizTypeResponse.class;
+	public Class<DescribeBizTypeTextLibResponse> getResponseClass() {
+		return DescribeBizTypeTextLibResponse.class;
 	}
 
 }

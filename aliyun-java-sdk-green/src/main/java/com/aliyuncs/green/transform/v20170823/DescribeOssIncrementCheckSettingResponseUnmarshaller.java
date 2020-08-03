@@ -57,6 +57,8 @@ public class DescribeOssIncrementCheckSettingResponseUnmarshaller {
 		imageAutoFreeze.setEnabled(_ctx.booleanValue("DescribeOssIncrementCheckSettingResponse.ImageAutoFreeze.Enabled"));
 		imageAutoFreeze.setPorn(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.ImageAutoFreeze.Porn"));
 		imageAutoFreeze.setTerrorism(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.ImageAutoFreeze.Terrorism"));
+		imageAutoFreeze.setAd(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.ImageAutoFreeze.Ad"));
+		imageAutoFreeze.setLive(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.ImageAutoFreeze.Live"));
 		describeOssIncrementCheckSettingResponse.setImageAutoFreeze(imageAutoFreeze);
 
 		List<BucketConfig> bucketConfigList = new ArrayList<BucketConfig>();
