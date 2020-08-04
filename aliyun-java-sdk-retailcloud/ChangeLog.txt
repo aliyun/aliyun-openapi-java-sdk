@@ -1,3 +1,6 @@
+2020-08-04 Version: 2.0.8
+- Supported for deploy updateStrategy.
+
 2020-07-23 Version: 2.0.7
 - Supported AAA for BBB.
 - Fixed bugs for CCC.

@@ -37,6 +37,8 @@ public class DeployAppRequest extends RpcAcsRequest<DeployAppResponse> {
 
 	private Long envId;
 
+	private String updateStrategyType;
+
 	private String pauseType;
 
 	private Boolean armsFlag;
@@ -112,6 +114,17 @@ public class DeployAppRequest extends RpcAcsRequest<DeployAppResponse> {
 		this.envId = envId;
 		if(envId != null){
 			putQueryParameter("EnvId", envId.toString());
+		}
+	}
+
+	public String getUpdateStrategyType() {
+		return this.updateStrategyType;
+	}
+
+	public void setUpdateStrategyType(String updateStrategyType) {
+		this.updateStrategyType = updateStrategyType;
+		if(updateStrategyType != null){
+			putQueryParameter("UpdateStrategyType", updateStrategyType);
 		}
 	}
 
