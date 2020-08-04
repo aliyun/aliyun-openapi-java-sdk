@@ -43,6 +43,12 @@ public class DescribePlanogramShelvesResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private Integer totalCount;
+
 	private List<ShelfInfo> shelfInfos;
 
 	public String getCode() {
@@ -117,6 +123,30 @@ public class DescribePlanogramShelvesResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
 	public List<ShelfInfo> getShelfInfos() {
 		return this.shelfInfos;
 	}
@@ -129,6 +159,14 @@ public class DescribePlanogramShelvesResponse extends AcsResponse {
 
 		private String shelf;
 
+		private Boolean beMatch;
+
+		private String zone;
+
+		private String category;
+
+		private String shelfType;
+
 		private List<LayerInfo> layerInfos;
 
 		public String getShelf() {
@@ -137,6 +175,38 @@ public class DescribePlanogramShelvesResponse extends AcsResponse {
 
 		public void setShelf(String shelf) {
 			this.shelf = shelf;
+		}
+
+		public Boolean getBeMatch() {
+			return this.beMatch;
+		}
+
+		public void setBeMatch(Boolean beMatch) {
+			this.beMatch = beMatch;
+		}
+
+		public String getZone() {
+			return this.zone;
+		}
+
+		public void setZone(String zone) {
+			this.zone = zone;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getShelfType() {
+			return this.shelfType;
+		}
+
+		public void setShelfType(String shelfType) {
+			this.shelfType = shelfType;
 		}
 
 		public List<LayerInfo> getLayerInfos() {

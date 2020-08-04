@@ -25,11 +25,17 @@ import com.aliyuncs.cloudesl.Endpoint;
 public class AddPlanogramShelfRequest extends RpcAcsRequest<AddPlanogramShelfResponse> {
 	   
 
+	private String clientToken;
+
 	private String shelfType;
 
 	private String storeId;
 
 	private String shelf;
+
+	private String zone;
+
+	private String category;
 	public AddPlanogramShelfRequest() {
 		super("cloudesl", "2020-02-01", "AddPlanogramShelf", "cloudesl");
 		setMethod(MethodType.POST);
@@ -37,6 +43,17 @@ public class AddPlanogramShelfRequest extends RpcAcsRequest<AddPlanogramShelfRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getShelfType() {
@@ -69,6 +86,28 @@ public class AddPlanogramShelfRequest extends RpcAcsRequest<AddPlanogramShelfRes
 		this.shelf = shelf;
 		if(shelf != null){
 			putBodyParameter("Shelf", shelf);
+		}
+	}
+
+	public String getZone() {
+		return this.zone;
+	}
+
+	public void setZone(String zone) {
+		this.zone = zone;
+		if(zone != null){
+			putBodyParameter("Zone", zone);
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putBodyParameter("Category", category);
 		}
 	}
 

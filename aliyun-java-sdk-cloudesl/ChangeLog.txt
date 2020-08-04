@@ -1,3 +1,6 @@
+2020-08-04 Version: 2.0.1
+- Add describeClientPackage function.
+
 2020-04-07 Version: 2.0.0
 - Support shelf type for planogram position.
 

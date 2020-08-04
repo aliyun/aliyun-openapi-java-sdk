@@ -25,6 +25,8 @@ import com.aliyuncs.cloudesl.Endpoint;
 public class AddApDeviceRequest extends RpcAcsRequest<AddApDeviceResponse> {
 	   
 
+	private String clientToken;
+
 	private String remark;
 
 	private String apMac;
@@ -37,6 +39,17 @@ public class AddApDeviceRequest extends RpcAcsRequest<AddApDeviceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getRemark() {

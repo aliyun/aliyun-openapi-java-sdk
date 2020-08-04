@@ -91,6 +91,8 @@ public class DescribeItemsResponseUnmarshaller {
 			itemInfo.setItemBarCode(_ctx.stringValue("DescribeItemsResponse.Items["+ i +"].ItemBarCode"));
 			itemInfo.setItemId(_ctx.stringValue("DescribeItemsResponse.Items["+ i +"].ItemId"));
 			itemInfo.setPromotionStart(_ctx.stringValue("DescribeItemsResponse.Items["+ i +"].PromotionStart"));
+			itemInfo.setGmtCreate(_ctx.stringValue("DescribeItemsResponse.Items["+ i +"].GmtCreate"));
+			itemInfo.setGmtModified(_ctx.stringValue("DescribeItemsResponse.Items["+ i +"].GmtModified"));
 
 			items.add(itemInfo);
 		}

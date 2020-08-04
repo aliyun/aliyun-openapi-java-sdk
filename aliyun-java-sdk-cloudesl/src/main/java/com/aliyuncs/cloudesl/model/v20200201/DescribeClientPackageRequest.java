@@ -22,14 +22,12 @@ import com.aliyuncs.cloudesl.Endpoint;
  * @author auto create
  * @version 
  */
-public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
+public class DescribeClientPackageRequest extends RpcAcsRequest<DescribeClientPackageResponse> {
 	   
 
-	private String clientToken;
-
-	private String userId;
-	public AddUserRequest() {
-		super("cloudesl", "2020-02-01", "AddUser", "cloudesl");
+	private String clientType;
+	public DescribeClientPackageRequest() {
+		super("cloudesl", "2020-02-01", "DescribeClientPackage", "cloudesl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getClientType() {
+		return this.clientType;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
+	public void setClientType(String clientType) {
+		this.clientType = clientType;
+		if(clientType != null){
+			putBodyParameter("ClientType", clientType);
 		}
 	}
 
 	@Override
-	public Class<AddUserResponse> getResponseClass() {
-		return AddUserResponse.class;
+	public Class<DescribeClientPackageResponse> getResponseClass() {
+		return DescribeClientPackageResponse.class;
 	}
 
 }

@@ -26,6 +26,10 @@ public class DescribePlanogramShelvesRequest extends RpcAcsRequest<DescribePlano
 	   
 
 	private String storeId;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
 	public DescribePlanogramShelvesRequest() {
 		super("cloudesl", "2020-02-01", "DescribePlanogramShelves", "cloudesl");
 		setMethod(MethodType.POST);
@@ -43,6 +47,28 @@ public class DescribePlanogramShelvesRequest extends RpcAcsRequest<DescribePlano
 		this.storeId = storeId;
 		if(storeId != null){
 			putBodyParameter("StoreId", storeId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putBodyParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 

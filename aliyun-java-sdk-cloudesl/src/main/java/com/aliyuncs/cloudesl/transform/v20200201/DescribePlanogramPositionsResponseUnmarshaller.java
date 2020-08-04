@@ -37,12 +37,14 @@ public class DescribePlanogramPositionsResponseUnmarshaller {
 		describePlanogramPositionsResponse.setShelf(_ctx.stringValue("DescribePlanogramPositionsResponse.Shelf"));
 		describePlanogramPositionsResponse.setStoreId(_ctx.stringValue("DescribePlanogramPositionsResponse.StoreId"));
 		describePlanogramPositionsResponse.setSuccess(_ctx.booleanValue("DescribePlanogramPositionsResponse.Success"));
+		describePlanogramPositionsResponse.setShelfType(_ctx.stringValue("DescribePlanogramPositionsResponse.ShelfType"));
 
 		List<LayerInfo> layerInfos = new ArrayList<LayerInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePlanogramPositionsResponse.LayerInfos.Length"); i++) {
 			LayerInfo layerInfo = new LayerInfo();
 			layerInfo.setLayer(_ctx.integerValue("DescribePlanogramPositionsResponse.LayerInfos["+ i +"].Layer"));
 			layerInfo.setLayerOrigin(_ctx.stringValue("DescribePlanogramPositionsResponse.LayerInfos["+ i +"].LayerOrigin"));
+			layerInfo.setRailCode(_ctx.stringValue("DescribePlanogramPositionsResponse.LayerInfos["+ i +"].RailCode"));
 
 			List<ShelfPositionInfo> shelfPositionInfos = new ArrayList<ShelfPositionInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePlanogramPositionsResponse.LayerInfos["+ i +"].ShelfPositionInfos.Length"); j++) {

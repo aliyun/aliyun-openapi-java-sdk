@@ -45,6 +45,8 @@ public class DescribePlanogramPositionsResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private String shelfType;
+
 	private List<LayerInfo> layerInfos;
 
 	public String getCode() {
@@ -127,6 +129,14 @@ public class DescribePlanogramPositionsResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getShelfType() {
+		return this.shelfType;
+	}
+
+	public void setShelfType(String shelfType) {
+		this.shelfType = shelfType;
+	}
+
 	public List<LayerInfo> getLayerInfos() {
 		return this.layerInfos;
 	}
@@ -140,6 +150,8 @@ public class DescribePlanogramPositionsResponse extends AcsResponse {
 		private Integer layer;
 
 		private String layerOrigin;
+
+		private String railCode;
 
 		private List<ShelfPositionInfo> shelfPositionInfos;
 
@@ -157,6 +169,14 @@ public class DescribePlanogramPositionsResponse extends AcsResponse {
 
 		public void setLayerOrigin(String layerOrigin) {
 			this.layerOrigin = layerOrigin;
+		}
+
+		public String getRailCode() {
+			return this.railCode;
+		}
+
+		public void setRailCode(String railCode) {
+			this.railCode = railCode;
 		}
 
 		public List<ShelfPositionInfo> getShelfPositionInfos() {

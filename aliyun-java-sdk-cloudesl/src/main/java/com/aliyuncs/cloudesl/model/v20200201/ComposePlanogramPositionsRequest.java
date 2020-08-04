@@ -28,15 +28,15 @@ public class ComposePlanogramPositionsRequest extends RpcAcsRequest<ComposePlano
 
 	private String actionType;
 
-	private Boolean beAutoRefresh;
-
 	private String storeId;
 
 	private Integer layer;
 
-	private String shelf;
-
 	private String layerOrigin;
+
+	private Boolean beAutoRefresh;
+
+	private String shelf;
 
 	private List<ShelfPositionInfo> shelfPositionInfos;
 	public ComposePlanogramPositionsRequest() {
@@ -56,17 +56,6 @@ public class ComposePlanogramPositionsRequest extends RpcAcsRequest<ComposePlano
 		this.actionType = actionType;
 		if(actionType != null){
 			putBodyParameter("ActionType", actionType);
-		}
-	}
-
-	public Boolean getBeAutoRefresh() {
-		return this.beAutoRefresh;
-	}
-
-	public void setBeAutoRefresh(Boolean beAutoRefresh) {
-		this.beAutoRefresh = beAutoRefresh;
-		if(beAutoRefresh != null){
-			putBodyParameter("BeAutoRefresh", beAutoRefresh.toString());
 		}
 	}
 
@@ -92,17 +81,6 @@ public class ComposePlanogramPositionsRequest extends RpcAcsRequest<ComposePlano
 		}
 	}
 
-	public String getShelf() {
-		return this.shelf;
-	}
-
-	public void setShelf(String shelf) {
-		this.shelf = shelf;
-		if(shelf != null){
-			putBodyParameter("Shelf", shelf);
-		}
-	}
-
 	public String getLayerOrigin() {
 		return this.layerOrigin;
 	}
@@ -111,6 +89,28 @@ public class ComposePlanogramPositionsRequest extends RpcAcsRequest<ComposePlano
 		this.layerOrigin = layerOrigin;
 		if(layerOrigin != null){
 			putBodyParameter("LayerOrigin", layerOrigin);
+		}
+	}
+
+	public Boolean getBeAutoRefresh() {
+		return this.beAutoRefresh;
+	}
+
+	public void setBeAutoRefresh(Boolean beAutoRefresh) {
+		this.beAutoRefresh = beAutoRefresh;
+		if(beAutoRefresh != null){
+			putBodyParameter("BeAutoRefresh", beAutoRefresh.toString());
+		}
+	}
+
+	public String getShelf() {
+		return this.shelf;
+	}
+
+	public void setShelf(String shelf) {
+		this.shelf = shelf;
+		if(shelf != null){
+			putBodyParameter("Shelf", shelf);
 		}
 	}
 

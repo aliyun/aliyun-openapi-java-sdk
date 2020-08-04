@@ -30,6 +30,8 @@ public class DescribePlanogramEslDevicesRequest extends RpcAcsRequest<DescribePl
 	private Integer layer;
 
 	private String shelf;
+
+	private String eslBarCode;
 	public DescribePlanogramEslDevicesRequest() {
 		super("cloudesl", "2020-02-01", "DescribePlanogramEslDevices", "cloudesl");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class DescribePlanogramEslDevicesRequest extends RpcAcsRequest<DescribePl
 		this.shelf = shelf;
 		if(shelf != null){
 			putBodyParameter("Shelf", shelf);
+		}
+	}
+
+	public String getEslBarCode() {
+		return this.eslBarCode;
+	}
+
+	public void setEslBarCode(String eslBarCode) {
+		this.eslBarCode = eslBarCode;
+		if(eslBarCode != null){
+			putBodyParameter("EslBarCode", eslBarCode);
 		}
 	}
 

@@ -247,6 +247,10 @@ public class DescribeItemsResponse extends AcsResponse {
 
 		private String promotionStart;
 
+		private String gmtCreate;
+
+		private String gmtModified;
+
 		public String getCategoryName() {
 			return this.categoryName;
 		}
@@ -645,6 +649,22 @@ public class DescribeItemsResponse extends AcsResponse {
 
 		public void setPromotionStart(String promotionStart) {
 			this.promotionStart = promotionStart;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 	}
 

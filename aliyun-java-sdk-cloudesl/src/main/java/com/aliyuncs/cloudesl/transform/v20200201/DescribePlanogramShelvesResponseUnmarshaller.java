@@ -36,11 +36,18 @@ public class DescribePlanogramShelvesResponseUnmarshaller {
 		describePlanogramShelvesResponse.setMessage(_ctx.stringValue("DescribePlanogramShelvesResponse.Message"));
 		describePlanogramShelvesResponse.setStoreId(_ctx.stringValue("DescribePlanogramShelvesResponse.StoreId"));
 		describePlanogramShelvesResponse.setSuccess(_ctx.booleanValue("DescribePlanogramShelvesResponse.Success"));
+		describePlanogramShelvesResponse.setPageNumber(_ctx.integerValue("DescribePlanogramShelvesResponse.PageNumber"));
+		describePlanogramShelvesResponse.setPageSize(_ctx.integerValue("DescribePlanogramShelvesResponse.PageSize"));
+		describePlanogramShelvesResponse.setTotalCount(_ctx.integerValue("DescribePlanogramShelvesResponse.TotalCount"));
 
 		List<ShelfInfo> shelfInfos = new ArrayList<ShelfInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePlanogramShelvesResponse.ShelfInfos.Length"); i++) {
 			ShelfInfo shelfInfo = new ShelfInfo();
 			shelfInfo.setShelf(_ctx.stringValue("DescribePlanogramShelvesResponse.ShelfInfos["+ i +"].Shelf"));
+			shelfInfo.setBeMatch(_ctx.booleanValue("DescribePlanogramShelvesResponse.ShelfInfos["+ i +"].BeMatch"));
+			shelfInfo.setZone(_ctx.stringValue("DescribePlanogramShelvesResponse.ShelfInfos["+ i +"].Zone"));
+			shelfInfo.setCategory(_ctx.stringValue("DescribePlanogramShelvesResponse.ShelfInfos["+ i +"].Category"));
+			shelfInfo.setShelfType(_ctx.stringValue("DescribePlanogramShelvesResponse.ShelfInfos["+ i +"].ShelfType"));
 
 			List<LayerInfo> layerInfos = new ArrayList<LayerInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePlanogramShelvesResponse.ShelfInfos["+ i +"].LayerInfos.Length"); j++) {
