@@ -1,3 +1,6 @@
+2020-08-04 Version: 1.0.8
+- Update RecognizeTable.
+
 2020-03-23 Version: 1.0.7
 - SDK version 107.
 

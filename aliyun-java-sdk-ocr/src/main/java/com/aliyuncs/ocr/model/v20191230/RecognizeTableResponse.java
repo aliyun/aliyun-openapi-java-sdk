@@ -69,27 +69,11 @@ public class RecognizeTableResponse extends AcsResponse {
 
 		public static class Table {
 
-			private String head;
-
-			private String tail;
-
 			private List<TableRow> tableRows;
 
-			public String getHead() {
-				return this.head;
-			}
+			private List<String> head;
 
-			public void setHead(String head) {
-				this.head = head;
-			}
-
-			public String getTail() {
-				return this.tail;
-			}
-
-			public void setTail(String tail) {
-				this.tail = tail;
-			}
+			private List<String> tail;
 
 			public List<TableRow> getTableRows() {
 				return this.tableRows;
@@ -97,6 +81,22 @@ public class RecognizeTableResponse extends AcsResponse {
 
 			public void setTableRows(List<TableRow> tableRows) {
 				this.tableRows = tableRows;
+			}
+
+			public List<String> getHead() {
+				return this.head;
+			}
+
+			public void setHead(List<String> head) {
+				this.head = head;
+			}
+
+			public List<String> getTail() {
+				return this.tail;
+			}
+
+			public void setTail(List<String> tail) {
+				this.tail = tail;
 			}
 
 			public static class TableRow {

@@ -37,8 +37,18 @@ public class RecognizeTableResponseUnmarshaller {
 		List<Table> tables = new ArrayList<Table>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeTableResponse.Data.Tables.Length"); i++) {
 			Table table = new Table();
-			table.setHead(_ctx.stringValue("RecognizeTableResponse.Data.Tables["+ i +"].Head"));
-			table.setTail(_ctx.stringValue("RecognizeTableResponse.Data.Tables["+ i +"].Tail"));
+
+			List<String> head = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("RecognizeTableResponse.Data.Tables["+ i +"].Head.Length"); j++) {
+				head.add(_ctx.stringValue("RecognizeTableResponse.Data.Tables["+ i +"].Head["+ j +"]"));
+			}
+			table.setHead(head);
+
+			List<String> tail = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("RecognizeTableResponse.Data.Tables["+ i +"].Tail.Length"); j++) {
+				tail.add(_ctx.stringValue("RecognizeTableResponse.Data.Tables["+ i +"].Tail["+ j +"]"));
+			}
+			table.setTail(tail);
 
 			List<TableRow> tableRows = new ArrayList<TableRow>();
 			for (int j = 0; j < _ctx.lengthValue("RecognizeTableResponse.Data.Tables["+ i +"].TableRows.Length"); j++) {
