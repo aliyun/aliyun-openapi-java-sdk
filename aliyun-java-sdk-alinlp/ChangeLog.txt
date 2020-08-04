@@ -1,3 +1,6 @@
+2020-08-04 Version: 0.0.10
+- Generated 2020-06-29 for `alinlp`.
+
 2020-08-03 Version: 1.0.9
 - Generated 2020-06-29 for `alinlp`.
 
