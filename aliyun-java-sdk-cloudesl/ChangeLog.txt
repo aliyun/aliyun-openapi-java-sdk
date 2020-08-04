@@ -1,3 +1,6 @@
+2020-08-04 Version: 2.0.2
+- Add describeClientPackage function.
+
 2020-08-04 Version: 2.0.1
 - Add describeClientPackage function.
 
