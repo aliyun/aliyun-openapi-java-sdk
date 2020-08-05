@@ -147,6 +147,8 @@ public class ListApplicationsResponse extends AcsResponse {
 
 			private Boolean scaleRuleEnabled;
 
+			private List<TagsItem> tags;
+
 			public Boolean getAppDeletingStatus() {
 				return this.appDeletingStatus;
 			}
@@ -217,6 +219,37 @@ public class ListApplicationsResponse extends AcsResponse {
 
 			public void setScaleRuleEnabled(Boolean scaleRuleEnabled) {
 				this.scaleRuleEnabled = scaleRuleEnabled;
+			}
+
+			public List<TagsItem> getTags() {
+				return this.tags;
+			}
+
+			public void setTags(List<TagsItem> tags) {
+				this.tags = tags;
+			}
+
+			public static class TagsItem {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
 			}
 		}
 	}

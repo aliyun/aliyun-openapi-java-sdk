@@ -32,6 +32,8 @@ public class ListApplicationsRequest extends RoaAcsRequest<ListApplicationsRespo
 	private Integer pageSize;
 
 	private Integer currentPage;
+
+	private String tags;
 	public ListApplicationsRequest() {
 		super("sae", "2019-05-06", "ListApplications", "serverless");
 		setUriPattern("/pop/v1/sam/app/listApplications");
@@ -83,6 +85,17 @@ public class ListApplicationsRequest extends RoaAcsRequest<ListApplicationsRespo
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 

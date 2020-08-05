@@ -45,6 +45,7 @@ public class DescribeNamespaceListResponseUnmarshaller {
 			regionList.setHybridCloudEnable(_ctx.booleanValue("DescribeNamespaceListResponse.Data["+ i +"].HybridCloudEnable"));
 			regionList.setVpcId(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].VpcId"));
 			regionList.setVSwitchId(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].VSwitchId"));
+			regionList.setSecurityGroupId(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].SecurityGroupId"));
 
 			data.add(regionList);
 		}

@@ -19,7 +19,9 @@ import java.util.List;
 
 import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse;
 import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data;
+import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data.ConfigMapMountDescItem;
 import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data.MountDescItem;
+import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -66,6 +68,10 @@ public class DescribeApplicationConfigResponseUnmarshaller {
 		data.setTimezone(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Timezone"));
 		data.setNasId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.NasId"));
 		data.setMountHost(_ctx.stringValue("DescribeApplicationConfigResponse.Data.MountHost"));
+		data.setPreStop(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PreStop"));
+		data.setPostStart(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PostStart"));
+		data.setWarStartOptions(_ctx.stringValue("DescribeApplicationConfigResponse.Data.WarStartOptions"));
+		data.setSecurityGroupId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.SecurityGroupId"));
 
 		List<MountDescItem> mountDesc = new ArrayList<MountDescItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationConfigResponse.Data.MountDesc.Length"); i++) {
@@ -76,6 +82,28 @@ public class DescribeApplicationConfigResponseUnmarshaller {
 			mountDesc.add(mountDescItem);
 		}
 		data.setMountDesc(mountDesc);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationConfigResponse.Data.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		data.setTags(tags);
+
+		List<ConfigMapMountDescItem> configMapMountDesc = new ArrayList<ConfigMapMountDescItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc.Length"); i++) {
+			ConfigMapMountDescItem configMapMountDescItem = new ConfigMapMountDescItem();
+			configMapMountDescItem.setConfigMapId(_ctx.longValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc["+ i +"].ConfigMapId"));
+			configMapMountDescItem.setConfigMapName(_ctx.stringValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc["+ i +"].ConfigMapName"));
+			configMapMountDescItem.setKey(_ctx.stringValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc["+ i +"].Key"));
+			configMapMountDescItem.setMountPath(_ctx.stringValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc["+ i +"].MountPath"));
+
+			configMapMountDesc.add(configMapMountDescItem);
+		}
+		data.setConfigMapMountDesc(configMapMountDesc);
 		describeApplicationConfigResponse.setData(data);
 	 
 	 	return describeApplicationConfigResponse;

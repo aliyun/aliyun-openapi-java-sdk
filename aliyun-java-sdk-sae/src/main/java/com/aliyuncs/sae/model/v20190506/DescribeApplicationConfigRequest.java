@@ -25,6 +25,8 @@ import com.aliyuncs.sae.Endpoint;
 public class DescribeApplicationConfigRequest extends RoaAcsRequest<DescribeApplicationConfigResponse> {
 	   
 
+	private String versionId;
+
 	private String appId;
 	public DescribeApplicationConfigRequest() {
 		super("sae", "2019-05-06", "DescribeApplicationConfig", "serverless");
@@ -34,6 +36,17 @@ public class DescribeApplicationConfigRequest extends RoaAcsRequest<DescribeAppl
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getVersionId() {
+		return this.versionId;
+	}
+
+	public void setVersionId(String versionId) {
+		this.versionId = versionId;
+		if(versionId != null){
+			putQueryParameter("VersionId", versionId);
+		}
 	}
 
 	public String getAppId() {

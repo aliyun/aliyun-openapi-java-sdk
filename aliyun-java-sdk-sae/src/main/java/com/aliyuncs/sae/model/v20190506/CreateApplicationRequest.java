@@ -45,6 +45,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String liveness;
 
+	private String securityGroupId;
+
 	private String envs;
 
 	private String packageVersion;
@@ -52,6 +54,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 	private String customHostAlias;
 
 	private Boolean deploy;
+
+	private String warStartOptions;
 
 	private String jarStartOptions;
 
@@ -62,6 +66,10 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 	private String namespaceId;
 
 	private String packageUrl;
+
+	private String configMapMountDesc;
+
+	private String preStop;
 
 	private Integer replicas;
 
@@ -82,6 +90,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 	private String imageUrl;
 
 	private String packageType;
+
+	private String postStart;
 	public CreateApplicationRequest() {
 		super("sae", "2019-05-06", "CreateApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/createApplication");
@@ -202,6 +212,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
 	public String getEnvs() {
 		return this.envs;
 	}
@@ -243,6 +264,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.deploy = deploy;
 		if(deploy != null){
 			putQueryParameter("Deploy", deploy.toString());
+		}
+	}
+
+	public String getWarStartOptions() {
+		return this.warStartOptions;
+	}
+
+	public void setWarStartOptions(String warStartOptions) {
+		this.warStartOptions = warStartOptions;
+		if(warStartOptions != null){
+			putQueryParameter("WarStartOptions", warStartOptions);
 		}
 	}
 
@@ -298,6 +330,28 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.packageUrl = packageUrl;
 		if(packageUrl != null){
 			putQueryParameter("PackageUrl", packageUrl);
+		}
+	}
+
+	public String getConfigMapMountDesc() {
+		return this.configMapMountDesc;
+	}
+
+	public void setConfigMapMountDesc(String configMapMountDesc) {
+		this.configMapMountDesc = configMapMountDesc;
+		if(configMapMountDesc != null){
+			putBodyParameter("ConfigMapMountDesc", configMapMountDesc);
+		}
+	}
+
+	public String getPreStop() {
+		return this.preStop;
+	}
+
+	public void setPreStop(String preStop) {
+		this.preStop = preStop;
+		if(preStop != null){
+			putQueryParameter("PreStop", preStop);
 		}
 	}
 
@@ -408,6 +462,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.packageType = packageType;
 		if(packageType != null){
 			putQueryParameter("PackageType", packageType);
+		}
+	}
+
+	public String getPostStart() {
+		return this.postStart;
+	}
+
+	public void setPostStart(String postStart) {
+		this.postStart = postStart;
+		if(postStart != null){
+			putQueryParameter("PostStart", postStart);
 		}
 	}
 

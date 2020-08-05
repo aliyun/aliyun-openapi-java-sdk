@@ -55,6 +55,8 @@ public class ListChangeOrdersResponseUnmarshaller {
 			changeOrder.setPipelines(_ctx.stringValue("ListChangeOrdersResponse.Data.ChangeOrderList["+ i +"].Pipelines"));
 			changeOrder.setSource(_ctx.stringValue("ListChangeOrdersResponse.Data.ChangeOrderList["+ i +"].Source"));
 			changeOrder.setStatus(_ctx.integerValue("ListChangeOrdersResponse.Data.ChangeOrderList["+ i +"].Status"));
+			changeOrder.setUserId(_ctx.stringValue("ListChangeOrdersResponse.Data.ChangeOrderList["+ i +"].UserId"));
+			changeOrder.setCreateUserId(_ctx.stringValue("ListChangeOrdersResponse.Data.ChangeOrderList["+ i +"].CreateUserId"));
 
 			changeOrderList.add(changeOrder);
 		}

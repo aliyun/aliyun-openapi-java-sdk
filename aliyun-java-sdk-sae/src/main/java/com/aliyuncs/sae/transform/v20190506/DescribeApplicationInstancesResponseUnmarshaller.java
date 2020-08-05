@@ -48,6 +48,8 @@ public class DescribeApplicationInstancesResponseUnmarshaller {
 			instance.setInstanceContainerIp(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].InstanceContainerIp"));
 			instance.setCreateTimeStamp(_ctx.longValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].CreateTimeStamp"));
 			instance.setGroupId1(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].GroupId"));
+			instance.setVSwitchId(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].VSwitchId"));
+			instance.setInstanceContainerRestarts(_ctx.longValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].InstanceContainerRestarts"));
 
 			instances.add(instance);
 		}

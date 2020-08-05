@@ -115,6 +115,8 @@ public class DescribeNamespaceListResponse extends AcsResponse {
 
 		private String vSwitchId;
 
+		private String securityGroupId;
+
 		public String getNamespaceName() {
 			return this.namespaceName;
 		}
@@ -185,6 +187,14 @@ public class DescribeNamespaceListResponse extends AcsResponse {
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
+		}
+
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
 		}
 	}
 

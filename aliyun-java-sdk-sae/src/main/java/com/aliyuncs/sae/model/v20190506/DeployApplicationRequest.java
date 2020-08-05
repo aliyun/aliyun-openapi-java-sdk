@@ -49,9 +49,21 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String packageVersion;
 
-	private String command;
-
 	private String customHostAlias;
+
+	private String warStartOptions;
+
+	private String jarStartOptions;
+
+	private String edasContainerVersion;
+
+	private String packageUrl;
+
+	private String configMapMountDesc;
+
+	private String preStop;
+
+	private String command;
 
 	private String updateStrategy;
 
@@ -59,17 +71,15 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String jdk;
 
-	private String jarStartOptions;
-
 	private Integer minReadyInstances;
 
-	private String edasContainerVersion;
-
-	private String packageUrl;
+	private String changeOrderDesc;
 
 	private String appId;
 
 	private String imageUrl;
+
+	private String postStart;
 	public DeployApplicationRequest() {
 		super("sae", "2019-05-06", "DeployApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/deployApplication");
@@ -212,17 +222,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getCommand() {
-		return this.command;
-	}
-
-	public void setCommand(String command) {
-		this.command = command;
-		if(command != null){
-			putQueryParameter("Command", command);
-		}
-	}
-
 	public String getCustomHostAlias() {
 		return this.customHostAlias;
 	}
@@ -231,6 +230,83 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.customHostAlias = customHostAlias;
 		if(customHostAlias != null){
 			putQueryParameter("CustomHostAlias", customHostAlias);
+		}
+	}
+
+	public String getWarStartOptions() {
+		return this.warStartOptions;
+	}
+
+	public void setWarStartOptions(String warStartOptions) {
+		this.warStartOptions = warStartOptions;
+		if(warStartOptions != null){
+			putQueryParameter("WarStartOptions", warStartOptions);
+		}
+	}
+
+	public String getJarStartOptions() {
+		return this.jarStartOptions;
+	}
+
+	public void setJarStartOptions(String jarStartOptions) {
+		this.jarStartOptions = jarStartOptions;
+		if(jarStartOptions != null){
+			putQueryParameter("JarStartOptions", jarStartOptions);
+		}
+	}
+
+	public String getEdasContainerVersion() {
+		return this.edasContainerVersion;
+	}
+
+	public void setEdasContainerVersion(String edasContainerVersion) {
+		this.edasContainerVersion = edasContainerVersion;
+		if(edasContainerVersion != null){
+			putQueryParameter("EdasContainerVersion", edasContainerVersion);
+		}
+	}
+
+	public String getPackageUrl() {
+		return this.packageUrl;
+	}
+
+	public void setPackageUrl(String packageUrl) {
+		this.packageUrl = packageUrl;
+		if(packageUrl != null){
+			putQueryParameter("PackageUrl", packageUrl);
+		}
+	}
+
+	public String getConfigMapMountDesc() {
+		return this.configMapMountDesc;
+	}
+
+	public void setConfigMapMountDesc(String configMapMountDesc) {
+		this.configMapMountDesc = configMapMountDesc;
+		if(configMapMountDesc != null){
+			putBodyParameter("ConfigMapMountDesc", configMapMountDesc);
+		}
+	}
+
+	public String getPreStop() {
+		return this.preStop;
+	}
+
+	public void setPreStop(String preStop) {
+		this.preStop = preStop;
+		if(preStop != null){
+			putQueryParameter("PreStop", preStop);
+		}
+	}
+
+	public String getCommand() {
+		return this.command;
+	}
+
+	public void setCommand(String command) {
+		this.command = command;
+		if(command != null){
+			putQueryParameter("Command", command);
 		}
 	}
 
@@ -267,17 +343,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getJarStartOptions() {
-		return this.jarStartOptions;
-	}
-
-	public void setJarStartOptions(String jarStartOptions) {
-		this.jarStartOptions = jarStartOptions;
-		if(jarStartOptions != null){
-			putQueryParameter("JarStartOptions", jarStartOptions);
-		}
-	}
-
 	public Integer getMinReadyInstances() {
 		return this.minReadyInstances;
 	}
@@ -289,25 +354,14 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getEdasContainerVersion() {
-		return this.edasContainerVersion;
+	public String getChangeOrderDesc() {
+		return this.changeOrderDesc;
 	}
 
-	public void setEdasContainerVersion(String edasContainerVersion) {
-		this.edasContainerVersion = edasContainerVersion;
-		if(edasContainerVersion != null){
-			putQueryParameter("EdasContainerVersion", edasContainerVersion);
-		}
-	}
-
-	public String getPackageUrl() {
-		return this.packageUrl;
-	}
-
-	public void setPackageUrl(String packageUrl) {
-		this.packageUrl = packageUrl;
-		if(packageUrl != null){
-			putQueryParameter("PackageUrl", packageUrl);
+	public void setChangeOrderDesc(String changeOrderDesc) {
+		this.changeOrderDesc = changeOrderDesc;
+		if(changeOrderDesc != null){
+			putQueryParameter("ChangeOrderDesc", changeOrderDesc);
 		}
 	}
 
@@ -330,6 +384,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.imageUrl = imageUrl;
 		if(imageUrl != null){
 			putQueryParameter("ImageUrl", imageUrl);
+		}
+	}
+
+	public String getPostStart() {
+		return this.postStart;
+	}
+
+	public void setPostStart(String postStart) {
+		this.postStart = postStart;
+		if(postStart != null){
+			putQueryParameter("PostStart", postStart);
 		}
 	}
 

@@ -151,6 +151,10 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 
 			private String groupId1;
 
+			private String vSwitchId;
+
+			private Long instanceContainerRestarts;
+
 			public String getGroupId() {
 				return this.groupId;
 			}
@@ -197,6 +201,22 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 
 			public void setGroupId1(String groupId1) {
 				this.groupId1 = groupId1;
+			}
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+
+			public Long getInstanceContainerRestarts() {
+				return this.instanceContainerRestarts;
+			}
+
+			public void setInstanceContainerRestarts(Long instanceContainerRestarts) {
+				this.instanceContainerRestarts = instanceContainerRestarts;
 			}
 		}
 	}

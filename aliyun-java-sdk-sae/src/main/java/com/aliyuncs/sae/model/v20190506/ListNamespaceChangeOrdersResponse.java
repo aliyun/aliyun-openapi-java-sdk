@@ -165,6 +165,10 @@ public class ListNamespaceChangeOrdersResponse extends AcsResponse {
 
 			private Integer status;
 
+			private String createUserId;
+
+			private String userId;
+
 			public String getNamespaceId() {
 				return this.namespaceId;
 			}
@@ -267,6 +271,22 @@ public class ListNamespaceChangeOrdersResponse extends AcsResponse {
 
 			public void setStatus(Integer status) {
 				this.status = status;
+			}
+
+			public String getCreateUserId() {
+				return this.createUserId;
+			}
+
+			public void setCreateUserId(String createUserId) {
+				this.createUserId = createUserId;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
 			}
 		}
 	}

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.sae.model.v20190506.ListApplicationsResponse;
 import com.aliyuncs.sae.model.v20190506.ListApplicationsResponse.Data;
 import com.aliyuncs.sae.model.v20190506.ListApplicationsResponse.Data.Application;
+import com.aliyuncs.sae.model.v20190506.ListApplicationsResponse.Data.Application.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +51,16 @@ public class ListApplicationsResponseUnmarshaller {
 			application.setNamespaceId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].NamespaceId"));
 			application.setScaleRuleType(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].ScaleRuleType"));
 			application.setScaleRuleEnabled(_ctx.booleanValue("ListApplicationsResponse.Data.Applications["+ i +"].ScaleRuleEnabled"));
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListApplicationsResponse.Data.Applications["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			application.setTags(tags);
 
 			applications.add(application);
 		}

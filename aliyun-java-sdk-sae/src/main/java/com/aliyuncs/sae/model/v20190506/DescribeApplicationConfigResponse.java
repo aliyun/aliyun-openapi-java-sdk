@@ -159,7 +159,19 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		private String mountHost;
 
+		private String preStop;
+
+		private String postStart;
+
+		private String warStartOptions;
+
+		private String securityGroupId;
+
 		private List<MountDescItem> mountDesc;
+
+		private List<Tag> tags;
+
+		private List<ConfigMapMountDescItem> configMapMountDesc;
 
 		public String getAppId() {
 			return this.appId;
@@ -409,12 +421,60 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 			this.mountHost = mountHost;
 		}
 
+		public String getPreStop() {
+			return this.preStop;
+		}
+
+		public void setPreStop(String preStop) {
+			this.preStop = preStop;
+		}
+
+		public String getPostStart() {
+			return this.postStart;
+		}
+
+		public void setPostStart(String postStart) {
+			this.postStart = postStart;
+		}
+
+		public String getWarStartOptions() {
+			return this.warStartOptions;
+		}
+
+		public void setWarStartOptions(String warStartOptions) {
+			this.warStartOptions = warStartOptions;
+		}
+
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
+		}
+
 		public List<MountDescItem> getMountDesc() {
 			return this.mountDesc;
 		}
 
 		public void setMountDesc(List<MountDescItem> mountDesc) {
 			this.mountDesc = mountDesc;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public List<ConfigMapMountDescItem> getConfigMapMountDesc() {
+			return this.configMapMountDesc;
+		}
+
+		public void setConfigMapMountDesc(List<ConfigMapMountDescItem> configMapMountDesc) {
+			this.configMapMountDesc = configMapMountDesc;
 		}
 
 		public static class MountDescItem {
@@ -429,6 +489,72 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 			public void setNasPath(String nasPath) {
 				this.nasPath = nasPath;
+			}
+
+			public String getMountPath() {
+				return this.mountPath;
+			}
+
+			public void setMountPath(String mountPath) {
+				this.mountPath = mountPath;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
+		public static class ConfigMapMountDescItem {
+
+			private Long configMapId;
+
+			private String configMapName;
+
+			private String key;
+
+			private String mountPath;
+
+			public Long getConfigMapId() {
+				return this.configMapId;
+			}
+
+			public void setConfigMapId(Long configMapId) {
+				this.configMapId = configMapId;
+			}
+
+			public String getConfigMapName() {
+				return this.configMapName;
+			}
+
+			public void setConfigMapName(String configMapName) {
+				this.configMapName = configMapName;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 
 			public String getMountPath() {

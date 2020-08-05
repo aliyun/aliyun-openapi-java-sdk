@@ -165,6 +165,10 @@ public class ListChangeOrdersResponse extends AcsResponse {
 
 			private Integer status;
 
+			private String userId;
+
+			private String createUserId;
+
 			public String getAppId() {
 				return this.appId;
 			}
@@ -267,6 +271,22 @@ public class ListChangeOrdersResponse extends AcsResponse {
 
 			public void setStatus(Integer status) {
 				this.status = status;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public String getCreateUserId() {
+				return this.createUserId;
+			}
+
+			public void setCreateUserId(String createUserId) {
+				this.createUserId = createUserId;
 			}
 		}
 	}
