@@ -33,7 +33,7 @@ public class ListDisksResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private List<DisksItem> disks;
+	private List<Disk> disks;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,15 +67,15 @@ public class ListDisksResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public List<DisksItem> getDisks() {
+	public List<Disk> getDisks() {
 		return this.disks;
 	}
 
-	public void setDisks(List<DisksItem> disks) {
+	public void setDisks(List<Disk> disks) {
 		this.disks = disks;
 	}
 
-	public static class DisksItem {
+	public static class Disk {
 
 		private String diskId;
 
@@ -96,8 +96,6 @@ public class ListDisksResponse extends AcsResponse {
 		private String diskChargeType;
 
 		private String device;
-
-		private String businessStatus;
 
 		public String getDiskId() {
 			return this.diskId;
@@ -177,14 +175,6 @@ public class ListDisksResponse extends AcsResponse {
 
 		public void setDevice(String device) {
 			this.device = device;
-		}
-
-		public String getBusinessStatus() {
-			return this.businessStatus;
-		}
-
-		public void setBusinessStatus(String businessStatus) {
-			this.businessStatus = businessStatus;
 		}
 	}
 

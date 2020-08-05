@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse;
-import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.InstancesItem;
+import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,24 +31,24 @@ public class ListInstancesResponseUnmarshaller {
 		listInstancesResponse.setPageSize(_ctx.integerValue("ListInstancesResponse.PageSize"));
 		listInstancesResponse.setTotalCount(_ctx.integerValue("ListInstancesResponse.TotalCount"));
 
-		List<InstancesItem> instances = new ArrayList<InstancesItem>();
+		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstancesResponse.Instances.Length"); i++) {
-			InstancesItem instancesItem = new InstancesItem();
-			instancesItem.setInstanceId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].InstanceId"));
-			instancesItem.setInstanceName(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].InstanceName"));
-			instancesItem.setCreationTime(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].CreationTime"));
-			instancesItem.setExpiredTime(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ExpiredTime"));
-			instancesItem.setChargeType(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ChargeType"));
-			instancesItem.setPublicIpAddress(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].PublicIpAddress"));
-			instancesItem.setInnerIpAddress(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].InnerIpAddress"));
-			instancesItem.setRegionId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].RegionId"));
-			instancesItem.setStatus(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Status"));
-			instancesItem.setDdosStatus(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].DdosStatus"));
-			instancesItem.setImageId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ImageId"));
-			instancesItem.setPlanId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].PlanId"));
-			instancesItem.setBusinessStatus(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].BusinessStatus"));
+			Instance instance = new Instance();
+			instance.setInstanceId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].InstanceId"));
+			instance.setInstanceName(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].InstanceName"));
+			instance.setCreationTime(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].CreationTime"));
+			instance.setExpiredTime(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ExpiredTime"));
+			instance.setChargeType(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ChargeType"));
+			instance.setPublicIpAddress(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].PublicIpAddress"));
+			instance.setInnerIpAddress(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].InnerIpAddress"));
+			instance.setRegionId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].RegionId"));
+			instance.setStatus(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Status"));
+			instance.setDdosStatus(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].DdosStatus"));
+			instance.setImageId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ImageId"));
+			instance.setPlanId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].PlanId"));
+			instance.setBusinessStatus(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].BusinessStatus"));
 
-			instances.add(instancesItem);
+			instances.add(instance);
 		}
 		listInstancesResponse.setInstances(instances);
 	 

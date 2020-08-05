@@ -27,7 +27,7 @@ public class ListImagesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<ImageInfo> images;
+	private List<Image> images;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,15 +37,15 @@ public class ListImagesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<ImageInfo> getImages() {
+	public List<Image> getImages() {
 		return this.images;
 	}
 
-	public void setImages(List<ImageInfo> images) {
+	public void setImages(List<Image> images) {
 		this.images = images;
 	}
 
-	public static class ImageInfo {
+	public static class Image {
 
 		private String imageId;
 

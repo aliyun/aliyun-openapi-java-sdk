@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.swas_open.model.v20200601.ListSnapshotsResponse;
-import com.aliyuncs.swas_open.model.v20200601.ListSnapshotsResponse.SnapshotsItem;
+import com.aliyuncs.swas_open.model.v20200601.ListSnapshotsResponse.Snapshot;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,20 +31,20 @@ public class ListSnapshotsResponseUnmarshaller {
 		listSnapshotsResponse.setPageSize(_ctx.integerValue("ListSnapshotsResponse.PageSize"));
 		listSnapshotsResponse.setTotalCount(_ctx.integerValue("ListSnapshotsResponse.TotalCount"));
 
-		List<SnapshotsItem> snapshots = new ArrayList<SnapshotsItem>();
+		List<Snapshot> snapshots = new ArrayList<Snapshot>();
 		for (int i = 0; i < _ctx.lengthValue("ListSnapshotsResponse.Snapshots.Length"); i++) {
-			SnapshotsItem snapshotsItem = new SnapshotsItem();
-			snapshotsItem.setRegionId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].RegionId"));
-			snapshotsItem.setSnapshotId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SnapshotId"));
-			snapshotsItem.setSnapshotName(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SnapshotName"));
-			snapshotsItem.setRemark(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].Remark"));
-			snapshotsItem.setCreationTime(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].CreationTime"));
-			snapshotsItem.setProgress(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].Progress"));
-			snapshotsItem.setStatus(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].Status"));
-			snapshotsItem.setSourceDiskId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SourceDiskId"));
-			snapshotsItem.setSourceDiskType(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SourceDiskType"));
+			Snapshot snapshot = new Snapshot();
+			snapshot.setRegionId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].RegionId"));
+			snapshot.setSnapshotId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SnapshotId"));
+			snapshot.setSnapshotName(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SnapshotName"));
+			snapshot.setRemark(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].Remark"));
+			snapshot.setCreationTime(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].CreationTime"));
+			snapshot.setProgress(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].Progress"));
+			snapshot.setStatus(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].Status"));
+			snapshot.setSourceDiskId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SourceDiskId"));
+			snapshot.setSourceDiskType(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SourceDiskType"));
 
-			snapshots.add(snapshotsItem);
+			snapshots.add(snapshot);
 		}
 		listSnapshotsResponse.setSnapshots(snapshots);
 	 

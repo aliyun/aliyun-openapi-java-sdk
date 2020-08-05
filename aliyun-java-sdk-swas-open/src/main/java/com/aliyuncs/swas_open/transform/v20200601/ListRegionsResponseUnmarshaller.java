@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.swas_open.model.v20200601.ListRegionsResponse;
-import com.aliyuncs.swas_open.model.v20200601.ListRegionsResponse.RegionInfo;
+import com.aliyuncs.swas_open.model.v20200601.ListRegionsResponse.Region;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,14 +28,14 @@ public class ListRegionsResponseUnmarshaller {
 		
 		listRegionsResponse.setRequestId(_ctx.stringValue("ListRegionsResponse.RequestId"));
 
-		List<RegionInfo> regions = new ArrayList<RegionInfo>();
+		List<Region> regions = new ArrayList<Region>();
 		for (int i = 0; i < _ctx.lengthValue("ListRegionsResponse.Regions.Length"); i++) {
-			RegionInfo regionInfo = new RegionInfo();
-			regionInfo.setRegionId(_ctx.stringValue("ListRegionsResponse.Regions["+ i +"].RegionId"));
-			regionInfo.setLocalName(_ctx.stringValue("ListRegionsResponse.Regions["+ i +"].LocalName"));
-			regionInfo.setRegionEndpoint(_ctx.stringValue("ListRegionsResponse.Regions["+ i +"].RegionEndpoint"));
+			Region region = new Region();
+			region.setRegionId(_ctx.stringValue("ListRegionsResponse.Regions["+ i +"].RegionId"));
+			region.setLocalName(_ctx.stringValue("ListRegionsResponse.Regions["+ i +"].LocalName"));
+			region.setRegionEndpoint(_ctx.stringValue("ListRegionsResponse.Regions["+ i +"].RegionEndpoint"));
 
-			regions.add(regionInfo);
+			regions.add(region);
 		}
 		listRegionsResponse.setRegions(regions);
 	 

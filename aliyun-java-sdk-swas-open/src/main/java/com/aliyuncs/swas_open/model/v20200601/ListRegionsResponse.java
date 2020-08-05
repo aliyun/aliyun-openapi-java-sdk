@@ -27,7 +27,7 @@ public class ListRegionsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<RegionInfo> regions;
+	private List<Region> regions;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,15 +37,15 @@ public class ListRegionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<RegionInfo> getRegions() {
+	public List<Region> getRegions() {
 		return this.regions;
 	}
 
-	public void setRegions(List<RegionInfo> regions) {
+	public void setRegions(List<Region> regions) {
 		this.regions = regions;
 	}
 
-	public static class RegionInfo {
+	public static class Region {
 
 		private String regionId;
 

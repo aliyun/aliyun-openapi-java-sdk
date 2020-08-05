@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.swas_open.model.v20200601.ListImagesResponse;
-import com.aliyuncs.swas_open.model.v20200601.ListImagesResponse.ImageInfo;
+import com.aliyuncs.swas_open.model.v20200601.ListImagesResponse.Image;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,16 +28,16 @@ public class ListImagesResponseUnmarshaller {
 		
 		listImagesResponse.setRequestId(_ctx.stringValue("ListImagesResponse.RequestId"));
 
-		List<ImageInfo> images = new ArrayList<ImageInfo>();
+		List<Image> images = new ArrayList<Image>();
 		for (int i = 0; i < _ctx.lengthValue("ListImagesResponse.Images.Length"); i++) {
-			ImageInfo imageInfo = new ImageInfo();
-			imageInfo.setImageId(_ctx.stringValue("ListImagesResponse.Images["+ i +"].ImageId"));
-			imageInfo.setImageName(_ctx.stringValue("ListImagesResponse.Images["+ i +"].ImageName"));
-			imageInfo.setDescription(_ctx.stringValue("ListImagesResponse.Images["+ i +"].Description"));
-			imageInfo.setImageType(_ctx.stringValue("ListImagesResponse.Images["+ i +"].ImageType"));
-			imageInfo.setCustom(_ctx.booleanValue("ListImagesResponse.Images["+ i +"].Custom"));
+			Image image = new Image();
+			image.setImageId(_ctx.stringValue("ListImagesResponse.Images["+ i +"].ImageId"));
+			image.setImageName(_ctx.stringValue("ListImagesResponse.Images["+ i +"].ImageName"));
+			image.setDescription(_ctx.stringValue("ListImagesResponse.Images["+ i +"].Description"));
+			image.setImageType(_ctx.stringValue("ListImagesResponse.Images["+ i +"].ImageType"));
+			image.setCustom(_ctx.booleanValue("ListImagesResponse.Images["+ i +"].Custom"));
 
-			images.add(imageInfo);
+			images.add(image);
 		}
 		listImagesResponse.setImages(images);
 	 

@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.swas_open.model.v20200601.ListFirewallRulesResponse;
-import com.aliyuncs.swas_open.model.v20200601.ListFirewallRulesResponse.FirewallRulesItem;
+import com.aliyuncs.swas_open.model.v20200601.ListFirewallRulesResponse.FirewallRule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,14 +31,14 @@ public class ListFirewallRulesResponseUnmarshaller {
 		listFirewallRulesResponse.setPageSize(_ctx.integerValue("ListFirewallRulesResponse.PageSize"));
 		listFirewallRulesResponse.setTotalCount(_ctx.integerValue("ListFirewallRulesResponse.TotalCount"));
 
-		List<FirewallRulesItem> firewallRules = new ArrayList<FirewallRulesItem>();
+		List<FirewallRule> firewallRules = new ArrayList<FirewallRule>();
 		for (int i = 0; i < _ctx.lengthValue("ListFirewallRulesResponse.FirewallRules.Length"); i++) {
-			FirewallRulesItem firewallRulesItem = new FirewallRulesItem();
-			firewallRulesItem.setRuleId(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].RuleId"));
-			firewallRulesItem.setRuleProtocol(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].RuleProtocol"));
-			firewallRulesItem.setPort(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Port"));
+			FirewallRule firewallRule = new FirewallRule();
+			firewallRule.setRuleId(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].RuleId"));
+			firewallRule.setRuleProtocol(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].RuleProtocol"));
+			firewallRule.setPort(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Port"));
 
-			firewallRules.add(firewallRulesItem);
+			firewallRules.add(firewallRule);
 		}
 		listFirewallRulesResponse.setFirewallRules(firewallRules);
 	 

@@ -33,7 +33,7 @@ public class ListSnapshotsResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private List<SnapshotsItem> snapshots;
+	private List<Snapshot> snapshots;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,15 +67,15 @@ public class ListSnapshotsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public List<SnapshotsItem> getSnapshots() {
+	public List<Snapshot> getSnapshots() {
 		return this.snapshots;
 	}
 
-	public void setSnapshots(List<SnapshotsItem> snapshots) {
+	public void setSnapshots(List<Snapshot> snapshots) {
 		this.snapshots = snapshots;
 	}
 
-	public static class SnapshotsItem {
+	public static class Snapshot {
 
 		private String regionId;
 

@@ -33,7 +33,7 @@ public class ListFirewallRulesResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private List<FirewallRulesItem> firewallRules;
+	private List<FirewallRule> firewallRules;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,15 +67,15 @@ public class ListFirewallRulesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public List<FirewallRulesItem> getFirewallRules() {
+	public List<FirewallRule> getFirewallRules() {
 		return this.firewallRules;
 	}
 
-	public void setFirewallRules(List<FirewallRulesItem> firewallRules) {
+	public void setFirewallRules(List<FirewallRule> firewallRules) {
 		this.firewallRules = firewallRules;
 	}
 
-	public static class FirewallRulesItem {
+	public static class FirewallRule {
 
 		private String ruleId;
 
