@@ -1,3 +1,6 @@
+2020-08-05 Version: 2.12.9
+- Add order settle service.
+
 2020-07-09 Version: 2.12.8
 - Add accountType for customer service.
 
