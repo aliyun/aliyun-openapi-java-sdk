@@ -48,6 +48,8 @@ public class CreateOTAStaticUpgradeJobRequest extends RpcAcsRequest<CreateOTASta
 
 	private Long scheduleTime;
 
+	private Integer overwriteMode;
+
 	private Integer maximumPerMinute;
 
 	private List<String> targetDeviceNames;
@@ -180,6 +182,17 @@ public class CreateOTAStaticUpgradeJobRequest extends RpcAcsRequest<CreateOTASta
 		this.scheduleTime = scheduleTime;
 		if(scheduleTime != null){
 			putQueryParameter("ScheduleTime", scheduleTime.toString());
+		}
+	}
+
+	public Integer getOverwriteMode() {
+		return this.overwriteMode;
+	}
+
+	public void setOverwriteMode(Integer overwriteMode) {
+		this.overwriteMode = overwriteMode;
+		if(overwriteMode != null){
+			putQueryParameter("OverwriteMode", overwriteMode.toString());
 		}
 	}
 

@@ -26,6 +26,8 @@ import com.aliyuncs.iot.Endpoint;
 public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADynamicUpgradeJobResponse> {
 	   
 
+	private Integer dynamicMode;
+
 	private Integer retryCount;
 
 	private Integer timeoutInMinutes;
@@ -40,6 +42,8 @@ public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADy
 
 	private List<String> srcVersions;
 
+	private Integer overwriteMode;
+
 	private Integer maximumPerMinute;
 	public CreateOTADynamicUpgradeJobRequest() {
 		super("Iot", "2018-01-20", "CreateOTADynamicUpgradeJob", "iot");
@@ -48,6 +52,17 @@ public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADy
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getDynamicMode() {
+		return this.dynamicMode;
+	}
+
+	public void setDynamicMode(Integer dynamicMode) {
+		this.dynamicMode = dynamicMode;
+		if(dynamicMode != null){
+			putQueryParameter("DynamicMode", dynamicMode.toString());
+		}
 	}
 
 	public Integer getRetryCount() {
@@ -127,6 +142,17 @@ public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADy
 				putQueryParameter("SrcVersion." + (i + 1) , srcVersions.get(i));
 			}
 		}	
+	}
+
+	public Integer getOverwriteMode() {
+		return this.overwriteMode;
+	}
+
+	public void setOverwriteMode(Integer overwriteMode) {
+		this.overwriteMode = overwriteMode;
+		if(overwriteMode != null){
+			putQueryParameter("OverwriteMode", overwriteMode.toString());
+		}
 	}
 
 	public Integer getMaximumPerMinute() {

@@ -119,6 +119,10 @@ public class QueryOTAJobResponse extends AcsResponse {
 
 		private String utcScheduleFinishTime;
 
+		private Integer overwriteMode;
+
+		private Integer dynamicMode;
+
 		private List<String> srcVersions;
 
 		public String getJobId() {
@@ -287,6 +291,22 @@ public class QueryOTAJobResponse extends AcsResponse {
 
 		public void setUtcScheduleFinishTime(String utcScheduleFinishTime) {
 			this.utcScheduleFinishTime = utcScheduleFinishTime;
+		}
+
+		public Integer getOverwriteMode() {
+			return this.overwriteMode;
+		}
+
+		public void setOverwriteMode(Integer overwriteMode) {
+			this.overwriteMode = overwriteMode;
+		}
+
+		public Integer getDynamicMode() {
+			return this.dynamicMode;
+		}
+
+		public void setDynamicMode(Integer dynamicMode) {
+			this.dynamicMode = dynamicMode;
 		}
 
 		public List<String> getSrcVersions() {
