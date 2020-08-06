@@ -1,3 +1,6 @@
+2020-08-06 Version: 2.12.10
+- Add item Promotion query interface.
+
 2020-08-05 Version: 2.12.9
 - Add order settle service.
 
