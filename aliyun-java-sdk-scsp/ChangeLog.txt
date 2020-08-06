@@ -1,3 +1,8 @@
+2020-08-06 Version: 1.0.5
+- Support CreateSkillGroup.
+- Update ListSkillGroup.
+- Update GetLoginUser.
+
 2020-07-31 Version: 1.0.4
 - Generated 2020-07-02 for `scsp`.
 
