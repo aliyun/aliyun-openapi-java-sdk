@@ -72,8 +72,6 @@ public class DescribeSmartVerifyResponse extends AcsResponse {
 
 		private String materialInfo;
 
-		private String deviceToken;
-
 		public String getPassed() {
 			return this.passed;
 		}
@@ -96,14 +94,6 @@ public class DescribeSmartVerifyResponse extends AcsResponse {
 
 		public void setMaterialInfo(String materialInfo) {
 			this.materialInfo = materialInfo;
-		}
-
-		public String getDeviceToken() {
-			return this.deviceToken;
-		}
-
-		public void setDeviceToken(String deviceToken) {
-			this.deviceToken = deviceToken;
 		}
 	}
 

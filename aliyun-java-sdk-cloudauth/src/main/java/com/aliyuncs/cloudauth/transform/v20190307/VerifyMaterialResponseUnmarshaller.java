@@ -34,6 +34,9 @@ public class VerifyMaterialResponseUnmarshaller {
 		material.setFaceImageUrl(_ctx.stringValue("VerifyMaterialResponse.Material.FaceImageUrl"));
 		material.setIdCardName(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardName"));
 		material.setIdCardNumber(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardNumber"));
+		material.setFaceQuality(_ctx.stringValue("VerifyMaterialResponse.Material.FaceQuality"));
+		material.setFaceGlobalUrl(_ctx.stringValue("VerifyMaterialResponse.Material.FaceGlobalUrl"));
+		material.setFaceMask(_ctx.stringValue("VerifyMaterialResponse.Material.FaceMask"));
 
 		IdCardInfo idCardInfo = new IdCardInfo();
 		idCardInfo.setNumber(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.Number"));

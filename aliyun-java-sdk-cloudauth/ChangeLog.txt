@@ -1,3 +1,6 @@
+2020-08-06 Version: 2.0.16
+- Add Smart Cloudauth API.
+
 2020-07-30 Version: 2.0.15
 - Add Smart Cloudauth API.
 
