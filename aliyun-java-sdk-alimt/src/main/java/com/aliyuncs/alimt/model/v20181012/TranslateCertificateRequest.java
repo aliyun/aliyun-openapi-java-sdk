@@ -35,7 +35,7 @@ public class TranslateCertificateRequest extends RpcAcsRequest<TranslateCertific
 
 	private String targetLanguage;
 	public TranslateCertificateRequest() {
-		super("alimt", "2018-10-12", "TranslateCertificate");
+		super("alimt", "2018-10-12", "TranslateCertificate", "alimt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

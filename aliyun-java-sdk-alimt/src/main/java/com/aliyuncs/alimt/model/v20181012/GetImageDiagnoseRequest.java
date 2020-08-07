@@ -29,7 +29,7 @@ public class GetImageDiagnoseRequest extends RpcAcsRequest<GetImageDiagnoseRespo
 
 	private String extra;
 	public GetImageDiagnoseRequest() {
-		super("alimt", "2018-10-12", "GetImageDiagnose");
+		super("alimt", "2018-10-12", "GetImageDiagnose", "alimt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

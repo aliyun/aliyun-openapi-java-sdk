@@ -39,7 +39,7 @@ public class GetTitleGenerateRequest extends RpcAcsRequest<GetTitleGenerateRespo
 
 	private String categoryId;
 	public GetTitleGenerateRequest() {
-		super("alimt", "2018-10-12", "GetTitleGenerate");
+		super("alimt", "2018-10-12", "GetTitleGenerate", "alimt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class GetTitleDiagnoseRequest extends RpcAcsRequest<GetTitleDiagnoseRespo
 
 	private String categoryId;
 	public GetTitleDiagnoseRequest() {
-		super("alimt", "2018-10-12", "GetTitleDiagnose");
+		super("alimt", "2018-10-12", "GetTitleDiagnose", "alimt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

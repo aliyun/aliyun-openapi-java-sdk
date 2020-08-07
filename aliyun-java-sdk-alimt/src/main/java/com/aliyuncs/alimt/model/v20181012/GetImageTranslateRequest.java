@@ -33,7 +33,7 @@ public class GetImageTranslateRequest extends RpcAcsRequest<GetImageTranslateRes
 
 	private String targetLanguage;
 	public GetImageTranslateRequest() {
-		super("alimt", "2018-10-12", "GetImageTranslate");
+		super("alimt", "2018-10-12", "GetImageTranslate", "alimt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

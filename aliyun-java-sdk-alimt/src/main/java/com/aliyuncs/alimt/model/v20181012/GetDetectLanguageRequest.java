@@ -27,7 +27,7 @@ public class GetDetectLanguageRequest extends RpcAcsRequest<GetDetectLanguageRes
 
 	private String sourceText;
 	public GetDetectLanguageRequest() {
-		super("alimt", "2018-10-12", "GetDetectLanguage");
+		super("alimt", "2018-10-12", "GetDetectLanguage", "alimt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
