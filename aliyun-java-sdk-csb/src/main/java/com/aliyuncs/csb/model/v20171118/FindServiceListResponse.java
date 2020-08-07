@@ -153,6 +153,8 @@ public class FindServiceListResponse extends AcsResponse {
 
 			private String routeConfJson;
 
+			private Integer qps;
+
 			public String getAlias() {
 				return this.alias;
 			}
@@ -327,6 +329,14 @@ public class FindServiceListResponse extends AcsResponse {
 
 			public void setRouteConfJson(String routeConfJson) {
 				this.routeConfJson = routeConfJson;
+			}
+
+			public Integer getQps() {
+				return this.qps;
+			}
+
+			public void setQps(Integer qps) {
+				this.qps = qps;
 			}
 		}
 	}

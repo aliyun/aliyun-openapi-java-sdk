@@ -113,6 +113,14 @@ public class FindInstanceNodeListResponse extends AcsResponse {
 
 			private String importedName;
 
+			private Long csbId;
+
+			private Integer deleted;
+
+			private String ownerId;
+
+			private String brokerCmdAddress;
+
 			public Long getId() {
 				return this.id;
 			}
@@ -167,6 +175,38 @@ public class FindInstanceNodeListResponse extends AcsResponse {
 
 			public void setImportedName(String importedName) {
 				this.importedName = importedName;
+			}
+
+			public Long getCsbId() {
+				return this.csbId;
+			}
+
+			public void setCsbId(Long csbId) {
+				this.csbId = csbId;
+			}
+
+			public Integer getDeleted() {
+				return this.deleted;
+			}
+
+			public void setDeleted(Integer deleted) {
+				this.deleted = deleted;
+			}
+
+			public String getOwnerId() {
+				return this.ownerId;
+			}
+
+			public void setOwnerId(String ownerId) {
+				this.ownerId = ownerId;
+			}
+
+			public String getBrokerCmdAddress() {
+				return this.brokerCmdAddress;
+			}
+
+			public void setBrokerCmdAddress(String brokerCmdAddress) {
+				this.brokerCmdAddress = brokerCmdAddress;
 			}
 		}
 	}

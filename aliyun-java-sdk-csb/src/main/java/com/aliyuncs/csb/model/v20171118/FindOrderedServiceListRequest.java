@@ -23,7 +23,7 @@ import com.aliyuncs.csb.Endpoint;
  * @author auto create
  * @version 
  */
-public class FindOrderedListRequest extends RpcAcsRequest<FindOrderedListResponse> {
+public class FindOrderedServiceListRequest extends RpcAcsRequest<FindOrderedServiceListResponse> {
 	   
 
 	private String projectName;
@@ -36,15 +36,17 @@ public class FindOrderedListRequest extends RpcAcsRequest<FindOrderedListRespons
 
 	private String credentialGroupName;
 
-	private String alias;
+	private String accessKey;
+
+	private Integer pageSize;
 
 	private String serviceName;
 
 	private Long serviceId;
 
-	private String status;
-	public FindOrderedListRequest() {
-		super("CSB", "2017-11-18", "FindOrderedList");
+	private Long projectId;
+	public FindOrderedServiceListRequest() {
+		super("CSB", "2017-11-18", "FindOrderedServiceList");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {
@@ -108,14 +110,25 @@ public class FindOrderedListRequest extends RpcAcsRequest<FindOrderedListRespons
 		}
 	}
 
-	public String getAlias() {
-		return this.alias;
+	public String getAccessKey() {
+		return this.accessKey;
 	}
 
-	public void setAlias(String alias) {
-		this.alias = alias;
-		if(alias != null){
-			putQueryParameter("Alias", alias);
+	public void setAccessKey(String accessKey) {
+		this.accessKey = accessKey;
+		if(accessKey != null){
+			putQueryParameter("AccessKey", accessKey);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -141,20 +154,20 @@ public class FindOrderedListRequest extends RpcAcsRequest<FindOrderedListRespons
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
+	public Long getProjectId() {
+		return this.projectId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putQueryParameter("ProjectId", projectId.toString());
 		}
 	}
 
 	@Override
-	public Class<FindOrderedListResponse> getResponseClass() {
-		return FindOrderedListResponse.class;
+	public Class<FindOrderedServiceListResponse> getResponseClass() {
+		return FindOrderedServiceListResponse.class;
 	}
 
 }

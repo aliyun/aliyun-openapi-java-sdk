@@ -155,6 +155,8 @@ public class GetServiceResponse extends AcsResponse {
 
 			private Boolean validProvideType;
 
+			private Integer qps;
+
 			private List<ServiceVersion> serviceVersionsList;
 
 			private List<VisiableGroup> visiableGroupList;
@@ -465,6 +467,14 @@ public class GetServiceResponse extends AcsResponse {
 
 			public void setValidProvideType(Boolean validProvideType) {
 				this.validProvideType = validProvideType;
+			}
+
+			public Integer getQps() {
+				return this.qps;
+			}
+
+			public void setQps(Integer qps) {
+				this.qps = qps;
 			}
 
 			public List<ServiceVersion> getServiceVersionsList() {

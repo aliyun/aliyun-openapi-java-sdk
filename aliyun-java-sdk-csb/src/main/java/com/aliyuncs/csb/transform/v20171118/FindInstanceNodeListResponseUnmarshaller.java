@@ -45,6 +45,10 @@ public class FindInstanceNodeListResponseUnmarshaller {
 			instanceNode.setBrokerAddress(_ctx.stringValue("FindInstanceNodeListResponse.Data.InstanceNodeList["+ i +"].BrokerAddress"));
 			instanceNode.setEdasTenantInfo(_ctx.stringValue("FindInstanceNodeListResponse.Data.InstanceNodeList["+ i +"].EdasTenantInfo"));
 			instanceNode.setImportedName(_ctx.stringValue("FindInstanceNodeListResponse.Data.InstanceNodeList["+ i +"].ImportedName"));
+			instanceNode.setCsbId(_ctx.longValue("FindInstanceNodeListResponse.Data.InstanceNodeList["+ i +"].CsbId"));
+			instanceNode.setDeleted(_ctx.integerValue("FindInstanceNodeListResponse.Data.InstanceNodeList["+ i +"].Deleted"));
+			instanceNode.setOwnerId(_ctx.stringValue("FindInstanceNodeListResponse.Data.InstanceNodeList["+ i +"].OwnerId"));
+			instanceNode.setBrokerCmdAddress(_ctx.stringValue("FindInstanceNodeListResponse.Data.InstanceNodeList["+ i +"].BrokerCmdAddress"));
 
 			instanceNodeList.add(instanceNode);
 		}

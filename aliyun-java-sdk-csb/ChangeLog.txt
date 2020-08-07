@@ -1,3 +1,6 @@
+2020-08-07 Version: 1.2.9
+- Add FindServiceList and GetService qps.
+
 2020-04-21 Version: 1.2.8
 - Add Statistics API.
 

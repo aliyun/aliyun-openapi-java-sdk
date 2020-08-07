@@ -22,16 +22,16 @@ import com.aliyuncs.csb.Endpoint;
  * @author auto create
  * @version 
  */
-public class FindBrokerSLOHisListRequest extends RpcAcsRequest<FindBrokerSLOHisListResponse> {
+public class FindOtherInstanceListRequest extends RpcAcsRequest<FindOtherInstanceListResponse> {
 	   
 
-	private Long csbId;
+	private Integer pageNum;
 
-	private String beginDdHHmm;
+	private String searchTxt;
 
-	private String endDdHHmm;
-	public FindBrokerSLOHisListRequest() {
-		super("CSB", "2017-11-18", "FindBrokerSLOHisList");
+	private Integer pageSize;
+	public FindOtherInstanceListRequest() {
+		super("CSB", "2017-11-18", "FindOtherInstanceList");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class FindBrokerSLOHisListRequest extends RpcAcsRequest<FindBrokerSLOHisL
 		} catch (Exception e) {}
 	}
 
-	public Long getCsbId() {
-		return this.csbId;
+	public Integer getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setCsbId(Long csbId) {
-		this.csbId = csbId;
-		if(csbId != null){
-			putQueryParameter("CsbId", csbId.toString());
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
-	public String getBeginDdHHmm() {
-		return this.beginDdHHmm;
+	public String getSearchTxt() {
+		return this.searchTxt;
 	}
 
-	public void setBeginDdHHmm(String beginDdHHmm) {
-		this.beginDdHHmm = beginDdHHmm;
-		if(beginDdHHmm != null){
-			putQueryParameter("BeginDdHHmm", beginDdHHmm);
+	public void setSearchTxt(String searchTxt) {
+		this.searchTxt = searchTxt;
+		if(searchTxt != null){
+			putQueryParameter("SearchTxt", searchTxt);
 		}
 	}
 
-	public String getEndDdHHmm() {
-		return this.endDdHHmm;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setEndDdHHmm(String endDdHHmm) {
-		this.endDdHHmm = endDdHHmm;
-		if(endDdHHmm != null){
-			putQueryParameter("EndDdHHmm", endDdHHmm);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<FindBrokerSLOHisListResponse> getResponseClass() {
-		return FindBrokerSLOHisListResponse.class;
+	public Class<FindOtherInstanceListResponse> getResponseClass() {
+		return FindOtherInstanceListResponse.class;
 	}
 
 }

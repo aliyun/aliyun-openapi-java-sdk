@@ -74,6 +74,7 @@ public class GetServiceResponseUnmarshaller {
 		service.setUserId(_ctx.stringValue("GetServiceResponse.Data.Service.UserId"));
 		service.setValidConsumeTypes(_ctx.booleanValue("GetServiceResponse.Data.Service.ValidConsumeTypes"));
 		service.setValidProvideType(_ctx.booleanValue("GetServiceResponse.Data.Service.ValidProvideType"));
+		service.setQps(_ctx.integerValue("GetServiceResponse.Data.Service.Qps"));
 
 		List<String> casServTargets = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetServiceResponse.Data.Service.CasServTargets.Length"); i++) {
