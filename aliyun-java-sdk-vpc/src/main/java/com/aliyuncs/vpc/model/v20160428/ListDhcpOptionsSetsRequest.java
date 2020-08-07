@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -22,30 +23,28 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateBgpPeerRequest extends RpcAcsRequest<CreateBgpPeerResponse> {
+public class ListDhcpOptionsSetsRequest extends RpcAcsRequest<ListDhcpOptionsSetsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
+	private String nextToken;
 
-	private String bgpGroupId;
-
-	private String peerIpAddress;
-
-	private Integer bfdMultiHop;
-
-	private String ipVersion;
-
-	private Boolean enableBfd;
+	private List<String> dhcpOptionsSetIds;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String domainName;
+
 	private Long ownerId;
-	public CreateBgpPeerRequest() {
-		super("Vpc", "2016-04-28", "CreateBgpPeer", "vpc");
+
+	private String dhcpOptionsSetName;
+
+	private Integer maxResults;
+	public ListDhcpOptionsSetsRequest() {
+		super("Vpc", "2016-04-28", "ListDhcpOptionsSets", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,70 +63,28 @@ public class CreateBgpPeerRequest extends RpcAcsRequest<CreateBgpPeerResponse> {
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
-	public String getBgpGroupId() {
-		return this.bgpGroupId;
+	public List<String> getDhcpOptionsSetIds() {
+		return this.dhcpOptionsSetIds;
 	}
 
-	public void setBgpGroupId(String bgpGroupId) {
-		this.bgpGroupId = bgpGroupId;
-		if(bgpGroupId != null){
-			putQueryParameter("BgpGroupId", bgpGroupId);
-		}
-	}
-
-	public String getPeerIpAddress() {
-		return this.peerIpAddress;
-	}
-
-	public void setPeerIpAddress(String peerIpAddress) {
-		this.peerIpAddress = peerIpAddress;
-		if(peerIpAddress != null){
-			putQueryParameter("PeerIpAddress", peerIpAddress);
-		}
-	}
-
-	public Integer getBfdMultiHop() {
-		return this.bfdMultiHop;
-	}
-
-	public void setBfdMultiHop(Integer bfdMultiHop) {
-		this.bfdMultiHop = bfdMultiHop;
-		if(bfdMultiHop != null){
-			putQueryParameter("BfdMultiHop", bfdMultiHop.toString());
-		}
-	}
-
-	public String getIpVersion() {
-		return this.ipVersion;
-	}
-
-	public void setIpVersion(String ipVersion) {
-		this.ipVersion = ipVersion;
-		if(ipVersion != null){
-			putQueryParameter("IpVersion", ipVersion);
-		}
-	}
-
-	public Boolean getEnableBfd() {
-		return this.enableBfd;
-	}
-
-	public void setEnableBfd(Boolean enableBfd) {
-		this.enableBfd = enableBfd;
-		if(enableBfd != null){
-			putQueryParameter("EnableBfd", enableBfd.toString());
-		}
+	public void setDhcpOptionsSetIds(List<String> dhcpOptionsSetIds) {
+		this.dhcpOptionsSetIds = dhcpOptionsSetIds;	
+		if (dhcpOptionsSetIds != null) {
+			for (int i = 0; i < dhcpOptionsSetIds.size(); i++) {
+				putQueryParameter("DhcpOptionsSetId." + (i + 1) , dhcpOptionsSetIds.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -152,6 +109,17 @@ public class CreateBgpPeerRequest extends RpcAcsRequest<CreateBgpPeerResponse> {
 		}
 	}
 
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -163,9 +131,31 @@ public class CreateBgpPeerRequest extends RpcAcsRequest<CreateBgpPeerResponse> {
 		}
 	}
 
+	public String getDhcpOptionsSetName() {
+		return this.dhcpOptionsSetName;
+	}
+
+	public void setDhcpOptionsSetName(String dhcpOptionsSetName) {
+		this.dhcpOptionsSetName = dhcpOptionsSetName;
+		if(dhcpOptionsSetName != null){
+			putQueryParameter("DhcpOptionsSetName", dhcpOptionsSetName);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
 	@Override
-	public Class<CreateBgpPeerResponse> getResponseClass() {
-		return CreateBgpPeerResponse.class;
+	public Class<ListDhcpOptionsSetsResponse> getResponseClass() {
+		return ListDhcpOptionsSetsResponse.class;
 	}
 
 }

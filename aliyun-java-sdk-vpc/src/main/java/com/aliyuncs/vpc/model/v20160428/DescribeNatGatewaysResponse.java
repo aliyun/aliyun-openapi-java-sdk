@@ -342,7 +342,7 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		public static class NatGatewayPrivateInfo {
 
-			private Integer eniInstanceId;
+			private String eniInstanceId;
 
 			private String privateIpAddress;
 
@@ -352,11 +352,11 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 			private Integer maxBandwidth;
 
-			public Integer getEniInstanceId() {
+			public String getEniInstanceId() {
 				return this.eniInstanceId;
 			}
 
-			public void setEniInstanceId(Integer eniInstanceId) {
+			public void setEniInstanceId(String eniInstanceId) {
 				this.eniInstanceId = eniInstanceId;
 			}
 

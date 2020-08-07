@@ -51,6 +51,8 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	private String segmentInstanceId;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -215,6 +217,17 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		this.segmentInstanceId = segmentInstanceId;
 		if(segmentInstanceId != null){
 			putQueryParameter("SegmentInstanceId", segmentInstanceId);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

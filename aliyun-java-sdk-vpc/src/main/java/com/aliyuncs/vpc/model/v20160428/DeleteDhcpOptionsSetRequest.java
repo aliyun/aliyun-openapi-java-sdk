@@ -22,30 +22,24 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateBgpPeerRequest extends RpcAcsRequest<CreateBgpPeerResponse> {
+public class DeleteDhcpOptionsSetRequest extends RpcAcsRequest<DeleteDhcpOptionsSetResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private String bgpGroupId;
+	private Boolean dryRun;
 
-	private String peerIpAddress;
-
-	private Integer bfdMultiHop;
-
-	private String ipVersion;
-
-	private Boolean enableBfd;
+	private String dhcpOptionsSetId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public CreateBgpPeerRequest() {
-		super("Vpc", "2016-04-28", "CreateBgpPeer", "vpc");
+	public DeleteDhcpOptionsSetRequest() {
+		super("Vpc", "2016-04-28", "DeleteDhcpOptionsSet", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -75,58 +69,25 @@ public class CreateBgpPeerRequest extends RpcAcsRequest<CreateBgpPeerResponse> {
 		}
 	}
 
-	public String getBgpGroupId() {
-		return this.bgpGroupId;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setBgpGroupId(String bgpGroupId) {
-		this.bgpGroupId = bgpGroupId;
-		if(bgpGroupId != null){
-			putQueryParameter("BgpGroupId", bgpGroupId);
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
-	public String getPeerIpAddress() {
-		return this.peerIpAddress;
+	public String getDhcpOptionsSetId() {
+		return this.dhcpOptionsSetId;
 	}
 
-	public void setPeerIpAddress(String peerIpAddress) {
-		this.peerIpAddress = peerIpAddress;
-		if(peerIpAddress != null){
-			putQueryParameter("PeerIpAddress", peerIpAddress);
-		}
-	}
-
-	public Integer getBfdMultiHop() {
-		return this.bfdMultiHop;
-	}
-
-	public void setBfdMultiHop(Integer bfdMultiHop) {
-		this.bfdMultiHop = bfdMultiHop;
-		if(bfdMultiHop != null){
-			putQueryParameter("BfdMultiHop", bfdMultiHop.toString());
-		}
-	}
-
-	public String getIpVersion() {
-		return this.ipVersion;
-	}
-
-	public void setIpVersion(String ipVersion) {
-		this.ipVersion = ipVersion;
-		if(ipVersion != null){
-			putQueryParameter("IpVersion", ipVersion);
-		}
-	}
-
-	public Boolean getEnableBfd() {
-		return this.enableBfd;
-	}
-
-	public void setEnableBfd(Boolean enableBfd) {
-		this.enableBfd = enableBfd;
-		if(enableBfd != null){
-			putQueryParameter("EnableBfd", enableBfd.toString());
+	public void setDhcpOptionsSetId(String dhcpOptionsSetId) {
+		this.dhcpOptionsSetId = dhcpOptionsSetId;
+		if(dhcpOptionsSetId != null){
+			putQueryParameter("DhcpOptionsSetId", dhcpOptionsSetId);
 		}
 	}
 
@@ -164,8 +125,8 @@ public class CreateBgpPeerRequest extends RpcAcsRequest<CreateBgpPeerResponse> {
 	}
 
 	@Override
-	public Class<CreateBgpPeerResponse> getResponseClass() {
-		return CreateBgpPeerResponse.class;
+	public Class<DeleteDhcpOptionsSetResponse> getResponseClass() {
+		return DeleteDhcpOptionsSetResponse.class;
 	}
 
 }

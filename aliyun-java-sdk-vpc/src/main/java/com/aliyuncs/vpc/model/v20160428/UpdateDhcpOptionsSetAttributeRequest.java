@@ -22,30 +22,32 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateBgpPeerRequest extends RpcAcsRequest<CreateBgpPeerResponse> {
+public class UpdateDhcpOptionsSetAttributeRequest extends RpcAcsRequest<UpdateDhcpOptionsSetAttributeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private String bgpGroupId;
+	private String domainNameServers;
 
-	private String peerIpAddress;
+	private String dhcpOptionsSetDescription;
 
-	private Integer bfdMultiHop;
+	private Boolean dryRun;
 
-	private String ipVersion;
-
-	private Boolean enableBfd;
+	private String dhcpOptionsSetId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String domainName;
+
 	private Long ownerId;
-	public CreateBgpPeerRequest() {
-		super("Vpc", "2016-04-28", "CreateBgpPeer", "vpc");
+
+	private String dhcpOptionsSetName;
+	public UpdateDhcpOptionsSetAttributeRequest() {
+		super("Vpc", "2016-04-28", "UpdateDhcpOptionsSetAttribute", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -75,58 +77,47 @@ public class CreateBgpPeerRequest extends RpcAcsRequest<CreateBgpPeerResponse> {
 		}
 	}
 
-	public String getBgpGroupId() {
-		return this.bgpGroupId;
+	public String getDomainNameServers() {
+		return this.domainNameServers;
 	}
 
-	public void setBgpGroupId(String bgpGroupId) {
-		this.bgpGroupId = bgpGroupId;
-		if(bgpGroupId != null){
-			putQueryParameter("BgpGroupId", bgpGroupId);
+	public void setDomainNameServers(String domainNameServers) {
+		this.domainNameServers = domainNameServers;
+		if(domainNameServers != null){
+			putQueryParameter("DomainNameServers", domainNameServers);
 		}
 	}
 
-	public String getPeerIpAddress() {
-		return this.peerIpAddress;
+	public String getDhcpOptionsSetDescription() {
+		return this.dhcpOptionsSetDescription;
 	}
 
-	public void setPeerIpAddress(String peerIpAddress) {
-		this.peerIpAddress = peerIpAddress;
-		if(peerIpAddress != null){
-			putQueryParameter("PeerIpAddress", peerIpAddress);
+	public void setDhcpOptionsSetDescription(String dhcpOptionsSetDescription) {
+		this.dhcpOptionsSetDescription = dhcpOptionsSetDescription;
+		if(dhcpOptionsSetDescription != null){
+			putQueryParameter("DhcpOptionsSetDescription", dhcpOptionsSetDescription);
 		}
 	}
 
-	public Integer getBfdMultiHop() {
-		return this.bfdMultiHop;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setBfdMultiHop(Integer bfdMultiHop) {
-		this.bfdMultiHop = bfdMultiHop;
-		if(bfdMultiHop != null){
-			putQueryParameter("BfdMultiHop", bfdMultiHop.toString());
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
-	public String getIpVersion() {
-		return this.ipVersion;
+	public String getDhcpOptionsSetId() {
+		return this.dhcpOptionsSetId;
 	}
 
-	public void setIpVersion(String ipVersion) {
-		this.ipVersion = ipVersion;
-		if(ipVersion != null){
-			putQueryParameter("IpVersion", ipVersion);
-		}
-	}
-
-	public Boolean getEnableBfd() {
-		return this.enableBfd;
-	}
-
-	public void setEnableBfd(Boolean enableBfd) {
-		this.enableBfd = enableBfd;
-		if(enableBfd != null){
-			putQueryParameter("EnableBfd", enableBfd.toString());
+	public void setDhcpOptionsSetId(String dhcpOptionsSetId) {
+		this.dhcpOptionsSetId = dhcpOptionsSetId;
+		if(dhcpOptionsSetId != null){
+			putQueryParameter("DhcpOptionsSetId", dhcpOptionsSetId);
 		}
 	}
 
@@ -152,6 +143,17 @@ public class CreateBgpPeerRequest extends RpcAcsRequest<CreateBgpPeerResponse> {
 		}
 	}
 
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -163,9 +165,20 @@ public class CreateBgpPeerRequest extends RpcAcsRequest<CreateBgpPeerResponse> {
 		}
 	}
 
+	public String getDhcpOptionsSetName() {
+		return this.dhcpOptionsSetName;
+	}
+
+	public void setDhcpOptionsSetName(String dhcpOptionsSetName) {
+		this.dhcpOptionsSetName = dhcpOptionsSetName;
+		if(dhcpOptionsSetName != null){
+			putQueryParameter("DhcpOptionsSetName", dhcpOptionsSetName);
+		}
+	}
+
 	@Override
-	public Class<CreateBgpPeerResponse> getResponseClass() {
-		return CreateBgpPeerResponse.class;
+	public Class<UpdateDhcpOptionsSetAttributeResponse> getResponseClass() {
+		return UpdateDhcpOptionsSetAttributeResponse.class;
 	}
 
 }

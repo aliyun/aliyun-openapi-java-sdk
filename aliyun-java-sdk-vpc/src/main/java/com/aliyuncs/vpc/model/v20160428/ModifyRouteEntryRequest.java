@@ -25,6 +25,8 @@ import com.aliyuncs.vpc.Endpoint;
 public class ModifyRouteEntryRequest extends RpcAcsRequest<ModifyRouteEntryResponse> {
 	   
 
+	private Long resourceOwnerId;
+
 	private String routeEntryName;
 
 	private String description;
@@ -43,6 +45,17 @@ public class ModifyRouteEntryRequest extends RpcAcsRequest<ModifyRouteEntryRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getRouteEntryName() {

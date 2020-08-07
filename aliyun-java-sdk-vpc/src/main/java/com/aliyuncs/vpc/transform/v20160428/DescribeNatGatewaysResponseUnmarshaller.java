@@ -72,7 +72,7 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 			natGateway.setBandwidthPackageIds(bandwidthPackageIds);
 
 			NatGatewayPrivateInfo natGatewayPrivateInfo = new NatGatewayPrivateInfo();
-			natGatewayPrivateInfo.setEniInstanceId(_ctx.integerValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.EniInstanceId"));
+			natGatewayPrivateInfo.setEniInstanceId(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.EniInstanceId"));
 			natGatewayPrivateInfo.setPrivateIpAddress(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.PrivateIpAddress"));
 			natGatewayPrivateInfo.setVswitchId(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.VswitchId"));
 			natGatewayPrivateInfo.setIzNo(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.IzNo"));

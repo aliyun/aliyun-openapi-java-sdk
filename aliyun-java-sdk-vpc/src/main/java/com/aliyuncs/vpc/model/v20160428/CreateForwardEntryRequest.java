@@ -47,6 +47,8 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 
 	private String internalPort;
 
+	private Boolean portBreak;
+
 	private String externalPort;
 	public CreateForwardEntryRequest() {
 		super("Vpc", "2016-04-28", "CreateForwardEntry", "vpc");
@@ -175,6 +177,17 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 		this.internalPort = internalPort;
 		if(internalPort != null){
 			putQueryParameter("InternalPort", internalPort);
+		}
+	}
+
+	public Boolean getPortBreak() {
+		return this.portBreak;
+	}
+
+	public void setPortBreak(Boolean portBreak) {
+		this.portBreak = portBreak;
+		if(portBreak != null){
+			putQueryParameter("PortBreak", portBreak.toString());
 		}
 	}
 

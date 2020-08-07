@@ -113,6 +113,8 @@ public class DescribeBgpPeersResponse extends AcsResponse {
 
 		private String ipVersion;
 
+		private Integer bfdMultiHop;
+
 		public String getName() {
 			return this.name;
 		}
@@ -255,6 +257,14 @@ public class DescribeBgpPeersResponse extends AcsResponse {
 
 		public void setIpVersion(String ipVersion) {
 			this.ipVersion = ipVersion;
+		}
+
+		public Integer getBfdMultiHop() {
+			return this.bfdMultiHop;
+		}
+
+		public void setBfdMultiHop(Integer bfdMultiHop) {
+			this.bfdMultiHop = bfdMultiHop;
 		}
 	}
 

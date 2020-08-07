@@ -41,6 +41,8 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 
 	private Boolean dryRun;
 
+	private String dhcpOptionsSetId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -142,6 +144,17 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 		this.dryRun = dryRun;
 		if(dryRun != null){
 			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public String getDhcpOptionsSetId() {
+		return this.dhcpOptionsSetId;
+	}
+
+	public void setDhcpOptionsSetId(String dhcpOptionsSetId) {
+		this.dhcpOptionsSetId = dhcpOptionsSetId;
+		if(dhcpOptionsSetId != null){
+			putQueryParameter("DhcpOptionsSetId", dhcpOptionsSetId);
 		}
 	}
 

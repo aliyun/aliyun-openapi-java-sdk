@@ -109,6 +109,10 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		private Boolean advancedResource;
 
+		private String dhcpOptionsSetId;
+
+		private String dhcpOptionsSetStatus;
+
 		private List<Tag> tags;
 
 		private List<String> vSwitchIds;
@@ -247,6 +251,22 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		public void setAdvancedResource(Boolean advancedResource) {
 			this.advancedResource = advancedResource;
+		}
+
+		public String getDhcpOptionsSetId() {
+			return this.dhcpOptionsSetId;
+		}
+
+		public void setDhcpOptionsSetId(String dhcpOptionsSetId) {
+			this.dhcpOptionsSetId = dhcpOptionsSetId;
+		}
+
+		public String getDhcpOptionsSetStatus() {
+			return this.dhcpOptionsSetStatus;
+		}
+
+		public void setDhcpOptionsSetStatus(String dhcpOptionsSetStatus) {
+			this.dhcpOptionsSetStatus = dhcpOptionsSetStatus;
 		}
 
 		public List<Tag> getTags() {

@@ -22,43 +22,58 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGatewaysResponse> {
+public class AllocateEipAddressProRequest extends RpcAcsRequest<AllocateEipAddressProResponse> {
 	   
+
+	private String ipAddress;
 
 	private Long resourceOwnerId;
 
-	private String spec;
+	private String clientToken;
 
-	private Integer pageNumber;
+	private String iSP;
 
 	private String resourceGroupId;
 
-	private String natType;
-
-	private Integer pageSize;
-
-	private String natGatewayId;
+	private String netmode;
 
 	private String instanceChargeType;
 
-	private Boolean dryRun;
+	private Integer period;
+
+	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
+
+	private String bandwidth;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String vpcId;
+	private String instanceId;
 
-	private String name;
-	public DescribeNatGatewaysRequest() {
-		super("Vpc", "2016-04-28", "DescribeNatGateways", "vpc");
+	private String internetChargeType;
+
+	private String pricingCycle;
+	public AllocateEipAddressProRequest() {
+		super("Vpc", "2016-04-28", "AllocateEipAddressPro", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIpAddress() {
+		return this.ipAddress;
+	}
+
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
+		if(ipAddress != null){
+			putQueryParameter("IpAddress", ipAddress);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -72,25 +87,25 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		}
 	}
 
-	public String getSpec() {
-		return this.spec;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setSpec(String spec) {
-		this.spec = spec;
-		if(spec != null){
-			putQueryParameter("Spec", spec);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getISP() {
+		return this.iSP;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setISP(String iSP) {
+		this.iSP = iSP;
+		if(iSP != null){
+			putQueryParameter("ISP", iSP);
 		}
 	}
 
@@ -105,36 +120,14 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		}
 	}
 
-	public String getNatType() {
-		return this.natType;
+	public String getNetmode() {
+		return this.netmode;
 	}
 
-	public void setNatType(String natType) {
-		this.natType = natType;
-		if(natType != null){
-			putQueryParameter("NatType", natType);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getNatGatewayId() {
-		return this.natGatewayId;
-	}
-
-	public void setNatGatewayId(String natGatewayId) {
-		this.natGatewayId = natGatewayId;
-		if(natGatewayId != null){
-			putQueryParameter("NatGatewayId", natGatewayId);
+	public void setNetmode(String netmode) {
+		this.netmode = netmode;
+		if(netmode != null){
+			putQueryParameter("Netmode", netmode);
 		}
 	}
 
@@ -149,14 +142,25 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		}
 	}
 
-	public Boolean getDryRun() {
-		return this.dryRun;
+	public Integer getPeriod() {
+		return this.period;
 	}
 
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 
@@ -168,6 +172,17 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(String bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth);
 		}
 	}
 
@@ -193,31 +208,42 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getInternetChargeType() {
+		return this.internetChargeType;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public String getPricingCycle() {
+		return this.pricingCycle;
+	}
+
+	public void setPricingCycle(String pricingCycle) {
+		this.pricingCycle = pricingCycle;
+		if(pricingCycle != null){
+			putQueryParameter("PricingCycle", pricingCycle);
 		}
 	}
 
 	@Override
-	public Class<DescribeNatGatewaysResponse> getResponseClass() {
-		return DescribeNatGatewaysResponse.class;
+	public Class<AllocateEipAddressProResponse> getResponseClass() {
+		return AllocateEipAddressProResponse.class;
 	}
 
 }

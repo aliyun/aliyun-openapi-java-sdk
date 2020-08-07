@@ -139,6 +139,8 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String segmentInstanceId;
 
+		private String netmode;
+
 		private List<LockReason> operationLocks;
 
 		private List<Tag> tags;
@@ -391,6 +393,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setSegmentInstanceId(String segmentInstanceId) {
 			this.segmentInstanceId = segmentInstanceId;
+		}
+
+		public String getNetmode() {
+			return this.netmode;
+		}
+
+		public void setNetmode(String netmode) {
+			this.netmode = netmode;
 		}
 
 		public List<LockReason> getOperationLocks() {

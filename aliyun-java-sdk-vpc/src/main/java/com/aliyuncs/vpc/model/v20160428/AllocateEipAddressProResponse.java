@@ -1,0 +1,81 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.vpc.model.v20160428;
+
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.vpc.transform.v20160428.AllocateEipAddressProResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class AllocateEipAddressProResponse extends AcsResponse {
+
+	private String requestId;
+
+	private String allocationId;
+
+	private String eipAddress;
+
+	private Long orderId;
+
+	private String resourceGroupId;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getAllocationId() {
+		return this.allocationId;
+	}
+
+	public void setAllocationId(String allocationId) {
+		this.allocationId = allocationId;
+	}
+
+	public String getEipAddress() {
+		return this.eipAddress;
+	}
+
+	public void setEipAddress(String eipAddress) {
+		this.eipAddress = eipAddress;
+	}
+
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	@Override
+	public AllocateEipAddressProResponse getInstance(UnmarshallerContext context) {
+		return	AllocateEipAddressProResponseUnmarshaller.unmarshall(this, context);
+	}
+}

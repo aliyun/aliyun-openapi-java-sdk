@@ -55,6 +55,10 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 
 	private Long ownerId;
 
+	private String dhcpOptionsSetId;
+
+	private String dhcpOptionsSetStatus;
+
 	private List<AssociatedCen> associatedCens;
 
 	private List<CloudResourceSetType> cloudResources;
@@ -183,6 +187,22 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
+	}
+
+	public String getDhcpOptionsSetId() {
+		return this.dhcpOptionsSetId;
+	}
+
+	public void setDhcpOptionsSetId(String dhcpOptionsSetId) {
+		this.dhcpOptionsSetId = dhcpOptionsSetId;
+	}
+
+	public String getDhcpOptionsSetStatus() {
+		return this.dhcpOptionsSetStatus;
+	}
+
+	public void setDhcpOptionsSetStatus(String dhcpOptionsSetStatus) {
+		this.dhcpOptionsSetStatus = dhcpOptionsSetStatus;
 	}
 
 	public List<AssociatedCen> getAssociatedCens() {
