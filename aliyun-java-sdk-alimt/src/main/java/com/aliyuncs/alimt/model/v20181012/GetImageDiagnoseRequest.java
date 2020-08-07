@@ -22,33 +22,46 @@ import com.aliyuncs.alimt.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetDocTranslateTaskRequest extends RpcAcsRequest<GetDocTranslateTaskResponse> {
+public class GetImageDiagnoseRequest extends RpcAcsRequest<GetImageDiagnoseResponse> {
 	   
 
-	private String taskId;
-	public GetDocTranslateTaskRequest() {
-		super("alimt", "2018-10-12", "GetDocTranslateTask");
-		setMethod(MethodType.GET);
+	private String url;
+
+	private String extra;
+	public GetImageDiagnoseRequest() {
+		super("alimt", "2018-10-12", "GetImageDiagnose");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getUrl() {
+		return this.url;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
+	public void setUrl(String url) {
+		this.url = url;
+		if(url != null){
+			putBodyParameter("Url", url);
+		}
+	}
+
+	public String getExtra() {
+		return this.extra;
+	}
+
+	public void setExtra(String extra) {
+		this.extra = extra;
+		if(extra != null){
+			putBodyParameter("Extra", extra);
 		}
 	}
 
 	@Override
-	public Class<GetDocTranslateTaskResponse> getResponseClass() {
-		return GetDocTranslateTaskResponse.class;
+	public Class<GetImageDiagnoseResponse> getResponseClass() {
+		return GetImageDiagnoseResponse.class;
 	}
 
 }

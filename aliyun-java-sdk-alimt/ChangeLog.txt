@@ -1,3 +1,6 @@
+2020-08-07 Version: 3.0.20
+- GetTitleDiagnose GetTitleGenerate GetImageTranslate supported.
+
 2020-04-29 Version: 1.1.1
 - Support Document Translation.
 - Support Lanuage Detection.

@@ -22,20 +22,18 @@ import com.aliyuncs.alimt.Endpoint;
  * @author auto create
  * @version 
  */
-public class TranslateRequest extends RpcAcsRequest<TranslateResponse> {
+public class GetImageTranslateRequest extends RpcAcsRequest<GetImageTranslateResponse> {
 	   
 
 	private String sourceLanguage;
 
-	private String sourceText;
+	private String url;
 
-	private String formatType;
-
-	private String scene;
+	private String extra;
 
 	private String targetLanguage;
-	public TranslateRequest() {
-		super("alimt", "2018-10-12", "Translate");
+	public GetImageTranslateRequest() {
+		super("alimt", "2018-10-12", "GetImageTranslate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,36 +52,25 @@ public class TranslateRequest extends RpcAcsRequest<TranslateResponse> {
 		}
 	}
 
-	public String getSourceText() {
-		return this.sourceText;
+	public String getUrl() {
+		return this.url;
 	}
 
-	public void setSourceText(String sourceText) {
-		this.sourceText = sourceText;
-		if(sourceText != null){
-			putBodyParameter("SourceText", sourceText);
+	public void setUrl(String url) {
+		this.url = url;
+		if(url != null){
+			putBodyParameter("Url", url);
 		}
 	}
 
-	public String getFormatType() {
-		return this.formatType;
+	public String getExtra() {
+		return this.extra;
 	}
 
-	public void setFormatType(String formatType) {
-		this.formatType = formatType;
-		if(formatType != null){
-			putBodyParameter("FormatType", formatType);
-		}
-	}
-
-	public String getScene() {
-		return this.scene;
-	}
-
-	public void setScene(String scene) {
-		this.scene = scene;
-		if(scene != null){
-			putBodyParameter("Scene", scene);
+	public void setExtra(String extra) {
+		this.extra = extra;
+		if(extra != null){
+			putBodyParameter("Extra", extra);
 		}
 	}
 
@@ -99,8 +86,8 @@ public class TranslateRequest extends RpcAcsRequest<TranslateResponse> {
 	}
 
 	@Override
-	public Class<TranslateResponse> getResponseClass() {
-		return TranslateResponse.class;
+	public Class<GetImageTranslateResponse> getResponseClass() {
+		return GetImageTranslateResponse.class;
 	}
 
 }
