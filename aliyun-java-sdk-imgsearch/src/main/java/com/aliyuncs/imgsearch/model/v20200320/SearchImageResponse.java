@@ -65,6 +65,10 @@ public class SearchImageResponse extends AcsResponse {
 
 			private String entityId;
 
+			private String imageUrl;
+
+			private Float score;
+
 			public String getDataId() {
 				return this.dataId;
 			}
@@ -87,6 +91,22 @@ public class SearchImageResponse extends AcsResponse {
 
 			public void setEntityId(String entityId) {
 				this.entityId = entityId;
+			}
+
+			public String getImageUrl() {
+				return this.imageUrl;
+			}
+
+			public void setImageUrl(String imageUrl) {
+				this.imageUrl = imageUrl;
+			}
+
+			public Float getScore() {
+				return this.score;
+			}
+
+			public void setScore(Float score) {
+				this.score = score;
 			}
 		}
 	}

@@ -1,3 +1,6 @@
+2020-08-08 Version: 1.1.5
+- Update SearchImage.
+
 2020-04-07 Version: 1.0.1
 - Generated 2020-03-20 for `imgsearch`.
 
