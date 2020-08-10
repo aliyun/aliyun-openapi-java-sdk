@@ -60,6 +60,7 @@ public class ListMotorAlgorithmResultsResponseUnmarshaller {
 			recordsItem.setPlateClass(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].PlateClass"));
 			recordsItem.setSafetyBelt(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].SafetyBelt"));
 			recordsItem.setCalling(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].Calling"));
+			recordsItem.setSourceId(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].SourceId"));
 
 			records.add(recordsItem);
 		}

@@ -159,6 +159,8 @@ public class ListMotorAlgorithmResultsResponse extends AcsResponse {
 
 			private String calling;
 
+			private String sourceId;
+
 			public String getCorpId() {
 				return this.corpId;
 			}
@@ -317,6 +319,14 @@ public class ListMotorAlgorithmResultsResponse extends AcsResponse {
 
 			public void setCalling(String calling) {
 				this.calling = calling;
+			}
+
+			public String getSourceId() {
+				return this.sourceId;
+			}
+
+			public void setSourceId(String sourceId) {
+				this.sourceId = sourceId;
 			}
 		}
 	}

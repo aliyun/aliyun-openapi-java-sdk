@@ -149,6 +149,8 @@ public class ListFaceAlgorithmResultsResponse extends AcsResponse {
 
 			private String targetPicUrlPath;
 
+			private String sourceId;
+
 			public String getFaceId() {
 				return this.faceId;
 			}
@@ -267,6 +269,14 @@ public class ListFaceAlgorithmResultsResponse extends AcsResponse {
 
 			public void setTargetPicUrlPath(String targetPicUrlPath) {
 				this.targetPicUrlPath = targetPicUrlPath;
+			}
+
+			public String getSourceId() {
+				return this.sourceId;
+			}
+
+			public void setSourceId(String sourceId) {
+				this.sourceId = sourceId;
 			}
 		}
 	}

@@ -32,6 +32,8 @@ public class ReportDeviceCapacityRequest extends RpcAcsRequest<ReportDeviceCapac
 
 	private String presetNum;
 
+	private String deviceTimeStamp;
+
 	private String deviceSn;
 
 	private String audioFormat;
@@ -85,6 +87,17 @@ public class ReportDeviceCapacityRequest extends RpcAcsRequest<ReportDeviceCapac
 		this.presetNum = presetNum;
 		if(presetNum != null){
 			putBodyParameter("PresetNum", presetNum);
+		}
+	}
+
+	public String getDeviceTimeStamp() {
+		return this.deviceTimeStamp;
+	}
+
+	public void setDeviceTimeStamp(String deviceTimeStamp) {
+		this.deviceTimeStamp = deviceTimeStamp;
+		if(deviceTimeStamp != null){
+			putBodyParameter("DeviceTimeStamp", deviceTimeStamp);
 		}
 	}
 

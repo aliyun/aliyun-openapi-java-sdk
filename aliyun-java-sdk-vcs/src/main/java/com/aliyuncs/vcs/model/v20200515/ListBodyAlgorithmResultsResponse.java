@@ -161,6 +161,8 @@ public class ListBodyAlgorithmResultsResponse extends AcsResponse {
 
 			private String trousersColor;
 
+			private String sourceId;
+
 			public String getCapStyle() {
 				return this.capStyle;
 			}
@@ -327,6 +329,14 @@ public class ListBodyAlgorithmResultsResponse extends AcsResponse {
 
 			public void setTrousersColor(String trousersColor) {
 				this.trousersColor = trousersColor;
+			}
+
+			public String getSourceId() {
+				return this.sourceId;
+			}
+
+			public void setSourceId(String sourceId) {
+				this.sourceId = sourceId;
 			}
 		}
 	}

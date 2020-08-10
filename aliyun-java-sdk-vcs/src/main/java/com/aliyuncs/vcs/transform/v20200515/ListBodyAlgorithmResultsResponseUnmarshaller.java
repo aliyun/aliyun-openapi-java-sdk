@@ -61,6 +61,7 @@ public class ListBodyAlgorithmResultsResponseUnmarshaller {
 			recordsItem.setTrousersStyle(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].TrousersStyle"));
 			recordsItem.setCoatColor(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].CoatColor"));
 			recordsItem.setTrousersColor(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].TrousersColor"));
+			recordsItem.setSourceId(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].SourceId"));
 
 			records.add(recordsItem);
 		}

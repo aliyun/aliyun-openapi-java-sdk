@@ -55,6 +55,7 @@ public class ListFaceAlgorithmResultsResponseUnmarshaller {
 			recordsItem.setRightBottomY(_ctx.floatValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].RightBottomY"));
 			recordsItem.setPicUrlPath(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].PicUrlPath"));
 			recordsItem.setTargetPicUrlPath(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].TargetPicUrlPath"));
+			recordsItem.setSourceId(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].SourceId"));
 
 			records.add(recordsItem);
 		}
