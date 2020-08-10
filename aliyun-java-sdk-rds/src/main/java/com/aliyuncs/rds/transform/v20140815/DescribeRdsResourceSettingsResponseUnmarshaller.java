@@ -39,6 +39,7 @@ public class DescribeRdsResourceSettingsResponseUnmarshaller {
 			rdsInstanceResourceSetting.setPoppedUpButtonType(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].PoppedUpButtonType"));
 			rdsInstanceResourceSetting.setPoppedUpButtonUrl(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].PoppedUpButtonUrl"));
 			rdsInstanceResourceSetting.setPoppedUpContent(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].PoppedUpContent"));
+			rdsInstanceResourceSetting.setIsTop(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].IsTop"));
 
 			rdsInstanceResourceSettings.add(rdsInstanceResourceSetting);
 		}

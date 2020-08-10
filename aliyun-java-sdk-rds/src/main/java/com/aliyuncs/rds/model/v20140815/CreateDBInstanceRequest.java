@@ -63,6 +63,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String zoneId;
 
+	private String storageAutoScale;
+
 	private String instanceNetworkType;
 
 	private String connectionMode;
@@ -88,6 +90,12 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String dBInstanceNetType;
 
 	private String usedTime;
+
+	private String targetMinorVersion;
+
+	private Integer storageUpperBound;
+
+	private Integer storageThreshold;
 
 	private String vPCId;
 
@@ -312,6 +320,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getStorageAutoScale() {
+		return this.storageAutoScale;
+	}
+
+	public void setStorageAutoScale(String storageAutoScale) {
+		this.storageAutoScale = storageAutoScale;
+		if(storageAutoScale != null){
+			putQueryParameter("StorageAutoScale", storageAutoScale);
+		}
+	}
+
 	public String getInstanceNetworkType() {
 		return this.instanceNetworkType;
 	}
@@ -452,6 +471,39 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime);
+		}
+	}
+
+	public String getTargetMinorVersion() {
+		return this.targetMinorVersion;
+	}
+
+	public void setTargetMinorVersion(String targetMinorVersion) {
+		this.targetMinorVersion = targetMinorVersion;
+		if(targetMinorVersion != null){
+			putQueryParameter("TargetMinorVersion", targetMinorVersion);
+		}
+	}
+
+	public Integer getStorageUpperBound() {
+		return this.storageUpperBound;
+	}
+
+	public void setStorageUpperBound(Integer storageUpperBound) {
+		this.storageUpperBound = storageUpperBound;
+		if(storageUpperBound != null){
+			putQueryParameter("StorageUpperBound", storageUpperBound.toString());
+		}
+	}
+
+	public Integer getStorageThreshold() {
+		return this.storageThreshold;
+	}
+
+	public void setStorageThreshold(Integer storageThreshold) {
+		this.storageThreshold = storageThreshold;
+		if(storageThreshold != null){
+			putQueryParameter("StorageThreshold", storageThreshold.toString());
 		}
 	}
 

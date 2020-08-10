@@ -31,6 +31,8 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	private String clientToken;
 
+	private String instructionSetArch;
+
 	private String engineVersion;
 
 	private String resourceGroupId;
@@ -111,6 +113,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getInstructionSetArch() {
+		return this.instructionSetArch;
+	}
+
+	public void setInstructionSetArch(String instructionSetArch) {
+		this.instructionSetArch = instructionSetArch;
+		if(instructionSetArch != null){
+			putQueryParameter("InstructionSetArch", instructionSetArch);
 		}
 	}
 

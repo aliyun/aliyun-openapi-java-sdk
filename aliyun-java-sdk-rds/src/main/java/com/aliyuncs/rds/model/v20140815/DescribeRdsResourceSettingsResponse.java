@@ -63,6 +63,8 @@ public class DescribeRdsResourceSettingsResponse extends AcsResponse {
 
 		private String poppedUpContent;
 
+		private String isTop;
+
 		public String getStartDate() {
 			return this.startDate;
 		}
@@ -125,6 +127,14 @@ public class DescribeRdsResourceSettingsResponse extends AcsResponse {
 
 		public void setPoppedUpContent(String poppedUpContent) {
 			this.poppedUpContent = poppedUpContent;
+		}
+
+		public String getIsTop() {
+			return this.isTop;
+		}
+
+		public void setIsTop(String isTop) {
+			this.isTop = isTop;
 		}
 	}
 

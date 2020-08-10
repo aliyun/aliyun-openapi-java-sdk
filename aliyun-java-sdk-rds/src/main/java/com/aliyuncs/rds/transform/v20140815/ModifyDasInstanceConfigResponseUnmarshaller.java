@@ -14,17 +14,16 @@
 
 package com.aliyuncs.rds.transform.v20140815;
 
-import com.aliyuncs.rds.model.v20140815.DeleteDBInstanceResponse;
+import com.aliyuncs.rds.model.v20140815.ModifyDasInstanceConfigResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteDBInstanceResponseUnmarshaller {
+public class ModifyDasInstanceConfigResponseUnmarshaller {
 
-	public static DeleteDBInstanceResponse unmarshall(DeleteDBInstanceResponse deleteDBInstanceResponse, UnmarshallerContext _ctx) {
+	public static ModifyDasInstanceConfigResponse unmarshall(ModifyDasInstanceConfigResponse modifyDasInstanceConfigResponse, UnmarshallerContext _ctx) {
 		
-		deleteDBInstanceResponse.setRequestId(_ctx.stringValue("DeleteDBInstanceResponse.RequestId"));
-		deleteDBInstanceResponse.setRegionId(_ctx.stringValue("DeleteDBInstanceResponse.RegionId"));
+		modifyDasInstanceConfigResponse.setRequestId(_ctx.stringValue("ModifyDasInstanceConfigResponse.RequestId"));
 	 
-	 	return deleteDBInstanceResponse;
+	 	return modifyDasInstanceConfigResponse;
 	}
 }

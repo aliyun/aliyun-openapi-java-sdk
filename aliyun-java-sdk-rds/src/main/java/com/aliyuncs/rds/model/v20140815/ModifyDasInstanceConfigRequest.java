@@ -22,32 +22,26 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCrossRegionBackupsRequest extends RpcAcsRequest<DescribeCrossRegionBackupsResponse> {
+public class ModifyDasInstanceConfigRequest extends RpcAcsRequest<ModifyDasInstanceConfigResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String startTime;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private String clientToken;
 
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
 
-	private Integer backupId;
-
-	private String endTime;
-
 	private Long ownerId;
 
-	private String crossBackupRegion;
+	private Integer storageUpperBound;
 
-	private Integer crossBackupId;
-	public DescribeCrossRegionBackupsRequest() {
-		super("Rds", "2014-08-15", "DescribeCrossRegionBackups", "rds");
+	private Integer storageThreshold;
+
+	private String storageAutoScale;
+	public ModifyDasInstanceConfigRequest() {
+		super("Rds", "2014-08-15", "ModifyDasInstanceConfig", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,36 +60,14 @@ public class DescribeCrossRegionBackupsRequest extends RpcAcsRequest<DescribeCro
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -121,28 +93,6 @@ public class DescribeCrossRegionBackupsRequest extends RpcAcsRequest<DescribeCro
 		}
 	}
 
-	public Integer getBackupId() {
-		return this.backupId;
-	}
-
-	public void setBackupId(Integer backupId) {
-		this.backupId = backupId;
-		if(backupId != null){
-			putQueryParameter("BackupId", backupId.toString());
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -154,31 +104,42 @@ public class DescribeCrossRegionBackupsRequest extends RpcAcsRequest<DescribeCro
 		}
 	}
 
-	public String getCrossBackupRegion() {
-		return this.crossBackupRegion;
+	public Integer getStorageUpperBound() {
+		return this.storageUpperBound;
 	}
 
-	public void setCrossBackupRegion(String crossBackupRegion) {
-		this.crossBackupRegion = crossBackupRegion;
-		if(crossBackupRegion != null){
-			putQueryParameter("CrossBackupRegion", crossBackupRegion);
+	public void setStorageUpperBound(Integer storageUpperBound) {
+		this.storageUpperBound = storageUpperBound;
+		if(storageUpperBound != null){
+			putQueryParameter("StorageUpperBound", storageUpperBound.toString());
 		}
 	}
 
-	public Integer getCrossBackupId() {
-		return this.crossBackupId;
+	public Integer getStorageThreshold() {
+		return this.storageThreshold;
 	}
 
-	public void setCrossBackupId(Integer crossBackupId) {
-		this.crossBackupId = crossBackupId;
-		if(crossBackupId != null){
-			putQueryParameter("CrossBackupId", crossBackupId.toString());
+	public void setStorageThreshold(Integer storageThreshold) {
+		this.storageThreshold = storageThreshold;
+		if(storageThreshold != null){
+			putQueryParameter("StorageThreshold", storageThreshold.toString());
+		}
+	}
+
+	public String getStorageAutoScale() {
+		return this.storageAutoScale;
+	}
+
+	public void setStorageAutoScale(String storageAutoScale) {
+		this.storageAutoScale = storageAutoScale;
+		if(storageAutoScale != null){
+			putQueryParameter("StorageAutoScale", storageAutoScale);
 		}
 	}
 
 	@Override
-	public Class<DescribeCrossRegionBackupsResponse> getResponseClass() {
-		return DescribeCrossRegionBackupsResponse.class;
+	public Class<ModifyDasInstanceConfigResponse> getResponseClass() {
+		return ModifyDasInstanceConfigResponse.class;
 	}
 
 }

@@ -15,18 +15,16 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.DeleteDBInstanceResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.ModifyDasInstanceConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteDBInstanceResponse extends AcsResponse {
+public class ModifyDasInstanceConfigResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String regionId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +34,13 @@ public class DeleteDBInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
+	@Override
+	public ModifyDasInstanceConfigResponse getInstance(UnmarshallerContext context) {
+		return	ModifyDasInstanceConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public DeleteDBInstanceResponse getInstance(UnmarshallerContext context) {
-		return	DeleteDBInstanceResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
