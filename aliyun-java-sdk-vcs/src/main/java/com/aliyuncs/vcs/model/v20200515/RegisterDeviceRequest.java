@@ -27,11 +27,11 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 
 	private String deviceTimeStamp;
 
+	private String deviceSn;
+
 	private String deviceId;
 
 	private String serverId;
-
-	private String deviceSerialNumber;
 	public RegisterDeviceRequest() {
 		super("Vcs", "2020-05-15", "RegisterDevice", "vcs");
 		setMethod(MethodType.POST);
@@ -49,6 +49,17 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 		this.deviceTimeStamp = deviceTimeStamp;
 		if(deviceTimeStamp != null){
 			putBodyParameter("DeviceTimeStamp", deviceTimeStamp);
+		}
+	}
+
+	public String getDeviceSn() {
+		return this.deviceSn;
+	}
+
+	public void setDeviceSn(String deviceSn) {
+		this.deviceSn = deviceSn;
+		if(deviceSn != null){
+			putBodyParameter("DeviceSn", deviceSn);
 		}
 	}
 
@@ -71,17 +82,6 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 		this.serverId = serverId;
 		if(serverId != null){
 			putBodyParameter("ServerId", serverId);
-		}
-	}
-
-	public String getDeviceSerialNumber() {
-		return this.deviceSerialNumber;
-	}
-
-	public void setDeviceSerialNumber(String deviceSerialNumber) {
-		this.deviceSerialNumber = deviceSerialNumber;
-		if(deviceSerialNumber != null){
-			putBodyParameter("DeviceSerialNumber", deviceSerialNumber);
 		}
 	}
 

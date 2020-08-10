@@ -31,6 +31,8 @@ public class ListEventAlgorithmResultsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String extendValue;
+
 	private Data data;
 
 	public String getCode() {
@@ -55,6 +57,14 @@ public class ListEventAlgorithmResultsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getExtendValue() {
+		return this.extendValue;
+	}
+
+	public void setExtendValue(String extendValue) {
+		this.extendValue = extendValue;
 	}
 
 	public Data getData() {
@@ -137,6 +147,12 @@ public class ListEventAlgorithmResultsResponse extends AcsResponse {
 
 			private String recordId;
 
+			private String extendValue;
+
+			private String extendValueTwo;
+
+			private String extendValueThree;
+
 			public String getCapStyle() {
 				return this.capStyle;
 			}
@@ -207,6 +223,30 @@ public class ListEventAlgorithmResultsResponse extends AcsResponse {
 
 			public void setRecordId(String recordId) {
 				this.recordId = recordId;
+			}
+
+			public String getExtendValue() {
+				return this.extendValue;
+			}
+
+			public void setExtendValue(String extendValue) {
+				this.extendValue = extendValue;
+			}
+
+			public String getExtendValueTwo() {
+				return this.extendValueTwo;
+			}
+
+			public void setExtendValueTwo(String extendValueTwo) {
+				this.extendValueTwo = extendValueTwo;
+			}
+
+			public String getExtendValueThree() {
+				return this.extendValueThree;
+			}
+
+			public void setExtendValueThree(String extendValueThree) {
+				this.extendValueThree = extendValueThree;
 			}
 		}
 	}

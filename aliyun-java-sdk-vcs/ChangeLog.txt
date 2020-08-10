@@ -1,3 +1,6 @@
+2020-08-10 Version: 1.1.2
+- Add extend value for list event detail.
+
 2020-08-04 Version: 1.1.1
 - Add Image Url parameter for invoke motor algorithm.
 

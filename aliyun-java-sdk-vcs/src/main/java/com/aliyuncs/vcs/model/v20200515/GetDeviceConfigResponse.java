@@ -63,6 +63,20 @@ public class GetDeviceConfigResponse extends AcsResponse {
 
 	private String retryInterval;
 
+	private String deviceId;
+
+	private String userName;
+
+	private String passWord;
+
+	private String protocol;
+
+	private String serverId;
+
+	private String serverPort;
+
+	private String serverIp;
+
 	private List<OSDListItem> oSDList;
 
 	public Boolean getAudioEnable() {
@@ -215,6 +229,62 @@ public class GetDeviceConfigResponse extends AcsResponse {
 
 	public void setRetryInterval(String retryInterval) {
 		this.retryInterval = retryInterval;
+	}
+
+	public String getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassWord() {
+		return this.passWord;
+	}
+
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+	}
+
+	public String getBizProtocol() {
+		return this.protocol;
+	}
+
+	public void setBizProtocol(String protocol) {
+		this.protocol = protocol;
+	}
+
+	public String getServerId() {
+		return this.serverId;
+	}
+
+	public void setServerId(String serverId) {
+		this.serverId = serverId;
+	}
+
+	public String getServerPort() {
+		return this.serverPort;
+	}
+
+	public void setServerPort(String serverPort) {
+		this.serverPort = serverPort;
+	}
+
+	public String getServerIp() {
+		return this.serverIp;
+	}
+
+	public void setServerIp(String serverIp) {
+		this.serverIp = serverIp;
 	}
 
 	public List<OSDListItem> getOSDList() {

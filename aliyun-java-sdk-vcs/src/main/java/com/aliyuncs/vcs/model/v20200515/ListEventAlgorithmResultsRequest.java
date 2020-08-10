@@ -27,6 +27,8 @@ public class ListEventAlgorithmResultsRequest extends RpcAcsRequest<ListEventAlg
 
 	private String corpId;
 
+	private String extendValue;
+
 	private String endTime;
 
 	private String startTime;
@@ -55,6 +57,17 @@ public class ListEventAlgorithmResultsRequest extends RpcAcsRequest<ListEventAlg
 		this.corpId = corpId;
 		if(corpId != null){
 			putBodyParameter("CorpId", corpId);
+		}
+	}
+
+	public String getExtendValue() {
+		return this.extendValue;
+	}
+
+	public void setExtendValue(String extendValue) {
+		this.extendValue = extendValue;
+		if(extendValue != null){
+			putBodyParameter("ExtendValue", extendValue);
 		}
 	}
 

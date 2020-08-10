@@ -45,6 +45,13 @@ public class GetDeviceConfigResponseUnmarshaller {
 		getDeviceConfigResponse.setOSDTimeY(_ctx.stringValue("GetDeviceConfigResponse.OSDTimeY"));
 		getDeviceConfigResponse.setResolution(_ctx.stringValue("GetDeviceConfigResponse.Resolution"));
 		getDeviceConfigResponse.setRetryInterval(_ctx.stringValue("GetDeviceConfigResponse.RetryInterval"));
+		getDeviceConfigResponse.setDeviceId(_ctx.stringValue("GetDeviceConfigResponse.DeviceId"));
+		getDeviceConfigResponse.setUserName(_ctx.stringValue("GetDeviceConfigResponse.UserName"));
+		getDeviceConfigResponse.setPassWord(_ctx.stringValue("GetDeviceConfigResponse.PassWord"));
+		getDeviceConfigResponse.setBizProtocol(_ctx.stringValue("GetDeviceConfigResponse.Protocol"));
+		getDeviceConfigResponse.setServerId(_ctx.stringValue("GetDeviceConfigResponse.ServerId"));
+		getDeviceConfigResponse.setServerPort(_ctx.stringValue("GetDeviceConfigResponse.ServerPort"));
+		getDeviceConfigResponse.setServerIp(_ctx.stringValue("GetDeviceConfigResponse.ServerIp"));
 
 		List<OSDListItem> oSDList = new ArrayList<OSDListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetDeviceConfigResponse.OSDList.Length"); i++) {

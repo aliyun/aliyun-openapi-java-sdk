@@ -30,6 +30,7 @@ public class ListEventAlgorithmResultsResponseUnmarshaller {
 		listEventAlgorithmResultsResponse.setRequestId(_ctx.stringValue("ListEventAlgorithmResultsResponse.RequestId"));
 		listEventAlgorithmResultsResponse.setCode(_ctx.stringValue("ListEventAlgorithmResultsResponse.Code"));
 		listEventAlgorithmResultsResponse.setMessage(_ctx.stringValue("ListEventAlgorithmResultsResponse.Message"));
+		listEventAlgorithmResultsResponse.setExtendValue(_ctx.stringValue("ListEventAlgorithmResultsResponse.ExtendValue"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListEventAlgorithmResultsResponse.Data.PageNumber"));
@@ -49,6 +50,9 @@ public class ListEventAlgorithmResultsResponseUnmarshaller {
 			recordsItem.setShotTime(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ShotTime"));
 			recordsItem.setTargetPicUrlPath(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].TargetPicUrlPath"));
 			recordsItem.setRecordId(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].RecordId"));
+			recordsItem.setExtendValue(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ExtendValue"));
+			recordsItem.setExtendValueTwo(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ExtendValueTwo"));
+			recordsItem.setExtendValueThree(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ExtendValueThree"));
 
 			records.add(recordsItem);
 		}
