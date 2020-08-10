@@ -25,31 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListProjectMembersResponse extends AcsResponse {
 
-	private Integer pageNum;
-
-	private Integer pageSize;
-
 	private String requestId;
 
-	private Integer totalNum;
-
-	private List<ProjectMember> projectMemberList;
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,134 +37,159 @@ public class ListProjectMembersResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalNum() {
-		return this.totalNum;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setTotalNum(Integer totalNum) {
-		this.totalNum = totalNum;
+	public void setData(Data data) {
+		this.data = data;
 	}
 
-	public List<ProjectMember> getProjectMemberList() {
-		return this.projectMemberList;
-	}
+	public static class Data {
 
-	public void setProjectMemberList(List<ProjectMember> projectMemberList) {
-		this.projectMemberList = projectMemberList;
-	}
+		private Integer pageNumber;
 
-	public static class ProjectMember {
+		private Integer pageSize;
 
-		private String projectMemberId;
+		private Integer totalCount;
 
-		private String projectMemberName;
+		private List<ProjectMember> projectMemberList;
 
-		private String projectMemberType;
-
-		private String createOn;
-
-		private String nick;
-
-		private String status;
-
-		private List<Role> projectRoleList;
-
-		public String getProjectMemberId() {
-			return this.projectMemberId;
+		public Integer getPageNumber() {
+			return this.pageNumber;
 		}
 
-		public void setProjectMemberId(String projectMemberId) {
-			this.projectMemberId = projectMemberId;
+		public void setPageNumber(Integer pageNumber) {
+			this.pageNumber = pageNumber;
 		}
 
-		public String getProjectMemberName() {
-			return this.projectMemberName;
+		public Integer getPageSize() {
+			return this.pageSize;
 		}
 
-		public void setProjectMemberName(String projectMemberName) {
-			this.projectMemberName = projectMemberName;
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
 		}
 
-		public String getProjectMemberType() {
-			return this.projectMemberType;
+		public Integer getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setProjectMemberType(String projectMemberType) {
-			this.projectMemberType = projectMemberType;
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
-		public String getCreateOn() {
-			return this.createOn;
+		public List<ProjectMember> getProjectMemberList() {
+			return this.projectMemberList;
 		}
 
-		public void setCreateOn(String createOn) {
-			this.createOn = createOn;
+		public void setProjectMemberList(List<ProjectMember> projectMemberList) {
+			this.projectMemberList = projectMemberList;
 		}
 
-		public String getNick() {
-			return this.nick;
-		}
+		public static class ProjectMember {
 
-		public void setNick(String nick) {
-			this.nick = nick;
-		}
+			private String nick;
 
-		public String getStatus() {
-			return this.status;
-		}
+			private String projectMemberId;
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
+			private String projectMemberName;
 
-		public List<Role> getProjectRoleList() {
-			return this.projectRoleList;
-		}
+			private String projectMemberType;
 
-		public void setProjectRoleList(List<Role> projectRoleList) {
-			this.projectRoleList = projectRoleList;
-		}
+			private String status;
 
-		public static class Role {
+			private List<Role> projectRoleList;
 
-			private String projectRoleCode;
-
-			private Integer projectRoleId;
-
-			private String projectRoleName;
-
-			private String projectRoleType;
-
-			public String getProjectRoleCode() {
-				return this.projectRoleCode;
+			public String getNick() {
+				return this.nick;
 			}
 
-			public void setProjectRoleCode(String projectRoleCode) {
-				this.projectRoleCode = projectRoleCode;
+			public void setNick(String nick) {
+				this.nick = nick;
 			}
 
-			public Integer getProjectRoleId() {
-				return this.projectRoleId;
+			public String getProjectMemberId() {
+				return this.projectMemberId;
 			}
 
-			public void setProjectRoleId(Integer projectRoleId) {
-				this.projectRoleId = projectRoleId;
+			public void setProjectMemberId(String projectMemberId) {
+				this.projectMemberId = projectMemberId;
 			}
 
-			public String getProjectRoleName() {
-				return this.projectRoleName;
+			public String getProjectMemberName() {
+				return this.projectMemberName;
 			}
 
-			public void setProjectRoleName(String projectRoleName) {
-				this.projectRoleName = projectRoleName;
+			public void setProjectMemberName(String projectMemberName) {
+				this.projectMemberName = projectMemberName;
 			}
 
-			public String getProjectRoleType() {
-				return this.projectRoleType;
+			public String getProjectMemberType() {
+				return this.projectMemberType;
 			}
 
-			public void setProjectRoleType(String projectRoleType) {
-				this.projectRoleType = projectRoleType;
+			public void setProjectMemberType(String projectMemberType) {
+				this.projectMemberType = projectMemberType;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public List<Role> getProjectRoleList() {
+				return this.projectRoleList;
+			}
+
+			public void setProjectRoleList(List<Role> projectRoleList) {
+				this.projectRoleList = projectRoleList;
+			}
+
+			public static class Role {
+
+				private String projectRoleCode;
+
+				private Integer projectRoleId;
+
+				private String projectRoleName;
+
+				private String projectRoleType;
+
+				public String getProjectRoleCode() {
+					return this.projectRoleCode;
+				}
+
+				public void setProjectRoleCode(String projectRoleCode) {
+					this.projectRoleCode = projectRoleCode;
+				}
+
+				public Integer getProjectRoleId() {
+					return this.projectRoleId;
+				}
+
+				public void setProjectRoleId(Integer projectRoleId) {
+					this.projectRoleId = projectRoleId;
+				}
+
+				public String getProjectRoleName() {
+					return this.projectRoleName;
+				}
+
+				public void setProjectRoleName(String projectRoleName) {
+					this.projectRoleName = projectRoleName;
+				}
+
+				public String getProjectRoleType() {
+					return this.projectRoleType;
+				}
+
+				public void setProjectRoleType(String projectRoleType) {
+					this.projectRoleType = projectRoleType;
+				}
 			}
 		}
 	}

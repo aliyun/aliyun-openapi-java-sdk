@@ -18,8 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dataworks_public.model.v20200518.ListProjectMembersResponse;
-import com.aliyuncs.dataworks_public.model.v20200518.ListProjectMembersResponse.ProjectMember;
-import com.aliyuncs.dataworks_public.model.v20200518.ListProjectMembersResponse.ProjectMember.Role;
+import com.aliyuncs.dataworks_public.model.v20200518.ListProjectMembersResponse.Data;
+import com.aliyuncs.dataworks_public.model.v20200518.ListProjectMembersResponse.Data.ProjectMember;
+import com.aliyuncs.dataworks_public.model.v20200518.ListProjectMembersResponse.Data.ProjectMember.Role;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,27 +29,28 @@ public class ListProjectMembersResponseUnmarshaller {
 	public static ListProjectMembersResponse unmarshall(ListProjectMembersResponse listProjectMembersResponse, UnmarshallerContext _ctx) {
 		
 		listProjectMembersResponse.setRequestId(_ctx.stringValue("ListProjectMembersResponse.RequestId"));
-		listProjectMembersResponse.setPageNum(_ctx.integerValue("ListProjectMembersResponse.PageNum"));
-		listProjectMembersResponse.setPageSize(_ctx.integerValue("ListProjectMembersResponse.PageSize"));
-		listProjectMembersResponse.setTotalNum(_ctx.integerValue("ListProjectMembersResponse.TotalNum"));
+
+		Data data = new Data();
+		data.setPageNumber(_ctx.integerValue("ListProjectMembersResponse.Data.PageNumber"));
+		data.setPageSize(_ctx.integerValue("ListProjectMembersResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("ListProjectMembersResponse.Data.TotalCount"));
 
 		List<ProjectMember> projectMemberList = new ArrayList<ProjectMember>();
-		for (int i = 0; i < _ctx.lengthValue("ListProjectMembersResponse.ProjectMemberList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListProjectMembersResponse.Data.ProjectMemberList.Length"); i++) {
 			ProjectMember projectMember = new ProjectMember();
-			projectMember.setProjectMemberId(_ctx.stringValue("ListProjectMembersResponse.ProjectMemberList["+ i +"].ProjectMemberId"));
-			projectMember.setProjectMemberName(_ctx.stringValue("ListProjectMembersResponse.ProjectMemberList["+ i +"].ProjectMemberName"));
-			projectMember.setProjectMemberType(_ctx.stringValue("ListProjectMembersResponse.ProjectMemberList["+ i +"].ProjectMemberType"));
-			projectMember.setCreateOn(_ctx.stringValue("ListProjectMembersResponse.ProjectMemberList["+ i +"].CreateOn"));
-			projectMember.setNick(_ctx.stringValue("ListProjectMembersResponse.ProjectMemberList["+ i +"].Nick"));
-			projectMember.setStatus(_ctx.stringValue("ListProjectMembersResponse.ProjectMemberList["+ i +"].Status"));
+			projectMember.setNick(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].Nick"));
+			projectMember.setProjectMemberId(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectMemberId"));
+			projectMember.setProjectMemberName(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectMemberName"));
+			projectMember.setProjectMemberType(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectMemberType"));
+			projectMember.setStatus(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].Status"));
 
 			List<Role> projectRoleList = new ArrayList<Role>();
-			for (int j = 0; j < _ctx.lengthValue("ListProjectMembersResponse.ProjectMemberList["+ i +"].ProjectRoleList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectRoleList.Length"); j++) {
 				Role role = new Role();
-				role.setProjectRoleCode(_ctx.stringValue("ListProjectMembersResponse.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleCode"));
-				role.setProjectRoleId(_ctx.integerValue("ListProjectMembersResponse.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleId"));
-				role.setProjectRoleName(_ctx.stringValue("ListProjectMembersResponse.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleName"));
-				role.setProjectRoleType(_ctx.stringValue("ListProjectMembersResponse.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleType"));
+				role.setProjectRoleCode(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleCode"));
+				role.setProjectRoleId(_ctx.integerValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleId"));
+				role.setProjectRoleName(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleName"));
+				role.setProjectRoleType(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleType"));
 
 				projectRoleList.add(role);
 			}
@@ -56,7 +58,8 @@ public class ListProjectMembersResponseUnmarshaller {
 
 			projectMemberList.add(projectMember);
 		}
-		listProjectMembersResponse.setProjectMemberList(projectMemberList);
+		data.setProjectMemberList(projectMemberList);
+		listProjectMembersResponse.setData(data);
 	 
 	 	return listProjectMembersResponse;
 	}

@@ -27,9 +27,9 @@ public class ListProjectMembersRequest extends RpcAcsRequest<ListProjectMembersR
 
 	private Integer pageSize;
 
-	private Integer pageNum;
-
 	private Long projectId;
+
+	private Integer pageNumber;
 	public ListProjectMembersRequest() {
 		super("dataworks-public", "2020-05-18", "ListProjectMembers", "dide");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class ListProjectMembersRequest extends RpcAcsRequest<ListProjectMembersR
 		}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
 	public Long getProjectId() {
 		return this.projectId;
 	}
@@ -69,6 +58,17 @@ public class ListProjectMembersRequest extends RpcAcsRequest<ListProjectMembersR
 		this.projectId = projectId;
 		if(projectId != null){
 			putQueryParameter("ProjectId", projectId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

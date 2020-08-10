@@ -25,6 +25,8 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class CreateProjectMemberRequest extends RpcAcsRequest<CreateProjectMemberResponse> {
 	   
 
+	private String roleCode;
+
 	private String clientToken;
 
 	private Long projectId;
@@ -37,6 +39,17 @@ public class CreateProjectMemberRequest extends RpcAcsRequest<CreateProjectMembe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRoleCode() {
+		return this.roleCode;
+	}
+
+	public void setRoleCode(String roleCode) {
+		this.roleCode = roleCode;
+		if(roleCode != null){
+			putQueryParameter("RoleCode", roleCode);
+		}
 	}
 
 	public String getClientToken() {
