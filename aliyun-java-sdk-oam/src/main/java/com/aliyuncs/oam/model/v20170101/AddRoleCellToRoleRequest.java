@@ -1,0 +1,104 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.oam.model.v20170101;
+
+import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.aliyuncs.http.MethodType;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class AddRoleCellToRoleRequest extends RpcAcsRequest<AddRoleCellToRoleResponse> {
+	   
+
+	private Integer grantOption;
+
+	private String resource;
+
+	private String roleCellId;
+
+	private String roleName;
+
+	private List<String> actionLists;
+	public AddRoleCellToRoleRequest() {
+		super("Oam", "2017-01-01", "AddRoleCellToRole");
+		setMethod(MethodType.POST);
+	}
+
+	public Integer getGrantOption() {
+		return this.grantOption;
+	}
+
+	public void setGrantOption(Integer grantOption) {
+		this.grantOption = grantOption;
+		if(grantOption != null){
+			putQueryParameter("GrantOption", grantOption.toString());
+		}
+	}
+
+	public String getResource() {
+		return this.resource;
+	}
+
+	public void setResource(String resource) {
+		this.resource = resource;
+		if(resource != null){
+			putQueryParameter("Resource", resource);
+		}
+	}
+
+	public String getRoleCellId() {
+		return this.roleCellId;
+	}
+
+	public void setRoleCellId(String roleCellId) {
+		this.roleCellId = roleCellId;
+		if(roleCellId != null){
+			putQueryParameter("RoleCellId", roleCellId);
+		}
+	}
+
+	public String getRoleName() {
+		return this.roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+		if(roleName != null){
+			putQueryParameter("RoleName", roleName);
+		}
+	}
+
+	public List<String> getActionLists() {
+		return this.actionLists;
+	}
+
+	public void setActionLists(List<String> actionLists) {
+		this.actionLists = actionLists;	
+		if (actionLists != null) {
+			for (int i = 0; i < actionLists.size(); i++) {
+				putQueryParameter("ActionList." + (i + 1) , actionLists.get(i));
+			}
+		}	
+	}
+
+	@Override
+	public Class<AddRoleCellToRoleResponse> getResponseClass() {
+		return AddRoleCellToRoleResponse.class;
+	}
+
+}
