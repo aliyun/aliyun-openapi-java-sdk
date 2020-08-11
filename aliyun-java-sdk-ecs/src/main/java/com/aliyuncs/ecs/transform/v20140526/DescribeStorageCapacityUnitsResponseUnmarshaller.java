@@ -43,6 +43,7 @@ public class DescribeStorageCapacityUnitsResponseUnmarshaller {
 			storageCapacityUnit.setExpiredTime(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].ExpiredTime"));
 			storageCapacityUnit.setStartTime(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].StartTime"));
 			storageCapacityUnit.setDescription(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].Description"));
+			storageCapacityUnit.setAllocationStatus(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].AllocationStatus"));
 
 			storageCapacityUnits.add(storageCapacityUnit);
 		}

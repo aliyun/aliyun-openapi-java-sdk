@@ -95,6 +95,8 @@ public class DescribeStorageCapacityUnitsResponse extends AcsResponse {
 
 		private String description;
 
+		private String allocationStatus;
+
 		public String getRegionId() {
 			return this.regionId;
 		}
@@ -165,6 +167,14 @@ public class DescribeStorageCapacityUnitsResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getAllocationStatus() {
+			return this.allocationStatus;
+		}
+
+		public void setAllocationStatus(String allocationStatus) {
+			this.allocationStatus = allocationStatus;
 		}
 	}
 

@@ -45,6 +45,8 @@ public class DescribeStorageCapacityUnitsRequest extends RpcAcsRequest<DescribeS
 	private String name;
 
 	private List<String> statuss;
+
+	private String allocationType;
 	public DescribeStorageCapacityUnitsRequest() {
 		super("Ecs", "2014-05-26", "DescribeStorageCapacityUnits", "ecs");
 		setMethod(MethodType.POST);
@@ -166,6 +168,17 @@ public class DescribeStorageCapacityUnitsRequest extends RpcAcsRequest<DescribeS
 				putQueryParameter("Status." + (i + 1) , statuss.get(i));
 			}
 		}	
+	}
+
+	public String getAllocationType() {
+		return this.allocationType;
+	}
+
+	public void setAllocationType(String allocationType) {
+		this.allocationType = allocationType;
+		if(allocationType != null){
+			putQueryParameter("AllocationType", allocationType);
+		}
 	}
 
 	@Override

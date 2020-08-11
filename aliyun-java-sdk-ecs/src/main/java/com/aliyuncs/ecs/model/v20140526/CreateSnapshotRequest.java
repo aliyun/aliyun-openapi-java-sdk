@@ -34,6 +34,8 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 
 	private String snapshotName;
 
+	private String resourceGroupId;
+
 	private String diskId;
 
 	private List<Tag> tags;
@@ -97,6 +99,17 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 		this.snapshotName = snapshotName;
 		if(snapshotName != null){
 			putQueryParameter("SnapshotName", snapshotName);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -32,6 +32,8 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 
 	private String destinationRegionId;
 
+	private String resourceGroupId;
+
 	private List<Tag> tags;
 
 	private String resourceOwnerAccount;
@@ -82,6 +84,17 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 		this.destinationRegionId = destinationRegionId;
 		if(destinationRegionId != null){
 			putQueryParameter("DestinationRegionId", destinationRegionId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

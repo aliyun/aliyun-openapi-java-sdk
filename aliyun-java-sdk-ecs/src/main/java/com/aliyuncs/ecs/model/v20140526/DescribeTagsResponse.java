@@ -129,6 +129,8 @@ public class DescribeTagsResponse extends AcsResponse {
 
 			private Integer keyPair;
 
+			private Integer snapshotPolicy;
+
 			public Integer getInstance() {
 				return this.instance;
 			}
@@ -207,6 +209,14 @@ public class DescribeTagsResponse extends AcsResponse {
 
 			public void setKeyPair(Integer keyPair) {
 				this.keyPair = keyPair;
+			}
+
+			public Integer getSnapshotPolicy() {
+				return this.snapshotPolicy;
+			}
+
+			public void setSnapshotPolicy(Integer snapshotPolicy) {
+				this.snapshotPolicy = snapshotPolicy;
 			}
 		}
 	}
