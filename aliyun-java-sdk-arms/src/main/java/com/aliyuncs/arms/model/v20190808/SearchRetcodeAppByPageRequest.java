@@ -31,7 +31,7 @@ public class SearchRetcodeAppByPageRequest extends RpcAcsRequest<SearchRetcodeAp
 
 	private Integer pageNumber;
 	public SearchRetcodeAppByPageRequest() {
-		super("ARMS", "2019-08-08", "SearchRetcodeAppByPage", "arms");
+		super("ARMS", "2019-08-08", "SearchRetcodeAppByPage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

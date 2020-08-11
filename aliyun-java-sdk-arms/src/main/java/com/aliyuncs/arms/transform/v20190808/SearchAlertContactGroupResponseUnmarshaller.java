@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.arms.model.v20190808.SearchAlertContactGroupResponse;
 import com.aliyuncs.arms.model.v20190808.SearchAlertContactGroupResponse.ContactGroup;
+import com.aliyuncs.arms.model.v20190808.SearchAlertContactGroupResponse.ContactGroup.Contact;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,6 +37,23 @@ public class SearchAlertContactGroupResponseUnmarshaller {
 			contactGroup.setUserId(_ctx.stringValue("SearchAlertContactGroupResponse.ContactGroups["+ i +"].UserId"));
 			contactGroup.setCreateTime(_ctx.longValue("SearchAlertContactGroupResponse.ContactGroups["+ i +"].CreateTime"));
 			contactGroup.setUpdateTime(_ctx.longValue("SearchAlertContactGroupResponse.ContactGroups["+ i +"].UpdateTime"));
+
+			List<Contact> contacts = new ArrayList<Contact>();
+			for (int j = 0; j < _ctx.lengthValue("SearchAlertContactGroupResponse.ContactGroups["+ i +"].Contacts.Length"); j++) {
+				Contact contact = new Contact();
+				contact.setContactId(_ctx.longValue("SearchAlertContactGroupResponse.ContactGroups["+ i +"].Contacts["+ j +"].ContactId"));
+				contact.setContactName(_ctx.stringValue("SearchAlertContactGroupResponse.ContactGroups["+ i +"].Contacts["+ j +"].ContactName"));
+				contact.setPhone(_ctx.stringValue("SearchAlertContactGroupResponse.ContactGroups["+ i +"].Contacts["+ j +"].Phone"));
+				contact.setEmail(_ctx.stringValue("SearchAlertContactGroupResponse.ContactGroups["+ i +"].Contacts["+ j +"].Email"));
+				contact.setUserId(_ctx.stringValue("SearchAlertContactGroupResponse.ContactGroups["+ i +"].Contacts["+ j +"].UserId"));
+				contact.setDingRobot(_ctx.stringValue("SearchAlertContactGroupResponse.ContactGroups["+ i +"].Contacts["+ j +"].DingRobot"));
+				contact.setCreateTime(_ctx.longValue("SearchAlertContactGroupResponse.ContactGroups["+ i +"].Contacts["+ j +"].CreateTime"));
+				contact.setUpdateTime(_ctx.longValue("SearchAlertContactGroupResponse.ContactGroups["+ i +"].Contacts["+ j +"].UpdateTime"));
+				contact.setSystemNoc(_ctx.booleanValue("SearchAlertContactGroupResponse.ContactGroups["+ i +"].Contacts["+ j +"].SystemNoc"));
+
+				contacts.add(contact);
+			}
+			contactGroup.setContacts(contacts);
 
 			contactGroups.add(contactGroup);
 		}

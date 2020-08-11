@@ -57,6 +57,8 @@ public class SearchAlertContactGroupResponse extends AcsResponse {
 
 		private Long updateTime;
 
+		private List<Contact> contacts;
+
 		public Long getContactGroupId() {
 			return this.contactGroupId;
 		}
@@ -95,6 +97,107 @@ public class SearchAlertContactGroupResponse extends AcsResponse {
 
 		public void setUpdateTime(Long updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public List<Contact> getContacts() {
+			return this.contacts;
+		}
+
+		public void setContacts(List<Contact> contacts) {
+			this.contacts = contacts;
+		}
+
+		public static class Contact {
+
+			private Long contactId;
+
+			private String contactName;
+
+			private String phone;
+
+			private String email;
+
+			private String userId;
+
+			private String dingRobot;
+
+			private Long createTime;
+
+			private Long updateTime;
+
+			private Boolean systemNoc;
+
+			public Long getContactId() {
+				return this.contactId;
+			}
+
+			public void setContactId(Long contactId) {
+				this.contactId = contactId;
+			}
+
+			public String getContactName() {
+				return this.contactName;
+			}
+
+			public void setContactName(String contactName) {
+				this.contactName = contactName;
+			}
+
+			public String getPhone() {
+				return this.phone;
+			}
+
+			public void setPhone(String phone) {
+				this.phone = phone;
+			}
+
+			public String getEmail() {
+				return this.email;
+			}
+
+			public void setEmail(String email) {
+				this.email = email;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public String getDingRobot() {
+				return this.dingRobot;
+			}
+
+			public void setDingRobot(String dingRobot) {
+				this.dingRobot = dingRobot;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public Long getUpdateTime() {
+				return this.updateTime;
+			}
+
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
+			}
+
+			public Boolean getSystemNoc() {
+				return this.systemNoc;
+			}
+
+			public void setSystemNoc(Boolean systemNoc) {
+				this.systemNoc = systemNoc;
+			}
 		}
 	}
 

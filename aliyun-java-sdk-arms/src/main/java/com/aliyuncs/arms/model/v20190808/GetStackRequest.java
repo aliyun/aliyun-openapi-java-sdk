@@ -31,7 +31,7 @@ public class GetStackRequest extends RpcAcsRequest<GetStackResponse> {
 
 	private String pid;
 	public GetStackRequest() {
-		super("ARMS", "2019-08-08", "GetStack", "arms");
+		super("ARMS", "2019-08-08", "GetStack");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
