@@ -68,9 +68,9 @@ public class DescribeBizTypeImageLibResponseUnmarshaller {
 		}
 		review.setSelected1(selected1);
 
-		List<Item> all2 = new ArrayList<Item>();
+		List<Item3> all2 = new ArrayList<Item3>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBizTypeImageLibResponse.Review.All.Length"); i++) {
-			Item item_ = new Item();
+			Item3 item_ = new Item3();
 			item_.setName(_ctx.stringValue("DescribeBizTypeImageLibResponse.Review.All["+ i +"].Name"));
 			item_.setCode(_ctx.stringValue("DescribeBizTypeImageLibResponse.Review.All["+ i +"].Code"));
 
@@ -91,9 +91,9 @@ public class DescribeBizTypeImageLibResponseUnmarshaller {
 		}
 		white.setSelected4(selected4);
 
-		List<Item> all5 = new ArrayList<Item>();
+		List<Item6> all5 = new ArrayList<Item6>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBizTypeImageLibResponse.White.All.Length"); i++) {
-			Item item_ = new Item();
+			Item6 item_ = new Item6();
 			item_.setName(_ctx.stringValue("DescribeBizTypeImageLibResponse.White.All["+ i +"].Name"));
 			item_.setCode(_ctx.stringValue("DescribeBizTypeImageLibResponse.White.All["+ i +"].Code"));
 

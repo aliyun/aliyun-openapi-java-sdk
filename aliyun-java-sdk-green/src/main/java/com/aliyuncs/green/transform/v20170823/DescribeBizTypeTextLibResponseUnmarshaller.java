@@ -70,9 +70,9 @@ public class DescribeBizTypeTextLibResponseUnmarshaller {
 		}
 		review.setSelected1(selected1);
 
-		List<Item> all2 = new ArrayList<Item>();
+		List<Item3> all2 = new ArrayList<Item3>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBizTypeTextLibResponse.Review.All.Length"); i++) {
-			Item item_ = new Item();
+			Item3 item_ = new Item3();
 			item_.setName(_ctx.stringValue("DescribeBizTypeTextLibResponse.Review.All["+ i +"].Name"));
 			item_.setCode(_ctx.stringValue("DescribeBizTypeTextLibResponse.Review.All["+ i +"].Code"));
 
@@ -93,9 +93,9 @@ public class DescribeBizTypeTextLibResponseUnmarshaller {
 		}
 		ignore.setSelected4(selected4);
 
-		List<Item> all5 = new ArrayList<Item>();
+		List<Item6> all5 = new ArrayList<Item6>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBizTypeTextLibResponse.Ignore.All.Length"); i++) {
-			Item item_ = new Item();
+			Item6 item_ = new Item6();
 			item_.setName(_ctx.stringValue("DescribeBizTypeTextLibResponse.Ignore.All["+ i +"].Name"));
 			item_.setCode(_ctx.stringValue("DescribeBizTypeTextLibResponse.Ignore.All["+ i +"].Code"));
 
@@ -116,9 +116,9 @@ public class DescribeBizTypeTextLibResponseUnmarshaller {
 		}
 		white.setSelected7(selected7);
 
-		List<Item> all8 = new ArrayList<Item>();
+		List<Item9> all8 = new ArrayList<Item9>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBizTypeTextLibResponse.White.All.Length"); i++) {
-			Item item_ = new Item();
+			Item9 item_ = new Item9();
 			item_.setName(_ctx.stringValue("DescribeBizTypeTextLibResponse.White.All["+ i +"].Name"));
 			item_.setCode(_ctx.stringValue("DescribeBizTypeTextLibResponse.White.All["+ i +"].Code"));
 
