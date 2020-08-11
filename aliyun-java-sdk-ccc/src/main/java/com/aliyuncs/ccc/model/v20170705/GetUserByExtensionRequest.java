@@ -22,19 +22,30 @@ import com.aliyuncs.ccc.Endpoint;
  * @author auto create
  * @version 
  */
-public class RequestLoginInfoRequest extends RpcAcsRequest<RequestLoginInfoResponse> {
+public class GetUserByExtensionRequest extends RpcAcsRequest<GetUserByExtensionResponse> {
 	   
 
-	private String instanceId;
+	private String extension;
 
-	private String userId;
-	public RequestLoginInfoRequest() {
-		super("CCC", "2017-07-05", "RequestLoginInfo", "CCC");
+	private String instanceId;
+	public GetUserByExtensionRequest() {
+		super("CCC", "2017-07-05", "GetUserByExtension", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getExtension() {
+		return this.extension;
+	}
+
+	public void setExtension(String extension) {
+		this.extension = extension;
+		if(extension != null){
+			putQueryParameter("Extension", extension);
+		}
 	}
 
 	public String getInstanceId() {
@@ -48,20 +59,9 @@ public class RequestLoginInfoRequest extends RpcAcsRequest<RequestLoginInfoRespo
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
-	}
-
 	@Override
-	public Class<RequestLoginInfoResponse> getResponseClass() {
-		return RequestLoginInfoResponse.class;
+	public Class<GetUserByExtensionResponse> getResponseClass() {
+		return GetUserByExtensionResponse.class;
 	}
 
 }

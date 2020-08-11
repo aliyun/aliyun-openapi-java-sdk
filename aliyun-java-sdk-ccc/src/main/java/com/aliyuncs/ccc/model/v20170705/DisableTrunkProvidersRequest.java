@@ -15,6 +15,7 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ccc.Endpoint;
 
@@ -22,14 +23,12 @@ import com.aliyuncs.ccc.Endpoint;
  * @author auto create
  * @version 
  */
-public class RequestLoginInfoRequest extends RpcAcsRequest<RequestLoginInfoResponse> {
+public class DisableTrunkProvidersRequest extends RpcAcsRequest<DisableTrunkProvidersResponse> {
 	   
 
-	private String instanceId;
-
-	private String userId;
-	public RequestLoginInfoRequest() {
-		super("CCC", "2017-07-05", "RequestLoginInfo", "CCC");
+	private List<String> providerNames;
+	public DisableTrunkProvidersRequest() {
+		super("CCC", "2017-07-05", "DisableTrunkProviders", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +36,22 @@ public class RequestLoginInfoRequest extends RpcAcsRequest<RequestLoginInfoRespo
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public List<String> getProviderNames() {
+		return this.providerNames;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
+	public void setProviderNames(List<String> providerNames) {
+		this.providerNames = providerNames;	
+		if (providerNames != null) {
+			for (int i = 0; i < providerNames.size(); i++) {
+				putQueryParameter("ProviderName." + (i + 1) , providerNames.get(i));
+			}
+		}	
 	}
 
 	@Override
-	public Class<RequestLoginInfoResponse> getResponseClass() {
-		return RequestLoginInfoResponse.class;
+	public Class<DisableTrunkProvidersResponse> getResponseClass() {
+		return DisableTrunkProvidersResponse.class;
 	}
 
 }

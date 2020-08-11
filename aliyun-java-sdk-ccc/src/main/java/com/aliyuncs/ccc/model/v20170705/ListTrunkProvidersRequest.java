@@ -22,14 +22,10 @@ import com.aliyuncs.ccc.Endpoint;
  * @author auto create
  * @version 
  */
-public class RequestLoginInfoRequest extends RpcAcsRequest<RequestLoginInfoResponse> {
+public class ListTrunkProvidersRequest extends RpcAcsRequest<ListTrunkProvidersResponse> {
 	   
-
-	private String instanceId;
-
-	private String userId;
-	public RequestLoginInfoRequest() {
-		super("CCC", "2017-07-05", "RequestLoginInfo", "CCC");
+	public ListTrunkProvidersRequest() {
+		super("CCC", "2017-07-05", "ListTrunkProviders", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +33,9 @@ public class RequestLoginInfoRequest extends RpcAcsRequest<RequestLoginInfoRespo
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
-	}
-
 	@Override
-	public Class<RequestLoginInfoResponse> getResponseClass() {
-		return RequestLoginInfoResponse.class;
+	public Class<ListTrunkProvidersResponse> getResponseClass() {
+		return ListTrunkProvidersResponse.class;
 	}
 
 }

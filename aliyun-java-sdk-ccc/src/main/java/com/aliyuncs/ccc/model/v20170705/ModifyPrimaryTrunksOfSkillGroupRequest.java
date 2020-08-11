@@ -15,6 +15,7 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ccc.Endpoint;
 
@@ -22,19 +23,34 @@ import com.aliyuncs.ccc.Endpoint;
  * @author auto create
  * @version 
  */
-public class RequestLoginInfoRequest extends RpcAcsRequest<RequestLoginInfoResponse> {
+public class ModifyPrimaryTrunksOfSkillGroupRequest extends RpcAcsRequest<ModifyPrimaryTrunksOfSkillGroupResponse> {
 	   
+
+	private List<String> primaryProviderNames;
 
 	private String instanceId;
 
-	private String userId;
-	public RequestLoginInfoRequest() {
-		super("CCC", "2017-07-05", "RequestLoginInfo", "CCC");
+	private String skillGroupId;
+	public ModifyPrimaryTrunksOfSkillGroupRequest() {
+		super("CCC", "2017-07-05", "ModifyPrimaryTrunksOfSkillGroup", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getPrimaryProviderNames() {
+		return this.primaryProviderNames;
+	}
+
+	public void setPrimaryProviderNames(List<String> primaryProviderNames) {
+		this.primaryProviderNames = primaryProviderNames;	
+		if (primaryProviderNames != null) {
+			for (int i = 0; i < primaryProviderNames.size(); i++) {
+				putQueryParameter("PrimaryProviderName." + (i + 1) , primaryProviderNames.get(i));
+			}
+		}	
 	}
 
 	public String getInstanceId() {
@@ -48,20 +64,20 @@ public class RequestLoginInfoRequest extends RpcAcsRequest<RequestLoginInfoRespo
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getSkillGroupId() {
+		return this.skillGroupId;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setSkillGroupId(String skillGroupId) {
+		this.skillGroupId = skillGroupId;
+		if(skillGroupId != null){
+			putQueryParameter("SkillGroupId", skillGroupId);
 		}
 	}
 
 	@Override
-	public Class<RequestLoginInfoResponse> getResponseClass() {
-		return RequestLoginInfoResponse.class;
+	public Class<ModifyPrimaryTrunksOfSkillGroupResponse> getResponseClass() {
+		return ModifyPrimaryTrunksOfSkillGroupResponse.class;
 	}
 
 }

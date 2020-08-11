@@ -22,14 +22,14 @@ import com.aliyuncs.ccc.Endpoint;
  * @author auto create
  * @version 
  */
-public class RequestLoginInfoRequest extends RpcAcsRequest<RequestLoginInfoResponse> {
+public class ListTrunksOfSkillGroupRequest extends RpcAcsRequest<ListTrunksOfSkillGroupResponse> {
 	   
 
 	private String instanceId;
 
-	private String userId;
-	public RequestLoginInfoRequest() {
-		super("CCC", "2017-07-05", "RequestLoginInfo", "CCC");
+	private String skillGroupId;
+	public ListTrunksOfSkillGroupRequest() {
+		super("CCC", "2017-07-05", "ListTrunksOfSkillGroup", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,20 +48,20 @@ public class RequestLoginInfoRequest extends RpcAcsRequest<RequestLoginInfoRespo
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getSkillGroupId() {
+		return this.skillGroupId;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setSkillGroupId(String skillGroupId) {
+		this.skillGroupId = skillGroupId;
+		if(skillGroupId != null){
+			putQueryParameter("SkillGroupId", skillGroupId);
 		}
 	}
 
 	@Override
-	public Class<RequestLoginInfoResponse> getResponseClass() {
-		return RequestLoginInfoResponse.class;
+	public Class<ListTrunksOfSkillGroupResponse> getResponseClass() {
+		return ListTrunksOfSkillGroupResponse.class;
 	}
 
 }
