@@ -27,10 +27,6 @@ public class DescribeRefreshTaskByIdResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long pageNumber;
-
-	private Long pageSize;
-
 	private Long totalCount;
 
 	private List<CDNTask> tasks;
@@ -41,22 +37,6 @@ public class DescribeRefreshTaskByIdResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public Long getTotalCount() {

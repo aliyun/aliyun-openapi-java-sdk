@@ -22,14 +22,16 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRefreshTaskByIdRequest extends RpcAcsRequest<DescribeRefreshTaskByIdResponse> {
+public class VerifyDomainOwnerRequest extends RpcAcsRequest<VerifyDomainOwnerResponse> {
 	   
 
-	private String taskId;
+	private String verifyType;
+
+	private String domainName;
 
 	private Long ownerId;
-	public DescribeRefreshTaskByIdRequest() {
-		super("Cdn", "2018-05-10", "DescribeRefreshTaskById");
+	public VerifyDomainOwnerRequest() {
+		super("Cdn", "2018-05-10", "VerifyDomainOwner");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +39,25 @@ public class DescribeRefreshTaskByIdRequest extends RpcAcsRequest<DescribeRefres
 		} catch (Exception e) {}
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getVerifyType() {
+		return this.verifyType;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
+	public void setVerifyType(String verifyType) {
+		this.verifyType = verifyType;
+		if(verifyType != null){
+			putQueryParameter("VerifyType", verifyType);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -60,8 +73,8 @@ public class DescribeRefreshTaskByIdRequest extends RpcAcsRequest<DescribeRefres
 	}
 
 	@Override
-	public Class<DescribeRefreshTaskByIdResponse> getResponseClass() {
-		return DescribeRefreshTaskByIdResponse.class;
+	public Class<VerifyDomainOwnerResponse> getResponseClass() {
+		return VerifyDomainOwnerResponse.class;
 	}
 
 }

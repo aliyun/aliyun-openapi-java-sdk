@@ -27,8 +27,6 @@ public class DescribeRefreshTaskByIdResponseUnmarshaller {
 	public static DescribeRefreshTaskByIdResponse unmarshall(DescribeRefreshTaskByIdResponse describeRefreshTaskByIdResponse, UnmarshallerContext _ctx) {
 		
 		describeRefreshTaskByIdResponse.setRequestId(_ctx.stringValue("DescribeRefreshTaskByIdResponse.RequestId"));
-		describeRefreshTaskByIdResponse.setPageNumber(_ctx.longValue("DescribeRefreshTaskByIdResponse.PageNumber"));
-		describeRefreshTaskByIdResponse.setPageSize(_ctx.longValue("DescribeRefreshTaskByIdResponse.PageSize"));
 		describeRefreshTaskByIdResponse.setTotalCount(_ctx.longValue("DescribeRefreshTaskByIdResponse.TotalCount"));
 
 		List<CDNTask> tasks = new ArrayList<CDNTask>();
