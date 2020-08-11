@@ -115,7 +115,7 @@ public class DescribeBizTypeImageLibResponse extends AcsResponse {
 
 		private List<Item3> selected1;
 
-		private List<Item> all2;
+		private List<Item3> all2;
 
 		public List<Item3> getSelected1() {
 			return this.selected1;
@@ -125,11 +125,11 @@ public class DescribeBizTypeImageLibResponse extends AcsResponse {
 			this.selected1 = selected1;
 		}
 
-		public List<Item> getAll2() {
+		public List<Item3> getAll2() {
 			return this.all2;
 		}
 
-		public void setAll2(List<Item> all2) {
+		public void setAll2(List<Item3> all2) {
 			this.all2 = all2;
 		}
 
@@ -161,7 +161,7 @@ public class DescribeBizTypeImageLibResponse extends AcsResponse {
 
 		private List<Item6> selected4;
 
-		private List<Item> all5;
+		private List<Item6> all5;
 
 		public List<Item6> getSelected4() {
 			return this.selected4;
@@ -171,11 +171,11 @@ public class DescribeBizTypeImageLibResponse extends AcsResponse {
 			this.selected4 = selected4;
 		}
 
-		public List<Item> getAll5() {
+		public List<Item6> getAll5() {
 			return this.all5;
 		}
 
-		public void setAll5(List<Item> all5) {
+		public void setAll5(List<Item6> all5) {
 			this.all5 = all5;
 		}
 

@@ -125,7 +125,7 @@ public class DescribeBizTypeTextLibResponse extends AcsResponse {
 
 		private List<Item3> selected1;
 
-		private List<Item> all2;
+		private List<Item3> all2;
 
 		public List<Item3> getSelected1() {
 			return this.selected1;
@@ -135,11 +135,11 @@ public class DescribeBizTypeTextLibResponse extends AcsResponse {
 			this.selected1 = selected1;
 		}
 
-		public List<Item> getAll2() {
+		public List<Item3> getAll2() {
 			return this.all2;
 		}
 
-		public void setAll2(List<Item> all2) {
+		public void setAll2(List<Item3> all2) {
 			this.all2 = all2;
 		}
 
@@ -171,7 +171,7 @@ public class DescribeBizTypeTextLibResponse extends AcsResponse {
 
 		private List<Item6> selected4;
 
-		private List<Item> all5;
+		private List<Item6> all5;
 
 		public List<Item6> getSelected4() {
 			return this.selected4;
@@ -181,11 +181,11 @@ public class DescribeBizTypeTextLibResponse extends AcsResponse {
 			this.selected4 = selected4;
 		}
 
-		public List<Item> getAll5() {
+		public List<Item6> getAll5() {
 			return this.all5;
 		}
 
-		public void setAll5(List<Item> all5) {
+		public void setAll5(List<Item6> all5) {
 			this.all5 = all5;
 		}
 
@@ -217,7 +217,7 @@ public class DescribeBizTypeTextLibResponse extends AcsResponse {
 
 		private List<Item9> selected7;
 
-		private List<Item> all8;
+		private List<Item9> all8;
 
 		public List<Item9> getSelected7() {
 			return this.selected7;
@@ -227,11 +227,11 @@ public class DescribeBizTypeTextLibResponse extends AcsResponse {
 			this.selected7 = selected7;
 		}
 
-		public List<Item> getAll8() {
+		public List<Item9> getAll8() {
 			return this.all8;
 		}
 
-		public void setAll8(List<Item> all8) {
+		public void setAll8(List<Item9> all8) {
 			this.all8 = all8;
 		}
 
