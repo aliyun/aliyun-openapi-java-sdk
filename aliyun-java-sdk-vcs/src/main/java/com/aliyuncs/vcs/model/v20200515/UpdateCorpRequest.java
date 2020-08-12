@@ -25,6 +25,8 @@ import com.aliyuncs.vcs.Endpoint;
 public class UpdateCorpRequest extends RpcAcsRequest<UpdateCorpResponse> {
 	   
 
+	private String isvSubId;
+
 	private String corpId;
 
 	private String parentCorpId;
@@ -41,6 +43,17 @@ public class UpdateCorpRequest extends RpcAcsRequest<UpdateCorpResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIsvSubId() {
+		return this.isvSubId;
+	}
+
+	public void setIsvSubId(String isvSubId) {
+		this.isvSubId = isvSubId;
+		if(isvSubId != null){
+			putBodyParameter("IsvSubId", isvSubId);
+		}
 	}
 
 	public String getCorpId() {

@@ -27,6 +27,8 @@ public class CreateCorpRequest extends RpcAcsRequest<CreateCorpResponse> {
 
 	private String algorithmType;
 
+	private String isvSubId;
+
 	private String parentCorpId;
 
 	private String description;
@@ -51,6 +53,17 @@ public class CreateCorpRequest extends RpcAcsRequest<CreateCorpResponse> {
 		this.algorithmType = algorithmType;
 		if(algorithmType != null){
 			putBodyParameter("AlgorithmType", algorithmType);
+		}
+	}
+
+	public String getIsvSubId() {
+		return this.isvSubId;
+	}
+
+	public void setIsvSubId(String isvSubId) {
+		this.isvSubId = isvSubId;
+		if(isvSubId != null){
+			putBodyParameter("IsvSubId", isvSubId);
 		}
 	}
 

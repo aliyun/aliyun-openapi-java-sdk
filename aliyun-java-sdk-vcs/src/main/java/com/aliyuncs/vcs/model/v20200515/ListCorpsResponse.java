@@ -133,6 +133,8 @@ public class ListCorpsResponse extends AcsResponse {
 
 			private Integer deviceCount;
 
+			private String isvSubId;
+
 			public String getCorpId() {
 				return this.corpId;
 			}
@@ -187,6 +189,14 @@ public class ListCorpsResponse extends AcsResponse {
 
 			public void setDeviceCount(Integer deviceCount) {
 				this.deviceCount = deviceCount;
+			}
+
+			public String getIsvSubId() {
+				return this.isvSubId;
+			}
+
+			public void setIsvSubId(String isvSubId) {
+				this.isvSubId = isvSubId;
 			}
 		}
 	}
