@@ -39,6 +39,8 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private Boolean autoPay;
 
+	private String majorVersion;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -133,6 +135,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.autoPay = autoPay;
 		if(autoPay != null){
 			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getMajorVersion() {
+		return this.majorVersion;
+	}
+
+	public void setMajorVersion(String majorVersion) {
+		this.majorVersion = majorVersion;
+		if(majorVersion != null){
+			putQueryParameter("MajorVersion", majorVersion);
 		}
 	}
 

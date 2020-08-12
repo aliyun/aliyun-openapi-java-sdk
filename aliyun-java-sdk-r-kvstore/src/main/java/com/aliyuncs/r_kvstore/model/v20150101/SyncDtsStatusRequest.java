@@ -29,6 +29,8 @@ public class SyncDtsStatusRequest extends RpcAcsRequest<SyncDtsStatusResponse> {
 
 	private String securityToken;
 
+	private String taskId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -66,6 +68,17 @@ public class SyncDtsStatusRequest extends RpcAcsRequest<SyncDtsStatusResponse> {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
