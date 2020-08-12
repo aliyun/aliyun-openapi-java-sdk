@@ -31,19 +31,33 @@ public class DescribeSynchronizationObjectModifyStatusResponseUnmarshaller {
 	public static DescribeSynchronizationObjectModifyStatusResponse unmarshall(DescribeSynchronizationObjectModifyStatusResponse describeSynchronizationObjectModifyStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeSynchronizationObjectModifyStatusResponse.setRequestId(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.RequestId"));
-		describeSynchronizationObjectModifyStatusResponse.setStatus(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.Status"));
 		describeSynchronizationObjectModifyStatusResponse.setErrorMessage(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.ErrorMessage"));
+		describeSynchronizationObjectModifyStatusResponse.setStatus(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.Status"));
+
+		DataInitializationStatus dataInitializationStatus = new DataInitializationStatus();
+		dataInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataInitializationStatus.ErrorMessage"));
+		dataInitializationStatus.setPercent(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataInitializationStatus.Percent"));
+		dataInitializationStatus.setProgress(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataInitializationStatus.Progress"));
+		dataInitializationStatus.setStatus(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataInitializationStatus.Status"));
+		describeSynchronizationObjectModifyStatusResponse.setDataInitializationStatus(dataInitializationStatus);
+
+		DataSynchronizationStatus dataSynchronizationStatus = new DataSynchronizationStatus();
+		dataSynchronizationStatus.setDelay(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataSynchronizationStatus.Delay"));
+		dataSynchronizationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataSynchronizationStatus.ErrorMessage"));
+		dataSynchronizationStatus.setPercent(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataSynchronizationStatus.Percent"));
+		dataSynchronizationStatus.setStatus(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataSynchronizationStatus.Status"));
+		describeSynchronizationObjectModifyStatusResponse.setDataSynchronizationStatus(dataSynchronizationStatus);
 
 		PrecheckStatus precheckStatus = new PrecheckStatus();
-		precheckStatus.setStatus(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.PrecheckStatus.Status"));
 		precheckStatus.setPercent(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.PrecheckStatus.Percent"));
+		precheckStatus.setStatus(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.PrecheckStatus.Status"));
 
 		List<CheckItem> detail = new ArrayList<CheckItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSynchronizationObjectModifyStatusResponse.PrecheckStatus.Detail.Length"); i++) {
 			CheckItem checkItem = new CheckItem();
-			checkItem.setItemName(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.PrecheckStatus.Detail["+ i +"].ItemName"));
 			checkItem.setCheckStatus(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.PrecheckStatus.Detail["+ i +"].CheckStatus"));
 			checkItem.setErrorMessage(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.PrecheckStatus.Detail["+ i +"].ErrorMessage"));
+			checkItem.setItemName(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.PrecheckStatus.Detail["+ i +"].ItemName"));
 			checkItem.setRepairMethod(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.PrecheckStatus.Detail["+ i +"].RepairMethod"));
 
 			detail.add(checkItem);
@@ -52,25 +66,11 @@ public class DescribeSynchronizationObjectModifyStatusResponseUnmarshaller {
 		describeSynchronizationObjectModifyStatusResponse.setPrecheckStatus(precheckStatus);
 
 		StructureInitializationStatus structureInitializationStatus = new StructureInitializationStatus();
-		structureInitializationStatus.setStatus(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.StructureInitializationStatus.Status"));
-		structureInitializationStatus.setPercent(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.StructureInitializationStatus.Percent"));
 		structureInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.StructureInitializationStatus.ErrorMessage"));
+		structureInitializationStatus.setPercent(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.StructureInitializationStatus.Percent"));
 		structureInitializationStatus.setProgress(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.StructureInitializationStatus.Progress"));
+		structureInitializationStatus.setStatus(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.StructureInitializationStatus.Status"));
 		describeSynchronizationObjectModifyStatusResponse.setStructureInitializationStatus(structureInitializationStatus);
-
-		DataInitializationStatus dataInitializationStatus = new DataInitializationStatus();
-		dataInitializationStatus.setStatus(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataInitializationStatus.Status"));
-		dataInitializationStatus.setPercent(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataInitializationStatus.Percent"));
-		dataInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataInitializationStatus.ErrorMessage"));
-		dataInitializationStatus.setProgress(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataInitializationStatus.Progress"));
-		describeSynchronizationObjectModifyStatusResponse.setDataInitializationStatus(dataInitializationStatus);
-
-		DataSynchronizationStatus dataSynchronizationStatus = new DataSynchronizationStatus();
-		dataSynchronizationStatus.setStatus(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataSynchronizationStatus.Status"));
-		dataSynchronizationStatus.setPercent(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataSynchronizationStatus.Percent"));
-		dataSynchronizationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataSynchronizationStatus.ErrorMessage"));
-		dataSynchronizationStatus.setDelay(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataSynchronizationStatus.Delay"));
-		describeSynchronizationObjectModifyStatusResponse.setDataSynchronizationStatus(dataSynchronizationStatus);
 	 
 	 	return describeSynchronizationObjectModifyStatusResponse;
 	}

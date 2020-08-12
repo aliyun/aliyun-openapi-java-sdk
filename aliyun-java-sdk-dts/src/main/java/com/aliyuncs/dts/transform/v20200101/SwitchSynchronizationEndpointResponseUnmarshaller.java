@@ -23,9 +23,9 @@ public class SwitchSynchronizationEndpointResponseUnmarshaller {
 	public static SwitchSynchronizationEndpointResponse unmarshall(SwitchSynchronizationEndpointResponse switchSynchronizationEndpointResponse, UnmarshallerContext _ctx) {
 		
 		switchSynchronizationEndpointResponse.setRequestId(_ctx.stringValue("SwitchSynchronizationEndpointResponse.RequestId"));
-		switchSynchronizationEndpointResponse.setSuccess(_ctx.stringValue("SwitchSynchronizationEndpointResponse.Success"));
 		switchSynchronizationEndpointResponse.setErrCode(_ctx.stringValue("SwitchSynchronizationEndpointResponse.ErrCode"));
 		switchSynchronizationEndpointResponse.setErrMessage(_ctx.stringValue("SwitchSynchronizationEndpointResponse.ErrMessage"));
+		switchSynchronizationEndpointResponse.setSuccess(_ctx.stringValue("SwitchSynchronizationEndpointResponse.Success"));
 		switchSynchronizationEndpointResponse.setTaskId(_ctx.stringValue("SwitchSynchronizationEndpointResponse.TaskId"));
 	 
 	 	return switchSynchronizationEndpointResponse;

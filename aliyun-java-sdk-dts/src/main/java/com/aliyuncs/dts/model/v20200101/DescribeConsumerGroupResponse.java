@@ -27,11 +27,11 @@ public class DescribeConsumerGroupResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private Integer totalRecordCount;
-
 	private Integer pageRecordCount;
 
 	private String requestId;
+
+	private Integer totalRecordCount;
 
 	private List<DescribeConsumerChannel> consumerChannels;
 
@@ -41,14 +41,6 @@ public class DescribeConsumerGroupResponse extends AcsResponse {
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
 	}
 
 	public Integer getPageRecordCount() {
@@ -67,6 +59,14 @@ public class DescribeConsumerGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
+
 	public List<DescribeConsumerChannel> getConsumerChannels() {
 		return this.consumerChannels;
 	}
@@ -81,13 +81,13 @@ public class DescribeConsumerGroupResponse extends AcsResponse {
 
 		private String consumerGroupName;
 
-		private String consumptionCheckpoint;
+		private String consumerGroupUserName;
 
-		private Long unconsumedData;
+		private String consumptionCheckpoint;
 
 		private Long messageDelay;
 
-		private String consumerGroupUserName;
+		private Long unconsumedData;
 
 		public String getConsumerGroupID() {
 			return this.consumerGroupID;
@@ -105,20 +105,20 @@ public class DescribeConsumerGroupResponse extends AcsResponse {
 			this.consumerGroupName = consumerGroupName;
 		}
 
+		public String getConsumerGroupUserName() {
+			return this.consumerGroupUserName;
+		}
+
+		public void setConsumerGroupUserName(String consumerGroupUserName) {
+			this.consumerGroupUserName = consumerGroupUserName;
+		}
+
 		public String getConsumptionCheckpoint() {
 			return this.consumptionCheckpoint;
 		}
 
 		public void setConsumptionCheckpoint(String consumptionCheckpoint) {
 			this.consumptionCheckpoint = consumptionCheckpoint;
-		}
-
-		public Long getUnconsumedData() {
-			return this.unconsumedData;
-		}
-
-		public void setUnconsumedData(Long unconsumedData) {
-			this.unconsumedData = unconsumedData;
 		}
 
 		public Long getMessageDelay() {
@@ -129,12 +129,12 @@ public class DescribeConsumerGroupResponse extends AcsResponse {
 			this.messageDelay = messageDelay;
 		}
 
-		public String getConsumerGroupUserName() {
-			return this.consumerGroupUserName;
+		public Long getUnconsumedData() {
+			return this.unconsumedData;
 		}
 
-		public void setConsumerGroupUserName(String consumerGroupUserName) {
-			this.consumerGroupUserName = consumerGroupUserName;
+		public void setUnconsumedData(Long unconsumedData) {
+			this.unconsumedData = unconsumedData;
 		}
 	}
 

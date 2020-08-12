@@ -24,42 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSubscriptionInstanceAlertResponse extends AcsResponse {
 
-	private String subscriptionInstanceID;
-
-	private String subscriptionInstanceName;
+	private String delayAlertPhone;
 
 	private String delayAlertStatus;
 
-	private String delayAlertPhone;
-
 	private String delayOverSeconds;
-
-	private String errorAlertStatus;
-
-	private String errorAlertPhone;
-
-	private String success;
 
 	private String errCode;
 
 	private String errMessage;
 
+	private String errorAlertPhone;
+
+	private String errorAlertStatus;
+
 	private String requestId;
 
-	public String getSubscriptionInstanceID() {
-		return this.subscriptionInstanceID;
+	private String subscriptionInstanceID;
+
+	private String subscriptionInstanceName;
+
+	private String success;
+
+	public String getDelayAlertPhone() {
+		return this.delayAlertPhone;
 	}
 
-	public void setSubscriptionInstanceID(String subscriptionInstanceID) {
-		this.subscriptionInstanceID = subscriptionInstanceID;
-	}
-
-	public String getSubscriptionInstanceName() {
-		return this.subscriptionInstanceName;
-	}
-
-	public void setSubscriptionInstanceName(String subscriptionInstanceName) {
-		this.subscriptionInstanceName = subscriptionInstanceName;
+	public void setDelayAlertPhone(String delayAlertPhone) {
+		this.delayAlertPhone = delayAlertPhone;
 	}
 
 	public String getDelayAlertStatus() {
@@ -70,44 +62,12 @@ public class DescribeSubscriptionInstanceAlertResponse extends AcsResponse {
 		this.delayAlertStatus = delayAlertStatus;
 	}
 
-	public String getDelayAlertPhone() {
-		return this.delayAlertPhone;
-	}
-
-	public void setDelayAlertPhone(String delayAlertPhone) {
-		this.delayAlertPhone = delayAlertPhone;
-	}
-
 	public String getDelayOverSeconds() {
 		return this.delayOverSeconds;
 	}
 
 	public void setDelayOverSeconds(String delayOverSeconds) {
 		this.delayOverSeconds = delayOverSeconds;
-	}
-
-	public String getErrorAlertStatus() {
-		return this.errorAlertStatus;
-	}
-
-	public void setErrorAlertStatus(String errorAlertStatus) {
-		this.errorAlertStatus = errorAlertStatus;
-	}
-
-	public String getErrorAlertPhone() {
-		return this.errorAlertPhone;
-	}
-
-	public void setErrorAlertPhone(String errorAlertPhone) {
-		this.errorAlertPhone = errorAlertPhone;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
 	}
 
 	public String getErrCode() {
@@ -126,12 +86,52 @@ public class DescribeSubscriptionInstanceAlertResponse extends AcsResponse {
 		this.errMessage = errMessage;
 	}
 
+	public String getErrorAlertPhone() {
+		return this.errorAlertPhone;
+	}
+
+	public void setErrorAlertPhone(String errorAlertPhone) {
+		this.errorAlertPhone = errorAlertPhone;
+	}
+
+	public String getErrorAlertStatus() {
+		return this.errorAlertStatus;
+	}
+
+	public void setErrorAlertStatus(String errorAlertStatus) {
+		this.errorAlertStatus = errorAlertStatus;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getSubscriptionInstanceID() {
+		return this.subscriptionInstanceID;
+	}
+
+	public void setSubscriptionInstanceID(String subscriptionInstanceID) {
+		this.subscriptionInstanceID = subscriptionInstanceID;
+	}
+
+	public String getSubscriptionInstanceName() {
+		return this.subscriptionInstanceName;
+	}
+
+	public void setSubscriptionInstanceName(String subscriptionInstanceName) {
+		this.subscriptionInstanceName = subscriptionInstanceName;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

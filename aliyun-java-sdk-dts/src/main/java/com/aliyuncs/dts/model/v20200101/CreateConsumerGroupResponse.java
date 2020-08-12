@@ -24,7 +24,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateConsumerGroupResponse extends AcsResponse {
 
-	private String success;
+	private String consumerGroupID;
 
 	private String errCode;
 
@@ -32,14 +32,14 @@ public class CreateConsumerGroupResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String consumerGroupID;
+	private String success;
 
-	public String getSuccess() {
-		return this.success;
+	public String getConsumerGroupID() {
+		return this.consumerGroupID;
 	}
 
-	public void setSuccess(String success) {
-		this.success = success;
+	public void setConsumerGroupID(String consumerGroupID) {
+		this.consumerGroupID = consumerGroupID;
 	}
 
 	public String getErrCode() {
@@ -66,12 +66,12 @@ public class CreateConsumerGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getConsumerGroupID() {
-		return this.consumerGroupID;
+	public String getSuccess() {
+		return this.success;
 	}
 
-	public void setConsumerGroupID(String consumerGroupID) {
-		this.consumerGroupID = consumerGroupID;
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

@@ -23,9 +23,9 @@ public class ResetSynchronizationJobResponseUnmarshaller {
 	public static ResetSynchronizationJobResponse unmarshall(ResetSynchronizationJobResponse resetSynchronizationJobResponse, UnmarshallerContext _ctx) {
 		
 		resetSynchronizationJobResponse.setRequestId(_ctx.stringValue("ResetSynchronizationJobResponse.RequestId"));
-		resetSynchronizationJobResponse.setSuccess(_ctx.stringValue("ResetSynchronizationJobResponse.Success"));
 		resetSynchronizationJobResponse.setErrCode(_ctx.stringValue("ResetSynchronizationJobResponse.ErrCode"));
 		resetSynchronizationJobResponse.setErrMessage(_ctx.stringValue("ResetSynchronizationJobResponse.ErrMessage"));
+		resetSynchronizationJobResponse.setSuccess(_ctx.stringValue("ResetSynchronizationJobResponse.Success"));
 	 
 	 	return resetSynchronizationJobResponse;
 	}

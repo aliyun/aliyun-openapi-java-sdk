@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifySynchronizationObjectResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String success;
-
 	private String errCode;
 
 	private String errMessage;
 
+	private String requestId;
+
+	private String success;
+
 	private String taskId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
 
 	public String getErrCode() {
 		return this.errCode;
@@ -64,6 +48,22 @@ public class ModifySynchronizationObjectResponse extends AcsResponse {
 
 	public void setErrMessage(String errMessage) {
 		this.errMessage = errMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public String getTaskId() {

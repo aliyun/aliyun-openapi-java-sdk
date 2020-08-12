@@ -16,6 +16,7 @@ package com.aliyuncs.dts.model.v20200101;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dts.Endpoint;
 
 /**
  * @author auto create
@@ -36,8 +37,12 @@ public class DescribeSynchronizationJobsRequest extends RpcAcsRequest<DescribeSy
 
 	private Integer pageSize;
 	public DescribeSynchronizationJobsRequest() {
-		super("Dts", "2020-01-01", "DescribeSynchronizationJobs");
+		super("Dts", "2020-01-01", "DescribeSynchronizationJobs", "dts");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getClientToken() {

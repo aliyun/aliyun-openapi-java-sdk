@@ -23,9 +23,9 @@ public class SuspendMigrationJobResponseUnmarshaller {
 	public static SuspendMigrationJobResponse unmarshall(SuspendMigrationJobResponse suspendMigrationJobResponse, UnmarshallerContext _ctx) {
 		
 		suspendMigrationJobResponse.setRequestId(_ctx.stringValue("SuspendMigrationJobResponse.RequestId"));
-		suspendMigrationJobResponse.setSuccess(_ctx.stringValue("SuspendMigrationJobResponse.Success"));
 		suspendMigrationJobResponse.setErrCode(_ctx.stringValue("SuspendMigrationJobResponse.ErrCode"));
 		suspendMigrationJobResponse.setErrMessage(_ctx.stringValue("SuspendMigrationJobResponse.ErrMessage"));
+		suspendMigrationJobResponse.setSuccess(_ctx.stringValue("SuspendMigrationJobResponse.Success"));
 	 
 	 	return suspendMigrationJobResponse;
 	}

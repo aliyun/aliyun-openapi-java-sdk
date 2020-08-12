@@ -23,9 +23,9 @@ public class ModifySynchronizationObjectResponseUnmarshaller {
 	public static ModifySynchronizationObjectResponse unmarshall(ModifySynchronizationObjectResponse modifySynchronizationObjectResponse, UnmarshallerContext _ctx) {
 		
 		modifySynchronizationObjectResponse.setRequestId(_ctx.stringValue("ModifySynchronizationObjectResponse.RequestId"));
-		modifySynchronizationObjectResponse.setSuccess(_ctx.stringValue("ModifySynchronizationObjectResponse.Success"));
 		modifySynchronizationObjectResponse.setErrCode(_ctx.stringValue("ModifySynchronizationObjectResponse.ErrCode"));
 		modifySynchronizationObjectResponse.setErrMessage(_ctx.stringValue("ModifySynchronizationObjectResponse.ErrMessage"));
+		modifySynchronizationObjectResponse.setSuccess(_ctx.stringValue("ModifySynchronizationObjectResponse.Success"));
 		modifySynchronizationObjectResponse.setTaskId(_ctx.stringValue("ModifySynchronizationObjectResponse.TaskId"));
 	 
 	 	return modifySynchronizationObjectResponse;

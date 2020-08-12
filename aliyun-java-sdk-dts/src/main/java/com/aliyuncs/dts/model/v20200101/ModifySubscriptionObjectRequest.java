@@ -16,6 +16,7 @@ package com.aliyuncs.dts.model.v20200101;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dts.Endpoint;
 
 /**
  * @author auto create
@@ -32,8 +33,12 @@ public class ModifySubscriptionObjectRequest extends RpcAcsRequest<ModifySubscri
 
 	private String subscriptionObject;
 	public ModifySubscriptionObjectRequest() {
-		super("Dts", "2020-01-01", "ModifySubscriptionObject");
+		super("Dts", "2020-01-01", "ModifySubscriptionObject", "dts");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSubscriptionInstanceId() {

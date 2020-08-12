@@ -16,6 +16,7 @@ package com.aliyuncs.dts.model.v20200101;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dts.Endpoint;
 
 /**
  * @author auto create
@@ -24,26 +25,63 @@ import com.aliyuncs.http.MethodType;
 public class ConfigureSynchronizationJobAlertRequest extends RpcAcsRequest<ConfigureSynchronizationJobAlertResponse> {
 	   
 
+	private String synchronizationJobId;
+
+	private String accountId;
+
+	private String delayAlertPhone;
+
 	private String delayOverSeconds;
 
 	private String delayAlertStatus;
 
 	private String ownerId;
 
-	private String synchronizationJobId;
-
-	private String accountId;
-
 	private String errorAlertPhone;
-
-	private String delayAlertPhone;
 
 	private String errorAlertStatus;
 
 	private String synchronizationDirection;
 	public ConfigureSynchronizationJobAlertRequest() {
-		super("Dts", "2020-01-01", "ConfigureSynchronizationJobAlert");
+		super("Dts", "2020-01-01", "ConfigureSynchronizationJobAlert", "dts");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getSynchronizationJobId() {
+		return this.synchronizationJobId;
+	}
+
+	public void setSynchronizationJobId(String synchronizationJobId) {
+		this.synchronizationJobId = synchronizationJobId;
+		if(synchronizationJobId != null){
+			putQueryParameter("SynchronizationJobId", synchronizationJobId);
+		}
+	}
+
+	public String getAccountId() {
+		return this.accountId;
+	}
+
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
+		if(accountId != null){
+			putQueryParameter("AccountId", accountId);
+		}
+	}
+
+	public String getDelayAlertPhone() {
+		return this.delayAlertPhone;
+	}
+
+	public void setDelayAlertPhone(String delayAlertPhone) {
+		this.delayAlertPhone = delayAlertPhone;
+		if(delayAlertPhone != null){
+			putQueryParameter("DelayAlertPhone", delayAlertPhone);
+		}
 	}
 
 	public String getDelayOverSeconds() {
@@ -79,28 +117,6 @@ public class ConfigureSynchronizationJobAlertRequest extends RpcAcsRequest<Confi
 		}
 	}
 
-	public String getSynchronizationJobId() {
-		return this.synchronizationJobId;
-	}
-
-	public void setSynchronizationJobId(String synchronizationJobId) {
-		this.synchronizationJobId = synchronizationJobId;
-		if(synchronizationJobId != null){
-			putQueryParameter("SynchronizationJobId", synchronizationJobId);
-		}
-	}
-
-	public String getAccountId() {
-		return this.accountId;
-	}
-
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
-		if(accountId != null){
-			putQueryParameter("AccountId", accountId);
-		}
-	}
-
 	public String getErrorAlertPhone() {
 		return this.errorAlertPhone;
 	}
@@ -109,17 +125,6 @@ public class ConfigureSynchronizationJobAlertRequest extends RpcAcsRequest<Confi
 		this.errorAlertPhone = errorAlertPhone;
 		if(errorAlertPhone != null){
 			putQueryParameter("ErrorAlertPhone", errorAlertPhone);
-		}
-	}
-
-	public String getDelayAlertPhone() {
-		return this.delayAlertPhone;
-	}
-
-	public void setDelayAlertPhone(String delayAlertPhone) {
-		this.delayAlertPhone = delayAlertPhone;
-		if(delayAlertPhone != null){
-			putQueryParameter("DelayAlertPhone", delayAlertPhone);
 		}
 	}
 

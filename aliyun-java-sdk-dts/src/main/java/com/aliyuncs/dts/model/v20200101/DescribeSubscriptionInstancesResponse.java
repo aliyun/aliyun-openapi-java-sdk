@@ -27,11 +27,11 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private Long totalRecordCount;
-
 	private Integer pageRecordCount;
 
 	private String requestId;
+
+	private Long totalRecordCount;
 
 	private List<SubscriptionInstance> subscriptionInstances;
 
@@ -41,14 +41,6 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-	}
-
-	public Long getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Long totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
 	}
 
 	public Integer getPageRecordCount() {
@@ -67,6 +59,14 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Long getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Long totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
+
 	public List<SubscriptionInstance> getSubscriptionInstances() {
 		return this.subscriptionInstances;
 	}
@@ -77,25 +77,25 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
 	public static class SubscriptionInstance {
 
-		private String subscriptionInstanceID;
+		private String beginTimestamp;
 
-		private String subscriptionInstanceName;
+		private String consumptionCheckpoint;
+
+		private String consumptionClient;
+
+		private String endTimestamp;
+
+		private String errorMessage;
 
 		private String payType;
 
 		private String status;
 
-		private String errorMessage;
-
-		private String consumptionCheckpoint;
-
-		private String beginTimestamp;
-
-		private String endTimestamp;
-
-		private String consumptionClient;
-
 		private String subscribeTopic;
+
+		private String subscriptionInstanceID;
+
+		private String subscriptionInstanceName;
 
 		private List<SynchronousObject> subscriptionObject;
 
@@ -105,20 +105,44 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
 		private SubscriptionHost subscriptionHost;
 
-		public String getSubscriptionInstanceID() {
-			return this.subscriptionInstanceID;
+		public String getBeginTimestamp() {
+			return this.beginTimestamp;
 		}
 
-		public void setSubscriptionInstanceID(String subscriptionInstanceID) {
-			this.subscriptionInstanceID = subscriptionInstanceID;
+		public void setBeginTimestamp(String beginTimestamp) {
+			this.beginTimestamp = beginTimestamp;
 		}
 
-		public String getSubscriptionInstanceName() {
-			return this.subscriptionInstanceName;
+		public String getConsumptionCheckpoint() {
+			return this.consumptionCheckpoint;
 		}
 
-		public void setSubscriptionInstanceName(String subscriptionInstanceName) {
-			this.subscriptionInstanceName = subscriptionInstanceName;
+		public void setConsumptionCheckpoint(String consumptionCheckpoint) {
+			this.consumptionCheckpoint = consumptionCheckpoint;
+		}
+
+		public String getConsumptionClient() {
+			return this.consumptionClient;
+		}
+
+		public void setConsumptionClient(String consumptionClient) {
+			this.consumptionClient = consumptionClient;
+		}
+
+		public String getEndTimestamp() {
+			return this.endTimestamp;
+		}
+
+		public void setEndTimestamp(String endTimestamp) {
+			this.endTimestamp = endTimestamp;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
 		}
 
 		public String getPayType() {
@@ -137,52 +161,28 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
-
-		public String getConsumptionCheckpoint() {
-			return this.consumptionCheckpoint;
-		}
-
-		public void setConsumptionCheckpoint(String consumptionCheckpoint) {
-			this.consumptionCheckpoint = consumptionCheckpoint;
-		}
-
-		public String getBeginTimestamp() {
-			return this.beginTimestamp;
-		}
-
-		public void setBeginTimestamp(String beginTimestamp) {
-			this.beginTimestamp = beginTimestamp;
-		}
-
-		public String getEndTimestamp() {
-			return this.endTimestamp;
-		}
-
-		public void setEndTimestamp(String endTimestamp) {
-			this.endTimestamp = endTimestamp;
-		}
-
-		public String getConsumptionClient() {
-			return this.consumptionClient;
-		}
-
-		public void setConsumptionClient(String consumptionClient) {
-			this.consumptionClient = consumptionClient;
-		}
-
 		public String getSubscribeTopic() {
 			return this.subscribeTopic;
 		}
 
 		public void setSubscribeTopic(String subscribeTopic) {
 			this.subscribeTopic = subscribeTopic;
+		}
+
+		public String getSubscriptionInstanceID() {
+			return this.subscriptionInstanceID;
+		}
+
+		public void setSubscriptionInstanceID(String subscriptionInstanceID) {
+			this.subscriptionInstanceID = subscriptionInstanceID;
+		}
+
+		public String getSubscriptionInstanceName() {
+			return this.subscriptionInstanceName;
+		}
+
+		public void setSubscriptionInstanceName(String subscriptionInstanceName) {
+			this.subscriptionInstanceName = subscriptionInstanceName;
 		}
 
 		public List<SynchronousObject> getSubscriptionObject() {
@@ -298,19 +298,11 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
 		public static class SubscriptionHost {
 
-			private String publicHost;
-
 			private String privateHost;
 
+			private String publicHost;
+
 			private String vPCHost;
-
-			public String getPublicHost() {
-				return this.publicHost;
-			}
-
-			public void setPublicHost(String publicHost) {
-				this.publicHost = publicHost;
-			}
 
 			public String getPrivateHost() {
 				return this.privateHost;
@@ -318,6 +310,14 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
 			public void setPrivateHost(String privateHost) {
 				this.privateHost = privateHost;
+			}
+
+			public String getPublicHost() {
+				return this.publicHost;
+			}
+
+			public void setPublicHost(String publicHost) {
+				this.publicHost = publicHost;
 			}
 
 			public String getVPCHost() {

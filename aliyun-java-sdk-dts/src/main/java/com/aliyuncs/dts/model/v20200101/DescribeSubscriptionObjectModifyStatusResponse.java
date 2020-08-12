@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSubscriptionObjectModifyStatusResponse extends AcsResponse {
 
+	private String percent;
+
 	private String requestId;
 
 	private String status;
 
-	private String percent;
-
 	private List<CheckItem> detail;
+
+	public String getPercent() {
+		return this.percent;
+	}
+
+	public void setPercent(String percent) {
+		this.percent = percent;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeSubscriptionObjectModifyStatusResponse extends AcsResponse 
 		this.status = status;
 	}
 
-	public String getPercent() {
-		return this.percent;
-	}
-
-	public void setPercent(String percent) {
-		this.percent = percent;
-	}
-
 	public List<CheckItem> getDetail() {
 		return this.detail;
 	}
@@ -67,21 +67,13 @@ public class DescribeSubscriptionObjectModifyStatusResponse extends AcsResponse 
 
 	public static class CheckItem {
 
-		private String itemName;
-
 		private String checkStatus;
 
 		private String errorMessage;
 
+		private String itemName;
+
 		private String repairMethod;
-
-		public String getItemName() {
-			return this.itemName;
-		}
-
-		public void setItemName(String itemName) {
-			this.itemName = itemName;
-		}
 
 		public String getCheckStatus() {
 			return this.checkStatus;
@@ -97,6 +89,14 @@ public class DescribeSubscriptionObjectModifyStatusResponse extends AcsResponse 
 
 		public void setErrorMessage(String errorMessage) {
 			this.errorMessage = errorMessage;
+		}
+
+		public String getItemName() {
+			return this.itemName;
+		}
+
+		public void setItemName(String itemName) {
+			this.itemName = itemName;
 		}
 
 		public String getRepairMethod() {

@@ -23,9 +23,9 @@ public class ModifyConsumerGroupPasswordResponseUnmarshaller {
 	public static ModifyConsumerGroupPasswordResponse unmarshall(ModifyConsumerGroupPasswordResponse modifyConsumerGroupPasswordResponse, UnmarshallerContext _ctx) {
 		
 		modifyConsumerGroupPasswordResponse.setRequestId(_ctx.stringValue("ModifyConsumerGroupPasswordResponse.RequestId"));
-		modifyConsumerGroupPasswordResponse.setSuccess(_ctx.stringValue("ModifyConsumerGroupPasswordResponse.Success"));
 		modifyConsumerGroupPasswordResponse.setErrCode(_ctx.stringValue("ModifyConsumerGroupPasswordResponse.ErrCode"));
 		modifyConsumerGroupPasswordResponse.setErrMessage(_ctx.stringValue("ModifyConsumerGroupPasswordResponse.ErrMessage"));
+		modifyConsumerGroupPasswordResponse.setSuccess(_ctx.stringValue("ModifyConsumerGroupPasswordResponse.Success"));
 	 
 	 	return modifyConsumerGroupPasswordResponse;
 	}

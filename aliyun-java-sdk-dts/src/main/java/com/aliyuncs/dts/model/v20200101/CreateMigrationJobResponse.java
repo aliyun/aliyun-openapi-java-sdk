@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateMigrationJobResponse extends AcsResponse {
 
-	private String success;
-
 	private String errCode;
 
 	private String errMessage;
 
-	private String requestId;
-
 	private String migrationJobId;
 
-	public String getSuccess() {
-		return this.success;
-	}
+	private String requestId;
 
-	public void setSuccess(String success) {
-		this.success = success;
-	}
+	private String success;
 
 	public String getErrCode() {
 		return this.errCode;
@@ -58,6 +50,14 @@ public class CreateMigrationJobResponse extends AcsResponse {
 		this.errMessage = errMessage;
 	}
 
+	public String getMigrationJobId() {
+		return this.migrationJobId;
+	}
+
+	public void setMigrationJobId(String migrationJobId) {
+		this.migrationJobId = migrationJobId;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -66,12 +66,12 @@ public class CreateMigrationJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getMigrationJobId() {
-		return this.migrationJobId;
+	public String getSuccess() {
+		return this.success;
 	}
 
-	public void setMigrationJobId(String migrationJobId) {
-		this.migrationJobId = migrationJobId;
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

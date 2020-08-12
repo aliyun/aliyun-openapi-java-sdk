@@ -23,9 +23,9 @@ public class ModifyMigrationObjectResponseUnmarshaller {
 	public static ModifyMigrationObjectResponse unmarshall(ModifyMigrationObjectResponse modifyMigrationObjectResponse, UnmarshallerContext _ctx) {
 		
 		modifyMigrationObjectResponse.setRequestId(_ctx.stringValue("ModifyMigrationObjectResponse.RequestId"));
-		modifyMigrationObjectResponse.setSuccess(_ctx.stringValue("ModifyMigrationObjectResponse.Success"));
 		modifyMigrationObjectResponse.setErrCode(_ctx.stringValue("ModifyMigrationObjectResponse.ErrCode"));
 		modifyMigrationObjectResponse.setErrMessage(_ctx.stringValue("ModifyMigrationObjectResponse.ErrMessage"));
+		modifyMigrationObjectResponse.setSuccess(_ctx.stringValue("ModifyMigrationObjectResponse.Success"));
 	 
 	 	return modifyMigrationObjectResponse;
 	}

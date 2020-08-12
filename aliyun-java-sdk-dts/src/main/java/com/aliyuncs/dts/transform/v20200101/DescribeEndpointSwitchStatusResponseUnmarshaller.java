@@ -23,8 +23,8 @@ public class DescribeEndpointSwitchStatusResponseUnmarshaller {
 	public static DescribeEndpointSwitchStatusResponse unmarshall(DescribeEndpointSwitchStatusResponse describeEndpointSwitchStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeEndpointSwitchStatusResponse.setRequestId(_ctx.stringValue("DescribeEndpointSwitchStatusResponse.RequestId"));
-		describeEndpointSwitchStatusResponse.setStatus(_ctx.stringValue("DescribeEndpointSwitchStatusResponse.Status"));
 		describeEndpointSwitchStatusResponse.setErrorMessage(_ctx.stringValue("DescribeEndpointSwitchStatusResponse.ErrorMessage"));
+		describeEndpointSwitchStatusResponse.setStatus(_ctx.stringValue("DescribeEndpointSwitchStatusResponse.Status"));
 	 
 	 	return describeEndpointSwitchStatusResponse;
 	}

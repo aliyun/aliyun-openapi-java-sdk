@@ -24,8 +24,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateSubscriptionInstanceResponse extends AcsResponse {
 
-	private String success;
-
 	private String errCode;
 
 	private String errMessage;
@@ -34,13 +32,7 @@ public class CreateSubscriptionInstanceResponse extends AcsResponse {
 
 	private String subscriptionInstanceId;
 
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
+	private String success;
 
 	public String getErrCode() {
 		return this.errCode;
@@ -72,6 +64,14 @@ public class CreateSubscriptionInstanceResponse extends AcsResponse {
 
 	public void setSubscriptionInstanceId(String subscriptionInstanceId) {
 		this.subscriptionInstanceId = subscriptionInstanceId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

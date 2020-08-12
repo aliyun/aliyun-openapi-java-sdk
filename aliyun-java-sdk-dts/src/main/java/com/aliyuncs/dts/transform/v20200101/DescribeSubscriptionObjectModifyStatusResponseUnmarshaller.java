@@ -27,15 +27,15 @@ public class DescribeSubscriptionObjectModifyStatusResponseUnmarshaller {
 	public static DescribeSubscriptionObjectModifyStatusResponse unmarshall(DescribeSubscriptionObjectModifyStatusResponse describeSubscriptionObjectModifyStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeSubscriptionObjectModifyStatusResponse.setRequestId(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.RequestId"));
-		describeSubscriptionObjectModifyStatusResponse.setStatus(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Status"));
 		describeSubscriptionObjectModifyStatusResponse.setPercent(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Percent"));
+		describeSubscriptionObjectModifyStatusResponse.setStatus(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Status"));
 
 		List<CheckItem> detail = new ArrayList<CheckItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSubscriptionObjectModifyStatusResponse.Detail.Length"); i++) {
 			CheckItem checkItem = new CheckItem();
-			checkItem.setItemName(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Detail["+ i +"].ItemName"));
 			checkItem.setCheckStatus(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Detail["+ i +"].CheckStatus"));
 			checkItem.setErrorMessage(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Detail["+ i +"].ErrorMessage"));
+			checkItem.setItemName(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Detail["+ i +"].ItemName"));
 			checkItem.setRepairMethod(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Detail["+ i +"].RepairMethod"));
 
 			detail.add(checkItem);

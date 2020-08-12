@@ -31,50 +31,20 @@ public class DescribeMigrationJobDetailResponseUnmarshaller {
 		
 		describeMigrationJobDetailResponse.setRequestId(_ctx.stringValue("DescribeMigrationJobDetailResponse.RequestId"));
 		describeMigrationJobDetailResponse.setPageNumber(_ctx.integerValue("DescribeMigrationJobDetailResponse.PageNumber"));
-		describeMigrationJobDetailResponse.setTotalRecordCount(_ctx.longValue("DescribeMigrationJobDetailResponse.TotalRecordCount"));
 		describeMigrationJobDetailResponse.setPageRecordCount(_ctx.integerValue("DescribeMigrationJobDetailResponse.PageRecordCount"));
-
-		List<StructureInitializationDetail> structureInitializationDetailList = new ArrayList<StructureInitializationDetail>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList.Length"); i++) {
-			StructureInitializationDetail structureInitializationDetail = new StructureInitializationDetail();
-			structureInitializationDetail.setObjectName(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ObjectName"));
-			structureInitializationDetail.setObjectType(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ObjectType"));
-			structureInitializationDetail.setSourceOwnerDBName(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].SourceOwnerDBName"));
-			structureInitializationDetail.setDestinationOwnerDBName(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].DestinationOwnerDBName"));
-			structureInitializationDetail.setStatus(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].Status"));
-			structureInitializationDetail.setErrorMessage(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ErrorMessage"));
-			structureInitializationDetail.setObjectDefinition(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ObjectDefinition"));
-
-			List<StructureInitializationDetail1> constraintList = new ArrayList<StructureInitializationDetail1>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ConstraintList.Length"); j++) {
-				StructureInitializationDetail1 structureInitializationDetail1 = new StructureInitializationDetail1();
-				structureInitializationDetail1.setObjectName(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ConstraintList["+ j +"].ObjectName"));
-				structureInitializationDetail1.setObjectType(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ConstraintList["+ j +"].ObjectType"));
-				structureInitializationDetail1.setSourceOwnerDBName(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ConstraintList["+ j +"].SourceOwnerDBName"));
-				structureInitializationDetail1.setDestinationOwnerDBName(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ConstraintList["+ j +"].DestinationOwnerDBName"));
-				structureInitializationDetail1.setStatus(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ConstraintList["+ j +"].Status"));
-				structureInitializationDetail1.setErrorMessage(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ConstraintList["+ j +"].ErrorMessage"));
-				structureInitializationDetail1.setObjectDefinition(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ConstraintList["+ j +"].ObjectDefinition"));
-
-				constraintList.add(structureInitializationDetail1);
-			}
-			structureInitializationDetail.setConstraintList(constraintList);
-
-			structureInitializationDetailList.add(structureInitializationDetail);
-		}
-		describeMigrationJobDetailResponse.setStructureInitializationDetailList(structureInitializationDetailList);
+		describeMigrationJobDetailResponse.setTotalRecordCount(_ctx.longValue("DescribeMigrationJobDetailResponse.TotalRecordCount"));
 
 		List<DataInitializationDetail> dataInitializationDetailList = new ArrayList<DataInitializationDetail>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMigrationJobDetailResponse.DataInitializationDetailList.Length"); i++) {
 			DataInitializationDetail dataInitializationDetail = new DataInitializationDetail();
-			dataInitializationDetail.setTableName(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataInitializationDetailList["+ i +"].TableName"));
-			dataInitializationDetail.setSourceOwnerDBName(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataInitializationDetailList["+ i +"].SourceOwnerDBName"));
 			dataInitializationDetail.setDestinationOwnerDBName(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataInitializationDetailList["+ i +"].DestinationOwnerDBName"));
-			dataInitializationDetail.setStatus(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataInitializationDetailList["+ i +"].Status"));
 			dataInitializationDetail.setErrorMessage(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataInitializationDetailList["+ i +"].ErrorMessage"));
-			dataInitializationDetail.setTotalRowNum(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataInitializationDetailList["+ i +"].TotalRowNum"));
 			dataInitializationDetail.setFinishRowNum(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataInitializationDetailList["+ i +"].FinishRowNum"));
 			dataInitializationDetail.setMigrationTime(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataInitializationDetailList["+ i +"].MigrationTime"));
+			dataInitializationDetail.setSourceOwnerDBName(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataInitializationDetailList["+ i +"].SourceOwnerDBName"));
+			dataInitializationDetail.setStatus(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataInitializationDetailList["+ i +"].Status"));
+			dataInitializationDetail.setTableName(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataInitializationDetailList["+ i +"].TableName"));
+			dataInitializationDetail.setTotalRowNum(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataInitializationDetailList["+ i +"].TotalRowNum"));
 
 			dataInitializationDetailList.add(dataInitializationDetail);
 		}
@@ -83,15 +53,45 @@ public class DescribeMigrationJobDetailResponseUnmarshaller {
 		List<DataSynchronizationDetail> dataSynchronizationDetailList = new ArrayList<DataSynchronizationDetail>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMigrationJobDetailResponse.DataSynchronizationDetailList.Length"); i++) {
 			DataSynchronizationDetail dataSynchronizationDetail = new DataSynchronizationDetail();
-			dataSynchronizationDetail.setTableName(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataSynchronizationDetailList["+ i +"].TableName"));
-			dataSynchronizationDetail.setSourceOwnerDBName(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataSynchronizationDetailList["+ i +"].SourceOwnerDBName"));
 			dataSynchronizationDetail.setDestinationOwnerDBName(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataSynchronizationDetailList["+ i +"].DestinationOwnerDBName"));
-			dataSynchronizationDetail.setStatus(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataSynchronizationDetailList["+ i +"].Status"));
 			dataSynchronizationDetail.setErrorMessage(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataSynchronizationDetailList["+ i +"].ErrorMessage"));
+			dataSynchronizationDetail.setSourceOwnerDBName(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataSynchronizationDetailList["+ i +"].SourceOwnerDBName"));
+			dataSynchronizationDetail.setStatus(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataSynchronizationDetailList["+ i +"].Status"));
+			dataSynchronizationDetail.setTableName(_ctx.stringValue("DescribeMigrationJobDetailResponse.DataSynchronizationDetailList["+ i +"].TableName"));
 
 			dataSynchronizationDetailList.add(dataSynchronizationDetail);
 		}
 		describeMigrationJobDetailResponse.setDataSynchronizationDetailList(dataSynchronizationDetailList);
+
+		List<StructureInitializationDetail> structureInitializationDetailList = new ArrayList<StructureInitializationDetail>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList.Length"); i++) {
+			StructureInitializationDetail structureInitializationDetail = new StructureInitializationDetail();
+			structureInitializationDetail.setDestinationOwnerDBName(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].DestinationOwnerDBName"));
+			structureInitializationDetail.setErrorMessage(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ErrorMessage"));
+			structureInitializationDetail.setObjectDefinition(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ObjectDefinition"));
+			structureInitializationDetail.setObjectName(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ObjectName"));
+			structureInitializationDetail.setObjectType(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ObjectType"));
+			structureInitializationDetail.setSourceOwnerDBName(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].SourceOwnerDBName"));
+			structureInitializationDetail.setStatus(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].Status"));
+
+			List<StructureInitializationDetail1> constraintList = new ArrayList<StructureInitializationDetail1>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ConstraintList.Length"); j++) {
+				StructureInitializationDetail1 structureInitializationDetail1 = new StructureInitializationDetail1();
+				structureInitializationDetail1.setDestinationOwnerDBName(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ConstraintList["+ j +"].DestinationOwnerDBName"));
+				structureInitializationDetail1.setErrorMessage(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ConstraintList["+ j +"].ErrorMessage"));
+				structureInitializationDetail1.setObjectDefinition(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ConstraintList["+ j +"].ObjectDefinition"));
+				structureInitializationDetail1.setObjectName(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ConstraintList["+ j +"].ObjectName"));
+				structureInitializationDetail1.setObjectType(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ConstraintList["+ j +"].ObjectType"));
+				structureInitializationDetail1.setSourceOwnerDBName(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ConstraintList["+ j +"].SourceOwnerDBName"));
+				structureInitializationDetail1.setStatus(_ctx.stringValue("DescribeMigrationJobDetailResponse.StructureInitializationDetailList["+ i +"].ConstraintList["+ j +"].Status"));
+
+				constraintList.add(structureInitializationDetail1);
+			}
+			structureInitializationDetail.setConstraintList(constraintList);
+
+			structureInitializationDetailList.add(structureInitializationDetail);
+		}
+		describeMigrationJobDetailResponse.setStructureInitializationDetailList(structureInitializationDetailList);
 	 
 	 	return describeMigrationJobDetailResponse;
 	}

@@ -28,18 +28,18 @@ public class DescribeConsumerGroupResponseUnmarshaller {
 		
 		describeConsumerGroupResponse.setRequestId(_ctx.stringValue("DescribeConsumerGroupResponse.RequestId"));
 		describeConsumerGroupResponse.setPageNumber(_ctx.integerValue("DescribeConsumerGroupResponse.PageNumber"));
-		describeConsumerGroupResponse.setTotalRecordCount(_ctx.integerValue("DescribeConsumerGroupResponse.TotalRecordCount"));
 		describeConsumerGroupResponse.setPageRecordCount(_ctx.integerValue("DescribeConsumerGroupResponse.PageRecordCount"));
+		describeConsumerGroupResponse.setTotalRecordCount(_ctx.integerValue("DescribeConsumerGroupResponse.TotalRecordCount"));
 
 		List<DescribeConsumerChannel> consumerChannels = new ArrayList<DescribeConsumerChannel>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeConsumerGroupResponse.ConsumerChannels.Length"); i++) {
 			DescribeConsumerChannel describeConsumerChannel = new DescribeConsumerChannel();
 			describeConsumerChannel.setConsumerGroupID(_ctx.stringValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].ConsumerGroupID"));
 			describeConsumerChannel.setConsumerGroupName(_ctx.stringValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].ConsumerGroupName"));
-			describeConsumerChannel.setConsumptionCheckpoint(_ctx.stringValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].ConsumptionCheckpoint"));
-			describeConsumerChannel.setUnconsumedData(_ctx.longValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].UnconsumedData"));
-			describeConsumerChannel.setMessageDelay(_ctx.longValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].MessageDelay"));
 			describeConsumerChannel.setConsumerGroupUserName(_ctx.stringValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].ConsumerGroupUserName"));
+			describeConsumerChannel.setConsumptionCheckpoint(_ctx.stringValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].ConsumptionCheckpoint"));
+			describeConsumerChannel.setMessageDelay(_ctx.longValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].MessageDelay"));
+			describeConsumerChannel.setUnconsumedData(_ctx.longValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].UnconsumedData"));
 
 			consumerChannels.add(describeConsumerChannel);
 		}

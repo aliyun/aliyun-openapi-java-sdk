@@ -16,6 +16,7 @@ package com.aliyuncs.dts.model.v20200101;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dts.Endpoint;
 
 /**
  * @author auto create
@@ -32,18 +33,22 @@ public class DescribeMigrationJobDetailRequest extends RpcAcsRequest<DescribeMig
 
 	private Integer pageNum;
 
-	private String ownerId;
-
-	private Boolean migrationModeStructureInitialization;
-
 	private String accountId;
 
 	private Boolean migrationModeDataSynchronization;
 
 	private Integer pageSize;
+
+	private String ownerId;
+
+	private Boolean migrationModeStructureInitialization;
 	public DescribeMigrationJobDetailRequest() {
-		super("Dts", "2020-01-01", "DescribeMigrationJobDetail");
+		super("Dts", "2020-01-01", "DescribeMigrationJobDetail", "dts");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getClientToken() {
@@ -90,28 +95,6 @@ public class DescribeMigrationJobDetailRequest extends RpcAcsRequest<DescribeMig
 		}
 	}
 
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
-	public Boolean getMigrationModeStructureInitialization() {
-		return this.migrationModeStructureInitialization;
-	}
-
-	public void setMigrationModeStructureInitialization(Boolean migrationModeStructureInitialization) {
-		this.migrationModeStructureInitialization = migrationModeStructureInitialization;
-		if(migrationModeStructureInitialization != null){
-			putQueryParameter("MigrationMode.StructureInitialization", migrationModeStructureInitialization.toString());
-		}
-	}
-
 	public String getAccountId() {
 		return this.accountId;
 	}
@@ -142,6 +125,28 @@ public class DescribeMigrationJobDetailRequest extends RpcAcsRequest<DescribeMig
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public Boolean getMigrationModeStructureInitialization() {
+		return this.migrationModeStructureInitialization;
+	}
+
+	public void setMigrationModeStructureInitialization(Boolean migrationModeStructureInitialization) {
+		this.migrationModeStructureInitialization = migrationModeStructureInitialization;
+		if(migrationModeStructureInitialization != null){
+			putQueryParameter("MigrationMode.StructureInitialization", migrationModeStructureInitialization.toString());
 		}
 	}
 

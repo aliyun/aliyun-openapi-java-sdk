@@ -24,42 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMigrationJobAlertResponse extends AcsResponse {
 
-	private String migrationJobId;
-
-	private String migrationJobName;
+	private String delayAlertPhone;
 
 	private String delayAlertStatus;
 
-	private String delayAlertPhone;
-
 	private String delayOverSeconds;
-
-	private String errorAlertStatus;
-
-	private String errorAlertPhone;
-
-	private String success;
 
 	private String errCode;
 
 	private String errMessage;
 
+	private String errorAlertPhone;
+
+	private String errorAlertStatus;
+
+	private String migrationJobId;
+
+	private String migrationJobName;
+
 	private String requestId;
 
-	public String getMigrationJobId() {
-		return this.migrationJobId;
+	private String success;
+
+	public String getDelayAlertPhone() {
+		return this.delayAlertPhone;
 	}
 
-	public void setMigrationJobId(String migrationJobId) {
-		this.migrationJobId = migrationJobId;
-	}
-
-	public String getMigrationJobName() {
-		return this.migrationJobName;
-	}
-
-	public void setMigrationJobName(String migrationJobName) {
-		this.migrationJobName = migrationJobName;
+	public void setDelayAlertPhone(String delayAlertPhone) {
+		this.delayAlertPhone = delayAlertPhone;
 	}
 
 	public String getDelayAlertStatus() {
@@ -70,44 +62,12 @@ public class DescribeMigrationJobAlertResponse extends AcsResponse {
 		this.delayAlertStatus = delayAlertStatus;
 	}
 
-	public String getDelayAlertPhone() {
-		return this.delayAlertPhone;
-	}
-
-	public void setDelayAlertPhone(String delayAlertPhone) {
-		this.delayAlertPhone = delayAlertPhone;
-	}
-
 	public String getDelayOverSeconds() {
 		return this.delayOverSeconds;
 	}
 
 	public void setDelayOverSeconds(String delayOverSeconds) {
 		this.delayOverSeconds = delayOverSeconds;
-	}
-
-	public String getErrorAlertStatus() {
-		return this.errorAlertStatus;
-	}
-
-	public void setErrorAlertStatus(String errorAlertStatus) {
-		this.errorAlertStatus = errorAlertStatus;
-	}
-
-	public String getErrorAlertPhone() {
-		return this.errorAlertPhone;
-	}
-
-	public void setErrorAlertPhone(String errorAlertPhone) {
-		this.errorAlertPhone = errorAlertPhone;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
 	}
 
 	public String getErrCode() {
@@ -126,12 +86,52 @@ public class DescribeMigrationJobAlertResponse extends AcsResponse {
 		this.errMessage = errMessage;
 	}
 
+	public String getErrorAlertPhone() {
+		return this.errorAlertPhone;
+	}
+
+	public void setErrorAlertPhone(String errorAlertPhone) {
+		this.errorAlertPhone = errorAlertPhone;
+	}
+
+	public String getErrorAlertStatus() {
+		return this.errorAlertStatus;
+	}
+
+	public void setErrorAlertStatus(String errorAlertStatus) {
+		this.errorAlertStatus = errorAlertStatus;
+	}
+
+	public String getMigrationJobId() {
+		return this.migrationJobId;
+	}
+
+	public void setMigrationJobId(String migrationJobId) {
+		this.migrationJobId = migrationJobId;
+	}
+
+	public String getMigrationJobName() {
+		return this.migrationJobName;
+	}
+
+	public void setMigrationJobName(String migrationJobName) {
+		this.migrationJobName = migrationJobName;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

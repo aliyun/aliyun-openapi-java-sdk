@@ -23,9 +23,9 @@ public class ConfigureSynchronizationJobReplicatorCompareResponseUnmarshaller {
 	public static ConfigureSynchronizationJobReplicatorCompareResponse unmarshall(ConfigureSynchronizationJobReplicatorCompareResponse configureSynchronizationJobReplicatorCompareResponse, UnmarshallerContext _ctx) {
 		
 		configureSynchronizationJobReplicatorCompareResponse.setRequestId(_ctx.stringValue("ConfigureSynchronizationJobReplicatorCompareResponse.RequestId"));
-		configureSynchronizationJobReplicatorCompareResponse.setSuccess(_ctx.stringValue("ConfigureSynchronizationJobReplicatorCompareResponse.Success"));
 		configureSynchronizationJobReplicatorCompareResponse.setErrCode(_ctx.stringValue("ConfigureSynchronizationJobReplicatorCompareResponse.ErrCode"));
 		configureSynchronizationJobReplicatorCompareResponse.setErrMessage(_ctx.stringValue("ConfigureSynchronizationJobReplicatorCompareResponse.ErrMessage"));
+		configureSynchronizationJobReplicatorCompareResponse.setSuccess(_ctx.stringValue("ConfigureSynchronizationJobReplicatorCompareResponse.Success"));
 	 
 	 	return configureSynchronizationJobReplicatorCompareResponse;
 	}

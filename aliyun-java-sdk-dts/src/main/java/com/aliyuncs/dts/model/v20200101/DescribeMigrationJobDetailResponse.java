@@ -27,17 +27,17 @@ public class DescribeMigrationJobDetailResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private Long totalRecordCount;
-
 	private Integer pageRecordCount;
 
 	private String requestId;
 
-	private List<StructureInitializationDetail> structureInitializationDetailList;
+	private Long totalRecordCount;
 
 	private List<DataInitializationDetail> dataInitializationDetailList;
 
 	private List<DataSynchronizationDetail> dataSynchronizationDetailList;
+
+	private List<StructureInitializationDetail> structureInitializationDetailList;
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -45,14 +45,6 @@ public class DescribeMigrationJobDetailResponse extends AcsResponse {
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-	}
-
-	public Long getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Long totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
 	}
 
 	public Integer getPageRecordCount() {
@@ -71,12 +63,12 @@ public class DescribeMigrationJobDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<StructureInitializationDetail> getStructureInitializationDetailList() {
-		return this.structureInitializationDetailList;
+	public Long getTotalRecordCount() {
+		return this.totalRecordCount;
 	}
 
-	public void setStructureInitializationDetailList(List<StructureInitializationDetail> structureInitializationDetailList) {
-		this.structureInitializationDetailList = structureInitializationDetailList;
+	public void setTotalRecordCount(Long totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<DataInitializationDetail> getDataInitializationDetailList() {
@@ -95,7 +87,157 @@ public class DescribeMigrationJobDetailResponse extends AcsResponse {
 		this.dataSynchronizationDetailList = dataSynchronizationDetailList;
 	}
 
+	public List<StructureInitializationDetail> getStructureInitializationDetailList() {
+		return this.structureInitializationDetailList;
+	}
+
+	public void setStructureInitializationDetailList(List<StructureInitializationDetail> structureInitializationDetailList) {
+		this.structureInitializationDetailList = structureInitializationDetailList;
+	}
+
+	public static class DataInitializationDetail {
+
+		private String destinationOwnerDBName;
+
+		private String errorMessage;
+
+		private String finishRowNum;
+
+		private String migrationTime;
+
+		private String sourceOwnerDBName;
+
+		private String status;
+
+		private String tableName;
+
+		private String totalRowNum;
+
+		public String getDestinationOwnerDBName() {
+			return this.destinationOwnerDBName;
+		}
+
+		public void setDestinationOwnerDBName(String destinationOwnerDBName) {
+			this.destinationOwnerDBName = destinationOwnerDBName;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
+		public String getFinishRowNum() {
+			return this.finishRowNum;
+		}
+
+		public void setFinishRowNum(String finishRowNum) {
+			this.finishRowNum = finishRowNum;
+		}
+
+		public String getMigrationTime() {
+			return this.migrationTime;
+		}
+
+		public void setMigrationTime(String migrationTime) {
+			this.migrationTime = migrationTime;
+		}
+
+		public String getSourceOwnerDBName() {
+			return this.sourceOwnerDBName;
+		}
+
+		public void setSourceOwnerDBName(String sourceOwnerDBName) {
+			this.sourceOwnerDBName = sourceOwnerDBName;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
+		}
+
+		public String getTotalRowNum() {
+			return this.totalRowNum;
+		}
+
+		public void setTotalRowNum(String totalRowNum) {
+			this.totalRowNum = totalRowNum;
+		}
+	}
+
+	public static class DataSynchronizationDetail {
+
+		private String destinationOwnerDBName;
+
+		private String errorMessage;
+
+		private String sourceOwnerDBName;
+
+		private String status;
+
+		private String tableName;
+
+		public String getDestinationOwnerDBName() {
+			return this.destinationOwnerDBName;
+		}
+
+		public void setDestinationOwnerDBName(String destinationOwnerDBName) {
+			this.destinationOwnerDBName = destinationOwnerDBName;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
+		public String getSourceOwnerDBName() {
+			return this.sourceOwnerDBName;
+		}
+
+		public void setSourceOwnerDBName(String sourceOwnerDBName) {
+			this.sourceOwnerDBName = sourceOwnerDBName;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
+		}
+	}
+
 	public static class StructureInitializationDetail {
+
+		private String destinationOwnerDBName;
+
+		private String errorMessage;
+
+		private String objectDefinition;
 
 		private String objectName;
 
@@ -103,15 +245,33 @@ public class DescribeMigrationJobDetailResponse extends AcsResponse {
 
 		private String sourceOwnerDBName;
 
-		private String destinationOwnerDBName;
-
 		private String status;
 
-		private String errorMessage;
-
-		private String objectDefinition;
-
 		private List<StructureInitializationDetail1> constraintList;
+
+		public String getDestinationOwnerDBName() {
+			return this.destinationOwnerDBName;
+		}
+
+		public void setDestinationOwnerDBName(String destinationOwnerDBName) {
+			this.destinationOwnerDBName = destinationOwnerDBName;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
+		public String getObjectDefinition() {
+			return this.objectDefinition;
+		}
+
+		public void setObjectDefinition(String objectDefinition) {
+			this.objectDefinition = objectDefinition;
+		}
 
 		public String getObjectName() {
 			return this.objectName;
@@ -137,36 +297,12 @@ public class DescribeMigrationJobDetailResponse extends AcsResponse {
 			this.sourceOwnerDBName = sourceOwnerDBName;
 		}
 
-		public String getDestinationOwnerDBName() {
-			return this.destinationOwnerDBName;
-		}
-
-		public void setDestinationOwnerDBName(String destinationOwnerDBName) {
-			this.destinationOwnerDBName = destinationOwnerDBName;
-		}
-
 		public String getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
-
-		public String getObjectDefinition() {
-			return this.objectDefinition;
-		}
-
-		public void setObjectDefinition(String objectDefinition) {
-			this.objectDefinition = objectDefinition;
 		}
 
 		public List<StructureInitializationDetail1> getConstraintList() {
@@ -179,19 +315,43 @@ public class DescribeMigrationJobDetailResponse extends AcsResponse {
 
 		public static class StructureInitializationDetail1 {
 
+			private String destinationOwnerDBName;
+
+			private String errorMessage;
+
+			private String objectDefinition;
+
 			private String objectName;
 
 			private String objectType;
 
 			private String sourceOwnerDBName;
 
-			private String destinationOwnerDBName;
-
 			private String status;
 
-			private String errorMessage;
+			public String getDestinationOwnerDBName() {
+				return this.destinationOwnerDBName;
+			}
 
-			private String objectDefinition;
+			public void setDestinationOwnerDBName(String destinationOwnerDBName) {
+				this.destinationOwnerDBName = destinationOwnerDBName;
+			}
+
+			public String getErrorMessage() {
+				return this.errorMessage;
+			}
+
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
+			}
+
+			public String getObjectDefinition() {
+				return this.objectDefinition;
+			}
+
+			public void setObjectDefinition(String objectDefinition) {
+				this.objectDefinition = objectDefinition;
+			}
 
 			public String getObjectName() {
 				return this.objectName;
@@ -217,14 +377,6 @@ public class DescribeMigrationJobDetailResponse extends AcsResponse {
 				this.sourceOwnerDBName = sourceOwnerDBName;
 			}
 
-			public String getDestinationOwnerDBName() {
-				return this.destinationOwnerDBName;
-			}
-
-			public void setDestinationOwnerDBName(String destinationOwnerDBName) {
-				this.destinationOwnerDBName = destinationOwnerDBName;
-			}
-
 			public String getStatus() {
 				return this.status;
 			}
@@ -232,158 +384,6 @@ public class DescribeMigrationJobDetailResponse extends AcsResponse {
 			public void setStatus(String status) {
 				this.status = status;
 			}
-
-			public String getErrorMessage() {
-				return this.errorMessage;
-			}
-
-			public void setErrorMessage(String errorMessage) {
-				this.errorMessage = errorMessage;
-			}
-
-			public String getObjectDefinition() {
-				return this.objectDefinition;
-			}
-
-			public void setObjectDefinition(String objectDefinition) {
-				this.objectDefinition = objectDefinition;
-			}
-		}
-	}
-
-	public static class DataInitializationDetail {
-
-		private String tableName;
-
-		private String sourceOwnerDBName;
-
-		private String destinationOwnerDBName;
-
-		private String status;
-
-		private String errorMessage;
-
-		private String totalRowNum;
-
-		private String finishRowNum;
-
-		private String migrationTime;
-
-		public String getTableName() {
-			return this.tableName;
-		}
-
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
-
-		public String getSourceOwnerDBName() {
-			return this.sourceOwnerDBName;
-		}
-
-		public void setSourceOwnerDBName(String sourceOwnerDBName) {
-			this.sourceOwnerDBName = sourceOwnerDBName;
-		}
-
-		public String getDestinationOwnerDBName() {
-			return this.destinationOwnerDBName;
-		}
-
-		public void setDestinationOwnerDBName(String destinationOwnerDBName) {
-			this.destinationOwnerDBName = destinationOwnerDBName;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
-
-		public String getTotalRowNum() {
-			return this.totalRowNum;
-		}
-
-		public void setTotalRowNum(String totalRowNum) {
-			this.totalRowNum = totalRowNum;
-		}
-
-		public String getFinishRowNum() {
-			return this.finishRowNum;
-		}
-
-		public void setFinishRowNum(String finishRowNum) {
-			this.finishRowNum = finishRowNum;
-		}
-
-		public String getMigrationTime() {
-			return this.migrationTime;
-		}
-
-		public void setMigrationTime(String migrationTime) {
-			this.migrationTime = migrationTime;
-		}
-	}
-
-	public static class DataSynchronizationDetail {
-
-		private String tableName;
-
-		private String sourceOwnerDBName;
-
-		private String destinationOwnerDBName;
-
-		private String status;
-
-		private String errorMessage;
-
-		public String getTableName() {
-			return this.tableName;
-		}
-
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
-
-		public String getSourceOwnerDBName() {
-			return this.sourceOwnerDBName;
-		}
-
-		public void setSourceOwnerDBName(String sourceOwnerDBName) {
-			this.sourceOwnerDBName = sourceOwnerDBName;
-		}
-
-		public String getDestinationOwnerDBName() {
-			return this.destinationOwnerDBName;
-		}
-
-		public void setDestinationOwnerDBName(String destinationOwnerDBName) {
-			this.destinationOwnerDBName = destinationOwnerDBName;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
 		}
 	}
 
