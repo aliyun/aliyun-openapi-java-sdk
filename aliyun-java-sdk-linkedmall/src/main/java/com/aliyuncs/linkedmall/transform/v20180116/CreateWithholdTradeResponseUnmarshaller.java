@@ -31,6 +31,7 @@ public class CreateWithholdTradeResponseUnmarshaller {
 		withholdTradeResponse.setOutRequestNo(_ctx.stringValue("CreateWithholdTradeResponse.WithholdTradeResponse.OutRequestNo"));
 		withholdTradeResponse.setOutTradeNo(_ctx.stringValue("CreateWithholdTradeResponse.WithholdTradeResponse.OutTradeNo"));
 		withholdTradeResponse.setTradeNo(_ctx.stringValue("CreateWithholdTradeResponse.WithholdTradeResponse.TradeNo"));
+		withholdTradeResponse.setPaymentDate(_ctx.stringValue("CreateWithholdTradeResponse.WithholdTradeResponse.PaymentDate"));
 		createWithholdTradeResponse.setWithholdTradeResponse(withholdTradeResponse);
 	 
 	 	return createWithholdTradeResponse;

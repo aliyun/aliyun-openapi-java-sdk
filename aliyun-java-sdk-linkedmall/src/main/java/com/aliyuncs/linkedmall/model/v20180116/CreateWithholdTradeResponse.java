@@ -72,6 +72,8 @@ public class CreateWithholdTradeResponse extends AcsResponse {
 
 		private String tradeNo;
 
+		private String paymentDate;
+
 		public String getOutRequestNo() {
 			return this.outRequestNo;
 		}
@@ -94,6 +96,14 @@ public class CreateWithholdTradeResponse extends AcsResponse {
 
 		public void setTradeNo(String tradeNo) {
 			this.tradeNo = tradeNo;
+		}
+
+		public String getPaymentDate() {
+			return this.paymentDate;
+		}
+
+		public void setPaymentDate(String paymentDate) {
+			this.paymentDate = paymentDate;
 		}
 	}
 

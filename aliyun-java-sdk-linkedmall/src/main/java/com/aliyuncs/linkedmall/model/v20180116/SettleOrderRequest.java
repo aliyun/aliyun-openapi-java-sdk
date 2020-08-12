@@ -31,6 +31,8 @@ public class SettleOrderRequest extends RpcAcsRequest<SettleOrderResponse> {
 
 	private String tradeNo;
 
+	private String merchantId;
+
 	private String royaltyParameters;
 
 	private String outTradeNo;
@@ -73,6 +75,17 @@ public class SettleOrderRequest extends RpcAcsRequest<SettleOrderResponse> {
 		this.tradeNo = tradeNo;
 		if(tradeNo != null){
 			putBodyParameter("TradeNo", tradeNo);
+		}
+	}
+
+	public String getMerchantId() {
+		return this.merchantId;
+	}
+
+	public void setMerchantId(String merchantId) {
+		this.merchantId = merchantId;
+		if(merchantId != null){
+			putBodyParameter("MerchantId", merchantId);
 		}
 	}
 

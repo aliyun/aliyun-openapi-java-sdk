@@ -30,7 +30,7 @@ public class QueryWithholdTradeResponse extends AcsResponse {
 
 	private String requestId;
 
-	private WithholdTradeResponse withholdTradeResponse;
+	private QueryWithholdTradeResponse1 queryWithholdTradeResponse1;
 
 	public String getCode() {
 		return this.code;
@@ -56,15 +56,15 @@ public class QueryWithholdTradeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public WithholdTradeResponse getWithholdTradeResponse() {
-		return this.withholdTradeResponse;
+	public QueryWithholdTradeResponse1 getQueryWithholdTradeResponse1() {
+		return this.queryWithholdTradeResponse1;
 	}
 
-	public void setWithholdTradeResponse(WithholdTradeResponse withholdTradeResponse) {
-		this.withholdTradeResponse = withholdTradeResponse;
+	public void setQueryWithholdTradeResponse1(QueryWithholdTradeResponse1 queryWithholdTradeResponse1) {
+		this.queryWithholdTradeResponse1 = queryWithholdTradeResponse1;
 	}
 
-	public static class WithholdTradeResponse {
+	public static class QueryWithholdTradeResponse1 {
 
 		private String tradeStatus;
 
@@ -75,6 +75,8 @@ public class QueryWithholdTradeResponse extends AcsResponse {
 		private String totalAmount;
 
 		private String tradeNo;
+
+		private String paymentDate;
 
 		public String getTradeStatus() {
 			return this.tradeStatus;
@@ -114,6 +116,14 @@ public class QueryWithholdTradeResponse extends AcsResponse {
 
 		public void setTradeNo(String tradeNo) {
 			this.tradeNo = tradeNo;
+		}
+
+		public String getPaymentDate() {
+			return this.paymentDate;
+		}
+
+		public void setPaymentDate(String paymentDate) {
+			this.paymentDate = paymentDate;
 		}
 	}
 

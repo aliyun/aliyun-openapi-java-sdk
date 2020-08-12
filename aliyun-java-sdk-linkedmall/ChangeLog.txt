@@ -1,3 +1,6 @@
+2020-08-12 Version: 2.12.11
+- Modify interface field,eg SettleOrder,CreateWithholdTrade,QueryWithholdTrade,RefundOrder.
+
 2020-08-06 Version: 2.12.10
 - Add item Promotion query interface.
 

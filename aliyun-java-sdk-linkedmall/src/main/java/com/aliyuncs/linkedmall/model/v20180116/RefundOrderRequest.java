@@ -27,13 +27,15 @@ public class RefundOrderRequest extends RpcAcsRequest<RefundOrderResponse> {
 
 	private String extInfo;
 
+	private String tradeNo;
+
+	private String refundReason;
+
 	private String outRequestNo;
 
 	private String refundRoyaltyParameters;
 
-	private String tradeNo;
-
-	private String refundReason;
+	private String merchantId;
 
 	private String refundAmount;
 
@@ -55,6 +57,28 @@ public class RefundOrderRequest extends RpcAcsRequest<RefundOrderResponse> {
 		this.extInfo = extInfo;
 		if(extInfo != null){
 			putBodyParameter("ExtInfo", extInfo);
+		}
+	}
+
+	public String getTradeNo() {
+		return this.tradeNo;
+	}
+
+	public void setTradeNo(String tradeNo) {
+		this.tradeNo = tradeNo;
+		if(tradeNo != null){
+			putBodyParameter("TradeNo", tradeNo);
+		}
+	}
+
+	public String getRefundReason() {
+		return this.refundReason;
+	}
+
+	public void setRefundReason(String refundReason) {
+		this.refundReason = refundReason;
+		if(refundReason != null){
+			putBodyParameter("RefundReason", refundReason);
 		}
 	}
 
@@ -80,25 +104,14 @@ public class RefundOrderRequest extends RpcAcsRequest<RefundOrderResponse> {
 		}
 	}
 
-	public String getTradeNo() {
-		return this.tradeNo;
+	public String getMerchantId() {
+		return this.merchantId;
 	}
 
-	public void setTradeNo(String tradeNo) {
-		this.tradeNo = tradeNo;
-		if(tradeNo != null){
-			putBodyParameter("TradeNo", tradeNo);
-		}
-	}
-
-	public String getRefundReason() {
-		return this.refundReason;
-	}
-
-	public void setRefundReason(String refundReason) {
-		this.refundReason = refundReason;
-		if(refundReason != null){
-			putBodyParameter("RefundReason", refundReason);
+	public void setMerchantId(String merchantId) {
+		this.merchantId = merchantId;
+		if(merchantId != null){
+			putBodyParameter("MerchantId", merchantId);
 		}
 	}
 

@@ -15,7 +15,7 @@
 package com.aliyuncs.linkedmall.transform.v20180116;
 
 import com.aliyuncs.linkedmall.model.v20180116.QueryWithholdTradeResponse;
-import com.aliyuncs.linkedmall.model.v20180116.QueryWithholdTradeResponse.WithholdTradeResponse;
+import com.aliyuncs.linkedmall.model.v20180116.QueryWithholdTradeResponse.QueryWithholdTradeResponse1;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,13 +27,14 @@ public class QueryWithholdTradeResponseUnmarshaller {
 		queryWithholdTradeResponse.setCode(_ctx.stringValue("QueryWithholdTradeResponse.Code"));
 		queryWithholdTradeResponse.setMessage(_ctx.stringValue("QueryWithholdTradeResponse.Message"));
 
-		WithholdTradeResponse withholdTradeResponse = new WithholdTradeResponse();
-		withholdTradeResponse.setTradeStatus(_ctx.stringValue("QueryWithholdTradeResponse.WithholdTradeResponse.TradeStatus"));
-		withholdTradeResponse.setSettleStatus(_ctx.stringValue("QueryWithholdTradeResponse.WithholdTradeResponse.SettleStatus"));
-		withholdTradeResponse.setOutTradeNo(_ctx.stringValue("QueryWithholdTradeResponse.WithholdTradeResponse.OutTradeNo"));
-		withholdTradeResponse.setTotalAmount(_ctx.stringValue("QueryWithholdTradeResponse.WithholdTradeResponse.TotalAmount"));
-		withholdTradeResponse.setTradeNo(_ctx.stringValue("QueryWithholdTradeResponse.WithholdTradeResponse.TradeNo"));
-		queryWithholdTradeResponse.setWithholdTradeResponse(withholdTradeResponse);
+		QueryWithholdTradeResponse1 queryWithholdTradeResponse1 = new QueryWithholdTradeResponse1();
+		queryWithholdTradeResponse1.setTradeStatus(_ctx.stringValue("QueryWithholdTradeResponse.QueryWithholdTradeResponse.TradeStatus"));
+		queryWithholdTradeResponse1.setSettleStatus(_ctx.stringValue("QueryWithholdTradeResponse.QueryWithholdTradeResponse.SettleStatus"));
+		queryWithholdTradeResponse1.setOutTradeNo(_ctx.stringValue("QueryWithholdTradeResponse.QueryWithholdTradeResponse.OutTradeNo"));
+		queryWithholdTradeResponse1.setTotalAmount(_ctx.stringValue("QueryWithholdTradeResponse.QueryWithholdTradeResponse.TotalAmount"));
+		queryWithholdTradeResponse1.setTradeNo(_ctx.stringValue("QueryWithholdTradeResponse.QueryWithholdTradeResponse.TradeNo"));
+		queryWithholdTradeResponse1.setPaymentDate(_ctx.stringValue("QueryWithholdTradeResponse.QueryWithholdTradeResponse.PaymentDate"));
+		queryWithholdTradeResponse.setQueryWithholdTradeResponse1(queryWithholdTradeResponse1);
 	 
 	 	return queryWithholdTradeResponse;
 	}
