@@ -1,6 +1,9 @@
 2020-08-13 Version: 3.8.1
 - Fix GetServiceListPage bug.
 
+2020-08-13 Version: 3.8.1
+- Fix GetServiceListPage bug.
+
 2020-08-07 Version: 3.5.0
 - Add new Api CreateIDCImportCommand.
 
