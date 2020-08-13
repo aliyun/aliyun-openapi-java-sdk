@@ -1,3 +1,6 @@
+2020-08-13 Version: 1.0.6
+- Support ListHotlineRecord.
+
 2020-08-06 Version: 1.0.5
 - Support CreateSkillGroup.
 - Update ListSkillGroup.
