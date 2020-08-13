@@ -33,6 +33,8 @@ public class QueryAccountBillRequest extends RpcAcsRequest<QueryAccountBillRespo
 
 	private Long ownerID;
 
+	private Long billOwnerId;
+
 	private Boolean isGroupByProduct;
 
 	private Integer pageSize;
@@ -86,6 +88,17 @@ public class QueryAccountBillRequest extends RpcAcsRequest<QueryAccountBillRespo
 		this.ownerID = ownerID;
 		if(ownerID != null){
 			putQueryParameter("OwnerID", ownerID.toString());
+		}
+	}
+
+	public Long getBillOwnerId() {
+		return this.billOwnerId;
+	}
+
+	public void setBillOwnerId(Long billOwnerId) {
+		this.billOwnerId = billOwnerId;
+		if(billOwnerId != null){
+			putQueryParameter("BillOwnerId", billOwnerId.toString());
 		}
 	}
 

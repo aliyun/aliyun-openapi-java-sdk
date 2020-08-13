@@ -80,6 +80,8 @@ public class QueryInstanceBillResponseUnmarshaller {
 			item.setServicePeriod(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].ServicePeriod"));
 			item.setBillingDate(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].BillingDate"));
 			item.setServicePeriodUnit(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].ServicePeriodUnit"));
+			item.setPipCode(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].PipCode"));
+			item.setCommodityCode(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].CommodityCode"));
 
 			items.add(item);
 		}

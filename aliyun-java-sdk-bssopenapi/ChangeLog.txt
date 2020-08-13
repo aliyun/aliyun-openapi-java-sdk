@@ -1,3 +1,7 @@
+2020-08-13 Version: 1.5.9
+- Add PipCode and CommodityCode for QueryInstanceBill, QueryBillOverview, QueryBill, QuerySettleBill, QueryAccountBill, QuerySplitItemBill.
+- Support BillOwnerId filter for QueryInstanceBill, QueryBillOverview, QueryBill, QuerySettleBill, QueryAccountBill, QuerySplitItemBill.
+
 2020-07-09 Version: 1.5.8
 - Add new action of QuerySettleBill.
 

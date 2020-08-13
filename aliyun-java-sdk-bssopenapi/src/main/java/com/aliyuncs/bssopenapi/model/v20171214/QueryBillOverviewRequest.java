@@ -31,6 +31,8 @@ public class QueryBillOverviewRequest extends RpcAcsRequest<QueryBillOverviewRes
 
 	private String billingCycle;
 
+	private Long billOwnerId;
+
 	private String productType;
 	public QueryBillOverviewRequest() {
 		super("BssOpenApi", "2017-12-14", "QueryBillOverview");
@@ -71,6 +73,17 @@ public class QueryBillOverviewRequest extends RpcAcsRequest<QueryBillOverviewRes
 		this.billingCycle = billingCycle;
 		if(billingCycle != null){
 			putQueryParameter("BillingCycle", billingCycle);
+		}
+	}
+
+	public Long getBillOwnerId() {
+		return this.billOwnerId;
+	}
+
+	public void setBillOwnerId(Long billOwnerId) {
+		this.billOwnerId = billOwnerId;
+		if(billOwnerId != null){
+			putQueryParameter("BillOwnerId", billOwnerId.toString());
 		}
 	}
 

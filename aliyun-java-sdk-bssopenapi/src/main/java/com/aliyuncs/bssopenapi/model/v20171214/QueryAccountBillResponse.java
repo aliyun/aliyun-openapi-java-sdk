@@ -179,6 +179,8 @@ public class QueryAccountBillResponse extends AcsResponse {
 
 			private String subscriptionType;
 
+			private String pipCode;
+
 			public String getCostUnit() {
 				return this.costUnit;
 			}
@@ -297,6 +299,14 @@ public class QueryAccountBillResponse extends AcsResponse {
 
 			public void setSubscriptionType(String subscriptionType) {
 				this.subscriptionType = subscriptionType;
+			}
+
+			public String getPipCode() {
+				return this.pipCode;
+			}
+
+			public void setPipCode(String pipCode) {
+				this.pipCode = pipCode;
 			}
 		}
 	}

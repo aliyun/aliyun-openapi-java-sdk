@@ -60,6 +60,8 @@ public class QueryBillOverviewResponseUnmarshaller {
 			item.setAfterTaxAmount(_ctx.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].AfterTaxAmount"));
 			item.setPaymentCurrency(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].PaymentCurrency"));
 			item.setRoundDownDiscount(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].RoundDownDiscount"));
+			item.setPipCode(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].PipCode"));
+			item.setCommodityCode(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].CommodityCode"));
 
 			items.add(item);
 		}

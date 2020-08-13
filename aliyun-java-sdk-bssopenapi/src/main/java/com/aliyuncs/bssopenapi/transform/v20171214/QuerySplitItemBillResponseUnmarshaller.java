@@ -81,6 +81,8 @@ public class QuerySplitItemBillResponseUnmarshaller {
 			item.setBillingDate(_ctx.stringValue("QuerySplitItemBillResponse.Data.Items["+ i +"].BillingDate"));
 			item.setSplitItemID(_ctx.stringValue("QuerySplitItemBillResponse.Data.Items["+ i +"].SplitItemID"));
 			item.setSplitItemName(_ctx.stringValue("QuerySplitItemBillResponse.Data.Items["+ i +"].SplitItemName"));
+			item.setPipCode(_ctx.stringValue("QuerySplitItemBillResponse.Data.Items["+ i +"].PipCode"));
+			item.setCommodityCode(_ctx.stringValue("QuerySplitItemBillResponse.Data.Items["+ i +"].CommodityCode"));
 
 			items.add(item);
 		}

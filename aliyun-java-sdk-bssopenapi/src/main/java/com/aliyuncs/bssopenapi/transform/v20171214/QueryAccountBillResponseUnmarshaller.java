@@ -58,6 +58,7 @@ public class QueryAccountBillResponseUnmarshaller {
 			item.setProductCode(_ctx.stringValue("QueryAccountBillResponse.Data.Items["+ i +"].ProductCode"));
 			item.setProductName(_ctx.stringValue("QueryAccountBillResponse.Data.Items["+ i +"].ProductName"));
 			item.setSubscriptionType(_ctx.stringValue("QueryAccountBillResponse.Data.Items["+ i +"].SubscriptionType"));
+			item.setPipCode(_ctx.stringValue("QueryAccountBillResponse.Data.Items["+ i +"].PipCode"));
 
 			items.add(item);
 		}

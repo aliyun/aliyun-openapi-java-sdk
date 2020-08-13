@@ -205,6 +205,10 @@ public class QuerySettleBillResponse extends AcsResponse {
 
 			private String subOrderId;
 
+			private String pipCode;
+
+			private String commodityCode;
+
 			public String getRecordID() {
 				return this.recordID;
 			}
@@ -427,6 +431,22 @@ public class QuerySettleBillResponse extends AcsResponse {
 
 			public void setSubOrderId(String subOrderId) {
 				this.subOrderId = subOrderId;
+			}
+
+			public String getPipCode() {
+				return this.pipCode;
+			}
+
+			public void setPipCode(String pipCode) {
+				this.pipCode = pipCode;
+			}
+
+			public String getCommodityCode() {
+				return this.commodityCode;
+			}
+
+			public void setCommodityCode(String commodityCode) {
+				this.commodityCode = commodityCode;
 			}
 		}
 	}

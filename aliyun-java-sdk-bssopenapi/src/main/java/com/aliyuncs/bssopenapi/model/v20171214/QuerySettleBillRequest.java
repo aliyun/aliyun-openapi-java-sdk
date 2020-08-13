@@ -39,6 +39,8 @@ public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillRespons
 
 	private Long ownerId;
 
+	private Long billOwnerId;
+
 	private String productType;
 
 	private String nextToken;
@@ -127,6 +129,17 @@ public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getBillOwnerId() {
+		return this.billOwnerId;
+	}
+
+	public void setBillOwnerId(Long billOwnerId) {
+		this.billOwnerId = billOwnerId;
+		if(billOwnerId != null){
+			putQueryParameter("BillOwnerId", billOwnerId.toString());
 		}
 	}
 

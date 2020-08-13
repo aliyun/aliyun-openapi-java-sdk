@@ -37,6 +37,8 @@ public class QueryInstanceBillRequest extends RpcAcsRequest<QueryInstanceBillRes
 
 	private Integer pageNum;
 
+	private Long billOwnerId;
+
 	private String billingDate;
 
 	private String productType;
@@ -118,6 +120,17 @@ public class QueryInstanceBillRequest extends RpcAcsRequest<QueryInstanceBillRes
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Long getBillOwnerId() {
+		return this.billOwnerId;
+	}
+
+	public void setBillOwnerId(Long billOwnerId) {
+		this.billOwnerId = billOwnerId;
+		if(billOwnerId != null){
+			putQueryParameter("BillOwnerId", billOwnerId.toString());
 		}
 	}
 

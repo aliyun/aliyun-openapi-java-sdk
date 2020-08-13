@@ -35,6 +35,8 @@ public class QuerySplitItemBillRequest extends RpcAcsRequest<QuerySplitItemBillR
 
 	private Integer pageNum;
 
+	private Long billOwnerId;
+
 	private String productType;
 
 	private Integer pageSize;
@@ -99,6 +101,17 @@ public class QuerySplitItemBillRequest extends RpcAcsRequest<QuerySplitItemBillR
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Long getBillOwnerId() {
+		return this.billOwnerId;
+	}
+
+	public void setBillOwnerId(Long billOwnerId) {
+		this.billOwnerId = billOwnerId;
+		if(billOwnerId != null){
+			putQueryParameter("BillOwnerId", billOwnerId.toString());
 		}
 	}
 

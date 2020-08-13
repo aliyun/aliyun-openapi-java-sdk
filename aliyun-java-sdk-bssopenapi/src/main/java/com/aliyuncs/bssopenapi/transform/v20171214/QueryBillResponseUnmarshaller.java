@@ -71,6 +71,8 @@ public class QueryBillResponseUnmarshaller {
 			item.setPaymentTransactionID(_ctx.stringValue("QueryBillResponse.Data.Items["+ i +"].PaymentTransactionID"));
 			item.setRoundDownDiscount(_ctx.stringValue("QueryBillResponse.Data.Items["+ i +"].RoundDownDiscount"));
 			item.setSubOrderId(_ctx.stringValue("QueryBillResponse.Data.Items["+ i +"].SubOrderId"));
+			item.setPipCode(_ctx.stringValue("QueryBillResponse.Data.Items["+ i +"].PipCode"));
+			item.setCommodityCode(_ctx.stringValue("QueryBillResponse.Data.Items["+ i +"].CommodityCode"));
 
 			items.add(item);
 		}

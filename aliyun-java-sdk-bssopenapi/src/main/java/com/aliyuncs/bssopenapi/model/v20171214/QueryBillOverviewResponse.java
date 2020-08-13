@@ -159,6 +159,10 @@ public class QueryBillOverviewResponse extends AcsResponse {
 
 			private String roundDownDiscount;
 
+			private String pipCode;
+
+			private String commodityCode;
+
 			public String getItem() {
 				return this.item;
 			}
@@ -317,6 +321,22 @@ public class QueryBillOverviewResponse extends AcsResponse {
 
 			public void setRoundDownDiscount(String roundDownDiscount) {
 				this.roundDownDiscount = roundDownDiscount;
+			}
+
+			public String getPipCode() {
+				return this.pipCode;
+			}
+
+			public void setPipCode(String pipCode) {
+				this.pipCode = pipCode;
+			}
+
+			public String getCommodityCode() {
+				return this.commodityCode;
+			}
+
+			public void setCommodityCode(String commodityCode) {
+				this.commodityCode = commodityCode;
 			}
 		}
 	}

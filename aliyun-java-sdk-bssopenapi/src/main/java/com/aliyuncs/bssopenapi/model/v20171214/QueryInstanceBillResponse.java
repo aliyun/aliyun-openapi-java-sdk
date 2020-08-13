@@ -223,6 +223,10 @@ public class QueryInstanceBillResponse extends AcsResponse {
 
 			private String servicePeriodUnit;
 
+			private String pipCode;
+
+			private String commodityCode;
+
 			public String getInstanceID() {
 				return this.instanceID;
 			}
@@ -517,6 +521,22 @@ public class QueryInstanceBillResponse extends AcsResponse {
 
 			public void setServicePeriodUnit(String servicePeriodUnit) {
 				this.servicePeriodUnit = servicePeriodUnit;
+			}
+
+			public String getPipCode() {
+				return this.pipCode;
+			}
+
+			public void setPipCode(String pipCode) {
+				this.pipCode = pipCode;
+			}
+
+			public String getCommodityCode() {
+				return this.commodityCode;
+			}
+
+			public void setCommodityCode(String commodityCode) {
+				this.commodityCode = commodityCode;
 			}
 		}
 	}
