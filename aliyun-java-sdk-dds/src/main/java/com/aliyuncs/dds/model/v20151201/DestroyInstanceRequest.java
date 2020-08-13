@@ -29,6 +29,8 @@ public class DestroyInstanceRequest extends RpcAcsRequest<DestroyInstanceRespons
 
 	private String clientToken;
 
+	private String resourceGroupId;
+
 	private String securityToken;
 
 	private String dBInstanceId;
@@ -68,6 +70,17 @@ public class DestroyInstanceRequest extends RpcAcsRequest<DestroyInstanceRespons
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

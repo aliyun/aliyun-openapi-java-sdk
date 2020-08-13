@@ -27,6 +27,8 @@ public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryCo
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private String databaseNames;
 
 	private String securityToken;
@@ -59,6 +61,17 @@ public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryCo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

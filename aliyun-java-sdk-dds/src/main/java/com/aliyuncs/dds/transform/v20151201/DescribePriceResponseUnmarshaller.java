@@ -34,9 +34,9 @@ public class DescribePriceResponseUnmarshaller {
 		describePriceResponse.setOrderParams(_ctx.stringValue("DescribePriceResponse.OrderParams"));
 
 		Order order = new Order();
-		order.setOriginalAmount(_ctx.floatValue("DescribePriceResponse.Order.OriginalAmount"));
-		order.setTradeAmount(_ctx.floatValue("DescribePriceResponse.Order.TradeAmount"));
-		order.setDiscountAmount(_ctx.floatValue("DescribePriceResponse.Order.DiscountAmount"));
+		order.setOriginalAmount(_ctx.stringValue("DescribePriceResponse.Order.OriginalAmount"));
+		order.setTradeAmount(_ctx.stringValue("DescribePriceResponse.Order.TradeAmount"));
+		order.setDiscountAmount(_ctx.stringValue("DescribePriceResponse.Order.DiscountAmount"));
 		order.setCurrency(_ctx.stringValue("DescribePriceResponse.Order.Currency"));
 
 		List<String> ruleIds1 = new ArrayList<String>();
@@ -72,9 +72,9 @@ public class DescribePriceResponseUnmarshaller {
 		List<SubOrder> subOrders = new ArrayList<SubOrder>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.SubOrders.Length"); i++) {
 			SubOrder subOrder = new SubOrder();
-			subOrder.setOriginalAmount(_ctx.floatValue("DescribePriceResponse.SubOrders["+ i +"].OriginalAmount"));
-			subOrder.setTradeAmount(_ctx.floatValue("DescribePriceResponse.SubOrders["+ i +"].TradeAmount"));
-			subOrder.setDiscountAmount(_ctx.floatValue("DescribePriceResponse.SubOrders["+ i +"].DiscountAmount"));
+			subOrder.setOriginalAmount(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].OriginalAmount"));
+			subOrder.setTradeAmount(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].TradeAmount"));
+			subOrder.setDiscountAmount(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].DiscountAmount"));
 			subOrder.setInstanceId(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].InstanceId"));
 
 			List<String> ruleIds = new ArrayList<String>();

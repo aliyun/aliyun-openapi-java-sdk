@@ -22,24 +22,22 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<DescribeUserEncryptionKeyListResponse> {
+public class DescribeActiveOperationTaskCountRequest extends RpcAcsRequest<DescribeActiveOperationTaskCountResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
+	private String resourceGroupId;
 
-	private String dBInstanceId;
+	private String securityToken;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String targetRegionId;
-	public DescribeUserEncryptionKeyListRequest() {
-		super("Dds", "2015-12-01", "DescribeUserEncryptionKeyList", "Dds");
+	public DescribeActiveOperationTaskCountRequest() {
+		super("Dds", "2015-12-01", "DescribeActiveOperationTaskCount", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +56,17 @@ public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<Describe
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -66,17 +75,6 @@ public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<Describe
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -113,20 +111,9 @@ public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getTargetRegionId() {
-		return this.targetRegionId;
-	}
-
-	public void setTargetRegionId(String targetRegionId) {
-		this.targetRegionId = targetRegionId;
-		if(targetRegionId != null){
-			putQueryParameter("TargetRegionId", targetRegionId);
-		}
-	}
-
 	@Override
-	public Class<DescribeUserEncryptionKeyListResponse> getResponseClass() {
-		return DescribeUserEncryptionKeyListResponse.class;
+	public Class<DescribeActiveOperationTaskCountResponse> getResponseClass() {
+		return DescribeActiveOperationTaskCountResponse.class;
 	}
 
 }

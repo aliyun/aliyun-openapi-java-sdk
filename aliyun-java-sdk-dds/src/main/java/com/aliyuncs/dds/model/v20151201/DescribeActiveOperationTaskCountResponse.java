@@ -15,20 +15,20 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dds.transform.v20151201.DeleteNodeResponseUnmarshaller;
+import com.aliyuncs.dds.transform.v20151201.DescribeActiveOperationTaskCountResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteNodeResponse extends AcsResponse {
+public class DescribeActiveOperationTaskCountResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer taskId;
+	private Integer taskCount;
 
-	private String orderId;
+	private Integer needPop;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +38,29 @@ public class DeleteNodeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTaskId() {
-		return this.taskId;
+	public Integer getTaskCount() {
+		return this.taskCount;
 	}
 
-	public void setTaskId(Integer taskId) {
-		this.taskId = taskId;
+	public void setTaskCount(Integer taskCount) {
+		this.taskCount = taskCount;
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public Integer getNeedPop() {
+		return this.needPop;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	public void setNeedPop(Integer needPop) {
+		this.needPop = needPop;
 	}
 
 	@Override
-	public DeleteNodeResponse getInstance(UnmarshallerContext context) {
-		return	DeleteNodeResponseUnmarshaller.unmarshall(this, context);
+	public DescribeActiveOperationTaskCountResponse getInstance(UnmarshallerContext context) {
+		return	DescribeActiveOperationTaskCountResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

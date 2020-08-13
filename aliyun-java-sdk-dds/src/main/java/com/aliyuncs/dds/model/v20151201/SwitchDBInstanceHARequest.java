@@ -27,6 +27,8 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 
 	private Long resourceOwnerId;
 
+	private Integer switchMode;
+
 	private String roleIds;
 
 	private String securityToken;
@@ -57,6 +59,17 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getSwitchMode() {
+		return this.switchMode;
+	}
+
+	public void setSwitchMode(Integer switchMode) {
+		this.switchMode = switchMode;
+		if(switchMode != null){
+			putQueryParameter("SwitchMode", switchMode.toString());
 		}
 	}
 

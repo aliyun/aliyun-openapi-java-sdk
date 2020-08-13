@@ -75,6 +75,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String vPCCloudInstanceIds;
 
+		private String kindCode;
+
 		private String dBInstanceStatus;
 
 		private String lockMode;
@@ -233,6 +235,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setVPCCloudInstanceIds(String vPCCloudInstanceIds) {
 			this.vPCCloudInstanceIds = vPCCloudInstanceIds;
+		}
+
+		public String getKindCode() {
+			return this.kindCode;
+		}
+
+		public void setKindCode(String kindCode) {
+			this.kindCode = kindCode;
 		}
 
 		public String getDBInstanceStatus() {

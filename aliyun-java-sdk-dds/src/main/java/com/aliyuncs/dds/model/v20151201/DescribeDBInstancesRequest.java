@@ -60,6 +60,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String ownerAccount;
 
+	private String connectionDomain;
+
 	private Long ownerId;
 
 	private String dBInstanceType;
@@ -269,6 +271,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getConnectionDomain() {
+		return this.connectionDomain;
+	}
+
+	public void setConnectionDomain(String connectionDomain) {
+		this.connectionDomain = connectionDomain;
+		if(connectionDomain != null){
+			putQueryParameter("ConnectionDomain", connectionDomain);
 		}
 	}
 

@@ -120,37 +120,37 @@ public class DescribePriceResponse extends AcsResponse {
 
 	public static class SubOrder {
 
-		private Float originalAmount;
+		private String originalAmount;
 
-		private Float tradeAmount;
+		private String tradeAmount;
 
-		private Float discountAmount;
+		private String discountAmount;
 
 		private String instanceId;
 
 		private List<String> ruleIds;
 
-		public Float getOriginalAmount() {
+		public String getOriginalAmount() {
 			return this.originalAmount;
 		}
 
-		public void setOriginalAmount(Float originalAmount) {
+		public void setOriginalAmount(String originalAmount) {
 			this.originalAmount = originalAmount;
 		}
 
-		public Float getTradeAmount() {
+		public String getTradeAmount() {
 			return this.tradeAmount;
 		}
 
-		public void setTradeAmount(Float tradeAmount) {
+		public void setTradeAmount(String tradeAmount) {
 			this.tradeAmount = tradeAmount;
 		}
 
-		public Float getDiscountAmount() {
+		public String getDiscountAmount() {
 			return this.discountAmount;
 		}
 
-		public void setDiscountAmount(Float discountAmount) {
+		public void setDiscountAmount(String discountAmount) {
 			this.discountAmount = discountAmount;
 		}
 
@@ -173,11 +173,11 @@ public class DescribePriceResponse extends AcsResponse {
 
 	public static class Order {
 
-		private Float originalAmount;
+		private String originalAmount;
 
-		private Float tradeAmount;
+		private String tradeAmount;
 
-		private Float discountAmount;
+		private String discountAmount;
 
 		private String currency;
 
@@ -185,27 +185,27 @@ public class DescribePriceResponse extends AcsResponse {
 
 		private List<String> ruleIds1;
 
-		public Float getOriginalAmount() {
+		public String getOriginalAmount() {
 			return this.originalAmount;
 		}
 
-		public void setOriginalAmount(Float originalAmount) {
+		public void setOriginalAmount(String originalAmount) {
 			this.originalAmount = originalAmount;
 		}
 
-		public Float getTradeAmount() {
+		public String getTradeAmount() {
 			return this.tradeAmount;
 		}
 
-		public void setTradeAmount(Float tradeAmount) {
+		public void setTradeAmount(String tradeAmount) {
 			this.tradeAmount = tradeAmount;
 		}
 
-		public Float getDiscountAmount() {
+		public String getDiscountAmount() {
 			return this.discountAmount;
 		}
 
-		public void setDiscountAmount(Float discountAmount) {
+		public void setDiscountAmount(String discountAmount) {
 			this.discountAmount = discountAmount;
 		}
 

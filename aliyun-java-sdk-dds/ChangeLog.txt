@@ -1,3 +1,7 @@
+2020-08-13 Version: 3.3.0
+- DescribePrice update amount parameters type, float to string.
+- Add ResourceGroupId parameter to support resource group.
+
 2020-07-02 Version: 3.2.0
 - CreateShardingDBInstance add ProtocolType, to support DynamoDB.
 - DescribeDBInstances add return ResourceGroupId.

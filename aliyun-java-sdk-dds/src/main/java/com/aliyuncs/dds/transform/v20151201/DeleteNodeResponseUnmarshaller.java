@@ -24,6 +24,7 @@ public class DeleteNodeResponseUnmarshaller {
 		
 		deleteNodeResponse.setRequestId(_ctx.stringValue("DeleteNodeResponse.RequestId"));
 		deleteNodeResponse.setTaskId(_ctx.integerValue("DeleteNodeResponse.TaskId"));
+		deleteNodeResponse.setOrderId(_ctx.stringValue("DeleteNodeResponse.OrderId"));
 	 
 	 	return deleteNodeResponse;
 	}

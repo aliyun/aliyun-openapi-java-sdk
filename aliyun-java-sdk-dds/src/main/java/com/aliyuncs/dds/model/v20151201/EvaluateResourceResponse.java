@@ -15,20 +15,22 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dds.transform.v20151201.DeleteNodeResponseUnmarshaller;
+import com.aliyuncs.dds.transform.v20151201.EvaluateResourceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteNodeResponse extends AcsResponse {
+public class EvaluateResourceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer taskId;
+	private String engine;
 
-	private String orderId;
+	private String engineVersion;
+
+	private String dBInstanceAvailable;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +40,32 @@ public class DeleteNodeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTaskId() {
-		return this.taskId;
+	public String getEngine() {
+		return this.engine;
 	}
 
-	public void setTaskId(Integer taskId) {
-		this.taskId = taskId;
+	public void setEngine(String engine) {
+		this.engine = engine;
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getEngineVersion() {
+		return this.engineVersion;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+	}
+
+	public String getDBInstanceAvailable() {
+		return this.dBInstanceAvailable;
+	}
+
+	public void setDBInstanceAvailable(String dBInstanceAvailable) {
+		this.dBInstanceAvailable = dBInstanceAvailable;
 	}
 
 	@Override
-	public DeleteNodeResponse getInstance(UnmarshallerContext context) {
-		return	DeleteNodeResponseUnmarshaller.unmarshall(this, context);
+	public EvaluateResourceResponse getInstance(UnmarshallerContext context) {
+		return	EvaluateResourceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

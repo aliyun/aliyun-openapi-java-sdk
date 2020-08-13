@@ -22,12 +22,18 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<DescribeUserEncryptionKeyListResponse> {
+public class EvaluateResourceRequest extends RpcAcsRequest<EvaluateResourceResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private String engineVersion;
+
+	private String shardsInfo;
+
 	private String securityToken;
+
+	private String engine;
 
 	private String dBInstanceId;
 
@@ -37,9 +43,11 @@ public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<Describe
 
 	private Long ownerId;
 
-	private String targetRegionId;
-	public DescribeUserEncryptionKeyListRequest() {
-		super("Dds", "2015-12-01", "DescribeUserEncryptionKeyList", "Dds");
+	private String dBInstanceClass;
+
+	private String zoneId;
+	public EvaluateResourceRequest() {
+		super("Dds", "2015-12-01", "EvaluateResource", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +66,28 @@ public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<Describe
 		}
 	}
 
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getShardsInfo() {
+		return this.shardsInfo;
+	}
+
+	public void setShardsInfo(String shardsInfo) {
+		this.shardsInfo = shardsInfo;
+		if(shardsInfo != null){
+			putQueryParameter("ShardsInfo", shardsInfo);
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -66,6 +96,17 @@ public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<Describe
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
 		}
 	}
 
@@ -113,20 +154,31 @@ public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getTargetRegionId() {
-		return this.targetRegionId;
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
 	}
 
-	public void setTargetRegionId(String targetRegionId) {
-		this.targetRegionId = targetRegionId;
-		if(targetRegionId != null){
-			putQueryParameter("TargetRegionId", targetRegionId);
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		if(dBInstanceClass != null){
+			putQueryParameter("DBInstanceClass", dBInstanceClass);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
 	@Override
-	public Class<DescribeUserEncryptionKeyListResponse> getResponseClass() {
-		return DescribeUserEncryptionKeyListResponse.class;
+	public Class<EvaluateResourceResponse> getResponseClass() {
+		return EvaluateResourceResponse.class;
 	}
 
 }
