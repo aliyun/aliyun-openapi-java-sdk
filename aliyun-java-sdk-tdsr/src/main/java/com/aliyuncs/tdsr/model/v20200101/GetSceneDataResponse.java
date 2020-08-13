@@ -33,6 +33,8 @@ public class GetSceneDataResponse extends AcsResponse {
 
 	private Map<Object,Object> data;
 
+	private String objectString;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -63,6 +65,14 @@ public class GetSceneDataResponse extends AcsResponse {
 
 	public void setData(Map<Object,Object> data) {
 		this.data = data;
+	}
+
+	public String getObjectString() {
+		return this.objectString;
+	}
+
+	public void setObjectString(String objectString) {
+		this.objectString = objectString;
 	}
 
 	@Override

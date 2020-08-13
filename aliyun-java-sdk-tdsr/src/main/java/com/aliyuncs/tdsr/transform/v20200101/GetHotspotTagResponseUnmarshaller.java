@@ -26,6 +26,7 @@ public class GetHotspotTagResponseUnmarshaller {
 		getHotspotTagResponse.setSuccess(_ctx.booleanValue("GetHotspotTagResponse.Success"));
 		getHotspotTagResponse.setErrMessage(_ctx.stringValue("GetHotspotTagResponse.ErrMessage"));
 		getHotspotTagResponse.setData(_ctx.stringValue("GetHotspotTagResponse.Data"));
+		getHotspotTagResponse.setObjectString(_ctx.stringValue("GetHotspotTagResponse.ObjectString"));
 	 
 	 	return getHotspotTagResponse;
 	}

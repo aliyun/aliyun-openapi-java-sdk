@@ -14,26 +14,21 @@
 
 package com.aliyuncs.tdsr.model.v20200101;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.tdsr.transform.v20200101.GetPolicyResponseUnmarshaller;
+import com.aliyuncs.tdsr.transform.v20200101.SaveHotspotConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetPolicyResponse extends AcsResponse {
+public class SaveHotspotConfigResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
 	private String errMessage;
-
-	private Map<Object,Object> data;
-
-	private String objectString;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,25 +54,9 @@ public class GetPolicyResponse extends AcsResponse {
 		this.errMessage = errMessage;
 	}
 
-	public Map<Object,Object> getData() {
-		return this.data;
-	}
-
-	public void setData(Map<Object,Object> data) {
-		this.data = data;
-	}
-
-	public String getObjectString() {
-		return this.objectString;
-	}
-
-	public void setObjectString(String objectString) {
-		this.objectString = objectString;
-	}
-
 	@Override
-	public GetPolicyResponse getInstance(UnmarshallerContext context) {
-		return	GetPolicyResponseUnmarshaller.unmarshall(this, context);
+	public SaveHotspotConfigResponse getInstance(UnmarshallerContext context) {
+		return	SaveHotspotConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

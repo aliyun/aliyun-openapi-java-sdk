@@ -26,6 +26,7 @@ public class ListMainScenesResponseUnmarshaller {
 		listMainScenesResponse.setSuccess(_ctx.booleanValue("ListMainScenesResponse.Success"));
 		listMainScenesResponse.setErrMessage(_ctx.stringValue("ListMainScenesResponse.ErrMessage"));
 		listMainScenesResponse.setData(_ctx.stringValue("ListMainScenesResponse.Data"));
+		listMainScenesResponse.setObjectString(_ctx.stringValue("ListMainScenesResponse.ObjectString"));
 	 
 	 	return listMainScenesResponse;
 	}

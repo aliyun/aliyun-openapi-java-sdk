@@ -27,6 +27,7 @@ public class GetSceneDataResponseUnmarshaller {
 		getSceneDataResponse.setSuccess(_ctx.booleanValue("GetSceneDataResponse.Success"));
 		getSceneDataResponse.setErrMessage(_ctx.stringValue("GetSceneDataResponse.ErrMessage"));
 		getSceneDataResponse.setData(_ctx.mapValue("GetSceneDataResponse.Data"));
+		getSceneDataResponse.setObjectString(_ctx.stringValue("GetSceneDataResponse.ObjectString"));
 	 
 	 	return getSceneDataResponse;
 	}

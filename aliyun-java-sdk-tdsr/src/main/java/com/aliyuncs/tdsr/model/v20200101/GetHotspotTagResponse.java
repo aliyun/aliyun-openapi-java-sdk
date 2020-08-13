@@ -32,6 +32,8 @@ public class GetHotspotTagResponse extends AcsResponse {
 
 	private String data;
 
+	private String objectString;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -62,6 +64,14 @@ public class GetHotspotTagResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getObjectString() {
+		return this.objectString;
+	}
+
+	public void setObjectString(String objectString) {
+		this.objectString = objectString;
 	}
 
 	@Override

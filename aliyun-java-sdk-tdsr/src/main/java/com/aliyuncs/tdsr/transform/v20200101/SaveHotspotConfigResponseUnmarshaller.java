@@ -14,20 +14,18 @@
 
 package com.aliyuncs.tdsr.transform.v20200101;
 
-import com.aliyuncs.tdsr.model.v20200101.SaveFileResponse;
+import com.aliyuncs.tdsr.model.v20200101.SaveHotspotConfigResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SaveFileResponseUnmarshaller {
+public class SaveHotspotConfigResponseUnmarshaller {
 
-	public static SaveFileResponse unmarshall(SaveFileResponse saveFileResponse, UnmarshallerContext _ctx) {
+	public static SaveHotspotConfigResponse unmarshall(SaveHotspotConfigResponse saveHotspotConfigResponse, UnmarshallerContext _ctx) {
 		
-		saveFileResponse.setRequestId(_ctx.stringValue("SaveFileResponse.RequestId"));
-		saveFileResponse.setSuccess(_ctx.booleanValue("SaveFileResponse.Success"));
-		saveFileResponse.setErrMessage(_ctx.stringValue("SaveFileResponse.ErrMessage"));
-		saveFileResponse.setData(_ctx.stringValue("SaveFileResponse.Data"));
-		saveFileResponse.setObjectString(_ctx.stringValue("SaveFileResponse.ObjectString"));
+		saveHotspotConfigResponse.setRequestId(_ctx.stringValue("SaveHotspotConfigResponse.RequestId"));
+		saveHotspotConfigResponse.setSuccess(_ctx.booleanValue("SaveHotspotConfigResponse.Success"));
+		saveHotspotConfigResponse.setErrMessage(_ctx.stringValue("SaveHotspotConfigResponse.ErrMessage"));
 	 
-	 	return saveFileResponse;
+	 	return saveHotspotConfigResponse;
 	}
 }

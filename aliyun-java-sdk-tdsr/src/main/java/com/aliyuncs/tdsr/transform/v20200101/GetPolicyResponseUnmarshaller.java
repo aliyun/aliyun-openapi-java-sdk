@@ -27,6 +27,7 @@ public class GetPolicyResponseUnmarshaller {
 		getPolicyResponse.setSuccess(_ctx.booleanValue("GetPolicyResponse.Success"));
 		getPolicyResponse.setErrMessage(_ctx.stringValue("GetPolicyResponse.ErrMessage"));
 		getPolicyResponse.setData(_ctx.mapValue("GetPolicyResponse.Data"));
+		getPolicyResponse.setObjectString(_ctx.stringValue("GetPolicyResponse.ObjectString"));
 	 
 	 	return getPolicyResponse;
 	}

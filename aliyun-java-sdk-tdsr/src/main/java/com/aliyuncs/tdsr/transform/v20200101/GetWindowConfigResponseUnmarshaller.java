@@ -27,6 +27,7 @@ public class GetWindowConfigResponseUnmarshaller {
 		getWindowConfigResponse.setSuccess(_ctx.booleanValue("GetWindowConfigResponse.Success"));
 		getWindowConfigResponse.setErrMessage(_ctx.stringValue("GetWindowConfigResponse.ErrMessage"));
 		getWindowConfigResponse.setData(_ctx.mapValue("GetWindowConfigResponse.Data"));
+		getWindowConfigResponse.setObjectString(_ctx.stringValue("GetWindowConfigResponse.ObjectString"));
 	 
 	 	return getWindowConfigResponse;
 	}
