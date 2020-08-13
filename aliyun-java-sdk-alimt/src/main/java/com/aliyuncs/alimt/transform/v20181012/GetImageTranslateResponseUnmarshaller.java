@@ -29,6 +29,7 @@ public class GetImageTranslateResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setUrl(_ctx.stringValue("GetImageTranslateResponse.Data.Url"));
+		data.setOrc(_ctx.stringValue("GetImageTranslateResponse.Data.Orc"));
 		getImageTranslateResponse.setData(data);
 	 
 	 	return getImageTranslateResponse;

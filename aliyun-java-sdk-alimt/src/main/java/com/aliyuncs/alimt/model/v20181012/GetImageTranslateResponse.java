@@ -68,12 +68,22 @@ public class GetImageTranslateResponse extends AcsResponse {
 
 		private String url;
 
+		private String orc;
+
 		public String getUrl() {
 			return this.url;
 		}
 
 		public void setUrl(String url) {
 			this.url = url;
+		}
+
+		public String getOrc() {
+			return this.orc;
+		}
+
+		public void setOrc(String orc) {
+			this.orc = orc;
 		}
 	}
 
