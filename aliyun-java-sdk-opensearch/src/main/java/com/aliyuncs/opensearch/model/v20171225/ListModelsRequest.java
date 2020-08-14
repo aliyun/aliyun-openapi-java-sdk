@@ -22,15 +22,19 @@ import com.aliyuncs.opensearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetModelProgressRequest extends RoaAcsRequest<GetModelProgressResponse> {
+public class ListModelsRequest extends RoaAcsRequest<ListModelsResponse> {
 	   
 
-	private String modelName;
+	private Integer pageSize;
+
+	private String type;
 
 	private String appGroupIdentity;
-	public GetModelProgressRequest() {
-		super("OpenSearch", "2017-12-25", "GetModelProgress", "opensearch");
-		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/progress");
+
+	private Integer pageNumber;
+	public ListModelsRequest() {
+		super("OpenSearch", "2017-12-25", "ListModels", "opensearch");
+		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -38,14 +42,25 @@ public class GetModelProgressRequest extends RoaAcsRequest<GetModelProgressRespo
 		} catch (Exception e) {}
 	}
 
-	public String getModelName() {
-		return this.modelName;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setModelName(String modelName) {
-		this.modelName = modelName;
-		if(modelName != null){
-			putPathParameter("modelName", modelName);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("pageSize", pageSize.toString());
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("type", type);
 		}
 	}
 
@@ -60,9 +75,20 @@ public class GetModelProgressRequest extends RoaAcsRequest<GetModelProgressRespo
 		}
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("pageNumber", pageNumber.toString());
+		}
+	}
+
 	@Override
-	public Class<GetModelProgressResponse> getResponseClass() {
-		return GetModelProgressResponse.class;
+	public Class<ListModelsResponse> getResponseClass() {
+		return ListModelsResponse.class;
 	}
 
 }

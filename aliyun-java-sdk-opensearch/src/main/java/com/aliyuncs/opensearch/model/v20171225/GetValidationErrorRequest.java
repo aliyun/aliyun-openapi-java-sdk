@@ -22,31 +22,20 @@ import com.aliyuncs.opensearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetModelProgressRequest extends RoaAcsRequest<GetModelProgressResponse> {
+public class GetValidationErrorRequest extends RoaAcsRequest<GetValidationErrorResponse> {
 	   
 
-	private String modelName;
-
 	private String appGroupIdentity;
-	public GetModelProgressRequest() {
-		super("OpenSearch", "2017-12-25", "GetModelProgress", "opensearch");
-		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/progress");
+
+	private String errorCode;
+	public GetValidationErrorRequest() {
+		super("OpenSearch", "2017-12-25", "GetValidationError", "opensearch");
+		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/data/validation-error");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getModelName() {
-		return this.modelName;
-	}
-
-	public void setModelName(String modelName) {
-		this.modelName = modelName;
-		if(modelName != null){
-			putPathParameter("modelName", modelName);
-		}
 	}
 
 	public String getAppGroupIdentity() {
@@ -60,9 +49,20 @@ public class GetModelProgressRequest extends RoaAcsRequest<GetModelProgressRespo
 		}
 	}
 
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+		if(errorCode != null){
+			putQueryParameter("errorCode", errorCode);
+		}
+	}
+
 	@Override
-	public Class<GetModelProgressResponse> getResponseClass() {
-		return GetModelProgressResponse.class;
+	public Class<GetValidationErrorResponse> getResponseClass() {
+		return GetValidationErrorResponse.class;
 	}
 
 }

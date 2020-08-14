@@ -22,15 +22,15 @@ import com.aliyuncs.opensearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetModelProgressRequest extends RoaAcsRequest<GetModelProgressResponse> {
+public class GetValidationReportRequest extends RoaAcsRequest<GetValidationReportResponse> {
 	   
 
-	private String modelName;
+	private String type;
 
 	private String appGroupIdentity;
-	public GetModelProgressRequest() {
-		super("OpenSearch", "2017-12-25", "GetModelProgress", "opensearch");
-		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/progress");
+	public GetValidationReportRequest() {
+		super("OpenSearch", "2017-12-25", "GetValidationReport", "opensearch");
+		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/data/validation-report");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -38,14 +38,14 @@ public class GetModelProgressRequest extends RoaAcsRequest<GetModelProgressRespo
 		} catch (Exception e) {}
 	}
 
-	public String getModelName() {
-		return this.modelName;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setModelName(String modelName) {
-		this.modelName = modelName;
-		if(modelName != null){
-			putPathParameter("modelName", modelName);
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("type", type);
 		}
 	}
 
@@ -61,8 +61,8 @@ public class GetModelProgressRequest extends RoaAcsRequest<GetModelProgressRespo
 	}
 
 	@Override
-	public Class<GetModelProgressResponse> getResponseClass() {
-		return GetModelProgressResponse.class;
+	public Class<GetValidationReportResponse> getResponseClass() {
+		return GetValidationReportResponse.class;
 	}
 
 }

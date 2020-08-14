@@ -28,7 +28,7 @@ public class CreateModelRequest extends RoaAcsRequest<CreateModelResponse> {
 	private String appGroupIdentity;
 	public CreateModelRequest() {
 		super("OpenSearch", "2017-12-25", "CreateModel", "opensearch");
-		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/simple-models");
+		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
