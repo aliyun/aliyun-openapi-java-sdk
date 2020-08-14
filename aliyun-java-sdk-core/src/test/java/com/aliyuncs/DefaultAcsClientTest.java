@@ -848,7 +848,8 @@ public class DefaultAcsClientTest {
                     "test", "test")), roleRequest, httpResponse);
             Assert.fail();
         } catch (Exception e) {
-            Assert.assertEquals("Server response has a bad format type: RAW;\nThe original return is: test;",
+            Assert.assertEquals("Server response has a bad format type: RAW;\nThe original return is: test;\n" +
+                            "The original header is: {Content-Type=application/octet-stream};",
                     e.getCause().getLocalizedMessage());
         }
     }
