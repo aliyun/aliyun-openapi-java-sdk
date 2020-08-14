@@ -22,12 +22,12 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class RestartDBInstanceRequest extends RpcAcsRequest<RestartDBInstanceResponse> {
+public class CheckCloudResourceAuthorizedRequest extends RpcAcsRequest<CheckCloudResourceAuthorizedResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
+	private String securityToken;
 
 	private String dBInstanceId;
 
@@ -36,8 +36,10 @@ public class RestartDBInstanceRequest extends RpcAcsRequest<RestartDBInstanceRes
 	private String ownerAccount;
 
 	private Long ownerId;
-	public RestartDBInstanceRequest() {
-		super("Rds", "2014-08-15", "RestartDBInstance", "rds");
+
+	private String targetRegionId;
+	public CheckCloudResourceAuthorizedRequest() {
+		super("Rds", "2014-08-15", "CheckCloudResourceAuthorized", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,14 +58,14 @@ public class RestartDBInstanceRequest extends RpcAcsRequest<RestartDBInstanceRes
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -111,9 +113,20 @@ public class RestartDBInstanceRequest extends RpcAcsRequest<RestartDBInstanceRes
 		}
 	}
 
+	public String getTargetRegionId() {
+		return this.targetRegionId;
+	}
+
+	public void setTargetRegionId(String targetRegionId) {
+		this.targetRegionId = targetRegionId;
+		if(targetRegionId != null){
+			putQueryParameter("TargetRegionId", targetRegionId);
+		}
+	}
+
 	@Override
-	public Class<RestartDBInstanceResponse> getResponseClass() {
-		return RestartDBInstanceResponse.class;
+	public Class<CheckCloudResourceAuthorizedResponse> getResponseClass() {
+		return CheckCloudResourceAuthorizedResponse.class;
 	}
 
 }
