@@ -33,7 +33,7 @@ public class AddFaceRequest extends RpcAcsRequest<AddFaceResponse> {
 
 	private String extraData;
 	public AddFaceRequest() {
-		super("facebody", "2019-12-30", "AddFace", "facebody");
+		super("facebody", "2019-12-30", "AddFace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

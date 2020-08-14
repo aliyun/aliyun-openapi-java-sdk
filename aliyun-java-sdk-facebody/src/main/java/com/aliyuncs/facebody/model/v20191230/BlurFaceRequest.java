@@ -15,7 +15,6 @@
 package com.aliyuncs.facebody.model.v20191230;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.facebody.Endpoint;
 
@@ -23,12 +22,12 @@ import com.aliyuncs.facebody.Endpoint;
  * @author auto create
  * @version 
  */
-public class DetectLivingFaceRequest extends RpcAcsRequest<DetectLivingFaceResponse> {
+public class BlurFaceRequest extends RpcAcsRequest<BlurFaceResponse> {
 	   
 
-	private List<Tasks> taskss;
-	public DetectLivingFaceRequest() {
-		super("facebody", "2019-12-30", "DetectLivingFace");
+	private String imageURL;
+	public BlurFaceRequest() {
+		super("facebody", "2019-12-30", "BlurFace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -36,35 +35,20 @@ public class DetectLivingFaceRequest extends RpcAcsRequest<DetectLivingFaceRespo
 		} catch (Exception e) {}
 	}
 
-	public List<Tasks> getTaskss() {
-		return this.taskss;
+	public String getImageURL() {
+		return this.imageURL;
 	}
 
-	public void setTaskss(List<Tasks> taskss) {
-		this.taskss = taskss;	
-		if (taskss != null) {
-			for (int depth1 = 0; depth1 < taskss.size(); depth1++) {
-				putBodyParameter("Tasks." + (depth1 + 1) + ".ImageURL" , taskss.get(depth1).getImageURL());
-			}
-		}	
-	}
-
-	public static class Tasks {
-
-		private String imageURL;
-
-		public String getImageURL() {
-			return this.imageURL;
-		}
-
-		public void setImageURL(String imageURL) {
-			this.imageURL = imageURL;
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+		if(imageURL != null){
+			putBodyParameter("ImageURL", imageURL);
 		}
 	}
 
 	@Override
-	public Class<DetectLivingFaceResponse> getResponseClass() {
-		return DetectLivingFaceResponse.class;
+	public Class<BlurFaceResponse> getResponseClass() {
+		return BlurFaceResponse.class;
 	}
 
 }

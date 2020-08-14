@@ -27,7 +27,7 @@ public class HandPostureRequest extends RpcAcsRequest<HandPostureResponse> {
 
 	private String imageURL;
 	public HandPostureRequest() {
-		super("facebody", "2019-12-30", "HandPosture", "facebody");
+		super("facebody", "2019-12-30", "HandPosture");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
