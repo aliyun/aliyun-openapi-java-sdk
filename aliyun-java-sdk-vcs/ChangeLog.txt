@@ -1,3 +1,6 @@
+2020-08-16 Version: 1.1.5
+- Add new tags for corp group.
+
 2020-08-12 Version: 1.1.5
 - Support corp group api.
 
