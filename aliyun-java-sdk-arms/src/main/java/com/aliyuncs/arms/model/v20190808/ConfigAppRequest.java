@@ -29,7 +29,7 @@ public class ConfigAppRequest extends RpcAcsRequest<ConfigAppResponse> {
 
 	private String enable;
 	public ConfigAppRequest() {
-		super("ARMS", "2019-08-08", "ConfigApp");
+		super("ARMS", "2019-08-08", "ConfigApp", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

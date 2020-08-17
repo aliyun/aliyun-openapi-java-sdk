@@ -22,32 +22,17 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteTraceAppRequest extends RpcAcsRequest<DeleteTraceAppResponse> {
+public class GetTraceAppRequest extends RpcAcsRequest<GetTraceAppResponse> {
 	   
 
-	private String appId;
-
 	private String pid;
-
-	private String type;
-	public DeleteTraceAppRequest() {
-		super("ARMS", "2019-08-08", "DeleteTraceApp", "arms");
+	public GetTraceAppRequest() {
+		super("ARMS", "2019-08-08", "GetTraceApp", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
 	}
 
 	public String getPid() {
@@ -61,20 +46,9 @@ public class DeleteTraceAppRequest extends RpcAcsRequest<DeleteTraceAppResponse>
 		}
 	}
 
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
 	@Override
-	public Class<DeleteTraceAppResponse> getResponseClass() {
-		return DeleteTraceAppResponse.class;
+	public Class<GetTraceAppResponse> getResponseClass() {
+		return GetTraceAppResponse.class;
 	}
 
 }

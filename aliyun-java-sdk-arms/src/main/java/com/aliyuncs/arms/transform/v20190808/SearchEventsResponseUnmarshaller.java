@@ -41,7 +41,7 @@ public class SearchEventsResponseUnmarshaller {
 			eventItem.setId(_ctx.longValue("SearchEventsResponse.PageBean.Event["+ i +"].Id"));
 			eventItem.setEventTime(_ctx.longValue("SearchEventsResponse.PageBean.Event["+ i +"].EventTime"));
 			eventItem.setAlertType(_ctx.integerValue("SearchEventsResponse.PageBean.Event["+ i +"].AlertType"));
-			eventItem.setEventLevel(_ctx.integerValue("SearchEventsResponse.PageBean.Event["+ i +"].EventLevel"));
+			eventItem.setEventLevel(_ctx.stringValue("SearchEventsResponse.PageBean.Event["+ i +"].EventLevel"));
 			eventItem.setMessage(_ctx.stringValue("SearchEventsResponse.PageBean.Event["+ i +"].Message"));
 			eventItem.setAlertId(_ctx.longValue("SearchEventsResponse.PageBean.Event["+ i +"].AlertId"));
 			eventItem.setAlertName(_ctx.stringValue("SearchEventsResponse.PageBean.Event["+ i +"].AlertName"));

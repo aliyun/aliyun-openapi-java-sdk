@@ -35,7 +35,7 @@ public class SearchAlertContactRequest extends RpcAcsRequest<SearchAlertContactR
 
 	private String email;
 	public SearchAlertContactRequest() {
-		super("ARMS", "2019-08-08", "SearchAlertContact");
+		super("ARMS", "2019-08-08", "SearchAlertContact", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class SearchAlertContactGroupRequest extends RpcAcsRequest<SearchAlertCon
 
 	private String contactGroupName;
 	public SearchAlertContactGroupRequest() {
-		super("ARMS", "2019-08-08", "SearchAlertContactGroup");
+		super("ARMS", "2019-08-08", "SearchAlertContactGroup", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

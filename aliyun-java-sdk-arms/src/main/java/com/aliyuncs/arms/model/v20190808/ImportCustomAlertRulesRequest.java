@@ -30,8 +30,10 @@ public class ImportCustomAlertRulesRequest extends RpcAcsRequest<ImportCustomAle
 	private String contactGroupIds;
 
 	private String templateAlertConfig;
+
+	private String templageAlertConfig;
 	public ImportCustomAlertRulesRequest() {
-		super("ARMS", "2019-08-08", "ImportCustomAlertRules");
+		super("ARMS", "2019-08-08", "ImportCustomAlertRules", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,6 +71,17 @@ public class ImportCustomAlertRulesRequest extends RpcAcsRequest<ImportCustomAle
 		this.templateAlertConfig = templateAlertConfig;
 		if(templateAlertConfig != null){
 			putQueryParameter("TemplateAlertConfig", templateAlertConfig);
+		}
+	}
+
+	public String getTemplageAlertConfig() {
+		return this.templageAlertConfig;
+	}
+
+	public void setTemplageAlertConfig(String templageAlertConfig) {
+		this.templageAlertConfig = templageAlertConfig;
+		if(templageAlertConfig != null){
+			putQueryParameter("TemplageAlertConfig", templageAlertConfig);
 		}
 	}
 

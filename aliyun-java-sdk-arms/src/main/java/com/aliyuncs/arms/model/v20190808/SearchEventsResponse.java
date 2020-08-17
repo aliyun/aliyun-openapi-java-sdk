@@ -105,7 +105,7 @@ public class SearchEventsResponse extends AcsResponse {
 
 			private Integer alertType;
 
-			private Integer eventLevel;
+			private String eventLevel;
 
 			private String message;
 
@@ -141,11 +141,11 @@ public class SearchEventsResponse extends AcsResponse {
 				this.alertType = alertType;
 			}
 
-			public Integer getEventLevel() {
+			public String getEventLevel() {
 				return this.eventLevel;
 			}
 
-			public void setEventLevel(Integer eventLevel) {
+			public void setEventLevel(String eventLevel) {
 				this.eventLevel = eventLevel;
 			}
 
