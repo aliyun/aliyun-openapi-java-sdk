@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.clickhouse.model.v20191111.DescribeDBClustersResponse;
 import com.aliyuncs.clickhouse.model.v20191111.DescribeDBClustersResponse.DBCluster;
+import com.aliyuncs.clickhouse.model.v20191111.DescribeDBClustersResponse.DBCluster.ScaleOutStatus;
 import com.aliyuncs.clickhouse.model.v20191111.DescribeDBClustersResponse.DBCluster.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -62,6 +63,11 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setVSwitchId(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].VSwitchId"));
 			dBCluster.setVpcCloudInstanceId(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].VpcCloudInstanceId"));
 			dBCluster.setCommodityCode(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].CommodityCode"));
+
+			ScaleOutStatus scaleOutStatus = new ScaleOutStatus();
+			scaleOutStatus.setProgress(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].ScaleOutStatus.Progress"));
+			scaleOutStatus.setRatio(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].ScaleOutStatus.Ratio"));
+			dBCluster.setScaleOutStatus(scaleOutStatus);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClustersResponse.DBClusters["+ i +"].Tags.Length"); j++) {

@@ -117,6 +117,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private List<Tag> tags;
 
+		private ScaleOutStatus scaleOutStatus;
+
 		public String getRegionId() {
 			return this.regionId;
 		}
@@ -397,6 +399,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
+		public ScaleOutStatus getScaleOutStatus() {
+			return this.scaleOutStatus;
+		}
+
+		public void setScaleOutStatus(ScaleOutStatus scaleOutStatus) {
+			this.scaleOutStatus = scaleOutStatus;
+		}
+
 		public static class Tag {
 
 			private String key;
@@ -417,6 +427,29 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class ScaleOutStatus {
+
+			private String progress;
+
+			private String ratio;
+
+			public String getProgress() {
+				return this.progress;
+			}
+
+			public void setProgress(String progress) {
+				this.progress = progress;
+			}
+
+			public String getRatio() {
+				return this.ratio;
+			}
+
+			public void setRatio(String ratio) {
+				this.ratio = ratio;
 			}
 		}
 	}

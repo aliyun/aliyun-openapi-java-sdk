@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.clickhouse.model.v20191111.DescribeDBClusterAttributeResponse;
 import com.aliyuncs.clickhouse.model.v20191111.DescribeDBClusterAttributeResponse.DBCluster;
+import com.aliyuncs.clickhouse.model.v20191111.DescribeDBClusterAttributeResponse.DBCluster.ScaleOutStatus;
 import com.aliyuncs.clickhouse.model.v20191111.DescribeDBClusterAttributeResponse.DBCluster.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -64,6 +65,11 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		dBCluster.setPort(_ctx.integerValue("DescribeDBClusterAttributeResponse.DBCluster.Port"));
 		dBCluster.setAliUid(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.AliUid"));
 		dBCluster.setBid(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.Bid"));
+
+		ScaleOutStatus scaleOutStatus = new ScaleOutStatus();
+		scaleOutStatus.setProgress(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.ScaleOutStatus.Progress"));
+		scaleOutStatus.setRatio(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.ScaleOutStatus.Ratio"));
+		dBCluster.setScaleOutStatus(scaleOutStatus);
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterAttributeResponse.DBCluster.Tags.Length"); i++) {
