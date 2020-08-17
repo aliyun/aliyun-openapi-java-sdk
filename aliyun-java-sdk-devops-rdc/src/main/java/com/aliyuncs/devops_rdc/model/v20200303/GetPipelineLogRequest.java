@@ -21,34 +21,19 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class CreateCredentialRequest extends RpcAcsRequest<CreateCredentialResponse> {
+public class GetPipelineLogRequest extends RpcAcsRequest<GetPipelineLogResponse> {
 	   
-
-	private String type;
 
 	private String userPk;
 
 	private String orgId;
 
-	private String password;
+	private Long pipelineId;
 
-	private String name;
-
-	private String userName;
-	public CreateCredentialRequest() {
-		super("devops-rdc", "2020-03-03", "CreateCredential");
+	private Long jobId;
+	public GetPipelineLogRequest() {
+		super("devops-rdc", "2020-03-03", "GetPipelineLog");
 		setMethod(MethodType.POST);
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type);
-		}
 	}
 
 	public String getUserPk() {
@@ -73,42 +58,31 @@ public class CreateCredentialRequest extends RpcAcsRequest<CreateCredentialRespo
 		}
 	}
 
-	public String getPassword() {
-		return this.password;
+	public Long getPipelineId() {
+		return this.pipelineId;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putBodyParameter("Password", password);
+	public void setPipelineId(Long pipelineId) {
+		this.pipelineId = pipelineId;
+		if(pipelineId != null){
+			putBodyParameter("PipelineId", pipelineId.toString());
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public Long getJobId() {
+		return this.jobId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("Name", name);
-		}
-	}
-
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-		if(userName != null){
-			putBodyParameter("UserName", userName);
+	public void setJobId(Long jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putBodyParameter("JobId", jobId.toString());
 		}
 	}
 
 	@Override
-	public Class<CreateCredentialResponse> getResponseClass() {
-		return CreateCredentialResponse.class;
+	public Class<GetPipelineLogResponse> getResponseClass() {
+		return GetPipelineLogResponse.class;
 	}
 
 }

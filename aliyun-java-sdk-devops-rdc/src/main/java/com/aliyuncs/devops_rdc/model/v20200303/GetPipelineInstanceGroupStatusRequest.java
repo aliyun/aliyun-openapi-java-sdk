@@ -21,33 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class CreateCredentialRequest extends RpcAcsRequest<CreateCredentialResponse> {
+public class GetPipelineInstanceGroupStatusRequest extends RpcAcsRequest<GetPipelineInstanceGroupStatusResponse> {
 	   
 
-	private String type;
+	private Long flowInstanceId;
 
 	private String userPk;
 
 	private String orgId;
 
-	private String password;
-
-	private String name;
-
-	private String userName;
-	public CreateCredentialRequest() {
-		super("devops-rdc", "2020-03-03", "CreateCredential");
+	private Long pipelineId;
+	public GetPipelineInstanceGroupStatusRequest() {
+		super("devops-rdc", "2020-03-03", "GetPipelineInstanceGroupStatus");
 		setMethod(MethodType.POST);
 	}
 
-	public String getType() {
-		return this.type;
+	public Long getFlowInstanceId() {
+		return this.flowInstanceId;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type);
+	public void setFlowInstanceId(Long flowInstanceId) {
+		this.flowInstanceId = flowInstanceId;
+		if(flowInstanceId != null){
+			putBodyParameter("FlowInstanceId", flowInstanceId.toString());
 		}
 	}
 
@@ -69,46 +65,24 @@ public class CreateCredentialRequest extends RpcAcsRequest<CreateCredentialRespo
 	public void setOrgId(String orgId) {
 		this.orgId = orgId;
 		if(orgId != null){
-			putBodyParameter("OrgId", orgId);
+			putQueryParameter("OrgId", orgId);
 		}
 	}
 
-	public String getPassword() {
-		return this.password;
+	public Long getPipelineId() {
+		return this.pipelineId;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putBodyParameter("Password", password);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("Name", name);
-		}
-	}
-
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-		if(userName != null){
-			putBodyParameter("UserName", userName);
+	public void setPipelineId(Long pipelineId) {
+		this.pipelineId = pipelineId;
+		if(pipelineId != null){
+			putQueryParameter("PipelineId", pipelineId.toString());
 		}
 	}
 
 	@Override
-	public Class<CreateCredentialResponse> getResponseClass() {
-		return CreateCredentialResponse.class;
+	public Class<GetPipelineInstanceGroupStatusResponse> getResponseClass() {
+		return GetPipelineInstanceGroupStatusResponse.class;
 	}
 
 }

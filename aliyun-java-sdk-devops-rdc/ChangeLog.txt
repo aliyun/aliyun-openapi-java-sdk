@@ -1,3 +1,6 @@
+2020-08-17 Version: 1.0.5
+- Add pipeline status api.
+
 2020-07-20 Version: 1.0.3
 - Add actions.
 
