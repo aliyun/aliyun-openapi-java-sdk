@@ -39,7 +39,7 @@ public class ListFaceAlgorithmResultsRequest extends RpcAcsRequest<ListFaceAlgor
 
 	private String pageSize;
 	public ListFaceAlgorithmResultsRequest() {
-		super("Vcs", "2020-05-15", "ListFaceAlgorithmResults");
+		super("Vcs", "2020-05-15", "ListFaceAlgorithmResults", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

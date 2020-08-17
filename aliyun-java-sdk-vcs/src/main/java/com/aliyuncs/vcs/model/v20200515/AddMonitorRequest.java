@@ -35,7 +35,7 @@ public class AddMonitorRequest extends RpcAcsRequest<AddMonitorResponse> {
 
 	private String algorithmVendor;
 	public AddMonitorRequest() {
-		super("Vcs", "2020-05-15", "AddMonitor");
+		super("Vcs", "2020-05-15", "AddMonitor", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
