@@ -1,3 +1,6 @@
+2020-08-17 Version: 1.0.8
+- Fix create project task.
+
 2020-08-14 Version: 1.0.8
 - Add sdk.
 

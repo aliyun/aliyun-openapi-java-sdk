@@ -30,6 +30,8 @@ public class CreateProjectTaskRequest extends RpcAcsRequest<CreateProjectTaskRes
 
 	private String executorId;
 
+	private String taskFlowStatusId;
+
 	private String startDate;
 
 	private Integer priority;
@@ -43,8 +45,6 @@ public class CreateProjectTaskRequest extends RpcAcsRequest<CreateProjectTaskRes
 	private String sprintId;
 
 	private String dueDate;
-
-	private String tasFlowStatusId;
 
 	private String scenarioFieldConfigId;
 
@@ -86,6 +86,17 @@ public class CreateProjectTaskRequest extends RpcAcsRequest<CreateProjectTaskRes
 		this.executorId = executorId;
 		if(executorId != null){
 			putBodyParameter("ExecutorId", executorId);
+		}
+	}
+
+	public String getTaskFlowStatusId() {
+		return this.taskFlowStatusId;
+	}
+
+	public void setTaskFlowStatusId(String taskFlowStatusId) {
+		this.taskFlowStatusId = taskFlowStatusId;
+		if(taskFlowStatusId != null){
+			putBodyParameter("TaskFlowStatusId", taskFlowStatusId);
 		}
 	}
 
@@ -163,17 +174,6 @@ public class CreateProjectTaskRequest extends RpcAcsRequest<CreateProjectTaskRes
 		this.dueDate = dueDate;
 		if(dueDate != null){
 			putBodyParameter("DueDate", dueDate);
-		}
-	}
-
-	public String getTasFlowStatusId() {
-		return this.tasFlowStatusId;
-	}
-
-	public void setTasFlowStatusId(String tasFlowStatusId) {
-		this.tasFlowStatusId = tasFlowStatusId;
-		if(tasFlowStatusId != null){
-			putBodyParameter("TasFlowStatusId", tasFlowStatusId);
 		}
 	}
 
