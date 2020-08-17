@@ -42,7 +42,7 @@ public class ReportDeviceCapacityRequest extends RpcAcsRequest<ReportDeviceCapac
 
 	private String longitude;
 	public ReportDeviceCapacityRequest() {
-		super("Vcs", "2020-05-15", "ReportDeviceCapacity", "vcs");
+		super("Vcs", "2020-05-15", "ReportDeviceCapacity");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

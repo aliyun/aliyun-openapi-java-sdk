@@ -87,9 +87,9 @@ public class GetFaceModelResultResponse extends AcsResponse {
 
 			private Integer skinColor;
 
-			private Integer rightBottomY;
+			private Float rightBottomY;
 
-			private Integer rightBottomX;
+			private Float rightBottomX;
 
 			private Integer hairStyle;
 
@@ -101,9 +101,9 @@ public class GetFaceModelResultResponse extends AcsResponse {
 
 			private Integer ageLowerLimit;
 
-			private Integer leftTopY;
+			private Float leftTopY;
 
-			private Integer leftTopX;
+			private Float leftTopX;
 
 			private Integer hairColor;
 
@@ -149,19 +149,19 @@ public class GetFaceModelResultResponse extends AcsResponse {
 				this.skinColor = skinColor;
 			}
 
-			public Integer getRightBottomY() {
+			public Float getRightBottomY() {
 				return this.rightBottomY;
 			}
 
-			public void setRightBottomY(Integer rightBottomY) {
+			public void setRightBottomY(Float rightBottomY) {
 				this.rightBottomY = rightBottomY;
 			}
 
-			public Integer getRightBottomX() {
+			public Float getRightBottomX() {
 				return this.rightBottomX;
 			}
 
-			public void setRightBottomX(Integer rightBottomX) {
+			public void setRightBottomX(Float rightBottomX) {
 				this.rightBottomX = rightBottomX;
 			}
 
@@ -205,19 +205,19 @@ public class GetFaceModelResultResponse extends AcsResponse {
 				this.ageLowerLimit = ageLowerLimit;
 			}
 
-			public Integer getLeftTopY() {
+			public Float getLeftTopY() {
 				return this.leftTopY;
 			}
 
-			public void setLeftTopY(Integer leftTopY) {
+			public void setLeftTopY(Float leftTopY) {
 				this.leftTopY = leftTopY;
 			}
 
-			public Integer getLeftTopX() {
+			public Float getLeftTopX() {
 				return this.leftTopX;
 			}
 
-			public void setLeftTopX(Integer leftTopX) {
+			public void setLeftTopX(Float leftTopX) {
 				this.leftTopX = leftTopX;
 			}
 

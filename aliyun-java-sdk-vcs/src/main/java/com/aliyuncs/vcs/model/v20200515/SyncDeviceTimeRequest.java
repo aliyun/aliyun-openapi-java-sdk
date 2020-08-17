@@ -29,7 +29,7 @@ public class SyncDeviceTimeRequest extends RpcAcsRequest<SyncDeviceTimeResponse>
 
 	private String deviceSn;
 	public SyncDeviceTimeRequest() {
-		super("Vcs", "2020-05-15", "SyncDeviceTime", "vcs");
+		super("Vcs", "2020-05-15", "SyncDeviceTime");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

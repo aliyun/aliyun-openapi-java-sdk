@@ -1,3 +1,6 @@
+2020-08-17 Version: 20200817001
+- Support float type.
+
 2020-08-17 Version: 1.1.6
 - Add list event algorithm details.
 
