@@ -29,7 +29,7 @@ public class ExtendImageStyleRequest extends RpcAcsRequest<ExtendImageStyleRespo
 
 	private String styleUrl;
 	public ExtendImageStyleRequest() {
-		super("ivpd", "2019-06-25", "ExtendImageStyle");
+		super("ivpd", "2019-06-25", "ExtendImageStyle", "ivpd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

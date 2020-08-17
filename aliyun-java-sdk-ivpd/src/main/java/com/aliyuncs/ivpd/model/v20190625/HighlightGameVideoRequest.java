@@ -22,16 +22,14 @@ import com.aliyuncs.ivpd.Endpoint;
  * @author auto create
  * @version 
  */
-public class ChangeImageSizeRequest extends RpcAcsRequest<ChangeImageSizeResponse> {
+public class HighlightGameVideoRequest extends RpcAcsRequest<HighlightGameVideoResponse> {
 	   
 
-	private String url;
+	private Boolean async;
 
-	private Integer width;
-
-	private Integer height;
-	public ChangeImageSizeRequest() {
-		super("ivpd", "2019-06-25", "ChangeImageSize", "ivpd");
+	private String videoUrl;
+	public HighlightGameVideoRequest() {
+		super("ivpd", "2019-06-25", "HighlightGameVideo", "ivpd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class ChangeImageSizeRequest extends RpcAcsRequest<ChangeImageSizeRespons
 		} catch (Exception e) {}
 	}
 
-	public String getUrl() {
-		return this.url;
+	public Boolean getAsync() {
+		return this.async;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
-		if(url != null){
-			putBodyParameter("Url", url);
+	public void setAsync(Boolean async) {
+		this.async = async;
+		if(async != null){
+			putBodyParameter("Async", async.toString());
 		}
 	}
 
-	public Integer getWidth() {
-		return this.width;
+	public String getVideoUrl() {
+		return this.videoUrl;
 	}
 
-	public void setWidth(Integer width) {
-		this.width = width;
-		if(width != null){
-			putBodyParameter("Width", width.toString());
-		}
-	}
-
-	public Integer getHeight() {
-		return this.height;
-	}
-
-	public void setHeight(Integer height) {
-		this.height = height;
-		if(height != null){
-			putBodyParameter("Height", height.toString());
+	public void setVideoUrl(String videoUrl) {
+		this.videoUrl = videoUrl;
+		if(videoUrl != null){
+			putBodyParameter("VideoUrl", videoUrl);
 		}
 	}
 
 	@Override
-	public Class<ChangeImageSizeResponse> getResponseClass() {
-		return ChangeImageSizeResponse.class;
+	public Class<HighlightGameVideoResponse> getResponseClass() {
+		return HighlightGameVideoResponse.class;
 	}
 
 }

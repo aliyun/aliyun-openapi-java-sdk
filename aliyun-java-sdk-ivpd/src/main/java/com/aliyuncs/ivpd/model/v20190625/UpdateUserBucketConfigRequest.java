@@ -28,7 +28,7 @@ public class UpdateUserBucketConfigRequest extends RpcAcsRequest<UpdateUserBucke
 
 	private List<Data> datas;
 	public UpdateUserBucketConfigRequest() {
-		super("ivpd", "2019-06-25", "UpdateUserBucketConfig");
+		super("ivpd", "2019-06-25", "UpdateUserBucketConfig", "ivpd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

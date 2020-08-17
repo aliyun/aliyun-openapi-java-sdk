@@ -27,7 +27,7 @@ public class SegmentBodyRequest extends RpcAcsRequest<SegmentBodyResponse> {
 
 	private String imageUrl;
 	public SegmentBodyRequest() {
-		super("ivpd", "2019-06-25", "SegmentBody");
+		super("ivpd", "2019-06-25", "SegmentBody", "ivpd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.ivpd.Endpoint;
 public class GetUserBucketConfigRequest extends RpcAcsRequest<GetUserBucketConfigResponse> {
 	   
 	public GetUserBucketConfigRequest() {
-		super("ivpd", "2019-06-25", "GetUserBucketConfig");
+		super("ivpd", "2019-06-25", "GetUserBucketConfig", "ivpd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

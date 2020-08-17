@@ -1,3 +1,6 @@
+2020-08-17 Version: 1.0.6.1
+- Add Api HighlightGameVideo.
+
 2020-07-03 Version: 1.0.6
 - Supported UpdateUserBucketConfig.
 

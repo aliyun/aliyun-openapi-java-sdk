@@ -32,7 +32,7 @@ public class EraseLogoInVideoRequest extends RpcAcsRequest<EraseLogoInVideoRespo
 
 	private String videoUrl;
 	public EraseLogoInVideoRequest() {
-		super("ivpd", "2019-06-25", "EraseLogoInVideo");
+		super("ivpd", "2019-06-25", "EraseLogoInVideo", "ivpd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

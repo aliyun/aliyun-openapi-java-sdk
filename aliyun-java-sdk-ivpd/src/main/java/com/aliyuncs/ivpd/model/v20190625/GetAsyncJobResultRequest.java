@@ -22,16 +22,12 @@ import com.aliyuncs.ivpd.Endpoint;
  * @author auto create
  * @version 
  */
-public class ChangeImageSizeRequest extends RpcAcsRequest<ChangeImageSizeResponse> {
+public class GetAsyncJobResultRequest extends RpcAcsRequest<GetAsyncJobResultResponse> {
 	   
 
-	private String url;
-
-	private Integer width;
-
-	private Integer height;
-	public ChangeImageSizeRequest() {
-		super("ivpd", "2019-06-25", "ChangeImageSize", "ivpd");
+	private String jobId;
+	public GetAsyncJobResultRequest() {
+		super("ivpd", "2019-06-25", "GetAsyncJobResult", "ivpd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +35,20 @@ public class ChangeImageSizeRequest extends RpcAcsRequest<ChangeImageSizeRespons
 		} catch (Exception e) {}
 	}
 
-	public String getUrl() {
-		return this.url;
+	public String getJobId() {
+		return this.jobId;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
-		if(url != null){
-			putBodyParameter("Url", url);
-		}
-	}
-
-	public Integer getWidth() {
-		return this.width;
-	}
-
-	public void setWidth(Integer width) {
-		this.width = width;
-		if(width != null){
-			putBodyParameter("Width", width.toString());
-		}
-	}
-
-	public Integer getHeight() {
-		return this.height;
-	}
-
-	public void setHeight(Integer height) {
-		this.height = height;
-		if(height != null){
-			putBodyParameter("Height", height.toString());
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putBodyParameter("JobId", jobId);
 		}
 	}
 
 	@Override
-	public Class<ChangeImageSizeResponse> getResponseClass() {
-		return ChangeImageSizeResponse.class;
+	public Class<GetAsyncJobResultResponse> getResponseClass() {
+		return GetAsyncJobResultResponse.class;
 	}
 
 }

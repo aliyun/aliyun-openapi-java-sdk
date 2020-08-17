@@ -27,7 +27,7 @@ public class MakeSuperResolutionImageRequest extends RpcAcsRequest<MakeSuperReso
 
 	private String url;
 	public MakeSuperResolutionImageRequest() {
-		super("ivpd", "2019-06-25", "MakeSuperResolutionImage");
+		super("ivpd", "2019-06-25", "MakeSuperResolutionImage", "ivpd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
