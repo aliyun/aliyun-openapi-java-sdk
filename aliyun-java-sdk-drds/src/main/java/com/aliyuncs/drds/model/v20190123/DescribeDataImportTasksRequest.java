@@ -29,7 +29,7 @@ public class DescribeDataImportTasksRequest extends RpcAcsRequest<DescribeDataIm
 
 	private Integer pageSize;
 	public DescribeDataImportTasksRequest() {
-		super("Drds", "2019-01-23", "DescribeDataImportTasks", "drds");
+		super("Drds", "2019-01-23", "DescribeDataImportTasks", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

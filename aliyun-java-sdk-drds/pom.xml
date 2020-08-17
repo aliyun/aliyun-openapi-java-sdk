@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-drds</artifactId>
   <packaging>jar</packaging>
-  <version>4.7.2-inner</version>
+  <version>2019-01-23</version>
   <name>aliyun-java-sdk-drds</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

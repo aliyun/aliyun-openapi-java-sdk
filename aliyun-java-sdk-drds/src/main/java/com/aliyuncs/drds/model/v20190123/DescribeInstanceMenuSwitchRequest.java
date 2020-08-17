@@ -27,7 +27,7 @@ public class DescribeInstanceMenuSwitchRequest extends RpcAcsRequest<DescribeIns
 
 	private String drdsInstanceId;
 	public DescribeInstanceMenuSwitchRequest() {
-		super("Drds", "2019-01-23", "DescribeInstanceMenuSwitch", "drds");
+		super("Drds", "2019-01-23", "DescribeInstanceMenuSwitch", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

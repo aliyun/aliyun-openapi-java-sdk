@@ -37,7 +37,7 @@ public class StartRestoreRequest extends RpcAcsRequest<StartRestoreResponse> {
 
 	private String backupMode;
 	public StartRestoreRequest() {
-		super("Drds", "2019-01-23", "StartRestore", "drds");
+		super("Drds", "2019-01-23", "StartRestore", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

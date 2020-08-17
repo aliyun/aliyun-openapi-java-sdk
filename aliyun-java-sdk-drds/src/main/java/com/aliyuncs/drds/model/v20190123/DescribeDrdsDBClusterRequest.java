@@ -31,7 +31,7 @@ public class DescribeDrdsDBClusterRequest extends RpcAcsRequest<DescribeDrdsDBCl
 
 	private String dbInstanceId;
 	public DescribeDrdsDBClusterRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsDBCluster", "drds");
+		super("Drds", "2019-01-23", "DescribeDrdsDBCluster", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

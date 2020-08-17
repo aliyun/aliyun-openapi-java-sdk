@@ -22,21 +22,34 @@ import com.aliyuncs.drds.Endpoint;
  * @author auto create
  * @version 
  */
-public class RemoveRecycleBinTableRequest extends RpcAcsRequest<RemoveRecycleBinTableResponse> {
+public class ManagePrivateRdsRequest extends RpcAcsRequest<ManagePrivateRdsResponse> {
 	   
+
+	private String params;
 
 	private String drdsInstanceId;
 
-	private String dbName;
+	private String dBInstanceId;
 
-	private String tableName;
-	public RemoveRecycleBinTableRequest() {
-		super("Drds", "2019-01-23", "RemoveRecycleBinTable", "Drds");
+	private String rdsAction;
+	public ManagePrivateRdsRequest() {
+		super("Drds", "2019-01-23", "ManagePrivateRds", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getParams() {
+		return this.params;
+	}
+
+	public void setParams(String params) {
+		this.params = params;
+		if(params != null){
+			putQueryParameter("Params", params);
+		}
 	}
 
 	public String getDrdsInstanceId() {
@@ -50,31 +63,31 @@ public class RemoveRecycleBinTableRequest extends RpcAcsRequest<RemoveRecycleBin
 		}
 	}
 
-	public String getDbName() {
-		return this.dbName;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
-	public String getTableName() {
-		return this.tableName;
+	public String getRdsAction() {
+		return this.rdsAction;
 	}
 
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
-		if(tableName != null){
-			putQueryParameter("TableName", tableName);
+	public void setRdsAction(String rdsAction) {
+		this.rdsAction = rdsAction;
+		if(rdsAction != null){
+			putQueryParameter("RdsAction", rdsAction);
 		}
 	}
 
 	@Override
-	public Class<RemoveRecycleBinTableResponse> getResponseClass() {
-		return RemoveRecycleBinTableResponse.class;
+	public Class<ManagePrivateRdsResponse> getResponseClass() {
+		return ManagePrivateRdsResponse.class;
 	}
 
 }

@@ -32,7 +32,7 @@ public class ModifyAccountPrivilegeRequest extends RpcAcsRequest<ModifyAccountPr
 
 	private List<DbPrivilege> dbPrivileges;
 	public ModifyAccountPrivilegeRequest() {
-		super("Drds", "2019-01-23", "ModifyAccountPrivilege", "drds");
+		super("Drds", "2019-01-23", "ModifyAccountPrivilege", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

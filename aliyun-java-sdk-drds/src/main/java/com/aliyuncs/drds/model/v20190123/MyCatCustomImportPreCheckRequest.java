@@ -45,7 +45,7 @@ public class MyCatCustomImportPreCheckRequest extends RpcAcsRequest<MyCatCustomI
 
 	private String dstDrdsInstanceId;
 	public MyCatCustomImportPreCheckRequest() {
-		super("Drds", "2019-01-23", "MyCatCustomImportPreCheck", "drds");
+		super("Drds", "2019-01-23", "MyCatCustomImportPreCheck", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

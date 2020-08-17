@@ -34,7 +34,7 @@ public class SetupBroadcastTablesRequest extends RpcAcsRequest<SetupBroadcastTab
 
 	private List<String> tableNames;
 	public SetupBroadcastTablesRequest() {
-		super("Drds", "2019-01-23", "SetupBroadcastTables", "drds");
+		super("Drds", "2019-01-23", "SetupBroadcastTables", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

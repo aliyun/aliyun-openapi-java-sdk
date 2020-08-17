@@ -29,7 +29,7 @@ public class UpgradeHiStoreInstanceRequest extends RpcAcsRequest<UpgradeHiStoreI
 
 	private String drdsInstanceId;
 	public UpgradeHiStoreInstanceRequest() {
-		super("Drds", "2019-01-23", "UpgradeHiStoreInstance", "drds");
+		super("Drds", "2019-01-23", "UpgradeHiStoreInstance", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

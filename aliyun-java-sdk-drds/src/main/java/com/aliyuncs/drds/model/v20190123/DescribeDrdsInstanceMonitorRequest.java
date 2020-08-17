@@ -35,7 +35,7 @@ public class DescribeDrdsInstanceMonitorRequest extends RpcAcsRequest<DescribeDr
 
 	private Integer periodMultiple;
 	public DescribeDrdsInstanceMonitorRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsInstanceMonitor", "drds");
+		super("Drds", "2019-01-23", "DescribeDrdsInstanceMonitor", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class ReleaseHiStoreInstanceRequest extends RpcAcsRequest<ReleaseHiStoreI
 
 	private String drdsInstanceId;
 	public ReleaseHiStoreInstanceRequest() {
-		super("Drds", "2019-01-23", "ReleaseHiStoreInstance", "drds");
+		super("Drds", "2019-01-23", "ReleaseHiStoreInstance", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

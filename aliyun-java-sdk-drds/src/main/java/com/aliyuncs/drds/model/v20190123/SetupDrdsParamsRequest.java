@@ -32,7 +32,7 @@ public class SetupDrdsParamsRequest extends RpcAcsRequest<SetupDrdsParamsRespons
 
 	private String drdsInstanceId;
 	public SetupDrdsParamsRequest() {
-		super("Drds", "2019-01-23", "SetupDrdsParams", "drds");
+		super("Drds", "2019-01-23", "SetupDrdsParams", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

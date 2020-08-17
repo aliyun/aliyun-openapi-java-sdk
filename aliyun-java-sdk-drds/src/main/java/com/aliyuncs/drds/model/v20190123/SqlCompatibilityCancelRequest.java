@@ -29,7 +29,7 @@ public class SqlCompatibilityCancelRequest extends RpcAcsRequest<SqlCompatibilit
 
 	private Long taskId;
 	public SqlCompatibilityCancelRequest() {
-		super("Drds", "2019-01-23", "SqlCompatibilityCancel", "drds");
+		super("Drds", "2019-01-23", "SqlCompatibilityCancel", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

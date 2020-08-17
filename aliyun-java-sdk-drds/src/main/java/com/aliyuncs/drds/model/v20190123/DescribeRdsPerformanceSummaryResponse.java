@@ -67,6 +67,8 @@ public class DescribeRdsPerformanceSummaryResponse extends AcsResponse {
 
 		private Integer totalSessions;
 
+		private Long spaceUsage;
+
 		public String getRdsId() {
 			return this.rdsId;
 		}
@@ -105,6 +107,14 @@ public class DescribeRdsPerformanceSummaryResponse extends AcsResponse {
 
 		public void setTotalSessions(Integer totalSessions) {
 			this.totalSessions = totalSessions;
+		}
+
+		public Long getSpaceUsage() {
+			return this.spaceUsage;
+		}
+
+		public void setSpaceUsage(Long spaceUsage) {
+			this.spaceUsage = spaceUsage;
 		}
 	}
 

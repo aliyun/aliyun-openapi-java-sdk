@@ -44,7 +44,7 @@ public class PrecheckMyCatEvaluateRequest extends RpcAcsRequest<PrecheckMyCatEva
 
 	private List<String> importDbLists;
 	public PrecheckMyCatEvaluateRequest() {
-		super("Drds", "2019-01-23", "PrecheckMyCatEvaluate", "drds");
+		super("Drds", "2019-01-23", "PrecheckMyCatEvaluate", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

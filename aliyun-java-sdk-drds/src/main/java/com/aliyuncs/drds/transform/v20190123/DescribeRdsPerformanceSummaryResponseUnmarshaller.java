@@ -37,6 +37,7 @@ public class DescribeRdsPerformanceSummaryResponseUnmarshaller {
 			rdsPerformanceInfo.setIops(_ctx.floatValue("DescribeRdsPerformanceSummaryResponse.RdsPerformanceInfos["+ i +"].Iops"));
 			rdsPerformanceInfo.setActiveSessions(_ctx.integerValue("DescribeRdsPerformanceSummaryResponse.RdsPerformanceInfos["+ i +"].ActiveSessions"));
 			rdsPerformanceInfo.setTotalSessions(_ctx.integerValue("DescribeRdsPerformanceSummaryResponse.RdsPerformanceInfos["+ i +"].TotalSessions"));
+			rdsPerformanceInfo.setSpaceUsage(_ctx.longValue("DescribeRdsPerformanceSummaryResponse.RdsPerformanceInfos["+ i +"].SpaceUsage"));
 
 			rdsPerformanceInfos.add(rdsPerformanceInfo);
 		}

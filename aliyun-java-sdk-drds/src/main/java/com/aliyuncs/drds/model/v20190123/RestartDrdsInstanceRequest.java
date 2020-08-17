@@ -27,7 +27,7 @@ public class RestartDrdsInstanceRequest extends RpcAcsRequest<RestartDrdsInstanc
 
 	private String drdsInstanceId;
 	public RestartDrdsInstanceRequest() {
-		super("Drds", "2019-01-23", "RestartDrdsInstance", "drds");
+		super("Drds", "2019-01-23", "RestartDrdsInstance", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

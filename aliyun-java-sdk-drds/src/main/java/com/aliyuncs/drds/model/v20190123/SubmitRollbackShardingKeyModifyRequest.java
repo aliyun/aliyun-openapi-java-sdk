@@ -31,7 +31,7 @@ public class SubmitRollbackShardingKeyModifyRequest extends RpcAcsRequest<Submit
 
 	private String taskId;
 	public SubmitRollbackShardingKeyModifyRequest() {
-		super("Drds", "2019-01-23", "SubmitRollbackShardingKeyModify", "drds");
+		super("Drds", "2019-01-23", "SubmitRollbackShardingKeyModify", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

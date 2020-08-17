@@ -27,7 +27,7 @@ public class EnableInstanceIpv6AddressRequest extends RpcAcsRequest<EnableInstan
 
 	private String drdsInstanceId;
 	public EnableInstanceIpv6AddressRequest() {
-		super("Drds", "2019-01-23", "EnableInstanceIpv6Address", "drds");
+		super("Drds", "2019-01-23", "EnableInstanceIpv6Address", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

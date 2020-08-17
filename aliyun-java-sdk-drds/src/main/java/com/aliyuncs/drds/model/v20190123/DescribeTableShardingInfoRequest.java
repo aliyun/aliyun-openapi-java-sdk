@@ -31,7 +31,7 @@ public class DescribeTableShardingInfoRequest extends RpcAcsRequest<DescribeTabl
 
 	private String tableName;
 	public DescribeTableShardingInfoRequest() {
-		super("Drds", "2019-01-23", "DescribeTableShardingInfo", "drds");
+		super("Drds", "2019-01-23", "DescribeTableShardingInfo", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

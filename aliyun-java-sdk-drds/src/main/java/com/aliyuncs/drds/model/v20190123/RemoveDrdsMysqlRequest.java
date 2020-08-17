@@ -35,7 +35,7 @@ public class RemoveDrdsMysqlRequest extends RpcAcsRequest<RemoveDrdsMysqlRespons
 
 	private Boolean force;
 	public RemoveDrdsMysqlRequest() {
-		super("Drds", "2019-01-23", "RemoveDrdsMysql", "drds");
+		super("Drds", "2019-01-23", "RemoveDrdsMysql", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

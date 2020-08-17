@@ -27,7 +27,7 @@ public class DescribeSqlFlashbakTaskRequest extends RpcAcsRequest<DescribeSqlFla
 
 	private String drdsInstanceId;
 	public DescribeSqlFlashbakTaskRequest() {
-		super("Drds", "2019-01-23", "DescribeSqlFlashbakTask", "drds");
+		super("Drds", "2019-01-23", "DescribeSqlFlashbakTask", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
