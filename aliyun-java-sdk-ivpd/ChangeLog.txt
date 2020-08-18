@@ -1,3 +1,6 @@
+2020-08-18 Version: 1.0.6.1
+- Add Api HighlightGameVideo.
+
 2020-08-18 Version: 1.0.6
 - Add Api HighlightGameVideo.
 
