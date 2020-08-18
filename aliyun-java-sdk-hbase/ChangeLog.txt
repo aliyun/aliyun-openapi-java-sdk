@@ -1,3 +1,6 @@
+2020-08-18 Version: 2.5.0
+- Support for describe hbaseue multi-zone model.
+
 2020-06-12 Version: 2.4.4
 - Add support for enable hbaseue extra module like lindorm-search or lindorm-sql.
 
