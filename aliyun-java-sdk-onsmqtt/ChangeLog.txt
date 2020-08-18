@@ -1,3 +1,6 @@
+2020-08-18 Version: 1.0.4
+- Support session query operations.
+
 2020-04-29 Version: 1.0.3
 - Support groupId operations.
 
