@@ -22,18 +22,14 @@ import com.aliyuncs.aliyuncvc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartLiveRequest extends RpcAcsRequest<StartLiveResponse> {
+public class CustomLayoutRequest extends RpcAcsRequest<CustomLayoutResponse> {
 	   
 
 	private String liveUUID;
 
-	private String pushInfo;
-
-	private String userId;
-
 	private String layoutInfo;
-	public StartLiveRequest() {
-		super("aliyuncvc", "2019-10-30", "StartLive", "aliyuncvc");
+	public CustomLayoutRequest() {
+		super("aliyuncvc", "2019-10-30", "CustomLayout", "aliyuncvc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,28 +48,6 @@ public class StartLiveRequest extends RpcAcsRequest<StartLiveResponse> {
 		}
 	}
 
-	public String getPushInfo() {
-		return this.pushInfo;
-	}
-
-	public void setPushInfo(String pushInfo) {
-		this.pushInfo = pushInfo;
-		if(pushInfo != null){
-			putBodyParameter("PushInfo", pushInfo);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
-		}
-	}
-
 	public String getLayoutInfo() {
 		return this.layoutInfo;
 	}
@@ -86,8 +60,8 @@ public class StartLiveRequest extends RpcAcsRequest<StartLiveResponse> {
 	}
 
 	@Override
-	public Class<StartLiveResponse> getResponseClass() {
-		return StartLiveResponse.class;
+	public Class<CustomLayoutResponse> getResponseClass() {
+		return CustomLayoutResponse.class;
 	}
 
 }

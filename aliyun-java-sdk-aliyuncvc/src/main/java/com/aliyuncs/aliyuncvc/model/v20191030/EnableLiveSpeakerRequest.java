@@ -22,18 +22,14 @@ import com.aliyuncs.aliyuncvc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartLiveRequest extends RpcAcsRequest<StartLiveResponse> {
+public class EnableLiveSpeakerRequest extends RpcAcsRequest<EnableLiveSpeakerResponse> {
 	   
 
 	private String liveUUID;
 
-	private String pushInfo;
-
-	private String userId;
-
-	private String layoutInfo;
-	public StartLiveRequest() {
-		super("aliyuncvc", "2019-10-30", "StartLive", "aliyuncvc");
+	private Boolean enableSpeakerFlag;
+	public EnableLiveSpeakerRequest() {
+		super("aliyuncvc", "2019-10-30", "EnableLiveSpeaker", "aliyuncvc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,42 +48,20 @@ public class StartLiveRequest extends RpcAcsRequest<StartLiveResponse> {
 		}
 	}
 
-	public String getPushInfo() {
-		return this.pushInfo;
+	public Boolean getEnableSpeakerFlag() {
+		return this.enableSpeakerFlag;
 	}
 
-	public void setPushInfo(String pushInfo) {
-		this.pushInfo = pushInfo;
-		if(pushInfo != null){
-			putBodyParameter("PushInfo", pushInfo);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
-		}
-	}
-
-	public String getLayoutInfo() {
-		return this.layoutInfo;
-	}
-
-	public void setLayoutInfo(String layoutInfo) {
-		this.layoutInfo = layoutInfo;
-		if(layoutInfo != null){
-			putBodyParameter("LayoutInfo", layoutInfo);
+	public void setEnableSpeakerFlag(Boolean enableSpeakerFlag) {
+		this.enableSpeakerFlag = enableSpeakerFlag;
+		if(enableSpeakerFlag != null){
+			putBodyParameter("EnableSpeakerFlag", enableSpeakerFlag.toString());
 		}
 	}
 
 	@Override
-	public Class<StartLiveResponse> getResponseClass() {
-		return StartLiveResponse.class;
+	public Class<EnableLiveSpeakerResponse> getResponseClass() {
+		return EnableLiveSpeakerResponse.class;
 	}
 
 }

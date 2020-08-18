@@ -22,18 +22,20 @@ import com.aliyuncs.aliyuncvc.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateLiveRequest extends RpcAcsRequest<CreateLiveResponse> {
+public class ConferenceToLiveRequest extends RpcAcsRequest<ConferenceToLiveResponse> {
 	   
 
 	private String userId;
 
 	private Boolean openPasswordFlag;
 
+	private String meetingUUID;
+
 	private String password;
 
 	private String liveName;
-	public CreateLiveRequest() {
-		super("aliyuncvc", "2019-10-30", "CreateLive", "aliyuncvc");
+	public ConferenceToLiveRequest() {
+		super("aliyuncvc", "2019-10-30", "ConferenceToLive", "aliyuncvc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,6 +65,17 @@ public class CreateLiveRequest extends RpcAcsRequest<CreateLiveResponse> {
 		}
 	}
 
+	public String getMeetingUUID() {
+		return this.meetingUUID;
+	}
+
+	public void setMeetingUUID(String meetingUUID) {
+		this.meetingUUID = meetingUUID;
+		if(meetingUUID != null){
+			putBodyParameter("MeetingUUID", meetingUUID);
+		}
+	}
+
 	public String getPassword() {
 		return this.password;
 	}
@@ -86,8 +99,8 @@ public class CreateLiveRequest extends RpcAcsRequest<CreateLiveResponse> {
 	}
 
 	@Override
-	public Class<CreateLiveResponse> getResponseClass() {
-		return CreateLiveResponse.class;
+	public Class<ConferenceToLiveResponse> getResponseClass() {
+		return ConferenceToLiveResponse.class;
 	}
 
 }
