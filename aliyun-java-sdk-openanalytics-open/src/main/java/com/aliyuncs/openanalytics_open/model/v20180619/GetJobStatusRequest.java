@@ -22,33 +22,46 @@ import com.aliyuncs.openanalytics_open.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListVirtualClustersRequest extends RpcAcsRequest<ListVirtualClustersResponse> {
+public class GetJobStatusRequest extends RpcAcsRequest<GetJobStatusResponse> {
 	   
 
-	private String type;
-	public ListVirtualClustersRequest() {
-		super("openanalytics-open", "2018-06-19", "ListVirtualClusters", "openanalytics");
-		setMethod(MethodType.GET);
+	private String jobId;
+
+	private String vcName;
+	public GetJobStatusRequest() {
+		super("openanalytics-open", "2018-06-19", "GetJobStatus", "openanalytics");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getJobId() {
+		return this.jobId;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type);
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putBodyParameter("JobId", jobId);
+		}
+	}
+
+	public String getVcName() {
+		return this.vcName;
+	}
+
+	public void setVcName(String vcName) {
+		this.vcName = vcName;
+		if(vcName != null){
+			putBodyParameter("VcName", vcName);
 		}
 	}
 
 	@Override
-	public Class<ListVirtualClustersResponse> getResponseClass() {
-		return ListVirtualClustersResponse.class;
+	public Class<GetJobStatusResponse> getResponseClass() {
+		return GetJobStatusResponse.class;
 	}
 
 }

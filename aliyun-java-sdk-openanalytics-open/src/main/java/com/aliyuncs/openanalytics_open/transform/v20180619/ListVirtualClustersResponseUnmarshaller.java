@@ -36,6 +36,7 @@ public class ListVirtualClustersResponseUnmarshaller {
 			dataItem.setName(_ctx.stringValue("ListVirtualClustersResponse.Data["+ i +"].Name"));
 			dataItem.setStatus(_ctx.stringValue("ListVirtualClustersResponse.Data["+ i +"].Status"));
 			dataItem.setType(_ctx.stringValue("ListVirtualClustersResponse.Data["+ i +"].Type"));
+			dataItem.setInstanceId(_ctx.stringValue("ListVirtualClustersResponse.Data["+ i +"].InstanceId"));
 
 			data.add(dataItem);
 		}

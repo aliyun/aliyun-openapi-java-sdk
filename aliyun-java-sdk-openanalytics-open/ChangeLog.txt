@@ -1,3 +1,6 @@
+2020-08-18 Version: 1.0.9
+- Open GetJobStatus and GetJobDetail API.
+
 2020-07-28 Version: 1.0.9
 - Add support DLA userName bing to ram sub uid.
 

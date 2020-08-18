@@ -22,33 +22,33 @@ import com.aliyuncs.openanalytics_open.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListVirtualClustersRequest extends RpcAcsRequest<ListVirtualClustersResponse> {
+public class DeleteUserNetConfigRequest extends RpcAcsRequest<DeleteUserNetConfigResponse> {
 	   
 
-	private String type;
-	public ListVirtualClustersRequest() {
-		super("openanalytics-open", "2018-06-19", "ListVirtualClusters", "openanalytics");
-		setMethod(MethodType.GET);
+	private String name;
+	public DeleteUserNetConfigRequest() {
+		super("openanalytics-open", "2018-06-19", "DeleteUserNetConfig", "openanalytics");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putBodyParameter("Name", name);
 		}
 	}
 
 	@Override
-	public Class<ListVirtualClustersResponse> getResponseClass() {
-		return ListVirtualClustersResponse.class;
+	public Class<DeleteUserNetConfigResponse> getResponseClass() {
+		return DeleteUserNetConfigResponse.class;
 	}
 
 }

@@ -57,6 +57,8 @@ public class ListVirtualClustersResponse extends AcsResponse {
 
 		private String type;
 
+		private String instanceId;
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -95,6 +97,14 @@ public class ListVirtualClustersResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

@@ -22,12 +22,12 @@ import com.aliyuncs.openanalytics_open.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListVirtualClustersRequest extends RpcAcsRequest<ListVirtualClustersResponse> {
+public class DescribeVirtualClusterV2Request extends RpcAcsRequest<DescribeVirtualClusterV2Response> {
 	   
 
-	private String type;
-	public ListVirtualClustersRequest() {
-		super("openanalytics-open", "2018-06-19", "ListVirtualClusters", "openanalytics");
+	private String name;
+	public DescribeVirtualClusterV2Request() {
+		super("openanalytics-open", "2018-06-19", "DescribeVirtualClusterV2", "openanalytics");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class ListVirtualClustersRequest extends RpcAcsRequest<ListVirtualCluster
 		} catch (Exception e) {}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
 	@Override
-	public Class<ListVirtualClustersResponse> getResponseClass() {
-		return ListVirtualClustersResponse.class;
+	public Class<DescribeVirtualClusterV2Response> getResponseClass() {
+		return DescribeVirtualClusterV2Response.class;
 	}
 
 }
