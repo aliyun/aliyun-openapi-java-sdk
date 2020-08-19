@@ -84,6 +84,8 @@ public class GetJobResponse extends AcsResponse {
 
 		private String jobId;
 
+		private String fileId;
+
 		public String getJobName() {
 			return this.jobName;
 		}
@@ -234,6 +236,14 @@ public class GetJobResponse extends AcsResponse {
 
 		public void setJobId(String jobId) {
 			this.jobId = jobId;
+		}
+
+		public String getFileId() {
+			return this.fileId;
+		}
+
+		public void setFileId(String fileId) {
+			this.fileId = fileId;
 		}
 	}
 

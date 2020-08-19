@@ -92,6 +92,8 @@ public class GetInstanceResponse extends AcsResponse {
 
 		private Long endTime;
 
+		private String autoScaleParams;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -274,6 +276,14 @@ public class GetInstanceResponse extends AcsResponse {
 
 		public void setEndTime(Long endTime) {
 			this.endTime = endTime;
+		}
+
+		public String getAutoScaleParams() {
+			return this.autoScaleParams;
+		}
+
+		public void setAutoScaleParams(String autoScaleParams) {
+			this.autoScaleParams = autoScaleParams;
 		}
 	}
 

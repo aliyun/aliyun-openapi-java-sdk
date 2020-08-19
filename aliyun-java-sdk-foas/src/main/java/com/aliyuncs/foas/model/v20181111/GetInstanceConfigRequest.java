@@ -32,7 +32,7 @@ public class GetInstanceConfigRequest extends RoaAcsRequest<GetInstanceConfigRes
 
 	private String jobName;
 	public GetInstanceConfigRequest() {
-		super("foas", "2018-11-11", "GetInstanceConfig");
+		super("foas", "2018-11-11", "GetInstanceConfig", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/config");
 		setMethod(MethodType.GET);

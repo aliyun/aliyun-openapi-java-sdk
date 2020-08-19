@@ -38,7 +38,7 @@ public class ListPackageRequest extends RoaAcsRequest<ListPackageResponse> {
 
 	private String type;
 	public ListPackageRequest() {
-		super("foas", "2018-11-11", "ListPackage");
+		super("foas", "2018-11-11", "ListPackage", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/packages");
 		setMethod(MethodType.GET);

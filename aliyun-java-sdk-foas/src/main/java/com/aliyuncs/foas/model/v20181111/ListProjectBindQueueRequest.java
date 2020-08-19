@@ -32,7 +32,7 @@ public class ListProjectBindQueueRequest extends RoaAcsRequest<ListProjectBindQu
 
 	private String clusterId;
 	public ListProjectBindQueueRequest() {
-		super("foas", "2018-11-11", "ListProjectBindQueue");
+		super("foas", "2018-11-11", "ListProjectBindQueue", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/queues");
 		setMethod(MethodType.GET);

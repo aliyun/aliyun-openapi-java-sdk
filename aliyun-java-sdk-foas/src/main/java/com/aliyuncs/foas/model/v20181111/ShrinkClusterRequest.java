@@ -32,7 +32,7 @@ public class ShrinkClusterRequest extends RoaAcsRequest<ShrinkClusterResponse> {
 
 	private String modelTargetCount;
 	public ShrinkClusterRequest() {
-		super("foas", "2018-11-11", "ShrinkCluster");
+		super("foas", "2018-11-11", "ShrinkCluster", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]/shrink");
 		setMethod(MethodType.PUT);

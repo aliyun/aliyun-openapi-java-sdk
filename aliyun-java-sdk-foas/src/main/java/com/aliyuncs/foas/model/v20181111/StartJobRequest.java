@@ -32,7 +32,7 @@ public class StartJobRequest extends RoaAcsRequest<StartJobResponse> {
 
 	private String jobName;
 	public StartJobRequest() {
-		super("foas", "2018-11-11", "StartJob");
+		super("foas", "2018-11-11", "StartJob", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instance");
 		setMethod(MethodType.POST);

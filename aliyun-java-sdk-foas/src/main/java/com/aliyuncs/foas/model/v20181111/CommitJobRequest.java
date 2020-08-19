@@ -15,6 +15,7 @@
 package com.aliyuncs.foas.model.v20181111;
 
 import com.aliyuncs.RoaAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.foas.Endpoint;
@@ -28,6 +29,10 @@ public class CommitJobRequest extends RoaAcsRequest<CommitJobResponse> {
 
 	private String projectName;
 
+	private Boolean recommendOnly;
+
+	private String suspendPeriods;
+
 	private Float maxCU;
 
 	private String configure;
@@ -35,8 +40,10 @@ public class CommitJobRequest extends RoaAcsRequest<CommitJobResponse> {
 	private Boolean isOnOff;
 
 	private String jobName;
+
+	private List<SuspendPeriodParam> suspendPeriodParams;
 	public CommitJobRequest() {
-		super("foas", "2018-11-11", "CommitJob");
+		super("foas", "2018-11-11", "CommitJob", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/commit");
 		setMethod(MethodType.PUT);
@@ -54,6 +61,28 @@ public class CommitJobRequest extends RoaAcsRequest<CommitJobResponse> {
 		this.projectName = projectName;
 		if(projectName != null){
 			putPathParameter("projectName", projectName);
+		}
+	}
+
+	public Boolean getRecommendOnly() {
+		return this.recommendOnly;
+	}
+
+	public void setRecommendOnly(Boolean recommendOnly) {
+		this.recommendOnly = recommendOnly;
+		if(recommendOnly != null){
+			putBodyParameter("recommendOnly", recommendOnly.toString());
+		}
+	}
+
+	public String getSuspendPeriods() {
+		return this.suspendPeriods;
+	}
+
+	public void setSuspendPeriods(String suspendPeriods) {
+		this.suspendPeriods = suspendPeriods;
+		if(suspendPeriods != null){
+			putBodyParameter("suspendPeriods", suspendPeriods);
 		}
 	}
 
@@ -98,6 +127,65 @@ public class CommitJobRequest extends RoaAcsRequest<CommitJobResponse> {
 		this.jobName = jobName;
 		if(jobName != null){
 			putPathParameter("jobName", jobName);
+		}
+	}
+
+	public List<SuspendPeriodParam> getSuspendPeriodParams() {
+		return this.suspendPeriodParams;
+	}
+
+	public void setSuspendPeriodParams(List<SuspendPeriodParam> suspendPeriodParams) {
+		this.suspendPeriodParams = suspendPeriodParams;	
+		if (suspendPeriodParams != null) {
+			for (int depth1 = 0; depth1 < suspendPeriodParams.size(); depth1++) {
+				putBodyParameter("suspendPeriodParam." + (depth1 + 1) + ".endTime" , suspendPeriodParams.get(depth1).getEndTime());
+				putBodyParameter("suspendPeriodParam." + (depth1 + 1) + ".startTime" , suspendPeriodParams.get(depth1).getStartTime());
+				putBodyParameter("suspendPeriodParam." + (depth1 + 1) + ".plan" , suspendPeriodParams.get(depth1).getPlan());
+				putBodyParameter("suspendPeriodParam." + (depth1 + 1) + ".policy" , suspendPeriodParams.get(depth1).getPolicy());
+			}
+		}	
+	}
+
+	public static class SuspendPeriodParam {
+
+		private String endTime;
+
+		private String startTime;
+
+		private String plan;
+
+		private String policy;
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getPlan() {
+			return this.plan;
+		}
+
+		public void setPlan(String plan) {
+			this.plan = plan;
+		}
+
+		public String getPolicy() {
+			return this.policy;
+		}
+
+		public void setPolicy(String policy) {
+			this.policy = policy;
 		}
 	}
 

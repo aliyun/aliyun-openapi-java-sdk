@@ -23,32 +23,21 @@ import com.aliyuncs.foas.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetFolderRequest extends RoaAcsRequest<GetFolderResponse> {
+public class UpdateProjectRequest extends RoaAcsRequest<UpdateProjectResponse> {
 	   
 
-	private String path;
-
 	private String projectName;
-	public GetFolderRequest() {
-		super("foas", "2018-11-11", "GetFolder", "foas");
+
+	private String globalJobConfig;
+	public UpdateProjectRequest() {
+		super("foas", "2018-11-11", "UpdateProject", "foas");
 		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/projects/[projectName]/folders");
-		setMethod(MethodType.GET);
+		setUriPattern("/api/v2/projects/[projectName]");
+		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getPath() {
-		return this.path;
-	}
-
-	public void setPath(String path) {
-		this.path = path;
-		if(path != null){
-			putQueryParameter("path", path);
-		}
 	}
 
 	public String getProjectName() {
@@ -62,9 +51,20 @@ public class GetFolderRequest extends RoaAcsRequest<GetFolderResponse> {
 		}
 	}
 
+	public String getGlobalJobConfig() {
+		return this.globalJobConfig;
+	}
+
+	public void setGlobalJobConfig(String globalJobConfig) {
+		this.globalJobConfig = globalJobConfig;
+		if(globalJobConfig != null){
+			putBodyParameter("globalJobConfig", globalJobConfig);
+		}
+	}
+
 	@Override
-	public Class<GetFolderResponse> getResponseClass() {
-		return GetFolderResponse.class;
+	public Class<UpdateProjectResponse> getResponseClass() {
+		return UpdateProjectResponse.class;
 	}
 
 }

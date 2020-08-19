@@ -30,7 +30,7 @@ public class DeletePackageRequest extends RoaAcsRequest<DeletePackageResponse> {
 
 	private String packageName;
 	public DeletePackageRequest() {
-		super("foas", "2018-11-11", "DeletePackage");
+		super("foas", "2018-11-11", "DeletePackage", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/packages/[packageName]");
 		setMethod(MethodType.DELETE);

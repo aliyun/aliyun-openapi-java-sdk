@@ -38,7 +38,7 @@ public class CreateProjectRequest extends RoaAcsRequest<CreateProjectResponse> {
 
 	private String deployType;
 	public CreateProjectRequest() {
-		super("foas", "2018-11-11", "CreateProject");
+		super("foas", "2018-11-11", "CreateProject", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects");
 		setMethod(MethodType.POST);

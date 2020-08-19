@@ -28,7 +28,7 @@ public class DestroyClusterRequest extends RoaAcsRequest<DestroyClusterResponse>
 
 	private String clusterId;
 	public DestroyClusterRequest() {
-		super("foas", "2018-11-11", "DestroyCluster");
+		super("foas", "2018-11-11", "DestroyCluster", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]");
 		setMethod(MethodType.DELETE);

@@ -52,7 +52,7 @@ public class CreateJobRequest extends RoaAcsRequest<CreateJobResponse> {
 
 	private String jobName;
 	public CreateJobRequest() {
-		super("foas", "2018-11-11", "CreateJob");
+		super("foas", "2018-11-11", "CreateJob", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs");
 		setMethod(MethodType.POST);

@@ -40,7 +40,7 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 
 	private String userVSwitch;
 	public CreateClusterRequest() {
-		super("foas", "2018-11-11", "CreateCluster");
+		super("foas", "2018-11-11", "CreateCluster", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters");
 		setMethod(MethodType.POST);

@@ -30,7 +30,7 @@ public class CalcPlanJsonResourceRequest extends RoaAcsRequest<CalcPlanJsonResou
 
 	private String jobName;
 	public CalcPlanJsonResourceRequest() {
-		super("foas", "2018-11-11", "CalcPlanJsonResource");
+		super("foas", "2018-11-11", "CalcPlanJsonResource", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/planjson-resource");
 		setMethod(MethodType.GET);

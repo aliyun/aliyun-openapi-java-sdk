@@ -34,7 +34,7 @@ public class UpdateAutoScaleConfigRequest extends RoaAcsRequest<UpdateAutoScaleC
 
 	private String jobName;
 	public UpdateAutoScaleConfigRequest() {
-		super("foas", "2018-11-11", "UpdateAutoScaleConfig");
+		super("foas", "2018-11-11", "UpdateAutoScaleConfig", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instance/[instanceId]/autoscale/config");
 		setMethod(MethodType.PUT);

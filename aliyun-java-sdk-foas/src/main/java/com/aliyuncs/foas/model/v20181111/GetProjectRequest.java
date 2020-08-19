@@ -28,7 +28,7 @@ public class GetProjectRequest extends RoaAcsRequest<GetProjectResponse> {
 
 	private String projectName;
 	public GetProjectRequest() {
-		super("foas", "2018-11-11", "GetProject");
+		super("foas", "2018-11-11", "GetProject", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]");
 		setMethod(MethodType.GET);

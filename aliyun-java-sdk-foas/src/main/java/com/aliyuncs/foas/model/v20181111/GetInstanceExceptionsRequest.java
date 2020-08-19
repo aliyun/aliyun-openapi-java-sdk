@@ -32,7 +32,7 @@ public class GetInstanceExceptionsRequest extends RoaAcsRequest<GetInstanceExcep
 
 	private String jobName;
 	public GetInstanceExceptionsRequest() {
-		super("foas", "2018-11-11", "GetInstanceExceptions");
+		super("foas", "2018-11-11", "GetInstanceExceptions", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/exceptions");
 		setMethod(MethodType.GET);

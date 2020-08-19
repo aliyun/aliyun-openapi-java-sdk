@@ -52,7 +52,7 @@ public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
 
 	private String jobName;
 	public ListInstanceRequest() {
-		super("foas", "2018-11-11", "ListInstance");
+		super("foas", "2018-11-11", "ListInstance", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/instances");
 		setMethod(MethodType.GET);

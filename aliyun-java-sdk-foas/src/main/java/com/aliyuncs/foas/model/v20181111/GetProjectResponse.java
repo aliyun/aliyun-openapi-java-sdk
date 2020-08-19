@@ -70,6 +70,8 @@ public class GetProjectResponse extends AcsResponse {
 
 		private String id;
 
+		private String globalJobConfig;
+
 		public String getName() {
 			return this.name;
 		}
@@ -164,6 +166,14 @@ public class GetProjectResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public String getGlobalJobConfig() {
+			return this.globalJobConfig;
+		}
+
+		public void setGlobalJobConfig(String globalJobConfig) {
+			this.globalJobConfig = globalJobConfig;
 		}
 	}
 

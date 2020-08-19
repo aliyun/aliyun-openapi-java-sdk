@@ -38,6 +38,7 @@ public class GetProjectResponseUnmarshaller {
 		project.setManagerIds(_ctx.stringValue("GetProjectResponse.Project.ManagerIds"));
 		project.setRegion(_ctx.stringValue("GetProjectResponse.Project.Region"));
 		project.setId(_ctx.stringValue("GetProjectResponse.Project.Id"));
+		project.setGlobalJobConfig(_ctx.stringValue("GetProjectResponse.Project.GlobalJobConfig"));
 		getProjectResponse.setProject(project);
 	 
 	 	return getProjectResponse;

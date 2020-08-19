@@ -30,7 +30,7 @@ public class ListChildFolderRequest extends RoaAcsRequest<ListChildFolderRespons
 
 	private String projectName;
 	public ListChildFolderRequest() {
-		super("foas", "2018-11-11", "ListChildFolder");
+		super("foas", "2018-11-11", "ListChildFolder", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/folders/children");
 		setMethod(MethodType.GET);

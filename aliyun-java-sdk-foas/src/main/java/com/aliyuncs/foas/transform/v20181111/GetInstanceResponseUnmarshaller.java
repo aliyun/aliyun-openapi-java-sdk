@@ -49,6 +49,7 @@ public class GetInstanceResponseUnmarshaller {
 		instance.setClusterId(_ctx.stringValue("GetInstanceResponse.Instance.ClusterId"));
 		instance.setQueueName(_ctx.stringValue("GetInstanceResponse.Instance.QueueName"));
 		instance.setEndTime(_ctx.longValue("GetInstanceResponse.Instance.EndTime"));
+		instance.setAutoScaleParams(_ctx.stringValue("GetInstanceResponse.Instance.AutoScaleParams"));
 		getInstanceResponse.setInstance(instance);
 	 
 	 	return getInstanceResponse;

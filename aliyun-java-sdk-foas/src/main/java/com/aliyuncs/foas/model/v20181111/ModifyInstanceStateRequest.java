@@ -32,11 +32,13 @@ public class ModifyInstanceStateRequest extends RoaAcsRequest<ModifyInstanceStat
 
 	private Long instanceId;
 
+	private Boolean triggerCheckpoint;
+
 	private String expectState;
 
 	private String jobName;
 	public ModifyInstanceStateRequest() {
-		super("foas", "2018-11-11", "ModifyInstanceState");
+		super("foas", "2018-11-11", "ModifyInstanceState", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/expectstate");
 		setMethod(MethodType.PUT);
@@ -76,6 +78,17 @@ public class ModifyInstanceStateRequest extends RoaAcsRequest<ModifyInstanceStat
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("instanceId", instanceId.toString());
+		}
+	}
+
+	public Boolean getTriggerCheckpoint() {
+		return this.triggerCheckpoint;
+	}
+
+	public void setTriggerCheckpoint(Boolean triggerCheckpoint) {
+		this.triggerCheckpoint = triggerCheckpoint;
+		if(triggerCheckpoint != null){
+			putBodyParameter("triggerCheckpoint", triggerCheckpoint.toString());
 		}
 	}
 

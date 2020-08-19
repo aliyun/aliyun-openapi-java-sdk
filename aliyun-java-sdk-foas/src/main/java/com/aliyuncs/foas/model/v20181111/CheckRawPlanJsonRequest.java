@@ -32,7 +32,7 @@ public class CheckRawPlanJsonRequest extends RoaAcsRequest<CheckRawPlanJsonRespo
 
 	private String jobName;
 	public CheckRawPlanJsonRequest() {
-		super("foas", "2018-11-11", "CheckRawPlanJson");
+		super("foas", "2018-11-11", "CheckRawPlanJson", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/planjson/check");
 		setMethod(MethodType.GET);

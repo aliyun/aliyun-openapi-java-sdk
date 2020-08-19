@@ -32,7 +32,7 @@ public class GetInstanceCheckpointRequest extends RoaAcsRequest<GetInstanceCheck
 
 	private String jobName;
 	public GetInstanceCheckpointRequest() {
-		super("foas", "2018-11-11", "GetInstanceCheckpoint");
+		super("foas", "2018-11-11", "GetInstanceCheckpoint", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/checkpoints");
 		setMethod(MethodType.GET);

@@ -30,7 +30,7 @@ public class GetClusterMetricsRequest extends RoaAcsRequest<GetClusterMetricsRes
 
 	private String metricJson;
 	public GetClusterMetricsRequest() {
-		super("foas", "2018-11-11", "GetClusterMetrics");
+		super("foas", "2018-11-11", "GetClusterMetrics", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/clusters/[clusterId]/metrics");
 		setMethod(MethodType.POST);

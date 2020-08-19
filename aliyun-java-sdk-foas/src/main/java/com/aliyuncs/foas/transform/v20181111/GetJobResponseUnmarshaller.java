@@ -45,6 +45,7 @@ public class GetJobResponseUnmarshaller {
 		job.setQueueName(_ctx.stringValue("GetJobResponse.Job.QueueName"));
 		job.setFolderId(_ctx.longValue("GetJobResponse.Job.FolderId"));
 		job.setJobId(_ctx.stringValue("GetJobResponse.Job.JobId"));
+		job.setFileId(_ctx.stringValue("GetJobResponse.Job.FileId"));
 		getJobResponse.setJob(job);
 	 
 	 	return getJobResponse;

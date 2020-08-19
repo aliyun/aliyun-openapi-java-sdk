@@ -48,7 +48,7 @@ public class ListJobRequest extends RoaAcsRequest<ListJobResponse> {
 
 	private Long folderId;
 	public ListJobRequest() {
-		super("foas", "2018-11-11", "ListJob");
+		super("foas", "2018-11-11", "ListJob", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs");
 		setMethod(MethodType.GET);

@@ -30,7 +30,7 @@ public class CreateFolderRequest extends RoaAcsRequest<CreateFolderResponse> {
 
 	private String projectName;
 	public CreateFolderRequest() {
-		super("foas", "2018-11-11", "CreateFolder");
+		super("foas", "2018-11-11", "CreateFolder", "foas");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/folders");
 		setMethod(MethodType.POST);
