@@ -29,7 +29,7 @@ public class DescribeCasterRtcInfoRequest extends RpcAcsRequest<DescribeCasterRt
 
 	private Long ownerId;
 	public DescribeCasterRtcInfoRequest() {
-		super("live", "2016-11-01", "DescribeCasterRtcInfo", "live");
+		super("live", "2016-11-01", "DescribeCasterRtcInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

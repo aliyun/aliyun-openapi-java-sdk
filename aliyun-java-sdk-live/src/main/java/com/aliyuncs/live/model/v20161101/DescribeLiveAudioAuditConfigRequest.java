@@ -33,7 +33,7 @@ public class DescribeLiveAudioAuditConfigRequest extends RpcAcsRequest<DescribeL
 
 	private Long ownerId;
 	public DescribeLiveAudioAuditConfigRequest() {
-		super("live", "2016-11-01", "DescribeLiveAudioAuditConfig", "live");
+		super("live", "2016-11-01", "DescribeLiveAudioAuditConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

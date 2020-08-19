@@ -37,7 +37,7 @@ public class EditHtmlResourceRequest extends RpcAcsRequest<EditHtmlResourceRespo
 
 	private String config;
 	public EditHtmlResourceRequest() {
-		super("live", "2016-11-01", "EditHtmlResource", "live");
+		super("live", "2016-11-01", "EditHtmlResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

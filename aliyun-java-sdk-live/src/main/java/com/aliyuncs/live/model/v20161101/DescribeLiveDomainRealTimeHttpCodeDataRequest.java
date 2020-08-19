@@ -37,7 +37,7 @@ public class DescribeLiveDomainRealTimeHttpCodeDataRequest extends RpcAcsRequest
 
 	private Long ownerId;
 	public DescribeLiveDomainRealTimeHttpCodeDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainRealTimeHttpCodeData", "live");
+		super("live", "2016-11-01", "DescribeLiveDomainRealTimeHttpCodeData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

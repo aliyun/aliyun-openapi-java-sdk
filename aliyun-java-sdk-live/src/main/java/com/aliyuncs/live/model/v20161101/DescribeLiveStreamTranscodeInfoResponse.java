@@ -89,6 +89,10 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 
 		public static class CustomTranscodeParameters {
 
+			private String rtsFlag;
+
+			private String bframes;
+
 			private Integer videoBitrate;
 
 			private Integer fPS;
@@ -112,6 +116,22 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 			private Integer audioRate;
 
 			private Integer audioChannelNum;
+
+			public String getRtsFlag() {
+				return this.rtsFlag;
+			}
+
+			public void setRtsFlag(String rtsFlag) {
+				this.rtsFlag = rtsFlag;
+			}
+
+			public String getBframes() {
+				return this.bframes;
+			}
+
+			public void setBframes(String bframes) {
+				this.bframes = bframes;
+			}
 
 			public Integer getVideoBitrate() {
 				return this.videoBitrate;

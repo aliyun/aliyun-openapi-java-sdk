@@ -35,7 +35,7 @@ public class DescribeBoardEventsRequest extends RpcAcsRequest<DescribeBoardEvent
 
 	private String appId;
 	public DescribeBoardEventsRequest() {
-		super("live", "2016-11-01", "DescribeBoardEvents", "live");
+		super("live", "2016-11-01", "DescribeBoardEvents");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

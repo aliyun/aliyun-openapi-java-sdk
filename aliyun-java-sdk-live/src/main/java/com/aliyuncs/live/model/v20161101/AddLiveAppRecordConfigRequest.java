@@ -48,7 +48,7 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 
 	private List<RecordFormat> recordFormats;
 	public AddLiveAppRecordConfigRequest() {
-		super("live", "2016-11-01", "AddLiveAppRecordConfig", "live");
+		super("live", "2016-11-01", "AddLiveAppRecordConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

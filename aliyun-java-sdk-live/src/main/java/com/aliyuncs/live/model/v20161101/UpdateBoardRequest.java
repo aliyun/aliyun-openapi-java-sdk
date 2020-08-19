@@ -31,7 +31,7 @@ public class UpdateBoardRequest extends RpcAcsRequest<UpdateBoardResponse> {
 
 	private String boardData;
 	public UpdateBoardRequest() {
-		super("live", "2016-11-01", "UpdateBoard", "live");
+		super("live", "2016-11-01", "UpdateBoard");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

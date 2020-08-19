@@ -33,7 +33,7 @@ public class StartBoardRecordRequest extends RpcAcsRequest<StartBoardRecordRespo
 
 	private String appId;
 	public StartBoardRecordRequest() {
-		super("live", "2016-11-01", "StartBoardRecord", "live");
+		super("live", "2016-11-01", "StartBoardRecord");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

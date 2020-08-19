@@ -33,7 +33,7 @@ public class AddLiveDomainMappingRequest extends RpcAcsRequest<AddLiveDomainMapp
 
 	private String pushDomain;
 	public AddLiveDomainMappingRequest() {
-		super("live", "2016-11-01", "AddLiveDomainMapping", "live");
+		super("live", "2016-11-01", "AddLiveDomainMapping");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

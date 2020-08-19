@@ -49,7 +49,7 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 
 	private Integer repeatNum;
 	public AddCasterVideoResourceRequest() {
-		super("live", "2016-11-01", "AddCasterVideoResource", "live");
+		super("live", "2016-11-01", "AddCasterVideoResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

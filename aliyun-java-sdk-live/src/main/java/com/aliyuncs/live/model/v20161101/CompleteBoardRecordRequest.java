@@ -33,7 +33,7 @@ public class CompleteBoardRecordRequest extends RpcAcsRequest<CompleteBoardRecor
 
 	private String appId;
 	public CompleteBoardRecordRequest() {
-		super("live", "2016-11-01", "CompleteBoardRecord", "live");
+		super("live", "2016-11-01", "CompleteBoardRecord");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

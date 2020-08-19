@@ -29,7 +29,7 @@ public class ApplyRecordTokenRequest extends RpcAcsRequest<ApplyRecordTokenRespo
 
 	private String appId;
 	public ApplyRecordTokenRequest() {
-		super("live", "2016-11-01", "ApplyRecordToken", "live");
+		super("live", "2016-11-01", "ApplyRecordToken");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

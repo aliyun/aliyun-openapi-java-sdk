@@ -43,7 +43,7 @@ public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVo
 
 	private Long ownerId;
 	public AddLiveRecordVodConfigRequest() {
-		super("live", "2016-11-01", "AddLiveRecordVodConfig", "live");
+		super("live", "2016-11-01", "AddLiveRecordVodConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

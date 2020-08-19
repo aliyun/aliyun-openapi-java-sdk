@@ -113,6 +113,8 @@ public class DescribeLiveSnapshotConfigResponse extends AcsResponse {
 
 		private String createTime;
 
+		private String callback;
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -175,6 +177,14 @@ public class DescribeLiveSnapshotConfigResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getCallback() {
+			return this.callback;
+		}
+
+		public void setCallback(String callback) {
+			this.callback = callback;
 		}
 	}
 

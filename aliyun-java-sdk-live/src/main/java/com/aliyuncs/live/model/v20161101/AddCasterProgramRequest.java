@@ -32,7 +32,7 @@ public class AddCasterProgramRequest extends RpcAcsRequest<AddCasterProgramRespo
 
 	private Long ownerId;
 	public AddCasterProgramRequest() {
-		super("live", "2016-11-01", "AddCasterProgram", "live");
+		super("live", "2016-11-01", "AddCasterProgram");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DescribeLiveDomainTranscodeDataRequest extends RpcAcsRequest<Descri
 
 	private Long ownerId;
 	public DescribeLiveDomainTranscodeDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainTranscodeData", "live");
+		super("live", "2016-11-01", "DescribeLiveDomainTranscodeData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

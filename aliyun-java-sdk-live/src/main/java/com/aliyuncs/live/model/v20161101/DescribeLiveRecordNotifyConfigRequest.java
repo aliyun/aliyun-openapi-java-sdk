@@ -31,7 +31,7 @@ public class DescribeLiveRecordNotifyConfigRequest extends RpcAcsRequest<Describ
 
 	private String securityToken;
 	public DescribeLiveRecordNotifyConfigRequest() {
-		super("live", "2016-11-01", "DescribeLiveRecordNotifyConfig", "live");
+		super("live", "2016-11-01", "DescribeLiveRecordNotifyConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class ControlHtmlResourceRequest extends RpcAcsRequest<ControlHtmlResourc
 
 	private String htmlResourceId;
 	public ControlHtmlResourceRequest() {
-		super("live", "2016-11-01", "ControlHtmlResource", "live");
+		super("live", "2016-11-01", "ControlHtmlResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

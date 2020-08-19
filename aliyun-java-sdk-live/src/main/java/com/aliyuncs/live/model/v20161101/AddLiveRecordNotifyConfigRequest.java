@@ -37,7 +37,7 @@ public class AddLiveRecordNotifyConfigRequest extends RpcAcsRequest<AddLiveRecor
 
 	private Long ownerId;
 	public AddLiveRecordNotifyConfigRequest() {
-		super("live", "2016-11-01", "AddLiveRecordNotifyConfig", "live");
+		super("live", "2016-11-01", "AddLiveRecordNotifyConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

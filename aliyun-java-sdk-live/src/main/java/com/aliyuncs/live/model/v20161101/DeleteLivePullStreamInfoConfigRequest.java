@@ -35,7 +35,7 @@ public class DeleteLivePullStreamInfoConfigRequest extends RpcAcsRequest<DeleteL
 
 	private Long ownerId;
 	public DeleteLivePullStreamInfoConfigRequest() {
-		super("live", "2016-11-01", "DeleteLivePullStreamInfoConfig", "live");
+		super("live", "2016-11-01", "DeleteLivePullStreamInfoConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

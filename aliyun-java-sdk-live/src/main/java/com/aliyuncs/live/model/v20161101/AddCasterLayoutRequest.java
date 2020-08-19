@@ -38,7 +38,7 @@ public class AddCasterLayoutRequest extends RpcAcsRequest<AddCasterLayoutRespons
 
 	private List<String> mixLists;
 	public AddCasterLayoutRequest() {
-		super("live", "2016-11-01", "AddCasterLayout", "live");
+		super("live", "2016-11-01", "AddCasterLayout");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

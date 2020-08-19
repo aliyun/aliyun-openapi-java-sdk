@@ -33,7 +33,7 @@ public class AddLiveAudioAuditNotifyConfigRequest extends RpcAcsRequest<AddLiveA
 
 	private String callback;
 	public AddLiveAudioAuditNotifyConfigRequest() {
-		super("live", "2016-11-01", "AddLiveAudioAuditNotifyConfig", "live");
+		super("live", "2016-11-01", "AddLiveAudioAuditNotifyConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class DescribeLiveDomainOnlineUserNumRequest extends RpcAcsRequest<Descri
 
 	private Long ownerId;
 	public DescribeLiveDomainOnlineUserNumRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainOnlineUserNum", "live");
+		super("live", "2016-11-01", "DescribeLiveDomainOnlineUserNum");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

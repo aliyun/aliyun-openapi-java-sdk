@@ -42,8 +42,10 @@ public class UpdateLiveAppSnapshotConfigRequest extends RpcAcsRequest<UpdateLive
 	private String sequenceOssObject;
 
 	private Long ownerId;
+
+	private String callback;
 	public UpdateLiveAppSnapshotConfigRequest() {
-		super("live", "2016-11-01", "UpdateLiveAppSnapshotConfig", "live");
+		super("live", "2016-11-01", "UpdateLiveAppSnapshotConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -147,6 +149,17 @@ public class UpdateLiveAppSnapshotConfigRequest extends RpcAcsRequest<UpdateLive
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getCallback() {
+		return this.callback;
+	}
+
+	public void setCallback(String callback) {
+		this.callback = callback;
+		if(callback != null){
+			putQueryParameter("Callback", callback);
 		}
 	}
 

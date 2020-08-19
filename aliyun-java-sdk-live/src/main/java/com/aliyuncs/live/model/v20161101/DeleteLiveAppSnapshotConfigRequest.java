@@ -33,7 +33,7 @@ public class DeleteLiveAppSnapshotConfigRequest extends RpcAcsRequest<DeleteLive
 
 	private Long ownerId;
 	public DeleteLiveAppSnapshotConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveAppSnapshotConfig", "live");
+		super("live", "2016-11-01", "DeleteLiveAppSnapshotConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

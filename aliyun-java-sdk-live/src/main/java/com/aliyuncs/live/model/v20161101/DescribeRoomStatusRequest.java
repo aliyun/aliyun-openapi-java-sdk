@@ -31,7 +31,7 @@ public class DescribeRoomStatusRequest extends RpcAcsRequest<DescribeRoomStatusR
 
 	private String appId;
 	public DescribeRoomStatusRequest() {
-		super("live", "2016-11-01", "DescribeRoomStatus", "live");
+		super("live", "2016-11-01", "DescribeRoomStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

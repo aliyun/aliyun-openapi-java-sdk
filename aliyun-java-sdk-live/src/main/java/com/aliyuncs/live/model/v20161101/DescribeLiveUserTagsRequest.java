@@ -27,7 +27,7 @@ public class DescribeLiveUserTagsRequest extends RpcAcsRequest<DescribeLiveUserT
 
 	private Long ownerId;
 	public DescribeLiveUserTagsRequest() {
-		super("live", "2016-11-01", "DescribeLiveUserTags", "live");
+		super("live", "2016-11-01", "DescribeLiveUserTags");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

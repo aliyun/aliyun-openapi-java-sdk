@@ -29,7 +29,7 @@ public class DescribeLiveRealtimeLogAuthorizedRequest extends RpcAcsRequest<Desc
 
 	private String liveOpenapiReserve;
 	public DescribeLiveRealtimeLogAuthorizedRequest() {
-		super("live", "2016-11-01", "DescribeLiveRealtimeLogAuthorized", "live");
+		super("live", "2016-11-01", "DescribeLiveRealtimeLogAuthorized");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

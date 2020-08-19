@@ -33,7 +33,7 @@ public class DeleteHtmlResourceRequest extends RpcAcsRequest<DeleteHtmlResourceR
 
 	private String htmlResourceId;
 	public DeleteHtmlResourceRequest() {
-		super("live", "2016-11-01", "DeleteHtmlResource", "live");
+		super("live", "2016-11-01", "DeleteHtmlResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

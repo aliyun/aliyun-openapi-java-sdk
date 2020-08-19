@@ -39,7 +39,7 @@ public class SetCasterChannelRequest extends RpcAcsRequest<SetCasterChannelRespo
 
 	private String channelId;
 	public SetCasterChannelRequest() {
-		super("live", "2016-11-01", "SetCasterChannel", "live");
+		super("live", "2016-11-01", "SetCasterChannel");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

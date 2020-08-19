@@ -37,7 +37,7 @@ public class DescribeLiveDomainRealTimeTrafficDataRequest extends RpcAcsRequest<
 
 	private Long ownerId;
 	public DescribeLiveDomainRealTimeTrafficDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainRealTimeTrafficData", "live");
+		super("live", "2016-11-01", "DescribeLiveDomainRealTimeTrafficData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class AddTrancodeSEIRequest extends RpcAcsRequest<AddTrancodeSEIResponse>
 
 	private Integer delay;
 	public AddTrancodeSEIRequest() {
-		super("live", "2016-11-01", "AddTrancodeSEI", "live");
+		super("live", "2016-11-01", "AddTrancodeSEI");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

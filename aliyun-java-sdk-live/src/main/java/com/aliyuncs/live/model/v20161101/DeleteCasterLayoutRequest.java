@@ -31,7 +31,7 @@ public class DeleteCasterLayoutRequest extends RpcAcsRequest<DeleteCasterLayoutR
 
 	private Long ownerId;
 	public DeleteCasterLayoutRequest() {
-		super("live", "2016-11-01", "DeleteCasterLayout", "live");
+		super("live", "2016-11-01", "DeleteCasterLayout");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

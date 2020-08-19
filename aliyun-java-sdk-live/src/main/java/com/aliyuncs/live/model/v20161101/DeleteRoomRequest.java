@@ -31,7 +31,7 @@ public class DeleteRoomRequest extends RpcAcsRequest<DeleteRoomResponse> {
 
 	private String appId;
 	public DeleteRoomRequest() {
-		super("live", "2016-11-01", "DeleteRoom", "live");
+		super("live", "2016-11-01", "DeleteRoom");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class ApplyBoardTokenRequest extends RpcAcsRequest<ApplyBoardTokenRespons
 
 	private String appId;
 	public ApplyBoardTokenRequest() {
-		super("live", "2016-11-01", "ApplyBoardToken", "live");
+		super("live", "2016-11-01", "ApplyBoardToken");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

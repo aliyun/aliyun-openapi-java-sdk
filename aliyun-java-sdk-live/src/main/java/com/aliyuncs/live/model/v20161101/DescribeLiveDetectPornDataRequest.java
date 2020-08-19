@@ -45,7 +45,7 @@ public class DescribeLiveDetectPornDataRequest extends RpcAcsRequest<DescribeLiv
 
 	private String region;
 	public DescribeLiveDetectPornDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveDetectPornData", "live");
+		super("live", "2016-11-01", "DescribeLiveDetectPornData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DeleteLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<Del
 
 	private String securityToken;
 	public DeleteLiveSnapshotDetectPornConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveSnapshotDetectPornConfig", "live");
+		super("live", "2016-11-01", "DeleteLiveSnapshotDetectPornConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

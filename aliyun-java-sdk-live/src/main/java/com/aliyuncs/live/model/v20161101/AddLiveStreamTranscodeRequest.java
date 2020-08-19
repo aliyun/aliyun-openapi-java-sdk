@@ -35,7 +35,7 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 
 	private String domain;
 	public AddLiveStreamTranscodeRequest() {
-		super("live", "2016-11-01", "AddLiveStreamTranscode", "live");
+		super("live", "2016-11-01", "AddLiveStreamTranscode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

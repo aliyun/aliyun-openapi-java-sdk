@@ -44,7 +44,7 @@ public class UpdateLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<Upd
 
 	private Integer interval;
 	public UpdateLiveSnapshotDetectPornConfigRequest() {
-		super("live", "2016-11-01", "UpdateLiveSnapshotDetectPornConfig", "live");
+		super("live", "2016-11-01", "UpdateLiveSnapshotDetectPornConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

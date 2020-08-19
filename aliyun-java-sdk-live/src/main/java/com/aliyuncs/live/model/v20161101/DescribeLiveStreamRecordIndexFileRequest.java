@@ -37,7 +37,7 @@ public class DescribeLiveStreamRecordIndexFileRequest extends RpcAcsRequest<Desc
 
 	private String recordId;
 	public DescribeLiveStreamRecordIndexFileRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamRecordIndexFile", "live");
+		super("live", "2016-11-01", "DescribeLiveStreamRecordIndexFile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

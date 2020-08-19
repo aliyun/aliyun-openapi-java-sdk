@@ -39,7 +39,7 @@ public class DescribeLiveStreamOnlineUserNumRequest extends RpcAcsRequest<Descri
 
 	private Long ownerId;
 	public DescribeLiveStreamOnlineUserNumRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamOnlineUserNum", "live");
+		super("live", "2016-11-01", "DescribeLiveStreamOnlineUserNum");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

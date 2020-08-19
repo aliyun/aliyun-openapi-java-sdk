@@ -31,7 +31,7 @@ public class DeleteLiveDetectNotifyConfigRequest extends RpcAcsRequest<DeleteLiv
 
 	private String securityToken;
 	public DeleteLiveDetectNotifyConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveDetectNotifyConfig", "live");
+		super("live", "2016-11-01", "DeleteLiveDetectNotifyConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

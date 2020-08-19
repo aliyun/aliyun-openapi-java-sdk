@@ -35,7 +35,7 @@ public class DescribeUpPeakPublishStreamDataRequest extends RpcAcsRequest<Descri
 
 	private String domainSwitch;
 	public DescribeUpPeakPublishStreamDataRequest() {
-		super("live", "2016-11-01", "DescribeUpPeakPublishStreamData", "live");
+		super("live", "2016-11-01", "DescribeUpPeakPublishStreamData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -45,7 +45,7 @@ public class ModifyCasterComponentRequest extends RpcAcsRequest<ModifyCasterComp
 
 	private String textLayerContent;
 	public ModifyCasterComponentRequest() {
-		super("live", "2016-11-01", "ModifyCasterComponent", "live");
+		super("live", "2016-11-01", "ModifyCasterComponent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

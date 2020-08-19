@@ -31,7 +31,7 @@ public class DescribeLiveDomainDetailRequest extends RpcAcsRequest<DescribeLiveD
 
 	private String securityToken;
 	public DescribeLiveDomainDetailRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainDetail", "live");
+		super("live", "2016-11-01", "DescribeLiveDomainDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

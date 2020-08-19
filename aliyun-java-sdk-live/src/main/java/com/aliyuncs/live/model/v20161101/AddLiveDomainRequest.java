@@ -43,7 +43,7 @@ public class AddLiveDomainRequest extends RpcAcsRequest<AddLiveDomainResponse> {
 
 	private String liveDomainType;
 	public AddLiveDomainRequest() {
-		super("live", "2016-11-01", "AddLiveDomain", "live");
+		super("live", "2016-11-01", "AddLiveDomain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

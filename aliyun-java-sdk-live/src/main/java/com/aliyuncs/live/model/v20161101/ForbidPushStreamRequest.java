@@ -35,7 +35,7 @@ public class ForbidPushStreamRequest extends RpcAcsRequest<ForbidPushStreamRespo
 
 	private String appId;
 	public ForbidPushStreamRequest() {
-		super("live", "2016-11-01", "ForbidPushStream", "live");
+		super("live", "2016-11-01", "ForbidPushStream");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

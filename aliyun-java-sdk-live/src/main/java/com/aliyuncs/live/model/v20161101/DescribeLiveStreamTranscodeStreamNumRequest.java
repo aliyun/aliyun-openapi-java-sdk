@@ -29,7 +29,7 @@ public class DescribeLiveStreamTranscodeStreamNumRequest extends RpcAcsRequest<D
 
 	private Long ownerId;
 	public DescribeLiveStreamTranscodeStreamNumRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamTranscodeStreamNum", "live");
+		super("live", "2016-11-01", "DescribeLiveStreamTranscodeStreamNum");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class CreateLiveRealTimeLogDeliveryRequest extends RpcAcsRequest<CreateLi
 
 	private String logstore;
 	public CreateLiveRealTimeLogDeliveryRequest() {
-		super("live", "2016-11-01", "CreateLiveRealTimeLogDelivery", "live");
+		super("live", "2016-11-01", "CreateLiveRealTimeLogDelivery");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

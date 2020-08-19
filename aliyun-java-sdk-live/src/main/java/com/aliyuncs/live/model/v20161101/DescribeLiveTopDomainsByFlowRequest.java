@@ -33,7 +33,7 @@ public class DescribeLiveTopDomainsByFlowRequest extends RpcAcsRequest<DescribeL
 
 	private Long ownerId;
 	public DescribeLiveTopDomainsByFlowRequest() {
-		super("live", "2016-11-01", "DescribeLiveTopDomainsByFlow", "live");
+		super("live", "2016-11-01", "DescribeLiveTopDomainsByFlow");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

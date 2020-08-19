@@ -35,7 +35,7 @@ public class DeleteLiveRealtimeLogDeliveryRequest extends RpcAcsRequest<DeleteLi
 
 	private String logstore;
 	public DeleteLiveRealtimeLogDeliveryRequest() {
-		super("live", "2016-11-01", "DeleteLiveRealtimeLogDelivery", "live");
+		super("live", "2016-11-01", "DeleteLiveRealtimeLogDelivery");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

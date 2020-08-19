@@ -31,7 +31,7 @@ public class StopLiveDomainRequest extends RpcAcsRequest<StopLiveDomainResponse>
 
 	private String securityToken;
 	public StopLiveDomainRequest() {
-		super("live", "2016-11-01", "StopLiveDomain", "live");
+		super("live", "2016-11-01", "StopLiveDomain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

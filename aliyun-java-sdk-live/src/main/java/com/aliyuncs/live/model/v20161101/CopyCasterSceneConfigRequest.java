@@ -33,7 +33,7 @@ public class CopyCasterSceneConfigRequest extends RpcAcsRequest<CopyCasterSceneC
 
 	private Long ownerId;
 	public CopyCasterSceneConfigRequest() {
-		super("live", "2016-11-01", "CopyCasterSceneConfig", "live");
+		super("live", "2016-11-01", "CopyCasterSceneConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

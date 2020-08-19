@@ -37,7 +37,7 @@ public class ResumeLiveStreamRequest extends RpcAcsRequest<ResumeLiveStreamRespo
 
 	private Long ownerId;
 	public ResumeLiveStreamRequest() {
-		super("live", "2016-11-01", "ResumeLiveStream", "live");
+		super("live", "2016-11-01", "ResumeLiveStream");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

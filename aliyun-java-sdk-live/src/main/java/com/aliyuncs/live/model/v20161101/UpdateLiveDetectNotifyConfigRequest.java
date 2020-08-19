@@ -33,7 +33,7 @@ public class UpdateLiveDetectNotifyConfigRequest extends RpcAcsRequest<UpdateLiv
 
 	private String notifyUrl;
 	public UpdateLiveDetectNotifyConfigRequest() {
-		super("live", "2016-11-01", "UpdateLiveDetectNotifyConfig", "live");
+		super("live", "2016-11-01", "UpdateLiveDetectNotifyConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

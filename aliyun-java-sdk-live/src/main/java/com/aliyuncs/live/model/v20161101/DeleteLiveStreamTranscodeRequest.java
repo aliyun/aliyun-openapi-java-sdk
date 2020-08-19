@@ -35,7 +35,7 @@ public class DeleteLiveStreamTranscodeRequest extends RpcAcsRequest<DeleteLiveSt
 
 	private String domain;
 	public DeleteLiveStreamTranscodeRequest() {
-		super("live", "2016-11-01", "DeleteLiveStreamTranscode", "live");
+		super("live", "2016-11-01", "DeleteLiveStreamTranscode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

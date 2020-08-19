@@ -33,7 +33,7 @@ public class JoinBoardRequest extends RpcAcsRequest<JoinBoardResponse> {
 
 	private String appId;
 	public JoinBoardRequest() {
-		super("live", "2016-11-01", "JoinBoard", "live");
+		super("live", "2016-11-01", "JoinBoard");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

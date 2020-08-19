@@ -33,7 +33,7 @@ public class DescribeHtmlResourceRequest extends RpcAcsRequest<DescribeHtmlResou
 
 	private String htmlResourceId;
 	public DescribeHtmlResourceRequest() {
-		super("live", "2016-11-01", "DescribeHtmlResource", "live");
+		super("live", "2016-11-01", "DescribeHtmlResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

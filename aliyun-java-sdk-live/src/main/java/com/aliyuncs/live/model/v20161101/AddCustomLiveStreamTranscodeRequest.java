@@ -57,7 +57,7 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 
 	private Integer videoBitrate;
 	public AddCustomLiveStreamTranscodeRequest() {
-		super("live", "2016-11-01", "AddCustomLiveStreamTranscode", "live");
+		super("live", "2016-11-01", "AddCustomLiveStreamTranscode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

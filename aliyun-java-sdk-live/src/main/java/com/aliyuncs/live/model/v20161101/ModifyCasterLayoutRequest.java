@@ -40,7 +40,7 @@ public class ModifyCasterLayoutRequest extends RpcAcsRequest<ModifyCasterLayoutR
 
 	private List<String> mixLists;
 	public ModifyCasterLayoutRequest() {
-		super("live", "2016-11-01", "ModifyCasterLayout", "live");
+		super("live", "2016-11-01", "ModifyCasterLayout");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

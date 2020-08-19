@@ -39,7 +39,7 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends RpcAcsReq
 
 	private Long ownerId;
 	public DescribeLiveStreamsFrameRateAndBitRateDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsFrameRateAndBitRateData", "live");
+		super("live", "2016-11-01", "DescribeLiveStreamsFrameRateAndBitRateData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

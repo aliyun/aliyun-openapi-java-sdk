@@ -35,7 +35,7 @@ public class RealTimeRecordCommandRequest extends RpcAcsRequest<RealTimeRecordCo
 
 	private String command;
 	public RealTimeRecordCommandRequest() {
-		super("live", "2016-11-01", "RealTimeRecordCommand", "live");
+		super("live", "2016-11-01", "RealTimeRecordCommand");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

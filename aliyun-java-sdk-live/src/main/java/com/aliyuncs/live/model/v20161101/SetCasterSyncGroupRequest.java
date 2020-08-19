@@ -32,7 +32,7 @@ public class SetCasterSyncGroupRequest extends RpcAcsRequest<SetCasterSyncGroupR
 
 	private List<SyncGroup> syncGroups;
 	public SetCasterSyncGroupRequest() {
-		super("live", "2016-11-01", "SetCasterSyncGroup", "live");
+		super("live", "2016-11-01", "SetCasterSyncGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

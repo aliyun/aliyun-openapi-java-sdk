@@ -37,7 +37,7 @@ public class CreateRoomRequest extends RpcAcsRequest<CreateRoomResponse> {
 
 	private String appId;
 	public CreateRoomRequest() {
-		super("live", "2016-11-01", "CreateRoom", "live");
+		super("live", "2016-11-01", "CreateRoom");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

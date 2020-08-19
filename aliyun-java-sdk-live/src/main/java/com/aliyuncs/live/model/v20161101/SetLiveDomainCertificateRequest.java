@@ -43,7 +43,7 @@ public class SetLiveDomainCertificateRequest extends RpcAcsRequest<SetLiveDomain
 
 	private String sSLPub;
 	public SetLiveDomainCertificateRequest() {
-		super("live", "2016-11-01", "SetLiveDomainCertificate", "live");
+		super("live", "2016-11-01", "SetLiveDomainCertificate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

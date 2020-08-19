@@ -31,7 +31,7 @@ public class DescribeBoardSnapshotRequest extends RpcAcsRequest<DescribeBoardSna
 
 	private String boardId;
 	public DescribeBoardSnapshotRequest() {
-		super("live", "2016-11-01", "DescribeBoardSnapshot", "live");
+		super("live", "2016-11-01", "DescribeBoardSnapshot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

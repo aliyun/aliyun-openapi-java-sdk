@@ -33,7 +33,7 @@ public class DeleteLiveRecordVodConfigRequest extends RpcAcsRequest<DeleteLiveRe
 
 	private Long ownerId;
 	public DeleteLiveRecordVodConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveRecordVodConfig", "live");
+		super("live", "2016-11-01", "DeleteLiveRecordVodConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

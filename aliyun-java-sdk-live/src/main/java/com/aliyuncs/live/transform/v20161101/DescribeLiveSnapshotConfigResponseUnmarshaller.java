@@ -44,6 +44,7 @@ public class DescribeLiveSnapshotConfigResponseUnmarshaller {
 			liveStreamSnapshotConfig.setOverwriteOssObject(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].OverwriteOssObject"));
 			liveStreamSnapshotConfig.setSequenceOssObject(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].SequenceOssObject"));
 			liveStreamSnapshotConfig.setCreateTime(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].CreateTime"));
+			liveStreamSnapshotConfig.setCallback(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].Callback"));
 
 			liveStreamSnapshotConfigList.add(liveStreamSnapshotConfig);
 		}
