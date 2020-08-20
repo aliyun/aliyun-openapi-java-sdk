@@ -1,3 +1,6 @@
+2020-08-20 Version: 0.1.0
+- Retry.
+
 2020-08-14 Version: 1.8
 - The first SDK for Idrsservice.
 

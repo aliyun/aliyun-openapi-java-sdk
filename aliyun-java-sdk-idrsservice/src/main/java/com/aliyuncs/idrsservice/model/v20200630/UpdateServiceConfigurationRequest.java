@@ -16,6 +16,7 @@ package com.aliyuncs.idrsservice.model.v20200630;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.idrsservice.Endpoint;
 
 /**
  * @author auto create
@@ -38,6 +39,10 @@ public class UpdateServiceConfigurationRequest extends RpcAcsRequest<UpdateServi
 	public UpdateServiceConfigurationRequest() {
 		super("idrsservice", "2020-06-30", "UpdateServiceConfiguration", "idrsservice");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Integer getTaskItemQueueSize() {
