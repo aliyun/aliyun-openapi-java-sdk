@@ -206,17 +206,21 @@ public class LocationServiceEndpointResolverTest {
     }
 
     @Test
-    public void setLocationServiceEndpointTest() {
-        DefaultAcsClient client = mock(DefaultAcsClient.class);
-        LocationServiceEndpointResolver resolver = new LocationServiceEndpointResolver(client);
-        resolver.setLocationServiceEndpoint("test");
-        assertEquals("test", resolver.locationServiceEndpoint);
-    }
-
-    @Test
     public void testGetValidRegionIdsByProduct() {
         DefaultAcsClient client = mock(DefaultAcsClient.class);
         LocationServiceEndpointResolver resolver = new LocationServiceEndpointResolver(client);
         assertNull(resolver.getValidRegionIdsByProduct("ecs"));
+    }
+
+    @Test
+    public void getSetTest() {
+        String result;
+        LocationServiceEndpointResolver.setLocationServiceApiVersion("2015-06-12");
+        result = LocationServiceEndpointResolver.getLocationServiceApiVersion();
+        assertEquals("2015-06-12", result);
+
+        LocationServiceEndpointResolver.setLocationServiceEndpoint("location-readonly.aliyuncs.com");
+        result = LocationServiceEndpointResolver.getLocationServiceEndpoint();
+        assertEquals("location-readonly.aliyuncs.com", result);
     }
 }

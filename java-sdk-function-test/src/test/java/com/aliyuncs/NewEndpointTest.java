@@ -315,6 +315,7 @@ public class NewEndpointTest extends BaseTest {
     public void testInvalidAccessKeySecret() {
         IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", accesskeyId, "BadAccesskeySecret");
         DefaultAcsClient client = new DefaultAcsClient(profile);
+        LocationServiceEndpointResolver.setLocationServiceEndpoint("location-readonly.aliyuncs.com");
         initEnv(null, client, false, false);
         try {
             resolve("cn-hangzhou", "Ecs", "ecs", "innerAPI");

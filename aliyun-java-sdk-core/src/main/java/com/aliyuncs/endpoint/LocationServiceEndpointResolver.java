@@ -15,11 +15,11 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
     private final static String DEFAULT_LOCATION_SERVICE_ENDPOINT = "location-readonly.aliyuncs.com";
     private final static String DEFAULT_LOCATION_SERVICE_API_VERSION = "2015-06-12";
     /**
-     *  For test use
+     * For test use
      */
     public int locationServiceCallCounter = 0;
-    protected String locationServiceEndpoint = DEFAULT_LOCATION_SERVICE_ENDPOINT;
-    protected String locationServiceApiVersion = DEFAULT_LOCATION_SERVICE_API_VERSION;
+    protected static String locationServiceEndpoint = DEFAULT_LOCATION_SERVICE_ENDPOINT;
+    protected static String locationServiceApiVersion = DEFAULT_LOCATION_SERVICE_API_VERSION;
     private IAcsClient client;
     private Set<String> invalidProductCodes;
     private Set<String> validProductCodes;
@@ -34,7 +34,7 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
         validRegionIds = new HashSet<String>();
     }
 
-    public void setLocationServiceEndpoint(String endpoint) {
+    public static void setLocationServiceEndpoint(String endpoint) {
         locationServiceEndpoint = endpoint;
     }
 
@@ -157,5 +157,17 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
                                   String endpointType) {
         return productCode.toLowerCase() + "." + locationServiceCode + "."
                 + regionId.toLowerCase() + "." + endpointType;
+    }
+
+    public static String getLocationServiceEndpoint() {
+        return locationServiceEndpoint;
+    }
+
+    public static String getLocationServiceApiVersion() {
+        return locationServiceApiVersion;
+    }
+
+    public static void setLocationServiceApiVersion(String locationServiceApiVersion) {
+        LocationServiceEndpointResolver.locationServiceApiVersion = locationServiceApiVersion;
     }
 }
