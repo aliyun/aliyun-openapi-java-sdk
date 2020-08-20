@@ -26,7 +26,11 @@ public class DescribeCursorResponseUnmarshaller {
 		describeCursorResponse.setErrorCode(_ctx.stringValue("DescribeCursorResponse.ErrorCode"));
 		describeCursorResponse.setErrorMessage(_ctx.stringValue("DescribeCursorResponse.ErrorMessage"));
 		describeCursorResponse.setCursor(_ctx.stringValue("DescribeCursorResponse.Cursor"));
+		describeCursorResponse.setMessage(_ctx.stringValue("DescribeCursorResponse.Message"));
+		describeCursorResponse.setCode(_ctx.stringValue("DescribeCursorResponse.Code"));
+		describeCursorResponse.setDynamicCode(_ctx.stringValue("DescribeCursorResponse.DynamicCode"));
 		describeCursorResponse.setSuccess(_ctx.booleanValue("DescribeCursorResponse.Success"));
+		describeCursorResponse.setDynamicMessage(_ctx.stringValue("DescribeCursorResponse.DynamicMessage"));
 	 
 	 	return describeCursorResponse;
 	}

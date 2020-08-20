@@ -25,16 +25,29 @@ import com.aliyuncs.reid.Endpoint;
 public class DescribeCursorRequest extends RpcAcsRequest<DescribeCursorResponse> {
 	   
 
+	private Integer partitionIndex;
+
 	private Long storeId;
 
 	private String time;
 	public DescribeCursorRequest() {
-		super("reid", "2019-09-28", "DescribeCursor", "1.1.8.2");
+		super("reid", "2019-09-28", "DescribeCursor", "1.1.8.3");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPartitionIndex() {
+		return this.partitionIndex;
+	}
+
+	public void setPartitionIndex(Integer partitionIndex) {
+		this.partitionIndex = partitionIndex;
+		if(partitionIndex != null){
+			putBodyParameter("PartitionIndex", partitionIndex.toString());
+		}
 	}
 
 	public Long getStoreId() {

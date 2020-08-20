@@ -30,9 +30,17 @@ public class DescribeCursorResponse extends AcsResponse {
 
 	private String cursor;
 
+	private String message;
+
+	private String code;
+
+	private String dynamicCode;
+
 	private String requestId;
 
 	private Boolean success;
+
+	private String dynamicMessage;
 
 	public String getErrorCode() {
 		return this.errorCode;
@@ -58,6 +66,30 @@ public class DescribeCursorResponse extends AcsResponse {
 		this.cursor = cursor;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getDynamicCode() {
+		return this.dynamicCode;
+	}
+
+	public void setDynamicCode(String dynamicCode) {
+		this.dynamicCode = dynamicCode;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -72,6 +104,14 @@ public class DescribeCursorResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
 	}
 
 	@Override

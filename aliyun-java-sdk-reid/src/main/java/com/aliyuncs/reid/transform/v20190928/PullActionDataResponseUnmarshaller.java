@@ -31,8 +31,13 @@ public class PullActionDataResponseUnmarshaller {
 		pullActionDataResponse.setRequestId(_ctx.stringValue("PullActionDataResponse.RequestId"));
 		pullActionDataResponse.setErrorCode(_ctx.stringValue("PullActionDataResponse.ErrorCode"));
 		pullActionDataResponse.setErrorMessage(_ctx.stringValue("PullActionDataResponse.ErrorMessage"));
+		pullActionDataResponse.setMessage(_ctx.stringValue("PullActionDataResponse.Message"));
+		pullActionDataResponse.setCode(_ctx.stringValue("PullActionDataResponse.Code"));
+		pullActionDataResponse.setPartitionIndex(_ctx.integerValue("PullActionDataResponse.PartitionIndex"));
+		pullActionDataResponse.setDynamicCode(_ctx.stringValue("PullActionDataResponse.DynamicCode"));
 		pullActionDataResponse.setSuccess(_ctx.booleanValue("PullActionDataResponse.Success"));
 		pullActionDataResponse.setNextMessageId(_ctx.longValue("PullActionDataResponse.NextMessageId"));
+		pullActionDataResponse.setDynamicMessage(_ctx.stringValue("PullActionDataResponse.DynamicMessage"));
 
 		List<Action> actions = new ArrayList<Action>();
 		for (int i = 0; i < _ctx.lengthValue("PullActionDataResponse.Actions.Length"); i++) {
@@ -54,10 +59,10 @@ public class PullActionDataResponseUnmarshaller {
 			action.setImageUrl(_ctx.stringValue("PullActionDataResponse.Actions["+ i +"].ImageUrl"));
 			action.setLocationId(_ctx.longValue("PullActionDataResponse.Actions["+ i +"].LocationId"));
 			action.setStayPeriod(_ctx.integerValue("PullActionDataResponse.Actions["+ i +"].StayPeriod"));
+			action.setFacePointNumber(_ctx.integerValue("PullActionDataResponse.Actions["+ i +"].FacePointNumber"));
 			action.setScore(_ctx.floatValue("PullActionDataResponse.Actions["+ i +"].Score"));
 			action.setSpecialType(_ctx.stringValue("PullActionDataResponse.Actions["+ i +"].SpecialType"));
 			action.setImageObjectKey(_ctx.stringValue("PullActionDataResponse.Actions["+ i +"].ImageObjectKey"));
-			action.setFacePointNumber(_ctx.integerValue("PullActionDataResponse.Actions["+ i +"].FacePointNumber"));
 
 			ObjectPositionInImage objectPositionInImage = new ObjectPositionInImage();
 			objectPositionInImage.setBottom(_ctx.floatValue("PullActionDataResponse.Actions["+ i +"].ObjectPositionInImage.Bottom"));

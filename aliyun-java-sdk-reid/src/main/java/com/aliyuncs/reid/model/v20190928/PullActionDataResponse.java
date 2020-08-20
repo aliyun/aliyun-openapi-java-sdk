@@ -29,11 +29,21 @@ public class PullActionDataResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private String message;
+
+	private String code;
+
+	private Integer partitionIndex;
+
+	private String dynamicCode;
+
 	private String requestId;
 
 	private Boolean success;
 
 	private Long nextMessageId;
+
+	private String dynamicMessage;
 
 	private List<Action> actions;
 
@@ -51,6 +61,38 @@ public class PullActionDataResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getPartitionIndex() {
+		return this.partitionIndex;
+	}
+
+	public void setPartitionIndex(Integer partitionIndex) {
+		this.partitionIndex = partitionIndex;
+	}
+
+	public String getDynamicCode() {
+		return this.dynamicCode;
+	}
+
+	public void setDynamicCode(String dynamicCode) {
+		this.dynamicCode = dynamicCode;
 	}
 
 	public String getRequestId() {
@@ -75,6 +117,14 @@ public class PullActionDataResponse extends AcsResponse {
 
 	public void setNextMessageId(Long nextMessageId) {
 		this.nextMessageId = nextMessageId;
+	}
+
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
 	}
 
 	public List<Action> getActions() {
@@ -121,13 +171,13 @@ public class PullActionDataResponse extends AcsResponse {
 
 		private Integer stayPeriod;
 
+		private Integer facePointNumber;
+
 		private Float score;
 
 		private String specialType;
 
 		private String imageObjectKey;
-
-		private Integer facePointNumber;
 
 		private ObjectPositionInImage objectPositionInImage;
 
@@ -269,6 +319,14 @@ public class PullActionDataResponse extends AcsResponse {
 			this.stayPeriod = stayPeriod;
 		}
 
+		public Integer getFacePointNumber() {
+			return this.facePointNumber;
+		}
+
+		public void setFacePointNumber(Integer facePointNumber) {
+			this.facePointNumber = facePointNumber;
+		}
+
 		public Float getScore() {
 			return this.score;
 		}
@@ -291,14 +349,6 @@ public class PullActionDataResponse extends AcsResponse {
 
 		public void setImageObjectKey(String imageObjectKey) {
 			this.imageObjectKey = imageObjectKey;
-		}
-
-		public Integer getFacePointNumber() {
-			return this.facePointNumber;
-		}
-
-		public void setFacePointNumber(Integer facePointNumber) {
-			this.facePointNumber = facePointNumber;
 		}
 
 		public ObjectPositionInImage getObjectPositionInImage() {

@@ -1,3 +1,7 @@
+2020-08-20 Version: 1.1.8.3
+- PullActionData add parameters.
+- DescribeCursor add parameter.
+
 2020-07-08 Version: 1.1.8.2
 - Remove GetFootwearPosition PullTakeShoesEvent PullTryOnShoesEvent.
 - Add GetFootwearEvent.

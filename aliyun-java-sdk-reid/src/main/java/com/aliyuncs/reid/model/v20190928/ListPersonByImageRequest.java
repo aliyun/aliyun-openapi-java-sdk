@@ -29,7 +29,7 @@ public class ListPersonByImageRequest extends RpcAcsRequest<ListPersonByImageRes
 
 	private String imageUrl;
 	public ListPersonByImageRequest() {
-		super("reid", "2019-09-28", "ListPersonByImage", "1.1.8.2");
+		super("reid", "2019-09-28", "ListPersonByImage", "1.1.8.3");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
