@@ -1,3 +1,6 @@
+2020-08-20 Version: 1.1.8
+- Add list person visit count API.
+
 2020-08-17 Version: 1.1.7
 - Add list event algorithm details.
 
