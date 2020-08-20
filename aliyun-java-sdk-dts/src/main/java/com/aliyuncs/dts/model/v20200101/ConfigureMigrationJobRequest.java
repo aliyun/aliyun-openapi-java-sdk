@@ -181,7 +181,7 @@ public class ConfigureMigrationJobRequest extends RpcAcsRequest<ConfigureMigrati
 	public void setMigrationObject(String migrationObject) {
 		this.migrationObject = migrationObject;
 		if(migrationObject != null){
-			putQueryParameter("MigrationObject", migrationObject);
+			putBodyParameter("MigrationObject", migrationObject);
 		}
 	}
 

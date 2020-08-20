@@ -146,7 +146,7 @@ public class ConfigureSynchronizationJobRequest extends RpcAcsRequest<ConfigureS
 	public void setSynchronizationObjects(String synchronizationObjects) {
 		this.synchronizationObjects = synchronizationObjects;
 		if(synchronizationObjects != null){
-			putQueryParameter("SynchronizationObjects", synchronizationObjects);
+			putBodyParameter("SynchronizationObjects", synchronizationObjects);
 		}
 	}
 

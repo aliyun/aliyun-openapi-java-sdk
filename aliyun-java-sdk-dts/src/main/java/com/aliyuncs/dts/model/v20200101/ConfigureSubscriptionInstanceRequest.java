@@ -146,7 +146,7 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 	public void setSubscriptionObject(String subscriptionObject) {
 		this.subscriptionObject = subscriptionObject;
 		if(subscriptionObject != null){
-			putQueryParameter("SubscriptionObject", subscriptionObject);
+			putBodyParameter("SubscriptionObject", subscriptionObject);
 		}
 	}
 
