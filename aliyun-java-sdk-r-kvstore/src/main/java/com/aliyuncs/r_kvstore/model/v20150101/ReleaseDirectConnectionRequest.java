@@ -22,7 +22,7 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse> {
+public class ReleaseDirectConnectionRequest extends RpcAcsRequest<ReleaseDirectConnectionResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -35,11 +35,9 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 
 	private Long ownerId;
 
-	private String globalInstanceId;
-
 	private String instanceId;
-	public DeleteInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteInstance", "redisa");
+	public ReleaseDirectConnectionRequest() {
+		super("R-kvstore", "2015-01-01", "ReleaseDirectConnection", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -102,17 +100,6 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 		}
 	}
 
-	public String getGlobalInstanceId() {
-		return this.globalInstanceId;
-	}
-
-	public void setGlobalInstanceId(String globalInstanceId) {
-		this.globalInstanceId = globalInstanceId;
-		if(globalInstanceId != null){
-			putQueryParameter("GlobalInstanceId", globalInstanceId);
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -125,8 +112,8 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 	}
 
 	@Override
-	public Class<DeleteInstanceResponse> getResponseClass() {
-		return DeleteInstanceResponse.class;
+	public Class<ReleaseDirectConnectionResponse> getResponseClass() {
+		return ReleaseDirectConnectionResponse.class;
 	}
 
 }

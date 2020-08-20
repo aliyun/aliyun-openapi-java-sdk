@@ -22,10 +22,12 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse> {
+public class AllocateDirectConnectionRequest extends RpcAcsRequest<AllocateDirectConnectionResponse> {
 	   
 
 	private Long resourceOwnerId;
+
+	private String connectionString;
 
 	private String securityToken;
 
@@ -35,11 +37,11 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 
 	private Long ownerId;
 
-	private String globalInstanceId;
-
 	private String instanceId;
-	public DeleteInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteInstance", "redisa");
+
+	private String port;
+	public AllocateDirectConnectionRequest() {
+		super("R-kvstore", "2015-01-01", "AllocateDirectConnection", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,6 +57,17 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getConnectionString() {
+		return this.connectionString;
+	}
+
+	public void setConnectionString(String connectionString) {
+		this.connectionString = connectionString;
+		if(connectionString != null){
+			putQueryParameter("ConnectionString", connectionString);
 		}
 	}
 
@@ -102,17 +115,6 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 		}
 	}
 
-	public String getGlobalInstanceId() {
-		return this.globalInstanceId;
-	}
-
-	public void setGlobalInstanceId(String globalInstanceId) {
-		this.globalInstanceId = globalInstanceId;
-		if(globalInstanceId != null){
-			putQueryParameter("GlobalInstanceId", globalInstanceId);
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -124,9 +126,20 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 		}
 	}
 
+	public String getPort() {
+		return this.port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port);
+		}
+	}
+
 	@Override
-	public Class<DeleteInstanceResponse> getResponseClass() {
-		return DeleteInstanceResponse.class;
+	public Class<AllocateDirectConnectionResponse> getResponseClass() {
+		return AllocateDirectConnectionResponse.class;
 	}
 
 }

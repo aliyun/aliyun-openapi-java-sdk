@@ -56,6 +56,8 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String ownerAccount;
 
+	private Boolean globalInstance;
+
 	private Long ownerId;
 
 	private String vSwitchId;
@@ -243,6 +245,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Boolean getGlobalInstance() {
+		return this.globalInstance;
+	}
+
+	public void setGlobalInstance(Boolean globalInstance) {
+		this.globalInstance = globalInstance;
+		if(globalInstance != null){
+			putQueryParameter("GlobalInstance", globalInstance.toString());
 		}
 	}
 

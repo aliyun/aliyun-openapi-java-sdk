@@ -22,12 +22,16 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse> {
+public class DescribeGlobalDistributeCacheRequest extends RpcAcsRequest<DescribeGlobalDistributeCacheResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private String pageNumber;
+
 	private String securityToken;
+
+	private String pageSize;
 
 	private String resourceOwnerAccount;
 
@@ -36,10 +40,8 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 	private Long ownerId;
 
 	private String globalInstanceId;
-
-	private String instanceId;
-	public DeleteInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteInstance", "redisa");
+	public DescribeGlobalDistributeCacheRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeGlobalDistributeCache", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +60,17 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 		}
 	}
 
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber);
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -66,6 +79,17 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
 		}
 	}
 
@@ -113,20 +137,9 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	@Override
-	public Class<DeleteInstanceResponse> getResponseClass() {
-		return DeleteInstanceResponse.class;
+	public Class<DescribeGlobalDistributeCacheResponse> getResponseClass() {
+		return DescribeGlobalDistributeCacheResponse.class;
 	}
 
 }

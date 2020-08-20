@@ -22,7 +22,7 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse> {
+public class CreateGlobalDistributeCacheRequest extends RpcAcsRequest<CreateGlobalDistributeCacheResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -35,11 +35,9 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 
 	private Long ownerId;
 
-	private String globalInstanceId;
-
-	private String instanceId;
-	public DeleteInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteInstance", "redisa");
+	private String seedSubInstanceId;
+	public CreateGlobalDistributeCacheRequest() {
+		super("R-kvstore", "2015-01-01", "CreateGlobalDistributeCache", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -102,31 +100,20 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 		}
 	}
 
-	public String getGlobalInstanceId() {
-		return this.globalInstanceId;
+	public String getSeedSubInstanceId() {
+		return this.seedSubInstanceId;
 	}
 
-	public void setGlobalInstanceId(String globalInstanceId) {
-		this.globalInstanceId = globalInstanceId;
-		if(globalInstanceId != null){
-			putQueryParameter("GlobalInstanceId", globalInstanceId);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setSeedSubInstanceId(String seedSubInstanceId) {
+		this.seedSubInstanceId = seedSubInstanceId;
+		if(seedSubInstanceId != null){
+			putQueryParameter("SeedSubInstanceId", seedSubInstanceId);
 		}
 	}
 
 	@Override
-	public Class<DeleteInstanceResponse> getResponseClass() {
-		return DeleteInstanceResponse.class;
+	public Class<CreateGlobalDistributeCacheResponse> getResponseClass() {
+		return CreateGlobalDistributeCacheResponse.class;
 	}
 
 }

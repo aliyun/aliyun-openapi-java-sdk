@@ -79,7 +79,11 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String ownerAccount;
 
+	private Boolean globalInstance;
+
 	private String token;
+
+	private String globalInstanceId;
 
 	private String vpcId;
 
@@ -392,6 +396,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public Boolean getGlobalInstance() {
+		return this.globalInstance;
+	}
+
+	public void setGlobalInstance(Boolean globalInstance) {
+		this.globalInstance = globalInstance;
+		if(globalInstance != null){
+			putQueryParameter("GlobalInstance", globalInstance.toString());
+		}
+	}
+
 	public String getToken() {
 		return this.token;
 	}
@@ -400,6 +415,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.token = token;
 		if(token != null){
 			putQueryParameter("Token", token);
+		}
+	}
+
+	public String getGlobalInstanceId() {
+		return this.globalInstanceId;
+	}
+
+	public void setGlobalInstanceId(String globalInstanceId) {
+		this.globalInstanceId = globalInstanceId;
+		if(globalInstanceId != null){
+			putQueryParameter("GlobalInstanceId", globalInstanceId);
 		}
 	}
 
