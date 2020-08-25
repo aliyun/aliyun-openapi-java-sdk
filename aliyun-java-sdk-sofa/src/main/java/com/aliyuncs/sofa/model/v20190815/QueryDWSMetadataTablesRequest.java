@@ -37,7 +37,7 @@ public class QueryDWSMetadataTablesRequest extends RpcAcsRequest<QueryDWSMetadat
 
 	private String dbType;
 	public QueryDWSMetadataTablesRequest() {
-		super("SOFA", "2019-08-15", "QueryDWSMetadataTables", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryDWSMetadataTables", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

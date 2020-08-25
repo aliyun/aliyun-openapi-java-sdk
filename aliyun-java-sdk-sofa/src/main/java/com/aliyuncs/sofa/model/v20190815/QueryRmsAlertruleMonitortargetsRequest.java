@@ -29,7 +29,7 @@ public class QueryRmsAlertruleMonitortargetsRequest extends RpcAcsRequest<QueryR
 
 	private String queryJsonStr;
 	public QueryRmsAlertruleMonitortargetsRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsAlertruleMonitortargets", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryRmsAlertruleMonitortargets", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

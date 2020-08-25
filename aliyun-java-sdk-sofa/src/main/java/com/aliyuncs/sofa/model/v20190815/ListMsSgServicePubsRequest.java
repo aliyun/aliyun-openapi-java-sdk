@@ -31,7 +31,7 @@ public class ListMsSgServicePubsRequest extends RpcAcsRequest<ListMsSgServicePub
 
 	private String dataId;
 	public ListMsSgServicePubsRequest() {
-		super("SOFA", "2019-08-15", "ListMsSgServicePubs", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ListMsSgServicePubs", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

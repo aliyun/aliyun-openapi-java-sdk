@@ -28,6 +28,7 @@ public class DeleteLinkeLinktMilestoneResponseUnmarshaller {
 		deleteLinkeLinktMilestoneResponse.setData(_ctx.booleanValue("DeleteLinkeLinktMilestoneResponse.Data"));
 		deleteLinkeLinktMilestoneResponse.setErrorCode(_ctx.longValue("DeleteLinkeLinktMilestoneResponse.ErrorCode"));
 		deleteLinkeLinktMilestoneResponse.setErrorMessage(_ctx.stringValue("DeleteLinkeLinktMilestoneResponse.ErrorMessage"));
+		deleteLinkeLinktMilestoneResponse.setResponseStatusCode(_ctx.longValue("DeleteLinkeLinktMilestoneResponse.ResponseStatusCode"));
 		deleteLinkeLinktMilestoneResponse.setSuccess(_ctx.booleanValue("DeleteLinkeLinktMilestoneResponse.Success"));
 	 
 	 	return deleteLinkeLinktMilestoneResponse;

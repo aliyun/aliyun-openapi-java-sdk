@@ -33,7 +33,7 @@ public class QueryODPJobsSqlbatchProgressRequest extends RpcAcsRequest<QueryODPJ
 
 	private String instanceId;
 	public QueryODPJobsSqlbatchProgressRequest() {
-		super("SOFA", "2019-08-15", "QueryODPJobsSqlbatchProgress", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryODPJobsSqlbatchProgress", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

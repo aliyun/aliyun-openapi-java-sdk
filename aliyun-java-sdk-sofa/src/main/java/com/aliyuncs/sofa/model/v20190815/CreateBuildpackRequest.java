@@ -26,6 +26,8 @@ import com.aliyuncs.sofa.Endpoint;
 public class CreateBuildpackRequest extends RpcAcsRequest<CreateBuildpackResponse> {
 	   
 
+	private List<BuildCommandParams> buildCommandParamss;
+
 	private String description;
 
 	private Boolean debugMode;
@@ -33,6 +35,8 @@ public class CreateBuildpackRequest extends RpcAcsRequest<CreateBuildpackRespons
 	private List<SupportedRegions> supportedRegionss;
 
 	private String scope;
+
+	private String id;
 
 	private Long patchVersion;
 
@@ -44,22 +48,44 @@ public class CreateBuildpackRequest extends RpcAcsRequest<CreateBuildpackRespons
 
 	private List<String> availableTenantNamesRepeatLists;
 
+	private List<BuildpackParams> buildpackParamss;
+
+	private String storageUploadEndpoints;
+
 	private String fullVersion;
 
-	private String contactInfo;
+	private String techstackJsonStr;
 
-	private List<EnvParams> envParamss;
+	private String contactInfo;
 
 	private String buildCommand;
 
 	private Long techstackId;
+
+	private String status;
 	public CreateBuildpackRequest() {
-		super("SOFA", "2019-08-15", "CreateBuildpack", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateBuildpack", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<BuildCommandParams> getBuildCommandParamss() {
+		return this.buildCommandParamss;
+	}
+
+	public void setBuildCommandParamss(List<BuildCommandParams> buildCommandParamss) {
+		this.buildCommandParamss = buildCommandParamss;	
+		if (buildCommandParamss != null) {
+			for (int depth1 = 0; depth1 < buildCommandParamss.size(); depth1++) {
+				putBodyParameter("BuildCommandParams." + (depth1 + 1) + ".BuildpackId" , buildCommandParamss.get(depth1).getBuildpackId());
+				putBodyParameter("BuildCommandParams." + (depth1 + 1) + ".Description" , buildCommandParamss.get(depth1).getDescription());
+				putBodyParameter("BuildCommandParams." + (depth1 + 1) + ".Value" , buildCommandParamss.get(depth1).getValue());
+				putBodyParameter("BuildCommandParams." + (depth1 + 1) + ".Key" , buildCommandParamss.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getDescription() {
@@ -122,6 +148,17 @@ public class CreateBuildpackRequest extends RpcAcsRequest<CreateBuildpackRespons
 		}
 	}
 
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putBodyParameter("Id", id);
+		}
+	}
+
 	public Long getPatchVersion() {
 		return this.patchVersion;
 	}
@@ -181,6 +218,36 @@ public class CreateBuildpackRequest extends RpcAcsRequest<CreateBuildpackRespons
 		}	
 	}
 
+	public List<BuildpackParams> getBuildpackParamss() {
+		return this.buildpackParamss;
+	}
+
+	public void setBuildpackParamss(List<BuildpackParams> buildpackParamss) {
+		this.buildpackParamss = buildpackParamss;	
+		if (buildpackParamss != null) {
+			for (int depth1 = 0; depth1 < buildpackParamss.size(); depth1++) {
+				putBodyParameter("BuildpackParams." + (depth1 + 1) + ".BuildpackId" , buildpackParamss.get(depth1).getBuildpackId());
+				putBodyParameter("BuildpackParams." + (depth1 + 1) + ".Readonly" , buildpackParamss.get(depth1).getReadonly());
+				putBodyParameter("BuildpackParams." + (depth1 + 1) + ".DefaultValue" , buildpackParamss.get(depth1).getDefaultValue());
+				putBodyParameter("BuildpackParams." + (depth1 + 1) + ".Description" , buildpackParamss.get(depth1).getDescription());
+				putBodyParameter("BuildpackParams." + (depth1 + 1) + ".Id" , buildpackParamss.get(depth1).getId());
+				putBodyParameter("BuildpackParams." + (depth1 + 1) + ".Key" , buildpackParamss.get(depth1).getKey());
+				putBodyParameter("BuildpackParams." + (depth1 + 1) + ".Required" , buildpackParamss.get(depth1).getRequired());
+			}
+		}	
+	}
+
+	public String getStorageUploadEndpoints() {
+		return this.storageUploadEndpoints;
+	}
+
+	public void setStorageUploadEndpoints(String storageUploadEndpoints) {
+		this.storageUploadEndpoints = storageUploadEndpoints;
+		if(storageUploadEndpoints != null){
+			putBodyParameter("StorageUploadEndpoints", storageUploadEndpoints);
+		}
+	}
+
 	public String getFullVersion() {
 		return this.fullVersion;
 	}
@@ -189,6 +256,17 @@ public class CreateBuildpackRequest extends RpcAcsRequest<CreateBuildpackRespons
 		this.fullVersion = fullVersion;
 		if(fullVersion != null){
 			putBodyParameter("FullVersion", fullVersion);
+		}
+	}
+
+	public String getTechstackJsonStr() {
+		return this.techstackJsonStr;
+	}
+
+	public void setTechstackJsonStr(String techstackJsonStr) {
+		this.techstackJsonStr = techstackJsonStr;
+		if(techstackJsonStr != null){
+			putBodyParameter("TechstackJsonStr", techstackJsonStr);
 		}
 	}
 
@@ -201,25 +279,6 @@ public class CreateBuildpackRequest extends RpcAcsRequest<CreateBuildpackRespons
 		if(contactInfo != null){
 			putBodyParameter("ContactInfo", contactInfo);
 		}
-	}
-
-	public List<EnvParams> getEnvParamss() {
-		return this.envParamss;
-	}
-
-	public void setEnvParamss(List<EnvParams> envParamss) {
-		this.envParamss = envParamss;	
-		if (envParamss != null) {
-			for (int depth1 = 0; depth1 < envParamss.size(); depth1++) {
-				putBodyParameter("EnvParams." + (depth1 + 1) + ".BuildpackId" , envParamss.get(depth1).getBuildpackId());
-				putBodyParameter("EnvParams." + (depth1 + 1) + ".Readonly" , envParamss.get(depth1).getReadonly());
-				putBodyParameter("EnvParams." + (depth1 + 1) + ".DefaultValue" , envParamss.get(depth1).getDefaultValue());
-				putBodyParameter("EnvParams." + (depth1 + 1) + ".Description" , envParamss.get(depth1).getDescription());
-				putBodyParameter("EnvParams." + (depth1 + 1) + ".Id" , envParamss.get(depth1).getId());
-				putBodyParameter("EnvParams." + (depth1 + 1) + ".Key" , envParamss.get(depth1).getKey());
-				putBodyParameter("EnvParams." + (depth1 + 1) + ".Required" , envParamss.get(depth1).getRequired());
-			}
-		}	
 	}
 
 	public String getBuildCommand() {
@@ -241,6 +300,60 @@ public class CreateBuildpackRequest extends RpcAcsRequest<CreateBuildpackRespons
 		this.techstackId = techstackId;
 		if(techstackId != null){
 			putBodyParameter("TechstackId", techstackId.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putBodyParameter("Status", status);
+		}
+	}
+
+	public static class BuildCommandParams {
+
+		private String buildpackId;
+
+		private String description;
+
+		private String value;
+
+		private String key;
+
+		public String getBuildpackId() {
+			return this.buildpackId;
+		}
+
+		public void setBuildpackId(String buildpackId) {
+			this.buildpackId = buildpackId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
@@ -397,7 +510,7 @@ public class CreateBuildpackRequest extends RpcAcsRequest<CreateBuildpackRespons
 		}
 	}
 
-	public static class EnvParams {
+	public static class BuildpackParams {
 
 		private String buildpackId;
 

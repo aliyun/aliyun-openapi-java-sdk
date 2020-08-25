@@ -25,13 +25,13 @@ import com.aliyuncs.sofa.Endpoint;
 public class UpdateLinkeLinktWorkitemstampRequest extends RpcAcsRequest<UpdateLinkeLinktWorkitemstampResponse> {
 	   
 
-	private Long statusId;
+	private String statusId;
 
 	private String workItemSign;
 
-	private Long templateId;
+	private String templateId;
 	public UpdateLinkeLinktWorkitemstampRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktWorkitemstamp", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktWorkitemstamp", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +39,14 @@ public class UpdateLinkeLinktWorkitemstampRequest extends RpcAcsRequest<UpdateLi
 		} catch (Exception e) {}
 	}
 
-	public Long getStatusId() {
+	public String getStatusId() {
 		return this.statusId;
 	}
 
-	public void setStatusId(Long statusId) {
+	public void setStatusId(String statusId) {
 		this.statusId = statusId;
 		if(statusId != null){
-			putBodyParameter("StatusId", statusId.toString());
+			putBodyParameter("StatusId", statusId);
 		}
 	}
 
@@ -61,14 +61,14 @@ public class UpdateLinkeLinktWorkitemstampRequest extends RpcAcsRequest<UpdateLi
 		}
 	}
 
-	public Long getTemplateId() {
+	public String getTemplateId() {
 		return this.templateId;
 	}
 
-	public void setTemplateId(Long templateId) {
+	public void setTemplateId(String templateId) {
 		this.templateId = templateId;
 		if(templateId != null){
-			putBodyParameter("TemplateId", templateId.toString());
+			putBodyParameter("TemplateId", templateId);
 		}
 	}
 

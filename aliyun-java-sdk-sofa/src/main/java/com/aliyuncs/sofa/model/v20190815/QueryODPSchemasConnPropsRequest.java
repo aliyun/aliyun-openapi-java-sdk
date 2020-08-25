@@ -31,7 +31,7 @@ public class QueryODPSchemasConnPropsRequest extends RpcAcsRequest<QueryODPSchem
 
 	private String instanceId;
 	public QueryODPSchemasConnPropsRequest() {
-		super("SOFA", "2019-08-15", "QueryODPSchemasConnProps", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryODPSchemasConnProps", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

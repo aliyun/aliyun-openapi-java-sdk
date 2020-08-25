@@ -75,6 +75,8 @@ public class QueryODPSchemasPhysicalSchemasResponse extends AcsResponse {
 
 		private String relSchemaName;
 
+		private String username;
+
 		public String getDbType() {
 			return this.dbType;
 		}
@@ -105,6 +107,14 @@ public class QueryODPSchemasPhysicalSchemasResponse extends AcsResponse {
 
 		public void setRelSchemaName(String relSchemaName) {
 			this.relSchemaName = relSchemaName;
+		}
+
+		public String getUsername() {
+			return this.username;
+		}
+
+		public void setUsername(String username) {
+			this.username = username;
 		}
 	}
 

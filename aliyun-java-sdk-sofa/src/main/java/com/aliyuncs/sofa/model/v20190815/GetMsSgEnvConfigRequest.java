@@ -27,7 +27,7 @@ public class GetMsSgEnvConfigRequest extends RpcAcsRequest<GetMsSgEnvConfigRespo
 
 	private String instanceId;
 	public GetMsSgEnvConfigRequest() {
-		super("SOFA", "2019-08-15", "GetMsSgEnvConfig", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetMsSgEnvConfig", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

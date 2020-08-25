@@ -37,6 +37,7 @@ public class QueryODPSchemasPhysicalSchemasResponseUnmarshaller {
 			dataItem.setNodeId(_ctx.stringValue("QueryODPSchemasPhysicalSchemasResponse.Data["+ i +"].NodeId"));
 			dataItem.setReadOnly(_ctx.booleanValue("QueryODPSchemasPhysicalSchemasResponse.Data["+ i +"].ReadOnly"));
 			dataItem.setRelSchemaName(_ctx.stringValue("QueryODPSchemasPhysicalSchemasResponse.Data["+ i +"].RelSchemaName"));
+			dataItem.setUsername(_ctx.stringValue("QueryODPSchemasPhysicalSchemasResponse.Data["+ i +"].Username"));
 
 			data.add(dataItem);
 		}

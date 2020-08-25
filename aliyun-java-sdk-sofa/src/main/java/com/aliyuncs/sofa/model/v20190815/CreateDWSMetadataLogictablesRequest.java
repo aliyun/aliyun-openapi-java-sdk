@@ -29,7 +29,7 @@ public class CreateDWSMetadataLogictablesRequest extends RpcAcsRequest<CreateDWS
 
 	private String instanceId;
 	public CreateDWSMetadataLogictablesRequest() {
-		super("SOFA", "2019-08-15", "CreateDWSMetadataLogictables", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateDWSMetadataLogictables", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

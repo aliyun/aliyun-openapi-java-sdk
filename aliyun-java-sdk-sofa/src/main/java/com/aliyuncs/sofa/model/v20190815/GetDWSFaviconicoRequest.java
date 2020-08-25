@@ -27,7 +27,7 @@ public class GetDWSFaviconicoRequest extends RpcAcsRequest<GetDWSFaviconicoRespo
 
 	private String instanceId;
 	public GetDWSFaviconicoRequest() {
-		super("SOFA", "2019-08-15", "GetDWSFaviconico", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDWSFaviconico", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

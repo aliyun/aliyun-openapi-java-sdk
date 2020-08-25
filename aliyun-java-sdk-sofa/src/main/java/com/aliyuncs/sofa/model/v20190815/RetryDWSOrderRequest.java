@@ -31,7 +31,7 @@ public class RetryDWSOrderRequest extends RpcAcsRequest<RetryDWSOrderResponse> {
 
 	private String instanceId;
 	public RetryDWSOrderRequest() {
-		super("SOFA", "2019-08-15", "RetryDWSOrder", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "RetryDWSOrder", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

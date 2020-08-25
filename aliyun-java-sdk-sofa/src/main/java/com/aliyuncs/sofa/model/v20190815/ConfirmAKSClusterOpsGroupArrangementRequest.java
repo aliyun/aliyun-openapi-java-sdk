@@ -31,7 +31,7 @@ public class ConfirmAKSClusterOpsGroupArrangementRequest extends RpcAcsRequest<C
 
 	private String operatorName;
 	public ConfirmAKSClusterOpsGroupArrangementRequest() {
-		super("SOFA", "2019-08-15", "ConfirmAKSClusterOpsGroupArrangement", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ConfirmAKSClusterOpsGroupArrangement", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

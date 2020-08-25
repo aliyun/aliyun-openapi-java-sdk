@@ -41,7 +41,7 @@ public class QueryTSTriggerInstancesRequest extends RpcAcsRequest<QueryTSTrigger
 
 	private String status;
 	public QueryTSTriggerInstancesRequest() {
-		super("SOFA", "2019-08-15", "QueryTSTriggerInstances", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryTSTriggerInstances", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

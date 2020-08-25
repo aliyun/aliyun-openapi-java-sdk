@@ -33,7 +33,7 @@ public class DeleteAKSContainerservicesRequest extends RpcAcsRequest<DeleteAKSCo
 
 	private String operatorName;
 	public DeleteAKSContainerservicesRequest() {
-		super("SOFA", "2019-08-15", "DeleteAKSContainerservices", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteAKSContainerservices", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

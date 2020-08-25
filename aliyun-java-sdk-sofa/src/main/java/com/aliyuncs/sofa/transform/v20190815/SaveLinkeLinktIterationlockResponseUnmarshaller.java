@@ -28,6 +28,7 @@ public class SaveLinkeLinktIterationlockResponseUnmarshaller {
 		saveLinkeLinktIterationlockResponse.setData(_ctx.booleanValue("SaveLinkeLinktIterationlockResponse.Data"));
 		saveLinkeLinktIterationlockResponse.setErrorCode(_ctx.longValue("SaveLinkeLinktIterationlockResponse.ErrorCode"));
 		saveLinkeLinktIterationlockResponse.setErrorMessage(_ctx.stringValue("SaveLinkeLinktIterationlockResponse.ErrorMessage"));
+		saveLinkeLinktIterationlockResponse.setResponseStatusCode(_ctx.longValue("SaveLinkeLinktIterationlockResponse.ResponseStatusCode"));
 		saveLinkeLinktIterationlockResponse.setSuccess(_ctx.booleanValue("SaveLinkeLinktIterationlockResponse.Success"));
 	 
 	 	return saveLinkeLinktIterationlockResponse;

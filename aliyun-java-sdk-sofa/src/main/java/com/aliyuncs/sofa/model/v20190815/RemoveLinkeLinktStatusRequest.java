@@ -25,11 +25,11 @@ import com.aliyuncs.sofa.Endpoint;
 public class RemoveLinkeLinktStatusRequest extends RpcAcsRequest<RemoveLinkeLinktStatusResponse> {
 	   
 
-	private Long statusId;
+	private String statusId;
 
 	private String statusConvertMap;
 	public RemoveLinkeLinktStatusRequest() {
-		super("SOFA", "2019-08-15", "RemoveLinkeLinktStatus", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "RemoveLinkeLinktStatus", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +37,14 @@ public class RemoveLinkeLinktStatusRequest extends RpcAcsRequest<RemoveLinkeLink
 		} catch (Exception e) {}
 	}
 
-	public Long getStatusId() {
+	public String getStatusId() {
 		return this.statusId;
 	}
 
-	public void setStatusId(Long statusId) {
+	public void setStatusId(String statusId) {
 		this.statusId = statusId;
 		if(statusId != null){
-			putBodyParameter("StatusId", statusId.toString());
+			putBodyParameter("StatusId", statusId);
 		}
 	}
 

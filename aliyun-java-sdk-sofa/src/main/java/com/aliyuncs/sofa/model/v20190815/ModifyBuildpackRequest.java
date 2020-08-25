@@ -28,11 +28,19 @@ public class ModifyBuildpackRequest extends RpcAcsRequest<ModifyBuildpackRespons
 
 	private String description;
 
-	private Boolean debugMode;
+	private List<SupportedRegions> supportedRegionss;
+
+	private String scope;
 
 	private String id;
 
+	private String buildpackId;
+
 	private List<Long> supportedOsRepeatLists;
+
+	private List<String> availableTenantNamesRepeatLists;
+
+	private List<BuildpackParams> buildpackParamss;
 
 	private String fullVersion;
 
@@ -40,9 +48,11 @@ public class ModifyBuildpackRequest extends RpcAcsRequest<ModifyBuildpackRespons
 
 	private List<EnvParams> envParamss;
 
-	private String buildCommand;
+	private String techstackId;
+
+	private String status;
 	public ModifyBuildpackRequest() {
-		super("SOFA", "2019-08-15", "ModifyBuildpack", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ModifyBuildpack", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,14 +71,41 @@ public class ModifyBuildpackRequest extends RpcAcsRequest<ModifyBuildpackRespons
 		}
 	}
 
-	public Boolean getDebugMode() {
-		return this.debugMode;
+	public List<SupportedRegions> getSupportedRegionss() {
+		return this.supportedRegionss;
 	}
 
-	public void setDebugMode(Boolean debugMode) {
-		this.debugMode = debugMode;
-		if(debugMode != null){
-			putBodyParameter("DebugMode", debugMode.toString());
+	public void setSupportedRegionss(List<SupportedRegions> supportedRegionss) {
+		this.supportedRegionss = supportedRegionss;	
+		if (supportedRegionss != null) {
+			for (int depth1 = 0; depth1 < supportedRegionss.size(); depth1++) {
+				putBodyParameter("SupportedRegions." + (depth1 + 1) + ".BuildpackTenantId" , supportedRegionss.get(depth1).getBuildpackTenantId());
+				putBodyParameter("SupportedRegions." + (depth1 + 1) + ".BuildpackId" , supportedRegionss.get(depth1).getBuildpackId());
+				putBodyParameter("SupportedRegions." + (depth1 + 1) + ".ReadableFileSize" , supportedRegionss.get(depth1).getReadableFileSize());
+				putBodyParameter("SupportedRegions." + (depth1 + 1) + ".ObjectName" , supportedRegionss.get(depth1).getObjectName());
+				putBodyParameter("SupportedRegions." + (depth1 + 1) + ".FileSize" , supportedRegionss.get(depth1).getFileSize());
+				putBodyParameter("SupportedRegions." + (depth1 + 1) + ".FromRegionId" , supportedRegionss.get(depth1).getFromRegionId());
+				putBodyParameter("SupportedRegions." + (depth1 + 1) + ".StorageType" , supportedRegionss.get(depth1).getStorageType());
+				putBodyParameter("SupportedRegions." + (depth1 + 1) + ".FileLocation" , supportedRegionss.get(depth1).getFileLocation());
+				putBodyParameter("SupportedRegions." + (depth1 + 1) + ".FileChecksum" , supportedRegionss.get(depth1).getFileChecksum());
+				putBodyParameter("SupportedRegions." + (depth1 + 1) + ".OriginalFileName" , supportedRegionss.get(depth1).getOriginalFileName());
+				putBodyParameter("SupportedRegions." + (depth1 + 1) + ".RegionId" , supportedRegionss.get(depth1).getRegionId());
+				putBodyParameter("SupportedRegions." + (depth1 + 1) + ".RegionIdentity" , supportedRegionss.get(depth1).getRegionIdentity());
+				putBodyParameter("SupportedRegions." + (depth1 + 1) + ".FileStatus" , supportedRegionss.get(depth1).getFileStatus());
+				putBodyParameter("SupportedRegions." + (depth1 + 1) + ".RegionName" , supportedRegionss.get(depth1).getRegionName());
+				putBodyParameter("SupportedRegions." + (depth1 + 1) + ".Id" , supportedRegionss.get(depth1).getId());
+			}
+		}	
+	}
+
+	public String getScope() {
+		return this.scope;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
+		if(scope != null){
+			putBodyParameter("Scope", scope);
 		}
 	}
 
@@ -83,6 +120,17 @@ public class ModifyBuildpackRequest extends RpcAcsRequest<ModifyBuildpackRespons
 		}
 	}
 
+	public String getBuildpackId() {
+		return this.buildpackId;
+	}
+
+	public void setBuildpackId(String buildpackId) {
+		this.buildpackId = buildpackId;
+		if(buildpackId != null){
+			putBodyParameter("BuildpackId", buildpackId);
+		}
+	}
+
 	public List<Long> getSupportedOsRepeatLists() {
 		return this.supportedOsRepeatLists;
 	}
@@ -92,6 +140,38 @@ public class ModifyBuildpackRequest extends RpcAcsRequest<ModifyBuildpackRespons
 		if (supportedOsRepeatLists != null) {
 			for (int i = 0; i < supportedOsRepeatLists.size(); i++) {
 				putBodyParameter("SupportedOsRepeatList." + (i + 1) , supportedOsRepeatLists.get(i));
+			}
+		}	
+	}
+
+	public List<String> getAvailableTenantNamesRepeatLists() {
+		return this.availableTenantNamesRepeatLists;
+	}
+
+	public void setAvailableTenantNamesRepeatLists(List<String> availableTenantNamesRepeatLists) {
+		this.availableTenantNamesRepeatLists = availableTenantNamesRepeatLists;	
+		if (availableTenantNamesRepeatLists != null) {
+			for (int i = 0; i < availableTenantNamesRepeatLists.size(); i++) {
+				putBodyParameter("AvailableTenantNamesRepeatList." + (i + 1) , availableTenantNamesRepeatLists.get(i));
+			}
+		}	
+	}
+
+	public List<BuildpackParams> getBuildpackParamss() {
+		return this.buildpackParamss;
+	}
+
+	public void setBuildpackParamss(List<BuildpackParams> buildpackParamss) {
+		this.buildpackParamss = buildpackParamss;	
+		if (buildpackParamss != null) {
+			for (int depth1 = 0; depth1 < buildpackParamss.size(); depth1++) {
+				putBodyParameter("BuildpackParams." + (depth1 + 1) + ".BuildpackId" , buildpackParamss.get(depth1).getBuildpackId());
+				putBodyParameter("BuildpackParams." + (depth1 + 1) + ".Readonly" , buildpackParamss.get(depth1).getReadonly());
+				putBodyParameter("BuildpackParams." + (depth1 + 1) + ".DefaultValue" , buildpackParamss.get(depth1).getDefaultValue());
+				putBodyParameter("BuildpackParams." + (depth1 + 1) + ".Description" , buildpackParamss.get(depth1).getDescription());
+				putBodyParameter("BuildpackParams." + (depth1 + 1) + ".Id" , buildpackParamss.get(depth1).getId());
+				putBodyParameter("BuildpackParams." + (depth1 + 1) + ".Key" , buildpackParamss.get(depth1).getKey());
+				putBodyParameter("BuildpackParams." + (depth1 + 1) + ".Required" , buildpackParamss.get(depth1).getRequired());
 			}
 		}	
 	}
@@ -137,14 +217,251 @@ public class ModifyBuildpackRequest extends RpcAcsRequest<ModifyBuildpackRespons
 		}	
 	}
 
-	public String getBuildCommand() {
-		return this.buildCommand;
+	public String getTechstackId() {
+		return this.techstackId;
 	}
 
-	public void setBuildCommand(String buildCommand) {
-		this.buildCommand = buildCommand;
-		if(buildCommand != null){
-			putBodyParameter("BuildCommand", buildCommand);
+	public void setTechstackId(String techstackId) {
+		this.techstackId = techstackId;
+		if(techstackId != null){
+			putBodyParameter("TechstackId", techstackId);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putBodyParameter("Status", status);
+		}
+	}
+
+	public static class SupportedRegions {
+
+		private String buildpackTenantId;
+
+		private String buildpackId;
+
+		private String readableFileSize;
+
+		private String objectName;
+
+		private Long fileSize;
+
+		private String fromRegionId;
+
+		private String storageType;
+
+		private String fileLocation;
+
+		private String fileChecksum;
+
+		private String originalFileName;
+
+		private String regionId;
+
+		private String regionIdentity;
+
+		private String fileStatus;
+
+		private String regionName;
+
+		private String id;
+
+		public String getBuildpackTenantId() {
+			return this.buildpackTenantId;
+		}
+
+		public void setBuildpackTenantId(String buildpackTenantId) {
+			this.buildpackTenantId = buildpackTenantId;
+		}
+
+		public String getBuildpackId() {
+			return this.buildpackId;
+		}
+
+		public void setBuildpackId(String buildpackId) {
+			this.buildpackId = buildpackId;
+		}
+
+		public String getReadableFileSize() {
+			return this.readableFileSize;
+		}
+
+		public void setReadableFileSize(String readableFileSize) {
+			this.readableFileSize = readableFileSize;
+		}
+
+		public String getObjectName() {
+			return this.objectName;
+		}
+
+		public void setObjectName(String objectName) {
+			this.objectName = objectName;
+		}
+
+		public Long getFileSize() {
+			return this.fileSize;
+		}
+
+		public void setFileSize(Long fileSize) {
+			this.fileSize = fileSize;
+		}
+
+		public String getFromRegionId() {
+			return this.fromRegionId;
+		}
+
+		public void setFromRegionId(String fromRegionId) {
+			this.fromRegionId = fromRegionId;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getFileLocation() {
+			return this.fileLocation;
+		}
+
+		public void setFileLocation(String fileLocation) {
+			this.fileLocation = fileLocation;
+		}
+
+		public String getFileChecksum() {
+			return this.fileChecksum;
+		}
+
+		public void setFileChecksum(String fileChecksum) {
+			this.fileChecksum = fileChecksum;
+		}
+
+		public String getOriginalFileName() {
+			return this.originalFileName;
+		}
+
+		public void setOriginalFileName(String originalFileName) {
+			this.originalFileName = originalFileName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getRegionIdentity() {
+			return this.regionIdentity;
+		}
+
+		public void setRegionIdentity(String regionIdentity) {
+			this.regionIdentity = regionIdentity;
+		}
+
+		public String getFileStatus() {
+			return this.fileStatus;
+		}
+
+		public void setFileStatus(String fileStatus) {
+			this.fileStatus = fileStatus;
+		}
+
+		public String getRegionName() {
+			return this.regionName;
+		}
+
+		public void setRegionName(String regionName) {
+			this.regionName = regionName;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+	}
+
+	public static class BuildpackParams {
+
+		private String buildpackId;
+
+		private Boolean readonly;
+
+		private String defaultValue;
+
+		private String description;
+
+		private String id;
+
+		private String key;
+
+		private Boolean required;
+
+		public String getBuildpackId() {
+			return this.buildpackId;
+		}
+
+		public void setBuildpackId(String buildpackId) {
+			this.buildpackId = buildpackId;
+		}
+
+		public Boolean getReadonly() {
+			return this.readonly;
+		}
+
+		public void setReadonly(Boolean readonly) {
+			this.readonly = readonly;
+		}
+
+		public String getDefaultValue() {
+			return this.defaultValue;
+		}
+
+		public void setDefaultValue(String defaultValue) {
+			this.defaultValue = defaultValue;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public Boolean getRequired() {
+			return this.required;
+		}
+
+		public void setRequired(Boolean required) {
+			this.required = required;
 		}
 	}
 

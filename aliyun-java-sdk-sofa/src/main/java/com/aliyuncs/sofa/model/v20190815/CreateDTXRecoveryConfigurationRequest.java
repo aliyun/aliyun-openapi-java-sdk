@@ -27,6 +27,8 @@ public class CreateDTXRecoveryConfigurationRequest extends RpcAcsRequest<CreateD
 
 	private Long role;
 
+	private String content;
+
 	private Long activityMode;
 
 	private String appName;
@@ -43,7 +45,7 @@ public class CreateDTXRecoveryConfigurationRequest extends RpcAcsRequest<CreateD
 
 	private String desc;
 	public CreateDTXRecoveryConfigurationRequest() {
-		super("SOFA", "2019-08-15", "CreateDTXRecoveryConfiguration", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateDTXRecoveryConfiguration", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,6 +61,17 @@ public class CreateDTXRecoveryConfigurationRequest extends RpcAcsRequest<CreateD
 		this.role = role;
 		if(role != null){
 			putBodyParameter("Role", role.toString());
+		}
+	}
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putBodyParameter("Content", content);
 		}
 	}
 

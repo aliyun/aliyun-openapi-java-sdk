@@ -28,6 +28,7 @@ public class RemoveLinkeLinktWorkitemtagResponseUnmarshaller {
 		removeLinkeLinktWorkitemtagResponse.setData(_ctx.booleanValue("RemoveLinkeLinktWorkitemtagResponse.Data"));
 		removeLinkeLinktWorkitemtagResponse.setErrorCode(_ctx.longValue("RemoveLinkeLinktWorkitemtagResponse.ErrorCode"));
 		removeLinkeLinktWorkitemtagResponse.setErrorMessage(_ctx.stringValue("RemoveLinkeLinktWorkitemtagResponse.ErrorMessage"));
+		removeLinkeLinktWorkitemtagResponse.setResponseStatusCode(_ctx.longValue("RemoveLinkeLinktWorkitemtagResponse.ResponseStatusCode"));
 		removeLinkeLinktWorkitemtagResponse.setSuccess(_ctx.booleanValue("RemoveLinkeLinktWorkitemtagResponse.Success"));
 	 
 	 	return removeLinkeLinktWorkitemtagResponse;

@@ -39,10 +39,14 @@ public class ListMqSofamqGroupResponseUnmarshaller {
 		List<ContentItem> content = new ArrayList<ContentItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMqSofamqGroupResponse.Data.Content.Length"); i++) {
 			ContentItem contentItem = new ContentItem();
+			contentItem.setCluster(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Cluster"));
 			contentItem.setGmtCreate(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].GmtCreate"));
 			contentItem.setGmtModified(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].GmtModified"));
 			contentItem.setGroupId(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].GroupId"));
+			contentItem.setId(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Id"));
 			contentItem.setInstanceId(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].InstanceId"));
+			contentItem.setOperator(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Operator"));
+			contentItem.setReadEnable(_ctx.booleanValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].ReadEnable"));
 			contentItem.setRemark(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Remark"));
 
 			content.add(contentItem);

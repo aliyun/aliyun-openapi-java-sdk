@@ -28,7 +28,7 @@ public class OnlineBuildpackRequest extends RpcAcsRequest<OnlineBuildpackRespons
 
 	private List<String> idRepeatLists;
 	public OnlineBuildpackRequest() {
-		super("SOFA", "2019-08-15", "OnlineBuildpack", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "OnlineBuildpack", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

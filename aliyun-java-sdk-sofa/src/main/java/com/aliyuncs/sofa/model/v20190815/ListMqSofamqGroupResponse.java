@@ -109,15 +109,31 @@ public class ListMqSofamqGroupResponse extends AcsResponse {
 
 		public static class ContentItem {
 
+			private String cluster;
+
 			private Long gmtCreate;
 
 			private Long gmtModified;
 
 			private String groupId;
 
+			private Long id;
+
 			private String instanceId;
 
+			private String operator;
+
+			private Boolean readEnable;
+
 			private String remark;
+
+			public String getCluster() {
+				return this.cluster;
+			}
+
+			public void setCluster(String cluster) {
+				this.cluster = cluster;
+			}
 
 			public Long getGmtCreate() {
 				return this.gmtCreate;
@@ -143,12 +159,36 @@ public class ListMqSofamqGroupResponse extends AcsResponse {
 				this.groupId = groupId;
 			}
 
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
 			public String getInstanceId() {
 				return this.instanceId;
 			}
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
+			}
+
+			public String getOperator() {
+				return this.operator;
+			}
+
+			public void setOperator(String operator) {
+				this.operator = operator;
+			}
+
+			public Boolean getReadEnable() {
+				return this.readEnable;
+			}
+
+			public void setReadEnable(Boolean readEnable) {
+				this.readEnable = readEnable;
 			}
 
 			public String getRemark() {

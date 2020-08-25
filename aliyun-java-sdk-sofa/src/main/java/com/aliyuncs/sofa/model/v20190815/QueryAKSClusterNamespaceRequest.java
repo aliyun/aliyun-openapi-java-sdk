@@ -27,7 +27,7 @@ public class QueryAKSClusterNamespaceRequest extends RpcAcsRequest<QueryAKSClust
 
 	private String workspace;
 	public QueryAKSClusterNamespaceRequest() {
-		super("SOFA", "2019-08-15", "QueryAKSClusterNamespace", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryAKSClusterNamespace", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteDWSTaskRequest extends RpcAcsRequest<DeleteDWSTaskResponse> {
 
 	private String instanceId;
 	public DeleteDWSTaskRequest() {
-		super("SOFA", "2019-08-15", "DeleteDWSTask", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteDWSTask", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class UpdateRmsResourcegroupRequest extends RpcAcsRequest<UpdateRmsResour
 
 	private String groupJsonStr;
 	public UpdateRmsResourcegroupRequest() {
-		super("SOFA", "2019-08-15", "UpdateRmsResourcegroup", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateRmsResourcegroup", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

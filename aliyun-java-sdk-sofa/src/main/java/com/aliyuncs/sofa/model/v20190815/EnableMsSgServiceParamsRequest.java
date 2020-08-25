@@ -31,7 +31,7 @@ public class EnableMsSgServiceParamsRequest extends RpcAcsRequest<EnableMsSgServ
 
 	private String dataId;
 	public EnableMsSgServiceParamsRequest() {
-		super("SOFA", "2019-08-15", "EnableMsSgServiceParams", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "EnableMsSgServiceParams", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

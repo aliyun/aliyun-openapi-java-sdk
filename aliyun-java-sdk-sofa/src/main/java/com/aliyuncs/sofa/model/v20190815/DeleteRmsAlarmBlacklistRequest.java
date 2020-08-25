@@ -30,7 +30,7 @@ public class DeleteRmsAlarmBlacklistRequest extends RpcAcsRequest<DeleteRmsAlarm
 
 	private List<String> idss;
 	public DeleteRmsAlarmBlacklistRequest() {
-		super("SOFA", "2019-08-15", "DeleteRmsAlarmBlacklist", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteRmsAlarmBlacklist", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

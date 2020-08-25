@@ -27,7 +27,7 @@ public class ExportMsDrmResourcesRequest extends RpcAcsRequest<ExportMsDrmResour
 
 	private String instanceId;
 	public ExportMsDrmResourcesRequest() {
-		super("SOFA", "2019-08-15", "ExportMsDrmResources", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ExportMsDrmResources", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

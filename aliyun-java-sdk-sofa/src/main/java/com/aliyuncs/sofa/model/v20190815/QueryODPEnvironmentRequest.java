@@ -27,7 +27,7 @@ public class QueryODPEnvironmentRequest extends RpcAcsRequest<QueryODPEnvironmen
 
 	private String instanceId;
 	public QueryODPEnvironmentRequest() {
-		super("SOFA", "2019-08-15", "QueryODPEnvironment", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryODPEnvironment", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

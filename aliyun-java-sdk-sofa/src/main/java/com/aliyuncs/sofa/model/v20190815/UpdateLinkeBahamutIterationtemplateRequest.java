@@ -29,7 +29,7 @@ public class UpdateLinkeBahamutIterationtemplateRequest extends RpcAcsRequest<Up
 
 	private String id;
 	public UpdateLinkeBahamutIterationtemplateRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutIterationtemplate", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutIterationtemplate", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

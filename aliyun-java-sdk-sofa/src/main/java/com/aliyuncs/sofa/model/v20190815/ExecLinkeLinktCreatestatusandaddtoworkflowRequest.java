@@ -25,11 +25,11 @@ import com.aliyuncs.sofa.Endpoint;
 public class ExecLinkeLinktCreatestatusandaddtoworkflowRequest extends RpcAcsRequest<ExecLinkeLinktCreatestatusandaddtoworkflowResponse> {
 	   
 
-	private Long workflowId;
+	private String workflowId;
 
 	private String formJsonStr;
 	public ExecLinkeLinktCreatestatusandaddtoworkflowRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktCreatestatusandaddtoworkflow", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktCreatestatusandaddtoworkflow", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +37,14 @@ public class ExecLinkeLinktCreatestatusandaddtoworkflowRequest extends RpcAcsReq
 		} catch (Exception e) {}
 	}
 
-	public Long getWorkflowId() {
+	public String getWorkflowId() {
 		return this.workflowId;
 	}
 
-	public void setWorkflowId(Long workflowId) {
+	public void setWorkflowId(String workflowId) {
 		this.workflowId = workflowId;
 		if(workflowId != null){
-			putBodyParameter("WorkflowId", workflowId.toString());
+			putBodyParameter("WorkflowId", workflowId);
 		}
 	}
 

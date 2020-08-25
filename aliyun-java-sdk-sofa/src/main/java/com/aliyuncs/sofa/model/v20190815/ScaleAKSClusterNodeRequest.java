@@ -32,7 +32,7 @@ public class ScaleAKSClusterNodeRequest extends RpcAcsRequest<ScaleAKSClusterNod
 
 	private String operatorName;
 	public ScaleAKSClusterNodeRequest() {
-		super("SOFA", "2019-08-15", "ScaleAKSClusterNode", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ScaleAKSClusterNode", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

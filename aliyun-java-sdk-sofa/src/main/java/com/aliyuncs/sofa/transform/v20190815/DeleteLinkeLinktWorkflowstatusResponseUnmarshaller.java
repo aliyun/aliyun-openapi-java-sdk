@@ -28,6 +28,7 @@ public class DeleteLinkeLinktWorkflowstatusResponseUnmarshaller {
 		deleteLinkeLinktWorkflowstatusResponse.setData(_ctx.booleanValue("DeleteLinkeLinktWorkflowstatusResponse.Data"));
 		deleteLinkeLinktWorkflowstatusResponse.setErrorCode(_ctx.longValue("DeleteLinkeLinktWorkflowstatusResponse.ErrorCode"));
 		deleteLinkeLinktWorkflowstatusResponse.setErrorMessage(_ctx.stringValue("DeleteLinkeLinktWorkflowstatusResponse.ErrorMessage"));
+		deleteLinkeLinktWorkflowstatusResponse.setResponseStatusCode(_ctx.longValue("DeleteLinkeLinktWorkflowstatusResponse.ResponseStatusCode"));
 		deleteLinkeLinktWorkflowstatusResponse.setSuccess(_ctx.booleanValue("DeleteLinkeLinktWorkflowstatusResponse.Success"));
 	 
 	 	return deleteLinkeLinktWorkflowstatusResponse;

@@ -25,11 +25,11 @@ import com.aliyuncs.sofa.Endpoint;
 public class StartLinkeBahamutPrepubpipelineRequest extends RpcAcsRequest<StartLinkeBahamutPrepubpipelineResponse> {
 	   
 
-	private Long pipelineInstanceId;
+	private String pipelineInstanceId;
 
 	private String iterationUnitId;
 	public StartLinkeBahamutPrepubpipelineRequest() {
-		super("SOFA", "2019-08-15", "StartLinkeBahamutPrepubpipeline", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "StartLinkeBahamutPrepubpipeline", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +37,14 @@ public class StartLinkeBahamutPrepubpipelineRequest extends RpcAcsRequest<StartL
 		} catch (Exception e) {}
 	}
 
-	public Long getPipelineInstanceId() {
+	public String getPipelineInstanceId() {
 		return this.pipelineInstanceId;
 	}
 
-	public void setPipelineInstanceId(Long pipelineInstanceId) {
+	public void setPipelineInstanceId(String pipelineInstanceId) {
 		this.pipelineInstanceId = pipelineInstanceId;
 		if(pipelineInstanceId != null){
-			putBodyParameter("PipelineInstanceId", pipelineInstanceId.toString());
+			putBodyParameter("PipelineInstanceId", pipelineInstanceId);
 		}
 	}
 

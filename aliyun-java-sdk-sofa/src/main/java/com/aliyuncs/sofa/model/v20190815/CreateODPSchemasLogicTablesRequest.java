@@ -29,7 +29,7 @@ public class CreateODPSchemasLogicTablesRequest extends RpcAcsRequest<CreateODPS
 
 	private String logicTableJsonStr;
 	public CreateODPSchemasLogicTablesRequest() {
-		super("SOFA", "2019-08-15", "CreateODPSchemasLogicTables", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateODPSchemasLogicTables", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

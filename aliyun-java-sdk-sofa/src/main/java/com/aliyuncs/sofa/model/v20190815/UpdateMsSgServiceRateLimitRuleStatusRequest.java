@@ -47,7 +47,7 @@ public class UpdateMsSgServiceRateLimitRuleStatusRequest extends RpcAcsRequest<U
 
 	private String name;
 	public UpdateMsSgServiceRateLimitRuleStatusRequest() {
-		super("SOFA", "2019-08-15", "UpdateMsSgServiceRateLimitRuleStatus", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateMsSgServiceRateLimitRuleStatus", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

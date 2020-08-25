@@ -35,7 +35,7 @@ public class AddMsGuardianAppsRequest extends RpcAcsRequest<AddMsGuardianAppsRes
 
 	private String name;
 	public AddMsGuardianAppsRequest() {
-		super("SOFA", "2019-08-15", "AddMsGuardianApps", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "AddMsGuardianApps", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

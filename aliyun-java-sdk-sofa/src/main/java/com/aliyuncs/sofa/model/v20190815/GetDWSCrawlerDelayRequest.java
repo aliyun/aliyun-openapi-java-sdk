@@ -35,7 +35,7 @@ public class GetDWSCrawlerDelayRequest extends RpcAcsRequest<GetDWSCrawlerDelayR
 
 	private String instanceId;
 	public GetDWSCrawlerDelayRequest() {
-		super("SOFA", "2019-08-15", "GetDWSCrawlerDelay", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDWSCrawlerDelay", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

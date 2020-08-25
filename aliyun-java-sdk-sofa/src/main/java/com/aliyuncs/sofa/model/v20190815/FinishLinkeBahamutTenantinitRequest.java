@@ -27,7 +27,7 @@ public class FinishLinkeBahamutTenantinitRequest extends RpcAcsRequest<FinishLin
 
 	private String tenantPath;
 	public FinishLinkeBahamutTenantinitRequest() {
-		super("SOFA", "2019-08-15", "FinishLinkeBahamutTenantinit", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "FinishLinkeBahamutTenantinit", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

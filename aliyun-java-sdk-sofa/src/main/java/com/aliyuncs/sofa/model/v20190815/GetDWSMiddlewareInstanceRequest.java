@@ -29,7 +29,7 @@ public class GetDWSMiddlewareInstanceRequest extends RpcAcsRequest<GetDWSMiddlew
 
 	private String workspaceId;
 	public GetDWSMiddlewareInstanceRequest() {
-		super("SOFA", "2019-08-15", "GetDWSMiddlewareInstance", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDWSMiddlewareInstance", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -38,7 +38,7 @@ public class UpdateMSDdsJobRequest extends RpcAcsRequest<UpdateMSDdsJobResponse>
 
 	private Integer id;
 	public UpdateMSDdsJobRequest() {
-		super("SOFA", "2019-08-15", "UpdateMSDdsJob", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateMSDdsJob", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

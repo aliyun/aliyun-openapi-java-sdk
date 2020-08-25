@@ -27,7 +27,7 @@ public class DescribeBuildpackSupportCodeRepoRequest extends RpcAcsRequest<Descr
 
 	private Long techstackId;
 	public DescribeBuildpackSupportCodeRepoRequest() {
-		super("SOFA", "2019-08-15", "DescribeBuildpackSupportCodeRepo", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DescribeBuildpackSupportCodeRepo", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class SaveLinkeBahamutBuildconfigRequest extends RpcAcsRequest<SaveLinkeB
 
 	private String tenantPath;
 	public SaveLinkeBahamutBuildconfigRequest() {
-		super("SOFA", "2019-08-15", "SaveLinkeBahamutBuildconfig", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "SaveLinkeBahamutBuildconfig", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

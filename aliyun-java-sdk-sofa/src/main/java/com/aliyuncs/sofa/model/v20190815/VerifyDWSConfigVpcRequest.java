@@ -27,7 +27,7 @@ public class VerifyDWSConfigVpcRequest extends RpcAcsRequest<VerifyDWSConfigVpcR
 
 	private String instanceId;
 	public VerifyDWSConfigVpcRequest() {
-		super("SOFA", "2019-08-15", "VerifyDWSConfigVpc", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "VerifyDWSConfigVpc", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

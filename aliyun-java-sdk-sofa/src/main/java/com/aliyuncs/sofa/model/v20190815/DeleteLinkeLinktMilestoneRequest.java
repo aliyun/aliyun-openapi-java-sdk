@@ -25,9 +25,9 @@ import com.aliyuncs.sofa.Endpoint;
 public class DeleteLinkeLinktMilestoneRequest extends RpcAcsRequest<DeleteLinkeLinktMilestoneResponse> {
 	   
 
-	private Long milestoneId;
+	private String milestoneId;
 	public DeleteLinkeLinktMilestoneRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeLinktMilestone", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteLinkeLinktMilestone", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,14 +35,14 @@ public class DeleteLinkeLinktMilestoneRequest extends RpcAcsRequest<DeleteLinkeL
 		} catch (Exception e) {}
 	}
 
-	public Long getMilestoneId() {
+	public String getMilestoneId() {
 		return this.milestoneId;
 	}
 
-	public void setMilestoneId(Long milestoneId) {
+	public void setMilestoneId(String milestoneId) {
 		this.milestoneId = milestoneId;
 		if(milestoneId != null){
-			putBodyParameter("MilestoneId", milestoneId.toString());
+			putBodyParameter("MilestoneId", milestoneId);
 		}
 	}
 

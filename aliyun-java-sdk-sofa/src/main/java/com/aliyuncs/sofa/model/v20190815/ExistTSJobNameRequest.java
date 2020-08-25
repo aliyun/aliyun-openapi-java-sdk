@@ -29,7 +29,7 @@ public class ExistTSJobNameRequest extends RpcAcsRequest<ExistTSJobNameResponse>
 
 	private String name;
 	public ExistTSJobNameRequest() {
-		super("SOFA", "2019-08-15", "ExistTSJobName", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ExistTSJobName", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class AddRmsAlertruleRequest extends RpcAcsRequest<AddRmsAlertruleRespons
 
 	private String envJsonStr;
 	public AddRmsAlertruleRequest() {
-		super("SOFA", "2019-08-15", "AddRmsAlertrule", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "AddRmsAlertrule", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -30,7 +30,7 @@ public class OfflineTSJobRequest extends RpcAcsRequest<OfflineTSJobResponse> {
 
 	private String instanceId;
 	public OfflineTSJobRequest() {
-		super("SOFA", "2019-08-15", "OfflineTSJob", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "OfflineTSJob", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

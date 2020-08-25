@@ -27,7 +27,7 @@ public class PushSofamqOrderVerifyRequest extends RpcAcsRequest<PushSofamqOrderV
 
 	private String data;
 	public PushSofamqOrderVerifyRequest() {
-		super("SOFA", "2019-08-15", "PushSofamqOrderVerify", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "PushSofamqOrderVerify", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

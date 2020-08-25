@@ -26,7 +26,9 @@ public class StartLinkeBahamutPrepubpipelineResponseUnmarshaller {
 		startLinkeBahamutPrepubpipelineResponse.setResultCode(_ctx.stringValue("StartLinkeBahamutPrepubpipelineResponse.ResultCode"));
 		startLinkeBahamutPrepubpipelineResponse.setResultMessage(_ctx.stringValue("StartLinkeBahamutPrepubpipelineResponse.ResultMessage"));
 		startLinkeBahamutPrepubpipelineResponse.setErrorMessage(_ctx.stringValue("StartLinkeBahamutPrepubpipelineResponse.ErrorMessage"));
+		startLinkeBahamutPrepubpipelineResponse.setErrorMsgParamsMap(_ctx.stringValue("StartLinkeBahamutPrepubpipelineResponse.ErrorMsgParamsMap"));
 		startLinkeBahamutPrepubpipelineResponse.setMessage(_ctx.stringValue("StartLinkeBahamutPrepubpipelineResponse.Message"));
+		startLinkeBahamutPrepubpipelineResponse.setResponseStatusCode(_ctx.longValue("StartLinkeBahamutPrepubpipelineResponse.ResponseStatusCode"));
 		startLinkeBahamutPrepubpipelineResponse.setSuccess(_ctx.booleanValue("StartLinkeBahamutPrepubpipelineResponse.Success"));
 	 
 	 	return startLinkeBahamutPrepubpipelineResponse;

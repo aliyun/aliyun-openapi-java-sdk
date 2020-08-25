@@ -28,6 +28,7 @@ public class UpdateLinkeLinktRiskpositionResponseUnmarshaller {
 		updateLinkeLinktRiskpositionResponse.setData(_ctx.booleanValue("UpdateLinkeLinktRiskpositionResponse.Data"));
 		updateLinkeLinktRiskpositionResponse.setErrorCode(_ctx.longValue("UpdateLinkeLinktRiskpositionResponse.ErrorCode"));
 		updateLinkeLinktRiskpositionResponse.setErrorMessage(_ctx.stringValue("UpdateLinkeLinktRiskpositionResponse.ErrorMessage"));
+		updateLinkeLinktRiskpositionResponse.setResponseStatusCode(_ctx.longValue("UpdateLinkeLinktRiskpositionResponse.ResponseStatusCode"));
 		updateLinkeLinktRiskpositionResponse.setSuccess(_ctx.booleanValue("UpdateLinkeLinktRiskpositionResponse.Success"));
 	 
 	 	return updateLinkeLinktRiskpositionResponse;

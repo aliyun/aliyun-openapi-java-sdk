@@ -33,7 +33,7 @@ public class DeleteAKSKubernetesResourceRequest extends RpcAcsRequest<DeleteAKSK
 
 	private String name;
 	public DeleteAKSKubernetesResourceRequest() {
-		super("SOFA", "2019-08-15", "DeleteAKSKubernetesResource", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteAKSKubernetesResource", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

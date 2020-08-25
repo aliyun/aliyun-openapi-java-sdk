@@ -29,7 +29,7 @@ public class CountRmsAlertrecordsRequest extends RpcAcsRequest<CountRmsAlertreco
 
 	private String queryJsonStr;
 	public CountRmsAlertrecordsRequest() {
-		super("SOFA", "2019-08-15", "CountRmsAlertrecords", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CountRmsAlertrecords", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

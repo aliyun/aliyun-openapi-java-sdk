@@ -14,6 +14,7 @@
 
 package com.aliyuncs.sofa.model.v20190815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.sofa.transform.v20190815.QueryODPEnvironmentResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -72,7 +73,11 @@ public class QueryODPEnvironmentResponse extends AcsResponse {
 
 		private String depolyMode;
 
+		private Boolean ldc;
+
 		private String netMode;
+
+		private List<String> datacenters;
 
 		public Boolean getAdvancedUser() {
 			return this.advancedUser;
@@ -98,12 +103,28 @@ public class QueryODPEnvironmentResponse extends AcsResponse {
 			this.depolyMode = depolyMode;
 		}
 
+		public Boolean getLdc() {
+			return this.ldc;
+		}
+
+		public void setLdc(Boolean ldc) {
+			this.ldc = ldc;
+		}
+
 		public String getNetMode() {
 			return this.netMode;
 		}
 
 		public void setNetMode(String netMode) {
 			this.netMode = netMode;
+		}
+
+		public List<String> getDatacenters() {
+			return this.datacenters;
+		}
+
+		public void setDatacenters(List<String> datacenters) {
+			this.datacenters = datacenters;
 		}
 	}
 

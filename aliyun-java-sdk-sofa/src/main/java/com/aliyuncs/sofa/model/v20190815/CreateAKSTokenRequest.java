@@ -35,7 +35,7 @@ public class CreateAKSTokenRequest extends RpcAcsRequest<CreateAKSTokenResponse>
 
 	private String namespace;
 	public CreateAKSTokenRequest() {
-		super("SOFA", "2019-08-15", "CreateAKSToken", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateAKSToken", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

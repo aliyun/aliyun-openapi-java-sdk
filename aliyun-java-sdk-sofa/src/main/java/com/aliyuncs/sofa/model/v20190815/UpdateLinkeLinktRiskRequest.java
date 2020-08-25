@@ -25,23 +25,23 @@ import com.aliyuncs.sofa.Endpoint;
 public class UpdateLinkeLinktRiskRequest extends RpcAcsRequest<UpdateLinkeLinktRiskResponse> {
 	   
 
-	private String ccJsonStr;
+	private String expectedCompletionDate;
 
-	private String assignedToJsonStr;
+	private String remark;
 
-	private String statusJsonStr;
-
-	private String remarkJsonStr;
+	private String title;
 
 	private Long id;
 
-	private String titleJsonStr;
+	private String cc;
 
-	private String levelJsonStr;
+	private String level;
 
-	private String expectedCompletionDateJsonStr;
+	private String assignedTo;
+
+	private String status;
 	public UpdateLinkeLinktRiskRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktRisk", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktRisk", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,47 +49,36 @@ public class UpdateLinkeLinktRiskRequest extends RpcAcsRequest<UpdateLinkeLinktR
 		} catch (Exception e) {}
 	}
 
-	public String getCcJsonStr() {
-		return this.ccJsonStr;
+	public String getExpectedCompletionDate() {
+		return this.expectedCompletionDate;
 	}
 
-	public void setCcJsonStr(String ccJsonStr) {
-		this.ccJsonStr = ccJsonStr;
-		if(ccJsonStr != null){
-			putBodyParameter("CcJsonStr", ccJsonStr);
+	public void setExpectedCompletionDate(String expectedCompletionDate) {
+		this.expectedCompletionDate = expectedCompletionDate;
+		if(expectedCompletionDate != null){
+			putBodyParameter("ExpectedCompletionDate", expectedCompletionDate);
 		}
 	}
 
-	public String getAssignedToJsonStr() {
-		return this.assignedToJsonStr;
+	public String getRemark() {
+		return this.remark;
 	}
 
-	public void setAssignedToJsonStr(String assignedToJsonStr) {
-		this.assignedToJsonStr = assignedToJsonStr;
-		if(assignedToJsonStr != null){
-			putBodyParameter("AssignedToJsonStr", assignedToJsonStr);
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putBodyParameter("Remark", remark);
 		}
 	}
 
-	public String getStatusJsonStr() {
-		return this.statusJsonStr;
+	public String getTitle() {
+		return this.title;
 	}
 
-	public void setStatusJsonStr(String statusJsonStr) {
-		this.statusJsonStr = statusJsonStr;
-		if(statusJsonStr != null){
-			putBodyParameter("StatusJsonStr", statusJsonStr);
-		}
-	}
-
-	public String getRemarkJsonStr() {
-		return this.remarkJsonStr;
-	}
-
-	public void setRemarkJsonStr(String remarkJsonStr) {
-		this.remarkJsonStr = remarkJsonStr;
-		if(remarkJsonStr != null){
-			putBodyParameter("RemarkJsonStr", remarkJsonStr);
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putBodyParameter("Title", title);
 		}
 	}
 
@@ -104,36 +93,47 @@ public class UpdateLinkeLinktRiskRequest extends RpcAcsRequest<UpdateLinkeLinktR
 		}
 	}
 
-	public String getTitleJsonStr() {
-		return this.titleJsonStr;
+	public String getCc() {
+		return this.cc;
 	}
 
-	public void setTitleJsonStr(String titleJsonStr) {
-		this.titleJsonStr = titleJsonStr;
-		if(titleJsonStr != null){
-			putBodyParameter("TitleJsonStr", titleJsonStr);
+	public void setCc(String cc) {
+		this.cc = cc;
+		if(cc != null){
+			putBodyParameter("Cc", cc);
 		}
 	}
 
-	public String getLevelJsonStr() {
-		return this.levelJsonStr;
+	public String getLevel() {
+		return this.level;
 	}
 
-	public void setLevelJsonStr(String levelJsonStr) {
-		this.levelJsonStr = levelJsonStr;
-		if(levelJsonStr != null){
-			putBodyParameter("LevelJsonStr", levelJsonStr);
+	public void setLevel(String level) {
+		this.level = level;
+		if(level != null){
+			putBodyParameter("Level", level);
 		}
 	}
 
-	public String getExpectedCompletionDateJsonStr() {
-		return this.expectedCompletionDateJsonStr;
+	public String getAssignedTo() {
+		return this.assignedTo;
 	}
 
-	public void setExpectedCompletionDateJsonStr(String expectedCompletionDateJsonStr) {
-		this.expectedCompletionDateJsonStr = expectedCompletionDateJsonStr;
-		if(expectedCompletionDateJsonStr != null){
-			putBodyParameter("ExpectedCompletionDateJsonStr", expectedCompletionDateJsonStr);
+	public void setAssignedTo(String assignedTo) {
+		this.assignedTo = assignedTo;
+		if(assignedTo != null){
+			putBodyParameter("AssignedTo", assignedTo);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putBodyParameter("Status", status);
 		}
 	}
 

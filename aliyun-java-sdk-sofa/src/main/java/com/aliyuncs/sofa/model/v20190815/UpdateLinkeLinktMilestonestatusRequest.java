@@ -25,11 +25,11 @@ import com.aliyuncs.sofa.Endpoint;
 public class UpdateLinkeLinktMilestonestatusRequest extends RpcAcsRequest<UpdateLinkeLinktMilestonestatusResponse> {
 	   
 
-	private Long milestoneId;
+	private String milestoneId;
 
 	private String status;
 	public UpdateLinkeLinktMilestonestatusRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktMilestonestatus", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktMilestonestatus", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +37,14 @@ public class UpdateLinkeLinktMilestonestatusRequest extends RpcAcsRequest<Update
 		} catch (Exception e) {}
 	}
 
-	public Long getMilestoneId() {
+	public String getMilestoneId() {
 		return this.milestoneId;
 	}
 
-	public void setMilestoneId(Long milestoneId) {
+	public void setMilestoneId(String milestoneId) {
 		this.milestoneId = milestoneId;
 		if(milestoneId != null){
-			putBodyParameter("MilestoneId", milestoneId.toString());
+			putBodyParameter("MilestoneId", milestoneId);
 		}
 	}
 

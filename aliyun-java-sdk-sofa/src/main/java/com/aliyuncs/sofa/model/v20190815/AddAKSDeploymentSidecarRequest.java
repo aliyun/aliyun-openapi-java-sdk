@@ -37,7 +37,7 @@ public class AddAKSDeploymentSidecarRequest extends RpcAcsRequest<AddAKSDeployme
 
 	private String secretName;
 	public AddAKSDeploymentSidecarRequest() {
-		super("SOFA", "2019-08-15", "AddAKSDeploymentSidecar", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "AddAKSDeploymentSidecar", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

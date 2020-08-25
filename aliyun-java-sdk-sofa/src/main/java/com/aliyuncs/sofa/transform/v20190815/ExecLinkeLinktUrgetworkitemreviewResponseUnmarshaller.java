@@ -28,6 +28,7 @@ public class ExecLinkeLinktUrgetworkitemreviewResponseUnmarshaller {
 		execLinkeLinktUrgetworkitemreviewResponse.setData(_ctx.booleanValue("ExecLinkeLinktUrgetworkitemreviewResponse.Data"));
 		execLinkeLinktUrgetworkitemreviewResponse.setErrorCode(_ctx.longValue("ExecLinkeLinktUrgetworkitemreviewResponse.ErrorCode"));
 		execLinkeLinktUrgetworkitemreviewResponse.setErrorMessage(_ctx.stringValue("ExecLinkeLinktUrgetworkitemreviewResponse.ErrorMessage"));
+		execLinkeLinktUrgetworkitemreviewResponse.setResponseStatusCode(_ctx.longValue("ExecLinkeLinktUrgetworkitemreviewResponse.ResponseStatusCode"));
 		execLinkeLinktUrgetworkitemreviewResponse.setSuccess(_ctx.booleanValue("ExecLinkeLinktUrgetworkitemreviewResponse.Success"));
 	 
 	 	return execLinkeLinktUrgetworkitemreviewResponse;

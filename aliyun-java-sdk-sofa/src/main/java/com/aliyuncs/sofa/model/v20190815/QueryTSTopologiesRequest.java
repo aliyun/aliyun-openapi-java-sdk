@@ -35,7 +35,7 @@ public class QueryTSTopologiesRequest extends RpcAcsRequest<QueryTSTopologiesRes
 
 	private String name;
 	public QueryTSTopologiesRequest() {
-		super("SOFA", "2019-08-15", "QueryTSTopologies", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryTSTopologies", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

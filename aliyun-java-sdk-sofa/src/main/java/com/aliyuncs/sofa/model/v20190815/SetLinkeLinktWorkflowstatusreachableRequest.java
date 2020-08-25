@@ -25,15 +25,15 @@ import com.aliyuncs.sofa.Endpoint;
 public class SetLinkeLinktWorkflowstatusreachableRequest extends RpcAcsRequest<SetLinkeLinktWorkflowstatusreachableResponse> {
 	   
 
-	private Long fromStatusId;
+	private String fromStatusId;
 
-	private Long toStatusId;
+	private String toStatusId;
 
-	private Long workflowId;
+	private String workflowId;
 
-	private Boolean reachable;
+	private String reachable;
 	public SetLinkeLinktWorkflowstatusreachableRequest() {
-		super("SOFA", "2019-08-15", "SetLinkeLinktWorkflowstatusreachable", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "SetLinkeLinktWorkflowstatusreachable", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,47 +41,47 @@ public class SetLinkeLinktWorkflowstatusreachableRequest extends RpcAcsRequest<S
 		} catch (Exception e) {}
 	}
 
-	public Long getFromStatusId() {
+	public String getFromStatusId() {
 		return this.fromStatusId;
 	}
 
-	public void setFromStatusId(Long fromStatusId) {
+	public void setFromStatusId(String fromStatusId) {
 		this.fromStatusId = fromStatusId;
 		if(fromStatusId != null){
-			putBodyParameter("FromStatusId", fromStatusId.toString());
+			putBodyParameter("FromStatusId", fromStatusId);
 		}
 	}
 
-	public Long getToStatusId() {
+	public String getToStatusId() {
 		return this.toStatusId;
 	}
 
-	public void setToStatusId(Long toStatusId) {
+	public void setToStatusId(String toStatusId) {
 		this.toStatusId = toStatusId;
 		if(toStatusId != null){
-			putBodyParameter("ToStatusId", toStatusId.toString());
+			putBodyParameter("ToStatusId", toStatusId);
 		}
 	}
 
-	public Long getWorkflowId() {
+	public String getWorkflowId() {
 		return this.workflowId;
 	}
 
-	public void setWorkflowId(Long workflowId) {
+	public void setWorkflowId(String workflowId) {
 		this.workflowId = workflowId;
 		if(workflowId != null){
-			putBodyParameter("WorkflowId", workflowId.toString());
+			putBodyParameter("WorkflowId", workflowId);
 		}
 	}
 
-	public Boolean getReachable() {
+	public String getReachable() {
 		return this.reachable;
 	}
 
-	public void setReachable(Boolean reachable) {
+	public void setReachable(String reachable) {
 		this.reachable = reachable;
 		if(reachable != null){
-			putBodyParameter("Reachable", reachable.toString());
+			putBodyParameter("Reachable", reachable);
 		}
 	}
 

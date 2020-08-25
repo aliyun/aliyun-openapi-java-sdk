@@ -33,7 +33,7 @@ public class AddMsDrmGrayDataRequest extends RpcAcsRequest<AddMsDrmGrayDataRespo
 
 	private String dataId;
 	public AddMsDrmGrayDataRequest() {
-		super("SOFA", "2019-08-15", "AddMsDrmGrayData", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "AddMsDrmGrayData", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

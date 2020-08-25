@@ -37,7 +37,7 @@ public class QueryLinkeBahamutQualitylogRequest extends RpcAcsRequest<QueryLinke
 
 	private String qualityItem;
 	public QueryLinkeBahamutQualitylogRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutQualitylog", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutQualitylog", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

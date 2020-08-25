@@ -27,9 +27,9 @@ public class ExecLinkeLinktTemplatecopyRequest extends RpcAcsRequest<ExecLinkeLi
 
 	private String projectSign;
 
-	private Long templateId;
+	private String templateId;
 	public ExecLinkeLinktTemplatecopyRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktTemplatecopy", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktTemplatecopy", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,14 +48,14 @@ public class ExecLinkeLinktTemplatecopyRequest extends RpcAcsRequest<ExecLinkeLi
 		}
 	}
 
-	public Long getTemplateId() {
+	public String getTemplateId() {
 		return this.templateId;
 	}
 
-	public void setTemplateId(Long templateId) {
+	public void setTemplateId(String templateId) {
 		this.templateId = templateId;
 		if(templateId != null){
-			putBodyParameter("TemplateId", templateId.toString());
+			putBodyParameter("TemplateId", templateId);
 		}
 	}
 

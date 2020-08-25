@@ -37,6 +37,7 @@ public class ListDTXAppsResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDTXAppsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setActionMode(_ctx.longValue("ListDTXAppsResponse.Data["+ i +"].ActionMode"));
 			dataItem.setAppName(_ctx.stringValue("ListDTXAppsResponse.Data["+ i +"].AppName"));
 			dataItem.setExceptionTotal(_ctx.longValue("ListDTXAppsResponse.Data["+ i +"].ExceptionTotal"));
 			dataItem.setGmtCreate(_ctx.stringValue("ListDTXAppsResponse.Data["+ i +"].GmtCreate"));

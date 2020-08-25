@@ -39,7 +39,7 @@ public class EnableClusterMeshRequest extends RpcAcsRequest<EnableClusterMeshRes
 
 	private String user;
 	public EnableClusterMeshRequest() {
-		super("SOFA", "2019-08-15", "EnableClusterMesh", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "EnableClusterMesh", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

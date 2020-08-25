@@ -31,7 +31,7 @@ public class QueryMsSgServiceKeywordRequest extends RpcAcsRequest<QueryMsSgServi
 
 	private String instanceId;
 	public QueryMsSgServiceKeywordRequest() {
-		super("SOFA", "2019-08-15", "QueryMsSgServiceKeyword", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryMsSgServiceKeyword", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

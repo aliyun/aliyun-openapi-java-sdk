@@ -29,7 +29,7 @@ public class OfflineMsSgServicePublishersRequest extends RpcAcsRequest<OfflineMs
 
 	private String instanceId;
 	public OfflineMsSgServicePublishersRequest() {
-		super("SOFA", "2019-08-15", "OfflineMsSgServicePublishers", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "OfflineMsSgServicePublishers", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

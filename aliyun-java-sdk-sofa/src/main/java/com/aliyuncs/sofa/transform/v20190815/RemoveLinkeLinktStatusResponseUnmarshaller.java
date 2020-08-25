@@ -28,6 +28,7 @@ public class RemoveLinkeLinktStatusResponseUnmarshaller {
 		removeLinkeLinktStatusResponse.setData(_ctx.booleanValue("RemoveLinkeLinktStatusResponse.Data"));
 		removeLinkeLinktStatusResponse.setErrorCode(_ctx.longValue("RemoveLinkeLinktStatusResponse.ErrorCode"));
 		removeLinkeLinktStatusResponse.setErrorMessage(_ctx.stringValue("RemoveLinkeLinktStatusResponse.ErrorMessage"));
+		removeLinkeLinktStatusResponse.setResponseStatusCode(_ctx.longValue("RemoveLinkeLinktStatusResponse.ResponseStatusCode"));
 		removeLinkeLinktStatusResponse.setSuccess(_ctx.booleanValue("RemoveLinkeLinktStatusResponse.Success"));
 	 
 	 	return removeLinkeLinktStatusResponse;

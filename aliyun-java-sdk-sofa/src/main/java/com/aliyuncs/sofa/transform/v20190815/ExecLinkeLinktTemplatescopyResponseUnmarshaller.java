@@ -28,6 +28,7 @@ public class ExecLinkeLinktTemplatescopyResponseUnmarshaller {
 		execLinkeLinktTemplatescopyResponse.setData(_ctx.booleanValue("ExecLinkeLinktTemplatescopyResponse.Data"));
 		execLinkeLinktTemplatescopyResponse.setErrorCode(_ctx.longValue("ExecLinkeLinktTemplatescopyResponse.ErrorCode"));
 		execLinkeLinktTemplatescopyResponse.setErrorMessage(_ctx.stringValue("ExecLinkeLinktTemplatescopyResponse.ErrorMessage"));
+		execLinkeLinktTemplatescopyResponse.setResponseStatusCode(_ctx.longValue("ExecLinkeLinktTemplatescopyResponse.ResponseStatusCode"));
 		execLinkeLinktTemplatescopyResponse.setSuccess(_ctx.booleanValue("ExecLinkeLinktTemplatescopyResponse.Success"));
 	 
 	 	return execLinkeLinktTemplatescopyResponse;

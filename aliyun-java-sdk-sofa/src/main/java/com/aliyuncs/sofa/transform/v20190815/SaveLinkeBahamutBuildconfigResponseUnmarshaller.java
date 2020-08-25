@@ -19,9 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.sofa.model.v20190815.SaveLinkeBahamutBuildconfigResponse;
 import com.aliyuncs.sofa.model.v20190815.SaveLinkeBahamutBuildconfigResponse.Result;
-import com.aliyuncs.sofa.model.v20190815.SaveLinkeBahamutBuildconfigResponse.Result.OssConfig;
-import com.aliyuncs.sofa.model.v20190815.SaveLinkeBahamutBuildconfigResponse.Result.RegistryConfigsItem;
-import com.aliyuncs.sofa.model.v20190815.SaveLinkeBahamutBuildconfigResponse.Result.SettingsFilesItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,47 +30,25 @@ public class SaveLinkeBahamutBuildconfigResponseUnmarshaller {
 		saveLinkeBahamutBuildconfigResponse.setResultCode(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.ResultCode"));
 		saveLinkeBahamutBuildconfigResponse.setResultMessage(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.ResultMessage"));
 		saveLinkeBahamutBuildconfigResponse.setErrorMessage(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.ErrorMessage"));
+		saveLinkeBahamutBuildconfigResponse.setErrorMsgParamsMap(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.ErrorMsgParamsMap"));
 		saveLinkeBahamutBuildconfigResponse.setMessage(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Message"));
+		saveLinkeBahamutBuildconfigResponse.setResponseStatusCode(_ctx.longValue("SaveLinkeBahamutBuildconfigResponse.ResponseStatusCode"));
 		saveLinkeBahamutBuildconfigResponse.setSuccess(_ctx.booleanValue("SaveLinkeBahamutBuildconfigResponse.Success"));
 
 		Result result = new Result();
+		result.setDefaultRegistryConfig(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.DefaultRegistryConfig"));
+		result.setOssConfig(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.OssConfig"));
 		result.setUseCustomProductOss(_ctx.booleanValue("SaveLinkeBahamutBuildconfigResponse.Result.UseCustomProductOss"));
 
-		OssConfig ossConfig = new OssConfig();
-		ossConfig.setAvaliable(_ctx.booleanValue("SaveLinkeBahamutBuildconfigResponse.Result.OssConfig.Avaliable"));
-		ossConfig.setOssAccessId(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.OssConfig.OssAccessId"));
-		ossConfig.setOssAccessKey(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.OssConfig.OssAccessKey"));
-		ossConfig.setOssBucketName(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.OssConfig.OssBucketName"));
-		ossConfig.setOssEndpoint(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.OssConfig.OssEndpoint"));
-		result.setOssConfig(ossConfig);
-
-		List<RegistryConfigsItem> registryConfigs = new ArrayList<RegistryConfigsItem>();
+		List<String> registryConfigs = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("SaveLinkeBahamutBuildconfigResponse.Result.RegistryConfigs.Length"); i++) {
-			RegistryConfigsItem registryConfigsItem = new RegistryConfigsItem();
-			registryConfigsItem.setHost(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.RegistryConfigs["+ i +"].Host"));
-			registryConfigsItem.setToken(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.RegistryConfigs["+ i +"].Token"));
-			registryConfigsItem.setUser(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.RegistryConfigs["+ i +"].User"));
-
-			List<String> secretKeys = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("SaveLinkeBahamutBuildconfigResponse.Result.RegistryConfigs["+ i +"].SecretKeys.Length"); j++) {
-				secretKeys.add(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.RegistryConfigs["+ i +"].SecretKeys["+ j +"]"));
-			}
-			registryConfigsItem.setSecretKeys(secretKeys);
-
-			registryConfigs.add(registryConfigsItem);
+			registryConfigs.add(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.RegistryConfigs["+ i +"]"));
 		}
 		result.setRegistryConfigs(registryConfigs);
 
-		List<SettingsFilesItem> settingsFiles = new ArrayList<SettingsFilesItem>();
+		List<String> settingsFiles = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("SaveLinkeBahamutBuildconfigResponse.Result.SettingsFiles.Length"); i++) {
-			SettingsFilesItem settingsFilesItem = new SettingsFilesItem();
-			settingsFilesItem.setFullUrl(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.SettingsFiles["+ i +"].FullUrl"));
-			settingsFilesItem.setName(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.SettingsFiles["+ i +"].Name"));
-			settingsFilesItem.setType(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.SettingsFiles["+ i +"].Type"));
-			settingsFilesItem.setUid(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.SettingsFiles["+ i +"].Uid"));
-			settingsFilesItem.setUrl(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.SettingsFiles["+ i +"].Url"));
-
-			settingsFiles.add(settingsFilesItem);
+			settingsFiles.add(_ctx.stringValue("SaveLinkeBahamutBuildconfigResponse.Result.SettingsFiles["+ i +"]"));
 		}
 		result.setSettingsFiles(settingsFiles);
 		saveLinkeBahamutBuildconfigResponse.setResult(result);

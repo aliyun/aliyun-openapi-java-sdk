@@ -33,7 +33,7 @@ public class GetDTXUploadUrlRequest extends RpcAcsRequest<GetDTXUploadUrlRespons
 
 	private String instanceId;
 	public GetDTXUploadUrlRequest() {
-		super("SOFA", "2019-08-15", "GetDTXUploadUrl", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDTXUploadUrl", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

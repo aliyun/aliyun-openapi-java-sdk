@@ -27,7 +27,7 @@ public class DescribeMetricsOverviewRequest extends RpcAcsRequest<DescribeMetric
 
 	private String instanceId;
 	public DescribeMetricsOverviewRequest() {
-		super("SOFA", "2019-08-15", "DescribeMetricsOverview", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DescribeMetricsOverview", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

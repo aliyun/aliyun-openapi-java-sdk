@@ -171,6 +171,8 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 
 			private String bornHost;
 
+			private String cell;
+
 			private Long costTime;
 
 			private String msgId;
@@ -195,6 +197,14 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 
 			public void setBornHost(String bornHost) {
 				this.bornHost = bornHost;
+			}
+
+			public String getCell() {
+				return this.cell;
+			}
+
+			public void setCell(String cell) {
+				this.cell = cell;
 			}
 
 			public Long getCostTime() {
@@ -271,6 +281,8 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 
 			public static class SubListItem {
 
+				private String cell;
+
 				private Long failCount;
 
 				private String subGroupName;
@@ -278,6 +290,14 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 				private Long successCount;
 
 				private List<ClientListItem> clientList;
+
+				public String getCell() {
+					return this.cell;
+				}
+
+				public void setCell(String cell) {
+					this.cell = cell;
+				}
 
 				public Long getFailCount() {
 					return this.failCount;

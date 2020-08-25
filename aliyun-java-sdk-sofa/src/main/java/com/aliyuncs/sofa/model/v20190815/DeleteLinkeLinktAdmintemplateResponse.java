@@ -30,9 +30,13 @@ public class DeleteLinkeLinktAdmintemplateResponse extends AcsResponse {
 
 	private String resultMessage;
 
+	private Boolean data;
+
 	private Long errorCode;
 
 	private String errorMessage;
+
+	private Long responseStatusCode;
 
 	private Boolean success;
 
@@ -60,6 +64,14 @@ public class DeleteLinkeLinktAdmintemplateResponse extends AcsResponse {
 		this.resultMessage = resultMessage;
 	}
 
+	public Boolean getData() {
+		return this.data;
+	}
+
+	public void setData(Boolean data) {
+		this.data = data;
+	}
+
 	public Long getErrorCode() {
 		return this.errorCode;
 	}
@@ -74,6 +86,14 @@ public class DeleteLinkeLinktAdmintemplateResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public Long getResponseStatusCode() {
+		return this.responseStatusCode;
+	}
+
+	public void setResponseStatusCode(Long responseStatusCode) {
+		this.responseStatusCode = responseStatusCode;
 	}
 
 	public Boolean getSuccess() {

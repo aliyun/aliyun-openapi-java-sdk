@@ -29,7 +29,7 @@ public class CreateLinkeLinktProjectroleRequest extends RpcAcsRequest<CreateLink
 
 	private String projectSign;
 	public CreateLinkeLinktProjectroleRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeLinktProjectrole", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateLinkeLinktProjectrole", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

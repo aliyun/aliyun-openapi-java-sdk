@@ -33,7 +33,7 @@ public class ImportTSJobsOssRequest extends RpcAcsRequest<ImportTSJobsOssRespons
 
 	private String instanceId;
 	public ImportTSJobsOssRequest() {
-		super("SOFA", "2019-08-15", "ImportTSJobsOss", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ImportTSJobsOss", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

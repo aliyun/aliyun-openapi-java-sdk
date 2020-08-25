@@ -67,6 +67,8 @@ public class QueryODPInstancesResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String bizVpcId;
+
 		private String configSpecDesc;
 
 		private String envMode;
@@ -81,11 +83,15 @@ public class QueryODPInstancesResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String instanceLanAddress;
+
 		private String instanceName;
 
 		private Long instancePort;
 
 		private String instanceStatus;
+
+		private String instanceType;
 
 		private String instanceVip;
 
@@ -94,6 +100,8 @@ public class QueryODPInstancesResponse extends AcsResponse {
 		private Long instanceWanPort;
 
 		private String instanceZone;
+
+		private Boolean legacy;
 
 		private Long machineCount;
 
@@ -106,6 +114,14 @@ public class QueryODPInstancesResponse extends AcsResponse {
 		private Long zoneCount;
 
 		private List<NodesItem> nodes;
+
+		public String getBizVpcId() {
+			return this.bizVpcId;
+		}
+
+		public void setBizVpcId(String bizVpcId) {
+			this.bizVpcId = bizVpcId;
+		}
 
 		public String getConfigSpecDesc() {
 			return this.configSpecDesc;
@@ -163,6 +179,14 @@ public class QueryODPInstancesResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
+		public String getInstanceLanAddress() {
+			return this.instanceLanAddress;
+		}
+
+		public void setInstanceLanAddress(String instanceLanAddress) {
+			this.instanceLanAddress = instanceLanAddress;
+		}
+
 		public String getInstanceName() {
 			return this.instanceName;
 		}
@@ -185,6 +209,14 @@ public class QueryODPInstancesResponse extends AcsResponse {
 
 		public void setInstanceStatus(String instanceStatus) {
 			this.instanceStatus = instanceStatus;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public String getInstanceVip() {
@@ -217,6 +249,14 @@ public class QueryODPInstancesResponse extends AcsResponse {
 
 		public void setInstanceZone(String instanceZone) {
 			this.instanceZone = instanceZone;
+		}
+
+		public Boolean getLegacy() {
+			return this.legacy;
+		}
+
+		public void setLegacy(Boolean legacy) {
+			this.legacy = legacy;
 		}
 
 		public Long getMachineCount() {
@@ -269,13 +309,25 @@ public class QueryODPInstancesResponse extends AcsResponse {
 
 		public static class NodesItem {
 
+			private String cellId;
+
+			private String cellName;
+
+			private String clusterId;
+
 			private String configSpecDesc;
 
 			private Long cpuCount;
 
+			private String envId;
+
 			private String envMode;
 
+			private String envName;
+
 			private String envTenant;
+
+			private String executionDetail;
 
 			private String gmtCreate;
 
@@ -287,15 +339,45 @@ public class QueryODPInstancesResponse extends AcsResponse {
 
 			private Long memoryCount;
 
+			private String nodeStatus;
+
 			private Long port;
 
 			private String vip;
+
+			private String yunyouDeployUnitUrl;
+
+			private String yunyouOpsPlanUrl;
 
 			private String zdalproxyInstanceId;
 
 			private String zdalproxyNodeId;
 
 			private String zone;
+
+			public String getCellId() {
+				return this.cellId;
+			}
+
+			public void setCellId(String cellId) {
+				this.cellId = cellId;
+			}
+
+			public String getCellName() {
+				return this.cellName;
+			}
+
+			public void setCellName(String cellName) {
+				this.cellName = cellName;
+			}
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
+			}
 
 			public String getConfigSpecDesc() {
 				return this.configSpecDesc;
@@ -313,6 +395,14 @@ public class QueryODPInstancesResponse extends AcsResponse {
 				this.cpuCount = cpuCount;
 			}
 
+			public String getEnvId() {
+				return this.envId;
+			}
+
+			public void setEnvId(String envId) {
+				this.envId = envId;
+			}
+
 			public String getEnvMode() {
 				return this.envMode;
 			}
@@ -321,12 +411,28 @@ public class QueryODPInstancesResponse extends AcsResponse {
 				this.envMode = envMode;
 			}
 
+			public String getEnvName() {
+				return this.envName;
+			}
+
+			public void setEnvName(String envName) {
+				this.envName = envName;
+			}
+
 			public String getEnvTenant() {
 				return this.envTenant;
 			}
 
 			public void setEnvTenant(String envTenant) {
 				this.envTenant = envTenant;
+			}
+
+			public String getExecutionDetail() {
+				return this.executionDetail;
+			}
+
+			public void setExecutionDetail(String executionDetail) {
+				this.executionDetail = executionDetail;
 			}
 
 			public String getGmtCreate() {
@@ -369,6 +475,14 @@ public class QueryODPInstancesResponse extends AcsResponse {
 				this.memoryCount = memoryCount;
 			}
 
+			public String getNodeStatus() {
+				return this.nodeStatus;
+			}
+
+			public void setNodeStatus(String nodeStatus) {
+				this.nodeStatus = nodeStatus;
+			}
+
 			public Long getPort() {
 				return this.port;
 			}
@@ -383,6 +497,22 @@ public class QueryODPInstancesResponse extends AcsResponse {
 
 			public void setVip(String vip) {
 				this.vip = vip;
+			}
+
+			public String getYunyouDeployUnitUrl() {
+				return this.yunyouDeployUnitUrl;
+			}
+
+			public void setYunyouDeployUnitUrl(String yunyouDeployUnitUrl) {
+				this.yunyouDeployUnitUrl = yunyouDeployUnitUrl;
+			}
+
+			public String getYunyouOpsPlanUrl() {
+				return this.yunyouOpsPlanUrl;
+			}
+
+			public void setYunyouOpsPlanUrl(String yunyouOpsPlanUrl) {
+				this.yunyouOpsPlanUrl = yunyouOpsPlanUrl;
 			}
 
 			public String getZdalproxyInstanceId() {

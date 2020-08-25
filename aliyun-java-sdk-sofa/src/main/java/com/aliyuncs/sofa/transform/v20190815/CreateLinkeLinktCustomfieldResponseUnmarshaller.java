@@ -19,8 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.sofa.model.v20190815.CreateLinkeLinktCustomfieldResponse;
 import com.aliyuncs.sofa.model.v20190815.CreateLinkeLinktCustomfieldResponse.Data;
-import com.aliyuncs.sofa.model.v20190815.CreateLinkeLinktCustomfieldResponse.Data.Creator;
-import com.aliyuncs.sofa.model.v20190815.CreateLinkeLinktCustomfieldResponse.Data.PossibleValuesItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,11 +31,13 @@ public class CreateLinkeLinktCustomfieldResponseUnmarshaller {
 		createLinkeLinktCustomfieldResponse.setResultMessage(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.ResultMessage"));
 		createLinkeLinktCustomfieldResponse.setErrorCode(_ctx.longValue("CreateLinkeLinktCustomfieldResponse.ErrorCode"));
 		createLinkeLinktCustomfieldResponse.setErrorMessage(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.ErrorMessage"));
+		createLinkeLinktCustomfieldResponse.setResponseStatusCode(_ctx.longValue("CreateLinkeLinktCustomfieldResponse.ResponseStatusCode"));
 		createLinkeLinktCustomfieldResponse.setSuccess(_ctx.booleanValue("CreateLinkeLinktCustomfieldResponse.Success"));
 
 		Data data = new Data();
 		data.setCopyFrom(_ctx.longValue("CreateLinkeLinktCustomfieldResponse.Data.CopyFrom"));
 		data.setCreatedAt(_ctx.longValue("CreateLinkeLinktCustomfieldResponse.Data.CreatedAt"));
+		data.setCreator(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator"));
 		data.setDefaultValue(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.DefaultValue"));
 		data.setDeleted(_ctx.booleanValue("CreateLinkeLinktCustomfieldResponse.Data.Deleted"));
 		data.setDescription(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Description"));
@@ -79,64 +79,9 @@ public class CreateLinkeLinktCustomfieldResponseUnmarshaller {
 		}
 		data.setDynamicOptionFetchInfluencedFields(dynamicOptionFetchInfluencedFields);
 
-		Creator creator = new Creator();
-		creator.setAccount(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.Account"));
-		creator.setAdDomain(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.AdDomain"));
-		creator.setAliFullName(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.AliFullName"));
-		creator.setAuthToken(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.AuthToken"));
-		creator.setBuName(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.BuName"));
-		creator.setBuNo(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.BuNo"));
-		creator.setCustomer(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.Customer"));
-		creator.setDeleted(_ctx.booleanValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.Deleted"));
-		creator.setDeptName(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.DeptName"));
-		creator.setDeptNo(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.DeptNo"));
-		creator.setEmail(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.Email"));
-		creator.setEmpId(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.EmpId"));
-		creator.setEmpType(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.EmpType"));
-		creator.setEmpTypeExt(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.EmpTypeExt"));
-		creator.setFullPartTime(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.FullPartTime"));
-		creator.setGitModified(_ctx.longValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.GitModified"));
-		creator.setGitPassword(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.GitPassword"));
-		creator.setGmtCreate(_ctx.longValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.GmtCreate"));
-		creator.setGmtEntry(_ctx.longValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.GmtEntry"));
-		creator.setGmtLeave(_ctx.longValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.GmtLeave"));
-		creator.setGmtModified(_ctx.longValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.GmtModified"));
-		creator.setLevel(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.Level"));
-		creator.setLoginAccount(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.LoginAccount"));
-		creator.setLoginName(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.LoginName"));
-		creator.setManager(_ctx.booleanValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.Manager"));
-		creator.setMobile(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.Mobile"));
-		creator.setName(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.Name"));
-		creator.setNickName(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.NickName"));
-		creator.setRealName(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.RealName"));
-		creator.setSuperName(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.SuperName"));
-		creator.setSuperNickName(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.SuperNickName"));
-		creator.setSuperWorkNo(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.SuperWorkNo"));
-		creator.setTenant(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.Tenant"));
-		creator.setTenantAdmin(_ctx.booleanValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.TenantAdmin"));
-		creator.setUid(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.Uid"));
-		creator.setUniqueId(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.UniqueId"));
-		creator.setUserToken(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.UserToken"));
-		creator.setVirtName(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.VirtName"));
-		creator.setVirtWorkNo(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.VirtWorkNo"));
-		creator.setWorkspace(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.Workspace"));
-		creator.setWorkNo(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.WorkNo"));
-		creator.setWorkStatus(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.WorkStatus"));
-
-		List<String> tenants = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.Tenants.Length"); i++) {
-			tenants.add(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.Creator.Tenants["+ i +"]"));
-		}
-		creator.setTenants(tenants);
-		data.setCreator(creator);
-
-		List<PossibleValuesItem> possibleValues = new ArrayList<PossibleValuesItem>();
+		List<String> possibleValues = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("CreateLinkeLinktCustomfieldResponse.Data.PossibleValues.Length"); i++) {
-			PossibleValuesItem possibleValuesItem = new PossibleValuesItem();
-			possibleValuesItem.setKey(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.PossibleValues["+ i +"].Key"));
-			possibleValuesItem.setLabel(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.PossibleValues["+ i +"].Label"));
-
-			possibleValues.add(possibleValuesItem);
+			possibleValues.add(_ctx.stringValue("CreateLinkeLinktCustomfieldResponse.Data.PossibleValues["+ i +"]"));
 		}
 		data.setPossibleValues(possibleValues);
 		createLinkeLinktCustomfieldResponse.setData(data);

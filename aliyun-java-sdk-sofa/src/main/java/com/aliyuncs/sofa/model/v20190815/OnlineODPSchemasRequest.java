@@ -31,7 +31,7 @@ public class OnlineODPSchemasRequest extends RpcAcsRequest<OnlineODPSchemasRespo
 
 	private String instanceId;
 	public OnlineODPSchemasRequest() {
-		super("SOFA", "2019-08-15", "OnlineODPSchemas", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "OnlineODPSchemas", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

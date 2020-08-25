@@ -48,6 +48,7 @@ public class GetMqSofamqTraceResultResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetMqSofamqTraceResultResponse.Data.TraceList.Length"); i++) {
 			TraceListItem traceListItem = new TraceListItem();
 			traceListItem.setBornHost(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].BornHost"));
+			traceListItem.setCell(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].Cell"));
 			traceListItem.setCostTime(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].CostTime"));
 			traceListItem.setMsgId(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].MsgId"));
 			traceListItem.setMsgKey(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].MsgKey"));
@@ -60,6 +61,7 @@ public class GetMqSofamqTraceResultResponseUnmarshaller {
 			List<SubListItem> subList = new ArrayList<SubListItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList.Length"); j++) {
 				SubListItem subListItem = new SubListItem();
+				subListItem.setCell(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].Cell"));
 				subListItem.setFailCount(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].FailCount"));
 				subListItem.setSubGroupName(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].SubGroupName"));
 				subListItem.setSuccessCount(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].SuccessCount"));

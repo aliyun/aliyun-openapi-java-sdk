@@ -41,7 +41,7 @@ public class CreateLinkeLinktTemplateRequest extends RpcAcsRequest<CreateLinkeLi
 
 	private String name;
 	public CreateLinkeLinktTemplateRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeLinktTemplate", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateLinkeLinktTemplate", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

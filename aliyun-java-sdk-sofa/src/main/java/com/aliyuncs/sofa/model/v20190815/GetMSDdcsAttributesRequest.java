@@ -29,7 +29,7 @@ public class GetMSDdcsAttributesRequest extends RpcAcsRequest<GetMSDdcsAttribute
 
 	private Long id;
 	public GetMSDdcsAttributesRequest() {
-		super("SOFA", "2019-08-15", "GetMSDdcsAttributes", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetMSDdcsAttributes", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

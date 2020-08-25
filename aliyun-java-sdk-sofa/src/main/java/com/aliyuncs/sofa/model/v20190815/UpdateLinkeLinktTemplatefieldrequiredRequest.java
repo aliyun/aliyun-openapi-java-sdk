@@ -25,13 +25,13 @@ import com.aliyuncs.sofa.Endpoint;
 public class UpdateLinkeLinktTemplatefieldrequiredRequest extends RpcAcsRequest<UpdateLinkeLinktTemplatefieldrequiredResponse> {
 	   
 
-	private Boolean required;
+	private String required;
 
-	private Long customFieldId;
+	private String customFieldId;
 
-	private Long templateId;
+	private String templateId;
 	public UpdateLinkeLinktTemplatefieldrequiredRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktTemplatefieldrequired", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktTemplatefieldrequired", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,36 +39,36 @@ public class UpdateLinkeLinktTemplatefieldrequiredRequest extends RpcAcsRequest<
 		} catch (Exception e) {}
 	}
 
-	public Boolean getRequired() {
+	public String getRequired() {
 		return this.required;
 	}
 
-	public void setRequired(Boolean required) {
+	public void setRequired(String required) {
 		this.required = required;
 		if(required != null){
-			putBodyParameter("Required", required.toString());
+			putBodyParameter("Required", required);
 		}
 	}
 
-	public Long getCustomFieldId() {
+	public String getCustomFieldId() {
 		return this.customFieldId;
 	}
 
-	public void setCustomFieldId(Long customFieldId) {
+	public void setCustomFieldId(String customFieldId) {
 		this.customFieldId = customFieldId;
 		if(customFieldId != null){
-			putBodyParameter("CustomFieldId", customFieldId.toString());
+			putBodyParameter("CustomFieldId", customFieldId);
 		}
 	}
 
-	public Long getTemplateId() {
+	public String getTemplateId() {
 		return this.templateId;
 	}
 
-	public void setTemplateId(Long templateId) {
+	public void setTemplateId(String templateId) {
 		this.templateId = templateId;
 		if(templateId != null){
-			putBodyParameter("TemplateId", templateId.toString());
+			putBodyParameter("TemplateId", templateId);
 		}
 	}
 

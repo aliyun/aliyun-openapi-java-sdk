@@ -27,7 +27,7 @@ public class QueryTSZoneModeRequest extends RpcAcsRequest<QueryTSZoneModeRespons
 
 	private String instanceId;
 	public QueryTSZoneModeRequest() {
-		super("SOFA", "2019-08-15", "QueryTSZoneMode", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryTSZoneMode", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

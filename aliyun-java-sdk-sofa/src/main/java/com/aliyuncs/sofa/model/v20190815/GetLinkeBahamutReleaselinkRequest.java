@@ -27,7 +27,7 @@ public class GetLinkeBahamutReleaselinkRequest extends RpcAcsRequest<GetLinkeBah
 
 	private String releaseId;
 	public GetLinkeBahamutReleaselinkRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutReleaselink", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutReleaselink", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

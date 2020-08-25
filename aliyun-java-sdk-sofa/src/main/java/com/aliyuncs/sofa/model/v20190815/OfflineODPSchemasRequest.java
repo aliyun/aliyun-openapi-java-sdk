@@ -31,7 +31,7 @@ public class OfflineODPSchemasRequest extends RpcAcsRequest<OfflineODPSchemasRes
 
 	private String instanceId;
 	public OfflineODPSchemasRequest() {
-		super("SOFA", "2019-08-15", "OfflineODPSchemas", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "OfflineODPSchemas", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

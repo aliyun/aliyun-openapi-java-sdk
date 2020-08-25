@@ -40,7 +40,7 @@ public class UpdateAKSNodeDaemonSetRequest extends RpcAcsRequest<UpdateAKSNodeDa
 
 	private String operatorName;
 	public UpdateAKSNodeDaemonSetRequest() {
-		super("SOFA", "2019-08-15", "UpdateAKSNodeDaemonSet", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateAKSNodeDaemonSet", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

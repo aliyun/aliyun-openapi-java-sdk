@@ -29,7 +29,7 @@ public class DeleteDWSUsersRequest extends RpcAcsRequest<DeleteDWSUsersResponse>
 
 	private String userName;
 	public DeleteDWSUsersRequest() {
-		super("SOFA", "2019-08-15", "DeleteDWSUsers", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteDWSUsers", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

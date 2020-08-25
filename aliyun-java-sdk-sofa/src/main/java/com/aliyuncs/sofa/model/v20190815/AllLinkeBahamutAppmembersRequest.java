@@ -29,7 +29,7 @@ public class AllLinkeBahamutAppmembersRequest extends RpcAcsRequest<AllLinkeBaha
 
 	private String tenantId;
 	public AllLinkeBahamutAppmembersRequest() {
-		super("SOFA", "2019-08-15", "AllLinkeBahamutAppmembers", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "AllLinkeBahamutAppmembers", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

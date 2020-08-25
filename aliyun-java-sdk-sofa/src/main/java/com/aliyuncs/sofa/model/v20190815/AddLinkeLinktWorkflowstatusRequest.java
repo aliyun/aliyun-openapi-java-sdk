@@ -35,7 +35,7 @@ public class AddLinkeLinktWorkflowstatusRequest extends RpcAcsRequest<AddLinkeLi
 
 	private Long convertStatusId;
 	public AddLinkeLinktWorkflowstatusRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeLinktWorkflowstatus", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "AddLinkeLinktWorkflowstatus", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

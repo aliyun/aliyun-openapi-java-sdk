@@ -29,7 +29,7 @@ public class GetMsDrmAttributesRequest extends RpcAcsRequest<GetMsDrmAttributesR
 
 	private String dataId;
 	public GetMsDrmAttributesRequest() {
-		super("SOFA", "2019-08-15", "GetMsDrmAttributes", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetMsDrmAttributes", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

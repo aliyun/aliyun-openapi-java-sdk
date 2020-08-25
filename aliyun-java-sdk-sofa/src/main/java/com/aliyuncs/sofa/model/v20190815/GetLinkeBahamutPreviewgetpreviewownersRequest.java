@@ -1,0 +1,80 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.sofa.model.v20190815;
+
+import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sofa.Endpoint;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class GetLinkeBahamutPreviewgetpreviewownersRequest extends RpcAcsRequest<GetLinkeBahamutPreviewgetpreviewownersResponse> {
+	   
+
+	private String source;
+
+	private String stringtarget;
+
+	private String iterationUnitId;
+	public GetLinkeBahamutPreviewgetpreviewownersRequest() {
+		super("SOFA", "2019-08-15", "GetLinkeBahamutPreviewgetpreviewowners", "sofa");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putBodyParameter("Source", source);
+		}
+	}
+
+	public String getStringtarget() {
+		return this.stringtarget;
+	}
+
+	public void setStringtarget(String stringtarget) {
+		this.stringtarget = stringtarget;
+		if(stringtarget != null){
+			putBodyParameter("Stringtarget", stringtarget);
+		}
+	}
+
+	public String getIterationUnitId() {
+		return this.iterationUnitId;
+	}
+
+	public void setIterationUnitId(String iterationUnitId) {
+		this.iterationUnitId = iterationUnitId;
+		if(iterationUnitId != null){
+			putBodyParameter("IterationUnitId", iterationUnitId);
+		}
+	}
+
+	@Override
+	public Class<GetLinkeBahamutPreviewgetpreviewownersResponse> getResponseClass() {
+		return GetLinkeBahamutPreviewgetpreviewownersResponse.class;
+	}
+
+}

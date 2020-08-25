@@ -27,7 +27,7 @@ public class GetLinkeBahamutIterationworkitemsRequest extends RpcAcsRequest<GetL
 
 	private String iterationExternalId;
 	public GetLinkeBahamutIterationworkitemsRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationworkitems", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationworkitems", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

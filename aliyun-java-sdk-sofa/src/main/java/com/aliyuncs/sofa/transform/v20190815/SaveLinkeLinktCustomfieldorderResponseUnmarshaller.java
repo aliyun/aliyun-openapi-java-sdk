@@ -28,6 +28,7 @@ public class SaveLinkeLinktCustomfieldorderResponseUnmarshaller {
 		saveLinkeLinktCustomfieldorderResponse.setData(_ctx.booleanValue("SaveLinkeLinktCustomfieldorderResponse.Data"));
 		saveLinkeLinktCustomfieldorderResponse.setErrorCode(_ctx.longValue("SaveLinkeLinktCustomfieldorderResponse.ErrorCode"));
 		saveLinkeLinktCustomfieldorderResponse.setErrorMessage(_ctx.stringValue("SaveLinkeLinktCustomfieldorderResponse.ErrorMessage"));
+		saveLinkeLinktCustomfieldorderResponse.setResponseStatusCode(_ctx.longValue("SaveLinkeLinktCustomfieldorderResponse.ResponseStatusCode"));
 		saveLinkeLinktCustomfieldorderResponse.setSuccess(_ctx.booleanValue("SaveLinkeLinktCustomfieldorderResponse.Success"));
 	 
 	 	return saveLinkeLinktCustomfieldorderResponse;

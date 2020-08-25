@@ -35,7 +35,7 @@ public class GetDWSPartitionConsumptionLatencyHisRequest extends RpcAcsRequest<G
 
 	private String instanceId;
 	public GetDWSPartitionConsumptionLatencyHisRequest() {
-		super("SOFA", "2019-08-15", "GetDWSPartitionConsumptionLatencyHis", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDWSPartitionConsumptionLatencyHis", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

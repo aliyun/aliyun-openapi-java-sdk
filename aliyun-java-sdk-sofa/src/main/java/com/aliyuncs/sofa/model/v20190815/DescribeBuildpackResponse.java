@@ -99,13 +99,21 @@ public class DescribeBuildpackResponse extends AcsResponse {
 
 		private Long appServiceCount;
 
+		private String buildCommand;
+
 		private String contactInfo;
+
+		private String createdFrom;
+
+		private String creationTime;
 
 		private Boolean debugMode;
 
 		private String depracationNote;
 
 		private String description;
+
+		private String extraInfo;
 
 		private String fullVersion;
 
@@ -116,6 +124,8 @@ public class DescribeBuildpackResponse extends AcsResponse {
 		private Long majorVersion;
 
 		private Long minorVersion;
+
+		private String modificationTime;
 
 		private String originType;
 
@@ -131,11 +141,15 @@ public class DescribeBuildpackResponse extends AcsResponse {
 
 		private Long techstackId;
 
+		private String tenantId;
+
 		private List<SupportedOsItem> supportedOs;
 
 		private List<SupportedRegionsListItem> supportedRegionsList;
 
 		private List<String> availableTenantNames;
+
+		private List<String> creationChain;
 
 		private List<String> supportedRegions;
 
@@ -149,12 +163,36 @@ public class DescribeBuildpackResponse extends AcsResponse {
 			this.appServiceCount = appServiceCount;
 		}
 
+		public String getBuildCommand() {
+			return this.buildCommand;
+		}
+
+		public void setBuildCommand(String buildCommand) {
+			this.buildCommand = buildCommand;
+		}
+
 		public String getContactInfo() {
 			return this.contactInfo;
 		}
 
 		public void setContactInfo(String contactInfo) {
 			this.contactInfo = contactInfo;
+		}
+
+		public String getCreatedFrom() {
+			return this.createdFrom;
+		}
+
+		public void setCreatedFrom(String createdFrom) {
+			this.createdFrom = createdFrom;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public Boolean getDebugMode() {
@@ -179,6 +217,14 @@ public class DescribeBuildpackResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getExtraInfo() {
+			return this.extraInfo;
+		}
+
+		public void setExtraInfo(String extraInfo) {
+			this.extraInfo = extraInfo;
 		}
 
 		public String getFullVersion() {
@@ -219,6 +265,14 @@ public class DescribeBuildpackResponse extends AcsResponse {
 
 		public void setMinorVersion(Long minorVersion) {
 			this.minorVersion = minorVersion;
+		}
+
+		public String getModificationTime() {
+			return this.modificationTime;
+		}
+
+		public void setModificationTime(String modificationTime) {
+			this.modificationTime = modificationTime;
 		}
 
 		public String getOriginType() {
@@ -277,6 +331,14 @@ public class DescribeBuildpackResponse extends AcsResponse {
 			this.techstackId = techstackId;
 		}
 
+		public String getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
+		}
+
 		public List<SupportedOsItem> getSupportedOs() {
 			return this.supportedOs;
 		}
@@ -299,6 +361,14 @@ public class DescribeBuildpackResponse extends AcsResponse {
 
 		public void setAvailableTenantNames(List<String> availableTenantNames) {
 			this.availableTenantNames = availableTenantNames;
+		}
+
+		public List<String> getCreationChain() {
+			return this.creationChain;
+		}
+
+		public void setCreationChain(List<String> creationChain) {
+			this.creationChain = creationChain;
 		}
 
 		public List<String> getSupportedRegions() {
@@ -442,9 +512,97 @@ public class DescribeBuildpackResponse extends AcsResponse {
 
 		public static class SupportedRegionsListItem {
 
+			private String buildpackId;
+
+			private String buildpackTenantId;
+
+			private String creationTime;
+
+			private String fileChecksum;
+
+			private String fileLocation;
+
+			private Long fileSize;
+
+			private String fileStatus;
+
+			private String fromRegionId;
+
 			private String id;
 
-			private String name;
+			private String modificationTime;
+
+			private String objectName;
+
+			private String originalFileName;
+
+			private String readableFileSize;
+
+			private Region region;
+
+			public String getBuildpackId() {
+				return this.buildpackId;
+			}
+
+			public void setBuildpackId(String buildpackId) {
+				this.buildpackId = buildpackId;
+			}
+
+			public String getBuildpackTenantId() {
+				return this.buildpackTenantId;
+			}
+
+			public void setBuildpackTenantId(String buildpackTenantId) {
+				this.buildpackTenantId = buildpackTenantId;
+			}
+
+			public String getCreationTime() {
+				return this.creationTime;
+			}
+
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
+			}
+
+			public String getFileChecksum() {
+				return this.fileChecksum;
+			}
+
+			public void setFileChecksum(String fileChecksum) {
+				this.fileChecksum = fileChecksum;
+			}
+
+			public String getFileLocation() {
+				return this.fileLocation;
+			}
+
+			public void setFileLocation(String fileLocation) {
+				this.fileLocation = fileLocation;
+			}
+
+			public Long getFileSize() {
+				return this.fileSize;
+			}
+
+			public void setFileSize(Long fileSize) {
+				this.fileSize = fileSize;
+			}
+
+			public String getFileStatus() {
+				return this.fileStatus;
+			}
+
+			public void setFileStatus(String fileStatus) {
+				this.fileStatus = fileStatus;
+			}
+
+			public String getFromRegionId() {
+				return this.fromRegionId;
+			}
+
+			public void setFromRegionId(String fromRegionId) {
+				this.fromRegionId = fromRegionId;
+			}
 
 			public String getId() {
 				return this.id;
@@ -454,12 +612,267 @@ public class DescribeBuildpackResponse extends AcsResponse {
 				this.id = id;
 			}
 
-			public String getName() {
-				return this.name;
+			public String getModificationTime() {
+				return this.modificationTime;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setModificationTime(String modificationTime) {
+				this.modificationTime = modificationTime;
+			}
+
+			public String getObjectName() {
+				return this.objectName;
+			}
+
+			public void setObjectName(String objectName) {
+				this.objectName = objectName;
+			}
+
+			public String getOriginalFileName() {
+				return this.originalFileName;
+			}
+
+			public void setOriginalFileName(String originalFileName) {
+				this.originalFileName = originalFileName;
+			}
+
+			public String getReadableFileSize() {
+				return this.readableFileSize;
+			}
+
+			public void setReadableFileSize(String readableFileSize) {
+				this.readableFileSize = readableFileSize;
+			}
+
+			public Region getRegion() {
+				return this.region;
+			}
+
+			public void setRegion(Region region) {
+				this.region = region;
+			}
+
+			public static class Region {
+
+				private String buildpackId;
+
+				private String buildpackTenantId;
+
+				private String creationTime;
+
+				private String description;
+
+				private String fileChecksum;
+
+				private String fileLocation;
+
+				private Long fileSize;
+
+				private String fileStatus;
+
+				private String fromRegionId;
+
+				private String iaasProviderId;
+
+				private String id;
+
+				private String identity;
+
+				private String modificationTime;
+
+				private String name;
+
+				private String networkType;
+
+				private String objectName;
+
+				private String originalFileName;
+
+				private String readableFileSize;
+
+				private String state;
+
+				private String utcCreate;
+
+				private String utcModified;
+
+				private String zoneDtos;
+
+				public String getBuildpackId() {
+					return this.buildpackId;
+				}
+
+				public void setBuildpackId(String buildpackId) {
+					this.buildpackId = buildpackId;
+				}
+
+				public String getBuildpackTenantId() {
+					return this.buildpackTenantId;
+				}
+
+				public void setBuildpackTenantId(String buildpackTenantId) {
+					this.buildpackTenantId = buildpackTenantId;
+				}
+
+				public String getCreationTime() {
+					return this.creationTime;
+				}
+
+				public void setCreationTime(String creationTime) {
+					this.creationTime = creationTime;
+				}
+
+				public String getDescription() {
+					return this.description;
+				}
+
+				public void setDescription(String description) {
+					this.description = description;
+				}
+
+				public String getFileChecksum() {
+					return this.fileChecksum;
+				}
+
+				public void setFileChecksum(String fileChecksum) {
+					this.fileChecksum = fileChecksum;
+				}
+
+				public String getFileLocation() {
+					return this.fileLocation;
+				}
+
+				public void setFileLocation(String fileLocation) {
+					this.fileLocation = fileLocation;
+				}
+
+				public Long getFileSize() {
+					return this.fileSize;
+				}
+
+				public void setFileSize(Long fileSize) {
+					this.fileSize = fileSize;
+				}
+
+				public String getFileStatus() {
+					return this.fileStatus;
+				}
+
+				public void setFileStatus(String fileStatus) {
+					this.fileStatus = fileStatus;
+				}
+
+				public String getFromRegionId() {
+					return this.fromRegionId;
+				}
+
+				public void setFromRegionId(String fromRegionId) {
+					this.fromRegionId = fromRegionId;
+				}
+
+				public String getIaasProviderId() {
+					return this.iaasProviderId;
+				}
+
+				public void setIaasProviderId(String iaasProviderId) {
+					this.iaasProviderId = iaasProviderId;
+				}
+
+				public String getId() {
+					return this.id;
+				}
+
+				public void setId(String id) {
+					this.id = id;
+				}
+
+				public String getIdentity() {
+					return this.identity;
+				}
+
+				public void setIdentity(String identity) {
+					this.identity = identity;
+				}
+
+				public String getModificationTime() {
+					return this.modificationTime;
+				}
+
+				public void setModificationTime(String modificationTime) {
+					this.modificationTime = modificationTime;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public String getNetworkType() {
+					return this.networkType;
+				}
+
+				public void setNetworkType(String networkType) {
+					this.networkType = networkType;
+				}
+
+				public String getObjectName() {
+					return this.objectName;
+				}
+
+				public void setObjectName(String objectName) {
+					this.objectName = objectName;
+				}
+
+				public String getOriginalFileName() {
+					return this.originalFileName;
+				}
+
+				public void setOriginalFileName(String originalFileName) {
+					this.originalFileName = originalFileName;
+				}
+
+				public String getReadableFileSize() {
+					return this.readableFileSize;
+				}
+
+				public void setReadableFileSize(String readableFileSize) {
+					this.readableFileSize = readableFileSize;
+				}
+
+				public String getState() {
+					return this.state;
+				}
+
+				public void setState(String state) {
+					this.state = state;
+				}
+
+				public String getUtcCreate() {
+					return this.utcCreate;
+				}
+
+				public void setUtcCreate(String utcCreate) {
+					this.utcCreate = utcCreate;
+				}
+
+				public String getUtcModified() {
+					return this.utcModified;
+				}
+
+				public void setUtcModified(String utcModified) {
+					this.utcModified = utcModified;
+				}
+
+				public String getZoneDtos() {
+					return this.zoneDtos;
+				}
+
+				public void setZoneDtos(String zoneDtos) {
+					this.zoneDtos = zoneDtos;
+				}
 			}
 		}
 

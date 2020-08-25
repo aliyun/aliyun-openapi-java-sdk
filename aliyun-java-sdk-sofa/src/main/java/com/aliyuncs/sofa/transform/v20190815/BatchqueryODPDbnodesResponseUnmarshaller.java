@@ -19,9 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.sofa.model.v20190815.BatchqueryODPDbnodesResponse;
 import com.aliyuncs.sofa.model.v20190815.BatchqueryODPDbnodesResponse.DataItem;
-import com.aliyuncs.sofa.model.v20190815.BatchqueryODPDbnodesResponse.DataItem.Topology;
-import com.aliyuncs.sofa.model.v20190815.BatchqueryODPDbnodesResponse.DataItem.Topology.Master;
-import com.aliyuncs.sofa.model.v20190815.BatchqueryODPDbnodesResponse.DataItem.Topology.SlavesItem;
+import com.aliyuncs.sofa.model.v20190815.BatchqueryODPDbnodesResponse.DataItem.DatacenterVipMappingItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,7 +34,6 @@ public class BatchqueryODPDbnodesResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("BatchqueryODPDbnodesResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setAvailable(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Available"));
 			dataItem.setCheckDbStatus(_ctx.booleanValue("BatchqueryODPDbnodesResponse.Data["+ i +"].CheckDbStatus"));
 			dataItem.setDbType(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].DbType"));
 			dataItem.setDescription(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Description"));
@@ -45,35 +42,23 @@ public class BatchqueryODPDbnodesResponseUnmarshaller {
 			dataItem.setGmtCreate(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].GmtCreate"));
 			dataItem.setGmtModified(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].GmtModified"));
 			dataItem.setId(_ctx.longValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Id"));
-			dataItem.setMasterId(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].MasterId"));
 			dataItem.setNetMode(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].NetMode"));
 			dataItem.setNodeId(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].NodeId"));
 			dataItem.setPassword(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Password"));
-			dataItem.setReadOnly(_ctx.booleanValue("BatchqueryODPDbnodesResponse.Data["+ i +"].ReadOnly"));
-			dataItem.setRegion(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Region"));
 			dataItem.setStatus(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Status"));
 			dataItem.setUrl(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Url"));
 			dataItem.setUsername(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Username"));
 			dataItem.setVpcId(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].VpcId"));
-			dataItem.setWeight(_ctx.longValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Weight"));
 
-			Topology topology = new Topology();
+			List<DatacenterVipMappingItem> datacenterVipMapping = new ArrayList<DatacenterVipMappingItem>();
+			for (int j = 0; j < _ctx.lengthValue("BatchqueryODPDbnodesResponse.Data["+ i +"].DatacenterVipMapping.Length"); j++) {
+				DatacenterVipMappingItem datacenterVipMappingItem = new DatacenterVipMappingItem();
+				datacenterVipMappingItem.setDataCenter(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].DatacenterVipMapping["+ j +"].DataCenter"));
+				datacenterVipMappingItem.setDbUrl(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].DatacenterVipMapping["+ j +"].DbUrl"));
 
-			Master master = new Master();
-			master.setNodeId(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Topology.Master.NodeId"));
-			master.setWeight(_ctx.longValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Topology.Master.Weight"));
-			topology.setMaster(master);
-
-			List<SlavesItem> slaves = new ArrayList<SlavesItem>();
-			for (int j = 0; j < _ctx.lengthValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Topology.Slaves.Length"); j++) {
-				SlavesItem slavesItem = new SlavesItem();
-				slavesItem.setNodeId(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Topology.Slaves["+ j +"].NodeId"));
-				slavesItem.setWeight(_ctx.longValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Topology.Slaves["+ j +"].Weight"));
-
-				slaves.add(slavesItem);
+				datacenterVipMapping.add(datacenterVipMappingItem);
 			}
-			topology.setSlaves(slaves);
-			dataItem.setTopology(topology);
+			dataItem.setDatacenterVipMapping(datacenterVipMapping);
 
 			data.add(dataItem);
 		}

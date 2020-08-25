@@ -28,6 +28,7 @@ public class CheckLinkeLinktRemovetemplatefromprojectResponseUnmarshaller {
 		checkLinkeLinktRemovetemplatefromprojectResponse.setResultMessage(_ctx.stringValue("CheckLinkeLinktRemovetemplatefromprojectResponse.ResultMessage"));
 		checkLinkeLinktRemovetemplatefromprojectResponse.setErrorCode(_ctx.longValue("CheckLinkeLinktRemovetemplatefromprojectResponse.ErrorCode"));
 		checkLinkeLinktRemovetemplatefromprojectResponse.setErrorMessage(_ctx.stringValue("CheckLinkeLinktRemovetemplatefromprojectResponse.ErrorMessage"));
+		checkLinkeLinktRemovetemplatefromprojectResponse.setResponseStatusCode(_ctx.longValue("CheckLinkeLinktRemovetemplatefromprojectResponse.ResponseStatusCode"));
 		checkLinkeLinktRemovetemplatefromprojectResponse.setSuccess(_ctx.booleanValue("CheckLinkeLinktRemovetemplatefromprojectResponse.Success"));
 
 		Data data = new Data();

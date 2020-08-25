@@ -14,6 +14,7 @@
 
 package com.aliyuncs.sofa.model.v20190815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.sofa.transform.v20190815.ModifyBuildpackResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -29,6 +30,10 @@ public class ModifyBuildpackResponse extends AcsResponse {
 	private String resultCode;
 
 	private String resultMessage;
+
+	private String buildpackId;
+
+	private List<UploadEndpointsItem> uploadEndpoints;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,6 +57,125 @@ public class ModifyBuildpackResponse extends AcsResponse {
 
 	public void setResultMessage(String resultMessage) {
 		this.resultMessage = resultMessage;
+	}
+
+	public String getBuildpackId() {
+		return this.buildpackId;
+	}
+
+	public void setBuildpackId(String buildpackId) {
+		this.buildpackId = buildpackId;
+	}
+
+	public List<UploadEndpointsItem> getUploadEndpoints() {
+		return this.uploadEndpoints;
+	}
+
+	public void setUploadEndpoints(List<UploadEndpointsItem> uploadEndpoints) {
+		this.uploadEndpoints = uploadEndpoints;
+	}
+
+	public static class UploadEndpointsItem {
+
+		private String accessKeyId;
+
+		private String bucket;
+
+		private String encodedPolicy;
+
+		private String expiration;
+
+		private String filePath;
+
+		private String host;
+
+		private String regionId;
+
+		private String signature;
+
+		private String storageType;
+
+		private String url;
+
+		public String getAccessKeyId() {
+			return this.accessKeyId;
+		}
+
+		public void setAccessKeyId(String accessKeyId) {
+			this.accessKeyId = accessKeyId;
+		}
+
+		public String getBucket() {
+			return this.bucket;
+		}
+
+		public void setBucket(String bucket) {
+			this.bucket = bucket;
+		}
+
+		public String getEncodedPolicy() {
+			return this.encodedPolicy;
+		}
+
+		public void setEncodedPolicy(String encodedPolicy) {
+			this.encodedPolicy = encodedPolicy;
+		}
+
+		public String getExpiration() {
+			return this.expiration;
+		}
+
+		public void setExpiration(String expiration) {
+			this.expiration = expiration;
+		}
+
+		public String getFilePath() {
+			return this.filePath;
+		}
+
+		public void setFilePath(String filePath) {
+			this.filePath = filePath;
+		}
+
+		public String getHost() {
+			return this.host;
+		}
+
+		public void setHost(String host) {
+			this.host = host;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getSignature() {
+			return this.signature;
+		}
+
+		public void setSignature(String signature) {
+			this.signature = signature;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
 	}
 
 	@Override

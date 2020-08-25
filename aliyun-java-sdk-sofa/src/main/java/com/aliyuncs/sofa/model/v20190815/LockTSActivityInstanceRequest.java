@@ -35,7 +35,7 @@ public class LockTSActivityInstanceRequest extends RpcAcsRequest<LockTSActivityI
 
 	private String jobRequestId;
 	public LockTSActivityInstanceRequest() {
-		super("SOFA", "2019-08-15", "LockTSActivityInstance", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "LockTSActivityInstance", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

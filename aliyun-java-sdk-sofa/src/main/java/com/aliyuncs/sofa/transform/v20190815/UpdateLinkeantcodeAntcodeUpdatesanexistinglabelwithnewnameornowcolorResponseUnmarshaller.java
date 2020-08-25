@@ -1,0 +1,43 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.sofa.transform.v20190815;
+
+import com.aliyuncs.sofa.model.v20190815.UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+
+public class UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponseUnmarshaller {
+
+	public static UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse unmarshall(UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse, UnmarshallerContext _ctx) {
+		
+		updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.setRequestId(_ctx.stringValue("UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.RequestId"));
+		updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.setResultCode(_ctx.stringValue("UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.ResultCode"));
+		updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.setResultMessage(_ctx.stringValue("UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.ResultMessage"));
+		updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.setColor(_ctx.stringValue("UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.Color"));
+		updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.setCreatedAt(_ctx.stringValue("UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.CreatedAt"));
+		updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.setDescription(_ctx.stringValue("UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.Description"));
+		updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.setGroupId(_ctx.longValue("UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.GroupId"));
+		updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.setId(_ctx.longValue("UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.Id"));
+		updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.setName(_ctx.stringValue("UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.Name"));
+		updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.setProjectId(_ctx.longValue("UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.ProjectId"));
+		updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.setResponseStatusCode(_ctx.longValue("UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.ResponseStatusCode"));
+		updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.setSourceType(_ctx.stringValue("UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.SourceType"));
+		updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.setTemplate(_ctx.booleanValue("UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.Template"));
+		updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.setTenantId(_ctx.longValue("UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.TenantId"));
+		updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.setUpdatedAt(_ctx.stringValue("UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse.UpdatedAt"));
+	 
+	 	return updateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorResponse;
+	}
+}

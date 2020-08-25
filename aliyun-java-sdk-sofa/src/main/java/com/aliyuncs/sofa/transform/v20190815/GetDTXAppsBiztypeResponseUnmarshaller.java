@@ -30,6 +30,7 @@ public class GetDTXAppsBiztypeResponseUnmarshaller {
 		getDTXAppsBiztypeResponse.setResultCode(_ctx.stringValue("GetDTXAppsBiztypeResponse.ResultCode"));
 		getDTXAppsBiztypeResponse.setResultMessage(_ctx.stringValue("GetDTXAppsBiztypeResponse.ResultMessage"));
 		getDTXAppsBiztypeResponse.setAppName(_ctx.stringValue("GetDTXAppsBiztypeResponse.AppName"));
+		getDTXAppsBiztypeResponse.setStatemachineJson(_ctx.stringValue("GetDTXAppsBiztypeResponse.StatemachineJson"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetDTXAppsBiztypeResponse.Data.Length"); i++) {

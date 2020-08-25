@@ -33,6 +33,8 @@ public class GetDTXAppsBiztypeResponse extends AcsResponse {
 
 	private String appName;
 
+	private String statemachineJson;
+
 	private List<DataItem> data;
 
 	public String getRequestId() {
@@ -65,6 +67,14 @@ public class GetDTXAppsBiztypeResponse extends AcsResponse {
 
 	public void setAppName(String appName) {
 		this.appName = appName;
+	}
+
+	public String getStatemachineJson() {
+		return this.statemachineJson;
+	}
+
+	public void setStatemachineJson(String statemachineJson) {
+		this.statemachineJson = statemachineJson;
 	}
 
 	public List<DataItem> getData() {

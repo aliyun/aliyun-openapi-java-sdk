@@ -35,7 +35,7 @@ public class UnLockTSActivityInstanceRequest extends RpcAcsRequest<UnLockTSActiv
 
 	private String jobRequestId;
 	public UnLockTSActivityInstanceRequest() {
-		super("SOFA", "2019-08-15", "UnLockTSActivityInstance", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UnLockTSActivityInstance", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

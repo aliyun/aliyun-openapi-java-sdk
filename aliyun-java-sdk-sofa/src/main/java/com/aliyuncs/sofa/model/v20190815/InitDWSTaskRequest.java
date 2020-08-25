@@ -29,7 +29,7 @@ public class InitDWSTaskRequest extends RpcAcsRequest<InitDWSTaskResponse> {
 
 	private String taskModelJsonStr;
 	public InitDWSTaskRequest() {
-		super("SOFA", "2019-08-15", "InitDWSTask", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "InitDWSTask", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

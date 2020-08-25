@@ -32,7 +32,7 @@ public class DescribeBuildpackIdVersionPairsRequest extends RpcAcsRequest<Descri
 
 	private List<String> statusesRepeatLists;
 	public DescribeBuildpackIdVersionPairsRequest() {
-		super("SOFA", "2019-08-15", "DescribeBuildpackIdVersionPairs", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DescribeBuildpackIdVersionPairs", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

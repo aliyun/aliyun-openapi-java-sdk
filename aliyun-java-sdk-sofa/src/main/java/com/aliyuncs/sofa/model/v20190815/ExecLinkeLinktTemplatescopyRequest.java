@@ -29,7 +29,7 @@ public class ExecLinkeLinktTemplatescopyRequest extends RpcAcsRequest<ExecLinkeL
 
 	private String projectSign;
 	public ExecLinkeLinktTemplatescopyRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktTemplatescopy", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktTemplatescopy", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

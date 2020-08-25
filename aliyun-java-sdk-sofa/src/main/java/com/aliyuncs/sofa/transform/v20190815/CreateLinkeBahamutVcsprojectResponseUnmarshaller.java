@@ -16,7 +16,6 @@ package com.aliyuncs.sofa.transform.v20190815;
 
 import com.aliyuncs.sofa.model.v20190815.CreateLinkeBahamutVcsprojectResponse;
 import com.aliyuncs.sofa.model.v20190815.CreateLinkeBahamutVcsprojectResponse.Result;
-import com.aliyuncs.sofa.model.v20190815.CreateLinkeBahamutVcsprojectResponse.Result.Namespace;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,7 +27,9 @@ public class CreateLinkeBahamutVcsprojectResponseUnmarshaller {
 		createLinkeBahamutVcsprojectResponse.setResultCode(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.ResultCode"));
 		createLinkeBahamutVcsprojectResponse.setResultMessage(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.ResultMessage"));
 		createLinkeBahamutVcsprojectResponse.setErrorMessage(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.ErrorMessage"));
+		createLinkeBahamutVcsprojectResponse.setErrorMsgParamsMap(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.ErrorMsgParamsMap"));
 		createLinkeBahamutVcsprojectResponse.setMessage(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.Message"));
+		createLinkeBahamutVcsprojectResponse.setResponseStatusCode(_ctx.longValue("CreateLinkeBahamutVcsprojectResponse.ResponseStatusCode"));
 		createLinkeBahamutVcsprojectResponse.setSuccess(_ctx.booleanValue("CreateLinkeBahamutVcsprojectResponse.Success"));
 
 		Result result = new Result();
@@ -37,20 +38,12 @@ public class CreateLinkeBahamutVcsprojectResponseUnmarshaller {
 		result.setHttpUrlToRepo(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.Result.HttpUrlToRepo"));
 		result.setId(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.Result.Id"));
 		result.setName(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.Result.Name"));
+		result.setNamespace(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.Result.Namespace"));
 		result.setPublicStatus(_ctx.booleanValue("CreateLinkeBahamutVcsprojectResponse.Result.PublicStatus"));
 		result.setSshUrlToRepo(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.Result.SshUrlToRepo"));
 		result.setVisibility(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.Result.Visibility"));
 		result.setVisibilityLevel(_ctx.longValue("CreateLinkeBahamutVcsprojectResponse.Result.VisibilityLevel"));
 		result.setWebUrl(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.Result.WebUrl"));
-
-		Namespace namespace = new Namespace();
-		namespace.setId(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.Result.Namespace.Id"));
-		namespace.setName(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.Result.Namespace.Name"));
-		namespace.setPath(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.Result.Namespace.Path"));
-		namespace.setPublicStatus(_ctx.booleanValue("CreateLinkeBahamutVcsprojectResponse.Result.Namespace.PublicStatus"));
-		namespace.setType(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.Result.Namespace.Type"));
-		namespace.setWebUrl(_ctx.stringValue("CreateLinkeBahamutVcsprojectResponse.Result.Namespace.WebUrl"));
-		result.setNamespace(namespace);
 		createLinkeBahamutVcsprojectResponse.setResult(result);
 	 
 	 	return createLinkeBahamutVcsprojectResponse;

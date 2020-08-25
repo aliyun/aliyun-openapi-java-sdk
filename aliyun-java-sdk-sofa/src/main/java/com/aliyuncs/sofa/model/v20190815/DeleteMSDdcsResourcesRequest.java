@@ -29,7 +29,7 @@ public class DeleteMSDdcsResourcesRequest extends RpcAcsRequest<DeleteMSDdcsReso
 
 	private Long id;
 	public DeleteMSDdcsResourcesRequest() {
-		super("SOFA", "2019-08-15", "DeleteMSDdcsResources", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteMSDdcsResources", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

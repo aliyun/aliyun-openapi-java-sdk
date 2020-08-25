@@ -33,7 +33,7 @@ public class CountLinkeBahamutStageuncompleteflowtasksRequest extends RpcAcsRequ
 
 	private String stageId;
 	public CountLinkeBahamutStageuncompleteflowtasksRequest() {
-		super("SOFA", "2019-08-15", "CountLinkeBahamutStageuncompleteflowtasks", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CountLinkeBahamutStageuncompleteflowtasks", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

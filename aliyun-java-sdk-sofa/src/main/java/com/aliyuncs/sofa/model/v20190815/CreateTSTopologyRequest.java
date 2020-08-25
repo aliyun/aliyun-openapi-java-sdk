@@ -45,7 +45,7 @@ public class CreateTSTopologyRequest extends RpcAcsRequest<CreateTSTopologyRespo
 
 	private String customParams;
 	public CreateTSTopologyRequest() {
-		super("SOFA", "2019-08-15", "CreateTSTopology", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateTSTopology", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

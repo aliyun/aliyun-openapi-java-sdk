@@ -35,7 +35,7 @@ public class ListAKSAcrNamespaceRepoRequest extends RpcAcsRequest<ListAKSAcrName
 
 	private String status;
 	public ListAKSAcrNamespaceRepoRequest() {
-		super("SOFA", "2019-08-15", "ListAKSAcrNamespaceRepo", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ListAKSAcrNamespaceRepo", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

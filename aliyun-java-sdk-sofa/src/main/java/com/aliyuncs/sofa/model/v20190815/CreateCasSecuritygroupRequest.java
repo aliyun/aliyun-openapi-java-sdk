@@ -35,7 +35,7 @@ public class CreateCasSecuritygroupRequest extends RpcAcsRequest<CreateCasSecuri
 
 	private String region;
 	public CreateCasSecuritygroupRequest() {
-		super("SOFA", "2019-08-15", "CreateCasSecuritygroup", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateCasSecuritygroup", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

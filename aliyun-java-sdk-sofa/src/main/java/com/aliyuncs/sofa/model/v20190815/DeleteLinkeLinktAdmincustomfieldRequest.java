@@ -25,9 +25,9 @@ import com.aliyuncs.sofa.Endpoint;
 public class DeleteLinkeLinktAdmincustomfieldRequest extends RpcAcsRequest<DeleteLinkeLinktAdmincustomfieldResponse> {
 	   
 
-	private Long customFieldId;
+	private String customFieldId;
 	public DeleteLinkeLinktAdmincustomfieldRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeLinktAdmincustomfield", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteLinkeLinktAdmincustomfield", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,14 +35,14 @@ public class DeleteLinkeLinktAdmincustomfieldRequest extends RpcAcsRequest<Delet
 		} catch (Exception e) {}
 	}
 
-	public Long getCustomFieldId() {
+	public String getCustomFieldId() {
 		return this.customFieldId;
 	}
 
-	public void setCustomFieldId(Long customFieldId) {
+	public void setCustomFieldId(String customFieldId) {
 		this.customFieldId = customFieldId;
 		if(customFieldId != null){
-			putBodyParameter("CustomFieldId", customFieldId.toString());
+			putBodyParameter("CustomFieldId", customFieldId);
 		}
 	}
 

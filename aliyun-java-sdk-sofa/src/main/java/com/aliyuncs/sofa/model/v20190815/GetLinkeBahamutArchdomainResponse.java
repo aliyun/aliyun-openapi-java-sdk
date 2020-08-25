@@ -14,6 +14,7 @@
 
 package com.aliyuncs.sofa.model.v20190815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.sofa.transform.v20190815.GetLinkeBahamutArchdomainResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -32,11 +33,17 @@ public class GetLinkeBahamutArchdomainResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private String errorMsgParamsMap;
+
 	private String message;
+
+	private Long responseStatusCode;
 
 	private Boolean success;
 
-	private Result result;
+	private List<ResultItem> result;
+
+	private Paginator paginator;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -70,12 +77,28 @@ public class GetLinkeBahamutArchdomainResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getErrorMsgParamsMap() {
+		return this.errorMsgParamsMap;
+	}
+
+	public void setErrorMsgParamsMap(String errorMsgParamsMap) {
+		this.errorMsgParamsMap = errorMsgParamsMap;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Long getResponseStatusCode() {
+		return this.responseStatusCode;
+	}
+
+	public void setResponseStatusCode(Long responseStatusCode) {
+		this.responseStatusCode = responseStatusCode;
 	}
 
 	public Boolean getSuccess() {
@@ -86,15 +109,23 @@ public class GetLinkeBahamutArchdomainResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Result getResult() {
+	public List<ResultItem> getResult() {
 		return this.result;
 	}
 
-	public void setResult(Result result) {
+	public void setResult(List<ResultItem> result) {
 		this.result = result;
 	}
 
-	public static class Result {
+	public Paginator getPaginator() {
+		return this.paginator;
+	}
+
+	public void setPaginator(Paginator paginator) {
+		this.paginator = paginator;
+	}
+
+	public static class ResultItem {
 
 		private String appNum;
 
@@ -144,6 +175,49 @@ public class GetLinkeBahamutArchdomainResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+	}
+
+	public static class Paginator {
+
+		private Long itemCount;
+
+		private Long page;
+
+		private Long pageCount;
+
+		private Long pageSize;
+
+		public Long getItemCount() {
+			return this.itemCount;
+		}
+
+		public void setItemCount(Long itemCount) {
+			this.itemCount = itemCount;
+		}
+
+		public Long getPage() {
+			return this.page;
+		}
+
+		public void setPage(Long page) {
+			this.page = page;
+		}
+
+		public Long getPageCount() {
+			return this.pageCount;
+		}
+
+		public void setPageCount(Long pageCount) {
+			this.pageCount = pageCount;
+		}
+
+		public Long getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Long pageSize) {
+			this.pageSize = pageSize;
 		}
 	}
 

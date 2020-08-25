@@ -31,7 +31,7 @@ public class UpdateODPInstancesUsersRequest extends RpcAcsRequest<UpdateODPInsta
 
 	private String userJsonStr;
 	public UpdateODPInstancesUsersRequest() {
-		super("SOFA", "2019-08-15", "UpdateODPInstancesUsers", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateODPInstancesUsers", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

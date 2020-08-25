@@ -33,7 +33,7 @@ public class SetMsSgServiceParamWeightRequest extends RpcAcsRequest<SetMsSgServi
 
 	private String dataId;
 	public SetMsSgServiceParamWeightRequest() {
-		super("SOFA", "2019-08-15", "SetMsSgServiceParamWeight", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "SetMsSgServiceParamWeight", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

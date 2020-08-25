@@ -36,6 +36,8 @@ public class ExecLinkeLinktSwapworkflowstatuspositionResponse extends AcsRespons
 
 	private String errorMessage;
 
+	private Long responseStatusCode;
+
 	private Boolean success;
 
 	public String getRequestId() {
@@ -84,6 +86,14 @@ public class ExecLinkeLinktSwapworkflowstatuspositionResponse extends AcsRespons
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public Long getResponseStatusCode() {
+		return this.responseStatusCode;
+	}
+
+	public void setResponseStatusCode(Long responseStatusCode) {
+		this.responseStatusCode = responseStatusCode;
 	}
 
 	public Boolean getSuccess() {

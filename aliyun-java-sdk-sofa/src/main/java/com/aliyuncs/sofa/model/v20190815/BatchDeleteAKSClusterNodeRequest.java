@@ -36,7 +36,7 @@ public class BatchDeleteAKSClusterNodeRequest extends RpcAcsRequest<BatchDeleteA
 
 	private String operatorName;
 	public BatchDeleteAKSClusterNodeRequest() {
-		super("SOFA", "2019-08-15", "BatchDeleteAKSClusterNode", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "BatchDeleteAKSClusterNode", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

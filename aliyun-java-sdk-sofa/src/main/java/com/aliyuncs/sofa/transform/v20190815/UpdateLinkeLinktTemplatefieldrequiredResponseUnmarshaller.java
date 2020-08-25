@@ -28,6 +28,7 @@ public class UpdateLinkeLinktTemplatefieldrequiredResponseUnmarshaller {
 		updateLinkeLinktTemplatefieldrequiredResponse.setData(_ctx.booleanValue("UpdateLinkeLinktTemplatefieldrequiredResponse.Data"));
 		updateLinkeLinktTemplatefieldrequiredResponse.setErrorCode(_ctx.longValue("UpdateLinkeLinktTemplatefieldrequiredResponse.ErrorCode"));
 		updateLinkeLinktTemplatefieldrequiredResponse.setErrorMessage(_ctx.stringValue("UpdateLinkeLinktTemplatefieldrequiredResponse.ErrorMessage"));
+		updateLinkeLinktTemplatefieldrequiredResponse.setResponseStatusCode(_ctx.longValue("UpdateLinkeLinktTemplatefieldrequiredResponse.ResponseStatusCode"));
 		updateLinkeLinktTemplatefieldrequiredResponse.setSuccess(_ctx.booleanValue("UpdateLinkeLinktTemplatefieldrequiredResponse.Success"));
 	 
 	 	return updateLinkeLinktTemplatefieldrequiredResponse;

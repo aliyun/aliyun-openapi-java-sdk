@@ -33,7 +33,7 @@ public class RetryODPJobsSqlbatchRequest extends RpcAcsRequest<RetryODPJobsSqlba
 
 	private String instanceId;
 	public RetryODPJobsSqlbatchRequest() {
-		super("SOFA", "2019-08-15", "RetryODPJobsSqlbatch", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "RetryODPJobsSqlbatch", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

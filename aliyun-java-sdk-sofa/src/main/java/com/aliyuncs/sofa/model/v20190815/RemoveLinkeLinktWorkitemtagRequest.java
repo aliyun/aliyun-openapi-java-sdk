@@ -25,11 +25,11 @@ import com.aliyuncs.sofa.Endpoint;
 public class RemoveLinkeLinktWorkitemtagRequest extends RpcAcsRequest<RemoveLinkeLinktWorkitemtagResponse> {
 	   
 
-	private Long tagId;
+	private String tagId;
 
 	private String workItemSign;
 	public RemoveLinkeLinktWorkitemtagRequest() {
-		super("SOFA", "2019-08-15", "RemoveLinkeLinktWorkitemtag", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "RemoveLinkeLinktWorkitemtag", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +37,14 @@ public class RemoveLinkeLinktWorkitemtagRequest extends RpcAcsRequest<RemoveLink
 		} catch (Exception e) {}
 	}
 
-	public Long getTagId() {
+	public String getTagId() {
 		return this.tagId;
 	}
 
-	public void setTagId(Long tagId) {
+	public void setTagId(String tagId) {
 		this.tagId = tagId;
 		if(tagId != null){
-			putBodyParameter("TagId", tagId.toString());
+			putBodyParameter("TagId", tagId);
 		}
 	}
 

@@ -30,7 +30,7 @@ public class QueryTSJobItemByNameRequest extends RpcAcsRequest<QueryTSJobItemByN
 
 	private String instanceId;
 	public QueryTSJobItemByNameRequest() {
-		super("SOFA", "2019-08-15", "QueryTSJobItemByName", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryTSJobItemByName", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

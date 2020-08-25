@@ -60,7 +60,7 @@ public class CreateCasComputerRequest extends RpcAcsRequest<CreateCasComputerRes
 
 	private String name;
 	public CreateCasComputerRequest() {
-		super("SOFA", "2019-08-15", "CreateCasComputer", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateCasComputer", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

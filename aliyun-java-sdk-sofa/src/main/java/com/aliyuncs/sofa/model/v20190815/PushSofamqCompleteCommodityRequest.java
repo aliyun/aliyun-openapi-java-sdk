@@ -27,7 +27,7 @@ public class PushSofamqCompleteCommodityRequest extends RpcAcsRequest<PushSofamq
 
 	private String data;
 	public PushSofamqCompleteCommodityRequest() {
-		super("SOFA", "2019-08-15", "PushSofamqCompleteCommodity", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "PushSofamqCompleteCommodity", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

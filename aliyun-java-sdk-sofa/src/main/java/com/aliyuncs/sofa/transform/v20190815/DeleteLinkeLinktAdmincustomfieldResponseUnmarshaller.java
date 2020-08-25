@@ -28,6 +28,7 @@ public class DeleteLinkeLinktAdmincustomfieldResponseUnmarshaller {
 		deleteLinkeLinktAdmincustomfieldResponse.setData(_ctx.booleanValue("DeleteLinkeLinktAdmincustomfieldResponse.Data"));
 		deleteLinkeLinktAdmincustomfieldResponse.setErrorCode(_ctx.longValue("DeleteLinkeLinktAdmincustomfieldResponse.ErrorCode"));
 		deleteLinkeLinktAdmincustomfieldResponse.setErrorMessage(_ctx.stringValue("DeleteLinkeLinktAdmincustomfieldResponse.ErrorMessage"));
+		deleteLinkeLinktAdmincustomfieldResponse.setResponseStatusCode(_ctx.longValue("DeleteLinkeLinktAdmincustomfieldResponse.ResponseStatusCode"));
 		deleteLinkeLinktAdmincustomfieldResponse.setSuccess(_ctx.booleanValue("DeleteLinkeLinktAdmincustomfieldResponse.Success"));
 	 
 	 	return deleteLinkeLinktAdmincustomfieldResponse;

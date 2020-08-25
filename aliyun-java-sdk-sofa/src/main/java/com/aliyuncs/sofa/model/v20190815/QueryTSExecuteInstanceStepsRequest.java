@@ -31,7 +31,7 @@ public class QueryTSExecuteInstanceStepsRequest extends RpcAcsRequest<QueryTSExe
 
 	private String jobRequestId;
 	public QueryTSExecuteInstanceStepsRequest() {
-		super("SOFA", "2019-08-15", "QueryTSExecuteInstanceSteps", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryTSExecuteInstanceSteps", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

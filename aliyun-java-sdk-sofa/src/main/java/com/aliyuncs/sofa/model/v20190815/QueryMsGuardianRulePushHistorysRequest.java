@@ -35,7 +35,7 @@ public class QueryMsGuardianRulePushHistorysRequest extends RpcAcsRequest<QueryM
 
 	private String instanceId;
 	public QueryMsGuardianRulePushHistorysRequest() {
-		super("SOFA", "2019-08-15", "QueryMsGuardianRulePushHistorys", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryMsGuardianRulePushHistorys", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

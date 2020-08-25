@@ -28,6 +28,7 @@ public class UpdateLinkeLinktWorkflowstatusResponseUnmarshaller {
 		updateLinkeLinktWorkflowstatusResponse.setData(_ctx.booleanValue("UpdateLinkeLinktWorkflowstatusResponse.Data"));
 		updateLinkeLinktWorkflowstatusResponse.setErrorCode(_ctx.longValue("UpdateLinkeLinktWorkflowstatusResponse.ErrorCode"));
 		updateLinkeLinktWorkflowstatusResponse.setErrorMessage(_ctx.stringValue("UpdateLinkeLinktWorkflowstatusResponse.ErrorMessage"));
+		updateLinkeLinktWorkflowstatusResponse.setResponseStatusCode(_ctx.longValue("UpdateLinkeLinktWorkflowstatusResponse.ResponseStatusCode"));
 		updateLinkeLinktWorkflowstatusResponse.setSuccess(_ctx.booleanValue("UpdateLinkeLinktWorkflowstatusResponse.Success"));
 	 
 	 	return updateLinkeLinktWorkflowstatusResponse;

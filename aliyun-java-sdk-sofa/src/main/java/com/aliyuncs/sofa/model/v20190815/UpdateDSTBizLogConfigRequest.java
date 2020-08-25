@@ -35,7 +35,7 @@ public class UpdateDSTBizLogConfigRequest extends RpcAcsRequest<UpdateDSTBizLogC
 
 	private Long bizLogConfigId;
 	public UpdateDSTBizLogConfigRequest() {
-		super("SOFA", "2019-08-15", "UpdateDSTBizLogConfig", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateDSTBizLogConfig", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -28,6 +28,7 @@ public class RemoveLinkeLinktProjectroleforuserResponseUnmarshaller {
 		removeLinkeLinktProjectroleforuserResponse.setData(_ctx.booleanValue("RemoveLinkeLinktProjectroleforuserResponse.Data"));
 		removeLinkeLinktProjectroleforuserResponse.setErrorCode(_ctx.longValue("RemoveLinkeLinktProjectroleforuserResponse.ErrorCode"));
 		removeLinkeLinktProjectroleforuserResponse.setErrorMessage(_ctx.stringValue("RemoveLinkeLinktProjectroleforuserResponse.ErrorMessage"));
+		removeLinkeLinktProjectroleforuserResponse.setResponseStatusCode(_ctx.longValue("RemoveLinkeLinktProjectroleforuserResponse.ResponseStatusCode"));
 		removeLinkeLinktProjectroleforuserResponse.setSuccess(_ctx.booleanValue("RemoveLinkeLinktProjectroleforuserResponse.Success"));
 	 
 	 	return removeLinkeLinktProjectroleforuserResponse;

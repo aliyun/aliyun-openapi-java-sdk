@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class GetIAMCurrentAccessorRequest extends RpcAcsRequest<GetIAMCurrentAccessorResponse> {
 	   
 	public GetIAMCurrentAccessorRequest() {
-		super("SOFA", "2019-08-15", "GetIAMCurrentAccessor", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetIAMCurrentAccessor", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -30,7 +30,7 @@ public class AddRmsAlarmBlacklistRequest extends RpcAcsRequest<AddRmsAlarmBlackl
 
 	private String envJsonStr;
 	public AddRmsAlarmBlacklistRequest() {
-		super("SOFA", "2019-08-15", "AddRmsAlarmBlacklist", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "AddRmsAlarmBlacklist", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

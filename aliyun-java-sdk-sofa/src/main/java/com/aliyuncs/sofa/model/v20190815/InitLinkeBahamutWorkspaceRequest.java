@@ -27,7 +27,7 @@ public class InitLinkeBahamutWorkspaceRequest extends RpcAcsRequest<InitLinkeBah
 
 	private String tenantPath;
 	public InitLinkeBahamutWorkspaceRequest() {
-		super("SOFA", "2019-08-15", "InitLinkeBahamutWorkspace", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "InitLinkeBahamutWorkspace", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

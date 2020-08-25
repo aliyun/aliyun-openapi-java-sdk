@@ -32,7 +32,7 @@ public class UpdateAKSNodeLabelRequest extends RpcAcsRequest<UpdateAKSNodeLabelR
 
 	private String node;
 	public UpdateAKSNodeLabelRequest() {
-		super("SOFA", "2019-08-15", "UpdateAKSNodeLabel", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateAKSNodeLabel", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

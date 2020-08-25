@@ -28,6 +28,7 @@ public class SetLinkeLinktWorkflowstatusreachableResponseUnmarshaller {
 		setLinkeLinktWorkflowstatusreachableResponse.setData(_ctx.booleanValue("SetLinkeLinktWorkflowstatusreachableResponse.Data"));
 		setLinkeLinktWorkflowstatusreachableResponse.setErrorCode(_ctx.longValue("SetLinkeLinktWorkflowstatusreachableResponse.ErrorCode"));
 		setLinkeLinktWorkflowstatusreachableResponse.setErrorMessage(_ctx.stringValue("SetLinkeLinktWorkflowstatusreachableResponse.ErrorMessage"));
+		setLinkeLinktWorkflowstatusreachableResponse.setResponseStatusCode(_ctx.longValue("SetLinkeLinktWorkflowstatusreachableResponse.ResponseStatusCode"));
 		setLinkeLinktWorkflowstatusreachableResponse.setSuccess(_ctx.booleanValue("SetLinkeLinktWorkflowstatusreachableResponse.Success"));
 	 
 	 	return setLinkeLinktWorkflowstatusreachableResponse;

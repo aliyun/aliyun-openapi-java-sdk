@@ -29,7 +29,7 @@ public class AuthDWSVpcAccessRequest extends RpcAcsRequest<AuthDWSVpcAccessRespo
 
 	private String instanceId;
 	public AuthDWSVpcAccessRequest() {
-		super("SOFA", "2019-08-15", "AuthDWSVpcAccess", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "AuthDWSVpcAccess", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

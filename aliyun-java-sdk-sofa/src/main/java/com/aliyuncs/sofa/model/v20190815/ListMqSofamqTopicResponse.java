@@ -109,35 +109,51 @@ public class ListMqSofamqTopicResponse extends AcsResponse {
 
 		public static class ContentItem {
 
-			private String gmtCreate;
+			private String cluster;
 
-			private String gmtModified;
+			private Long gmtCreate;
+
+			private Long gmtModified;
 
 			private Long id;
 
 			private String instanceId;
 
-			private String messageType;
+			private Long messageType;
+
+			private String operator;
 
 			private Long perm;
+
+			private Long readQueueNum;
 
 			private String remark;
 
 			private String topic;
 
-			public String getGmtCreate() {
+			private Long writeQueueNum;
+
+			public String getCluster() {
+				return this.cluster;
+			}
+
+			public void setCluster(String cluster) {
+				this.cluster = cluster;
+			}
+
+			public Long getGmtCreate() {
 				return this.gmtCreate;
 			}
 
-			public void setGmtCreate(String gmtCreate) {
+			public void setGmtCreate(Long gmtCreate) {
 				this.gmtCreate = gmtCreate;
 			}
 
-			public String getGmtModified() {
+			public Long getGmtModified() {
 				return this.gmtModified;
 			}
 
-			public void setGmtModified(String gmtModified) {
+			public void setGmtModified(Long gmtModified) {
 				this.gmtModified = gmtModified;
 			}
 
@@ -157,12 +173,20 @@ public class ListMqSofamqTopicResponse extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
-			public String getMessageType() {
+			public Long getMessageType() {
 				return this.messageType;
 			}
 
-			public void setMessageType(String messageType) {
+			public void setMessageType(Long messageType) {
 				this.messageType = messageType;
+			}
+
+			public String getOperator() {
+				return this.operator;
+			}
+
+			public void setOperator(String operator) {
+				this.operator = operator;
 			}
 
 			public Long getPerm() {
@@ -171,6 +195,14 @@ public class ListMqSofamqTopicResponse extends AcsResponse {
 
 			public void setPerm(Long perm) {
 				this.perm = perm;
+			}
+
+			public Long getReadQueueNum() {
+				return this.readQueueNum;
+			}
+
+			public void setReadQueueNum(Long readQueueNum) {
+				this.readQueueNum = readQueueNum;
 			}
 
 			public String getRemark() {
@@ -187,6 +219,14 @@ public class ListMqSofamqTopicResponse extends AcsResponse {
 
 			public void setTopic(String topic) {
 				this.topic = topic;
+			}
+
+			public Long getWriteQueueNum() {
+				return this.writeQueueNum;
+			}
+
+			public void setWriteQueueNum(Long writeQueueNum) {
+				this.writeQueueNum = writeQueueNum;
 			}
 		}
 	}

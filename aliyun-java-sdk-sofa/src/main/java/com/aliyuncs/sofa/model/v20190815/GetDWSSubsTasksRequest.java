@@ -39,7 +39,7 @@ public class GetDWSSubsTasksRequest extends RpcAcsRequest<GetDWSSubsTasksRespons
 
 	private String status;
 	public GetDWSSubsTasksRequest() {
-		super("SOFA", "2019-08-15", "GetDWSSubsTasks", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDWSSubsTasks", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

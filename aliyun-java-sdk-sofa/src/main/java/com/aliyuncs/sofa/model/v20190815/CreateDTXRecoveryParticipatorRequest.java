@@ -32,7 +32,7 @@ public class CreateDTXRecoveryParticipatorRequest extends RpcAcsRequest<CreateDT
 
 	private List<Actions> actionss;
 	public CreateDTXRecoveryParticipatorRequest() {
-		super("SOFA", "2019-08-15", "CreateDTXRecoveryParticipator", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateDTXRecoveryParticipator", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

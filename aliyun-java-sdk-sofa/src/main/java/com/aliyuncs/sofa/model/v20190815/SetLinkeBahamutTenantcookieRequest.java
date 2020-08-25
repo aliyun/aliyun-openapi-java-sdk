@@ -27,7 +27,7 @@ public class SetLinkeBahamutTenantcookieRequest extends RpcAcsRequest<SetLinkeBa
 
 	private String tenantName;
 	public SetLinkeBahamutTenantcookieRequest() {
-		super("SOFA", "2019-08-15", "SetLinkeBahamutTenantcookie", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "SetLinkeBahamutTenantcookie", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

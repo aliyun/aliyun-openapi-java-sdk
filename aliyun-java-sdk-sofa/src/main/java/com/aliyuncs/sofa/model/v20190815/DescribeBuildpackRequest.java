@@ -30,25 +30,49 @@ public class DescribeBuildpackRequest extends RpcAcsRequest<DescribeBuildpackRes
 
 	private List<String> techstackNamesRepeatLists;
 
+	private List<String> createdFromsRepeatLists;
+
 	private String publicationTimeTo;
+
+	private String creationTimeFrom;
 
 	private String publicationTimeFrom;
 
+	private String creationTimeTo;
+
 	private Long pageSize;
+
+	private Boolean descend;
+
+	private List<String> creatorIdsRepeatLists;
 
 	private List<Long> supportedOsIdsRepeatLists;
 
 	private List<Long> techstackIdsRepeatLists;
 
+	private String modificationTimeFrom;
+
+	private List<String> supportedRegionIdsRepeatLists;
+
 	private Long currentPage;
 
 	private String fullVersion;
 
-	private List<String> supportedRegionsRepeatLists;
+	private Boolean isProcessed;
+
+	private String modificationTimeTo;
+
+	private List<String> publisherIdsRepeatLists;
+
+	private List<String> idsRepeatLists;
+
+	private String sortField;
+
+	private String buildCommand;
 
 	private List<String> statusesRepeatLists;
 	public DescribeBuildpackRequest() {
-		super("SOFA", "2019-08-15", "DescribeBuildpack", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DescribeBuildpack", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,6 +106,19 @@ public class DescribeBuildpackRequest extends RpcAcsRequest<DescribeBuildpackRes
 		}	
 	}
 
+	public List<String> getCreatedFromsRepeatLists() {
+		return this.createdFromsRepeatLists;
+	}
+
+	public void setCreatedFromsRepeatLists(List<String> createdFromsRepeatLists) {
+		this.createdFromsRepeatLists = createdFromsRepeatLists;	
+		if (createdFromsRepeatLists != null) {
+			for (int i = 0; i < createdFromsRepeatLists.size(); i++) {
+				putBodyParameter("CreatedFromsRepeatList." + (i + 1) , createdFromsRepeatLists.get(i));
+			}
+		}	
+	}
+
 	public String getPublicationTimeTo() {
 		return this.publicationTimeTo;
 	}
@@ -90,6 +127,17 @@ public class DescribeBuildpackRequest extends RpcAcsRequest<DescribeBuildpackRes
 		this.publicationTimeTo = publicationTimeTo;
 		if(publicationTimeTo != null){
 			putBodyParameter("PublicationTimeTo", publicationTimeTo);
+		}
+	}
+
+	public String getCreationTimeFrom() {
+		return this.creationTimeFrom;
+	}
+
+	public void setCreationTimeFrom(String creationTimeFrom) {
+		this.creationTimeFrom = creationTimeFrom;
+		if(creationTimeFrom != null){
+			putBodyParameter("CreationTimeFrom", creationTimeFrom);
 		}
 	}
 
@@ -104,6 +152,17 @@ public class DescribeBuildpackRequest extends RpcAcsRequest<DescribeBuildpackRes
 		}
 	}
 
+	public String getCreationTimeTo() {
+		return this.creationTimeTo;
+	}
+
+	public void setCreationTimeTo(String creationTimeTo) {
+		this.creationTimeTo = creationTimeTo;
+		if(creationTimeTo != null){
+			putBodyParameter("CreationTimeTo", creationTimeTo);
+		}
+	}
+
 	public Long getPageSize() {
 		return this.pageSize;
 	}
@@ -113,6 +172,30 @@ public class DescribeBuildpackRequest extends RpcAcsRequest<DescribeBuildpackRes
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
 		}
+	}
+
+	public Boolean getDescend() {
+		return this.descend;
+	}
+
+	public void setDescend(Boolean descend) {
+		this.descend = descend;
+		if(descend != null){
+			putBodyParameter("Descend", descend.toString());
+		}
+	}
+
+	public List<String> getCreatorIdsRepeatLists() {
+		return this.creatorIdsRepeatLists;
+	}
+
+	public void setCreatorIdsRepeatLists(List<String> creatorIdsRepeatLists) {
+		this.creatorIdsRepeatLists = creatorIdsRepeatLists;	
+		if (creatorIdsRepeatLists != null) {
+			for (int i = 0; i < creatorIdsRepeatLists.size(); i++) {
+				putBodyParameter("CreatorIdsRepeatList." + (i + 1) , creatorIdsRepeatLists.get(i));
+			}
+		}	
 	}
 
 	public List<Long> getSupportedOsIdsRepeatLists() {
@@ -141,6 +224,30 @@ public class DescribeBuildpackRequest extends RpcAcsRequest<DescribeBuildpackRes
 		}	
 	}
 
+	public String getModificationTimeFrom() {
+		return this.modificationTimeFrom;
+	}
+
+	public void setModificationTimeFrom(String modificationTimeFrom) {
+		this.modificationTimeFrom = modificationTimeFrom;
+		if(modificationTimeFrom != null){
+			putBodyParameter("ModificationTimeFrom", modificationTimeFrom);
+		}
+	}
+
+	public List<String> getSupportedRegionIdsRepeatLists() {
+		return this.supportedRegionIdsRepeatLists;
+	}
+
+	public void setSupportedRegionIdsRepeatLists(List<String> supportedRegionIdsRepeatLists) {
+		this.supportedRegionIdsRepeatLists = supportedRegionIdsRepeatLists;	
+		if (supportedRegionIdsRepeatLists != null) {
+			for (int i = 0; i < supportedRegionIdsRepeatLists.size(); i++) {
+				putBodyParameter("SupportedRegionIdsRepeatList." + (i + 1) , supportedRegionIdsRepeatLists.get(i));
+			}
+		}	
+	}
+
 	public Long getCurrentPage() {
 		return this.currentPage;
 	}
@@ -163,17 +270,74 @@ public class DescribeBuildpackRequest extends RpcAcsRequest<DescribeBuildpackRes
 		}
 	}
 
-	public List<String> getSupportedRegionsRepeatLists() {
-		return this.supportedRegionsRepeatLists;
+	public Boolean getIsProcessed() {
+		return this.isProcessed;
 	}
 
-	public void setSupportedRegionsRepeatLists(List<String> supportedRegionsRepeatLists) {
-		this.supportedRegionsRepeatLists = supportedRegionsRepeatLists;	
-		if (supportedRegionsRepeatLists != null) {
-			for (int i = 0; i < supportedRegionsRepeatLists.size(); i++) {
-				putBodyParameter("SupportedRegionsRepeatList." + (i + 1) , supportedRegionsRepeatLists.get(i));
+	public void setIsProcessed(Boolean isProcessed) {
+		this.isProcessed = isProcessed;
+		if(isProcessed != null){
+			putBodyParameter("IsProcessed", isProcessed.toString());
+		}
+	}
+
+	public String getModificationTimeTo() {
+		return this.modificationTimeTo;
+	}
+
+	public void setModificationTimeTo(String modificationTimeTo) {
+		this.modificationTimeTo = modificationTimeTo;
+		if(modificationTimeTo != null){
+			putBodyParameter("ModificationTimeTo", modificationTimeTo);
+		}
+	}
+
+	public List<String> getPublisherIdsRepeatLists() {
+		return this.publisherIdsRepeatLists;
+	}
+
+	public void setPublisherIdsRepeatLists(List<String> publisherIdsRepeatLists) {
+		this.publisherIdsRepeatLists = publisherIdsRepeatLists;	
+		if (publisherIdsRepeatLists != null) {
+			for (int i = 0; i < publisherIdsRepeatLists.size(); i++) {
+				putBodyParameter("PublisherIdsRepeatList." + (i + 1) , publisherIdsRepeatLists.get(i));
 			}
 		}	
+	}
+
+	public List<String> getIdsRepeatLists() {
+		return this.idsRepeatLists;
+	}
+
+	public void setIdsRepeatLists(List<String> idsRepeatLists) {
+		this.idsRepeatLists = idsRepeatLists;	
+		if (idsRepeatLists != null) {
+			for (int i = 0; i < idsRepeatLists.size(); i++) {
+				putBodyParameter("IdsRepeatList." + (i + 1) , idsRepeatLists.get(i));
+			}
+		}	
+	}
+
+	public String getSortField() {
+		return this.sortField;
+	}
+
+	public void setSortField(String sortField) {
+		this.sortField = sortField;
+		if(sortField != null){
+			putBodyParameter("SortField", sortField);
+		}
+	}
+
+	public String getBuildCommand() {
+		return this.buildCommand;
+	}
+
+	public void setBuildCommand(String buildCommand) {
+		this.buildCommand = buildCommand;
+		if(buildCommand != null){
+			putBodyParameter("BuildCommand", buildCommand);
+		}
 	}
 
 	public List<String> getStatusesRepeatLists() {

@@ -29,7 +29,7 @@ public class DeactiveTSJobItemRequest extends RpcAcsRequest<DeactiveTSJobItemRes
 
 	private String instanceId;
 	public DeactiveTSJobItemRequest() {
-		super("SOFA", "2019-08-15", "DeactiveTSJobItem", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeactiveTSJobItem", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

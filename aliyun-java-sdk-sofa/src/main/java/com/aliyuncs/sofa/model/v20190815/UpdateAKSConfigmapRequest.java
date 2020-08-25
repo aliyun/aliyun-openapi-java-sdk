@@ -38,7 +38,7 @@ public class UpdateAKSConfigmapRequest extends RpcAcsRequest<UpdateAKSConfigmapR
 
 	private String namespace;
 	public UpdateAKSConfigmapRequest() {
-		super("SOFA", "2019-08-15", "UpdateAKSConfigmap", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateAKSConfigmap", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

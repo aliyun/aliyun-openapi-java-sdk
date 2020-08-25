@@ -33,7 +33,7 @@ public class QueryRmsXflushDelegateRequest extends RpcAcsRequest<QueryRmsXflushD
 
 	private String meth;
 	public QueryRmsXflushDelegateRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsXflushDelegate", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryRmsXflushDelegate", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

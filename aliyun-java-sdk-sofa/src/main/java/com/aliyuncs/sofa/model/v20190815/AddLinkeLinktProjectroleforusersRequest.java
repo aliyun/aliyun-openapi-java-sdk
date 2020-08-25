@@ -31,7 +31,7 @@ public class AddLinkeLinktProjectroleforusersRequest extends RpcAcsRequest<AddLi
 
 	private String projectSign;
 	public AddLinkeLinktProjectroleforusersRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeLinktProjectroleforusers", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "AddLinkeLinktProjectroleforusers", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

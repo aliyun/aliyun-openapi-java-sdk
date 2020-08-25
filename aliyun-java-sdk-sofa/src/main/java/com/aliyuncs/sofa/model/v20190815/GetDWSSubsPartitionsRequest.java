@@ -29,7 +29,7 @@ public class GetDWSSubsPartitionsRequest extends RpcAcsRequest<GetDWSSubsPartiti
 
 	private String instanceId;
 	public GetDWSSubsPartitionsRequest() {
-		super("SOFA", "2019-08-15", "GetDWSSubsPartitions", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDWSSubsPartitions", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

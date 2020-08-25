@@ -29,7 +29,7 @@ public class SkipTSActivityInstanceWaitingEventRequest extends RpcAcsRequest<Ski
 
 	private String instanceId;
 	public SkipTSActivityInstanceWaitingEventRequest() {
-		super("SOFA", "2019-08-15", "SkipTSActivityInstanceWaitingEvent", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "SkipTSActivityInstanceWaitingEvent", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

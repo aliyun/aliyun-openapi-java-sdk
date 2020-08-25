@@ -35,7 +35,7 @@ public class AddMsDrmDataRequest extends RpcAcsRequest<AddMsDrmDataResponse> {
 
 	private String dataId;
 	public AddMsDrmDataRequest() {
-		super("SOFA", "2019-08-15", "AddMsDrmData", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "AddMsDrmData", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

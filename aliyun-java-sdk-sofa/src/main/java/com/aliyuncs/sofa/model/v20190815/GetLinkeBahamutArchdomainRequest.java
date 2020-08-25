@@ -25,16 +25,44 @@ import com.aliyuncs.sofa.Endpoint;
 public class GetLinkeBahamutArchdomainRequest extends RpcAcsRequest<GetLinkeBahamutArchdomainResponse> {
 	   
 
+	private String userId;
+
+	private String pageSize;
+
 	private String tenantId;
 
-	private String archDomainId;
+	private String keyword;
+
+	private String page;
 	public GetLinkeBahamutArchdomainRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutArchdomain", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutArchdomain", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putBodyParameter("UserId", userId);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize);
+		}
 	}
 
 	public String getTenantId() {
@@ -48,14 +76,25 @@ public class GetLinkeBahamutArchdomainRequest extends RpcAcsRequest<GetLinkeBaha
 		}
 	}
 
-	public String getArchDomainId() {
-		return this.archDomainId;
+	public String getKeyword() {
+		return this.keyword;
 	}
 
-	public void setArchDomainId(String archDomainId) {
-		this.archDomainId = archDomainId;
-		if(archDomainId != null){
-			putBodyParameter("ArchDomainId", archDomainId);
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putBodyParameter("Keyword", keyword);
+		}
+	}
+
+	public String getPage() {
+		return this.page;
+	}
+
+	public void setPage(String page) {
+		this.page = page;
+		if(page != null){
+			putBodyParameter("Page", page);
 		}
 	}
 

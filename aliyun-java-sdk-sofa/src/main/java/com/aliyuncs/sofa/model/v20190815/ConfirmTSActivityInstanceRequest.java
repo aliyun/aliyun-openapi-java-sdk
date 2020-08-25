@@ -29,7 +29,7 @@ public class ConfirmTSActivityInstanceRequest extends RpcAcsRequest<ConfirmTSAct
 
 	private String instanceId;
 	public ConfirmTSActivityInstanceRequest() {
-		super("SOFA", "2019-08-15", "ConfirmTSActivityInstance", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ConfirmTSActivityInstance", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

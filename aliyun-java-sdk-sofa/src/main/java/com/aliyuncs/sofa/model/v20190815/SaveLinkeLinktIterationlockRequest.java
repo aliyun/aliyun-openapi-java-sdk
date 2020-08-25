@@ -25,11 +25,11 @@ import com.aliyuncs.sofa.Endpoint;
 public class SaveLinkeLinktIterationlockRequest extends RpcAcsRequest<SaveLinkeLinktIterationlockResponse> {
 	   
 
-	private Boolean locked;
+	private String locked;
 
 	private String iterationSign;
 	public SaveLinkeLinktIterationlockRequest() {
-		super("SOFA", "2019-08-15", "SaveLinkeLinktIterationlock", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "SaveLinkeLinktIterationlock", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +37,14 @@ public class SaveLinkeLinktIterationlockRequest extends RpcAcsRequest<SaveLinkeL
 		} catch (Exception e) {}
 	}
 
-	public Boolean getLocked() {
+	public String getLocked() {
 		return this.locked;
 	}
 
-	public void setLocked(Boolean locked) {
+	public void setLocked(String locked) {
 		this.locked = locked;
 		if(locked != null){
-			putBodyParameter("Locked", locked.toString());
+			putBodyParameter("Locked", locked);
 		}
 	}
 

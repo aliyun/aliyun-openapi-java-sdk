@@ -33,7 +33,11 @@ public class SaveLinkeBahamutBuildconfigResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private String errorMsgParamsMap;
+
 	private String message;
+
+	private Long responseStatusCode;
 
 	private Boolean success;
 
@@ -71,12 +75,28 @@ public class SaveLinkeBahamutBuildconfigResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getErrorMsgParamsMap() {
+		return this.errorMsgParamsMap;
+	}
+
+	public void setErrorMsgParamsMap(String errorMsgParamsMap) {
+		this.errorMsgParamsMap = errorMsgParamsMap;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Long getResponseStatusCode() {
+		return this.responseStatusCode;
+	}
+
+	public void setResponseStatusCode(Long responseStatusCode) {
+		this.responseStatusCode = responseStatusCode;
 	}
 
 	public Boolean getSuccess() {
@@ -97,13 +117,31 @@ public class SaveLinkeBahamutBuildconfigResponse extends AcsResponse {
 
 	public static class Result {
 
+		private String defaultRegistryConfig;
+
+		private String ossConfig;
+
 		private Boolean useCustomProductOss;
 
-		private List<RegistryConfigsItem> registryConfigs;
+		private List<String> registryConfigs;
 
-		private List<SettingsFilesItem> settingsFiles;
+		private List<String> settingsFiles;
 
-		private OssConfig ossConfig;
+		public String getDefaultRegistryConfig() {
+			return this.defaultRegistryConfig;
+		}
+
+		public void setDefaultRegistryConfig(String defaultRegistryConfig) {
+			this.defaultRegistryConfig = defaultRegistryConfig;
+		}
+
+		public String getOssConfig() {
+			return this.ossConfig;
+		}
+
+		public void setOssConfig(String ossConfig) {
+			this.ossConfig = ossConfig;
+		}
 
 		public Boolean getUseCustomProductOss() {
 			return this.useCustomProductOss;
@@ -113,177 +151,20 @@ public class SaveLinkeBahamutBuildconfigResponse extends AcsResponse {
 			this.useCustomProductOss = useCustomProductOss;
 		}
 
-		public List<RegistryConfigsItem> getRegistryConfigs() {
+		public List<String> getRegistryConfigs() {
 			return this.registryConfigs;
 		}
 
-		public void setRegistryConfigs(List<RegistryConfigsItem> registryConfigs) {
+		public void setRegistryConfigs(List<String> registryConfigs) {
 			this.registryConfigs = registryConfigs;
 		}
 
-		public List<SettingsFilesItem> getSettingsFiles() {
+		public List<String> getSettingsFiles() {
 			return this.settingsFiles;
 		}
 
-		public void setSettingsFiles(List<SettingsFilesItem> settingsFiles) {
+		public void setSettingsFiles(List<String> settingsFiles) {
 			this.settingsFiles = settingsFiles;
-		}
-
-		public OssConfig getOssConfig() {
-			return this.ossConfig;
-		}
-
-		public void setOssConfig(OssConfig ossConfig) {
-			this.ossConfig = ossConfig;
-		}
-
-		public static class RegistryConfigsItem {
-
-			private String host;
-
-			private String token;
-
-			private String user;
-
-			private List<String> secretKeys;
-
-			public String getHost() {
-				return this.host;
-			}
-
-			public void setHost(String host) {
-				this.host = host;
-			}
-
-			public String getToken() {
-				return this.token;
-			}
-
-			public void setToken(String token) {
-				this.token = token;
-			}
-
-			public String getUser() {
-				return this.user;
-			}
-
-			public void setUser(String user) {
-				this.user = user;
-			}
-
-			public List<String> getSecretKeys() {
-				return this.secretKeys;
-			}
-
-			public void setSecretKeys(List<String> secretKeys) {
-				this.secretKeys = secretKeys;
-			}
-		}
-
-		public static class SettingsFilesItem {
-
-			private String fullUrl;
-
-			private String name;
-
-			private String type;
-
-			private String uid;
-
-			private String url;
-
-			public String getFullUrl() {
-				return this.fullUrl;
-			}
-
-			public void setFullUrl(String fullUrl) {
-				this.fullUrl = fullUrl;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public String getUid() {
-				return this.uid;
-			}
-
-			public void setUid(String uid) {
-				this.uid = uid;
-			}
-
-			public String getUrl() {
-				return this.url;
-			}
-
-			public void setUrl(String url) {
-				this.url = url;
-			}
-		}
-
-		public static class OssConfig {
-
-			private Boolean avaliable;
-
-			private String ossAccessId;
-
-			private String ossAccessKey;
-
-			private String ossBucketName;
-
-			private String ossEndpoint;
-
-			public Boolean getAvaliable() {
-				return this.avaliable;
-			}
-
-			public void setAvaliable(Boolean avaliable) {
-				this.avaliable = avaliable;
-			}
-
-			public String getOssAccessId() {
-				return this.ossAccessId;
-			}
-
-			public void setOssAccessId(String ossAccessId) {
-				this.ossAccessId = ossAccessId;
-			}
-
-			public String getOssAccessKey() {
-				return this.ossAccessKey;
-			}
-
-			public void setOssAccessKey(String ossAccessKey) {
-				this.ossAccessKey = ossAccessKey;
-			}
-
-			public String getOssBucketName() {
-				return this.ossBucketName;
-			}
-
-			public void setOssBucketName(String ossBucketName) {
-				this.ossBucketName = ossBucketName;
-			}
-
-			public String getOssEndpoint() {
-				return this.ossEndpoint;
-			}
-
-			public void setOssEndpoint(String ossEndpoint) {
-				this.ossEndpoint = ossEndpoint;
-			}
 		}
 	}
 

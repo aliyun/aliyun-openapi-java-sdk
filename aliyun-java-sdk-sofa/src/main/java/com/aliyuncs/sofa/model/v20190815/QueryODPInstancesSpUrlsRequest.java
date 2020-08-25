@@ -27,7 +27,7 @@ public class QueryODPInstancesSpUrlsRequest extends RpcAcsRequest<QueryODPInstan
 
 	private String instanceId;
 	public QueryODPInstancesSpUrlsRequest() {
-		super("SOFA", "2019-08-15", "QueryODPInstancesSpUrls", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryODPInstancesSpUrls", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class DescribeWritableTechstacksRequest extends RpcAcsRequest<DescribeWritableTechstacksResponse> {
 	   
 	public DescribeWritableTechstacksRequest() {
-		super("SOFA", "2019-08-15", "DescribeWritableTechstacks", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DescribeWritableTechstacks", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

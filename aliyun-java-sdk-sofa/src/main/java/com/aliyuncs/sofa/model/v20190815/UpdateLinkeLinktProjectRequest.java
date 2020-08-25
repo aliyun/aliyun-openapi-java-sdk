@@ -25,23 +25,23 @@ import com.aliyuncs.sofa.Endpoint;
 public class UpdateLinkeLinktProjectRequest extends RpcAcsRequest<UpdateLinkeLinktProjectResponse> {
 	   
 
-	private String asPublicJsonStr;
-
-	private String parentSignJsonStr;
+	private String description;
 
 	private String projectSign;
 
-	private String descriptionJsonStr;
+	private String notice;
 
-	private String archiveJsonStr;
+	private String parentSign;
 
-	private String nameJsonStr;
+	private String asPublic;
 
-	private String noticeJsonStr;
+	private String archive;
 
 	private Boolean deleted;
+
+	private String name;
 	public UpdateLinkeLinktProjectRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktProject", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktProject", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,25 +49,14 @@ public class UpdateLinkeLinktProjectRequest extends RpcAcsRequest<UpdateLinkeLin
 		} catch (Exception e) {}
 	}
 
-	public String getAsPublicJsonStr() {
-		return this.asPublicJsonStr;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setAsPublicJsonStr(String asPublicJsonStr) {
-		this.asPublicJsonStr = asPublicJsonStr;
-		if(asPublicJsonStr != null){
-			putBodyParameter("AsPublicJsonStr", asPublicJsonStr);
-		}
-	}
-
-	public String getParentSignJsonStr() {
-		return this.parentSignJsonStr;
-	}
-
-	public void setParentSignJsonStr(String parentSignJsonStr) {
-		this.parentSignJsonStr = parentSignJsonStr;
-		if(parentSignJsonStr != null){
-			putBodyParameter("ParentSignJsonStr", parentSignJsonStr);
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putBodyParameter("Description", description);
 		}
 	}
 
@@ -82,47 +71,47 @@ public class UpdateLinkeLinktProjectRequest extends RpcAcsRequest<UpdateLinkeLin
 		}
 	}
 
-	public String getDescriptionJsonStr() {
-		return this.descriptionJsonStr;
+	public String getNotice() {
+		return this.notice;
 	}
 
-	public void setDescriptionJsonStr(String descriptionJsonStr) {
-		this.descriptionJsonStr = descriptionJsonStr;
-		if(descriptionJsonStr != null){
-			putBodyParameter("DescriptionJsonStr", descriptionJsonStr);
+	public void setNotice(String notice) {
+		this.notice = notice;
+		if(notice != null){
+			putBodyParameter("Notice", notice);
 		}
 	}
 
-	public String getArchiveJsonStr() {
-		return this.archiveJsonStr;
+	public String getParentSign() {
+		return this.parentSign;
 	}
 
-	public void setArchiveJsonStr(String archiveJsonStr) {
-		this.archiveJsonStr = archiveJsonStr;
-		if(archiveJsonStr != null){
-			putBodyParameter("ArchiveJsonStr", archiveJsonStr);
+	public void setParentSign(String parentSign) {
+		this.parentSign = parentSign;
+		if(parentSign != null){
+			putBodyParameter("ParentSign", parentSign);
 		}
 	}
 
-	public String getNameJsonStr() {
-		return this.nameJsonStr;
+	public String getAsPublic() {
+		return this.asPublic;
 	}
 
-	public void setNameJsonStr(String nameJsonStr) {
-		this.nameJsonStr = nameJsonStr;
-		if(nameJsonStr != null){
-			putBodyParameter("NameJsonStr", nameJsonStr);
+	public void setAsPublic(String asPublic) {
+		this.asPublic = asPublic;
+		if(asPublic != null){
+			putBodyParameter("AsPublic", asPublic);
 		}
 	}
 
-	public String getNoticeJsonStr() {
-		return this.noticeJsonStr;
+	public String getArchive() {
+		return this.archive;
 	}
 
-	public void setNoticeJsonStr(String noticeJsonStr) {
-		this.noticeJsonStr = noticeJsonStr;
-		if(noticeJsonStr != null){
-			putBodyParameter("NoticeJsonStr", noticeJsonStr);
+	public void setArchive(String archive) {
+		this.archive = archive;
+		if(archive != null){
+			putBodyParameter("Archive", archive);
 		}
 	}
 
@@ -134,6 +123,17 @@ public class UpdateLinkeLinktProjectRequest extends RpcAcsRequest<UpdateLinkeLin
 		this.deleted = deleted;
 		if(deleted != null){
 			putBodyParameter("Deleted", deleted.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putBodyParameter("Name", name);
 		}
 	}
 

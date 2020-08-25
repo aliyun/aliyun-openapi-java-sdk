@@ -16,7 +16,6 @@ package com.aliyuncs.sofa.transform.v20190815;
 
 import com.aliyuncs.sofa.model.v20190815.ExecLinkeLinktCreatestatusandupdatetoworkflowResponse;
 import com.aliyuncs.sofa.model.v20190815.ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data;
-import com.aliyuncs.sofa.model.v20190815.ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.Status;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,6 +28,7 @@ public class ExecLinkeLinktCreatestatusandupdatetoworkflowResponseUnmarshaller {
 		execLinkeLinktCreatestatusandupdatetoworkflowResponse.setResultMessage(_ctx.stringValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.ResultMessage"));
 		execLinkeLinktCreatestatusandupdatetoworkflowResponse.setErrorCode(_ctx.longValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.ErrorCode"));
 		execLinkeLinktCreatestatusandupdatetoworkflowResponse.setErrorMessage(_ctx.stringValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.ErrorMessage"));
+		execLinkeLinktCreatestatusandupdatetoworkflowResponse.setResponseStatusCode(_ctx.longValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.ResponseStatusCode"));
 		execLinkeLinktCreatestatusandupdatetoworkflowResponse.setSuccess(_ctx.booleanValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Success"));
 
 		Data data = new Data();
@@ -38,21 +38,10 @@ public class ExecLinkeLinktCreatestatusandupdatetoworkflowResponseUnmarshaller {
 		data.setId(_ctx.longValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.Id"));
 		data.setPosition(_ctx.longValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.Position"));
 		data.setRegion(_ctx.stringValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.Region"));
+		data.setStatus(_ctx.stringValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.Status"));
 		data.setStatusId(_ctx.longValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.StatusId"));
 		data.setUpdatedAt(_ctx.longValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.UpdatedAt"));
 		data.setWorkflowId(_ctx.longValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.WorkflowId"));
-
-		Status status = new Status();
-		status.setCreatedAt(_ctx.longValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.Status.CreatedAt"));
-		status.setDeleted(_ctx.booleanValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.Status.Deleted"));
-		status.setId(_ctx.longValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.Status.Id"));
-		status.setName(_ctx.stringValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.Status.Name"));
-		status.setProjectSign(_ctx.stringValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.Status.ProjectSign"));
-		status.setRegion(_ctx.stringValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.Status.Region"));
-		status.setStage(_ctx.longValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.Status.Stage"));
-		status.setStageName(_ctx.stringValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.Status.StageName"));
-		status.setUpdatedAt(_ctx.longValue("ExecLinkeLinktCreatestatusandupdatetoworkflowResponse.Data.Status.UpdatedAt"));
-		data.setStatus(status);
 		execLinkeLinktCreatestatusandupdatetoworkflowResponse.setData(data);
 	 
 	 	return execLinkeLinktCreatestatusandupdatetoworkflowResponse;

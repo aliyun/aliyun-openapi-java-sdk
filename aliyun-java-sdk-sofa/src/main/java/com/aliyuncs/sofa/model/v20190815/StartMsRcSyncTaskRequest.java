@@ -29,7 +29,7 @@ public class StartMsRcSyncTaskRequest extends RpcAcsRequest<StartMsRcSyncTaskRes
 
 	private String instanceId;
 	public StartMsRcSyncTaskRequest() {
-		super("SOFA", "2019-08-15", "StartMsRcSyncTask", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "StartMsRcSyncTask", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

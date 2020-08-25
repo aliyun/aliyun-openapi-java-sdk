@@ -31,7 +31,7 @@ public class EnableMsSgAuthRuleGroupsRequest extends RpcAcsRequest<EnableMsSgAut
 
 	private String dataId;
 	public EnableMsSgAuthRuleGroupsRequest() {
-		super("SOFA", "2019-08-15", "EnableMsSgAuthRuleGroups", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "EnableMsSgAuthRuleGroups", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

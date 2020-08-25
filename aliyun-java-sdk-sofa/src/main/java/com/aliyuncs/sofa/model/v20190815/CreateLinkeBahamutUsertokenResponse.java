@@ -14,7 +14,6 @@
 
 package com.aliyuncs.sofa.model.v20190815;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.sofa.transform.v20190815.CreateLinkeBahamutUsertokenResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,7 +32,11 @@ public class CreateLinkeBahamutUsertokenResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private String errorMsgParamsMap;
+
 	private String message;
+
+	private Long responseStatusCode;
 
 	private Boolean success;
 
@@ -71,12 +74,28 @@ public class CreateLinkeBahamutUsertokenResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getErrorMsgParamsMap() {
+		return this.errorMsgParamsMap;
+	}
+
+	public void setErrorMsgParamsMap(String errorMsgParamsMap) {
+		this.errorMsgParamsMap = errorMsgParamsMap;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Long getResponseStatusCode() {
+		return this.responseStatusCode;
+	}
+
+	public void setResponseStatusCode(Long responseStatusCode) {
+		this.responseStatusCode = responseStatusCode;
 	}
 
 	public Boolean getSuccess() {
@@ -109,7 +128,7 @@ public class CreateLinkeBahamutUsertokenResponse extends AcsResponse {
 
 		private String token;
 
-		private User user;
+		private String user;
 
 		public String getAccount() {
 			return this.account;
@@ -159,175 +178,12 @@ public class CreateLinkeBahamutUsertokenResponse extends AcsResponse {
 			this.token = token;
 		}
 
-		public User getUser() {
+		public String getUser() {
 			return this.user;
 		}
 
-		public void setUser(User user) {
+		public void setUser(String user) {
 			this.user = user;
-		}
-
-		public static class User {
-
-			private String account;
-
-			private Long created;
-
-			private String customer;
-
-			private Boolean deleted;
-
-			private String department;
-
-			private String email;
-
-			private String empId;
-
-			private String id;
-
-			private Long lastLogin;
-
-			private Long lastModified;
-
-			private String name;
-
-			private String nick;
-
-			private String uid;
-
-			private String uniqueId;
-
-			private String ww;
-
-			private List<String> tenants;
-
-			public String getAccount() {
-				return this.account;
-			}
-
-			public void setAccount(String account) {
-				this.account = account;
-			}
-
-			public Long getCreated() {
-				return this.created;
-			}
-
-			public void setCreated(Long created) {
-				this.created = created;
-			}
-
-			public String getCustomer() {
-				return this.customer;
-			}
-
-			public void setCustomer(String customer) {
-				this.customer = customer;
-			}
-
-			public Boolean getDeleted() {
-				return this.deleted;
-			}
-
-			public void setDeleted(Boolean deleted) {
-				this.deleted = deleted;
-			}
-
-			public String getDepartment() {
-				return this.department;
-			}
-
-			public void setDepartment(String department) {
-				this.department = department;
-			}
-
-			public String getEmail() {
-				return this.email;
-			}
-
-			public void setEmail(String email) {
-				this.email = email;
-			}
-
-			public String getEmpId() {
-				return this.empId;
-			}
-
-			public void setEmpId(String empId) {
-				this.empId = empId;
-			}
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public Long getLastLogin() {
-				return this.lastLogin;
-			}
-
-			public void setLastLogin(Long lastLogin) {
-				this.lastLogin = lastLogin;
-			}
-
-			public Long getLastModified() {
-				return this.lastModified;
-			}
-
-			public void setLastModified(Long lastModified) {
-				this.lastModified = lastModified;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getNick() {
-				return this.nick;
-			}
-
-			public void setNick(String nick) {
-				this.nick = nick;
-			}
-
-			public String getUid() {
-				return this.uid;
-			}
-
-			public void setUid(String uid) {
-				this.uid = uid;
-			}
-
-			public String getUniqueId() {
-				return this.uniqueId;
-			}
-
-			public void setUniqueId(String uniqueId) {
-				this.uniqueId = uniqueId;
-			}
-
-			public String getWw() {
-				return this.ww;
-			}
-
-			public void setWw(String ww) {
-				this.ww = ww;
-			}
-
-			public List<String> getTenants() {
-				return this.tenants;
-			}
-
-			public void setTenants(List<String> tenants) {
-				this.tenants = tenants;
-			}
 		}
 	}
 

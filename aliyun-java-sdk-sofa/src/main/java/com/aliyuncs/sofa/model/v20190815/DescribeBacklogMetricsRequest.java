@@ -31,7 +31,7 @@ public class DescribeBacklogMetricsRequest extends RpcAcsRequest<DescribeBacklog
 
 	private String instanceId;
 	public DescribeBacklogMetricsRequest() {
-		super("SOFA", "2019-08-15", "DescribeBacklogMetrics", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DescribeBacklogMetrics", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

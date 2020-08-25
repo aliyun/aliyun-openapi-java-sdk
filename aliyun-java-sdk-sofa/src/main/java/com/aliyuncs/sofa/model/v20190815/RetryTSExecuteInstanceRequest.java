@@ -29,7 +29,7 @@ public class RetryTSExecuteInstanceRequest extends RpcAcsRequest<RetryTSExecuteI
 
 	private String instanceId;
 	public RetryTSExecuteInstanceRequest() {
-		super("SOFA", "2019-08-15", "RetryTSExecuteInstance", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "RetryTSExecuteInstance", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

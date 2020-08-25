@@ -145,6 +145,10 @@ public class GetAKSContainerservicesResponseUnmarshaller {
 		imageSource.setPullSecret(_ctx.stringValue("GetAKSContainerservicesResponse.Data.ImageSource.PullSecret"));
 		imageSource.setRevision(_ctx.stringValue("GetAKSContainerservicesResponse.Data.ImageSource.Revision"));
 		imageSource.setSourceType(_ctx.stringValue("GetAKSContainerservicesResponse.Data.ImageSource.SourceType"));
+		imageSource.setTechStackName(_ctx.stringValue("GetAKSContainerservicesResponse.Data.ImageSource.TechStackName"));
+		imageSource.setTechStackVersionImage(_ctx.stringValue("GetAKSContainerservicesResponse.Data.ImageSource.TechStackVersionImage"));
+		imageSource.setTechStackVersionName(_ctx.stringValue("GetAKSContainerservicesResponse.Data.ImageSource.TechStackVersionName"));
+		imageSource.setTechStackVersionNumber(_ctx.stringValue("GetAKSContainerservicesResponse.Data.ImageSource.TechStackVersionNumber"));
 
 		BaseImage baseImage = new BaseImage();
 		baseImage.setDigest(_ctx.stringValue("GetAKSContainerservicesResponse.Data.ImageSource.BaseImage.Digest"));

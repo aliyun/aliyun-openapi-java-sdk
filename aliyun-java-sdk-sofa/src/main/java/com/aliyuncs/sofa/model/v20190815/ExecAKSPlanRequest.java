@@ -29,7 +29,7 @@ public class ExecAKSPlanRequest extends RpcAcsRequest<ExecAKSPlanResponse> {
 
 	private String controlOperationRequestJsonStr;
 	public ExecAKSPlanRequest() {
-		super("SOFA", "2019-08-15", "ExecAKSPlan", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ExecAKSPlan", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

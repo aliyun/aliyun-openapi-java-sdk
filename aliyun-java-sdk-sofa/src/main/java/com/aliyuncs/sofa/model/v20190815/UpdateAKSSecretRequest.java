@@ -38,7 +38,7 @@ public class UpdateAKSSecretRequest extends RpcAcsRequest<UpdateAKSSecretRespons
 
 	private String namespace;
 	public UpdateAKSSecretRequest() {
-		super("SOFA", "2019-08-15", "UpdateAKSSecret", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateAKSSecret", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

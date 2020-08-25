@@ -35,7 +35,7 @@ public class SkipTSShardingActivityInstancesRequest extends RpcAcsRequest<SkipTS
 
 	private String comment;
 	public SkipTSShardingActivityInstancesRequest() {
-		super("SOFA", "2019-08-15", "SkipTSShardingActivityInstances", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "SkipTSShardingActivityInstances", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

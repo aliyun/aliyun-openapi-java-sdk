@@ -29,7 +29,7 @@ public class UpdateODPSchemasPhysicalSchemaAuthInfosRequest extends RpcAcsReques
 
 	private String instanceId;
 	public UpdateODPSchemasPhysicalSchemaAuthInfosRequest() {
-		super("SOFA", "2019-08-15", "UpdateODPSchemasPhysicalSchemaAuthInfos", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateODPSchemasPhysicalSchemaAuthInfos", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

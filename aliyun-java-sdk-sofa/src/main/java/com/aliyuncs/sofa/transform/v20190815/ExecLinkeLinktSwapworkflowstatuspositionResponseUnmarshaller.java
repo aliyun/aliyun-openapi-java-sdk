@@ -28,6 +28,7 @@ public class ExecLinkeLinktSwapworkflowstatuspositionResponseUnmarshaller {
 		execLinkeLinktSwapworkflowstatuspositionResponse.setData(_ctx.booleanValue("ExecLinkeLinktSwapworkflowstatuspositionResponse.Data"));
 		execLinkeLinktSwapworkflowstatuspositionResponse.setErrorCode(_ctx.longValue("ExecLinkeLinktSwapworkflowstatuspositionResponse.ErrorCode"));
 		execLinkeLinktSwapworkflowstatuspositionResponse.setErrorMessage(_ctx.stringValue("ExecLinkeLinktSwapworkflowstatuspositionResponse.ErrorMessage"));
+		execLinkeLinktSwapworkflowstatuspositionResponse.setResponseStatusCode(_ctx.longValue("ExecLinkeLinktSwapworkflowstatuspositionResponse.ResponseStatusCode"));
 		execLinkeLinktSwapworkflowstatuspositionResponse.setSuccess(_ctx.booleanValue("ExecLinkeLinktSwapworkflowstatuspositionResponse.Success"));
 	 
 	 	return execLinkeLinktSwapworkflowstatuspositionResponse;

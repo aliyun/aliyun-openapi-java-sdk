@@ -29,7 +29,7 @@ public class CheckTSJobCronRequest extends RpcAcsRequest<CheckTSJobCronResponse>
 
 	private String instanceId;
 	public CheckTSJobCronRequest() {
-		super("SOFA", "2019-08-15", "CheckTSJobCron", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CheckTSJobCron", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

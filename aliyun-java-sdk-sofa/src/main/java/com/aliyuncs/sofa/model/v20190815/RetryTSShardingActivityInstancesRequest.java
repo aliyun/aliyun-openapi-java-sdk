@@ -35,7 +35,7 @@ public class RetryTSShardingActivityInstancesRequest extends RpcAcsRequest<Retry
 
 	private String comment;
 	public RetryTSShardingActivityInstancesRequest() {
-		super("SOFA", "2019-08-15", "RetryTSShardingActivityInstances", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "RetryTSShardingActivityInstances", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

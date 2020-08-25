@@ -14,7 +14,11 @@
 
 package com.aliyuncs.sofa.transform.v20190815;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.sofa.model.v20190815.ModifyBuildpackResponse;
+import com.aliyuncs.sofa.model.v20190815.ModifyBuildpackResponse.UploadEndpointsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,6 +29,25 @@ public class ModifyBuildpackResponseUnmarshaller {
 		modifyBuildpackResponse.setRequestId(_ctx.stringValue("ModifyBuildpackResponse.RequestId"));
 		modifyBuildpackResponse.setResultCode(_ctx.stringValue("ModifyBuildpackResponse.ResultCode"));
 		modifyBuildpackResponse.setResultMessage(_ctx.stringValue("ModifyBuildpackResponse.ResultMessage"));
+		modifyBuildpackResponse.setBuildpackId(_ctx.stringValue("ModifyBuildpackResponse.BuildpackId"));
+
+		List<UploadEndpointsItem> uploadEndpoints = new ArrayList<UploadEndpointsItem>();
+		for (int i = 0; i < _ctx.lengthValue("ModifyBuildpackResponse.UploadEndpoints.Length"); i++) {
+			UploadEndpointsItem uploadEndpointsItem = new UploadEndpointsItem();
+			uploadEndpointsItem.setAccessKeyId(_ctx.stringValue("ModifyBuildpackResponse.UploadEndpoints["+ i +"].AccessKeyId"));
+			uploadEndpointsItem.setBucket(_ctx.stringValue("ModifyBuildpackResponse.UploadEndpoints["+ i +"].Bucket"));
+			uploadEndpointsItem.setEncodedPolicy(_ctx.stringValue("ModifyBuildpackResponse.UploadEndpoints["+ i +"].EncodedPolicy"));
+			uploadEndpointsItem.setExpiration(_ctx.stringValue("ModifyBuildpackResponse.UploadEndpoints["+ i +"].Expiration"));
+			uploadEndpointsItem.setFilePath(_ctx.stringValue("ModifyBuildpackResponse.UploadEndpoints["+ i +"].FilePath"));
+			uploadEndpointsItem.setHost(_ctx.stringValue("ModifyBuildpackResponse.UploadEndpoints["+ i +"].Host"));
+			uploadEndpointsItem.setRegionId(_ctx.stringValue("ModifyBuildpackResponse.UploadEndpoints["+ i +"].RegionId"));
+			uploadEndpointsItem.setSignature(_ctx.stringValue("ModifyBuildpackResponse.UploadEndpoints["+ i +"].Signature"));
+			uploadEndpointsItem.setStorageType(_ctx.stringValue("ModifyBuildpackResponse.UploadEndpoints["+ i +"].StorageType"));
+			uploadEndpointsItem.setUrl(_ctx.stringValue("ModifyBuildpackResponse.UploadEndpoints["+ i +"].Url"));
+
+			uploadEndpoints.add(uploadEndpointsItem);
+		}
+		modifyBuildpackResponse.setUploadEndpoints(uploadEndpoints);
 	 
 	 	return modifyBuildpackResponse;
 	}

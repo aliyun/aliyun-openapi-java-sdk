@@ -31,7 +31,7 @@ public class SkipDWSNodeRequest extends RpcAcsRequest<SkipDWSNodeResponse> {
 
 	private String instanceId;
 	public SkipDWSNodeRequest() {
-		super("SOFA", "2019-08-15", "SkipDWSNode", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "SkipDWSNode", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

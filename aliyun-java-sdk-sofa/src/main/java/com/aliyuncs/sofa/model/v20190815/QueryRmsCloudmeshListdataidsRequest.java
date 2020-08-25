@@ -29,7 +29,7 @@ public class QueryRmsCloudmeshListdataidsRequest extends RpcAcsRequest<QueryRmsC
 
 	private String queryJsonStr;
 	public QueryRmsCloudmeshListdataidsRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsCloudmeshListdataids", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryRmsCloudmeshListdataids", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class ListMqSofamqRoomRequest extends RpcAcsRequest<ListMqSofamqRoomResponse> {
 	   
 	public ListMqSofamqRoomRequest() {
-		super("SOFA", "2019-08-15", "ListMqSofamqRoom", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ListMqSofamqRoom", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

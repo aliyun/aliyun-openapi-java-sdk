@@ -31,7 +31,7 @@ public class CreateCasDatabaseAccountRequest extends RpcAcsRequest<CreateCasData
 
 	private String name;
 	public CreateCasDatabaseAccountRequest() {
-		super("SOFA", "2019-08-15", "CreateCasDatabaseAccount", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateCasDatabaseAccount", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

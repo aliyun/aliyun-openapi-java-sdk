@@ -41,7 +41,7 @@ public class ListAKSKubernetesResourcesRequest extends RpcAcsRequest<ListAKSKube
 
 	private String name;
 	public ListAKSKubernetesResourcesRequest() {
-		super("SOFA", "2019-08-15", "ListAKSKubernetesResources", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ListAKSKubernetesResources", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

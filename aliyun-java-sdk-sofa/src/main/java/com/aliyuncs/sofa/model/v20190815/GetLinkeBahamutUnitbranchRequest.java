@@ -33,7 +33,7 @@ public class GetLinkeBahamutUnitbranchRequest extends RpcAcsRequest<GetLinkeBaha
 
 	private String iterationId;
 	public GetLinkeBahamutUnitbranchRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutUnitbranch", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutUnitbranch", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -47,7 +47,7 @@ public class DeleteMsSgServiceRateLimitRulesRequest extends RpcAcsRequest<Delete
 
 	private String name;
 	public DeleteMsSgServiceRateLimitRulesRequest() {
-		super("SOFA", "2019-08-15", "DeleteMsSgServiceRateLimitRules", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteMsSgServiceRateLimitRules", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

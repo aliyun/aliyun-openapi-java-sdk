@@ -29,7 +29,7 @@ public class CountLinkeBahamutGlobalsearchRequest extends RpcAcsRequest<CountLin
 
 	private String tenantId;
 	public CountLinkeBahamutGlobalsearchRequest() {
-		super("SOFA", "2019-08-15", "CountLinkeBahamutGlobalsearch", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CountLinkeBahamutGlobalsearch", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

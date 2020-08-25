@@ -31,7 +31,7 @@ public class DeleteAKSBuildConfigRequest extends RpcAcsRequest<DeleteAKSBuildCon
 
 	private Boolean deleteImage;
 	public DeleteAKSBuildConfigRequest() {
-		super("SOFA", "2019-08-15", "DeleteAKSBuildConfig", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteAKSBuildConfig", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

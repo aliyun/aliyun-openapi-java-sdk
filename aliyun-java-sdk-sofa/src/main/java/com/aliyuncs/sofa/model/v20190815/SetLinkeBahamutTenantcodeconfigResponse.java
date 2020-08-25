@@ -32,7 +32,11 @@ public class SetLinkeBahamutTenantcodeconfigResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private String errorMsgParamsMap;
+
 	private String message;
+
+	private Long responseStatusCode;
 
 	private Boolean result;
 
@@ -70,12 +74,28 @@ public class SetLinkeBahamutTenantcodeconfigResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getErrorMsgParamsMap() {
+		return this.errorMsgParamsMap;
+	}
+
+	public void setErrorMsgParamsMap(String errorMsgParamsMap) {
+		this.errorMsgParamsMap = errorMsgParamsMap;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Long getResponseStatusCode() {
+		return this.responseStatusCode;
+	}
+
+	public void setResponseStatusCode(Long responseStatusCode) {
+		this.responseStatusCode = responseStatusCode;
 	}
 
 	public Boolean getResult() {

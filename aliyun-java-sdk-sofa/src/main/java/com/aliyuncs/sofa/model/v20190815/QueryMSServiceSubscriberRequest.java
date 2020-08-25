@@ -33,7 +33,7 @@ public class QueryMSServiceSubscriberRequest extends RpcAcsRequest<QueryMSServic
 
 	private String pageSize;
 	public QueryMSServiceSubscriberRequest() {
-		super("SOFA", "2019-08-15", "QueryMSServiceSubscriber", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryMSServiceSubscriber", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,11 +29,13 @@ public class ImportDTXAppConfigRequest extends RpcAcsRequest<ImportDTXAppConfigR
 
 	private String appName;
 
+	private String context;
+
 	private String fileName;
 
 	private String instanceId;
 	public ImportDTXAppConfigRequest() {
-		super("SOFA", "2019-08-15", "ImportDTXAppConfig", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ImportDTXAppConfig", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,6 +62,17 @@ public class ImportDTXAppConfigRequest extends RpcAcsRequest<ImportDTXAppConfigR
 		this.appName = appName;
 		if(appName != null){
 			putBodyParameter("AppName", appName);
+		}
+	}
+
+	public String getContext() {
+		return this.context;
+	}
+
+	public void setContext(String context) {
+		this.context = context;
+		if(context != null){
+			putBodyParameter("Context", context);
 		}
 	}
 

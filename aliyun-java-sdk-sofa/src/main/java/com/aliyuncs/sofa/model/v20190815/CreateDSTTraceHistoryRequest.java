@@ -29,7 +29,7 @@ public class CreateDSTTraceHistoryRequest extends RpcAcsRequest<CreateDSTTraceHi
 
 	private String instanceId;
 	public CreateDSTTraceHistoryRequest() {
-		super("SOFA", "2019-08-15", "CreateDSTTraceHistory", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateDSTTraceHistory", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

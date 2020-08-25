@@ -30,6 +30,8 @@ public class ExportDTXAppConfigResponse extends AcsResponse {
 
 	private String resultMessage;
 
+	private String context;
+
 	private Boolean success;
 
 	private String url;
@@ -56,6 +58,14 @@ public class ExportDTXAppConfigResponse extends AcsResponse {
 
 	public void setResultMessage(String resultMessage) {
 		this.resultMessage = resultMessage;
+	}
+
+	public String getContext() {
+		return this.context;
+	}
+
+	public void setContext(String context) {
+		this.context = context;
 	}
 
 	public Boolean getSuccess() {

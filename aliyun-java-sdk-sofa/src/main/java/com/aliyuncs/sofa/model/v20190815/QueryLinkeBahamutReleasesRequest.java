@@ -49,7 +49,7 @@ public class QueryLinkeBahamutReleasesRequest extends RpcAcsRequest<QueryLinkeBa
 
 	private String status;
 	public QueryLinkeBahamutReleasesRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutReleases", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutReleases", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

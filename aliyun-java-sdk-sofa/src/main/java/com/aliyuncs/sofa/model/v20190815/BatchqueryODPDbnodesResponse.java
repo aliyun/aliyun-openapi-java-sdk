@@ -67,8 +67,6 @@ public class BatchqueryODPDbnodesResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String available;
-
 		private Boolean checkDbStatus;
 
 		private String dbType;
@@ -85,17 +83,11 @@ public class BatchqueryODPDbnodesResponse extends AcsResponse {
 
 		private Long id;
 
-		private String masterId;
-
 		private String netMode;
 
 		private String nodeId;
 
 		private String password;
-
-		private Boolean readOnly;
-
-		private String region;
 
 		private String status;
 
@@ -105,17 +97,7 @@ public class BatchqueryODPDbnodesResponse extends AcsResponse {
 
 		private String vpcId;
 
-		private Long weight;
-
-		private Topology topology;
-
-		public String getAvailable() {
-			return this.available;
-		}
-
-		public void setAvailable(String available) {
-			this.available = available;
-		}
+		private List<DatacenterVipMappingItem> datacenterVipMapping;
 
 		public Boolean getCheckDbStatus() {
 			return this.checkDbStatus;
@@ -181,14 +163,6 @@ public class BatchqueryODPDbnodesResponse extends AcsResponse {
 			this.id = id;
 		}
 
-		public String getMasterId() {
-			return this.masterId;
-		}
-
-		public void setMasterId(String masterId) {
-			this.masterId = masterId;
-		}
-
 		public String getNetMode() {
 			return this.netMode;
 		}
@@ -211,22 +185,6 @@ public class BatchqueryODPDbnodesResponse extends AcsResponse {
 
 		public void setPassword(String password) {
 			this.password = password;
-		}
-
-		public Boolean getReadOnly() {
-			return this.readOnly;
-		}
-
-		public void setReadOnly(Boolean readOnly) {
-			this.readOnly = readOnly;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
 		}
 
 		public String getStatus() {
@@ -261,88 +219,34 @@ public class BatchqueryODPDbnodesResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
-		public Long getWeight() {
-			return this.weight;
+		public List<DatacenterVipMappingItem> getDatacenterVipMapping() {
+			return this.datacenterVipMapping;
 		}
 
-		public void setWeight(Long weight) {
-			this.weight = weight;
+		public void setDatacenterVipMapping(List<DatacenterVipMappingItem> datacenterVipMapping) {
+			this.datacenterVipMapping = datacenterVipMapping;
 		}
 
-		public Topology getTopology() {
-			return this.topology;
-		}
+		public static class DatacenterVipMappingItem {
 
-		public void setTopology(Topology topology) {
-			this.topology = topology;
-		}
+			private String dataCenter;
 
-		public static class Topology {
+			private String dbUrl;
 
-			private List<SlavesItem> slaves;
-
-			private Master master;
-
-			public List<SlavesItem> getSlaves() {
-				return this.slaves;
+			public String getDataCenter() {
+				return this.dataCenter;
 			}
 
-			public void setSlaves(List<SlavesItem> slaves) {
-				this.slaves = slaves;
+			public void setDataCenter(String dataCenter) {
+				this.dataCenter = dataCenter;
 			}
 
-			public Master getMaster() {
-				return this.master;
+			public String getDbUrl() {
+				return this.dbUrl;
 			}
 
-			public void setMaster(Master master) {
-				this.master = master;
-			}
-
-			public static class SlavesItem {
-
-				private String nodeId;
-
-				private Long weight;
-
-				public String getNodeId() {
-					return this.nodeId;
-				}
-
-				public void setNodeId(String nodeId) {
-					this.nodeId = nodeId;
-				}
-
-				public Long getWeight() {
-					return this.weight;
-				}
-
-				public void setWeight(Long weight) {
-					this.weight = weight;
-				}
-			}
-
-			public static class Master {
-
-				private String nodeId;
-
-				private Long weight;
-
-				public String getNodeId() {
-					return this.nodeId;
-				}
-
-				public void setNodeId(String nodeId) {
-					this.nodeId = nodeId;
-				}
-
-				public Long getWeight() {
-					return this.weight;
-				}
-
-				public void setWeight(Long weight) {
-					this.weight = weight;
-				}
+			public void setDbUrl(String dbUrl) {
+				this.dbUrl = dbUrl;
 			}
 		}
 	}

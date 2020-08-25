@@ -25,9 +25,9 @@ import com.aliyuncs.sofa.Endpoint;
 public class DeleteLinkeLinktAdmintemplateRequest extends RpcAcsRequest<DeleteLinkeLinktAdmintemplateResponse> {
 	   
 
-	private Long templateId;
+	private String templateId;
 	public DeleteLinkeLinktAdmintemplateRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeLinktAdmintemplate", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteLinkeLinktAdmintemplate", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,14 +35,14 @@ public class DeleteLinkeLinktAdmintemplateRequest extends RpcAcsRequest<DeleteLi
 		} catch (Exception e) {}
 	}
 
-	public Long getTemplateId() {
+	public String getTemplateId() {
 		return this.templateId;
 	}
 
-	public void setTemplateId(Long templateId) {
+	public void setTemplateId(String templateId) {
 		this.templateId = templateId;
 		if(templateId != null){
-			putBodyParameter("TemplateId", templateId.toString());
+			putBodyParameter("TemplateId", templateId);
 		}
 	}
 

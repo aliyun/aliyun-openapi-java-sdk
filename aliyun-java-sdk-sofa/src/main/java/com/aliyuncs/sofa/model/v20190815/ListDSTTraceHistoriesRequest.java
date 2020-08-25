@@ -27,7 +27,7 @@ public class ListDSTTraceHistoriesRequest extends RpcAcsRequest<ListDSTTraceHist
 
 	private String instanceId;
 	public ListDSTTraceHistoriesRequest() {
-		super("SOFA", "2019-08-15", "ListDSTTraceHistories", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ListDSTTraceHistories", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -14,6 +14,9 @@
 
 package com.aliyuncs.sofa.transform.v20190815;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.sofa.model.v20190815.QueryODPEnvironmentResponse;
 import com.aliyuncs.sofa.model.v20190815.QueryODPEnvironmentResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -31,7 +34,14 @@ public class QueryODPEnvironmentResponseUnmarshaller {
 		data.setAdvancedUser(_ctx.booleanValue("QueryODPEnvironmentResponse.Data.AdvancedUser"));
 		data.setAutoCreateSchema(_ctx.booleanValue("QueryODPEnvironmentResponse.Data.AutoCreateSchema"));
 		data.setDepolyMode(_ctx.stringValue("QueryODPEnvironmentResponse.Data.DepolyMode"));
+		data.setLdc(_ctx.booleanValue("QueryODPEnvironmentResponse.Data.Ldc"));
 		data.setNetMode(_ctx.stringValue("QueryODPEnvironmentResponse.Data.NetMode"));
+
+		List<String> datacenters = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("QueryODPEnvironmentResponse.Data.Datacenters.Length"); i++) {
+			datacenters.add(_ctx.stringValue("QueryODPEnvironmentResponse.Data.Datacenters["+ i +"]"));
+		}
+		data.setDatacenters(datacenters);
 		queryODPEnvironmentResponse.setData(data);
 	 
 	 	return queryODPEnvironmentResponse;

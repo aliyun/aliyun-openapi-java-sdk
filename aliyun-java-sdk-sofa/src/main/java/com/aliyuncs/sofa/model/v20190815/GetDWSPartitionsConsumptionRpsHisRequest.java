@@ -35,7 +35,7 @@ public class GetDWSPartitionsConsumptionRpsHisRequest extends RpcAcsRequest<GetD
 
 	private String instanceId;
 	public GetDWSPartitionsConsumptionRpsHisRequest() {
-		super("SOFA", "2019-08-15", "GetDWSPartitionsConsumptionRpsHis", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDWSPartitionsConsumptionRpsHis", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

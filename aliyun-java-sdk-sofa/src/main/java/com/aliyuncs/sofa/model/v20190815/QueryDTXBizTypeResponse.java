@@ -31,6 +31,8 @@ public class QueryDTXBizTypeResponse extends AcsResponse {
 
 	private String resultMessage;
 
+	private String content;
+
 	private List<ParticipatorsItem> participators;
 
 	private AsynInfo asynInfo;
@@ -59,6 +61,14 @@ public class QueryDTXBizTypeResponse extends AcsResponse {
 
 	public void setResultMessage(String resultMessage) {
 		this.resultMessage = resultMessage;
+	}
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public List<ParticipatorsItem> getParticipators() {
@@ -114,6 +124,8 @@ public class QueryDTXBizTypeResponse extends AcsResponse {
 		private String testUrl;
 
 		private String uniqueId;
+
+		private Boolean used;
 
 		private String wsTr;
 
@@ -227,6 +239,14 @@ public class QueryDTXBizTypeResponse extends AcsResponse {
 
 		public void setUniqueId(String uniqueId) {
 			this.uniqueId = uniqueId;
+		}
+
+		public Boolean getUsed() {
+			return this.used;
+		}
+
+		public void setUsed(Boolean used) {
+			this.used = used;
 		}
 
 		public String getWsTr() {

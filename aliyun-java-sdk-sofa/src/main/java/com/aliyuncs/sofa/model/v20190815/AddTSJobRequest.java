@@ -109,7 +109,7 @@ public class AddTSJobRequest extends RpcAcsRequest<AddTSJobResponse> {
 
 	private String handlers;
 	public AddTSJobRequest() {
-		super("SOFA", "2019-08-15", "AddTSJob", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "AddTSJob", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

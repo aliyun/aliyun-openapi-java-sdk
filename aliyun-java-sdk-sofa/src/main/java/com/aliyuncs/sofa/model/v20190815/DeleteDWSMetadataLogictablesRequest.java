@@ -29,7 +29,7 @@ public class DeleteDWSMetadataLogictablesRequest extends RpcAcsRequest<DeleteDWS
 
 	private String instanceId;
 	public DeleteDWSMetadataLogictablesRequest() {
-		super("SOFA", "2019-08-15", "DeleteDWSMetadataLogictables", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteDWSMetadataLogictables", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

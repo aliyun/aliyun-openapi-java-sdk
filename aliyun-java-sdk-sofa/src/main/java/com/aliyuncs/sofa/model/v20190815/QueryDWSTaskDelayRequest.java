@@ -29,7 +29,7 @@ public class QueryDWSTaskDelayRequest extends RpcAcsRequest<QueryDWSTaskDelayRes
 
 	private String instanceId;
 	public QueryDWSTaskDelayRequest() {
-		super("SOFA", "2019-08-15", "QueryDWSTaskDelay", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryDWSTaskDelay", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

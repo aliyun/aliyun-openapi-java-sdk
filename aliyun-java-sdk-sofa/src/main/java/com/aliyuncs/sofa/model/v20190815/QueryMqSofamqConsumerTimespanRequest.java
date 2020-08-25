@@ -33,7 +33,7 @@ public class QueryMqSofamqConsumerTimespanRequest extends RpcAcsRequest<QueryMqS
 
 	private String topic;
 	public QueryMqSofamqConsumerTimespanRequest() {
-		super("SOFA", "2019-08-15", "QueryMqSofamqConsumerTimespan", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryMqSofamqConsumerTimespan", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

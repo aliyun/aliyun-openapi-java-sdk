@@ -29,7 +29,7 @@ public class QueryLinkeBahamutMyvcsgroupsRequest extends RpcAcsRequest<QueryLink
 
 	private String tenantId;
 	public QueryLinkeBahamutMyvcsgroupsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutMyvcsgroups", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutMyvcsgroups", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

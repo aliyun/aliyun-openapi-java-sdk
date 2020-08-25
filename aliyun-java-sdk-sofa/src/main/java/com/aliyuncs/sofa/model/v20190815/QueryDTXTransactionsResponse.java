@@ -107,6 +107,8 @@ public class QueryDTXTransactionsResponse extends AcsResponse {
 
 	public static class DataItem {
 
+		private Long actionMode;
+
 		private String bizType;
 
 		private String businessId;
@@ -126,6 +128,14 @@ public class QueryDTXTransactionsResponse extends AcsResponse {
 		private String txId;
 
 		private List<String> participatorIds;
+
+		public Long getActionMode() {
+			return this.actionMode;
+		}
+
+		public void setActionMode(Long actionMode) {
+			this.actionMode = actionMode;
+		}
 
 		public String getBizType() {
 			return this.bizType;

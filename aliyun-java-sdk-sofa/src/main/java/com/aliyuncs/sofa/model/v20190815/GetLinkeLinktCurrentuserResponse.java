@@ -35,6 +35,8 @@ public class GetLinkeLinktCurrentuserResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private Long responseStatusCode;
+
 	private Boolean success;
 
 	private Data data;
@@ -77,6 +79,14 @@ public class GetLinkeLinktCurrentuserResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public Long getResponseStatusCode() {
+		return this.responseStatusCode;
+	}
+
+	public void setResponseStatusCode(Long responseStatusCode) {
+		this.responseStatusCode = responseStatusCode;
 	}
 
 	public Boolean getSuccess() {
@@ -154,6 +164,8 @@ public class GetLinkeLinktCurrentuserResponse extends AcsResponse {
 		private String nickName;
 
 		private String realName;
+
+		private String site;
 
 		private String superName;
 
@@ -413,6 +425,14 @@ public class GetLinkeLinktCurrentuserResponse extends AcsResponse {
 
 		public void setRealName(String realName) {
 			this.realName = realName;
+		}
+
+		public String getSite() {
+			return this.site;
+		}
+
+		public void setSite(String site) {
+			this.site = site;
 		}
 
 		public String getSuperName() {

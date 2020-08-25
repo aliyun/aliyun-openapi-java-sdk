@@ -31,7 +31,7 @@ public class RefreshODPSchemasRequest extends RpcAcsRequest<RefreshODPSchemasRes
 
 	private String instanceId;
 	public RefreshODPSchemasRequest() {
-		super("SOFA", "2019-08-15", "RefreshODPSchemas", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "RefreshODPSchemas", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

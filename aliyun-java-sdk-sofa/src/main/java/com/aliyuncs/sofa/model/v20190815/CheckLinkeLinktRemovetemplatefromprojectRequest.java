@@ -27,9 +27,9 @@ public class CheckLinkeLinktRemovetemplatefromprojectRequest extends RpcAcsReque
 
 	private String projectSign;
 
-	private Long templateId;
+	private String templateId;
 	public CheckLinkeLinktRemovetemplatefromprojectRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeLinktRemovetemplatefromproject", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CheckLinkeLinktRemovetemplatefromproject", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,14 +48,14 @@ public class CheckLinkeLinktRemovetemplatefromprojectRequest extends RpcAcsReque
 		}
 	}
 
-	public Long getTemplateId() {
+	public String getTemplateId() {
 		return this.templateId;
 	}
 
-	public void setTemplateId(Long templateId) {
+	public void setTemplateId(String templateId) {
 		this.templateId = templateId;
 		if(templateId != null){
-			putBodyParameter("TemplateId", templateId.toString());
+			putBodyParameter("TemplateId", templateId);
 		}
 	}
 

@@ -27,7 +27,7 @@ public class QueryDWSClusterGroupRequest extends RpcAcsRequest<QueryDWSClusterGr
 
 	private String instanceId;
 	public QueryDWSClusterGroupRequest() {
-		super("SOFA", "2019-08-15", "QueryDWSClusterGroup", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryDWSClusterGroup", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

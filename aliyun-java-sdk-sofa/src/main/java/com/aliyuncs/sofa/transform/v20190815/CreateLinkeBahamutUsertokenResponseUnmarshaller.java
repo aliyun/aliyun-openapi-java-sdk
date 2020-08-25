@@ -14,12 +14,8 @@
 
 package com.aliyuncs.sofa.transform.v20190815;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.sofa.model.v20190815.CreateLinkeBahamutUsertokenResponse;
 import com.aliyuncs.sofa.model.v20190815.CreateLinkeBahamutUsertokenResponse.Result;
-import com.aliyuncs.sofa.model.v20190815.CreateLinkeBahamutUsertokenResponse.Result.User;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,7 +27,9 @@ public class CreateLinkeBahamutUsertokenResponseUnmarshaller {
 		createLinkeBahamutUsertokenResponse.setResultCode(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.ResultCode"));
 		createLinkeBahamutUsertokenResponse.setResultMessage(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.ResultMessage"));
 		createLinkeBahamutUsertokenResponse.setErrorMessage(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.ErrorMessage"));
+		createLinkeBahamutUsertokenResponse.setErrorMsgParamsMap(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.ErrorMsgParamsMap"));
 		createLinkeBahamutUsertokenResponse.setMessage(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.Message"));
+		createLinkeBahamutUsertokenResponse.setResponseStatusCode(_ctx.longValue("CreateLinkeBahamutUsertokenResponse.ResponseStatusCode"));
 		createLinkeBahamutUsertokenResponse.setSuccess(_ctx.booleanValue("CreateLinkeBahamutUsertokenResponse.Success"));
 
 		Result result = new Result();
@@ -41,30 +39,7 @@ public class CreateLinkeBahamutUsertokenResponseUnmarshaller {
 		result.setId(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.Result.Id"));
 		result.setLastModified(_ctx.longValue("CreateLinkeBahamutUsertokenResponse.Result.LastModified"));
 		result.setToken(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.Result.Token"));
-
-		User user = new User();
-		user.setAccount(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.Result.User.Account"));
-		user.setCreated(_ctx.longValue("CreateLinkeBahamutUsertokenResponse.Result.User.Created"));
-		user.setCustomer(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.Result.User.Customer"));
-		user.setDeleted(_ctx.booleanValue("CreateLinkeBahamutUsertokenResponse.Result.User.Deleted"));
-		user.setDepartment(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.Result.User.Department"));
-		user.setEmail(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.Result.User.Email"));
-		user.setEmpId(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.Result.User.EmpId"));
-		user.setId(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.Result.User.Id"));
-		user.setLastLogin(_ctx.longValue("CreateLinkeBahamutUsertokenResponse.Result.User.LastLogin"));
-		user.setLastModified(_ctx.longValue("CreateLinkeBahamutUsertokenResponse.Result.User.LastModified"));
-		user.setName(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.Result.User.Name"));
-		user.setNick(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.Result.User.Nick"));
-		user.setUid(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.Result.User.Uid"));
-		user.setUniqueId(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.Result.User.UniqueId"));
-		user.setWw(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.Result.User.Ww"));
-
-		List<String> tenants = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("CreateLinkeBahamutUsertokenResponse.Result.User.Tenants.Length"); i++) {
-			tenants.add(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.Result.User.Tenants["+ i +"]"));
-		}
-		user.setTenants(tenants);
-		result.setUser(user);
+		result.setUser(_ctx.stringValue("CreateLinkeBahamutUsertokenResponse.Result.User"));
 		createLinkeBahamutUsertokenResponse.setResult(result);
 	 
 	 	return createLinkeBahamutUsertokenResponse;

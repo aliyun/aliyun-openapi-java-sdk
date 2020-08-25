@@ -29,7 +29,7 @@ public class QueryRmsAlarmRecentcountRequest extends RpcAcsRequest<QueryRmsAlarm
 
 	private String envJsonStr;
 	public QueryRmsAlarmRecentcountRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsAlarmRecentcount", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryRmsAlarmRecentcount", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

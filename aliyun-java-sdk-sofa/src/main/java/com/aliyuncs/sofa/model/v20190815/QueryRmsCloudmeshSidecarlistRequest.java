@@ -29,7 +29,7 @@ public class QueryRmsCloudmeshSidecarlistRequest extends RpcAcsRequest<QueryRmsC
 
 	private String queryJsonStr;
 	public QueryRmsCloudmeshSidecarlistRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsCloudmeshSidecarlist", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryRmsCloudmeshSidecarlist", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

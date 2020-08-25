@@ -31,7 +31,7 @@ public class CreateCasVpcRequest extends RpcAcsRequest<CreateCasVpcResponse> {
 
 	private String cidrLock;
 	public CreateCasVpcRequest() {
-		super("SOFA", "2019-08-15", "CreateCasVpc", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateCasVpc", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -24,13 +24,26 @@ import com.aliyuncs.sofa.Endpoint;
  */
 public class GetDTXGlobalEnvRequest extends RpcAcsRequest<GetDTXGlobalEnvResponse> {
 	   
+
+	private String instanceId;
 	public GetDTXGlobalEnvRequest() {
-		super("SOFA", "2019-08-15", "GetDTXGlobalEnv", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDTXGlobalEnv", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
+		}
 	}
 
 	@Override

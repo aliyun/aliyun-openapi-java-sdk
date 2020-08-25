@@ -33,7 +33,7 @@ public class QueryMsSgServicePubKeysRequest extends RpcAcsRequest<QueryMsSgServi
 
 	private String instanceId;
 	public QueryMsSgServicePubKeysRequest() {
-		super("SOFA", "2019-08-15", "QueryMsSgServicePubKeys", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryMsSgServicePubKeys", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

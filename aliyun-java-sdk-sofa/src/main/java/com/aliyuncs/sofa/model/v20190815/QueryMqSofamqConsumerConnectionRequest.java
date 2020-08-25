@@ -31,7 +31,7 @@ public class QueryMqSofamqConsumerConnectionRequest extends RpcAcsRequest<QueryM
 
 	private String instanceId;
 	public QueryMqSofamqConsumerConnectionRequest() {
-		super("SOFA", "2019-08-15", "QueryMqSofamqConsumerConnection", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryMqSofamqConsumerConnection", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class RemoveLinkeLinktProjectroleforuserRequest extends RpcAcsRequest<Rem
 
 	private String projectSign;
 	public RemoveLinkeLinktProjectroleforuserRequest() {
-		super("SOFA", "2019-08-15", "RemoveLinkeLinktProjectroleforuser", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "RemoveLinkeLinktProjectroleforuser", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

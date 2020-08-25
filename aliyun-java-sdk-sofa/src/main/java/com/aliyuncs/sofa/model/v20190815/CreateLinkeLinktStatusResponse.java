@@ -34,6 +34,8 @@ public class CreateLinkeLinktStatusResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private Long responseStatusCode;
+
 	private Boolean success;
 
 	private Data data;
@@ -76,6 +78,14 @@ public class CreateLinkeLinktStatusResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public Long getResponseStatusCode() {
+		return this.responseStatusCode;
+	}
+
+	public void setResponseStatusCode(Long responseStatusCode) {
+		this.responseStatusCode = responseStatusCode;
 	}
 
 	public Boolean getSuccess() {

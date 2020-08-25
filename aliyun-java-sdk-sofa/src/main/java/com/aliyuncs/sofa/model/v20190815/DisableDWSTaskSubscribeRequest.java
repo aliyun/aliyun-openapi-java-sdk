@@ -31,7 +31,7 @@ public class DisableDWSTaskSubscribeRequest extends RpcAcsRequest<DisableDWSTask
 
 	private String instanceId;
 	public DisableDWSTaskSubscribeRequest() {
-		super("SOFA", "2019-08-15", "DisableDWSTaskSubscribe", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DisableDWSTaskSubscribe", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

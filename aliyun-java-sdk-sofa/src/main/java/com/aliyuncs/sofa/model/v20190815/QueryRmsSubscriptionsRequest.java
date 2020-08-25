@@ -29,7 +29,7 @@ public class QueryRmsSubscriptionsRequest extends RpcAcsRequest<QueryRmsSubscrip
 
 	private String queryJsonStr;
 	public QueryRmsSubscriptionsRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsSubscriptions", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryRmsSubscriptions", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

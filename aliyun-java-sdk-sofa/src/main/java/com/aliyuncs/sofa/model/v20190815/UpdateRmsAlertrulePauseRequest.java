@@ -29,7 +29,7 @@ public class UpdateRmsAlertrulePauseRequest extends RpcAcsRequest<UpdateRmsAlert
 
 	private String queryJsonStr;
 	public UpdateRmsAlertrulePauseRequest() {
-		super("SOFA", "2019-08-15", "UpdateRmsAlertrulePause", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateRmsAlertrulePause", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

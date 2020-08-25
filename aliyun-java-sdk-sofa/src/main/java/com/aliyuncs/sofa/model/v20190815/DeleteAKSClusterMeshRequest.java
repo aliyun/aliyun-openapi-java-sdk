@@ -27,11 +27,13 @@ public class DeleteAKSClusterMeshRequest extends RpcAcsRequest<DeleteAKSClusterM
 
 	private String workspace;
 
+	private Boolean disableK8sSvcDiscovery;
+
 	private Boolean disableRegistry;
 
 	private String clusterId;
 	public DeleteAKSClusterMeshRequest() {
-		super("SOFA", "2019-08-15", "DeleteAKSClusterMesh", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteAKSClusterMesh", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,6 +49,17 @@ public class DeleteAKSClusterMeshRequest extends RpcAcsRequest<DeleteAKSClusterM
 		this.workspace = workspace;
 		if(workspace != null){
 			putBodyParameter("Workspace", workspace);
+		}
+	}
+
+	public Boolean getDisableK8sSvcDiscovery() {
+		return this.disableK8sSvcDiscovery;
+	}
+
+	public void setDisableK8sSvcDiscovery(Boolean disableK8sSvcDiscovery) {
+		this.disableK8sSvcDiscovery = disableK8sSvcDiscovery;
+		if(disableK8sSvcDiscovery != null){
+			putBodyParameter("DisableK8sSvcDiscovery", disableK8sSvcDiscovery.toString());
 		}
 	}
 

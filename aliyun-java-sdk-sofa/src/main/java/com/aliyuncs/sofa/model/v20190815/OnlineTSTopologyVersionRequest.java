@@ -29,7 +29,7 @@ public class OnlineTSTopologyVersionRequest extends RpcAcsRequest<OnlineTSTopolo
 
 	private String processId;
 	public OnlineTSTopologyVersionRequest() {
-		super("SOFA", "2019-08-15", "OnlineTSTopologyVersion", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "OnlineTSTopologyVersion", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class CreateAKSSecretImagepullRequest extends RpcAcsRequest<CreateAKSSecr
 
 	private String userName;
 	public CreateAKSSecretImagepullRequest() {
-		super("SOFA", "2019-08-15", "CreateAKSSecretImagepull", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateAKSSecretImagepull", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

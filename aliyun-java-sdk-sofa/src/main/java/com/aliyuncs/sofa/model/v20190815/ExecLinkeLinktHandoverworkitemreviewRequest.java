@@ -25,11 +25,11 @@ import com.aliyuncs.sofa.Endpoint;
 public class ExecLinkeLinktHandoverworkitemreviewRequest extends RpcAcsRequest<ExecLinkeLinktHandoverworkitemreviewResponse> {
 	   
 
-	private Long workItemReviewId;
+	private String workItemReviewId;
 
 	private String reviewer;
 	public ExecLinkeLinktHandoverworkitemreviewRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktHandoverworkitemreview", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktHandoverworkitemreview", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +37,14 @@ public class ExecLinkeLinktHandoverworkitemreviewRequest extends RpcAcsRequest<E
 		} catch (Exception e) {}
 	}
 
-	public Long getWorkItemReviewId() {
+	public String getWorkItemReviewId() {
 		return this.workItemReviewId;
 	}
 
-	public void setWorkItemReviewId(Long workItemReviewId) {
+	public void setWorkItemReviewId(String workItemReviewId) {
 		this.workItemReviewId = workItemReviewId;
 		if(workItemReviewId != null){
-			putBodyParameter("WorkItemReviewId", workItemReviewId.toString());
+			putBodyParameter("WorkItemReviewId", workItemReviewId);
 		}
 	}
 

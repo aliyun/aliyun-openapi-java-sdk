@@ -29,7 +29,7 @@ public class DescribeAppServiceEnvParamWithDiffRequest extends RpcAcsRequest<Des
 
 	private String buildpackId;
 	public DescribeAppServiceEnvParamWithDiffRequest() {
-		super("SOFA", "2019-08-15", "DescribeAppServiceEnvParamWithDiff", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DescribeAppServiceEnvParamWithDiff", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

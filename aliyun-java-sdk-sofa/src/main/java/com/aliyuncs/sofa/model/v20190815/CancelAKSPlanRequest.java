@@ -29,7 +29,7 @@ public class CancelAKSPlanRequest extends RpcAcsRequest<CancelAKSPlanResponse> {
 
 	private String controlOperationRequestJsonStr;
 	public CancelAKSPlanRequest() {
-		super("SOFA", "2019-08-15", "CancelAKSPlan", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CancelAKSPlan", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -44,7 +44,7 @@ public class CreateAKSPlanRequest extends RpcAcsRequest<CreateAKSPlanResponse> {
 
 	private String aksServiceInfosJsonStr;
 	public CreateAKSPlanRequest() {
-		super("SOFA", "2019-08-15", "CreateAKSPlan", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateAKSPlan", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

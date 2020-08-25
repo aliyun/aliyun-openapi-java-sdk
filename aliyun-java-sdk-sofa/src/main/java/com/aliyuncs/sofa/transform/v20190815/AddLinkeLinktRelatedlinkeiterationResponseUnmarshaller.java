@@ -28,6 +28,7 @@ public class AddLinkeLinktRelatedlinkeiterationResponseUnmarshaller {
 		addLinkeLinktRelatedlinkeiterationResponse.setData(_ctx.booleanValue("AddLinkeLinktRelatedlinkeiterationResponse.Data"));
 		addLinkeLinktRelatedlinkeiterationResponse.setErrorCode(_ctx.longValue("AddLinkeLinktRelatedlinkeiterationResponse.ErrorCode"));
 		addLinkeLinktRelatedlinkeiterationResponse.setErrorMessage(_ctx.stringValue("AddLinkeLinktRelatedlinkeiterationResponse.ErrorMessage"));
+		addLinkeLinktRelatedlinkeiterationResponse.setResponseStatusCode(_ctx.longValue("AddLinkeLinktRelatedlinkeiterationResponse.ResponseStatusCode"));
 		addLinkeLinktRelatedlinkeiterationResponse.setSuccess(_ctx.booleanValue("AddLinkeLinktRelatedlinkeiterationResponse.Success"));
 	 
 	 	return addLinkeLinktRelatedlinkeiterationResponse;

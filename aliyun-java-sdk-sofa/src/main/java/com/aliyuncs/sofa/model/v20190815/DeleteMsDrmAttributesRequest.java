@@ -39,7 +39,7 @@ public class DeleteMsDrmAttributesRequest extends RpcAcsRequest<DeleteMsDrmAttri
 
 	private String name;
 	public DeleteMsDrmAttributesRequest() {
-		super("SOFA", "2019-08-15", "DeleteMsDrmAttributes", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteMsDrmAttributes", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class GetDWSSubsStatsRequest extends RpcAcsRequest<GetDWSSubsStatsRespons
 
 	private String instanceId;
 	public GetDWSSubsStatsRequest() {
-		super("SOFA", "2019-08-15", "GetDWSSubsStats", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDWSSubsStats", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

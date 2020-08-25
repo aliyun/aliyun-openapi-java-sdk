@@ -28,6 +28,7 @@ public class CreateLinkeLinktProjectroleResponseUnmarshaller {
 		createLinkeLinktProjectroleResponse.setData(_ctx.booleanValue("CreateLinkeLinktProjectroleResponse.Data"));
 		createLinkeLinktProjectroleResponse.setErrorCode(_ctx.longValue("CreateLinkeLinktProjectroleResponse.ErrorCode"));
 		createLinkeLinktProjectroleResponse.setErrorMessage(_ctx.stringValue("CreateLinkeLinktProjectroleResponse.ErrorMessage"));
+		createLinkeLinktProjectroleResponse.setResponseStatusCode(_ctx.longValue("CreateLinkeLinktProjectroleResponse.ResponseStatusCode"));
 		createLinkeLinktProjectroleResponse.setSuccess(_ctx.booleanValue("CreateLinkeLinktProjectroleResponse.Success"));
 	 
 	 	return createLinkeLinktProjectroleResponse;

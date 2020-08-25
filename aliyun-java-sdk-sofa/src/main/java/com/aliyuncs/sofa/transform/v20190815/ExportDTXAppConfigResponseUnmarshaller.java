@@ -25,6 +25,7 @@ public class ExportDTXAppConfigResponseUnmarshaller {
 		exportDTXAppConfigResponse.setRequestId(_ctx.stringValue("ExportDTXAppConfigResponse.RequestId"));
 		exportDTXAppConfigResponse.setResultCode(_ctx.stringValue("ExportDTXAppConfigResponse.ResultCode"));
 		exportDTXAppConfigResponse.setResultMessage(_ctx.stringValue("ExportDTXAppConfigResponse.ResultMessage"));
+		exportDTXAppConfigResponse.setContext(_ctx.stringValue("ExportDTXAppConfigResponse.Context"));
 		exportDTXAppConfigResponse.setSuccess(_ctx.booleanValue("ExportDTXAppConfigResponse.Success"));
 		exportDTXAppConfigResponse.setUrl(_ctx.stringValue("ExportDTXAppConfigResponse.Url"));
 	 

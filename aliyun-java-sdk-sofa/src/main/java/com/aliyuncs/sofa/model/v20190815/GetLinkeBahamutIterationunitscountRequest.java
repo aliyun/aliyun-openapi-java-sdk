@@ -27,7 +27,7 @@ public class GetLinkeBahamutIterationunitscountRequest extends RpcAcsRequest<Get
 
 	private String id;
 	public GetLinkeBahamutIterationunitscountRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationunitscount", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationunitscount", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

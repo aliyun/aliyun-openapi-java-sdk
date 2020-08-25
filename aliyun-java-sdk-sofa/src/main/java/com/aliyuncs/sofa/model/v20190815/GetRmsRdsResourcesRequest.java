@@ -29,7 +29,7 @@ public class GetRmsRdsResourcesRequest extends RpcAcsRequest<GetRmsRdsResourcesR
 
 	private String queryJsonStr;
 	public GetRmsRdsResourcesRequest() {
-		super("SOFA", "2019-08-15", "GetRmsRdsResources", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetRmsRdsResources", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

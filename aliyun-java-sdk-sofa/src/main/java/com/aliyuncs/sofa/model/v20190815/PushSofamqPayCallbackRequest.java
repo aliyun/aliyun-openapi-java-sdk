@@ -27,7 +27,7 @@ public class PushSofamqPayCallbackRequest extends RpcAcsRequest<PushSofamqPayCal
 
 	private String data;
 	public PushSofamqPayCallbackRequest() {
-		super("SOFA", "2019-08-15", "PushSofamqPayCallback", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "PushSofamqPayCallback", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

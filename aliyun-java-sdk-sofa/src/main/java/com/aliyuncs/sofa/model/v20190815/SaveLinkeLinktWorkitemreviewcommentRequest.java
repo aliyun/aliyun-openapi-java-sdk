@@ -31,7 +31,7 @@ public class SaveLinkeLinktWorkitemreviewcommentRequest extends RpcAcsRequest<Sa
 
 	private String status;
 	public SaveLinkeLinktWorkitemreviewcommentRequest() {
-		super("SOFA", "2019-08-15", "SaveLinkeLinktWorkitemreviewcomment", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "SaveLinkeLinktWorkitemreviewcomment", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteTSJobGroupRequest extends RpcAcsRequest<DeleteTSJobGroupRespo
 
 	private String instanceId;
 	public DeleteTSJobGroupRequest() {
-		super("SOFA", "2019-08-15", "DeleteTSJobGroup", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteTSJobGroup", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

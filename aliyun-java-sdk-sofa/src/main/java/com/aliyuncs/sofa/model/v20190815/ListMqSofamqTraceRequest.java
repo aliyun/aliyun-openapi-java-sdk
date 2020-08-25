@@ -33,7 +33,7 @@ public class ListMqSofamqTraceRequest extends RpcAcsRequest<ListMqSofamqTraceRes
 
 	private String instanceId;
 	public ListMqSofamqTraceRequest() {
-		super("SOFA", "2019-08-15", "ListMqSofamqTrace", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ListMqSofamqTrace", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

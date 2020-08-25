@@ -29,7 +29,7 @@ public class DeleteDWSVpcServerRequest extends RpcAcsRequest<DeleteDWSVpcServerR
 
 	private String instanceId;
 	public DeleteDWSVpcServerRequest() {
-		super("SOFA", "2019-08-15", "DeleteDWSVpcServer", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteDWSVpcServer", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class QueryDWSOrderStepsRequest extends RpcAcsRequest<QueryDWSOrderStepsR
 
 	private String instanceId;
 	public QueryDWSOrderStepsRequest() {
-		super("SOFA", "2019-08-15", "QueryDWSOrderSteps", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryDWSOrderSteps", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

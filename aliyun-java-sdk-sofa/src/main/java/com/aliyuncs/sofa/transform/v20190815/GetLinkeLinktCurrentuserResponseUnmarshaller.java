@@ -31,6 +31,7 @@ public class GetLinkeLinktCurrentuserResponseUnmarshaller {
 		getLinkeLinktCurrentuserResponse.setResultMessage(_ctx.stringValue("GetLinkeLinktCurrentuserResponse.ResultMessage"));
 		getLinkeLinktCurrentuserResponse.setErrorCode(_ctx.longValue("GetLinkeLinktCurrentuserResponse.ErrorCode"));
 		getLinkeLinktCurrentuserResponse.setErrorMessage(_ctx.stringValue("GetLinkeLinktCurrentuserResponse.ErrorMessage"));
+		getLinkeLinktCurrentuserResponse.setResponseStatusCode(_ctx.longValue("GetLinkeLinktCurrentuserResponse.ResponseStatusCode"));
 		getLinkeLinktCurrentuserResponse.setSuccess(_ctx.booleanValue("GetLinkeLinktCurrentuserResponse.Success"));
 
 		Data data = new Data();
@@ -63,6 +64,7 @@ public class GetLinkeLinktCurrentuserResponseUnmarshaller {
 		data.setName(_ctx.stringValue("GetLinkeLinktCurrentuserResponse.Data.Name"));
 		data.setNickName(_ctx.stringValue("GetLinkeLinktCurrentuserResponse.Data.NickName"));
 		data.setRealName(_ctx.stringValue("GetLinkeLinktCurrentuserResponse.Data.RealName"));
+		data.setSite(_ctx.stringValue("GetLinkeLinktCurrentuserResponse.Data.Site"));
 		data.setSuperName(_ctx.stringValue("GetLinkeLinktCurrentuserResponse.Data.SuperName"));
 		data.setSuperNickName(_ctx.stringValue("GetLinkeLinktCurrentuserResponse.Data.SuperNickName"));
 		data.setSuperWorkNo(_ctx.stringValue("GetLinkeLinktCurrentuserResponse.Data.SuperWorkNo"));

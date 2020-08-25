@@ -27,15 +27,11 @@ public class BatchqueryODPDbnodesRequest extends RpcAcsRequest<BatchqueryODPDbno
 
 	private Boolean filterAvailable;
 
-	private String zdalproxyInstanceId;
-
-	private String schemaName;
-
-	private Boolean filterMasterNodes;
-
 	private String instanceId;
+
+	private String filterInstanceType;
 	public BatchqueryODPDbnodesRequest() {
-		super("SOFA", "2019-08-15", "BatchqueryODPDbnodes", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "BatchqueryODPDbnodes", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,39 +50,6 @@ public class BatchqueryODPDbnodesRequest extends RpcAcsRequest<BatchqueryODPDbno
 		}
 	}
 
-	public String getZdalproxyInstanceId() {
-		return this.zdalproxyInstanceId;
-	}
-
-	public void setZdalproxyInstanceId(String zdalproxyInstanceId) {
-		this.zdalproxyInstanceId = zdalproxyInstanceId;
-		if(zdalproxyInstanceId != null){
-			putBodyParameter("ZdalproxyInstanceId", zdalproxyInstanceId);
-		}
-	}
-
-	public String getSchemaName() {
-		return this.schemaName;
-	}
-
-	public void setSchemaName(String schemaName) {
-		this.schemaName = schemaName;
-		if(schemaName != null){
-			putBodyParameter("SchemaName", schemaName);
-		}
-	}
-
-	public Boolean getFilterMasterNodes() {
-		return this.filterMasterNodes;
-	}
-
-	public void setFilterMasterNodes(Boolean filterMasterNodes) {
-		this.filterMasterNodes = filterMasterNodes;
-		if(filterMasterNodes != null){
-			putBodyParameter("FilterMasterNodes", filterMasterNodes.toString());
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -95,6 +58,17 @@ public class BatchqueryODPDbnodesRequest extends RpcAcsRequest<BatchqueryODPDbno
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putBodyParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getFilterInstanceType() {
+		return this.filterInstanceType;
+	}
+
+	public void setFilterInstanceType(String filterInstanceType) {
+		this.filterInstanceType = filterInstanceType;
+		if(filterInstanceType != null){
+			putBodyParameter("FilterInstanceType", filterInstanceType);
 		}
 	}
 

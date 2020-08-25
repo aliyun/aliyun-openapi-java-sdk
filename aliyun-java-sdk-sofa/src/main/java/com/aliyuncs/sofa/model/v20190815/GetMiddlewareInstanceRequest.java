@@ -29,7 +29,7 @@ public class GetMiddlewareInstanceRequest extends RpcAcsRequest<GetMiddlewareIns
 
 	private String currTenant;
 	public GetMiddlewareInstanceRequest() {
-		super("SOFA", "2019-08-15", "GetMiddlewareInstance", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetMiddlewareInstance", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

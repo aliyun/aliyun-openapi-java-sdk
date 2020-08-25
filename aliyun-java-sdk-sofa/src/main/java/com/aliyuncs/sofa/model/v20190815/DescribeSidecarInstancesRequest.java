@@ -53,7 +53,7 @@ public class DescribeSidecarInstancesRequest extends RpcAcsRequest<DescribeSidec
 
 	private String sortField;
 	public DescribeSidecarInstancesRequest() {
-		super("SOFA", "2019-08-15", "DescribeSidecarInstances", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DescribeSidecarInstances", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

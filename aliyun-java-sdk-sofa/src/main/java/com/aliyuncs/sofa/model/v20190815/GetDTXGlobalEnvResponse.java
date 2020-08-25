@@ -80,6 +80,8 @@ public class GetDTXGlobalEnvResponse extends AcsResponse {
 
 		private Boolean isPublicCloud;
 
+		private String recoveryMode;
+
 		private String tenant;
 
 		public String getEnv() {
@@ -96,6 +98,14 @@ public class GetDTXGlobalEnvResponse extends AcsResponse {
 
 		public void setIsPublicCloud(Boolean isPublicCloud) {
 			this.isPublicCloud = isPublicCloud;
+		}
+
+		public String getRecoveryMode() {
+			return this.recoveryMode;
+		}
+
+		public void setRecoveryMode(String recoveryMode) {
+			this.recoveryMode = recoveryMode;
 		}
 
 		public String getTenant() {

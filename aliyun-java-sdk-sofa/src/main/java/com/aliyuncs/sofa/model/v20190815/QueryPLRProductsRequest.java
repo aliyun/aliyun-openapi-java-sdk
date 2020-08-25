@@ -27,7 +27,7 @@ public class QueryPLRProductsRequest extends RpcAcsRequest<QueryPLRProductsRespo
 
 	private Boolean refresh;
 	public QueryPLRProductsRequest() {
-		super("SOFA", "2019-08-15", "QueryPLRProducts", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryPLRProducts", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

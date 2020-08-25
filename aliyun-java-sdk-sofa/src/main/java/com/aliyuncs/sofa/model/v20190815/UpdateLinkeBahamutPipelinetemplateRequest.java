@@ -27,7 +27,7 @@ public class UpdateLinkeBahamutPipelinetemplateRequest extends RpcAcsRequest<Upd
 
 	private Long id;
 	public UpdateLinkeBahamutPipelinetemplateRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutPipelinetemplate", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutPipelinetemplate", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

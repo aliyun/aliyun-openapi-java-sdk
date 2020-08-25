@@ -29,7 +29,7 @@ public class CreateDWSVpcAppRequest extends RpcAcsRequest<CreateDWSVpcAppRespons
 
 	private String instanceId;
 	public CreateDWSVpcAppRequest() {
-		super("SOFA", "2019-08-15", "CreateDWSVpcApp", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateDWSVpcApp", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

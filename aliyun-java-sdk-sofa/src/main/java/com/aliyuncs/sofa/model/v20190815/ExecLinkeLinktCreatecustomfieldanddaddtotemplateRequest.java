@@ -25,11 +25,11 @@ import com.aliyuncs.sofa.Endpoint;
 public class ExecLinkeLinktCreatecustomfieldanddaddtotemplateRequest extends RpcAcsRequest<ExecLinkeLinktCreatecustomfieldanddaddtotemplateResponse> {
 	   
 
-	private Long templateId;
+	private String templateId;
 
 	private String formJsonStr;
 	public ExecLinkeLinktCreatecustomfieldanddaddtotemplateRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktCreatecustomfieldanddaddtotemplate", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktCreatecustomfieldanddaddtotemplate", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +37,14 @@ public class ExecLinkeLinktCreatecustomfieldanddaddtotemplateRequest extends Rpc
 		} catch (Exception e) {}
 	}
 
-	public Long getTemplateId() {
+	public String getTemplateId() {
 		return this.templateId;
 	}
 
-	public void setTemplateId(Long templateId) {
+	public void setTemplateId(String templateId) {
 		this.templateId = templateId;
 		if(templateId != null){
-			putBodyParameter("TemplateId", templateId.toString());
+			putBodyParameter("TemplateId", templateId);
 		}
 	}
 

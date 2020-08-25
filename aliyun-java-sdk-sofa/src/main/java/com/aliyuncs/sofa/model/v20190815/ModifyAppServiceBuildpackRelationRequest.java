@@ -29,7 +29,7 @@ public class ModifyAppServiceBuildpackRelationRequest extends RpcAcsRequest<Modi
 
 	private String originalAppServiceJsonStr;
 	public ModifyAppServiceBuildpackRelationRequest() {
-		super("SOFA", "2019-08-15", "ModifyAppServiceBuildpackRelation", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ModifyAppServiceBuildpackRelation", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

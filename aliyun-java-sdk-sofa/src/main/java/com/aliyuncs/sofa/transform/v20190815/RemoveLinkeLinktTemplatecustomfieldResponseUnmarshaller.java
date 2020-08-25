@@ -28,6 +28,7 @@ public class RemoveLinkeLinktTemplatecustomfieldResponseUnmarshaller {
 		removeLinkeLinktTemplatecustomfieldResponse.setData(_ctx.booleanValue("RemoveLinkeLinktTemplatecustomfieldResponse.Data"));
 		removeLinkeLinktTemplatecustomfieldResponse.setErrorCode(_ctx.longValue("RemoveLinkeLinktTemplatecustomfieldResponse.ErrorCode"));
 		removeLinkeLinktTemplatecustomfieldResponse.setErrorMessage(_ctx.stringValue("RemoveLinkeLinktTemplatecustomfieldResponse.ErrorMessage"));
+		removeLinkeLinktTemplatecustomfieldResponse.setResponseStatusCode(_ctx.longValue("RemoveLinkeLinktTemplatecustomfieldResponse.ResponseStatusCode"));
 		removeLinkeLinktTemplatecustomfieldResponse.setSuccess(_ctx.booleanValue("RemoveLinkeLinktTemplatecustomfieldResponse.Success"));
 	 
 	 	return removeLinkeLinktTemplatecustomfieldResponse;

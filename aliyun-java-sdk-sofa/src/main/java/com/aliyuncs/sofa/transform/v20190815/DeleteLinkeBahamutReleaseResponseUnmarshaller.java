@@ -26,7 +26,9 @@ public class DeleteLinkeBahamutReleaseResponseUnmarshaller {
 		deleteLinkeBahamutReleaseResponse.setResultCode(_ctx.stringValue("DeleteLinkeBahamutReleaseResponse.ResultCode"));
 		deleteLinkeBahamutReleaseResponse.setResultMessage(_ctx.stringValue("DeleteLinkeBahamutReleaseResponse.ResultMessage"));
 		deleteLinkeBahamutReleaseResponse.setErrorMessage(_ctx.stringValue("DeleteLinkeBahamutReleaseResponse.ErrorMessage"));
+		deleteLinkeBahamutReleaseResponse.setErrorMsgParamsMap(_ctx.stringValue("DeleteLinkeBahamutReleaseResponse.ErrorMsgParamsMap"));
 		deleteLinkeBahamutReleaseResponse.setMessage(_ctx.stringValue("DeleteLinkeBahamutReleaseResponse.Message"));
+		deleteLinkeBahamutReleaseResponse.setResponseStatusCode(_ctx.longValue("DeleteLinkeBahamutReleaseResponse.ResponseStatusCode"));
 		deleteLinkeBahamutReleaseResponse.setSuccess(_ctx.booleanValue("DeleteLinkeBahamutReleaseResponse.Success"));
 	 
 	 	return deleteLinkeBahamutReleaseResponse;

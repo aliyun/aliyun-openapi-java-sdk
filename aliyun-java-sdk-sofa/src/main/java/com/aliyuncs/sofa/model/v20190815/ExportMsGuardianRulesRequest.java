@@ -29,7 +29,7 @@ public class ExportMsGuardianRulesRequest extends RpcAcsRequest<ExportMsGuardian
 
 	private String instanceId;
 	public ExportMsGuardianRulesRequest() {
-		super("SOFA", "2019-08-15", "ExportMsGuardianRules", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ExportMsGuardianRules", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

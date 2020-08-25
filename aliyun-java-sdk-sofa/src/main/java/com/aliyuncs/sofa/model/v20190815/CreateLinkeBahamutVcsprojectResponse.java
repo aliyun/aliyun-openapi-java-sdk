@@ -32,7 +32,11 @@ public class CreateLinkeBahamutVcsprojectResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private String errorMsgParamsMap;
+
 	private String message;
+
+	private Long responseStatusCode;
 
 	private Boolean success;
 
@@ -70,12 +74,28 @@ public class CreateLinkeBahamutVcsprojectResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getErrorMsgParamsMap() {
+		return this.errorMsgParamsMap;
+	}
+
+	public void setErrorMsgParamsMap(String errorMsgParamsMap) {
+		this.errorMsgParamsMap = errorMsgParamsMap;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Long getResponseStatusCode() {
+		return this.responseStatusCode;
+	}
+
+	public void setResponseStatusCode(Long responseStatusCode) {
+		this.responseStatusCode = responseStatusCode;
 	}
 
 	public Boolean getSuccess() {
@@ -106,6 +126,8 @@ public class CreateLinkeBahamutVcsprojectResponse extends AcsResponse {
 
 		private String name;
 
+		private String namespace;
+
 		private Boolean publicStatus;
 
 		private String sshUrlToRepo;
@@ -115,8 +137,6 @@ public class CreateLinkeBahamutVcsprojectResponse extends AcsResponse {
 		private Long visibilityLevel;
 
 		private String webUrl;
-
-		private Namespace namespace;
 
 		public String getDescription() {
 			return this.description;
@@ -158,6 +178,14 @@ public class CreateLinkeBahamutVcsprojectResponse extends AcsResponse {
 			this.name = name;
 		}
 
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
 		public Boolean getPublicStatus() {
 			return this.publicStatus;
 		}
@@ -196,77 +224,6 @@ public class CreateLinkeBahamutVcsprojectResponse extends AcsResponse {
 
 		public void setWebUrl(String webUrl) {
 			this.webUrl = webUrl;
-		}
-
-		public Namespace getNamespace() {
-			return this.namespace;
-		}
-
-		public void setNamespace(Namespace namespace) {
-			this.namespace = namespace;
-		}
-
-		public static class Namespace {
-
-			private String id;
-
-			private String name;
-
-			private String path;
-
-			private Boolean publicStatus;
-
-			private String type;
-
-			private String webUrl;
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getPath() {
-				return this.path;
-			}
-
-			public void setPath(String path) {
-				this.path = path;
-			}
-
-			public Boolean getPublicStatus() {
-				return this.publicStatus;
-			}
-
-			public void setPublicStatus(Boolean publicStatus) {
-				this.publicStatus = publicStatus;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public String getWebUrl() {
-				return this.webUrl;
-			}
-
-			public void setWebUrl(String webUrl) {
-				this.webUrl = webUrl;
-			}
 		}
 	}
 

@@ -29,7 +29,7 @@ public class DeleteDSTAppCollectionRequest extends RpcAcsRequest<DeleteDSTAppCol
 
 	private String instanceId;
 	public DeleteDSTAppCollectionRequest() {
-		super("SOFA", "2019-08-15", "DeleteDSTAppCollection", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteDSTAppCollection", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

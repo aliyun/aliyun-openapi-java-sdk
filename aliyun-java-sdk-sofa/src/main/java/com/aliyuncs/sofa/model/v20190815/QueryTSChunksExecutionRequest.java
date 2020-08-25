@@ -31,7 +31,7 @@ public class QueryTSChunksExecutionRequest extends RpcAcsRequest<QueryTSChunksEx
 
 	private String jobRequestId;
 	public QueryTSChunksExecutionRequest() {
-		super("SOFA", "2019-08-15", "QueryTSChunksExecution", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryTSChunksExecution", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

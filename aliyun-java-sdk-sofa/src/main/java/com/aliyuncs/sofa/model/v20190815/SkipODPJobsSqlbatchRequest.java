@@ -33,7 +33,7 @@ public class SkipODPJobsSqlbatchRequest extends RpcAcsRequest<SkipODPJobsSqlbatc
 
 	private String instanceId;
 	public SkipODPJobsSqlbatchRequest() {
-		super("SOFA", "2019-08-15", "SkipODPJobsSqlbatch", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "SkipODPJobsSqlbatch", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

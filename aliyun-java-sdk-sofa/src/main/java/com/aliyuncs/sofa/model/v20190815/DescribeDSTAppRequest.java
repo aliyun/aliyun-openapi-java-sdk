@@ -29,7 +29,7 @@ public class DescribeDSTAppRequest extends RpcAcsRequest<DescribeDSTAppResponse>
 
 	private String instanceId;
 	public DescribeDSTAppRequest() {
-		super("SOFA", "2019-08-15", "DescribeDSTApp", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DescribeDSTApp", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

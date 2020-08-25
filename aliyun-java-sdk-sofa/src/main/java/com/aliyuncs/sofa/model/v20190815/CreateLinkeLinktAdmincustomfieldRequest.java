@@ -40,9 +40,9 @@ public class CreateLinkeLinktAdmincustomfieldRequest extends RpcAcsRequest<Creat
 
 	private String fieldFormat;
 
-	private List<PossibleValues> possibleValuess;
+	private List<String> possibleValuesRepeatLists;
 	public CreateLinkeLinktAdmincustomfieldRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeLinktAdmincustomfield", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateLinkeLinktAdmincustomfield", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -127,41 +127,17 @@ public class CreateLinkeLinktAdmincustomfieldRequest extends RpcAcsRequest<Creat
 		}
 	}
 
-	public List<PossibleValues> getPossibleValuess() {
-		return this.possibleValuess;
+	public List<String> getPossibleValuesRepeatLists() {
+		return this.possibleValuesRepeatLists;
 	}
 
-	public void setPossibleValuess(List<PossibleValues> possibleValuess) {
-		this.possibleValuess = possibleValuess;	
-		if (possibleValuess != null) {
-			for (int depth1 = 0; depth1 < possibleValuess.size(); depth1++) {
-				putBodyParameter("PossibleValues." + (depth1 + 1) + ".Label" , possibleValuess.get(depth1).getLabel());
-				putBodyParameter("PossibleValues." + (depth1 + 1) + ".Key" , possibleValuess.get(depth1).getKey());
+	public void setPossibleValuesRepeatLists(List<String> possibleValuesRepeatLists) {
+		this.possibleValuesRepeatLists = possibleValuesRepeatLists;	
+		if (possibleValuesRepeatLists != null) {
+			for (int i = 0; i < possibleValuesRepeatLists.size(); i++) {
+				putBodyParameter("PossibleValuesRepeatList." + (i + 1) , possibleValuesRepeatLists.get(i));
 			}
 		}	
-	}
-
-	public static class PossibleValues {
-
-		private String label;
-
-		private String key;
-
-		public String getLabel() {
-			return this.label;
-		}
-
-		public void setLabel(String label) {
-			this.label = label;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
 	}
 
 	@Override

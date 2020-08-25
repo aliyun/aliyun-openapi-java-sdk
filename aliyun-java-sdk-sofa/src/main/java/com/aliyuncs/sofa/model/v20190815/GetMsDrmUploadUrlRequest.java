@@ -31,7 +31,7 @@ public class GetMsDrmUploadUrlRequest extends RpcAcsRequest<GetMsDrmUploadUrlRes
 
 	private String instanceId;
 	public GetMsDrmUploadUrlRequest() {
-		super("SOFA", "2019-08-15", "GetMsDrmUploadUrl", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetMsDrmUploadUrl", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

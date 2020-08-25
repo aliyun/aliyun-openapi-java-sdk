@@ -29,11 +29,11 @@ public class CreateLinkeLinktTagRequest extends RpcAcsRequest<CreateLinkeLinktTa
 
 	private String content;
 
-	private Boolean checkDuplicate;
+	private String checkDuplicate;
 
 	private String projectSign;
 	public CreateLinkeLinktTagRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeLinktTag", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateLinkeLinktTag", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,14 +63,14 @@ public class CreateLinkeLinktTagRequest extends RpcAcsRequest<CreateLinkeLinktTa
 		}
 	}
 
-	public Boolean getCheckDuplicate() {
+	public String getCheckDuplicate() {
 		return this.checkDuplicate;
 	}
 
-	public void setCheckDuplicate(Boolean checkDuplicate) {
+	public void setCheckDuplicate(String checkDuplicate) {
 		this.checkDuplicate = checkDuplicate;
 		if(checkDuplicate != null){
-			putBodyParameter("CheckDuplicate", checkDuplicate.toString());
+			putBodyParameter("CheckDuplicate", checkDuplicate);
 		}
 	}
 

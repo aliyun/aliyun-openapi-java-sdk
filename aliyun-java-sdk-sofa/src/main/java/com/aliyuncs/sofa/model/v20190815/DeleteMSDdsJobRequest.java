@@ -29,7 +29,7 @@ public class DeleteMSDdsJobRequest extends RpcAcsRequest<DeleteMSDdsJobResponse>
 
 	private Integer id;
 	public DeleteMSDdsJobRequest() {
-		super("SOFA", "2019-08-15", "DeleteMSDdsJob", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteMSDdsJob", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

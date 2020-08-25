@@ -27,7 +27,7 @@ public class ListMqSofamqCellRequest extends RpcAcsRequest<ListMqSofamqCellRespo
 
 	private String instanceId;
 	public ListMqSofamqCellRequest() {
-		super("SOFA", "2019-08-15", "ListMqSofamqCell", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ListMqSofamqCell", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

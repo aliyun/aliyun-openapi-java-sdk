@@ -29,7 +29,7 @@ public class UpdateRmsAlertRuleRequest extends RpcAcsRequest<UpdateRmsAlertRuleR
 
 	private String envJsonStr;
 	public UpdateRmsAlertRuleRequest() {
-		super("SOFA", "2019-08-15", "UpdateRmsAlertRule", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateRmsAlertRule", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

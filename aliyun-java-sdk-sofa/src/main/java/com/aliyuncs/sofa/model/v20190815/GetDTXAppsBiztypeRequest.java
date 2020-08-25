@@ -27,11 +27,13 @@ public class GetDTXAppsBiztypeRequest extends RpcAcsRequest<GetDTXAppsBiztypeRes
 
 	private String appName;
 
+	private String statemachineId;
+
 	private String bizType;
 
 	private String instanceId;
 	public GetDTXAppsBiztypeRequest() {
-		super("SOFA", "2019-08-15", "GetDTXAppsBiztype", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDTXAppsBiztype", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,6 +49,17 @@ public class GetDTXAppsBiztypeRequest extends RpcAcsRequest<GetDTXAppsBiztypeRes
 		this.appName = appName;
 		if(appName != null){
 			putBodyParameter("AppName", appName);
+		}
+	}
+
+	public String getStatemachineId() {
+		return this.statemachineId;
+	}
+
+	public void setStatemachineId(String statemachineId) {
+		this.statemachineId = statemachineId;
+		if(statemachineId != null){
+			putBodyParameter("StatemachineId", statemachineId);
 		}
 	}
 

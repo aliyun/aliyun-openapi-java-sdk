@@ -25,13 +25,13 @@ import com.aliyuncs.sofa.Endpoint;
 public class UpdateLinkeLinktRiskpositionRequest extends RpcAcsRequest<UpdateLinkeLinktRiskpositionResponse> {
 	   
 
-	private Long targetId;
+	private String targetId;
 
-	private Long afterId;
+	private String afterId;
 
-	private Long beforeId;
+	private String beforeId;
 	public UpdateLinkeLinktRiskpositionRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktRiskposition", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktRiskposition", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,36 +39,36 @@ public class UpdateLinkeLinktRiskpositionRequest extends RpcAcsRequest<UpdateLin
 		} catch (Exception e) {}
 	}
 
-	public Long getTargetId() {
+	public String getTargetId() {
 		return this.targetId;
 	}
 
-	public void setTargetId(Long targetId) {
+	public void setTargetId(String targetId) {
 		this.targetId = targetId;
 		if(targetId != null){
-			putBodyParameter("TargetId", targetId.toString());
+			putBodyParameter("TargetId", targetId);
 		}
 	}
 
-	public Long getAfterId() {
+	public String getAfterId() {
 		return this.afterId;
 	}
 
-	public void setAfterId(Long afterId) {
+	public void setAfterId(String afterId) {
 		this.afterId = afterId;
 		if(afterId != null){
-			putBodyParameter("AfterId", afterId.toString());
+			putBodyParameter("AfterId", afterId);
 		}
 	}
 
-	public Long getBeforeId() {
+	public String getBeforeId() {
 		return this.beforeId;
 	}
 
-	public void setBeforeId(Long beforeId) {
+	public void setBeforeId(String beforeId) {
 		this.beforeId = beforeId;
 		if(beforeId != null){
-			putBodyParameter("BeforeId", beforeId.toString());
+			putBodyParameter("BeforeId", beforeId);
 		}
 	}
 

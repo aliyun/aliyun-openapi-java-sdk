@@ -27,7 +27,7 @@ public class DescribeDSTSlsConfigRequest extends RpcAcsRequest<DescribeDSTSlsCon
 
 	private String instanceId;
 	public DescribeDSTSlsConfigRequest() {
-		super("SOFA", "2019-08-15", "DescribeDSTSlsConfig", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DescribeDSTSlsConfig", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

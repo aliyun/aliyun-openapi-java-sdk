@@ -29,7 +29,7 @@ public class GetODPMiddlewareInstanceRequest extends RpcAcsRequest<GetODPMiddlew
 
 	private String currTenant;
 	public GetODPMiddlewareInstanceRequest() {
-		super("SOFA", "2019-08-15", "GetODPMiddlewareInstance", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetODPMiddlewareInstance", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

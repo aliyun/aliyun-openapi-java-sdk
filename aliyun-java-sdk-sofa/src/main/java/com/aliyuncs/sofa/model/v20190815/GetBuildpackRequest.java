@@ -27,7 +27,7 @@ public class GetBuildpackRequest extends RpcAcsRequest<GetBuildpackResponse> {
 
 	private String id;
 	public GetBuildpackRequest() {
-		super("SOFA", "2019-08-15", "GetBuildpack", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetBuildpack", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

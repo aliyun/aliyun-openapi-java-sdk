@@ -28,6 +28,7 @@ public class SaveLinkeLinktWorkitemreviewcommentResponseUnmarshaller {
 		saveLinkeLinktWorkitemreviewcommentResponse.setData(_ctx.booleanValue("SaveLinkeLinktWorkitemreviewcommentResponse.Data"));
 		saveLinkeLinktWorkitemreviewcommentResponse.setErrorCode(_ctx.longValue("SaveLinkeLinktWorkitemreviewcommentResponse.ErrorCode"));
 		saveLinkeLinktWorkitemreviewcommentResponse.setErrorMessage(_ctx.stringValue("SaveLinkeLinktWorkitemreviewcommentResponse.ErrorMessage"));
+		saveLinkeLinktWorkitemreviewcommentResponse.setResponseStatusCode(_ctx.longValue("SaveLinkeLinktWorkitemreviewcommentResponse.ResponseStatusCode"));
 		saveLinkeLinktWorkitemreviewcommentResponse.setSuccess(_ctx.booleanValue("SaveLinkeLinktWorkitemreviewcommentResponse.Success"));
 	 
 	 	return saveLinkeLinktWorkitemreviewcommentResponse;

@@ -25,13 +25,13 @@ import com.aliyuncs.sofa.Endpoint;
 public class ExecLinkeLinktCreatestatusandupdatetoworkflowRequest extends RpcAcsRequest<ExecLinkeLinktCreatestatusandupdatetoworkflowResponse> {
 	   
 
-	private Long workflowId;
+	private String workflowId;
 
-	private Long workflowStatusId;
+	private String workflowStatusId;
 
 	private String formJsonStr;
 	public ExecLinkeLinktCreatestatusandupdatetoworkflowRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktCreatestatusandupdatetoworkflow", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktCreatestatusandupdatetoworkflow", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,25 +39,25 @@ public class ExecLinkeLinktCreatestatusandupdatetoworkflowRequest extends RpcAcs
 		} catch (Exception e) {}
 	}
 
-	public Long getWorkflowId() {
+	public String getWorkflowId() {
 		return this.workflowId;
 	}
 
-	public void setWorkflowId(Long workflowId) {
+	public void setWorkflowId(String workflowId) {
 		this.workflowId = workflowId;
 		if(workflowId != null){
-			putBodyParameter("WorkflowId", workflowId.toString());
+			putBodyParameter("WorkflowId", workflowId);
 		}
 	}
 
-	public Long getWorkflowStatusId() {
+	public String getWorkflowStatusId() {
 		return this.workflowStatusId;
 	}
 
-	public void setWorkflowStatusId(Long workflowStatusId) {
+	public void setWorkflowStatusId(String workflowStatusId) {
 		this.workflowStatusId = workflowStatusId;
 		if(workflowStatusId != null){
-			putBodyParameter("WorkflowStatusId", workflowStatusId.toString());
+			putBodyParameter("WorkflowStatusId", workflowStatusId);
 		}
 	}
 

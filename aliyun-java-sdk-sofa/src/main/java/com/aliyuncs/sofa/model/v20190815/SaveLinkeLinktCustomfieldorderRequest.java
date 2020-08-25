@@ -28,9 +28,9 @@ public class SaveLinkeLinktCustomfieldorderRequest extends RpcAcsRequest<SaveLin
 
 	private List<Long> customFieldVOListRepeatLists;
 
-	private Long templateId;
+	private String templateId;
 	public SaveLinkeLinktCustomfieldorderRequest() {
-		super("SOFA", "2019-08-15", "SaveLinkeLinktCustomfieldorder", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "SaveLinkeLinktCustomfieldorder", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,14 +51,14 @@ public class SaveLinkeLinktCustomfieldorderRequest extends RpcAcsRequest<SaveLin
 		}	
 	}
 
-	public Long getTemplateId() {
+	public String getTemplateId() {
 		return this.templateId;
 	}
 
-	public void setTemplateId(Long templateId) {
+	public void setTemplateId(String templateId) {
 		this.templateId = templateId;
 		if(templateId != null){
-			putBodyParameter("TemplateId", templateId.toString());
+			putBodyParameter("TemplateId", templateId);
 		}
 	}
 

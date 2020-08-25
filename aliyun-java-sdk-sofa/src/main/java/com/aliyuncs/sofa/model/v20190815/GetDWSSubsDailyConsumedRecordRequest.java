@@ -33,7 +33,7 @@ public class GetDWSSubsDailyConsumedRecordRequest extends RpcAcsRequest<GetDWSSu
 
 	private String instanceId;
 	public GetDWSSubsDailyConsumedRecordRequest() {
-		super("SOFA", "2019-08-15", "GetDWSSubsDailyConsumedRecord", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDWSSubsDailyConsumedRecord", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

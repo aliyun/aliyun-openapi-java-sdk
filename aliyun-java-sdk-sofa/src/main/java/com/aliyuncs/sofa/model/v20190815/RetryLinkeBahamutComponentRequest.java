@@ -40,7 +40,7 @@ public class RetryLinkeBahamutComponentRequest extends RpcAcsRequest<RetryLinkeB
 
 	private String stageId;
 	public RetryLinkeBahamutComponentRequest() {
-		super("SOFA", "2019-08-15", "RetryLinkeBahamutComponent", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "RetryLinkeBahamutComponent", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class SaveLinkeBahamutFlagcabinetRequest extends RpcAcsRequest<SaveLinkeB
 
 	private String keyVal;
 	public SaveLinkeBahamutFlagcabinetRequest() {
-		super("SOFA", "2019-08-15", "SaveLinkeBahamutFlagcabinet", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "SaveLinkeBahamutFlagcabinet", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

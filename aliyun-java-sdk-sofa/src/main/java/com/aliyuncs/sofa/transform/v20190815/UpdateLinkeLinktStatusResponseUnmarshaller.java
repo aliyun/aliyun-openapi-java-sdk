@@ -28,6 +28,7 @@ public class UpdateLinkeLinktStatusResponseUnmarshaller {
 		updateLinkeLinktStatusResponse.setResultMessage(_ctx.stringValue("UpdateLinkeLinktStatusResponse.ResultMessage"));
 		updateLinkeLinktStatusResponse.setErrorCode(_ctx.longValue("UpdateLinkeLinktStatusResponse.ErrorCode"));
 		updateLinkeLinktStatusResponse.setErrorMessage(_ctx.stringValue("UpdateLinkeLinktStatusResponse.ErrorMessage"));
+		updateLinkeLinktStatusResponse.setResponseStatusCode(_ctx.longValue("UpdateLinkeLinktStatusResponse.ResponseStatusCode"));
 		updateLinkeLinktStatusResponse.setSuccess(_ctx.booleanValue("UpdateLinkeLinktStatusResponse.Success"));
 
 		Data data = new Data();

@@ -31,7 +31,7 @@ public class ListMsGuardianHistoryRuleConfigsRequest extends RpcAcsRequest<ListM
 
 	private Long ruleId;
 	public ListMsGuardianHistoryRuleConfigsRequest() {
-		super("SOFA", "2019-08-15", "ListMsGuardianHistoryRuleConfigs", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ListMsGuardianHistoryRuleConfigs", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

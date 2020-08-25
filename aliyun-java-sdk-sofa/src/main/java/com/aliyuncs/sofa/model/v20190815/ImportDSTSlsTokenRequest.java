@@ -33,7 +33,7 @@ public class ImportDSTSlsTokenRequest extends RpcAcsRequest<ImportDSTSlsTokenRes
 
 	private String instanceId;
 	public ImportDSTSlsTokenRequest() {
-		super("SOFA", "2019-08-15", "ImportDSTSlsToken", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ImportDSTSlsToken", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

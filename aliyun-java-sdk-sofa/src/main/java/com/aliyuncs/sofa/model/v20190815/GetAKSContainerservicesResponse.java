@@ -773,6 +773,14 @@ public class GetAKSContainerservicesResponse extends AcsResponse {
 
 			private String sourceType;
 
+			private String techStackName;
+
+			private String techStackVersionImage;
+
+			private String techStackVersionName;
+
+			private String techStackVersionNumber;
+
 			private BaseImage baseImage;
 
 			private BinaryRemotePath binaryRemotePath;
@@ -835,6 +843,38 @@ public class GetAKSContainerservicesResponse extends AcsResponse {
 
 			public void setSourceType(String sourceType) {
 				this.sourceType = sourceType;
+			}
+
+			public String getTechStackName() {
+				return this.techStackName;
+			}
+
+			public void setTechStackName(String techStackName) {
+				this.techStackName = techStackName;
+			}
+
+			public String getTechStackVersionImage() {
+				return this.techStackVersionImage;
+			}
+
+			public void setTechStackVersionImage(String techStackVersionImage) {
+				this.techStackVersionImage = techStackVersionImage;
+			}
+
+			public String getTechStackVersionName() {
+				return this.techStackVersionName;
+			}
+
+			public void setTechStackVersionName(String techStackVersionName) {
+				this.techStackVersionName = techStackVersionName;
+			}
+
+			public String getTechStackVersionNumber() {
+				return this.techStackVersionNumber;
+			}
+
+			public void setTechStackVersionNumber(String techStackVersionNumber) {
+				this.techStackVersionNumber = techStackVersionNumber;
 			}
 
 			public BaseImage getBaseImage() {

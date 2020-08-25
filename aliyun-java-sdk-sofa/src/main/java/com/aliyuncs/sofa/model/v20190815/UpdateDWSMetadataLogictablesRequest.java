@@ -29,7 +29,7 @@ public class UpdateDWSMetadataLogictablesRequest extends RpcAcsRequest<UpdateDWS
 
 	private String instanceId;
 	public UpdateDWSMetadataLogictablesRequest() {
-		super("SOFA", "2019-08-15", "UpdateDWSMetadataLogictables", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateDWSMetadataLogictables", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

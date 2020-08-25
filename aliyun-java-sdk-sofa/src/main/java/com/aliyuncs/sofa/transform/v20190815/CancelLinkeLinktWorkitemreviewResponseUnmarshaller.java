@@ -28,6 +28,7 @@ public class CancelLinkeLinktWorkitemreviewResponseUnmarshaller {
 		cancelLinkeLinktWorkitemreviewResponse.setData(_ctx.booleanValue("CancelLinkeLinktWorkitemreviewResponse.Data"));
 		cancelLinkeLinktWorkitemreviewResponse.setErrorCode(_ctx.longValue("CancelLinkeLinktWorkitemreviewResponse.ErrorCode"));
 		cancelLinkeLinktWorkitemreviewResponse.setErrorMessage(_ctx.stringValue("CancelLinkeLinktWorkitemreviewResponse.ErrorMessage"));
+		cancelLinkeLinktWorkitemreviewResponse.setResponseStatusCode(_ctx.longValue("CancelLinkeLinktWorkitemreviewResponse.ResponseStatusCode"));
 		cancelLinkeLinktWorkitemreviewResponse.setSuccess(_ctx.booleanValue("CancelLinkeLinktWorkitemreviewResponse.Success"));
 	 
 	 	return cancelLinkeLinktWorkitemreviewResponse;

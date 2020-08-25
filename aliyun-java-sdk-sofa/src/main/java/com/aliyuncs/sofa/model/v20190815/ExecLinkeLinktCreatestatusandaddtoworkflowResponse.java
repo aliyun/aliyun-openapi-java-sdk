@@ -34,6 +34,8 @@ public class ExecLinkeLinktCreatestatusandaddtoworkflowResponse extends AcsRespo
 
 	private String errorMessage;
 
+	private Long responseStatusCode;
+
 	private Boolean success;
 
 	private Data data;
@@ -78,6 +80,14 @@ public class ExecLinkeLinktCreatestatusandaddtoworkflowResponse extends AcsRespo
 		this.errorMessage = errorMessage;
 	}
 
+	public Long getResponseStatusCode() {
+		return this.responseStatusCode;
+	}
+
+	public void setResponseStatusCode(Long responseStatusCode) {
+		this.responseStatusCode = responseStatusCode;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -108,13 +118,13 @@ public class ExecLinkeLinktCreatestatusandaddtoworkflowResponse extends AcsRespo
 
 		private String region;
 
+		private String status;
+
 		private Long statusId;
 
 		private Long updatedAt;
 
 		private Long workflowId;
-
-		private Status status;
 
 		public Boolean getAsDefault() {
 			return this.asDefault;
@@ -164,6 +174,14 @@ public class ExecLinkeLinktCreatestatusandaddtoworkflowResponse extends AcsRespo
 			this.region = region;
 		}
 
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		public Long getStatusId() {
 			return this.statusId;
 		}
@@ -186,107 +204,6 @@ public class ExecLinkeLinktCreatestatusandaddtoworkflowResponse extends AcsRespo
 
 		public void setWorkflowId(Long workflowId) {
 			this.workflowId = workflowId;
-		}
-
-		public Status getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Status status) {
-			this.status = status;
-		}
-
-		public static class Status {
-
-			private Long createdAt;
-
-			private Boolean deleted;
-
-			private Long id;
-
-			private String name;
-
-			private String projectSign;
-
-			private String region;
-
-			private Long stage;
-
-			private String stageName;
-
-			private Long updatedAt;
-
-			public Long getCreatedAt() {
-				return this.createdAt;
-			}
-
-			public void setCreatedAt(Long createdAt) {
-				this.createdAt = createdAt;
-			}
-
-			public Boolean getDeleted() {
-				return this.deleted;
-			}
-
-			public void setDeleted(Boolean deleted) {
-				this.deleted = deleted;
-			}
-
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getProjectSign() {
-				return this.projectSign;
-			}
-
-			public void setProjectSign(String projectSign) {
-				this.projectSign = projectSign;
-			}
-
-			public String getRegion() {
-				return this.region;
-			}
-
-			public void setRegion(String region) {
-				this.region = region;
-			}
-
-			public Long getStage() {
-				return this.stage;
-			}
-
-			public void setStage(Long stage) {
-				this.stage = stage;
-			}
-
-			public String getStageName() {
-				return this.stageName;
-			}
-
-			public void setStageName(String stageName) {
-				this.stageName = stageName;
-			}
-
-			public Long getUpdatedAt() {
-				return this.updatedAt;
-			}
-
-			public void setUpdatedAt(Long updatedAt) {
-				this.updatedAt = updatedAt;
-			}
 		}
 	}
 

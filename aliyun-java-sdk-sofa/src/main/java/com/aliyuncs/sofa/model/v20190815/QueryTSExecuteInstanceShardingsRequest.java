@@ -33,7 +33,7 @@ public class QueryTSExecuteInstanceShardingsRequest extends RpcAcsRequest<QueryT
 
 	private String jobRequestId;
 	public QueryTSExecuteInstanceShardingsRequest() {
-		super("SOFA", "2019-08-15", "QueryTSExecuteInstanceShardings", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "QueryTSExecuteInstanceShardings", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

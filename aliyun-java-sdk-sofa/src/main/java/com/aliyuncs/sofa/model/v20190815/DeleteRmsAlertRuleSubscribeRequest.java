@@ -33,7 +33,7 @@ public class DeleteRmsAlertRuleSubscribeRequest extends RpcAcsRequest<DeleteRmsA
 
 	private String monitorTargetType;
 	public DeleteRmsAlertRuleSubscribeRequest() {
-		super("SOFA", "2019-08-15", "DeleteRmsAlertRuleSubscribe", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteRmsAlertRuleSubscribe", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

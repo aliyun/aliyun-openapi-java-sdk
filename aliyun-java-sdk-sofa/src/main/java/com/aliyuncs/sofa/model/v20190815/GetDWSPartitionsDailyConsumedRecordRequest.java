@@ -35,7 +35,7 @@ public class GetDWSPartitionsDailyConsumedRecordRequest extends RpcAcsRequest<Ge
 
 	private String instanceId;
 	public GetDWSPartitionsDailyConsumedRecordRequest() {
-		super("SOFA", "2019-08-15", "GetDWSPartitionsDailyConsumedRecord", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDWSPartitionsDailyConsumedRecord", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

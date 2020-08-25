@@ -29,7 +29,7 @@ public class SaveLinkeLinktCommentRequest extends RpcAcsRequest<SaveLinkeLinktCo
 
 	private String workItemSign;
 	public SaveLinkeLinktCommentRequest() {
-		super("SOFA", "2019-08-15", "SaveLinkeLinktComment", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "SaveLinkeLinktComment", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

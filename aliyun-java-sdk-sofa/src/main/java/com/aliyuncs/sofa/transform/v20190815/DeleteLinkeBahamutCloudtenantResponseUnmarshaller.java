@@ -26,7 +26,9 @@ public class DeleteLinkeBahamutCloudtenantResponseUnmarshaller {
 		deleteLinkeBahamutCloudtenantResponse.setResultCode(_ctx.stringValue("DeleteLinkeBahamutCloudtenantResponse.ResultCode"));
 		deleteLinkeBahamutCloudtenantResponse.setResultMessage(_ctx.stringValue("DeleteLinkeBahamutCloudtenantResponse.ResultMessage"));
 		deleteLinkeBahamutCloudtenantResponse.setErrorMessage(_ctx.stringValue("DeleteLinkeBahamutCloudtenantResponse.ErrorMessage"));
+		deleteLinkeBahamutCloudtenantResponse.setErrorMsgParamsMap(_ctx.stringValue("DeleteLinkeBahamutCloudtenantResponse.ErrorMsgParamsMap"));
 		deleteLinkeBahamutCloudtenantResponse.setMessage(_ctx.stringValue("DeleteLinkeBahamutCloudtenantResponse.Message"));
+		deleteLinkeBahamutCloudtenantResponse.setResponseStatusCode(_ctx.longValue("DeleteLinkeBahamutCloudtenantResponse.ResponseStatusCode"));
 		deleteLinkeBahamutCloudtenantResponse.setResult(_ctx.booleanValue("DeleteLinkeBahamutCloudtenantResponse.Result"));
 		deleteLinkeBahamutCloudtenantResponse.setSuccess(_ctx.booleanValue("DeleteLinkeBahamutCloudtenantResponse.Success"));
 	 

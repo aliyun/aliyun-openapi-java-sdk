@@ -26,7 +26,9 @@ public class SetLinkeBahamutTenantcodeconfigResponseUnmarshaller {
 		setLinkeBahamutTenantcodeconfigResponse.setResultCode(_ctx.stringValue("SetLinkeBahamutTenantcodeconfigResponse.ResultCode"));
 		setLinkeBahamutTenantcodeconfigResponse.setResultMessage(_ctx.stringValue("SetLinkeBahamutTenantcodeconfigResponse.ResultMessage"));
 		setLinkeBahamutTenantcodeconfigResponse.setErrorMessage(_ctx.stringValue("SetLinkeBahamutTenantcodeconfigResponse.ErrorMessage"));
+		setLinkeBahamutTenantcodeconfigResponse.setErrorMsgParamsMap(_ctx.stringValue("SetLinkeBahamutTenantcodeconfigResponse.ErrorMsgParamsMap"));
 		setLinkeBahamutTenantcodeconfigResponse.setMessage(_ctx.stringValue("SetLinkeBahamutTenantcodeconfigResponse.Message"));
+		setLinkeBahamutTenantcodeconfigResponse.setResponseStatusCode(_ctx.longValue("SetLinkeBahamutTenantcodeconfigResponse.ResponseStatusCode"));
 		setLinkeBahamutTenantcodeconfigResponse.setResult(_ctx.booleanValue("SetLinkeBahamutTenantcodeconfigResponse.Result"));
 		setLinkeBahamutTenantcodeconfigResponse.setSuccess(_ctx.booleanValue("SetLinkeBahamutTenantcodeconfigResponse.Success"));
 	 

@@ -35,7 +35,7 @@ public class ExecDWSStoreCreateRequest extends RpcAcsRequest<ExecDWSStoreCreateR
 
 	private String topic;
 	public ExecDWSStoreCreateRequest() {
-		super("SOFA", "2019-08-15", "ExecDWSStoreCreate", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "ExecDWSStoreCreate", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

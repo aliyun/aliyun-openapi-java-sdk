@@ -31,6 +31,7 @@ public class GetDTXGlobalEnvResponseUnmarshaller {
 		Data data = new Data();
 		data.setEnv(_ctx.stringValue("GetDTXGlobalEnvResponse.Data.Env"));
 		data.setIsPublicCloud(_ctx.booleanValue("GetDTXGlobalEnvResponse.Data.IsPublicCloud"));
+		data.setRecoveryMode(_ctx.stringValue("GetDTXGlobalEnvResponse.Data.RecoveryMode"));
 		data.setTenant(_ctx.stringValue("GetDTXGlobalEnvResponse.Data.Tenant"));
 		getDTXGlobalEnvResponse.setData(data);
 	 

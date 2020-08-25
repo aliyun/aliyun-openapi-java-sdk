@@ -37,7 +37,7 @@ public class CheckLinkeBahamutFabricconfigRequest extends RpcAcsRequest<CheckLin
 
 	private String fromDevStage;
 	public CheckLinkeBahamutFabricconfigRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeBahamutFabricconfig", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CheckLinkeBahamutFabricconfig", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

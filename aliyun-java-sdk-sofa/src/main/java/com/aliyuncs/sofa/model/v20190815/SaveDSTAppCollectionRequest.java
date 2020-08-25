@@ -29,7 +29,7 @@ public class SaveDSTAppCollectionRequest extends RpcAcsRequest<SaveDSTAppCollect
 
 	private String instanceId;
 	public SaveDSTAppCollectionRequest() {
-		super("SOFA", "2019-08-15", "SaveDSTAppCollection", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "SaveDSTAppCollection", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

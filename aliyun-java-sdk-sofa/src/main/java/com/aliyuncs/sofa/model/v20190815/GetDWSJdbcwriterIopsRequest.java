@@ -35,7 +35,7 @@ public class GetDWSJdbcwriterIopsRequest extends RpcAcsRequest<GetDWSJdbcwriterI
 
 	private String instanceId;
 	public GetDWSJdbcwriterIopsRequest() {
-		super("SOFA", "2019-08-15", "GetDWSJdbcwriterIops", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDWSJdbcwriterIops", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

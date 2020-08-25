@@ -33,7 +33,7 @@ public class CreateAKSKubernetesResourceRequest extends RpcAcsRequest<CreateAKSK
 
 	private String path;
 	public CreateAKSKubernetesResourceRequest() {
-		super("SOFA", "2019-08-15", "CreateAKSKubernetesResource", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateAKSKubernetesResource", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

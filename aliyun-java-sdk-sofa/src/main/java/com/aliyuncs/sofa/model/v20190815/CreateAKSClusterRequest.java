@@ -62,7 +62,7 @@ public class CreateAKSClusterRequest extends RpcAcsRequest<CreateAKSClusterRespo
 
 	private String operatorName;
 	public CreateAKSClusterRequest() {
-		super("SOFA", "2019-08-15", "CreateAKSCluster", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateAKSCluster", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

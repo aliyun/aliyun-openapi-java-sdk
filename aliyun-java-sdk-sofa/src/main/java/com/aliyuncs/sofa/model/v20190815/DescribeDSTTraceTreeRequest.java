@@ -29,7 +29,7 @@ public class DescribeDSTTraceTreeRequest extends RpcAcsRequest<DescribeDSTTraceT
 
 	private String instanceId;
 	public DescribeDSTTraceTreeRequest() {
-		super("SOFA", "2019-08-15", "DescribeDSTTraceTree", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DescribeDSTTraceTree", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,9 +29,9 @@ public class UpdateLinkeLinktModuleRequest extends RpcAcsRequest<UpdateLinkeLink
 
 	private String name;
 
-	private Long moduleId;
+	private String moduleId;
 	public UpdateLinkeLinktModuleRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktModule", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktModule", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,14 +61,14 @@ public class UpdateLinkeLinktModuleRequest extends RpcAcsRequest<UpdateLinkeLink
 		}
 	}
 
-	public Long getModuleId() {
+	public String getModuleId() {
 		return this.moduleId;
 	}
 
-	public void setModuleId(Long moduleId) {
+	public void setModuleId(String moduleId) {
 		this.moduleId = moduleId;
 		if(moduleId != null){
-			putBodyParameter("ModuleId", moduleId.toString());
+			putBodyParameter("ModuleId", moduleId);
 		}
 	}
 

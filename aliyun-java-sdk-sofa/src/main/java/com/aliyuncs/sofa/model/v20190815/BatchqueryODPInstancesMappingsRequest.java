@@ -29,7 +29,7 @@ public class BatchqueryODPInstancesMappingsRequest extends RpcAcsRequest<Batchqu
 
 	private String targetTenant;
 	public BatchqueryODPInstancesMappingsRequest() {
-		super("SOFA", "2019-08-15", "BatchqueryODPInstancesMappings", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "BatchqueryODPInstancesMappings", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

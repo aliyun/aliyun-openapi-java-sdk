@@ -29,7 +29,7 @@ public class GetDWSMonitorEncodednameRequest extends RpcAcsRequest<GetDWSMonitor
 
 	private String instanceId;
 	public GetDWSMonitorEncodednameRequest() {
-		super("SOFA", "2019-08-15", "GetDWSMonitorEncodedname", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDWSMonitorEncodedname", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

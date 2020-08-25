@@ -28,6 +28,7 @@ public class DeleteLinkeLinktTagResponseUnmarshaller {
 		deleteLinkeLinktTagResponse.setData(_ctx.booleanValue("DeleteLinkeLinktTagResponse.Data"));
 		deleteLinkeLinktTagResponse.setErrorCode(_ctx.longValue("DeleteLinkeLinktTagResponse.ErrorCode"));
 		deleteLinkeLinktTagResponse.setErrorMessage(_ctx.stringValue("DeleteLinkeLinktTagResponse.ErrorMessage"));
+		deleteLinkeLinktTagResponse.setResponseStatusCode(_ctx.longValue("DeleteLinkeLinktTagResponse.ResponseStatusCode"));
 		deleteLinkeLinktTagResponse.setSuccess(_ctx.booleanValue("DeleteLinkeLinktTagResponse.Success"));
 	 
 	 	return deleteLinkeLinktTagResponse;

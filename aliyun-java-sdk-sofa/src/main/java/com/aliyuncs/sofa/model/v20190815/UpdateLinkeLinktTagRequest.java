@@ -29,9 +29,9 @@ public class UpdateLinkeLinktTagRequest extends RpcAcsRequest<UpdateLinkeLinktTa
 
 	private String content;
 
-	private Long tagId;
+	private String tagId;
 	public UpdateLinkeLinktTagRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktTag", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktTag", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,14 +61,14 @@ public class UpdateLinkeLinktTagRequest extends RpcAcsRequest<UpdateLinkeLinktTa
 		}
 	}
 
-	public Long getTagId() {
+	public String getTagId() {
 		return this.tagId;
 	}
 
-	public void setTagId(Long tagId) {
+	public void setTagId(String tagId) {
 		this.tagId = tagId;
 		if(tagId != null){
-			putBodyParameter("TagId", tagId.toString());
+			putBodyParameter("TagId", tagId);
 		}
 	}
 

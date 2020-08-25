@@ -25,8 +25,10 @@ public class DeleteLinkeLinktAdmintemplateResponseUnmarshaller {
 		deleteLinkeLinktAdmintemplateResponse.setRequestId(_ctx.stringValue("DeleteLinkeLinktAdmintemplateResponse.RequestId"));
 		deleteLinkeLinktAdmintemplateResponse.setResultCode(_ctx.stringValue("DeleteLinkeLinktAdmintemplateResponse.ResultCode"));
 		deleteLinkeLinktAdmintemplateResponse.setResultMessage(_ctx.stringValue("DeleteLinkeLinktAdmintemplateResponse.ResultMessage"));
+		deleteLinkeLinktAdmintemplateResponse.setData(_ctx.booleanValue("DeleteLinkeLinktAdmintemplateResponse.Data"));
 		deleteLinkeLinktAdmintemplateResponse.setErrorCode(_ctx.longValue("DeleteLinkeLinktAdmintemplateResponse.ErrorCode"));
 		deleteLinkeLinktAdmintemplateResponse.setErrorMessage(_ctx.stringValue("DeleteLinkeLinktAdmintemplateResponse.ErrorMessage"));
+		deleteLinkeLinktAdmintemplateResponse.setResponseStatusCode(_ctx.longValue("DeleteLinkeLinktAdmintemplateResponse.ResponseStatusCode"));
 		deleteLinkeLinktAdmintemplateResponse.setSuccess(_ctx.booleanValue("DeleteLinkeLinktAdmintemplateResponse.Success"));
 	 
 	 	return deleteLinkeLinktAdmintemplateResponse;

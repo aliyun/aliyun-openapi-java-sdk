@@ -107,6 +107,8 @@ public class ListDTXAppsResponse extends AcsResponse {
 
 	public static class DataItem {
 
+		private Long actionMode;
+
 		private String appName;
 
 		private Long exceptionTotal;
@@ -118,6 +120,14 @@ public class ListDTXAppsResponse extends AcsResponse {
 		private List<String> initiator;
 
 		private List<String> participator;
+
+		public Long getActionMode() {
+			return this.actionMode;
+		}
+
+		public void setActionMode(Long actionMode) {
+			this.actionMode = actionMode;
+		}
 
 		public String getAppName() {
 			return this.appName;

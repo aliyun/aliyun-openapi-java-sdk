@@ -35,7 +35,7 @@ public class GetDWSCrawlerIosRequest extends RpcAcsRequest<GetDWSCrawlerIosRespo
 
 	private String instanceId;
 	public GetDWSCrawlerIosRequest() {
-		super("SOFA", "2019-08-15", "GetDWSCrawlerIos", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDWSCrawlerIos", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

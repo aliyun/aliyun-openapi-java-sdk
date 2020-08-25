@@ -31,7 +31,7 @@ public class CancelAKSClusterTaskRequest extends RpcAcsRequest<CancelAKSClusterT
 
 	private String operatorName;
 	public CancelAKSClusterTaskRequest() {
-		super("SOFA", "2019-08-15", "CancelAKSClusterTask", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CancelAKSClusterTask", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

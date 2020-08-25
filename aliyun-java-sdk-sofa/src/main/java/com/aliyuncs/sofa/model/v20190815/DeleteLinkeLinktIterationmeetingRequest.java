@@ -25,9 +25,9 @@ import com.aliyuncs.sofa.Endpoint;
 public class DeleteLinkeLinktIterationmeetingRequest extends RpcAcsRequest<DeleteLinkeLinktIterationmeetingResponse> {
 	   
 
-	private Long iterationMeetingId;
+	private String iterationMeetingId;
 	public DeleteLinkeLinktIterationmeetingRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeLinktIterationmeeting", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeleteLinkeLinktIterationmeeting", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,14 +35,14 @@ public class DeleteLinkeLinktIterationmeetingRequest extends RpcAcsRequest<Delet
 		} catch (Exception e) {}
 	}
 
-	public Long getIterationMeetingId() {
+	public String getIterationMeetingId() {
 		return this.iterationMeetingId;
 	}
 
-	public void setIterationMeetingId(Long iterationMeetingId) {
+	public void setIterationMeetingId(String iterationMeetingId) {
 		this.iterationMeetingId = iterationMeetingId;
 		if(iterationMeetingId != null){
-			putBodyParameter("IterationMeetingId", iterationMeetingId.toString());
+			putBodyParameter("IterationMeetingId", iterationMeetingId);
 		}
 	}
 

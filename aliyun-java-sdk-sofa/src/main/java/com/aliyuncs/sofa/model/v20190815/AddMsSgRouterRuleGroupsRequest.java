@@ -43,7 +43,7 @@ public class AddMsSgRouterRuleGroupsRequest extends RpcAcsRequest<AddMsSgRouterR
 
 	private String dataId;
 	public AddMsSgRouterRuleGroupsRequest() {
-		super("SOFA", "2019-08-15", "AddMsSgRouterRuleGroups", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "AddMsSgRouterRuleGroups", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

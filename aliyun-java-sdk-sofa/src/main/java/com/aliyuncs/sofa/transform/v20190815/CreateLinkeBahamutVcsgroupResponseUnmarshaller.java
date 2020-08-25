@@ -27,7 +27,9 @@ public class CreateLinkeBahamutVcsgroupResponseUnmarshaller {
 		createLinkeBahamutVcsgroupResponse.setResultCode(_ctx.stringValue("CreateLinkeBahamutVcsgroupResponse.ResultCode"));
 		createLinkeBahamutVcsgroupResponse.setResultMessage(_ctx.stringValue("CreateLinkeBahamutVcsgroupResponse.ResultMessage"));
 		createLinkeBahamutVcsgroupResponse.setErrorMessage(_ctx.stringValue("CreateLinkeBahamutVcsgroupResponse.ErrorMessage"));
+		createLinkeBahamutVcsgroupResponse.setErrorMsgParamsMap(_ctx.stringValue("CreateLinkeBahamutVcsgroupResponse.ErrorMsgParamsMap"));
 		createLinkeBahamutVcsgroupResponse.setMessage(_ctx.stringValue("CreateLinkeBahamutVcsgroupResponse.Message"));
+		createLinkeBahamutVcsgroupResponse.setResponseStatusCode(_ctx.longValue("CreateLinkeBahamutVcsgroupResponse.ResponseStatusCode"));
 		createLinkeBahamutVcsgroupResponse.setSuccess(_ctx.booleanValue("CreateLinkeBahamutVcsgroupResponse.Success"));
 
 		Result result = new Result();

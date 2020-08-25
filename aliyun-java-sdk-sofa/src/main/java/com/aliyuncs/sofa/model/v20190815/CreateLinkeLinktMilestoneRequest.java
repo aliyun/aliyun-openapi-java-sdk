@@ -25,6 +25,8 @@ import com.aliyuncs.sofa.Endpoint;
 public class CreateLinkeLinktMilestoneRequest extends RpcAcsRequest<CreateLinkeLinktMilestoneResponse> {
 	   
 
+	private String milestoneTarget;
+
 	private String description;
 
 	private Long actualEndDate;
@@ -35,18 +37,27 @@ public class CreateLinkeLinktMilestoneRequest extends RpcAcsRequest<CreateLinkeL
 
 	private Long expectEndDate;
 
-	private String target;
-
 	private String name;
 
 	private String status;
 	public CreateLinkeLinktMilestoneRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeLinktMilestone", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CreateLinkeLinktMilestone", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMilestoneTarget() {
+		return this.milestoneTarget;
+	}
+
+	public void setMilestoneTarget(String milestoneTarget) {
+		this.milestoneTarget = milestoneTarget;
+		if(milestoneTarget != null){
+			putBodyParameter("MilestoneTarget", milestoneTarget);
+		}
 	}
 
 	public String getDescription() {
@@ -101,17 +112,6 @@ public class CreateLinkeLinktMilestoneRequest extends RpcAcsRequest<CreateLinkeL
 		this.expectEndDate = expectEndDate;
 		if(expectEndDate != null){
 			putBodyParameter("ExpectEndDate", expectEndDate.toString());
-		}
-	}
-
-	public String getTarget() {
-		return this.target;
-	}
-
-	public void setTarget(String target) {
-		this.target = target;
-		if(target != null){
-			putBodyParameter("Target", target);
 		}
 	}
 

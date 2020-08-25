@@ -30,7 +30,7 @@ public class DeprecateBuildpackRequest extends RpcAcsRequest<DeprecateBuildpackR
 
 	private String depracationNoteMapJsonStr;
 	public DeprecateBuildpackRequest() {
-		super("SOFA", "2019-08-15", "DeprecateBuildpack", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "DeprecateBuildpack", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

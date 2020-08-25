@@ -29,7 +29,7 @@ public class GetDWSConfigRequest extends RpcAcsRequest<GetDWSConfigResponse> {
 
 	private String instanceId;
 	public GetDWSConfigRequest() {
-		super("SOFA", "2019-08-15", "GetDWSConfig", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDWSConfig", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

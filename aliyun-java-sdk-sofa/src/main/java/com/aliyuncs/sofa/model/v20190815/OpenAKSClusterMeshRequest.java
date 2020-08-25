@@ -35,13 +35,15 @@ public class OpenAKSClusterMeshRequest extends RpcAcsRequest<OpenAKSClusterMeshR
 
 	private Boolean enableDiscoverySync;
 
+	private Boolean enableK8sSvcDiscovery;
+
 	private String clusterId;
 
 	private String registryMetaConfigJsonStr;
 
 	private String kubeconfig;
 	public OpenAKSClusterMeshRequest() {
-		super("SOFA", "2019-08-15", "OpenAKSClusterMesh", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "OpenAKSClusterMesh", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -101,6 +103,17 @@ public class OpenAKSClusterMeshRequest extends RpcAcsRequest<OpenAKSClusterMeshR
 		this.enableDiscoverySync = enableDiscoverySync;
 		if(enableDiscoverySync != null){
 			putBodyParameter("EnableDiscoverySync", enableDiscoverySync.toString());
+		}
+	}
+
+	public Boolean getEnableK8sSvcDiscovery() {
+		return this.enableK8sSvcDiscovery;
+	}
+
+	public void setEnableK8sSvcDiscovery(Boolean enableK8sSvcDiscovery) {
+		this.enableK8sSvcDiscovery = enableK8sSvcDiscovery;
+		if(enableK8sSvcDiscovery != null){
+			putBodyParameter("EnableK8sSvcDiscovery", enableK8sSvcDiscovery.toString());
 		}
 	}
 

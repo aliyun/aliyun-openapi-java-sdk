@@ -27,7 +27,7 @@ public class GetDSTGlobalConfigRequest extends RpcAcsRequest<GetDSTGlobalConfigR
 
 	private String instanceId;
 	public GetDSTGlobalConfigRequest() {
-		super("SOFA", "2019-08-15", "GetDSTGlobalConfig", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDSTGlobalConfig", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

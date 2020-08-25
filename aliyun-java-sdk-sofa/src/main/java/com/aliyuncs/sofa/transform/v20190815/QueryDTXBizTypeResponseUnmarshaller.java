@@ -33,6 +33,7 @@ public class QueryDTXBizTypeResponseUnmarshaller {
 		queryDTXBizTypeResponse.setRequestId(_ctx.stringValue("QueryDTXBizTypeResponse.RequestId"));
 		queryDTXBizTypeResponse.setResultCode(_ctx.stringValue("QueryDTXBizTypeResponse.ResultCode"));
 		queryDTXBizTypeResponse.setResultMessage(_ctx.stringValue("QueryDTXBizTypeResponse.ResultMessage"));
+		queryDTXBizTypeResponse.setContent(_ctx.stringValue("QueryDTXBizTypeResponse.Content"));
 
 		AsynInfo asynInfo = new AsynInfo();
 		asynInfo.setActionMode(_ctx.longValue("QueryDTXBizTypeResponse.AsynInfo.ActionMode"));
@@ -105,6 +106,7 @@ public class QueryDTXBizTypeResponseUnmarshaller {
 			participatorsItem.setRollbackMethodParamsType(_ctx.longValue("QueryDTXBizTypeResponse.Participators["+ i +"].RollbackMethodParamsType"));
 			participatorsItem.setTestUrl(_ctx.stringValue("QueryDTXBizTypeResponse.Participators["+ i +"].TestUrl"));
 			participatorsItem.setUniqueId(_ctx.stringValue("QueryDTXBizTypeResponse.Participators["+ i +"].UniqueId"));
+			participatorsItem.setUsed(_ctx.booleanValue("QueryDTXBizTypeResponse.Participators["+ i +"].Used"));
 			participatorsItem.setWsTr(_ctx.stringValue("QueryDTXBizTypeResponse.Participators["+ i +"].WsTr"));
 
 			participators.add(participatorsItem);

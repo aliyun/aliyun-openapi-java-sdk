@@ -29,7 +29,7 @@ public class CountTSClientCountRequest extends RpcAcsRequest<CountTSClientCountR
 
 	private String instanceId;
 	public CountTSClientCountRequest() {
-		super("SOFA", "2019-08-15", "CountTSClientCount", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "CountTSClientCount", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

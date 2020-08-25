@@ -32,6 +32,7 @@ public class QueryODPInstancesResponseUnmarshaller {
 		queryODPInstancesResponse.setResultMessage(_ctx.stringValue("QueryODPInstancesResponse.ResultMessage"));
 
 		Data data = new Data();
+		data.setBizVpcId(_ctx.stringValue("QueryODPInstancesResponse.Data.BizVpcId"));
 		data.setConfigSpecDesc(_ctx.stringValue("QueryODPInstancesResponse.Data.ConfigSpecDesc"));
 		data.setEnvMode(_ctx.stringValue("QueryODPInstancesResponse.Data.EnvMode"));
 		data.setEnvTenant(_ctx.stringValue("QueryODPInstancesResponse.Data.EnvTenant"));
@@ -39,13 +40,16 @@ public class QueryODPInstancesResponseUnmarshaller {
 		data.setGmtModified(_ctx.stringValue("QueryODPInstancesResponse.Data.GmtModified"));
 		data.setId(_ctx.longValue("QueryODPInstancesResponse.Data.Id"));
 		data.setInstanceId(_ctx.stringValue("QueryODPInstancesResponse.Data.InstanceId"));
+		data.setInstanceLanAddress(_ctx.stringValue("QueryODPInstancesResponse.Data.InstanceLanAddress"));
 		data.setInstanceName(_ctx.stringValue("QueryODPInstancesResponse.Data.InstanceName"));
 		data.setInstancePort(_ctx.longValue("QueryODPInstancesResponse.Data.InstancePort"));
 		data.setInstanceStatus(_ctx.stringValue("QueryODPInstancesResponse.Data.InstanceStatus"));
+		data.setInstanceType(_ctx.stringValue("QueryODPInstancesResponse.Data.InstanceType"));
 		data.setInstanceVip(_ctx.stringValue("QueryODPInstancesResponse.Data.InstanceVip"));
 		data.setInstanceWanAddress(_ctx.stringValue("QueryODPInstancesResponse.Data.InstanceWanAddress"));
 		data.setInstanceWanPort(_ctx.longValue("QueryODPInstancesResponse.Data.InstanceWanPort"));
 		data.setInstanceZone(_ctx.stringValue("QueryODPInstancesResponse.Data.InstanceZone"));
+		data.setLegacy(_ctx.booleanValue("QueryODPInstancesResponse.Data.Legacy"));
 		data.setMachineCount(_ctx.longValue("QueryODPInstancesResponse.Data.MachineCount"));
 		data.setPaymentType(_ctx.longValue("QueryODPInstancesResponse.Data.PaymentType"));
 		data.setRegion(_ctx.stringValue("QueryODPInstancesResponse.Data.Region"));
@@ -55,17 +59,26 @@ public class QueryODPInstancesResponseUnmarshaller {
 		List<NodesItem> nodes = new ArrayList<NodesItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryODPInstancesResponse.Data.Nodes.Length"); i++) {
 			NodesItem nodesItem = new NodesItem();
+			nodesItem.setCellId(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].CellId"));
+			nodesItem.setCellName(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].CellName"));
+			nodesItem.setClusterId(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].ClusterId"));
 			nodesItem.setConfigSpecDesc(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].ConfigSpecDesc"));
 			nodesItem.setCpuCount(_ctx.longValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].CpuCount"));
+			nodesItem.setEnvId(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].EnvId"));
 			nodesItem.setEnvMode(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].EnvMode"));
+			nodesItem.setEnvName(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].EnvName"));
 			nodesItem.setEnvTenant(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].EnvTenant"));
+			nodesItem.setExecutionDetail(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].ExecutionDetail"));
 			nodesItem.setGmtCreate(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].GmtCreate"));
 			nodesItem.setGmtModified(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].GmtModified"));
 			nodesItem.setId(_ctx.longValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].Id"));
 			nodesItem.setMachineCount(_ctx.longValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].MachineCount"));
 			nodesItem.setMemoryCount(_ctx.longValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].MemoryCount"));
+			nodesItem.setNodeStatus(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].NodeStatus"));
 			nodesItem.setPort(_ctx.longValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].Port"));
 			nodesItem.setVip(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].Vip"));
+			nodesItem.setYunyouDeployUnitUrl(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].YunyouDeployUnitUrl"));
+			nodesItem.setYunyouOpsPlanUrl(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].YunyouOpsPlanUrl"));
 			nodesItem.setZdalproxyInstanceId(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].ZdalproxyInstanceId"));
 			nodesItem.setZdalproxyNodeId(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].ZdalproxyNodeId"));
 			nodesItem.setZone(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].Zone"));

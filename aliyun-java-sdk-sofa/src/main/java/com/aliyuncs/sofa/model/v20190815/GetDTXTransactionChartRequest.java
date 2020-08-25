@@ -29,7 +29,7 @@ public class GetDTXTransactionChartRequest extends RpcAcsRequest<GetDTXTransacti
 
 	private String instanceId;
 	public GetDTXTransactionChartRequest() {
-		super("SOFA", "2019-08-15", "GetDTXTransactionChart", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDTXTransactionChart", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

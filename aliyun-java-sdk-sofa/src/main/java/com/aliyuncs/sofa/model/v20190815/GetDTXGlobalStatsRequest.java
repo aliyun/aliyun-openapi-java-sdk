@@ -27,7 +27,7 @@ public class GetDTXGlobalStatsRequest extends RpcAcsRequest<GetDTXGlobalStatsRes
 
 	private String instanceId;
 	public GetDTXGlobalStatsRequest() {
-		super("SOFA", "2019-08-15", "GetDTXGlobalStats", "ApplySidecarCert");
+		super("SOFA", "2019-08-15", "GetDTXGlobalStats", "sofa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
