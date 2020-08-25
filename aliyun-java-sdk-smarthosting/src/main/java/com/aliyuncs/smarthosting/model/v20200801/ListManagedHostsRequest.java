@@ -56,7 +56,7 @@ public class ListManagedHostsRequest extends RpcAcsRequest<ListManagedHostsRespo
 
 	private String status;
 	public ListManagedHostsRequest() {
-		super("SmartHosting", "2020-08-01", "ListManagedHosts", "SmartHosting");
+		super("SmartHosting", "2020-08-01", "ListManagedHosts", "smarthosting");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

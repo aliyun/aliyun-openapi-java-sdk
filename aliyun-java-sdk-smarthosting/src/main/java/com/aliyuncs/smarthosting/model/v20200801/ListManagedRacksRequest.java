@@ -46,7 +46,7 @@ public class ListManagedRacksRequest extends RpcAcsRequest<ListManagedRacksRespo
 
 	private Integer maxResults;
 	public ListManagedRacksRequest() {
-		super("SmartHosting", "2020-08-01", "ListManagedRacks", "SmartHosting");
+		super("SmartHosting", "2020-08-01", "ListManagedRacks", "smarthosting");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

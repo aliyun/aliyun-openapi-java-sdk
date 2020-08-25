@@ -1,3 +1,6 @@
+2020-08-25 Version: 1.0.1
+- Generated 2020-08-01 for `SmartHosting`.
+
 2020-08-19 Version: 1.0.0
 - Generated 2020-08-01 for `SmartHosting`.
 

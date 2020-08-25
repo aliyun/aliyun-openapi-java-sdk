@@ -48,7 +48,7 @@ public class ListManagedPrivateSpacesRequest extends RpcAcsRequest<ListManagedPr
 
 	private Integer maxResults;
 	public ListManagedPrivateSpacesRequest() {
-		super("SmartHosting", "2020-08-01", "ListManagedPrivateSpaces", "SmartHosting");
+		super("SmartHosting", "2020-08-01", "ListManagedPrivateSpaces", "smarthosting");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

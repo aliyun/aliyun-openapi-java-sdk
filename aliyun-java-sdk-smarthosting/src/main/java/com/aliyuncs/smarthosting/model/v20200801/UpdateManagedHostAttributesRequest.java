@@ -39,7 +39,7 @@ public class UpdateManagedHostAttributesRequest extends RpcAcsRequest<UpdateMana
 
 	private String managedHostName;
 	public UpdateManagedHostAttributesRequest() {
-		super("SmartHosting", "2020-08-01", "UpdateManagedHostAttributes", "SmartHosting");
+		super("SmartHosting", "2020-08-01", "UpdateManagedHostAttributes", "smarthosting");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
