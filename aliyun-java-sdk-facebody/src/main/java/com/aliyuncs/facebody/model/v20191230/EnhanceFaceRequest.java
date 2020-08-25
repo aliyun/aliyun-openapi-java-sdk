@@ -27,7 +27,7 @@ public class EnhanceFaceRequest extends RpcAcsRequest<EnhanceFaceResponse> {
 
 	private String imageURL;
 	public EnhanceFaceRequest() {
-		super("facebody", "2019-12-30", "EnhanceFace");
+		super("facebody", "2019-12-30", "EnhanceFace", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

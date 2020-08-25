@@ -29,7 +29,7 @@ public class DeleteFaceRequest extends RpcAcsRequest<DeleteFaceResponse> {
 
 	private String dbName;
 	public DeleteFaceRequest() {
-		super("facebody", "2019-12-30", "DeleteFace");
+		super("facebody", "2019-12-30", "DeleteFace", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

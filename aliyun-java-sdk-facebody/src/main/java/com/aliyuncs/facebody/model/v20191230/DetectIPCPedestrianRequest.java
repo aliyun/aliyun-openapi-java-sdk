@@ -31,7 +31,7 @@ public class DetectIPCPedestrianRequest extends RpcAcsRequest<DetectIPCPedestria
 
 	private Integer height;
 	public DetectIPCPedestrianRequest() {
-		super("facebody", "2019-12-30", "DetectIPCPedestrian");
+		super("facebody", "2019-12-30", "DetectIPCPedestrian", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
