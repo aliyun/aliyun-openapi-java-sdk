@@ -1,4 +1,7 @@
-﻿2020-08-17 Version: 4.5.7
+﻿2020-08-26 Version: 4.5.8
+1, Add set/get method for the Location service
+
+2020-08-17 Version: 4.5.7
 1, Supports throwing the response header
 2, Improve serialization method
 
