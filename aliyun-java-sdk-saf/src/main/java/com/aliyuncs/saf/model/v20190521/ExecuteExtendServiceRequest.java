@@ -31,7 +31,7 @@ public class ExecuteExtendServiceRequest extends RpcAcsRequest<ExecuteExtendServ
 
 	private String region;
 	public ExecuteExtendServiceRequest() {
-		super("saf", "2019-05-21", "ExecuteExtendService", "SAF");
+		super("saf", "2019-05-21", "ExecuteExtendService", "saf");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

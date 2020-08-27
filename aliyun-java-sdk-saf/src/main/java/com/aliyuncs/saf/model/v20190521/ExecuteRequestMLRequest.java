@@ -15,7 +15,6 @@
 package com.aliyuncs.saf.model.v20190521;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.saf.Endpoint;
 
@@ -23,15 +22,14 @@ import com.aliyuncs.saf.Endpoint;
  * @author auto create
  * @version 
  */
-public class ExecuteRequestSGRequest extends RpcAcsRequest<ExecuteRequestSGResponse> {
+public class ExecuteRequestMLRequest extends RpcAcsRequest<ExecuteRequestMLResponse> {
 	   
 
 	private String serviceParameters;
 
 	private String service;
-	public ExecuteRequestSGRequest() {
-		super("saf", "2019-05-21", "ExecuteRequestSG", "saf");
-		setProtocol(ProtocolType.HTTPS);
+	public ExecuteRequestMLRequest() {
+		super("saf", "2019-05-21", "ExecuteRequestML", "saf");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -46,7 +44,7 @@ public class ExecuteRequestSGRequest extends RpcAcsRequest<ExecuteRequestSGRespo
 	public void setServiceParameters(String serviceParameters) {
 		this.serviceParameters = serviceParameters;
 		if(serviceParameters != null){
-			putQueryParameter("ServiceParameters", serviceParameters);
+			putBodyParameter("ServiceParameters", serviceParameters);
 		}
 	}
 
@@ -57,13 +55,13 @@ public class ExecuteRequestSGRequest extends RpcAcsRequest<ExecuteRequestSGRespo
 	public void setService(String service) {
 		this.service = service;
 		if(service != null){
-			putQueryParameter("Service", service);
+			putBodyParameter("Service", service);
 		}
 	}
 
 	@Override
-	public Class<ExecuteRequestSGResponse> getResponseClass() {
-		return ExecuteRequestSGResponse.class;
+	public Class<ExecuteRequestMLResponse> getResponseClass() {
+		return ExecuteRequestMLResponse.class;
 	}
 
 }
