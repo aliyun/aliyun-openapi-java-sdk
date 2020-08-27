@@ -31,7 +31,7 @@ public class CreateCorpGroupRequest extends RpcAcsRequest<CreateCorpGroupRespons
 
 	private String groupId;
 	public CreateCorpGroupRequest() {
-		super("Vcs", "2020-05-15", "CreateCorpGroup", "vcs");
+		super("Vcs", "2020-05-15", "CreateCorpGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

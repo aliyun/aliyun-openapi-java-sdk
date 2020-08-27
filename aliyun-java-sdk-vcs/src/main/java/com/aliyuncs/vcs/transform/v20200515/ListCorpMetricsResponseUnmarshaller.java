@@ -41,6 +41,11 @@ public class ListCorpMetricsResponseUnmarshaller {
 			dataItem.setTagCode(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].TagCode"));
 			dataItem.setTagMetrics(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].TagMetrics"));
 			dataItem.setTagValue(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].TagValue"));
+			dataItem.setDeviceGroupId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].DeviceGroupId"));
+			dataItem.setDeviceId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].DeviceId"));
+			dataItem.setUserGroupId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].UserGroupId"));
+			dataItem.setPersonId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].PersonId"));
+			dataItem.setDateId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].DateId"));
 
 			data.add(dataItem);
 		}

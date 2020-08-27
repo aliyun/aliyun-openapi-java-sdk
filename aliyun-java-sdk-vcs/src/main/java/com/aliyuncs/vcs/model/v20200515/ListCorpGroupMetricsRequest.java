@@ -25,24 +25,43 @@ import com.aliyuncs.vcs.Endpoint;
 public class ListCorpGroupMetricsRequest extends RpcAcsRequest<ListCorpGroupMetricsResponse> {
 	   
 
+	private String corpId;
+
 	private String groupId;
 
 	private String endTime;
 
 	private String startTime;
 
+	private String deviceId;
+
 	private String pageNumber;
+
+	private String deviceGroup;
 
 	private String tagCode;
 
 	private String pageSize;
+
+	private String userGroup;
 	public ListCorpGroupMetricsRequest() {
-		super("Vcs", "2020-05-15", "ListCorpGroupMetrics", "vcs");
+		super("Vcs", "2020-05-15", "ListCorpGroupMetrics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCorpId() {
+		return this.corpId;
+	}
+
+	public void setCorpId(String corpId) {
+		this.corpId = corpId;
+		if(corpId != null){
+			putBodyParameter("CorpId", corpId);
+		}
 	}
 
 	public String getGroupId() {
@@ -78,6 +97,17 @@ public class ListCorpGroupMetricsRequest extends RpcAcsRequest<ListCorpGroupMetr
 		}
 	}
 
+	public String getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+		if(deviceId != null){
+			putBodyParameter("DeviceId", deviceId);
+		}
+	}
+
 	public String getPageNumber() {
 		return this.pageNumber;
 	}
@@ -86,6 +116,17 @@ public class ListCorpGroupMetricsRequest extends RpcAcsRequest<ListCorpGroupMetr
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber);
+		}
+	}
+
+	public String getDeviceGroup() {
+		return this.deviceGroup;
+	}
+
+	public void setDeviceGroup(String deviceGroup) {
+		this.deviceGroup = deviceGroup;
+		if(deviceGroup != null){
+			putBodyParameter("DeviceGroup", deviceGroup);
 		}
 	}
 
@@ -108,6 +149,17 @@ public class ListCorpGroupMetricsRequest extends RpcAcsRequest<ListCorpGroupMetr
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getUserGroup() {
+		return this.userGroup;
+	}
+
+	public void setUserGroup(String userGroup) {
+		this.userGroup = userGroup;
+		if(userGroup != null){
+			putBodyParameter("UserGroup", userGroup);
 		}
 	}
 

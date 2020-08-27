@@ -115,6 +115,16 @@ public class ListCorpMetricsResponse extends AcsResponse {
 
 		private String tagValue;
 
+		private String deviceGroupId;
+
+		private String deviceId;
+
+		private String userGroupId;
+
+		private String personId;
+
+		private String dateId;
+
 		public String getCorpId() {
 			return this.corpId;
 		}
@@ -145,6 +155,46 @@ public class ListCorpMetricsResponse extends AcsResponse {
 
 		public void setTagValue(String tagValue) {
 			this.tagValue = tagValue;
+		}
+
+		public String getDeviceGroupId() {
+			return this.deviceGroupId;
+		}
+
+		public void setDeviceGroupId(String deviceGroupId) {
+			this.deviceGroupId = deviceGroupId;
+		}
+
+		public String getDeviceId() {
+			return this.deviceId;
+		}
+
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
+		}
+
+		public String getUserGroupId() {
+			return this.userGroupId;
+		}
+
+		public void setUserGroupId(String userGroupId) {
+			this.userGroupId = userGroupId;
+		}
+
+		public String getPersonId() {
+			return this.personId;
+		}
+
+		public void setPersonId(String personId) {
+			this.personId = personId;
+		}
+
+		public String getDateId() {
+			return this.dateId;
+		}
+
+		public void setDateId(String dateId) {
+			this.dateId = dateId;
 		}
 	}
 

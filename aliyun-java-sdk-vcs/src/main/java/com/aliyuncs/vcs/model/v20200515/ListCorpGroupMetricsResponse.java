@@ -39,7 +39,7 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 
 	private String success;
 
-	private List<Day> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,17 +97,17 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<Day> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<Day> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
 	}
 
-	public static class Day {
+	public static class DataItem {
 
-		private String checkedTime;
+		private String dateId;
 
 		private String tagMetrics;
 
@@ -115,14 +115,24 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 
 		private String tagValue;
 
-		private String groupId;
+		private String corpGroupId;
 
-		public String getCheckedTime() {
-			return this.checkedTime;
+		private String corpId;
+
+		private String deviceGroupId;
+
+		private String deviceId;
+
+		private String userGroupId;
+
+		private String personID;
+
+		public String getDateId() {
+			return this.dateId;
 		}
 
-		public void setCheckedTime(String checkedTime) {
-			this.checkedTime = checkedTime;
+		public void setDateId(String dateId) {
+			this.dateId = dateId;
 		}
 
 		public String getTagMetrics() {
@@ -149,12 +159,52 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 			this.tagValue = tagValue;
 		}
 
-		public String getGroupId() {
-			return this.groupId;
+		public String getCorpGroupId() {
+			return this.corpGroupId;
 		}
 
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
+		public void setCorpGroupId(String corpGroupId) {
+			this.corpGroupId = corpGroupId;
+		}
+
+		public String getCorpId() {
+			return this.corpId;
+		}
+
+		public void setCorpId(String corpId) {
+			this.corpId = corpId;
+		}
+
+		public String getDeviceGroupId() {
+			return this.deviceGroupId;
+		}
+
+		public void setDeviceGroupId(String deviceGroupId) {
+			this.deviceGroupId = deviceGroupId;
+		}
+
+		public String getDeviceId() {
+			return this.deviceId;
+		}
+
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
+		}
+
+		public String getUserGroupId() {
+			return this.userGroupId;
+		}
+
+		public void setUserGroupId(String userGroupId) {
+			this.userGroupId = userGroupId;
+		}
+
+		public String getPersonID() {
+			return this.personID;
+		}
+
+		public void setPersonID(String personID) {
+			this.personID = personID;
 		}
 	}
 

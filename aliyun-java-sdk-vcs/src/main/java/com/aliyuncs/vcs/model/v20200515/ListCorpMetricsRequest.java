@@ -33,11 +33,17 @@ public class ListCorpMetricsRequest extends RpcAcsRequest<ListCorpMetricsRespons
 
 	private String pageNumber;
 
+	private String deviceGroupList;
+
 	private String tagCode;
 
+	private String userGroupList;
+
 	private String pageSize;
+
+	private String deviceIdList;
 	public ListCorpMetricsRequest() {
-		super("Vcs", "2020-05-15", "ListCorpMetrics", "vcs");
+		super("Vcs", "2020-05-15", "ListCorpMetrics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -89,6 +95,17 @@ public class ListCorpMetricsRequest extends RpcAcsRequest<ListCorpMetricsRespons
 		}
 	}
 
+	public String getDeviceGroupList() {
+		return this.deviceGroupList;
+	}
+
+	public void setDeviceGroupList(String deviceGroupList) {
+		this.deviceGroupList = deviceGroupList;
+		if(deviceGroupList != null){
+			putBodyParameter("DeviceGroupList", deviceGroupList);
+		}
+	}
+
 	public String getTagCode() {
 		return this.tagCode;
 	}
@@ -100,6 +117,17 @@ public class ListCorpMetricsRequest extends RpcAcsRequest<ListCorpMetricsRespons
 		}
 	}
 
+	public String getUserGroupList() {
+		return this.userGroupList;
+	}
+
+	public void setUserGroupList(String userGroupList) {
+		this.userGroupList = userGroupList;
+		if(userGroupList != null){
+			putBodyParameter("UserGroupList", userGroupList);
+		}
+	}
+
 	public String getPageSize() {
 		return this.pageSize;
 	}
@@ -108,6 +136,17 @@ public class ListCorpMetricsRequest extends RpcAcsRequest<ListCorpMetricsRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getDeviceIdList() {
+		return this.deviceIdList;
+	}
+
+	public void setDeviceIdList(String deviceIdList) {
+		this.deviceIdList = deviceIdList;
+		if(deviceIdList != null){
+			putBodyParameter("DeviceIdList", deviceIdList);
 		}
 	}
 
