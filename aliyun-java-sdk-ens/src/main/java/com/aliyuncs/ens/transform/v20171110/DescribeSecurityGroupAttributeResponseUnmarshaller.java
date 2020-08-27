@@ -39,7 +39,6 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 			permission.setPolicy(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Policy"));
 			permission.setDirection(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Direction"));
 			permission.setCreationTime(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].CreationTime"));
-			permission.setCreationTime1(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].CreationTime"));
 			permission.setPortRange(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].PortRange"));
 			permission.setSourcePortRange(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourcePortRange"));
 

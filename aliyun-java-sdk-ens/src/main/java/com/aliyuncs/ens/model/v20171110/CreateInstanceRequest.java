@@ -24,54 +24,60 @@ import com.aliyuncs.http.MethodType;
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
 	   
 
-	private String imageId;
+	private Boolean uniqueSuffix;
 
 	private String keyPairName;
 
-	private String userData;
-
 	private String password;
 
+	private String hostName;
+
 	private String ensRegionId;
-
-	private String instanceType;
-
-	private String dataDisk1Size;
 
 	private String autoRenewPeriod;
 
 	private String period;
 
-	private String quantity;
-
-	private String ipType;
-
 	private Long ownerId;
-
-	private String version;
 
 	private String vSwitchId;
 
 	private String privateIpAddress;
 
-	private String systemDiskSize;
+	private String instanceName;
 
 	private String autoRenew;
 
 	private String internetChargeType;
+
+	private String imageId;
+
+	private String userData;
+
+	private String instanceType;
+
+	private String dataDisk1Size;
+
+	private String quantity;
+
+	private String ipType;
+
+	private String systemDiskSize;
+
+	private String paymentType;
 	public CreateInstanceRequest() {
 		super("Ens", "2017-11-10", "CreateInstance", "ens");
 		setMethod(MethodType.POST);
 	}
 
-	public String getImageId() {
-		return this.imageId;
+	public Boolean getUniqueSuffix() {
+		return this.uniqueSuffix;
 	}
 
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
+	public void setUniqueSuffix(Boolean uniqueSuffix) {
+		this.uniqueSuffix = uniqueSuffix;
+		if(uniqueSuffix != null){
+			putQueryParameter("UniqueSuffix", uniqueSuffix.toString());
 		}
 	}
 
@@ -86,17 +92,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
-	}
-
 	public String getPassword() {
 		return this.password;
 	}
@@ -108,6 +103,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+		if(hostName != null){
+			putQueryParameter("HostName", hostName);
+		}
+	}
+
 	public String getEnsRegionId() {
 		return this.ensRegionId;
 	}
@@ -116,28 +122,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.ensRegionId = ensRegionId;
 		if(ensRegionId != null){
 			putQueryParameter("EnsRegionId", ensRegionId);
-		}
-	}
-
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
-		}
-	}
-
-	public String getDataDisk1Size() {
-		return this.dataDisk1Size;
-	}
-
-	public void setDataDisk1Size(String dataDisk1Size) {
-		this.dataDisk1Size = dataDisk1Size;
-		if(dataDisk1Size != null){
-			putQueryParameter("DataDisk.1.Size", dataDisk1Size);
 		}
 	}
 
@@ -163,28 +147,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
-	public String getQuantity() {
-		return this.quantity;
-	}
-
-	public void setQuantity(String quantity) {
-		this.quantity = quantity;
-		if(quantity != null){
-			putQueryParameter("Quantity", quantity);
-		}
-	}
-
-	public String getIpType() {
-		return this.ipType;
-	}
-
-	public void setIpType(String ipType) {
-		this.ipType = ipType;
-		if(ipType != null){
-			putQueryParameter("IpType", ipType);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -193,17 +155,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 
@@ -229,14 +180,14 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
-	public String getSystemDiskSize() {
-		return this.systemDiskSize;
+	public String getInstanceName() {
+		return this.instanceName;
 	}
 
-	public void setSystemDiskSize(String systemDiskSize) {
-		this.systemDiskSize = systemDiskSize;
-		if(systemDiskSize != null){
-			putQueryParameter("SystemDisk.Size", systemDiskSize);
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
 		}
 	}
 
@@ -259,6 +210,94 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.internetChargeType = internetChargeType;
 		if(internetChargeType != null){
 			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getDataDisk1Size() {
+		return this.dataDisk1Size;
+	}
+
+	public void setDataDisk1Size(String dataDisk1Size) {
+		this.dataDisk1Size = dataDisk1Size;
+		if(dataDisk1Size != null){
+			putQueryParameter("DataDisk.1.Size", dataDisk1Size);
+		}
+	}
+
+	public String getQuantity() {
+		return this.quantity;
+	}
+
+	public void setQuantity(String quantity) {
+		this.quantity = quantity;
+		if(quantity != null){
+			putQueryParameter("Quantity", quantity);
+		}
+	}
+
+	public String getIpType() {
+		return this.ipType;
+	}
+
+	public void setIpType(String ipType) {
+		this.ipType = ipType;
+		if(ipType != null){
+			putQueryParameter("IpType", ipType);
+		}
+	}
+
+	public String getSystemDiskSize() {
+		return this.systemDiskSize;
+	}
+
+	public void setSystemDiskSize(String systemDiskSize) {
+		this.systemDiskSize = systemDiskSize;
+		if(systemDiskSize != null){
+			putQueryParameter("SystemDisk.Size", systemDiskSize);
+		}
+	}
+
+	public String getPaymentType() {
+		return this.paymentType;
+	}
+
+	public void setPaymentType(String paymentType) {
+		this.paymentType = paymentType;
+		if(paymentType != null){
+			putQueryParameter("PaymentType", paymentType);
 		}
 	}
 

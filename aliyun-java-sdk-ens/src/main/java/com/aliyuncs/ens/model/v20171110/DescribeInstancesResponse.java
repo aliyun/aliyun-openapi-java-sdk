@@ -107,6 +107,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String status;
 
+		private String hostName;
+
 		private String imageId;
 
 		private String expiredTime;
@@ -209,6 +211,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
 		}
 
 		public String getImageId() {

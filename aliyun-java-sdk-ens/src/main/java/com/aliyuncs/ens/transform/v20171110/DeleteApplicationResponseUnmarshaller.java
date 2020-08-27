@@ -14,17 +14,16 @@
 
 package com.aliyuncs.ens.transform.v20171110;
 
-import com.aliyuncs.ens.model.v20171110.ExportImageResponse;
+import com.aliyuncs.ens.model.v20171110.DeleteApplicationResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ExportImageResponseUnmarshaller {
+public class DeleteApplicationResponseUnmarshaller {
 
-	public static ExportImageResponse unmarshall(ExportImageResponse exportImageResponse, UnmarshallerContext _ctx) {
+	public static DeleteApplicationResponse unmarshall(DeleteApplicationResponse deleteApplicationResponse, UnmarshallerContext _ctx) {
 		
-		exportImageResponse.setRequestId(_ctx.stringValue("ExportImageResponse.RequestId"));
-		exportImageResponse.setExportedImageURL(_ctx.stringValue("ExportImageResponse.ExportedImageURL"));
+		deleteApplicationResponse.setRequestId(_ctx.stringValue("DeleteApplicationResponse.RequestId"));
 	 
-	 	return exportImageResponse;
+	 	return deleteApplicationResponse;
 	}
 }

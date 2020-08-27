@@ -15,18 +15,18 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.ExportImageResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.CreateApplicationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ExportImageResponse extends AcsResponse {
+public class CreateApplicationResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String exportedImageURL;
+	private String appId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +36,16 @@ public class ExportImageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getExportedImageURL() {
-		return this.exportedImageURL;
+	public String getAppId() {
+		return this.appId;
 	}
 
-	public void setExportedImageURL(String exportedImageURL) {
-		this.exportedImageURL = exportedImageURL;
+	public void setAppId(String appId) {
+		this.appId = appId;
 	}
 
 	@Override
-	public ExportImageResponse getInstance(UnmarshallerContext context) {
-		return	ExportImageResponseUnmarshaller.unmarshall(this, context);
+	public CreateApplicationResponse getInstance(UnmarshallerContext context) {
+		return	CreateApplicationResponseUnmarshaller.unmarshall(this, context);
 	}
 }

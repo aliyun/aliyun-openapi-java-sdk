@@ -14,17 +14,16 @@
 
 package com.aliyuncs.ens.transform.v20171110;
 
-import com.aliyuncs.ens.model.v20171110.ExportImageResponse;
+import com.aliyuncs.ens.model.v20171110.JoinVSwitchesToEpnInstanceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ExportImageResponseUnmarshaller {
+public class JoinVSwitchesToEpnInstanceResponseUnmarshaller {
 
-	public static ExportImageResponse unmarshall(ExportImageResponse exportImageResponse, UnmarshallerContext _ctx) {
+	public static JoinVSwitchesToEpnInstanceResponse unmarshall(JoinVSwitchesToEpnInstanceResponse joinVSwitchesToEpnInstanceResponse, UnmarshallerContext _ctx) {
 		
-		exportImageResponse.setRequestId(_ctx.stringValue("ExportImageResponse.RequestId"));
-		exportImageResponse.setExportedImageURL(_ctx.stringValue("ExportImageResponse.ExportedImageURL"));
+		joinVSwitchesToEpnInstanceResponse.setRequestId(_ctx.stringValue("JoinVSwitchesToEpnInstanceResponse.RequestId"));
 	 
-	 	return exportImageResponse;
+	 	return joinVSwitchesToEpnInstanceResponse;
 	}
 }

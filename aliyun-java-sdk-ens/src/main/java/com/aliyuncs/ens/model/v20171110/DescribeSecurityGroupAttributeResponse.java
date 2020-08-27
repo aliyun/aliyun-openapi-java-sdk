@@ -71,8 +71,6 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		private String creationTime;
 
-		private String creationTime1;
-
 		private String portRange;
 
 		private String sourcePortRange;
@@ -131,14 +129,6 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
-		}
-
-		public String getCreationTime1() {
-			return this.creationTime1;
-		}
-
-		public void setCreationTime1(String creationTime1) {
-			this.creationTime1 = creationTime1;
 		}
 
 		public String getPortRange() {

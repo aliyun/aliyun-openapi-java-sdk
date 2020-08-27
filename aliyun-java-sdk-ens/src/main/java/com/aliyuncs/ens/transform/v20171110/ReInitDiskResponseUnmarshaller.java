@@ -14,17 +14,17 @@
 
 package com.aliyuncs.ens.transform.v20171110;
 
-import com.aliyuncs.ens.model.v20171110.ExportImageResponse;
+import com.aliyuncs.ens.model.v20171110.ReInitDiskResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ExportImageResponseUnmarshaller {
+public class ReInitDiskResponseUnmarshaller {
 
-	public static ExportImageResponse unmarshall(ExportImageResponse exportImageResponse, UnmarshallerContext _ctx) {
+	public static ReInitDiskResponse unmarshall(ReInitDiskResponse reInitDiskResponse, UnmarshallerContext _ctx) {
 		
-		exportImageResponse.setRequestId(_ctx.stringValue("ExportImageResponse.RequestId"));
-		exportImageResponse.setExportedImageURL(_ctx.stringValue("ExportImageResponse.ExportedImageURL"));
+		reInitDiskResponse.setRequestId(_ctx.stringValue("ReInitDiskResponse.RequestId"));
+		reInitDiskResponse.setCode(_ctx.integerValue("ReInitDiskResponse.Code"));
 	 
-	 	return exportImageResponse;
+	 	return reInitDiskResponse;
 	}
 }
