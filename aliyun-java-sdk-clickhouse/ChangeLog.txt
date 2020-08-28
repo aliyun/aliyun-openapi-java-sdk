@@ -1,3 +1,6 @@
+2020-08-28 Version: 2.0.0
+- Support 1-1-7.
+
 2020-08-17 Version: 1.1.4
 - Release 1-1-4.
 
