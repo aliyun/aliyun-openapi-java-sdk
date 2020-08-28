@@ -27,6 +27,8 @@ public class AddNodesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String taskId;
+
 	private List<String> instanceIds;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class AddNodesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	public List<String> getInstanceIds() {

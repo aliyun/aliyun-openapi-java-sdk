@@ -22,21 +22,30 @@ import com.aliyuncs.ehpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeGWSClusterPolicyRequest extends RpcAcsRequest<DescribeGWSClusterPolicyResponse> {
+public class DeleteSecurityGroupRequest extends RpcAcsRequest<DeleteSecurityGroupResponse> {
 	   
 
+	private String securityGroupId;
+
 	private String clusterId;
-
-	private Boolean asyncMode;
-
-	private String taskId;
-	public DescribeGWSClusterPolicyRequest() {
-		super("EHPC", "2018-04-12", "DescribeGWSClusterPolicy");
-		setMethod(MethodType.POST);
+	public DeleteSecurityGroupRequest() {
+		super("EHPC", "2018-04-12", "DeleteSecurityGroup");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
 	}
 
 	public String getClusterId() {
@@ -50,31 +59,9 @@ public class DescribeGWSClusterPolicyRequest extends RpcAcsRequest<DescribeGWSCl
 		}
 	}
 
-	public Boolean getAsyncMode() {
-		return this.asyncMode;
-	}
-
-	public void setAsyncMode(Boolean asyncMode) {
-		this.asyncMode = asyncMode;
-		if(asyncMode != null){
-			putQueryParameter("AsyncMode", asyncMode.toString());
-		}
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
-		}
-	}
-
 	@Override
-	public Class<DescribeGWSClusterPolicyResponse> getResponseClass() {
-		return DescribeGWSClusterPolicyResponse.class;
+	public Class<DeleteSecurityGroupResponse> getResponseClass() {
+		return DeleteSecurityGroupResponse.class;
 	}
 
 }

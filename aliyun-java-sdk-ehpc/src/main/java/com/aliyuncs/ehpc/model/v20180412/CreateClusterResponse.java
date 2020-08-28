@@ -28,6 +28,8 @@ public class CreateClusterResponse extends AcsResponse {
 
 	private String clusterId;
 
+	private String taskId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class CreateClusterResponse extends AcsResponse {
 
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	@Override

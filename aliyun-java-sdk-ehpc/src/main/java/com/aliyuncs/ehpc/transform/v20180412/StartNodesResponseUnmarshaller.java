@@ -23,6 +23,7 @@ public class StartNodesResponseUnmarshaller {
 	public static StartNodesResponse unmarshall(StartNodesResponse startNodesResponse, UnmarshallerContext _ctx) {
 		
 		startNodesResponse.setRequestId(_ctx.stringValue("StartNodesResponse.RequestId"));
+		startNodesResponse.setTaskId(_ctx.stringValue("StartNodesResponse.TaskId"));
 	 
 	 	return startNodesResponse;
 	}

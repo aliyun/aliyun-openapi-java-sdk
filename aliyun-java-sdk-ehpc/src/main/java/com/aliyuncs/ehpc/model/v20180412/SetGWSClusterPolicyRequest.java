@@ -34,6 +34,10 @@ public class SetGWSClusterPolicyRequest extends RpcAcsRequest<SetGWSClusterPolic
 	private String clipboard;
 
 	private String usbRedirect;
+
+	private Boolean asyncMode;
+
+	private String udpPort;
 	public SetGWSClusterPolicyRequest() {
 		super("EHPC", "2018-04-12", "SetGWSClusterPolicy");
 		setMethod(MethodType.POST);
@@ -95,6 +99,28 @@ public class SetGWSClusterPolicyRequest extends RpcAcsRequest<SetGWSClusterPolic
 		this.usbRedirect = usbRedirect;
 		if(usbRedirect != null){
 			putQueryParameter("UsbRedirect", usbRedirect);
+		}
+	}
+
+	public Boolean getAsyncMode() {
+		return this.asyncMode;
+	}
+
+	public void setAsyncMode(Boolean asyncMode) {
+		this.asyncMode = asyncMode;
+		if(asyncMode != null){
+			putQueryParameter("AsyncMode", asyncMode.toString());
+		}
+	}
+
+	public String getUdpPort() {
+		return this.udpPort;
+	}
+
+	public void setUdpPort(String udpPort) {
+		this.udpPort = udpPort;
+		if(udpPort != null){
+			putQueryParameter("UdpPort", udpPort);
 		}
 	}
 

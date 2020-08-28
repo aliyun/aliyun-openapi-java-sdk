@@ -23,6 +23,7 @@ public class RecoverClusterResponseUnmarshaller {
 	public static RecoverClusterResponse unmarshall(RecoverClusterResponse recoverClusterResponse, UnmarshallerContext _ctx) {
 		
 		recoverClusterResponse.setRequestId(_ctx.stringValue("RecoverClusterResponse.RequestId"));
+		recoverClusterResponse.setTaskId(_ctx.stringValue("RecoverClusterResponse.TaskId"));
 	 
 	 	return recoverClusterResponse;
 	}

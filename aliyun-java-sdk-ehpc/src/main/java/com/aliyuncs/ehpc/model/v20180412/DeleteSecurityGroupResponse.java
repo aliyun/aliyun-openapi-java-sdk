@@ -15,18 +15,16 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ehpc.transform.v20180412.StopNodesResponseUnmarshaller;
+import com.aliyuncs.ehpc.transform.v20180412.DeleteSecurityGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StopNodesResponse extends AcsResponse {
+public class DeleteSecurityGroupResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String taskId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +34,8 @@ public class StopNodesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
-
 	@Override
-	public StopNodesResponse getInstance(UnmarshallerContext context) {
-		return	StopNodesResponseUnmarshaller.unmarshall(this, context);
+	public DeleteSecurityGroupResponse getInstance(UnmarshallerContext context) {
+		return	DeleteSecurityGroupResponseUnmarshaller.unmarshall(this, context);
 	}
 }

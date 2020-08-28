@@ -14,17 +14,16 @@
 
 package com.aliyuncs.ehpc.transform.v20180412;
 
-import com.aliyuncs.ehpc.model.v20180412.StopClusterResponse;
+import com.aliyuncs.ehpc.model.v20180412.AddSecurityGroupResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class StopClusterResponseUnmarshaller {
+public class AddSecurityGroupResponseUnmarshaller {
 
-	public static StopClusterResponse unmarshall(StopClusterResponse stopClusterResponse, UnmarshallerContext _ctx) {
+	public static AddSecurityGroupResponse unmarshall(AddSecurityGroupResponse addSecurityGroupResponse, UnmarshallerContext _ctx) {
 		
-		stopClusterResponse.setRequestId(_ctx.stringValue("StopClusterResponse.RequestId"));
-		stopClusterResponse.setTaskId(_ctx.stringValue("StopClusterResponse.TaskId"));
+		addSecurityGroupResponse.setRequestId(_ctx.stringValue("AddSecurityGroupResponse.RequestId"));
 	 
-	 	return stopClusterResponse;
+	 	return addSecurityGroupResponse;
 	}
 }

@@ -27,6 +27,8 @@ public class CreateGWSClusterRequest extends RpcAcsRequest<CreateGWSClusterRespo
 
 	private String clusterType;
 
+	private String vSwitchId;
+
 	private String vpcId;
 
 	private String name;
@@ -47,6 +49,17 @@ public class CreateGWSClusterRequest extends RpcAcsRequest<CreateGWSClusterRespo
 		this.clusterType = clusterType;
 		if(clusterType != null){
 			putQueryParameter("ClusterType", clusterType);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 

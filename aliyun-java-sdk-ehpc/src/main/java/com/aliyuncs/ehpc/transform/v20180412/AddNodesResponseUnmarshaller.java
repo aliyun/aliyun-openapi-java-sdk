@@ -26,6 +26,7 @@ public class AddNodesResponseUnmarshaller {
 	public static AddNodesResponse unmarshall(AddNodesResponse addNodesResponse, UnmarshallerContext _ctx) {
 		
 		addNodesResponse.setRequestId(_ctx.stringValue("AddNodesResponse.RequestId"));
+		addNodesResponse.setTaskId(_ctx.stringValue("AddNodesResponse.TaskId"));
 
 		List<String> instanceIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("AddNodesResponse.InstanceIds.Length"); i++) {

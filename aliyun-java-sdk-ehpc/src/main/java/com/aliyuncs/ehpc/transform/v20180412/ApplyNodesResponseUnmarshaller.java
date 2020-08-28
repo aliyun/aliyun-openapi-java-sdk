@@ -28,6 +28,7 @@ public class ApplyNodesResponseUnmarshaller {
 		applyNodesResponse.setRequestId(_ctx.stringValue("ApplyNodesResponse.RequestId"));
 		applyNodesResponse.setDetail(_ctx.stringValue("ApplyNodesResponse.Detail"));
 		applyNodesResponse.setSatisfiedAmount(_ctx.integerValue("ApplyNodesResponse.SatisfiedAmount"));
+		applyNodesResponse.setTaskId(_ctx.stringValue("ApplyNodesResponse.TaskId"));
 
 		List<String> instanceIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ApplyNodesResponse.InstanceIds.Length"); i++) {

@@ -27,6 +27,8 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private String imageId;
 
+	private String clientToken;
+
 	private Boolean allocatePublicAddress;
 
 	private Integer internetMaxBandWidthOut;
@@ -91,6 +93,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

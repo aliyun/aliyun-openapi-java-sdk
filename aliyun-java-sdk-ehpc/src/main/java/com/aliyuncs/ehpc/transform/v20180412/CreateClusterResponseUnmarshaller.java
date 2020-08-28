@@ -24,6 +24,7 @@ public class CreateClusterResponseUnmarshaller {
 		
 		createClusterResponse.setRequestId(_ctx.stringValue("CreateClusterResponse.RequestId"));
 		createClusterResponse.setClusterId(_ctx.stringValue("CreateClusterResponse.ClusterId"));
+		createClusterResponse.setTaskId(_ctx.stringValue("CreateClusterResponse.TaskId"));
 	 
 	 	return createClusterResponse;
 	}

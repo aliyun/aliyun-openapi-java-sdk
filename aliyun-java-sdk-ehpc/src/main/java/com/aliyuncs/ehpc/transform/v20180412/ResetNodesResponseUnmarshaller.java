@@ -23,6 +23,7 @@ public class ResetNodesResponseUnmarshaller {
 	public static ResetNodesResponse unmarshall(ResetNodesResponse resetNodesResponse, UnmarshallerContext _ctx) {
 		
 		resetNodesResponse.setRequestId(_ctx.stringValue("ResetNodesResponse.RequestId"));
+		resetNodesResponse.setTaskId(_ctx.stringValue("ResetNodesResponse.TaskId"));
 	 
 	 	return resetNodesResponse;
 	}

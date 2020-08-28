@@ -32,6 +32,10 @@ public class DescribeGWSInstancesRequest extends RpcAcsRequest<DescribeGWSInstan
 	private String instanceId;
 
 	private Integer pageSize;
+
+	private Long userUid;
+
+	private String userName;
 	public DescribeGWSInstancesRequest() {
 		super("EHPC", "2018-04-12", "DescribeGWSInstances");
 		setMethod(MethodType.GET);
@@ -82,6 +86,28 @@ public class DescribeGWSInstancesRequest extends RpcAcsRequest<DescribeGWSInstan
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getUserUid() {
+		return this.userUid;
+	}
+
+	public void setUserUid(Long userUid) {
+		this.userUid = userUid;
+		if(userUid != null){
+			putQueryParameter("UserUid", userUid.toString());
+		}
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+		if(userName != null){
+			putQueryParameter("UserName", userName);
 		}
 	}
 

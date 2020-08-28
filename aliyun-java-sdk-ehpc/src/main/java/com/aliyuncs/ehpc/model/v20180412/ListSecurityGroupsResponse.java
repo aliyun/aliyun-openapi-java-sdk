@@ -14,19 +14,22 @@
 
 package com.aliyuncs.ehpc.model.v20180412;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ehpc.transform.v20180412.StopNodesResponseUnmarshaller;
+import com.aliyuncs.ehpc.transform.v20180412.ListSecurityGroupsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StopNodesResponse extends AcsResponse {
+public class ListSecurityGroupsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String taskId;
+	private Integer totalCount;
+
+	private List<String> securityGroups;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +39,24 @@ public class StopNodesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public List<String> getSecurityGroups() {
+		return this.securityGroups;
+	}
+
+	public void setSecurityGroups(List<String> securityGroups) {
+		this.securityGroups = securityGroups;
 	}
 
 	@Override
-	public StopNodesResponse getInstance(UnmarshallerContext context) {
-		return	StopNodesResponseUnmarshaller.unmarshall(this, context);
+	public ListSecurityGroupsResponse getInstance(UnmarshallerContext context) {
+		return	ListSecurityGroupsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

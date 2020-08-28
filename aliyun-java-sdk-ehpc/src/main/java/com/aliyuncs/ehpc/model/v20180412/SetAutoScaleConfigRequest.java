@@ -219,6 +219,7 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 				}
 				putQueryParameter("Queues." + (depth1 + 1) + ".MaxNodesInQueue" , queuess.get(depth1).getMaxNodesInQueue());
 				putQueryParameter("Queues." + (depth1 + 1) + ".InstanceType" , queuess.get(depth1).getInstanceType());
+				putQueryParameter("Queues." + (depth1 + 1) + ".QueueImageId" , queuess.get(depth1).getQueueImageId());
 				putQueryParameter("Queues." + (depth1 + 1) + ".EnableAutoGrow" , queuess.get(depth1).getEnableAutoGrow());
 				putQueryParameter("Queues." + (depth1 + 1) + ".SpotPriceLimit" , queuess.get(depth1).getSpotPriceLimit());
 				putQueryParameter("Queues." + (depth1 + 1) + ".EnableAutoShrink" , queuess.get(depth1).getEnableAutoShrink());
@@ -261,6 +262,8 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 		private Integer maxNodesInQueue;
 
 		private String instanceType;
+
+		private String queueImageId;
 
 		private Boolean enableAutoGrow;
 
@@ -314,6 +317,14 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 		public void setInstanceType(String instanceType) {
 			this.instanceType = instanceType;
+		}
+
+		public String getQueueImageId() {
+			return this.queueImageId;
+		}
+
+		public void setQueueImageId(String queueImageId) {
+			this.queueImageId = queueImageId;
 		}
 
 		public Boolean getEnableAutoGrow() {

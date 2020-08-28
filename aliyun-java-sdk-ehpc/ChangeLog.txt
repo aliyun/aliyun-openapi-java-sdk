@@ -1,3 +1,7 @@
+2020-08-28 Version: 1.14.0
+- Support multiple security group for one ehpc cluster.
+- Update GWS apis.
+
 2020-06-16 Version: 1.13.3
 - Support TargetImageId in ApplyNodes Interface.
 

@@ -31,6 +31,8 @@ public class ApplyNodesResponse extends AcsResponse {
 
 	private Integer satisfiedAmount;
 
+	private String taskId;
+
 	private List<String> instanceIds;
 
 	public String getRequestId() {
@@ -55,6 +57,14 @@ public class ApplyNodesResponse extends AcsResponse {
 
 	public void setSatisfiedAmount(Integer satisfiedAmount) {
 		this.satisfiedAmount = satisfiedAmount;
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	public List<String> getInstanceIds() {

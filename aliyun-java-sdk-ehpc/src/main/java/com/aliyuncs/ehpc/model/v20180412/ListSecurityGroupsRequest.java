@@ -22,17 +22,13 @@ import com.aliyuncs.ehpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeGWSClusterPolicyRequest extends RpcAcsRequest<DescribeGWSClusterPolicyResponse> {
+public class ListSecurityGroupsRequest extends RpcAcsRequest<ListSecurityGroupsResponse> {
 	   
 
 	private String clusterId;
-
-	private Boolean asyncMode;
-
-	private String taskId;
-	public DescribeGWSClusterPolicyRequest() {
-		super("EHPC", "2018-04-12", "DescribeGWSClusterPolicy");
-		setMethod(MethodType.POST);
+	public ListSecurityGroupsRequest() {
+		super("EHPC", "2018-04-12", "ListSecurityGroups");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -50,31 +46,9 @@ public class DescribeGWSClusterPolicyRequest extends RpcAcsRequest<DescribeGWSCl
 		}
 	}
 
-	public Boolean getAsyncMode() {
-		return this.asyncMode;
-	}
-
-	public void setAsyncMode(Boolean asyncMode) {
-		this.asyncMode = asyncMode;
-		if(asyncMode != null){
-			putQueryParameter("AsyncMode", asyncMode.toString());
-		}
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
-		}
-	}
-
 	@Override
-	public Class<DescribeGWSClusterPolicyResponse> getResponseClass() {
-		return DescribeGWSClusterPolicyResponse.class;
+	public Class<ListSecurityGroupsResponse> getResponseClass() {
+		return ListSecurityGroupsResponse.class;
 	}
 
 }

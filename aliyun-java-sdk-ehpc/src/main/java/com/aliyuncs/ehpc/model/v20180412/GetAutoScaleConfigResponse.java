@@ -225,6 +225,8 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 		private Integer minNodesInQueue;
 
+		private String queueImageId;
+
 		private List<InstanceTypeInfo> instanceTypes;
 
 		public String getQueueName() {
@@ -297,6 +299,14 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 		public void setMinNodesInQueue(Integer minNodesInQueue) {
 			this.minNodesInQueue = minNodesInQueue;
+		}
+
+		public String getQueueImageId() {
+			return this.queueImageId;
+		}
+
+		public void setQueueImageId(String queueImageId) {
+			this.queueImageId = queueImageId;
 		}
 
 		public List<InstanceTypeInfo> getInstanceTypes() {

@@ -23,6 +23,7 @@ public class DeleteNodesResponseUnmarshaller {
 	public static DeleteNodesResponse unmarshall(DeleteNodesResponse deleteNodesResponse, UnmarshallerContext _ctx) {
 		
 		deleteNodesResponse.setRequestId(_ctx.stringValue("DeleteNodesResponse.RequestId"));
+		deleteNodesResponse.setTaskId(_ctx.stringValue("DeleteNodesResponse.TaskId"));
 	 
 	 	return deleteNodesResponse;
 	}

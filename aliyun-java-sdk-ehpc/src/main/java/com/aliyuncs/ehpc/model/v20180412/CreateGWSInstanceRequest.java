@@ -47,6 +47,8 @@ public class CreateGWSInstanceRequest extends RpcAcsRequest<CreateGWSInstanceRes
 
 	private String workMode;
 
+	private String vSwitchId;
+
 	private String periodUnit;
 
 	private Boolean autoRenew;
@@ -183,6 +185,17 @@ public class CreateGWSInstanceRequest extends RpcAcsRequest<CreateGWSInstanceRes
 		this.workMode = workMode;
 		if(workMode != null){
 			putQueryParameter("WorkMode", workMode);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 

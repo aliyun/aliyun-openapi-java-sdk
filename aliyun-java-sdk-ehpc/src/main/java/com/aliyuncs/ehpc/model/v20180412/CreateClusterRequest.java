@@ -46,6 +46,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private Integer ecsOrderLoginCount;
 
+	private Boolean withoutElasticIp;
+
 	private String remoteVisEnable;
 
 	private Integer systemDiskSize;
@@ -81,6 +83,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	private String sccClusterId;
 
 	private String imageId;
+
+	private String clientToken;
 
 	private String ehpcVersion;
 
@@ -249,6 +253,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.ecsOrderLoginCount = ecsOrderLoginCount;
 		if(ecsOrderLoginCount != null){
 			putQueryParameter("EcsOrder.Login.Count", ecsOrderLoginCount.toString());
+		}
+	}
+
+	public Boolean getWithoutElasticIp() {
+		return this.withoutElasticIp;
+	}
+
+	public void setWithoutElasticIp(Boolean withoutElasticIp) {
+		this.withoutElasticIp = withoutElasticIp;
+		if(withoutElasticIp != null){
+			putQueryParameter("WithoutElasticIp", withoutElasticIp.toString());
 		}
 	}
 
@@ -450,6 +465,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

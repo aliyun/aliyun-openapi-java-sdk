@@ -22,17 +22,21 @@ import com.aliyuncs.ehpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeGWSClusterPolicyRequest extends RpcAcsRequest<DescribeGWSClusterPolicyResponse> {
+public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 	   
 
 	private String clusterId;
 
-	private Boolean asyncMode;
+	private Integer pageNumber;
+
+	private Boolean archived;
+
+	private Integer pageSize;
 
 	private String taskId;
-	public DescribeGWSClusterPolicyRequest() {
-		super("EHPC", "2018-04-12", "DescribeGWSClusterPolicy");
-		setMethod(MethodType.POST);
+	public ListTasksRequest() {
+		super("EHPC", "2018-04-12", "ListTasks");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -50,14 +54,36 @@ public class DescribeGWSClusterPolicyRequest extends RpcAcsRequest<DescribeGWSCl
 		}
 	}
 
-	public Boolean getAsyncMode() {
-		return this.asyncMode;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setAsyncMode(Boolean asyncMode) {
-		this.asyncMode = asyncMode;
-		if(asyncMode != null){
-			putQueryParameter("AsyncMode", asyncMode.toString());
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Boolean getArchived() {
+		return this.archived;
+	}
+
+	public void setArchived(Boolean archived) {
+		this.archived = archived;
+		if(archived != null){
+			putQueryParameter("Archived", archived.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -73,8 +99,8 @@ public class DescribeGWSClusterPolicyRequest extends RpcAcsRequest<DescribeGWSCl
 	}
 
 	@Override
-	public Class<DescribeGWSClusterPolicyResponse> getResponseClass() {
-		return DescribeGWSClusterPolicyResponse.class;
+	public Class<ListTasksResponse> getResponseClass() {
+		return ListTasksResponse.class;
 	}
 
 }
