@@ -36,6 +36,7 @@ public class ListDevopsProjectTaskFlowResponseUnmarshaller {
 			Taskflow taskflow = new Taskflow();
 			taskflow.setId(_ctx.stringValue("ListDevopsProjectTaskFlowResponse.Object["+ i +"].Id"));
 			taskflow.setType(_ctx.stringValue("ListDevopsProjectTaskFlowResponse.Object["+ i +"].Type"));
+			taskflow.setName(_ctx.stringValue("ListDevopsProjectTaskFlowResponse.Object["+ i +"].Name"));
 
 			object.add(taskflow);
 		}
