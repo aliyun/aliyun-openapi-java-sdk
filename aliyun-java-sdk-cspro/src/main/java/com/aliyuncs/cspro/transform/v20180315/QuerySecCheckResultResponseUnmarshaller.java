@@ -51,6 +51,7 @@ public class QuerySecCheckResultResponseUnmarshaller {
 			omniSecCheckResultDTO.setUrl(_ctx.stringValue("QuerySecCheckResultResponse.Data.List["+ i +"].Url"));
 			omniSecCheckResultDTO.setRiskTypes(_ctx.stringValue("QuerySecCheckResultResponse.Data.List["+ i +"].RiskTypes"));
 			omniSecCheckResultDTO.setRiskSources(_ctx.stringValue("QuerySecCheckResultResponse.Data.List["+ i +"].RiskSources"));
+			omniSecCheckResultDTO.setResult(_ctx.stringValue("QuerySecCheckResultResponse.Data.List["+ i +"].Result"));
 
 			list.add(omniSecCheckResultDTO);
 		}

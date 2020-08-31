@@ -113,6 +113,8 @@ public class QuerySecCheckResultResponse extends AcsResponse {
 
 			private String riskSources;
 
+			private String result;
+
 			public Long getId() {
 				return this.id;
 			}
@@ -167,6 +169,14 @@ public class QuerySecCheckResultResponse extends AcsResponse {
 
 			public void setRiskSources(String riskSources) {
 				this.riskSources = riskSources;
+			}
+
+			public String getResult() {
+				return this.result;
+			}
+
+			public void setResult(String result) {
+				this.result = result;
 			}
 		}
 

@@ -17,6 +17,7 @@ package com.aliyuncs.cspro.model.v20180315;
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cspro.Endpoint;
 
 /**
  * @author auto create
@@ -33,9 +34,13 @@ public class QuerySecCheckSampleLibsRequest extends RpcAcsRequest<QuerySecCheckS
 
 	private String type;
 	public QuerySecCheckSampleLibsRequest() {
-		super("cspro", "2018-03-15", "QuerySecCheckSampleLibs", "cspro");
+		super("cspro", "2018-03-15", "QuerySecCheckSampleLibs");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getLibId() {

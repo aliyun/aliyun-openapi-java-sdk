@@ -15,7 +15,6 @@
 package com.aliyuncs.cspro.model.v20180315;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cspro.Endpoint;
 
@@ -23,30 +22,36 @@ import com.aliyuncs.cspro.Endpoint;
  * @author auto create
  * @version 
  */
-public class QuerySecCheckResultRequest extends RpcAcsRequest<QuerySecCheckResultResponse> {
+public class InvokeHistoryDataCheckRequest extends RpcAcsRequest<InvokeHistoryDataCheckResponse> {
 	   
+
+	private Long historyStartTime;
 
 	private String checkType;
 
-	private Long endDate;
-
-	private Integer pageSize;
-
-	private Integer currentPage;
-
-	private Long startDate;
+	private Long historyEndTime;
 
 	private String checkTarget;
 
 	private String confType;
-	public QuerySecCheckResultRequest() {
-		super("cspro", "2018-03-15", "QuerySecCheckResult");
-		setProtocol(ProtocolType.HTTPS);
+	public InvokeHistoryDataCheckRequest() {
+		super("cspro", "2018-03-15", "InvokeHistoryDataCheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getHistoryStartTime() {
+		return this.historyStartTime;
+	}
+
+	public void setHistoryStartTime(Long historyStartTime) {
+		this.historyStartTime = historyStartTime;
+		if(historyStartTime != null){
+			putBodyParameter("HistoryStartTime", historyStartTime.toString());
+		}
 	}
 
 	public String getCheckType() {
@@ -60,47 +65,14 @@ public class QuerySecCheckResultRequest extends RpcAcsRequest<QuerySecCheckResul
 		}
 	}
 
-	public Long getEndDate() {
-		return this.endDate;
+	public Long getHistoryEndTime() {
+		return this.historyEndTime;
 	}
 
-	public void setEndDate(Long endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putBodyParameter("EndDate", endDate.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putBodyParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public Long getStartDate() {
-		return this.startDate;
-	}
-
-	public void setStartDate(Long startDate) {
-		this.startDate = startDate;
-		if(startDate != null){
-			putBodyParameter("StartDate", startDate.toString());
+	public void setHistoryEndTime(Long historyEndTime) {
+		this.historyEndTime = historyEndTime;
+		if(historyEndTime != null){
+			putBodyParameter("HistoryEndTime", historyEndTime.toString());
 		}
 	}
 
@@ -127,8 +99,8 @@ public class QuerySecCheckResultRequest extends RpcAcsRequest<QuerySecCheckResul
 	}
 
 	@Override
-	public Class<QuerySecCheckResultResponse> getResponseClass() {
-		return QuerySecCheckResultResponse.class;
+	public Class<InvokeHistoryDataCheckResponse> getResponseClass() {
+		return InvokeHistoryDataCheckResponse.class;
 	}
 
 }

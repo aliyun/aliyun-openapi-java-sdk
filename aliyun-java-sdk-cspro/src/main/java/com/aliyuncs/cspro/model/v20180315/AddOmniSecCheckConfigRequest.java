@@ -18,6 +18,7 @@ import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cspro.Endpoint;
 
 /**
  * @author auto create
@@ -38,9 +39,13 @@ public class AddOmniSecCheckConfigRequest extends RpcAcsRequest<AddOmniSecCheckC
 
 	private String confType;
 	public AddOmniSecCheckConfigRequest() {
-		super("cspro", "2018-03-15", "AddOmniSecCheckConfig", "cspro");
+		super("cspro", "2018-03-15", "AddOmniSecCheckConfig");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getName() {

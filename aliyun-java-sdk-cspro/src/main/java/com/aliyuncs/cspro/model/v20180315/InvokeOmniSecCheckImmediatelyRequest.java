@@ -17,6 +17,7 @@ package com.aliyuncs.cspro.model.v20180315;
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cspro.Endpoint;
 
 /**
  * @author auto create
@@ -31,9 +32,13 @@ public class InvokeOmniSecCheckImmediatelyRequest extends RpcAcsRequest<InvokeOm
 
 	private String confType;
 	public InvokeOmniSecCheckImmediatelyRequest() {
-		super("cspro", "2018-03-15", "InvokeOmniSecCheckImmediately", "cspro");
+		super("cspro", "2018-03-15", "InvokeOmniSecCheckImmediately");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getCheckType() {

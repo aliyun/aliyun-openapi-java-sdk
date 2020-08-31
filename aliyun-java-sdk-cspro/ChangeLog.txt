@@ -1,3 +1,6 @@
+2020-08-31 Version: 1.3.2
+- Add historyCheck.
+
 2020-02-13 Version: 1.2.10
 - Add spec for secCheckConfig.
 
