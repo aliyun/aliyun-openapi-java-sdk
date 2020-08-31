@@ -14,19 +14,24 @@
 
 package com.aliyuncs.ess.model.v20140828;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ess.transform.v20140828.CountScalingActivitiesInWorkerResponseUnmarshaller;
+import com.aliyuncs.ess.transform.v20140828.ListTagKeysResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CountScalingActivitiesInWorkerResponse extends AcsResponse {
+public class ListTagKeysResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer count;
+	private String nextToken;
+
+	private Integer pageSize;
+
+	private List<String> keys;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +41,32 @@ public class CountScalingActivitiesInWorkerResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getCount() {
-		return this.count;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setCount(Integer count) {
-		this.count = count;
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public List<String> getKeys() {
+		return this.keys;
+	}
+
+	public void setKeys(List<String> keys) {
+		this.keys = keys;
 	}
 
 	@Override
-	public CountScalingActivitiesInWorkerResponse getInstance(UnmarshallerContext context) {
-		return	CountScalingActivitiesInWorkerResponseUnmarshaller.unmarshall(this, context);
+	public ListTagKeysResponse getInstance(UnmarshallerContext context) {
+		return	ListTagKeysResponseUnmarshaller.unmarshall(this, context);
 	}
 }

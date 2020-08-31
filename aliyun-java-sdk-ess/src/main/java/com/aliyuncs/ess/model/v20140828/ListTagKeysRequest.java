@@ -16,47 +16,52 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ess.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
-public class OrderSucceededCallbackRequest extends RpcAcsRequest<OrderSucceededCallbackResponse> {
+public class ListTagKeysRequest extends RpcAcsRequest<ListTagKeysResponse> {
 	   
 
-	private Long resourceOwnerId;
+	private String nextToken;
 
-	private String data;
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
-
 	private Long ownerId;
-	public OrderSucceededCallbackRequest() {
-		super("Ess", "2014-08-28", "OrderSucceededCallback", "ess");
+
+	private String resourceType;
+	public ListTagKeysRequest() {
+		super("Ess", "2014-08-28", "ListTagKeys", "ess");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
-	public String getData() {
-		return this.data;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setData(String data) {
-		this.data = data;
-		if(data != null){
-			putQueryParameter("data", data);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -71,17 +76,6 @@ public class OrderSucceededCallbackRequest extends RpcAcsRequest<OrderSucceededC
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -93,9 +87,20 @@ public class OrderSucceededCallbackRequest extends RpcAcsRequest<OrderSucceededC
 		}
 	}
 
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
 	@Override
-	public Class<OrderSucceededCallbackResponse> getResponseClass() {
-		return OrderSucceededCallbackResponse.class;
+	public Class<ListTagKeysResponse> getResponseClass() {
+		return ListTagKeysResponse.class;
 	}
 
 }

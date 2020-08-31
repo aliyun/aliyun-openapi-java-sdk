@@ -15,7 +15,6 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ess.Endpoint;
 
@@ -23,20 +22,22 @@ import com.aliyuncs.ess.Endpoint;
  * @author auto create
  * @version 
  */
-public class SuspendProcessesRequest extends RpcAcsRequest<SuspendProcessesResponse> {
+public class ListTagValuesRequest extends RpcAcsRequest<ListTagValuesResponse> {
 	   
 
-	private String clientToken;
+	private String nextToken;
 
-	private String scalingGroupId;
+	private Integer pageSize;
 
-	private List<String> processes;
+	private String key;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
-	public SuspendProcessesRequest() {
-		super("Ess", "2014-08-28", "SuspendProcesses", "ess");
+
+	private String resourceType;
+	public ListTagValuesRequest() {
+		super("Ess", "2014-08-28", "ListTagValues", "ess");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -44,39 +45,37 @@ public class SuspendProcessesRequest extends RpcAcsRequest<SuspendProcessesRespo
 		} catch (Exception e) {}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
-	public String getScalingGroupId() {
-		return this.scalingGroupId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setScalingGroupId(String scalingGroupId) {
-		this.scalingGroupId = scalingGroupId;
-		if(scalingGroupId != null){
-			putQueryParameter("ScalingGroupId", scalingGroupId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public List<String> getProcesses() {
-		return this.processes;
+	public String getKey() {
+		return this.key;
 	}
 
-	public void setProcesses(List<String> processes) {
-		this.processes = processes;
-		if (processes != null) {
-			for (int i = 0; i < processes.size(); i++) {
-				putQueryParameter("Process." + (i + 1) , processes.get(i));
-			}
-		}	
+	public void setKey(String key) {
+		this.key = key;
+		if(key != null){
+			putQueryParameter("Key", key);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -101,9 +100,20 @@ public class SuspendProcessesRequest extends RpcAcsRequest<SuspendProcessesRespo
 		}
 	}
 
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
 	@Override
-	public Class<SuspendProcessesResponse> getResponseClass() {
-		return SuspendProcessesResponse.class;
+	public Class<ListTagValuesResponse> getResponseClass() {
+		return ListTagValuesResponse.class;
 	}
 
 }

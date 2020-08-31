@@ -17,6 +17,7 @@ package com.aliyuncs.ess.model.v20140828;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ess.Endpoint;
 
 /**
  * @author auto create
@@ -38,6 +39,8 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 	private Integer cooldown;
 
 	private String predictiveValueBehavior;
+
+	private Integer scaleInEvaluationCount;
 
 	private String scalingRuleType;
 
@@ -61,12 +64,18 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 
 	private Integer predictiveValueBuffer;
 
+	private Integer scaleOutEvaluationCount;
+
 	private Integer minAdjustmentMagnitude;
 
 	private Float targetValue;
 	public CreateScalingRuleRequest() {
 		super("Ess", "2014-08-28", "CreateScalingRule", "ess");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public List<StepAdjustment> getStepAdjustments() {
@@ -147,6 +156,17 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 		this.predictiveValueBehavior = predictiveValueBehavior;
 		if(predictiveValueBehavior != null){
 			putQueryParameter("PredictiveValueBehavior", predictiveValueBehavior);
+		}
+	}
+
+	public Integer getScaleInEvaluationCount() {
+		return this.scaleInEvaluationCount;
+	}
+
+	public void setScaleInEvaluationCount(Integer scaleInEvaluationCount) {
+		this.scaleInEvaluationCount = scaleInEvaluationCount;
+		if(scaleInEvaluationCount != null){
+			putQueryParameter("ScaleInEvaluationCount", scaleInEvaluationCount.toString());
 		}
 	}
 
@@ -268,6 +288,17 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 		this.predictiveValueBuffer = predictiveValueBuffer;
 		if(predictiveValueBuffer != null){
 			putQueryParameter("PredictiveValueBuffer", predictiveValueBuffer.toString());
+		}
+	}
+
+	public Integer getScaleOutEvaluationCount() {
+		return this.scaleOutEvaluationCount;
+	}
+
+	public void setScaleOutEvaluationCount(Integer scaleOutEvaluationCount) {
+		this.scaleOutEvaluationCount = scaleOutEvaluationCount;
+		if(scaleOutEvaluationCount != null){
+			putQueryParameter("ScaleOutEvaluationCount", scaleOutEvaluationCount.toString());
 		}
 	}
 

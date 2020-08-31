@@ -145,6 +145,18 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private String instanceDescription;
 
+		private String creditSpecification;
+
+		private String imageFamily;
+
+		private String zoneId;
+
+		private String dedicatedHostId;
+
+		private String affinity;
+
+		private String tenancy;
+
 		private Integer ipv6AddressCount;
 
 		private List<DataDisk> dataDisks;
@@ -427,6 +439,54 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public void setInstanceDescription(String instanceDescription) {
 			this.instanceDescription = instanceDescription;
+		}
+
+		public String getCreditSpecification() {
+			return this.creditSpecification;
+		}
+
+		public void setCreditSpecification(String creditSpecification) {
+			this.creditSpecification = creditSpecification;
+		}
+
+		public String getImageFamily() {
+			return this.imageFamily;
+		}
+
+		public void setImageFamily(String imageFamily) {
+			this.imageFamily = imageFamily;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getDedicatedHostId() {
+			return this.dedicatedHostId;
+		}
+
+		public void setDedicatedHostId(String dedicatedHostId) {
+			this.dedicatedHostId = dedicatedHostId;
+		}
+
+		public String getAffinity() {
+			return this.affinity;
+		}
+
+		public void setAffinity(String affinity) {
+			this.affinity = affinity;
+		}
+
+		public String getTenancy() {
+			return this.tenancy;
+		}
+
+		public void setTenancy(String tenancy) {
+			this.tenancy = tenancy;
 		}
 
 		public Integer getIpv6AddressCount() {

@@ -14,16 +14,16 @@
 
 package com.aliyuncs.ess.transform.v20140828;
 
-import com.aliyuncs.ess.model.v20140828.CheckScalingGroupAvailabilityResponse;
+import com.aliyuncs.ess.model.v20140828.SetGroupDeletionProtectionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CheckScalingGroupAvailabilityResponseUnmarshaller {
+public class SetGroupDeletionProtectionResponseUnmarshaller {
 
-	public static CheckScalingGroupAvailabilityResponse unmarshall(CheckScalingGroupAvailabilityResponse checkScalingGroupAvailabilityResponse, UnmarshallerContext _ctx) {
+	public static SetGroupDeletionProtectionResponse unmarshall(SetGroupDeletionProtectionResponse setGroupDeletionProtectionResponse, UnmarshallerContext _ctx) {
 		
-		checkScalingGroupAvailabilityResponse.setRequestId(_ctx.stringValue("CheckScalingGroupAvailabilityResponse.RequestId"));
+		setGroupDeletionProtectionResponse.setRequestId(_ctx.stringValue("SetGroupDeletionProtectionResponse.RequestId"));
 	 
-	 	return checkScalingGroupAvailabilityResponse;
+	 	return setGroupDeletionProtectionResponse;
 	}
 }

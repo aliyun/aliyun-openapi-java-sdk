@@ -17,6 +17,7 @@ package com.aliyuncs.ess.model.v20140828;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ess.Endpoint;
 
 /**
  * @author auto create
@@ -41,6 +42,8 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 
 	private String predictiveValueBehavior;
 
+	private Integer scaleInEvaluationCount;
+
 	private String metricName;
 
 	private String predictiveScalingMode;
@@ -61,12 +64,18 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 
 	private Integer predictiveValueBuffer;
 
+	private Integer scaleOutEvaluationCount;
+
 	private Integer minAdjustmentMagnitude;
 
 	private Float targetValue;
 	public ModifyScalingRuleRequest() {
 		super("Ess", "2014-08-28", "ModifyScalingRule", "ess");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -158,6 +167,17 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		this.predictiveValueBehavior = predictiveValueBehavior;
 		if(predictiveValueBehavior != null){
 			putQueryParameter("PredictiveValueBehavior", predictiveValueBehavior);
+		}
+	}
+
+	public Integer getScaleInEvaluationCount() {
+		return this.scaleInEvaluationCount;
+	}
+
+	public void setScaleInEvaluationCount(Integer scaleInEvaluationCount) {
+		this.scaleInEvaluationCount = scaleInEvaluationCount;
+		if(scaleInEvaluationCount != null){
+			putQueryParameter("ScaleInEvaluationCount", scaleInEvaluationCount.toString());
 		}
 	}
 
@@ -268,6 +288,17 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		this.predictiveValueBuffer = predictiveValueBuffer;
 		if(predictiveValueBuffer != null){
 			putQueryParameter("PredictiveValueBuffer", predictiveValueBuffer.toString());
+		}
+	}
+
+	public Integer getScaleOutEvaluationCount() {
+		return this.scaleOutEvaluationCount;
+	}
+
+	public void setScaleOutEvaluationCount(Integer scaleOutEvaluationCount) {
+		this.scaleOutEvaluationCount = scaleOutEvaluationCount;
+		if(scaleOutEvaluationCount != null){
+			putQueryParameter("ScaleOutEvaluationCount", scaleOutEvaluationCount.toString());
 		}
 	}
 

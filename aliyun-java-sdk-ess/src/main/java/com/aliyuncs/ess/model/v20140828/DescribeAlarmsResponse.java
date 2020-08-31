@@ -103,6 +103,8 @@ public class DescribeAlarmsResponse extends AcsResponse {
 
 		private Boolean enable;
 
+		private String effective;
+
 		private List<Dimension> dimensions;
 
 		private List<String> alarmActions;
@@ -209,6 +211,14 @@ public class DescribeAlarmsResponse extends AcsResponse {
 
 		public void setEnable(Boolean enable) {
 			this.enable = enable;
+		}
+
+		public String getEffective() {
+			return this.effective;
+		}
+
+		public void setEffective(String effective) {
+			this.effective = effective;
 		}
 
 		public List<Dimension> getDimensions() {

@@ -17,6 +17,7 @@ package com.aliyuncs.ess.model.v20140828;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ess.Endpoint;
 
 /**
  * @author auto create
@@ -59,7 +60,11 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private String internetChargeType;
 
+	private String zoneId;
+
 	private Integer internetMaxBandwidthIn;
+
+	private String affinity;
 
 	private String imageId;
 
@@ -93,9 +98,15 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private String ownerAccount;
 
+	private String tenancy;
+
 	private String systemDiskDiskName;
 
 	private String ramRoleName;
+
+	private String dedicatedHostId;
+
+	private String creditSpecification;
 
 	private List<String> securityGroupIds;
 
@@ -105,10 +116,16 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private Integer systemDiskSize;
 
+	private String imageFamily;
+
 	private String systemDiskDescription;
 	public CreateScalingConfigurationRequest() {
 		super("Ess", "2014-08-28", "CreateScalingConfiguration", "ess");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getHpcClusterId() {
@@ -301,6 +318,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
 	public Integer getInternetMaxBandwidthIn() {
 		return this.internetMaxBandwidthIn;
 	}
@@ -309,6 +337,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.internetMaxBandwidthIn = internetMaxBandwidthIn;
 		if(internetMaxBandwidthIn != null){
 			putQueryParameter("InternetMaxBandwidthIn", internetMaxBandwidthIn.toString());
+		}
+	}
+
+	public String getAffinity() {
+		return this.affinity;
+	}
+
+	public void setAffinity(String affinity) {
+		this.affinity = affinity;
+		if(affinity != null){
+			putQueryParameter("Affinity", affinity);
 		}
 	}
 
@@ -490,6 +529,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
+	public String getTenancy() {
+		return this.tenancy;
+	}
+
+	public void setTenancy(String tenancy) {
+		this.tenancy = tenancy;
+		if(tenancy != null){
+			putQueryParameter("Tenancy", tenancy);
+		}
+	}
+
 	public String getSystemDiskDiskName() {
 		return this.systemDiskDiskName;
 	}
@@ -509,6 +559,28 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.ramRoleName = ramRoleName;
 		if(ramRoleName != null){
 			putQueryParameter("RamRoleName", ramRoleName);
+		}
+	}
+
+	public String getDedicatedHostId() {
+		return this.dedicatedHostId;
+	}
+
+	public void setDedicatedHostId(String dedicatedHostId) {
+		this.dedicatedHostId = dedicatedHostId;
+		if(dedicatedHostId != null){
+			putQueryParameter("DedicatedHostId", dedicatedHostId);
+		}
+	}
+
+	public String getCreditSpecification() {
+		return this.creditSpecification;
+	}
+
+	public void setCreditSpecification(String creditSpecification) {
+		this.creditSpecification = creditSpecification;
+		if(creditSpecification != null){
+			putQueryParameter("CreditSpecification", creditSpecification);
 		}
 	}
 
@@ -566,6 +638,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.systemDiskSize = systemDiskSize;
 		if(systemDiskSize != null){
 			putQueryParameter("SystemDisk.Size", systemDiskSize.toString());
+		}
+	}
+
+	public String getImageFamily() {
+		return this.imageFamily;
+	}
+
+	public void setImageFamily(String imageFamily) {
+		this.imageFamily = imageFamily;
+		if(imageFamily != null){
+			putQueryParameter("ImageFamily", imageFamily);
 		}
 	}
 

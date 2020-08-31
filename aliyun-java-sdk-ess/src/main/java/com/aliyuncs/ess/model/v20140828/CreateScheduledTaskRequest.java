@@ -16,6 +16,7 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ess.Endpoint;
 
 /**
  * @author auto create
@@ -58,6 +59,10 @@ public class CreateScheduledTaskRequest extends RpcAcsRequest<CreateScheduledTas
 	public CreateScheduledTaskRequest() {
 		super("Ess", "2014-08-28", "CreateScheduledTask", "ess");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getScheduledAction() {

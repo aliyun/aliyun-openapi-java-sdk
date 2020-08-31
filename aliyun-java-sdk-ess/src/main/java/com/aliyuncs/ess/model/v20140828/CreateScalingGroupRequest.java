@@ -17,6 +17,7 @@ package com.aliyuncs.ess.model.v20140828;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ess.Endpoint;
 
 /**
  * @author auto create
@@ -26,8 +27,6 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 	   
 
 	private List<String> vSwitchIds;
-
-	private String costOptimizedMode;
 
 	private Boolean spotInstanceRemedy;
 
@@ -43,7 +42,7 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 	private Integer desiredCapacity;
 
-	private List<LaunchTemplateOverride> launchTemplateOverrides;
+	private Boolean compensateWithOnDemand;
 
 	private Integer minSize;
 
@@ -89,6 +88,10 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 	public CreateScalingGroupRequest() {
 		super("Ess", "2014-08-28", "CreateScalingGroup", "ess");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public List<String> getVSwitchIds() {
@@ -102,17 +105,6 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIds.get(i));
 			}
 		}	
-	}
-
-	public String getCostOptimizedMode() {
-		return this.costOptimizedMode;
-	}
-
-	public void setCostOptimizedMode(String costOptimizedMode) {
-		this.costOptimizedMode = costOptimizedMode;
-		if(costOptimizedMode != null){
-			putQueryParameter("CostOptimizedMode", costOptimizedMode);
-		}
 	}
 
 	public Boolean getSpotInstanceRemedy() {
@@ -195,17 +187,15 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		}
 	}
 
-	public List<LaunchTemplateOverride> getLaunchTemplateOverrides() {
-		return this.launchTemplateOverrides;
+	public Boolean getCompensateWithOnDemand() {
+		return this.compensateWithOnDemand;
 	}
 
-	public void setLaunchTemplateOverrides(List<LaunchTemplateOverride> launchTemplateOverrides) {
-		this.launchTemplateOverrides = launchTemplateOverrides;	
-		if (launchTemplateOverrides != null) {
-			for (int depth1 = 0; depth1 < launchTemplateOverrides.size(); depth1++) {
-				putQueryParameter("LaunchTemplateOverride." + (depth1 + 1) + ".InstanceType" , launchTemplateOverrides.get(depth1).getInstanceType());
-			}
-		}	
+	public void setCompensateWithOnDemand(Boolean compensateWithOnDemand) {
+		this.compensateWithOnDemand = compensateWithOnDemand;
+		if(compensateWithOnDemand != null){
+			putQueryParameter("CompensateWithOnDemand", compensateWithOnDemand.toString());
+		}
 	}
 
 	public Integer getMinSize() {
@@ -475,19 +465,6 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 		public void setKey(String key) {
 			this.key = key;
-		}
-	}
-
-	public static class LaunchTemplateOverride {
-
-		private String instanceType;
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
 		}
 	}
 

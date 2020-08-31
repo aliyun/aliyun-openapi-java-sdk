@@ -48,6 +48,7 @@ public class DescribeAlarmsResponseUnmarshaller {
 			alarm.setState(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].State"));
 			alarm.setScalingGroupId(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].ScalingGroupId"));
 			alarm.setEnable(_ctx.booleanValue("DescribeAlarmsResponse.AlarmList["+ i +"].Enable"));
+			alarm.setEffective(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].Effective"));
 
 			List<String> alarmActions = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAlarmsResponse.AlarmList["+ i +"].AlarmActions.Length"); j++) {
