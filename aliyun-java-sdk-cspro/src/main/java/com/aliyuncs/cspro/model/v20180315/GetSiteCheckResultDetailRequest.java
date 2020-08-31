@@ -31,7 +31,7 @@ public class GetSiteCheckResultDetailRequest extends RpcAcsRequest<GetSiteCheckR
 
 	private String type;
 	public GetSiteCheckResultDetailRequest() {
-		super("cspro", "2018-03-15", "GetSiteCheckResultDetail");
+		super("cspro", "2018-03-15", "GetSiteCheckResultDetail", "cspro");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

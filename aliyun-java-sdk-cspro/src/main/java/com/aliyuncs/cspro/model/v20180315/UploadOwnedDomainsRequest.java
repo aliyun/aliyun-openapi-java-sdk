@@ -30,7 +30,7 @@ public class UploadOwnedDomainsRequest extends RpcAcsRequest<UploadOwnedDomainsR
 
 	private String domainList;
 	public UploadOwnedDomainsRequest() {
-		super("cspro", "2018-03-15", "UploadOwnedDomains");
+		super("cspro", "2018-03-15", "UploadOwnedDomains", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

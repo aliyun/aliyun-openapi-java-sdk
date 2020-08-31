@@ -30,7 +30,7 @@ public class AddFeedbackRequest extends RpcAcsRequest<AddFeedbackResponse> {
 
 	private Long resultId;
 	public AddFeedbackRequest() {
-		super("cspro", "2018-03-15", "AddFeedback");
+		super("cspro", "2018-03-15", "AddFeedback", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

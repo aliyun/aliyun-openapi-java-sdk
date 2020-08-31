@@ -39,7 +39,7 @@ public class UpdateSiteCheckConfigRequest extends RpcAcsRequest<UpdateSiteCheckC
 
 	private String siteDomain;
 	public UpdateSiteCheckConfigRequest() {
-		super("cspro", "2018-03-15", "UpdateSiteCheckConfig");
+		super("cspro", "2018-03-15", "UpdateSiteCheckConfig", "cspro");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

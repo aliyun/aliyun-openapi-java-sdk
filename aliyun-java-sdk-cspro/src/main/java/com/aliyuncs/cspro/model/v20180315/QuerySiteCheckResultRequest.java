@@ -37,7 +37,7 @@ public class QuerySiteCheckResultRequest extends RpcAcsRequest<QuerySiteCheckRes
 
 	private Long endDate;
 	public QuerySiteCheckResultRequest() {
-		super("cspro", "2018-03-15", "QuerySiteCheckResult");
+		super("cspro", "2018-03-15", "QuerySiteCheckResult", "cspro");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

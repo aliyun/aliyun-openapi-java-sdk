@@ -27,7 +27,7 @@ public class SetIndexBaselineRequest extends RpcAcsRequest<SetIndexBaselineRespo
 
 	private Long id;
 	public SetIndexBaselineRequest() {
-		super("cspro", "2018-03-15", "SetIndexBaseline");
+		super("cspro", "2018-03-15", "SetIndexBaseline", "cspro");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

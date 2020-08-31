@@ -27,7 +27,7 @@ public class GetIpProfileRequest extends RpcAcsRequest<GetIpProfileResponse> {
 
 	private String ip;
 	public GetIpProfileRequest() {
-		super("cspro", "2018-03-15", "GetIpProfile");
+		super("cspro", "2018-03-15", "GetIpProfile", "cspro");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

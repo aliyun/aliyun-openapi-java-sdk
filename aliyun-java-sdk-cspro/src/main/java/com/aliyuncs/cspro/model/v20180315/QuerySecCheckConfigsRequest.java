@@ -34,7 +34,7 @@ public class QuerySecCheckConfigsRequest extends RpcAcsRequest<QuerySecCheckConf
 
 	private String confType;
 	public QuerySecCheckConfigsRequest() {
-		super("cspro", "2018-03-15", "QuerySecCheckConfigs");
+		super("cspro", "2018-03-15", "QuerySecCheckConfigs", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

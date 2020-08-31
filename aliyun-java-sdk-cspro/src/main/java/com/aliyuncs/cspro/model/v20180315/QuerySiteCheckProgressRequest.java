@@ -33,7 +33,7 @@ public class QuerySiteCheckProgressRequest extends RpcAcsRequest<QuerySiteCheckP
 
 	private Integer pageSize;
 	public QuerySiteCheckProgressRequest() {
-		super("cspro", "2018-03-15", "QuerySiteCheckProgress");
+		super("cspro", "2018-03-15", "QuerySiteCheckProgress", "cspro");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

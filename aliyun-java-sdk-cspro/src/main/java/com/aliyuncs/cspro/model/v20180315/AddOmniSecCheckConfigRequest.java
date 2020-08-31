@@ -39,7 +39,7 @@ public class AddOmniSecCheckConfigRequest extends RpcAcsRequest<AddOmniSecCheckC
 
 	private String confType;
 	public AddOmniSecCheckConfigRequest() {
-		super("cspro", "2018-03-15", "AddOmniSecCheckConfig");
+		super("cspro", "2018-03-15", "AddOmniSecCheckConfig", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

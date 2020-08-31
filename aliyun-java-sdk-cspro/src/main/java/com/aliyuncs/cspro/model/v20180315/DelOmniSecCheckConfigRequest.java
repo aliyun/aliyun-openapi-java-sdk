@@ -28,7 +28,7 @@ public class DelOmniSecCheckConfigRequest extends RpcAcsRequest<DelOmniSecCheckC
 
 	private Long confId;
 	public DelOmniSecCheckConfigRequest() {
-		super("cspro", "2018-03-15", "DelOmniSecCheckConfig");
+		super("cspro", "2018-03-15", "DelOmniSecCheckConfig", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

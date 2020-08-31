@@ -36,7 +36,7 @@ public class GetSecCheckResultDetailRequest extends RpcAcsRequest<GetSecCheckRes
 
 	private Integer currentPage;
 	public GetSecCheckResultDetailRequest() {
-		super("cspro", "2018-03-15", "GetSecCheckResultDetail");
+		super("cspro", "2018-03-15", "GetSecCheckResultDetail", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

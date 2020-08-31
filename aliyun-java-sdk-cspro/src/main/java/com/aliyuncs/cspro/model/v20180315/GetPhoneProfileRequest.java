@@ -27,7 +27,7 @@ public class GetPhoneProfileRequest extends RpcAcsRequest<GetPhoneProfileRespons
 
 	private String phone;
 	public GetPhoneProfileRequest() {
-		super("cspro", "2018-03-15", "GetPhoneProfile");
+		super("cspro", "2018-03-15", "GetPhoneProfile", "cspro");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

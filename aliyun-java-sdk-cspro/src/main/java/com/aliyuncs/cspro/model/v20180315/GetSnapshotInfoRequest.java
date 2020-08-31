@@ -28,7 +28,7 @@ public class GetSnapshotInfoRequest extends RpcAcsRequest<GetSnapshotInfoRespons
 
 	private String snapshotKey;
 	public GetSnapshotInfoRequest() {
-		super("cspro", "2018-03-15", "GetSnapshotInfo");
+		super("cspro", "2018-03-15", "GetSnapshotInfo", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {

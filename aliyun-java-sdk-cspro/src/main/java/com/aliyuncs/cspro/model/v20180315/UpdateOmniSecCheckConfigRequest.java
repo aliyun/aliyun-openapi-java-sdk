@@ -41,7 +41,7 @@ public class UpdateOmniSecCheckConfigRequest extends RpcAcsRequest<UpdateOmniSec
 
 	private String spec;
 	public UpdateOmniSecCheckConfigRequest() {
-		super("cspro", "2018-03-15", "UpdateOmniSecCheckConfig");
+		super("cspro", "2018-03-15", "UpdateOmniSecCheckConfig", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

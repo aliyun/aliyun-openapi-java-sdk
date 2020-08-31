@@ -32,7 +32,7 @@ public class InvokeOmniSecCheckImmediatelyRequest extends RpcAcsRequest<InvokeOm
 
 	private String confType;
 	public InvokeOmniSecCheckImmediatelyRequest() {
-		super("cspro", "2018-03-15", "InvokeOmniSecCheckImmediately");
+		super("cspro", "2018-03-15", "InvokeOmniSecCheckImmediately", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

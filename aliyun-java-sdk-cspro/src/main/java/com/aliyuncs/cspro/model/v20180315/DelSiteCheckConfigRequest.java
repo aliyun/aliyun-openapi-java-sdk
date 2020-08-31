@@ -27,7 +27,7 @@ public class DelSiteCheckConfigRequest extends RpcAcsRequest<DelSiteCheckConfigR
 
 	private Long id;
 	public DelSiteCheckConfigRequest() {
-		super("cspro", "2018-03-15", "DelSiteCheckConfig");
+		super("cspro", "2018-03-15", "DelSiteCheckConfig", "cspro");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

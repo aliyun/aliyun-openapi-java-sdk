@@ -1,3 +1,6 @@
+2020-08-31 Version: 1.3.1
+- Add new feature.
+
 2020-08-31 Version: 1.3.2
 - Add historyCheck.
 

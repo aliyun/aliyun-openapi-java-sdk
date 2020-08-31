@@ -35,7 +35,7 @@ public class InvokeHistoryDataCheckRequest extends RpcAcsRequest<InvokeHistoryDa
 
 	private String confType;
 	public InvokeHistoryDataCheckRequest() {
-		super("cspro", "2018-03-15", "InvokeHistoryDataCheck");
+		super("cspro", "2018-03-15", "InvokeHistoryDataCheck", "cspro");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

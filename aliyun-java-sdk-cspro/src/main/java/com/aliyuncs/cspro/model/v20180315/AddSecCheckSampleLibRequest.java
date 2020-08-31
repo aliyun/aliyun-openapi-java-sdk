@@ -30,7 +30,7 @@ public class AddSecCheckSampleLibRequest extends RpcAcsRequest<AddSecCheckSample
 
 	private String type;
 	public AddSecCheckSampleLibRequest() {
-		super("cspro", "2018-03-15", "AddSecCheckSampleLib");
+		super("cspro", "2018-03-15", "AddSecCheckSampleLib", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -28,7 +28,7 @@ public class PostPunishOrderRequest extends RpcAcsRequest<PostPunishOrderRespons
 
 	private String punishOrderReq;
 	public PostPunishOrderRequest() {
-		super("cspro", "2018-03-15", "PostPunishOrder");
+		super("cspro", "2018-03-15", "PostPunishOrder", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

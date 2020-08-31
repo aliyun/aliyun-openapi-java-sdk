@@ -33,7 +33,7 @@ public class QuerySiteCheckConfigsRequest extends RpcAcsRequest<QuerySiteCheckCo
 
 	private Long checkId;
 	public QuerySiteCheckConfigsRequest() {
-		super("cspro", "2018-03-15", "QuerySiteCheckConfigs");
+		super("cspro", "2018-03-15", "QuerySiteCheckConfigs", "cspro");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -26,7 +26,7 @@ import com.aliyuncs.cspro.Endpoint;
 public class AuthSecCheckSamplePicUploadRequest extends RpcAcsRequest<AuthSecCheckSamplePicUploadResponse> {
 	   
 	public AuthSecCheckSamplePicUploadRequest() {
-		super("cspro", "2018-03-15", "AuthSecCheckSamplePicUpload");
+		super("cspro", "2018-03-15", "AuthSecCheckSamplePicUpload", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

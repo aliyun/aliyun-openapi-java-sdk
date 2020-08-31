@@ -34,7 +34,7 @@ public class QuerySecCheckSamplesRequest extends RpcAcsRequest<QuerySecCheckSamp
 
 	private String type;
 	public QuerySecCheckSamplesRequest() {
-		super("cspro", "2018-03-15", "QuerySecCheckSamples");
+		super("cspro", "2018-03-15", "QuerySecCheckSamples", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

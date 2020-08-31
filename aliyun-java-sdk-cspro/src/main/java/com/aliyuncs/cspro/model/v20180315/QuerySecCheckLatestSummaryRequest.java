@@ -36,7 +36,7 @@ public class QuerySecCheckLatestSummaryRequest extends RpcAcsRequest<QuerySecChe
 
 	private String confType;
 	public QuerySecCheckLatestSummaryRequest() {
-		super("cspro", "2018-03-15", "QuerySecCheckLatestSummary");
+		super("cspro", "2018-03-15", "QuerySecCheckLatestSummary", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

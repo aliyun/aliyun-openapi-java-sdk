@@ -28,7 +28,7 @@ public class RevokePunishOrderRequest extends RpcAcsRequest<RevokePunishOrderRes
 
 	private String punishRequestId;
 	public RevokePunishOrderRequest() {
-		super("cspro", "2018-03-15", "RevokePunishOrder");
+		super("cspro", "2018-03-15", "RevokePunishOrder", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

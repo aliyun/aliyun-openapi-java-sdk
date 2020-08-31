@@ -28,7 +28,7 @@ public class QueryPunishOrderListRequest extends RpcAcsRequest<QueryPunishOrderL
 
 	private String punishOrderListRequest;
 	public QueryPunishOrderListRequest() {
-		super("cspro", "2018-03-15", "QueryPunishOrderList");
+		super("cspro", "2018-03-15", "QueryPunishOrderList", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {

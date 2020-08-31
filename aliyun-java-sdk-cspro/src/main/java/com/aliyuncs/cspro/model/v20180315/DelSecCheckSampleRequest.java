@@ -33,7 +33,7 @@ public class DelSecCheckSampleRequest extends RpcAcsRequest<DelSecCheckSampleRes
 
 	private String type;
 	public DelSecCheckSampleRequest() {
-		super("cspro", "2018-03-15", "DelSecCheckSample");
+		super("cspro", "2018-03-15", "DelSecCheckSample", "cspro");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
