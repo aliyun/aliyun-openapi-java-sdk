@@ -34,7 +34,7 @@ public class GetProfileListResponseUnmarshaller {
 		Data data = new Data();
 		data.setPageNumber(_ctx.longValue("GetProfileListResponse.Data.PageNumber"));
 		data.setPageSize(_ctx.longValue("GetProfileListResponse.Data.PageSize"));
-		data.setSuccess(_ctx.longValue("GetProfileListResponse.Data.Success"));
+		data.setSuccess(_ctx.booleanValue("GetProfileListResponse.Data.Success"));
 		data.setTotal(_ctx.longValue("GetProfileListResponse.Data.Total"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();

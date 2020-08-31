@@ -1,4 +1,7 @@
 2020-08-31 Version: 1.2.2
+- Support PersonList.
+
+2020-08-31 Version: 1.2.2
 - GetPersonList Support LastShotTime.
 
 2020-08-31 Version: 1.2.1

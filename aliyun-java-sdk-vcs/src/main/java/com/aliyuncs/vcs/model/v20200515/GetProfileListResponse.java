@@ -71,7 +71,7 @@ public class GetProfileListResponse extends AcsResponse {
 
 		private Long pageSize;
 
-		private Long success;
+		private Boolean success;
 
 		private Long total;
 
@@ -93,11 +93,11 @@ public class GetProfileListResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Long getSuccess() {
+		public Boolean getSuccess() {
 			return this.success;
 		}
 
-		public void setSuccess(Long success) {
+		public void setSuccess(Boolean success) {
 			this.success = success;
 		}
 
