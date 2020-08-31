@@ -49,7 +49,7 @@ public class AddProfileRequest extends RpcAcsRequest<AddProfileResponse> {
 
 	private String bizId;
 	public AddProfileRequest() {
-		super("Vcs", "2020-05-15", "AddProfile", "vcs");
+		super("Vcs", "2020-05-15", "AddProfile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

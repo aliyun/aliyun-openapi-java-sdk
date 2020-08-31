@@ -117,6 +117,8 @@ public class GetPersonListResponse extends AcsResponse {
 
 			private String searchMatchingRate;
 
+			private Long lastShotTime;
+
 			private List<TagList> propertyTagList;
 
 			public String getFaceUrl() {
@@ -149,6 +151,14 @@ public class GetPersonListResponse extends AcsResponse {
 
 			public void setSearchMatchingRate(String searchMatchingRate) {
 				this.searchMatchingRate = searchMatchingRate;
+			}
+
+			public Long getLastShotTime() {
+				return this.lastShotTime;
+			}
+
+			public void setLastShotTime(Long lastShotTime) {
+				this.lastShotTime = lastShotTime;
 			}
 
 			public List<TagList> getPropertyTagList() {

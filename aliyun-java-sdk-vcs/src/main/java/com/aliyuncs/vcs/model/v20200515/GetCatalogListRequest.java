@@ -29,7 +29,7 @@ public class GetCatalogListRequest extends RpcAcsRequest<GetCatalogListResponse>
 
 	private String corpId;
 	public GetCatalogListRequest() {
-		super("Vcs", "2020-05-15", "GetCatalogList", "vcs");
+		super("Vcs", "2020-05-15", "GetCatalogList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DeleteRecordsRequest extends RpcAcsRequest<DeleteRecordsResponse> {
 
 	private String value;
 	public DeleteRecordsRequest() {
-		super("Vcs", "2020-05-15", "DeleteRecords", "vcs");
+		super("Vcs", "2020-05-15", "DeleteRecords");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

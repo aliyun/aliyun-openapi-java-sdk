@@ -33,7 +33,7 @@ public class AddProfileCatalogRequest extends RpcAcsRequest<AddProfileCatalogRes
 
 	private String catalogName;
 	public AddProfileCatalogRequest() {
-		super("Vcs", "2020-05-15", "AddProfileCatalog", "vcs");
+		super("Vcs", "2020-05-15", "AddProfileCatalog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

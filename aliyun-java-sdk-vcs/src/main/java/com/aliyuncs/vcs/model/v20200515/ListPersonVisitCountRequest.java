@@ -29,19 +29,25 @@ public class ListPersonVisitCountRequest extends RpcAcsRequest<ListPersonVisitCo
 
 	private String endTime;
 
+	private String countType;
+
 	private String startTime;
 
 	private Integer pageNumber;
 
 	private String timeAggregateType;
 
+	private String maxVal;
+
 	private String tagCode;
+
+	private String minVal;
 
 	private Integer pageSize;
 
 	private String aggregateType;
 	public ListPersonVisitCountRequest() {
-		super("Vcs", "2020-05-15", "ListPersonVisitCount", "vcs");
+		super("Vcs", "2020-05-15", "ListPersonVisitCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,6 +74,17 @@ public class ListPersonVisitCountRequest extends RpcAcsRequest<ListPersonVisitCo
 		this.endTime = endTime;
 		if(endTime != null){
 			putBodyParameter("EndTime", endTime);
+		}
+	}
+
+	public String getCountType() {
+		return this.countType;
+	}
+
+	public void setCountType(String countType) {
+		this.countType = countType;
+		if(countType != null){
+			putBodyParameter("CountType", countType);
 		}
 	}
 
@@ -104,6 +121,17 @@ public class ListPersonVisitCountRequest extends RpcAcsRequest<ListPersonVisitCo
 		}
 	}
 
+	public String getMaxVal() {
+		return this.maxVal;
+	}
+
+	public void setMaxVal(String maxVal) {
+		this.maxVal = maxVal;
+		if(maxVal != null){
+			putBodyParameter("MaxVal", maxVal);
+		}
+	}
+
 	public String getTagCode() {
 		return this.tagCode;
 	}
@@ -112,6 +140,17 @@ public class ListPersonVisitCountRequest extends RpcAcsRequest<ListPersonVisitCo
 		this.tagCode = tagCode;
 		if(tagCode != null){
 			putBodyParameter("TagCode", tagCode);
+		}
+	}
+
+	public String getMinVal() {
+		return this.minVal;
+	}
+
+	public void setMinVal(String minVal) {
+		this.minVal = minVal;
+		if(minVal != null){
+			putBodyParameter("MinVal", minVal);
 		}
 	}
 

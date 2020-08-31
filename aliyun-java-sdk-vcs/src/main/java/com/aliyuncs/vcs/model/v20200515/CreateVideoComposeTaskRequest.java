@@ -41,7 +41,7 @@ public class CreateVideoComposeTaskRequest extends RpcAcsRequest<CreateVideoComp
 
 	private String videoFormat;
 	public CreateVideoComposeTaskRequest() {
-		super("Vcs", "2020-05-15", "CreateVideoComposeTask", "vcs");
+		super("Vcs", "2020-05-15", "CreateVideoComposeTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

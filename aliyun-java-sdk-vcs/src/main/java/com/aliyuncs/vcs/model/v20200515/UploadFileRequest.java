@@ -41,7 +41,7 @@ public class UploadFileRequest extends RpcAcsRequest<UploadFileResponse> {
 
 	private String mD5;
 	public UploadFileRequest() {
-		super("Vcs", "2020-05-15", "UploadFile", "vcs");
+		super("Vcs", "2020-05-15", "UploadFile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

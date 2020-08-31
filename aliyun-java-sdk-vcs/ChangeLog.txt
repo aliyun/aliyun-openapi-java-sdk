@@ -1,3 +1,6 @@
+2020-08-31 Version: 1.2.2
+- GetPersonList Support LastShotTime.
+
 2020-08-31 Version: 1.2.1
 - Add list person visit count API.
 

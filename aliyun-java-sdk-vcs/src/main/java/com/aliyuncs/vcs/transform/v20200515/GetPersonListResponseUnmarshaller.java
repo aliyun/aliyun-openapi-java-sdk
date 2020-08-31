@@ -44,6 +44,7 @@ public class GetPersonListResponseUnmarshaller {
 			recordsItem.setFirstShotTime(_ctx.longValue("GetPersonListResponse.Data.Records["+ i +"].FirstShotTime"));
 			recordsItem.setPersonId(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].PersonId"));
 			recordsItem.setSearchMatchingRate(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].SearchMatchingRate"));
+			recordsItem.setLastShotTime(_ctx.longValue("GetPersonListResponse.Data.Records["+ i +"].LastShotTime"));
 
 			List<TagList> propertyTagList = new ArrayList<TagList>();
 			for (int j = 0; j < _ctx.lengthValue("GetPersonListResponse.Data.Records["+ i +"].PropertyTagList.Length"); j++) {

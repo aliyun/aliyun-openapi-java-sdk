@@ -31,7 +31,7 @@ public class DeleteProfileRequest extends RpcAcsRequest<DeleteProfileResponse> {
 
 	private Long profileId;
 	public DeleteProfileRequest() {
-		super("Vcs", "2020-05-15", "DeleteProfile", "vcs");
+		super("Vcs", "2020-05-15", "DeleteProfile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

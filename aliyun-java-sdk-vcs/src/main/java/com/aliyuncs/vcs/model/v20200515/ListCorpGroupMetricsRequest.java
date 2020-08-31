@@ -45,7 +45,7 @@ public class ListCorpGroupMetricsRequest extends RpcAcsRequest<ListCorpGroupMetr
 
 	private String userGroup;
 	public ListCorpGroupMetricsRequest() {
-		super("Vcs", "2020-05-15", "ListCorpGroupMetrics", "vcs");
+		super("Vcs", "2020-05-15", "ListCorpGroupMetrics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

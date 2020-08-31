@@ -61,7 +61,7 @@ public class GetProfileListRequest extends RpcAcsRequest<GetProfileListResponse>
 
 	private String matchingRateThreshold;
 	public GetProfileListRequest() {
-		super("Vcs", "2020-05-15", "GetProfileList", "vcs");
+		super("Vcs", "2020-05-15", "GetProfileList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
