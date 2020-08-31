@@ -15,6 +15,8 @@
 package com.aliyuncs.vcs.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vcs.Endpoint;
 
@@ -25,6 +27,8 @@ import com.aliyuncs.vcs.Endpoint;
 public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 	   
 
+	private List<Object> userList;
+
 	private String corpId;
 
 	private Integer gender;
@@ -34,6 +38,8 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 	private String idNumber;
 
 	private String faceImageUrl;
+
+	private List<Object> personList;
 
 	private Long pageNumber;
 
@@ -53,14 +59,27 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 
 	private Integer age;
 
+	private String matchingRateThreshold;
+
 	private String userName;
 	public ListUsersRequest() {
-		super("Vcs", "2020-05-15", "ListUsers");
+		super("Vcs", "2020-05-15", "ListUsers", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<Object> getUserList() {
+		return this.userList;
+	}
+
+	public void setUserList(List<Object> userList) {
+		this.userList = userList;
+		if(userList != null){
+			putBodyParameter("UserList", new Gson().toJson(userList));
+		}
 	}
 
 	public String getCorpId() {
@@ -115,6 +134,17 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 		this.faceImageUrl = faceImageUrl;
 		if(faceImageUrl != null){
 			putBodyParameter("FaceImageUrl", faceImageUrl);
+		}
+	}
+
+	public List<Object> getPersonList() {
+		return this.personList;
+	}
+
+	public void setPersonList(List<Object> personList) {
+		this.personList = personList;
+		if(personList != null){
+			putBodyParameter("PersonList", new Gson().toJson(personList));
 		}
 	}
 
@@ -214,6 +244,17 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 		this.age = age;
 		if(age != null){
 			putBodyParameter("Age", age.toString());
+		}
+	}
+
+	public String getMatchingRateThreshold() {
+		return this.matchingRateThreshold;
+	}
+
+	public void setMatchingRateThreshold(String matchingRateThreshold) {
+		this.matchingRateThreshold = matchingRateThreshold;
+		if(matchingRateThreshold != null){
+			putBodyParameter("MatchingRateThreshold", matchingRateThreshold);
 		}
 	}
 

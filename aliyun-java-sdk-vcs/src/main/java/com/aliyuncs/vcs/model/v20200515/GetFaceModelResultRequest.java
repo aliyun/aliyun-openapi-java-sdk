@@ -31,7 +31,7 @@ public class GetFaceModelResultRequest extends RpcAcsRequest<GetFaceModelResultR
 
 	private String pictureId;
 	public GetFaceModelResultRequest() {
-		super("Vcs", "2020-05-15", "GetFaceModelResult");
+		super("Vcs", "2020-05-15", "GetFaceModelResult", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

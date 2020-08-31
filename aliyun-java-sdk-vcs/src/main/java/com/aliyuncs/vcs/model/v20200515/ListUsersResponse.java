@@ -139,6 +139,10 @@ public class ListUsersResponse extends AcsResponse {
 
 			private String isvSubId;
 
+			private String matchingRate;
+
+			private String personId;
+
 			public Integer getUserGroupId() {
 				return this.userGroupId;
 			}
@@ -217,6 +221,22 @@ public class ListUsersResponse extends AcsResponse {
 
 			public void setIsvSubId(String isvSubId) {
 				this.isvSubId = isvSubId;
+			}
+
+			public String getMatchingRate() {
+				return this.matchingRate;
+			}
+
+			public void setMatchingRate(String matchingRate) {
+				this.matchingRate = matchingRate;
+			}
+
+			public String getPersonId() {
+				return this.personId;
+			}
+
+			public void setPersonId(String personId) {
+				this.personId = personId;
 			}
 		}
 	}

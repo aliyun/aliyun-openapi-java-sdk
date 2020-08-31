@@ -15,6 +15,8 @@
 package com.aliyuncs.vcs.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vcs.Endpoint;
 
@@ -25,15 +27,21 @@ import com.aliyuncs.vcs.Endpoint;
 public class GetPersonListRequest extends RpcAcsRequest<GetPersonListResponse> {
 	   
 
-	private String faceImageUrl;
+	private String corpId;
 
-	private String pageNumber;
+	private String faceMatchingRateThreshold;
 
-	private String corpIdList;
+	private Long pageNumber;
 
-	private String pageSize;
+	private List<Object> corpIdList;
+
+	private String faceUrl;
+
+	private Long pageSize;
+
+	private List<Object> personIdList;
 	public GetPersonListRequest() {
-		super("Vcs", "2020-05-15", "GetPersonList");
+		super("Vcs", "2020-05-15", "GetPersonList", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,47 +49,80 @@ public class GetPersonListRequest extends RpcAcsRequest<GetPersonListResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getFaceImageUrl() {
-		return this.faceImageUrl;
+	public String getCorpId() {
+		return this.corpId;
 	}
 
-	public void setFaceImageUrl(String faceImageUrl) {
-		this.faceImageUrl = faceImageUrl;
-		if(faceImageUrl != null){
-			putBodyParameter("FaceImageUrl", faceImageUrl);
+	public void setCorpId(String corpId) {
+		this.corpId = corpId;
+		if(corpId != null){
+			putBodyParameter("CorpId", corpId);
 		}
 	}
 
-	public String getPageNumber() {
+	public String getFaceMatchingRateThreshold() {
+		return this.faceMatchingRateThreshold;
+	}
+
+	public void setFaceMatchingRateThreshold(String faceMatchingRateThreshold) {
+		this.faceMatchingRateThreshold = faceMatchingRateThreshold;
+		if(faceMatchingRateThreshold != null){
+			putBodyParameter("FaceMatchingRateThreshold", faceMatchingRateThreshold);
+		}
+	}
+
+	public Long getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(String pageNumber) {
+	public void setPageNumber(Long pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
-			putBodyParameter("PageNumber", pageNumber);
+			putBodyParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getCorpIdList() {
+	public List<Object> getCorpIdList() {
 		return this.corpIdList;
 	}
 
-	public void setCorpIdList(String corpIdList) {
+	public void setCorpIdList(List<Object> corpIdList) {
 		this.corpIdList = corpIdList;
 		if(corpIdList != null){
-			putBodyParameter("CorpIdList", corpIdList);
+			putBodyParameter("CorpIdList", new Gson().toJson(corpIdList));
 		}
 	}
 
-	public String getPageSize() {
+	public String getFaceUrl() {
+		return this.faceUrl;
+	}
+
+	public void setFaceUrl(String faceUrl) {
+		this.faceUrl = faceUrl;
+		if(faceUrl != null){
+			putBodyParameter("FaceUrl", faceUrl);
+		}
+	}
+
+	public Long getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize);
+			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public List<Object> getPersonIdList() {
+		return this.personIdList;
+	}
+
+	public void setPersonIdList(List<Object> personIdList) {
+		this.personIdList = personIdList;
+		if(personIdList != null){
+			putBodyParameter("PersonIdList", new Gson().toJson(personIdList));
 		}
 	}
 

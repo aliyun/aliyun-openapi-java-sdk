@@ -20,7 +20,7 @@ import java.util.List;
 import com.aliyuncs.vcs.model.v20200515.GetPersonListResponse;
 import com.aliyuncs.vcs.model.v20200515.GetPersonListResponse.Data;
 import com.aliyuncs.vcs.model.v20200515.GetPersonListResponse.Data.RecordsItem;
-import com.aliyuncs.vcs.model.v20200515.GetPersonListResponse.Data.RecordsItem.TagListItem;
+import com.aliyuncs.vcs.model.v20200515.GetPersonListResponse.Data.RecordsItem.TagList;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,28 +33,29 @@ public class GetPersonListResponseUnmarshaller {
 		getPersonListResponse.setMessage(_ctx.stringValue("GetPersonListResponse.Message"));
 
 		Data data = new Data();
-		data.setPageNumber(_ctx.stringValue("GetPersonListResponse.Data.PageNumber"));
-		data.setPageSize(_ctx.stringValue("GetPersonListResponse.Data.PageSize"));
-		data.setTotalCount(_ctx.stringValue("GetPersonListResponse.Data.TotalCount"));
+		data.setPageNumber(_ctx.longValue("GetPersonListResponse.Data.PageNumber"));
+		data.setPageSize(_ctx.longValue("GetPersonListResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.longValue("GetPersonListResponse.Data.TotalCount"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetPersonListResponse.Data.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
-			recordsItem.setFirstAppearTime(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].FirstAppearTime"));
+			recordsItem.setFaceUrl(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].FaceUrl"));
+			recordsItem.setFirstShotTime(_ctx.longValue("GetPersonListResponse.Data.Records["+ i +"].FirstShotTime"));
 			recordsItem.setPersonId(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].PersonId"));
-			recordsItem.setFaceImageUrl(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].FaceImageUrl"));
+			recordsItem.setSearchMatchingRate(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].SearchMatchingRate"));
 
-			List<TagListItem> tagList = new ArrayList<TagListItem>();
-			for (int j = 0; j < _ctx.lengthValue("GetPersonListResponse.Data.Records["+ i +"].TagList.Length"); j++) {
-				TagListItem tagListItem = new TagListItem();
-				tagListItem.setCode(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].TagList["+ j +"].Code"));
-				tagListItem.setValue(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].TagList["+ j +"].Value"));
-				tagListItem.setTagCodeName(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].TagList["+ j +"].TagCodeName"));
-				tagListItem.setTagName(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].TagList["+ j +"].TagName"));
+			List<TagList> propertyTagList = new ArrayList<TagList>();
+			for (int j = 0; j < _ctx.lengthValue("GetPersonListResponse.Data.Records["+ i +"].PropertyTagList.Length"); j++) {
+				TagList tagList = new TagList();
+				tagList.setCode(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].PropertyTagList["+ j +"].Code"));
+				tagList.setTagCodeName(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].PropertyTagList["+ j +"].TagCodeName"));
+				tagList.setTagName(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].PropertyTagList["+ j +"].TagName"));
+				tagList.setValue(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].PropertyTagList["+ j +"].Value"));
 
-				tagList.add(tagListItem);
+				propertyTagList.add(tagList);
 			}
-			recordsItem.setTagList(tagList);
+			recordsItem.setPropertyTagList(propertyTagList);
 
 			records.add(recordsItem);
 		}

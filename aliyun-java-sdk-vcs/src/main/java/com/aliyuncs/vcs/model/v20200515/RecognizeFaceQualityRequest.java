@@ -33,7 +33,7 @@ public class RecognizeFaceQualityRequest extends RpcAcsRequest<RecognizeFaceQual
 
 	private String picFormat;
 	public RecognizeFaceQualityRequest() {
-		super("Vcs", "2020-05-15", "RecognizeFaceQuality");
+		super("Vcs", "2020-05-15", "RecognizeFaceQuality", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -1,3 +1,6 @@
+2020-08-31 Version: 1.2.1
+- Add list person visit count API.
+
 2020-08-27 Version: 1.1.9
 - Update parameter.
 

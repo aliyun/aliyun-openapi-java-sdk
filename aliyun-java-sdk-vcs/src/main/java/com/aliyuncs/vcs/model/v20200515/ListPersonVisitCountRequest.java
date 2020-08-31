@@ -41,7 +41,7 @@ public class ListPersonVisitCountRequest extends RpcAcsRequest<ListPersonVisitCo
 
 	private String aggregateType;
 	public ListPersonVisitCountRequest() {
-		super("Vcs", "2020-05-15", "ListPersonVisitCount");
+		super("Vcs", "2020-05-15", "ListPersonVisitCount", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

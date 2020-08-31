@@ -67,35 +67,35 @@ public class GetPersonListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String pageNumber;
+		private Long pageNumber;
 
-		private String pageSize;
+		private Long pageSize;
 
-		private String totalCount;
+		private Long totalCount;
 
 		private List<RecordsItem> records;
 
-		public String getPageNumber() {
+		public Long getPageNumber() {
 			return this.pageNumber;
 		}
 
-		public void setPageNumber(String pageNumber) {
+		public void setPageNumber(Long pageNumber) {
 			this.pageNumber = pageNumber;
 		}
 
-		public String getPageSize() {
+		public Long getPageSize() {
 			return this.pageSize;
 		}
 
-		public void setPageSize(String pageSize) {
+		public void setPageSize(Long pageSize) {
 			this.pageSize = pageSize;
 		}
 
-		public String getTotalCount() {
+		public Long getTotalCount() {
 			return this.totalCount;
 		}
 
-		public void setTotalCount(String totalCount) {
+		public void setTotalCount(Long totalCount) {
 			this.totalCount = totalCount;
 		}
 
@@ -109,20 +109,30 @@ public class GetPersonListResponse extends AcsResponse {
 
 		public static class RecordsItem {
 
-			private String firstAppearTime;
+			private String faceUrl;
+
+			private Long firstShotTime;
 
 			private String personId;
 
-			private String faceImageUrl;
+			private String searchMatchingRate;
 
-			private List<TagListItem> tagList;
+			private List<TagList> propertyTagList;
 
-			public String getFirstAppearTime() {
-				return this.firstAppearTime;
+			public String getFaceUrl() {
+				return this.faceUrl;
 			}
 
-			public void setFirstAppearTime(String firstAppearTime) {
-				this.firstAppearTime = firstAppearTime;
+			public void setFaceUrl(String faceUrl) {
+				this.faceUrl = faceUrl;
+			}
+
+			public Long getFirstShotTime() {
+				return this.firstShotTime;
+			}
+
+			public void setFirstShotTime(Long firstShotTime) {
+				this.firstShotTime = firstShotTime;
 			}
 
 			public String getPersonId() {
@@ -133,31 +143,31 @@ public class GetPersonListResponse extends AcsResponse {
 				this.personId = personId;
 			}
 
-			public String getFaceImageUrl() {
-				return this.faceImageUrl;
+			public String getSearchMatchingRate() {
+				return this.searchMatchingRate;
 			}
 
-			public void setFaceImageUrl(String faceImageUrl) {
-				this.faceImageUrl = faceImageUrl;
+			public void setSearchMatchingRate(String searchMatchingRate) {
+				this.searchMatchingRate = searchMatchingRate;
 			}
 
-			public List<TagListItem> getTagList() {
-				return this.tagList;
+			public List<TagList> getPropertyTagList() {
+				return this.propertyTagList;
 			}
 
-			public void setTagList(List<TagListItem> tagList) {
-				this.tagList = tagList;
+			public void setPropertyTagList(List<TagList> propertyTagList) {
+				this.propertyTagList = propertyTagList;
 			}
 
-			public static class TagListItem {
+			public static class TagList {
 
 				private String code;
-
-				private String value;
 
 				private String tagCodeName;
 
 				private String tagName;
+
+				private String value;
 
 				public String getCode() {
 					return this.code;
@@ -165,14 +175,6 @@ public class GetPersonListResponse extends AcsResponse {
 
 				public void setCode(String code) {
 					this.code = code;
-				}
-
-				public String getValue() {
-					return this.value;
-				}
-
-				public void setValue(String value) {
-					this.value = value;
 				}
 
 				public String getTagCodeName() {
@@ -189,6 +191,14 @@ public class GetPersonListResponse extends AcsResponse {
 
 				public void setTagName(String tagName) {
 					this.tagName = tagName;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
 				}
 			}
 		}

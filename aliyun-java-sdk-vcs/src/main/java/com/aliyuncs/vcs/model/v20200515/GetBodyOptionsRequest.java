@@ -27,7 +27,7 @@ public class GetBodyOptionsRequest extends RpcAcsRequest<GetBodyOptionsResponse>
 
 	private String corpId;
 	public GetBodyOptionsRequest() {
-		super("Vcs", "2020-05-15", "GetBodyOptions");
+		super("Vcs", "2020-05-15", "GetBodyOptions", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

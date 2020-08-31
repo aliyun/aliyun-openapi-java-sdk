@@ -51,7 +51,7 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 
 	private String userName;
 	public CreateUserRequest() {
-		super("Vcs", "2020-05-15", "CreateUser");
+		super("Vcs", "2020-05-15", "CreateUser", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
