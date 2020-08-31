@@ -16,6 +16,7 @@ package com.aliyuncs.scsp.model.v20200702;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.scsp.Endpoint;
 
 /**
  * @author auto create
@@ -30,8 +31,12 @@ public class ListAgentBySkillGroupIdRequest extends RpcAcsRequest<ListAgentBySki
 
 	private Long skillGroupId;
 	public ListAgentBySkillGroupIdRequest() {
-		super("scsp", "2020-07-02", "ListAgentBySkillGroupId", "scsp");
+		super("scsp", "2020-07-02", "ListAgentBySkillGroupId");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getClientToken() {

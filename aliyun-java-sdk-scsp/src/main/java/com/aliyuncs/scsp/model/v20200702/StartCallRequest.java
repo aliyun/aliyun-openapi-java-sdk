@@ -16,6 +16,7 @@ package com.aliyuncs.scsp.model.v20200702;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.scsp.Endpoint;
 
 /**
  * @author auto create
@@ -34,8 +35,12 @@ public class StartCallRequest extends RpcAcsRequest<StartCallResponse> {
 
 	private String callee;
 	public StartCallRequest() {
-		super("scsp", "2020-07-02", "StartCall", "scsp");
+		super("scsp", "2020-07-02", "StartCall");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getClientToken() {

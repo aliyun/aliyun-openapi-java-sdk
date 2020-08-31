@@ -16,6 +16,7 @@ package com.aliyuncs.scsp.model.v20200702;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.scsp.Endpoint;
 
 /**
  * @author auto create
@@ -34,8 +35,12 @@ public class ExecuteActivityRequest extends RpcAcsRequest<ExecuteActivityRespons
 
 	private String activityCode;
 	public ExecuteActivityRequest() {
-		super("scsp", "2020-07-02", "ExecuteActivity", "scsp");
+		super("scsp", "2020-07-02", "ExecuteActivity");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getInstanceId() {

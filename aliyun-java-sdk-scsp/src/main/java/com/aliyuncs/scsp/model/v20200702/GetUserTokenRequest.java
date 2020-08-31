@@ -22,16 +22,18 @@ import com.aliyuncs.scsp.Endpoint;
  * @author auto create
  * @version 
  */
-public class DisableRoleRequest extends RpcAcsRequest<DisableRoleResponse> {
+public class GetUserTokenRequest extends RpcAcsRequest<GetUserTokenResponse> {
 	   
 
-	private String clientToken;
+	private String nick;
 
 	private String instanceId;
 
-	private Long roleId;
-	public DisableRoleRequest() {
-		super("scsp", "2020-07-02", "DisableRole");
+	private String appKey;
+
+	private String userId;
+	public GetUserTokenRequest() {
+		super("scsp", "2020-07-02", "GetUserToken");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +41,14 @@ public class DisableRoleRequest extends RpcAcsRequest<DisableRoleResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getNick() {
+		return this.nick;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
+	public void setNick(String nick) {
+		this.nick = nick;
+		if(nick != null){
+			putBodyParameter("Nick", nick);
 		}
 	}
 
@@ -61,20 +63,31 @@ public class DisableRoleRequest extends RpcAcsRequest<DisableRoleResponse> {
 		}
 	}
 
-	public Long getRoleId() {
-		return this.roleId;
+	public String getAppKey() {
+		return this.appKey;
 	}
 
-	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
-		if(roleId != null){
-			putBodyParameter("RoleId", roleId.toString());
+	public void setAppKey(String appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putBodyParameter("AppKey", appKey);
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putBodyParameter("UserId", userId);
 		}
 	}
 
 	@Override
-	public Class<DisableRoleResponse> getResponseClass() {
-		return DisableRoleResponse.class;
+	public Class<GetUserTokenResponse> getResponseClass() {
+		return GetUserTokenResponse.class;
 	}
 
 }
