@@ -17,6 +17,7 @@ package com.aliyuncs.ess.model.v20140828;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ess.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,8 @@ import com.aliyuncs.http.MethodType;
  */
 public class DetachLoadBalancersRequest extends RpcAcsRequest<DetachLoadBalancersResponse> {
 	   
+
+	private String clientToken;
 
 	private String scalingGroupId;
 
@@ -37,6 +40,21 @@ public class DetachLoadBalancersRequest extends RpcAcsRequest<DetachLoadBalancer
 	public DetachLoadBalancersRequest() {
 		super("Ess", "2014-08-28", "DetachLoadBalancers", "ess");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getScalingGroupId() {

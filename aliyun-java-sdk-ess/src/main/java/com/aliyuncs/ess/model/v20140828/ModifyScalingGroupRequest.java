@@ -17,6 +17,7 @@ package com.aliyuncs.ess.model.v20140828;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ess.Endpoint;
 
 /**
  * @author auto create
@@ -27,8 +28,6 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
 	private String scalingGroupId;
 
 	private List<String> vSwitchIds;
@@ -38,8 +37,6 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 	private Integer onDemandBaseCapacity;
 
 	private Integer onDemandPercentageAboveBaseCapacity;
-
-	private String costOptimizedMode;
 
 	private Boolean spotInstanceRemedy;
 
@@ -59,9 +56,9 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 
 	private String scalingGroupName;
 
-	private List<LaunchTemplateOverride> launchTemplateOverrides;
-
 	private String ownerAccount;
+
+	private Boolean compensateWithOnDemand;
 
 	private Integer spotInstancePools;
 
@@ -77,6 +74,10 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 	public ModifyScalingGroupRequest() {
 		super("Ess", "2014-08-28", "ModifyScalingGroup", "ess");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -87,17 +88,6 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -155,17 +145,6 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		this.onDemandPercentageAboveBaseCapacity = onDemandPercentageAboveBaseCapacity;
 		if(onDemandPercentageAboveBaseCapacity != null){
 			putQueryParameter("OnDemandPercentageAboveBaseCapacity", onDemandPercentageAboveBaseCapacity.toString());
-		}
-	}
-
-	public String getCostOptimizedMode() {
-		return this.costOptimizedMode;
-	}
-
-	public void setCostOptimizedMode(String costOptimizedMode) {
-		this.costOptimizedMode = costOptimizedMode;
-		if(costOptimizedMode != null){
-			putQueryParameter("CostOptimizedMode", costOptimizedMode);
 		}
 	}
 
@@ -268,19 +247,6 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		}
 	}
 
-	public List<LaunchTemplateOverride> getLaunchTemplateOverrides() {
-		return this.launchTemplateOverrides;
-	}
-
-	public void setLaunchTemplateOverrides(List<LaunchTemplateOverride> launchTemplateOverrides) {
-		this.launchTemplateOverrides = launchTemplateOverrides;	
-		if (launchTemplateOverrides != null) {
-			for (int depth1 = 0; depth1 < launchTemplateOverrides.size(); depth1++) {
-				putQueryParameter("LaunchTemplateOverride." + (depth1 + 1) + ".InstanceType" , launchTemplateOverrides.get(depth1).getInstanceType());
-			}
-		}	
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -289,6 +255,17 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Boolean getCompensateWithOnDemand() {
+		return this.compensateWithOnDemand;
+	}
+
+	public void setCompensateWithOnDemand(Boolean compensateWithOnDemand) {
+		this.compensateWithOnDemand = compensateWithOnDemand;
+		if(compensateWithOnDemand != null){
+			putQueryParameter("CompensateWithOnDemand", compensateWithOnDemand.toString());
 		}
 	}
 
@@ -355,19 +332,6 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		this.maxSize = maxSize;
 		if(maxSize != null){
 			putQueryParameter("MaxSize", maxSize.toString());
-		}
-	}
-
-	public static class LaunchTemplateOverride {
-
-		private String instanceType;
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
 		}
 	}
 

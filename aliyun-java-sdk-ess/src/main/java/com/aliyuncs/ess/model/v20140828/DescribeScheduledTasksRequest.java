@@ -16,6 +16,7 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ess.Endpoint;
 
 /**
  * @author auto create
@@ -53,6 +54,8 @@ public class DescribeScheduledTasksRequest extends RpcAcsRequest<DescribeSchedul
 	private String scheduledTaskName18;
 
 	private String scheduledTaskId20;
+
+	private String scalingGroupId;
 
 	private String scheduledTaskName13;
 
@@ -158,6 +161,10 @@ public class DescribeScheduledTasksRequest extends RpcAcsRequest<DescribeSchedul
 	public DescribeScheduledTasksRequest() {
 		super("Ess", "2014-08-28", "DescribeScheduledTasks", "ess");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -322,6 +329,17 @@ public class DescribeScheduledTasksRequest extends RpcAcsRequest<DescribeSchedul
 		this.scheduledTaskId20 = scheduledTaskId20;
 		if(scheduledTaskId20 != null){
 			putQueryParameter("ScheduledTaskId.20", scheduledTaskId20);
+		}
+	}
+
+	public String getScalingGroupId() {
+		return this.scalingGroupId;
+	}
+
+	public void setScalingGroupId(String scalingGroupId) {
+		this.scalingGroupId = scalingGroupId;
+		if(scalingGroupId != null){
+			putQueryParameter("ScalingGroupId", scalingGroupId);
 		}
 	}
 

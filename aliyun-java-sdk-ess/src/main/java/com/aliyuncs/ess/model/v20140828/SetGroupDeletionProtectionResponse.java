@@ -15,14 +15,14 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ess.transform.v20140828.CheckScalingGroupAvailabilityResponseUnmarshaller;
+import com.aliyuncs.ess.transform.v20140828.SetGroupDeletionProtectionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CheckScalingGroupAvailabilityResponse extends AcsResponse {
+public class SetGroupDeletionProtectionResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class CheckScalingGroupAvailabilityResponse extends AcsResponse {
 	}
 
 	@Override
-	public CheckScalingGroupAvailabilityResponse getInstance(UnmarshallerContext context) {
-		return	CheckScalingGroupAvailabilityResponseUnmarshaller.unmarshall(this, context);
+	public SetGroupDeletionProtectionResponse getInstance(UnmarshallerContext context) {
+		return	SetGroupDeletionProtectionResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -16,22 +16,29 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ess.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
-public class CheckScalingGroupAvailabilityRequest extends RpcAcsRequest<CheckScalingGroupAvailabilityResponse> {
+public class SetGroupDeletionProtectionRequest extends RpcAcsRequest<SetGroupDeletionProtectionResponse> {
 	   
 
 	private String resourceOwnerAccount;
 
 	private String scalingGroupId;
 
+	private Boolean groupDeletionProtection;
+
 	private Long ownerId;
-	public CheckScalingGroupAvailabilityRequest() {
-		super("Ess", "2014-08-28", "CheckScalingGroupAvailability", "ess");
+	public SetGroupDeletionProtectionRequest() {
+		super("Ess", "2014-08-28", "SetGroupDeletionProtection", "ess");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -56,6 +63,17 @@ public class CheckScalingGroupAvailabilityRequest extends RpcAcsRequest<CheckSca
 		}
 	}
 
+	public Boolean getGroupDeletionProtection() {
+		return this.groupDeletionProtection;
+	}
+
+	public void setGroupDeletionProtection(Boolean groupDeletionProtection) {
+		this.groupDeletionProtection = groupDeletionProtection;
+		if(groupDeletionProtection != null){
+			putQueryParameter("GroupDeletionProtection", groupDeletionProtection.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -68,8 +86,8 @@ public class CheckScalingGroupAvailabilityRequest extends RpcAcsRequest<CheckSca
 	}
 
 	@Override
-	public Class<CheckScalingGroupAvailabilityResponse> getResponseClass() {
-		return CheckScalingGroupAvailabilityResponse.class;
+	public Class<SetGroupDeletionProtectionResponse> getResponseClass() {
+		return SetGroupDeletionProtectionResponse.class;
 	}
 
 }

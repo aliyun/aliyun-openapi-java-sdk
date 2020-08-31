@@ -16,6 +16,7 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ess.Endpoint;
 
 /**
  * @author auto create
@@ -25,6 +26,8 @@ public class CompleteLifecycleActionRequest extends RpcAcsRequest<CompleteLifecy
 	   
 
 	private String lifecycleActionToken;
+
+	private String clientToken;
 
 	private String resourceOwnerAccount;
 
@@ -38,6 +41,10 @@ public class CompleteLifecycleActionRequest extends RpcAcsRequest<CompleteLifecy
 	public CompleteLifecycleActionRequest() {
 		super("Ess", "2014-08-28", "CompleteLifecycleAction", "ess");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getLifecycleActionToken() {
@@ -48,6 +55,17 @@ public class CompleteLifecycleActionRequest extends RpcAcsRequest<CompleteLifecy
 		this.lifecycleActionToken = lifecycleActionToken;
 		if(lifecycleActionToken != null){
 			putQueryParameter("LifecycleActionToken", lifecycleActionToken);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

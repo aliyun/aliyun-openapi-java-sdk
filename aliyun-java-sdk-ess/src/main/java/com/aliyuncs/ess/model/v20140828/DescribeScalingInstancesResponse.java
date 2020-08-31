@@ -101,6 +101,8 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 
 		private Boolean entrusted;
 
+		private String createdTime;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -195,6 +197,14 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 
 		public void setEntrusted(Boolean entrusted) {
 			this.entrusted = entrusted;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
 		}
 	}
 

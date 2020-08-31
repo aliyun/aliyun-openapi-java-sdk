@@ -17,6 +17,7 @@ package com.aliyuncs.ess.model.v20140828;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ess.Endpoint;
 
 /**
  * @author auto create
@@ -38,9 +39,15 @@ public class DetachInstancesRequest extends RpcAcsRequest<DetachInstancesRespons
 	private Long ownerId;
 
 	private List<String> instanceIds;
+
+	private String detachOption;
 	public DetachInstancesRequest() {
 		super("Ess", "2014-08-28", "DetachInstances", "ess");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -120,6 +127,17 @@ public class DetachInstancesRequest extends RpcAcsRequest<DetachInstancesRespons
 				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
 			}
 		}	
+	}
+
+	public String getDetachOption() {
+		return this.detachOption;
+	}
+
+	public void setDetachOption(String detachOption) {
+		this.detachOption = detachOption;
+		if(detachOption != null){
+			putQueryParameter("DetachOption", detachOption);
+		}
 	}
 
 	@Override

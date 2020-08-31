@@ -14,19 +14,24 @@
 
 package com.aliyuncs.ess.model.v20140828;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ess.transform.v20140828.SpiCallExecuteScalingRuleResponseUnmarshaller;
+import com.aliyuncs.ess.transform.v20140828.ListTagValuesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SpiCallExecuteScalingRuleResponse extends AcsResponse {
+public class ListTagValuesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String scalingActivityId;
+	private String nextToken;
+
+	private Integer pageSize;
+
+	private List<String> values;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +41,32 @@ public class SpiCallExecuteScalingRuleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getScalingActivityId() {
-		return this.scalingActivityId;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setScalingActivityId(String scalingActivityId) {
-		this.scalingActivityId = scalingActivityId;
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public List<String> getValues() {
+		return this.values;
+	}
+
+	public void setValues(List<String> values) {
+		this.values = values;
 	}
 
 	@Override
-	public SpiCallExecuteScalingRuleResponse getInstance(UnmarshallerContext context) {
-		return	SpiCallExecuteScalingRuleResponseUnmarshaller.unmarshall(this, context);
+	public ListTagValuesResponse getInstance(UnmarshallerContext context) {
+		return	ListTagValuesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

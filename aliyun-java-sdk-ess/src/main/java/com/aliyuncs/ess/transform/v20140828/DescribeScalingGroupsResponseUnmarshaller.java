@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ess.model.v20140828.DescribeScalingGroupsResponse;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingGroupsResponse.ScalingGroup;
-import com.aliyuncs.ess.model.v20140828.DescribeScalingGroupsResponse.ScalingGroup.LaunchTemplateOverride;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingGroupsResponse.ScalingGroup.VServerGroup;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingGroupsResponse.ScalingGroup.VServerGroup.VServerGroupAttribute;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -63,10 +62,10 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 			scalingGroup.setHealthCheckType(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].HealthCheckType"));
 			scalingGroup.setScalingPolicy(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ScalingPolicy"));
 			scalingGroup.setStoppedCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].StoppedCapacity"));
-			scalingGroup.setCostOptimizedMode(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CostOptimizedMode"));
 			scalingGroup.setOnDemandBaseCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].OnDemandBaseCapacity"));
 			scalingGroup.setOnDemandPercentageAboveBaseCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].OnDemandPercentageAboveBaseCapacity"));
 			scalingGroup.setSpotInstanceRemedy(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SpotInstanceRemedy"));
+			scalingGroup.setCompensateWithOnDemand(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CompensateWithOnDemand"));
 			scalingGroup.setSpotInstancePools(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SpotInstancePools"));
 			scalingGroup.setDesiredCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].DesiredCapacity"));
 			scalingGroup.setGroupDeletionProtection(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].GroupDeletionProtection"));
@@ -120,15 +119,6 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 				vServerGroups.add(vServerGroup);
 			}
 			scalingGroup.setVServerGroups(vServerGroups);
-
-			List<LaunchTemplateOverride> launchTemplateOverrides = new ArrayList<LaunchTemplateOverride>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateOverrides.Length"); j++) {
-				LaunchTemplateOverride launchTemplateOverride = new LaunchTemplateOverride();
-				launchTemplateOverride.setInstanceType(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateOverrides["+ j +"].InstanceType"));
-
-				launchTemplateOverrides.add(launchTemplateOverride);
-			}
-			scalingGroup.setLaunchTemplateOverrides(launchTemplateOverrides);
 
 			scalingGroups.add(scalingGroup);
 		}

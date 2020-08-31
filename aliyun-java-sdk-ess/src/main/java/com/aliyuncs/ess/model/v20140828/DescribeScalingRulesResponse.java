@@ -107,6 +107,10 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 		private Boolean disableScaleIn;
 
+		private Integer scaleInEvaluationCount;
+
+		private Integer scaleOutEvaluationCount;
+
 		private String predictiveScalingMode;
 
 		private String predictiveValueBehavior;
@@ -239,6 +243,22 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 		public void setDisableScaleIn(Boolean disableScaleIn) {
 			this.disableScaleIn = disableScaleIn;
+		}
+
+		public Integer getScaleInEvaluationCount() {
+			return this.scaleInEvaluationCount;
+		}
+
+		public void setScaleInEvaluationCount(Integer scaleInEvaluationCount) {
+			this.scaleInEvaluationCount = scaleInEvaluationCount;
+		}
+
+		public Integer getScaleOutEvaluationCount() {
+			return this.scaleOutEvaluationCount;
+		}
+
+		public void setScaleOutEvaluationCount(Integer scaleOutEvaluationCount) {
+			this.scaleOutEvaluationCount = scaleOutEvaluationCount;
 		}
 
 		public String getPredictiveScalingMode() {

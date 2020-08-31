@@ -71,6 +71,12 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			scalingConfiguration.setResourceGroupId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ResourceGroupId"));
 			scalingConfiguration.setHpcClusterId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].HpcClusterId"));
 			scalingConfiguration.setInstanceDescription(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceDescription"));
+			scalingConfiguration.setCreditSpecification(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].CreditSpecification"));
+			scalingConfiguration.setImageFamily(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ImageFamily"));
+			scalingConfiguration.setZoneId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ZoneId"));
+			scalingConfiguration.setDedicatedHostId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DedicatedHostId"));
+			scalingConfiguration.setAffinity(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Affinity"));
+			scalingConfiguration.setTenancy(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Tenancy"));
 			scalingConfiguration.setIpv6AddressCount(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Ipv6AddressCount"));
 
 			List<String> instanceTypes = new ArrayList<String>();

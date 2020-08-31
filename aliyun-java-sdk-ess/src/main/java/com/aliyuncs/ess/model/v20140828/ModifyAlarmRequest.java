@@ -17,6 +17,7 @@ package com.aliyuncs.ess.model.v20140828;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ess.Endpoint;
 
 /**
  * @author auto create
@@ -32,6 +33,8 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 	private List<String> alarmActions;
 
 	private Float threshold;
+
+	private String effective;
 
 	private Integer evaluationCount;
 
@@ -57,6 +60,10 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 	public ModifyAlarmRequest() {
 		super("Ess", "2014-08-28", "ModifyAlarm", "ess");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getMetricType() {
@@ -102,6 +109,17 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 		this.threshold = threshold;
 		if(threshold != null){
 			putQueryParameter("Threshold", threshold.toString());
+		}
+	}
+
+	public String getEffective() {
+		return this.effective;
+	}
+
+	public void setEffective(String effective) {
+		this.effective = effective;
+		if(effective != null){
+			putQueryParameter("Effective", effective);
 		}
 	}
 

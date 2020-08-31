@@ -129,13 +129,13 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		private Integer stoppedCapacity;
 
-		private String costOptimizedMode;
-
 		private Integer onDemandBaseCapacity;
 
 		private Integer onDemandPercentageAboveBaseCapacity;
 
 		private Boolean spotInstanceRemedy;
+
+		private Boolean compensateWithOnDemand;
 
 		private Integer spotInstancePools;
 
@@ -144,8 +144,6 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 		private Boolean groupDeletionProtection;
 
 		private List<VServerGroup> vServerGroups;
-
-		private List<LaunchTemplateOverride> launchTemplateOverrides;
 
 		private List<String> vSwitchIds;
 
@@ -365,14 +363,6 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 			this.stoppedCapacity = stoppedCapacity;
 		}
 
-		public String getCostOptimizedMode() {
-			return this.costOptimizedMode;
-		}
-
-		public void setCostOptimizedMode(String costOptimizedMode) {
-			this.costOptimizedMode = costOptimizedMode;
-		}
-
 		public Integer getOnDemandBaseCapacity() {
 			return this.onDemandBaseCapacity;
 		}
@@ -395,6 +385,14 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		public void setSpotInstanceRemedy(Boolean spotInstanceRemedy) {
 			this.spotInstanceRemedy = spotInstanceRemedy;
+		}
+
+		public Boolean getCompensateWithOnDemand() {
+			return this.compensateWithOnDemand;
+		}
+
+		public void setCompensateWithOnDemand(Boolean compensateWithOnDemand) {
+			this.compensateWithOnDemand = compensateWithOnDemand;
 		}
 
 		public Integer getSpotInstancePools() {
@@ -427,14 +425,6 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		public void setVServerGroups(List<VServerGroup> vServerGroups) {
 			this.vServerGroups = vServerGroups;
-		}
-
-		public List<LaunchTemplateOverride> getLaunchTemplateOverrides() {
-			return this.launchTemplateOverrides;
-		}
-
-		public void setLaunchTemplateOverrides(List<LaunchTemplateOverride> launchTemplateOverrides) {
-			this.launchTemplateOverrides = launchTemplateOverrides;
 		}
 
 		public List<String> getVSwitchIds() {
@@ -530,19 +520,6 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 				public void setWeight(Integer weight) {
 					this.weight = weight;
 				}
-			}
-		}
-
-		public static class LaunchTemplateOverride {
-
-			private String instanceType;
-
-			public String getInstanceType() {
-				return this.instanceType;
-			}
-
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
 			}
 		}
 	}
