@@ -1,6 +1,9 @@
-2020-08-31 Version: 2.3.3
+2020-08-31 Version: 2.3.4
 1, Support ScaleInEvaluationCount, ScaleOutEvaluationCount for target tracking scaling rule;
 2, Support CompensateWithOnDemand for CostOptimized scaling group.
+
+2020-02-17 Version: 2.3.3
+1. Deprecated version.
 
 2019-06-25 Version: 2.3.2
 1, Enhencement for CostOptimized scaling group.
