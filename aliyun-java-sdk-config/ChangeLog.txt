@@ -1,6 +1,9 @@
 2020-09-01 Version: 1.0.1
 - Support region route.
 
+2020-09-01 Version: 1.0.1
+- Support region route.
+
 2020-09-01 Version: 1.0.0
 - Support region route.
 
