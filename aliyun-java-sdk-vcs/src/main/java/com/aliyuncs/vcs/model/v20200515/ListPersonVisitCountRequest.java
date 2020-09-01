@@ -37,11 +37,11 @@ public class ListPersonVisitCountRequest extends RpcAcsRequest<ListPersonVisitCo
 
 	private String timeAggregateType;
 
-	private String maxVal;
+	private Integer maxVal;
 
 	private String tagCode;
 
-	private String minVal;
+	private Integer minVal;
 
 	private Integer pageSize;
 
@@ -121,14 +121,14 @@ public class ListPersonVisitCountRequest extends RpcAcsRequest<ListPersonVisitCo
 		}
 	}
 
-	public String getMaxVal() {
+	public Integer getMaxVal() {
 		return this.maxVal;
 	}
 
-	public void setMaxVal(String maxVal) {
+	public void setMaxVal(Integer maxVal) {
 		this.maxVal = maxVal;
 		if(maxVal != null){
-			putBodyParameter("MaxVal", maxVal);
+			putBodyParameter("MaxVal", maxVal.toString());
 		}
 	}
 
@@ -143,14 +143,14 @@ public class ListPersonVisitCountRequest extends RpcAcsRequest<ListPersonVisitCo
 		}
 	}
 
-	public String getMinVal() {
+	public Integer getMinVal() {
 		return this.minVal;
 	}
 
-	public void setMinVal(String minVal) {
+	public void setMinVal(Integer minVal) {
 		this.minVal = minVal;
 		if(minVal != null){
-			putBodyParameter("MinVal", minVal);
+			putBodyParameter("MinVal", minVal.toString());
 		}
 	}
 
