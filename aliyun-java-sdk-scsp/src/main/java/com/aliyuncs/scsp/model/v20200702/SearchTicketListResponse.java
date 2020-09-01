@@ -16,14 +16,14 @@ package com.aliyuncs.scsp.model.v20200702;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.scsp.transform.v20200702.SearchTicketByIdResponseUnmarshaller;
+import com.aliyuncs.scsp.transform.v20200702.SearchTicketListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SearchTicketByIdResponse extends AcsResponse {
+public class SearchTicketListResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,7 +33,15 @@ public class SearchTicketByIdResponse extends AcsResponse {
 
 	private String message;
 
-	private Data data;
+	private Integer pageNo;
+
+	private Integer totalResults;
+
+	private Integer onePageSize;
+
+	private Integer totalPage;
+
+	private List<DataItem> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,15 +75,47 @@ public class SearchTicketByIdResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Data getData() {
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+	}
+
+	public Integer getTotalResults() {
+		return this.totalResults;
+	}
+
+	public void setTotalResults(Integer totalResults) {
+		this.totalResults = totalResults;
+	}
+
+	public Integer getOnePageSize() {
+		return this.onePageSize;
+	}
+
+	public void setOnePageSize(Integer onePageSize) {
+		this.onePageSize = onePageSize;
+	}
+
+	public Integer getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
+	}
+
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
 	}
 
-	public static class Data {
+	public static class DataItem {
 
 		private Long ticketId;
 
@@ -105,11 +145,9 @@ public class SearchTicketByIdResponse extends AcsResponse {
 
 		private String formData;
 
-		private Integer caseStatus;
-
 		private Long serviceId;
 
-		private List<ActivitiesItem> activities;
+		private Integer caseStatus;
 
 		public Long getTicketId() {
 			return this.ticketId;
@@ -223,14 +261,6 @@ public class SearchTicketByIdResponse extends AcsResponse {
 			this.formData = formData;
 		}
 
-		public Integer getCaseStatus() {
-			return this.caseStatus;
-		}
-
-		public void setCaseStatus(Integer caseStatus) {
-			this.caseStatus = caseStatus;
-		}
-
 		public Long getServiceId() {
 			return this.serviceId;
 		}
@@ -239,41 +269,18 @@ public class SearchTicketByIdResponse extends AcsResponse {
 			this.serviceId = serviceId;
 		}
 
-		public List<ActivitiesItem> getActivities() {
-			return this.activities;
+		public Integer getCaseStatus() {
+			return this.caseStatus;
 		}
 
-		public void setActivities(List<ActivitiesItem> activities) {
-			this.activities = activities;
-		}
-
-		public static class ActivitiesItem {
-
-			private String activityCode;
-
-			private String activityFormData;
-
-			public String getActivityCode() {
-				return this.activityCode;
-			}
-
-			public void setActivityCode(String activityCode) {
-				this.activityCode = activityCode;
-			}
-
-			public String getActivityFormData() {
-				return this.activityFormData;
-			}
-
-			public void setActivityFormData(String activityFormData) {
-				this.activityFormData = activityFormData;
-			}
+		public void setCaseStatus(Integer caseStatus) {
+			this.caseStatus = caseStatus;
 		}
 	}
 
 	@Override
-	public SearchTicketByIdResponse getInstance(UnmarshallerContext context) {
-		return	SearchTicketByIdResponseUnmarshaller.unmarshall(this, context);
+	public SearchTicketListResponse getInstance(UnmarshallerContext context) {
+		return	SearchTicketListResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

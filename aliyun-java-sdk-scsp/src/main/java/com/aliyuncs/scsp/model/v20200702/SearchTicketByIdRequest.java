@@ -25,6 +25,8 @@ import com.aliyuncs.scsp.Endpoint;
 public class SearchTicketByIdRequest extends RpcAcsRequest<SearchTicketByIdResponse> {
 	   
 
+	private String clientToken;
+
 	private String instanceId;
 
 	private Long ticketId;
@@ -35,6 +37,17 @@ public class SearchTicketByIdRequest extends RpcAcsRequest<SearchTicketByIdRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getInstanceId() {

@@ -22,16 +22,22 @@ import com.aliyuncs.scsp.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTicketTemplateSchemaRequest extends RpcAcsRequest<GetTicketTemplateSchemaResponse> {
+public class SearchTicketListRequest extends RpcAcsRequest<SearchTicketListResponse> {
 	   
 
 	private String clientToken;
 
 	private String instanceId;
 
-	private Long templateId;
-	public GetTicketTemplateSchemaRequest() {
-		super("scsp", "2020-07-02", "GetTicketTemplateSchema");
+	private Long operatorId;
+
+	private String ticketStatus;
+
+	private Integer pageNo;
+
+	private Integer pageSize;
+	public SearchTicketListRequest() {
+		super("scsp", "2020-07-02", "SearchTicketList");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,20 +67,53 @@ public class GetTicketTemplateSchemaRequest extends RpcAcsRequest<GetTicketTempl
 		}
 	}
 
-	public Long getTemplateId() {
-		return this.templateId;
+	public Long getOperatorId() {
+		return this.operatorId;
 	}
 
-	public void setTemplateId(Long templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putBodyParameter("TemplateId", templateId.toString());
+	public void setOperatorId(Long operatorId) {
+		this.operatorId = operatorId;
+		if(operatorId != null){
+			putBodyParameter("OperatorId", operatorId.toString());
+		}
+	}
+
+	public String getTicketStatus() {
+		return this.ticketStatus;
+	}
+
+	public void setTicketStatus(String ticketStatus) {
+		this.ticketStatus = ticketStatus;
+		if(ticketStatus != null){
+			putBodyParameter("TicketStatus", ticketStatus);
+		}
+	}
+
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putBodyParameter("PageNo", pageNo.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<GetTicketTemplateSchemaResponse> getResponseClass() {
-		return GetTicketTemplateSchemaResponse.class;
+	public Class<SearchTicketListResponse> getResponseClass() {
+		return SearchTicketListResponse.class;
 	}
 
 }

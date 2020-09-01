@@ -25,15 +25,17 @@ import com.aliyuncs.scsp.Endpoint;
 public class ExecuteActivityRequest extends RpcAcsRequest<ExecuteActivityResponse> {
 	   
 
-	private String instanceId;
-
 	private String clientToken;
+
+	private String instanceId;
 
 	private Long ticketId;
 
 	private Long operatorId;
 
 	private String activityCode;
+
+	private String activityForm;
 	public ExecuteActivityRequest() {
 		super("scsp", "2020-07-02", "ExecuteActivity");
 		setMethod(MethodType.POST);
@@ -41,17 +43,6 @@ public class ExecuteActivityRequest extends RpcAcsRequest<ExecuteActivityRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
-		}
 	}
 
 	public String getClientToken() {
@@ -62,6 +53,17 @@ public class ExecuteActivityRequest extends RpcAcsRequest<ExecuteActivityRespons
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putBodyParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -95,6 +97,17 @@ public class ExecuteActivityRequest extends RpcAcsRequest<ExecuteActivityRespons
 		this.activityCode = activityCode;
 		if(activityCode != null){
 			putBodyParameter("ActivityCode", activityCode);
+		}
+	}
+
+	public String getActivityForm() {
+		return this.activityForm;
+	}
+
+	public void setActivityForm(String activityForm) {
+		this.activityForm = activityForm;
+		if(activityForm != null){
+			putBodyParameter("ActivityForm", activityForm);
 		}
 	}
 

@@ -14,8 +14,12 @@
 
 package com.aliyuncs.scsp.transform.v20200702;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.scsp.model.v20200702.SearchTicketByIdResponse;
 import com.aliyuncs.scsp.model.v20200702.SearchTicketByIdResponse.Data;
+import com.aliyuncs.scsp.model.v20200702.SearchTicketByIdResponse.Data.ActivitiesItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,6 +46,19 @@ public class SearchTicketByIdResponseUnmarshaller {
 		data.setCarbonCopy(_ctx.stringValue("SearchTicketByIdResponse.Data.CarbonCopy"));
 		data.setCreateTime(_ctx.longValue("SearchTicketByIdResponse.Data.CreateTime"));
 		data.setModifiedTime(_ctx.longValue("SearchTicketByIdResponse.Data.ModifiedTime"));
+		data.setFormData(_ctx.stringValue("SearchTicketByIdResponse.Data.FormData"));
+		data.setCaseStatus(_ctx.integerValue("SearchTicketByIdResponse.Data.CaseStatus"));
+		data.setServiceId(_ctx.longValue("SearchTicketByIdResponse.Data.ServiceId"));
+
+		List<ActivitiesItem> activities = new ArrayList<ActivitiesItem>();
+		for (int i = 0; i < _ctx.lengthValue("SearchTicketByIdResponse.Data.Activities.Length"); i++) {
+			ActivitiesItem activitiesItem = new ActivitiesItem();
+			activitiesItem.setActivityCode(_ctx.stringValue("SearchTicketByIdResponse.Data.Activities["+ i +"].ActivityCode"));
+			activitiesItem.setActivityFormData(_ctx.stringValue("SearchTicketByIdResponse.Data.Activities["+ i +"].ActivityFormData"));
+
+			activities.add(activitiesItem);
+		}
+		data.setActivities(activities);
 		searchTicketByIdResponse.setData(data);
 	 
 	 	return searchTicketByIdResponse;

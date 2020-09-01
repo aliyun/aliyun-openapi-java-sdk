@@ -25,9 +25,9 @@ import com.aliyuncs.scsp.Endpoint;
 public class UpdateTicketRequest extends RpcAcsRequest<UpdateTicketResponse> {
 	   
 
-	private String instanceId;
-
 	private String clientToken;
+
+	private String instanceId;
 
 	private Long ticketId;
 
@@ -43,17 +43,6 @@ public class UpdateTicketRequest extends RpcAcsRequest<UpdateTicketResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -62,6 +51,17 @@ public class UpdateTicketRequest extends RpcAcsRequest<UpdateTicketResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putBodyParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
 		}
 	}
 
