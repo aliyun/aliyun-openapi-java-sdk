@@ -15,6 +15,7 @@
 package com.aliyuncs.aiccs.transform.v20191015;
 
 import com.aliyuncs.aiccs.model.v20191015.GetRecordDataResponse;
+import com.aliyuncs.aiccs.model.v20191015.GetRecordDataResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,7 +27,11 @@ public class GetRecordDataResponseUnmarshaller {
 		getRecordDataResponse.setSuccess(_ctx.booleanValue("GetRecordDataResponse.Success"));
 		getRecordDataResponse.setCode(_ctx.stringValue("GetRecordDataResponse.Code"));
 		getRecordDataResponse.setMessage(_ctx.stringValue("GetRecordDataResponse.Message"));
-		getRecordDataResponse.setData(_ctx.stringValue("GetRecordDataResponse.Data"));
+
+		Data data = new Data();
+		data.setAcid(_ctx.stringValue("GetRecordDataResponse.Data.Acid"));
+		data.setOssLink(_ctx.stringValue("GetRecordDataResponse.Data.OssLink"));
+		getRecordDataResponse.setData(data);
 	 
 	 	return getRecordDataResponse;
 	}

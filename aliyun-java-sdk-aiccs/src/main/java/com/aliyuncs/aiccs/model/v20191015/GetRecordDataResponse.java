@@ -32,7 +32,7 @@ public class GetRecordDataResponse extends AcsResponse {
 
 	private String message;
 
-	private String data;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,12 +66,35 @@ public class GetRecordDataResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(Data data) {
 		this.data = data;
+	}
+
+	public static class Data {
+
+		private String acid;
+
+		private String ossLink;
+
+		public String getAcid() {
+			return this.acid;
+		}
+
+		public void setAcid(String acid) {
+			this.acid = acid;
+		}
+
+		public String getOssLink() {
+			return this.ossLink;
+		}
+
+		public void setOssLink(String ossLink) {
+			this.ossLink = ossLink;
+		}
 	}
 
 	@Override
