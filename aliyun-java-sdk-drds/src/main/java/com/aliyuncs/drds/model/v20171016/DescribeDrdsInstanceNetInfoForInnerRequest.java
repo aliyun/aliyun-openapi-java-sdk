@@ -27,7 +27,7 @@ public class DescribeDrdsInstanceNetInfoForInnerRequest extends RpcAcsRequest<De
 
 	private String drdsInstanceId;
 	public DescribeDrdsInstanceNetInfoForInnerRequest() {
-		super("Drds", "2017-10-16", "DescribeDrdsInstanceNetInfoForInner", "drds");
+		super("Drds", "2017-10-16", "DescribeDrdsInstanceNetInfoForInner", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

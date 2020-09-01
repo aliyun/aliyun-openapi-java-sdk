@@ -29,7 +29,7 @@ public class DescribeReadOnlyAccountRequest extends RpcAcsRequest<DescribeReadOn
 
 	private String dbName;
 	public DescribeReadOnlyAccountRequest() {
-		super("Drds", "2017-10-16", "DescribeReadOnlyAccount", "drds");
+		super("Drds", "2017-10-16", "DescribeReadOnlyAccount", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

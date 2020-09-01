@@ -33,7 +33,7 @@ public class ModifyFullTableScanRequest extends RpcAcsRequest<ModifyFullTableSca
 
 	private Boolean fullTableScan;
 	public ModifyFullTableScanRequest() {
-		super("Drds", "2017-10-16", "ModifyFullTableScan", "drds");
+		super("Drds", "2017-10-16", "ModifyFullTableScan", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

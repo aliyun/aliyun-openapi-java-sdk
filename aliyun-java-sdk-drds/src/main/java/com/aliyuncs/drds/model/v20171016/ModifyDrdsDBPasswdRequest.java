@@ -31,7 +31,7 @@ public class ModifyDrdsDBPasswdRequest extends RpcAcsRequest<ModifyDrdsDBPasswdR
 
 	private String dbName;
 	public ModifyDrdsDBPasswdRequest() {
-		super("Drds", "2017-10-16", "ModifyDrdsDBPasswd", "drds");
+		super("Drds", "2017-10-16", "ModifyDrdsDBPasswd", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

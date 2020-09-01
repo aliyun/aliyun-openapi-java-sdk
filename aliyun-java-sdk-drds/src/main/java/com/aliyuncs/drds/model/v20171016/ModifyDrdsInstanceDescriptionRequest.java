@@ -29,7 +29,7 @@ public class ModifyDrdsInstanceDescriptionRequest extends RpcAcsRequest<ModifyDr
 
 	private String drdsInstanceId;
 	public ModifyDrdsInstanceDescriptionRequest() {
-		super("Drds", "2017-10-16", "ModifyDrdsInstanceDescription", "drds");
+		super("Drds", "2017-10-16", "ModifyDrdsInstanceDescription", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class QueryInstanceInfoByConnRequest extends RpcAcsRequest<QueryInstanceI
 
 	private String userName;
 	public QueryInstanceInfoByConnRequest() {
-		super("Drds", "2017-10-16", "QueryInstanceInfoByConn", "drds");
+		super("Drds", "2017-10-16", "QueryInstanceInfoByConn", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

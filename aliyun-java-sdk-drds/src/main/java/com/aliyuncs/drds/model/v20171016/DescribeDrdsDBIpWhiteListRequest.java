@@ -31,7 +31,7 @@ public class DescribeDrdsDBIpWhiteListRequest extends RpcAcsRequest<DescribeDrds
 
 	private String dbName;
 	public DescribeDrdsDBIpWhiteListRequest() {
-		super("Drds", "2017-10-16", "DescribeDrdsDBIpWhiteList", "drds");
+		super("Drds", "2017-10-16", "DescribeDrdsDBIpWhiteList", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

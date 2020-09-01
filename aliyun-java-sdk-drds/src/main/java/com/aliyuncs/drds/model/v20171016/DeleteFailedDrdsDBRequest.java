@@ -29,7 +29,7 @@ public class DeleteFailedDrdsDBRequest extends RpcAcsRequest<DeleteFailedDrdsDBR
 
 	private String dbName;
 	public DeleteFailedDrdsDBRequest() {
-		super("Drds", "2017-10-16", "DeleteFailedDrdsDB", "drds");
+		super("Drds", "2017-10-16", "DeleteFailedDrdsDB", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

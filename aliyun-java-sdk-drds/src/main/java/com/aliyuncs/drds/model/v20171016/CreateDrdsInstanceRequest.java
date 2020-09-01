@@ -53,7 +53,7 @@ public class CreateDrdsInstanceRequest extends RpcAcsRequest<CreateDrdsInstanceR
 
 	private String pricingCycle;
 	public CreateDrdsInstanceRequest() {
-		super("Drds", "2017-10-16", "CreateDrdsInstance", "drds");
+		super("Drds", "2017-10-16", "CreateDrdsInstance", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

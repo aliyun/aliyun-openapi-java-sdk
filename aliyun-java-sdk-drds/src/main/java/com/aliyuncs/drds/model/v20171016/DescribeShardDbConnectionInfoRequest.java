@@ -31,7 +31,7 @@ public class DescribeShardDbConnectionInfoRequest extends RpcAcsRequest<Describe
 
 	private String dbName;
 	public DescribeShardDbConnectionInfoRequest() {
-		super("Drds", "2017-10-16", "DescribeShardDbConnectionInfo", "drds");
+		super("Drds", "2017-10-16", "DescribeShardDbConnectionInfo", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

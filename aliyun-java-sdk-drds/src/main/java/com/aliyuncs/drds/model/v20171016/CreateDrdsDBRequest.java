@@ -35,7 +35,7 @@ public class CreateDrdsDBRequest extends RpcAcsRequest<CreateDrdsDBResponse> {
 
 	private String rdsInstances;
 	public CreateDrdsDBRequest() {
-		super("Drds", "2017-10-16", "CreateDrdsDB", "drds");
+		super("Drds", "2017-10-16", "CreateDrdsDB", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

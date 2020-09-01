@@ -31,7 +31,7 @@ public class CreateReadOnlyAccountRequest extends RpcAcsRequest<CreateReadOnlyAc
 
 	private String dbName;
 	public CreateReadOnlyAccountRequest() {
-		super("Drds", "2017-10-16", "CreateReadOnlyAccount", "drds");
+		super("Drds", "2017-10-16", "CreateReadOnlyAccount", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

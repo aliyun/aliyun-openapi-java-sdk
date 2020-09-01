@@ -31,7 +31,7 @@ public class RemoveReadOnlyAccountRequest extends RpcAcsRequest<RemoveReadOnlyAc
 
 	private String accountName;
 	public RemoveReadOnlyAccountRequest() {
-		super("Drds", "2017-10-16", "RemoveReadOnlyAccount", "drds");
+		super("Drds", "2017-10-16", "RemoveReadOnlyAccount", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class CreateDrdsAccountRequest extends RpcAcsRequest<CreateDrdsAccountRes
 
 	private String userName;
 	public CreateDrdsAccountRequest() {
-		super("Drds", "2017-10-16", "CreateDrdsAccount", "drds");
+		super("Drds", "2017-10-16", "CreateDrdsAccount", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

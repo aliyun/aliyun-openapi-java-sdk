@@ -35,7 +35,7 @@ public class ModifyReadOnlyAccountPasswordRequest extends RpcAcsRequest<ModifyRe
 
 	private String originPassword;
 	public ModifyReadOnlyAccountPasswordRequest() {
-		super("Drds", "2017-10-16", "ModifyReadOnlyAccountPassword", "drds");
+		super("Drds", "2017-10-16", "ModifyReadOnlyAccountPassword", "Drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
